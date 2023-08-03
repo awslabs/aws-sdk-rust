@@ -26,7 +26,7 @@ impl StartPipelineReprocessingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartPipelineReprocessingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_pipeline_reprocessing::builders::StartPipelineReprocessingInputBuilder,
+    inner: crate::operation::start_pipeline_reprocessing::builders::StartPipelineReprocessingInputBuilder,
 }
 impl StartPipelineReprocessingFluentBuilder {
     /// Creates a new `StartPipelineReprocessing`.
@@ -37,7 +37,7 @@ impl StartPipelineReprocessingFluentBuilder {
         }
     }
     /// Access the StartPipelineReprocessing as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_pipeline_reprocessing::builders::StartPipelineReprocessingInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_pipeline_reprocessing::builders::StartPipelineReprocessingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartPipelineReprocessingFluentBuilder {
             crate::operation::start_pipeline_reprocessing::StartPipelineReprocessing,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartPipelineReprocessingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartPipelineReprocessingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartPipelineReprocessingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl StartPipelineReprocessingFluentBuilder {
             crate::operation::start_pipeline_reprocessing::StartPipelineReprocessing,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the pipeline on which to start reprocessing.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
     /// <p>The name of the pipeline on which to start reprocessing.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
@@ -148,10 +131,7 @@ impl StartPipelineReprocessingFluentBuilder {
     }
     /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -168,10 +148,7 @@ impl StartPipelineReprocessingFluentBuilder {
     }
     /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -188,10 +165,7 @@ impl StartPipelineReprocessingFluentBuilder {
     }
     /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
     /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
-    pub fn set_channel_messages(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessages>,
-    ) -> Self {
+    pub fn set_channel_messages(mut self, input: ::std::option::Option<crate::types::ChannelMessages>) -> Self {
         self.inner = self.inner.set_channel_messages(input);
         self
     }

@@ -35,9 +35,7 @@ impl DescribeAcLsOutput {
 
 /// A builder for [`DescribeAcLsOutput`](crate::operation::describe_ac_ls::DescribeAcLsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAcLsOutputBuilder {
     pub(crate) ac_ls: ::std::option::Option<::std::vec::Vec<crate::types::Acl>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl DescribeAcLsOutputBuilder {
         self
     }
     /// <p>The list of ACLs</p>
-    pub fn set_ac_ls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Acl>>,
-    ) -> Self {
+    pub fn set_ac_ls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Acl>>) -> Self {
         self.ac_ls = input;
         self
     }

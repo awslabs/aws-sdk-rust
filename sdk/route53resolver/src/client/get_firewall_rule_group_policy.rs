@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetFirewallRuleGroupPolicyOutput`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyOutput) with field(s):
     ///   - [`firewall_rule_group_policy(Option<String>)`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyOutput::firewall_rule_group_policy): <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
     /// - On failure, responds with [`SdkError<GetFirewallRuleGroupPolicyError>`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyError)
-    pub fn get_firewall_rule_group_policy(&self) -> crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyFluentBuilder{
+    pub fn get_firewall_rule_group_policy(
+        &self,
+    ) -> crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyFluentBuilder {
         crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -62,8 +62,7 @@ impl ::std::fmt::Debug for UpdatePricingRuleInput {
 }
 impl UpdatePricingRuleInput {
     /// Creates a new builder-style object to manufacture [`UpdatePricingRuleInput`](crate::operation::update_pricing_rule::UpdatePricingRuleInput).
-    pub fn builder(
-    ) -> crate::operation::update_pricing_rule::builders::UpdatePricingRuleInputBuilder {
+    pub fn builder() -> crate::operation::update_pricing_rule::builders::UpdatePricingRuleInputBuilder {
         crate::operation::update_pricing_rule::builders::UpdatePricingRuleInputBuilder::default()
     }
 }
@@ -156,10 +155,7 @@ impl UpdatePricingRuleInputBuilder {
         self
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
-    pub fn set_tiering(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateTieringInput>,
-    ) -> Self {
+    pub fn set_tiering(mut self, input: ::std::option::Option<crate::types::UpdateTieringInput>) -> Self {
         self.tiering = input;
         self
     }
@@ -170,20 +166,15 @@ impl UpdatePricingRuleInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePricingRuleInput`](crate::operation::update_pricing_rule::UpdatePricingRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_pricing_rule::UpdatePricingRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_pricing_rule::UpdatePricingRuleInput {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                r#type: self.r#type,
-                modifier_percentage: self.modifier_percentage,
-                tiering: self.tiering,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_pricing_rule::UpdatePricingRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_pricing_rule::UpdatePricingRuleInput {
+            arn: self.arn,
+            name: self.name,
+            description: self.description,
+            r#type: self.r#type,
+            modifier_percentage: self.modifier_percentage,
+            tiering: self.tiering,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdatePricingRuleInputBuilder {

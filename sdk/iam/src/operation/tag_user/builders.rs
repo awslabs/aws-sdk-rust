@@ -10,10 +10,7 @@ impl TagUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::tag_user::TagUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_user::TagUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_user::TagUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.tag_user();
         fluent_builder.inner = self;
@@ -57,10 +54,7 @@ impl TagUserFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::tag_user::TagUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::tag_user::TagUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::tag_user::TagUserError>,
     > {
         let handle = self.handle.clone();
@@ -71,20 +65,15 @@ impl TagUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::tag_user::TagUserOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::tag_user::TagUserError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::tag_user::TagUserOutput, ::aws_smithy_http::result::SdkError<crate::operation::tag_user::TagUserError>>
+    {
         let op = self
             .inner
             .build()
@@ -104,10 +93,8 @@ impl TagUserFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::tag_user::TagUserOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::tag_user::TagUserError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::tag_user::TagUserOutput, ::aws_smithy_http::result::SdkError<crate::operation::tag_user::TagUserError>>
+    {
         self.send_middleware().await
     }
 
@@ -116,10 +103,7 @@ impl TagUserFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::tag_user::TagUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::tag_user::TagUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::tag_user::TagUserError>,
     > {
         self.customize_middleware().await
@@ -151,10 +135,7 @@ impl TagUserFluentBuilder {
         self
     }
     /// <p>The list of tags that you want to attach to the IAM user. Each tag consists of a key name and an associated value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

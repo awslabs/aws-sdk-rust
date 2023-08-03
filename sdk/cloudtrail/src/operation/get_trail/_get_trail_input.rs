@@ -22,9 +22,7 @@ impl GetTrailInput {
 
 /// A builder for [`GetTrailInput`](crate::operation::get_trail::GetTrailInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTrailInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetTrailInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetTrailInput`](crate::operation::get_trail::GetTrailInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_trail::GetTrailInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_trail::GetTrailInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_trail::GetTrailInput { name: self.name })
     }
 }

@@ -2,8 +2,7 @@
 /// Paginator for [`DescribeCustomKeyStores`](crate::operation::describe_custom_key_stores::DescribeCustomKeyStores)
 pub struct DescribeCustomKeyStoresPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
-    builder:
-        crate::operation::describe_custom_key_stores::builders::DescribeCustomKeyStoresInputBuilder,
+    builder: crate::operation::describe_custom_key_stores::builders::DescribeCustomKeyStoresInputBuilder,
     stop_on_duplicate_token: bool,
 }
 
@@ -32,7 +31,7 @@ impl DescribeCustomKeyStoresPaginator {
     ///
     /// This paginator automatically flattens results using `custom_key_stores`. Queries to the underlying service
     /// are dispatched lazily.
-    pub fn items(self) -> crate::operation::describe_custom_key_stores::paginator::DescribeCustomKeyStoresPaginatorItems{
+    pub fn items(self) -> crate::operation::describe_custom_key_stores::paginator::DescribeCustomKeyStoresPaginatorItems {
         crate::operation::describe_custom_key_stores::paginator::DescribeCustomKeyStoresPaginatorItems(self)
     }
 
@@ -56,9 +55,7 @@ impl DescribeCustomKeyStoresPaginator {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresOutput,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresError>,
         >,
     > + ::std::marker::Unpin {
         // Move individual fields out of self for the borrow checker
@@ -68,10 +65,7 @@ impl DescribeCustomKeyStoresPaginator {
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder
-                    .build()
-                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                {
+                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
                     ::std::result::Result::Ok(input) => input,
                     ::std::result::Result::Err(e) => {
                         let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -96,15 +90,9 @@ impl DescribeCustomKeyStoresPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         ::std::result::Result::Ok(ref resp) => {
-                            let new_token =
-                                crate::lens::reflens_describe_custom_key_stores_output_next_marker(
-                                    resp,
-                                );
+                            let new_token = crate::lens::reflens_describe_custom_key_stores_output_next_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty
-                                && new_token == input.marker.as_ref()
-                                && self.stop_on_duplicate_token
-                            {
+                            if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                 true
                             } else {
                                 input.marker = new_token.cloned();
@@ -142,9 +130,7 @@ impl DescribeCustomKeyStoresPaginatorItems {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::types::CustomKeyStoresListEntry,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresError>,
         >,
     > + ::std::marker::Unpin {
         ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {

@@ -5,8 +5,7 @@
 pub struct ListPartnerEventSourceAccountsOutput {
     /// <p>The list of partner event sources returned by the operation.</p>
     #[doc(hidden)]
-    pub partner_event_source_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::PartnerEventSourceAccount>>,
+    pub partner_event_source_accounts: ::std::option::Option<::std::vec::Vec<crate::types::PartnerEventSourceAccount>>,
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListPartnerEventSourceAccountsOutput {
 }
 impl ListPartnerEventSourceAccountsOutput {
     /// <p>The list of partner event sources returned by the operation.</p>
-    pub fn partner_event_source_accounts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PartnerEventSourceAccount]> {
+    pub fn partner_event_source_accounts(&self) -> ::std::option::Option<&[crate::types::PartnerEventSourceAccount]> {
         self.partner_event_source_accounts.as_deref()
     }
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListPartnerEventSourceAccountsOutput 
 }
 impl ListPartnerEventSourceAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListPartnerEventSourceAccountsOutput`](crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsOutput).
-    pub fn builder() -> crate::operation::list_partner_event_source_accounts::builders::ListPartnerEventSourceAccountsOutputBuilder{
+    pub fn builder() -> crate::operation::list_partner_event_source_accounts::builders::ListPartnerEventSourceAccountsOutputBuilder {
         crate::operation::list_partner_event_source_accounts::builders::ListPartnerEventSourceAccountsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPartnerEventSourceAccountsOutput`](crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPartnerEventSourceAccountsOutputBuilder {
-    pub(crate) partner_event_source_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::PartnerEventSourceAccount>>,
+    pub(crate) partner_event_source_accounts: ::std::option::Option<::std::vec::Vec<crate::types::PartnerEventSourceAccount>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListPartnerEventSourceAccountsOutputBuilder {
     /// To override the contents of this collection use [`set_partner_event_source_accounts`](Self::set_partner_event_source_accounts).
     ///
     /// <p>The list of partner event sources returned by the operation.</p>
-    pub fn partner_event_source_accounts(
-        mut self,
-        input: crate::types::PartnerEventSourceAccount,
-    ) -> Self {
+    pub fn partner_event_source_accounts(mut self, input: crate::types::PartnerEventSourceAccount) -> Self {
         let mut v = self.partner_event_source_accounts.unwrap_or_default();
         v.push(input);
         self.partner_event_source_accounts = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListPartnerEventSourceAccountsOutputBuilder {
         self
     }
     /// <p>The list of partner event sources returned by the operation.</p>
-    pub fn get_partner_event_source_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartnerEventSourceAccount>> {
+    pub fn get_partner_event_source_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartnerEventSourceAccount>> {
         &self.partner_event_source_accounts
     }
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
@@ -100,10 +89,7 @@ impl ListPartnerEventSourceAccountsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPartnerEventSourceAccountsOutput`](crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsOutput
-    {
+    pub fn build(self) -> crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsOutput {
         crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsOutput {
             partner_event_source_accounts: self.partner_event_source_accounts,
             next_token: self.next_token,

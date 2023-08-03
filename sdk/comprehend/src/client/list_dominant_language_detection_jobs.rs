@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`dominant_language_detection_job_properties_list(Option<Vec<DominantLanguageDetectionJobProperties>>)`](crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobsOutput::dominant_language_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListDominantLanguageDetectionJobsError>`](crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobsError)
-    pub fn list_dominant_language_detection_jobs(&self) -> crate::operation::list_dominant_language_detection_jobs::builders::ListDominantLanguageDetectionJobsFluentBuilder{
+    pub fn list_dominant_language_detection_jobs(
+        &self,
+    ) -> crate::operation::list_dominant_language_detection_jobs::builders::ListDominantLanguageDetectionJobsFluentBuilder {
         crate::operation::list_dominant_language_detection_jobs::builders::ListDominantLanguageDetectionJobsFluentBuilder::new(self.handle.clone())
     }
 }

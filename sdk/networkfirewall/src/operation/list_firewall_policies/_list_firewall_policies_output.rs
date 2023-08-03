@@ -8,8 +8,7 @@ pub struct ListFirewallPoliciesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The metadata for the firewall policies. Depending on your setting for max results and the number of firewall policies that you have, this might not be the full list. </p>
     #[doc(hidden)]
-    pub firewall_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyMetadata>>,
+    pub firewall_policies: ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyMetadata>>,
     _request_id: Option<String>,
 }
 impl ListFirewallPoliciesOutput {
@@ -18,9 +17,7 @@ impl ListFirewallPoliciesOutput {
         self.next_token.as_deref()
     }
     /// <p>The metadata for the firewall policies. Depending on your setting for max results and the number of firewall policies that you have, this might not be the full list. </p>
-    pub fn firewall_policies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FirewallPolicyMetadata]> {
+    pub fn firewall_policies(&self) -> ::std::option::Option<&[crate::types::FirewallPolicyMetadata]> {
         self.firewall_policies.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListFirewallPoliciesOutput {
 }
 impl ListFirewallPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListFirewallPoliciesOutput`](crate::operation::list_firewall_policies::ListFirewallPoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_firewall_policies::builders::ListFirewallPoliciesOutputBuilder {
+    pub fn builder() -> crate::operation::list_firewall_policies::builders::ListFirewallPoliciesOutputBuilder {
         crate::operation::list_firewall_policies::builders::ListFirewallPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFirewallPoliciesOutput`](crate::operation::list_firewall_policies::ListFirewallPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFirewallPoliciesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) firewall_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyMetadata>>,
+    pub(crate) firewall_policies: ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyMetadata>>,
     _request_id: Option<String>,
 }
 impl ListFirewallPoliciesOutputBuilder {
@@ -75,17 +68,12 @@ impl ListFirewallPoliciesOutputBuilder {
         self
     }
     /// <p>The metadata for the firewall policies. Depending on your setting for max results and the number of firewall policies that you have, this might not be the full list. </p>
-    pub fn set_firewall_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyMetadata>>,
-    ) -> Self {
+    pub fn set_firewall_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyMetadata>>) -> Self {
         self.firewall_policies = input;
         self
     }
     /// <p>The metadata for the firewall policies. Depending on your setting for max results and the number of firewall policies that you have, this might not be the full list. </p>
-    pub fn get_firewall_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyMetadata>> {
+    pub fn get_firewall_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyMetadata>> {
         &self.firewall_policies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -37,9 +37,7 @@ impl AssociateTrustStoreFluentBuilder {
         }
     }
     /// Access the AssociateTrustStore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_trust_store::builders::AssociateTrustStoreInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_trust_store::builders::AssociateTrustStoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl AssociateTrustStoreFluentBuilder {
             crate::operation::associate_trust_store::AssociateTrustStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_trust_store::AssociateTrustStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_trust_store::AssociateTrustStoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl AssociateTrustStoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl AssociateTrustStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_trust_store::AssociateTrustStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_trust_store::AssociateTrustStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_trust_store::AssociateTrustStoreError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl AssociateTrustStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_trust_store::AssociateTrustStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_trust_store::AssociateTrustStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_trust_store::AssociateTrustStoreError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl AssociateTrustStoreFluentBuilder {
             crate::operation::associate_trust_store::AssociateTrustStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_trust_store::AssociateTrustStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_trust_store::AssociateTrustStoreError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl AssociateTrustStoreFluentBuilder {
         self.inner.get_portal_arn()
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trust_store_arn(input.into());
         self
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn set_trust_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trust_store_arn(input);
         self
     }

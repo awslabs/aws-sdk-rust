@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateBucketAccessKeyOutput {
 }
 impl CreateBucketAccessKeyOutput {
     /// Creates a new builder-style object to manufacture [`CreateBucketAccessKeyOutput`](crate::operation::create_bucket_access_key::CreateBucketAccessKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::create_bucket_access_key::builders::CreateBucketAccessKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_bucket_access_key::builders::CreateBucketAccessKeyOutputBuilder {
         crate::operation::create_bucket_access_key::builders::CreateBucketAccessKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBucketAccessKeyOutput`](crate::operation::create_bucket_access_key::CreateBucketAccessKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBucketAccessKeyOutputBuilder {
     pub(crate) access_key: ::std::option::Option<crate::types::AccessKey>,
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
@@ -72,17 +68,12 @@ impl CreateBucketAccessKeyOutputBuilder {
         self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn set_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
-    ) -> Self {
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>) -> Self {
         self.operations = input;
         self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn get_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
         &self.operations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

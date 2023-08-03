@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAccessTokenOutput {
 }
 impl DeleteAccessTokenOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessTokenOutput`](crate::operation::delete_access_token::DeleteAccessTokenOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_access_token::builders::DeleteAccessTokenOutputBuilder {
+    pub fn builder() -> crate::operation::delete_access_token::builders::DeleteAccessTokenOutputBuilder {
         crate::operation::delete_access_token::builders::DeleteAccessTokenOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessTokenOutput`](crate::operation::delete_access_token::DeleteAccessTokenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessTokenOutputBuilder {
     _request_id: Option<String>,
 }

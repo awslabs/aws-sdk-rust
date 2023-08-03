@@ -10,9 +10,7 @@ pub struct UpdateWorkspaceAuthenticationOutput {
 }
 impl UpdateWorkspaceAuthenticationOutput {
     /// <p>A structure that describes the user authentication for this workspace after the update is made.</p>
-    pub fn authentication(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuthenticationDescription> {
+    pub fn authentication(&self) -> ::std::option::Option<&crate::types::AuthenticationDescription> {
         self.authentication.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateWorkspaceAuthenticationOutput {
 }
 impl UpdateWorkspaceAuthenticationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceAuthenticationOutput`](crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationOutput).
-    pub fn builder() -> crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationOutputBuilder{
+    pub fn builder() -> crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationOutputBuilder {
         crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorkspaceAuthenticationOutput`](crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceAuthenticationOutputBuilder {
     pub(crate) authentication: ::std::option::Option<crate::types::AuthenticationDescription>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl UpdateWorkspaceAuthenticationOutputBuilder {
         self
     }
     /// <p>A structure that describes the user authentication for this workspace after the update is made.</p>
-    pub fn set_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationDescription>,
-    ) -> Self {
+    pub fn set_authentication(mut self, input: ::std::option::Option<crate::types::AuthenticationDescription>) -> Self {
         self.authentication = input;
         self
     }
     /// <p>A structure that describes the user authentication for this workspace after the update is made.</p>
-    pub fn get_authentication(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationDescription> {
+    pub fn get_authentication(&self) -> &::std::option::Option<crate::types::AuthenticationDescription> {
         &self.authentication
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,10 +58,7 @@ impl UpdateWorkspaceAuthenticationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceAuthenticationOutput`](crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationOutput
-    {
+    pub fn build(self) -> crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationOutput {
         crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationOutput {
             authentication: self.authentication,
             _request_id: self._request_id,

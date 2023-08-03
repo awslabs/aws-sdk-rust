@@ -19,9 +19,7 @@ impl UpdateRoleOutput {
 
 /// A builder for [`UpdateRoleOutput`](crate::operation::update_role::UpdateRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRoleOutputBuilder {
     _request_id: Option<String>,
 }

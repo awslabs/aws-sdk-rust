@@ -44,9 +44,7 @@ impl FrameworkMetadata {
 
 /// A builder for [`FrameworkMetadata`](crate::types::FrameworkMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FrameworkMetadataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -97,18 +95,12 @@ impl FrameworkMetadataBuilder {
         &self.logo
     }
     /// <p> The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA. </p>
-    pub fn compliance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compliance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compliance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA. </p>
-    pub fn set_compliance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compliance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compliance_type = input;
         self
     }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for SetIdentityPoolRolesOutput {
 }
 impl SetIdentityPoolRolesOutput {
     /// Creates a new builder-style object to manufacture [`SetIdentityPoolRolesOutput`](crate::operation::set_identity_pool_roles::SetIdentityPoolRolesOutput).
-    pub fn builder(
-    ) -> crate::operation::set_identity_pool_roles::builders::SetIdentityPoolRolesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_identity_pool_roles::builders::SetIdentityPoolRolesOutputBuilder {
         crate::operation::set_identity_pool_roles::builders::SetIdentityPoolRolesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetIdentityPoolRolesOutput`](crate::operation::set_identity_pool_roles::SetIdentityPoolRolesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetIdentityPoolRolesOutputBuilder {
     _request_id: Option<String>,
 }

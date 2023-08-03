@@ -8,8 +8,7 @@ pub struct ModifyVerifiedAccessTrustProviderInput {
     pub verified_access_trust_provider_id: ::std::option::Option<::std::string::String>,
     /// <p>The options for an OpenID Connect-compatible user-identity trust provider.</p>
     #[doc(hidden)]
-    pub oidc_options:
-        ::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderOidcOptions>,
+    pub oidc_options: ::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderOidcOptions>,
     /// <p>A description for the Verified Access trust provider.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
@@ -26,9 +25,7 @@ impl ModifyVerifiedAccessTrustProviderInput {
         self.verified_access_trust_provider_id.as_deref()
     }
     /// <p>The options for an OpenID Connect-compatible user-identity trust provider.</p>
-    pub fn oidc_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModifyVerifiedAccessTrustProviderOidcOptions> {
+    pub fn oidc_options(&self) -> ::std::option::Option<&crate::types::ModifyVerifiedAccessTrustProviderOidcOptions> {
         self.oidc_options.as_ref()
     }
     /// <p>A description for the Verified Access trust provider.</p>
@@ -46,67 +43,48 @@ impl ModifyVerifiedAccessTrustProviderInput {
 }
 impl ModifyVerifiedAccessTrustProviderInput {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessTrustProviderInput`](crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderInput).
-    pub fn builder() -> crate::operation::modify_verified_access_trust_provider::builders::ModifyVerifiedAccessTrustProviderInputBuilder{
+    pub fn builder() -> crate::operation::modify_verified_access_trust_provider::builders::ModifyVerifiedAccessTrustProviderInputBuilder {
         crate::operation::modify_verified_access_trust_provider::builders::ModifyVerifiedAccessTrustProviderInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVerifiedAccessTrustProviderInput`](crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessTrustProviderInputBuilder {
     pub(crate) verified_access_trust_provider_id: ::std::option::Option<::std::string::String>,
-    pub(crate) oidc_options:
-        ::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderOidcOptions>,
+    pub(crate) oidc_options: ::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderOidcOptions>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl ModifyVerifiedAccessTrustProviderInputBuilder {
     /// <p>The ID of the Verified Access trust provider.</p>
-    pub fn verified_access_trust_provider_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_trust_provider_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_trust_provider_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Verified Access trust provider.</p>
-    pub fn set_verified_access_trust_provider_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_trust_provider_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verified_access_trust_provider_id = input;
         self
     }
     /// <p>The ID of the Verified Access trust provider.</p>
-    pub fn get_verified_access_trust_provider_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_verified_access_trust_provider_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.verified_access_trust_provider_id
     }
     /// <p>The options for an OpenID Connect-compatible user-identity trust provider.</p>
-    pub fn oidc_options(
-        mut self,
-        input: crate::types::ModifyVerifiedAccessTrustProviderOidcOptions,
-    ) -> Self {
+    pub fn oidc_options(mut self, input: crate::types::ModifyVerifiedAccessTrustProviderOidcOptions) -> Self {
         self.oidc_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options for an OpenID Connect-compatible user-identity trust provider.</p>
-    pub fn set_oidc_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderOidcOptions>,
-    ) -> Self {
+    pub fn set_oidc_options(mut self, input: ::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderOidcOptions>) -> Self {
         self.oidc_options = input;
         self
     }
     /// <p>The options for an OpenID Connect-compatible user-identity trust provider.</p>
-    pub fn get_oidc_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderOidcOptions> {
+    pub fn get_oidc_options(&self) -> &::std::option::Option<crate::types::ModifyVerifiedAccessTrustProviderOidcOptions> {
         &self.oidc_options
     }
     /// <p>A description for the Verified Access trust provider.</p>
@@ -152,20 +130,20 @@ impl ModifyVerifiedAccessTrustProviderInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessTrustProviderInput`](crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderInput {
-                verified_access_trust_provider_id: self.verified_access_trust_provider_id
-                ,
-                oidc_options: self.oidc_options
-                ,
-                description: self.description
-                ,
-                dry_run: self.dry_run
-                ,
-                client_token: self.client_token
-                ,
-            }
+                verified_access_trust_provider_id: self.verified_access_trust_provider_id,
+                oidc_options: self.oidc_options,
+                description: self.description,
+                dry_run: self.dry_run,
+                client_token: self.client_token,
+            },
         )
     }
 }

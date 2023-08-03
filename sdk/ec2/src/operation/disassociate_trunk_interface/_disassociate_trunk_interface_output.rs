@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DisassociateTrunkInterfaceOutput {
 }
 impl DisassociateTrunkInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateTrunkInterfaceOutput`](crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceOutput).
-    pub fn builder() -> crate::operation::disassociate_trunk_interface::builders::DisassociateTrunkInterfaceOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_trunk_interface::builders::DisassociateTrunkInterfaceOutputBuilder {
         crate::operation::disassociate_trunk_interface::builders::DisassociateTrunkInterfaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateTrunkInterfaceOutput`](crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateTrunkInterfaceOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -82,9 +80,7 @@ impl DisassociateTrunkInterfaceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateTrunkInterfaceOutput`](crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceOutput {
+    pub fn build(self) -> crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceOutput {
         crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceOutput {
             r#return: self.r#return,
             client_token: self.client_token,

@@ -26,7 +26,7 @@ impl DeleteApplicationSnapshotInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteApplicationSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_application_snapshot::builders::DeleteApplicationSnapshotInputBuilder,
+    inner: crate::operation::delete_application_snapshot::builders::DeleteApplicationSnapshotInputBuilder,
 }
 impl DeleteApplicationSnapshotFluentBuilder {
     /// Creates a new `DeleteApplicationSnapshot`.
@@ -37,7 +37,7 @@ impl DeleteApplicationSnapshotFluentBuilder {
         }
     }
     /// Access the DeleteApplicationSnapshot as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_application_snapshot::builders::DeleteApplicationSnapshotInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_application_snapshot::builders::DeleteApplicationSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteApplicationSnapshotFluentBuilder {
             crate::operation::delete_application_snapshot::DeleteApplicationSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_application_snapshot::DeleteApplicationSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_application_snapshot::DeleteApplicationSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteApplicationSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteApplicationSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_application_snapshot::DeleteApplicationSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_application_snapshot::DeleteApplicationSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_application_snapshot::DeleteApplicationSnapshotError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteApplicationSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_application_snapshot::DeleteApplicationSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_application_snapshot::DeleteApplicationSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_application_snapshot::DeleteApplicationSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteApplicationSnapshotFluentBuilder {
             crate::operation::delete_application_snapshot::DeleteApplicationSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_application_snapshot::DeleteApplicationSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_application_snapshot::DeleteApplicationSnapshotError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of an existing application.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of an existing application.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -141,18 +124,12 @@ impl DeleteApplicationSnapshotFluentBuilder {
         self.inner.get_application_name()
     }
     /// <p>The identifier for the snapshot delete.</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_name(input.into());
         self
     }
     /// <p>The identifier for the snapshot delete.</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_name(input);
         self
     }
@@ -166,17 +143,12 @@ impl DeleteApplicationSnapshotFluentBuilder {
         self
     }
     /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
-    pub fn set_snapshot_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_snapshot_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_snapshot_creation_timestamp(input);
         self
     }
     /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
-    pub fn get_snapshot_creation_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_snapshot_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_snapshot_creation_timestamp()
     }
 }

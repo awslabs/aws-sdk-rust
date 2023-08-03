@@ -10,7 +10,10 @@ impl super::Client {
     /// - On success, responds with [`AcceptTransitGatewayMulticastDomainAssociationsOutput`](crate::operation::accept_transit_gateway_multicast_domain_associations::AcceptTransitGatewayMulticastDomainAssociationsOutput) with field(s):
     ///   - [`associations(Option<TransitGatewayMulticastDomainAssociations>)`](crate::operation::accept_transit_gateway_multicast_domain_associations::AcceptTransitGatewayMulticastDomainAssociationsOutput::associations): <p>Information about the multicast domain associations.</p>
     /// - On failure, responds with [`SdkError<AcceptTransitGatewayMulticastDomainAssociationsError>`](crate::operation::accept_transit_gateway_multicast_domain_associations::AcceptTransitGatewayMulticastDomainAssociationsError)
-    pub fn accept_transit_gateway_multicast_domain_associations(&self) -> crate::operation::accept_transit_gateway_multicast_domain_associations::builders::AcceptTransitGatewayMulticastDomainAssociationsFluentBuilder{
+    pub fn accept_transit_gateway_multicast_domain_associations(
+        &self,
+    ) -> crate::operation::accept_transit_gateway_multicast_domain_associations::builders::AcceptTransitGatewayMulticastDomainAssociationsFluentBuilder
+    {
         crate::operation::accept_transit_gateway_multicast_domain_associations::builders::AcceptTransitGatewayMulticastDomainAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

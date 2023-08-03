@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for EnableIpamOrganizationAdminAccountOut
 }
 impl EnableIpamOrganizationAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`EnableIpamOrganizationAdminAccountOutput`](crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountOutput).
-    pub fn builder() -> crate::operation::enable_ipam_organization_admin_account::builders::EnableIpamOrganizationAdminAccountOutputBuilder{
+    pub fn builder() -> crate::operation::enable_ipam_organization_admin_account::builders::EnableIpamOrganizationAdminAccountOutputBuilder {
         crate::operation::enable_ipam_organization_admin_account::builders::EnableIpamOrganizationAdminAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableIpamOrganizationAdminAccountOutput`](crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableIpamOrganizationAdminAccountOutputBuilder {
     pub(crate) success: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl EnableIpamOrganizationAdminAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableIpamOrganizationAdminAccountOutput`](crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountOutput).
-    pub fn build(self) -> crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountOutput{
+    pub fn build(self) -> crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountOutput {
         crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountOutput {
-            success: self.success
-            ,
+            success: self.success,
             _request_id: self._request_id,
         }
     }

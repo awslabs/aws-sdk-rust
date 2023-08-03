@@ -26,8 +26,7 @@ pub struct StreamingDistribution {
     pub active_trusted_signers: ::std::option::Option<crate::types::ActiveTrustedSigners>,
     /// <p>The current configuration information for the RTMP distribution.</p>
     #[doc(hidden)]
-    pub streaming_distribution_config:
-        ::std::option::Option<crate::types::StreamingDistributionConfig>,
+    pub streaming_distribution_config: ::std::option::Option<crate::types::StreamingDistributionConfig>,
 }
 impl StreamingDistribution {
     /// <p>The identifier for the RTMP distribution. For example: <code>EGTXBD79EXAMPLE</code>.</p>
@@ -53,15 +52,11 @@ impl StreamingDistribution {
     /// <p>A complex type that lists the Amazon Web Services accounts, if any, that you included in the <code>TrustedSigners</code> complex type for this distribution. These are the accounts that you want to allow to create signed URLs for private content.</p>
     /// <p>The <code>Signer</code> complex type lists the Amazon Web Services account number of the trusted signer or <code>self</code> if the signer is the Amazon Web Services account that created the distribution. The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are associated with the trusted signer's Amazon Web Services account. If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create signed URLs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn active_trusted_signers(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ActiveTrustedSigners> {
+    pub fn active_trusted_signers(&self) -> ::std::option::Option<&crate::types::ActiveTrustedSigners> {
         self.active_trusted_signers.as_ref()
     }
     /// <p>The current configuration information for the RTMP distribution.</p>
-    pub fn streaming_distribution_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamingDistributionConfig> {
+    pub fn streaming_distribution_config(&self) -> ::std::option::Option<&crate::types::StreamingDistributionConfig> {
         self.streaming_distribution_config.as_ref()
     }
 }
@@ -74,9 +69,7 @@ impl StreamingDistribution {
 
 /// A builder for [`StreamingDistribution`](crate::types::StreamingDistribution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamingDistributionBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -84,8 +77,7 @@ pub struct StreamingDistributionBuilder {
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) active_trusted_signers: ::std::option::Option<crate::types::ActiveTrustedSigners>,
-    pub(crate) streaming_distribution_config:
-        ::std::option::Option<crate::types::StreamingDistributionConfig>,
+    pub(crate) streaming_distribution_config: ::std::option::Option<crate::types::StreamingDistributionConfig>,
 }
 impl StreamingDistributionBuilder {
     /// <p>The identifier for the RTMP distribution. For example: <code>EGTXBD79EXAMPLE</code>.</p>
@@ -136,10 +128,7 @@ impl StreamingDistributionBuilder {
         self
     }
     /// <p>The date and time that the distribution was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -171,41 +160,28 @@ impl StreamingDistributionBuilder {
     /// <p>A complex type that lists the Amazon Web Services accounts, if any, that you included in the <code>TrustedSigners</code> complex type for this distribution. These are the accounts that you want to allow to create signed URLs for private content.</p>
     /// <p>The <code>Signer</code> complex type lists the Amazon Web Services account number of the trusted signer or <code>self</code> if the signer is the Amazon Web Services account that created the distribution. The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are associated with the trusted signer's Amazon Web Services account. If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create signed URLs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_active_trusted_signers(
-        mut self,
-        input: ::std::option::Option<crate::types::ActiveTrustedSigners>,
-    ) -> Self {
+    pub fn set_active_trusted_signers(mut self, input: ::std::option::Option<crate::types::ActiveTrustedSigners>) -> Self {
         self.active_trusted_signers = input;
         self
     }
     /// <p>A complex type that lists the Amazon Web Services accounts, if any, that you included in the <code>TrustedSigners</code> complex type for this distribution. These are the accounts that you want to allow to create signed URLs for private content.</p>
     /// <p>The <code>Signer</code> complex type lists the Amazon Web Services account number of the trusted signer or <code>self</code> if the signer is the Amazon Web Services account that created the distribution. The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are associated with the trusted signer's Amazon Web Services account. If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create signed URLs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn get_active_trusted_signers(
-        &self,
-    ) -> &::std::option::Option<crate::types::ActiveTrustedSigners> {
+    pub fn get_active_trusted_signers(&self) -> &::std::option::Option<crate::types::ActiveTrustedSigners> {
         &self.active_trusted_signers
     }
     /// <p>The current configuration information for the RTMP distribution.</p>
-    pub fn streaming_distribution_config(
-        mut self,
-        input: crate::types::StreamingDistributionConfig,
-    ) -> Self {
+    pub fn streaming_distribution_config(mut self, input: crate::types::StreamingDistributionConfig) -> Self {
         self.streaming_distribution_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current configuration information for the RTMP distribution.</p>
-    pub fn set_streaming_distribution_config(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingDistributionConfig>,
-    ) -> Self {
+    pub fn set_streaming_distribution_config(mut self, input: ::std::option::Option<crate::types::StreamingDistributionConfig>) -> Self {
         self.streaming_distribution_config = input;
         self
     }
     /// <p>The current configuration information for the RTMP distribution.</p>
-    pub fn get_streaming_distribution_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamingDistributionConfig> {
+    pub fn get_streaming_distribution_config(&self) -> &::std::option::Option<crate::types::StreamingDistributionConfig> {
         &self.streaming_distribution_config
     }
     /// Consumes the builder and constructs a [`StreamingDistribution`](crate::types::StreamingDistribution).

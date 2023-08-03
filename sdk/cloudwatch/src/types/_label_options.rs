@@ -24,9 +24,7 @@ impl LabelOptions {
 
 /// A builder for [`LabelOptions`](crate::types::LabelOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LabelOptionsBuilder {
     pub(crate) timezone: ::std::option::Option<::std::string::String>,
 }
@@ -47,8 +45,6 @@ impl LabelOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`LabelOptions`](crate::types::LabelOptions).
     pub fn build(self) -> crate::types::LabelOptions {
-        crate::types::LabelOptions {
-            timezone: self.timezone,
-        }
+        crate::types::LabelOptions { timezone: self.timezone }
     }
 }

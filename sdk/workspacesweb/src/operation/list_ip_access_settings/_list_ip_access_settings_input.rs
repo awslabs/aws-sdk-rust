@@ -22,17 +22,14 @@ impl ListIpAccessSettingsInput {
 }
 impl ListIpAccessSettingsInput {
     /// Creates a new builder-style object to manufacture [`ListIpAccessSettingsInput`](crate::operation::list_ip_access_settings::ListIpAccessSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsInputBuilder {
+    pub fn builder() -> crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsInputBuilder {
         crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListIpAccessSettingsInput`](crate::operation::list_ip_access_settings::ListIpAccessSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIpAccessSettingsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -69,15 +66,11 @@ impl ListIpAccessSettingsInputBuilder {
     /// Consumes the builder and constructs a [`ListIpAccessSettingsInput`](crate::operation::list_ip_access_settings::ListIpAccessSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_ip_access_settings::ListIpAccessSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_ip_access_settings::ListIpAccessSettingsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_ip_access_settings::ListIpAccessSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_ip_access_settings::ListIpAccessSettingsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

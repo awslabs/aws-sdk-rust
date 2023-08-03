@@ -37,9 +37,7 @@ impl DescribeSubnetGroupsFluentBuilder {
         }
     }
     /// Access the DescribeSubnetGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeSubnetGroupsFluentBuilder {
             crate::operation::describe_subnet_groups::DescribeSubnetGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subnet_groups::DescribeSubnetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subnet_groups::DescribeSubnetGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeSubnetGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeSubnetGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_subnet_groups::DescribeSubnetGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subnet_groups::DescribeSubnetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subnet_groups::DescribeSubnetGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeSubnetGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_subnet_groups::DescribeSubnetGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subnet_groups::DescribeSubnetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subnet_groups::DescribeSubnetGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl DescribeSubnetGroupsFluentBuilder {
             crate::operation::describe_subnet_groups::DescribeSubnetGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_subnet_groups::DescribeSubnetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_subnet_groups::DescribeSubnetGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_subnet_groups::paginator::DescribeSubnetGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_subnet_groups::paginator::DescribeSubnetGroupsPaginator {
-        crate::operation::describe_subnet_groups::paginator::DescribeSubnetGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_subnet_groups::paginator::DescribeSubnetGroupsPaginator {
+        crate::operation::describe_subnet_groups::paginator::DescribeSubnetGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the subnet group to return details for.</p>
-    pub fn subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_group_name(input.into());
         self
     }
     /// <p>The name of the subnet group to return details for.</p>
-    pub fn set_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_group_name(input);
         self
     }

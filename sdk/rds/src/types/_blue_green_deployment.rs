@@ -118,16 +118,13 @@ impl BlueGreenDeployment {
 
 /// A builder for [`BlueGreenDeployment`](crate::types::BlueGreenDeployment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BlueGreenDeploymentBuilder {
     pub(crate) blue_green_deployment_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) blue_green_deployment_name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<::std::string::String>,
-    pub(crate) switchover_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::SwitchoverDetail>>,
+    pub(crate) switchover_details: ::std::option::Option<::std::vec::Vec<crate::types::SwitchoverDetail>>,
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeploymentTask>>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) status_details: ::std::option::Option<::std::string::String>,
@@ -137,40 +134,26 @@ pub struct BlueGreenDeploymentBuilder {
 }
 impl BlueGreenDeploymentBuilder {
     /// <p>The unique identifier of the blue/green deployment.</p>
-    pub fn blue_green_deployment_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blue_green_deployment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blue_green_deployment_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the blue/green deployment.</p>
-    pub fn set_blue_green_deployment_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blue_green_deployment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blue_green_deployment_identifier = input;
         self
     }
     /// <p>The unique identifier of the blue/green deployment.</p>
-    pub fn get_blue_green_deployment_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_blue_green_deployment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.blue_green_deployment_identifier
     }
     /// <p>The user-supplied name of the blue/green deployment.</p>
-    pub fn blue_green_deployment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blue_green_deployment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blue_green_deployment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-supplied name of the blue/green deployment.</p>
-    pub fn set_blue_green_deployment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blue_green_deployment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blue_green_deployment_name = input;
         self
     }
@@ -224,17 +207,12 @@ impl BlueGreenDeploymentBuilder {
         self
     }
     /// <p>The details about each source and target resource in the blue/green deployment.</p>
-    pub fn set_switchover_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SwitchoverDetail>>,
-    ) -> Self {
+    pub fn set_switchover_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SwitchoverDetail>>) -> Self {
         self.switchover_details = input;
         self
     }
     /// <p>The details about each source and target resource in the blue/green deployment.</p>
-    pub fn get_switchover_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SwitchoverDetail>> {
+    pub fn get_switchover_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SwitchoverDetail>> {
         &self.switchover_details
     }
     /// Appends an item to `tasks`.
@@ -249,17 +227,12 @@ impl BlueGreenDeploymentBuilder {
         self
     }
     /// <p>Either tasks to be performed or tasks that have been completed on the target database before switchover.</p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeploymentTask>>,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeploymentTask>>) -> Self {
         self.tasks = input;
         self
     }
     /// <p>Either tasks to be performed or tasks that have been completed on the target database before switchover.</p>
-    pub fn get_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeploymentTask>> {
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeploymentTask>> {
         &self.tasks
     }
     /// <p>The status of the blue/green deployment.</p>
@@ -307,18 +280,12 @@ impl BlueGreenDeploymentBuilder {
         &self.status
     }
     /// <p>Additional information about the status of the blue/green deployment.</p>
-    pub fn status_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional information about the status of the blue/green deployment.</p>
-    pub fn set_status_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_details = input;
         self
     }
@@ -332,10 +299,7 @@ impl BlueGreenDeploymentBuilder {
         self
     }
     /// <p>The time when the blue/green deployment was created, in Universal Coordinated Time (UTC).</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -349,10 +313,7 @@ impl BlueGreenDeploymentBuilder {
         self
     }
     /// <p>The time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).</p>
-    pub fn set_delete_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_delete_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.delete_time = input;
         self
     }
@@ -372,10 +333,7 @@ impl BlueGreenDeploymentBuilder {
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_tag_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tag_list = input;
         self
     }

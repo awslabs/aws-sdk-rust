@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeRecommendationsOutput {
 }
 impl DescribeRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRecommendationsOutput`](crate::operation::describe_recommendations::DescribeRecommendationsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_recommendations::builders::DescribeRecommendationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_recommendations::builders::DescribeRecommendationsOutputBuilder {
         crate::operation::describe_recommendations::builders::DescribeRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRecommendationsOutput`](crate::operation::describe_recommendations::DescribeRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecommendationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
+    pub(crate) recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     _request_id: Option<String>,
 }
 impl DescribeRecommendationsOutputBuilder {
@@ -73,17 +68,12 @@ impl DescribeRecommendationsOutputBuilder {
         self
     }
     /// <p>The list of recommendations of target engines that Fleet Advisor created for the source database.</p>
-    pub fn set_recommendations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
-    ) -> Self {
+    pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>) -> Self {
         self.recommendations = input;
         self
     }
     /// <p>The list of recommendations of target engines that Fleet Advisor created for the source database.</p>
-    pub fn get_recommendations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
+    pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
         &self.recommendations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -96,9 +86,7 @@ impl DescribeRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRecommendationsOutput`](crate::operation::describe_recommendations::DescribeRecommendationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_recommendations::DescribeRecommendationsOutput {
+    pub fn build(self) -> crate::operation::describe_recommendations::DescribeRecommendationsOutput {
         crate::operation::describe_recommendations::DescribeRecommendationsOutput {
             next_token: self.next_token,
             recommendations: self.recommendations,

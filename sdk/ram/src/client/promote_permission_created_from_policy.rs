@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`permission(Option<ResourceSharePermissionSummary>)`](crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput::permission): <p>Information about an RAM permission.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     /// - On failure, responds with [`SdkError<PromotePermissionCreatedFromPolicyError>`](crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError)
-    pub fn promote_permission_created_from_policy(&self) -> crate::operation::promote_permission_created_from_policy::builders::PromotePermissionCreatedFromPolicyFluentBuilder{
+    pub fn promote_permission_created_from_policy(
+        &self,
+    ) -> crate::operation::promote_permission_created_from_policy::builders::PromotePermissionCreatedFromPolicyFluentBuilder {
         crate::operation::promote_permission_created_from_policy::builders::PromotePermissionCreatedFromPolicyFluentBuilder::new(self.handle.clone())
     }
 }

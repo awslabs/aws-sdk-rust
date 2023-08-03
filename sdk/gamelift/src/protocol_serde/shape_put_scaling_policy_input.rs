@@ -42,10 +42,7 @@ pub fn ser_put_scaling_policy_input(
     if let Some(var_10) = &input.target_configuration {
         #[allow(unused_mut)]
         let mut object_11 = object.key("TargetConfiguration").start_object();
-        crate::protocol_serde::shape_target_configuration::ser_target_configuration(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_target_configuration::ser_target_configuration(&mut object_11, var_10)?;
         object_11.finish();
     }
     Ok(())

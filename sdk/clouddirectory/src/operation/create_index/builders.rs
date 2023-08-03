@@ -10,10 +10,7 @@ impl CreateIndexInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_index::CreateIndexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_index::CreateIndexError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_index::CreateIndexError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_index();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateIndexFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_index::CreateIndex,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_index::CreateIndex, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_index::CreateIndexError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateIndexFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl CreateIndexFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_index::CreateIndex,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_index::CreateIndex, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_index::CreateIndexError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the directory where the index should be created.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The ARN of the directory where the index should be created.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -142,17 +124,12 @@ impl CreateIndexFluentBuilder {
         self
     }
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
-    pub fn set_ordered_indexed_attribute_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKey>>,
-    ) -> Self {
+    pub fn set_ordered_indexed_attribute_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKey>>) -> Self {
         self.inner = self.inner.set_ordered_indexed_attribute_list(input);
         self
     }
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
-    pub fn get_ordered_indexed_attribute_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKey>> {
+    pub fn get_ordered_indexed_attribute_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKey>> {
         self.inner.get_ordered_indexed_attribute_list()
     }
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
@@ -175,10 +152,7 @@ impl CreateIndexFluentBuilder {
         self
     }
     /// <p>A reference to the parent object that contains the index object.</p>
-    pub fn set_parent_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_parent_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_parent_reference(input);
         self
     }

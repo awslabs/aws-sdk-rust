@@ -22,17 +22,14 @@ impl DeleteFleetLocationsInput {
 }
 impl DeleteFleetLocationsInput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetLocationsInput`](crate::operation::delete_fleet_locations::DeleteFleetLocationsInput).
-    pub fn builder(
-    ) -> crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsInputBuilder {
+    pub fn builder() -> crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsInputBuilder {
         crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFleetLocationsInput`](crate::operation::delete_fleet_locations::DeleteFleetLocationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFleetLocationsInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,10 +61,7 @@ impl DeleteFleetLocationsInputBuilder {
         self
     }
     /// <p>The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    pub fn set_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.locations = input;
         self
     }
@@ -78,15 +72,11 @@ impl DeleteFleetLocationsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFleetLocationsInput`](crate::operation::delete_fleet_locations::DeleteFleetLocationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_fleet_locations::DeleteFleetLocationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_fleet_locations::DeleteFleetLocationsInput {
-                fleet_id: self.fleet_id,
-                locations: self.locations,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_fleet_locations::DeleteFleetLocationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_fleet_locations::DeleteFleetLocationsInput {
+            fleet_id: self.fleet_id,
+            locations: self.locations,
+        })
     }
 }

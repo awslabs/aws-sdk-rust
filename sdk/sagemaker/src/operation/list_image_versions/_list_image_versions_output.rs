@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListImageVersionsOutput {
 }
 impl ListImageVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListImageVersionsOutput`](crate::operation::list_image_versions::ListImageVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_image_versions::builders::ListImageVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_image_versions::builders::ListImageVersionsOutputBuilder {
         crate::operation::list_image_versions::builders::ListImageVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListImageVersionsOutput`](crate::operation::list_image_versions::ListImageVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImageVersionsOutputBuilder {
     pub(crate) image_versions: ::std::option::Option<::std::vec::Vec<crate::types::ImageVersion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListImageVersionsOutputBuilder {
         self
     }
     /// <p>A list of versions and their properties.</p>
-    pub fn set_image_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageVersion>>,
-    ) -> Self {
+    pub fn set_image_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageVersion>>) -> Self {
         self.image_versions = input;
         self
     }
     /// <p>A list of versions and their properties.</p>
-    pub fn get_image_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageVersion>> {
+    pub fn get_image_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageVersion>> {
         &self.image_versions
     }
     /// <p>A token for getting the next set of versions, if there are any.</p>

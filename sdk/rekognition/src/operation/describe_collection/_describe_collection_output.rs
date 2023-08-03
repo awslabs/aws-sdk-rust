@@ -51,17 +51,14 @@ impl ::aws_http::request_id::RequestId for DescribeCollectionOutput {
 }
 impl DescribeCollectionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCollectionOutput`](crate::operation::describe_collection::DescribeCollectionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_collection::builders::DescribeCollectionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_collection::builders::DescribeCollectionOutputBuilder {
         crate::operation::describe_collection::builders::DescribeCollectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCollectionOutput`](crate::operation::describe_collection::DescribeCollectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCollectionOutputBuilder {
     pub(crate) face_count: ::std::option::Option<i64>,
     pub(crate) face_model_version: ::std::option::Option<::std::string::String>,
@@ -87,19 +84,13 @@ impl DescribeCollectionOutputBuilder {
     }
     /// <p>The version of the face model that's used by the collection for face detection.</p>
     /// <p>For more information, see Model versioning in the Amazon Rekognition Developer Guide.</p>
-    pub fn face_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn face_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.face_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the face model that's used by the collection for face detection.</p>
     /// <p>For more information, see Model versioning in the Amazon Rekognition Developer Guide.</p>
-    pub fn set_face_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_face_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.face_model_version = input;
         self
     }
@@ -109,18 +100,12 @@ impl DescribeCollectionOutputBuilder {
         &self.face_model_version
     }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
-    pub fn collection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
-    pub fn set_collection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_arn = input;
         self
     }
@@ -134,10 +119,7 @@ impl DescribeCollectionOutputBuilder {
         self
     }
     /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }

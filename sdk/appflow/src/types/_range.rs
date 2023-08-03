@@ -30,9 +30,7 @@ impl Range {
 
 /// A builder for [`Range`](crate::types::Range).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RangeBuilder {
     pub(crate) maximum: ::std::option::Option<f64>,
     pub(crate) minimum: ::std::option::Option<f64>,

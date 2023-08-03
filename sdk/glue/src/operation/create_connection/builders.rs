@@ -10,10 +10,7 @@ impl CreateConnectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_connection::CreateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_connection();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateConnectionFluentBuilder {
         }
     }
     /// Access the CreateConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_connection::builders::CreateConnectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_connection::builders::CreateConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateConnectionFluentBuilder {
             crate::operation::create_connection::CreateConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_connection::CreateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_connection::CreateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateConnectionFluentBuilder {
             crate::operation::create_connection::CreateConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl CreateConnectionFluentBuilder {
         self
     }
     /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
-    pub fn set_connection_input(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionInput>,
-    ) -> Self {
+    pub fn set_connection_input(mut self, input: ::std::option::Option<crate::types::ConnectionInput>) -> Self {
         self.inner = self.inner.set_connection_input(input);
         self
     }
@@ -158,30 +139,17 @@ impl CreateConnectionFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags you assign to the connection.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags you assign to the connection.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags you assign to the connection.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

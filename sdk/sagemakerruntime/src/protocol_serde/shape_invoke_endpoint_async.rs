@@ -2,8 +2,7 @@
 pub fn ser_invoke_endpoint_async_headers(
     input: &crate::operation::invoke_endpoint_async::InvokeEndpointAsyncInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.content_type {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_invoke_endpoint_async_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_type",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("X-Amzn-SageMaker-Content-Type", header_value);
@@ -27,10 +23,7 @@ pub fn ser_invoke_endpoint_async_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "accept",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("X-Amzn-SageMaker-Accept", header_value);
@@ -43,10 +36,7 @@ pub fn ser_invoke_endpoint_async_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "custom_attributes",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &"*** Sensitive Data Redacted ***", err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
             })?;
             builder = builder.header("X-Amzn-SageMaker-Custom-Attributes", header_value);
@@ -59,10 +49,7 @@ pub fn ser_invoke_endpoint_async_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "inference_id",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("X-Amzn-SageMaker-Inference-Id", header_value);
@@ -75,10 +62,7 @@ pub fn ser_invoke_endpoint_async_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "input_location",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("X-Amzn-SageMaker-InputLocation", header_value);
@@ -92,10 +76,7 @@ pub fn ser_invoke_endpoint_async_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_ttl_seconds",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("X-Amzn-SageMaker-RequestTTLSeconds", header_value);
@@ -109,10 +90,7 @@ pub fn ser_invoke_endpoint_async_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "invocation_timeout_seconds",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("X-Amzn-SageMaker-InvocationTimeoutSeconds", header_value);
@@ -131,78 +109,62 @@ pub fn de_invoke_endpoint_async_http_error(
     crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailure" => {
-            crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::InternalFailure({
+        "InternalFailure" => crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::InternalFailure({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalFailureBuilder::default();
-                    output = crate::protocol_serde::shape_internal_failure::de_internal_failure_json_err(_response_body, output).map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ServiceUnavailable" => {
-            crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::ServiceUnavailable({
+                let mut output = crate::types::error::builders::InternalFailureBuilder::default();
+                output = crate::protocol_serde::shape_internal_failure::de_internal_failure_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailable" => crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::ServiceUnavailable({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ServiceUnavailableBuilder::default();
-                    output = crate::protocol_serde::shape_service_unavailable::de_service_unavailable_json_err(_response_body, output).map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ValidationError" => {
-            crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::ValidationError({
+                let mut output = crate::types::error::builders::ServiceUnavailableBuilder::default();
+                output = crate::protocol_serde::shape_service_unavailable::de_service_unavailable_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationError" => crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::ValidationError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ValidationErrorBuilder::default();
-                    output = crate::protocol_serde::shape_validation_error::de_validation_error_json_err(_response_body, output).map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::ValidationErrorBuilder::default();
+                output = crate::protocol_serde::shape_validation_error::de_validation_error_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::generic(generic),
     })
 }
@@ -219,34 +181,23 @@ pub fn de_invoke_endpoint_async_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncOutputBuilder::default();
-        output = crate::protocol_serde::shape_invoke_endpoint_async::de_invoke_endpoint_async(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
+        output = crate::protocol_serde::shape_invoke_endpoint_async::de_invoke_endpoint_async(_response_body, output)
+            .map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
         output = output.set_failure_location(
-            crate::protocol_serde::shape_invoke_endpoint_async_output::de_failure_location_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_invoke_endpoint_async_output::de_failure_location_header(_response_headers).map_err(|_| {
                 crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled(
                     "Failed to parse FailureLocation from header `X-Amzn-SageMaker-FailureLocation",
                 )
             })?,
         );
         output = output.set_output_location(
-            crate::protocol_serde::shape_invoke_endpoint_async_output::de_output_location_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_invoke_endpoint_async_output::de_output_location_header(_response_headers).map_err(|_| {
                 crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled(
                     "Failed to parse OutputLocation from header `X-Amzn-SageMaker-OutputLocation",
                 )
             })?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -258,44 +209,34 @@ pub(crate) fn de_invoke_endpoint_async(
     crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "InferenceId" => {
-                        builder = builder.set_inference_id(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "InferenceId" => {
+                    builder = builder.set_inference_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    );
                 }
-            }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

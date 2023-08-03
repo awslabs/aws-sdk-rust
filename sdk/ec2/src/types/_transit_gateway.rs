@@ -72,9 +72,7 @@ impl TransitGateway {
 
 /// A builder for [`TransitGateway`](crate::types::TransitGateway).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayBuilder {
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_arn: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ pub struct TransitGatewayBuilder {
 }
 impl TransitGatewayBuilder {
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_id = input;
         self
     }
@@ -107,18 +99,12 @@ impl TransitGatewayBuilder {
         &self.transit_gateway_id
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-    pub fn transit_gateway_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-    pub fn set_transit_gateway_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_arn = input;
         self
     }
@@ -132,10 +118,7 @@ impl TransitGatewayBuilder {
         self
     }
     /// <p>The state of the transit gateway.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::TransitGatewayState>) -> Self {
         self.state = input;
         self
     }
@@ -177,10 +160,7 @@ impl TransitGatewayBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -194,10 +174,7 @@ impl TransitGatewayBuilder {
         self
     }
     /// <p>The transit gateway options.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::TransitGatewayOptions>) -> Self {
         self.options = input;
         self
     }
@@ -217,10 +194,7 @@ impl TransitGatewayBuilder {
         self
     }
     /// <p>The tags for the transit gateway.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

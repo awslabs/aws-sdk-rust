@@ -5,16 +5,16 @@ pub use crate::operation::put_access_point_configuration_for_object_lambda::_put
 
 impl PutAccessPointConfigurationForObjectLambdaInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_access_point_configuration_for_object_lambda();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -30,7 +30,7 @@ impl PutAccessPointConfigurationForObjectLambdaInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAccessPointConfigurationForObjectLambdaFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaInputBuilder,
+    inner: crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaInputBuilder,
 }
 impl PutAccessPointConfigurationForObjectLambdaFluentBuilder {
     /// Creates a new `PutAccessPointConfigurationForObjectLambda`.
@@ -41,15 +41,24 @@ impl PutAccessPointConfigurationForObjectLambdaFluentBuilder {
         }
     }
     /// Access the PutAccessPointConfigurationForObjectLambda as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambda, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambda,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -58,16 +67,19 @@ impl PutAccessPointConfigurationForObjectLambdaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -85,17 +97,30 @@ impl PutAccessPointConfigurationForObjectLambdaFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambda, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambda,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
@@ -132,17 +157,12 @@ impl PutAccessPointConfigurationForObjectLambdaFluentBuilder {
         self
     }
     /// <p>Object Lambda Access Point configuration document.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectLambdaConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ObjectLambdaConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
     /// <p>Object Lambda Access Point configuration document.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObjectLambdaConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ObjectLambdaConfiguration> {
         self.inner.get_configuration()
     }
 }

@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAlarmsForMetricOutput`](crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput) with field(s):
     ///   - [`metric_alarms(Option<Vec<MetricAlarm>>)`](crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput::metric_alarms): <p>The information for each alarm with the specified metric.</p>
     /// - On failure, responds with [`SdkError<DescribeAlarmsForMetricError>`](crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError)
-    pub fn describe_alarms_for_metric(
-        &self,
-    ) -> crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricFluentBuilder
-    {
+    pub fn describe_alarms_for_metric(&self) -> crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricFluentBuilder {
         crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricFluentBuilder::new(self.handle.clone())
     }
 }

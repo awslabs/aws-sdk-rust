@@ -77,18 +77,14 @@ impl ::aws_http::request_id::RequestId for UpdateAnnotationStoreOutput {
 }
 impl UpdateAnnotationStoreOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAnnotationStoreOutput`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::update_annotation_store::builders::UpdateAnnotationStoreOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_annotation_store::builders::UpdateAnnotationStoreOutputBuilder {
         crate::operation::update_annotation_store::builders::UpdateAnnotationStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAnnotationStoreOutput`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAnnotationStoreOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference: ::std::option::Option<crate::types::ReferenceItem>,
@@ -122,10 +118,7 @@ impl UpdateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>The store's genome reference.</p>
-    pub fn set_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceItem>,
-    ) -> Self {
+    pub fn set_reference(mut self, input: ::std::option::Option<crate::types::ReferenceItem>) -> Self {
         self.reference = input;
         self
     }
@@ -181,10 +174,7 @@ impl UpdateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>When the store was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -198,10 +188,7 @@ impl UpdateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>When the store was updated.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -215,10 +202,7 @@ impl UpdateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>Parsing options for the store.</p>
-    pub fn set_store_options(
-        mut self,
-        input: ::std::option::Option<crate::types::StoreOptions>,
-    ) -> Self {
+    pub fn set_store_options(mut self, input: ::std::option::Option<crate::types::StoreOptions>) -> Self {
         self.store_options = input;
         self
     }
@@ -232,10 +216,7 @@ impl UpdateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>The annotation file format of the store.</p>
-    pub fn set_store_format(
-        mut self,
-        input: ::std::option::Option<crate::types::StoreFormat>,
-    ) -> Self {
+    pub fn set_store_format(mut self, input: ::std::option::Option<crate::types::StoreFormat>) -> Self {
         self.store_format = input;
         self
     }

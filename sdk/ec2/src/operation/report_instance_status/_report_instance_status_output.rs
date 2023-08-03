@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for ReportInstanceStatusOutput {
 }
 impl ReportInstanceStatusOutput {
     /// Creates a new builder-style object to manufacture [`ReportInstanceStatusOutput`](crate::operation::report_instance_status::ReportInstanceStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::report_instance_status::builders::ReportInstanceStatusOutputBuilder {
+    pub fn builder() -> crate::operation::report_instance_status::builders::ReportInstanceStatusOutputBuilder {
         crate::operation::report_instance_status::builders::ReportInstanceStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`ReportInstanceStatusOutput`](crate::operation::report_instance_status::ReportInstanceStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportInstanceStatusOutputBuilder {
     _request_id: Option<String>,
 }

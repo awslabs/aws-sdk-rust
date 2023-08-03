@@ -24,16 +24,14 @@ impl DeregisterDelegatedAdministratorInput {
 }
 impl DeregisterDelegatedAdministratorInput {
     /// Creates a new builder-style object to manufacture [`DeregisterDelegatedAdministratorInput`](crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorInput).
-    pub fn builder() -> crate::operation::deregister_delegated_administrator::builders::DeregisterDelegatedAdministratorInputBuilder{
+    pub fn builder() -> crate::operation::deregister_delegated_administrator::builders::DeregisterDelegatedAdministratorInputBuilder {
         crate::operation::deregister_delegated_administrator::builders::DeregisterDelegatedAdministratorInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterDelegatedAdministratorInput`](crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterDelegatedAdministratorInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_principal: ::std::option::Option<::std::string::String>,
@@ -55,19 +53,13 @@ impl DeregisterDelegatedAdministratorInputBuilder {
     }
     /// <p>The service principal name of an Amazon Web Services service for which the account is a delegated administrator.</p>
     /// <p>Delegated administrator privileges are revoked for only the specified Amazon Web Services service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
-    pub fn service_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_principal = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service principal name of an Amazon Web Services service for which the account is a delegated administrator.</p>
     /// <p>Delegated administrator privileges are revoked for only the specified Amazon Web Services service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
-    pub fn set_service_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_principal = input;
         self
     }
@@ -85,11 +77,9 @@ impl DeregisterDelegatedAdministratorInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorInput {
-                account_id: self.account_id
-                ,
-                service_principal: self.service_principal
-                ,
-            }
+                account_id: self.account_id,
+                service_principal: self.service_principal,
+            },
         )
     }
 }

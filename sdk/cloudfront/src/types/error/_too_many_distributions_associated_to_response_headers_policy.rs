@@ -28,35 +28,27 @@ impl ::std::fmt::Display for TooManyDistributionsAssociatedToResponseHeadersPoli
     }
 }
 impl ::std::error::Error for TooManyDistributionsAssociatedToResponseHeadersPolicy {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::TooManyDistributionsAssociatedToResponseHeadersPolicy
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::TooManyDistributionsAssociatedToResponseHeadersPolicy {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyDistributionsAssociatedToResponseHeadersPolicy
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyDistributionsAssociatedToResponseHeadersPolicy {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl TooManyDistributionsAssociatedToResponseHeadersPolicy {
     /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::types::error::TooManyDistributionsAssociatedToResponseHeadersPolicy).
-    pub fn builder(
-    ) -> crate::types::error::builders::TooManyDistributionsAssociatedToResponseHeadersPolicyBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::TooManyDistributionsAssociatedToResponseHeadersPolicyBuilder {
         crate::types::error::builders::TooManyDistributionsAssociatedToResponseHeadersPolicyBuilder::default()
     }
 }
 
 /// A builder for [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::types::error::TooManyDistributionsAssociatedToResponseHeadersPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TooManyDistributionsAssociatedToResponseHeadersPolicyBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -83,17 +75,12 @@ impl TooManyDistributionsAssociatedToResponseHeadersPolicyBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }
     /// Consumes the builder and constructs a [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::types::error::TooManyDistributionsAssociatedToResponseHeadersPolicy).
-    pub fn build(
-        self,
-    ) -> crate::types::error::TooManyDistributionsAssociatedToResponseHeadersPolicy {
+    pub fn build(self) -> crate::types::error::TooManyDistributionsAssociatedToResponseHeadersPolicy {
         crate::types::error::TooManyDistributionsAssociatedToResponseHeadersPolicy {
             message: self.message,
             meta: self.meta.unwrap_or_default(),

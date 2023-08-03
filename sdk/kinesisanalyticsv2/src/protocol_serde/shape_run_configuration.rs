@@ -6,10 +6,7 @@ pub fn ser_run_configuration(
     if let Some(var_1) = &input.flink_run_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FlinkRunConfiguration").start_object();
-        crate::protocol_serde::shape_flink_run_configuration::ser_flink_run_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_flink_run_configuration::ser_flink_run_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.sql_run_configurations {
@@ -18,10 +15,7 @@ pub fn ser_run_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_sql_run_configuration::ser_sql_run_configuration(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_sql_run_configuration::ser_sql_run_configuration(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`table_restore_status_details(Option<Vec<TableRestoreStatus>>)`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput::table_restore_status_details): <p>A list of status details for one or more table restore requests.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput::marker): <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
     /// - On failure, responds with [`SdkError<DescribeTableRestoreStatusError>`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError)
-    pub fn describe_table_restore_status(&self) -> crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusFluentBuilder{
+    pub fn describe_table_restore_status(
+        &self,
+    ) -> crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusFluentBuilder {
         crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusFluentBuilder::new(self.handle.clone())
     }
 }

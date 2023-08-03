@@ -5,8 +5,7 @@
 pub struct GetResourceShareInvitationsOutput {
     /// <p>An array of objects that contain the details about the invitations.</p>
     #[doc(hidden)]
-    pub resource_share_invitations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareInvitation>>,
+    pub resource_share_invitations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareInvitation>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetResourceShareInvitationsOutput {
 }
 impl GetResourceShareInvitationsOutput {
     /// <p>An array of objects that contain the details about the invitations.</p>
-    pub fn resource_share_invitations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceShareInvitation]> {
+    pub fn resource_share_invitations(&self) -> ::std::option::Option<&[crate::types::ResourceShareInvitation]> {
         self.resource_share_invitations.as_deref()
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetResourceShareInvitationsOutput {
 }
 impl GetResourceShareInvitationsOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceShareInvitationsOutput`](crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput).
-    pub fn builder() -> crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsOutputBuilder {
         crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceShareInvitationsOutput`](crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceShareInvitationsOutputBuilder {
-    pub(crate) resource_share_invitations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareInvitation>>,
+    pub(crate) resource_share_invitations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareInvitation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl GetResourceShareInvitationsOutputBuilder {
     /// To override the contents of this collection use [`set_resource_share_invitations`](Self::set_resource_share_invitations).
     ///
     /// <p>An array of objects that contain the details about the invitations.</p>
-    pub fn resource_share_invitations(
-        mut self,
-        input: crate::types::ResourceShareInvitation,
-    ) -> Self {
+    pub fn resource_share_invitations(mut self, input: crate::types::ResourceShareInvitation) -> Self {
         let mut v = self.resource_share_invitations.unwrap_or_default();
         v.push(input);
         self.resource_share_invitations = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that contain the details about the invitations.</p>
-    pub fn set_resource_share_invitations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareInvitation>>,
-    ) -> Self {
+    pub fn set_resource_share_invitations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareInvitation>>) -> Self {
         self.resource_share_invitations = input;
         self
     }
     /// <p>An array of objects that contain the details about the invitations.</p>
-    pub fn get_resource_share_invitations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceShareInvitation>> {
+    pub fn get_resource_share_invitations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceShareInvitation>> {
         &self.resource_share_invitations
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
@@ -100,9 +86,7 @@ impl GetResourceShareInvitationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetResourceShareInvitationsOutput`](crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput {
+    pub fn build(self) -> crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput {
         crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput {
             resource_share_invitations: self.resource_share_invitations,
             next_token: self.next_token,

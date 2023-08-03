@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListRecordHistoryOutput {
 }
 impl ListRecordHistoryOutput {
     /// Creates a new builder-style object to manufacture [`ListRecordHistoryOutput`](crate::operation::list_record_history::ListRecordHistoryOutput).
-    pub fn builder(
-    ) -> crate::operation::list_record_history::builders::ListRecordHistoryOutputBuilder {
+    pub fn builder() -> crate::operation::list_record_history::builders::ListRecordHistoryOutputBuilder {
         crate::operation::list_record_history::builders::ListRecordHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecordHistoryOutput`](crate::operation::list_record_history::ListRecordHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecordHistoryOutputBuilder {
     pub(crate) record_details: ::std::option::Option<::std::vec::Vec<crate::types::RecordDetail>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -57,32 +54,21 @@ impl ListRecordHistoryOutputBuilder {
         self
     }
     /// <p>The records, in reverse chronological order.</p>
-    pub fn set_record_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecordDetail>>,
-    ) -> Self {
+    pub fn set_record_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecordDetail>>) -> Self {
         self.record_details = input;
         self
     }
     /// <p>The records, in reverse chronological order.</p>
-    pub fn get_record_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordDetail>> {
+    pub fn get_record_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordDetail>> {
         &self.record_details
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

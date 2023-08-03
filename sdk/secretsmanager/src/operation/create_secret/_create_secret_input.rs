@@ -57,8 +57,7 @@ pub struct CreateSecretInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A list of Regions and KMS keys to replicate secrets.</p>
     #[doc(hidden)]
-    pub add_replica_regions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,
+    pub add_replica_regions: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
     #[doc(hidden)]
     pub force_overwrite_replica_secret: ::std::option::Option<bool>,
@@ -143,10 +142,7 @@ impl ::std::fmt::Debug for CreateSecretInput {
         formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.field("add_replica_regions", &self.add_replica_regions);
-        formatter.field(
-            "force_overwrite_replica_secret",
-            &self.force_overwrite_replica_secret,
-        );
+        formatter.field("force_overwrite_replica_secret", &self.force_overwrite_replica_secret);
         formatter.finish()
     }
 }
@@ -168,8 +164,7 @@ pub struct CreateSecretInputBuilder {
     pub(crate) secret_binary: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) secret_string: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) add_replica_regions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,
+    pub(crate) add_replica_regions: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,
     pub(crate) force_overwrite_replica_secret: ::std::option::Option<bool>,
 }
 impl CreateSecretInputBuilder {
@@ -203,10 +198,7 @@ impl CreateSecretInputBuilder {
     /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> and <code>SecretBinary</code> values are different from those in the request, then the request fails because you cannot modify an existing version. Instead, use <code>PutSecretValue</code> to create a new version.</p> </li>
     /// </ul>
     /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
@@ -220,10 +212,7 @@ impl CreateSecretInputBuilder {
     /// <li> <p>If a version with this value already exists and that version's <code>SecretString</code> and <code>SecretBinary</code> values are different from those in the request, then the request fails because you cannot modify an existing version. Instead, use <code>PutSecretValue</code> to create a new version.</p> </li>
     /// </ul>
     /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -287,10 +276,7 @@ impl CreateSecretInputBuilder {
     /// <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>This parameter is not available in the Secrets Manager console.</p>
-    pub fn set_secret_binary(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_secret_binary(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.secret_binary = input;
         self
     }
@@ -303,20 +289,14 @@ impl CreateSecretInputBuilder {
     /// <p>The text data to encrypt and store in this new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that a Lambda rotation function can parse.</p>
-    pub fn secret_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text data to encrypt and store in this new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>
     /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that a Lambda rotation function can parse.</p>
-    pub fn set_secret_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_string = input;
         self
     }
@@ -364,10 +344,7 @@ impl CreateSecretInputBuilder {
     /// <li> <p>Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it for Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags per secret limit.</p> </li>
     /// <li> <p>If you use your tagging schema across multiple services and resources, other services might have restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers representable in UTF-8, plus the following special characters: + - = . _ : / @.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -400,17 +377,12 @@ impl CreateSecretInputBuilder {
         self
     }
     /// <p>A list of Regions and KMS keys to replicate secrets.</p>
-    pub fn set_add_replica_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,
-    ) -> Self {
+    pub fn set_add_replica_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>) -> Self {
         self.add_replica_regions = input;
         self
     }
     /// <p>A list of Regions and KMS keys to replicate secrets.</p>
-    pub fn get_add_replica_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>> {
+    pub fn get_add_replica_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>> {
         &self.add_replica_regions
     }
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
@@ -419,10 +391,7 @@ impl CreateSecretInputBuilder {
         self
     }
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
-    pub fn set_force_overwrite_replica_secret(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_force_overwrite_replica_secret(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_overwrite_replica_secret = input;
         self
     }
@@ -431,12 +400,7 @@ impl CreateSecretInputBuilder {
         &self.force_overwrite_replica_secret
     }
     /// Consumes the builder and constructs a [`CreateSecretInput`](crate::operation::create_secret::CreateSecretInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_secret::CreateSecretInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_secret::CreateSecretInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_secret::CreateSecretInput {
             name: self.name,
             client_request_token: self.client_request_token,
@@ -461,10 +425,7 @@ impl ::std::fmt::Debug for CreateSecretInputBuilder {
         formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.field("add_replica_regions", &self.add_replica_regions);
-        formatter.field(
-            "force_overwrite_replica_secret",
-            &self.force_overwrite_replica_secret,
-        );
+        formatter.field("force_overwrite_replica_secret", &self.force_overwrite_replica_secret);
         formatter.finish()
     }
 }

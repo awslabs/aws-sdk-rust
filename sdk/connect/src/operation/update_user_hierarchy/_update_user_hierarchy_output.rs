@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateUserHierarchyOutput {
 }
 impl UpdateUserHierarchyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserHierarchyOutput`](crate::operation::update_user_hierarchy::UpdateUserHierarchyOutput).
-    pub fn builder(
-    ) -> crate::operation::update_user_hierarchy::builders::UpdateUserHierarchyOutputBuilder {
-        crate::operation::update_user_hierarchy::builders::UpdateUserHierarchyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_user_hierarchy::builders::UpdateUserHierarchyOutputBuilder {
+        crate::operation::update_user_hierarchy::builders::UpdateUserHierarchyOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserHierarchyOutput`](crate::operation::update_user_hierarchy::UpdateUserHierarchyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserHierarchyOutputBuilder {
     _request_id: Option<String>,
 }

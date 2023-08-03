@@ -49,9 +49,7 @@ impl IdentitySourceDetails {
 
 /// A builder for [`IdentitySourceDetails`](crate::types::IdentitySourceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdentitySourceDetailsBuilder {
     pub(crate) client_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) user_pool_arn: ::std::option::Option<::std::string::String>,
@@ -71,10 +69,7 @@ impl IdentitySourceDetailsBuilder {
         self
     }
     /// <p>The application client IDs associated with the specified Amazon Cognito user pool that are enabled for this identity source.</p>
-    pub fn set_client_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_client_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.client_ids = input;
         self
     }
@@ -83,18 +78,12 @@ impl IdentitySourceDetailsBuilder {
         &self.client_ids
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool whose identities are accessible to this Verified Permissions policy store.</p>
-    pub fn user_pool_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_pool_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool whose identities are accessible to this Verified Permissions policy store.</p>
-    pub fn set_user_pool_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_arn = input;
         self
     }
@@ -104,19 +93,13 @@ impl IdentitySourceDetailsBuilder {
     }
     /// <p>The well-known URL that points to this user pool's OIDC discovery endpoint. This is a URL string in the following format. This URL replaces the placeholders for both the Amazon Web Services Region and the user pool identifier with those appropriate for this user pool.</p>
     /// <p> <code>https://cognito-idp.<i>&lt;region&gt;</i>.amazonaws.com/<i>&lt;user-pool-id&gt;</i>/.well-known/openid-configuration</code> </p>
-    pub fn discovery_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discovery_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discovery_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The well-known URL that points to this user pool's OIDC discovery endpoint. This is a URL string in the following format. This URL replaces the placeholders for both the Amazon Web Services Region and the user pool identifier with those appropriate for this user pool.</p>
     /// <p> <code>https://cognito-idp.<i>&lt;region&gt;</i>.amazonaws.com/<i>&lt;user-pool-id&gt;</i>/.well-known/openid-configuration</code> </p>
-    pub fn set_discovery_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discovery_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.discovery_url = input;
         self
     }
@@ -133,10 +116,7 @@ impl IdentitySourceDetailsBuilder {
     }
     /// <p>A string that identifies the type of OIDC service represented by this identity source. </p>
     /// <p>At this time, the only valid value is <code>cognito</code>.</p>
-    pub fn set_open_id_issuer(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenIdIssuer>,
-    ) -> Self {
+    pub fn set_open_id_issuer(mut self, input: ::std::option::Option<crate::types::OpenIdIssuer>) -> Self {
         self.open_id_issuer = input;
         self
     }

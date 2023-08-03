@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StartPipelineExecutionOutput`](crate::operation::start_pipeline_execution::StartPipelineExecutionOutput) with field(s):
     ///   - [`pipeline_execution_id(Option<String>)`](crate::operation::start_pipeline_execution::StartPipelineExecutionOutput::pipeline_execution_id): <p>The unique system-generated ID of the pipeline execution that was started.</p>
     /// - On failure, responds with [`SdkError<StartPipelineExecutionError>`](crate::operation::start_pipeline_execution::StartPipelineExecutionError)
-    pub fn start_pipeline_execution(
-        &self,
-    ) -> crate::operation::start_pipeline_execution::builders::StartPipelineExecutionFluentBuilder
-    {
+    pub fn start_pipeline_execution(&self) -> crate::operation::start_pipeline_execution::builders::StartPipelineExecutionFluentBuilder {
         crate::operation::start_pipeline_execution::builders::StartPipelineExecutionFluentBuilder::new(self.handle.clone())
     }
 }

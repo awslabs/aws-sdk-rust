@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetBucketEncryptionOutput`](crate::operation::get_bucket_encryption::GetBucketEncryptionOutput) with field(s):
     ///   - [`server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::operation::get_bucket_encryption::GetBucketEncryptionOutput::server_side_encryption_configuration): <p>Specifies the default server-side-encryption configuration.</p>
     /// - On failure, responds with [`SdkError<GetBucketEncryptionError>`](crate::operation::get_bucket_encryption::GetBucketEncryptionError)
-    pub fn get_bucket_encryption(
-        &self,
-    ) -> crate::operation::get_bucket_encryption::builders::GetBucketEncryptionFluentBuilder {
-        crate::operation::get_bucket_encryption::builders::GetBucketEncryptionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_bucket_encryption(&self) -> crate::operation::get_bucket_encryption::builders::GetBucketEncryptionFluentBuilder {
+        crate::operation::get_bucket_encryption::builders::GetBucketEncryptionFluentBuilder::new(self.handle.clone())
     }
 }

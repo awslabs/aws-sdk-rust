@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for SubscribeToDatasetOutput {
 }
 impl SubscribeToDatasetOutput {
     /// Creates a new builder-style object to manufacture [`SubscribeToDatasetOutput`](crate::operation::subscribe_to_dataset::SubscribeToDatasetOutput).
-    pub fn builder(
-    ) -> crate::operation::subscribe_to_dataset::builders::SubscribeToDatasetOutputBuilder {
+    pub fn builder() -> crate::operation::subscribe_to_dataset::builders::SubscribeToDatasetOutputBuilder {
         crate::operation::subscribe_to_dataset::builders::SubscribeToDatasetOutputBuilder::default()
     }
 }
 
 /// A builder for [`SubscribeToDatasetOutput`](crate::operation::subscribe_to_dataset::SubscribeToDatasetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubscribeToDatasetOutputBuilder {
     _request_id: Option<String>,
 }

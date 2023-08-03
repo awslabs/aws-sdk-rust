@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteImportedKeyMaterialOutput {
 }
 impl DeleteImportedKeyMaterialOutput {
     /// Creates a new builder-style object to manufacture [`DeleteImportedKeyMaterialOutput`](crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialOutput).
-    pub fn builder() -> crate::operation::delete_imported_key_material::builders::DeleteImportedKeyMaterialOutputBuilder{
+    pub fn builder() -> crate::operation::delete_imported_key_material::builders::DeleteImportedKeyMaterialOutputBuilder {
         crate::operation::delete_imported_key_material::builders::DeleteImportedKeyMaterialOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteImportedKeyMaterialOutput`](crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteImportedKeyMaterialOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteImportedKeyMaterialOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteImportedKeyMaterialOutput`](crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialOutput {
+    pub fn build(self) -> crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialOutput {
         crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialOutput {
             _request_id: self._request_id,
         }

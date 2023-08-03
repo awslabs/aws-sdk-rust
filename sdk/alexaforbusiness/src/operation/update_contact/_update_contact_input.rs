@@ -170,17 +170,12 @@ impl UpdateContactInputBuilder {
         self
     }
     /// <p>The list of phone numbers for the contact.</p>
-    pub fn set_phone_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
-    ) -> Self {
+    pub fn set_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>) -> Self {
         self.phone_numbers = input;
         self
     }
     /// <p>The list of phone numbers for the contact.</p>
-    pub fn get_phone_numbers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
+    pub fn get_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
         &self.phone_numbers
     }
     /// Appends an item to `sip_addresses`.
@@ -195,26 +190,18 @@ impl UpdateContactInputBuilder {
         self
     }
     /// <p>The list of SIP addresses for the contact.</p>
-    pub fn set_sip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SipAddress>>,
-    ) -> Self {
+    pub fn set_sip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SipAddress>>) -> Self {
         self.sip_addresses = input;
         self
     }
     /// <p>The list of SIP addresses for the contact.</p>
-    pub fn get_sip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipAddress>> {
+    pub fn get_sip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SipAddress>> {
         &self.sip_addresses
     }
     /// Consumes the builder and constructs a [`UpdateContactInput`](crate::operation::update_contact::UpdateContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_contact::UpdateContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_contact::UpdateContactInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_contact::UpdateContactInput {
             contact_arn: self.contact_arn,
             display_name: self.display_name,

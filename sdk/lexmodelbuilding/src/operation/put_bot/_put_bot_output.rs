@@ -171,9 +171,7 @@ impl PutBotOutput {
 
 /// A builder for [`PutBotOutput`](crate::operation::put_bot::PutBotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBotOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -238,10 +236,7 @@ impl PutBotOutputBuilder {
         self
     }
     /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
-    pub fn set_intents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Intent>>,
-    ) -> Self {
+    pub fn set_intents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Intent>>) -> Self {
         self.intents = input;
         self
     }
@@ -269,10 +264,7 @@ impl PutBotOutputBuilder {
         self
     }
     /// <p>The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.</p>
-    pub fn set_nlu_intent_confidence_threshold(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_nlu_intent_confidence_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.nlu_intent_confidence_threshold = input;
         self
     }
@@ -286,10 +278,7 @@ impl PutBotOutputBuilder {
         self
     }
     /// <p> The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see <code>PutBot</code>. </p>
-    pub fn set_clarification_prompt(
-        mut self,
-        input: ::std::option::Option<crate::types::Prompt>,
-    ) -> Self {
+    pub fn set_clarification_prompt(mut self, input: ::std::option::Option<crate::types::Prompt>) -> Self {
         self.clarification_prompt = input;
         self
     }
@@ -303,10 +292,7 @@ impl PutBotOutputBuilder {
         self
     }
     /// <p>The message that Amazon Lex uses to cancel a conversation. For more information, see <code>PutBot</code>.</p>
-    pub fn set_abort_statement(
-        mut self,
-        input: ::std::option::Option<crate::types::Statement>,
-    ) -> Self {
+    pub fn set_abort_statement(mut self, input: ::std::option::Option<crate::types::Statement>) -> Self {
         self.abort_statement = input;
         self
     }
@@ -341,18 +327,12 @@ impl PutBotOutputBuilder {
         &self.status
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to build the bot.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to build the bot.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -366,10 +346,7 @@ impl PutBotOutputBuilder {
         self
     }
     /// <p>The date that the bot was updated. When you create a resource, the creation date and last updated date are the same.</p>
-    pub fn set_last_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date = input;
         self
     }
@@ -383,10 +360,7 @@ impl PutBotOutputBuilder {
         self
     }
     /// <p>The date that the bot was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -521,10 +495,7 @@ impl PutBotOutputBuilder {
         self
     }
     /// <p>A list of tags associated with the bot.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

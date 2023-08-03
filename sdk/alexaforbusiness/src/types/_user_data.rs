@@ -58,9 +58,7 @@ impl UserData {
 
 /// A builder for [`UserData`](crate::types::UserData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserDataBuilder {
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) first_name: ::std::option::Option<::std::string::String>,
@@ -132,10 +130,7 @@ impl UserDataBuilder {
         self
     }
     /// <p>The enrollment status of a user.</p>
-    pub fn set_enrollment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EnrollmentStatus>,
-    ) -> Self {
+    pub fn set_enrollment_status(mut self, input: ::std::option::Option<crate::types::EnrollmentStatus>) -> Self {
         self.enrollment_status = input;
         self
     }
@@ -144,18 +139,12 @@ impl UserDataBuilder {
         &self.enrollment_status
     }
     /// <p>The enrollment ARN of a user.</p>
-    pub fn enrollment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn enrollment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.enrollment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The enrollment ARN of a user.</p>
-    pub fn set_enrollment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_enrollment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.enrollment_id = input;
         self
     }

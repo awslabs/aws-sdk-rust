@@ -86,9 +86,7 @@ impl DisruptionCompliance {
 
 /// A builder for [`DisruptionCompliance`](crate::types::DisruptionCompliance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisruptionComplianceBuilder {
     pub(crate) achievable_rto_in_secs: ::std::option::Option<i32>,
     pub(crate) current_rto_in_secs: ::std::option::Option<i32>,
@@ -131,18 +129,12 @@ impl DisruptionComplianceBuilder {
         &self.current_rto_in_secs
     }
     /// <p>The RTO reference identifier.</p>
-    pub fn rto_reference_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rto_reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rto_reference_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The RTO reference identifier.</p>
-    pub fn set_rto_reference_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rto_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rto_reference_id = input;
         self
     }
@@ -151,18 +143,12 @@ impl DisruptionComplianceBuilder {
         &self.rto_reference_id
     }
     /// <p>The RTO description.</p>
-    pub fn rto_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rto_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rto_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The RTO description.</p>
-    pub fn set_rto_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rto_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rto_description = input;
         self
     }
@@ -185,18 +171,12 @@ impl DisruptionComplianceBuilder {
         &self.current_rpo_in_secs
     }
     /// <p>The RPO reference identifier.</p>
-    pub fn rpo_reference_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rpo_reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rpo_reference_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The RPO reference identifier.</p>
-    pub fn set_rpo_reference_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rpo_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rpo_reference_id = input;
         self
     }
@@ -205,18 +185,12 @@ impl DisruptionComplianceBuilder {
         &self.rpo_reference_id
     }
     /// <p>The RPO description.</p>
-    pub fn rpo_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rpo_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rpo_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The RPO description.</p>
-    pub fn set_rpo_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rpo_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rpo_description = input;
         self
     }
@@ -230,10 +204,7 @@ impl DisruptionComplianceBuilder {
         self
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn set_compliance_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceStatus>,
-    ) -> Self {
+    pub fn set_compliance_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
         self.compliance_status = input;
         self
     }

@@ -50,15 +50,12 @@ impl UploadDocumentsOutput {
 
 /// A builder for [`UploadDocumentsOutput`](crate::operation::upload_documents::UploadDocumentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UploadDocumentsOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) adds: ::std::option::Option<i64>,
     pub(crate) deletes: ::std::option::Option<i64>,
-    pub(crate) warnings:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentServiceWarning>>,
+    pub(crate) warnings: ::std::option::Option<::std::vec::Vec<crate::types::DocumentServiceWarning>>,
     _request_id: Option<String>,
 }
 impl UploadDocumentsOutputBuilder {
@@ -116,17 +113,12 @@ impl UploadDocumentsOutputBuilder {
         self
     }
     /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
-    pub fn set_warnings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentServiceWarning>>,
-    ) -> Self {
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentServiceWarning>>) -> Self {
         self.warnings = input;
         self
     }
     /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
-    pub fn get_warnings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentServiceWarning>> {
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentServiceWarning>> {
         &self.warnings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

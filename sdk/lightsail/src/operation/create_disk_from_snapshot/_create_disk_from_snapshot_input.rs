@@ -115,18 +115,14 @@ impl CreateDiskFromSnapshotInput {
 }
 impl CreateDiskFromSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CreateDiskFromSnapshotInput`](crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::create_disk_from_snapshot::builders::CreateDiskFromSnapshotInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_disk_from_snapshot::builders::CreateDiskFromSnapshotInputBuilder {
         crate::operation::create_disk_from_snapshot::builders::CreateDiskFromSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDiskFromSnapshotInput`](crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDiskFromSnapshotInputBuilder {
     pub(crate) disk_name: ::std::option::Option<::std::string::String>,
     pub(crate) disk_snapshot_name: ::std::option::Option<::std::string::String>,
@@ -158,10 +154,7 @@ impl CreateDiskFromSnapshotInputBuilder {
     /// <ul>
     /// <li> <p>This parameter cannot be defined together with the <code>source disk name</code> parameter. The <code>disk snapshot name</code> and <code>source disk name</code> parameters are mutually exclusive.</p> </li>
     /// </ul>
-    pub fn disk_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disk_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -170,10 +163,7 @@ impl CreateDiskFromSnapshotInputBuilder {
     /// <ul>
     /// <li> <p>This parameter cannot be defined together with the <code>source disk name</code> parameter. The <code>disk snapshot name</code> and <code>source disk name</code> parameters are mutually exclusive.</p> </li>
     /// </ul>
-    pub fn set_disk_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_disk_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_snapshot_name = input;
         self
     }
@@ -187,19 +177,13 @@ impl CreateDiskFromSnapshotInputBuilder {
     }
     /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>
     /// <p>Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>
     /// <p>Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -236,10 +220,7 @@ impl CreateDiskFromSnapshotInputBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -260,17 +241,12 @@ impl CreateDiskFromSnapshotInputBuilder {
         self
     }
     /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
-    pub fn set_add_ons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>>,
-    ) -> Self {
+    pub fn set_add_ons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>>) -> Self {
         self.add_ons = input;
         self
     }
     /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
-    pub fn get_add_ons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>> {
+    pub fn get_add_ons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>> {
         &self.add_ons
     }
     /// <p>The name of the source disk from which the source automatic snapshot was created.</p>
@@ -279,10 +255,7 @@ impl CreateDiskFromSnapshotInputBuilder {
     /// <li> <p>This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.</p> </li>
     /// <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    pub fn source_disk_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_disk_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -292,10 +265,7 @@ impl CreateDiskFromSnapshotInputBuilder {
     /// <li> <p>This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.</p> </li>
     /// <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    pub fn set_source_disk_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_disk_name = input;
         self
     }
@@ -356,10 +326,7 @@ impl CreateDiskFromSnapshotInputBuilder {
     /// <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>
     /// <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>
     /// </ul>
-    pub fn set_use_latest_restorable_auto_snapshot(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_use_latest_restorable_auto_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_latest_restorable_auto_snapshot = input;
         self
     }
@@ -379,18 +346,16 @@ impl CreateDiskFromSnapshotInputBuilder {
         crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotInput {
-                disk_name: self.disk_name,
-                disk_snapshot_name: self.disk_snapshot_name,
-                availability_zone: self.availability_zone,
-                size_in_gb: self.size_in_gb,
-                tags: self.tags,
-                add_ons: self.add_ons,
-                source_disk_name: self.source_disk_name,
-                restore_date: self.restore_date,
-                use_latest_restorable_auto_snapshot: self.use_latest_restorable_auto_snapshot,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotInput {
+            disk_name: self.disk_name,
+            disk_snapshot_name: self.disk_snapshot_name,
+            availability_zone: self.availability_zone,
+            size_in_gb: self.size_in_gb,
+            tags: self.tags,
+            add_ons: self.add_ons,
+            source_disk_name: self.source_disk_name,
+            restore_date: self.restore_date,
+            use_latest_restorable_auto_snapshot: self.use_latest_restorable_auto_snapshot,
+        })
     }
 }

@@ -20,9 +20,7 @@ pub struct CreateEventIntegrationInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateEventIntegrationInput {
     /// <p>The name of the event integration.</p>
@@ -46,37 +44,27 @@ impl CreateEventIntegrationInput {
         self.client_token.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateEventIntegrationInput {
     /// Creates a new builder-style object to manufacture [`CreateEventIntegrationInput`](crate::operation::create_event_integration::CreateEventIntegrationInput).
-    pub fn builder(
-    ) -> crate::operation::create_event_integration::builders::CreateEventIntegrationInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_event_integration::builders::CreateEventIntegrationInputBuilder {
         crate::operation::create_event_integration::builders::CreateEventIntegrationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEventIntegrationInput`](crate::operation::create_event_integration::CreateEventIntegrationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEventIntegrationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) event_filter: ::std::option::Option<crate::types::EventFilter>,
     pub(crate) event_bridge_bus: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateEventIntegrationInputBuilder {
     /// <p>The name of the event integration.</p>
@@ -113,10 +101,7 @@ impl CreateEventIntegrationInputBuilder {
         self
     }
     /// <p>The event filter.</p>
-    pub fn set_event_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::EventFilter>,
-    ) -> Self {
+    pub fn set_event_filter(mut self, input: ::std::option::Option<crate::types::EventFilter>) -> Self {
         self.event_filter = input;
         self
     }
@@ -125,18 +110,12 @@ impl CreateEventIntegrationInputBuilder {
         &self.event_filter
     }
     /// <p>The EventBridge bus.</p>
-    pub fn event_bridge_bus(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_bridge_bus(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_bridge_bus = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The EventBridge bus.</p>
-    pub fn set_event_bridge_bus(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_bridge_bus(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_bridge_bus = input;
         self
     }
@@ -163,50 +142,33 @@ impl CreateEventIntegrationInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEventIntegrationInput`](crate::operation::create_event_integration::CreateEventIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_event_integration::CreateEventIntegrationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_event_integration::CreateEventIntegrationInput {
-                name: self.name,
-                description: self.description,
-                event_filter: self.event_filter,
-                event_bridge_bus: self.event_bridge_bus,
-                client_token: self.client_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_event_integration::CreateEventIntegrationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_event_integration::CreateEventIntegrationInput {
+            name: self.name,
+            description: self.description,
+            event_filter: self.event_filter,
+            event_bridge_bus: self.event_bridge_bus,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }

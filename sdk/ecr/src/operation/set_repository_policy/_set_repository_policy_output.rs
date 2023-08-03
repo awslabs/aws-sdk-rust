@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for SetRepositoryPolicyOutput {
 }
 impl SetRepositoryPolicyOutput {
     /// Creates a new builder-style object to manufacture [`SetRepositoryPolicyOutput`](crate::operation::set_repository_policy::SetRepositoryPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::set_repository_policy::builders::SetRepositoryPolicyOutputBuilder {
-        crate::operation::set_repository_policy::builders::SetRepositoryPolicyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::set_repository_policy::builders::SetRepositoryPolicyOutputBuilder {
+        crate::operation::set_repository_policy::builders::SetRepositoryPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetRepositoryPolicyOutput`](crate::operation::set_repository_policy::SetRepositoryPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetRepositoryPolicyOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +65,12 @@ impl SetRepositoryPolicyOutputBuilder {
         &self.registry_id
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }

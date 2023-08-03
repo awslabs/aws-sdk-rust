@@ -58,15 +58,11 @@ impl DescribeDashboardSnapshotJobOutput {
         self.snapshot_job_id.as_deref()
     }
     /// <p>The user configuration for the snapshot job. This information is provided when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn user_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SnapshotUserConfigurationRedacted> {
+    pub fn user_configuration(&self) -> ::std::option::Option<&crate::types::SnapshotUserConfigurationRedacted> {
         self.user_configuration.as_ref()
     }
     /// <p>The snapshot configuration of the job. This information is provided when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn snapshot_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SnapshotConfiguration> {
+    pub fn snapshot_configuration(&self) -> ::std::option::Option<&crate::types::SnapshotConfiguration> {
         self.snapshot_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the snapshot job. The job ARN is generated when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
@@ -107,22 +103,19 @@ impl ::aws_http::request_id::RequestId for DescribeDashboardSnapshotJobOutput {
 }
 impl DescribeDashboardSnapshotJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardSnapshotJobOutput`](crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobOutput).
-    pub fn builder() -> crate::operation::describe_dashboard_snapshot_job::builders::DescribeDashboardSnapshotJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_dashboard_snapshot_job::builders::DescribeDashboardSnapshotJobOutputBuilder {
         crate::operation::describe_dashboard_snapshot_job::builders::DescribeDashboardSnapshotJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDashboardSnapshotJobOutput`](crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDashboardSnapshotJobOutputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_job_id: ::std::option::Option<::std::string::String>,
-    pub(crate) user_configuration:
-        ::std::option::Option<crate::types::SnapshotUserConfigurationRedacted>,
+    pub(crate) user_configuration: ::std::option::Option<crate::types::SnapshotUserConfigurationRedacted>,
     pub(crate) snapshot_configuration: ::std::option::Option<crate::types::SnapshotConfiguration>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::SnapshotJobStatus>,
@@ -134,18 +127,12 @@ pub struct DescribeDashboardSnapshotJobOutputBuilder {
 }
 impl DescribeDashboardSnapshotJobOutputBuilder {
     /// <p> The ID of the Amazon Web Services account that the dashboard snapshot job is executed in. </p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the Amazon Web Services account that the dashboard snapshot job is executed in. </p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -168,18 +155,12 @@ impl DescribeDashboardSnapshotJobOutputBuilder {
         &self.dashboard_id
     }
     /// <p>The ID of the job to be described. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn snapshot_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the job to be described. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn set_snapshot_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_job_id = input;
         self
     }
@@ -188,25 +169,17 @@ impl DescribeDashboardSnapshotJobOutputBuilder {
         &self.snapshot_job_id
     }
     /// <p>The user configuration for the snapshot job. This information is provided when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn user_configuration(
-        mut self,
-        input: crate::types::SnapshotUserConfigurationRedacted,
-    ) -> Self {
+    pub fn user_configuration(mut self, input: crate::types::SnapshotUserConfigurationRedacted) -> Self {
         self.user_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The user configuration for the snapshot job. This information is provided when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn set_user_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotUserConfigurationRedacted>,
-    ) -> Self {
+    pub fn set_user_configuration(mut self, input: ::std::option::Option<crate::types::SnapshotUserConfigurationRedacted>) -> Self {
         self.user_configuration = input;
         self
     }
     /// <p>The user configuration for the snapshot job. This information is provided when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn get_user_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SnapshotUserConfigurationRedacted> {
+    pub fn get_user_configuration(&self) -> &::std::option::Option<crate::types::SnapshotUserConfigurationRedacted> {
         &self.user_configuration
     }
     /// <p>The snapshot configuration of the job. This information is provided when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
@@ -215,17 +188,12 @@ impl DescribeDashboardSnapshotJobOutputBuilder {
         self
     }
     /// <p>The snapshot configuration of the job. This information is provided when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn set_snapshot_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotConfiguration>,
-    ) -> Self {
+    pub fn set_snapshot_configuration(mut self, input: ::std::option::Option<crate::types::SnapshotConfiguration>) -> Self {
         self.snapshot_configuration = input;
         self
     }
     /// <p>The snapshot configuration of the job. This information is provided when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn get_snapshot_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SnapshotConfiguration> {
+    pub fn get_snapshot_configuration(&self) -> &::std::option::Option<crate::types::SnapshotConfiguration> {
         &self.snapshot_configuration
     }
     /// <p>The Amazon Resource Name (ARN) for the snapshot job. The job ARN is generated when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
@@ -260,10 +228,7 @@ impl DescribeDashboardSnapshotJobOutputBuilder {
     /// <li> <p> <code>QUEUED</code> - The job is queued and hasn't started yet.</p> </li>
     /// <li> <p> <code>RUNNING</code> - The job is still running.</p> </li>
     /// </ul>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::SnapshotJobStatus>) -> Self {
         self.job_status = input;
         self
     }
@@ -283,10 +248,7 @@ impl DescribeDashboardSnapshotJobOutputBuilder {
         self
     }
     /// <p> The time that the snapshot job was created. </p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -300,10 +262,7 @@ impl DescribeDashboardSnapshotJobOutputBuilder {
         self
     }
     /// <p> The time that the snapshot job status was last updated. </p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -349,9 +308,7 @@ impl DescribeDashboardSnapshotJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDashboardSnapshotJobOutput`](crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobOutput {
+    pub fn build(self) -> crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobOutput {
         crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobOutput {
             aws_account_id: self.aws_account_id,
             dashboard_id: self.dashboard_id,

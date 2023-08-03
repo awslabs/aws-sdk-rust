@@ -9,10 +9,7 @@ pub fn ser_start_suite_run_input(
     if let Some(var_2) = &input.suite_run_configuration {
         #[allow(unused_mut)]
         let mut object_3 = object.key("suiteRunConfiguration").start_object();
-        crate::protocol_serde::shape_suite_run_configuration::ser_suite_run_configuration(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_suite_run_configuration::ser_suite_run_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.tags {

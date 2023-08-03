@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`licenses(Option<Vec<GrantedLicense>>)`](crate::operation::list_received_licenses::ListReceivedLicensesOutput::licenses): <p>Received license details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_received_licenses::ListReceivedLicensesOutput::next_token): <p>Token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListReceivedLicensesError>`](crate::operation::list_received_licenses::ListReceivedLicensesError)
-    pub fn list_received_licenses(
-        &self,
-    ) -> crate::operation::list_received_licenses::builders::ListReceivedLicensesFluentBuilder {
-        crate::operation::list_received_licenses::builders::ListReceivedLicensesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_received_licenses(&self) -> crate::operation::list_received_licenses::builders::ListReceivedLicensesFluentBuilder {
+        crate::operation::list_received_licenses::builders::ListReceivedLicensesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -38,10 +38,7 @@ impl EnableImageDeprecationFluentBuilder {
         }
     }
     /// Access the EnableImageDeprecation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::enable_image_deprecation::builders::EnableImageDeprecationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::enable_image_deprecation::builders::EnableImageDeprecationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl EnableImageDeprecationFluentBuilder {
             crate::operation::enable_image_deprecation::EnableImageDeprecation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_image_deprecation::EnableImageDeprecationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_image_deprecation::EnableImageDeprecationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl EnableImageDeprecationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl EnableImageDeprecationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_image_deprecation::EnableImageDeprecationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_image_deprecation::EnableImageDeprecationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_image_deprecation::EnableImageDeprecationError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl EnableImageDeprecationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_image_deprecation::EnableImageDeprecationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_image_deprecation::EnableImageDeprecationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_image_deprecation::EnableImageDeprecationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl EnableImageDeprecationFluentBuilder {
             crate::operation::enable_image_deprecation::EnableImageDeprecation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_image_deprecation::EnableImageDeprecationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_image_deprecation::EnableImageDeprecationError>,
     > {
         self.customize_middleware().await
     }
@@ -146,10 +132,7 @@ impl EnableImageDeprecationFluentBuilder {
     }
     /// <p>The date and time to deprecate the AMI, in UTC, in the following format: <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specify a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
     /// <p>You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10 years from now, except for public AMIs, where the upper limit is 2 years from the creation date.</p>
-    pub fn set_deprecate_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deprecate_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_deprecate_at(input);
         self
     }

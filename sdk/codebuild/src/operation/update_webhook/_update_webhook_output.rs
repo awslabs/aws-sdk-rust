@@ -28,9 +28,7 @@ impl UpdateWebhookOutput {
 
 /// A builder for [`UpdateWebhookOutput`](crate::operation::update_webhook::UpdateWebhookOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWebhookOutputBuilder {
     pub(crate) webhook: ::std::option::Option<crate::types::Webhook>,
     _request_id: Option<String>,

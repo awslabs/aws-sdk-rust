@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAccountAuditConfigurationOutput
 }
 impl DeleteAccountAuditConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountAuditConfigurationOutput`](crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationOutputBuilder {
         crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccountAuditConfigurationOutput`](crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccountAuditConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteAccountAuditConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAccountAuditConfigurationOutput`](crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationOutput {
         crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationOutput {
             _request_id: self._request_id,
         }

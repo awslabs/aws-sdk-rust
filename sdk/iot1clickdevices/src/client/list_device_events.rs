@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`events(Option<Vec<DeviceEvent>>)`](crate::operation::list_device_events::ListDeviceEventsOutput::events): <p>An array of zero or more elements describing the event(s) associated with the device.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_events::ListDeviceEventsOutput::next_token): <p>The token to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListDeviceEventsError>`](crate::operation::list_device_events::ListDeviceEventsError)
-    pub fn list_device_events(
-        &self,
-    ) -> crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder {
-        crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_device_events(&self) -> crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder {
+        crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder::new(self.handle.clone())
     }
 }

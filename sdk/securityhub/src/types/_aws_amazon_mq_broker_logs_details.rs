@@ -38,9 +38,7 @@ impl AwsAmazonMqBrokerLogsDetails {
         self.general_log_group.as_deref()
     }
     /// <p> The list of information about logs that are to be turned on for the specified broker. </p>
-    pub fn pending(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsAmazonMqBrokerLogsPendingDetails> {
+    pub fn pending(&self) -> ::std::option::Option<&crate::types::AwsAmazonMqBrokerLogsPendingDetails> {
         self.pending.as_ref()
     }
 }
@@ -53,9 +51,7 @@ impl AwsAmazonMqBrokerLogsDetails {
 
 /// A builder for [`AwsAmazonMqBrokerLogsDetails`](crate::types::AwsAmazonMqBrokerLogsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAmazonMqBrokerLogsDetailsBuilder {
     pub(crate) audit: ::std::option::Option<bool>,
     pub(crate) general: ::std::option::Option<bool>,
@@ -93,18 +89,12 @@ impl AwsAmazonMqBrokerLogsDetailsBuilder {
         &self.general
     }
     /// <p> The location of the CloudWatch Logs log group where audit logs are sent. </p>
-    pub fn audit_log_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audit_log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audit_log_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The location of the CloudWatch Logs log group where audit logs are sent. </p>
-    pub fn set_audit_log_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audit_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audit_log_group = input;
         self
     }
@@ -113,18 +103,12 @@ impl AwsAmazonMqBrokerLogsDetailsBuilder {
         &self.audit_log_group
     }
     /// <p> The location of the CloudWatch Logs log group where general logs are sent. </p>
-    pub fn general_log_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn general_log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.general_log_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The location of the CloudWatch Logs log group where general logs are sent. </p>
-    pub fn set_general_log_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_general_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.general_log_group = input;
         self
     }
@@ -138,17 +122,12 @@ impl AwsAmazonMqBrokerLogsDetailsBuilder {
         self
     }
     /// <p> The list of information about logs that are to be turned on for the specified broker. </p>
-    pub fn set_pending(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsAmazonMqBrokerLogsPendingDetails>,
-    ) -> Self {
+    pub fn set_pending(mut self, input: ::std::option::Option<crate::types::AwsAmazonMqBrokerLogsPendingDetails>) -> Self {
         self.pending = input;
         self
     }
     /// <p> The list of information about logs that are to be turned on for the specified broker. </p>
-    pub fn get_pending(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsAmazonMqBrokerLogsPendingDetails> {
+    pub fn get_pending(&self) -> &::std::option::Option<crate::types::AwsAmazonMqBrokerLogsPendingDetails> {
         &self.pending
     }
     /// Consumes the builder and constructs a [`AwsAmazonMqBrokerLogsDetails`](crate::types::AwsAmazonMqBrokerLogsDetails).

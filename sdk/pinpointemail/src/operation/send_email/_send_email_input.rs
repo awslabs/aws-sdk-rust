@@ -65,9 +65,7 @@ impl SendEmailInput {
 
 /// A builder for [`SendEmailInput`](crate::operation::send_email::SendEmailInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendEmailInputBuilder {
     pub(crate) from_email_address: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
@@ -79,18 +77,12 @@ pub struct SendEmailInputBuilder {
 }
 impl SendEmailInputBuilder {
     /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
-    pub fn from_email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
-    pub fn set_from_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_email_address = input;
         self
     }
@@ -104,10 +96,7 @@ impl SendEmailInputBuilder {
         self
     }
     /// <p>An object that contains the recipients of the email message.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::Destination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.destination = input;
         self
     }
@@ -120,49 +109,33 @@ impl SendEmailInputBuilder {
     /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
     ///
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    pub fn reply_to_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reply_to_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reply_to_addresses.unwrap_or_default();
         v.push(input.into());
         self.reply_to_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    pub fn set_reply_to_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_reply_to_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.reply_to_addresses = input;
         self
     }
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    pub fn get_reply_to_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reply_to_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.reply_to_addresses
     }
     /// <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
-    pub fn feedback_forwarding_email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feedback_forwarding_email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feedback_forwarding_email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
-    pub fn set_feedback_forwarding_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feedback_forwarding_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feedback_forwarding_email_address = input;
         self
     }
     /// <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
-    pub fn get_feedback_forwarding_email_address(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_feedback_forwarding_email_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.feedback_forwarding_email_address
     }
     /// <p>An object that contains the body of the message. You can send either a Simple message or a Raw message.</p>
@@ -191,32 +164,21 @@ impl SendEmailInputBuilder {
         self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
-    pub fn set_email_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
-    ) -> Self {
+    pub fn set_email_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>) -> Self {
         self.email_tags = input;
         self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
-    pub fn get_email_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageTag>> {
+    pub fn get_email_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageTag>> {
         &self.email_tags
     }
     /// <p>The name of the configuration set that you want to use when sending the email.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set that you want to use when sending the email.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -225,12 +187,7 @@ impl SendEmailInputBuilder {
         &self.configuration_set_name
     }
     /// Consumes the builder and constructs a [`SendEmailInput`](crate::operation::send_email::SendEmailInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_email::SendEmailInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_email::SendEmailInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_email::SendEmailInput {
             from_email_address: self.from_email_address,
             destination: self.destination,

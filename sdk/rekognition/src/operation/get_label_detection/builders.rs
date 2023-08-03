@@ -10,10 +10,7 @@ impl GetLabelDetectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_label_detection::GetLabelDetectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_label_detection::GetLabelDetectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_label_detection::GetLabelDetectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_label_detection();
         fluent_builder.inner = self;
@@ -55,9 +52,7 @@ impl GetLabelDetectionFluentBuilder {
         }
     }
     /// Access the GetLabelDetection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_label_detection::builders::GetLabelDetectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_label_detection::builders::GetLabelDetectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -69,9 +64,7 @@ impl GetLabelDetectionFluentBuilder {
             crate::operation::get_label_detection::GetLabelDetection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_label_detection::GetLabelDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_label_detection::GetLabelDetectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -81,10 +74,7 @@ impl GetLabelDetectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -93,9 +83,7 @@ impl GetLabelDetectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_label_detection::GetLabelDetectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_label_detection::GetLabelDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_label_detection::GetLabelDetectionError>,
     > {
         let op = self
             .inner
@@ -118,9 +106,7 @@ impl GetLabelDetectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_label_detection::GetLabelDetectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_label_detection::GetLabelDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_label_detection::GetLabelDetectionError>,
     > {
         self.send_middleware().await
     }
@@ -134,22 +120,15 @@ impl GetLabelDetectionFluentBuilder {
             crate::operation::get_label_detection::GetLabelDetection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_label_detection::GetLabelDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_label_detection::GetLabelDetectionError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_label_detection::paginator::GetLabelDetectionPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_label_detection::paginator::GetLabelDetectionPaginator {
-        crate::operation::get_label_detection::paginator::GetLabelDetectionPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_label_detection::paginator::GetLabelDetectionPaginator {
+        crate::operation::get_label_detection::paginator::GetLabelDetectionPaginator::new(self.handle, self.inner)
     }
     /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartlabelDetection</code>.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -199,10 +178,7 @@ impl GetLabelDetectionFluentBuilder {
         self
     }
     /// <p>Sort to use for elements in the <code>Labels</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelDetectionSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::LabelDetectionSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -216,17 +192,12 @@ impl GetLabelDetectionFluentBuilder {
         self
     }
     /// <p>Defines how to aggregate the returned results. Results can be aggregated by timestamps or segments.</p>
-    pub fn set_aggregate_by(
-        mut self,
-        input: ::std::option::Option<crate::types::LabelDetectionAggregateBy>,
-    ) -> Self {
+    pub fn set_aggregate_by(mut self, input: ::std::option::Option<crate::types::LabelDetectionAggregateBy>) -> Self {
         self.inner = self.inner.set_aggregate_by(input);
         self
     }
     /// <p>Defines how to aggregate the returned results. Results can be aggregated by timestamps or segments.</p>
-    pub fn get_aggregate_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::LabelDetectionAggregateBy> {
+    pub fn get_aggregate_by(&self) -> &::std::option::Option<crate::types::LabelDetectionAggregateBy> {
         self.inner.get_aggregate_by()
     }
 }

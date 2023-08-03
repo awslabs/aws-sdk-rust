@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_aliases::ListAliasesOutput::next_marker): <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     ///   - [`truncated(bool)`](crate::operation::list_aliases::ListAliasesOutput::truncated): <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListAliasesError>`](crate::operation::list_aliases::ListAliasesError)
-    pub fn list_aliases(
-        &self,
-    ) -> crate::operation::list_aliases::builders::ListAliasesFluentBuilder {
+    pub fn list_aliases(&self) -> crate::operation::list_aliases::builders::ListAliasesFluentBuilder {
         crate::operation::list_aliases::builders::ListAliasesFluentBuilder::new(self.handle.clone())
     }
 }

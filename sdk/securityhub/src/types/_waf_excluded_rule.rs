@@ -23,9 +23,7 @@ impl WafExcludedRule {
 
 /// A builder for [`WafExcludedRule`](crate::types::WafExcludedRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WafExcludedRuleBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl WafExcludedRuleBuilder {
     }
     /// Consumes the builder and constructs a [`WafExcludedRule`](crate::types::WafExcludedRule).
     pub fn build(self) -> crate::types::WafExcludedRule {
-        crate::types::WafExcludedRule {
-            rule_id: self.rule_id,
-        }
+        crate::types::WafExcludedRule { rule_id: self.rule_id }
     }
 }

@@ -55,15 +55,11 @@ impl InferenceSchedulerSummary {
         self.data_delay_offset_in_minutes
     }
     /// <p>How often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
-    pub fn data_upload_frequency(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataUploadFrequency> {
+    pub fn data_upload_frequency(&self) -> ::std::option::Option<&crate::types::DataUploadFrequency> {
         self.data_upload_frequency.as_ref()
     }
     /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
-    pub fn latest_inference_result(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LatestInferenceResult> {
+    pub fn latest_inference_result(&self) -> ::std::option::Option<&crate::types::LatestInferenceResult> {
         self.latest_inference_result.as_ref()
     }
 }
@@ -76,9 +72,7 @@ impl InferenceSchedulerSummary {
 
 /// A builder for [`InferenceSchedulerSummary`](crate::types::InferenceSchedulerSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferenceSchedulerSummaryBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,
@@ -119,18 +113,12 @@ impl InferenceSchedulerSummaryBuilder {
         &self.model_arn
     }
     /// <p>The name of the inference scheduler. </p>
-    pub fn inference_scheduler_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the inference scheduler. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_scheduler_name = input;
         self
     }
@@ -139,18 +127,12 @@ impl InferenceSchedulerSummaryBuilder {
         &self.inference_scheduler_name
     }
     /// <p> The Amazon Resource Name (ARN) of the inference scheduler. </p>
-    pub fn inference_scheduler_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the inference scheduler. </p>
-    pub fn set_inference_scheduler_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_scheduler_arn = input;
         self
     }
@@ -164,10 +146,7 @@ impl InferenceSchedulerSummaryBuilder {
         self
     }
     /// <p>Indicates the status of the inference scheduler. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceSchedulerStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::InferenceSchedulerStatus>) -> Self {
         self.status = input;
         self
     }
@@ -195,17 +174,12 @@ impl InferenceSchedulerSummaryBuilder {
         self
     }
     /// <p>How often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
-    pub fn set_data_upload_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::DataUploadFrequency>,
-    ) -> Self {
+    pub fn set_data_upload_frequency(mut self, input: ::std::option::Option<crate::types::DataUploadFrequency>) -> Self {
         self.data_upload_frequency = input;
         self
     }
     /// <p>How often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
-    pub fn get_data_upload_frequency(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataUploadFrequency> {
+    pub fn get_data_upload_frequency(&self) -> &::std::option::Option<crate::types::DataUploadFrequency> {
         &self.data_upload_frequency
     }
     /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
@@ -214,17 +188,12 @@ impl InferenceSchedulerSummaryBuilder {
         self
     }
     /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
-    pub fn set_latest_inference_result(
-        mut self,
-        input: ::std::option::Option<crate::types::LatestInferenceResult>,
-    ) -> Self {
+    pub fn set_latest_inference_result(mut self, input: ::std::option::Option<crate::types::LatestInferenceResult>) -> Self {
         self.latest_inference_result = input;
         self
     }
     /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
-    pub fn get_latest_inference_result(
-        &self,
-    ) -> &::std::option::Option<crate::types::LatestInferenceResult> {
+    pub fn get_latest_inference_result(&self) -> &::std::option::Option<crate::types::LatestInferenceResult> {
         &self.latest_inference_result
     }
     /// Consumes the builder and constructs a [`InferenceSchedulerSummary`](crate::types::InferenceSchedulerSummary).

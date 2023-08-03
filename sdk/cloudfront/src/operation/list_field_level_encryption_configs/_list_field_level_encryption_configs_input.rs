@@ -22,16 +22,14 @@ impl ListFieldLevelEncryptionConfigsInput {
 }
 impl ListFieldLevelEncryptionConfigsInput {
     /// Creates a new builder-style object to manufacture [`ListFieldLevelEncryptionConfigsInput`](crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsInput).
-    pub fn builder() -> crate::operation::list_field_level_encryption_configs::builders::ListFieldLevelEncryptionConfigsInputBuilder{
+    pub fn builder() -> crate::operation::list_field_level_encryption_configs::builders::ListFieldLevelEncryptionConfigsInputBuilder {
         crate::operation::list_field_level_encryption_configs::builders::ListFieldLevelEncryptionConfigsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFieldLevelEncryptionConfigsInput`](crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFieldLevelEncryptionConfigsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -74,11 +72,9 @@ impl ListFieldLevelEncryptionConfigsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsInput {
-                marker: self.marker
-                ,
-                max_items: self.max_items
-                ,
-            }
+                marker: self.marker,
+                max_items: self.max_items,
+            },
         )
     }
 }

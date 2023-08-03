@@ -6,10 +6,7 @@ pub fn ser_import_options(
     if let Some(var_1) = &input.destination_options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("destinationOptions").start_object();
-        crate::protocol_serde::shape_destination_options::ser_destination_options(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_destination_options::ser_destination_options(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.delimited_text_options {
@@ -23,17 +20,9 @@ pub fn ser_import_options(
 
 pub(crate) fn de_import_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ImportOptions>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ImportOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -43,36 +32,30 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "destinationOptions" => {
-                                builder = builder.set_destination_options(
-                                    crate::protocol_serde::shape_destination_options::de_destination_options(tokens)?
-                                );
-                            }
-                            "delimitedTextOptions" => {
-                                builder = builder.set_delimited_text_options(
-                                    crate::protocol_serde::shape_delimited_text_import_options::de_delimited_text_import_options(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "destinationOptions" => {
+                            builder =
+                                builder.set_destination_options(crate::protocol_serde::shape_destination_options::de_destination_options(tokens)?);
                         }
-                    }
+                        "delimitedTextOptions" => {
+                            builder = builder.set_delimited_text_options(
+                                crate::protocol_serde::shape_delimited_text_import_options::de_delimited_text_import_options(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

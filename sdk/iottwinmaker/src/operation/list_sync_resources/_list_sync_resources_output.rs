@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSyncResourcesOutput {
 }
 impl ListSyncResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListSyncResourcesOutput`](crate::operation::list_sync_resources::ListSyncResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_sync_resources::builders::ListSyncResourcesOutputBuilder {
+    pub fn builder() -> crate::operation::list_sync_resources::builders::ListSyncResourcesOutputBuilder {
         crate::operation::list_sync_resources::builders::ListSyncResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSyncResourcesOutput`](crate::operation::list_sync_resources::ListSyncResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSyncResourcesOutputBuilder {
-    pub(crate) sync_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::SyncResourceSummary>>,
+    pub(crate) sync_resources: ::std::option::Option<::std::vec::Vec<crate::types::SyncResourceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListSyncResourcesOutputBuilder {
         self
     }
     /// <p>The sync resources.</p>
-    pub fn set_sync_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SyncResourceSummary>>,
-    ) -> Self {
+    pub fn set_sync_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SyncResourceSummary>>) -> Self {
         self.sync_resources = input;
         self
     }
     /// <p>The sync resources.</p>
-    pub fn get_sync_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncResourceSummary>> {
+    pub fn get_sync_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncResourceSummary>> {
         &self.sync_resources
     }
     /// <p>The string that specifies the next page of results.</p>

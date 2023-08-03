@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`error(Option<String>)`](crate::operation::get_query_state::GetQueryStateOutput::error): <p>An error message when the operation fails.</p>
     ///   - [`state(Option<QueryStateString>)`](crate::operation::get_query_state::GetQueryStateOutput::state): <p>The state of a query previously submitted. The possible states are:</p>  <ul>   <li> <p>PENDING: the query is pending.</p> </li>   <li> <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p> </li>   <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>   <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetQueryStateError>`](crate::operation::get_query_state::GetQueryStateError)
-    pub fn get_query_state(
-        &self,
-    ) -> crate::operation::get_query_state::builders::GetQueryStateFluentBuilder {
-        crate::operation::get_query_state::builders::GetQueryStateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_query_state(&self) -> crate::operation::get_query_state::builders::GetQueryStateFluentBuilder {
+        crate::operation::get_query_state::builders::GetQueryStateFluentBuilder::new(self.handle.clone())
     }
 }

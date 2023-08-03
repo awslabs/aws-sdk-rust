@@ -37,14 +37,11 @@ impl WirelessGatewayLogOption {
 
 /// A builder for [`WirelessGatewayLogOption`](crate::types::WirelessGatewayLogOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WirelessGatewayLogOptionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::WirelessGatewayType>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,
-    pub(crate) events:
-        ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayEventLogOption>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayEventLogOption>>,
 }
 impl WirelessGatewayLogOptionBuilder {
     /// <p>The wireless gateway type.</p>
@@ -53,10 +50,7 @@ impl WirelessGatewayLogOptionBuilder {
         self
     }
     /// <p>The wireless gateway type.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessGatewayType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::WirelessGatewayType>) -> Self {
         self.r#type = input;
         self
     }
@@ -90,17 +84,12 @@ impl WirelessGatewayLogOptionBuilder {
         self
     }
     /// <p>The list of wireless gateway event log options.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayEventLogOption>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayEventLogOption>>) -> Self {
         self.events = input;
         self
     }
     /// <p>The list of wireless gateway event log options.</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayEventLogOption>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayEventLogOption>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`WirelessGatewayLogOption`](crate::types::WirelessGatewayLogOption).

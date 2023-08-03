@@ -54,8 +54,7 @@ impl ::std::fmt::Debug for DescribeCommentsInput {
 }
 impl DescribeCommentsInput {
     /// Creates a new builder-style object to manufacture [`DescribeCommentsInput`](crate::operation::describe_comments::DescribeCommentsInput).
-    pub fn builder() -> crate::operation::describe_comments::builders::DescribeCommentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_comments::builders::DescribeCommentsInputBuilder {
         crate::operation::describe_comments::builders::DescribeCommentsInputBuilder::default()
     }
 }
@@ -72,18 +71,12 @@ pub struct DescribeCommentsInputBuilder {
 }
 impl DescribeCommentsInputBuilder {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_token = input;
         self
     }
@@ -150,10 +143,7 @@ impl DescribeCommentsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCommentsInput`](crate::operation::describe_comments::DescribeCommentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_comments::DescribeCommentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_comments::DescribeCommentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_comments::DescribeCommentsInput {
             authentication_token: self.authentication_token,
             document_id: self.document_id,

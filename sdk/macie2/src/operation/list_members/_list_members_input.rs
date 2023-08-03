@@ -36,9 +36,7 @@ impl ListMembersInput {
 
 /// A builder for [`ListMembersInput`](crate::operation::list_members::ListMembersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMembersInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ impl ListMembersInputBuilder {
         &self.next_token
     }
     /// <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
-    pub fn only_associated(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn only_associated(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.only_associated = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
-    pub fn set_only_associated(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_only_associated(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.only_associated = input;
         self
     }
@@ -94,12 +86,7 @@ impl ListMembersInputBuilder {
         &self.only_associated
     }
     /// Consumes the builder and constructs a [`ListMembersInput`](crate::operation::list_members::ListMembersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_members::ListMembersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_members::ListMembersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_members::ListMembersInput {
             max_results: self.max_results,
             next_token: self.next_token,

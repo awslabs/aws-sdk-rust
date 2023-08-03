@@ -38,10 +38,7 @@ impl ResetDistributionCacheFluentBuilder {
         }
     }
     /// Access the ResetDistributionCache as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reset_distribution_cache::builders::ResetDistributionCacheInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::reset_distribution_cache::builders::ResetDistributionCacheInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ResetDistributionCacheFluentBuilder {
             crate::operation::reset_distribution_cache::ResetDistributionCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_distribution_cache::ResetDistributionCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_distribution_cache::ResetDistributionCacheError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ResetDistributionCacheFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ResetDistributionCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_distribution_cache::ResetDistributionCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_distribution_cache::ResetDistributionCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_distribution_cache::ResetDistributionCacheError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ResetDistributionCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_distribution_cache::ResetDistributionCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_distribution_cache::ResetDistributionCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_distribution_cache::ResetDistributionCacheError>,
     > {
         self.send_middleware().await
     }
@@ -118,27 +106,19 @@ impl ResetDistributionCacheFluentBuilder {
             crate::operation::reset_distribution_cache::ResetDistributionCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_distribution_cache::ResetDistributionCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_distribution_cache::ResetDistributionCacheError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the distribution for which to reset cache.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn distribution_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distribution_name(input.into());
         self
     }
     /// <p>The name of the distribution for which to reset cache.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn set_distribution_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distribution_name(input);
         self
     }

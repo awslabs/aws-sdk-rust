@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateWirelessGatewayOutput {
 }
 impl CreateWirelessGatewayOutput {
     /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayOutput`](crate::operation::create_wireless_gateway::CreateWirelessGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::create_wireless_gateway::builders::CreateWirelessGatewayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_wireless_gateway::builders::CreateWirelessGatewayOutputBuilder {
         crate::operation::create_wireless_gateway::builders::CreateWirelessGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWirelessGatewayOutput`](crate::operation::create_wireless_gateway::CreateWirelessGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWirelessGatewayOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

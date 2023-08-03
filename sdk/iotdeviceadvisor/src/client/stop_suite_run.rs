@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`suite_run_id(impl ::std::convert::Into<String>)`](crate::operation::stop_suite_run::builders::StopSuiteRunFluentBuilder::suite_run_id) / [`set_suite_run_id(Option<String>)`](crate::operation::stop_suite_run::builders::StopSuiteRunFluentBuilder::set_suite_run_id): <p>Suite run ID of the test suite run to be stopped.</p>
     /// - On success, responds with [`StopSuiteRunOutput`](crate::operation::stop_suite_run::StopSuiteRunOutput)
     /// - On failure, responds with [`SdkError<StopSuiteRunError>`](crate::operation::stop_suite_run::StopSuiteRunError)
-    pub fn stop_suite_run(
-        &self,
-    ) -> crate::operation::stop_suite_run::builders::StopSuiteRunFluentBuilder {
-        crate::operation::stop_suite_run::builders::StopSuiteRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_suite_run(&self) -> crate::operation::stop_suite_run::builders::StopSuiteRunFluentBuilder {
+        crate::operation::stop_suite_run::builders::StopSuiteRunFluentBuilder::new(self.handle.clone())
     }
 }

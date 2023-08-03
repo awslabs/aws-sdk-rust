@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`fleet_id(Option<String>)`](crate::operation::start_fleet_actions::StartFleetActionsOutput::fleet_id): <p>A unique identifier for the fleet to restart actions on.</p>
     ///   - [`fleet_arn(Option<String>)`](crate::operation::start_fleet_actions::StartFleetActionsOutput::fleet_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>.</p>
     /// - On failure, responds with [`SdkError<StartFleetActionsError>`](crate::operation::start_fleet_actions::StartFleetActionsError)
-    pub fn start_fleet_actions(
-        &self,
-    ) -> crate::operation::start_fleet_actions::builders::StartFleetActionsFluentBuilder {
-        crate::operation::start_fleet_actions::builders::StartFleetActionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_fleet_actions(&self) -> crate::operation::start_fleet_actions::builders::StartFleetActionsFluentBuilder {
+        crate::operation::start_fleet_actions::builders::StartFleetActionsFluentBuilder::new(self.handle.clone())
     }
 }

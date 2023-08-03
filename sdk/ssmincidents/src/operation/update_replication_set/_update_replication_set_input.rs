@@ -29,21 +29,17 @@ impl UpdateReplicationSetInput {
 }
 impl UpdateReplicationSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateReplicationSetInput`](crate::operation::update_replication_set::UpdateReplicationSetInput).
-    pub fn builder(
-    ) -> crate::operation::update_replication_set::builders::UpdateReplicationSetInputBuilder {
+    pub fn builder() -> crate::operation::update_replication_set::builders::UpdateReplicationSetInputBuilder {
         crate::operation::update_replication_set::builders::UpdateReplicationSetInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateReplicationSetInput`](crate::operation::update_replication_set::UpdateReplicationSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateReplicationSetInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::UpdateReplicationSetAction>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::UpdateReplicationSetAction>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateReplicationSetInputBuilder {
@@ -73,17 +69,12 @@ impl UpdateReplicationSetInputBuilder {
         self
     }
     /// <p>An action to add or delete a Region.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateReplicationSetAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateReplicationSetAction>>) -> Self {
         self.actions = input;
         self
     }
     /// <p>An action to add or delete a Region.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateReplicationSetAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateReplicationSetAction>> {
         &self.actions
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
@@ -103,16 +94,12 @@ impl UpdateReplicationSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReplicationSetInput`](crate::operation::update_replication_set::UpdateReplicationSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_replication_set::UpdateReplicationSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_replication_set::UpdateReplicationSetInput {
-                arn: self.arn,
-                actions: self.actions,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_replication_set::UpdateReplicationSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_replication_set::UpdateReplicationSetInput {
+            arn: self.arn,
+            actions: self.actions,
+            client_token: self.client_token,
+        })
     }
 }

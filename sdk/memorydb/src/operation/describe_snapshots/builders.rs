@@ -10,10 +10,7 @@ impl DescribeSnapshotsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshots::DescribeSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshots::DescribeSnapshotsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_snapshots();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeSnapshotsFluentBuilder {
         }
     }
     /// Access the DescribeSnapshots as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeSnapshotsFluentBuilder {
             crate::operation::describe_snapshots::DescribeSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshots::DescribeSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeSnapshotsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshots::DescribeSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshots::DescribeSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshots::DescribeSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshots::DescribeSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl DescribeSnapshotsFluentBuilder {
             crate::operation::describe_snapshots::DescribeSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshots::DescribeSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator {
-        crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator {
+        crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator::new(self.handle, self.inner)
     }
     /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,18 +127,12 @@ impl DescribeSnapshotsFluentBuilder {
         self.inner.get_cluster_name()
     }
     /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_name(input.into());
         self
     }
     /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_name(input);
         self
     }

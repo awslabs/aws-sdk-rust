@@ -6,10 +6,7 @@ pub fn ser_campaign_filters(
     if let Some(var_1) = &input.instance_id_filter {
         #[allow(unused_mut)]
         let mut object_2 = object.key("instanceIdFilter").start_object();
-        crate::protocol_serde::shape_instance_id_filter::ser_instance_id_filter(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_instance_id_filter::ser_instance_id_filter(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

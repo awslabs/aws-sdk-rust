@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteMembersOutput`](crate::operation::delete_members::DeleteMembersOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<Result>>)`](crate::operation::delete_members::DeleteMembersOutput::unprocessed_accounts): <p>The list of Amazon Web Services accounts that were not deleted. For each account, the list includes the account ID and the email address.</p>
     /// - On failure, responds with [`SdkError<DeleteMembersError>`](crate::operation::delete_members::DeleteMembersError)
-    pub fn delete_members(
-        &self,
-    ) -> crate::operation::delete_members::builders::DeleteMembersFluentBuilder {
-        crate::operation::delete_members::builders::DeleteMembersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_members(&self) -> crate::operation::delete_members::builders::DeleteMembersFluentBuilder {
+        crate::operation::delete_members::builders::DeleteMembersFluentBuilder::new(self.handle.clone())
     }
 }

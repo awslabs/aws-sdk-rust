@@ -18,10 +18,7 @@ pub fn ser_put_metric_filter_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_metric_transformation::ser_metric_transformation(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_metric_transformation::ser_metric_transformation(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }

@@ -23,17 +23,14 @@ impl FirewallPolicyStatelessRuleGroupReferencesDetails {
 }
 impl FirewallPolicyStatelessRuleGroupReferencesDetails {
     /// Creates a new builder-style object to manufacture [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails).
-    pub fn builder(
-    ) -> crate::types::builders::FirewallPolicyStatelessRuleGroupReferencesDetailsBuilder {
+    pub fn builder() -> crate::types::builders::FirewallPolicyStatelessRuleGroupReferencesDetailsBuilder {
         crate::types::builders::FirewallPolicyStatelessRuleGroupReferencesDetailsBuilder::default()
     }
 }
 
 /// A builder for [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FirewallPolicyStatelessRuleGroupReferencesDetailsBuilder {
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,

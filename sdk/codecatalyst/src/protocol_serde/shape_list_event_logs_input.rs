@@ -4,9 +4,7 @@ pub fn ser_list_event_logs_input(
     input: &crate::operation::list_event_logs::ListEventLogsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.end_time {
-        object
-            .key("endTime")
-            .date_time(var_1, ::aws_smithy_types::date_time::Format::DateTime)?;
+        object.key("endTime").date_time(var_1, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
     if let Some(var_2) = &input.event_name {
         object.key("eventName").string(var_2.as_str());

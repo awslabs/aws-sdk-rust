@@ -26,8 +26,7 @@ impl GetUserDefinedFunctionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetUserDefinedFunctionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_user_defined_function::builders::GetUserDefinedFunctionInputBuilder,
+    inner: crate::operation::get_user_defined_function::builders::GetUserDefinedFunctionInputBuilder,
 }
 impl GetUserDefinedFunctionFluentBuilder {
     /// Creates a new `GetUserDefinedFunction`.
@@ -38,10 +37,7 @@ impl GetUserDefinedFunctionFluentBuilder {
         }
     }
     /// Access the GetUserDefinedFunction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_user_defined_function::builders::GetUserDefinedFunctionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_user_defined_function::builders::GetUserDefinedFunctionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetUserDefinedFunctionFluentBuilder {
             crate::operation::get_user_defined_function::GetUserDefinedFunction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_user_defined_function::GetUserDefinedFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user_defined_function::GetUserDefinedFunctionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetUserDefinedFunctionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetUserDefinedFunctionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_user_defined_function::GetUserDefinedFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_user_defined_function::GetUserDefinedFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user_defined_function::GetUserDefinedFunctionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetUserDefinedFunctionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_user_defined_function::GetUserDefinedFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_user_defined_function::GetUserDefinedFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user_defined_function::GetUserDefinedFunctionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetUserDefinedFunctionFluentBuilder {
             crate::operation::get_user_defined_function::GetUserDefinedFunction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_user_defined_function::GetUserDefinedFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user_defined_function::GetUserDefinedFunctionError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl GetUserDefinedFunctionFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The name of the catalog database where the function is located.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the catalog database where the function is located.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -159,18 +138,12 @@ impl GetUserDefinedFunctionFluentBuilder {
         self.inner.get_database_name()
     }
     /// <p>The name of the function.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
     /// <p>The name of the function.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }

@@ -23,9 +23,7 @@ impl ClearTimerAction {
 
 /// A builder for [`ClearTimerAction`](crate::types::ClearTimerAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClearTimerActionBuilder {
     pub(crate) timer_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ClearTimerActionBuilder {
     }
     /// Consumes the builder and constructs a [`ClearTimerAction`](crate::types::ClearTimerAction).
     pub fn build(self) -> crate::types::ClearTimerAction {
-        crate::types::ClearTimerAction {
-            timer_name: self.timer_name,
-        }
+        crate::types::ClearTimerAction { timer_name: self.timer_name }
     }
 }

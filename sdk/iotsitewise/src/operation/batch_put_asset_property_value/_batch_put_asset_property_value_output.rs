@@ -5,15 +5,12 @@
 pub struct BatchPutAssetPropertyValueOutput {
     /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
     #[doc(hidden)]
-    pub error_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyErrorEntry>>,
+    pub error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyErrorEntry>>,
     _request_id: Option<String>,
 }
 impl BatchPutAssetPropertyValueOutput {
     /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-    pub fn error_entries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchPutAssetPropertyErrorEntry]> {
+    pub fn error_entries(&self) -> ::std::option::Option<&[crate::types::BatchPutAssetPropertyErrorEntry]> {
         self.error_entries.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchPutAssetPropertyValueOutput {
 }
 impl BatchPutAssetPropertyValueOutput {
     /// Creates a new builder-style object to manufacture [`BatchPutAssetPropertyValueOutput`](crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput).
-    pub fn builder() -> crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueOutputBuilder{
+    pub fn builder() -> crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueOutputBuilder {
         crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchPutAssetPropertyValueOutput`](crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutAssetPropertyValueOutputBuilder {
-    pub(crate) error_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyErrorEntry>>,
+    pub(crate) error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyErrorEntry>>,
     _request_id: Option<String>,
 }
 impl BatchPutAssetPropertyValueOutputBuilder {
@@ -52,20 +46,12 @@ impl BatchPutAssetPropertyValueOutputBuilder {
         self
     }
     /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-    pub fn set_error_entries(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchPutAssetPropertyErrorEntry>,
-        >,
-    ) -> Self {
+    pub fn set_error_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyErrorEntry>>) -> Self {
         self.error_entries = input;
         self
     }
     /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-    pub fn get_error_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyErrorEntry>>
-    {
+    pub fn get_error_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyErrorEntry>> {
         &self.error_entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -78,9 +64,7 @@ impl BatchPutAssetPropertyValueOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchPutAssetPropertyValueOutput`](crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput {
+    pub fn build(self) -> crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput {
         crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput {
             error_entries: self.error_entries,
             _request_id: self._request_id,

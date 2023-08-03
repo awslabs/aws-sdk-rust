@@ -10,10 +10,7 @@ impl UpdateAccessPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_access_policy::UpdateAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_access_policy::UpdateAccessPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_access_policy::UpdateAccessPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_access_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateAccessPolicyFluentBuilder {
         }
     }
     /// Access the UpdateAccessPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateAccessPolicyFluentBuilder {
             crate::operation::update_access_policy::UpdateAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_access_policy::UpdateAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_access_policy::UpdateAccessPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateAccessPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_access_policy::UpdateAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_access_policy::UpdateAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_access_policy::UpdateAccessPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateAccessPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_access_policy::UpdateAccessPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_access_policy::UpdateAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_access_policy::UpdateAccessPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateAccessPolicyFluentBuilder {
             crate::operation::update_access_policy::UpdateAccessPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_access_policy::UpdateAccessPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_access_policy::UpdateAccessPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl UpdateAccessPolicyFluentBuilder {
         self
     }
     /// <p>The type of policy.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessPolicyType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -154,18 +135,12 @@ impl UpdateAccessPolicyFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The version of the policy being updated.</p>
-    pub fn policy_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_version(input.into());
         self
     }
     /// <p>The version of the policy being updated.</p>
-    pub fn set_policy_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_version(input);
         self
     }

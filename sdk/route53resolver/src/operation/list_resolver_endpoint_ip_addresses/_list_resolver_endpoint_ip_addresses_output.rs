@@ -35,21 +35,18 @@ impl ::aws_http::request_id::RequestId for ListResolverEndpointIpAddressesOutput
 }
 impl ListResolverEndpointIpAddressesOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverEndpointIpAddressesOutput`](crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput).
-    pub fn builder() -> crate::operation::list_resolver_endpoint_ip_addresses::builders::ListResolverEndpointIpAddressesOutputBuilder{
+    pub fn builder() -> crate::operation::list_resolver_endpoint_ip_addresses::builders::ListResolverEndpointIpAddressesOutputBuilder {
         crate::operation::list_resolver_endpoint_ip_addresses::builders::ListResolverEndpointIpAddressesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResolverEndpointIpAddressesOutput`](crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolverEndpointIpAddressesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) ip_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpAddressResponse>>,
+    pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressResponse>>,
     _request_id: Option<String>,
 }
 impl ListResolverEndpointIpAddressesOutputBuilder {
@@ -93,17 +90,12 @@ impl ListResolverEndpointIpAddressesOutputBuilder {
         self
     }
     /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
-    pub fn set_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressResponse>>,
-    ) -> Self {
+    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressResponse>>) -> Self {
         self.ip_addresses = input;
         self
     }
     /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
-    pub fn get_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpAddressResponse>> {
+    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpAddressResponse>> {
         &self.ip_addresses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -116,17 +108,11 @@ impl ListResolverEndpointIpAddressesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResolverEndpointIpAddressesOutput`](crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput
-    {
+    pub fn build(self) -> crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput {
         crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput {
-            next_token: self.next_token
-            ,
-            max_results: self.max_results
-            ,
-            ip_addresses: self.ip_addresses
-            ,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            ip_addresses: self.ip_addresses,
             _request_id: self._request_id,
         }
     }

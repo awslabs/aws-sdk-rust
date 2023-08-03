@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for UpdateBackendConfigOutput {
 }
 impl UpdateBackendConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBackendConfigOutput`](crate::operation::update_backend_config::UpdateBackendConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::update_backend_config::builders::UpdateBackendConfigOutputBuilder {
-        crate::operation::update_backend_config::builders::UpdateBackendConfigOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_backend_config::builders::UpdateBackendConfigOutputBuilder {
+        crate::operation::update_backend_config::builders::UpdateBackendConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBackendConfigOutput`](crate::operation::update_backend_config::UpdateBackendConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBackendConfigOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_manager_app_id: ::std::option::Option<::std::string::String>,
@@ -77,18 +73,12 @@ impl UpdateBackendConfigOutputBuilder {
         &self.app_id
     }
     /// <p>The app ID for the backend manager.</p>
-    pub fn backend_manager_app_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_manager_app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_manager_app_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The app ID for the backend manager.</p>
-    pub fn set_backend_manager_app_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_manager_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_manager_app_id = input;
         self
     }
@@ -116,17 +106,12 @@ impl UpdateBackendConfigOutputBuilder {
         self
     }
     /// <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.</p>
-    pub fn set_login_auth_config(
-        mut self,
-        input: ::std::option::Option<crate::types::LoginAuthConfigReqObj>,
-    ) -> Self {
+    pub fn set_login_auth_config(mut self, input: ::std::option::Option<crate::types::LoginAuthConfigReqObj>) -> Self {
         self.login_auth_config = input;
         self
     }
     /// <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.</p>
-    pub fn get_login_auth_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoginAuthConfigReqObj> {
+    pub fn get_login_auth_config(&self) -> &::std::option::Option<crate::types::LoginAuthConfigReqObj> {
         &self.login_auth_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

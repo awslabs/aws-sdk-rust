@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAnomalyMonitorOutput {
 }
 impl DeleteAnomalyMonitorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAnomalyMonitorOutput`](crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_anomaly_monitor::builders::DeleteAnomalyMonitorOutputBuilder {
+    pub fn builder() -> crate::operation::delete_anomaly_monitor::builders::DeleteAnomalyMonitorOutputBuilder {
         crate::operation::delete_anomaly_monitor::builders::DeleteAnomalyMonitorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAnomalyMonitorOutput`](crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAnomalyMonitorOutputBuilder {
     _request_id: Option<String>,
 }

@@ -29,9 +29,7 @@ impl DeleteVolumeInput {
 
 /// A builder for [`DeleteVolumeInput`](crate::operation::delete_volume::DeleteVolumeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVolumeInputBuilder {
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -66,12 +64,7 @@ impl DeleteVolumeInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteVolumeInput`](crate::operation::delete_volume::DeleteVolumeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_volume::DeleteVolumeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_volume::DeleteVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_volume::DeleteVolumeInput {
             volume_id: self.volume_id,
             dry_run: self.dry_run,

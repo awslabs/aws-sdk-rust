@@ -30,27 +30,19 @@ impl TimestreamConfig {
 
 /// A builder for [`TimestreamConfig`](crate::types::TimestreamConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimestreamConfigBuilder {
     pub(crate) timestream_table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl TimestreamConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Timestream table.</p>
-    pub fn timestream_table_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timestream_table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestream_table_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Timestream table.</p>
-    pub fn set_timestream_table_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_timestream_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestream_table_arn = input;
         self
     }
@@ -59,18 +51,12 @@ impl TimestreamConfigBuilder {
         &self.timestream_table_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution role that grants Amazon Web Services IoT FleetWise permission to deliver data to the Amazon Timestream table.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution role that grants Amazon Web Services IoT FleetWise permission to deliver data to the Amazon Timestream table.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }

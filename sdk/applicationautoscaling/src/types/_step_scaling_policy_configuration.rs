@@ -43,9 +43,7 @@ impl StepScalingPolicyConfiguration {
         self.cooldown
     }
     /// <p>The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p>
-    pub fn metric_aggregation_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MetricAggregationType> {
+    pub fn metric_aggregation_type(&self) -> ::std::option::Option<&crate::types::MetricAggregationType> {
         self.metric_aggregation_type.as_ref()
     }
 }
@@ -58,13 +56,10 @@ impl StepScalingPolicyConfiguration {
 
 /// A builder for [`StepScalingPolicyConfiguration`](crate::types::StepScalingPolicyConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StepScalingPolicyConfigurationBuilder {
     pub(crate) adjustment_type: ::std::option::Option<crate::types::AdjustmentType>,
-    pub(crate) step_adjustments:
-        ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>,
+    pub(crate) step_adjustments: ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>,
     pub(crate) min_adjustment_magnitude: ::std::option::Option<i32>,
     pub(crate) cooldown: ::std::option::Option<i32>,
     pub(crate) metric_aggregation_type: ::std::option::Option<crate::types::MetricAggregationType>,
@@ -78,10 +73,7 @@ impl StepScalingPolicyConfigurationBuilder {
     }
     /// <p>Specifies how the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. </p>
     /// <p> <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.</p>
-    pub fn set_adjustment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AdjustmentType>,
-    ) -> Self {
+    pub fn set_adjustment_type(mut self, input: ::std::option::Option<crate::types::AdjustmentType>) -> Self {
         self.adjustment_type = input;
         self
     }
@@ -104,18 +96,13 @@ impl StepScalingPolicyConfigurationBuilder {
     }
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
     /// <p>At least one step adjustment is required if you are adding a new step scaling policy configuration.</p>
-    pub fn set_step_adjustments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>,
-    ) -> Self {
+    pub fn set_step_adjustments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>) -> Self {
         self.step_adjustments = input;
         self
     }
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
     /// <p>At least one step adjustment is required if you are adding a new step scaling policy configuration.</p>
-    pub fn get_step_adjustments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>> {
+    pub fn get_step_adjustments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>> {
         &self.step_adjustments
     }
     /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example, suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.</p>
@@ -152,17 +139,12 @@ impl StepScalingPolicyConfigurationBuilder {
         self
     }
     /// <p>The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p>
-    pub fn set_metric_aggregation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricAggregationType>,
-    ) -> Self {
+    pub fn set_metric_aggregation_type(mut self, input: ::std::option::Option<crate::types::MetricAggregationType>) -> Self {
         self.metric_aggregation_type = input;
         self
     }
     /// <p>The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p>
-    pub fn get_metric_aggregation_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetricAggregationType> {
+    pub fn get_metric_aggregation_type(&self) -> &::std::option::Option<crate::types::MetricAggregationType> {
         &self.metric_aggregation_type
     }
     /// Consumes the builder and constructs a [`StepScalingPolicyConfiguration`](crate::types::StepScalingPolicyConfiguration).

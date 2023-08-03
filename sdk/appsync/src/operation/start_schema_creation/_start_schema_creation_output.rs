@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartSchemaCreationOutput {
 }
 impl StartSchemaCreationOutput {
     /// Creates a new builder-style object to manufacture [`StartSchemaCreationOutput`](crate::operation::start_schema_creation::StartSchemaCreationOutput).
-    pub fn builder(
-    ) -> crate::operation::start_schema_creation::builders::StartSchemaCreationOutputBuilder {
-        crate::operation::start_schema_creation::builders::StartSchemaCreationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_schema_creation::builders::StartSchemaCreationOutputBuilder {
+        crate::operation::start_schema_creation::builders::StartSchemaCreationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartSchemaCreationOutput`](crate::operation::start_schema_creation::StartSchemaCreationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSchemaCreationOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SchemaStatus>,
     _request_id: Option<String>,

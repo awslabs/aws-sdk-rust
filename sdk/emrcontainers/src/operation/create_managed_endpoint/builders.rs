@@ -37,10 +37,7 @@ impl CreateManagedEndpointFluentBuilder {
         }
     }
     /// Access the CreateManagedEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_managed_endpoint::builders::CreateManagedEndpointInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_managed_endpoint::builders::CreateManagedEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateManagedEndpointFluentBuilder {
             crate::operation::create_managed_endpoint::CreateManagedEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_managed_endpoint::CreateManagedEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_managed_endpoint::CreateManagedEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateManagedEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateManagedEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_managed_endpoint::CreateManagedEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_managed_endpoint::CreateManagedEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_managed_endpoint::CreateManagedEndpointError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateManagedEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_managed_endpoint::CreateManagedEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_managed_endpoint::CreateManagedEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_managed_endpoint::CreateManagedEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateManagedEndpointFluentBuilder {
             crate::operation::create_managed_endpoint::CreateManagedEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_managed_endpoint::CreateManagedEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_managed_endpoint::CreateManagedEndpointError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl CreateManagedEndpointFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
-    pub fn virtual_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_cluster_id(input.into());
         self
     }
     /// <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
-    pub fn set_virtual_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_cluster_id(input);
         self
     }
@@ -172,18 +152,12 @@ impl CreateManagedEndpointFluentBuilder {
         self.inner.get_type()
     }
     /// <p>The Amazon EMR release version.</p>
-    pub fn release_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.release_label(input.into());
         self
     }
     /// <p>The Amazon EMR release version.</p>
-    pub fn set_release_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_release_label(input);
         self
     }
@@ -192,18 +166,12 @@ impl CreateManagedEndpointFluentBuilder {
         self.inner.get_release_label()
     }
     /// <p>The ARN of the execution role.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
     /// <p>The ARN of the execution role.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
@@ -212,31 +180,19 @@ impl CreateManagedEndpointFluentBuilder {
         self.inner.get_execution_role_arn()
     }
     /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
-    #[deprecated(
-        note = "Customer provided certificate-arn is deprecated and would be removed in future."
-    )]
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    #[deprecated(note = "Customer provided certificate-arn is deprecated and would be removed in future.")]
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_arn(input.into());
         self
     }
     /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
-    #[deprecated(
-        note = "Customer provided certificate-arn is deprecated and would be removed in future."
-    )]
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    #[deprecated(note = "Customer provided certificate-arn is deprecated and would be removed in future.")]
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
     /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
-    #[deprecated(
-        note = "Customer provided certificate-arn is deprecated and would be removed in future."
-    )]
+    #[deprecated(note = "Customer provided certificate-arn is deprecated and would be removed in future.")]
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_arn()
     }
@@ -246,17 +202,12 @@ impl CreateManagedEndpointFluentBuilder {
         self
     }
     /// <p>The configuration settings that will be used to override existing configurations.</p>
-    pub fn set_configuration_overrides(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationOverrides>,
-    ) -> Self {
+    pub fn set_configuration_overrides(mut self, input: ::std::option::Option<crate::types::ConfigurationOverrides>) -> Self {
         self.inner = self.inner.set_configuration_overrides(input);
         self
     }
     /// <p>The configuration settings that will be used to override existing configurations.</p>
-    pub fn get_configuration_overrides(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationOverrides> {
+    pub fn get_configuration_overrides(&self) -> &::std::option::Option<crate::types::ConfigurationOverrides> {
         self.inner.get_configuration_overrides()
     }
     /// <p>The client idempotency token for this create call.</p>
@@ -278,30 +229,17 @@ impl CreateManagedEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the managed endpoint. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags of the managed endpoint. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags of the managed endpoint. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

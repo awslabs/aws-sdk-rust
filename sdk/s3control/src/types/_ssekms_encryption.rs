@@ -23,9 +23,7 @@ impl SsekmsEncryption {
 
 /// A builder for [`SsekmsEncryption`](crate::types::SsekmsEncryption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SsekmsEncryptionBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl SsekmsEncryptionBuilder {
     }
     /// Consumes the builder and constructs a [`SsekmsEncryption`](crate::types::SsekmsEncryption).
     pub fn build(self) -> crate::types::SsekmsEncryption {
-        crate::types::SsekmsEncryption {
-            key_id: self.key_id,
-        }
+        crate::types::SsekmsEncryption { key_id: self.key_id }
     }
 }

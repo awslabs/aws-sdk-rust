@@ -9,9 +9,7 @@ pub struct Configuration {
     pub classification: ::std::option::Option<::std::string::String>,
     /// <p>A set of properties specified within a configuration classification.</p>
     #[doc(hidden)]
-    pub properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of additional configurations to apply within a configuration object.</p>
     #[doc(hidden)]
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
@@ -22,11 +20,7 @@ impl Configuration {
         self.classification.as_deref()
     }
     /// <p>A set of properties specified within a configuration classification.</p>
-    pub fn properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.properties.as_ref()
     }
     /// <p>A list of additional configurations to apply within a configuration object.</p>
@@ -55,25 +49,17 @@ impl Configuration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ConfigurationBuilder {
     pub(crate) classification: ::std::option::Option<::std::string::String>,
-    pub(crate) properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
 }
 impl ConfigurationBuilder {
     /// <p>The classification within a configuration.</p>
-    pub fn classification(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn classification(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.classification = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The classification within a configuration.</p>
-    pub fn set_classification(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_classification(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.classification = input;
         self
     }
@@ -86,32 +72,19 @@ impl ConfigurationBuilder {
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>A set of properties specified within a configuration classification.</p>
-    pub fn properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.properties = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A set of properties specified within a configuration classification.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.properties = input;
         self
     }
     /// <p>A set of properties specified within a configuration classification.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.properties
     }
     /// Appends an item to `configurations`.
@@ -126,17 +99,12 @@ impl ConfigurationBuilder {
         self
     }
     /// <p>A list of additional configurations to apply within a configuration object.</p>
-    pub fn set_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
-    ) -> Self {
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
         self.configurations = input;
         self
     }
     /// <p>A list of additional configurations to apply within a configuration object.</p>
-    pub fn get_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
         &self.configurations
     }
     /// Consumes the builder and constructs a [`Configuration`](crate::types::Configuration).

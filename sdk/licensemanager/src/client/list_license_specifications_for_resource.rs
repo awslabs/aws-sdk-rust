@@ -10,7 +10,11 @@ impl super::Client {
     ///   - [`license_specifications(Option<Vec<LicenseSpecification>>)`](crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceOutput::license_specifications): <p>License configurations associated with a resource.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceOutput::next_token): <p>Token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListLicenseSpecificationsForResourceError>`](crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError)
-    pub fn list_license_specifications_for_resource(&self) -> crate::operation::list_license_specifications_for_resource::builders::ListLicenseSpecificationsForResourceFluentBuilder{
-        crate::operation::list_license_specifications_for_resource::builders::ListLicenseSpecificationsForResourceFluentBuilder::new(self.handle.clone())
+    pub fn list_license_specifications_for_resource(
+        &self,
+    ) -> crate::operation::list_license_specifications_for_resource::builders::ListLicenseSpecificationsForResourceFluentBuilder {
+        crate::operation::list_license_specifications_for_resource::builders::ListLicenseSpecificationsForResourceFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

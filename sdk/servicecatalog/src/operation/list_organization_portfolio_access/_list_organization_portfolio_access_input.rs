@@ -47,9 +47,7 @@ impl ListOrganizationPortfolioAccessInput {
     /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
     /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
     /// </ul>
-    pub fn organization_node_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OrganizationNodeType> {
+    pub fn organization_node_type(&self) -> ::std::option::Option<&crate::types::OrganizationNodeType> {
         self.organization_node_type.as_ref()
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -63,16 +61,14 @@ impl ListOrganizationPortfolioAccessInput {
 }
 impl ListOrganizationPortfolioAccessInput {
     /// Creates a new builder-style object to manufacture [`ListOrganizationPortfolioAccessInput`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessInput).
-    pub fn builder() -> crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessInputBuilder{
+    pub fn builder() -> crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessInputBuilder {
         crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`ListOrganizationPortfolioAccessInput`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOrganizationPortfolioAccessInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,
@@ -86,10 +82,7 @@ impl ListOrganizationPortfolioAccessInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -98,10 +91,7 @@ impl ListOrganizationPortfolioAccessInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -143,10 +133,7 @@ impl ListOrganizationPortfolioAccessInputBuilder {
     /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
     /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
     /// </ul>
-    pub fn set_organization_node_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationNodeType>,
-    ) -> Self {
+    pub fn set_organization_node_type(mut self, input: ::std::option::Option<crate::types::OrganizationNodeType>) -> Self {
         self.organization_node_type = input;
         self
     }
@@ -156,9 +143,7 @@ impl ListOrganizationPortfolioAccessInputBuilder {
     /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
     /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
     /// </ul>
-    pub fn get_organization_node_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationNodeType> {
+    pub fn get_organization_node_type(&self) -> &::std::option::Option<crate::types::OrganizationNodeType> {
         &self.organization_node_type
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -198,17 +183,12 @@ impl ListOrganizationPortfolioAccessInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessInput {
-                accept_language: self.accept_language
-                ,
-                portfolio_id: self.portfolio_id
-                ,
-                organization_node_type: self.organization_node_type
-                ,
-                page_token: self.page_token
-                ,
-                page_size: self.page_size
-                ,
-            }
+                accept_language: self.accept_language,
+                portfolio_id: self.portfolio_id,
+                organization_node_type: self.organization_node_type,
+                page_token: self.page_token,
+                page_size: self.page_size,
+            },
         )
     }
 }

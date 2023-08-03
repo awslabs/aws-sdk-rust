@@ -10,10 +10,7 @@ impl RegisterElasticIpInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_elastic_ip::RegisterElasticIpOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_elastic_ip::RegisterElasticIpError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_elastic_ip::RegisterElasticIpError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_elastic_ip();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl RegisterElasticIpFluentBuilder {
         }
     }
     /// Access the RegisterElasticIp as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_elastic_ip::builders::RegisterElasticIpInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_elastic_ip::builders::RegisterElasticIpInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl RegisterElasticIpFluentBuilder {
             crate::operation::register_elastic_ip::RegisterElasticIp,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_elastic_ip::RegisterElasticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_elastic_ip::RegisterElasticIpError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl RegisterElasticIpFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl RegisterElasticIpFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_elastic_ip::RegisterElasticIpOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_elastic_ip::RegisterElasticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_elastic_ip::RegisterElasticIpError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl RegisterElasticIpFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_elastic_ip::RegisterElasticIpOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_elastic_ip::RegisterElasticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_elastic_ip::RegisterElasticIpError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl RegisterElasticIpFluentBuilder {
             crate::operation::register_elastic_ip::RegisterElasticIp,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_elastic_ip::RegisterElasticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_elastic_ip::RegisterElasticIpError>,
     > {
         self.customize_middleware().await
     }

@@ -23,9 +23,7 @@ impl UpdateJourneyInput {
         self.journey_id.as_deref()
     }
     /// <p>Specifies the configuration and other settings for a journey.</p>
-    pub fn write_journey_request(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WriteJourneyRequest> {
+    pub fn write_journey_request(&self) -> ::std::option::Option<&crate::types::WriteJourneyRequest> {
         self.write_journey_request.as_ref()
     }
 }
@@ -38,9 +36,7 @@ impl UpdateJourneyInput {
 
 /// A builder for [`UpdateJourneyInput`](crate::operation::update_journey::UpdateJourneyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateJourneyInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) journey_id: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct UpdateJourneyInputBuilder {
 }
 impl UpdateJourneyInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -87,26 +77,18 @@ impl UpdateJourneyInputBuilder {
         self
     }
     /// <p>Specifies the configuration and other settings for a journey.</p>
-    pub fn set_write_journey_request(
-        mut self,
-        input: ::std::option::Option<crate::types::WriteJourneyRequest>,
-    ) -> Self {
+    pub fn set_write_journey_request(mut self, input: ::std::option::Option<crate::types::WriteJourneyRequest>) -> Self {
         self.write_journey_request = input;
         self
     }
     /// <p>Specifies the configuration and other settings for a journey.</p>
-    pub fn get_write_journey_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::WriteJourneyRequest> {
+    pub fn get_write_journey_request(&self) -> &::std::option::Option<crate::types::WriteJourneyRequest> {
         &self.write_journey_request
     }
     /// Consumes the builder and constructs a [`UpdateJourneyInput`](crate::operation::update_journey::UpdateJourneyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_journey::UpdateJourneyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_journey::UpdateJourneyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_journey::UpdateJourneyInput {
             application_id: self.application_id,
             journey_id: self.journey_id,

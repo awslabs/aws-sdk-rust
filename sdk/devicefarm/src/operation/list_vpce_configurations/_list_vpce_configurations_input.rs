@@ -22,18 +22,14 @@ impl ListVpceConfigurationsInput {
 }
 impl ListVpceConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListVpceConfigurationsInput`](crate::operation::list_vpce_configurations::ListVpceConfigurationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_vpce_configurations::builders::ListVpceConfigurationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_vpce_configurations::builders::ListVpceConfigurationsInputBuilder {
         crate::operation::list_vpce_configurations::builders::ListVpceConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVpceConfigurationsInput`](crate::operation::list_vpce_configurations::ListVpceConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVpceConfigurationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl ListVpceConfigurationsInputBuilder {
     /// Consumes the builder and constructs a [`ListVpceConfigurationsInput`](crate::operation::list_vpce_configurations::ListVpceConfigurationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_vpce_configurations::ListVpceConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_vpce_configurations::ListVpceConfigurationsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_vpce_configurations::ListVpceConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_vpce_configurations::ListVpceConfigurationsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -30,9 +30,7 @@ impl ReasonCodeSummary {
 
 /// A builder for [`ReasonCodeSummary`](crate::types::ReasonCodeSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReasonCodeSummaryBuilder {
     pub(crate) name: ::std::option::Option<crate::types::FindingReasonCode>,
     pub(crate) value: ::std::option::Option<f64>,
@@ -44,10 +42,7 @@ impl ReasonCodeSummaryBuilder {
         self
     }
     /// <p>The name of the finding reason code.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingReasonCode>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::FindingReasonCode>) -> Self {
         self.name = input;
         self
     }

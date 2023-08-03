@@ -39,13 +39,7 @@
 /// Specify the XAVC Intra 4k (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Xavc4kIntraCbgProfileClass {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for Xavc4kIntraCbgProfileClass {
             "CLASS_100" => Xavc4kIntraCbgProfileClass::Class100,
             "CLASS_300" => Xavc4kIntraCbgProfileClass::Class300,
             "CLASS_480" => Xavc4kIntraCbgProfileClass::Class480,
-            other => Xavc4kIntraCbgProfileClass::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Xavc4kIntraCbgProfileClass::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

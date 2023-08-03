@@ -6,10 +6,7 @@ pub fn ser_create_domain_configuration_input(
     if let Some(var_1) = &input.authorizer_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("authorizerConfig").start_object();
-        crate::protocol_serde::shape_authorizer_config::ser_authorizer_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_authorizer_config::ser_authorizer_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.domain_name {
@@ -46,9 +43,7 @@ pub fn ser_create_domain_configuration_input(
         object_13.finish();
     }
     if let Some(var_14) = &input.validation_certificate_arn {
-        object
-            .key("validationCertificateArn")
-            .string(var_14.as_str());
+        object.key("validationCertificateArn").string(var_14.as_str());
     }
     Ok(())
 }

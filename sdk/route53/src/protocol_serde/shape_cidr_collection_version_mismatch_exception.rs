@@ -3,10 +3,7 @@
 pub fn de_cidr_collection_version_mismatch_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::CidrCollectionVersionMismatchExceptionBuilder,
-) -> Result<
-    crate::types::error::builders::CidrCollectionVersionMismatchExceptionBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::CidrCollectionVersionMismatchExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

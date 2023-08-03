@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ReloadTablesOutput`](crate::operation::reload_tables::ReloadTablesOutput) with field(s):
     ///   - [`replication_task_arn(Option<String>)`](crate::operation::reload_tables::ReloadTablesOutput::replication_task_arn): <p>The Amazon Resource Name (ARN) of the replication task. </p>
     /// - On failure, responds with [`SdkError<ReloadTablesError>`](crate::operation::reload_tables::ReloadTablesError)
-    pub fn reload_tables(
-        &self,
-    ) -> crate::operation::reload_tables::builders::ReloadTablesFluentBuilder {
-        crate::operation::reload_tables::builders::ReloadTablesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reload_tables(&self) -> crate::operation::reload_tables::builders::ReloadTablesFluentBuilder {
+        crate::operation::reload_tables::builders::ReloadTablesFluentBuilder::new(self.handle.clone())
     }
 }

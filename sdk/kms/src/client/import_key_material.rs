@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`expiration_model(ExpirationModelType)`](crate::operation::import_key_material::builders::ImportKeyMaterialFluentBuilder::expiration_model) / [`set_expiration_model(Option<ExpirationModelType>)`](crate::operation::import_key_material::builders::ImportKeyMaterialFluentBuilder::set_expiration_model): <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.</p>  <p>You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after the request completes. To change either value, you must reimport the key material.</p>
     /// - On success, responds with [`ImportKeyMaterialOutput`](crate::operation::import_key_material::ImportKeyMaterialOutput)
     /// - On failure, responds with [`SdkError<ImportKeyMaterialError>`](crate::operation::import_key_material::ImportKeyMaterialError)
-    pub fn import_key_material(
-        &self,
-    ) -> crate::operation::import_key_material::builders::ImportKeyMaterialFluentBuilder {
-        crate::operation::import_key_material::builders::ImportKeyMaterialFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_key_material(&self) -> crate::operation::import_key_material::builders::ImportKeyMaterialFluentBuilder {
+        crate::operation::import_key_material::builders::ImportKeyMaterialFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl AssociateAccountsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_accounts::AssociateAccountsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_accounts::AssociateAccountsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_accounts::AssociateAccountsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.associate_accounts();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AssociateAccountsFluentBuilder {
         }
     }
     /// Access the AssociateAccounts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_accounts::builders::AssociateAccountsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_accounts::builders::AssociateAccountsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl AssociateAccountsFluentBuilder {
             crate::operation::associate_accounts::AssociateAccounts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_accounts::AssociateAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_accounts::AssociateAccountsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl AssociateAccountsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl AssociateAccountsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_accounts::AssociateAccountsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_accounts::AssociateAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_accounts::AssociateAccountsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl AssociateAccountsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_accounts::AssociateAccountsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_accounts::AssociateAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_accounts::AssociateAccountsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl AssociateAccountsFluentBuilder {
             crate::operation::associate_accounts::AssociateAccounts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_accounts::AssociateAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_accounts::AssociateAccountsError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +130,12 @@ impl AssociateAccountsFluentBuilder {
         self
     }
     /// <p> The associating array of account IDs. </p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p> The associating array of account IDs. </p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
 }

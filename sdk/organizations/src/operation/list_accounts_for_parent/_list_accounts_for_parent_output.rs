@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAccountsForParentOutput {
 }
 impl ListAccountsForParentOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountsForParentOutput`](crate::operation::list_accounts_for_parent::ListAccountsForParentOutput).
-    pub fn builder(
-    ) -> crate::operation::list_accounts_for_parent::builders::ListAccountsForParentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_accounts_for_parent::builders::ListAccountsForParentOutputBuilder {
         crate::operation::list_accounts_for_parent::builders::ListAccountsForParentOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountsForParentOutput`](crate::operation::list_accounts_for_parent::ListAccountsForParentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountsForParentOutputBuilder {
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListAccountsForParentOutputBuilder {
         self
     }
     /// <p>A list of the accounts in the specified root or OU.</p>
-    pub fn set_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
-    ) -> Self {
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Account>>) -> Self {
         self.accounts = input;
         self
     }

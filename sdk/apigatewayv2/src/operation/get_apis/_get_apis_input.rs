@@ -29,9 +29,7 @@ impl GetApisInput {
 
 /// A builder for [`GetApisInput`](crate::operation::get_apis::GetApisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApisInputBuilder {
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetApisInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetApisInput`](crate::operation::get_apis::GetApisInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_apis::GetApisInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_apis::GetApisInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_apis::GetApisInput {
             max_results: self.max_results,
             next_token: self.next_token,

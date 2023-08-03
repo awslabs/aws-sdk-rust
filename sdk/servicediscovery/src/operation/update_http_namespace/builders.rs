@@ -37,9 +37,7 @@ impl UpdateHttpNamespaceFluentBuilder {
         }
     }
     /// Access the UpdateHttpNamespace as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_http_namespace::builders::UpdateHttpNamespaceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_http_namespace::builders::UpdateHttpNamespaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateHttpNamespaceFluentBuilder {
             crate::operation::update_http_namespace::UpdateHttpNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_http_namespace::UpdateHttpNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_http_namespace::UpdateHttpNamespaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateHttpNamespaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateHttpNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_http_namespace::UpdateHttpNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_http_namespace::UpdateHttpNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_http_namespace::UpdateHttpNamespaceError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateHttpNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_http_namespace::UpdateHttpNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_http_namespace::UpdateHttpNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_http_namespace::UpdateHttpNamespaceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateHttpNamespaceFluentBuilder {
             crate::operation::update_http_namespace::UpdateHttpNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_http_namespace::UpdateHttpNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_http_namespace::UpdateHttpNamespaceError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl UpdateHttpNamespaceFluentBuilder {
         self.inner.get_id()
     }
     /// <p>A unique string that identifies the request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn updater_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn updater_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.updater_request_id(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn set_updater_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_updater_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_updater_request_id(input);
         self
     }
@@ -162,10 +143,7 @@ impl UpdateHttpNamespaceFluentBuilder {
         self
     }
     /// <p>Updated properties for the the HTTP namespace.</p>
-    pub fn set_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpNamespaceChange>,
-    ) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<crate::types::HttpNamespaceChange>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }

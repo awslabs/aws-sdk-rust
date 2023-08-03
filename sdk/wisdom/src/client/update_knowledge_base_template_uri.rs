@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateKnowledgeBaseTemplateUriOutput`](crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriOutput) with field(s):
     ///   - [`knowledge_base(Option<KnowledgeBaseData>)`](crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriOutput::knowledge_base): <p>The knowledge base to update.</p>
     /// - On failure, responds with [`SdkError<UpdateKnowledgeBaseTemplateUriError>`](crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriError)
-    pub fn update_knowledge_base_template_uri(&self) -> crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriFluentBuilder{
+    pub fn update_knowledge_base_template_uri(
+        &self,
+    ) -> crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriFluentBuilder {
         crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriFluentBuilder::new(self.handle.clone())
     }
 }

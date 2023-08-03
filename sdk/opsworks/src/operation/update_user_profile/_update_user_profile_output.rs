@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateUserProfileOutput {
 }
 impl UpdateUserProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserProfileOutput`](crate::operation::update_user_profile::UpdateUserProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::update_user_profile::builders::UpdateUserProfileOutputBuilder {
+    pub fn builder() -> crate::operation::update_user_profile::builders::UpdateUserProfileOutputBuilder {
         crate::operation::update_user_profile::builders::UpdateUserProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserProfileOutput`](crate::operation::update_user_profile::UpdateUserProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserProfileOutputBuilder {
     _request_id: Option<String>,
 }

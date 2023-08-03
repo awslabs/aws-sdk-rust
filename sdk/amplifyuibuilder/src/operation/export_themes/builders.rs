@@ -10,10 +10,7 @@ impl ExportThemesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::export_themes::ExportThemesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_themes::ExportThemesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_themes::ExportThemesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.export_themes();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ExportThemesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::export_themes::ExportThemes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::export_themes::ExportThemes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::export_themes::ExportThemesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ExportThemesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ExportThemesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::export_themes::ExportThemes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::export_themes::ExportThemes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::export_themes::ExportThemesError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl ExportThemesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::export_themes::paginator::ExportThemesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::export_themes::paginator::ExportThemesPaginator {
-        crate::operation::export_themes::paginator::ExportThemesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::export_themes::paginator::ExportThemesPaginator {
+        crate::operation::export_themes::paginator::ExportThemesPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique ID of the Amplify app to export the themes to.</p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,18 +121,12 @@ impl ExportThemesFluentBuilder {
         self.inner.get_app_id()
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }

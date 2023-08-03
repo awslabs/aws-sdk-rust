@@ -30,7 +30,7 @@ impl DeregisterTaskDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterTaskDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deregister_task_definition::builders::DeregisterTaskDefinitionInputBuilder,
+    inner: crate::operation::deregister_task_definition::builders::DeregisterTaskDefinitionInputBuilder,
 }
 impl DeregisterTaskDefinitionFluentBuilder {
     /// Creates a new `DeregisterTaskDefinition`.
@@ -41,10 +41,7 @@ impl DeregisterTaskDefinitionFluentBuilder {
         }
     }
     /// Access the DeregisterTaskDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deregister_task_definition::builders::DeregisterTaskDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::deregister_task_definition::builders::DeregisterTaskDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl DeregisterTaskDefinitionFluentBuilder {
             crate::operation::deregister_task_definition::DeregisterTaskDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_task_definition::DeregisterTaskDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_task_definition::DeregisterTaskDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl DeregisterTaskDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl DeregisterTaskDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_task_definition::DeregisterTaskDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_task_definition::DeregisterTaskDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_task_definition::DeregisterTaskDefinitionError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl DeregisterTaskDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_task_definition::DeregisterTaskDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_task_definition::DeregisterTaskDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_task_definition::DeregisterTaskDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +109,17 @@ impl DeregisterTaskDefinitionFluentBuilder {
             crate::operation::deregister_task_definition::DeregisterTaskDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_task_definition::DeregisterTaskDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_task_definition::DeregisterTaskDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a <code>revision</code>.</p>
-    pub fn task_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_definition(input.into());
         self
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a <code>revision</code>.</p>
-    pub fn set_task_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_definition(input);
         self
     }

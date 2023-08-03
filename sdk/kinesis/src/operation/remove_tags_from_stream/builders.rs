@@ -41,10 +41,7 @@ impl RemoveTagsFromStreamFluentBuilder {
         }
     }
     /// Access the RemoveTagsFromStream as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl RemoveTagsFromStreamFluentBuilder {
             crate::operation::remove_tags_from_stream::RemoveTagsFromStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_tags_from_stream::RemoveTagsFromStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_stream::RemoveTagsFromStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl RemoveTagsFromStreamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl RemoveTagsFromStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_tags_from_stream::RemoveTagsFromStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_tags_from_stream::RemoveTagsFromStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_stream::RemoveTagsFromStreamError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl RemoveTagsFromStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_tags_from_stream::RemoveTagsFromStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_tags_from_stream::RemoveTagsFromStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_stream::RemoveTagsFromStreamError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +109,7 @@ impl RemoveTagsFromStreamFluentBuilder {
             crate::operation::remove_tags_from_stream::RemoveTagsFromStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_tags_from_stream::RemoveTagsFromStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_stream::RemoveTagsFromStreamError>,
     > {
         self.customize_middleware().await
     }
@@ -151,10 +137,7 @@ impl RemoveTagsFromStreamFluentBuilder {
         self
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }

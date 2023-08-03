@@ -9,10 +9,7 @@ pub fn ser_describe_affected_entities_for_organization_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_event_account_filter::ser_event_account_filter(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_event_account_filter::ser_event_account_filter(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

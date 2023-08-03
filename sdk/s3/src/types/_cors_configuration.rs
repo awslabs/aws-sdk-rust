@@ -23,9 +23,7 @@ impl CorsConfiguration {
 
 /// A builder for [`CorsConfiguration`](crate::types::CorsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CorsConfigurationBuilder {
     pub(crate) cors_rules: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>,
 }
@@ -42,23 +40,16 @@ impl CorsConfigurationBuilder {
         self
     }
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
-    pub fn set_cors_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>,
-    ) -> Self {
+    pub fn set_cors_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>) -> Self {
         self.cors_rules = input;
         self
     }
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
-    pub fn get_cors_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CorsRule>> {
+    pub fn get_cors_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CorsRule>> {
         &self.cors_rules
     }
     /// Consumes the builder and constructs a [`CorsConfiguration`](crate::types::CorsConfiguration).
     pub fn build(self) -> crate::types::CorsConfiguration {
-        crate::types::CorsConfiguration {
-            cors_rules: self.cors_rules,
-        }
+        crate::types::CorsConfiguration { cors_rules: self.cors_rules }
     }
 }

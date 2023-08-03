@@ -16,11 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateServiceOutput`](crate::operation::create_service::CreateServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::operation::create_service::CreateServiceOutput::service): <p>The service detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CreateServiceError>`](crate::operation::create_service::CreateServiceError)
-    pub fn create_service(
-        &self,
-    ) -> crate::operation::create_service::builders::CreateServiceFluentBuilder {
-        crate::operation::create_service::builders::CreateServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_service(&self) -> crate::operation::create_service::builders::CreateServiceFluentBuilder {
+        crate::operation::create_service::builders::CreateServiceFluentBuilder::new(self.handle.clone())
     }
 }

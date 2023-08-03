@@ -71,9 +71,7 @@ impl ListArtifactsInput {
 
 /// A builder for [`ListArtifactsInput`](crate::operation::list_artifacts::ListArtifactsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListArtifactsInputBuilder {
     pub(crate) source_uri: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_type: ::std::option::Option<::std::string::String>,
@@ -100,18 +98,12 @@ impl ListArtifactsInputBuilder {
         &self.source_uri
     }
     /// <p>A filter that returns only artifacts of the specified type.</p>
-    pub fn artifact_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter that returns only artifacts of the specified type.</p>
-    pub fn set_artifact_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_type = input;
         self
     }
@@ -125,10 +117,7 @@ impl ListArtifactsInputBuilder {
         self
     }
     /// <p>A filter that returns only artifacts created on or after the specified time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
@@ -142,10 +131,7 @@ impl ListArtifactsInputBuilder {
         self
     }
     /// <p>A filter that returns only artifacts created on or before the specified time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -159,10 +145,7 @@ impl ListArtifactsInputBuilder {
         self
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortArtifactsBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortArtifactsBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -215,10 +198,7 @@ impl ListArtifactsInputBuilder {
     /// Consumes the builder and constructs a [`ListArtifactsInput`](crate::operation::list_artifacts::ListArtifactsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_artifacts::ListArtifactsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_artifacts::ListArtifactsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_artifacts::ListArtifactsInput {
             source_uri: self.source_uri,
             artifact_type: self.artifact_type,

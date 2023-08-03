@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDeviceInstanceOutput`](crate::operation::update_device_instance::UpdateDeviceInstanceOutput) with field(s):
     ///   - [`device_instance(Option<DeviceInstance>)`](crate::operation::update_device_instance::UpdateDeviceInstanceOutput::device_instance): <p>An object that contains information about your device instance.</p>
     /// - On failure, responds with [`SdkError<UpdateDeviceInstanceError>`](crate::operation::update_device_instance::UpdateDeviceInstanceError)
-    pub fn update_device_instance(
-        &self,
-    ) -> crate::operation::update_device_instance::builders::UpdateDeviceInstanceFluentBuilder {
-        crate::operation::update_device_instance::builders::UpdateDeviceInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_device_instance(&self) -> crate::operation::update_device_instance::builders::UpdateDeviceInstanceFluentBuilder {
+        crate::operation::update_device_instance::builders::UpdateDeviceInstanceFluentBuilder::new(self.handle.clone())
     }
 }

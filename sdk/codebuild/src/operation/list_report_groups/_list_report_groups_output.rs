@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListReportGroupsOutput {
 }
 impl ListReportGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListReportGroupsOutput`](crate::operation::list_report_groups::ListReportGroupsOutput).
-    pub fn builder() -> crate::operation::list_report_groups::builders::ListReportGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_report_groups::builders::ListReportGroupsOutputBuilder {
         crate::operation::list_report_groups::builders::ListReportGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReportGroupsOutput`](crate::operation::list_report_groups::ListReportGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReportGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) report_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,27 +61,19 @@ impl ListReportGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_report_groups`](Self::set_report_groups).
     ///
     /// <p> The list of ARNs for the report groups in the current Amazon Web Services account. </p>
-    pub fn report_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.report_groups.unwrap_or_default();
         v.push(input.into());
         self.report_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p> The list of ARNs for the report groups in the current Amazon Web Services account. </p>
-    pub fn set_report_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_report_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.report_groups = input;
         self
     }
     /// <p> The list of ARNs for the report groups in the current Amazon Web Services account. </p>
-    pub fn get_report_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_report_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.report_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

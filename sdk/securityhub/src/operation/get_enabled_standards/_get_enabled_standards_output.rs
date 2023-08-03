@@ -5,8 +5,7 @@
 pub struct GetEnabledStandardsOutput {
     /// <p>The list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.</p>
     #[doc(hidden)]
-    pub standards_subscriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>>,
+    pub standards_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>>,
     /// <p>The pagination token to use to request the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetEnabledStandardsOutput {
 }
 impl GetEnabledStandardsOutput {
     /// <p>The list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.</p>
-    pub fn standards_subscriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StandardsSubscription]> {
+    pub fn standards_subscriptions(&self) -> ::std::option::Option<&[crate::types::StandardsSubscription]> {
         self.standards_subscriptions.as_deref()
     }
     /// <p>The pagination token to use to request the next page of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for GetEnabledStandardsOutput {
 }
 impl GetEnabledStandardsOutput {
     /// Creates a new builder-style object to manufacture [`GetEnabledStandardsOutput`](crate::operation::get_enabled_standards::GetEnabledStandardsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_enabled_standards::builders::GetEnabledStandardsOutputBuilder {
-        crate::operation::get_enabled_standards::builders::GetEnabledStandardsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_enabled_standards::builders::GetEnabledStandardsOutputBuilder {
+        crate::operation::get_enabled_standards::builders::GetEnabledStandardsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEnabledStandardsOutput`](crate::operation::get_enabled_standards::GetEnabledStandardsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEnabledStandardsOutputBuilder {
-    pub(crate) standards_subscriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>>,
+    pub(crate) standards_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl GetEnabledStandardsOutputBuilder {
         self
     }
     /// <p>The list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.</p>
-    pub fn set_standards_subscriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>>,
-    ) -> Self {
+    pub fn set_standards_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>>) -> Self {
         self.standards_subscriptions = input;
         self
     }
     /// <p>The list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.</p>
-    pub fn get_standards_subscriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>> {
+    pub fn get_standards_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>> {
         &self.standards_subscriptions
     }
     /// <p>The pagination token to use to request the next page of results.</p>

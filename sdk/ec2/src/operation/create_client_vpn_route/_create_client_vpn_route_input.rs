@@ -64,17 +64,14 @@ impl CreateClientVpnRouteInput {
 }
 impl CreateClientVpnRouteInput {
     /// Creates a new builder-style object to manufacture [`CreateClientVpnRouteInput`](crate::operation::create_client_vpn_route::CreateClientVpnRouteInput).
-    pub fn builder(
-    ) -> crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteInputBuilder {
+    pub fn builder() -> crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteInputBuilder {
         crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateClientVpnRouteInput`](crate::operation::create_client_vpn_route::CreateClientVpnRouteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClientVpnRouteInputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
@@ -85,18 +82,12 @@ pub struct CreateClientVpnRouteInputBuilder {
 }
 impl CreateClientVpnRouteInputBuilder {
     /// <p>The ID of the Client VPN endpoint to which to add the route.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint to which to add the route.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = input;
         self
     }
@@ -111,10 +102,7 @@ impl CreateClientVpnRouteInputBuilder {
     /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li>
     /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li>
     /// </ul>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
@@ -125,10 +113,7 @@ impl CreateClientVpnRouteInputBuilder {
     /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li>
     /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li>
     /// </ul>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_cidr_block = input;
         self
     }
@@ -144,19 +129,13 @@ impl CreateClientVpnRouteInputBuilder {
     }
     /// <p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p>
     /// <p>Alternatively, if you're adding a route for the local network, specify <code>local</code>.</p>
-    pub fn target_vpc_subnet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_vpc_subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_vpc_subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p>
     /// <p>Alternatively, if you're adding a route for the local network, specify <code>local</code>.</p>
-    pub fn set_target_vpc_subnet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_vpc_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_vpc_subnet_id = input;
         self
     }
@@ -210,19 +189,15 @@ impl CreateClientVpnRouteInputBuilder {
     /// Consumes the builder and constructs a [`CreateClientVpnRouteInput`](crate::operation::create_client_vpn_route::CreateClientVpnRouteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_client_vpn_route::CreateClientVpnRouteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_client_vpn_route::CreateClientVpnRouteInput {
-                client_vpn_endpoint_id: self.client_vpn_endpoint_id,
-                destination_cidr_block: self.destination_cidr_block,
-                target_vpc_subnet_id: self.target_vpc_subnet_id,
-                description: self.description,
-                client_token: self.client_token,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_client_vpn_route::CreateClientVpnRouteInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_client_vpn_route::CreateClientVpnRouteInput {
+            client_vpn_endpoint_id: self.client_vpn_endpoint_id,
+            destination_cidr_block: self.destination_cidr_block,
+            target_vpc_subnet_id: self.target_vpc_subnet_id,
+            description: self.description,
+            client_token: self.client_token,
+            dry_run: self.dry_run,
+        })
     }
 }

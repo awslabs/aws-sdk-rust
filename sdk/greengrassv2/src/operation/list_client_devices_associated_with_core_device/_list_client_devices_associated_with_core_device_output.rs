@@ -5,8 +5,7 @@
 pub struct ListClientDevicesAssociatedWithCoreDeviceOutput {
     /// <p>A list that describes the client devices that are associated with the core device.</p>
     #[doc(hidden)]
-    pub associated_client_devices:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociatedClientDevice>>,
+    pub associated_client_devices: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedClientDevice>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListClientDevicesAssociatedWithCoreDeviceOutput {
 }
 impl ListClientDevicesAssociatedWithCoreDeviceOutput {
     /// <p>A list that describes the client devices that are associated with the core device.</p>
-    pub fn associated_client_devices(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssociatedClientDevice]> {
+    pub fn associated_client_devices(&self) -> ::std::option::Option<&[crate::types::AssociatedClientDevice]> {
         self.associated_client_devices.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -31,19 +28,17 @@ impl ::aws_http::request_id::RequestId for ListClientDevicesAssociatedWithCoreDe
 }
 impl ListClientDevicesAssociatedWithCoreDeviceOutput {
     /// Creates a new builder-style object to manufacture [`ListClientDevicesAssociatedWithCoreDeviceOutput`](crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceOutput).
-    pub fn builder() -> crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceOutputBuilder {
         crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListClientDevicesAssociatedWithCoreDeviceOutput`](crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClientDevicesAssociatedWithCoreDeviceOutputBuilder {
-    pub(crate) associated_client_devices:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociatedClientDevice>>,
+    pub(crate) associated_client_devices: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedClientDevice>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +48,19 @@ impl ListClientDevicesAssociatedWithCoreDeviceOutputBuilder {
     /// To override the contents of this collection use [`set_associated_client_devices`](Self::set_associated_client_devices).
     ///
     /// <p>A list that describes the client devices that are associated with the core device.</p>
-    pub fn associated_client_devices(
-        mut self,
-        input: crate::types::AssociatedClientDevice,
-    ) -> Self {
+    pub fn associated_client_devices(mut self, input: crate::types::AssociatedClientDevice) -> Self {
         let mut v = self.associated_client_devices.unwrap_or_default();
         v.push(input);
         self.associated_client_devices = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list that describes the client devices that are associated with the core device.</p>
-    pub fn set_associated_client_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedClientDevice>>,
-    ) -> Self {
+    pub fn set_associated_client_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedClientDevice>>) -> Self {
         self.associated_client_devices = input;
         self
     }
     /// <p>A list that describes the client devices that are associated with the core device.</p>
-    pub fn get_associated_client_devices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedClientDevice>> {
+    pub fn get_associated_client_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedClientDevice>> {
         &self.associated_client_devices
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -100,12 +87,10 @@ impl ListClientDevicesAssociatedWithCoreDeviceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListClientDevicesAssociatedWithCoreDeviceOutput`](crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceOutput).
-    pub fn build(self) -> crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceOutput{
+    pub fn build(self) -> crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceOutput {
         crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceOutput {
-            associated_client_devices: self.associated_client_devices
-            ,
-            next_token: self.next_token
-            ,
+            associated_client_devices: self.associated_client_devices,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

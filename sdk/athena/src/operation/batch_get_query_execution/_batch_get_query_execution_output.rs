@@ -8,8 +8,7 @@ pub struct BatchGetQueryExecutionOutput {
     pub query_executions: ::std::option::Option<::std::vec::Vec<crate::types::QueryExecution>>,
     /// <p>Information about the query executions that failed to run.</p>
     #[doc(hidden)]
-    pub unprocessed_query_execution_ids:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedQueryExecutionId>>,
+    pub unprocessed_query_execution_ids: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedQueryExecutionId>>,
     _request_id: Option<String>,
 }
 impl BatchGetQueryExecutionOutput {
@@ -18,9 +17,7 @@ impl BatchGetQueryExecutionOutput {
         self.query_executions.as_deref()
     }
     /// <p>Information about the query executions that failed to run.</p>
-    pub fn unprocessed_query_execution_ids(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnprocessedQueryExecutionId]> {
+    pub fn unprocessed_query_execution_ids(&self) -> ::std::option::Option<&[crate::types::UnprocessedQueryExecutionId]> {
         self.unprocessed_query_execution_ids.as_deref()
     }
 }
@@ -31,23 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchGetQueryExecutionOutput {
 }
 impl BatchGetQueryExecutionOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetQueryExecutionOutput`](crate::operation::batch_get_query_execution::BatchGetQueryExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionOutputBuilder {
         crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetQueryExecutionOutput`](crate::operation::batch_get_query_execution::BatchGetQueryExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetQueryExecutionOutputBuilder {
-    pub(crate) query_executions:
-        ::std::option::Option<::std::vec::Vec<crate::types::QueryExecution>>,
-    pub(crate) unprocessed_query_execution_ids:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedQueryExecutionId>>,
+    pub(crate) query_executions: ::std::option::Option<::std::vec::Vec<crate::types::QueryExecution>>,
+    pub(crate) unprocessed_query_execution_ids: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedQueryExecutionId>>,
     _request_id: Option<String>,
 }
 impl BatchGetQueryExecutionOutputBuilder {
@@ -63,17 +54,12 @@ impl BatchGetQueryExecutionOutputBuilder {
         self
     }
     /// <p>Information about a query execution.</p>
-    pub fn set_query_executions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QueryExecution>>,
-    ) -> Self {
+    pub fn set_query_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryExecution>>) -> Self {
         self.query_executions = input;
         self
     }
     /// <p>Information about a query execution.</p>
-    pub fn get_query_executions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryExecution>> {
+    pub fn get_query_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryExecution>> {
         &self.query_executions
     }
     /// Appends an item to `unprocessed_query_execution_ids`.
@@ -81,10 +67,7 @@ impl BatchGetQueryExecutionOutputBuilder {
     /// To override the contents of this collection use [`set_unprocessed_query_execution_ids`](Self::set_unprocessed_query_execution_ids).
     ///
     /// <p>Information about the query executions that failed to run.</p>
-    pub fn unprocessed_query_execution_ids(
-        mut self,
-        input: crate::types::UnprocessedQueryExecutionId,
-    ) -> Self {
+    pub fn unprocessed_query_execution_ids(mut self, input: crate::types::UnprocessedQueryExecutionId) -> Self {
         let mut v = self.unprocessed_query_execution_ids.unwrap_or_default();
         v.push(input);
         self.unprocessed_query_execution_ids = ::std::option::Option::Some(v);
@@ -99,9 +82,7 @@ impl BatchGetQueryExecutionOutputBuilder {
         self
     }
     /// <p>Information about the query executions that failed to run.</p>
-    pub fn get_unprocessed_query_execution_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedQueryExecutionId>> {
+    pub fn get_unprocessed_query_execution_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedQueryExecutionId>> {
         &self.unprocessed_query_execution_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -114,9 +95,7 @@ impl BatchGetQueryExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetQueryExecutionOutput`](crate::operation::batch_get_query_execution::BatchGetQueryExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_get_query_execution::BatchGetQueryExecutionOutput {
+    pub fn build(self) -> crate::operation::batch_get_query_execution::BatchGetQueryExecutionOutput {
         crate::operation::batch_get_query_execution::BatchGetQueryExecutionOutput {
             query_executions: self.query_executions,
             unprocessed_query_execution_ids: self.unprocessed_query_execution_ids,

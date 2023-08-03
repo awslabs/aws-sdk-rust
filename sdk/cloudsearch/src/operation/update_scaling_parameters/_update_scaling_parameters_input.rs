@@ -23,18 +23,14 @@ impl UpdateScalingParametersInput {
 }
 impl UpdateScalingParametersInput {
     /// Creates a new builder-style object to manufacture [`UpdateScalingParametersInput`](crate::operation::update_scaling_parameters::UpdateScalingParametersInput).
-    pub fn builder(
-    ) -> crate::operation::update_scaling_parameters::builders::UpdateScalingParametersInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_scaling_parameters::builders::UpdateScalingParametersInputBuilder {
         crate::operation::update_scaling_parameters::builders::UpdateScalingParametersInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateScalingParametersInput`](crate::operation::update_scaling_parameters::UpdateScalingParametersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateScalingParametersInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_parameters: ::std::option::Option<crate::types::ScalingParameters>,
@@ -60,17 +56,12 @@ impl UpdateScalingParametersInputBuilder {
         self
     }
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
-    pub fn set_scaling_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalingParameters>,
-    ) -> Self {
+    pub fn set_scaling_parameters(mut self, input: ::std::option::Option<crate::types::ScalingParameters>) -> Self {
         self.scaling_parameters = input;
         self
     }
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
-    pub fn get_scaling_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalingParameters> {
+    pub fn get_scaling_parameters(&self) -> &::std::option::Option<crate::types::ScalingParameters> {
         &self.scaling_parameters
     }
     /// Consumes the builder and constructs a [`UpdateScalingParametersInput`](crate::operation::update_scaling_parameters::UpdateScalingParametersInput).
@@ -80,11 +71,9 @@ impl UpdateScalingParametersInputBuilder {
         crate::operation::update_scaling_parameters::UpdateScalingParametersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_scaling_parameters::UpdateScalingParametersInput {
-                domain_name: self.domain_name,
-                scaling_parameters: self.scaling_parameters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_scaling_parameters::UpdateScalingParametersInput {
+            domain_name: self.domain_name,
+            scaling_parameters: self.scaling_parameters,
+        })
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DetectCustomLabelsOutput`](crate::operation::detect_custom_labels::DetectCustomLabelsOutput) with field(s):
     ///   - [`custom_labels(Option<Vec<CustomLabel>>)`](crate::operation::detect_custom_labels::DetectCustomLabelsOutput::custom_labels): <p>An array of custom labels detected in the input image.</p>
     /// - On failure, responds with [`SdkError<DetectCustomLabelsError>`](crate::operation::detect_custom_labels::DetectCustomLabelsError)
-    pub fn detect_custom_labels(
-        &self,
-    ) -> crate::operation::detect_custom_labels::builders::DetectCustomLabelsFluentBuilder {
-        crate::operation::detect_custom_labels::builders::DetectCustomLabelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detect_custom_labels(&self) -> crate::operation::detect_custom_labels::builders::DetectCustomLabelsFluentBuilder {
+        crate::operation::detect_custom_labels::builders::DetectCustomLabelsFluentBuilder::new(self.handle.clone())
     }
 }

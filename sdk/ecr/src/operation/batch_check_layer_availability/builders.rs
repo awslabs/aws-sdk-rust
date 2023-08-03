@@ -29,7 +29,7 @@ impl BatchCheckLayerAvailabilityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchCheckLayerAvailabilityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityInputBuilder,
+    inner: crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityInputBuilder,
 }
 impl BatchCheckLayerAvailabilityFluentBuilder {
     /// Creates a new `BatchCheckLayerAvailability`.
@@ -40,7 +40,7 @@ impl BatchCheckLayerAvailabilityFluentBuilder {
         }
     }
     /// Access the BatchCheckLayerAvailability as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl BatchCheckLayerAvailabilityFluentBuilder {
             crate::operation::batch_check_layer_availability::BatchCheckLayerAvailability,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl BatchCheckLayerAvailabilityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl BatchCheckLayerAvailabilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl BatchCheckLayerAvailabilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl BatchCheckLayerAvailabilityFluentBuilder {
             crate::operation::batch_check_layer_availability::BatchCheckLayerAvailability,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +127,12 @@ impl BatchCheckLayerAvailabilityFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The name of the repository that is associated with the image layers to check.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository that is associated with the image layers to check.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -162,25 +145,17 @@ impl BatchCheckLayerAvailabilityFluentBuilder {
     /// To override the contents of this collection use [`set_layer_digests`](Self::set_layer_digests).
     ///
     /// <p>The digests of the image layers to check.</p>
-    pub fn layer_digests(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn layer_digests(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.layer_digests(input.into());
         self
     }
     /// <p>The digests of the image layers to check.</p>
-    pub fn set_layer_digests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_layer_digests(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_layer_digests(input);
         self
     }
     /// <p>The digests of the image layers to check.</p>
-    pub fn get_layer_digests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_layer_digests(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_layer_digests()
     }
 }

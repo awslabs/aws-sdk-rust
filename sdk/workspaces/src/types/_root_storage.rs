@@ -23,9 +23,7 @@ impl RootStorage {
 
 /// A builder for [`RootStorage`](crate::types::RootStorage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RootStorageBuilder {
     pub(crate) capacity: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl RootStorageBuilder {
     }
     /// Consumes the builder and constructs a [`RootStorage`](crate::types::RootStorage).
     pub fn build(self) -> crate::types::RootStorage {
-        crate::types::RootStorage {
-            capacity: self.capacity,
-        }
+        crate::types::RootStorage { capacity: self.capacity }
     }
 }

@@ -17,9 +17,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::update_theme::UpdateThemeOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::update_theme::UpdateThemeOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<UpdateThemeError>`](crate::operation::update_theme::UpdateThemeError)
-    pub fn update_theme(
-        &self,
-    ) -> crate::operation::update_theme::builders::UpdateThemeFluentBuilder {
+    pub fn update_theme(&self) -> crate::operation::update_theme::builders::UpdateThemeFluentBuilder {
         crate::operation::update_theme::builders::UpdateThemeFluentBuilder::new(self.handle.clone())
     }
 }

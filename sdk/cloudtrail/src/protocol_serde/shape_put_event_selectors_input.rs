@@ -12,10 +12,7 @@ pub fn ser_put_event_selectors_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_event_selector::ser_event_selector(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_event_selector::ser_event_selector(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -27,10 +24,7 @@ pub fn ser_put_event_selectors_input(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_advanced_event_selector::ser_advanced_event_selector(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_advanced_event_selector::ser_advanced_event_selector(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }

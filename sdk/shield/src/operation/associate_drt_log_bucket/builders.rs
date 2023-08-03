@@ -38,10 +38,7 @@ impl AssociateDRTLogBucketFluentBuilder {
         }
     }
     /// Access the AssociateDRTLogBucket as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_drt_log_bucket::builders::AssociateDrtLogBucketInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_drt_log_bucket::builders::AssociateDrtLogBucketInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl AssociateDRTLogBucketFluentBuilder {
             crate::operation::associate_drt_log_bucket::AssociateDRTLogBucket,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_drt_log_bucket::AssociateDRTLogBucketError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_drt_log_bucket::AssociateDRTLogBucketError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl AssociateDRTLogBucketFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl AssociateDRTLogBucketFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_drt_log_bucket::AssociateDrtLogBucketOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_drt_log_bucket::AssociateDRTLogBucketError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_drt_log_bucket::AssociateDRTLogBucketError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl AssociateDRTLogBucketFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_drt_log_bucket::AssociateDrtLogBucketOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_drt_log_bucket::AssociateDRTLogBucketError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_drt_log_bucket::AssociateDRTLogBucketError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl AssociateDRTLogBucketFluentBuilder {
             crate::operation::associate_drt_log_bucket::AssociateDRTLogBucket,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_drt_log_bucket::AssociateDRTLogBucketError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_drt_log_bucket::AssociateDRTLogBucketError>,
     > {
         self.customize_middleware().await
     }

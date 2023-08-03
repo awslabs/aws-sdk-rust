@@ -28,8 +28,7 @@ pub struct UserSettings {
     pub tensor_board_app_settings: ::std::option::Option<crate::types::TensorBoardAppSettings>,
     /// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app.</p>
     #[doc(hidden)]
-    pub r_studio_server_pro_app_settings:
-        ::std::option::Option<crate::types::RStudioServerProAppSettings>,
+    pub r_studio_server_pro_app_settings: ::std::option::Option<crate::types::RStudioServerProAppSettings>,
     /// <p>A collection of settings that configure the <code>RSessionGateway</code> app.</p>
     #[doc(hidden)]
     pub r_session_app_settings: ::std::option::Option<crate::types::RSessionAppSettings>,
@@ -54,33 +53,23 @@ impl UserSettings {
         self.sharing_settings.as_ref()
     }
     /// <p>The Jupyter server's app settings.</p>
-    pub fn jupyter_server_app_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::JupyterServerAppSettings> {
+    pub fn jupyter_server_app_settings(&self) -> ::std::option::Option<&crate::types::JupyterServerAppSettings> {
         self.jupyter_server_app_settings.as_ref()
     }
     /// <p>The kernel gateway app settings.</p>
-    pub fn kernel_gateway_app_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KernelGatewayAppSettings> {
+    pub fn kernel_gateway_app_settings(&self) -> ::std::option::Option<&crate::types::KernelGatewayAppSettings> {
         self.kernel_gateway_app_settings.as_ref()
     }
     /// <p>The TensorBoard app settings.</p>
-    pub fn tensor_board_app_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TensorBoardAppSettings> {
+    pub fn tensor_board_app_settings(&self) -> ::std::option::Option<&crate::types::TensorBoardAppSettings> {
         self.tensor_board_app_settings.as_ref()
     }
     /// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app.</p>
-    pub fn r_studio_server_pro_app_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RStudioServerProAppSettings> {
+    pub fn r_studio_server_pro_app_settings(&self) -> ::std::option::Option<&crate::types::RStudioServerProAppSettings> {
         self.r_studio_server_pro_app_settings.as_ref()
     }
     /// <p>A collection of settings that configure the <code>RSessionGateway</code> app.</p>
-    pub fn r_session_app_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RSessionAppSettings> {
+    pub fn r_session_app_settings(&self) -> ::std::option::Option<&crate::types::RSessionAppSettings> {
         self.r_session_app_settings.as_ref()
     }
     /// <p>The Canvas app settings.</p>
@@ -97,38 +86,26 @@ impl UserSettings {
 
 /// A builder for [`UserSettings`](crate::types::UserSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserSettingsBuilder {
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) sharing_settings: ::std::option::Option<crate::types::SharingSettings>,
-    pub(crate) jupyter_server_app_settings:
-        ::std::option::Option<crate::types::JupyterServerAppSettings>,
-    pub(crate) kernel_gateway_app_settings:
-        ::std::option::Option<crate::types::KernelGatewayAppSettings>,
-    pub(crate) tensor_board_app_settings:
-        ::std::option::Option<crate::types::TensorBoardAppSettings>,
-    pub(crate) r_studio_server_pro_app_settings:
-        ::std::option::Option<crate::types::RStudioServerProAppSettings>,
+    pub(crate) jupyter_server_app_settings: ::std::option::Option<crate::types::JupyterServerAppSettings>,
+    pub(crate) kernel_gateway_app_settings: ::std::option::Option<crate::types::KernelGatewayAppSettings>,
+    pub(crate) tensor_board_app_settings: ::std::option::Option<crate::types::TensorBoardAppSettings>,
+    pub(crate) r_studio_server_pro_app_settings: ::std::option::Option<crate::types::RStudioServerProAppSettings>,
     pub(crate) r_session_app_settings: ::std::option::Option<crate::types::RSessionAppSettings>,
     pub(crate) canvas_app_settings: ::std::option::Option<crate::types::CanvasAppSettings>,
 }
 impl UserSettingsBuilder {
     /// <p>The execution role for the user.</p>
-    pub fn execution_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The execution role for the user.</p>
-    pub fn set_execution_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role = input;
         self
     }
@@ -144,10 +121,7 @@ impl UserSettingsBuilder {
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
     /// <p>Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
@@ -157,10 +131,7 @@ impl UserSettingsBuilder {
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
     /// <p>Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
@@ -168,9 +139,7 @@ impl UserSettingsBuilder {
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
     /// <p>Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     /// <p>Specifies options for sharing SageMaker Studio notebooks.</p>
@@ -179,10 +148,7 @@ impl UserSettingsBuilder {
         self
     }
     /// <p>Specifies options for sharing SageMaker Studio notebooks.</p>
-    pub fn set_sharing_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::SharingSettings>,
-    ) -> Self {
+    pub fn set_sharing_settings(mut self, input: ::std::option::Option<crate::types::SharingSettings>) -> Self {
         self.sharing_settings = input;
         self
     }
@@ -191,91 +157,59 @@ impl UserSettingsBuilder {
         &self.sharing_settings
     }
     /// <p>The Jupyter server's app settings.</p>
-    pub fn jupyter_server_app_settings(
-        mut self,
-        input: crate::types::JupyterServerAppSettings,
-    ) -> Self {
+    pub fn jupyter_server_app_settings(mut self, input: crate::types::JupyterServerAppSettings) -> Self {
         self.jupyter_server_app_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Jupyter server's app settings.</p>
-    pub fn set_jupyter_server_app_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::JupyterServerAppSettings>,
-    ) -> Self {
+    pub fn set_jupyter_server_app_settings(mut self, input: ::std::option::Option<crate::types::JupyterServerAppSettings>) -> Self {
         self.jupyter_server_app_settings = input;
         self
     }
     /// <p>The Jupyter server's app settings.</p>
-    pub fn get_jupyter_server_app_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::JupyterServerAppSettings> {
+    pub fn get_jupyter_server_app_settings(&self) -> &::std::option::Option<crate::types::JupyterServerAppSettings> {
         &self.jupyter_server_app_settings
     }
     /// <p>The kernel gateway app settings.</p>
-    pub fn kernel_gateway_app_settings(
-        mut self,
-        input: crate::types::KernelGatewayAppSettings,
-    ) -> Self {
+    pub fn kernel_gateway_app_settings(mut self, input: crate::types::KernelGatewayAppSettings) -> Self {
         self.kernel_gateway_app_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The kernel gateway app settings.</p>
-    pub fn set_kernel_gateway_app_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::KernelGatewayAppSettings>,
-    ) -> Self {
+    pub fn set_kernel_gateway_app_settings(mut self, input: ::std::option::Option<crate::types::KernelGatewayAppSettings>) -> Self {
         self.kernel_gateway_app_settings = input;
         self
     }
     /// <p>The kernel gateway app settings.</p>
-    pub fn get_kernel_gateway_app_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::KernelGatewayAppSettings> {
+    pub fn get_kernel_gateway_app_settings(&self) -> &::std::option::Option<crate::types::KernelGatewayAppSettings> {
         &self.kernel_gateway_app_settings
     }
     /// <p>The TensorBoard app settings.</p>
-    pub fn tensor_board_app_settings(
-        mut self,
-        input: crate::types::TensorBoardAppSettings,
-    ) -> Self {
+    pub fn tensor_board_app_settings(mut self, input: crate::types::TensorBoardAppSettings) -> Self {
         self.tensor_board_app_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The TensorBoard app settings.</p>
-    pub fn set_tensor_board_app_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::TensorBoardAppSettings>,
-    ) -> Self {
+    pub fn set_tensor_board_app_settings(mut self, input: ::std::option::Option<crate::types::TensorBoardAppSettings>) -> Self {
         self.tensor_board_app_settings = input;
         self
     }
     /// <p>The TensorBoard app settings.</p>
-    pub fn get_tensor_board_app_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::TensorBoardAppSettings> {
+    pub fn get_tensor_board_app_settings(&self) -> &::std::option::Option<crate::types::TensorBoardAppSettings> {
         &self.tensor_board_app_settings
     }
     /// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app.</p>
-    pub fn r_studio_server_pro_app_settings(
-        mut self,
-        input: crate::types::RStudioServerProAppSettings,
-    ) -> Self {
+    pub fn r_studio_server_pro_app_settings(mut self, input: crate::types::RStudioServerProAppSettings) -> Self {
         self.r_studio_server_pro_app_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app.</p>
-    pub fn set_r_studio_server_pro_app_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RStudioServerProAppSettings>,
-    ) -> Self {
+    pub fn set_r_studio_server_pro_app_settings(mut self, input: ::std::option::Option<crate::types::RStudioServerProAppSettings>) -> Self {
         self.r_studio_server_pro_app_settings = input;
         self
     }
     /// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app.</p>
-    pub fn get_r_studio_server_pro_app_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::RStudioServerProAppSettings> {
+    pub fn get_r_studio_server_pro_app_settings(&self) -> &::std::option::Option<crate::types::RStudioServerProAppSettings> {
         &self.r_studio_server_pro_app_settings
     }
     /// <p>A collection of settings that configure the <code>RSessionGateway</code> app.</p>
@@ -284,17 +218,12 @@ impl UserSettingsBuilder {
         self
     }
     /// <p>A collection of settings that configure the <code>RSessionGateway</code> app.</p>
-    pub fn set_r_session_app_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RSessionAppSettings>,
-    ) -> Self {
+    pub fn set_r_session_app_settings(mut self, input: ::std::option::Option<crate::types::RSessionAppSettings>) -> Self {
         self.r_session_app_settings = input;
         self
     }
     /// <p>A collection of settings that configure the <code>RSessionGateway</code> app.</p>
-    pub fn get_r_session_app_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::RSessionAppSettings> {
+    pub fn get_r_session_app_settings(&self) -> &::std::option::Option<crate::types::RSessionAppSettings> {
         &self.r_session_app_settings
     }
     /// <p>The Canvas app settings.</p>
@@ -303,17 +232,12 @@ impl UserSettingsBuilder {
         self
     }
     /// <p>The Canvas app settings.</p>
-    pub fn set_canvas_app_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::CanvasAppSettings>,
-    ) -> Self {
+    pub fn set_canvas_app_settings(mut self, input: ::std::option::Option<crate::types::CanvasAppSettings>) -> Self {
         self.canvas_app_settings = input;
         self
     }
     /// <p>The Canvas app settings.</p>
-    pub fn get_canvas_app_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::CanvasAppSettings> {
+    pub fn get_canvas_app_settings(&self) -> &::std::option::Option<crate::types::CanvasAppSettings> {
         &self.canvas_app_settings
     }
     /// Consumes the builder and constructs a [`UserSettings`](crate::types::UserSettings).

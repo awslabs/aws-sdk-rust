@@ -14,8 +14,7 @@ pub struct PutAppLaunchConfigurationInput {
     pub auto_launch: ::std::option::Option<bool>,
     /// <p>Information about the launch configurations for server groups in the application.</p>
     #[doc(hidden)]
-    pub server_group_launch_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>>,
+    pub server_group_launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>>,
 }
 impl PutAppLaunchConfigurationInput {
     /// <p>The ID of the application.</p>
@@ -31,30 +30,25 @@ impl PutAppLaunchConfigurationInput {
         self.auto_launch
     }
     /// <p>Information about the launch configurations for server groups in the application.</p>
-    pub fn server_group_launch_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServerGroupLaunchConfiguration]> {
+    pub fn server_group_launch_configurations(&self) -> ::std::option::Option<&[crate::types::ServerGroupLaunchConfiguration]> {
         self.server_group_launch_configurations.as_deref()
     }
 }
 impl PutAppLaunchConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutAppLaunchConfigurationInput`](crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationInput).
-    pub fn builder() -> crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationInputBuilder {
         crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutAppLaunchConfigurationInput`](crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAppLaunchConfigurationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_launch: ::std::option::Option<bool>,
-    pub(crate) server_group_launch_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>>,
+    pub(crate) server_group_launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>>,
 }
 impl PutAppLaunchConfigurationInputBuilder {
     /// <p>The ID of the application.</p>
@@ -104,10 +98,7 @@ impl PutAppLaunchConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_server_group_launch_configurations`](Self::set_server_group_launch_configurations).
     ///
     /// <p>Information about the launch configurations for server groups in the application.</p>
-    pub fn server_group_launch_configurations(
-        mut self,
-        input: crate::types::ServerGroupLaunchConfiguration,
-    ) -> Self {
+    pub fn server_group_launch_configurations(mut self, input: crate::types::ServerGroupLaunchConfiguration) -> Self {
         let mut v = self.server_group_launch_configurations.unwrap_or_default();
         v.push(input);
         self.server_group_launch_configurations = ::std::option::Option::Some(v);
@@ -122,9 +113,7 @@ impl PutAppLaunchConfigurationInputBuilder {
         self
     }
     /// <p>Information about the launch configurations for server groups in the application.</p>
-    pub fn get_server_group_launch_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>> {
+    pub fn get_server_group_launch_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>> {
         &self.server_group_launch_configurations
     }
     /// Consumes the builder and constructs a [`PutAppLaunchConfigurationInput`](crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationInput).
@@ -134,13 +123,11 @@ impl PutAppLaunchConfigurationInputBuilder {
         crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationInput {
-                app_id: self.app_id,
-                role_name: self.role_name,
-                auto_launch: self.auto_launch,
-                server_group_launch_configurations: self.server_group_launch_configurations,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationInput {
+            app_id: self.app_id,
+            role_name: self.role_name,
+            auto_launch: self.auto_launch,
+            server_group_launch_configurations: self.server_group_launch_configurations,
+        })
     }
 }

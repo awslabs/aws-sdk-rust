@@ -52,12 +52,7 @@ pub(crate) fn de_cors_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::CorsRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -67,57 +62,40 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "AllowedOrigins" => {
-                                builder = builder.set_allowed_origins(
-                                    crate::protocol_serde::shape_allowed_origins::de_allowed_origins(tokens)?
-                                );
-                            }
-                            "AllowedMethods" => {
-                                builder = builder.set_allowed_methods(
-                                    crate::protocol_serde::shape_allowed_methods::de_allowed_methods(tokens)?
-                                );
-                            }
-                            "AllowedHeaders" => {
-                                builder = builder.set_allowed_headers(
-                                    crate::protocol_serde::shape_allowed_headers::de_allowed_headers(tokens)?
-                                );
-                            }
-                            "MaxAgeSeconds" => {
-                                builder = builder.set_max_age_seconds(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "AllowedOrigins" => {
+                            builder = builder.set_allowed_origins(crate::protocol_serde::shape_allowed_origins::de_allowed_origins(tokens)?);
+                        }
+                        "AllowedMethods" => {
+                            builder = builder.set_allowed_methods(crate::protocol_serde::shape_allowed_methods::de_allowed_methods(tokens)?);
+                        }
+                        "AllowedHeaders" => {
+                            builder = builder.set_allowed_headers(crate::protocol_serde::shape_allowed_headers::de_allowed_headers(tokens)?);
+                        }
+                        "MaxAgeSeconds" => {
+                            builder = builder.set_max_age_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "ExposeHeaders" => {
-                                builder = builder.set_expose_headers(
-                                    crate::protocol_serde::shape_expose_headers::de_expose_headers(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "ExposeHeaders" => {
+                            builder = builder.set_expose_headers(crate::protocol_serde::shape_expose_headers::de_expose_headers(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

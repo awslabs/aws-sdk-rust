@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`routes(Option<Vec<LocalGatewayRoute>>)`](crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesOutput::routes): <p>Information about the routes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<SearchLocalGatewayRoutesError>`](crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesError)
-    pub fn search_local_gateway_routes(&self) -> crate::operation::search_local_gateway_routes::builders::SearchLocalGatewayRoutesFluentBuilder{
+    pub fn search_local_gateway_routes(&self) -> crate::operation::search_local_gateway_routes::builders::SearchLocalGatewayRoutesFluentBuilder {
         crate::operation::search_local_gateway_routes::builders::SearchLocalGatewayRoutesFluentBuilder::new(self.handle.clone())
     }
 }

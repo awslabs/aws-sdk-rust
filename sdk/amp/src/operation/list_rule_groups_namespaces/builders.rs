@@ -26,7 +26,7 @@ impl ListRuleGroupsNamespacesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRuleGroupsNamespacesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesInputBuilder,
+    inner: crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesInputBuilder,
 }
 impl ListRuleGroupsNamespacesFluentBuilder {
     /// Creates a new `ListRuleGroupsNamespaces`.
@@ -37,7 +37,7 @@ impl ListRuleGroupsNamespacesFluentBuilder {
         }
     }
     /// Access the ListRuleGroupsNamespaces as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListRuleGroupsNamespacesFluentBuilder {
             crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListRuleGroupsNamespacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListRuleGroupsNamespacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListRuleGroupsNamespacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListRuleGroupsNamespacesFluentBuilder {
             crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_rule_groups_namespaces::paginator::ListRuleGroupsNamespacesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_rule_groups_namespaces::paginator::ListRuleGroupsNamespacesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_rule_groups_namespaces::paginator::ListRuleGroupsNamespacesPaginator {
         crate::operation::list_rule_groups_namespaces::paginator::ListRuleGroupsNamespacesPaginator::new(self.handle, self.inner)
     }
     /// The ID of the workspace.

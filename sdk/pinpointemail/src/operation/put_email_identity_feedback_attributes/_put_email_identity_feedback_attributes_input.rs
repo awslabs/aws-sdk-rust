@@ -27,34 +27,26 @@ impl PutEmailIdentityFeedbackAttributesInput {
 }
 impl PutEmailIdentityFeedbackAttributesInput {
     /// Creates a new builder-style object to manufacture [`PutEmailIdentityFeedbackAttributesInput`](crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput).
-    pub fn builder() -> crate::operation::put_email_identity_feedback_attributes::builders::PutEmailIdentityFeedbackAttributesInputBuilder{
+    pub fn builder() -> crate::operation::put_email_identity_feedback_attributes::builders::PutEmailIdentityFeedbackAttributesInputBuilder {
         crate::operation::put_email_identity_feedback_attributes::builders::PutEmailIdentityFeedbackAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`PutEmailIdentityFeedbackAttributesInput`](crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutEmailIdentityFeedbackAttributesInputBuilder {
     pub(crate) email_identity: ::std::option::Option<::std::string::String>,
     pub(crate) email_forwarding_enabled: ::std::option::Option<bool>,
 }
 impl PutEmailIdentityFeedbackAttributesInputBuilder {
     /// <p>The email identity that you want to configure bounce and complaint feedback forwarding for.</p>
-    pub fn email_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email identity that you want to configure bounce and complaint feedback forwarding for.</p>
-    pub fn set_email_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_identity = input;
         self
     }
@@ -83,15 +75,17 @@ impl PutEmailIdentityFeedbackAttributesInputBuilder {
         &self.email_forwarding_enabled
     }
     /// Consumes the builder and constructs a [`PutEmailIdentityFeedbackAttributesInput`](crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput {
-                email_identity: self.email_identity
-                ,
-                email_forwarding_enabled: self.email_forwarding_enabled
-                    .unwrap_or_default()
-                ,
-            }
+                email_identity: self.email_identity,
+                email_forwarding_enabled: self.email_forwarding_enabled.unwrap_or_default(),
+            },
         )
     }
 }

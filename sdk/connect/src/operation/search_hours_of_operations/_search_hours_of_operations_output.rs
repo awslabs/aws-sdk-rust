@@ -35,21 +35,16 @@ impl ::aws_http::request_id::RequestId for SearchHoursOfOperationsOutput {
 }
 impl SearchHoursOfOperationsOutput {
     /// Creates a new builder-style object to manufacture [`SearchHoursOfOperationsOutput`](crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput).
-    pub fn builder(
-    ) -> crate::operation::search_hours_of_operations::builders::SearchHoursOfOperationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::search_hours_of_operations::builders::SearchHoursOfOperationsOutputBuilder {
         crate::operation::search_hours_of_operations::builders::SearchHoursOfOperationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchHoursOfOperationsOutput`](crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchHoursOfOperationsOutputBuilder {
-    pub(crate) hours_of_operations:
-        ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperation>>,
+    pub(crate) hours_of_operations: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -67,17 +62,12 @@ impl SearchHoursOfOperationsOutputBuilder {
         self
     }
     /// <p>Information about the hours of operations.</p>
-    pub fn set_hours_of_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperation>>,
-    ) -> Self {
+    pub fn set_hours_of_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperation>>) -> Self {
         self.hours_of_operations = input;
         self
     }
     /// <p>Information about the hours of operations.</p>
-    pub fn get_hours_of_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperation>> {
+    pub fn get_hours_of_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperation>> {
         &self.hours_of_operations
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -118,9 +108,7 @@ impl SearchHoursOfOperationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchHoursOfOperationsOutput`](crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput {
+    pub fn build(self) -> crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput {
         crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput {
             hours_of_operations: self.hours_of_operations,
             next_token: self.next_token,

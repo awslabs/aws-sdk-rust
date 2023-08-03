@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`rule(ReceiptRule)`](crate::operation::create_receipt_rule::builders::CreateReceiptRuleFluentBuilder::rule) / [`set_rule(Option<ReceiptRule>)`](crate::operation::create_receipt_rule::builders::CreateReceiptRuleFluentBuilder::set_rule): <p>A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.</p>
     /// - On success, responds with [`CreateReceiptRuleOutput`](crate::operation::create_receipt_rule::CreateReceiptRuleOutput)
     /// - On failure, responds with [`SdkError<CreateReceiptRuleError>`](crate::operation::create_receipt_rule::CreateReceiptRuleError)
-    pub fn create_receipt_rule(
-        &self,
-    ) -> crate::operation::create_receipt_rule::builders::CreateReceiptRuleFluentBuilder {
-        crate::operation::create_receipt_rule::builders::CreateReceiptRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_receipt_rule(&self) -> crate::operation::create_receipt_rule::builders::CreateReceiptRuleFluentBuilder {
+        crate::operation::create_receipt_rule::builders::CreateReceiptRuleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartOnDemandAuditTaskOutput {
 }
 impl StartOnDemandAuditTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartOnDemandAuditTaskOutput`](crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::start_on_demand_audit_task::builders::StartOnDemandAuditTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_on_demand_audit_task::builders::StartOnDemandAuditTaskOutputBuilder {
         crate::operation::start_on_demand_audit_task::builders::StartOnDemandAuditTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartOnDemandAuditTaskOutput`](crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartOnDemandAuditTaskOutputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl StartOnDemandAuditTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartOnDemandAuditTaskOutput`](crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskOutput {
+    pub fn build(self) -> crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskOutput {
         crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskOutput {
             task_id: self.task_id,
             _request_id: self._request_id,

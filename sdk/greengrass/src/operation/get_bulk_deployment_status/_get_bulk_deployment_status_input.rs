@@ -15,35 +15,25 @@ impl GetBulkDeploymentStatusInput {
 }
 impl GetBulkDeploymentStatusInput {
     /// Creates a new builder-style object to manufacture [`GetBulkDeploymentStatusInput`](crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusInputBuilder {
         crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBulkDeploymentStatusInput`](crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBulkDeploymentStatusInputBuilder {
     pub(crate) bulk_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetBulkDeploymentStatusInputBuilder {
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bulk_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bulk_deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the bulk deployment.
-    pub fn set_bulk_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bulk_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bulk_deployment_id = input;
         self
     }
@@ -58,10 +48,8 @@ impl GetBulkDeploymentStatusInputBuilder {
         crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusInput {
-                bulk_deployment_id: self.bulk_deployment_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusInput {
+            bulk_deployment_id: self.bulk_deployment_id,
+        })
     }
 }

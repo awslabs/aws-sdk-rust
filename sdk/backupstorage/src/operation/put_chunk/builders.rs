@@ -10,10 +10,7 @@ impl PutChunkInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_chunk::PutChunkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_chunk::PutChunkError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_chunk::PutChunkError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_chunk();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl PutChunkFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_chunk::PutChunk,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_chunk::PutChunk, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_chunk::PutChunkError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl PutChunkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl PutChunkFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_chunk::PutChunk,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_chunk::PutChunk, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_chunk::PutChunkError>,
     > {
         self.customize_middleware().await
     }
     /// Backup job Id for the in-progress backup.
-    pub fn backup_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_job_id(input.into());
         self
     }
     /// Backup job Id for the in-progress backup.
-    pub fn set_backup_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_job_id(input);
         self
     }
@@ -166,10 +148,7 @@ impl PutChunkFluentBuilder {
         self
     }
     /// Data to be uploaded
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_data(input);
         self
     }
@@ -211,17 +190,12 @@ impl PutChunkFluentBuilder {
         self
     }
     /// Checksum algorithm
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::DataChecksumAlgorithm>) -> Self {
         self.inner = self.inner.set_checksum_algorithm(input);
         self
     }
     /// Checksum algorithm
-    pub fn get_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
         self.inner.get_checksum_algorithm()
     }
 }

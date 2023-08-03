@@ -37,10 +37,7 @@ impl ListDedicatedIpPoolsFluentBuilder {
         }
     }
     /// Access the ListDedicatedIpPools as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListDedicatedIpPoolsFluentBuilder {
             crate::operation::list_dedicated_ip_pools::ListDedicatedIpPools,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListDedicatedIpPoolsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListDedicatedIpPoolsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListDedicatedIpPoolsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListDedicatedIpPoolsFluentBuilder {
             crate::operation::list_dedicated_ip_pools::ListDedicatedIpPools,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_dedicated_ip_pools::paginator::ListDedicatedIpPoolsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_dedicated_ip_pools::paginator::ListDedicatedIpPoolsPaginator {
-        crate::operation::list_dedicated_ip_pools::paginator::ListDedicatedIpPoolsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_dedicated_ip_pools::paginator::ListDedicatedIpPoolsPaginator {
+        crate::operation::list_dedicated_ip_pools::paginator::ListDedicatedIpPoolsPaginator::new(self.handle, self.inner)
     }
     /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

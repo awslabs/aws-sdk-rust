@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AugmentedManifestsDocumentTypeFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -58,12 +52,8 @@ impl ::std::convert::From<&str> for AugmentedManifestsDocumentTypeFormat {
     fn from(s: &str) -> Self {
         match s {
             "PLAIN_TEXT_DOCUMENT" => AugmentedManifestsDocumentTypeFormat::PlainTextDocument,
-            "SEMI_STRUCTURED_DOCUMENT" => {
-                AugmentedManifestsDocumentTypeFormat::SemiStructuredDocument
-            }
-            other => AugmentedManifestsDocumentTypeFormat::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "SEMI_STRUCTURED_DOCUMENT" => AugmentedManifestsDocumentTypeFormat::SemiStructuredDocument,
+            other => AugmentedManifestsDocumentTypeFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -79,9 +69,7 @@ impl AugmentedManifestsDocumentTypeFormat {
     pub fn as_str(&self) -> &str {
         match self {
             AugmentedManifestsDocumentTypeFormat::PlainTextDocument => "PLAIN_TEXT_DOCUMENT",
-            AugmentedManifestsDocumentTypeFormat::SemiStructuredDocument => {
-                "SEMI_STRUCTURED_DOCUMENT"
-            }
+            AugmentedManifestsDocumentTypeFormat::SemiStructuredDocument => "SEMI_STRUCTURED_DOCUMENT",
             AugmentedManifestsDocumentTypeFormat::Unknown(value) => value.as_str(),
         }
     }

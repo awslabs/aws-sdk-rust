@@ -35,9 +35,7 @@ impl ListPrincipalsOutput {
 
 /// A builder for [`ListPrincipalsOutput`](crate::operation::list_principals::ListPrincipalsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPrincipalsOutputBuilder {
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListPrincipalsOutputBuilder {
         self
     }
     /// <p>An array of objects that contain the details about the principals.</p>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>) -> Self {
         self.principals = input;
         self
     }
     /// <p>An array of objects that contain the details about the principals.</p>
-    pub fn get_principals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
         &self.principals
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>

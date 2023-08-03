@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`record_details(Option<Vec<RecordDetail>>)`](crate::operation::list_record_history::ListRecordHistoryOutput::record_details): <p>The records, in reverse chronological order.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_record_history::ListRecordHistoryOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListRecordHistoryError>`](crate::operation::list_record_history::ListRecordHistoryError)
-    pub fn list_record_history(
-        &self,
-    ) -> crate::operation::list_record_history::builders::ListRecordHistoryFluentBuilder {
-        crate::operation::list_record_history::builders::ListRecordHistoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_record_history(&self) -> crate::operation::list_record_history::builders::ListRecordHistoryFluentBuilder {
+        crate::operation::list_record_history::builders::ListRecordHistoryFluentBuilder::new(self.handle.clone())
     }
 }

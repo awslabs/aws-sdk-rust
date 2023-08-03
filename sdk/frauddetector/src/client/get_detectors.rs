@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`detectors(Option<Vec<Detector>>)`](crate::operation::get_detectors::GetDetectorsOutput::detectors): <p>The detectors.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_detectors::GetDetectorsOutput::next_token): <p>The next page token.</p>
     /// - On failure, responds with [`SdkError<GetDetectorsError>`](crate::operation::get_detectors::GetDetectorsError)
-    pub fn get_detectors(
-        &self,
-    ) -> crate::operation::get_detectors::builders::GetDetectorsFluentBuilder {
-        crate::operation::get_detectors::builders::GetDetectorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_detectors(&self) -> crate::operation::get_detectors::builders::GetDetectorsFluentBuilder {
+        crate::operation::get_detectors::builders::GetDetectorsFluentBuilder::new(self.handle.clone())
     }
 }

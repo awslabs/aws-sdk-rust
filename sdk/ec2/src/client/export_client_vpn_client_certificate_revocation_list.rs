@@ -9,7 +9,10 @@ impl super::Client {
     ///   - [`certificate_revocation_list(Option<String>)`](crate::operation::export_client_vpn_client_certificate_revocation_list::ExportClientVpnClientCertificateRevocationListOutput::certificate_revocation_list): <p>Information about the client certificate revocation list.</p>
     ///   - [`status(Option<ClientCertificateRevocationListStatus>)`](crate::operation::export_client_vpn_client_certificate_revocation_list::ExportClientVpnClientCertificateRevocationListOutput::status): <p>The current state of the client certificate revocation list.</p>
     /// - On failure, responds with [`SdkError<ExportClientVpnClientCertificateRevocationListError>`](crate::operation::export_client_vpn_client_certificate_revocation_list::ExportClientVpnClientCertificateRevocationListError)
-    pub fn export_client_vpn_client_certificate_revocation_list(&self) -> crate::operation::export_client_vpn_client_certificate_revocation_list::builders::ExportClientVpnClientCertificateRevocationListFluentBuilder{
+    pub fn export_client_vpn_client_certificate_revocation_list(
+        &self,
+    ) -> crate::operation::export_client_vpn_client_certificate_revocation_list::builders::ExportClientVpnClientCertificateRevocationListFluentBuilder
+    {
         crate::operation::export_client_vpn_client_certificate_revocation_list::builders::ExportClientVpnClientCertificateRevocationListFluentBuilder::new(self.handle.clone())
     }
 }

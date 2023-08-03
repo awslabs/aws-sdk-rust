@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`integrations(Vec<Integration>)`](crate::operation::update_response_plan::builders::UpdateResponsePlanFluentBuilder::integrations) / [`set_integrations(Option<Vec<Integration>>)`](crate::operation::update_response_plan::builders::UpdateResponsePlanFluentBuilder::set_integrations): <p>Information about third-party services integrated into the response plan.</p>
     /// - On success, responds with [`UpdateResponsePlanOutput`](crate::operation::update_response_plan::UpdateResponsePlanOutput)
     /// - On failure, responds with [`SdkError<UpdateResponsePlanError>`](crate::operation::update_response_plan::UpdateResponsePlanError)
-    pub fn update_response_plan(
-        &self,
-    ) -> crate::operation::update_response_plan::builders::UpdateResponsePlanFluentBuilder {
-        crate::operation::update_response_plan::builders::UpdateResponsePlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_response_plan(&self) -> crate::operation::update_response_plan::builders::UpdateResponsePlanFluentBuilder {
+        crate::operation::update_response_plan::builders::UpdateResponsePlanFluentBuilder::new(self.handle.clone())
     }
 }

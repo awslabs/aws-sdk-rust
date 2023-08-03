@@ -10,9 +10,7 @@ pub struct GetVoiceConnectorGroupOutput {
 }
 impl GetVoiceConnectorGroupOutput {
     /// <p>The Amazon Chime Voice Connector group details.</p>
-    pub fn voice_connector_group(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VoiceConnectorGroup> {
+    pub fn voice_connector_group(&self) -> ::std::option::Option<&crate::types::VoiceConnectorGroup> {
         self.voice_connector_group.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetVoiceConnectorGroupOutput {
 }
 impl GetVoiceConnectorGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetVoiceConnectorGroupOutput`](crate::operation::get_voice_connector_group::GetVoiceConnectorGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::get_voice_connector_group::builders::GetVoiceConnectorGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_voice_connector_group::builders::GetVoiceConnectorGroupOutputBuilder {
         crate::operation::get_voice_connector_group::builders::GetVoiceConnectorGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVoiceConnectorGroupOutput`](crate::operation::get_voice_connector_group::GetVoiceConnectorGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVoiceConnectorGroupOutputBuilder {
     pub(crate) voice_connector_group: ::std::option::Option<crate::types::VoiceConnectorGroup>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl GetVoiceConnectorGroupOutputBuilder {
         self
     }
     /// <p>The Amazon Chime Voice Connector group details.</p>
-    pub fn set_voice_connector_group(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceConnectorGroup>,
-    ) -> Self {
+    pub fn set_voice_connector_group(mut self, input: ::std::option::Option<crate::types::VoiceConnectorGroup>) -> Self {
         self.voice_connector_group = input;
         self
     }
     /// <p>The Amazon Chime Voice Connector group details.</p>
-    pub fn get_voice_connector_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::VoiceConnectorGroup> {
+    pub fn get_voice_connector_group(&self) -> &::std::option::Option<crate::types::VoiceConnectorGroup> {
         &self.voice_connector_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -69,9 +58,7 @@ impl GetVoiceConnectorGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetVoiceConnectorGroupOutput`](crate::operation::get_voice_connector_group::GetVoiceConnectorGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_voice_connector_group::GetVoiceConnectorGroupOutput {
+    pub fn build(self) -> crate::operation::get_voice_connector_group::GetVoiceConnectorGroupOutput {
         crate::operation::get_voice_connector_group::GetVoiceConnectorGroupOutput {
             voice_connector_group: self.voice_connector_group,
             _request_id: self._request_id,

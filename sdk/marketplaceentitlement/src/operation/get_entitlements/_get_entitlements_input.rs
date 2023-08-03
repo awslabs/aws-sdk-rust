@@ -9,12 +9,7 @@ pub struct GetEntitlementsInput {
     pub product_code: ::std::option::Option<::std::string::String>,
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
     #[doc(hidden)]
-    pub filter: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::GetEntitlementFilterName,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    >,
+    pub filter: ::std::option::Option<::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>>,
     /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -30,12 +25,7 @@ impl GetEntitlementsInput {
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
     pub fn filter(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::GetEntitlementFilterName,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>> {
         self.filter.as_ref()
     }
     /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>
@@ -56,17 +46,11 @@ impl GetEntitlementsInput {
 
 /// A builder for [`GetEntitlementsInput`](crate::operation::get_entitlements::GetEntitlementsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEntitlementsInputBuilder {
     pub(crate) product_code: ::std::option::Option<::std::string::String>,
-    pub(crate) filter: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::GetEntitlementFilterName,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    >,
+    pub(crate) filter:
+        ::std::option::Option<::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -90,11 +74,7 @@ impl GetEntitlementsInputBuilder {
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
-    pub fn filter(
-        mut self,
-        k: crate::types::GetEntitlementFilterName,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn filter(mut self, k: crate::types::GetEntitlementFilterName, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
         hash_map.insert(k, v);
         self.filter = ::std::option::Option::Some(hash_map);
@@ -103,12 +83,7 @@ impl GetEntitlementsInputBuilder {
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
     pub fn set_filter(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::GetEntitlementFilterName,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.filter = input;
         self
@@ -116,12 +91,7 @@ impl GetEntitlementsInputBuilder {
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
     pub fn get_filter(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::GetEntitlementFilterName,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>> {
         &self.filter
     }
     /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>
@@ -155,10 +125,7 @@ impl GetEntitlementsInputBuilder {
     /// Consumes the builder and constructs a [`GetEntitlementsInput`](crate::operation::get_entitlements::GetEntitlementsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_entitlements::GetEntitlementsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_entitlements::GetEntitlementsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_entitlements::GetEntitlementsInput {
             product_code: self.product_code,
             filter: self.filter,

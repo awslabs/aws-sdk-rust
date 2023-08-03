@@ -21,9 +21,7 @@ pub enum EvaluationFormItem {
 impl EvaluationFormItem {
     /// Tries to convert the enum instance into [`Question`](crate::types::EvaluationFormItem::Question), extracting the inner [`EvaluationFormQuestion`](crate::types::EvaluationFormQuestion).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_question(
-        &self,
-    ) -> ::std::result::Result<&crate::types::EvaluationFormQuestion, &Self> {
+    pub fn as_question(&self) -> ::std::result::Result<&crate::types::EvaluationFormQuestion, &Self> {
         if let EvaluationFormItem::Question(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

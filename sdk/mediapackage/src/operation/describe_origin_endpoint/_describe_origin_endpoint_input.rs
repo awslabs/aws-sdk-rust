@@ -15,18 +15,14 @@ impl DescribeOriginEndpointInput {
 }
 impl DescribeOriginEndpointInput {
     /// Creates a new builder-style object to manufacture [`DescribeOriginEndpointInput`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointInputBuilder {
         crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOriginEndpointInput`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOriginEndpointInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl DescribeOriginEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOriginEndpointInput`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_origin_endpoint::DescribeOriginEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_origin_endpoint::DescribeOriginEndpointInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_origin_endpoint::DescribeOriginEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_origin_endpoint::DescribeOriginEndpointInput { id: self.id })
     }
 }

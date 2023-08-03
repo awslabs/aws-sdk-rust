@@ -37,39 +37,28 @@ impl ::aws_http::request_id::RequestId for GetDataLakeSourcesOutput {
 }
 impl GetDataLakeSourcesOutput {
     /// Creates a new builder-style object to manufacture [`GetDataLakeSourcesOutput`](crate::operation::get_data_lake_sources::GetDataLakeSourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_data_lake_sources::builders::GetDataLakeSourcesOutputBuilder {
-        crate::operation::get_data_lake_sources::builders::GetDataLakeSourcesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_data_lake_sources::builders::GetDataLakeSourcesOutputBuilder {
+        crate::operation::get_data_lake_sources::builders::GetDataLakeSourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataLakeSourcesOutput`](crate::operation::get_data_lake_sources::GetDataLakeSourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataLakeSourcesOutputBuilder {
     pub(crate) data_lake_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) data_lake_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataLakeSource>>,
+    pub(crate) data_lake_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeSource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDataLakeSourcesOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
-    pub fn data_lake_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_lake_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_lake_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
-    pub fn set_data_lake_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_lake_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_lake_arn = input;
         self
     }
@@ -89,17 +78,12 @@ impl GetDataLakeSourcesOutputBuilder {
         self
     }
     /// <p>The list of enabled accounts and enabled sources.</p>
-    pub fn set_data_lake_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeSource>>,
-    ) -> Self {
+    pub fn set_data_lake_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeSource>>) -> Self {
         self.data_lake_sources = input;
         self
     }
     /// <p>The list of enabled accounts and enabled sources.</p>
-    pub fn get_data_lake_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeSource>> {
+    pub fn get_data_lake_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeSource>> {
         &self.data_lake_sources
     }
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>

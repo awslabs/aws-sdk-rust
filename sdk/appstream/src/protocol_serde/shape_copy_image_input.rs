@@ -13,9 +13,7 @@ pub fn ser_copy_image_input(
         object.key("DestinationRegion").string(var_3.as_str());
     }
     if let Some(var_4) = &input.destination_image_description {
-        object
-            .key("DestinationImageDescription")
-            .string(var_4.as_str());
+        object.key("DestinationImageDescription").string(var_4.as_str());
     }
     Ok(())
 }

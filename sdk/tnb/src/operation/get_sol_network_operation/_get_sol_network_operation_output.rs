@@ -26,13 +26,10 @@ pub struct GetSolNetworkOperationOutput {
     pub metadata: ::std::option::Option<crate::types::GetSolNetworkOperationMetadata>,
     /// <p>All tasks associated with this operation occurrence.</p>
     #[doc(hidden)]
-    pub tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::GetSolNetworkOperationTaskDetails>>,
+    pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::GetSolNetworkOperationTaskDetails>>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSolNetworkOperationOutput {
@@ -65,17 +62,11 @@ impl GetSolNetworkOperationOutput {
         self.metadata.as_ref()
     }
     /// <p>All tasks associated with this operation occurrence.</p>
-    pub fn tasks(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::GetSolNetworkOperationTaskDetails]> {
+    pub fn tasks(&self) -> ::std::option::Option<&[crate::types::GetSolNetworkOperationTaskDetails]> {
         self.tasks.as_deref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -102,9 +93,7 @@ impl ::aws_http::request_id::RequestId for GetSolNetworkOperationOutput {
 }
 impl GetSolNetworkOperationOutput {
     /// Creates a new builder-style object to manufacture [`GetSolNetworkOperationOutput`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationOutputBuilder {
         crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationOutputBuilder::default()
     }
 }
@@ -120,11 +109,8 @@ pub struct GetSolNetworkOperationOutputBuilder {
     pub(crate) lcm_operation_type: ::std::option::Option<crate::types::LcmOperationType>,
     pub(crate) error: ::std::option::Option<crate::types::ProblemDetails>,
     pub(crate) metadata: ::std::option::Option<crate::types::GetSolNetworkOperationMetadata>,
-    pub(crate) tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::GetSolNetworkOperationTaskDetails>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::GetSolNetworkOperationTaskDetails>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSolNetworkOperationOutputBuilder {
@@ -162,10 +148,7 @@ impl GetSolNetworkOperationOutputBuilder {
         self
     }
     /// <p>The state of the network operation.</p>
-    pub fn set_operation_state(
-        mut self,
-        input: ::std::option::Option<crate::types::NsLcmOperationState>,
-    ) -> Self {
+    pub fn set_operation_state(mut self, input: ::std::option::Option<crate::types::NsLcmOperationState>) -> Self {
         self.operation_state = input;
         self
     }
@@ -174,18 +157,12 @@ impl GetSolNetworkOperationOutputBuilder {
         &self.operation_state
     }
     /// <p>ID of the network operation instance.</p>
-    pub fn ns_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the network operation instance.</p>
-    pub fn set_ns_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ns_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ns_instance_id = input;
         self
     }
@@ -199,10 +176,7 @@ impl GetSolNetworkOperationOutputBuilder {
         self
     }
     /// <p>Type of the operation represented by this occurrence.</p>
-    pub fn set_lcm_operation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LcmOperationType>,
-    ) -> Self {
+    pub fn set_lcm_operation_type(mut self, input: ::std::option::Option<crate::types::LcmOperationType>) -> Self {
         self.lcm_operation_type = input;
         self
     }
@@ -230,17 +204,12 @@ impl GetSolNetworkOperationOutputBuilder {
         self
     }
     /// <p>Metadata of this network operation occurrence.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::GetSolNetworkOperationMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::GetSolNetworkOperationMetadata>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>Metadata of this network operation occurrence.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::GetSolNetworkOperationMetadata> {
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::GetSolNetworkOperationMetadata> {
         &self.metadata
     }
     /// Appends an item to `tasks`.
@@ -255,20 +224,12 @@ impl GetSolNetworkOperationOutputBuilder {
         self
     }
     /// <p>All tasks associated with this operation occurrence.</p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::GetSolNetworkOperationTaskDetails>,
-        >,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetSolNetworkOperationTaskDetails>>) -> Self {
         self.tasks = input;
         self
     }
     /// <p>All tasks associated with this operation occurrence.</p>
-    pub fn get_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GetSolNetworkOperationTaskDetails>>
-    {
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetSolNetworkOperationTaskDetails>> {
         &self.tasks
     }
     /// Adds a key-value pair to `tags`.
@@ -276,32 +237,19 @@ impl GetSolNetworkOperationOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -314,9 +262,7 @@ impl GetSolNetworkOperationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSolNetworkOperationOutput`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput {
+    pub fn build(self) -> crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput {
         crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput {
             id: self.id,
             arn: self.arn,

@@ -45,9 +45,7 @@ impl StartLendingAnalysisFluentBuilder {
         }
     }
     /// Access the StartLendingAnalysis as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_lending_analysis::builders::StartLendingAnalysisInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_lending_analysis::builders::StartLendingAnalysisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +57,7 @@ impl StartLendingAnalysisFluentBuilder {
             crate::operation::start_lending_analysis::StartLendingAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_lending_analysis::StartLendingAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_lending_analysis::StartLendingAnalysisError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +67,7 @@ impl StartLendingAnalysisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +76,7 @@ impl StartLendingAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_lending_analysis::StartLendingAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_lending_analysis::StartLendingAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_lending_analysis::StartLendingAnalysisError>,
     > {
         let op = self
             .inner
@@ -108,9 +99,7 @@ impl StartLendingAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_lending_analysis::StartLendingAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_lending_analysis::StartLendingAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_lending_analysis::StartLendingAnalysisError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +113,7 @@ impl StartLendingAnalysisFluentBuilder {
             crate::operation::start_lending_analysis::StartLendingAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_lending_analysis::StartLendingAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_lending_analysis::StartLendingAnalysisError>,
     > {
         self.customize_middleware().await
     }
@@ -138,10 +125,7 @@ impl StartLendingAnalysisFluentBuilder {
     }
     /// <p>The Amazon S3 bucket that contains the document to be processed. It's used by asynchronous operations.</p>
     /// <p>The input document can be an image file in JPEG or PNG format. It can also be a file in PDF format.</p>
-    pub fn set_document_location(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentLocation>,
-    ) -> Self {
+    pub fn set_document_location(mut self, input: ::std::option::Option<crate::types::DocumentLocation>) -> Self {
         self.inner = self.inner.set_document_location(input);
         self
     }
@@ -151,18 +135,12 @@ impl StartLendingAnalysisFluentBuilder {
         self.inner.get_document_location()
     }
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartLendingAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-sync.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartLendingAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-sync.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -190,17 +168,12 @@ impl StartLendingAnalysisFluentBuilder {
         self
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation. </p>
-    pub fn set_notification_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationChannel>,
-    ) -> Self {
+    pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.inner = self.inner.set_notification_channel(input);
         self
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation. </p>
-    pub fn get_notification_channel(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+    pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
         self.inner.get_notification_channel()
     }
     /// <p>Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file.</p>
@@ -215,10 +188,7 @@ impl StartLendingAnalysisFluentBuilder {
     /// <p> <code>OutputConfig</code> is an optional parameter which lets you adjust where your output will be placed. By default, Amazon Textract will store the results internally and can only be accessed by the Get API operations. With <code>OutputConfig</code> enabled, you can set the name of the bucket the output will be sent to the file prefix of the results where you can download your results. Additionally, you can set the <code>KMSKeyID</code> parameter to a customer master key (CMK) to encrypt your output. Without this parameter set Amazon Textract will encrypt server-side using the AWS managed CMK for Amazon S3.</p>
     /// <p>Decryption of Customer Content is necessary for processing of the documents by Amazon Textract. If your account is opted out under an AI services opt out policy then all unencrypted Customer Content is immediately and permanently deleted after the Customer Content has been processed by the service. No copy of of the output is retained by Amazon Textract. For information about how to opt out, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html"> Managing AI services opt-out policy. </a> </p>
     /// <p>For more information on data privacy, see the <a href="https://aws.amazon.com/compliance/data-privacy-faq/">Data Privacy FAQ</a>.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
     }

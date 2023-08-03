@@ -35,9 +35,7 @@ impl ListLogSourcesOutput {
 
 /// A builder for [`ListLogSourcesOutput`](crate::operation::list_log_sources::ListLogSourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLogSourcesOutputBuilder {
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListLogSourcesOutputBuilder {
         self
     }
     /// <p>The list of log sources in your organization that send data to the data lake.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogSource>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSource>>) -> Self {
         self.sources = input;
         self
     }

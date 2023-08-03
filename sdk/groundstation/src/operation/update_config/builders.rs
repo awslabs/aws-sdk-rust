@@ -10,10 +10,7 @@ impl UpdateConfigInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_config::UpdateConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_config::UpdateConfigError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_config::UpdateConfigError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_config();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl UpdateConfigFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_config::UpdateConfig,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_config::UpdateConfig, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_config::UpdateConfigError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl UpdateConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl UpdateConfigFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_config::UpdateConfig,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_config::UpdateConfig, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_config::UpdateConfigError>,
     > {
         self.customize_middleware().await
@@ -147,10 +135,7 @@ impl UpdateConfigFluentBuilder {
         self
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn set_config_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigCapabilityType>,
-    ) -> Self {
+    pub fn set_config_type(mut self, input: ::std::option::Option<crate::types::ConfigCapabilityType>) -> Self {
         self.inner = self.inner.set_config_type(input);
         self
     }
@@ -164,10 +149,7 @@ impl UpdateConfigFluentBuilder {
         self
     }
     /// <p>Parameters of a <code>Config</code>.</p>
-    pub fn set_config_data(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigTypeData>,
-    ) -> Self {
+    pub fn set_config_data(mut self, input: ::std::option::Option<crate::types::ConfigTypeData>) -> Self {
         self.inner = self.inner.set_config_data(input);
         self
     }

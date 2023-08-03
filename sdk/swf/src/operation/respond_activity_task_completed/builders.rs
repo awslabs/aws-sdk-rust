@@ -37,7 +37,7 @@ impl RespondActivityTaskCompletedInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RespondActivityTaskCompletedFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedInputBuilder,
+    inner: crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedInputBuilder,
 }
 impl RespondActivityTaskCompletedFluentBuilder {
     /// Creates a new `RespondActivityTaskCompleted`.
@@ -48,7 +48,7 @@ impl RespondActivityTaskCompletedFluentBuilder {
         }
     }
     /// Access the RespondActivityTaskCompleted as a reference.
-    pub fn as_input(&self) -> &crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +60,7 @@ impl RespondActivityTaskCompletedFluentBuilder {
             crate::operation::respond_activity_task_completed::RespondActivityTaskCompleted,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +70,7 @@ impl RespondActivityTaskCompletedFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +79,7 @@ impl RespondActivityTaskCompletedFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedError>,
     > {
         let op = self
             .inner
@@ -109,9 +102,7 @@ impl RespondActivityTaskCompletedFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +116,7 @@ impl RespondActivityTaskCompletedFluentBuilder {
             crate::operation::respond_activity_task_completed::RespondActivityTaskCompleted,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedError>,
     > {
         self.customize_middleware().await
     }

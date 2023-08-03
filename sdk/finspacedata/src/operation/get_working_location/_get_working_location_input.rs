@@ -23,17 +23,14 @@ impl GetWorkingLocationInput {
 }
 impl GetWorkingLocationInput {
     /// Creates a new builder-style object to manufacture [`GetWorkingLocationInput`](crate::operation::get_working_location::GetWorkingLocationInput).
-    pub fn builder(
-    ) -> crate::operation::get_working_location::builders::GetWorkingLocationInputBuilder {
+    pub fn builder() -> crate::operation::get_working_location::builders::GetWorkingLocationInputBuilder {
         crate::operation::get_working_location::builders::GetWorkingLocationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWorkingLocationInput`](crate::operation::get_working_location::GetWorkingLocationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkingLocationInputBuilder {
     pub(crate) location_type: ::std::option::Option<crate::types::LocationType>,
 }
@@ -52,10 +49,7 @@ impl GetWorkingLocationInputBuilder {
     /// <li> <p> <code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
     /// <li> <p> <code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
     /// </ul>
-    pub fn set_location_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LocationType>,
-    ) -> Self {
+    pub fn set_location_type(mut self, input: ::std::option::Option<crate::types::LocationType>) -> Self {
         self.location_type = input;
         self
     }
@@ -70,14 +64,9 @@ impl GetWorkingLocationInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkingLocationInput`](crate::operation::get_working_location::GetWorkingLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_working_location::GetWorkingLocationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_working_location::GetWorkingLocationInput {
-                location_type: self.location_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_working_location::GetWorkingLocationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_working_location::GetWorkingLocationInput {
+            location_type: self.location_type,
+        })
     }
 }

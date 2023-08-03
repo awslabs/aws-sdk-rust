@@ -29,9 +29,7 @@ impl GetEntityInput {
 
 /// A builder for [`GetEntityInput`](crate::operation::get_entity::GetEntityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEntityInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetEntityInputBuilder {
         &self.entity_id
     }
     /// Consumes the builder and constructs a [`GetEntityInput`](crate::operation::get_entity::GetEntityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_entity::GetEntityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_entity::GetEntityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_entity::GetEntityInput {
             workspace_id: self.workspace_id,
             entity_id: self.entity_id,

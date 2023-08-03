@@ -5,8 +5,7 @@
 pub struct ListFeaturedResultsSetsOutput {
     /// <p>An array of summary information for one or more featured results sets.</p>
     #[doc(hidden)]
-    pub featured_results_set_summary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsSetSummary>>,
+    pub featured_results_set_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsSetSummary>>,
     /// <p>If the response is truncated, Amazon Kendra returns a pagination token in the response.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListFeaturedResultsSetsOutput {
 }
 impl ListFeaturedResultsSetsOutput {
     /// <p>An array of summary information for one or more featured results sets.</p>
-    pub fn featured_results_set_summary_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FeaturedResultsSetSummary]> {
+    pub fn featured_results_set_summary_items(&self) -> ::std::option::Option<&[crate::types::FeaturedResultsSetSummary]> {
         self.featured_results_set_summary_items.as_deref()
     }
     /// <p>If the response is truncated, Amazon Kendra returns a pagination token in the response.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListFeaturedResultsSetsOutput {
 }
 impl ListFeaturedResultsSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListFeaturedResultsSetsOutput`](crate::operation::list_featured_results_sets::ListFeaturedResultsSetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_featured_results_sets::builders::ListFeaturedResultsSetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_featured_results_sets::builders::ListFeaturedResultsSetsOutputBuilder {
         crate::operation::list_featured_results_sets::builders::ListFeaturedResultsSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFeaturedResultsSetsOutput`](crate::operation::list_featured_results_sets::ListFeaturedResultsSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFeaturedResultsSetsOutputBuilder {
-    pub(crate) featured_results_set_summary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsSetSummary>>,
+    pub(crate) featured_results_set_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsSetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl ListFeaturedResultsSetsOutputBuilder {
     /// To override the contents of this collection use [`set_featured_results_set_summary_items`](Self::set_featured_results_set_summary_items).
     ///
     /// <p>An array of summary information for one or more featured results sets.</p>
-    pub fn featured_results_set_summary_items(
-        mut self,
-        input: crate::types::FeaturedResultsSetSummary,
-    ) -> Self {
+    pub fn featured_results_set_summary_items(mut self, input: crate::types::FeaturedResultsSetSummary) -> Self {
         let mut v = self.featured_results_set_summary_items.unwrap_or_default();
         v.push(input);
         self.featured_results_set_summary_items = ::std::option::Option::Some(v);
@@ -73,9 +62,7 @@ impl ListFeaturedResultsSetsOutputBuilder {
         self
     }
     /// <p>An array of summary information for one or more featured results sets.</p>
-    pub fn get_featured_results_set_summary_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsSetSummary>> {
+    pub fn get_featured_results_set_summary_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsSetSummary>> {
         &self.featured_results_set_summary_items
     }
     /// <p>If the response is truncated, Amazon Kendra returns a pagination token in the response.</p>
@@ -102,9 +89,7 @@ impl ListFeaturedResultsSetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFeaturedResultsSetsOutput`](crate::operation::list_featured_results_sets::ListFeaturedResultsSetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_featured_results_sets::ListFeaturedResultsSetsOutput {
+    pub fn build(self) -> crate::operation::list_featured_results_sets::ListFeaturedResultsSetsOutput {
         crate::operation::list_featured_results_sets::ListFeaturedResultsSetsOutput {
             featured_results_set_summary_items: self.featured_results_set_summary_items,
             next_token: self.next_token,

@@ -15,17 +15,14 @@ impl GetContactPolicyInput {
 }
 impl GetContactPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetContactPolicyInput`](crate::operation::get_contact_policy::GetContactPolicyInput).
-    pub fn builder() -> crate::operation::get_contact_policy::builders::GetContactPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_contact_policy::builders::GetContactPolicyInputBuilder {
         crate::operation::get_contact_policy::builders::GetContactPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetContactPolicyInput`](crate::operation::get_contact_policy::GetContactPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContactPolicyInputBuilder {
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl GetContactPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetContactPolicyInput`](crate::operation::get_contact_policy::GetContactPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_contact_policy::GetContactPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_contact_policy::GetContactPolicyInput {
-                contact_arn: self.contact_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_contact_policy::GetContactPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_contact_policy::GetContactPolicyInput {
+            contact_arn: self.contact_arn,
+        })
     }
 }

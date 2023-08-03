@@ -22,9 +22,7 @@ impl GetPortalInput {
 
 /// A builder for [`GetPortalInput`](crate::operation::get_portal::GetPortalInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPortalInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetPortalInputBuilder {
         &self.portal_arn
     }
     /// Consumes the builder and constructs a [`GetPortalInput`](crate::operation::get_portal::GetPortalInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_portal::GetPortalInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_portal::GetPortalInput {
-            portal_arn: self.portal_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_portal::GetPortalInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_portal::GetPortalInput { portal_arn: self.portal_arn })
     }
 }

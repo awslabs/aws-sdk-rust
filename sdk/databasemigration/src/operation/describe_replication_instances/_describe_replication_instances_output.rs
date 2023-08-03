@@ -9,8 +9,7 @@ pub struct DescribeReplicationInstancesOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The replication instances described.</p>
     #[doc(hidden)]
-    pub replication_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInstance>>,
+    pub replication_instances: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationInstancesOutput {
@@ -19,9 +18,7 @@ impl DescribeReplicationInstancesOutput {
         self.marker.as_deref()
     }
     /// <p>The replication instances described.</p>
-    pub fn replication_instances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReplicationInstance]> {
+    pub fn replication_instances(&self) -> ::std::option::Option<&[crate::types::ReplicationInstance]> {
         self.replication_instances.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeReplicationInstancesOutput {
 }
 impl DescribeReplicationInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationInstancesOutput`](crate::operation::describe_replication_instances::DescribeReplicationInstancesOutput).
-    pub fn builder() -> crate::operation::describe_replication_instances::builders::DescribeReplicationInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_instances::builders::DescribeReplicationInstancesOutputBuilder {
         crate::operation::describe_replication_instances::builders::DescribeReplicationInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationInstancesOutput`](crate::operation::describe_replication_instances::DescribeReplicationInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationInstancesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInstance>>,
+    pub(crate) replication_instances: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationInstancesOutputBuilder {
@@ -75,17 +69,12 @@ impl DescribeReplicationInstancesOutputBuilder {
         self
     }
     /// <p>The replication instances described.</p>
-    pub fn set_replication_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInstance>>,
-    ) -> Self {
+    pub fn set_replication_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInstance>>) -> Self {
         self.replication_instances = input;
         self
     }
     /// <p>The replication instances described.</p>
-    pub fn get_replication_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationInstance>> {
+    pub fn get_replication_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationInstance>> {
         &self.replication_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -98,9 +87,7 @@ impl DescribeReplicationInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReplicationInstancesOutput`](crate::operation::describe_replication_instances::DescribeReplicationInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_replication_instances::DescribeReplicationInstancesOutput {
+    pub fn build(self) -> crate::operation::describe_replication_instances::DescribeReplicationInstancesOutput {
         crate::operation::describe_replication_instances::DescribeReplicationInstancesOutput {
             marker: self.marker,
             replication_instances: self.replication_instances,

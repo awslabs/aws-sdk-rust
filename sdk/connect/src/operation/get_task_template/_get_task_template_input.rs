@@ -36,9 +36,7 @@ impl GetTaskTemplateInput {
 
 /// A builder for [`GetTaskTemplateInput`](crate::operation::get_task_template::GetTaskTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTaskTemplateInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_template_id: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl GetTaskTemplateInputBuilder {
         &self.instance_id
     }
     /// <p>A unique identifier for the task template.</p>
-    pub fn task_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the task template.</p>
-    pub fn set_task_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_template_id = input;
         self
     }
@@ -80,18 +72,12 @@ impl GetTaskTemplateInputBuilder {
         &self.task_template_id
     }
     /// <p>The system generated version of a task template that is associated with a task, when the task is created.</p>
-    pub fn snapshot_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system generated version of a task template that is associated with a task, when the task is created.</p>
-    pub fn set_snapshot_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_version = input;
         self
     }
@@ -102,10 +88,7 @@ impl GetTaskTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetTaskTemplateInput`](crate::operation::get_task_template::GetTaskTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_task_template::GetTaskTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_task_template::GetTaskTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_task_template::GetTaskTemplateInput {
             instance_id: self.instance_id,
             task_template_id: self.task_template_id,

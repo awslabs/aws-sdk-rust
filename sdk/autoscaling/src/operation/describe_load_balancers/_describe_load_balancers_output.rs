@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeLoadBalancersOutput {
 }
 impl DescribeLoadBalancersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancersOutput`](crate::operation::describe_load_balancers::DescribeLoadBalancersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_load_balancers::builders::DescribeLoadBalancersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_load_balancers::builders::DescribeLoadBalancersOutputBuilder {
         crate::operation::describe_load_balancers::builders::DescribeLoadBalancersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLoadBalancersOutput`](crate::operation::describe_load_balancers::DescribeLoadBalancersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancersOutputBuilder {
-    pub(crate) load_balancers:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerState>>,
+    pub(crate) load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerState>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeLoadBalancersOutputBuilder {
         self
     }
     /// <p>The load balancers.</p>
-    pub fn set_load_balancers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerState>>,
-    ) -> Self {
+    pub fn set_load_balancers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerState>>) -> Self {
         self.load_balancers = input;
         self
     }
     /// <p>The load balancers.</p>
-    pub fn get_load_balancers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerState>> {
+    pub fn get_load_balancers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerState>> {
         &self.load_balancers
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>

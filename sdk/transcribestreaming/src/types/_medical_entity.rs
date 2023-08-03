@@ -53,9 +53,7 @@ impl MedicalEntity {
 
 /// A builder for [`MedicalEntity`](crate::types::MedicalEntity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MedicalEntityBuilder {
     pub(crate) start_time: ::std::option::Option<f64>,
     pub(crate) end_time: ::std::option::Option<f64>,

@@ -36,17 +36,14 @@ impl ListTargetGroupsInput {
 }
 impl ListTargetGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListTargetGroupsInput`](crate::operation::list_target_groups::ListTargetGroupsInput).
-    pub fn builder() -> crate::operation::list_target_groups::builders::ListTargetGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_target_groups::builders::ListTargetGroupsInputBuilder {
         crate::operation::list_target_groups::builders::ListTargetGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTargetGroupsInput`](crate::operation::list_target_groups::ListTargetGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetGroupsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -83,18 +80,12 @@ impl ListTargetGroupsInputBuilder {
         &self.next_token
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn vpc_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_vpc_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_identifier = input;
         self
     }
@@ -108,10 +99,7 @@ impl ListTargetGroupsInputBuilder {
         self
     }
     /// <p>The target group type.</p>
-    pub fn set_target_group_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupType>,
-    ) -> Self {
+    pub fn set_target_group_type(mut self, input: ::std::option::Option<crate::types::TargetGroupType>) -> Self {
         self.target_group_type = input;
         self
     }
@@ -122,17 +110,12 @@ impl ListTargetGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListTargetGroupsInput`](crate::operation::list_target_groups::ListTargetGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_target_groups::ListTargetGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_target_groups::ListTargetGroupsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                vpc_identifier: self.vpc_identifier,
-                target_group_type: self.target_group_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_target_groups::ListTargetGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_target_groups::ListTargetGroupsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            vpc_identifier: self.vpc_identifier,
+            target_group_type: self.target_group_type,
+        })
     }
 }

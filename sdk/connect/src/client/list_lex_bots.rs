@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`lex_bots(Option<Vec<LexBot>>)`](crate::operation::list_lex_bots::ListLexBotsOutput::lex_bots): <p>The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_lex_bots::ListLexBotsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListLexBotsError>`](crate::operation::list_lex_bots::ListLexBotsError)
-    pub fn list_lex_bots(
-        &self,
-    ) -> crate::operation::list_lex_bots::builders::ListLexBotsFluentBuilder {
-        crate::operation::list_lex_bots::builders::ListLexBotsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_lex_bots(&self) -> crate::operation::list_lex_bots::builders::ListLexBotsFluentBuilder {
+        crate::operation::list_lex_bots::builders::ListLexBotsFluentBuilder::new(self.handle.clone())
     }
 }

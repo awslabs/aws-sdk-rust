@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::set_name): <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
     /// - On success, responds with [`DeleteEnvironmentOutput`](crate::operation::delete_environment::DeleteEnvironmentOutput)
     /// - On failure, responds with [`SdkError<DeleteEnvironmentError>`](crate::operation::delete_environment::DeleteEnvironmentError)
-    pub fn delete_environment(
-        &self,
-    ) -> crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder {
-        crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_environment(&self) -> crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder {
+        crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

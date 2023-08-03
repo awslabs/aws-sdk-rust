@@ -10,10 +10,7 @@ impl StopDbInstanceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_db_instance::StopDbInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_db_instance::StopDBInstanceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_db_instance::StopDBInstanceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_db_instance();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl StopDBInstanceFluentBuilder {
         }
     }
     /// Access the StopDBInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_db_instance::builders::StopDbInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_db_instance::builders::StopDbInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl StopDBInstanceFluentBuilder {
             crate::operation::stop_db_instance::StopDBInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_db_instance::StopDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_db_instance::StopDBInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl StopDBInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl StopDBInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_db_instance::StopDbInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_db_instance::StopDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_db_instance::StopDBInstanceError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl StopDBInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_db_instance::StopDbInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_db_instance::StopDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_db_instance::StopDBInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +105,17 @@ impl StopDBInstanceFluentBuilder {
             crate::operation::stop_db_instance::StopDBInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_db_instance::StopDBInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_db_instance::StopDBInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The user-supplied instance identifier.</p>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
     }
     /// <p>The user-supplied instance identifier.</p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }
@@ -146,18 +124,12 @@ impl StopDBInstanceFluentBuilder {
         self.inner.get_db_instance_identifier()
     }
     /// <p>The user-supplied instance identifier of the DB Snapshot created immediately before the DB instance is stopped.</p>
-    pub fn db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_snapshot_identifier(input.into());
         self
     }
     /// <p>The user-supplied instance identifier of the DB Snapshot created immediately before the DB instance is stopped.</p>
-    pub fn set_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_snapshot_identifier(input);
         self
     }

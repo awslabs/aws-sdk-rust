@@ -19,11 +19,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateWebAclOutput`](crate::operation::update_web_acl::UpdateWebAclOutput) with field(s):
     ///   - [`next_lock_token(Option<String>)`](crate::operation::update_web_acl::UpdateWebAclOutput::next_lock_token): <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
     /// - On failure, responds with [`SdkError<UpdateWebACLError>`](crate::operation::update_web_acl::UpdateWebACLError)
-    pub fn update_web_acl(
-        &self,
-    ) -> crate::operation::update_web_acl::builders::UpdateWebACLFluentBuilder {
-        crate::operation::update_web_acl::builders::UpdateWebACLFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_web_acl(&self) -> crate::operation::update_web_acl::builders::UpdateWebACLFluentBuilder {
+        crate::operation::update_web_acl::builders::UpdateWebACLFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetTrustStoreCertificateOutput {
 }
 impl GetTrustStoreCertificateOutput {
     /// Creates a new builder-style object to manufacture [`GetTrustStoreCertificateOutput`](crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput).
-    pub fn builder() -> crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateOutputBuilder{
+    pub fn builder() -> crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateOutputBuilder {
         crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTrustStoreCertificateOutput`](crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTrustStoreCertificateOutputBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate: ::std::option::Option<crate::types::Certificate>,
@@ -45,18 +43,12 @@ pub struct GetTrustStoreCertificateOutputBuilder {
 }
 impl GetTrustStoreCertificateOutputBuilder {
     /// <p>The ARN of the trust store certificate.</p>
-    pub fn trust_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the trust store certificate.</p>
-    pub fn set_trust_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_store_arn = input;
         self
     }
@@ -70,10 +62,7 @@ impl GetTrustStoreCertificateOutputBuilder {
         self
     }
     /// <p>The certificate of the trust store certificate.</p>
-    pub fn set_certificate(
-        mut self,
-        input: ::std::option::Option<crate::types::Certificate>,
-    ) -> Self {
+    pub fn set_certificate(mut self, input: ::std::option::Option<crate::types::Certificate>) -> Self {
         self.certificate = input;
         self
     }
@@ -91,9 +80,7 @@ impl GetTrustStoreCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTrustStoreCertificateOutput`](crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput {
+    pub fn build(self) -> crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput {
         crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput {
             trust_store_arn: self.trust_store_arn,
             certificate: self.certificate,

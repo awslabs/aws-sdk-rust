@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for UpdateHypervisorOutput {
 }
 impl UpdateHypervisorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateHypervisorOutput`](crate::operation::update_hypervisor::UpdateHypervisorOutput).
-    pub fn builder() -> crate::operation::update_hypervisor::builders::UpdateHypervisorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_hypervisor::builders::UpdateHypervisorOutputBuilder {
         crate::operation::update_hypervisor::builders::UpdateHypervisorOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateHypervisorOutput`](crate::operation::update_hypervisor::UpdateHypervisorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateHypervisorOutputBuilder {
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateHypervisorOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you updated.</p>
-    pub fn hypervisor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you updated.</p>
-    pub fn set_hypervisor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hypervisor_arn = input;
         self
     }

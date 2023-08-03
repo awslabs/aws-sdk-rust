@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for EnableDelegatedAdminAccountOutput {
 }
 impl EnableDelegatedAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`EnableDelegatedAdminAccountOutput`](crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountOutput).
-    pub fn builder() -> crate::operation::enable_delegated_admin_account::builders::EnableDelegatedAdminAccountOutputBuilder{
+    pub fn builder() -> crate::operation::enable_delegated_admin_account::builders::EnableDelegatedAdminAccountOutputBuilder {
         crate::operation::enable_delegated_admin_account::builders::EnableDelegatedAdminAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableDelegatedAdminAccountOutput`](crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableDelegatedAdminAccountOutputBuilder {
     pub(crate) delegated_admin_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl EnableDelegatedAdminAccountOutputBuilder {
     /// <p>The Amazon Web Services account ID of the successfully Amazon Inspector delegated administrator.</p>
-    pub fn delegated_admin_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delegated_admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delegated_admin_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the successfully Amazon Inspector delegated administrator.</p>
-    pub fn set_delegated_admin_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delegated_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delegated_admin_account_id = input;
         self
     }
@@ -66,9 +58,7 @@ impl EnableDelegatedAdminAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableDelegatedAdminAccountOutput`](crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountOutput {
+    pub fn build(self) -> crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountOutput {
         crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountOutput {
             delegated_admin_account_id: self.delegated_admin_account_id,
             _request_id: self._request_id,

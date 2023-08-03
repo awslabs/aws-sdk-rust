@@ -65,9 +65,7 @@ impl SimpleScopeTerm {
 
 /// A builder for [`SimpleScopeTerm`](crate::types::SimpleScopeTerm).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SimpleScopeTermBuilder {
     pub(crate) comparator: ::std::option::Option<crate::types::JobComparator>,
     pub(crate) key: ::std::option::Option<crate::types::ScopeFilterKey>,
@@ -92,10 +90,7 @@ impl SimpleScopeTermBuilder {
     /// <li><p>OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS</p></li>
     /// <li><p>OBJECT_SIZE - Any operator except CONTAINS</p></li>
     /// </ul>
-    pub fn set_comparator(
-        mut self,
-        input: ::std::option::Option<crate::types::JobComparator>,
-    ) -> Self {
+    pub fn set_comparator(mut self, input: ::std::option::Option<crate::types::JobComparator>) -> Self {
         self.comparator = input;
         self
     }
@@ -151,10 +146,7 @@ impl SimpleScopeTermBuilder {
     /// <li><p>OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.</p></li>
     /// </ul>
     /// <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

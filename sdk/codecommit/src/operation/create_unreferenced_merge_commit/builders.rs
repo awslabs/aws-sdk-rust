@@ -28,7 +28,7 @@ impl CreateUnreferencedMergeCommitInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUnreferencedMergeCommitFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_unreferenced_merge_commit::builders::CreateUnreferencedMergeCommitInputBuilder,
+    inner: crate::operation::create_unreferenced_merge_commit::builders::CreateUnreferencedMergeCommitInputBuilder,
 }
 impl CreateUnreferencedMergeCommitFluentBuilder {
     /// Creates a new `CreateUnreferencedMergeCommit`.
@@ -39,7 +39,7 @@ impl CreateUnreferencedMergeCommitFluentBuilder {
         }
     }
     /// Access the CreateUnreferencedMergeCommit as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_unreferenced_merge_commit::builders::CreateUnreferencedMergeCommitInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_unreferenced_merge_commit::builders::CreateUnreferencedMergeCommitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl CreateUnreferencedMergeCommitFluentBuilder {
             crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl CreateUnreferencedMergeCommitFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl CreateUnreferencedMergeCommitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl CreateUnreferencedMergeCommitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl CreateUnreferencedMergeCommitFluentBuilder {
             crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the repository where you want to create the unreferenced merge commit.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository where you want to create the unreferenced merge commit.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -143,18 +126,12 @@ impl CreateUnreferencedMergeCommitFluentBuilder {
         self.inner.get_repository_name()
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn source_commit_specifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_commit_specifier(input.into());
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn set_source_commit_specifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_commit_specifier(input);
         self
     }
@@ -163,25 +140,17 @@ impl CreateUnreferencedMergeCommitFluentBuilder {
         self.inner.get_source_commit_specifier()
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn destination_commit_specifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_commit_specifier(input.into());
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn set_destination_commit_specifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_commit_specifier(input);
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn get_destination_commit_specifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_destination_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_commit_specifier()
     }
     /// <p>The merge option or strategy you want to use to merge the code.</p>
@@ -190,10 +159,7 @@ impl CreateUnreferencedMergeCommitFluentBuilder {
         self
     }
     /// <p>The merge option or strategy you want to use to merge the code.</p>
-    pub fn set_merge_option(
-        mut self,
-        input: ::std::option::Option<crate::types::MergeOptionTypeEnum>,
-    ) -> Self {
+    pub fn set_merge_option(mut self, input: ::std::option::Option<crate::types::MergeOptionTypeEnum>) -> Self {
         self.inner = self.inner.set_merge_option(input);
         self
     }
@@ -202,47 +168,31 @@ impl CreateUnreferencedMergeCommitFluentBuilder {
         self.inner.get_merge_option()
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    pub fn conflict_detail_level(
-        mut self,
-        input: crate::types::ConflictDetailLevelTypeEnum,
-    ) -> Self {
+    pub fn conflict_detail_level(mut self, input: crate::types::ConflictDetailLevelTypeEnum) -> Self {
         self.inner = self.inner.conflict_detail_level(input);
         self
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    pub fn set_conflict_detail_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
-    ) -> Self {
+    pub fn set_conflict_detail_level(mut self, input: ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>) -> Self {
         self.inner = self.inner.set_conflict_detail_level(input);
         self
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    pub fn get_conflict_detail_level(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConflictDetailLevelTypeEnum> {
+    pub fn get_conflict_detail_level(&self) -> &::std::option::Option<crate::types::ConflictDetailLevelTypeEnum> {
         self.inner.get_conflict_detail_level()
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    pub fn conflict_resolution_strategy(
-        mut self,
-        input: crate::types::ConflictResolutionStrategyTypeEnum,
-    ) -> Self {
+    pub fn conflict_resolution_strategy(mut self, input: crate::types::ConflictResolutionStrategyTypeEnum) -> Self {
         self.inner = self.inner.conflict_resolution_strategy(input);
         self
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    pub fn set_conflict_resolution_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
-    ) -> Self {
+    pub fn set_conflict_resolution_strategy(mut self, input: ::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>) -> Self {
         self.inner = self.inner.set_conflict_resolution_strategy(input);
         self
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    pub fn get_conflict_resolution_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum> {
+    pub fn get_conflict_resolution_strategy(&self) -> &::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum> {
         self.inner.get_conflict_resolution_strategy()
     }
     /// <p>The name of the author who created the unreferenced commit. This information is used as both the author and committer for the commit.</p>
@@ -274,18 +224,12 @@ impl CreateUnreferencedMergeCommitFluentBuilder {
         self.inner.get_email()
     }
     /// <p>The commit message for the unreferenced commit.</p>
-    pub fn commit_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn commit_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.commit_message(input.into());
         self
     }
     /// <p>The commit message for the unreferenced commit.</p>
-    pub fn set_commit_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_commit_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_commit_message(input);
         self
     }
@@ -313,17 +257,12 @@ impl CreateUnreferencedMergeCommitFluentBuilder {
         self
     }
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
-    pub fn set_conflict_resolution(
-        mut self,
-        input: ::std::option::Option<crate::types::ConflictResolution>,
-    ) -> Self {
+    pub fn set_conflict_resolution(mut self, input: ::std::option::Option<crate::types::ConflictResolution>) -> Self {
         self.inner = self.inner.set_conflict_resolution(input);
         self
     }
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
-    pub fn get_conflict_resolution(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConflictResolution> {
+    pub fn get_conflict_resolution(&self) -> &::std::option::Option<crate::types::ConflictResolution> {
         self.inner.get_conflict_resolution()
     }
 }

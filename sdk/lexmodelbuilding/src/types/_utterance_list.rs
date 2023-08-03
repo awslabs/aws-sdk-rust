@@ -30,9 +30,7 @@ impl UtteranceList {
 
 /// A builder for [`UtteranceList`](crate::types::UtteranceList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UtteranceListBuilder {
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) utterances: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceData>>,
@@ -64,17 +62,12 @@ impl UtteranceListBuilder {
         self
     }
     /// <p>One or more <code>UtteranceData</code> objects that contain information about the utterances that have been made to a bot. The maximum number of object is 100.</p>
-    pub fn set_utterances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceData>>,
-    ) -> Self {
+    pub fn set_utterances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceData>>) -> Self {
         self.utterances = input;
         self
     }
     /// <p>One or more <code>UtteranceData</code> objects that contain information about the utterances that have been made to a bot. The maximum number of object is 100.</p>
-    pub fn get_utterances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UtteranceData>> {
+    pub fn get_utterances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtteranceData>> {
         &self.utterances
     }
     /// Consumes the builder and constructs a [`UtteranceList`](crate::types::UtteranceList).

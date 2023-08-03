@@ -10,10 +10,7 @@ impl ListTopicsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_topics::ListTopicsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_topics::ListTopicsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_topics::ListTopicsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_topics();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListTopicsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_topics::ListTopics,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_topics::ListTopics, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_topics::ListTopicsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListTopicsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListTopicsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_topics::ListTopics,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_topics::ListTopics, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_topics::ListTopicsError>,
     > {
         self.customize_middleware().await
@@ -119,18 +107,12 @@ impl ListTopicsFluentBuilder {
         crate::operation::list_topics::paginator::ListTopicsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the Amazon Web Services account that contains the topics that you want to list.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the topics that you want to list.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

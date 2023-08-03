@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeInstanceOutput`](crate::operation::describe_instance::DescribeInstanceOutput) with field(s):
     ///   - [`instance(Option<Instance>)`](crate::operation::describe_instance::DescribeInstanceOutput::instance): <p>The name of the instance.</p>
     /// - On failure, responds with [`SdkError<DescribeInstanceError>`](crate::operation::describe_instance::DescribeInstanceError)
-    pub fn describe_instance(
-        &self,
-    ) -> crate::operation::describe_instance::builders::DescribeInstanceFluentBuilder {
-        crate::operation::describe_instance::builders::DescribeInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_instance(&self) -> crate::operation::describe_instance::builders::DescribeInstanceFluentBuilder {
+        crate::operation::describe_instance::builders::DescribeInstanceFluentBuilder::new(self.handle.clone())
     }
 }

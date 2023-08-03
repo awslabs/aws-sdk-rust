@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetWorkGroupOutput`](crate::operation::get_work_group::GetWorkGroupOutput) with field(s):
     ///   - [`work_group(Option<WorkGroup>)`](crate::operation::get_work_group::GetWorkGroupOutput::work_group): <p>Information about the workgroup.</p>
     /// - On failure, responds with [`SdkError<GetWorkGroupError>`](crate::operation::get_work_group::GetWorkGroupError)
-    pub fn get_work_group(
-        &self,
-    ) -> crate::operation::get_work_group::builders::GetWorkGroupFluentBuilder {
-        crate::operation::get_work_group::builders::GetWorkGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_work_group(&self) -> crate::operation::get_work_group::builders::GetWorkGroupFluentBuilder {
+        crate::operation::get_work_group::builders::GetWorkGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<CustomDataIdentifierSummary>>)`](crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersOutput::items): <p>An array of objects, one for each custom data identifier.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<ListCustomDataIdentifiersError>`](crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersError)
-    pub fn list_custom_data_identifiers(&self) -> crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersFluentBuilder{
+    pub fn list_custom_data_identifiers(&self) -> crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersFluentBuilder {
         crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersFluentBuilder::new(self.handle.clone())
     }
 }

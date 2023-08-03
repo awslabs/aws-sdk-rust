@@ -37,9 +37,7 @@ impl UpdateNetworkProfileFluentBuilder {
         }
     }
     /// Access the UpdateNetworkProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_network_profile::builders::UpdateNetworkProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_network_profile::builders::UpdateNetworkProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateNetworkProfileFluentBuilder {
             crate::operation::update_network_profile::UpdateNetworkProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_network_profile::UpdateNetworkProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_network_profile::UpdateNetworkProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateNetworkProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateNetworkProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_network_profile::UpdateNetworkProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_network_profile::UpdateNetworkProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_network_profile::UpdateNetworkProfileError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateNetworkProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_network_profile::UpdateNetworkProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_network_profile::UpdateNetworkProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_network_profile::UpdateNetworkProfileError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateNetworkProfileFluentBuilder {
             crate::operation::update_network_profile::UpdateNetworkProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_network_profile::UpdateNetworkProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_network_profile::UpdateNetworkProfileError>,
     > {
         self.customize_middleware().await
     }
@@ -170,10 +157,7 @@ impl UpdateNetworkProfileFluentBuilder {
         self
     }
     /// <p>The type of network profile to return information about. Valid values are listed here.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkProfileType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NetworkProfileType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

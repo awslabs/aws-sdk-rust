@@ -30,9 +30,7 @@ impl AccessDescription {
 
 /// A builder for [`AccessDescription`](crate::types::AccessDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessDescriptionBuilder {
     pub(crate) access_method: ::std::option::Option<crate::types::AccessMethod>,
     pub(crate) access_location: ::std::option::Option<crate::types::GeneralName>,
@@ -44,10 +42,7 @@ impl AccessDescriptionBuilder {
         self
     }
     /// <p>The type and format of <code>AccessDescription</code> information.</p>
-    pub fn set_access_method(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessMethod>,
-    ) -> Self {
+    pub fn set_access_method(mut self, input: ::std::option::Option<crate::types::AccessMethod>) -> Self {
         self.access_method = input;
         self
     }
@@ -61,10 +56,7 @@ impl AccessDescriptionBuilder {
         self
     }
     /// <p>The location of <code>AccessDescription</code> information.</p>
-    pub fn set_access_location(
-        mut self,
-        input: ::std::option::Option<crate::types::GeneralName>,
-    ) -> Self {
+    pub fn set_access_location(mut self, input: ::std::option::Option<crate::types::GeneralName>) -> Self {
         self.access_location = input;
         self
     }

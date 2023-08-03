@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`usage_limits(Option<Vec<UsageLimit>>)`](crate::operation::describe_usage_limits::DescribeUsageLimitsOutput::usage_limits): <p>Contains the output from the <code>DescribeUsageLimits</code> action. </p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_usage_limits::DescribeUsageLimitsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     /// - On failure, responds with [`SdkError<DescribeUsageLimitsError>`](crate::operation::describe_usage_limits::DescribeUsageLimitsError)
-    pub fn describe_usage_limits(
-        &self,
-    ) -> crate::operation::describe_usage_limits::builders::DescribeUsageLimitsFluentBuilder {
-        crate::operation::describe_usage_limits::builders::DescribeUsageLimitsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_usage_limits(&self) -> crate::operation::describe_usage_limits::builders::DescribeUsageLimitsFluentBuilder {
+        crate::operation::describe_usage_limits::builders::DescribeUsageLimitsFluentBuilder::new(self.handle.clone())
     }
 }

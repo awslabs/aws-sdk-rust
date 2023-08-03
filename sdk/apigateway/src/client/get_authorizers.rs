@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<Authorizer>>)`](crate::operation::get_authorizers::GetAuthorizersOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_authorizers::GetAuthorizersOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<GetAuthorizersError>`](crate::operation::get_authorizers::GetAuthorizersError)
-    pub fn get_authorizers(
-        &self,
-    ) -> crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder {
-        crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_authorizers(&self) -> crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder {
+        crate::operation::get_authorizers::builders::GetAuthorizersFluentBuilder::new(self.handle.clone())
     }
 }

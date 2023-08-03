@@ -58,9 +58,7 @@ impl InputConfiguration {
 
 /// A builder for [`InputConfiguration`](crate::types::InputConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputConfigurationBuilder {
     pub(crate) input_name: ::std::option::Option<::std::string::String>,
     pub(crate) input_description: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl InputConfigurationBuilder {
         &self.input_name
     }
     /// <p>A brief description of the input.</p>
-    pub fn input_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A brief description of the input.</p>
-    pub fn set_input_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_description = input;
         self
     }
@@ -124,10 +116,7 @@ impl InputConfigurationBuilder {
         self
     }
     /// <p>The time the input was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -141,10 +130,7 @@ impl InputConfigurationBuilder {
         self
     }
     /// <p>The last time the input was updated.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }

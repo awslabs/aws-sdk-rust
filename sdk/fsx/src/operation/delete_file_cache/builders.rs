@@ -10,10 +10,7 @@ impl DeleteFileCacheInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_file_cache::DeleteFileCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_file_cache::DeleteFileCacheError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_file_cache::DeleteFileCacheError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_file_cache();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DeleteFileCacheFluentBuilder {
         }
     }
     /// Access the DeleteFileCache as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_file_cache::builders::DeleteFileCacheInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_file_cache::builders::DeleteFileCacheInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DeleteFileCacheFluentBuilder {
             crate::operation::delete_file_cache::DeleteFileCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_file_cache::DeleteFileCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_file_cache::DeleteFileCacheError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DeleteFileCacheFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DeleteFileCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_file_cache::DeleteFileCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_file_cache::DeleteFileCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_file_cache::DeleteFileCacheError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DeleteFileCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_file_cache::DeleteFileCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_file_cache::DeleteFileCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_file_cache::DeleteFileCacheError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +105,17 @@ impl DeleteFileCacheFluentBuilder {
             crate::operation::delete_file_cache::DeleteFileCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_file_cache::DeleteFileCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_file_cache::DeleteFileCacheError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the cache that's being deleted.</p>
-    pub fn file_cache_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_cache_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_cache_id(input.into());
         self
     }
     /// <p>The ID of the cache that's being deleted.</p>
-    pub fn set_file_cache_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_cache_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_cache_id(input);
         self
     }
@@ -146,18 +124,12 @@ impl DeleteFileCacheFluentBuilder {
         self.inner.get_file_cache_id()
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

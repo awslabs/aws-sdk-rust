@@ -27,34 +27,27 @@ impl ::std::fmt::Display for DeploymentGroupAlreadyExistsException {
     }
 }
 impl ::std::error::Error for DeploymentGroupAlreadyExistsException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::DeploymentGroupAlreadyExistsException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::DeploymentGroupAlreadyExistsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for DeploymentGroupAlreadyExistsException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeploymentGroupAlreadyExistsException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl DeploymentGroupAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`DeploymentGroupAlreadyExistsException`](crate::types::error::DeploymentGroupAlreadyExistsException).
-    pub fn builder() -> crate::types::error::builders::DeploymentGroupAlreadyExistsExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::DeploymentGroupAlreadyExistsExceptionBuilder {
         crate::types::error::builders::DeploymentGroupAlreadyExistsExceptionBuilder::default()
     }
 }
 
 /// A builder for [`DeploymentGroupAlreadyExistsException`](crate::types::error::DeploymentGroupAlreadyExistsException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentGroupAlreadyExistsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl DeploymentGroupAlreadyExistsExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

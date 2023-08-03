@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_context::DescribeContextOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`lineage_group_arn(Option<String>)`](crate::operation::describe_context::DescribeContextOutput::lineage_group_arn): <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     /// - On failure, responds with [`SdkError<DescribeContextError>`](crate::operation::describe_context::DescribeContextError)
-    pub fn describe_context(
-        &self,
-    ) -> crate::operation::describe_context::builders::DescribeContextFluentBuilder {
-        crate::operation::describe_context::builders::DescribeContextFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_context(&self) -> crate::operation::describe_context::builders::DescribeContextFluentBuilder {
+        crate::operation::describe_context::builders::DescribeContextFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl FraudRiskDetails {
 
 /// A builder for [`FraudRiskDetails`](crate::types::FraudRiskDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FraudRiskDetailsBuilder {
     pub(crate) known_fraudster_risk: ::std::option::Option<crate::types::KnownFraudsterRisk>,
     pub(crate) voice_spoofing_risk: ::std::option::Option<crate::types::VoiceSpoofingRisk>,
@@ -44,17 +42,12 @@ impl FraudRiskDetailsBuilder {
         self
     }
     /// <p>The details resulting from 'Known Fraudster Risk' analysis of the speaker.</p>
-    pub fn set_known_fraudster_risk(
-        mut self,
-        input: ::std::option::Option<crate::types::KnownFraudsterRisk>,
-    ) -> Self {
+    pub fn set_known_fraudster_risk(mut self, input: ::std::option::Option<crate::types::KnownFraudsterRisk>) -> Self {
         self.known_fraudster_risk = input;
         self
     }
     /// <p>The details resulting from 'Known Fraudster Risk' analysis of the speaker.</p>
-    pub fn get_known_fraudster_risk(
-        &self,
-    ) -> &::std::option::Option<crate::types::KnownFraudsterRisk> {
+    pub fn get_known_fraudster_risk(&self) -> &::std::option::Option<crate::types::KnownFraudsterRisk> {
         &self.known_fraudster_risk
     }
     /// <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
@@ -63,17 +56,12 @@ impl FraudRiskDetailsBuilder {
         self
     }
     /// <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
-    pub fn set_voice_spoofing_risk(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceSpoofingRisk>,
-    ) -> Self {
+    pub fn set_voice_spoofing_risk(mut self, input: ::std::option::Option<crate::types::VoiceSpoofingRisk>) -> Self {
         self.voice_spoofing_risk = input;
         self
     }
     /// <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
-    pub fn get_voice_spoofing_risk(
-        &self,
-    ) -> &::std::option::Option<crate::types::VoiceSpoofingRisk> {
+    pub fn get_voice_spoofing_risk(&self) -> &::std::option::Option<crate::types::VoiceSpoofingRisk> {
         &self.voice_spoofing_risk
     }
     /// Consumes the builder and constructs a [`FraudRiskDetails`](crate::types::FraudRiskDetails).

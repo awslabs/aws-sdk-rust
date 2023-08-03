@@ -30,17 +30,14 @@ impl DescribeChangeSetInput {
 }
 impl DescribeChangeSetInput {
     /// Creates a new builder-style object to manufacture [`DescribeChangeSetInput`](crate::operation::describe_change_set::DescribeChangeSetInput).
-    pub fn builder(
-    ) -> crate::operation::describe_change_set::builders::DescribeChangeSetInputBuilder {
+    pub fn builder() -> crate::operation::describe_change_set::builders::DescribeChangeSetInputBuilder {
         crate::operation::describe_change_set::builders::DescribeChangeSetInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeChangeSetInput`](crate::operation::describe_change_set::DescribeChangeSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeChangeSetInputBuilder {
     pub(crate) change_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
@@ -48,18 +45,12 @@ pub struct DescribeChangeSetInputBuilder {
 }
 impl DescribeChangeSetInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
-    pub fn change_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
-    pub fn set_change_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_name = input;
         self
     }
@@ -98,16 +89,11 @@ impl DescribeChangeSetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeChangeSetInput`](crate::operation::describe_change_set::DescribeChangeSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_change_set::DescribeChangeSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_change_set::DescribeChangeSetInput {
-                change_set_name: self.change_set_name,
-                stack_name: self.stack_name,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_change_set::DescribeChangeSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_change_set::DescribeChangeSetInput {
+            change_set_name: self.change_set_name,
+            stack_name: self.stack_name,
+            next_token: self.next_token,
+        })
     }
 }

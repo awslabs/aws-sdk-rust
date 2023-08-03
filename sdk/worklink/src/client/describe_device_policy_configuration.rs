@@ -7,10 +7,10 @@ impl super::Client {
     /// - On success, responds with [`DescribeDevicePolicyConfigurationOutput`](crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationOutput) with field(s):
     ///   - [`device_ca_certificate(Option<String>)`](crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationOutput::device_ca_certificate): <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
     /// - On failure, responds with [`SdkError<DescribeDevicePolicyConfigurationError>`](crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn describe_device_policy_configuration(&self) -> crate::operation::describe_device_policy_configuration::builders::DescribeDevicePolicyConfigurationFluentBuilder{
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn describe_device_policy_configuration(
+        &self,
+    ) -> crate::operation::describe_device_policy_configuration::builders::DescribeDevicePolicyConfigurationFluentBuilder {
         crate::operation::describe_device_policy_configuration::builders::DescribeDevicePolicyConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -44,9 +44,7 @@ impl Thumbnail {
 
 /// A builder for [`Thumbnail`](crate::types::Thumbnail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThumbnailBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl ThumbnailBuilder {
         self
     }
     /// Thumbnail Type
-    pub fn set_thumbnail_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ThumbnailType>,
-    ) -> Self {
+    pub fn set_thumbnail_type(mut self, input: ::std::option::Option<crate::types::ThumbnailType>) -> Self {
         self.thumbnail_type = input;
         self
     }
@@ -105,10 +100,7 @@ impl ThumbnailBuilder {
         self
     }
     /// Time stamp for the latest thumbnail.
-    pub fn set_time_stamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.time_stamp = input;
         self
     }

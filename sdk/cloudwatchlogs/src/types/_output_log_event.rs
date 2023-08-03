@@ -37,9 +37,7 @@ impl OutputLogEvent {
 
 /// A builder for [`OutputLogEvent`](crate::types::OutputLogEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputLogEventBuilder {
     pub(crate) timestamp: ::std::option::Option<i64>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

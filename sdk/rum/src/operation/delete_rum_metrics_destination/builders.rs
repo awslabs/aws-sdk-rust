@@ -26,7 +26,7 @@ impl DeleteRumMetricsDestinationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRumMetricsDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationInputBuilder,
+    inner: crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationInputBuilder,
 }
 impl DeleteRumMetricsDestinationFluentBuilder {
     /// Creates a new `DeleteRumMetricsDestination`.
@@ -37,7 +37,7 @@ impl DeleteRumMetricsDestinationFluentBuilder {
         }
     }
     /// Access the DeleteRumMetricsDestination as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteRumMetricsDestinationFluentBuilder {
             crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteRumMetricsDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteRumMetricsDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteRumMetricsDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteRumMetricsDestinationFluentBuilder {
             crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the app monitor that is sending metrics to the destination that you want to delete.</p>
-    pub fn app_monitor_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_monitor_name(input.into());
         self
     }
     /// <p>The name of the app monitor that is sending metrics to the destination that you want to delete.</p>
-    pub fn set_app_monitor_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_monitor_name(input);
         self
     }
@@ -146,10 +129,7 @@ impl DeleteRumMetricsDestinationFluentBuilder {
         self
     }
     /// <p>The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::MetricDestination>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
     }
@@ -158,18 +138,12 @@ impl DeleteRumMetricsDestinationFluentBuilder {
         self.inner.get_destination()
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_arn(input.into());
         self
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_arn(input);
         self
     }

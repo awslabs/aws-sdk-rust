@@ -16,17 +16,14 @@ impl GetOperationDetailInput {
 }
 impl GetOperationDetailInput {
     /// Creates a new builder-style object to manufacture [`GetOperationDetailInput`](crate::operation::get_operation_detail::GetOperationDetailInput).
-    pub fn builder(
-    ) -> crate::operation::get_operation_detail::builders::GetOperationDetailInputBuilder {
+    pub fn builder() -> crate::operation::get_operation_detail::builders::GetOperationDetailInputBuilder {
         crate::operation::get_operation_detail::builders::GetOperationDetailInputBuilder::default()
     }
 }
 
 /// A builder for [`GetOperationDetailInput`](crate::operation::get_operation_detail::GetOperationDetailInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOperationDetailInputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +45,9 @@ impl GetOperationDetailInputBuilder {
     /// Consumes the builder and constructs a [`GetOperationDetailInput`](crate::operation::get_operation_detail::GetOperationDetailInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_operation_detail::GetOperationDetailInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_operation_detail::GetOperationDetailInput {
-                operation_id: self.operation_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_operation_detail::GetOperationDetailInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_operation_detail::GetOperationDetailInput {
+            operation_id: self.operation_id,
+        })
     }
 }

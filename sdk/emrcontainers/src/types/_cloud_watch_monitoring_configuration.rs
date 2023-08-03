@@ -30,27 +30,19 @@ impl CloudWatchMonitoringConfiguration {
 
 /// A builder for [`CloudWatchMonitoringConfiguration`](crate::types::CloudWatchMonitoringConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchMonitoringConfigurationBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_stream_name_prefix: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchMonitoringConfigurationBuilder {
     /// <p>The name of the log group for log publishing.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the log group for log publishing.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
@@ -59,18 +51,12 @@ impl CloudWatchMonitoringConfigurationBuilder {
         &self.log_group_name
     }
     /// <p>The specified name prefix for log streams.</p>
-    pub fn log_stream_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_stream_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The specified name prefix for log streams.</p>
-    pub fn set_log_stream_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_stream_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_stream_name_prefix = input;
         self
     }

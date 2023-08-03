@@ -49,9 +49,7 @@ impl GetFindingsInput {
 
 /// A builder for [`GetFindingsInput`](crate::operation::get_findings::GetFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
     pub(crate) sort_criteria: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>,
@@ -69,10 +67,7 @@ impl GetFindingsInputBuilder {
     /// <p>The finding attributes used to define a condition to filter the returned findings.</p>
     /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
     /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>) -> Self {
         self.filters = input;
         self
     }
@@ -94,17 +89,12 @@ impl GetFindingsInputBuilder {
         self
     }
     /// <p>The finding attributes used to sort the list of returned findings.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>) -> Self {
         self.sort_criteria = input;
         self
     }
     /// <p>The finding attributes used to sort the list of returned findings.</p>
-    pub fn get_sort_criteria(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>> {
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>> {
         &self.sort_criteria
     }
     /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
@@ -139,12 +129,7 @@ impl GetFindingsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetFindingsInput`](crate::operation::get_findings::GetFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_findings::GetFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_findings::GetFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_findings::GetFindingsInput {
             filters: self.filters,
             sort_criteria: self.sort_criteria,

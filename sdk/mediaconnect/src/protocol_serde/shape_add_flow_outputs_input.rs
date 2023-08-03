@@ -9,10 +9,7 @@ pub fn ser_add_flow_outputs_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_add_output_request::ser_add_output_request(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_add_output_request::ser_add_output_request(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

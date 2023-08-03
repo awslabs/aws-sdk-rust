@@ -28,7 +28,7 @@ impl AssociateConnectionAliasInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateConnectionAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_connection_alias::builders::AssociateConnectionAliasInputBuilder,
+    inner: crate::operation::associate_connection_alias::builders::AssociateConnectionAliasInputBuilder,
 }
 impl AssociateConnectionAliasFluentBuilder {
     /// Creates a new `AssociateConnectionAlias`.
@@ -39,10 +39,7 @@ impl AssociateConnectionAliasFluentBuilder {
         }
     }
     /// Access the AssociateConnectionAlias as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_connection_alias::builders::AssociateConnectionAliasInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_connection_alias::builders::AssociateConnectionAliasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl AssociateConnectionAliasFluentBuilder {
             crate::operation::associate_connection_alias::AssociateConnectionAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_connection_alias::AssociateConnectionAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_connection_alias::AssociateConnectionAliasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl AssociateConnectionAliasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl AssociateConnectionAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_connection_alias::AssociateConnectionAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_connection_alias::AssociateConnectionAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_connection_alias::AssociateConnectionAliasError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl AssociateConnectionAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_connection_alias::AssociateConnectionAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_connection_alias::AssociateConnectionAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_connection_alias::AssociateConnectionAliasError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl AssociateConnectionAliasFluentBuilder {
             crate::operation::associate_connection_alias::AssociateConnectionAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_connection_alias::AssociateConnectionAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_connection_alias::AssociateConnectionAliasError>,
     > {
         self.customize_middleware().await
     }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`mount_point(impl ::std::convert::Into<String>)`](crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::mount_point) / [`set_mount_point(Option<String>)`](crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::set_mount_point): <p>The new mount point.</p>
     /// - On success, responds with [`UpdateVolumeOutput`](crate::operation::update_volume::UpdateVolumeOutput)
     /// - On failure, responds with [`SdkError<UpdateVolumeError>`](crate::operation::update_volume::UpdateVolumeError)
-    pub fn update_volume(
-        &self,
-    ) -> crate::operation::update_volume::builders::UpdateVolumeFluentBuilder {
-        crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_volume(&self) -> crate::operation::update_volume::builders::UpdateVolumeFluentBuilder {
+        crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::new(self.handle.clone())
     }
 }

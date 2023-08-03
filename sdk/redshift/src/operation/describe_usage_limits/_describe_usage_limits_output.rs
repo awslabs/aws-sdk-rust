@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeUsageLimitsOutput {
 }
 impl DescribeUsageLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUsageLimitsOutput`](crate::operation::describe_usage_limits::DescribeUsageLimitsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_usage_limits::builders::DescribeUsageLimitsOutputBuilder {
-        crate::operation::describe_usage_limits::builders::DescribeUsageLimitsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_usage_limits::builders::DescribeUsageLimitsOutputBuilder {
+        crate::operation::describe_usage_limits::builders::DescribeUsageLimitsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUsageLimitsOutput`](crate::operation::describe_usage_limits::DescribeUsageLimitsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUsageLimitsOutputBuilder {
     pub(crate) usage_limits: ::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeUsageLimitsOutputBuilder {
         self
     }
     /// <p>Contains the output from the <code>DescribeUsageLimits</code> action. </p>
-    pub fn set_usage_limits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>>,
-    ) -> Self {
+    pub fn set_usage_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>>) -> Self {
         self.usage_limits = input;
         self
     }
     /// <p>Contains the output from the <code>DescribeUsageLimits</code> action. </p>
-    pub fn get_usage_limits(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>> {
+    pub fn get_usage_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>> {
         &self.usage_limits
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>

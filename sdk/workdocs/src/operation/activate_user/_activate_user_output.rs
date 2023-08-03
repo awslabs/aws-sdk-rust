@@ -28,9 +28,7 @@ impl ActivateUserOutput {
 
 /// A builder for [`ActivateUserOutput`](crate::operation::activate_user::ActivateUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivateUserOutputBuilder {
     pub(crate) user: ::std::option::Option<crate::types::User>,
     _request_id: Option<String>,

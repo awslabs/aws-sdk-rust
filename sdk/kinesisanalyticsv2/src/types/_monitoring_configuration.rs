@@ -37,9 +37,7 @@ impl MonitoringConfiguration {
 
 /// A builder for [`MonitoringConfiguration`](crate::types::MonitoringConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoringConfigurationBuilder {
     pub(crate) configuration_type: ::std::option::Option<crate::types::ConfigurationType>,
     pub(crate) metrics_level: ::std::option::Option<crate::types::MetricsLevel>,
@@ -52,17 +50,12 @@ impl MonitoringConfigurationBuilder {
         self
     }
     /// <p>Describes whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
-    pub fn set_configuration_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationType>,
-    ) -> Self {
+    pub fn set_configuration_type(mut self, input: ::std::option::Option<crate::types::ConfigurationType>) -> Self {
         self.configuration_type = input;
         self
     }
     /// <p>Describes whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
-    pub fn get_configuration_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationType> {
+    pub fn get_configuration_type(&self) -> &::std::option::Option<crate::types::ConfigurationType> {
         &self.configuration_type
     }
     /// <p>Describes the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
@@ -71,10 +64,7 @@ impl MonitoringConfigurationBuilder {
         self
     }
     /// <p>Describes the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
-    pub fn set_metrics_level(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricsLevel>,
-    ) -> Self {
+    pub fn set_metrics_level(mut self, input: ::std::option::Option<crate::types::MetricsLevel>) -> Self {
         self.metrics_level = input;
         self
     }

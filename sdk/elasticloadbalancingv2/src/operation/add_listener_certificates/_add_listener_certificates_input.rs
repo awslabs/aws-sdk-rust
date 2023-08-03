@@ -22,18 +22,14 @@ impl AddListenerCertificatesInput {
 }
 impl AddListenerCertificatesInput {
     /// Creates a new builder-style object to manufacture [`AddListenerCertificatesInput`](crate::operation::add_listener_certificates::AddListenerCertificatesInput).
-    pub fn builder(
-    ) -> crate::operation::add_listener_certificates::builders::AddListenerCertificatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::add_listener_certificates::builders::AddListenerCertificatesInputBuilder {
         crate::operation::add_listener_certificates::builders::AddListenerCertificatesInputBuilder::default()
     }
 }
 
 /// A builder for [`AddListenerCertificatesInput`](crate::operation::add_listener_certificates::AddListenerCertificatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddListenerCertificatesInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
@@ -65,17 +61,12 @@ impl AddListenerCertificatesInputBuilder {
         self
     }
     /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn set_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
-    ) -> Self {
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
         self.certificates = input;
         self
     }
     /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn get_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
         &self.certificates
     }
     /// Consumes the builder and constructs a [`AddListenerCertificatesInput`](crate::operation::add_listener_certificates::AddListenerCertificatesInput).
@@ -85,11 +76,9 @@ impl AddListenerCertificatesInputBuilder {
         crate::operation::add_listener_certificates::AddListenerCertificatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::add_listener_certificates::AddListenerCertificatesInput {
-                listener_arn: self.listener_arn,
-                certificates: self.certificates,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::add_listener_certificates::AddListenerCertificatesInput {
+            listener_arn: self.listener_arn,
+            certificates: self.certificates,
+        })
     }
 }

@@ -5,16 +5,16 @@ pub use crate::operation::list_distributions_by_realtime_log_config::_list_distr
 
 impl ListDistributionsByRealtimeLogConfigInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_distributions_by_realtime_log_config();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDistributionsByRealtimeLogConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigInputBuilder,
+    inner: crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigInputBuilder,
 }
 impl ListDistributionsByRealtimeLogConfigFluentBuilder {
     /// Creates a new `ListDistributionsByRealtimeLogConfig`.
@@ -39,15 +39,22 @@ impl ListDistributionsByRealtimeLogConfigFluentBuilder {
         }
     }
     /// Access the ListDistributionsByRealtimeLogConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfig,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +63,17 @@ impl ListDistributionsByRealtimeLogConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,17 +91,26 @@ impl ListDistributionsByRealtimeLogConfigFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfig,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
@@ -125,18 +142,12 @@ impl ListDistributionsByRealtimeLogConfigFluentBuilder {
         self.inner.get_max_items()
     }
     /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
-    pub fn realtime_log_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn realtime_log_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.realtime_log_config_name(input.into());
         self
     }
     /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
-    pub fn set_realtime_log_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_realtime_log_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_realtime_log_config_name(input);
         self
     }
@@ -145,18 +156,12 @@ impl ListDistributionsByRealtimeLogConfigFluentBuilder {
         self.inner.get_realtime_log_config_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
-    pub fn realtime_log_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn realtime_log_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.realtime_log_config_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
-    pub fn set_realtime_log_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_realtime_log_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_realtime_log_config_arn(input);
         self
     }

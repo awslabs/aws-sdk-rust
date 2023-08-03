@@ -52,17 +52,14 @@ impl ::aws_http::request_id::RequestId for ValidateTemplateOutput {
 }
 impl ValidateTemplateOutput {
     /// Creates a new builder-style object to manufacture [`ValidateTemplateOutput`](crate::operation::validate_template::ValidateTemplateOutput).
-    pub fn builder() -> crate::operation::validate_template::builders::ValidateTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::validate_template::builders::ValidateTemplateOutputBuilder {
         crate::operation::validate_template::builders::ValidateTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`ValidateTemplateOutput`](crate::operation::validate_template::ValidateTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateTemplateOutputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::TemplateParameter>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -84,17 +81,12 @@ impl ValidateTemplateOutputBuilder {
         self
     }
     /// <p>A list of <code>TemplateParameter</code> structures.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateParameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateParameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>A list of <code>TemplateParameter</code> structures.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateParameter>> {
         &self.parameters
     }
     /// <p>The description found within the template.</p>
@@ -125,33 +117,22 @@ impl ValidateTemplateOutputBuilder {
     }
     /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
-    pub fn set_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
-    ) -> Self {
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>) -> Self {
         self.capabilities = input;
         self
     }
     /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
-    pub fn get_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
         &self.capabilities
     }
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-    pub fn capabilities_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capabilities_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capabilities_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-    pub fn set_capabilities_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capabilities_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capabilities_reason = input;
         self
     }
@@ -164,27 +145,19 @@ impl ValidateTemplateOutputBuilder {
     /// To override the contents of this collection use [`set_declared_transforms`](Self::set_declared_transforms).
     ///
     /// <p>A list of the transforms that are declared in the template.</p>
-    pub fn declared_transforms(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn declared_transforms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.declared_transforms.unwrap_or_default();
         v.push(input.into());
         self.declared_transforms = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the transforms that are declared in the template.</p>
-    pub fn set_declared_transforms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_declared_transforms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.declared_transforms = input;
         self
     }
     /// <p>A list of the transforms that are declared in the template.</p>
-    pub fn get_declared_transforms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_declared_transforms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.declared_transforms
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

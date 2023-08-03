@@ -44,9 +44,7 @@ impl TemplateVersionsResponse {
 
 /// A builder for [`TemplateVersionsResponse`](crate::types::TemplateVersionsResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemplateVersionsResponseBuilder {
     pub(crate) item: ::std::option::Option<::std::vec::Vec<crate::types::TemplateVersionResponse>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -66,17 +64,12 @@ impl TemplateVersionsResponseBuilder {
         self
     }
     /// <p>An array of responses, one for each version of the message template.</p>
-    pub fn set_item(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateVersionResponse>>,
-    ) -> Self {
+    pub fn set_item(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateVersionResponse>>) -> Self {
         self.item = input;
         self
     }
     /// <p>An array of responses, one for each version of the message template.</p>
-    pub fn get_item(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateVersionResponse>> {
+    pub fn get_item(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateVersionResponse>> {
         &self.item
     }
     /// <p>The message that's returned from the API for the request to retrieve information about all the versions of the message template.</p>

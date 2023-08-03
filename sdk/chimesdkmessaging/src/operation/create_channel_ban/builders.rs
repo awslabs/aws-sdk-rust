@@ -10,10 +10,7 @@ impl CreateChannelBanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_channel_ban::CreateChannelBanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel_ban::CreateChannelBanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel_ban::CreateChannelBanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_channel_ban();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateChannelBanFluentBuilder {
         }
     }
     /// Access the CreateChannelBan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_channel_ban::builders::CreateChannelBanInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_channel_ban::builders::CreateChannelBanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl CreateChannelBanFluentBuilder {
             crate::operation::create_channel_ban::CreateChannelBan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel_ban::CreateChannelBanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel_ban::CreateChannelBanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl CreateChannelBanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl CreateChannelBanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_channel_ban::CreateChannelBanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel_ban::CreateChannelBanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel_ban::CreateChannelBanError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl CreateChannelBanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_channel_ban::CreateChannelBanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel_ban::CreateChannelBanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel_ban::CreateChannelBanError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl CreateChannelBanFluentBuilder {
             crate::operation::create_channel_ban::CreateChannelBan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_channel_ban::CreateChannelBanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel_ban::CreateChannelBanError>,
     > {
         self.customize_middleware().await
     }

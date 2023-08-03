@@ -26,8 +26,7 @@ impl UpdateAuthEventFeedbackInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAuthEventFeedbackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_auth_event_feedback::builders::UpdateAuthEventFeedbackInputBuilder,
+    inner: crate::operation::update_auth_event_feedback::builders::UpdateAuthEventFeedbackInputBuilder,
 }
 impl UpdateAuthEventFeedbackFluentBuilder {
     /// Creates a new `UpdateAuthEventFeedback`.
@@ -38,10 +37,7 @@ impl UpdateAuthEventFeedbackFluentBuilder {
         }
     }
     /// Access the UpdateAuthEventFeedback as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_auth_event_feedback::builders::UpdateAuthEventFeedbackInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_auth_event_feedback::builders::UpdateAuthEventFeedbackInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateAuthEventFeedbackFluentBuilder {
             crate::operation::update_auth_event_feedback::UpdateAuthEventFeedback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateAuthEventFeedbackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateAuthEventFeedbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateAuthEventFeedbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl UpdateAuthEventFeedbackFluentBuilder {
             crate::operation::update_auth_event_feedback::UpdateAuthEventFeedback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError>,
     > {
         self.customize_middleware().await
     }
@@ -167,18 +152,12 @@ impl UpdateAuthEventFeedbackFluentBuilder {
         self.inner.get_event_id()
     }
     /// <p>The feedback token.</p>
-    pub fn feedback_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feedback_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feedback_token(input.into());
         self
     }
     /// <p>The feedback token.</p>
-    pub fn set_feedback_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feedback_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feedback_token(input);
         self
     }
@@ -192,10 +171,7 @@ impl UpdateAuthEventFeedbackFluentBuilder {
         self
     }
     /// <p>The authentication event feedback value.</p>
-    pub fn set_feedback_value(
-        mut self,
-        input: ::std::option::Option<crate::types::FeedbackValueType>,
-    ) -> Self {
+    pub fn set_feedback_value(mut self, input: ::std::option::Option<crate::types::FeedbackValueType>) -> Self {
         self.inner = self.inner.set_feedback_value(input);
         self
     }

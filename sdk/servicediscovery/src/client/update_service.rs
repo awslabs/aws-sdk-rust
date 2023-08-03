@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateServiceOutput`](crate::operation::update_service::UpdateServiceOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::update_service::UpdateServiceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     /// - On failure, responds with [`SdkError<UpdateServiceError>`](crate::operation::update_service::UpdateServiceError)
-    pub fn update_service(
-        &self,
-    ) -> crate::operation::update_service::builders::UpdateServiceFluentBuilder {
-        crate::operation::update_service::builders::UpdateServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_service(&self) -> crate::operation::update_service::builders::UpdateServiceFluentBuilder {
+        crate::operation::update_service::builders::UpdateServiceFluentBuilder::new(self.handle.clone())
     }
 }

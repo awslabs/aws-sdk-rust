@@ -36,17 +36,14 @@ impl ReplaceVpnTunnelInput {
 }
 impl ReplaceVpnTunnelInput {
     /// Creates a new builder-style object to manufacture [`ReplaceVpnTunnelInput`](crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput).
-    pub fn builder() -> crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelInputBuilder
-    {
+    pub fn builder() -> crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelInputBuilder {
         crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelInputBuilder::default()
     }
 }
 
 /// A builder for [`ReplaceVpnTunnelInput`](crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplaceVpnTunnelInputBuilder {
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_tunnel_outside_ip_address: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct ReplaceVpnTunnelInputBuilder {
 }
 impl ReplaceVpnTunnelInputBuilder {
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn vpn_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn set_vpn_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_connection_id = input;
         self
     }
@@ -75,25 +66,17 @@ impl ReplaceVpnTunnelInputBuilder {
         &self.vpn_connection_id
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn vpn_tunnel_outside_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_tunnel_outside_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_tunnel_outside_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn set_vpn_tunnel_outside_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_tunnel_outside_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_tunnel_outside_ip_address = input;
         self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn get_vpn_tunnel_outside_ip_address(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_vpn_tunnel_outside_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpn_tunnel_outside_ip_address
     }
     /// <p>Trigger pending tunnel endpoint maintenance.</p>
@@ -127,17 +110,12 @@ impl ReplaceVpnTunnelInputBuilder {
     /// Consumes the builder and constructs a [`ReplaceVpnTunnelInput`](crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput {
-                vpn_connection_id: self.vpn_connection_id,
-                vpn_tunnel_outside_ip_address: self.vpn_tunnel_outside_ip_address,
-                apply_pending_maintenance: self.apply_pending_maintenance,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput {
+            vpn_connection_id: self.vpn_connection_id,
+            vpn_tunnel_outside_ip_address: self.vpn_tunnel_outside_ip_address,
+            apply_pending_maintenance: self.apply_pending_maintenance,
+            dry_run: self.dry_run,
+        })
     }
 }

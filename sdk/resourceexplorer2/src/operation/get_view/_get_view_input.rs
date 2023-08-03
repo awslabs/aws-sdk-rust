@@ -22,9 +22,7 @@ impl GetViewInput {
 
 /// A builder for [`GetViewInput`](crate::operation::get_view::GetViewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetViewInputBuilder {
     pub(crate) view_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetViewInputBuilder {
         &self.view_arn
     }
     /// Consumes the builder and constructs a [`GetViewInput`](crate::operation::get_view::GetViewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_view::GetViewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_view::GetViewInput {
-            view_arn: self.view_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_view::GetViewInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_view::GetViewInput { view_arn: self.view_arn })
     }
 }

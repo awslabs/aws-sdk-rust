@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`actions(Option<Vec<Action>>)`](crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountOutput::actions): <p> A list of the budget action resources information. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountOutput::next_token): <p> A generic string.</p>
     /// - On failure, responds with [`SdkError<DescribeBudgetActionsForAccountError>`](crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountError)
-    pub fn describe_budget_actions_for_account(&self) -> crate::operation::describe_budget_actions_for_account::builders::DescribeBudgetActionsForAccountFluentBuilder{
+    pub fn describe_budget_actions_for_account(
+        &self,
+    ) -> crate::operation::describe_budget_actions_for_account::builders::DescribeBudgetActionsForAccountFluentBuilder {
         crate::operation::describe_budget_actions_for_account::builders::DescribeBudgetActionsForAccountFluentBuilder::new(self.handle.clone())
     }
 }

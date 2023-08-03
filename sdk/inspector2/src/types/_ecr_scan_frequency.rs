@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EcrScanFrequency {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for EcrScanFrequency {
             "CONTINUOUS_SCAN" => EcrScanFrequency::ContinuousScan,
             "MANUAL" => EcrScanFrequency::Manual,
             "SCAN_ON_PUSH" => EcrScanFrequency::ScanOnPush,
-            other => {
-                EcrScanFrequency::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => EcrScanFrequency::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

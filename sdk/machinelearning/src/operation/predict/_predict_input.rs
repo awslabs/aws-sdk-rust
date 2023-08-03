@@ -8,9 +8,7 @@ pub struct PredictInput {
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>A map of variable name-value pairs that represent an observation.</p>
     #[doc(hidden)]
-    pub record: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub record: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub predict_endpoint: ::std::option::Option<::std::string::String>,
@@ -21,11 +19,7 @@ impl PredictInput {
         self.ml_model_id.as_deref()
     }
     /// <p>A map of variable name-value pairs that represent an observation.</p>
-    pub fn record(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn record(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.record.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -42,14 +36,10 @@ impl PredictInput {
 
 /// A builder for [`PredictInput`](crate::operation::predict::PredictInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictInputBuilder {
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
-    pub(crate) record: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) record: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) predict_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl PredictInputBuilder {
@@ -72,47 +62,28 @@ impl PredictInputBuilder {
     /// To override the contents of this collection use [`set_record`](Self::set_record).
     ///
     /// <p>A map of variable name-value pairs that represent an observation.</p>
-    pub fn record(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.record.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.record = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of variable name-value pairs that represent an observation.</p>
-    pub fn set_record(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_record(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.record = input;
         self
     }
     /// <p>A map of variable name-value pairs that represent an observation.</p>
-    pub fn get_record(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_record(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.record
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn predict_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predict_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predict_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_predict_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predict_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.predict_endpoint = input;
         self
     }
@@ -121,12 +92,7 @@ impl PredictInputBuilder {
         &self.predict_endpoint
     }
     /// Consumes the builder and constructs a [`PredictInput`](crate::operation::predict::PredictInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::predict::PredictInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::predict::PredictInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::predict::PredictInput {
             ml_model_id: self.ml_model_id,
             record: self.record,

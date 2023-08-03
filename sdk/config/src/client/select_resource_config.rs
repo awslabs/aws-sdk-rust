@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`query_info(Option<QueryInfo>)`](crate::operation::select_resource_config::SelectResourceConfigOutput::query_info): <p>Returns the <code>QueryInfo</code> object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::select_resource_config::SelectResourceConfigOutput::next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
     /// - On failure, responds with [`SdkError<SelectResourceConfigError>`](crate::operation::select_resource_config::SelectResourceConfigError)
-    pub fn select_resource_config(
-        &self,
-    ) -> crate::operation::select_resource_config::builders::SelectResourceConfigFluentBuilder {
-        crate::operation::select_resource_config::builders::SelectResourceConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn select_resource_config(&self) -> crate::operation::select_resource_config::builders::SelectResourceConfigFluentBuilder {
+        crate::operation::select_resource_config::builders::SelectResourceConfigFluentBuilder::new(self.handle.clone())
     }
 }

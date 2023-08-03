@@ -30,9 +30,7 @@ impl ListJobsFilterCriteria {
 
 /// A builder for [`ListJobsFilterCriteria`](crate::types::ListJobsFilterCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobsFilterCriteriaBuilder {
     pub(crate) excludes: ::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>>,
     pub(crate) includes: ::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>>,
@@ -50,17 +48,12 @@ impl ListJobsFilterCriteriaBuilder {
         self
     }
     /// <p>An array of objects, one for each condition that determines which jobs to exclude from the results.</p>
-    pub fn set_excludes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>>,
-    ) -> Self {
+    pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>>) -> Self {
         self.excludes = input;
         self
     }
     /// <p>An array of objects, one for each condition that determines which jobs to exclude from the results.</p>
-    pub fn get_excludes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>> {
+    pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>> {
         &self.excludes
     }
     /// Appends an item to `includes`.
@@ -75,17 +68,12 @@ impl ListJobsFilterCriteriaBuilder {
         self
     }
     /// <p>An array of objects, one for each condition that determines which jobs to include in the results.</p>
-    pub fn set_includes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>>,
-    ) -> Self {
+    pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>>) -> Self {
         self.includes = input;
         self
     }
     /// <p>An array of objects, one for each condition that determines which jobs to include in the results.</p>
-    pub fn get_includes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>> {
+    pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>> {
         &self.includes
     }
     /// Consumes the builder and constructs a [`ListJobsFilterCriteria`](crate::types::ListJobsFilterCriteria).

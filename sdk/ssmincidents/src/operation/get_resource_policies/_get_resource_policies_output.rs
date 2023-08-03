@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for GetResourcePoliciesOutput {
 }
 impl GetResourcePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcePoliciesOutput`](crate::operation::get_resource_policies::GetResourcePoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder {
-        crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder {
+        crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourcePoliciesOutput`](crate::operation::get_resource_policies::GetResourcePoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourcePoliciesOutputBuilder {
-    pub(crate) resource_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePolicy>>,
+    pub(crate) resource_policies: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePolicy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl GetResourcePoliciesOutputBuilder {
         self
     }
     /// <p>Details about the resource policy attached to the response plan.</p>
-    pub fn set_resource_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePolicy>>,
-    ) -> Self {
+    pub fn set_resource_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePolicy>>) -> Self {
         self.resource_policies = input;
         self
     }
     /// <p>Details about the resource policy attached to the response plan.</p>
-    pub fn get_resource_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePolicy>> {
+    pub fn get_resource_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePolicy>> {
         &self.resource_policies
     }
     /// <p>The pagination token to continue to the next page of results.</p>

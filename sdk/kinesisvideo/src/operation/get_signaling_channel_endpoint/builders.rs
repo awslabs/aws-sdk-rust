@@ -28,7 +28,7 @@ impl GetSignalingChannelEndpointInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSignalingChannelEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_signaling_channel_endpoint::builders::GetSignalingChannelEndpointInputBuilder,
+    inner: crate::operation::get_signaling_channel_endpoint::builders::GetSignalingChannelEndpointInputBuilder,
 }
 impl GetSignalingChannelEndpointFluentBuilder {
     /// Creates a new `GetSignalingChannelEndpoint`.
@@ -39,7 +39,7 @@ impl GetSignalingChannelEndpointFluentBuilder {
         }
     }
     /// Access the GetSignalingChannelEndpoint as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_signaling_channel_endpoint::builders::GetSignalingChannelEndpointInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_signaling_channel_endpoint::builders::GetSignalingChannelEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl GetSignalingChannelEndpointFluentBuilder {
             crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl GetSignalingChannelEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl GetSignalingChannelEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl GetSignalingChannelEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl GetSignalingChannelEndpointFluentBuilder {
             crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError>,
     > {
         self.customize_middleware().await
     }
@@ -137,13 +126,8 @@ impl GetSignalingChannelEndpointFluentBuilder {
         self.inner.get_channel_arn()
     }
     /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-    pub fn single_master_channel_endpoint_configuration(
-        mut self,
-        input: crate::types::SingleMasterChannelEndpointConfiguration,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .single_master_channel_endpoint_configuration(input);
+    pub fn single_master_channel_endpoint_configuration(mut self, input: crate::types::SingleMasterChannelEndpointConfiguration) -> Self {
+        self.inner = self.inner.single_master_channel_endpoint_configuration(input);
         self
     }
     /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
@@ -151,16 +135,11 @@ impl GetSignalingChannelEndpointFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::SingleMasterChannelEndpointConfiguration>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_single_master_channel_endpoint_configuration(input);
+        self.inner = self.inner.set_single_master_channel_endpoint_configuration(input);
         self
     }
     /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-    pub fn get_single_master_channel_endpoint_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SingleMasterChannelEndpointConfiguration> {
-        self.inner
-            .get_single_master_channel_endpoint_configuration()
+    pub fn get_single_master_channel_endpoint_configuration(&self) -> &::std::option::Option<crate::types::SingleMasterChannelEndpointConfiguration> {
+        self.inner.get_single_master_channel_endpoint_configuration()
     }
 }

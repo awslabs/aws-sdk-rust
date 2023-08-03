@@ -16,17 +16,14 @@ impl DescribeWorkspaceInput {
 }
 impl DescribeWorkspaceInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceInput`](crate::operation::describe_workspace::DescribeWorkspaceInput).
-    pub fn builder() -> crate::operation::describe_workspace::builders::DescribeWorkspaceInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_workspace::builders::DescribeWorkspaceInputBuilder {
         crate::operation::describe_workspace::builders::DescribeWorkspaceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspaceInput`](crate::operation::describe_workspace::DescribeWorkspaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +45,9 @@ impl DescribeWorkspaceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWorkspaceInput`](crate::operation::describe_workspace::DescribeWorkspaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_workspace::DescribeWorkspaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_workspace::DescribeWorkspaceInput {
-                workspace_id: self.workspace_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_workspace::DescribeWorkspaceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_workspace::DescribeWorkspaceInput {
+            workspace_id: self.workspace_id,
+        })
     }
 }

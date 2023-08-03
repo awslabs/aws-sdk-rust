@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`ImportSourceCredentialsOutput`](crate::operation::import_source_credentials::ImportSourceCredentialsOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::import_source_credentials::ImportSourceCredentialsOutput::arn): <p> The Amazon Resource Name (ARN) of the token. </p>
     /// - On failure, responds with [`SdkError<ImportSourceCredentialsError>`](crate::operation::import_source_credentials::ImportSourceCredentialsError)
-    pub fn import_source_credentials(
-        &self,
-    ) -> crate::operation::import_source_credentials::builders::ImportSourceCredentialsFluentBuilder
-    {
+    pub fn import_source_credentials(&self) -> crate::operation::import_source_credentials::builders::ImportSourceCredentialsFluentBuilder {
         crate::operation::import_source_credentials::builders::ImportSourceCredentialsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`communications(Option<Vec<Communication>>)`](crate::operation::describe_communications::DescribeCommunicationsOutput::communications): <p>The communications for the case.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_communications::DescribeCommunicationsOutput::next_token): <p>A resumption point for pagination.</p>
     /// - On failure, responds with [`SdkError<DescribeCommunicationsError>`](crate::operation::describe_communications::DescribeCommunicationsError)
-    pub fn describe_communications(
-        &self,
-    ) -> crate::operation::describe_communications::builders::DescribeCommunicationsFluentBuilder
-    {
+    pub fn describe_communications(&self) -> crate::operation::describe_communications::builders::DescribeCommunicationsFluentBuilder {
         crate::operation::describe_communications::builders::DescribeCommunicationsFluentBuilder::new(self.handle.clone())
     }
 }

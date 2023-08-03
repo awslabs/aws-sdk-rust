@@ -22,34 +22,26 @@ impl DeleteNotificationSubscriptionInput {
 }
 impl DeleteNotificationSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`DeleteNotificationSubscriptionInput`](crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionInput).
-    pub fn builder() -> crate::operation::delete_notification_subscription::builders::DeleteNotificationSubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::delete_notification_subscription::builders::DeleteNotificationSubscriptionInputBuilder {
         crate::operation::delete_notification_subscription::builders::DeleteNotificationSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNotificationSubscriptionInput`](crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNotificationSubscriptionInputBuilder {
     pub(crate) subscription_id: ::std::option::Option<::std::string::String>,
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNotificationSubscriptionInputBuilder {
     /// <p>The ID of the subscription.</p>
-    pub fn subscription_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subscription.</p>
-    pub fn set_subscription_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_id = input;
         self
     }
@@ -58,18 +50,12 @@ impl DeleteNotificationSubscriptionInputBuilder {
         &self.subscription_id
     }
     /// <p>The ID of the organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -84,13 +70,9 @@ impl DeleteNotificationSubscriptionInputBuilder {
         crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionInput {
-                subscription_id: self.subscription_id
-                ,
-                organization_id: self.organization_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionInput {
+            subscription_id: self.subscription_id,
+            organization_id: self.organization_id,
+        })
     }
 }

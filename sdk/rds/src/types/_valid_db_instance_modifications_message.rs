@@ -9,8 +9,7 @@ pub struct ValidDbInstanceModificationsMessage {
     pub storage: ::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>>,
     /// <p>Valid processor features for your DB instance.</p>
     #[doc(hidden)]
-    pub valid_processor_features:
-        ::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>>,
+    pub valid_processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>>,
 }
 impl ValidDbInstanceModificationsMessage {
     /// <p>Valid storage options for your DB instance.</p>
@@ -18,9 +17,7 @@ impl ValidDbInstanceModificationsMessage {
         self.storage.as_deref()
     }
     /// <p>Valid processor features for your DB instance.</p>
-    pub fn valid_processor_features(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AvailableProcessorFeature]> {
+    pub fn valid_processor_features(&self) -> ::std::option::Option<&[crate::types::AvailableProcessorFeature]> {
         self.valid_processor_features.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl ValidDbInstanceModificationsMessage {
 
 /// A builder for [`ValidDbInstanceModificationsMessage`](crate::types::ValidDbInstanceModificationsMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidDbInstanceModificationsMessageBuilder {
     pub(crate) storage: ::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>>,
-    pub(crate) valid_processor_features:
-        ::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>>,
+    pub(crate) valid_processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>>,
 }
 impl ValidDbInstanceModificationsMessageBuilder {
     /// Appends an item to `storage`.
@@ -54,17 +48,12 @@ impl ValidDbInstanceModificationsMessageBuilder {
         self
     }
     /// <p>Valid storage options for your DB instance.</p>
-    pub fn set_storage(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>>,
-    ) -> Self {
+    pub fn set_storage(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>>) -> Self {
         self.storage = input;
         self
     }
     /// <p>Valid storage options for your DB instance.</p>
-    pub fn get_storage(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>> {
+    pub fn get_storage(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>> {
         &self.storage
     }
     /// Appends an item to `valid_processor_features`.
@@ -72,27 +61,19 @@ impl ValidDbInstanceModificationsMessageBuilder {
     /// To override the contents of this collection use [`set_valid_processor_features`](Self::set_valid_processor_features).
     ///
     /// <p>Valid processor features for your DB instance.</p>
-    pub fn valid_processor_features(
-        mut self,
-        input: crate::types::AvailableProcessorFeature,
-    ) -> Self {
+    pub fn valid_processor_features(mut self, input: crate::types::AvailableProcessorFeature) -> Self {
         let mut v = self.valid_processor_features.unwrap_or_default();
         v.push(input);
         self.valid_processor_features = ::std::option::Option::Some(v);
         self
     }
     /// <p>Valid processor features for your DB instance.</p>
-    pub fn set_valid_processor_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>>,
-    ) -> Self {
+    pub fn set_valid_processor_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>>) -> Self {
         self.valid_processor_features = input;
         self
     }
     /// <p>Valid processor features for your DB instance.</p>
-    pub fn get_valid_processor_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>> {
+    pub fn get_valid_processor_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>> {
         &self.valid_processor_features
     }
     /// Consumes the builder and constructs a [`ValidDbInstanceModificationsMessage`](crate::types::ValidDbInstanceModificationsMessage).

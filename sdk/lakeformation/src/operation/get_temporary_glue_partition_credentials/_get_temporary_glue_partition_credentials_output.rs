@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for GetTemporaryGluePartitionCredentialsO
 }
 impl GetTemporaryGluePartitionCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`GetTemporaryGluePartitionCredentialsOutput`](crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput).
-    pub fn builder() -> crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsOutputBuilder{
+    pub fn builder() -> crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsOutputBuilder {
         crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTemporaryGluePartitionCredentialsOutput`](crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTemporaryGluePartitionCredentialsOutputBuilder {
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_access_key: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ pub struct GetTemporaryGluePartitionCredentialsOutputBuilder {
 }
 impl GetTemporaryGluePartitionCredentialsOutputBuilder {
     /// <p>The access key ID for the temporary credentials.</p>
-    pub fn access_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The access key ID for the temporary credentials.</p>
-    pub fn set_access_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_key_id = input;
         self
     }
@@ -81,18 +73,12 @@ impl GetTemporaryGluePartitionCredentialsOutputBuilder {
         &self.access_key_id
     }
     /// <p>The secret key for the temporary credentials.</p>
-    pub fn secret_access_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_access_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_access_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The secret key for the temporary credentials.</p>
-    pub fn set_secret_access_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_access_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_access_key = input;
         self
     }
@@ -101,18 +87,12 @@ impl GetTemporaryGluePartitionCredentialsOutputBuilder {
         &self.secret_access_key
     }
     /// <p>The session token for the temporary credentials.</p>
-    pub fn session_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The session token for the temporary credentials.</p>
-    pub fn set_session_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_token = input;
         self
     }
@@ -126,10 +106,7 @@ impl GetTemporaryGluePartitionCredentialsOutputBuilder {
         self
     }
     /// <p>The date and time when the temporary credentials expire.</p>
-    pub fn set_expiration(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration = input;
         self
     }
@@ -147,16 +124,12 @@ impl GetTemporaryGluePartitionCredentialsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTemporaryGluePartitionCredentialsOutput`](crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput).
-    pub fn build(self) -> crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput{
+    pub fn build(self) -> crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput {
         crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput {
-            access_key_id: self.access_key_id
-            ,
-            secret_access_key: self.secret_access_key
-            ,
-            session_token: self.session_token
-            ,
-            expiration: self.expiration
-            ,
+            access_key_id: self.access_key_id,
+            secret_access_key: self.secret_access_key,
+            session_token: self.session_token,
+            expiration: self.expiration,
             _request_id: self._request_id,
         }
     }

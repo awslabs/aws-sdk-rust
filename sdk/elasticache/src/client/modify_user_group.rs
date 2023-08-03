@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`replication_groups(Option<Vec<String>>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::replication_groups): <p>A list of replication groups that the user group can access.</p>
     ///   - [`arn(Option<String>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the user group.</p>
     /// - On failure, responds with [`SdkError<ModifyUserGroupError>`](crate::operation::modify_user_group::ModifyUserGroupError)
-    pub fn modify_user_group(
-        &self,
-    ) -> crate::operation::modify_user_group::builders::ModifyUserGroupFluentBuilder {
-        crate::operation::modify_user_group::builders::ModifyUserGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_user_group(&self) -> crate::operation::modify_user_group::builders::ModifyUserGroupFluentBuilder {
+        crate::operation::modify_user_group::builders::ModifyUserGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl RemediationActionWithOrder {
 
 /// A builder for [`RemediationActionWithOrder`](crate::types::RemediationActionWithOrder).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemediationActionWithOrderBuilder {
     pub(crate) remediation_action: ::std::option::Option<crate::types::RemediationAction>,
     pub(crate) order: ::std::option::Option<i32>,
@@ -44,17 +42,12 @@ impl RemediationActionWithOrderBuilder {
         self
     }
     /// <p>Information about an action you can take to remediate a violation.</p>
-    pub fn set_remediation_action(
-        mut self,
-        input: ::std::option::Option<crate::types::RemediationAction>,
-    ) -> Self {
+    pub fn set_remediation_action(mut self, input: ::std::option::Option<crate::types::RemediationAction>) -> Self {
         self.remediation_action = input;
         self
     }
     /// <p>Information about an action you can take to remediate a violation.</p>
-    pub fn get_remediation_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::RemediationAction> {
+    pub fn get_remediation_action(&self) -> &::std::option::Option<crate::types::RemediationAction> {
         &self.remediation_action
     }
     /// <p>The order of the remediation actions in the list.</p>

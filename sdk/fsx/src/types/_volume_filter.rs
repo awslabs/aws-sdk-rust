@@ -30,9 +30,7 @@ impl VolumeFilter {
 
 /// A builder for [`VolumeFilter`](crate::types::VolumeFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::VolumeFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl VolumeFilterBuilder {
         self
     }
     /// <p>The name for this filter.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::VolumeFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -67,10 +62,7 @@ impl VolumeFilterBuilder {
         self
     }
     /// <p>The values of the filter. These are all the values for any of the applied filters.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

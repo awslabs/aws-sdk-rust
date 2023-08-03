@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`web_acl(Option<WebAcl>)`](crate::operation::create_web_acl::CreateWebAclOutput::web_acl): <p>The <code>WebACL</code> returned in the <code>CreateWebACL</code> response.</p>
     ///   - [`change_token(Option<String>)`](crate::operation::create_web_acl::CreateWebAclOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<CreateWebACLError>`](crate::operation::create_web_acl::CreateWebACLError)
-    pub fn create_web_acl(
-        &self,
-    ) -> crate::operation::create_web_acl::builders::CreateWebACLFluentBuilder {
-        crate::operation::create_web_acl::builders::CreateWebACLFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_web_acl(&self) -> crate::operation::create_web_acl::builders::CreateWebACLFluentBuilder {
+        crate::operation::create_web_acl::builders::CreateWebACLFluentBuilder::new(self.handle.clone())
     }
 }

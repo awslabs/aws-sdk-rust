@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`principals(Option<Vec<PrincipalIdFormat>>)`](crate::operation::describe_principal_id_format::DescribePrincipalIdFormatOutput::principals): <p>Information about the ID format settings for the ARN.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_principal_id_format::DescribePrincipalIdFormatOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribePrincipalIdFormatError>`](crate::operation::describe_principal_id_format::DescribePrincipalIdFormatError)
-    pub fn describe_principal_id_format(&self) -> crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatFluentBuilder{
+    pub fn describe_principal_id_format(&self) -> crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatFluentBuilder {
         crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatFluentBuilder::new(self.handle.clone())
     }
 }

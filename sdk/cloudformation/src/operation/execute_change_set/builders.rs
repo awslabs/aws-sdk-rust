@@ -10,10 +10,7 @@ impl ExecuteChangeSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::execute_change_set::ExecuteChangeSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_change_set::ExecuteChangeSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_change_set::ExecuteChangeSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.execute_change_set();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl ExecuteChangeSetFluentBuilder {
         }
     }
     /// Access the ExecuteChangeSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::execute_change_set::builders::ExecuteChangeSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::execute_change_set::builders::ExecuteChangeSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl ExecuteChangeSetFluentBuilder {
             crate::operation::execute_change_set::ExecuteChangeSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_change_set::ExecuteChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_change_set::ExecuteChangeSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl ExecuteChangeSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl ExecuteChangeSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_change_set::ExecuteChangeSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_change_set::ExecuteChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_change_set::ExecuteChangeSetError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl ExecuteChangeSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_change_set::ExecuteChangeSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_change_set::ExecuteChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_change_set::ExecuteChangeSetError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +105,17 @@ impl ExecuteChangeSetFluentBuilder {
             crate::operation::execute_change_set::ExecuteChangeSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_change_set::ExecuteChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_change_set::ExecuteChangeSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want use to update the specified stack.</p>
-    pub fn change_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_set_name(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want use to update the specified stack.</p>
-    pub fn set_change_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_set_name(input);
         self
     }
@@ -160,18 +138,12 @@ impl ExecuteChangeSetFluentBuilder {
         self.inner.get_stack_name()
     }
     /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to execute a change set to update a stack with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that CloudFormation successfully received them.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to execute a change set to update a stack with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that CloudFormation successfully received them.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

@@ -23,17 +23,14 @@ impl StopUserImportJobInput {
 }
 impl StopUserImportJobInput {
     /// Creates a new builder-style object to manufacture [`StopUserImportJobInput`](crate::operation::stop_user_import_job::StopUserImportJobInput).
-    pub fn builder(
-    ) -> crate::operation::stop_user_import_job::builders::StopUserImportJobInputBuilder {
+    pub fn builder() -> crate::operation::stop_user_import_job::builders::StopUserImportJobInputBuilder {
         crate::operation::stop_user_import_job::builders::StopUserImportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopUserImportJobInput`](crate::operation::stop_user_import_job::StopUserImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopUserImportJobInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,10 @@ impl StopUserImportJobInputBuilder {
     /// Consumes the builder and constructs a [`StopUserImportJobInput`](crate::operation::stop_user_import_job::StopUserImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_user_import_job::StopUserImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_user_import_job::StopUserImportJobInput {
-                user_pool_id: self.user_pool_id,
-                job_id: self.job_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_user_import_job::StopUserImportJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_user_import_job::StopUserImportJobInput {
+            user_pool_id: self.user_pool_id,
+            job_id: self.job_id,
+        })
     }
 }

@@ -26,7 +26,7 @@ impl ListAccessLogSubscriptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAccessLogSubscriptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsInputBuilder,
+    inner: crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsInputBuilder,
 }
 impl ListAccessLogSubscriptionsFluentBuilder {
     /// Creates a new `ListAccessLogSubscriptions`.
@@ -37,7 +37,7 @@ impl ListAccessLogSubscriptionsFluentBuilder {
         }
     }
     /// Access the ListAccessLogSubscriptions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListAccessLogSubscriptionsFluentBuilder {
             crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListAccessLogSubscriptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListAccessLogSubscriptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListAccessLogSubscriptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListAccessLogSubscriptionsFluentBuilder {
             crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_access_log_subscriptions::paginator::ListAccessLogSubscriptionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_access_log_subscriptions::paginator::ListAccessLogSubscriptionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_access_log_subscriptions::paginator::ListAccessLogSubscriptionsPaginator {
         crate::operation::list_access_log_subscriptions::paginator::ListAccessLogSubscriptionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }

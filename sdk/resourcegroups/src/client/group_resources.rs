@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`failed(Option<Vec<FailedResource>>)`](crate::operation::group_resources::GroupResourcesOutput::failed): <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
     ///   - [`pending(Option<Vec<PendingResource>>)`](crate::operation::group_resources::GroupResourcesOutput::pending): <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
     /// - On failure, responds with [`SdkError<GroupResourcesError>`](crate::operation::group_resources::GroupResourcesError)
-    pub fn group_resources(
-        &self,
-    ) -> crate::operation::group_resources::builders::GroupResourcesFluentBuilder {
-        crate::operation::group_resources::builders::GroupResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn group_resources(&self) -> crate::operation::group_resources::builders::GroupResourcesFluentBuilder {
+        crate::operation::group_resources::builders::GroupResourcesFluentBuilder::new(self.handle.clone())
     }
 }

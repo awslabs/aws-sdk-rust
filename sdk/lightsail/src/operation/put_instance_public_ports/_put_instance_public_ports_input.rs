@@ -22,18 +22,14 @@ impl PutInstancePublicPortsInput {
 }
 impl PutInstancePublicPortsInput {
     /// Creates a new builder-style object to manufacture [`PutInstancePublicPortsInput`](crate::operation::put_instance_public_ports::PutInstancePublicPortsInput).
-    pub fn builder(
-    ) -> crate::operation::put_instance_public_ports::builders::PutInstancePublicPortsInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_instance_public_ports::builders::PutInstancePublicPortsInputBuilder {
         crate::operation::put_instance_public_ports::builders::PutInstancePublicPortsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutInstancePublicPortsInput`](crate::operation::put_instance_public_ports::PutInstancePublicPortsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutInstancePublicPortsInputBuilder {
     pub(crate) port_infos: ::std::option::Option<::std::vec::Vec<crate::types::PortInfo>>,
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
@@ -51,32 +47,21 @@ impl PutInstancePublicPortsInputBuilder {
         self
     }
     /// <p>An array of objects to describe the ports to open for the specified instance.</p>
-    pub fn set_port_infos(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortInfo>>,
-    ) -> Self {
+    pub fn set_port_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortInfo>>) -> Self {
         self.port_infos = input;
         self
     }
     /// <p>An array of objects to describe the ports to open for the specified instance.</p>
-    pub fn get_port_infos(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortInfo>> {
+    pub fn get_port_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortInfo>> {
         &self.port_infos
     }
     /// <p>The name of the instance for which to open ports.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the instance for which to open ports.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -91,11 +76,9 @@ impl PutInstancePublicPortsInputBuilder {
         crate::operation::put_instance_public_ports::PutInstancePublicPortsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_instance_public_ports::PutInstancePublicPortsInput {
-                port_infos: self.port_infos,
-                instance_name: self.instance_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_instance_public_ports::PutInstancePublicPortsInput {
+            port_infos: self.port_infos,
+            instance_name: self.instance_name,
+        })
     }
 }

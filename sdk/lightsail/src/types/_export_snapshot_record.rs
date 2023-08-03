@@ -55,9 +55,7 @@ impl ExportSnapshotRecord {
         self.state.as_ref()
     }
     /// <p>A list of objects describing the source of the export snapshot record.</p>
-    pub fn source_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExportSnapshotRecordSourceInfo> {
+    pub fn source_info(&self) -> ::std::option::Option<&crate::types::ExportSnapshotRecordSourceInfo> {
         self.source_info.as_ref()
     }
     /// <p>A list of objects describing the destination of the export snapshot record.</p>
@@ -74,9 +72,7 @@ impl ExportSnapshotRecord {
 
 /// A builder for [`ExportSnapshotRecord`](crate::types::ExportSnapshotRecord).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportSnapshotRecordBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -122,10 +118,7 @@ impl ExportSnapshotRecordBuilder {
         self
     }
     /// <p>The date when the export snapshot record was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -139,10 +132,7 @@ impl ExportSnapshotRecordBuilder {
         self
     }
     /// <p>The AWS Region and Availability Zone where the export snapshot record is located.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
         self.location = input;
         self
     }
@@ -156,10 +146,7 @@ impl ExportSnapshotRecordBuilder {
         self
     }
     /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -187,17 +174,12 @@ impl ExportSnapshotRecordBuilder {
         self
     }
     /// <p>A list of objects describing the source of the export snapshot record.</p>
-    pub fn set_source_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportSnapshotRecordSourceInfo>,
-    ) -> Self {
+    pub fn set_source_info(mut self, input: ::std::option::Option<crate::types::ExportSnapshotRecordSourceInfo>) -> Self {
         self.source_info = input;
         self
     }
     /// <p>A list of objects describing the source of the export snapshot record.</p>
-    pub fn get_source_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportSnapshotRecordSourceInfo> {
+    pub fn get_source_info(&self) -> &::std::option::Option<crate::types::ExportSnapshotRecordSourceInfo> {
         &self.source_info
     }
     /// <p>A list of objects describing the destination of the export snapshot record.</p>
@@ -206,10 +188,7 @@ impl ExportSnapshotRecordBuilder {
         self
     }
     /// <p>A list of objects describing the destination of the export snapshot record.</p>
-    pub fn set_destination_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationInfo>,
-    ) -> Self {
+    pub fn set_destination_info(mut self, input: ::std::option::Option<crate::types::DestinationInfo>) -> Self {
         self.destination_info = input;
         self
     }

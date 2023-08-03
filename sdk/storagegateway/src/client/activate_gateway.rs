@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`ActivateGatewayOutput`](crate::operation::activate_gateway::ActivateGatewayOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::activate_gateway::ActivateGatewayOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<ActivateGatewayError>`](crate::operation::activate_gateway::ActivateGatewayError)
-    pub fn activate_gateway(
-        &self,
-    ) -> crate::operation::activate_gateway::builders::ActivateGatewayFluentBuilder {
-        crate::operation::activate_gateway::builders::ActivateGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn activate_gateway(&self) -> crate::operation::activate_gateway::builders::ActivateGatewayFluentBuilder {
+        crate::operation::activate_gateway::builders::ActivateGatewayFluentBuilder::new(self.handle.clone())
     }
 }

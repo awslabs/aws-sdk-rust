@@ -42,9 +42,7 @@ impl AggregatedProfileTime {
 
 /// A builder for [`AggregatedProfileTime`](crate::types::AggregatedProfileTime).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregatedProfileTimeBuilder {
     pub(crate) start: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) period: ::std::option::Option<crate::types::AggregationPeriod>,
@@ -83,10 +81,7 @@ impl AggregatedProfileTimeBuilder {
     /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
-    pub fn set_period(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationPeriod>,
-    ) -> Self {
+    pub fn set_period(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
         self.period = input;
         self
     }

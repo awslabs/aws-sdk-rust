@@ -29,17 +29,14 @@ impl ListGroupVersionsInput {
 }
 impl ListGroupVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListGroupVersionsInput`](crate::operation::list_group_versions::ListGroupVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_group_versions::builders::ListGroupVersionsInputBuilder {
+    pub fn builder() -> crate::operation::list_group_versions::builders::ListGroupVersionsInputBuilder {
         crate::operation::list_group_versions::builders::ListGroupVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListGroupVersionsInput`](crate::operation::list_group_versions::ListGroupVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupVersionsInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl ListGroupVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListGroupVersionsInput`](crate::operation::list_group_versions::ListGroupVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_group_versions::ListGroupVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_group_versions::ListGroupVersionsInput {
-                group_id: self.group_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_group_versions::ListGroupVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_group_versions::ListGroupVersionsInput {
+            group_id: self.group_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

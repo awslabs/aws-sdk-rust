@@ -26,7 +26,7 @@ impl GetRemainingFreeTrialDaysInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRemainingFreeTrialDaysFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysInputBuilder,
+    inner: crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysInputBuilder,
 }
 impl GetRemainingFreeTrialDaysFluentBuilder {
     /// Creates a new `GetRemainingFreeTrialDays`.
@@ -37,7 +37,7 @@ impl GetRemainingFreeTrialDaysFluentBuilder {
         }
     }
     /// Access the GetRemainingFreeTrialDays as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetRemainingFreeTrialDaysFluentBuilder {
             crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDays,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetRemainingFreeTrialDaysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetRemainingFreeTrialDaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetRemainingFreeTrialDaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetRemainingFreeTrialDaysFluentBuilder {
             crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDays,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysError>,
     > {
         self.customize_middleware().await
     }
@@ -144,17 +133,12 @@ impl GetRemainingFreeTrialDaysFluentBuilder {
         self
     }
     /// <p>A list of account identifiers of the GuardDuty member account.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>A list of account identifiers of the GuardDuty member account.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
 }

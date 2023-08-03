@@ -37,9 +37,7 @@ impl InputSource {
 
 /// A builder for [`InputSource`](crate::types::InputSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputSourceBuilder {
     pub(crate) input_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct InputSourceBuilder {
 }
 impl InputSourceBuilder {
     /// <p>An Glue table ARN for the input source table.</p>
-    pub fn input_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Glue table ARN for the input source table.</p>
-    pub fn set_input_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_source_arn = input;
         self
     }

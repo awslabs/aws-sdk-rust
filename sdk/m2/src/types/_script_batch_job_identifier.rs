@@ -23,9 +23,7 @@ impl ScriptBatchJobIdentifier {
 
 /// A builder for [`ScriptBatchJobIdentifier`](crate::types::ScriptBatchJobIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScriptBatchJobIdentifierBuilder {
     pub(crate) script_name: ::std::option::Option<::std::string::String>,
 }

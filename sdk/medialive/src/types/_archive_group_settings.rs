@@ -37,9 +37,7 @@ impl ArchiveGroupSettings {
 
 /// A builder for [`ArchiveGroupSettings`](crate::types::ArchiveGroupSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArchiveGroupSettingsBuilder {
     pub(crate) archive_cdn_settings: ::std::option::Option<crate::types::ArchiveCdnSettings>,
     pub(crate) destination: ::std::option::Option<crate::types::OutputLocationRef>,
@@ -52,17 +50,12 @@ impl ArchiveGroupSettingsBuilder {
         self
     }
     /// Parameters that control interactions with the CDN.
-    pub fn set_archive_cdn_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ArchiveCdnSettings>,
-    ) -> Self {
+    pub fn set_archive_cdn_settings(mut self, input: ::std::option::Option<crate::types::ArchiveCdnSettings>) -> Self {
         self.archive_cdn_settings = input;
         self
     }
     /// Parameters that control interactions with the CDN.
-    pub fn get_archive_cdn_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ArchiveCdnSettings> {
+    pub fn get_archive_cdn_settings(&self) -> &::std::option::Option<crate::types::ArchiveCdnSettings> {
         &self.archive_cdn_settings
     }
     /// A directory and base filename where archive files should be written.
@@ -71,10 +64,7 @@ impl ArchiveGroupSettingsBuilder {
         self
     }
     /// A directory and base filename where archive files should be written.
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputLocationRef>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::OutputLocationRef>) -> Self {
         self.destination = input;
         self
     }

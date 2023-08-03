@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for DeleteApprovalRuleTemplateOutput {
 }
 impl DeleteApprovalRuleTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApprovalRuleTemplateOutput`](crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput).
-    pub fn builder() -> crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateOutputBuilder {
         crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApprovalRuleTemplateOutput`](crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApprovalRuleTemplateOutputBuilder {
     pub(crate) approval_rule_template_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteApprovalRuleTemplateOutputBuilder {
     /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
-    pub fn approval_rule_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
-    pub fn set_approval_rule_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_template_id = input;
         self
     }
@@ -66,9 +58,7 @@ impl DeleteApprovalRuleTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteApprovalRuleTemplateOutput`](crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput {
+    pub fn build(self) -> crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput {
         crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput {
             approval_rule_template_id: self.approval_rule_template_id,
             _request_id: self._request_id,

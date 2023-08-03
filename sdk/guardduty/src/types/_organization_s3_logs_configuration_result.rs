@@ -23,9 +23,7 @@ impl OrganizationS3LogsConfigurationResult {
 
 /// A builder for [`OrganizationS3LogsConfigurationResult`](crate::types::OrganizationS3LogsConfigurationResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationS3LogsConfigurationResultBuilder {
     pub(crate) auto_enable: ::std::option::Option<bool>,
 }

@@ -26,7 +26,7 @@ impl PutWorkflowRunPropertiesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutWorkflowRunPropertiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesInputBuilder,
+    inner: crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesInputBuilder,
 }
 impl PutWorkflowRunPropertiesFluentBuilder {
     /// Creates a new `PutWorkflowRunProperties`.
@@ -37,7 +37,7 @@ impl PutWorkflowRunPropertiesFluentBuilder {
         }
     }
     /// Access the PutWorkflowRunProperties as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PutWorkflowRunPropertiesFluentBuilder {
             crate::operation::put_workflow_run_properties::PutWorkflowRunProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PutWorkflowRunPropertiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PutWorkflowRunPropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PutWorkflowRunPropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl PutWorkflowRunPropertiesFluentBuilder {
             crate::operation::put_workflow_run_properties::PutWorkflowRunProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError>,
     > {
         self.customize_middleware().await
     }
@@ -164,19 +153,13 @@ impl PutWorkflowRunPropertiesFluentBuilder {
     /// <p>The properties to put for the specified run.</p>
     pub fn set_run_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_run_properties(input);
         self
     }
     /// <p>The properties to put for the specified run.</p>
-    pub fn get_run_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_run_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_run_properties()
     }
 }

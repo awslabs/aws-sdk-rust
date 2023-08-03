@@ -65,9 +65,7 @@ impl TrainingJobSummary {
 
 /// A builder for [`TrainingJobSummary`](crate::types::TrainingJobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrainingJobSummaryBuilder {
     pub(crate) training_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) training_job_arn: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct TrainingJobSummaryBuilder {
 }
 impl TrainingJobSummaryBuilder {
     /// <p>The name of the training job that you want a summary for.</p>
-    pub fn training_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn training_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the training job that you want a summary for.</p>
-    pub fn set_training_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_training_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.training_job_name = input;
         self
     }
@@ -99,18 +91,12 @@ impl TrainingJobSummaryBuilder {
         &self.training_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
-    pub fn training_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn training_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
-    pub fn set_training_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_training_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.training_job_arn = input;
         self
     }
@@ -124,10 +110,7 @@ impl TrainingJobSummaryBuilder {
         self
     }
     /// <p>A timestamp that shows when the training job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -141,10 +124,7 @@ impl TrainingJobSummaryBuilder {
         self
     }
     /// <p>A timestamp that shows when the training job ended. This field is set only if the training job has one of the terminal statuses (<code>Completed</code>, <code>Failed</code>, or <code>Stopped</code>). </p>
-    pub fn set_training_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_training_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.training_end_time = input;
         self
     }
@@ -158,10 +138,7 @@ impl TrainingJobSummaryBuilder {
         self
     }
     /// <p> Timestamp when the training job was last modified. </p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -175,17 +152,12 @@ impl TrainingJobSummaryBuilder {
         self
     }
     /// <p>The status of the training job.</p>
-    pub fn set_training_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingJobStatus>,
-    ) -> Self {
+    pub fn set_training_job_status(mut self, input: ::std::option::Option<crate::types::TrainingJobStatus>) -> Self {
         self.training_job_status = input;
         self
     }
     /// <p>The status of the training job.</p>
-    pub fn get_training_job_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrainingJobStatus> {
+    pub fn get_training_job_status(&self) -> &::std::option::Option<crate::types::TrainingJobStatus> {
         &self.training_job_status
     }
     /// <p>The status of the warm pool associated with the training job.</p>
@@ -194,10 +166,7 @@ impl TrainingJobSummaryBuilder {
         self
     }
     /// <p>The status of the warm pool associated with the training job.</p>
-    pub fn set_warm_pool_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WarmPoolStatus>,
-    ) -> Self {
+    pub fn set_warm_pool_status(mut self, input: ::std::option::Option<crate::types::WarmPoolStatus>) -> Self {
         self.warm_pool_status = input;
         self
     }

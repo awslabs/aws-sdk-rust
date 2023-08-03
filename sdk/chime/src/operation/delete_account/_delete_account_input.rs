@@ -22,9 +22,7 @@ impl DeleteAccountInput {
 
 /// A builder for [`DeleteAccountInput`](crate::operation::delete_account::DeleteAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccountInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteAccountInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccountInput`](crate::operation::delete_account::DeleteAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_account::DeleteAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_account::DeleteAccountInput {
-            account_id: self.account_id,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_account::DeleteAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_account::DeleteAccountInput { account_id: self.account_id })
     }
 }

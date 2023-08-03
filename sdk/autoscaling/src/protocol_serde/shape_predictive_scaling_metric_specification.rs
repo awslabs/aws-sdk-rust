@@ -40,17 +40,16 @@ pub fn ser_predictive_scaling_metric_specification(
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("CustomizedCapacityMetricSpecification");
     if let Some(var_14) = &input.customized_capacity_metric_specification {
-        crate::protocol_serde::shape_predictive_scaling_customized_capacity_metric::ser_predictive_scaling_customized_capacity_metric(scope_13, var_14)?;
+        crate::protocol_serde::shape_predictive_scaling_customized_capacity_metric::ser_predictive_scaling_customized_capacity_metric(
+            scope_13, var_14,
+        )?;
     }
     Ok(())
 }
 
 pub fn de_predictive_scaling_metric_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::PredictiveScalingMetricSpecification,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::PredictiveScalingMetricSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::PredictiveScalingMetricSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {

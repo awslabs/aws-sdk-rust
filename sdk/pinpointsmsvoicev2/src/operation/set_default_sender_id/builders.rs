@@ -10,10 +10,7 @@ impl SetDefaultSenderIdInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::set_default_sender_id::SetDefaultSenderIdOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_sender_id::SetDefaultSenderIdError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_sender_id::SetDefaultSenderIdError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.set_default_sender_id();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl SetDefaultSenderIdFluentBuilder {
         }
     }
     /// Access the SetDefaultSenderId as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_default_sender_id::builders::SetDefaultSenderIdInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_default_sender_id::builders::SetDefaultSenderIdInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl SetDefaultSenderIdFluentBuilder {
             crate::operation::set_default_sender_id::SetDefaultSenderId,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_sender_id::SetDefaultSenderIdError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_sender_id::SetDefaultSenderIdError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl SetDefaultSenderIdFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl SetDefaultSenderIdFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_default_sender_id::SetDefaultSenderIdOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_sender_id::SetDefaultSenderIdError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_sender_id::SetDefaultSenderIdError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl SetDefaultSenderIdFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_default_sender_id::SetDefaultSenderIdOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_sender_id::SetDefaultSenderIdError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_sender_id::SetDefaultSenderIdError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl SetDefaultSenderIdFluentBuilder {
             crate::operation::set_default_sender_id::SetDefaultSenderId,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_sender_id::SetDefaultSenderIdError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_sender_id::SetDefaultSenderIdError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The configuration set to updated with a new default SenderId. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>The configuration set to updated with a new default SenderId. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }

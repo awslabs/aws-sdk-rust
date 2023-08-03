@@ -21,9 +21,7 @@ impl MedicalTranscriptResultStream {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`TranscriptEvent`](crate::types::MedicalTranscriptResultStream::TranscriptEvent), extracting the inner [`MedicalTranscriptEvent`](crate::types::MedicalTranscriptEvent).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_transcript_event(
-        &self,
-    ) -> ::std::result::Result<&crate::types::MedicalTranscriptEvent, &Self> {
+    pub fn as_transcript_event(&self) -> ::std::result::Result<&crate::types::MedicalTranscriptEvent, &Self> {
         if let MedicalTranscriptResultStream::TranscriptEvent(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

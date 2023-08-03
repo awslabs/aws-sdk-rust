@@ -60,16 +60,14 @@ impl SearchTransitGatewayRoutesInput {
 }
 impl SearchTransitGatewayRoutesInput {
     /// Creates a new builder-style object to manufacture [`SearchTransitGatewayRoutesInput`](crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesInput).
-    pub fn builder() -> crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesInputBuilder{
+    pub fn builder() -> crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesInputBuilder {
         crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchTransitGatewayRoutesInput`](crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchTransitGatewayRoutesInputBuilder {
     pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -78,25 +76,17 @@ pub struct SearchTransitGatewayRoutesInputBuilder {
 }
 impl SearchTransitGatewayRoutesInputBuilder {
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn set_transit_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = input;
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn get_transit_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_route_table_id
     }
     /// Appends an item to `filters`.
@@ -135,10 +125,7 @@ impl SearchTransitGatewayRoutesInputBuilder {
     /// <li> <p> <code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).</p> </li>
     /// <li> <p> <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -193,13 +180,11 @@ impl SearchTransitGatewayRoutesInputBuilder {
         crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesInput {
-                transit_gateway_route_table_id: self.transit_gateway_route_table_id,
-                filters: self.filters,
-                max_results: self.max_results,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesInput {
+            transit_gateway_route_table_id: self.transit_gateway_route_table_id,
+            filters: self.filters,
+            max_results: self.max_results,
+            dry_run: self.dry_run,
+        })
     }
 }

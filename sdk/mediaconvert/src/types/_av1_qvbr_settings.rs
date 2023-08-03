@@ -30,9 +30,7 @@ impl Av1QvbrSettings {
 
 /// A builder for [`Av1QvbrSettings`](crate::types::Av1QvbrSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Av1QvbrSettingsBuilder {
     pub(crate) qvbr_quality_level: ::std::option::Option<i32>,
     pub(crate) qvbr_quality_level_fine_tune: ::std::option::Option<f64>,

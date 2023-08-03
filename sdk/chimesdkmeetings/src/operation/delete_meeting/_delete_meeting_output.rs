@@ -19,9 +19,7 @@ impl DeleteMeetingOutput {
 
 /// A builder for [`DeleteMeetingOutput`](crate::operation::delete_meeting::DeleteMeetingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMeetingOutputBuilder {
     _request_id: Option<String>,
 }

@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetDevicePositionHistoryOutput {
 }
 impl GetDevicePositionHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetDevicePositionHistoryOutput`](crate::operation::get_device_position_history::GetDevicePositionHistoryOutput).
-    pub fn builder() -> crate::operation::get_device_position_history::builders::GetDevicePositionHistoryOutputBuilder{
+    pub fn builder() -> crate::operation::get_device_position_history::builders::GetDevicePositionHistoryOutputBuilder {
         crate::operation::get_device_position_history::builders::GetDevicePositionHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDevicePositionHistoryOutput`](crate::operation::get_device_position_history::GetDevicePositionHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDevicePositionHistoryOutputBuilder {
-    pub(crate) device_positions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DevicePosition>>,
+    pub(crate) device_positions: ::std::option::Option<::std::vec::Vec<crate::types::DevicePosition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl GetDevicePositionHistoryOutputBuilder {
         self
     }
     /// <p>Contains the position history details for the requested device.</p>
-    pub fn set_device_positions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePosition>>,
-    ) -> Self {
+    pub fn set_device_positions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePosition>>) -> Self {
         self.device_positions = input;
         self
     }
     /// <p>Contains the position history details for the requested device.</p>
-    pub fn get_device_positions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePosition>> {
+    pub fn get_device_positions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePosition>> {
         &self.device_positions
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
@@ -94,9 +86,7 @@ impl GetDevicePositionHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDevicePositionHistoryOutput`](crate::operation::get_device_position_history::GetDevicePositionHistoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_device_position_history::GetDevicePositionHistoryOutput {
+    pub fn build(self) -> crate::operation::get_device_position_history::GetDevicePositionHistoryOutput {
         crate::operation::get_device_position_history::GetDevicePositionHistoryOutput {
             device_positions: self.device_positions,
             next_token: self.next_token,

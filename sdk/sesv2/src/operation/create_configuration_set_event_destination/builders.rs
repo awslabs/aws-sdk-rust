@@ -5,16 +5,16 @@ pub use crate::operation::create_configuration_set_event_destination::_create_co
 
 impl CreateConfigurationSetEventDestinationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_configuration_set_event_destination();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl CreateConfigurationSetEventDestinationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConfigurationSetEventDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_configuration_set_event_destination::builders::CreateConfigurationSetEventDestinationInputBuilder,
+    inner: crate::operation::create_configuration_set_event_destination::builders::CreateConfigurationSetEventDestinationInputBuilder,
 }
 impl CreateConfigurationSetEventDestinationFluentBuilder {
     /// Creates a new `CreateConfigurationSetEventDestination`.
@@ -38,15 +38,24 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
         }
     }
     /// Access the CreateConfigurationSetEventDestination as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_configuration_set_event_destination::builders::CreateConfigurationSetEventDestinationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_configuration_set_event_destination::builders::CreateConfigurationSetEventDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestination, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestination,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +64,19 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -82,32 +94,39 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestination, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestination,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the configuration set .</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>The name of the configuration set .</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
@@ -116,18 +135,12 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
         self.inner.get_configuration_set_name()
     }
     /// <p>A name that identifies the event destination within the configuration set.</p>
-    pub fn event_destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_destination_name(input.into());
         self
     }
     /// <p>A name that identifies the event destination within the configuration set.</p>
-    pub fn set_event_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_destination_name(input);
         self
     }
@@ -141,17 +154,12 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
         self
     }
     /// <p>An object that defines the event destination.</p>
-    pub fn set_event_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::EventDestinationDefinition>,
-    ) -> Self {
+    pub fn set_event_destination(mut self, input: ::std::option::Option<crate::types::EventDestinationDefinition>) -> Self {
         self.inner = self.inner.set_event_destination(input);
         self
     }
     /// <p>An object that defines the event destination.</p>
-    pub fn get_event_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventDestinationDefinition> {
+    pub fn get_event_destination(&self) -> &::std::option::Option<crate::types::EventDestinationDefinition> {
         self.inner.get_event_destination()
     }
 }

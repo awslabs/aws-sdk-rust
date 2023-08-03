@@ -11,10 +11,7 @@ pub fn ser_cache_policy_query_strings_config(
     }
     if let Some(var_2) = &input.query_strings {
         let inner_writer = scope.start_el("QueryStrings");
-        crate::protocol_serde::shape_query_string_names::ser_query_string_names(
-            var_2,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_query_string_names::ser_query_string_names(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())

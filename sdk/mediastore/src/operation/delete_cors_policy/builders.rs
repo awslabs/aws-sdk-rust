@@ -10,10 +10,7 @@ impl DeleteCorsPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_cors_policy::DeleteCorsPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cors_policy::DeleteCorsPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cors_policy::DeleteCorsPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_cors_policy();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteCorsPolicyFluentBuilder {
         }
     }
     /// Access the DeleteCorsPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_cors_policy::builders::DeleteCorsPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_cors_policy::builders::DeleteCorsPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteCorsPolicyFluentBuilder {
             crate::operation::delete_cors_policy::DeleteCorsPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cors_policy::DeleteCorsPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cors_policy::DeleteCorsPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteCorsPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteCorsPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cors_policy::DeleteCorsPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cors_policy::DeleteCorsPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cors_policy::DeleteCorsPolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteCorsPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cors_policy::DeleteCorsPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cors_policy::DeleteCorsPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cors_policy::DeleteCorsPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl DeleteCorsPolicyFluentBuilder {
             crate::operation::delete_cors_policy::DeleteCorsPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cors_policy::DeleteCorsPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cors_policy::DeleteCorsPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the container to remove the policy from.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_name(input.into());
         self
     }
     /// <p>The name of the container to remove the policy from.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_name(input);
         self
     }

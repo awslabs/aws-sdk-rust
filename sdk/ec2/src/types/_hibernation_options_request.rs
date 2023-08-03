@@ -25,9 +25,7 @@ impl HibernationOptionsRequest {
 
 /// A builder for [`HibernationOptionsRequest`](crate::types::HibernationOptionsRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HibernationOptionsRequestBuilder {
     pub(crate) configured: ::std::option::Option<bool>,
 }
@@ -51,8 +49,6 @@ impl HibernationOptionsRequestBuilder {
     }
     /// Consumes the builder and constructs a [`HibernationOptionsRequest`](crate::types::HibernationOptionsRequest).
     pub fn build(self) -> crate::types::HibernationOptionsRequest {
-        crate::types::HibernationOptionsRequest {
-            configured: self.configured,
-        }
+        crate::types::HibernationOptionsRequest { configured: self.configured }
     }
 }

@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for GetModelPackageGroupPolicyOutput {
 }
 impl GetModelPackageGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetModelPackageGroupPolicyOutput`](crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyOutput).
-    pub fn builder() -> crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyOutputBuilder {
         crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetModelPackageGroupPolicyOutput`](crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetModelPackageGroupPolicyOutputBuilder {
     pub(crate) resource_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetModelPackageGroupPolicyOutputBuilder {
     /// <p>The resource policy for the model group.</p>
-    pub fn resource_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource policy for the model group.</p>
-    pub fn set_resource_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_policy = input;
         self
     }
@@ -66,9 +58,7 @@ impl GetModelPackageGroupPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetModelPackageGroupPolicyOutput`](crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyOutput {
+    pub fn build(self) -> crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyOutput {
         crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyOutput {
             resource_policy: self.resource_policy,
             _request_id: self._request_id,

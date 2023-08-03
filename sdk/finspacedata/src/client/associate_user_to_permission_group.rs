@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateUserToPermissionGroupOutput`](crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput) with field(s):
     ///   - [`status_code(i32)`](crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput::status_code): <p>The returned status code of the response.</p>
     /// - On failure, responds with [`SdkError<AssociateUserToPermissionGroupError>`](crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupError)
-    pub fn associate_user_to_permission_group(&self) -> crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupFluentBuilder{
+    pub fn associate_user_to_permission_group(
+        &self,
+    ) -> crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupFluentBuilder {
         crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupFluentBuilder::new(self.handle.clone())
     }
 }

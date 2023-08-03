@@ -13,9 +13,7 @@ impl InternetConfiguration {
 
 /// A builder for [`InternetConfiguration`](crate::types::InternetConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InternetConfigurationBuilder {}
 impl InternetConfigurationBuilder {
     /// Consumes the builder and constructs a [`InternetConfiguration`](crate::types::InternetConfiguration).

@@ -10,10 +10,7 @@ impl PutTraceSegmentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_trace_segments::PutTraceSegmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_trace_segments::PutTraceSegmentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_trace_segments::PutTraceSegmentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_trace_segments();
         fluent_builder.inner = self;
@@ -54,9 +51,7 @@ impl PutTraceSegmentsFluentBuilder {
         }
     }
     /// Access the PutTraceSegments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_trace_segments::builders::PutTraceSegmentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_trace_segments::builders::PutTraceSegmentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -68,9 +63,7 @@ impl PutTraceSegmentsFluentBuilder {
             crate::operation::put_trace_segments::PutTraceSegments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_trace_segments::PutTraceSegmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_trace_segments::PutTraceSegmentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -80,10 +73,7 @@ impl PutTraceSegmentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -92,9 +82,7 @@ impl PutTraceSegmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_trace_segments::PutTraceSegmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_trace_segments::PutTraceSegmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_trace_segments::PutTraceSegmentsError>,
     > {
         let op = self
             .inner
@@ -117,9 +105,7 @@ impl PutTraceSegmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_trace_segments::PutTraceSegmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_trace_segments::PutTraceSegmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_trace_segments::PutTraceSegmentsError>,
     > {
         self.send_middleware().await
     }
@@ -133,9 +119,7 @@ impl PutTraceSegmentsFluentBuilder {
             crate::operation::put_trace_segments::PutTraceSegments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_trace_segments::PutTraceSegmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_trace_segments::PutTraceSegmentsError>,
     > {
         self.customize_middleware().await
     }
@@ -144,25 +128,17 @@ impl PutTraceSegmentsFluentBuilder {
     /// To override the contents of this collection use [`set_trace_segment_documents`](Self::set_trace_segment_documents).
     ///
     /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
-    pub fn trace_segment_documents(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trace_segment_documents(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trace_segment_documents(input.into());
         self
     }
     /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
-    pub fn set_trace_segment_documents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_trace_segment_documents(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_trace_segment_documents(input);
         self
     }
     /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
-    pub fn get_trace_segment_documents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_trace_segment_documents(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_trace_segment_documents()
     }
 }

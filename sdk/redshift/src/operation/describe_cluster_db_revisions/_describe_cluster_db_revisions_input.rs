@@ -35,16 +35,14 @@ impl DescribeClusterDbRevisionsInput {
 }
 impl DescribeClusterDbRevisionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterDbRevisionsInput`](crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsInput).
-    pub fn builder() -> crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsInputBuilder {
         crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterDbRevisionsInput`](crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterDbRevisionsInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -52,18 +50,12 @@ pub struct DescribeClusterDbRevisionsInputBuilder {
 }
 impl DescribeClusterDbRevisionsInputBuilder {
     /// <p>A unique identifier for a cluster whose <code>ClusterDbRevisions</code> you are requesting. This parameter is case sensitive. All clusters defined for an account are returned by default.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a cluster whose <code>ClusterDbRevisions</code> you are requesting. This parameter is case sensitive. All clusters defined for an account are returned by default.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -115,12 +107,10 @@ impl DescribeClusterDbRevisionsInputBuilder {
         crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsInput {
-                cluster_identifier: self.cluster_identifier,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsInput {
+            cluster_identifier: self.cluster_identifier,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

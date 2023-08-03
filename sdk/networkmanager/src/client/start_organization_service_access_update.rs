@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`StartOrganizationServiceAccessUpdateOutput`](crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateOutput) with field(s):
     ///   - [`organization_status(Option<OrganizationStatus>)`](crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateOutput::organization_status): <p>The status of the service access update request for an Amazon Web Services Organization.</p>
     /// - On failure, responds with [`SdkError<StartOrganizationServiceAccessUpdateError>`](crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateError)
-    pub fn start_organization_service_access_update(&self) -> crate::operation::start_organization_service_access_update::builders::StartOrganizationServiceAccessUpdateFluentBuilder{
-        crate::operation::start_organization_service_access_update::builders::StartOrganizationServiceAccessUpdateFluentBuilder::new(self.handle.clone())
+    pub fn start_organization_service_access_update(
+        &self,
+    ) -> crate::operation::start_organization_service_access_update::builders::StartOrganizationServiceAccessUpdateFluentBuilder {
+        crate::operation::start_organization_service_access_update::builders::StartOrganizationServiceAccessUpdateFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -102,9 +102,7 @@ impl WhatIfForecastExportSummary {
 
 /// A builder for [`WhatIfForecastExportSummary`](crate::types::WhatIfForecastExportSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WhatIfForecastExportSummaryBuilder {
     pub(crate) what_if_forecast_export_arn: ::std::option::Option<::std::string::String>,
     pub(crate) what_if_forecast_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -117,18 +115,12 @@ pub struct WhatIfForecastExportSummaryBuilder {
 }
 impl WhatIfForecastExportSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export.</p>
-    pub fn what_if_forecast_export_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_forecast_export_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_forecast_export_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export.</p>
-    pub fn set_what_if_forecast_export_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_what_if_forecast_export_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.what_if_forecast_export_arn = input;
         self
     }
@@ -141,49 +133,33 @@ impl WhatIfForecastExportSummaryBuilder {
     /// To override the contents of this collection use [`set_what_if_forecast_arns`](Self::set_what_if_forecast_arns).
     ///
     /// <p>An array of Amazon Resource Names (ARNs) that define the what-if forecasts included in the export.</p>
-    pub fn what_if_forecast_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_forecast_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.what_if_forecast_arns.unwrap_or_default();
         v.push(input.into());
         self.what_if_forecast_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of Amazon Resource Names (ARNs) that define the what-if forecasts included in the export.</p>
-    pub fn set_what_if_forecast_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_what_if_forecast_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.what_if_forecast_arns = input;
         self
     }
     /// <p>An array of Amazon Resource Names (ARNs) that define the what-if forecasts included in the export.</p>
-    pub fn get_what_if_forecast_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_what_if_forecast_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.what_if_forecast_arns
     }
     /// <p>The what-if forecast export name.</p>
-    pub fn what_if_forecast_export_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_forecast_export_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_forecast_export_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The what-if forecast export name.</p>
-    pub fn set_what_if_forecast_export_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_what_if_forecast_export_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.what_if_forecast_export_name = input;
         self
     }
     /// <p>The what-if forecast export name.</p>
-    pub fn get_what_if_forecast_export_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_what_if_forecast_export_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.what_if_forecast_export_name
     }
     /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
@@ -192,10 +168,7 @@ impl WhatIfForecastExportSummaryBuilder {
         self
     }
     /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::DataDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::DataDestination>) -> Self {
         self.destination = input;
         self
     }
@@ -261,10 +234,7 @@ impl WhatIfForecastExportSummaryBuilder {
         self
     }
     /// <p>When the what-if forecast export was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -292,10 +262,7 @@ impl WhatIfForecastExportSummaryBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
@@ -307,9 +274,7 @@ impl WhatIfForecastExportSummaryBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     /// Consumes the builder and constructs a [`WhatIfForecastExportSummary`](crate::types::WhatIfForecastExportSummary).

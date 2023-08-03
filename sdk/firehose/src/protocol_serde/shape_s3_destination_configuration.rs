@@ -27,19 +27,13 @@ pub fn ser_s3_destination_configuration(
     if let Some(var_8) = &input.encryption_configuration {
         #[allow(unused_mut)]
         let mut object_9 = object.key("EncryptionConfiguration").start_object();
-        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.cloud_watch_logging_options {
         #[allow(unused_mut)]
         let mut object_11 = object.key("CloudWatchLoggingOptions").start_object();
-        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(&mut object_11, var_10)?;
         object_11.finish();
     }
     Ok(())

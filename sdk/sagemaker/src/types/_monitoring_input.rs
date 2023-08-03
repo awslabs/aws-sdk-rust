@@ -17,9 +17,7 @@ impl MonitoringInput {
         self.endpoint_input.as_ref()
     }
     /// <p>Input object for the batch transform job.</p>
-    pub fn batch_transform_input(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BatchTransformInput> {
+    pub fn batch_transform_input(&self) -> ::std::option::Option<&crate::types::BatchTransformInput> {
         self.batch_transform_input.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl MonitoringInput {
 
 /// A builder for [`MonitoringInput`](crate::types::MonitoringInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoringInputBuilder {
     pub(crate) endpoint_input: ::std::option::Option<crate::types::EndpointInput>,
     pub(crate) batch_transform_input: ::std::option::Option<crate::types::BatchTransformInput>,
@@ -46,10 +42,7 @@ impl MonitoringInputBuilder {
         self
     }
     /// <p>The endpoint for a monitoring job.</p>
-    pub fn set_endpoint_input(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointInput>,
-    ) -> Self {
+    pub fn set_endpoint_input(mut self, input: ::std::option::Option<crate::types::EndpointInput>) -> Self {
         self.endpoint_input = input;
         self
     }
@@ -63,17 +56,12 @@ impl MonitoringInputBuilder {
         self
     }
     /// <p>Input object for the batch transform job.</p>
-    pub fn set_batch_transform_input(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchTransformInput>,
-    ) -> Self {
+    pub fn set_batch_transform_input(mut self, input: ::std::option::Option<crate::types::BatchTransformInput>) -> Self {
         self.batch_transform_input = input;
         self
     }
     /// <p>Input object for the batch transform job.</p>
-    pub fn get_batch_transform_input(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchTransformInput> {
+    pub fn get_batch_transform_input(&self) -> &::std::option::Option<crate::types::BatchTransformInput> {
         &self.batch_transform_input
     }
     /// Consumes the builder and constructs a [`MonitoringInput`](crate::types::MonitoringInput).

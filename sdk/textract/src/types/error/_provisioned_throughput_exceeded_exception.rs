@@ -36,34 +36,27 @@ impl ::std::fmt::Display for ProvisionedThroughputExceededException {
     }
 }
 impl ::std::error::Error for ProvisionedThroughputExceededException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::ProvisionedThroughputExceededException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::ProvisionedThroughputExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ProvisionedThroughputExceededException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ProvisionedThroughputExceededException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl ProvisionedThroughputExceededException {
     /// Creates a new builder-style object to manufacture [`ProvisionedThroughputExceededException`](crate::types::error::ProvisionedThroughputExceededException).
-    pub fn builder() -> crate::types::error::builders::ProvisionedThroughputExceededExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::ProvisionedThroughputExceededExceptionBuilder {
         crate::types::error::builders::ProvisionedThroughputExceededExceptionBuilder::default()
     }
 }
 
 /// A builder for [`ProvisionedThroughputExceededException`](crate::types::error::ProvisionedThroughputExceededException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionedThroughputExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,
@@ -105,10 +98,7 @@ impl ProvisionedThroughputExceededExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

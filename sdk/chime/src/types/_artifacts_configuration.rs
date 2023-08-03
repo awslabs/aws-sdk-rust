@@ -37,9 +37,7 @@ impl ArtifactsConfiguration {
 
 /// A builder for [`ArtifactsConfiguration`](crate::types::ArtifactsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArtifactsConfigurationBuilder {
     pub(crate) audio: ::std::option::Option<crate::types::AudioArtifactsConfiguration>,
     pub(crate) video: ::std::option::Option<crate::types::VideoArtifactsConfiguration>,
@@ -52,10 +50,7 @@ impl ArtifactsConfigurationBuilder {
         self
     }
     /// <p>The configuration for the audio artifacts.</p>
-    pub fn set_audio(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioArtifactsConfiguration>,
-    ) -> Self {
+    pub fn set_audio(mut self, input: ::std::option::Option<crate::types::AudioArtifactsConfiguration>) -> Self {
         self.audio = input;
         self
     }
@@ -69,10 +64,7 @@ impl ArtifactsConfigurationBuilder {
         self
     }
     /// <p>The configuration for the video artifacts.</p>
-    pub fn set_video(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoArtifactsConfiguration>,
-    ) -> Self {
+    pub fn set_video(mut self, input: ::std::option::Option<crate::types::VideoArtifactsConfiguration>) -> Self {
         self.video = input;
         self
     }
@@ -86,17 +78,12 @@ impl ArtifactsConfigurationBuilder {
         self
     }
     /// <p>The configuration for the content artifacts.</p>
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentArtifactsConfiguration>,
-    ) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::ContentArtifactsConfiguration>) -> Self {
         self.content = input;
         self
     }
     /// <p>The configuration for the content artifacts.</p>
-    pub fn get_content(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContentArtifactsConfiguration> {
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::ContentArtifactsConfiguration> {
         &self.content
     }
     /// Consumes the builder and constructs a [`ArtifactsConfiguration`](crate::types::ArtifactsConfiguration).

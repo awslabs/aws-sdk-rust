@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`policy(Option<String>)`](crate::operation::get_layer_version_policy::GetLayerVersionPolicyOutput::policy): <p>The policy document.</p>
     ///   - [`revision_id(Option<String>)`](crate::operation::get_layer_version_policy::GetLayerVersionPolicyOutput::revision_id): <p>A unique identifier for the current revision of the policy.</p>
     /// - On failure, responds with [`SdkError<GetLayerVersionPolicyError>`](crate::operation::get_layer_version_policy::GetLayerVersionPolicyError)
-    pub fn get_layer_version_policy(
-        &self,
-    ) -> crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyFluentBuilder
-    {
+    pub fn get_layer_version_policy(&self) -> crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyFluentBuilder {
         crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyFluentBuilder::new(self.handle.clone())
     }
 }

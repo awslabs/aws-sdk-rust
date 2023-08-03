@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DetectMetricSetConfigOutput`](crate::operation::detect_metric_set_config::DetectMetricSetConfigOutput) with field(s):
     ///   - [`detected_metric_set_config(Option<DetectedMetricSetConfig>)`](crate::operation::detect_metric_set_config::DetectMetricSetConfigOutput::detected_metric_set_config): <p>The inferred dataset configuration for the datasource.</p>
     /// - On failure, responds with [`SdkError<DetectMetricSetConfigError>`](crate::operation::detect_metric_set_config::DetectMetricSetConfigError)
-    pub fn detect_metric_set_config(
-        &self,
-    ) -> crate::operation::detect_metric_set_config::builders::DetectMetricSetConfigFluentBuilder
-    {
+    pub fn detect_metric_set_config(&self) -> crate::operation::detect_metric_set_config::builders::DetectMetricSetConfigFluentBuilder {
         crate::operation::detect_metric_set_config::builders::DetectMetricSetConfigFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeMatchmakingRuleSetsOutput {
 }
 impl DescribeMatchmakingRuleSetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMatchmakingRuleSetsOutput`](crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsOutput).
-    pub fn builder() -> crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsOutputBuilder {
         crate::operation::describe_matchmaking_rule_sets::builders::DescribeMatchmakingRuleSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMatchmakingRuleSetsOutput`](crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMatchmakingRuleSetsOutputBuilder {
     pub(crate) rule_sets: ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingRuleSet>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeMatchmakingRuleSetsOutputBuilder {
         self
     }
     /// <p>A collection of requested matchmaking rule set objects. </p>
-    pub fn set_rule_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingRuleSet>>,
-    ) -> Self {
+    pub fn set_rule_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingRuleSet>>) -> Self {
         self.rule_sets = input;
         self
     }
     /// <p>A collection of requested matchmaking rule set objects. </p>
-    pub fn get_rule_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchmakingRuleSet>> {
+    pub fn get_rule_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchmakingRuleSet>> {
         &self.rule_sets
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -93,9 +86,7 @@ impl DescribeMatchmakingRuleSetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMatchmakingRuleSetsOutput`](crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsOutput {
+    pub fn build(self) -> crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsOutput {
         crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsOutput {
             rule_sets: self.rule_sets,
             next_token: self.next_token,

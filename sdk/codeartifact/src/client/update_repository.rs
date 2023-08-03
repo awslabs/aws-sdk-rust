@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRepositoryOutput`](crate::operation::update_repository::UpdateRepositoryOutput) with field(s):
     ///   - [`repository(Option<RepositoryDescription>)`](crate::operation::update_repository::UpdateRepositoryOutput::repository): <p> The updated repository. </p>
     /// - On failure, responds with [`SdkError<UpdateRepositoryError>`](crate::operation::update_repository::UpdateRepositoryError)
-    pub fn update_repository(
-        &self,
-    ) -> crate::operation::update_repository::builders::UpdateRepositoryFluentBuilder {
-        crate::operation::update_repository::builders::UpdateRepositoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_repository(&self) -> crate::operation::update_repository::builders::UpdateRepositoryFluentBuilder {
+        crate::operation::update_repository::builders::UpdateRepositoryFluentBuilder::new(self.handle.clone())
     }
 }

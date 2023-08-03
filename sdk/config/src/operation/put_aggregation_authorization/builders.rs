@@ -28,7 +28,7 @@ impl PutAggregationAuthorizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAggregationAuthorizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_aggregation_authorization::builders::PutAggregationAuthorizationInputBuilder,
+    inner: crate::operation::put_aggregation_authorization::builders::PutAggregationAuthorizationInputBuilder,
 }
 impl PutAggregationAuthorizationFluentBuilder {
     /// Creates a new `PutAggregationAuthorization`.
@@ -39,7 +39,7 @@ impl PutAggregationAuthorizationFluentBuilder {
         }
     }
     /// Access the PutAggregationAuthorization as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_aggregation_authorization::builders::PutAggregationAuthorizationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_aggregation_authorization::builders::PutAggregationAuthorizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl PutAggregationAuthorizationFluentBuilder {
             crate::operation::put_aggregation_authorization::PutAggregationAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_aggregation_authorization::PutAggregationAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_aggregation_authorization::PutAggregationAuthorizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl PutAggregationAuthorizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl PutAggregationAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_aggregation_authorization::PutAggregationAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_aggregation_authorization::PutAggregationAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_aggregation_authorization::PutAggregationAuthorizationError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl PutAggregationAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_aggregation_authorization::PutAggregationAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_aggregation_authorization::PutAggregationAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_aggregation_authorization::PutAggregationAuthorizationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl PutAggregationAuthorizationFluentBuilder {
             crate::operation::put_aggregation_authorization::PutAggregationAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_aggregation_authorization::PutAggregationAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_aggregation_authorization::PutAggregationAuthorizationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
-    pub fn authorized_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorized_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authorized_account_id(input.into());
         self
     }
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
-    pub fn set_authorized_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorized_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authorized_account_id(input);
         self
     }
@@ -143,18 +126,12 @@ impl PutAggregationAuthorizationFluentBuilder {
         self.inner.get_authorized_account_id()
     }
     /// <p>The region authorized to collect aggregated data.</p>
-    pub fn authorized_aws_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorized_aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authorized_aws_region(input.into());
         self
     }
     /// <p>The region authorized to collect aggregated data.</p>
-    pub fn set_authorized_aws_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorized_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authorized_aws_region(input);
         self
     }
@@ -172,10 +149,7 @@ impl PutAggregationAuthorizationFluentBuilder {
         self
     }
     /// <p>An array of tag object.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

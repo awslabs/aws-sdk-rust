@@ -74,9 +74,7 @@ impl CreateFacetInput {
 
 /// A builder for [`CreateFacetInput`](crate::operation::create_facet::CreateFacetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFacetInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -125,17 +123,12 @@ impl CreateFacetInputBuilder {
         self
     }
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>> {
         &self.attributes
     }
     /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
@@ -168,10 +161,7 @@ impl CreateFacetInputBuilder {
     /// <ul>
     /// <li> <p>Index: Can be created with the Index API.</p> </li>
     /// </ul>
-    pub fn set_object_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectType>,
-    ) -> Self {
+    pub fn set_object_type(mut self, input: ::std::option::Option<crate::types::ObjectType>) -> Self {
         self.object_type = input;
         self
     }
@@ -197,10 +187,7 @@ impl CreateFacetInputBuilder {
         self
     }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
-    pub fn set_facet_style(
-        mut self,
-        input: ::std::option::Option<crate::types::FacetStyle>,
-    ) -> Self {
+    pub fn set_facet_style(mut self, input: ::std::option::Option<crate::types::FacetStyle>) -> Self {
         self.facet_style = input;
         self
     }
@@ -209,12 +196,7 @@ impl CreateFacetInputBuilder {
         &self.facet_style
     }
     /// Consumes the builder and constructs a [`CreateFacetInput`](crate::operation::create_facet::CreateFacetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_facet::CreateFacetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_facet::CreateFacetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_facet::CreateFacetInput {
             schema_arn: self.schema_arn,
             name: self.name,

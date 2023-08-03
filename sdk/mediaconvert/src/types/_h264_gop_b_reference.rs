@@ -38,13 +38,7 @@
 /// Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when your GOP structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend that you choose Enabled to help improve the video quality of your output relative to its bitrate. To not use reference B-frames: Choose Disabled.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H264GopBReference {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for H264GopBReference {
         match s {
             "DISABLED" => H264GopBReference::Disabled,
             "ENABLED" => H264GopBReference::Enabled,
-            other => {
-                H264GopBReference::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => H264GopBReference::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

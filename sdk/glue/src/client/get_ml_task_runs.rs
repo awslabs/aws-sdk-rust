@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`task_runs(Option<Vec<TaskRun>>)`](crate::operation::get_ml_task_runs::GetMlTaskRunsOutput::task_runs): <p>A list of task runs that are associated with the transform.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_ml_task_runs::GetMlTaskRunsOutput::next_token): <p>A pagination token, if more results are available.</p>
     /// - On failure, responds with [`SdkError<GetMLTaskRunsError>`](crate::operation::get_ml_task_runs::GetMLTaskRunsError)
-    pub fn get_ml_task_runs(
-        &self,
-    ) -> crate::operation::get_ml_task_runs::builders::GetMLTaskRunsFluentBuilder {
-        crate::operation::get_ml_task_runs::builders::GetMLTaskRunsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_ml_task_runs(&self) -> crate::operation::get_ml_task_runs::builders::GetMLTaskRunsFluentBuilder {
+        crate::operation::get_ml_task_runs::builders::GetMLTaskRunsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,8 +30,7 @@ impl ::std::fmt::Debug for BatchDetectSyntaxInput {
 }
 impl BatchDetectSyntaxInput {
     /// Creates a new builder-style object to manufacture [`BatchDetectSyntaxInput`](crate::operation::batch_detect_syntax::BatchDetectSyntaxInput).
-    pub fn builder(
-    ) -> crate::operation::batch_detect_syntax::builders::BatchDetectSyntaxInputBuilder {
+    pub fn builder() -> crate::operation::batch_detect_syntax::builders::BatchDetectSyntaxInputBuilder {
         crate::operation::batch_detect_syntax::builders::BatchDetectSyntaxInputBuilder::default()
     }
 }
@@ -56,10 +55,7 @@ impl BatchDetectSyntaxInputBuilder {
         self
     }
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size for each document is 5 KB.</p>
-    pub fn set_text_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_text_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.text_list = input;
         self
     }
@@ -73,10 +69,7 @@ impl BatchDetectSyntaxInputBuilder {
         self
     }
     /// <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::SyntaxLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::SyntaxLanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -87,16 +80,11 @@ impl BatchDetectSyntaxInputBuilder {
     /// Consumes the builder and constructs a [`BatchDetectSyntaxInput`](crate::operation::batch_detect_syntax::BatchDetectSyntaxInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_detect_syntax::BatchDetectSyntaxInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_detect_syntax::BatchDetectSyntaxInput {
-                text_list: self.text_list,
-                language_code: self.language_code,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_detect_syntax::BatchDetectSyntaxInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_detect_syntax::BatchDetectSyntaxInput {
+            text_list: self.text_list,
+            language_code: self.language_code,
+        })
     }
 }
 impl ::std::fmt::Debug for BatchDetectSyntaxInputBuilder {

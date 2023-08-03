@@ -30,17 +30,14 @@ impl AcceptInvitationInput {
 }
 impl AcceptInvitationInput {
     /// Creates a new builder-style object to manufacture [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
-    pub fn builder() -> crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder
-    {
+    pub fn builder() -> crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder {
         crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptInvitationInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) master_id: ::std::option::Option<::std::string::String>,
@@ -76,18 +73,12 @@ impl AcceptInvitationInputBuilder {
         &self.master_id
     }
     /// <p>The value that is used to validate the administrator account to the member account.</p>
-    pub fn invitation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invitation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that is used to validate the administrator account to the member account.</p>
-    pub fn set_invitation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invitation_id = input;
         self
     }
@@ -98,10 +89,7 @@ impl AcceptInvitationInputBuilder {
     /// Consumes the builder and constructs a [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::accept_invitation::AcceptInvitationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::accept_invitation::AcceptInvitationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_invitation::AcceptInvitationInput {
             detector_id: self.detector_id,
             master_id: self.master_id,

@@ -26,7 +26,7 @@ impl GetDomainStatisticsReportInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDomainStatisticsReportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_domain_statistics_report::builders::GetDomainStatisticsReportInputBuilder,
+    inner: crate::operation::get_domain_statistics_report::builders::GetDomainStatisticsReportInputBuilder,
 }
 impl GetDomainStatisticsReportFluentBuilder {
     /// Creates a new `GetDomainStatisticsReport`.
@@ -37,7 +37,7 @@ impl GetDomainStatisticsReportFluentBuilder {
         }
     }
     /// Access the GetDomainStatisticsReport as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_domain_statistics_report::builders::GetDomainStatisticsReportInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_domain_statistics_report::builders::GetDomainStatisticsReportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetDomainStatisticsReportFluentBuilder {
             crate::operation::get_domain_statistics_report::GetDomainStatisticsReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetDomainStatisticsReportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetDomainStatisticsReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetDomainStatisticsReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetDomainStatisticsReportFluentBuilder {
             crate::operation::get_domain_statistics_report::GetDomainStatisticsReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError>,
     > {
         self.customize_middleware().await
     }
@@ -140,10 +129,7 @@ impl GetDomainStatisticsReportFluentBuilder {
         self
     }
     /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_date(input);
         self
     }
@@ -157,10 +143,7 @@ impl GetDomainStatisticsReportFluentBuilder {
         self
     }
     /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_date(input);
         self
     }

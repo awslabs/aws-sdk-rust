@@ -37,9 +37,7 @@ impl DeleteContactChannelFluentBuilder {
         }
     }
     /// Access the DeleteContactChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_contact_channel::builders::DeleteContactChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_contact_channel::builders::DeleteContactChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteContactChannelFluentBuilder {
             crate::operation::delete_contact_channel::DeleteContactChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_contact_channel::DeleteContactChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_contact_channel::DeleteContactChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteContactChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteContactChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_contact_channel::DeleteContactChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_contact_channel::DeleteContactChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_contact_channel::DeleteContactChannelError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteContactChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_contact_channel::DeleteContactChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_contact_channel::DeleteContactChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_contact_channel::DeleteContactChannelError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteContactChannelFluentBuilder {
             crate::operation::delete_contact_channel::DeleteContactChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_contact_channel::DeleteContactChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_contact_channel::DeleteContactChannelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn contact_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_channel_id(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn set_contact_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_channel_id(input);
         self
     }

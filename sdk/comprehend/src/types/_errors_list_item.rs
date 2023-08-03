@@ -45,9 +45,7 @@ impl ErrorsListItem {
 
 /// A builder for [`ErrorsListItem`](crate::types::ErrorsListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorsListItemBuilder {
     pub(crate) page: ::std::option::Option<i32>,
     pub(crate) error_code: ::std::option::Option<crate::types::PageBasedErrorCode>,
@@ -74,10 +72,7 @@ impl ErrorsListItemBuilder {
         self
     }
     /// <p>Error code for the cause of the error.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::PageBasedErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::PageBasedErrorCode>) -> Self {
         self.error_code = input;
         self
     }
@@ -86,18 +81,12 @@ impl ErrorsListItemBuilder {
         &self.error_code
     }
     /// <p>Text message explaining the reason for the error.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Text message explaining the reason for the error.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

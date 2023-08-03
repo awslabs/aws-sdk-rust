@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`is_registered_with_lake_formation(bool)`](crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataOutput::is_registered_with_lake_formation): <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
     ///   - [`cell_filters(Option<Vec<ColumnRowFilter>>)`](crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataOutput::cell_filters): <p>A list of column row filters.</p>
     /// - On failure, responds with [`SdkError<GetUnfilteredTableMetadataError>`](crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataError)
-    pub fn get_unfiltered_table_metadata(&self) -> crate::operation::get_unfiltered_table_metadata::builders::GetUnfilteredTableMetadataFluentBuilder{
+    pub fn get_unfiltered_table_metadata(
+        &self,
+    ) -> crate::operation::get_unfiltered_table_metadata::builders::GetUnfilteredTableMetadataFluentBuilder {
         crate::operation::get_unfiltered_table_metadata::builders::GetUnfilteredTableMetadataFluentBuilder::new(self.handle.clone())
     }
 }

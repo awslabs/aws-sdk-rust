@@ -21,10 +21,7 @@ pub fn ser_create_thing_group_input(
     if let Some(var_6) = &input.thing_group_properties {
         #[allow(unused_mut)]
         let mut object_7 = object.key("thingGroupProperties").start_object();
-        crate::protocol_serde::shape_thing_group_properties::ser_thing_group_properties(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_thing_group_properties::ser_thing_group_properties(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())

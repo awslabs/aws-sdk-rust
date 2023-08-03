@@ -21,9 +21,7 @@ pub fn ser_regional_configuration(
         for item_7 in var_6 {
             #[allow(unused_mut)]
             let mut entry_9 = list_8.entry();
-            crate::protocol_serde::shape_resharding_configuration::ser_resharding_configuration(
-                entry_9, item_7,
-            )?;
+            crate::protocol_serde::shape_resharding_configuration::ser_resharding_configuration(entry_9, item_7)?;
         }
         list_8.finish();
     }

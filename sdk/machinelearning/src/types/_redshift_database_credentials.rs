@@ -30,9 +30,7 @@ impl RedshiftDatabaseCredentials {
 
 /// A builder for [`RedshiftDatabaseCredentials`](crate::types::RedshiftDatabaseCredentials).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedshiftDatabaseCredentialsBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,

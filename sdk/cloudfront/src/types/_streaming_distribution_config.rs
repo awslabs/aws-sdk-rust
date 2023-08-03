@@ -76,9 +76,7 @@ impl StreamingDistributionConfig {
 
 /// A builder for [`StreamingDistributionConfig`](crate::types::StreamingDistributionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamingDistributionConfigBuilder {
     pub(crate) caller_reference: ::std::option::Option<::std::string::String>,
     pub(crate) s3_origin: ::std::option::Option<crate::types::S3Origin>,
@@ -93,20 +91,14 @@ impl StreamingDistributionConfigBuilder {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p>
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
-    pub fn caller_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p>
     /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
-    pub fn set_caller_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.caller_reference = input;
         self
     }
@@ -164,10 +156,7 @@ impl StreamingDistributionConfigBuilder {
         self
     }
     /// <p>A complex type that controls whether access logs are written for the streaming distribution.</p>
-    pub fn set_logging(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingLoggingConfig>,
-    ) -> Self {
+    pub fn set_logging(mut self, input: ::std::option::Option<crate::types::StreamingLoggingConfig>) -> Self {
         self.logging = input;
         self
     }
@@ -181,10 +170,7 @@ impl StreamingDistributionConfigBuilder {
         self
     }
     /// <p>A complex type that specifies any Amazon Web Services accounts that you want to permit to create signed URLs for private content. If you want the distribution to use signed URLs, include this element; if you want the distribution to use public URLs, remove this element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_trusted_signers(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustedSigners>,
-    ) -> Self {
+    pub fn set_trusted_signers(mut self, input: ::std::option::Option<crate::types::TrustedSigners>) -> Self {
         self.trusted_signers = input;
         self
     }
@@ -198,10 +184,7 @@ impl StreamingDistributionConfigBuilder {
         self
     }
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
-    pub fn set_price_class(
-        mut self,
-        input: ::std::option::Option<crate::types::PriceClass>,
-    ) -> Self {
+    pub fn set_price_class(mut self, input: ::std::option::Option<crate::types::PriceClass>) -> Self {
         self.price_class = input;
         self
     }

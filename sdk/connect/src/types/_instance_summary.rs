@@ -150,32 +150,21 @@ impl InstanceSummaryBuilder {
         self
     }
     /// <p>The identity management type of the instance.</p>
-    pub fn set_identity_management_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryType>,
-    ) -> Self {
+    pub fn set_identity_management_type(mut self, input: ::std::option::Option<crate::types::DirectoryType>) -> Self {
         self.identity_management_type = input;
         self
     }
     /// <p>The identity management type of the instance.</p>
-    pub fn get_identity_management_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DirectoryType> {
+    pub fn get_identity_management_type(&self) -> &::std::option::Option<crate::types::DirectoryType> {
         &self.identity_management_type
     }
     /// <p>The alias of the instance.</p>
-    pub fn instance_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alias of the instance.</p>
-    pub fn set_instance_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_alias = input;
         self
     }
@@ -189,10 +178,7 @@ impl InstanceSummaryBuilder {
         self
     }
     /// <p>When the instance was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -220,10 +206,7 @@ impl InstanceSummaryBuilder {
         self
     }
     /// <p>The state of the instance.</p>
-    pub fn set_instance_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStatus>,
-    ) -> Self {
+    pub fn set_instance_status(mut self, input: ::std::option::Option<crate::types::InstanceStatus>) -> Self {
         self.instance_status = input;
         self
     }
@@ -260,18 +243,12 @@ impl InstanceSummaryBuilder {
         &self.outbound_calls_enabled
     }
     /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
-    pub fn instance_access_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_access_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_access_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
-    pub fn set_instance_access_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_access_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_access_url = input;
         self
     }

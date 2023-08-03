@@ -40,32 +40,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance::CreateAppInstanceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_app_instance::CreateAppInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance::CreateAppInstanceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_app_instance::CreateAppInstanceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -78,41 +62,31 @@ impl From<crate::operation::create_app_instance::CreateAppInstanceError> for Err
             crate::operation::create_app_instance::CreateAppInstanceError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::create_app_instance::CreateAppInstanceError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_app_instance::CreateAppInstanceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::create_app_instance::CreateAppInstanceError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::create_app_instance::CreateAppInstanceError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
             crate::operation::create_app_instance::CreateAppInstanceError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::create_app_instance::CreateAppInstanceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_app_instance::CreateAppInstanceError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::create_app_instance::CreateAppInstanceError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::create_app_instance::CreateAppInstanceError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::create_app_instance::CreateAppInstanceError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::create_app_instance::CreateAppInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance_admin::CreateAppInstanceAdminError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_app_instance_admin::CreateAppInstanceAdminError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance_admin::CreateAppInstanceAdminError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_app_instance_admin::CreateAppInstanceAdminError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -125,41 +99,35 @@ impl From<crate::operation::create_app_instance_admin::CreateAppInstanceAdminErr
             crate::operation::create_app_instance_admin::CreateAppInstanceAdminError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::create_app_instance_admin::CreateAppInstanceAdminError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_app_instance_admin::CreateAppInstanceAdminError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::create_app_instance_admin::CreateAppInstanceAdminError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::create_app_instance_admin::CreateAppInstanceAdminError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::create_app_instance_admin::CreateAppInstanceAdminError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::create_app_instance_admin::CreateAppInstanceAdminError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::create_app_instance_admin::CreateAppInstanceAdminError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::create_app_instance_admin::CreateAppInstanceAdminError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::create_app_instance_admin::CreateAppInstanceAdminError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::create_app_instance_admin::CreateAppInstanceAdminError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_app_instance_admin::CreateAppInstanceAdminError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::create_app_instance_admin::CreateAppInstanceAdminError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::create_app_instance_admin::CreateAppInstanceAdminError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance_bot::CreateAppInstanceBotError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_app_instance_bot::CreateAppInstanceBotError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance_bot::CreateAppInstanceBotError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_app_instance_bot::CreateAppInstanceBotError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -172,41 +140,35 @@ impl From<crate::operation::create_app_instance_bot::CreateAppInstanceBotError> 
             crate::operation::create_app_instance_bot::CreateAppInstanceBotError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::create_app_instance_bot::CreateAppInstanceBotError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_app_instance_bot::CreateAppInstanceBotError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::create_app_instance_bot::CreateAppInstanceBotError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::create_app_instance_bot::CreateAppInstanceBotError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::create_app_instance_bot::CreateAppInstanceBotError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::create_app_instance_bot::CreateAppInstanceBotError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::create_app_instance_bot::CreateAppInstanceBotError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::create_app_instance_bot::CreateAppInstanceBotError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::create_app_instance_bot::CreateAppInstanceBotError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::create_app_instance_bot::CreateAppInstanceBotError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_app_instance_bot::CreateAppInstanceBotError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::create_app_instance_bot::CreateAppInstanceBotError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::create_app_instance_bot::CreateAppInstanceBotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance_user::CreateAppInstanceUserError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_app_instance_user::CreateAppInstanceUserError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_instance_user::CreateAppInstanceUserError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_app_instance_user::CreateAppInstanceUserError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -219,41 +181,35 @@ impl From<crate::operation::create_app_instance_user::CreateAppInstanceUserError
             crate::operation::create_app_instance_user::CreateAppInstanceUserError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::create_app_instance_user::CreateAppInstanceUserError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_app_instance_user::CreateAppInstanceUserError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::create_app_instance_user::CreateAppInstanceUserError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::create_app_instance_user::CreateAppInstanceUserError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::create_app_instance_user::CreateAppInstanceUserError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::create_app_instance_user::CreateAppInstanceUserError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::create_app_instance_user::CreateAppInstanceUserError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::create_app_instance_user::CreateAppInstanceUserError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::create_app_instance_user::CreateAppInstanceUserError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::create_app_instance_user::CreateAppInstanceUserError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_app_instance_user::CreateAppInstanceUserError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::create_app_instance_user::CreateAppInstanceUserError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::create_app_instance_user::CreateAppInstanceUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance::DeleteAppInstanceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance::DeleteAppInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance::DeleteAppInstanceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance::DeleteAppInstanceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -265,41 +221,31 @@ impl From<crate::operation::delete_app_instance::DeleteAppInstanceError> for Err
         match err {
             crate::operation::delete_app_instance::DeleteAppInstanceError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::delete_app_instance::DeleteAppInstanceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::delete_app_instance::DeleteAppInstanceError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::delete_app_instance::DeleteAppInstanceError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
             crate::operation::delete_app_instance::DeleteAppInstanceError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::delete_app_instance::DeleteAppInstanceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_app_instance::DeleteAppInstanceError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::delete_app_instance::DeleteAppInstanceError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::delete_app_instance::DeleteAppInstanceError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::delete_app_instance::DeleteAppInstanceError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::delete_app_instance::DeleteAppInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -312,41 +258,35 @@ impl From<crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminErr
             crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -359,41 +299,35 @@ impl From<crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError> 
             crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::delete_app_instance_bot::DeleteAppInstanceBotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance_user::DeleteAppInstanceUserError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_user::DeleteAppInstanceUserError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance_user::DeleteAppInstanceUserError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_user::DeleteAppInstanceUserError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -406,67 +340,81 @@ impl From<crate::operation::delete_app_instance_user::DeleteAppInstanceUserError
             crate::operation::delete_app_instance_user::DeleteAppInstanceUserError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::delete_app_instance_user::DeleteAppInstanceUserError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_app_instance_user::DeleteAppInstanceUserError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::delete_app_instance_user::DeleteAppInstanceUserError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::delete_app_instance_user::DeleteAppInstanceUserError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::delete_app_instance_user::DeleteAppInstanceUserError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::delete_app_instance_user::DeleteAppInstanceUserError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::delete_app_instance_user::DeleteAppInstanceUserError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::delete_app_instance_user::DeleteAppInstanceUserError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::delete_app_instance_user::DeleteAppInstanceUserError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::delete_app_instance_user::DeleteAppInstanceUserError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_app_instance_user::DeleteAppInstanceUserError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::delete_app_instance_user::DeleteAppInstanceUserError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::delete_app_instance_user::DeleteAppInstanceUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError> for Error {
     fn from(err: crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError) -> Self {
         match err {
-            crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-            crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
+            crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_instance::DescribeAppInstanceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_app_instance::DescribeAppInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_instance::DescribeAppInstanceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_app_instance::DescribeAppInstanceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -478,40 +426,32 @@ impl From<crate::operation::describe_app_instance::DescribeAppInstanceError> for
         match err {
             crate::operation::describe_app_instance::DescribeAppInstanceError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::describe_app_instance::DescribeAppInstanceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::describe_app_instance::DescribeAppInstanceError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::describe_app_instance::DescribeAppInstanceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::describe_app_instance::DescribeAppInstanceError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::describe_app_instance::DescribeAppInstanceError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::describe_app_instance::DescribeAppInstanceError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::describe_app_instance::DescribeAppInstanceError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_app_instance::DescribeAppInstanceError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::describe_app_instance::DescribeAppInstanceError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::describe_app_instance::DescribeAppInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -519,46 +459,40 @@ where
     }
 }
 impl From<crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError> for Error {
-    fn from(
-        err: crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError,
-    ) -> Self {
+    fn from(err: crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError) -> Self {
         match err {
-            crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -571,40 +505,32 @@ impl From<crate::operation::describe_app_instance_bot::DescribeAppInstanceBotErr
             crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::describe_app_instance_bot::DescribeAppInstanceBotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_instance_user::DescribeAppInstanceUserError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_app_instance_user::DescribeAppInstanceUserError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_app_instance_user::DescribeAppInstanceUserError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_app_instance_user::DescribeAppInstanceUserError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -612,110 +538,126 @@ where
     }
 }
 impl From<crate::operation::describe_app_instance_user::DescribeAppInstanceUserError> for Error {
-    fn from(
-        err: crate::operation::describe_app_instance_user::DescribeAppInstanceUserError,
-    ) -> Self {
+    fn from(err: crate::operation::describe_app_instance_user::DescribeAppInstanceUserError) -> Self {
         match err {
-            crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
             crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl
-    From<
-        crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError,
-    > for Error
-{
-    fn from(
-        err: crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError,
-    ) -> Self {
-        match err {
-            crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-            crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl
-    From<
-        crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError,
-    > for Error
-{
-    fn from(
-        err: crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError,
-    ) -> Self {
-        match err {
-            crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-            crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instance_admins::ListAppInstanceAdminsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instance_admins::ListAppInstanceAdminsError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError> for Error {
+    fn from(err: crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError) -> Self {
+        match err {
+            crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
+            crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError> for Error {
+    fn from(err: crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError) -> Self {
+        match err {
+            crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
+            crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_app_instance_admins::ListAppInstanceAdminsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_app_instance_admins::ListAppInstanceAdminsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -727,41 +669,35 @@ impl From<crate::operation::list_app_instance_admins::ListAppInstanceAdminsError
         match err {
             crate::operation::list_app_instance_admins::ListAppInstanceAdminsError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::list_app_instance_admins::ListAppInstanceAdminsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_app_instance_admins::ListAppInstanceAdminsError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::list_app_instance_admins::ListAppInstanceAdminsError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::list_app_instance_admins::ListAppInstanceAdminsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::list_app_instance_admins::ListAppInstanceAdminsError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::list_app_instance_admins::ListAppInstanceAdminsError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::list_app_instance_admins::ListAppInstanceAdminsError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::list_app_instance_admins::ListAppInstanceAdminsError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::list_app_instance_admins::ListAppInstanceAdminsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_app_instance_admins::ListAppInstanceAdminsError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::list_app_instance_admins::ListAppInstanceAdminsError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::list_app_instance_admins::ListAppInstanceAdminsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instance_bots::ListAppInstanceBotsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_app_instance_bots::ListAppInstanceBotsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instance_bots::ListAppInstanceBotsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_app_instance_bots::ListAppInstanceBotsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -773,41 +709,35 @@ impl From<crate::operation::list_app_instance_bots::ListAppInstanceBotsError> fo
         match err {
             crate::operation::list_app_instance_bots::ListAppInstanceBotsError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::list_app_instance_bots::ListAppInstanceBotsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_app_instance_bots::ListAppInstanceBotsError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::list_app_instance_bots::ListAppInstanceBotsError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::list_app_instance_bots::ListAppInstanceBotsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::list_app_instance_bots::ListAppInstanceBotsError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::list_app_instance_bots::ListAppInstanceBotsError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::list_app_instance_bots::ListAppInstanceBotsError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::list_app_instance_bots::ListAppInstanceBotsError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::list_app_instance_bots::ListAppInstanceBotsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_app_instance_bots::ListAppInstanceBotsError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::list_app_instance_bots::ListAppInstanceBotsError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::list_app_instance_bots::ListAppInstanceBotsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instances::ListAppInstancesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_app_instances::ListAppInstancesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instances::ListAppInstancesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_app_instances::ListAppInstancesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -820,88 +750,70 @@ impl From<crate::operation::list_app_instances::ListAppInstancesError> for Error
             crate::operation::list_app_instances::ListAppInstancesError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::list_app_instances::ListAppInstancesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::list_app_instances::ListAppInstancesError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::list_app_instances::ListAppInstancesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_app_instances::ListAppInstancesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::list_app_instances::ListAppInstancesError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::list_app_instances::ListAppInstancesError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::list_app_instances::ListAppInstancesError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::list_app_instances::ListAppInstancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError>
-    for Error
-{
-    fn from(
-        err: crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError,
-    ) -> Self {
+impl From<crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError> for Error {
+    fn from(err: crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError) -> Self {
         match err {
-            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instance_users::ListAppInstanceUsersError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_app_instance_users::ListAppInstanceUsersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_instance_users::ListAppInstanceUsersError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_app_instance_users::ListAppInstanceUsersError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -913,40 +825,32 @@ impl From<crate::operation::list_app_instance_users::ListAppInstanceUsersError> 
         match err {
             crate::operation::list_app_instance_users::ListAppInstanceUsersError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::list_app_instance_users::ListAppInstanceUsersError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_app_instance_users::ListAppInstanceUsersError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::list_app_instance_users::ListAppInstanceUsersError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::list_app_instance_users::ListAppInstanceUsersError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::list_app_instance_users::ListAppInstanceUsersError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::list_app_instance_users::ListAppInstanceUsersError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::list_app_instance_users::ListAppInstanceUsersError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_app_instance_users::ListAppInstanceUsersError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::list_app_instance_users::ListAppInstanceUsersError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::list_app_instance_users::ListAppInstanceUsersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -958,129 +862,183 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         match err {
             crate::operation::list_tags_for_resource::ListTagsForResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl
-    From<
-        crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError,
-    > for Error
-{
-    fn from(
-        err: crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError,
-    ) -> Self {
+impl From<crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError> for Error {
+    fn from(err: crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError) -> Self {
         match err {
-            crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError, R>) -> Self {
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError,
+            R,
+        >,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError> for Error {
     fn from(err: crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError) -> Self {
         match err {
-            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError::ServiceFailureException(
+                inner,
+            ) => Error::ServiceFailureException(inner),
+            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError::ThrottledClientException(
+                inner,
+            ) => Error::ThrottledClientException(inner),
+            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError::UnauthorizedClientException(
+                inner,
+            ) => Error::UnauthorizedClientException(inner),
+            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl
-    From<
-        crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError,
-    > for Error
-{
-    fn from(
-        err: crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError,
-    ) -> Self {
-        match err {
-            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_resource::TagResourceError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError> for Error {
+    fn from(err: crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError) -> Self {
+        match err {
+            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
+            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1090,59 +1048,27 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::operation::tag_resource::TagResourceError::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::operation::tag_resource::TagResourceError::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::tag_resource::TagResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::tag_resource::TagResourceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::tag_resource::TagResourceError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::tag_resource::TagResourceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::tag_resource::TagResourceError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::tag_resource::TagResourceError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1152,56 +1078,26 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::operation::untag_resource::UntagResourceError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::ServiceFailureException(
-                inner,
-            ) => Error::ServiceFailureException(inner),
-            crate::operation::untag_resource::UntagResourceError::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::operation::untag_resource::UntagResourceError::ThrottledClientException(
-                inner,
-            ) => Error::ThrottledClientException(inner),
-            crate::operation::untag_resource::UntagResourceError::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::untag_resource::UntagResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::untag_resource::UntagResourceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::untag_resource::UntagResourceError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::untag_resource::UntagResourceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::untag_resource::UntagResourceError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_instance::UpdateAppInstanceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_app_instance::UpdateAppInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_instance::UpdateAppInstanceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_app_instance::UpdateAppInstanceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1215,39 +1111,27 @@ impl From<crate::operation::update_app_instance::UpdateAppInstanceError> for Err
             crate::operation::update_app_instance::UpdateAppInstanceError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_app_instance::UpdateAppInstanceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::update_app_instance::UpdateAppInstanceError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::update_app_instance::UpdateAppInstanceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::update_app_instance::UpdateAppInstanceError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::update_app_instance::UpdateAppInstanceError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::update_app_instance::UpdateAppInstanceError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::update_app_instance::UpdateAppInstanceError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::update_app_instance::UpdateAppInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_instance_bot::UpdateAppInstanceBotError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_app_instance_bot::UpdateAppInstanceBotError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_instance_bot::UpdateAppInstanceBotError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_app_instance_bot::UpdateAppInstanceBotError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1260,41 +1144,35 @@ impl From<crate::operation::update_app_instance_bot::UpdateAppInstanceBotError> 
             crate::operation::update_app_instance_bot::UpdateAppInstanceBotError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::update_app_instance_bot::UpdateAppInstanceBotError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_app_instance_bot::UpdateAppInstanceBotError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::update_app_instance_bot::UpdateAppInstanceBotError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::update_app_instance_bot::UpdateAppInstanceBotError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::update_app_instance_bot::UpdateAppInstanceBotError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::update_app_instance_bot::UpdateAppInstanceBotError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::update_app_instance_bot::UpdateAppInstanceBotError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::update_app_instance_bot::UpdateAppInstanceBotError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::update_app_instance_bot::UpdateAppInstanceBotError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::update_app_instance_bot::UpdateAppInstanceBotError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_app_instance_bot::UpdateAppInstanceBotError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::update_app_instance_bot::UpdateAppInstanceBotError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::update_app_instance_bot::UpdateAppInstanceBotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_instance_user::UpdateAppInstanceUserError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_app_instance_user::UpdateAppInstanceUserError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_instance_user::UpdateAppInstanceUserError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_app_instance_user::UpdateAppInstanceUserError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1307,61 +1185,68 @@ impl From<crate::operation::update_app_instance_user::UpdateAppInstanceUserError
             crate::operation::update_app_instance_user::UpdateAppInstanceUserError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::update_app_instance_user::UpdateAppInstanceUserError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_app_instance_user::UpdateAppInstanceUserError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::update_app_instance_user::UpdateAppInstanceUserError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
-            crate::operation::update_app_instance_user::UpdateAppInstanceUserError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::update_app_instance_user::UpdateAppInstanceUserError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::update_app_instance_user::UpdateAppInstanceUserError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::update_app_instance_user::UpdateAppInstanceUserError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::update_app_instance_user::UpdateAppInstanceUserError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::update_app_instance_user::UpdateAppInstanceUserError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::update_app_instance_user::UpdateAppInstanceUserError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_app_instance_user::UpdateAppInstanceUserError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::update_app_instance_user::UpdateAppInstanceUserError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::update_app_instance_user::UpdateAppInstanceUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError>
-    for Error
-{
-    fn from(
-        err: crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError,
-    ) -> Self {
+impl From<crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError> for Error {
+    fn from(err: crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError) -> Self {
         match err {
-            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
-            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
-            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
             crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

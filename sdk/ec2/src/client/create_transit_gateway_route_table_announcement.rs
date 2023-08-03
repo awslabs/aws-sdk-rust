@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`CreateTransitGatewayRouteTableAnnouncementOutput`](crate::operation::create_transit_gateway_route_table_announcement::CreateTransitGatewayRouteTableAnnouncementOutput) with field(s):
     ///   - [`transit_gateway_route_table_announcement(Option<TransitGatewayRouteTableAnnouncement>)`](crate::operation::create_transit_gateway_route_table_announcement::CreateTransitGatewayRouteTableAnnouncementOutput::transit_gateway_route_table_announcement): <p>Provides details about the transit gateway route table announcement.</p>
     /// - On failure, responds with [`SdkError<CreateTransitGatewayRouteTableAnnouncementError>`](crate::operation::create_transit_gateway_route_table_announcement::CreateTransitGatewayRouteTableAnnouncementError)
-    pub fn create_transit_gateway_route_table_announcement(&self) -> crate::operation::create_transit_gateway_route_table_announcement::builders::CreateTransitGatewayRouteTableAnnouncementFluentBuilder{
-        crate::operation::create_transit_gateway_route_table_announcement::builders::CreateTransitGatewayRouteTableAnnouncementFluentBuilder::new(self.handle.clone())
+    pub fn create_transit_gateway_route_table_announcement(
+        &self,
+    ) -> crate::operation::create_transit_gateway_route_table_announcement::builders::CreateTransitGatewayRouteTableAnnouncementFluentBuilder {
+        crate::operation::create_transit_gateway_route_table_announcement::builders::CreateTransitGatewayRouteTableAnnouncementFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

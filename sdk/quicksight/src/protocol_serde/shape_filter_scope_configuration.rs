@@ -6,7 +6,10 @@ pub fn ser_filter_scope_configuration(
     if let Some(var_1) = &input.selected_sheets {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SelectedSheets").start_object();
-        crate::protocol_serde::shape_selected_sheets_filter_scope_configuration::ser_selected_sheets_filter_scope_configuration(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_selected_sheets_filter_scope_configuration::ser_selected_sheets_filter_scope_configuration(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     Ok(())
@@ -14,17 +17,9 @@ pub fn ser_filter_scope_configuration(
 
 pub(crate) fn de_filter_scope_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::FilterScopeConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::FilterScopeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -34,31 +29,26 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "SelectedSheets" => {
-                                builder = builder.set_selected_sheets(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "SelectedSheets" => {
+                            builder = builder.set_selected_sheets(
                                     crate::protocol_serde::shape_selected_sheets_filter_scope_configuration::de_selected_sheets_filter_scope_configuration(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

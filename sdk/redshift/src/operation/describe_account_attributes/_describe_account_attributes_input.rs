@@ -15,16 +15,14 @@ impl DescribeAccountAttributesInput {
 }
 impl DescribeAccountAttributesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesInput`](crate::operation::describe_account_attributes::DescribeAccountAttributesInput).
-    pub fn builder() -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesInputBuilder{
+    pub fn builder() -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesInputBuilder {
         crate::operation::describe_account_attributes::builders::DescribeAccountAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountAttributesInput`](crate::operation::describe_account_attributes::DescribeAccountAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesInputBuilder {
     pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -34,27 +32,19 @@ impl DescribeAccountAttributesInputBuilder {
     /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
     ///
     /// <p>A list of attribute names.</p>
-    pub fn attribute_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
         v.push(input.into());
         self.attribute_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of attribute names.</p>
-    pub fn set_attribute_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.attribute_names = input;
         self
     }
     /// <p>A list of attribute names.</p>
-    pub fn get_attribute_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.attribute_names
     }
     /// Consumes the builder and constructs a [`DescribeAccountAttributesInput`](crate::operation::describe_account_attributes::DescribeAccountAttributesInput).
@@ -64,10 +54,8 @@ impl DescribeAccountAttributesInputBuilder {
         crate::operation::describe_account_attributes::DescribeAccountAttributesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_account_attributes::DescribeAccountAttributesInput {
-                attribute_names: self.attribute_names,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_account_attributes::DescribeAccountAttributesInput {
+            attribute_names: self.attribute_names,
+        })
     }
 }

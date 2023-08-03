@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDevicePoolOutput`](crate::operation::update_device_pool::UpdateDevicePoolOutput) with field(s):
     ///   - [`device_pool(Option<DevicePool>)`](crate::operation::update_device_pool::UpdateDevicePoolOutput::device_pool): <p>The device pool you just updated.</p>
     /// - On failure, responds with [`SdkError<UpdateDevicePoolError>`](crate::operation::update_device_pool::UpdateDevicePoolError)
-    pub fn update_device_pool(
-        &self,
-    ) -> crate::operation::update_device_pool::builders::UpdateDevicePoolFluentBuilder {
-        crate::operation::update_device_pool::builders::UpdateDevicePoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_device_pool(&self) -> crate::operation::update_device_pool::builders::UpdateDevicePoolFluentBuilder {
+        crate::operation::update_device_pool::builders::UpdateDevicePoolFluentBuilder::new(self.handle.clone())
     }
 }

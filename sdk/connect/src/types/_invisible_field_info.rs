@@ -23,9 +23,7 @@ impl InvisibleFieldInfo {
 
 /// A builder for [`InvisibleFieldInfo`](crate::types::InvisibleFieldInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvisibleFieldInfoBuilder {
     pub(crate) id: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
 }
@@ -36,10 +34,7 @@ impl InvisibleFieldInfoBuilder {
         self
     }
     /// <p>Identifier of the invisible field.</p>
-    pub fn set_id(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
-    ) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>) -> Self {
         self.id = input;
         self
     }

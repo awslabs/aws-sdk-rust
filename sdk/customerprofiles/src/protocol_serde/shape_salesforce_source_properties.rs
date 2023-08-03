@@ -7,14 +7,10 @@ pub fn ser_salesforce_source_properties(
         object.key("Object").string(var_1.as_str());
     }
     if input.enable_dynamic_field_update {
-        object
-            .key("EnableDynamicFieldUpdate")
-            .boolean(input.enable_dynamic_field_update);
+        object.key("EnableDynamicFieldUpdate").boolean(input.enable_dynamic_field_update);
     }
     if input.include_deleted_records {
-        object
-            .key("IncludeDeletedRecords")
-            .boolean(input.include_deleted_records);
+        object.key("IncludeDeletedRecords").boolean(input.include_deleted_records);
     }
     Ok(())
 }

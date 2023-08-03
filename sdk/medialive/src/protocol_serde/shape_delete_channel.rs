@@ -4,165 +4,140 @@ pub fn de_delete_channel_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::delete_channel::DeleteChannelOutput,
-    crate::operation::delete_channel::DeleteChannelError,
-> {
+) -> std::result::Result<crate::operation::delete_channel::DeleteChannelOutput, crate::operation::delete_channel::DeleteChannelError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::delete_channel::DeleteChannelError::unhandled(generic))
-        }
+        None => return Err(crate::operation::delete_channel::DeleteChannelError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadGatewayException" => {
-            crate::operation::delete_channel::DeleteChannelError::BadGatewayException({
+        "BadGatewayException" => crate::operation::delete_channel::DeleteChannelError::BadGatewayException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::BadGatewayExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output).map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "BadRequestException" => {
-            crate::operation::delete_channel::DeleteChannelError::BadRequestException({
+                let mut output = crate::types::error::builders::BadGatewayExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "BadRequestException" => crate::operation::delete_channel::DeleteChannelError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ConflictException" => {
-            crate::operation::delete_channel::DeleteChannelError::ConflictException({
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ConflictException" => crate::operation::delete_channel::DeleteChannelError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ConflictExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ForbiddenException" => {
-            crate::operation::delete_channel::DeleteChannelError::ForbiddenException({
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => crate::operation::delete_channel::DeleteChannelError::ForbiddenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output).map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "GatewayTimeoutException" => {
-            crate::operation::delete_channel::DeleteChannelError::GatewayTimeoutException({
+                let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "GatewayTimeoutException" => crate::operation::delete_channel::DeleteChannelError::GatewayTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::GatewayTimeoutExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_gateway_timeout_exception::de_gateway_timeout_exception_json_err(_response_body, output).map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalServerErrorException" => {
-            crate::operation::delete_channel::DeleteChannelError::InternalServerErrorException({
+                let mut output = crate::types::error::builders::GatewayTimeoutExceptionBuilder::default();
+                output = crate::protocol_serde::shape_gateway_timeout_exception::de_gateway_timeout_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalServerErrorException" => crate::operation::delete_channel::DeleteChannelError::InternalServerErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
-                        );
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output).map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "NotFoundException" => {
-            crate::operation::delete_channel::DeleteChannelError::NotFoundException({
+                let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => crate::operation::delete_channel::DeleteChannelError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::NotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output).map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "TooManyRequestsException" => {
-            crate::operation::delete_channel::DeleteChannelError::TooManyRequestsException({
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::delete_channel::DeleteChannelError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::delete_channel::DeleteChannelError::generic(generic),
     })
 }
@@ -172,20 +147,13 @@ pub fn de_delete_channel_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::delete_channel::DeleteChannelOutput,
-    crate::operation::delete_channel::DeleteChannelError,
-> {
+) -> std::result::Result<crate::operation::delete_channel::DeleteChannelOutput, crate::operation::delete_channel::DeleteChannelError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::delete_channel::builders::DeleteChannelOutputBuilder::default();
-        output =
-            crate::protocol_serde::shape_delete_channel::de_delete_channel(_response_body, output)
-                .map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::delete_channel::builders::DeleteChannelOutputBuilder::default();
+        output = crate::protocol_serde::shape_delete_channel::de_delete_channel(_response_body, output)
+            .map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -193,173 +161,123 @@ pub fn de_delete_channel_http_response_with_props(
 pub(crate) fn de_delete_channel(
     value: &[u8],
     mut builder: crate::operation::delete_channel::builders::DeleteChannelOutputBuilder,
-) -> Result<
-    crate::operation::delete_channel::builders::DeleteChannelOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+) -> Result<crate::operation::delete_channel::builders::DeleteChannelOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "arn" => {
-                        builder = builder.set_arn(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "arn" => {
+                    builder = builder.set_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "cdiInputSpecification" => {
-                        builder = builder.set_cdi_input_specification(
-                            crate::protocol_serde::shape_cdi_input_specification::de_cdi_input_specification(tokens)?
-                        );
-                    }
-                    "channelClass" => {
-                        builder = builder.set_channel_class(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| {
-                                s.to_unescaped()
-                                    .map(|u| crate::types::ChannelClass::from(u.as_ref()))
-                            })
+                    );
+                }
+                "cdiInputSpecification" => {
+                    builder = builder
+                        .set_cdi_input_specification(crate::protocol_serde::shape_cdi_input_specification::de_cdi_input_specification(tokens)?);
+                }
+                "channelClass" => {
+                    builder = builder.set_channel_class(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ChannelClass::from(u.as_ref())))
                             .transpose()?,
-                        );
-                    }
-                    "destinations" => {
-                        builder = builder.set_destinations(
-                            crate::protocol_serde::shape___list_of_output_destination::de___list_of_output_destination(tokens)?
-                        );
-                    }
-                    "egressEndpoints" => {
-                        builder = builder.set_egress_endpoints(
-                            crate::protocol_serde::shape___list_of_channel_egress_endpoint::de___list_of_channel_egress_endpoint(tokens)?
-                        );
-                    }
-                    "encoderSettings" => {
-                        builder = builder.set_encoder_settings(
-                            crate::protocol_serde::shape_encoder_settings::de_encoder_settings(
-                                tokens,
-                            )?,
-                        );
-                    }
-                    "id" => {
-                        builder = builder.set_id(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "destinations" => {
+                    builder =
+                        builder.set_destinations(crate::protocol_serde::shape___list_of_output_destination::de___list_of_output_destination(tokens)?);
+                }
+                "egressEndpoints" => {
+                    builder = builder.set_egress_endpoints(
+                        crate::protocol_serde::shape___list_of_channel_egress_endpoint::de___list_of_channel_egress_endpoint(tokens)?,
+                    );
+                }
+                "encoderSettings" => {
+                    builder = builder.set_encoder_settings(crate::protocol_serde::shape_encoder_settings::de_encoder_settings(tokens)?);
+                }
+                "id" => {
+                    builder = builder.set_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "inputAttachments" => {
-                        builder = builder.set_input_attachments(
-                            crate::protocol_serde::shape___list_of_input_attachment::de___list_of_input_attachment(tokens)?
-                        );
-                    }
-                    "inputSpecification" => {
-                        builder = builder.set_input_specification(
-                            crate::protocol_serde::shape_input_specification::de_input_specification(tokens)?
-                        );
-                    }
-                    "logLevel" => {
-                        builder = builder.set_log_level(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| {
-                                s.to_unescaped()
-                                    .map(|u| crate::types::LogLevel::from(u.as_ref()))
-                            })
+                    );
+                }
+                "inputAttachments" => {
+                    builder = builder.set_input_attachments(crate::protocol_serde::shape___list_of_input_attachment::de___list_of_input_attachment(
+                        tokens,
+                    )?);
+                }
+                "inputSpecification" => {
+                    builder = builder.set_input_specification(crate::protocol_serde::shape_input_specification::de_input_specification(tokens)?);
+                }
+                "logLevel" => {
+                    builder = builder.set_log_level(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::LogLevel::from(u.as_ref())))
                             .transpose()?,
-                        );
-                    }
-                    "maintenance" => {
-                        builder = builder.set_maintenance(
-                            crate::protocol_serde::shape_maintenance_status::de_maintenance_status(
-                                tokens,
-                            )?,
-                        );
-                    }
-                    "name" => {
-                        builder = builder.set_name(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "maintenance" => {
+                    builder = builder.set_maintenance(crate::protocol_serde::shape_maintenance_status::de_maintenance_status(tokens)?);
+                }
+                "name" => {
+                    builder = builder.set_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "pipelineDetails" => {
-                        builder = builder.set_pipeline_details(
-                            crate::protocol_serde::shape___list_of_pipeline_detail::de___list_of_pipeline_detail(tokens)?
-                        );
-                    }
-                    "pipelinesRunningCount" => {
-                        builder = builder.set_pipelines_running_count(
-                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "pipelineDetails" => {
+                    builder = builder.set_pipeline_details(crate::protocol_serde::shape___list_of_pipeline_detail::de___list_of_pipeline_detail(
+                        tokens,
+                    )?);
+                }
+                "pipelinesRunningCount" => {
+                    builder = builder.set_pipelines_running_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                             .map(i32::try_from)
                             .transpose()?,
-                        );
-                    }
-                    "roleArn" => {
-                        builder = builder.set_role_arn(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+                    );
+                }
+                "roleArn" => {
+                    builder = builder.set_role_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "state" => {
-                        builder = builder.set_state(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| {
-                                s.to_unescaped()
-                                    .map(|u| crate::types::ChannelState::from(u.as_ref()))
-                            })
-                            .transpose()?,
-                        );
-                    }
-                    "tags" => {
-                        builder =
-                            builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
-                    }
-                    "vpc" => {
-                        builder = builder.set_vpc(
-                            crate::protocol_serde::shape_vpc_output_settings_description::de_vpc_output_settings_description(tokens)?
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    );
                 }
-            }
+                "state" => {
+                    builder = builder.set_state(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ChannelState::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "tags" => {
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                }
+                "vpc" => {
+                    builder =
+                        builder.set_vpc(crate::protocol_serde::shape_vpc_output_settings_description::de_vpc_output_settings_description(tokens)?);
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

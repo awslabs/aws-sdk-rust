@@ -30,16 +30,14 @@ impl UpdateConditionalForwarderInput {
 }
 impl UpdateConditionalForwarderInput {
     /// Creates a new builder-style object to manufacture [`UpdateConditionalForwarderInput`](crate::operation::update_conditional_forwarder::UpdateConditionalForwarderInput).
-    pub fn builder() -> crate::operation::update_conditional_forwarder::builders::UpdateConditionalForwarderInputBuilder{
+    pub fn builder() -> crate::operation::update_conditional_forwarder::builders::UpdateConditionalForwarderInputBuilder {
         crate::operation::update_conditional_forwarder::builders::UpdateConditionalForwarderInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConditionalForwarderInput`](crate::operation::update_conditional_forwarder::UpdateConditionalForwarderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConditionalForwarderInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) remote_domain_name: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl UpdateConditionalForwarderInputBuilder {
         &self.directory_id
     }
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
-    pub fn remote_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
-    pub fn set_remote_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remote_domain_name = input;
         self
     }
@@ -92,17 +84,12 @@ impl UpdateConditionalForwarderInputBuilder {
         self
     }
     /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
-    pub fn set_dns_ip_addrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_ip_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_ip_addrs = input;
         self
     }
     /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
-    pub fn get_dns_ip_addrs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ip_addrs
     }
     /// Consumes the builder and constructs a [`UpdateConditionalForwarderInput`](crate::operation::update_conditional_forwarder::UpdateConditionalForwarderInput).
@@ -112,12 +99,10 @@ impl UpdateConditionalForwarderInputBuilder {
         crate::operation::update_conditional_forwarder::UpdateConditionalForwarderInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_conditional_forwarder::UpdateConditionalForwarderInput {
-                directory_id: self.directory_id,
-                remote_domain_name: self.remote_domain_name,
-                dns_ip_addrs: self.dns_ip_addrs,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_conditional_forwarder::UpdateConditionalForwarderInput {
+            directory_id: self.directory_id,
+            remote_domain_name: self.remote_domain_name,
+            dns_ip_addrs: self.dns_ip_addrs,
+        })
     }
 }

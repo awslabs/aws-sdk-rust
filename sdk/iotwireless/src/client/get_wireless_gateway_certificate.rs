@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`iot_certificate_id(Option<String>)`](crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateOutput::iot_certificate_id): <p>The ID of the certificate associated with the wireless gateway.</p>
     ///   - [`lo_ra_wan_network_server_certificate_id(Option<String>)`](crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateOutput::lo_ra_wan_network_server_certificate_id): <p>The ID of the certificate that is associated with the wireless gateway and used for the LoRaWANNetworkServer endpoint.</p>
     /// - On failure, responds with [`SdkError<GetWirelessGatewayCertificateError>`](crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateError)
-    pub fn get_wireless_gateway_certificate(&self) -> crate::operation::get_wireless_gateway_certificate::builders::GetWirelessGatewayCertificateFluentBuilder{
+    pub fn get_wireless_gateway_certificate(
+        &self,
+    ) -> crate::operation::get_wireless_gateway_certificate::builders::GetWirelessGatewayCertificateFluentBuilder {
         crate::operation::get_wireless_gateway_certificate::builders::GetWirelessGatewayCertificateFluentBuilder::new(self.handle.clone())
     }
 }

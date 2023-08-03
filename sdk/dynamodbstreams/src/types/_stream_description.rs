@@ -88,9 +88,7 @@ impl StreamDescription {
         self.stream_view_type.as_ref()
     }
     /// <p>The date and time when the request to create this stream was issued.</p>
-    pub fn creation_request_date_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_request_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_request_date_time.as_ref()
     }
     /// <p>The DynamoDB table with which the stream is associated.</p>
@@ -121,9 +119,7 @@ impl StreamDescription {
 
 /// A builder for [`StreamDescription`](crate::types::StreamDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamDescriptionBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stream_label: ::std::option::Option<::std::string::String>,
@@ -200,10 +196,7 @@ impl StreamDescriptionBuilder {
     /// <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li>
     /// <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>
     /// </ul>
-    pub fn set_stream_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamStatus>,
-    ) -> Self {
+    pub fn set_stream_status(mut self, input: ::std::option::Option<crate::types::StreamStatus>) -> Self {
         self.stream_status = input;
         self
     }
@@ -235,10 +228,7 @@ impl StreamDescriptionBuilder {
     /// <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li>
     /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>
     /// </ul>
-    pub fn set_stream_view_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamViewType>,
-    ) -> Self {
+    pub fn set_stream_view_type(mut self, input: ::std::option::Option<crate::types::StreamViewType>) -> Self {
         self.stream_view_type = input;
         self
     }
@@ -258,17 +248,12 @@ impl StreamDescriptionBuilder {
         self
     }
     /// <p>The date and time when the request to create this stream was issued.</p>
-    pub fn set_creation_request_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_request_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_request_date_time = input;
         self
     }
     /// <p>The date and time when the request to create this stream was issued.</p>
-    pub fn get_creation_request_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_creation_request_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_request_date_time
     }
     /// <p>The DynamoDB table with which the stream is associated.</p>
@@ -297,17 +282,12 @@ impl StreamDescriptionBuilder {
         self
     }
     /// <p>The key attribute(s) of the stream's DynamoDB table.</p>
-    pub fn set_key_schema(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
-    ) -> Self {
+    pub fn set_key_schema(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>) -> Self {
         self.key_schema = input;
         self
     }
     /// <p>The key attribute(s) of the stream's DynamoDB table.</p>
-    pub fn get_key_schema(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>> {
+    pub fn get_key_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>> {
         &self.key_schema
     }
     /// Appends an item to `shards`.
@@ -322,10 +302,7 @@ impl StreamDescriptionBuilder {
         self
     }
     /// <p>The shards that comprise the stream.</p>
-    pub fn set_shards(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>,
-    ) -> Self {
+    pub fn set_shards(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>) -> Self {
         self.shards = input;
         self
     }
@@ -336,20 +313,14 @@ impl StreamDescriptionBuilder {
     /// <p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been processed and there is currently no more data to be retrieved.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>
-    pub fn last_evaluated_shard_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_evaluated_shard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_evaluated_shard_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been processed and there is currently no more data to be retrieved.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>
-    pub fn set_last_evaluated_shard_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_evaluated_shard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_evaluated_shard_id = input;
         self
     }

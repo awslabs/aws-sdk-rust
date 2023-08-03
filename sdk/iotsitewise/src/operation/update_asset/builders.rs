@@ -10,10 +10,7 @@ impl UpdateAssetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_asset::UpdateAssetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_asset::UpdateAssetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_asset::UpdateAssetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_asset();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateAssetFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_asset::UpdateAsset,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_asset::UpdateAsset, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_asset::UpdateAssetError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateAssetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateAssetFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_asset::UpdateAsset,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_asset::UpdateAsset, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_asset::UpdateAssetError>,
     > {
         self.customize_middleware().await
@@ -155,18 +143,12 @@ impl UpdateAssetFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>A description for the asset.</p>
-    pub fn asset_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_description(input.into());
         self
     }
     /// <p>A description for the asset.</p>
-    pub fn set_asset_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_description(input);
         self
     }

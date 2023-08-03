@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`summary(Option<SearchPlaceIndexForSuggestionsSummary>)`](crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput::summary): <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
     ///   - [`results(Option<Vec<SearchForSuggestionsResult>>)`](crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput::results): <p>A list of place suggestions that best match the search text.</p>
     /// - On failure, responds with [`SdkError<SearchPlaceIndexForSuggestionsError>`](crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError)
-    pub fn search_place_index_for_suggestions(&self) -> crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsFluentBuilder{
+    pub fn search_place_index_for_suggestions(
+        &self,
+    ) -> crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsFluentBuilder {
         crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for StopInferenceRecommendationsJobOutput
 }
 impl StopInferenceRecommendationsJobOutput {
     /// Creates a new builder-style object to manufacture [`StopInferenceRecommendationsJobOutput`](crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobOutput).
-    pub fn builder() -> crate::operation::stop_inference_recommendations_job::builders::StopInferenceRecommendationsJobOutputBuilder{
+    pub fn builder() -> crate::operation::stop_inference_recommendations_job::builders::StopInferenceRecommendationsJobOutputBuilder {
         crate::operation::stop_inference_recommendations_job::builders::StopInferenceRecommendationsJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopInferenceRecommendationsJobOutput`](crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopInferenceRecommendationsJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl StopInferenceRecommendationsJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopInferenceRecommendationsJobOutput`](crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobOutput
-    {
+    pub fn build(self) -> crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobOutput {
         crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobOutput {
             _request_id: self._request_id,
         }

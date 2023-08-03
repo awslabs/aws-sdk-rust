@@ -14,10 +14,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterScalableTargetOutput`](crate::operation::register_scalable_target::RegisterScalableTargetOutput) with field(s):
     ///   - [`scalable_target_arn(Option<String>)`](crate::operation::register_scalable_target::RegisterScalableTargetOutput::scalable_target_arn): <p>The ARN of the scalable target.</p>
     /// - On failure, responds with [`SdkError<RegisterScalableTargetError>`](crate::operation::register_scalable_target::RegisterScalableTargetError)
-    pub fn register_scalable_target(
-        &self,
-    ) -> crate::operation::register_scalable_target::builders::RegisterScalableTargetFluentBuilder
-    {
+    pub fn register_scalable_target(&self) -> crate::operation::register_scalable_target::builders::RegisterScalableTargetFluentBuilder {
         crate::operation::register_scalable_target::builders::RegisterScalableTargetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,18 +15,14 @@ impl CreateBucketAccessKeyInput {
 }
 impl CreateBucketAccessKeyInput {
     /// Creates a new builder-style object to manufacture [`CreateBucketAccessKeyInput`](crate::operation::create_bucket_access_key::CreateBucketAccessKeyInput).
-    pub fn builder(
-    ) -> crate::operation::create_bucket_access_key::builders::CreateBucketAccessKeyInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_bucket_access_key::builders::CreateBucketAccessKeyInputBuilder {
         crate::operation::create_bucket_access_key::builders::CreateBucketAccessKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBucketAccessKeyInput`](crate::operation::create_bucket_access_key::CreateBucketAccessKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBucketAccessKeyInputBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,10 @@ impl CreateBucketAccessKeyInputBuilder {
     /// Consumes the builder and constructs a [`CreateBucketAccessKeyInput`](crate::operation::create_bucket_access_key::CreateBucketAccessKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_bucket_access_key::CreateBucketAccessKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_bucket_access_key::CreateBucketAccessKeyInput {
-                bucket_name: self.bucket_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_bucket_access_key::CreateBucketAccessKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_bucket_access_key::CreateBucketAccessKeyInput {
+            bucket_name: self.bucket_name,
+        })
     }
 }

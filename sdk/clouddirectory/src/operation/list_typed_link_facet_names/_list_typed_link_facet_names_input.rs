@@ -29,18 +29,14 @@ impl ListTypedLinkFacetNamesInput {
 }
 impl ListTypedLinkFacetNamesInput {
     /// Creates a new builder-style object to manufacture [`ListTypedLinkFacetNamesInput`](crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesInput).
-    pub fn builder(
-    ) -> crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesInputBuilder {
         crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTypedLinkFacetNamesInput`](crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTypedLinkFacetNamesInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,12 +92,10 @@ impl ListTypedLinkFacetNamesInputBuilder {
         crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesInput {
-                schema_arn: self.schema_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesInput {
+            schema_arn: self.schema_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

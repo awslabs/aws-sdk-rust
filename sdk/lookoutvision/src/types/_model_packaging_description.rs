@@ -15,8 +15,7 @@ pub struct ModelPackagingDescription {
     pub model_version: ::std::option::Option<::std::string::String>,
     /// <p> The configuration information used in the model packaging job. </p>
     #[doc(hidden)]
-    pub model_packaging_configuration:
-        ::std::option::Option<crate::types::ModelPackagingConfiguration>,
+    pub model_packaging_configuration: ::std::option::Option<crate::types::ModelPackagingConfiguration>,
     /// <p>The description for the model packaging job. </p>
     #[doc(hidden)]
     pub model_packaging_job_description: ::std::option::Option<::std::string::String>,
@@ -25,8 +24,7 @@ pub struct ModelPackagingDescription {
     pub model_packaging_method: ::std::option::Option<::std::string::String>,
     /// <p>Information about the output of the model packaging job. For more information, see <code>DescribeModelPackagingJob</code>. </p>
     #[doc(hidden)]
-    pub model_packaging_output_details:
-        ::std::option::Option<crate::types::ModelPackagingOutputDetails>,
+    pub model_packaging_output_details: ::std::option::Option<crate::types::ModelPackagingOutputDetails>,
     /// <p> The status of the model packaging job. </p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ModelPackagingJobStatus>,
@@ -54,9 +52,7 @@ impl ModelPackagingDescription {
         self.model_version.as_deref()
     }
     /// <p> The configuration information used in the model packaging job. </p>
-    pub fn model_packaging_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelPackagingConfiguration> {
+    pub fn model_packaging_configuration(&self) -> ::std::option::Option<&crate::types::ModelPackagingConfiguration> {
         self.model_packaging_configuration.as_ref()
     }
     /// <p>The description for the model packaging job. </p>
@@ -68,9 +64,7 @@ impl ModelPackagingDescription {
         self.model_packaging_method.as_deref()
     }
     /// <p>Information about the output of the model packaging job. For more information, see <code>DescribeModelPackagingJob</code>. </p>
-    pub fn model_packaging_output_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelPackagingOutputDetails> {
+    pub fn model_packaging_output_details(&self) -> ::std::option::Option<&crate::types::ModelPackagingOutputDetails> {
         self.model_packaging_output_details.as_ref()
     }
     /// <p> The status of the model packaging job. </p>
@@ -99,19 +93,15 @@ impl ModelPackagingDescription {
 
 /// A builder for [`ModelPackagingDescription`](crate::types::ModelPackagingDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelPackagingDescriptionBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_version: ::std::option::Option<::std::string::String>,
-    pub(crate) model_packaging_configuration:
-        ::std::option::Option<crate::types::ModelPackagingConfiguration>,
+    pub(crate) model_packaging_configuration: ::std::option::Option<crate::types::ModelPackagingConfiguration>,
     pub(crate) model_packaging_job_description: ::std::option::Option<::std::string::String>,
     pub(crate) model_packaging_method: ::std::option::Option<::std::string::String>,
-    pub(crate) model_packaging_output_details:
-        ::std::option::Option<crate::types::ModelPackagingOutputDetails>,
+    pub(crate) model_packaging_output_details: ::std::option::Option<crate::types::ModelPackagingOutputDetails>,
     pub(crate) status: ::std::option::Option<crate::types::ModelPackagingJobStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -147,18 +137,12 @@ impl ModelPackagingDescriptionBuilder {
         &self.project_name
     }
     /// <p>The version of the model used in the model packaging job. </p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the model used in the model packaging job. </p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_version = input;
         self
     }
@@ -167,62 +151,40 @@ impl ModelPackagingDescriptionBuilder {
         &self.model_version
     }
     /// <p> The configuration information used in the model packaging job. </p>
-    pub fn model_packaging_configuration(
-        mut self,
-        input: crate::types::ModelPackagingConfiguration,
-    ) -> Self {
+    pub fn model_packaging_configuration(mut self, input: crate::types::ModelPackagingConfiguration) -> Self {
         self.model_packaging_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> The configuration information used in the model packaging job. </p>
-    pub fn set_model_packaging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackagingConfiguration>,
-    ) -> Self {
+    pub fn set_model_packaging_configuration(mut self, input: ::std::option::Option<crate::types::ModelPackagingConfiguration>) -> Self {
         self.model_packaging_configuration = input;
         self
     }
     /// <p> The configuration information used in the model packaging job. </p>
-    pub fn get_model_packaging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelPackagingConfiguration> {
+    pub fn get_model_packaging_configuration(&self) -> &::std::option::Option<crate::types::ModelPackagingConfiguration> {
         &self.model_packaging_configuration
     }
     /// <p>The description for the model packaging job. </p>
-    pub fn model_packaging_job_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_packaging_job_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_packaging_job_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for the model packaging job. </p>
-    pub fn set_model_packaging_job_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_packaging_job_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_packaging_job_description = input;
         self
     }
     /// <p>The description for the model packaging job. </p>
-    pub fn get_model_packaging_job_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_model_packaging_job_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_packaging_job_description
     }
     /// <p>The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
-    pub fn model_packaging_method(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_packaging_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_packaging_method = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
-    pub fn set_model_packaging_method(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_packaging_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_packaging_method = input;
         self
     }
@@ -231,25 +193,17 @@ impl ModelPackagingDescriptionBuilder {
         &self.model_packaging_method
     }
     /// <p>Information about the output of the model packaging job. For more information, see <code>DescribeModelPackagingJob</code>. </p>
-    pub fn model_packaging_output_details(
-        mut self,
-        input: crate::types::ModelPackagingOutputDetails,
-    ) -> Self {
+    pub fn model_packaging_output_details(mut self, input: crate::types::ModelPackagingOutputDetails) -> Self {
         self.model_packaging_output_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the output of the model packaging job. For more information, see <code>DescribeModelPackagingJob</code>. </p>
-    pub fn set_model_packaging_output_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackagingOutputDetails>,
-    ) -> Self {
+    pub fn set_model_packaging_output_details(mut self, input: ::std::option::Option<crate::types::ModelPackagingOutputDetails>) -> Self {
         self.model_packaging_output_details = input;
         self
     }
     /// <p>Information about the output of the model packaging job. For more information, see <code>DescribeModelPackagingJob</code>. </p>
-    pub fn get_model_packaging_output_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelPackagingOutputDetails> {
+    pub fn get_model_packaging_output_details(&self) -> &::std::option::Option<crate::types::ModelPackagingOutputDetails> {
         &self.model_packaging_output_details
     }
     /// <p> The status of the model packaging job. </p>
@@ -258,10 +212,7 @@ impl ModelPackagingDescriptionBuilder {
         self
     }
     /// <p> The status of the model packaging job. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackagingJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelPackagingJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -270,18 +221,12 @@ impl ModelPackagingDescriptionBuilder {
         &self.status
     }
     /// <p> The status message for the model packaging job. </p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The status message for the model packaging job. </p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -295,10 +240,7 @@ impl ModelPackagingDescriptionBuilder {
         self
     }
     /// <p> The Unix timestamp for the time and date that the model packaging job was created. </p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -312,17 +254,12 @@ impl ModelPackagingDescriptionBuilder {
         self
     }
     /// <p> The Unix timestamp for the time and date that the model packaging job was last updated. </p>
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_timestamp = input;
         self
     }
     /// <p> The Unix timestamp for the time and date that the model packaging job was last updated. </p>
-    pub fn get_last_updated_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_timestamp
     }
     /// Consumes the builder and constructs a [`ModelPackagingDescription`](crate::types::ModelPackagingDescription).

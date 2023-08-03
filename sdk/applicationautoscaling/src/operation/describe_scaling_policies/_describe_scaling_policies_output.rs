@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeScalingPoliciesOutput {
 }
 impl DescribeScalingPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingPoliciesOutput`](crate::operation::describe_scaling_policies::DescribeScalingPoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_scaling_policies::builders::DescribeScalingPoliciesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_scaling_policies::builders::DescribeScalingPoliciesOutputBuilder {
         crate::operation::describe_scaling_policies::builders::DescribeScalingPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScalingPoliciesOutput`](crate::operation::describe_scaling_policies::DescribeScalingPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScalingPoliciesOutputBuilder {
-    pub(crate) scaling_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>,
+    pub(crate) scaling_policies: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeScalingPoliciesOutputBuilder {
         self
     }
     /// <p>Information about the scaling policies.</p>
-    pub fn set_scaling_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>,
-    ) -> Self {
+    pub fn set_scaling_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>) -> Self {
         self.scaling_policies = input;
         self
     }
     /// <p>Information about the scaling policies.</p>
-    pub fn get_scaling_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>> {
+    pub fn get_scaling_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>> {
         &self.scaling_policies
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
@@ -96,9 +86,7 @@ impl DescribeScalingPoliciesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeScalingPoliciesOutput`](crate::operation::describe_scaling_policies::DescribeScalingPoliciesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_scaling_policies::DescribeScalingPoliciesOutput {
+    pub fn build(self) -> crate::operation::describe_scaling_policies::DescribeScalingPoliciesOutput {
         crate::operation::describe_scaling_policies::DescribeScalingPoliciesOutput {
             scaling_policies: self.scaling_policies,
             next_token: self.next_token,

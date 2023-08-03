@@ -9,10 +9,7 @@ pub fn ser_get_enrollment_statuses_for_organization_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_enrollment_filter::ser_enrollment_filter(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_enrollment_filter::ser_enrollment_filter(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

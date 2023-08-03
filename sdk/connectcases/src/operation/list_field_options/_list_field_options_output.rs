@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListFieldOptionsOutput {
 }
 impl ListFieldOptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListFieldOptionsOutput`](crate::operation::list_field_options::ListFieldOptionsOutput).
-    pub fn builder() -> crate::operation::list_field_options::builders::ListFieldOptionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_field_options::builders::ListFieldOptionsOutputBuilder {
         crate::operation::list_field_options::builders::ListFieldOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFieldOptionsOutput`](crate::operation::list_field_options::ListFieldOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFieldOptionsOutputBuilder {
     pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::FieldOption>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListFieldOptionsOutputBuilder {
         self
     }
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldOption>>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldOption>>) -> Self {
         self.options = input;
         self
     }
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldOption>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldOption>> {
         &self.options
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>

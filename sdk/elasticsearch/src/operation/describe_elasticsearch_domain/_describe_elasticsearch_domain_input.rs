@@ -16,16 +16,14 @@ impl DescribeElasticsearchDomainInput {
 }
 impl DescribeElasticsearchDomainInput {
     /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainInput`](crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainInput).
-    pub fn builder() -> crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainInputBuilder{
+    pub fn builder() -> crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainInputBuilder {
         crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeElasticsearchDomainInput`](crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -51,10 +49,8 @@ impl DescribeElasticsearchDomainInputBuilder {
         crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainInput {
-                domain_name: self.domain_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainInput {
+            domain_name: self.domain_name,
+        })
     }
 }

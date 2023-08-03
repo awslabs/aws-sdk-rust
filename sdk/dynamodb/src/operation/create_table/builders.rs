@@ -10,10 +10,7 @@ impl CreateTableInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_table::CreateTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_table::CreateTableError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_table::CreateTableError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_table();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl CreateTableFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_table::CreateTable,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_table::CreateTable, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_table::CreateTableError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl CreateTableFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +98,7 @@ impl CreateTableFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_table::CreateTable,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_table::CreateTable, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_table::CreateTableError>,
     > {
         self.customize_middleware().await
@@ -125,17 +113,12 @@ impl CreateTableFluentBuilder {
         self
     }
     /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
-    pub fn set_attribute_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
-    ) -> Self {
+    pub fn set_attribute_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>) -> Self {
         self.inner = self.inner.set_attribute_definitions(input);
         self
     }
     /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
-    pub fn get_attribute_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>> {
+    pub fn get_attribute_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>> {
         self.inner.get_attribute_definitions()
     }
     /// <p>The name of the table to create.</p>
@@ -192,10 +175,7 @@ impl CreateTableFluentBuilder {
     /// <p>For a simple primary key (partition key), you must provide exactly one element with a <code>KeyType</code> of <code>HASH</code>.</p>
     /// <p>For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn set_key_schema(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
-    ) -> Self {
+    pub fn set_key_schema(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>) -> Self {
         self.inner = self.inner.set_key_schema(input);
         self
     }
@@ -215,9 +195,7 @@ impl CreateTableFluentBuilder {
     /// <p>For a simple primary key (partition key), you must provide exactly one element with a <code>KeyType</code> of <code>HASH</code>.</p>
     /// <p>For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn get_key_schema(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>> {
+    pub fn get_key_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>> {
         self.inner.get_key_schema()
     }
     /// Appends an item to `LocalSecondaryIndexes`.
@@ -260,10 +238,7 @@ impl CreateTableFluentBuilder {
     /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_local_secondary_indexes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>>,
-    ) -> Self {
+    pub fn set_local_secondary_indexes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>>) -> Self {
         self.inner = self.inner.set_local_secondary_indexes(input);
         self
     }
@@ -283,9 +258,7 @@ impl CreateTableFluentBuilder {
     /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn get_local_secondary_indexes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>> {
+    pub fn get_local_secondary_indexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>> {
         self.inner.get_local_secondary_indexes()
     }
     /// Appends an item to `GlobalSecondaryIndexes`.
@@ -328,10 +301,7 @@ impl CreateTableFluentBuilder {
     /// </ul> </li>
     /// <li> <p> <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p> </li>
     /// </ul>
-    pub fn set_global_secondary_indexes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
-    ) -> Self {
+    pub fn set_global_secondary_indexes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>) -> Self {
         self.inner = self.inner.set_global_secondary_indexes(input);
         self
     }
@@ -351,9 +321,7 @@ impl CreateTableFluentBuilder {
     /// </ul> </li>
     /// <li> <p> <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p> </li>
     /// </ul>
-    pub fn get_global_secondary_indexes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>> {
+    pub fn get_global_secondary_indexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>> {
         self.inner.get_global_secondary_indexes()
     }
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
@@ -370,10 +338,7 @@ impl CreateTableFluentBuilder {
     /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
     /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
     /// </ul>
-    pub fn set_billing_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::BillingMode>,
-    ) -> Self {
+    pub fn set_billing_mode(mut self, input: ::std::option::Option<crate::types::BillingMode>) -> Self {
         self.inner = self.inner.set_billing_mode(input);
         self
     }
@@ -395,19 +360,14 @@ impl CreateTableFluentBuilder {
     /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
     /// <p> If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn set_provisioned_throughput(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionedThroughput>,
-    ) -> Self {
+    pub fn set_provisioned_throughput(mut self, input: ::std::option::Option<crate::types::ProvisionedThroughput>) -> Self {
         self.inner = self.inner.set_provisioned_throughput(input);
         self
     }
     /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
     /// <p> If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn get_provisioned_throughput(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
+    pub fn get_provisioned_throughput(&self) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
         self.inner.get_provisioned_throughput()
     }
     /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
@@ -436,10 +396,7 @@ impl CreateTableFluentBuilder {
     /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_stream_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamSpecification>,
-    ) -> Self {
+    pub fn set_stream_specification(mut self, input: ::std::option::Option<crate::types::StreamSpecification>) -> Self {
         self.inner = self.inner.set_stream_specification(input);
         self
     }
@@ -454,9 +411,7 @@ impl CreateTableFluentBuilder {
     /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn get_stream_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamSpecification> {
+    pub fn get_stream_specification(&self) -> &::std::option::Option<crate::types::StreamSpecification> {
         self.inner.get_stream_specification()
     }
     /// <p>Represents the settings used to enable server-side encryption.</p>
@@ -465,10 +420,7 @@ impl CreateTableFluentBuilder {
         self
     }
     /// <p>Represents the settings used to enable server-side encryption.</p>
-    pub fn set_sse_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::SseSpecification>,
-    ) -> Self {
+    pub fn set_sse_specification(mut self, input: ::std::option::Option<crate::types::SseSpecification>) -> Self {
         self.inner = self.inner.set_sse_specification(input);
         self
     }
@@ -486,10 +438,7 @@ impl CreateTableFluentBuilder {
         self
     }
     /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -503,10 +452,7 @@ impl CreateTableFluentBuilder {
         self
     }
     /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
-    pub fn set_table_class(
-        mut self,
-        input: ::std::option::Option<crate::types::TableClass>,
-    ) -> Self {
+    pub fn set_table_class(mut self, input: ::std::option::Option<crate::types::TableClass>) -> Self {
         self.inner = self.inner.set_table_class(input);
         self
     }

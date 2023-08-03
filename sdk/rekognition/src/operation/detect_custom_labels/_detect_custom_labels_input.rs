@@ -48,17 +48,14 @@ impl DetectCustomLabelsInput {
 }
 impl DetectCustomLabelsInput {
     /// Creates a new builder-style object to manufacture [`DetectCustomLabelsInput`](crate::operation::detect_custom_labels::DetectCustomLabelsInput).
-    pub fn builder(
-    ) -> crate::operation::detect_custom_labels::builders::DetectCustomLabelsInputBuilder {
+    pub fn builder() -> crate::operation::detect_custom_labels::builders::DetectCustomLabelsInputBuilder {
         crate::operation::detect_custom_labels::builders::DetectCustomLabelsInputBuilder::default()
     }
 }
 
 /// A builder for [`DetectCustomLabelsInput`](crate::operation::detect_custom_labels::DetectCustomLabelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectCustomLabelsInputBuilder {
     pub(crate) project_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<crate::types::Image>,
@@ -67,18 +64,12 @@ pub struct DetectCustomLabelsInputBuilder {
 }
 impl DetectCustomLabelsInputBuilder {
     /// <p>The ARN of the model version that you want to use.</p>
-    pub fn project_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the model version that you want to use.</p>
-    pub fn set_project_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_version_arn = input;
         self
     }
@@ -149,17 +140,12 @@ impl DetectCustomLabelsInputBuilder {
     /// Consumes the builder and constructs a [`DetectCustomLabelsInput`](crate::operation::detect_custom_labels::DetectCustomLabelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_custom_labels::DetectCustomLabelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::detect_custom_labels::DetectCustomLabelsInput {
-                project_version_arn: self.project_version_arn,
-                image: self.image,
-                max_results: self.max_results,
-                min_confidence: self.min_confidence,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::detect_custom_labels::DetectCustomLabelsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::detect_custom_labels::DetectCustomLabelsInput {
+            project_version_arn: self.project_version_arn,
+            image: self.image,
+            max_results: self.max_results,
+            min_confidence: self.min_confidence,
+        })
     }
 }

@@ -12,10 +12,7 @@ pub fn ser_update_public_dns_namespace_input(
     if let Some(var_3) = &input.namespace {
         #[allow(unused_mut)]
         let mut object_4 = object.key("Namespace").start_object();
-        crate::protocol_serde::shape_public_dns_namespace_change::ser_public_dns_namespace_change(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_public_dns_namespace_change::ser_public_dns_namespace_change(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRecommenderOutput {
 }
 impl DeleteRecommenderOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRecommenderOutput`](crate::operation::delete_recommender::DeleteRecommenderOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_recommender::builders::DeleteRecommenderOutputBuilder {
+    pub fn builder() -> crate::operation::delete_recommender::builders::DeleteRecommenderOutputBuilder {
         crate::operation::delete_recommender::builders::DeleteRecommenderOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRecommenderOutput`](crate::operation::delete_recommender::DeleteRecommenderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRecommenderOutputBuilder {
     _request_id: Option<String>,
 }

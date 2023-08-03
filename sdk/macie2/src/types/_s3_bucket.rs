@@ -12,8 +12,7 @@ pub struct S3Bucket {
     /// </ul>
     /// <p>Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
     #[doc(hidden)]
-    pub allows_unencrypted_object_uploads:
-        ::std::option::Option<crate::types::AllowsUnencryptedObjectUploads>,
+    pub allows_unencrypted_object_uploads: ::std::option::Option<crate::types::AllowsUnencryptedObjectUploads>,
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -44,9 +43,7 @@ impl S3Bucket {
     /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.</p></li>
     /// </ul>
     /// <p>Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
-    pub fn allows_unencrypted_object_uploads(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AllowsUnencryptedObjectUploads> {
+    pub fn allows_unencrypted_object_uploads(&self) -> ::std::option::Option<&crate::types::AllowsUnencryptedObjectUploads> {
         self.allows_unencrypted_object_uploads.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
@@ -58,9 +55,7 @@ impl S3Bucket {
         self.created_at.as_ref()
     }
     /// <p>The default server-side encryption settings for the bucket.</p>
-    pub fn default_server_side_encryption(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServerSideEncryption> {
+    pub fn default_server_side_encryption(&self) -> ::std::option::Option<&crate::types::ServerSideEncryption> {
         self.default_server_side_encryption.as_ref()
     }
     /// <p>The name of the bucket.</p>
@@ -89,16 +84,12 @@ impl S3Bucket {
 
 /// A builder for [`S3Bucket`](crate::types::S3Bucket).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3BucketBuilder {
-    pub(crate) allows_unencrypted_object_uploads:
-        ::std::option::Option<crate::types::AllowsUnencryptedObjectUploads>,
+    pub(crate) allows_unencrypted_object_uploads: ::std::option::Option<crate::types::AllowsUnencryptedObjectUploads>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) default_server_side_encryption:
-        ::std::option::Option<crate::types::ServerSideEncryption>,
+    pub(crate) default_server_side_encryption: ::std::option::Option<crate::types::ServerSideEncryption>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) owner: ::std::option::Option<crate::types::S3BucketOwner>,
     pub(crate) public_access: ::std::option::Option<crate::types::BucketPublicAccess>,
@@ -112,10 +103,7 @@ impl S3BucketBuilder {
     /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.</p></li>
     /// </ul>
     /// <p>Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
-    pub fn allows_unencrypted_object_uploads(
-        mut self,
-        input: crate::types::AllowsUnencryptedObjectUploads,
-    ) -> Self {
+    pub fn allows_unencrypted_object_uploads(mut self, input: crate::types::AllowsUnencryptedObjectUploads) -> Self {
         self.allows_unencrypted_object_uploads = ::std::option::Option::Some(input);
         self
     }
@@ -126,10 +114,7 @@ impl S3BucketBuilder {
     /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.</p></li>
     /// </ul>
     /// <p>Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
-    pub fn set_allows_unencrypted_object_uploads(
-        mut self,
-        input: ::std::option::Option<crate::types::AllowsUnencryptedObjectUploads>,
-    ) -> Self {
+    pub fn set_allows_unencrypted_object_uploads(mut self, input: ::std::option::Option<crate::types::AllowsUnencryptedObjectUploads>) -> Self {
         self.allows_unencrypted_object_uploads = input;
         self
     }
@@ -140,9 +125,7 @@ impl S3BucketBuilder {
     /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.</p></li>
     /// </ul>
     /// <p>Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
-    pub fn get_allows_unencrypted_object_uploads(
-        &self,
-    ) -> &::std::option::Option<crate::types::AllowsUnencryptedObjectUploads> {
+    pub fn get_allows_unencrypted_object_uploads(&self) -> &::std::option::Option<crate::types::AllowsUnencryptedObjectUploads> {
         &self.allows_unencrypted_object_uploads
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
@@ -165,10 +148,7 @@ impl S3BucketBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate when changes such as edits to the bucket's policy were most recently made to the bucket, relative to when the finding was created or last updated.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -177,25 +157,17 @@ impl S3BucketBuilder {
         &self.created_at
     }
     /// <p>The default server-side encryption settings for the bucket.</p>
-    pub fn default_server_side_encryption(
-        mut self,
-        input: crate::types::ServerSideEncryption,
-    ) -> Self {
+    pub fn default_server_side_encryption(mut self, input: crate::types::ServerSideEncryption) -> Self {
         self.default_server_side_encryption = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default server-side encryption settings for the bucket.</p>
-    pub fn set_default_server_side_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerSideEncryption>,
-    ) -> Self {
+    pub fn set_default_server_side_encryption(mut self, input: ::std::option::Option<crate::types::ServerSideEncryption>) -> Self {
         self.default_server_side_encryption = input;
         self
     }
     /// <p>The default server-side encryption settings for the bucket.</p>
-    pub fn get_default_server_side_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServerSideEncryption> {
+    pub fn get_default_server_side_encryption(&self) -> &::std::option::Option<crate::types::ServerSideEncryption> {
         &self.default_server_side_encryption
     }
     /// <p>The name of the bucket.</p>
@@ -232,10 +204,7 @@ impl S3BucketBuilder {
         self
     }
     /// <p>The permissions settings that determine whether the bucket is publicly accessible.</p>
-    pub fn set_public_access(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketPublicAccess>,
-    ) -> Self {
+    pub fn set_public_access(mut self, input: ::std::option::Option<crate::types::BucketPublicAccess>) -> Self {
         self.public_access = input;
         self
     }
@@ -255,10 +224,7 @@ impl S3BucketBuilder {
         self
     }
     /// <p>The tags that are associated with the bucket.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>) -> Self {
         self.tags = input;
         self
     }

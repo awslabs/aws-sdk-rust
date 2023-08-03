@@ -10,7 +10,11 @@ impl super::Client {
     ///   - [`capability_namespace(Option<String>)`](crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationOutput::capability_namespace): <p>The namespace of the gateway capability.</p>
     ///   - [`capability_sync_status(Option<CapabilitySyncStatus>)`](crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationOutput::capability_sync_status): <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>  <ul>   <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>   <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>   <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>  </ul>  <p>After you update a capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the gateway receives and applies or rejects the updated configuration.</p>
     /// - On failure, responds with [`SdkError<UpdateGatewayCapabilityConfigurationError>`](crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationError)
-    pub fn update_gateway_capability_configuration(&self) -> crate::operation::update_gateway_capability_configuration::builders::UpdateGatewayCapabilityConfigurationFluentBuilder{
-        crate::operation::update_gateway_capability_configuration::builders::UpdateGatewayCapabilityConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn update_gateway_capability_configuration(
+        &self,
+    ) -> crate::operation::update_gateway_capability_configuration::builders::UpdateGatewayCapabilityConfigurationFluentBuilder {
+        crate::operation::update_gateway_capability_configuration::builders::UpdateGatewayCapabilityConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

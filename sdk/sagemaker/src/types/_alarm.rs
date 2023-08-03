@@ -23,9 +23,7 @@ impl Alarm {
 
 /// A builder for [`Alarm`](crate::types::Alarm).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlarmBuilder {
     pub(crate) alarm_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl AlarmBuilder {
     }
     /// Consumes the builder and constructs a [`Alarm`](crate::types::Alarm).
     pub fn build(self) -> crate::types::Alarm {
-        crate::types::Alarm {
-            alarm_name: self.alarm_name,
-        }
+        crate::types::Alarm { alarm_name: self.alarm_name }
     }
 }

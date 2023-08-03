@@ -27,7 +27,7 @@ impl StartRemediationExecutionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartRemediationExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_remediation_execution::builders::StartRemediationExecutionInputBuilder,
+    inner: crate::operation::start_remediation_execution::builders::StartRemediationExecutionInputBuilder,
 }
 impl StartRemediationExecutionFluentBuilder {
     /// Creates a new `StartRemediationExecution`.
@@ -38,7 +38,7 @@ impl StartRemediationExecutionFluentBuilder {
         }
     }
     /// Access the StartRemediationExecution as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_remediation_execution::builders::StartRemediationExecutionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_remediation_execution::builders::StartRemediationExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl StartRemediationExecutionFluentBuilder {
             crate::operation::start_remediation_execution::StartRemediationExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_remediation_execution::StartRemediationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_remediation_execution::StartRemediationExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl StartRemediationExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl StartRemediationExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_remediation_execution::StartRemediationExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_remediation_execution::StartRemediationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_remediation_execution::StartRemediationExecutionError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl StartRemediationExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_remediation_execution::StartRemediationExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_remediation_execution::StartRemediationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_remediation_execution::StartRemediationExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl StartRemediationExecutionFluentBuilder {
             crate::operation::start_remediation_execution::StartRemediationExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_remediation_execution::StartRemediationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_remediation_execution::StartRemediationExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
-    pub fn config_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.config_rule_name(input.into());
         self
     }
     /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
-    pub fn set_config_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_config_rule_name(input);
         self
     }
@@ -151,17 +134,12 @@ impl StartRemediationExecutionFluentBuilder {
         self
     }
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
-    pub fn set_resource_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
-    ) -> Self {
+    pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>) -> Self {
         self.inner = self.inner.set_resource_keys(input);
         self
     }
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
-    pub fn get_resource_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
+    pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
         self.inner.get_resource_keys()
     }
 }

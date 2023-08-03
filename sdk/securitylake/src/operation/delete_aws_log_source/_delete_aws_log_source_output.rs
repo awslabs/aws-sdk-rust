@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteAwsLogSourceOutput {
 }
 impl DeleteAwsLogSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAwsLogSourceOutput`](crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_aws_log_source::builders::DeleteAwsLogSourceOutputBuilder {
-        crate::operation::delete_aws_log_source::builders::DeleteAwsLogSourceOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_aws_log_source::builders::DeleteAwsLogSourceOutputBuilder {
+        crate::operation::delete_aws_log_source::builders::DeleteAwsLogSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAwsLogSourceOutput`](crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAwsLogSourceOutputBuilder {
     pub(crate) failed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -50,10 +46,7 @@ impl DeleteAwsLogSourceOutputBuilder {
         self
     }
     /// <p>Deletion of the Amazon Web Services sources failed as the account is not a part of the organization.</p>
-    pub fn set_failed(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_failed(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.failed = input;
         self
     }

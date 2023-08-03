@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateIdentityProviderConfigurationOu
 }
 impl UpdateIdentityProviderConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIdentityProviderConfigurationOutput`](crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationOutput).
-    pub fn builder() -> crate::operation::update_identity_provider_configuration::builders::UpdateIdentityProviderConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_identity_provider_configuration::builders::UpdateIdentityProviderConfigurationOutputBuilder {
         crate::operation::update_identity_provider_configuration::builders::UpdateIdentityProviderConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateIdentityProviderConfigurationOutput`](crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIdentityProviderConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl UpdateIdentityProviderConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateIdentityProviderConfigurationOutput`](crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationOutput).
-    pub fn build(self) -> crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationOutput{
+    pub fn build(self) -> crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationOutput {
         crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationOutput {
             _request_id: self._request_id,
         }

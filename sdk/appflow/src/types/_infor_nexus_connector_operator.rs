@@ -51,13 +51,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InforNexusConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
@@ -111,9 +105,7 @@ impl ::std::convert::From<&str> for InforNexusConnectorOperator {
             "VALIDATE_NON_NULL" => InforNexusConnectorOperator::ValidateNonNull,
             "VALIDATE_NON_ZERO" => InforNexusConnectorOperator::ValidateNonZero,
             "VALIDATE_NUMERIC" => InforNexusConnectorOperator::ValidateNumeric,
-            other => InforNexusConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InforNexusConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

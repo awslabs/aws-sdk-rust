@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`image_summary_list(Option<Vec<ImageSummary>>)`](crate::operation::list_image_build_versions::ListImageBuildVersionsOutput::image_summary_list): <p>The list of image build versions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_image_build_versions::ListImageBuildVersionsOutput::next_token): <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     /// - On failure, responds with [`SdkError<ListImageBuildVersionsError>`](crate::operation::list_image_build_versions::ListImageBuildVersionsError)
-    pub fn list_image_build_versions(
-        &self,
-    ) -> crate::operation::list_image_build_versions::builders::ListImageBuildVersionsFluentBuilder
-    {
+    pub fn list_image_build_versions(&self) -> crate::operation::list_image_build_versions::builders::ListImageBuildVersionsFluentBuilder {
         crate::operation::list_image_build_versions::builders::ListImageBuildVersionsFluentBuilder::new(self.handle.clone())
     }
 }

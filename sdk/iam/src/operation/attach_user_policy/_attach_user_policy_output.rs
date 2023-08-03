@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AttachUserPolicyOutput {
 }
 impl AttachUserPolicyOutput {
     /// Creates a new builder-style object to manufacture [`AttachUserPolicyOutput`](crate::operation::attach_user_policy::AttachUserPolicyOutput).
-    pub fn builder() -> crate::operation::attach_user_policy::builders::AttachUserPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::attach_user_policy::builders::AttachUserPolicyOutputBuilder {
         crate::operation::attach_user_policy::builders::AttachUserPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachUserPolicyOutput`](crate::operation::attach_user_policy::AttachUserPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachUserPolicyOutputBuilder {
     _request_id: Option<String>,
 }

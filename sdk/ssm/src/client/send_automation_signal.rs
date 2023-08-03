@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`payload(HashMap<String, Vec<String>>)`](crate::operation::send_automation_signal::builders::SendAutomationSignalFluentBuilder::payload) / [`set_payload(Option<HashMap<String, Vec<String>>>)`](crate::operation::send_automation_signal::builders::SendAutomationSignalFluentBuilder::set_payload): <p>The data sent with the signal. The data schema depends on the type of signal used in the request.</p>  <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can send with the signal type. For example:</p>  <p> <code>Comment="Looks good"</code> </p>  <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to start or resume as the payload. For example:</p>  <p> <code>StepName="step1"</code> </p>  <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>  <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
     /// - On success, responds with [`SendAutomationSignalOutput`](crate::operation::send_automation_signal::SendAutomationSignalOutput)
     /// - On failure, responds with [`SdkError<SendAutomationSignalError>`](crate::operation::send_automation_signal::SendAutomationSignalError)
-    pub fn send_automation_signal(
-        &self,
-    ) -> crate::operation::send_automation_signal::builders::SendAutomationSignalFluentBuilder {
-        crate::operation::send_automation_signal::builders::SendAutomationSignalFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn send_automation_signal(&self) -> crate::operation::send_automation_signal::builders::SendAutomationSignalFluentBuilder {
+        crate::operation::send_automation_signal::builders::SendAutomationSignalFluentBuilder::new(self.handle.clone())
     }
 }

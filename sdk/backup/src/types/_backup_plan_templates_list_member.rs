@@ -30,27 +30,19 @@ impl BackupPlanTemplatesListMember {
 
 /// A builder for [`BackupPlanTemplatesListMember`](crate::types::BackupPlanTemplatesListMember).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackupPlanTemplatesListMemberBuilder {
     pub(crate) backup_plan_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) backup_plan_template_name: ::std::option::Option<::std::string::String>,
 }
 impl BackupPlanTemplatesListMemberBuilder {
     /// <p>Uniquely identifies a stored backup plan template.</p>
-    pub fn backup_plan_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies a stored backup plan template.</p>
-    pub fn set_backup_plan_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_template_id = input;
         self
     }
@@ -59,18 +51,12 @@ impl BackupPlanTemplatesListMemberBuilder {
         &self.backup_plan_template_id
     }
     /// <p>The optional display name of a backup plan template.</p>
-    pub fn backup_plan_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The optional display name of a backup plan template.</p>
-    pub fn set_backup_plan_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_template_name = input;
         self
     }

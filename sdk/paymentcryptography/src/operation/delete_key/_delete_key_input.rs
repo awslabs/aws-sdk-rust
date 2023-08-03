@@ -29,27 +29,19 @@ impl DeleteKeyInput {
 
 /// A builder for [`DeleteKeyInput`](crate::operation::delete_key::DeleteKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteKeyInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) delete_key_in_days: ::std::option::Option<i32>,
 }
 impl DeleteKeyInputBuilder {
     /// <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
-    pub fn key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
-    pub fn set_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_identifier = input;
         self
     }
@@ -72,12 +64,7 @@ impl DeleteKeyInputBuilder {
         &self.delete_key_in_days
     }
     /// Consumes the builder and constructs a [`DeleteKeyInput`](crate::operation::delete_key::DeleteKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_key::DeleteKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_key::DeleteKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_key::DeleteKeyInput {
             key_identifier: self.key_identifier,
             delete_key_in_days: self.delete_key_in_days,

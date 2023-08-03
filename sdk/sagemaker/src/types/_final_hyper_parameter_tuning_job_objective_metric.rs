@@ -16,9 +16,7 @@ pub struct FinalHyperParameterTuningJobObjectiveMetric {
 }
 impl FinalHyperParameterTuningJobObjectiveMetric {
     /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning. </p>
-    pub fn r#type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HyperParameterTuningJobObjectiveType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobObjectiveType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the objective metric. For SageMaker built-in algorithms, metrics are defined per algorithm. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics for XGBoost</a> as an example. You can also use a custom algorithm for training and define your own metrics. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and environment variables</a>.</p>
@@ -39,9 +37,7 @@ impl FinalHyperParameterTuningJobObjectiveMetric {
 
 /// A builder for [`FinalHyperParameterTuningJobObjectiveMetric`](crate::types::FinalHyperParameterTuningJobObjectiveMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FinalHyperParameterTuningJobObjectiveMetricBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
@@ -54,17 +50,12 @@ impl FinalHyperParameterTuningJobObjectiveMetricBuilder {
         self
     }
     /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning. </p>
-    pub fn get_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType> {
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType> {
         &self.r#type
     }
     /// <p>The name of the objective metric. For SageMaker built-in algorithms, metrics are defined per algorithm. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics for XGBoost</a> as an example. You can also use a custom algorithm for training and define your own metrics. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and environment variables</a>.</p>

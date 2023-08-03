@@ -9,92 +9,102 @@ pub fn de_delete_cache_security_group_http_error(
     crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(
-            crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::unhandled(
+        None => {
+            return Err(crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::unhandled(
                 generic,
-            ),
-        ),
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CacheSecurityGroupNotFound" => crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::CacheSecurityGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "CacheSecurityGroupNotFound" => {
+            crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::CacheSecurityGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CacheSecurityGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cache_security_group_not_found_fault::de_cache_security_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_cache_security_group_not_found_fault::de_cache_security_group_not_found_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidCacheSecurityGroupState" => crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::InvalidCacheSecurityGroupStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidCacheSecurityGroupState" => {
+            crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::InvalidCacheSecurityGroupStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidCacheSecurityGroupStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_cache_security_group_state_fault::de_invalid_cache_security_group_state_fault_xml_err(_response_body, output).map_err(crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_invalid_cache_security_group_state_fault::de_invalid_cache_security_group_state_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidParameterCombination" => crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::InvalidParameterCombinationException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidParameterCombination" => {
+            crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::InvalidParameterCombinationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(_response_body, output).map_err(crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InvalidParameterValue" => crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::InvalidParameterValueException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(_response_body, output).map_err(crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::generic(generic)
+        _ => crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupError::generic(generic),
     })
 }
 
@@ -110,9 +120,7 @@ pub fn de_delete_cache_security_group_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_cache_security_group::builders::DeleteCacheSecurityGroupOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

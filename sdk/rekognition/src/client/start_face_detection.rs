@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`StartFaceDetectionOutput`](crate::operation::start_face_detection::StartFaceDetectionOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_face_detection::StartFaceDetectionOutput::job_id): <p>The identifier for the face detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetFaceDetection</code>.</p>
     /// - On failure, responds with [`SdkError<StartFaceDetectionError>`](crate::operation::start_face_detection::StartFaceDetectionError)
-    pub fn start_face_detection(
-        &self,
-    ) -> crate::operation::start_face_detection::builders::StartFaceDetectionFluentBuilder {
-        crate::operation::start_face_detection::builders::StartFaceDetectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_face_detection(&self) -> crate::operation::start_face_detection::builders::StartFaceDetectionFluentBuilder {
+        crate::operation::start_face_detection::builders::StartFaceDetectionFluentBuilder::new(self.handle.clone())
     }
 }

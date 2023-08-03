@@ -6,8 +6,7 @@
 pub struct AacSettings {
     /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
     #[doc(hidden)]
-    pub audio_description_broadcaster_mix:
-        ::std::option::Option<crate::types::AacAudioDescriptionBroadcasterMix>,
+    pub audio_description_broadcaster_mix: ::std::option::Option<crate::types::AacAudioDescriptionBroadcasterMix>,
     /// Specify the average bitrate in bits per second. The set of valid values for this setting is: 6000, 8000, 10000, 12000, 14000, 16000, 20000, 24000, 28000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000, 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000, 896000, 1024000. The value you set is also constrained by the values that you choose for Profile, Bitrate control mode, and Sample rate. Default values depend on Bitrate control mode and Profile.
     #[doc(hidden)]
     pub bitrate: ::std::option::Option<i32>,
@@ -35,9 +34,7 @@ pub struct AacSettings {
 }
 impl AacSettings {
     /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
-    pub fn audio_description_broadcaster_mix(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AacAudioDescriptionBroadcasterMix> {
+    pub fn audio_description_broadcaster_mix(&self) -> ::std::option::Option<&crate::types::AacAudioDescriptionBroadcasterMix> {
         self.audio_description_broadcaster_mix.as_ref()
     }
     /// Specify the average bitrate in bits per second. The set of valid values for this setting is: 6000, 8000, 10000, 12000, 14000, 16000, 20000, 24000, 28000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000, 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000, 896000, 1024000. The value you set is also constrained by the values that you choose for Profile, Bitrate control mode, and Sample rate. Default values depend on Bitrate control mode and Profile.
@@ -82,12 +79,9 @@ impl AacSettings {
 
 /// A builder for [`AacSettings`](crate::types::AacSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AacSettingsBuilder {
-    pub(crate) audio_description_broadcaster_mix:
-        ::std::option::Option<crate::types::AacAudioDescriptionBroadcasterMix>,
+    pub(crate) audio_description_broadcaster_mix: ::std::option::Option<crate::types::AacAudioDescriptionBroadcasterMix>,
     pub(crate) bitrate: ::std::option::Option<i32>,
     pub(crate) codec_profile: ::std::option::Option<crate::types::AacCodecProfile>,
     pub(crate) coding_mode: ::std::option::Option<crate::types::AacCodingMode>,
@@ -99,25 +93,17 @@ pub struct AacSettingsBuilder {
 }
 impl AacSettingsBuilder {
     /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
-    pub fn audio_description_broadcaster_mix(
-        mut self,
-        input: crate::types::AacAudioDescriptionBroadcasterMix,
-    ) -> Self {
+    pub fn audio_description_broadcaster_mix(mut self, input: crate::types::AacAudioDescriptionBroadcasterMix) -> Self {
         self.audio_description_broadcaster_mix = ::std::option::Option::Some(input);
         self
     }
     /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
-    pub fn set_audio_description_broadcaster_mix(
-        mut self,
-        input: ::std::option::Option<crate::types::AacAudioDescriptionBroadcasterMix>,
-    ) -> Self {
+    pub fn set_audio_description_broadcaster_mix(mut self, input: ::std::option::Option<crate::types::AacAudioDescriptionBroadcasterMix>) -> Self {
         self.audio_description_broadcaster_mix = input;
         self
     }
     /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
-    pub fn get_audio_description_broadcaster_mix(
-        &self,
-    ) -> &::std::option::Option<crate::types::AacAudioDescriptionBroadcasterMix> {
+    pub fn get_audio_description_broadcaster_mix(&self) -> &::std::option::Option<crate::types::AacAudioDescriptionBroadcasterMix> {
         &self.audio_description_broadcaster_mix
     }
     /// Specify the average bitrate in bits per second. The set of valid values for this setting is: 6000, 8000, 10000, 12000, 14000, 16000, 20000, 24000, 28000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000, 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000, 896000, 1024000. The value you set is also constrained by the values that you choose for Profile, Bitrate control mode, and Sample rate. Default values depend on Bitrate control mode and Profile.
@@ -140,10 +126,7 @@ impl AacSettingsBuilder {
         self
     }
     /// AAC Profile.
-    pub fn set_codec_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::AacCodecProfile>,
-    ) -> Self {
+    pub fn set_codec_profile(mut self, input: ::std::option::Option<crate::types::AacCodecProfile>) -> Self {
         self.codec_profile = input;
         self
     }
@@ -157,10 +140,7 @@ impl AacSettingsBuilder {
         self
     }
     /// The Coding mode that you specify determines the number of audio channels and the audio channel layout metadata in your AAC output. Valid coding modes depend on the Rate control mode and Profile that you select. The following list shows the number of audio channels and channel layout for each coding mode. * 1.0 Audio Description (Receiver Mix): One channel, C. Includes audio description data from your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono: One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels, C, L, R, Ls, Rs, LFE.
-    pub fn set_coding_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::AacCodingMode>,
-    ) -> Self {
+    pub fn set_coding_mode(mut self, input: ::std::option::Option<crate::types::AacCodingMode>) -> Self {
         self.coding_mode = input;
         self
     }
@@ -174,17 +154,12 @@ impl AacSettingsBuilder {
         self
     }
     /// Rate Control Mode.
-    pub fn set_rate_control_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::AacRateControlMode>,
-    ) -> Self {
+    pub fn set_rate_control_mode(mut self, input: ::std::option::Option<crate::types::AacRateControlMode>) -> Self {
         self.rate_control_mode = input;
         self
     }
     /// Rate Control Mode.
-    pub fn get_rate_control_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::AacRateControlMode> {
+    pub fn get_rate_control_mode(&self) -> &::std::option::Option<crate::types::AacRateControlMode> {
         &self.rate_control_mode
     }
     /// Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose "No container" for the output container.
@@ -193,10 +168,7 @@ impl AacSettingsBuilder {
         self
     }
     /// Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose "No container" for the output container.
-    pub fn set_raw_format(
-        mut self,
-        input: ::std::option::Option<crate::types::AacRawFormat>,
-    ) -> Self {
+    pub fn set_raw_format(mut self, input: ::std::option::Option<crate::types::AacRawFormat>) -> Self {
         self.raw_format = input;
         self
     }
@@ -224,10 +196,7 @@ impl AacSettingsBuilder {
         self
     }
     /// Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
-    pub fn set_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::AacSpecification>,
-    ) -> Self {
+    pub fn set_specification(mut self, input: ::std::option::Option<crate::types::AacSpecification>) -> Self {
         self.specification = input;
         self
     }
@@ -241,10 +210,7 @@ impl AacSettingsBuilder {
         self
     }
     /// VBR Quality Level - Only used if rate_control_mode is VBR.
-    pub fn set_vbr_quality(
-        mut self,
-        input: ::std::option::Option<crate::types::AacVbrQuality>,
-    ) -> Self {
+    pub fn set_vbr_quality(mut self, input: ::std::option::Option<crate::types::AacVbrQuality>) -> Self {
         self.vbr_quality = input;
         self
     }

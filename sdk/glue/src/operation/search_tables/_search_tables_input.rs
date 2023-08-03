@@ -76,9 +76,7 @@ impl SearchTablesInput {
 
 /// A builder for [`SearchTablesInput`](crate::operation::search_tables::SearchTablesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchTablesInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -131,18 +129,13 @@ impl SearchTablesInputBuilder {
     }
     /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
     /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyPredicate>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyPredicate>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
     /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyPredicate>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyPredicate>> {
         &self.filters
     }
     /// <p>A string used for a text search.</p>
@@ -174,17 +167,12 @@ impl SearchTablesInputBuilder {
         self
     }
     /// <p>A list of criteria for sorting the results by a field name, in an ascending or descending order.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>) -> Self {
         self.sort_criteria = input;
         self
     }
     /// <p>A list of criteria for sorting the results by a field name, in an ascending or descending order.</p>
-    pub fn get_sort_criteria(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>> {
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>> {
         &self.sort_criteria
     }
     /// <p>The maximum number of tables to return in a single response.</p>
@@ -215,10 +203,7 @@ impl SearchTablesInputBuilder {
     /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
     /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
     /// </ul>
-    pub fn set_resource_share_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceShareType>,
-    ) -> Self {
+    pub fn set_resource_share_type(mut self, input: ::std::option::Option<crate::types::ResourceShareType>) -> Self {
         self.resource_share_type = input;
         self
     }
@@ -227,18 +212,11 @@ impl SearchTablesInputBuilder {
     /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
     /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
     /// </ul>
-    pub fn get_resource_share_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceShareType> {
+    pub fn get_resource_share_type(&self) -> &::std::option::Option<crate::types::ResourceShareType> {
         &self.resource_share_type
     }
     /// Consumes the builder and constructs a [`SearchTablesInput`](crate::operation::search_tables::SearchTablesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_tables::SearchTablesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_tables::SearchTablesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_tables::SearchTablesInput {
             catalog_id: self.catalog_id,
             next_token: self.next_token,

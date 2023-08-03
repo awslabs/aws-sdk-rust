@@ -15,34 +15,25 @@ impl DeleteEndpointConfigInput {
 }
 impl DeleteEndpointConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteEndpointConfigInput`](crate::operation::delete_endpoint_config::DeleteEndpointConfigInput).
-    pub fn builder(
-    ) -> crate::operation::delete_endpoint_config::builders::DeleteEndpointConfigInputBuilder {
+    pub fn builder() -> crate::operation::delete_endpoint_config::builders::DeleteEndpointConfigInputBuilder {
         crate::operation::delete_endpoint_config::builders::DeleteEndpointConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEndpointConfigInput`](crate::operation::delete_endpoint_config::DeleteEndpointConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEndpointConfigInputBuilder {
     pub(crate) endpoint_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEndpointConfigInputBuilder {
     /// <p>The name of the endpoint configuration that you want to delete.</p>
-    pub fn endpoint_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the endpoint configuration that you want to delete.</p>
-    pub fn set_endpoint_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_config_name = input;
         self
     }
@@ -53,14 +44,10 @@ impl DeleteEndpointConfigInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEndpointConfigInput`](crate::operation::delete_endpoint_config::DeleteEndpointConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_endpoint_config::DeleteEndpointConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_endpoint_config::DeleteEndpointConfigInput {
-                endpoint_config_name: self.endpoint_config_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_endpoint_config::DeleteEndpointConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_endpoint_config::DeleteEndpointConfigInput {
+            endpoint_config_name: self.endpoint_config_name,
+        })
     }
 }

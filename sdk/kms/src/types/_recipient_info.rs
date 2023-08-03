@@ -14,9 +14,7 @@ pub struct RecipientInfo {
 }
 impl RecipientInfo {
     /// <p>The encryption algorithm that KMS should use with the public key for an Amazon Web Services Nitro Enclave to encrypt plaintext values for the response. The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
-    pub fn key_encryption_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KeyEncryptionMechanism> {
+    pub fn key_encryption_algorithm(&self) -> ::std::option::Option<&crate::types::KeyEncryptionMechanism> {
         self.key_encryption_algorithm.as_ref()
     }
     /// <p>The attestation document for an Amazon Web Services Nitro Enclave. This document includes the enclave's public key.</p>
@@ -33,12 +31,9 @@ impl RecipientInfo {
 
 /// A builder for [`RecipientInfo`](crate::types::RecipientInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecipientInfoBuilder {
-    pub(crate) key_encryption_algorithm:
-        ::std::option::Option<crate::types::KeyEncryptionMechanism>,
+    pub(crate) key_encryption_algorithm: ::std::option::Option<crate::types::KeyEncryptionMechanism>,
     pub(crate) attestation_document: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl RecipientInfoBuilder {
@@ -48,17 +43,12 @@ impl RecipientInfoBuilder {
         self
     }
     /// <p>The encryption algorithm that KMS should use with the public key for an Amazon Web Services Nitro Enclave to encrypt plaintext values for the response. The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
-    pub fn set_key_encryption_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyEncryptionMechanism>,
-    ) -> Self {
+    pub fn set_key_encryption_algorithm(mut self, input: ::std::option::Option<crate::types::KeyEncryptionMechanism>) -> Self {
         self.key_encryption_algorithm = input;
         self
     }
     /// <p>The encryption algorithm that KMS should use with the public key for an Amazon Web Services Nitro Enclave to encrypt plaintext values for the response. The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
-    pub fn get_key_encryption_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::KeyEncryptionMechanism> {
+    pub fn get_key_encryption_algorithm(&self) -> &::std::option::Option<crate::types::KeyEncryptionMechanism> {
         &self.key_encryption_algorithm
     }
     /// <p>The attestation document for an Amazon Web Services Nitro Enclave. This document includes the enclave's public key.</p>
@@ -67,10 +57,7 @@ impl RecipientInfoBuilder {
         self
     }
     /// <p>The attestation document for an Amazon Web Services Nitro Enclave. This document includes the enclave's public key.</p>
-    pub fn set_attestation_document(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_attestation_document(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.attestation_document = input;
         self
     }

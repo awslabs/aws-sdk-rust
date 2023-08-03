@@ -10,10 +10,7 @@ impl PreviewAgentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::preview_agents::PreviewAgentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::preview_agents::PreviewAgentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::preview_agents::PreviewAgentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.preview_agents();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PreviewAgentsFluentBuilder {
         }
     }
     /// Access the PreviewAgents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::preview_agents::builders::PreviewAgentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::preview_agents::builders::PreviewAgentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl PreviewAgentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,27 +109,16 @@ impl PreviewAgentsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::preview_agents::paginator::PreviewAgentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::preview_agents::paginator::PreviewAgentsPaginator {
-        crate::operation::preview_agents::paginator::PreviewAgentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::preview_agents::paginator::PreviewAgentsPaginator {
+        crate::operation::preview_agents::paginator::PreviewAgentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the assessment target whose agents you want to preview.</p>
-    pub fn preview_agents_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preview_agents_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preview_agents_arn(input.into());
         self
     }
     /// <p>The ARN of the assessment target whose agents you want to preview.</p>
-    pub fn set_preview_agents_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preview_agents_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preview_agents_arn(input);
         self
     }

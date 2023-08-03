@@ -10,10 +10,7 @@ impl PutEventSelectorsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_event_selectors::PutEventSelectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_event_selectors::PutEventSelectorsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_event_selectors::PutEventSelectorsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_event_selectors();
         fluent_builder.inner = self;
@@ -49,9 +46,7 @@ impl PutEventSelectorsFluentBuilder {
         }
     }
     /// Access the PutEventSelectors as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_event_selectors::builders::PutEventSelectorsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_event_selectors::builders::PutEventSelectorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +58,7 @@ impl PutEventSelectorsFluentBuilder {
             crate::operation::put_event_selectors::PutEventSelectors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_event_selectors::PutEventSelectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_event_selectors::PutEventSelectorsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +68,7 @@ impl PutEventSelectorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +77,7 @@ impl PutEventSelectorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_event_selectors::PutEventSelectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_event_selectors::PutEventSelectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_event_selectors::PutEventSelectorsError>,
     > {
         let op = self
             .inner
@@ -112,9 +100,7 @@ impl PutEventSelectorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_event_selectors::PutEventSelectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_event_selectors::PutEventSelectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_event_selectors::PutEventSelectorsError>,
     > {
         self.send_middleware().await
     }
@@ -128,9 +114,7 @@ impl PutEventSelectorsFluentBuilder {
             crate::operation::put_event_selectors::PutEventSelectors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_event_selectors::PutEventSelectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_event_selectors::PutEventSelectorsError>,
     > {
         self.customize_middleware().await
     }
@@ -185,17 +169,12 @@ impl PutEventSelectorsFluentBuilder {
         self
     }
     /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
-    pub fn set_event_selectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventSelector>>,
-    ) -> Self {
+    pub fn set_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventSelector>>) -> Self {
         self.inner = self.inner.set_event_selectors(input);
         self
     }
     /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
-    pub fn get_event_selectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSelector>> {
+    pub fn get_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSelector>> {
         self.inner.get_event_selectors()
     }
     /// Appends an item to `AdvancedEventSelectors`.
@@ -208,17 +187,12 @@ impl PutEventSelectorsFluentBuilder {
         self
     }
     /// <p> Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a> in the <i>CloudTrail User Guide</i>. </p>
-    pub fn set_advanced_event_selectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
-    ) -> Self {
+    pub fn set_advanced_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>) -> Self {
         self.inner = self.inner.set_advanced_event_selectors(input);
         self
     }
     /// <p> Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a> in the <i>CloudTrail User Guide</i>. </p>
-    pub fn get_advanced_event_selectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
+    pub fn get_advanced_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
         self.inner.get_advanced_event_selectors()
     }
 }

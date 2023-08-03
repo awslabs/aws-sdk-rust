@@ -18,10 +18,7 @@ pub fn ser_update_endpoint_input(
     if let Some(var_5) = &input.replication_config {
         #[allow(unused_mut)]
         let mut object_6 = object.key("ReplicationConfig").start_object();
-        crate::protocol_serde::shape_replication_config::ser_replication_config(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_replication_config::ser_replication_config(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.event_buses {
@@ -30,10 +27,7 @@ pub fn ser_update_endpoint_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_endpoint_event_bus::ser_endpoint_event_bus(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_endpoint_event_bus::ser_endpoint_event_bus(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }

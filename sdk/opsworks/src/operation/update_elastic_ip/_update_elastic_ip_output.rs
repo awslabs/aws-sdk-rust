@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateElasticIpOutput {
 }
 impl UpdateElasticIpOutput {
     /// Creates a new builder-style object to manufacture [`UpdateElasticIpOutput`](crate::operation::update_elastic_ip::UpdateElasticIpOutput).
-    pub fn builder() -> crate::operation::update_elastic_ip::builders::UpdateElasticIpOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_elastic_ip::builders::UpdateElasticIpOutputBuilder {
         crate::operation::update_elastic_ip::builders::UpdateElasticIpOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateElasticIpOutput`](crate::operation::update_elastic_ip::UpdateElasticIpOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateElasticIpOutputBuilder {
     _request_id: Option<String>,
 }

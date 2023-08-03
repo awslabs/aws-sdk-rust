@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`TestWirelessDeviceOutput`](crate::operation::test_wireless_device::TestWirelessDeviceOutput) with field(s):
     ///   - [`result(Option<String>)`](crate::operation::test_wireless_device::TestWirelessDeviceOutput::result): <p>The result returned by the test.</p>
     /// - On failure, responds with [`SdkError<TestWirelessDeviceError>`](crate::operation::test_wireless_device::TestWirelessDeviceError)
-    pub fn test_wireless_device(
-        &self,
-    ) -> crate::operation::test_wireless_device::builders::TestWirelessDeviceFluentBuilder {
-        crate::operation::test_wireless_device::builders::TestWirelessDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn test_wireless_device(&self) -> crate::operation::test_wireless_device::builders::TestWirelessDeviceFluentBuilder {
+        crate::operation::test_wireless_device::builders::TestWirelessDeviceFluentBuilder::new(self.handle.clone())
     }
 }

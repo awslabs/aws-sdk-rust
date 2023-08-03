@@ -38,10 +38,7 @@ impl ListAuditSuppressionsFluentBuilder {
         }
     }
     /// Access the ListAuditSuppressions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_audit_suppressions::builders::ListAuditSuppressionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_audit_suppressions::builders::ListAuditSuppressionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ListAuditSuppressionsFluentBuilder {
             crate::operation::list_audit_suppressions::ListAuditSuppressions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_audit_suppressions::ListAuditSuppressionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_suppressions::ListAuditSuppressionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ListAuditSuppressionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ListAuditSuppressionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_audit_suppressions::ListAuditSuppressionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_audit_suppressions::ListAuditSuppressionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_suppressions::ListAuditSuppressionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ListAuditSuppressionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_audit_suppressions::ListAuditSuppressionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_audit_suppressions::ListAuditSuppressionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_suppressions::ListAuditSuppressionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +106,15 @@ impl ListAuditSuppressionsFluentBuilder {
             crate::operation::list_audit_suppressions::ListAuditSuppressions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_audit_suppressions::ListAuditSuppressionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_audit_suppressions::ListAuditSuppressionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_audit_suppressions::paginator::ListAuditSuppressionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_audit_suppressions::paginator::ListAuditSuppressionsPaginator {
-        crate::operation::list_audit_suppressions::paginator::ListAuditSuppressionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_audit_suppressions::paginator::ListAuditSuppressionsPaginator {
+        crate::operation::list_audit_suppressions::paginator::ListAuditSuppressionsPaginator::new(self.handle, self.inner)
     }
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,17 +136,12 @@ impl ListAuditSuppressionsFluentBuilder {
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIdentifier>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn get_resource_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         self.inner.get_resource_identifier()
     }
     /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>

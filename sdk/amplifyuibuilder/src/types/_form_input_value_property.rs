@@ -9,8 +9,7 @@ pub struct FormInputValueProperty {
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The information to bind fields to data at runtime.</p>
     #[doc(hidden)]
-    pub binding_properties:
-        ::std::option::Option<crate::types::FormInputValuePropertyBindingProperties>,
+    pub binding_properties: ::std::option::Option<crate::types::FormInputValuePropertyBindingProperties>,
     /// <p>A list of form properties to concatenate to create the value to assign to this field property.</p>
     #[doc(hidden)]
     pub concat: ::std::option::Option<::std::vec::Vec<crate::types::FormInputValueProperty>>,
@@ -21,9 +20,7 @@ impl FormInputValueProperty {
         self.value.as_deref()
     }
     /// <p>The information to bind fields to data at runtime.</p>
-    pub fn binding_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FormInputValuePropertyBindingProperties> {
+    pub fn binding_properties(&self) -> ::std::option::Option<&crate::types::FormInputValuePropertyBindingProperties> {
         self.binding_properties.as_ref()
     }
     /// <p>A list of form properties to concatenate to create the value to assign to this field property.</p>
@@ -40,13 +37,10 @@ impl FormInputValueProperty {
 
 /// A builder for [`FormInputValueProperty`](crate::types::FormInputValueProperty).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FormInputValuePropertyBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
-    pub(crate) binding_properties:
-        ::std::option::Option<crate::types::FormInputValuePropertyBindingProperties>,
+    pub(crate) binding_properties: ::std::option::Option<crate::types::FormInputValuePropertyBindingProperties>,
     pub(crate) concat: ::std::option::Option<::std::vec::Vec<crate::types::FormInputValueProperty>>,
 }
 impl FormInputValuePropertyBuilder {
@@ -65,25 +59,17 @@ impl FormInputValuePropertyBuilder {
         &self.value
     }
     /// <p>The information to bind fields to data at runtime.</p>
-    pub fn binding_properties(
-        mut self,
-        input: crate::types::FormInputValuePropertyBindingProperties,
-    ) -> Self {
+    pub fn binding_properties(mut self, input: crate::types::FormInputValuePropertyBindingProperties) -> Self {
         self.binding_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The information to bind fields to data at runtime.</p>
-    pub fn set_binding_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::FormInputValuePropertyBindingProperties>,
-    ) -> Self {
+    pub fn set_binding_properties(mut self, input: ::std::option::Option<crate::types::FormInputValuePropertyBindingProperties>) -> Self {
         self.binding_properties = input;
         self
     }
     /// <p>The information to bind fields to data at runtime.</p>
-    pub fn get_binding_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::FormInputValuePropertyBindingProperties> {
+    pub fn get_binding_properties(&self) -> &::std::option::Option<crate::types::FormInputValuePropertyBindingProperties> {
         &self.binding_properties
     }
     /// Appends an item to `concat`.
@@ -98,17 +84,12 @@ impl FormInputValuePropertyBuilder {
         self
     }
     /// <p>A list of form properties to concatenate to create the value to assign to this field property.</p>
-    pub fn set_concat(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FormInputValueProperty>>,
-    ) -> Self {
+    pub fn set_concat(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FormInputValueProperty>>) -> Self {
         self.concat = input;
         self
     }
     /// <p>A list of form properties to concatenate to create the value to assign to this field property.</p>
-    pub fn get_concat(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FormInputValueProperty>> {
+    pub fn get_concat(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FormInputValueProperty>> {
         &self.concat
     }
     /// Consumes the builder and constructs a [`FormInputValueProperty`](crate::types::FormInputValueProperty).

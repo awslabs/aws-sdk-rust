@@ -82,9 +82,7 @@ impl SecurityGroupRuleRequest {
 
 /// A builder for [`SecurityGroupRuleRequest`](crate::types::SecurityGroupRuleRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityGroupRuleRequestBuilder {
     pub(crate) ip_protocol: ::std::option::Option<::std::string::String>,
     pub(crate) from_port: ::std::option::Option<i32>,
@@ -170,18 +168,12 @@ impl SecurityGroupRuleRequestBuilder {
         &self.cidr_ipv6
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_id = input;
         self
     }
@@ -190,18 +182,12 @@ impl SecurityGroupRuleRequestBuilder {
         &self.prefix_list_id
     }
     /// <p>The ID of the security group that is referenced in the security group rule.</p>
-    pub fn referenced_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn referenced_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.referenced_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the security group that is referenced in the security group rule.</p>
-    pub fn set_referenced_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_referenced_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.referenced_group_id = input;
         self
     }

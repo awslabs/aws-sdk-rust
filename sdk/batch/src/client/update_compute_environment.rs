@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`compute_environment_name(Option<String>)`](crate::operation::update_compute_environment::UpdateComputeEnvironmentOutput::compute_environment_name): <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     ///   - [`compute_environment_arn(Option<String>)`](crate::operation::update_compute_environment::UpdateComputeEnvironmentOutput::compute_environment_arn): <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     /// - On failure, responds with [`SdkError<UpdateComputeEnvironmentError>`](crate::operation::update_compute_environment::UpdateComputeEnvironmentError)
-    pub fn update_compute_environment(
-        &self,
-    ) -> crate::operation::update_compute_environment::builders::UpdateComputeEnvironmentFluentBuilder
-    {
+    pub fn update_compute_environment(&self) -> crate::operation::update_compute_environment::builders::UpdateComputeEnvironmentFluentBuilder {
         crate::operation::update_compute_environment::builders::UpdateComputeEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

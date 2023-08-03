@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`app_bundle_identifier(impl ::std::convert::Into<String>)`](crate::operation::start_ingestion::builders::StartIngestionFluentBuilder::app_bundle_identifier) / [`set_app_bundle_identifier(Option<String>)`](crate::operation::start_ingestion::builders::StartIngestionFluentBuilder::set_app_bundle_identifier): <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
     /// - On success, responds with [`StartIngestionOutput`](crate::operation::start_ingestion::StartIngestionOutput)
     /// - On failure, responds with [`SdkError<StartIngestionError>`](crate::operation::start_ingestion::StartIngestionError)
-    pub fn start_ingestion(
-        &self,
-    ) -> crate::operation::start_ingestion::builders::StartIngestionFluentBuilder {
-        crate::operation::start_ingestion::builders::StartIngestionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_ingestion(&self) -> crate::operation::start_ingestion::builders::StartIngestionFluentBuilder {
+        crate::operation::start_ingestion::builders::StartIngestionFluentBuilder::new(self.handle.clone())
     }
 }

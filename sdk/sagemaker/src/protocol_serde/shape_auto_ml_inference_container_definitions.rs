@@ -2,21 +2,11 @@
 pub(crate) fn de_auto_ml_inference_container_definitions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<
-    Option<
-        ::std::collections::HashMap<
-            crate::types::AutoMlProcessingUnit,
-            ::std::vec::Vec<crate::types::AutoMlContainerDefinition>,
-        >,
-    >,
+    Option<::std::collections::HashMap<crate::types::AutoMlProcessingUnit, ::std::vec::Vec<crate::types::AutoMlContainerDefinition>>>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -26,31 +16,24 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        let key = key
-                            .to_unescaped()
-                            .map(|u| crate::types::AutoMlProcessingUnit::from(u.as_ref()))?;
-                        let value =
-                            crate::protocol_serde::shape_auto_ml_container_definitions::de_auto_ml_container_definitions(tokens)?
-                        ;
+                        let key = key.to_unescaped().map(|u| crate::types::AutoMlProcessingUnit::from(u.as_ref()))?;
+                        let value = crate::protocol_serde::shape_auto_ml_container_definitions::de_auto_ml_container_definitions(tokens)?;
                         if let Some(value) = value {
                             map.insert(key, value);
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(map))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

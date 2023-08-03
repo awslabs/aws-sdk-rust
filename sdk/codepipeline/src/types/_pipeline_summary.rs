@@ -44,9 +44,7 @@ impl PipelineSummary {
 
 /// A builder for [`PipelineSummary`](crate::types::PipelineSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i32>,
@@ -88,10 +86,7 @@ impl PipelineSummaryBuilder {
         self
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -105,10 +100,7 @@ impl PipelineSummaryBuilder {
         self
     }
     /// <p>The date and time of the last update to the pipeline, in timestamp format.</p>
-    pub fn set_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated = input;
         self
     }

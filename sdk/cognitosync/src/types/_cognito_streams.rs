@@ -41,9 +41,7 @@ impl CognitoStreams {
 
 /// A builder for [`CognitoStreams`](crate::types::CognitoStreams).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CognitoStreamsBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl CognitoStreamsBuilder {
     /// Status of the Cognito streams. Valid values are:
     /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p>
     /// <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>
-    pub fn set_streaming_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingStatus>,
-    ) -> Self {
+    pub fn set_streaming_status(mut self, input: ::std::option::Option<crate::types::StreamingStatus>) -> Self {
         self.streaming_status = input;
         self
     }

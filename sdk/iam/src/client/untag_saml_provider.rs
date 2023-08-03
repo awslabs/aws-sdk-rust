@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`tag_keys(Vec<String>)`](crate::operation::untag_saml_provider::builders::UntagSAMLProviderFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_saml_provider::builders::UntagSAMLProviderFluentBuilder::set_tag_keys): <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified SAML identity provider.</p>
     /// - On success, responds with [`UntagSamlProviderOutput`](crate::operation::untag_saml_provider::UntagSamlProviderOutput)
     /// - On failure, responds with [`SdkError<UntagSAMLProviderError>`](crate::operation::untag_saml_provider::UntagSAMLProviderError)
-    pub fn untag_saml_provider(
-        &self,
-    ) -> crate::operation::untag_saml_provider::builders::UntagSAMLProviderFluentBuilder {
-        crate::operation::untag_saml_provider::builders::UntagSAMLProviderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn untag_saml_provider(&self) -> crate::operation::untag_saml_provider::builders::UntagSAMLProviderFluentBuilder {
+        crate::operation::untag_saml_provider::builders::UntagSAMLProviderFluentBuilder::new(self.handle.clone())
     }
 }

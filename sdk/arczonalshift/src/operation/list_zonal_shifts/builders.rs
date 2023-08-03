@@ -10,10 +10,7 @@ impl ListZonalShiftsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_zonal_shifts::ListZonalShiftsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_zonal_shifts::ListZonalShiftsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_zonal_shifts::ListZonalShiftsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_zonal_shifts();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListZonalShiftsFluentBuilder {
         }
     }
     /// Access the ListZonalShifts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_zonal_shifts::builders::ListZonalShiftsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_zonal_shifts::builders::ListZonalShiftsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListZonalShiftsFluentBuilder {
             crate::operation::list_zonal_shifts::ListZonalShifts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_zonal_shifts::ListZonalShiftsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_zonal_shifts::ListZonalShiftsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListZonalShiftsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListZonalShiftsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_zonal_shifts::ListZonalShiftsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_zonal_shifts::ListZonalShiftsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_zonal_shifts::ListZonalShiftsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListZonalShiftsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_zonal_shifts::ListZonalShiftsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_zonal_shifts::ListZonalShiftsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_zonal_shifts::ListZonalShiftsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListZonalShiftsFluentBuilder {
             crate::operation::list_zonal_shifts::ListZonalShifts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_zonal_shifts::ListZonalShiftsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_zonal_shifts::ListZonalShiftsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_zonal_shifts::paginator::ListZonalShiftsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_zonal_shifts::paginator::ListZonalShiftsPaginator {
-        crate::operation::list_zonal_shifts::paginator::ListZonalShiftsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_zonal_shifts::paginator::ListZonalShiftsPaginator {
+        crate::operation::list_zonal_shifts::paginator::ListZonalShiftsPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -165,10 +144,7 @@ impl ListZonalShiftsFluentBuilder {
     /// <li> <p> <b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p> </li>
     /// <li> <p> <b>CANCELED</b>: The zonal shift was canceled.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ZonalShiftStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ZonalShiftStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

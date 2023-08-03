@@ -43,17 +43,14 @@ impl ListJobTemplatesInput {
 }
 impl ListJobTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListJobTemplatesInput`](crate::operation::list_job_templates::ListJobTemplatesInput).
-    pub fn builder() -> crate::operation::list_job_templates::builders::ListJobTemplatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_job_templates::builders::ListJobTemplatesInputBuilder {
         crate::operation::list_job_templates::builders::ListJobTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListJobTemplatesInput`](crate::operation::list_job_templates::ListJobTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobTemplatesInputBuilder {
     pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) list_by: ::std::option::Option<crate::types::JobTemplateListBy>,
@@ -82,10 +79,7 @@ impl ListJobTemplatesInputBuilder {
         self
     }
     /// Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
-    pub fn set_list_by(
-        mut self,
-        input: ::std::option::Option<crate::types::JobTemplateListBy>,
-    ) -> Self {
+    pub fn set_list_by(mut self, input: ::std::option::Option<crate::types::JobTemplateListBy>) -> Self {
         self.list_by = input;
         self
     }
@@ -138,18 +132,13 @@ impl ListJobTemplatesInputBuilder {
     /// Consumes the builder and constructs a [`ListJobTemplatesInput`](crate::operation::list_job_templates::ListJobTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_job_templates::ListJobTemplatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_job_templates::ListJobTemplatesInput {
-                category: self.category,
-                list_by: self.list_by,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                order: self.order,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_job_templates::ListJobTemplatesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_job_templates::ListJobTemplatesInput {
+            category: self.category,
+            list_by: self.list_by,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            order: self.order,
+        })
     }
 }

@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`storage_configs(Option<Vec<InstanceStorageConfig>>)`](crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput::storage_configs): <p>A valid storage type.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListInstanceStorageConfigsError>`](crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError)
-    pub fn list_instance_storage_configs(&self) -> crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsFluentBuilder{
+    pub fn list_instance_storage_configs(
+        &self,
+    ) -> crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsFluentBuilder {
         crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsFluentBuilder::new(self.handle.clone())
     }
 }

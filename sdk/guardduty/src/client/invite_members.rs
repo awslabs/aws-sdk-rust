@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`InviteMembersOutput`](crate::operation::invite_members::InviteMembersOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::operation::invite_members::InviteMembersOutput::unprocessed_accounts): <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     /// - On failure, responds with [`SdkError<InviteMembersError>`](crate::operation::invite_members::InviteMembersError)
-    pub fn invite_members(
-        &self,
-    ) -> crate::operation::invite_members::builders::InviteMembersFluentBuilder {
-        crate::operation::invite_members::builders::InviteMembersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn invite_members(&self) -> crate::operation::invite_members::builders::InviteMembersFluentBuilder {
+        crate::operation::invite_members::builders::InviteMembersFluentBuilder::new(self.handle.clone())
     }
 }

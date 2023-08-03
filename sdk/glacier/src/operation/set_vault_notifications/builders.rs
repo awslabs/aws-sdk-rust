@@ -45,10 +45,7 @@ impl SetVaultNotificationsFluentBuilder {
         }
     }
     /// Access the SetVaultNotifications as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_vault_notifications::builders::SetVaultNotificationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_vault_notifications::builders::SetVaultNotificationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +57,7 @@ impl SetVaultNotificationsFluentBuilder {
             crate::operation::set_vault_notifications::SetVaultNotifications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_vault_notifications::SetVaultNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_vault_notifications::SetVaultNotificationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +67,7 @@ impl SetVaultNotificationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +76,7 @@ impl SetVaultNotificationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_vault_notifications::SetVaultNotificationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_vault_notifications::SetVaultNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_vault_notifications::SetVaultNotificationsError>,
     > {
         let op = self
             .inner
@@ -109,9 +99,7 @@ impl SetVaultNotificationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_vault_notifications::SetVaultNotificationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_vault_notifications::SetVaultNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_vault_notifications::SetVaultNotificationsError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +113,7 @@ impl SetVaultNotificationsFluentBuilder {
             crate::operation::set_vault_notifications::SetVaultNotifications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_vault_notifications::SetVaultNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_vault_notifications::SetVaultNotificationsError>,
     > {
         self.customize_middleware().await
     }
@@ -160,25 +146,17 @@ impl SetVaultNotificationsFluentBuilder {
         self.inner.get_vault_name()
     }
     /// <p>Provides options for specifying notification configuration.</p>
-    pub fn vault_notification_config(
-        mut self,
-        input: crate::types::VaultNotificationConfig,
-    ) -> Self {
+    pub fn vault_notification_config(mut self, input: crate::types::VaultNotificationConfig) -> Self {
         self.inner = self.inner.vault_notification_config(input);
         self
     }
     /// <p>Provides options for specifying notification configuration.</p>
-    pub fn set_vault_notification_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VaultNotificationConfig>,
-    ) -> Self {
+    pub fn set_vault_notification_config(mut self, input: ::std::option::Option<crate::types::VaultNotificationConfig>) -> Self {
         self.inner = self.inner.set_vault_notification_config(input);
         self
     }
     /// <p>Provides options for specifying notification configuration.</p>
-    pub fn get_vault_notification_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::VaultNotificationConfig> {
+    pub fn get_vault_notification_config(&self) -> &::std::option::Option<crate::types::VaultNotificationConfig> {
         self.inner.get_vault_notification_config()
     }
 }

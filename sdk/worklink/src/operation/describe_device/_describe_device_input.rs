@@ -29,9 +29,7 @@ impl DescribeDeviceInput {
 
 /// A builder for [`DescribeDeviceInput`](crate::operation::describe_device::DescribeDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeviceInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DescribeDeviceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDeviceInput`](crate::operation::describe_device::DescribeDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_device::DescribeDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_device::DescribeDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_device::DescribeDeviceInput {
             fleet_arn: self.fleet_arn,
             device_id: self.device_id,

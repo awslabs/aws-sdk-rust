@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`StopInferenceExperimentOutput`](crate::operation::stop_inference_experiment::StopInferenceExperimentOutput) with field(s):
     ///   - [`inference_experiment_arn(Option<String>)`](crate::operation::stop_inference_experiment::StopInferenceExperimentOutput::inference_experiment_arn): <p>The ARN of the stopped inference experiment.</p>
     /// - On failure, responds with [`SdkError<StopInferenceExperimentError>`](crate::operation::stop_inference_experiment::StopInferenceExperimentError)
-    pub fn stop_inference_experiment(
-        &self,
-    ) -> crate::operation::stop_inference_experiment::builders::StopInferenceExperimentFluentBuilder
-    {
+    pub fn stop_inference_experiment(&self) -> crate::operation::stop_inference_experiment::builders::StopInferenceExperimentFluentBuilder {
         crate::operation::stop_inference_experiment::builders::StopInferenceExperimentFluentBuilder::new(self.handle.clone())
     }
 }

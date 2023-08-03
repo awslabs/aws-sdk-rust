@@ -10,10 +10,7 @@ impl UpdateApplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_application::UpdateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_application();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl UpdateApplicationFluentBuilder {
         }
     }
     /// Access the UpdateApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_application::builders::UpdateApplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_application::builders::UpdateApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl UpdateApplicationFluentBuilder {
             crate::operation::update_application::UpdateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl UpdateApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl UpdateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application::UpdateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl UpdateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application::UpdateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +105,17 @@ impl UpdateApplicationFluentBuilder {
             crate::operation::update_application::UpdateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the application to update.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of the application to update.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -160,47 +138,31 @@ impl UpdateApplicationFluentBuilder {
         self.inner.get_current_application_version_id()
     }
     /// <p>Describes application configuration updates.</p>
-    pub fn application_configuration_update(
-        mut self,
-        input: crate::types::ApplicationConfigurationUpdate,
-    ) -> Self {
+    pub fn application_configuration_update(mut self, input: crate::types::ApplicationConfigurationUpdate) -> Self {
         self.inner = self.inner.application_configuration_update(input);
         self
     }
     /// <p>Describes application configuration updates.</p>
-    pub fn set_application_configuration_update(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationConfigurationUpdate>,
-    ) -> Self {
+    pub fn set_application_configuration_update(mut self, input: ::std::option::Option<crate::types::ApplicationConfigurationUpdate>) -> Self {
         self.inner = self.inner.set_application_configuration_update(input);
         self
     }
     /// <p>Describes application configuration updates.</p>
-    pub fn get_application_configuration_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationConfigurationUpdate> {
+    pub fn get_application_configuration_update(&self) -> &::std::option::Option<crate::types::ApplicationConfigurationUpdate> {
         self.inner.get_application_configuration_update()
     }
     /// <p>Describes updates to the service execution role.</p>
-    pub fn service_execution_role_update(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_execution_role_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_execution_role_update(input.into());
         self
     }
     /// <p>Describes updates to the service execution role.</p>
-    pub fn set_service_execution_role_update(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_execution_role_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_execution_role_update(input);
         self
     }
     /// <p>Describes updates to the service execution role.</p>
-    pub fn get_service_execution_role_update(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_service_execution_role_update(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_execution_role_update()
     }
     /// <p>Describes updates to the application's starting parameters.</p>
@@ -209,17 +171,12 @@ impl UpdateApplicationFluentBuilder {
         self
     }
     /// <p>Describes updates to the application's starting parameters.</p>
-    pub fn set_run_configuration_update(
-        mut self,
-        input: ::std::option::Option<crate::types::RunConfigurationUpdate>,
-    ) -> Self {
+    pub fn set_run_configuration_update(mut self, input: ::std::option::Option<crate::types::RunConfigurationUpdate>) -> Self {
         self.inner = self.inner.set_run_configuration_update(input);
         self
     }
     /// <p>Describes updates to the application's starting parameters.</p>
-    pub fn get_run_configuration_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::RunConfigurationUpdate> {
+    pub fn get_run_configuration_update(&self) -> &::std::option::Option<crate::types::RunConfigurationUpdate> {
         self.inner.get_run_configuration_update()
     }
     /// Appends an item to `CloudWatchLoggingOptionUpdates`.
@@ -227,10 +184,7 @@ impl UpdateApplicationFluentBuilder {
     /// To override the contents of this collection use [`set_cloud_watch_logging_option_updates`](Self::set_cloud_watch_logging_option_updates).
     ///
     /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
-    pub fn cloud_watch_logging_option_updates(
-        mut self,
-        input: crate::types::CloudWatchLoggingOptionUpdate,
-    ) -> Self {
+    pub fn cloud_watch_logging_option_updates(mut self, input: crate::types::CloudWatchLoggingOptionUpdate) -> Self {
         self.inner = self.inner.cloud_watch_logging_option_updates(input);
         self
     }
@@ -243,24 +197,16 @@ impl UpdateApplicationFluentBuilder {
         self
     }
     /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
-    pub fn get_cloud_watch_logging_option_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>> {
+    pub fn get_cloud_watch_logging_option_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>> {
         self.inner.get_cloud_watch_logging_option_updates()
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    pub fn conditional_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conditional_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conditional_token(input.into());
         self
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    pub fn set_conditional_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conditional_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_conditional_token(input);
         self
     }

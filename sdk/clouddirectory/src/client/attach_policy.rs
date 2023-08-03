@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`object_reference(ObjectReference)`](crate::operation::attach_policy::builders::AttachPolicyFluentBuilder::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::operation::attach_policy::builders::AttachPolicyFluentBuilder::set_object_reference): <p>The reference that identifies the object to which the policy will be attached.</p>
     /// - On success, responds with [`AttachPolicyOutput`](crate::operation::attach_policy::AttachPolicyOutput)
     /// - On failure, responds with [`SdkError<AttachPolicyError>`](crate::operation::attach_policy::AttachPolicyError)
-    pub fn attach_policy(
-        &self,
-    ) -> crate::operation::attach_policy::builders::AttachPolicyFluentBuilder {
-        crate::operation::attach_policy::builders::AttachPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn attach_policy(&self) -> crate::operation::attach_policy::builders::AttachPolicyFluentBuilder {
+        crate::operation::attach_policy::builders::AttachPolicyFluentBuilder::new(self.handle.clone())
     }
 }

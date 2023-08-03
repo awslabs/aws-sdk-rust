@@ -43,7 +43,7 @@ impl UpdateSqlInjectionMatchSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSqlInjectionMatchSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_sql_injection_match_set::builders::UpdateSqlInjectionMatchSetInputBuilder,
+    inner: crate::operation::update_sql_injection_match_set::builders::UpdateSqlInjectionMatchSetInputBuilder,
 }
 impl UpdateSqlInjectionMatchSetFluentBuilder {
     /// Creates a new `UpdateSqlInjectionMatchSet`.
@@ -54,7 +54,7 @@ impl UpdateSqlInjectionMatchSetFluentBuilder {
         }
     }
     /// Access the UpdateSqlInjectionMatchSet as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_sql_injection_match_set::builders::UpdateSqlInjectionMatchSetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_sql_injection_match_set::builders::UpdateSqlInjectionMatchSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -66,9 +66,7 @@ impl UpdateSqlInjectionMatchSetFluentBuilder {
             crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -78,10 +76,7 @@ impl UpdateSqlInjectionMatchSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -90,9 +85,7 @@ impl UpdateSqlInjectionMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError>,
     > {
         let op = self
             .inner
@@ -115,9 +108,7 @@ impl UpdateSqlInjectionMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError>,
     > {
         self.send_middleware().await
     }
@@ -131,25 +122,17 @@ impl UpdateSqlInjectionMatchSetFluentBuilder {
             crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn sql_injection_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sql_injection_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sql_injection_match_set_id(input.into());
         self
     }
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn set_sql_injection_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sql_injection_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sql_injection_match_set_id(input);
         self
     }
@@ -191,10 +174,7 @@ impl UpdateSqlInjectionMatchSetFluentBuilder {
     /// <li> <p> <code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
         self
     }
@@ -204,9 +184,7 @@ impl UpdateSqlInjectionMatchSetFluentBuilder {
     /// <li> <p> <code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn get_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetUpdate>> {
         self.inner.get_updates()
     }
 }

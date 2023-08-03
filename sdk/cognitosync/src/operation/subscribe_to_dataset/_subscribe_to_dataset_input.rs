@@ -37,17 +37,14 @@ impl SubscribeToDatasetInput {
 }
 impl SubscribeToDatasetInput {
     /// Creates a new builder-style object to manufacture [`SubscribeToDatasetInput`](crate::operation::subscribe_to_dataset::SubscribeToDatasetInput).
-    pub fn builder(
-    ) -> crate::operation::subscribe_to_dataset::builders::SubscribeToDatasetInputBuilder {
+    pub fn builder() -> crate::operation::subscribe_to_dataset::builders::SubscribeToDatasetInputBuilder {
         crate::operation::subscribe_to_dataset::builders::SubscribeToDatasetInputBuilder::default()
     }
 }
 
 /// A builder for [`SubscribeToDatasetInput`](crate::operation::subscribe_to_dataset::SubscribeToDatasetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubscribeToDatasetInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
@@ -56,18 +53,12 @@ pub struct SubscribeToDatasetInputBuilder {
 }
 impl SubscribeToDatasetInputBuilder {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -120,17 +111,12 @@ impl SubscribeToDatasetInputBuilder {
     /// Consumes the builder and constructs a [`SubscribeToDatasetInput`](crate::operation::subscribe_to_dataset::SubscribeToDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::subscribe_to_dataset::SubscribeToDatasetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::subscribe_to_dataset::SubscribeToDatasetInput {
-                identity_pool_id: self.identity_pool_id,
-                identity_id: self.identity_id,
-                dataset_name: self.dataset_name,
-                device_id: self.device_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::subscribe_to_dataset::SubscribeToDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::subscribe_to_dataset::SubscribeToDatasetInput {
+            identity_pool_id: self.identity_pool_id,
+            identity_id: self.identity_id,
+            dataset_name: self.dataset_name,
+            device_id: self.device_id,
+        })
     }
 }

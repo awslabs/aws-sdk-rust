@@ -23,9 +23,7 @@ impl SseSpecification {
 
 /// A builder for [`SseSpecification`](crate::types::SseSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SseSpecificationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl SseSpecificationBuilder {
     }
     /// Consumes the builder and constructs a [`SseSpecification`](crate::types::SseSpecification).
     pub fn build(self) -> crate::types::SseSpecification {
-        crate::types::SseSpecification {
-            enabled: self.enabled,
-        }
+        crate::types::SseSpecification { enabled: self.enabled }
     }
 }

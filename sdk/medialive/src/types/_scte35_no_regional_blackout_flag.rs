@@ -38,13 +38,7 @@
 /// Corresponds to the no_regional_blackout_flag parameter. A value of REGIONAL_BLACKOUT corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Scte35NoRegionalBlackoutFlag {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Scte35NoRegionalBlackoutFlag {
         match s {
             "NO_REGIONAL_BLACKOUT" => Scte35NoRegionalBlackoutFlag::NoRegionalBlackout,
             "REGIONAL_BLACKOUT" => Scte35NoRegionalBlackoutFlag::RegionalBlackout,
-            other => Scte35NoRegionalBlackoutFlag::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Scte35NoRegionalBlackoutFlag::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

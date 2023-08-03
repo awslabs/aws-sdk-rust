@@ -15,16 +15,14 @@ impl GetAppValidationConfigurationInput {
 }
 impl GetAppValidationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetAppValidationConfigurationInput`](crate::operation::get_app_validation_configuration::GetAppValidationConfigurationInput).
-    pub fn builder() -> crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationInputBuilder {
         crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAppValidationConfigurationInput`](crate::operation::get_app_validation_configuration::GetAppValidationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppValidationConfigurationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,6 @@ impl GetAppValidationConfigurationInputBuilder {
         crate::operation::get_app_validation_configuration::GetAppValidationConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_app_validation_configuration::GetAppValidationConfigurationInput {
-                app_id: self.app_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_app_validation_configuration::GetAppValidationConfigurationInput { app_id: self.app_id })
     }
 }

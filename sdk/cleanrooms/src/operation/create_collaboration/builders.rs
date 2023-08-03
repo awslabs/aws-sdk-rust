@@ -10,10 +10,7 @@ impl CreateCollaborationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_collaboration::CreateCollaborationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_collaboration::CreateCollaborationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_collaboration::CreateCollaborationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_collaboration();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateCollaborationFluentBuilder {
         }
     }
     /// Access the CreateCollaboration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_collaboration::builders::CreateCollaborationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_collaboration::builders::CreateCollaborationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateCollaborationFluentBuilder {
             crate::operation::create_collaboration::CreateCollaboration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_collaboration::CreateCollaborationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_collaboration::CreateCollaborationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateCollaborationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateCollaborationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_collaboration::CreateCollaborationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_collaboration::CreateCollaborationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_collaboration::CreateCollaborationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateCollaborationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_collaboration::CreateCollaborationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_collaboration::CreateCollaborationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_collaboration::CreateCollaborationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateCollaborationFluentBuilder {
             crate::operation::create_collaboration::CreateCollaboration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_collaboration::CreateCollaborationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_collaboration::CreateCollaborationError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +116,12 @@ impl CreateCollaborationFluentBuilder {
         self
     }
     /// <p>A list of initial members, not including the creator. This list is immutable.</p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberSpecification>>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberSpecification>>) -> Self {
         self.inner = self.inner.set_members(input);
         self
     }
     /// <p>A list of initial members, not including the creator. This list is immutable.</p>
-    pub fn get_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberSpecification>> {
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberSpecification>> {
         self.inner.get_members()
     }
     /// <p>The display name for a collaboration.</p>
@@ -183,32 +162,21 @@ impl CreateCollaborationFluentBuilder {
         self
     }
     /// <p>The abilities granted to the collaboration creator.</p>
-    pub fn set_creator_member_abilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
-    ) -> Self {
+    pub fn set_creator_member_abilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>) -> Self {
         self.inner = self.inner.set_creator_member_abilities(input);
         self
     }
     /// <p>The abilities granted to the collaboration creator.</p>
-    pub fn get_creator_member_abilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
+    pub fn get_creator_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
         self.inner.get_creator_member_abilities()
     }
     /// <p>The display name of the collaboration creator.</p>
-    pub fn creator_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_display_name(input.into());
         self
     }
     /// <p>The display name of the collaboration creator.</p>
-    pub fn set_creator_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_display_name(input);
         self
     }
@@ -222,17 +190,12 @@ impl CreateCollaborationFluentBuilder {
         self
     }
     /// <p>The settings for client-side encryption with Cryptographic Computing for Clean Rooms.</p>
-    pub fn set_data_encryption_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DataEncryptionMetadata>,
-    ) -> Self {
+    pub fn set_data_encryption_metadata(mut self, input: ::std::option::Option<crate::types::DataEncryptionMetadata>) -> Self {
         self.inner = self.inner.set_data_encryption_metadata(input);
         self
     }
     /// <p>The settings for client-side encryption with Cryptographic Computing for Clean Rooms.</p>
-    pub fn get_data_encryption_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataEncryptionMetadata> {
+    pub fn get_data_encryption_metadata(&self) -> &::std::option::Option<crate::types::DataEncryptionMetadata> {
         self.inner.get_data_encryption_metadata()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
@@ -241,17 +204,12 @@ impl CreateCollaborationFluentBuilder {
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn set_query_log_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CollaborationQueryLogStatus>,
-    ) -> Self {
+    pub fn set_query_log_status(mut self, input: ::std::option::Option<crate::types::CollaborationQueryLogStatus>) -> Self {
         self.inner = self.inner.set_query_log_status(input);
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn get_query_log_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::CollaborationQueryLogStatus> {
+    pub fn get_query_log_status(&self) -> &::std::option::Option<crate::types::CollaborationQueryLogStatus> {
         self.inner.get_query_log_status()
     }
     /// Adds a key-value pair to `tags`.
@@ -259,30 +217,17 @@ impl CreateCollaborationFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

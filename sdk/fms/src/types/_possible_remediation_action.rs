@@ -9,8 +9,7 @@ pub struct PossibleRemediationAction {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ordered list of remediation actions.</p>
     #[doc(hidden)]
-    pub ordered_remediation_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::RemediationActionWithOrder>>,
+    pub ordered_remediation_actions: ::std::option::Option<::std::vec::Vec<crate::types::RemediationActionWithOrder>>,
     /// <p>Information about whether an action is taken by default.</p>
     #[doc(hidden)]
     pub is_default_action: bool,
@@ -21,9 +20,7 @@ impl PossibleRemediationAction {
         self.description.as_deref()
     }
     /// <p>The ordered list of remediation actions.</p>
-    pub fn ordered_remediation_actions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RemediationActionWithOrder]> {
+    pub fn ordered_remediation_actions(&self) -> ::std::option::Option<&[crate::types::RemediationActionWithOrder]> {
         self.ordered_remediation_actions.as_deref()
     }
     /// <p>Information about whether an action is taken by default.</p>
@@ -40,13 +37,10 @@ impl PossibleRemediationAction {
 
 /// A builder for [`PossibleRemediationAction`](crate::types::PossibleRemediationAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PossibleRemediationActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) ordered_remediation_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::RemediationActionWithOrder>>,
+    pub(crate) ordered_remediation_actions: ::std::option::Option<::std::vec::Vec<crate::types::RemediationActionWithOrder>>,
     pub(crate) is_default_action: ::std::option::Option<bool>,
 }
 impl PossibleRemediationActionBuilder {
@@ -69,10 +63,7 @@ impl PossibleRemediationActionBuilder {
     /// To override the contents of this collection use [`set_ordered_remediation_actions`](Self::set_ordered_remediation_actions).
     ///
     /// <p>The ordered list of remediation actions.</p>
-    pub fn ordered_remediation_actions(
-        mut self,
-        input: crate::types::RemediationActionWithOrder,
-    ) -> Self {
+    pub fn ordered_remediation_actions(mut self, input: crate::types::RemediationActionWithOrder) -> Self {
         let mut v = self.ordered_remediation_actions.unwrap_or_default();
         v.push(input);
         self.ordered_remediation_actions = ::std::option::Option::Some(v);
@@ -87,9 +78,7 @@ impl PossibleRemediationActionBuilder {
         self
     }
     /// <p>The ordered list of remediation actions.</p>
-    pub fn get_ordered_remediation_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationActionWithOrder>> {
+    pub fn get_ordered_remediation_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationActionWithOrder>> {
         &self.ordered_remediation_actions
     }
     /// <p>Information about whether an action is taken by default.</p>

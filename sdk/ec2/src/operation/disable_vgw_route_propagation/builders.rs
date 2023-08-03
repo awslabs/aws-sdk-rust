@@ -26,7 +26,7 @@ impl DisableVgwRoutePropagationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableVgwRoutePropagationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disable_vgw_route_propagation::builders::DisableVgwRoutePropagationInputBuilder,
+    inner: crate::operation::disable_vgw_route_propagation::builders::DisableVgwRoutePropagationInputBuilder,
 }
 impl DisableVgwRoutePropagationFluentBuilder {
     /// Creates a new `DisableVgwRoutePropagation`.
@@ -37,7 +37,7 @@ impl DisableVgwRoutePropagationFluentBuilder {
         }
     }
     /// Access the DisableVgwRoutePropagation as a reference.
-    pub fn as_input(&self) -> &crate::operation::disable_vgw_route_propagation::builders::DisableVgwRoutePropagationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disable_vgw_route_propagation::builders::DisableVgwRoutePropagationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisableVgwRoutePropagationFluentBuilder {
             crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisableVgwRoutePropagationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisableVgwRoutePropagationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisableVgwRoutePropagationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DisableVgwRoutePropagationFluentBuilder {
             crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DisableVgwRoutePropagationFluentBuilder {
         self.inner.get_gateway_id()
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_table_id(input.into());
         self
     }
     /// <p>The ID of the route table.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_table_id(input);
         self
     }

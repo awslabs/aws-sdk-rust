@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ShardFilterType {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for ShardFilterType {
             "AT_TRIM_HORIZON" => ShardFilterType::AtTrimHorizon,
             "FROM_TIMESTAMP" => ShardFilterType::FromTimestamp,
             "FROM_TRIM_HORIZON" => ShardFilterType::FromTrimHorizon,
-            other => {
-                ShardFilterType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ShardFilterType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

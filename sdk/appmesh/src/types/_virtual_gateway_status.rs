@@ -23,9 +23,7 @@ impl VirtualGatewayStatus {
 
 /// A builder for [`VirtualGatewayStatus`](crate::types::VirtualGatewayStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualGatewayStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::VirtualGatewayStatusCode>,
 }
@@ -36,10 +34,7 @@ impl VirtualGatewayStatusBuilder {
         self
     }
     /// <p>The current status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualGatewayStatusCode>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::VirtualGatewayStatusCode>) -> Self {
         self.status = input;
         self
     }
@@ -49,8 +44,6 @@ impl VirtualGatewayStatusBuilder {
     }
     /// Consumes the builder and constructs a [`VirtualGatewayStatus`](crate::types::VirtualGatewayStatus).
     pub fn build(self) -> crate::types::VirtualGatewayStatus {
-        crate::types::VirtualGatewayStatus {
-            status: self.status,
-        }
+        crate::types::VirtualGatewayStatus { status: self.status }
     }
 }

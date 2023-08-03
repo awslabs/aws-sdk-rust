@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`CreateMultiRegionAccessPointOutput`](crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointOutput) with field(s):
     ///   - [`request_token_arn(Option<String>)`](crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointOutput::request_token_arn): <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
     /// - On failure, responds with [`SdkError<CreateMultiRegionAccessPointError>`](crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointError)
-    pub fn create_multi_region_access_point(&self) -> crate::operation::create_multi_region_access_point::builders::CreateMultiRegionAccessPointFluentBuilder{
+    pub fn create_multi_region_access_point(
+        &self,
+    ) -> crate::operation::create_multi_region_access_point::builders::CreateMultiRegionAccessPointFluentBuilder {
         crate::operation::create_multi_region_access_point::builders::CreateMultiRegionAccessPointFluentBuilder::new(self.handle.clone())
     }
 }

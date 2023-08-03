@@ -43,16 +43,16 @@ impl EnableAwsNetworkPerformanceMetricSubscriptionInput {
 }
 impl EnableAwsNetworkPerformanceMetricSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`EnableAwsNetworkPerformanceMetricSubscriptionInput`](crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionInput).
-    pub fn builder() -> crate::operation::enable_aws_network_performance_metric_subscription::builders::EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::enable_aws_network_performance_metric_subscription::builders::EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder
+    {
         crate::operation::enable_aws_network_performance_metric_subscription::builders::EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableAwsNetworkPerformanceMetricSubscriptionInput`](crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,
@@ -109,10 +109,7 @@ impl EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
         self
     }
     /// <p>The statistic used for the enabled subscription.</p>
-    pub fn set_statistic(
-        mut self,
-        input: ::std::option::Option<crate::types::StatisticType>,
-    ) -> Self {
+    pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::StatisticType>) -> Self {
         self.statistic = input;
         self
     }
@@ -135,20 +132,20 @@ impl EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`EnableAwsNetworkPerformanceMetricSubscriptionInput`](crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionInput {
-                source: self.source
-                ,
-                destination: self.destination
-                ,
-                metric: self.metric
-                ,
-                statistic: self.statistic
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                source: self.source,
+                destination: self.destination,
+                metric: self.metric,
+                statistic: self.statistic,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

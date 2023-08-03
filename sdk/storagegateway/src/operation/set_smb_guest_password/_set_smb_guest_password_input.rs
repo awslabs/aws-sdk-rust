@@ -31,10 +31,8 @@ impl ::std::fmt::Debug for SetSmbGuestPasswordInput {
 }
 impl SetSmbGuestPasswordInput {
     /// Creates a new builder-style object to manufacture [`SetSmbGuestPasswordInput`](crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput).
-    pub fn builder(
-    ) -> crate::operation::set_smb_guest_password::builders::SetSmbGuestPasswordInputBuilder {
-        crate::operation::set_smb_guest_password::builders::SetSmbGuestPasswordInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::set_smb_guest_password::builders::SetSmbGuestPasswordInputBuilder {
+        crate::operation::set_smb_guest_password::builders::SetSmbGuestPasswordInputBuilder::default()
     }
 }
 
@@ -77,16 +75,12 @@ impl SetSmbGuestPasswordInputBuilder {
     /// Consumes the builder and constructs a [`SetSmbGuestPasswordInput`](crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput {
-                gateway_arn: self.gateway_arn,
-                password: self.password,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput {
+            gateway_arn: self.gateway_arn,
+            password: self.password,
+        })
     }
 }
 impl ::std::fmt::Debug for SetSmbGuestPasswordInputBuilder {

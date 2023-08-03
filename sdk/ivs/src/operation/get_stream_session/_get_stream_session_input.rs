@@ -22,17 +22,14 @@ impl GetStreamSessionInput {
 }
 impl GetStreamSessionInput {
     /// Creates a new builder-style object to manufacture [`GetStreamSessionInput`](crate::operation::get_stream_session::GetStreamSessionInput).
-    pub fn builder() -> crate::operation::get_stream_session::builders::GetStreamSessionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_stream_session::builders::GetStreamSessionInputBuilder {
         crate::operation::get_stream_session::builders::GetStreamSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetStreamSessionInput`](crate::operation::get_stream_session::GetStreamSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStreamSessionInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl GetStreamSessionInputBuilder {
     /// Consumes the builder and constructs a [`GetStreamSessionInput`](crate::operation::get_stream_session::GetStreamSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_stream_session::GetStreamSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_stream_session::GetStreamSessionInput {
-                channel_arn: self.channel_arn,
-                stream_id: self.stream_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_stream_session::GetStreamSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_stream_session::GetStreamSessionInput {
+            channel_arn: self.channel_arn,
+            stream_id: self.stream_id,
+        })
     }
 }

@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRoleDescriptionOutput`](crate::operation::update_role_description::UpdateRoleDescriptionOutput) with field(s):
     ///   - [`role(Option<Role>)`](crate::operation::update_role_description::UpdateRoleDescriptionOutput::role): <p>A structure that contains details about the modified role.</p>
     /// - On failure, responds with [`SdkError<UpdateRoleDescriptionError>`](crate::operation::update_role_description::UpdateRoleDescriptionError)
-    pub fn update_role_description(
-        &self,
-    ) -> crate::operation::update_role_description::builders::UpdateRoleDescriptionFluentBuilder
-    {
-        crate::operation::update_role_description::builders::UpdateRoleDescriptionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_role_description(&self) -> crate::operation::update_role_description::builders::UpdateRoleDescriptionFluentBuilder {
+        crate::operation::update_role_description::builders::UpdateRoleDescriptionFluentBuilder::new(self.handle.clone())
     }
 }

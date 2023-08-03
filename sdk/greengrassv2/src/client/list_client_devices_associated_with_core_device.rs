@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`associated_client_devices(Option<Vec<AssociatedClientDevice>>)`](crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceOutput::associated_client_devices): <p>A list that describes the client devices that are associated with the core device.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListClientDevicesAssociatedWithCoreDeviceError>`](crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceError)
-    pub fn list_client_devices_associated_with_core_device(&self) -> crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceFluentBuilder{
-        crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceFluentBuilder::new(self.handle.clone())
+    pub fn list_client_devices_associated_with_core_device(
+        &self,
+    ) -> crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceFluentBuilder {
+        crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

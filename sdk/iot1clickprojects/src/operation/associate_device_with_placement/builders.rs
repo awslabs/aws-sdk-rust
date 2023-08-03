@@ -26,7 +26,7 @@ impl AssociateDeviceWithPlacementInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateDeviceWithPlacementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_device_with_placement::builders::AssociateDeviceWithPlacementInputBuilder,
+    inner: crate::operation::associate_device_with_placement::builders::AssociateDeviceWithPlacementInputBuilder,
 }
 impl AssociateDeviceWithPlacementFluentBuilder {
     /// Creates a new `AssociateDeviceWithPlacement`.
@@ -37,7 +37,7 @@ impl AssociateDeviceWithPlacementFluentBuilder {
         }
     }
     /// Access the AssociateDeviceWithPlacement as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_device_with_placement::builders::AssociateDeviceWithPlacementInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_device_with_placement::builders::AssociateDeviceWithPlacementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AssociateDeviceWithPlacementFluentBuilder {
             crate::operation::associate_device_with_placement::AssociateDeviceWithPlacement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AssociateDeviceWithPlacementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AssociateDeviceWithPlacementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AssociateDeviceWithPlacementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl AssociateDeviceWithPlacementFluentBuilder {
             crate::operation::associate_device_with_placement::AssociateDeviceWithPlacement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl AssociateDeviceWithPlacementFluentBuilder {
         self.inner.get_project_name()
     }
     /// <p>The name of the placement in which to associate the device.</p>
-    pub fn placement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn placement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.placement_name(input.into());
         self
     }
     /// <p>The name of the placement in which to associate the device.</p>
-    pub fn set_placement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_placement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_placement_name(input);
         self
     }
@@ -169,18 +152,12 @@ impl AssociateDeviceWithPlacementFluentBuilder {
         self.inner.get_device_id()
     }
     /// <p>The device template name to associate with the device ID.</p>
-    pub fn device_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_template_name(input.into());
         self
     }
     /// <p>The device template name to associate with the device ID.</p>
-    pub fn set_device_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_template_name(input);
         self
     }

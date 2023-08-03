@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`vocabulary_summary_list(Option<Vec<VocabularySummary>>)`](crate::operation::search_vocabularies::SearchVocabulariesOutput::vocabulary_summary_list): <p>The list of the available custom vocabularies.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_vocabularies::SearchVocabulariesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<SearchVocabulariesError>`](crate::operation::search_vocabularies::SearchVocabulariesError)
-    pub fn search_vocabularies(
-        &self,
-    ) -> crate::operation::search_vocabularies::builders::SearchVocabulariesFluentBuilder {
-        crate::operation::search_vocabularies::builders::SearchVocabulariesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_vocabularies(&self) -> crate::operation::search_vocabularies::builders::SearchVocabulariesFluentBuilder {
+        crate::operation::search_vocabularies::builders::SearchVocabulariesFluentBuilder::new(self.handle.clone())
     }
 }

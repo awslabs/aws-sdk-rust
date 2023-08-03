@@ -24,16 +24,14 @@ impl DescribeCertificateAuthorityAuditReportInput {
 }
 impl DescribeCertificateAuthorityAuditReportInput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificateAuthorityAuditReportInput`](crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportInput).
-    pub fn builder() -> crate::operation::describe_certificate_authority_audit_report::builders::DescribeCertificateAuthorityAuditReportInputBuilder{
+    pub fn builder() -> crate::operation::describe_certificate_authority_audit_report::builders::DescribeCertificateAuthorityAuditReportInputBuilder {
         crate::operation::describe_certificate_authority_audit_report::builders::DescribeCertificateAuthorityAuditReportInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCertificateAuthorityAuditReportInput`](crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCertificateAuthorityAuditReportInputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) audit_report_id: ::std::option::Option<::std::string::String>,
@@ -41,19 +39,13 @@ pub struct DescribeCertificateAuthorityAuditReportInputBuilder {
 impl DescribeCertificateAuthorityAuditReportInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the private CA. This must be of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the private CA. This must be of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_arn = input;
         self
     }
@@ -63,18 +55,12 @@ impl DescribeCertificateAuthorityAuditReportInputBuilder {
         &self.certificate_authority_arn
     }
     /// <p>The report ID returned by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a> action.</p>
-    pub fn audit_report_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audit_report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audit_report_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The report ID returned by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a> action.</p>
-    pub fn set_audit_report_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audit_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audit_report_id = input;
         self
     }
@@ -83,14 +69,17 @@ impl DescribeCertificateAuthorityAuditReportInputBuilder {
         &self.audit_report_id
     }
     /// Consumes the builder and constructs a [`DescribeCertificateAuthorityAuditReportInput`](crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportInput {
-                certificate_authority_arn: self.certificate_authority_arn
-                ,
-                audit_report_id: self.audit_report_id
-                ,
-            }
+                certificate_authority_arn: self.certificate_authority_arn,
+                audit_report_id: self.audit_report_id,
+            },
         )
     }
 }

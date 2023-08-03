@@ -51,9 +51,7 @@ impl Gateway {
 
 /// A builder for [`Gateway`](crate::types::Gateway).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GatewayBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_display_name: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl GatewayBuilder {
         &self.gateway_arn
     }
     /// <p>The display name of the gateway.</p>
-    pub fn gateway_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the gateway.</p>
-    pub fn set_gateway_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_display_name = input;
         self
     }
@@ -102,10 +94,7 @@ impl GatewayBuilder {
         self
     }
     /// <p>The type of the gateway.</p>
-    pub fn set_gateway_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayType>,
-    ) -> Self {
+    pub fn set_gateway_type(mut self, input: ::std::option::Option<crate::types::GatewayType>) -> Self {
         self.gateway_type = input;
         self
     }
@@ -114,18 +103,12 @@ impl GatewayBuilder {
         &self.gateway_type
     }
     /// <p>The hypervisor ID of the gateway.</p>
-    pub fn hypervisor_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hypervisor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hypervisor ID of the gateway.</p>
-    pub fn set_hypervisor_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hypervisor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hypervisor_id = input;
         self
     }
@@ -139,10 +122,7 @@ impl GatewayBuilder {
         self
     }
     /// <p>The last time Backup gateway communicated with the gateway, in Unix format and UTC time.</p>
-    pub fn set_last_seen_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_seen_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_seen_time = input;
         self
     }

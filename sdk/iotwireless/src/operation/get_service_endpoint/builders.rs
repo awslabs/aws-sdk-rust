@@ -10,10 +10,7 @@ impl GetServiceEndpointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_service_endpoint::GetServiceEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_endpoint::GetServiceEndpointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_endpoint::GetServiceEndpointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_service_endpoint();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetServiceEndpointFluentBuilder {
         }
     }
     /// Access the GetServiceEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_service_endpoint::builders::GetServiceEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_service_endpoint::builders::GetServiceEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetServiceEndpointFluentBuilder {
             crate::operation::get_service_endpoint::GetServiceEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_endpoint::GetServiceEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_endpoint::GetServiceEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetServiceEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetServiceEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_endpoint::GetServiceEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_endpoint::GetServiceEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_endpoint::GetServiceEndpointError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetServiceEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_endpoint::GetServiceEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_endpoint::GetServiceEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_endpoint::GetServiceEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetServiceEndpointFluentBuilder {
             crate::operation::get_service_endpoint::GetServiceEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_endpoint::GetServiceEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_endpoint::GetServiceEndpointError>,
     > {
         self.customize_middleware().await
     }
@@ -128,17 +112,12 @@ impl GetServiceEndpointFluentBuilder {
         self
     }
     /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
-    pub fn set_service_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessGatewayServiceType>,
-    ) -> Self {
+    pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::WirelessGatewayServiceType>) -> Self {
         self.inner = self.inner.set_service_type(input);
         self
     }
     /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
-    pub fn get_service_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::WirelessGatewayServiceType> {
+    pub fn get_service_type(&self) -> &::std::option::Option<crate::types::WirelessGatewayServiceType> {
         self.inner.get_service_type()
     }
 }

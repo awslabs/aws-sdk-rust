@@ -57,9 +57,7 @@ impl UpdateFilterInput {
 
 /// A builder for [`UpdateFilterInput`](crate::operation::update_filter::UpdateFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFilterInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) filter_name: ::std::option::Option<::std::string::String>,
@@ -145,10 +143,7 @@ impl UpdateFilterInputBuilder {
         self
     }
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
-    pub fn set_finding_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingCriteria>,
-    ) -> Self {
+    pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
         self.finding_criteria = input;
         self
     }
@@ -157,12 +152,7 @@ impl UpdateFilterInputBuilder {
         &self.finding_criteria
     }
     /// Consumes the builder and constructs a [`UpdateFilterInput`](crate::operation::update_filter::UpdateFilterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_filter::UpdateFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_filter::UpdateFilterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_filter::UpdateFilterInput {
             detector_id: self.detector_id,
             filter_name: self.filter_name,

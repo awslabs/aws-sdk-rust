@@ -10,10 +10,7 @@ impl CreateDomainEntryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_domain_entry::CreateDomainEntryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_domain_entry::CreateDomainEntryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_domain_entry::CreateDomainEntryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_domain_entry();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateDomainEntryFluentBuilder {
         }
     }
     /// Access the CreateDomainEntry as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_domain_entry::builders::CreateDomainEntryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_domain_entry::builders::CreateDomainEntryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateDomainEntryFluentBuilder {
             crate::operation::create_domain_entry::CreateDomainEntry,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_domain_entry::CreateDomainEntryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_domain_entry::CreateDomainEntryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateDomainEntryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateDomainEntryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_domain_entry::CreateDomainEntryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_domain_entry::CreateDomainEntryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_domain_entry::CreateDomainEntryError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateDomainEntryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_domain_entry::CreateDomainEntryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_domain_entry::CreateDomainEntryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_domain_entry::CreateDomainEntryError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateDomainEntryFluentBuilder {
             crate::operation::create_domain_entry::CreateDomainEntry,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_domain_entry::CreateDomainEntryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_domain_entry::CreateDomainEntryError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +127,7 @@ impl CreateDomainEntryFluentBuilder {
         self
     }
     /// <p>An array of key-value pairs containing information about the domain entry request.</p>
-    pub fn set_domain_entry(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainEntry>,
-    ) -> Self {
+    pub fn set_domain_entry(mut self, input: ::std::option::Option<crate::types::DomainEntry>) -> Self {
         self.inner = self.inner.set_domain_entry(input);
         self
     }

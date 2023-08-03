@@ -12,10 +12,7 @@ pub fn ser_composited_video_artifacts_configuration(
     if let Some(var_3) = &input.grid_view_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("GridViewConfiguration").start_object();
-        crate::protocol_serde::shape_grid_view_configuration::ser_grid_view_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_grid_view_configuration::ser_grid_view_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())
@@ -23,77 +20,52 @@ pub fn ser_composited_video_artifacts_configuration(
 
 pub(crate) fn de_composited_video_artifacts_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::CompositedVideoArtifactsConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::CompositedVideoArtifactsConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::CompositedVideoArtifactsConfigurationBuilder::default();
+            let mut builder = crate::types::builders::CompositedVideoArtifactsConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Layout" => {
-                                builder = builder.set_layout(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::LayoutOption::from(u.as_ref()))
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Layout" => {
+                            builder = builder.set_layout(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::LayoutOption::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "Resolution" => {
-                                builder = builder.set_resolution(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::ResolutionOption::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "GridViewConfiguration" => {
-                                builder = builder.set_grid_view_configuration(
-                                    crate::protocol_serde::shape_grid_view_configuration::de_grid_view_configuration(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "Resolution" => {
+                            builder = builder.set_resolution(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResolutionOption::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "GridViewConfiguration" => {
+                            builder = builder.set_grid_view_configuration(
+                                crate::protocol_serde::shape_grid_view_configuration::de_grid_view_configuration(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

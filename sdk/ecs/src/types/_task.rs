@@ -68,8 +68,7 @@ pub struct Task {
     pub health_status: ::std::option::Option<crate::types::HealthStatus>,
     /// <p>The Elastic Inference accelerator that's associated with the task.</p>
     #[doc(hidden)]
-    pub inference_accelerators:
-        ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>,
+    pub inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>,
     /// <p>The last known status for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.</p>
     #[doc(hidden)]
     pub last_status: ::std::option::Option<::std::string::String>,
@@ -239,9 +238,7 @@ impl Task {
         self.health_status.as_ref()
     }
     /// <p>The Elastic Inference accelerator that's associated with the task.</p>
-    pub fn inference_accelerators(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InferenceAccelerator]> {
+    pub fn inference_accelerators(&self) -> ::std::option::Option<&[crate::types::InferenceAccelerator]> {
         self.inference_accelerators.as_deref()
     }
     /// <p>The last known status for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.</p>
@@ -361,9 +358,7 @@ impl Task {
 
 /// A builder for [`Task`](crate::types::Task).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskBuilder {
     pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
@@ -381,8 +376,7 @@ pub struct TaskBuilder {
     pub(crate) execution_stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) group: ::std::option::Option<::std::string::String>,
     pub(crate) health_status: ::std::option::Option<crate::types::HealthStatus>,
-    pub(crate) inference_accelerators:
-        ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>,
+    pub(crate) inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>,
     pub(crate) last_status: ::std::option::Option<::std::string::String>,
     pub(crate) launch_type: ::std::option::Option<crate::types::LaunchType>,
     pub(crate) memory: ::std::option::Option<::std::string::String>,
@@ -416,17 +410,12 @@ impl TaskBuilder {
         self
     }
     /// <p>The Elastic Network Adapter that's associated with the task if the task uses the <code>awsvpc</code> network mode.</p>
-    pub fn set_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
-    ) -> Self {
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>) -> Self {
         self.attachments = input;
         self
     }
     /// <p>The Elastic Network Adapter that's associated with the task if the task uses the <code>awsvpc</code> network mode.</p>
-    pub fn get_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
         &self.attachments
     }
     /// Appends an item to `attributes`.
@@ -441,32 +430,21 @@ impl TaskBuilder {
         self
     }
     /// <p>The attributes of the task</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attributes of the task</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.attributes
     }
     /// <p>The Availability Zone for the task.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone for the task.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -475,18 +453,12 @@ impl TaskBuilder {
         &self.availability_zone
     }
     /// <p>The capacity provider that's associated with the task.</p>
-    pub fn capacity_provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The capacity provider that's associated with the task.</p>
-    pub fn set_capacity_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_provider_name = input;
         self
     }
@@ -514,10 +486,7 @@ impl TaskBuilder {
         self
     }
     /// <p>The connectivity status of a task.</p>
-    pub fn set_connectivity(
-        mut self,
-        input: ::std::option::Option<crate::types::Connectivity>,
-    ) -> Self {
+    pub fn set_connectivity(mut self, input: ::std::option::Option<crate::types::Connectivity>) -> Self {
         self.connectivity = input;
         self
     }
@@ -531,10 +500,7 @@ impl TaskBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the task last went into <code>CONNECTED</code> status.</p>
-    pub fn set_connectivity_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_connectivity_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.connectivity_at = input;
         self
     }
@@ -543,18 +509,12 @@ impl TaskBuilder {
         &self.connectivity_at
     }
     /// <p>The ARN of the container instances that host the task.</p>
-    pub fn container_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the container instances that host the task.</p>
-    pub fn set_container_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_instance_arn = input;
         self
     }
@@ -574,17 +534,12 @@ impl TaskBuilder {
         self
     }
     /// <p>The containers that's associated with the task.</p>
-    pub fn set_containers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
-    ) -> Self {
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Container>>) -> Self {
         self.containers = input;
         self
     }
     /// <p>The containers that's associated with the task.</p>
-    pub fn get_containers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Container>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Container>> {
         &self.containers
     }
     /// <p>The number of CPU units used by the task as expressed in a task definition. It can be expressed as an integer using CPU units (for example, <code>1024</code>). It can also be expressed as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>). String values are converted to an integer that indicates the CPU units when the task definition is registered.</p>
@@ -643,10 +598,7 @@ impl TaskBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the task was created. More specifically, it's for the time when the task entered the <code>PENDING</code> state.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -655,18 +607,12 @@ impl TaskBuilder {
         &self.created_at
     }
     /// <p>The desired status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.</p>
-    pub fn desired_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn desired_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.desired_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The desired status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.</p>
-    pub fn set_desired_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_desired_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.desired_status = input;
         self
     }
@@ -694,10 +640,7 @@ impl TaskBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the task execution stopped.</p>
-    pub fn set_execution_stopped_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_execution_stopped_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.execution_stopped_at = input;
         self
     }
@@ -729,10 +672,7 @@ impl TaskBuilder {
     /// <p>The health status for the task. It's determined by the health of the essential containers in the task. If all essential containers in the task are reporting as <code>HEALTHY</code>, the task status also reports as <code>HEALTHY</code>. If any essential containers in the task are reporting as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, the task status also reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>.</p> <note>
     /// <p>The Amazon ECS container agent doesn't monitor or report on Docker health checks that are embedded in a container image and not specified in the container definition. For example, this includes those specified in a parent image or from the image's Dockerfile. Health check parameters that are specified in a container definition override any Docker health checks that are found in the container image.</p>
     /// </note>
-    pub fn set_health_status(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthStatus>,
-    ) -> Self {
+    pub fn set_health_status(mut self, input: ::std::option::Option<crate::types::HealthStatus>) -> Self {
         self.health_status = input;
         self
     }
@@ -754,17 +694,12 @@ impl TaskBuilder {
         self
     }
     /// <p>The Elastic Inference accelerator that's associated with the task.</p>
-    pub fn set_inference_accelerators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>,
-    ) -> Self {
+    pub fn set_inference_accelerators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>) -> Self {
         self.inference_accelerators = input;
         self
     }
     /// <p>The Elastic Inference accelerator that's associated with the task.</p>
-    pub fn get_inference_accelerators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>> {
+    pub fn get_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>> {
         &self.inference_accelerators
     }
     /// <p>The last known status for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.</p>
@@ -787,10 +722,7 @@ impl TaskBuilder {
         self
     }
     /// <p>The infrastructure where your task runs on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_launch_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchType>,
-    ) -> Self {
+    pub fn set_launch_type(mut self, input: ::std::option::Option<crate::types::LaunchType>) -> Self {
         self.launch_type = input;
         self
     }
@@ -851,10 +783,7 @@ impl TaskBuilder {
         self
     }
     /// <p>One or more container overrides.</p>
-    pub fn set_overrides(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskOverride>,
-    ) -> Self {
+    pub fn set_overrides(mut self, input: ::std::option::Option<crate::types::TaskOverride>) -> Self {
         self.overrides = input;
         self
     }
@@ -863,18 +792,12 @@ impl TaskBuilder {
         &self.overrides
     }
     /// <p>The platform version where your task runs on. A platform version is only specified for tasks that use the Fargate launch type. If you didn't specify one, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn platform_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The platform version where your task runs on. A platform version is only specified for tasks that use the Fargate launch type. If you didn't specify one, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_platform_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_version = input;
         self
     }
@@ -884,19 +807,13 @@ impl TaskBuilder {
     }
     /// <p>The operating system that your tasks are running on. A platform family is specified only for tasks that use the Fargate launch type. </p>
     /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX.</code>).</p>
-    pub fn platform_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operating system that your tasks are running on. A platform family is specified only for tasks that use the Fargate launch type. </p>
     /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX.</code>).</p>
-    pub fn set_platform_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_family = input;
         self
     }
@@ -911,10 +828,7 @@ impl TaskBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the container image pull began.</p>
-    pub fn set_pull_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_pull_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.pull_started_at = input;
         self
     }
@@ -928,10 +842,7 @@ impl TaskBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the container image pull completed.</p>
-    pub fn set_pull_stopped_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_pull_stopped_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.pull_stopped_at = input;
         self
     }
@@ -945,10 +856,7 @@ impl TaskBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the task started. More specifically, it's for the time when the task transitioned from the <code>PENDING</code> state to the <code>RUNNING</code> state.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
@@ -994,10 +902,7 @@ impl TaskBuilder {
     /// <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li>
     /// <li> <p> <code>SpotInterruption</code> </p> </li>
     /// </ul>
-    pub fn set_stop_code(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskStopCode>,
-    ) -> Self {
+    pub fn set_stop_code(mut self, input: ::std::option::Option<crate::types::TaskStopCode>) -> Self {
         self.stop_code = input;
         self
     }
@@ -1020,10 +925,7 @@ impl TaskBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the task was stopped. More specifically, it's for the time when the task transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code> state.</p>
-    pub fn set_stopped_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stopped_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stopped_at = input;
         self
     }
@@ -1032,18 +934,12 @@ impl TaskBuilder {
         &self.stopped_at
     }
     /// <p>The reason that the task was stopped.</p>
-    pub fn stopped_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stopped_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stopped_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason that the task was stopped.</p>
-    pub fn set_stopped_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stopped_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stopped_reason = input;
         self
     }
@@ -1057,10 +953,7 @@ impl TaskBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.</p>
-    pub fn set_stopping_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stopping_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stopping_at = input;
         self
     }
@@ -1100,10 +993,7 @@ impl TaskBuilder {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -1136,18 +1026,12 @@ impl TaskBuilder {
         &self.task_arn
     }
     /// <p>The ARN of the task definition that creates the task.</p>
-    pub fn task_definition_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_definition_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the task definition that creates the task.</p>
-    pub fn set_task_definition_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_definition_arn = input;
         self
     }
@@ -1175,10 +1059,7 @@ impl TaskBuilder {
         self
     }
     /// <p>The ephemeral storage settings for the task.</p>
-    pub fn set_ephemeral_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::EphemeralStorage>,
-    ) -> Self {
+    pub fn set_ephemeral_storage(mut self, input: ::std::option::Option<crate::types::EphemeralStorage>) -> Self {
         self.ephemeral_storage = input;
         self
     }

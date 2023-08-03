@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteInstanceSnapshotOutput`](crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteInstanceSnapshotError>`](crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError)
-    pub fn delete_instance_snapshot(
-        &self,
-    ) -> crate::operation::delete_instance_snapshot::builders::DeleteInstanceSnapshotFluentBuilder
-    {
+    pub fn delete_instance_snapshot(&self) -> crate::operation::delete_instance_snapshot::builders::DeleteInstanceSnapshotFluentBuilder {
         crate::operation::delete_instance_snapshot::builders::DeleteInstanceSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

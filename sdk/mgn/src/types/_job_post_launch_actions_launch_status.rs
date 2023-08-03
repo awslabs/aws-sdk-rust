@@ -34,9 +34,7 @@ impl JobPostLaunchActionsLaunchStatus {
         self.execution_id.as_deref()
     }
     /// <p>AWS Systems Manager Document's execution status.</p>
-    pub fn execution_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PostLaunchActionExecutionStatus> {
+    pub fn execution_status(&self) -> ::std::option::Option<&crate::types::PostLaunchActionExecutionStatus> {
         self.execution_status.as_ref()
     }
     /// <p>AWS Systems Manager Document's failure reason.</p>
@@ -53,15 +51,12 @@ impl JobPostLaunchActionsLaunchStatus {
 
 /// A builder for [`JobPostLaunchActionsLaunchStatus`](crate::types::JobPostLaunchActionsLaunchStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobPostLaunchActionsLaunchStatusBuilder {
     pub(crate) ssm_document: ::std::option::Option<crate::types::SsmDocument>,
     pub(crate) ssm_document_type: ::std::option::Option<crate::types::SsmDocumentType>,
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
-    pub(crate) execution_status:
-        ::std::option::Option<crate::types::PostLaunchActionExecutionStatus>,
+    pub(crate) execution_status: ::std::option::Option<crate::types::PostLaunchActionExecutionStatus>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl JobPostLaunchActionsLaunchStatusBuilder {
@@ -71,10 +66,7 @@ impl JobPostLaunchActionsLaunchStatusBuilder {
         self
     }
     /// <p>AWS Systems Manager's Document of the of the Job Post Launch Actions.</p>
-    pub fn set_ssm_document(
-        mut self,
-        input: ::std::option::Option<crate::types::SsmDocument>,
-    ) -> Self {
+    pub fn set_ssm_document(mut self, input: ::std::option::Option<crate::types::SsmDocument>) -> Self {
         self.ssm_document = input;
         self
     }
@@ -88,10 +80,7 @@ impl JobPostLaunchActionsLaunchStatusBuilder {
         self
     }
     /// <p>AWS Systems Manager Document type.</p>
-    pub fn set_ssm_document_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SsmDocumentType>,
-    ) -> Self {
+    pub fn set_ssm_document_type(mut self, input: ::std::option::Option<crate::types::SsmDocumentType>) -> Self {
         self.ssm_document_type = input;
         self
     }
@@ -114,40 +103,26 @@ impl JobPostLaunchActionsLaunchStatusBuilder {
         &self.execution_id
     }
     /// <p>AWS Systems Manager Document's execution status.</p>
-    pub fn execution_status(
-        mut self,
-        input: crate::types::PostLaunchActionExecutionStatus,
-    ) -> Self {
+    pub fn execution_status(mut self, input: crate::types::PostLaunchActionExecutionStatus) -> Self {
         self.execution_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>AWS Systems Manager Document's execution status.</p>
-    pub fn set_execution_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PostLaunchActionExecutionStatus>,
-    ) -> Self {
+    pub fn set_execution_status(mut self, input: ::std::option::Option<crate::types::PostLaunchActionExecutionStatus>) -> Self {
         self.execution_status = input;
         self
     }
     /// <p>AWS Systems Manager Document's execution status.</p>
-    pub fn get_execution_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::PostLaunchActionExecutionStatus> {
+    pub fn get_execution_status(&self) -> &::std::option::Option<crate::types::PostLaunchActionExecutionStatus> {
         &self.execution_status
     }
     /// <p>AWS Systems Manager Document's failure reason.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>AWS Systems Manager Document's failure reason.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }

@@ -12,19 +12,13 @@ pub fn ser_advanced_security_options_input(
     if let Some(var_3) = &input.master_user_options {
         #[allow(unused_mut)]
         let mut object_4 = object.key("MasterUserOptions").start_object();
-        crate::protocol_serde::shape_master_user_options::ser_master_user_options(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_master_user_options::ser_master_user_options(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.saml_options {
         #[allow(unused_mut)]
         let mut object_6 = object.key("SAMLOptions").start_object();
-        crate::protocol_serde::shape_saml_options_input::ser_saml_options_input(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_saml_options_input::ser_saml_options_input(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.anonymous_auth_enabled {

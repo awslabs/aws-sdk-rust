@@ -26,7 +26,7 @@ impl UpdateUserDefinedFunctionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateUserDefinedFunctionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_user_defined_function::builders::UpdateUserDefinedFunctionInputBuilder,
+    inner: crate::operation::update_user_defined_function::builders::UpdateUserDefinedFunctionInputBuilder,
 }
 impl UpdateUserDefinedFunctionFluentBuilder {
     /// Creates a new `UpdateUserDefinedFunction`.
@@ -37,7 +37,7 @@ impl UpdateUserDefinedFunctionFluentBuilder {
         }
     }
     /// Access the UpdateUserDefinedFunction as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_user_defined_function::builders::UpdateUserDefinedFunctionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_user_defined_function::builders::UpdateUserDefinedFunctionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateUserDefinedFunctionFluentBuilder {
             crate::operation::update_user_defined_function::UpdateUserDefinedFunction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_defined_function::UpdateUserDefinedFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_defined_function::UpdateUserDefinedFunctionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateUserDefinedFunctionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateUserDefinedFunctionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_defined_function::UpdateUserDefinedFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_defined_function::UpdateUserDefinedFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_defined_function::UpdateUserDefinedFunctionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateUserDefinedFunctionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_defined_function::UpdateUserDefinedFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_defined_function::UpdateUserDefinedFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_defined_function::UpdateUserDefinedFunctionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateUserDefinedFunctionFluentBuilder {
             crate::operation::update_user_defined_function::UpdateUserDefinedFunction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_defined_function::UpdateUserDefinedFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_defined_function::UpdateUserDefinedFunctionError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl UpdateUserDefinedFunctionFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The name of the catalog database where the function to be updated is located.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the catalog database where the function to be updated is located.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -155,18 +138,12 @@ impl UpdateUserDefinedFunctionFluentBuilder {
         self.inner.get_database_name()
     }
     /// <p>The name of the function.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
     /// <p>The name of the function.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }
@@ -180,17 +157,12 @@ impl UpdateUserDefinedFunctionFluentBuilder {
         self
     }
     /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
-    pub fn set_function_input(
-        mut self,
-        input: ::std::option::Option<crate::types::UserDefinedFunctionInput>,
-    ) -> Self {
+    pub fn set_function_input(mut self, input: ::std::option::Option<crate::types::UserDefinedFunctionInput>) -> Self {
         self.inner = self.inner.set_function_input(input);
         self
     }
     /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
-    pub fn get_function_input(
-        &self,
-    ) -> &::std::option::Option<crate::types::UserDefinedFunctionInput> {
+    pub fn get_function_input(&self) -> &::std::option::Option<crate::types::UserDefinedFunctionInput> {
         self.inner.get_function_input()
     }
 }

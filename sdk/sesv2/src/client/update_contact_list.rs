@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_contact_list::builders::UpdateContactListFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_contact_list::builders::UpdateContactListFluentBuilder::set_description): <p>A description of what the contact list is about.</p>
     /// - On success, responds with [`UpdateContactListOutput`](crate::operation::update_contact_list::UpdateContactListOutput)
     /// - On failure, responds with [`SdkError<UpdateContactListError>`](crate::operation::update_contact_list::UpdateContactListError)
-    pub fn update_contact_list(
-        &self,
-    ) -> crate::operation::update_contact_list::builders::UpdateContactListFluentBuilder {
-        crate::operation::update_contact_list::builders::UpdateContactListFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_contact_list(&self) -> crate::operation::update_contact_list::builders::UpdateContactListFluentBuilder {
+        crate::operation::update_contact_list::builders::UpdateContactListFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl DescribeVpcEndpointsFluentBuilder {
         }
     }
     /// Access the DescribeVpcEndpoints as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeVpcEndpointsFluentBuilder {
             crate::operation::describe_vpc_endpoints::DescribeVpcEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeVpcEndpointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeVpcEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeVpcEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeVpcEndpointsFluentBuilder {
             crate::operation::describe_vpc_endpoints::DescribeVpcEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError>,
     > {
         self.customize_middleware().await
     }
@@ -127,25 +114,17 @@ impl DescribeVpcEndpointsFluentBuilder {
     /// To override the contents of this collection use [`set_vpc_endpoint_ids`](Self::set_vpc_endpoint_ids).
     ///
     /// <p>The unique identifiers of the endpoints to get information about.</p>
-    pub fn vpc_endpoint_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_endpoint_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_endpoint_ids(input.into());
         self
     }
     /// <p>The unique identifiers of the endpoints to get information about.</p>
-    pub fn set_vpc_endpoint_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_endpoint_ids(input);
         self
     }
     /// <p>The unique identifiers of the endpoints to get information about.</p>
-    pub fn get_vpc_endpoint_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_endpoint_ids()
     }
 }

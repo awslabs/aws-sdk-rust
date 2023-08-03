@@ -26,7 +26,7 @@ impl DeleteIntegrationResponseInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIntegrationResponseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_integration_response::builders::DeleteIntegrationResponseInputBuilder,
+    inner: crate::operation::delete_integration_response::builders::DeleteIntegrationResponseInputBuilder,
 }
 impl DeleteIntegrationResponseFluentBuilder {
     /// Creates a new `DeleteIntegrationResponse`.
@@ -37,7 +37,7 @@ impl DeleteIntegrationResponseFluentBuilder {
         }
     }
     /// Access the DeleteIntegrationResponse as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_integration_response::builders::DeleteIntegrationResponseInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_integration_response::builders::DeleteIntegrationResponseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteIntegrationResponseFluentBuilder {
             crate::operation::delete_integration_response::DeleteIntegrationResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_integration_response::DeleteIntegrationResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_integration_response::DeleteIntegrationResponseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteIntegrationResponseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteIntegrationResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_integration_response::DeleteIntegrationResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_integration_response::DeleteIntegrationResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_integration_response::DeleteIntegrationResponseError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteIntegrationResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_integration_response::DeleteIntegrationResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_integration_response::DeleteIntegrationResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_integration_response::DeleteIntegrationResponseError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteIntegrationResponseFluentBuilder {
             crate::operation::delete_integration_response::DeleteIntegrationResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_integration_response::DeleteIntegrationResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_integration_response::DeleteIntegrationResponseError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DeleteIntegrationResponseFluentBuilder {
         self.inner.get_api_id()
     }
     /// <p>The integration ID.</p>
-    pub fn integration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_id(input.into());
         self
     }
     /// <p>The integration ID.</p>
-    pub fn set_integration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_id(input);
         self
     }
@@ -155,18 +138,12 @@ impl DeleteIntegrationResponseFluentBuilder {
         self.inner.get_integration_id()
     }
     /// <p>The integration response ID.</p>
-    pub fn integration_response_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_response_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_response_id(input.into());
         self
     }
     /// <p>The integration response ID.</p>
-    pub fn set_integration_response_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_response_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_response_id(input);
         self
     }

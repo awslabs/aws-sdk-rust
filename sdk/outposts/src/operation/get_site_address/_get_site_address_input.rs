@@ -29,9 +29,7 @@ impl GetSiteAddressInput {
 
 /// A builder for [`GetSiteAddressInput`](crate::operation::get_site_address::GetSiteAddressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSiteAddressInputBuilder {
     pub(crate) site_id: ::std::option::Option<::std::string::String>,
     pub(crate) address_type: ::std::option::Option<crate::types::AddressType>,
@@ -57,10 +55,7 @@ impl GetSiteAddressInputBuilder {
         self
     }
     /// <p>The type of the address you request. </p>
-    pub fn set_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressType>,
-    ) -> Self {
+    pub fn set_address_type(mut self, input: ::std::option::Option<crate::types::AddressType>) -> Self {
         self.address_type = input;
         self
     }
@@ -71,10 +66,7 @@ impl GetSiteAddressInputBuilder {
     /// Consumes the builder and constructs a [`GetSiteAddressInput`](crate::operation::get_site_address::GetSiteAddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_site_address::GetSiteAddressInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_site_address::GetSiteAddressInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_site_address::GetSiteAddressInput {
             site_id: self.site_id,
             address_type: self.address_type,

@@ -10,10 +10,7 @@ impl DeleteDhcpOptionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_dhcp_options::DeleteDhcpOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dhcp_options::DeleteDhcpOptionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dhcp_options::DeleteDhcpOptionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_dhcp_options();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteDhcpOptionsFluentBuilder {
         }
     }
     /// Access the DeleteDhcpOptions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_dhcp_options::builders::DeleteDhcpOptionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_dhcp_options::builders::DeleteDhcpOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteDhcpOptionsFluentBuilder {
             crate::operation::delete_dhcp_options::DeleteDhcpOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dhcp_options::DeleteDhcpOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dhcp_options::DeleteDhcpOptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteDhcpOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteDhcpOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dhcp_options::DeleteDhcpOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dhcp_options::DeleteDhcpOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dhcp_options::DeleteDhcpOptionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteDhcpOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dhcp_options::DeleteDhcpOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dhcp_options::DeleteDhcpOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dhcp_options::DeleteDhcpOptionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteDhcpOptionsFluentBuilder {
             crate::operation::delete_dhcp_options::DeleteDhcpOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dhcp_options::DeleteDhcpOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dhcp_options::DeleteDhcpOptionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the DHCP options set.</p>
-    pub fn dhcp_options_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dhcp_options_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dhcp_options_id(input.into());
         self
     }
     /// <p>The ID of the DHCP options set.</p>
-    pub fn set_dhcp_options_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dhcp_options_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dhcp_options_id(input);
         self
     }

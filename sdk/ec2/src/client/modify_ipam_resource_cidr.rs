@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyIpamResourceCidrOutput`](crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput) with field(s):
     ///   - [`ipam_resource_cidr(Option<IpamResourceCidr>)`](crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput::ipam_resource_cidr): <p>The CIDR of the resource.</p>
     /// - On failure, responds with [`SdkError<ModifyIpamResourceCidrError>`](crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrError)
-    pub fn modify_ipam_resource_cidr(
-        &self,
-    ) -> crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrFluentBuilder
-    {
+    pub fn modify_ipam_resource_cidr(&self) -> crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrFluentBuilder {
         crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrFluentBuilder::new(self.handle.clone())
     }
 }

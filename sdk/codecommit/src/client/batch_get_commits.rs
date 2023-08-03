@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`commits(Option<Vec<Commit>>)`](crate::operation::batch_get_commits::BatchGetCommitsOutput::commits): <p>An array of commit data type objects, each of which contains information about a specified commit.</p>
     ///   - [`errors(Option<Vec<BatchGetCommitsError>>)`](crate::operation::batch_get_commits::BatchGetCommitsOutput::errors): <p>Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with more information.</p>
     /// - On failure, responds with [`SdkError<BatchGetCommitsError>`](crate::operation::batch_get_commits::BatchGetCommitsError)
-    pub fn batch_get_commits(
-        &self,
-    ) -> crate::operation::batch_get_commits::builders::BatchGetCommitsFluentBuilder {
-        crate::operation::batch_get_commits::builders::BatchGetCommitsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_commits(&self) -> crate::operation::batch_get_commits::builders::BatchGetCommitsFluentBuilder {
+        crate::operation::batch_get_commits::builders::BatchGetCommitsFluentBuilder::new(self.handle.clone())
     }
 }

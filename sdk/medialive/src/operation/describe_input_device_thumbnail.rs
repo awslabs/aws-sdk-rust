@@ -27,46 +27,27 @@ impl DescribeInputDeviceThumbnailInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.input_device_id;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("input_device_id", "cannot be empty or unset"))?;
+                let input_device_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
+                if input_device_id.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "input_device_id",
                         "cannot be empty or unset",
-                    )
-                })?;
-                let input_device_id = ::aws_smithy_http::label::fmt_string(
-                    input_1,
-                    ::aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if input_device_id.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "input_device_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
                 ::std::write!(
                     output,
@@ -80,13 +61,11 @@ impl DescribeInputDeviceThumbnailInput {
             fn update_http_builder(
                 input: &crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::protocol_serde::shape_describe_input_device_thumbnail::ser_describe_input_device_thumbnail_headers(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_describe_input_device_thumbnail::ser_describe_input_device_thumbnail_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
@@ -105,10 +84,8 @@ impl DescribeInputDeviceThumbnailInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -117,29 +94,19 @@ impl DescribeInputDeviceThumbnailInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
         let op = ::aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnail::new(),
         )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "DescribeInputDeviceThumbnail",
-            "medialive",
-        ));
+        .with_metadata(::aws_smithy_http::operation::Metadata::new("DescribeInputDeviceThumbnail", "medialive"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -160,20 +127,23 @@ impl ::aws_smithy_http::response::ParseHttpResponse for DescribeInputDeviceThumb
         crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput,
         crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailError,
     >;
-    fn parse_unloaded(
-        &self,
-        response: &mut ::aws_smithy_http::operation::Response,
-    ) -> ::std::option::Option<Self::Output> {
+    fn parse_unloaded(&self, response: &mut ::aws_smithy_http::operation::Response) -> ::std::option::Option<Self::Output> {
         ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
         // This is an error, defer to the non-streaming parser
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return ::std::option::Option::None;
         }
-        ::std::option::Option::Some(crate::protocol_serde::shape_describe_input_device_thumbnail::de_describe_input_device_thumbnail_op_response(response))
+        ::std::option::Option::Some(
+            crate::protocol_serde::shape_describe_input_device_thumbnail::de_describe_input_device_thumbnail_op_response(response),
+        )
     }
     fn parse_loaded(&self, response: &::http::Response<::bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::protocol_serde::shape_describe_input_device_thumbnail::de_describe_input_device_thumbnail_http_error(response.status().as_u16(), response.headers(), response.body().as_ref())
+        crate::protocol_serde::shape_describe_input_device_thumbnail::de_describe_input_device_thumbnail_http_error(
+            response.status().as_u16(),
+            response.headers(),
+            response.body().as_ref(),
+        )
     }
 }
 
@@ -207,9 +177,7 @@ pub enum DescribeInputDeviceThumbnailError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for DescribeInputDeviceThumbnailError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -233,41 +201,21 @@ impl ::std::fmt::Display for DescribeInputDeviceThumbnailError {
         }
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for DescribeInputDeviceThumbnailError
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeInputDeviceThumbnailError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::BadGatewayException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::BadRequestException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ForbiddenException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::GatewayTimeoutException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InternalServerErrorException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::NotFoundException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::TooManyRequestsException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::BadGatewayException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ForbiddenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::GatewayTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InternalServerErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -283,27 +231,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DescribeInputDeviceThumbnai
 impl DescribeInputDeviceThumbnailError {
     /// Creates the `DescribeInputDeviceThumbnailError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `DescribeInputDeviceThumbnailError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,

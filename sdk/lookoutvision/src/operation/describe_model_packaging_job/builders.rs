@@ -28,7 +28,7 @@ impl DescribeModelPackagingJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeModelPackagingJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobInputBuilder,
+    inner: crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobInputBuilder,
 }
 impl DescribeModelPackagingJobFluentBuilder {
     /// Creates a new `DescribeModelPackagingJob`.
@@ -39,7 +39,7 @@ impl DescribeModelPackagingJobFluentBuilder {
         }
     }
     /// Access the DescribeModelPackagingJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeModelPackagingJobFluentBuilder {
             crate::operation::describe_model_packaging_job::DescribeModelPackagingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_packaging_job::DescribeModelPackagingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_packaging_job::DescribeModelPackagingJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeModelPackagingJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeModelPackagingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_model_packaging_job::DescribeModelPackagingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_packaging_job::DescribeModelPackagingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_packaging_job::DescribeModelPackagingJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeModelPackagingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_model_packaging_job::DescribeModelPackagingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_packaging_job::DescribeModelPackagingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_packaging_job::DescribeModelPackagingJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl DescribeModelPackagingJobFluentBuilder {
             crate::operation::describe_model_packaging_job::DescribeModelPackagingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_packaging_job::DescribeModelPackagingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_packaging_job::DescribeModelPackagingJobError>,
     > {
         self.customize_middleware().await
     }

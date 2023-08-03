@@ -23,18 +23,14 @@ impl UpdateRecoveryGroupInput {
 }
 impl UpdateRecoveryGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateRecoveryGroupInput`](crate::operation::update_recovery_group::UpdateRecoveryGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_recovery_group::builders::UpdateRecoveryGroupInputBuilder {
-        crate::operation::update_recovery_group::builders::UpdateRecoveryGroupInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_recovery_group::builders::UpdateRecoveryGroupInputBuilder {
+        crate::operation::update_recovery_group::builders::UpdateRecoveryGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRecoveryGroupInput`](crate::operation::update_recovery_group::UpdateRecoveryGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRecoveryGroupInputBuilder {
     pub(crate) cells: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) recovery_group_name: ::std::option::Option<::std::string::String>,
@@ -52,10 +48,7 @@ impl UpdateRecoveryGroupInputBuilder {
         self
     }
     /// <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
-    pub fn set_cells(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cells(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cells = input;
         self
     }
@@ -64,18 +57,12 @@ impl UpdateRecoveryGroupInputBuilder {
         &self.cells
     }
     /// <p>The name of a recovery group.</p>
-    pub fn recovery_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a recovery group.</p>
-    pub fn set_recovery_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_group_name = input;
         self
     }
@@ -86,15 +73,11 @@ impl UpdateRecoveryGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRecoveryGroupInput`](crate::operation::update_recovery_group::UpdateRecoveryGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_recovery_group::UpdateRecoveryGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_recovery_group::UpdateRecoveryGroupInput {
-                cells: self.cells,
-                recovery_group_name: self.recovery_group_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_recovery_group::UpdateRecoveryGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_recovery_group::UpdateRecoveryGroupInput {
+            cells: self.cells,
+            recovery_group_name: self.recovery_group_name,
+        })
     }
 }

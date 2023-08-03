@@ -15,10 +15,7 @@ pub fn ser_create_queue_input(
     if let Some(var_4) = &input.reservation_plan_settings {
         #[allow(unused_mut)]
         let mut object_5 = object.key("reservationPlanSettings").start_object();
-        crate::protocol_serde::shape_reservation_plan_settings::ser_reservation_plan_settings(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_reservation_plan_settings::ser_reservation_plan_settings(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.status {

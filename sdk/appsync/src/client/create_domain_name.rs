@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDomainNameOutput`](crate::operation::create_domain_name::CreateDomainNameOutput) with field(s):
     ///   - [`domain_name_config(Option<DomainNameConfig>)`](crate::operation::create_domain_name::CreateDomainNameOutput::domain_name_config): <p>The configuration for the <code>DomainName</code>.</p>
     /// - On failure, responds with [`SdkError<CreateDomainNameError>`](crate::operation::create_domain_name::CreateDomainNameError)
-    pub fn create_domain_name(
-        &self,
-    ) -> crate::operation::create_domain_name::builders::CreateDomainNameFluentBuilder {
-        crate::operation::create_domain_name::builders::CreateDomainNameFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_domain_name(&self) -> crate::operation::create_domain_name::builders::CreateDomainNameFluentBuilder {
+        crate::operation::create_domain_name::builders::CreateDomainNameFluentBuilder::new(self.handle.clone())
     }
 }

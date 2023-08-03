@@ -64,9 +64,7 @@ impl ListJobRunsInput {
 
 /// A builder for [`ListJobRunsInput`](crate::operation::list_job_runs::ListJobRunsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobRunsInputBuilder {
     pub(crate) virtual_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -78,18 +76,12 @@ pub struct ListJobRunsInputBuilder {
 }
 impl ListJobRunsInputBuilder {
     /// <p>The ID of the virtual cluster for which to list the job run. </p>
-    pub fn virtual_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual cluster for which to list the job run. </p>
-    pub fn set_virtual_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_cluster_id = input;
         self
     }
@@ -103,10 +95,7 @@ impl ListJobRunsInputBuilder {
         self
     }
     /// <p>The date and time before which the job runs were submitted.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -120,10 +109,7 @@ impl ListJobRunsInputBuilder {
         self
     }
     /// <p>The date and time after which the job runs were submitted.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
@@ -157,10 +143,7 @@ impl ListJobRunsInputBuilder {
         self
     }
     /// <p>The states of the job run.</p>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobRunState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobRunState>>) -> Self {
         self.states = input;
         self
     }
@@ -197,12 +180,7 @@ impl ListJobRunsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListJobRunsInput`](crate::operation::list_job_runs::ListJobRunsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_job_runs::ListJobRunsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_job_runs::ListJobRunsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_job_runs::ListJobRunsInput {
             virtual_cluster_id: self.virtual_cluster_id,
             created_before: self.created_before,

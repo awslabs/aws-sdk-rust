@@ -23,9 +23,7 @@ impl NotificationDestinationConfig {
 
 /// A builder for [`NotificationDestinationConfig`](crate::types::NotificationDestinationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationDestinationConfigBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
 }

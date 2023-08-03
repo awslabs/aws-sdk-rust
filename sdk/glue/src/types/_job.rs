@@ -35,14 +35,10 @@ pub struct Job {
     /// <p>For information about the arguments you can provide to this field when configuring Spark jobs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     /// <p>For information about the arguments you can provide to this field when configuring Ray jobs, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using job parameters in Ray jobs</a> in the developer guide.</p>
     #[doc(hidden)]
-    pub default_arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub default_arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Arguments for this job that are not overridden when providing job arguments in a job run, specified as name-value pairs.</p>
     #[doc(hidden)]
-    pub non_overridable_arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub non_overridable_arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The connections used for this job.</p>
     #[doc(hidden)]
     pub connections: ::std::option::Option<crate::types::ConnectionsList>,
@@ -96,9 +92,8 @@ pub struct Job {
     pub glue_version: ::std::option::Option<::std::string::String>,
     /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
     #[doc(hidden)]
-    pub code_gen_configuration_nodes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CodeGenConfigurationNode>,
-    >,
+    pub code_gen_configuration_nodes:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodeGenConfigurationNode>>,
     /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
     /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
@@ -147,19 +142,11 @@ impl Job {
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the arguments you can provide to this field when configuring Spark jobs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     /// <p>For information about the arguments you can provide to this field when configuring Ray jobs, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using job parameters in Ray jobs</a> in the developer guide.</p>
-    pub fn default_arguments(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn default_arguments(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.default_arguments.as_ref()
     }
     /// <p>Arguments for this job that are not overridden when providing job arguments in a job run, specified as name-value pairs.</p>
-    pub fn non_overridable_arguments(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn non_overridable_arguments(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.non_overridable_arguments.as_ref()
     }
     /// <p>The connections used for this job.</p>
@@ -213,9 +200,7 @@ impl Job {
         self.security_configuration.as_deref()
     }
     /// <p>Specifies configuration properties of a job notification.</p>
-    pub fn notification_property(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationProperty> {
+    pub fn notification_property(&self) -> ::std::option::Option<&crate::types::NotificationProperty> {
         self.notification_property.as_ref()
     }
     /// <p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue available in a job. The Python version indicates the version supported for jobs of type Spark. </p>
@@ -228,9 +213,7 @@ impl Job {
     /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
     pub fn code_gen_configuration_nodes(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::CodeGenConfigurationNode>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CodeGenConfigurationNode>> {
         self.code_gen_configuration_nodes.as_ref()
     }
     /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
@@ -240,9 +223,7 @@ impl Job {
         self.execution_class.as_ref()
     }
     /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
-    pub fn source_control_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceControlDetails> {
+    pub fn source_control_details(&self) -> ::std::option::Option<&crate::types::SourceControlDetails> {
         self.source_control_details.as_ref()
     }
 }
@@ -269,10 +250,7 @@ impl ::std::fmt::Debug for Job {
         formatter.field("security_configuration", &self.security_configuration);
         formatter.field("notification_property", &self.notification_property);
         formatter.field("glue_version", &self.glue_version);
-        formatter.field(
-            "code_gen_configuration_nodes",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("code_gen_configuration_nodes", &"*** Sensitive Data Redacted ***");
         formatter.field("execution_class", &self.execution_class);
         formatter.field("source_control_details", &self.source_control_details);
         formatter.finish()
@@ -297,12 +275,8 @@ pub struct JobBuilder {
     pub(crate) last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) execution_property: ::std::option::Option<crate::types::ExecutionProperty>,
     pub(crate) command: ::std::option::Option<crate::types::JobCommand>,
-    pub(crate) default_arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) non_overridable_arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) default_arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) non_overridable_arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) connections: ::std::option::Option<crate::types::ConnectionsList>,
     pub(crate) max_retries: ::std::option::Option<i32>,
     pub(crate) allocated_capacity: ::std::option::Option<i32>,
@@ -313,9 +287,8 @@ pub struct JobBuilder {
     pub(crate) security_configuration: ::std::option::Option<::std::string::String>,
     pub(crate) notification_property: ::std::option::Option<crate::types::NotificationProperty>,
     pub(crate) glue_version: ::std::option::Option<::std::string::String>,
-    pub(crate) code_gen_configuration_nodes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CodeGenConfigurationNode>,
-    >,
+    pub(crate) code_gen_configuration_nodes:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodeGenConfigurationNode>>,
     pub(crate) execution_class: ::std::option::Option<crate::types::ExecutionClass>,
     pub(crate) source_control_details: ::std::option::Option<crate::types::SourceControlDetails>,
 }
@@ -382,10 +355,7 @@ impl JobBuilder {
         self
     }
     /// <p>The time and date that this job definition was created.</p>
-    pub fn set_created_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_on = input;
         self
     }
@@ -399,10 +369,7 @@ impl JobBuilder {
         self
     }
     /// <p>The last point in time when this job definition was modified.</p>
-    pub fn set_last_modified_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_on = input;
         self
     }
@@ -416,17 +383,12 @@ impl JobBuilder {
         self
     }
     /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
-    pub fn set_execution_property(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionProperty>,
-    ) -> Self {
+    pub fn set_execution_property(mut self, input: ::std::option::Option<crate::types::ExecutionProperty>) -> Self {
         self.execution_property = input;
         self
     }
     /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
-    pub fn get_execution_property(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExecutionProperty> {
+    pub fn get_execution_property(&self) -> &::std::option::Option<crate::types::ExecutionProperty> {
         &self.execution_property
     }
     /// <p>The <code>JobCommand</code> that runs this job.</p>
@@ -471,9 +433,7 @@ impl JobBuilder {
     /// <p>For information about the arguments you can provide to this field when configuring Ray jobs, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using job parameters in Ray jobs</a> in the developer guide.</p>
     pub fn set_default_arguments(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.default_arguments = input;
         self
@@ -484,11 +444,7 @@ impl JobBuilder {
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the arguments you can provide to this field when configuring Spark jobs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     /// <p>For information about the arguments you can provide to this field when configuring Ray jobs, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using job parameters in Ray jobs</a> in the developer guide.</p>
-    pub fn get_default_arguments(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_default_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.default_arguments
     }
     /// Adds a key-value pair to `non_overridable_arguments`.
@@ -509,19 +465,13 @@ impl JobBuilder {
     /// <p>Arguments for this job that are not overridden when providing job arguments in a job run, specified as name-value pairs.</p>
     pub fn set_non_overridable_arguments(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.non_overridable_arguments = input;
         self
     }
     /// <p>Arguments for this job that are not overridden when providing job arguments in a job run, specified as name-value pairs.</p>
-    pub fn get_non_overridable_arguments(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_non_overridable_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.non_overridable_arguments
     }
     /// <p>The connections used for this job.</p>
@@ -530,10 +480,7 @@ impl JobBuilder {
         self
     }
     /// <p>The connections used for this job.</p>
-    pub fn set_connections(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionsList>,
-    ) -> Self {
+    pub fn set_connections(mut self, input: ::std::option::Option<crate::types::ConnectionsList>) -> Self {
         self.connections = input;
         self
     }
@@ -649,10 +596,7 @@ impl JobBuilder {
     /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPUs, 4 GB of memory) with 84GB disk (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
     /// <li> <p>For the <code>Z.2X</code> worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk (approximately 120GB free), and provides up to 8 Ray workers based on the autoscaler.</p> </li>
     /// </ul>
-    pub fn set_worker_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkerType>,
-    ) -> Self {
+    pub fn set_worker_type(mut self, input: ::std::option::Option<crate::types::WorkerType>) -> Self {
         self.worker_type = input;
         self
     }
@@ -683,18 +627,12 @@ impl JobBuilder {
         &self.number_of_workers
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
-    pub fn security_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
-    pub fn set_security_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_configuration = input;
         self
     }
@@ -708,17 +646,12 @@ impl JobBuilder {
         self
     }
     /// <p>Specifies configuration properties of a job notification.</p>
-    pub fn set_notification_property(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationProperty>,
-    ) -> Self {
+    pub fn set_notification_property(mut self, input: ::std::option::Option<crate::types::NotificationProperty>) -> Self {
         self.notification_property = input;
         self
     }
     /// <p>Specifies configuration properties of a job notification.</p>
-    pub fn get_notification_property(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationProperty> {
+    pub fn get_notification_property(&self) -> &::std::option::Option<crate::types::NotificationProperty> {
         &self.notification_property
     }
     /// <p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue available in a job. The Python version indicates the version supported for jobs of type Spark. </p>
@@ -762,12 +695,7 @@ impl JobBuilder {
     /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
     pub fn set_code_gen_configuration_nodes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::CodeGenConfigurationNode,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodeGenConfigurationNode>>,
     ) -> Self {
         self.code_gen_configuration_nodes = input;
         self
@@ -775,9 +703,7 @@ impl JobBuilder {
     /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
     pub fn get_code_gen_configuration_nodes(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CodeGenConfigurationNode>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodeGenConfigurationNode>> {
         &self.code_gen_configuration_nodes
     }
     /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
@@ -790,10 +716,7 @@ impl JobBuilder {
     /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
     /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
-    pub fn set_execution_class(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionClass>,
-    ) -> Self {
+    pub fn set_execution_class(mut self, input: ::std::option::Option<crate::types::ExecutionClass>) -> Self {
         self.execution_class = input;
         self
     }
@@ -809,17 +732,12 @@ impl JobBuilder {
         self
     }
     /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
-    pub fn set_source_control_details(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceControlDetails>,
-    ) -> Self {
+    pub fn set_source_control_details(mut self, input: ::std::option::Option<crate::types::SourceControlDetails>) -> Self {
         self.source_control_details = input;
         self
     }
     /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
-    pub fn get_source_control_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceControlDetails> {
+    pub fn get_source_control_details(&self) -> &::std::option::Option<crate::types::SourceControlDetails> {
         &self.source_control_details
     }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
@@ -874,10 +792,7 @@ impl ::std::fmt::Debug for JobBuilder {
         formatter.field("security_configuration", &self.security_configuration);
         formatter.field("notification_property", &self.notification_property);
         formatter.field("glue_version", &self.glue_version);
-        formatter.field(
-            "code_gen_configuration_nodes",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("code_gen_configuration_nodes", &"*** Sensitive Data Redacted ***");
         formatter.field("execution_class", &self.execution_class);
         formatter.field("source_control_details", &self.source_control_details);
         formatter.finish()

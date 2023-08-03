@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteJobTemplateOutput`](crate::operation::delete_job_template::DeleteJobTemplateOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::delete_job_template::DeleteJobTemplateOutput::id): <p>This output contains the ID of the job template that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteJobTemplateError>`](crate::operation::delete_job_template::DeleteJobTemplateError)
-    pub fn delete_job_template(
-        &self,
-    ) -> crate::operation::delete_job_template::builders::DeleteJobTemplateFluentBuilder {
-        crate::operation::delete_job_template::builders::DeleteJobTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_job_template(&self) -> crate::operation::delete_job_template::builders::DeleteJobTemplateFluentBuilder {
+        crate::operation::delete_job_template::builders::DeleteJobTemplateFluentBuilder::new(self.handle.clone())
     }
 }

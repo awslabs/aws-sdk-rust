@@ -77,9 +77,7 @@ impl DescribeUserOutput {
 
 /// A builder for [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUserOutputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -182,10 +180,7 @@ impl DescribeUserOutputBuilder {
         self
     }
     /// <p>The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.</p>
-    pub fn set_enabled_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_enabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.enabled_date = input;
         self
     }
@@ -199,10 +194,7 @@ impl DescribeUserOutputBuilder {
         self
     }
     /// <p>The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.</p>
-    pub fn set_disabled_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_disabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.disabled_date = input;
         self
     }

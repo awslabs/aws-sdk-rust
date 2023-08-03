@@ -37,9 +37,7 @@ impl TimeSeriesIdentifiers {
 
 /// A builder for [`TimeSeriesIdentifiers`](crate::types::TimeSeriesIdentifiers).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeSeriesIdentifiersBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) schema: ::std::option::Option<crate::types::Schema>,
@@ -52,10 +50,7 @@ impl TimeSeriesIdentifiersBuilder {
         self
     }
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
     }

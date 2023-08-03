@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeJobExecutionOutput {
 }
 impl DescribeJobExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobExecutionOutput`](crate::operation::describe_job_execution::DescribeJobExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_job_execution::builders::DescribeJobExecutionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_job_execution::builders::DescribeJobExecutionOutputBuilder {
         crate::operation::describe_job_execution::builders::DescribeJobExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeJobExecutionOutput`](crate::operation::describe_job_execution::DescribeJobExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobExecutionOutputBuilder {
     pub(crate) execution: ::std::option::Option<crate::types::JobExecution>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeJobExecutionOutputBuilder {
         self
     }
     /// <p>Contains data about a job execution.</p>
-    pub fn set_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecution>,
-    ) -> Self {
+    pub fn set_execution(mut self, input: ::std::option::Option<crate::types::JobExecution>) -> Self {
         self.execution = input;
         self
     }

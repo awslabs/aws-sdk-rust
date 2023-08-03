@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<BasePathMapping>>)`](crate::operation::get_base_path_mappings::GetBasePathMappingsOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_base_path_mappings::GetBasePathMappingsOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<GetBasePathMappingsError>`](crate::operation::get_base_path_mappings::GetBasePathMappingsError)
-    pub fn get_base_path_mappings(
-        &self,
-    ) -> crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder {
-        crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_base_path_mappings(&self) -> crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder {
+        crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder::new(self.handle.clone())
     }
 }

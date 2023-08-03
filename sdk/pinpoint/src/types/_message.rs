@@ -112,9 +112,7 @@ impl Message {
 
 /// A builder for [`Message`](crate::types::Message).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) body: ::std::option::Option<::std::string::String>,
@@ -174,18 +172,12 @@ impl MessageBuilder {
         &self.body
     }
     /// <p>The URL of the image to display as the push-notification icon, such as the icon for the app.</p>
-    pub fn image_icon_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_icon_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_icon_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the image to display as the push-notification icon, such as the icon for the app.</p>
-    pub fn set_image_icon_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_icon_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_icon_url = input;
         self
     }
@@ -194,18 +186,12 @@ impl MessageBuilder {
         &self.image_icon_url
     }
     /// <p>The URL of the image to display as the small, push-notification icon, such as a small version of the icon for the app.</p>
-    pub fn image_small_icon_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_small_icon_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_small_icon_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the image to display as the small, push-notification icon, such as a small version of the icon for the app.</p>
-    pub fn set_image_small_icon_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_small_icon_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_small_icon_url = input;
         self
     }

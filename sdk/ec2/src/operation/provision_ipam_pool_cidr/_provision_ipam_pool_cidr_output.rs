@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ProvisionIpamPoolCidrOutput {
 }
 impl ProvisionIpamPoolCidrOutput {
     /// Creates a new builder-style object to manufacture [`ProvisionIpamPoolCidrOutput`](crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrOutput).
-    pub fn builder(
-    ) -> crate::operation::provision_ipam_pool_cidr::builders::ProvisionIpamPoolCidrOutputBuilder
-    {
+    pub fn builder() -> crate::operation::provision_ipam_pool_cidr::builders::ProvisionIpamPoolCidrOutputBuilder {
         crate::operation::provision_ipam_pool_cidr::builders::ProvisionIpamPoolCidrOutputBuilder::default()
     }
 }
 
 /// A builder for [`ProvisionIpamPoolCidrOutput`](crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionIpamPoolCidrOutputBuilder {
     pub(crate) ipam_pool_cidr: ::std::option::Option<crate::types::IpamPoolCidr>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl ProvisionIpamPoolCidrOutputBuilder {
         self
     }
     /// <p>Information about the provisioned CIDR.</p>
-    pub fn set_ipam_pool_cidr(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamPoolCidr>,
-    ) -> Self {
+    pub fn set_ipam_pool_cidr(mut self, input: ::std::option::Option<crate::types::IpamPoolCidr>) -> Self {
         self.ipam_pool_cidr = input;
         self
     }

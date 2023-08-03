@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`fleet_advisor_schemas(Option<Vec<SchemaResponse>>)`](crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasOutput::fleet_advisor_schemas): <p>A collection of <code>SchemaResponse</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     /// - On failure, responds with [`SdkError<DescribeFleetAdvisorSchemasError>`](crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasError)
-    pub fn describe_fleet_advisor_schemas(&self) -> crate::operation::describe_fleet_advisor_schemas::builders::DescribeFleetAdvisorSchemasFluentBuilder{
+    pub fn describe_fleet_advisor_schemas(
+        &self,
+    ) -> crate::operation::describe_fleet_advisor_schemas::builders::DescribeFleetAdvisorSchemasFluentBuilder {
         crate::operation::describe_fleet_advisor_schemas::builders::DescribeFleetAdvisorSchemasFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl ListReceivedGrantsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_received_grants::ListReceivedGrantsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_received_grants::ListReceivedGrantsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_received_grants::ListReceivedGrantsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_received_grants();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListReceivedGrantsFluentBuilder {
         }
     }
     /// Access the ListReceivedGrants as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_received_grants::builders::ListReceivedGrantsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_received_grants::builders::ListReceivedGrantsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListReceivedGrantsFluentBuilder {
             crate::operation::list_received_grants::ListReceivedGrants,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_received_grants::ListReceivedGrantsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_received_grants::ListReceivedGrantsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListReceivedGrantsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListReceivedGrantsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_received_grants::ListReceivedGrantsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_received_grants::ListReceivedGrantsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_received_grants::ListReceivedGrantsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListReceivedGrantsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_received_grants::ListReceivedGrantsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_received_grants::ListReceivedGrantsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_received_grants::ListReceivedGrantsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ListReceivedGrantsFluentBuilder {
             crate::operation::list_received_grants::ListReceivedGrants,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_received_grants::ListReceivedGrantsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_received_grants::ListReceivedGrantsError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl ListReceivedGrantsFluentBuilder {
         self
     }
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
-    pub fn set_grant_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_grant_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_grant_arns(input);
         self
     }
@@ -167,10 +148,7 @@ impl ListReceivedGrantsFluentBuilder {
     /// <li> <p> <code>GrantStatus</code> </p> </li>
     /// <li> <p> <code>GranterAccountId</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

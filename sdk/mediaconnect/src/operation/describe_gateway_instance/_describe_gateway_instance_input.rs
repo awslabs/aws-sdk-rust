@@ -15,35 +15,25 @@ impl DescribeGatewayInstanceInput {
 }
 impl DescribeGatewayInstanceInput {
     /// Creates a new builder-style object to manufacture [`DescribeGatewayInstanceInput`](crate::operation::describe_gateway_instance::DescribeGatewayInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceInputBuilder {
         crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGatewayInstanceInput`](crate::operation::describe_gateway_instance::DescribeGatewayInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGatewayInstanceInputBuilder {
     pub(crate) gateway_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeGatewayInstanceInputBuilder {
     /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
-    pub fn gateway_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
-    pub fn set_gateway_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_instance_arn = input;
         self
     }
@@ -58,10 +48,8 @@ impl DescribeGatewayInstanceInputBuilder {
         crate::operation::describe_gateway_instance::DescribeGatewayInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_gateway_instance::DescribeGatewayInstanceInput {
-                gateway_instance_arn: self.gateway_instance_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_gateway_instance::DescribeGatewayInstanceInput {
+            gateway_instance_arn: self.gateway_instance_arn,
+        })
     }
 }

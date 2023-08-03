@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`mount_options(Option<NfsMountOptions>)`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput::mount_options): <p>The mount options that DataSync uses to mount your NFS share.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_location_nfs::DescribeLocationNfsOutput::creation_time): <p>The time that the NFS location was created.</p>
     /// - On failure, responds with [`SdkError<DescribeLocationNfsError>`](crate::operation::describe_location_nfs::DescribeLocationNfsError)
-    pub fn describe_location_nfs(
-        &self,
-    ) -> crate::operation::describe_location_nfs::builders::DescribeLocationNfsFluentBuilder {
-        crate::operation::describe_location_nfs::builders::DescribeLocationNfsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_location_nfs(&self) -> crate::operation::describe_location_nfs::builders::DescribeLocationNfsFluentBuilder {
+        crate::operation::describe_location_nfs::builders::DescribeLocationNfsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl ListGeoMatchSetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_geo_match_sets::ListGeoMatchSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geo_match_sets::ListGeoMatchSetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_geo_match_sets::ListGeoMatchSetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_geo_match_sets();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl ListGeoMatchSetsFluentBuilder {
         }
     }
     /// Access the ListGeoMatchSets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_geo_match_sets::builders::ListGeoMatchSetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_geo_match_sets::builders::ListGeoMatchSetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl ListGeoMatchSetsFluentBuilder {
             crate::operation::list_geo_match_sets::ListGeoMatchSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geo_match_sets::ListGeoMatchSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_geo_match_sets::ListGeoMatchSetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl ListGeoMatchSetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl ListGeoMatchSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_geo_match_sets::ListGeoMatchSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geo_match_sets::ListGeoMatchSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_geo_match_sets::ListGeoMatchSetsError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl ListGeoMatchSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_geo_match_sets::ListGeoMatchSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geo_match_sets::ListGeoMatchSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_geo_match_sets::ListGeoMatchSetsError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl ListGeoMatchSetsFluentBuilder {
             crate::operation::list_geo_match_sets::ListGeoMatchSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_geo_match_sets::ListGeoMatchSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_geo_match_sets::ListGeoMatchSetsError>,
     > {
         self.customize_middleware().await
     }

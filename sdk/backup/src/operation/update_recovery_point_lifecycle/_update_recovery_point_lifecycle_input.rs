@@ -31,16 +31,14 @@ impl UpdateRecoveryPointLifecycleInput {
 }
 impl UpdateRecoveryPointLifecycleInput {
     /// Creates a new builder-style object to manufacture [`UpdateRecoveryPointLifecycleInput`](crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleInput).
-    pub fn builder() -> crate::operation::update_recovery_point_lifecycle::builders::UpdateRecoveryPointLifecycleInputBuilder{
+    pub fn builder() -> crate::operation::update_recovery_point_lifecycle::builders::UpdateRecoveryPointLifecycleInputBuilder {
         crate::operation::update_recovery_point_lifecycle::builders::UpdateRecoveryPointLifecycleInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRecoveryPointLifecycleInput`](crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRecoveryPointLifecycleInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_point_arn: ::std::option::Option<::std::string::String>,
@@ -48,18 +46,12 @@ pub struct UpdateRecoveryPointLifecycleInputBuilder {
 }
 impl UpdateRecoveryPointLifecycleInputBuilder {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_name = input;
         self
     }
@@ -68,18 +60,12 @@ impl UpdateRecoveryPointLifecycleInputBuilder {
         &self.backup_vault_name
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn recovery_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn set_recovery_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_point_arn = input;
         self
     }
@@ -111,12 +97,10 @@ impl UpdateRecoveryPointLifecycleInputBuilder {
         crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleInput {
-                backup_vault_name: self.backup_vault_name,
-                recovery_point_arn: self.recovery_point_arn,
-                lifecycle: self.lifecycle,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleInput {
+            backup_vault_name: self.backup_vault_name,
+            recovery_point_arn: self.recovery_point_arn,
+            lifecycle: self.lifecycle,
+        })
     }
 }

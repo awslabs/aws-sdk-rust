@@ -33,16 +33,14 @@ impl PromotePermissionCreatedFromPolicyInput {
 }
 impl PromotePermissionCreatedFromPolicyInput {
     /// Creates a new builder-style object to manufacture [`PromotePermissionCreatedFromPolicyInput`](crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyInput).
-    pub fn builder() -> crate::operation::promote_permission_created_from_policy::builders::PromotePermissionCreatedFromPolicyInputBuilder{
+    pub fn builder() -> crate::operation::promote_permission_created_from_policy::builders::PromotePermissionCreatedFromPolicyInputBuilder {
         crate::operation::promote_permission_created_from_policy::builders::PromotePermissionCreatedFromPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PromotePermissionCreatedFromPolicyInput`](crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PromotePermissionCreatedFromPolicyInputBuilder {
     pub(crate) permission_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -50,18 +48,12 @@ pub struct PromotePermissionCreatedFromPolicyInputBuilder {
 }
 impl PromotePermissionCreatedFromPolicyInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the <code>CREATED_FROM_POLICY</code> permission that you want to promote. You can get this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> by calling the <code>ListResourceSharePermissions</code> operation.</p>
-    pub fn permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the <code>CREATED_FROM_POLICY</code> permission that you want to promote. You can get this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> by calling the <code>ListResourceSharePermissions</code> operation.</p>
-    pub fn set_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_arn = input;
         self
     }
@@ -104,16 +96,18 @@ impl PromotePermissionCreatedFromPolicyInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`PromotePermissionCreatedFromPolicyInput`](crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyInput {
-                permission_arn: self.permission_arn
-                ,
-                name: self.name
-                ,
-                client_token: self.client_token
-                ,
-            }
+                permission_arn: self.permission_arn,
+                name: self.name,
+                client_token: self.client_token,
+            },
         )
     }
 }

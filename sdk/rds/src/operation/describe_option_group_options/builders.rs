@@ -26,7 +26,7 @@ impl DescribeOptionGroupOptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOptionGroupOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_option_group_options::builders::DescribeOptionGroupOptionsInputBuilder,
+    inner: crate::operation::describe_option_group_options::builders::DescribeOptionGroupOptionsInputBuilder,
 }
 impl DescribeOptionGroupOptionsFluentBuilder {
     /// Creates a new `DescribeOptionGroupOptions`.
@@ -37,7 +37,7 @@ impl DescribeOptionGroupOptionsFluentBuilder {
         }
     }
     /// Access the DescribeOptionGroupOptions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_option_group_options::builders::DescribeOptionGroupOptionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_option_group_options::builders::DescribeOptionGroupOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeOptionGroupOptionsFluentBuilder {
             crate::operation::describe_option_group_options::DescribeOptionGroupOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_option_group_options::DescribeOptionGroupOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_option_group_options::DescribeOptionGroupOptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeOptionGroupOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeOptionGroupOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_option_group_options::DescribeOptionGroupOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_option_group_options::DescribeOptionGroupOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_option_group_options::DescribeOptionGroupOptionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeOptionGroupOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_option_group_options::DescribeOptionGroupOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_option_group_options::DescribeOptionGroupOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_option_group_options::DescribeOptionGroupOptionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeOptionGroupOptionsFluentBuilder {
             crate::operation::describe_option_group_options::DescribeOptionGroupOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_option_group_options::DescribeOptionGroupOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_option_group_options::DescribeOptionGroupOptionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_option_group_options::paginator::DescribeOptionGroupOptionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_option_group_options::paginator::DescribeOptionGroupOptionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_option_group_options::paginator::DescribeOptionGroupOptionsPaginator {
         crate::operation::describe_option_group_options::paginator::DescribeOptionGroupOptionsPaginator::new(self.handle, self.inner)
     }
     /// <p>A required parameter. Options available for the given engine name are described.</p>
@@ -183,18 +172,12 @@ impl DescribeOptionGroupOptionsFluentBuilder {
         self.inner.get_engine_name()
     }
     /// <p>If specified, filters the results to include only options for the specified major engine version.</p>
-    pub fn major_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.major_engine_version(input.into());
         self
     }
     /// <p>If specified, filters the results to include only options for the specified major engine version.</p>
-    pub fn set_major_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_major_engine_version(input);
         self
     }
@@ -212,10 +195,7 @@ impl DescribeOptionGroupOptionsFluentBuilder {
         self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

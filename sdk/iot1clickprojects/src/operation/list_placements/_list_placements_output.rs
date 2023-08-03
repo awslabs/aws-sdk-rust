@@ -35,9 +35,7 @@ impl ListPlacementsOutput {
 
 /// A builder for [`ListPlacementsOutput`](crate::operation::list_placements::ListPlacementsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPlacementsOutputBuilder {
     pub(crate) placements: ::std::option::Option<::std::vec::Vec<crate::types::PlacementSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListPlacementsOutputBuilder {
         self
     }
     /// <p>An object listing the requested placements.</p>
-    pub fn set_placements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementSummary>>,
-    ) -> Self {
+    pub fn set_placements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementSummary>>) -> Self {
         self.placements = input;
         self
     }
     /// <p>An object listing the requested placements.</p>
-    pub fn get_placements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementSummary>> {
+    pub fn get_placements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementSummary>> {
         &self.placements
     }
     /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>

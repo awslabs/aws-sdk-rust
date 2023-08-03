@@ -30,16 +30,14 @@ impl ::aws_http::request_id::RequestId for ExportAutoScalingGroupRecommendations
 }
 impl ExportAutoScalingGroupRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ExportAutoScalingGroupRecommendationsOutput`](crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsOutput).
-    pub fn builder() -> crate::operation::export_auto_scaling_group_recommendations::builders::ExportAutoScalingGroupRecommendationsOutputBuilder{
+    pub fn builder() -> crate::operation::export_auto_scaling_group_recommendations::builders::ExportAutoScalingGroupRecommendationsOutputBuilder {
         crate::operation::export_auto_scaling_group_recommendations::builders::ExportAutoScalingGroupRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExportAutoScalingGroupRecommendationsOutput`](crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportAutoScalingGroupRecommendationsOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_destination: ::std::option::Option<crate::types::S3Destination>,
@@ -69,10 +67,7 @@ impl ExportAutoScalingGroupRecommendationsOutputBuilder {
         self
     }
     /// <p>An object that describes the destination Amazon S3 bucket of a recommendations export file.</p>
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Destination>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::S3Destination>) -> Self {
         self.s3_destination = input;
         self
     }
@@ -90,12 +85,10 @@ impl ExportAutoScalingGroupRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ExportAutoScalingGroupRecommendationsOutput`](crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsOutput).
-    pub fn build(self) -> crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsOutput{
+    pub fn build(self) -> crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsOutput {
         crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsOutput {
-            job_id: self.job_id
-            ,
-            s3_destination: self.s3_destination
-            ,
+            job_id: self.job_id,
+            s3_destination: self.s3_destination,
             _request_id: self._request_id,
         }
     }

@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`build_batches(Option<Vec<BuildBatch>>)`](crate::operation::batch_get_build_batches::BatchGetBuildBatchesOutput::build_batches): <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch builds.</p>
     ///   - [`build_batches_not_found(Option<Vec<String>>)`](crate::operation::batch_get_build_batches::BatchGetBuildBatchesOutput::build_batches_not_found): <p>An array that contains the identifiers of any batch builds that are not found.</p>
     /// - On failure, responds with [`SdkError<BatchGetBuildBatchesError>`](crate::operation::batch_get_build_batches::BatchGetBuildBatchesError)
-    pub fn batch_get_build_batches(
-        &self,
-    ) -> crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesFluentBuilder
-    {
-        crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_build_batches(&self) -> crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesFluentBuilder {
+        crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesFluentBuilder::new(self.handle.clone())
     }
 }

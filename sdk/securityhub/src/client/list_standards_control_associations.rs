@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`standards_control_association_summaries(Option<Vec<StandardsControlAssociationSummary>>)`](crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput::standards_control_association_summaries): <p> An array that provides the enablement status and other details for each security control that applies to each enabled standard. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput::next_token): <p> A pagination parameter that's included in the response only if it was included in the request. </p>
     /// - On failure, responds with [`SdkError<ListStandardsControlAssociationsError>`](crate::operation::list_standards_control_associations::ListStandardsControlAssociationsError)
-    pub fn list_standards_control_associations(&self) -> crate::operation::list_standards_control_associations::builders::ListStandardsControlAssociationsFluentBuilder{
+    pub fn list_standards_control_associations(
+        &self,
+    ) -> crate::operation::list_standards_control_associations::builders::ListStandardsControlAssociationsFluentBuilder {
         crate::operation::list_standards_control_associations::builders::ListStandardsControlAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

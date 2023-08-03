@@ -22,17 +22,14 @@ impl UpdateRuleMetadataInput {
 }
 impl UpdateRuleMetadataInput {
     /// Creates a new builder-style object to manufacture [`UpdateRuleMetadataInput`](crate::operation::update_rule_metadata::UpdateRuleMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::update_rule_metadata::builders::UpdateRuleMetadataInputBuilder {
+    pub fn builder() -> crate::operation::update_rule_metadata::builders::UpdateRuleMetadataInputBuilder {
         crate::operation::update_rule_metadata::builders::UpdateRuleMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRuleMetadataInput`](crate::operation::update_rule_metadata::UpdateRuleMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRuleMetadataInputBuilder {
     pub(crate) rule: ::std::option::Option<crate::types::Rule>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl UpdateRuleMetadataInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRuleMetadataInput`](crate::operation::update_rule_metadata::UpdateRuleMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_rule_metadata::UpdateRuleMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_rule_metadata::UpdateRuleMetadataInput {
-                rule: self.rule,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_rule_metadata::UpdateRuleMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_rule_metadata::UpdateRuleMetadataInput {
+            rule: self.rule,
+            description: self.description,
+        })
     }
 }

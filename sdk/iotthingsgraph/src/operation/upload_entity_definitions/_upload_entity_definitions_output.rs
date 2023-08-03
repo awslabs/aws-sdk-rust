@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UploadEntityDefinitionsOutput {
 }
 impl UploadEntityDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`UploadEntityDefinitionsOutput`](crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput).
-    pub fn builder(
-    ) -> crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsOutputBuilder {
         crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UploadEntityDefinitionsOutput`](crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UploadEntityDefinitionsOutputBuilder {
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl UploadEntityDefinitionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UploadEntityDefinitionsOutput`](crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput {
+    pub fn build(self) -> crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput {
         crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput {
             upload_id: self.upload_id,
             _request_id: self._request_id,

@@ -27,7 +27,7 @@ impl DescribeMitigationActionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMitigationActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_mitigation_action::builders::DescribeMitigationActionInputBuilder,
+    inner: crate::operation::describe_mitigation_action::builders::DescribeMitigationActionInputBuilder,
 }
 impl DescribeMitigationActionFluentBuilder {
     /// Creates a new `DescribeMitigationAction`.
@@ -38,10 +38,7 @@ impl DescribeMitigationActionFluentBuilder {
         }
     }
     /// Access the DescribeMitigationAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_mitigation_action::builders::DescribeMitigationActionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_mitigation_action::builders::DescribeMitigationActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeMitigationActionFluentBuilder {
             crate::operation::describe_mitigation_action::DescribeMitigationAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_mitigation_action::DescribeMitigationActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_mitigation_action::DescribeMitigationActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeMitigationActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeMitigationActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_mitigation_action::DescribeMitigationActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_mitigation_action::DescribeMitigationActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_mitigation_action::DescribeMitigationActionError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeMitigationActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_mitigation_action::DescribeMitigationActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_mitigation_action::DescribeMitigationActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_mitigation_action::DescribeMitigationActionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DescribeMitigationActionFluentBuilder {
             crate::operation::describe_mitigation_action::DescribeMitigationAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_mitigation_action::DescribeMitigationActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_mitigation_action::DescribeMitigationActionError>,
     > {
         self.customize_middleware().await
     }

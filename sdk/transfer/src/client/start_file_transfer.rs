@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`StartFileTransferOutput`](crate::operation::start_file_transfer::StartFileTransferOutput) with field(s):
     ///   - [`transfer_id(Option<String>)`](crate::operation::start_file_transfer::StartFileTransferOutput::transfer_id): <p>Returns the unique identifier for the file transfer.</p>
     /// - On failure, responds with [`SdkError<StartFileTransferError>`](crate::operation::start_file_transfer::StartFileTransferError)
-    pub fn start_file_transfer(
-        &self,
-    ) -> crate::operation::start_file_transfer::builders::StartFileTransferFluentBuilder {
-        crate::operation::start_file_transfer::builders::StartFileTransferFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_file_transfer(&self) -> crate::operation::start_file_transfer::builders::StartFileTransferFluentBuilder {
+        crate::operation::start_file_transfer::builders::StartFileTransferFluentBuilder::new(self.handle.clone())
     }
 }

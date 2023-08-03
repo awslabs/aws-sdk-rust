@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`csv_classifier(UpdateCsvClassifierRequest)`](crate::operation::update_classifier::builders::UpdateClassifierFluentBuilder::csv_classifier) / [`set_csv_classifier(Option<UpdateCsvClassifierRequest>)`](crate::operation::update_classifier::builders::UpdateClassifierFluentBuilder::set_csv_classifier): <p>A <code>CsvClassifier</code> object with updated fields.</p>
     /// - On success, responds with [`UpdateClassifierOutput`](crate::operation::update_classifier::UpdateClassifierOutput)
     /// - On failure, responds with [`SdkError<UpdateClassifierError>`](crate::operation::update_classifier::UpdateClassifierError)
-    pub fn update_classifier(
-        &self,
-    ) -> crate::operation::update_classifier::builders::UpdateClassifierFluentBuilder {
-        crate::operation::update_classifier::builders::UpdateClassifierFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_classifier(&self) -> crate::operation::update_classifier::builders::UpdateClassifierFluentBuilder {
+        crate::operation::update_classifier::builders::UpdateClassifierFluentBuilder::new(self.handle.clone())
     }
 }

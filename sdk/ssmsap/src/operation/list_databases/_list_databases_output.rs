@@ -35,9 +35,7 @@ impl ListDatabasesOutput {
 
 /// A builder for [`ListDatabasesOutput`](crate::operation::list_databases::ListDatabasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatabasesOutputBuilder {
     pub(crate) databases: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListDatabasesOutputBuilder {
         self
     }
     /// <p>The SAP HANA databases of an application.</p>
-    pub fn set_databases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseSummary>>,
-    ) -> Self {
+    pub fn set_databases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseSummary>>) -> Self {
         self.databases = input;
         self
     }
     /// <p>The SAP HANA databases of an application.</p>
-    pub fn get_databases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseSummary>> {
+    pub fn get_databases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseSummary>> {
         &self.databases
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>

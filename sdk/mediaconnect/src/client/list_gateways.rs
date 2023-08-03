@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`gateways(Option<Vec<ListedGateway>>)`](crate::operation::list_gateways::ListGatewaysOutput::gateways): A list of gateway summaries.
     ///   - [`next_token(Option<String>)`](crate::operation::list_gateways::ListGatewaysOutput::next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListGateways request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListGateways request a second time and specify the NextToken value.
     /// - On failure, responds with [`SdkError<ListGatewaysError>`](crate::operation::list_gateways::ListGatewaysError)
-    pub fn list_gateways(
-        &self,
-    ) -> crate::operation::list_gateways::builders::ListGatewaysFluentBuilder {
-        crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_gateways(&self) -> crate::operation::list_gateways::builders::ListGatewaysFluentBuilder {
+        crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::new(self.handle.clone())
     }
 }

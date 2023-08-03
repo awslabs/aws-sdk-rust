@@ -15,40 +15,30 @@ impl DeleteRetentionConfigurationInput {
 }
 impl DeleteRetentionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteRetentionConfigurationInput`](crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput).
-    pub fn builder() -> crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationInputBuilder {
         crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRetentionConfigurationInput`](crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRetentionConfigurationInputBuilder {
     pub(crate) retention_configuration_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRetentionConfigurationInputBuilder {
     /// <p>The name of the retention configuration to delete.</p>
-    pub fn retention_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn retention_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retention_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the retention configuration to delete.</p>
-    pub fn set_retention_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_retention_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.retention_configuration_name = input;
         self
     }
     /// <p>The name of the retention configuration to delete.</p>
-    pub fn get_retention_configuration_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_retention_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.retention_configuration_name
     }
     /// Consumes the builder and constructs a [`DeleteRetentionConfigurationInput`](crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput).
@@ -58,10 +48,8 @@ impl DeleteRetentionConfigurationInputBuilder {
         crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput {
-                retention_configuration_name: self.retention_configuration_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput {
+            retention_configuration_name: self.retention_configuration_name,
+        })
     }
 }

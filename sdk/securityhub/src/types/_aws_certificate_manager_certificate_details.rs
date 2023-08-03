@@ -17,14 +17,10 @@ pub struct AwsCertificateManagerCertificateDetails {
     /// <p>Contains information about the initial validation of each domain name that occurs as a result of the <code>RequestCertificate</code> request.</p>
     /// <p>Only provided if the certificate type is <code>AMAZON_ISSUED</code>.</p>
     #[doc(hidden)]
-    pub domain_validation_options: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>,
-    >,
+    pub domain_validation_options: ::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>>,
     /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID).</p>
     #[doc(hidden)]
-    pub extended_key_usages: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateExtendedKeyUsage>,
-    >,
+    pub extended_key_usages: ::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateExtendedKeyUsage>>,
     /// <p>For a failed certificate request, the reason for the failure.</p>
     /// <p>Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code> | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code> | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
     #[doc(hidden)]
@@ -49,9 +45,7 @@ pub struct AwsCertificateManagerCertificateDetails {
     pub key_algorithm: ::std::option::Option<::std::string::String>,
     /// <p>A list of key usage X.509 v3 extension objects.</p>
     #[doc(hidden)]
-    pub key_usages: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateKeyUsage>,
-    >,
+    pub key_usages: ::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateKeyUsage>>,
     /// <p>The time after which the certificate becomes invalid.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
@@ -69,8 +63,7 @@ pub struct AwsCertificateManagerCertificateDetails {
     pub renewal_eligibility: ::std::option::Option<::std::string::String>,
     /// <p>Information about the status of the Certificate Manager managed renewal for the certificate. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
     #[doc(hidden)]
-    pub renewal_summary:
-        ::std::option::Option<crate::types::AwsCertificateManagerCertificateRenewalSummary>,
+    pub renewal_summary: ::std::option::Option<crate::types::AwsCertificateManagerCertificateRenewalSummary>,
     /// <p>The serial number of the certificate.</p>
     #[doc(hidden)]
     pub serial: ::std::option::Option<::std::string::String>,
@@ -109,18 +102,11 @@ impl AwsCertificateManagerCertificateDetails {
     }
     /// <p>Contains information about the initial validation of each domain name that occurs as a result of the <code>RequestCertificate</code> request.</p>
     /// <p>Only provided if the certificate type is <code>AMAZON_ISSUED</code>.</p>
-    pub fn domain_validation_options(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsCertificateManagerCertificateDomainValidationOption],
-    > {
+    pub fn domain_validation_options(&self) -> ::std::option::Option<&[crate::types::AwsCertificateManagerCertificateDomainValidationOption]> {
         self.domain_validation_options.as_deref()
     }
     /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID).</p>
-    pub fn extended_key_usages(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsCertificateManagerCertificateExtendedKeyUsage]>
-    {
+    pub fn extended_key_usages(&self) -> ::std::option::Option<&[crate::types::AwsCertificateManagerCertificateExtendedKeyUsage]> {
         self.extended_key_usages.as_deref()
     }
     /// <p>For a failed certificate request, the reason for the failure.</p>
@@ -152,9 +138,7 @@ impl AwsCertificateManagerCertificateDetails {
         self.key_algorithm.as_deref()
     }
     /// <p>A list of key usage X.509 v3 extension objects.</p>
-    pub fn key_usages(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsCertificateManagerCertificateKeyUsage]> {
+    pub fn key_usages(&self) -> ::std::option::Option<&[crate::types::AwsCertificateManagerCertificateKeyUsage]> {
         self.key_usages.as_deref()
     }
     /// <p>The time after which the certificate becomes invalid.</p>
@@ -168,9 +152,7 @@ impl AwsCertificateManagerCertificateDetails {
         self.not_before.as_deref()
     }
     /// <p>Provides a value that specifies whether to add the certificate to a transparency log.</p>
-    pub fn options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsCertificateManagerCertificateOptions> {
+    pub fn options(&self) -> ::std::option::Option<&crate::types::AwsCertificateManagerCertificateOptions> {
         self.options.as_ref()
     }
     /// <p>Whether the certificate is eligible for renewal.</p>
@@ -179,9 +161,7 @@ impl AwsCertificateManagerCertificateDetails {
         self.renewal_eligibility.as_deref()
     }
     /// <p>Information about the status of the Certificate Manager managed renewal for the certificate. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
-    pub fn renewal_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsCertificateManagerCertificateRenewalSummary> {
+    pub fn renewal_summary(&self) -> ::std::option::Option<&crate::types::AwsCertificateManagerCertificateRenewalSummary> {
         self.renewal_summary.as_ref()
     }
     /// <p>The serial number of the certificate.</p>
@@ -221,57 +201,41 @@ impl AwsCertificateManagerCertificateDetails {
 
 /// A builder for [`AwsCertificateManagerCertificateDetails`](crate::types::AwsCertificateManagerCertificateDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCertificateManagerCertificateDetailsBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
-    pub(crate) domain_validation_options: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>,
-    >,
-    pub(crate) extended_key_usages: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateExtendedKeyUsage>,
-    >,
+    pub(crate) domain_validation_options:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>>,
+    pub(crate) extended_key_usages: ::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateExtendedKeyUsage>>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) imported_at: ::std::option::Option<::std::string::String>,
     pub(crate) in_use_by: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) issued_at: ::std::option::Option<::std::string::String>,
     pub(crate) issuer: ::std::option::Option<::std::string::String>,
     pub(crate) key_algorithm: ::std::option::Option<::std::string::String>,
-    pub(crate) key_usages: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateKeyUsage>,
-    >,
+    pub(crate) key_usages: ::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateKeyUsage>>,
     pub(crate) not_after: ::std::option::Option<::std::string::String>,
     pub(crate) not_before: ::std::option::Option<::std::string::String>,
-    pub(crate) options:
-        ::std::option::Option<crate::types::AwsCertificateManagerCertificateOptions>,
+    pub(crate) options: ::std::option::Option<crate::types::AwsCertificateManagerCertificateOptions>,
     pub(crate) renewal_eligibility: ::std::option::Option<::std::string::String>,
-    pub(crate) renewal_summary:
-        ::std::option::Option<crate::types::AwsCertificateManagerCertificateRenewalSummary>,
+    pub(crate) renewal_summary: ::std::option::Option<crate::types::AwsCertificateManagerCertificateRenewalSummary>,
     pub(crate) serial: ::std::option::Option<::std::string::String>,
     pub(crate) signature_algorithm: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) subject: ::std::option::Option<::std::string::String>,
-    pub(crate) subject_alternative_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subject_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsCertificateManagerCertificateDetailsBuilder {
     /// <p>The ARN of the private certificate authority (CA) that will be used to issue the certificate.</p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the private certificate authority (CA) that will be used to issue the certificate.</p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_arn = input;
         self
     }
@@ -316,10 +280,7 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     ///
     /// <p>Contains information about the initial validation of each domain name that occurs as a result of the <code>RequestCertificate</code> request.</p>
     /// <p>Only provided if the certificate type is <code>AMAZON_ISSUED</code>.</p>
-    pub fn domain_validation_options(
-        mut self,
-        input: crate::types::AwsCertificateManagerCertificateDomainValidationOption,
-    ) -> Self {
+    pub fn domain_validation_options(mut self, input: crate::types::AwsCertificateManagerCertificateDomainValidationOption) -> Self {
         let mut v = self.domain_validation_options.unwrap_or_default();
         v.push(input);
         self.domain_validation_options = ::std::option::Option::Some(v);
@@ -329,9 +290,7 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     /// <p>Only provided if the certificate type is <code>AMAZON_ISSUED</code>.</p>
     pub fn set_domain_validation_options(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>>,
     ) -> Self {
         self.domain_validation_options = input;
         self
@@ -340,9 +299,7 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     /// <p>Only provided if the certificate type is <code>AMAZON_ISSUED</code>.</p>
     pub fn get_domain_validation_options(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>> {
         &self.domain_validation_options
     }
     /// Appends an item to `extended_key_usages`.
@@ -350,10 +307,7 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     /// To override the contents of this collection use [`set_extended_key_usages`](Self::set_extended_key_usages).
     ///
     /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID).</p>
-    pub fn extended_key_usages(
-        mut self,
-        input: crate::types::AwsCertificateManagerCertificateExtendedKeyUsage,
-    ) -> Self {
+    pub fn extended_key_usages(mut self, input: crate::types::AwsCertificateManagerCertificateExtendedKeyUsage) -> Self {
         let mut v = self.extended_key_usages.unwrap_or_default();
         v.push(input);
         self.extended_key_usages = ::std::option::Option::Some(v);
@@ -362,36 +316,24 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID).</p>
     pub fn set_extended_key_usages(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateExtendedKeyUsage>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateExtendedKeyUsage>>,
     ) -> Self {
         self.extended_key_usages = input;
         self
     }
     /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID).</p>
-    pub fn get_extended_key_usages(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateExtendedKeyUsage>,
-    > {
+    pub fn get_extended_key_usages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateExtendedKeyUsage>> {
         &self.extended_key_usages
     }
     /// <p>For a failed certificate request, the reason for the failure.</p>
     /// <p>Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code> | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code> | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For a failed certificate request, the reason for the failure.</p>
     /// <p>Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code> | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code> | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -429,10 +371,7 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         self
     }
     /// <p>The list of ARNs for the Amazon Web Services resources that use the certificate.</p>
-    pub fn set_in_use_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_in_use_by(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.in_use_by = input;
         self
     }
@@ -473,19 +412,13 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     }
     /// <p>The algorithm that was used to generate the public-private key pair.</p>
     /// <p>Valid values: <code>RSA_2048</code> | <code>RSA_1024</code> |<code> RSA_4096</code> | <code>EC_prime256v1</code> | <code>EC_secp384r1</code> | <code>EC_secp521r1</code> </p>
-    pub fn key_algorithm(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_algorithm(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_algorithm = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The algorithm that was used to generate the public-private key pair.</p>
     /// <p>Valid values: <code>RSA_2048</code> | <code>RSA_1024</code> |<code> RSA_4096</code> | <code>EC_prime256v1</code> | <code>EC_secp384r1</code> | <code>EC_secp521r1</code> </p>
-    pub fn set_key_algorithm(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_algorithm = input;
         self
     }
@@ -499,31 +432,19 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     /// To override the contents of this collection use [`set_key_usages`](Self::set_key_usages).
     ///
     /// <p>A list of key usage X.509 v3 extension objects.</p>
-    pub fn key_usages(
-        mut self,
-        input: crate::types::AwsCertificateManagerCertificateKeyUsage,
-    ) -> Self {
+    pub fn key_usages(mut self, input: crate::types::AwsCertificateManagerCertificateKeyUsage) -> Self {
         let mut v = self.key_usages.unwrap_or_default();
         v.push(input);
         self.key_usages = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of key usage X.509 v3 extension objects.</p>
-    pub fn set_key_usages(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateKeyUsage>,
-        >,
-    ) -> Self {
+    pub fn set_key_usages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateKeyUsage>>) -> Self {
         self.key_usages = input;
         self
     }
     /// <p>A list of key usage X.509 v3 extension objects.</p>
-    pub fn get_key_usages(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateKeyUsage>,
-    > {
+    pub fn get_key_usages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateKeyUsage>> {
         &self.key_usages
     }
     /// <p>The time after which the certificate becomes invalid.</p>
@@ -566,34 +487,23 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         self
     }
     /// <p>Provides a value that specifies whether to add the certificate to a transparency log.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsCertificateManagerCertificateOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::AwsCertificateManagerCertificateOptions>) -> Self {
         self.options = input;
         self
     }
     /// <p>Provides a value that specifies whether to add the certificate to a transparency log.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsCertificateManagerCertificateOptions> {
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::AwsCertificateManagerCertificateOptions> {
         &self.options
     }
     /// <p>Whether the certificate is eligible for renewal.</p>
     /// <p>Valid values: <code>ELIGIBLE</code> | <code>INELIGIBLE</code> </p>
-    pub fn renewal_eligibility(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn renewal_eligibility(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.renewal_eligibility = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Whether the certificate is eligible for renewal.</p>
     /// <p>Valid values: <code>ELIGIBLE</code> | <code>INELIGIBLE</code> </p>
-    pub fn set_renewal_eligibility(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_renewal_eligibility(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.renewal_eligibility = input;
         self
     }
@@ -603,25 +513,17 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         &self.renewal_eligibility
     }
     /// <p>Information about the status of the Certificate Manager managed renewal for the certificate. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
-    pub fn renewal_summary(
-        mut self,
-        input: crate::types::AwsCertificateManagerCertificateRenewalSummary,
-    ) -> Self {
+    pub fn renewal_summary(mut self, input: crate::types::AwsCertificateManagerCertificateRenewalSummary) -> Self {
         self.renewal_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the status of the Certificate Manager managed renewal for the certificate. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
-    pub fn set_renewal_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsCertificateManagerCertificateRenewalSummary>,
-    ) -> Self {
+    pub fn set_renewal_summary(mut self, input: ::std::option::Option<crate::types::AwsCertificateManagerCertificateRenewalSummary>) -> Self {
         self.renewal_summary = input;
         self
     }
     /// <p>Information about the status of the Certificate Manager managed renewal for the certificate. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
-    pub fn get_renewal_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsCertificateManagerCertificateRenewalSummary> {
+    pub fn get_renewal_summary(&self) -> &::std::option::Option<crate::types::AwsCertificateManagerCertificateRenewalSummary> {
         &self.renewal_summary
     }
     /// <p>The serial number of the certificate.</p>
@@ -639,18 +541,12 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
         &self.serial
     }
     /// <p>The algorithm that was used to sign the certificate.</p>
-    pub fn signature_algorithm(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signature_algorithm(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signature_algorithm = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The algorithm that was used to sign the certificate.</p>
-    pub fn set_signature_algorithm(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signature_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signature_algorithm = input;
         self
     }
@@ -695,10 +591,7 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     ///
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate.</p>
     /// <p>The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>
-    pub fn subject_alternative_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subject_alternative_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subject_alternative_names.unwrap_or_default();
         v.push(input.into());
         self.subject_alternative_names = ::std::option::Option::Some(v);
@@ -706,18 +599,13 @@ impl AwsCertificateManagerCertificateDetailsBuilder {
     }
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate.</p>
     /// <p>The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>
-    pub fn set_subject_alternative_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subject_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subject_alternative_names = input;
         self
     }
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate.</p>
     /// <p>The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>
-    pub fn get_subject_alternative_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subject_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subject_alternative_names
     }
     /// <p>The source of the certificate. For certificates that Certificate Manager provides, <code>Type</code> is <code>AMAZON_ISSUED</code>. For certificates that are imported with <code>ImportCertificate</code>, <code>Type</code> is <code>IMPORTED</code>.</p>

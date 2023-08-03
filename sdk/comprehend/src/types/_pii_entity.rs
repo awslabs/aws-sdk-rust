@@ -44,9 +44,7 @@ impl PiiEntity {
 
 /// A builder for [`PiiEntity`](crate::types::PiiEntity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PiiEntityBuilder {
     pub(crate) score: ::std::option::Option<f32>,
     pub(crate) r#type: ::std::option::Option<crate::types::PiiEntityType>,

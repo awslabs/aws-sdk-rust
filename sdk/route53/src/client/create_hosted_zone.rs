@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`vpc(Option<Vpc>)`](crate::operation::create_hosted_zone::CreateHostedZoneOutput::vpc): <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
     ///   - [`location(Option<String>)`](crate::operation::create_hosted_zone::CreateHostedZoneOutput::location): <p>The unique URL representing the new hosted zone.</p>
     /// - On failure, responds with [`SdkError<CreateHostedZoneError>`](crate::operation::create_hosted_zone::CreateHostedZoneError)
-    pub fn create_hosted_zone(
-        &self,
-    ) -> crate::operation::create_hosted_zone::builders::CreateHostedZoneFluentBuilder {
-        crate::operation::create_hosted_zone::builders::CreateHostedZoneFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_hosted_zone(&self) -> crate::operation::create_hosted_zone::builders::CreateHostedZoneFluentBuilder {
+        crate::operation::create_hosted_zone::builders::CreateHostedZoneFluentBuilder::new(self.handle.clone())
     }
 }

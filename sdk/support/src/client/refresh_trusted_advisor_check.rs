@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`RefreshTrustedAdvisorCheckOutput`](crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckOutput) with field(s):
     ///   - [`status(Option<TrustedAdvisorCheckRefreshStatus>)`](crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckOutput::status): <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
     /// - On failure, responds with [`SdkError<RefreshTrustedAdvisorCheckError>`](crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckError)
-    pub fn refresh_trusted_advisor_check(&self) -> crate::operation::refresh_trusted_advisor_check::builders::RefreshTrustedAdvisorCheckFluentBuilder{
+    pub fn refresh_trusted_advisor_check(
+        &self,
+    ) -> crate::operation::refresh_trusted_advisor_check::builders::RefreshTrustedAdvisorCheckFluentBuilder {
         crate::operation::refresh_trusted_advisor_check::builders::RefreshTrustedAdvisorCheckFluentBuilder::new(self.handle.clone())
     }
 }

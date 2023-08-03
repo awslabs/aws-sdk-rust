@@ -47,9 +47,7 @@ impl RequiredActivatedType {
 
 /// A builder for [`RequiredActivatedType`](crate::types::RequiredActivatedType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequiredActivatedTypeBuilder {
     pub(crate) type_name_alias: ::std::option::Option<::std::string::String>,
     pub(crate) original_type_name: ::std::option::Option<::std::string::String>,
@@ -58,18 +56,12 @@ pub struct RequiredActivatedTypeBuilder {
 }
 impl RequiredActivatedTypeBuilder {
     /// <p>An alias assigned to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
-    pub fn type_name_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_name_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An alias assigned to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
-    pub fn set_type_name_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_type_name_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name_alias = input;
         self
     }
@@ -79,19 +71,13 @@ impl RequiredActivatedTypeBuilder {
     }
     /// <p>The type name of the public extension.</p>
     /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn original_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn original_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.original_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type name of the public extension.</p>
     /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn set_original_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_original_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.original_type_name = input;
         self
     }
@@ -126,10 +112,7 @@ impl RequiredActivatedTypeBuilder {
         self
     }
     /// <p>A list of the major versions of the extension type that the macro supports.</p>
-    pub fn set_supported_major_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_supported_major_versions(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.supported_major_versions = input;
         self
     }

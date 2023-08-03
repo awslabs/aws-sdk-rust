@@ -17,9 +17,7 @@ impl JobExecutionSummaryForJob {
         self.thing_arn.as_deref()
     }
     /// <p>Contains a subset of information about a job execution.</p>
-    pub fn job_execution_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::JobExecutionSummary> {
+    pub fn job_execution_summary(&self) -> ::std::option::Option<&crate::types::JobExecutionSummary> {
         self.job_execution_summary.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl JobExecutionSummaryForJob {
 
 /// A builder for [`JobExecutionSummaryForJob`](crate::types::JobExecutionSummaryForJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobExecutionSummaryForJobBuilder {
     pub(crate) thing_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_execution_summary: ::std::option::Option<crate::types::JobExecutionSummary>,
@@ -60,17 +56,12 @@ impl JobExecutionSummaryForJobBuilder {
         self
     }
     /// <p>Contains a subset of information about a job execution.</p>
-    pub fn set_job_execution_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionSummary>,
-    ) -> Self {
+    pub fn set_job_execution_summary(mut self, input: ::std::option::Option<crate::types::JobExecutionSummary>) -> Self {
         self.job_execution_summary = input;
         self
     }
     /// <p>Contains a subset of information about a job execution.</p>
-    pub fn get_job_execution_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::JobExecutionSummary> {
+    pub fn get_job_execution_summary(&self) -> &::std::option::Option<crate::types::JobExecutionSummary> {
         &self.job_execution_summary
     }
     /// Consumes the builder and constructs a [`JobExecutionSummaryForJob`](crate::types::JobExecutionSummaryForJob).

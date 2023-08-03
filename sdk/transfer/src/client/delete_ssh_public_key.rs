@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`user_name(impl ::std::convert::Into<String>)`](crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyFluentBuilder::set_user_name): <p>A unique string that identifies a user whose public key is being deleted.</p>
     /// - On success, responds with [`DeleteSshPublicKeyOutput`](crate::operation::delete_ssh_public_key::DeleteSshPublicKeyOutput)
     /// - On failure, responds with [`SdkError<DeleteSshPublicKeyError>`](crate::operation::delete_ssh_public_key::DeleteSshPublicKeyError)
-    pub fn delete_ssh_public_key(
-        &self,
-    ) -> crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyFluentBuilder {
-        crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_ssh_public_key(&self) -> crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyFluentBuilder {
+        crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyFluentBuilder::new(self.handle.clone())
     }
 }

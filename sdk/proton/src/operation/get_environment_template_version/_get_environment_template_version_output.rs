@@ -5,15 +5,12 @@
 pub struct GetEnvironmentTemplateVersionOutput {
     /// <p>The detailed data of the requested environment template version.</p>
     #[doc(hidden)]
-    pub environment_template_version:
-        ::std::option::Option<crate::types::EnvironmentTemplateVersion>,
+    pub environment_template_version: ::std::option::Option<crate::types::EnvironmentTemplateVersion>,
     _request_id: Option<String>,
 }
 impl GetEnvironmentTemplateVersionOutput {
     /// <p>The detailed data of the requested environment template version.</p>
-    pub fn environment_template_version(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EnvironmentTemplateVersion> {
+    pub fn environment_template_version(&self) -> ::std::option::Option<&crate::types::EnvironmentTemplateVersion> {
         self.environment_template_version.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for GetEnvironmentTemplateVersionOutput {
 }
 impl GetEnvironmentTemplateVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetEnvironmentTemplateVersionOutput`](crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionOutput).
-    pub fn builder() -> crate::operation::get_environment_template_version::builders::GetEnvironmentTemplateVersionOutputBuilder{
+    pub fn builder() -> crate::operation::get_environment_template_version::builders::GetEnvironmentTemplateVersionOutputBuilder {
         crate::operation::get_environment_template_version::builders::GetEnvironmentTemplateVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEnvironmentTemplateVersionOutput`](crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEnvironmentTemplateVersionOutputBuilder {
-    pub(crate) environment_template_version:
-        ::std::option::Option<crate::types::EnvironmentTemplateVersion>,
+    pub(crate) environment_template_version: ::std::option::Option<crate::types::EnvironmentTemplateVersion>,
     _request_id: Option<String>,
 }
 impl GetEnvironmentTemplateVersionOutputBuilder {
     /// <p>The detailed data of the requested environment template version.</p>
-    pub fn environment_template_version(
-        mut self,
-        input: crate::types::EnvironmentTemplateVersion,
-    ) -> Self {
+    pub fn environment_template_version(mut self, input: crate::types::EnvironmentTemplateVersion) -> Self {
         self.environment_template_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The detailed data of the requested environment template version.</p>
-    pub fn set_environment_template_version(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentTemplateVersion>,
-    ) -> Self {
+    pub fn set_environment_template_version(mut self, input: ::std::option::Option<crate::types::EnvironmentTemplateVersion>) -> Self {
         self.environment_template_version = input;
         self
     }
     /// <p>The detailed data of the requested environment template version.</p>
-    pub fn get_environment_template_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnvironmentTemplateVersion> {
+    pub fn get_environment_template_version(&self) -> &::std::option::Option<crate::types::EnvironmentTemplateVersion> {
         &self.environment_template_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +58,7 @@ impl GetEnvironmentTemplateVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEnvironmentTemplateVersionOutput`](crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionOutput
-    {
+    pub fn build(self) -> crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionOutput {
         crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionOutput {
             environment_template_version: self.environment_template_version,
             _request_id: self._request_id,

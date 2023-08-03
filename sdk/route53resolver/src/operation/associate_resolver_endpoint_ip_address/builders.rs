@@ -5,16 +5,16 @@ pub use crate::operation::associate_resolver_endpoint_ip_address::_associate_res
 
 impl AssociateResolverEndpointIpAddressInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.associate_resolver_endpoint_ip_address();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl AssociateResolverEndpointIpAddressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateResolverEndpointIpAddressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_resolver_endpoint_ip_address::builders::AssociateResolverEndpointIpAddressInputBuilder,
+    inner: crate::operation::associate_resolver_endpoint_ip_address::builders::AssociateResolverEndpointIpAddressInputBuilder,
 }
 impl AssociateResolverEndpointIpAddressFluentBuilder {
     /// Creates a new `AssociateResolverEndpointIpAddress`.
@@ -38,15 +38,20 @@ impl AssociateResolverEndpointIpAddressFluentBuilder {
         }
     }
     /// Access the AssociateResolverEndpointIpAddress as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_resolver_endpoint_ip_address::builders::AssociateResolverEndpointIpAddressInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_resolver_endpoint_ip_address::builders::AssociateResolverEndpointIpAddressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddress, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddress,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl AssociateResolverEndpointIpAddressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,32 +88,35 @@ impl AssociateResolverEndpointIpAddressFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddress, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddress,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Resolver endpoint that you want to associate IP addresses with.</p>
-    pub fn resolver_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolver_endpoint_id(input.into());
         self
     }
     /// <p>The ID of the Resolver endpoint that you want to associate IP addresses with.</p>
-    pub fn set_resolver_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolver_endpoint_id(input);
         self
     }
@@ -121,10 +130,7 @@ impl AssociateResolverEndpointIpAddressFluentBuilder {
         self
     }
     /// <p>Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID, Resolver chooses an IP address for you from the available IPs in the specified subnet.</p>
-    pub fn set_ip_address(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressUpdate>,
-    ) -> Self {
+    pub fn set_ip_address(mut self, input: ::std::option::Option<crate::types::IpAddressUpdate>) -> Self {
         self.inner = self.inner.set_ip_address(input);
         self
     }

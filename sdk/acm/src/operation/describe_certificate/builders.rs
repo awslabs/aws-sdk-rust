@@ -10,10 +10,7 @@ impl DescribeCertificateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_certificate::DescribeCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_certificate::DescribeCertificateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_certificate::DescribeCertificateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_certificate();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeCertificateFluentBuilder {
         }
     }
     /// Access the DescribeCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_certificate::builders::DescribeCertificateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_certificate::builders::DescribeCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeCertificateFluentBuilder {
             crate::operation::describe_certificate::DescribeCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_certificate::DescribeCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_certificate::DescribeCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_certificate::DescribeCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_certificate::DescribeCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_certificate::DescribeCertificateError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_certificate::DescribeCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_certificate::DescribeCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_certificate::DescribeCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -117,29 +103,21 @@ impl DescribeCertificateFluentBuilder {
             crate::operation::describe_certificate::DescribeCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_certificate::DescribeCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_certificate::DescribeCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }

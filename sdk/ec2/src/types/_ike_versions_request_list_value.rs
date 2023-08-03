@@ -23,9 +23,7 @@ impl IkeVersionsRequestListValue {
 
 /// A builder for [`IkeVersionsRequestListValue`](crate::types::IkeVersionsRequestListValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IkeVersionsRequestListValueBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }

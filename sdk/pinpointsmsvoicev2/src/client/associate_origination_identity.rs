@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`origination_identity(Option<String>)`](crate::operation::associate_origination_identity::AssociateOriginationIdentityOutput::origination_identity): <p>The PhoneNumberId or SenderId of the origination identity.</p>
     ///   - [`iso_country_code(Option<String>)`](crate::operation::associate_origination_identity::AssociateOriginationIdentityOutput::iso_country_code): <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     /// - On failure, responds with [`SdkError<AssociateOriginationIdentityError>`](crate::operation::associate_origination_identity::AssociateOriginationIdentityError)
-    pub fn associate_origination_identity(&self) -> crate::operation::associate_origination_identity::builders::AssociateOriginationIdentityFluentBuilder{
+    pub fn associate_origination_identity(
+        &self,
+    ) -> crate::operation::associate_origination_identity::builders::AssociateOriginationIdentityFluentBuilder {
         crate::operation::associate_origination_identity::builders::AssociateOriginationIdentityFluentBuilder::new(self.handle.clone())
     }
 }

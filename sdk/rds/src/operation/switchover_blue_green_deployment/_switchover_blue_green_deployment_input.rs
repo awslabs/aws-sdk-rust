@@ -34,16 +34,14 @@ impl SwitchoverBlueGreenDeploymentInput {
 }
 impl SwitchoverBlueGreenDeploymentInput {
     /// Creates a new builder-style object to manufacture [`SwitchoverBlueGreenDeploymentInput`](crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentInput).
-    pub fn builder() -> crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentInputBuilder{
+    pub fn builder() -> crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentInputBuilder {
         crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentInputBuilder::default()
     }
 }
 
 /// A builder for [`SwitchoverBlueGreenDeploymentInput`](crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SwitchoverBlueGreenDeploymentInputBuilder {
     pub(crate) blue_green_deployment_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) switchover_timeout: ::std::option::Option<i32>,
@@ -54,10 +52,7 @@ impl SwitchoverBlueGreenDeploymentInputBuilder {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn blue_green_deployment_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blue_green_deployment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blue_green_deployment_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -66,10 +61,7 @@ impl SwitchoverBlueGreenDeploymentInputBuilder {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn set_blue_green_deployment_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blue_green_deployment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blue_green_deployment_identifier = input;
         self
     }
@@ -78,9 +70,7 @@ impl SwitchoverBlueGreenDeploymentInputBuilder {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn get_blue_green_deployment_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_blue_green_deployment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.blue_green_deployment_identifier
     }
     /// <p>The amount of time, in seconds, for the switchover to complete.</p>
@@ -110,13 +100,9 @@ impl SwitchoverBlueGreenDeploymentInputBuilder {
         crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentInput {
-                blue_green_deployment_identifier: self.blue_green_deployment_identifier
-                ,
-                switchover_timeout: self.switchover_timeout
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentInput {
+            blue_green_deployment_identifier: self.blue_green_deployment_identifier,
+            switchover_timeout: self.switchover_timeout,
+        })
     }
 }

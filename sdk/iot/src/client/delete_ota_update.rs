@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`force_delete_aws_job(bool)`](crate::operation::delete_ota_update::builders::DeleteOTAUpdateFluentBuilder::force_delete_aws_job) / [`set_force_delete_aws_job(Option<bool>)`](crate::operation::delete_ota_update::builders::DeleteOTAUpdateFluentBuilder::set_force_delete_aws_job): <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
     /// - On success, responds with [`DeleteOtaUpdateOutput`](crate::operation::delete_ota_update::DeleteOtaUpdateOutput)
     /// - On failure, responds with [`SdkError<DeleteOTAUpdateError>`](crate::operation::delete_ota_update::DeleteOTAUpdateError)
-    pub fn delete_ota_update(
-        &self,
-    ) -> crate::operation::delete_ota_update::builders::DeleteOTAUpdateFluentBuilder {
-        crate::operation::delete_ota_update::builders::DeleteOTAUpdateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_ota_update(&self) -> crate::operation::delete_ota_update::builders::DeleteOTAUpdateFluentBuilder {
+        crate::operation::delete_ota_update::builders::DeleteOTAUpdateFluentBuilder::new(self.handle.clone())
     }
 }

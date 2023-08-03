@@ -100,9 +100,7 @@ impl JobRunSummary {
 
 /// A builder for [`JobRunSummary`](crate::types::JobRunSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobRunSummaryBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -119,18 +117,12 @@ pub struct JobRunSummaryBuilder {
 }
 impl JobRunSummaryBuilder {
     /// <p>The ID of the application the job is running on.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application the job is running on.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -200,10 +192,7 @@ impl JobRunSummaryBuilder {
         self
     }
     /// <p>The date and time when the job run was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -217,10 +206,7 @@ impl JobRunSummaryBuilder {
         self
     }
     /// <p>The date and time when the job run was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -229,18 +215,12 @@ impl JobRunSummaryBuilder {
         &self.updated_at
     }
     /// <p>The execution role ARN of the job run.</p>
-    pub fn execution_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The execution role ARN of the job run.</p>
-    pub fn set_execution_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role = input;
         self
     }
@@ -263,18 +243,12 @@ impl JobRunSummaryBuilder {
         &self.state
     }
     /// <p>The state details of the job run.</p>
-    pub fn state_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state details of the job run.</p>
-    pub fn set_state_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_details = input;
         self
     }
@@ -283,18 +257,12 @@ impl JobRunSummaryBuilder {
         &self.state_details
     }
     /// <p>The Amazon EMR release associated with the application your job is running on.</p>
-    pub fn release_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EMR release associated with the application your job is running on.</p>
-    pub fn set_release_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_label = input;
         self
     }

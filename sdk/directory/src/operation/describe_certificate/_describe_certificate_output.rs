@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeCertificateOutput {
 }
 impl DescribeCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificateOutput`](crate::operation::describe_certificate::DescribeCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_certificate::builders::DescribeCertificateOutputBuilder {
-        crate::operation::describe_certificate::builders::DescribeCertificateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_certificate::builders::DescribeCertificateOutputBuilder {
+        crate::operation::describe_certificate::builders::DescribeCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCertificateOutput`](crate::operation::describe_certificate::DescribeCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCertificateOutputBuilder {
     pub(crate) certificate: ::std::option::Option<crate::types::Certificate>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeCertificateOutputBuilder {
         self
     }
     /// <p>Information about the certificate, including registered date time, certificate state, the reason for the state, expiration date time, and certificate common name.</p>
-    pub fn set_certificate(
-        mut self,
-        input: ::std::option::Option<crate::types::Certificate>,
-    ) -> Self {
+    pub fn set_certificate(mut self, input: ::std::option::Option<crate::types::Certificate>) -> Self {
         self.certificate = input;
         self
     }

@@ -47,18 +47,14 @@ impl CreateChannelMembershipInput {
 }
 impl CreateChannelMembershipInput {
     /// Creates a new builder-style object to manufacture [`CreateChannelMembershipInput`](crate::operation::create_channel_membership::CreateChannelMembershipInput).
-    pub fn builder(
-    ) -> crate::operation::create_channel_membership::builders::CreateChannelMembershipInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_channel_membership::builders::CreateChannelMembershipInputBuilder {
         crate::operation::create_channel_membership::builders::CreateChannelMembershipInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateChannelMembershipInput`](crate::operation::create_channel_membership::CreateChannelMembershipInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateChannelMembershipInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) member_arn: ::std::option::Option<::std::string::String>,
@@ -101,10 +97,7 @@ impl CreateChannelMembershipInputBuilder {
         self
     }
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMembershipType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMembershipType>) -> Self {
         self.r#type = input;
         self
     }
@@ -129,20 +122,14 @@ impl CreateChannelMembershipInputBuilder {
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p>
     /// </note>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p>
     /// </note>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_channel_id = input;
         self
     }
@@ -159,14 +146,12 @@ impl CreateChannelMembershipInputBuilder {
         crate::operation::create_channel_membership::CreateChannelMembershipInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_channel_membership::CreateChannelMembershipInput {
-                channel_arn: self.channel_arn,
-                member_arn: self.member_arn,
-                r#type: self.r#type,
-                chime_bearer: self.chime_bearer,
-                sub_channel_id: self.sub_channel_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_channel_membership::CreateChannelMembershipInput {
+            channel_arn: self.channel_arn,
+            member_arn: self.member_arn,
+            r#type: self.r#type,
+            chime_bearer: self.chime_bearer,
+            sub_channel_id: self.sub_channel_id,
+        })
     }
 }

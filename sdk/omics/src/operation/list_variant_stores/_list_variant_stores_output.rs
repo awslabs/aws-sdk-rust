@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListVariantStoresOutput {
 }
 impl ListVariantStoresOutput {
     /// Creates a new builder-style object to manufacture [`ListVariantStoresOutput`](crate::operation::list_variant_stores::ListVariantStoresOutput).
-    pub fn builder(
-    ) -> crate::operation::list_variant_stores::builders::ListVariantStoresOutputBuilder {
+    pub fn builder() -> crate::operation::list_variant_stores::builders::ListVariantStoresOutputBuilder {
         crate::operation::list_variant_stores::builders::ListVariantStoresOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVariantStoresOutput`](crate::operation::list_variant_stores::ListVariantStoresOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVariantStoresOutputBuilder {
-    pub(crate) variant_stores:
-        ::std::option::Option<::std::vec::Vec<crate::types::VariantStoreItem>>,
+    pub(crate) variant_stores: ::std::option::Option<::std::vec::Vec<crate::types::VariantStoreItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListVariantStoresOutputBuilder {
         self
     }
     /// <p>A list of variant stores.</p>
-    pub fn set_variant_stores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VariantStoreItem>>,
-    ) -> Self {
+    pub fn set_variant_stores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VariantStoreItem>>) -> Self {
         self.variant_stores = input;
         self
     }
     /// <p>A list of variant stores.</p>
-    pub fn get_variant_stores(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VariantStoreItem>> {
+    pub fn get_variant_stores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VariantStoreItem>> {
         &self.variant_stores
     }
     /// <p>A pagination token that's included if more results are available.</p>

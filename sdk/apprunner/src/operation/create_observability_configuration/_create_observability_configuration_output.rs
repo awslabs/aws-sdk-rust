@@ -5,15 +5,12 @@
 pub struct CreateObservabilityConfigurationOutput {
     /// <p>A description of the App Runner observability configuration that's created by this request.</p>
     #[doc(hidden)]
-    pub observability_configuration:
-        ::std::option::Option<crate::types::ObservabilityConfiguration>,
+    pub observability_configuration: ::std::option::Option<crate::types::ObservabilityConfiguration>,
     _request_id: Option<String>,
 }
 impl CreateObservabilityConfigurationOutput {
     /// <p>A description of the App Runner observability configuration that's created by this request.</p>
-    pub fn observability_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ObservabilityConfiguration> {
+    pub fn observability_configuration(&self) -> ::std::option::Option<&crate::types::ObservabilityConfiguration> {
         self.observability_configuration.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for CreateObservabilityConfigurationOutpu
 }
 impl CreateObservabilityConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateObservabilityConfigurationOutput`](crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput).
-    pub fn builder() -> crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationOutputBuilder {
         crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateObservabilityConfigurationOutput`](crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateObservabilityConfigurationOutputBuilder {
-    pub(crate) observability_configuration:
-        ::std::option::Option<crate::types::ObservabilityConfiguration>,
+    pub(crate) observability_configuration: ::std::option::Option<crate::types::ObservabilityConfiguration>,
     _request_id: Option<String>,
 }
 impl CreateObservabilityConfigurationOutputBuilder {
     /// <p>A description of the App Runner observability configuration that's created by this request.</p>
-    pub fn observability_configuration(
-        mut self,
-        input: crate::types::ObservabilityConfiguration,
-    ) -> Self {
+    pub fn observability_configuration(mut self, input: crate::types::ObservabilityConfiguration) -> Self {
         self.observability_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A description of the App Runner observability configuration that's created by this request.</p>
-    pub fn set_observability_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ObservabilityConfiguration>,
-    ) -> Self {
+    pub fn set_observability_configuration(mut self, input: ::std::option::Option<crate::types::ObservabilityConfiguration>) -> Self {
         self.observability_configuration = input;
         self
     }
     /// <p>A description of the App Runner observability configuration that's created by this request.</p>
-    pub fn get_observability_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObservabilityConfiguration> {
+    pub fn get_observability_configuration(&self) -> &::std::option::Option<crate::types::ObservabilityConfiguration> {
         &self.observability_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,13 +58,9 @@ impl CreateObservabilityConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateObservabilityConfigurationOutput`](crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput {
         crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput {
-            observability_configuration: self.observability_configuration
-            ,
+            observability_configuration: self.observability_configuration,
             _request_id: self._request_id,
         }
     }

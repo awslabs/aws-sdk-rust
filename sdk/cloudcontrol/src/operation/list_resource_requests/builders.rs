@@ -39,9 +39,7 @@ impl ListResourceRequestsFluentBuilder {
         }
     }
     /// Access the ListResourceRequests as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_resource_requests::builders::ListResourceRequestsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_resource_requests::builders::ListResourceRequestsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl ListResourceRequestsFluentBuilder {
             crate::operation::list_resource_requests::ListResourceRequests,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_requests::ListResourceRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_requests::ListResourceRequestsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl ListResourceRequestsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl ListResourceRequestsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_requests::ListResourceRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_requests::ListResourceRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_requests::ListResourceRequestsError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl ListResourceRequestsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_requests::ListResourceRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_requests::ListResourceRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_requests::ListResourceRequestsError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +107,15 @@ impl ListResourceRequestsFluentBuilder {
             crate::operation::list_resource_requests::ListResourceRequests,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_requests::ListResourceRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_requests::ListResourceRequestsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resource_requests::paginator::ListResourceRequestsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_resource_requests::paginator::ListResourceRequestsPaginator {
-        crate::operation::list_resource_requests::paginator::ListResourceRequestsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_resource_requests::paginator::ListResourceRequestsPaginator {
+        crate::operation::list_resource_requests::paginator::ListResourceRequestsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     /// <p>The default is <code>20</code>.</p>
@@ -167,25 +149,17 @@ impl ListResourceRequestsFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The filter criteria to apply to the requests returned.</p>
-    pub fn resource_request_status_filter(
-        mut self,
-        input: crate::types::ResourceRequestStatusFilter,
-    ) -> Self {
+    pub fn resource_request_status_filter(mut self, input: crate::types::ResourceRequestStatusFilter) -> Self {
         self.inner = self.inner.resource_request_status_filter(input);
         self
     }
     /// <p>The filter criteria to apply to the requests returned.</p>
-    pub fn set_resource_request_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceRequestStatusFilter>,
-    ) -> Self {
+    pub fn set_resource_request_status_filter(mut self, input: ::std::option::Option<crate::types::ResourceRequestStatusFilter>) -> Self {
         self.inner = self.inner.set_resource_request_status_filter(input);
         self
     }
     /// <p>The filter criteria to apply to the requests returned.</p>
-    pub fn get_resource_request_status_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceRequestStatusFilter> {
+    pub fn get_resource_request_status_filter(&self) -> &::std::option::Option<crate::types::ResourceRequestStatusFilter> {
         self.inner.get_resource_request_status_filter()
     }
 }

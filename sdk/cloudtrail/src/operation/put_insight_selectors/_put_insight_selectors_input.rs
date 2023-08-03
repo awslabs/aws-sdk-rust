@@ -26,22 +26,17 @@ impl PutInsightSelectorsInput {
 }
 impl PutInsightSelectorsInput {
     /// Creates a new builder-style object to manufacture [`PutInsightSelectorsInput`](crate::operation::put_insight_selectors::PutInsightSelectorsInput).
-    pub fn builder(
-    ) -> crate::operation::put_insight_selectors::builders::PutInsightSelectorsInputBuilder {
-        crate::operation::put_insight_selectors::builders::PutInsightSelectorsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_insight_selectors::builders::PutInsightSelectorsInputBuilder {
+        crate::operation::put_insight_selectors::builders::PutInsightSelectorsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutInsightSelectorsInput`](crate::operation::put_insight_selectors::PutInsightSelectorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutInsightSelectorsInputBuilder {
     pub(crate) trail_name: ::std::option::Option<::std::string::String>,
-    pub(crate) insight_selectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
+    pub(crate) insight_selectors: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
 }
 impl PutInsightSelectorsInputBuilder {
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
@@ -74,33 +69,24 @@ impl PutInsightSelectorsInputBuilder {
     /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
     /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
     /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
-    pub fn set_insight_selectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
-    ) -> Self {
+    pub fn set_insight_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>) -> Self {
         self.insight_selectors = input;
         self
     }
     /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
     /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
     /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
-    pub fn get_insight_selectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>> {
+    pub fn get_insight_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>> {
         &self.insight_selectors
     }
     /// Consumes the builder and constructs a [`PutInsightSelectorsInput`](crate::operation::put_insight_selectors::PutInsightSelectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_insight_selectors::PutInsightSelectorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_insight_selectors::PutInsightSelectorsInput {
-                trail_name: self.trail_name,
-                insight_selectors: self.insight_selectors,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_insight_selectors::PutInsightSelectorsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_insight_selectors::PutInsightSelectorsInput {
+            trail_name: self.trail_name,
+            insight_selectors: self.insight_selectors,
+        })
     }
 }

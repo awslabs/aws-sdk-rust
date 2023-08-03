@@ -5,8 +5,7 @@
 pub struct ListProcessingJobsOutput {
     /// <p>An array of <code>ProcessingJobSummary</code> objects, each listing a processing job.</p>
     #[doc(hidden)]
-    pub processing_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProcessingJobSummary>>,
+    pub processing_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingJobSummary>>,
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of processing jobs, use it in the subsequent request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListProcessingJobsOutput {
 }
 impl ListProcessingJobsOutput {
     /// <p>An array of <code>ProcessingJobSummary</code> objects, each listing a processing job.</p>
-    pub fn processing_job_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProcessingJobSummary]> {
+    pub fn processing_job_summaries(&self) -> ::std::option::Option<&[crate::types::ProcessingJobSummary]> {
         self.processing_job_summaries.as_deref()
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of processing jobs, use it in the subsequent request.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListProcessingJobsOutput {
 }
 impl ListProcessingJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListProcessingJobsOutput`](crate::operation::list_processing_jobs::ListProcessingJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_processing_jobs::builders::ListProcessingJobsOutputBuilder {
+    pub fn builder() -> crate::operation::list_processing_jobs::builders::ListProcessingJobsOutputBuilder {
         crate::operation::list_processing_jobs::builders::ListProcessingJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProcessingJobsOutput`](crate::operation::list_processing_jobs::ListProcessingJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProcessingJobsOutputBuilder {
-    pub(crate) processing_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProcessingJobSummary>>,
+    pub(crate) processing_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListProcessingJobsOutputBuilder {
         self
     }
     /// <p>An array of <code>ProcessingJobSummary</code> objects, each listing a processing job.</p>
-    pub fn set_processing_job_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingJobSummary>>,
-    ) -> Self {
+    pub fn set_processing_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingJobSummary>>) -> Self {
         self.processing_job_summaries = input;
         self
     }
     /// <p>An array of <code>ProcessingJobSummary</code> objects, each listing a processing job.</p>
-    pub fn get_processing_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessingJobSummary>> {
+    pub fn get_processing_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessingJobSummary>> {
         &self.processing_job_summaries
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of processing jobs, use it in the subsequent request.</p>

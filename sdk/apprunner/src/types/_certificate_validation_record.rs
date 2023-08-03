@@ -31,9 +31,7 @@ impl CertificateValidationRecord {
         self.value.as_deref()
     }
     /// <p>The current state of the certificate CNAME record validation. It should change to <code>SUCCESS</code> after App Runner completes validation with your DNS.</p>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CertificateValidationRecordStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::CertificateValidationRecordStatus> {
         self.status.as_ref()
     }
 }
@@ -46,9 +44,7 @@ impl CertificateValidationRecord {
 
 /// A builder for [`CertificateValidationRecord`](crate::types::CertificateValidationRecord).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateValidationRecordBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -104,17 +100,12 @@ impl CertificateValidationRecordBuilder {
         self
     }
     /// <p>The current state of the certificate CNAME record validation. It should change to <code>SUCCESS</code> after App Runner completes validation with your DNS.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateValidationRecordStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateValidationRecordStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The current state of the certificate CNAME record validation. It should change to <code>SUCCESS</code> after App Runner completes validation with your DNS.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::CertificateValidationRecordStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateValidationRecordStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`CertificateValidationRecord`](crate::types::CertificateValidationRecord).

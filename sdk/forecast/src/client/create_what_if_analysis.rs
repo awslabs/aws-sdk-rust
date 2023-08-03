@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateWhatIfAnalysisOutput`](crate::operation::create_what_if_analysis::CreateWhatIfAnalysisOutput) with field(s):
     ///   - [`what_if_analysis_arn(Option<String>)`](crate::operation::create_what_if_analysis::CreateWhatIfAnalysisOutput::what_if_analysis_arn): <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
     /// - On failure, responds with [`SdkError<CreateWhatIfAnalysisError>`](crate::operation::create_what_if_analysis::CreateWhatIfAnalysisError)
-    pub fn create_what_if_analysis(
-        &self,
-    ) -> crate::operation::create_what_if_analysis::builders::CreateWhatIfAnalysisFluentBuilder
-    {
-        crate::operation::create_what_if_analysis::builders::CreateWhatIfAnalysisFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_what_if_analysis(&self) -> crate::operation::create_what_if_analysis::builders::CreateWhatIfAnalysisFluentBuilder {
+        crate::operation::create_what_if_analysis::builders::CreateWhatIfAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

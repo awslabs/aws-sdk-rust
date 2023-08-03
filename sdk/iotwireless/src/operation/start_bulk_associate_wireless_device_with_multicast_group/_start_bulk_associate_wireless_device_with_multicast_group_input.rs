@@ -36,9 +36,7 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
 
 /// A builder for [`StartBulkAssociateWirelessDeviceWithMulticastGroupInput`](crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartBulkAssociateWirelessDeviceWithMulticastGroupInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInputBuilder {
         self
     }
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -97,16 +92,18 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`StartBulkAssociateWirelessDeviceWithMulticastGroupInput`](crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
-                id: self.id
-                ,
-                query_string: self.query_string
-                ,
-                tags: self.tags
-                ,
-            }
+                id: self.id,
+                query_string: self.query_string,
+                tags: self.tags,
+            },
         )
     }
 }

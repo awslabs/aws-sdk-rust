@@ -46,18 +46,14 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder {
         crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder {
     pub(crate) date: ::std::option::Option<::std::string::String>,
     pub(crate) days: ::std::option::Option<i32>,
@@ -103,10 +99,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder {
     /// <li> <p> <code>ONEZONE_IA</code> </p> </li>
     /// <li> <p> <code>STANDARD_IA</code> </p> </li>
     /// </ul>
-    pub fn storage_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_class = ::std::option::Option::Some(input.into());
         self
     }
@@ -118,10 +111,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder {
     /// <li> <p> <code>ONEZONE_IA</code> </p> </li>
     /// <li> <p> <code>STANDARD_IA</code> </p> </li>
     /// </ul>
-    pub fn set_storage_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_class = input;
         self
     }
@@ -137,9 +127,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder {
         &self.storage_class
     }
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
+    pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
         crate::types::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
             date: self.date,
             days: self.days.unwrap_or_default(),

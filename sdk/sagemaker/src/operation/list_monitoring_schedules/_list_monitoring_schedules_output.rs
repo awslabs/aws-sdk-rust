@@ -5,8 +5,7 @@
 pub struct ListMonitoringSchedulesOutput {
     /// <p>A JSON array in which each element is a summary for a monitoring schedule.</p>
     #[doc(hidden)]
-    pub monitoring_schedule_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MonitoringScheduleSummary>>,
+    pub monitoring_schedule_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringScheduleSummary>>,
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListMonitoringSchedulesOutput {
 }
 impl ListMonitoringSchedulesOutput {
     /// <p>A JSON array in which each element is a summary for a monitoring schedule.</p>
-    pub fn monitoring_schedule_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MonitoringScheduleSummary]> {
+    pub fn monitoring_schedule_summaries(&self) -> ::std::option::Option<&[crate::types::MonitoringScheduleSummary]> {
         self.monitoring_schedule_summaries.as_deref()
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent request.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListMonitoringSchedulesOutput {
 }
 impl ListMonitoringSchedulesOutput {
     /// Creates a new builder-style object to manufacture [`ListMonitoringSchedulesOutput`](crate::operation::list_monitoring_schedules::ListMonitoringSchedulesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesOutputBuilder {
         crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMonitoringSchedulesOutput`](crate::operation::list_monitoring_schedules::ListMonitoringSchedulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitoringSchedulesOutputBuilder {
-    pub(crate) monitoring_schedule_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MonitoringScheduleSummary>>,
+    pub(crate) monitoring_schedule_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringScheduleSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl ListMonitoringSchedulesOutputBuilder {
     /// To override the contents of this collection use [`set_monitoring_schedule_summaries`](Self::set_monitoring_schedule_summaries).
     ///
     /// <p>A JSON array in which each element is a summary for a monitoring schedule.</p>
-    pub fn monitoring_schedule_summaries(
-        mut self,
-        input: crate::types::MonitoringScheduleSummary,
-    ) -> Self {
+    pub fn monitoring_schedule_summaries(mut self, input: crate::types::MonitoringScheduleSummary) -> Self {
         let mut v = self.monitoring_schedule_summaries.unwrap_or_default();
         v.push(input);
         self.monitoring_schedule_summaries = ::std::option::Option::Some(v);
@@ -73,9 +62,7 @@ impl ListMonitoringSchedulesOutputBuilder {
         self
     }
     /// <p>A JSON array in which each element is a summary for a monitoring schedule.</p>
-    pub fn get_monitoring_schedule_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringScheduleSummary>> {
+    pub fn get_monitoring_schedule_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringScheduleSummary>> {
         &self.monitoring_schedule_summaries
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent request.</p>
@@ -102,9 +89,7 @@ impl ListMonitoringSchedulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMonitoringSchedulesOutput`](crate::operation::list_monitoring_schedules::ListMonitoringSchedulesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_monitoring_schedules::ListMonitoringSchedulesOutput {
+    pub fn build(self) -> crate::operation::list_monitoring_schedules::ListMonitoringSchedulesOutput {
         crate::operation::list_monitoring_schedules::ListMonitoringSchedulesOutput {
             monitoring_schedule_summaries: self.monitoring_schedule_summaries,
             next_token: self.next_token,

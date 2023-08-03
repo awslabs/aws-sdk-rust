@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`lifecycle(Option<DataRepositoryLifecycle>)`](crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationOutput::lifecycle): <p>Describes the lifecycle state of the data repository association being deleted.</p>
     ///   - [`delete_data_in_file_system(Option<bool>)`](crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationOutput::delete_data_in_file_system): <p>Indicates whether data in the file system that corresponds to the data repository association is being deleted. Default is <code>false</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteDataRepositoryAssociationError>`](crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationError)
-    pub fn delete_data_repository_association(&self) -> crate::operation::delete_data_repository_association::builders::DeleteDataRepositoryAssociationFluentBuilder{
+    pub fn delete_data_repository_association(
+        &self,
+    ) -> crate::operation::delete_data_repository_association::builders::DeleteDataRepositoryAssociationFluentBuilder {
         crate::operation::delete_data_repository_association::builders::DeleteDataRepositoryAssociationFluentBuilder::new(self.handle.clone())
     }
 }

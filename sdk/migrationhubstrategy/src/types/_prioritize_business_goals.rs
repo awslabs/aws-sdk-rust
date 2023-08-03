@@ -23,9 +23,7 @@ impl PrioritizeBusinessGoals {
 
 /// A builder for [`PrioritizeBusinessGoals`](crate::types::PrioritizeBusinessGoals).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrioritizeBusinessGoalsBuilder {
     pub(crate) business_goals: ::std::option::Option<crate::types::BusinessGoals>,
 }
@@ -36,10 +34,7 @@ impl PrioritizeBusinessGoalsBuilder {
         self
     }
     /// <p> Rank of business goals based on priority. </p>
-    pub fn set_business_goals(
-        mut self,
-        input: ::std::option::Option<crate::types::BusinessGoals>,
-    ) -> Self {
+    pub fn set_business_goals(mut self, input: ::std::option::Option<crate::types::BusinessGoals>) -> Self {
         self.business_goals = input;
         self
     }

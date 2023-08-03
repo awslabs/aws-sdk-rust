@@ -10,10 +10,7 @@ impl BatchPutGeofenceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_put_geofence::BatchPutGeofenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_geofence::BatchPutGeofenceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_geofence::BatchPutGeofenceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_put_geofence();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchPutGeofenceFluentBuilder {
         }
     }
     /// Access the BatchPutGeofence as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_put_geofence::builders::BatchPutGeofenceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_put_geofence::builders::BatchPutGeofenceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchPutGeofenceFluentBuilder {
             crate::operation::batch_put_geofence::BatchPutGeofence,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_geofence::BatchPutGeofenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_geofence::BatchPutGeofenceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchPutGeofenceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchPutGeofenceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_put_geofence::BatchPutGeofenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_geofence::BatchPutGeofenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_geofence::BatchPutGeofenceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchPutGeofenceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_put_geofence::BatchPutGeofenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_geofence::BatchPutGeofenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_geofence::BatchPutGeofenceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl BatchPutGeofenceFluentBuilder {
             crate::operation::batch_put_geofence::BatchPutGeofence,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_geofence::BatchPutGeofenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_geofence::BatchPutGeofenceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The geofence collection storing the geofences.</p>
-    pub fn collection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_name(input.into());
         self
     }
     /// <p>The geofence collection storing the geofences.</p>
-    pub fn set_collection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_name(input);
         self
     }
@@ -152,17 +130,12 @@ impl BatchPutGeofenceFluentBuilder {
         self
     }
     /// <p>The batch of geofences to be stored in a geofence collection.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutGeofenceRequestEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutGeofenceRequestEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
     /// <p>The batch of geofences to be stored in a geofence collection.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutGeofenceRequestEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutGeofenceRequestEntry>> {
         self.inner.get_entries()
     }
 }

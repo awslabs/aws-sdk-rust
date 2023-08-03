@@ -26,7 +26,7 @@ impl CreateAssessmentTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAssessmentTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_assessment_template::builders::CreateAssessmentTemplateInputBuilder,
+    inner: crate::operation::create_assessment_template::builders::CreateAssessmentTemplateInputBuilder,
 }
 impl CreateAssessmentTemplateFluentBuilder {
     /// Creates a new `CreateAssessmentTemplate`.
@@ -37,10 +37,7 @@ impl CreateAssessmentTemplateFluentBuilder {
         }
     }
     /// Access the CreateAssessmentTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_assessment_template::builders::CreateAssessmentTemplateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_assessment_template::builders::CreateAssessmentTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateAssessmentTemplateFluentBuilder {
             crate::operation::create_assessment_template::CreateAssessmentTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_template::CreateAssessmentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment_template::CreateAssessmentTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateAssessmentTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateAssessmentTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_assessment_template::CreateAssessmentTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_template::CreateAssessmentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment_template::CreateAssessmentTemplateError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateAssessmentTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_assessment_template::CreateAssessmentTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_template::CreateAssessmentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment_template::CreateAssessmentTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl CreateAssessmentTemplateFluentBuilder {
             crate::operation::create_assessment_template::CreateAssessmentTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_template::CreateAssessmentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_assessment_template::CreateAssessmentTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
-    pub fn assessment_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_target_arn(input.into());
         self
     }
     /// <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
-    pub fn set_assessment_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_target_arn(input);
         self
     }
@@ -144,18 +124,12 @@ impl CreateAssessmentTemplateFluentBuilder {
         self.inner.get_assessment_target_arn()
     }
     /// <p>The user-defined name that identifies the assessment template that you want to create. You can create several assessment templates for an assessment target. The names of the assessment templates that correspond to a particular assessment target must be unique.</p>
-    pub fn assessment_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_template_name(input.into());
         self
     }
     /// <p>The user-defined name that identifies the assessment template that you want to create. You can create several assessment templates for an assessment target. The names of the assessment templates that correspond to a particular assessment target must be unique.</p>
-    pub fn set_assessment_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_template_name(input);
         self
     }
@@ -182,25 +156,17 @@ impl CreateAssessmentTemplateFluentBuilder {
     /// To override the contents of this collection use [`set_rules_package_arns`](Self::set_rules_package_arns).
     ///
     /// <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
-    pub fn rules_package_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rules_package_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rules_package_arns(input.into());
         self
     }
     /// <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
-    pub fn set_rules_package_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_rules_package_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_rules_package_arns(input);
         self
     }
     /// <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
-    pub fn get_rules_package_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rules_package_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_rules_package_arns()
     }
     /// Appends an item to `userAttributesForFindings`.
@@ -213,17 +179,12 @@ impl CreateAssessmentTemplateFluentBuilder {
         self
     }
     /// <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
-    pub fn set_user_attributes_for_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_user_attributes_for_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.inner = self.inner.set_user_attributes_for_findings(input);
         self
     }
     /// <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
-    pub fn get_user_attributes_for_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_user_attributes_for_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         self.inner.get_user_attributes_for_findings()
     }
 }

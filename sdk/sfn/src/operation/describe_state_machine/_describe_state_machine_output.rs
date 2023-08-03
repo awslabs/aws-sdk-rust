@@ -94,15 +94,11 @@ impl DescribeStateMachineOutput {
         self.creation_date.as_ref()
     }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-    pub fn logging_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn tracing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TracingConfiguration> {
+    pub fn tracing_configuration(&self) -> ::std::option::Option<&crate::types::TracingConfiguration> {
         self.tracing_configuration.as_ref()
     }
     /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.</p>
@@ -145,8 +141,7 @@ impl ::aws_http::request_id::RequestId for DescribeStateMachineOutput {
 }
 impl DescribeStateMachineOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStateMachineOutput`](crate::operation::describe_state_machine::DescribeStateMachineOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_state_machine::builders::DescribeStateMachineOutputBuilder {
+    pub fn builder() -> crate::operation::describe_state_machine::builders::DescribeStateMachineOutputBuilder {
         crate::operation::describe_state_machine::builders::DescribeStateMachineOutputBuilder::default()
     }
 }
@@ -172,19 +167,13 @@ pub struct DescribeStateMachineOutputBuilder {
 impl DescribeStateMachineOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
     /// <p>If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
-    pub fn state_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
     /// <p>If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_arn = input;
         self
     }
@@ -240,10 +229,7 @@ impl DescribeStateMachineOutputBuilder {
         self
     }
     /// <p>The current status of the state machine.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StateMachineStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StateMachineStatus>) -> Self {
         self.status = input;
         self
     }
@@ -285,10 +271,7 @@ impl DescribeStateMachineOutputBuilder {
         self
     }
     /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StateMachineType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::StateMachineType>) -> Self {
         self.r#type = input;
         self
     }
@@ -304,10 +287,7 @@ impl DescribeStateMachineOutputBuilder {
     }
     /// <p>The date the state machine is created.</p>
     /// <p>For a state machine version, <code>creationDate</code> is the date the version was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -322,17 +302,12 @@ impl DescribeStateMachineOutputBuilder {
         self
     }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-    pub fn set_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfiguration>,
-    ) -> Self {
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
         self.logging_configuration = input;
         self
     }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-    pub fn get_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         &self.logging_configuration
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
@@ -341,17 +316,12 @@ impl DescribeStateMachineOutputBuilder {
         self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn set_tracing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TracingConfiguration>,
-    ) -> Self {
+    pub fn set_tracing_configuration(mut self, input: ::std::option::Option<crate::types::TracingConfiguration>) -> Self {
         self.tracing_configuration = input;
         self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn get_tracing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TracingConfiguration> {
+    pub fn get_tracing_configuration(&self) -> &::std::option::Option<crate::types::TracingConfiguration> {
         &self.tracing_configuration
     }
     /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.</p>

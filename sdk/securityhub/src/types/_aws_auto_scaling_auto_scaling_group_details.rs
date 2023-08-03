@@ -22,19 +22,13 @@ pub struct AwsAutoScalingAutoScalingGroupDetails {
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The mixed instances policy for the automatic scaling group.</p>
     #[doc(hidden)]
-    pub mixed_instances_policy: ::std::option::Option<
-        crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails,
-    >,
+    pub mixed_instances_policy: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails>,
     /// <p>The list of Availability Zones for the automatic scaling group.</p>
     #[doc(hidden)]
-    pub availability_zones: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>,
-    >,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>>,
     /// <p>The launch template to use.</p>
     #[doc(hidden)]
-    pub launch_template: ::std::option::Option<
-        crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification,
-    >,
+    pub launch_template: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification>,
     /// <p>Indicates whether capacity rebalancing is enabled. </p>
     #[doc(hidden)]
     pub capacity_rebalance: bool,
@@ -62,27 +56,15 @@ impl AwsAutoScalingAutoScalingGroupDetails {
         self.created_time.as_deref()
     }
     /// <p>The mixed instances policy for the automatic scaling group.</p>
-    pub fn mixed_instances_policy(
-        &self,
-    ) -> ::std::option::Option<
-        &crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails,
-    > {
+    pub fn mixed_instances_policy(&self) -> ::std::option::Option<&crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails> {
         self.mixed_instances_policy.as_ref()
     }
     /// <p>The list of Availability Zones for the automatic scaling group.</p>
-    pub fn availability_zones(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails],
-    > {
+    pub fn availability_zones(&self) -> ::std::option::Option<&[crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails]> {
         self.availability_zones.as_deref()
     }
     /// <p>The launch template to use.</p>
-    pub fn launch_template(
-        &self,
-    ) -> ::std::option::Option<
-        &crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification,
-    > {
+    pub fn launch_template(&self) -> ::std::option::Option<&crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification> {
         self.launch_template.as_ref()
     }
     /// <p>Indicates whether capacity rebalancing is enabled. </p>
@@ -99,40 +81,26 @@ impl AwsAutoScalingAutoScalingGroupDetails {
 
 /// A builder for [`AwsAutoScalingAutoScalingGroupDetails`](crate::types::AwsAutoScalingAutoScalingGroupDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAutoScalingAutoScalingGroupDetailsBuilder {
     pub(crate) launch_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) health_check_type: ::std::option::Option<::std::string::String>,
     pub(crate) health_check_grace_period: ::std::option::Option<i32>,
     pub(crate) created_time: ::std::option::Option<::std::string::String>,
-    pub(crate) mixed_instances_policy: ::std::option::Option<
-        crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails,
-    >,
-    pub(crate) availability_zones: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>,
-    >,
-    pub(crate) launch_template: ::std::option::Option<
-        crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification,
-    >,
+    pub(crate) mixed_instances_policy: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>>,
+    pub(crate) launch_template: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification>,
     pub(crate) capacity_rebalance: ::std::option::Option<bool>,
 }
 impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
     /// <p>The name of the launch configuration.</p>
-    pub fn launch_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the launch configuration.</p>
-    pub fn set_launch_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_configuration_name = input;
         self
     }
@@ -145,42 +113,28 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
     /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
     ///
     /// <p>The list of load balancers associated with the group.</p>
-    pub fn load_balancer_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.load_balancer_names.unwrap_or_default();
         v.push(input.into());
         self.load_balancer_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of load balancers associated with the group.</p>
-    pub fn set_load_balancer_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_load_balancer_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.load_balancer_names = input;
         self
     }
     /// <p>The list of load balancers associated with the group.</p>
-    pub fn get_load_balancer_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_load_balancer_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.load_balancer_names
     }
     /// <p>The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.</p>
-    pub fn health_check_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.</p>
-    pub fn set_health_check_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_check_type = input;
         self
     }
@@ -220,29 +174,20 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
         &self.created_time
     }
     /// <p>The mixed instances policy for the automatic scaling group.</p>
-    pub fn mixed_instances_policy(
-        mut self,
-        input: crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails,
-    ) -> Self {
+    pub fn mixed_instances_policy(mut self, input: crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails) -> Self {
         self.mixed_instances_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The mixed instances policy for the automatic scaling group.</p>
     pub fn set_mixed_instances_policy(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails>,
     ) -> Self {
         self.mixed_instances_policy = input;
         self
     }
     /// <p>The mixed instances policy for the automatic scaling group.</p>
-    pub fn get_mixed_instances_policy(
-        &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails,
-    > {
+    pub fn get_mixed_instances_policy(&self) -> &::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails> {
         &self.mixed_instances_policy
     }
     /// Appends an item to `availability_zones`.
@@ -250,10 +195,7 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The list of Availability Zones for the automatic scaling group.</p>
-    pub fn availability_zones(
-        mut self,
-        input: crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input);
         self.availability_zones = ::std::option::Option::Some(v);
@@ -262,11 +204,7 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
     /// <p>The list of Availability Zones for the automatic scaling group.</p>
     pub fn set_availability_zones(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>>,
     ) -> Self {
         self.availability_zones = input;
         self
@@ -274,25 +212,18 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
     /// <p>The list of Availability Zones for the automatic scaling group.</p>
     pub fn get_availability_zones(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>> {
         &self.availability_zones
     }
     /// <p>The launch template to use.</p>
-    pub fn launch_template(
-        mut self,
-        input: crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification,
-    ) -> Self {
+    pub fn launch_template(mut self, input: crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification) -> Self {
         self.launch_template = ::std::option::Option::Some(input);
         self
     }
     /// <p>The launch template to use.</p>
     pub fn set_launch_template(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification,
-        >,
+        input: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification>,
     ) -> Self {
         self.launch_template = input;
         self
@@ -300,9 +231,7 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
     /// <p>The launch template to use.</p>
     pub fn get_launch_template(
         &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification,
-    > {
+    ) -> &::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification> {
         &self.launch_template
     }
     /// <p>Indicates whether capacity rebalancing is enabled. </p>

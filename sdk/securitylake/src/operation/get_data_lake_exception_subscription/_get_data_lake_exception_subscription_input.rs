@@ -5,23 +5,23 @@
 pub struct GetDataLakeExceptionSubscriptionInput {}
 impl GetDataLakeExceptionSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`GetDataLakeExceptionSubscriptionInput`](crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionInput).
-    pub fn builder() -> crate::operation::get_data_lake_exception_subscription::builders::GetDataLakeExceptionSubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::get_data_lake_exception_subscription::builders::GetDataLakeExceptionSubscriptionInputBuilder {
         crate::operation::get_data_lake_exception_subscription::builders::GetDataLakeExceptionSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataLakeExceptionSubscriptionInput`](crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataLakeExceptionSubscriptionInputBuilder {}
 impl GetDataLakeExceptionSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`GetDataLakeExceptionSubscriptionInput`](crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionInput, ::aws_smithy_http::operation::error::BuildError>{
-        ::std::result::Result::Ok(
-            crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_data_lake_exception_subscription::GetDataLakeExceptionSubscriptionInput {})
     }
 }

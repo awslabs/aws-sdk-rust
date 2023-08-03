@@ -22,17 +22,14 @@ impl GetDevicePositionInput {
 }
 impl GetDevicePositionInput {
     /// Creates a new builder-style object to manufacture [`GetDevicePositionInput`](crate::operation::get_device_position::GetDevicePositionInput).
-    pub fn builder(
-    ) -> crate::operation::get_device_position::builders::GetDevicePositionInputBuilder {
+    pub fn builder() -> crate::operation::get_device_position::builders::GetDevicePositionInputBuilder {
         crate::operation::get_device_position::builders::GetDevicePositionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDevicePositionInput`](crate::operation::get_device_position::GetDevicePositionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDevicePositionInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl GetDevicePositionInputBuilder {
     /// Consumes the builder and constructs a [`GetDevicePositionInput`](crate::operation::get_device_position::GetDevicePositionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_device_position::GetDevicePositionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_device_position::GetDevicePositionInput {
-                tracker_name: self.tracker_name,
-                device_id: self.device_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_device_position::GetDevicePositionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_device_position::GetDevicePositionInput {
+            tracker_name: self.tracker_name,
+            device_id: self.device_id,
+        })
     }
 }

@@ -30,10 +30,7 @@ pub fn ser_create_launch_profile_input(
     if let Some(var_9) = &input.stream_configuration {
         #[allow(unused_mut)]
         let mut object_10 = object.key("streamConfiguration").start_object();
-        crate::protocol_serde::shape_stream_configuration_create::ser_stream_configuration_create(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_stream_configuration_create::ser_stream_configuration_create(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.studio_component_ids {

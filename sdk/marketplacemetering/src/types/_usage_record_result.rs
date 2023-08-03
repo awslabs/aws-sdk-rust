@@ -57,9 +57,7 @@ impl UsageRecordResult {
 
 /// A builder for [`UsageRecordResult`](crate::types::UsageRecordResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageRecordResultBuilder {
     pub(crate) usage_record: ::std::option::Option<crate::types::UsageRecord>,
     pub(crate) metering_record_id: ::std::option::Option<::std::string::String>,
@@ -72,10 +70,7 @@ impl UsageRecordResultBuilder {
         self
     }
     /// <p>The <code>UsageRecord</code> that was part of the <code>BatchMeterUsage</code> request.</p>
-    pub fn set_usage_record(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageRecord>,
-    ) -> Self {
+    pub fn set_usage_record(mut self, input: ::std::option::Option<crate::types::UsageRecord>) -> Self {
         self.usage_record = input;
         self
     }
@@ -84,18 +79,12 @@ impl UsageRecordResultBuilder {
         &self.usage_record
     }
     /// <p>The <code>MeteringRecordId</code> is a unique identifier for this metering event.</p>
-    pub fn metering_record_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metering_record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metering_record_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>MeteringRecordId</code> is a unique identifier for this metering event.</p>
-    pub fn set_metering_record_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metering_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metering_record_id = input;
         self
     }
@@ -129,10 +118,7 @@ impl UsageRecordResultBuilder {
     /// </ul> </li>
     /// <li> <p> <i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageRecordResultStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::UsageRecordResultStatus>) -> Self {
         self.status = input;
         self
     }

@@ -37,9 +37,7 @@ impl RepositoryAggregation {
 
 /// A builder for [`RepositoryAggregation`](crate::types::RepositoryAggregation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryAggregationBuilder {
     pub(crate) repositories: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
@@ -58,17 +56,12 @@ impl RepositoryAggregationBuilder {
         self
     }
     /// <p>The names of repositories to aggregate findings on.</p>
-    pub fn set_repositories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.repositories = input;
         self
     }
     /// <p>The names of repositories to aggregate findings on.</p>
-    pub fn get_repositories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.repositories
     }
     /// <p>The order to sort results by.</p>
@@ -91,10 +84,7 @@ impl RepositoryAggregationBuilder {
         self
     }
     /// <p>The value to sort results by.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositorySortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::RepositorySortBy>) -> Self {
         self.sort_by = input;
         self
     }

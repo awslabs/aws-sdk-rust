@@ -58,17 +58,14 @@ impl CvssScoreDetails {
 
 /// A builder for [`CvssScoreDetails`](crate::types::CvssScoreDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CvssScoreDetailsBuilder {
     pub(crate) score_source: ::std::option::Option<::std::string::String>,
     pub(crate) cvss_source: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) score: ::std::option::Option<f64>,
     pub(crate) scoring_vector: ::std::option::Option<::std::string::String>,
-    pub(crate) adjustments:
-        ::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>>,
+    pub(crate) adjustments: ::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>>,
 }
 impl CvssScoreDetailsBuilder {
     /// <p>The source for the CVSS score.</p>
@@ -128,18 +125,12 @@ impl CvssScoreDetailsBuilder {
         &self.score
     }
     /// <p>The vector for the CVSS score.</p>
-    pub fn scoring_vector(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scoring_vector(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scoring_vector = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The vector for the CVSS score.</p>
-    pub fn set_scoring_vector(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scoring_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scoring_vector = input;
         self
     }
@@ -159,17 +150,12 @@ impl CvssScoreDetailsBuilder {
         self
     }
     /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
-    pub fn set_adjustments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>>,
-    ) -> Self {
+    pub fn set_adjustments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>>) -> Self {
         self.adjustments = input;
         self
     }
     /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
-    pub fn get_adjustments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>> {
+    pub fn get_adjustments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>> {
         &self.adjustments
     }
     /// Consumes the builder and constructs a [`CvssScoreDetails`](crate::types::CvssScoreDetails).

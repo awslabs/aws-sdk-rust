@@ -22,26 +22,18 @@ impl StopHumanLoopInput {
 
 /// A builder for [`StopHumanLoopInput`](crate::operation::stop_human_loop::StopHumanLoopInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopHumanLoopInputBuilder {
     pub(crate) human_loop_name: ::std::option::Option<::std::string::String>,
 }
 impl StopHumanLoopInputBuilder {
     /// <p>The name of the human loop that you want to stop.</p>
-    pub fn human_loop_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_loop_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_loop_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the human loop that you want to stop.</p>
-    pub fn set_human_loop_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_human_loop_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.human_loop_name = input;
         self
     }
@@ -52,10 +44,7 @@ impl StopHumanLoopInputBuilder {
     /// Consumes the builder and constructs a [`StopHumanLoopInput`](crate::operation::stop_human_loop::StopHumanLoopInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_human_loop::StopHumanLoopInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::stop_human_loop::StopHumanLoopInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_human_loop::StopHumanLoopInput {
             human_loop_name: self.human_loop_name,
         })

@@ -16,9 +16,7 @@ pub struct BatchGetAssetPropertyAggregatesErrorEntry {
 }
 impl BatchGetAssetPropertyAggregatesErrorEntry {
     /// <p>The error code.</p>
-    pub fn error_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BatchGetAssetPropertyAggregatesErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::BatchGetAssetPropertyAggregatesErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The associated error message.</p>
@@ -39,51 +37,34 @@ impl BatchGetAssetPropertyAggregatesErrorEntry {
 
 /// A builder for [`BatchGetAssetPropertyAggregatesErrorEntry`](crate::types::BatchGetAssetPropertyAggregatesErrorEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyAggregatesErrorEntryBuilder {
-    pub(crate) error_code:
-        ::std::option::Option<crate::types::BatchGetAssetPropertyAggregatesErrorCode>,
+    pub(crate) error_code: ::std::option::Option<crate::types::BatchGetAssetPropertyAggregatesErrorCode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) entry_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetAssetPropertyAggregatesErrorEntryBuilder {
     /// <p>The error code.</p>
-    pub fn error_code(
-        mut self,
-        input: crate::types::BatchGetAssetPropertyAggregatesErrorCode,
-    ) -> Self {
+    pub fn error_code(mut self, input: crate::types::BatchGetAssetPropertyAggregatesErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchGetAssetPropertyAggregatesErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::BatchGetAssetPropertyAggregatesErrorCode>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The error code.</p>
-    pub fn get_error_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchGetAssetPropertyAggregatesErrorCode> {
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::BatchGetAssetPropertyAggregatesErrorCode> {
         &self.error_code
     }
     /// <p>The associated error message.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The associated error message.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

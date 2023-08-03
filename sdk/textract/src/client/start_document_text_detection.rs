@@ -12,7 +12,9 @@ impl super::Client {
     /// - On success, responds with [`StartDocumentTextDetectionOutput`](crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput::job_id): <p>The identifier of the text detection job for the document. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     /// - On failure, responds with [`SdkError<StartDocumentTextDetectionError>`](crate::operation::start_document_text_detection::StartDocumentTextDetectionError)
-    pub fn start_document_text_detection(&self) -> crate::operation::start_document_text_detection::builders::StartDocumentTextDetectionFluentBuilder{
+    pub fn start_document_text_detection(
+        &self,
+    ) -> crate::operation::start_document_text_detection::builders::StartDocumentTextDetectionFluentBuilder {
         crate::operation::start_document_text_detection::builders::StartDocumentTextDetectionFluentBuilder::new(self.handle.clone())
     }
 }

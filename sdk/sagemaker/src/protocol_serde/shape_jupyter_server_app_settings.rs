@@ -24,10 +24,7 @@ pub fn ser_jupyter_server_app_settings(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_code_repository::ser_code_repository(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_code_repository::ser_code_repository(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }
@@ -38,17 +35,9 @@ pub fn ser_jupyter_server_app_settings(
 
 pub(crate) fn de_jupyter_server_app_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::JupyterServerAppSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::JupyterServerAppSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -58,43 +47,31 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "DefaultResourceSpec" => {
-                                builder = builder.set_default_resource_spec(
-                                    crate::protocol_serde::shape_resource_spec::de_resource_spec(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "LifecycleConfigArns" => {
-                                builder = builder.set_lifecycle_config_arns(
-                                    crate::protocol_serde::shape_lifecycle_config_arns::de_lifecycle_config_arns(tokens)?
-                                );
-                            }
-                            "CodeRepositories" => {
-                                builder = builder.set_code_repositories(
-                                    crate::protocol_serde::shape_code_repositories::de_code_repositories(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "DefaultResourceSpec" => {
+                            builder = builder.set_default_resource_spec(crate::protocol_serde::shape_resource_spec::de_resource_spec(tokens)?);
                         }
-                    }
+                        "LifecycleConfigArns" => {
+                            builder = builder
+                                .set_lifecycle_config_arns(crate::protocol_serde::shape_lifecycle_config_arns::de_lifecycle_config_arns(tokens)?);
+                        }
+                        "CodeRepositories" => {
+                            builder = builder.set_code_repositories(crate::protocol_serde::shape_code_repositories::de_code_repositories(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

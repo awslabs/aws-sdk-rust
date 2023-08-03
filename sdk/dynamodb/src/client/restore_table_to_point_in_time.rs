@@ -16,7 +16,9 @@ impl super::Client {
     /// - On success, responds with [`RestoreTableToPointInTimeOutput`](crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput) with field(s):
     ///   - [`table_description(Option<TableDescription>)`](crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput::table_description): <p>Represents the properties of a table.</p>
     /// - On failure, responds with [`SdkError<RestoreTableToPointInTimeError>`](crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeError)
-    pub fn restore_table_to_point_in_time(&self) -> crate::operation::restore_table_to_point_in_time::builders::RestoreTableToPointInTimeFluentBuilder{
+    pub fn restore_table_to_point_in_time(
+        &self,
+    ) -> crate::operation::restore_table_to_point_in_time::builders::RestoreTableToPointInTimeFluentBuilder {
         crate::operation::restore_table_to_point_in_time::builders::RestoreTableToPointInTimeFluentBuilder::new(self.handle.clone())
     }
 }

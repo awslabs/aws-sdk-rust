@@ -11,10 +11,10 @@ impl super::Client {
     ///   - [`website_authorization_providers(Option<Vec<WebsiteAuthorizationProviderSummary>>)`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersOutput::website_authorization_providers): <p>The website authorization providers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On failure, responds with [`SdkError<ListWebsiteAuthorizationProvidersError>`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn list_website_authorization_providers(&self) -> crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersFluentBuilder{
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn list_website_authorization_providers(
+        &self,
+    ) -> crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersFluentBuilder {
         crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl CreateGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_group::CreateGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_group::CreateGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_group::CreateGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_group();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateGroupFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_group::CreateGroup,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_group::CreateGroup, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_group::CreateGroupError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateGroupFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_group::CreateGroup,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_group::CreateGroup, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_group::CreateGroupError>,
     > {
         self.customize_middleware().await
@@ -127,18 +115,12 @@ impl CreateGroupFluentBuilder {
         self.inner.get_group_name()
     }
     /// <p>The filter expression defining criteria by which to group traces.</p>
-    pub fn filter_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_expression(input.into());
         self
     }
     /// <p>The filter expression defining criteria by which to group traces.</p>
-    pub fn set_filter_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_expression(input);
         self
     }
@@ -160,10 +142,7 @@ impl CreateGroupFluentBuilder {
     /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p> </li>
     /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>
     /// </ul>
-    pub fn set_insights_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InsightsConfiguration>,
-    ) -> Self {
+    pub fn set_insights_configuration(mut self, input: ::std::option::Option<crate::types::InsightsConfiguration>) -> Self {
         self.inner = self.inner.set_insights_configuration(input);
         self
     }
@@ -172,9 +151,7 @@ impl CreateGroupFluentBuilder {
     /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p> </li>
     /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>
     /// </ul>
-    pub fn get_insights_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InsightsConfiguration> {
+    pub fn get_insights_configuration(&self) -> &::std::option::Option<crate::types::InsightsConfiguration> {
         self.inner.get_insights_configuration()
     }
     /// Appends an item to `Tags`.
@@ -205,10 +182,7 @@ impl CreateGroupFluentBuilder {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

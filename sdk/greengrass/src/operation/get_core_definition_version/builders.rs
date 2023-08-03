@@ -26,7 +26,7 @@ impl GetCoreDefinitionVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCoreDefinitionVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_core_definition_version::builders::GetCoreDefinitionVersionInputBuilder,
+    inner: crate::operation::get_core_definition_version::builders::GetCoreDefinitionVersionInputBuilder,
 }
 impl GetCoreDefinitionVersionFluentBuilder {
     /// Creates a new `GetCoreDefinitionVersion`.
@@ -37,7 +37,7 @@ impl GetCoreDefinitionVersionFluentBuilder {
         }
     }
     /// Access the GetCoreDefinitionVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_core_definition_version::builders::GetCoreDefinitionVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_core_definition_version::builders::GetCoreDefinitionVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetCoreDefinitionVersionFluentBuilder {
             crate::operation::get_core_definition_version::GetCoreDefinitionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_definition_version::GetCoreDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_definition_version::GetCoreDefinitionVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetCoreDefinitionVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetCoreDefinitionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_core_definition_version::GetCoreDefinitionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_definition_version::GetCoreDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_definition_version::GetCoreDefinitionVersionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetCoreDefinitionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_core_definition_version::GetCoreDefinitionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_definition_version::GetCoreDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_definition_version::GetCoreDefinitionVersionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetCoreDefinitionVersionFluentBuilder {
             crate::operation::get_core_definition_version::GetCoreDefinitionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_definition_version::GetCoreDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_definition_version::GetCoreDefinitionVersionError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the core definition.
-    pub fn core_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_definition_id(input.into());
         self
     }
     /// The ID of the core definition.
-    pub fn set_core_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_definition_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl GetCoreDefinitionVersionFluentBuilder {
         self.inner.get_core_definition_id()
     }
     /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn core_definition_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_definition_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_definition_version_id(input.into());
         self
     }
     /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn set_core_definition_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_definition_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_definition_version_id(input);
         self
     }

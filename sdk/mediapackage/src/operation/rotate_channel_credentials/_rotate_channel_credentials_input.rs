@@ -16,18 +16,14 @@ impl RotateChannelCredentialsInput {
 }
 impl RotateChannelCredentialsInput {
     /// Creates a new builder-style object to manufacture [`RotateChannelCredentialsInput`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput).
-    pub fn builder(
-    ) -> crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsInputBuilder
-    {
+    pub fn builder() -> crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsInputBuilder {
         crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsInputBuilder::default()
     }
 }
 
 /// A builder for [`RotateChannelCredentialsInput`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RotateChannelCredentialsInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -53,10 +49,6 @@ impl RotateChannelCredentialsInputBuilder {
         crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput {
-                id: self.id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput { id: self.id })
     }
 }

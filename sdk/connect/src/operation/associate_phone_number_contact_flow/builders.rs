@@ -5,16 +5,16 @@ pub use crate::operation::associate_phone_number_contact_flow::_associate_phone_
 
 impl AssociatePhoneNumberContactFlowInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.associate_phone_number_contact_flow();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl AssociatePhoneNumberContactFlowInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociatePhoneNumberContactFlowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_phone_number_contact_flow::builders::AssociatePhoneNumberContactFlowInputBuilder,
+    inner: crate::operation::associate_phone_number_contact_flow::builders::AssociatePhoneNumberContactFlowInputBuilder,
 }
 impl AssociatePhoneNumberContactFlowFluentBuilder {
     /// Creates a new `AssociatePhoneNumberContactFlow`.
@@ -39,15 +39,20 @@ impl AssociatePhoneNumberContactFlowFluentBuilder {
         }
     }
     /// Access the AssociatePhoneNumberContactFlow as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_phone_number_contact_flow::builders::AssociatePhoneNumberContactFlowInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_phone_number_contact_flow::builders::AssociatePhoneNumberContactFlowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlow, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlow,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl AssociatePhoneNumberContactFlowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,32 +89,35 @@ impl AssociatePhoneNumberContactFlowFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlow, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlow,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the phone number.</p>
-    pub fn phone_number_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.phone_number_id(input.into());
         self
     }
     /// <p>A unique identifier for the phone number.</p>
-    pub fn set_phone_number_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_phone_number_id(input);
         self
     }
@@ -131,18 +140,12 @@ impl AssociatePhoneNumberContactFlowFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier of the flow.</p>
-    pub fn contact_flow_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_flow_id(input.into());
         self
     }
     /// <p>The identifier of the flow.</p>
-    pub fn set_contact_flow_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_flow_id(input);
         self
     }

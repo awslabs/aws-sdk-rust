@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ListTemplateVersionsOutput`](crate::operation::list_template_versions::ListTemplateVersionsOutput) with field(s):
     ///   - [`template_versions_response(Option<TemplateVersionsResponse>)`](crate::operation::list_template_versions::ListTemplateVersionsOutput::template_versions_response): <p>Provides information about all the versions of a specific message template.</p>
     /// - On failure, responds with [`SdkError<ListTemplateVersionsError>`](crate::operation::list_template_versions::ListTemplateVersionsError)
-    pub fn list_template_versions(
-        &self,
-    ) -> crate::operation::list_template_versions::builders::ListTemplateVersionsFluentBuilder {
-        crate::operation::list_template_versions::builders::ListTemplateVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_template_versions(&self) -> crate::operation::list_template_versions::builders::ListTemplateVersionsFluentBuilder {
+        crate::operation::list_template_versions::builders::ListTemplateVersionsFluentBuilder::new(self.handle.clone())
     }
 }

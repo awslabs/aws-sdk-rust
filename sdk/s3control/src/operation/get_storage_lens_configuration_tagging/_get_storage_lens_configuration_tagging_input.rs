@@ -22,16 +22,14 @@ impl GetStorageLensConfigurationTaggingInput {
 }
 impl GetStorageLensConfigurationTaggingInput {
     /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationTaggingInput`](crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingInput).
-    pub fn builder() -> crate::operation::get_storage_lens_configuration_tagging::builders::GetStorageLensConfigurationTaggingInputBuilder{
+    pub fn builder() -> crate::operation::get_storage_lens_configuration_tagging::builders::GetStorageLensConfigurationTaggingInputBuilder {
         crate::operation::get_storage_lens_configuration_tagging::builders::GetStorageLensConfigurationTaggingInputBuilder::default()
     }
 }
 
 /// A builder for [`GetStorageLensConfigurationTaggingInput`](crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStorageLensConfigurationTaggingInputBuilder {
     pub(crate) config_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl GetStorageLensConfigurationTaggingInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`GetStorageLensConfigurationTaggingInput`](crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingInput {
-                config_id: self.config_id
-                ,
-                account_id: self.account_id
-                ,
-            }
+                config_id: self.config_id,
+                account_id: self.account_id,
+            },
         )
     }
 }

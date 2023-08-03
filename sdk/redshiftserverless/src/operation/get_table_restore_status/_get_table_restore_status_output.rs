@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetTableRestoreStatusOutput {
 }
 impl GetTableRestoreStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetTableRestoreStatusOutput`](crate::operation::get_table_restore_status::GetTableRestoreStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_table_restore_status::builders::GetTableRestoreStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_table_restore_status::builders::GetTableRestoreStatusOutputBuilder {
         crate::operation::get_table_restore_status::builders::GetTableRestoreStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTableRestoreStatusOutput`](crate::operation::get_table_restore_status::GetTableRestoreStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTableRestoreStatusOutputBuilder {
     pub(crate) table_restore_status: ::std::option::Option<crate::types::TableRestoreStatus>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetTableRestoreStatusOutputBuilder {
         self
     }
     /// <p>The returned <code>TableRestoreStatus</code> object that contains information about the status of your <code>RestoreTableFromSnapshot</code> request.</p>
-    pub fn set_table_restore_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TableRestoreStatus>,
-    ) -> Self {
+    pub fn set_table_restore_status(mut self, input: ::std::option::Option<crate::types::TableRestoreStatus>) -> Self {
         self.table_restore_status = input;
         self
     }
     /// <p>The returned <code>TableRestoreStatus</code> object that contains information about the status of your <code>RestoreTableFromSnapshot</code> request.</p>
-    pub fn get_table_restore_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::TableRestoreStatus> {
+    pub fn get_table_restore_status(&self) -> &::std::option::Option<crate::types::TableRestoreStatus> {
         &self.table_restore_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

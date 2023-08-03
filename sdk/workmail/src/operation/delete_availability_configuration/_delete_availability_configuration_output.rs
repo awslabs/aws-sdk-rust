@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAvailabilityConfigurationOutput
 }
 impl DeleteAvailabilityConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAvailabilityConfigurationOutput`](crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_availability_configuration::builders::DeleteAvailabilityConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_availability_configuration::builders::DeleteAvailabilityConfigurationOutputBuilder {
         crate::operation::delete_availability_configuration::builders::DeleteAvailabilityConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAvailabilityConfigurationOutput`](crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAvailabilityConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteAvailabilityConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAvailabilityConfigurationOutput`](crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationOutput {
         crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationOutput {
             _request_id: self._request_id,
         }

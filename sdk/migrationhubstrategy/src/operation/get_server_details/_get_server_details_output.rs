@@ -11,8 +11,7 @@ pub struct GetServerDetailsOutput {
     pub server_detail: ::std::option::Option<crate::types::ServerDetail>,
     /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
     #[doc(hidden)]
-    pub associated_applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>>,
+    pub associated_applications: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>>,
     _request_id: Option<String>,
 }
 impl GetServerDetailsOutput {
@@ -25,9 +24,7 @@ impl GetServerDetailsOutput {
         self.server_detail.as_ref()
     }
     /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
-    pub fn associated_applications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssociatedApplication]> {
+    pub fn associated_applications(&self) -> ::std::option::Option<&[crate::types::AssociatedApplication]> {
         self.associated_applications.as_deref()
     }
 }
@@ -38,22 +35,18 @@ impl ::aws_http::request_id::RequestId for GetServerDetailsOutput {
 }
 impl GetServerDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetServerDetailsOutput`](crate::operation::get_server_details::GetServerDetailsOutput).
-    pub fn builder() -> crate::operation::get_server_details::builders::GetServerDetailsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_server_details::builders::GetServerDetailsOutputBuilder {
         crate::operation::get_server_details::builders::GetServerDetailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetServerDetailsOutput`](crate::operation::get_server_details::GetServerDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServerDetailsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) server_detail: ::std::option::Option<crate::types::ServerDetail>,
-    pub(crate) associated_applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>>,
+    pub(crate) associated_applications: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>>,
     _request_id: Option<String>,
 }
 impl GetServerDetailsOutputBuilder {
@@ -77,10 +70,7 @@ impl GetServerDetailsOutputBuilder {
         self
     }
     /// <p> Detailed information about the server. </p>
-    pub fn set_server_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerDetail>,
-    ) -> Self {
+    pub fn set_server_detail(mut self, input: ::std::option::Option<crate::types::ServerDetail>) -> Self {
         self.server_detail = input;
         self
     }
@@ -100,17 +90,12 @@ impl GetServerDetailsOutputBuilder {
         self
     }
     /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
-    pub fn set_associated_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>>,
-    ) -> Self {
+    pub fn set_associated_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>>) -> Self {
         self.associated_applications = input;
         self
     }
     /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
-    pub fn get_associated_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>> {
+    pub fn get_associated_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>> {
         &self.associated_applications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

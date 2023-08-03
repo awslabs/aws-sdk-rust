@@ -29,16 +29,14 @@ impl CreateConnectClientAddInInput {
 }
 impl CreateConnectClientAddInInput {
     /// Creates a new builder-style object to manufacture [`CreateConnectClientAddInInput`](crate::operation::create_connect_client_add_in::CreateConnectClientAddInInput).
-    pub fn builder() -> crate::operation::create_connect_client_add_in::builders::CreateConnectClientAddInInputBuilder{
+    pub fn builder() -> crate::operation::create_connect_client_add_in::builders::CreateConnectClientAddInInputBuilder {
         crate::operation::create_connect_client_add_in::builders::CreateConnectClientAddInInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConnectClientAddInInput`](crate::operation::create_connect_client_add_in::CreateConnectClientAddInInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectClientAddInInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -94,12 +92,10 @@ impl CreateConnectClientAddInInputBuilder {
         crate::operation::create_connect_client_add_in::CreateConnectClientAddInInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_connect_client_add_in::CreateConnectClientAddInInput {
-                resource_id: self.resource_id,
-                name: self.name,
-                url: self.url,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_connect_client_add_in::CreateConnectClientAddInInput {
+            resource_id: self.resource_id,
+            name: self.name,
+            url: self.url,
+        })
     }
 }

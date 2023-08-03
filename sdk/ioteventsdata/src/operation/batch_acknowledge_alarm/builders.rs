@@ -37,10 +37,7 @@ impl BatchAcknowledgeAlarmFluentBuilder {
         }
     }
     /// Access the BatchAcknowledgeAlarm as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_acknowledge_alarm::builders::BatchAcknowledgeAlarmInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_acknowledge_alarm::builders::BatchAcknowledgeAlarmInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl BatchAcknowledgeAlarmFluentBuilder {
             crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarm,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl BatchAcknowledgeAlarmFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl BatchAcknowledgeAlarmFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl BatchAcknowledgeAlarmFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl BatchAcknowledgeAlarmFluentBuilder {
             crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarm,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +114,7 @@ impl BatchAcknowledgeAlarmFluentBuilder {
     /// To override the contents of this collection use [`set_acknowledge_action_requests`](Self::set_acknowledge_action_requests).
     ///
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-    pub fn acknowledge_action_requests(
-        mut self,
-        input: crate::types::AcknowledgeAlarmActionRequest,
-    ) -> Self {
+    pub fn acknowledge_action_requests(mut self, input: crate::types::AcknowledgeAlarmActionRequest) -> Self {
         self.inner = self.inner.acknowledge_action_requests(input);
         self
     }
@@ -144,9 +127,7 @@ impl BatchAcknowledgeAlarmFluentBuilder {
         self
     }
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-    pub fn get_acknowledge_action_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AcknowledgeAlarmActionRequest>> {
+    pub fn get_acknowledge_action_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcknowledgeAlarmActionRequest>> {
         self.inner.get_acknowledge_action_requests()
     }
 }

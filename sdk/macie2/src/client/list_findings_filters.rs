@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`findings_filter_list_items(Option<Vec<FindingsFilterListItem>>)`](crate::operation::list_findings_filters::ListFindingsFiltersOutput::findings_filter_list_items): <p>An array of objects, one for each filter that's associated with the account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_findings_filters::ListFindingsFiltersOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<ListFindingsFiltersError>`](crate::operation::list_findings_filters::ListFindingsFiltersError)
-    pub fn list_findings_filters(
-        &self,
-    ) -> crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder {
-        crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_findings_filters(&self) -> crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder {
+        crate::operation::list_findings_filters::builders::ListFindingsFiltersFluentBuilder::new(self.handle.clone())
     }
 }

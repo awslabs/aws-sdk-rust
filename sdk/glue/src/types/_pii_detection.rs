@@ -74,15 +74,12 @@ impl PiiDetection {
 
 /// A builder for [`PiiDetection`](crate::types::PiiDetection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PiiDetectionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) pii_type: ::std::option::Option<crate::types::PiiType>,
-    pub(crate) entity_types_to_detect:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) entity_types_to_detect: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) output_column_name: ::std::option::Option<::std::string::String>,
     pub(crate) sample_fraction: ::std::option::Option<f64>,
     pub(crate) threshold_fraction: ::std::option::Option<f64>,
@@ -115,10 +112,7 @@ impl PiiDetectionBuilder {
         self
     }
     /// <p>The node ID inputs to the transform.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inputs = input;
         self
     }
@@ -146,10 +140,7 @@ impl PiiDetectionBuilder {
     ///
     /// <p>Indicates the types of entities the PIIDetection transform will identify as PII data. </p>
     /// <p> PII type entities include: PERSON_NAME, DATE, USA_SNN, EMAIL, USA_ITIN, USA_PASSPORT_NUMBER, PHONE_NUMBER, BANK_ACCOUNT, IP_ADDRESS, MAC_ADDRESS, USA_CPT_CODE, USA_HCPCS_CODE, USA_NATIONAL_DRUG_CODE, USA_MEDICARE_BENEFICIARY_IDENTIFIER, USA_HEALTH_INSURANCE_CLAIM_NUMBER,CREDIT_CARD,USA_NATIONAL_PROVIDER_IDENTIFIER,USA_DEA_NUMBER,USA_DRIVING_LICENSE </p>
-    pub fn entity_types_to_detect(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_types_to_detect(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.entity_types_to_detect.unwrap_or_default();
         v.push(input.into());
         self.entity_types_to_detect = ::std::option::Option::Some(v);
@@ -157,33 +148,22 @@ impl PiiDetectionBuilder {
     }
     /// <p>Indicates the types of entities the PIIDetection transform will identify as PII data. </p>
     /// <p> PII type entities include: PERSON_NAME, DATE, USA_SNN, EMAIL, USA_ITIN, USA_PASSPORT_NUMBER, PHONE_NUMBER, BANK_ACCOUNT, IP_ADDRESS, MAC_ADDRESS, USA_CPT_CODE, USA_HCPCS_CODE, USA_NATIONAL_DRUG_CODE, USA_MEDICARE_BENEFICIARY_IDENTIFIER, USA_HEALTH_INSURANCE_CLAIM_NUMBER,CREDIT_CARD,USA_NATIONAL_PROVIDER_IDENTIFIER,USA_DEA_NUMBER,USA_DRIVING_LICENSE </p>
-    pub fn set_entity_types_to_detect(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_entity_types_to_detect(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.entity_types_to_detect = input;
         self
     }
     /// <p>Indicates the types of entities the PIIDetection transform will identify as PII data. </p>
     /// <p> PII type entities include: PERSON_NAME, DATE, USA_SNN, EMAIL, USA_ITIN, USA_PASSPORT_NUMBER, PHONE_NUMBER, BANK_ACCOUNT, IP_ADDRESS, MAC_ADDRESS, USA_CPT_CODE, USA_HCPCS_CODE, USA_NATIONAL_DRUG_CODE, USA_MEDICARE_BENEFICIARY_IDENTIFIER, USA_HEALTH_INSURANCE_CLAIM_NUMBER,CREDIT_CARD,USA_NATIONAL_PROVIDER_IDENTIFIER,USA_DEA_NUMBER,USA_DRIVING_LICENSE </p>
-    pub fn get_entity_types_to_detect(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entity_types_to_detect(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.entity_types_to_detect
     }
     /// <p>Indicates the output column name that will contain any entity type detected in that row. </p>
-    pub fn output_column_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_column_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the output column name that will contain any entity type detected in that row. </p>
-    pub fn set_output_column_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_column_name = input;
         self
     }

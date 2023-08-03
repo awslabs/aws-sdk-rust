@@ -7,10 +7,12 @@ impl super::Client {
     ///   - [`website_ca_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_website_certificate_authority::builders::DisassociateWebsiteCertificateAuthorityFluentBuilder::website_ca_id) / [`set_website_ca_id(Option<String>)`](crate::operation::disassociate_website_certificate_authority::builders::DisassociateWebsiteCertificateAuthorityFluentBuilder::set_website_ca_id): <p>A unique identifier for the CA.</p>
     /// - On success, responds with [`DisassociateWebsiteCertificateAuthorityOutput`](crate::operation::disassociate_website_certificate_authority::DisassociateWebsiteCertificateAuthorityOutput)
     /// - On failure, responds with [`SdkError<DisassociateWebsiteCertificateAuthorityError>`](crate::operation::disassociate_website_certificate_authority::DisassociateWebsiteCertificateAuthorityError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn disassociate_website_certificate_authority(&self) -> crate::operation::disassociate_website_certificate_authority::builders::DisassociateWebsiteCertificateAuthorityFluentBuilder{
-        crate::operation::disassociate_website_certificate_authority::builders::DisassociateWebsiteCertificateAuthorityFluentBuilder::new(self.handle.clone())
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn disassociate_website_certificate_authority(
+        &self,
+    ) -> crate::operation::disassociate_website_certificate_authority::builders::DisassociateWebsiteCertificateAuthorityFluentBuilder {
+        crate::operation::disassociate_website_certificate_authority::builders::DisassociateWebsiteCertificateAuthorityFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

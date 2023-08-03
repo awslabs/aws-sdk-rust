@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ExecuteProvisionedProductServiceActio
 }
 impl ExecuteProvisionedProductServiceActionOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteProvisionedProductServiceActionOutput`](crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput).
-    pub fn builder() -> crate::operation::execute_provisioned_product_service_action::builders::ExecuteProvisionedProductServiceActionOutputBuilder{
+    pub fn builder() -> crate::operation::execute_provisioned_product_service_action::builders::ExecuteProvisionedProductServiceActionOutputBuilder {
         crate::operation::execute_provisioned_product_service_action::builders::ExecuteProvisionedProductServiceActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExecuteProvisionedProductServiceActionOutput`](crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteProvisionedProductServiceActionOutputBuilder {
     pub(crate) record_detail: ::std::option::Option<crate::types::RecordDetail>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl ExecuteProvisionedProductServiceActionOutputBuilder {
         self
     }
     /// <p>An object containing detailed information about the result of provisioning the product.</p>
-    pub fn set_record_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordDetail>,
-    ) -> Self {
+    pub fn set_record_detail(mut self, input: ::std::option::Option<crate::types::RecordDetail>) -> Self {
         self.record_detail = input;
         self
     }
@@ -63,10 +58,9 @@ impl ExecuteProvisionedProductServiceActionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ExecuteProvisionedProductServiceActionOutput`](crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput).
-    pub fn build(self) -> crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput{
+    pub fn build(self) -> crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput {
         crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionOutput {
-            record_detail: self.record_detail
-            ,
+            record_detail: self.record_detail,
             _request_id: self._request_id,
         }
     }

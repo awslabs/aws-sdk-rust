@@ -24,12 +24,7 @@ impl super::Client {
     ///   - [`client_token(Option<String>)`](crate::operation::create_container_recipe::CreateContainerRecipeOutput::client_token): <p>The client token used to make this request idempotent.</p>
     ///   - [`container_recipe_arn(Option<String>)`](crate::operation::create_container_recipe::CreateContainerRecipeOutput::container_recipe_arn): <p>Returns the Amazon Resource Name (ARN) of the container recipe that the request created.</p>
     /// - On failure, responds with [`SdkError<CreateContainerRecipeError>`](crate::operation::create_container_recipe::CreateContainerRecipeError)
-    pub fn create_container_recipe(
-        &self,
-    ) -> crate::operation::create_container_recipe::builders::CreateContainerRecipeFluentBuilder
-    {
-        crate::operation::create_container_recipe::builders::CreateContainerRecipeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_container_recipe(&self) -> crate::operation::create_container_recipe::builders::CreateContainerRecipeFluentBuilder {
+        crate::operation::create_container_recipe::builders::CreateContainerRecipeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl ExperienceEndpoint {
 
 /// A builder for [`ExperienceEndpoint`](crate::types::ExperienceEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperienceEndpointBuilder {
     pub(crate) endpoint_type: ::std::option::Option<crate::types::EndpointType>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ExperienceEndpointBuilder {
         self
     }
     /// <p>The type of endpoint for your Amazon Kendra experience. The type currently available is <code>HOME</code>, which is a unique and fully hosted URL to the home page of your Amazon Kendra experience.</p>
-    pub fn set_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointType>,
-    ) -> Self {
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<crate::types::EndpointType>) -> Self {
         self.endpoint_type = input;
         self
     }

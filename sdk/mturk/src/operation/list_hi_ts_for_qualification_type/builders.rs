@@ -26,7 +26,7 @@ impl ListHiTsForQualificationTypeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListHITsForQualificationTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeInputBuilder,
+    inner: crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeInputBuilder,
 }
 impl ListHITsForQualificationTypeFluentBuilder {
     /// Creates a new `ListHITsForQualificationType`.
@@ -37,7 +37,7 @@ impl ListHITsForQualificationTypeFluentBuilder {
         }
     }
     /// Access the ListHITsForQualificationType as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListHITsForQualificationTypeFluentBuilder {
             crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListHITsForQualificationTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListHITsForQualificationTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationTypeError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListHITsForQualificationTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationTypeError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListHITsForQualificationTypeFluentBuilder {
             crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationTypeError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_hi_ts_for_qualification_type::paginator::ListHiTsForQualificationTypePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_hi_ts_for_qualification_type::paginator::ListHiTsForQualificationTypePaginator{
+    pub fn into_paginator(self) -> crate::operation::list_hi_ts_for_qualification_type::paginator::ListHiTsForQualificationTypePaginator {
         crate::operation::list_hi_ts_for_qualification_type::paginator::ListHiTsForQualificationTypePaginator::new(self.handle, self.inner)
     }
     /// <p> The ID of the Qualification type to use when querying HITs. </p>
-    pub fn qualification_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.qualification_type_id(input.into());
         self
     }
     /// <p> The ID of the Qualification type to use when querying HITs. </p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_qualification_type_id(input);
         self
     }

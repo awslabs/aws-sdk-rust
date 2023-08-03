@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for AddBridgeSourcesOutput {
 }
 impl AddBridgeSourcesOutput {
     /// Creates a new builder-style object to manufacture [`AddBridgeSourcesOutput`](crate::operation::add_bridge_sources::AddBridgeSourcesOutput).
-    pub fn builder() -> crate::operation::add_bridge_sources::builders::AddBridgeSourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::add_bridge_sources::builders::AddBridgeSourcesOutputBuilder {
         crate::operation::add_bridge_sources::builders::AddBridgeSourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddBridgeSourcesOutput`](crate::operation::add_bridge_sources::AddBridgeSourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddBridgeSourcesOutputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::BridgeSource>>,
@@ -71,17 +68,12 @@ impl AddBridgeSourcesOutputBuilder {
         self
     }
     /// The sources that you added to this bridge.
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BridgeSource>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BridgeSource>>) -> Self {
         self.sources = input;
         self
     }
     /// The sources that you added to this bridge.
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BridgeSource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BridgeSource>> {
         &self.sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

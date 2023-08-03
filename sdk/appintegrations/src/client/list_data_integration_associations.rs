@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`data_integration_associations(Option<Vec<DataIntegrationAssociationSummary>>)`](crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsOutput::data_integration_associations): <p>The Amazon Resource Name (ARN) and unique ID of the DataIntegration association.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListDataIntegrationAssociationsError>`](crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError)
-    pub fn list_data_integration_associations(&self) -> crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsFluentBuilder{
+    pub fn list_data_integration_associations(
+        &self,
+    ) -> crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsFluentBuilder {
         crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

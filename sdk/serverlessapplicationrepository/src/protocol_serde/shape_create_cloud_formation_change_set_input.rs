@@ -36,10 +36,7 @@ pub fn ser_create_cloud_formation_change_set_input(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_parameter_value::ser_parameter_value(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_parameter_value::ser_parameter_value(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }
@@ -57,10 +54,7 @@ pub fn ser_create_cloud_formation_change_set_input(
     if let Some(var_17) = &input.rollback_configuration {
         #[allow(unused_mut)]
         let mut object_18 = object.key("rollbackConfiguration").start_object();
-        crate::protocol_serde::shape_rollback_configuration::ser_rollback_configuration(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_rollback_configuration::ser_rollback_configuration(&mut object_18, var_17)?;
         object_18.finish();
     }
     if let Some(var_19) = &input.semantic_version {

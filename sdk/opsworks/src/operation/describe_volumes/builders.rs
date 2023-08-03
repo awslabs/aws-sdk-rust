@@ -10,10 +10,7 @@ impl DescribeVolumesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_volumes::DescribeVolumesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volumes::DescribeVolumesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volumes::DescribeVolumesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_volumes();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DescribeVolumesFluentBuilder {
         }
     }
     /// Access the DescribeVolumes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_volumes::builders::DescribeVolumesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_volumes::builders::DescribeVolumesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DescribeVolumesFluentBuilder {
             crate::operation::describe_volumes::DescribeVolumes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volumes::DescribeVolumesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volumes::DescribeVolumesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DescribeVolumesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DescribeVolumesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_volumes::DescribeVolumesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volumes::DescribeVolumesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volumes::DescribeVolumesError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DescribeVolumesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_volumes::DescribeVolumesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volumes::DescribeVolumesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volumes::DescribeVolumesError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl DescribeVolumesFluentBuilder {
             crate::operation::describe_volumes::DescribeVolumes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volumes::DescribeVolumesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volumes::DescribeVolumesError>,
     > {
         self.customize_middleware().await
     }
@@ -154,18 +138,12 @@ impl DescribeVolumesFluentBuilder {
         self.inner.get_stack_id()
     }
     /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
-    pub fn raid_array_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn raid_array_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.raid_array_id(input.into());
         self
     }
     /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
-    pub fn set_raid_array_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_raid_array_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_raid_array_id(input);
         self
     }
@@ -183,10 +161,7 @@ impl DescribeVolumesFluentBuilder {
         self
     }
     /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</p>
-    pub fn set_volume_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_volume_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_volume_ids(input);
         self
     }

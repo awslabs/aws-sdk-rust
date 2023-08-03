@@ -37,10 +37,7 @@ impl ListAppAuthorizationsFluentBuilder {
         }
     }
     /// Access the ListAppAuthorizations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_app_authorizations::builders::ListAppAuthorizationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_app_authorizations::builders::ListAppAuthorizationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListAppAuthorizationsFluentBuilder {
             crate::operation::list_app_authorizations::ListAppAuthorizations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_authorizations::ListAppAuthorizationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_authorizations::ListAppAuthorizationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListAppAuthorizationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListAppAuthorizationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_authorizations::ListAppAuthorizationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_authorizations::ListAppAuthorizationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_authorizations::ListAppAuthorizationsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListAppAuthorizationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_authorizations::ListAppAuthorizationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_authorizations::ListAppAuthorizationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_authorizations::ListAppAuthorizationsError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +105,23 @@ impl ListAppAuthorizationsFluentBuilder {
             crate::operation::list_app_authorizations::ListAppAuthorizations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_app_authorizations::ListAppAuthorizationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_app_authorizations::ListAppAuthorizationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_app_authorizations::paginator::ListAppAuthorizationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_app_authorizations::paginator::ListAppAuthorizationsPaginator {
-        crate::operation::list_app_authorizations::paginator::ListAppAuthorizationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_app_authorizations::paginator::ListAppAuthorizationsPaginator {
+        crate::operation::list_app_authorizations::paginator::ListAppAuthorizationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_bundle_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }

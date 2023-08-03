@@ -30,27 +30,19 @@ impl ImportLabelsTaskRunProperties {
 
 /// A builder for [`ImportLabelsTaskRunProperties`](crate::types::ImportLabelsTaskRunProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportLabelsTaskRunPropertiesBuilder {
     pub(crate) input_s3_path: ::std::option::Option<::std::string::String>,
     pub(crate) replace: ::std::option::Option<bool>,
 }
 impl ImportLabelsTaskRunPropertiesBuilder {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the labels.</p>
-    pub fn input_s3_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_s3_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the labels.</p>
-    pub fn set_input_s3_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_s3_path = input;
         self
     }

@@ -79,9 +79,7 @@ impl AwsEcsTaskDetails {
 
 /// A builder for [`AwsEcsTaskDetails`](crate::types::AwsEcsTaskDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDetailsBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) task_definition_arn: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,8 @@ pub struct AwsEcsTaskDetailsBuilder {
     pub(crate) started_at: ::std::option::Option<::std::string::String>,
     pub(crate) started_by: ::std::option::Option<::std::string::String>,
     pub(crate) group: ::std::option::Option<::std::string::String>,
-    pub(crate) volumes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskVolumeDetails>>,
-    pub(crate) containers:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsContainerDetails>>,
+    pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskVolumeDetails>>,
+    pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsContainerDetails>>,
 }
 impl AwsEcsTaskDetailsBuilder {
     /// <p>The Amazon Resource Name (ARN) of the cluster that hosts the task. </p>
@@ -111,18 +107,12 @@ impl AwsEcsTaskDetailsBuilder {
         &self.cluster_arn
     }
     /// <p>The ARN of the task definition that creates the task. </p>
-    pub fn task_definition_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_definition_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the task definition that creates the task. </p>
-    pub fn set_task_definition_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_definition_arn = input;
         self
     }
@@ -212,17 +202,12 @@ impl AwsEcsTaskDetailsBuilder {
         self
     }
     /// <p>Details about the data volume that is used in a task definition. </p>
-    pub fn set_volumes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskVolumeDetails>>,
-    ) -> Self {
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskVolumeDetails>>) -> Self {
         self.volumes = input;
         self
     }
     /// <p>Details about the data volume that is used in a task definition. </p>
-    pub fn get_volumes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskVolumeDetails>> {
+    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskVolumeDetails>> {
         &self.volumes
     }
     /// Appends an item to `containers`.
@@ -237,17 +222,12 @@ impl AwsEcsTaskDetailsBuilder {
         self
     }
     /// <p>The containers that are associated with the task. </p>
-    pub fn set_containers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsContainerDetails>>,
-    ) -> Self {
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsContainerDetails>>) -> Self {
         self.containers = input;
         self
     }
     /// <p>The containers that are associated with the task. </p>
-    pub fn get_containers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsContainerDetails>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsContainerDetails>> {
         &self.containers
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDetails`](crate::types::AwsEcsTaskDetails).

@@ -26,7 +26,7 @@ impl DeleteTransitGatewayRouteInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTransitGatewayRouteFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_transit_gateway_route::builders::DeleteTransitGatewayRouteInputBuilder,
+    inner: crate::operation::delete_transit_gateway_route::builders::DeleteTransitGatewayRouteInputBuilder,
 }
 impl DeleteTransitGatewayRouteFluentBuilder {
     /// Creates a new `DeleteTransitGatewayRoute`.
@@ -37,7 +37,7 @@ impl DeleteTransitGatewayRouteFluentBuilder {
         }
     }
     /// Access the DeleteTransitGatewayRoute as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_transit_gateway_route::builders::DeleteTransitGatewayRouteInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_transit_gateway_route::builders::DeleteTransitGatewayRouteInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteTransitGatewayRouteFluentBuilder {
             crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRoute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteTransitGatewayRouteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteTransitGatewayRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteTransitGatewayRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteError>,
     > {
         self.send_middleware().await
     }
@@ -114,47 +105,31 @@ impl DeleteTransitGatewayRouteFluentBuilder {
             crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRoute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_route_table_id(input.into());
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn set_transit_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transit_gateway_route_table_id(input);
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn get_transit_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transit_gateway_route_table_id()
     }
     /// <p>The CIDR range for the route. This must match the CIDR for the route exactly.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_cidr_block(input.into());
         self
     }
     /// <p>The CIDR range for the route. This must match the CIDR for the route exactly.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_cidr_block(input);
         self
     }

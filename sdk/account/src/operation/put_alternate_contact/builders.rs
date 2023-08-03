@@ -40,9 +40,7 @@ impl PutAlternateContactFluentBuilder {
         }
     }
     /// Access the PutAlternateContact as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_alternate_contact::builders::PutAlternateContactInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_alternate_contact::builders::PutAlternateContactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl PutAlternateContactFluentBuilder {
             crate::operation::put_alternate_contact::PutAlternateContact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_alternate_contact::PutAlternateContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_alternate_contact::PutAlternateContactError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl PutAlternateContactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl PutAlternateContactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_alternate_contact::PutAlternateContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_alternate_contact::PutAlternateContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_alternate_contact::PutAlternateContactError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl PutAlternateContactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_alternate_contact::PutAlternateContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_alternate_contact::PutAlternateContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_alternate_contact::PutAlternateContactError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +108,7 @@ impl PutAlternateContactFluentBuilder {
             crate::operation::put_alternate_contact::PutAlternateContact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_alternate_contact::PutAlternateContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_alternate_contact::PutAlternateContactError>,
     > {
         self.customize_middleware().await
     }
@@ -154,18 +141,12 @@ impl PutAlternateContactFluentBuilder {
         self.inner.get_title()
     }
     /// <p>Specifies an email address for the alternate contact. </p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_address(input.into());
         self
     }
     /// <p>Specifies an email address for the alternate contact. </p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
     }
@@ -193,17 +174,12 @@ impl PutAlternateContactFluentBuilder {
         self
     }
     /// <p>Specifies which alternate contact you want to create or update.</p>
-    pub fn set_alternate_contact_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AlternateContactType>,
-    ) -> Self {
+    pub fn set_alternate_contact_type(mut self, input: ::std::option::Option<crate::types::AlternateContactType>) -> Self {
         self.inner = self.inner.set_alternate_contact_type(input);
         self
     }
     /// <p>Specifies which alternate contact you want to create or update.</p>
-    pub fn get_alternate_contact_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlternateContactType> {
+    pub fn get_alternate_contact_type(&self) -> &::std::option::Option<crate::types::AlternateContactType> {
         self.inner.get_alternate_contact_type()
     }
     /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>

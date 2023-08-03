@@ -7,9 +7,7 @@
 use aws_smithy_client::SdkError;
 use aws_smithy_http::http::HttpHeaders;
 use aws_smithy_http::operation;
-use aws_smithy_types::error::metadata::{
-    Builder as ErrorMetadataBuilder, ErrorMetadata, ProvideErrorMetadata,
-};
+use aws_smithy_types::error::metadata::{Builder as ErrorMetadataBuilder, ErrorMetadata, ProvideErrorMetadata};
 use aws_smithy_types::error::Unhandled;
 use http::{HeaderMap, HeaderValue};
 
@@ -81,10 +79,7 @@ where
 
 /// Applies the extended request ID to a generic error builder
 #[doc(hidden)]
-pub fn apply_extended_request_id(
-    builder: ErrorMetadataBuilder,
-    headers: &HeaderMap<HeaderValue>,
-) -> ErrorMetadataBuilder {
+pub fn apply_extended_request_id(builder: ErrorMetadataBuilder, headers: &HeaderMap<HeaderValue>) -> ErrorMetadataBuilder {
     if let Some(extended_request_id) = extract_extended_request_id(headers) {
         builder.custom(EXTENDED_REQUEST_ID, extended_request_id)
     } else {
@@ -94,9 +89,7 @@ pub fn apply_extended_request_id(
 
 /// Extracts the S3 Extended Request ID from HTTP response headers
 fn extract_extended_request_id(headers: &HeaderMap<HeaderValue>) -> Option<&str> {
-    headers
-        .get("x-amz-id-2")
-        .and_then(|value| value.to_str().ok())
+    headers.get("x-amz-id-2").and_then(|value| value.to_str().ok())
 }
 
 #[cfg(test)]
@@ -116,8 +109,7 @@ mod test {
 
     #[test]
     fn test_extended_request_id_sdk_error() {
-        let without_extended_request_id =
-            || operation::Response::new(Response::builder().body(SdkBody::empty()).unwrap());
+        let without_extended_request_id = || operation::Response::new(Response::builder().body(SdkBody::empty()).unwrap());
         let with_extended_request_id = || {
             operation::Response::new(
                 Response::builder()
@@ -128,18 +120,13 @@ mod test {
         };
         assert_eq!(
             None,
-            SdkError::<(), _>::response_error("test", without_extended_request_id())
-                .extended_request_id()
+            SdkError::<(), _>::response_error("test", without_extended_request_id()).extended_request_id()
         );
         assert_eq!(
             Some("some-request-id"),
-            SdkError::<(), _>::response_error("test", with_extended_request_id())
-                .extended_request_id()
+            SdkError::<(), _>::response_error("test", with_extended_request_id()).extended_request_id()
         );
-        assert_eq!(
-            None,
-            SdkError::service_error((), without_extended_request_id()).extended_request_id()
-        );
+        assert_eq!(None, SdkError::service_error((), without_extended_request_id()).extended_request_id());
         assert_eq!(
             Some("some-request-id"),
             SdkError::service_error((), with_extended_request_id()).extended_request_id()
@@ -152,10 +139,7 @@ mod test {
         assert_eq!(None, extract_extended_request_id(&headers));
 
         headers.append("x-amz-id-2", HeaderValue::from_static("some-request-id"));
-        assert_eq!(
-            Some("some-request-id"),
-            extract_extended_request_id(&headers)
-        );
+        assert_eq!(Some("some-request-id"), extract_extended_request_id(&headers));
     }
 
     #[test]
@@ -168,18 +152,14 @@ mod test {
 
         headers.append("x-amz-id-2", HeaderValue::from_static("some-request-id"));
         assert_eq!(
-            ErrorMetadata::builder()
-                .custom(EXTENDED_REQUEST_ID, "some-request-id")
-                .build(),
+            ErrorMetadata::builder().custom(EXTENDED_REQUEST_ID, "some-request-id").build(),
             apply_extended_request_id(ErrorMetadata::builder(), &headers).build(),
         );
     }
 
     #[test]
     fn test_error_metadata_extended_request_id_impl() {
-        let err = ErrorMetadata::builder()
-            .custom(EXTENDED_REQUEST_ID, "some-request-id")
-            .build();
+        let err = ErrorMetadata::builder().custom(EXTENDED_REQUEST_ID, "some-request-id").build();
         assert_eq!(Some("some-request-id"), err.extended_request_id());
     }
 }

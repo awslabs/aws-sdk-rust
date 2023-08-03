@@ -29,27 +29,19 @@ impl PutCorsPolicyInput {
 
 /// A builder for [`PutCorsPolicyInput`](crate::operation::put_cors_policy::PutCorsPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutCorsPolicyInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
     pub(crate) cors_policy: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>,
 }
 impl PutCorsPolicyInputBuilder {
     /// <p>The name of the container that you want to assign the CORS policy to.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container that you want to assign the CORS policy to.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }
@@ -69,26 +61,18 @@ impl PutCorsPolicyInputBuilder {
         self
     }
     /// <p>The CORS policy to apply to the container. </p>
-    pub fn set_cors_policy(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>,
-    ) -> Self {
+    pub fn set_cors_policy(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>) -> Self {
         self.cors_policy = input;
         self
     }
     /// <p>The CORS policy to apply to the container. </p>
-    pub fn get_cors_policy(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CorsRule>> {
+    pub fn get_cors_policy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CorsRule>> {
         &self.cors_policy
     }
     /// Consumes the builder and constructs a [`PutCorsPolicyInput`](crate::operation::put_cors_policy::PutCorsPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_cors_policy::PutCorsPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_cors_policy::PutCorsPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_cors_policy::PutCorsPolicyInput {
             container_name: self.container_name,
             cors_policy: self.cors_policy,

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListGroupResourcesOutput {
 }
 impl ListGroupResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupResourcesOutput`](crate::operation::list_group_resources::ListGroupResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_group_resources::builders::ListGroupResourcesOutputBuilder {
+    pub fn builder() -> crate::operation::list_group_resources::builders::ListGroupResourcesOutputBuilder {
         crate::operation::list_group_resources::builders::ListGroupResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListGroupResourcesOutput`](crate::operation::list_group_resources::ListGroupResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupResourcesOutputBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ListGroupResourcesOutputBuilder {
         self
     }
     /// <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resources = input;
         self
     }

@@ -13,7 +13,7 @@ impl super::Client {
     /// - On success, responds with [`AuthorizeClientVpnIngressOutput`](crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressOutput) with field(s):
     ///   - [`status(Option<ClientVpnAuthorizationRuleStatus>)`](crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressOutput::status): <p>The current state of the authorization rule.</p>
     /// - On failure, responds with [`SdkError<AuthorizeClientVpnIngressError>`](crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressError)
-    pub fn authorize_client_vpn_ingress(&self) -> crate::operation::authorize_client_vpn_ingress::builders::AuthorizeClientVpnIngressFluentBuilder{
+    pub fn authorize_client_vpn_ingress(&self) -> crate::operation::authorize_client_vpn_ingress::builders::AuthorizeClientVpnIngressFluentBuilder {
         crate::operation::authorize_client_vpn_ingress::builders::AuthorizeClientVpnIngressFluentBuilder::new(self.handle.clone())
     }
 }

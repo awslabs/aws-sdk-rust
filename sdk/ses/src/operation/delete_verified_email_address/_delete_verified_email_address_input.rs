@@ -16,33 +16,25 @@ impl DeleteVerifiedEmailAddressInput {
 }
 impl DeleteVerifiedEmailAddressInput {
     /// Creates a new builder-style object to manufacture [`DeleteVerifiedEmailAddressInput`](crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressInput).
-    pub fn builder() -> crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressInputBuilder{
+    pub fn builder() -> crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressInputBuilder {
         crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVerifiedEmailAddressInput`](crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVerifiedEmailAddressInputBuilder {
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVerifiedEmailAddressInputBuilder {
     /// <p>An email address to be removed from the list of verified addresses.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An email address to be removed from the list of verified addresses.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
@@ -57,10 +49,8 @@ impl DeleteVerifiedEmailAddressInputBuilder {
         crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressInput {
-                email_address: self.email_address,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressInput {
+            email_address: self.email_address,
+        })
     }
 }

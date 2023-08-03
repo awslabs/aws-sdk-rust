@@ -26,7 +26,7 @@ impl ModifyCustomDomainAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyCustomDomainAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_custom_domain_association::builders::ModifyCustomDomainAssociationInputBuilder,
+    inner: crate::operation::modify_custom_domain_association::builders::ModifyCustomDomainAssociationInputBuilder,
 }
 impl ModifyCustomDomainAssociationFluentBuilder {
     /// Creates a new `ModifyCustomDomainAssociation`.
@@ -37,7 +37,7 @@ impl ModifyCustomDomainAssociationFluentBuilder {
         }
     }
     /// Access the ModifyCustomDomainAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_custom_domain_association::builders::ModifyCustomDomainAssociationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_custom_domain_association::builders::ModifyCustomDomainAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifyCustomDomainAssociationFluentBuilder {
             crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifyCustomDomainAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifyCustomDomainAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifyCustomDomainAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ModifyCustomDomainAssociationFluentBuilder {
             crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The custom domain name for a changed custom domain association.</p>
-    pub fn custom_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_domain_name(input.into());
         self
     }
     /// <p>The custom domain name for a changed custom domain association.</p>
-    pub fn set_custom_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_domain_name(input);
         self
     }
@@ -141,40 +124,26 @@ impl ModifyCustomDomainAssociationFluentBuilder {
         self.inner.get_custom_domain_name()
     }
     /// <p>The certificate Amazon Resource Name (ARN) for the changed custom domain association.</p>
-    pub fn custom_domain_certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_domain_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_domain_certificate_arn(input.into());
         self
     }
     /// <p>The certificate Amazon Resource Name (ARN) for the changed custom domain association.</p>
-    pub fn set_custom_domain_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_domain_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_domain_certificate_arn(input);
         self
     }
     /// <p>The certificate Amazon Resource Name (ARN) for the changed custom domain association.</p>
-    pub fn get_custom_domain_certificate_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_custom_domain_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_domain_certificate_arn()
     }
     /// <p>The identifier of the cluster to change a custom domain association for.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The identifier of the cluster to change a custom domain association for.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }

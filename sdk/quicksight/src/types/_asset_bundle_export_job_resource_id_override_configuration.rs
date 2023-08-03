@@ -16,18 +16,14 @@ impl AssetBundleExportJobResourceIdOverrideConfiguration {
 }
 impl AssetBundleExportJobResourceIdOverrideConfiguration {
     /// Creates a new builder-style object to manufacture [`AssetBundleExportJobResourceIdOverrideConfiguration`](crate::types::AssetBundleExportJobResourceIdOverrideConfiguration).
-    pub fn builder(
-    ) -> crate::types::builders::AssetBundleExportJobResourceIdOverrideConfigurationBuilder {
-        crate::types::builders::AssetBundleExportJobResourceIdOverrideConfigurationBuilder::default(
-        )
+    pub fn builder() -> crate::types::builders::AssetBundleExportJobResourceIdOverrideConfigurationBuilder {
+        crate::types::builders::AssetBundleExportJobResourceIdOverrideConfigurationBuilder::default()
     }
 }
 
 /// A builder for [`AssetBundleExportJobResourceIdOverrideConfiguration`](crate::types::AssetBundleExportJobResourceIdOverrideConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleExportJobResourceIdOverrideConfigurationBuilder {
     pub(crate) prefix_for_all_resources: ::std::option::Option<bool>,
 }

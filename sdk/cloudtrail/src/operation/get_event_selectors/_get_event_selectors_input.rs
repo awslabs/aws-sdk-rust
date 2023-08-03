@@ -33,17 +33,14 @@ impl GetEventSelectorsInput {
 }
 impl GetEventSelectorsInput {
     /// Creates a new builder-style object to manufacture [`GetEventSelectorsInput`](crate::operation::get_event_selectors::GetEventSelectorsInput).
-    pub fn builder(
-    ) -> crate::operation::get_event_selectors::builders::GetEventSelectorsInputBuilder {
+    pub fn builder() -> crate::operation::get_event_selectors::builders::GetEventSelectorsInputBuilder {
         crate::operation::get_event_selectors::builders::GetEventSelectorsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEventSelectorsInput`](crate::operation::get_event_selectors::GetEventSelectorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEventSelectorsInputBuilder {
     pub(crate) trail_name: ::std::option::Option<::std::string::String>,
 }
@@ -92,14 +89,7 @@ impl GetEventSelectorsInputBuilder {
     /// Consumes the builder and constructs a [`GetEventSelectorsInput`](crate::operation::get_event_selectors::GetEventSelectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_event_selectors::GetEventSelectorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_event_selectors::GetEventSelectorsInput {
-                trail_name: self.trail_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_event_selectors::GetEventSelectorsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_event_selectors::GetEventSelectorsInput { trail_name: self.trail_name })
     }
 }

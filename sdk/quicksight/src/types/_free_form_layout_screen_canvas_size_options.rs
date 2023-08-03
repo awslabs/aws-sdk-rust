@@ -23,26 +23,18 @@ impl FreeFormLayoutScreenCanvasSizeOptions {
 
 /// A builder for [`FreeFormLayoutScreenCanvasSizeOptions`](crate::types::FreeFormLayoutScreenCanvasSizeOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FreeFormLayoutScreenCanvasSizeOptionsBuilder {
     pub(crate) optimized_view_port_width: ::std::option::Option<::std::string::String>,
 }
 impl FreeFormLayoutScreenCanvasSizeOptionsBuilder {
     /// <p>The width that the view port will be optimized for when the layout renders.</p>
-    pub fn optimized_view_port_width(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn optimized_view_port_width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.optimized_view_port_width = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The width that the view port will be optimized for when the layout renders.</p>
-    pub fn set_optimized_view_port_width(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_optimized_view_port_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.optimized_view_port_width = input;
         self
     }

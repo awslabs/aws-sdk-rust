@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterTypeOutput`](crate::operation::register_type::RegisterTypeOutput) with field(s):
     ///   - [`registration_token(Option<String>)`](crate::operation::register_type::RegisterTypeOutput::registration_token): <p>The identifier for this registration request.</p>  <p>Use this registration token when calling <code>DescribeTypeRegistration</code>, which returns information about the status and IDs of the extension registration.</p>
     /// - On failure, responds with [`SdkError<RegisterTypeError>`](crate::operation::register_type::RegisterTypeError)
-    pub fn register_type(
-        &self,
-    ) -> crate::operation::register_type::builders::RegisterTypeFluentBuilder {
-        crate::operation::register_type::builders::RegisterTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_type(&self) -> crate::operation::register_type::builders::RegisterTypeFluentBuilder {
+        crate::operation::register_type::builders::RegisterTypeFluentBuilder::new(self.handle.clone())
     }
 }

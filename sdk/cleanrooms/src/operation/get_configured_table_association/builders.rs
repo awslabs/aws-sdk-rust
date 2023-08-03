@@ -26,7 +26,7 @@ impl GetConfiguredTableAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConfiguredTableAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_configured_table_association::builders::GetConfiguredTableAssociationInputBuilder,
+    inner: crate::operation::get_configured_table_association::builders::GetConfiguredTableAssociationInputBuilder,
 }
 impl GetConfiguredTableAssociationFluentBuilder {
     /// Creates a new `GetConfiguredTableAssociation`.
@@ -37,7 +37,7 @@ impl GetConfiguredTableAssociationFluentBuilder {
         }
     }
     /// Access the GetConfiguredTableAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_configured_table_association::builders::GetConfiguredTableAssociationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_configured_table_association::builders::GetConfiguredTableAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetConfiguredTableAssociationFluentBuilder {
             crate::operation::get_configured_table_association::GetConfiguredTableAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configured_table_association::GetConfiguredTableAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configured_table_association::GetConfiguredTableAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetConfiguredTableAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetConfiguredTableAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_configured_table_association::GetConfiguredTableAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configured_table_association::GetConfiguredTableAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configured_table_association::GetConfiguredTableAssociationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetConfiguredTableAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_configured_table_association::GetConfiguredTableAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configured_table_association::GetConfiguredTableAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configured_table_association::GetConfiguredTableAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -114,51 +105,31 @@ impl GetConfiguredTableAssociationFluentBuilder {
             crate::operation::get_configured_table_association::GetConfiguredTableAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_configured_table_association::GetConfiguredTableAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_configured_table_association::GetConfiguredTableAssociationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique ID for the configured table association to retrieve. Currently accepts the configured table ID.</p>
-    pub fn configured_table_association_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .configured_table_association_identifier(input.into());
+    pub fn configured_table_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.configured_table_association_identifier(input.into());
         self
     }
     /// <p>The unique ID for the configured table association to retrieve. Currently accepts the configured table ID.</p>
-    pub fn set_configured_table_association_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_configured_table_association_identifier(input);
+    pub fn set_configured_table_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_configured_table_association_identifier(input);
         self
     }
     /// <p>The unique ID for the configured table association to retrieve. Currently accepts the configured table ID.</p>
-    pub fn get_configured_table_association_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_configured_table_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configured_table_association_identifier()
     }
     /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
-    pub fn membership_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.membership_identifier(input.into());
         self
     }
     /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
-    pub fn set_membership_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_membership_identifier(input);
         self
     }

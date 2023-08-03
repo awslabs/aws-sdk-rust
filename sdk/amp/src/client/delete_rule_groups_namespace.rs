@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_rule_groups_namespace::builders::DeleteRuleGroupsNamespaceFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_rule_groups_namespace::builders::DeleteRuleGroupsNamespaceFluentBuilder::set_client_token): Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     /// - On success, responds with [`DeleteRuleGroupsNamespaceOutput`](crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceOutput)
     /// - On failure, responds with [`SdkError<DeleteRuleGroupsNamespaceError>`](crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceError)
-    pub fn delete_rule_groups_namespace(&self) -> crate::operation::delete_rule_groups_namespace::builders::DeleteRuleGroupsNamespaceFluentBuilder{
+    pub fn delete_rule_groups_namespace(&self) -> crate::operation::delete_rule_groups_namespace::builders::DeleteRuleGroupsNamespaceFluentBuilder {
         crate::operation::delete_rule_groups_namespace::builders::DeleteRuleGroupsNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,17 +30,14 @@ impl ListUserImportJobsInput {
 }
 impl ListUserImportJobsInput {
     /// Creates a new builder-style object to manufacture [`ListUserImportJobsInput`](crate::operation::list_user_import_jobs::ListUserImportJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_user_import_jobs::builders::ListUserImportJobsInputBuilder {
+    pub fn builder() -> crate::operation::list_user_import_jobs::builders::ListUserImportJobsInputBuilder {
         crate::operation::list_user_import_jobs::builders::ListUserImportJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListUserImportJobsInput`](crate::operation::list_user_import_jobs::ListUserImportJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserImportJobsInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -76,18 +73,12 @@ impl ListUserImportJobsInputBuilder {
         &self.max_results
     }
     /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
-    pub fn pagination_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pagination_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pagination_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
-    pub fn set_pagination_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pagination_token = input;
         self
     }
@@ -98,16 +89,12 @@ impl ListUserImportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListUserImportJobsInput`](crate::operation::list_user_import_jobs::ListUserImportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_user_import_jobs::ListUserImportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_user_import_jobs::ListUserImportJobsInput {
-                user_pool_id: self.user_pool_id,
-                max_results: self.max_results,
-                pagination_token: self.pagination_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_user_import_jobs::ListUserImportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_user_import_jobs::ListUserImportJobsInput {
+            user_pool_id: self.user_pool_id,
+            max_results: self.max_results,
+            pagination_token: self.pagination_token,
+        })
     }
 }

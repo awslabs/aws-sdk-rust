@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StartMlEvaluationTaskRunOutput`](crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunOutput) with field(s):
     ///   - [`task_run_id(Option<String>)`](crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunOutput::task_run_id): <p>The unique identifier associated with this run.</p>
     /// - On failure, responds with [`SdkError<StartMLEvaluationTaskRunError>`](crate::operation::start_ml_evaluation_task_run::StartMLEvaluationTaskRunError)
-    pub fn start_ml_evaluation_task_run(&self) -> crate::operation::start_ml_evaluation_task_run::builders::StartMLEvaluationTaskRunFluentBuilder{
+    pub fn start_ml_evaluation_task_run(&self) -> crate::operation::start_ml_evaluation_task_run::builders::StartMLEvaluationTaskRunFluentBuilder {
         crate::operation::start_ml_evaluation_task_run::builders::StartMLEvaluationTaskRunFluentBuilder::new(self.handle.clone())
     }
 }

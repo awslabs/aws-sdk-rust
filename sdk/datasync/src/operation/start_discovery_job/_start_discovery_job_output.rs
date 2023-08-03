@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for StartDiscoveryJobOutput {
 }
 impl StartDiscoveryJobOutput {
     /// Creates a new builder-style object to manufacture [`StartDiscoveryJobOutput`](crate::operation::start_discovery_job::StartDiscoveryJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_discovery_job::builders::StartDiscoveryJobOutputBuilder {
+    pub fn builder() -> crate::operation::start_discovery_job::builders::StartDiscoveryJobOutputBuilder {
         crate::operation::start_discovery_job::builders::StartDiscoveryJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartDiscoveryJobOutput`](crate::operation::start_discovery_job::StartDiscoveryJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDiscoveryJobOutputBuilder {
     pub(crate) discovery_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartDiscoveryJobOutputBuilder {
     /// <p>The ARN of the discovery job that you started.</p>
-    pub fn discovery_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discovery_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the discovery job that you started.</p>
-    pub fn set_discovery_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discovery_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.discovery_job_arn = input;
         self
     }

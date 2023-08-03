@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StartMatchmakingOutput {
 }
 impl StartMatchmakingOutput {
     /// Creates a new builder-style object to manufacture [`StartMatchmakingOutput`](crate::operation::start_matchmaking::StartMatchmakingOutput).
-    pub fn builder() -> crate::operation::start_matchmaking::builders::StartMatchmakingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_matchmaking::builders::StartMatchmakingOutputBuilder {
         crate::operation::start_matchmaking::builders::StartMatchmakingOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartMatchmakingOutput`](crate::operation::start_matchmaking::StartMatchmakingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMatchmakingOutputBuilder {
     pub(crate) matchmaking_ticket: ::std::option::Option<crate::types::MatchmakingTicket>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl StartMatchmakingOutputBuilder {
         self
     }
     /// <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
-    pub fn set_matchmaking_ticket(
-        mut self,
-        input: ::std::option::Option<crate::types::MatchmakingTicket>,
-    ) -> Self {
+    pub fn set_matchmaking_ticket(mut self, input: ::std::option::Option<crate::types::MatchmakingTicket>) -> Self {
         self.matchmaking_ticket = input;
         self
     }
     /// <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
-    pub fn get_matchmaking_ticket(
-        &self,
-    ) -> &::std::option::Option<crate::types::MatchmakingTicket> {
+    pub fn get_matchmaking_ticket(&self) -> &::std::option::Option<crate::types::MatchmakingTicket> {
         &self.matchmaking_ticket
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

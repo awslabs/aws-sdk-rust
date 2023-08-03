@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateGeoMatchSetOutput`](crate::operation::update_geo_match_set::UpdateGeoMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::update_geo_match_set::UpdateGeoMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateGeoMatchSetError>`](crate::operation::update_geo_match_set::UpdateGeoMatchSetError)
-    pub fn update_geo_match_set(
-        &self,
-    ) -> crate::operation::update_geo_match_set::builders::UpdateGeoMatchSetFluentBuilder {
-        crate::operation::update_geo_match_set::builders::UpdateGeoMatchSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_geo_match_set(&self) -> crate::operation::update_geo_match_set::builders::UpdateGeoMatchSetFluentBuilder {
+        crate::operation::update_geo_match_set::builders::UpdateGeoMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

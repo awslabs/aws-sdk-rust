@@ -12,8 +12,7 @@ pub struct S3GlueParquetTarget {
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies native partitioning using a sequence of keys.</p>
     #[doc(hidden)]
-    pub partition_keys:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub partition_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>A single Amazon S3 path to write to.</p>
     #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
@@ -34,9 +33,7 @@ impl S3GlueParquetTarget {
         self.inputs.as_deref()
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn partition_keys(
-        &self,
-    ) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
+    pub fn partition_keys(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
         self.partition_keys.as_deref()
     }
     /// <p>A single Amazon S3 path to write to.</p>
@@ -48,9 +45,7 @@ impl S3GlueParquetTarget {
         self.compression.as_ref()
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
-    pub fn schema_change_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DirectSchemaChangePolicy> {
+    pub fn schema_change_policy(&self) -> ::std::option::Option<&crate::types::DirectSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
     }
 }
@@ -63,14 +58,11 @@ impl S3GlueParquetTarget {
 
 /// A builder for [`S3GlueParquetTarget`](crate::types::S3GlueParquetTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3GlueParquetTargetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) partition_keys:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) partition_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) compression: ::std::option::Option<crate::types::ParquetCompressionType>,
     pub(crate) schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
@@ -102,10 +94,7 @@ impl S3GlueParquetTargetBuilder {
         self
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inputs = input;
         self
     }
@@ -125,17 +114,12 @@ impl S3GlueParquetTargetBuilder {
         self
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn set_partition_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
+    pub fn set_partition_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
         self.partition_keys = input;
         self
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn get_partition_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_partition_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
         &self.partition_keys
     }
     /// <p>A single Amazon S3 path to write to.</p>
@@ -158,10 +142,7 @@ impl S3GlueParquetTargetBuilder {
         self
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
-    pub fn set_compression(
-        mut self,
-        input: ::std::option::Option<crate::types::ParquetCompressionType>,
-    ) -> Self {
+    pub fn set_compression(mut self, input: ::std::option::Option<crate::types::ParquetCompressionType>) -> Self {
         self.compression = input;
         self
     }
@@ -175,17 +156,12 @@ impl S3GlueParquetTargetBuilder {
         self
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
-    pub fn set_schema_change_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
-    ) -> Self {
+    pub fn set_schema_change_policy(mut self, input: ::std::option::Option<crate::types::DirectSchemaChangePolicy>) -> Self {
         self.schema_change_policy = input;
         self
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
-    pub fn get_schema_change_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::DirectSchemaChangePolicy> {
+    pub fn get_schema_change_policy(&self) -> &::std::option::Option<crate::types::DirectSchemaChangePolicy> {
         &self.schema_change_policy
     }
     /// Consumes the builder and constructs a [`S3GlueParquetTarget`](crate::types::S3GlueParquetTarget).

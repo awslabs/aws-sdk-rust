@@ -9,10 +9,7 @@ pub fn ser_list_action_executions_input(
     if let Some(var_2) = &input.filter {
         #[allow(unused_mut)]
         let mut object_3 = object.key("filter").start_object();
-        crate::protocol_serde::shape_action_execution_filter::ser_action_execution_filter(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_action_execution_filter::ser_action_execution_filter(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.max_results {

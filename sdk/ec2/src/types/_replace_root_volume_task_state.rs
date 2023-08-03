@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ReplaceRootVolumeTaskState {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for ReplaceRootVolumeTaskState {
             "in-progress" => ReplaceRootVolumeTaskState::InProgress,
             "pending" => ReplaceRootVolumeTaskState::Pending,
             "succeeded" => ReplaceRootVolumeTaskState::Succeeded,
-            other => ReplaceRootVolumeTaskState::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ReplaceRootVolumeTaskState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl ReplaceRootVolumeTaskState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "failed",
-            "failed-detached",
-            "failing",
-            "in-progress",
-            "pending",
-            "succeeded",
-        ]
+        &["failed", "failed-detached", "failing", "in-progress", "pending", "succeeded"]
     }
 }
 impl ::std::convert::AsRef<str> for ReplaceRootVolumeTaskState {

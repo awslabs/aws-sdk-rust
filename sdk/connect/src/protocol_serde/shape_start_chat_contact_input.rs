@@ -37,10 +37,7 @@ pub fn ser_start_chat_contact_input(
     if let Some(var_11) = &input.participant_details {
         #[allow(unused_mut)]
         let mut object_12 = object.key("ParticipantDetails").start_object();
-        crate::protocol_serde::shape_participant_details::ser_participant_details(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_participant_details::ser_participant_details(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.persistent_chat {

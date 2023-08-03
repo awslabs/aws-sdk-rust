@@ -25,9 +25,7 @@ impl UpdateDomainConfigOutput {
         self.dry_run_results.as_ref()
     }
     /// <p>The status of the dry run being performed on the domain, if any.</p>
-    pub fn dry_run_progress_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DryRunProgressStatus> {
+    pub fn dry_run_progress_status(&self) -> ::std::option::Option<&crate::types::DryRunProgressStatus> {
         self.dry_run_progress_status.as_ref()
     }
 }
@@ -38,17 +36,14 @@ impl ::aws_http::request_id::RequestId for UpdateDomainConfigOutput {
 }
 impl UpdateDomainConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainConfigOutput`](crate::operation::update_domain_config::UpdateDomainConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::update_domain_config::builders::UpdateDomainConfigOutputBuilder {
+    pub fn builder() -> crate::operation::update_domain_config::builders::UpdateDomainConfigOutputBuilder {
         crate::operation::update_domain_config::builders::UpdateDomainConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDomainConfigOutput`](crate::operation::update_domain_config::UpdateDomainConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDomainConfigOutputBuilder {
     pub(crate) domain_config: ::std::option::Option<crate::types::DomainConfig>,
     pub(crate) dry_run_results: ::std::option::Option<crate::types::DryRunResults>,
@@ -62,10 +57,7 @@ impl UpdateDomainConfigOutputBuilder {
         self
     }
     /// <p>The status of the updated domain.</p>
-    pub fn set_domain_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainConfig>,
-    ) -> Self {
+    pub fn set_domain_config(mut self, input: ::std::option::Option<crate::types::DomainConfig>) -> Self {
         self.domain_config = input;
         self
     }
@@ -79,10 +71,7 @@ impl UpdateDomainConfigOutputBuilder {
         self
     }
     /// <p>Results of the dry run performed in the update domain request.</p>
-    pub fn set_dry_run_results(
-        mut self,
-        input: ::std::option::Option<crate::types::DryRunResults>,
-    ) -> Self {
+    pub fn set_dry_run_results(mut self, input: ::std::option::Option<crate::types::DryRunResults>) -> Self {
         self.dry_run_results = input;
         self
     }
@@ -96,17 +85,12 @@ impl UpdateDomainConfigOutputBuilder {
         self
     }
     /// <p>The status of the dry run being performed on the domain, if any.</p>
-    pub fn set_dry_run_progress_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DryRunProgressStatus>,
-    ) -> Self {
+    pub fn set_dry_run_progress_status(mut self, input: ::std::option::Option<crate::types::DryRunProgressStatus>) -> Self {
         self.dry_run_progress_status = input;
         self
     }
     /// <p>The status of the dry run being performed on the domain, if any.</p>
-    pub fn get_dry_run_progress_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::DryRunProgressStatus> {
+    pub fn get_dry_run_progress_status(&self) -> &::std::option::Option<crate::types::DryRunProgressStatus> {
         &self.dry_run_progress_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

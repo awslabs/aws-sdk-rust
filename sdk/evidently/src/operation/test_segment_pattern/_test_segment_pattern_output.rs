@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for TestSegmentPatternOutput {
 }
 impl TestSegmentPatternOutput {
     /// Creates a new builder-style object to manufacture [`TestSegmentPatternOutput`](crate::operation::test_segment_pattern::TestSegmentPatternOutput).
-    pub fn builder(
-    ) -> crate::operation::test_segment_pattern::builders::TestSegmentPatternOutputBuilder {
+    pub fn builder() -> crate::operation::test_segment_pattern::builders::TestSegmentPatternOutputBuilder {
         crate::operation::test_segment_pattern::builders::TestSegmentPatternOutputBuilder::default()
     }
 }
 
 /// A builder for [`TestSegmentPatternOutput`](crate::operation::test_segment_pattern::TestSegmentPatternOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestSegmentPatternOutputBuilder {
     pub(crate) r#match: ::std::option::Option<bool>,
     _request_id: Option<String>,

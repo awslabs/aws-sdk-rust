@@ -29,16 +29,14 @@ impl StartLifecyclePolicyPreviewInput {
 }
 impl StartLifecyclePolicyPreviewInput {
     /// Creates a new builder-style object to manufacture [`StartLifecyclePolicyPreviewInput`](crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewInput).
-    pub fn builder() -> crate::operation::start_lifecycle_policy_preview::builders::StartLifecyclePolicyPreviewInputBuilder{
+    pub fn builder() -> crate::operation::start_lifecycle_policy_preview::builders::StartLifecyclePolicyPreviewInputBuilder {
         crate::operation::start_lifecycle_policy_preview::builders::StartLifecyclePolicyPreviewInputBuilder::default()
     }
 }
 
 /// A builder for [`StartLifecyclePolicyPreviewInput`](crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartLifecyclePolicyPreviewInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl StartLifecyclePolicyPreviewInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository to be evaluated.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository to be evaluated.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -80,18 +72,12 @@ impl StartLifecyclePolicyPreviewInputBuilder {
         &self.repository_name
     }
     /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy for the repository is used.</p>
-    pub fn lifecycle_policy_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_policy_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy for the repository is used.</p>
-    pub fn set_lifecycle_policy_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_policy_text = input;
         self
     }
@@ -106,12 +92,10 @@ impl StartLifecyclePolicyPreviewInputBuilder {
         crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewInput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                lifecycle_policy_text: self.lifecycle_policy_text,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewInput {
+            registry_id: self.registry_id,
+            repository_name: self.repository_name,
+            lifecycle_policy_text: self.lifecycle_policy_text,
+        })
     }
 }

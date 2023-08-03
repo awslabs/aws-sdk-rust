@@ -38,9 +38,7 @@ pub struct StackSetOperationPreferences {
 }
 impl StackSetOperationPreferences {
     /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.</p>
-    pub fn region_concurrency_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RegionConcurrencyType> {
+    pub fn region_concurrency_type(&self) -> ::std::option::Option<&crate::types::RegionConcurrencyType> {
         self.region_concurrency_type.as_ref()
     }
     /// <p>The order of the Regions where you want to perform the stack operation.</p>
@@ -85,9 +83,7 @@ impl StackSetOperationPreferences {
 
 /// A builder for [`StackSetOperationPreferences`](crate::types::StackSetOperationPreferences).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackSetOperationPreferencesBuilder {
     pub(crate) region_concurrency_type: ::std::option::Option<crate::types::RegionConcurrencyType>,
     pub(crate) region_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -103,17 +99,12 @@ impl StackSetOperationPreferencesBuilder {
         self
     }
     /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.</p>
-    pub fn set_region_concurrency_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RegionConcurrencyType>,
-    ) -> Self {
+    pub fn set_region_concurrency_type(mut self, input: ::std::option::Option<crate::types::RegionConcurrencyType>) -> Self {
         self.region_concurrency_type = input;
         self
     }
     /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.</p>
-    pub fn get_region_concurrency_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegionConcurrencyType> {
+    pub fn get_region_concurrency_type(&self) -> &::std::option::Option<crate::types::RegionConcurrencyType> {
         &self.region_concurrency_type
     }
     /// Appends an item to `region_order`.
@@ -128,17 +119,12 @@ impl StackSetOperationPreferencesBuilder {
         self
     }
     /// <p>The order of the Regions where you want to perform the stack operation.</p>
-    pub fn set_region_order(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_region_order(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.region_order = input;
         self
     }
     /// <p>The order of the Regions where you want to perform the stack operation.</p>
-    pub fn get_region_order(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_region_order(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.region_order
     }
     /// <p>The number of accounts, per Region, for which this operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>

@@ -13,10 +13,7 @@ pub fn ser_create_ops_metadata_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = object_3.key(key_4.as_str()).start_object();
-                crate::protocol_serde::shape_metadata_value::ser_metadata_value(
-                    &mut object_6,
-                    value_5,
-                )?;
+                crate::protocol_serde::shape_metadata_value::ser_metadata_value(&mut object_6, value_5)?;
                 object_6.finish();
             }
         }

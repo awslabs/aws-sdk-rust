@@ -181,9 +181,7 @@ impl Patch {
 
 /// A builder for [`Patch`](crate::types::Patch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PatchBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) release_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -236,10 +234,7 @@ impl PatchBuilder {
         self
     }
     /// <p>The date the patch was released.</p>
-    pub fn set_release_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_release_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.release_date = input;
         self
     }
@@ -304,18 +299,12 @@ impl PatchBuilder {
         &self.vendor
     }
     /// <p>The product family the patch is applicable for. For example, <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
-    pub fn product_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product family the patch is applicable for. For example, <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
-    pub fn set_product_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_product_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_family = input;
         self
     }
@@ -338,18 +327,12 @@ impl PatchBuilder {
         &self.product
     }
     /// <p>The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
-    pub fn classification(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn classification(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.classification = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
-    pub fn set_classification(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_classification(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.classification = input;
         self
     }
@@ -358,18 +341,12 @@ impl PatchBuilder {
         &self.classification
     }
     /// <p>The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches only.</p>
-    pub fn msrc_severity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn msrc_severity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.msrc_severity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches only.</p>
-    pub fn set_msrc_severity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_msrc_severity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.msrc_severity = input;
         self
     }
@@ -431,17 +408,12 @@ impl PatchBuilder {
         self
     }
     /// <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn set_advisory_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_advisory_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.advisory_ids = input;
         self
     }
     /// <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn get_advisory_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_advisory_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.advisory_ids
     }
     /// Appends an item to `bugzilla_ids`.
@@ -456,17 +428,12 @@ impl PatchBuilder {
         self
     }
     /// <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn set_bugzilla_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_bugzilla_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.bugzilla_ids = input;
         self
     }
     /// <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn get_bugzilla_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bugzilla_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.bugzilla_ids
     }
     /// Appends an item to `cve_ids`.
@@ -481,10 +448,7 @@ impl PatchBuilder {
         self
     }
     /// <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn set_cve_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cve_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cve_ids = input;
         self
     }

@@ -37,10 +37,7 @@ impl AcceptSharedDirectoryFluentBuilder {
         }
     }
     /// Access the AcceptSharedDirectory as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::accept_shared_directory::builders::AcceptSharedDirectoryInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::accept_shared_directory::builders::AcceptSharedDirectoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl AcceptSharedDirectoryFluentBuilder {
             crate::operation::accept_shared_directory::AcceptSharedDirectory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_shared_directory::AcceptSharedDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_shared_directory::AcceptSharedDirectoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl AcceptSharedDirectoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl AcceptSharedDirectoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_shared_directory::AcceptSharedDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_shared_directory::AcceptSharedDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_shared_directory::AcceptSharedDirectoryError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl AcceptSharedDirectoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_shared_directory::AcceptSharedDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_shared_directory::AcceptSharedDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_shared_directory::AcceptSharedDirectoryError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl AcceptSharedDirectoryFluentBuilder {
             crate::operation::accept_shared_directory::AcceptSharedDirectory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_shared_directory::AcceptSharedDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_shared_directory::AcceptSharedDirectoryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </p>
-    pub fn shared_directory_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shared_directory_id(input.into());
         self
     }
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </p>
-    pub fn set_shared_directory_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shared_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shared_directory_id(input);
         self
     }

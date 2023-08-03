@@ -26,34 +26,26 @@ impl ::aws_http::request_id::RequestId for ResetCacheParameterGroupOutput {
 }
 impl ResetCacheParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`ResetCacheParameterGroupOutput`](crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupOutput).
-    pub fn builder() -> crate::operation::reset_cache_parameter_group::builders::ResetCacheParameterGroupOutputBuilder{
+    pub fn builder() -> crate::operation::reset_cache_parameter_group::builders::ResetCacheParameterGroupOutputBuilder {
         crate::operation::reset_cache_parameter_group::builders::ResetCacheParameterGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetCacheParameterGroupOutput`](crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetCacheParameterGroupOutputBuilder {
     pub(crate) cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ResetCacheParameterGroupOutputBuilder {
     /// <p>The name of the cache parameter group.</p>
-    pub fn cache_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cache parameter group.</p>
-    pub fn set_cache_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_parameter_group_name = input;
         self
     }
@@ -71,9 +63,7 @@ impl ResetCacheParameterGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ResetCacheParameterGroupOutput`](crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupOutput {
+    pub fn build(self) -> crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupOutput {
         crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupOutput {
             cache_parameter_group_name: self.cache_parameter_group_name,
             _request_id: self._request_id,

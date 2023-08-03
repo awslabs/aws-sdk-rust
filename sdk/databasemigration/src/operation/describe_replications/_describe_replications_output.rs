@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeReplicationsOutput {
 }
 impl DescribeReplicationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationsOutput`](crate::operation::describe_replications::DescribeReplicationsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_replications::builders::DescribeReplicationsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_replications::builders::DescribeReplicationsOutputBuilder {
         crate::operation::describe_replications::builders::DescribeReplicationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationsOutput`](crate::operation::describe_replications::DescribeReplicationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) replications: ::std::option::Option<::std::vec::Vec<crate::types::Replication>>,
@@ -72,17 +69,12 @@ impl DescribeReplicationsOutputBuilder {
         self
     }
     /// <p>The replication descriptions.</p>
-    pub fn set_replications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Replication>>,
-    ) -> Self {
+    pub fn set_replications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Replication>>) -> Self {
         self.replications = input;
         self
     }
     /// <p>The replication descriptions.</p>
-    pub fn get_replications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Replication>> {
+    pub fn get_replications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Replication>> {
         &self.replications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

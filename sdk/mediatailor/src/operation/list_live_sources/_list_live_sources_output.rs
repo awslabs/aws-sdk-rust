@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListLiveSourcesOutput {
 }
 impl ListLiveSourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListLiveSourcesOutput`](crate::operation::list_live_sources::ListLiveSourcesOutput).
-    pub fn builder() -> crate::operation::list_live_sources::builders::ListLiveSourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_live_sources::builders::ListLiveSourcesOutputBuilder {
         crate::operation::list_live_sources::builders::ListLiveSourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLiveSourcesOutput`](crate::operation::list_live_sources::ListLiveSourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLiveSourcesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::LiveSource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ListLiveSourcesOutputBuilder {
         self
     }
     /// <p>Lists the live sources.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LiveSource>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LiveSource>>) -> Self {
         self.items = input;
         self
     }

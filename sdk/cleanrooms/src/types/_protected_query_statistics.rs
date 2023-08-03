@@ -23,9 +23,7 @@ impl ProtectedQueryStatistics {
 
 /// A builder for [`ProtectedQueryStatistics`](crate::types::ProtectedQueryStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtectedQueryStatisticsBuilder {
     pub(crate) total_duration_in_millis: ::std::option::Option<i64>,
 }

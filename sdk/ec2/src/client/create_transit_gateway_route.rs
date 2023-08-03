@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTransitGatewayRouteOutput`](crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteOutput) with field(s):
     ///   - [`route(Option<TransitGatewayRoute>)`](crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteOutput::route): <p>Information about the route.</p>
     /// - On failure, responds with [`SdkError<CreateTransitGatewayRouteError>`](crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteError)
-    pub fn create_transit_gateway_route(&self) -> crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteFluentBuilder{
+    pub fn create_transit_gateway_route(&self) -> crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteFluentBuilder {
         crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteFluentBuilder::new(self.handle.clone())
     }
 }

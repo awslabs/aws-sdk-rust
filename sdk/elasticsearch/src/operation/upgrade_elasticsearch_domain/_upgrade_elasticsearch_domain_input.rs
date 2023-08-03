@@ -30,16 +30,14 @@ impl UpgradeElasticsearchDomainInput {
 }
 impl UpgradeElasticsearchDomainInput {
     /// Creates a new builder-style object to manufacture [`UpgradeElasticsearchDomainInput`](crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainInput).
-    pub fn builder() -> crate::operation::upgrade_elasticsearch_domain::builders::UpgradeElasticsearchDomainInputBuilder{
+    pub fn builder() -> crate::operation::upgrade_elasticsearch_domain::builders::UpgradeElasticsearchDomainInputBuilder {
         crate::operation::upgrade_elasticsearch_domain::builders::UpgradeElasticsearchDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`UpgradeElasticsearchDomainInput`](crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpgradeElasticsearchDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_version: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl UpgradeElasticsearchDomainInputBuilder {
         &self.domain_name
     }
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
-    pub fn target_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
-    pub fn set_target_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_version = input;
         self
     }
@@ -101,12 +93,10 @@ impl UpgradeElasticsearchDomainInputBuilder {
         crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainInput {
-                domain_name: self.domain_name,
-                target_version: self.target_version,
-                perform_check_only: self.perform_check_only,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainInput {
+            domain_name: self.domain_name,
+            target_version: self.target_version,
+            perform_check_only: self.perform_check_only,
+        })
     }
 }

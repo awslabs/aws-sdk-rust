@@ -13,9 +13,7 @@ pub fn ser_create_batch_prediction_input(
         object.key("MLModelId").string(var_3.as_str());
     }
     if let Some(var_4) = &input.batch_prediction_data_source_id {
-        object
-            .key("BatchPredictionDataSourceId")
-            .string(var_4.as_str());
+        object.key("BatchPredictionDataSourceId").string(var_4.as_str());
     }
     if let Some(var_5) = &input.output_uri {
         object.key("OutputUri").string(var_5.as_str());

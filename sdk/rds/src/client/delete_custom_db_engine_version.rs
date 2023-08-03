@@ -38,7 +38,9 @@ impl super::Client {
     ///   - [`supports_certificate_rotation_without_restart(Option<bool>)`](crate::operation::delete_custom_db_engine_version::DeleteCustomDbEngineVersionOutput::supports_certificate_rotation_without_restart): <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     ///   - [`supported_ca_certificate_identifiers(Option<Vec<String>>)`](crate::operation::delete_custom_db_engine_version::DeleteCustomDbEngineVersionOutput::supported_ca_certificate_identifiers): <p>A list of the supported CA certificate identifiers.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<DeleteCustomDBEngineVersionError>`](crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError)
-    pub fn delete_custom_db_engine_version(&self) -> crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDBEngineVersionFluentBuilder{
+    pub fn delete_custom_db_engine_version(
+        &self,
+    ) -> crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDBEngineVersionFluentBuilder {
         crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDBEngineVersionFluentBuilder::new(self.handle.clone())
     }
 }

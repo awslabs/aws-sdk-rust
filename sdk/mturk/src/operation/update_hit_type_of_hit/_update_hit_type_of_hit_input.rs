@@ -22,18 +22,14 @@ impl UpdateHitTypeOfHitInput {
 }
 impl UpdateHitTypeOfHitInput {
     /// Creates a new builder-style object to manufacture [`UpdateHitTypeOfHitInput`](crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput).
-    pub fn builder(
-    ) -> crate::operation::update_hit_type_of_hit::builders::UpdateHitTypeOfHitInputBuilder {
-        crate::operation::update_hit_type_of_hit::builders::UpdateHitTypeOfHitInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_hit_type_of_hit::builders::UpdateHitTypeOfHitInputBuilder {
+        crate::operation::update_hit_type_of_hit::builders::UpdateHitTypeOfHitInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateHitTypeOfHitInput`](crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateHitTypeOfHitInputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
     pub(crate) hit_type_id: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl UpdateHitTypeOfHitInputBuilder {
     /// Consumes the builder and constructs a [`UpdateHitTypeOfHitInput`](crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput {
-                hit_id: self.hit_id,
-                hit_type_id: self.hit_type_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput {
+            hit_id: self.hit_id,
+            hit_type_id: self.hit_type_id,
+        })
     }
 }

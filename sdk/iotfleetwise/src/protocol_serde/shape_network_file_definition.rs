@@ -7,18 +7,13 @@ pub fn ser_network_file_definition(
         crate::types::NetworkFileDefinition::CanDbc(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_5.key("canDbc").start_object();
-            crate::protocol_serde::shape_can_dbc_definition::ser_can_dbc_definition(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_can_dbc_definition::ser_can_dbc_definition(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::NetworkFileDefinition::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "NetworkFileDefinition",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "NetworkFileDefinition",
+            ))
         }
     }
     Ok(())

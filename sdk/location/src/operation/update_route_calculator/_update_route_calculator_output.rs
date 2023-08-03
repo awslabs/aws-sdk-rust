@@ -41,18 +41,14 @@ impl ::aws_http::request_id::RequestId for UpdateRouteCalculatorOutput {
 }
 impl UpdateRouteCalculatorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRouteCalculatorOutput`](crate::operation::update_route_calculator::UpdateRouteCalculatorOutput).
-    pub fn builder(
-    ) -> crate::operation::update_route_calculator::builders::UpdateRouteCalculatorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_route_calculator::builders::UpdateRouteCalculatorOutputBuilder {
         crate::operation::update_route_calculator::builders::UpdateRouteCalculatorOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRouteCalculatorOutput`](crate::operation::update_route_calculator::UpdateRouteCalculatorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRouteCalculatorOutputBuilder {
     pub(crate) calculator_name: ::std::option::Option<::std::string::String>,
     pub(crate) calculator_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +57,12 @@ pub struct UpdateRouteCalculatorOutputBuilder {
 }
 impl UpdateRouteCalculatorOutputBuilder {
     /// <p>The name of the updated route calculator resource.</p>
-    pub fn calculator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the updated route calculator resource.</p>
-    pub fn set_calculator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculator_name = input;
         self
     }
@@ -84,10 +74,7 @@ impl UpdateRouteCalculatorOutputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
-    pub fn calculator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -95,10 +82,7 @@ impl UpdateRouteCalculatorOutputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
-    pub fn set_calculator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculator_arn = input;
         self
     }
@@ -115,10 +99,7 @@ impl UpdateRouteCalculatorOutputBuilder {
         self
     }
     /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }

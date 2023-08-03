@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`RestoreBackupOutput`](crate::operation::restore_backup::RestoreBackupOutput) with field(s):
     ///   - [`backup(Option<Backup>)`](crate::operation::restore_backup::RestoreBackupOutput::backup): <p>Information on the <code>Backup</code> object created.</p>
     /// - On failure, responds with [`SdkError<RestoreBackupError>`](crate::operation::restore_backup::RestoreBackupError)
-    pub fn restore_backup(
-        &self,
-    ) -> crate::operation::restore_backup::builders::RestoreBackupFluentBuilder {
-        crate::operation::restore_backup::builders::RestoreBackupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn restore_backup(&self) -> crate::operation::restore_backup::builders::RestoreBackupFluentBuilder {
+        crate::operation::restore_backup::builders::RestoreBackupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,10 +37,7 @@ impl DeleteDirectoryConfigFluentBuilder {
         }
     }
     /// Access the DeleteDirectoryConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_directory_config::builders::DeleteDirectoryConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_directory_config::builders::DeleteDirectoryConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteDirectoryConfigFluentBuilder {
             crate::operation::delete_directory_config::DeleteDirectoryConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_directory_config::DeleteDirectoryConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_directory_config::DeleteDirectoryConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteDirectoryConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteDirectoryConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_directory_config::DeleteDirectoryConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_directory_config::DeleteDirectoryConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_directory_config::DeleteDirectoryConfigError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteDirectoryConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_directory_config::DeleteDirectoryConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_directory_config::DeleteDirectoryConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_directory_config::DeleteDirectoryConfigError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteDirectoryConfigFluentBuilder {
             crate::operation::delete_directory_config::DeleteDirectoryConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_directory_config::DeleteDirectoryConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_directory_config::DeleteDirectoryConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the directory configuration.</p>
-    pub fn directory_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_name(input.into());
         self
     }
     /// <p>The name of the directory configuration.</p>
-    pub fn set_directory_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_name(input);
         self
     }

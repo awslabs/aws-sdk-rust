@@ -28,9 +28,7 @@ impl StartCutoverOutput {
 
 /// A builder for [`StartCutoverOutput`](crate::operation::start_cutover::StartCutoverOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartCutoverOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,

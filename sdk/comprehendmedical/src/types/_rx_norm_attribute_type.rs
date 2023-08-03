@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RxNormAttributeType {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for RxNormAttributeType {
             "RATE" => RxNormAttributeType::Rate,
             "ROUTE_OR_MODE" => RxNormAttributeType::RouteOrMode,
             "STRENGTH" => RxNormAttributeType::Strength,
-            other => RxNormAttributeType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RxNormAttributeType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl RxNormAttributeType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DOSAGE",
-            "DURATION",
-            "FORM",
-            "FREQUENCY",
-            "RATE",
-            "ROUTE_OR_MODE",
-            "STRENGTH",
-        ]
+        &["DOSAGE", "DURATION", "FORM", "FREQUENCY", "RATE", "ROUTE_OR_MODE", "STRENGTH"]
     }
 }
 impl ::std::convert::AsRef<str> for RxNormAttributeType {

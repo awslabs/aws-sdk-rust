@@ -51,9 +51,7 @@ impl EulaAcceptance {
 
 /// A builder for [`EulaAcceptance`](crate::types::EulaAcceptance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EulaAcceptanceBuilder {
     pub(crate) accepted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) accepted_by: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl EulaAcceptanceBuilder {
         self
     }
     /// <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
-    pub fn set_accepted_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_accepted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.accepted_at = input;
         self
     }
@@ -108,18 +103,12 @@ impl EulaAcceptanceBuilder {
         &self.acceptee_id
     }
     /// <p>The EULA acceptance ID.</p>
-    pub fn eula_acceptance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn eula_acceptance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.eula_acceptance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The EULA acceptance ID.</p>
-    pub fn set_eula_acceptance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_eula_acceptance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.eula_acceptance_id = input;
         self
     }

@@ -5,8 +5,7 @@
 pub struct ListEarthObservationJobsOutput {
     /// <p>Contains summary information about the Earth Observation jobs.</p>
     #[doc(hidden)]
-    pub earth_observation_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListEarthObservationJobOutputConfig>>,
+    pub earth_observation_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ListEarthObservationJobOutputConfig>>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEarthObservationJobsOutput {
 }
 impl ListEarthObservationJobsOutput {
     /// <p>Contains summary information about the Earth Observation jobs.</p>
-    pub fn earth_observation_job_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListEarthObservationJobOutputConfig]> {
+    pub fn earth_observation_job_summaries(&self) -> ::std::option::Option<&[crate::types::ListEarthObservationJobOutputConfig]> {
         self.earth_observation_job_summaries.as_deref()
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
@@ -27,10 +24,7 @@ impl ListEarthObservationJobsOutput {
 impl ::std::fmt::Debug for ListEarthObservationJobsOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListEarthObservationJobsOutput");
-        formatter.field(
-            "earth_observation_job_summaries",
-            &self.earth_observation_job_summaries,
-        );
+        formatter.field("earth_observation_job_summaries", &self.earth_observation_job_summaries);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -43,7 +37,7 @@ impl ::aws_http::request_id::RequestId for ListEarthObservationJobsOutput {
 }
 impl ListEarthObservationJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListEarthObservationJobsOutput`](crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput).
-    pub fn builder() -> crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsOutputBuilder {
         crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsOutputBuilder::default()
     }
 }
@@ -52,8 +46,7 @@ impl ListEarthObservationJobsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListEarthObservationJobsOutputBuilder {
-    pub(crate) earth_observation_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListEarthObservationJobOutputConfig>>,
+    pub(crate) earth_observation_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ListEarthObservationJobOutputConfig>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,10 +56,7 @@ impl ListEarthObservationJobsOutputBuilder {
     /// To override the contents of this collection use [`set_earth_observation_job_summaries`](Self::set_earth_observation_job_summaries).
     ///
     /// <p>Contains summary information about the Earth Observation jobs.</p>
-    pub fn earth_observation_job_summaries(
-        mut self,
-        input: crate::types::ListEarthObservationJobOutputConfig,
-    ) -> Self {
+    pub fn earth_observation_job_summaries(mut self, input: crate::types::ListEarthObservationJobOutputConfig) -> Self {
         let mut v = self.earth_observation_job_summaries.unwrap_or_default();
         v.push(input);
         self.earth_observation_job_summaries = ::std::option::Option::Some(v);
@@ -75,18 +65,13 @@ impl ListEarthObservationJobsOutputBuilder {
     /// <p>Contains summary information about the Earth Observation jobs.</p>
     pub fn set_earth_observation_job_summaries(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ListEarthObservationJobOutputConfig>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ListEarthObservationJobOutputConfig>>,
     ) -> Self {
         self.earth_observation_job_summaries = input;
         self
     }
     /// <p>Contains summary information about the Earth Observation jobs.</p>
-    pub fn get_earth_observation_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListEarthObservationJobOutputConfig>>
-    {
+    pub fn get_earth_observation_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListEarthObservationJobOutputConfig>> {
         &self.earth_observation_job_summaries
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
@@ -113,9 +98,7 @@ impl ListEarthObservationJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEarthObservationJobsOutput`](crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput {
+    pub fn build(self) -> crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput {
         crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput {
             earth_observation_job_summaries: self.earth_observation_job_summaries,
             next_token: self.next_token,
@@ -126,10 +109,7 @@ impl ListEarthObservationJobsOutputBuilder {
 impl ::std::fmt::Debug for ListEarthObservationJobsOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListEarthObservationJobsOutputBuilder");
-        formatter.field(
-            "earth_observation_job_summaries",
-            &self.earth_observation_job_summaries,
-        );
+        formatter.field("earth_observation_job_summaries", &self.earth_observation_job_summaries);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

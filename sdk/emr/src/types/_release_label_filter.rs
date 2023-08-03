@@ -30,9 +30,7 @@ impl ReleaseLabelFilter {
 
 /// A builder for [`ReleaseLabelFilter`](crate::types::ReleaseLabelFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReleaseLabelFilterBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) application: ::std::option::Option<::std::string::String>,

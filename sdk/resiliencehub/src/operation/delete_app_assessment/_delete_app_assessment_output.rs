@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteAppAssessmentOutput {
 }
 impl DeleteAppAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppAssessmentOutput`](crate::operation::delete_app_assessment::DeleteAppAssessmentOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_app_assessment::builders::DeleteAppAssessmentOutputBuilder {
-        crate::operation::delete_app_assessment::builders::DeleteAppAssessmentOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_app_assessment::builders::DeleteAppAssessmentOutputBuilder {
+        crate::operation::delete_app_assessment::builders::DeleteAppAssessmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppAssessmentOutput`](crate::operation::delete_app_assessment::DeleteAppAssessmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppAssessmentOutputBuilder {
     pub(crate) assessment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_status: ::std::option::Option<crate::types::AssessmentStatus>,
@@ -47,18 +43,12 @@ pub struct DeleteAppAssessmentOutputBuilder {
 }
 impl DeleteAppAssessmentOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn assessment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn set_assessment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_arn = input;
         self
     }
@@ -72,10 +62,7 @@ impl DeleteAppAssessmentOutputBuilder {
         self
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub fn set_assessment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentStatus>,
-    ) -> Self {
+    pub fn set_assessment_status(mut self, input: ::std::option::Option<crate::types::AssessmentStatus>) -> Self {
         self.assessment_status = input;
         self
     }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::get_operations::GetOperationsOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_operations::GetOperationsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetOperations</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetOperationsError>`](crate::operation::get_operations::GetOperationsError)
-    pub fn get_operations(
-        &self,
-    ) -> crate::operation::get_operations::builders::GetOperationsFluentBuilder {
-        crate::operation::get_operations::builders::GetOperationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_operations(&self) -> crate::operation::get_operations::builders::GetOperationsFluentBuilder {
+        crate::operation::get_operations::builders::GetOperationsFluentBuilder::new(self.handle.clone())
     }
 }

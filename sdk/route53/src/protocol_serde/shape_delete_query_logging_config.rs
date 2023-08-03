@@ -9,76 +9,67 @@ pub fn de_delete_query_logging_config_http_error(
     crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(
-            crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError::unhandled(
+        None => {
+            return Err(crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError::unhandled(
                 generic,
-            ),
-        ),
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModification" => crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError::ConcurrentModification({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConcurrentModificationBuilder::default();
-                    output = crate::protocol_serde::shape_concurrent_modification::de_concurrent_modification_xml_err(_response_body, output).map_err(crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConcurrentModificationBuilder::default();
+                output = crate::protocol_serde::shape_concurrent_modification::de_concurrent_modification_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidInput" => crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError::InvalidInput({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidInputBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(_response_body, output).map_err(crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidInputBuilder::default();
+                output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NoSuchQueryLoggingConfig" => crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError::NoSuchQueryLoggingConfig({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchQueryLoggingConfigBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_query_logging_config::de_no_such_query_logging_config_xml_err(_response_body, output).map_err(crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchQueryLoggingConfigBuilder::default();
+                output = crate::protocol_serde::shape_no_such_query_logging_config::de_no_such_query_logging_config_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError::generic(generic)
+        _ => crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError::generic(generic),
     })
 }
 
@@ -94,9 +85,7 @@ pub fn de_delete_query_logging_config_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

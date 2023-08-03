@@ -23,9 +23,7 @@ impl InstanceMetadataOptions {
     /// <p>The state of token usage for your instance metadata requests. If the parameter is not specified in the request, the default state is <code>optional</code>.</p>
     /// <p>If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0 role credentials are returned.</p>
     /// <p>If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the version 1.0 credentials are not available.</p>
-    pub fn http_tokens(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceMetadataHttpTokensState> {
+    pub fn http_tokens(&self) -> ::std::option::Option<&crate::types::InstanceMetadataHttpTokensState> {
         self.http_tokens.as_ref()
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
@@ -36,9 +34,7 @@ impl InstanceMetadataOptions {
     /// <p>This parameter enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is <code>enabled</code>.</p> <note>
     /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your instance metadata. </p>
     /// </note>
-    pub fn http_endpoint(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceMetadataEndpointState> {
+    pub fn http_endpoint(&self) -> ::std::option::Option<&crate::types::InstanceMetadataEndpointState> {
         self.http_endpoint.as_ref()
     }
 }
@@ -51,9 +47,7 @@ impl InstanceMetadataOptions {
 
 /// A builder for [`InstanceMetadataOptions`](crate::types::InstanceMetadataOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceMetadataOptionsBuilder {
     pub(crate) http_tokens: ::std::option::Option<crate::types::InstanceMetadataHttpTokensState>,
     pub(crate) http_put_response_hop_limit: ::std::option::Option<i32>,
@@ -70,19 +64,14 @@ impl InstanceMetadataOptionsBuilder {
     /// <p>The state of token usage for your instance metadata requests. If the parameter is not specified in the request, the default state is <code>optional</code>.</p>
     /// <p>If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0 role credentials are returned.</p>
     /// <p>If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the version 1.0 credentials are not available.</p>
-    pub fn set_http_tokens(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceMetadataHttpTokensState>,
-    ) -> Self {
+    pub fn set_http_tokens(mut self, input: ::std::option::Option<crate::types::InstanceMetadataHttpTokensState>) -> Self {
         self.http_tokens = input;
         self
     }
     /// <p>The state of token usage for your instance metadata requests. If the parameter is not specified in the request, the default state is <code>optional</code>.</p>
     /// <p>If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0 role credentials are returned.</p>
     /// <p>If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the version 1.0 credentials are not available.</p>
-    pub fn get_http_tokens(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceMetadataHttpTokensState> {
+    pub fn get_http_tokens(&self) -> &::std::option::Option<crate::types::InstanceMetadataHttpTokensState> {
         &self.http_tokens
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
@@ -112,19 +101,14 @@ impl InstanceMetadataOptionsBuilder {
     /// <p>This parameter enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is <code>enabled</code>.</p> <note>
     /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your instance metadata. </p>
     /// </note>
-    pub fn set_http_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceMetadataEndpointState>,
-    ) -> Self {
+    pub fn set_http_endpoint(mut self, input: ::std::option::Option<crate::types::InstanceMetadataEndpointState>) -> Self {
         self.http_endpoint = input;
         self
     }
     /// <p>This parameter enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is <code>enabled</code>.</p> <note>
     /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your instance metadata. </p>
     /// </note>
-    pub fn get_http_endpoint(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceMetadataEndpointState> {
+    pub fn get_http_endpoint(&self) -> &::std::option::Option<crate::types::InstanceMetadataEndpointState> {
         &self.http_endpoint
     }
     /// Consumes the builder and constructs a [`InstanceMetadataOptions`](crate::types::InstanceMetadataOptions).

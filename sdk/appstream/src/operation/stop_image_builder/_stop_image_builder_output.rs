@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StopImageBuilderOutput {
 }
 impl StopImageBuilderOutput {
     /// Creates a new builder-style object to manufacture [`StopImageBuilderOutput`](crate::operation::stop_image_builder::StopImageBuilderOutput).
-    pub fn builder() -> crate::operation::stop_image_builder::builders::StopImageBuilderOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_image_builder::builders::StopImageBuilderOutputBuilder {
         crate::operation::stop_image_builder::builders::StopImageBuilderOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopImageBuilderOutput`](crate::operation::stop_image_builder::StopImageBuilderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopImageBuilderOutputBuilder {
     pub(crate) image_builder: ::std::option::Option<crate::types::ImageBuilder>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl StopImageBuilderOutputBuilder {
         self
     }
     /// <p>Information about the image builder.</p>
-    pub fn set_image_builder(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageBuilder>,
-    ) -> Self {
+    pub fn set_image_builder(mut self, input: ::std::option::Option<crate::types::ImageBuilder>) -> Self {
         self.image_builder = input;
         self
     }

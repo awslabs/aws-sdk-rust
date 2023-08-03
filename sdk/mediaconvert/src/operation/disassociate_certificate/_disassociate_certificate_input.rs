@@ -15,18 +15,14 @@ impl DisassociateCertificateInput {
 }
 impl DisassociateCertificateInput {
     /// Creates a new builder-style object to manufacture [`DisassociateCertificateInput`](crate::operation::disassociate_certificate::DisassociateCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_certificate::builders::DisassociateCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_certificate::builders::DisassociateCertificateInputBuilder {
         crate::operation::disassociate_certificate::builders::DisassociateCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateCertificateInput`](crate::operation::disassociate_certificate::DisassociateCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateCertificateInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl DisassociateCertificateInputBuilder {
         crate::operation::disassociate_certificate::DisassociateCertificateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_certificate::DisassociateCertificateInput {
-                arn: self.arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_certificate::DisassociateCertificateInput { arn: self.arn })
     }
 }

@@ -27,7 +27,7 @@ impl CreateLoadBalancerListenersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerListenersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_load_balancer_listeners::builders::CreateLoadBalancerListenersInputBuilder,
+    inner: crate::operation::create_load_balancer_listeners::builders::CreateLoadBalancerListenersInputBuilder,
 }
 impl CreateLoadBalancerListenersFluentBuilder {
     /// Creates a new `CreateLoadBalancerListeners`.
@@ -38,7 +38,7 @@ impl CreateLoadBalancerListenersFluentBuilder {
         }
     }
     /// Access the CreateLoadBalancerListeners as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_load_balancer_listeners::builders::CreateLoadBalancerListenersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_load_balancer_listeners::builders::CreateLoadBalancerListenersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateLoadBalancerListenersFluentBuilder {
             crate::operation::create_load_balancer_listeners::CreateLoadBalancerListeners,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateLoadBalancerListenersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateLoadBalancerListenersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateLoadBalancerListenersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl CreateLoadBalancerListenersFluentBuilder {
             crate::operation::create_load_balancer_listeners::CreateLoadBalancerListeners,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
@@ -151,10 +134,7 @@ impl CreateLoadBalancerListenersFluentBuilder {
         self
     }
     /// <p>The listeners.</p>
-    pub fn set_listeners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
-    ) -> Self {
+    pub fn set_listeners(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>) -> Self {
         self.inner = self.inner.set_listeners(input);
         self
     }

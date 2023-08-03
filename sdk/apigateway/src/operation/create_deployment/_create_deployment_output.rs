@@ -16,10 +16,7 @@ pub struct CreateDeploymentOutput {
     /// <p>A summary of the RestApi at the date and time that the deployment resource was created.</p>
     #[doc(hidden)]
     pub api_summary: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>>,
     >,
     _request_id: Option<String>,
 }
@@ -40,10 +37,7 @@ impl CreateDeploymentOutput {
     pub fn api_summary(
         &self,
     ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>,
-        >,
+        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>>,
     > {
         self.api_summary.as_ref()
     }
@@ -55,26 +49,20 @@ impl ::aws_http::request_id::RequestId for CreateDeploymentOutput {
 }
 impl CreateDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentOutput`](crate::operation::create_deployment::CreateDeploymentOutput).
-    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder {
         crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDeploymentOutput`](crate::operation::create_deployment::CreateDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDeploymentOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) api_summary: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>>,
     >,
     _request_id: Option<String>,
 }
@@ -113,10 +101,7 @@ impl CreateDeploymentOutputBuilder {
         self
     }
     /// <p>The date and time that the deployment resource was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -143,10 +128,7 @@ impl CreateDeploymentOutputBuilder {
     pub fn set_api_summary(
         mut self,
         input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>>,
         >,
     ) -> Self {
         self.api_summary = input;
@@ -156,10 +138,7 @@ impl CreateDeploymentOutputBuilder {
     pub fn get_api_summary(
         &self,
     ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::MethodSnapshot>>,
     > {
         &self.api_summary
     }

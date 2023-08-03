@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetClusterSnapshotOutput {
 }
 impl GetClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`GetClusterSnapshotOutput`](crate::operation::get_cluster_snapshot::GetClusterSnapshotOutput).
-    pub fn builder(
-    ) -> crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotOutputBuilder {
+    pub fn builder() -> crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotOutputBuilder {
         crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetClusterSnapshotOutput`](crate::operation::get_cluster_snapshot::GetClusterSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClusterSnapshotOutputBuilder {
     pub(crate) snapshot: ::std::option::Option<crate::types::ClusterSnapshot>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetClusterSnapshotOutputBuilder {
         self
     }
     /// <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
-    pub fn set_snapshot(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterSnapshot>,
-    ) -> Self {
+    pub fn set_snapshot(mut self, input: ::std::option::Option<crate::types::ClusterSnapshot>) -> Self {
         self.snapshot = input;
         self
     }

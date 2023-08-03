@@ -36,21 +36,17 @@ impl ListContactFlowsInput {
 }
 impl ListContactFlowsInput {
     /// Creates a new builder-style object to manufacture [`ListContactFlowsInput`](crate::operation::list_contact_flows::ListContactFlowsInput).
-    pub fn builder() -> crate::operation::list_contact_flows::builders::ListContactFlowsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_contact_flows::builders::ListContactFlowsInputBuilder {
         crate::operation::list_contact_flows::builders::ListContactFlowsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListContactFlowsInput`](crate::operation::list_contact_flows::ListContactFlowsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContactFlowsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) contact_flow_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowType>>,
+    pub(crate) contact_flow_types: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -81,17 +77,12 @@ impl ListContactFlowsInputBuilder {
         self
     }
     /// <p>The type of flow.</p>
-    pub fn set_contact_flow_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowType>>,
-    ) -> Self {
+    pub fn set_contact_flow_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowType>>) -> Self {
         self.contact_flow_types = input;
         self
     }
     /// <p>The type of flow.</p>
-    pub fn get_contact_flow_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactFlowType>> {
+    pub fn get_contact_flow_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactFlowType>> {
         &self.contact_flow_types
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -125,17 +116,12 @@ impl ListContactFlowsInputBuilder {
     /// Consumes the builder and constructs a [`ListContactFlowsInput`](crate::operation::list_contact_flows::ListContactFlowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_contact_flows::ListContactFlowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_contact_flows::ListContactFlowsInput {
-                instance_id: self.instance_id,
-                contact_flow_types: self.contact_flow_types,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_contact_flows::ListContactFlowsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_contact_flows::ListContactFlowsInput {
+            instance_id: self.instance_id,
+            contact_flow_types: self.contact_flow_types,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

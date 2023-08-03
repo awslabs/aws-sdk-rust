@@ -35,12 +35,9 @@ impl ListDatasetsOutput {
 
 /// A builder for [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetsOutputBuilder {
-    pub(crate) dataset_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>,
+    pub(crate) dataset_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListDatasetsOutputBuilder {
         self
     }
     /// <p>A list of <code>DatasetSummary</code> objects.</p>
-    pub fn set_dataset_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>,
-    ) -> Self {
+    pub fn set_dataset_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>) -> Self {
         self.dataset_summaries = input;
         self
     }
     /// <p>A list of <code>DatasetSummary</code> objects.</p>
-    pub fn get_dataset_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>> {
+    pub fn get_dataset_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>> {
         &self.dataset_summaries
     }
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>

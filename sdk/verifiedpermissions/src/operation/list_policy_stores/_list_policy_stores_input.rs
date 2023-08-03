@@ -22,17 +22,14 @@ impl ListPolicyStoresInput {
 }
 impl ListPolicyStoresInput {
     /// Creates a new builder-style object to manufacture [`ListPolicyStoresInput`](crate::operation::list_policy_stores::ListPolicyStoresInput).
-    pub fn builder() -> crate::operation::list_policy_stores::builders::ListPolicyStoresInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_policy_stores::builders::ListPolicyStoresInputBuilder {
         crate::operation::list_policy_stores::builders::ListPolicyStoresInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPolicyStoresInput`](crate::operation::list_policy_stores::ListPolicyStoresInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPolicyStoresInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -69,15 +66,10 @@ impl ListPolicyStoresInputBuilder {
     /// Consumes the builder and constructs a [`ListPolicyStoresInput`](crate::operation::list_policy_stores::ListPolicyStoresInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_policy_stores::ListPolicyStoresInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_policy_stores::ListPolicyStoresInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_policy_stores::ListPolicyStoresInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_policy_stores::ListPolicyStoresInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

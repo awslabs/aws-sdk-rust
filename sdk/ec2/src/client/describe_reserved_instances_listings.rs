@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeReservedInstancesListingsOutput`](crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsOutput) with field(s):
     ///   - [`reserved_instances_listings(Option<Vec<ReservedInstancesListing>>)`](crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsOutput::reserved_instances_listings): <p>Information about the Reserved Instance listing.</p>
     /// - On failure, responds with [`SdkError<DescribeReservedInstancesListingsError>`](crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsError)
-    pub fn describe_reserved_instances_listings(&self) -> crate::operation::describe_reserved_instances_listings::builders::DescribeReservedInstancesListingsFluentBuilder{
+    pub fn describe_reserved_instances_listings(
+        &self,
+    ) -> crate::operation::describe_reserved_instances_listings::builders::DescribeReservedInstancesListingsFluentBuilder {
         crate::operation::describe_reserved_instances_listings::builders::DescribeReservedInstancesListingsFluentBuilder::new(self.handle.clone())
     }
 }

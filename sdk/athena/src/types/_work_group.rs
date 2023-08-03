@@ -51,9 +51,7 @@ impl WorkGroup {
 
 /// A builder for [`WorkGroup`](crate::types::WorkGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::WorkGroupState>,
@@ -96,17 +94,12 @@ impl WorkGroupBuilder {
         self
     }
     /// <p>The configuration of the workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for query and calculation results; whether the Amazon CloudWatch Metrics are enabled for the workgroup; whether workgroup settings override client-side settings; and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkGroupConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::WorkGroupConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>The configuration of the workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for query and calculation results; whether the Amazon CloudWatch Metrics are enabled for the workgroup; whether workgroup settings override client-side settings; and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkGroupConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::WorkGroupConfiguration> {
         &self.configuration
     }
     /// <p>The workgroup description.</p>
@@ -129,10 +122,7 @@ impl WorkGroupBuilder {
         self
     }
     /// <p>The date and time the workgroup was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`users(Option<Vec<KxUser>>)`](crate::operation::list_kx_users::ListKxUsersOutput::users): <p>A list of users in a kdb environment.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_kx_users::ListKxUsersOutput::next_token): <p>A token that indicates where a results page should begin.</p>
     /// - On failure, responds with [`SdkError<ListKxUsersError>`](crate::operation::list_kx_users::ListKxUsersError)
-    pub fn list_kx_users(
-        &self,
-    ) -> crate::operation::list_kx_users::builders::ListKxUsersFluentBuilder {
-        crate::operation::list_kx_users::builders::ListKxUsersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_kx_users(&self) -> crate::operation::list_kx_users::builders::ListKxUsersFluentBuilder {
+        crate::operation::list_kx_users::builders::ListKxUsersFluentBuilder::new(self.handle.clone())
     }
 }

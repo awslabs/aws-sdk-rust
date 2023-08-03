@@ -15,35 +15,25 @@ impl StopMonitoringScheduleInput {
 }
 impl StopMonitoringScheduleInput {
     /// Creates a new builder-style object to manufacture [`StopMonitoringScheduleInput`](crate::operation::stop_monitoring_schedule::StopMonitoringScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleInputBuilder {
         crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`StopMonitoringScheduleInput`](crate::operation::stop_monitoring_schedule::StopMonitoringScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopMonitoringScheduleInputBuilder {
     pub(crate) monitoring_schedule_name: ::std::option::Option<::std::string::String>,
 }
 impl StopMonitoringScheduleInputBuilder {
     /// <p>The name of the schedule to stop.</p>
-    pub fn monitoring_schedule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the schedule to stop.</p>
-    pub fn set_monitoring_schedule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_schedule_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl StopMonitoringScheduleInputBuilder {
     /// Consumes the builder and constructs a [`StopMonitoringScheduleInput`](crate::operation::stop_monitoring_schedule::StopMonitoringScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_monitoring_schedule::StopMonitoringScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_monitoring_schedule::StopMonitoringScheduleInput {
-                monitoring_schedule_name: self.monitoring_schedule_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_monitoring_schedule::StopMonitoringScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::stop_monitoring_schedule::StopMonitoringScheduleInput {
+            monitoring_schedule_name: self.monitoring_schedule_name,
+        })
     }
 }

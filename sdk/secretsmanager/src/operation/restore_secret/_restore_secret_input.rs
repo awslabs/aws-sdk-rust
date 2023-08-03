@@ -24,9 +24,7 @@ impl RestoreSecretInput {
 
 /// A builder for [`RestoreSecretInput`](crate::operation::restore_secret::RestoreSecretInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreSecretInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
 }
@@ -51,12 +49,7 @@ impl RestoreSecretInputBuilder {
     /// Consumes the builder and constructs a [`RestoreSecretInput`](crate::operation::restore_secret::RestoreSecretInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_secret::RestoreSecretInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::restore_secret::RestoreSecretInput {
-            secret_id: self.secret_id,
-        })
+    ) -> ::std::result::Result<crate::operation::restore_secret::RestoreSecretInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::restore_secret::RestoreSecretInput { secret_id: self.secret_id })
     }
 }

@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateInputSecurityGroupOutput`](crate::operation::update_input_security_group::UpdateInputSecurityGroupOutput) with field(s):
     ///   - [`security_group(Option<InputSecurityGroup>)`](crate::operation::update_input_security_group::UpdateInputSecurityGroupOutput::security_group): An Input Security Group
     /// - On failure, responds with [`SdkError<UpdateInputSecurityGroupError>`](crate::operation::update_input_security_group::UpdateInputSecurityGroupError)
-    pub fn update_input_security_group(&self) -> crate::operation::update_input_security_group::builders::UpdateInputSecurityGroupFluentBuilder{
+    pub fn update_input_security_group(&self) -> crate::operation::update_input_security_group::builders::UpdateInputSecurityGroupFluentBuilder {
         crate::operation::update_input_security_group::builders::UpdateInputSecurityGroupFluentBuilder::new(self.handle.clone())
     }
 }

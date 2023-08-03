@@ -26,7 +26,7 @@ impl GetVoiceConnectorTerminationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetVoiceConnectorTerminationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_voice_connector_termination::builders::GetVoiceConnectorTerminationInputBuilder,
+    inner: crate::operation::get_voice_connector_termination::builders::GetVoiceConnectorTerminationInputBuilder,
 }
 impl GetVoiceConnectorTerminationFluentBuilder {
     /// Creates a new `GetVoiceConnectorTermination`.
@@ -37,7 +37,7 @@ impl GetVoiceConnectorTerminationFluentBuilder {
         }
     }
     /// Access the GetVoiceConnectorTermination as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_voice_connector_termination::builders::GetVoiceConnectorTerminationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_voice_connector_termination::builders::GetVoiceConnectorTerminationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetVoiceConnectorTerminationFluentBuilder {
             crate::operation::get_voice_connector_termination::GetVoiceConnectorTermination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetVoiceConnectorTerminationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetVoiceConnectorTerminationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetVoiceConnectorTerminationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetVoiceConnectorTerminationFluentBuilder {
             crate::operation::get_voice_connector_termination::GetVoiceConnectorTermination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }

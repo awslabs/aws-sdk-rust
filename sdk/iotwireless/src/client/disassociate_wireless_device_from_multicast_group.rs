@@ -7,7 +7,12 @@ impl super::Client {
     ///   - [`wireless_device_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_wireless_device_from_multicast_group::builders::DisassociateWirelessDeviceFromMulticastGroupFluentBuilder::wireless_device_id) / [`set_wireless_device_id(Option<String>)`](crate::operation::disassociate_wireless_device_from_multicast_group::builders::DisassociateWirelessDeviceFromMulticastGroupFluentBuilder::set_wireless_device_id): <p>The ID of the wireless device.</p>
     /// - On success, responds with [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::operation::disassociate_wireless_device_from_multicast_group::DisassociateWirelessDeviceFromMulticastGroupOutput)
     /// - On failure, responds with [`SdkError<DisassociateWirelessDeviceFromMulticastGroupError>`](crate::operation::disassociate_wireless_device_from_multicast_group::DisassociateWirelessDeviceFromMulticastGroupError)
-    pub fn disassociate_wireless_device_from_multicast_group(&self) -> crate::operation::disassociate_wireless_device_from_multicast_group::builders::DisassociateWirelessDeviceFromMulticastGroupFluentBuilder{
-        crate::operation::disassociate_wireless_device_from_multicast_group::builders::DisassociateWirelessDeviceFromMulticastGroupFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_wireless_device_from_multicast_group(
+        &self,
+    ) -> crate::operation::disassociate_wireless_device_from_multicast_group::builders::DisassociateWirelessDeviceFromMulticastGroupFluentBuilder
+    {
+        crate::operation::disassociate_wireless_device_from_multicast_group::builders::DisassociateWirelessDeviceFromMulticastGroupFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

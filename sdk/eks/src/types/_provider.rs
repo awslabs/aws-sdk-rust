@@ -23,9 +23,7 @@ impl Provider {
 
 /// A builder for [`Provider`](crate::types::Provider).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProviderBuilder {
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ProviderBuilder {
     }
     /// Consumes the builder and constructs a [`Provider`](crate::types::Provider).
     pub fn build(self) -> crate::types::Provider {
-        crate::types::Provider {
-            key_arn: self.key_arn,
-        }
+        crate::types::Provider { key_arn: self.key_arn }
     }
 }

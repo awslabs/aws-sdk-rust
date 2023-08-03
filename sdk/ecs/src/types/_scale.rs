@@ -30,9 +30,7 @@ impl Scale {
 
 /// A builder for [`Scale`](crate::types::Scale).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScaleBuilder {
     pub(crate) value: ::std::option::Option<f64>,
     pub(crate) unit: ::std::option::Option<crate::types::ScaleUnit>,

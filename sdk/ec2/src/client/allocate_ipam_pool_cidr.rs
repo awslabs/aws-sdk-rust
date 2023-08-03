@@ -14,12 +14,7 @@ impl super::Client {
     /// - On success, responds with [`AllocateIpamPoolCidrOutput`](crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrOutput) with field(s):
     ///   - [`ipam_pool_allocation(Option<IpamPoolAllocation>)`](crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrOutput::ipam_pool_allocation): <p>Information about the allocation created.</p>
     /// - On failure, responds with [`SdkError<AllocateIpamPoolCidrError>`](crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrError)
-    pub fn allocate_ipam_pool_cidr(
-        &self,
-    ) -> crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrFluentBuilder
-    {
-        crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn allocate_ipam_pool_cidr(&self) -> crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrFluentBuilder {
+        crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrFluentBuilder::new(self.handle.clone())
     }
 }

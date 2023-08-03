@@ -30,9 +30,7 @@ impl FailedItem {
 
 /// A builder for [`FailedItem`](crate::types::FailedItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailedItemBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::FailedItemReason>,
@@ -58,10 +56,7 @@ impl FailedItemBuilder {
         self
     }
     /// <p>The reason the resource's association could not be updated.</p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::FailedItemReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::FailedItemReason>) -> Self {
         self.reason = input;
         self
     }

@@ -26,8 +26,7 @@ impl GetDataProtectionPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDataProtectionPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyInputBuilder,
+    inner: crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyInputBuilder,
 }
 impl GetDataProtectionPolicyFluentBuilder {
     /// Creates a new `GetDataProtectionPolicy`.
@@ -38,10 +37,7 @@ impl GetDataProtectionPolicyFluentBuilder {
         }
     }
     /// Access the GetDataProtectionPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetDataProtectionPolicyFluentBuilder {
             crate::operation::get_data_protection_policy::GetDataProtectionPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_protection_policy::GetDataProtectionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_protection_policy::GetDataProtectionPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetDataProtectionPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetDataProtectionPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_data_protection_policy::GetDataProtectionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_protection_policy::GetDataProtectionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_protection_policy::GetDataProtectionPolicyError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetDataProtectionPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_data_protection_policy::GetDataProtectionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_protection_policy::GetDataProtectionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_protection_policy::GetDataProtectionPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetDataProtectionPolicyFluentBuilder {
             crate::operation::get_data_protection_policy::GetDataProtectionPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_data_protection_policy::GetDataProtectionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_data_protection_policy::GetDataProtectionPolicyError>,
     > {
         self.customize_middleware().await
     }

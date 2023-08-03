@@ -72,9 +72,7 @@ impl MemberSummary {
 
 /// A builder for [`MemberSummary`](crate::types::MemberSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberSummaryBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::MemberStatus>,
@@ -140,17 +138,12 @@ impl MemberSummaryBuilder {
         self
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn set_abilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
-    ) -> Self {
+    pub fn set_abilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>) -> Self {
         self.abilities = input;
         self
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn get_abilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
+    pub fn get_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
         &self.abilities
     }
     /// <p>The time when the member was created.</p>
@@ -159,10 +152,7 @@ impl MemberSummaryBuilder {
         self
     }
     /// <p>The time when the member was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -176,10 +166,7 @@ impl MemberSummaryBuilder {
         self
     }
     /// <p>The time the member metadata was last updated.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -188,18 +175,12 @@ impl MemberSummaryBuilder {
         &self.update_time
     }
     /// <p>The unique ID for the member's associated membership, if present.</p>
-    pub fn membership_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the member's associated membership, if present.</p>
-    pub fn set_membership_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.membership_id = input;
         self
     }
@@ -208,18 +189,12 @@ impl MemberSummaryBuilder {
         &self.membership_id
     }
     /// <p>The unique ARN for the member's associated membership, if present.</p>
-    pub fn membership_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ARN for the member's associated membership, if present.</p>
-    pub fn set_membership_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.membership_arn = input;
         self
     }

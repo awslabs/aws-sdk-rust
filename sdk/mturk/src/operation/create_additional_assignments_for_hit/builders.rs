@@ -5,16 +5,16 @@ pub use crate::operation::create_additional_assignments_for_hit::_create_additio
 
 impl CreateAdditionalAssignmentsForHitInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHITError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHITError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_additional_assignments_for_hit();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -32,7 +32,7 @@ impl CreateAdditionalAssignmentsForHitInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAdditionalAssignmentsForHITFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_additional_assignments_for_hit::builders::CreateAdditionalAssignmentsForHitInputBuilder,
+    inner: crate::operation::create_additional_assignments_for_hit::builders::CreateAdditionalAssignmentsForHitInputBuilder,
 }
 impl CreateAdditionalAssignmentsForHITFluentBuilder {
     /// Creates a new `CreateAdditionalAssignmentsForHIT`.
@@ -43,15 +43,20 @@ impl CreateAdditionalAssignmentsForHITFluentBuilder {
         }
     }
     /// Access the CreateAdditionalAssignmentsForHIT as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_additional_assignments_for_hit::builders::CreateAdditionalAssignmentsForHitInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_additional_assignments_for_hit::builders::CreateAdditionalAssignmentsForHitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHIT, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHITError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHIT,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHITError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -60,16 +65,17 @@ impl CreateAdditionalAssignmentsForHITFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHITError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHITError>,
+    > {
         let op = self
             .inner
             .build()
@@ -87,17 +93,26 @@ impl CreateAdditionalAssignmentsForHITFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHITError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHITError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHIT, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHITError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHIT,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHITError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the HIT to extend.</p>
@@ -120,10 +135,7 @@ impl CreateAdditionalAssignmentsForHITFluentBuilder {
         self
     }
     /// <p>The number of additional assignments to request for this HIT.</p>
-    pub fn set_number_of_additional_assignments(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_number_of_additional_assignments(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_number_of_additional_assignments(input);
         self
     }
@@ -132,18 +144,12 @@ impl CreateAdditionalAssignmentsForHITFluentBuilder {
         self.inner.get_number_of_additional_assignments()
     }
     /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
-    pub fn unique_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn unique_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.unique_request_token(input.into());
         self
     }
     /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
-    pub fn set_unique_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_unique_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_unique_request_token(input);
         self
     }

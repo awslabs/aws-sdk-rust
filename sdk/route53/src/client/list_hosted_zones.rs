@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_hosted_zones::ListHostedZonesOutput::next_marker): <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first hosted zone in the next group of hosted zones. Submit another <code>ListHostedZones</code> request, and specify the value of <code>NextMarker</code> from the response in the <code>marker</code> parameter.</p>  <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
     ///   - [`max_items(Option<i32>)`](crate::operation::list_hosted_zones::ListHostedZonesOutput::max_items): <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZones</code> that produced the current response.</p>
     /// - On failure, responds with [`SdkError<ListHostedZonesError>`](crate::operation::list_hosted_zones::ListHostedZonesError)
-    pub fn list_hosted_zones(
-        &self,
-    ) -> crate::operation::list_hosted_zones::builders::ListHostedZonesFluentBuilder {
-        crate::operation::list_hosted_zones::builders::ListHostedZonesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_hosted_zones(&self) -> crate::operation::list_hosted_zones::builders::ListHostedZonesFluentBuilder {
+        crate::operation::list_hosted_zones::builders::ListHostedZonesFluentBuilder::new(self.handle.clone())
     }
 }

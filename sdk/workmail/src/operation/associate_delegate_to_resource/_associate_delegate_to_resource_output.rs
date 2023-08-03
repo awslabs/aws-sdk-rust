@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateDelegateToResourceOutput {
 }
 impl AssociateDelegateToResourceOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDelegateToResourceOutput`](crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceOutput).
-    pub fn builder() -> crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceOutputBuilder{
+    pub fn builder() -> crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceOutputBuilder {
         crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDelegateToResourceOutput`](crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDelegateToResourceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl AssociateDelegateToResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateDelegateToResourceOutput`](crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceOutput {
+    pub fn build(self) -> crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceOutput {
         crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceOutput {
             _request_id: self._request_id,
         }

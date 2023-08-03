@@ -38,10 +38,7 @@ impl ClearDefaultAuthorizerFluentBuilder {
         }
     }
     /// Access the ClearDefaultAuthorizer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::clear_default_authorizer::builders::ClearDefaultAuthorizerInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::clear_default_authorizer::builders::ClearDefaultAuthorizerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ClearDefaultAuthorizerFluentBuilder {
             crate::operation::clear_default_authorizer::ClearDefaultAuthorizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::clear_default_authorizer::ClearDefaultAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::clear_default_authorizer::ClearDefaultAuthorizerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ClearDefaultAuthorizerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ClearDefaultAuthorizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::clear_default_authorizer::ClearDefaultAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::clear_default_authorizer::ClearDefaultAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::clear_default_authorizer::ClearDefaultAuthorizerError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ClearDefaultAuthorizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::clear_default_authorizer::ClearDefaultAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::clear_default_authorizer::ClearDefaultAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::clear_default_authorizer::ClearDefaultAuthorizerError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl ClearDefaultAuthorizerFluentBuilder {
             crate::operation::clear_default_authorizer::ClearDefaultAuthorizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::clear_default_authorizer::ClearDefaultAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::clear_default_authorizer::ClearDefaultAuthorizerError>,
     > {
         self.customize_middleware().await
     }

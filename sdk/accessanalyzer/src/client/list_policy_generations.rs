@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`policy_generations(Option<Vec<PolicyGeneration>>)`](crate::operation::list_policy_generations::ListPolicyGenerationsOutput::policy_generations): <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_policy_generations::ListPolicyGenerationsOutput::next_token): <p>A token used for pagination of results returned.</p>
     /// - On failure, responds with [`SdkError<ListPolicyGenerationsError>`](crate::operation::list_policy_generations::ListPolicyGenerationsError)
-    pub fn list_policy_generations(
-        &self,
-    ) -> crate::operation::list_policy_generations::builders::ListPolicyGenerationsFluentBuilder
-    {
-        crate::operation::list_policy_generations::builders::ListPolicyGenerationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_policy_generations(&self) -> crate::operation::list_policy_generations::builders::ListPolicyGenerationsFluentBuilder {
+        crate::operation::list_policy_generations::builders::ListPolicyGenerationsFluentBuilder::new(self.handle.clone())
     }
 }

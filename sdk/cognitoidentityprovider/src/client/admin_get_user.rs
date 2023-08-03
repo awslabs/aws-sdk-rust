@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`preferred_mfa_setting(Option<String>)`](crate::operation::admin_get_user::AdminGetUserOutput::preferred_mfa_setting): <p>The user's preferred MFA setting.</p>
     ///   - [`user_mfa_setting_list(Option<Vec<String>>)`](crate::operation::admin_get_user::AdminGetUserOutput::user_mfa_setting_list): <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
     /// - On failure, responds with [`SdkError<AdminGetUserError>`](crate::operation::admin_get_user::AdminGetUserError)
-    pub fn admin_get_user(
-        &self,
-    ) -> crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder {
-        crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn admin_get_user(&self) -> crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder {
+        crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::new(self.handle.clone())
     }
 }

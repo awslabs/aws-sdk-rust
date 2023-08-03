@@ -35,9 +35,7 @@ impl UpdateFunctionOutput {
 
 /// A builder for [`UpdateFunctionOutput`](crate::operation::update_function::UpdateFunctionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFunctionOutputBuilder {
     pub(crate) function_summary: ::std::option::Option<crate::types::FunctionSummary>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
@@ -50,10 +48,7 @@ impl UpdateFunctionOutputBuilder {
         self
     }
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
-    pub fn set_function_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionSummary>,
-    ) -> Self {
+    pub fn set_function_summary(mut self, input: ::std::option::Option<crate::types::FunctionSummary>) -> Self {
         self.function_summary = input;
         self
     }

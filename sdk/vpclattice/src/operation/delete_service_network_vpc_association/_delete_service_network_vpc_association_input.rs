@@ -15,50 +15,43 @@ impl DeleteServiceNetworkVpcAssociationInput {
 }
 impl DeleteServiceNetworkVpcAssociationInput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceNetworkVpcAssociationInput`](crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationInput).
-    pub fn builder() -> crate::operation::delete_service_network_vpc_association::builders::DeleteServiceNetworkVpcAssociationInputBuilder{
+    pub fn builder() -> crate::operation::delete_service_network_vpc_association::builders::DeleteServiceNetworkVpcAssociationInputBuilder {
         crate::operation::delete_service_network_vpc_association::builders::DeleteServiceNetworkVpcAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteServiceNetworkVpcAssociationInput`](crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceNetworkVpcAssociationInputBuilder {
-    pub(crate) service_network_vpc_association_identifier:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) service_network_vpc_association_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServiceNetworkVpcAssociationInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn service_network_vpc_association_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_network_vpc_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_vpc_association_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn set_service_network_vpc_association_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_network_vpc_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_vpc_association_identifier = input;
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn get_service_network_vpc_association_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_service_network_vpc_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_network_vpc_association_identifier
     }
     /// Consumes the builder and constructs a [`DeleteServiceNetworkVpcAssociationInput`](crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationInput {
-                service_network_vpc_association_identifier: self.service_network_vpc_association_identifier
-                ,
-            }
+                service_network_vpc_association_identifier: self.service_network_vpc_association_identifier,
+            },
         )
     }
 }

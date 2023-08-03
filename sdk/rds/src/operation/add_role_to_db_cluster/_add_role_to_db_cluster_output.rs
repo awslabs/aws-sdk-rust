@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AddRoleToDbClusterOutput {
 }
 impl AddRoleToDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`AddRoleToDbClusterOutput`](crate::operation::add_role_to_db_cluster::AddRoleToDbClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::add_role_to_db_cluster::builders::AddRoleToDbClusterOutputBuilder {
-        crate::operation::add_role_to_db_cluster::builders::AddRoleToDbClusterOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::add_role_to_db_cluster::builders::AddRoleToDbClusterOutputBuilder {
+        crate::operation::add_role_to_db_cluster::builders::AddRoleToDbClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddRoleToDbClusterOutput`](crate::operation::add_role_to_db_cluster::AddRoleToDbClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddRoleToDbClusterOutputBuilder {
     _request_id: Option<String>,
 }

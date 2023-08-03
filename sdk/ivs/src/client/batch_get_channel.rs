@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`channels(Option<Vec<Channel>>)`](crate::operation::batch_get_channel::BatchGetChannelOutput::channels): <p></p>
     ///   - [`errors(Option<Vec<BatchError>>)`](crate::operation::batch_get_channel::BatchGetChannelOutput::errors): <p>Each error object is related to a specific ARN in the request.</p>
     /// - On failure, responds with [`SdkError<BatchGetChannelError>`](crate::operation::batch_get_channel::BatchGetChannelError)
-    pub fn batch_get_channel(
-        &self,
-    ) -> crate::operation::batch_get_channel::builders::BatchGetChannelFluentBuilder {
-        crate::operation::batch_get_channel::builders::BatchGetChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_channel(&self) -> crate::operation::batch_get_channel::builders::BatchGetChannelFluentBuilder {
+        crate::operation::batch_get_channel::builders::BatchGetChannelFluentBuilder::new(self.handle.clone())
     }
 }

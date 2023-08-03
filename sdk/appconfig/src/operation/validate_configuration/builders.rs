@@ -37,10 +37,7 @@ impl ValidateConfigurationFluentBuilder {
         }
     }
     /// Access the ValidateConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::validate_configuration::builders::ValidateConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::validate_configuration::builders::ValidateConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ValidateConfigurationFluentBuilder {
             crate::operation::validate_configuration::ValidateConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_configuration::ValidateConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_configuration::ValidateConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ValidateConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ValidateConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_configuration::ValidateConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_configuration::ValidateConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_configuration::ValidateConfigurationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ValidateConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_configuration::ValidateConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_configuration::ValidateConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_configuration::ValidateConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl ValidateConfigurationFluentBuilder {
             crate::operation::validate_configuration::ValidateConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_configuration::ValidateConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_configuration::ValidateConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -144,18 +124,12 @@ impl ValidateConfigurationFluentBuilder {
         self.inner.get_application_id()
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_profile_id(input.into());
         self
     }
     /// <p>The configuration profile ID.</p>
-    pub fn set_configuration_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_profile_id(input);
         self
     }
@@ -164,18 +138,12 @@ impl ValidateConfigurationFluentBuilder {
         self.inner.get_configuration_profile_id()
     }
     /// <p>The version of the configuration to validate.</p>
-    pub fn configuration_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_version(input.into());
         self
     }
     /// <p>The version of the configuration to validate.</p>
-    pub fn set_configuration_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_version(input);
         self
     }

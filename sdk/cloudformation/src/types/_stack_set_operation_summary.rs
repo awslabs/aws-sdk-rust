@@ -72,16 +72,12 @@ impl StackSetOperationSummary {
         self.status_reason.as_deref()
     }
     /// <p>Detailed information about the stack set operation.</p>
-    pub fn status_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackSetOperationStatusDetails> {
+    pub fn status_details(&self) -> ::std::option::Option<&crate::types::StackSetOperationStatusDetails> {
         self.status_details.as_ref()
     }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn operation_preferences(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackSetOperationPreferences> {
+    pub fn operation_preferences(&self) -> ::std::option::Option<&crate::types::StackSetOperationPreferences> {
         self.operation_preferences.as_ref()
     }
 }
@@ -94,9 +90,7 @@ impl StackSetOperationSummary {
 
 /// A builder for [`StackSetOperationSummary`](crate::types::StackSetOperationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackSetOperationSummaryBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<crate::types::StackSetOperationAction>,
@@ -105,8 +99,7 @@ pub struct StackSetOperationSummaryBuilder {
     pub(crate) end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) status_details: ::std::option::Option<crate::types::StackSetOperationStatusDetails>,
-    pub(crate) operation_preferences:
-        ::std::option::Option<crate::types::StackSetOperationPreferences>,
+    pub(crate) operation_preferences: ::std::option::Option<crate::types::StackSetOperationPreferences>,
 }
 impl StackSetOperationSummaryBuilder {
     /// <p>The unique ID of the stack set operation.</p>
@@ -129,10 +122,7 @@ impl StackSetOperationSummaryBuilder {
         self
     }
     /// <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>. Create and delete operations affect only the specified stack instances that are associated with the specified stack set. Update operations affect both the stack set itself and <i>all</i> associated stack set instances.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetOperationAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::StackSetOperationAction>) -> Self {
         self.action = input;
         self
     }
@@ -162,10 +152,7 @@ impl StackSetOperationSummaryBuilder {
     /// <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at user request.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code>: The operation completed creating or updating all the specified stacks without exceeding the failure tolerance for the operation.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetOperationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StackSetOperationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -187,10 +174,7 @@ impl StackSetOperationSummaryBuilder {
         self
     }
     /// <p>The time at which the operation was initiated. Note that the creation times for the stack set operation might differ from the creation time of the individual stacks themselves. This is because CloudFormation needs to perform preparatory work for the operation, such as dispatching the work to the requested Regions, before actually creating the first stacks.</p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -204,10 +188,7 @@ impl StackSetOperationSummaryBuilder {
         self
     }
     /// <p>The time at which the stack set operation ended, across all accounts and Regions specified. Note that this doesn't necessarily mean that the stack set operation was successful, or even attempted, in each account or Region.</p>
-    pub fn set_end_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_timestamp = input;
         self
     }
@@ -216,18 +197,12 @@ impl StackSetOperationSummaryBuilder {
         &self.end_timestamp
     }
     /// <p>The status of the operation in details.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the operation in details.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -241,42 +216,29 @@ impl StackSetOperationSummaryBuilder {
         self
     }
     /// <p>Detailed information about the stack set operation.</p>
-    pub fn set_status_details(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetOperationStatusDetails>,
-    ) -> Self {
+    pub fn set_status_details(mut self, input: ::std::option::Option<crate::types::StackSetOperationStatusDetails>) -> Self {
         self.status_details = input;
         self
     }
     /// <p>Detailed information about the stack set operation.</p>
-    pub fn get_status_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackSetOperationStatusDetails> {
+    pub fn get_status_details(&self) -> &::std::option::Option<crate::types::StackSetOperationStatusDetails> {
         &self.status_details
     }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn operation_preferences(
-        mut self,
-        input: crate::types::StackSetOperationPreferences,
-    ) -> Self {
+    pub fn operation_preferences(mut self, input: crate::types::StackSetOperationPreferences) -> Self {
         self.operation_preferences = ::std::option::Option::Some(input);
         self
     }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn set_operation_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetOperationPreferences>,
-    ) -> Self {
+    pub fn set_operation_preferences(mut self, input: ::std::option::Option<crate::types::StackSetOperationPreferences>) -> Self {
         self.operation_preferences = input;
         self
     }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn get_operation_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
+    pub fn get_operation_preferences(&self) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
         &self.operation_preferences
     }
     /// Consumes the builder and constructs a [`StackSetOperationSummary`](crate::types::StackSetOperationSummary).

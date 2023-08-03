@@ -29,18 +29,14 @@ impl ListSharedEndpointsInput {
 }
 impl ListSharedEndpointsInput {
     /// Creates a new builder-style object to manufacture [`ListSharedEndpointsInput`](crate::operation::list_shared_endpoints::ListSharedEndpointsInput).
-    pub fn builder(
-    ) -> crate::operation::list_shared_endpoints::builders::ListSharedEndpointsInputBuilder {
-        crate::operation::list_shared_endpoints::builders::ListSharedEndpointsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_shared_endpoints::builders::ListSharedEndpointsInputBuilder {
+        crate::operation::list_shared_endpoints::builders::ListSharedEndpointsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSharedEndpointsInput`](crate::operation::list_shared_endpoints::ListSharedEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSharedEndpointsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,16 +88,12 @@ impl ListSharedEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`ListSharedEndpointsInput`](crate::operation::list_shared_endpoints::ListSharedEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_shared_endpoints::ListSharedEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_shared_endpoints::ListSharedEndpointsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                outpost_id: self.outpost_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_shared_endpoints::ListSharedEndpointsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_shared_endpoints::ListSharedEndpointsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            outpost_id: self.outpost_id,
+        })
     }
 }

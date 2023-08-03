@@ -93,9 +93,7 @@ impl Attachment {
         self.tags.as_deref()
     }
     /// <p>The attachment to move from one segment to another.</p>
-    pub fn proposed_segment_change(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProposedSegmentChange> {
+    pub fn proposed_segment_change(&self) -> ::std::option::Option<&crate::types::ProposedSegmentChange> {
         self.proposed_segment_change.as_ref()
     }
     /// <p>The timestamp when the attachment was created.</p>
@@ -116,9 +114,7 @@ impl Attachment {
 
 /// A builder for [`Attachment`](crate::types::Attachment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachmentBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_arn: ::std::option::Option<::std::string::String>,
@@ -137,18 +133,12 @@ pub struct AttachmentBuilder {
 }
 impl AttachmentBuilder {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
@@ -157,18 +147,12 @@ impl AttachmentBuilder {
         &self.core_network_id
     }
     /// <p>The ARN of a core network.</p>
-    pub fn core_network_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a core network.</p>
-    pub fn set_core_network_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_arn = input;
         self
     }
@@ -177,18 +161,12 @@ impl AttachmentBuilder {
         &self.core_network_arn
     }
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_id = input;
         self
     }
@@ -197,18 +175,12 @@ impl AttachmentBuilder {
         &self.attachment_id
     }
     /// <p>The ID of the attachment account owner.</p>
-    pub fn owner_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment account owner.</p>
-    pub fn set_owner_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account_id = input;
         self
     }
@@ -222,10 +194,7 @@ impl AttachmentBuilder {
         self
     }
     /// <p>The type of attachment.</p>
-    pub fn set_attachment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AttachmentType>,
-    ) -> Self {
+    pub fn set_attachment_type(mut self, input: ::std::option::Option<crate::types::AttachmentType>) -> Self {
         self.attachment_type = input;
         self
     }
@@ -239,10 +208,7 @@ impl AttachmentBuilder {
         self
     }
     /// <p>The state of the attachment.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::AttachmentState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AttachmentState>) -> Self {
         self.state = input;
         self
     }
@@ -251,18 +217,12 @@ impl AttachmentBuilder {
         &self.state
     }
     /// <p>The Region where the edge is located.</p>
-    pub fn edge_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region where the edge is located.</p>
-    pub fn set_edge_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_location = input;
         self
     }
@@ -324,10 +284,7 @@ impl AttachmentBuilder {
         self
     }
     /// <p>The tags associated with the attachment.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -341,17 +298,12 @@ impl AttachmentBuilder {
         self
     }
     /// <p>The attachment to move from one segment to another.</p>
-    pub fn set_proposed_segment_change(
-        mut self,
-        input: ::std::option::Option<crate::types::ProposedSegmentChange>,
-    ) -> Self {
+    pub fn set_proposed_segment_change(mut self, input: ::std::option::Option<crate::types::ProposedSegmentChange>) -> Self {
         self.proposed_segment_change = input;
         self
     }
     /// <p>The attachment to move from one segment to another.</p>
-    pub fn get_proposed_segment_change(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProposedSegmentChange> {
+    pub fn get_proposed_segment_change(&self) -> &::std::option::Option<crate::types::ProposedSegmentChange> {
         &self.proposed_segment_change
     }
     /// <p>The timestamp when the attachment was created.</p>
@@ -360,10 +312,7 @@ impl AttachmentBuilder {
         self
     }
     /// <p>The timestamp when the attachment was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -377,10 +326,7 @@ impl AttachmentBuilder {
         self
     }
     /// <p>The timestamp when the attachment was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

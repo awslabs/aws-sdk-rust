@@ -10,10 +10,7 @@ impl ListCaCertificatesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_ca_certificates::ListCaCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ca_certificates::ListCACertificatesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ca_certificates::ListCACertificatesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_ca_certificates();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ListCACertificatesFluentBuilder {
         }
     }
     /// Access the ListCACertificates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_ca_certificates::builders::ListCaCertificatesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_ca_certificates::builders::ListCaCertificatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl ListCACertificatesFluentBuilder {
             crate::operation::list_ca_certificates::ListCACertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ca_certificates::ListCACertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ca_certificates::ListCACertificatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl ListCACertificatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl ListCACertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_ca_certificates::ListCaCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ca_certificates::ListCACertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ca_certificates::ListCACertificatesError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl ListCACertificatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_ca_certificates::ListCaCertificatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ca_certificates::ListCACertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ca_certificates::ListCACertificatesError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +104,15 @@ impl ListCACertificatesFluentBuilder {
             crate::operation::list_ca_certificates::ListCACertificates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ca_certificates::ListCACertificatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ca_certificates::ListCACertificatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_ca_certificates::paginator::ListCaCertificatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_ca_certificates::paginator::ListCaCertificatesPaginator {
-        crate::operation::list_ca_certificates::paginator::ListCaCertificatesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_ca_certificates::paginator::ListCaCertificatesPaginator {
+        crate::operation::list_ca_certificates::paginator::ListCaCertificatesPaginator::new(self.handle, self.inner)
     }
     /// <p>The result page size.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -178,18 +157,12 @@ impl ListCACertificatesFluentBuilder {
         self.inner.get_ascending_order()
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }

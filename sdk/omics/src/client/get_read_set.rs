@@ -10,9 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetReadSetOutput`](crate::operation::get_read_set::GetReadSetOutput) with field(s):
     ///   - [`payload(ByteStream)`](crate::operation::get_read_set::GetReadSetOutput::payload): <p>The read set file payload.</p>
     /// - On failure, responds with [`SdkError<GetReadSetError>`](crate::operation::get_read_set::GetReadSetError)
-    pub fn get_read_set(
-        &self,
-    ) -> crate::operation::get_read_set::builders::GetReadSetFluentBuilder {
+    pub fn get_read_set(&self) -> crate::operation::get_read_set::builders::GetReadSetFluentBuilder {
         crate::operation::get_read_set::builders::GetReadSetFluentBuilder::new(self.handle.clone())
     }
 }

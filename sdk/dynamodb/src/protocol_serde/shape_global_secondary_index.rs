@@ -12,10 +12,7 @@ pub fn ser_global_secondary_index(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_key_schema_element::ser_key_schema_element(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_key_schema_element::ser_key_schema_element(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -30,10 +27,7 @@ pub fn ser_global_secondary_index(
     if let Some(var_8) = &input.provisioned_throughput {
         #[allow(unused_mut)]
         let mut object_9 = object.key("ProvisionedThroughput").start_object();
-        crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(&mut object_9, var_8)?;
         object_9.finish();
     }
     Ok(())
@@ -41,17 +35,9 @@ pub fn ser_global_secondary_index(
 
 pub(crate) fn de_global_secondary_index<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::GlobalSecondaryIndex>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::GlobalSecondaryIndex>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -61,50 +47,38 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "IndexName" => {
-                                builder = builder.set_index_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "IndexName" => {
+                            builder = builder.set_index_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "KeySchema" => {
-                                builder = builder.set_key_schema(
-                                    crate::protocol_serde::shape_key_schema::de_key_schema(tokens)?,
-                                );
-                            }
-                            "Projection" => {
-                                builder = builder.set_projection(
-                                    crate::protocol_serde::shape_projection::de_projection(tokens)?,
-                                );
-                            }
-                            "ProvisionedThroughput" => {
-                                builder = builder.set_provisioned_throughput(
-                                    crate::protocol_serde::shape_provisioned_throughput::de_provisioned_throughput(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "KeySchema" => {
+                            builder = builder.set_key_schema(crate::protocol_serde::shape_key_schema::de_key_schema(tokens)?);
+                        }
+                        "Projection" => {
+                            builder = builder.set_projection(crate::protocol_serde::shape_projection::de_projection(tokens)?);
+                        }
+                        "ProvisionedThroughput" => {
+                            builder = builder
+                                .set_provisioned_throughput(crate::protocol_serde::shape_provisioned_throughput::de_provisioned_throughput(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -16,24 +16,20 @@ impl UpdateRuntimeConfigurationInput {
         self.fleet_id.as_deref()
     }
     /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
-    pub fn runtime_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RuntimeConfiguration> {
+    pub fn runtime_configuration(&self) -> ::std::option::Option<&crate::types::RuntimeConfiguration> {
         self.runtime_configuration.as_ref()
     }
 }
 impl UpdateRuntimeConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateRuntimeConfigurationInput`](crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationInput).
-    pub fn builder() -> crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationInputBuilder {
         crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRuntimeConfigurationInput`](crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRuntimeConfigurationInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_configuration: ::std::option::Option<crate::types::RuntimeConfiguration>,
@@ -59,17 +55,12 @@ impl UpdateRuntimeConfigurationInputBuilder {
         self
     }
     /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
-    pub fn set_runtime_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RuntimeConfiguration>,
-    ) -> Self {
+    pub fn set_runtime_configuration(mut self, input: ::std::option::Option<crate::types::RuntimeConfiguration>) -> Self {
         self.runtime_configuration = input;
         self
     }
     /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
-    pub fn get_runtime_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RuntimeConfiguration> {
+    pub fn get_runtime_configuration(&self) -> &::std::option::Option<crate::types::RuntimeConfiguration> {
         &self.runtime_configuration
     }
     /// Consumes the builder and constructs a [`UpdateRuntimeConfigurationInput`](crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationInput).
@@ -79,11 +70,9 @@ impl UpdateRuntimeConfigurationInputBuilder {
         crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationInput {
-                fleet_id: self.fleet_id,
-                runtime_configuration: self.runtime_configuration,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationInput {
+            fleet_id: self.fleet_id,
+            runtime_configuration: self.runtime_configuration,
+        })
     }
 }

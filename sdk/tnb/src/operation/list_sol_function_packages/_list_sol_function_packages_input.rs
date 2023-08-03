@@ -22,18 +22,14 @@ impl ListSolFunctionPackagesInput {
 }
 impl ListSolFunctionPackagesInput {
     /// Creates a new builder-style object to manufacture [`ListSolFunctionPackagesInput`](crate::operation::list_sol_function_packages::ListSolFunctionPackagesInput).
-    pub fn builder(
-    ) -> crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesInputBuilder {
         crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSolFunctionPackagesInput`](crate::operation::list_sol_function_packages::ListSolFunctionPackagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSolFunctionPackagesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl ListSolFunctionPackagesInputBuilder {
         crate::operation::list_sol_function_packages::ListSolFunctionPackagesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_sol_function_packages::ListSolFunctionPackagesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_sol_function_packages::ListSolFunctionPackagesInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

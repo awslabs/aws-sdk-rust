@@ -26,7 +26,7 @@ impl ListElasticsearchVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListElasticsearchVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_elasticsearch_versions::builders::ListElasticsearchVersionsInputBuilder,
+    inner: crate::operation::list_elasticsearch_versions::builders::ListElasticsearchVersionsInputBuilder,
 }
 impl ListElasticsearchVersionsFluentBuilder {
     /// Creates a new `ListElasticsearchVersions`.
@@ -37,7 +37,7 @@ impl ListElasticsearchVersionsFluentBuilder {
         }
     }
     /// Access the ListElasticsearchVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_elasticsearch_versions::builders::ListElasticsearchVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_elasticsearch_versions::builders::ListElasticsearchVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListElasticsearchVersionsFluentBuilder {
             crate::operation::list_elasticsearch_versions::ListElasticsearchVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListElasticsearchVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListElasticsearchVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListElasticsearchVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListElasticsearchVersionsFluentBuilder {
             crate::operation::list_elasticsearch_versions::ListElasticsearchVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_elasticsearch_versions::paginator::ListElasticsearchVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_elasticsearch_versions::paginator::ListElasticsearchVersionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_elasticsearch_versions::paginator::ListElasticsearchVersionsPaginator {
         crate::operation::list_elasticsearch_versions::paginator::ListElasticsearchVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. </p>

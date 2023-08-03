@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`lexicons(Option<Vec<LexiconDescription>>)`](crate::operation::list_lexicons::ListLexiconsOutput::lexicons): <p>A list of lexicon names and attributes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_lexicons::ListLexiconsOutput::next_token): <p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>
     /// - On failure, responds with [`SdkError<ListLexiconsError>`](crate::operation::list_lexicons::ListLexiconsError)
-    pub fn list_lexicons(
-        &self,
-    ) -> crate::operation::list_lexicons::builders::ListLexiconsFluentBuilder {
-        crate::operation::list_lexicons::builders::ListLexiconsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_lexicons(&self) -> crate::operation::list_lexicons::builders::ListLexiconsFluentBuilder {
+        crate::operation::list_lexicons::builders::ListLexiconsFluentBuilder::new(self.handle.clone())
     }
 }

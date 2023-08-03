@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateHoursOfOperationOutput {
 }
 impl CreateHoursOfOperationOutput {
     /// Creates a new builder-style object to manufacture [`CreateHoursOfOperationOutput`](crate::operation::create_hours_of_operation::CreateHoursOfOperationOutput).
-    pub fn builder(
-    ) -> crate::operation::create_hours_of_operation::builders::CreateHoursOfOperationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_hours_of_operation::builders::CreateHoursOfOperationOutputBuilder {
         crate::operation::create_hours_of_operation::builders::CreateHoursOfOperationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateHoursOfOperationOutput`](crate::operation::create_hours_of_operation::CreateHoursOfOperationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHoursOfOperationOutputBuilder {
     pub(crate) hours_of_operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) hours_of_operation_arn: ::std::option::Option<::std::string::String>,
@@ -47,18 +43,12 @@ pub struct CreateHoursOfOperationOutputBuilder {
 }
 impl CreateHoursOfOperationOutputBuilder {
     /// <p>The identifier for the hours of operation.</p>
-    pub fn hours_of_operation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hours_of_operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hours_of_operation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn set_hours_of_operation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hours_of_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hours_of_operation_id = input;
         self
     }
@@ -67,18 +57,12 @@ impl CreateHoursOfOperationOutputBuilder {
         &self.hours_of_operation_id
     }
     /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
-    pub fn hours_of_operation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hours_of_operation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hours_of_operation_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
-    pub fn set_hours_of_operation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hours_of_operation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hours_of_operation_arn = input;
         self
     }
@@ -96,9 +80,7 @@ impl CreateHoursOfOperationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateHoursOfOperationOutput`](crate::operation::create_hours_of_operation::CreateHoursOfOperationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_hours_of_operation::CreateHoursOfOperationOutput {
+    pub fn build(self) -> crate::operation::create_hours_of_operation::CreateHoursOfOperationOutput {
         crate::operation::create_hours_of_operation::CreateHoursOfOperationOutput {
             hours_of_operation_id: self.hours_of_operation_id,
             hours_of_operation_arn: self.hours_of_operation_arn,

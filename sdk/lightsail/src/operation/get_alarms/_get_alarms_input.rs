@@ -42,9 +42,7 @@ impl GetAlarmsInput {
 
 /// A builder for [`GetAlarmsInput`](crate::operation::get_alarms::GetAlarmsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAlarmsInputBuilder {
     pub(crate) alarm_name: ::std::option::Option<::std::string::String>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
@@ -87,19 +85,13 @@ impl GetAlarmsInputBuilder {
     }
     /// <p>The name of the Lightsail resource being monitored by the alarm.</p>
     /// <p>Specify a monitored resource name to return information about all alarms for a specific resource.</p>
-    pub fn monitored_resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitored_resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitored_resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Lightsail resource being monitored by the alarm.</p>
     /// <p>Specify a monitored resource name to return information about all alarms for a specific resource.</p>
-    pub fn set_monitored_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitored_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitored_resource_name = input;
         self
     }
@@ -109,12 +101,7 @@ impl GetAlarmsInputBuilder {
         &self.monitored_resource_name
     }
     /// Consumes the builder and constructs a [`GetAlarmsInput`](crate::operation::get_alarms::GetAlarmsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_alarms::GetAlarmsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_alarms::GetAlarmsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_alarms::GetAlarmsInput {
             alarm_name: self.alarm_name,
             page_token: self.page_token,

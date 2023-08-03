@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`application_state_list(Option<Vec<ApplicationState>>)`](crate::operation::list_application_states::ListApplicationStatesOutput::application_state_list): <p>A list of Applications that exist in Application Discovery Service.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_application_states::ListApplicationStatesOutput::next_token): <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     /// - On failure, responds with [`SdkError<ListApplicationStatesError>`](crate::operation::list_application_states::ListApplicationStatesError)
-    pub fn list_application_states(
-        &self,
-    ) -> crate::operation::list_application_states::builders::ListApplicationStatesFluentBuilder
-    {
-        crate::operation::list_application_states::builders::ListApplicationStatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_application_states(&self) -> crate::operation::list_application_states::builders::ListApplicationStatesFluentBuilder {
+        crate::operation::list_application_states::builders::ListApplicationStatesFluentBuilder::new(self.handle.clone())
     }
 }

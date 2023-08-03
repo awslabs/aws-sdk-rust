@@ -58,16 +58,14 @@ impl ModifyVpnConnectionOptionsInput {
 }
 impl ModifyVpnConnectionOptionsInput {
     /// Creates a new builder-style object to manufacture [`ModifyVpnConnectionOptionsInput`](crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsInput).
-    pub fn builder() -> crate::operation::modify_vpn_connection_options::builders::ModifyVpnConnectionOptionsInputBuilder{
+    pub fn builder() -> crate::operation::modify_vpn_connection_options::builders::ModifyVpnConnectionOptionsInputBuilder {
         crate::operation::modify_vpn_connection_options::builders::ModifyVpnConnectionOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpnConnectionOptionsInput`](crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpnConnectionOptionsInputBuilder {
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) local_ipv4_network_cidr: ::std::option::Option<::std::string::String>,
@@ -78,18 +76,12 @@ pub struct ModifyVpnConnectionOptionsInputBuilder {
 }
 impl ModifyVpnConnectionOptionsInputBuilder {
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn vpn_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn set_vpn_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_connection_id = input;
         self
     }
@@ -99,19 +91,13 @@ impl ModifyVpnConnectionOptionsInputBuilder {
     }
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code> </p>
-    pub fn local_ipv4_network_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_ipv4_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_ipv4_network_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code> </p>
-    pub fn set_local_ipv4_network_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_ipv4_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_ipv4_network_cidr = input;
         self
     }
@@ -122,19 +108,13 @@ impl ModifyVpnConnectionOptionsInputBuilder {
     }
     /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code> </p>
-    pub fn remote_ipv4_network_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_ipv4_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_ipv4_network_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code> </p>
-    pub fn set_remote_ipv4_network_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_ipv4_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remote_ipv4_network_cidr = input;
         self
     }
@@ -145,19 +125,13 @@ impl ModifyVpnConnectionOptionsInputBuilder {
     }
     /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code> </p>
-    pub fn local_ipv6_network_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_ipv6_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_ipv6_network_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code> </p>
-    pub fn set_local_ipv6_network_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_ipv6_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_ipv6_network_cidr = input;
         self
     }
@@ -168,19 +142,13 @@ impl ModifyVpnConnectionOptionsInputBuilder {
     }
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code> </p>
-    pub fn remote_ipv6_network_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_ipv6_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_ipv6_network_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code> </p>
-    pub fn set_remote_ipv6_network_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_ipv6_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remote_ipv6_network_cidr = input;
         self
     }
@@ -210,15 +178,13 @@ impl ModifyVpnConnectionOptionsInputBuilder {
         crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsInput {
-                vpn_connection_id: self.vpn_connection_id,
-                local_ipv4_network_cidr: self.local_ipv4_network_cidr,
-                remote_ipv4_network_cidr: self.remote_ipv4_network_cidr,
-                local_ipv6_network_cidr: self.local_ipv6_network_cidr,
-                remote_ipv6_network_cidr: self.remote_ipv6_network_cidr,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsInput {
+            vpn_connection_id: self.vpn_connection_id,
+            local_ipv4_network_cidr: self.local_ipv4_network_cidr,
+            remote_ipv4_network_cidr: self.remote_ipv4_network_cidr,
+            local_ipv6_network_cidr: self.local_ipv6_network_cidr,
+            remote_ipv6_network_cidr: self.remote_ipv6_network_cidr,
+            dry_run: self.dry_run,
+        })
     }
 }

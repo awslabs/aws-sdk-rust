@@ -10,10 +10,7 @@ impl ListPermissionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_permissions::ListPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permissions::ListPermissionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permissions::ListPermissionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_permissions();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl ListPermissionsFluentBuilder {
         }
     }
     /// Access the ListPermissions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_permissions::builders::ListPermissionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_permissions::builders::ListPermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl ListPermissionsFluentBuilder {
             crate::operation::list_permissions::ListPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permissions::ListPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permissions::ListPermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl ListPermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl ListPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_permissions::ListPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permissions::ListPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permissions::ListPermissionsError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl ListPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_permissions::ListPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permissions::ListPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permissions::ListPermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -124,36 +110,23 @@ impl ListPermissionsFluentBuilder {
             crate::operation::list_permissions::ListPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_permissions::ListPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_permissions::ListPermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_permissions::paginator::ListPermissionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_permissions::paginator::ListPermissionsPaginator {
-        crate::operation::list_permissions::paginator::ListPermissionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_permissions::paginator::ListPermissionsPaginator {
+        crate::operation::list_permissions::paginator::ListPermissionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must be of the form: <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> You can get a private CA's ARN by running the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_authority_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must be of the form: <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> You can get a private CA's ARN by running the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_authority_arn(input);
         self
     }

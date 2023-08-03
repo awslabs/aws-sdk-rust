@@ -12,10 +12,7 @@ pub fn ser_associate_discovered_resource_input(
     if let Some(var_3) = &input.discovered_resource {
         #[allow(unused_mut)]
         let mut object_4 = object.key("DiscoveredResource").start_object();
-        crate::protocol_serde::shape_discovered_resource::ser_discovered_resource(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_discovered_resource::ser_discovered_resource(&mut object_4, var_3)?;
         object_4.finish();
     }
     if input.dry_run {

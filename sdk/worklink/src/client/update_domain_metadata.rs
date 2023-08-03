@@ -8,14 +8,8 @@ impl super::Client {
     ///   - [`display_name(impl ::std::convert::Into<String>)`](crate::operation::update_domain_metadata::builders::UpdateDomainMetadataFluentBuilder::display_name) / [`set_display_name(Option<String>)`](crate::operation::update_domain_metadata::builders::UpdateDomainMetadataFluentBuilder::set_display_name): <p>The name to display.</p>
     /// - On success, responds with [`UpdateDomainMetadataOutput`](crate::operation::update_domain_metadata::UpdateDomainMetadataOutput)
     /// - On failure, responds with [`SdkError<UpdateDomainMetadataError>`](crate::operation::update_domain_metadata::UpdateDomainMetadataError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn update_domain_metadata(
-        &self,
-    ) -> crate::operation::update_domain_metadata::builders::UpdateDomainMetadataFluentBuilder {
-        crate::operation::update_domain_metadata::builders::UpdateDomainMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn update_domain_metadata(&self) -> crate::operation::update_domain_metadata::builders::UpdateDomainMetadataFluentBuilder {
+        crate::operation::update_domain_metadata::builders::UpdateDomainMetadataFluentBuilder::new(self.handle.clone())
     }
 }

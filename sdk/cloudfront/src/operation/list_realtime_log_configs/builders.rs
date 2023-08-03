@@ -27,8 +27,7 @@ impl ListRealtimeLogConfigsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRealtimeLogConfigsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_realtime_log_configs::builders::ListRealtimeLogConfigsInputBuilder,
+    inner: crate::operation::list_realtime_log_configs::builders::ListRealtimeLogConfigsInputBuilder,
 }
 impl ListRealtimeLogConfigsFluentBuilder {
     /// Creates a new `ListRealtimeLogConfigs`.
@@ -39,10 +38,7 @@ impl ListRealtimeLogConfigsFluentBuilder {
         }
     }
     /// Access the ListRealtimeLogConfigs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_realtime_log_configs::builders::ListRealtimeLogConfigsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_realtime_log_configs::builders::ListRealtimeLogConfigsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl ListRealtimeLogConfigsFluentBuilder {
             crate::operation::list_realtime_log_configs::ListRealtimeLogConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl ListRealtimeLogConfigsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl ListRealtimeLogConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl ListRealtimeLogConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl ListRealtimeLogConfigsFluentBuilder {
             crate::operation::list_realtime_log_configs::ListRealtimeLogConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError>,
     > {
         self.customize_middleware().await
     }

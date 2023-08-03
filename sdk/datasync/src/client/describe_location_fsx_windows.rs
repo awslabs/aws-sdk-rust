@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`user(Option<String>)`](crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput::user): <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
     ///   - [`domain(Option<String>)`](crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput::domain): <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
     /// - On failure, responds with [`SdkError<DescribeLocationFsxWindowsError>`](crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsError)
-    pub fn describe_location_fsx_windows(&self) -> crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsFluentBuilder{
+    pub fn describe_location_fsx_windows(
+        &self,
+    ) -> crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsFluentBuilder {
         crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsFluentBuilder::new(self.handle.clone())
     }
 }

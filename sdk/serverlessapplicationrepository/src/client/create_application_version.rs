@@ -20,10 +20,7 @@ impl super::Client {
     ///   - [`source_code_url(Option<String>)`](crate::operation::create_application_version::CreateApplicationVersionOutput::source_code_url): <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
     ///   - [`template_url(Option<String>)`](crate::operation::create_application_version::CreateApplicationVersionOutput::template_url): <p>A link to the packaged AWS SAM template of your application.</p>
     /// - On failure, responds with [`SdkError<CreateApplicationVersionError>`](crate::operation::create_application_version::CreateApplicationVersionError)
-    pub fn create_application_version(
-        &self,
-    ) -> crate::operation::create_application_version::builders::CreateApplicationVersionFluentBuilder
-    {
+    pub fn create_application_version(&self) -> crate::operation::create_application_version::builders::CreateApplicationVersionFluentBuilder {
         crate::operation::create_application_version::builders::CreateApplicationVersionFluentBuilder::new(self.handle.clone())
     }
 }

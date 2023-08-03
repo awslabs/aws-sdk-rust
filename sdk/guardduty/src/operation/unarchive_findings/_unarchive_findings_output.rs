@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UnarchiveFindingsOutput {
 }
 impl UnarchiveFindingsOutput {
     /// Creates a new builder-style object to manufacture [`UnarchiveFindingsOutput`](crate::operation::unarchive_findings::UnarchiveFindingsOutput).
-    pub fn builder(
-    ) -> crate::operation::unarchive_findings::builders::UnarchiveFindingsOutputBuilder {
+    pub fn builder() -> crate::operation::unarchive_findings::builders::UnarchiveFindingsOutputBuilder {
         crate::operation::unarchive_findings::builders::UnarchiveFindingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UnarchiveFindingsOutput`](crate::operation::unarchive_findings::UnarchiveFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnarchiveFindingsOutputBuilder {
     _request_id: Option<String>,
 }

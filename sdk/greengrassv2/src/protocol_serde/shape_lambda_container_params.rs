@@ -18,10 +18,7 @@ pub fn ser_lambda_container_params(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_lambda_volume_mount::ser_lambda_volume_mount(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_lambda_volume_mount::ser_lambda_volume_mount(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -33,10 +30,7 @@ pub fn ser_lambda_container_params(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_lambda_device_mount::ser_lambda_device_mount(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_lambda_device_mount::ser_lambda_device_mount(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }

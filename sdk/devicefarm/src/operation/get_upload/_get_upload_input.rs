@@ -23,9 +23,7 @@ impl GetUploadInput {
 
 /// A builder for [`GetUploadInput`](crate::operation::get_upload::GetUploadInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUploadInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -45,12 +43,7 @@ impl GetUploadInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetUploadInput`](crate::operation::get_upload::GetUploadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_upload::GetUploadInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_upload::GetUploadInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_upload::GetUploadInput { arn: self.arn })
     }
 }

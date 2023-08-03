@@ -29,9 +29,7 @@ impl GetScheduleInput {
 
 /// A builder for [`GetScheduleInput`](crate::operation::get_schedule::GetScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetScheduleInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetScheduleInputBuilder {
         &self.group_name
     }
     /// Consumes the builder and constructs a [`GetScheduleInput`](crate::operation::get_schedule::GetScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_schedule::GetScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_schedule::GetScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_schedule::GetScheduleInput {
             name: self.name,
             group_name: self.group_name,

@@ -40,16 +40,14 @@ impl DescribeCapacityProvidersInput {
 }
 impl DescribeCapacityProvidersInput {
     /// Creates a new builder-style object to manufacture [`DescribeCapacityProvidersInput`](crate::operation::describe_capacity_providers::DescribeCapacityProvidersInput).
-    pub fn builder() -> crate::operation::describe_capacity_providers::builders::DescribeCapacityProvidersInputBuilder{
+    pub fn builder() -> crate::operation::describe_capacity_providers::builders::DescribeCapacityProvidersInputBuilder {
         crate::operation::describe_capacity_providers::builders::DescribeCapacityProvidersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCapacityProvidersInput`](crate::operation::describe_capacity_providers::DescribeCapacityProvidersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCapacityProvidersInputBuilder {
     pub(crate) capacity_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) include: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>>,
@@ -62,27 +60,19 @@ impl DescribeCapacityProvidersInputBuilder {
     /// To override the contents of this collection use [`set_capacity_providers`](Self::set_capacity_providers).
     ///
     /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
-    pub fn capacity_providers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_providers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.capacity_providers.unwrap_or_default();
         v.push(input.into());
         self.capacity_providers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
-    pub fn set_capacity_providers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_capacity_providers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.capacity_providers = input;
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
-    pub fn get_capacity_providers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capacity_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.capacity_providers
     }
     /// Appends an item to `include`.
@@ -97,17 +87,12 @@ impl DescribeCapacityProvidersInputBuilder {
         self
     }
     /// <p>Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn set_include(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>>,
-    ) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>>) -> Self {
         self.include = input;
         self
     }
     /// <p>Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn get_include(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>> {
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>> {
         &self.include
     }
     /// <p>The maximum number of account setting results returned by <code>DescribeCapacityProviders</code> in paginated output. When this parameter is used, <code>DescribeCapacityProviders</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeCapacityProviders</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter is not used, then <code>DescribeCapacityProviders</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
@@ -151,13 +136,11 @@ impl DescribeCapacityProvidersInputBuilder {
         crate::operation::describe_capacity_providers::DescribeCapacityProvidersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_capacity_providers::DescribeCapacityProvidersInput {
-                capacity_providers: self.capacity_providers,
-                include: self.include,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_capacity_providers::DescribeCapacityProvidersInput {
+            capacity_providers: self.capacity_providers,
+            include: self.include,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

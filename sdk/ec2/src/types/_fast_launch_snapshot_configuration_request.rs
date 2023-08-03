@@ -23,9 +23,7 @@ impl FastLaunchSnapshotConfigurationRequest {
 
 /// A builder for [`FastLaunchSnapshotConfigurationRequest`](crate::types::FastLaunchSnapshotConfigurationRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FastLaunchSnapshotConfigurationRequestBuilder {
     pub(crate) target_resource_count: ::std::option::Option<i32>,
 }

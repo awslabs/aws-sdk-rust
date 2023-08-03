@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`activate(bool)`](crate::operation::update_threat_intel_set::builders::UpdateThreatIntelSetFluentBuilder::activate) / [`set_activate(Option<bool>)`](crate::operation::update_threat_intel_set::builders::UpdateThreatIntelSetFluentBuilder::set_activate): <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
     /// - On success, responds with [`UpdateThreatIntelSetOutput`](crate::operation::update_threat_intel_set::UpdateThreatIntelSetOutput)
     /// - On failure, responds with [`SdkError<UpdateThreatIntelSetError>`](crate::operation::update_threat_intel_set::UpdateThreatIntelSetError)
-    pub fn update_threat_intel_set(
-        &self,
-    ) -> crate::operation::update_threat_intel_set::builders::UpdateThreatIntelSetFluentBuilder
-    {
-        crate::operation::update_threat_intel_set::builders::UpdateThreatIntelSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_threat_intel_set(&self) -> crate::operation::update_threat_intel_set::builders::UpdateThreatIntelSetFluentBuilder {
+        crate::operation::update_threat_intel_set::builders::UpdateThreatIntelSetFluentBuilder::new(self.handle.clone())
     }
 }

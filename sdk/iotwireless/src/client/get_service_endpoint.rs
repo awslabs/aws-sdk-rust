@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`service_endpoint(Option<String>)`](crate::operation::get_service_endpoint::GetServiceEndpointOutput::service_endpoint): <p>The service endpoint value.</p>
     ///   - [`server_trust(Option<String>)`](crate::operation::get_service_endpoint::GetServiceEndpointOutput::server_trust): <p>The Root CA of the server trust certificate.</p>
     /// - On failure, responds with [`SdkError<GetServiceEndpointError>`](crate::operation::get_service_endpoint::GetServiceEndpointError)
-    pub fn get_service_endpoint(
-        &self,
-    ) -> crate::operation::get_service_endpoint::builders::GetServiceEndpointFluentBuilder {
-        crate::operation::get_service_endpoint::builders::GetServiceEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_service_endpoint(&self) -> crate::operation::get_service_endpoint::builders::GetServiceEndpointFluentBuilder {
+        crate::operation::get_service_endpoint::builders::GetServiceEndpointFluentBuilder::new(self.handle.clone())
     }
 }

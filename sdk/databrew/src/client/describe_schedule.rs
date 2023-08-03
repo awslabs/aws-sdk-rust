@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_schedule::DescribeScheduleOutput::tags): <p>Metadata tags associated with this schedule.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_schedule::DescribeScheduleOutput::name): <p>The name of the schedule.</p>
     /// - On failure, responds with [`SdkError<DescribeScheduleError>`](crate::operation::describe_schedule::DescribeScheduleError)
-    pub fn describe_schedule(
-        &self,
-    ) -> crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder {
-        crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_schedule(&self) -> crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder {
+        crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::new(self.handle.clone())
     }
 }

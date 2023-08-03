@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetApnsVoipSandboxChannelOutput`](crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelOutput) with field(s):
     ///   - [`apns_voip_sandbox_channel_response(Option<ApnsVoipSandboxChannelResponse>)`](crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelOutput::apns_voip_sandbox_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetApnsVoipSandboxChannelError>`](crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelError)
-    pub fn get_apns_voip_sandbox_channel(&self) -> crate::operation::get_apns_voip_sandbox_channel::builders::GetApnsVoipSandboxChannelFluentBuilder{
+    pub fn get_apns_voip_sandbox_channel(&self) -> crate::operation::get_apns_voip_sandbox_channel::builders::GetApnsVoipSandboxChannelFluentBuilder {
         crate::operation::get_apns_voip_sandbox_channel::builders::GetApnsVoipSandboxChannelFluentBuilder::new(self.handle.clone())
     }
 }

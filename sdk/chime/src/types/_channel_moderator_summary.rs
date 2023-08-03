@@ -23,9 +23,7 @@ impl ChannelModeratorSummary {
 
 /// A builder for [`ChannelModeratorSummary`](crate::types::ChannelModeratorSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelModeratorSummaryBuilder {
     pub(crate) moderator: ::std::option::Option<crate::types::Identity>,
 }
@@ -46,8 +44,6 @@ impl ChannelModeratorSummaryBuilder {
     }
     /// Consumes the builder and constructs a [`ChannelModeratorSummary`](crate::types::ChannelModeratorSummary).
     pub fn build(self) -> crate::types::ChannelModeratorSummary {
-        crate::types::ChannelModeratorSummary {
-            moderator: self.moderator,
-        }
+        crate::types::ChannelModeratorSummary { moderator: self.moderator }
     }
 }

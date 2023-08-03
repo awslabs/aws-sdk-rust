@@ -36,9 +36,7 @@ impl UpdateFolderInput {
 
 /// A builder for [`UpdateFolderInput`](crate::operation::update_folder::UpdateFolderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFolderInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) folder_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct UpdateFolderInputBuilder {
 }
 impl UpdateFolderInputBuilder {
     /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -94,12 +86,7 @@ impl UpdateFolderInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`UpdateFolderInput`](crate::operation::update_folder::UpdateFolderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_folder::UpdateFolderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_folder::UpdateFolderInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_folder::UpdateFolderInput {
             aws_account_id: self.aws_account_id,
             folder_id: self.folder_id,

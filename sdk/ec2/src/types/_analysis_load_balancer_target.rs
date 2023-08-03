@@ -44,9 +44,7 @@ impl AnalysisLoadBalancerTarget {
 
 /// A builder for [`AnalysisLoadBalancerTarget`](crate::types::AnalysisLoadBalancerTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisLoadBalancerTargetBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl AnalysisLoadBalancerTargetBuilder {
         &self.address
     }
     /// <p>The Availability Zone.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -94,10 +86,7 @@ impl AnalysisLoadBalancerTargetBuilder {
         self
     }
     /// <p>Information about the instance.</p>
-    pub fn set_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisComponent>,
-    ) -> Self {
+    pub fn set_instance(mut self, input: ::std::option::Option<crate::types::AnalysisComponent>) -> Self {
         self.instance = input;
         self
     }

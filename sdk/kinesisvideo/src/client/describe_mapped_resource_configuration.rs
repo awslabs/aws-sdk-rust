@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`mapped_resource_configuration_list(Option<Vec<MappedResourceConfigurationListItem>>)`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationOutput::mapped_resource_configuration_list): <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationOutput::next_token): <p>The token that was used in the <code>NextToken</code>request to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<DescribeMappedResourceConfigurationError>`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationError)
-    pub fn describe_mapped_resource_configuration(&self) -> crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationFluentBuilder{
+    pub fn describe_mapped_resource_configuration(
+        &self,
+    ) -> crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationFluentBuilder {
         crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

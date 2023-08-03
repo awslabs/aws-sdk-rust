@@ -3,10 +3,7 @@
 pub fn de_too_many_traffic_policy_versions_for_current_policy_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::TooManyTrafficPolicyVersionsForCurrentPolicyBuilder,
-) -> Result<
-    crate::types::error::builders::TooManyTrafficPolicyVersionsForCurrentPolicyBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::TooManyTrafficPolicyVersionsForCurrentPolicyBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

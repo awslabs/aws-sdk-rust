@@ -15,34 +15,25 @@ impl GetRecoveryPointInput {
 }
 impl GetRecoveryPointInput {
     /// Creates a new builder-style object to manufacture [`GetRecoveryPointInput`](crate::operation::get_recovery_point::GetRecoveryPointInput).
-    pub fn builder() -> crate::operation::get_recovery_point::builders::GetRecoveryPointInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_recovery_point::builders::GetRecoveryPointInputBuilder {
         crate::operation::get_recovery_point::builders::GetRecoveryPointInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecoveryPointInput`](crate::operation::get_recovery_point::GetRecoveryPointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecoveryPointInputBuilder {
     pub(crate) recovery_point_id: ::std::option::Option<::std::string::String>,
 }
 impl GetRecoveryPointInputBuilder {
     /// <p>The unique identifier of the recovery point to return information for.</p>
-    pub fn recovery_point_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_point_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the recovery point to return information for.</p>
-    pub fn set_recovery_point_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_point_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl GetRecoveryPointInputBuilder {
     /// Consumes the builder and constructs a [`GetRecoveryPointInput`](crate::operation::get_recovery_point::GetRecoveryPointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_recovery_point::GetRecoveryPointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_recovery_point::GetRecoveryPointInput {
-                recovery_point_id: self.recovery_point_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_recovery_point::GetRecoveryPointInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_recovery_point::GetRecoveryPointInput {
+            recovery_point_id: self.recovery_point_id,
+        })
     }
 }

@@ -36,9 +36,7 @@ impl AutoExportPolicy {
 
 /// A builder for [`AutoExportPolicy`](crate::types::AutoExportPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoExportPolicyBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
 }
@@ -67,10 +65,7 @@ impl AutoExportPolicyBuilder {
     /// <li> <p> <code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p> </li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>) -> Self {
         self.events = input;
         self
     }
@@ -86,8 +81,6 @@ impl AutoExportPolicyBuilder {
     }
     /// Consumes the builder and constructs a [`AutoExportPolicy`](crate::types::AutoExportPolicy).
     pub fn build(self) -> crate::types::AutoExportPolicy {
-        crate::types::AutoExportPolicy {
-            events: self.events,
-        }
+        crate::types::AutoExportPolicy { events: self.events }
     }
 }

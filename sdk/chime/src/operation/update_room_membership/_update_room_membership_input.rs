@@ -36,17 +36,14 @@ impl UpdateRoomMembershipInput {
 }
 impl UpdateRoomMembershipInput {
     /// Creates a new builder-style object to manufacture [`UpdateRoomMembershipInput`](crate::operation::update_room_membership::UpdateRoomMembershipInput).
-    pub fn builder(
-    ) -> crate::operation::update_room_membership::builders::UpdateRoomMembershipInputBuilder {
+    pub fn builder() -> crate::operation::update_room_membership::builders::UpdateRoomMembershipInputBuilder {
         crate::operation::update_room_membership::builders::UpdateRoomMembershipInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRoomMembershipInput`](crate::operation::update_room_membership::UpdateRoomMembershipInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRoomMembershipInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) room_id: ::std::option::Option<::std::string::String>,
@@ -102,10 +99,7 @@ impl UpdateRoomMembershipInputBuilder {
         self
     }
     /// <p>The role of the member.</p>
-    pub fn set_role(
-        mut self,
-        input: ::std::option::Option<crate::types::RoomMembershipRole>,
-    ) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<crate::types::RoomMembershipRole>) -> Self {
         self.role = input;
         self
     }
@@ -116,17 +110,13 @@ impl UpdateRoomMembershipInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRoomMembershipInput`](crate::operation::update_room_membership::UpdateRoomMembershipInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_room_membership::UpdateRoomMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_room_membership::UpdateRoomMembershipInput {
-                account_id: self.account_id,
-                room_id: self.room_id,
-                member_id: self.member_id,
-                role: self.role,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_room_membership::UpdateRoomMembershipInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_room_membership::UpdateRoomMembershipInput {
+            account_id: self.account_id,
+            room_id: self.room_id,
+            member_id: self.member_id,
+            role: self.role,
+        })
     }
 }

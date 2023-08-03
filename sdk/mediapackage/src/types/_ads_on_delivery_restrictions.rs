@@ -47,13 +47,7 @@
 /// and are always treated as ads if specified in AdTriggers.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AdsOnDeliveryRestrictions {
     #[allow(missing_docs)] // documentation missing in model
@@ -74,9 +68,7 @@ impl ::std::convert::From<&str> for AdsOnDeliveryRestrictions {
             "NONE" => AdsOnDeliveryRestrictions::None,
             "RESTRICTED" => AdsOnDeliveryRestrictions::Restricted,
             "UNRESTRICTED" => AdsOnDeliveryRestrictions::Unrestricted,
-            other => AdsOnDeliveryRestrictions::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AdsOnDeliveryRestrictions::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

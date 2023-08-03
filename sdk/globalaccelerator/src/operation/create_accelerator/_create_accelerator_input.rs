@@ -62,17 +62,14 @@ impl CreateAcceleratorInput {
 }
 impl CreateAcceleratorInput {
     /// Creates a new builder-style object to manufacture [`CreateAcceleratorInput`](crate::operation::create_accelerator::CreateAcceleratorInput).
-    pub fn builder() -> crate::operation::create_accelerator::builders::CreateAcceleratorInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_accelerator::builders::CreateAcceleratorInputBuilder {
         crate::operation::create_accelerator::builders::CreateAcceleratorInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAcceleratorInput`](crate::operation::create_accelerator::CreateAcceleratorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAcceleratorInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
@@ -102,10 +99,7 @@ impl CreateAcceleratorInputBuilder {
         self
     }
     /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
@@ -133,10 +127,7 @@ impl CreateAcceleratorInputBuilder {
     /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
     /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn set_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ip_addresses = input;
         self
     }
@@ -145,9 +136,7 @@ impl CreateAcceleratorInputBuilder {
     /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
     /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn get_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ip_addresses
     }
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
@@ -168,18 +157,12 @@ impl CreateAcceleratorInputBuilder {
         &self.enabled
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }
@@ -201,10 +184,7 @@ impl CreateAcceleratorInputBuilder {
     }
     /// <p>Create tags for an accelerator.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -216,19 +196,14 @@ impl CreateAcceleratorInputBuilder {
     /// Consumes the builder and constructs a [`CreateAcceleratorInput`](crate::operation::create_accelerator::CreateAcceleratorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_accelerator::CreateAcceleratorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_accelerator::CreateAcceleratorInput {
-                name: self.name,
-                ip_address_type: self.ip_address_type,
-                ip_addresses: self.ip_addresses,
-                enabled: self.enabled,
-                idempotency_token: self.idempotency_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_accelerator::CreateAcceleratorInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_accelerator::CreateAcceleratorInput {
+            name: self.name,
+            ip_address_type: self.ip_address_type,
+            ip_addresses: self.ip_addresses,
+            enabled: self.enabled,
+            idempotency_token: self.idempotency_token,
+            tags: self.tags,
+        })
     }
 }

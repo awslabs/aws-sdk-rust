@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateApplicationOutput`](crate::operation::create_application::CreateApplicationOutput) with field(s):
     ///   - [`application_summary(Option<ApplicationSummary>)`](crate::operation::create_application::CreateApplicationOutput::application_summary): <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a response with a summary of the application it created, including the application Amazon Resource Name (ARN), name, and status.</p>
     /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::operation::create_application::CreateApplicationError)
-    pub fn create_application(
-        &self,
-    ) -> crate::operation::create_application::builders::CreateApplicationFluentBuilder {
-        crate::operation::create_application::builders::CreateApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_application(&self) -> crate::operation::create_application::builders::CreateApplicationFluentBuilder {
+        crate::operation::create_application::builders::CreateApplicationFluentBuilder::new(self.handle.clone())
     }
 }

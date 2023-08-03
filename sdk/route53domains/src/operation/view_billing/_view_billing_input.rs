@@ -48,9 +48,7 @@ impl ViewBillingInput {
 
 /// A builder for [`ViewBillingInput`](crate::operation::view_billing::ViewBillingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ViewBillingInputBuilder {
     pub(crate) start: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -121,12 +119,7 @@ impl ViewBillingInputBuilder {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ViewBillingInput`](crate::operation::view_billing::ViewBillingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::view_billing::ViewBillingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::view_billing::ViewBillingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::view_billing::ViewBillingInput {
             start: self.start,
             end: self.end,

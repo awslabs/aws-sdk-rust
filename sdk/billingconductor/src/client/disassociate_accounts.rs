@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DisassociateAccountsOutput`](crate::operation::disassociate_accounts::DisassociateAccountsOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::disassociate_accounts::DisassociateAccountsOutput::arn): <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs is disassociated from. </p>
     /// - On failure, responds with [`SdkError<DisassociateAccountsError>`](crate::operation::disassociate_accounts::DisassociateAccountsError)
-    pub fn disassociate_accounts(
-        &self,
-    ) -> crate::operation::disassociate_accounts::builders::DisassociateAccountsFluentBuilder {
-        crate::operation::disassociate_accounts::builders::DisassociateAccountsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_accounts(&self) -> crate::operation::disassociate_accounts::builders::DisassociateAccountsFluentBuilder {
+        crate::operation::disassociate_accounts::builders::DisassociateAccountsFluentBuilder::new(self.handle.clone())
     }
 }

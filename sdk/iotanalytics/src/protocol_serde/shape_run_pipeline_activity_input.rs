@@ -7,9 +7,7 @@ pub fn ser_run_pipeline_activity_input(
         let mut array_2 = object.key("payloads").start_array();
         for item_3 in var_1 {
             {
-                array_2
-                    .value()
-                    .string_unchecked(&::aws_smithy_types::base64::encode(item_3));
+                array_2.value().string_unchecked(&::aws_smithy_types::base64::encode(item_3));
             }
         }
         array_2.finish();
@@ -17,10 +15,7 @@ pub fn ser_run_pipeline_activity_input(
     if let Some(var_4) = &input.pipeline_activity {
         #[allow(unused_mut)]
         let mut object_5 = object.key("pipelineActivity").start_object();
-        crate::protocol_serde::shape_pipeline_activity::ser_pipeline_activity(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_pipeline_activity::ser_pipeline_activity(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

@@ -43,9 +43,7 @@ impl CreateFormInput {
 
 /// A builder for [`CreateFormInput`](crate::operation::create_form::CreateFormInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFormInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl CreateFormInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -107,10 +99,7 @@ impl CreateFormInputBuilder {
         self
     }
     /// <p>Represents the configuration of the form to create.</p>
-    pub fn set_form_to_create(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateFormData>,
-    ) -> Self {
+    pub fn set_form_to_create(mut self, input: ::std::option::Option<crate::types::CreateFormData>) -> Self {
         self.form_to_create = input;
         self
     }
@@ -119,12 +108,7 @@ impl CreateFormInputBuilder {
         &self.form_to_create
     }
     /// Consumes the builder and constructs a [`CreateFormInput`](crate::operation::create_form::CreateFormInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_form::CreateFormInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_form::CreateFormInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_form::CreateFormInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

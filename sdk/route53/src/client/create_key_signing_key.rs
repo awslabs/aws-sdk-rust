@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`key_signing_key(Option<KeySigningKey>)`](crate::operation::create_key_signing_key::CreateKeySigningKeyOutput::key_signing_key): <p>The key-signing key (KSK) that the request creates.</p>
     ///   - [`location(Option<String>)`](crate::operation::create_key_signing_key::CreateKeySigningKeyOutput::location): <p>The unique URL representing the new key-signing key (KSK).</p>
     /// - On failure, responds with [`SdkError<CreateKeySigningKeyError>`](crate::operation::create_key_signing_key::CreateKeySigningKeyError)
-    pub fn create_key_signing_key(
-        &self,
-    ) -> crate::operation::create_key_signing_key::builders::CreateKeySigningKeyFluentBuilder {
-        crate::operation::create_key_signing_key::builders::CreateKeySigningKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_key_signing_key(&self) -> crate::operation::create_key_signing_key::builders::CreateKeySigningKeyFluentBuilder {
+        crate::operation::create_key_signing_key::builders::CreateKeySigningKeyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,35 +15,25 @@ impl DescribeChannelFlowInput {
 }
 impl DescribeChannelFlowInput {
     /// Creates a new builder-style object to manufacture [`DescribeChannelFlowInput`](crate::operation::describe_channel_flow::DescribeChannelFlowInput).
-    pub fn builder(
-    ) -> crate::operation::describe_channel_flow::builders::DescribeChannelFlowInputBuilder {
-        crate::operation::describe_channel_flow::builders::DescribeChannelFlowInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_channel_flow::builders::DescribeChannelFlowInputBuilder {
+        crate::operation::describe_channel_flow::builders::DescribeChannelFlowInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeChannelFlowInput`](crate::operation::describe_channel_flow::DescribeChannelFlowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeChannelFlowInputBuilder {
     pub(crate) channel_flow_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeChannelFlowInputBuilder {
     /// <p>The ARN of the channel flow.</p>
-    pub fn channel_flow_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_flow_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the channel flow.</p>
-    pub fn set_channel_flow_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_flow_arn = input;
         self
     }
@@ -54,14 +44,10 @@ impl DescribeChannelFlowInputBuilder {
     /// Consumes the builder and constructs a [`DescribeChannelFlowInput`](crate::operation::describe_channel_flow::DescribeChannelFlowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_channel_flow::DescribeChannelFlowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_channel_flow::DescribeChannelFlowInput {
-                channel_flow_arn: self.channel_flow_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_channel_flow::DescribeChannelFlowInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_channel_flow::DescribeChannelFlowInput {
+            channel_flow_arn: self.channel_flow_arn,
+        })
     }
 }

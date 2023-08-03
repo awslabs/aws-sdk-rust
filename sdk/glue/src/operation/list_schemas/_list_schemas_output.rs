@@ -35,9 +35,7 @@ impl ListSchemasOutput {
 
 /// A builder for [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchemasOutputBuilder {
     pub(crate) schemas: ::std::option::Option<::std::vec::Vec<crate::types::SchemaListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListSchemasOutputBuilder {
         self
     }
     /// <p>An array of <code>SchemaListItem</code> objects containing details of each schema.</p>
-    pub fn set_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaListItem>>,
-    ) -> Self {
+    pub fn set_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaListItem>>) -> Self {
         self.schemas = input;
         self
     }
     /// <p>An array of <code>SchemaListItem</code> objects containing details of each schema.</p>
-    pub fn get_schemas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaListItem>> {
+    pub fn get_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaListItem>> {
         &self.schemas
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>

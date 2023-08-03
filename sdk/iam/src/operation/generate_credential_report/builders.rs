@@ -26,7 +26,7 @@ impl GenerateCredentialReportInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GenerateCredentialReportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::generate_credential_report::builders::GenerateCredentialReportInputBuilder,
+    inner: crate::operation::generate_credential_report::builders::GenerateCredentialReportInputBuilder,
 }
 impl GenerateCredentialReportFluentBuilder {
     /// Creates a new `GenerateCredentialReport`.
@@ -37,10 +37,7 @@ impl GenerateCredentialReportFluentBuilder {
         }
     }
     /// Access the GenerateCredentialReport as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::generate_credential_report::builders::GenerateCredentialReportInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::generate_credential_report::builders::GenerateCredentialReportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GenerateCredentialReportFluentBuilder {
             crate::operation::generate_credential_report::GenerateCredentialReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_credential_report::GenerateCredentialReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_credential_report::GenerateCredentialReportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GenerateCredentialReportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GenerateCredentialReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_credential_report::GenerateCredentialReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_credential_report::GenerateCredentialReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_credential_report::GenerateCredentialReportError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GenerateCredentialReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_credential_report::GenerateCredentialReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_credential_report::GenerateCredentialReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_credential_report::GenerateCredentialReportError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GenerateCredentialReportFluentBuilder {
             crate::operation::generate_credential_report::GenerateCredentialReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::generate_credential_report::GenerateCredentialReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_credential_report::GenerateCredentialReportError>,
     > {
         self.customize_middleware().await
     }

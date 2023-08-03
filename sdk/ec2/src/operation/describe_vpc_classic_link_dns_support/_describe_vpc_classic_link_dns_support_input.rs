@@ -29,16 +29,14 @@ impl DescribeVpcClassicLinkDnsSupportInput {
 }
 impl DescribeVpcClassicLinkDnsSupportInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcClassicLinkDnsSupportInput`](crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput).
-    pub fn builder() -> crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportInputBuilder{
+    pub fn builder() -> crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportInputBuilder {
         crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcClassicLinkDnsSupportInput`](crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcClassicLinkDnsSupportInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl DescribeVpcClassicLinkDnsSupportInputBuilder {
         self
     }
     /// <p>The IDs of the VPCs.</p>
-    pub fn set_vpc_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_ids = input;
         self
     }
@@ -97,16 +92,18 @@ impl DescribeVpcClassicLinkDnsSupportInputBuilder {
         &self.vpc_ids
     }
     /// Consumes the builder and constructs a [`DescribeVpcClassicLinkDnsSupportInput`](crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                vpc_ids: self.vpc_ids
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+                vpc_ids: self.vpc_ids,
+            },
         )
     }
 }

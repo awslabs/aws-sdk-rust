@@ -51,9 +51,7 @@ impl UserDefinedFunctionInput {
 
 /// A builder for [`UserDefinedFunctionInput`](crate::types::UserDefinedFunctionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserDefinedFunctionInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) class_name: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct UserDefinedFunctionInputBuilder {
 }
 impl UserDefinedFunctionInputBuilder {
     /// <p>The name of the function.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the function.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -116,10 +108,7 @@ impl UserDefinedFunctionInputBuilder {
         self
     }
     /// <p>The owner type.</p>
-    pub fn set_owner_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PrincipalType>,
-    ) -> Self {
+    pub fn set_owner_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
         self.owner_type = input;
         self
     }
@@ -139,17 +128,12 @@ impl UserDefinedFunctionInputBuilder {
         self
     }
     /// <p>The resource URIs for the function.</p>
-    pub fn set_resource_uris(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceUri>>,
-    ) -> Self {
+    pub fn set_resource_uris(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceUri>>) -> Self {
         self.resource_uris = input;
         self
     }
     /// <p>The resource URIs for the function.</p>
-    pub fn get_resource_uris(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceUri>> {
+    pub fn get_resource_uris(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceUri>> {
         &self.resource_uris
     }
     /// Consumes the builder and constructs a [`UserDefinedFunctionInput`](crate::types::UserDefinedFunctionInput).

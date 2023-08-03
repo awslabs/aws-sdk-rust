@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::delete_theme::DeleteThemeOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`theme_id(Option<String>)`](crate::operation::delete_theme::DeleteThemeOutput::theme_id): <p>An ID for the theme.</p>
     /// - On failure, responds with [`SdkError<DeleteThemeError>`](crate::operation::delete_theme::DeleteThemeError)
-    pub fn delete_theme(
-        &self,
-    ) -> crate::operation::delete_theme::builders::DeleteThemeFluentBuilder {
+    pub fn delete_theme(&self) -> crate::operation::delete_theme::builders::DeleteThemeFluentBuilder {
         crate::operation::delete_theme::builders::DeleteThemeFluentBuilder::new(self.handle.clone())
     }
 }

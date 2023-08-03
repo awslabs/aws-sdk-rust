@@ -37,9 +37,7 @@ impl FaultRootCauseEntity {
 
 /// A builder for [`FaultRootCauseEntity`](crate::types::FaultRootCauseEntity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FaultRootCauseEntityBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) exceptions: ::std::option::Option<::std::vec::Vec<crate::types::RootCauseException>>,
@@ -72,17 +70,12 @@ impl FaultRootCauseEntityBuilder {
         self
     }
     /// <p>The types and messages of the exceptions.</p>
-    pub fn set_exceptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RootCauseException>>,
-    ) -> Self {
+    pub fn set_exceptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RootCauseException>>) -> Self {
         self.exceptions = input;
         self
     }
     /// <p>The types and messages of the exceptions.</p>
-    pub fn get_exceptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RootCauseException>> {
+    pub fn get_exceptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RootCauseException>> {
         &self.exceptions
     }
     /// <p>A flag that denotes a remote subsegment.</p>

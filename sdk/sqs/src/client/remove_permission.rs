@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`label(impl ::std::convert::Into<String>)`](crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::label) / [`set_label(Option<String>)`](crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::set_label): <p>The identification of the permission to remove. This is the label added using the <code> <code>AddPermission</code> </code> action.</p>
     /// - On success, responds with [`RemovePermissionOutput`](crate::operation::remove_permission::RemovePermissionOutput)
     /// - On failure, responds with [`SdkError<RemovePermissionError>`](crate::operation::remove_permission::RemovePermissionError)
-    pub fn remove_permission(
-        &self,
-    ) -> crate::operation::remove_permission::builders::RemovePermissionFluentBuilder {
-        crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn remove_permission(&self) -> crate::operation::remove_permission::builders::RemovePermissionFluentBuilder {
+        crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::new(self.handle.clone())
     }
 }

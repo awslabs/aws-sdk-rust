@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_connector_definition::GetConnectorDefinitionOutput::name): The name of the definition.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_connector_definition::GetConnectorDefinitionOutput::tags): Tag(s) attached to the resource arn.
     /// - On failure, responds with [`SdkError<GetConnectorDefinitionError>`](crate::operation::get_connector_definition::GetConnectorDefinitionError)
-    pub fn get_connector_definition(
-        &self,
-    ) -> crate::operation::get_connector_definition::builders::GetConnectorDefinitionFluentBuilder
-    {
+    pub fn get_connector_definition(&self) -> crate::operation::get_connector_definition::builders::GetConnectorDefinitionFluentBuilder {
         crate::operation::get_connector_definition::builders::GetConnectorDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

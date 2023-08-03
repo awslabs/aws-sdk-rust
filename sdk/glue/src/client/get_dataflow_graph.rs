@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`dag_nodes(Option<Vec<CodeGenNode>>)`](crate::operation::get_dataflow_graph::GetDataflowGraphOutput::dag_nodes): <p>A list of the nodes in the resulting DAG.</p>
     ///   - [`dag_edges(Option<Vec<CodeGenEdge>>)`](crate::operation::get_dataflow_graph::GetDataflowGraphOutput::dag_edges): <p>A list of the edges in the resulting DAG.</p>
     /// - On failure, responds with [`SdkError<GetDataflowGraphError>`](crate::operation::get_dataflow_graph::GetDataflowGraphError)
-    pub fn get_dataflow_graph(
-        &self,
-    ) -> crate::operation::get_dataflow_graph::builders::GetDataflowGraphFluentBuilder {
-        crate::operation::get_dataflow_graph::builders::GetDataflowGraphFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_dataflow_graph(&self) -> crate::operation::get_dataflow_graph::builders::GetDataflowGraphFluentBuilder {
+        crate::operation::get_dataflow_graph::builders::GetDataflowGraphFluentBuilder::new(self.handle.clone())
     }
 }

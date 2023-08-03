@@ -5,18 +5,14 @@
 pub struct GetAccountSendingEnabledInput {}
 impl GetAccountSendingEnabledInput {
     /// Creates a new builder-style object to manufacture [`GetAccountSendingEnabledInput`](crate::operation::get_account_sending_enabled::GetAccountSendingEnabledInput).
-    pub fn builder(
-    ) -> crate::operation::get_account_sending_enabled::builders::GetAccountSendingEnabledInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_account_sending_enabled::builders::GetAccountSendingEnabledInputBuilder {
         crate::operation::get_account_sending_enabled::builders::GetAccountSendingEnabledInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccountSendingEnabledInput`](crate::operation::get_account_sending_enabled::GetAccountSendingEnabledInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccountSendingEnabledInputBuilder {}
 impl GetAccountSendingEnabledInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountSendingEnabledInput`](crate::operation::get_account_sending_enabled::GetAccountSendingEnabledInput).
@@ -26,8 +22,6 @@ impl GetAccountSendingEnabledInputBuilder {
         crate::operation::get_account_sending_enabled::GetAccountSendingEnabledInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_account_sending_enabled::GetAccountSendingEnabledInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::get_account_sending_enabled::GetAccountSendingEnabledInput {})
     }
 }

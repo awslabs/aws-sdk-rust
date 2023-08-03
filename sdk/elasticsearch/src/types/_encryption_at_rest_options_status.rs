@@ -30,9 +30,7 @@ impl EncryptionAtRestOptionsStatus {
 
 /// A builder for [`EncryptionAtRestOptionsStatus`](crate::types::EncryptionAtRestOptionsStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionAtRestOptionsStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
@@ -44,10 +42,7 @@ impl EncryptionAtRestOptionsStatusBuilder {
         self
     }
     /// <p> Specifies the Encryption At Rest options for the specified Elasticsearch domain.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::EncryptionAtRestOptions>) -> Self {
         self.options = input;
         self
     }

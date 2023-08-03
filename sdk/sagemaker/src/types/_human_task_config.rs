@@ -381,8 +381,7 @@ pub struct HumanTaskConfig {
     pub max_concurrent_task_count: ::std::option::Option<i32>,
     /// <p>Configures how labels are consolidated across human workers.</p>
     #[doc(hidden)]
-    pub annotation_consolidation_config:
-        ::std::option::Option<crate::types::AnnotationConsolidationConfig>,
+    pub annotation_consolidation_config: ::std::option::Option<crate::types::AnnotationConsolidationConfig>,
     /// <p>The price that you pay for each task performed by an Amazon Mechanical Turk worker.</p>
     #[doc(hidden)]
     pub public_workforce_task_price: ::std::option::Option<crate::types::PublicWorkforceTaskPrice>,
@@ -774,15 +773,11 @@ impl HumanTaskConfig {
         self.max_concurrent_task_count
     }
     /// <p>Configures how labels are consolidated across human workers.</p>
-    pub fn annotation_consolidation_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnnotationConsolidationConfig> {
+    pub fn annotation_consolidation_config(&self) -> ::std::option::Option<&crate::types::AnnotationConsolidationConfig> {
         self.annotation_consolidation_config.as_ref()
     }
     /// <p>The price that you pay for each task performed by an Amazon Mechanical Turk worker.</p>
-    pub fn public_workforce_task_price(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PublicWorkforceTaskPrice> {
+    pub fn public_workforce_task_price(&self) -> ::std::option::Option<&crate::types::PublicWorkforceTaskPrice> {
         self.public_workforce_task_price.as_ref()
     }
 }
@@ -795,9 +790,7 @@ impl HumanTaskConfig {
 
 /// A builder for [`HumanTaskConfig`](crate::types::HumanTaskConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HumanTaskConfigBuilder {
     pub(crate) workteam_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ui_config: ::std::option::Option<crate::types::UiConfig>,
@@ -809,10 +802,8 @@ pub struct HumanTaskConfigBuilder {
     pub(crate) task_time_limit_in_seconds: ::std::option::Option<i32>,
     pub(crate) task_availability_lifetime_in_seconds: ::std::option::Option<i32>,
     pub(crate) max_concurrent_task_count: ::std::option::Option<i32>,
-    pub(crate) annotation_consolidation_config:
-        ::std::option::Option<crate::types::AnnotationConsolidationConfig>,
-    pub(crate) public_workforce_task_price:
-        ::std::option::Option<crate::types::PublicWorkforceTaskPrice>,
+    pub(crate) annotation_consolidation_config: ::std::option::Option<crate::types::AnnotationConsolidationConfig>,
+    pub(crate) public_workforce_task_price: ::std::option::Option<crate::types::PublicWorkforceTaskPrice>,
 }
 impl HumanTaskConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the work team assigned to complete the tasks.</p>
@@ -1179,10 +1170,7 @@ impl HumanTaskConfigBuilder {
     /// <li> <p> <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// <li> <p> <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
-    pub fn pre_human_task_lambda_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pre_human_task_lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_human_task_lambda_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -1522,10 +1510,7 @@ impl HumanTaskConfigBuilder {
     /// <li> <p> <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// <li> <p> <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
-    pub fn set_pre_human_task_lambda_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pre_human_task_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pre_human_task_lambda_arn = input;
         self
     }
@@ -1873,27 +1858,19 @@ impl HumanTaskConfigBuilder {
     /// To override the contents of this collection use [`set_task_keywords`](Self::set_task_keywords).
     ///
     /// <p>Keywords used to describe the task so that workers on Amazon Mechanical Turk can discover the task.</p>
-    pub fn task_keywords(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.task_keywords.unwrap_or_default();
         v.push(input.into());
         self.task_keywords = ::std::option::Option::Some(v);
         self
     }
     /// <p>Keywords used to describe the task so that workers on Amazon Mechanical Turk can discover the task.</p>
-    pub fn set_task_keywords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_task_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.task_keywords = input;
         self
     }
     /// <p>Keywords used to describe the task so that workers on Amazon Mechanical Turk can discover the task.</p>
-    pub fn get_task_keywords(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_task_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.task_keywords
     }
     /// <p>A title for the task for your human workers.</p>
@@ -1911,18 +1888,12 @@ impl HumanTaskConfigBuilder {
         &self.task_title
     }
     /// <p>A description of the task for your human workers.</p>
-    pub fn task_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the task for your human workers.</p>
-    pub fn set_task_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_description = input;
         self
     }
@@ -1936,10 +1907,7 @@ impl HumanTaskConfigBuilder {
         self
     }
     /// <p>The number of human workers that will label an object. </p>
-    pub fn set_number_of_human_workers_per_data_object(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_number_of_human_workers_per_data_object(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_human_workers_per_data_object = input;
         self
     }
@@ -1993,10 +1961,7 @@ impl HumanTaskConfigBuilder {
     /// <li> <p>If you choose the Amazon Mechanical Turk workforce, the maximum is 12 hours (43,200 seconds). The default is 6 hours (21,600 seconds).</p> </li>
     /// <li> <p>If you choose a private or vendor workforce, the default value is 30 days (2592,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p> </li>
     /// </ul>
-    pub fn set_task_availability_lifetime_in_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_task_availability_lifetime_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.task_availability_lifetime_in_seconds = input;
         self
     }
@@ -2023,47 +1988,31 @@ impl HumanTaskConfigBuilder {
         &self.max_concurrent_task_count
     }
     /// <p>Configures how labels are consolidated across human workers.</p>
-    pub fn annotation_consolidation_config(
-        mut self,
-        input: crate::types::AnnotationConsolidationConfig,
-    ) -> Self {
+    pub fn annotation_consolidation_config(mut self, input: crate::types::AnnotationConsolidationConfig) -> Self {
         self.annotation_consolidation_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures how labels are consolidated across human workers.</p>
-    pub fn set_annotation_consolidation_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AnnotationConsolidationConfig>,
-    ) -> Self {
+    pub fn set_annotation_consolidation_config(mut self, input: ::std::option::Option<crate::types::AnnotationConsolidationConfig>) -> Self {
         self.annotation_consolidation_config = input;
         self
     }
     /// <p>Configures how labels are consolidated across human workers.</p>
-    pub fn get_annotation_consolidation_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnnotationConsolidationConfig> {
+    pub fn get_annotation_consolidation_config(&self) -> &::std::option::Option<crate::types::AnnotationConsolidationConfig> {
         &self.annotation_consolidation_config
     }
     /// <p>The price that you pay for each task performed by an Amazon Mechanical Turk worker.</p>
-    pub fn public_workforce_task_price(
-        mut self,
-        input: crate::types::PublicWorkforceTaskPrice,
-    ) -> Self {
+    pub fn public_workforce_task_price(mut self, input: crate::types::PublicWorkforceTaskPrice) -> Self {
         self.public_workforce_task_price = ::std::option::Option::Some(input);
         self
     }
     /// <p>The price that you pay for each task performed by an Amazon Mechanical Turk worker.</p>
-    pub fn set_public_workforce_task_price(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicWorkforceTaskPrice>,
-    ) -> Self {
+    pub fn set_public_workforce_task_price(mut self, input: ::std::option::Option<crate::types::PublicWorkforceTaskPrice>) -> Self {
         self.public_workforce_task_price = input;
         self
     }
     /// <p>The price that you pay for each task performed by an Amazon Mechanical Turk worker.</p>
-    pub fn get_public_workforce_task_price(
-        &self,
-    ) -> &::std::option::Option<crate::types::PublicWorkforceTaskPrice> {
+    pub fn get_public_workforce_task_price(&self) -> &::std::option::Option<crate::types::PublicWorkforceTaskPrice> {
         &self.public_workforce_task_price
     }
     /// Consumes the builder and constructs a [`HumanTaskConfig`](crate::types::HumanTaskConfig).

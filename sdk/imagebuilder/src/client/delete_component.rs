@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::delete_component::DeleteComponentOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`component_build_version_arn(Option<String>)`](crate::operation::delete_component::DeleteComponentOutput::component_build_version_arn): <p>The ARN of the component build version that this request deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteComponentError>`](crate::operation::delete_component::DeleteComponentError)
-    pub fn delete_component(
-        &self,
-    ) -> crate::operation::delete_component::builders::DeleteComponentFluentBuilder {
-        crate::operation::delete_component::builders::DeleteComponentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_component(&self) -> crate::operation::delete_component::builders::DeleteComponentFluentBuilder {
+        crate::operation::delete_component::builders::DeleteComponentFluentBuilder::new(self.handle.clone())
     }
 }

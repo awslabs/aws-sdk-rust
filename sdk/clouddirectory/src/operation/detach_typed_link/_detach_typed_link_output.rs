@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DetachTypedLinkOutput {
 }
 impl DetachTypedLinkOutput {
     /// Creates a new builder-style object to manufacture [`DetachTypedLinkOutput`](crate::operation::detach_typed_link::DetachTypedLinkOutput).
-    pub fn builder() -> crate::operation::detach_typed_link::builders::DetachTypedLinkOutputBuilder
-    {
+    pub fn builder() -> crate::operation::detach_typed_link::builders::DetachTypedLinkOutputBuilder {
         crate::operation::detach_typed_link::builders::DetachTypedLinkOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetachTypedLinkOutput`](crate::operation::detach_typed_link::DetachTypedLinkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachTypedLinkOutputBuilder {
     _request_id: Option<String>,
 }

@@ -31,8 +31,7 @@ pub struct BatchExecuteStatementInput {
     /// <p>Array parameters are not supported.</p>
     /// </note>
     #[doc(hidden)]
-    pub parameter_sets:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>>,
+    pub parameter_sets: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>>,
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
     #[doc(hidden)]
@@ -70,9 +69,7 @@ impl BatchExecuteStatementInput {
     /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub fn parameter_sets(
-        &self,
-    ) -> ::std::option::Option<&[::std::vec::Vec<crate::types::SqlParameter>]> {
+    pub fn parameter_sets(&self) -> ::std::option::Option<&[::std::vec::Vec<crate::types::SqlParameter>]> {
         self.parameter_sets.as_deref()
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
@@ -83,26 +80,21 @@ impl BatchExecuteStatementInput {
 }
 impl BatchExecuteStatementInput {
     /// Creates a new builder-style object to manufacture [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
-    pub fn builder(
-    ) -> crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder {
         crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchExecuteStatementInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sql: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) schema: ::std::option::Option<::std::string::String>,
-    pub(crate) parameter_sets:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>>,
+    pub(crate) parameter_sets: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchExecuteStatementInputBuilder {
@@ -211,10 +203,7 @@ impl BatchExecuteStatementInputBuilder {
     /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub fn set_parameter_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>>,
-    ) -> Self {
+    pub fn set_parameter_sets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>>) -> Self {
         self.parameter_sets = input;
         self
     }
@@ -226,26 +215,18 @@ impl BatchExecuteStatementInputBuilder {
     /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub fn get_parameter_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>> {
+    pub fn get_parameter_sets(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::SqlParameter>>> {
         &self.parameter_sets
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }
@@ -257,20 +238,16 @@ impl BatchExecuteStatementInputBuilder {
     /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_execute_statement::BatchExecuteStatementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_execute_statement::BatchExecuteStatementInput {
-                resource_arn: self.resource_arn,
-                secret_arn: self.secret_arn,
-                sql: self.sql,
-                database: self.database,
-                schema: self.schema,
-                parameter_sets: self.parameter_sets,
-                transaction_id: self.transaction_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_execute_statement::BatchExecuteStatementInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_execute_statement::BatchExecuteStatementInput {
+            resource_arn: self.resource_arn,
+            secret_arn: self.secret_arn,
+            sql: self.sql,
+            database: self.database,
+            schema: self.schema,
+            parameter_sets: self.parameter_sets,
+            transaction_id: self.transaction_id,
+        })
     }
 }

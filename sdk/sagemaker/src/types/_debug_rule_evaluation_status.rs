@@ -30,9 +30,7 @@ impl DebugRuleEvaluationStatus {
         self.rule_evaluation_job_arn.as_deref()
     }
     /// <p>Status of the rule evaluation.</p>
-    pub fn rule_evaluation_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RuleEvaluationStatus> {
+    pub fn rule_evaluation_status(&self) -> ::std::option::Option<&crate::types::RuleEvaluationStatus> {
         self.rule_evaluation_status.as_ref()
     }
     /// <p>Details from the rule evaluation.</p>
@@ -53,9 +51,7 @@ impl DebugRuleEvaluationStatus {
 
 /// A builder for [`DebugRuleEvaluationStatus`](crate::types::DebugRuleEvaluationStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DebugRuleEvaluationStatusBuilder {
     pub(crate) rule_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_evaluation_job_arn: ::std::option::Option<::std::string::String>,
@@ -65,18 +61,12 @@ pub struct DebugRuleEvaluationStatusBuilder {
 }
 impl DebugRuleEvaluationStatusBuilder {
     /// <p>The name of the rule configuration.</p>
-    pub fn rule_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the rule configuration.</p>
-    pub fn set_rule_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_configuration_name = input;
         self
     }
@@ -85,18 +75,12 @@ impl DebugRuleEvaluationStatusBuilder {
         &self.rule_configuration_name
     }
     /// <p>The Amazon Resource Name (ARN) of the rule evaluation job.</p>
-    pub fn rule_evaluation_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_evaluation_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_evaluation_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the rule evaluation job.</p>
-    pub fn set_rule_evaluation_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_evaluation_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_evaluation_job_arn = input;
         self
     }
@@ -110,32 +94,21 @@ impl DebugRuleEvaluationStatusBuilder {
         self
     }
     /// <p>Status of the rule evaluation.</p>
-    pub fn set_rule_evaluation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleEvaluationStatus>,
-    ) -> Self {
+    pub fn set_rule_evaluation_status(mut self, input: ::std::option::Option<crate::types::RuleEvaluationStatus>) -> Self {
         self.rule_evaluation_status = input;
         self
     }
     /// <p>Status of the rule evaluation.</p>
-    pub fn get_rule_evaluation_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RuleEvaluationStatus> {
+    pub fn get_rule_evaluation_status(&self) -> &::std::option::Option<crate::types::RuleEvaluationStatus> {
         &self.rule_evaluation_status
     }
     /// <p>Details from the rule evaluation.</p>
-    pub fn status_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details from the rule evaluation.</p>
-    pub fn set_status_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_details = input;
         self
     }
@@ -149,10 +122,7 @@ impl DebugRuleEvaluationStatusBuilder {
         self
     }
     /// <p>Timestamp when the rule evaluation status was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

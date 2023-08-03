@@ -30,9 +30,7 @@ impl LoadPermissionModifications {
 
 /// A builder for [`LoadPermissionModifications`](crate::types::LoadPermissionModifications).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoadPermissionModificationsBuilder {
     pub(crate) add: ::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>>,
     pub(crate) remove: ::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>>,
@@ -50,17 +48,12 @@ impl LoadPermissionModificationsBuilder {
         self
     }
     /// <p>The load permissions to add.</p>
-    pub fn set_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>>,
-    ) -> Self {
+    pub fn set_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>>) -> Self {
         self.add = input;
         self
     }
     /// <p>The load permissions to add.</p>
-    pub fn get_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>> {
+    pub fn get_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>> {
         &self.add
     }
     /// Appends an item to `remove`.
@@ -75,17 +68,12 @@ impl LoadPermissionModificationsBuilder {
         self
     }
     /// <p>The load permissions to remove.</p>
-    pub fn set_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>>,
-    ) -> Self {
+    pub fn set_remove(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>>) -> Self {
         self.remove = input;
         self
     }
     /// <p>The load permissions to remove.</p>
-    pub fn get_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>> {
+    pub fn get_remove(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>> {
         &self.remove
     }
     /// Consumes the builder and constructs a [`LoadPermissionModifications`](crate::types::LoadPermissionModifications).

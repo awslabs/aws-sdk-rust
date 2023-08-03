@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`TestFailoverOutput`](crate::operation::test_failover::TestFailoverOutput) with field(s):
     ///   - [`replication_group(Option<ReplicationGroup>)`](crate::operation::test_failover::TestFailoverOutput::replication_group): <p>Contains all of the attributes of a specific Redis replication group.</p>
     /// - On failure, responds with [`SdkError<TestFailoverError>`](crate::operation::test_failover::TestFailoverError)
-    pub fn test_failover(
-        &self,
-    ) -> crate::operation::test_failover::builders::TestFailoverFluentBuilder {
-        crate::operation::test_failover::builders::TestFailoverFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn test_failover(&self) -> crate::operation::test_failover::builders::TestFailoverFluentBuilder {
+        crate::operation::test_failover::builders::TestFailoverFluentBuilder::new(self.handle.clone())
     }
 }

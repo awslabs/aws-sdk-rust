@@ -21,11 +21,7 @@ impl super::Client {
     /// - On success, responds with [`CreateStackSetOutput`](crate::operation::create_stack_set::CreateStackSetOutput) with field(s):
     ///   - [`stack_set_id(Option<String>)`](crate::operation::create_stack_set::CreateStackSetOutput::stack_set_id): <p>The ID of the stack set that you're creating.</p>
     /// - On failure, responds with [`SdkError<CreateStackSetError>`](crate::operation::create_stack_set::CreateStackSetError)
-    pub fn create_stack_set(
-        &self,
-    ) -> crate::operation::create_stack_set::builders::CreateStackSetFluentBuilder {
-        crate::operation::create_stack_set::builders::CreateStackSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_stack_set(&self) -> crate::operation::create_stack_set::builders::CreateStackSetFluentBuilder {
+        crate::operation::create_stack_set::builders::CreateStackSetFluentBuilder::new(self.handle.clone())
     }
 }

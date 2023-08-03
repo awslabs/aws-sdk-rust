@@ -5,16 +5,16 @@ pub use crate::operation::list_hosted_configuration_versions::_list_hosted_confi
 
 impl ListHostedConfigurationVersionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_hosted_configuration_versions();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListHostedConfigurationVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListHostedConfigurationVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsInputBuilder,
+    inner: crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsInputBuilder,
 }
 impl ListHostedConfigurationVersionsFluentBuilder {
     /// Creates a new `ListHostedConfigurationVersions`.
@@ -37,15 +37,20 @@ impl ListHostedConfigurationVersionsFluentBuilder {
         }
     }
     /// Access the ListHostedConfigurationVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListHostedConfigurationVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,38 +87,41 @@ impl ListHostedConfigurationVersionsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_hosted_configuration_versions::paginator::ListHostedConfigurationVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_hosted_configuration_versions::paginator::ListHostedConfigurationVersionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_hosted_configuration_versions::paginator::ListHostedConfigurationVersionsPaginator {
         crate::operation::list_hosted_configuration_versions::paginator::ListHostedConfigurationVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -121,18 +130,12 @@ impl ListHostedConfigurationVersionsFluentBuilder {
         self.inner.get_application_id()
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_profile_id(input.into());
         self
     }
     /// <p>The configuration profile ID.</p>
-    pub fn set_configuration_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_profile_id(input);
         self
     }
@@ -169,18 +172,12 @@ impl ListHostedConfigurationVersionsFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>An optional filter that can be used to specify the version label of an AppConfig hosted configuration version. This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't specify an asterisk at the end of the value, only an exact match is returned.</p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_label(input.into());
         self
     }
     /// <p>An optional filter that can be used to specify the version label of an AppConfig hosted configuration version. This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't specify an asterisk at the end of the value, only an exact match is returned.</p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_label(input);
         self
     }

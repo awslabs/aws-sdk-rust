@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`delegated_admin_accounts(Option<Vec<DelegatedAdminAccount>>)`](crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsOutput::delegated_admin_accounts): <p>Details of the Amazon Inspector delegated administrator of your organization.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     /// - On failure, responds with [`SdkError<ListDelegatedAdminAccountsError>`](crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsError)
-    pub fn list_delegated_admin_accounts(&self) -> crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsFluentBuilder{
+    pub fn list_delegated_admin_accounts(
+        &self,
+    ) -> crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsFluentBuilder {
         crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsFluentBuilder::new(self.handle.clone())
     }
 }

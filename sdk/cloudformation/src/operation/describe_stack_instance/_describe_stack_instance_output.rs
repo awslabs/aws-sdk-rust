@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeStackInstanceOutput {
 }
 impl DescribeStackInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackInstanceOutput`](crate::operation::describe_stack_instance::DescribeStackInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_stack_instance::builders::DescribeStackInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_stack_instance::builders::DescribeStackInstanceOutputBuilder {
         crate::operation::describe_stack_instance::builders::DescribeStackInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStackInstanceOutput`](crate::operation::describe_stack_instance::DescribeStackInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackInstanceOutputBuilder {
     pub(crate) stack_instance: ::std::option::Option<crate::types::StackInstance>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeStackInstanceOutputBuilder {
         self
     }
     /// <p>The stack instance that matches the specified request parameters.</p>
-    pub fn set_stack_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::StackInstance>,
-    ) -> Self {
+    pub fn set_stack_instance(mut self, input: ::std::option::Option<crate::types::StackInstance>) -> Self {
         self.stack_instance = input;
         self
     }

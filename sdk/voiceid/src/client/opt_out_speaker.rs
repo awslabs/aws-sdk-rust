@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`OptOutSpeakerOutput`](crate::operation::opt_out_speaker::OptOutSpeakerOutput) with field(s):
     ///   - [`speaker(Option<Speaker>)`](crate::operation::opt_out_speaker::OptOutSpeakerOutput::speaker): <p>Details about the opted-out speaker.</p>
     /// - On failure, responds with [`SdkError<OptOutSpeakerError>`](crate::operation::opt_out_speaker::OptOutSpeakerError)
-    pub fn opt_out_speaker(
-        &self,
-    ) -> crate::operation::opt_out_speaker::builders::OptOutSpeakerFluentBuilder {
-        crate::operation::opt_out_speaker::builders::OptOutSpeakerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn opt_out_speaker(&self) -> crate::operation::opt_out_speaker::builders::OptOutSpeakerFluentBuilder {
+        crate::operation::opt_out_speaker::builders::OptOutSpeakerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -54,18 +54,12 @@ pub struct MasterUserOptionsBuilder {
 }
 impl MasterUserOptionsBuilder {
     /// <p>Amazon Resource Name (ARN) for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
-    pub fn master_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
-    pub fn set_master_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_arn = input;
         self
     }
@@ -74,18 +68,12 @@ impl MasterUserOptionsBuilder {
         &self.master_user_arn
     }
     /// <p>User name for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-    pub fn master_user_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>User name for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-    pub fn set_master_user_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_name = input;
         self
     }
@@ -94,18 +82,12 @@ impl MasterUserOptionsBuilder {
         &self.master_user_name
     }
     /// <p>Password for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-    pub fn master_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Password for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-    pub fn set_master_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
         self
     }

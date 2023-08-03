@@ -67,9 +67,7 @@ impl DescribeModelCardExportJobOutput {
         self.model_card_version
     }
     /// <p>The export output details for the model card.</p>
-    pub fn output_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelCardExportOutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<&crate::types::ModelCardExportOutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>The date and time that the model export job was created.</p>
@@ -85,9 +83,7 @@ impl DescribeModelCardExportJobOutput {
         self.failure_reason.as_deref()
     }
     /// <p>The exported model card artifacts.</p>
-    pub fn export_artifacts(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelCardExportArtifacts> {
+    pub fn export_artifacts(&self) -> ::std::option::Option<&crate::types::ModelCardExportArtifacts> {
         self.export_artifacts.as_ref()
     }
 }
@@ -98,16 +94,14 @@ impl ::aws_http::request_id::RequestId for DescribeModelCardExportJobOutput {
 }
 impl DescribeModelCardExportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeModelCardExportJobOutput`](crate::operation::describe_model_card_export_job::DescribeModelCardExportJobOutput).
-    pub fn builder() -> crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobOutputBuilder {
         crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeModelCardExportJobOutput`](crate::operation::describe_model_card_export_job::DescribeModelCardExportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeModelCardExportJobOutputBuilder {
     pub(crate) model_card_export_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_card_export_job_arn: ::std::option::Option<::std::string::String>,
@@ -123,18 +117,12 @@ pub struct DescribeModelCardExportJobOutputBuilder {
 }
 impl DescribeModelCardExportJobOutputBuilder {
     /// <p>The name of the model card export job to describe.</p>
-    pub fn model_card_export_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_export_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_export_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model card export job to describe.</p>
-    pub fn set_model_card_export_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_export_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_export_job_name = input;
         self
     }
@@ -143,18 +131,12 @@ impl DescribeModelCardExportJobOutputBuilder {
         &self.model_card_export_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the model card export job.</p>
-    pub fn model_card_export_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_export_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model card export job.</p>
-    pub fn set_model_card_export_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_export_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_export_job_arn = input;
         self
     }
@@ -178,10 +160,7 @@ impl DescribeModelCardExportJobOutputBuilder {
     /// <li> <p> <code>Completed</code>: The model card export job is complete.</p> </li>
     /// <li> <p> <code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardExportJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelCardExportJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -195,18 +174,12 @@ impl DescribeModelCardExportJobOutputBuilder {
         &self.status
     }
     /// <p>The name of the model card that the model export job exports.</p>
-    pub fn model_card_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model card that the model export job exports.</p>
-    pub fn set_model_card_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_name = input;
         self
     }
@@ -234,17 +207,12 @@ impl DescribeModelCardExportJobOutputBuilder {
         self
     }
     /// <p>The export output details for the model card.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardExportOutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::ModelCardExportOutputConfig>) -> Self {
         self.output_config = input;
         self
     }
     /// <p>The export output details for the model card.</p>
-    pub fn get_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelCardExportOutputConfig> {
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::ModelCardExportOutputConfig> {
         &self.output_config
     }
     /// <p>The date and time that the model export job was created.</p>
@@ -253,10 +221,7 @@ impl DescribeModelCardExportJobOutputBuilder {
         self
     }
     /// <p>The date and time that the model export job was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -270,10 +235,7 @@ impl DescribeModelCardExportJobOutputBuilder {
         self
     }
     /// <p>The date and time that the model export job was last modified.</p>
-    pub fn set_last_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_at = input;
         self
     }
@@ -282,18 +244,12 @@ impl DescribeModelCardExportJobOutputBuilder {
         &self.last_modified_at
     }
     /// <p>The failure reason if the model export job fails.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The failure reason if the model export job fails.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -307,17 +263,12 @@ impl DescribeModelCardExportJobOutputBuilder {
         self
     }
     /// <p>The exported model card artifacts.</p>
-    pub fn set_export_artifacts(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardExportArtifacts>,
-    ) -> Self {
+    pub fn set_export_artifacts(mut self, input: ::std::option::Option<crate::types::ModelCardExportArtifacts>) -> Self {
         self.export_artifacts = input;
         self
     }
     /// <p>The exported model card artifacts.</p>
-    pub fn get_export_artifacts(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelCardExportArtifacts> {
+    pub fn get_export_artifacts(&self) -> &::std::option::Option<crate::types::ModelCardExportArtifacts> {
         &self.export_artifacts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -330,9 +281,7 @@ impl DescribeModelCardExportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeModelCardExportJobOutput`](crate::operation::describe_model_card_export_job::DescribeModelCardExportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_model_card_export_job::DescribeModelCardExportJobOutput {
+    pub fn build(self) -> crate::operation::describe_model_card_export_job::DescribeModelCardExportJobOutput {
         crate::operation::describe_model_card_export_job::DescribeModelCardExportJobOutput {
             model_card_export_job_name: self.model_card_export_job_name,
             model_card_export_job_arn: self.model_card_export_job_arn,

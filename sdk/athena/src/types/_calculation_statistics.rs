@@ -30,9 +30,7 @@ impl CalculationStatistics {
 
 /// A builder for [`CalculationStatistics`](crate::types::CalculationStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CalculationStatisticsBuilder {
     pub(crate) dpu_execution_in_millis: ::std::option::Option<i64>,
     pub(crate) progress: ::std::option::Option<::std::string::String>,

@@ -23,9 +23,7 @@ impl DimensionDetail {
 
 /// A builder for [`DimensionDetail`](crate::types::DimensionDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionDetailBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl DimensionDetailBuilder {
     }
     /// Consumes the builder and constructs a [`DimensionDetail`](crate::types::DimensionDetail).
     pub fn build(self) -> crate::types::DimensionDetail {
-        crate::types::DimensionDetail {
-            identifier: self.identifier,
-        }
+        crate::types::DimensionDetail { identifier: self.identifier }
     }
 }

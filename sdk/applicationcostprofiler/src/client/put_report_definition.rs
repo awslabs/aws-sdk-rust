@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`PutReportDefinitionOutput`](crate::operation::put_report_definition::PutReportDefinitionOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::operation::put_report_definition::PutReportDefinitionOutput::report_id): <p>ID of the report.</p>
     /// - On failure, responds with [`SdkError<PutReportDefinitionError>`](crate::operation::put_report_definition::PutReportDefinitionError)
-    pub fn put_report_definition(
-        &self,
-    ) -> crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder {
-        crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_report_definition(&self) -> crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder {
+        crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

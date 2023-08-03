@@ -30,9 +30,7 @@ impl ContactFilter {
 
 /// A builder for [`ContactFilter`](crate::types::ContactFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContactFilterBuilder {
     pub(crate) channel: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
@@ -50,10 +48,7 @@ impl ContactFilterBuilder {
         self
     }
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
-    pub fn set_channel(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_channel(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.channel = input;
         self
     }

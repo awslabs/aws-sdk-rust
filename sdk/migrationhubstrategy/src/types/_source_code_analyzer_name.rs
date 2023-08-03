@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SourceCodeAnalyzerName {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for SourceCodeAnalyzerName {
             "CSHARP_ANALYZER" => SourceCodeAnalyzerName::CsharpAnalyzer,
             "JAVA_ANALYZER" => SourceCodeAnalyzerName::JavaAnalyzer,
             "PORTING_ASSISTANT" => SourceCodeAnalyzerName::PortingAssistant,
-            other => SourceCodeAnalyzerName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SourceCodeAnalyzerName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl SourceCodeAnalyzerName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BYTECODE_ANALYZER",
-            "CSHARP_ANALYZER",
-            "JAVA_ANALYZER",
-            "PORTING_ASSISTANT",
-        ]
+        &["BYTECODE_ANALYZER", "CSHARP_ANALYZER", "JAVA_ANALYZER", "PORTING_ASSISTANT"]
     }
 }
 impl ::std::convert::AsRef<str> for SourceCodeAnalyzerName {

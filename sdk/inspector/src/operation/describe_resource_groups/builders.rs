@@ -37,10 +37,7 @@ impl DescribeResourceGroupsFluentBuilder {
         }
     }
     /// Access the DescribeResourceGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_resource_groups::builders::DescribeResourceGroupsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_resource_groups::builders::DescribeResourceGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeResourceGroupsFluentBuilder {
             crate::operation::describe_resource_groups::DescribeResourceGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_resource_groups::DescribeResourceGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_groups::DescribeResourceGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeResourceGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeResourceGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_resource_groups::DescribeResourceGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_resource_groups::DescribeResourceGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_groups::DescribeResourceGroupsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeResourceGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_resource_groups::DescribeResourceGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_resource_groups::DescribeResourceGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_groups::DescribeResourceGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeResourceGroupsFluentBuilder {
             crate::operation::describe_resource_groups::DescribeResourceGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_resource_groups::DescribeResourceGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resource_groups::DescribeResourceGroupsError>,
     > {
         self.customize_middleware().await
     }
@@ -128,25 +114,17 @@ impl DescribeResourceGroupsFluentBuilder {
     /// To override the contents of this collection use [`set_resource_group_arns`](Self::set_resource_group_arns).
     ///
     /// <p>The ARN that specifies the resource group that you want to describe.</p>
-    pub fn resource_group_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_group_arns(input.into());
         self
     }
     /// <p>The ARN that specifies the resource group that you want to describe.</p>
-    pub fn set_resource_group_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_group_arns(input);
         self
     }
     /// <p>The ARN that specifies the resource group that you want to describe.</p>
-    pub fn get_resource_group_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_group_arns()
     }
 }

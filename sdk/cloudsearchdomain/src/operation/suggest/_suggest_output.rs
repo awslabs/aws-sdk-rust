@@ -36,9 +36,7 @@ impl SuggestOutput {
 
 /// A builder for [`SuggestOutput`](crate::operation::suggest::SuggestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuggestOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SuggestStatus>,
     pub(crate) suggest: ::std::option::Option<crate::types::SuggestModel>,

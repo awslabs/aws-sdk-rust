@@ -26,7 +26,7 @@ impl BatchGetApplicationRevisionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetApplicationRevisionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_application_revisions::builders::BatchGetApplicationRevisionsInputBuilder,
+    inner: crate::operation::batch_get_application_revisions::builders::BatchGetApplicationRevisionsInputBuilder,
 }
 impl BatchGetApplicationRevisionsFluentBuilder {
     /// Creates a new `BatchGetApplicationRevisions`.
@@ -37,7 +37,7 @@ impl BatchGetApplicationRevisionsFluentBuilder {
         }
     }
     /// Access the BatchGetApplicationRevisions as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_get_application_revisions::builders::BatchGetApplicationRevisionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_get_application_revisions::builders::BatchGetApplicationRevisionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchGetApplicationRevisionsFluentBuilder {
             crate::operation::batch_get_application_revisions::BatchGetApplicationRevisions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchGetApplicationRevisionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchGetApplicationRevisionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchGetApplicationRevisionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl BatchGetApplicationRevisionsFluentBuilder {
             crate::operation::batch_get_application_revisions::BatchGetApplicationRevisions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of an CodeDeploy application about which to get revision information.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of an CodeDeploy application about which to get revision information.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -150,17 +133,12 @@ impl BatchGetApplicationRevisionsFluentBuilder {
         self
     }
     /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
-    pub fn set_revisions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>>,
-    ) -> Self {
+    pub fn set_revisions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>>) -> Self {
         self.inner = self.inner.set_revisions(input);
         self
     }
     /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
-    pub fn get_revisions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>> {
+    pub fn get_revisions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>> {
         self.inner.get_revisions()
     }
 }

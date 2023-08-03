@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeHostKeyOutput {
 }
 impl DescribeHostKeyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHostKeyOutput`](crate::operation::describe_host_key::DescribeHostKeyOutput).
-    pub fn builder() -> crate::operation::describe_host_key::builders::DescribeHostKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_host_key::builders::DescribeHostKeyOutputBuilder {
         crate::operation::describe_host_key::builders::DescribeHostKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHostKeyOutput`](crate::operation::describe_host_key::DescribeHostKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHostKeyOutputBuilder {
     pub(crate) host_key: ::std::option::Option<crate::types::DescribedHostKey>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeHostKeyOutputBuilder {
         self
     }
     /// <p>Returns the details for the specified host key.</p>
-    pub fn set_host_key(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribedHostKey>,
-    ) -> Self {
+    pub fn set_host_key(mut self, input: ::std::option::Option<crate::types::DescribedHostKey>) -> Self {
         self.host_key = input;
         self
     }

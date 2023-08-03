@@ -26,7 +26,7 @@ impl StartSpeechSynthesisTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartSpeechSynthesisTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskInputBuilder,
+    inner: crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskInputBuilder,
 }
 impl StartSpeechSynthesisTaskFluentBuilder {
     /// Creates a new `StartSpeechSynthesisTask`.
@@ -37,7 +37,7 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         }
     }
     /// Access the StartSpeechSynthesisTask as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartSpeechSynthesisTaskFluentBuilder {
             crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartSpeechSynthesisTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl StartSpeechSynthesisTaskFluentBuilder {
             crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +131,7 @@ impl StartSpeechSynthesisTaskFluentBuilder {
     }
     /// <p>Optional language code for the Speech Synthesis request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
     /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
@@ -159,25 +145,17 @@ impl StartSpeechSynthesisTaskFluentBuilder {
     /// To override the contents of this collection use [`set_lexicon_names`](Self::set_lexicon_names).
     ///
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
-    pub fn lexicon_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lexicon_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lexicon_names(input.into());
         self
     }
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
-    pub fn set_lexicon_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_lexicon_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_lexicon_names(input);
         self
     }
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
-    pub fn get_lexicon_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lexicon_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_lexicon_names()
     }
     /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
@@ -186,10 +164,7 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         self
     }
     /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
-    pub fn set_output_format(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputFormat>,
-    ) -> Self {
+    pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
         self.inner = self.inner.set_output_format(input);
         self
     }
@@ -198,18 +173,12 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         self.inner.get_output_format()
     }
     /// <p>Amazon S3 bucket name to which the output file will be saved.</p>
-    pub fn output_s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_s3_bucket_name(input.into());
         self
     }
     /// <p>Amazon S3 bucket name to which the output file will be saved.</p>
-    pub fn set_output_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_s3_bucket_name(input);
         self
     }
@@ -218,18 +187,12 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         self.inner.get_output_s3_bucket_name()
     }
     /// <p>The Amazon S3 key prefix for the output speech file.</p>
-    pub fn output_s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_s3_key_prefix(input.into());
         self
     }
     /// <p>The Amazon S3 key prefix for the output speech file.</p>
-    pub fn set_output_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_s3_key_prefix(input);
         self
     }
@@ -258,18 +221,12 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         self.inner.get_sample_rate()
     }
     /// <p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sns_topic_arn(input.into());
         self
     }
     /// <p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
     }
@@ -287,17 +244,12 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         self
     }
     /// <p>The type of speech marks returned for the input text.</p>
-    pub fn set_speech_mark_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>>,
-    ) -> Self {
+    pub fn set_speech_mark_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>>) -> Self {
         self.inner = self.inner.set_speech_mark_types(input);
         self
     }
     /// <p>The type of speech marks returned for the input text.</p>
-    pub fn get_speech_mark_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>> {
+    pub fn get_speech_mark_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>> {
         self.inner.get_speech_mark_types()
     }
     /// <p>The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text. </p>

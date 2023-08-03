@@ -10,9 +10,7 @@ pub struct AppRegistryConfiguration {
 }
 impl AppRegistryConfiguration {
     /// <p> Includes the definition of a <code>tagQuery</code>. </p>
-    pub fn tag_query_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TagQueryConfiguration> {
+    pub fn tag_query_configuration(&self) -> ::std::option::Option<&crate::types::TagQueryConfiguration> {
         self.tag_query_configuration.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl AppRegistryConfiguration {
 
 /// A builder for [`AppRegistryConfiguration`](crate::types::AppRegistryConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppRegistryConfigurationBuilder {
     pub(crate) tag_query_configuration: ::std::option::Option<crate::types::TagQueryConfiguration>,
 }
@@ -38,17 +34,12 @@ impl AppRegistryConfigurationBuilder {
         self
     }
     /// <p> Includes the definition of a <code>tagQuery</code>. </p>
-    pub fn set_tag_query_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TagQueryConfiguration>,
-    ) -> Self {
+    pub fn set_tag_query_configuration(mut self, input: ::std::option::Option<crate::types::TagQueryConfiguration>) -> Self {
         self.tag_query_configuration = input;
         self
     }
     /// <p> Includes the definition of a <code>tagQuery</code>. </p>
-    pub fn get_tag_query_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TagQueryConfiguration> {
+    pub fn get_tag_query_configuration(&self) -> &::std::option::Option<crate::types::TagQueryConfiguration> {
         &self.tag_query_configuration
     }
     /// Consumes the builder and constructs a [`AppRegistryConfiguration`](crate::types::AppRegistryConfiguration).

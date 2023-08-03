@@ -10,10 +10,7 @@ impl UpdateBridgeStateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_bridge_state::UpdateBridgeStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bridge_state::UpdateBridgeStateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge_state::UpdateBridgeStateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_bridge_state();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateBridgeStateFluentBuilder {
         }
     }
     /// Access the UpdateBridgeState as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_bridge_state::builders::UpdateBridgeStateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_bridge_state::builders::UpdateBridgeStateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateBridgeStateFluentBuilder {
             crate::operation::update_bridge_state::UpdateBridgeState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bridge_state::UpdateBridgeStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge_state::UpdateBridgeStateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateBridgeStateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateBridgeStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_bridge_state::UpdateBridgeStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bridge_state::UpdateBridgeStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge_state::UpdateBridgeStateError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateBridgeStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_bridge_state::UpdateBridgeStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bridge_state::UpdateBridgeStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge_state::UpdateBridgeStateError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateBridgeStateFluentBuilder {
             crate::operation::update_bridge_state::UpdateBridgeState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bridge_state::UpdateBridgeStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge_state::UpdateBridgeStateError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl UpdateBridgeStateFluentBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DesiredState>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::DesiredState>) -> Self {
         self.inner = self.inner.set_desired_state(input);
         self
     }

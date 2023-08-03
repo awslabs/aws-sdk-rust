@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`entities_detection_job_properties_list(Option<Vec<EntitiesDetectionJobProperties>>)`](crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsOutput::entities_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListEntitiesDetectionJobsError>`](crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsError)
-    pub fn list_entities_detection_jobs(&self) -> crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsFluentBuilder{
+    pub fn list_entities_detection_jobs(&self) -> crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsFluentBuilder {
         crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsFluentBuilder::new(self.handle.clone())
     }
 }

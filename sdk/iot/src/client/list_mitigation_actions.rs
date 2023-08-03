@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`action_identifiers(Option<Vec<MitigationActionIdentifier>>)`](crate::operation::list_mitigation_actions::ListMitigationActionsOutput::action_identifiers): <p>A set of actions that matched the specified filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_mitigation_actions::ListMitigationActionsOutput::next_token): <p>The token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListMitigationActionsError>`](crate::operation::list_mitigation_actions::ListMitigationActionsError)
-    pub fn list_mitigation_actions(
-        &self,
-    ) -> crate::operation::list_mitigation_actions::builders::ListMitigationActionsFluentBuilder
-    {
-        crate::operation::list_mitigation_actions::builders::ListMitigationActionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_mitigation_actions(&self) -> crate::operation::list_mitigation_actions::builders::ListMitigationActionsFluentBuilder {
+        crate::operation::list_mitigation_actions::builders::ListMitigationActionsFluentBuilder::new(self.handle.clone())
     }
 }

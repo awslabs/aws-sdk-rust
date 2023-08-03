@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeAnomalyDetectionExecutionsOut
 }
 impl DescribeAnomalyDetectionExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectionExecutionsOutput`](crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput).
-    pub fn builder() -> crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsOutputBuilder {
         crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAnomalyDetectionExecutionsOutput`](crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAnomalyDetectionExecutionsOutputBuilder {
-    pub(crate) execution_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>>,
+    pub(crate) execution_list: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeAnomalyDetectionExecutionsOutputBuilder {
         self
     }
     /// <p>A list of detection jobs.</p>
-    pub fn set_execution_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>>,
-    ) -> Self {
+    pub fn set_execution_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>>) -> Self {
         self.execution_list = input;
         self
     }
     /// <p>A list of detection jobs.</p>
-    pub fn get_execution_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>> {
+    pub fn get_execution_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>> {
         &self.execution_list
     }
     /// <p>The pagination token that's included if more results are available.</p>
@@ -94,12 +86,10 @@ impl DescribeAnomalyDetectionExecutionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAnomalyDetectionExecutionsOutput`](crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput).
-    pub fn build(self) -> crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput{
+    pub fn build(self) -> crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput {
         crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput {
-            execution_list: self.execution_list
-            ,
-            next_token: self.next_token
-            ,
+            execution_list: self.execution_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

@@ -3,12 +3,7 @@ pub(crate) fn de_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::Policy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -18,138 +13,98 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "PolicyId" => {
-                                builder = builder.set_policy_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "PolicyId" => {
+                            builder = builder.set_policy_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "PolicyName" => {
-                                builder = builder.set_policy_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "PolicyUpdateToken" => {
-                                builder = builder.set_policy_update_token(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "SecurityServicePolicyData" => {
-                                builder = builder.set_security_service_policy_data(
-                                    crate::protocol_serde::shape_security_service_policy_data::de_security_service_policy_data(tokens)?
-                                );
-                            }
-                            "ResourceType" => {
-                                builder = builder.set_resource_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "ResourceTypeList" => {
-                                builder = builder.set_resource_type_list(
-                                    crate::protocol_serde::shape_resource_type_list::de_resource_type_list(tokens)?
-                                );
-                            }
-                            "ResourceTags" => {
-                                builder = builder.set_resource_tags(
-                                    crate::protocol_serde::shape_resource_tags::de_resource_tags(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "ExcludeResourceTags" => {
-                                builder = builder.set_exclude_resource_tags(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "RemediationEnabled" => {
-                                builder = builder.set_remediation_enabled(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "DeleteUnusedFMManagedResources" => {
-                                builder = builder.set_delete_unused_fm_managed_resources(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "IncludeMap" => {
-                                builder = builder.set_include_map(
-                                    crate::protocol_serde::shape_customer_policy_scope_map::de_customer_policy_scope_map(tokens)?
-                                );
-                            }
-                            "ExcludeMap" => {
-                                builder = builder.set_exclude_map(
-                                    crate::protocol_serde::shape_customer_policy_scope_map::de_customer_policy_scope_map(tokens)?
-                                );
-                            }
-                            "ResourceSetIds" => {
-                                builder = builder.set_resource_set_ids(
-                                    crate::protocol_serde::shape_resource_set_ids::de_resource_set_ids(tokens)?
-                                );
-                            }
-                            "PolicyDescription" => {
-                                builder = builder.set_policy_description(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "PolicyStatus" => {
-                                builder = builder.set_policy_status(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::CustomerPolicyStatus::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "PolicyName" => {
+                            builder = builder.set_policy_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "PolicyUpdateToken" => {
+                            builder = builder.set_policy_update_token(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "SecurityServicePolicyData" => {
+                            builder = builder.set_security_service_policy_data(
+                                crate::protocol_serde::shape_security_service_policy_data::de_security_service_policy_data(tokens)?,
+                            );
+                        }
+                        "ResourceType" => {
+                            builder = builder.set_resource_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ResourceTypeList" => {
+                            builder = builder.set_resource_type_list(crate::protocol_serde::shape_resource_type_list::de_resource_type_list(tokens)?);
+                        }
+                        "ResourceTags" => {
+                            builder = builder.set_resource_tags(crate::protocol_serde::shape_resource_tags::de_resource_tags(tokens)?);
+                        }
+                        "ExcludeResourceTags" => {
+                            builder = builder.set_exclude_resource_tags(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "RemediationEnabled" => {
+                            builder = builder.set_remediation_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "DeleteUnusedFMManagedResources" => {
+                            builder = builder
+                                .set_delete_unused_fm_managed_resources(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "IncludeMap" => {
+                            builder = builder.set_include_map(crate::protocol_serde::shape_customer_policy_scope_map::de_customer_policy_scope_map(
+                                tokens,
+                            )?);
+                        }
+                        "ExcludeMap" => {
+                            builder = builder.set_exclude_map(crate::protocol_serde::shape_customer_policy_scope_map::de_customer_policy_scope_map(
+                                tokens,
+                            )?);
+                        }
+                        "ResourceSetIds" => {
+                            builder = builder.set_resource_set_ids(crate::protocol_serde::shape_resource_set_ids::de_resource_set_ids(tokens)?);
+                        }
+                        "PolicyDescription" => {
+                            builder = builder.set_policy_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "PolicyStatus" => {
+                            builder = builder.set_policy_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CustomerPolicyStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }
 
@@ -190,24 +145,17 @@ pub fn ser_policy(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_resource_tag::ser_resource_tag(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_resource_tag::ser_resource_tag(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }
         array_11.finish();
     }
     {
-        object
-            .key("ExcludeResourceTags")
-            .boolean(input.exclude_resource_tags);
+        object.key("ExcludeResourceTags").boolean(input.exclude_resource_tags);
     }
     {
-        object
-            .key("RemediationEnabled")
-            .boolean(input.remediation_enabled);
+        object.key("RemediationEnabled").boolean(input.remediation_enabled);
     }
     if input.delete_unused_fm_managed_resources {
         object

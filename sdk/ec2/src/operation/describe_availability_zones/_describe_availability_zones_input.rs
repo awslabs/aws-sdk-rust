@@ -69,16 +69,14 @@ impl DescribeAvailabilityZonesInput {
 }
 impl DescribeAvailabilityZonesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAvailabilityZonesInput`](crate::operation::describe_availability_zones::DescribeAvailabilityZonesInput).
-    pub fn builder() -> crate::operation::describe_availability_zones::builders::DescribeAvailabilityZonesInputBuilder{
+    pub fn builder() -> crate::operation::describe_availability_zones::builders::DescribeAvailabilityZonesInputBuilder {
         crate::operation::describe_availability_zones::builders::DescribeAvailabilityZonesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAvailabilityZonesInput`](crate::operation::describe_availability_zones::DescribeAvailabilityZonesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAvailabilityZonesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) zone_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -123,10 +121,7 @@ impl DescribeAvailabilityZonesInputBuilder {
     /// <li> <p> <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>), the Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li>
     /// <li> <p> <code>zone-type</code> - The type of zone (<code>availability-zone</code> | <code>local-zone</code> | <code>wavelength-zone</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -158,10 +153,7 @@ impl DescribeAvailabilityZonesInputBuilder {
         self
     }
     /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn set_zone_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_zone_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.zone_names = input;
         self
     }
@@ -181,10 +173,7 @@ impl DescribeAvailabilityZonesInputBuilder {
         self
     }
     /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn set_zone_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.zone_ids = input;
         self
     }
@@ -230,14 +219,12 @@ impl DescribeAvailabilityZonesInputBuilder {
         crate::operation::describe_availability_zones::DescribeAvailabilityZonesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_availability_zones::DescribeAvailabilityZonesInput {
-                filters: self.filters,
-                zone_names: self.zone_names,
-                zone_ids: self.zone_ids,
-                all_availability_zones: self.all_availability_zones,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_availability_zones::DescribeAvailabilityZonesInput {
+            filters: self.filters,
+            zone_names: self.zone_names,
+            zone_ids: self.zone_ids,
+            all_availability_zones: self.all_availability_zones,
+            dry_run: self.dry_run,
+        })
     }
 }

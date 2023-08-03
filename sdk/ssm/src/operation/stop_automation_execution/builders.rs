@@ -26,8 +26,7 @@ impl StopAutomationExecutionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopAutomationExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::stop_automation_execution::builders::StopAutomationExecutionInputBuilder,
+    inner: crate::operation::stop_automation_execution::builders::StopAutomationExecutionInputBuilder,
 }
 impl StopAutomationExecutionFluentBuilder {
     /// Creates a new `StopAutomationExecution`.
@@ -38,10 +37,7 @@ impl StopAutomationExecutionFluentBuilder {
         }
     }
     /// Access the StopAutomationExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_automation_execution::builders::StopAutomationExecutionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::stop_automation_execution::builders::StopAutomationExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl StopAutomationExecutionFluentBuilder {
             crate::operation::stop_automation_execution::StopAutomationExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_automation_execution::StopAutomationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_automation_execution::StopAutomationExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl StopAutomationExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl StopAutomationExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_automation_execution::StopAutomationExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_automation_execution::StopAutomationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_automation_execution::StopAutomationExecutionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl StopAutomationExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_automation_execution::StopAutomationExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_automation_execution::StopAutomationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_automation_execution::StopAutomationExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl StopAutomationExecutionFluentBuilder {
             crate::operation::stop_automation_execution::StopAutomationExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_automation_execution::StopAutomationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_automation_execution::StopAutomationExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The execution ID of the Automation to stop.</p>
-    pub fn automation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn automation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.automation_execution_id(input.into());
         self
     }
     /// <p>The execution ID of the Automation to stop.</p>
-    pub fn set_automation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_automation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_automation_execution_id(input);
         self
     }

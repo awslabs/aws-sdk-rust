@@ -37,9 +37,7 @@ impl RestartSimulationJobFluentBuilder {
         }
     }
     /// Access the RestartSimulationJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::restart_simulation_job::builders::RestartSimulationJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::restart_simulation_job::builders::RestartSimulationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl RestartSimulationJobFluentBuilder {
             crate::operation::restart_simulation_job::RestartSimulationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restart_simulation_job::RestartSimulationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restart_simulation_job::RestartSimulationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl RestartSimulationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl RestartSimulationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restart_simulation_job::RestartSimulationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restart_simulation_job::RestartSimulationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restart_simulation_job::RestartSimulationJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl RestartSimulationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restart_simulation_job::RestartSimulationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restart_simulation_job::RestartSimulationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restart_simulation_job::RestartSimulationJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl RestartSimulationJobFluentBuilder {
             crate::operation::restart_simulation_job::RestartSimulationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restart_simulation_job::RestartSimulationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restart_simulation_job::RestartSimulationJobError>,
     > {
         self.customize_middleware().await
     }

@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`session_policy_arn(impl ::std::convert::Into<String>)`](crate::operation::update_studio_session_mapping::builders::UpdateStudioSessionMappingFluentBuilder::session_policy_arn) / [`set_session_policy_arn(Option<String>)`](crate::operation::update_studio_session_mapping::builders::UpdateStudioSessionMappingFluentBuilder::set_session_policy_arn): <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified user or group.</p>
     /// - On success, responds with [`UpdateStudioSessionMappingOutput`](crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingOutput)
     /// - On failure, responds with [`SdkError<UpdateStudioSessionMappingError>`](crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingError)
-    pub fn update_studio_session_mapping(&self) -> crate::operation::update_studio_session_mapping::builders::UpdateStudioSessionMappingFluentBuilder{
+    pub fn update_studio_session_mapping(
+        &self,
+    ) -> crate::operation::update_studio_session_mapping::builders::UpdateStudioSessionMappingFluentBuilder {
         crate::operation::update_studio_session_mapping::builders::UpdateStudioSessionMappingFluentBuilder::new(self.handle.clone())
     }
 }

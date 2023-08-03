@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetResourcePoliciesOutput {
 }
 impl GetResourcePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcePoliciesOutput`](crate::operation::get_resource_policies::GetResourcePoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder {
-        crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder {
+        crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourcePoliciesOutput`](crate::operation::get_resource_policies::GetResourcePoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourcePoliciesOutputBuilder {
     pub(crate) policies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl GetResourcePoliciesOutputBuilder {
         self
     }
     /// <p>An array of resource policy documents in JSON format.</p>
-    pub fn set_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.policies = input;
         self
     }

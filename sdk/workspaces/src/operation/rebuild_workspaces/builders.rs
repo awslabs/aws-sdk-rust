@@ -10,10 +10,7 @@ impl RebuildWorkspacesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::rebuild_workspaces::RebuildWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rebuild_workspaces::RebuildWorkspacesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rebuild_workspaces::RebuildWorkspacesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.rebuild_workspaces();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl RebuildWorkspacesFluentBuilder {
         }
     }
     /// Access the RebuildWorkspaces as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::rebuild_workspaces::builders::RebuildWorkspacesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::rebuild_workspaces::builders::RebuildWorkspacesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl RebuildWorkspacesFluentBuilder {
             crate::operation::rebuild_workspaces::RebuildWorkspaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rebuild_workspaces::RebuildWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rebuild_workspaces::RebuildWorkspacesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl RebuildWorkspacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl RebuildWorkspacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::rebuild_workspaces::RebuildWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rebuild_workspaces::RebuildWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rebuild_workspaces::RebuildWorkspacesError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl RebuildWorkspacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::rebuild_workspaces::RebuildWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rebuild_workspaces::RebuildWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rebuild_workspaces::RebuildWorkspacesError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl RebuildWorkspacesFluentBuilder {
             crate::operation::rebuild_workspaces::RebuildWorkspaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rebuild_workspaces::RebuildWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rebuild_workspaces::RebuildWorkspacesError>,
     > {
         self.customize_middleware().await
     }
@@ -135,17 +119,12 @@ impl RebuildWorkspacesFluentBuilder {
         self
     }
     /// <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
-    pub fn set_rebuild_workspace_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RebuildRequest>>,
-    ) -> Self {
+    pub fn set_rebuild_workspace_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RebuildRequest>>) -> Self {
         self.inner = self.inner.set_rebuild_workspace_requests(input);
         self
     }
     /// <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
-    pub fn get_rebuild_workspace_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RebuildRequest>> {
+    pub fn get_rebuild_workspace_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RebuildRequest>> {
         self.inner.get_rebuild_workspace_requests()
     }
 }

@@ -15,10 +15,7 @@ pub fn ser_create_index_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_attribute_key::ser_attribute_key(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_attribute_key::ser_attribute_key(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

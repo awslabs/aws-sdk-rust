@@ -32,9 +32,7 @@ impl GetMilestoneInput {
 
 /// A builder for [`GetMilestoneInput`](crate::operation::get_milestone::GetMilestoneInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMilestoneInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) milestone_number: ::std::option::Option<i32>,
@@ -72,12 +70,7 @@ impl GetMilestoneInputBuilder {
         &self.milestone_number
     }
     /// Consumes the builder and constructs a [`GetMilestoneInput`](crate::operation::get_milestone::GetMilestoneInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_milestone::GetMilestoneInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_milestone::GetMilestoneInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_milestone::GetMilestoneInput {
             workload_id: self.workload_id,
             milestone_number: self.milestone_number,

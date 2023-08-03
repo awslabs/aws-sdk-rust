@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for AdminListDevicesOutput {
 }
 impl AdminListDevicesOutput {
     /// Creates a new builder-style object to manufacture [`AdminListDevicesOutput`](crate::operation::admin_list_devices::AdminListDevicesOutput).
-    pub fn builder() -> crate::operation::admin_list_devices::builders::AdminListDevicesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::admin_list_devices::builders::AdminListDevicesOutputBuilder {
         crate::operation::admin_list_devices::builders::AdminListDevicesOutputBuilder::default()
     }
 }
 
 /// A builder for [`AdminListDevicesOutput`](crate::operation::admin_list_devices::AdminListDevicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdminListDevicesOutputBuilder {
     pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceType>>,
     pub(crate) pagination_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +55,7 @@ impl AdminListDevicesOutputBuilder {
         self
     }
     /// <p>The devices in the list of devices response.</p>
-    pub fn set_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceType>>,
-    ) -> Self {
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceType>>) -> Self {
         self.devices = input;
         self
     }
@@ -70,18 +64,12 @@ impl AdminListDevicesOutputBuilder {
         &self.devices
     }
     /// <p>The pagination token.</p>
-    pub fn pagination_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pagination_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pagination_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pagination token.</p>
-    pub fn set_pagination_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pagination_token = input;
         self
     }

@@ -17,9 +17,7 @@ impl GetPhoneNumberSettingsOutput {
         self.calling_name.as_deref()
     }
     /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
-    pub fn calling_name_updated_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn calling_name_updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.calling_name_updated_timestamp.as_ref()
     }
 }
@@ -27,10 +25,7 @@ impl ::std::fmt::Debug for GetPhoneNumberSettingsOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetPhoneNumberSettingsOutput");
         formatter.field("calling_name", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "calling_name_updated_timestamp",
-            &self.calling_name_updated_timestamp,
-        );
+        formatter.field("calling_name_updated_timestamp", &self.calling_name_updated_timestamp);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -42,9 +37,7 @@ impl ::aws_http::request_id::RequestId for GetPhoneNumberSettingsOutput {
 }
 impl GetPhoneNumberSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetPhoneNumberSettingsOutput`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsOutputBuilder {
         crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsOutputBuilder::default()
     }
 }
@@ -78,17 +71,12 @@ impl GetPhoneNumberSettingsOutputBuilder {
         self
     }
     /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
-    pub fn set_calling_name_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_calling_name_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.calling_name_updated_timestamp = input;
         self
     }
     /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
-    pub fn get_calling_name_updated_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_calling_name_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.calling_name_updated_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -101,9 +89,7 @@ impl GetPhoneNumberSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPhoneNumberSettingsOutput`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_phone_number_settings::GetPhoneNumberSettingsOutput {
+    pub fn build(self) -> crate::operation::get_phone_number_settings::GetPhoneNumberSettingsOutput {
         crate::operation::get_phone_number_settings::GetPhoneNumberSettingsOutput {
             calling_name: self.calling_name,
             calling_name_updated_timestamp: self.calling_name_updated_timestamp,
@@ -115,10 +101,7 @@ impl ::std::fmt::Debug for GetPhoneNumberSettingsOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetPhoneNumberSettingsOutputBuilder");
         formatter.field("calling_name", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "calling_name_updated_timestamp",
-            &self.calling_name_updated_timestamp,
-        );
+        formatter.field("calling_name_updated_timestamp", &self.calling_name_updated_timestamp);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

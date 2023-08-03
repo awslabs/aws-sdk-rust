@@ -58,16 +58,14 @@ impl DescribeApplicableIndividualAssessmentsInput {
 }
 impl DescribeApplicableIndividualAssessmentsInput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicableIndividualAssessmentsInput`](crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsInput).
-    pub fn builder() -> crate::operation::describe_applicable_individual_assessments::builders::DescribeApplicableIndividualAssessmentsInputBuilder{
+    pub fn builder() -> crate::operation::describe_applicable_individual_assessments::builders::DescribeApplicableIndividualAssessmentsInputBuilder {
         crate::operation::describe_applicable_individual_assessments::builders::DescribeApplicableIndividualAssessmentsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicableIndividualAssessmentsInput`](crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicableIndividualAssessmentsInputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct DescribeApplicableIndividualAssessmentsInputBuilder {
 }
 impl DescribeApplicableIndividualAssessmentsInputBuilder {
     /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>
-    pub fn replication_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>
-    pub fn set_replication_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_task_arn = input;
         self
     }
@@ -99,18 +91,12 @@ impl DescribeApplicableIndividualAssessmentsInputBuilder {
         &self.replication_task_arn
     }
     /// <p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>
-    pub fn replication_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>
-    pub fn set_replication_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_arn = input;
         self
     }
@@ -119,18 +105,12 @@ impl DescribeApplicableIndividualAssessmentsInputBuilder {
         &self.replication_instance_arn
     }
     /// <p>Name of a database engine that the specified replication instance supports as a source.</p>
-    pub fn source_engine_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_engine_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a database engine that the specified replication instance supports as a source.</p>
-    pub fn set_source_engine_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_engine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_engine_name = input;
         self
     }
@@ -139,18 +119,12 @@ impl DescribeApplicableIndividualAssessmentsInputBuilder {
         &self.source_engine_name
     }
     /// <p>Name of a database engine that the specified replication instance supports as a target.</p>
-    pub fn target_engine_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_engine_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a database engine that the specified replication instance supports as a target.</p>
-    pub fn set_target_engine_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_engine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_engine_name = input;
         self
     }
@@ -164,10 +138,7 @@ impl DescribeApplicableIndividualAssessmentsInputBuilder {
         self
     }
     /// <p>Name of the migration type that each provided individual assessment must support.</p>
-    pub fn set_migration_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationTypeValue>,
-    ) -> Self {
+    pub fn set_migration_type(mut self, input: ::std::option::Option<crate::types::MigrationTypeValue>) -> Self {
         self.migration_type = input;
         self
     }
@@ -204,24 +175,22 @@ impl DescribeApplicableIndividualAssessmentsInputBuilder {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeApplicableIndividualAssessmentsInput`](crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsInput {
-                replication_task_arn: self.replication_task_arn
-                ,
-                replication_instance_arn: self.replication_instance_arn
-                ,
-                source_engine_name: self.source_engine_name
-                ,
-                target_engine_name: self.target_engine_name
-                ,
-                migration_type: self.migration_type
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                replication_task_arn: self.replication_task_arn,
+                replication_instance_arn: self.replication_instance_arn,
+                source_engine_name: self.source_engine_name,
+                target_engine_name: self.target_engine_name,
+                migration_type: self.migration_type,
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }

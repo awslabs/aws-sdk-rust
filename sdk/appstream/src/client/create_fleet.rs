@@ -27,9 +27,7 @@ impl super::Client {
     /// - On success, responds with [`CreateFleetOutput`](crate::operation::create_fleet::CreateFleetOutput) with field(s):
     ///   - [`fleet(Option<Fleet>)`](crate::operation::create_fleet::CreateFleetOutput::fleet): <p>Information about the fleet.</p>
     /// - On failure, responds with [`SdkError<CreateFleetError>`](crate::operation::create_fleet::CreateFleetError)
-    pub fn create_fleet(
-        &self,
-    ) -> crate::operation::create_fleet::builders::CreateFleetFluentBuilder {
+    pub fn create_fleet(&self) -> crate::operation::create_fleet::builders::CreateFleetFluentBuilder {
         crate::operation::create_fleet::builders::CreateFleetFluentBuilder::new(self.handle.clone())
     }
 }

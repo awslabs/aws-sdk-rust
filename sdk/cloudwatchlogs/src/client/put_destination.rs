@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`PutDestinationOutput`](crate::operation::put_destination::PutDestinationOutput) with field(s):
     ///   - [`destination(Option<Destination>)`](crate::operation::put_destination::PutDestinationOutput::destination): <p>The destination.</p>
     /// - On failure, responds with [`SdkError<PutDestinationError>`](crate::operation::put_destination::PutDestinationError)
-    pub fn put_destination(
-        &self,
-    ) -> crate::operation::put_destination::builders::PutDestinationFluentBuilder {
-        crate::operation::put_destination::builders::PutDestinationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_destination(&self) -> crate::operation::put_destination::builders::PutDestinationFluentBuilder {
+        crate::operation::put_destination::builders::PutDestinationFluentBuilder::new(self.handle.clone())
     }
 }

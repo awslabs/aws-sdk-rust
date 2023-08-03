@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`update_date_time(Option<DateTime>)`](crate::operation::update_entity::UpdateEntityOutput::update_date_time): <p>The date and time when the entity was last updated.</p>
     ///   - [`state(Option<State>)`](crate::operation::update_entity::UpdateEntityOutput::state): <p>The current state of the entity update.</p>
     /// - On failure, responds with [`SdkError<UpdateEntityError>`](crate::operation::update_entity::UpdateEntityError)
-    pub fn update_entity(
-        &self,
-    ) -> crate::operation::update_entity::builders::UpdateEntityFluentBuilder {
-        crate::operation::update_entity::builders::UpdateEntityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_entity(&self) -> crate::operation::update_entity::builders::UpdateEntityFluentBuilder {
+        crate::operation::update_entity::builders::UpdateEntityFluentBuilder::new(self.handle.clone())
     }
 }

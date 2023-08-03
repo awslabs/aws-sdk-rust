@@ -28,12 +28,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateUserPoolClientOutput`](crate::operation::update_user_pool_client::UpdateUserPoolClientOutput) with field(s):
     ///   - [`user_pool_client(Option<UserPoolClientType>)`](crate::operation::update_user_pool_client::UpdateUserPoolClientOutput::user_pool_client): <p>The user pool client value from the response from the server when you request to update the user pool client.</p>
     /// - On failure, responds with [`SdkError<UpdateUserPoolClientError>`](crate::operation::update_user_pool_client::UpdateUserPoolClientError)
-    pub fn update_user_pool_client(
-        &self,
-    ) -> crate::operation::update_user_pool_client::builders::UpdateUserPoolClientFluentBuilder
-    {
-        crate::operation::update_user_pool_client::builders::UpdateUserPoolClientFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_user_pool_client(&self) -> crate::operation::update_user_pool_client::builders::UpdateUserPoolClientFluentBuilder {
+        crate::operation::update_user_pool_client::builders::UpdateUserPoolClientFluentBuilder::new(self.handle.clone())
     }
 }

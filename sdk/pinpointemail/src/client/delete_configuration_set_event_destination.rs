@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`event_destination_name(impl ::std::convert::Into<String>)`](crate::operation::delete_configuration_set_event_destination::builders::DeleteConfigurationSetEventDestinationFluentBuilder::event_destination_name) / [`set_event_destination_name(Option<String>)`](crate::operation::delete_configuration_set_event_destination::builders::DeleteConfigurationSetEventDestinationFluentBuilder::set_event_destination_name): <p>The name of the event destination that you want to delete.</p>
     /// - On success, responds with [`DeleteConfigurationSetEventDestinationOutput`](crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationOutput)
     /// - On failure, responds with [`SdkError<DeleteConfigurationSetEventDestinationError>`](crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationError)
-    pub fn delete_configuration_set_event_destination(&self) -> crate::operation::delete_configuration_set_event_destination::builders::DeleteConfigurationSetEventDestinationFluentBuilder{
-        crate::operation::delete_configuration_set_event_destination::builders::DeleteConfigurationSetEventDestinationFluentBuilder::new(self.handle.clone())
+    pub fn delete_configuration_set_event_destination(
+        &self,
+    ) -> crate::operation::delete_configuration_set_event_destination::builders::DeleteConfigurationSetEventDestinationFluentBuilder {
+        crate::operation::delete_configuration_set_event_destination::builders::DeleteConfigurationSetEventDestinationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -5,8 +5,7 @@
 pub struct ListAppInstanceUserEndpointsOutput {
     /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
     #[doc(hidden)]
-    pub app_instance_user_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserEndpointSummary>>,
+    pub app_instance_user_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserEndpointSummary>>,
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAppInstanceUserEndpointsOutput {
 }
 impl ListAppInstanceUserEndpointsOutput {
     /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn app_instance_user_endpoints(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AppInstanceUserEndpointSummary]> {
+    pub fn app_instance_user_endpoints(&self) -> ::std::option::Option<&[crate::types::AppInstanceUserEndpointSummary]> {
         self.app_instance_user_endpoints.as_deref()
     }
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
@@ -27,10 +24,7 @@ impl ListAppInstanceUserEndpointsOutput {
 impl ::std::fmt::Debug for ListAppInstanceUserEndpointsOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppInstanceUserEndpointsOutput");
-        formatter.field(
-            "app_instance_user_endpoints",
-            &self.app_instance_user_endpoints,
-        );
+        formatter.field("app_instance_user_endpoints", &self.app_instance_user_endpoints);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -43,7 +37,7 @@ impl ::aws_http::request_id::RequestId for ListAppInstanceUserEndpointsOutput {
 }
 impl ListAppInstanceUserEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppInstanceUserEndpointsOutput`](crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput).
-    pub fn builder() -> crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsOutputBuilder{
+    pub fn builder() -> crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsOutputBuilder {
         crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsOutputBuilder::default()
     }
 }
@@ -52,8 +46,7 @@ impl ListAppInstanceUserEndpointsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListAppInstanceUserEndpointsOutputBuilder {
-    pub(crate) app_instance_user_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserEndpointSummary>>,
+    pub(crate) app_instance_user_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserEndpointSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,10 +56,7 @@ impl ListAppInstanceUserEndpointsOutputBuilder {
     /// To override the contents of this collection use [`set_app_instance_user_endpoints`](Self::set_app_instance_user_endpoints).
     ///
     /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn app_instance_user_endpoints(
-        mut self,
-        input: crate::types::AppInstanceUserEndpointSummary,
-    ) -> Self {
+    pub fn app_instance_user_endpoints(mut self, input: crate::types::AppInstanceUserEndpointSummary) -> Self {
         let mut v = self.app_instance_user_endpoints.unwrap_or_default();
         v.push(input);
         self.app_instance_user_endpoints = ::std::option::Option::Some(v);
@@ -81,9 +71,7 @@ impl ListAppInstanceUserEndpointsOutputBuilder {
         self
     }
     /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn get_app_instance_user_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserEndpointSummary>> {
+    pub fn get_app_instance_user_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserEndpointSummary>> {
         &self.app_instance_user_endpoints
     }
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
@@ -110,10 +98,7 @@ impl ListAppInstanceUserEndpointsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAppInstanceUserEndpointsOutput`](crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput
-    {
+    pub fn build(self) -> crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput {
         crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput {
             app_instance_user_endpoints: self.app_instance_user_endpoints,
             next_token: self.next_token,
@@ -124,10 +109,7 @@ impl ListAppInstanceUserEndpointsOutputBuilder {
 impl ::std::fmt::Debug for ListAppInstanceUserEndpointsOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppInstanceUserEndpointsOutputBuilder");
-        formatter.field(
-            "app_instance_user_endpoints",
-            &self.app_instance_user_endpoints,
-        );
+        formatter.field("app_instance_user_endpoints", &self.app_instance_user_endpoints);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

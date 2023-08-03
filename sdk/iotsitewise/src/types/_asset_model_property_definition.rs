@@ -55,9 +55,7 @@ impl AssetModelPropertyDefinition {
 
 /// A builder for [`AssetModelPropertyDefinition`](crate::types::AssetModelPropertyDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetModelPropertyDefinitionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) data_type: ::std::option::Option<crate::types::PropertyDataType>,
@@ -88,10 +86,7 @@ impl AssetModelPropertyDefinitionBuilder {
     }
     /// <p>The data type of the property definition.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
-    pub fn set_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PropertyDataType>,
-    ) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::PropertyDataType>) -> Self {
         self.data_type = input;
         self
     }
@@ -102,19 +97,13 @@ impl AssetModelPropertyDefinitionBuilder {
     }
     /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p>
     /// <p>The options for this parameter depend on the type of the composite model in which you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
-    pub fn data_type_spec(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_type_spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_type_spec = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p>
     /// <p>The options for this parameter depend on the type of the composite model in which you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
-    pub fn set_data_type_spec(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_type_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type_spec = input;
         self
     }

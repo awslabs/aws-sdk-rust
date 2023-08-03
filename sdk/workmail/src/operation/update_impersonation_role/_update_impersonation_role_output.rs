@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateImpersonationRoleOutput {
 }
 impl UpdateImpersonationRoleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateImpersonationRoleOutput`](crate::operation::update_impersonation_role::UpdateImpersonationRoleOutput).
-    pub fn builder(
-    ) -> crate::operation::update_impersonation_role::builders::UpdateImpersonationRoleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_impersonation_role::builders::UpdateImpersonationRoleOutputBuilder {
         crate::operation::update_impersonation_role::builders::UpdateImpersonationRoleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateImpersonationRoleOutput`](crate::operation::update_impersonation_role::UpdateImpersonationRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateImpersonationRoleOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateImpersonationRoleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateImpersonationRoleOutput`](crate::operation::update_impersonation_role::UpdateImpersonationRoleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_impersonation_role::UpdateImpersonationRoleOutput {
+    pub fn build(self) -> crate::operation::update_impersonation_role::UpdateImpersonationRoleOutput {
         crate::operation::update_impersonation_role::UpdateImpersonationRoleOutput {
             _request_id: self._request_id,
         }

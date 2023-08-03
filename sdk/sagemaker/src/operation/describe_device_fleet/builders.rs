@@ -37,9 +37,7 @@ impl DescribeDeviceFleetFluentBuilder {
         }
     }
     /// Access the DescribeDeviceFleet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_device_fleet::builders::DescribeDeviceFleetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_device_fleet::builders::DescribeDeviceFleetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeDeviceFleetFluentBuilder {
             crate::operation::describe_device_fleet::DescribeDeviceFleet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_device_fleet::DescribeDeviceFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_device_fleet::DescribeDeviceFleetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeDeviceFleetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeDeviceFleetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_device_fleet::DescribeDeviceFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_device_fleet::DescribeDeviceFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_device_fleet::DescribeDeviceFleetError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeDeviceFleetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_device_fleet::DescribeDeviceFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_device_fleet::DescribeDeviceFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_device_fleet::DescribeDeviceFleetError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeDeviceFleetFluentBuilder {
             crate::operation::describe_device_fleet::DescribeDeviceFleet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_device_fleet::DescribeDeviceFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_device_fleet::DescribeDeviceFleetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the fleet.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_fleet_name(input.into());
         self
     }
     /// <p>The name of the fleet.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_fleet_name(input);
         self
     }

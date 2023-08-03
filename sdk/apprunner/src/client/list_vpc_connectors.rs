@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`vpc_connectors(Option<Vec<VpcConnector>>)`](crate::operation::list_vpc_connectors::ListVpcConnectorsOutput::vpc_connectors): <p>A list of information records for VPC connectors. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_vpc_connectors::ListVpcConnectorsOutput::next_token): <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     /// - On failure, responds with [`SdkError<ListVpcConnectorsError>`](crate::operation::list_vpc_connectors::ListVpcConnectorsError)
-    pub fn list_vpc_connectors(
-        &self,
-    ) -> crate::operation::list_vpc_connectors::builders::ListVpcConnectorsFluentBuilder {
-        crate::operation::list_vpc_connectors::builders::ListVpcConnectorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_vpc_connectors(&self) -> crate::operation::list_vpc_connectors::builders::ListVpcConnectorsFluentBuilder {
+        crate::operation::list_vpc_connectors::builders::ListVpcConnectorsFluentBuilder::new(self.handle.clone())
     }
 }

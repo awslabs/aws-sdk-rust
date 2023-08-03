@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateContactEvaluationOutput {
 }
 impl UpdateContactEvaluationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContactEvaluationOutput`](crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationOutputBuilder {
         crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateContactEvaluationOutput`](crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContactEvaluationOutputBuilder {
     pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_arn: ::std::option::Option<::std::string::String>,
@@ -47,18 +43,12 @@ pub struct UpdateContactEvaluationOutputBuilder {
 }
 impl UpdateContactEvaluationOutputBuilder {
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn set_evaluation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_id = input;
         self
     }
@@ -67,18 +57,12 @@ impl UpdateContactEvaluationOutputBuilder {
         &self.evaluation_id
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn evaluation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn set_evaluation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_arn = input;
         self
     }
@@ -96,9 +80,7 @@ impl UpdateContactEvaluationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateContactEvaluationOutput`](crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput {
+    pub fn build(self) -> crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput {
         crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput {
             evaluation_id: self.evaluation_id,
             evaluation_arn: self.evaluation_arn,

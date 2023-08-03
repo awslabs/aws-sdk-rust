@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`byte_match_set(Option<ByteMatchSet>)`](crate::operation::create_byte_match_set::CreateByteMatchSetOutput::byte_match_set): <p>A <code>ByteMatchSet</code> that contains no <code>ByteMatchTuple</code> objects.</p>
     ///   - [`change_token(Option<String>)`](crate::operation::create_byte_match_set::CreateByteMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<CreateByteMatchSetError>`](crate::operation::create_byte_match_set::CreateByteMatchSetError)
-    pub fn create_byte_match_set(
-        &self,
-    ) -> crate::operation::create_byte_match_set::builders::CreateByteMatchSetFluentBuilder {
-        crate::operation::create_byte_match_set::builders::CreateByteMatchSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_byte_match_set(&self) -> crate::operation::create_byte_match_set::builders::CreateByteMatchSetFluentBuilder {
+        crate::operation::create_byte_match_set::builders::CreateByteMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

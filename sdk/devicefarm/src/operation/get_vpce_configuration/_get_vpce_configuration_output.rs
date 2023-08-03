@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetVpceConfigurationOutput {
 }
 impl GetVpceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetVpceConfigurationOutput`](crate::operation::get_vpce_configuration::GetVpceConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_vpce_configuration::builders::GetVpceConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::get_vpce_configuration::builders::GetVpceConfigurationOutputBuilder {
         crate::operation::get_vpce_configuration::builders::GetVpceConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVpceConfigurationOutput`](crate::operation::get_vpce_configuration::GetVpceConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVpceConfigurationOutputBuilder {
     pub(crate) vpce_configuration: ::std::option::Option<crate::types::VpceConfiguration>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl GetVpceConfigurationOutputBuilder {
         self
     }
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
-    pub fn set_vpce_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VpceConfiguration>,
-    ) -> Self {
+    pub fn set_vpce_configuration(mut self, input: ::std::option::Option<crate::types::VpceConfiguration>) -> Self {
         self.vpce_configuration = input;
         self
     }
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
-    pub fn get_vpce_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpceConfiguration> {
+    pub fn get_vpce_configuration(&self) -> &::std::option::Option<crate::types::VpceConfiguration> {
         &self.vpce_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -36,9 +36,7 @@ impl ListTablesInput {
 
 /// A builder for [`ListTablesInput`](crate::operation::list_tables::ListTablesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTablesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -74,18 +72,12 @@ impl ListTablesInputBuilder {
         &self.max_results
     }
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the keyspace.</p>
-    pub fn set_keyspace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.keyspace_name = input;
         self
     }
@@ -94,12 +86,7 @@ impl ListTablesInputBuilder {
         &self.keyspace_name
     }
     /// Consumes the builder and constructs a [`ListTablesInput`](crate::operation::list_tables::ListTablesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_tables::ListTablesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tables::ListTablesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tables::ListTablesInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -23,9 +23,7 @@ impl Comment {
 
 /// A builder for [`Comment`](crate::types::Comment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommentBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl CommentBuilder {
     }
     /// Consumes the builder and constructs a [`Comment`](crate::types::Comment).
     pub fn build(self) -> crate::types::Comment {
-        crate::types::Comment {
-            message: self.message,
-        }
+        crate::types::Comment { message: self.message }
     }
 }

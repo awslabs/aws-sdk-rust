@@ -14,12 +14,7 @@ impl super::Client {
     /// - On success, responds with [`StartDocumentAnalysisOutput`](crate::operation::start_document_analysis::StartDocumentAnalysisOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_document_analysis::StartDocumentAnalysisOutput::job_id): <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     /// - On failure, responds with [`SdkError<StartDocumentAnalysisError>`](crate::operation::start_document_analysis::StartDocumentAnalysisError)
-    pub fn start_document_analysis(
-        &self,
-    ) -> crate::operation::start_document_analysis::builders::StartDocumentAnalysisFluentBuilder
-    {
-        crate::operation::start_document_analysis::builders::StartDocumentAnalysisFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_document_analysis(&self) -> crate::operation::start_document_analysis::builders::StartDocumentAnalysisFluentBuilder {
+        crate::operation::start_document_analysis::builders::StartDocumentAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,35 +16,25 @@ impl DeleteConfigurationSetInput {
 }
 impl DeleteConfigurationSetInput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetInput`](crate::operation::delete_configuration_set::DeleteConfigurationSetInput).
-    pub fn builder(
-    ) -> crate::operation::delete_configuration_set::builders::DeleteConfigurationSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_configuration_set::builders::DeleteConfigurationSetInputBuilder {
         crate::operation::delete_configuration_set::builders::DeleteConfigurationSetInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConfigurationSetInput`](crate::operation::delete_configuration_set::DeleteConfigurationSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConfigurationSetInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConfigurationSetInputBuilder {
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -55,14 +45,10 @@ impl DeleteConfigurationSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConfigurationSetInput`](crate::operation::delete_configuration_set::DeleteConfigurationSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_configuration_set::DeleteConfigurationSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_configuration_set::DeleteConfigurationSetInput {
-                configuration_set_name: self.configuration_set_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_configuration_set::DeleteConfigurationSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_configuration_set::DeleteConfigurationSetInput {
+            configuration_set_name: self.configuration_set_name,
+        })
     }
 }

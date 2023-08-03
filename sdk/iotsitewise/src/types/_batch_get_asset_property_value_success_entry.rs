@@ -30,9 +30,7 @@ impl BatchGetAssetPropertyValueSuccessEntry {
 
 /// A builder for [`BatchGetAssetPropertyValueSuccessEntry`](crate::types::BatchGetAssetPropertyValueSuccessEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueSuccessEntryBuilder {
     pub(crate) entry_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_property_value: ::std::option::Option<crate::types::AssetPropertyValue>,
@@ -58,17 +56,12 @@ impl BatchGetAssetPropertyValueSuccessEntryBuilder {
         self
     }
     /// <p>Contains asset property value information.</p>
-    pub fn set_asset_property_value(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetPropertyValue>,
-    ) -> Self {
+    pub fn set_asset_property_value(mut self, input: ::std::option::Option<crate::types::AssetPropertyValue>) -> Self {
         self.asset_property_value = input;
         self
     }
     /// <p>Contains asset property value information.</p>
-    pub fn get_asset_property_value(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssetPropertyValue> {
+    pub fn get_asset_property_value(&self) -> &::std::option::Option<crate::types::AssetPropertyValue> {
         &self.asset_property_value
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueSuccessEntry`](crate::types::BatchGetAssetPropertyValueSuccessEntry).

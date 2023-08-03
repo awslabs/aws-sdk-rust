@@ -34,9 +34,7 @@ impl LiveSimulationState {
 
 /// A builder for [`LiveSimulationState`](crate::types::LiveSimulationState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LiveSimulationStateBuilder {
     pub(crate) domains: ::std::option::Option<::std::vec::Vec<crate::types::Domain>>,
     pub(crate) clocks: ::std::option::Option<::std::vec::Vec<crate::types::SimulationClock>>,
@@ -54,10 +52,7 @@ impl LiveSimulationStateBuilder {
         self
     }
     /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
-    pub fn set_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Domain>>,
-    ) -> Self {
+    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Domain>>) -> Self {
         self.domains = input;
         self
     }
@@ -81,19 +76,14 @@ impl LiveSimulationStateBuilder {
     /// <p>A list of simulation clocks.</p> <note>
     /// <p>At this time, a simulation has only one clock.</p>
     /// </note>
-    pub fn set_clocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationClock>>,
-    ) -> Self {
+    pub fn set_clocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationClock>>) -> Self {
         self.clocks = input;
         self
     }
     /// <p>A list of simulation clocks.</p> <note>
     /// <p>At this time, a simulation has only one clock.</p>
     /// </note>
-    pub fn get_clocks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationClock>> {
+    pub fn get_clocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationClock>> {
         &self.clocks
     }
     /// Consumes the builder and constructs a [`LiveSimulationState`](crate::types::LiveSimulationState).

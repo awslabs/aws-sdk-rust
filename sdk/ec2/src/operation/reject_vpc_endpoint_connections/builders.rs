@@ -26,7 +26,7 @@ impl RejectVpcEndpointConnectionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RejectVpcEndpointConnectionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::reject_vpc_endpoint_connections::builders::RejectVpcEndpointConnectionsInputBuilder,
+    inner: crate::operation::reject_vpc_endpoint_connections::builders::RejectVpcEndpointConnectionsInputBuilder,
 }
 impl RejectVpcEndpointConnectionsFluentBuilder {
     /// Creates a new `RejectVpcEndpointConnections`.
@@ -37,7 +37,7 @@ impl RejectVpcEndpointConnectionsFluentBuilder {
         }
     }
     /// Access the RejectVpcEndpointConnections as a reference.
-    pub fn as_input(&self) -> &crate::operation::reject_vpc_endpoint_connections::builders::RejectVpcEndpointConnectionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::reject_vpc_endpoint_connections::builders::RejectVpcEndpointConnectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RejectVpcEndpointConnectionsFluentBuilder {
             crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RejectVpcEndpointConnectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RejectVpcEndpointConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RejectVpcEndpointConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl RejectVpcEndpointConnectionsFluentBuilder {
             crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsError>,
     > {
         self.customize_middleware().await
     }
@@ -153,25 +142,17 @@ impl RejectVpcEndpointConnectionsFluentBuilder {
     /// To override the contents of this collection use [`set_vpc_endpoint_ids`](Self::set_vpc_endpoint_ids).
     ///
     /// <p>The IDs of the VPC endpoints.</p>
-    pub fn vpc_endpoint_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_endpoint_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_endpoint_ids(input.into());
         self
     }
     /// <p>The IDs of the VPC endpoints.</p>
-    pub fn set_vpc_endpoint_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_endpoint_ids(input);
         self
     }
     /// <p>The IDs of the VPC endpoints.</p>
-    pub fn get_vpc_endpoint_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_endpoint_ids()
     }
 }

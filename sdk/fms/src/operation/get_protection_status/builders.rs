@@ -37,9 +37,7 @@ impl GetProtectionStatusFluentBuilder {
         }
     }
     /// Access the GetProtectionStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_protection_status::builders::GetProtectionStatusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_protection_status::builders::GetProtectionStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetProtectionStatusFluentBuilder {
             crate::operation::get_protection_status::GetProtectionStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_protection_status::GetProtectionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_protection_status::GetProtectionStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetProtectionStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetProtectionStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_protection_status::GetProtectionStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_protection_status::GetProtectionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_protection_status::GetProtectionStatusError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetProtectionStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_protection_status::GetProtectionStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_protection_status::GetProtectionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_protection_status::GetProtectionStatusError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetProtectionStatusFluentBuilder {
             crate::operation::get_protection_status::GetProtectionStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_protection_status::GetProtectionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_protection_status::GetProtectionStatusError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl GetProtectionStatusFluentBuilder {
         self.inner.get_policy_id()
     }
     /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details for.</p>
-    pub fn member_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details for.</p>
-    pub fn set_member_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_member_account_id(input);
         self
     }
@@ -162,10 +143,7 @@ impl GetProtectionStatusFluentBuilder {
         self
     }
     /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -179,10 +157,7 @@ impl GetProtectionStatusFluentBuilder {
         self
     }
     /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

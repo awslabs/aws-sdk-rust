@@ -37,9 +37,7 @@ impl ListGamesOutput {
 
 /// A builder for [`ListGamesOutput`](crate::operation::list_games::ListGamesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGamesOutputBuilder {
     pub(crate) games: ::std::option::Option<::std::vec::Vec<crate::types::GameSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +56,7 @@ impl ListGamesOutputBuilder {
         self
     }
     /// <p>The list of games.</p>
-    pub fn set_games(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GameSummary>>,
-    ) -> Self {
+    pub fn set_games(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameSummary>>) -> Self {
         self.games = input;
         self
     }

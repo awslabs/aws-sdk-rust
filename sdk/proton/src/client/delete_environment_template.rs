@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteEnvironmentTemplateOutput`](crate::operation::delete_environment_template::DeleteEnvironmentTemplateOutput) with field(s):
     ///   - [`environment_template(Option<EnvironmentTemplate>)`](crate::operation::delete_environment_template::DeleteEnvironmentTemplateOutput::environment_template): <p>The detailed data of the environment template being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteEnvironmentTemplateError>`](crate::operation::delete_environment_template::DeleteEnvironmentTemplateError)
-    pub fn delete_environment_template(&self) -> crate::operation::delete_environment_template::builders::DeleteEnvironmentTemplateFluentBuilder{
+    pub fn delete_environment_template(&self) -> crate::operation::delete_environment_template::builders::DeleteEnvironmentTemplateFluentBuilder {
         crate::operation::delete_environment_template::builders::DeleteEnvironmentTemplateFluentBuilder::new(self.handle.clone())
     }
 }

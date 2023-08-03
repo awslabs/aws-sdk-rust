@@ -44,9 +44,7 @@ impl ListStorageLensConfigurationEntry {
 
 /// A builder for [`ListStorageLensConfigurationEntry`](crate::types::ListStorageLensConfigurationEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStorageLensConfigurationEntryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) storage_lens_arn: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl ListStorageLensConfigurationEntryBuilder {
         &self.id
     }
     /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
-    pub fn storage_lens_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_lens_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_lens_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
-    pub fn set_storage_lens_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_lens_arn = input;
         self
     }

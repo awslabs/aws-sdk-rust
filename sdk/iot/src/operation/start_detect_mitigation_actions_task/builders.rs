@@ -5,16 +5,16 @@ pub use crate::operation::start_detect_mitigation_actions_task::_start_detect_mi
 
 impl StartDetectMitigationActionsTaskInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.start_detect_mitigation_actions_task();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl StartDetectMitigationActionsTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDetectMitigationActionsTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_detect_mitigation_actions_task::builders::StartDetectMitigationActionsTaskInputBuilder,
+    inner: crate::operation::start_detect_mitigation_actions_task::builders::StartDetectMitigationActionsTaskInputBuilder,
 }
 impl StartDetectMitigationActionsTaskFluentBuilder {
     /// Creates a new `StartDetectMitigationActionsTask`.
@@ -38,15 +38,20 @@ impl StartDetectMitigationActionsTaskFluentBuilder {
         }
     }
     /// Access the StartDetectMitigationActionsTask as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_detect_mitigation_actions_task::builders::StartDetectMitigationActionsTaskInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_detect_mitigation_actions_task::builders::StartDetectMitigationActionsTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTask, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTask,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl StartDetectMitigationActionsTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +88,26 @@ impl StartDetectMitigationActionsTaskFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTask, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTask,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskError>,
+    > {
         self.customize_middleware().await
     }
     /// <p> The unique identifier of the task. </p>
@@ -115,17 +130,12 @@ impl StartDetectMitigationActionsTaskFluentBuilder {
         self
     }
     /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectMitigationActionsTaskTarget>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::DetectMitigationActionsTaskTarget>) -> Self {
         self.inner = self.inner.set_target(input);
         self
     }
     /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
-    pub fn get_target(
-        &self,
-    ) -> &::std::option::Option<crate::types::DetectMitigationActionsTaskTarget> {
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::DetectMitigationActionsTaskTarget> {
         self.inner.get_target()
     }
     /// Appends an item to `actions`.
@@ -138,10 +148,7 @@ impl StartDetectMitigationActionsTaskFluentBuilder {
         self
     }
     /// <p> The actions to be performed when a device has unexpected behavior. </p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
@@ -150,25 +157,17 @@ impl StartDetectMitigationActionsTaskFluentBuilder {
         self.inner.get_actions()
     }
     /// <p> Specifies the time period of which violation events occurred between. </p>
-    pub fn violation_event_occurrence_range(
-        mut self,
-        input: crate::types::ViolationEventOccurrenceRange,
-    ) -> Self {
+    pub fn violation_event_occurrence_range(mut self, input: crate::types::ViolationEventOccurrenceRange) -> Self {
         self.inner = self.inner.violation_event_occurrence_range(input);
         self
     }
     /// <p> Specifies the time period of which violation events occurred between. </p>
-    pub fn set_violation_event_occurrence_range(
-        mut self,
-        input: ::std::option::Option<crate::types::ViolationEventOccurrenceRange>,
-    ) -> Self {
+    pub fn set_violation_event_occurrence_range(mut self, input: ::std::option::Option<crate::types::ViolationEventOccurrenceRange>) -> Self {
         self.inner = self.inner.set_violation_event_occurrence_range(input);
         self
     }
     /// <p> Specifies the time period of which violation events occurred between. </p>
-    pub fn get_violation_event_occurrence_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::ViolationEventOccurrenceRange> {
+    pub fn get_violation_event_occurrence_range(&self) -> &::std::option::Option<crate::types::ViolationEventOccurrenceRange> {
         self.inner.get_violation_event_occurrence_range()
     }
     /// <p> Specifies to list only active violations. </p>
@@ -177,10 +176,7 @@ impl StartDetectMitigationActionsTaskFluentBuilder {
         self
     }
     /// <p> Specifies to list only active violations. </p>
-    pub fn set_include_only_active_violations(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_include_only_active_violations(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_only_active_violations(input);
         self
     }
@@ -203,18 +199,12 @@ impl StartDetectMitigationActionsTaskFluentBuilder {
         self.inner.get_include_suppressed_alerts()
     }
     /// <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

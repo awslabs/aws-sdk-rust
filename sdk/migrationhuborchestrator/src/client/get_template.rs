@@ -13,9 +13,7 @@ impl super::Client {
     ///   - [`status(Option<TemplateStatus>)`](crate::operation::get_template::GetTemplateOutput::status): <p>The status of the template.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_template::GetTemplateOutput::creation_time): <p>The time at which the template was last created.</p>
     /// - On failure, responds with [`SdkError<GetTemplateError>`](crate::operation::get_template::GetTemplateError)
-    pub fn get_template(
-        &self,
-    ) -> crate::operation::get_template::builders::GetTemplateFluentBuilder {
+    pub fn get_template(&self) -> crate::operation::get_template::builders::GetTemplateFluentBuilder {
         crate::operation::get_template::builders::GetTemplateFluentBuilder::new(self.handle.clone())
     }
 }

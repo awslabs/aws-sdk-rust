@@ -22,26 +22,18 @@ impl StopBackupJobInput {
 
 /// A builder for [`StopBackupJobInput`](crate::operation::stop_backup_job::StopBackupJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopBackupJobInputBuilder {
     pub(crate) backup_job_id: ::std::option::Option<::std::string::String>,
 }
 impl StopBackupJobInputBuilder {
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
-    pub fn backup_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
-    pub fn set_backup_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_job_id = input;
         self
     }
@@ -52,10 +44,7 @@ impl StopBackupJobInputBuilder {
     /// Consumes the builder and constructs a [`StopBackupJobInput`](crate::operation::stop_backup_job::StopBackupJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_backup_job::StopBackupJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::stop_backup_job::StopBackupJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_backup_job::StopBackupJobInput {
             backup_job_id: self.backup_job_id,
         })

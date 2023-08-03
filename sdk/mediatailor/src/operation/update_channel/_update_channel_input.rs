@@ -36,9 +36,7 @@ impl UpdateChannelInput {
 
 /// A builder for [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateChannelInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) filler_slate: ::std::option::Option<crate::types::SlateSource>,
@@ -65,10 +63,7 @@ impl UpdateChannelInputBuilder {
         self
     }
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
-    pub fn set_filler_slate(
-        mut self,
-        input: ::std::option::Option<crate::types::SlateSource>,
-    ) -> Self {
+    pub fn set_filler_slate(mut self, input: ::std::option::Option<crate::types::SlateSource>) -> Self {
         self.filler_slate = input;
         self
     }
@@ -88,26 +83,18 @@ impl UpdateChannelInputBuilder {
         self
     }
     /// <p>The channel's output properties.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RequestOutputItem>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RequestOutputItem>>) -> Self {
         self.outputs = input;
         self
     }
     /// <p>The channel's output properties.</p>
-    pub fn get_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestOutputItem>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestOutputItem>> {
         &self.outputs
     }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_channel::UpdateChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_channel::UpdateChannelInput {
             channel_name: self.channel_name,
             filler_slate: self.filler_slate,

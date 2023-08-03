@@ -71,18 +71,12 @@ pub struct GetResourcesInputBuilder {
 }
 impl GetResourcesInputBuilder {
     /// <p>The Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_token = input;
         self
     }
@@ -110,17 +104,12 @@ impl GetResourcesInputBuilder {
         self
     }
     /// <p>The collection type.</p>
-    pub fn set_collection_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCollectionType>,
-    ) -> Self {
+    pub fn set_collection_type(mut self, input: ::std::option::Option<crate::types::ResourceCollectionType>) -> Self {
         self.collection_type = input;
         self
     }
     /// <p>The collection type.</p>
-    pub fn get_collection_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceCollectionType> {
+    pub fn get_collection_type(&self) -> &::std::option::Option<crate::types::ResourceCollectionType> {
         &self.collection_type
     }
     /// <p>The maximum number of resources to return.</p>
@@ -152,12 +141,7 @@ impl GetResourcesInputBuilder {
         &self.marker
     }
     /// Consumes the builder and constructs a [`GetResourcesInput`](crate::operation::get_resources::GetResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resources::GetResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resources::GetResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_resources::GetResourcesInput {
             authentication_token: self.authentication_token,
             user_id: self.user_id,

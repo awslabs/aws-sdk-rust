@@ -26,7 +26,7 @@ impl DescribeDomainControllersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDomainControllersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_domain_controllers::builders::DescribeDomainControllersInputBuilder,
+    inner: crate::operation::describe_domain_controllers::builders::DescribeDomainControllersInputBuilder,
 }
 impl DescribeDomainControllersFluentBuilder {
     /// Creates a new `DescribeDomainControllers`.
@@ -37,7 +37,7 @@ impl DescribeDomainControllersFluentBuilder {
         }
     }
     /// Access the DescribeDomainControllers as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_domain_controllers::builders::DescribeDomainControllersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_domain_controllers::builders::DescribeDomainControllersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeDomainControllersFluentBuilder {
             crate::operation::describe_domain_controllers::DescribeDomainControllers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_controllers::DescribeDomainControllersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_controllers::DescribeDomainControllersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeDomainControllersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeDomainControllersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_domain_controllers::DescribeDomainControllersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_controllers::DescribeDomainControllersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_controllers::DescribeDomainControllersError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeDomainControllersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_domain_controllers::DescribeDomainControllersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_controllers::DescribeDomainControllersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_controllers::DescribeDomainControllersError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl DescribeDomainControllersFluentBuilder {
             crate::operation::describe_domain_controllers::DescribeDomainControllers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_controllers::DescribeDomainControllersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_controllers::DescribeDomainControllersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_domain_controllers::paginator::DescribeDomainControllersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_domain_controllers::paginator::DescribeDomainControllersPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_domain_controllers::paginator::DescribeDomainControllersPaginator {
         crate::operation::describe_domain_controllers::paginator::DescribeDomainControllersPaginator::new(self.handle, self.inner)
     }
     /// <p>Identifier of the directory for which to retrieve the domain controller information.</p>
@@ -148,25 +134,17 @@ impl DescribeDomainControllersFluentBuilder {
     /// To override the contents of this collection use [`set_domain_controller_ids`](Self::set_domain_controller_ids).
     ///
     /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
-    pub fn domain_controller_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_controller_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_controller_ids(input.into());
         self
     }
     /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
-    pub fn set_domain_controller_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_domain_controller_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_domain_controller_ids(input);
         self
     }
     /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
-    pub fn get_domain_controller_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_domain_controller_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_domain_controller_ids()
     }
     /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>

@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`wireless_device_type(WirelessDeviceType)`](crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceFluentBuilder::wireless_device_type) / [`set_wireless_device_type(Option<WirelessDeviceType>)`](crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceFluentBuilder::set_wireless_device_type): <p>The type of wireless device to deregister from AWS IoT Wireless, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
     /// - On success, responds with [`DeregisterWirelessDeviceOutput`](crate::operation::deregister_wireless_device::DeregisterWirelessDeviceOutput)
     /// - On failure, responds with [`SdkError<DeregisterWirelessDeviceError>`](crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError)
-    pub fn deregister_wireless_device(
-        &self,
-    ) -> crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceFluentBuilder
-    {
+    pub fn deregister_wireless_device(&self) -> crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceFluentBuilder {
         crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceFluentBuilder::new(self.handle.clone())
     }
 }

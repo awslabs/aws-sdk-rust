@@ -57,9 +57,7 @@ impl UpdateThingInput {
 
 /// A builder for [`UpdateThingInput`](crate::operation::update_thing::UpdateThingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateThingInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_type_name: ::std::option::Option<::std::string::String>,
@@ -86,18 +84,12 @@ impl UpdateThingInputBuilder {
         &self.thing_name
     }
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the thing type.</p>
-    pub fn set_thing_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_type_name = input;
         self
     }
@@ -115,10 +107,7 @@ impl UpdateThingInputBuilder {
     /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
     /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
-    pub fn set_attribute_payload(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributePayload>,
-    ) -> Self {
+    pub fn set_attribute_payload(mut self, input: ::std::option::Option<crate::types::AttributePayload>) -> Self {
         self.attribute_payload = input;
         self
     }
@@ -157,12 +146,7 @@ impl UpdateThingInputBuilder {
         &self.remove_thing_type
     }
     /// Consumes the builder and constructs a [`UpdateThingInput`](crate::operation::update_thing::UpdateThingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_thing::UpdateThingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_thing::UpdateThingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_thing::UpdateThingInput {
             thing_name: self.thing_name,
             thing_type_name: self.thing_type_name,

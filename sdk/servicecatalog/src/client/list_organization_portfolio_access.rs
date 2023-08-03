@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`organization_nodes(Option<Vec<OrganizationNode>>)`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput::organization_nodes): <p>Displays information about the organization nodes.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListOrganizationPortfolioAccessError>`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError)
-    pub fn list_organization_portfolio_access(&self) -> crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder{
+    pub fn list_organization_portfolio_access(
+        &self,
+    ) -> crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder {
         crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder::new(self.handle.clone())
     }
 }

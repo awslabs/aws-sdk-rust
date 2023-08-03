@@ -41,9 +41,7 @@ impl MetricV2 {
 
 /// A builder for [`MetricV2`](crate::types::MetricV2).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricV2Builder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) threshold: ::std::option::Option<::std::vec::Vec<crate::types::ThresholdV2>>,
@@ -82,17 +80,12 @@ impl MetricV2Builder {
         self
     }
     /// <p>Contains information about the threshold for service level metrics.</p>
-    pub fn set_threshold(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ThresholdV2>>,
-    ) -> Self {
+    pub fn set_threshold(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThresholdV2>>) -> Self {
         self.threshold = input;
         self
     }
     /// <p>Contains information about the threshold for service level metrics.</p>
-    pub fn get_threshold(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThresholdV2>> {
+    pub fn get_threshold(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThresholdV2>> {
         &self.threshold
     }
     /// Appends an item to `metric_filters`.
@@ -107,17 +100,12 @@ impl MetricV2Builder {
         self
     }
     /// <p>Contains the filters to be used when returning data.</p>
-    pub fn set_metric_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilterV2>>,
-    ) -> Self {
+    pub fn set_metric_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilterV2>>) -> Self {
         self.metric_filters = input;
         self
     }
     /// <p>Contains the filters to be used when returning data.</p>
-    pub fn get_metric_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricFilterV2>> {
+    pub fn get_metric_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricFilterV2>> {
         &self.metric_filters
     }
     /// Consumes the builder and constructs a [`MetricV2`](crate::types::MetricV2).

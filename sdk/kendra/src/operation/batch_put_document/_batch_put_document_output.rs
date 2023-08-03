@@ -6,17 +6,13 @@ pub struct BatchPutDocumentOutput {
     /// <p>A list of documents that were not added to the index because the document failed a validation check. Each document contains an error message that indicates why the document couldn't be added to the index.</p>
     /// <p>If there was an error adding a document to an index the error is reported in your Amazon Web Services CloudWatch log. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon Kendra with Amazon CloudWatch Logs</a> </p>
     #[doc(hidden)]
-    pub failed_documents: ::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchPutDocumentResponseFailedDocument>,
-    >,
+    pub failed_documents: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutDocumentResponseFailedDocument>>,
     _request_id: Option<String>,
 }
 impl BatchPutDocumentOutput {
     /// <p>A list of documents that were not added to the index because the document failed a validation check. Each document contains an error message that indicates why the document couldn't be added to the index.</p>
     /// <p>If there was an error adding a document to an index the error is reported in your Amazon Web Services CloudWatch log. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon Kendra with Amazon CloudWatch Logs</a> </p>
-    pub fn failed_documents(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchPutDocumentResponseFailedDocument]> {
+    pub fn failed_documents(&self) -> ::std::option::Option<&[crate::types::BatchPutDocumentResponseFailedDocument]> {
         self.failed_documents.as_deref()
     }
 }
@@ -27,21 +23,16 @@ impl ::aws_http::request_id::RequestId for BatchPutDocumentOutput {
 }
 impl BatchPutDocumentOutput {
     /// Creates a new builder-style object to manufacture [`BatchPutDocumentOutput`](crate::operation::batch_put_document::BatchPutDocumentOutput).
-    pub fn builder() -> crate::operation::batch_put_document::builders::BatchPutDocumentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_put_document::builders::BatchPutDocumentOutputBuilder {
         crate::operation::batch_put_document::builders::BatchPutDocumentOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchPutDocumentOutput`](crate::operation::batch_put_document::BatchPutDocumentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutDocumentOutputBuilder {
-    pub(crate) failed_documents: ::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchPutDocumentResponseFailedDocument>,
-    >,
+    pub(crate) failed_documents: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutDocumentResponseFailedDocument>>,
     _request_id: Option<String>,
 }
 impl BatchPutDocumentOutputBuilder {
@@ -51,10 +42,7 @@ impl BatchPutDocumentOutputBuilder {
     ///
     /// <p>A list of documents that were not added to the index because the document failed a validation check. Each document contains an error message that indicates why the document couldn't be added to the index.</p>
     /// <p>If there was an error adding a document to an index the error is reported in your Amazon Web Services CloudWatch log. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon Kendra with Amazon CloudWatch Logs</a> </p>
-    pub fn failed_documents(
-        mut self,
-        input: crate::types::BatchPutDocumentResponseFailedDocument,
-    ) -> Self {
+    pub fn failed_documents(mut self, input: crate::types::BatchPutDocumentResponseFailedDocument) -> Self {
         let mut v = self.failed_documents.unwrap_or_default();
         v.push(input);
         self.failed_documents = ::std::option::Option::Some(v);
@@ -64,19 +52,14 @@ impl BatchPutDocumentOutputBuilder {
     /// <p>If there was an error adding a document to an index the error is reported in your Amazon Web Services CloudWatch log. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon Kendra with Amazon CloudWatch Logs</a> </p>
     pub fn set_failed_documents(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchPutDocumentResponseFailedDocument>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutDocumentResponseFailedDocument>>,
     ) -> Self {
         self.failed_documents = input;
         self
     }
     /// <p>A list of documents that were not added to the index because the document failed a validation check. Each document contains an error message that indicates why the document couldn't be added to the index.</p>
     /// <p>If there was an error adding a document to an index the error is reported in your Amazon Web Services CloudWatch log. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon Kendra with Amazon CloudWatch Logs</a> </p>
-    pub fn get_failed_documents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutDocumentResponseFailedDocument>>
-    {
+    pub fn get_failed_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutDocumentResponseFailedDocument>> {
         &self.failed_documents
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

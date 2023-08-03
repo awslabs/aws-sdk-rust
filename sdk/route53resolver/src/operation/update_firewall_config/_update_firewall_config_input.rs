@@ -26,25 +26,20 @@ impl UpdateFirewallConfigInput {
     /// <li> <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. </p> </li>
     /// </ul>
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
-    pub fn firewall_fail_open(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FirewallFailOpenStatus> {
+    pub fn firewall_fail_open(&self) -> ::std::option::Option<&crate::types::FirewallFailOpenStatus> {
         self.firewall_fail_open.as_ref()
     }
 }
 impl UpdateFirewallConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallConfigInput`](crate::operation::update_firewall_config::UpdateFirewallConfigInput).
-    pub fn builder(
-    ) -> crate::operation::update_firewall_config::builders::UpdateFirewallConfigInputBuilder {
+    pub fn builder() -> crate::operation::update_firewall_config::builders::UpdateFirewallConfigInputBuilder {
         crate::operation::update_firewall_config::builders::UpdateFirewallConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFirewallConfigInput`](crate::operation::update_firewall_config::UpdateFirewallConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFirewallConfigInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_fail_open: ::std::option::Option<crate::types::FirewallFailOpenStatus>,
@@ -80,10 +75,7 @@ impl UpdateFirewallConfigInputBuilder {
     /// <li> <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. </p> </li>
     /// </ul>
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
-    pub fn set_firewall_fail_open(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallFailOpenStatus>,
-    ) -> Self {
+    pub fn set_firewall_fail_open(mut self, input: ::std::option::Option<crate::types::FirewallFailOpenStatus>) -> Self {
         self.firewall_fail_open = input;
         self
     }
@@ -93,23 +85,17 @@ impl UpdateFirewallConfigInputBuilder {
     /// <li> <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. </p> </li>
     /// </ul>
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
-    pub fn get_firewall_fail_open(
-        &self,
-    ) -> &::std::option::Option<crate::types::FirewallFailOpenStatus> {
+    pub fn get_firewall_fail_open(&self) -> &::std::option::Option<crate::types::FirewallFailOpenStatus> {
         &self.firewall_fail_open
     }
     /// Consumes the builder and constructs a [`UpdateFirewallConfigInput`](crate::operation::update_firewall_config::UpdateFirewallConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_firewall_config::UpdateFirewallConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_firewall_config::UpdateFirewallConfigInput {
-                resource_id: self.resource_id,
-                firewall_fail_open: self.firewall_fail_open,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_firewall_config::UpdateFirewallConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_firewall_config::UpdateFirewallConfigInput {
+            resource_id: self.resource_id,
+            firewall_fail_open: self.firewall_fail_open,
+        })
     }
 }

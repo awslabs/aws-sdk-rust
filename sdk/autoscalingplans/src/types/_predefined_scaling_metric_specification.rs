@@ -41,9 +41,7 @@ pub struct PredefinedScalingMetricSpecification {
 }
 impl PredefinedScalingMetricSpecification {
     /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Spot Fleet requests, and ECS services.</p>
-    pub fn predefined_scaling_metric_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScalingMetricType> {
+    pub fn predefined_scaling_metric_type(&self) -> ::std::option::Option<&crate::types::ScalingMetricType> {
         self.predefined_scaling_metric_type.as_ref()
     }
     /// <p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group for an Application Load Balancer attached to the Auto Scaling group, Spot Fleet request, or ECS service.</p>
@@ -88,35 +86,24 @@ impl PredefinedScalingMetricSpecification {
 
 /// A builder for [`PredefinedScalingMetricSpecification`](crate::types::PredefinedScalingMetricSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredefinedScalingMetricSpecificationBuilder {
-    pub(crate) predefined_scaling_metric_type:
-        ::std::option::Option<crate::types::ScalingMetricType>,
+    pub(crate) predefined_scaling_metric_type: ::std::option::Option<crate::types::ScalingMetricType>,
     pub(crate) resource_label: ::std::option::Option<::std::string::String>,
 }
 impl PredefinedScalingMetricSpecificationBuilder {
     /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Spot Fleet requests, and ECS services.</p>
-    pub fn predefined_scaling_metric_type(
-        mut self,
-        input: crate::types::ScalingMetricType,
-    ) -> Self {
+    pub fn predefined_scaling_metric_type(mut self, input: crate::types::ScalingMetricType) -> Self {
         self.predefined_scaling_metric_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Spot Fleet requests, and ECS services.</p>
-    pub fn set_predefined_scaling_metric_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalingMetricType>,
-    ) -> Self {
+    pub fn set_predefined_scaling_metric_type(mut self, input: ::std::option::Option<crate::types::ScalingMetricType>) -> Self {
         self.predefined_scaling_metric_type = input;
         self
     }
     /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Spot Fleet requests, and ECS services.</p>
-    pub fn get_predefined_scaling_metric_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalingMetricType> {
+    pub fn get_predefined_scaling_metric_type(&self) -> &::std::option::Option<crate::types::ScalingMetricType> {
         &self.predefined_scaling_metric_type
     }
     /// <p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group for an Application Load Balancer attached to the Auto Scaling group, Spot Fleet request, or ECS service.</p>
@@ -148,10 +135,7 @@ impl PredefinedScalingMetricSpecificationBuilder {
     /// </ul>
     /// <p>This is an example: app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-    pub fn resource_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_label = ::std::option::Option::Some(input.into());
         self
     }
@@ -184,10 +168,7 @@ impl PredefinedScalingMetricSpecificationBuilder {
     /// </ul>
     /// <p>This is an example: app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-    pub fn set_resource_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_label = input;
         self
     }

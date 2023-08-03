@@ -10,10 +10,7 @@ impl ListMeetingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_meetings::ListMeetingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_meetings::ListMeetingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_meetings::ListMeetingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_meetings();
         fluent_builder.inner = self;
@@ -26,9 +23,7 @@ impl ListMeetingsInputBuilder {
 /// <p>ListMeetings is not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API.</p>
 /// </important>
 /// <p>For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
-#[deprecated(
-    note = "ListMeetings is not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API."
-)]
+#[deprecated(note = "ListMeetings is not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMeetingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -51,10 +46,7 @@ impl ListMeetingsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_meetings::ListMeetings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_meetings::ListMeetings, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_meetings::ListMeetingsError>,
     > {
         let handle = self.handle.clone();
@@ -65,10 +57,7 @@ impl ListMeetingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -110,10 +99,7 @@ impl ListMeetingsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_meetings::ListMeetings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_meetings::ListMeetings, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_meetings::ListMeetingsError>,
     > {
         self.customize_middleware().await
@@ -121,13 +107,8 @@ impl ListMeetingsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_meetings::paginator::ListMeetingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_meetings::paginator::ListMeetingsPaginator {
-        crate::operation::list_meetings::paginator::ListMeetingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_meetings::paginator::ListMeetingsPaginator {
+        crate::operation::list_meetings::paginator::ListMeetingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DisassociateFirewallRuleGroupOutput`](crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupOutput) with field(s):
     ///   - [`firewall_rule_group_association(Option<FirewallRuleGroupAssociation>)`](crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupOutput::firewall_rule_group_association): <p>The firewall rule group association that you just removed. </p>
     /// - On failure, responds with [`SdkError<DisassociateFirewallRuleGroupError>`](crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError)
-    pub fn disassociate_firewall_rule_group(&self) -> crate::operation::disassociate_firewall_rule_group::builders::DisassociateFirewallRuleGroupFluentBuilder{
+    pub fn disassociate_firewall_rule_group(
+        &self,
+    ) -> crate::operation::disassociate_firewall_rule_group::builders::DisassociateFirewallRuleGroupFluentBuilder {
         crate::operation::disassociate_firewall_rule_group::builders::DisassociateFirewallRuleGroupFluentBuilder::new(self.handle.clone())
     }
 }

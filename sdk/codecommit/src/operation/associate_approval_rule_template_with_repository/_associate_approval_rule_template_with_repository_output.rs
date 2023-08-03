@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for AssociateApprovalRuleTemplateWithRepo
 }
 impl AssociateApprovalRuleTemplateWithRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`AssociateApprovalRuleTemplateWithRepositoryOutput`](crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryOutput).
-    pub fn builder() -> crate::operation::associate_approval_rule_template_with_repository::builders::AssociateApprovalRuleTemplateWithRepositoryOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::associate_approval_rule_template_with_repository::builders::AssociateApprovalRuleTemplateWithRepositoryOutputBuilder {
         crate::operation::associate_approval_rule_template_with_repository::builders::AssociateApprovalRuleTemplateWithRepositoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateApprovalRuleTemplateWithRepositoryOutput`](crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateApprovalRuleTemplateWithRepositoryOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl AssociateApprovalRuleTemplateWithRepositoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateApprovalRuleTemplateWithRepositoryOutput`](crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryOutput).
-    pub fn build(self) -> crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryOutput{
+    pub fn build(self) -> crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryOutput {
         crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryOutput {
             _request_id: self._request_id,
         }

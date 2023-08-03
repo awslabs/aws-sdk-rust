@@ -10,10 +10,7 @@ impl EnableMfaDeviceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::enable_mfa_device::EnableMfaDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_mfa_device::EnableMFADeviceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_mfa_device::EnableMFADeviceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.enable_mfa_device();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl EnableMFADeviceFluentBuilder {
         }
     }
     /// Access the EnableMFADevice as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::enable_mfa_device::builders::EnableMfaDeviceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::enable_mfa_device::builders::EnableMfaDeviceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl EnableMFADeviceFluentBuilder {
             crate::operation::enable_mfa_device::EnableMFADevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_mfa_device::EnableMFADeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_mfa_device::EnableMFADeviceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl EnableMFADeviceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl EnableMFADeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_mfa_device::EnableMfaDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_mfa_device::EnableMFADeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_mfa_device::EnableMFADeviceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl EnableMFADeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_mfa_device::EnableMfaDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_mfa_device::EnableMFADeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_mfa_device::EnableMFADeviceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl EnableMFADeviceFluentBuilder {
             crate::operation::enable_mfa_device::EnableMFADevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_mfa_device::EnableMFADeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_mfa_device::EnableMFADeviceError>,
     > {
         self.customize_middleware().await
     }
@@ -141,19 +125,13 @@ impl EnableMFADeviceFluentBuilder {
     }
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
-    pub fn serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.serial_number(input.into());
         self
     }
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
-    pub fn set_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_serial_number(input);
         self
     }
@@ -166,10 +144,7 @@ impl EnableMFADeviceFluentBuilder {
     /// <p>The format for this parameter is a string of six digits.</p> <important>
     /// <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>
     /// </important>
-    pub fn authentication_code1(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_code1(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_code1(input.into());
         self
     }
@@ -177,10 +152,7 @@ impl EnableMFADeviceFluentBuilder {
     /// <p>The format for this parameter is a string of six digits.</p> <important>
     /// <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>
     /// </important>
-    pub fn set_authentication_code1(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_code1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_code1(input);
         self
     }
@@ -195,10 +167,7 @@ impl EnableMFADeviceFluentBuilder {
     /// <p>The format for this parameter is a string of six digits.</p> <important>
     /// <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>
     /// </important>
-    pub fn authentication_code2(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_code2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_code2(input.into());
         self
     }
@@ -206,10 +175,7 @@ impl EnableMFADeviceFluentBuilder {
     /// <p>The format for this parameter is a string of six digits.</p> <important>
     /// <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>
     /// </important>
-    pub fn set_authentication_code2(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_code2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_code2(input);
         self
     }

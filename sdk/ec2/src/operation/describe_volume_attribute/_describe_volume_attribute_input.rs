@@ -29,18 +29,14 @@ impl DescribeVolumeAttributeInput {
 }
 impl DescribeVolumeAttributeInput {
     /// Creates a new builder-style object to manufacture [`DescribeVolumeAttributeInput`](crate::operation::describe_volume_attribute::DescribeVolumeAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::describe_volume_attribute::builders::DescribeVolumeAttributeInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_volume_attribute::builders::DescribeVolumeAttributeInputBuilder {
         crate::operation::describe_volume_attribute::builders::DescribeVolumeAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVolumeAttributeInput`](crate::operation::describe_volume_attribute::DescribeVolumeAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVolumeAttributeInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::VolumeAttributeName>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
@@ -53,10 +49,7 @@ impl DescribeVolumeAttributeInputBuilder {
         self
     }
     /// <p>The attribute of the volume. This parameter is required.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::VolumeAttributeName>) -> Self {
         self.attribute = input;
         self
     }
@@ -99,12 +92,10 @@ impl DescribeVolumeAttributeInputBuilder {
         crate::operation::describe_volume_attribute::DescribeVolumeAttributeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_volume_attribute::DescribeVolumeAttributeInput {
-                attribute: self.attribute,
-                volume_id: self.volume_id,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_volume_attribute::DescribeVolumeAttributeInput {
+            attribute: self.attribute,
+            volume_id: self.volume_id,
+            dry_run: self.dry_run,
+        })
     }
 }

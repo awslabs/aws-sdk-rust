@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`scaling_processes(Vec<String>)`](crate::operation::resume_processes::builders::ResumeProcessesFluentBuilder::scaling_processes) / [`set_scaling_processes(Option<Vec<String>>)`](crate::operation::resume_processes::builders::ResumeProcessesFluentBuilder::set_scaling_processes): <p>One or more of the following processes:</p>  <ul>   <li> <p> <code>Launch</code> </p> </li>   <li> <p> <code>Terminate</code> </p> </li>   <li> <p> <code>AddToLoadBalancer</code> </p> </li>   <li> <p> <code>AlarmNotification</code> </p> </li>   <li> <p> <code>AZRebalance</code> </p> </li>   <li> <p> <code>HealthCheck</code> </p> </li>   <li> <p> <code>InstanceRefresh</code> </p> </li>   <li> <p> <code>ReplaceUnhealthy</code> </p> </li>   <li> <p> <code>ScheduledActions</code> </p> </li>  </ul>  <p>If you omit this property, all processes are specified.</p>
     /// - On success, responds with [`ResumeProcessesOutput`](crate::operation::resume_processes::ResumeProcessesOutput)
     /// - On failure, responds with [`SdkError<ResumeProcessesError>`](crate::operation::resume_processes::ResumeProcessesError)
-    pub fn resume_processes(
-        &self,
-    ) -> crate::operation::resume_processes::builders::ResumeProcessesFluentBuilder {
-        crate::operation::resume_processes::builders::ResumeProcessesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn resume_processes(&self) -> crate::operation::resume_processes::builders::ResumeProcessesFluentBuilder {
+        crate::operation::resume_processes::builders::ResumeProcessesFluentBuilder::new(self.handle.clone())
     }
 }

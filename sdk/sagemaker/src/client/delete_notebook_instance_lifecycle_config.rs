@@ -6,7 +6,11 @@ impl super::Client {
     ///   - [`notebook_instance_lifecycle_config_name(impl ::std::convert::Into<String>)`](crate::operation::delete_notebook_instance_lifecycle_config::builders::DeleteNotebookInstanceLifecycleConfigFluentBuilder::notebook_instance_lifecycle_config_name) / [`set_notebook_instance_lifecycle_config_name(Option<String>)`](crate::operation::delete_notebook_instance_lifecycle_config::builders::DeleteNotebookInstanceLifecycleConfigFluentBuilder::set_notebook_instance_lifecycle_config_name): <p>The name of the lifecycle configuration to delete.</p>
     /// - On success, responds with [`DeleteNotebookInstanceLifecycleConfigOutput`](crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteNotebookInstanceLifecycleConfigError>`](crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigError)
-    pub fn delete_notebook_instance_lifecycle_config(&self) -> crate::operation::delete_notebook_instance_lifecycle_config::builders::DeleteNotebookInstanceLifecycleConfigFluentBuilder{
-        crate::operation::delete_notebook_instance_lifecycle_config::builders::DeleteNotebookInstanceLifecycleConfigFluentBuilder::new(self.handle.clone())
+    pub fn delete_notebook_instance_lifecycle_config(
+        &self,
+    ) -> crate::operation::delete_notebook_instance_lifecycle_config::builders::DeleteNotebookInstanceLifecycleConfigFluentBuilder {
+        crate::operation::delete_notebook_instance_lifecycle_config::builders::DeleteNotebookInstanceLifecycleConfigFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

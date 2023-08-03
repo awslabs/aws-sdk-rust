@@ -19,9 +19,7 @@ impl PutDetectorOutput {
 
 /// A builder for [`PutDetectorOutput`](crate::operation::put_detector::PutDetectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDetectorOutputBuilder {
     _request_id: Option<String>,
 }

@@ -58,9 +58,7 @@ impl FlowExecutionSummary {
 
 /// A builder for [`FlowExecutionSummary`](crate::types::FlowExecutionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlowExecutionSummaryBuilder {
     pub(crate) flow_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::FlowExecutionStatus>,
@@ -71,18 +69,12 @@ pub struct FlowExecutionSummaryBuilder {
 }
 impl FlowExecutionSummaryBuilder {
     /// <p>The ID of the flow execution.</p>
-    pub fn flow_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the flow execution.</p>
-    pub fn set_flow_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_execution_id = input;
         self
     }
@@ -96,10 +88,7 @@ impl FlowExecutionSummaryBuilder {
         self
     }
     /// <p>The current status of the flow execution.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FlowExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::FlowExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -108,18 +97,12 @@ impl FlowExecutionSummaryBuilder {
         &self.status
     }
     /// <p>The ID of the system instance that contains the flow.</p>
-    pub fn system_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn system_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.system_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the system instance that contains the flow.</p>
-    pub fn set_system_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_system_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.system_instance_id = input;
         self
     }
@@ -128,18 +111,12 @@ impl FlowExecutionSummaryBuilder {
         &self.system_instance_id
     }
     /// <p>The ID of the flow.</p>
-    pub fn flow_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the flow.</p>
-    pub fn set_flow_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_template_id = input;
         self
     }
@@ -153,10 +130,7 @@ impl FlowExecutionSummaryBuilder {
         self
     }
     /// <p>The date and time when the flow execution summary was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -170,10 +144,7 @@ impl FlowExecutionSummaryBuilder {
         self
     }
     /// <p>The date and time when the flow execution summary was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

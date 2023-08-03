@@ -10,10 +10,7 @@ impl ReverseReplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::reverse_replication::ReverseReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reverse_replication::ReverseReplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reverse_replication::ReverseReplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.reverse_replication();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ReverseReplicationFluentBuilder {
         }
     }
     /// Access the ReverseReplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reverse_replication::builders::ReverseReplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::reverse_replication::builders::ReverseReplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ReverseReplicationFluentBuilder {
             crate::operation::reverse_replication::ReverseReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reverse_replication::ReverseReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reverse_replication::ReverseReplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ReverseReplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ReverseReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reverse_replication::ReverseReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reverse_replication::ReverseReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reverse_replication::ReverseReplicationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ReverseReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reverse_replication::ReverseReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reverse_replication::ReverseReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reverse_replication::ReverseReplicationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl ReverseReplicationFluentBuilder {
             crate::operation::reverse_replication::ReverseReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reverse_replication::ReverseReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reverse_replication::ReverseReplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
-    pub fn recovery_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recovery_instance_id(input.into());
         self
     }
     /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
-    pub fn set_recovery_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recovery_instance_id(input);
         self
     }

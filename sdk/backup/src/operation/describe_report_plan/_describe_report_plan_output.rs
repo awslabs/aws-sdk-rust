@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeReportPlanOutput {
 }
 impl DescribeReportPlanOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReportPlanOutput`](crate::operation::describe_report_plan::DescribeReportPlanOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_report_plan::builders::DescribeReportPlanOutputBuilder {
+    pub fn builder() -> crate::operation::describe_report_plan::builders::DescribeReportPlanOutputBuilder {
         crate::operation::describe_report_plan::builders::DescribeReportPlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReportPlanOutput`](crate::operation::describe_report_plan::DescribeReportPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReportPlanOutputBuilder {
     pub(crate) report_plan: ::std::option::Option<crate::types::ReportPlan>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeReportPlanOutputBuilder {
         self
     }
     /// <p>Returns details about the report plan that is specified by its name. These details include the report plan's Amazon Resource Name (ARN), description, settings, delivery channel, deployment status, creation time, and last attempted and successful run times.</p>
-    pub fn set_report_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportPlan>,
-    ) -> Self {
+    pub fn set_report_plan(mut self, input: ::std::option::Option<crate::types::ReportPlan>) -> Self {
         self.report_plan = input;
         self
     }

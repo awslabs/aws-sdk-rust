@@ -24,16 +24,14 @@ impl ::aws_http::request_id::RequestId for ChangeResourceRecordSetsOutput {
 }
 impl ChangeResourceRecordSetsOutput {
     /// Creates a new builder-style object to manufacture [`ChangeResourceRecordSetsOutput`](crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput).
-    pub fn builder() -> crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsOutputBuilder{
+    pub fn builder() -> crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsOutputBuilder {
         crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ChangeResourceRecordSetsOutput`](crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeResourceRecordSetsOutputBuilder {
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
@@ -47,10 +45,7 @@ impl ChangeResourceRecordSetsOutputBuilder {
     }
     /// <p>A complex type that contains information about changes made to your hosted zone.</p>
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
-    pub fn set_change_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeInfo>,
-    ) -> Self {
+    pub fn set_change_info(mut self, input: ::std::option::Option<crate::types::ChangeInfo>) -> Self {
         self.change_info = input;
         self
     }
@@ -69,9 +64,7 @@ impl ChangeResourceRecordSetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ChangeResourceRecordSetsOutput`](crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput {
+    pub fn build(self) -> crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput {
         crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput {
             change_info: self.change_info,
             _request_id: self._request_id,

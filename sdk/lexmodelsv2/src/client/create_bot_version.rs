@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`bot_status(Option<BotStatus>)`](crate::operation::create_bot_version::CreateBotVersionOutput::bot_status): <p>When you send a request to create or update a bot, Amazon Lex sets the status response element to <code>Creating</code>. After Amazon Lex builds the bot, it sets status to <code>Available</code>. If Amazon Lex can't build the bot, it sets status to <code>Failed</code>.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::create_bot_version::CreateBotVersionOutput::creation_date_time): <p>A timestamp of the date and time that the version was created.</p>
     /// - On failure, responds with [`SdkError<CreateBotVersionError>`](crate::operation::create_bot_version::CreateBotVersionError)
-    pub fn create_bot_version(
-        &self,
-    ) -> crate::operation::create_bot_version::builders::CreateBotVersionFluentBuilder {
-        crate::operation::create_bot_version::builders::CreateBotVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_bot_version(&self) -> crate::operation::create_bot_version::builders::CreateBotVersionFluentBuilder {
+        crate::operation::create_bot_version::builders::CreateBotVersionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`network_acls(Option<Vec<NetworkAcl>>)`](crate::operation::describe_network_acls::DescribeNetworkAclsOutput::network_acls): <p>Information about one or more network ACLs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_network_acls::DescribeNetworkAclsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeNetworkAclsError>`](crate::operation::describe_network_acls::DescribeNetworkAclsError)
-    pub fn describe_network_acls(
-        &self,
-    ) -> crate::operation::describe_network_acls::builders::DescribeNetworkAclsFluentBuilder {
-        crate::operation::describe_network_acls::builders::DescribeNetworkAclsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_network_acls(&self) -> crate::operation::describe_network_acls::builders::DescribeNetworkAclsFluentBuilder {
+        crate::operation::describe_network_acls::builders::DescribeNetworkAclsFluentBuilder::new(self.handle.clone())
     }
 }

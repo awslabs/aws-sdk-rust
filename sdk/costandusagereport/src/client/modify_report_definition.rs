@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`report_definition(ReportDefinition)`](crate::operation::modify_report_definition::builders::ModifyReportDefinitionFluentBuilder::report_definition) / [`set_report_definition(Option<ReportDefinition>)`](crate::operation::modify_report_definition::builders::ModifyReportDefinitionFluentBuilder::set_report_definition): <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
     /// - On success, responds with [`ModifyReportDefinitionOutput`](crate::operation::modify_report_definition::ModifyReportDefinitionOutput)
     /// - On failure, responds with [`SdkError<ModifyReportDefinitionError>`](crate::operation::modify_report_definition::ModifyReportDefinitionError)
-    pub fn modify_report_definition(
-        &self,
-    ) -> crate::operation::modify_report_definition::builders::ModifyReportDefinitionFluentBuilder
-    {
+    pub fn modify_report_definition(&self) -> crate::operation::modify_report_definition::builders::ModifyReportDefinitionFluentBuilder {
         crate::operation::modify_report_definition::builders::ModifyReportDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

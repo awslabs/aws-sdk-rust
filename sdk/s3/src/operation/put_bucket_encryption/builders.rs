@@ -46,9 +46,7 @@ impl PutBucketEncryptionFluentBuilder {
         }
     }
     /// Access the PutBucketEncryption as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_bucket_encryption::builders::PutBucketEncryptionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_bucket_encryption::builders::PutBucketEncryptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +58,7 @@ impl PutBucketEncryptionFluentBuilder {
             crate::operation::put_bucket_encryption::PutBucketEncryption,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_encryption::PutBucketEncryptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_encryption::PutBucketEncryptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +68,7 @@ impl PutBucketEncryptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +77,7 @@ impl PutBucketEncryptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_encryption::PutBucketEncryptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_encryption::PutBucketEncryptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_encryption::PutBucketEncryptionError>,
     > {
         let op = self
             .inner
@@ -109,9 +100,7 @@ impl PutBucketEncryptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_encryption::PutBucketEncryptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_encryption::PutBucketEncryptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_encryption::PutBucketEncryptionError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +114,7 @@ impl PutBucketEncryptionFluentBuilder {
             crate::operation::put_bucket_encryption::PutBucketEncryption,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_encryption::PutBucketEncryptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_encryption::PutBucketEncryptionError>,
     > {
         self.customize_middleware().await
     }
@@ -170,55 +157,36 @@ impl PutBucketEncryptionFluentBuilder {
     }
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::ChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
         self.inner = self.inner.set_checksum_algorithm(input);
         self
     }
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
-    pub fn get_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
         self.inner.get_checksum_algorithm()
     }
     /// <p>Specifies the default server-side-encryption configuration.</p>
-    pub fn server_side_encryption_configuration(
-        mut self,
-        input: crate::types::ServerSideEncryptionConfiguration,
-    ) -> Self {
+    pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.inner = self.inner.server_side_encryption_configuration(input);
         self
     }
     /// <p>Specifies the default server-side-encryption configuration.</p>
-    pub fn set_server_side_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
         self.inner = self.inner.set_server_side_encryption_configuration(input);
         self
     }
     /// <p>Specifies the default server-side-encryption configuration.</p>
-    pub fn get_server_side_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+    pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
         self.inner.get_server_side_encryption_configuration()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_bucket_owner(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }

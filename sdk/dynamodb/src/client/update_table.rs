@@ -16,9 +16,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateTableOutput`](crate::operation::update_table::UpdateTableOutput) with field(s):
     ///   - [`table_description(Option<TableDescription>)`](crate::operation::update_table::UpdateTableOutput::table_description): <p>Represents the properties of the table.</p>
     /// - On failure, responds with [`SdkError<UpdateTableError>`](crate::operation::update_table::UpdateTableError)
-    pub fn update_table(
-        &self,
-    ) -> crate::operation::update_table::builders::UpdateTableFluentBuilder {
+    pub fn update_table(&self) -> crate::operation::update_table::builders::UpdateTableFluentBuilder {
         crate::operation::update_table::builders::UpdateTableFluentBuilder::new(self.handle.clone())
     }
 }

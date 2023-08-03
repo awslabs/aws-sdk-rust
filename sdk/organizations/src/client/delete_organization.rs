@@ -5,11 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::delete_organization::builders::DeleteOrganizationFluentBuilder::send) it.
     /// - On success, responds with [`DeleteOrganizationOutput`](crate::operation::delete_organization::DeleteOrganizationOutput)
     /// - On failure, responds with [`SdkError<DeleteOrganizationError>`](crate::operation::delete_organization::DeleteOrganizationError)
-    pub fn delete_organization(
-        &self,
-    ) -> crate::operation::delete_organization::builders::DeleteOrganizationFluentBuilder {
-        crate::operation::delete_organization::builders::DeleteOrganizationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_organization(&self) -> crate::operation::delete_organization::builders::DeleteOrganizationFluentBuilder {
+        crate::operation::delete_organization::builders::DeleteOrganizationFluentBuilder::new(self.handle.clone())
     }
 }

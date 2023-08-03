@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`policy_enabled(Option<bool>)`](crate::operation::modify_verified_access_group_policy::ModifyVerifiedAccessGroupPolicyOutput::policy_enabled): <p>The status of the Verified Access policy.</p>
     ///   - [`policy_document(Option<String>)`](crate::operation::modify_verified_access_group_policy::ModifyVerifiedAccessGroupPolicyOutput::policy_document): <p>The Verified Access policy document.</p>
     /// - On failure, responds with [`SdkError<ModifyVerifiedAccessGroupPolicyError>`](crate::operation::modify_verified_access_group_policy::ModifyVerifiedAccessGroupPolicyError)
-    pub fn modify_verified_access_group_policy(&self) -> crate::operation::modify_verified_access_group_policy::builders::ModifyVerifiedAccessGroupPolicyFluentBuilder{
+    pub fn modify_verified_access_group_policy(
+        &self,
+    ) -> crate::operation::modify_verified_access_group_policy::builders::ModifyVerifiedAccessGroupPolicyFluentBuilder {
         crate::operation::modify_verified_access_group_policy::builders::ModifyVerifiedAccessGroupPolicyFluentBuilder::new(self.handle.clone())
     }
 }

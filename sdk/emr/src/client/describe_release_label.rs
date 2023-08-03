@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_release_label::DescribeReleaseLabelOutput::next_token): <p>The pagination token. Reserved for future use. Currently set to null.</p>
     ///   - [`available_os_releases(Option<Vec<OsRelease>>)`](crate::operation::describe_release_label::DescribeReleaseLabelOutput::available_os_releases): <p>The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
     /// - On failure, responds with [`SdkError<DescribeReleaseLabelError>`](crate::operation::describe_release_label::DescribeReleaseLabelError)
-    pub fn describe_release_label(
-        &self,
-    ) -> crate::operation::describe_release_label::builders::DescribeReleaseLabelFluentBuilder {
-        crate::operation::describe_release_label::builders::DescribeReleaseLabelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_release_label(&self) -> crate::operation::describe_release_label::builders::DescribeReleaseLabelFluentBuilder {
+        crate::operation::describe_release_label::builders::DescribeReleaseLabelFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,10 +6,7 @@ pub fn ser_patch_rule(
     if let Some(var_1) = &input.patch_filter_group {
         #[allow(unused_mut)]
         let mut object_2 = object.key("PatchFilterGroup").start_object();
-        crate::protocol_serde::shape_patch_filter_group::ser_patch_filter_group(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_patch_filter_group::ser_patch_filter_group(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.compliance_level {
@@ -34,12 +31,7 @@ pub(crate) fn de_patch_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::PatchRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -49,69 +41,48 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "PatchFilterGroup" => {
-                                builder = builder.set_patch_filter_group(
-                                    crate::protocol_serde::shape_patch_filter_group::de_patch_filter_group(tokens)?
-                                );
-                            }
-                            "ComplianceLevel" => {
-                                builder = builder.set_compliance_level(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::PatchComplianceLevel::from(u.as_ref())
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "PatchFilterGroup" => {
+                            builder = builder.set_patch_filter_group(crate::protocol_serde::shape_patch_filter_group::de_patch_filter_group(tokens)?);
+                        }
+                        "ComplianceLevel" => {
+                            builder = builder.set_compliance_level(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PatchComplianceLevel::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "ApproveAfterDays" => {
-                                builder = builder.set_approve_after_days(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "ApproveAfterDays" => {
+                            builder = builder.set_approve_after_days(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "ApproveUntilDate" => {
-                                builder = builder.set_approve_until_date(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "ApproveUntilDate" => {
+                            builder = builder.set_approve_until_date(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "EnableNonSecurity" => {
-                                builder = builder.set_enable_non_security(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "EnableNonSecurity" => {
+                            builder = builder.set_enable_non_security(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

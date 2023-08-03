@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`repositories(Option<Vec<RepositorySummary>>)`](crate::operation::list_repositories::ListRepositoriesOutput::repositories): <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_repositories::ListRepositoriesOutput::next_token): <p> If there are additional results, this is the token for the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListRepositoriesError>`](crate::operation::list_repositories::ListRepositoriesError)
-    pub fn list_repositories(
-        &self,
-    ) -> crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder {
-        crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_repositories(&self) -> crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder {
+        crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::new(self.handle.clone())
     }
 }

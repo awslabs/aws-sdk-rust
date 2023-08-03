@@ -54,9 +54,7 @@ impl InstanceState {
 
 /// A builder for [`InstanceState`](crate::types::InstanceState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceStateBuilder {
     pub(crate) code: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<crate::types::InstanceStateName>,
@@ -118,10 +116,7 @@ impl InstanceStateBuilder {
         self
     }
     /// <p>The current state of the instance.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStateName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::InstanceStateName>) -> Self {
         self.name = input;
         self
     }

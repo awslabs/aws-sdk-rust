@@ -22,17 +22,14 @@ impl ExchangeCodeForTokenInput {
 }
 impl ExchangeCodeForTokenInput {
     /// Creates a new builder-style object to manufacture [`ExchangeCodeForTokenInput`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput).
-    pub fn builder(
-    ) -> crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenInputBuilder {
+    pub fn builder() -> crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenInputBuilder {
         crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenInputBuilder::default()
     }
 }
 
 /// A builder for [`ExchangeCodeForTokenInput`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExchangeCodeForTokenInputBuilder {
     pub(crate) provider: ::std::option::Option<crate::types::TokenProviders>,
     pub(crate) request: ::std::option::Option<crate::types::ExchangeCodeForTokenRequestBody>,
@@ -44,10 +41,7 @@ impl ExchangeCodeForTokenInputBuilder {
         self
     }
     /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
-    pub fn set_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::TokenProviders>,
-    ) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::TokenProviders>) -> Self {
         self.provider = input;
         self
     }
@@ -61,31 +55,22 @@ impl ExchangeCodeForTokenInputBuilder {
         self
     }
     /// <p>Describes the configuration of the request.</p>
-    pub fn set_request(
-        mut self,
-        input: ::std::option::Option<crate::types::ExchangeCodeForTokenRequestBody>,
-    ) -> Self {
+    pub fn set_request(mut self, input: ::std::option::Option<crate::types::ExchangeCodeForTokenRequestBody>) -> Self {
         self.request = input;
         self
     }
     /// <p>Describes the configuration of the request.</p>
-    pub fn get_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExchangeCodeForTokenRequestBody> {
+    pub fn get_request(&self) -> &::std::option::Option<crate::types::ExchangeCodeForTokenRequestBody> {
         &self.request
     }
     /// Consumes the builder and constructs a [`ExchangeCodeForTokenInput`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput {
-                provider: self.provider,
-                request: self.request,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput {
+            provider: self.provider,
+            request: self.request,
+        })
     }
 }

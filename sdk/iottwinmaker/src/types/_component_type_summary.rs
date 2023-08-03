@@ -65,9 +65,7 @@ impl ComponentTypeSummary {
 
 /// A builder for [`ComponentTypeSummary`](crate::types::ComponentTypeSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentTypeSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) component_type_id: ::std::option::Option<::std::string::String>,
@@ -93,18 +91,12 @@ impl ComponentTypeSummaryBuilder {
         &self.arn
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the component type.</p>
-    pub fn set_component_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_type_id = input;
         self
     }
@@ -118,10 +110,7 @@ impl ComponentTypeSummaryBuilder {
         self
     }
     /// <p>The date and time when the component type was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -135,10 +124,7 @@ impl ComponentTypeSummaryBuilder {
         self
     }
     /// <p>The date and time when the component type was last updated.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date_time = input;
         self
     }
@@ -175,18 +161,12 @@ impl ComponentTypeSummaryBuilder {
         &self.status
     }
     /// <p>The component type name.</p>
-    pub fn component_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The component type name.</p>
-    pub fn set_component_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_type_name = input;
         self
     }

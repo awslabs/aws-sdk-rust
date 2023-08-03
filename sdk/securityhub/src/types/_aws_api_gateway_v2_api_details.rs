@@ -102,9 +102,7 @@ impl AwsApiGatewayV2ApiDetails {
 
 /// A builder for [`AwsApiGatewayV2ApiDetails`](crate::types::AwsApiGatewayV2ApiDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsApiGatewayV2ApiDetailsBuilder {
     pub(crate) api_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
@@ -159,25 +157,17 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
         &self.api_id
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. </p>
-    pub fn api_key_selection_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_key_selection_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key_selection_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. </p>
-    pub fn set_api_key_selection_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_key_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_key_selection_expression = input;
         self
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. </p>
-    pub fn get_api_key_selection_expression(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_api_key_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_key_selection_expression
     }
     /// <p>Indicates when the API was created.</p>
@@ -241,19 +231,13 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
     }
     /// <p>The API protocol for the API.</p>
     /// <p>Valid values: <code>WEBSOCKET</code> | <code>HTTP</code> </p>
-    pub fn protocol_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protocol_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API protocol for the API.</p>
     /// <p>Valid values: <code>WEBSOCKET</code> | <code>HTTP</code> </p>
-    pub fn set_protocol_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protocol_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol_type = input;
         self
     }
@@ -265,20 +249,14 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
     /// <p>The route selection expression for the API.</p>
     /// <p>For HTTP APIs, must be <code>${request.method} ${request.path}</code>. This is the default value for HTTP APIs.</p>
     /// <p>For WebSocket APIs, there is no default value.</p>
-    pub fn route_selection_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_selection_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_selection_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The route selection expression for the API.</p>
     /// <p>For HTTP APIs, must be <code>${request.method} ${request.path}</code>. This is the default value for HTTP APIs.</p>
     /// <p>For WebSocket APIs, there is no default value.</p>
-    pub fn set_route_selection_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_selection_expression = input;
         self
     }
@@ -294,17 +272,12 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
         self
     }
     /// <p>A cross-origin resource sharing (CORS) configuration. Supported only for HTTP APIs.</p>
-    pub fn set_cors_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsCorsConfiguration>,
-    ) -> Self {
+    pub fn set_cors_configuration(mut self, input: ::std::option::Option<crate::types::AwsCorsConfiguration>) -> Self {
         self.cors_configuration = input;
         self
     }
     /// <p>A cross-origin resource sharing (CORS) configuration. Supported only for HTTP APIs.</p>
-    pub fn get_cors_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsCorsConfiguration> {
+    pub fn get_cors_configuration(&self) -> &::std::option::Option<crate::types::AwsCorsConfiguration> {
         &self.cors_configuration
     }
     /// Consumes the builder and constructs a [`AwsApiGatewayV2ApiDetails`](crate::types::AwsApiGatewayV2ApiDetails).

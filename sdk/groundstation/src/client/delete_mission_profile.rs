@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteMissionProfileOutput`](crate::operation::delete_mission_profile::DeleteMissionProfileOutput) with field(s):
     ///   - [`mission_profile_id(Option<String>)`](crate::operation::delete_mission_profile::DeleteMissionProfileOutput::mission_profile_id): <p>UUID of a mission profile.</p>
     /// - On failure, responds with [`SdkError<DeleteMissionProfileError>`](crate::operation::delete_mission_profile::DeleteMissionProfileError)
-    pub fn delete_mission_profile(
-        &self,
-    ) -> crate::operation::delete_mission_profile::builders::DeleteMissionProfileFluentBuilder {
-        crate::operation::delete_mission_profile::builders::DeleteMissionProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_mission_profile(&self) -> crate::operation::delete_mission_profile::builders::DeleteMissionProfileFluentBuilder {
+        crate::operation::delete_mission_profile::builders::DeleteMissionProfileFluentBuilder::new(self.handle.clone())
     }
 }

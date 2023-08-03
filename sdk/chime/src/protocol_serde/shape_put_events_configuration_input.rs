@@ -7,9 +7,7 @@ pub fn ser_put_events_configuration_input(
         object.key("LambdaFunctionArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.outbound_events_https_endpoint {
-        object
-            .key("OutboundEventsHTTPSEndpoint")
-            .string(var_2.as_str());
+        object.key("OutboundEventsHTTPSEndpoint").string(var_2.as_str());
     }
     Ok(())
 }

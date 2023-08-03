@@ -36,9 +36,7 @@ impl ListDomainsOutput {
 
 /// A builder for [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainsOutputBuilder {
     pub(crate) domains: ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>,
     pub(crate) next_page_marker: ::std::option::Option<::std::string::String>,
@@ -57,32 +55,21 @@ impl ListDomainsOutputBuilder {
         self
     }
     /// <p>A list of domains.</p>
-    pub fn set_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>,
-    ) -> Self {
+    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>) -> Self {
         self.domains = input;
         self
     }
     /// <p>A list of domains.</p>
-    pub fn get_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>> {
+    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>> {
         &self.domains
     }
     /// <p>If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-    pub fn next_page_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-    pub fn set_next_page_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_marker = input;
         self
     }

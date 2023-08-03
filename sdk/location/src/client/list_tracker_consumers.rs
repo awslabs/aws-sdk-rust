@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`consumer_arns(Option<Vec<String>>)`](crate::operation::list_tracker_consumers::ListTrackerConsumersOutput::consumer_arns): <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tracker_consumers::ListTrackerConsumersOutput::next_token): <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListTrackerConsumersError>`](crate::operation::list_tracker_consumers::ListTrackerConsumersError)
-    pub fn list_tracker_consumers(
-        &self,
-    ) -> crate::operation::list_tracker_consumers::builders::ListTrackerConsumersFluentBuilder {
-        crate::operation::list_tracker_consumers::builders::ListTrackerConsumersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_tracker_consumers(&self) -> crate::operation::list_tracker_consumers::builders::ListTrackerConsumersFluentBuilder {
+        crate::operation::list_tracker_consumers::builders::ListTrackerConsumersFluentBuilder::new(self.handle.clone())
     }
 }

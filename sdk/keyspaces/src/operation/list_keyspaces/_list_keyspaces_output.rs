@@ -35,9 +35,7 @@ impl ListKeyspacesOutput {
 
 /// A builder for [`ListKeyspacesOutput`](crate::operation::list_keyspaces::ListKeyspacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKeyspacesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) keyspaces: ::std::option::Option<::std::vec::Vec<crate::types::KeyspaceSummary>>,
@@ -70,17 +68,12 @@ impl ListKeyspacesOutputBuilder {
         self
     }
     /// <p>A list of keyspaces.</p>
-    pub fn set_keyspaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeyspaceSummary>>,
-    ) -> Self {
+    pub fn set_keyspaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyspaceSummary>>) -> Self {
         self.keyspaces = input;
         self
     }
     /// <p>A list of keyspaces.</p>
-    pub fn get_keyspaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyspaceSummary>> {
+    pub fn get_keyspaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyspaceSummary>> {
         &self.keyspaces
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

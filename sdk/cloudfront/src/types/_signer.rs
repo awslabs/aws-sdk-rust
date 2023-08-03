@@ -30,27 +30,19 @@ impl Signer {
 
 /// A builder for [`Signer`](crate::types::Signer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignerBuilder {
     pub(crate) aws_account_number: ::std::option::Option<::std::string::String>,
     pub(crate) key_pair_ids: ::std::option::Option<crate::types::KeyPairIds>,
 }
 impl SignerBuilder {
     /// <p>An Amazon Web Services account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If the Amazon Web Services account that owns the key pairs is the same account that owns the CloudFront distribution, the value of this field is <code>self</code>.</p>
-    pub fn aws_account_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Web Services account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If the Amazon Web Services account that owns the key pairs is the same account that owns the CloudFront distribution, the value of this field is <code>self</code>.</p>
-    pub fn set_aws_account_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_number = input;
         self
     }
@@ -64,10 +56,7 @@ impl SignerBuilder {
         self
     }
     /// <p>A list of CloudFront key pair identifiers.</p>
-    pub fn set_key_pair_ids(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyPairIds>,
-    ) -> Self {
+    pub fn set_key_pair_ids(mut self, input: ::std::option::Option<crate::types::KeyPairIds>) -> Self {
         self.key_pair_ids = input;
         self
     }

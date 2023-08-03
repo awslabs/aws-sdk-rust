@@ -36,17 +36,14 @@ impl CreateServiceProfileInput {
 }
 impl CreateServiceProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceProfileInput`](crate::operation::create_service_profile::CreateServiceProfileInput).
-    pub fn builder(
-    ) -> crate::operation::create_service_profile::builders::CreateServiceProfileInputBuilder {
+    pub fn builder() -> crate::operation::create_service_profile::builders::CreateServiceProfileInputBuilder {
         crate::operation::create_service_profile::builders::CreateServiceProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateServiceProfileInput`](crate::operation::create_service_profile::CreateServiceProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateServiceProfileInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanServiceProfile>,
@@ -74,10 +71,7 @@ impl CreateServiceProfileInputBuilder {
         self
     }
     /// <p>The service profile information to use to create the service profile.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanServiceProfile>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanServiceProfile>) -> Self {
         self.lo_ra_wan = input;
         self
     }
@@ -97,10 +91,7 @@ impl CreateServiceProfileInputBuilder {
         self
     }
     /// <p>The tags to attach to the new service profile. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -109,18 +100,12 @@ impl CreateServiceProfileInputBuilder {
         &self.tags
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -131,17 +116,13 @@ impl CreateServiceProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateServiceProfileInput`](crate::operation::create_service_profile::CreateServiceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_service_profile::CreateServiceProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_service_profile::CreateServiceProfileInput {
-                name: self.name,
-                lo_ra_wan: self.lo_ra_wan,
-                tags: self.tags,
-                client_request_token: self.client_request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_service_profile::CreateServiceProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_service_profile::CreateServiceProfileInput {
+            name: self.name,
+            lo_ra_wan: self.lo_ra_wan,
+            tags: self.tags,
+            client_request_token: self.client_request_token,
+        })
     }
 }

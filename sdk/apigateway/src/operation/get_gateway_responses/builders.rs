@@ -37,9 +37,7 @@ impl GetGatewayResponsesFluentBuilder {
         }
     }
     /// Access the GetGatewayResponses as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_gateway_responses::builders::GetGatewayResponsesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_gateway_responses::builders::GetGatewayResponsesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetGatewayResponsesFluentBuilder {
             crate::operation::get_gateway_responses::GetGatewayResponses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_gateway_responses::GetGatewayResponsesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_gateway_responses::GetGatewayResponsesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetGatewayResponsesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetGatewayResponsesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_gateway_responses::GetGatewayResponsesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_gateway_responses::GetGatewayResponsesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_gateway_responses::GetGatewayResponsesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetGatewayResponsesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_gateway_responses::GetGatewayResponsesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_gateway_responses::GetGatewayResponsesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_gateway_responses::GetGatewayResponsesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetGatewayResponsesFluentBuilder {
             crate::operation::get_gateway_responses::GetGatewayResponses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_gateway_responses::GetGatewayResponsesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_gateway_responses::GetGatewayResponsesError>,
     > {
         self.customize_middleware().await
     }

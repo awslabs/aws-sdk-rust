@@ -37,9 +37,7 @@ impl CreateEmailTemplateFluentBuilder {
         }
     }
     /// Access the CreateEmailTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_email_template::builders::CreateEmailTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_email_template::builders::CreateEmailTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateEmailTemplateFluentBuilder {
             crate::operation::create_email_template::CreateEmailTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_email_template::CreateEmailTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_email_template::CreateEmailTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateEmailTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateEmailTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_email_template::CreateEmailTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_email_template::CreateEmailTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_email_template::CreateEmailTemplateError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateEmailTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_email_template::CreateEmailTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_email_template::CreateEmailTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_email_template::CreateEmailTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateEmailTemplateFluentBuilder {
             crate::operation::create_email_template::CreateEmailTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_email_template::CreateEmailTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_email_template::CreateEmailTemplateError>,
     > {
         self.customize_middleware().await
     }
@@ -128,32 +115,21 @@ impl CreateEmailTemplateFluentBuilder {
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-    pub fn set_email_template_request(
-        mut self,
-        input: ::std::option::Option<crate::types::EmailTemplateRequest>,
-    ) -> Self {
+    pub fn set_email_template_request(mut self, input: ::std::option::Option<crate::types::EmailTemplateRequest>) -> Self {
         self.inner = self.inner.set_email_template_request(input);
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-    pub fn get_email_template_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::EmailTemplateRequest> {
+    pub fn get_email_template_request(&self) -> &::std::option::Option<crate::types::EmailTemplateRequest> {
         self.inner.get_email_template_request()
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }

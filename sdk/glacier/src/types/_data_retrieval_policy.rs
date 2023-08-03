@@ -23,9 +23,7 @@ impl DataRetrievalPolicy {
 
 /// A builder for [`DataRetrievalPolicy`](crate::types::DataRetrievalPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataRetrievalPolicyBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::DataRetrievalRule>>,
 }
@@ -42,17 +40,12 @@ impl DataRetrievalPolicyBuilder {
         self
     }
     /// <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataRetrievalRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataRetrievalRule>>) -> Self {
         self.rules = input;
         self
     }
     /// <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataRetrievalRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataRetrievalRule>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`DataRetrievalPolicy`](crate::types::DataRetrievalPolicy).

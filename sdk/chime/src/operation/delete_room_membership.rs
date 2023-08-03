@@ -27,84 +27,49 @@ impl DeleteRoomMembershipInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::delete_room_membership::DeleteRoomMembershipInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.account_id;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("account_id", "cannot be empty or unset"))?;
+                let account_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
+                if account_id.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "account_id",
                         "cannot be empty or unset",
-                    )
-                })?;
-                let account_id = ::aws_smithy_http::label::fmt_string(
-                    input_1,
-                    ::aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if account_id.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "account_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
                 let input_2 = &_input.room_id;
-                let input_2 = input_2.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let input_2 = input_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("room_id", "cannot be empty or unset"))?;
+                let room_id = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
+                if room_id.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "room_id",
                         "cannot be empty or unset",
-                    )
-                })?;
-                let room_id = ::aws_smithy_http::label::fmt_string(
-                    input_2,
-                    ::aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if room_id.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "room_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
                 let input_3 = &_input.member_id;
-                let input_3 = input_3.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let input_3 = input_3
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("member_id", "cannot be empty or unset"))?;
+                let member_id = ::aws_smithy_http::label::fmt_string(input_3, ::aws_smithy_http::label::EncodingStrategy::Default);
+                if member_id.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "member_id",
                         "cannot be empty or unset",
-                    )
-                })?;
-                let member_id = ::aws_smithy_http::label::fmt_string(
-                    input_3,
-                    ::aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if member_id.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "member_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
                 ::std::write!(
                     output,
@@ -120,10 +85,7 @@ impl DeleteRoomMembershipInput {
             fn update_http_builder(
                 input: &crate::operation::delete_room_membership::DeleteRoomMembershipInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("DELETE").uri(uri))
@@ -144,10 +106,8 @@ impl DeleteRoomMembershipInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -156,29 +116,16 @@ impl DeleteRoomMembershipInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::delete_room_membership::DeleteRoomMembership::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "DeleteRoomMembership",
-            "chime",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::delete_room_membership::DeleteRoomMembership::new())
+            .with_metadata(::aws_smithy_http::operation::Metadata::new("DeleteRoomMembership", "chime"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -242,9 +189,7 @@ pub enum DeleteRoomMembershipError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for DeleteRoomMembershipError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -271,36 +216,18 @@ impl ::std::fmt::Display for DeleteRoomMembershipError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteRoomMembershipError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::BadRequestException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ForbiddenException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::NotFoundException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ServiceFailureException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ServiceUnavailableException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ThrottledClientException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::UnauthorizedClientException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ForbiddenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottledClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnauthorizedClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::delete_room_membership::DeleteRoomMembershipError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::delete_room_membership::DeleteRoomMembershipError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -316,27 +243,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DeleteRoomMembershipError {
 impl DeleteRoomMembershipError {
     /// Creates the `DeleteRoomMembershipError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `DeleteRoomMembershipError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,

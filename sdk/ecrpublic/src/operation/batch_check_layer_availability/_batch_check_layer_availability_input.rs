@@ -29,16 +29,14 @@ impl BatchCheckLayerAvailabilityInput {
 }
 impl BatchCheckLayerAvailabilityInput {
     /// Creates a new builder-style object to manufacture [`BatchCheckLayerAvailabilityInput`](crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityInput).
-    pub fn builder() -> crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityInputBuilder{
+    pub fn builder() -> crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityInputBuilder {
         crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchCheckLayerAvailabilityInput`](crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCheckLayerAvailabilityInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl BatchCheckLayerAvailabilityInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository that's associated with the image layers to check.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository that's associated with the image layers to check.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -84,27 +76,19 @@ impl BatchCheckLayerAvailabilityInputBuilder {
     /// To override the contents of this collection use [`set_layer_digests`](Self::set_layer_digests).
     ///
     /// <p>The digests of the image layers to check.</p>
-    pub fn layer_digests(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn layer_digests(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.layer_digests.unwrap_or_default();
         v.push(input.into());
         self.layer_digests = ::std::option::Option::Some(v);
         self
     }
     /// <p>The digests of the image layers to check.</p>
-    pub fn set_layer_digests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_layer_digests(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.layer_digests = input;
         self
     }
     /// <p>The digests of the image layers to check.</p>
-    pub fn get_layer_digests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_layer_digests(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.layer_digests
     }
     /// Consumes the builder and constructs a [`BatchCheckLayerAvailabilityInput`](crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityInput).
@@ -114,12 +98,10 @@ impl BatchCheckLayerAvailabilityInputBuilder {
         crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityInput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                layer_digests: self.layer_digests,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityInput {
+            registry_id: self.registry_id,
+            repository_name: self.repository_name,
+            layer_digests: self.layer_digests,
+        })
     }
 }

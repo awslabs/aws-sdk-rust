@@ -15,10 +15,7 @@ pub fn ser_update_event_source_mapping_input(
     if let Some(var_3) = &input.destination_config {
         #[allow(unused_mut)]
         let mut object_4 = object.key("DestinationConfig").start_object();
-        crate::protocol_serde::shape_destination_config::ser_destination_config(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_destination_config::ser_destination_config(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.document_db_event_source_config {

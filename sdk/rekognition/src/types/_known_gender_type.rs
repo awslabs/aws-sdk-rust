@@ -40,13 +40,7 @@
 /// <p>A list of enum string of possible gender values that Celebrity returns.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum KnownGenderType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for KnownGenderType {
             "Male" => KnownGenderType::Male,
             "Nonbinary" => KnownGenderType::Nonbinary,
             "Unlisted" => KnownGenderType::Unlisted,
-            other => {
-                KnownGenderType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => KnownGenderType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

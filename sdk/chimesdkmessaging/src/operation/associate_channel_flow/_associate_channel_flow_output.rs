@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateChannelFlowOutput {
 }
 impl AssociateChannelFlowOutput {
     /// Creates a new builder-style object to manufacture [`AssociateChannelFlowOutput`](crate::operation::associate_channel_flow::AssociateChannelFlowOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_channel_flow::builders::AssociateChannelFlowOutputBuilder {
+    pub fn builder() -> crate::operation::associate_channel_flow::builders::AssociateChannelFlowOutputBuilder {
         crate::operation::associate_channel_flow::builders::AssociateChannelFlowOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateChannelFlowOutput`](crate::operation::associate_channel_flow::AssociateChannelFlowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateChannelFlowOutputBuilder {
     _request_id: Option<String>,
 }

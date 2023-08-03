@@ -27,17 +27,13 @@ impl ::std::fmt::Display for ScheduledActionTypeUnsupportedFault {
     }
 }
 impl ::std::error::Error for ScheduledActionTypeUnsupportedFault {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::ScheduledActionTypeUnsupportedFault
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::ScheduledActionTypeUnsupportedFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ScheduledActionTypeUnsupportedFault
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ScheduledActionTypeUnsupportedFault {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -51,9 +47,7 @@ impl ScheduledActionTypeUnsupportedFault {
 
 /// A builder for [`ScheduledActionTypeUnsupportedFault`](crate::types::error::ScheduledActionTypeUnsupportedFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledActionTypeUnsupportedFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -80,10 +74,7 @@ impl ScheduledActionTypeUnsupportedFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

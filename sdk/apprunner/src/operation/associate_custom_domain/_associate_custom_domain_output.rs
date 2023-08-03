@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for AssociateCustomDomainOutput {
 }
 impl AssociateCustomDomainOutput {
     /// Creates a new builder-style object to manufacture [`AssociateCustomDomainOutput`](crate::operation::associate_custom_domain::AssociateCustomDomainOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_custom_domain::builders::AssociateCustomDomainOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_custom_domain::builders::AssociateCustomDomainOutputBuilder {
         crate::operation::associate_custom_domain::builders::AssociateCustomDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateCustomDomainOutput`](crate::operation::associate_custom_domain::AssociateCustomDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateCustomDomainOutputBuilder {
     pub(crate) dns_target: ::std::option::Option<::std::string::String>,
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
@@ -96,10 +92,7 @@ impl AssociateCustomDomainOutputBuilder {
         self
     }
     /// <p>A description of the domain name that's being associated.</p>
-    pub fn set_custom_domain(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomDomain>,
-    ) -> Self {
+    pub fn set_custom_domain(mut self, input: ::std::option::Option<crate::types::CustomDomain>) -> Self {
         self.custom_domain = input;
         self
     }
@@ -119,17 +112,12 @@ impl AssociateCustomDomainOutputBuilder {
         self
     }
     /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
-    pub fn set_vpc_dns_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>>,
-    ) -> Self {
+    pub fn set_vpc_dns_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>>) -> Self {
         self.vpc_dns_targets = input;
         self
     }
     /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
-    pub fn get_vpc_dns_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>> {
+    pub fn get_vpc_dns_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>> {
         &self.vpc_dns_targets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

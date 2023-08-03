@@ -35,13 +35,10 @@ impl ListTemplatesOutput {
 
 /// A builder for [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) template_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
+    pub(crate) template_summary: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
     _request_id: Option<String>,
 }
 impl ListTemplatesOutputBuilder {
@@ -71,17 +68,12 @@ impl ListTemplatesOutputBuilder {
         self
     }
     /// <p>The summary of the template.</p>
-    pub fn set_template_summary(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
-    ) -> Self {
+    pub fn set_template_summary(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>) -> Self {
         self.template_summary = input;
         self
     }
     /// <p>The summary of the template.</p>
-    pub fn get_template_summary(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>> {
+    pub fn get_template_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>> {
         &self.template_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

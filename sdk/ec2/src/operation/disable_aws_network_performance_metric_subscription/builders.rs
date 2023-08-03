@@ -5,16 +5,16 @@ pub use crate::operation::disable_aws_network_performance_metric_subscription::_
 
 impl DisableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.disable_aws_network_performance_metric_subscription();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,8 @@ impl DisableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableAwsNetworkPerformanceMetricSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disable_aws_network_performance_metric_subscription::builders::DisableAwsNetworkPerformanceMetricSubscriptionInputBuilder,
+    inner:
+        crate::operation::disable_aws_network_performance_metric_subscription::builders::DisableAwsNetworkPerformanceMetricSubscriptionInputBuilder,
 }
 impl DisableAwsNetworkPerformanceMetricSubscriptionFluentBuilder {
     /// Creates a new `DisableAwsNetworkPerformanceMetricSubscription`.
@@ -37,15 +38,25 @@ impl DisableAwsNetworkPerformanceMetricSubscriptionFluentBuilder {
         }
     }
     /// Access the DisableAwsNetworkPerformanceMetricSubscription as a reference.
-    pub fn as_input(&self) -> &crate::operation::disable_aws_network_performance_metric_subscription::builders::DisableAwsNetworkPerformanceMetricSubscriptionInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disable_aws_network_performance_metric_subscription::builders::DisableAwsNetworkPerformanceMetricSubscriptionInputBuilder
+    {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscription, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscription,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +65,19 @@ impl DisableAwsNetworkPerformanceMetricSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +95,30 @@ impl DisableAwsNetworkPerformanceMetricSubscriptionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscription, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscription,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The source Region or Availability Zone that the metric subscription is disabled for. For example, <code>us-east-1</code>.</p>
@@ -142,10 +169,7 @@ impl DisableAwsNetworkPerformanceMetricSubscriptionFluentBuilder {
         self
     }
     /// <p>The statistic used for the disabled subscription. </p>
-    pub fn set_statistic(
-        mut self,
-        input: ::std::option::Option<crate::types::StatisticType>,
-    ) -> Self {
+    pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::StatisticType>) -> Self {
         self.inner = self.inner.set_statistic(input);
         self
     }

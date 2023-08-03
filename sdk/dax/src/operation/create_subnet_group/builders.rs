@@ -10,10 +10,7 @@ impl CreateSubnetGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_subnet_group::CreateSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subnet_group::CreateSubnetGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subnet_group::CreateSubnetGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_subnet_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateSubnetGroupFluentBuilder {
         }
     }
     /// Access the CreateSubnetGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_subnet_group::builders::CreateSubnetGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_subnet_group::builders::CreateSubnetGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateSubnetGroupFluentBuilder {
             crate::operation::create_subnet_group::CreateSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subnet_group::CreateSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subnet_group::CreateSubnetGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateSubnetGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_subnet_group::CreateSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subnet_group::CreateSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subnet_group::CreateSubnetGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_subnet_group::CreateSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subnet_group::CreateSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subnet_group::CreateSubnetGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateSubnetGroupFluentBuilder {
             crate::operation::create_subnet_group::CreateSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subnet_group::CreateSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subnet_group::CreateSubnetGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A name for the subnet group. This value is stored as a lowercase string. </p>
-    pub fn subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_group_name(input.into());
         self
     }
     /// <p>A name for the subnet group. This value is stored as a lowercase string. </p>
-    pub fn set_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_group_name(input);
         self
     }
@@ -166,10 +144,7 @@ impl CreateSubnetGroupFluentBuilder {
         self
     }
     /// <p>A list of VPC subnet IDs for the subnet group.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateGlobalNetworkOutput`](crate::operation::create_global_network::CreateGlobalNetworkOutput) with field(s):
     ///   - [`global_network(Option<GlobalNetwork>)`](crate::operation::create_global_network::CreateGlobalNetworkOutput::global_network): <p>Information about the global network object.</p>
     /// - On failure, responds with [`SdkError<CreateGlobalNetworkError>`](crate::operation::create_global_network::CreateGlobalNetworkError)
-    pub fn create_global_network(
-        &self,
-    ) -> crate::operation::create_global_network::builders::CreateGlobalNetworkFluentBuilder {
-        crate::operation::create_global_network::builders::CreateGlobalNetworkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_global_network(&self) -> crate::operation::create_global_network::builders::CreateGlobalNetworkFluentBuilder {
+        crate::operation::create_global_network::builders::CreateGlobalNetworkFluentBuilder::new(self.handle.clone())
     }
 }

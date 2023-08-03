@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`versions(Option<Vec<ProvisioningTemplateVersionSummary>>)`](crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsOutput::versions): <p>The list of provisioning template versions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsOutput::next_token): <p>A token to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListProvisioningTemplateVersionsError>`](crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsError)
-    pub fn list_provisioning_template_versions(&self) -> crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsFluentBuilder{
+    pub fn list_provisioning_template_versions(
+        &self,
+    ) -> crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsFluentBuilder {
         crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -3,10 +3,7 @@
 pub fn de_no_such_cloud_watch_logs_log_group_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::NoSuchCloudWatchLogsLogGroupBuilder,
-) -> Result<
-    crate::types::error::builders::NoSuchCloudWatchLogsLogGroupBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::NoSuchCloudWatchLogsLogGroupBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

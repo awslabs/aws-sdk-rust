@@ -12,10 +12,7 @@ pub fn ser_start_segment_detection_filters(
     if let Some(var_3) = &input.shot_filter {
         #[allow(unused_mut)]
         let mut object_4 = object.key("ShotFilter").start_object();
-        crate::protocol_serde::shape_start_shot_detection_filter::ser_start_shot_detection_filter(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_start_shot_detection_filter::ser_start_shot_detection_filter(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

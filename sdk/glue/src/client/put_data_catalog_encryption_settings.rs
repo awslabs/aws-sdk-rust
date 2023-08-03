@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`data_catalog_encryption_settings(DataCatalogEncryptionSettings)`](crate::operation::put_data_catalog_encryption_settings::builders::PutDataCatalogEncryptionSettingsFluentBuilder::data_catalog_encryption_settings) / [`set_data_catalog_encryption_settings(Option<DataCatalogEncryptionSettings>)`](crate::operation::put_data_catalog_encryption_settings::builders::PutDataCatalogEncryptionSettingsFluentBuilder::set_data_catalog_encryption_settings): <p>The security configuration to set.</p>
     /// - On success, responds with [`PutDataCatalogEncryptionSettingsOutput`](crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsOutput)
     /// - On failure, responds with [`SdkError<PutDataCatalogEncryptionSettingsError>`](crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsError)
-    pub fn put_data_catalog_encryption_settings(&self) -> crate::operation::put_data_catalog_encryption_settings::builders::PutDataCatalogEncryptionSettingsFluentBuilder{
+    pub fn put_data_catalog_encryption_settings(
+        &self,
+    ) -> crate::operation::put_data_catalog_encryption_settings::builders::PutDataCatalogEncryptionSettingsFluentBuilder {
         crate::operation::put_data_catalog_encryption_settings::builders::PutDataCatalogEncryptionSettingsFluentBuilder::new(self.handle.clone())
     }
 }

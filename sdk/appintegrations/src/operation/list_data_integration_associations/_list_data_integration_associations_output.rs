@@ -5,8 +5,7 @@
 pub struct ListDataIntegrationAssociationsOutput {
     /// <p>The Amazon Resource Name (ARN) and unique ID of the DataIntegration association.</p>
     #[doc(hidden)]
-    pub data_integration_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataIntegrationAssociationSummary>>,
+    pub data_integration_associations: ::std::option::Option<::std::vec::Vec<crate::types::DataIntegrationAssociationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDataIntegrationAssociationsOutput {
 }
 impl ListDataIntegrationAssociationsOutput {
     /// <p>The Amazon Resource Name (ARN) and unique ID of the DataIntegration association.</p>
-    pub fn data_integration_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataIntegrationAssociationSummary]> {
+    pub fn data_integration_associations(&self) -> ::std::option::Option<&[crate::types::DataIntegrationAssociationSummary]> {
         self.data_integration_associations.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDataIntegrationAssociationsOutput
 }
 impl ListDataIntegrationAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataIntegrationAssociationsOutput`](crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsOutput).
-    pub fn builder() -> crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsOutputBuilder {
         crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataIntegrationAssociationsOutput`](crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataIntegrationAssociationsOutputBuilder {
-    pub(crate) data_integration_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataIntegrationAssociationSummary>>,
+    pub(crate) data_integration_associations: ::std::option::Option<::std::vec::Vec<crate::types::DataIntegrationAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListDataIntegrationAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_data_integration_associations`](Self::set_data_integration_associations).
     ///
     /// <p>The Amazon Resource Name (ARN) and unique ID of the DataIntegration association.</p>
-    pub fn data_integration_associations(
-        mut self,
-        input: crate::types::DataIntegrationAssociationSummary,
-    ) -> Self {
+    pub fn data_integration_associations(mut self, input: crate::types::DataIntegrationAssociationSummary) -> Self {
         let mut v = self.data_integration_associations.unwrap_or_default();
         v.push(input);
         self.data_integration_associations = ::std::option::Option::Some(v);
@@ -65,18 +56,13 @@ impl ListDataIntegrationAssociationsOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) and unique ID of the DataIntegration association.</p>
     pub fn set_data_integration_associations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::DataIntegrationAssociationSummary>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataIntegrationAssociationSummary>>,
     ) -> Self {
         self.data_integration_associations = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) and unique ID of the DataIntegration association.</p>
-    pub fn get_data_integration_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataIntegrationAssociationSummary>>
-    {
+    pub fn get_data_integration_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataIntegrationAssociationSummary>> {
         &self.data_integration_associations
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -103,15 +89,10 @@ impl ListDataIntegrationAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDataIntegrationAssociationsOutput`](crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsOutput {
         crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsOutput {
-            data_integration_associations: self.data_integration_associations
-            ,
-            next_token: self.next_token
-            ,
+            data_integration_associations: self.data_integration_associations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetTableMetadataOutput`](crate::operation::get_table_metadata::GetTableMetadataOutput) with field(s):
     ///   - [`table_metadata(Option<TableMetadata>)`](crate::operation::get_table_metadata::GetTableMetadataOutput::table_metadata): <p>An object that contains table metadata.</p>
     /// - On failure, responds with [`SdkError<GetTableMetadataError>`](crate::operation::get_table_metadata::GetTableMetadataError)
-    pub fn get_table_metadata(
-        &self,
-    ) -> crate::operation::get_table_metadata::builders::GetTableMetadataFluentBuilder {
-        crate::operation::get_table_metadata::builders::GetTableMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_table_metadata(&self) -> crate::operation::get_table_metadata::builders::GetTableMetadataFluentBuilder {
+        crate::operation::get_table_metadata::builders::GetTableMetadataFluentBuilder::new(self.handle.clone())
     }
 }

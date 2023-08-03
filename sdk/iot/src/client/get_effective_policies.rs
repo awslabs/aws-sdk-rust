@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetEffectivePoliciesOutput`](crate::operation::get_effective_policies::GetEffectivePoliciesOutput) with field(s):
     ///   - [`effective_policies(Option<Vec<EffectivePolicy>>)`](crate::operation::get_effective_policies::GetEffectivePoliciesOutput::effective_policies): <p>The effective policies.</p>
     /// - On failure, responds with [`SdkError<GetEffectivePoliciesError>`](crate::operation::get_effective_policies::GetEffectivePoliciesError)
-    pub fn get_effective_policies(
-        &self,
-    ) -> crate::operation::get_effective_policies::builders::GetEffectivePoliciesFluentBuilder {
-        crate::operation::get_effective_policies::builders::GetEffectivePoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_effective_policies(&self) -> crate::operation::get_effective_policies::builders::GetEffectivePoliciesFluentBuilder {
+        crate::operation::get_effective_policies::builders::GetEffectivePoliciesFluentBuilder::new(self.handle.clone())
     }
 }

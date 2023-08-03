@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteWorkflowOutput`](crate::operation::delete_workflow::DeleteWorkflowOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_workflow::DeleteWorkflowOutput::name): <p>Name of the workflow specified in input.</p>
     /// - On failure, responds with [`SdkError<DeleteWorkflowError>`](crate::operation::delete_workflow::DeleteWorkflowError)
-    pub fn delete_workflow(
-        &self,
-    ) -> crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder {
-        crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_workflow(&self) -> crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder {
+        crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

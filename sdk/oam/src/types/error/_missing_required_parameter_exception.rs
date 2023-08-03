@@ -42,9 +42,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::MissingRequiredP
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for MissingRequiredParameterException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MissingRequiredParameterException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -58,9 +56,7 @@ impl MissingRequiredParameterException {
 
 /// A builder for [`MissingRequiredParameterException`](crate::types::error::MissingRequiredParameterException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MissingRequiredParameterExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) amzn_error_type: ::std::option::Option<::std::string::String>,
@@ -82,18 +78,12 @@ impl MissingRequiredParameterExceptionBuilder {
         &self.message
     }
     /// <p>The name of the exception.</p>
-    pub fn amzn_error_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_error_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amzn_error_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the exception.</p>
-    pub fn set_amzn_error_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_error_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amzn_error_type = input;
         self
     }
@@ -108,10 +98,7 @@ impl MissingRequiredParameterExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

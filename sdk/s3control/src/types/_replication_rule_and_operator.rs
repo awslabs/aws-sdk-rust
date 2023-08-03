@@ -35,9 +35,7 @@ impl ReplicationRuleAndOperator {
 
 /// A builder for [`ReplicationRuleAndOperator`](crate::types::ReplicationRuleAndOperator).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationRuleAndOperatorBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
@@ -69,10 +67,7 @@ impl ReplicationRuleAndOperatorBuilder {
         self
     }
     /// <p>An array of tags that contain key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>) -> Self {
         self.tags = input;
         self
     }

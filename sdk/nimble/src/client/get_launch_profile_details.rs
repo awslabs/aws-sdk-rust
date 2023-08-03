@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`streaming_images(Option<Vec<StreamingImage>>)`](crate::operation::get_launch_profile_details::GetLaunchProfileDetailsOutput::streaming_images): <p>A collection of streaming images.</p>
     ///   - [`studio_component_summaries(Option<Vec<StudioComponentSummary>>)`](crate::operation::get_launch_profile_details::GetLaunchProfileDetailsOutput::studio_component_summaries): <p>A collection of studio component summaries.</p>
     /// - On failure, responds with [`SdkError<GetLaunchProfileDetailsError>`](crate::operation::get_launch_profile_details::GetLaunchProfileDetailsError)
-    pub fn get_launch_profile_details(
-        &self,
-    ) -> crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsFluentBuilder
-    {
+    pub fn get_launch_profile_details(&self) -> crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsFluentBuilder {
         crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsFluentBuilder::new(self.handle.clone())
     }
 }

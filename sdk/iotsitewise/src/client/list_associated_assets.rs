@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`asset_summaries(Option<Vec<AssociatedAssetsSummary>>)`](crate::operation::list_associated_assets::ListAssociatedAssetsOutput::asset_summaries): <p>A list that summarizes the associated assets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_associated_assets::ListAssociatedAssetsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListAssociatedAssetsError>`](crate::operation::list_associated_assets::ListAssociatedAssetsError)
-    pub fn list_associated_assets(
-        &self,
-    ) -> crate::operation::list_associated_assets::builders::ListAssociatedAssetsFluentBuilder {
-        crate::operation::list_associated_assets::builders::ListAssociatedAssetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_associated_assets(&self) -> crate::operation::list_associated_assets::builders::ListAssociatedAssetsFluentBuilder {
+        crate::operation::list_associated_assets::builders::ListAssociatedAssetsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`visibility_timeout(i32)`](crate::operation::change_message_visibility::builders::ChangeMessageVisibilityFluentBuilder::visibility_timeout) / [`set_visibility_timeout(Option<i32>)`](crate::operation::change_message_visibility::builders::ChangeMessageVisibilityFluentBuilder::set_visibility_timeout): <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
     /// - On success, responds with [`ChangeMessageVisibilityOutput`](crate::operation::change_message_visibility::ChangeMessageVisibilityOutput)
     /// - On failure, responds with [`SdkError<ChangeMessageVisibilityError>`](crate::operation::change_message_visibility::ChangeMessageVisibilityError)
-    pub fn change_message_visibility(
-        &self,
-    ) -> crate::operation::change_message_visibility::builders::ChangeMessageVisibilityFluentBuilder
-    {
+    pub fn change_message_visibility(&self) -> crate::operation::change_message_visibility::builders::ChangeMessageVisibilityFluentBuilder {
         crate::operation::change_message_visibility::builders::ChangeMessageVisibilityFluentBuilder::new(self.handle.clone())
     }
 }

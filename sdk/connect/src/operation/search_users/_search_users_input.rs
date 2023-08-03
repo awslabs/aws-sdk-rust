@@ -54,9 +54,7 @@ impl SearchUsersInput {
 
 /// A builder for [`SearchUsersInput`](crate::operation::search_users::SearchUsersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchUsersInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -113,10 +111,7 @@ impl SearchUsersInputBuilder {
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn set_search_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::UserSearchFilter>,
-    ) -> Self {
+    pub fn set_search_filter(mut self, input: ::std::option::Option<crate::types::UserSearchFilter>) -> Self {
         self.search_filter = input;
         self
     }
@@ -134,10 +129,7 @@ impl SearchUsersInputBuilder {
     /// <p>The search criteria to be used to return users.</p> <note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
     /// </note>
-    pub fn set_search_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::UserSearchCriteria>,
-    ) -> Self {
+    pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::UserSearchCriteria>) -> Self {
         self.search_criteria = input;
         self
     }
@@ -148,12 +140,7 @@ impl SearchUsersInputBuilder {
         &self.search_criteria
     }
     /// Consumes the builder and constructs a [`SearchUsersInput`](crate::operation::search_users::SearchUsersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_users::SearchUsersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_users::SearchUsersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_users::SearchUsersInput {
             instance_id: self.instance_id,
             next_token: self.next_token,

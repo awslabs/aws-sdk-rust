@@ -21,9 +21,7 @@ pub struct FragmentSelector {
 }
 impl FragmentSelector {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
-    pub fn fragment_selector_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FragmentSelectorType> {
+    pub fn fragment_selector_type(&self) -> ::std::option::Option<&crate::types::FragmentSelectorType> {
         self.fragment_selector_type.as_ref()
     }
     /// <p>The range of timestamps to return.</p>
@@ -40,9 +38,7 @@ impl FragmentSelector {
 
 /// A builder for [`FragmentSelector`](crate::types::FragmentSelector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FragmentSelectorBuilder {
     pub(crate) fragment_selector_type: ::std::option::Option<crate::types::FragmentSelectorType>,
     pub(crate) timestamp_range: ::std::option::Option<crate::types::TimestampRange>,
@@ -54,17 +50,12 @@ impl FragmentSelectorBuilder {
         self
     }
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
-    pub fn set_fragment_selector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FragmentSelectorType>,
-    ) -> Self {
+    pub fn set_fragment_selector_type(mut self, input: ::std::option::Option<crate::types::FragmentSelectorType>) -> Self {
         self.fragment_selector_type = input;
         self
     }
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
-    pub fn get_fragment_selector_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::FragmentSelectorType> {
+    pub fn get_fragment_selector_type(&self) -> &::std::option::Option<crate::types::FragmentSelectorType> {
         &self.fragment_selector_type
     }
     /// <p>The range of timestamps to return.</p>
@@ -73,10 +64,7 @@ impl FragmentSelectorBuilder {
         self
     }
     /// <p>The range of timestamps to return.</p>
-    pub fn set_timestamp_range(
-        mut self,
-        input: ::std::option::Option<crate::types::TimestampRange>,
-    ) -> Self {
+    pub fn set_timestamp_range(mut self, input: ::std::option::Option<crate::types::TimestampRange>) -> Self {
         self.timestamp_range = input;
         self
     }

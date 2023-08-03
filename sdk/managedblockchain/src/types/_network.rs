@@ -37,9 +37,7 @@ pub struct Network {
     /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
@@ -66,9 +64,7 @@ impl Network {
         self.framework_version.as_deref()
     }
     /// <p>Attributes of the blockchain framework that the network uses.</p>
-    pub fn framework_attributes(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkFrameworkAttributes> {
+    pub fn framework_attributes(&self) -> ::std::option::Option<&crate::types::NetworkFrameworkAttributes> {
         self.framework_attributes.as_ref()
     }
     /// <p>The VPC endpoint service name of the VPC endpoint service of the network. Members use the VPC endpoint service name to create a VPC endpoint to access network resources.</p>
@@ -89,11 +85,7 @@ impl Network {
     }
     /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -110,24 +102,19 @@ impl Network {
 
 /// A builder for [`Network`](crate::types::Network).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) framework: ::std::option::Option<crate::types::Framework>,
     pub(crate) framework_version: ::std::option::Option<::std::string::String>,
-    pub(crate) framework_attributes:
-        ::std::option::Option<crate::types::NetworkFrameworkAttributes>,
+    pub(crate) framework_attributes: ::std::option::Option<crate::types::NetworkFrameworkAttributes>,
     pub(crate) vpc_endpoint_service_name: ::std::option::Option<::std::string::String>,
     pub(crate) voting_policy: ::std::option::Option<crate::types::VotingPolicy>,
     pub(crate) status: ::std::option::Option<crate::types::NetworkStatus>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl NetworkBuilder {
@@ -188,18 +175,12 @@ impl NetworkBuilder {
         &self.framework
     }
     /// <p>The version of the blockchain framework that the network uses.</p>
-    pub fn framework_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the blockchain framework that the network uses.</p>
-    pub fn set_framework_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_version = input;
         self
     }
@@ -213,32 +194,21 @@ impl NetworkBuilder {
         self
     }
     /// <p>Attributes of the blockchain framework that the network uses.</p>
-    pub fn set_framework_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkFrameworkAttributes>,
-    ) -> Self {
+    pub fn set_framework_attributes(mut self, input: ::std::option::Option<crate::types::NetworkFrameworkAttributes>) -> Self {
         self.framework_attributes = input;
         self
     }
     /// <p>Attributes of the blockchain framework that the network uses.</p>
-    pub fn get_framework_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkFrameworkAttributes> {
+    pub fn get_framework_attributes(&self) -> &::std::option::Option<crate::types::NetworkFrameworkAttributes> {
         &self.framework_attributes
     }
     /// <p>The VPC endpoint service name of the VPC endpoint service of the network. Members use the VPC endpoint service name to create a VPC endpoint to access network resources.</p>
-    pub fn vpc_endpoint_service_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_endpoint_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The VPC endpoint service name of the VPC endpoint service of the network. Members use the VPC endpoint service name to create a VPC endpoint to access network resources.</p>
-    pub fn set_vpc_endpoint_service_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_endpoint_service_name = input;
         self
     }
@@ -252,10 +222,7 @@ impl NetworkBuilder {
         self
     }
     /// <p>The voting rules that the network uses to decide if a proposal is accepted.</p>
-    pub fn set_voting_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::VotingPolicy>,
-    ) -> Self {
+    pub fn set_voting_policy(mut self, input: ::std::option::Option<crate::types::VotingPolicy>) -> Self {
         self.voting_policy = input;
         self
     }
@@ -283,10 +250,7 @@ impl NetworkBuilder {
         self
     }
     /// <p>The date and time that the network was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -300,11 +264,7 @@ impl NetworkBuilder {
     ///
     /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
@@ -312,22 +272,13 @@ impl NetworkBuilder {
     }
     /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags assigned to the network. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The Amazon Resource Name (ARN) of the network. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>

@@ -22,18 +22,14 @@ impl StopDataSourceSyncJobInput {
 }
 impl StopDataSourceSyncJobInput {
     /// Creates a new builder-style object to manufacture [`StopDataSourceSyncJobInput`](crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput).
-    pub fn builder(
-    ) -> crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobInputBuilder {
         crate::operation::stop_data_source_sync_job::builders::StopDataSourceSyncJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopDataSourceSyncJobInput`](crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDataSourceSyncJobInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl StopDataSourceSyncJobInputBuilder {
     /// Consumes the builder and constructs a [`StopDataSourceSyncJobInput`](crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput {
-                id: self.id,
-                index_id: self.index_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput {
+            id: self.id,
+            index_id: self.index_id,
+        })
     }
 }

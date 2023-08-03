@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateRoleToGroupOutput`](crate::operation::associate_role_to_group::AssociateRoleToGroupOutput) with field(s):
     ///   - [`associated_at(Option<String>)`](crate::operation::associate_role_to_group::AssociateRoleToGroupOutput::associated_at): The time, in milliseconds since the epoch, when the role ARN was associated with the group.
     /// - On failure, responds with [`SdkError<AssociateRoleToGroupError>`](crate::operation::associate_role_to_group::AssociateRoleToGroupError)
-    pub fn associate_role_to_group(
-        &self,
-    ) -> crate::operation::associate_role_to_group::builders::AssociateRoleToGroupFluentBuilder
-    {
-        crate::operation::associate_role_to_group::builders::AssociateRoleToGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_role_to_group(&self) -> crate::operation::associate_role_to_group::builders::AssociateRoleToGroupFluentBuilder {
+        crate::operation::associate_role_to_group::builders::AssociateRoleToGroupFluentBuilder::new(self.handle.clone())
     }
 }

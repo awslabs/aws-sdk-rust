@@ -27,8 +27,7 @@ pub struct ApplicationDescription {
     pub configuration_templates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The lifecycle settings for the application.</p>
     #[doc(hidden)]
-    pub resource_lifecycle_config:
-        ::std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
+    pub resource_lifecycle_config: ::std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
 }
 impl ApplicationDescription {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -60,9 +59,7 @@ impl ApplicationDescription {
         self.configuration_templates.as_deref()
     }
     /// <p>The lifecycle settings for the application.</p>
-    pub fn resource_lifecycle_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationResourceLifecycleConfig> {
+    pub fn resource_lifecycle_config(&self) -> ::std::option::Option<&crate::types::ApplicationResourceLifecycleConfig> {
         self.resource_lifecycle_config.as_ref()
     }
 }
@@ -75,9 +72,7 @@ impl ApplicationDescription {
 
 /// A builder for [`ApplicationDescription`](crate::types::ApplicationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationDescriptionBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
@@ -85,25 +80,17 @@ pub struct ApplicationDescriptionBuilder {
     pub(crate) date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) date_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) configuration_templates:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) resource_lifecycle_config:
-        ::std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
+    pub(crate) configuration_templates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_lifecycle_config: ::std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
 }
 impl ApplicationDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -112,18 +99,12 @@ impl ApplicationDescriptionBuilder {
         &self.application_arn
     }
     /// <p>The name of the application.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -151,10 +132,7 @@ impl ApplicationDescriptionBuilder {
         self
     }
     /// <p>The date when the application was created.</p>
-    pub fn set_date_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_created = input;
         self
     }
@@ -168,10 +146,7 @@ impl ApplicationDescriptionBuilder {
         self
     }
     /// <p>The date when the application was last modified.</p>
-    pub fn set_date_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_updated = input;
         self
     }
@@ -191,10 +166,7 @@ impl ApplicationDescriptionBuilder {
         self
     }
     /// <p>The names of the versions for this application.</p>
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.versions = input;
         self
     }
@@ -207,49 +179,33 @@ impl ApplicationDescriptionBuilder {
     /// To override the contents of this collection use [`set_configuration_templates`](Self::set_configuration_templates).
     ///
     /// <p>The names of the configuration templates associated with this application.</p>
-    pub fn configuration_templates(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_templates(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.configuration_templates.unwrap_or_default();
         v.push(input.into());
         self.configuration_templates = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the configuration templates associated with this application.</p>
-    pub fn set_configuration_templates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_configuration_templates(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.configuration_templates = input;
         self
     }
     /// <p>The names of the configuration templates associated with this application.</p>
-    pub fn get_configuration_templates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_configuration_templates(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.configuration_templates
     }
     /// <p>The lifecycle settings for the application.</p>
-    pub fn resource_lifecycle_config(
-        mut self,
-        input: crate::types::ApplicationResourceLifecycleConfig,
-    ) -> Self {
+    pub fn resource_lifecycle_config(mut self, input: crate::types::ApplicationResourceLifecycleConfig) -> Self {
         self.resource_lifecycle_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The lifecycle settings for the application.</p>
-    pub fn set_resource_lifecycle_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
-    ) -> Self {
+    pub fn set_resource_lifecycle_config(mut self, input: ::std::option::Option<crate::types::ApplicationResourceLifecycleConfig>) -> Self {
         self.resource_lifecycle_config = input;
         self
     }
     /// <p>The lifecycle settings for the application.</p>
-    pub fn get_resource_lifecycle_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationResourceLifecycleConfig> {
+    pub fn get_resource_lifecycle_config(&self) -> &::std::option::Option<crate::types::ApplicationResourceLifecycleConfig> {
         &self.resource_lifecycle_config
     }
     /// Consumes the builder and constructs a [`ApplicationDescription`](crate::types::ApplicationDescription).

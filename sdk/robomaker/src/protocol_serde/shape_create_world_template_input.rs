@@ -25,10 +25,7 @@ pub fn ser_create_world_template_input(
     if let Some(var_8) = &input.template_location {
         #[allow(unused_mut)]
         let mut object_9 = object.key("templateLocation").start_object();
-        crate::protocol_serde::shape_template_location::ser_template_location(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_template_location::ser_template_location(&mut object_9, var_8)?;
         object_9.finish();
     }
     Ok(())

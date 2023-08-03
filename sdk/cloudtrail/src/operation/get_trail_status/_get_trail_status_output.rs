@@ -97,15 +97,11 @@ impl GetTrailStatusOutput {
         self.latest_cloud_watch_logs_delivery_error.as_deref()
     }
     /// <p>Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.</p>
-    pub fn latest_cloud_watch_logs_delivery_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn latest_cloud_watch_logs_delivery_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.latest_cloud_watch_logs_delivery_time.as_ref()
     }
     /// <p>Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.</p>
-    pub fn latest_digest_delivery_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn latest_digest_delivery_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.latest_digest_delivery_time.as_ref()
     }
     /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>
@@ -153,9 +149,7 @@ impl GetTrailStatusOutput {
 
 /// A builder for [`GetTrailStatusOutput`](crate::operation::get_trail_status::GetTrailStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTrailStatusOutputBuilder {
     pub(crate) is_logging: ::std::option::Option<bool>,
     pub(crate) latest_delivery_error: ::std::option::Option<::std::string::String>,
@@ -165,8 +159,7 @@ pub struct GetTrailStatusOutputBuilder {
     pub(crate) start_logging_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) stop_logging_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) latest_cloud_watch_logs_delivery_error: ::std::option::Option<::std::string::String>,
-    pub(crate) latest_cloud_watch_logs_delivery_time:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) latest_cloud_watch_logs_delivery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) latest_digest_delivery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) latest_digest_delivery_error: ::std::option::Option<::std::string::String>,
     pub(crate) latest_delivery_attempt_time: ::std::option::Option<::std::string::String>,
@@ -195,20 +188,14 @@ impl GetTrailStatusOutputBuilder {
     /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>
     /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does not occur for requests that time out. To resolve the issue, create a new bucket, and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that CloudTrail can again write to the bucket.</p>
     /// </note>
-    pub fn latest_delivery_error(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_delivery_error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_delivery_error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>
     /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does not occur for requests that time out. To resolve the issue, create a new bucket, and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that CloudTrail can again write to the bucket.</p>
     /// </note>
-    pub fn set_latest_delivery_error(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_delivery_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_delivery_error = input;
         self
     }
@@ -219,18 +206,12 @@ impl GetTrailStatusOutputBuilder {
         &self.latest_delivery_error
     }
     /// <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to send a notification. For more information about Amazon SNS errors, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>. </p>
-    pub fn latest_notification_error(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_notification_error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_notification_error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to send a notification. For more information about Amazon SNS errors, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>. </p>
-    pub fn set_latest_notification_error(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_notification_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_notification_error = input;
         self
     }
@@ -244,10 +225,7 @@ impl GetTrailStatusOutputBuilder {
         self
     }
     /// <p>Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.</p>
-    pub fn set_latest_delivery_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_delivery_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_delivery_time = input;
         self
     }
@@ -261,17 +239,12 @@ impl GetTrailStatusOutputBuilder {
         self
     }
     /// <p>Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file to an account's Amazon S3 bucket.</p>
-    pub fn set_latest_notification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_notification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_notification_time = input;
         self
     }
     /// <p>Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file to an account's Amazon S3 bucket.</p>
-    pub fn get_latest_notification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_latest_notification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.latest_notification_time
     }
     /// <p>Specifies the most recent date and time when CloudTrail started recording API calls for an Amazon Web Services account.</p>
@@ -280,10 +253,7 @@ impl GetTrailStatusOutputBuilder {
         self
     }
     /// <p>Specifies the most recent date and time when CloudTrail started recording API calls for an Amazon Web Services account.</p>
-    pub fn set_start_logging_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_logging_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_logging_time = input;
         self
     }
@@ -297,10 +267,7 @@ impl GetTrailStatusOutputBuilder {
         self
     }
     /// <p>Specifies the most recent date and time when CloudTrail stopped recording API calls for an Amazon Web Services account.</p>
-    pub fn set_stop_logging_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stop_logging_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stop_logging_time = input;
         self
     }
@@ -309,47 +276,31 @@ impl GetTrailStatusOutputBuilder {
         &self.stop_logging_time
     }
     /// <p>Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to CloudWatch Logs.</p>
-    pub fn latest_cloud_watch_logs_delivery_error(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_cloud_watch_logs_delivery_error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_cloud_watch_logs_delivery_error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to CloudWatch Logs.</p>
-    pub fn set_latest_cloud_watch_logs_delivery_error(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_cloud_watch_logs_delivery_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_cloud_watch_logs_delivery_error = input;
         self
     }
     /// <p>Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to CloudWatch Logs.</p>
-    pub fn get_latest_cloud_watch_logs_delivery_error(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_latest_cloud_watch_logs_delivery_error(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_cloud_watch_logs_delivery_error
     }
     /// <p>Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.</p>
-    pub fn latest_cloud_watch_logs_delivery_time(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn latest_cloud_watch_logs_delivery_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.latest_cloud_watch_logs_delivery_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.</p>
-    pub fn set_latest_cloud_watch_logs_delivery_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_cloud_watch_logs_delivery_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_cloud_watch_logs_delivery_time = input;
         self
     }
     /// <p>Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.</p>
-    pub fn get_latest_cloud_watch_logs_delivery_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_latest_cloud_watch_logs_delivery_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.latest_cloud_watch_logs_delivery_time
     }
     /// <p>Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.</p>
@@ -358,148 +309,97 @@ impl GetTrailStatusOutputBuilder {
         self
     }
     /// <p>Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.</p>
-    pub fn set_latest_digest_delivery_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_digest_delivery_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_digest_delivery_time = input;
         self
     }
     /// <p>Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.</p>
-    pub fn get_latest_digest_delivery_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_latest_digest_delivery_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.latest_digest_delivery_time
     }
     /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>
     /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does not occur for requests that time out. To resolve the issue, create a new bucket, and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that CloudTrail can again write to the bucket.</p>
     /// </note>
-    pub fn latest_digest_delivery_error(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_digest_delivery_error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_digest_delivery_error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>
     /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does not occur for requests that time out. To resolve the issue, create a new bucket, and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that CloudTrail can again write to the bucket.</p>
     /// </note>
-    pub fn set_latest_digest_delivery_error(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_digest_delivery_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_digest_delivery_error = input;
         self
     }
     /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>
     /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does not occur for requests that time out. To resolve the issue, create a new bucket, and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that CloudTrail can again write to the bucket.</p>
     /// </note>
-    pub fn get_latest_digest_delivery_error(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_latest_digest_delivery_error(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_digest_delivery_error
     }
     /// <p>This field is no longer in use.</p>
-    pub fn latest_delivery_attempt_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_delivery_attempt_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_delivery_attempt_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This field is no longer in use.</p>
-    pub fn set_latest_delivery_attempt_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_delivery_attempt_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_delivery_attempt_time = input;
         self
     }
     /// <p>This field is no longer in use.</p>
-    pub fn get_latest_delivery_attempt_time(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_latest_delivery_attempt_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_delivery_attempt_time
     }
     /// <p>This field is no longer in use.</p>
-    pub fn latest_notification_attempt_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_notification_attempt_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_notification_attempt_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This field is no longer in use.</p>
-    pub fn set_latest_notification_attempt_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_notification_attempt_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_notification_attempt_time = input;
         self
     }
     /// <p>This field is no longer in use.</p>
-    pub fn get_latest_notification_attempt_time(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_latest_notification_attempt_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_notification_attempt_time
     }
     /// <p>This field is no longer in use.</p>
-    pub fn latest_notification_attempt_succeeded(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_notification_attempt_succeeded(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_notification_attempt_succeeded = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This field is no longer in use.</p>
-    pub fn set_latest_notification_attempt_succeeded(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_notification_attempt_succeeded(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_notification_attempt_succeeded = input;
         self
     }
     /// <p>This field is no longer in use.</p>
-    pub fn get_latest_notification_attempt_succeeded(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_latest_notification_attempt_succeeded(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_notification_attempt_succeeded
     }
     /// <p>This field is no longer in use.</p>
-    pub fn latest_delivery_attempt_succeeded(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_delivery_attempt_succeeded(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_delivery_attempt_succeeded = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This field is no longer in use.</p>
-    pub fn set_latest_delivery_attempt_succeeded(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_delivery_attempt_succeeded(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_delivery_attempt_succeeded = input;
         self
     }
     /// <p>This field is no longer in use.</p>
-    pub fn get_latest_delivery_attempt_succeeded(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_latest_delivery_attempt_succeeded(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_delivery_attempt_succeeded
     }
     /// <p>This field is no longer in use.</p>
-    pub fn time_logging_started(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn time_logging_started(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_logging_started = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This field is no longer in use.</p>
-    pub fn set_time_logging_started(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_time_logging_started(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_logging_started = input;
         self
     }
@@ -508,18 +408,12 @@ impl GetTrailStatusOutputBuilder {
         &self.time_logging_started
     }
     /// <p>This field is no longer in use.</p>
-    pub fn time_logging_stopped(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn time_logging_stopped(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_logging_stopped = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This field is no longer in use.</p>
-    pub fn set_time_logging_stopped(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_time_logging_stopped(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_logging_stopped = input;
         self
     }

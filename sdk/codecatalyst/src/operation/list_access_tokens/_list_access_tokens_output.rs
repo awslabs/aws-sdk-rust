@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAccessTokensOutput {
 }
 impl ListAccessTokensOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessTokensOutput`](crate::operation::list_access_tokens::ListAccessTokensOutput).
-    pub fn builder() -> crate::operation::list_access_tokens::builders::ListAccessTokensOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_access_tokens::builders::ListAccessTokensOutputBuilder {
         crate::operation::list_access_tokens::builders::ListAccessTokensOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccessTokensOutput`](crate::operation::list_access_tokens::ListAccessTokensOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessTokensOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::AccessTokenSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListAccessTokensOutputBuilder {
         self
     }
     /// <p>A list of personal access tokens (PATs) associated with the calling user identity.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessTokenSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessTokenSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>A list of personal access tokens (PATs) associated with the calling user identity.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessTokenSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessTokenSummary>> {
         &self.items
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>

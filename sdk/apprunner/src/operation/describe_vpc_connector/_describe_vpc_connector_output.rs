@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeVpcConnectorOutput {
 }
 impl DescribeVpcConnectorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcConnectorOutput`](crate::operation::describe_vpc_connector::DescribeVpcConnectorOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorOutputBuilder {
+    pub fn builder() -> crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorOutputBuilder {
         crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcConnectorOutput`](crate::operation::describe_vpc_connector::DescribeVpcConnectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcConnectorOutputBuilder {
     pub(crate) vpc_connector: ::std::option::Option<crate::types::VpcConnector>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeVpcConnectorOutputBuilder {
         self
     }
     /// <p>A description of the App Runner VPC connector that you specified in this request.</p>
-    pub fn set_vpc_connector(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConnector>,
-    ) -> Self {
+    pub fn set_vpc_connector(mut self, input: ::std::option::Option<crate::types::VpcConnector>) -> Self {
         self.vpc_connector = input;
         self
     }

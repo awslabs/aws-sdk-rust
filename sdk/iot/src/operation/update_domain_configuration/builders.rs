@@ -27,7 +27,7 @@ impl UpdateDomainConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDomainConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationInputBuilder,
+    inner: crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationInputBuilder,
 }
 impl UpdateDomainConfigurationFluentBuilder {
     /// Creates a new `UpdateDomainConfiguration`.
@@ -38,7 +38,7 @@ impl UpdateDomainConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateDomainConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateDomainConfigurationFluentBuilder {
             crate::operation::update_domain_configuration::UpdateDomainConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_configuration::UpdateDomainConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_configuration::UpdateDomainConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateDomainConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateDomainConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_configuration::UpdateDomainConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_configuration::UpdateDomainConfigurationError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateDomainConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_configuration::UpdateDomainConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_configuration::UpdateDomainConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl UpdateDomainConfigurationFluentBuilder {
             crate::operation::update_domain_configuration::UpdateDomainConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_configuration::UpdateDomainConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_configuration::UpdateDomainConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the domain configuration to be updated.</p>
-    pub fn domain_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_configuration_name(input.into());
         self
     }
     /// <p>The name of the domain configuration to be updated.</p>
-    pub fn set_domain_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_configuration_name(input);
         self
     }
@@ -147,10 +130,7 @@ impl UpdateDomainConfigurationFluentBuilder {
         self
     }
     /// <p>An object that specifies the authorization service for a domain.</p>
-    pub fn set_authorizer_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizerConfig>,
-    ) -> Self {
+    pub fn set_authorizer_config(mut self, input: ::std::option::Option<crate::types::AuthorizerConfig>) -> Self {
         self.inner = self.inner.set_authorizer_config(input);
         self
     }
@@ -159,25 +139,17 @@ impl UpdateDomainConfigurationFluentBuilder {
         self.inner.get_authorizer_config()
     }
     /// <p>The status to which the domain configuration should be updated.</p>
-    pub fn domain_configuration_status(
-        mut self,
-        input: crate::types::DomainConfigurationStatus,
-    ) -> Self {
+    pub fn domain_configuration_status(mut self, input: crate::types::DomainConfigurationStatus) -> Self {
         self.inner = self.inner.domain_configuration_status(input);
         self
     }
     /// <p>The status to which the domain configuration should be updated.</p>
-    pub fn set_domain_configuration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainConfigurationStatus>,
-    ) -> Self {
+    pub fn set_domain_configuration_status(mut self, input: ::std::option::Option<crate::types::DomainConfigurationStatus>) -> Self {
         self.inner = self.inner.set_domain_configuration_status(input);
         self
     }
     /// <p>The status to which the domain configuration should be updated.</p>
-    pub fn get_domain_configuration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::DomainConfigurationStatus> {
+    pub fn get_domain_configuration_status(&self) -> &::std::option::Option<crate::types::DomainConfigurationStatus> {
         self.inner.get_domain_configuration_status()
     }
     /// <p>Removes the authorization configuration from a domain.</p>

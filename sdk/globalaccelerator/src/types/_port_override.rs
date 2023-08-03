@@ -31,9 +31,7 @@ impl PortOverride {
 
 /// A builder for [`PortOverride`](crate::types::PortOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PortOverrideBuilder {
     pub(crate) listener_port: ::std::option::Option<i32>,
     pub(crate) endpoint_port: ::std::option::Option<i32>,

@@ -8,8 +8,7 @@ pub struct BatchDeleteAutomationRulesOutput {
     pub processed_automation_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't delete and why. </p>
     #[doc(hidden)]
-    pub unprocessed_automation_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
+    pub unprocessed_automation_rules: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteAutomationRulesOutput {
@@ -18,9 +17,7 @@ impl BatchDeleteAutomationRulesOutput {
         self.processed_automation_rules.as_deref()
     }
     /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't delete and why. </p>
-    pub fn unprocessed_automation_rules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnprocessedAutomationRule]> {
+    pub fn unprocessed_automation_rules(&self) -> ::std::option::Option<&[crate::types::UnprocessedAutomationRule]> {
         self.unprocessed_automation_rules.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchDeleteAutomationRulesOutput {
 }
 impl BatchDeleteAutomationRulesOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteAutomationRulesOutput`](crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesOutput).
-    pub fn builder() -> crate::operation::batch_delete_automation_rules::builders::BatchDeleteAutomationRulesOutputBuilder{
+    pub fn builder() -> crate::operation::batch_delete_automation_rules::builders::BatchDeleteAutomationRulesOutputBuilder {
         crate::operation::batch_delete_automation_rules::builders::BatchDeleteAutomationRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteAutomationRulesOutput`](crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteAutomationRulesOutputBuilder {
-    pub(crate) processed_automation_rules:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) unprocessed_automation_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
+    pub(crate) processed_automation_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) unprocessed_automation_rules: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteAutomationRulesOutputBuilder {
@@ -54,27 +47,19 @@ impl BatchDeleteAutomationRulesOutputBuilder {
     /// To override the contents of this collection use [`set_processed_automation_rules`](Self::set_processed_automation_rules).
     ///
     /// <p> A list of properly processed rule ARNs. </p>
-    pub fn processed_automation_rules(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn processed_automation_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.processed_automation_rules.unwrap_or_default();
         v.push(input.into());
         self.processed_automation_rules = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of properly processed rule ARNs. </p>
-    pub fn set_processed_automation_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_processed_automation_rules(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.processed_automation_rules = input;
         self
     }
     /// <p> A list of properly processed rule ARNs. </p>
-    pub fn get_processed_automation_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_processed_automation_rules(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.processed_automation_rules
     }
     /// Appends an item to `unprocessed_automation_rules`.
@@ -82,10 +67,7 @@ impl BatchDeleteAutomationRulesOutputBuilder {
     /// To override the contents of this collection use [`set_unprocessed_automation_rules`](Self::set_unprocessed_automation_rules).
     ///
     /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't delete and why. </p>
-    pub fn unprocessed_automation_rules(
-        mut self,
-        input: crate::types::UnprocessedAutomationRule,
-    ) -> Self {
+    pub fn unprocessed_automation_rules(mut self, input: crate::types::UnprocessedAutomationRule) -> Self {
         let mut v = self.unprocessed_automation_rules.unwrap_or_default();
         v.push(input);
         self.unprocessed_automation_rules = ::std::option::Option::Some(v);
@@ -100,9 +82,7 @@ impl BatchDeleteAutomationRulesOutputBuilder {
         self
     }
     /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't delete and why. </p>
-    pub fn get_unprocessed_automation_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>> {
+    pub fn get_unprocessed_automation_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>> {
         &self.unprocessed_automation_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -115,9 +95,7 @@ impl BatchDeleteAutomationRulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchDeleteAutomationRulesOutput`](crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesOutput {
+    pub fn build(self) -> crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesOutput {
         crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesOutput {
             processed_automation_rules: self.processed_automation_rules,
             unprocessed_automation_rules: self.unprocessed_automation_rules,

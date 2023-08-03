@@ -47,17 +47,9 @@ pub fn ser_lo_ra_wan_device(
 
 pub(crate) fn de_lo_ra_wan_device<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::LoRaWanDevice>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::LoRaWanDevice>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -67,79 +59,57 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DevEui" => {
                             builder = builder.set_dev_eui(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "DeviceProfileId" => {
                             builder = builder.set_device_profile_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "ServiceProfileId" => {
                             builder = builder.set_service_profile_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "OtaaV1_1" => {
-                            builder = builder.set_otaa_v1_1(
-                                crate::protocol_serde::shape_otaa_v1_1::de_otaa_v1_1(tokens)?,
-                            );
+                            builder = builder.set_otaa_v1_1(crate::protocol_serde::shape_otaa_v1_1::de_otaa_v1_1(tokens)?);
                         }
                         "OtaaV1_0_x" => {
-                            builder = builder.set_otaa_v1_0_x(
-                                crate::protocol_serde::shape_otaa_v1_0_x::de_otaa_v1_0_x(tokens)?,
-                            );
+                            builder = builder.set_otaa_v1_0_x(crate::protocol_serde::shape_otaa_v1_0_x::de_otaa_v1_0_x(tokens)?);
                         }
                         "AbpV1_1" => {
-                            builder = builder.set_abp_v1_1(
-                                crate::protocol_serde::shape_abp_v1_1::de_abp_v1_1(tokens)?,
-                            );
+                            builder = builder.set_abp_v1_1(crate::protocol_serde::shape_abp_v1_1::de_abp_v1_1(tokens)?);
                         }
                         "AbpV1_0_x" => {
-                            builder = builder.set_abp_v1_0_x(
-                                crate::protocol_serde::shape_abp_v1_0_x::de_abp_v1_0_x(tokens)?,
-                            );
+                            builder = builder.set_abp_v1_0_x(crate::protocol_serde::shape_abp_v1_0_x::de_abp_v1_0_x(tokens)?);
                         }
                         "FPorts" => {
-                            builder = builder.set_f_ports(
-                                crate::protocol_serde::shape_f_ports::de_f_ports(tokens)?,
-                            );
+                            builder = builder.set_f_ports(crate::protocol_serde::shape_f_ports::de_f_ports(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -51,18 +51,14 @@ impl CreateClusterSubnetGroupInput {
 }
 impl CreateClusterSubnetGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterSubnetGroupInput`](crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupInputBuilder {
         crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateClusterSubnetGroupInput`](crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClusterSubnetGroupInputBuilder {
     pub(crate) cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -78,10 +74,7 @@ impl CreateClusterSubnetGroupInputBuilder {
     /// <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>examplesubnetgroup</code> </p>
-    pub fn cluster_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -93,10 +86,7 @@ impl CreateClusterSubnetGroupInputBuilder {
     /// <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>examplesubnetgroup</code> </p>
-    pub fn set_cluster_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_subnet_group_name = input;
         self
     }
@@ -137,10 +127,7 @@ impl CreateClusterSubnetGroupInputBuilder {
         self
     }
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -160,10 +147,7 @@ impl CreateClusterSubnetGroupInputBuilder {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -178,13 +162,11 @@ impl CreateClusterSubnetGroupInputBuilder {
         crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupInput {
-                cluster_subnet_group_name: self.cluster_subnet_group_name,
-                description: self.description,
-                subnet_ids: self.subnet_ids,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupInput {
+            cluster_subnet_group_name: self.cluster_subnet_group_name,
+            description: self.description,
+            subnet_ids: self.subnet_ids,
+            tags: self.tags,
+        })
     }
 }

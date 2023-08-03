@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_quick_connects::SearchQuickConnectsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`approximate_total_count(Option<i64>)`](crate::operation::search_quick_connects::SearchQuickConnectsOutput::approximate_total_count): <p>The total number of quick connects which matched your search query.</p>
     /// - On failure, responds with [`SdkError<SearchQuickConnectsError>`](crate::operation::search_quick_connects::SearchQuickConnectsError)
-    pub fn search_quick_connects(
-        &self,
-    ) -> crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder {
-        crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_quick_connects(&self) -> crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder {
+        crate::operation::search_quick_connects::builders::SearchQuickConnectsFluentBuilder::new(self.handle.clone())
     }
 }

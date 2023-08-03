@@ -10,10 +10,7 @@ impl ModifyListenerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_listener::ModifyListenerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_listener::ModifyListenerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_listener::ModifyListenerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_listener();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ModifyListenerFluentBuilder {
         }
     }
     /// Access the ModifyListener as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_listener::builders::ModifyListenerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_listener::builders::ModifyListenerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl ModifyListenerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -150,10 +142,7 @@ impl ModifyListenerFluentBuilder {
         self
     }
     /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolEnum>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolEnum>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
     }
@@ -188,17 +177,12 @@ impl ModifyListenerFluentBuilder {
         self
     }
     /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn set_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
-    ) -> Self {
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
         self.inner = self.inner.set_certificates(input);
         self
     }
     /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn get_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
         self.inner.get_certificates()
     }
     /// Appends an item to `DefaultActions`.
@@ -211,17 +195,12 @@ impl ModifyListenerFluentBuilder {
         self
     }
     /// <p>The actions for the default rule.</p>
-    pub fn set_default_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
+    pub fn set_default_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.inner = self.inner.set_default_actions(input);
         self
     }
     /// <p>The actions for the default rule.</p>
-    pub fn get_default_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+    pub fn get_default_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
         self.inner.get_default_actions()
     }
     /// Appends an item to `AlpnPolicy`.
@@ -250,10 +229,7 @@ impl ModifyListenerFluentBuilder {
     /// <li> <p> <code>None</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-    pub fn set_alpn_policy(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_alpn_policy(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_alpn_policy(input);
         self
     }
@@ -266,9 +242,7 @@ impl ModifyListenerFluentBuilder {
     /// <li> <p> <code>None</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-    pub fn get_alpn_policy(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alpn_policy(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_alpn_policy()
     }
 }

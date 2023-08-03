@@ -37,9 +37,7 @@ impl DescribeElasticGpusFluentBuilder {
         }
     }
     /// Access the DescribeElasticGpus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_elastic_gpus::builders::DescribeElasticGpusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_elastic_gpus::builders::DescribeElasticGpusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeElasticGpusFluentBuilder {
             crate::operation::describe_elastic_gpus::DescribeElasticGpus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_elastic_gpus::DescribeElasticGpusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_elastic_gpus::DescribeElasticGpusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeElasticGpusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeElasticGpusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_elastic_gpus::DescribeElasticGpusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_elastic_gpus::DescribeElasticGpusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_elastic_gpus::DescribeElasticGpusError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeElasticGpusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_elastic_gpus::DescribeElasticGpusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_elastic_gpus::DescribeElasticGpusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_elastic_gpus::DescribeElasticGpusError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeElasticGpusFluentBuilder {
             crate::operation::describe_elastic_gpus::DescribeElasticGpus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_elastic_gpus::DescribeElasticGpusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_elastic_gpus::DescribeElasticGpusError>,
     > {
         self.customize_middleware().await
     }
@@ -127,25 +114,17 @@ impl DescribeElasticGpusFluentBuilder {
     /// To override the contents of this collection use [`set_elastic_gpu_ids`](Self::set_elastic_gpu_ids).
     ///
     /// <p>The Elastic Graphics accelerator IDs.</p>
-    pub fn elastic_gpu_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn elastic_gpu_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.elastic_gpu_ids(input.into());
         self
     }
     /// <p>The Elastic Graphics accelerator IDs.</p>
-    pub fn set_elastic_gpu_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_elastic_gpu_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_elastic_gpu_ids(input);
         self
     }
     /// <p>The Elastic Graphics accelerator IDs.</p>
-    pub fn get_elastic_gpu_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_elastic_gpu_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_elastic_gpu_ids()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -186,10 +165,7 @@ impl DescribeElasticGpusFluentBuilder {
     /// <li> <p> <code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.</p> </li>
     /// <li> <p> <code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator is associated.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

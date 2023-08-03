@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`update(Option<UpdateWirelessGatewayTaskCreate>)`](crate::operation::get_wireless_gateway_task_definition::GetWirelessGatewayTaskDefinitionOutput::update): <p>Information about the gateways to update.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_wireless_gateway_task_definition::GetWirelessGatewayTaskDefinitionOutput::arn): <p>The Amazon Resource Name of the resource.</p>
     /// - On failure, responds with [`SdkError<GetWirelessGatewayTaskDefinitionError>`](crate::operation::get_wireless_gateway_task_definition::GetWirelessGatewayTaskDefinitionError)
-    pub fn get_wireless_gateway_task_definition(&self) -> crate::operation::get_wireless_gateway_task_definition::builders::GetWirelessGatewayTaskDefinitionFluentBuilder{
+    pub fn get_wireless_gateway_task_definition(
+        &self,
+    ) -> crate::operation::get_wireless_gateway_task_definition::builders::GetWirelessGatewayTaskDefinitionFluentBuilder {
         crate::operation::get_wireless_gateway_task_definition::builders::GetWirelessGatewayTaskDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

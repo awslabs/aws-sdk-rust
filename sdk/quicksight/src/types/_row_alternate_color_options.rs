@@ -30,9 +30,7 @@ impl RowAlternateColorOptions {
 
 /// A builder for [`RowAlternateColorOptions`](crate::types::RowAlternateColorOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RowAlternateColorOptionsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::WidgetStatus>,
     pub(crate) row_alternate_colors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,27 +55,19 @@ impl RowAlternateColorOptionsBuilder {
     /// To override the contents of this collection use [`set_row_alternate_colors`](Self::set_row_alternate_colors).
     ///
     /// <p>Determines the list of row alternate colors.</p>
-    pub fn row_alternate_colors(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn row_alternate_colors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.row_alternate_colors.unwrap_or_default();
         v.push(input.into());
         self.row_alternate_colors = ::std::option::Option::Some(v);
         self
     }
     /// <p>Determines the list of row alternate colors.</p>
-    pub fn set_row_alternate_colors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_row_alternate_colors(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.row_alternate_colors = input;
         self
     }
     /// <p>Determines the list of row alternate colors.</p>
-    pub fn get_row_alternate_colors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_row_alternate_colors(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.row_alternate_colors
     }
     /// Consumes the builder and constructs a [`RowAlternateColorOptions`](crate::types::RowAlternateColorOptions).

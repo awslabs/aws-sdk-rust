@@ -9,8 +9,7 @@ pub struct OriginAccessControl {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The origin access control.</p>
     #[doc(hidden)]
-    pub origin_access_control_config:
-        ::std::option::Option<crate::types::OriginAccessControlConfig>,
+    pub origin_access_control_config: ::std::option::Option<crate::types::OriginAccessControlConfig>,
 }
 impl OriginAccessControl {
     /// <p>The unique identifier of the origin access control.</p>
@@ -18,9 +17,7 @@ impl OriginAccessControl {
         self.id.as_deref()
     }
     /// <p>The origin access control.</p>
-    pub fn origin_access_control_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginAccessControlConfig> {
+    pub fn origin_access_control_config(&self) -> ::std::option::Option<&crate::types::OriginAccessControlConfig> {
         self.origin_access_control_config.as_ref()
     }
 }
@@ -33,13 +30,10 @@ impl OriginAccessControl {
 
 /// A builder for [`OriginAccessControl`](crate::types::OriginAccessControl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginAccessControlBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) origin_access_control_config:
-        ::std::option::Option<crate::types::OriginAccessControlConfig>,
+    pub(crate) origin_access_control_config: ::std::option::Option<crate::types::OriginAccessControlConfig>,
 }
 impl OriginAccessControlBuilder {
     /// <p>The unique identifier of the origin access control.</p>
@@ -57,25 +51,17 @@ impl OriginAccessControlBuilder {
         &self.id
     }
     /// <p>The origin access control.</p>
-    pub fn origin_access_control_config(
-        mut self,
-        input: crate::types::OriginAccessControlConfig,
-    ) -> Self {
+    pub fn origin_access_control_config(mut self, input: crate::types::OriginAccessControlConfig) -> Self {
         self.origin_access_control_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The origin access control.</p>
-    pub fn set_origin_access_control_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginAccessControlConfig>,
-    ) -> Self {
+    pub fn set_origin_access_control_config(mut self, input: ::std::option::Option<crate::types::OriginAccessControlConfig>) -> Self {
         self.origin_access_control_config = input;
         self
     }
     /// <p>The origin access control.</p>
-    pub fn get_origin_access_control_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginAccessControlConfig> {
+    pub fn get_origin_access_control_config(&self) -> &::std::option::Option<crate::types::OriginAccessControlConfig> {
         &self.origin_access_control_config
     }
     /// Consumes the builder and constructs a [`OriginAccessControl`](crate::types::OriginAccessControl).

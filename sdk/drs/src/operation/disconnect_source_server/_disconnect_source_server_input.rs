@@ -15,35 +15,25 @@ impl DisconnectSourceServerInput {
 }
 impl DisconnectSourceServerInput {
     /// Creates a new builder-style object to manufacture [`DisconnectSourceServerInput`](crate::operation::disconnect_source_server::DisconnectSourceServerInput).
-    pub fn builder(
-    ) -> crate::operation::disconnect_source_server::builders::DisconnectSourceServerInputBuilder
-    {
+    pub fn builder() -> crate::operation::disconnect_source_server::builders::DisconnectSourceServerInputBuilder {
         crate::operation::disconnect_source_server::builders::DisconnectSourceServerInputBuilder::default()
     }
 }
 
 /// A builder for [`DisconnectSourceServerInput`](crate::operation::disconnect_source_server::DisconnectSourceServerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisconnectSourceServerInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
 }
 impl DisconnectSourceServerInputBuilder {
     /// <p>The ID of the Source Server to disconnect.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Source Server to disconnect.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl DisconnectSourceServerInputBuilder {
     /// Consumes the builder and constructs a [`DisconnectSourceServerInput`](crate::operation::disconnect_source_server::DisconnectSourceServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disconnect_source_server::DisconnectSourceServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disconnect_source_server::DisconnectSourceServerInput {
-                source_server_id: self.source_server_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disconnect_source_server::DisconnectSourceServerInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::disconnect_source_server::DisconnectSourceServerInput {
+            source_server_id: self.source_server_id,
+        })
     }
 }

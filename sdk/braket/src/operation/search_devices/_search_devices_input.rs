@@ -36,9 +36,7 @@ impl SearchDevicesInput {
 
 /// A builder for [`SearchDevicesInput`](crate::operation::search_devices::SearchDevicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchDevicesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -85,26 +83,18 @@ impl SearchDevicesInputBuilder {
         self
     }
     /// <p>The filter values to use to search for a device.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchDevicesFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchDevicesFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>The filter values to use to search for a device.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchDevicesFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchDevicesFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`SearchDevicesInput`](crate::operation::search_devices::SearchDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_devices::SearchDevicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::search_devices::SearchDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_devices::SearchDevicesInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -12,9 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAgentOutput`](crate::operation::create_agent::CreateAgentOutput) with field(s):
     ///   - [`agent_arn(Option<String>)`](crate::operation::create_agent::CreateAgentOutput::agent_arn): <p>The ARN of the agent that you just activated. Use the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a> operation to return a list of agents in your Amazon Web Services account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<CreateAgentError>`](crate::operation::create_agent::CreateAgentError)
-    pub fn create_agent(
-        &self,
-    ) -> crate::operation::create_agent::builders::CreateAgentFluentBuilder {
+    pub fn create_agent(&self) -> crate::operation::create_agent::builders::CreateAgentFluentBuilder {
         crate::operation::create_agent::builders::CreateAgentFluentBuilder::new(self.handle.clone())
     }
 }

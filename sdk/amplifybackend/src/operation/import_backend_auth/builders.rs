@@ -10,10 +10,7 @@ impl ImportBackendAuthInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::import_backend_auth::ImportBackendAuthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_backend_auth::ImportBackendAuthError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_backend_auth::ImportBackendAuthError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.import_backend_auth();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ImportBackendAuthFluentBuilder {
         }
     }
     /// Access the ImportBackendAuth as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_backend_auth::builders::ImportBackendAuthInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::import_backend_auth::builders::ImportBackendAuthInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ImportBackendAuthFluentBuilder {
             crate::operation::import_backend_auth::ImportBackendAuth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_backend_auth::ImportBackendAuthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_backend_auth::ImportBackendAuthError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ImportBackendAuthFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ImportBackendAuthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_backend_auth::ImportBackendAuthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_backend_auth::ImportBackendAuthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_backend_auth::ImportBackendAuthError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ImportBackendAuthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_backend_auth::ImportBackendAuthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_backend_auth::ImportBackendAuthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_backend_auth::ImportBackendAuthError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ImportBackendAuthFluentBuilder {
             crate::operation::import_backend_auth::ImportBackendAuth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_backend_auth::ImportBackendAuthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_backend_auth::ImportBackendAuthError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl ImportBackendAuthFluentBuilder {
         self.inner.get_app_id()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backend_environment_name(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backend_environment_name(input);
         self
     }
@@ -157,18 +135,12 @@ impl ImportBackendAuthFluentBuilder {
         self.inner.get_backend_environment_name()
     }
     /// <p>The ID of the Amazon Cognito identity pool.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Cognito identity pool.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }
@@ -177,18 +149,12 @@ impl ImportBackendAuthFluentBuilder {
         self.inner.get_identity_pool_id()
     }
     /// <p>The ID of the Amazon Cognito native client.</p>
-    pub fn native_client_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn native_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.native_client_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Cognito native client.</p>
-    pub fn set_native_client_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_native_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_native_client_id(input);
         self
     }
@@ -211,18 +177,12 @@ impl ImportBackendAuthFluentBuilder {
         self.inner.get_user_pool_id()
     }
     /// <p>The ID of the Amazon Cognito web client.</p>
-    pub fn web_client_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn web_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.web_client_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Cognito web client.</p>
-    pub fn set_web_client_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_web_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_web_client_id(input);
         self
     }

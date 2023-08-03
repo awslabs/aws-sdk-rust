@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateLocationNfsOutput {
 }
 impl UpdateLocationNfsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLocationNfsOutput`](crate::operation::update_location_nfs::UpdateLocationNfsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_location_nfs::builders::UpdateLocationNfsOutputBuilder {
+    pub fn builder() -> crate::operation::update_location_nfs::builders::UpdateLocationNfsOutputBuilder {
         crate::operation::update_location_nfs::builders::UpdateLocationNfsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLocationNfsOutput`](crate::operation::update_location_nfs::UpdateLocationNfsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLocationNfsOutputBuilder {
     _request_id: Option<String>,
 }

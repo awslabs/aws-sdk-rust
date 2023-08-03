@@ -15,17 +15,14 @@ impl DeleteEntityTypeInput {
 }
 impl DeleteEntityTypeInput {
     /// Creates a new builder-style object to manufacture [`DeleteEntityTypeInput`](crate::operation::delete_entity_type::DeleteEntityTypeInput).
-    pub fn builder() -> crate::operation::delete_entity_type::builders::DeleteEntityTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_entity_type::builders::DeleteEntityTypeInputBuilder {
         crate::operation::delete_entity_type::builders::DeleteEntityTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEntityTypeInput`](crate::operation::delete_entity_type::DeleteEntityTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEntityTypeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl DeleteEntityTypeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEntityTypeInput`](crate::operation::delete_entity_type::DeleteEntityTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_entity_type::DeleteEntityTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_entity_type::DeleteEntityTypeInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_entity_type::DeleteEntityTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_entity_type::DeleteEntityTypeInput { name: self.name })
     }
 }

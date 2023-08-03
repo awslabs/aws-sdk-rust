@@ -27,7 +27,7 @@ impl ListFlowExecutionMessagesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFlowExecutionMessagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesInputBuilder,
+    inner: crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesInputBuilder,
 }
 impl ListFlowExecutionMessagesFluentBuilder {
     /// Creates a new `ListFlowExecutionMessages`.
@@ -38,7 +38,7 @@ impl ListFlowExecutionMessagesFluentBuilder {
         }
     }
     /// Access the ListFlowExecutionMessages as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListFlowExecutionMessagesFluentBuilder {
             crate::operation::list_flow_execution_messages::ListFlowExecutionMessages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListFlowExecutionMessagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListFlowExecutionMessagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListFlowExecutionMessagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesError>,
     > {
         self.send_middleware().await
     }
@@ -115,34 +106,23 @@ impl ListFlowExecutionMessagesFluentBuilder {
             crate::operation::list_flow_execution_messages::ListFlowExecutionMessages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_flow_execution_messages::paginator::ListFlowExecutionMessagesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_flow_execution_messages::paginator::ListFlowExecutionMessagesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_flow_execution_messages::paginator::ListFlowExecutionMessagesPaginator {
         crate::operation::list_flow_execution_messages::paginator::ListFlowExecutionMessagesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the flow execution.</p>
-    pub fn flow_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_execution_id(input.into());
         self
     }
     /// <p>The ID of the flow execution.</p>
-    pub fn set_flow_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_execution_id(input);
         self
     }

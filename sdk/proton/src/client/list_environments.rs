@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_environments::ListEnvironmentsOutput::next_token): <p>A token that indicates the location of the next environment in the array of environments, after the current requested list of environments.</p>
     ///   - [`environments(Option<Vec<EnvironmentSummary>>)`](crate::operation::list_environments::ListEnvironmentsOutput::environments): <p>An array of environment detail data summaries.</p>
     /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::operation::list_environments::ListEnvironmentsError)
-    pub fn list_environments(
-        &self,
-    ) -> crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder {
-        crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_environments(&self) -> crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder {
+        crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::new(self.handle.clone())
     }
 }

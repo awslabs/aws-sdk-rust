@@ -12,9 +12,7 @@ pub struct AssetSummary {
     pub size: ::std::option::Option<i64>,
     /// <p> The hashes of the asset. </p>
     #[doc(hidden)]
-    pub hashes: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>,
-    >,
+    pub hashes: ::std::option::Option<::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>>,
 }
 impl AssetSummary {
     /// <p> The name of the asset. </p>
@@ -26,11 +24,7 @@ impl AssetSummary {
         self.size
     }
     /// <p> The hashes of the asset. </p>
-    pub fn hashes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>,
-    > {
+    pub fn hashes(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>> {
         self.hashes.as_ref()
     }
 }
@@ -43,15 +37,11 @@ impl AssetSummary {
 
 /// A builder for [`AssetSummary`](crate::types::AssetSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) size: ::std::option::Option<i64>,
-    pub(crate) hashes: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>,
-    >,
+    pub(crate) hashes: ::std::option::Option<::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>>,
 }
 impl AssetSummaryBuilder {
     /// <p> The name of the asset. </p>
@@ -87,11 +77,7 @@ impl AssetSummaryBuilder {
     /// To override the contents of this collection use [`set_hashes`](Self::set_hashes).
     ///
     /// <p> The hashes of the asset. </p>
-    pub fn hashes(
-        mut self,
-        k: crate::types::HashAlgorithm,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hashes(mut self, k: crate::types::HashAlgorithm, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.hashes.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.hashes = ::std::option::Option::Some(hash_map);
@@ -100,19 +86,13 @@ impl AssetSummaryBuilder {
     /// <p> The hashes of the asset. </p>
     pub fn set_hashes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>>,
     ) -> Self {
         self.hashes = input;
         self
     }
     /// <p> The hashes of the asset. </p>
-    pub fn get_hashes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>,
-    > {
+    pub fn get_hashes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>> {
         &self.hashes
     }
     /// Consumes the builder and constructs a [`AssetSummary`](crate::types::AssetSummary).

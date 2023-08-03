@@ -51,9 +51,7 @@ pub struct Component {
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>The tags that apply to the component.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
     #[doc(hidden)]
     pub publisher: ::std::option::Option<::std::string::String>,
@@ -123,11 +121,7 @@ impl Component {
         self.date_created.as_deref()
     }
     /// <p>The tags that apply to the component.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>
@@ -148,9 +142,7 @@ impl Component {
 
 /// A builder for [`Component`](crate::types::Component).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -161,16 +153,13 @@ pub struct ComponentBuilder {
     pub(crate) platform: ::std::option::Option<crate::types::Platform>,
     pub(crate) supported_os_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) state: ::std::option::Option<crate::types::ComponentState>,
-    pub(crate) parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComponentParameterDetail>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ComponentParameterDetail>>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) data: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) date_created: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) publisher: ::std::option::Option<::std::string::String>,
     pub(crate) obfuscate: ::std::option::Option<bool>,
 }
@@ -232,18 +221,12 @@ impl ComponentBuilder {
         &self.description
     }
     /// <p>The change description of the component.</p>
-    pub fn change_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The change description of the component.</p>
-    pub fn set_change_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_description = input;
         self
     }
@@ -284,27 +267,19 @@ impl ComponentBuilder {
     /// To override the contents of this collection use [`set_supported_os_versions`](Self::set_supported_os_versions).
     ///
     /// <p>The operating system (OS) version supported by the component. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
-    pub fn supported_os_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supported_os_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_os_versions.unwrap_or_default();
         v.push(input.into());
         self.supported_os_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The operating system (OS) version supported by the component. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
-    pub fn set_supported_os_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_supported_os_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_os_versions = input;
         self
     }
     /// <p>The operating system (OS) version supported by the component. If the OS information is available, Image Builder performs a prefix match against the base image OS version during image recipe creation.</p>
-    pub fn get_supported_os_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_os_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_os_versions
     }
     /// <p>Describes the current status of the component. This is used for components that are no longer active.</p>
@@ -333,17 +308,12 @@ impl ComponentBuilder {
         self
     }
     /// <p>Contains parameter details for each of the parameters that the component document defined for the component.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentParameterDetail>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentParameterDetail>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>Contains parameter details for each of the parameters that the component document defined for the component.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentParameterDetail>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentParameterDetail>> {
         &self.parameters
     }
     /// <p>The owner of the component.</p>
@@ -421,32 +391,19 @@ impl ComponentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags that apply to the component.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags that apply to the component.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags that apply to the component.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.</p>

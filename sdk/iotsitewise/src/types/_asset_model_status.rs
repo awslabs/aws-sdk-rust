@@ -30,9 +30,7 @@ impl AssetModelStatus {
 
 /// A builder for [`AssetModelStatus`](crate::types::AssetModelStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetModelStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::AssetModelState>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetails>,
@@ -44,10 +42,7 @@ impl AssetModelStatusBuilder {
         self
     }
     /// <p>The current state of the asset model.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetModelState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AssetModelState>) -> Self {
         self.state = input;
         self
     }

@@ -26,7 +26,7 @@ impl ListPrincipalsForPortfolioInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPrincipalsForPortfolioFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_principals_for_portfolio::builders::ListPrincipalsForPortfolioInputBuilder,
+    inner: crate::operation::list_principals_for_portfolio::builders::ListPrincipalsForPortfolioInputBuilder,
 }
 impl ListPrincipalsForPortfolioFluentBuilder {
     /// Creates a new `ListPrincipalsForPortfolio`.
@@ -37,7 +37,7 @@ impl ListPrincipalsForPortfolioFluentBuilder {
         }
     }
     /// Access the ListPrincipalsForPortfolio as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_principals_for_portfolio::builders::ListPrincipalsForPortfolioInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_principals_for_portfolio::builders::ListPrincipalsForPortfolioInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListPrincipalsForPortfolioFluentBuilder {
             crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolio,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListPrincipalsForPortfolioFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListPrincipalsForPortfolioFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListPrincipalsForPortfolioFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListPrincipalsForPortfolioFluentBuilder {
             crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolio,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_principals_for_portfolio::paginator::ListPrincipalsForPortfolioPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_principals_for_portfolio::paginator::ListPrincipalsForPortfolioPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_principals_for_portfolio::paginator::ListPrincipalsForPortfolioPaginator {
         crate::operation::list_principals_for_portfolio::paginator::ListPrincipalsForPortfolioPaginator::new(self.handle, self.inner)
     }
     /// <p>The language code.</p>
@@ -131,10 +120,7 @@ impl ListPrincipalsForPortfolioFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -143,10 +129,7 @@ impl ListPrincipalsForPortfolioFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }

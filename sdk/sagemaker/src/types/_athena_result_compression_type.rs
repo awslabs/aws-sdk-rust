@@ -39,13 +39,7 @@
 /// <p>The compression used for Athena query results.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AthenaResultCompressionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for AthenaResultCompressionType {
             "GZIP" => AthenaResultCompressionType::Gzip,
             "SNAPPY" => AthenaResultCompressionType::Snappy,
             "ZLIB" => AthenaResultCompressionType::Zlib,
-            other => AthenaResultCompressionType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AthenaResultCompressionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

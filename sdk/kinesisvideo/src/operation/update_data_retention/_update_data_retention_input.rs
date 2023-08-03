@@ -43,18 +43,14 @@ impl UpdateDataRetentionInput {
 }
 impl UpdateDataRetentionInput {
     /// Creates a new builder-style object to manufacture [`UpdateDataRetentionInput`](crate::operation::update_data_retention::UpdateDataRetentionInput).
-    pub fn builder(
-    ) -> crate::operation::update_data_retention::builders::UpdateDataRetentionInputBuilder {
-        crate::operation::update_data_retention::builders::UpdateDataRetentionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_data_retention::builders::UpdateDataRetentionInputBuilder {
+        crate::operation::update_data_retention::builders::UpdateDataRetentionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDataRetentionInput`](crate::operation::update_data_retention::UpdateDataRetentionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDataRetentionInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -92,18 +88,12 @@ impl UpdateDataRetentionInputBuilder {
         &self.stream_arn
     }
     /// <p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_version = input;
         self
     }
@@ -117,17 +107,12 @@ impl UpdateDataRetentionInputBuilder {
         self
     }
     /// <p>Indicates whether you want to increase or decrease the retention period.</p>
-    pub fn set_operation(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateDataRetentionOperation>,
-    ) -> Self {
+    pub fn set_operation(mut self, input: ::std::option::Option<crate::types::UpdateDataRetentionOperation>) -> Self {
         self.operation = input;
         self
     }
     /// <p>Indicates whether you want to increase or decrease the retention period.</p>
-    pub fn get_operation(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateDataRetentionOperation> {
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::UpdateDataRetentionOperation> {
         &self.operation
     }
     /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
@@ -147,18 +132,14 @@ impl UpdateDataRetentionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDataRetentionInput`](crate::operation::update_data_retention::UpdateDataRetentionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_data_retention::UpdateDataRetentionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_data_retention::UpdateDataRetentionInput {
-                stream_name: self.stream_name,
-                stream_arn: self.stream_arn,
-                current_version: self.current_version,
-                operation: self.operation,
-                data_retention_change_in_hours: self.data_retention_change_in_hours,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_data_retention::UpdateDataRetentionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_data_retention::UpdateDataRetentionInput {
+            stream_name: self.stream_name,
+            stream_arn: self.stream_arn,
+            current_version: self.current_version,
+            operation: self.operation,
+            data_retention_change_in_hours: self.data_retention_change_in_hours,
+        })
     }
 }

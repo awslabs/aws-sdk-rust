@@ -26,7 +26,7 @@ impl DisassociateSubnetCidrBlockInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateSubnetCidrBlockFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockInputBuilder,
+    inner: crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockInputBuilder,
 }
 impl DisassociateSubnetCidrBlockFluentBuilder {
     /// Creates a new `DisassociateSubnetCidrBlock`.
@@ -37,7 +37,7 @@ impl DisassociateSubnetCidrBlockFluentBuilder {
         }
     }
     /// Access the DisassociateSubnetCidrBlock as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisassociateSubnetCidrBlockFluentBuilder {
             crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlock,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisassociateSubnetCidrBlockFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisassociateSubnetCidrBlockFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisassociateSubnetCidrBlockFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DisassociateSubnetCidrBlockFluentBuilder {
             crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlock,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The association ID for the CIDR block.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
         self
     }
     /// <p>The association ID for the CIDR block.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
     }

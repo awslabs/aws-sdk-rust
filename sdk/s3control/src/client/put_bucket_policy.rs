@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`policy(impl ::std::convert::Into<String>)`](crate::operation::put_bucket_policy::builders::PutBucketPolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_bucket_policy::builders::PutBucketPolicyFluentBuilder::set_policy): <p>The bucket policy as a JSON document.</p>
     /// - On success, responds with [`PutBucketPolicyOutput`](crate::operation::put_bucket_policy::PutBucketPolicyOutput)
     /// - On failure, responds with [`SdkError<PutBucketPolicyError>`](crate::operation::put_bucket_policy::PutBucketPolicyError)
-    pub fn put_bucket_policy(
-        &self,
-    ) -> crate::operation::put_bucket_policy::builders::PutBucketPolicyFluentBuilder {
-        crate::operation::put_bucket_policy::builders::PutBucketPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_bucket_policy(&self) -> crate::operation::put_bucket_policy::builders::PutBucketPolicyFluentBuilder {
+        crate::operation::put_bucket_policy::builders::PutBucketPolicyFluentBuilder::new(self.handle.clone())
     }
 }

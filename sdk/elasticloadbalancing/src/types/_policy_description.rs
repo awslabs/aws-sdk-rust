@@ -12,8 +12,7 @@ pub struct PolicyDescription {
     pub policy_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The policy attributes.</p>
     #[doc(hidden)]
-    pub policy_attribute_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeDescription>>,
+    pub policy_attribute_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeDescription>>,
 }
 impl PolicyDescription {
     /// <p>The name of the policy.</p>
@@ -25,9 +24,7 @@ impl PolicyDescription {
         self.policy_type_name.as_deref()
     }
     /// <p>The policy attributes.</p>
-    pub fn policy_attribute_descriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PolicyAttributeDescription]> {
+    pub fn policy_attribute_descriptions(&self) -> ::std::option::Option<&[crate::types::PolicyAttributeDescription]> {
         self.policy_attribute_descriptions.as_deref()
     }
 }
@@ -40,14 +37,11 @@ impl PolicyDescription {
 
 /// A builder for [`PolicyDescription`](crate::types::PolicyDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyDescriptionBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_type_name: ::std::option::Option<::std::string::String>,
-    pub(crate) policy_attribute_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeDescription>>,
+    pub(crate) policy_attribute_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeDescription>>,
 }
 impl PolicyDescriptionBuilder {
     /// <p>The name of the policy.</p>
@@ -65,18 +59,12 @@ impl PolicyDescriptionBuilder {
         &self.policy_name
     }
     /// <p>The name of the policy type.</p>
-    pub fn policy_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the policy type.</p>
-    pub fn set_policy_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_type_name = input;
         self
     }
@@ -89,10 +77,7 @@ impl PolicyDescriptionBuilder {
     /// To override the contents of this collection use [`set_policy_attribute_descriptions`](Self::set_policy_attribute_descriptions).
     ///
     /// <p>The policy attributes.</p>
-    pub fn policy_attribute_descriptions(
-        mut self,
-        input: crate::types::PolicyAttributeDescription,
-    ) -> Self {
+    pub fn policy_attribute_descriptions(mut self, input: crate::types::PolicyAttributeDescription) -> Self {
         let mut v = self.policy_attribute_descriptions.unwrap_or_default();
         v.push(input);
         self.policy_attribute_descriptions = ::std::option::Option::Some(v);
@@ -107,9 +92,7 @@ impl PolicyDescriptionBuilder {
         self
     }
     /// <p>The policy attributes.</p>
-    pub fn get_policy_attribute_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeDescription>> {
+    pub fn get_policy_attribute_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeDescription>> {
         &self.policy_attribute_descriptions
     }
     /// Consumes the builder and constructs a [`PolicyDescription`](crate::types::PolicyDescription).

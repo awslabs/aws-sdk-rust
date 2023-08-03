@@ -52,16 +52,12 @@ pub fn ser_index_field(
     #[allow(unused_mut)]
     let mut scope_19 = writer.prefix("DoubleArrayOptions");
     if let Some(var_20) = &input.double_array_options {
-        crate::protocol_serde::shape_double_array_options::ser_double_array_options(
-            scope_19, var_20,
-        )?;
+        crate::protocol_serde::shape_double_array_options::ser_double_array_options(scope_19, var_20)?;
     }
     #[allow(unused_mut)]
     let mut scope_21 = writer.prefix("LiteralArrayOptions");
     if let Some(var_22) = &input.literal_array_options {
-        crate::protocol_serde::shape_literal_array_options::ser_literal_array_options(
-            scope_21, var_22,
-        )?;
+        crate::protocol_serde::shape_literal_array_options::ser_literal_array_options(scope_21, var_22)?;
     }
     #[allow(unused_mut)]
     let mut scope_23 = writer.prefix("TextArrayOptions");

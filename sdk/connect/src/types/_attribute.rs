@@ -30,9 +30,7 @@ impl Attribute {
 
 /// A builder for [`Attribute`](crate::types::Attribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttributeBuilder {
     pub(crate) attribute_type: ::std::option::Option<crate::types::InstanceAttributeType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,17 +42,12 @@ impl AttributeBuilder {
         self
     }
     /// <p>The type of attribute.</p>
-    pub fn set_attribute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAttributeType>,
-    ) -> Self {
+    pub fn set_attribute_type(mut self, input: ::std::option::Option<crate::types::InstanceAttributeType>) -> Self {
         self.attribute_type = input;
         self
     }
     /// <p>The type of attribute.</p>
-    pub fn get_attribute_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceAttributeType> {
+    pub fn get_attribute_type(&self) -> &::std::option::Option<crate::types::InstanceAttributeType> {
         &self.attribute_type
     }
     /// <p>The value of the attribute.</p>

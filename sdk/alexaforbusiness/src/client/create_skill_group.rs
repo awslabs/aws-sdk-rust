@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`skill_group_arn(Option<String>)`](crate::operation::create_skill_group::CreateSkillGroupOutput::skill_group_arn): <p>The ARN of the newly created skill group in the response.</p>
     /// - On failure, responds with [`SdkError<CreateSkillGroupError>`](crate::operation::create_skill_group::CreateSkillGroupError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn create_skill_group(
-        &self,
-    ) -> crate::operation::create_skill_group::builders::CreateSkillGroupFluentBuilder {
-        crate::operation::create_skill_group::builders::CreateSkillGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_skill_group(&self) -> crate::operation::create_skill_group::builders::CreateSkillGroupFluentBuilder {
+        crate::operation::create_skill_group::builders::CreateSkillGroupFluentBuilder::new(self.handle.clone())
     }
 }

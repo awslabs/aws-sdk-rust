@@ -11,8 +11,7 @@ pub struct CreateInstanceEventWindowInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time range for the event window. If you specify a time range, you can't specify a cron expression.</p>
     #[doc(hidden)]
-    pub time_ranges:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>>,
+    pub time_ranges: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>>,
     /// <p>The cron expression for the event window, for example, <code>* 0-4,20-23 * * 1,5</code>. If you specify a cron expression, you can't specify a time range.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -40,9 +39,7 @@ impl CreateInstanceEventWindowInput {
         self.name.as_deref()
     }
     /// <p>The time range for the event window. If you specify a time range, you can't specify a cron expression.</p>
-    pub fn time_ranges(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceEventWindowTimeRangeRequest]> {
+    pub fn time_ranges(&self) -> ::std::option::Option<&[crate::types::InstanceEventWindowTimeRangeRequest]> {
         self.time_ranges.as_deref()
     }
     /// <p>The cron expression for the event window, for example, <code>* 0-4,20-23 * * 1,5</code>. If you specify a cron expression, you can't specify a time range.</p>
@@ -66,24 +63,20 @@ impl CreateInstanceEventWindowInput {
 }
 impl CreateInstanceEventWindowInput {
     /// Creates a new builder-style object to manufacture [`CreateInstanceEventWindowInput`](crate::operation::create_instance_event_window::CreateInstanceEventWindowInput).
-    pub fn builder() -> crate::operation::create_instance_event_window::builders::CreateInstanceEventWindowInputBuilder{
+    pub fn builder() -> crate::operation::create_instance_event_window::builders::CreateInstanceEventWindowInputBuilder {
         crate::operation::create_instance_event_window::builders::CreateInstanceEventWindowInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInstanceEventWindowInput`](crate::operation::create_instance_event_window::CreateInstanceEventWindowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInstanceEventWindowInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) time_ranges:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>>,
+    pub(crate) time_ranges: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>>,
     pub(crate) cron_expression: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateInstanceEventWindowInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -126,20 +119,12 @@ impl CreateInstanceEventWindowInputBuilder {
         self
     }
     /// <p>The time range for the event window. If you specify a time range, you can't specify a cron expression.</p>
-    pub fn set_time_ranges(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>,
-        >,
-    ) -> Self {
+    pub fn set_time_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>>) -> Self {
         self.time_ranges = input;
         self
     }
     /// <p>The time range for the event window. If you specify a time range, you can't specify a cron expression.</p>
-    pub fn get_time_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>>
-    {
+    pub fn get_time_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>> {
         &self.time_ranges
     }
     /// <p>The cron expression for the event window, for example, <code>* 0-4,20-23 * * 1,5</code>. If you specify a cron expression, you can't specify a time range.</p>
@@ -153,10 +138,7 @@ impl CreateInstanceEventWindowInputBuilder {
     /// <li> <p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p> </li>
     /// </ul>
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
-    pub fn cron_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cron_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cron_expression = ::std::option::Option::Some(input.into());
         self
     }
@@ -171,10 +153,7 @@ impl CreateInstanceEventWindowInputBuilder {
     /// <li> <p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p> </li>
     /// </ul>
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
-    pub fn set_cron_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cron_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cron_expression = input;
         self
     }
@@ -204,17 +183,12 @@ impl CreateInstanceEventWindowInputBuilder {
         self
     }
     /// <p>The tags to apply to the event window.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the event window.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateInstanceEventWindowInput`](crate::operation::create_instance_event_window::CreateInstanceEventWindowInput).
@@ -224,14 +198,12 @@ impl CreateInstanceEventWindowInputBuilder {
         crate::operation::create_instance_event_window::CreateInstanceEventWindowInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_instance_event_window::CreateInstanceEventWindowInput {
-                dry_run: self.dry_run,
-                name: self.name,
-                time_ranges: self.time_ranges,
-                cron_expression: self.cron_expression,
-                tag_specifications: self.tag_specifications,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_instance_event_window::CreateInstanceEventWindowInput {
+            dry_run: self.dry_run,
+            name: self.name,
+            time_ranges: self.time_ranges,
+            cron_expression: self.cron_expression,
+            tag_specifications: self.tag_specifications,
+        })
     }
 }

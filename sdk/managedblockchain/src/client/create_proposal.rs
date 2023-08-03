@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateProposalOutput`](crate::operation::create_proposal::CreateProposalOutput) with field(s):
     ///   - [`proposal_id(Option<String>)`](crate::operation::create_proposal::CreateProposalOutput::proposal_id): <p>The unique identifier of the proposal.</p>
     /// - On failure, responds with [`SdkError<CreateProposalError>`](crate::operation::create_proposal::CreateProposalError)
-    pub fn create_proposal(
-        &self,
-    ) -> crate::operation::create_proposal::builders::CreateProposalFluentBuilder {
-        crate::operation::create_proposal::builders::CreateProposalFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_proposal(&self) -> crate::operation::create_proposal::builders::CreateProposalFluentBuilder {
+        crate::operation::create_proposal::builders::CreateProposalFluentBuilder::new(self.handle.clone())
     }
 }

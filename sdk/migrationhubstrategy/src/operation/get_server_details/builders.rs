@@ -10,10 +10,7 @@ impl GetServerDetailsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_server_details::GetServerDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_server_details::GetServerDetailsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_server_details::GetServerDetailsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_server_details();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetServerDetailsFluentBuilder {
         }
     }
     /// Access the GetServerDetails as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_server_details::builders::GetServerDetailsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_server_details::builders::GetServerDetailsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetServerDetailsFluentBuilder {
             crate::operation::get_server_details::GetServerDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_server_details::GetServerDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_server_details::GetServerDetailsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetServerDetailsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetServerDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_server_details::GetServerDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_server_details::GetServerDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_server_details::GetServerDetailsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetServerDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_server_details::GetServerDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_server_details::GetServerDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_server_details::GetServerDetailsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetServerDetailsFluentBuilder {
             crate::operation::get_server_details::GetServerDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_server_details::GetServerDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_server_details::GetServerDetailsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_server_details::paginator::GetServerDetailsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_server_details::paginator::GetServerDetailsPaginator {
-        crate::operation::get_server_details::paginator::GetServerDetailsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_server_details::paginator::GetServerDetailsPaginator {
+        crate::operation::get_server_details::paginator::GetServerDetailsPaginator::new(self.handle, self.inner)
     }
     /// <p> The ID of the server. </p>
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

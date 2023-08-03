@@ -23,17 +23,14 @@ impl StartUserImportJobInput {
 }
 impl StartUserImportJobInput {
     /// Creates a new builder-style object to manufacture [`StartUserImportJobInput`](crate::operation::start_user_import_job::StartUserImportJobInput).
-    pub fn builder(
-    ) -> crate::operation::start_user_import_job::builders::StartUserImportJobInputBuilder {
+    pub fn builder() -> crate::operation::start_user_import_job::builders::StartUserImportJobInputBuilder {
         crate::operation::start_user_import_job::builders::StartUserImportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartUserImportJobInput`](crate::operation::start_user_import_job::StartUserImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartUserImportJobInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,11 @@ impl StartUserImportJobInputBuilder {
     /// Consumes the builder and constructs a [`StartUserImportJobInput`](crate::operation::start_user_import_job::StartUserImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_user_import_job::StartUserImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_user_import_job::StartUserImportJobInput {
-                user_pool_id: self.user_pool_id,
-                job_id: self.job_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_user_import_job::StartUserImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_user_import_job::StartUserImportJobInput {
+            user_pool_id: self.user_pool_id,
+            job_id: self.job_id,
+        })
     }
 }

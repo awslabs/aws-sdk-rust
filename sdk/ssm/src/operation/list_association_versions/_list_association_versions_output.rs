@@ -5,8 +5,7 @@
 pub struct ListAssociationVersionsOutput {
     /// <p>Information about all versions of the association for the specified association ID.</p>
     #[doc(hidden)]
-    pub association_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociationVersionInfo>>,
+    pub association_versions: ::std::option::Option<::std::vec::Vec<crate::types::AssociationVersionInfo>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAssociationVersionsOutput {
 }
 impl ListAssociationVersionsOutput {
     /// <p>Information about all versions of the association for the specified association ID.</p>
-    pub fn association_versions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssociationVersionInfo]> {
+    pub fn association_versions(&self) -> ::std::option::Option<&[crate::types::AssociationVersionInfo]> {
         self.association_versions.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAssociationVersionsOutput {
 }
 impl ListAssociationVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociationVersionsOutput`](crate::operation::list_association_versions::ListAssociationVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_association_versions::builders::ListAssociationVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_association_versions::builders::ListAssociationVersionsOutputBuilder {
         crate::operation::list_association_versions::builders::ListAssociationVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociationVersionsOutput`](crate::operation::list_association_versions::ListAssociationVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociationVersionsOutputBuilder {
-    pub(crate) association_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociationVersionInfo>>,
+    pub(crate) association_versions: ::std::option::Option<::std::vec::Vec<crate::types::AssociationVersionInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListAssociationVersionsOutputBuilder {
         self
     }
     /// <p>Information about all versions of the association for the specified association ID.</p>
-    pub fn set_association_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationVersionInfo>>,
-    ) -> Self {
+    pub fn set_association_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationVersionInfo>>) -> Self {
         self.association_versions = input;
         self
     }
     /// <p>Information about all versions of the association for the specified association ID.</p>
-    pub fn get_association_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationVersionInfo>> {
+    pub fn get_association_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationVersionInfo>> {
         &self.association_versions
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -99,9 +86,7 @@ impl ListAssociationVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssociationVersionsOutput`](crate::operation::list_association_versions::ListAssociationVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_association_versions::ListAssociationVersionsOutput {
+    pub fn build(self) -> crate::operation::list_association_versions::ListAssociationVersionsOutput {
         crate::operation::list_association_versions::ListAssociationVersionsOutput {
             association_versions: self.association_versions,
             next_token: self.next_token,

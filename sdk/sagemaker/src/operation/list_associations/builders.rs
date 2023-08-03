@@ -10,10 +10,7 @@ impl ListAssociationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_associations::ListAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associations::ListAssociationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associations::ListAssociationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_associations();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListAssociationsFluentBuilder {
         }
     }
     /// Access the ListAssociations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_associations::builders::ListAssociationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_associations::builders::ListAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListAssociationsFluentBuilder {
             crate::operation::list_associations::ListAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associations::ListAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associations::ListAssociationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_associations::ListAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associations::ListAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associations::ListAssociationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_associations::ListAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associations::ListAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associations::ListAssociationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListAssociationsFluentBuilder {
             crate::operation::list_associations::ListAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_associations::ListAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_associations::ListAssociationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_associations::paginator::ListAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_associations::paginator::ListAssociationsPaginator {
-        crate::operation::list_associations::paginator::ListAssociationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_associations::paginator::ListAssociationsPaginator {
+        crate::operation::list_associations::paginator::ListAssociationsPaginator::new(self.handle, self.inner)
     }
     /// <p>A filter that returns only associations with the specified source ARN.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,18 +127,12 @@ impl ListAssociationsFluentBuilder {
         self.inner.get_source_arn()
     }
     /// <p>A filter that returns only associations with the specified destination Amazon Resource Name (ARN).</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_arn(input.into());
         self
     }
     /// <p>A filter that returns only associations with the specified destination Amazon Resource Name (ARN).</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_arn(input);
         self
     }
@@ -182,18 +155,12 @@ impl ListAssociationsFluentBuilder {
         self.inner.get_source_type()
     }
     /// <p>A filter that returns only associations with the specified destination type.</p>
-    pub fn destination_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_type(input.into());
         self
     }
     /// <p>A filter that returns only associations with the specified destination type.</p>
-    pub fn set_destination_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_type(input);
         self
     }
@@ -207,17 +174,12 @@ impl ListAssociationsFluentBuilder {
         self
     }
     /// <p>A filter that returns only associations of the specified type.</p>
-    pub fn set_association_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationEdgeType>,
-    ) -> Self {
+    pub fn set_association_type(mut self, input: ::std::option::Option<crate::types::AssociationEdgeType>) -> Self {
         self.inner = self.inner.set_association_type(input);
         self
     }
     /// <p>A filter that returns only associations of the specified type.</p>
-    pub fn get_association_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssociationEdgeType> {
+    pub fn get_association_type(&self) -> &::std::option::Option<crate::types::AssociationEdgeType> {
         self.inner.get_association_type()
     }
     /// <p>A filter that returns only associations created on or after the specified time.</p>
@@ -226,10 +188,7 @@ impl ListAssociationsFluentBuilder {
         self
     }
     /// <p>A filter that returns only associations created on or after the specified time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
     }
@@ -243,10 +202,7 @@ impl ListAssociationsFluentBuilder {
         self
     }
     /// <p>A filter that returns only associations created on or before the specified time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
     }
@@ -260,10 +216,7 @@ impl ListAssociationsFluentBuilder {
         self
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortAssociationsBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortAssociationsBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

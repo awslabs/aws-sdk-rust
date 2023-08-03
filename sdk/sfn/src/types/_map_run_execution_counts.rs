@@ -72,9 +72,7 @@ impl MapRunExecutionCounts {
 
 /// A builder for [`MapRunExecutionCounts`](crate::types::MapRunExecutionCounts).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MapRunExecutionCountsBuilder {
     pub(crate) pending: ::std::option::Option<i64>,
     pub(crate) running: ::std::option::Option<i64>,

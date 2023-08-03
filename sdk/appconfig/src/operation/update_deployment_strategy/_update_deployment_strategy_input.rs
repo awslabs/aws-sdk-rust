@@ -62,18 +62,14 @@ impl UpdateDeploymentStrategyInput {
 }
 impl UpdateDeploymentStrategyInput {
     /// Creates a new builder-style object to manufacture [`UpdateDeploymentStrategyInput`](crate::operation::update_deployment_strategy::UpdateDeploymentStrategyInput).
-    pub fn builder(
-    ) -> crate::operation::update_deployment_strategy::builders::UpdateDeploymentStrategyInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_deployment_strategy::builders::UpdateDeploymentStrategyInputBuilder {
         crate::operation::update_deployment_strategy::builders::UpdateDeploymentStrategyInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDeploymentStrategyInput`](crate::operation::update_deployment_strategy::UpdateDeploymentStrategyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDeploymentStrategyInputBuilder {
     pub(crate) deployment_strategy_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -84,18 +80,12 @@ pub struct UpdateDeploymentStrategyInputBuilder {
 }
 impl UpdateDeploymentStrategyInputBuilder {
     /// <p>The deployment strategy ID.</p>
-    pub fn deployment_strategy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_strategy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_strategy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment strategy ID.</p>
-    pub fn set_deployment_strategy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_strategy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_strategy_id = input;
         self
     }
@@ -177,10 +167,7 @@ impl UpdateDeploymentStrategyInputBuilder {
     /// <p> <code>2*(2^1)</code> </p>
     /// <p> <code>2*(2^2)</code> </p>
     /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
-    pub fn set_growth_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GrowthType>,
-    ) -> Self {
+    pub fn set_growth_type(mut self, input: ::std::option::Option<crate::types::GrowthType>) -> Self {
         self.growth_type = input;
         self
     }
@@ -201,15 +188,13 @@ impl UpdateDeploymentStrategyInputBuilder {
         crate::operation::update_deployment_strategy::UpdateDeploymentStrategyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_deployment_strategy::UpdateDeploymentStrategyInput {
-                deployment_strategy_id: self.deployment_strategy_id,
-                description: self.description,
-                deployment_duration_in_minutes: self.deployment_duration_in_minutes,
-                final_bake_time_in_minutes: self.final_bake_time_in_minutes,
-                growth_factor: self.growth_factor,
-                growth_type: self.growth_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_deployment_strategy::UpdateDeploymentStrategyInput {
+            deployment_strategy_id: self.deployment_strategy_id,
+            description: self.description,
+            deployment_duration_in_minutes: self.deployment_duration_in_minutes,
+            final_bake_time_in_minutes: self.final_bake_time_in_minutes,
+            growth_factor: self.growth_factor,
+            growth_type: self.growth_type,
+        })
     }
 }

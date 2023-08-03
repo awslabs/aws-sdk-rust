@@ -17,9 +17,7 @@ impl LaunchTemplateInstanceMarketOptions {
         self.market_type.as_ref()
     }
     /// <p>The options for Spot Instances.</p>
-    pub fn spot_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LaunchTemplateSpotMarketOptions> {
+    pub fn spot_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateSpotMarketOptions> {
         self.spot_options.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl LaunchTemplateInstanceMarketOptions {
 
 /// A builder for [`LaunchTemplateInstanceMarketOptions`](crate::types::LaunchTemplateInstanceMarketOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateInstanceMarketOptionsBuilder {
     pub(crate) market_type: ::std::option::Option<crate::types::MarketType>,
     pub(crate) spot_options: ::std::option::Option<crate::types::LaunchTemplateSpotMarketOptions>,
@@ -46,10 +42,7 @@ impl LaunchTemplateInstanceMarketOptionsBuilder {
         self
     }
     /// <p>The market type.</p>
-    pub fn set_market_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MarketType>,
-    ) -> Self {
+    pub fn set_market_type(mut self, input: ::std::option::Option<crate::types::MarketType>) -> Self {
         self.market_type = input;
         self
     }
@@ -63,17 +56,12 @@ impl LaunchTemplateInstanceMarketOptionsBuilder {
         self
     }
     /// <p>The options for Spot Instances.</p>
-    pub fn set_spot_options(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateSpotMarketOptions>,
-    ) -> Self {
+    pub fn set_spot_options(mut self, input: ::std::option::Option<crate::types::LaunchTemplateSpotMarketOptions>) -> Self {
         self.spot_options = input;
         self
     }
     /// <p>The options for Spot Instances.</p>
-    pub fn get_spot_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchTemplateSpotMarketOptions> {
+    pub fn get_spot_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateSpotMarketOptions> {
         &self.spot_options
     }
     /// Consumes the builder and constructs a [`LaunchTemplateInstanceMarketOptions`](crate::types::LaunchTemplateInstanceMarketOptions).

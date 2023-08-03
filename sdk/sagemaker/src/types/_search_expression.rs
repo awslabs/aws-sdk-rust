@@ -51,14 +51,11 @@ impl SearchExpression {
 
 /// A builder for [`SearchExpression`](crate::types::SearchExpression).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchExpressionBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) nested_filters: ::std::option::Option<::std::vec::Vec<crate::types::NestedFilters>>,
-    pub(crate) sub_expressions:
-        ::std::option::Option<::std::vec::Vec<crate::types::SearchExpression>>,
+    pub(crate) sub_expressions: ::std::option::Option<::std::vec::Vec<crate::types::SearchExpression>>,
     pub(crate) operator: ::std::option::Option<crate::types::BooleanOperator>,
 }
 impl SearchExpressionBuilder {
@@ -74,10 +71,7 @@ impl SearchExpressionBuilder {
         self
     }
     /// <p>A list of filter objects.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -97,17 +91,12 @@ impl SearchExpressionBuilder {
         self
     }
     /// <p>A list of nested filter objects.</p>
-    pub fn set_nested_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NestedFilters>>,
-    ) -> Self {
+    pub fn set_nested_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NestedFilters>>) -> Self {
         self.nested_filters = input;
         self
     }
     /// <p>A list of nested filter objects.</p>
-    pub fn get_nested_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NestedFilters>> {
+    pub fn get_nested_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NestedFilters>> {
         &self.nested_filters
     }
     /// Appends an item to `sub_expressions`.
@@ -122,17 +111,12 @@ impl SearchExpressionBuilder {
         self
     }
     /// <p>A list of search expression objects.</p>
-    pub fn set_sub_expressions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchExpression>>,
-    ) -> Self {
+    pub fn set_sub_expressions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchExpression>>) -> Self {
         self.sub_expressions = input;
         self
     }
     /// <p>A list of search expression objects.</p>
-    pub fn get_sub_expressions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchExpression>> {
+    pub fn get_sub_expressions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchExpression>> {
         &self.sub_expressions
     }
     /// <p>A Boolean operator used to evaluate the search expression. If you want every conditional statement in all lists to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a single conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>. The default value is <code>And</code>.</p>
@@ -141,10 +125,7 @@ impl SearchExpressionBuilder {
         self
     }
     /// <p>A Boolean operator used to evaluate the search expression. If you want every conditional statement in all lists to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a single conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>. The default value is <code>And</code>.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::BooleanOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::BooleanOperator>) -> Self {
         self.operator = input;
         self
     }

@@ -6,10 +6,7 @@ pub fn ser_update_sol_network_instance_input(
     if let Some(var_1) = &input.modify_vnf_info_data {
         #[allow(unused_mut)]
         let mut object_2 = object.key("modifyVnfInfoData").start_object();
-        crate::protocol_serde::shape_update_sol_network_modify::ser_update_sol_network_modify(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_update_sol_network_modify::ser_update_sol_network_modify(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.tags {

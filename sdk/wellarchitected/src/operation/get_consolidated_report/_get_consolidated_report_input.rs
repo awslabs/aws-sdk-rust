@@ -38,18 +38,14 @@ impl GetConsolidatedReportInput {
 }
 impl GetConsolidatedReportInput {
     /// Creates a new builder-style object to manufacture [`GetConsolidatedReportInput`](crate::operation::get_consolidated_report::GetConsolidatedReportInput).
-    pub fn builder(
-    ) -> crate::operation::get_consolidated_report::builders::GetConsolidatedReportInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_consolidated_report::builders::GetConsolidatedReportInputBuilder {
         crate::operation::get_consolidated_report::builders::GetConsolidatedReportInputBuilder::default()
     }
 }
 
 /// A builder for [`GetConsolidatedReportInput`](crate::operation::get_consolidated_report::GetConsolidatedReportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConsolidatedReportInputBuilder {
     pub(crate) format: ::std::option::Option<crate::types::ReportFormat>,
     pub(crate) include_shared_resources: ::std::option::Option<bool>,
@@ -119,17 +115,13 @@ impl GetConsolidatedReportInputBuilder {
     /// Consumes the builder and constructs a [`GetConsolidatedReportInput`](crate::operation::get_consolidated_report::GetConsolidatedReportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_consolidated_report::GetConsolidatedReportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_consolidated_report::GetConsolidatedReportInput {
-                format: self.format,
-                include_shared_resources: self.include_shared_resources,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_consolidated_report::GetConsolidatedReportInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_consolidated_report::GetConsolidatedReportInput {
+            format: self.format,
+            include_shared_resources: self.include_shared_resources,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

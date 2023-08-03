@@ -12,8 +12,7 @@ pub struct DescribeReplicationTaskAssessmentResultsOutput {
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p> The task assessment report. </p>
     #[doc(hidden)]
-    pub replication_task_assessment_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentResult>>,
+    pub replication_task_assessment_results: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentResult>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTaskAssessmentResultsOutput {
@@ -26,9 +25,7 @@ impl DescribeReplicationTaskAssessmentResultsOutput {
         self.bucket_name.as_deref()
     }
     /// <p> The task assessment report. </p>
-    pub fn replication_task_assessment_results(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReplicationTaskAssessmentResult]> {
+    pub fn replication_task_assessment_results(&self) -> ::std::option::Option<&[crate::types::ReplicationTaskAssessmentResult]> {
         self.replication_task_assessment_results.as_deref()
     }
 }
@@ -39,21 +36,19 @@ impl ::aws_http::request_id::RequestId for DescribeReplicationTaskAssessmentResu
 }
 impl DescribeReplicationTaskAssessmentResultsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTaskAssessmentResultsOutput`](crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsOutput).
-    pub fn builder() -> crate::operation::describe_replication_task_assessment_results::builders::DescribeReplicationTaskAssessmentResultsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_task_assessment_results::builders::DescribeReplicationTaskAssessmentResultsOutputBuilder
+    {
         crate::operation::describe_replication_task_assessment_results::builders::DescribeReplicationTaskAssessmentResultsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationTaskAssessmentResultsOutput`](crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationTaskAssessmentResultsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_task_assessment_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentResult>>,
+    pub(crate) replication_task_assessment_results: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentResult>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTaskAssessmentResultsOutputBuilder {
@@ -90,10 +85,7 @@ impl DescribeReplicationTaskAssessmentResultsOutputBuilder {
     /// To override the contents of this collection use [`set_replication_task_assessment_results`](Self::set_replication_task_assessment_results).
     ///
     /// <p> The task assessment report. </p>
-    pub fn replication_task_assessment_results(
-        mut self,
-        input: crate::types::ReplicationTaskAssessmentResult,
-    ) -> Self {
+    pub fn replication_task_assessment_results(mut self, input: crate::types::ReplicationTaskAssessmentResult) -> Self {
         let mut v = self.replication_task_assessment_results.unwrap_or_default();
         v.push(input);
         self.replication_task_assessment_results = ::std::option::Option::Some(v);
@@ -102,18 +94,13 @@ impl DescribeReplicationTaskAssessmentResultsOutputBuilder {
     /// <p> The task assessment report. </p>
     pub fn set_replication_task_assessment_results(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ReplicationTaskAssessmentResult>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentResult>>,
     ) -> Self {
         self.replication_task_assessment_results = input;
         self
     }
     /// <p> The task assessment report. </p>
-    pub fn get_replication_task_assessment_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentResult>>
-    {
+    pub fn get_replication_task_assessment_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentResult>> {
         &self.replication_task_assessment_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -126,14 +113,11 @@ impl DescribeReplicationTaskAssessmentResultsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReplicationTaskAssessmentResultsOutput`](crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsOutput).
-    pub fn build(self) -> crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsOutput{
+    pub fn build(self) -> crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsOutput {
         crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsOutput {
-            marker: self.marker
-            ,
-            bucket_name: self.bucket_name
-            ,
-            replication_task_assessment_results: self.replication_task_assessment_results
-            ,
+            marker: self.marker,
+            bucket_name: self.bucket_name,
+            replication_task_assessment_results: self.replication_task_assessment_results,
             _request_id: self._request_id,
         }
     }

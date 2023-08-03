@@ -34,9 +34,7 @@ impl EcsResourceRequirement {
 
 /// A builder for [`EcsResourceRequirement`](crate::types::EcsResourceRequirement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcsResourceRequirementBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EcsResourceRequirementType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -48,10 +46,7 @@ impl EcsResourceRequirementBuilder {
         self
     }
     /// <p>The type of resource to assign to a container. The supported values are <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EcsResourceRequirementType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::EcsResourceRequirementType>) -> Self {
         self.r#type = input;
         self
     }

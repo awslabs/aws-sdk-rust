@@ -28,7 +28,7 @@ impl GetLendingAnalysisSummaryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLendingAnalysisSummaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_lending_analysis_summary::builders::GetLendingAnalysisSummaryInputBuilder,
+    inner: crate::operation::get_lending_analysis_summary::builders::GetLendingAnalysisSummaryInputBuilder,
 }
 impl GetLendingAnalysisSummaryFluentBuilder {
     /// Creates a new `GetLendingAnalysisSummary`.
@@ -39,7 +39,7 @@ impl GetLendingAnalysisSummaryFluentBuilder {
         }
     }
     /// Access the GetLendingAnalysisSummary as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_lending_analysis_summary::builders::GetLendingAnalysisSummaryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_lending_analysis_summary::builders::GetLendingAnalysisSummaryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl GetLendingAnalysisSummaryFluentBuilder {
             crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl GetLendingAnalysisSummaryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl GetLendingAnalysisSummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl GetLendingAnalysisSummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl GetLendingAnalysisSummaryFluentBuilder {
             crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryError>,
     > {
         self.customize_middleware().await
     }

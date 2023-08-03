@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::get_session_embed_url::GetSessionEmbedUrlOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::get_session_embed_url::GetSessionEmbedUrlOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<GetSessionEmbedUrlError>`](crate::operation::get_session_embed_url::GetSessionEmbedUrlError)
-    pub fn get_session_embed_url(
-        &self,
-    ) -> crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlFluentBuilder {
-        crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_session_embed_url(&self) -> crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlFluentBuilder {
+        crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlFluentBuilder::new(self.handle.clone())
     }
 }

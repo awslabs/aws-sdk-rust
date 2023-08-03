@@ -15,18 +15,14 @@ impl GetFindingsReportStatusInput {
 }
 impl GetFindingsReportStatusInput {
     /// Creates a new builder-style object to manufacture [`GetFindingsReportStatusInput`](crate::operation::get_findings_report_status::GetFindingsReportStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_findings_report_status::builders::GetFindingsReportStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_findings_report_status::builders::GetFindingsReportStatusInputBuilder {
         crate::operation::get_findings_report_status::builders::GetFindingsReportStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFindingsReportStatusInput`](crate::operation::get_findings_report_status::GetFindingsReportStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingsReportStatusInputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl GetFindingsReportStatusInputBuilder {
         crate::operation::get_findings_report_status::GetFindingsReportStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_findings_report_status::GetFindingsReportStatusInput {
-                report_id: self.report_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_findings_report_status::GetFindingsReportStatusInput { report_id: self.report_id })
     }
 }

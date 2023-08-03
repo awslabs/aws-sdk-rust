@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`integration_association_summary_list(Option<Vec<IntegrationAssociationSummary>>)`](crate::operation::list_integration_associations::ListIntegrationAssociationsOutput::integration_association_summary_list): <p>The associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_integration_associations::ListIntegrationAssociationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListIntegrationAssociationsError>`](crate::operation::list_integration_associations::ListIntegrationAssociationsError)
-    pub fn list_integration_associations(&self) -> crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder{
+    pub fn list_integration_associations(
+        &self,
+    ) -> crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder {
         crate::operation::list_integration_associations::builders::ListIntegrationAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

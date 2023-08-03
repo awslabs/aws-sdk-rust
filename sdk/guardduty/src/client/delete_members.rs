@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteMembersOutput`](crate::operation::delete_members::DeleteMembersOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::operation::delete_members::DeleteMembersOutput::unprocessed_accounts): <p>The accounts that could not be processed.</p>
     /// - On failure, responds with [`SdkError<DeleteMembersError>`](crate::operation::delete_members::DeleteMembersError)
-    pub fn delete_members(
-        &self,
-    ) -> crate::operation::delete_members::builders::DeleteMembersFluentBuilder {
-        crate::operation::delete_members::builders::DeleteMembersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_members(&self) -> crate::operation::delete_members::builders::DeleteMembersFluentBuilder {
+        crate::operation::delete_members::builders::DeleteMembersFluentBuilder::new(self.handle.clone())
     }
 }

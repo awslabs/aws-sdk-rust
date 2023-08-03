@@ -37,10 +37,7 @@ impl DeleteVocabularyFilterFluentBuilder {
         }
     }
     /// Access the DeleteVocabularyFilter as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_vocabulary_filter::builders::DeleteVocabularyFilterInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_vocabulary_filter::builders::DeleteVocabularyFilterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteVocabularyFilterFluentBuilder {
             crate::operation::delete_vocabulary_filter::DeleteVocabularyFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteVocabularyFilterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteVocabularyFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteVocabularyFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteVocabularyFilterFluentBuilder {
             crate::operation::delete_vocabulary_filter::DeleteVocabularyFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case sensitive.</p>
-    pub fn vocabulary_filter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vocabulary_filter_name(input.into());
         self
     }
     /// <p>The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case sensitive.</p>
-    pub fn set_vocabulary_filter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vocabulary_filter_name(input);
         self
     }

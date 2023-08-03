@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`standards_control_association_details(Option<Vec<StandardsControlAssociationDetail>>)`](crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput::standards_control_association_details): <p>Provides the enablement status of a security control in a specified standard and other details for the control in relation to the specified standard. </p>
     ///   - [`unprocessed_associations(Option<Vec<UnprocessedStandardsControlAssociation>>)`](crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput::unprocessed_associations): <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard cannot be returned. </p>
     /// - On failure, responds with [`SdkError<BatchGetStandardsControlAssociationsError>`](crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError)
-    pub fn batch_get_standards_control_associations(&self) -> crate::operation::batch_get_standards_control_associations::builders::BatchGetStandardsControlAssociationsFluentBuilder{
-        crate::operation::batch_get_standards_control_associations::builders::BatchGetStandardsControlAssociationsFluentBuilder::new(self.handle.clone())
+    pub fn batch_get_standards_control_associations(
+        &self,
+    ) -> crate::operation::batch_get_standards_control_associations::builders::BatchGetStandardsControlAssociationsFluentBuilder {
+        crate::operation::batch_get_standards_control_associations::builders::BatchGetStandardsControlAssociationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

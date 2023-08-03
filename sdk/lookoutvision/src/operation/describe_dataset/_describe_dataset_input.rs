@@ -29,9 +29,7 @@ impl DescribeDatasetInput {
 
 /// A builder for [`DescribeDatasetInput`](crate::operation::describe_dataset::DescribeDatasetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatasetInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_type: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DescribeDatasetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDatasetInput`](crate::operation::describe_dataset::DescribeDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_dataset::DescribeDatasetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_dataset::DescribeDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_dataset::DescribeDatasetInput {
             project_name: self.project_name,
             dataset_type: self.dataset_type,

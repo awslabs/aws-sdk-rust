@@ -5,8 +5,7 @@
 pub struct GetBotChannelAssociationsOutput {
     /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
     #[doc(hidden)]
-    pub bot_channel_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::BotChannelAssociation>>,
+    pub bot_channel_associations: ::std::option::Option<::std::vec::Vec<crate::types::BotChannelAssociation>>,
     /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetBotChannelAssociationsOutput {
 }
 impl GetBotChannelAssociationsOutput {
     /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
-    pub fn bot_channel_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BotChannelAssociation]> {
+    pub fn bot_channel_associations(&self) -> ::std::option::Option<&[crate::types::BotChannelAssociation]> {
         self.bot_channel_associations.as_deref()
     }
     /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetBotChannelAssociationsOutput {
 }
 impl GetBotChannelAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`GetBotChannelAssociationsOutput`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput).
-    pub fn builder() -> crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsOutputBuilder {
         crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBotChannelAssociationsOutput`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBotChannelAssociationsOutputBuilder {
-    pub(crate) bot_channel_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::BotChannelAssociation>>,
+    pub(crate) bot_channel_associations: ::std::option::Option<::std::vec::Vec<crate::types::BotChannelAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl GetBotChannelAssociationsOutputBuilder {
         self
     }
     /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
-    pub fn set_bot_channel_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotChannelAssociation>>,
-    ) -> Self {
+    pub fn set_bot_channel_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotChannelAssociation>>) -> Self {
         self.bot_channel_associations = input;
         self
     }
     /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
-    pub fn get_bot_channel_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotChannelAssociation>> {
+    pub fn get_bot_channel_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotChannelAssociation>> {
         &self.bot_channel_associations
     }
     /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
@@ -97,9 +86,7 @@ impl GetBotChannelAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetBotChannelAssociationsOutput`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput {
+    pub fn build(self) -> crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput {
         crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput {
             bot_channel_associations: self.bot_channel_associations,
             next_token: self.next_token,

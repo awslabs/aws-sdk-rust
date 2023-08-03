@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_page_resolutions::ListPageResolutionsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     ///   - [`page_resolutions(Option<Vec<ResolutionContact>>)`](crate::operation::list_page_resolutions::ListPageResolutionsOutput::page_resolutions): <p>Information about the resolution for an engagement.</p>
     /// - On failure, responds with [`SdkError<ListPageResolutionsError>`](crate::operation::list_page_resolutions::ListPageResolutionsError)
-    pub fn list_page_resolutions(
-        &self,
-    ) -> crate::operation::list_page_resolutions::builders::ListPageResolutionsFluentBuilder {
-        crate::operation::list_page_resolutions::builders::ListPageResolutionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_page_resolutions(&self) -> crate::operation::list_page_resolutions::builders::ListPageResolutionsFluentBuilder {
+        crate::operation::list_page_resolutions::builders::ListPageResolutionsFluentBuilder::new(self.handle.clone())
     }
 }

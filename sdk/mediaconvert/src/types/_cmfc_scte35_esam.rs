@@ -38,13 +38,7 @@
 /// Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CmfcScte35Esam {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for CmfcScte35Esam {
         match s {
             "INSERT" => CmfcScte35Esam::Insert,
             "NONE" => CmfcScte35Esam::None,
-            other => {
-                CmfcScte35Esam::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => CmfcScte35Esam::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

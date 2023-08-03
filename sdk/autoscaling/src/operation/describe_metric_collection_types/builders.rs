@@ -26,7 +26,7 @@ impl DescribeMetricCollectionTypesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMetricCollectionTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_metric_collection_types::builders::DescribeMetricCollectionTypesInputBuilder,
+    inner: crate::operation::describe_metric_collection_types::builders::DescribeMetricCollectionTypesInputBuilder,
 }
 impl DescribeMetricCollectionTypesFluentBuilder {
     /// Creates a new `DescribeMetricCollectionTypes`.
@@ -37,7 +37,7 @@ impl DescribeMetricCollectionTypesFluentBuilder {
         }
     }
     /// Access the DescribeMetricCollectionTypes as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_metric_collection_types::builders::DescribeMetricCollectionTypesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_metric_collection_types::builders::DescribeMetricCollectionTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeMetricCollectionTypesFluentBuilder {
             crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeMetricCollectionTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeMetricCollectionTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeMetricCollectionTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeMetricCollectionTypesFluentBuilder {
             crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesError>,
     > {
         self.customize_middleware().await
     }

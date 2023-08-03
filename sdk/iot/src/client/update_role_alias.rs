@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`role_alias(Option<String>)`](crate::operation::update_role_alias::UpdateRoleAliasOutput::role_alias): <p>The role alias.</p>
     ///   - [`role_alias_arn(Option<String>)`](crate::operation::update_role_alias::UpdateRoleAliasOutput::role_alias_arn): <p>The role alias ARN.</p>
     /// - On failure, responds with [`SdkError<UpdateRoleAliasError>`](crate::operation::update_role_alias::UpdateRoleAliasError)
-    pub fn update_role_alias(
-        &self,
-    ) -> crate::operation::update_role_alias::builders::UpdateRoleAliasFluentBuilder {
-        crate::operation::update_role_alias::builders::UpdateRoleAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_role_alias(&self) -> crate::operation::update_role_alias::builders::UpdateRoleAliasFluentBuilder {
+        crate::operation::update_role_alias::builders::UpdateRoleAliasFluentBuilder::new(self.handle.clone())
     }
 }

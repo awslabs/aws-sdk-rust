@@ -13,9 +13,7 @@ pub struct TableRowConditionalFormatting {
 }
 impl TableRowConditionalFormatting {
     /// <p>The conditional formatting color (solid, gradient) of the background for a table row.</p>
-    pub fn background_color(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConditionalFormattingColor> {
+    pub fn background_color(&self) -> ::std::option::Option<&crate::types::ConditionalFormattingColor> {
         self.background_color.as_ref()
     }
     /// <p>The conditional formatting color (solid, gradient) of the text for a table row.</p>
@@ -32,9 +30,7 @@ impl TableRowConditionalFormatting {
 
 /// A builder for [`TableRowConditionalFormatting`](crate::types::TableRowConditionalFormatting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableRowConditionalFormattingBuilder {
     pub(crate) background_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
     pub(crate) text_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
@@ -46,17 +42,12 @@ impl TableRowConditionalFormattingBuilder {
         self
     }
     /// <p>The conditional formatting color (solid, gradient) of the background for a table row.</p>
-    pub fn set_background_color(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionalFormattingColor>,
-    ) -> Self {
+    pub fn set_background_color(mut self, input: ::std::option::Option<crate::types::ConditionalFormattingColor>) -> Self {
         self.background_color = input;
         self
     }
     /// <p>The conditional formatting color (solid, gradient) of the background for a table row.</p>
-    pub fn get_background_color(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConditionalFormattingColor> {
+    pub fn get_background_color(&self) -> &::std::option::Option<crate::types::ConditionalFormattingColor> {
         &self.background_color
     }
     /// <p>The conditional formatting color (solid, gradient) of the text for a table row.</p>
@@ -65,17 +56,12 @@ impl TableRowConditionalFormattingBuilder {
         self
     }
     /// <p>The conditional formatting color (solid, gradient) of the text for a table row.</p>
-    pub fn set_text_color(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionalFormattingColor>,
-    ) -> Self {
+    pub fn set_text_color(mut self, input: ::std::option::Option<crate::types::ConditionalFormattingColor>) -> Self {
         self.text_color = input;
         self
     }
     /// <p>The conditional formatting color (solid, gradient) of the text for a table row.</p>
-    pub fn get_text_color(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConditionalFormattingColor> {
+    pub fn get_text_color(&self) -> &::std::option::Option<crate::types::ConditionalFormattingColor> {
         &self.text_color
     }
     /// Consumes the builder and constructs a [`TableRowConditionalFormatting`](crate::types::TableRowConditionalFormatting).

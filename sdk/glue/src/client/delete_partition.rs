@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`partition_values(Vec<String>)`](crate::operation::delete_partition::builders::DeletePartitionFluentBuilder::partition_values) / [`set_partition_values(Option<Vec<String>>)`](crate::operation::delete_partition::builders::DeletePartitionFluentBuilder::set_partition_values): <p>The values that define the partition.</p>
     /// - On success, responds with [`DeletePartitionOutput`](crate::operation::delete_partition::DeletePartitionOutput)
     /// - On failure, responds with [`SdkError<DeletePartitionError>`](crate::operation::delete_partition::DeletePartitionError)
-    pub fn delete_partition(
-        &self,
-    ) -> crate::operation::delete_partition::builders::DeletePartitionFluentBuilder {
-        crate::operation::delete_partition::builders::DeletePartitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_partition(&self) -> crate::operation::delete_partition::builders::DeletePartitionFluentBuilder {
+        crate::operation::delete_partition::builders::DeletePartitionFluentBuilder::new(self.handle.clone())
     }
 }

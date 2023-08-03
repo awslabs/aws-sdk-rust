@@ -35,12 +35,9 @@ impl GetMigrationsOutput {
 
 /// A builder for [`GetMigrationsOutput`](crate::operation::get_migrations::GetMigrationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMigrationsOutputBuilder {
-    pub(crate) migration_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MigrationSummary>>,
+    pub(crate) migration_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MigrationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl GetMigrationsOutputBuilder {
         self
     }
     /// <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details of the migration, use the <code>migrationId</code> from the summary in a call to the operation.</p>
-    pub fn set_migration_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MigrationSummary>>,
-    ) -> Self {
+    pub fn set_migration_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MigrationSummary>>) -> Self {
         self.migration_summaries = input;
         self
     }
     /// <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details of the migration, use the <code>migrationId</code> from the summary in a call to the operation.</p>
-    pub fn get_migration_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MigrationSummary>> {
+    pub fn get_migration_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MigrationSummary>> {
         &self.migration_summaries
     }
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of migrations.</p>

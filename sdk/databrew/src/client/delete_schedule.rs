@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteScheduleOutput`](crate::operation::delete_schedule::DeleteScheduleOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_schedule::DeleteScheduleOutput::name): <p>The name of the schedule that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteScheduleError>`](crate::operation::delete_schedule::DeleteScheduleError)
-    pub fn delete_schedule(
-        &self,
-    ) -> crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder {
-        crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_schedule(&self) -> crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder {
+        crate::operation::delete_schedule::builders::DeleteScheduleFluentBuilder::new(self.handle.clone())
     }
 }

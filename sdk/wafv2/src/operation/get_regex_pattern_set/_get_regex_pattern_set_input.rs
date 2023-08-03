@@ -39,17 +39,14 @@ impl GetRegexPatternSetInput {
 }
 impl GetRegexPatternSetInput {
     /// Creates a new builder-style object to manufacture [`GetRegexPatternSetInput`](crate::operation::get_regex_pattern_set::GetRegexPatternSetInput).
-    pub fn builder(
-    ) -> crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetInputBuilder {
+    pub fn builder() -> crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetInputBuilder {
         crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRegexPatternSetInput`](crate::operation::get_regex_pattern_set::GetRegexPatternSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRegexPatternSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
@@ -116,16 +113,12 @@ impl GetRegexPatternSetInputBuilder {
     /// Consumes the builder and constructs a [`GetRegexPatternSetInput`](crate::operation::get_regex_pattern_set::GetRegexPatternSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_regex_pattern_set::GetRegexPatternSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_regex_pattern_set::GetRegexPatternSetInput {
-                name: self.name,
-                scope: self.scope,
-                id: self.id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_regex_pattern_set::GetRegexPatternSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_regex_pattern_set::GetRegexPatternSetInput {
+            name: self.name,
+            scope: self.scope,
+            id: self.id,
+        })
     }
 }

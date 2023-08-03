@@ -31,9 +31,7 @@ impl UplinkEchoConfig {
 
 /// A builder for [`UplinkEchoConfig`](crate::types::UplinkEchoConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UplinkEchoConfigBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) antenna_uplink_config_arn: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ impl UplinkEchoConfigBuilder {
         &self.enabled
     }
     /// <p>ARN of an uplink <code>Config</code>.</p>
-    pub fn antenna_uplink_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn antenna_uplink_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.antenna_uplink_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of an uplink <code>Config</code>.</p>
-    pub fn set_antenna_uplink_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_antenna_uplink_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.antenna_uplink_config_arn = input;
         self
     }

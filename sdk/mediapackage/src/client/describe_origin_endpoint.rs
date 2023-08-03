@@ -23,10 +23,7 @@ impl super::Client {
     ///   - [`url(Option<String>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::url): The URL of the packaged OriginEndpoint for consumption.
     ///   - [`whitelist(Option<Vec<String>>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::whitelist): A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     /// - On failure, responds with [`SdkError<DescribeOriginEndpointError>`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointError)
-    pub fn describe_origin_endpoint(
-        &self,
-    ) -> crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointFluentBuilder
-    {
+    pub fn describe_origin_endpoint(&self) -> crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointFluentBuilder {
         crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelConversionTaskOutput {
 }
 impl CancelConversionTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelConversionTaskOutput`](crate::operation::cancel_conversion_task::CancelConversionTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_conversion_task::builders::CancelConversionTaskOutputBuilder {
+    pub fn builder() -> crate::operation::cancel_conversion_task::builders::CancelConversionTaskOutputBuilder {
         crate::operation::cancel_conversion_task::builders::CancelConversionTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelConversionTaskOutput`](crate::operation::cancel_conversion_task::CancelConversionTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelConversionTaskOutputBuilder {
     _request_id: Option<String>,
 }

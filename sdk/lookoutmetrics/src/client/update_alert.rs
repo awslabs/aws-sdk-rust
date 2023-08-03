@@ -11,9 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAlertOutput`](crate::operation::update_alert::UpdateAlertOutput) with field(s):
     ///   - [`alert_arn(Option<String>)`](crate::operation::update_alert::UpdateAlertOutput::alert_arn): <p>The ARN of the updated alert.</p>
     /// - On failure, responds with [`SdkError<UpdateAlertError>`](crate::operation::update_alert::UpdateAlertError)
-    pub fn update_alert(
-        &self,
-    ) -> crate::operation::update_alert::builders::UpdateAlertFluentBuilder {
+    pub fn update_alert(&self) -> crate::operation::update_alert::builders::UpdateAlertFluentBuilder {
         crate::operation::update_alert::builders::UpdateAlertFluentBuilder::new(self.handle.clone())
     }
 }

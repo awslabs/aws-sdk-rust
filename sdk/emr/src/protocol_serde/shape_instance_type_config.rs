@@ -24,10 +24,7 @@ pub fn ser_instance_type_config(
     if let Some(var_5) = &input.ebs_configuration {
         #[allow(unused_mut)]
         let mut object_6 = object.key("EbsConfiguration").start_object();
-        crate::protocol_serde::shape_ebs_configuration::ser_ebs_configuration(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_ebs_configuration::ser_ebs_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.configurations {
@@ -36,10 +33,7 @@ pub fn ser_instance_type_config(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_configuration::ser_configuration(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_configuration::ser_configuration(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }

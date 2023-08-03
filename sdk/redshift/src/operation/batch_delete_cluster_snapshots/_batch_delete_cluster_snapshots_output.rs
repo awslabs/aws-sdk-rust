@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for BatchDeleteClusterSnapshotsOutput {
 }
 impl BatchDeleteClusterSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteClusterSnapshotsOutput`](crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput).
-    pub fn builder() -> crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsOutputBuilder{
+    pub fn builder() -> crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsOutputBuilder {
         crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteClusterSnapshotsOutput`](crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteClusterSnapshotsOutputBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotErrorMessage>>,
@@ -56,10 +54,7 @@ impl BatchDeleteClusterSnapshotsOutputBuilder {
         self
     }
     /// <p>A list of the snapshot identifiers that were deleted. </p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resources = input;
         self
     }
@@ -79,17 +74,12 @@ impl BatchDeleteClusterSnapshotsOutputBuilder {
         self
     }
     /// <p>A list of any errors returned.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotErrorMessage>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotErrorMessage>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>A list of any errors returned.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotErrorMessage>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotErrorMessage>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -102,9 +92,7 @@ impl BatchDeleteClusterSnapshotsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchDeleteClusterSnapshotsOutput`](crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput {
+    pub fn build(self) -> crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput {
         crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput {
             resources: self.resources,
             errors: self.errors,

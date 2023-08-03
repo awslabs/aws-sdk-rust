@@ -26,7 +26,7 @@ impl TestCustomDataIdentifierInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestCustomDataIdentifierFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierInputBuilder,
+    inner: crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierInputBuilder,
 }
 impl TestCustomDataIdentifierFluentBuilder {
     /// Creates a new `TestCustomDataIdentifier`.
@@ -37,7 +37,7 @@ impl TestCustomDataIdentifierFluentBuilder {
         }
     }
     /// Access the TestCustomDataIdentifier as a reference.
-    pub fn as_input(&self) -> &crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl TestCustomDataIdentifierFluentBuilder {
             crate::operation::test_custom_data_identifier::TestCustomDataIdentifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl TestCustomDataIdentifierFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl TestCustomDataIdentifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl TestCustomDataIdentifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl TestCustomDataIdentifierFluentBuilder {
             crate::operation::test_custom_data_identifier::TestCustomDataIdentifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError>,
     > {
         self.customize_middleware().await
     }
@@ -130,17 +119,12 @@ impl TestCustomDataIdentifierFluentBuilder {
         self
     }
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-    pub fn set_ignore_words(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ignore_words(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ignore_words(input);
         self
     }
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-    pub fn get_ignore_words(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ignore_words(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ignore_words()
     }
     /// Appends an item to `keywords`.
@@ -153,10 +137,7 @@ impl TestCustomDataIdentifierFluentBuilder {
         self
     }
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
-    pub fn set_keywords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_keywords(input);
         self
     }

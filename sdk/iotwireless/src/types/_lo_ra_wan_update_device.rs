@@ -51,9 +51,7 @@ impl LoRaWanUpdateDevice {
 
 /// A builder for [`LoRaWanUpdateDevice`](crate::types::LoRaWanUpdateDevice).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoRaWanUpdateDeviceBuilder {
     pub(crate) device_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_profile_id: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct LoRaWanUpdateDeviceBuilder {
 }
 impl LoRaWanUpdateDeviceBuilder {
     /// <p>The ID of the device profile for the wireless device.</p>
-    pub fn device_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the device profile for the wireless device.</p>
-    pub fn set_device_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_profile_id = input;
         self
     }
@@ -83,18 +75,12 @@ impl LoRaWanUpdateDeviceBuilder {
         &self.device_profile_id
     }
     /// <p>The ID of the service profile.</p>
-    pub fn service_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the service profile.</p>
-    pub fn set_service_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_profile_id = input;
         self
     }
@@ -108,10 +94,7 @@ impl LoRaWanUpdateDeviceBuilder {
         self
     }
     /// <p>ABP device object for update APIs for v1.1</p>
-    pub fn set_abp_v1_1(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateAbpV11>,
-    ) -> Self {
+    pub fn set_abp_v1_1(mut self, input: ::std::option::Option<crate::types::UpdateAbpV11>) -> Self {
         self.abp_v1_1 = input;
         self
     }
@@ -125,10 +108,7 @@ impl LoRaWanUpdateDeviceBuilder {
         self
     }
     /// <p>ABP device object for update APIs for v1.0.x</p>
-    pub fn set_abp_v1_0_x(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateAbpV10X>,
-    ) -> Self {
+    pub fn set_abp_v1_0_x(mut self, input: ::std::option::Option<crate::types::UpdateAbpV10X>) -> Self {
         self.abp_v1_0_x = input;
         self
     }

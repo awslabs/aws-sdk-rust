@@ -8,8 +8,7 @@ pub struct GetDetectorOutput {
     pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>The publishing frequency of the finding.</p>
     #[doc(hidden)]
-    pub finding_publishing_frequency:
-        ::std::option::Option<crate::types::FindingPublishingFrequency>,
+    pub finding_publishing_frequency: ::std::option::Option<crate::types::FindingPublishingFrequency>,
     /// <p>The GuardDuty service role.</p>
     #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
@@ -25,13 +24,10 @@ pub struct GetDetectorOutput {
     pub data_sources: ::std::option::Option<crate::types::DataSourceConfigurationsResult>,
     /// <p>The tags of the detector resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Describes the features that have been enabled for the detector.</p>
     #[doc(hidden)]
-    pub features:
-        ::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfigurationResult>>,
+    pub features: ::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfigurationResult>>,
     _request_id: Option<String>,
 }
 impl GetDetectorOutput {
@@ -40,9 +36,7 @@ impl GetDetectorOutput {
         self.created_at.as_deref()
     }
     /// <p>The publishing frequency of the finding.</p>
-    pub fn finding_publishing_frequency(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FindingPublishingFrequency> {
+    pub fn finding_publishing_frequency(&self) -> ::std::option::Option<&crate::types::FindingPublishingFrequency> {
         self.finding_publishing_frequency.as_ref()
     }
     /// <p>The GuardDuty service role.</p>
@@ -59,23 +53,15 @@ impl GetDetectorOutput {
     }
     /// <p>Describes which data sources are enabled for the detector.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn data_sources(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataSourceConfigurationsResult> {
+    pub fn data_sources(&self) -> ::std::option::Option<&crate::types::DataSourceConfigurationsResult> {
         self.data_sources.as_ref()
     }
     /// <p>The tags of the detector resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Describes the features that have been enabled for the detector.</p>
-    pub fn features(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DetectorFeatureConfigurationResult]> {
+    pub fn features(&self) -> ::std::option::Option<&[crate::types::DetectorFeatureConfigurationResult]> {
         self.features.as_deref()
     }
 }
@@ -93,22 +79,16 @@ impl GetDetectorOutput {
 
 /// A builder for [`GetDetectorOutput`](crate::operation::get_detector::GetDetectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDetectorOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::std::string::String>,
-    pub(crate) finding_publishing_frequency:
-        ::std::option::Option<crate::types::FindingPublishingFrequency>,
+    pub(crate) finding_publishing_frequency: ::std::option::Option<crate::types::FindingPublishingFrequency>,
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DetectorStatus>,
     pub(crate) updated_at: ::std::option::Option<::std::string::String>,
     pub(crate) data_sources: ::std::option::Option<crate::types::DataSourceConfigurationsResult>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) features:
-        ::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfigurationResult>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) features: ::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfigurationResult>>,
     _request_id: Option<String>,
 }
 impl GetDetectorOutputBuilder {
@@ -127,25 +107,17 @@ impl GetDetectorOutputBuilder {
         &self.created_at
     }
     /// <p>The publishing frequency of the finding.</p>
-    pub fn finding_publishing_frequency(
-        mut self,
-        input: crate::types::FindingPublishingFrequency,
-    ) -> Self {
+    pub fn finding_publishing_frequency(mut self, input: crate::types::FindingPublishingFrequency) -> Self {
         self.finding_publishing_frequency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The publishing frequency of the finding.</p>
-    pub fn set_finding_publishing_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingPublishingFrequency>,
-    ) -> Self {
+    pub fn set_finding_publishing_frequency(mut self, input: ::std::option::Option<crate::types::FindingPublishingFrequency>) -> Self {
         self.finding_publishing_frequency = input;
         self
     }
     /// <p>The publishing frequency of the finding.</p>
-    pub fn get_finding_publishing_frequency(
-        &self,
-    ) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
+    pub fn get_finding_publishing_frequency(&self) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
         &self.finding_publishing_frequency
     }
     /// <p>The GuardDuty service role.</p>
@@ -168,10 +140,7 @@ impl GetDetectorOutputBuilder {
         self
     }
     /// <p>The detector status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectorStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DetectorStatus>) -> Self {
         self.status = input;
         self
     }
@@ -201,18 +170,13 @@ impl GetDetectorOutputBuilder {
     }
     /// <p>Describes which data sources are enabled for the detector.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn set_data_sources(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceConfigurationsResult>,
-    ) -> Self {
+    pub fn set_data_sources(mut self, input: ::std::option::Option<crate::types::DataSourceConfigurationsResult>) -> Self {
         self.data_sources = input;
         self
     }
     /// <p>Describes which data sources are enabled for the detector.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn get_data_sources(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceConfigurationsResult> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<crate::types::DataSourceConfigurationsResult> {
         &self.data_sources
     }
     /// Adds a key-value pair to `tags`.
@@ -220,32 +184,19 @@ impl GetDetectorOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the detector resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags of the detector resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags of the detector resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `features`.
@@ -260,20 +211,12 @@ impl GetDetectorOutputBuilder {
         self
     }
     /// <p>Describes the features that have been enabled for the detector.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::DetectorFeatureConfigurationResult>,
-        >,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfigurationResult>>) -> Self {
         self.features = input;
         self
     }
     /// <p>Describes the features that have been enabled for the detector.</p>
-    pub fn get_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfigurationResult>>
-    {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfigurationResult>> {
         &self.features
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

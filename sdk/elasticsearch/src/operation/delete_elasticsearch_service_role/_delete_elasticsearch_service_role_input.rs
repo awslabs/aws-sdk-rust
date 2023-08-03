@@ -5,16 +5,14 @@
 pub struct DeleteElasticsearchServiceRoleInput {}
 impl DeleteElasticsearchServiceRoleInput {
     /// Creates a new builder-style object to manufacture [`DeleteElasticsearchServiceRoleInput`](crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRoleInput).
-    pub fn builder() -> crate::operation::delete_elasticsearch_service_role::builders::DeleteElasticsearchServiceRoleInputBuilder{
+    pub fn builder() -> crate::operation::delete_elasticsearch_service_role::builders::DeleteElasticsearchServiceRoleInputBuilder {
         crate::operation::delete_elasticsearch_service_role::builders::DeleteElasticsearchServiceRoleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteElasticsearchServiceRoleInput`](crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteElasticsearchServiceRoleInputBuilder {}
 impl DeleteElasticsearchServiceRoleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteElasticsearchServiceRoleInput`](crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRoleInput).
@@ -24,9 +22,6 @@ impl DeleteElasticsearchServiceRoleInputBuilder {
         crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRoleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRoleInput {
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRoleInput {})
     }
 }

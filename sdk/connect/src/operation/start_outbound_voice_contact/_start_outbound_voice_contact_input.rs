@@ -25,13 +25,10 @@ pub struct StartOutboundVoiceContactInput {
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Configuration of the answering machine detection for this outbound call. </p>
     #[doc(hidden)]
-    pub answer_machine_detection_config:
-        ::std::option::Option<crate::types::AnswerMachineDetectionConfig>,
+    pub answer_machine_detection_config: ::std::option::Option<crate::types::AnswerMachineDetectionConfig>,
     /// <p>The campaign identifier of the outbound communication.</p>
     #[doc(hidden)]
     pub campaign_id: ::std::option::Option<::std::string::String>,
@@ -67,17 +64,11 @@ impl StartOutboundVoiceContactInput {
     }
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>Configuration of the answering machine detection for this outbound call. </p>
-    pub fn answer_machine_detection_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnswerMachineDetectionConfig> {
+    pub fn answer_machine_detection_config(&self) -> ::std::option::Option<&crate::types::AnswerMachineDetectionConfig> {
         self.answer_machine_detection_config.as_ref()
     }
     /// <p>The campaign identifier of the outbound communication.</p>
@@ -91,16 +82,14 @@ impl StartOutboundVoiceContactInput {
 }
 impl StartOutboundVoiceContactInput {
     /// Creates a new builder-style object to manufacture [`StartOutboundVoiceContactInput`](crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactInput).
-    pub fn builder() -> crate::operation::start_outbound_voice_contact::builders::StartOutboundVoiceContactInputBuilder{
+    pub fn builder() -> crate::operation::start_outbound_voice_contact::builders::StartOutboundVoiceContactInputBuilder {
         crate::operation::start_outbound_voice_contact::builders::StartOutboundVoiceContactInputBuilder::default()
     }
 }
 
 /// A builder for [`StartOutboundVoiceContactInput`](crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartOutboundVoiceContactInputBuilder {
     pub(crate) destination_phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) contact_flow_id: ::std::option::Option<::std::string::String>,
@@ -108,28 +97,19 @@ pub struct StartOutboundVoiceContactInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) source_phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) answer_machine_detection_config:
-        ::std::option::Option<crate::types::AnswerMachineDetectionConfig>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) answer_machine_detection_config: ::std::option::Option<crate::types::AnswerMachineDetectionConfig>,
     pub(crate) campaign_id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_type: ::std::option::Option<crate::types::TrafficType>,
 }
 impl StartOutboundVoiceContactInputBuilder {
     /// <p>The phone number of the customer, in E.164 format.</p>
-    pub fn destination_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number of the customer, in E.164 format.</p>
-    pub fn set_destination_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_phone_number = input;
         self
     }
@@ -139,19 +119,13 @@ impl StartOutboundVoiceContactInputBuilder {
     }
     /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
-    pub fn contact_flow_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
-    pub fn set_contact_flow_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_flow_id = input;
         self
     }
@@ -189,18 +163,12 @@ impl StartOutboundVoiceContactInputBuilder {
         &self.client_token
     }
     /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
-    pub fn source_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
-    pub fn set_source_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_phone_number = input;
         self
     }
@@ -228,11 +196,7 @@ impl StartOutboundVoiceContactInputBuilder {
     ///
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
@@ -240,44 +204,27 @@ impl StartOutboundVoiceContactInputBuilder {
     }
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>Configuration of the answering machine detection for this outbound call. </p>
-    pub fn answer_machine_detection_config(
-        mut self,
-        input: crate::types::AnswerMachineDetectionConfig,
-    ) -> Self {
+    pub fn answer_machine_detection_config(mut self, input: crate::types::AnswerMachineDetectionConfig) -> Self {
         self.answer_machine_detection_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration of the answering machine detection for this outbound call. </p>
-    pub fn set_answer_machine_detection_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AnswerMachineDetectionConfig>,
-    ) -> Self {
+    pub fn set_answer_machine_detection_config(mut self, input: ::std::option::Option<crate::types::AnswerMachineDetectionConfig>) -> Self {
         self.answer_machine_detection_config = input;
         self
     }
     /// <p>Configuration of the answering machine detection for this outbound call. </p>
-    pub fn get_answer_machine_detection_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnswerMachineDetectionConfig> {
+    pub fn get_answer_machine_detection_config(&self) -> &::std::option::Option<crate::types::AnswerMachineDetectionConfig> {
         &self.answer_machine_detection_config
     }
     /// <p>The campaign identifier of the outbound communication.</p>
@@ -300,10 +247,7 @@ impl StartOutboundVoiceContactInputBuilder {
         self
     }
     /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
-    pub fn set_traffic_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficType>,
-    ) -> Self {
+    pub fn set_traffic_type(mut self, input: ::std::option::Option<crate::types::TrafficType>) -> Self {
         self.traffic_type = input;
         self
     }
@@ -318,19 +262,17 @@ impl StartOutboundVoiceContactInputBuilder {
         crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactInput {
-                destination_phone_number: self.destination_phone_number,
-                contact_flow_id: self.contact_flow_id,
-                instance_id: self.instance_id,
-                client_token: self.client_token,
-                source_phone_number: self.source_phone_number,
-                queue_id: self.queue_id,
-                attributes: self.attributes,
-                answer_machine_detection_config: self.answer_machine_detection_config,
-                campaign_id: self.campaign_id,
-                traffic_type: self.traffic_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactInput {
+            destination_phone_number: self.destination_phone_number,
+            contact_flow_id: self.contact_flow_id,
+            instance_id: self.instance_id,
+            client_token: self.client_token,
+            source_phone_number: self.source_phone_number,
+            queue_id: self.queue_id,
+            attributes: self.attributes,
+            answer_machine_detection_config: self.answer_machine_detection_config,
+            campaign_id: self.campaign_id,
+            traffic_type: self.traffic_type,
+        })
     }
 }

@@ -31,17 +31,14 @@ impl UpdatePipelineStatusInput {
 }
 impl UpdatePipelineStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdatePipelineStatusInput`](crate::operation::update_pipeline_status::UpdatePipelineStatusInput).
-    pub fn builder(
-    ) -> crate::operation::update_pipeline_status::builders::UpdatePipelineStatusInputBuilder {
+    pub fn builder() -> crate::operation::update_pipeline_status::builders::UpdatePipelineStatusInputBuilder {
         crate::operation::update_pipeline_status::builders::UpdatePipelineStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePipelineStatusInput`](crate::operation::update_pipeline_status::UpdatePipelineStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePipelineStatusInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -90,15 +87,11 @@ impl UpdatePipelineStatusInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePipelineStatusInput`](crate::operation::update_pipeline_status::UpdatePipelineStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_pipeline_status::UpdatePipelineStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_pipeline_status::UpdatePipelineStatusInput {
-                id: self.id,
-                status: self.status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_pipeline_status::UpdatePipelineStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_pipeline_status::UpdatePipelineStatusInput {
+            id: self.id,
+            status: self.status,
+        })
     }
 }

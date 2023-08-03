@@ -37,9 +37,7 @@ impl ListPublicKeysInput {
 
 /// A builder for [`ListPublicKeysInput`](crate::operation::list_public_keys::ListPublicKeysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPublicKeysInputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -52,10 +50,7 @@ impl ListPublicKeysInputBuilder {
         self
     }
     /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -69,10 +64,7 @@ impl ListPublicKeysInputBuilder {
         self
     }
     /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -97,10 +89,7 @@ impl ListPublicKeysInputBuilder {
     /// Consumes the builder and constructs a [`ListPublicKeysInput`](crate::operation::list_public_keys::ListPublicKeysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_public_keys::ListPublicKeysInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_public_keys::ListPublicKeysInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_public_keys::ListPublicKeysInput {
             start_time: self.start_time,
             end_time: self.end_time,

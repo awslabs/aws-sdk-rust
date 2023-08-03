@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`data_cells_filters(Option<Vec<DataCellsFilter>>)`](crate::operation::list_data_cells_filter::ListDataCellsFilterOutput::data_cells_filters): <p>A list of <code>DataCellFilter</code> structures.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_cells_filter::ListDataCellsFilterOutput::next_token): <p>A continuation token, if not all requested data cell filters have been returned.</p>
     /// - On failure, responds with [`SdkError<ListDataCellsFilterError>`](crate::operation::list_data_cells_filter::ListDataCellsFilterError)
-    pub fn list_data_cells_filter(
-        &self,
-    ) -> crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder {
-        crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_data_cells_filter(&self) -> crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder {
+        crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::new(self.handle.clone())
     }
 }

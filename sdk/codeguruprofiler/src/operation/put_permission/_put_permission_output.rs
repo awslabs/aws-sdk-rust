@@ -36,9 +36,7 @@ impl PutPermissionOutput {
 
 /// A builder for [`PutPermissionOutput`](crate::operation::put_permission::PutPermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPermissionOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,

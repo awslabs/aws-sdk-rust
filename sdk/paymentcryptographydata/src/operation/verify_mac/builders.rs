@@ -10,10 +10,7 @@ impl VerifyMacInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::verify_mac::VerifyMacOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_mac::VerifyMacError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_mac::VerifyMacError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.verify_mac();
         fluent_builder.inner = self;
@@ -52,10 +49,7 @@ impl VerifyMacFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::verify_mac::VerifyMac,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::verify_mac::VerifyMac, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::verify_mac::VerifyMacError>,
     > {
         let handle = self.handle.clone();
@@ -66,10 +60,7 @@ impl VerifyMacFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -111,27 +102,18 @@ impl VerifyMacFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::verify_mac::VerifyMac,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::verify_mac::VerifyMac, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::verify_mac::VerifyMacError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to verify MAC data.</p>
-    pub fn key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_identifier(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to verify MAC data.</p>
-    pub fn set_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_identifier(input);
         self
     }
@@ -173,17 +155,12 @@ impl VerifyMacFluentBuilder {
         self
     }
     /// <p>The attributes and data values to use for MAC verification within Amazon Web Services Payment Cryptography.</p>
-    pub fn set_verification_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::MacAttributes>,
-    ) -> Self {
+    pub fn set_verification_attributes(mut self, input: ::std::option::Option<crate::types::MacAttributes>) -> Self {
         self.inner = self.inner.set_verification_attributes(input);
         self
     }
     /// <p>The attributes and data values to use for MAC verification within Amazon Web Services Payment Cryptography.</p>
-    pub fn get_verification_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::MacAttributes> {
+    pub fn get_verification_attributes(&self) -> &::std::option::Option<crate::types::MacAttributes> {
         self.inner.get_verification_attributes()
     }
     /// <p>The length of the MAC.</p>

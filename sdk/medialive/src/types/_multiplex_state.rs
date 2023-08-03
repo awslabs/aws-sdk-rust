@@ -45,13 +45,7 @@
 /// The current state of the multiplex.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MultiplexState {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,9 +81,7 @@ impl ::std::convert::From<&str> for MultiplexState {
             "RUNNING" => MultiplexState::Running,
             "STARTING" => MultiplexState::Starting,
             "STOPPING" => MultiplexState::Stopping,
-            other => {
-                MultiplexState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => MultiplexState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

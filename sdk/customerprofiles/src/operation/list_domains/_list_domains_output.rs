@@ -35,9 +35,7 @@ impl ListDomainsOutput {
 
 /// A builder for [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListDomainItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListDomainsOutputBuilder {
         self
     }
     /// <p>The list of ListDomains instances.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListDomainItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListDomainItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The list of ListDomains instances.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListDomainItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListDomainItem>> {
         &self.items
     }
     /// <p>The pagination token from the previous ListDomains API call.</p>

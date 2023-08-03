@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateNetworkAclEntryOutput {
 }
 impl CreateNetworkAclEntryOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkAclEntryOutput`](crate::operation::create_network_acl_entry::CreateNetworkAclEntryOutput).
-    pub fn builder(
-    ) -> crate::operation::create_network_acl_entry::builders::CreateNetworkAclEntryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_network_acl_entry::builders::CreateNetworkAclEntryOutputBuilder {
         crate::operation::create_network_acl_entry::builders::CreateNetworkAclEntryOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNetworkAclEntryOutput`](crate::operation::create_network_acl_entry::CreateNetworkAclEntryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNetworkAclEntryOutputBuilder {
     _request_id: Option<String>,
 }

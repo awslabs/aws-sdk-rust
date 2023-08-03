@@ -26,7 +26,7 @@ impl GetSerialConsoleAccessStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSerialConsoleAccessStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusInputBuilder,
+    inner: crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusInputBuilder,
 }
 impl GetSerialConsoleAccessStatusFluentBuilder {
     /// Creates a new `GetSerialConsoleAccessStatus`.
@@ -37,7 +37,7 @@ impl GetSerialConsoleAccessStatusFluentBuilder {
         }
     }
     /// Access the GetSerialConsoleAccessStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetSerialConsoleAccessStatusFluentBuilder {
             crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetSerialConsoleAccessStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetSerialConsoleAccessStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetSerialConsoleAccessStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetSerialConsoleAccessStatusFluentBuilder {
             crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusError>,
     > {
         self.customize_middleware().await
     }

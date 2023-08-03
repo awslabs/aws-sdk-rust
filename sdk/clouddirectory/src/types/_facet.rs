@@ -37,9 +37,7 @@ impl Facet {
 
 /// A builder for [`Facet`](crate::types::Facet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FacetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) object_type: ::std::option::Option<crate::types::ObjectType>,
@@ -66,10 +64,7 @@ impl FacetBuilder {
         self
     }
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
-    pub fn set_object_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectType>,
-    ) -> Self {
+    pub fn set_object_type(mut self, input: ::std::option::Option<crate::types::ObjectType>) -> Self {
         self.object_type = input;
         self
     }
@@ -83,10 +78,7 @@ impl FacetBuilder {
         self
     }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
-    pub fn set_facet_style(
-        mut self,
-        input: ::std::option::Option<crate::types::FacetStyle>,
-    ) -> Self {
+    pub fn set_facet_style(mut self, input: ::std::option::Option<crate::types::FacetStyle>) -> Self {
         self.facet_style = input;
         self
     }

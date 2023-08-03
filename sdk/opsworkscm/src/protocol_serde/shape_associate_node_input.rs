@@ -15,10 +15,7 @@ pub fn ser_associate_node_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_engine_attribute::ser_engine_attribute(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_engine_attribute::ser_engine_attribute(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

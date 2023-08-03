@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for RevokePermissionsOutput {
 }
 impl RevokePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`RevokePermissionsOutput`](crate::operation::revoke_permissions::RevokePermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::revoke_permissions::builders::RevokePermissionsOutputBuilder {
+    pub fn builder() -> crate::operation::revoke_permissions::builders::RevokePermissionsOutputBuilder {
         crate::operation::revoke_permissions::builders::RevokePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`RevokePermissionsOutput`](crate::operation::revoke_permissions::RevokePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokePermissionsOutputBuilder {
     _request_id: Option<String>,
 }

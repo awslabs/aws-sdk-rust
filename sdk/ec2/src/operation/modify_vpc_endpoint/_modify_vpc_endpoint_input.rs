@@ -99,31 +99,25 @@ impl ModifyVpcEndpointInput {
 }
 impl ModifyVpcEndpointInput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcEndpointInput`](crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::modify_vpc_endpoint::builders::ModifyVpcEndpointInputBuilder {
+    pub fn builder() -> crate::operation::modify_vpc_endpoint::builders::ModifyVpcEndpointInputBuilder {
         crate::operation::modify_vpc_endpoint::builders::ModifyVpcEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpcEndpointInput`](crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) reset_policy: ::std::option::Option<bool>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
     pub(crate) add_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) remove_route_table_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) remove_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) add_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) remove_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) add_security_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) remove_security_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) add_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) remove_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) dns_options: ::std::option::Option<crate::types::DnsOptionsSpecification>,
     pub(crate) private_dns_enabled: ::std::option::Option<bool>,
@@ -144,18 +138,12 @@ impl ModifyVpcEndpointInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the endpoint.</p>
-    pub fn vpc_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the endpoint.</p>
-    pub fn set_vpc_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_endpoint_id = input;
         self
     }
@@ -178,18 +166,12 @@ impl ModifyVpcEndpointInputBuilder {
         &self.reset_policy
     }
     /// <p>(Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
@@ -202,27 +184,19 @@ impl ModifyVpcEndpointInputBuilder {
     /// To override the contents of this collection use [`set_add_route_table_ids`](Self::set_add_route_table_ids).
     ///
     /// <p>(Gateway endpoint) The IDs of the route tables to associate with the endpoint.</p>
-    pub fn add_route_table_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn add_route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.add_route_table_ids.unwrap_or_default();
         v.push(input.into());
         self.add_route_table_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Gateway endpoint) The IDs of the route tables to associate with the endpoint.</p>
-    pub fn set_add_route_table_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_add_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.add_route_table_ids = input;
         self
     }
     /// <p>(Gateway endpoint) The IDs of the route tables to associate with the endpoint.</p>
-    pub fn get_add_route_table_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_add_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.add_route_table_ids
     }
     /// Appends an item to `remove_route_table_ids`.
@@ -230,27 +204,19 @@ impl ModifyVpcEndpointInputBuilder {
     /// To override the contents of this collection use [`set_remove_route_table_ids`](Self::set_remove_route_table_ids).
     ///
     /// <p>(Gateway endpoint) The IDs of the route tables to disassociate from the endpoint.</p>
-    pub fn remove_route_table_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remove_route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_route_table_ids.unwrap_or_default();
         v.push(input.into());
         self.remove_route_table_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Gateway endpoint) The IDs of the route tables to disassociate from the endpoint.</p>
-    pub fn set_remove_route_table_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_remove_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.remove_route_table_ids = input;
         self
     }
     /// <p>(Gateway endpoint) The IDs of the route tables to disassociate from the endpoint.</p>
-    pub fn get_remove_route_table_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.remove_route_table_ids
     }
     /// Appends an item to `add_subnet_ids`.
@@ -258,27 +224,19 @@ impl ModifyVpcEndpointInputBuilder {
     /// To override the contents of this collection use [`set_add_subnet_ids`](Self::set_add_subnet_ids).
     ///
     /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to serve the endpoint. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
-    pub fn add_subnet_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn add_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.add_subnet_ids.unwrap_or_default();
         v.push(input.into());
         self.add_subnet_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to serve the endpoint. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
-    pub fn set_add_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_add_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.add_subnet_ids = input;
         self
     }
     /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to serve the endpoint. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
-    pub fn get_add_subnet_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_add_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.add_subnet_ids
     }
     /// Appends an item to `remove_subnet_ids`.
@@ -286,27 +244,19 @@ impl ModifyVpcEndpointInputBuilder {
     /// To override the contents of this collection use [`set_remove_subnet_ids`](Self::set_remove_subnet_ids).
     ///
     /// <p>(Interface endpoint) The IDs of the subnets from which to remove the endpoint.</p>
-    pub fn remove_subnet_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remove_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_subnet_ids.unwrap_or_default();
         v.push(input.into());
         self.remove_subnet_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Interface endpoint) The IDs of the subnets from which to remove the endpoint.</p>
-    pub fn set_remove_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_remove_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.remove_subnet_ids = input;
         self
     }
     /// <p>(Interface endpoint) The IDs of the subnets from which to remove the endpoint.</p>
-    pub fn get_remove_subnet_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.remove_subnet_ids
     }
     /// Appends an item to `add_security_group_ids`.
@@ -314,27 +264,19 @@ impl ModifyVpcEndpointInputBuilder {
     /// To override the contents of this collection use [`set_add_security_group_ids`](Self::set_add_security_group_ids).
     ///
     /// <p>(Interface endpoint) The IDs of the security groups to associate with the network interface.</p>
-    pub fn add_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn add_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.add_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.add_security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Interface endpoint) The IDs of the security groups to associate with the network interface.</p>
-    pub fn set_add_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_add_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.add_security_group_ids = input;
         self
     }
     /// <p>(Interface endpoint) The IDs of the security groups to associate with the network interface.</p>
-    pub fn get_add_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_add_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.add_security_group_ids
     }
     /// Appends an item to `remove_security_group_ids`.
@@ -342,27 +284,19 @@ impl ModifyVpcEndpointInputBuilder {
     /// To override the contents of this collection use [`set_remove_security_group_ids`](Self::set_remove_security_group_ids).
     ///
     /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the network interface.</p>
-    pub fn remove_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remove_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.remove_security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the network interface.</p>
-    pub fn set_remove_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_remove_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.remove_security_group_ids = input;
         self
     }
     /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the network interface.</p>
-    pub fn get_remove_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.remove_security_group_ids
     }
     /// <p>The IP address type for the endpoint.</p>
@@ -371,10 +305,7 @@ impl ModifyVpcEndpointInputBuilder {
         self
     }
     /// <p>The IP address type for the endpoint.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
@@ -388,10 +319,7 @@ impl ModifyVpcEndpointInputBuilder {
         self
     }
     /// <p>The DNS options for the endpoint.</p>
-    pub fn set_dns_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DnsOptionsSpecification>,
-    ) -> Self {
+    pub fn set_dns_options(mut self, input: ::std::option::Option<crate::types::DnsOptionsSpecification>) -> Self {
         self.dns_options = input;
         self
     }
@@ -416,26 +344,21 @@ impl ModifyVpcEndpointInputBuilder {
     /// Consumes the builder and constructs a [`ModifyVpcEndpointInput`](crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput {
-                dry_run: self.dry_run,
-                vpc_endpoint_id: self.vpc_endpoint_id,
-                reset_policy: self.reset_policy,
-                policy_document: self.policy_document,
-                add_route_table_ids: self.add_route_table_ids,
-                remove_route_table_ids: self.remove_route_table_ids,
-                add_subnet_ids: self.add_subnet_ids,
-                remove_subnet_ids: self.remove_subnet_ids,
-                add_security_group_ids: self.add_security_group_ids,
-                remove_security_group_ids: self.remove_security_group_ids,
-                ip_address_type: self.ip_address_type,
-                dns_options: self.dns_options,
-                private_dns_enabled: self.private_dns_enabled,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput {
+            dry_run: self.dry_run,
+            vpc_endpoint_id: self.vpc_endpoint_id,
+            reset_policy: self.reset_policy,
+            policy_document: self.policy_document,
+            add_route_table_ids: self.add_route_table_ids,
+            remove_route_table_ids: self.remove_route_table_ids,
+            add_subnet_ids: self.add_subnet_ids,
+            remove_subnet_ids: self.remove_subnet_ids,
+            add_security_group_ids: self.add_security_group_ids,
+            remove_security_group_ids: self.remove_security_group_ids,
+            ip_address_type: self.ip_address_type,
+            dns_options: self.dns_options,
+            private_dns_enabled: self.private_dns_enabled,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl GetSuiteRunInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_suite_run::GetSuiteRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_suite_run::GetSuiteRunError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_suite_run::GetSuiteRunError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_suite_run();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl GetSuiteRunFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_suite_run::GetSuiteRun,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_suite_run::GetSuiteRun, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_suite_run::GetSuiteRunError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl GetSuiteRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,27 +96,18 @@ impl GetSuiteRunFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_suite_run::GetSuiteRun,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_suite_run::GetSuiteRun, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_suite_run::GetSuiteRunError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Suite definition ID for the test suite run.</p>
-    pub fn suite_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.suite_definition_id(input.into());
         self
     }
     /// <p>Suite definition ID for the test suite run.</p>
-    pub fn set_suite_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_suite_definition_id(input);
         self
     }

@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for ListDomainNamesOutput {
 }
 impl ListDomainNamesOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainNamesOutput`](crate::operation::list_domain_names::ListDomainNamesOutput).
-    pub fn builder() -> crate::operation::list_domain_names::builders::ListDomainNamesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_domain_names::builders::ListDomainNamesOutputBuilder {
         crate::operation::list_domain_names::builders::ListDomainNamesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDomainNamesOutput`](crate::operation::list_domain_names::ListDomainNamesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainNamesOutputBuilder {
     pub(crate) domain_names: ::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>>,
     _request_id: Option<String>,
@@ -50,17 +47,12 @@ impl ListDomainNamesOutputBuilder {
         self
     }
     /// <p>List of domain names and respective engine types.</p>
-    pub fn set_domain_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>>,
-    ) -> Self {
+    pub fn set_domain_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>>) -> Self {
         self.domain_names = input;
         self
     }
     /// <p>List of domain names and respective engine types.</p>
-    pub fn get_domain_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>> {
+    pub fn get_domain_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>> {
         &self.domain_names
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

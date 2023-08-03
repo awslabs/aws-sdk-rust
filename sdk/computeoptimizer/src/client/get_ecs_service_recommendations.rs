@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`ecs_service_recommendations(Option<Vec<EcsServiceRecommendation>>)`](crate::operation::get_ecs_service_recommendations::GetEcsServiceRecommendationsOutput::ecs_service_recommendations): <p> An array of objects that describe the Amazon ECS service recommendations. </p>
     ///   - [`errors(Option<Vec<GetRecommendationError>>)`](crate::operation::get_ecs_service_recommendations::GetEcsServiceRecommendationsOutput::errors): <p> An array of objects that describe errors of the request. </p>
     /// - On failure, responds with [`SdkError<GetECSServiceRecommendationsError>`](crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError)
-    pub fn get_ecs_service_recommendations(&self) -> crate::operation::get_ecs_service_recommendations::builders::GetECSServiceRecommendationsFluentBuilder{
+    pub fn get_ecs_service_recommendations(
+        &self,
+    ) -> crate::operation::get_ecs_service_recommendations::builders::GetECSServiceRecommendationsFluentBuilder {
         crate::operation::get_ecs_service_recommendations::builders::GetECSServiceRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -43,17 +43,14 @@ impl CreateDeploymentInput {
 }
 impl CreateDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
-    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
         crate::operation::create_deployment::builders::CreateDeploymentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDeploymentInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
@@ -63,18 +60,12 @@ pub struct CreateDeploymentInputBuilder {
 }
 impl CreateDeploymentInputBuilder {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amzn_client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amzn_client_token = input;
         self
     }
@@ -83,18 +74,12 @@ impl CreateDeploymentInputBuilder {
         &self.amzn_client_token
     }
     /// The ID of the deployment if you wish to redeploy a previous deployment.
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the deployment if you wish to redeploy a previous deployment.
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -108,10 +93,7 @@ impl CreateDeploymentInputBuilder {
         self
     }
     /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
-    pub fn set_deployment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentType>,
-    ) -> Self {
+    pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::DeploymentType>) -> Self {
         self.deployment_type = input;
         self
     }
@@ -134,18 +116,12 @@ impl CreateDeploymentInputBuilder {
         &self.group_id
     }
     /// The ID of the group version to be deployed.
-    pub fn group_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the group version to be deployed.
-    pub fn set_group_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_version_id = input;
         self
     }
@@ -156,10 +132,7 @@ impl CreateDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_deployment::CreateDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_deployment::CreateDeploymentInput {
             amzn_client_token: self.amzn_client_token,
             deployment_id: self.deployment_id,

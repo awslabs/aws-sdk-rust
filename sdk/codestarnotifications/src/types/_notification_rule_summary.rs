@@ -30,9 +30,7 @@ impl NotificationRuleSummary {
 
 /// A builder for [`NotificationRuleSummary`](crate::types::NotificationRuleSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationRuleSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -68,9 +66,6 @@ impl NotificationRuleSummaryBuilder {
     }
     /// Consumes the builder and constructs a [`NotificationRuleSummary`](crate::types::NotificationRuleSummary).
     pub fn build(self) -> crate::types::NotificationRuleSummary {
-        crate::types::NotificationRuleSummary {
-            id: self.id,
-            arn: self.arn,
-        }
+        crate::types::NotificationRuleSummary { id: self.id, arn: self.arn }
     }
 }

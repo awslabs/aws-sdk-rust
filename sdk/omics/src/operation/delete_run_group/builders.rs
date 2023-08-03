@@ -10,10 +10,7 @@ impl DeleteRunGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_run_group::DeleteRunGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_run_group::DeleteRunGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_run_group::DeleteRunGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_run_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteRunGroupFluentBuilder {
         }
     }
     /// Access the DeleteRunGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_run_group::builders::DeleteRunGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_run_group::builders::DeleteRunGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteRunGroupFluentBuilder {
             crate::operation::delete_run_group::DeleteRunGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_run_group::DeleteRunGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_run_group::DeleteRunGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteRunGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteRunGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_run_group::DeleteRunGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_run_group::DeleteRunGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_run_group::DeleteRunGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteRunGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_run_group::DeleteRunGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_run_group::DeleteRunGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_run_group::DeleteRunGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteRunGroupFluentBuilder {
             crate::operation::delete_run_group::DeleteRunGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_run_group::DeleteRunGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_run_group::DeleteRunGroupError>,
     > {
         self.customize_middleware().await
     }

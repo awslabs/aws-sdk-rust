@@ -35,9 +35,7 @@ impl ListLocationsOutput {
 
 /// A builder for [`ListLocationsOutput`](crate::operation::list_locations::ListLocationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLocationsOutputBuilder {
     pub(crate) locations: ::std::option::Option<::std::vec::Vec<crate::types::LocationModel>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListLocationsOutputBuilder {
         self
     }
     /// <p>A collection of locations.</p>
-    pub fn set_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LocationModel>>,
-    ) -> Self {
+    pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationModel>>) -> Self {
         self.locations = input;
         self
     }
     /// <p>A collection of locations.</p>
-    pub fn get_locations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationModel>> {
+    pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationModel>> {
         &self.locations
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>

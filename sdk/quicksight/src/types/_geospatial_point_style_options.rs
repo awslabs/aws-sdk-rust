@@ -9,29 +9,22 @@ pub struct GeospatialPointStyleOptions {
     pub selected_point_style: ::std::option::Option<crate::types::GeospatialSelectedPointStyle>,
     /// <p>The cluster marker configuration of the geospatial point style.</p>
     #[doc(hidden)]
-    pub cluster_marker_configuration:
-        ::std::option::Option<crate::types::ClusterMarkerConfiguration>,
+    pub cluster_marker_configuration: ::std::option::Option<crate::types::ClusterMarkerConfiguration>,
     /// <p>The heatmap configuration of the geospatial point style.</p>
     #[doc(hidden)]
     pub heatmap_configuration: ::std::option::Option<crate::types::GeospatialHeatmapConfiguration>,
 }
 impl GeospatialPointStyleOptions {
     /// <p>The selected point styles (point, cluster) of the geospatial map.</p>
-    pub fn selected_point_style(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GeospatialSelectedPointStyle> {
+    pub fn selected_point_style(&self) -> ::std::option::Option<&crate::types::GeospatialSelectedPointStyle> {
         self.selected_point_style.as_ref()
     }
     /// <p>The cluster marker configuration of the geospatial point style.</p>
-    pub fn cluster_marker_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClusterMarkerConfiguration> {
+    pub fn cluster_marker_configuration(&self) -> ::std::option::Option<&crate::types::ClusterMarkerConfiguration> {
         self.cluster_marker_configuration.as_ref()
     }
     /// <p>The heatmap configuration of the geospatial point style.</p>
-    pub fn heatmap_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GeospatialHeatmapConfiguration> {
+    pub fn heatmap_configuration(&self) -> ::std::option::Option<&crate::types::GeospatialHeatmapConfiguration> {
         self.heatmap_configuration.as_ref()
     }
 }
@@ -44,82 +37,53 @@ impl GeospatialPointStyleOptions {
 
 /// A builder for [`GeospatialPointStyleOptions`](crate::types::GeospatialPointStyleOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeospatialPointStyleOptionsBuilder {
-    pub(crate) selected_point_style:
-        ::std::option::Option<crate::types::GeospatialSelectedPointStyle>,
-    pub(crate) cluster_marker_configuration:
-        ::std::option::Option<crate::types::ClusterMarkerConfiguration>,
-    pub(crate) heatmap_configuration:
-        ::std::option::Option<crate::types::GeospatialHeatmapConfiguration>,
+    pub(crate) selected_point_style: ::std::option::Option<crate::types::GeospatialSelectedPointStyle>,
+    pub(crate) cluster_marker_configuration: ::std::option::Option<crate::types::ClusterMarkerConfiguration>,
+    pub(crate) heatmap_configuration: ::std::option::Option<crate::types::GeospatialHeatmapConfiguration>,
 }
 impl GeospatialPointStyleOptionsBuilder {
     /// <p>The selected point styles (point, cluster) of the geospatial map.</p>
-    pub fn selected_point_style(
-        mut self,
-        input: crate::types::GeospatialSelectedPointStyle,
-    ) -> Self {
+    pub fn selected_point_style(mut self, input: crate::types::GeospatialSelectedPointStyle) -> Self {
         self.selected_point_style = ::std::option::Option::Some(input);
         self
     }
     /// <p>The selected point styles (point, cluster) of the geospatial map.</p>
-    pub fn set_selected_point_style(
-        mut self,
-        input: ::std::option::Option<crate::types::GeospatialSelectedPointStyle>,
-    ) -> Self {
+    pub fn set_selected_point_style(mut self, input: ::std::option::Option<crate::types::GeospatialSelectedPointStyle>) -> Self {
         self.selected_point_style = input;
         self
     }
     /// <p>The selected point styles (point, cluster) of the geospatial map.</p>
-    pub fn get_selected_point_style(
-        &self,
-    ) -> &::std::option::Option<crate::types::GeospatialSelectedPointStyle> {
+    pub fn get_selected_point_style(&self) -> &::std::option::Option<crate::types::GeospatialSelectedPointStyle> {
         &self.selected_point_style
     }
     /// <p>The cluster marker configuration of the geospatial point style.</p>
-    pub fn cluster_marker_configuration(
-        mut self,
-        input: crate::types::ClusterMarkerConfiguration,
-    ) -> Self {
+    pub fn cluster_marker_configuration(mut self, input: crate::types::ClusterMarkerConfiguration) -> Self {
         self.cluster_marker_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cluster marker configuration of the geospatial point style.</p>
-    pub fn set_cluster_marker_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterMarkerConfiguration>,
-    ) -> Self {
+    pub fn set_cluster_marker_configuration(mut self, input: ::std::option::Option<crate::types::ClusterMarkerConfiguration>) -> Self {
         self.cluster_marker_configuration = input;
         self
     }
     /// <p>The cluster marker configuration of the geospatial point style.</p>
-    pub fn get_cluster_marker_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClusterMarkerConfiguration> {
+    pub fn get_cluster_marker_configuration(&self) -> &::std::option::Option<crate::types::ClusterMarkerConfiguration> {
         &self.cluster_marker_configuration
     }
     /// <p>The heatmap configuration of the geospatial point style.</p>
-    pub fn heatmap_configuration(
-        mut self,
-        input: crate::types::GeospatialHeatmapConfiguration,
-    ) -> Self {
+    pub fn heatmap_configuration(mut self, input: crate::types::GeospatialHeatmapConfiguration) -> Self {
         self.heatmap_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The heatmap configuration of the geospatial point style.</p>
-    pub fn set_heatmap_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::GeospatialHeatmapConfiguration>,
-    ) -> Self {
+    pub fn set_heatmap_configuration(mut self, input: ::std::option::Option<crate::types::GeospatialHeatmapConfiguration>) -> Self {
         self.heatmap_configuration = input;
         self
     }
     /// <p>The heatmap configuration of the geospatial point style.</p>
-    pub fn get_heatmap_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::GeospatialHeatmapConfiguration> {
+    pub fn get_heatmap_configuration(&self) -> &::std::option::Option<crate::types::GeospatialHeatmapConfiguration> {
         &self.heatmap_configuration
     }
     /// Consumes the builder and constructs a [`GeospatialPointStyleOptions`](crate::types::GeospatialPointStyleOptions).

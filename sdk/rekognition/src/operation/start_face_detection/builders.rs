@@ -10,10 +10,7 @@ impl StartFaceDetectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_face_detection::StartFaceDetectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_face_detection::StartFaceDetectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_face_detection::StartFaceDetectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_face_detection();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl StartFaceDetectionFluentBuilder {
         }
     }
     /// Access the StartFaceDetection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_face_detection::builders::StartFaceDetectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_face_detection::builders::StartFaceDetectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl StartFaceDetectionFluentBuilder {
             crate::operation::start_face_detection::StartFaceDetection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_face_detection::StartFaceDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_face_detection::StartFaceDetectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl StartFaceDetectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl StartFaceDetectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_face_detection::StartFaceDetectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_face_detection::StartFaceDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_face_detection::StartFaceDetectionError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl StartFaceDetectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_face_detection::StartFaceDetectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_face_detection::StartFaceDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_face_detection::StartFaceDetectionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl StartFaceDetectionFluentBuilder {
             crate::operation::start_face_detection::StartFaceDetection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_face_detection::StartFaceDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_face_detection::StartFaceDetectionError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +123,12 @@ impl StartFaceDetectionFluentBuilder {
         self.inner.get_video()
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -164,17 +142,12 @@ impl StartFaceDetectionFluentBuilder {
         self
     }
     /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
-    pub fn set_notification_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationChannel>,
-    ) -> Self {
+    pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.inner = self.inner.set_notification_channel(input);
         self
     }
     /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
-    pub fn get_notification_channel(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+    pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
         self.inner.get_notification_channel()
     }
     /// <p>The face attributes you want returned.</p>
@@ -187,10 +160,7 @@ impl StartFaceDetectionFluentBuilder {
     /// <p>The face attributes you want returned.</p>
     /// <p> <code>DEFAULT</code> - The following subset of facial attributes are returned: BoundingBox, Confidence, Pose, Quality and Landmarks. </p>
     /// <p> <code>ALL</code> - All facial attributes are returned.</p>
-    pub fn set_face_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::FaceAttributes>,
-    ) -> Self {
+    pub fn set_face_attributes(mut self, input: ::std::option::Option<crate::types::FaceAttributes>) -> Self {
         self.inner = self.inner.set_face_attributes(input);
         self
     }

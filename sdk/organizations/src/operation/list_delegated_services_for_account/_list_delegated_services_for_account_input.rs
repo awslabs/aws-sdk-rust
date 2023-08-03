@@ -29,16 +29,14 @@ impl ListDelegatedServicesForAccountInput {
 }
 impl ListDelegatedServicesForAccountInput {
     /// Creates a new builder-style object to manufacture [`ListDelegatedServicesForAccountInput`](crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountInput).
-    pub fn builder() -> crate::operation::list_delegated_services_for_account::builders::ListDelegatedServicesForAccountInputBuilder{
+    pub fn builder() -> crate::operation::list_delegated_services_for_account::builders::ListDelegatedServicesForAccountInputBuilder {
         crate::operation::list_delegated_services_for_account::builders::ListDelegatedServicesForAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDelegatedServicesForAccountInput`](crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDelegatedServicesForAccountInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,13 +94,10 @@ impl ListDelegatedServicesForAccountInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountInput {
-                account_id: self.account_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                account_id: self.account_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

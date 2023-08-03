@@ -9,42 +9,36 @@ pub fn de_rebuild_environment_http_error(
     crate::operation::rebuild_environment::RebuildEnvironmentError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::rebuild_environment::RebuildEnvironmentError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::rebuild_environment::RebuildEnvironmentError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::rebuild_environment::RebuildEnvironmentError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::rebuild_environment::RebuildEnvironmentError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InsufficientPrivilegesException" => crate::operation::rebuild_environment::RebuildEnvironmentError::InsufficientPrivilegesException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InsufficientPrivilegesExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(_response_body, output).map_err(crate::operation::rebuild_environment::RebuildEnvironmentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InsufficientPrivilegesExceptionBuilder::default();
+                output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::rebuild_environment::RebuildEnvironmentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::rebuild_environment::RebuildEnvironmentError::generic(generic)
+        _ => crate::operation::rebuild_environment::RebuildEnvironmentError::generic(generic),
     })
 }
 
@@ -60,9 +54,7 @@ pub fn de_rebuild_environment_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::rebuild_environment::builders::RebuildEnvironmentOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

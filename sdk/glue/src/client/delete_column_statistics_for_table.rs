@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`column_name(impl ::std::convert::Into<String>)`](crate::operation::delete_column_statistics_for_table::builders::DeleteColumnStatisticsForTableFluentBuilder::column_name) / [`set_column_name(Option<String>)`](crate::operation::delete_column_statistics_for_table::builders::DeleteColumnStatisticsForTableFluentBuilder::set_column_name): <p>The name of the column.</p>
     /// - On success, responds with [`DeleteColumnStatisticsForTableOutput`](crate::operation::delete_column_statistics_for_table::DeleteColumnStatisticsForTableOutput)
     /// - On failure, responds with [`SdkError<DeleteColumnStatisticsForTableError>`](crate::operation::delete_column_statistics_for_table::DeleteColumnStatisticsForTableError)
-    pub fn delete_column_statistics_for_table(&self) -> crate::operation::delete_column_statistics_for_table::builders::DeleteColumnStatisticsForTableFluentBuilder{
+    pub fn delete_column_statistics_for_table(
+        &self,
+    ) -> crate::operation::delete_column_statistics_for_table::builders::DeleteColumnStatisticsForTableFluentBuilder {
         crate::operation::delete_column_statistics_for_table::builders::DeleteColumnStatisticsForTableFluentBuilder::new(self.handle.clone())
     }
 }

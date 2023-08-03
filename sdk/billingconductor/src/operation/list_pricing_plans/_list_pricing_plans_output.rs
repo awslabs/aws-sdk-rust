@@ -35,38 +35,28 @@ impl ::aws_http::request_id::RequestId for ListPricingPlansOutput {
 }
 impl ListPricingPlansOutput {
     /// Creates a new builder-style object to manufacture [`ListPricingPlansOutput`](crate::operation::list_pricing_plans::ListPricingPlansOutput).
-    pub fn builder() -> crate::operation::list_pricing_plans::builders::ListPricingPlansOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pricing_plans::builders::ListPricingPlansOutputBuilder {
         crate::operation::list_pricing_plans::builders::ListPricingPlansOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPricingPlansOutput`](crate::operation::list_pricing_plans::ListPricingPlansOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPricingPlansOutputBuilder {
     pub(crate) billing_period: ::std::option::Option<::std::string::String>,
-    pub(crate) pricing_plans:
-        ::std::option::Option<::std::vec::Vec<crate::types::PricingPlanListElement>>,
+    pub(crate) pricing_plans: ::std::option::Option<::std::vec::Vec<crate::types::PricingPlanListElement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPricingPlansOutputBuilder {
     /// <p> The billing period for which the described pricing plans are applicable. </p>
-    pub fn billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The billing period for which the described pricing plans are applicable. </p>
-    pub fn set_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_period = input;
         self
     }
@@ -86,17 +76,12 @@ impl ListPricingPlansOutputBuilder {
         self
     }
     /// <p>A list of <code>PricingPlanListElement</code> retrieved. </p>
-    pub fn set_pricing_plans(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PricingPlanListElement>>,
-    ) -> Self {
+    pub fn set_pricing_plans(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PricingPlanListElement>>) -> Self {
         self.pricing_plans = input;
         self
     }
     /// <p>A list of <code>PricingPlanListElement</code> retrieved. </p>
-    pub fn get_pricing_plans(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PricingPlanListElement>> {
+    pub fn get_pricing_plans(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PricingPlanListElement>> {
         &self.pricing_plans
     }
     /// <p>The pagination token that's used on subsequent calls to get pricing plans. </p>

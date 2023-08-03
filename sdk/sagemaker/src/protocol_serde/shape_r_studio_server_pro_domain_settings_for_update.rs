@@ -16,9 +16,7 @@ pub fn ser_r_studio_server_pro_domain_settings_for_update(
         object.key("RStudioConnectUrl").string(var_4.as_str());
     }
     if let Some(var_5) = &input.r_studio_package_manager_url {
-        object
-            .key("RStudioPackageManagerUrl")
-            .string(var_5.as_str());
+        object.key("RStudioPackageManagerUrl").string(var_5.as_str());
     }
     Ok(())
 }

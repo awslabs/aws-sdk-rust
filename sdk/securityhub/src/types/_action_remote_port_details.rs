@@ -30,9 +30,7 @@ impl ActionRemotePortDetails {
 
 /// A builder for [`ActionRemotePortDetails`](crate::types::ActionRemotePortDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionRemotePortDetailsBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) port_name: ::std::option::Option<::std::string::String>,

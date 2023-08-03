@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`average_upload_rate_limit_in_bits_per_sec(Option<i64>)`](crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitOutput::average_upload_rate_limit_in_bits_per_sec): <p>The average upload bandwidth rate limit in bits per second. This field does not appear in the response if the upload rate limit is not set.</p>
     ///   - [`average_download_rate_limit_in_bits_per_sec(Option<i64>)`](crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitOutput::average_download_rate_limit_in_bits_per_sec): <p>The average download bandwidth rate limit in bits per second. This field does not appear in the response if the download rate limit is not set.</p>
     /// - On failure, responds with [`SdkError<DescribeBandwidthRateLimitError>`](crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitError)
-    pub fn describe_bandwidth_rate_limit(&self) -> crate::operation::describe_bandwidth_rate_limit::builders::DescribeBandwidthRateLimitFluentBuilder{
+    pub fn describe_bandwidth_rate_limit(
+        &self,
+    ) -> crate::operation::describe_bandwidth_rate_limit::builders::DescribeBandwidthRateLimitFluentBuilder {
         crate::operation::describe_bandwidth_rate_limit::builders::DescribeBandwidthRateLimitFluentBuilder::new(self.handle.clone())
     }
 }

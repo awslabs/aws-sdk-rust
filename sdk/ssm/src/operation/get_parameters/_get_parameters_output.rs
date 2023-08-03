@@ -35,9 +35,7 @@ impl GetParametersOutput {
 
 /// A builder for [`GetParametersOutput`](crate::operation::get_parameters::GetParametersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetParametersOutputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     pub(crate) invalid_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -56,17 +54,12 @@ impl GetParametersOutputBuilder {
         self
     }
     /// <p>A list of details for a parameter.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>A list of details for a parameter.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.parameters
     }
     /// Appends an item to `invalid_parameters`.
@@ -74,27 +67,19 @@ impl GetParametersOutputBuilder {
     /// To override the contents of this collection use [`set_invalid_parameters`](Self::set_invalid_parameters).
     ///
     /// <p>A list of parameters that aren't formatted correctly or don't run during an execution.</p>
-    pub fn invalid_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invalid_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.invalid_parameters.unwrap_or_default();
         v.push(input.into());
         self.invalid_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of parameters that aren't formatted correctly or don't run during an execution.</p>
-    pub fn set_invalid_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_invalid_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.invalid_parameters = input;
         self
     }
     /// <p>A list of parameters that aren't formatted correctly or don't run during an execution.</p>
-    pub fn get_invalid_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_invalid_parameters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.invalid_parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

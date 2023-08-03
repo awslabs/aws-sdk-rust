@@ -20,7 +20,7 @@ impl super::Client {
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::start_entities_detection_job::StartEntitiesDetectionJobOutput::job_status): <p>The status of the job. </p>  <ul>   <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>   <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>   <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>   <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>   <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>   <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>  </ul>
     ///   - [`entity_recognizer_arn(Option<String>)`](crate::operation::start_entities_detection_job::StartEntitiesDetectionJobOutput::entity_recognizer_arn): <p>The ARN of the custom entity recognition model.</p>
     /// - On failure, responds with [`SdkError<StartEntitiesDetectionJobError>`](crate::operation::start_entities_detection_job::StartEntitiesDetectionJobError)
-    pub fn start_entities_detection_job(&self) -> crate::operation::start_entities_detection_job::builders::StartEntitiesDetectionJobFluentBuilder{
+    pub fn start_entities_detection_job(&self) -> crate::operation::start_entities_detection_job::builders::StartEntitiesDetectionJobFluentBuilder {
         crate::operation::start_entities_detection_job::builders::StartEntitiesDetectionJobFluentBuilder::new(self.handle.clone())
     }
 }

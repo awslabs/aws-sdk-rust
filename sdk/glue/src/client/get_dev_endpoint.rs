@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetDevEndpointOutput`](crate::operation::get_dev_endpoint::GetDevEndpointOutput) with field(s):
     ///   - [`dev_endpoint(Option<DevEndpoint>)`](crate::operation::get_dev_endpoint::GetDevEndpointOutput::dev_endpoint): <p>A <code>DevEndpoint</code> definition.</p>
     /// - On failure, responds with [`SdkError<GetDevEndpointError>`](crate::operation::get_dev_endpoint::GetDevEndpointError)
-    pub fn get_dev_endpoint(
-        &self,
-    ) -> crate::operation::get_dev_endpoint::builders::GetDevEndpointFluentBuilder {
-        crate::operation::get_dev_endpoint::builders::GetDevEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_dev_endpoint(&self) -> crate::operation::get_dev_endpoint::builders::GetDevEndpointFluentBuilder {
+        crate::operation::get_dev_endpoint::builders::GetDevEndpointFluentBuilder::new(self.handle.clone())
     }
 }

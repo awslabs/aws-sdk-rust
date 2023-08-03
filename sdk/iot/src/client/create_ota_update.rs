@@ -23,11 +23,7 @@ impl super::Client {
     ///   - [`aws_iot_job_arn(Option<String>)`](crate::operation::create_ota_update::CreateOtaUpdateOutput::aws_iot_job_arn): <p>The IoT job ARN associated with the OTA update.</p>
     ///   - [`ota_update_status(Option<OtaUpdateStatus>)`](crate::operation::create_ota_update::CreateOtaUpdateOutput::ota_update_status): <p>The OTA update status.</p>
     /// - On failure, responds with [`SdkError<CreateOTAUpdateError>`](crate::operation::create_ota_update::CreateOTAUpdateError)
-    pub fn create_ota_update(
-        &self,
-    ) -> crate::operation::create_ota_update::builders::CreateOTAUpdateFluentBuilder {
-        crate::operation::create_ota_update::builders::CreateOTAUpdateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_ota_update(&self) -> crate::operation::create_ota_update::builders::CreateOTAUpdateFluentBuilder {
+        crate::operation::create_ota_update::builders::CreateOTAUpdateFluentBuilder::new(self.handle.clone())
     }
 }

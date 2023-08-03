@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`monitoring_alert_summaries(Option<Vec<MonitoringAlertSummary>>)`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsOutput::monitoring_alert_summaries): <p>A JSON array where each element is a summary for a monitoring alert.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListMonitoringAlertsError>`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsError)
-    pub fn list_monitoring_alerts(
-        &self,
-    ) -> crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsFluentBuilder {
-        crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_monitoring_alerts(&self) -> crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsFluentBuilder {
+        crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsFluentBuilder::new(self.handle.clone())
     }
 }

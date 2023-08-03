@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteTransitGatewayConnectOutput`](crate::operation::delete_transit_gateway_connect::DeleteTransitGatewayConnectOutput) with field(s):
     ///   - [`transit_gateway_connect(Option<TransitGatewayConnect>)`](crate::operation::delete_transit_gateway_connect::DeleteTransitGatewayConnectOutput::transit_gateway_connect): <p>Information about the deleted Connect attachment.</p>
     /// - On failure, responds with [`SdkError<DeleteTransitGatewayConnectError>`](crate::operation::delete_transit_gateway_connect::DeleteTransitGatewayConnectError)
-    pub fn delete_transit_gateway_connect(&self) -> crate::operation::delete_transit_gateway_connect::builders::DeleteTransitGatewayConnectFluentBuilder{
+    pub fn delete_transit_gateway_connect(
+        &self,
+    ) -> crate::operation::delete_transit_gateway_connect::builders::DeleteTransitGatewayConnectFluentBuilder {
         crate::operation::delete_transit_gateway_connect::builders::DeleteTransitGatewayConnectFluentBuilder::new(self.handle.clone())
     }
 }

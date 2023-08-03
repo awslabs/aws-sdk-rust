@@ -11,9 +11,7 @@ pub fn ser_classic_load_balancers_config(
         for item_3 in var_2 {
             #[allow(unused_mut)]
             let mut entry_5 = list_4.entry();
-            crate::protocol_serde::shape_classic_load_balancer::ser_classic_load_balancer(
-                entry_5, item_3,
-            )?;
+            crate::protocol_serde::shape_classic_load_balancer::ser_classic_load_balancer(entry_5, item_3)?;
         }
         list_4.finish();
     }

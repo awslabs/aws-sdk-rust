@@ -37,9 +37,7 @@ impl CoreNetworkSegment {
 
 /// A builder for [`CoreNetworkSegment`](crate::types::CoreNetworkSegment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoreNetworkSegmentBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -65,27 +63,19 @@ impl CoreNetworkSegmentBuilder {
     /// To override the contents of this collection use [`set_edge_locations`](Self::set_edge_locations).
     ///
     /// <p>The Regions where the edges are located.</p>
-    pub fn edge_locations(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_locations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.edge_locations.unwrap_or_default();
         v.push(input.into());
         self.edge_locations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Regions where the edges are located.</p>
-    pub fn set_edge_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_edge_locations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.edge_locations = input;
         self
     }
     /// <p>The Regions where the edges are located.</p>
-    pub fn get_edge_locations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_edge_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.edge_locations
     }
     /// Appends an item to `shared_segments`.
@@ -93,27 +83,19 @@ impl CoreNetworkSegmentBuilder {
     /// To override the contents of this collection use [`set_shared_segments`](Self::set_shared_segments).
     ///
     /// <p>The shared segments of a core network.</p>
-    pub fn shared_segments(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_segments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.shared_segments.unwrap_or_default();
         v.push(input.into());
         self.shared_segments = ::std::option::Option::Some(v);
         self
     }
     /// <p>The shared segments of a core network.</p>
-    pub fn set_shared_segments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_shared_segments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.shared_segments = input;
         self
     }
     /// <p>The shared segments of a core network.</p>
-    pub fn get_shared_segments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_shared_segments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.shared_segments
     }
     /// Consumes the builder and constructs a [`CoreNetworkSegment`](crate::types::CoreNetworkSegment).

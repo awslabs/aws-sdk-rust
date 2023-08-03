@@ -26,9 +26,7 @@ pub struct CreateResponsePlanInput {
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>A list of tags that you are adding to the response plan.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Information about third-party services integrated into the response plan.</p>
     #[doc(hidden)]
     pub integrations: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
@@ -63,11 +61,7 @@ impl CreateResponsePlanInput {
         self.actions.as_deref()
     }
     /// <p>A list of tags that you are adding to the response plan.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Information about third-party services integrated into the response plan.</p>
@@ -77,17 +71,14 @@ impl CreateResponsePlanInput {
 }
 impl CreateResponsePlanInput {
     /// Creates a new builder-style object to manufacture [`CreateResponsePlanInput`](crate::operation::create_response_plan::CreateResponsePlanInput).
-    pub fn builder(
-    ) -> crate::operation::create_response_plan::builders::CreateResponsePlanInputBuilder {
+    pub fn builder() -> crate::operation::create_response_plan::builders::CreateResponsePlanInputBuilder {
         crate::operation::create_response_plan::builders::CreateResponsePlanInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateResponsePlanInput`](crate::operation::create_response_plan::CreateResponsePlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateResponsePlanInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -96,9 +87,7 @@ pub struct CreateResponsePlanInputBuilder {
     pub(crate) chat_channel: ::std::option::Option<crate::types::ChatChannel>,
     pub(crate) engagements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) integrations: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
 }
 impl CreateResponsePlanInputBuilder {
@@ -150,10 +139,7 @@ impl CreateResponsePlanInputBuilder {
         self
     }
     /// <p>Details used to create an incident when using this response plan.</p>
-    pub fn set_incident_template(
-        mut self,
-        input: ::std::option::Option<crate::types::IncidentTemplate>,
-    ) -> Self {
+    pub fn set_incident_template(mut self, input: ::std::option::Option<crate::types::IncidentTemplate>) -> Self {
         self.incident_template = input;
         self
     }
@@ -167,10 +153,7 @@ impl CreateResponsePlanInputBuilder {
         self
     }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
-    pub fn set_chat_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::ChatChannel>,
-    ) -> Self {
+    pub fn set_chat_channel(mut self, input: ::std::option::Option<crate::types::ChatChannel>) -> Self {
         self.chat_channel = input;
         self
     }
@@ -190,17 +173,12 @@ impl CreateResponsePlanInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn set_engagements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_engagements(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.engagements = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn get_engagements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_engagements(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.engagements
     }
     /// Appends an item to `actions`.
@@ -215,10 +193,7 @@ impl CreateResponsePlanInputBuilder {
         self
     }
     /// <p>The actions that the response plan starts at the beginning of an incident.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.actions = input;
         self
     }
@@ -231,32 +206,19 @@ impl CreateResponsePlanInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags that you are adding to the response plan.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of tags that you are adding to the response plan.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A list of tags that you are adding to the response plan.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `integrations`.
@@ -271,38 +233,28 @@ impl CreateResponsePlanInputBuilder {
         self
     }
     /// <p>Information about third-party services integrated into the response plan.</p>
-    pub fn set_integrations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
-    ) -> Self {
+    pub fn set_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>) -> Self {
         self.integrations = input;
         self
     }
     /// <p>Information about third-party services integrated into the response plan.</p>
-    pub fn get_integrations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
+    pub fn get_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
         &self.integrations
     }
     /// Consumes the builder and constructs a [`CreateResponsePlanInput`](crate::operation::create_response_plan::CreateResponsePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_response_plan::CreateResponsePlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_response_plan::CreateResponsePlanInput {
-                client_token: self.client_token,
-                name: self.name,
-                display_name: self.display_name,
-                incident_template: self.incident_template,
-                chat_channel: self.chat_channel,
-                engagements: self.engagements,
-                actions: self.actions,
-                tags: self.tags,
-                integrations: self.integrations,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_response_plan::CreateResponsePlanInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_response_plan::CreateResponsePlanInput {
+            client_token: self.client_token,
+            name: self.name,
+            display_name: self.display_name,
+            incident_template: self.incident_template,
+            chat_channel: self.chat_channel,
+            engagements: self.engagements,
+            actions: self.actions,
+            tags: self.tags,
+            integrations: self.integrations,
+        })
     }
 }

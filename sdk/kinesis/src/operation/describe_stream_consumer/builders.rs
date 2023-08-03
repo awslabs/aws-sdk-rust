@@ -38,10 +38,7 @@ impl DescribeStreamConsumerFluentBuilder {
         }
     }
     /// Access the DescribeStreamConsumer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_stream_consumer::builders::DescribeStreamConsumerInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_stream_consumer::builders::DescribeStreamConsumerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeStreamConsumerFluentBuilder {
             crate::operation::describe_stream_consumer::DescribeStreamConsumer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stream_consumer::DescribeStreamConsumerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stream_consumer::DescribeStreamConsumerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeStreamConsumerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeStreamConsumerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stream_consumer::DescribeStreamConsumerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stream_consumer::DescribeStreamConsumerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stream_consumer::DescribeStreamConsumerError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeStreamConsumerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stream_consumer::DescribeStreamConsumerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stream_consumer::DescribeStreamConsumerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stream_consumer::DescribeStreamConsumerError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DescribeStreamConsumerFluentBuilder {
             crate::operation::describe_stream_consumer::DescribeStreamConsumer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stream_consumer::DescribeStreamConsumerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stream_consumer::DescribeStreamConsumerError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +125,12 @@ impl DescribeStreamConsumerFluentBuilder {
         self.inner.get_stream_arn()
     }
     /// <p>The name that you gave to the consumer.</p>
-    pub fn consumer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn consumer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.consumer_name(input.into());
         self
     }
     /// <p>The name that you gave to the consumer.</p>
-    pub fn set_consumer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_consumer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_consumer_name(input);
         self
     }

@@ -13,9 +13,7 @@ pub struct CreateParticipantOutput {
 }
 impl CreateParticipantOutput {
     /// <p>The token used by the chat participant to call <code>CreateParticipantConnection</code>. The participant token is valid for the lifetime of a chat participant.</p>
-    pub fn participant_credentials(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ParticipantTokenCredentials> {
+    pub fn participant_credentials(&self) -> ::std::option::Option<&crate::types::ParticipantTokenCredentials> {
         self.participant_credentials.as_ref()
     }
     /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
@@ -30,59 +28,41 @@ impl ::aws_http::request_id::RequestId for CreateParticipantOutput {
 }
 impl CreateParticipantOutput {
     /// Creates a new builder-style object to manufacture [`CreateParticipantOutput`](crate::operation::create_participant::CreateParticipantOutput).
-    pub fn builder(
-    ) -> crate::operation::create_participant::builders::CreateParticipantOutputBuilder {
+    pub fn builder() -> crate::operation::create_participant::builders::CreateParticipantOutputBuilder {
         crate::operation::create_participant::builders::CreateParticipantOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateParticipantOutput`](crate::operation::create_participant::CreateParticipantOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateParticipantOutputBuilder {
-    pub(crate) participant_credentials:
-        ::std::option::Option<crate::types::ParticipantTokenCredentials>,
+    pub(crate) participant_credentials: ::std::option::Option<crate::types::ParticipantTokenCredentials>,
     pub(crate) participant_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateParticipantOutputBuilder {
     /// <p>The token used by the chat participant to call <code>CreateParticipantConnection</code>. The participant token is valid for the lifetime of a chat participant.</p>
-    pub fn participant_credentials(
-        mut self,
-        input: crate::types::ParticipantTokenCredentials,
-    ) -> Self {
+    pub fn participant_credentials(mut self, input: crate::types::ParticipantTokenCredentials) -> Self {
         self.participant_credentials = ::std::option::Option::Some(input);
         self
     }
     /// <p>The token used by the chat participant to call <code>CreateParticipantConnection</code>. The participant token is valid for the lifetime of a chat participant.</p>
-    pub fn set_participant_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::ParticipantTokenCredentials>,
-    ) -> Self {
+    pub fn set_participant_credentials(mut self, input: ::std::option::Option<crate::types::ParticipantTokenCredentials>) -> Self {
         self.participant_credentials = input;
         self
     }
     /// <p>The token used by the chat participant to call <code>CreateParticipantConnection</code>. The participant token is valid for the lifetime of a chat participant.</p>
-    pub fn get_participant_credentials(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParticipantTokenCredentials> {
+    pub fn get_participant_credentials(&self) -> &::std::option::Option<crate::types::ParticipantTokenCredentials> {
         &self.participant_credentials
     }
     /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
-    pub fn participant_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
-    pub fn set_participant_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.participant_id = input;
         self
     }

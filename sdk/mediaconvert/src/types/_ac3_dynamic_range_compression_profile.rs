@@ -38,13 +38,7 @@
 /// When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend that you use the mode-specific settings instead of Dynamic range compression profile. The mode-specific settings are Dynamic range compression profile, line mode and Dynamic range compression profile, RF mode. Note that when you specify values for all three settings, MediaConvert ignores the value of this setting in favor of the mode-specific settings. If you do use this setting instead of the mode-specific settings, choose None to leave out DRC signaling. Keep the default Film standard to set the profile to Dolby's film standard profile for all operating modes.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Ac3DynamicRangeCompressionProfile {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Ac3DynamicRangeCompressionProfile {
         match s {
             "FILM_STANDARD" => Ac3DynamicRangeCompressionProfile::FilmStandard,
             "NONE" => Ac3DynamicRangeCompressionProfile::None,
-            other => Ac3DynamicRangeCompressionProfile::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => Ac3DynamicRangeCompressionProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

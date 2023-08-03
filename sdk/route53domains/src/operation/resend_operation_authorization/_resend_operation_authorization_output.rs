@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for ResendOperationAuthorizationOutput {
 }
 impl ResendOperationAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`ResendOperationAuthorizationOutput`](crate::operation::resend_operation_authorization::ResendOperationAuthorizationOutput).
-    pub fn builder() -> crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationOutputBuilder{
+    pub fn builder() -> crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationOutputBuilder {
         crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResendOperationAuthorizationOutput`](crate::operation::resend_operation_authorization::ResendOperationAuthorizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResendOperationAuthorizationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl ResendOperationAuthorizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ResendOperationAuthorizationOutput`](crate::operation::resend_operation_authorization::ResendOperationAuthorizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::resend_operation_authorization::ResendOperationAuthorizationOutput {
+    pub fn build(self) -> crate::operation::resend_operation_authorization::ResendOperationAuthorizationOutput {
         crate::operation::resend_operation_authorization::ResendOperationAuthorizationOutput {
             _request_id: self._request_id,
         }

@@ -65,9 +65,7 @@ impl MediaConcatenationPipeline {
 
 /// A builder for [`MediaConcatenationPipeline`](crate::types::MediaConcatenationPipeline).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MediaConcatenationPipelineBuilder {
     pub(crate) media_pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) media_pipeline_arn: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct MediaConcatenationPipelineBuilder {
 }
 impl MediaConcatenationPipelineBuilder {
     /// <p>The ID of the media pipeline being concatenated.</p>
-    pub fn media_pipeline_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_pipeline_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the media pipeline being concatenated.</p>
-    pub fn set_media_pipeline_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_pipeline_id = input;
         self
     }
@@ -99,18 +91,12 @@ impl MediaConcatenationPipelineBuilder {
         &self.media_pipeline_id
     }
     /// <p>The ARN of the media pipeline that you specify in the <code>SourceConfiguration</code> object.</p>
-    pub fn media_pipeline_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_pipeline_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the media pipeline that you specify in the <code>SourceConfiguration</code> object.</p>
-    pub fn set_media_pipeline_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_pipeline_arn = input;
         self
     }
@@ -130,17 +116,12 @@ impl MediaConcatenationPipelineBuilder {
         self
     }
     /// <p>The data sources being concatenated.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSource>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSource>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>The data sources being concatenated.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSource>> {
         &self.sources
     }
     /// Appends an item to `sinks`.
@@ -155,17 +136,12 @@ impl MediaConcatenationPipelineBuilder {
         self
     }
     /// <p>The data sinks of the concatenation pipeline.</p>
-    pub fn set_sinks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSink>>,
-    ) -> Self {
+    pub fn set_sinks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSink>>) -> Self {
         self.sinks = input;
         self
     }
     /// <p>The data sinks of the concatenation pipeline.</p>
-    pub fn get_sinks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSink>> {
+    pub fn get_sinks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSink>> {
         &self.sinks
     }
     /// <p>The status of the concatenation pipeline.</p>
@@ -174,10 +150,7 @@ impl MediaConcatenationPipelineBuilder {
         self
     }
     /// <p>The status of the concatenation pipeline.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaPipelineStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MediaPipelineStatus>) -> Self {
         self.status = input;
         self
     }
@@ -191,10 +164,7 @@ impl MediaConcatenationPipelineBuilder {
         self
     }
     /// <p>The time at which the concatenation pipeline was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -208,10 +178,7 @@ impl MediaConcatenationPipelineBuilder {
         self
     }
     /// <p>The time at which the concatenation pipeline was last updated.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_timestamp = input;
         self
     }

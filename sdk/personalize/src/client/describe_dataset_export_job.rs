@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDatasetExportJobOutput`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput) with field(s):
     ///   - [`dataset_export_job(Option<DatasetExportJob>)`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput::dataset_export_job): <p>Information about the dataset export job, including the status.</p>  <p>The status is one of the following values:</p>  <ul>   <li> <p>CREATE PENDING</p> </li>   <li> <p>CREATE IN_PROGRESS</p> </li>   <li> <p>ACTIVE</p> </li>   <li> <p>CREATE FAILED</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DescribeDatasetExportJobError>`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobError)
-    pub fn describe_dataset_export_job(&self) -> crate::operation::describe_dataset_export_job::builders::DescribeDatasetExportJobFluentBuilder{
+    pub fn describe_dataset_export_job(&self) -> crate::operation::describe_dataset_export_job::builders::DescribeDatasetExportJobFluentBuilder {
         crate::operation::describe_dataset_export_job::builders::DescribeDatasetExportJobFluentBuilder::new(self.handle.clone())
     }
 }

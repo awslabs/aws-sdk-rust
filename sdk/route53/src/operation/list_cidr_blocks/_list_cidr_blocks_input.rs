@@ -43,9 +43,7 @@ impl ListCidrBlocksInput {
 
 /// A builder for [`ListCidrBlocksInput`](crate::operation::list_cidr_blocks::ListCidrBlocksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCidrBlocksInputBuilder {
     pub(crate) collection_id: ::std::option::Option<::std::string::String>,
     pub(crate) location_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct ListCidrBlocksInputBuilder {
 }
 impl ListCidrBlocksInputBuilder {
     /// <p>The UUID of the CIDR collection.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The UUID of the CIDR collection.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_id = input;
         self
     }
@@ -74,18 +66,12 @@ impl ListCidrBlocksInputBuilder {
         &self.collection_id
     }
     /// <p>The name of the CIDR collection location.</p>
-    pub fn location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the CIDR collection location.</p>
-    pub fn set_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_name = input;
         self
     }
@@ -124,10 +110,7 @@ impl ListCidrBlocksInputBuilder {
     /// Consumes the builder and constructs a [`ListCidrBlocksInput`](crate::operation::list_cidr_blocks::ListCidrBlocksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_cidr_blocks::ListCidrBlocksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_cidr_blocks::ListCidrBlocksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_cidr_blocks::ListCidrBlocksInput {
             collection_id: self.collection_id,
             location_name: self.location_name,

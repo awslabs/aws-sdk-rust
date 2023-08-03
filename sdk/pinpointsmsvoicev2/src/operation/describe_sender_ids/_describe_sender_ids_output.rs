@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeSenderIdsOutput {
 }
 impl DescribeSenderIdsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSenderIdsOutput`](crate::operation::describe_sender_ids::DescribeSenderIdsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_sender_ids::builders::DescribeSenderIdsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_sender_ids::builders::DescribeSenderIdsOutputBuilder {
         crate::operation::describe_sender_ids::builders::DescribeSenderIdsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSenderIdsOutput`](crate::operation::describe_sender_ids::DescribeSenderIdsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSenderIdsOutputBuilder {
-    pub(crate) sender_ids:
-        ::std::option::Option<::std::vec::Vec<crate::types::SenderIdInformation>>,
+    pub(crate) sender_ids: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl DescribeSenderIdsOutputBuilder {
         self
     }
     /// <p>An array of SernderIdInformation objects that contain the details for the requested SenderIds.</p>
-    pub fn set_sender_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdInformation>>,
-    ) -> Self {
+    pub fn set_sender_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdInformation>>) -> Self {
         self.sender_ids = input;
         self
     }
     /// <p>An array of SernderIdInformation objects that contain the details for the requested SenderIds.</p>
-    pub fn get_sender_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SenderIdInformation>> {
+    pub fn get_sender_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SenderIdInformation>> {
         &self.sender_ids
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>

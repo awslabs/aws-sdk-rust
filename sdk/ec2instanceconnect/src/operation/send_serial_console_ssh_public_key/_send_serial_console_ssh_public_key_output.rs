@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for SendSerialConsoleSshPublicKeyOutput {
 }
 impl SendSerialConsoleSshPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`SendSerialConsoleSshPublicKeyOutput`](crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput).
-    pub fn builder() -> crate::operation::send_serial_console_ssh_public_key::builders::SendSerialConsoleSshPublicKeyOutputBuilder{
+    pub fn builder() -> crate::operation::send_serial_console_ssh_public_key::builders::SendSerialConsoleSshPublicKeyOutputBuilder {
         crate::operation::send_serial_console_ssh_public_key::builders::SendSerialConsoleSshPublicKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendSerialConsoleSshPublicKeyOutput`](crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendSerialConsoleSshPublicKeyOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) success: ::std::option::Option<bool>,
@@ -82,10 +80,7 @@ impl SendSerialConsoleSshPublicKeyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SendSerialConsoleSshPublicKeyOutput`](crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput
-    {
+    pub fn build(self) -> crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput {
         crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput {
             request_id: self.request_id,
             success: self.success.unwrap_or_default(),

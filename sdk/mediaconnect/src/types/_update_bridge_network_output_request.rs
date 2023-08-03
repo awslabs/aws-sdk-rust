@@ -51,9 +51,7 @@ impl UpdateBridgeNetworkOutputRequest {
 
 /// A builder for [`UpdateBridgeNetworkOutputRequest`](crate::types::UpdateBridgeNetworkOutputRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBridgeNetworkOutputRequestBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) network_name: ::std::option::Option<::std::string::String>,

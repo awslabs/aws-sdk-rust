@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for BatchCreateVehicleOutput {
 }
 impl BatchCreateVehicleOutput {
     /// Creates a new builder-style object to manufacture [`BatchCreateVehicleOutput`](crate::operation::batch_create_vehicle::BatchCreateVehicleOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_create_vehicle::builders::BatchCreateVehicleOutputBuilder {
+    pub fn builder() -> crate::operation::batch_create_vehicle::builders::BatchCreateVehicleOutputBuilder {
         crate::operation::batch_create_vehicle::builders::BatchCreateVehicleOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchCreateVehicleOutput`](crate::operation::batch_create_vehicle::BatchCreateVehicleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateVehicleOutputBuilder {
-    pub(crate) vehicles:
-        ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleResponseItem>>,
+    pub(crate) vehicles: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleResponseItem>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleError>>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl BatchCreateVehicleOutputBuilder {
         self
     }
     /// <p> A list of information about a batch of created vehicles. For more information, see the API data type.</p>
-    pub fn set_vehicles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleResponseItem>>,
-    ) -> Self {
+    pub fn set_vehicles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleResponseItem>>) -> Self {
         self.vehicles = input;
         self
     }
     /// <p> A list of information about a batch of created vehicles. For more information, see the API data type.</p>
-    pub fn get_vehicles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleResponseItem>> {
+    pub fn get_vehicles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleResponseItem>> {
         &self.vehicles
     }
     /// Appends an item to `errors`.
@@ -83,17 +74,12 @@ impl BatchCreateVehicleOutputBuilder {
         self
     }
     /// <p>A list of information about creation errors, or an empty list if there aren't any errors. </p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>A list of information about creation errors, or an empty list if there aren't any errors. </p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

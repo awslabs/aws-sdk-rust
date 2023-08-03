@@ -28,9 +28,7 @@ impl StopBuildBatchOutput {
 
 /// A builder for [`StopBuildBatchOutput`](crate::operation::stop_build_batch::StopBuildBatchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopBuildBatchOutputBuilder {
     pub(crate) build_batch: ::std::option::Option<crate::types::BuildBatch>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl StopBuildBatchOutputBuilder {
         self
     }
     /// <p>Contains information about a batch build.</p>
-    pub fn set_build_batch(
-        mut self,
-        input: ::std::option::Option<crate::types::BuildBatch>,
-    ) -> Self {
+    pub fn set_build_batch(mut self, input: ::std::option::Option<crate::types::BuildBatch>) -> Self {
         self.build_batch = input;
         self
     }

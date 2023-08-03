@@ -9,10 +9,7 @@ pub fn ser_recurrence_settings(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_monthly_setting::ser_monthly_setting(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_monthly_setting::ser_monthly_setting(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_recurrence_settings(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_weekly_setting::ser_weekly_setting(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_weekly_setting::ser_weekly_setting(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -39,10 +33,7 @@ pub fn ser_recurrence_settings(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_hand_off_time::ser_hand_off_time(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_hand_off_time::ser_hand_off_time(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -64,10 +55,7 @@ pub fn ser_recurrence_settings(
                     {
                         #[allow(unused_mut)]
                         let mut object_20 = array_18.value().start_object();
-                        crate::protocol_serde::shape_coverage_time::ser_coverage_time(
-                            &mut object_20,
-                            item_19,
-                        )?;
+                        crate::protocol_serde::shape_coverage_time::ser_coverage_time(&mut object_20, item_19)?;
                         object_20.finish();
                     }
                 }
@@ -87,17 +75,9 @@ pub fn ser_recurrence_settings(
 
 pub(crate) fn de_recurrence_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::RecurrenceSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::RecurrenceSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -107,66 +87,47 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "MonthlySettings" => {
-                                builder = builder.set_monthly_settings(
-                                    crate::protocol_serde::shape_monthly_settings::de_monthly_settings(tokens)?
-                                );
-                            }
-                            "WeeklySettings" => {
-                                builder = builder.set_weekly_settings(
-                                    crate::protocol_serde::shape_weekly_settings::de_weekly_settings(tokens)?
-                                );
-                            }
-                            "DailySettings" => {
-                                builder = builder.set_daily_settings(
-                                    crate::protocol_serde::shape_daily_settings::de_daily_settings(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "NumberOfOnCalls" => {
-                                builder = builder.set_number_of_on_calls(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "ShiftCoverages" => {
-                                builder = builder.set_shift_coverages(
-                                    crate::protocol_serde::shape_shift_coverages_map::de_shift_coverages_map(tokens)?
-                                );
-                            }
-                            "RecurrenceMultiplier" => {
-                                builder = builder.set_recurrence_multiplier(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "MonthlySettings" => {
+                            builder = builder.set_monthly_settings(crate::protocol_serde::shape_monthly_settings::de_monthly_settings(tokens)?);
                         }
-                    }
+                        "WeeklySettings" => {
+                            builder = builder.set_weekly_settings(crate::protocol_serde::shape_weekly_settings::de_weekly_settings(tokens)?);
+                        }
+                        "DailySettings" => {
+                            builder = builder.set_daily_settings(crate::protocol_serde::shape_daily_settings::de_daily_settings(tokens)?);
+                        }
+                        "NumberOfOnCalls" => {
+                            builder = builder.set_number_of_on_calls(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ShiftCoverages" => {
+                            builder = builder.set_shift_coverages(crate::protocol_serde::shape_shift_coverages_map::de_shift_coverages_map(tokens)?);
+                        }
+                        "RecurrenceMultiplier" => {
+                            builder = builder.set_recurrence_multiplier(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

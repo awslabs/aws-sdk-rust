@@ -20,11 +20,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEnvironmentOutput`](crate::operation::create_environment::CreateEnvironmentOutput) with field(s):
     ///   - [`environment_id(Option<String>)`](crate::operation::create_environment::CreateEnvironmentOutput::environment_id): <p>The unique identifier of the runtime environment.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::operation::create_environment::CreateEnvironmentError)
-    pub fn create_environment(
-        &self,
-    ) -> crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder {
-        crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_environment(&self) -> crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder {
+        crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

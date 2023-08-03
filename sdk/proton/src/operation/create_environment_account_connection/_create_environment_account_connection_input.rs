@@ -63,16 +63,14 @@ impl CreateEnvironmentAccountConnectionInput {
 }
 impl CreateEnvironmentAccountConnectionInput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentAccountConnectionInput`](crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionInput).
-    pub fn builder() -> crate::operation::create_environment_account_connection::builders::CreateEnvironmentAccountConnectionInputBuilder{
+    pub fn builder() -> crate::operation::create_environment_account_connection::builders::CreateEnvironmentAccountConnectionInputBuilder {
         crate::operation::create_environment_account_connection::builders::CreateEnvironmentAccountConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEnvironmentAccountConnectionInput`](crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEnvironmentAccountConnectionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) management_account_id: ::std::option::Option<::std::string::String>,
@@ -98,18 +96,12 @@ impl CreateEnvironmentAccountConnectionInputBuilder {
         &self.client_token
     }
     /// <p>The ID of the management account that accepts or rejects the environment account connection. You create and manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
-    pub fn management_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn management_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.management_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the management account that accepts or rejects the environment account connection. You create and manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
-    pub fn set_management_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_management_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.management_account_id = input;
         self
     }
@@ -132,18 +124,12 @@ impl CreateEnvironmentAccountConnectionInputBuilder {
         &self.role_arn
     }
     /// <p>The name of the Proton environment that's created in the associated management account.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Proton environment that's created in the associated management account.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -165,10 +151,7 @@ impl CreateEnvironmentAccountConnectionInputBuilder {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -180,20 +163,14 @@ impl CreateEnvironmentAccountConnectionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn component_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_component_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_role_arn = input;
         self
     }
@@ -204,18 +181,12 @@ impl CreateEnvironmentAccountConnectionInputBuilder {
         &self.component_role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
-    pub fn codebuild_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn codebuild_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.codebuild_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
-    pub fn set_codebuild_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_codebuild_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.codebuild_role_arn = input;
         self
     }
@@ -224,24 +195,22 @@ impl CreateEnvironmentAccountConnectionInputBuilder {
         &self.codebuild_role_arn
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentAccountConnectionInput`](crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionInput {
-                client_token: self.client_token
-                ,
-                management_account_id: self.management_account_id
-                ,
-                role_arn: self.role_arn
-                ,
-                environment_name: self.environment_name
-                ,
-                tags: self.tags
-                ,
-                component_role_arn: self.component_role_arn
-                ,
-                codebuild_role_arn: self.codebuild_role_arn
-                ,
-            }
+                client_token: self.client_token,
+                management_account_id: self.management_account_id,
+                role_arn: self.role_arn,
+                environment_name: self.environment_name,
+                tags: self.tags,
+                component_role_arn: self.component_role_arn,
+                codebuild_role_arn: self.codebuild_role_arn,
+            },
         )
     }
 }

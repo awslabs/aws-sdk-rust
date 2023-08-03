@@ -13,9 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_streams::ListStreamsOutput::next_token): <p></p>
     ///   - [`stream_summaries(Option<Vec<StreamSummary>>)`](crate::operation::list_streams::ListStreamsOutput::stream_summaries): <p></p>
     /// - On failure, responds with [`SdkError<ListStreamsError>`](crate::operation::list_streams::ListStreamsError)
-    pub fn list_streams(
-        &self,
-    ) -> crate::operation::list_streams::builders::ListStreamsFluentBuilder {
+    pub fn list_streams(&self) -> crate::operation::list_streams::builders::ListStreamsFluentBuilder {
         crate::operation::list_streams::builders::ListStreamsFluentBuilder::new(self.handle.clone())
     }
 }

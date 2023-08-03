@@ -5,8 +5,7 @@
 pub struct ListAuditMitigationActionsTasksOutput {
     /// <p>The collection of audit mitigation tasks that matched the filter criteria.</p>
     #[doc(hidden)]
-    pub tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuditMitigationActionsTaskMetadata>>,
+    pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::AuditMitigationActionsTaskMetadata>>,
     /// <p>The token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAuditMitigationActionsTasksOutput {
 }
 impl ListAuditMitigationActionsTasksOutput {
     /// <p>The collection of audit mitigation tasks that matched the filter criteria.</p>
-    pub fn tasks(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AuditMitigationActionsTaskMetadata]> {
+    pub fn tasks(&self) -> ::std::option::Option<&[crate::types::AuditMitigationActionsTaskMetadata]> {
         self.tasks.as_deref()
     }
     /// <p>The token for the next set of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAuditMitigationActionsTasksOutput
 }
 impl ListAuditMitigationActionsTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListAuditMitigationActionsTasksOutput`](crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput).
-    pub fn builder() -> crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksOutputBuilder{
+    pub fn builder() -> crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksOutputBuilder {
         crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAuditMitigationActionsTasksOutput`](crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAuditMitigationActionsTasksOutputBuilder {
-    pub(crate) tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuditMitigationActionsTaskMetadata>>,
+    pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::AuditMitigationActionsTaskMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,20 +54,12 @@ impl ListAuditMitigationActionsTasksOutputBuilder {
         self
     }
     /// <p>The collection of audit mitigation tasks that matched the filter criteria.</p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AuditMitigationActionsTaskMetadata>,
-        >,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuditMitigationActionsTaskMetadata>>) -> Self {
         self.tasks = input;
         self
     }
     /// <p>The collection of audit mitigation tasks that matched the filter criteria.</p>
-    pub fn get_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditMitigationActionsTaskMetadata>>
-    {
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditMitigationActionsTaskMetadata>> {
         &self.tasks
     }
     /// <p>The token for the next set of results.</p>
@@ -100,15 +86,10 @@ impl ListAuditMitigationActionsTasksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAuditMitigationActionsTasksOutput`](crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput
-    {
+    pub fn build(self) -> crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput {
         crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput {
-            tasks: self.tasks
-            ,
-            next_token: self.next_token
-            ,
+            tasks: self.tasks,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

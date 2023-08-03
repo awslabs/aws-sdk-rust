@@ -30,9 +30,7 @@ impl EndpointPerformance {
 
 /// A builder for [`EndpointPerformance`](crate::types::EndpointPerformance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointPerformanceBuilder {
     pub(crate) metrics: ::std::option::Option<crate::types::InferenceMetrics>,
     pub(crate) endpoint_info: ::std::option::Option<crate::types::EndpointInfo>,
@@ -44,10 +42,7 @@ impl EndpointPerformanceBuilder {
         self
     }
     /// <p>The metrics for an existing endpoint.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceMetrics>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::InferenceMetrics>) -> Self {
         self.metrics = input;
         self
     }
@@ -61,10 +56,7 @@ impl EndpointPerformanceBuilder {
         self
     }
     /// <p>Details about a customer endpoint that was compared in an Inference Recommender job.</p>
-    pub fn set_endpoint_info(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointInfo>,
-    ) -> Self {
+    pub fn set_endpoint_info(mut self, input: ::std::option::Option<crate::types::EndpointInfo>) -> Self {
         self.endpoint_info = input;
         self
     }

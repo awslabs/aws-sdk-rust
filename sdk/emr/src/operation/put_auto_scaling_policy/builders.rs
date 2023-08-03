@@ -37,10 +37,7 @@ impl PutAutoScalingPolicyFluentBuilder {
         }
     }
     /// Access the PutAutoScalingPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl PutAutoScalingPolicyFluentBuilder {
             crate::operation::put_auto_scaling_policy::PutAutoScalingPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl PutAutoScalingPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl PutAutoScalingPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl PutAutoScalingPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl PutAutoScalingPolicyFluentBuilder {
             crate::operation::put_auto_scaling_policy::PutAutoScalingPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl PutAutoScalingPolicyFluentBuilder {
         self.inner.get_cluster_id()
     }
     /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
-    pub fn instance_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_group_id(input.into());
         self
     }
     /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
-    pub fn set_instance_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_group_id(input);
         self
     }
@@ -163,17 +143,12 @@ impl PutAutoScalingPolicyFluentBuilder {
         self
     }
     /// <p>Specifies the definition of the automatic scaling policy.</p>
-    pub fn set_auto_scaling_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingPolicy>,
-    ) -> Self {
+    pub fn set_auto_scaling_policy(mut self, input: ::std::option::Option<crate::types::AutoScalingPolicy>) -> Self {
         self.inner = self.inner.set_auto_scaling_policy(input);
         self
     }
     /// <p>Specifies the definition of the automatic scaling policy.</p>
-    pub fn get_auto_scaling_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoScalingPolicy> {
+    pub fn get_auto_scaling_policy(&self) -> &::std::option::Option<crate::types::AutoScalingPolicy> {
         self.inner.get_auto_scaling_policy()
     }
 }

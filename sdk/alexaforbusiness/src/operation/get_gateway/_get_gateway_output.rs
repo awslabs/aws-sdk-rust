@@ -28,9 +28,7 @@ impl GetGatewayOutput {
 
 /// A builder for [`GetGatewayOutput`](crate::operation::get_gateway::GetGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGatewayOutputBuilder {
     pub(crate) gateway: ::std::option::Option<crate::types::Gateway>,
     _request_id: Option<String>,

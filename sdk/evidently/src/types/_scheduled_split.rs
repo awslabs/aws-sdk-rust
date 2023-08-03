@@ -11,8 +11,7 @@ pub struct ScheduledSplit {
     /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
     /// <p>If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.</p>
     #[doc(hidden)]
-    pub group_weights:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
+    pub group_weights: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
     /// <p>Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
     /// <p>This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that you have already created, and defines the traffic split for that segment.</p>
     #[doc(hidden)]
@@ -26,9 +25,7 @@ impl ScheduledSplit {
     /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
     /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
     /// <p>If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.</p>
-    pub fn group_weights(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i64>> {
+    pub fn group_weights(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i64>> {
         self.group_weights.as_ref()
     }
     /// <p>Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
@@ -46,15 +43,11 @@ impl ScheduledSplit {
 
 /// A builder for [`ScheduledSplit`](crate::types::ScheduledSplit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledSplitBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) group_weights:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
-    pub(crate) segment_overrides:
-        ::std::option::Option<::std::vec::Vec<crate::types::SegmentOverride>>,
+    pub(crate) group_weights: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
+    pub(crate) segment_overrides: ::std::option::Option<::std::vec::Vec<crate::types::SegmentOverride>>,
 }
 impl ScheduledSplitBuilder {
     /// <p>The date and time that this step of the launch starts.</p>
@@ -63,10 +56,7 @@ impl ScheduledSplitBuilder {
         self
     }
     /// <p>The date and time that this step of the launch starts.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -81,11 +71,7 @@ impl ScheduledSplitBuilder {
     /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
     /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
     /// <p>If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.</p>
-    pub fn group_weights(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: i64,
-    ) -> Self {
+    pub fn group_weights(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i64) -> Self {
         let mut hash_map = self.group_weights.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.group_weights = ::std::option::Option::Some(hash_map);
@@ -94,19 +80,14 @@ impl ScheduledSplitBuilder {
     /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
     /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
     /// <p>If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.</p>
-    pub fn set_group_weights(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
-    ) -> Self {
+    pub fn set_group_weights(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>) -> Self {
         self.group_weights = input;
         self
     }
     /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
     /// <p>The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.</p>
     /// <p>If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.</p>
-    pub fn get_group_weights(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i64>> {
+    pub fn get_group_weights(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i64>> {
         &self.group_weights
     }
     /// Appends an item to `segment_overrides`.
@@ -123,18 +104,13 @@ impl ScheduledSplitBuilder {
     }
     /// <p>Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
     /// <p>This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that you have already created, and defines the traffic split for that segment.</p>
-    pub fn set_segment_overrides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SegmentOverride>>,
-    ) -> Self {
+    pub fn set_segment_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SegmentOverride>>) -> Self {
         self.segment_overrides = input;
         self
     }
     /// <p>Use this parameter to specify different traffic splits for one or more audience <i>segments</i>. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>
     /// <p>This parameter is an array of up to six segment override objects. Each of these objects specifies a segment that you have already created, and defines the traffic split for that segment.</p>
-    pub fn get_segment_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentOverride>> {
+    pub fn get_segment_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentOverride>> {
         &self.segment_overrides
     }
     /// Consumes the builder and constructs a [`ScheduledSplit`](crate::types::ScheduledSplit).

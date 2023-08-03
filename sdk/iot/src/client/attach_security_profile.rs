@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`security_profile_target_arn(impl ::std::convert::Into<String>)`](crate::operation::attach_security_profile::builders::AttachSecurityProfileFluentBuilder::security_profile_target_arn) / [`set_security_profile_target_arn(Option<String>)`](crate::operation::attach_security_profile::builders::AttachSecurityProfileFluentBuilder::set_security_profile_target_arn): <p>The ARN of the target (thing group) to which the security profile is attached.</p>
     /// - On success, responds with [`AttachSecurityProfileOutput`](crate::operation::attach_security_profile::AttachSecurityProfileOutput)
     /// - On failure, responds with [`SdkError<AttachSecurityProfileError>`](crate::operation::attach_security_profile::AttachSecurityProfileError)
-    pub fn attach_security_profile(
-        &self,
-    ) -> crate::operation::attach_security_profile::builders::AttachSecurityProfileFluentBuilder
-    {
-        crate::operation::attach_security_profile::builders::AttachSecurityProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn attach_security_profile(&self) -> crate::operation::attach_security_profile::builders::AttachSecurityProfileFluentBuilder {
+        crate::operation::attach_security_profile::builders::AttachSecurityProfileFluentBuilder::new(self.handle.clone())
     }
 }

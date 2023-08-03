@@ -39,9 +39,7 @@ pub enum Value {
 impl Value {
     /// Tries to convert the enum instance into [`ArrayValues`](crate::types::Value::ArrayValues), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_array_values(
-        &self,
-    ) -> ::std::result::Result<&::std::vec::Vec<crate::types::Value>, &Self> {
+    pub fn as_array_values(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::Value>, &Self> {
         if let Value::ArrayValues(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

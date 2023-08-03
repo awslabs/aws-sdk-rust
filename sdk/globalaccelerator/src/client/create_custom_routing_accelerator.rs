@@ -12,7 +12,9 @@ impl super::Client {
     /// - On success, responds with [`CreateCustomRoutingAcceleratorOutput`](crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorOutput) with field(s):
     ///   - [`accelerator(Option<CustomRoutingAccelerator>)`](crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorOutput::accelerator): <p>The accelerator that is created.</p>
     /// - On failure, responds with [`SdkError<CreateCustomRoutingAcceleratorError>`](crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorError)
-    pub fn create_custom_routing_accelerator(&self) -> crate::operation::create_custom_routing_accelerator::builders::CreateCustomRoutingAcceleratorFluentBuilder{
+    pub fn create_custom_routing_accelerator(
+        &self,
+    ) -> crate::operation::create_custom_routing_accelerator::builders::CreateCustomRoutingAcceleratorFluentBuilder {
         crate::operation::create_custom_routing_accelerator::builders::CreateCustomRoutingAcceleratorFluentBuilder::new(self.handle.clone())
     }
 }

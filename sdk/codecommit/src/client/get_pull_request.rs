@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetPullRequestOutput`](crate::operation::get_pull_request::GetPullRequestOutput) with field(s):
     ///   - [`pull_request(Option<PullRequest>)`](crate::operation::get_pull_request::GetPullRequestOutput::pull_request): <p>Information about the specified pull request.</p>
     /// - On failure, responds with [`SdkError<GetPullRequestError>`](crate::operation::get_pull_request::GetPullRequestError)
-    pub fn get_pull_request(
-        &self,
-    ) -> crate::operation::get_pull_request::builders::GetPullRequestFluentBuilder {
-        crate::operation::get_pull_request::builders::GetPullRequestFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_pull_request(&self) -> crate::operation::get_pull_request::builders::GetPullRequestFluentBuilder {
+        crate::operation::get_pull_request::builders::GetPullRequestFluentBuilder::new(self.handle.clone())
     }
 }

@@ -56,9 +56,7 @@ impl CreateQualificationTypeInput {
     }
     /// <p>The initial status of the Qualification type.</p>
     /// <p>Constraints: Valid values are: Active | Inactive</p>
-    pub fn qualification_type_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::QualificationTypeStatus> {
+    pub fn qualification_type_status(&self) -> ::std::option::Option<&crate::types::QualificationTypeStatus> {
         self.qualification_type_status.as_ref()
     }
     /// <p>The number of seconds that a Worker must wait after requesting a Qualification of the Qualification type before the worker can retry the Qualification request.</p>
@@ -94,24 +92,19 @@ impl CreateQualificationTypeInput {
 }
 impl CreateQualificationTypeInput {
     /// Creates a new builder-style object to manufacture [`CreateQualificationTypeInput`](crate::operation::create_qualification_type::CreateQualificationTypeInput).
-    pub fn builder(
-    ) -> crate::operation::create_qualification_type::builders::CreateQualificationTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_qualification_type::builders::CreateQualificationTypeInputBuilder {
         crate::operation::create_qualification_type::builders::CreateQualificationTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateQualificationTypeInput`](crate::operation::create_qualification_type::CreateQualificationTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateQualificationTypeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) keywords: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) qualification_type_status:
-        ::std::option::Option<crate::types::QualificationTypeStatus>,
+    pub(crate) qualification_type_status: ::std::option::Option<crate::types::QualificationTypeStatus>,
     pub(crate) retry_delay_in_seconds: ::std::option::Option<i64>,
     pub(crate) test: ::std::option::Option<::std::string::String>,
     pub(crate) answer_key: ::std::option::Option<::std::string::String>,
@@ -164,27 +157,19 @@ impl CreateQualificationTypeInputBuilder {
     }
     /// <p>The initial status of the Qualification type.</p>
     /// <p>Constraints: Valid values are: Active | Inactive</p>
-    pub fn qualification_type_status(
-        mut self,
-        input: crate::types::QualificationTypeStatus,
-    ) -> Self {
+    pub fn qualification_type_status(mut self, input: crate::types::QualificationTypeStatus) -> Self {
         self.qualification_type_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The initial status of the Qualification type.</p>
     /// <p>Constraints: Valid values are: Active | Inactive</p>
-    pub fn set_qualification_type_status(
-        mut self,
-        input: ::std::option::Option<crate::types::QualificationTypeStatus>,
-    ) -> Self {
+    pub fn set_qualification_type_status(mut self, input: ::std::option::Option<crate::types::QualificationTypeStatus>) -> Self {
         self.qualification_type_status = input;
         self
     }
     /// <p>The initial status of the Qualification type.</p>
     /// <p>Constraints: Valid values are: Active | Inactive</p>
-    pub fn get_qualification_type_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::QualificationTypeStatus> {
+    pub fn get_qualification_type_status(&self) -> &::std::option::Option<crate::types::QualificationTypeStatus> {
         &self.qualification_type_status
     }
     /// <p>The number of seconds that a Worker must wait after requesting a Qualification of the Qualification type before the worker can retry the Qualification request.</p>
@@ -296,19 +281,17 @@ impl CreateQualificationTypeInputBuilder {
         crate::operation::create_qualification_type::CreateQualificationTypeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_qualification_type::CreateQualificationTypeInput {
-                name: self.name,
-                keywords: self.keywords,
-                description: self.description,
-                qualification_type_status: self.qualification_type_status,
-                retry_delay_in_seconds: self.retry_delay_in_seconds,
-                test: self.test,
-                answer_key: self.answer_key,
-                test_duration_in_seconds: self.test_duration_in_seconds,
-                auto_granted: self.auto_granted,
-                auto_granted_value: self.auto_granted_value,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_qualification_type::CreateQualificationTypeInput {
+            name: self.name,
+            keywords: self.keywords,
+            description: self.description,
+            qualification_type_status: self.qualification_type_status,
+            retry_delay_in_seconds: self.retry_delay_in_seconds,
+            test: self.test,
+            answer_key: self.answer_key,
+            test_duration_in_seconds: self.test_duration_in_seconds,
+            auto_granted: self.auto_granted,
+            auto_granted_value: self.auto_granted_value,
+        })
     }
 }

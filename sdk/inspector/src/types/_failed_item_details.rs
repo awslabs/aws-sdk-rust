@@ -30,9 +30,7 @@ impl FailedItemDetails {
 
 /// A builder for [`FailedItemDetails`](crate::types::FailedItemDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailedItemDetailsBuilder {
     pub(crate) failure_code: ::std::option::Option<crate::types::FailedItemErrorCode>,
     pub(crate) retryable: ::std::option::Option<bool>,
@@ -44,10 +42,7 @@ impl FailedItemDetailsBuilder {
         self
     }
     /// <p>The status code of a failed item.</p>
-    pub fn set_failure_code(
-        mut self,
-        input: ::std::option::Option<crate::types::FailedItemErrorCode>,
-    ) -> Self {
+    pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::FailedItemErrorCode>) -> Self {
         self.failure_code = input;
         self
     }

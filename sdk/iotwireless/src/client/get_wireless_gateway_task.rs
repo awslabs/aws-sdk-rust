@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`task_created_at(Option<String>)`](crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskOutput::task_created_at): <p>The date and time when the task was created.</p>
     ///   - [`status(Option<WirelessGatewayTaskStatus>)`](crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskOutput::status): <p>The status of the request.</p>
     /// - On failure, responds with [`SdkError<GetWirelessGatewayTaskError>`](crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskError)
-    pub fn get_wireless_gateway_task(
-        &self,
-    ) -> crate::operation::get_wireless_gateway_task::builders::GetWirelessGatewayTaskFluentBuilder
-    {
+    pub fn get_wireless_gateway_task(&self) -> crate::operation::get_wireless_gateway_task::builders::GetWirelessGatewayTaskFluentBuilder {
         crate::operation::get_wireless_gateway_task::builders::GetWirelessGatewayTaskFluentBuilder::new(self.handle.clone())
     }
 }

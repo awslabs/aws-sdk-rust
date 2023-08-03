@@ -43,13 +43,7 @@
 /// H264 Adaptive Quantization
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H264AdaptiveQuantization {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for H264AdaptiveQuantization {
             "MAX" => H264AdaptiveQuantization::Max,
             "MEDIUM" => H264AdaptiveQuantization::Medium,
             "OFF" => H264AdaptiveQuantization::Off,
-            other => H264AdaptiveQuantization::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => H264AdaptiveQuantization::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

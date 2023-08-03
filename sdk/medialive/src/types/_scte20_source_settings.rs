@@ -30,9 +30,7 @@ impl Scte20SourceSettings {
 
 /// A builder for [`Scte20SourceSettings`](crate::types::Scte20SourceSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Scte20SourceSettingsBuilder {
     pub(crate) convert608_to708: ::std::option::Option<crate::types::Scte20Convert608To708>,
     pub(crate) source608_channel_number: ::std::option::Option<i32>,
@@ -44,17 +42,12 @@ impl Scte20SourceSettingsBuilder {
         self
     }
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
-    pub fn set_convert608_to708(
-        mut self,
-        input: ::std::option::Option<crate::types::Scte20Convert608To708>,
-    ) -> Self {
+    pub fn set_convert608_to708(mut self, input: ::std::option::Option<crate::types::Scte20Convert608To708>) -> Self {
         self.convert608_to708 = input;
         self
     }
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
-    pub fn get_convert608_to708(
-        &self,
-    ) -> &::std::option::Option<crate::types::Scte20Convert608To708> {
+    pub fn get_convert608_to708(&self) -> &::std::option::Option<crate::types::Scte20Convert608To708> {
         &self.convert608_to708
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.

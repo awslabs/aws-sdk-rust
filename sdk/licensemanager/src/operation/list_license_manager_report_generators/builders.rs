@@ -5,16 +5,16 @@ pub use crate::operation::list_license_manager_report_generators::_list_license_
 
 impl ListLicenseManagerReportGeneratorsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_license_manager_report_generators();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListLicenseManagerReportGeneratorsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLicenseManagerReportGeneratorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_license_manager_report_generators::builders::ListLicenseManagerReportGeneratorsInputBuilder,
+    inner: crate::operation::list_license_manager_report_generators::builders::ListLicenseManagerReportGeneratorsInputBuilder,
 }
 impl ListLicenseManagerReportGeneratorsFluentBuilder {
     /// Creates a new `ListLicenseManagerReportGenerators`.
@@ -37,15 +37,20 @@ impl ListLicenseManagerReportGeneratorsFluentBuilder {
         }
     }
     /// Access the ListLicenseManagerReportGenerators as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_license_manager_report_generators::builders::ListLicenseManagerReportGeneratorsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_license_manager_report_generators::builders::ListLicenseManagerReportGeneratorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGenerators, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGenerators,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListLicenseManagerReportGeneratorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl ListLicenseManagerReportGeneratorsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGenerators, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGenerators,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError>,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `Filters`.
@@ -110,10 +125,7 @@ impl ListLicenseManagerReportGeneratorsFluentBuilder {
     /// <ul>
     /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

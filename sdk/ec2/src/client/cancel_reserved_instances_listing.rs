@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`CancelReservedInstancesListingOutput`](crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput) with field(s):
     ///   - [`reserved_instances_listings(Option<Vec<ReservedInstancesListing>>)`](crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput::reserved_instances_listings): <p>The Reserved Instance listing.</p>
     /// - On failure, responds with [`SdkError<CancelReservedInstancesListingError>`](crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingError)
-    pub fn cancel_reserved_instances_listing(&self) -> crate::operation::cancel_reserved_instances_listing::builders::CancelReservedInstancesListingFluentBuilder{
+    pub fn cancel_reserved_instances_listing(
+        &self,
+    ) -> crate::operation::cancel_reserved_instances_listing::builders::CancelReservedInstancesListingFluentBuilder {
         crate::operation::cancel_reserved_instances_listing::builders::CancelReservedInstancesListingFluentBuilder::new(self.handle.clone())
     }
 }

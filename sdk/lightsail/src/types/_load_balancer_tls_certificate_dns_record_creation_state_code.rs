@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LoadBalancerTlsCertificateDnsRecordCreationStateCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for LoadBalancerTlsCertificateDnsRecordCreationS
             "FAILED" => LoadBalancerTlsCertificateDnsRecordCreationStateCode::Failed,
             "STARTED" => LoadBalancerTlsCertificateDnsRecordCreationStateCode::Started,
             "SUCCEEDED" => LoadBalancerTlsCertificateDnsRecordCreationStateCode::Succeeded,
-            other => LoadBalancerTlsCertificateDnsRecordCreationStateCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => LoadBalancerTlsCertificateDnsRecordCreationStateCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -73,9 +65,7 @@ impl ::std::str::FromStr for LoadBalancerTlsCertificateDnsRecordCreationStateCod
     type Err = ::std::convert::Infallible;
 
     fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(LoadBalancerTlsCertificateDnsRecordCreationStateCode::from(
-            s,
-        ))
+        ::std::result::Result::Ok(LoadBalancerTlsCertificateDnsRecordCreationStateCode::from(s))
     }
 }
 impl LoadBalancerTlsCertificateDnsRecordCreationStateCode {

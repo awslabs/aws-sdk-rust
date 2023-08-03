@@ -51,9 +51,7 @@ impl RadiusSettings {
         self.shared_secret.as_deref()
     }
     /// <p>The protocol specified for your RADIUS endpoints.</p>
-    pub fn authentication_protocol(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RadiusAuthenticationProtocol> {
+    pub fn authentication_protocol(&self) -> ::std::option::Option<&crate::types::RadiusAuthenticationProtocol> {
         self.authentication_protocol.as_ref()
     }
     /// <p>Not currently used.</p>
@@ -95,8 +93,7 @@ pub struct RadiusSettingsBuilder {
     pub(crate) radius_timeout: ::std::option::Option<i32>,
     pub(crate) radius_retries: ::std::option::Option<i32>,
     pub(crate) shared_secret: ::std::option::Option<::std::string::String>,
-    pub(crate) authentication_protocol:
-        ::std::option::Option<crate::types::RadiusAuthenticationProtocol>,
+    pub(crate) authentication_protocol: ::std::option::Option<crate::types::RadiusAuthenticationProtocol>,
     pub(crate) display_label: ::std::option::Option<::std::string::String>,
     pub(crate) use_same_username: ::std::option::Option<bool>,
 }
@@ -106,27 +103,19 @@ impl RadiusSettingsBuilder {
     /// To override the contents of this collection use [`set_radius_servers`](Self::set_radius_servers).
     ///
     /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
-    pub fn radius_servers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn radius_servers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.radius_servers.unwrap_or_default();
         v.push(input.into());
         self.radius_servers = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
-    pub fn set_radius_servers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_radius_servers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.radius_servers = input;
         self
     }
     /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
-    pub fn get_radius_servers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_radius_servers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.radius_servers
     }
     /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
@@ -172,18 +161,12 @@ impl RadiusSettingsBuilder {
         &self.radius_retries
     }
     /// <p>Required for enabling RADIUS on the directory.</p>
-    pub fn shared_secret(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_secret = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Required for enabling RADIUS on the directory.</p>
-    pub fn set_shared_secret(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shared_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_secret = input;
         self
     }
@@ -192,40 +175,26 @@ impl RadiusSettingsBuilder {
         &self.shared_secret
     }
     /// <p>The protocol specified for your RADIUS endpoints.</p>
-    pub fn authentication_protocol(
-        mut self,
-        input: crate::types::RadiusAuthenticationProtocol,
-    ) -> Self {
+    pub fn authentication_protocol(mut self, input: crate::types::RadiusAuthenticationProtocol) -> Self {
         self.authentication_protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The protocol specified for your RADIUS endpoints.</p>
-    pub fn set_authentication_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::RadiusAuthenticationProtocol>,
-    ) -> Self {
+    pub fn set_authentication_protocol(mut self, input: ::std::option::Option<crate::types::RadiusAuthenticationProtocol>) -> Self {
         self.authentication_protocol = input;
         self
     }
     /// <p>The protocol specified for your RADIUS endpoints.</p>
-    pub fn get_authentication_protocol(
-        &self,
-    ) -> &::std::option::Option<crate::types::RadiusAuthenticationProtocol> {
+    pub fn get_authentication_protocol(&self) -> &::std::option::Option<crate::types::RadiusAuthenticationProtocol> {
         &self.authentication_protocol
     }
     /// <p>Not currently used.</p>
-    pub fn display_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn display_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Not currently used.</p>
-    pub fn set_display_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_display_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_label = input;
         self
     }

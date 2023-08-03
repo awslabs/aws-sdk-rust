@@ -44,9 +44,7 @@ impl ListSourceRepositoryBranchesItem {
 
 /// A builder for [`ListSourceRepositoryBranchesItem`](crate::types::ListSourceRepositoryBranchesItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSourceRepositoryBranchesItemBuilder {
     pub(crate) r#ref: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl ListSourceRepositoryBranchesItemBuilder {
         self
     }
     /// <p>The time the branch was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -100,18 +95,12 @@ impl ListSourceRepositoryBranchesItemBuilder {
         &self.last_updated_time
     }
     /// <p>The commit ID of the tip of the branch at the time of the request, also known as the head commit.</p>
-    pub fn head_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn head_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.head_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The commit ID of the tip of the branch at the time of the request, also known as the head commit.</p>
-    pub fn set_head_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_head_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.head_commit_id = input;
         self
     }

@@ -14,8 +14,7 @@ pub struct ValidateE911AddressOutput {
     pub address: ::std::option::Option<crate::types::Address>,
     /// <p>The list of address suggestions.</p>
     #[doc(hidden)]
-    pub candidate_address_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::CandidateAddress>>,
+    pub candidate_address_list: ::std::option::Option<::std::vec::Vec<crate::types::CandidateAddress>>,
     _request_id: Option<String>,
 }
 impl ValidateE911AddressOutput {
@@ -32,9 +31,7 @@ impl ValidateE911AddressOutput {
         self.address.as_ref()
     }
     /// <p>The list of address suggestions.</p>
-    pub fn candidate_address_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CandidateAddress]> {
+    pub fn candidate_address_list(&self) -> ::std::option::Option<&[crate::types::CandidateAddress]> {
         self.candidate_address_list.as_deref()
     }
 }
@@ -45,24 +42,19 @@ impl ::aws_http::request_id::RequestId for ValidateE911AddressOutput {
 }
 impl ValidateE911AddressOutput {
     /// Creates a new builder-style object to manufacture [`ValidateE911AddressOutput`](crate::operation::validate_e911_address::ValidateE911AddressOutput).
-    pub fn builder(
-    ) -> crate::operation::validate_e911_address::builders::ValidateE911AddressOutputBuilder {
-        crate::operation::validate_e911_address::builders::ValidateE911AddressOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::validate_e911_address::builders::ValidateE911AddressOutputBuilder {
+        crate::operation::validate_e911_address::builders::ValidateE911AddressOutputBuilder::default()
     }
 }
 
 /// A builder for [`ValidateE911AddressOutput`](crate::operation::validate_e911_address::ValidateE911AddressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateE911AddressOutputBuilder {
     pub(crate) validation_result: ::std::option::Option<i32>,
     pub(crate) address_external_id: ::std::option::Option<::std::string::String>,
     pub(crate) address: ::std::option::Option<crate::types::Address>,
-    pub(crate) candidate_address_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::CandidateAddress>>,
+    pub(crate) candidate_address_list: ::std::option::Option<::std::vec::Vec<crate::types::CandidateAddress>>,
     _request_id: Option<String>,
 }
 impl ValidateE911AddressOutputBuilder {
@@ -81,18 +73,12 @@ impl ValidateE911AddressOutputBuilder {
         &self.validation_result
     }
     /// <p>The ID that represents the address.</p>
-    pub fn address_external_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_external_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID that represents the address.</p>
-    pub fn set_address_external_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_address_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_external_id = input;
         self
     }
@@ -126,17 +112,12 @@ impl ValidateE911AddressOutputBuilder {
         self
     }
     /// <p>The list of address suggestions.</p>
-    pub fn set_candidate_address_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CandidateAddress>>,
-    ) -> Self {
+    pub fn set_candidate_address_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CandidateAddress>>) -> Self {
         self.candidate_address_list = input;
         self
     }
     /// <p>The list of address suggestions.</p>
-    pub fn get_candidate_address_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CandidateAddress>> {
+    pub fn get_candidate_address_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CandidateAddress>> {
         &self.candidate_address_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

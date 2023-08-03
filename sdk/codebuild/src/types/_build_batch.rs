@@ -53,8 +53,7 @@ pub struct BuildBatch {
     /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub secondary_source_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>,
+    pub secondary_source_versions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>,
     /// <p>A <code>BuildArtifacts</code> object the defines the build artifacts for this batch build.</p>
     #[doc(hidden)]
     pub artifacts: ::std::option::Option<crate::types::BuildArtifacts>,
@@ -105,8 +104,7 @@ pub struct BuildBatch {
     pub build_batch_number: ::std::option::Option<i64>,
     /// <p>An array of <code>ProjectFileSystemLocation</code> objects for the batch build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
     #[doc(hidden)]
-    pub file_system_locations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>,
+    pub file_system_locations: ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>,
     /// <p>Contains configuration information about a batch build project.</p>
     #[doc(hidden)]
     pub build_batch_config: ::std::option::Option<crate::types::ProjectBuildBatchConfig>,
@@ -178,9 +176,7 @@ impl BuildBatch {
     /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
     /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
     /// </ul>
-    pub fn secondary_source_versions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProjectSourceVersion]> {
+    pub fn secondary_source_versions(&self) -> ::std::option::Option<&[crate::types::ProjectSourceVersion]> {
         self.secondary_source_versions.as_deref()
     }
     /// <p>A <code>BuildArtifacts</code> object the defines the build artifacts for this batch build.</p>
@@ -245,15 +241,11 @@ impl BuildBatch {
         self.build_batch_number
     }
     /// <p>An array of <code>ProjectFileSystemLocation</code> objects for the batch build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-    pub fn file_system_locations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProjectFileSystemLocation]> {
+    pub fn file_system_locations(&self) -> ::std::option::Option<&[crate::types::ProjectFileSystemLocation]> {
         self.file_system_locations.as_deref()
     }
     /// <p>Contains configuration information about a batch build project.</p>
-    pub fn build_batch_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProjectBuildBatchConfig> {
+    pub fn build_batch_config(&self) -> ::std::option::Option<&crate::types::ProjectBuildBatchConfig> {
         self.build_batch_config.as_ref()
     }
     /// <p>An array of <code>BuildGroup</code> objects that define the build groups for the batch build.</p>
@@ -274,9 +266,7 @@ impl BuildBatch {
 
 /// A builder for [`BuildBatch`](crate::types::BuildBatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuildBatchBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -289,13 +279,10 @@ pub struct BuildBatchBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) phases: ::std::option::Option<::std::vec::Vec<crate::types::BuildBatchPhase>>,
     pub(crate) source: ::std::option::Option<crate::types::ProjectSource>,
-    pub(crate) secondary_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>,
-    pub(crate) secondary_source_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>,
+    pub(crate) secondary_sources: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>,
+    pub(crate) secondary_source_versions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>,
     pub(crate) artifacts: ::std::option::Option<crate::types::BuildArtifacts>,
-    pub(crate) secondary_artifacts:
-        ::std::option::Option<::std::vec::Vec<crate::types::BuildArtifacts>>,
+    pub(crate) secondary_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::BuildArtifacts>>,
     pub(crate) cache: ::std::option::Option<crate::types::ProjectCache>,
     pub(crate) environment: ::std::option::Option<crate::types::ProjectEnvironment>,
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
@@ -307,8 +294,7 @@ pub struct BuildBatchBuilder {
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) encryption_key: ::std::option::Option<::std::string::String>,
     pub(crate) build_batch_number: ::std::option::Option<i64>,
-    pub(crate) file_system_locations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>,
+    pub(crate) file_system_locations: ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>,
     pub(crate) build_batch_config: ::std::option::Option<crate::types::ProjectBuildBatchConfig>,
     pub(crate) build_groups: ::std::option::Option<::std::vec::Vec<crate::types::BuildGroup>>,
     pub(crate) debug_session_enabled: ::std::option::Option<bool>,
@@ -348,10 +334,7 @@ impl BuildBatchBuilder {
         self
     }
     /// <p>The date and time that the batch build started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -365,10 +348,7 @@ impl BuildBatchBuilder {
         self
     }
     /// <p>The date and time that the batch build ended.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -377,18 +357,12 @@ impl BuildBatchBuilder {
         &self.end_time
     }
     /// <p>The current phase of the batch build.</p>
-    pub fn current_phase(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_phase(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_phase = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current phase of the batch build.</p>
-    pub fn set_current_phase(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_phase(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_phase = input;
         self
     }
@@ -402,10 +376,7 @@ impl BuildBatchBuilder {
         self
     }
     /// <p>The status of the batch build.</p>
-    pub fn set_build_batch_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StatusType>,
-    ) -> Self {
+    pub fn set_build_batch_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
         self.build_batch_status = input;
         self
     }
@@ -414,18 +385,12 @@ impl BuildBatchBuilder {
         &self.build_batch_status
     }
     /// <p>The identifier of the version of the source code to be built.</p>
-    pub fn source_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the version of the source code to be built.</p>
-    pub fn set_source_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_version = input;
         self
     }
@@ -439,10 +404,7 @@ impl BuildBatchBuilder {
     /// <li> <p>For CodePipeline, the source revision provided by CodePipeline.</p> </li>
     /// <li> <p>For Amazon S3, this does not apply.</p> </li>
     /// </ul>
-    pub fn resolved_source_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolved_source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolved_source_version = ::std::option::Option::Some(input.into());
         self
     }
@@ -452,10 +414,7 @@ impl BuildBatchBuilder {
     /// <li> <p>For CodePipeline, the source revision provided by CodePipeline.</p> </li>
     /// <li> <p>For Amazon S3, this does not apply.</p> </li>
     /// </ul>
-    pub fn set_resolved_source_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolved_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolved_source_version = input;
         self
     }
@@ -494,17 +453,12 @@ impl BuildBatchBuilder {
         self
     }
     /// <p>An array of <code>BuildBatchPhase</code> objects the specify the phases of the batch build.</p>
-    pub fn set_phases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BuildBatchPhase>>,
-    ) -> Self {
+    pub fn set_phases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BuildBatchPhase>>) -> Self {
         self.phases = input;
         self
     }
     /// <p>An array of <code>BuildBatchPhase</code> objects the specify the phases of the batch build.</p>
-    pub fn get_phases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BuildBatchPhase>> {
+    pub fn get_phases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BuildBatchPhase>> {
         &self.phases
     }
     /// <p>Information about the build input source code for the build project.</p>
@@ -533,17 +487,12 @@ impl BuildBatchBuilder {
         self
     }
     /// <p>An array of <code>ProjectSource</code> objects that define the sources for the batch build.</p>
-    pub fn set_secondary_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>,
-    ) -> Self {
+    pub fn set_secondary_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>) -> Self {
         self.secondary_sources = input;
         self
     }
     /// <p>An array of <code>ProjectSource</code> objects that define the sources for the batch build.</p>
-    pub fn get_secondary_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>> {
+    pub fn get_secondary_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>> {
         &self.secondary_sources
     }
     /// Appends an item to `secondary_source_versions`.
@@ -570,10 +519,7 @@ impl BuildBatchBuilder {
     /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
     /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
     /// </ul>
-    pub fn set_secondary_source_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>,
-    ) -> Self {
+    pub fn set_secondary_source_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>) -> Self {
         self.secondary_source_versions = input;
         self
     }
@@ -584,9 +530,7 @@ impl BuildBatchBuilder {
     /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
     /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
     /// </ul>
-    pub fn get_secondary_source_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>> {
+    pub fn get_secondary_source_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>> {
         &self.secondary_source_versions
     }
     /// <p>A <code>BuildArtifacts</code> object the defines the build artifacts for this batch build.</p>
@@ -595,10 +539,7 @@ impl BuildBatchBuilder {
         self
     }
     /// <p>A <code>BuildArtifacts</code> object the defines the build artifacts for this batch build.</p>
-    pub fn set_artifacts(
-        mut self,
-        input: ::std::option::Option<crate::types::BuildArtifacts>,
-    ) -> Self {
+    pub fn set_artifacts(mut self, input: ::std::option::Option<crate::types::BuildArtifacts>) -> Self {
         self.artifacts = input;
         self
     }
@@ -618,17 +559,12 @@ impl BuildBatchBuilder {
         self
     }
     /// <p>An array of <code>BuildArtifacts</code> objects the define the build artifacts for this batch build.</p>
-    pub fn set_secondary_artifacts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BuildArtifacts>>,
-    ) -> Self {
+    pub fn set_secondary_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BuildArtifacts>>) -> Self {
         self.secondary_artifacts = input;
         self
     }
     /// <p>An array of <code>BuildArtifacts</code> objects the define the build artifacts for this batch build.</p>
-    pub fn get_secondary_artifacts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BuildArtifacts>> {
+    pub fn get_secondary_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BuildArtifacts>> {
         &self.secondary_artifacts
     }
     /// <p>Information about the cache for the build project.</p>
@@ -651,10 +587,7 @@ impl BuildBatchBuilder {
         self
     }
     /// <p>Information about the build environment of the build project.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectEnvironment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::ProjectEnvironment>) -> Self {
         self.environment = input;
         self
     }
@@ -682,10 +615,7 @@ impl BuildBatchBuilder {
         self
     }
     /// <p> Information about logs for a build project. These can be logs in CloudWatch Logs, built in a specified S3 bucket, or both. </p>
-    pub fn set_log_config(
-        mut self,
-        input: ::std::option::Option<crate::types::LogsConfig>,
-    ) -> Self {
+    pub fn set_log_config(mut self, input: ::std::option::Option<crate::types::LogsConfig>) -> Self {
         self.log_config = input;
         self
     }
@@ -783,10 +713,7 @@ impl BuildBatchBuilder {
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>).</p>
-    pub fn encryption_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key = ::std::option::Option::Some(input.into());
         self
     }
@@ -795,10 +722,7 @@ impl BuildBatchBuilder {
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>).</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key = input;
         self
     }
@@ -836,17 +760,12 @@ impl BuildBatchBuilder {
         self
     }
     /// <p>An array of <code>ProjectFileSystemLocation</code> objects for the batch build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-    pub fn set_file_system_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>,
-    ) -> Self {
+    pub fn set_file_system_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>) -> Self {
         self.file_system_locations = input;
         self
     }
     /// <p>An array of <code>ProjectFileSystemLocation</code> objects for the batch build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-    pub fn get_file_system_locations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>> {
+    pub fn get_file_system_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>> {
         &self.file_system_locations
     }
     /// <p>Contains configuration information about a batch build project.</p>
@@ -855,17 +774,12 @@ impl BuildBatchBuilder {
         self
     }
     /// <p>Contains configuration information about a batch build project.</p>
-    pub fn set_build_batch_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectBuildBatchConfig>,
-    ) -> Self {
+    pub fn set_build_batch_config(mut self, input: ::std::option::Option<crate::types::ProjectBuildBatchConfig>) -> Self {
         self.build_batch_config = input;
         self
     }
     /// <p>Contains configuration information about a batch build project.</p>
-    pub fn get_build_batch_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProjectBuildBatchConfig> {
+    pub fn get_build_batch_config(&self) -> &::std::option::Option<crate::types::ProjectBuildBatchConfig> {
         &self.build_batch_config
     }
     /// Appends an item to `build_groups`.
@@ -880,17 +794,12 @@ impl BuildBatchBuilder {
         self
     }
     /// <p>An array of <code>BuildGroup</code> objects that define the build groups for the batch build.</p>
-    pub fn set_build_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BuildGroup>>,
-    ) -> Self {
+    pub fn set_build_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BuildGroup>>) -> Self {
         self.build_groups = input;
         self
     }
     /// <p>An array of <code>BuildGroup</code> objects that define the build groups for the batch build.</p>
-    pub fn get_build_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BuildGroup>> {
+    pub fn get_build_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BuildGroup>> {
         &self.build_groups
     }
     /// <p>Specifies if session debugging is enabled for this batch build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>

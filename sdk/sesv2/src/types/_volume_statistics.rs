@@ -44,9 +44,7 @@ impl VolumeStatistics {
 
 /// A builder for [`VolumeStatistics`](crate::types::VolumeStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeStatisticsBuilder {
     pub(crate) inbox_raw_count: ::std::option::Option<i64>,
     pub(crate) spam_raw_count: ::std::option::Option<i64>,

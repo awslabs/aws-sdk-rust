@@ -35,9 +35,7 @@ impl ListEngagementsOutput {
 
 /// A builder for [`ListEngagementsOutput`](crate::operation::list_engagements::ListEngagementsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEngagementsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) engagements: ::std::option::Option<::std::vec::Vec<crate::types::Engagement>>,
@@ -70,17 +68,12 @@ impl ListEngagementsOutputBuilder {
         self
     }
     /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
-    pub fn set_engagements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Engagement>>,
-    ) -> Self {
+    pub fn set_engagements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Engagement>>) -> Self {
         self.engagements = input;
         self
     }
     /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
-    pub fn get_engagements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Engagement>> {
+    pub fn get_engagements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Engagement>> {
         &self.engagements
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -15,10 +15,7 @@ pub fn ser_rotate_secret_input(
     if let Some(var_4) = &input.rotation_rules {
         #[allow(unused_mut)]
         let mut object_5 = object.key("RotationRules").start_object();
-        crate::protocol_serde::shape_rotation_rules_type::ser_rotation_rules_type(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_rotation_rules_type::ser_rotation_rules_type(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.rotate_immediately {

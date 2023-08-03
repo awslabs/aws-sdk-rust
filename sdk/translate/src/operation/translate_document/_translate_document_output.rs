@@ -14,8 +14,7 @@ pub struct TranslateDocumentOutput {
     pub target_language_code: ::std::option::Option<::std::string::String>,
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate to produce the translated text document.</p>
     #[doc(hidden)]
-    pub applied_terminologies:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>>,
+    pub applied_terminologies: ::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>>,
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
     #[doc(hidden)]
     pub applied_settings: ::std::option::Option<crate::types::TranslationSettings>,
@@ -35,9 +34,7 @@ impl TranslateDocumentOutput {
         self.target_language_code.as_deref()
     }
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate to produce the translated text document.</p>
-    pub fn applied_terminologies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AppliedTerminology]> {
+    pub fn applied_terminologies(&self) -> ::std::option::Option<&[crate::types::AppliedTerminology]> {
         self.applied_terminologies.as_deref()
     }
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
@@ -52,23 +49,19 @@ impl ::aws_http::request_id::RequestId for TranslateDocumentOutput {
 }
 impl TranslateDocumentOutput {
     /// Creates a new builder-style object to manufacture [`TranslateDocumentOutput`](crate::operation::translate_document::TranslateDocumentOutput).
-    pub fn builder(
-    ) -> crate::operation::translate_document::builders::TranslateDocumentOutputBuilder {
+    pub fn builder() -> crate::operation::translate_document::builders::TranslateDocumentOutputBuilder {
         crate::operation::translate_document::builders::TranslateDocumentOutputBuilder::default()
     }
 }
 
 /// A builder for [`TranslateDocumentOutput`](crate::operation::translate_document::TranslateDocumentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TranslateDocumentOutputBuilder {
     pub(crate) translated_document: ::std::option::Option<crate::types::TranslatedDocument>,
     pub(crate) source_language_code: ::std::option::Option<::std::string::String>,
     pub(crate) target_language_code: ::std::option::Option<::std::string::String>,
-    pub(crate) applied_terminologies:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>>,
+    pub(crate) applied_terminologies: ::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>>,
     pub(crate) applied_settings: ::std::option::Option<crate::types::TranslationSettings>,
     _request_id: Option<String>,
 }
@@ -79,32 +72,21 @@ impl TranslateDocumentOutputBuilder {
         self
     }
     /// <p>The document containing the translated content. The document format matches the source document format.</p>
-    pub fn set_translated_document(
-        mut self,
-        input: ::std::option::Option<crate::types::TranslatedDocument>,
-    ) -> Self {
+    pub fn set_translated_document(mut self, input: ::std::option::Option<crate::types::TranslatedDocument>) -> Self {
         self.translated_document = input;
         self
     }
     /// <p>The document containing the translated content. The document format matches the source document format.</p>
-    pub fn get_translated_document(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranslatedDocument> {
+    pub fn get_translated_document(&self) -> &::std::option::Option<crate::types::TranslatedDocument> {
         &self.translated_document
     }
     /// <p>The language code of the source document.</p>
-    pub fn source_language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The language code of the source document.</p>
-    pub fn set_source_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_language_code = input;
         self
     }
@@ -113,18 +95,12 @@ impl TranslateDocumentOutputBuilder {
         &self.source_language_code
     }
     /// <p>The language code of the translated document. </p>
-    pub fn target_language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The language code of the translated document. </p>
-    pub fn set_target_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_language_code = input;
         self
     }
@@ -144,17 +120,12 @@ impl TranslateDocumentOutputBuilder {
         self
     }
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate to produce the translated text document.</p>
-    pub fn set_applied_terminologies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>>,
-    ) -> Self {
+    pub fn set_applied_terminologies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>>) -> Self {
         self.applied_terminologies = input;
         self
     }
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate to produce the translated text document.</p>
-    pub fn get_applied_terminologies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>> {
+    pub fn get_applied_terminologies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>> {
         &self.applied_terminologies
     }
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
@@ -163,17 +134,12 @@ impl TranslateDocumentOutputBuilder {
         self
     }
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
-    pub fn set_applied_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::TranslationSettings>,
-    ) -> Self {
+    pub fn set_applied_settings(mut self, input: ::std::option::Option<crate::types::TranslationSettings>) -> Self {
         self.applied_settings = input;
         self
     }
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
-    pub fn get_applied_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranslationSettings> {
+    pub fn get_applied_settings(&self) -> &::std::option::Option<crate::types::TranslationSettings> {
         &self.applied_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

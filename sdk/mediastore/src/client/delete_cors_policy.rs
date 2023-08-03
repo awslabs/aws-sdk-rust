@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`container_name(impl ::std::convert::Into<String>)`](crate::operation::delete_cors_policy::builders::DeleteCorsPolicyFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::delete_cors_policy::builders::DeleteCorsPolicyFluentBuilder::set_container_name): <p>The name of the container to remove the policy from.</p>
     /// - On success, responds with [`DeleteCorsPolicyOutput`](crate::operation::delete_cors_policy::DeleteCorsPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteCorsPolicyError>`](crate::operation::delete_cors_policy::DeleteCorsPolicyError)
-    pub fn delete_cors_policy(
-        &self,
-    ) -> crate::operation::delete_cors_policy::builders::DeleteCorsPolicyFluentBuilder {
-        crate::operation::delete_cors_policy::builders::DeleteCorsPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_cors_policy(&self) -> crate::operation::delete_cors_policy::builders::DeleteCorsPolicyFluentBuilder {
+        crate::operation::delete_cors_policy::builders::DeleteCorsPolicyFluentBuilder::new(self.handle.clone())
     }
 }

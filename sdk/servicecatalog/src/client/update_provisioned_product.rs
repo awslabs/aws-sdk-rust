@@ -19,10 +19,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateProvisionedProductOutput`](crate::operation::update_provisioned_product::UpdateProvisionedProductOutput) with field(s):
     ///   - [`record_detail(Option<RecordDetail>)`](crate::operation::update_provisioned_product::UpdateProvisionedProductOutput::record_detail): <p>Information about the result of the request.</p>
     /// - On failure, responds with [`SdkError<UpdateProvisionedProductError>`](crate::operation::update_provisioned_product::UpdateProvisionedProductError)
-    pub fn update_provisioned_product(
-        &self,
-    ) -> crate::operation::update_provisioned_product::builders::UpdateProvisionedProductFluentBuilder
-    {
+    pub fn update_provisioned_product(&self) -> crate::operation::update_provisioned_product::builders::UpdateProvisionedProductFluentBuilder {
         crate::operation::update_provisioned_product::builders::UpdateProvisionedProductFluentBuilder::new(self.handle.clone())
     }
 }

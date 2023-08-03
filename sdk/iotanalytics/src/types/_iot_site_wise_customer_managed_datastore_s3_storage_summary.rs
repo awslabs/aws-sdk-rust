@@ -23,18 +23,14 @@ impl IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
 }
 impl IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
     /// Creates a new builder-style object to manufacture [`IotSiteWiseCustomerManagedDatastoreS3StorageSummary`](crate::types::IotSiteWiseCustomerManagedDatastoreS3StorageSummary).
-    pub fn builder(
-    ) -> crate::types::builders::IotSiteWiseCustomerManagedDatastoreS3StorageSummaryBuilder {
-        crate::types::builders::IotSiteWiseCustomerManagedDatastoreS3StorageSummaryBuilder::default(
-        )
+    pub fn builder() -> crate::types::builders::IotSiteWiseCustomerManagedDatastoreS3StorageSummaryBuilder {
+        crate::types::builders::IotSiteWiseCustomerManagedDatastoreS3StorageSummaryBuilder::default()
     }
 }
 
 /// A builder for [`IotSiteWiseCustomerManagedDatastoreS3StorageSummary`](crate::types::IotSiteWiseCustomerManagedDatastoreS3StorageSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IotSiteWiseCustomerManagedDatastoreS3StorageSummaryBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key_prefix: ::std::option::Option<::std::string::String>,

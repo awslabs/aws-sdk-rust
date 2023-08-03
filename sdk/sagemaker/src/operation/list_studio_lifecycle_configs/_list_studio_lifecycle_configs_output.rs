@@ -8,8 +8,7 @@ pub struct ListStudioLifecycleConfigsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of Lifecycle Configurations and their properties.</p>
     #[doc(hidden)]
-    pub studio_lifecycle_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::StudioLifecycleConfigDetails>>,
+    pub studio_lifecycle_configs: ::std::option::Option<::std::vec::Vec<crate::types::StudioLifecycleConfigDetails>>,
     _request_id: Option<String>,
 }
 impl ListStudioLifecycleConfigsOutput {
@@ -18,9 +17,7 @@ impl ListStudioLifecycleConfigsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of Lifecycle Configurations and their properties.</p>
-    pub fn studio_lifecycle_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StudioLifecycleConfigDetails]> {
+    pub fn studio_lifecycle_configs(&self) -> ::std::option::Option<&[crate::types::StudioLifecycleConfigDetails]> {
         self.studio_lifecycle_configs.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListStudioLifecycleConfigsOutput {
 }
 impl ListStudioLifecycleConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListStudioLifecycleConfigsOutput`](crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsOutput).
-    pub fn builder() -> crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsOutputBuilder{
+    pub fn builder() -> crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsOutputBuilder {
         crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStudioLifecycleConfigsOutput`](crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStudioLifecycleConfigsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) studio_lifecycle_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::StudioLifecycleConfigDetails>>,
+    pub(crate) studio_lifecycle_configs: ::std::option::Option<::std::vec::Vec<crate::types::StudioLifecycleConfigDetails>>,
     _request_id: Option<String>,
 }
 impl ListStudioLifecycleConfigsOutputBuilder {
@@ -67,27 +61,19 @@ impl ListStudioLifecycleConfigsOutputBuilder {
     /// To override the contents of this collection use [`set_studio_lifecycle_configs`](Self::set_studio_lifecycle_configs).
     ///
     /// <p>A list of Lifecycle Configurations and their properties.</p>
-    pub fn studio_lifecycle_configs(
-        mut self,
-        input: crate::types::StudioLifecycleConfigDetails,
-    ) -> Self {
+    pub fn studio_lifecycle_configs(mut self, input: crate::types::StudioLifecycleConfigDetails) -> Self {
         let mut v = self.studio_lifecycle_configs.unwrap_or_default();
         v.push(input);
         self.studio_lifecycle_configs = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Lifecycle Configurations and their properties.</p>
-    pub fn set_studio_lifecycle_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StudioLifecycleConfigDetails>>,
-    ) -> Self {
+    pub fn set_studio_lifecycle_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StudioLifecycleConfigDetails>>) -> Self {
         self.studio_lifecycle_configs = input;
         self
     }
     /// <p>A list of Lifecycle Configurations and their properties.</p>
-    pub fn get_studio_lifecycle_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioLifecycleConfigDetails>> {
+    pub fn get_studio_lifecycle_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioLifecycleConfigDetails>> {
         &self.studio_lifecycle_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -100,9 +86,7 @@ impl ListStudioLifecycleConfigsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListStudioLifecycleConfigsOutput`](crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsOutput {
+    pub fn build(self) -> crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsOutput {
         crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsOutput {
             next_token: self.next_token,
             studio_lifecycle_configs: self.studio_lifecycle_configs,

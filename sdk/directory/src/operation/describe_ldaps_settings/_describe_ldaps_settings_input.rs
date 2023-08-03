@@ -36,18 +36,14 @@ impl DescribeLdapsSettingsInput {
 }
 impl DescribeLdapsSettingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLdapsSettingsInput`](crate::operation::describe_ldaps_settings::DescribeLdapsSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_ldaps_settings::builders::DescribeLdapsSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_ldaps_settings::builders::DescribeLdapsSettingsInputBuilder {
         crate::operation::describe_ldaps_settings::builders::DescribeLdapsSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLdapsSettingsInput`](crate::operation::describe_ldaps_settings::DescribeLdapsSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLdapsSettingsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::LdapsType>,
@@ -114,17 +110,13 @@ impl DescribeLdapsSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLdapsSettingsInput`](crate::operation::describe_ldaps_settings::DescribeLdapsSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ldaps_settings::DescribeLdapsSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_ldaps_settings::DescribeLdapsSettingsInput {
-                directory_id: self.directory_id,
-                r#type: self.r#type,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_ldaps_settings::DescribeLdapsSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_ldaps_settings::DescribeLdapsSettingsInput {
+            directory_id: self.directory_id,
+            r#type: self.r#type,
+            next_token: self.next_token,
+            limit: self.limit,
+        })
     }
 }

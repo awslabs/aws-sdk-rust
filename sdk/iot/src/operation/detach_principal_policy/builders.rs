@@ -40,10 +40,7 @@ impl DetachPrincipalPolicyFluentBuilder {
         }
     }
     /// Access the DetachPrincipalPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detach_principal_policy::builders::DetachPrincipalPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::detach_principal_policy::builders::DetachPrincipalPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl DetachPrincipalPolicyFluentBuilder {
             crate::operation::detach_principal_policy::DetachPrincipalPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_principal_policy::DetachPrincipalPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_principal_policy::DetachPrincipalPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl DetachPrincipalPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl DetachPrincipalPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_principal_policy::DetachPrincipalPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_principal_policy::DetachPrincipalPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_principal_policy::DetachPrincipalPolicyError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl DetachPrincipalPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_principal_policy::DetachPrincipalPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_principal_policy::DetachPrincipalPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_principal_policy::DetachPrincipalPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl DetachPrincipalPolicyFluentBuilder {
             crate::operation::detach_principal_policy::DetachPrincipalPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_principal_policy::DetachPrincipalPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_principal_policy::DetachPrincipalPolicyError>,
     > {
         self.customize_middleware().await
     }

@@ -37,10 +37,7 @@ impl DeleteAppAuthorizationFluentBuilder {
         }
     }
     /// Access the DeleteAppAuthorization as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_app_authorization::builders::DeleteAppAuthorizationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_app_authorization::builders::DeleteAppAuthorizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteAppAuthorizationFluentBuilder {
             crate::operation::delete_app_authorization::DeleteAppAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_authorization::DeleteAppAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_authorization::DeleteAppAuthorizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteAppAuthorizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteAppAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_authorization::DeleteAppAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_authorization::DeleteAppAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_authorization::DeleteAppAuthorizationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteAppAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_authorization::DeleteAppAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_authorization::DeleteAppAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_authorization::DeleteAppAuthorizationError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteAppAuthorizationFluentBuilder {
             crate::operation::delete_app_authorization::DeleteAppAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_authorization::DeleteAppAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_authorization::DeleteAppAuthorizationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_bundle_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }
@@ -144,25 +124,17 @@ impl DeleteAppAuthorizationFluentBuilder {
         self.inner.get_app_bundle_identifier()
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
-    pub fn app_authorization_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_authorization_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_authorization_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
-    pub fn set_app_authorization_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_authorization_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_authorization_identifier(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
-    pub fn get_app_authorization_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_app_authorization_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_authorization_identifier()
     }
 }

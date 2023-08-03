@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeChannelBanOutput {
 }
 impl DescribeChannelBanOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChannelBanOutput`](crate::operation::describe_channel_ban::DescribeChannelBanOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_channel_ban::builders::DescribeChannelBanOutputBuilder {
+    pub fn builder() -> crate::operation::describe_channel_ban::builders::DescribeChannelBanOutputBuilder {
         crate::operation::describe_channel_ban::builders::DescribeChannelBanOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeChannelBanOutput`](crate::operation::describe_channel_ban::DescribeChannelBanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeChannelBanOutputBuilder {
     pub(crate) channel_ban: ::std::option::Option<crate::types::ChannelBan>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeChannelBanOutputBuilder {
         self
     }
     /// <p>The details of the ban.</p>
-    pub fn set_channel_ban(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelBan>,
-    ) -> Self {
+    pub fn set_channel_ban(mut self, input: ::std::option::Option<crate::types::ChannelBan>) -> Self {
         self.channel_ban = input;
         self
     }

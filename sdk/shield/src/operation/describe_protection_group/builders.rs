@@ -26,8 +26,7 @@ impl DescribeProtectionGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeProtectionGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_protection_group::builders::DescribeProtectionGroupInputBuilder,
+    inner: crate::operation::describe_protection_group::builders::DescribeProtectionGroupInputBuilder,
 }
 impl DescribeProtectionGroupFluentBuilder {
     /// Creates a new `DescribeProtectionGroup`.
@@ -38,10 +37,7 @@ impl DescribeProtectionGroupFluentBuilder {
         }
     }
     /// Access the DescribeProtectionGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_protection_group::builders::DescribeProtectionGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_protection_group::builders::DescribeProtectionGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeProtectionGroupFluentBuilder {
             crate::operation::describe_protection_group::DescribeProtectionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_protection_group::DescribeProtectionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_protection_group::DescribeProtectionGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeProtectionGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeProtectionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_protection_group::DescribeProtectionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_protection_group::DescribeProtectionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_protection_group::DescribeProtectionGroupError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeProtectionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_protection_group::DescribeProtectionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_protection_group::DescribeProtectionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_protection_group::DescribeProtectionGroupError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DescribeProtectionGroupFluentBuilder {
             crate::operation::describe_protection_group::DescribeProtectionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_protection_group::DescribeProtectionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_protection_group::DescribeProtectionGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn protection_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protection_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.protection_group_id(input.into());
         self
     }
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn set_protection_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protection_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_protection_group_id(input);
         self
     }

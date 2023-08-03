@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListLicenseManagerReportGeneratorsOut
 }
 impl ListLicenseManagerReportGeneratorsOutput {
     /// Creates a new builder-style object to manufacture [`ListLicenseManagerReportGeneratorsOutput`](crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput).
-    pub fn builder() -> crate::operation::list_license_manager_report_generators::builders::ListLicenseManagerReportGeneratorsOutputBuilder{
+    pub fn builder() -> crate::operation::list_license_manager_report_generators::builders::ListLicenseManagerReportGeneratorsOutputBuilder {
         crate::operation::list_license_manager_report_generators::builders::ListLicenseManagerReportGeneratorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLicenseManagerReportGeneratorsOutput`](crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLicenseManagerReportGeneratorsOutputBuilder {
-    pub(crate) report_generators:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReportGenerator>>,
+    pub(crate) report_generators: ::std::option::Option<::std::vec::Vec<crate::types::ReportGenerator>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListLicenseManagerReportGeneratorsOutputBuilder {
         self
     }
     /// <p>A report generator that creates periodic reports about your license configurations.</p>
-    pub fn set_report_generators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReportGenerator>>,
-    ) -> Self {
+    pub fn set_report_generators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportGenerator>>) -> Self {
         self.report_generators = input;
         self
     }
     /// <p>A report generator that creates periodic reports about your license configurations.</p>
-    pub fn get_report_generators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportGenerator>> {
+    pub fn get_report_generators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportGenerator>> {
         &self.report_generators
     }
     /// <p>Token for the next set of results.</p>
@@ -94,12 +86,10 @@ impl ListLicenseManagerReportGeneratorsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListLicenseManagerReportGeneratorsOutput`](crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput).
-    pub fn build(self) -> crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput{
+    pub fn build(self) -> crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput {
         crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput {
-            report_generators: self.report_generators
-            ,
-            next_token: self.next_token
-            ,
+            report_generators: self.report_generators,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

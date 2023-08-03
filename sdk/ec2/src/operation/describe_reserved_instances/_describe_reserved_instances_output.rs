@@ -22,19 +22,16 @@ impl ::aws_http::request_id::RequestId for DescribeReservedInstancesOutput {
 }
 impl DescribeReservedInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedInstancesOutput`](crate::operation::describe_reserved_instances::DescribeReservedInstancesOutput).
-    pub fn builder() -> crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesOutputBuilder {
         crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedInstancesOutput`](crate::operation::describe_reserved_instances::DescribeReservedInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesOutputBuilder {
-    pub(crate) reserved_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstances>>,
+    pub(crate) reserved_instances: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstances>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstancesOutputBuilder {
@@ -50,17 +47,12 @@ impl DescribeReservedInstancesOutputBuilder {
         self
     }
     /// <p>A list of Reserved Instances.</p>
-    pub fn set_reserved_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstances>>,
-    ) -> Self {
+    pub fn set_reserved_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstances>>) -> Self {
         self.reserved_instances = input;
         self
     }
     /// <p>A list of Reserved Instances.</p>
-    pub fn get_reserved_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstances>> {
+    pub fn get_reserved_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstances>> {
         &self.reserved_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -73,9 +65,7 @@ impl DescribeReservedInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReservedInstancesOutput`](crate::operation::describe_reserved_instances::DescribeReservedInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_reserved_instances::DescribeReservedInstancesOutput {
+    pub fn build(self) -> crate::operation::describe_reserved_instances::DescribeReservedInstancesOutput {
         crate::operation::describe_reserved_instances::DescribeReservedInstancesOutput {
             reserved_instances: self.reserved_instances,
             _request_id: self._request_id,

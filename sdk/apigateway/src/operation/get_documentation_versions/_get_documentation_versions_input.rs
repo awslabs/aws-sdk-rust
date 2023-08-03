@@ -30,18 +30,14 @@ impl GetDocumentationVersionsInput {
 }
 impl GetDocumentationVersionsInput {
     /// Creates a new builder-style object to manufacture [`GetDocumentationVersionsInput`](crate::operation::get_documentation_versions::GetDocumentationVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::get_documentation_versions::builders::GetDocumentationVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_documentation_versions::builders::GetDocumentationVersionsInputBuilder {
         crate::operation::get_documentation_versions::builders::GetDocumentationVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDocumentationVersionsInput`](crate::operation::get_documentation_versions::GetDocumentationVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDocumentationVersionsInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
@@ -97,12 +93,10 @@ impl GetDocumentationVersionsInputBuilder {
         crate::operation::get_documentation_versions::GetDocumentationVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_documentation_versions::GetDocumentationVersionsInput {
-                rest_api_id: self.rest_api_id,
-                position: self.position,
-                limit: self.limit,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_documentation_versions::GetDocumentationVersionsInput {
+            rest_api_id: self.rest_api_id,
+            position: self.position,
+            limit: self.limit,
+        })
     }
 }

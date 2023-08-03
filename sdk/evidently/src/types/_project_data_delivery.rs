@@ -17,9 +17,7 @@ impl ProjectDataDelivery {
         self.s3_destination.as_ref()
     }
     /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
-    pub fn cloud_watch_logs(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLogsDestination> {
+    pub fn cloud_watch_logs(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsDestination> {
         self.cloud_watch_logs.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl ProjectDataDelivery {
 
 /// A builder for [`ProjectDataDelivery`](crate::types::ProjectDataDelivery).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectDataDeliveryBuilder {
     pub(crate) s3_destination: ::std::option::Option<crate::types::S3Destination>,
     pub(crate) cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
@@ -46,10 +42,7 @@ impl ProjectDataDeliveryBuilder {
         self
     }
     /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Destination>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::S3Destination>) -> Self {
         self.s3_destination = input;
         self
     }
@@ -63,17 +56,12 @@ impl ProjectDataDeliveryBuilder {
         self
     }
     /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
-    pub fn set_cloud_watch_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsDestination>) -> Self {
         self.cloud_watch_logs = input;
         self
     }
     /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
-    pub fn get_cloud_watch_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLogsDestination> {
+    pub fn get_cloud_watch_logs(&self) -> &::std::option::Option<crate::types::CloudWatchLogsDestination> {
         &self.cloud_watch_logs
     }
     /// Consumes the builder and constructs a [`ProjectDataDelivery`](crate::types::ProjectDataDelivery).

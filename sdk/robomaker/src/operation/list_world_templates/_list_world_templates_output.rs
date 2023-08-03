@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListWorldTemplatesOutput {
 }
 impl ListWorldTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListWorldTemplatesOutput`](crate::operation::list_world_templates::ListWorldTemplatesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_world_templates::builders::ListWorldTemplatesOutputBuilder {
+    pub fn builder() -> crate::operation::list_world_templates::builders::ListWorldTemplatesOutputBuilder {
         crate::operation::list_world_templates::builders::ListWorldTemplatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorldTemplatesOutput`](crate::operation::list_world_templates::ListWorldTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorldTemplatesOutputBuilder {
-    pub(crate) template_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
+    pub(crate) template_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListWorldTemplatesOutputBuilder {
         self
     }
     /// <p>Summary information for templates.</p>
-    pub fn set_template_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
-    ) -> Self {
+    pub fn set_template_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>) -> Self {
         self.template_summaries = input;
         self
     }
     /// <p>Summary information for templates.</p>
-    pub fn get_template_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>> {
+    pub fn get_template_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>> {
         &self.template_summaries
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>

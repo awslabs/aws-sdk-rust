@@ -19,9 +19,7 @@ impl AttachInstancesOutput {
 
 /// A builder for [`AttachInstancesOutput`](crate::operation::attach_instances::AttachInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachInstancesOutputBuilder {
     _request_id: Option<String>,
 }

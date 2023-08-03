@@ -18,8 +18,7 @@ pub struct ConnectionAlias {
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The association status of the connection alias.</p>
     #[doc(hidden)]
-    pub associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConnectionAliasAssociation>>,
+    pub associations: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionAliasAssociation>>,
 }
 impl ConnectionAlias {
     /// <p>The connection string specified for the connection alias. The connection string must be in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
@@ -39,9 +38,7 @@ impl ConnectionAlias {
         self.owner_account_id.as_deref()
     }
     /// <p>The association status of the connection alias.</p>
-    pub fn associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConnectionAliasAssociation]> {
+    pub fn associations(&self) -> ::std::option::Option<&[crate::types::ConnectionAliasAssociation]> {
         self.associations.as_deref()
     }
 }
@@ -54,31 +51,22 @@ impl ConnectionAlias {
 
 /// A builder for [`ConnectionAlias`](crate::types::ConnectionAlias).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionAliasBuilder {
     pub(crate) connection_string: ::std::option::Option<::std::string::String>,
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ConnectionAliasState>,
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConnectionAliasAssociation>>,
+    pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionAliasAssociation>>,
 }
 impl ConnectionAliasBuilder {
     /// <p>The connection string specified for the connection alias. The connection string must be in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
-    pub fn connection_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The connection string specified for the connection alias. The connection string must be in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
-    pub fn set_connection_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_string = input;
         self
     }
@@ -106,10 +94,7 @@ impl ConnectionAliasBuilder {
         self
     }
     /// <p>The current state of the connection alias.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionAliasState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ConnectionAliasState>) -> Self {
         self.state = input;
         self
     }
@@ -118,18 +103,12 @@ impl ConnectionAliasBuilder {
         &self.state
     }
     /// <p>The identifier of the Amazon Web Services account that owns the connection alias.</p>
-    pub fn owner_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Amazon Web Services account that owns the connection alias.</p>
-    pub fn set_owner_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account_id = input;
         self
     }
@@ -149,17 +128,12 @@ impl ConnectionAliasBuilder {
         self
     }
     /// <p>The association status of the connection alias.</p>
-    pub fn set_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionAliasAssociation>>,
-    ) -> Self {
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionAliasAssociation>>) -> Self {
         self.associations = input;
         self
     }
     /// <p>The association status of the connection alias.</p>
-    pub fn get_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionAliasAssociation>> {
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionAliasAssociation>> {
         &self.associations
     }
     /// Consumes the builder and constructs a [`ConnectionAlias`](crate::types::ConnectionAlias).

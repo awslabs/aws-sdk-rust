@@ -29,17 +29,14 @@ impl UpdateWorkerFleetInput {
 }
 impl UpdateWorkerFleetInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkerFleetInput`](crate::operation::update_worker_fleet::UpdateWorkerFleetInput).
-    pub fn builder(
-    ) -> crate::operation::update_worker_fleet::builders::UpdateWorkerFleetInputBuilder {
+    pub fn builder() -> crate::operation::update_worker_fleet::builders::UpdateWorkerFleetInputBuilder {
         crate::operation::update_worker_fleet::builders::UpdateWorkerFleetInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorkerFleetInput`](crate::operation::update_worker_fleet::UpdateWorkerFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkerFleetInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -75,18 +72,12 @@ impl UpdateWorkerFleetInputBuilder {
         &self.name
     }
     /// JSON blob containing additional fixed properties regarding the worker fleet
-    pub fn additional_fixed_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_fixed_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.additional_fixed_properties = ::std::option::Option::Some(input.into());
         self
     }
     /// JSON blob containing additional fixed properties regarding the worker fleet
-    pub fn set_additional_fixed_properties(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_fixed_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.additional_fixed_properties = input;
         self
     }
@@ -97,16 +88,11 @@ impl UpdateWorkerFleetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkerFleetInput`](crate::operation::update_worker_fleet::UpdateWorkerFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_worker_fleet::UpdateWorkerFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_worker_fleet::UpdateWorkerFleetInput {
-                id: self.id,
-                name: self.name,
-                additional_fixed_properties: self.additional_fixed_properties,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_worker_fleet::UpdateWorkerFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_worker_fleet::UpdateWorkerFleetInput {
+            id: self.id,
+            name: self.name,
+            additional_fixed_properties: self.additional_fixed_properties,
+        })
     }
 }

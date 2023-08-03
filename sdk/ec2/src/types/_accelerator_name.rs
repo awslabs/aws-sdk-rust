@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AcceleratorName {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,9 +81,7 @@ impl ::std::convert::From<&str> for AcceleratorName {
             "t4" => AcceleratorName::T4,
             "v100" => AcceleratorName::V100,
             "vu9p" => AcceleratorName::Vu9P,
-            other => {
-                AcceleratorName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AcceleratorName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -118,17 +110,7 @@ impl AcceleratorName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "a100",
-            "inferentia",
-            "k520",
-            "k80",
-            "m60",
-            "radeon-pro-v520",
-            "t4",
-            "v100",
-            "vu9p",
-        ]
+        &["a100", "inferentia", "k520", "k80", "m60", "radeon-pro-v520", "t4", "v100", "vu9p"]
     }
 }
 impl ::std::convert::AsRef<str> for AcceleratorName {

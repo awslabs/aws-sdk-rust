@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateResourceOutput`](crate::operation::update_resource::UpdateResourceOutput) with field(s):
     ///   - [`progress_event(Option<ProgressEvent>)`](crate::operation::update_resource::UpdateResourceOutput::progress_event): <p>Represents the current status of the resource update request.</p>  <p>Use the <code>RequestToken</code> of the <code>ProgressEvent</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
     /// - On failure, responds with [`SdkError<UpdateResourceError>`](crate::operation::update_resource::UpdateResourceError)
-    pub fn update_resource(
-        &self,
-    ) -> crate::operation::update_resource::builders::UpdateResourceFluentBuilder {
-        crate::operation::update_resource::builders::UpdateResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_resource(&self) -> crate::operation::update_resource::builders::UpdateResourceFluentBuilder {
+        crate::operation::update_resource::builders::UpdateResourceFluentBuilder::new(self.handle.clone())
     }
 }

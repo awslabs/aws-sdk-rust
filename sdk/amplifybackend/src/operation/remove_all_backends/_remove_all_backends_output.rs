@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for RemoveAllBackendsOutput {
 }
 impl RemoveAllBackendsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveAllBackendsOutput`](crate::operation::remove_all_backends::RemoveAllBackendsOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_all_backends::builders::RemoveAllBackendsOutputBuilder {
+    pub fn builder() -> crate::operation::remove_all_backends::builders::RemoveAllBackendsOutputBuilder {
         crate::operation::remove_all_backends::builders::RemoveAllBackendsOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveAllBackendsOutput`](crate::operation::remove_all_backends::RemoveAllBackendsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveAllBackendsOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<::std::string::String>,

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`kx_databases(Option<Vec<KxDatabaseListEntry>>)`](crate::operation::list_kx_databases::ListKxDatabasesOutput::kx_databases): <p>A list of databases in the kdb environment.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_kx_databases::ListKxDatabasesOutput::next_token): <p>A token that indicates where a results page should begin.</p>
     /// - On failure, responds with [`SdkError<ListKxDatabasesError>`](crate::operation::list_kx_databases::ListKxDatabasesError)
-    pub fn list_kx_databases(
-        &self,
-    ) -> crate::operation::list_kx_databases::builders::ListKxDatabasesFluentBuilder {
-        crate::operation::list_kx_databases::builders::ListKxDatabasesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_kx_databases(&self) -> crate::operation::list_kx_databases::builders::ListKxDatabasesFluentBuilder {
+        crate::operation::list_kx_databases::builders::ListKxDatabasesFluentBuilder::new(self.handle.clone())
     }
 }

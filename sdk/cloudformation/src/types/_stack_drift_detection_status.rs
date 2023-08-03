@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StackDriftDetectionStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for StackDriftDetectionStatus {
             "DETECTION_COMPLETE" => StackDriftDetectionStatus::DetectionComplete,
             "DETECTION_FAILED" => StackDriftDetectionStatus::DetectionFailed,
             "DETECTION_IN_PROGRESS" => StackDriftDetectionStatus::DetectionInProgress,
-            other => StackDriftDetectionStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => StackDriftDetectionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl StackDriftDetectionStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DETECTION_COMPLETE",
-            "DETECTION_FAILED",
-            "DETECTION_IN_PROGRESS",
-        ]
+        &["DETECTION_COMPLETE", "DETECTION_FAILED", "DETECTION_IN_PROGRESS"]
     }
 }
 impl ::std::convert::AsRef<str> for StackDriftDetectionStatus {

@@ -10,45 +10,29 @@ pub fn ser_mac_attributes(
         crate::types::MacAttributes::EmvMac(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_2.key("EmvMac").start_object();
-            crate::protocol_serde::shape_mac_algorithm_emv::ser_mac_algorithm_emv(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_mac_algorithm_emv::ser_mac_algorithm_emv(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::MacAttributes::DukptIso9797Algorithm1(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_2.key("DukptIso9797Algorithm1").start_object();
-            crate::protocol_serde::shape_mac_algorithm_dukpt::ser_mac_algorithm_dukpt(
-                &mut object_2,
-                inner,
-            )?;
+            crate::protocol_serde::shape_mac_algorithm_dukpt::ser_mac_algorithm_dukpt(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::MacAttributes::DukptIso9797Algorithm3(inner) => {
             #[allow(unused_mut)]
             let mut object_3 = object_2.key("DukptIso9797Algorithm3").start_object();
-            crate::protocol_serde::shape_mac_algorithm_dukpt::ser_mac_algorithm_dukpt(
-                &mut object_3,
-                inner,
-            )?;
+            crate::protocol_serde::shape_mac_algorithm_dukpt::ser_mac_algorithm_dukpt(&mut object_3, inner)?;
             object_3.finish();
         }
         crate::types::MacAttributes::DukptCmac(inner) => {
             #[allow(unused_mut)]
             let mut object_4 = object_2.key("DukptCmac").start_object();
-            crate::protocol_serde::shape_mac_algorithm_dukpt::ser_mac_algorithm_dukpt(
-                &mut object_4,
-                inner,
-            )?;
+            crate::protocol_serde::shape_mac_algorithm_dukpt::ser_mac_algorithm_dukpt(&mut object_4, inner)?;
             object_4.finish();
         }
         crate::types::MacAttributes::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "MacAttributes",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("MacAttributes"))
         }
     }
     Ok(())

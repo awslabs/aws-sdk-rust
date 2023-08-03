@@ -55,9 +55,7 @@ impl CapacitySpecification {
 
 /// A builder for [`CapacitySpecification`](crate::types::CapacitySpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacitySpecificationBuilder {
     pub(crate) throughput_mode: ::std::option::Option<crate::types::ThroughputMode>,
     pub(crate) read_capacity_units: ::std::option::Option<i64>,
@@ -82,10 +80,7 @@ impl CapacitySpecificationBuilder {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn set_throughput_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ThroughputMode>,
-    ) -> Self {
+    pub fn set_throughput_mode(mut self, input: ::std::option::Option<crate::types::ThroughputMode>) -> Self {
         self.throughput_mode = input;
         self
     }

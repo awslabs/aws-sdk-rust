@@ -26,7 +26,7 @@ impl SendTestEventNotificationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendTestEventNotificationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::send_test_event_notification::builders::SendTestEventNotificationInputBuilder,
+    inner: crate::operation::send_test_event_notification::builders::SendTestEventNotificationInputBuilder,
 }
 impl SendTestEventNotificationFluentBuilder {
     /// Creates a new `SendTestEventNotification`.
@@ -37,7 +37,7 @@ impl SendTestEventNotificationFluentBuilder {
         }
     }
     /// Access the SendTestEventNotification as a reference.
-    pub fn as_input(&self) -> &crate::operation::send_test_event_notification::builders::SendTestEventNotificationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::send_test_event_notification::builders::SendTestEventNotificationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl SendTestEventNotificationFluentBuilder {
             crate::operation::send_test_event_notification::SendTestEventNotification,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_test_event_notification::SendTestEventNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_test_event_notification::SendTestEventNotificationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl SendTestEventNotificationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl SendTestEventNotificationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_test_event_notification::SendTestEventNotificationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_test_event_notification::SendTestEventNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_test_event_notification::SendTestEventNotificationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl SendTestEventNotificationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_test_event_notification::SendTestEventNotificationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_test_event_notification::SendTestEventNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_test_event_notification::SendTestEventNotificationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl SendTestEventNotificationFluentBuilder {
             crate::operation::send_test_event_notification::SendTestEventNotification,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_test_event_notification::SendTestEventNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_test_event_notification::SendTestEventNotificationError>,
     > {
         self.customize_middleware().await
     }
@@ -126,17 +115,12 @@ impl SendTestEventNotificationFluentBuilder {
         self
     }
     /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationSpecification>,
-    ) -> Self {
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::NotificationSpecification>) -> Self {
         self.inner = self.inner.set_notification(input);
         self
     }
     /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
-    pub fn get_notification(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationSpecification> {
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::NotificationSpecification> {
         self.inner.get_notification()
     }
     /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
@@ -145,10 +129,7 @@ impl SendTestEventNotificationFluentBuilder {
         self
     }
     /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
-    pub fn set_test_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EventType>,
-    ) -> Self {
+    pub fn set_test_event_type(mut self, input: ::std::option::Option<crate::types::EventType>) -> Self {
         self.inner = self.inner.set_test_event_type(input);
         self
     }

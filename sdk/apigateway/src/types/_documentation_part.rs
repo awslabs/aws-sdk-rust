@@ -37,9 +37,7 @@ impl DocumentationPart {
 
 /// A builder for [`DocumentationPart`](crate::types::DocumentationPart).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentationPartBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<crate::types::DocumentationPartLocation>,
@@ -66,10 +64,7 @@ impl DocumentationPartBuilder {
         self
     }
     /// <p>The location of the API entity to which the documentation applies. Valid fields depend on the targeted API entity type. All the valid location fields are not required. If not explicitly specified, a valid location field is treated as a wildcard and associated documentation content may be inherited by matching entities, unless overridden.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentationPartLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::DocumentationPartLocation>) -> Self {
         self.location = input;
         self
     }

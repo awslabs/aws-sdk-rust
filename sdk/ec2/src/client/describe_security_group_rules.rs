@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`security_group_rules(Option<Vec<SecurityGroupRule>>)`](crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput::security_group_rules): <p>Information about security group rules.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeSecurityGroupRulesError>`](crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesError)
-    pub fn describe_security_group_rules(&self) -> crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder{
+    pub fn describe_security_group_rules(
+        &self,
+    ) -> crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder {
         crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesFluentBuilder::new(self.handle.clone())
     }
 }

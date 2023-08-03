@@ -31,9 +31,7 @@ impl GetParameterInput {
 
 /// A builder for [`GetParameterInput`](crate::operation::get_parameter::GetParameterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetParameterInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) with_decryption: ::std::option::Option<bool>,
@@ -71,12 +69,7 @@ impl GetParameterInputBuilder {
         &self.with_decryption
     }
     /// Consumes the builder and constructs a [`GetParameterInput`](crate::operation::get_parameter::GetParameterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_parameter::GetParameterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_parameter::GetParameterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_parameter::GetParameterInput {
             name: self.name,
             with_decryption: self.with_decryption,

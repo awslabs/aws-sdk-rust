@@ -41,7 +41,7 @@ impl ListClosedWorkflowExecutionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListClosedWorkflowExecutionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_closed_workflow_executions::builders::ListClosedWorkflowExecutionsInputBuilder,
+    inner: crate::operation::list_closed_workflow_executions::builders::ListClosedWorkflowExecutionsInputBuilder,
 }
 impl ListClosedWorkflowExecutionsFluentBuilder {
     /// Creates a new `ListClosedWorkflowExecutions`.
@@ -52,7 +52,7 @@ impl ListClosedWorkflowExecutionsFluentBuilder {
         }
     }
     /// Access the ListClosedWorkflowExecutions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_closed_workflow_executions::builders::ListClosedWorkflowExecutionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_closed_workflow_executions::builders::ListClosedWorkflowExecutionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +64,7 @@ impl ListClosedWorkflowExecutionsFluentBuilder {
             crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +74,7 @@ impl ListClosedWorkflowExecutionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +83,7 @@ impl ListClosedWorkflowExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsError>,
     > {
         let op = self
             .inner
@@ -113,9 +106,7 @@ impl ListClosedWorkflowExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsError>,
     > {
         self.send_middleware().await
     }
@@ -129,16 +120,14 @@ impl ListClosedWorkflowExecutionsFluentBuilder {
             crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_closed_workflow_executions::paginator::ListClosedWorkflowExecutionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_closed_workflow_executions::paginator::ListClosedWorkflowExecutionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_closed_workflow_executions::paginator::ListClosedWorkflowExecutionsPaginator {
         crate::operation::list_closed_workflow_executions::paginator::ListClosedWorkflowExecutionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the domain that contains the workflow executions to list.</p>
@@ -165,19 +154,14 @@ impl ListClosedWorkflowExecutionsFluentBuilder {
     /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
     /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
-    pub fn set_start_time_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionTimeFilter>,
-    ) -> Self {
+    pub fn set_start_time_filter(mut self, input: ::std::option::Option<crate::types::ExecutionTimeFilter>) -> Self {
         self.inner = self.inner.set_start_time_filter(input);
         self
     }
     /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
     /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
-    pub fn get_start_time_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
+    pub fn get_start_time_filter(&self) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
         self.inner.get_start_time_filter()
     }
     /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
@@ -190,19 +174,14 @@ impl ListClosedWorkflowExecutionsFluentBuilder {
     /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
     /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
-    pub fn set_close_time_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionTimeFilter>,
-    ) -> Self {
+    pub fn set_close_time_filter(mut self, input: ::std::option::Option<crate::types::ExecutionTimeFilter>) -> Self {
         self.inner = self.inner.set_close_time_filter(input);
         self
     }
     /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
     /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
-    pub fn get_close_time_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
+    pub fn get_close_time_filter(&self) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
         self.inner.get_close_time_filter()
     }
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
@@ -215,19 +194,14 @@ impl ListClosedWorkflowExecutionsFluentBuilder {
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_execution_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecutionFilter>,
-    ) -> Self {
+    pub fn set_execution_filter(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionFilter>) -> Self {
         self.inner = self.inner.set_execution_filter(input);
         self
     }
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn get_execution_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {
+    pub fn get_execution_filter(&self) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {
         self.inner.get_execution_filter()
     }
     /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
@@ -240,19 +214,14 @@ impl ListClosedWorkflowExecutionsFluentBuilder {
     /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_close_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::CloseStatusFilter>,
-    ) -> Self {
+    pub fn set_close_status_filter(mut self, input: ::std::option::Option<crate::types::CloseStatusFilter>) -> Self {
         self.inner = self.inner.set_close_status_filter(input);
         self
     }
     /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn get_close_status_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloseStatusFilter> {
+    pub fn get_close_status_filter(&self) -> &::std::option::Option<crate::types::CloseStatusFilter> {
         self.inner.get_close_status_filter()
     }
     /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
@@ -265,10 +234,7 @@ impl ListClosedWorkflowExecutionsFluentBuilder {
     /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_type_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowTypeFilter>,
-    ) -> Self {
+    pub fn set_type_filter(mut self, input: ::std::option::Option<crate::types::WorkflowTypeFilter>) -> Self {
         self.inner = self.inner.set_type_filter(input);
         self
     }
@@ -300,19 +266,13 @@ impl ListClosedWorkflowExecutionsFluentBuilder {
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }

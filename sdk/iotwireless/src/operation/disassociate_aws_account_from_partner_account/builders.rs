@@ -5,16 +5,16 @@ pub use crate::operation::disassociate_aws_account_from_partner_account::_disass
 
 impl DisassociateAwsAccountFromPartnerAccountInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.disassociate_aws_account_from_partner_account();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DisassociateAwsAccountFromPartnerAccountInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateAwsAccountFromPartnerAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountInputBuilder,
+    inner: crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountInputBuilder,
 }
 impl DisassociateAwsAccountFromPartnerAccountFluentBuilder {
     /// Creates a new `DisassociateAwsAccountFromPartnerAccount`.
@@ -37,15 +37,24 @@ impl DisassociateAwsAccountFromPartnerAccountFluentBuilder {
         }
     }
     /// Access the DisassociateAwsAccountFromPartnerAccount as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccount, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccount,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl DisassociateAwsAccountFromPartnerAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +93,39 @@ impl DisassociateAwsAccountFromPartnerAccountFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccount, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccount,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The partner account ID to disassociate from the AWS account.</p>
-    pub fn partner_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.partner_account_id(input.into());
         self
     }
     /// <p>The partner account ID to disassociate from the AWS account.</p>
-    pub fn set_partner_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_partner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_partner_account_id(input);
         self
     }
@@ -120,10 +139,7 @@ impl DisassociateAwsAccountFromPartnerAccountFluentBuilder {
         self
     }
     /// <p>The partner type.</p>
-    pub fn set_partner_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PartnerType>,
-    ) -> Self {
+    pub fn set_partner_type(mut self, input: ::std::option::Option<crate::types::PartnerType>) -> Self {
         self.inner = self.inner.set_partner_type(input);
         self
     }

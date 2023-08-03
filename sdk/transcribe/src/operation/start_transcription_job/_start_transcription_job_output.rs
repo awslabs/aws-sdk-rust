@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartTranscriptionJobOutput {
 }
 impl StartTranscriptionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartTranscriptionJobOutput`](crate::operation::start_transcription_job::StartTranscriptionJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_transcription_job::builders::StartTranscriptionJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_transcription_job::builders::StartTranscriptionJobOutputBuilder {
         crate::operation::start_transcription_job::builders::StartTranscriptionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartTranscriptionJobOutput`](crate::operation::start_transcription_job::StartTranscriptionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTranscriptionJobOutputBuilder {
     pub(crate) transcription_job: ::std::option::Option<crate::types::TranscriptionJob>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl StartTranscriptionJobOutputBuilder {
         self
     }
     /// <p>Provides detailed information about the current transcription job, including job status and, if applicable, failure reason.</p>
-    pub fn set_transcription_job(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscriptionJob>,
-    ) -> Self {
+    pub fn set_transcription_job(mut self, input: ::std::option::Option<crate::types::TranscriptionJob>) -> Self {
         self.transcription_job = input;
         self
     }

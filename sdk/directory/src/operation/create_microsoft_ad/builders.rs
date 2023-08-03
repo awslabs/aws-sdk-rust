@@ -10,10 +10,7 @@ impl CreateMicrosoftAdInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_microsoft_ad::CreateMicrosoftAdOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_microsoft_ad::CreateMicrosoftADError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_microsoft_ad::CreateMicrosoftADError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_microsoft_ad();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateMicrosoftADFluentBuilder {
         }
     }
     /// Access the CreateMicrosoftAD as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_microsoft_ad::builders::CreateMicrosoftAdInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_microsoft_ad::builders::CreateMicrosoftAdInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateMicrosoftADFluentBuilder {
             crate::operation::create_microsoft_ad::CreateMicrosoftAD,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_microsoft_ad::CreateMicrosoftADError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_microsoft_ad::CreateMicrosoftADError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateMicrosoftADFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateMicrosoftADFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_microsoft_ad::CreateMicrosoftAdOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_microsoft_ad::CreateMicrosoftADError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_microsoft_ad::CreateMicrosoftADError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateMicrosoftADFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_microsoft_ad::CreateMicrosoftAdOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_microsoft_ad::CreateMicrosoftADError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_microsoft_ad::CreateMicrosoftADError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateMicrosoftADFluentBuilder {
             crate::operation::create_microsoft_ad::CreateMicrosoftAD,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_microsoft_ad::CreateMicrosoftADError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_microsoft_ad::CreateMicrosoftADError>,
     > {
         self.customize_middleware().await
     }
@@ -188,10 +172,7 @@ impl CreateMicrosoftADFluentBuilder {
         self
     }
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
-    pub fn set_vpc_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryVpcSettings>,
-    ) -> Self {
+    pub fn set_vpc_settings(mut self, input: ::std::option::Option<crate::types::DirectoryVpcSettings>) -> Self {
         self.inner = self.inner.set_vpc_settings(input);
         self
     }
@@ -205,10 +186,7 @@ impl CreateMicrosoftADFluentBuilder {
         self
     }
     /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
-    pub fn set_edition(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryEdition>,
-    ) -> Self {
+    pub fn set_edition(mut self, input: ::std::option::Option<crate::types::DirectoryEdition>) -> Self {
         self.inner = self.inner.set_edition(input);
         self
     }
@@ -226,10 +204,7 @@ impl CreateMicrosoftADFluentBuilder {
         self
     }
     /// <p>The tags to be assigned to the Managed Microsoft AD directory.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

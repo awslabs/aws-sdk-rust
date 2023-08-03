@@ -10,10 +10,7 @@ impl CreateBotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_bot::CreateBotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_bot::CreateBotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bot::CreateBotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_bot();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateBotFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_bot::CreateBot,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_bot::CreateBot, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_bot::CreateBotError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateBotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateBotFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_bot::CreateBot,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_bot::CreateBot, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_bot::CreateBotError>,
     > {
         self.customize_middleware().await
@@ -160,10 +148,7 @@ impl CreateBotFluentBuilder {
         self
     }
     /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
-    pub fn set_data_privacy(
-        mut self,
-        input: ::std::option::Option<crate::types::DataPrivacy>,
-    ) -> Self {
+    pub fn set_data_privacy(mut self, input: ::std::option::Option<crate::types::DataPrivacy>) -> Self {
         self.inner = self.inner.set_data_privacy(input);
         self
     }
@@ -196,30 +181,17 @@ impl CreateBotFluentBuilder {
     /// To override the contents of this collection use [`set_bot_tags`](Self::set_bot_tags).
     ///
     /// <p>A list of tags to add to the bot. You can only add tags when you create a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn bot_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_tags(k.into(), v.into());
         self
     }
     /// <p>A list of tags to add to the bot. You can only add tags when you create a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn set_bot_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_bot_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_bot_tags(input);
         self
     }
     /// <p>A list of tags to add to the bot. You can only add tags when you create a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn get_bot_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_bot_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_bot_tags()
     }
     /// Adds a key-value pair to `testBotAliasTags`.
@@ -238,19 +210,13 @@ impl CreateBotFluentBuilder {
     /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you create a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
     pub fn set_test_bot_alias_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_test_bot_alias_tags(input);
         self
     }
     /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you create a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
-    pub fn get_test_bot_alias_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_test_bot_alias_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_test_bot_alias_tags()
     }
     /// <p>The type of a bot to create.</p>
@@ -277,17 +243,12 @@ impl CreateBotFluentBuilder {
         self
     }
     /// <p>The list of bot members in a network to be created.</p>
-    pub fn set_bot_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
-    ) -> Self {
+    pub fn set_bot_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>) -> Self {
         self.inner = self.inner.set_bot_members(input);
         self
     }
     /// <p>The list of bot members in a network to be created.</p>
-    pub fn get_bot_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
+    pub fn get_bot_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
         self.inner.get_bot_members()
     }
 }

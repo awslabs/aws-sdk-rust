@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     ///   - [`version(Option<String>)`](crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionOutput::version): The version of the subscription definition version.
     /// - On failure, responds with [`SdkError<GetSubscriptionDefinitionVersionError>`](crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionError)
-    pub fn get_subscription_definition_version(&self) -> crate::operation::get_subscription_definition_version::builders::GetSubscriptionDefinitionVersionFluentBuilder{
+    pub fn get_subscription_definition_version(
+        &self,
+    ) -> crate::operation::get_subscription_definition_version::builders::GetSubscriptionDefinitionVersionFluentBuilder {
         crate::operation::get_subscription_definition_version::builders::GetSubscriptionDefinitionVersionFluentBuilder::new(self.handle.clone())
     }
 }

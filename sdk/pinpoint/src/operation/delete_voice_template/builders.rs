@@ -37,9 +37,7 @@ impl DeleteVoiceTemplateFluentBuilder {
         }
     }
     /// Access the DeleteVoiceTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_voice_template::builders::DeleteVoiceTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_voice_template::builders::DeleteVoiceTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteVoiceTemplateFluentBuilder {
             crate::operation::delete_voice_template::DeleteVoiceTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_voice_template::DeleteVoiceTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_voice_template::DeleteVoiceTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteVoiceTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteVoiceTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_voice_template::DeleteVoiceTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_voice_template::DeleteVoiceTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_voice_template::DeleteVoiceTemplateError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteVoiceTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_voice_template::DeleteVoiceTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_voice_template::DeleteVoiceTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_voice_template::DeleteVoiceTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteVoiceTemplateFluentBuilder {
             crate::operation::delete_voice_template::DeleteVoiceTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_voice_template::DeleteVoiceTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_voice_template::DeleteVoiceTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }

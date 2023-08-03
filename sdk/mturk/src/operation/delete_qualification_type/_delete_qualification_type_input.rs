@@ -15,35 +15,25 @@ impl DeleteQualificationTypeInput {
 }
 impl DeleteQualificationTypeInput {
     /// Creates a new builder-style object to manufacture [`DeleteQualificationTypeInput`](crate::operation::delete_qualification_type::DeleteQualificationTypeInput).
-    pub fn builder(
-    ) -> crate::operation::delete_qualification_type::builders::DeleteQualificationTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_qualification_type::builders::DeleteQualificationTypeInputBuilder {
         crate::operation::delete_qualification_type::builders::DeleteQualificationTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteQualificationTypeInput`](crate::operation::delete_qualification_type::DeleteQualificationTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteQualificationTypeInputBuilder {
     pub(crate) qualification_type_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteQualificationTypeInputBuilder {
     /// <p>The ID of the QualificationType to dispose.</p>
-    pub fn qualification_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the QualificationType to dispose.</p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qualification_type_id = input;
         self
     }
@@ -58,10 +48,8 @@ impl DeleteQualificationTypeInputBuilder {
         crate::operation::delete_qualification_type::DeleteQualificationTypeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_qualification_type::DeleteQualificationTypeInput {
-                qualification_type_id: self.qualification_type_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_qualification_type::DeleteQualificationTypeInput {
+            qualification_type_id: self.qualification_type_id,
+        })
     }
 }

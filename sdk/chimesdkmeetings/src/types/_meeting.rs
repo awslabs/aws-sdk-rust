@@ -60,9 +60,7 @@ impl Meeting {
         self.media_placement.as_ref()
     }
     /// <p>The features available to a meeting, such as echo reduction.</p>
-    pub fn meeting_features(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MeetingFeaturesConfiguration> {
+    pub fn meeting_features(&self) -> ::std::option::Option<&crate::types::MeetingFeaturesConfiguration> {
         self.meeting_features.as_ref()
     }
     /// <p>When specified, replicates the media from the primary meeting to this meeting.</p>
@@ -130,18 +128,12 @@ impl MeetingBuilder {
         &self.meeting_id
     }
     /// <p>Reserved.</p>
-    pub fn meeting_host_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn meeting_host_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_host_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved.</p>
-    pub fn set_meeting_host_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_meeting_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.meeting_host_id = input;
         self
     }
@@ -152,20 +144,14 @@ impl MeetingBuilder {
     /// <p>The external meeting ID.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
-    pub fn external_meeting_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_meeting_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The external meeting ID.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
-    pub fn set_external_meeting_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_meeting_id = input;
         self
     }
@@ -198,10 +184,7 @@ impl MeetingBuilder {
         self
     }
     /// <p>The media placement for the meeting.</p>
-    pub fn set_media_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaPlacement>,
-    ) -> Self {
+    pub fn set_media_placement(mut self, input: ::std::option::Option<crate::types::MediaPlacement>) -> Self {
         self.media_placement = input;
         self
     }
@@ -215,32 +198,21 @@ impl MeetingBuilder {
         self
     }
     /// <p>The features available to a meeting, such as echo reduction.</p>
-    pub fn set_meeting_features(
-        mut self,
-        input: ::std::option::Option<crate::types::MeetingFeaturesConfiguration>,
-    ) -> Self {
+    pub fn set_meeting_features(mut self, input: ::std::option::Option<crate::types::MeetingFeaturesConfiguration>) -> Self {
         self.meeting_features = input;
         self
     }
     /// <p>The features available to a meeting, such as echo reduction.</p>
-    pub fn get_meeting_features(
-        &self,
-    ) -> &::std::option::Option<crate::types::MeetingFeaturesConfiguration> {
+    pub fn get_meeting_features(&self) -> &::std::option::Option<crate::types::MeetingFeaturesConfiguration> {
         &self.meeting_features
     }
     /// <p>When specified, replicates the media from the primary meeting to this meeting.</p>
-    pub fn primary_meeting_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_meeting_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When specified, replicates the media from the primary meeting to this meeting.</p>
-    pub fn set_primary_meeting_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_meeting_id = input;
         self
     }
@@ -260,10 +232,7 @@ impl MeetingBuilder {
         self
     }
     /// <p>Array of strings.</p>
-    pub fn set_tenant_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tenant_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tenant_ids = input;
         self
     }

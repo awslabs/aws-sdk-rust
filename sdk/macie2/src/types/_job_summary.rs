@@ -9,8 +9,7 @@ pub struct JobSummary {
     pub bucket_criteria: ::std::option::Option<crate::types::S3BucketCriteriaForJob>,
     /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
     #[doc(hidden)]
-    pub bucket_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::S3BucketDefinitionForJob>>,
+    pub bucket_definitions: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketDefinitionForJob>>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
     #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -51,9 +50,7 @@ impl JobSummary {
         self.bucket_criteria.as_ref()
     }
     /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
-    pub fn bucket_definitions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::S3BucketDefinitionForJob]> {
+    pub fn bucket_definitions(&self) -> ::std::option::Option<&[crate::types::S3BucketDefinitionForJob]> {
         self.bucket_definitions.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
@@ -85,9 +82,7 @@ impl JobSummary {
         self.job_type.as_ref()
     }
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
-    pub fn last_run_error_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LastRunErrorStatus> {
+    pub fn last_run_error_status(&self) -> ::std::option::Option<&crate::types::LastRunErrorStatus> {
         self.last_run_error_status.as_ref()
     }
     /// <p>The custom name of the job.</p>
@@ -108,13 +103,10 @@ impl JobSummary {
 
 /// A builder for [`JobSummary`](crate::types::JobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobSummaryBuilder {
     pub(crate) bucket_criteria: ::std::option::Option<crate::types::S3BucketCriteriaForJob>,
-    pub(crate) bucket_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::S3BucketDefinitionForJob>>,
+    pub(crate) bucket_definitions: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketDefinitionForJob>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
@@ -130,17 +122,12 @@ impl JobSummaryBuilder {
         self
     }
     /// <p>The property- and tag-based conditions that determine which S3 buckets are included or excluded from the job's analysis. Each time the job runs, the job uses these criteria to determine which buckets to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
-    pub fn set_bucket_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::S3BucketCriteriaForJob>,
-    ) -> Self {
+    pub fn set_bucket_criteria(mut self, input: ::std::option::Option<crate::types::S3BucketCriteriaForJob>) -> Self {
         self.bucket_criteria = input;
         self
     }
     /// <p>The property- and tag-based conditions that determine which S3 buckets are included or excluded from the job's analysis. Each time the job runs, the job uses these criteria to determine which buckets to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
-    pub fn get_bucket_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3BucketCriteriaForJob> {
+    pub fn get_bucket_criteria(&self) -> &::std::option::Option<crate::types::S3BucketCriteriaForJob> {
         &self.bucket_criteria
     }
     /// Appends an item to `bucket_definitions`.
@@ -155,17 +142,12 @@ impl JobSummaryBuilder {
         self
     }
     /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
-    pub fn set_bucket_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketDefinitionForJob>>,
-    ) -> Self {
+    pub fn set_bucket_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketDefinitionForJob>>) -> Self {
         self.bucket_definitions = input;
         self
     }
     /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
-    pub fn get_bucket_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3BucketDefinitionForJob>> {
+    pub fn get_bucket_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3BucketDefinitionForJob>> {
         &self.bucket_definitions
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
@@ -174,10 +156,7 @@ impl JobSummaryBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -269,17 +248,12 @@ impl JobSummaryBuilder {
         self
     }
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
-    pub fn set_last_run_error_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LastRunErrorStatus>,
-    ) -> Self {
+    pub fn set_last_run_error_status(mut self, input: ::std::option::Option<crate::types::LastRunErrorStatus>) -> Self {
         self.last_run_error_status = input;
         self
     }
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
-    pub fn get_last_run_error_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::LastRunErrorStatus> {
+    pub fn get_last_run_error_status(&self) -> &::std::option::Option<crate::types::LastRunErrorStatus> {
         &self.last_run_error_status
     }
     /// <p>The custom name of the job.</p>
@@ -302,17 +276,12 @@ impl JobSummaryBuilder {
         self
     }
     /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
-    pub fn set_user_paused_details(
-        mut self,
-        input: ::std::option::Option<crate::types::UserPausedDetails>,
-    ) -> Self {
+    pub fn set_user_paused_details(mut self, input: ::std::option::Option<crate::types::UserPausedDetails>) -> Self {
         self.user_paused_details = input;
         self
     }
     /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
-    pub fn get_user_paused_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::UserPausedDetails> {
+    pub fn get_user_paused_details(&self) -> &::std::option::Option<crate::types::UserPausedDetails> {
         &self.user_paused_details
     }
     /// Consumes the builder and constructs a [`JobSummary`](crate::types::JobSummary).

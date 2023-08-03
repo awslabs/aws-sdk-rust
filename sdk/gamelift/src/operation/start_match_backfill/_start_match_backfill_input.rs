@@ -46,17 +46,14 @@ impl StartMatchBackfillInput {
 }
 impl StartMatchBackfillInput {
     /// Creates a new builder-style object to manufacture [`StartMatchBackfillInput`](crate::operation::start_match_backfill::StartMatchBackfillInput).
-    pub fn builder(
-    ) -> crate::operation::start_match_backfill::builders::StartMatchBackfillInputBuilder {
+    pub fn builder() -> crate::operation::start_match_backfill::builders::StartMatchBackfillInputBuilder {
         crate::operation::start_match_backfill::builders::StartMatchBackfillInputBuilder::default()
     }
 }
 
 /// A builder for [`StartMatchBackfillInput`](crate::operation::start_match_backfill::StartMatchBackfillInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMatchBackfillInputBuilder {
     pub(crate) ticket_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
@@ -79,18 +76,12 @@ impl StartMatchBackfillInputBuilder {
         &self.ticket_id
     }
     /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
-    pub fn configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
-    pub fn set_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_name = input;
         self
     }
@@ -99,18 +90,12 @@ impl StartMatchBackfillInputBuilder {
         &self.configuration_name
     }
     /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking solution, this parameter is not needed. </p>
-    pub fn game_session_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking solution, this parameter is not needed. </p>
-    pub fn set_game_session_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_arn = input;
         self
     }
@@ -140,10 +125,7 @@ impl StartMatchBackfillInputBuilder {
     /// <li> <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code> object, <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The matchmaker data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match Data</a>. </p> <p>The backfill request must specify the team membership for every player. Do not specify team if you are not using backfill.</p> </li>
     /// <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p> </li>
     /// </ul>
-    pub fn set_players(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Player>>,
-    ) -> Self {
+    pub fn set_players(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Player>>) -> Self {
         self.players = input;
         self
     }
@@ -159,17 +141,12 @@ impl StartMatchBackfillInputBuilder {
     /// Consumes the builder and constructs a [`StartMatchBackfillInput`](crate::operation::start_match_backfill::StartMatchBackfillInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_match_backfill::StartMatchBackfillInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_match_backfill::StartMatchBackfillInput {
-                ticket_id: self.ticket_id,
-                configuration_name: self.configuration_name,
-                game_session_arn: self.game_session_arn,
-                players: self.players,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_match_backfill::StartMatchBackfillInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_match_backfill::StartMatchBackfillInput {
+            ticket_id: self.ticket_id,
+            configuration_name: self.configuration_name,
+            game_session_arn: self.game_session_arn,
+            players: self.players,
+        })
     }
 }

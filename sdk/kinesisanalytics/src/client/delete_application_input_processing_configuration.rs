@@ -8,7 +8,12 @@ impl super::Client {
     ///   - [`input_id(impl ::std::convert::Into<String>)`](crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationFluentBuilder::input_id) / [`set_input_id(Option<String>)`](crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationFluentBuilder::set_input_id): <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
     /// - On success, responds with [`DeleteApplicationInputProcessingConfigurationOutput`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationInputProcessingConfigurationError>`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationError)
-    pub fn delete_application_input_processing_configuration(&self) -> crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationFluentBuilder{
-        crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn delete_application_input_processing_configuration(
+        &self,
+    ) -> crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationFluentBuilder
+    {
+        crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

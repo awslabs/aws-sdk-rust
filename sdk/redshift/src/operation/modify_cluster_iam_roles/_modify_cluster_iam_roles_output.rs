@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyClusterIamRolesOutput {
 }
 impl ModifyClusterIamRolesOutput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterIamRolesOutput`](crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_cluster_iam_roles::builders::ModifyClusterIamRolesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_cluster_iam_roles::builders::ModifyClusterIamRolesOutputBuilder {
         crate::operation::modify_cluster_iam_roles::builders::ModifyClusterIamRolesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyClusterIamRolesOutput`](crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyClusterIamRolesOutputBuilder {
     pub(crate) cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,

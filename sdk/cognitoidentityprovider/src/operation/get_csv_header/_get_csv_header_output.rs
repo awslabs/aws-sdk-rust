@@ -36,9 +36,7 @@ impl GetCsvHeaderOutput {
 
 /// A builder for [`GetCsvHeaderOutput`](crate::operation::get_csv_header::GetCsvHeaderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCsvHeaderOutputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) csv_header: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -71,10 +69,7 @@ impl GetCsvHeaderOutputBuilder {
         self
     }
     /// <p>The header information of the CSV file for the user import job.</p>
-    pub fn set_csv_header(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_csv_header(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.csv_header = input;
         self
     }

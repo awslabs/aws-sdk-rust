@@ -45,9 +45,7 @@ impl ConfusionMatrix {
 
 /// A builder for [`ConfusionMatrix`](crate::types::ConfusionMatrix).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfusionMatrixBuilder {
     pub(crate) num_true_positives: ::std::option::Option<i64>,
     pub(crate) num_false_positives: ::std::option::Option<i64>,

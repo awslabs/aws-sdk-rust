@@ -29,18 +29,14 @@ impl DescribeImportTasksInput {
 }
 impl DescribeImportTasksInput {
     /// Creates a new builder-style object to manufacture [`DescribeImportTasksInput`](crate::operation::describe_import_tasks::DescribeImportTasksInput).
-    pub fn builder(
-    ) -> crate::operation::describe_import_tasks::builders::DescribeImportTasksInputBuilder {
-        crate::operation::describe_import_tasks::builders::DescribeImportTasksInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_import_tasks::builders::DescribeImportTasksInputBuilder {
+        crate::operation::describe_import_tasks::builders::DescribeImportTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImportTasksInput`](crate::operation::describe_import_tasks::DescribeImportTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImportTasksInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ImportTaskFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -59,17 +55,12 @@ impl DescribeImportTasksInputBuilder {
         self
     }
     /// <p>An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard values aren't supported for filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportTaskFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportTaskFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard values aren't supported for filters.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportTaskFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportTaskFilter>> {
         &self.filters
     }
     /// <p>The maximum number of results that you want this request to return, up to 100.</p>
@@ -103,16 +94,12 @@ impl DescribeImportTasksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeImportTasksInput`](crate::operation::describe_import_tasks::DescribeImportTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_import_tasks::DescribeImportTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_import_tasks::DescribeImportTasksInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_import_tasks::DescribeImportTasksInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_import_tasks::DescribeImportTasksInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

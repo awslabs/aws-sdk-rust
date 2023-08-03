@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`force_stop(bool)`](crate::operation::stop_application::builders::StopApplicationFluentBuilder::force_stop) / [`set_force_stop(bool)`](crate::operation::stop_application::builders::StopApplicationFluentBuilder::set_force_stop): <p>Stopping an application process can take a long time. Setting this parameter to true lets you force stop the application so you don't need to wait until the process finishes to apply another action on the application. The default value is false.</p>
     /// - On success, responds with [`StopApplicationOutput`](crate::operation::stop_application::StopApplicationOutput)
     /// - On failure, responds with [`SdkError<StopApplicationError>`](crate::operation::stop_application::StopApplicationError)
-    pub fn stop_application(
-        &self,
-    ) -> crate::operation::stop_application::builders::StopApplicationFluentBuilder {
-        crate::operation::stop_application::builders::StopApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_application(&self) -> crate::operation::stop_application::builders::StopApplicationFluentBuilder {
+        crate::operation::stop_application::builders::StopApplicationFluentBuilder::new(self.handle.clone())
     }
 }

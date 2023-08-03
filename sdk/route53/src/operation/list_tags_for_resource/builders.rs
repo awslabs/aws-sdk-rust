@@ -38,9 +38,7 @@ impl ListTagsForResourceFluentBuilder {
         }
     }
     /// Access the ListTagsForResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ListTagsForResourceFluentBuilder {
             crate::operation::list_tags_for_resource::ListTagsForResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ListTagsForResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ListTagsForResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ListTagsForResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl ListTagsForResourceFluentBuilder {
             crate::operation::list_tags_for_resource::ListTagsForResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError>,
     > {
         self.customize_middleware().await
     }
@@ -137,10 +124,7 @@ impl ListTagsForResourceFluentBuilder {
     /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
     /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TagResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TagResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

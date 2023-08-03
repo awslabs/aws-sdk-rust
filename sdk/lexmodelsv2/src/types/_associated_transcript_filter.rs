@@ -30,9 +30,7 @@ impl AssociatedTranscriptFilter {
 
 /// A builder for [`AssociatedTranscriptFilter`](crate::types::AssociatedTranscriptFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociatedTranscriptFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AssociatedTranscriptFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl AssociatedTranscriptFilterBuilder {
         self
     }
     /// <p>The name of the field to use for filtering. The allowed names are IntentId and SlotTypeId.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociatedTranscriptFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AssociatedTranscriptFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -67,10 +62,7 @@ impl AssociatedTranscriptFilterBuilder {
         self
     }
     /// <p>The values to use to filter the transcript.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

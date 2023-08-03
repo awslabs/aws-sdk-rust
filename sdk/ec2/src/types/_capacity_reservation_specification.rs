@@ -11,8 +11,7 @@ pub struct CapacityReservationSpecification {
     /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub capacity_reservation_preference:
-        ::std::option::Option<crate::types::CapacityReservationPreference>,
+    pub capacity_reservation_preference: ::std::option::Option<crate::types::CapacityReservationPreference>,
     /// <p>Information about the target Capacity Reservation or Capacity Reservation group.</p>
     #[doc(hidden)]
     pub capacity_reservation_target: ::std::option::Option<crate::types::CapacityReservationTarget>,
@@ -23,15 +22,11 @@ impl CapacityReservationSpecification {
     /// <li> <p> <code>open</code> - The instance can run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li>
     /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p> </li>
     /// </ul>
-    pub fn capacity_reservation_preference(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacityReservationPreference> {
+    pub fn capacity_reservation_preference(&self) -> ::std::option::Option<&crate::types::CapacityReservationPreference> {
         self.capacity_reservation_preference.as_ref()
     }
     /// <p>Information about the target Capacity Reservation or Capacity Reservation group.</p>
-    pub fn capacity_reservation_target(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacityReservationTarget> {
+    pub fn capacity_reservation_target(&self) -> ::std::option::Option<&crate::types::CapacityReservationTarget> {
         self.capacity_reservation_target.as_ref()
     }
 }
@@ -44,14 +39,10 @@ impl CapacityReservationSpecification {
 
 /// A builder for [`CapacityReservationSpecification`](crate::types::CapacityReservationSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacityReservationSpecificationBuilder {
-    pub(crate) capacity_reservation_preference:
-        ::std::option::Option<crate::types::CapacityReservationPreference>,
-    pub(crate) capacity_reservation_target:
-        ::std::option::Option<crate::types::CapacityReservationTarget>,
+    pub(crate) capacity_reservation_preference: ::std::option::Option<crate::types::CapacityReservationPreference>,
+    pub(crate) capacity_reservation_target: ::std::option::Option<crate::types::CapacityReservationTarget>,
 }
 impl CapacityReservationSpecificationBuilder {
     /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
@@ -59,10 +50,7 @@ impl CapacityReservationSpecificationBuilder {
     /// <li> <p> <code>open</code> - The instance can run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li>
     /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p> </li>
     /// </ul>
-    pub fn capacity_reservation_preference(
-        mut self,
-        input: crate::types::CapacityReservationPreference,
-    ) -> Self {
+    pub fn capacity_reservation_preference(mut self, input: crate::types::CapacityReservationPreference) -> Self {
         self.capacity_reservation_preference = ::std::option::Option::Some(input);
         self
     }
@@ -71,10 +59,7 @@ impl CapacityReservationSpecificationBuilder {
     /// <li> <p> <code>open</code> - The instance can run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li>
     /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p> </li>
     /// </ul>
-    pub fn set_capacity_reservation_preference(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservationPreference>,
-    ) -> Self {
+    pub fn set_capacity_reservation_preference(mut self, input: ::std::option::Option<crate::types::CapacityReservationPreference>) -> Self {
         self.capacity_reservation_preference = input;
         self
     }
@@ -83,31 +68,21 @@ impl CapacityReservationSpecificationBuilder {
     /// <li> <p> <code>open</code> - The instance can run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li>
     /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p> </li>
     /// </ul>
-    pub fn get_capacity_reservation_preference(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityReservationPreference> {
+    pub fn get_capacity_reservation_preference(&self) -> &::std::option::Option<crate::types::CapacityReservationPreference> {
         &self.capacity_reservation_preference
     }
     /// <p>Information about the target Capacity Reservation or Capacity Reservation group.</p>
-    pub fn capacity_reservation_target(
-        mut self,
-        input: crate::types::CapacityReservationTarget,
-    ) -> Self {
+    pub fn capacity_reservation_target(mut self, input: crate::types::CapacityReservationTarget) -> Self {
         self.capacity_reservation_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the target Capacity Reservation or Capacity Reservation group.</p>
-    pub fn set_capacity_reservation_target(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservationTarget>,
-    ) -> Self {
+    pub fn set_capacity_reservation_target(mut self, input: ::std::option::Option<crate::types::CapacityReservationTarget>) -> Self {
         self.capacity_reservation_target = input;
         self
     }
     /// <p>Information about the target Capacity Reservation or Capacity Reservation group.</p>
-    pub fn get_capacity_reservation_target(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityReservationTarget> {
+    pub fn get_capacity_reservation_target(&self) -> &::std::option::Option<crate::types::CapacityReservationTarget> {
         &self.capacity_reservation_target
     }
     /// Consumes the builder and constructs a [`CapacityReservationSpecification`](crate::types::CapacityReservationSpecification).

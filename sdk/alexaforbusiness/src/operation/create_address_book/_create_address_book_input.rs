@@ -36,17 +36,14 @@ impl CreateAddressBookInput {
 }
 impl CreateAddressBookInput {
     /// Creates a new builder-style object to manufacture [`CreateAddressBookInput`](crate::operation::create_address_book::CreateAddressBookInput).
-    pub fn builder(
-    ) -> crate::operation::create_address_book::builders::CreateAddressBookInputBuilder {
+    pub fn builder() -> crate::operation::create_address_book::builders::CreateAddressBookInputBuilder {
         crate::operation::create_address_book::builders::CreateAddressBookInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAddressBookInput`](crate::operation::create_address_book::CreateAddressBookInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAddressBookInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -83,18 +80,12 @@ impl CreateAddressBookInputBuilder {
         &self.description
     }
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -114,10 +105,7 @@ impl CreateAddressBookInputBuilder {
         self
     }
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -128,17 +116,12 @@ impl CreateAddressBookInputBuilder {
     /// Consumes the builder and constructs a [`CreateAddressBookInput`](crate::operation::create_address_book::CreateAddressBookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_address_book::CreateAddressBookInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_address_book::CreateAddressBookInput {
-                name: self.name,
-                description: self.description,
-                client_request_token: self.client_request_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_address_book::CreateAddressBookInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_address_book::CreateAddressBookInput {
+            name: self.name,
+            description: self.description,
+            client_request_token: self.client_request_token,
+            tags: self.tags,
+        })
     }
 }

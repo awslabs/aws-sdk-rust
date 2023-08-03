@@ -22,17 +22,14 @@ impl DescribeAddressesInput {
 }
 impl DescribeAddressesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAddressesInput`](crate::operation::describe_addresses::DescribeAddressesInput).
-    pub fn builder() -> crate::operation::describe_addresses::builders::DescribeAddressesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_addresses::builders::DescribeAddressesInputBuilder {
         crate::operation::describe_addresses::builders::DescribeAddressesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAddressesInput`](crate::operation::describe_addresses::DescribeAddressesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddressesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl DescribeAddressesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAddressesInput`](crate::operation::describe_addresses::DescribeAddressesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_addresses::DescribeAddressesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_addresses::DescribeAddressesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_addresses::DescribeAddressesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_addresses::DescribeAddressesInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -43,9 +43,7 @@ impl ListRecipesInput {
 
 /// A builder for [`ListRecipesInput`](crate::operation::list_recipes::ListRecipesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecipesInputBuilder {
     pub(crate) recipe_provider: ::std::option::Option<crate::types::RecipeProvider>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,10 +57,7 @@ impl ListRecipesInputBuilder {
         self
     }
     /// <p>The default is <code>SERVICE</code>.</p>
-    pub fn set_recipe_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RecipeProvider>,
-    ) -> Self {
+    pub fn set_recipe_provider(mut self, input: ::std::option::Option<crate::types::RecipeProvider>) -> Self {
         self.recipe_provider = input;
         self
     }
@@ -113,12 +108,7 @@ impl ListRecipesInputBuilder {
         &self.domain
     }
     /// Consumes the builder and constructs a [`ListRecipesInput`](crate::operation::list_recipes::ListRecipesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_recipes::ListRecipesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_recipes::ListRecipesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_recipes::ListRecipesInput {
             recipe_provider: self.recipe_provider,
             next_token: self.next_token,

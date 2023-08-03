@@ -23,9 +23,7 @@ impl ProtectionGroupArbitraryPatternLimits {
 
 /// A builder for [`ProtectionGroupArbitraryPatternLimits`](crate::types::ProtectionGroupArbitraryPatternLimits).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtectionGroupArbitraryPatternLimitsBuilder {
     pub(crate) max_members: ::std::option::Option<i64>,
 }

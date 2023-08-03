@@ -22,9 +22,7 @@ pub struct UpdateDataCatalogInput {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateDataCatalogInput {
     /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
@@ -48,34 +46,25 @@ impl UpdateDataCatalogInput {
     /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
 }
 impl UpdateDataCatalogInput {
     /// Creates a new builder-style object to manufacture [`UpdateDataCatalogInput`](crate::operation::update_data_catalog::UpdateDataCatalogInput).
-    pub fn builder(
-    ) -> crate::operation::update_data_catalog::builders::UpdateDataCatalogInputBuilder {
+    pub fn builder() -> crate::operation::update_data_catalog::builders::UpdateDataCatalogInputBuilder {
         crate::operation::update_data_catalog::builders::UpdateDataCatalogInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDataCatalogInput`](crate::operation::update_data_catalog::UpdateDataCatalogInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDataCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::DataCatalogType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateDataCatalogInputBuilder {
     /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
@@ -133,11 +122,7 @@ impl UpdateDataCatalogInputBuilder {
     /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parameters = ::std::option::Option::Some(hash_map);
@@ -152,12 +137,7 @@ impl UpdateDataCatalogInputBuilder {
     /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
     }
@@ -170,27 +150,18 @@ impl UpdateDataCatalogInputBuilder {
     /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`UpdateDataCatalogInput`](crate::operation::update_data_catalog::UpdateDataCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_data_catalog::UpdateDataCatalogInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_data_catalog::UpdateDataCatalogInput {
-                name: self.name,
-                r#type: self.r#type,
-                description: self.description,
-                parameters: self.parameters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_data_catalog::UpdateDataCatalogInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_data_catalog::UpdateDataCatalogInput {
+            name: self.name,
+            r#type: self.r#type,
+            description: self.description,
+            parameters: self.parameters,
+        })
     }
 }

@@ -26,9 +26,7 @@ pub struct PutManagedRuleSetVersionsInput {
     pub recommended_version: ::std::option::Option<::std::string::String>,
     /// <p>The versions of the named managed rule group that you want to offer to your customers. </p>
     #[doc(hidden)]
-    pub versions_to_publish: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>,
-    >,
+    pub versions_to_publish: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>>,
 }
 impl PutManagedRuleSetVersionsInput {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
@@ -58,35 +56,27 @@ impl PutManagedRuleSetVersionsInput {
         self.recommended_version.as_deref()
     }
     /// <p>The versions of the named managed rule group that you want to offer to your customers. </p>
-    pub fn versions_to_publish(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>,
-    > {
+    pub fn versions_to_publish(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>> {
         self.versions_to_publish.as_ref()
     }
 }
 impl PutManagedRuleSetVersionsInput {
     /// Creates a new builder-style object to manufacture [`PutManagedRuleSetVersionsInput`](crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsInput).
-    pub fn builder() -> crate::operation::put_managed_rule_set_versions::builders::PutManagedRuleSetVersionsInputBuilder{
+    pub fn builder() -> crate::operation::put_managed_rule_set_versions::builders::PutManagedRuleSetVersionsInputBuilder {
         crate::operation::put_managed_rule_set_versions::builders::PutManagedRuleSetVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutManagedRuleSetVersionsInput`](crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutManagedRuleSetVersionsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) lock_token: ::std::option::Option<::std::string::String>,
     pub(crate) recommended_version: ::std::option::Option<::std::string::String>,
-    pub(crate) versions_to_publish: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>,
-    >,
+    pub(crate) versions_to_publish: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>>,
 }
 impl PutManagedRuleSetVersionsInputBuilder {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
@@ -164,18 +154,12 @@ impl PutManagedRuleSetVersionsInputBuilder {
         &self.lock_token
     }
     /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings. </p>
-    pub fn recommended_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommended_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommended_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings. </p>
-    pub fn set_recommended_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommended_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommended_version = input;
         self
     }
@@ -188,11 +172,7 @@ impl PutManagedRuleSetVersionsInputBuilder {
     /// To override the contents of this collection use [`set_versions_to_publish`](Self::set_versions_to_publish).
     ///
     /// <p>The versions of the named managed rule group that you want to offer to your customers. </p>
-    pub fn versions_to_publish(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::VersionToPublish,
-    ) -> Self {
+    pub fn versions_to_publish(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::VersionToPublish) -> Self {
         let mut hash_map = self.versions_to_publish.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.versions_to_publish = ::std::option::Option::Some(hash_map);
@@ -201,9 +181,7 @@ impl PutManagedRuleSetVersionsInputBuilder {
     /// <p>The versions of the named managed rule group that you want to offer to your customers. </p>
     pub fn set_versions_to_publish(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>>,
     ) -> Self {
         self.versions_to_publish = input;
         self
@@ -211,9 +189,7 @@ impl PutManagedRuleSetVersionsInputBuilder {
     /// <p>The versions of the named managed rule group that you want to offer to your customers. </p>
     pub fn get_versions_to_publish(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>> {
         &self.versions_to_publish
     }
     /// Consumes the builder and constructs a [`PutManagedRuleSetVersionsInput`](crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsInput).
@@ -223,15 +199,13 @@ impl PutManagedRuleSetVersionsInputBuilder {
         crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsInput {
-                name: self.name,
-                scope: self.scope,
-                id: self.id,
-                lock_token: self.lock_token,
-                recommended_version: self.recommended_version,
-                versions_to_publish: self.versions_to_publish,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsInput {
+            name: self.name,
+            scope: self.scope,
+            id: self.id,
+            lock_token: self.lock_token,
+            recommended_version: self.recommended_version,
+            versions_to_publish: self.versions_to_publish,
+        })
     }
 }

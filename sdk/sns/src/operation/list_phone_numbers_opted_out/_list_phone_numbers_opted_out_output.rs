@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for ListPhoneNumbersOptedOutOutput {
 }
 impl ListPhoneNumbersOptedOutOutput {
     /// Creates a new builder-style object to manufacture [`ListPhoneNumbersOptedOutOutput`](crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutOutput).
-    pub fn builder() -> crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutOutputBuilder{
+    pub fn builder() -> crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutOutputBuilder {
         crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPhoneNumbersOptedOutOutput`](crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPhoneNumbersOptedOutOutputBuilder {
     pub(crate) phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,27 +48,19 @@ impl ListPhoneNumbersOptedOutOutputBuilder {
     /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
     ///
     /// <p>A list of phone numbers that are opted out of receiving SMS messages. The list is paginated, and each page can contain up to 100 phone numbers.</p>
-    pub fn phone_numbers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_numbers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.phone_numbers.unwrap_or_default();
         v.push(input.into());
         self.phone_numbers = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of phone numbers that are opted out of receiving SMS messages. The list is paginated, and each page can contain up to 100 phone numbers.</p>
-    pub fn set_phone_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.phone_numbers = input;
         self
     }
     /// <p>A list of phone numbers that are opted out of receiving SMS messages. The list is paginated, and each page can contain up to 100 phone numbers.</p>
-    pub fn get_phone_numbers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.phone_numbers
     }
     /// <p>A <code>NextToken</code> string is returned when you call the <code>ListPhoneNumbersOptedOut</code> action if additional records are available after the first page of results.</p>
@@ -97,9 +87,7 @@ impl ListPhoneNumbersOptedOutOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPhoneNumbersOptedOutOutput`](crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutOutput {
+    pub fn build(self) -> crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutOutput {
         crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutOutput {
             phone_numbers: self.phone_numbers,
             next_token: self.next_token,

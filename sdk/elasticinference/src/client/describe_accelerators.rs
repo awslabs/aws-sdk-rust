@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`accelerator_set(Option<Vec<ElasticInferenceAccelerator>>)`](crate::operation::describe_accelerators::DescribeAcceleratorsOutput::accelerator_set): <p> The details of the Elastic Inference Accelerators. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_accelerators::DescribeAcceleratorsOutput::next_token): <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
     /// - On failure, responds with [`SdkError<DescribeAcceleratorsError>`](crate::operation::describe_accelerators::DescribeAcceleratorsError)
-    pub fn describe_accelerators(
-        &self,
-    ) -> crate::operation::describe_accelerators::builders::DescribeAcceleratorsFluentBuilder {
-        crate::operation::describe_accelerators::builders::DescribeAcceleratorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_accelerators(&self) -> crate::operation::describe_accelerators::builders::DescribeAcceleratorsFluentBuilder {
+        crate::operation::describe_accelerators::builders::DescribeAcceleratorsFluentBuilder::new(self.handle.clone())
     }
 }

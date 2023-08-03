@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetVerifiedAccessGroupPolicyOutput {
 }
 impl GetVerifiedAccessGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetVerifiedAccessGroupPolicyOutput`](crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyOutput).
-    pub fn builder() -> crate::operation::get_verified_access_group_policy::builders::GetVerifiedAccessGroupPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::get_verified_access_group_policy::builders::GetVerifiedAccessGroupPolicyOutputBuilder {
         crate::operation::get_verified_access_group_policy::builders::GetVerifiedAccessGroupPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVerifiedAccessGroupPolicyOutput`](crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVerifiedAccessGroupPolicyOutputBuilder {
     pub(crate) policy_enabled: ::std::option::Option<bool>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
@@ -59,18 +57,12 @@ impl GetVerifiedAccessGroupPolicyOutputBuilder {
         &self.policy_enabled
     }
     /// <p>The Verified Access policy document.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Verified Access policy document.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
@@ -88,10 +80,7 @@ impl GetVerifiedAccessGroupPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetVerifiedAccessGroupPolicyOutput`](crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyOutput
-    {
+    pub fn build(self) -> crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyOutput {
         crate::operation::get_verified_access_group_policy::GetVerifiedAccessGroupPolicyOutput {
             policy_enabled: self.policy_enabled,
             policy_document: self.policy_document,

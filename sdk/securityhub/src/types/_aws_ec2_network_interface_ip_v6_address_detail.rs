@@ -23,26 +23,18 @@ impl AwsEc2NetworkInterfaceIpV6AddressDetail {
 
 /// A builder for [`AwsEc2NetworkInterfaceIpV6AddressDetail`](crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkInterfaceIpV6AddressDetailBuilder {
     pub(crate) ip_v6_address: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2NetworkInterfaceIpV6AddressDetailBuilder {
     /// <p>The IPV6 address.</p>
-    pub fn ip_v6_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_v6_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_v6_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPV6 address.</p>
-    pub fn set_ip_v6_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_v6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_v6_address = input;
         self
     }

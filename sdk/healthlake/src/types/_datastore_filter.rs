@@ -44,9 +44,7 @@ impl DatastoreFilter {
 
 /// A builder for [`DatastoreFilter`](crate::types::DatastoreFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatastoreFilterBuilder {
     pub(crate) datastore_name: ::std::option::Option<::std::string::String>,
     pub(crate) datastore_status: ::std::option::Option<crate::types::DatastoreStatus>,
@@ -55,18 +53,12 @@ pub struct DatastoreFilterBuilder {
 }
 impl DatastoreFilterBuilder {
     /// <p>Allows the user to filter data store results by name.</p>
-    pub fn datastore_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn datastore_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Allows the user to filter data store results by name.</p>
-    pub fn set_datastore_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_datastore_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_name = input;
         self
     }
@@ -80,10 +72,7 @@ impl DatastoreFilterBuilder {
         self
     }
     /// <p>Allows the user to filter data store results by status.</p>
-    pub fn set_datastore_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DatastoreStatus>,
-    ) -> Self {
+    pub fn set_datastore_status(mut self, input: ::std::option::Option<crate::types::DatastoreStatus>) -> Self {
         self.datastore_status = input;
         self
     }
@@ -97,10 +86,7 @@ impl DatastoreFilterBuilder {
         self
     }
     /// <p>A filter that allows the user to set cutoff dates for records. All data stores created before the specified date will be included in the results. </p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -114,10 +100,7 @@ impl DatastoreFilterBuilder {
         self
     }
     /// <p>A filter that allows the user to set cutoff dates for records. All data stores created after the specified date will be included in the results.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }

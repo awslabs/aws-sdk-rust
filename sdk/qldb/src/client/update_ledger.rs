@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`deletion_protection(Option<bool>)`](crate::operation::update_ledger::UpdateLedgerOutput::deletion_protection): <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>  <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
     ///   - [`encryption_description(Option<LedgerEncryptionDescription>)`](crate::operation::update_ledger::UpdateLedgerOutput::encryption_description): <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
     /// - On failure, responds with [`SdkError<UpdateLedgerError>`](crate::operation::update_ledger::UpdateLedgerError)
-    pub fn update_ledger(
-        &self,
-    ) -> crate::operation::update_ledger::builders::UpdateLedgerFluentBuilder {
-        crate::operation::update_ledger::builders::UpdateLedgerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_ledger(&self) -> crate::operation::update_ledger::builders::UpdateLedgerFluentBuilder {
+        crate::operation::update_ledger::builders::UpdateLedgerFluentBuilder::new(self.handle.clone())
     }
 }

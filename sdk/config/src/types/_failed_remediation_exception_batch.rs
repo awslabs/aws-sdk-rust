@@ -30,28 +30,19 @@ impl FailedRemediationExceptionBatch {
 
 /// A builder for [`FailedRemediationExceptionBatch`](crate::types::FailedRemediationExceptionBatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailedRemediationExceptionBatchBuilder {
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
-    pub(crate) failed_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::RemediationException>>,
+    pub(crate) failed_items: ::std::option::Option<::std::vec::Vec<crate::types::RemediationException>>,
 }
 impl FailedRemediationExceptionBatchBuilder {
     /// <p>Returns a failure message. For example, the auto-remediation has failed.</p>
-    pub fn failure_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns a failure message. For example, the auto-remediation has failed.</p>
-    pub fn set_failure_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_message = input;
         self
     }
@@ -71,17 +62,12 @@ impl FailedRemediationExceptionBatchBuilder {
         self
     }
     /// <p>Returns remediation exception resource key object of the failed items.</p>
-    pub fn set_failed_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationException>>,
-    ) -> Self {
+    pub fn set_failed_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationException>>) -> Self {
         self.failed_items = input;
         self
     }
     /// <p>Returns remediation exception resource key object of the failed items.</p>
-    pub fn get_failed_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationException>> {
+    pub fn get_failed_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationException>> {
         &self.failed_items
     }
     /// Consumes the builder and constructs a [`FailedRemediationExceptionBatch`](crate::types::FailedRemediationExceptionBatch).

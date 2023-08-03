@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`product_view_aggregations(Option<HashMap<String, Vec<ProductViewAggregationValue>>>)`](crate::operation::search_products::SearchProductsOutput::product_view_aggregations): <p>The product view aggregations.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::search_products::SearchProductsOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<SearchProductsError>`](crate::operation::search_products::SearchProductsError)
-    pub fn search_products(
-        &self,
-    ) -> crate::operation::search_products::builders::SearchProductsFluentBuilder {
-        crate::operation::search_products::builders::SearchProductsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_products(&self) -> crate::operation::search_products::builders::SearchProductsFluentBuilder {
+        crate::operation::search_products::builders::SearchProductsFluentBuilder::new(self.handle.clone())
     }
 }

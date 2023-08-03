@@ -6,10 +6,7 @@ pub fn ser_create_tiering_input(
     if let Some(var_1) = &input.free_tier {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FreeTier").start_object();
-        crate::protocol_serde::shape_create_free_tier_config::ser_create_free_tier_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_create_free_tier_config::ser_create_free_tier_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

@@ -64,9 +64,7 @@ impl EventType {
         self.event_ingestion.as_ref()
     }
     /// <p>Data about the stored events.</p>
-    pub fn ingested_event_statistics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IngestedEventStatistics> {
+    pub fn ingested_event_statistics(&self) -> ::std::option::Option<&crate::types::IngestedEventStatistics> {
         self.ingested_event_statistics.as_ref()
     }
     /// <p>Timestamp of when the event type was last updated.</p>
@@ -95,10 +93,7 @@ impl ::std::fmt::Debug for EventType {
         formatter.field("labels", &"*** Sensitive Data Redacted ***");
         formatter.field("entity_types", &"*** Sensitive Data Redacted ***");
         formatter.field("event_ingestion", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "ingested_event_statistics",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("ingested_event_statistics", &"*** Sensitive Data Redacted ***");
         formatter.field("last_updated_time", &"*** Sensitive Data Redacted ***");
         formatter.field("created_time", &"*** Sensitive Data Redacted ***");
         formatter.field("arn", &"*** Sensitive Data Redacted ***");
@@ -123,8 +118,7 @@ pub struct EventTypeBuilder {
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) entity_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) event_ingestion: ::std::option::Option<crate::types::EventIngestion>,
-    pub(crate) ingested_event_statistics:
-        ::std::option::Option<crate::types::IngestedEventStatistics>,
+    pub(crate) ingested_event_statistics: ::std::option::Option<crate::types::IngestedEventStatistics>,
     pub(crate) last_updated_time: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -164,27 +158,19 @@ impl EventTypeBuilder {
     /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
     ///
     /// <p>The event type event variables.</p>
-    pub fn event_variables(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_variables(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_variables.unwrap_or_default();
         v.push(input.into());
         self.event_variables = ::std::option::Option::Some(v);
         self
     }
     /// <p>The event type event variables.</p>
-    pub fn set_event_variables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_variables(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_variables = input;
         self
     }
     /// <p>The event type event variables.</p>
-    pub fn get_event_variables(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_variables(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_variables
     }
     /// Appends an item to `labels`.
@@ -199,10 +185,7 @@ impl EventTypeBuilder {
         self
     }
     /// <p>The event type labels.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
@@ -222,17 +205,12 @@ impl EventTypeBuilder {
         self
     }
     /// <p>The event type entity types.</p>
-    pub fn set_entity_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.entity_types = input;
         self
     }
     /// <p>The event type entity types.</p>
-    pub fn get_entity_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.entity_types
     }
     /// <p>If <code>Enabled</code>, Amazon Fraud Detector stores event data when you generate a prediction and uses that data to update calculated variables in near real-time. Amazon Fraud Detector uses this data, known as <code>INGESTED_EVENTS</code>, to train your model and improve fraud predictions.</p>
@@ -241,10 +219,7 @@ impl EventTypeBuilder {
         self
     }
     /// <p>If <code>Enabled</code>, Amazon Fraud Detector stores event data when you generate a prediction and uses that data to update calculated variables in near real-time. Amazon Fraud Detector uses this data, known as <code>INGESTED_EVENTS</code>, to train your model and improve fraud predictions.</p>
-    pub fn set_event_ingestion(
-        mut self,
-        input: ::std::option::Option<crate::types::EventIngestion>,
-    ) -> Self {
+    pub fn set_event_ingestion(mut self, input: ::std::option::Option<crate::types::EventIngestion>) -> Self {
         self.event_ingestion = input;
         self
     }
@@ -253,40 +228,26 @@ impl EventTypeBuilder {
         &self.event_ingestion
     }
     /// <p>Data about the stored events.</p>
-    pub fn ingested_event_statistics(
-        mut self,
-        input: crate::types::IngestedEventStatistics,
-    ) -> Self {
+    pub fn ingested_event_statistics(mut self, input: crate::types::IngestedEventStatistics) -> Self {
         self.ingested_event_statistics = ::std::option::Option::Some(input);
         self
     }
     /// <p>Data about the stored events.</p>
-    pub fn set_ingested_event_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestedEventStatistics>,
-    ) -> Self {
+    pub fn set_ingested_event_statistics(mut self, input: ::std::option::Option<crate::types::IngestedEventStatistics>) -> Self {
         self.ingested_event_statistics = input;
         self
     }
     /// <p>Data about the stored events.</p>
-    pub fn get_ingested_event_statistics(
-        &self,
-    ) -> &::std::option::Option<crate::types::IngestedEventStatistics> {
+    pub fn get_ingested_event_statistics(&self) -> &::std::option::Option<crate::types::IngestedEventStatistics> {
         &self.ingested_event_statistics
     }
     /// <p>Timestamp of when the event type was last updated.</p>
-    pub fn last_updated_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Timestamp of when the event type was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -328,17 +289,12 @@ impl EventTypeBuilder {
         self
     }
     /// <p>The event orchestration status. </p>
-    pub fn set_event_orchestration(
-        mut self,
-        input: ::std::option::Option<crate::types::EventOrchestration>,
-    ) -> Self {
+    pub fn set_event_orchestration(mut self, input: ::std::option::Option<crate::types::EventOrchestration>) -> Self {
         self.event_orchestration = input;
         self
     }
     /// <p>The event orchestration status. </p>
-    pub fn get_event_orchestration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventOrchestration> {
+    pub fn get_event_orchestration(&self) -> &::std::option::Option<crate::types::EventOrchestration> {
         &self.event_orchestration
     }
     /// Consumes the builder and constructs a [`EventType`](crate::types::EventType).
@@ -367,10 +323,7 @@ impl ::std::fmt::Debug for EventTypeBuilder {
         formatter.field("labels", &"*** Sensitive Data Redacted ***");
         formatter.field("entity_types", &"*** Sensitive Data Redacted ***");
         formatter.field("event_ingestion", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "ingested_event_statistics",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("ingested_event_statistics", &"*** Sensitive Data Redacted ***");
         formatter.field("last_updated_time", &"*** Sensitive Data Redacted ***");
         formatter.field("created_time", &"*** Sensitive Data Redacted ***");
         formatter.field("arn", &"*** Sensitive Data Redacted ***");

@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`configuration_set_name(impl ::std::convert::Into<String>)`](crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesFluentBuilder::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesFluentBuilder::set_configuration_set_name): <p>The configuration set to associate with an email identity.</p>
     /// - On success, responds with [`PutEmailIdentityConfigurationSetAttributesOutput`](crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput)
     /// - On failure, responds with [`SdkError<PutEmailIdentityConfigurationSetAttributesError>`](crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError)
-    pub fn put_email_identity_configuration_set_attributes(&self) -> crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesFluentBuilder{
-        crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesFluentBuilder::new(self.handle.clone())
+    pub fn put_email_identity_configuration_set_attributes(
+        &self,
+    ) -> crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesFluentBuilder {
+        crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

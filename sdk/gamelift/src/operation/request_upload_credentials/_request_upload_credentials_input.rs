@@ -15,18 +15,14 @@ impl RequestUploadCredentialsInput {
 }
 impl RequestUploadCredentialsInput {
     /// Creates a new builder-style object to manufacture [`RequestUploadCredentialsInput`](crate::operation::request_upload_credentials::RequestUploadCredentialsInput).
-    pub fn builder(
-    ) -> crate::operation::request_upload_credentials::builders::RequestUploadCredentialsInputBuilder
-    {
+    pub fn builder() -> crate::operation::request_upload_credentials::builders::RequestUploadCredentialsInputBuilder {
         crate::operation::request_upload_credentials::builders::RequestUploadCredentialsInputBuilder::default()
     }
 }
 
 /// A builder for [`RequestUploadCredentialsInput`](crate::operation::request_upload_credentials::RequestUploadCredentialsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequestUploadCredentialsInputBuilder {
     pub(crate) build_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl RequestUploadCredentialsInputBuilder {
         crate::operation::request_upload_credentials::RequestUploadCredentialsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::request_upload_credentials::RequestUploadCredentialsInput {
-                build_id: self.build_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::request_upload_credentials::RequestUploadCredentialsInput { build_id: self.build_id })
     }
 }

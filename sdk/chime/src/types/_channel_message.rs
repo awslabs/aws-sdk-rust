@@ -80,9 +80,7 @@ impl ChannelMessage {
         self.redacted
     }
     /// <p>The persistence setting for a channel message.</p>
-    pub fn persistence(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChannelMessagePersistenceType> {
+    pub fn persistence(&self) -> ::std::option::Option<&crate::types::ChannelMessagePersistenceType> {
         self.persistence.as_ref()
     }
 }
@@ -189,10 +187,7 @@ impl ChannelMessageBuilder {
         self
     }
     /// <p>The message type.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessageType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMessageType>) -> Self {
         self.r#type = input;
         self
     }
@@ -206,10 +201,7 @@ impl ChannelMessageBuilder {
         self
     }
     /// <p>The time at which the message was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -223,17 +215,12 @@ impl ChannelMessageBuilder {
         self
     }
     /// <p>The time at which a message was edited.</p>
-    pub fn set_last_edited_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_edited_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_edited_timestamp = input;
         self
     }
     /// <p>The time at which a message was edited.</p>
-    pub fn get_last_edited_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_edited_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_edited_timestamp
     }
     /// <p>The time at which a message was updated.</p>
@@ -242,17 +229,12 @@ impl ChannelMessageBuilder {
         self
     }
     /// <p>The time at which a message was updated.</p>
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_timestamp = input;
         self
     }
     /// <p>The time at which a message was updated.</p>
-    pub fn get_last_updated_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_timestamp
     }
     /// <p>The message sender.</p>
@@ -289,17 +271,12 @@ impl ChannelMessageBuilder {
         self
     }
     /// <p>The persistence setting for a channel message.</p>
-    pub fn set_persistence(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessagePersistenceType>,
-    ) -> Self {
+    pub fn set_persistence(mut self, input: ::std::option::Option<crate::types::ChannelMessagePersistenceType>) -> Self {
         self.persistence = input;
         self
     }
     /// <p>The persistence setting for a channel message.</p>
-    pub fn get_persistence(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChannelMessagePersistenceType> {
+    pub fn get_persistence(&self) -> &::std::option::Option<crate::types::ChannelMessagePersistenceType> {
         &self.persistence
     }
     /// Consumes the builder and constructs a [`ChannelMessage`](crate::types::ChannelMessage).

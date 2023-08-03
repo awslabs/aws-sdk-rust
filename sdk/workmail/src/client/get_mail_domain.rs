@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`ownership_verification_status(Option<DnsRecordVerificationStatus>)`](crate::operation::get_mail_domain::GetMailDomainOutput::ownership_verification_status): <p> Indicates the status of the domain ownership verification.</p>
     ///   - [`dkim_verification_status(Option<DnsRecordVerificationStatus>)`](crate::operation::get_mail_domain::GetMailDomainOutput::dkim_verification_status): <p>Indicates the status of a DKIM verification.</p>
     /// - On failure, responds with [`SdkError<GetMailDomainError>`](crate::operation::get_mail_domain::GetMailDomainError)
-    pub fn get_mail_domain(
-        &self,
-    ) -> crate::operation::get_mail_domain::builders::GetMailDomainFluentBuilder {
-        crate::operation::get_mail_domain::builders::GetMailDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_mail_domain(&self) -> crate::operation::get_mail_domain::builders::GetMailDomainFluentBuilder {
+        crate::operation::get_mail_domain::builders::GetMailDomainFluentBuilder::new(self.handle.clone())
     }
 }

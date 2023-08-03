@@ -19,11 +19,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMlTransformOutput`](crate::operation::create_ml_transform::CreateMlTransformOutput) with field(s):
     ///   - [`transform_id(Option<String>)`](crate::operation::create_ml_transform::CreateMlTransformOutput::transform_id): <p>A unique identifier that is generated for the transform.</p>
     /// - On failure, responds with [`SdkError<CreateMLTransformError>`](crate::operation::create_ml_transform::CreateMLTransformError)
-    pub fn create_ml_transform(
-        &self,
-    ) -> crate::operation::create_ml_transform::builders::CreateMLTransformFluentBuilder {
-        crate::operation::create_ml_transform::builders::CreateMLTransformFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_ml_transform(&self) -> crate::operation::create_ml_transform::builders::CreateMLTransformFluentBuilder {
+        crate::operation::create_ml_transform::builders::CreateMLTransformFluentBuilder::new(self.handle.clone())
     }
 }

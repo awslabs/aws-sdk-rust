@@ -15,18 +15,14 @@ impl StopEventsDetectionJobInput {
 }
 impl StopEventsDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StopEventsDetectionJobInput`](crate::operation::stop_events_detection_job::StopEventsDetectionJobInput).
-    pub fn builder(
-    ) -> crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobInputBuilder {
         crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopEventsDetectionJobInput`](crate::operation::stop_events_detection_job::StopEventsDetectionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopEventsDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl StopEventsDetectionJobInputBuilder {
         crate::operation::stop_events_detection_job::StopEventsDetectionJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_events_detection_job::StopEventsDetectionJobInput {
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_events_detection_job::StopEventsDetectionJobInput { job_id: self.job_id })
     }
 }

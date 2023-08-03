@@ -17,9 +17,7 @@ impl ExportErrorDetails {
         self.export_results.as_ref()
     }
     /// <p>The structure for returning the export error details while exporting the source images of an Earth Observation job.</p>
-    pub fn export_source_images(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExportErrorDetailsOutput> {
+    pub fn export_source_images(&self) -> ::std::option::Option<&crate::types::ExportErrorDetailsOutput> {
         self.export_source_images.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl ExportErrorDetails {
 
 /// A builder for [`ExportErrorDetails`](crate::types::ExportErrorDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportErrorDetailsBuilder {
     pub(crate) export_results: ::std::option::Option<crate::types::ExportErrorDetailsOutput>,
     pub(crate) export_source_images: ::std::option::Option<crate::types::ExportErrorDetailsOutput>,
@@ -46,17 +42,12 @@ impl ExportErrorDetailsBuilder {
         self
     }
     /// <p>The structure for returning the export error details while exporting results of an Earth Observation job.</p>
-    pub fn set_export_results(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportErrorDetailsOutput>,
-    ) -> Self {
+    pub fn set_export_results(mut self, input: ::std::option::Option<crate::types::ExportErrorDetailsOutput>) -> Self {
         self.export_results = input;
         self
     }
     /// <p>The structure for returning the export error details while exporting results of an Earth Observation job.</p>
-    pub fn get_export_results(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportErrorDetailsOutput> {
+    pub fn get_export_results(&self) -> &::std::option::Option<crate::types::ExportErrorDetailsOutput> {
         &self.export_results
     }
     /// <p>The structure for returning the export error details while exporting the source images of an Earth Observation job.</p>
@@ -65,17 +56,12 @@ impl ExportErrorDetailsBuilder {
         self
     }
     /// <p>The structure for returning the export error details while exporting the source images of an Earth Observation job.</p>
-    pub fn set_export_source_images(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportErrorDetailsOutput>,
-    ) -> Self {
+    pub fn set_export_source_images(mut self, input: ::std::option::Option<crate::types::ExportErrorDetailsOutput>) -> Self {
         self.export_source_images = input;
         self
     }
     /// <p>The structure for returning the export error details while exporting the source images of an Earth Observation job.</p>
-    pub fn get_export_source_images(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportErrorDetailsOutput> {
+    pub fn get_export_source_images(&self) -> &::std::option::Option<crate::types::ExportErrorDetailsOutput> {
         &self.export_source_images
     }
     /// Consumes the builder and constructs a [`ExportErrorDetails`](crate::types::ExportErrorDetails).

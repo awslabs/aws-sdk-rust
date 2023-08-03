@@ -16,9 +16,7 @@ pub fn ser_update_relational_database_input(
         object.key("preferredBackupWindow").string(var_4.as_str());
     }
     if let Some(var_5) = &input.preferred_maintenance_window {
-        object
-            .key("preferredMaintenanceWindow")
-            .string(var_5.as_str());
+        object.key("preferredMaintenanceWindow").string(var_5.as_str());
     }
     if let Some(var_6) = &input.enable_backup_retention {
         object.key("enableBackupRetention").boolean(*var_6);
@@ -33,9 +31,7 @@ pub fn ser_update_relational_database_input(
         object.key("applyImmediately").boolean(*var_9);
     }
     if let Some(var_10) = &input.ca_certificate_identifier {
-        object
-            .key("caCertificateIdentifier")
-            .string(var_10.as_str());
+        object.key("caCertificateIdentifier").string(var_10.as_str());
     }
     Ok(())
 }

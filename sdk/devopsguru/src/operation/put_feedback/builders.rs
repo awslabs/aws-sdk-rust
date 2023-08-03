@@ -10,10 +10,7 @@ impl PutFeedbackInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_feedback::PutFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_feedback::PutFeedbackError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_feedback::PutFeedbackError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_feedback();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl PutFeedbackFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_feedback::PutFeedback,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_feedback::PutFeedback, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_feedback::PutFeedbackError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl PutFeedbackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl PutFeedbackFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_feedback::PutFeedback,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_feedback::PutFeedback, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_feedback::PutFeedbackError>,
     > {
         self.customize_middleware().await
@@ -118,10 +106,7 @@ impl PutFeedbackFluentBuilder {
         self
     }
     /// <p> The feedback from customers is about the recommendations in this insight. </p>
-    pub fn set_insight_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::InsightFeedback>,
-    ) -> Self {
+    pub fn set_insight_feedback(mut self, input: ::std::option::Option<crate::types::InsightFeedback>) -> Self {
         self.inner = self.inner.set_insight_feedback(input);
         self
     }

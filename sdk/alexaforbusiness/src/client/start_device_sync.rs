@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartDeviceSyncOutput`](crate::operation::start_device_sync::StartDeviceSyncOutput)
     /// - On failure, responds with [`SdkError<StartDeviceSyncError>`](crate::operation::start_device_sync::StartDeviceSyncError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn start_device_sync(
-        &self,
-    ) -> crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder {
-        crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_device_sync(&self) -> crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder {
+        crate::operation::start_device_sync::builders::StartDeviceSyncFluentBuilder::new(self.handle.clone())
     }
 }

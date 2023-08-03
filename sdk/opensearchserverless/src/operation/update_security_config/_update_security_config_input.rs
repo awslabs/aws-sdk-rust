@@ -43,17 +43,14 @@ impl UpdateSecurityConfigInput {
 }
 impl UpdateSecurityConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateSecurityConfigInput`](crate::operation::update_security_config::UpdateSecurityConfigInput).
-    pub fn builder(
-    ) -> crate::operation::update_security_config::builders::UpdateSecurityConfigInputBuilder {
+    pub fn builder() -> crate::operation::update_security_config::builders::UpdateSecurityConfigInputBuilder {
         crate::operation::update_security_config::builders::UpdateSecurityConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSecurityConfigInput`](crate::operation::update_security_config::UpdateSecurityConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSecurityConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) config_version: ::std::option::Option<::std::string::String>,
@@ -77,18 +74,12 @@ impl UpdateSecurityConfigInputBuilder {
         &self.id
     }
     /// <p>The version of the security configuration to be updated. You can find the most recent version of a security configuration using the <code>GetSecurityPolicy</code> command.</p>
-    pub fn config_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the security configuration to be updated. You can find the most recent version of a security configuration using the <code>GetSecurityPolicy</code> command.</p>
-    pub fn set_config_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_version = input;
         self
     }
@@ -116,10 +107,7 @@ impl UpdateSecurityConfigInputBuilder {
         self
     }
     /// <p>SAML options in in the form of a key-value map.</p>
-    pub fn set_saml_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SamlConfigOptions>,
-    ) -> Self {
+    pub fn set_saml_options(mut self, input: ::std::option::Option<crate::types::SamlConfigOptions>) -> Self {
         self.saml_options = input;
         self
     }
@@ -144,18 +132,14 @@ impl UpdateSecurityConfigInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSecurityConfigInput`](crate::operation::update_security_config::UpdateSecurityConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_security_config::UpdateSecurityConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_security_config::UpdateSecurityConfigInput {
-                id: self.id,
-                config_version: self.config_version,
-                description: self.description,
-                saml_options: self.saml_options,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_security_config::UpdateSecurityConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_security_config::UpdateSecurityConfigInput {
+            id: self.id,
+            config_version: self.config_version,
+            description: self.description,
+            saml_options: self.saml_options,
+            client_token: self.client_token,
+        })
     }
 }

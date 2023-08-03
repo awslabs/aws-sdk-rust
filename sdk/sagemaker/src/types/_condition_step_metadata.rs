@@ -23,9 +23,7 @@ impl ConditionStepMetadata {
 
 /// A builder for [`ConditionStepMetadata`](crate::types::ConditionStepMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConditionStepMetadataBuilder {
     pub(crate) outcome: ::std::option::Option<crate::types::ConditionOutcome>,
 }
@@ -36,10 +34,7 @@ impl ConditionStepMetadataBuilder {
         self
     }
     /// <p>The outcome of the Condition step evaluation.</p>
-    pub fn set_outcome(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionOutcome>,
-    ) -> Self {
+    pub fn set_outcome(mut self, input: ::std::option::Option<crate::types::ConditionOutcome>) -> Self {
         self.outcome = input;
         self
     }
@@ -49,8 +44,6 @@ impl ConditionStepMetadataBuilder {
     }
     /// Consumes the builder and constructs a [`ConditionStepMetadata`](crate::types::ConditionStepMetadata).
     pub fn build(self) -> crate::types::ConditionStepMetadata {
-        crate::types::ConditionStepMetadata {
-            outcome: self.outcome,
-        }
+        crate::types::ConditionStepMetadata { outcome: self.outcome }
     }
 }

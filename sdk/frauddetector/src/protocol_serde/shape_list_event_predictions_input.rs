@@ -30,10 +30,7 @@ pub fn ser_list_event_predictions_input(
     if let Some(var_9) = &input.prediction_time_range {
         #[allow(unused_mut)]
         let mut object_10 = object.key("predictionTimeRange").start_object();
-        crate::protocol_serde::shape_prediction_time_range::ser_prediction_time_range(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_prediction_time_range::ser_prediction_time_range(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.next_token {

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteLunaClientOutput {
 }
 impl DeleteLunaClientOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLunaClientOutput`](crate::operation::delete_luna_client::DeleteLunaClientOutput).
-    pub fn builder() -> crate::operation::delete_luna_client::builders::DeleteLunaClientOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_luna_client::builders::DeleteLunaClientOutputBuilder {
         crate::operation::delete_luna_client::builders::DeleteLunaClientOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLunaClientOutput`](crate::operation::delete_luna_client::DeleteLunaClientOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLunaClientOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

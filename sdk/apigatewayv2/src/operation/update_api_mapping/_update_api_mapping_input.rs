@@ -44,17 +44,14 @@ impl UpdateApiMappingInput {
 }
 impl UpdateApiMappingInput {
     /// Creates a new builder-style object to manufacture [`UpdateApiMappingInput`](crate::operation::update_api_mapping::UpdateApiMappingInput).
-    pub fn builder() -> crate::operation::update_api_mapping::builders::UpdateApiMappingInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_api_mapping::builders::UpdateApiMappingInputBuilder {
         crate::operation::update_api_mapping::builders::UpdateApiMappingInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApiMappingInput`](crate::operation::update_api_mapping::UpdateApiMappingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApiMappingInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) api_mapping_id: ::std::option::Option<::std::string::String>,
@@ -78,18 +75,12 @@ impl UpdateApiMappingInputBuilder {
         &self.api_id
     }
     /// <p>The API mapping identifier.</p>
-    pub fn api_mapping_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_mapping_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_mapping_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API mapping identifier.</p>
-    pub fn set_api_mapping_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_mapping_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_mapping_id = input;
         self
     }
@@ -98,18 +89,12 @@ impl UpdateApiMappingInputBuilder {
         &self.api_mapping_id
     }
     /// <p>The API mapping key.</p>
-    pub fn api_mapping_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_mapping_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_mapping_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API mapping key.</p>
-    pub fn set_api_mapping_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_mapping_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_mapping_key = input;
         self
     }
@@ -148,18 +133,13 @@ impl UpdateApiMappingInputBuilder {
     /// Consumes the builder and constructs a [`UpdateApiMappingInput`](crate::operation::update_api_mapping::UpdateApiMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_api_mapping::UpdateApiMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_api_mapping::UpdateApiMappingInput {
-                api_id: self.api_id,
-                api_mapping_id: self.api_mapping_id,
-                api_mapping_key: self.api_mapping_key,
-                domain_name: self.domain_name,
-                stage: self.stage,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_api_mapping::UpdateApiMappingInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_api_mapping::UpdateApiMappingInput {
+            api_id: self.api_id,
+            api_mapping_id: self.api_mapping_id,
+            api_mapping_key: self.api_mapping_key,
+            domain_name: self.domain_name,
+            stage: self.stage,
+        })
     }
 }

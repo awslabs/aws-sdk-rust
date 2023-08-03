@@ -57,9 +57,7 @@ impl GetAnomaliesInput {
 
 /// A builder for [`GetAnomaliesInput`](crate::operation::get_anomalies::GetAnomaliesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAnomaliesInputBuilder {
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
     pub(crate) date_interval: ::std::option::Option<crate::types::AnomalyDateInterval>,
@@ -89,10 +87,7 @@ impl GetAnomaliesInputBuilder {
         self
     }
     /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object will have an <code>AnomalyEndDate</code> in the specified time range. </p>
-    pub fn set_date_interval(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyDateInterval>,
-    ) -> Self {
+    pub fn set_date_interval(mut self, input: ::std::option::Option<crate::types::AnomalyDateInterval>) -> Self {
         self.date_interval = input;
         self
     }
@@ -106,10 +101,7 @@ impl GetAnomaliesInputBuilder {
         self
     }
     /// <p>Filters anomaly results by the feedback field on the anomaly object. </p>
-    pub fn set_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyFeedbackType>,
-    ) -> Self {
+    pub fn set_feedback(mut self, input: ::std::option::Option<crate::types::AnomalyFeedbackType>) -> Self {
         self.feedback = input;
         self
     }
@@ -123,10 +115,7 @@ impl GetAnomaliesInputBuilder {
         self
     }
     /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated dollar impact greater than 200. </p>
-    pub fn set_total_impact(
-        mut self,
-        input: ::std::option::Option<crate::types::TotalImpactFilter>,
-    ) -> Self {
+    pub fn set_total_impact(mut self, input: ::std::option::Option<crate::types::TotalImpactFilter>) -> Self {
         self.total_impact = input;
         self
     }
@@ -135,18 +124,12 @@ impl GetAnomaliesInputBuilder {
         &self.total_impact
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -169,12 +152,7 @@ impl GetAnomaliesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetAnomaliesInput`](crate::operation::get_anomalies::GetAnomaliesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_anomalies::GetAnomaliesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_anomalies::GetAnomaliesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_anomalies::GetAnomaliesInput {
             monitor_arn: self.monitor_arn,
             date_interval: self.date_interval,

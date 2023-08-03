@@ -36,9 +36,7 @@ impl ListRotationsInput {
 
 /// A builder for [`ListRotationsInput`](crate::operation::list_rotations::ListRotationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRotationsInputBuilder {
     pub(crate) rotation_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListRotationsInputBuilder {
 }
 impl ListRotationsInputBuilder {
     /// <p>A filter to include rotations in list results based on their common prefix. For example, entering prod returns a list of all rotation names that begin with <code>prod</code>, such as <code>production</code> and <code>prod-1</code>.</p>
-    pub fn rotation_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rotation_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter to include rotations in list results based on their common prefix. For example, entering prod returns a list of all rotation names that begin with <code>prod</code>, such as <code>production</code> and <code>prod-1</code>.</p>
-    pub fn set_rotation_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rotation_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rotation_name_prefix = input;
         self
     }
@@ -96,10 +88,7 @@ impl ListRotationsInputBuilder {
     /// Consumes the builder and constructs a [`ListRotationsInput`](crate::operation::list_rotations::ListRotationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_rotations::ListRotationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_rotations::ListRotationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rotations::ListRotationsInput {
             rotation_name_prefix: self.rotation_name_prefix,
             next_token: self.next_token,

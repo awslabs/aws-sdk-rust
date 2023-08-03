@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteMlTransformOutput`](crate::operation::delete_ml_transform::DeleteMlTransformOutput) with field(s):
     ///   - [`transform_id(Option<String>)`](crate::operation::delete_ml_transform::DeleteMlTransformOutput::transform_id): <p>The unique identifier of the transform that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteMLTransformError>`](crate::operation::delete_ml_transform::DeleteMLTransformError)
-    pub fn delete_ml_transform(
-        &self,
-    ) -> crate::operation::delete_ml_transform::builders::DeleteMLTransformFluentBuilder {
-        crate::operation::delete_ml_transform::builders::DeleteMLTransformFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_ml_transform(&self) -> crate::operation::delete_ml_transform::builders::DeleteMLTransformFluentBuilder {
+        crate::operation::delete_ml_transform::builders::DeleteMLTransformFluentBuilder::new(self.handle.clone())
     }
 }

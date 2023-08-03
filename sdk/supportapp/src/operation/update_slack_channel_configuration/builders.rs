@@ -5,16 +5,16 @@ pub use crate::operation::update_slack_channel_configuration::_update_slack_chan
 
 impl UpdateSlackChannelConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_slack_channel_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateSlackChannelConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSlackChannelConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationInputBuilder,
+    inner: crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationInputBuilder,
 }
 impl UpdateSlackChannelConfigurationFluentBuilder {
     /// Creates a new `UpdateSlackChannelConfiguration`.
@@ -37,15 +37,20 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateSlackChannelConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
@@ -142,10 +157,7 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
         self
     }
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
-    pub fn set_notify_on_create_or_reopen_case(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_notify_on_create_or_reopen_case(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_notify_on_create_or_reopen_case(input);
         self
     }
@@ -159,10 +171,7 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
         self
     }
     /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
-    pub fn set_notify_on_add_correspondence_to_case(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_notify_on_add_correspondence_to_case(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_notify_on_add_correspondence_to_case(input);
         self
     }
@@ -199,10 +208,7 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
     /// </ul> <note>
     /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p>
     /// </note>
-    pub fn notify_on_case_severity(
-        mut self,
-        input: crate::types::NotificationSeverityLevel,
-    ) -> Self {
+    pub fn notify_on_case_severity(mut self, input: crate::types::NotificationSeverityLevel) -> Self {
         self.inner = self.inner.notify_on_case_severity(input);
         self
     }
@@ -221,10 +227,7 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
     /// </ul> <note>
     /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p>
     /// </note>
-    pub fn set_notify_on_case_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationSeverityLevel>,
-    ) -> Self {
+    pub fn set_notify_on_case_severity(mut self, input: ::std::option::Option<crate::types::NotificationSeverityLevel>) -> Self {
         self.inner = self.inner.set_notify_on_case_severity(input);
         self
     }
@@ -243,24 +246,16 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
     /// </ul> <note>
     /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p>
     /// </note>
-    pub fn get_notify_on_case_severity(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationSeverityLevel> {
+    pub fn get_notify_on_case_severity(&self) -> &::std::option::Option<crate::types::NotificationSeverityLevel> {
         self.inner.get_notify_on_case_severity()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
-    pub fn channel_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
-    pub fn set_channel_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_role_arn(input);
         self
     }

@@ -29,16 +29,14 @@ impl DescribeInstanceAssociationsStatusInput {
 }
 impl DescribeInstanceAssociationsStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceAssociationsStatusInput`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusInput).
-    pub fn builder() -> crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusInputBuilder {
         crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceAssociationsStatusInput`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceAssociationsStatusInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -88,16 +86,18 @@ impl DescribeInstanceAssociationsStatusInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeInstanceAssociationsStatusInput`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusInput {
-                instance_id: self.instance_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                instance_id: self.instance_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

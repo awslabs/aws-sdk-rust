@@ -22,16 +22,14 @@ impl RegisterDelegatedAdministratorInput {
 }
 impl RegisterDelegatedAdministratorInput {
     /// Creates a new builder-style object to manufacture [`RegisterDelegatedAdministratorInput`](crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorInput).
-    pub fn builder() -> crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorInputBuilder{
+    pub fn builder() -> crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorInputBuilder {
         crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterDelegatedAdministratorInput`](crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterDelegatedAdministratorInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_principal: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl RegisterDelegatedAdministratorInputBuilder {
         &self.account_id
     }
     /// <p>The service principal of the Amazon Web Services service for which you want to make the member account a delegated administrator.</p>
-    pub fn service_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_principal = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service principal of the Amazon Web Services service for which you want to make the member account a delegated administrator.</p>
-    pub fn set_service_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_principal = input;
         self
     }
@@ -78,13 +70,9 @@ impl RegisterDelegatedAdministratorInputBuilder {
         crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorInput {
-                account_id: self.account_id
-                ,
-                service_principal: self.service_principal
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorInput {
+            account_id: self.account_id,
+            service_principal: self.service_principal,
+        })
     }
 }

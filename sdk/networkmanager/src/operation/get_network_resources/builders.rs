@@ -38,9 +38,7 @@ impl GetNetworkResourcesFluentBuilder {
         }
     }
     /// Access the GetNetworkResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_network_resources::builders::GetNetworkResourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_network_resources::builders::GetNetworkResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl GetNetworkResourcesFluentBuilder {
             crate::operation::get_network_resources::GetNetworkResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_resources::GetNetworkResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_resources::GetNetworkResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl GetNetworkResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl GetNetworkResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_network_resources::GetNetworkResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_resources::GetNetworkResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_resources::GetNetworkResourcesError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl GetNetworkResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_network_resources::GetNetworkResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_resources::GetNetworkResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_resources::GetNetworkResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +106,23 @@ impl GetNetworkResourcesFluentBuilder {
             crate::operation::get_network_resources::GetNetworkResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_resources::GetNetworkResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_resources::GetNetworkResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_network_resources::paginator::GetNetworkResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_network_resources::paginator::GetNetworkResourcesPaginator {
-        crate::operation::get_network_resources::paginator::GetNetworkResourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_network_resources::paginator::GetNetworkResourcesPaginator {
+        crate::operation::get_network_resources::paginator::GetNetworkResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -155,18 +131,12 @@ impl GetNetworkResourcesFluentBuilder {
         self.inner.get_global_network_id()
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_id(input);
         self
     }
@@ -175,18 +145,12 @@ impl GetNetworkResourcesFluentBuilder {
         self.inner.get_core_network_id()
     }
     /// <p>The ARN of the gateway.</p>
-    pub fn registered_gateway_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registered_gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.registered_gateway_arn(input.into());
         self
     }
     /// <p>The ARN of the gateway.</p>
-    pub fn set_registered_gateway_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registered_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_registered_gateway_arn(input);
         self
     }
@@ -245,10 +209,7 @@ impl GetNetworkResourcesFluentBuilder {
     /// <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li>
     /// <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li>
     /// </ul>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
@@ -275,10 +236,7 @@ impl GetNetworkResourcesFluentBuilder {
     /// <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li>
     /// <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li>
     /// </ul>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

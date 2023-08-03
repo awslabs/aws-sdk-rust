@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::update_access_policy::builders::UpdateAccessPolicyFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::update_access_policy::builders::UpdateAccessPolicyFluentBuilder::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`UpdateAccessPolicyOutput`](crate::operation::update_access_policy::UpdateAccessPolicyOutput)
     /// - On failure, responds with [`SdkError<UpdateAccessPolicyError>`](crate::operation::update_access_policy::UpdateAccessPolicyError)
-    pub fn update_access_policy(
-        &self,
-    ) -> crate::operation::update_access_policy::builders::UpdateAccessPolicyFluentBuilder {
-        crate::operation::update_access_policy::builders::UpdateAccessPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_access_policy(&self) -> crate::operation::update_access_policy::builders::UpdateAccessPolicyFluentBuilder {
+        crate::operation::update_access_policy::builders::UpdateAccessPolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,8 +8,7 @@ pub struct ListComponentTypesOutput {
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects that contain information about the component types.</p>
     #[doc(hidden)]
-    pub component_type_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComponentTypeSummary>>,
+    pub component_type_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ComponentTypeSummary>>,
     /// <p>The string that specifies the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -24,9 +23,7 @@ impl ListComponentTypesOutput {
         self.workspace_id.as_deref()
     }
     /// <p>A list of objects that contain information about the component types.</p>
-    pub fn component_type_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ComponentTypeSummary]> {
+    pub fn component_type_summaries(&self) -> ::std::option::Option<&[crate::types::ComponentTypeSummary]> {
         self.component_type_summaries.as_deref()
     }
     /// <p>The string that specifies the next page of results.</p>
@@ -45,21 +42,17 @@ impl ::aws_http::request_id::RequestId for ListComponentTypesOutput {
 }
 impl ListComponentTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListComponentTypesOutput`](crate::operation::list_component_types::ListComponentTypesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_component_types::builders::ListComponentTypesOutputBuilder {
+    pub fn builder() -> crate::operation::list_component_types::builders::ListComponentTypesOutputBuilder {
         crate::operation::list_component_types::builders::ListComponentTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListComponentTypesOutput`](crate::operation::list_component_types::ListComponentTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentTypesOutputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
-    pub(crate) component_type_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComponentTypeSummary>>,
+    pub(crate) component_type_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ComponentTypeSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -91,17 +84,12 @@ impl ListComponentTypesOutputBuilder {
         self
     }
     /// <p>A list of objects that contain information about the component types.</p>
-    pub fn set_component_type_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentTypeSummary>>,
-    ) -> Self {
+    pub fn set_component_type_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentTypeSummary>>) -> Self {
         self.component_type_summaries = input;
         self
     }
     /// <p>A list of objects that contain information about the component types.</p>
-    pub fn get_component_type_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentTypeSummary>> {
+    pub fn get_component_type_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentTypeSummary>> {
         &self.component_type_summaries
     }
     /// <p>The string that specifies the next page of results.</p>

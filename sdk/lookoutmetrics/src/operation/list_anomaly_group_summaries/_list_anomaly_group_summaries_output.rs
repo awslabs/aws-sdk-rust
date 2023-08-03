@@ -5,8 +5,7 @@
 pub struct ListAnomalyGroupSummariesOutput {
     /// <p>A list of anomaly group summaries.</p>
     #[doc(hidden)]
-    pub anomaly_group_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnomalyGroupSummary>>,
+    pub anomaly_group_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyGroupSummary>>,
     /// <p>Aggregated details about the anomaly groups.</p>
     #[doc(hidden)]
     pub anomaly_group_statistics: ::std::option::Option<crate::types::AnomalyGroupStatistics>,
@@ -17,15 +16,11 @@ pub struct ListAnomalyGroupSummariesOutput {
 }
 impl ListAnomalyGroupSummariesOutput {
     /// <p>A list of anomaly group summaries.</p>
-    pub fn anomaly_group_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AnomalyGroupSummary]> {
+    pub fn anomaly_group_summary_list(&self) -> ::std::option::Option<&[crate::types::AnomalyGroupSummary]> {
         self.anomaly_group_summary_list.as_deref()
     }
     /// <p>Aggregated details about the anomaly groups.</p>
-    pub fn anomaly_group_statistics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnomalyGroupStatistics> {
+    pub fn anomaly_group_statistics(&self) -> ::std::option::Option<&crate::types::AnomalyGroupStatistics> {
         self.anomaly_group_statistics.as_ref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
@@ -40,21 +35,17 @@ impl ::aws_http::request_id::RequestId for ListAnomalyGroupSummariesOutput {
 }
 impl ListAnomalyGroupSummariesOutput {
     /// Creates a new builder-style object to manufacture [`ListAnomalyGroupSummariesOutput`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput).
-    pub fn builder() -> crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesOutputBuilder{
+    pub fn builder() -> crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesOutputBuilder {
         crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAnomalyGroupSummariesOutput`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnomalyGroupSummariesOutputBuilder {
-    pub(crate) anomaly_group_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnomalyGroupSummary>>,
-    pub(crate) anomaly_group_statistics:
-        ::std::option::Option<crate::types::AnomalyGroupStatistics>,
+    pub(crate) anomaly_group_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyGroupSummary>>,
+    pub(crate) anomaly_group_statistics: ::std::option::Option<crate::types::AnomalyGroupStatistics>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -71,17 +62,12 @@ impl ListAnomalyGroupSummariesOutputBuilder {
         self
     }
     /// <p>A list of anomaly group summaries.</p>
-    pub fn set_anomaly_group_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyGroupSummary>>,
-    ) -> Self {
+    pub fn set_anomaly_group_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyGroupSummary>>) -> Self {
         self.anomaly_group_summary_list = input;
         self
     }
     /// <p>A list of anomaly group summaries.</p>
-    pub fn get_anomaly_group_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyGroupSummary>> {
+    pub fn get_anomaly_group_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyGroupSummary>> {
         &self.anomaly_group_summary_list
     }
     /// <p>Aggregated details about the anomaly groups.</p>
@@ -90,17 +76,12 @@ impl ListAnomalyGroupSummariesOutputBuilder {
         self
     }
     /// <p>Aggregated details about the anomaly groups.</p>
-    pub fn set_anomaly_group_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyGroupStatistics>,
-    ) -> Self {
+    pub fn set_anomaly_group_statistics(mut self, input: ::std::option::Option<crate::types::AnomalyGroupStatistics>) -> Self {
         self.anomaly_group_statistics = input;
         self
     }
     /// <p>Aggregated details about the anomaly groups.</p>
-    pub fn get_anomaly_group_statistics(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnomalyGroupStatistics> {
+    pub fn get_anomaly_group_statistics(&self) -> &::std::option::Option<crate::types::AnomalyGroupStatistics> {
         &self.anomaly_group_statistics
     }
     /// <p>The pagination token that's included if more results are available.</p>
@@ -127,9 +108,7 @@ impl ListAnomalyGroupSummariesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAnomalyGroupSummariesOutput`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput {
+    pub fn build(self) -> crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput {
         crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput {
             anomaly_group_summary_list: self.anomaly_group_summary_list,
             anomaly_group_statistics: self.anomaly_group_statistics,

@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`status(Option<DataSetTaskLifecycle>)`](crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput::status): <p>The status of the task.</p>
     ///   - [`summary(Option<DataSetImportSummary>)`](crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput::summary): <p>A summary of the status of the task.</p>
     /// - On failure, responds with [`SdkError<GetDataSetImportTaskError>`](crate::operation::get_data_set_import_task::GetDataSetImportTaskError)
-    pub fn get_data_set_import_task(
-        &self,
-    ) -> crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskFluentBuilder
-    {
-        crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_data_set_import_task(&self) -> crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskFluentBuilder {
+        crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskFluentBuilder::new(self.handle.clone())
     }
 }

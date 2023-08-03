@@ -5,16 +5,16 @@ pub use crate::operation::update_pull_request_approval_rule_content::_update_pul
 
 impl UpdatePullRequestApprovalRuleContentInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_pull_request_approval_rule_content();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdatePullRequestApprovalRuleContentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePullRequestApprovalRuleContentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_pull_request_approval_rule_content::builders::UpdatePullRequestApprovalRuleContentInputBuilder,
+    inner: crate::operation::update_pull_request_approval_rule_content::builders::UpdatePullRequestApprovalRuleContentInputBuilder,
 }
 impl UpdatePullRequestApprovalRuleContentFluentBuilder {
     /// Creates a new `UpdatePullRequestApprovalRuleContent`.
@@ -37,15 +37,22 @@ impl UpdatePullRequestApprovalRuleContentFluentBuilder {
         }
     }
     /// Access the UpdatePullRequestApprovalRuleContent as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_pull_request_approval_rule_content::builders::UpdatePullRequestApprovalRuleContentInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_pull_request_approval_rule_content::builders::UpdatePullRequestApprovalRuleContentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContent, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContent,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl UpdatePullRequestApprovalRuleContentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +89,35 @@ impl UpdatePullRequestApprovalRuleContentFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContent, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContent,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The system-generated ID of the pull request.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pull_request_id(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
@@ -115,18 +126,12 @@ impl UpdatePullRequestApprovalRuleContentFluentBuilder {
         self.inner.get_pull_request_id()
     }
     /// <p>The name of the approval rule you want to update.</p>
-    pub fn approval_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.approval_rule_name(input.into());
         self
     }
     /// <p>The name of the approval rule you want to update.</p>
-    pub fn set_approval_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_approval_rule_name(input);
         self
     }
@@ -135,25 +140,17 @@ impl UpdatePullRequestApprovalRuleContentFluentBuilder {
         self.inner.get_approval_rule_name()
     }
     /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
-    pub fn existing_rule_content_sha256(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn existing_rule_content_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.existing_rule_content_sha256(input.into());
         self
     }
     /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
-    pub fn set_existing_rule_content_sha256(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_existing_rule_content_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_existing_rule_content_sha256(input);
         self
     }
     /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
-    pub fn get_existing_rule_content_sha256(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_existing_rule_content_sha256(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_existing_rule_content_sha256()
     }
     /// <p>The updated content for the approval rule.</p> <note>
@@ -168,10 +165,7 @@ impl UpdatePullRequestApprovalRuleContentFluentBuilder {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
-    pub fn new_rule_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_rule_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_rule_content(input.into());
         self
     }
@@ -187,10 +181,7 @@ impl UpdatePullRequestApprovalRuleContentFluentBuilder {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
-    pub fn set_new_rule_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_rule_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_rule_content(input);
         self
     }

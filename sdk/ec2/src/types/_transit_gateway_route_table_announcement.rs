@@ -24,8 +24,7 @@ pub struct TransitGatewayRouteTableAnnouncement {
     pub peering_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The direction for the route table announcement.</p>
     #[doc(hidden)]
-    pub announcement_direction:
-        ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncementDirection>,
+    pub announcement_direction: ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncementDirection>,
     /// <p>The ID of the transit gateway route table.</p>
     #[doc(hidden)]
     pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
@@ -65,9 +64,7 @@ impl TransitGatewayRouteTableAnnouncement {
         self.peering_attachment_id.as_deref()
     }
     /// <p>The direction for the route table announcement.</p>
-    pub fn announcement_direction(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayRouteTableAnnouncementDirection> {
+    pub fn announcement_direction(&self) -> ::std::option::Option<&crate::types::TransitGatewayRouteTableAnnouncementDirection> {
         self.announcement_direction.as_ref()
     }
     /// <p>The ID of the transit gateway route table.</p>
@@ -75,9 +72,7 @@ impl TransitGatewayRouteTableAnnouncement {
         self.transit_gateway_route_table_id.as_deref()
     }
     /// <p>The state of the transit gateway announcement.</p>
-    pub fn state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayRouteTableAnnouncementState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::TransitGatewayRouteTableAnnouncementState> {
         self.state.as_ref()
     }
     /// <p>The timestamp when the transit gateway route table announcement was created.</p>
@@ -98,62 +93,42 @@ impl TransitGatewayRouteTableAnnouncement {
 
 /// A builder for [`TransitGatewayRouteTableAnnouncement`](crate::types::TransitGatewayRouteTableAnnouncement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayRouteTableAnnouncementBuilder {
-    pub(crate) transit_gateway_route_table_announcement_id:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) transit_gateway_route_table_announcement_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) peer_transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) peer_core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) peering_attachment_id: ::std::option::Option<::std::string::String>,
-    pub(crate) announcement_direction:
-        ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncementDirection>,
+    pub(crate) announcement_direction: ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncementDirection>,
     pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
-    pub(crate) state:
-        ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncementState>,
+    pub(crate) state: ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncementState>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TransitGatewayRouteTableAnnouncementBuilder {
     /// <p>The ID of the transit gateway route table announcement.</p>
-    pub fn transit_gateway_route_table_announcement_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.transit_gateway_route_table_announcement_id =
-            ::std::option::Option::Some(input.into());
+    pub fn transit_gateway_route_table_announcement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.transit_gateway_route_table_announcement_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway route table announcement.</p>
-    pub fn set_transit_gateway_route_table_announcement_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_route_table_announcement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_route_table_announcement_id = input;
         self
     }
     /// <p>The ID of the transit gateway route table announcement.</p>
-    pub fn get_transit_gateway_route_table_announcement_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_route_table_announcement_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_route_table_announcement_id
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_id = input;
         self
     }
@@ -162,18 +137,12 @@ impl TransitGatewayRouteTableAnnouncementBuilder {
         &self.transit_gateway_id
     }
     /// <p>The ID of the core network for the transit gateway route table announcement.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the core network for the transit gateway route table announcement.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
@@ -182,18 +151,12 @@ impl TransitGatewayRouteTableAnnouncementBuilder {
         &self.core_network_id
     }
     /// <p>The ID of the peer transit gateway.</p>
-    pub fn peer_transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn peer_transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the peer transit gateway.</p>
-    pub fn set_peer_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_peer_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peer_transit_gateway_id = input;
         self
     }
@@ -202,18 +165,12 @@ impl TransitGatewayRouteTableAnnouncementBuilder {
         &self.peer_transit_gateway_id
     }
     /// <p>The ID of the core network ID for the peer.</p>
-    pub fn peer_core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn peer_core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the core network ID for the peer.</p>
-    pub fn set_peer_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_peer_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peer_core_network_id = input;
         self
     }
@@ -222,18 +179,12 @@ impl TransitGatewayRouteTableAnnouncementBuilder {
         &self.peer_core_network_id
     }
     /// <p>The ID of the peering attachment.</p>
-    pub fn peering_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn peering_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peering_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the peering attachment.</p>
-    pub fn set_peering_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_peering_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peering_attachment_id = input;
         self
     }
@@ -242,47 +193,31 @@ impl TransitGatewayRouteTableAnnouncementBuilder {
         &self.peering_attachment_id
     }
     /// <p>The direction for the route table announcement.</p>
-    pub fn announcement_direction(
-        mut self,
-        input: crate::types::TransitGatewayRouteTableAnnouncementDirection,
-    ) -> Self {
+    pub fn announcement_direction(mut self, input: crate::types::TransitGatewayRouteTableAnnouncementDirection) -> Self {
         self.announcement_direction = ::std::option::Option::Some(input);
         self
     }
     /// <p>The direction for the route table announcement.</p>
-    pub fn set_announcement_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncementDirection>,
-    ) -> Self {
+    pub fn set_announcement_direction(mut self, input: ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncementDirection>) -> Self {
         self.announcement_direction = input;
         self
     }
     /// <p>The direction for the route table announcement.</p>
-    pub fn get_announcement_direction(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncementDirection> {
+    pub fn get_announcement_direction(&self) -> &::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncementDirection> {
         &self.announcement_direction
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn set_transit_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = input;
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn get_transit_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_route_table_id
     }
     /// <p>The state of the transit gateway announcement.</p>
@@ -291,17 +226,12 @@ impl TransitGatewayRouteTableAnnouncementBuilder {
         self
     }
     /// <p>The state of the transit gateway announcement.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncementState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncementState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The state of the transit gateway announcement.</p>
-    pub fn get_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncementState> {
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncementState> {
         &self.state
     }
     /// <p>The timestamp when the transit gateway route table announcement was created.</p>
@@ -310,10 +240,7 @@ impl TransitGatewayRouteTableAnnouncementBuilder {
         self
     }
     /// <p>The timestamp when the transit gateway route table announcement was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -333,10 +260,7 @@ impl TransitGatewayRouteTableAnnouncementBuilder {
         self
     }
     /// <p>The key-value pairs associated with the route table announcement.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -347,8 +271,7 @@ impl TransitGatewayRouteTableAnnouncementBuilder {
     /// Consumes the builder and constructs a [`TransitGatewayRouteTableAnnouncement`](crate::types::TransitGatewayRouteTableAnnouncement).
     pub fn build(self) -> crate::types::TransitGatewayRouteTableAnnouncement {
         crate::types::TransitGatewayRouteTableAnnouncement {
-            transit_gateway_route_table_announcement_id: self
-                .transit_gateway_route_table_announcement_id,
+            transit_gateway_route_table_announcement_id: self.transit_gateway_route_table_announcement_id,
             transit_gateway_id: self.transit_gateway_id,
             core_network_id: self.core_network_id,
             peer_transit_gateway_id: self.peer_transit_gateway_id,

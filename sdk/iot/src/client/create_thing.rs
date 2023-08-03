@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`thing_arn(Option<String>)`](crate::operation::create_thing::CreateThingOutput::thing_arn): <p>The ARN of the new thing.</p>
     ///   - [`thing_id(Option<String>)`](crate::operation::create_thing::CreateThingOutput::thing_id): <p>The thing ID.</p>
     /// - On failure, responds with [`SdkError<CreateThingError>`](crate::operation::create_thing::CreateThingError)
-    pub fn create_thing(
-        &self,
-    ) -> crate::operation::create_thing::builders::CreateThingFluentBuilder {
+    pub fn create_thing(&self) -> crate::operation::create_thing::builders::CreateThingFluentBuilder {
         crate::operation::create_thing::builders::CreateThingFluentBuilder::new(self.handle.clone())
     }
 }

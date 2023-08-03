@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteNetworkInterfaceOutput {
 }
 impl DeleteNetworkInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkInterfaceOutput`](crate::operation::delete_network_interface::DeleteNetworkInterfaceOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_network_interface::builders::DeleteNetworkInterfaceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_network_interface::builders::DeleteNetworkInterfaceOutputBuilder {
         crate::operation::delete_network_interface::builders::DeleteNetworkInterfaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNetworkInterfaceOutput`](crate::operation::delete_network_interface::DeleteNetworkInterfaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNetworkInterfaceOutputBuilder {
     _request_id: Option<String>,
 }

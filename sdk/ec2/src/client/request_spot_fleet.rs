@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RequestSpotFleetOutput`](crate::operation::request_spot_fleet::RequestSpotFleetOutput) with field(s):
     ///   - [`spot_fleet_request_id(Option<String>)`](crate::operation::request_spot_fleet::RequestSpotFleetOutput::spot_fleet_request_id): <p>The ID of the Spot Fleet request.</p>
     /// - On failure, responds with [`SdkError<RequestSpotFleetError>`](crate::operation::request_spot_fleet::RequestSpotFleetError)
-    pub fn request_spot_fleet(
-        &self,
-    ) -> crate::operation::request_spot_fleet::builders::RequestSpotFleetFluentBuilder {
-        crate::operation::request_spot_fleet::builders::RequestSpotFleetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn request_spot_fleet(&self) -> crate::operation::request_spot_fleet::builders::RequestSpotFleetFluentBuilder {
+        crate::operation::request_spot_fleet::builders::RequestSpotFleetFluentBuilder::new(self.handle.clone())
     }
 }

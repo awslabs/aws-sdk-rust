@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,20 +60,12 @@ pub enum ConflictExceptionReason {
 impl ::std::convert::From<&str> for ConflictExceptionReason {
     fn from(s: &str) -> Self {
         match s {
-            "PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT" => {
-                ConflictExceptionReason::PricingPlanAttachedToBillingGroupDeleteConflict
-            }
-            "PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT" => {
-                ConflictExceptionReason::PricingRuleAttachedToPricingPlanDeleteConflict
-            }
-            "PRICING_RULE_IN_PRICING_PLAN_CONFLICT" => {
-                ConflictExceptionReason::PricingRuleInPricingPlanConflict
-            }
+            "PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT" => ConflictExceptionReason::PricingPlanAttachedToBillingGroupDeleteConflict,
+            "PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT" => ConflictExceptionReason::PricingRuleAttachedToPricingPlanDeleteConflict,
+            "PRICING_RULE_IN_PRICING_PLAN_CONFLICT" => ConflictExceptionReason::PricingRuleInPricingPlanConflict,
             "RESOURCE_NAME_CONFLICT" => ConflictExceptionReason::ResourceNameConflict,
             "WRITE_CONFLICT_RETRY" => ConflictExceptionReason::WriteConflictRetry,
-            other => ConflictExceptionReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConflictExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -94,15 +80,9 @@ impl ConflictExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ConflictExceptionReason::PricingPlanAttachedToBillingGroupDeleteConflict => {
-                "PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT"
-            }
-            ConflictExceptionReason::PricingRuleAttachedToPricingPlanDeleteConflict => {
-                "PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT"
-            }
-            ConflictExceptionReason::PricingRuleInPricingPlanConflict => {
-                "PRICING_RULE_IN_PRICING_PLAN_CONFLICT"
-            }
+            ConflictExceptionReason::PricingPlanAttachedToBillingGroupDeleteConflict => "PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT",
+            ConflictExceptionReason::PricingRuleAttachedToPricingPlanDeleteConflict => "PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT",
+            ConflictExceptionReason::PricingRuleInPricingPlanConflict => "PRICING_RULE_IN_PRICING_PLAN_CONFLICT",
             ConflictExceptionReason::ResourceNameConflict => "RESOURCE_NAME_CONFLICT",
             ConflictExceptionReason::WriteConflictRetry => "WRITE_CONFLICT_RETRY",
             ConflictExceptionReason::Unknown(value) => value.as_str(),

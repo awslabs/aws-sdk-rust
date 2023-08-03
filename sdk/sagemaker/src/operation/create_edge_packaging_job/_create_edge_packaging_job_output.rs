@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateEdgePackagingJobOutput {
 }
 impl CreateEdgePackagingJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateEdgePackagingJobOutput`](crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput).
-    pub fn builder(
-    ) -> crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobOutputBuilder {
         crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEdgePackagingJobOutput`](crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEdgePackagingJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl CreateEdgePackagingJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateEdgePackagingJobOutput`](crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput {
+    pub fn build(self) -> crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput {
         crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput {
             _request_id: self._request_id,
         }

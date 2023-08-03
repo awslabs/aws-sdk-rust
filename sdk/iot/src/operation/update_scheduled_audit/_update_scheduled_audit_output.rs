@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for UpdateScheduledAuditOutput {
 }
 impl UpdateScheduledAuditOutput {
     /// Creates a new builder-style object to manufacture [`UpdateScheduledAuditOutput`](crate::operation::update_scheduled_audit::UpdateScheduledAuditOutput).
-    pub fn builder(
-    ) -> crate::operation::update_scheduled_audit::builders::UpdateScheduledAuditOutputBuilder {
+    pub fn builder() -> crate::operation::update_scheduled_audit::builders::UpdateScheduledAuditOutputBuilder {
         crate::operation::update_scheduled_audit::builders::UpdateScheduledAuditOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateScheduledAuditOutput`](crate::operation::update_scheduled_audit::UpdateScheduledAuditOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateScheduledAuditOutputBuilder {
     pub(crate) scheduled_audit_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateScheduledAuditOutputBuilder {
     /// <p>The ARN of the scheduled audit.</p>
-    pub fn scheduled_audit_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_audit_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_audit_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the scheduled audit.</p>
-    pub fn set_scheduled_audit_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_audit_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_audit_arn = input;
         self
     }

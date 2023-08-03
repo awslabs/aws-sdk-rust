@@ -15,35 +15,25 @@ impl DescribeRoutingControlInput {
 }
 impl DescribeRoutingControlInput {
     /// Creates a new builder-style object to manufacture [`DescribeRoutingControlInput`](crate::operation::describe_routing_control::DescribeRoutingControlInput).
-    pub fn builder(
-    ) -> crate::operation::describe_routing_control::builders::DescribeRoutingControlInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_routing_control::builders::DescribeRoutingControlInputBuilder {
         crate::operation::describe_routing_control::builders::DescribeRoutingControlInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRoutingControlInput`](crate::operation::describe_routing_control::DescribeRoutingControlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRoutingControlInputBuilder {
     pub(crate) routing_control_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRoutingControlInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    pub fn routing_control_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    pub fn set_routing_control_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_control_arn = input;
         self
     }
@@ -54,14 +44,10 @@ impl DescribeRoutingControlInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRoutingControlInput`](crate::operation::describe_routing_control::DescribeRoutingControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_routing_control::DescribeRoutingControlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_routing_control::DescribeRoutingControlInput {
-                routing_control_arn: self.routing_control_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_routing_control::DescribeRoutingControlInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_routing_control::DescribeRoutingControlInput {
+            routing_control_arn: self.routing_control_arn,
+        })
     }
 }

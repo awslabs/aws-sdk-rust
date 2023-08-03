@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`PutVoiceConnectorOriginationOutput`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationOutput) with field(s):
     ///   - [`origination(Option<Origination>)`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationOutput::origination): <p>The updated origination settings.</p>
     /// - On failure, responds with [`SdkError<PutVoiceConnectorOriginationError>`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationError)
-    pub fn put_voice_connector_origination(&self) -> crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationFluentBuilder{
+    pub fn put_voice_connector_origination(
+        &self,
+    ) -> crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationFluentBuilder {
         crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationFluentBuilder::new(self.handle.clone())
     }
 }

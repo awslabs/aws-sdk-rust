@@ -6,7 +6,11 @@ impl super::Client {
     ///   - [`run_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunFluentBuilder::set_run_id): <p>The unique run identifier associated with this run.</p>
     /// - On success, responds with [`CancelDataQualityRuleRecommendationRunOutput`](crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunOutput)
     /// - On failure, responds with [`SdkError<CancelDataQualityRuleRecommendationRunError>`](crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunError)
-    pub fn cancel_data_quality_rule_recommendation_run(&self) -> crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunFluentBuilder{
-        crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunFluentBuilder::new(self.handle.clone())
+    pub fn cancel_data_quality_rule_recommendation_run(
+        &self,
+    ) -> crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunFluentBuilder {
+        crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

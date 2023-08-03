@@ -10,10 +10,7 @@ pub fn ser_update_answer_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = object_2.key(key_3.as_str()).start_object();
-                crate::protocol_serde::shape_choice_update::ser_choice_update(
-                    &mut object_5,
-                    value_4,
-                )?;
+                crate::protocol_serde::shape_choice_update::ser_choice_update(&mut object_5, value_4)?;
                 object_5.finish();
             }
         }

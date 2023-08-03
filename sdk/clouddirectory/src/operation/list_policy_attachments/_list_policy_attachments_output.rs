@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPolicyAttachmentsOutput {
 }
 impl ListPolicyAttachmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListPolicyAttachmentsOutput`](crate::operation::list_policy_attachments::ListPolicyAttachmentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsOutputBuilder {
         crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPolicyAttachmentsOutput`](crate::operation::list_policy_attachments::ListPolicyAttachmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPolicyAttachmentsOutputBuilder {
     pub(crate) object_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,27 +47,19 @@ impl ListPolicyAttachmentsOutputBuilder {
     /// To override the contents of this collection use [`set_object_identifiers`](Self::set_object_identifiers).
     ///
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
-    pub fn object_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.object_identifiers.unwrap_or_default();
         v.push(input.into());
         self.object_identifiers = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
-    pub fn set_object_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_object_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.object_identifiers = input;
         self
     }
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
-    pub fn get_object_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_object_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.object_identifiers
     }
     /// <p>The pagination token.</p>

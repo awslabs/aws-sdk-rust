@@ -16,20 +16,16 @@ impl BatchGetMetricDataInput {
 }
 impl BatchGetMetricDataInput {
     /// Creates a new builder-style object to manufacture [`BatchGetMetricDataInput`](crate::operation::batch_get_metric_data::BatchGetMetricDataInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_metric_data::builders::BatchGetMetricDataInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_metric_data::builders::BatchGetMetricDataInputBuilder {
         crate::operation::batch_get_metric_data::builders::BatchGetMetricDataInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetMetricDataInput`](crate::operation::batch_get_metric_data::BatchGetMetricDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetMetricDataInputBuilder {
-    pub(crate) queries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>>,
+    pub(crate) queries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>>,
 }
 impl BatchGetMetricDataInputBuilder {
     /// Appends an item to `queries`.
@@ -44,30 +40,19 @@ impl BatchGetMetricDataInputBuilder {
         self
     }
     /// <p>A list of queries for metrics to be retrieved.</p>
-    pub fn set_queries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>>,
-    ) -> Self {
+    pub fn set_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>>) -> Self {
         self.queries = input;
         self
     }
     /// <p>A list of queries for metrics to be retrieved.</p>
-    pub fn get_queries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>> {
+    pub fn get_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>> {
         &self.queries
     }
     /// Consumes the builder and constructs a [`BatchGetMetricDataInput`](crate::operation::batch_get_metric_data::BatchGetMetricDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_metric_data::BatchGetMetricDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_metric_data::BatchGetMetricDataInput {
-                queries: self.queries,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_metric_data::BatchGetMetricDataInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_get_metric_data::BatchGetMetricDataInput { queries: self.queries })
     }
 }

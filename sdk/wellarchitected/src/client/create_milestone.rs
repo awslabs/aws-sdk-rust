@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`workload_id(Option<String>)`](crate::operation::create_milestone::CreateMilestoneOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     ///   - [`milestone_number(i32)`](crate::operation::create_milestone::CreateMilestoneOutput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
     /// - On failure, responds with [`SdkError<CreateMilestoneError>`](crate::operation::create_milestone::CreateMilestoneError)
-    pub fn create_milestone(
-        &self,
-    ) -> crate::operation::create_milestone::builders::CreateMilestoneFluentBuilder {
-        crate::operation::create_milestone::builders::CreateMilestoneFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_milestone(&self) -> crate::operation::create_milestone::builders::CreateMilestoneFluentBuilder {
+        crate::operation::create_milestone::builders::CreateMilestoneFluentBuilder::new(self.handle.clone())
     }
 }

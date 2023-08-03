@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPipelineParametersForExecutionOut
 }
 impl ListPipelineParametersForExecutionOutput {
     /// Creates a new builder-style object to manufacture [`ListPipelineParametersForExecutionOutput`](crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionOutput).
-    pub fn builder() -> crate::operation::list_pipeline_parameters_for_execution::builders::ListPipelineParametersForExecutionOutputBuilder{
+    pub fn builder() -> crate::operation::list_pipeline_parameters_for_execution::builders::ListPipelineParametersForExecutionOutputBuilder {
         crate::operation::list_pipeline_parameters_for_execution::builders::ListPipelineParametersForExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPipelineParametersForExecutionOutput`](crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPipelineParametersForExecutionOutputBuilder {
     pub(crate) pipeline_parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListPipelineParametersForExecutionOutputBuilder {
         self
     }
     /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
-    pub fn set_pipeline_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_pipeline_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.pipeline_parameters = input;
         self
     }
     /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
-    pub fn get_pipeline_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_pipeline_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.pipeline_parameters
     }
     /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
@@ -93,12 +86,10 @@ impl ListPipelineParametersForExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPipelineParametersForExecutionOutput`](crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionOutput).
-    pub fn build(self) -> crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionOutput{
+    pub fn build(self) -> crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionOutput {
         crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionOutput {
-            pipeline_parameters: self.pipeline_parameters
-            ,
-            next_token: self.next_token
-            ,
+            pipeline_parameters: self.pipeline_parameters,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

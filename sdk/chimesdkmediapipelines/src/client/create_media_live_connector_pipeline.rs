@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`CreateMediaLiveConnectorPipelineOutput`](crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineOutput) with field(s):
     ///   - [`media_live_connector_pipeline(Option<MediaLiveConnectorPipeline>)`](crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineOutput::media_live_connector_pipeline): <p>The new media live connector pipeline.</p>
     /// - On failure, responds with [`SdkError<CreateMediaLiveConnectorPipelineError>`](crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError)
-    pub fn create_media_live_connector_pipeline(&self) -> crate::operation::create_media_live_connector_pipeline::builders::CreateMediaLiveConnectorPipelineFluentBuilder{
+    pub fn create_media_live_connector_pipeline(
+        &self,
+    ) -> crate::operation::create_media_live_connector_pipeline::builders::CreateMediaLiveConnectorPipelineFluentBuilder {
         crate::operation::create_media_live_connector_pipeline::builders::CreateMediaLiveConnectorPipelineFluentBuilder::new(self.handle.clone())
     }
 }

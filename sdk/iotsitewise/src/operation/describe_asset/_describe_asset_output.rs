@@ -25,8 +25,7 @@ pub struct DescribeAssetOutput {
     pub asset_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::AssetHierarchy>>,
     /// <p>The composite models for the asset.</p>
     #[doc(hidden)]
-    pub asset_composite_models:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModel>>,
+    pub asset_composite_models: ::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModel>>,
     /// <p>The date the asset was created, in Unix epoch time.</p>
     #[doc(hidden)]
     pub asset_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -69,9 +68,7 @@ impl DescribeAssetOutput {
         self.asset_hierarchies.as_deref()
     }
     /// <p>The composite models for the asset.</p>
-    pub fn asset_composite_models(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssetCompositeModel]> {
+    pub fn asset_composite_models(&self) -> ::std::option::Option<&[crate::types::AssetCompositeModel]> {
         self.asset_composite_models.as_deref()
     }
     /// <p>The date the asset was created, in Unix epoch time.</p>
@@ -105,20 +102,15 @@ impl DescribeAssetOutput {
 
 /// A builder for [`DescribeAssetOutput`](crate::operation::describe_asset::DescribeAssetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssetOutputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) asset_name: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_id: ::std::option::Option<::std::string::String>,
-    pub(crate) asset_properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetProperty>>,
-    pub(crate) asset_hierarchies:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetHierarchy>>,
-    pub(crate) asset_composite_models:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModel>>,
+    pub(crate) asset_properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetProperty>>,
+    pub(crate) asset_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::AssetHierarchy>>,
+    pub(crate) asset_composite_models: ::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModel>>,
     pub(crate) asset_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) asset_last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) asset_status: ::std::option::Option<crate::types::AssetStatus>,
@@ -172,18 +164,12 @@ impl DescribeAssetOutputBuilder {
         &self.asset_name
     }
     /// <p>The ID of the asset model that was used to create the asset.</p>
-    pub fn asset_model_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the asset model that was used to create the asset.</p>
-    pub fn set_asset_model_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_id = input;
         self
     }
@@ -205,18 +191,13 @@ impl DescribeAssetOutputBuilder {
     }
     /// <p>The list of asset properties for the asset.</p>
     /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetCompositeModels</code> object.</p>
-    pub fn set_asset_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetProperty>>,
-    ) -> Self {
+    pub fn set_asset_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetProperty>>) -> Self {
         self.asset_properties = input;
         self
     }
     /// <p>The list of asset properties for the asset.</p>
     /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetCompositeModels</code> object.</p>
-    pub fn get_asset_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetProperty>> {
+    pub fn get_asset_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetProperty>> {
         &self.asset_properties
     }
     /// Appends an item to `asset_hierarchies`.
@@ -231,17 +212,12 @@ impl DescribeAssetOutputBuilder {
         self
     }
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-    pub fn set_asset_hierarchies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetHierarchy>>,
-    ) -> Self {
+    pub fn set_asset_hierarchies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetHierarchy>>) -> Self {
         self.asset_hierarchies = input;
         self
     }
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-    pub fn get_asset_hierarchies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetHierarchy>> {
+    pub fn get_asset_hierarchies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetHierarchy>> {
         &self.asset_hierarchies
     }
     /// Appends an item to `asset_composite_models`.
@@ -256,17 +232,12 @@ impl DescribeAssetOutputBuilder {
         self
     }
     /// <p>The composite models for the asset.</p>
-    pub fn set_asset_composite_models(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModel>>,
-    ) -> Self {
+    pub fn set_asset_composite_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModel>>) -> Self {
         self.asset_composite_models = input;
         self
     }
     /// <p>The composite models for the asset.</p>
-    pub fn get_asset_composite_models(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModel>> {
+    pub fn get_asset_composite_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModel>> {
         &self.asset_composite_models
     }
     /// <p>The date the asset was created, in Unix epoch time.</p>
@@ -275,10 +246,7 @@ impl DescribeAssetOutputBuilder {
         self
     }
     /// <p>The date the asset was created, in Unix epoch time.</p>
-    pub fn set_asset_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_asset_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.asset_creation_date = input;
         self
     }
@@ -292,17 +260,12 @@ impl DescribeAssetOutputBuilder {
         self
     }
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
-    pub fn set_asset_last_update_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_asset_last_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.asset_last_update_date = input;
         self
     }
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
-    pub fn get_asset_last_update_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_asset_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.asset_last_update_date
     }
     /// <p>The current status of the asset, which contains a state and any error message.</p>
@@ -311,10 +274,7 @@ impl DescribeAssetOutputBuilder {
         self
     }
     /// <p>The current status of the asset, which contains a state and any error message.</p>
-    pub fn set_asset_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetStatus>,
-    ) -> Self {
+    pub fn set_asset_status(mut self, input: ::std::option::Option<crate::types::AssetStatus>) -> Self {
         self.asset_status = input;
         self
     }
@@ -323,18 +283,12 @@ impl DescribeAssetOutputBuilder {
         &self.asset_status
     }
     /// <p>A description for the asset.</p>
-    pub fn asset_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the asset.</p>
-    pub fn set_asset_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_description = input;
         self
     }

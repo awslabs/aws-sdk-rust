@@ -9,8 +9,7 @@ pub struct DescribeClusterParameterGroupsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ClusterParameterGroup</code> instances. Each instance describes one cluster parameter group. </p>
     #[doc(hidden)]
-    pub parameter_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterGroup>>,
+    pub parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterParameterGroupsOutput {
@@ -19,9 +18,7 @@ impl DescribeClusterParameterGroupsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of <code>ClusterParameterGroup</code> instances. Each instance describes one cluster parameter group. </p>
-    pub fn parameter_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ClusterParameterGroup]> {
+    pub fn parameter_groups(&self) -> ::std::option::Option<&[crate::types::ClusterParameterGroup]> {
         self.parameter_groups.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeClusterParameterGroupsOutput 
 }
 impl DescribeClusterParameterGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterParameterGroupsOutput`](crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput).
-    pub fn builder() -> crate::operation::describe_cluster_parameter_groups::builders::DescribeClusterParameterGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_cluster_parameter_groups::builders::DescribeClusterParameterGroupsOutputBuilder {
         crate::operation::describe_cluster_parameter_groups::builders::DescribeClusterParameterGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterParameterGroupsOutput`](crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterParameterGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) parameter_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterGroup>>,
+    pub(crate) parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterParameterGroupsOutputBuilder {
@@ -75,17 +69,12 @@ impl DescribeClusterParameterGroupsOutputBuilder {
         self
     }
     /// <p>A list of <code>ClusterParameterGroup</code> instances. Each instance describes one cluster parameter group. </p>
-    pub fn set_parameter_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterGroup>>,
-    ) -> Self {
+    pub fn set_parameter_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterGroup>>) -> Self {
         self.parameter_groups = input;
         self
     }
     /// <p>A list of <code>ClusterParameterGroup</code> instances. Each instance describes one cluster parameter group. </p>
-    pub fn get_parameter_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterGroup>> {
+    pub fn get_parameter_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterGroup>> {
         &self.parameter_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -98,10 +87,7 @@ impl DescribeClusterParameterGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeClusterParameterGroupsOutput`](crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput {
         crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput {
             marker: self.marker,
             parameter_groups: self.parameter_groups,

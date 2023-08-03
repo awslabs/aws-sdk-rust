@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`resource_type(Option<TaggableResourceType>)`](crate::operation::describe_tags::DescribeTagsOutput::resource_type): <p>The type of the tagged ML object.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::describe_tags::DescribeTagsOutput::tags): <p>A list of tags associated with the ML object.</p>
     /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::operation::describe_tags::DescribeTagsError)
-    pub fn describe_tags(
-        &self,
-    ) -> crate::operation::describe_tags::builders::DescribeTagsFluentBuilder {
-        crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_tags(&self) -> crate::operation::describe_tags::builders::DescribeTagsFluentBuilder {
+        crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::new(self.handle.clone())
     }
 }

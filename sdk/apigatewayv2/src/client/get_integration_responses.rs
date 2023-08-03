@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<IntegrationResponse>>)`](crate::operation::get_integration_responses::GetIntegrationResponsesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_integration_responses::GetIntegrationResponsesOutput::next_token): <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     /// - On failure, responds with [`SdkError<GetIntegrationResponsesError>`](crate::operation::get_integration_responses::GetIntegrationResponsesError)
-    pub fn get_integration_responses(
-        &self,
-    ) -> crate::operation::get_integration_responses::builders::GetIntegrationResponsesFluentBuilder
-    {
+    pub fn get_integration_responses(&self) -> crate::operation::get_integration_responses::builders::GetIntegrationResponsesFluentBuilder {
         crate::operation::get_integration_responses::builders::GetIntegrationResponsesFluentBuilder::new(self.handle.clone())
     }
 }

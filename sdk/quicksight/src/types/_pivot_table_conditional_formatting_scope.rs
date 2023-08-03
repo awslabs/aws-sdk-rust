@@ -10,9 +10,7 @@ pub struct PivotTableConditionalFormattingScope {
 }
 impl PivotTableConditionalFormattingScope {
     /// <p>The role (field, field total, grand total) of the cell for conditional formatting.</p>
-    pub fn role(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PivotTableConditionalFormattingScopeRole> {
+    pub fn role(&self) -> ::std::option::Option<&crate::types::PivotTableConditionalFormattingScopeRole> {
         self.role.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl PivotTableConditionalFormattingScope {
 
 /// A builder for [`PivotTableConditionalFormattingScope`](crate::types::PivotTableConditionalFormattingScope).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PivotTableConditionalFormattingScopeBuilder {
     pub(crate) role: ::std::option::Option<crate::types::PivotTableConditionalFormattingScopeRole>,
 }
@@ -38,17 +34,12 @@ impl PivotTableConditionalFormattingScopeBuilder {
         self
     }
     /// <p>The role (field, field total, grand total) of the cell for conditional formatting.</p>
-    pub fn set_role(
-        mut self,
-        input: ::std::option::Option<crate::types::PivotTableConditionalFormattingScopeRole>,
-    ) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<crate::types::PivotTableConditionalFormattingScopeRole>) -> Self {
         self.role = input;
         self
     }
     /// <p>The role (field, field total, grand total) of the cell for conditional formatting.</p>
-    pub fn get_role(
-        &self,
-    ) -> &::std::option::Option<crate::types::PivotTableConditionalFormattingScopeRole> {
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::PivotTableConditionalFormattingScopeRole> {
         &self.role
     }
     /// Consumes the builder and constructs a [`PivotTableConditionalFormattingScope`](crate::types::PivotTableConditionalFormattingScope).

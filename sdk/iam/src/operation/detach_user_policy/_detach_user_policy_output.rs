@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DetachUserPolicyOutput {
 }
 impl DetachUserPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DetachUserPolicyOutput`](crate::operation::detach_user_policy::DetachUserPolicyOutput).
-    pub fn builder() -> crate::operation::detach_user_policy::builders::DetachUserPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::detach_user_policy::builders::DetachUserPolicyOutputBuilder {
         crate::operation::detach_user_policy::builders::DetachUserPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetachUserPolicyOutput`](crate::operation::detach_user_policy::DetachUserPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachUserPolicyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -6,24 +6,18 @@
 pub struct ParametricConfigurationOverrides {
     /// <p> The configurations for the application running by the job run.</p>
     #[doc(hidden)]
-    pub application_configuration:
-        ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    pub application_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p> The configurations for monitoring. </p>
     #[doc(hidden)]
-    pub monitoring_configuration:
-        ::std::option::Option<crate::types::ParametricMonitoringConfiguration>,
+    pub monitoring_configuration: ::std::option::Option<crate::types::ParametricMonitoringConfiguration>,
 }
 impl ParametricConfigurationOverrides {
     /// <p> The configurations for the application running by the job run.</p>
-    pub fn application_configuration(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::Configuration]> {
+    pub fn application_configuration(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
         self.application_configuration.as_deref()
     }
     /// <p> The configurations for monitoring. </p>
-    pub fn monitoring_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ParametricMonitoringConfiguration> {
+    pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::ParametricMonitoringConfiguration> {
         self.monitoring_configuration.as_ref()
     }
 }
@@ -36,14 +30,10 @@ impl ParametricConfigurationOverrides {
 
 /// A builder for [`ParametricConfigurationOverrides`](crate::types::ParametricConfigurationOverrides).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParametricConfigurationOverridesBuilder {
-    pub(crate) application_configuration:
-        ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
-    pub(crate) monitoring_configuration:
-        ::std::option::Option<crate::types::ParametricMonitoringConfiguration>,
+    pub(crate) application_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    pub(crate) monitoring_configuration: ::std::option::Option<crate::types::ParametricMonitoringConfiguration>,
 }
 impl ParametricConfigurationOverridesBuilder {
     /// Appends an item to `application_configuration`.
@@ -58,39 +48,26 @@ impl ParametricConfigurationOverridesBuilder {
         self
     }
     /// <p> The configurations for the application running by the job run.</p>
-    pub fn set_application_configuration(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
-    ) -> Self {
+    pub fn set_application_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
         self.application_configuration = input;
         self
     }
     /// <p> The configurations for the application running by the job run.</p>
-    pub fn get_application_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+    pub fn get_application_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
         &self.application_configuration
     }
     /// <p> The configurations for monitoring. </p>
-    pub fn monitoring_configuration(
-        mut self,
-        input: crate::types::ParametricMonitoringConfiguration,
-    ) -> Self {
+    pub fn monitoring_configuration(mut self, input: crate::types::ParametricMonitoringConfiguration) -> Self {
         self.monitoring_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> The configurations for monitoring. </p>
-    pub fn set_monitoring_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ParametricMonitoringConfiguration>,
-    ) -> Self {
+    pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::ParametricMonitoringConfiguration>) -> Self {
         self.monitoring_configuration = input;
         self
     }
     /// <p> The configurations for monitoring. </p>
-    pub fn get_monitoring_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParametricMonitoringConfiguration> {
+    pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::ParametricMonitoringConfiguration> {
         &self.monitoring_configuration
     }
     /// Consumes the builder and constructs a [`ParametricConfigurationOverrides`](crate::types::ParametricConfigurationOverrides).

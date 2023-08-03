@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartDataQualityRulesetEvaluationRunO
 }
 impl StartDataQualityRulesetEvaluationRunOutput {
     /// Creates a new builder-style object to manufacture [`StartDataQualityRulesetEvaluationRunOutput`](crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput).
-    pub fn builder() -> crate::operation::start_data_quality_ruleset_evaluation_run::builders::StartDataQualityRulesetEvaluationRunOutputBuilder{
+    pub fn builder() -> crate::operation::start_data_quality_ruleset_evaluation_run::builders::StartDataQualityRulesetEvaluationRunOutputBuilder {
         crate::operation::start_data_quality_ruleset_evaluation_run::builders::StartDataQualityRulesetEvaluationRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartDataQualityRulesetEvaluationRunOutput`](crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDataQualityRulesetEvaluationRunOutputBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl StartDataQualityRulesetEvaluationRunOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartDataQualityRulesetEvaluationRunOutput`](crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput).
-    pub fn build(self) -> crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput{
+    pub fn build(self) -> crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput {
         crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput {
-            run_id: self.run_id
-            ,
+            run_id: self.run_id,
             _request_id: self._request_id,
         }
     }

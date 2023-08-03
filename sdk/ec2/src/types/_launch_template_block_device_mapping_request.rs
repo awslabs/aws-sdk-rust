@@ -44,9 +44,7 @@ impl LaunchTemplateBlockDeviceMappingRequest {
 
 /// A builder for [`LaunchTemplateBlockDeviceMappingRequest`](crate::types::LaunchTemplateBlockDeviceMappingRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateBlockDeviceMappingRequestBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_name: ::std::option::Option<::std::string::String>,
@@ -88,17 +86,12 @@ impl LaunchTemplateBlockDeviceMappingRequestBuilder {
         self
     }
     /// <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    pub fn set_ebs(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateEbsBlockDeviceRequest>,
-    ) -> Self {
+    pub fn set_ebs(mut self, input: ::std::option::Option<crate::types::LaunchTemplateEbsBlockDeviceRequest>) -> Self {
         self.ebs = input;
         self
     }
     /// <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    pub fn get_ebs(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchTemplateEbsBlockDeviceRequest> {
+    pub fn get_ebs(&self) -> &::std::option::Option<crate::types::LaunchTemplateEbsBlockDeviceRequest> {
         &self.ebs
     }
     /// <p>To omit the device from the block device mapping, specify an empty string.</p>

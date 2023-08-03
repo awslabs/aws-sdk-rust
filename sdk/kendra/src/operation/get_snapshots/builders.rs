@@ -10,10 +10,7 @@ impl GetSnapshotsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_snapshots::GetSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_snapshots::GetSnapshotsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_snapshots::GetSnapshotsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_snapshots();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetSnapshotsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_snapshots::GetSnapshots,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_snapshots::GetSnapshots, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_snapshots::GetSnapshotsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetSnapshotsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetSnapshotsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_snapshots::GetSnapshots,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_snapshots::GetSnapshots, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_snapshots::GetSnapshotsError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl GetSnapshotsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_snapshots::paginator::GetSnapshotsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_snapshots::paginator::GetSnapshotsPaginator {
-        crate::operation::get_snapshots::paginator::GetSnapshotsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_snapshots::paginator::GetSnapshotsPaginator {
+        crate::operation::get_snapshots::paginator::GetSnapshotsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the index to get search metrics data.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -183,10 +166,7 @@ impl GetSnapshotsFluentBuilder {
     }
     /// <p>The metric you want to retrieve. You can specify only one metric per call.</p>
     /// <p>For more information about the metrics you can view, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining insights with search analytics</a>.</p>
-    pub fn set_metric_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricType>,
-    ) -> Self {
+    pub fn set_metric_type(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
         self.inner = self.inner.set_metric_type(input);
         self
     }

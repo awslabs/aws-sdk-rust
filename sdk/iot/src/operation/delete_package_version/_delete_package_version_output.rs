@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeletePackageVersionOutput {
 }
 impl DeletePackageVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeletePackageVersionOutput`](crate::operation::delete_package_version::DeletePackageVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_package_version::builders::DeletePackageVersionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_package_version::builders::DeletePackageVersionOutputBuilder {
         crate::operation::delete_package_version::builders::DeletePackageVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePackageVersionOutput`](crate::operation::delete_package_version::DeletePackageVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePackageVersionOutputBuilder {
     _request_id: Option<String>,
 }

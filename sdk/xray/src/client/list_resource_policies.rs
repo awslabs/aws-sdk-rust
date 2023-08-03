@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`resource_policies(Option<Vec<ResourcePolicy>>)`](crate::operation::list_resource_policies::ListResourcePoliciesOutput::resource_policies): <p>The list of resource policies in the target Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_policies::ListResourcePoliciesOutput::next_token): <p>Pagination token. Not currently supported.</p>
     /// - On failure, responds with [`SdkError<ListResourcePoliciesError>`](crate::operation::list_resource_policies::ListResourcePoliciesError)
-    pub fn list_resource_policies(
-        &self,
-    ) -> crate::operation::list_resource_policies::builders::ListResourcePoliciesFluentBuilder {
-        crate::operation::list_resource_policies::builders::ListResourcePoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_resource_policies(&self) -> crate::operation::list_resource_policies::builders::ListResourcePoliciesFluentBuilder {
+        crate::operation::list_resource_policies::builders::ListResourcePoliciesFluentBuilder::new(self.handle.clone())
     }
 }

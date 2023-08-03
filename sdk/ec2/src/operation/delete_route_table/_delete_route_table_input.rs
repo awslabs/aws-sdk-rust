@@ -22,17 +22,14 @@ impl DeleteRouteTableInput {
 }
 impl DeleteRouteTableInput {
     /// Creates a new builder-style object to manufacture [`DeleteRouteTableInput`](crate::operation::delete_route_table::DeleteRouteTableInput).
-    pub fn builder() -> crate::operation::delete_route_table::builders::DeleteRouteTableInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_route_table::builders::DeleteRouteTableInputBuilder {
         crate::operation::delete_route_table::builders::DeleteRouteTableInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRouteTableInput`](crate::operation::delete_route_table::DeleteRouteTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRouteTableInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl DeleteRouteTableInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the route table.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_table_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl DeleteRouteTableInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRouteTableInput`](crate::operation::delete_route_table::DeleteRouteTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_route_table::DeleteRouteTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_route_table::DeleteRouteTableInput {
-                dry_run: self.dry_run,
-                route_table_id: self.route_table_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_route_table::DeleteRouteTableInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_route_table::DeleteRouteTableInput {
+            dry_run: self.dry_run,
+            route_table_id: self.route_table_id,
+        })
     }
 }

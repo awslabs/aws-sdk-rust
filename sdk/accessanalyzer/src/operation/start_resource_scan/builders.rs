@@ -10,10 +10,7 @@ impl StartResourceScanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_resource_scan::StartResourceScanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_resource_scan::StartResourceScanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_resource_scan::StartResourceScanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_resource_scan();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartResourceScanFluentBuilder {
         }
     }
     /// Access the StartResourceScan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_resource_scan::builders::StartResourceScanInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_resource_scan::builders::StartResourceScanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartResourceScanFluentBuilder {
             crate::operation::start_resource_scan::StartResourceScan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_resource_scan::StartResourceScanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_resource_scan::StartResourceScanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartResourceScanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartResourceScanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_resource_scan::StartResourceScanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_resource_scan::StartResourceScanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_resource_scan::StartResourceScanError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartResourceScanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_resource_scan::StartResourceScanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_resource_scan::StartResourceScanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_resource_scan::StartResourceScanError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl StartResourceScanFluentBuilder {
             crate::operation::start_resource_scan::StartResourceScan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_resource_scan::StartResourceScanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_resource_scan::StartResourceScanError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl StartResourceScanFluentBuilder {
         self.inner.get_resource_arn()
     }
     /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
-    pub fn resource_owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_owner_account(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
-    pub fn set_resource_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_owner_account(input);
         self
     }

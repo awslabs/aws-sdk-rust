@@ -212,22 +212,13 @@ impl ::std::fmt::Debug for CreateRelationalDatabaseInput {
         let mut formatter = f.debug_struct("CreateRelationalDatabaseInput");
         formatter.field("relational_database_name", &self.relational_database_name);
         formatter.field("availability_zone", &self.availability_zone);
-        formatter.field(
-            "relational_database_blueprint_id",
-            &self.relational_database_blueprint_id,
-        );
-        formatter.field(
-            "relational_database_bundle_id",
-            &self.relational_database_bundle_id,
-        );
+        formatter.field("relational_database_blueprint_id", &self.relational_database_blueprint_id);
+        formatter.field("relational_database_bundle_id", &self.relational_database_bundle_id);
         formatter.field("master_database_name", &self.master_database_name);
         formatter.field("master_username", &self.master_username);
         formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
         formatter.field("preferred_backup_window", &self.preferred_backup_window);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
         formatter.field("publicly_accessible", &self.publicly_accessible);
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -235,9 +226,7 @@ impl ::std::fmt::Debug for CreateRelationalDatabaseInput {
 }
 impl CreateRelationalDatabaseInput {
     /// Creates a new builder-style object to manufacture [`CreateRelationalDatabaseInput`](crate::operation::create_relational_database::CreateRelationalDatabaseInput).
-    pub fn builder(
-    ) -> crate::operation::create_relational_database::builders::CreateRelationalDatabaseInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_relational_database::builders::CreateRelationalDatabaseInputBuilder {
         crate::operation::create_relational_database::builders::CreateRelationalDatabaseInputBuilder::default()
     }
 }
@@ -265,10 +254,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -278,10 +264,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_name = input;
         self
     }
@@ -296,19 +279,13 @@ impl CreateRelationalDatabaseInputBuilder {
     }
     /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
     /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
     /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -319,52 +296,36 @@ impl CreateRelationalDatabaseInputBuilder {
     }
     /// <p>The blueprint ID for your new database. A blueprint describes the major engine version of a database.</p>
     /// <p>You can get a list of database blueprints IDs by using the <code>get relational database blueprints</code> operation.</p>
-    pub fn relational_database_blueprint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_blueprint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_blueprint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The blueprint ID for your new database. A blueprint describes the major engine version of a database.</p>
     /// <p>You can get a list of database blueprints IDs by using the <code>get relational database blueprints</code> operation.</p>
-    pub fn set_relational_database_blueprint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_blueprint_id = input;
         self
     }
     /// <p>The blueprint ID for your new database. A blueprint describes the major engine version of a database.</p>
     /// <p>You can get a list of database blueprints IDs by using the <code>get relational database blueprints</code> operation.</p>
-    pub fn get_relational_database_blueprint_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_relational_database_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.relational_database_blueprint_id
     }
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
-    pub fn relational_database_bundle_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_bundle_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
-    pub fn set_relational_database_bundle_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_bundle_id = input;
         self
     }
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
-    pub fn get_relational_database_bundle_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_relational_database_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.relational_database_bundle_id
     }
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -384,10 +345,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0- 9).</p> </li>
     /// <li> <p>Can't be a word reserved by the specified database engine.</p> <p>For more information about reserved words in PostgreSQL, see the SQL Key Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>
     /// </ul>
-    pub fn master_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_database_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -408,10 +366,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0- 9).</p> </li>
     /// <li> <p>Can't be a word reserved by the specified database engine.</p> <p>For more information about reserved words in PostgreSQL, see the SQL Key Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>
     /// </ul>
-    pub fn set_master_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_database_name = input;
         self
     }
@@ -452,10 +407,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Can't be a reserved word for the chosen database engine.</p> <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and Reserved Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>
     /// </ul>
-    pub fn master_username(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_username = ::std::option::Option::Some(input.into());
         self
     }
@@ -476,10 +428,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Can't be a reserved word for the chosen database engine.</p> <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and Reserved Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>
     /// </ul>
-    pub fn set_master_username(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_username = input;
         self
     }
@@ -508,10 +457,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-    pub fn master_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
@@ -520,10 +466,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-    pub fn set_master_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
         self
     }
@@ -544,10 +487,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn preferred_backup_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_backup_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -560,10 +500,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn set_preferred_backup_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_backup_window = input;
         self
     }
@@ -589,10 +526,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>
     /// </ul>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -606,10 +540,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>
     /// </ul>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
@@ -623,9 +554,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>
     /// </ul>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
     /// <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
@@ -656,10 +585,7 @@ impl CreateRelationalDatabaseInputBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -675,21 +601,19 @@ impl CreateRelationalDatabaseInputBuilder {
         crate::operation::create_relational_database::CreateRelationalDatabaseInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_relational_database::CreateRelationalDatabaseInput {
-                relational_database_name: self.relational_database_name,
-                availability_zone: self.availability_zone,
-                relational_database_blueprint_id: self.relational_database_blueprint_id,
-                relational_database_bundle_id: self.relational_database_bundle_id,
-                master_database_name: self.master_database_name,
-                master_username: self.master_username,
-                master_user_password: self.master_user_password,
-                preferred_backup_window: self.preferred_backup_window,
-                preferred_maintenance_window: self.preferred_maintenance_window,
-                publicly_accessible: self.publicly_accessible,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_relational_database::CreateRelationalDatabaseInput {
+            relational_database_name: self.relational_database_name,
+            availability_zone: self.availability_zone,
+            relational_database_blueprint_id: self.relational_database_blueprint_id,
+            relational_database_bundle_id: self.relational_database_bundle_id,
+            master_database_name: self.master_database_name,
+            master_username: self.master_username,
+            master_user_password: self.master_user_password,
+            preferred_backup_window: self.preferred_backup_window,
+            preferred_maintenance_window: self.preferred_maintenance_window,
+            publicly_accessible: self.publicly_accessible,
+            tags: self.tags,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateRelationalDatabaseInputBuilder {
@@ -697,22 +621,13 @@ impl ::std::fmt::Debug for CreateRelationalDatabaseInputBuilder {
         let mut formatter = f.debug_struct("CreateRelationalDatabaseInputBuilder");
         formatter.field("relational_database_name", &self.relational_database_name);
         formatter.field("availability_zone", &self.availability_zone);
-        formatter.field(
-            "relational_database_blueprint_id",
-            &self.relational_database_blueprint_id,
-        );
-        formatter.field(
-            "relational_database_bundle_id",
-            &self.relational_database_bundle_id,
-        );
+        formatter.field("relational_database_blueprint_id", &self.relational_database_blueprint_id);
+        formatter.field("relational_database_bundle_id", &self.relational_database_bundle_id);
         formatter.field("master_database_name", &self.master_database_name);
         formatter.field("master_username", &self.master_username);
         formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
         formatter.field("preferred_backup_window", &self.preferred_backup_window);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
         formatter.field("publicly_accessible", &self.publicly_accessible);
         formatter.field("tags", &self.tags);
         formatter.finish()

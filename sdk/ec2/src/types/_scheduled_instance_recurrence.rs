@@ -51,9 +51,7 @@ impl ScheduledInstanceRecurrence {
 
 /// A builder for [`ScheduledInstanceRecurrence`](crate::types::ScheduledInstanceRecurrence).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledInstanceRecurrenceBuilder {
     pub(crate) frequency: ::std::option::Option<::std::string::String>,
     pub(crate) interval: ::std::option::Option<i32>,
@@ -102,10 +100,7 @@ impl ScheduledInstanceRecurrenceBuilder {
         self
     }
     /// <p>The days. For a monthly schedule, this is one or more days of the month (1-31). For a weekly schedule, this is one or more days of the week (1-7, where 1 is Sunday).</p>
-    pub fn set_occurrence_day_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_occurrence_day_set(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.occurrence_day_set = input;
         self
     }
@@ -128,18 +123,12 @@ impl ScheduledInstanceRecurrenceBuilder {
         &self.occurrence_relative_to_end
     }
     /// <p>The unit for <code>occurrenceDaySet</code> (<code>DayOfWeek</code> or <code>DayOfMonth</code>).</p>
-    pub fn occurrence_unit(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn occurrence_unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.occurrence_unit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unit for <code>occurrenceDaySet</code> (<code>DayOfWeek</code> or <code>DayOfMonth</code>).</p>
-    pub fn set_occurrence_unit(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_occurrence_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.occurrence_unit = input;
         self
     }

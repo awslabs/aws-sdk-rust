@@ -26,7 +26,7 @@ impl StartVectorEnrichmentJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartVectorEnrichmentJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobInputBuilder,
+    inner: crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobInputBuilder,
 }
 impl StartVectorEnrichmentJobFluentBuilder {
     /// Creates a new `StartVectorEnrichmentJob`.
@@ -37,7 +37,7 @@ impl StartVectorEnrichmentJobFluentBuilder {
         }
     }
     /// Access the StartVectorEnrichmentJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartVectorEnrichmentJobFluentBuilder {
             crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartVectorEnrichmentJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartVectorEnrichmentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartVectorEnrichmentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl StartVectorEnrichmentJobFluentBuilder {
             crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError>,
     > {
         self.customize_middleware().await
     }
@@ -168,17 +157,12 @@ impl StartVectorEnrichmentJobFluentBuilder {
         self
     }
     /// <p>Input configuration information for the Vector Enrichment job.</p>
-    pub fn set_input_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VectorEnrichmentJobInputConfig>,
-    ) -> Self {
+    pub fn set_input_config(mut self, input: ::std::option::Option<crate::types::VectorEnrichmentJobInputConfig>) -> Self {
         self.inner = self.inner.set_input_config(input);
         self
     }
     /// <p>Input configuration information for the Vector Enrichment job.</p>
-    pub fn get_input_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::VectorEnrichmentJobInputConfig> {
+    pub fn get_input_config(&self) -> &::std::option::Option<crate::types::VectorEnrichmentJobInputConfig> {
         self.inner.get_input_config()
     }
     /// <p>An object containing information about the job configuration.</p>
@@ -187,32 +171,21 @@ impl StartVectorEnrichmentJobFluentBuilder {
         self
     }
     /// <p>An object containing information about the job configuration.</p>
-    pub fn set_job_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VectorEnrichmentJobConfig>,
-    ) -> Self {
+    pub fn set_job_config(mut self, input: ::std::option::Option<crate::types::VectorEnrichmentJobConfig>) -> Self {
         self.inner = self.inner.set_job_config(input);
         self
     }
     /// <p>An object containing information about the job configuration.</p>
-    pub fn get_job_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::VectorEnrichmentJobConfig> {
+    pub fn get_job_config(&self) -> &::std::option::Option<crate::types::VectorEnrichmentJobConfig> {
         self.inner.get_job_config()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
@@ -225,30 +198,17 @@ impl StartVectorEnrichmentJobFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

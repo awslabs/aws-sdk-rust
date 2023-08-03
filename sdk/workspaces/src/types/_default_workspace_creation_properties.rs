@@ -58,9 +58,7 @@ impl DefaultWorkspaceCreationProperties {
 
 /// A builder for [`DefaultWorkspaceCreationProperties`](crate::types::DefaultWorkspaceCreationProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultWorkspaceCreationPropertiesBuilder {
     pub(crate) enable_work_docs: ::std::option::Option<bool>,
     pub(crate) enable_internet_access: ::std::option::Option<bool>,
@@ -113,18 +111,12 @@ impl DefaultWorkspaceCreationPropertiesBuilder {
         &self.default_ou
     }
     /// <p>The identifier of the default security group to apply to WorkSpaces when they are created. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html"> Security Groups for Your WorkSpaces</a>.</p>
-    pub fn custom_security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the default security group to apply to WorkSpaces when they are created. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html"> Security Groups for Your WorkSpaces</a>.</p>
-    pub fn set_custom_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_security_group_id = input;
         self
     }
@@ -138,10 +130,7 @@ impl DefaultWorkspaceCreationPropertiesBuilder {
         self
     }
     /// <p>Specifies whether WorkSpace users are local administrators on their WorkSpaces.</p>
-    pub fn set_user_enabled_as_local_administrator(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_user_enabled_as_local_administrator(mut self, input: ::std::option::Option<bool>) -> Self {
         self.user_enabled_as_local_administrator = input;
         self
     }

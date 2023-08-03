@@ -8,20 +8,14 @@ pub struct UpdateAccountAuditConfigurationInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the targets to which audit notifications are sent.</p>
     #[doc(hidden)]
-    pub audit_notification_target_configurations: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::AuditNotificationType,
-            crate::types::AuditNotificationTarget,
-        >,
-    >,
+    pub audit_notification_target_configurations:
+        ::std::option::Option<::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>>,
     /// <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p>
     /// <p>Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p>
     /// <p>You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p>
     /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
     #[doc(hidden)]
-    pub audit_check_configurations: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>,
-    >,
+    pub audit_check_configurations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>>,
 }
 impl UpdateAccountAuditConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
@@ -31,12 +25,7 @@ impl UpdateAccountAuditConfigurationInput {
     /// <p>Information about the targets to which audit notifications are sent.</p>
     pub fn audit_notification_target_configurations(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::AuditNotificationType,
-            crate::types::AuditNotificationTarget,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>> {
         self.audit_notification_target_configurations.as_ref()
     }
     /// <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p>
@@ -45,35 +34,26 @@ impl UpdateAccountAuditConfigurationInput {
     /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
     pub fn audit_check_configurations(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>> {
         self.audit_check_configurations.as_ref()
     }
 }
 impl UpdateAccountAuditConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountAuditConfigurationInput`](crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationInput).
-    pub fn builder() -> crate::operation::update_account_audit_configuration::builders::UpdateAccountAuditConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_account_audit_configuration::builders::UpdateAccountAuditConfigurationInputBuilder {
         crate::operation::update_account_audit_configuration::builders::UpdateAccountAuditConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccountAuditConfigurationInput`](crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccountAuditConfigurationInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) audit_notification_target_configurations: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::AuditNotificationType,
-            crate::types::AuditNotificationTarget,
-        >,
-    >,
-    pub(crate) audit_check_configurations: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>,
-    >,
+    pub(crate) audit_notification_target_configurations:
+        ::std::option::Option<::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>>,
+    pub(crate) audit_check_configurations:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>>,
 }
 impl UpdateAccountAuditConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
@@ -100,9 +80,7 @@ impl UpdateAccountAuditConfigurationInputBuilder {
         k: crate::types::AuditNotificationType,
         v: crate::types::AuditNotificationTarget,
     ) -> Self {
-        let mut hash_map = self
-            .audit_notification_target_configurations
-            .unwrap_or_default();
+        let mut hash_map = self.audit_notification_target_configurations.unwrap_or_default();
         hash_map.insert(k, v);
         self.audit_notification_target_configurations = ::std::option::Option::Some(hash_map);
         self
@@ -110,12 +88,7 @@ impl UpdateAccountAuditConfigurationInputBuilder {
     /// <p>Information about the targets to which audit notifications are sent.</p>
     pub fn set_audit_notification_target_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::AuditNotificationType,
-                crate::types::AuditNotificationTarget,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>>,
     ) -> Self {
         self.audit_notification_target_configurations = input;
         self
@@ -123,12 +96,7 @@ impl UpdateAccountAuditConfigurationInputBuilder {
     /// <p>Information about the targets to which audit notifications are sent.</p>
     pub fn get_audit_notification_target_configurations(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::AuditNotificationType,
-            crate::types::AuditNotificationTarget,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>> {
         &self.audit_notification_target_configurations
     }
     /// Adds a key-value pair to `audit_check_configurations`.
@@ -155,12 +123,7 @@ impl UpdateAccountAuditConfigurationInputBuilder {
     /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
     pub fn set_audit_check_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::AuditCheckConfiguration,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>>,
     ) -> Self {
         self.audit_check_configurations = input;
         self
@@ -171,9 +134,7 @@ impl UpdateAccountAuditConfigurationInputBuilder {
     /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
     pub fn get_audit_check_configurations(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>> {
         &self.audit_check_configurations
     }
     /// Consumes the builder and constructs a [`UpdateAccountAuditConfigurationInput`](crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationInput).
@@ -185,13 +146,10 @@ impl UpdateAccountAuditConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationInput {
-                role_arn: self.role_arn
-                ,
-                audit_notification_target_configurations: self.audit_notification_target_configurations
-                ,
-                audit_check_configurations: self.audit_check_configurations
-                ,
-            }
+                role_arn: self.role_arn,
+                audit_notification_target_configurations: self.audit_notification_target_configurations,
+                audit_check_configurations: self.audit_check_configurations,
+            },
         )
     }
 }

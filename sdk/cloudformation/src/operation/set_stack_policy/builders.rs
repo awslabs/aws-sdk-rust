@@ -10,10 +10,7 @@ impl SetStackPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::set_stack_policy::SetStackPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_stack_policy::SetStackPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_stack_policy::SetStackPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.set_stack_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SetStackPolicyFluentBuilder {
         }
     }
     /// Access the SetStackPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_stack_policy::builders::SetStackPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_stack_policy::builders::SetStackPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SetStackPolicyFluentBuilder {
             crate::operation::set_stack_policy::SetStackPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_stack_policy::SetStackPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_stack_policy::SetStackPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SetStackPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SetStackPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_stack_policy::SetStackPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_stack_policy::SetStackPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_stack_policy::SetStackPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SetStackPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_stack_policy::SetStackPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_stack_policy::SetStackPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_stack_policy::SetStackPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl SetStackPolicyFluentBuilder {
             crate::operation::set_stack_policy::SetStackPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_stack_policy::SetStackPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_stack_policy::SetStackPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl SetStackPolicyFluentBuilder {
         self.inner.get_stack_name()
     }
     /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent updates to stack resources</a> in the CloudFormation User Guide. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
-    pub fn stack_policy_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_policy_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_policy_body(input.into());
         self
     }
     /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent updates to stack resources</a> in the CloudFormation User Guide. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
-    pub fn set_stack_policy_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_policy_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_policy_body(input);
         self
     }
@@ -157,18 +135,12 @@ impl SetStackPolicyFluentBuilder {
         self.inner.get_stack_policy_body()
     }
     /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in an Amazon S3 bucket in the same Amazon Web Services Region as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
-    pub fn stack_policy_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_policy_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_policy_url(input.into());
         self
     }
     /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in an Amazon S3 bucket in the same Amazon Web Services Region as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
-    pub fn set_stack_policy_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_policy_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_policy_url(input);
         self
     }

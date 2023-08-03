@@ -37,9 +37,7 @@ impl DescribeQuickConnectFluentBuilder {
         }
     }
     /// Access the DescribeQuickConnect as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_quick_connect::builders::DescribeQuickConnectInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_quick_connect::builders::DescribeQuickConnectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeQuickConnectFluentBuilder {
             crate::operation::describe_quick_connect::DescribeQuickConnect,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_quick_connect::DescribeQuickConnectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_quick_connect::DescribeQuickConnectError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeQuickConnectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeQuickConnectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_quick_connect::DescribeQuickConnectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_quick_connect::DescribeQuickConnectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_quick_connect::DescribeQuickConnectError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeQuickConnectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_quick_connect::DescribeQuickConnectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_quick_connect::DescribeQuickConnectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_quick_connect::DescribeQuickConnectError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeQuickConnectFluentBuilder {
             crate::operation::describe_quick_connect::DescribeQuickConnect,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_quick_connect::DescribeQuickConnectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_quick_connect::DescribeQuickConnectError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl DescribeQuickConnectFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier for the quick connect.</p>
-    pub fn quick_connect_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quick_connect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.quick_connect_id(input.into());
         self
     }
     /// <p>The identifier for the quick connect.</p>
-    pub fn set_quick_connect_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_quick_connect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_quick_connect_id(input);
         self
     }

@@ -23,9 +23,7 @@ impl SentimentAnalysisSettings {
 
 /// A builder for [`SentimentAnalysisSettings`](crate::types::SentimentAnalysisSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SentimentAnalysisSettingsBuilder {
     pub(crate) detect_sentiment: ::std::option::Option<bool>,
 }

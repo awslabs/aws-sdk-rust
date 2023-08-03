@@ -5,16 +5,16 @@ pub use crate::operation::put_bucket_notification_configuration::_put_bucket_not
 
 impl PutBucketNotificationConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_bucket_notification_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -43,7 +43,7 @@ impl PutBucketNotificationConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBucketNotificationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_bucket_notification_configuration::builders::PutBucketNotificationConfigurationInputBuilder,
+    inner: crate::operation::put_bucket_notification_configuration::builders::PutBucketNotificationConfigurationInputBuilder,
 }
 impl PutBucketNotificationConfigurationFluentBuilder {
     /// Creates a new `PutBucketNotificationConfiguration`.
@@ -54,15 +54,20 @@ impl PutBucketNotificationConfigurationFluentBuilder {
         }
     }
     /// Access the PutBucketNotificationConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_bucket_notification_configuration::builders::PutBucketNotificationConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_bucket_notification_configuration::builders::PutBucketNotificationConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -71,16 +76,17 @@ impl PutBucketNotificationConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -98,17 +104,26 @@ impl PutBucketNotificationConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the bucket.</p>
@@ -126,40 +141,26 @@ impl PutBucketNotificationConfigurationFluentBuilder {
         self.inner.get_bucket()
     }
     /// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
-    pub fn notification_configuration(
-        mut self,
-        input: crate::types::NotificationConfiguration,
-    ) -> Self {
+    pub fn notification_configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.inner = self.inner.notification_configuration(input);
         self
     }
     /// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
-    pub fn set_notification_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationConfiguration>,
-    ) -> Self {
+    pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
         self.inner = self.inner.set_notification_configuration(input);
         self
     }
     /// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
-    pub fn get_notification_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+    pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         self.inner.get_notification_configuration()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_bucket_owner(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }

@@ -10,10 +10,7 @@ impl ImportSshPublicKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_ssh_public_key::ImportSshPublicKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_ssh_public_key::ImportSshPublicKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.import_ssh_public_key();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ImportSshPublicKeyFluentBuilder {
         }
     }
     /// Access the ImportSshPublicKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ImportSshPublicKeyFluentBuilder {
             crate::operation::import_ssh_public_key::ImportSshPublicKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_ssh_public_key::ImportSshPublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_ssh_public_key::ImportSshPublicKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ImportSshPublicKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ImportSshPublicKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_ssh_public_key::ImportSshPublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_ssh_public_key::ImportSshPublicKeyError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ImportSshPublicKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_ssh_public_key::ImportSshPublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_ssh_public_key::ImportSshPublicKeyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl ImportSshPublicKeyFluentBuilder {
             crate::operation::import_ssh_public_key::ImportSshPublicKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_ssh_public_key::ImportSshPublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_ssh_public_key::ImportSshPublicKeyError>,
     > {
         self.customize_middleware().await
     }
@@ -139,19 +123,13 @@ impl ImportSshPublicKeyFluentBuilder {
     }
     /// <p>The public key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
-    pub fn ssh_public_key_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ssh_public_key_body(input.into());
         self
     }
     /// <p>The public key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
-    pub fn set_ssh_public_key_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ssh_public_key_body(input);
         self
     }

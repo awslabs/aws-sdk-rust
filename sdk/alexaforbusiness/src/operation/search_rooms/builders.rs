@@ -10,10 +10,7 @@ impl SearchRoomsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_rooms::SearchRoomsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_rooms::SearchRoomsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_rooms::SearchRoomsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_rooms();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl SearchRoomsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search_rooms::SearchRooms,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::search_rooms::SearchRooms, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::search_rooms::SearchRoomsError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl SearchRoomsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl SearchRoomsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search_rooms::SearchRooms,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::search_rooms::SearchRooms, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::search_rooms::SearchRoomsError>,
     > {
         self.customize_middleware().await
@@ -117,10 +105,7 @@ impl SearchRoomsFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_rooms::paginator::SearchRoomsPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::search_rooms::paginator::SearchRoomsPaginator {
-        crate::operation::search_rooms::paginator::SearchRoomsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::search_rooms::paginator::SearchRoomsPaginator::new(self.handle, self.inner)
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,10 +145,7 @@ impl SearchRoomsFluentBuilder {
         self
     }
     /// <p>The filters to use to list a specified set of rooms. The supported filter keys are RoomName and ProfileName.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -181,10 +163,7 @@ impl SearchRoomsFluentBuilder {
         self
     }
     /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys are RoomName and ProfileName.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }

@@ -10,10 +10,7 @@ impl ModifyUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_user::ModifyUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_user::ModifyUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_user::ModifyUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_user();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ModifyUserFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_user::ModifyUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::modify_user::ModifyUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::modify_user::ModifyUserError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ModifyUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ModifyUserFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_user::ModifyUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::modify_user::ModifyUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::modify_user::ModifyUserError>,
     > {
         self.customize_middleware().await
@@ -127,18 +115,12 @@ impl ModifyUserFluentBuilder {
         self.inner.get_user_id()
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_string(input.into());
         self
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn set_access_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_string(input);
         self
     }
@@ -147,18 +129,12 @@ impl ModifyUserFluentBuilder {
         self.inner.get_access_string()
     }
     /// <p>Adds additional user permissions to the access string.</p>
-    pub fn append_access_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn append_access_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.append_access_string(input.into());
         self
     }
     /// <p>Adds additional user permissions to the access string.</p>
-    pub fn set_append_access_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_append_access_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_append_access_string(input);
         self
     }
@@ -176,10 +152,7 @@ impl ModifyUserFluentBuilder {
         self
     }
     /// <p>The passwords belonging to the user. You are allowed up to two.</p>
-    pub fn set_passwords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_passwords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_passwords(input);
         self
     }
@@ -207,17 +180,12 @@ impl ModifyUserFluentBuilder {
         self
     }
     /// <p>Specifies how to authenticate the user.</p>
-    pub fn set_authentication_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationMode>,
-    ) -> Self {
+    pub fn set_authentication_mode(mut self, input: ::std::option::Option<crate::types::AuthenticationMode>) -> Self {
         self.inner = self.inner.set_authentication_mode(input);
         self
     }
     /// <p>Specifies how to authenticate the user.</p>
-    pub fn get_authentication_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationMode> {
+    pub fn get_authentication_mode(&self) -> &::std::option::Option<crate::types::AuthenticationMode> {
         self.inner.get_authentication_mode()
     }
 }

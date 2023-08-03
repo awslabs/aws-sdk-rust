@@ -23,9 +23,7 @@ impl PointInTimeRecoverySpecification {
 
 /// A builder for [`PointInTimeRecoverySpecification`](crate::types::PointInTimeRecoverySpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PointInTimeRecoverySpecificationBuilder {
     pub(crate) point_in_time_recovery_enabled: ::std::option::Option<bool>,
 }
@@ -36,10 +34,7 @@ impl PointInTimeRecoverySpecificationBuilder {
         self
     }
     /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
-    pub fn set_point_in_time_recovery_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_point_in_time_recovery_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.point_in_time_recovery_enabled = input;
         self
     }

@@ -42,9 +42,7 @@ impl PutObjectOutput {
 
 /// A builder for [`PutObjectOutput`](crate::operation::put_object::PutObjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutObjectOutputBuilder {
     pub(crate) content_sha256: ::std::option::Option<::std::string::String>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ pub struct PutObjectOutputBuilder {
 }
 impl PutObjectOutputBuilder {
     /// <p>The SHA256 digest of the object that is persisted.</p>
-    pub fn content_sha256(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_sha256 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SHA256 digest of the object that is persisted.</p>
-    pub fn set_content_sha256(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_sha256 = input;
         self
     }
@@ -92,10 +84,7 @@ impl PutObjectOutputBuilder {
         self
     }
     /// <p>The storage class where the object was persisted. The class should be “Temporal”.</p>
-    pub fn set_storage_class(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageClass>,
-    ) -> Self {
+    pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::StorageClass>) -> Self {
         self.storage_class = input;
         self
     }

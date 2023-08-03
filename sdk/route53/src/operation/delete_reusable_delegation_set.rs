@@ -27,60 +27,37 @@ impl DeleteReusableDelegationSetInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         crate::route53_resource_id_preprocessor_middleware::trim_resource_id(&mut self.id);
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.id;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
+                let id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
+                if id.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
-                    )
-                })?;
-                let id = ::aws_smithy_http::label::fmt_string(
-                    input_1,
-                    ::aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if id.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "id",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
-                ::std::write!(output, "/2013-04-01/delegationset/{Id}", Id = id)
-                    .expect("formatting should succeed");
+                ::std::write!(output, "/2013-04-01/delegationset/{Id}", Id = id).expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("DELETE").uri(uri))
@@ -101,10 +78,8 @@ impl DeleteReusableDelegationSetInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -113,29 +88,19 @@ impl DeleteReusableDelegationSetInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
         let op = ::aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSet::new(),
         )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "DeleteReusableDelegationSet",
-            "route53",
-        ));
+        .with_metadata(::aws_smithy_http::operation::Metadata::new("DeleteReusableDelegationSet", "route53"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -164,7 +129,9 @@ impl ::aws_smithy_http::response::ParseStrictResponse for DeleteReusableDelegati
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_reusable_delegation_set::de_delete_reusable_delegation_set_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_reusable_delegation_set::de_delete_reusable_delegation_set_http_response_with_props(status, headers, body)
+            crate::protocol_serde::shape_delete_reusable_delegation_set::de_delete_reusable_delegation_set_http_response_with_props(
+                status, headers, body,
+            )
         }
     }
 }
@@ -193,9 +160,7 @@ pub enum DeleteReusableDelegationSetError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for DeleteReusableDelegationSetError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -216,32 +181,18 @@ impl ::std::fmt::Display for DeleteReusableDelegationSetError {
         }
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for DeleteReusableDelegationSetError
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteReusableDelegationSetError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::DelegationSetInUse(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::DelegationSetNotReusable(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidInput(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::NoSuchDelegationSet(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::DelegationSetInUse(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DelegationSetNotReusable(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidInput(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NoSuchDelegationSet(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -257,27 +208,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DeleteReusableDelegationSet
 impl DeleteReusableDelegationSetError {
     /// Creates the `DeleteReusableDelegationSetError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `DeleteReusableDelegationSetError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,

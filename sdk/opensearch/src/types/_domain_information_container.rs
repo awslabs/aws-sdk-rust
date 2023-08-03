@@ -10,9 +10,7 @@ pub struct DomainInformationContainer {
 }
 impl DomainInformationContainer {
     /// <p>Information about an Amazon OpenSearch Service domain.</p>
-    pub fn aws_domain_information(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsDomainInformation> {
+    pub fn aws_domain_information(&self) -> ::std::option::Option<&crate::types::AwsDomainInformation> {
         self.aws_domain_information.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl DomainInformationContainer {
 
 /// A builder for [`DomainInformationContainer`](crate::types::DomainInformationContainer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainInformationContainerBuilder {
     pub(crate) aws_domain_information: ::std::option::Option<crate::types::AwsDomainInformation>,
 }
@@ -38,17 +34,12 @@ impl DomainInformationContainerBuilder {
         self
     }
     /// <p>Information about an Amazon OpenSearch Service domain.</p>
-    pub fn set_aws_domain_information(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsDomainInformation>,
-    ) -> Self {
+    pub fn set_aws_domain_information(mut self, input: ::std::option::Option<crate::types::AwsDomainInformation>) -> Self {
         self.aws_domain_information = input;
         self
     }
     /// <p>Information about an Amazon OpenSearch Service domain.</p>
-    pub fn get_aws_domain_information(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsDomainInformation> {
+    pub fn get_aws_domain_information(&self) -> &::std::option::Option<crate::types::AwsDomainInformation> {
         &self.aws_domain_information
     }
     /// Consumes the builder and constructs a [`DomainInformationContainer`](crate::types::DomainInformationContainer).

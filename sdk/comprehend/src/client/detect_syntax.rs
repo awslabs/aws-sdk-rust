@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DetectSyntaxOutput`](crate::operation::detect_syntax::DetectSyntaxOutput) with field(s):
     ///   - [`syntax_tokens(Option<Vec<SyntaxToken>>)`](crate::operation::detect_syntax::DetectSyntaxOutput::syntax_tokens): <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
     /// - On failure, responds with [`SdkError<DetectSyntaxError>`](crate::operation::detect_syntax::DetectSyntaxError)
-    pub fn detect_syntax(
-        &self,
-    ) -> crate::operation::detect_syntax::builders::DetectSyntaxFluentBuilder {
-        crate::operation::detect_syntax::builders::DetectSyntaxFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detect_syntax(&self) -> crate::operation::detect_syntax::builders::DetectSyntaxFluentBuilder {
+        crate::operation::detect_syntax::builders::DetectSyntaxFluentBuilder::new(self.handle.clone())
     }
 }

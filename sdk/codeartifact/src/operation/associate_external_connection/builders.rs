@@ -28,7 +28,7 @@ impl AssociateExternalConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateExternalConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_external_connection::builders::AssociateExternalConnectionInputBuilder,
+    inner: crate::operation::associate_external_connection::builders::AssociateExternalConnectionInputBuilder,
 }
 impl AssociateExternalConnectionFluentBuilder {
     /// Creates a new `AssociateExternalConnection`.
@@ -39,7 +39,7 @@ impl AssociateExternalConnectionFluentBuilder {
         }
     }
     /// Access the AssociateExternalConnection as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_external_connection::builders::AssociateExternalConnectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_external_connection::builders::AssociateExternalConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl AssociateExternalConnectionFluentBuilder {
             crate::operation::associate_external_connection::AssociateExternalConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_external_connection::AssociateExternalConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_external_connection::AssociateExternalConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl AssociateExternalConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl AssociateExternalConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_external_connection::AssociateExternalConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_external_connection::AssociateExternalConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_external_connection::AssociateExternalConnectionError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl AssociateExternalConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_external_connection::AssociateExternalConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_external_connection::AssociateExternalConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_external_connection::AssociateExternalConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl AssociateExternalConnectionFluentBuilder {
             crate::operation::associate_external_connection::AssociateExternalConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_external_connection::AssociateExternalConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_external_connection::AssociateExternalConnectionError>,
     > {
         self.customize_middleware().await
     }
@@ -175,10 +164,7 @@ impl AssociateExternalConnectionFluentBuilder {
     /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
     /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
     /// </ul>
-    pub fn external_connection(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_connection(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_connection(input.into());
         self
     }
@@ -193,10 +179,7 @@ impl AssociateExternalConnectionFluentBuilder {
     /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
     /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
     /// </ul>
-    pub fn set_external_connection(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_connection(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_connection(input);
         self
     }

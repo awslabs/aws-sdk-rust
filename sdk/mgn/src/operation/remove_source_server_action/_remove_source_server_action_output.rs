@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveSourceServerActionOutput {
 }
 impl RemoveSourceServerActionOutput {
     /// Creates a new builder-style object to manufacture [`RemoveSourceServerActionOutput`](crate::operation::remove_source_server_action::RemoveSourceServerActionOutput).
-    pub fn builder() -> crate::operation::remove_source_server_action::builders::RemoveSourceServerActionOutputBuilder{
+    pub fn builder() -> crate::operation::remove_source_server_action::builders::RemoveSourceServerActionOutputBuilder {
         crate::operation::remove_source_server_action::builders::RemoveSourceServerActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveSourceServerActionOutput`](crate::operation::remove_source_server_action::RemoveSourceServerActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveSourceServerActionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl RemoveSourceServerActionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveSourceServerActionOutput`](crate::operation::remove_source_server_action::RemoveSourceServerActionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_source_server_action::RemoveSourceServerActionOutput {
+    pub fn build(self) -> crate::operation::remove_source_server_action::RemoveSourceServerActionOutput {
         crate::operation::remove_source_server_action::RemoveSourceServerActionOutput {
             _request_id: self._request_id,
         }

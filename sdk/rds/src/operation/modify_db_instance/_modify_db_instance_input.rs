@@ -340,8 +340,7 @@ pub struct ModifyDbInstanceInput {
     /// <p>A change to the <code>CloudwatchLogsExportConfiguration</code> parameter is always applied to the DB instance immediately. Therefore, the <code>ApplyImmediately</code> parameter has no effect.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     #[doc(hidden)]
-    pub cloudwatch_logs_export_configuration:
-        ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
+    pub cloudwatch_logs_export_configuration: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     #[doc(hidden)]
@@ -832,9 +831,7 @@ impl ModifyDbInstanceInput {
     /// <p>The log types to be enabled for export to CloudWatch Logs for a specific DB instance.</p>
     /// <p>A change to the <code>CloudwatchLogsExportConfiguration</code> parameter is always applied to the DB instance immediately. Therefore, the <code>ApplyImmediately</code> parameter has no effect.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn cloudwatch_logs_export_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudwatchLogsExportConfiguration> {
+    pub fn cloudwatch_logs_export_configuration(&self) -> ::std::option::Option<&crate::types::CloudwatchLogsExportConfiguration> {
         self.cloudwatch_logs_export_configuration.as_ref()
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
@@ -968,25 +965,21 @@ impl ModifyDbInstanceInput {
 }
 impl ModifyDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`ModifyDbInstanceInput`](crate::operation::modify_db_instance::ModifyDbInstanceInput).
-    pub fn builder() -> crate::operation::modify_db_instance::builders::ModifyDbInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_db_instance::builders::ModifyDbInstanceInputBuilder {
         crate::operation::modify_db_instance::builders::ModifyDbInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyDbInstanceInput`](crate::operation::modify_db_instance::ModifyDbInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyDbInstanceInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
     pub(crate) db_instance_class: ::std::option::Option<::std::string::String>,
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) vpc_security_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) apply_immediately: ::std::option::Option<bool>,
     pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
     pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
@@ -1022,10 +1015,8 @@ pub struct ModifyDbInstanceInputBuilder {
     pub(crate) enable_performance_insights: ::std::option::Option<bool>,
     pub(crate) performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) performance_insights_retention_period: ::std::option::Option<i32>,
-    pub(crate) cloudwatch_logs_export_configuration:
-        ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
-    pub(crate) processor_features:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
+    pub(crate) cloudwatch_logs_export_configuration: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
+    pub(crate) processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
     pub(crate) use_default_processor_features: ::std::option::Option<bool>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) max_allocated_storage: ::std::option::Option<i32>,
@@ -1048,10 +1039,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DB instance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -1060,10 +1048,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DB instance.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -1098,20 +1083,14 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The new compute and memory capacity of the DB instance, for example <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS"> DB instance class support for RDS Custom for SQL Server</a>.</p>
     /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless you specify <code>ApplyImmediately</code> in your request. </p>
     /// <p>Default: Uses existing setting</p>
-    pub fn db_instance_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new compute and memory capacity of the DB instance, for example <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>. For RDS Custom, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.instances">DB instance class support for RDS Custom for Oracle</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html#custom-reqs-limits.instancesMS"> DB instance class support for RDS Custom for SQL Server</a>.</p>
     /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless you specify <code>ApplyImmediately</code> in your request. </p>
     /// <p>Default: Uses existing setting</p>
-    pub fn set_db_instance_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_class = input;
         self
     }
@@ -1129,10 +1108,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li> <p>If supplied, must match existing DB subnet group.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
-    pub fn db_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -1144,10 +1120,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li> <p>If supplied, must match existing DB subnet group.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
-    pub fn set_db_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_name = input;
         self
     }
@@ -1172,10 +1145,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match existing DB security groups.</p> </li>
     /// </ul>
-    pub fn db_security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.db_security_groups.unwrap_or_default();
         v.push(input.into());
         self.db_security_groups = ::std::option::Option::Some(v);
@@ -1187,10 +1157,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match existing DB security groups.</p> </li>
     /// </ul>
-    pub fn set_db_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_db_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.db_security_groups = input;
         self
     }
@@ -1200,9 +1167,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match existing DB security groups.</p> </li>
     /// </ul>
-    pub fn get_db_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_db_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.db_security_groups
     }
     /// Appends an item to `vpc_security_group_ids`.
@@ -1219,10 +1184,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match existing VPC security group IDs.</p> </li>
     /// </ul>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_security_group_ids = ::std::option::Option::Some(v);
@@ -1238,10 +1200,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match existing VPC security group IDs.</p> </li>
     /// </ul>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_security_group_ids = input;
         self
     }
@@ -1255,9 +1214,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match existing VPC security group IDs.</p> </li>
     /// </ul>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB instance. By default, this parameter is disabled.</p>
@@ -1300,10 +1257,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li> <p>RDS for Oracle - Must contain from 8 to 30 characters.</p> </li>
     /// <li> <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p> </li>
     /// </ul>
-    pub fn master_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
@@ -1330,10 +1284,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li> <p>RDS for Oracle - Must contain from 8 to 30 characters.</p> </li>
     /// <li> <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p> </li>
     /// </ul>
-    pub fn set_master_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
         self
     }
@@ -1371,10 +1322,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>Must be in the same DB parameter group family as the DB instance.</p> </li>
     /// </ul>
-    pub fn db_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -1386,10 +1334,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>Must be in the same DB parameter group family as the DB instance.</p> </li>
     /// </ul>
-    pub fn set_db_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_name = input;
         self
     }
@@ -1460,10 +1405,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn preferred_backup_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_backup_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -1476,10 +1418,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn set_preferred_backup_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_backup_window = input;
         self
     }
@@ -1506,10 +1445,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li> <p>Must not conflict with the preferred backup window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -1524,10 +1460,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li> <p>Must not conflict with the preferred backup window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
@@ -1542,9 +1475,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li> <p>Must not conflict with the preferred backup window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. Changing this parameter doesn't result in an outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request.</p>
@@ -1569,10 +1500,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>If you specify only a major version, Amazon RDS updates the DB instance to the default minor version if the current minor version is lower. For information about valid engine versions, see <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.</p>
     /// <p>If the instance that you're modifying is acting as a read replica, the engine version that you specify must be the same or higher than the version that the source DB instance or cluster is running.</p>
     /// <p>In RDS Custom for Oracle, this parameter is supported for read replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
@@ -1581,10 +1509,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>If you specify only a major version, Amazon RDS updates the DB instance to the default minor version if the current minor version is lower. For information about valid engine versions, see <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.</p>
     /// <p>If the instance that you're modifying is acting as a read replica, the engine version that you specify must be the same or higher than the version that the source DB instance or cluster is running.</p>
     /// <p>In RDS Custom for Oracle, this parameter is supported for read replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -1670,10 +1595,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li> <p>RDS for Oracle - <code>bring-your-own-license | license-included</code> </p> </li>
     /// <li> <p>RDS for PostgreSQL - <code>postgresql-license</code> </p> </li>
     /// </ul>
-    pub fn license_model(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_model = ::std::option::Option::Some(input.into());
         self
     }
@@ -1687,10 +1609,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li> <p>RDS for Oracle - <code>bring-your-own-license | license-included</code> </p> </li>
     /// <li> <p>RDS for PostgreSQL - <code>postgresql-license</code> </p> </li>
     /// </ul>
-    pub fn set_license_model(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_model = input;
         self
     }
@@ -1747,10 +1666,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -1759,10 +1675,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn set_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_group_name = input;
         self
     }
@@ -1783,10 +1696,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
-    pub fn new_db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -1799,10 +1709,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
-    pub fn set_new_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_db_instance_identifier = input;
         self
     }
@@ -1846,19 +1753,13 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn tde_credential_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tde_credential_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tde_credential_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn set_tde_credential_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tde_credential_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tde_credential_arn = input;
         self
     }
@@ -1869,19 +1770,13 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>The password for the given ARN from the key store in order to access the device.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn tde_credential_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tde_credential_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tde_credential_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password for the given ARN from the key store in order to access the device.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn set_tde_credential_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tde_credential_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tde_credential_password = input;
         self
     }
@@ -1893,20 +1788,14 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn ca_certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ca_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ca_certificate_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn set_ca_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ca_certificate_identifier = input;
         self
     }
@@ -1999,19 +1888,13 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
     /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
-    pub fn domain_auth_secret_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_auth_secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_auth_secret_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
     /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
-    pub fn set_domain_auth_secret_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_auth_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_auth_secret_arn = input;
         self
     }
@@ -2030,10 +1913,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
     /// </ul>
     /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
-    pub fn domain_dns_ips(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_dns_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.domain_dns_ips.unwrap_or_default();
         v.push(input.into());
         self.domain_dns_ips = ::std::option::Option::Some(v);
@@ -2045,10 +1925,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
     /// </ul>
     /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
-    pub fn set_domain_dns_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_domain_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.domain_dns_ips = input;
         self
     }
@@ -2058,9 +1935,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
     /// </ul>
     /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
-    pub fn get_domain_dns_ips(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_domain_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.domain_dns_ips
     }
     /// <p>Specifies whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags aren't copied.</p>
@@ -2200,20 +2075,14 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than <code>0</code>, supply a <code>MonitoringRoleArn</code> value.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn monitoring_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than <code>0</code>, supply a <code>MonitoringRoleArn</code> value.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn set_monitoring_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_role_arn = input;
         self
     }
@@ -2225,19 +2094,13 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn domain_iam_role_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_iam_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_iam_role_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn set_domain_iam_role_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_iam_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_iam_role_name = input;
         self
     }
@@ -2295,10 +2158,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.</p>
     /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn set_enable_iam_database_authentication(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_iam_database_authentication(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_iam_database_authentication = input;
         self
     }
@@ -2333,10 +2193,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn performance_insights_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn performance_insights_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.performance_insights_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -2344,10 +2201,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn set_performance_insights_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_performance_insights_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.performance_insights_kms_key_id = input;
         self
     }
@@ -2355,9 +2209,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn get_performance_insights_kms_key_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_performance_insights_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.performance_insights_kms_key_id
     }
     /// <p>The number of days to retain Performance Insights data.</p>
@@ -2384,10 +2236,7 @@ impl ModifyDbInstanceInputBuilder {
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.</p>
-    pub fn set_performance_insights_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_performance_insights_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.performance_insights_retention_period = input;
         self
     }
@@ -2407,29 +2256,21 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The log types to be enabled for export to CloudWatch Logs for a specific DB instance.</p>
     /// <p>A change to the <code>CloudwatchLogsExportConfiguration</code> parameter is always applied to the DB instance immediately. Therefore, the <code>ApplyImmediately</code> parameter has no effect.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn cloudwatch_logs_export_configuration(
-        mut self,
-        input: crate::types::CloudwatchLogsExportConfiguration,
-    ) -> Self {
+    pub fn cloudwatch_logs_export_configuration(mut self, input: crate::types::CloudwatchLogsExportConfiguration) -> Self {
         self.cloudwatch_logs_export_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The log types to be enabled for export to CloudWatch Logs for a specific DB instance.</p>
     /// <p>A change to the <code>CloudwatchLogsExportConfiguration</code> parameter is always applied to the DB instance immediately. Therefore, the <code>ApplyImmediately</code> parameter has no effect.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn set_cloudwatch_logs_export_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
-    ) -> Self {
+    pub fn set_cloudwatch_logs_export_configuration(mut self, input: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>) -> Self {
         self.cloudwatch_logs_export_configuration = input;
         self
     }
     /// <p>The log types to be enabled for export to CloudWatch Logs for a specific DB instance.</p>
     /// <p>A change to the <code>CloudwatchLogsExportConfiguration</code> parameter is always applied to the DB instance immediately. Therefore, the <code>ApplyImmediately</code> parameter has no effect.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn get_cloudwatch_logs_export_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudwatchLogsExportConfiguration> {
+    pub fn get_cloudwatch_logs_export_configuration(&self) -> &::std::option::Option<crate::types::CloudwatchLogsExportConfiguration> {
         &self.cloudwatch_logs_export_configuration
     }
     /// Appends an item to `processor_features`.
@@ -2446,18 +2287,13 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn set_processor_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
-    ) -> Self {
+    pub fn set_processor_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>) -> Self {
         self.processor_features = input;
         self
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn get_processor_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>> {
+    pub fn get_processor_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>> {
         &self.processor_features
     }
     /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
@@ -2468,10 +2304,7 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn set_use_default_processor_features(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_use_default_processor_features(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_default_processor_features = input;
         self
     }
@@ -2569,10 +2402,7 @@ impl ModifyDbInstanceInputBuilder {
     /// </note>
     /// <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn set_replica_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicaMode>,
-    ) -> Self {
+    pub fn set_replica_mode(mut self, input: ::std::option::Option<crate::types::ReplicaMode>) -> Self {
         self.replica_mode = input;
         self
     }
@@ -2609,27 +2439,19 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn aws_backup_recovery_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_backup_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_backup_recovery_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn set_aws_backup_recovery_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_backup_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_backup_recovery_point_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn get_aws_backup_recovery_point_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_aws_backup_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_backup_recovery_point_arn
     }
     /// <p>The automation mode of the RDS Custom DB instance. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>ResumeFullAutomationModeMinutes</code>.</p>
@@ -2638,10 +2460,7 @@ impl ModifyDbInstanceInputBuilder {
         self
     }
     /// <p>The automation mode of the RDS Custom DB instance. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>ResumeFullAutomationModeMinutes</code>.</p>
-    pub fn set_automation_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::AutomationMode>,
-    ) -> Self {
+    pub fn set_automation_mode(mut self, input: ::std::option::Option<crate::types::AutomationMode>) -> Self {
         self.automation_mode = input;
         self
     }
@@ -2667,10 +2486,7 @@ impl ModifyDbInstanceInputBuilder {
     /// <li> <p>Must be at least 60.</p> </li>
     /// <li> <p>Must be no more than 1,440.</p> </li>
     /// </ul>
-    pub fn set_resume_full_automation_mode_minutes(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_resume_full_automation_mode_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.resume_full_automation_mode_minutes = input;
         self
     }
@@ -2802,10 +2618,7 @@ impl ModifyDbInstanceInputBuilder {
     /// </ul>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
-    pub fn master_user_secret_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_secret_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_secret_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -2817,10 +2630,7 @@ impl ModifyDbInstanceInputBuilder {
     /// </ul>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
-    pub fn set_master_user_secret_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_secret_kms_key_id = input;
         self
     }
@@ -2832,9 +2642,7 @@ impl ModifyDbInstanceInputBuilder {
     /// </ul>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
-    pub fn get_master_user_secret_kms_key_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_master_user_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_user_secret_kms_key_id
     }
     /// <p>The target Oracle DB engine when you convert a non-CDB to a CDB. This intermediate step is necessary to upgrade an Oracle Database 19c non-CDB to an Oracle Database 21c CDB.</p>
@@ -2890,71 +2698,66 @@ impl ModifyDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`ModifyDbInstanceInput`](crate::operation::modify_db_instance::ModifyDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_db_instance::ModifyDbInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_db_instance::ModifyDbInstanceInput {
-                db_instance_identifier: self.db_instance_identifier,
-                allocated_storage: self.allocated_storage,
-                db_instance_class: self.db_instance_class,
-                db_subnet_group_name: self.db_subnet_group_name,
-                db_security_groups: self.db_security_groups,
-                vpc_security_group_ids: self.vpc_security_group_ids,
-                apply_immediately: self.apply_immediately.unwrap_or_default(),
-                master_user_password: self.master_user_password,
-                db_parameter_group_name: self.db_parameter_group_name,
-                backup_retention_period: self.backup_retention_period,
-                preferred_backup_window: self.preferred_backup_window,
-                preferred_maintenance_window: self.preferred_maintenance_window,
-                multi_az: self.multi_az,
-                engine_version: self.engine_version,
-                allow_major_version_upgrade: self.allow_major_version_upgrade.unwrap_or_default(),
-                auto_minor_version_upgrade: self.auto_minor_version_upgrade,
-                license_model: self.license_model,
-                iops: self.iops,
-                option_group_name: self.option_group_name,
-                new_db_instance_identifier: self.new_db_instance_identifier,
-                storage_type: self.storage_type,
-                tde_credential_arn: self.tde_credential_arn,
-                tde_credential_password: self.tde_credential_password,
-                ca_certificate_identifier: self.ca_certificate_identifier,
-                domain: self.domain,
-                domain_fqdn: self.domain_fqdn,
-                domain_ou: self.domain_ou,
-                domain_auth_secret_arn: self.domain_auth_secret_arn,
-                domain_dns_ips: self.domain_dns_ips,
-                copy_tags_to_snapshot: self.copy_tags_to_snapshot,
-                monitoring_interval: self.monitoring_interval,
-                db_port_number: self.db_port_number,
-                publicly_accessible: self.publicly_accessible,
-                monitoring_role_arn: self.monitoring_role_arn,
-                domain_iam_role_name: self.domain_iam_role_name,
-                disable_domain: self.disable_domain,
-                promotion_tier: self.promotion_tier,
-                enable_iam_database_authentication: self.enable_iam_database_authentication,
-                enable_performance_insights: self.enable_performance_insights,
-                performance_insights_kms_key_id: self.performance_insights_kms_key_id,
-                performance_insights_retention_period: self.performance_insights_retention_period,
-                cloudwatch_logs_export_configuration: self.cloudwatch_logs_export_configuration,
-                processor_features: self.processor_features,
-                use_default_processor_features: self.use_default_processor_features,
-                deletion_protection: self.deletion_protection,
-                max_allocated_storage: self.max_allocated_storage,
-                certificate_rotation_restart: self.certificate_rotation_restart,
-                replica_mode: self.replica_mode,
-                enable_customer_owned_ip: self.enable_customer_owned_ip,
-                aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
-                automation_mode: self.automation_mode,
-                resume_full_automation_mode_minutes: self.resume_full_automation_mode_minutes,
-                network_type: self.network_type,
-                storage_throughput: self.storage_throughput,
-                manage_master_user_password: self.manage_master_user_password,
-                rotate_master_user_password: self.rotate_master_user_password,
-                master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
-                engine: self.engine,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_db_instance::ModifyDbInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::modify_db_instance::ModifyDbInstanceInput {
+            db_instance_identifier: self.db_instance_identifier,
+            allocated_storage: self.allocated_storage,
+            db_instance_class: self.db_instance_class,
+            db_subnet_group_name: self.db_subnet_group_name,
+            db_security_groups: self.db_security_groups,
+            vpc_security_group_ids: self.vpc_security_group_ids,
+            apply_immediately: self.apply_immediately.unwrap_or_default(),
+            master_user_password: self.master_user_password,
+            db_parameter_group_name: self.db_parameter_group_name,
+            backup_retention_period: self.backup_retention_period,
+            preferred_backup_window: self.preferred_backup_window,
+            preferred_maintenance_window: self.preferred_maintenance_window,
+            multi_az: self.multi_az,
+            engine_version: self.engine_version,
+            allow_major_version_upgrade: self.allow_major_version_upgrade.unwrap_or_default(),
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
+            license_model: self.license_model,
+            iops: self.iops,
+            option_group_name: self.option_group_name,
+            new_db_instance_identifier: self.new_db_instance_identifier,
+            storage_type: self.storage_type,
+            tde_credential_arn: self.tde_credential_arn,
+            tde_credential_password: self.tde_credential_password,
+            ca_certificate_identifier: self.ca_certificate_identifier,
+            domain: self.domain,
+            domain_fqdn: self.domain_fqdn,
+            domain_ou: self.domain_ou,
+            domain_auth_secret_arn: self.domain_auth_secret_arn,
+            domain_dns_ips: self.domain_dns_ips,
+            copy_tags_to_snapshot: self.copy_tags_to_snapshot,
+            monitoring_interval: self.monitoring_interval,
+            db_port_number: self.db_port_number,
+            publicly_accessible: self.publicly_accessible,
+            monitoring_role_arn: self.monitoring_role_arn,
+            domain_iam_role_name: self.domain_iam_role_name,
+            disable_domain: self.disable_domain,
+            promotion_tier: self.promotion_tier,
+            enable_iam_database_authentication: self.enable_iam_database_authentication,
+            enable_performance_insights: self.enable_performance_insights,
+            performance_insights_kms_key_id: self.performance_insights_kms_key_id,
+            performance_insights_retention_period: self.performance_insights_retention_period,
+            cloudwatch_logs_export_configuration: self.cloudwatch_logs_export_configuration,
+            processor_features: self.processor_features,
+            use_default_processor_features: self.use_default_processor_features,
+            deletion_protection: self.deletion_protection,
+            max_allocated_storage: self.max_allocated_storage,
+            certificate_rotation_restart: self.certificate_rotation_restart,
+            replica_mode: self.replica_mode,
+            enable_customer_owned_ip: self.enable_customer_owned_ip,
+            aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
+            automation_mode: self.automation_mode,
+            resume_full_automation_mode_minutes: self.resume_full_automation_mode_minutes,
+            network_type: self.network_type,
+            storage_throughput: self.storage_throughput,
+            manage_master_user_password: self.manage_master_user_password,
+            rotate_master_user_password: self.rotate_master_user_password,
+            master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
+            engine: self.engine,
+        })
     }
 }

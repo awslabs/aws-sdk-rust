@@ -58,16 +58,13 @@ impl FaultRootCauseService {
 
 /// A builder for [`FaultRootCauseService`](crate::types::FaultRootCauseService).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FaultRootCauseServiceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) entity_path:
-        ::std::option::Option<::std::vec::Vec<crate::types::FaultRootCauseEntity>>,
+    pub(crate) entity_path: ::std::option::Option<::std::vec::Vec<crate::types::FaultRootCauseEntity>>,
     pub(crate) inferred: ::std::option::Option<bool>,
 }
 impl FaultRootCauseServiceBuilder {
@@ -97,10 +94,7 @@ impl FaultRootCauseServiceBuilder {
         self
     }
     /// <p>A collection of associated service names.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -148,17 +142,12 @@ impl FaultRootCauseServiceBuilder {
         self
     }
     /// <p>The path of root cause entities found on the service. </p>
-    pub fn set_entity_path(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FaultRootCauseEntity>>,
-    ) -> Self {
+    pub fn set_entity_path(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FaultRootCauseEntity>>) -> Self {
         self.entity_path = input;
         self
     }
     /// <p>The path of root cause entities found on the service. </p>
-    pub fn get_entity_path(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FaultRootCauseEntity>> {
+    pub fn get_entity_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FaultRootCauseEntity>> {
         &self.entity_path
     }
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>

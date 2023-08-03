@@ -30,24 +30,20 @@ impl UpdateRescoreExecutionPlanInput {
         self.description.as_deref()
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    pub fn capacity_units(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacityUnitsConfiguration> {
+    pub fn capacity_units(&self) -> ::std::option::Option<&crate::types::CapacityUnitsConfiguration> {
         self.capacity_units.as_ref()
     }
 }
 impl UpdateRescoreExecutionPlanInput {
     /// Creates a new builder-style object to manufacture [`UpdateRescoreExecutionPlanInput`](crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanInput).
-    pub fn builder() -> crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanInputBuilder{
+    pub fn builder() -> crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanInputBuilder {
         crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRescoreExecutionPlanInput`](crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRescoreExecutionPlanInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -103,17 +99,12 @@ impl UpdateRescoreExecutionPlanInputBuilder {
         self
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    pub fn set_capacity_units(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityUnitsConfiguration>,
-    ) -> Self {
+    pub fn set_capacity_units(mut self, input: ::std::option::Option<crate::types::CapacityUnitsConfiguration>) -> Self {
         self.capacity_units = input;
         self
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    pub fn get_capacity_units(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
+    pub fn get_capacity_units(&self) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
         &self.capacity_units
     }
     /// Consumes the builder and constructs a [`UpdateRescoreExecutionPlanInput`](crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanInput).
@@ -123,13 +114,11 @@ impl UpdateRescoreExecutionPlanInputBuilder {
         crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanInput {
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                capacity_units: self.capacity_units,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanInput {
+            id: self.id,
+            name: self.name,
+            description: self.description,
+            capacity_units: self.capacity_units,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl AllocateStaticIpInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::allocate_static_ip::AllocateStaticIpOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::allocate_static_ip::AllocateStaticIpError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_static_ip::AllocateStaticIpError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.allocate_static_ip();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AllocateStaticIpFluentBuilder {
         }
     }
     /// Access the AllocateStaticIp as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::allocate_static_ip::builders::AllocateStaticIpInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::allocate_static_ip::builders::AllocateStaticIpInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl AllocateStaticIpFluentBuilder {
             crate::operation::allocate_static_ip::AllocateStaticIp,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::allocate_static_ip::AllocateStaticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_static_ip::AllocateStaticIpError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl AllocateStaticIpFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl AllocateStaticIpFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::allocate_static_ip::AllocateStaticIpOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::allocate_static_ip::AllocateStaticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_static_ip::AllocateStaticIpError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl AllocateStaticIpFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::allocate_static_ip::AllocateStaticIpOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::allocate_static_ip::AllocateStaticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_static_ip::AllocateStaticIpError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl AllocateStaticIpFluentBuilder {
             crate::operation::allocate_static_ip::AllocateStaticIp,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::allocate_static_ip::AllocateStaticIpError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_static_ip::AllocateStaticIpError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the static IP address.</p>
-    pub fn static_ip_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn static_ip_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.static_ip_name(input.into());
         self
     }
     /// <p>The name of the static IP address.</p>
-    pub fn set_static_ip_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_static_ip_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_static_ip_name(input);
         self
     }

@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`parameters(Option<HashMap<String, String>>)`](crate::operation::update_extension_association::UpdateExtensionAssociationOutput::parameters): <p>The parameter names and values defined in the association.</p>
     ///   - [`extension_version_number(i32)`](crate::operation::update_extension_association::UpdateExtensionAssociationOutput::extension_version_number): <p>The version number for the extension defined in the association.</p>
     /// - On failure, responds with [`SdkError<UpdateExtensionAssociationError>`](crate::operation::update_extension_association::UpdateExtensionAssociationError)
-    pub fn update_extension_association(&self) -> crate::operation::update_extension_association::builders::UpdateExtensionAssociationFluentBuilder{
+    pub fn update_extension_association(&self) -> crate::operation::update_extension_association::builders::UpdateExtensionAssociationFluentBuilder {
         crate::operation::update_extension_association::builders::UpdateExtensionAssociationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,9 +10,7 @@ pub struct AssociateSourceGraphqlApiOutput {
 }
 impl AssociateSourceGraphqlApiOutput {
     /// <p>The <code>SourceApiAssociation</code> object data.</p>
-    pub fn source_api_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceApiAssociation> {
+    pub fn source_api_association(&self) -> ::std::option::Option<&crate::types::SourceApiAssociation> {
         self.source_api_association.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for AssociateSourceGraphqlApiOutput {
 }
 impl AssociateSourceGraphqlApiOutput {
     /// Creates a new builder-style object to manufacture [`AssociateSourceGraphqlApiOutput`](crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiOutput).
-    pub fn builder() -> crate::operation::associate_source_graphql_api::builders::AssociateSourceGraphqlApiOutputBuilder{
+    pub fn builder() -> crate::operation::associate_source_graphql_api::builders::AssociateSourceGraphqlApiOutputBuilder {
         crate::operation::associate_source_graphql_api::builders::AssociateSourceGraphqlApiOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateSourceGraphqlApiOutput`](crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateSourceGraphqlApiOutputBuilder {
     pub(crate) source_api_association: ::std::option::Option<crate::types::SourceApiAssociation>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl AssociateSourceGraphqlApiOutputBuilder {
         self
     }
     /// <p>The <code>SourceApiAssociation</code> object data.</p>
-    pub fn set_source_api_association(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceApiAssociation>,
-    ) -> Self {
+    pub fn set_source_api_association(mut self, input: ::std::option::Option<crate::types::SourceApiAssociation>) -> Self {
         self.source_api_association = input;
         self
     }
     /// <p>The <code>SourceApiAssociation</code> object data.</p>
-    pub fn get_source_api_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceApiAssociation> {
+    pub fn get_source_api_association(&self) -> &::std::option::Option<crate::types::SourceApiAssociation> {
         &self.source_api_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl AssociateSourceGraphqlApiOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateSourceGraphqlApiOutput`](crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiOutput {
+    pub fn build(self) -> crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiOutput {
         crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiOutput {
             source_api_association: self.source_api_association,
             _request_id: self._request_id,

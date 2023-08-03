@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`regions_description(Option<Vec<RegionDescription>>)`](crate::operation::describe_regions::DescribeRegionsOutput::regions_description): <p>List of Region information related to the directory for each replicated Region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_regions::DescribeRegionsOutput::next_token): <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeRegions</code> to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<DescribeRegionsError>`](crate::operation::describe_regions::DescribeRegionsError)
-    pub fn describe_regions(
-        &self,
-    ) -> crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder {
-        crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_regions(&self) -> crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder {
+        crate::operation::describe_regions::builders::DescribeRegionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`application_summaries(Option<Vec<ApplicationSummary>>)`](crate::operation::list_applications::ListApplicationsOutput::application_summaries): <p>List of <code>ApplicationSummary</code> objects. </p>
     ///   - [`has_more_applications(Option<bool>)`](crate::operation::list_applications::ListApplicationsOutput::has_more_applications): <p>Returns true if there are more applications to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::operation::list_applications::ListApplicationsError)
-    pub fn list_applications(
-        &self,
-    ) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {
-        crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_applications(&self) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {
+        crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(self.handle.clone())
     }
 }

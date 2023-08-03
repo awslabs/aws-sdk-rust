@@ -133,9 +133,7 @@ pub struct H264Settings {
 }
 impl H264Settings {
     /// Enables or disables adaptive quantization, which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended. For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate strength. Set a strength (a value other than Auto or Disable). This strength will apply to any of the AQ fields that you choose to enable. Set to Disabled to disable all types of adaptive quantization.
-    pub fn adaptive_quantization(
-        &self,
-    ) -> ::std::option::Option<&crate::types::H264AdaptiveQuantization> {
+    pub fn adaptive_quantization(&self) -> ::std::option::Option<&crate::types::H264AdaptiveQuantization> {
         self.adaptive_quantization.as_ref()
     }
     /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
@@ -159,9 +157,7 @@ impl H264Settings {
         self.color_metadata.as_ref()
     }
     /// Color Space settings
-    pub fn color_space_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::H264ColorSpaceSettings> {
+    pub fn color_space_settings(&self) -> ::std::option::Option<&crate::types::H264ColorSpaceSettings> {
         self.color_space_settings.as_ref()
     }
     /// Entropy encoding mode. Use cabac (must be in Main or High profile) or cavlc.
@@ -181,9 +177,7 @@ impl H264Settings {
         self.flicker_aq.as_ref()
     }
     /// This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.) enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF), depending on what is most appropriate for the content.
-    pub fn force_field_pictures(
-        &self,
-    ) -> ::std::option::Option<&crate::types::H264ForceFieldPictures> {
+    pub fn force_field_pictures(&self) -> ::std::option::Option<&crate::types::H264ForceFieldPictures> {
         self.force_field_pictures.as_ref()
     }
     /// This field indicates how the output video frame rate is specified. If "specified" is selected then the output video frame rate is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource" is selected then the output video frame rate will be set equal to the input video frame rate of the first input.
@@ -223,9 +217,7 @@ impl H264Settings {
         self.level.as_ref()
     }
     /// Amount of lookahead. A value of low can decrease latency and memory usage, while high can produce better quality for certain content.
-    pub fn look_ahead_rate_control(
-        &self,
-    ) -> ::std::option::Option<&crate::types::H264LookAheadRateControl> {
+    pub fn look_ahead_rate_control(&self) -> ::std::option::Option<&crate::types::H264LookAheadRateControl> {
         self.look_ahead_rate_control.as_ref()
     }
     /// For QVBR: See the tooltip for Quality level For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity of the video.
@@ -273,9 +265,7 @@ impl H264Settings {
         self.scan_type.as_ref()
     }
     /// Scene change detection. - On: inserts I-frames when scene change is detected. - Off: does not force an I-frame when scene change is detected.
-    pub fn scene_change_detect(
-        &self,
-    ) -> ::std::option::Option<&crate::types::H264SceneChangeDetect> {
+    pub fn scene_change_detect(&self) -> ::std::option::Option<&crate::types::H264SceneChangeDetect> {
         self.scene_change_detect.as_ref()
     }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
@@ -303,15 +293,11 @@ impl H264Settings {
         self.temporal_aq.as_ref()
     }
     /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
-    pub fn timecode_insertion(
-        &self,
-    ) -> ::std::option::Option<&crate::types::H264TimecodeInsertionBehavior> {
+    pub fn timecode_insertion(&self) -> ::std::option::Option<&crate::types::H264TimecodeInsertionBehavior> {
         self.timecode_insertion.as_ref()
     }
     /// Timecode burn-in settings
-    pub fn timecode_burnin_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TimecodeBurninSettings> {
+    pub fn timecode_burnin_settings(&self) -> ::std::option::Option<&crate::types::TimecodeBurninSettings> {
         self.timecode_burnin_settings.as_ref()
     }
 }
@@ -324,9 +310,7 @@ impl H264Settings {
 
 /// A builder for [`H264Settings`](crate::types::H264Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct H264SettingsBuilder {
     pub(crate) adaptive_quantization: ::std::option::Option<crate::types::H264AdaptiveQuantization>,
     pub(crate) afd_signaling: ::std::option::Option<crate::types::AfdSignaling>,
@@ -349,8 +333,7 @@ pub struct H264SettingsBuilder {
     pub(crate) gop_size: ::std::option::Option<f64>,
     pub(crate) gop_size_units: ::std::option::Option<crate::types::H264GopSizeUnits>,
     pub(crate) level: ::std::option::Option<crate::types::H264Level>,
-    pub(crate) look_ahead_rate_control:
-        ::std::option::Option<crate::types::H264LookAheadRateControl>,
+    pub(crate) look_ahead_rate_control: ::std::option::Option<crate::types::H264LookAheadRateControl>,
     pub(crate) max_bitrate: ::std::option::Option<i32>,
     pub(crate) min_i_interval: ::std::option::Option<i32>,
     pub(crate) num_ref_frames: ::std::option::Option<i32>,
@@ -369,10 +352,8 @@ pub struct H264SettingsBuilder {
     pub(crate) subgop_length: ::std::option::Option<crate::types::H264SubGopLength>,
     pub(crate) syntax: ::std::option::Option<crate::types::H264Syntax>,
     pub(crate) temporal_aq: ::std::option::Option<crate::types::H264TemporalAq>,
-    pub(crate) timecode_insertion:
-        ::std::option::Option<crate::types::H264TimecodeInsertionBehavior>,
-    pub(crate) timecode_burnin_settings:
-        ::std::option::Option<crate::types::TimecodeBurninSettings>,
+    pub(crate) timecode_insertion: ::std::option::Option<crate::types::H264TimecodeInsertionBehavior>,
+    pub(crate) timecode_burnin_settings: ::std::option::Option<crate::types::TimecodeBurninSettings>,
 }
 impl H264SettingsBuilder {
     /// Enables or disables adaptive quantization, which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended. For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate strength. Set a strength (a value other than Auto or Disable). This strength will apply to any of the AQ fields that you choose to enable. Set to Disabled to disable all types of adaptive quantization.
@@ -381,17 +362,12 @@ impl H264SettingsBuilder {
         self
     }
     /// Enables or disables adaptive quantization, which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended. For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate strength. Set a strength (a value other than Auto or Disable). This strength will apply to any of the AQ fields that you choose to enable. Set to Disabled to disable all types of adaptive quantization.
-    pub fn set_adaptive_quantization(
-        mut self,
-        input: ::std::option::Option<crate::types::H264AdaptiveQuantization>,
-    ) -> Self {
+    pub fn set_adaptive_quantization(mut self, input: ::std::option::Option<crate::types::H264AdaptiveQuantization>) -> Self {
         self.adaptive_quantization = input;
         self
     }
     /// Enables or disables adaptive quantization, which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended. For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate strength. Set a strength (a value other than Auto or Disable). This strength will apply to any of the AQ fields that you choose to enable. Set to Disabled to disable all types of adaptive quantization.
-    pub fn get_adaptive_quantization(
-        &self,
-    ) -> &::std::option::Option<crate::types::H264AdaptiveQuantization> {
+    pub fn get_adaptive_quantization(&self) -> &::std::option::Option<crate::types::H264AdaptiveQuantization> {
         &self.adaptive_quantization
     }
     /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
@@ -400,10 +376,7 @@ impl H264SettingsBuilder {
         self
     }
     /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
-    pub fn set_afd_signaling(
-        mut self,
-        input: ::std::option::Option<crate::types::AfdSignaling>,
-    ) -> Self {
+    pub fn set_afd_signaling(mut self, input: ::std::option::Option<crate::types::AfdSignaling>) -> Self {
         self.afd_signaling = input;
         self
     }
@@ -459,10 +432,7 @@ impl H264SettingsBuilder {
         self
     }
     /// Includes colorspace metadata in the output.
-    pub fn set_color_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::H264ColorMetadata>,
-    ) -> Self {
+    pub fn set_color_metadata(mut self, input: ::std::option::Option<crate::types::H264ColorMetadata>) -> Self {
         self.color_metadata = input;
         self
     }
@@ -476,17 +446,12 @@ impl H264SettingsBuilder {
         self
     }
     /// Color Space settings
-    pub fn set_color_space_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::H264ColorSpaceSettings>,
-    ) -> Self {
+    pub fn set_color_space_settings(mut self, input: ::std::option::Option<crate::types::H264ColorSpaceSettings>) -> Self {
         self.color_space_settings = input;
         self
     }
     /// Color Space settings
-    pub fn get_color_space_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::H264ColorSpaceSettings> {
+    pub fn get_color_space_settings(&self) -> &::std::option::Option<crate::types::H264ColorSpaceSettings> {
         &self.color_space_settings
     }
     /// Entropy encoding mode. Use cabac (must be in Main or High profile) or cavlc.
@@ -495,17 +460,12 @@ impl H264SettingsBuilder {
         self
     }
     /// Entropy encoding mode. Use cabac (must be in Main or High profile) or cavlc.
-    pub fn set_entropy_encoding(
-        mut self,
-        input: ::std::option::Option<crate::types::H264EntropyEncoding>,
-    ) -> Self {
+    pub fn set_entropy_encoding(mut self, input: ::std::option::Option<crate::types::H264EntropyEncoding>) -> Self {
         self.entropy_encoding = input;
         self
     }
     /// Entropy encoding mode. Use cabac (must be in Main or High profile) or cavlc.
-    pub fn get_entropy_encoding(
-        &self,
-    ) -> &::std::option::Option<crate::types::H264EntropyEncoding> {
+    pub fn get_entropy_encoding(&self) -> &::std::option::Option<crate::types::H264EntropyEncoding> {
         &self.entropy_encoding
     }
     /// Optional filters that you can apply to an encode.
@@ -514,10 +474,7 @@ impl H264SettingsBuilder {
         self
     }
     /// Optional filters that you can apply to an encode.
-    pub fn set_filter_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::H264FilterSettings>,
-    ) -> Self {
+    pub fn set_filter_settings(mut self, input: ::std::option::Option<crate::types::H264FilterSettings>) -> Self {
         self.filter_settings = input;
         self
     }
@@ -545,10 +502,7 @@ impl H264SettingsBuilder {
         self
     }
     /// Flicker AQ makes adjustments within each frame to reduce flicker or 'pop' on I-frames. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if flicker AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply flicker AQ using the specified strength. Disabled: MediaLive won't apply flicker AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply flicker AQ.
-    pub fn set_flicker_aq(
-        mut self,
-        input: ::std::option::Option<crate::types::H264FlickerAq>,
-    ) -> Self {
+    pub fn set_flicker_aq(mut self, input: ::std::option::Option<crate::types::H264FlickerAq>) -> Self {
         self.flicker_aq = input;
         self
     }
@@ -562,17 +516,12 @@ impl H264SettingsBuilder {
         self
     }
     /// This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.) enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF), depending on what is most appropriate for the content.
-    pub fn set_force_field_pictures(
-        mut self,
-        input: ::std::option::Option<crate::types::H264ForceFieldPictures>,
-    ) -> Self {
+    pub fn set_force_field_pictures(mut self, input: ::std::option::Option<crate::types::H264ForceFieldPictures>) -> Self {
         self.force_field_pictures = input;
         self
     }
     /// This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.) enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF), depending on what is most appropriate for the content.
-    pub fn get_force_field_pictures(
-        &self,
-    ) -> &::std::option::Option<crate::types::H264ForceFieldPictures> {
+    pub fn get_force_field_pictures(&self) -> &::std::option::Option<crate::types::H264ForceFieldPictures> {
         &self.force_field_pictures
     }
     /// This field indicates how the output video frame rate is specified. If "specified" is selected then the output video frame rate is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource" is selected then the output video frame rate will be set equal to the input video frame rate of the first input.
@@ -581,17 +530,12 @@ impl H264SettingsBuilder {
         self
     }
     /// This field indicates how the output video frame rate is specified. If "specified" is selected then the output video frame rate is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource" is selected then the output video frame rate will be set equal to the input video frame rate of the first input.
-    pub fn set_framerate_control(
-        mut self,
-        input: ::std::option::Option<crate::types::H264FramerateControl>,
-    ) -> Self {
+    pub fn set_framerate_control(mut self, input: ::std::option::Option<crate::types::H264FramerateControl>) -> Self {
         self.framerate_control = input;
         self
     }
     /// This field indicates how the output video frame rate is specified. If "specified" is selected then the output video frame rate is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource" is selected then the output video frame rate will be set equal to the input video frame rate of the first input.
-    pub fn get_framerate_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::H264FramerateControl> {
+    pub fn get_framerate_control(&self) -> &::std::option::Option<crate::types::H264FramerateControl> {
         &self.framerate_control
     }
     /// Framerate denominator.
@@ -628,10 +572,7 @@ impl H264SettingsBuilder {
         self
     }
     /// Documentation update needed
-    pub fn set_gop_b_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::H264GopBReference>,
-    ) -> Self {
+    pub fn set_gop_b_reference(mut self, input: ::std::option::Option<crate::types::H264GopBReference>) -> Self {
         self.gop_b_reference = input;
         self
     }
@@ -687,10 +628,7 @@ impl H264SettingsBuilder {
         self
     }
     /// Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.
-    pub fn set_gop_size_units(
-        mut self,
-        input: ::std::option::Option<crate::types::H264GopSizeUnits>,
-    ) -> Self {
+    pub fn set_gop_size_units(mut self, input: ::std::option::Option<crate::types::H264GopSizeUnits>) -> Self {
         self.gop_size_units = input;
         self
     }
@@ -713,25 +651,17 @@ impl H264SettingsBuilder {
         &self.level
     }
     /// Amount of lookahead. A value of low can decrease latency and memory usage, while high can produce better quality for certain content.
-    pub fn look_ahead_rate_control(
-        mut self,
-        input: crate::types::H264LookAheadRateControl,
-    ) -> Self {
+    pub fn look_ahead_rate_control(mut self, input: crate::types::H264LookAheadRateControl) -> Self {
         self.look_ahead_rate_control = ::std::option::Option::Some(input);
         self
     }
     /// Amount of lookahead. A value of low can decrease latency and memory usage, while high can produce better quality for certain content.
-    pub fn set_look_ahead_rate_control(
-        mut self,
-        input: ::std::option::Option<crate::types::H264LookAheadRateControl>,
-    ) -> Self {
+    pub fn set_look_ahead_rate_control(mut self, input: ::std::option::Option<crate::types::H264LookAheadRateControl>) -> Self {
         self.look_ahead_rate_control = input;
         self
     }
     /// Amount of lookahead. A value of low can decrease latency and memory usage, while high can produce better quality for certain content.
-    pub fn get_look_ahead_rate_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::H264LookAheadRateControl> {
+    pub fn get_look_ahead_rate_control(&self) -> &::std::option::Option<crate::types::H264LookAheadRateControl> {
         &self.look_ahead_rate_control
     }
     /// For QVBR: See the tooltip for Quality level For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity of the video.
@@ -782,10 +712,7 @@ impl H264SettingsBuilder {
         self
     }
     /// This field indicates how the output pixel aspect ratio is specified. If "specified" is selected then the output video pixel aspect ratio is determined by parNumerator and parDenominator, else if "initializeFromSource" is selected then the output pixsel aspect ratio will be set equal to the input video pixel aspect ratio of the first input.
-    pub fn set_par_control(
-        mut self,
-        input: ::std::option::Option<crate::types::H264ParControl>,
-    ) -> Self {
+    pub fn set_par_control(mut self, input: ::std::option::Option<crate::types::H264ParControl>) -> Self {
         self.par_control = input;
         self
     }
@@ -841,10 +768,7 @@ impl H264SettingsBuilder {
         self
     }
     /// Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the channel). - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate. Has an effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex, the value must be ENHANCED_QUALITY. - STANDARD_QUALITY: Valid for any Rate control mode.
-    pub fn set_quality_level(
-        mut self,
-        input: ::std::option::Option<crate::types::H264QualityLevel>,
-    ) -> Self {
+    pub fn set_quality_level(mut self, input: ::std::option::Option<crate::types::H264QualityLevel>) -> Self {
         self.quality_level = input;
         self
     }
@@ -872,17 +796,12 @@ impl H264SettingsBuilder {
         self
     }
     /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. VBR: Quality and bitrate vary, depending on the video complexity. Recommended instead of QVBR if you want to maintain a specific average bitrate over the duration of the channel. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
-    pub fn set_rate_control_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::H264RateControlMode>,
-    ) -> Self {
+    pub fn set_rate_control_mode(mut self, input: ::std::option::Option<crate::types::H264RateControlMode>) -> Self {
         self.rate_control_mode = input;
         self
     }
     /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. VBR: Quality and bitrate vary, depending on the video complexity. Recommended instead of QVBR if you want to maintain a specific average bitrate over the duration of the channel. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
-    pub fn get_rate_control_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::H264RateControlMode> {
+    pub fn get_rate_control_mode(&self) -> &::std::option::Option<crate::types::H264RateControlMode> {
         &self.rate_control_mode
     }
     /// Sets the scan type of the output to progressive or top-field-first interlaced.
@@ -891,10 +810,7 @@ impl H264SettingsBuilder {
         self
     }
     /// Sets the scan type of the output to progressive or top-field-first interlaced.
-    pub fn set_scan_type(
-        mut self,
-        input: ::std::option::Option<crate::types::H264ScanType>,
-    ) -> Self {
+    pub fn set_scan_type(mut self, input: ::std::option::Option<crate::types::H264ScanType>) -> Self {
         self.scan_type = input;
         self
     }
@@ -908,17 +824,12 @@ impl H264SettingsBuilder {
         self
     }
     /// Scene change detection. - On: inserts I-frames when scene change is detected. - Off: does not force an I-frame when scene change is detected.
-    pub fn set_scene_change_detect(
-        mut self,
-        input: ::std::option::Option<crate::types::H264SceneChangeDetect>,
-    ) -> Self {
+    pub fn set_scene_change_detect(mut self, input: ::std::option::Option<crate::types::H264SceneChangeDetect>) -> Self {
         self.scene_change_detect = input;
         self
     }
     /// Scene change detection. - On: inserts I-frames when scene change is detected. - Off: does not force an I-frame when scene change is detected.
-    pub fn get_scene_change_detect(
-        &self,
-    ) -> &::std::option::Option<crate::types::H264SceneChangeDetect> {
+    pub fn get_scene_change_detect(&self) -> &::std::option::Option<crate::types::H264SceneChangeDetect> {
         &self.scene_change_detect
     }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
@@ -955,10 +866,7 @@ impl H264SettingsBuilder {
         self
     }
     /// Spatial AQ makes adjustments within each frame based on spatial variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if spatial AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply spatial AQ using the specified strength. Disabled: MediaLive won't apply spatial AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply spatial AQ.
-    pub fn set_spatial_aq(
-        mut self,
-        input: ::std::option::Option<crate::types::H264SpatialAq>,
-    ) -> Self {
+    pub fn set_spatial_aq(mut self, input: ::std::option::Option<crate::types::H264SpatialAq>) -> Self {
         self.spatial_aq = input;
         self
     }
@@ -972,10 +880,7 @@ impl H264SettingsBuilder {
         self
     }
     /// If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic, optimize the number of B-frames used for each sub-GOP to improve visual quality.
-    pub fn set_subgop_length(
-        mut self,
-        input: ::std::option::Option<crate::types::H264SubGopLength>,
-    ) -> Self {
+    pub fn set_subgop_length(mut self, input: ::std::option::Option<crate::types::H264SubGopLength>) -> Self {
         self.subgop_length = input;
         self
     }
@@ -1003,10 +908,7 @@ impl H264SettingsBuilder {
         self
     }
     /// Temporal makes adjustments within each frame based on temporal variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if temporal AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply temporal AQ using the specified strength. Disabled: MediaLive won't apply temporal AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply temporal AQ.
-    pub fn set_temporal_aq(
-        mut self,
-        input: ::std::option::Option<crate::types::H264TemporalAq>,
-    ) -> Self {
+    pub fn set_temporal_aq(mut self, input: ::std::option::Option<crate::types::H264TemporalAq>) -> Self {
         self.temporal_aq = input;
         self
     }
@@ -1015,25 +917,17 @@ impl H264SettingsBuilder {
         &self.temporal_aq
     }
     /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
-    pub fn timecode_insertion(
-        mut self,
-        input: crate::types::H264TimecodeInsertionBehavior,
-    ) -> Self {
+    pub fn timecode_insertion(mut self, input: crate::types::H264TimecodeInsertionBehavior) -> Self {
         self.timecode_insertion = ::std::option::Option::Some(input);
         self
     }
     /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
-    pub fn set_timecode_insertion(
-        mut self,
-        input: ::std::option::Option<crate::types::H264TimecodeInsertionBehavior>,
-    ) -> Self {
+    pub fn set_timecode_insertion(mut self, input: ::std::option::Option<crate::types::H264TimecodeInsertionBehavior>) -> Self {
         self.timecode_insertion = input;
         self
     }
     /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
-    pub fn get_timecode_insertion(
-        &self,
-    ) -> &::std::option::Option<crate::types::H264TimecodeInsertionBehavior> {
+    pub fn get_timecode_insertion(&self) -> &::std::option::Option<crate::types::H264TimecodeInsertionBehavior> {
         &self.timecode_insertion
     }
     /// Timecode burn-in settings
@@ -1042,17 +936,12 @@ impl H264SettingsBuilder {
         self
     }
     /// Timecode burn-in settings
-    pub fn set_timecode_burnin_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::TimecodeBurninSettings>,
-    ) -> Self {
+    pub fn set_timecode_burnin_settings(mut self, input: ::std::option::Option<crate::types::TimecodeBurninSettings>) -> Self {
         self.timecode_burnin_settings = input;
         self
     }
     /// Timecode burn-in settings
-    pub fn get_timecode_burnin_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimecodeBurninSettings> {
+    pub fn get_timecode_burnin_settings(&self) -> &::std::option::Option<crate::types::TimecodeBurninSettings> {
         &self.timecode_burnin_settings
     }
     /// Consumes the builder and constructs a [`H264Settings`](crate::types::H264Settings).

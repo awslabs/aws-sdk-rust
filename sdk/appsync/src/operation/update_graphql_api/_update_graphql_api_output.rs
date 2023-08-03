@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateGraphqlApiOutput {
 }
 impl UpdateGraphqlApiOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGraphqlApiOutput`](crate::operation::update_graphql_api::UpdateGraphqlApiOutput).
-    pub fn builder() -> crate::operation::update_graphql_api::builders::UpdateGraphqlApiOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_graphql_api::builders::UpdateGraphqlApiOutputBuilder {
         crate::operation::update_graphql_api::builders::UpdateGraphqlApiOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGraphqlApiOutput`](crate::operation::update_graphql_api::UpdateGraphqlApiOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGraphqlApiOutputBuilder {
     pub(crate) graphql_api: ::std::option::Option<crate::types::GraphqlApi>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateGraphqlApiOutputBuilder {
         self
     }
     /// <p>The updated <code>GraphqlApi</code> object.</p>
-    pub fn set_graphql_api(
-        mut self,
-        input: ::std::option::Option<crate::types::GraphqlApi>,
-    ) -> Self {
+    pub fn set_graphql_api(mut self, input: ::std::option::Option<crate::types::GraphqlApi>) -> Self {
         self.graphql_api = input;
         self
     }

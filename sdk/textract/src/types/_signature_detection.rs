@@ -30,9 +30,7 @@ impl SignatureDetection {
 
 /// A builder for [`SignatureDetection`](crate::types::SignatureDetection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignatureDetectionBuilder {
     pub(crate) confidence: ::std::option::Option<f32>,
     pub(crate) geometry: ::std::option::Option<crate::types::Geometry>,

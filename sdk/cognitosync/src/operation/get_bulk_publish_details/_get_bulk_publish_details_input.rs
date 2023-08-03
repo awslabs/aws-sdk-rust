@@ -16,35 +16,25 @@ impl GetBulkPublishDetailsInput {
 }
 impl GetBulkPublishDetailsInput {
     /// Creates a new builder-style object to manufacture [`GetBulkPublishDetailsInput`](crate::operation::get_bulk_publish_details::GetBulkPublishDetailsInput).
-    pub fn builder(
-    ) -> crate::operation::get_bulk_publish_details::builders::GetBulkPublishDetailsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_bulk_publish_details::builders::GetBulkPublishDetailsInputBuilder {
         crate::operation::get_bulk_publish_details::builders::GetBulkPublishDetailsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBulkPublishDetailsInput`](crate::operation::get_bulk_publish_details::GetBulkPublishDetailsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBulkPublishDetailsInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl GetBulkPublishDetailsInputBuilder {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -55,14 +45,10 @@ impl GetBulkPublishDetailsInputBuilder {
     /// Consumes the builder and constructs a [`GetBulkPublishDetailsInput`](crate::operation::get_bulk_publish_details::GetBulkPublishDetailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bulk_publish_details::GetBulkPublishDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_bulk_publish_details::GetBulkPublishDetailsInput {
-                identity_pool_id: self.identity_pool_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_bulk_publish_details::GetBulkPublishDetailsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_bulk_publish_details::GetBulkPublishDetailsInput {
+            identity_pool_id: self.identity_pool_id,
+        })
     }
 }

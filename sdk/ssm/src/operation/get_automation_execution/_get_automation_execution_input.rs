@@ -15,35 +15,25 @@ impl GetAutomationExecutionInput {
 }
 impl GetAutomationExecutionInput {
     /// Creates a new builder-style object to manufacture [`GetAutomationExecutionInput`](crate::operation::get_automation_execution::GetAutomationExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::get_automation_execution::builders::GetAutomationExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_automation_execution::builders::GetAutomationExecutionInputBuilder {
         crate::operation::get_automation_execution::builders::GetAutomationExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAutomationExecutionInput`](crate::operation::get_automation_execution::GetAutomationExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAutomationExecutionInputBuilder {
     pub(crate) automation_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAutomationExecutionInputBuilder {
     /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
-    pub fn automation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn automation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.automation_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
-    pub fn set_automation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_automation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.automation_execution_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetAutomationExecutionInputBuilder {
     /// Consumes the builder and constructs a [`GetAutomationExecutionInput`](crate::operation::get_automation_execution::GetAutomationExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_automation_execution::GetAutomationExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_automation_execution::GetAutomationExecutionInput {
-                automation_execution_id: self.automation_execution_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_automation_execution::GetAutomationExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_automation_execution::GetAutomationExecutionInput {
+            automation_execution_id: self.automation_execution_id,
+        })
     }
 }

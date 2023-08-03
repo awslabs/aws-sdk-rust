@@ -55,9 +55,7 @@ impl ListLicensesInput {
 
 /// A builder for [`ListLicensesInput`](crate::operation::list_licenses::ListLicensesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLicensesInputBuilder {
     pub(crate) license_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -77,17 +75,12 @@ impl ListLicensesInputBuilder {
         self
     }
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
-    pub fn set_license_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_license_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.license_arns = input;
         self
     }
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
-    pub fn get_license_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_license_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.license_arns
     }
     /// Appends an item to `filters`.
@@ -114,10 +107,7 @@ impl ListLicensesInputBuilder {
     /// <li> <p> <code>Fingerprint</code> </p> </li>
     /// <li> <p> <code>Status</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -160,12 +150,7 @@ impl ListLicensesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListLicensesInput`](crate::operation::list_licenses::ListLicensesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_licenses::ListLicensesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_licenses::ListLicensesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_licenses::ListLicensesInput {
             license_arns: self.license_arns,
             filters: self.filters,

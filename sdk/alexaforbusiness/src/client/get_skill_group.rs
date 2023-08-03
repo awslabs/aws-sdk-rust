@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`skill_group(Option<SkillGroup>)`](crate::operation::get_skill_group::GetSkillGroupOutput::skill_group): <p>The details of the skill group requested. Required.</p>
     /// - On failure, responds with [`SdkError<GetSkillGroupError>`](crate::operation::get_skill_group::GetSkillGroupError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn get_skill_group(
-        &self,
-    ) -> crate::operation::get_skill_group::builders::GetSkillGroupFluentBuilder {
-        crate::operation::get_skill_group::builders::GetSkillGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_skill_group(&self) -> crate::operation::get_skill_group::builders::GetSkillGroupFluentBuilder {
+        crate::operation::get_skill_group::builders::GetSkillGroupFluentBuilder::new(self.handle.clone())
     }
 }

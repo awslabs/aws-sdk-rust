@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAuditFindingOutput`](crate::operation::describe_audit_finding::DescribeAuditFindingOutput) with field(s):
     ///   - [`finding(Option<AuditFinding>)`](crate::operation::describe_audit_finding::DescribeAuditFindingOutput::finding): <p>The findings (results) of the audit.</p>
     /// - On failure, responds with [`SdkError<DescribeAuditFindingError>`](crate::operation::describe_audit_finding::DescribeAuditFindingError)
-    pub fn describe_audit_finding(
-        &self,
-    ) -> crate::operation::describe_audit_finding::builders::DescribeAuditFindingFluentBuilder {
-        crate::operation::describe_audit_finding::builders::DescribeAuditFindingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_audit_finding(&self) -> crate::operation::describe_audit_finding::builders::DescribeAuditFindingFluentBuilder {
+        crate::operation::describe_audit_finding::builders::DescribeAuditFindingFluentBuilder::new(self.handle.clone())
     }
 }

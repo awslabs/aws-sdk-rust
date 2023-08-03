@@ -30,9 +30,7 @@ impl RuleSummary {
 
 /// A builder for [`RuleSummary`](crate::types::RuleSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<crate::types::RuleAction>,

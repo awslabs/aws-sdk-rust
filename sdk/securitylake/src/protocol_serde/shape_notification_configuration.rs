@@ -12,18 +12,14 @@ pub fn ser_notification_configuration(
         }
         crate::types::NotificationConfiguration::HttpsNotificationConfiguration(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_2
-                .key("httpsNotificationConfiguration")
-                .start_object();
+            let mut object_2 = object_2.key("httpsNotificationConfiguration").start_object();
             crate::protocol_serde::shape_https_notification_configuration::ser_https_notification_configuration(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::NotificationConfiguration::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "NotificationConfiguration",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "NotificationConfiguration",
+            ))
         }
     }
     Ok(())

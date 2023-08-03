@@ -23,9 +23,7 @@ impl CustomPluginLocationDescription {
 
 /// A builder for [`CustomPluginLocationDescription`](crate::types::CustomPluginLocationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomPluginLocationDescriptionBuilder {
     pub(crate) s3_location: ::std::option::Option<crate::types::S3LocationDescription>,
 }
@@ -36,10 +34,7 @@ impl CustomPluginLocationDescriptionBuilder {
         self
     }
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
-    pub fn set_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3LocationDescription>,
-    ) -> Self {
+    pub fn set_s3_location(mut self, input: ::std::option::Option<crate::types::S3LocationDescription>) -> Self {
         self.s3_location = input;
         self
     }

@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CreateGraphOutput`](crate::operation::create_graph::CreateGraphOutput) with field(s):
     ///   - [`graph_arn(Option<String>)`](crate::operation::create_graph::CreateGraphOutput::graph_arn): <p>The ARN of the new behavior graph.</p>
     /// - On failure, responds with [`SdkError<CreateGraphError>`](crate::operation::create_graph::CreateGraphError)
-    pub fn create_graph(
-        &self,
-    ) -> crate::operation::create_graph::builders::CreateGraphFluentBuilder {
+    pub fn create_graph(&self) -> crate::operation::create_graph::builders::CreateGraphFluentBuilder {
         crate::operation::create_graph::builders::CreateGraphFluentBuilder::new(self.handle.clone())
     }
 }

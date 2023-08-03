@@ -35,9 +35,7 @@ impl ListWebAcLsOutput {
 
 /// A builder for [`ListWebAcLsOutput`](crate::operation::list_web_ac_ls::ListWebAcLsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWebAcLsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) web_ac_ls: ::std::option::Option<::std::vec::Vec<crate::types::WebAclSummary>>,
@@ -70,17 +68,12 @@ impl ListWebAcLsOutputBuilder {
         self
     }
     /// <p>Array of web ACLs. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn set_web_ac_ls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WebAclSummary>>,
-    ) -> Self {
+    pub fn set_web_ac_ls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WebAclSummary>>) -> Self {
         self.web_ac_ls = input;
         self
     }
     /// <p>Array of web ACLs. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn get_web_ac_ls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WebAclSummary>> {
+    pub fn get_web_ac_ls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WebAclSummary>> {
         &self.web_ac_ls
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

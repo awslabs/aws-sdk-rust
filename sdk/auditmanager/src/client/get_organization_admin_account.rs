@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`admin_account_id(Option<String>)`](crate::operation::get_organization_admin_account::GetOrganizationAdminAccountOutput::admin_account_id): <p> The identifier for the administrator account. </p>
     ///   - [`organization_id(Option<String>)`](crate::operation::get_organization_admin_account::GetOrganizationAdminAccountOutput::organization_id): <p> The identifier for the organization. </p>
     /// - On failure, responds with [`SdkError<GetOrganizationAdminAccountError>`](crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError)
-    pub fn get_organization_admin_account(&self) -> crate::operation::get_organization_admin_account::builders::GetOrganizationAdminAccountFluentBuilder{
+    pub fn get_organization_admin_account(
+        &self,
+    ) -> crate::operation::get_organization_admin_account::builders::GetOrganizationAdminAccountFluentBuilder {
         crate::operation::get_organization_admin_account::builders::GetOrganizationAdminAccountFluentBuilder::new(self.handle.clone())
     }
 }

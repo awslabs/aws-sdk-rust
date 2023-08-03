@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::list_template_versions::ListTemplateVersionsOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_template_versions::ListTemplateVersionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<ListTemplateVersionsError>`](crate::operation::list_template_versions::ListTemplateVersionsError)
-    pub fn list_template_versions(
-        &self,
-    ) -> crate::operation::list_template_versions::builders::ListTemplateVersionsFluentBuilder {
-        crate::operation::list_template_versions::builders::ListTemplateVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_template_versions(&self) -> crate::operation::list_template_versions::builders::ListTemplateVersionsFluentBuilder {
+        crate::operation::list_template_versions::builders::ListTemplateVersionsFluentBuilder::new(self.handle.clone())
     }
 }

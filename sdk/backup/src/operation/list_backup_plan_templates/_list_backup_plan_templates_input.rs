@@ -22,18 +22,14 @@ impl ListBackupPlanTemplatesInput {
 }
 impl ListBackupPlanTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListBackupPlanTemplatesInput`](crate::operation::list_backup_plan_templates::ListBackupPlanTemplatesInput).
-    pub fn builder(
-    ) -> crate::operation::list_backup_plan_templates::builders::ListBackupPlanTemplatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_backup_plan_templates::builders::ListBackupPlanTemplatesInputBuilder {
         crate::operation::list_backup_plan_templates::builders::ListBackupPlanTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBackupPlanTemplatesInput`](crate::operation::list_backup_plan_templates::ListBackupPlanTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBackupPlanTemplatesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -74,11 +70,9 @@ impl ListBackupPlanTemplatesInputBuilder {
         crate::operation::list_backup_plan_templates::ListBackupPlanTemplatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_backup_plan_templates::ListBackupPlanTemplatesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_backup_plan_templates::ListBackupPlanTemplatesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

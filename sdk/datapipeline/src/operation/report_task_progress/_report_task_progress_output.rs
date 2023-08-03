@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for ReportTaskProgressOutput {
 }
 impl ReportTaskProgressOutput {
     /// Creates a new builder-style object to manufacture [`ReportTaskProgressOutput`](crate::operation::report_task_progress::ReportTaskProgressOutput).
-    pub fn builder(
-    ) -> crate::operation::report_task_progress::builders::ReportTaskProgressOutputBuilder {
+    pub fn builder() -> crate::operation::report_task_progress::builders::ReportTaskProgressOutputBuilder {
         crate::operation::report_task_progress::builders::ReportTaskProgressOutputBuilder::default()
     }
 }
 
 /// A builder for [`ReportTaskProgressOutput`](crate::operation::report_task_progress::ReportTaskProgressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportTaskProgressOutputBuilder {
     pub(crate) canceled: ::std::option::Option<bool>,
     _request_id: Option<String>,

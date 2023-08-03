@@ -16,8 +16,7 @@ pub struct UsageReportSubscription {
     pub last_generated_report_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The errors that were returned if usage reports couldn't be generated.</p>
     #[doc(hidden)]
-    pub subscription_errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::LastReportGenerationExecutionError>>,
+    pub subscription_errors: ::std::option::Option<::std::vec::Vec<crate::types::LastReportGenerationExecutionError>>,
 }
 impl UsageReportSubscription {
     /// <p>The Amazon S3 bucket where generated reports are stored.</p>
@@ -30,15 +29,11 @@ impl UsageReportSubscription {
         self.schedule.as_ref()
     }
     /// <p>The time when the last usage report was generated.</p>
-    pub fn last_generated_report_date(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_generated_report_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_generated_report_date.as_ref()
     }
     /// <p>The errors that were returned if usage reports couldn't be generated.</p>
-    pub fn subscription_errors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LastReportGenerationExecutionError]> {
+    pub fn subscription_errors(&self) -> ::std::option::Option<&[crate::types::LastReportGenerationExecutionError]> {
         self.subscription_errors.as_deref()
     }
 }
@@ -51,32 +46,23 @@ impl UsageReportSubscription {
 
 /// A builder for [`UsageReportSubscription`](crate::types::UsageReportSubscription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageReportSubscriptionBuilder {
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) schedule: ::std::option::Option<crate::types::UsageReportSchedule>,
     pub(crate) last_generated_report_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) subscription_errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::LastReportGenerationExecutionError>>,
+    pub(crate) subscription_errors: ::std::option::Option<::std::vec::Vec<crate::types::LastReportGenerationExecutionError>>,
 }
 impl UsageReportSubscriptionBuilder {
     /// <p>The Amazon S3 bucket where generated reports are stored.</p>
     /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket where generated reports are stored.</p>
     /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
@@ -91,10 +77,7 @@ impl UsageReportSubscriptionBuilder {
         self
     }
     /// <p>The schedule for generating usage reports.</p>
-    pub fn set_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageReportSchedule>,
-    ) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::UsageReportSchedule>) -> Self {
         self.schedule = input;
         self
     }
@@ -108,17 +91,12 @@ impl UsageReportSubscriptionBuilder {
         self
     }
     /// <p>The time when the last usage report was generated.</p>
-    pub fn set_last_generated_report_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_generated_report_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_generated_report_date = input;
         self
     }
     /// <p>The time when the last usage report was generated.</p>
-    pub fn get_last_generated_report_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_generated_report_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_generated_report_date
     }
     /// Appends an item to `subscription_errors`.
@@ -126,10 +104,7 @@ impl UsageReportSubscriptionBuilder {
     /// To override the contents of this collection use [`set_subscription_errors`](Self::set_subscription_errors).
     ///
     /// <p>The errors that were returned if usage reports couldn't be generated.</p>
-    pub fn subscription_errors(
-        mut self,
-        input: crate::types::LastReportGenerationExecutionError,
-    ) -> Self {
+    pub fn subscription_errors(mut self, input: crate::types::LastReportGenerationExecutionError) -> Self {
         let mut v = self.subscription_errors.unwrap_or_default();
         v.push(input);
         self.subscription_errors = ::std::option::Option::Some(v);
@@ -138,18 +113,13 @@ impl UsageReportSubscriptionBuilder {
     /// <p>The errors that were returned if usage reports couldn't be generated.</p>
     pub fn set_subscription_errors(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::LastReportGenerationExecutionError>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LastReportGenerationExecutionError>>,
     ) -> Self {
         self.subscription_errors = input;
         self
     }
     /// <p>The errors that were returned if usage reports couldn't be generated.</p>
-    pub fn get_subscription_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LastReportGenerationExecutionError>>
-    {
+    pub fn get_subscription_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LastReportGenerationExecutionError>> {
         &self.subscription_errors
     }
     /// Consumes the builder and constructs a [`UsageReportSubscription`](crate::types::UsageReportSubscription).

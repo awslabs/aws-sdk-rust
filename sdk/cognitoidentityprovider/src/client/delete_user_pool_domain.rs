@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`user_pool_id(impl ::std::convert::Into<String>)`](crate::operation::delete_user_pool_domain::builders::DeleteUserPoolDomainFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::delete_user_pool_domain::builders::DeleteUserPoolDomainFluentBuilder::set_user_pool_id): <p>The user pool ID.</p>
     /// - On success, responds with [`DeleteUserPoolDomainOutput`](crate::operation::delete_user_pool_domain::DeleteUserPoolDomainOutput)
     /// - On failure, responds with [`SdkError<DeleteUserPoolDomainError>`](crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError)
-    pub fn delete_user_pool_domain(
-        &self,
-    ) -> crate::operation::delete_user_pool_domain::builders::DeleteUserPoolDomainFluentBuilder
-    {
-        crate::operation::delete_user_pool_domain::builders::DeleteUserPoolDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_user_pool_domain(&self) -> crate::operation::delete_user_pool_domain::builders::DeleteUserPoolDomainFluentBuilder {
+        crate::operation::delete_user_pool_domain::builders::DeleteUserPoolDomainFluentBuilder::new(self.handle.clone())
     }
 }

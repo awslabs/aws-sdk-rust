@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`admin_accounts(Option<Vec<AdminAccount>>)`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput::admin_accounts): <p>A list of accounts configured as GuardDuty delegated administrators.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     /// - On failure, responds with [`SdkError<ListOrganizationAdminAccountsError>`](crate::operation::list_organization_admin_accounts::ListOrganizationAdminAccountsError)
-    pub fn list_organization_admin_accounts(&self) -> crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder{
+    pub fn list_organization_admin_accounts(
+        &self,
+    ) -> crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder {
         crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsFluentBuilder::new(self.handle.clone())
     }
 }

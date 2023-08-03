@@ -178,9 +178,7 @@ impl PresetWatermark {
 
 /// A builder for [`PresetWatermark`](crate::types::PresetWatermark).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PresetWatermarkBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) max_width: ::std::option::Option<::std::string::String>,
@@ -269,10 +267,7 @@ impl PresetWatermarkBuilder {
     /// <li> <p> <b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.</p> </li>
     /// <li> <p> <b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the watermark up.</p> </li>
     /// </ul>
-    pub fn sizing_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sizing_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sizing_policy = ::std::option::Option::Some(input.into());
         self
     }
@@ -282,10 +277,7 @@ impl PresetWatermarkBuilder {
     /// <li> <p> <b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.</p> </li>
     /// <li> <p> <b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the watermark up.</p> </li>
     /// </ul>
-    pub fn set_sizing_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sizing_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sizing_policy = input;
         self
     }
@@ -304,10 +296,7 @@ impl PresetWatermarkBuilder {
     /// <li> <p> <b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</p> </li>
     /// <li> <p> <b>Center</b>: The watermark is centered between the left and right borders.</p> </li>
     /// </ul>
-    pub fn horizontal_align(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn horizontal_align(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.horizontal_align = ::std::option::Option::Some(input.into());
         self
     }
@@ -317,10 +306,7 @@ impl PresetWatermarkBuilder {
     /// <li> <p> <b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</p> </li>
     /// <li> <p> <b>Center</b>: The watermark is centered between the left and right borders.</p> </li>
     /// </ul>
-    pub fn set_horizontal_align(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_horizontal_align(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.horizontal_align = input;
         self
     }
@@ -341,10 +327,7 @@ impl PresetWatermarkBuilder {
     /// <p>For example, if you specify Left for <code>HorizontalAlign</code> and 5px for <code>HorizontalOffset</code>, the left side of the watermark appears 5 pixels from the left border of the output video.</p>
     /// <p> <code>HorizontalOffset</code> is only valid when the value of <code>HorizontalAlign</code> is <code>Left</code> or <code>Right</code>. If you specify an offset that causes the watermark to extend beyond the left or right border and Elastic Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.</p>
     /// <p>Use the value of <code>Target</code> to specify whether you want to include the black bars that are added by Elastic Transcoder, if any, in the offset calculation.</p>
-    pub fn horizontal_offset(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn horizontal_offset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.horizontal_offset = ::std::option::Option::Some(input.into());
         self
     }
@@ -356,10 +339,7 @@ impl PresetWatermarkBuilder {
     /// <p>For example, if you specify Left for <code>HorizontalAlign</code> and 5px for <code>HorizontalOffset</code>, the left side of the watermark appears 5 pixels from the left border of the output video.</p>
     /// <p> <code>HorizontalOffset</code> is only valid when the value of <code>HorizontalAlign</code> is <code>Left</code> or <code>Right</code>. If you specify an offset that causes the watermark to extend beyond the left or right border and Elastic Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.</p>
     /// <p>Use the value of <code>Target</code> to specify whether you want to include the black bars that are added by Elastic Transcoder, if any, in the offset calculation.</p>
-    pub fn set_horizontal_offset(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_horizontal_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.horizontal_offset = input;
         self
     }
@@ -380,10 +360,7 @@ impl PresetWatermarkBuilder {
     /// <li> <p> <b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</p> </li>
     /// <li> <p> <b>Center</b>: The watermark is centered between the top and bottom borders.</p> </li>
     /// </ul>
-    pub fn vertical_align(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vertical_align(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vertical_align = ::std::option::Option::Some(input.into());
         self
     }
@@ -393,10 +370,7 @@ impl PresetWatermarkBuilder {
     /// <li> <p> <b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</p> </li>
     /// <li> <p> <b>Center</b>: The watermark is centered between the top and bottom borders.</p> </li>
     /// </ul>
-    pub fn set_vertical_align(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vertical_align(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vertical_align = input;
         self
     }
@@ -419,10 +393,7 @@ impl PresetWatermarkBuilder {
     /// <p> <code>VerticalOffset</code> is only valid when the value of VerticalAlign is Top or Bottom.</p>
     /// <p>If you specify an offset that causes the watermark to extend beyond the top or bottom border and Elastic Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.</p>
     /// <p>Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the offset calculation.</p>
-    pub fn vertical_offset(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vertical_offset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vertical_offset = ::std::option::Option::Some(input.into());
         self
     }
@@ -436,10 +407,7 @@ impl PresetWatermarkBuilder {
     /// <p> <code>VerticalOffset</code> is only valid when the value of VerticalAlign is Top or Bottom.</p>
     /// <p>If you specify an offset that causes the watermark to extend beyond the top or bottom border and Elastic Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.</p>
     /// <p>Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the offset calculation.</p>
-    pub fn set_vertical_offset(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vertical_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vertical_offset = input;
         self
     }

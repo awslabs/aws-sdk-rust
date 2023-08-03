@@ -11,10 +11,7 @@ pub fn ser_job_manifest(
     }
     if let Some(var_2) = &input.location {
         let inner_writer = scope.start_el("Location");
-        crate::protocol_serde::shape_job_manifest_location::ser_job_manifest_location(
-            var_2,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_job_manifest_location::ser_job_manifest_location(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())

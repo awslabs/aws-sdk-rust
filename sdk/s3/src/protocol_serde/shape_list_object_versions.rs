@@ -2,8 +2,7 @@
 pub fn ser_list_object_versions_headers(
     input: &crate::operation::list_object_versions::ListObjectVersionsInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.expected_bucket_owner {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_list_object_versions_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
@@ -27,10 +23,7 @@ pub fn ser_list_object_versions_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_payer",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-request-payer", header_value);
@@ -44,10 +37,7 @@ pub fn ser_list_object_versions_headers(
                 let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                     ::aws_smithy_http::operation::error::BuildError::invalid_field(
                         "optional_object_attributes",
-                        format!(
-                            "`{}` cannot be used as a header value: {}",
-                            &header_value, err
-                        ),
+                        format!("`{}` cannot be used as a header value: {}", &header_value, err),
                     )
                 })?;
                 builder = builder.header("x-amz-optional-object-attributes", header_value);
@@ -67,14 +57,9 @@ pub fn de_list_object_versions_http_error(
     crate::operation::list_object_versions::ListObjectVersionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::list_object_versions::ListObjectVersionsError::unhandled)?;
-    generic_builder =
-        crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::list_object_versions::ListObjectVersionsError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::list_object_versions::ListObjectVersionsError::generic(generic))
@@ -92,28 +77,17 @@ pub fn de_list_object_versions_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_object_versions::builders::ListObjectVersionsOutputBuilder::default();
-        output = crate::protocol_serde::shape_list_object_versions::de_list_object_versions(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::list_object_versions::ListObjectVersionsError::unhandled)?;
+        output = crate::protocol_serde::shape_list_object_versions::de_list_object_versions(_response_body, output)
+            .map_err(crate::operation::list_object_versions::ListObjectVersionsError::unhandled)?;
         output = output.set_request_charged(
-            crate::protocol_serde::shape_list_object_versions_output::de_request_charged_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_list_object_versions_output::de_request_charged_header(_response_headers).map_err(|_| {
                 crate::operation::list_object_versions::ListObjectVersionsError::unhandled(
                     "Failed to parse RequestCharged from header `x-amz-request-charged",
                 )
             })?,
         );
-        output._set_extended_request_id(
-            crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers)
-                .map(str::to_string),
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -122,10 +96,7 @@ pub fn de_list_object_versions_http_response_with_props(
 pub fn de_list_object_versions(
     inp: &[u8],
     mut builder: crate::operation::list_object_versions::builders::ListObjectVersionsOutputBuilder,
-) -> Result<
-    crate::operation::list_object_versions::builders::ListObjectVersionsOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::list_object_versions::builders::ListObjectVersionsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -133,11 +104,10 @@ pub fn de_list_object_versions(
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !start_el.matches("ListVersionsResult") {
-        return Err(
-                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
-                                    format!("encountered invalid XML root: expected ListVersionsResult but got {:?}. This is likely a bug in the SDK.", start_el)
-                                )
-                            );
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            "encountered invalid XML root: expected ListVersionsResult but got {:?}. This is likely a bug in the SDK.",
+            start_el
+        )));
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

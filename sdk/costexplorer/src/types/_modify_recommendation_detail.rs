@@ -23,12 +23,9 @@ impl ModifyRecommendationDetail {
 
 /// A builder for [`ModifyRecommendationDetail`](crate::types::ModifyRecommendationDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyRecommendationDetailBuilder {
-    pub(crate) target_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetInstance>>,
+    pub(crate) target_instances: ::std::option::Option<::std::vec::Vec<crate::types::TargetInstance>>,
 }
 impl ModifyRecommendationDetailBuilder {
     /// Appends an item to `target_instances`.
@@ -43,17 +40,12 @@ impl ModifyRecommendationDetailBuilder {
         self
     }
     /// <p>Determines whether this instance type is the Amazon Web Services default recommendation.</p>
-    pub fn set_target_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetInstance>>,
-    ) -> Self {
+    pub fn set_target_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetInstance>>) -> Self {
         self.target_instances = input;
         self
     }
     /// <p>Determines whether this instance type is the Amazon Web Services default recommendation.</p>
-    pub fn get_target_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetInstance>> {
+    pub fn get_target_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetInstance>> {
         &self.target_instances
     }
     /// Consumes the builder and constructs a [`ModifyRecommendationDetail`](crate::types::ModifyRecommendationDetail).

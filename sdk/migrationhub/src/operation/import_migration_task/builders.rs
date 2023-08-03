@@ -38,9 +38,7 @@ impl ImportMigrationTaskFluentBuilder {
         }
     }
     /// Access the ImportMigrationTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_migration_task::builders::ImportMigrationTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::import_migration_task::builders::ImportMigrationTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ImportMigrationTaskFluentBuilder {
             crate::operation::import_migration_task::ImportMigrationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_migration_task::ImportMigrationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_migration_task::ImportMigrationTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ImportMigrationTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ImportMigrationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_migration_task::ImportMigrationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_migration_task::ImportMigrationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_migration_task::ImportMigrationTaskError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ImportMigrationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_migration_task::ImportMigrationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_migration_task::ImportMigrationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_migration_task::ImportMigrationTaskError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl ImportMigrationTaskFluentBuilder {
             crate::operation::import_migration_task::ImportMigrationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_migration_task::ImportMigrationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_migration_task::ImportMigrationTaskError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the ProgressUpdateStream. &gt;</p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.progress_update_stream(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream. &gt;</p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_progress_update_stream(input);
         self
     }
@@ -144,18 +125,12 @@ impl ImportMigrationTaskFluentBuilder {
         self.inner.get_progress_update_stream()
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.migration_task_name(input.into());
         self
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_migration_task_name(input);
         self
     }

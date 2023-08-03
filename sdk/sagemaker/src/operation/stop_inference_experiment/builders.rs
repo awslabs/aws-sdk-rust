@@ -26,8 +26,7 @@ impl StopInferenceExperimentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopInferenceExperimentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::stop_inference_experiment::builders::StopInferenceExperimentInputBuilder,
+    inner: crate::operation::stop_inference_experiment::builders::StopInferenceExperimentInputBuilder,
 }
 impl StopInferenceExperimentFluentBuilder {
     /// Creates a new `StopInferenceExperiment`.
@@ -38,10 +37,7 @@ impl StopInferenceExperimentFluentBuilder {
         }
     }
     /// Access the StopInferenceExperiment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_inference_experiment::builders::StopInferenceExperimentInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::stop_inference_experiment::builders::StopInferenceExperimentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl StopInferenceExperimentFluentBuilder {
             crate::operation::stop_inference_experiment::StopInferenceExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_inference_experiment::StopInferenceExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_inference_experiment::StopInferenceExperimentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl StopInferenceExperimentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl StopInferenceExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_inference_experiment::StopInferenceExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_inference_experiment::StopInferenceExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_inference_experiment::StopInferenceExperimentError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl StopInferenceExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_inference_experiment::StopInferenceExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_inference_experiment::StopInferenceExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_inference_experiment::StopInferenceExperimentError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl StopInferenceExperimentFluentBuilder {
             crate::operation::stop_inference_experiment::StopInferenceExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_inference_experiment::StopInferenceExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_inference_experiment::StopInferenceExperimentError>,
     > {
         self.customize_middleware().await
     }
@@ -148,11 +133,7 @@ impl StopInferenceExperimentFluentBuilder {
     /// <li> <p> <code>Remove</code> - Delete the variant</p> </li>
     /// <li> <p> <code>Retain</code> - Keep the variant as it is</p> </li>
     /// </ul>
-    pub fn model_variant_actions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ModelVariantAction,
-    ) -> Self {
+    pub fn model_variant_actions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ModelVariantAction) -> Self {
         self.inner = self.inner.model_variant_actions(k.into(), v);
         self
     }
@@ -164,9 +145,7 @@ impl StopInferenceExperimentFluentBuilder {
     /// </ul>
     pub fn set_model_variant_actions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ModelVariantAction>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ModelVariantAction>>,
     ) -> Self {
         self.inner = self.inner.set_model_variant_actions(input);
         self
@@ -179,9 +158,7 @@ impl StopInferenceExperimentFluentBuilder {
     /// </ul>
     pub fn get_model_variant_actions(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ModelVariantAction>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ModelVariantAction>> {
         self.inner.get_model_variant_actions()
     }
     /// Appends an item to `DesiredModelVariants`.
@@ -194,17 +171,12 @@ impl StopInferenceExperimentFluentBuilder {
         self
     }
     /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant that you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code> describes the infrastructure configuration for deploying the corresponding variant. </p>
-    pub fn set_desired_model_variants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>,
-    ) -> Self {
+    pub fn set_desired_model_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>) -> Self {
         self.inner = self.inner.set_desired_model_variants(input);
         self
     }
     /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant that you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code> describes the infrastructure configuration for deploying the corresponding variant. </p>
-    pub fn get_desired_model_variants(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>> {
+    pub fn get_desired_model_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>> {
         self.inner.get_desired_model_variants()
     }
     /// <p> The desired state of the experiment after stopping. The possible states are the following: </p>
@@ -212,10 +184,7 @@ impl StopInferenceExperimentFluentBuilder {
     /// <li> <p> <code>Completed</code>: The experiment completed successfully</p> </li>
     /// <li> <p> <code>Cancelled</code>: The experiment was canceled</p> </li>
     /// </ul>
-    pub fn desired_state(
-        mut self,
-        input: crate::types::InferenceExperimentStopDesiredState,
-    ) -> Self {
+    pub fn desired_state(mut self, input: crate::types::InferenceExperimentStopDesiredState) -> Self {
         self.inner = self.inner.desired_state(input);
         self
     }
@@ -224,10 +193,7 @@ impl StopInferenceExperimentFluentBuilder {
     /// <li> <p> <code>Completed</code>: The experiment completed successfully</p> </li>
     /// <li> <p> <code>Cancelled</code>: The experiment was canceled</p> </li>
     /// </ul>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExperimentStopDesiredState>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::InferenceExperimentStopDesiredState>) -> Self {
         self.inner = self.inner.set_desired_state(input);
         self
     }
@@ -236,9 +202,7 @@ impl StopInferenceExperimentFluentBuilder {
     /// <li> <p> <code>Completed</code>: The experiment completed successfully</p> </li>
     /// <li> <p> <code>Cancelled</code>: The experiment was canceled</p> </li>
     /// </ul>
-    pub fn get_desired_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceExperimentStopDesiredState> {
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::InferenceExperimentStopDesiredState> {
         self.inner.get_desired_state()
     }
     /// <p>The reason for stopping the experiment.</p>

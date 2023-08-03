@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`lock_id(impl ::std::convert::Into<String>)`](crate::operation::complete_vault_lock::builders::CompleteVaultLockFluentBuilder::lock_id) / [`set_lock_id(Option<String>)`](crate::operation::complete_vault_lock::builders::CompleteVaultLockFluentBuilder::set_lock_id): <p>The <code>lockId</code> value is the lock ID obtained from a <code>InitiateVaultLock</code> request.</p>
     /// - On success, responds with [`CompleteVaultLockOutput`](crate::operation::complete_vault_lock::CompleteVaultLockOutput)
     /// - On failure, responds with [`SdkError<CompleteVaultLockError>`](crate::operation::complete_vault_lock::CompleteVaultLockError)
-    pub fn complete_vault_lock(
-        &self,
-    ) -> crate::operation::complete_vault_lock::builders::CompleteVaultLockFluentBuilder {
-        crate::operation::complete_vault_lock::builders::CompleteVaultLockFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn complete_vault_lock(&self) -> crate::operation::complete_vault_lock::builders::CompleteVaultLockFluentBuilder {
+        crate::operation::complete_vault_lock::builders::CompleteVaultLockFluentBuilder::new(self.handle.clone())
     }
 }

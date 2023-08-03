@@ -10,10 +10,7 @@ impl DescribeDomainsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_domains::DescribeDomainsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domains::DescribeDomainsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domains::DescribeDomainsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_domains();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeDomainsFluentBuilder {
         }
     }
     /// Access the DescribeDomains as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_domains::builders::DescribeDomainsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_domains::builders::DescribeDomainsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeDomainsFluentBuilder {
             crate::operation::describe_domains::DescribeDomains,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domains::DescribeDomainsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domains::DescribeDomainsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeDomainsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeDomainsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_domains::DescribeDomainsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domains::DescribeDomainsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domains::DescribeDomainsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeDomainsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_domains::DescribeDomainsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domains::DescribeDomainsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domains::DescribeDomainsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeDomainsFluentBuilder {
             crate::operation::describe_domains::DescribeDomains,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domains::DescribeDomainsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domains::DescribeDomainsError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +116,12 @@ impl DescribeDomainsFluentBuilder {
         self
     }
     /// <p>The names of the domains you want to include in the response.</p>
-    pub fn set_domain_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_domain_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_domain_names(input);
         self
     }
     /// <p>The names of the domains you want to include in the response.</p>
-    pub fn get_domain_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_domain_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_domain_names()
     }
 }

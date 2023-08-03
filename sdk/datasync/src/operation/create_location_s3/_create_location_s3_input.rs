@@ -55,17 +55,14 @@ impl CreateLocationS3Input {
 }
 impl CreateLocationS3Input {
     /// Creates a new builder-style object to manufacture [`CreateLocationS3Input`](crate::operation::create_location_s3::CreateLocationS3Input).
-    pub fn builder() -> crate::operation::create_location_s3::builders::CreateLocationS3InputBuilder
-    {
+    pub fn builder() -> crate::operation::create_location_s3::builders::CreateLocationS3InputBuilder {
         crate::operation::create_location_s3::builders::CreateLocationS3InputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLocationS3Input`](crate::operation::create_location_s3::CreateLocationS3Input).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocationS3InputBuilder {
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket_arn: ::std::option::Option<::std::string::String>,
@@ -90,18 +87,12 @@ impl CreateLocationS3InputBuilder {
         &self.subdirectory
     }
     /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point ARN.</p>
-    pub fn s3_bucket_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point ARN.</p>
-    pub fn set_s3_bucket_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_arn = input;
         self
     }
@@ -117,10 +108,7 @@ impl CreateLocationS3InputBuilder {
     }
     /// <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
     /// <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
-    pub fn set_s3_storage_class(
-        mut self,
-        input: ::std::option::Option<crate::types::S3StorageClass>,
-    ) -> Self {
+    pub fn set_s3_storage_class(mut self, input: ::std::option::Option<crate::types::S3StorageClass>) -> Self {
         self.s3_storage_class = input;
         self
     }
@@ -158,10 +146,7 @@ impl CreateLocationS3InputBuilder {
         self
     }
     /// <p>If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
@@ -181,10 +166,7 @@ impl CreateLocationS3InputBuilder {
         self
     }
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.tags = input;
         self
     }
@@ -195,19 +177,14 @@ impl CreateLocationS3InputBuilder {
     /// Consumes the builder and constructs a [`CreateLocationS3Input`](crate::operation::create_location_s3::CreateLocationS3Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_location_s3::CreateLocationS3Input,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_location_s3::CreateLocationS3Input {
-                subdirectory: self.subdirectory,
-                s3_bucket_arn: self.s3_bucket_arn,
-                s3_storage_class: self.s3_storage_class,
-                s3_config: self.s3_config,
-                agent_arns: self.agent_arns,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_location_s3::CreateLocationS3Input, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_location_s3::CreateLocationS3Input {
+            subdirectory: self.subdirectory,
+            s3_bucket_arn: self.s3_bucket_arn,
+            s3_storage_class: self.s3_storage_class,
+            s3_config: self.s3_config,
+            agent_arns: self.agent_arns,
+            tags: self.tags,
+        })
     }
 }

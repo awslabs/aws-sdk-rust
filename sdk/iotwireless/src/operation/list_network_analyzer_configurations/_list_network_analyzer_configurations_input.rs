@@ -22,16 +22,14 @@ impl ListNetworkAnalyzerConfigurationsInput {
 }
 impl ListNetworkAnalyzerConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListNetworkAnalyzerConfigurationsInput`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsInput).
-    pub fn builder() -> crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsInputBuilder {
         crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListNetworkAnalyzerConfigurationsInput`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNetworkAnalyzerConfigurationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl ListNetworkAnalyzerConfigurationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListNetworkAnalyzerConfigurationsInput`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

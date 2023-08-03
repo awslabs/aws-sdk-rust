@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CloseInstancePublicPortsOutput {
 }
 impl CloseInstancePublicPortsOutput {
     /// Creates a new builder-style object to manufacture [`CloseInstancePublicPortsOutput`](crate::operation::close_instance_public_ports::CloseInstancePublicPortsOutput).
-    pub fn builder() -> crate::operation::close_instance_public_ports::builders::CloseInstancePublicPortsOutputBuilder{
+    pub fn builder() -> crate::operation::close_instance_public_ports::builders::CloseInstancePublicPortsOutputBuilder {
         crate::operation::close_instance_public_ports::builders::CloseInstancePublicPortsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CloseInstancePublicPortsOutput`](crate::operation::close_instance_public_ports::CloseInstancePublicPortsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloseInstancePublicPortsOutputBuilder {
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl CloseInstancePublicPortsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CloseInstancePublicPortsOutput`](crate::operation::close_instance_public_ports::CloseInstancePublicPortsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::close_instance_public_ports::CloseInstancePublicPortsOutput {
+    pub fn build(self) -> crate::operation::close_instance_public_ports::CloseInstancePublicPortsOutput {
         crate::operation::close_instance_public_ports::CloseInstancePublicPortsOutput {
             operation: self.operation,
             _request_id: self._request_id,

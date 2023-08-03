@@ -30,18 +30,14 @@ impl ListInputDeviceTransfersInput {
 }
 impl ListInputDeviceTransfersInput {
     /// Creates a new builder-style object to manufacture [`ListInputDeviceTransfersInput`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersInput).
-    pub fn builder(
-    ) -> crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersInputBuilder {
         crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInputDeviceTransfersInput`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInputDeviceTransfersInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -77,18 +73,12 @@ impl ListInputDeviceTransfersInputBuilder {
         &self.next_token
     }
     /// Placeholder documentation for __string
-    pub fn transfer_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transfer_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transfer_type = ::std::option::Option::Some(input.into());
         self
     }
     /// Placeholder documentation for __string
-    pub fn set_transfer_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transfer_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transfer_type = input;
         self
     }
@@ -103,12 +93,10 @@ impl ListInputDeviceTransfersInputBuilder {
         crate::operation::list_input_device_transfers::ListInputDeviceTransfersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_input_device_transfers::ListInputDeviceTransfersInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                transfer_type: self.transfer_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_input_device_transfers::ListInputDeviceTransfersInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            transfer_type: self.transfer_type,
+        })
     }
 }

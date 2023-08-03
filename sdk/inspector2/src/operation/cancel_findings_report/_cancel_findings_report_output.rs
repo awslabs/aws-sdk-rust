@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CancelFindingsReportOutput {
 }
 impl CancelFindingsReportOutput {
     /// Creates a new builder-style object to manufacture [`CancelFindingsReportOutput`](crate::operation::cancel_findings_report::CancelFindingsReportOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_findings_report::builders::CancelFindingsReportOutputBuilder {
+    pub fn builder() -> crate::operation::cancel_findings_report::builders::CancelFindingsReportOutputBuilder {
         crate::operation::cancel_findings_report::builders::CancelFindingsReportOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelFindingsReportOutput`](crate::operation::cancel_findings_report::CancelFindingsReportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelFindingsReportOutputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -34,9 +34,7 @@ impl FileAccessLog {
 
 /// A builder for [`FileAccessLog`](crate::types::FileAccessLog).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileAccessLogBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::LoggingFormat>,

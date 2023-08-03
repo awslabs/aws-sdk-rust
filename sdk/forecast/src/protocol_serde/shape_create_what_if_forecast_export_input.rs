@@ -4,9 +4,7 @@ pub fn ser_create_what_if_forecast_export_input(
     input: &crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.what_if_forecast_export_name {
-        object
-            .key("WhatIfForecastExportName")
-            .string(var_1.as_str());
+        object.key("WhatIfForecastExportName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.what_if_forecast_arns {
         let mut array_3 = object.key("WhatIfForecastArns").start_array();

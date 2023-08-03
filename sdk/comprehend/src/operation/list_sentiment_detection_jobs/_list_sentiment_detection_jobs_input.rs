@@ -29,16 +29,14 @@ impl ListSentimentDetectionJobsInput {
 }
 impl ListSentimentDetectionJobsInput {
     /// Creates a new builder-style object to manufacture [`ListSentimentDetectionJobsInput`](crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsInput).
-    pub fn builder() -> crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsInputBuilder {
         crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSentimentDetectionJobsInput`](crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSentimentDetectionJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::SentimentDetectionJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,10 +49,7 @@ impl ListSentimentDetectionJobsInputBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::SentimentDetectionJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::SentimentDetectionJobFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -97,12 +92,10 @@ impl ListSentimentDetectionJobsInputBuilder {
         crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsInput {
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsInput {
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

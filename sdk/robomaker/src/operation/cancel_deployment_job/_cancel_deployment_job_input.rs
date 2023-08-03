@@ -18,18 +18,14 @@ impl CancelDeploymentJobInput {
 }
 impl CancelDeploymentJobInput {
     /// Creates a new builder-style object to manufacture [`CancelDeploymentJobInput`](crate::operation::cancel_deployment_job::CancelDeploymentJobInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_deployment_job::builders::CancelDeploymentJobInputBuilder {
-        crate::operation::cancel_deployment_job::builders::CancelDeploymentJobInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::cancel_deployment_job::builders::CancelDeploymentJobInputBuilder {
+        crate::operation::cancel_deployment_job::builders::CancelDeploymentJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelDeploymentJobInput`](crate::operation::cancel_deployment_job::CancelDeploymentJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelDeploymentJobInputBuilder {
     pub(crate) job: ::std::option::Option<::std::string::String>,
 }
@@ -51,12 +47,8 @@ impl CancelDeploymentJobInputBuilder {
     /// Consumes the builder and constructs a [`CancelDeploymentJobInput`](crate::operation::cancel_deployment_job::CancelDeploymentJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_deployment_job::CancelDeploymentJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_deployment_job::CancelDeploymentJobInput { job: self.job },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_deployment_job::CancelDeploymentJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::cancel_deployment_job::CancelDeploymentJobInput { job: self.job })
     }
 }

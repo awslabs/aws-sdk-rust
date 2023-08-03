@@ -59,18 +59,12 @@ impl ServiceAccountCredentialsBuilder {
         &self.account_name
     }
     /// <p>The password for the account.</p>
-    pub fn account_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password for the account.</p>
-    pub fn set_account_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_account_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_password = input;
         self
     }

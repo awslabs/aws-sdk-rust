@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`identity_type(IdentityType)`](crate::operation::delete_studio_session_mapping::builders::DeleteStudioSessionMappingFluentBuilder::identity_type) / [`set_identity_type(Option<IdentityType>)`](crate::operation::delete_studio_session_mapping::builders::DeleteStudioSessionMappingFluentBuilder::set_identity_type): <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
     /// - On success, responds with [`DeleteStudioSessionMappingOutput`](crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingOutput)
     /// - On failure, responds with [`SdkError<DeleteStudioSessionMappingError>`](crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingError)
-    pub fn delete_studio_session_mapping(&self) -> crate::operation::delete_studio_session_mapping::builders::DeleteStudioSessionMappingFluentBuilder{
+    pub fn delete_studio_session_mapping(
+        &self,
+    ) -> crate::operation::delete_studio_session_mapping::builders::DeleteStudioSessionMappingFluentBuilder {
         crate::operation::delete_studio_session_mapping::builders::DeleteStudioSessionMappingFluentBuilder::new(self.handle.clone())
     }
 }

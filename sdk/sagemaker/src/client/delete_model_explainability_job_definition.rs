@@ -6,7 +6,11 @@ impl super::Client {
     ///   - [`job_definition_name(impl ::std::convert::Into<String>)`](crate::operation::delete_model_explainability_job_definition::builders::DeleteModelExplainabilityJobDefinitionFluentBuilder::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::operation::delete_model_explainability_job_definition::builders::DeleteModelExplainabilityJobDefinitionFluentBuilder::set_job_definition_name): <p>The name of the model explainability job definition to delete.</p>
     /// - On success, responds with [`DeleteModelExplainabilityJobDefinitionOutput`](crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteModelExplainabilityJobDefinitionError>`](crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionError)
-    pub fn delete_model_explainability_job_definition(&self) -> crate::operation::delete_model_explainability_job_definition::builders::DeleteModelExplainabilityJobDefinitionFluentBuilder{
-        crate::operation::delete_model_explainability_job_definition::builders::DeleteModelExplainabilityJobDefinitionFluentBuilder::new(self.handle.clone())
+    pub fn delete_model_explainability_job_definition(
+        &self,
+    ) -> crate::operation::delete_model_explainability_job_definition::builders::DeleteModelExplainabilityJobDefinitionFluentBuilder {
+        crate::operation::delete_model_explainability_job_definition::builders::DeleteModelExplainabilityJobDefinitionFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

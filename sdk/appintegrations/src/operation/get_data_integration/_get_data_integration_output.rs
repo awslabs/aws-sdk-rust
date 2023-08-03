@@ -26,9 +26,7 @@ pub struct GetDataIntegrationOutput {
     pub schedule_configuration: ::std::option::Option<crate::types::ScheduleConfiguration>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration for what files should be pulled from the source.</p>
     #[doc(hidden)]
     pub file_configuration: ::std::option::Option<crate::types::FileConfiguration>,
@@ -37,10 +35,7 @@ pub struct GetDataIntegrationOutput {
     pub object_configuration: ::std::option::Option<
         ::std::collections::HashMap<
             ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
         >,
     >,
     _request_id: Option<String>,
@@ -71,17 +66,11 @@ impl GetDataIntegrationOutput {
         self.source_uri.as_deref()
     }
     /// <p>The name of the data and how often it should be pulled from the source.</p>
-    pub fn schedule_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
+    pub fn schedule_configuration(&self) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
         self.schedule_configuration.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The configuration for what files should be pulled from the source.</p>
@@ -94,10 +83,7 @@ impl GetDataIntegrationOutput {
     ) -> ::std::option::Option<
         &::std::collections::HashMap<
             ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
         >,
     > {
         self.object_configuration.as_ref()
@@ -110,17 +96,14 @@ impl ::aws_http::request_id::RequestId for GetDataIntegrationOutput {
 }
 impl GetDataIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`GetDataIntegrationOutput`](crate::operation::get_data_integration::GetDataIntegrationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_data_integration::builders::GetDataIntegrationOutputBuilder {
+    pub fn builder() -> crate::operation::get_data_integration::builders::GetDataIntegrationOutputBuilder {
         crate::operation::get_data_integration::builders::GetDataIntegrationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataIntegrationOutput`](crate::operation::get_data_integration::GetDataIntegrationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataIntegrationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -129,17 +112,12 @@ pub struct GetDataIntegrationOutputBuilder {
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
     pub(crate) source_uri: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_configuration: ::std::option::Option<crate::types::ScheduleConfiguration>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) file_configuration: ::std::option::Option<crate::types::FileConfiguration>,
     pub(crate) object_configuration: ::std::option::Option<
         ::std::collections::HashMap<
             ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
         >,
     >,
     _request_id: Option<String>,
@@ -235,17 +213,12 @@ impl GetDataIntegrationOutputBuilder {
         self
     }
     /// <p>The name of the data and how often it should be pulled from the source.</p>
-    pub fn set_schedule_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleConfiguration>,
-    ) -> Self {
+    pub fn set_schedule_configuration(mut self, input: ::std::option::Option<crate::types::ScheduleConfiguration>) -> Self {
         self.schedule_configuration = input;
         self
     }
     /// <p>The name of the data and how often it should be pulled from the source.</p>
-    pub fn get_schedule_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
+    pub fn get_schedule_configuration(&self) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
         &self.schedule_configuration
     }
     /// Adds a key-value pair to `tags`.
@@ -253,32 +226,19 @@ impl GetDataIntegrationOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The configuration for what files should be pulled from the source.</p>
@@ -287,17 +247,12 @@ impl GetDataIntegrationOutputBuilder {
         self
     }
     /// <p>The configuration for what files should be pulled from the source.</p>
-    pub fn set_file_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FileConfiguration>,
-    ) -> Self {
+    pub fn set_file_configuration(mut self, input: ::std::option::Option<crate::types::FileConfiguration>) -> Self {
         self.file_configuration = input;
         self
     }
     /// <p>The configuration for what files should be pulled from the source.</p>
-    pub fn get_file_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FileConfiguration> {
+    pub fn get_file_configuration(&self) -> &::std::option::Option<crate::types::FileConfiguration> {
         &self.file_configuration
     }
     /// Adds a key-value pair to `object_configuration`.
@@ -308,10 +263,7 @@ impl GetDataIntegrationOutputBuilder {
     pub fn object_configuration(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::string::String>,
-        >,
+        v: ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         let mut hash_map = self.object_configuration.unwrap_or_default();
         hash_map.insert(k.into(), v);
@@ -324,10 +276,7 @@ impl GetDataIntegrationOutputBuilder {
         input: ::std::option::Option<
             ::std::collections::HashMap<
                 ::std::string::String,
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    ::std::vec::Vec<::std::string::String>,
-                >,
+                ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
             >,
         >,
     ) -> Self {
@@ -340,10 +289,7 @@ impl GetDataIntegrationOutputBuilder {
     ) -> &::std::option::Option<
         ::std::collections::HashMap<
             ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
         >,
     > {
         &self.object_configuration

@@ -10,10 +10,7 @@ impl DescribeLogGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_log_groups::DescribeLogGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_log_groups::DescribeLogGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_log_groups::DescribeLogGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_log_groups();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DescribeLogGroupsFluentBuilder {
         }
     }
     /// Access the DescribeLogGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_log_groups::builders::DescribeLogGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_log_groups::builders::DescribeLogGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DescribeLogGroupsFluentBuilder {
             crate::operation::describe_log_groups::DescribeLogGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_log_groups::DescribeLogGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_log_groups::DescribeLogGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DescribeLogGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DescribeLogGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_log_groups::DescribeLogGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_log_groups::DescribeLogGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_log_groups::DescribeLogGroupsError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DescribeLogGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_log_groups::DescribeLogGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_log_groups::DescribeLogGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_log_groups::DescribeLogGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -118,66 +104,45 @@ impl DescribeLogGroupsFluentBuilder {
             crate::operation::describe_log_groups::DescribeLogGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_log_groups::DescribeLogGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_log_groups::DescribeLogGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_log_groups::paginator::DescribeLogGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_log_groups::paginator::DescribeLogGroupsPaginator {
-        crate::operation::describe_log_groups::paginator::DescribeLogGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_log_groups::paginator::DescribeLogGroupsPaginator {
+        crate::operation::describe_log_groups::paginator::DescribeLogGroupsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `accountIdentifiers`.
     ///
     /// To override the contents of this collection use [`set_account_identifiers`](Self::set_account_identifiers).
     ///
     /// <p>When <code>includeLinkedAccounts</code> is set to <code>True</code>, use this parameter to specify the list of accounts to search. You can specify as many as 20 account IDs in the array. </p>
-    pub fn account_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_identifiers(input.into());
         self
     }
     /// <p>When <code>includeLinkedAccounts</code> is set to <code>True</code>, use this parameter to specify the list of accounts to search. You can specify as many as 20 account IDs in the array. </p>
-    pub fn set_account_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_identifiers(input);
         self
     }
     /// <p>When <code>includeLinkedAccounts</code> is set to <code>True</code>, use this parameter to specify the list of accounts to search. You can specify as many as 20 account IDs in the array. </p>
-    pub fn get_account_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_identifiers()
     }
     /// <p>The prefix to match.</p> <note>
     /// <p> <code>logGroupNamePrefix</code> and <code>logGroupNamePattern</code> are mutually exclusive. Only one of these parameters can be passed. </p>
     /// </note>
-    pub fn log_group_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name_prefix(input.into());
         self
     }
     /// <p>The prefix to match.</p> <note>
     /// <p> <code>logGroupNamePrefix</code> and <code>logGroupNamePattern</code> are mutually exclusive. Only one of these parameters can be passed. </p>
     /// </note>
-    pub fn set_log_group_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name_prefix(input);
         self
     }
@@ -191,10 +156,7 @@ impl DescribeLogGroupsFluentBuilder {
     /// <p>If you specify <code>logGroupNamePattern</code> in your request, then only <code>arn</code>, <code>creationTime</code>, and <code>logGroupName</code> are included in the response. </p> <note>
     /// <p> <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these parameters can be passed. </p>
     /// </note>
-    pub fn log_group_name_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name_pattern(input.into());
         self
     }
@@ -202,10 +164,7 @@ impl DescribeLogGroupsFluentBuilder {
     /// <p>If you specify <code>logGroupNamePattern</code> in your request, then only <code>arn</code>, <code>creationTime</code>, and <code>logGroupName</code> are included in the response. </p> <note>
     /// <p> <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these parameters can be passed. </p>
     /// </note>
-    pub fn set_log_group_name_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name_pattern(input);
         self
     }

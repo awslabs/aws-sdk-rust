@@ -15,17 +15,14 @@ impl TerminateSessionInput {
 }
 impl TerminateSessionInput {
     /// Creates a new builder-style object to manufacture [`TerminateSessionInput`](crate::operation::terminate_session::TerminateSessionInput).
-    pub fn builder() -> crate::operation::terminate_session::builders::TerminateSessionInputBuilder
-    {
+    pub fn builder() -> crate::operation::terminate_session::builders::TerminateSessionInputBuilder {
         crate::operation::terminate_session::builders::TerminateSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateSessionInput`](crate::operation::terminate_session::TerminateSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateSessionInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl TerminateSessionInputBuilder {
     /// Consumes the builder and constructs a [`TerminateSessionInput`](crate::operation::terminate_session::TerminateSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::terminate_session::TerminateSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::terminate_session::TerminateSessionInput {
-            session_id: self.session_id,
-        })
+    ) -> ::std::result::Result<crate::operation::terminate_session::TerminateSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::terminate_session::TerminateSessionInput { session_id: self.session_id })
     }
 }

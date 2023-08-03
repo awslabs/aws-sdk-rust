@@ -27,7 +27,7 @@ impl DeleteServiceTemplateVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteServiceTemplateVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_service_template_version::builders::DeleteServiceTemplateVersionInputBuilder,
+    inner: crate::operation::delete_service_template_version::builders::DeleteServiceTemplateVersionInputBuilder,
 }
 impl DeleteServiceTemplateVersionFluentBuilder {
     /// Creates a new `DeleteServiceTemplateVersion`.
@@ -38,7 +38,7 @@ impl DeleteServiceTemplateVersionFluentBuilder {
         }
     }
     /// Access the DeleteServiceTemplateVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_service_template_version::builders::DeleteServiceTemplateVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_service_template_version::builders::DeleteServiceTemplateVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DeleteServiceTemplateVersionFluentBuilder {
             crate::operation::delete_service_template_version::DeleteServiceTemplateVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_service_template_version::DeleteServiceTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_service_template_version::DeleteServiceTemplateVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DeleteServiceTemplateVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DeleteServiceTemplateVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_service_template_version::DeleteServiceTemplateVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_service_template_version::DeleteServiceTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_service_template_version::DeleteServiceTemplateVersionError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DeleteServiceTemplateVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_service_template_version::DeleteServiceTemplateVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_service_template_version::DeleteServiceTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_service_template_version::DeleteServiceTemplateVersionError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl DeleteServiceTemplateVersionFluentBuilder {
             crate::operation::delete_service_template_version::DeleteServiceTemplateVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_service_template_version::DeleteServiceTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_service_template_version::DeleteServiceTemplateVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the service template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the service template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -142,18 +125,12 @@ impl DeleteServiceTemplateVersionFluentBuilder {
         self.inner.get_template_name()
     }
     /// <p>The service template major version to delete.</p>
-    pub fn major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.major_version(input.into());
         self
     }
     /// <p>The service template major version to delete.</p>
-    pub fn set_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_major_version(input);
         self
     }
@@ -162,18 +139,12 @@ impl DeleteServiceTemplateVersionFluentBuilder {
         self.inner.get_major_version()
     }
     /// <p>The service template minor version to delete.</p>
-    pub fn minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.minor_version(input.into());
         self
     }
     /// <p>The service template minor version to delete.</p>
-    pub fn set_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_minor_version(input);
         self
     }

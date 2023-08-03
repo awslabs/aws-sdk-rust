@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for UpdateMetricAttributionOutput {
 }
 impl UpdateMetricAttributionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMetricAttributionOutput`](crate::operation::update_metric_attribution::UpdateMetricAttributionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_metric_attribution::builders::UpdateMetricAttributionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_metric_attribution::builders::UpdateMetricAttributionOutputBuilder {
         crate::operation::update_metric_attribution::builders::UpdateMetricAttributionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMetricAttributionOutput`](crate::operation::update_metric_attribution::UpdateMetricAttributionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMetricAttributionOutputBuilder {
     pub(crate) metric_attribution_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateMetricAttributionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the metric attribution that you updated.</p>
-    pub fn metric_attribution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_attribution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_attribution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the metric attribution that you updated.</p>
-    pub fn set_metric_attribution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_attribution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_attribution_arn = input;
         self
     }
@@ -68,9 +58,7 @@ impl UpdateMetricAttributionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateMetricAttributionOutput`](crate::operation::update_metric_attribution::UpdateMetricAttributionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_metric_attribution::UpdateMetricAttributionOutput {
+    pub fn build(self) -> crate::operation::update_metric_attribution::UpdateMetricAttributionOutput {
         crate::operation::update_metric_attribution::UpdateMetricAttributionOutput {
             metric_attribution_arn: self.metric_attribution_arn,
             _request_id: self._request_id,

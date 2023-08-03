@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`ConnectDirectoryOutput`](crate::operation::connect_directory::ConnectDirectoryOutput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::operation::connect_directory::ConnectDirectoryOutput::directory_id): <p>The identifier of the new directory.</p>
     /// - On failure, responds with [`SdkError<ConnectDirectoryError>`](crate::operation::connect_directory::ConnectDirectoryError)
-    pub fn connect_directory(
-        &self,
-    ) -> crate::operation::connect_directory::builders::ConnectDirectoryFluentBuilder {
-        crate::operation::connect_directory::builders::ConnectDirectoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn connect_directory(&self) -> crate::operation::connect_directory::builders::ConnectDirectoryFluentBuilder {
+        crate::operation::connect_directory::builders::ConnectDirectoryFluentBuilder::new(self.handle.clone())
     }
 }

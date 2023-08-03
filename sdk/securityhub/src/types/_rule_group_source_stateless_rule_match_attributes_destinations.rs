@@ -16,35 +16,25 @@ impl RuleGroupSourceStatelessRuleMatchAttributesDestinations {
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesDestinations {
     /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinations).
-    pub fn builder(
-    ) -> crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesDestinationsBuilder
-    {
+    pub fn builder() -> crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesDestinationsBuilder {
         crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesDestinationsBuilder::default()
     }
 }
 
 /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinations).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRuleMatchAttributesDestinationsBuilder {
     pub(crate) address_definition: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesDestinationsBuilder {
     /// <p>An IP address or a block of IP addresses.</p>
-    pub fn address_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An IP address or a block of IP addresses.</p>
-    pub fn set_address_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_address_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_definition = input;
         self
     }

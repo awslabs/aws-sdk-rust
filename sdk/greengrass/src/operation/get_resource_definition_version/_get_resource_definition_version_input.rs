@@ -22,34 +22,26 @@ impl GetResourceDefinitionVersionInput {
 }
 impl GetResourceDefinitionVersionInput {
     /// Creates a new builder-style object to manufacture [`GetResourceDefinitionVersionInput`](crate::operation::get_resource_definition_version::GetResourceDefinitionVersionInput).
-    pub fn builder() -> crate::operation::get_resource_definition_version::builders::GetResourceDefinitionVersionInputBuilder{
+    pub fn builder() -> crate::operation::get_resource_definition_version::builders::GetResourceDefinitionVersionInputBuilder {
         crate::operation::get_resource_definition_version::builders::GetResourceDefinitionVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceDefinitionVersionInput`](crate::operation::get_resource_definition_version::GetResourceDefinitionVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceDefinitionVersionInputBuilder {
     pub(crate) resource_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_definition_version_id: ::std::option::Option<::std::string::String>,
 }
 impl GetResourceDefinitionVersionInputBuilder {
     /// The ID of the resource definition.
-    pub fn resource_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the resource definition.
-    pub fn set_resource_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_definition_id = input;
         self
     }
@@ -58,25 +50,17 @@ impl GetResourceDefinitionVersionInputBuilder {
         &self.resource_definition_id
     }
     /// The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn resource_definition_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_definition_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_definition_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn set_resource_definition_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_definition_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_definition_version_id = input;
         self
     }
     /// The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn get_resource_definition_version_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_resource_definition_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_definition_version_id
     }
     /// Consumes the builder and constructs a [`GetResourceDefinitionVersionInput`](crate::operation::get_resource_definition_version::GetResourceDefinitionVersionInput).
@@ -86,11 +70,9 @@ impl GetResourceDefinitionVersionInputBuilder {
         crate::operation::get_resource_definition_version::GetResourceDefinitionVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resource_definition_version::GetResourceDefinitionVersionInput {
-                resource_definition_id: self.resource_definition_id,
-                resource_definition_version_id: self.resource_definition_version_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_resource_definition_version::GetResourceDefinitionVersionInput {
+            resource_definition_id: self.resource_definition_id,
+            resource_definition_version_id: self.resource_definition_version_id,
+        })
     }
 }

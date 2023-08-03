@@ -6,8 +6,7 @@
 pub struct DescribePendingMaintenanceActionsOutput {
     /// <p>A list of the pending maintenance actions for the resource.</p>
     #[doc(hidden)]
-    pub pending_maintenance_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePendingMaintenanceActions>>,
+    pub pending_maintenance_actions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePendingMaintenanceActions>>,
     /// <p>An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct DescribePendingMaintenanceActionsOutput {
 }
 impl DescribePendingMaintenanceActionsOutput {
     /// <p>A list of the pending maintenance actions for the resource.</p>
-    pub fn pending_maintenance_actions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourcePendingMaintenanceActions]> {
+    pub fn pending_maintenance_actions(&self) -> ::std::option::Option<&[crate::types::ResourcePendingMaintenanceActions]> {
         self.pending_maintenance_actions.as_deref()
     }
     /// <p>An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
@@ -32,19 +29,16 @@ impl ::aws_http::request_id::RequestId for DescribePendingMaintenanceActionsOutp
 }
 impl DescribePendingMaintenanceActionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribePendingMaintenanceActionsOutput`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsOutput).
-    pub fn builder() -> crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsOutputBuilder {
         crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePendingMaintenanceActionsOutput`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePendingMaintenanceActionsOutputBuilder {
-    pub(crate) pending_maintenance_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePendingMaintenanceActions>>,
+    pub(crate) pending_maintenance_actions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePendingMaintenanceActions>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,10 +48,7 @@ impl DescribePendingMaintenanceActionsOutputBuilder {
     /// To override the contents of this collection use [`set_pending_maintenance_actions`](Self::set_pending_maintenance_actions).
     ///
     /// <p>A list of the pending maintenance actions for the resource.</p>
-    pub fn pending_maintenance_actions(
-        mut self,
-        input: crate::types::ResourcePendingMaintenanceActions,
-    ) -> Self {
+    pub fn pending_maintenance_actions(mut self, input: crate::types::ResourcePendingMaintenanceActions) -> Self {
         let mut v = self.pending_maintenance_actions.unwrap_or_default();
         v.push(input);
         self.pending_maintenance_actions = ::std::option::Option::Some(v);
@@ -66,18 +57,13 @@ impl DescribePendingMaintenanceActionsOutputBuilder {
     /// <p>A list of the pending maintenance actions for the resource.</p>
     pub fn set_pending_maintenance_actions(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ResourcePendingMaintenanceActions>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePendingMaintenanceActions>>,
     ) -> Self {
         self.pending_maintenance_actions = input;
         self
     }
     /// <p>A list of the pending maintenance actions for the resource.</p>
-    pub fn get_pending_maintenance_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePendingMaintenanceActions>>
-    {
+    pub fn get_pending_maintenance_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePendingMaintenanceActions>> {
         &self.pending_maintenance_actions
     }
     /// <p>An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
@@ -104,12 +90,10 @@ impl DescribePendingMaintenanceActionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePendingMaintenanceActionsOutput`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsOutput).
-    pub fn build(self) -> crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsOutput{
+    pub fn build(self) -> crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsOutput {
         crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsOutput {
-            pending_maintenance_actions: self.pending_maintenance_actions
-            ,
-            marker: self.marker
-            ,
+            pending_maintenance_actions: self.pending_maintenance_actions,
+            marker: self.marker,
             _request_id: self._request_id,
         }
     }

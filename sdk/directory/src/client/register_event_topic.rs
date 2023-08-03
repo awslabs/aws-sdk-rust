@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`topic_name(impl ::std::convert::Into<String>)`](crate::operation::register_event_topic::builders::RegisterEventTopicFluentBuilder::topic_name) / [`set_topic_name(Option<String>)`](crate::operation::register_event_topic::builders::RegisterEventTopicFluentBuilder::set_topic_name): <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
     /// - On success, responds with [`RegisterEventTopicOutput`](crate::operation::register_event_topic::RegisterEventTopicOutput)
     /// - On failure, responds with [`SdkError<RegisterEventTopicError>`](crate::operation::register_event_topic::RegisterEventTopicError)
-    pub fn register_event_topic(
-        &self,
-    ) -> crate::operation::register_event_topic::builders::RegisterEventTopicFluentBuilder {
-        crate::operation::register_event_topic::builders::RegisterEventTopicFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_event_topic(&self) -> crate::operation::register_event_topic::builders::RegisterEventTopicFluentBuilder {
+        crate::operation::register_event_topic::builders::RegisterEventTopicFluentBuilder::new(self.handle.clone())
     }
 }

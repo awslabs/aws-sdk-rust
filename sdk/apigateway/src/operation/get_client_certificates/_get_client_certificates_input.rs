@@ -23,18 +23,14 @@ impl GetClientCertificatesInput {
 }
 impl GetClientCertificatesInput {
     /// Creates a new builder-style object to manufacture [`GetClientCertificatesInput`](crate::operation::get_client_certificates::GetClientCertificatesInput).
-    pub fn builder(
-    ) -> crate::operation::get_client_certificates::builders::GetClientCertificatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_client_certificates::builders::GetClientCertificatesInputBuilder {
         crate::operation::get_client_certificates::builders::GetClientCertificatesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetClientCertificatesInput`](crate::operation::get_client_certificates::GetClientCertificatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClientCertificatesInputBuilder {
     pub(crate) position: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -71,15 +67,11 @@ impl GetClientCertificatesInputBuilder {
     /// Consumes the builder and constructs a [`GetClientCertificatesInput`](crate::operation::get_client_certificates::GetClientCertificatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_client_certificates::GetClientCertificatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_client_certificates::GetClientCertificatesInput {
-                position: self.position,
-                limit: self.limit,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_client_certificates::GetClientCertificatesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_client_certificates::GetClientCertificatesInput {
+            position: self.position,
+            limit: self.limit,
+        })
     }
 }

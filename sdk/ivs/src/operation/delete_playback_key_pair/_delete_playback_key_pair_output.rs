@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeletePlaybackKeyPairOutput {
 }
 impl DeletePlaybackKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`DeletePlaybackKeyPairOutput`](crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairOutputBuilder {
         crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePlaybackKeyPairOutput`](crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePlaybackKeyPairOutputBuilder {
     _request_id: Option<String>,
 }

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`custom_metadata(HashMap<String, String>)`](crate::operation::create_custom_metadata::builders::CreateCustomMetadataFluentBuilder::custom_metadata) / [`set_custom_metadata(Option<HashMap<String, String>>)`](crate::operation::create_custom_metadata::builders::CreateCustomMetadataFluentBuilder::set_custom_metadata): <p>Custom metadata in the form of name-value pairs.</p>
     /// - On success, responds with [`CreateCustomMetadataOutput`](crate::operation::create_custom_metadata::CreateCustomMetadataOutput)
     /// - On failure, responds with [`SdkError<CreateCustomMetadataError>`](crate::operation::create_custom_metadata::CreateCustomMetadataError)
-    pub fn create_custom_metadata(
-        &self,
-    ) -> crate::operation::create_custom_metadata::builders::CreateCustomMetadataFluentBuilder {
-        crate::operation::create_custom_metadata::builders::CreateCustomMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_custom_metadata(&self) -> crate::operation::create_custom_metadata::builders::CreateCustomMetadataFluentBuilder {
+        crate::operation::create_custom_metadata::builders::CreateCustomMetadataFluentBuilder::new(self.handle.clone())
     }
 }

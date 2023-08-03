@@ -23,11 +23,7 @@ impl super::Client {
     ///   - [`parent_snapshot_id(Option<String>)`](crate::operation::start_snapshot::StartSnapshotOutput::parent_snapshot_id): <p>The ID of the parent snapshot.</p>
     ///   - [`kms_key_arn(Option<String>)`](crate::operation::start_snapshot::StartSnapshotOutput::kms_key_arn): <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the snapshot.</p>
     /// - On failure, responds with [`SdkError<StartSnapshotError>`](crate::operation::start_snapshot::StartSnapshotError)
-    pub fn start_snapshot(
-        &self,
-    ) -> crate::operation::start_snapshot::builders::StartSnapshotFluentBuilder {
-        crate::operation::start_snapshot::builders::StartSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_snapshot(&self) -> crate::operation::start_snapshot::builders::StartSnapshotFluentBuilder {
+        crate::operation::start_snapshot::builders::StartSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

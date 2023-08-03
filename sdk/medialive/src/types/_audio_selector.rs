@@ -30,9 +30,7 @@ impl AudioSelector {
 
 /// A builder for [`AudioSelector`](crate::types::AudioSelector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioSelectorBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) selector_settings: ::std::option::Option<crate::types::AudioSelectorSettings>,
@@ -58,17 +56,12 @@ impl AudioSelectorBuilder {
         self
     }
     /// The audio selector settings.
-    pub fn set_selector_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioSelectorSettings>,
-    ) -> Self {
+    pub fn set_selector_settings(mut self, input: ::std::option::Option<crate::types::AudioSelectorSettings>) -> Self {
         self.selector_settings = input;
         self
     }
     /// The audio selector settings.
-    pub fn get_selector_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::AudioSelectorSettings> {
+    pub fn get_selector_settings(&self) -> &::std::option::Option<crate::types::AudioSelectorSettings> {
         &self.selector_settings
     }
     /// Consumes the builder and constructs a [`AudioSelector`](crate::types::AudioSelector).

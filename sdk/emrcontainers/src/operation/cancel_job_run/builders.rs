@@ -10,10 +10,7 @@ impl CancelJobRunInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_job_run::CancelJobRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_job_run::CancelJobRunError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_job_run::CancelJobRunError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_job_run();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CancelJobRunFluentBuilder {
         }
     }
     /// Access the CancelJobRun as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_job_run::builders::CancelJobRunInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_job_run::builders::CancelJobRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CancelJobRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl CancelJobRunFluentBuilder {
         self.inner.get_id()
     }
     /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
-    pub fn virtual_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_cluster_id(input.into());
         self
     }
     /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
-    pub fn set_virtual_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_cluster_id(input);
         self
     }

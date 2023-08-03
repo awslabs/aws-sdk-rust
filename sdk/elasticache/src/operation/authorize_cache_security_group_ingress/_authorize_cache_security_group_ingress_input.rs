@@ -30,16 +30,14 @@ impl AuthorizeCacheSecurityGroupIngressInput {
 }
 impl AuthorizeCacheSecurityGroupIngressInput {
     /// Creates a new builder-style object to manufacture [`AuthorizeCacheSecurityGroupIngressInput`](crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressInput).
-    pub fn builder() -> crate::operation::authorize_cache_security_group_ingress::builders::AuthorizeCacheSecurityGroupIngressInputBuilder{
+    pub fn builder() -> crate::operation::authorize_cache_security_group_ingress::builders::AuthorizeCacheSecurityGroupIngressInputBuilder {
         crate::operation::authorize_cache_security_group_ingress::builders::AuthorizeCacheSecurityGroupIngressInputBuilder::default()
     }
 }
 
 /// A builder for [`AuthorizeCacheSecurityGroupIngressInput`](crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizeCacheSecurityGroupIngressInputBuilder {
     pub(crate) cache_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_security_group_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct AuthorizeCacheSecurityGroupIngressInputBuilder {
 }
 impl AuthorizeCacheSecurityGroupIngressInputBuilder {
     /// <p>The cache security group that allows network ingress.</p>
-    pub fn cache_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cache security group that allows network ingress.</p>
-    pub fn set_cache_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_security_group_name = input;
         self
     }
@@ -67,18 +59,12 @@ impl AuthorizeCacheSecurityGroupIngressInputBuilder {
         &self.cache_security_group_name
     }
     /// <p>The Amazon EC2 security group to be authorized for ingress to the cache security group.</p>
-    pub fn ec2_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 security group to be authorized for ingress to the cache security group.</p>
-    pub fn set_ec2_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_name = input;
         self
     }
@@ -87,18 +73,12 @@ impl AuthorizeCacheSecurityGroupIngressInputBuilder {
         &self.ec2_security_group_name
     }
     /// <p>The Amazon account number of the Amazon EC2 security group owner. Note that this is not the same thing as an Amazon access key ID - you must provide a valid Amazon account number for this parameter.</p>
-    pub fn ec2_security_group_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon account number of the Amazon EC2 security group owner. Note that this is not the same thing as an Amazon access key ID - you must provide a valid Amazon account number for this parameter.</p>
-    pub fn set_ec2_security_group_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = input;
         self
     }
@@ -107,16 +87,18 @@ impl AuthorizeCacheSecurityGroupIngressInputBuilder {
         &self.ec2_security_group_owner_id
     }
     /// Consumes the builder and constructs a [`AuthorizeCacheSecurityGroupIngressInput`](crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressInput {
-                cache_security_group_name: self.cache_security_group_name
-                ,
-                ec2_security_group_name: self.ec2_security_group_name
-                ,
-                ec2_security_group_owner_id: self.ec2_security_group_owner_id
-                ,
-            }
+                cache_security_group_name: self.cache_security_group_name,
+                ec2_security_group_name: self.ec2_security_group_name,
+                ec2_security_group_owner_id: self.ec2_security_group_owner_id,
+            },
         )
     }
 }

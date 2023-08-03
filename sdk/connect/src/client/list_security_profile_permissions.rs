@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`permissions(Option<Vec<String>>)`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput::permissions): <p>The permissions granted to the security profile. For a complete list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListSecurityProfilePermissionsError>`](crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsError)
-    pub fn list_security_profile_permissions(&self) -> crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsFluentBuilder{
+    pub fn list_security_profile_permissions(
+        &self,
+    ) -> crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsFluentBuilder {
         crate::operation::list_security_profile_permissions::builders::ListSecurityProfilePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

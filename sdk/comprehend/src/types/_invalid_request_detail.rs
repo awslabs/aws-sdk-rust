@@ -29,9 +29,7 @@ impl InvalidRequestDetail {
 
 /// A builder for [`InvalidRequestDetail`](crate::types::InvalidRequestDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidRequestDetailBuilder {
     pub(crate) reason: ::std::option::Option<crate::types::InvalidRequestDetailReason>,
 }
@@ -42,10 +40,7 @@ impl InvalidRequestDetailBuilder {
         self
     }
     /// <p>Reason code is <code>INVALID_DOCUMENT</code>.</p>
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::InvalidRequestDetailReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::InvalidRequestDetailReason>) -> Self {
         self.reason = input;
         self
     }
@@ -55,8 +50,6 @@ impl InvalidRequestDetailBuilder {
     }
     /// Consumes the builder and constructs a [`InvalidRequestDetail`](crate::types::InvalidRequestDetail).
     pub fn build(self) -> crate::types::InvalidRequestDetail {
-        crate::types::InvalidRequestDetail {
-            reason: self.reason,
-        }
+        crate::types::InvalidRequestDetail { reason: self.reason }
     }
 }

@@ -44,9 +44,7 @@ impl GsmNmrObj {
 
 /// A builder for [`GsmNmrObj`](crate::types::GsmNmrObj).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GsmNmrObjBuilder {
     pub(crate) bsic: ::std::option::Option<i32>,
     pub(crate) bcch: ::std::option::Option<i32>,
@@ -102,10 +100,7 @@ impl GsmNmrObjBuilder {
         self
     }
     /// <p>Global identity information of the GSM object.</p>
-    pub fn set_global_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::GlobalIdentity>,
-    ) -> Self {
+    pub fn set_global_identity(mut self, input: ::std::option::Option<crate::types::GlobalIdentity>) -> Self {
         self.global_identity = input;
         self
     }

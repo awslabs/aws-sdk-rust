@@ -23,9 +23,7 @@ impl SecurityContext {
 
 /// A builder for [`SecurityContext`](crate::types::SecurityContext).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityContextBuilder {
     pub(crate) privileged: ::std::option::Option<bool>,
 }

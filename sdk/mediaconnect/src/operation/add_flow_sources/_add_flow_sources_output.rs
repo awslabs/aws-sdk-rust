@@ -35,9 +35,7 @@ impl AddFlowSourcesOutput {
 
 /// A builder for [`AddFlowSourcesOutput`](crate::operation::add_flow_sources::AddFlowSourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddFlowSourcesOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::Source>>,
@@ -70,10 +68,7 @@ impl AddFlowSourcesOutputBuilder {
         self
     }
     /// The details of the newly added sources.
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Source>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Source>>) -> Self {
         self.sources = input;
         self
     }

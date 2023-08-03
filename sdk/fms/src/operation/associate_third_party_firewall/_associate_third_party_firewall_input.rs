@@ -15,16 +15,14 @@ impl AssociateThirdPartyFirewallInput {
 }
 impl AssociateThirdPartyFirewallInput {
     /// Creates a new builder-style object to manufacture [`AssociateThirdPartyFirewallInput`](crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallInput).
-    pub fn builder() -> crate::operation::associate_third_party_firewall::builders::AssociateThirdPartyFirewallInputBuilder{
+    pub fn builder() -> crate::operation::associate_third_party_firewall::builders::AssociateThirdPartyFirewallInputBuilder {
         crate::operation::associate_third_party_firewall::builders::AssociateThirdPartyFirewallInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateThirdPartyFirewallInput`](crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateThirdPartyFirewallInputBuilder {
     pub(crate) third_party_firewall: ::std::option::Option<crate::types::ThirdPartyFirewall>,
 }
@@ -35,17 +33,12 @@ impl AssociateThirdPartyFirewallInputBuilder {
         self
     }
     /// <p>The name of the third-party firewall vendor.</p>
-    pub fn set_third_party_firewall(
-        mut self,
-        input: ::std::option::Option<crate::types::ThirdPartyFirewall>,
-    ) -> Self {
+    pub fn set_third_party_firewall(mut self, input: ::std::option::Option<crate::types::ThirdPartyFirewall>) -> Self {
         self.third_party_firewall = input;
         self
     }
     /// <p>The name of the third-party firewall vendor.</p>
-    pub fn get_third_party_firewall(
-        &self,
-    ) -> &::std::option::Option<crate::types::ThirdPartyFirewall> {
+    pub fn get_third_party_firewall(&self) -> &::std::option::Option<crate::types::ThirdPartyFirewall> {
         &self.third_party_firewall
     }
     /// Consumes the builder and constructs a [`AssociateThirdPartyFirewallInput`](crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallInput).
@@ -55,10 +48,8 @@ impl AssociateThirdPartyFirewallInputBuilder {
         crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallInput {
-                third_party_firewall: self.third_party_firewall,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallInput {
+            third_party_firewall: self.third_party_firewall,
+        })
     }
 }

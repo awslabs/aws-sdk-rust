@@ -50,10 +50,7 @@ impl ListHostedZonesByNameFluentBuilder {
         }
     }
     /// Access the ListHostedZonesByName as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_hosted_zones_by_name::builders::ListHostedZonesByNameInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_hosted_zones_by_name::builders::ListHostedZonesByNameInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,9 +62,7 @@ impl ListHostedZonesByNameFluentBuilder {
             crate::operation::list_hosted_zones_by_name::ListHostedZonesByName,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -77,10 +72,7 @@ impl ListHostedZonesByNameFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -89,9 +81,7 @@ impl ListHostedZonesByNameFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameError>,
     > {
         let op = self
             .inner
@@ -114,9 +104,7 @@ impl ListHostedZonesByNameFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameError>,
     > {
         self.send_middleware().await
     }
@@ -130,9 +118,7 @@ impl ListHostedZonesByNameFluentBuilder {
             crate::operation::list_hosted_zones_by_name::ListHostedZonesByName,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameError>,
     > {
         self.customize_middleware().await
     }
@@ -152,19 +138,13 @@ impl ListHostedZonesByNameFluentBuilder {
     }
     /// <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, do not include the <code>hostedzoneid</code> parameter.</p>
     /// <p>If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZonesByName</code> returns only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code> hosted zones, submit another request to <code>ListHostedZonesByName</code> and include both <code>dnsname</code> and <code>hostedzoneid</code> parameters. For the value of <code>hostedzoneid</code>, specify the value of the <code>NextHostedZoneId</code> element from the previous response.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hosted_zone_id(input.into());
         self
     }
     /// <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, do not include the <code>hostedzoneid</code> parameter.</p>
     /// <p>If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZonesByName</code> returns only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code> hosted zones, submit another request to <code>ListHostedZonesByName</code> and include both <code>dnsname</code> and <code>hostedzoneid</code> parameters. For the value of <code>hostedzoneid</code>, specify the value of the <code>NextHostedZoneId</code> element from the previous response.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }

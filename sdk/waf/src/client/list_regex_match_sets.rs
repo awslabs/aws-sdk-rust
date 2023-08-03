@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_regex_match_sets::ListRegexMatchSetsOutput::next_marker): <p>If you have more <code>RegexMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RegexMatchSet</code> objects, submit another <code>ListRegexMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`regex_match_sets(Option<Vec<RegexMatchSetSummary>>)`](crate::operation::list_regex_match_sets::ListRegexMatchSetsOutput::regex_match_sets): <p>An array of <code>RegexMatchSetSummary</code> objects.</p>
     /// - On failure, responds with [`SdkError<ListRegexMatchSetsError>`](crate::operation::list_regex_match_sets::ListRegexMatchSetsError)
-    pub fn list_regex_match_sets(
-        &self,
-    ) -> crate::operation::list_regex_match_sets::builders::ListRegexMatchSetsFluentBuilder {
-        crate::operation::list_regex_match_sets::builders::ListRegexMatchSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_regex_match_sets(&self) -> crate::operation::list_regex_match_sets::builders::ListRegexMatchSetsFluentBuilder {
+        crate::operation::list_regex_match_sets::builders::ListRegexMatchSetsFluentBuilder::new(self.handle.clone())
     }
 }

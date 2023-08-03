@@ -15,16 +15,14 @@ impl GetContinuousDeploymentPolicyConfigInput {
 }
 impl GetContinuousDeploymentPolicyConfigInput {
     /// Creates a new builder-style object to manufacture [`GetContinuousDeploymentPolicyConfigInput`](crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigInput).
-    pub fn builder() -> crate::operation::get_continuous_deployment_policy_config::builders::GetContinuousDeploymentPolicyConfigInputBuilder{
+    pub fn builder() -> crate::operation::get_continuous_deployment_policy_config::builders::GetContinuousDeploymentPolicyConfigInputBuilder {
         crate::operation::get_continuous_deployment_policy_config::builders::GetContinuousDeploymentPolicyConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`GetContinuousDeploymentPolicyConfigInput`](crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContinuousDeploymentPolicyConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,12 @@ impl GetContinuousDeploymentPolicyConfigInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetContinuousDeploymentPolicyConfigInput`](crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigInput, ::aws_smithy_http::operation::error::BuildError>{
-        ::std::result::Result::Ok(
-            crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigInput { id: self.id })
     }
 }

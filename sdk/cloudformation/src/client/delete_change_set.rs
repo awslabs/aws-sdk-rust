@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`stack_name(impl ::std::convert::Into<String>)`](crate::operation::delete_change_set::builders::DeleteChangeSetFluentBuilder::stack_name) / [`set_stack_name(Option<String>)`](crate::operation::delete_change_set::builders::DeleteChangeSetFluentBuilder::set_stack_name): <p>If you specified the name of a change set to delete, specify the stack name or Amazon Resource Name (ARN) that's associated with it.</p>
     /// - On success, responds with [`DeleteChangeSetOutput`](crate::operation::delete_change_set::DeleteChangeSetOutput)
     /// - On failure, responds with [`SdkError<DeleteChangeSetError>`](crate::operation::delete_change_set::DeleteChangeSetError)
-    pub fn delete_change_set(
-        &self,
-    ) -> crate::operation::delete_change_set::builders::DeleteChangeSetFluentBuilder {
-        crate::operation::delete_change_set::builders::DeleteChangeSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_change_set(&self) -> crate::operation::delete_change_set::builders::DeleteChangeSetFluentBuilder {
+        crate::operation::delete_change_set::builders::DeleteChangeSetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`user_settings(UserSettings)`](crate::operation::update_user_settings::builders::UpdateUserSettingsFluentBuilder::user_settings) / [`set_user_settings(Option<UserSettings>)`](crate::operation::update_user_settings::builders::UpdateUserSettingsFluentBuilder::set_user_settings): <p>The user settings to update.</p>
     /// - On success, responds with [`UpdateUserSettingsOutput`](crate::operation::update_user_settings::UpdateUserSettingsOutput)
     /// - On failure, responds with [`SdkError<UpdateUserSettingsError>`](crate::operation::update_user_settings::UpdateUserSettingsError)
-    pub fn update_user_settings(
-        &self,
-    ) -> crate::operation::update_user_settings::builders::UpdateUserSettingsFluentBuilder {
-        crate::operation::update_user_settings::builders::UpdateUserSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_user_settings(&self) -> crate::operation::update_user_settings::builders::UpdateUserSettingsFluentBuilder {
+        crate::operation::update_user_settings::builders::UpdateUserSettingsFluentBuilder::new(self.handle.clone())
     }
 }

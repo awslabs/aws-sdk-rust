@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`descriptions(Option<Vec<ContinuousExportDescription>>)`](crate::operation::describe_continuous_exports::DescribeContinuousExportsOutput::descriptions): <p>A list of continuous export descriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_continuous_exports::DescribeContinuousExportsOutput::next_token): <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeContinuousExportsError>`](crate::operation::describe_continuous_exports::DescribeContinuousExportsError)
-    pub fn describe_continuous_exports(&self) -> crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsFluentBuilder{
+    pub fn describe_continuous_exports(&self) -> crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsFluentBuilder {
         crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsFluentBuilder::new(self.handle.clone())
     }
 }

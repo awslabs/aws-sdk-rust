@@ -14,9 +14,7 @@ pub struct CreateArtifactInput {
     pub artifact_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of properties to add to the artifact.</p>
     #[doc(hidden)]
-    pub properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     #[doc(hidden)]
     pub metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
@@ -38,11 +36,7 @@ impl CreateArtifactInput {
         self.artifact_type.as_deref()
     }
     /// <p>A list of properties to add to the artifact.</p>
-    pub fn properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.properties.as_ref()
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
@@ -63,33 +57,23 @@ impl CreateArtifactInput {
 
 /// A builder for [`CreateArtifactInput`](crate::operation::create_artifact::CreateArtifactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateArtifactInputBuilder {
     pub(crate) artifact_name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::ArtifactSource>,
     pub(crate) artifact_type: ::std::option::Option<::std::string::String>,
-    pub(crate) properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateArtifactInputBuilder {
     /// <p>The name of the artifact. Must be unique to your account in an Amazon Web Services Region.</p>
-    pub fn artifact_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the artifact. Must be unique to your account in an Amazon Web Services Region.</p>
-    pub fn set_artifact_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_name = input;
         self
     }
@@ -103,10 +87,7 @@ impl CreateArtifactInputBuilder {
         self
     }
     /// <p>The ID, ID type, and URI of the source.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactSource>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::ArtifactSource>) -> Self {
         self.source = input;
         self
     }
@@ -115,18 +96,12 @@ impl CreateArtifactInputBuilder {
         &self.source
     }
     /// <p>The artifact type.</p>
-    pub fn artifact_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The artifact type.</p>
-    pub fn set_artifact_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_type = input;
         self
     }
@@ -139,32 +114,19 @@ impl CreateArtifactInputBuilder {
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>A list of properties to add to the artifact.</p>
-    pub fn properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.properties = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of properties to add to the artifact.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.properties = input;
         self
     }
     /// <p>A list of properties to add to the artifact.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.properties
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
@@ -173,17 +135,12 @@ impl CreateArtifactInputBuilder {
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn set_metadata_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::MetadataProperties>,
-    ) -> Self {
+    pub fn set_metadata_properties(mut self, input: ::std::option::Option<crate::types::MetadataProperties>) -> Self {
         self.metadata_properties = input;
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn get_metadata_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetadataProperties> {
+    pub fn get_metadata_properties(&self) -> &::std::option::Option<crate::types::MetadataProperties> {
         &self.metadata_properties
     }
     /// Appends an item to `tags`.
@@ -198,10 +155,7 @@ impl CreateArtifactInputBuilder {
         self
     }
     /// <p>A list of tags to apply to the artifact.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -212,10 +166,7 @@ impl CreateArtifactInputBuilder {
     /// Consumes the builder and constructs a [`CreateArtifactInput`](crate::operation::create_artifact::CreateArtifactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_artifact::CreateArtifactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_artifact::CreateArtifactInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_artifact::CreateArtifactInput {
             artifact_name: self.artifact_name,
             source: self.source,

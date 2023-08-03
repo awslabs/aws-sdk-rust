@@ -5,16 +5,16 @@ pub use crate::operation::disassociate_time_series_from_asset_property::_disasso
 
 impl DisassociateTimeSeriesFromAssetPropertyInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.disassociate_time_series_from_asset_property();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DisassociateTimeSeriesFromAssetPropertyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateTimeSeriesFromAssetPropertyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyInputBuilder,
+    inner: crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyInputBuilder,
 }
 impl DisassociateTimeSeriesFromAssetPropertyFluentBuilder {
     /// Creates a new `DisassociateTimeSeriesFromAssetProperty`.
@@ -37,15 +37,24 @@ impl DisassociateTimeSeriesFromAssetPropertyFluentBuilder {
         }
     }
     /// Access the DisassociateTimeSeriesFromAssetProperty as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetProperty, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetProperty,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl DisassociateTimeSeriesFromAssetPropertyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +93,30 @@ impl DisassociateTimeSeriesFromAssetPropertyFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetProperty, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetProperty,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The alias that identifies the time series.</p>

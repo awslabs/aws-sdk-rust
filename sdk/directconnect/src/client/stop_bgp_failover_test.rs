@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StopBgpFailoverTestOutput`](crate::operation::stop_bgp_failover_test::StopBgpFailoverTestOutput) with field(s):
     ///   - [`virtual_interface_test(Option<VirtualInterfaceTestHistory>)`](crate::operation::stop_bgp_failover_test::StopBgpFailoverTestOutput::virtual_interface_test): <p>Information about the virtual interface failover test.</p>
     /// - On failure, responds with [`SdkError<StopBgpFailoverTestError>`](crate::operation::stop_bgp_failover_test::StopBgpFailoverTestError)
-    pub fn stop_bgp_failover_test(
-        &self,
-    ) -> crate::operation::stop_bgp_failover_test::builders::StopBgpFailoverTestFluentBuilder {
-        crate::operation::stop_bgp_failover_test::builders::StopBgpFailoverTestFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_bgp_failover_test(&self) -> crate::operation::stop_bgp_failover_test::builders::StopBgpFailoverTestFluentBuilder {
+        crate::operation::stop_bgp_failover_test::builders::StopBgpFailoverTestFluentBuilder::new(self.handle.clone())
     }
 }

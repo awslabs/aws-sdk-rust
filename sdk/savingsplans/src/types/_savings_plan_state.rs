@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SavingsPlanState {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for SavingsPlanState {
             "queued" => SavingsPlanState::Queued,
             "queued-deleted" => SavingsPlanState::QueuedDeleted,
             "retired" => SavingsPlanState::Retired,
-            other => {
-                SavingsPlanState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SavingsPlanState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl SavingsPlanState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "active",
-            "payment-failed",
-            "payment-pending",
-            "queued",
-            "queued-deleted",
-            "retired",
-        ]
+        &["active", "payment-failed", "payment-pending", "queued", "queued-deleted", "retired"]
     }
 }
 impl ::std::convert::AsRef<str> for SavingsPlanState {

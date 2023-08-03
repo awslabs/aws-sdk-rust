@@ -26,8 +26,7 @@ impl ListCostAllocationTagsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCostAllocationTagsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsInputBuilder,
+    inner: crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsInputBuilder,
 }
 impl ListCostAllocationTagsFluentBuilder {
     /// Creates a new `ListCostAllocationTags`.
@@ -38,10 +37,7 @@ impl ListCostAllocationTagsFluentBuilder {
         }
     }
     /// Access the ListCostAllocationTags as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListCostAllocationTagsFluentBuilder {
             crate::operation::list_cost_allocation_tags::ListCostAllocationTags,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cost_allocation_tags::ListCostAllocationTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_cost_allocation_tags::ListCostAllocationTagsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListCostAllocationTagsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListCostAllocationTagsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_cost_allocation_tags::ListCostAllocationTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cost_allocation_tags::ListCostAllocationTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_cost_allocation_tags::ListCostAllocationTagsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListCostAllocationTagsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_cost_allocation_tags::ListCostAllocationTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cost_allocation_tags::ListCostAllocationTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_cost_allocation_tags::ListCostAllocationTagsError>,
     > {
         self.send_middleware().await
     }
@@ -118,23 +105,15 @@ impl ListCostAllocationTagsFluentBuilder {
             crate::operation::list_cost_allocation_tags::ListCostAllocationTags,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cost_allocation_tags::ListCostAllocationTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_cost_allocation_tags::ListCostAllocationTagsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_cost_allocation_tags::paginator::ListCostAllocationTagsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_cost_allocation_tags::paginator::ListCostAllocationTagsPaginator
-    {
-        crate::operation::list_cost_allocation_tags::paginator::ListCostAllocationTagsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_cost_allocation_tags::paginator::ListCostAllocationTagsPaginator {
+        crate::operation::list_cost_allocation_tags::paginator::ListCostAllocationTagsPaginator::new(self.handle, self.inner)
     }
     /// <p>The status of cost allocation tag keys that are returned for this request. </p>
     pub fn status(mut self, input: crate::types::CostAllocationTagStatus) -> Self {
@@ -142,10 +121,7 @@ impl ListCostAllocationTagsFluentBuilder {
         self
     }
     /// <p>The status of cost allocation tag keys that are returned for this request. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CostAllocationTagStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CostAllocationTagStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -163,10 +139,7 @@ impl ListCostAllocationTagsFluentBuilder {
         self
     }
     /// <p>The list of cost allocation tag keys that are returned for this request. </p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
@@ -180,10 +153,7 @@ impl ListCostAllocationTagsFluentBuilder {
         self
     }
     /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CostAllocationTagType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::CostAllocationTagType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

@@ -31,27 +31,19 @@ impl CreateKeyPairInput {
 
 /// A builder for [`CreateKeyPairInput`](crate::operation::create_key_pair::CreateKeyPairInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateKeyPairInputBuilder {
     pub(crate) key_pair_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateKeyPairInputBuilder {
     /// <p>The name for your new key pair.</p>
-    pub fn key_pair_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_pair_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_pair_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for your new key pair.</p>
-    pub fn set_key_pair_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_pair_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_pair_name = input;
         self
     }
@@ -73,10 +65,7 @@ impl CreateKeyPairInputBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -88,10 +77,7 @@ impl CreateKeyPairInputBuilder {
     /// Consumes the builder and constructs a [`CreateKeyPairInput`](crate::operation::create_key_pair::CreateKeyPairInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_key_pair::CreateKeyPairInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_key_pair::CreateKeyPairInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_key_pair::CreateKeyPairInput {
             key_pair_name: self.key_pair_name,
             tags: self.tags,

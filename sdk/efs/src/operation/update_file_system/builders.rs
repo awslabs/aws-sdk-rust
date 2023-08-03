@@ -10,10 +10,7 @@ impl UpdateFileSystemInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_file_system::UpdateFileSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_system::UpdateFileSystemError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_system::UpdateFileSystemError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_file_system();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateFileSystemFluentBuilder {
         }
     }
     /// Access the UpdateFileSystem as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_file_system::builders::UpdateFileSystemInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_file_system::builders::UpdateFileSystemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateFileSystemFluentBuilder {
             crate::operation::update_file_system::UpdateFileSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_system::UpdateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_system::UpdateFileSystemError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateFileSystemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateFileSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_file_system::UpdateFileSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_system::UpdateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_system::UpdateFileSystemError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateFileSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_file_system::UpdateFileSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_system::UpdateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_system::UpdateFileSystemError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateFileSystemFluentBuilder {
             crate::operation::update_file_system::UpdateFileSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_file_system::UpdateFileSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_file_system::UpdateFileSystemError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the file system that you want to update.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>The ID of the file system that you want to update.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
@@ -148,10 +126,7 @@ impl UpdateFileSystemFluentBuilder {
         self
     }
     /// <p>(Optional) Updates the file system's throughput mode. If you're not updating your throughput mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
-    pub fn set_throughput_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ThroughputMode>,
-    ) -> Self {
+    pub fn set_throughput_mode(mut self, input: ::std::option::Option<crate::types::ThroughputMode>) -> Self {
         self.inner = self.inner.set_throughput_mode(input);
         self
     }
@@ -165,10 +140,7 @@ impl UpdateFileSystemFluentBuilder {
         self
     }
     /// <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file system. Valid values are 1-1024. If you are changing the throughput mode to provisioned, you must also provide the amount of provisioned throughput. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on update.</p>
-    pub fn set_provisioned_throughput_in_mibps(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_provisioned_throughput_in_mibps(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_provisioned_throughput_in_mibps(input);
         self
     }

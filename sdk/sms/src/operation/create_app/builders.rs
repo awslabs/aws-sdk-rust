@@ -10,10 +10,7 @@ impl CreateAppInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_app::CreateAppOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app::CreateAppError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_app();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateAppFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_app::CreateApp,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_app::CreateApp, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateAppFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateAppFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_app::CreateApp,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_app::CreateApp, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>,
     > {
         self.customize_middleware().await
@@ -178,17 +166,12 @@ impl CreateAppFluentBuilder {
         self
     }
     /// <p>The server groups to include in the application.</p>
-    pub fn set_server_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>>,
-    ) -> Self {
+    pub fn set_server_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>>) -> Self {
         self.inner = self.inner.set_server_groups(input);
         self
     }
     /// <p>The server groups to include in the application.</p>
-    pub fn get_server_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>> {
+    pub fn get_server_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>> {
         self.inner.get_server_groups()
     }
     /// Appends an item to `tags`.
@@ -201,10 +184,7 @@ impl CreateAppFluentBuilder {
         self
     }
     /// <p>The tags to be associated with the application.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

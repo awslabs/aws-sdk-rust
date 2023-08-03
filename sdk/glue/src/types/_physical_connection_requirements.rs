@@ -37,13 +37,10 @@ impl PhysicalConnectionRequirements {
 
 /// A builder for [`PhysicalConnectionRequirements`](crate::types::PhysicalConnectionRequirements).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PhysicalConnectionRequirementsBuilder {
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_id_list:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl PhysicalConnectionRequirementsBuilder {
@@ -66,42 +63,28 @@ impl PhysicalConnectionRequirementsBuilder {
     /// To override the contents of this collection use [`set_security_group_id_list`](Self::set_security_group_id_list).
     ///
     /// <p>The security group ID list used by the connection.</p>
-    pub fn security_group_id_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_id_list.unwrap_or_default();
         v.push(input.into());
         self.security_group_id_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The security group ID list used by the connection.</p>
-    pub fn set_security_group_id_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_id_list = input;
         self
     }
     /// <p>The security group ID list used by the connection.</p>
-    pub fn get_security_group_id_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_id_list
     }
     /// <p>The connection's Availability Zone. This field is redundant because the specified subnet implies the Availability Zone to be used. Currently the field must be populated, but it will be deprecated in the future.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The connection's Availability Zone. This field is redundant because the specified subnet implies the Availability Zone to be used. Currently the field must be populated, but it will be deprecated in the future.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }

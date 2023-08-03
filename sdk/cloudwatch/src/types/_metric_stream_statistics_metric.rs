@@ -30,9 +30,7 @@ impl MetricStreamStatisticsMetric {
 
 /// A builder for [`MetricStreamStatisticsMetric`](crate::types::MetricStreamStatisticsMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricStreamStatisticsMetricBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,

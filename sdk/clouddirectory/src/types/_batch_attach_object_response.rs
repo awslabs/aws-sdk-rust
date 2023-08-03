@@ -23,26 +23,18 @@ impl BatchAttachObjectResponse {
 
 /// A builder for [`BatchAttachObjectResponse`](crate::types::BatchAttachObjectResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAttachObjectResponseBuilder {
     pub(crate) attached_object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl BatchAttachObjectResponseBuilder {
     /// <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
-    pub fn attached_object_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attached_object_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attached_object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
-    pub fn set_attached_object_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attached_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attached_object_identifier = input;
         self
     }

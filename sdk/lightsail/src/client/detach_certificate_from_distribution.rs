@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DetachCertificateFromDistributionOutput`](crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionOutput::operation): <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DetachCertificateFromDistributionError>`](crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionError)
-    pub fn detach_certificate_from_distribution(&self) -> crate::operation::detach_certificate_from_distribution::builders::DetachCertificateFromDistributionFluentBuilder{
+    pub fn detach_certificate_from_distribution(
+        &self,
+    ) -> crate::operation::detach_certificate_from_distribution::builders::DetachCertificateFromDistributionFluentBuilder {
         crate::operation::detach_certificate_from_distribution::builders::DetachCertificateFromDistributionFluentBuilder::new(self.handle.clone())
     }
 }

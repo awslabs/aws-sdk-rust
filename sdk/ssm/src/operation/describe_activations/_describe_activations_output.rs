@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeActivationsOutput {
 }
 impl DescribeActivationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeActivationsOutput`](crate::operation::describe_activations::DescribeActivationsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_activations::builders::DescribeActivationsOutputBuilder {
-        crate::operation::describe_activations::builders::DescribeActivationsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_activations::builders::DescribeActivationsOutputBuilder {
+        crate::operation::describe_activations::builders::DescribeActivationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeActivationsOutput`](crate::operation::describe_activations::DescribeActivationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeActivationsOutputBuilder {
     pub(crate) activation_list: ::std::option::Option<::std::vec::Vec<crate::types::Activation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeActivationsOutputBuilder {
         self
     }
     /// <p>A list of activations for your Amazon Web Services account.</p>
-    pub fn set_activation_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Activation>>,
-    ) -> Self {
+    pub fn set_activation_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Activation>>) -> Self {
         self.activation_list = input;
         self
     }
     /// <p>A list of activations for your Amazon Web Services account.</p>
-    pub fn get_activation_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Activation>> {
+    pub fn get_activation_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Activation>> {
         &self.activation_list
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>

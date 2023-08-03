@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`graph_arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_membership::builders::DisassociateMembershipFluentBuilder::graph_arn) / [`set_graph_arn(Option<String>)`](crate::operation::disassociate_membership::builders::DisassociateMembershipFluentBuilder::set_graph_arn): <p>The ARN of the behavior graph to remove the member account from.</p>  <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
     /// - On success, responds with [`DisassociateMembershipOutput`](crate::operation::disassociate_membership::DisassociateMembershipOutput)
     /// - On failure, responds with [`SdkError<DisassociateMembershipError>`](crate::operation::disassociate_membership::DisassociateMembershipError)
-    pub fn disassociate_membership(
-        &self,
-    ) -> crate::operation::disassociate_membership::builders::DisassociateMembershipFluentBuilder
-    {
+    pub fn disassociate_membership(&self) -> crate::operation::disassociate_membership::builders::DisassociateMembershipFluentBuilder {
         crate::operation::disassociate_membership::builders::DisassociateMembershipFluentBuilder::new(self.handle.clone())
     }
 }

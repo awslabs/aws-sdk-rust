@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListGameServersOutput {
 }
 impl ListGameServersOutput {
     /// Creates a new builder-style object to manufacture [`ListGameServersOutput`](crate::operation::list_game_servers::ListGameServersOutput).
-    pub fn builder() -> crate::operation::list_game_servers::builders::ListGameServersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_game_servers::builders::ListGameServersOutputBuilder {
         crate::operation::list_game_servers::builders::ListGameServersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListGameServersOutput`](crate::operation::list_game_servers::ListGameServersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGameServersOutputBuilder {
     pub(crate) game_servers: ::std::option::Option<::std::vec::Vec<crate::types::GameServer>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListGameServersOutputBuilder {
         self
     }
     /// <p>A collection of game server objects that match the request.</p>
-    pub fn set_game_servers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GameServer>>,
-    ) -> Self {
+    pub fn set_game_servers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameServer>>) -> Self {
         self.game_servers = input;
         self
     }
     /// <p>A collection of game server objects that match the request.</p>
-    pub fn get_game_servers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServer>> {
+    pub fn get_game_servers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServer>> {
         &self.game_servers
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>

@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`configuration_ids(Vec<String>)`](crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationFluentBuilder::configuration_ids) / [`set_configuration_ids(Option<Vec<String>>)`](crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationFluentBuilder::set_configuration_ids): <p>The ID of each configuration item to be associated with an application.</p>
     /// - On success, responds with [`AssociateConfigurationItemsToApplicationOutput`](crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput)
     /// - On failure, responds with [`SdkError<AssociateConfigurationItemsToApplicationError>`](crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError)
-    pub fn associate_configuration_items_to_application(&self) -> crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationFluentBuilder{
-        crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationFluentBuilder::new(self.handle.clone())
+    pub fn associate_configuration_items_to_application(
+        &self,
+    ) -> crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationFluentBuilder {
+        crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

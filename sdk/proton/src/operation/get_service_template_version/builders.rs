@@ -26,7 +26,7 @@ impl GetServiceTemplateVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceTemplateVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_service_template_version::builders::GetServiceTemplateVersionInputBuilder,
+    inner: crate::operation::get_service_template_version::builders::GetServiceTemplateVersionInputBuilder,
 }
 impl GetServiceTemplateVersionFluentBuilder {
     /// Creates a new `GetServiceTemplateVersion`.
@@ -37,7 +37,7 @@ impl GetServiceTemplateVersionFluentBuilder {
         }
     }
     /// Access the GetServiceTemplateVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_service_template_version::builders::GetServiceTemplateVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_service_template_version::builders::GetServiceTemplateVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetServiceTemplateVersionFluentBuilder {
             crate::operation::get_service_template_version::GetServiceTemplateVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_template_version::GetServiceTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_template_version::GetServiceTemplateVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetServiceTemplateVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetServiceTemplateVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_template_version::GetServiceTemplateVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_template_version::GetServiceTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_template_version::GetServiceTemplateVersionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetServiceTemplateVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_template_version::GetServiceTemplateVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_template_version::GetServiceTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_template_version::GetServiceTemplateVersionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetServiceTemplateVersionFluentBuilder {
             crate::operation::get_service_template_version::GetServiceTemplateVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_template_version::GetServiceTemplateVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_service_template_version::GetServiceTemplateVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the service template a version of which you want to get detailed data for.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the service template a version of which you want to get detailed data for.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -141,18 +124,12 @@ impl GetServiceTemplateVersionFluentBuilder {
         self.inner.get_template_name()
     }
     /// <p>To get service template major version detail data, include <code>major Version</code>.</p>
-    pub fn major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.major_version(input.into());
         self
     }
     /// <p>To get service template major version detail data, include <code>major Version</code>.</p>
-    pub fn set_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_major_version(input);
         self
     }
@@ -161,18 +138,12 @@ impl GetServiceTemplateVersionFluentBuilder {
         self.inner.get_major_version()
     }
     /// <p>To get service template minor version detail data, include <code>minorVersion</code>.</p>
-    pub fn minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.minor_version(input.into());
         self
     }
     /// <p>To get service template minor version detail data, include <code>minorVersion</code>.</p>
-    pub fn set_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_minor_version(input);
         self
     }

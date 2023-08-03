@@ -89,9 +89,7 @@ impl PasswordPolicy {
 
 /// A builder for [`PasswordPolicy`](crate::types::PasswordPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PasswordPolicyBuilder {
     pub(crate) minimum_password_length: ::std::option::Option<i32>,
     pub(crate) require_symbols: ::std::option::Option<bool>,
@@ -184,10 +182,7 @@ impl PasswordPolicyBuilder {
         self
     }
     /// <p>Specifies whether IAM users are allowed to change their own password. Gives IAM users permissions to <code>iam:ChangePassword</code> for only their user and to the <code>iam:GetAccountPasswordPolicy</code> action. This option does not attach a permissions policy to each user, rather the permissions are applied at the account-level for all users by IAM.</p>
-    pub fn set_allow_users_to_change_password(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_allow_users_to_change_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_users_to_change_password = input;
         self
     }

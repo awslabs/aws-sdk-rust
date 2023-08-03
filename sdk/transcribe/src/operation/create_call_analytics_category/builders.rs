@@ -31,7 +31,7 @@ impl CreateCallAnalyticsCategoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCallAnalyticsCategoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_call_analytics_category::builders::CreateCallAnalyticsCategoryInputBuilder,
+    inner: crate::operation::create_call_analytics_category::builders::CreateCallAnalyticsCategoryInputBuilder,
 }
 impl CreateCallAnalyticsCategoryFluentBuilder {
     /// Creates a new `CreateCallAnalyticsCategory`.
@@ -42,7 +42,7 @@ impl CreateCallAnalyticsCategoryFluentBuilder {
         }
     }
     /// Access the CreateCallAnalyticsCategory as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_call_analytics_category::builders::CreateCallAnalyticsCategoryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_call_analytics_category::builders::CreateCallAnalyticsCategoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl CreateCallAnalyticsCategoryFluentBuilder {
             crate::operation::create_call_analytics_category::CreateCallAnalyticsCategory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl CreateCallAnalyticsCategoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl CreateCallAnalyticsCategoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl CreateCallAnalyticsCategoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError>,
     > {
         self.send_middleware().await
     }
@@ -119,27 +110,19 @@ impl CreateCallAnalyticsCategoryFluentBuilder {
             crate::operation::create_call_analytics_category::CreateCallAnalyticsCategory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use <code>sentiment-positive-last30seconds</code> for a category over a generic name like <code>test-category</code>.</p>
     /// <p>Category names are case sensitive.</p>
-    pub fn category_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn category_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.category_name(input.into());
         self
     }
     /// <p>A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use <code>sentiment-positive-last30seconds</code> for a category over a generic name like <code>test-category</code>.</p>
     /// <p>Category names are case sensitive.</p>
-    pub fn set_category_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_category_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_category_name(input);
         self
     }
@@ -158,10 +141,7 @@ impl CreateCallAnalyticsCategoryFluentBuilder {
         self
     }
     /// <p>Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }

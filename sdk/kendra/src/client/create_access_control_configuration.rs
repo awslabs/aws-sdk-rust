@@ -12,7 +12,9 @@ impl super::Client {
     /// - On success, responds with [`CreateAccessControlConfigurationOutput`](crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput::id): <p>The identifier of the access control configuration for your documents in an index.</p>
     /// - On failure, responds with [`SdkError<CreateAccessControlConfigurationError>`](crate::operation::create_access_control_configuration::CreateAccessControlConfigurationError)
-    pub fn create_access_control_configuration(&self) -> crate::operation::create_access_control_configuration::builders::CreateAccessControlConfigurationFluentBuilder{
+    pub fn create_access_control_configuration(
+        &self,
+    ) -> crate::operation::create_access_control_configuration::builders::CreateAccessControlConfigurationFluentBuilder {
         crate::operation::create_access_control_configuration::builders::CreateAccessControlConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

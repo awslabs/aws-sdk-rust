@@ -13,9 +13,7 @@ pub struct ClientCertificateRevocationListStatus {
 }
 impl ClientCertificateRevocationListStatus {
     /// <p>The state of the client certificate revocation list.</p>
-    pub fn code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClientCertificateRevocationListStatusCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::ClientCertificateRevocationListStatusCode> {
         self.code.as_ref()
     }
     /// <p>A message about the status of the client certificate revocation list, if applicable.</p>
@@ -32,9 +30,7 @@ impl ClientCertificateRevocationListStatus {
 
 /// A builder for [`ClientCertificateRevocationListStatus`](crate::types::ClientCertificateRevocationListStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClientCertificateRevocationListStatusBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ClientCertificateRevocationListStatusCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -46,17 +42,12 @@ impl ClientCertificateRevocationListStatusBuilder {
         self
     }
     /// <p>The state of the client certificate revocation list.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientCertificateRevocationListStatusCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::ClientCertificateRevocationListStatusCode>) -> Self {
         self.code = input;
         self
     }
     /// <p>The state of the client certificate revocation list.</p>
-    pub fn get_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientCertificateRevocationListStatusCode> {
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::ClientCertificateRevocationListStatusCode> {
         &self.code
     }
     /// <p>A message about the status of the client certificate revocation list, if applicable.</p>

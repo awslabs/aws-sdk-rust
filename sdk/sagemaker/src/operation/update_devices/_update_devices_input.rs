@@ -29,27 +29,19 @@ impl UpdateDevicesInput {
 
 /// A builder for [`UpdateDevicesInput`](crate::operation::update_devices::UpdateDevicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDevicesInputBuilder {
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
 }
 impl UpdateDevicesInputBuilder {
     /// <p>The name of the fleet the devices belong to.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the fleet the devices belong to.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_name = input;
         self
     }
@@ -69,10 +61,7 @@ impl UpdateDevicesInputBuilder {
         self
     }
     /// <p>List of devices to register with Edge Manager agent.</p>
-    pub fn set_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
-    ) -> Self {
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>) -> Self {
         self.devices = input;
         self
     }
@@ -83,10 +72,7 @@ impl UpdateDevicesInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDevicesInput`](crate::operation::update_devices::UpdateDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_devices::UpdateDevicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_devices::UpdateDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_devices::UpdateDevicesInput {
             device_fleet_name: self.device_fleet_name,
             devices: self.devices,

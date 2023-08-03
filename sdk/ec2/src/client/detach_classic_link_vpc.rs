@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DetachClassicLinkVpcOutput`](crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<DetachClassicLinkVpcError>`](crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcError)
-    pub fn detach_classic_link_vpc(
-        &self,
-    ) -> crate::operation::detach_classic_link_vpc::builders::DetachClassicLinkVpcFluentBuilder
-    {
-        crate::operation::detach_classic_link_vpc::builders::DetachClassicLinkVpcFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detach_classic_link_vpc(&self) -> crate::operation::detach_classic_link_vpc::builders::DetachClassicLinkVpcFluentBuilder {
+        crate::operation::detach_classic_link_vpc::builders::DetachClassicLinkVpcFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DisablePolicyTypeOutput {
 }
 impl DisablePolicyTypeOutput {
     /// Creates a new builder-style object to manufacture [`DisablePolicyTypeOutput`](crate::operation::disable_policy_type::DisablePolicyTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::disable_policy_type::builders::DisablePolicyTypeOutputBuilder {
+    pub fn builder() -> crate::operation::disable_policy_type::builders::DisablePolicyTypeOutputBuilder {
         crate::operation::disable_policy_type::builders::DisablePolicyTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisablePolicyTypeOutput`](crate::operation::disable_policy_type::DisablePolicyTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisablePolicyTypeOutputBuilder {
     pub(crate) root: ::std::option::Option<crate::types::Root>,
     _request_id: Option<String>,

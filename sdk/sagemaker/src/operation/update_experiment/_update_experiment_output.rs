@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for UpdateExperimentOutput {
 }
 impl UpdateExperimentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateExperimentOutput`](crate::operation::update_experiment::UpdateExperimentOutput).
-    pub fn builder() -> crate::operation::update_experiment::builders::UpdateExperimentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_experiment::builders::UpdateExperimentOutputBuilder {
         crate::operation::update_experiment::builders::UpdateExperimentOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateExperimentOutput`](crate::operation::update_experiment::UpdateExperimentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateExperimentOutputBuilder {
     pub(crate) experiment_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateExperimentOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
-    pub fn experiment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
-    pub fn set_experiment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_experiment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment_arn = input;
         self
     }

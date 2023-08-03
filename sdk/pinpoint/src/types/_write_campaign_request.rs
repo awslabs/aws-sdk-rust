@@ -6,12 +6,10 @@
 pub struct WriteCampaignRequest {
     /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
     #[doc(hidden)]
-    pub additional_treatments:
-        ::std::option::Option<::std::vec::Vec<crate::types::WriteTreatmentResource>>,
+    pub additional_treatments: ::std::option::Option<::std::vec::Vec<crate::types::WriteTreatmentResource>>,
     /// <p>The delivery configuration settings for sending the campaign through a custom channel. This object is required if the MessageConfiguration object for the campaign specifies a CustomMessage object.</p>
     #[doc(hidden)]
-    pub custom_delivery_configuration:
-        ::std::option::Option<crate::types::CustomDeliveryConfiguration>,
+    pub custom_delivery_configuration: ::std::option::Option<crate::types::CustomDeliveryConfiguration>,
     /// <p>A custom description of the campaign.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
@@ -47,9 +45,7 @@ pub struct WriteCampaignRequest {
     /// </note>
     /// <p>(Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The message template to use for the campaign.</p>
     #[doc(hidden)]
     pub template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
@@ -65,15 +61,11 @@ pub struct WriteCampaignRequest {
 }
 impl WriteCampaignRequest {
     /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
-    pub fn additional_treatments(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WriteTreatmentResource]> {
+    pub fn additional_treatments(&self) -> ::std::option::Option<&[crate::types::WriteTreatmentResource]> {
         self.additional_treatments.as_deref()
     }
     /// <p>The delivery configuration settings for sending the campaign through a custom channel. This object is required if the MessageConfiguration object for the campaign specifies a CustomMessage object.</p>
-    pub fn custom_delivery_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomDeliveryConfiguration> {
+    pub fn custom_delivery_configuration(&self) -> ::std::option::Option<&crate::types::CustomDeliveryConfiguration> {
         self.custom_delivery_configuration.as_ref()
     }
     /// <p>A custom description of the campaign.</p>
@@ -97,9 +89,7 @@ impl WriteCampaignRequest {
         self.limits.as_ref()
     }
     /// <p>The message configuration settings for the campaign.</p>
-    pub fn message_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MessageConfiguration> {
+    pub fn message_configuration(&self) -> ::std::option::Option<&crate::types::MessageConfiguration> {
         self.message_configuration.as_ref()
     }
     /// <p>A custom name for the campaign.</p>
@@ -122,17 +112,11 @@ impl WriteCampaignRequest {
     /// <p>As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not processed and an error code is not returned. To manage tags we recommend using either <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API Reference for Amazon Pinpoint</i>, <a href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p>
     /// </note>
     /// <p>(Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The message template to use for the campaign.</p>
-    pub fn template_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TemplateConfiguration> {
+    pub fn template_configuration(&self) -> ::std::option::Option<&crate::types::TemplateConfiguration> {
         self.template_configuration.as_ref()
     }
     /// <p>A custom description of the default treatment for the campaign.</p>
@@ -157,14 +141,10 @@ impl WriteCampaignRequest {
 
 /// A builder for [`WriteCampaignRequest`](crate::types::WriteCampaignRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WriteCampaignRequestBuilder {
-    pub(crate) additional_treatments:
-        ::std::option::Option<::std::vec::Vec<crate::types::WriteTreatmentResource>>,
-    pub(crate) custom_delivery_configuration:
-        ::std::option::Option<crate::types::CustomDeliveryConfiguration>,
+    pub(crate) additional_treatments: ::std::option::Option<::std::vec::Vec<crate::types::WriteTreatmentResource>>,
+    pub(crate) custom_delivery_configuration: ::std::option::Option<crate::types::CustomDeliveryConfiguration>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) holdout_percent: ::std::option::Option<i32>,
     pub(crate) hook: ::std::option::Option<crate::types::CampaignHook>,
@@ -175,9 +155,7 @@ pub struct WriteCampaignRequestBuilder {
     pub(crate) schedule: ::std::option::Option<crate::types::Schedule>,
     pub(crate) segment_id: ::std::option::Option<::std::string::String>,
     pub(crate) segment_version: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
     pub(crate) treatment_description: ::std::option::Option<::std::string::String>,
     pub(crate) treatment_name: ::std::option::Option<::std::string::String>,
@@ -196,39 +174,26 @@ impl WriteCampaignRequestBuilder {
         self
     }
     /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
-    pub fn set_additional_treatments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WriteTreatmentResource>>,
-    ) -> Self {
+    pub fn set_additional_treatments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WriteTreatmentResource>>) -> Self {
         self.additional_treatments = input;
         self
     }
     /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
-    pub fn get_additional_treatments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WriteTreatmentResource>> {
+    pub fn get_additional_treatments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WriteTreatmentResource>> {
         &self.additional_treatments
     }
     /// <p>The delivery configuration settings for sending the campaign through a custom channel. This object is required if the MessageConfiguration object for the campaign specifies a CustomMessage object.</p>
-    pub fn custom_delivery_configuration(
-        mut self,
-        input: crate::types::CustomDeliveryConfiguration,
-    ) -> Self {
+    pub fn custom_delivery_configuration(mut self, input: crate::types::CustomDeliveryConfiguration) -> Self {
         self.custom_delivery_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The delivery configuration settings for sending the campaign through a custom channel. This object is required if the MessageConfiguration object for the campaign specifies a CustomMessage object.</p>
-    pub fn set_custom_delivery_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomDeliveryConfiguration>,
-    ) -> Self {
+    pub fn set_custom_delivery_configuration(mut self, input: ::std::option::Option<crate::types::CustomDeliveryConfiguration>) -> Self {
         self.custom_delivery_configuration = input;
         self
     }
     /// <p>The delivery configuration settings for sending the campaign through a custom channel. This object is required if the MessageConfiguration object for the campaign specifies a CustomMessage object.</p>
-    pub fn get_custom_delivery_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomDeliveryConfiguration> {
+    pub fn get_custom_delivery_configuration(&self) -> &::std::option::Option<crate::types::CustomDeliveryConfiguration> {
         &self.custom_delivery_configuration
     }
     /// <p>A custom description of the campaign.</p>
@@ -293,10 +258,7 @@ impl WriteCampaignRequestBuilder {
         self
     }
     /// <p>The messaging limits for the campaign.</p>
-    pub fn set_limits(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignLimits>,
-    ) -> Self {
+    pub fn set_limits(mut self, input: ::std::option::Option<crate::types::CampaignLimits>) -> Self {
         self.limits = input;
         self
     }
@@ -310,17 +272,12 @@ impl WriteCampaignRequestBuilder {
         self
     }
     /// <p>The message configuration settings for the campaign.</p>
-    pub fn set_message_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageConfiguration>,
-    ) -> Self {
+    pub fn set_message_configuration(mut self, input: ::std::option::Option<crate::types::MessageConfiguration>) -> Self {
         self.message_configuration = input;
         self
     }
     /// <p>The message configuration settings for the campaign.</p>
-    pub fn get_message_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MessageConfiguration> {
+    pub fn get_message_configuration(&self) -> &::std::option::Option<crate::types::MessageConfiguration> {
         &self.message_configuration
     }
     /// <p>A custom name for the campaign.</p>
@@ -387,11 +344,7 @@ impl WriteCampaignRequestBuilder {
     /// <p>As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not processed and an error code is not returned. To manage tags we recommend using either <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API Reference for Amazon Pinpoint</i>, <a href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p>
     /// </note>
     /// <p>(Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
@@ -401,12 +354,7 @@ impl WriteCampaignRequestBuilder {
     /// <p>As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not processed and an error code is not returned. To manage tags we recommend using either <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API Reference for Amazon Pinpoint</i>, <a href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p>
     /// </note>
     /// <p>(Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
@@ -414,11 +362,7 @@ impl WriteCampaignRequestBuilder {
     /// <p>As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not processed and an error code is not returned. To manage tags we recommend using either <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API Reference for Amazon Pinpoint</i>, <a href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p>
     /// </note>
     /// <p>(Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The message template to use for the campaign.</p>
@@ -427,32 +371,21 @@ impl WriteCampaignRequestBuilder {
         self
     }
     /// <p>The message template to use for the campaign.</p>
-    pub fn set_template_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateConfiguration>,
-    ) -> Self {
+    pub fn set_template_configuration(mut self, input: ::std::option::Option<crate::types::TemplateConfiguration>) -> Self {
         self.template_configuration = input;
         self
     }
     /// <p>The message template to use for the campaign.</p>
-    pub fn get_template_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemplateConfiguration> {
+    pub fn get_template_configuration(&self) -> &::std::option::Option<crate::types::TemplateConfiguration> {
         &self.template_configuration
     }
     /// <p>A custom description of the default treatment for the campaign.</p>
-    pub fn treatment_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn treatment_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.treatment_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A custom description of the default treatment for the campaign.</p>
-    pub fn set_treatment_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_treatment_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.treatment_description = input;
         self
     }
@@ -461,18 +394,12 @@ impl WriteCampaignRequestBuilder {
         &self.treatment_description
     }
     /// <p>A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A <i>treatment</i> is a variation of a campaign that's used for A/B testing.</p>
-    pub fn treatment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn treatment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.treatment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A <i>treatment</i> is a variation of a campaign that's used for A/B testing.</p>
-    pub fn set_treatment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_treatment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.treatment_name = input;
         self
     }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for BatchSuspendUserOutput {
 }
 impl BatchSuspendUserOutput {
     /// Creates a new builder-style object to manufacture [`BatchSuspendUserOutput`](crate::operation::batch_suspend_user::BatchSuspendUserOutput).
-    pub fn builder() -> crate::operation::batch_suspend_user::builders::BatchSuspendUserOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_suspend_user::builders::BatchSuspendUserOutputBuilder {
         crate::operation::batch_suspend_user::builders::BatchSuspendUserOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchSuspendUserOutput`](crate::operation::batch_suspend_user::BatchSuspendUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchSuspendUserOutputBuilder {
     pub(crate) user_errors: ::std::option::Option<::std::vec::Vec<crate::types::UserError>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl BatchSuspendUserOutputBuilder {
         self
     }
     /// <p>If the <code>BatchSuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
-    pub fn set_user_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserError>>,
-    ) -> Self {
+    pub fn set_user_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserError>>) -> Self {
         self.user_errors = input;
         self
     }
     /// <p>If the <code>BatchSuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
-    pub fn get_user_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserError>> {
+    pub fn get_user_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserError>> {
         &self.user_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

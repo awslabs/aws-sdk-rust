@@ -67,18 +67,14 @@ impl GetDimensionKeyDetailsInput {
 }
 impl GetDimensionKeyDetailsInput {
     /// Creates a new builder-style object to manufacture [`GetDimensionKeyDetailsInput`](crate::operation::get_dimension_key_details::GetDimensionKeyDetailsInput).
-    pub fn builder(
-    ) -> crate::operation::get_dimension_key_details::builders::GetDimensionKeyDetailsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_dimension_key_details::builders::GetDimensionKeyDetailsInputBuilder {
         crate::operation::get_dimension_key_details::builders::GetDimensionKeyDetailsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDimensionKeyDetailsInput`](crate::operation::get_dimension_key_details::GetDimensionKeyDetailsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDimensionKeyDetailsInputBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::ServiceType>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
@@ -93,10 +89,7 @@ impl GetDimensionKeyDetailsInputBuilder {
         self
     }
     /// <p>The Amazon Web Services service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
-    pub fn set_service_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceType>,
-    ) -> Self {
+    pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.service_type = input;
         self
     }
@@ -149,10 +142,7 @@ impl GetDimensionKeyDetailsInputBuilder {
     /// <li> <p> <code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li>
     /// <li> <p> <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p> </li>
     /// </ul>
-    pub fn group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -161,10 +151,7 @@ impl GetDimensionKeyDetailsInputBuilder {
     /// <li> <p> <code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li>
     /// <li> <p> <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p> </li>
     /// </ul>
-    pub fn set_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_identifier = input;
         self
     }
@@ -185,10 +172,7 @@ impl GetDimensionKeyDetailsInputBuilder {
     /// <li> <p> <code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p> </li>
     /// <li> <p> <code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p> </li>
     /// </ul>
-    pub fn requested_dimensions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requested_dimensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.requested_dimensions.unwrap_or_default();
         v.push(input.into());
         self.requested_dimensions = ::std::option::Option::Some(v);
@@ -199,10 +183,7 @@ impl GetDimensionKeyDetailsInputBuilder {
     /// <li> <p> <code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p> </li>
     /// <li> <p> <code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p> </li>
     /// </ul>
-    pub fn set_requested_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_requested_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.requested_dimensions = input;
         self
     }
@@ -211,9 +192,7 @@ impl GetDimensionKeyDetailsInputBuilder {
     /// <li> <p> <code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p> </li>
     /// <li> <p> <code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p> </li>
     /// </ul>
-    pub fn get_requested_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_requested_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.requested_dimensions
     }
     /// Consumes the builder and constructs a [`GetDimensionKeyDetailsInput`](crate::operation::get_dimension_key_details::GetDimensionKeyDetailsInput).
@@ -223,14 +202,12 @@ impl GetDimensionKeyDetailsInputBuilder {
         crate::operation::get_dimension_key_details::GetDimensionKeyDetailsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_dimension_key_details::GetDimensionKeyDetailsInput {
-                service_type: self.service_type,
-                identifier: self.identifier,
-                group: self.group,
-                group_identifier: self.group_identifier,
-                requested_dimensions: self.requested_dimensions,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_dimension_key_details::GetDimensionKeyDetailsInput {
+            service_type: self.service_type,
+            identifier: self.identifier,
+            group: self.group,
+            group_identifier: self.group_identifier,
+            requested_dimensions: self.requested_dimensions,
+        })
     }
 }

@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PageBasedErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -70,12 +64,8 @@ impl ::std::convert::From<&str> for PageBasedErrorCode {
             "PAGE_CHARACTERS_EXCEEDED" => PageBasedErrorCode::PageCharactersExceeded,
             "PAGE_SIZE_EXCEEDED" => PageBasedErrorCode::PageSizeExceeded,
             "TEXTRACT_BAD_PAGE" => PageBasedErrorCode::TextractBadPage,
-            "TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED" => {
-                PageBasedErrorCode::TextractProvisionedThroughputExceeded
-            }
-            other => PageBasedErrorCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED" => PageBasedErrorCode::TextractProvisionedThroughputExceeded,
+            other => PageBasedErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -94,9 +84,7 @@ impl PageBasedErrorCode {
             PageBasedErrorCode::PageCharactersExceeded => "PAGE_CHARACTERS_EXCEEDED",
             PageBasedErrorCode::PageSizeExceeded => "PAGE_SIZE_EXCEEDED",
             PageBasedErrorCode::TextractBadPage => "TEXTRACT_BAD_PAGE",
-            PageBasedErrorCode::TextractProvisionedThroughputExceeded => {
-                "TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED"
-            }
+            PageBasedErrorCode::TextractProvisionedThroughputExceeded => "TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED",
             PageBasedErrorCode::Unknown(value) => value.as_str(),
         }
     }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteSubnetGroupOutput {
 }
 impl DeleteSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSubnetGroupOutput`](crate::operation::delete_subnet_group::DeleteSubnetGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_subnet_group::builders::DeleteSubnetGroupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_subnet_group::builders::DeleteSubnetGroupOutputBuilder {
         crate::operation::delete_subnet_group::builders::DeleteSubnetGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSubnetGroupOutput`](crate::operation::delete_subnet_group::DeleteSubnetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSubnetGroupOutputBuilder {
     pub(crate) subnet_group: ::std::option::Option<crate::types::SubnetGroup>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteSubnetGroupOutputBuilder {
         self
     }
     /// <p>The subnet group object that has been deleted.</p>
-    pub fn set_subnet_group(
-        mut self,
-        input: ::std::option::Option<crate::types::SubnetGroup>,
-    ) -> Self {
+    pub fn set_subnet_group(mut self, input: ::std::option::Option<crate::types::SubnetGroup>) -> Self {
         self.subnet_group = input;
         self
     }

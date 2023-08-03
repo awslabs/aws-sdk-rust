@@ -35,12 +35,9 @@ impl ListEntitiesOutput {
 
 /// A builder for [`ListEntitiesOutput`](crate::operation::list_entities::ListEntitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEntitiesOutputBuilder {
-    pub(crate) entity_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntitySummary>>,
+    pub(crate) entity_summaries: ::std::option::Option<::std::vec::Vec<crate::types::EntitySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListEntitiesOutputBuilder {
         self
     }
     /// <p>A list of objects that contain information about the entities.</p>
-    pub fn set_entity_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntitySummary>>,
-    ) -> Self {
+    pub fn set_entity_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntitySummary>>) -> Self {
         self.entity_summaries = input;
         self
     }
     /// <p>A list of objects that contain information about the entities.</p>
-    pub fn get_entity_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitySummary>> {
+    pub fn get_entity_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitySummary>> {
         &self.entity_summaries
     }
     /// <p>The string that specifies the next page of results.</p>

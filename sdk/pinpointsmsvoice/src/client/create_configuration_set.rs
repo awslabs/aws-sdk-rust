@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`configuration_set_name(impl ::std::convert::Into<String>)`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::set_configuration_set_name): The name that you want to give the configuration set.
     /// - On success, responds with [`CreateConfigurationSetOutput`](crate::operation::create_configuration_set::CreateConfigurationSetOutput)
     /// - On failure, responds with [`SdkError<CreateConfigurationSetError>`](crate::operation::create_configuration_set::CreateConfigurationSetError)
-    pub fn create_configuration_set(
-        &self,
-    ) -> crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder
-    {
+    pub fn create_configuration_set(&self) -> crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder {
         crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::new(self.handle.clone())
     }
 }

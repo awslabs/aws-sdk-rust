@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`image_versions(Option<Vec<ImageVersion>>)`](crate::operation::list_image_versions::ListImageVersionsOutput::image_versions): <p>A list of versions and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_image_versions::ListImageVersionsOutput::next_token): <p>A token for getting the next set of versions, if there are any.</p>
     /// - On failure, responds with [`SdkError<ListImageVersionsError>`](crate::operation::list_image_versions::ListImageVersionsError)
-    pub fn list_image_versions(
-        &self,
-    ) -> crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder {
-        crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_image_versions(&self) -> crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder {
+        crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder::new(self.handle.clone())
     }
 }

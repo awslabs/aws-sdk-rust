@@ -33,9 +33,7 @@ impl MovingAddressStatus {
 
 /// A builder for [`MovingAddressStatus`](crate::types::MovingAddressStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MovingAddressStatusBuilder {
     pub(crate) move_status: ::std::option::Option<crate::types::MoveStatus>,
     pub(crate) public_ip: ::std::option::Option<::std::string::String>,
@@ -47,10 +45,7 @@ impl MovingAddressStatusBuilder {
         self
     }
     /// <p>The status of the Elastic IP address that's being moved or restored.</p>
-    pub fn set_move_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MoveStatus>,
-    ) -> Self {
+    pub fn set_move_status(mut self, input: ::std::option::Option<crate::types::MoveStatus>) -> Self {
         self.move_status = input;
         self
     }

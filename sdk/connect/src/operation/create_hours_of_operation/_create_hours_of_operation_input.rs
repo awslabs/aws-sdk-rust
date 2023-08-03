@@ -20,9 +20,7 @@ pub struct CreateHoursOfOperationInput {
     pub config: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateHoursOfOperationInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -46,37 +44,27 @@ impl CreateHoursOfOperationInput {
         self.config.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateHoursOfOperationInput {
     /// Creates a new builder-style object to manufacture [`CreateHoursOfOperationInput`](crate::operation::create_hours_of_operation::CreateHoursOfOperationInput).
-    pub fn builder(
-    ) -> crate::operation::create_hours_of_operation::builders::CreateHoursOfOperationInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_hours_of_operation::builders::CreateHoursOfOperationInputBuilder {
         crate::operation::create_hours_of_operation::builders::CreateHoursOfOperationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateHoursOfOperationInput`](crate::operation::create_hours_of_operation::CreateHoursOfOperationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHoursOfOperationInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) time_zone: ::std::option::Option<::std::string::String>,
     pub(crate) config: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateHoursOfOperationInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -147,17 +135,12 @@ impl CreateHoursOfOperationInputBuilder {
         self
     }
     /// <p>Configuration information for the hours of operation: day, start time, and end time.</p>
-    pub fn set_config(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>>,
-    ) -> Self {
+    pub fn set_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>>) -> Self {
         self.config = input;
         self
     }
     /// <p>Configuration information for the hours of operation: day, start time, and end time.</p>
-    pub fn get_config(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>> {
+    pub fn get_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>> {
         &self.config
     }
     /// Adds a key-value pair to `tags`.
@@ -165,32 +148,19 @@ impl CreateHoursOfOperationInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateHoursOfOperationInput`](crate::operation::create_hours_of_operation::CreateHoursOfOperationInput).
@@ -200,15 +170,13 @@ impl CreateHoursOfOperationInputBuilder {
         crate::operation::create_hours_of_operation::CreateHoursOfOperationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_hours_of_operation::CreateHoursOfOperationInput {
-                instance_id: self.instance_id,
-                name: self.name,
-                description: self.description,
-                time_zone: self.time_zone,
-                config: self.config,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_hours_of_operation::CreateHoursOfOperationInput {
+            instance_id: self.instance_id,
+            name: self.name,
+            description: self.description,
+            time_zone: self.time_zone,
+            config: self.config,
+            tags: self.tags,
+        })
     }
 }

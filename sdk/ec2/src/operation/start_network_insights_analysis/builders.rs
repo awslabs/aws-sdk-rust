@@ -26,7 +26,7 @@ impl StartNetworkInsightsAnalysisInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartNetworkInsightsAnalysisFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisInputBuilder,
+    inner: crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisInputBuilder,
 }
 impl StartNetworkInsightsAnalysisFluentBuilder {
     /// Creates a new `StartNetworkInsightsAnalysis`.
@@ -37,7 +37,7 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
         }
     }
     /// Access the StartNetworkInsightsAnalysis as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
             crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
             crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the path.</p>
-    pub fn network_insights_path_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_path_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_insights_path_id(input.into());
         self
     }
     /// <p>The ID of the path.</p>
-    pub fn set_network_insights_path_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_insights_path_id(input);
         self
     }
@@ -145,25 +128,17 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
     /// To override the contents of this collection use [`set_additional_accounts`](Self::set_additional_accounts).
     ///
     /// <p>The member accounts that contain resources that the path can traverse.</p>
-    pub fn additional_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.additional_accounts(input.into());
         self
     }
     /// <p>The member accounts that contain resources that the path can traverse.</p>
-    pub fn set_additional_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_additional_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_additional_accounts(input);
         self
     }
     /// <p>The member accounts that contain resources that the path can traverse.</p>
-    pub fn get_additional_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_additional_accounts()
     }
     /// Appends an item to `FilterInArns`.
@@ -171,25 +146,17 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
     /// To override the contents of this collection use [`set_filter_in_arns`](Self::set_filter_in_arns).
     ///
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
-    pub fn filter_in_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_in_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_in_arns(input.into());
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
-    pub fn set_filter_in_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_filter_in_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_filter_in_arns(input);
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
-    pub fn get_filter_in_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_in_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_filter_in_arns()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -216,17 +183,12 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
         self
     }
     /// <p>The tags to apply.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>

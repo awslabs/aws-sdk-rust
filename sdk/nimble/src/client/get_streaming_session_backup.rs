@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetStreamingSessionBackupOutput`](crate::operation::get_streaming_session_backup::GetStreamingSessionBackupOutput) with field(s):
     ///   - [`streaming_session_backup(Option<StreamingSessionBackup>)`](crate::operation::get_streaming_session_backup::GetStreamingSessionBackupOutput::streaming_session_backup): <p>Information about the streaming session backup.</p>
     /// - On failure, responds with [`SdkError<GetStreamingSessionBackupError>`](crate::operation::get_streaming_session_backup::GetStreamingSessionBackupError)
-    pub fn get_streaming_session_backup(&self) -> crate::operation::get_streaming_session_backup::builders::GetStreamingSessionBackupFluentBuilder{
+    pub fn get_streaming_session_backup(&self) -> crate::operation::get_streaming_session_backup::builders::GetStreamingSessionBackupFluentBuilder {
         crate::operation::get_streaming_session_backup::builders::GetStreamingSessionBackupFluentBuilder::new(self.handle.clone())
     }
 }

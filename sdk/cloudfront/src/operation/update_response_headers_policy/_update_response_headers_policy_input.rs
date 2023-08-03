@@ -5,8 +5,7 @@
 pub struct UpdateResponseHeadersPolicyInput {
     /// <p>A response headers policy configuration.</p>
     #[doc(hidden)]
-    pub response_headers_policy_config:
-        ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>,
+    pub response_headers_policy_config: ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>,
     /// <p>The identifier for the response headers policy that you are updating.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -17,9 +16,7 @@ pub struct UpdateResponseHeadersPolicyInput {
 }
 impl UpdateResponseHeadersPolicyInput {
     /// <p>A response headers policy configuration.</p>
-    pub fn response_headers_policy_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyConfig> {
+    pub fn response_headers_policy_config(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyConfig> {
         self.response_headers_policy_config.as_ref()
     }
     /// <p>The identifier for the response headers policy that you are updating.</p>
@@ -34,43 +31,32 @@ impl UpdateResponseHeadersPolicyInput {
 }
 impl UpdateResponseHeadersPolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdateResponseHeadersPolicyInput`](crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyInput).
-    pub fn builder() -> crate::operation::update_response_headers_policy::builders::UpdateResponseHeadersPolicyInputBuilder{
+    pub fn builder() -> crate::operation::update_response_headers_policy::builders::UpdateResponseHeadersPolicyInputBuilder {
         crate::operation::update_response_headers_policy::builders::UpdateResponseHeadersPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResponseHeadersPolicyInput`](crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResponseHeadersPolicyInputBuilder {
-    pub(crate) response_headers_policy_config:
-        ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>,
+    pub(crate) response_headers_policy_config: ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateResponseHeadersPolicyInputBuilder {
     /// <p>A response headers policy configuration.</p>
-    pub fn response_headers_policy_config(
-        mut self,
-        input: crate::types::ResponseHeadersPolicyConfig,
-    ) -> Self {
+    pub fn response_headers_policy_config(mut self, input: crate::types::ResponseHeadersPolicyConfig) -> Self {
         self.response_headers_policy_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>A response headers policy configuration.</p>
-    pub fn set_response_headers_policy_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>,
-    ) -> Self {
+    pub fn set_response_headers_policy_config(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>) -> Self {
         self.response_headers_policy_config = input;
         self
     }
     /// <p>A response headers policy configuration.</p>
-    pub fn get_response_headers_policy_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyConfig> {
+    pub fn get_response_headers_policy_config(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicyConfig> {
         &self.response_headers_policy_config
     }
     /// <p>The identifier for the response headers policy that you are updating.</p>
@@ -111,12 +97,10 @@ impl UpdateResponseHeadersPolicyInputBuilder {
         crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyInput {
-                response_headers_policy_config: self.response_headers_policy_config,
-                id: self.id,
-                if_match: self.if_match,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyInput {
+            response_headers_policy_config: self.response_headers_policy_config,
+            id: self.id,
+            if_match: self.if_match,
+        })
     }
 }

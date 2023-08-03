@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`environments(Option<Vec<String>>)`](crate::operation::list_environments::ListEnvironmentsOutput::environments): <p>Returns a list of Amazon MWAA environments.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_environments::ListEnvironmentsOutput::next_token): <p>Retrieves the next page of the results.</p>
     /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::operation::list_environments::ListEnvironmentsError)
-    pub fn list_environments(
-        &self,
-    ) -> crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder {
-        crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_environments(&self) -> crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder {
+        crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,9 +28,7 @@ impl GetContactOutput {
 
 /// A builder for [`GetContactOutput`](crate::operation::get_contact::GetContactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContactOutputBuilder {
     pub(crate) contact: ::std::option::Option<crate::types::Contact>,
     _request_id: Option<String>,

@@ -29,16 +29,14 @@ impl DisassociateQualificationFromWorkerInput {
 }
 impl DisassociateQualificationFromWorkerInput {
     /// Creates a new builder-style object to manufacture [`DisassociateQualificationFromWorkerInput`](crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput).
-    pub fn builder() -> crate::operation::disassociate_qualification_from_worker::builders::DisassociateQualificationFromWorkerInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_qualification_from_worker::builders::DisassociateQualificationFromWorkerInputBuilder {
         crate::operation::disassociate_qualification_from_worker::builders::DisassociateQualificationFromWorkerInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateQualificationFromWorkerInput`](crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateQualificationFromWorkerInputBuilder {
     pub(crate) worker_id: ::std::option::Option<::std::string::String>,
     pub(crate) qualification_type_id: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl DisassociateQualificationFromWorkerInputBuilder {
         &self.worker_id
     }
     /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
-    pub fn qualification_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qualification_type_id = input;
         self
     }
@@ -94,16 +86,18 @@ impl DisassociateQualificationFromWorkerInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`DisassociateQualificationFromWorkerInput`](crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput {
-                worker_id: self.worker_id
-                ,
-                qualification_type_id: self.qualification_type_id
-                ,
-                reason: self.reason
-                ,
-            }
+                worker_id: self.worker_id,
+                qualification_type_id: self.qualification_type_id,
+                reason: self.reason,
+            },
         )
     }
 }

@@ -15,9 +15,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, Option<String>>>)`](crate::operation::get_template::GetTemplateOutput::tags): <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     ///   - [`status(Option<TemplateStatus>)`](crate::operation::get_template::GetTemplateOutput::status): <p>The status of the template.</p>
     /// - On failure, responds with [`SdkError<GetTemplateError>`](crate::operation::get_template::GetTemplateError)
-    pub fn get_template(
-        &self,
-    ) -> crate::operation::get_template::builders::GetTemplateFluentBuilder {
+    pub fn get_template(&self) -> crate::operation::get_template::builders::GetTemplateFluentBuilder {
         crate::operation::get_template::builders::GetTemplateFluentBuilder::new(self.handle.clone())
     }
 }

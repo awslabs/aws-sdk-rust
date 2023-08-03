@@ -31,9 +31,7 @@ impl CustomLogSourceCrawlerConfiguration {
 
 /// A builder for [`CustomLogSourceCrawlerConfiguration`](crate::types::CustomLogSourceCrawlerConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomLogSourceCrawlerConfigurationBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
@@ -66,8 +64,6 @@ impl CustomLogSourceCrawlerConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`CustomLogSourceCrawlerConfiguration`](crate::types::CustomLogSourceCrawlerConfiguration).
     pub fn build(self) -> crate::types::CustomLogSourceCrawlerConfiguration {
-        crate::types::CustomLogSourceCrawlerConfiguration {
-            role_arn: self.role_arn,
-        }
+        crate::types::CustomLogSourceCrawlerConfiguration { role_arn: self.role_arn }
     }
 }

@@ -23,9 +23,7 @@ impl ApplicationSnapshotConfigurationUpdate {
 
 /// A builder for [`ApplicationSnapshotConfigurationUpdate`](crate::types::ApplicationSnapshotConfigurationUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationSnapshotConfigurationUpdateBuilder {
     pub(crate) snapshots_enabled_update: ::std::option::Option<bool>,
 }

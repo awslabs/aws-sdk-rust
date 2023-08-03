@@ -10,10 +10,7 @@ impl CreateTapePoolInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_tape_pool::CreateTapePoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_tape_pool::CreateTapePoolError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_tape_pool::CreateTapePoolError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_tape_pool();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateTapePoolFluentBuilder {
         }
     }
     /// Access the CreateTapePool as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_tape_pool::builders::CreateTapePoolInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_tape_pool::builders::CreateTapePoolInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateTapePoolFluentBuilder {
             crate::operation::create_tape_pool::CreateTapePool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_tape_pool::CreateTapePoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_tape_pool::CreateTapePoolError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateTapePoolFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateTapePoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_tape_pool::CreateTapePoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_tape_pool::CreateTapePoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_tape_pool::CreateTapePoolError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateTapePoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_tape_pool::CreateTapePoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_tape_pool::CreateTapePoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_tape_pool::CreateTapePoolError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateTapePoolFluentBuilder {
             crate::operation::create_tape_pool::CreateTapePool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_tape_pool::CreateTapePoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_tape_pool::CreateTapePoolError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl CreateTapePoolFluentBuilder {
         self
     }
     /// <p>The storage class that is associated with the new custom pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    pub fn set_storage_class(
-        mut self,
-        input: ::std::option::Option<crate::types::TapeStorageClass>,
-    ) -> Self {
+    pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::TapeStorageClass>) -> Self {
         self.inner = self.inner.set_storage_class(input);
         self
     }
@@ -159,17 +140,12 @@ impl CreateTapePoolFluentBuilder {
         self
     }
     /// <p>Tape retention lock can be configured in two modes. When configured in governance mode, Amazon Web Services accounts with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user, including the root Amazon Web Services account.</p>
-    pub fn set_retention_lock_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionLockType>,
-    ) -> Self {
+    pub fn set_retention_lock_type(mut self, input: ::std::option::Option<crate::types::RetentionLockType>) -> Self {
         self.inner = self.inner.set_retention_lock_type(input);
         self
     }
     /// <p>Tape retention lock can be configured in two modes. When configured in governance mode, Amazon Web Services accounts with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user, including the root Amazon Web Services account.</p>
-    pub fn get_retention_lock_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::RetentionLockType> {
+    pub fn get_retention_lock_type(&self) -> &::std::option::Option<crate::types::RetentionLockType> {
         self.inner.get_retention_lock_type()
     }
     /// <p>Tape retention lock time is set in days. Tape retention lock can be enabled for up to 100 years (36,500 days).</p>
@@ -200,10 +176,7 @@ impl CreateTapePoolFluentBuilder {
     /// <p>A list of up to 50 tags that can be assigned to tape pool. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

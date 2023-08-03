@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`config_rule_names(Vec<String>)`](crate::operation::start_config_rules_evaluation::builders::StartConfigRulesEvaluationFluentBuilder::config_rule_names) / [`set_config_rule_names(Option<Vec<String>>)`](crate::operation::start_config_rules_evaluation::builders::StartConfigRulesEvaluationFluentBuilder::set_config_rule_names): <p>The list of names of Config rules that you want to run evaluations for.</p>
     /// - On success, responds with [`StartConfigRulesEvaluationOutput`](crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationOutput)
     /// - On failure, responds with [`SdkError<StartConfigRulesEvaluationError>`](crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError)
-    pub fn start_config_rules_evaluation(&self) -> crate::operation::start_config_rules_evaluation::builders::StartConfigRulesEvaluationFluentBuilder{
+    pub fn start_config_rules_evaluation(
+        &self,
+    ) -> crate::operation::start_config_rules_evaluation::builders::StartConfigRulesEvaluationFluentBuilder {
         crate::operation::start_config_rules_evaluation::builders::StartConfigRulesEvaluationFluentBuilder::new(self.handle.clone())
     }
 }

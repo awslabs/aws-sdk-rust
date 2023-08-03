@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`retention_policy(RetentionPolicy)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::retention_policy) / [`set_retention_policy(Option<RetentionPolicy>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::set_retention_policy): <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
     /// - On success, responds with [`DeleteDomainOutput`](crate::operation::delete_domain::DeleteDomainOutput)
     /// - On failure, responds with [`SdkError<DeleteDomainError>`](crate::operation::delete_domain::DeleteDomainError)
-    pub fn delete_domain(
-        &self,
-    ) -> crate::operation::delete_domain::builders::DeleteDomainFluentBuilder {
-        crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_domain(&self) -> crate::operation::delete_domain::builders::DeleteDomainFluentBuilder {
+        crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::new(self.handle.clone())
     }
 }

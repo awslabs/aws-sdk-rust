@@ -28,9 +28,7 @@ impl DescribeAliasOutput {
 
 /// A builder for [`DescribeAliasOutput`](crate::operation::describe_alias::DescribeAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAliasOutputBuilder {
     pub(crate) alias: ::std::option::Option<crate::types::Alias>,
     _request_id: Option<String>,

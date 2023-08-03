@@ -7,8 +7,7 @@ pub struct ListAssociationsInput {
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
     #[doc(hidden)]
-    pub association_filter_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>>,
+    pub association_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -20,9 +19,7 @@ impl ListAssociationsInput {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
-    pub fn association_filter_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssociationFilter]> {
+    pub fn association_filter_list(&self) -> ::std::option::Option<&[crate::types::AssociationFilter]> {
         self.association_filter_list.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -36,20 +33,16 @@ impl ListAssociationsInput {
 }
 impl ListAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListAssociationsInput`](crate::operation::list_associations::ListAssociationsInput).
-    pub fn builder() -> crate::operation::list_associations::builders::ListAssociationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_associations::builders::ListAssociationsInputBuilder {
         crate::operation::list_associations::builders::ListAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociationsInput`](crate::operation::list_associations::ListAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociationsInputBuilder {
-    pub(crate) association_filter_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>>,
+    pub(crate) association_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -70,19 +63,14 @@ impl ListAssociationsInputBuilder {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
-    pub fn set_association_filter_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>>,
-    ) -> Self {
+    pub fn set_association_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>>) -> Self {
         self.association_filter_list = input;
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
-    pub fn get_association_filter_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>> {
+    pub fn get_association_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationFilter>> {
         &self.association_filter_list
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -116,10 +104,7 @@ impl ListAssociationsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssociationsInput`](crate::operation::list_associations::ListAssociationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_associations::ListAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_associations::ListAssociationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_associations::ListAssociationsInput {
             association_filter_list: self.association_filter_list,
             max_results: self.max_results,

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDeploymentConfigOutput {
 }
 impl DeleteDeploymentConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDeploymentConfigOutput`](crate::operation::delete_deployment_config::DeleteDeploymentConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigOutputBuilder {
         crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDeploymentConfigOutput`](crate::operation::delete_deployment_config::DeleteDeploymentConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDeploymentConfigOutputBuilder {
     _request_id: Option<String>,
 }

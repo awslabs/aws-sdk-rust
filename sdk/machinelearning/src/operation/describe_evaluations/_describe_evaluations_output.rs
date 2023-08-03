@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeEvaluationsOutput {
 }
 impl DescribeEvaluationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEvaluationsOutput`](crate::operation::describe_evaluations::DescribeEvaluationsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_evaluations::builders::DescribeEvaluationsOutputBuilder {
-        crate::operation::describe_evaluations::builders::DescribeEvaluationsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_evaluations::builders::DescribeEvaluationsOutputBuilder {
+        crate::operation::describe_evaluations::builders::DescribeEvaluationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEvaluationsOutput`](crate::operation::describe_evaluations::DescribeEvaluationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEvaluationsOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,10 +55,7 @@ impl DescribeEvaluationsOutputBuilder {
         self
     }
     /// <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>) -> Self {
         self.results = input;
         self
     }

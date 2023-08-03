@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`rule_names(Vec<String>)`](crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetFluentBuilder::rule_names) / [`set_rule_names(Option<Vec<String>>)`](crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetFluentBuilder::set_rule_names): <p>A list of the specified receipt rule set's receipt rules in the order that you want to put them.</p>
     /// - On success, responds with [`ReorderReceiptRuleSetOutput`](crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetOutput)
     /// - On failure, responds with [`SdkError<ReorderReceiptRuleSetError>`](crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetError)
-    pub fn reorder_receipt_rule_set(
-        &self,
-    ) -> crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetFluentBuilder
-    {
+    pub fn reorder_receipt_rule_set(&self) -> crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetFluentBuilder {
         crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetFluentBuilder::new(self.handle.clone())
     }
 }

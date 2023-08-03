@@ -44,9 +44,7 @@ impl CommitTransactionResult {
 
 /// A builder for [`CommitTransactionResult`](crate::types::CommitTransactionResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommitTransactionResultBuilder {
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) commit_digest: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -55,18 +53,12 @@ pub struct CommitTransactionResultBuilder {
 }
 impl CommitTransactionResultBuilder {
     /// <p>The transaction ID of the committed transaction.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transaction ID of the committed transaction.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }
@@ -80,10 +72,7 @@ impl CommitTransactionResultBuilder {
         self
     }
     /// <p>The commit digest of the committed transaction.</p>
-    pub fn set_commit_digest(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_commit_digest(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.commit_digest = input;
         self
     }
@@ -97,17 +86,12 @@ impl CommitTransactionResultBuilder {
         self
     }
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn set_timing_information(
-        mut self,
-        input: ::std::option::Option<crate::types::TimingInformation>,
-    ) -> Self {
+    pub fn set_timing_information(mut self, input: ::std::option::Option<crate::types::TimingInformation>) -> Self {
         self.timing_information = input;
         self
     }
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn get_timing_information(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimingInformation> {
+    pub fn get_timing_information(&self) -> &::std::option::Option<crate::types::TimingInformation> {
         &self.timing_information
     }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
@@ -116,10 +100,7 @@ impl CommitTransactionResultBuilder {
         self
     }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-    pub fn set_consumed_i_os(
-        mut self,
-        input: ::std::option::Option<crate::types::IoUsage>,
-    ) -> Self {
+    pub fn set_consumed_i_os(mut self, input: ::std::option::Option<crate::types::IoUsage>) -> Self {
         self.consumed_i_os = input;
         self
     }

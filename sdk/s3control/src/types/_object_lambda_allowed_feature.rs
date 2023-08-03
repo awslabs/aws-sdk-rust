@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ObjectLambdaAllowedFeature {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ObjectLambdaAllowedFeature {
             "GetObject-Range" => ObjectLambdaAllowedFeature::GetObjectRange,
             "HeadObject-PartNumber" => ObjectLambdaAllowedFeature::HeadObjectPartNumber,
             "HeadObject-Range" => ObjectLambdaAllowedFeature::HeadObjectRange,
-            other => ObjectLambdaAllowedFeature::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ObjectLambdaAllowedFeature::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl ObjectLambdaAllowedFeature {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "GetObject-PartNumber",
-            "GetObject-Range",
-            "HeadObject-PartNumber",
-            "HeadObject-Range",
-        ]
+        &["GetObject-PartNumber", "GetObject-Range", "HeadObject-PartNumber", "HeadObject-Range"]
     }
 }
 impl ::std::convert::AsRef<str> for ObjectLambdaAllowedFeature {

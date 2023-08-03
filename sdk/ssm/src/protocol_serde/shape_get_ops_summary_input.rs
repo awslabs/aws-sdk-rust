@@ -24,10 +24,7 @@ pub fn ser_get_ops_summary_input(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_ops_aggregator::ser_ops_aggregator(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_ops_aggregator::ser_ops_aggregator(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }
@@ -39,10 +36,7 @@ pub fn ser_get_ops_summary_input(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_ops_result_attribute::ser_ops_result_attribute(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_ops_result_attribute::ser_ops_result_attribute(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }

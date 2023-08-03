@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetRealtimeLogConfigOutput`](crate::operation::get_realtime_log_config::GetRealtimeLogConfigOutput) with field(s):
     ///   - [`realtime_log_config(Option<RealtimeLogConfig>)`](crate::operation::get_realtime_log_config::GetRealtimeLogConfigOutput::realtime_log_config): <p>A real-time log configuration.</p>
     /// - On failure, responds with [`SdkError<GetRealtimeLogConfigError>`](crate::operation::get_realtime_log_config::GetRealtimeLogConfigError)
-    pub fn get_realtime_log_config(
-        &self,
-    ) -> crate::operation::get_realtime_log_config::builders::GetRealtimeLogConfigFluentBuilder
-    {
-        crate::operation::get_realtime_log_config::builders::GetRealtimeLogConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_realtime_log_config(&self) -> crate::operation::get_realtime_log_config::builders::GetRealtimeLogConfigFluentBuilder {
+        crate::operation::get_realtime_log_config::builders::GetRealtimeLogConfigFluentBuilder::new(self.handle.clone())
     }
 }

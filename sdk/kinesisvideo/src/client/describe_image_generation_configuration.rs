@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`DescribeImageGenerationConfigurationOutput`](crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationOutput) with field(s):
     ///   - [`image_generation_configuration(Option<ImageGenerationConfiguration>)`](crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationOutput::image_generation_configuration): <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
     /// - On failure, responds with [`SdkError<DescribeImageGenerationConfigurationError>`](crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationError)
-    pub fn describe_image_generation_configuration(&self) -> crate::operation::describe_image_generation_configuration::builders::DescribeImageGenerationConfigurationFluentBuilder{
-        crate::operation::describe_image_generation_configuration::builders::DescribeImageGenerationConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn describe_image_generation_configuration(
+        &self,
+    ) -> crate::operation::describe_image_generation_configuration::builders::DescribeImageGenerationConfigurationFluentBuilder {
+        crate::operation::describe_image_generation_configuration::builders::DescribeImageGenerationConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

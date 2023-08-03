@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`origins(Option<Vec<String>>)`](crate::operation::list_approved_origins::ListApprovedOriginsOutput::origins): <p>The approved origins.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_approved_origins::ListApprovedOriginsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListApprovedOriginsError>`](crate::operation::list_approved_origins::ListApprovedOriginsError)
-    pub fn list_approved_origins(
-        &self,
-    ) -> crate::operation::list_approved_origins::builders::ListApprovedOriginsFluentBuilder {
-        crate::operation::list_approved_origins::builders::ListApprovedOriginsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_approved_origins(&self) -> crate::operation::list_approved_origins::builders::ListApprovedOriginsFluentBuilder {
+        crate::operation::list_approved_origins::builders::ListApprovedOriginsFluentBuilder::new(self.handle.clone())
     }
 }

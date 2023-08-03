@@ -33,7 +33,7 @@ impl GetEvidenceFileUploadUrlInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEvidenceFileUploadUrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_evidence_file_upload_url::builders::GetEvidenceFileUploadUrlInputBuilder,
+    inner: crate::operation::get_evidence_file_upload_url::builders::GetEvidenceFileUploadUrlInputBuilder,
 }
 impl GetEvidenceFileUploadUrlFluentBuilder {
     /// Creates a new `GetEvidenceFileUploadUrl`.
@@ -44,7 +44,7 @@ impl GetEvidenceFileUploadUrlFluentBuilder {
         }
     }
     /// Access the GetEvidenceFileUploadUrl as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_evidence_file_upload_url::builders::GetEvidenceFileUploadUrlInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_evidence_file_upload_url::builders::GetEvidenceFileUploadUrlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +56,7 @@ impl GetEvidenceFileUploadUrlFluentBuilder {
             crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +66,7 @@ impl GetEvidenceFileUploadUrlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +75,7 @@ impl GetEvidenceFileUploadUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError>,
     > {
         let op = self
             .inner
@@ -105,9 +98,7 @@ impl GetEvidenceFileUploadUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +112,7 @@ impl GetEvidenceFileUploadUrlFluentBuilder {
             crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError>,
     > {
         self.customize_middleware().await
     }

@@ -37,10 +37,7 @@ impl DeletePrefetchScheduleFluentBuilder {
         }
     }
     /// Access the DeletePrefetchSchedule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_prefetch_schedule::builders::DeletePrefetchScheduleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_prefetch_schedule::builders::DeletePrefetchScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeletePrefetchScheduleFluentBuilder {
             crate::operation::delete_prefetch_schedule::DeletePrefetchSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeletePrefetchScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeletePrefetchScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeletePrefetchScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeletePrefetchScheduleFluentBuilder {
             crate::operation::delete_prefetch_schedule::DeletePrefetchSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DeletePrefetchScheduleFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The name of the playback configuration for this prefetch schedule.</p>
-    pub fn playback_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn playback_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.playback_configuration_name(input.into());
         self
     }
     /// <p>The name of the playback configuration for this prefetch schedule.</p>
-    pub fn set_playback_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_playback_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_playback_configuration_name(input);
         self
     }

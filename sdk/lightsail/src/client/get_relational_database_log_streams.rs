@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetRelationalDatabaseLogStreamsOutput`](crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsOutput) with field(s):
     ///   - [`log_streams(Option<Vec<String>>)`](crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsOutput::log_streams): <p>An object describing the result of your get relational database log streams request.</p>
     /// - On failure, responds with [`SdkError<GetRelationalDatabaseLogStreamsError>`](crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsError)
-    pub fn get_relational_database_log_streams(&self) -> crate::operation::get_relational_database_log_streams::builders::GetRelationalDatabaseLogStreamsFluentBuilder{
+    pub fn get_relational_database_log_streams(
+        &self,
+    ) -> crate::operation::get_relational_database_log_streams::builders::GetRelationalDatabaseLogStreamsFluentBuilder {
         crate::operation::get_relational_database_log_streams::builders::GetRelationalDatabaseLogStreamsFluentBuilder::new(self.handle.clone())
     }
 }

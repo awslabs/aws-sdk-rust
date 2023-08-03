@@ -10,10 +10,7 @@ impl ReplaceVpnTunnelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.replace_vpn_tunnel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ReplaceVpnTunnelFluentBuilder {
         }
     }
     /// Access the ReplaceVpnTunnel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ReplaceVpnTunnelFluentBuilder {
             crate::operation::replace_vpn_tunnel::ReplaceVpnTunnel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ReplaceVpnTunnelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ReplaceVpnTunnelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ReplaceVpnTunnelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl ReplaceVpnTunnelFluentBuilder {
             crate::operation::replace_vpn_tunnel::ReplaceVpnTunnel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn vpn_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpn_connection_id(input.into());
         self
     }
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn set_vpn_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpn_connection_id(input);
         self
     }
@@ -143,25 +121,17 @@ impl ReplaceVpnTunnelFluentBuilder {
         self.inner.get_vpn_connection_id()
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn vpn_tunnel_outside_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_tunnel_outside_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpn_tunnel_outside_ip_address(input.into());
         self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn set_vpn_tunnel_outside_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_tunnel_outside_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpn_tunnel_outside_ip_address(input);
         self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn get_vpn_tunnel_outside_ip_address(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_vpn_tunnel_outside_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpn_tunnel_outside_ip_address()
     }
     /// <p>Trigger pending tunnel endpoint maintenance.</p>

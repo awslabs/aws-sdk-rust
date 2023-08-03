@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteServiceLinkedRoleOutput`](crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput) with field(s):
     ///   - [`deletion_task_id(Option<String>)`](crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput::deletion_task_id): <p>The deletion task identifier that you can use to check the status of the deletion. This identifier is returned in the format <code>task/aws-service-role/   <service-principal-name>    /    <role-name>     /     <task-uuid></task-uuid>    </role-name>   </service-principal-name></code>.</p>
     /// - On failure, responds with [`SdkError<DeleteServiceLinkedRoleError>`](crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleError)
-    pub fn delete_service_linked_role(
-        &self,
-    ) -> crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleFluentBuilder
-    {
+    pub fn delete_service_linked_role(&self) -> crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleFluentBuilder {
         crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleFluentBuilder::new(self.handle.clone())
     }
 }

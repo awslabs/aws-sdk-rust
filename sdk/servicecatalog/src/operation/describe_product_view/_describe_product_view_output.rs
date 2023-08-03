@@ -8,8 +8,7 @@ pub struct DescribeProductViewOutput {
     pub product_view_summary: ::std::option::Option<crate::types::ProductViewSummary>,
     /// <p>Information about the provisioning artifacts for the product.</p>
     #[doc(hidden)]
-    pub provisioning_artifacts:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifact>>,
+    pub provisioning_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifact>>,
     _request_id: Option<String>,
 }
 impl DescribeProductViewOutput {
@@ -18,9 +17,7 @@ impl DescribeProductViewOutput {
         self.product_view_summary.as_ref()
     }
     /// <p>Information about the provisioning artifacts for the product.</p>
-    pub fn provisioning_artifacts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProvisioningArtifact]> {
+    pub fn provisioning_artifacts(&self) -> ::std::option::Option<&[crate::types::ProvisioningArtifact]> {
         self.provisioning_artifacts.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeProductViewOutput {
 }
 impl DescribeProductViewOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProductViewOutput`](crate::operation::describe_product_view::DescribeProductViewOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_product_view::builders::DescribeProductViewOutputBuilder {
-        crate::operation::describe_product_view::builders::DescribeProductViewOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_product_view::builders::DescribeProductViewOutputBuilder {
+        crate::operation::describe_product_view::builders::DescribeProductViewOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProductViewOutput`](crate::operation::describe_product_view::DescribeProductViewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProductViewOutputBuilder {
     pub(crate) product_view_summary: ::std::option::Option<crate::types::ProductViewSummary>,
-    pub(crate) provisioning_artifacts:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifact>>,
+    pub(crate) provisioning_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifact>>,
     _request_id: Option<String>,
 }
 impl DescribeProductViewOutputBuilder {
@@ -56,17 +48,12 @@ impl DescribeProductViewOutputBuilder {
         self
     }
     /// <p>Summary information about the product.</p>
-    pub fn set_product_view_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductViewSummary>,
-    ) -> Self {
+    pub fn set_product_view_summary(mut self, input: ::std::option::Option<crate::types::ProductViewSummary>) -> Self {
         self.product_view_summary = input;
         self
     }
     /// <p>Summary information about the product.</p>
-    pub fn get_product_view_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProductViewSummary> {
+    pub fn get_product_view_summary(&self) -> &::std::option::Option<crate::types::ProductViewSummary> {
         &self.product_view_summary
     }
     /// Appends an item to `provisioning_artifacts`.
@@ -81,17 +68,12 @@ impl DescribeProductViewOutputBuilder {
         self
     }
     /// <p>Information about the provisioning artifacts for the product.</p>
-    pub fn set_provisioning_artifacts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifact>>,
-    ) -> Self {
+    pub fn set_provisioning_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifact>>) -> Self {
         self.provisioning_artifacts = input;
         self
     }
     /// <p>Information about the provisioning artifacts for the product.</p>
-    pub fn get_provisioning_artifacts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifact>> {
+    pub fn get_provisioning_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifact>> {
         &self.provisioning_artifacts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

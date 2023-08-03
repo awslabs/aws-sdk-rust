@@ -5,15 +5,12 @@
 pub struct ListAutomaticTapeCreationPoliciesOutput {
     /// <p>Gets a listing of information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.</p>
     #[doc(hidden)]
-    pub automatic_tape_creation_policy_infos:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationPolicyInfo>>,
+    pub automatic_tape_creation_policy_infos: ::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationPolicyInfo>>,
     _request_id: Option<String>,
 }
 impl ListAutomaticTapeCreationPoliciesOutput {
     /// <p>Gets a listing of information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.</p>
-    pub fn automatic_tape_creation_policy_infos(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AutomaticTapeCreationPolicyInfo]> {
+    pub fn automatic_tape_creation_policy_infos(&self) -> ::std::option::Option<&[crate::types::AutomaticTapeCreationPolicyInfo]> {
         self.automatic_tape_creation_policy_infos.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for ListAutomaticTapeCreationPoliciesOutp
 }
 impl ListAutomaticTapeCreationPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListAutomaticTapeCreationPoliciesOutput`](crate::operation::list_automatic_tape_creation_policies::ListAutomaticTapeCreationPoliciesOutput).
-    pub fn builder() -> crate::operation::list_automatic_tape_creation_policies::builders::ListAutomaticTapeCreationPoliciesOutputBuilder{
+    pub fn builder() -> crate::operation::list_automatic_tape_creation_policies::builders::ListAutomaticTapeCreationPoliciesOutputBuilder {
         crate::operation::list_automatic_tape_creation_policies::builders::ListAutomaticTapeCreationPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAutomaticTapeCreationPoliciesOutput`](crate::operation::list_automatic_tape_creation_policies::ListAutomaticTapeCreationPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAutomaticTapeCreationPoliciesOutputBuilder {
-    pub(crate) automatic_tape_creation_policy_infos:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationPolicyInfo>>,
+    pub(crate) automatic_tape_creation_policy_infos: ::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationPolicyInfo>>,
     _request_id: Option<String>,
 }
 impl ListAutomaticTapeCreationPoliciesOutputBuilder {
@@ -45,13 +39,8 @@ impl ListAutomaticTapeCreationPoliciesOutputBuilder {
     /// To override the contents of this collection use [`set_automatic_tape_creation_policy_infos`](Self::set_automatic_tape_creation_policy_infos).
     ///
     /// <p>Gets a listing of information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.</p>
-    pub fn automatic_tape_creation_policy_infos(
-        mut self,
-        input: crate::types::AutomaticTapeCreationPolicyInfo,
-    ) -> Self {
-        let mut v = self
-            .automatic_tape_creation_policy_infos
-            .unwrap_or_default();
+    pub fn automatic_tape_creation_policy_infos(mut self, input: crate::types::AutomaticTapeCreationPolicyInfo) -> Self {
+        let mut v = self.automatic_tape_creation_policy_infos.unwrap_or_default();
         v.push(input);
         self.automatic_tape_creation_policy_infos = ::std::option::Option::Some(v);
         self
@@ -59,18 +48,13 @@ impl ListAutomaticTapeCreationPoliciesOutputBuilder {
     /// <p>Gets a listing of information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.</p>
     pub fn set_automatic_tape_creation_policy_infos(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AutomaticTapeCreationPolicyInfo>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationPolicyInfo>>,
     ) -> Self {
         self.automatic_tape_creation_policy_infos = input;
         self
     }
     /// <p>Gets a listing of information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.</p>
-    pub fn get_automatic_tape_creation_policy_infos(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationPolicyInfo>>
-    {
+    pub fn get_automatic_tape_creation_policy_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationPolicyInfo>> {
         &self.automatic_tape_creation_policy_infos
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -83,10 +67,9 @@ impl ListAutomaticTapeCreationPoliciesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAutomaticTapeCreationPoliciesOutput`](crate::operation::list_automatic_tape_creation_policies::ListAutomaticTapeCreationPoliciesOutput).
-    pub fn build(self) -> crate::operation::list_automatic_tape_creation_policies::ListAutomaticTapeCreationPoliciesOutput{
+    pub fn build(self) -> crate::operation::list_automatic_tape_creation_policies::ListAutomaticTapeCreationPoliciesOutput {
         crate::operation::list_automatic_tape_creation_policies::ListAutomaticTapeCreationPoliciesOutput {
-            automatic_tape_creation_policy_infos: self.automatic_tape_creation_policy_infos
-            ,
+            automatic_tape_creation_policy_infos: self.automatic_tape_creation_policy_infos,
             _request_id: self._request_id,
         }
     }

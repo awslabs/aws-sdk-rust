@@ -23,9 +23,7 @@ impl DeleteUploadInput {
 
 /// A builder for [`DeleteUploadInput`](crate::operation::delete_upload::DeleteUploadInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUploadInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -45,14 +43,7 @@ impl DeleteUploadInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteUploadInput`](crate::operation::delete_upload::DeleteUploadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_upload::DeleteUploadInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_upload::DeleteUploadInput {
-            arn: self.arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_upload::DeleteUploadInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_upload::DeleteUploadInput { arn: self.arn })
     }
 }

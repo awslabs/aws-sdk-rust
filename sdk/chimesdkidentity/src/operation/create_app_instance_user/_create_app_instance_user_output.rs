@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateAppInstanceUserOutput {
 }
 impl CreateAppInstanceUserOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppInstanceUserOutput`](crate::operation::create_app_instance_user::CreateAppInstanceUserOutput).
-    pub fn builder(
-    ) -> crate::operation::create_app_instance_user::builders::CreateAppInstanceUserOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_app_instance_user::builders::CreateAppInstanceUserOutputBuilder {
         crate::operation::create_app_instance_user::builders::CreateAppInstanceUserOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAppInstanceUserOutput`](crate::operation::create_app_instance_user::CreateAppInstanceUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppInstanceUserOutputBuilder {
     pub(crate) app_instance_user_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateAppInstanceUserOutputBuilder {
     /// <p>The user's ARN.</p>
-    pub fn app_instance_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user's ARN.</p>
-    pub fn set_app_instance_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_user_arn = input;
         self
     }

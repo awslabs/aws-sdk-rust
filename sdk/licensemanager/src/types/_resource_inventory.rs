@@ -58,9 +58,7 @@ impl ResourceInventory {
 
 /// A builder for [`ResourceInventory`](crate::types::ResourceInventory).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceInventoryBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -90,10 +88,7 @@ impl ResourceInventoryBuilder {
         self
     }
     /// <p>Type of resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -130,18 +125,12 @@ impl ResourceInventoryBuilder {
         &self.platform
     }
     /// <p>Platform version of the resource in the inventory.</p>
-    pub fn platform_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Platform version of the resource in the inventory.</p>
-    pub fn set_platform_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_version = input;
         self
     }
@@ -150,18 +139,12 @@ impl ResourceInventoryBuilder {
         &self.platform_version
     }
     /// <p>ID of the account that owns the resource.</p>
-    pub fn resource_owning_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_owning_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owning_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the account that owns the resource.</p>
-    pub fn set_resource_owning_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_owning_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_owning_account_id = input;
         self
     }

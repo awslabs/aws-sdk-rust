@@ -12,9 +12,7 @@ pub struct AccessPreview {
     pub analyzer_arn: ::std::option::Option<::std::string::String>,
     /// <p>A map of resource ARNs for the proposed resource configuration.</p>
     #[doc(hidden)]
-    pub configurations: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
-    >,
+    pub configurations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>>,
     /// <p>The time at which the access preview was created.</p>
     #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -41,11 +39,7 @@ impl AccessPreview {
         self.analyzer_arn.as_deref()
     }
     /// <p>A map of resource ARNs for the proposed resource configuration.</p>
-    pub fn configurations(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
-    > {
+    pub fn configurations(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Configuration>> {
         self.configurations.as_ref()
     }
     /// <p>The time at which the access preview was created.</p>
@@ -76,15 +70,11 @@ impl AccessPreview {
 
 /// A builder for [`AccessPreview`](crate::types::AccessPreview).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessPreviewBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) configurations: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
-    >,
+    pub(crate) configurations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::AccessPreviewStatus>,
     pub(crate) status_reason: ::std::option::Option<crate::types::AccessPreviewStatusReason>,
@@ -123,11 +113,7 @@ impl AccessPreviewBuilder {
     /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
     ///
     /// <p>A map of resource ARNs for the proposed resource configuration.</p>
-    pub fn configurations(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Configuration,
-    ) -> Self {
+    pub fn configurations(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Configuration) -> Self {
         let mut hash_map = self.configurations.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.configurations = ::std::option::Option::Some(hash_map);
@@ -136,19 +122,13 @@ impl AccessPreviewBuilder {
     /// <p>A map of resource ARNs for the proposed resource configuration.</p>
     pub fn set_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>>,
     ) -> Self {
         self.configurations = input;
         self
     }
     /// <p>A map of resource ARNs for the proposed resource configuration.</p>
-    pub fn get_configurations(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
-    > {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>> {
         &self.configurations
     }
     /// <p>The time at which the access preview was created.</p>
@@ -157,10 +137,7 @@ impl AccessPreviewBuilder {
         self
     }
     /// <p>The time at which the access preview was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -184,10 +161,7 @@ impl AccessPreviewBuilder {
     /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li>
     /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessPreviewStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AccessPreviewStatus>) -> Self {
         self.status = input;
         self
     }
@@ -208,18 +182,13 @@ impl AccessPreviewBuilder {
     }
     /// <p>Provides more details about the current status of the access preview.</p>
     /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessPreviewStatusReason>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::AccessPreviewStatusReason>) -> Self {
         self.status_reason = input;
         self
     }
     /// <p>Provides more details about the current status of the access preview.</p>
     /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
-    pub fn get_status_reason(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessPreviewStatusReason> {
+    pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::AccessPreviewStatusReason> {
         &self.status_reason
     }
     /// Consumes the builder and constructs a [`AccessPreview`](crate::types::AccessPreview).

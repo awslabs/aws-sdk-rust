@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`cases(Option<Vec<CaseSummary>>)`](crate::operation::list_cases_for_contact::ListCasesForContactOutput::cases): <p>A list of Case summary information.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_cases_for_contact::ListCasesForContactOutput::next_token): <p>The token for the next set of results. This is null if there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListCasesForContactError>`](crate::operation::list_cases_for_contact::ListCasesForContactError)
-    pub fn list_cases_for_contact(
-        &self,
-    ) -> crate::operation::list_cases_for_contact::builders::ListCasesForContactFluentBuilder {
-        crate::operation::list_cases_for_contact::builders::ListCasesForContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_cases_for_contact(&self) -> crate::operation::list_cases_for_contact::builders::ListCasesForContactFluentBuilder {
+        crate::operation::list_cases_for_contact::builders::ListCasesForContactFluentBuilder::new(self.handle.clone())
     }
 }

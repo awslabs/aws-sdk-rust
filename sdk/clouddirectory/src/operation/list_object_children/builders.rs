@@ -10,10 +10,7 @@ impl ListObjectChildrenInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_object_children::ListObjectChildrenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_children::ListObjectChildrenError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_children::ListObjectChildrenError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_object_children();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListObjectChildrenFluentBuilder {
         }
     }
     /// Access the ListObjectChildren as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_object_children::builders::ListObjectChildrenInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_object_children::builders::ListObjectChildrenInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListObjectChildrenFluentBuilder {
             crate::operation::list_object_children::ListObjectChildren,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_children::ListObjectChildrenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_children::ListObjectChildrenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListObjectChildrenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListObjectChildrenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_object_children::ListObjectChildrenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_children::ListObjectChildrenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_children::ListObjectChildrenError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListObjectChildrenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_object_children::ListObjectChildrenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_children::ListObjectChildrenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_children::ListObjectChildrenError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListObjectChildrenFluentBuilder {
             crate::operation::list_object_children::ListObjectChildren,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_children::ListObjectChildrenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_children::ListObjectChildrenError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_object_children::paginator::ListObjectChildrenPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_object_children::paginator::ListObjectChildrenPaginator {
-        crate::operation::list_object_children::paginator::ListObjectChildrenPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_object_children::paginator::ListObjectChildrenPaginator {
+        crate::operation::list_object_children::paginator::ListObjectChildrenPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -159,10 +132,7 @@ impl ListObjectChildrenFluentBuilder {
         self
     }
     /// <p>The reference that identifies the object for which child objects are being listed.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_object_reference(input);
         self
     }
@@ -204,10 +174,7 @@ impl ListObjectChildrenFluentBuilder {
         self
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
+    pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
     }

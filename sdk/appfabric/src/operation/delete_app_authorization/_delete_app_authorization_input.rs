@@ -22,36 +22,26 @@ impl DeleteAppAuthorizationInput {
 }
 impl DeleteAppAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`DeleteAppAuthorizationInput`](crate::operation::delete_app_authorization::DeleteAppAuthorizationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_app_authorization::builders::DeleteAppAuthorizationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_app_authorization::builders::DeleteAppAuthorizationInputBuilder {
         crate::operation::delete_app_authorization::builders::DeleteAppAuthorizationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppAuthorizationInput`](crate::operation::delete_app_authorization::DeleteAppAuthorizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppAuthorizationInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) app_authorization_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAppAuthorizationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_bundle_identifier = input;
         self
     }
@@ -60,39 +50,27 @@ impl DeleteAppAuthorizationInputBuilder {
         &self.app_bundle_identifier
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
-    pub fn app_authorization_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_authorization_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_authorization_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
-    pub fn set_app_authorization_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_authorization_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_authorization_identifier = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
-    pub fn get_app_authorization_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_app_authorization_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_authorization_identifier
     }
     /// Consumes the builder and constructs a [`DeleteAppAuthorizationInput`](crate::operation::delete_app_authorization::DeleteAppAuthorizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_app_authorization::DeleteAppAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_app_authorization::DeleteAppAuthorizationInput {
-                app_bundle_identifier: self.app_bundle_identifier,
-                app_authorization_identifier: self.app_authorization_identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_app_authorization::DeleteAppAuthorizationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_app_authorization::DeleteAppAuthorizationInput {
+            app_bundle_identifier: self.app_bundle_identifier,
+            app_authorization_identifier: self.app_authorization_identifier,
+        })
     }
 }

@@ -33,32 +33,24 @@ impl SearchHoursOfOperationsInput {
         self.max_results
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn search_filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HoursOfOperationSearchFilter> {
+    pub fn search_filter(&self) -> ::std::option::Option<&crate::types::HoursOfOperationSearchFilter> {
         self.search_filter.as_ref()
     }
     /// <p>The search criteria to be used to return hours of operations.</p>
-    pub fn search_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HoursOfOperationSearchCriteria> {
+    pub fn search_criteria(&self) -> ::std::option::Option<&crate::types::HoursOfOperationSearchCriteria> {
         self.search_criteria.as_ref()
     }
 }
 impl SearchHoursOfOperationsInput {
     /// Creates a new builder-style object to manufacture [`SearchHoursOfOperationsInput`](crate::operation::search_hours_of_operations::SearchHoursOfOperationsInput).
-    pub fn builder(
-    ) -> crate::operation::search_hours_of_operations::builders::SearchHoursOfOperationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::search_hours_of_operations::builders::SearchHoursOfOperationsInputBuilder {
         crate::operation::search_hours_of_operations::builders::SearchHoursOfOperationsInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchHoursOfOperationsInput`](crate::operation::search_hours_of_operations::SearchHoursOfOperationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchHoursOfOperationsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -115,17 +107,12 @@ impl SearchHoursOfOperationsInputBuilder {
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn set_search_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::HoursOfOperationSearchFilter>,
-    ) -> Self {
+    pub fn set_search_filter(mut self, input: ::std::option::Option<crate::types::HoursOfOperationSearchFilter>) -> Self {
         self.search_filter = input;
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn get_search_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::HoursOfOperationSearchFilter> {
+    pub fn get_search_filter(&self) -> &::std::option::Option<crate::types::HoursOfOperationSearchFilter> {
         &self.search_filter
     }
     /// <p>The search criteria to be used to return hours of operations.</p>
@@ -134,17 +121,12 @@ impl SearchHoursOfOperationsInputBuilder {
         self
     }
     /// <p>The search criteria to be used to return hours of operations.</p>
-    pub fn set_search_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::HoursOfOperationSearchCriteria>,
-    ) -> Self {
+    pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::HoursOfOperationSearchCriteria>) -> Self {
         self.search_criteria = input;
         self
     }
     /// <p>The search criteria to be used to return hours of operations.</p>
-    pub fn get_search_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::HoursOfOperationSearchCriteria> {
+    pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::HoursOfOperationSearchCriteria> {
         &self.search_criteria
     }
     /// Consumes the builder and constructs a [`SearchHoursOfOperationsInput`](crate::operation::search_hours_of_operations::SearchHoursOfOperationsInput).
@@ -154,14 +136,12 @@ impl SearchHoursOfOperationsInputBuilder {
         crate::operation::search_hours_of_operations::SearchHoursOfOperationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::search_hours_of_operations::SearchHoursOfOperationsInput {
-                instance_id: self.instance_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                search_filter: self.search_filter,
-                search_criteria: self.search_criteria,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::search_hours_of_operations::SearchHoursOfOperationsInput {
+            instance_id: self.instance_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            search_filter: self.search_filter,
+            search_criteria: self.search_criteria,
+        })
     }
 }

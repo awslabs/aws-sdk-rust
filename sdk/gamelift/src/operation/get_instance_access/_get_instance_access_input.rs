@@ -22,17 +22,14 @@ impl GetInstanceAccessInput {
 }
 impl GetInstanceAccessInput {
     /// Creates a new builder-style object to manufacture [`GetInstanceAccessInput`](crate::operation::get_instance_access::GetInstanceAccessInput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_access::builders::GetInstanceAccessInputBuilder {
+    pub fn builder() -> crate::operation::get_instance_access::builders::GetInstanceAccessInputBuilder {
         crate::operation::get_instance_access::builders::GetInstanceAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceAccessInput`](crate::operation::get_instance_access::GetInstanceAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceAccessInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl GetInstanceAccessInputBuilder {
     /// Consumes the builder and constructs a [`GetInstanceAccessInput`](crate::operation::get_instance_access::GetInstanceAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_instance_access::GetInstanceAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_instance_access::GetInstanceAccessInput {
-                fleet_id: self.fleet_id,
-                instance_id: self.instance_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_instance_access::GetInstanceAccessInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_instance_access::GetInstanceAccessInput {
+            fleet_id: self.fleet_id,
+            instance_id: self.instance_id,
+        })
     }
 }

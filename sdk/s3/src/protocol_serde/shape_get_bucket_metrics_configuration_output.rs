@@ -5,14 +5,15 @@ pub(crate) fn de_metrics_configuration_payload(
     ::std::option::Option<crate::types::MetricsConfiguration>,
     crate::operation::get_bucket_metrics_configuration::GetBucketMetricsConfigurationError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_get_bucket_metrics_configuration_output::de_metrics_configuration(body).map_err(crate::operation::get_bucket_metrics_configuration::GetBucketMetricsConfigurationError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_get_bucket_metrics_configuration_output::de_metrics_configuration(body)
+                .map_err(crate::operation::get_bucket_metrics_configuration::GetBucketMetricsConfigurationError::unhandled)
+        })
+        .transpose()
 }
 
-pub fn de_metrics_configuration(
-    inp: &[u8],
-) -> Result<crate::types::MetricsConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_metrics_configuration(inp: &[u8]) -> Result<crate::types::MetricsConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

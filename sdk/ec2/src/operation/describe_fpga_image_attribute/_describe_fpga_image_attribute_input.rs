@@ -29,16 +29,14 @@ impl DescribeFpgaImageAttributeInput {
 }
 impl DescribeFpgaImageAttributeInput {
     /// Creates a new builder-style object to manufacture [`DescribeFpgaImageAttributeInput`](crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeInput).
-    pub fn builder() -> crate::operation::describe_fpga_image_attribute::builders::DescribeFpgaImageAttributeInputBuilder{
+    pub fn builder() -> crate::operation::describe_fpga_image_attribute::builders::DescribeFpgaImageAttributeInputBuilder {
         crate::operation::describe_fpga_image_attribute::builders::DescribeFpgaImageAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFpgaImageAttributeInput`](crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFpgaImageAttributeInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) fpga_image_id: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl DescribeFpgaImageAttributeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the AFI.</p>
-    pub fn fpga_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fpga_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the AFI.</p>
-    pub fn set_fpga_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fpga_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fpga_image_id = input;
         self
     }
@@ -85,10 +77,7 @@ impl DescribeFpgaImageAttributeInputBuilder {
         self
     }
     /// <p>The AFI attribute.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::FpgaImageAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::FpgaImageAttributeName>) -> Self {
         self.attribute = input;
         self
     }
@@ -103,12 +92,10 @@ impl DescribeFpgaImageAttributeInputBuilder {
         crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeInput {
-                dry_run: self.dry_run,
-                fpga_image_id: self.fpga_image_id,
-                attribute: self.attribute,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeInput {
+            dry_run: self.dry_run,
+            fpga_image_id: self.fpga_image_id,
+            attribute: self.attribute,
+        })
     }
 }

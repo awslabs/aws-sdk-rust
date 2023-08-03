@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`environment_id(Option<String>)`](crate::operation::update_kx_user::UpdateKxUserOutput::environment_id): <p>A unique identifier for the kdb environment.</p>
     ///   - [`iam_role(Option<String>)`](crate::operation::update_kx_user::UpdateKxUserOutput::iam_role): <p>The IAM role ARN that is associated with the user.</p>
     /// - On failure, responds with [`SdkError<UpdateKxUserError>`](crate::operation::update_kx_user::UpdateKxUserError)
-    pub fn update_kx_user(
-        &self,
-    ) -> crate::operation::update_kx_user::builders::UpdateKxUserFluentBuilder {
-        crate::operation::update_kx_user::builders::UpdateKxUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_kx_user(&self) -> crate::operation::update_kx_user::builders::UpdateKxUserFluentBuilder {
+        crate::operation::update_kx_user::builders::UpdateKxUserFluentBuilder::new(self.handle.clone())
     }
 }

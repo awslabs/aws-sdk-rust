@@ -10,9 +10,7 @@ pub struct GetSiteToSiteVpnAttachmentOutput {
 }
 impl GetSiteToSiteVpnAttachmentOutput {
     /// <p>Describes the site-to-site attachment.</p>
-    pub fn site_to_site_vpn_attachment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SiteToSiteVpnAttachment> {
+    pub fn site_to_site_vpn_attachment(&self) -> ::std::option::Option<&crate::types::SiteToSiteVpnAttachment> {
         self.site_to_site_vpn_attachment.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for GetSiteToSiteVpnAttachmentOutput {
 }
 impl GetSiteToSiteVpnAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`GetSiteToSiteVpnAttachmentOutput`](crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentOutput).
-    pub fn builder() -> crate::operation::get_site_to_site_vpn_attachment::builders::GetSiteToSiteVpnAttachmentOutputBuilder{
+    pub fn builder() -> crate::operation::get_site_to_site_vpn_attachment::builders::GetSiteToSiteVpnAttachmentOutputBuilder {
         crate::operation::get_site_to_site_vpn_attachment::builders::GetSiteToSiteVpnAttachmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSiteToSiteVpnAttachmentOutput`](crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSiteToSiteVpnAttachmentOutputBuilder {
-    pub(crate) site_to_site_vpn_attachment:
-        ::std::option::Option<crate::types::SiteToSiteVpnAttachment>,
+    pub(crate) site_to_site_vpn_attachment: ::std::option::Option<crate::types::SiteToSiteVpnAttachment>,
     _request_id: Option<String>,
 }
 impl GetSiteToSiteVpnAttachmentOutputBuilder {
     /// <p>Describes the site-to-site attachment.</p>
-    pub fn site_to_site_vpn_attachment(
-        mut self,
-        input: crate::types::SiteToSiteVpnAttachment,
-    ) -> Self {
+    pub fn site_to_site_vpn_attachment(mut self, input: crate::types::SiteToSiteVpnAttachment) -> Self {
         self.site_to_site_vpn_attachment = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the site-to-site attachment.</p>
-    pub fn set_site_to_site_vpn_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::SiteToSiteVpnAttachment>,
-    ) -> Self {
+    pub fn set_site_to_site_vpn_attachment(mut self, input: ::std::option::Option<crate::types::SiteToSiteVpnAttachment>) -> Self {
         self.site_to_site_vpn_attachment = input;
         self
     }
     /// <p>Describes the site-to-site attachment.</p>
-    pub fn get_site_to_site_vpn_attachment(
-        &self,
-    ) -> &::std::option::Option<crate::types::SiteToSiteVpnAttachment> {
+    pub fn get_site_to_site_vpn_attachment(&self) -> &::std::option::Option<crate::types::SiteToSiteVpnAttachment> {
         &self.site_to_site_vpn_attachment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,9 +58,7 @@ impl GetSiteToSiteVpnAttachmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSiteToSiteVpnAttachmentOutput`](crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentOutput {
+    pub fn build(self) -> crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentOutput {
         crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentOutput {
             site_to_site_vpn_attachment: self.site_to_site_vpn_attachment,
             _request_id: self._request_id,

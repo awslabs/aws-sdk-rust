@@ -36,18 +36,14 @@ impl ListDashboardVersionsInput {
 }
 impl ListDashboardVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListDashboardVersionsInput`](crate::operation::list_dashboard_versions::ListDashboardVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_dashboard_versions::builders::ListDashboardVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_dashboard_versions::builders::ListDashboardVersionsInputBuilder {
         crate::operation::list_dashboard_versions::builders::ListDashboardVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDashboardVersionsInput`](crate::operation::list_dashboard_versions::ListDashboardVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDashboardVersionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
@@ -56,18 +52,12 @@ pub struct ListDashboardVersionsInputBuilder {
 }
 impl ListDashboardVersionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -120,17 +110,13 @@ impl ListDashboardVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListDashboardVersionsInput`](crate::operation::list_dashboard_versions::ListDashboardVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_dashboard_versions::ListDashboardVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_dashboard_versions::ListDashboardVersionsInput {
-                aws_account_id: self.aws_account_id,
-                dashboard_id: self.dashboard_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_dashboard_versions::ListDashboardVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_dashboard_versions::ListDashboardVersionsInput {
+            aws_account_id: self.aws_account_id,
+            dashboard_id: self.dashboard_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

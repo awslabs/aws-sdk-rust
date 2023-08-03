@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::create_backend_config::CreateBackendConfigOutput::job_id): <p>The ID for the job.</p>
     ///   - [`status(Option<String>)`](crate::operation::create_backend_config::CreateBackendConfigOutput::status): <p>The current status of the request.</p>
     /// - On failure, responds with [`SdkError<CreateBackendConfigError>`](crate::operation::create_backend_config::CreateBackendConfigError)
-    pub fn create_backend_config(
-        &self,
-    ) -> crate::operation::create_backend_config::builders::CreateBackendConfigFluentBuilder {
-        crate::operation::create_backend_config::builders::CreateBackendConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_backend_config(&self) -> crate::operation::create_backend_config::builders::CreateBackendConfigFluentBuilder {
+        crate::operation::create_backend_config::builders::CreateBackendConfigFluentBuilder::new(self.handle.clone())
     }
 }

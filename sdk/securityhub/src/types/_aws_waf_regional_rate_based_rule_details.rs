@@ -21,9 +21,7 @@ pub struct AwsWafRegionalRateBasedRuleDetails {
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The predicates to include in the rate-based rule.</p>
     #[doc(hidden)]
-    pub match_predicates: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsWafRegionalRateBasedRuleMatchPredicate>,
-    >,
+    pub match_predicates: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRateBasedRuleMatchPredicate>>,
 }
 impl AwsWafRegionalRateBasedRuleDetails {
     /// <p>The name of the metrics for the rate-based rule.</p>
@@ -47,9 +45,7 @@ impl AwsWafRegionalRateBasedRuleDetails {
         self.rule_id.as_deref()
     }
     /// <p>The predicates to include in the rate-based rule.</p>
-    pub fn match_predicates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsWafRegionalRateBasedRuleMatchPredicate]> {
+    pub fn match_predicates(&self) -> ::std::option::Option<&[crate::types::AwsWafRegionalRateBasedRuleMatchPredicate]> {
         self.match_predicates.as_deref()
     }
 }
@@ -62,18 +58,14 @@ impl AwsWafRegionalRateBasedRuleDetails {
 
 /// A builder for [`AwsWafRegionalRateBasedRuleDetails`](crate::types::AwsWafRegionalRateBasedRuleDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafRegionalRateBasedRuleDetailsBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) rate_key: ::std::option::Option<::std::string::String>,
     pub(crate) rate_limit: ::std::option::Option<i64>,
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
-    pub(crate) match_predicates: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsWafRegionalRateBasedRuleMatchPredicate>,
-    >,
+    pub(crate) match_predicates: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRateBasedRuleMatchPredicate>>,
 }
 impl AwsWafRegionalRateBasedRuleDetailsBuilder {
     /// <p>The name of the metrics for the rate-based rule.</p>
@@ -151,10 +143,7 @@ impl AwsWafRegionalRateBasedRuleDetailsBuilder {
     /// To override the contents of this collection use [`set_match_predicates`](Self::set_match_predicates).
     ///
     /// <p>The predicates to include in the rate-based rule.</p>
-    pub fn match_predicates(
-        mut self,
-        input: crate::types::AwsWafRegionalRateBasedRuleMatchPredicate,
-    ) -> Self {
+    pub fn match_predicates(mut self, input: crate::types::AwsWafRegionalRateBasedRuleMatchPredicate) -> Self {
         let mut v = self.match_predicates.unwrap_or_default();
         v.push(input);
         self.match_predicates = ::std::option::Option::Some(v);
@@ -163,19 +152,13 @@ impl AwsWafRegionalRateBasedRuleDetailsBuilder {
     /// <p>The predicates to include in the rate-based rule.</p>
     pub fn set_match_predicates(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsWafRegionalRateBasedRuleMatchPredicate>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRateBasedRuleMatchPredicate>>,
     ) -> Self {
         self.match_predicates = input;
         self
     }
     /// <p>The predicates to include in the rate-based rule.</p>
-    pub fn get_match_predicates(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsWafRegionalRateBasedRuleMatchPredicate>,
-    > {
+    pub fn get_match_predicates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRateBasedRuleMatchPredicate>> {
         &self.match_predicates
     }
     /// Consumes the builder and constructs a [`AwsWafRegionalRateBasedRuleDetails`](crate::types::AwsWafRegionalRateBasedRuleDetails).

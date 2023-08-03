@@ -19,9 +19,7 @@ impl DeleteIpGroupOutput {
 
 /// A builder for [`DeleteIpGroupOutput`](crate::operation::delete_ip_group::DeleteIpGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIpGroupOutputBuilder {
     _request_id: Option<String>,
 }

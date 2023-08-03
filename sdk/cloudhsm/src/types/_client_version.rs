@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ClientVersion {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for ClientVersion {
         match s {
             "5.1" => ClientVersion::FiveOne,
             "5.3" => ClientVersion::FiveThree,
-            other => {
-                ClientVersion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ClientVersion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -10,10 +10,7 @@ impl CreateEventTrackerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_event_tracker::CreateEventTrackerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_tracker::CreateEventTrackerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_tracker::CreateEventTrackerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_event_tracker();
         fluent_builder.inner = self;
@@ -54,9 +51,7 @@ impl CreateEventTrackerFluentBuilder {
         }
     }
     /// Access the CreateEventTracker as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_event_tracker::builders::CreateEventTrackerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_event_tracker::builders::CreateEventTrackerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -68,9 +63,7 @@ impl CreateEventTrackerFluentBuilder {
             crate::operation::create_event_tracker::CreateEventTracker,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_tracker::CreateEventTrackerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_tracker::CreateEventTrackerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -80,10 +73,7 @@ impl CreateEventTrackerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -92,9 +82,7 @@ impl CreateEventTrackerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_tracker::CreateEventTrackerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_tracker::CreateEventTrackerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_tracker::CreateEventTrackerError>,
     > {
         let op = self
             .inner
@@ -117,9 +105,7 @@ impl CreateEventTrackerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_tracker::CreateEventTrackerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_tracker::CreateEventTrackerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_tracker::CreateEventTrackerError>,
     > {
         self.send_middleware().await
     }
@@ -133,9 +119,7 @@ impl CreateEventTrackerFluentBuilder {
             crate::operation::create_event_tracker::CreateEventTracker,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_tracker::CreateEventTrackerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_tracker::CreateEventTrackerError>,
     > {
         self.customize_middleware().await
     }
@@ -154,18 +138,12 @@ impl CreateEventTrackerFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_group_arn(input);
         self
     }
@@ -183,10 +161,7 @@ impl CreateEventTrackerFluentBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the event tracker.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

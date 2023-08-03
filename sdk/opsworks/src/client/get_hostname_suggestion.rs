@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`layer_id(Option<String>)`](crate::operation::get_hostname_suggestion::GetHostnameSuggestionOutput::layer_id): <p>The layer ID.</p>
     ///   - [`hostname(Option<String>)`](crate::operation::get_hostname_suggestion::GetHostnameSuggestionOutput::hostname): <p>The generated host name.</p>
     /// - On failure, responds with [`SdkError<GetHostnameSuggestionError>`](crate::operation::get_hostname_suggestion::GetHostnameSuggestionError)
-    pub fn get_hostname_suggestion(
-        &self,
-    ) -> crate::operation::get_hostname_suggestion::builders::GetHostnameSuggestionFluentBuilder
-    {
-        crate::operation::get_hostname_suggestion::builders::GetHostnameSuggestionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_hostname_suggestion(&self) -> crate::operation::get_hostname_suggestion::builders::GetHostnameSuggestionFluentBuilder {
+        crate::operation::get_hostname_suggestion::builders::GetHostnameSuggestionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -70,9 +70,7 @@ impl CreateNamespaceOutput {
 
 /// A builder for [`CreateNamespaceOutput`](crate::operation::create_namespace::CreateNamespaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNamespaceOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -113,18 +111,12 @@ impl CreateNamespaceOutputBuilder {
         &self.name
     }
     /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in. </p>
-    pub fn capacity_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in. </p>
-    pub fn set_capacity_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_region = input;
         self
     }
@@ -138,10 +130,7 @@ impl CreateNamespaceOutputBuilder {
         self
     }
     /// <p>The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error message for follow-up tasks.</p>
-    pub fn set_creation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::NamespaceStatus>,
-    ) -> Self {
+    pub fn set_creation_status(mut self, input: ::std::option::Option<crate::types::NamespaceStatus>) -> Self {
         self.creation_status = input;
         self
     }
@@ -155,10 +144,7 @@ impl CreateNamespaceOutputBuilder {
         self
     }
     /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
-    pub fn set_identity_store(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityStore>,
-    ) -> Self {
+    pub fn set_identity_store(mut self, input: ::std::option::Option<crate::types::IdentityStore>) -> Self {
         self.identity_store = input;
         self
     }

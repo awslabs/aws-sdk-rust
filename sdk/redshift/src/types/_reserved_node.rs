@@ -110,9 +110,7 @@ impl ReservedNode {
         self.recurring_charges.as_deref()
     }
     /// <p></p>
-    pub fn reserved_node_offering_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReservedNodeOfferingType> {
+    pub fn reserved_node_offering_type(&self) -> ::std::option::Option<&crate::types::ReservedNodeOfferingType> {
         self.reserved_node_offering_type.as_ref()
     }
 }
@@ -125,9 +123,7 @@ impl ReservedNode {
 
 /// A builder for [`ReservedNode`](crate::types::ReservedNode).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservedNodeBuilder {
     pub(crate) reserved_node_id: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_node_offering_id: ::std::option::Option<::std::string::String>,
@@ -140,25 +136,17 @@ pub struct ReservedNodeBuilder {
     pub(crate) node_count: ::std::option::Option<i32>,
     pub(crate) state: ::std::option::Option<::std::string::String>,
     pub(crate) offering_type: ::std::option::Option<::std::string::String>,
-    pub(crate) recurring_charges:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
-    pub(crate) reserved_node_offering_type:
-        ::std::option::Option<crate::types::ReservedNodeOfferingType>,
+    pub(crate) recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
+    pub(crate) reserved_node_offering_type: ::std::option::Option<crate::types::ReservedNodeOfferingType>,
 }
 impl ReservedNodeBuilder {
     /// <p>The unique identifier for the reservation.</p>
-    pub fn reserved_node_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_node_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the reservation.</p>
-    pub fn set_reserved_node_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_node_id = input;
         self
     }
@@ -167,18 +155,12 @@ impl ReservedNodeBuilder {
         &self.reserved_node_id
     }
     /// <p>The identifier for the reserved node offering.</p>
-    pub fn reserved_node_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_node_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the reserved node offering.</p>
-    pub fn set_reserved_node_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_node_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_node_offering_id = input;
         self
     }
@@ -206,10 +188,7 @@ impl ReservedNodeBuilder {
         self
     }
     /// <p>The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of that duration.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -260,18 +239,12 @@ impl ReservedNodeBuilder {
         &self.usage_price
     }
     /// <p>The currency code for the reserved cluster.</p>
-    pub fn currency_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The currency code for the reserved cluster.</p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_code = input;
         self
     }
@@ -332,18 +305,12 @@ impl ReservedNodeBuilder {
         &self.state
     }
     /// <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
-    pub fn offering_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offering_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
-    pub fn set_offering_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_offering_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_type = input;
         self
     }
@@ -363,39 +330,26 @@ impl ReservedNodeBuilder {
         self
     }
     /// <p>The recurring charges for the reserved node.</p>
-    pub fn set_recurring_charges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
-    ) -> Self {
+    pub fn set_recurring_charges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>) -> Self {
         self.recurring_charges = input;
         self
     }
     /// <p>The recurring charges for the reserved node.</p>
-    pub fn get_recurring_charges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
+    pub fn get_recurring_charges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
         &self.recurring_charges
     }
     /// <p></p>
-    pub fn reserved_node_offering_type(
-        mut self,
-        input: crate::types::ReservedNodeOfferingType,
-    ) -> Self {
+    pub fn reserved_node_offering_type(mut self, input: crate::types::ReservedNodeOfferingType) -> Self {
         self.reserved_node_offering_type = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_reserved_node_offering_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservedNodeOfferingType>,
-    ) -> Self {
+    pub fn set_reserved_node_offering_type(mut self, input: ::std::option::Option<crate::types::ReservedNodeOfferingType>) -> Self {
         self.reserved_node_offering_type = input;
         self
     }
     /// <p></p>
-    pub fn get_reserved_node_offering_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservedNodeOfferingType> {
+    pub fn get_reserved_node_offering_type(&self) -> &::std::option::Option<crate::types::ReservedNodeOfferingType> {
         &self.reserved_node_offering_type
     }
     /// Consumes the builder and constructs a [`ReservedNode`](crate::types::ReservedNode).

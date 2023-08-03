@@ -10,10 +10,7 @@ impl GetFormInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_form::GetFormOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_form::GetFormError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_form::GetFormError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_form();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetFormFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_form::GetForm,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_form::GetForm, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_form::GetFormError>,
     > {
         let handle = self.handle.clone();
@@ -59,20 +53,15 @@ impl GetFormFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_form::GetFormOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_form::GetFormError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_form::GetFormOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_form::GetFormError>>
+    {
         let op = self
             .inner
             .build()
@@ -92,10 +81,8 @@ impl GetFormFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_form::GetFormOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_form::GetFormError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_form::GetFormOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_form::GetFormError>>
+    {
         self.send_middleware().await
     }
 
@@ -104,10 +91,7 @@ impl GetFormFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_form::GetForm,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_form::GetForm, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_form::GetFormError>,
     > {
         self.customize_middleware().await
@@ -127,18 +111,12 @@ impl GetFormFluentBuilder {
         self.inner.get_app_id()
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }

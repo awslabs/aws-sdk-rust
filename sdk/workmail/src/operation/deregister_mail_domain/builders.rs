@@ -37,9 +37,7 @@ impl DeregisterMailDomainFluentBuilder {
         }
     }
     /// Access the DeregisterMailDomain as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deregister_mail_domain::builders::DeregisterMailDomainInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::deregister_mail_domain::builders::DeregisterMailDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeregisterMailDomainFluentBuilder {
             crate::operation::deregister_mail_domain::DeregisterMailDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_mail_domain::DeregisterMailDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_mail_domain::DeregisterMailDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeregisterMailDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeregisterMailDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_mail_domain::DeregisterMailDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_mail_domain::DeregisterMailDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_mail_domain::DeregisterMailDomainError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeregisterMailDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_mail_domain::DeregisterMailDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_mail_domain::DeregisterMailDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_mail_domain::DeregisterMailDomainError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeregisterMailDomainFluentBuilder {
             crate::operation::deregister_mail_domain::DeregisterMailDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_mail_domain::DeregisterMailDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_mail_domain::DeregisterMailDomainError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The WorkMail organization for which the domain will be deregistered.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The WorkMail organization for which the domain will be deregistered.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

@@ -27,7 +27,7 @@ impl DescribeLoadBalancerPoliciesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancerPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesInputBuilder,
+    inner: crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesInputBuilder,
 }
 impl DescribeLoadBalancerPoliciesFluentBuilder {
     /// Creates a new `DescribeLoadBalancerPolicies`.
@@ -38,7 +38,7 @@ impl DescribeLoadBalancerPoliciesFluentBuilder {
         }
     }
     /// Access the DescribeLoadBalancerPolicies as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeLoadBalancerPoliciesFluentBuilder {
             crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeLoadBalancerPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeLoadBalancerPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeLoadBalancerPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl DescribeLoadBalancerPoliciesFluentBuilder {
             crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
@@ -151,17 +134,12 @@ impl DescribeLoadBalancerPoliciesFluentBuilder {
         self
     }
     /// <p>The names of the policies.</p>
-    pub fn set_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_policy_names(input);
         self
     }
     /// <p>The names of the policies.</p>
-    pub fn get_policy_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_policy_names()
     }
 }

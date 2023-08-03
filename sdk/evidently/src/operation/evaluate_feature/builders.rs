@@ -10,10 +10,7 @@ impl EvaluateFeatureInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::evaluate_feature::EvaluateFeatureOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_feature::EvaluateFeatureError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_feature::EvaluateFeatureError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.evaluate_feature();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl EvaluateFeatureFluentBuilder {
         }
     }
     /// Access the EvaluateFeature as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::evaluate_feature::builders::EvaluateFeatureInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::evaluate_feature::builders::EvaluateFeatureInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl EvaluateFeatureFluentBuilder {
             crate::operation::evaluate_feature::EvaluateFeature,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_feature::EvaluateFeatureError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_feature::EvaluateFeatureError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl EvaluateFeatureFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl EvaluateFeatureFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::evaluate_feature::EvaluateFeatureOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_feature::EvaluateFeatureError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_feature::EvaluateFeatureError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl EvaluateFeatureFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::evaluate_feature::EvaluateFeatureOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_feature::EvaluateFeatureError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_feature::EvaluateFeatureError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl EvaluateFeatureFluentBuilder {
             crate::operation::evaluate_feature::EvaluateFeature,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_feature::EvaluateFeatureError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_feature::EvaluateFeatureError>,
     > {
         self.customize_middleware().await
     }
@@ -173,19 +157,13 @@ impl EvaluateFeatureFluentBuilder {
     }
     /// <p>A JSON object of attributes that you can optionally pass in as part of the evaluation event sent to Evidently from the user session. Evidently can use this value to match user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>
     /// <p>If you include this parameter, the value must be a JSON object. A JSON array is not supported.</p>
-    pub fn evaluation_context(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evaluation_context(input.into());
         self
     }
     /// <p>A JSON object of attributes that you can optionally pass in as part of the evaluation event sent to Evidently from the user session. Evidently can use this value to match user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>
     /// <p>If you include this parameter, the value must be a JSON object. A JSON array is not supported.</p>
-    pub fn set_evaluation_context(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evaluation_context(input);
         self
     }

@@ -24,11 +24,7 @@ impl super::Client {
     ///   - [`account_recovery_setting(AccountRecoverySettingType)`](crate::operation::update_user_pool::builders::UpdateUserPoolFluentBuilder::account_recovery_setting) / [`set_account_recovery_setting(Option<AccountRecoverySettingType>)`](crate::operation::update_user_pool::builders::UpdateUserPoolFluentBuilder::set_account_recovery_setting): <p>The available verified method a user can use to recover their password when they call <code>ForgotPassword</code>. You can use this setting to define a preferred method when a user has more than one method available. With this setting, SMS doesn't qualify for a valid password recovery mechanism if the user also has SMS multi-factor authentication (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior to determine the recovery method where SMS is preferred through email.</p>
     /// - On success, responds with [`UpdateUserPoolOutput`](crate::operation::update_user_pool::UpdateUserPoolOutput)
     /// - On failure, responds with [`SdkError<UpdateUserPoolError>`](crate::operation::update_user_pool::UpdateUserPoolError)
-    pub fn update_user_pool(
-        &self,
-    ) -> crate::operation::update_user_pool::builders::UpdateUserPoolFluentBuilder {
-        crate::operation::update_user_pool::builders::UpdateUserPoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_user_pool(&self) -> crate::operation::update_user_pool::builders::UpdateUserPoolFluentBuilder {
+        crate::operation::update_user_pool::builders::UpdateUserPoolFluentBuilder::new(self.handle.clone())
     }
 }

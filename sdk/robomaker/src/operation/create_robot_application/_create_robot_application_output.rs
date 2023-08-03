@@ -26,9 +26,7 @@ pub struct CreateRobotApplicationOutput {
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of all tags added to the robot application.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An object that contains the Docker image URI used to a create your robot application.</p>
     #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::Environment>,
@@ -64,11 +62,7 @@ impl CreateRobotApplicationOutput {
         self.revision_id.as_deref()
     }
     /// <p>The list of all tags added to the robot application.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>An object that contains the Docker image URI used to a create your robot application.</p>
@@ -83,18 +77,14 @@ impl ::aws_http::request_id::RequestId for CreateRobotApplicationOutput {
 }
 impl CreateRobotApplicationOutput {
     /// Creates a new builder-style object to manufacture [`CreateRobotApplicationOutput`](crate::operation::create_robot_application::CreateRobotApplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::create_robot_application::builders::CreateRobotApplicationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_robot_application::builders::CreateRobotApplicationOutputBuilder {
         crate::operation::create_robot_application::builders::CreateRobotApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRobotApplicationOutput`](crate::operation::create_robot_application::CreateRobotApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRobotApplicationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -103,9 +93,7 @@ pub struct CreateRobotApplicationOutputBuilder {
     pub(crate) robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) environment: ::std::option::Option<crate::types::Environment>,
     _request_id: Option<String>,
 }
@@ -164,10 +152,7 @@ impl CreateRobotApplicationOutputBuilder {
         self
     }
     /// <p>The sources of the robot application.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Source>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Source>>) -> Self {
         self.sources = input;
         self
     }
@@ -181,17 +166,12 @@ impl CreateRobotApplicationOutputBuilder {
         self
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-    pub fn set_robot_software_suite(
-        mut self,
-        input: ::std::option::Option<crate::types::RobotSoftwareSuite>,
-    ) -> Self {
+    pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
         self.robot_software_suite = input;
         self
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-    pub fn get_robot_software_suite(
-        &self,
-    ) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+    pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
         &self.robot_software_suite
     }
     /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
@@ -200,10 +180,7 @@ impl CreateRobotApplicationOutputBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -230,32 +207,19 @@ impl CreateRobotApplicationOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of all tags added to the robot application.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The list of all tags added to the robot application.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The list of all tags added to the robot application.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>An object that contains the Docker image URI used to a create your robot application.</p>
@@ -264,10 +228,7 @@ impl CreateRobotApplicationOutputBuilder {
         self
     }
     /// <p>An object that contains the Docker image URI used to a create your robot application.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::Environment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
         self.environment = input;
         self
     }

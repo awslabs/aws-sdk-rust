@@ -46,16 +46,14 @@ impl DeleteBucketLifecycleConfigurationInput {
 }
 impl DeleteBucketLifecycleConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketLifecycleConfigurationInput`](crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationInput).
-    pub fn builder() -> crate::operation::delete_bucket_lifecycle_configuration::builders::DeleteBucketLifecycleConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_bucket_lifecycle_configuration::builders::DeleteBucketLifecycleConfigurationInputBuilder {
         crate::operation::delete_bucket_lifecycle_configuration::builders::DeleteBucketLifecycleConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBucketLifecycleConfigurationInput`](crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBucketLifecycleConfigurationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
@@ -126,14 +124,17 @@ impl DeleteBucketLifecycleConfigurationInputBuilder {
         &self.bucket
     }
     /// Consumes the builder and constructs a [`DeleteBucketLifecycleConfigurationInput`](crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationInput {
-                account_id: self.account_id
-                ,
-                bucket: self.bucket
-                ,
-            }
+                account_id: self.account_id,
+                bucket: self.bucket,
+            },
         )
     }
 }

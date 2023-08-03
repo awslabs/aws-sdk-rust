@@ -24,9 +24,7 @@ impl CloudWatchMetrics {
 
 /// A builder for [`CloudWatchMetrics`](crate::types::CloudWatchMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchMetricsBuilder {
     pub(crate) is_enabled: ::std::option::Option<bool>,
 }

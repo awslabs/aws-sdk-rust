@@ -6,10 +6,7 @@ pub fn ser_caption_destination_settings(
     if let Some(var_1) = &input.arib_destination_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("aribDestinationSettings").start_object();
-        crate::protocol_serde::shape_arib_destination_settings::ser_arib_destination_settings(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_arib_destination_settings::ser_arib_destination_settings(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.burn_in_destination_settings {
@@ -38,35 +35,32 @@ pub fn ser_caption_destination_settings(
     }
     if let Some(var_11) = &input.embedded_plus_scte20_destination_settings {
         #[allow(unused_mut)]
-        let mut object_12 = object
-            .key("embeddedPlusScte20DestinationSettings")
-            .start_object();
-        crate::protocol_serde::shape_embedded_plus_scte20_destination_settings::ser_embedded_plus_scte20_destination_settings(&mut object_12, var_11)?;
+        let mut object_12 = object.key("embeddedPlusScte20DestinationSettings").start_object();
+        crate::protocol_serde::shape_embedded_plus_scte20_destination_settings::ser_embedded_plus_scte20_destination_settings(
+            &mut object_12,
+            var_11,
+        )?;
         object_12.finish();
     }
     if let Some(var_13) = &input.rtmp_caption_info_destination_settings {
         #[allow(unused_mut)]
-        let mut object_14 = object
-            .key("rtmpCaptionInfoDestinationSettings")
-            .start_object();
+        let mut object_14 = object.key("rtmpCaptionInfoDestinationSettings").start_object();
         crate::protocol_serde::shape_rtmp_caption_info_destination_settings::ser_rtmp_caption_info_destination_settings(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.scte20_plus_embedded_destination_settings {
         #[allow(unused_mut)]
-        let mut object_16 = object
-            .key("scte20PlusEmbeddedDestinationSettings")
-            .start_object();
-        crate::protocol_serde::shape_scte20_plus_embedded_destination_settings::ser_scte20_plus_embedded_destination_settings(&mut object_16, var_15)?;
+        let mut object_16 = object.key("scte20PlusEmbeddedDestinationSettings").start_object();
+        crate::protocol_serde::shape_scte20_plus_embedded_destination_settings::ser_scte20_plus_embedded_destination_settings(
+            &mut object_16,
+            var_15,
+        )?;
         object_16.finish();
     }
     if let Some(var_17) = &input.scte27_destination_settings {
         #[allow(unused_mut)]
         let mut object_18 = object.key("scte27DestinationSettings").start_object();
-        crate::protocol_serde::shape_scte27_destination_settings::ser_scte27_destination_settings(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_scte27_destination_settings::ser_scte27_destination_settings(&mut object_18, var_17)?;
         object_18.finish();
     }
     if let Some(var_19) = &input.smpte_tt_destination_settings {
@@ -84,19 +78,13 @@ pub fn ser_caption_destination_settings(
     if let Some(var_23) = &input.ttml_destination_settings {
         #[allow(unused_mut)]
         let mut object_24 = object.key("ttmlDestinationSettings").start_object();
-        crate::protocol_serde::shape_ttml_destination_settings::ser_ttml_destination_settings(
-            &mut object_24,
-            var_23,
-        )?;
+        crate::protocol_serde::shape_ttml_destination_settings::ser_ttml_destination_settings(&mut object_24, var_23)?;
         object_24.finish();
     }
     if let Some(var_25) = &input.webvtt_destination_settings {
         #[allow(unused_mut)]
         let mut object_26 = object.key("webvttDestinationSettings").start_object();
-        crate::protocol_serde::shape_webvtt_destination_settings::ser_webvtt_destination_settings(
-            &mut object_26,
-            var_25,
-        )?;
+        crate::protocol_serde::shape_webvtt_destination_settings::ser_webvtt_destination_settings(&mut object_26, var_25)?;
         object_26.finish();
     }
     Ok(())
@@ -104,17 +92,9 @@ pub fn ser_caption_destination_settings(
 
 pub(crate) fn de_caption_destination_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::CaptionDestinationSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::CaptionDestinationSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -128,27 +108,27 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "aribDestinationSettings" => {
                                 builder = builder.set_arib_destination_settings(
-                                    crate::protocol_serde::shape_arib_destination_settings::de_arib_destination_settings(tokens)?
+                                    crate::protocol_serde::shape_arib_destination_settings::de_arib_destination_settings(tokens)?,
                                 );
                             }
                             "burnInDestinationSettings" => {
                                 builder = builder.set_burn_in_destination_settings(
-                                    crate::protocol_serde::shape_burn_in_destination_settings::de_burn_in_destination_settings(tokens)?
+                                    crate::protocol_serde::shape_burn_in_destination_settings::de_burn_in_destination_settings(tokens)?,
                                 );
                             }
                             "dvbSubDestinationSettings" => {
                                 builder = builder.set_dvb_sub_destination_settings(
-                                    crate::protocol_serde::shape_dvb_sub_destination_settings::de_dvb_sub_destination_settings(tokens)?
+                                    crate::protocol_serde::shape_dvb_sub_destination_settings::de_dvb_sub_destination_settings(tokens)?,
                                 );
                             }
                             "ebuTtDDestinationSettings" => {
                                 builder = builder.set_ebu_tt_d_destination_settings(
-                                    crate::protocol_serde::shape_ebu_tt_d_destination_settings::de_ebu_tt_d_destination_settings(tokens)?
+                                    crate::protocol_serde::shape_ebu_tt_d_destination_settings::de_ebu_tt_d_destination_settings(tokens)?,
                                 );
                             }
                             "embeddedDestinationSettings" => {
                                 builder = builder.set_embedded_destination_settings(
-                                    crate::protocol_serde::shape_embedded_destination_settings::de_embedded_destination_settings(tokens)?
+                                    crate::protocol_serde::shape_embedded_destination_settings::de_embedded_destination_settings(tokens)?,
                                 );
                             }
                             "embeddedPlusScte20DestinationSettings" => {
@@ -158,7 +138,9 @@ where
                             }
                             "rtmpCaptionInfoDestinationSettings" => {
                                 builder = builder.set_rtmp_caption_info_destination_settings(
-                                    crate::protocol_serde::shape_rtmp_caption_info_destination_settings::de_rtmp_caption_info_destination_settings(tokens)?
+                                    crate::protocol_serde::shape_rtmp_caption_info_destination_settings::de_rtmp_caption_info_destination_settings(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "scte20PlusEmbeddedDestinationSettings" => {
@@ -168,47 +150,44 @@ where
                             }
                             "scte27DestinationSettings" => {
                                 builder = builder.set_scte27_destination_settings(
-                                    crate::protocol_serde::shape_scte27_destination_settings::de_scte27_destination_settings(tokens)?
+                                    crate::protocol_serde::shape_scte27_destination_settings::de_scte27_destination_settings(tokens)?,
                                 );
                             }
                             "smpteTtDestinationSettings" => {
                                 builder = builder.set_smpte_tt_destination_settings(
-                                    crate::protocol_serde::shape_smpte_tt_destination_settings::de_smpte_tt_destination_settings(tokens)?
+                                    crate::protocol_serde::shape_smpte_tt_destination_settings::de_smpte_tt_destination_settings(tokens)?,
                                 );
                             }
                             "teletextDestinationSettings" => {
                                 builder = builder.set_teletext_destination_settings(
-                                    crate::protocol_serde::shape_teletext_destination_settings::de_teletext_destination_settings(tokens)?
+                                    crate::protocol_serde::shape_teletext_destination_settings::de_teletext_destination_settings(tokens)?,
                                 );
                             }
                             "ttmlDestinationSettings" => {
                                 builder = builder.set_ttml_destination_settings(
-                                    crate::protocol_serde::shape_ttml_destination_settings::de_ttml_destination_settings(tokens)?
+                                    crate::protocol_serde::shape_ttml_destination_settings::de_ttml_destination_settings(tokens)?,
                                 );
                             }
                             "webvttDestinationSettings" => {
                                 builder = builder.set_webvtt_destination_settings(
-                                    crate::protocol_serde::shape_webvtt_destination_settings::de_webvtt_destination_settings(tokens)?
+                                    crate::protocol_serde::shape_webvtt_destination_settings::de_webvtt_destination_settings(tokens)?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

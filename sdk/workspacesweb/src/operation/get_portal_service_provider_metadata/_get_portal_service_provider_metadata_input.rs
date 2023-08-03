@@ -15,16 +15,14 @@ impl GetPortalServiceProviderMetadataInput {
 }
 impl GetPortalServiceProviderMetadataInput {
     /// Creates a new builder-style object to manufacture [`GetPortalServiceProviderMetadataInput`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataInput).
-    pub fn builder() -> crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataInputBuilder{
+    pub fn builder() -> crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataInputBuilder {
         crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPortalServiceProviderMetadataInput`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPortalServiceProviderMetadataInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl GetPortalServiceProviderMetadataInputBuilder {
         &self.portal_arn
     }
     /// Consumes the builder and constructs a [`GetPortalServiceProviderMetadataInput`](crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataInput {
-                portal_arn: self.portal_arn
-                ,
-            }
+            crate::operation::get_portal_service_provider_metadata::GetPortalServiceProviderMetadataInput { portal_arn: self.portal_arn },
         )
     }
 }

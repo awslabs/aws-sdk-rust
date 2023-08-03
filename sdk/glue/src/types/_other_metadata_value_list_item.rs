@@ -30,27 +30,19 @@ impl OtherMetadataValueListItem {
 
 /// A builder for [`OtherMetadataValueListItem`](crate::types::OtherMetadataValueListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OtherMetadataValueListItemBuilder {
     pub(crate) metadata_value: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::std::string::String>,
 }
 impl OtherMetadataValueListItemBuilder {
     /// <p>The metadata key’s corresponding value for the other metadata belonging to the same metadata key.</p>
-    pub fn metadata_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The metadata key’s corresponding value for the other metadata belonging to the same metadata key.</p>
-    pub fn set_metadata_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metadata_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata_value = input;
         self
     }

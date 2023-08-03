@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreatePlacementGroupOutput {
 }
 impl CreatePlacementGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreatePlacementGroupOutput`](crate::operation::create_placement_group::CreatePlacementGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_placement_group::builders::CreatePlacementGroupOutputBuilder {
+    pub fn builder() -> crate::operation::create_placement_group::builders::CreatePlacementGroupOutputBuilder {
         crate::operation::create_placement_group::builders::CreatePlacementGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePlacementGroupOutput`](crate::operation::create_placement_group::CreatePlacementGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePlacementGroupOutputBuilder {
     pub(crate) placement_group: ::std::option::Option<crate::types::PlacementGroup>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreatePlacementGroupOutputBuilder {
         self
     }
     /// <p>Information about the placement group.</p>
-    pub fn set_placement_group(
-        mut self,
-        input: ::std::option::Option<crate::types::PlacementGroup>,
-    ) -> Self {
+    pub fn set_placement_group(mut self, input: ::std::option::Option<crate::types::PlacementGroup>) -> Self {
         self.placement_group = input;
         self
     }

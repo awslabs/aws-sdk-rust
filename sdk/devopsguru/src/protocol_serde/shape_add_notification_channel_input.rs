@@ -6,10 +6,7 @@ pub fn ser_add_notification_channel_input(
     if let Some(var_1) = &input.config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Config").start_object();
-        crate::protocol_serde::shape_notification_channel_config::ser_notification_channel_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_notification_channel_config::ser_notification_channel_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

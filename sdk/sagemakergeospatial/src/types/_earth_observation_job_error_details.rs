@@ -30,9 +30,7 @@ impl EarthObservationJobErrorDetails {
 
 /// A builder for [`EarthObservationJobErrorDetails`](crate::types::EarthObservationJobErrorDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EarthObservationJobErrorDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EarthObservationJobErrorType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl EarthObservationJobErrorDetailsBuilder {
         self
     }
     /// <p>The type of error in an Earth Observation job.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EarthObservationJobErrorType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::EarthObservationJobErrorType>) -> Self {
         self.r#type = input;
         self
     }

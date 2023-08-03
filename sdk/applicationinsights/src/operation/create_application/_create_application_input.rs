@@ -64,17 +64,14 @@ impl CreateApplicationInput {
 }
 impl CreateApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    pub fn builder() -> crate::operation::create_application::builders::CreateApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_application::builders::CreateApplicationInputBuilder {
         crate::operation::create_application::builders::CreateApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateApplicationInputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) ops_center_enabled: ::std::option::Option<bool>,
@@ -87,18 +84,12 @@ pub struct CreateApplicationInputBuilder {
 }
 impl CreateApplicationInputBuilder {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }
@@ -135,18 +126,12 @@ impl CreateApplicationInputBuilder {
         &self.cwe_monitor_enabled
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
-    pub fn ops_item_sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ops_item_sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_item_sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
-    pub fn set_ops_item_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ops_item_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ops_item_sns_topic_arn = input;
         self
     }
@@ -166,10 +151,7 @@ impl CreateApplicationInputBuilder {
         self
     }
     /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -211,10 +193,7 @@ impl CreateApplicationInputBuilder {
         self
     }
     /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
-    pub fn set_grouping_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GroupingType>,
-    ) -> Self {
+    pub fn set_grouping_type(mut self, input: ::std::option::Option<crate::types::GroupingType>) -> Self {
         self.grouping_type = input;
         self
     }
@@ -225,21 +204,16 @@ impl CreateApplicationInputBuilder {
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_application::CreateApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_application::CreateApplicationInput {
-                resource_group_name: self.resource_group_name,
-                ops_center_enabled: self.ops_center_enabled,
-                cwe_monitor_enabled: self.cwe_monitor_enabled,
-                ops_item_sns_topic_arn: self.ops_item_sns_topic_arn,
-                tags: self.tags,
-                auto_config_enabled: self.auto_config_enabled,
-                auto_create: self.auto_create,
-                grouping_type: self.grouping_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
+            resource_group_name: self.resource_group_name,
+            ops_center_enabled: self.ops_center_enabled,
+            cwe_monitor_enabled: self.cwe_monitor_enabled,
+            ops_item_sns_topic_arn: self.ops_item_sns_topic_arn,
+            tags: self.tags,
+            auto_config_enabled: self.auto_config_enabled,
+            auto_create: self.auto_create,
+            grouping_type: self.grouping_type,
+        })
     }
 }

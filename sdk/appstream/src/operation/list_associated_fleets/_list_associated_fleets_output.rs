@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAssociatedFleetsOutput {
 }
 impl ListAssociatedFleetsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedFleetsOutput`](crate::operation::list_associated_fleets::ListAssociatedFleetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_associated_fleets::builders::ListAssociatedFleetsOutputBuilder {
+    pub fn builder() -> crate::operation::list_associated_fleets::builders::ListAssociatedFleetsOutputBuilder {
         crate::operation::list_associated_fleets::builders::ListAssociatedFleetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociatedFleetsOutput`](crate::operation::list_associated_fleets::ListAssociatedFleetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociatedFleetsOutputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ListAssociatedFleetsOutputBuilder {
         self
     }
     /// <p>The name of the fleet.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }

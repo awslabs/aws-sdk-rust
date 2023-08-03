@@ -44,9 +44,7 @@ impl SchemaInputAttribute {
 
 /// A builder for [`SchemaInputAttribute`](crate::types::SchemaInputAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaInputAttributeBuilder {
     pub(crate) field_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::SchemaAttributeType>,
@@ -74,10 +72,7 @@ impl SchemaInputAttributeBuilder {
         self
     }
     /// <p>The type of the attribute, selected from a list of values.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaAttributeType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SchemaAttributeType>) -> Self {
         self.r#type = input;
         self
     }

@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePartnerEventSourceOutput`](crate::operation::create_partner_event_source::CreatePartnerEventSourceOutput) with field(s):
     ///   - [`event_source_arn(Option<String>)`](crate::operation::create_partner_event_source::CreatePartnerEventSourceOutput::event_source_arn): <p>The ARN of the partner event source.</p>
     /// - On failure, responds with [`SdkError<CreatePartnerEventSourceError>`](crate::operation::create_partner_event_source::CreatePartnerEventSourceError)
-    pub fn create_partner_event_source(&self) -> crate::operation::create_partner_event_source::builders::CreatePartnerEventSourceFluentBuilder{
+    pub fn create_partner_event_source(&self) -> crate::operation::create_partner_event_source::builders::CreatePartnerEventSourceFluentBuilder {
         crate::operation::create_partner_event_source::builders::CreatePartnerEventSourceFluentBuilder::new(self.handle.clone())
     }
 }

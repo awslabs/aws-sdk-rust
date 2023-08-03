@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetInvalidationOutput`](crate::operation::get_invalidation::GetInvalidationOutput) with field(s):
     ///   - [`invalidation(Option<Invalidation>)`](crate::operation::get_invalidation::GetInvalidationOutput::invalidation): <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>.</p>
     /// - On failure, responds with [`SdkError<GetInvalidationError>`](crate::operation::get_invalidation::GetInvalidationError)
-    pub fn get_invalidation(
-        &self,
-    ) -> crate::operation::get_invalidation::builders::GetInvalidationFluentBuilder {
-        crate::operation::get_invalidation::builders::GetInvalidationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_invalidation(&self) -> crate::operation::get_invalidation::builders::GetInvalidationFluentBuilder {
+        crate::operation::get_invalidation::builders::GetInvalidationFluentBuilder::new(self.handle.clone())
     }
 }

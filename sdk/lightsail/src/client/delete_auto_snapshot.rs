@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteAutoSnapshotOutput`](crate::operation::delete_auto_snapshot::DeleteAutoSnapshotOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::delete_auto_snapshot::DeleteAutoSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteAutoSnapshotError>`](crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError)
-    pub fn delete_auto_snapshot(
-        &self,
-    ) -> crate::operation::delete_auto_snapshot::builders::DeleteAutoSnapshotFluentBuilder {
-        crate::operation::delete_auto_snapshot::builders::DeleteAutoSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_auto_snapshot(&self) -> crate::operation::delete_auto_snapshot::builders::DeleteAutoSnapshotFluentBuilder {
+        crate::operation::delete_auto_snapshot::builders::DeleteAutoSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

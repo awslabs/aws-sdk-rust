@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSourceServerOutput {
 }
 impl DeleteSourceServerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSourceServerOutput`](crate::operation::delete_source_server::DeleteSourceServerOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_source_server::builders::DeleteSourceServerOutputBuilder {
+    pub fn builder() -> crate::operation::delete_source_server::builders::DeleteSourceServerOutputBuilder {
         crate::operation::delete_source_server::builders::DeleteSourceServerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSourceServerOutput`](crate::operation::delete_source_server::DeleteSourceServerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSourceServerOutputBuilder {
     _request_id: Option<String>,
 }

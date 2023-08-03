@@ -8,8 +8,7 @@ pub struct DescribeDbClusterSnapshotsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Provides a list of DB cluster snapshots for the user.</p>
     #[doc(hidden)]
-    pub db_cluster_snapshots:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshot>>,
+    pub db_cluster_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshot>>,
     _request_id: Option<String>,
 }
 impl DescribeDbClusterSnapshotsOutput {
@@ -18,9 +17,7 @@ impl DescribeDbClusterSnapshotsOutput {
         self.marker.as_deref()
     }
     /// <p>Provides a list of DB cluster snapshots for the user.</p>
-    pub fn db_cluster_snapshots(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DbClusterSnapshot]> {
+    pub fn db_cluster_snapshots(&self) -> ::std::option::Option<&[crate::types::DbClusterSnapshot]> {
         self.db_cluster_snapshots.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeDbClusterSnapshotsOutput {
 }
 impl DescribeDbClusterSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotsOutput`](crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsOutput).
-    pub fn builder() -> crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsOutputBuilder {
         crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbClusterSnapshotsOutput`](crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbClusterSnapshotsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) db_cluster_snapshots:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshot>>,
+    pub(crate) db_cluster_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshot>>,
     _request_id: Option<String>,
 }
 impl DescribeDbClusterSnapshotsOutputBuilder {
@@ -74,17 +68,12 @@ impl DescribeDbClusterSnapshotsOutputBuilder {
         self
     }
     /// <p>Provides a list of DB cluster snapshots for the user.</p>
-    pub fn set_db_cluster_snapshots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshot>>,
-    ) -> Self {
+    pub fn set_db_cluster_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshot>>) -> Self {
         self.db_cluster_snapshots = input;
         self
     }
     /// <p>Provides a list of DB cluster snapshots for the user.</p>
-    pub fn get_db_cluster_snapshots(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshot>> {
+    pub fn get_db_cluster_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshot>> {
         &self.db_cluster_snapshots
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl DescribeDbClusterSnapshotsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDbClusterSnapshotsOutput`](crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsOutput {
+    pub fn build(self) -> crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsOutput {
         crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsOutput {
             marker: self.marker,
             db_cluster_snapshots: self.db_cluster_snapshots,

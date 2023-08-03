@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ListOriginAccessControlsOutput`](crate::operation::list_origin_access_controls::ListOriginAccessControlsOutput) with field(s):
     ///   - [`origin_access_control_list(Option<OriginAccessControlList>)`](crate::operation::list_origin_access_controls::ListOriginAccessControlsOutput::origin_access_control_list): <p>A list of origin access controls.</p>
     /// - On failure, responds with [`SdkError<ListOriginAccessControlsError>`](crate::operation::list_origin_access_controls::ListOriginAccessControlsError)
-    pub fn list_origin_access_controls(&self) -> crate::operation::list_origin_access_controls::builders::ListOriginAccessControlsFluentBuilder{
+    pub fn list_origin_access_controls(&self) -> crate::operation::list_origin_access_controls::builders::ListOriginAccessControlsFluentBuilder {
         crate::operation::list_origin_access_controls::builders::ListOriginAccessControlsFluentBuilder::new(self.handle.clone())
     }
 }

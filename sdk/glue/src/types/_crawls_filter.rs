@@ -65,9 +65,7 @@ impl CrawlsFilter {
 
 /// A builder for [`CrawlsFilter`](crate::types::CrawlsFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CrawlsFilterBuilder {
     pub(crate) field_name: ::std::option::Option<crate::types::FieldName>,
     pub(crate) filter_operator: ::std::option::Option<crate::types::FilterOperator>,
@@ -128,10 +126,7 @@ impl CrawlsFilterBuilder {
     /// <li> <p> <code>EQ</code>: Equal to.</p> </li>
     /// <li> <p> <code>NE</code>: Not equal to.</p> </li>
     /// </ul>
-    pub fn set_filter_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterOperator>,
-    ) -> Self {
+    pub fn set_filter_operator(mut self, input: ::std::option::Option<crate::types::FilterOperator>) -> Self {
         self.filter_operator = input;
         self
     }

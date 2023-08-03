@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StartContactRecordingOutput {
 }
 impl StartContactRecordingOutput {
     /// Creates a new builder-style object to manufacture [`StartContactRecordingOutput`](crate::operation::start_contact_recording::StartContactRecordingOutput).
-    pub fn builder(
-    ) -> crate::operation::start_contact_recording::builders::StartContactRecordingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_contact_recording::builders::StartContactRecordingOutputBuilder {
         crate::operation::start_contact_recording::builders::StartContactRecordingOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartContactRecordingOutput`](crate::operation::start_contact_recording::StartContactRecordingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartContactRecordingOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,9 +26,7 @@ impl StartCelebrityRecognitionInput {
         self.client_request_token.as_deref()
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
-    pub fn notification_channel(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationChannel> {
+    pub fn notification_channel(&self) -> ::std::option::Option<&crate::types::NotificationChannel> {
         self.notification_channel.as_ref()
     }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
@@ -38,16 +36,14 @@ impl StartCelebrityRecognitionInput {
 }
 impl StartCelebrityRecognitionInput {
     /// Creates a new builder-style object to manufacture [`StartCelebrityRecognitionInput`](crate::operation::start_celebrity_recognition::StartCelebrityRecognitionInput).
-    pub fn builder() -> crate::operation::start_celebrity_recognition::builders::StartCelebrityRecognitionInputBuilder{
+    pub fn builder() -> crate::operation::start_celebrity_recognition::builders::StartCelebrityRecognitionInputBuilder {
         crate::operation::start_celebrity_recognition::builders::StartCelebrityRecognitionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartCelebrityRecognitionInput`](crate::operation::start_celebrity_recognition::StartCelebrityRecognitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartCelebrityRecognitionInputBuilder {
     pub(crate) video: ::std::option::Option<crate::types::Video>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl StartCelebrityRecognitionInputBuilder {
         &self.video
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartCelebrityRecognition</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartCelebrityRecognition</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -95,17 +85,12 @@ impl StartCelebrityRecognitionInputBuilder {
         self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
-    pub fn set_notification_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationChannel>,
-    ) -> Self {
+    pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.notification_channel = input;
         self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
-    pub fn get_notification_channel(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+    pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
         &self.notification_channel
     }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
@@ -129,13 +114,11 @@ impl StartCelebrityRecognitionInputBuilder {
         crate::operation::start_celebrity_recognition::StartCelebrityRecognitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_celebrity_recognition::StartCelebrityRecognitionInput {
-                video: self.video,
-                client_request_token: self.client_request_token,
-                notification_channel: self.notification_channel,
-                job_tag: self.job_tag,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_celebrity_recognition::StartCelebrityRecognitionInput {
+            video: self.video,
+            client_request_token: self.client_request_token,
+            notification_channel: self.notification_channel,
+            job_tag: self.job_tag,
+        })
     }
 }

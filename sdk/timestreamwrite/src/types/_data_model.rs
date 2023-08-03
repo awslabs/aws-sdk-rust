@@ -18,8 +18,7 @@ pub struct DataModel {
     pub multi_measure_mappings: ::std::option::Option<crate::types::MultiMeasureMappings>,
     /// <p>Source to target mappings for measures.</p>
     #[doc(hidden)]
-    pub mixed_measure_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>>,
+    pub mixed_measure_mappings: ::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>>,
     /// <p></p>
     #[doc(hidden)]
     pub measure_name_column: ::std::option::Option<::std::string::String>,
@@ -38,15 +37,11 @@ impl DataModel {
         self.dimension_mappings.as_deref()
     }
     /// <p>Source to target mappings for multi-measure records.</p>
-    pub fn multi_measure_mappings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MultiMeasureMappings> {
+    pub fn multi_measure_mappings(&self) -> ::std::option::Option<&crate::types::MultiMeasureMappings> {
         self.multi_measure_mappings.as_ref()
     }
     /// <p>Source to target mappings for measures.</p>
-    pub fn mixed_measure_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MixedMeasureMapping]> {
+    pub fn mixed_measure_mappings(&self) -> ::std::option::Option<&[crate::types::MixedMeasureMapping]> {
         self.mixed_measure_mappings.as_deref()
     }
     /// <p></p>
@@ -63,17 +58,13 @@ impl DataModel {
 
 /// A builder for [`DataModel`](crate::types::DataModel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataModelBuilder {
     pub(crate) time_column: ::std::option::Option<::std::string::String>,
     pub(crate) time_unit: ::std::option::Option<crate::types::TimeUnit>,
-    pub(crate) dimension_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>>,
+    pub(crate) dimension_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>>,
     pub(crate) multi_measure_mappings: ::std::option::Option<crate::types::MultiMeasureMappings>,
-    pub(crate) mixed_measure_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>>,
+    pub(crate) mixed_measure_mappings: ::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>>,
     pub(crate) measure_name_column: ::std::option::Option<::std::string::String>,
 }
 impl DataModelBuilder {
@@ -117,17 +108,12 @@ impl DataModelBuilder {
         self
     }
     /// <p>Source to target mappings for dimensions.</p>
-    pub fn set_dimension_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>>,
-    ) -> Self {
+    pub fn set_dimension_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>>) -> Self {
         self.dimension_mappings = input;
         self
     }
     /// <p>Source to target mappings for dimensions.</p>
-    pub fn get_dimension_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>> {
+    pub fn get_dimension_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>> {
         &self.dimension_mappings
     }
     /// <p>Source to target mappings for multi-measure records.</p>
@@ -136,17 +122,12 @@ impl DataModelBuilder {
         self
     }
     /// <p>Source to target mappings for multi-measure records.</p>
-    pub fn set_multi_measure_mappings(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiMeasureMappings>,
-    ) -> Self {
+    pub fn set_multi_measure_mappings(mut self, input: ::std::option::Option<crate::types::MultiMeasureMappings>) -> Self {
         self.multi_measure_mappings = input;
         self
     }
     /// <p>Source to target mappings for multi-measure records.</p>
-    pub fn get_multi_measure_mappings(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiMeasureMappings> {
+    pub fn get_multi_measure_mappings(&self) -> &::std::option::Option<crate::types::MultiMeasureMappings> {
         &self.multi_measure_mappings
     }
     /// Appends an item to `mixed_measure_mappings`.
@@ -161,32 +142,21 @@ impl DataModelBuilder {
         self
     }
     /// <p>Source to target mappings for measures.</p>
-    pub fn set_mixed_measure_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>>,
-    ) -> Self {
+    pub fn set_mixed_measure_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>>) -> Self {
         self.mixed_measure_mappings = input;
         self
     }
     /// <p>Source to target mappings for measures.</p>
-    pub fn get_mixed_measure_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>> {
+    pub fn get_mixed_measure_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>> {
         &self.mixed_measure_mappings
     }
     /// <p></p>
-    pub fn measure_name_column(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn measure_name_column(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.measure_name_column = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_measure_name_column(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_measure_name_column(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.measure_name_column = input;
         self
     }

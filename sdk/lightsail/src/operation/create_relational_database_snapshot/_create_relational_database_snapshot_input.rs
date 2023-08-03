@@ -41,16 +41,14 @@ impl CreateRelationalDatabaseSnapshotInput {
 }
 impl CreateRelationalDatabaseSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CreateRelationalDatabaseSnapshotInput`](crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotInput).
-    pub fn builder() -> crate::operation::create_relational_database_snapshot::builders::CreateRelationalDatabaseSnapshotInputBuilder{
+    pub fn builder() -> crate::operation::create_relational_database_snapshot::builders::CreateRelationalDatabaseSnapshotInputBuilder {
         crate::operation::create_relational_database_snapshot::builders::CreateRelationalDatabaseSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRelationalDatabaseSnapshotInput`](crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRelationalDatabaseSnapshotInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) relational_database_snapshot_name: ::std::option::Option<::std::string::String>,
@@ -58,18 +56,12 @@ pub struct CreateRelationalDatabaseSnapshotInputBuilder {
 }
 impl CreateRelationalDatabaseSnapshotInputBuilder {
     /// <p>The name of the database on which to base your new snapshot.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database on which to base your new snapshot.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_name = input;
         self
     }
@@ -83,10 +75,7 @@ impl CreateRelationalDatabaseSnapshotInputBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn relational_database_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -96,10 +85,7 @@ impl CreateRelationalDatabaseSnapshotInputBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn set_relational_database_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_snapshot_name = input;
         self
     }
@@ -109,9 +95,7 @@ impl CreateRelationalDatabaseSnapshotInputBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn get_relational_database_snapshot_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_relational_database_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.relational_database_snapshot_name
     }
     /// Appends an item to `tags`.
@@ -128,10 +112,7 @@ impl CreateRelationalDatabaseSnapshotInputBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -141,16 +122,18 @@ impl CreateRelationalDatabaseSnapshotInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRelationalDatabaseSnapshotInput`](crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotInput {
-                relational_database_name: self.relational_database_name
-                ,
-                relational_database_snapshot_name: self.relational_database_snapshot_name
-                ,
-                tags: self.tags
-                ,
-            }
+                relational_database_name: self.relational_database_name,
+                relational_database_snapshot_name: self.relational_database_snapshot_name,
+                tags: self.tags,
+            },
         )
     }
 }

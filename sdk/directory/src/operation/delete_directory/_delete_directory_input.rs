@@ -23,9 +23,7 @@ impl DeleteDirectoryInput {
 
 /// A builder for [`DeleteDirectoryInput`](crate::operation::delete_directory::DeleteDirectoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDirectoryInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +45,7 @@ impl DeleteDirectoryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDirectoryInput`](crate::operation::delete_directory::DeleteDirectoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_directory::DeleteDirectoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_directory::DeleteDirectoryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_directory::DeleteDirectoryInput {
             directory_id: self.directory_id,
         })

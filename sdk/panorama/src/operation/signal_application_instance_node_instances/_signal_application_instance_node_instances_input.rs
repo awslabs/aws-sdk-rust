@@ -22,34 +22,26 @@ impl SignalApplicationInstanceNodeInstancesInput {
 }
 impl SignalApplicationInstanceNodeInstancesInput {
     /// Creates a new builder-style object to manufacture [`SignalApplicationInstanceNodeInstancesInput`](crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput).
-    pub fn builder() -> crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesInputBuilder{
+    pub fn builder() -> crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesInputBuilder {
         crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`SignalApplicationInstanceNodeInstancesInput`](crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignalApplicationInstanceNodeInstancesInputBuilder {
     pub(crate) application_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) node_signals: ::std::option::Option<::std::vec::Vec<crate::types::NodeSignal>>,
 }
 impl SignalApplicationInstanceNodeInstancesInputBuilder {
     /// <p>An application instance ID.</p>
-    pub fn application_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An application instance ID.</p>
-    pub fn set_application_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_instance_id = input;
         self
     }
@@ -69,28 +61,26 @@ impl SignalApplicationInstanceNodeInstancesInputBuilder {
         self
     }
     /// <p>A list of signals.</p>
-    pub fn set_node_signals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NodeSignal>>,
-    ) -> Self {
+    pub fn set_node_signals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeSignal>>) -> Self {
         self.node_signals = input;
         self
     }
     /// <p>A list of signals.</p>
-    pub fn get_node_signals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeSignal>> {
+    pub fn get_node_signals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeSignal>> {
         &self.node_signals
     }
     /// Consumes the builder and constructs a [`SignalApplicationInstanceNodeInstancesInput`](crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput {
-                application_instance_id: self.application_instance_id
-                ,
-                node_signals: self.node_signals
-                ,
-            }
+                application_instance_id: self.application_instance_id,
+                node_signals: self.node_signals,
+            },
         )
     }
 }

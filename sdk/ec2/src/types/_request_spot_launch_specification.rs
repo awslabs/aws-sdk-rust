@@ -15,8 +15,7 @@ pub struct RequestSpotLaunchSpecification {
     pub addressing_type: ::std::option::Option<::std::string::String>,
     /// <p>The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
     #[doc(hidden)]
-    pub block_device_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     /// <p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
     /// <p>Default: <code>false</code> </p>
     #[doc(hidden)]
@@ -42,8 +41,7 @@ pub struct RequestSpotLaunchSpecification {
     pub monitoring: ::std::option::Option<crate::types::RunInstancesMonitoringEnabled>,
     /// <p>The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
     #[doc(hidden)]
-    pub network_interfaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
+    pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
     /// <p>The placement information for the instance.</p>
     #[doc(hidden)]
     pub placement: ::std::option::Option<crate::types::SpotPlacement>,
@@ -71,9 +69,7 @@ impl RequestSpotLaunchSpecification {
         self.addressing_type.as_deref()
     }
     /// <p>The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
-    pub fn block_device_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BlockDeviceMapping]> {
+    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::BlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
     /// <p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
@@ -82,9 +78,7 @@ impl RequestSpotLaunchSpecification {
         self.ebs_optimized
     }
     /// <p>The IAM instance profile.</p>
-    pub fn iam_instance_profile(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IamInstanceProfileSpecification> {
+    pub fn iam_instance_profile(&self) -> ::std::option::Option<&crate::types::IamInstanceProfileSpecification> {
         self.iam_instance_profile.as_ref()
     }
     /// <p>The ID of the AMI.</p>
@@ -105,15 +99,11 @@ impl RequestSpotLaunchSpecification {
     }
     /// <p>Indicates whether basic or detailed monitoring is enabled for the instance.</p>
     /// <p>Default: Disabled</p>
-    pub fn monitoring(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RunInstancesMonitoringEnabled> {
+    pub fn monitoring(&self) -> ::std::option::Option<&crate::types::RunInstancesMonitoringEnabled> {
         self.monitoring.as_ref()
     }
     /// <p>The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
-    pub fn network_interfaces(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceNetworkInterfaceSpecification]> {
+    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::InstanceNetworkInterfaceSpecification]> {
         self.network_interfaces.as_deref()
     }
     /// <p>The placement information for the instance.</p>
@@ -169,18 +159,15 @@ pub struct RequestSpotLaunchSpecificationBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) addressing_type: ::std::option::Option<::std::string::String>,
-    pub(crate) block_device_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     pub(crate) ebs_optimized: ::std::option::Option<bool>,
-    pub(crate) iam_instance_profile:
-        ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
+    pub(crate) iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) kernel_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
     pub(crate) monitoring: ::std::option::Option<crate::types::RunInstancesMonitoringEnabled>,
-    pub(crate) network_interfaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
+    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
     pub(crate) placement: ::std::option::Option<crate::types::SpotPlacement>,
     pub(crate) ramdisk_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
@@ -192,27 +179,19 @@ impl RequestSpotLaunchSpecificationBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The IDs of the security groups.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// Appends an item to `security_groups`.
@@ -220,42 +199,28 @@ impl RequestSpotLaunchSpecificationBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>Not supported.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>Not supported.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>Not supported.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     /// <p>Deprecated.</p>
-    pub fn addressing_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn addressing_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.addressing_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Deprecated.</p>
-    pub fn set_addressing_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_addressing_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.addressing_type = input;
         self
     }
@@ -275,17 +240,12 @@ impl RequestSpotLaunchSpecificationBuilder {
         self
     }
     /// <p>The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
-    pub fn set_block_device_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
-    ) -> Self {
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
         self.block_device_mappings = input;
         self
     }
     /// <p>The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
-    pub fn get_block_device_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
         &self.block_device_mappings
     }
     /// <p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
@@ -306,25 +266,17 @@ impl RequestSpotLaunchSpecificationBuilder {
         &self.ebs_optimized
     }
     /// <p>The IAM instance profile.</p>
-    pub fn iam_instance_profile(
-        mut self,
-        input: crate::types::IamInstanceProfileSpecification,
-    ) -> Self {
+    pub fn iam_instance_profile(mut self, input: crate::types::IamInstanceProfileSpecification) -> Self {
         self.iam_instance_profile = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IAM instance profile.</p>
-    pub fn set_iam_instance_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
-    ) -> Self {
+    pub fn set_iam_instance_profile(mut self, input: ::std::option::Option<crate::types::IamInstanceProfileSpecification>) -> Self {
         self.iam_instance_profile = input;
         self
     }
     /// <p>The IAM instance profile.</p>
-    pub fn get_iam_instance_profile(
-        &self,
-    ) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
+    pub fn get_iam_instance_profile(&self) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
         &self.iam_instance_profile
     }
     /// <p>The ID of the AMI.</p>
@@ -347,10 +299,7 @@ impl RequestSpotLaunchSpecificationBuilder {
         self
     }
     /// <p>The instance type. Only one instance type can be specified.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
@@ -394,18 +343,13 @@ impl RequestSpotLaunchSpecificationBuilder {
     }
     /// <p>Indicates whether basic or detailed monitoring is enabled for the instance.</p>
     /// <p>Default: Disabled</p>
-    pub fn set_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::RunInstancesMonitoringEnabled>,
-    ) -> Self {
+    pub fn set_monitoring(mut self, input: ::std::option::Option<crate::types::RunInstancesMonitoringEnabled>) -> Self {
         self.monitoring = input;
         self
     }
     /// <p>Indicates whether basic or detailed monitoring is enabled for the instance.</p>
     /// <p>Default: Disabled</p>
-    pub fn get_monitoring(
-        &self,
-    ) -> &::std::option::Option<crate::types::RunInstancesMonitoringEnabled> {
+    pub fn get_monitoring(&self) -> &::std::option::Option<crate::types::RunInstancesMonitoringEnabled> {
         &self.monitoring
     }
     /// Appends an item to `network_interfaces`.
@@ -413,10 +357,7 @@ impl RequestSpotLaunchSpecificationBuilder {
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
     ///
     /// <p>The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
-    pub fn network_interfaces(
-        mut self,
-        input: crate::types::InstanceNetworkInterfaceSpecification,
-    ) -> Self {
+    pub fn network_interfaces(mut self, input: crate::types::InstanceNetworkInterfaceSpecification) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
         v.push(input);
         self.network_interfaces = ::std::option::Option::Some(v);
@@ -425,18 +366,13 @@ impl RequestSpotLaunchSpecificationBuilder {
     /// <p>The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
     pub fn set_network_interfaces(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
     ) -> Self {
         self.network_interfaces = input;
         self
     }
     /// <p>The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
-    pub fn get_network_interfaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>
-    {
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>> {
         &self.network_interfaces
     }
     /// <p>The placement information for the instance.</p>
@@ -445,10 +381,7 @@ impl RequestSpotLaunchSpecificationBuilder {
         self
     }
     /// <p>The placement information for the instance.</p>
-    pub fn set_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::SpotPlacement>,
-    ) -> Self {
+    pub fn set_placement(mut self, input: ::std::option::Option<crate::types::SpotPlacement>) -> Self {
         self.placement = input;
         self
     }

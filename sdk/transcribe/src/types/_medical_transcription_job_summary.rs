@@ -39,8 +39,7 @@ pub struct MedicalTranscriptionJobSummary {
     pub specialty: ::std::option::Option<crate::types::Specialty>,
     /// <p>Labels all personal health information (PHI) identified in your transcript. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
     #[doc(hidden)]
-    pub content_identification_type:
-        ::std::option::Option<crate::types::MedicalContentIdentificationType>,
+    pub content_identification_type: ::std::option::Option<crate::types::MedicalContentIdentificationType>,
     /// <p>Indicates whether the input media is a dictation or a conversation, as specified in the <code>StartMedicalTranscriptionJob</code> request.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
@@ -71,9 +70,7 @@ impl MedicalTranscriptionJobSummary {
     }
     /// <p>Provides the status of your medical transcription job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
-    pub fn transcription_job_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TranscriptionJobStatus> {
+    pub fn transcription_job_status(&self) -> ::std::option::Option<&crate::types::TranscriptionJobStatus> {
         self.transcription_job_status.as_ref()
     }
     /// <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
@@ -91,9 +88,7 @@ impl MedicalTranscriptionJobSummary {
         self.specialty.as_ref()
     }
     /// <p>Labels all personal health information (PHI) identified in your transcript. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
-    pub fn content_identification_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MedicalContentIdentificationType> {
+    pub fn content_identification_type(&self) -> ::std::option::Option<&crate::types::MedicalContentIdentificationType> {
         self.content_identification_type.as_ref()
     }
     /// <p>Indicates whether the input media is a dictation or a conversation, as specified in the <code>StartMedicalTranscriptionJob</code> request.</p>
@@ -110,45 +105,33 @@ impl MedicalTranscriptionJobSummary {
 
 /// A builder for [`MedicalTranscriptionJobSummary`](crate::types::MedicalTranscriptionJobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MedicalTranscriptionJobSummaryBuilder {
     pub(crate) medical_transcription_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
-    pub(crate) transcription_job_status:
-        ::std::option::Option<crate::types::TranscriptionJobStatus>,
+    pub(crate) transcription_job_status: ::std::option::Option<crate::types::TranscriptionJobStatus>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) output_location_type: ::std::option::Option<crate::types::OutputLocationType>,
     pub(crate) specialty: ::std::option::Option<crate::types::Specialty>,
-    pub(crate) content_identification_type:
-        ::std::option::Option<crate::types::MedicalContentIdentificationType>,
+    pub(crate) content_identification_type: ::std::option::Option<crate::types::MedicalContentIdentificationType>,
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
 }
 impl MedicalTranscriptionJobSummaryBuilder {
     /// <p>The name of the medical transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
-    pub fn medical_transcription_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn medical_transcription_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.medical_transcription_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the medical transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
-    pub fn set_medical_transcription_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_medical_transcription_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.medical_transcription_job_name = input;
         self
     }
     /// <p>The name of the medical transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
-    pub fn get_medical_transcription_job_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_medical_transcription_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.medical_transcription_job_name
     }
     /// <p>The date and time the specified medical transcription job request was made.</p>
@@ -159,10 +142,7 @@ impl MedicalTranscriptionJobSummaryBuilder {
     }
     /// <p>The date and time the specified medical transcription job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -179,10 +159,7 @@ impl MedicalTranscriptionJobSummaryBuilder {
     }
     /// <p>The date and time your medical transcription job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -199,10 +176,7 @@ impl MedicalTranscriptionJobSummaryBuilder {
     }
     /// <p>The date and time the specified medical transcription job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
-    pub fn set_completion_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completion_time = input;
         self
     }
@@ -217,10 +191,7 @@ impl MedicalTranscriptionJobSummaryBuilder {
         self
     }
     /// <p>The language code used to create your medical transcription. US English (<code>en-US</code>) is the only supported language for medical transcriptions.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -236,33 +207,22 @@ impl MedicalTranscriptionJobSummaryBuilder {
     }
     /// <p>Provides the status of your medical transcription job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
-    pub fn set_transcription_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscriptionJobStatus>,
-    ) -> Self {
+    pub fn set_transcription_job_status(mut self, input: ::std::option::Option<crate::types::TranscriptionJobStatus>) -> Self {
         self.transcription_job_status = input;
         self
     }
     /// <p>Provides the status of your medical transcription job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
-    pub fn get_transcription_job_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranscriptionJobStatus> {
+    pub fn get_transcription_job_status(&self) -> &::std::option::Option<crate::types::TranscriptionJobStatus> {
         &self.transcription_job_status
     }
     /// <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -280,19 +240,14 @@ impl MedicalTranscriptionJobSummaryBuilder {
     /// <p>Indicates where the specified medical transcription output is stored.</p>
     /// <p>If the value is <code>CUSTOMER_BUCKET</code>, the location is the Amazon S3 bucket you specified using the <code>OutputBucketName</code> parameter in your request. If you also included <code>OutputKey</code> in your request, your output is located in the path you specified in your request.</p>
     /// <p>If the value is <code>SERVICE_BUCKET</code>, the location is a service-managed Amazon S3 bucket. To access a transcript stored in a service-managed bucket, use the URI shown in the <code>TranscriptFileUri</code> field.</p>
-    pub fn set_output_location_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputLocationType>,
-    ) -> Self {
+    pub fn set_output_location_type(mut self, input: ::std::option::Option<crate::types::OutputLocationType>) -> Self {
         self.output_location_type = input;
         self
     }
     /// <p>Indicates where the specified medical transcription output is stored.</p>
     /// <p>If the value is <code>CUSTOMER_BUCKET</code>, the location is the Amazon S3 bucket you specified using the <code>OutputBucketName</code> parameter in your request. If you also included <code>OutputKey</code> in your request, your output is located in the path you specified in your request.</p>
     /// <p>If the value is <code>SERVICE_BUCKET</code>, the location is a service-managed Amazon S3 bucket. To access a transcript stored in a service-managed bucket, use the URI shown in the <code>TranscriptFileUri</code> field.</p>
-    pub fn get_output_location_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OutputLocationType> {
+    pub fn get_output_location_type(&self) -> &::std::option::Option<crate::types::OutputLocationType> {
         &self.output_location_type
     }
     /// <p>Provides the medical specialty represented in your media.</p>
@@ -310,25 +265,17 @@ impl MedicalTranscriptionJobSummaryBuilder {
         &self.specialty
     }
     /// <p>Labels all personal health information (PHI) identified in your transcript. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
-    pub fn content_identification_type(
-        mut self,
-        input: crate::types::MedicalContentIdentificationType,
-    ) -> Self {
+    pub fn content_identification_type(mut self, input: crate::types::MedicalContentIdentificationType) -> Self {
         self.content_identification_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Labels all personal health information (PHI) identified in your transcript. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
-    pub fn set_content_identification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MedicalContentIdentificationType>,
-    ) -> Self {
+    pub fn set_content_identification_type(mut self, input: ::std::option::Option<crate::types::MedicalContentIdentificationType>) -> Self {
         self.content_identification_type = input;
         self
     }
     /// <p>Labels all personal health information (PHI) identified in your transcript. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
-    pub fn get_content_identification_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::MedicalContentIdentificationType> {
+    pub fn get_content_identification_type(&self) -> &::std::option::Option<crate::types::MedicalContentIdentificationType> {
         &self.content_identification_type
     }
     /// <p>Indicates whether the input media is a dictation or a conversation, as specified in the <code>StartMedicalTranscriptionJob</code> request.</p>

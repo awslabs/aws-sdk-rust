@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SelfManageTargetDestination {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,19 +57,11 @@ pub enum SelfManageTargetDestination {
 impl ::std::convert::From<&str> for SelfManageTargetDestination {
     fn from(s: &str) -> Self {
         match s {
-            "Amazon Elastic Cloud Compute (EC2)" => {
-                SelfManageTargetDestination::AmazonElasticCloudCompute
-            }
-            "Amazon Elastic Container Service (ECS)" => {
-                SelfManageTargetDestination::AmazonElasticContainerService
-            }
-            "Amazon Elastic Kubernetes Service (EKS)" => {
-                SelfManageTargetDestination::AmazonElasticKubernetesService
-            }
+            "Amazon Elastic Cloud Compute (EC2)" => SelfManageTargetDestination::AmazonElasticCloudCompute,
+            "Amazon Elastic Container Service (ECS)" => SelfManageTargetDestination::AmazonElasticContainerService,
+            "Amazon Elastic Kubernetes Service (EKS)" => SelfManageTargetDestination::AmazonElasticKubernetesService,
             "None specified" => SelfManageTargetDestination::NoneSpecified,
-            other => SelfManageTargetDestination::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SelfManageTargetDestination::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -90,15 +76,9 @@ impl SelfManageTargetDestination {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            SelfManageTargetDestination::AmazonElasticCloudCompute => {
-                "Amazon Elastic Cloud Compute (EC2)"
-            }
-            SelfManageTargetDestination::AmazonElasticContainerService => {
-                "Amazon Elastic Container Service (ECS)"
-            }
-            SelfManageTargetDestination::AmazonElasticKubernetesService => {
-                "Amazon Elastic Kubernetes Service (EKS)"
-            }
+            SelfManageTargetDestination::AmazonElasticCloudCompute => "Amazon Elastic Cloud Compute (EC2)",
+            SelfManageTargetDestination::AmazonElasticContainerService => "Amazon Elastic Container Service (ECS)",
+            SelfManageTargetDestination::AmazonElasticKubernetesService => "Amazon Elastic Kubernetes Service (EKS)",
             SelfManageTargetDestination::NoneSpecified => "None specified",
             SelfManageTargetDestination::Unknown(value) => value.as_str(),
         }

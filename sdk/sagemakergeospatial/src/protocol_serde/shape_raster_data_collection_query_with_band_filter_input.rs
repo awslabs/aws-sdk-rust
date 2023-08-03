@@ -6,10 +6,7 @@ pub fn ser_raster_data_collection_query_with_band_filter_input(
     if let Some(var_1) = &input.time_range_filter {
         #[allow(unused_mut)]
         let mut object_2 = object.key("TimeRangeFilter").start_object();
-        crate::protocol_serde::shape_time_range_filter_input::ser_time_range_filter_input(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_time_range_filter_input::ser_time_range_filter_input(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.area_of_interest {

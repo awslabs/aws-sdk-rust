@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`configuration_sets(Option<Vec<ConfigurationSetInformation>>)`](crate::operation::describe_configuration_sets::DescribeConfigurationSetsOutput::configuration_sets): <p>An array of ConfigurationSets objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_configuration_sets::DescribeConfigurationSetsOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     /// - On failure, responds with [`SdkError<DescribeConfigurationSetsError>`](crate::operation::describe_configuration_sets::DescribeConfigurationSetsError)
-    pub fn describe_configuration_sets(&self) -> crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsFluentBuilder{
+    pub fn describe_configuration_sets(&self) -> crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsFluentBuilder {
         crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsFluentBuilder::new(self.handle.clone())
     }
 }

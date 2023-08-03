@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeprovisionByoipCidrOutput`](crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrOutput) with field(s):
     ///   - [`byoip_cidr(Option<ByoipCidr>)`](crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrOutput::byoip_cidr): <p>Information about the address range.</p>
     /// - On failure, responds with [`SdkError<DeprovisionByoipCidrError>`](crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrError)
-    pub fn deprovision_byoip_cidr(
-        &self,
-    ) -> crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrFluentBuilder {
-        crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deprovision_byoip_cidr(&self) -> crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrFluentBuilder {
+        crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrFluentBuilder::new(self.handle.clone())
     }
 }

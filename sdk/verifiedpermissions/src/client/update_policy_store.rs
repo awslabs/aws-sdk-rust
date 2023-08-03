@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`created_date(Option<DateTime>)`](crate::operation::update_policy_store::UpdatePolicyStoreOutput::created_date): <p>The date and time that the policy store was originally created.</p>
     ///   - [`last_updated_date(Option<DateTime>)`](crate::operation::update_policy_store::UpdatePolicyStoreOutput::last_updated_date): <p>The date and time that the policy store was most recently updated.</p>
     /// - On failure, responds with [`SdkError<UpdatePolicyStoreError>`](crate::operation::update_policy_store::UpdatePolicyStoreError)
-    pub fn update_policy_store(
-        &self,
-    ) -> crate::operation::update_policy_store::builders::UpdatePolicyStoreFluentBuilder {
-        crate::operation::update_policy_store::builders::UpdatePolicyStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_policy_store(&self) -> crate::operation::update_policy_store::builders::UpdatePolicyStoreFluentBuilder {
+        crate::operation::update_policy_store::builders::UpdatePolicyStoreFluentBuilder::new(self.handle.clone())
     }
 }

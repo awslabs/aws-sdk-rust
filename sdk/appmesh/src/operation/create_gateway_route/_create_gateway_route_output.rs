@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateGatewayRouteOutput {
 }
 impl CreateGatewayRouteOutput {
     /// Creates a new builder-style object to manufacture [`CreateGatewayRouteOutput`](crate::operation::create_gateway_route::CreateGatewayRouteOutput).
-    pub fn builder(
-    ) -> crate::operation::create_gateway_route::builders::CreateGatewayRouteOutputBuilder {
+    pub fn builder() -> crate::operation::create_gateway_route::builders::CreateGatewayRouteOutputBuilder {
         crate::operation::create_gateway_route::builders::CreateGatewayRouteOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGatewayRouteOutput`](crate::operation::create_gateway_route::CreateGatewayRouteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGatewayRouteOutputBuilder {
     pub(crate) gateway_route: ::std::option::Option<crate::types::GatewayRouteData>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateGatewayRouteOutputBuilder {
         self
     }
     /// <p>The full description of your gateway route following the create call.</p>
-    pub fn set_gateway_route(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayRouteData>,
-    ) -> Self {
+    pub fn set_gateway_route(mut self, input: ::std::option::Option<crate::types::GatewayRouteData>) -> Self {
         self.gateway_route = input;
         self
     }

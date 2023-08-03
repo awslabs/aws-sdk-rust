@@ -22,18 +22,14 @@ impl AssociateDeviceWithRoomInput {
 }
 impl AssociateDeviceWithRoomInput {
     /// Creates a new builder-style object to manufacture [`AssociateDeviceWithRoomInput`](crate::operation::associate_device_with_room::AssociateDeviceWithRoomInput).
-    pub fn builder(
-    ) -> crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomInputBuilder {
         crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDeviceWithRoomInput`](crate::operation::associate_device_with_room::AssociateDeviceWithRoomInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDeviceWithRoomInputBuilder {
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
     pub(crate) room_arn: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl AssociateDeviceWithRoomInputBuilder {
         crate::operation::associate_device_with_room::AssociateDeviceWithRoomInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_device_with_room::AssociateDeviceWithRoomInput {
-                device_arn: self.device_arn,
-                room_arn: self.room_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_device_with_room::AssociateDeviceWithRoomInput {
+            device_arn: self.device_arn,
+            room_arn: self.room_arn,
+        })
     }
 }

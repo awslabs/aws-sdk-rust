@@ -15,16 +15,14 @@ impl GetFirewallRuleGroupPolicyInput {
 }
 impl GetFirewallRuleGroupPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupPolicyInput`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput).
-    pub fn builder() -> crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyInputBuilder{
+    pub fn builder() -> crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyInputBuilder {
         crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFirewallRuleGroupPolicyInput`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFirewallRuleGroupPolicyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl GetFirewallRuleGroupPolicyInputBuilder {
         crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput {
-                arn: self.arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput { arn: self.arn })
     }
 }

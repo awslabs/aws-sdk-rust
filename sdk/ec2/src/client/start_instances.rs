@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartInstancesOutput`](crate::operation::start_instances::StartInstancesOutput) with field(s):
     ///   - [`starting_instances(Option<Vec<InstanceStateChange>>)`](crate::operation::start_instances::StartInstancesOutput::starting_instances): <p>Information about the started instances.</p>
     /// - On failure, responds with [`SdkError<StartInstancesError>`](crate::operation::start_instances::StartInstancesError)
-    pub fn start_instances(
-        &self,
-    ) -> crate::operation::start_instances::builders::StartInstancesFluentBuilder {
-        crate::operation::start_instances::builders::StartInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_instances(&self) -> crate::operation::start_instances::builders::StartInstancesFluentBuilder {
+        crate::operation::start_instances::builders::StartInstancesFluentBuilder::new(self.handle.clone())
     }
 }

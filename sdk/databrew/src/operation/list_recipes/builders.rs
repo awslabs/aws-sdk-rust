@@ -10,10 +10,7 @@ impl ListRecipesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_recipes::ListRecipesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recipes::ListRecipesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recipes::ListRecipesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_recipes();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListRecipesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_recipes::ListRecipes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_recipes::ListRecipes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_recipes::ListRecipesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListRecipesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListRecipesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_recipes::ListRecipes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_recipes::ListRecipes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_recipes::ListRecipesError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl ListRecipesFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_recipes::paginator::ListRecipesPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_recipes::paginator::ListRecipesPaginator {
-        crate::operation::list_recipes::paginator::ListRecipesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_recipes::paginator::ListRecipesPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to return in this request. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -151,19 +136,13 @@ impl ListRecipesFluentBuilder {
     }
     /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
     /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
-    pub fn recipe_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recipe_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recipe_version(input.into());
         self
     }
     /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
     /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
-    pub fn set_recipe_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recipe_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recipe_version(input);
         self
     }

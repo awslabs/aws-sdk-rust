@@ -18,10 +18,7 @@ pub fn ser_create_environment_input(
     if let Some(var_5) = &input.high_availability_config {
         #[allow(unused_mut)]
         let mut object_6 = object.key("highAvailabilityConfig").start_object();
-        crate::protocol_serde::shape_high_availability_config::ser_high_availability_config(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_high_availability_config::ser_high_availability_config(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.instance_type {
@@ -34,14 +31,10 @@ pub fn ser_create_environment_input(
         object.key("name").string(var_9.as_str());
     }
     if let Some(var_10) = &input.preferred_maintenance_window {
-        object
-            .key("preferredMaintenanceWindow")
-            .string(var_10.as_str());
+        object.key("preferredMaintenanceWindow").string(var_10.as_str());
     }
     if input.publicly_accessible {
-        object
-            .key("publiclyAccessible")
-            .boolean(input.publicly_accessible);
+        object.key("publiclyAccessible").boolean(input.publicly_accessible);
     }
     if let Some(var_11) = &input.security_group_ids {
         let mut array_12 = object.key("securityGroupIds").start_array();
@@ -58,10 +51,7 @@ pub fn ser_create_environment_input(
             {
                 #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(
-                    &mut object_17,
-                    item_16,
-                )?;
+                crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(&mut object_17, item_16)?;
                 object_17.finish();
             }
         }

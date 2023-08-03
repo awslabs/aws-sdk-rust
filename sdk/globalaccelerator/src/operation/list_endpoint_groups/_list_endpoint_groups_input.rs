@@ -29,17 +29,14 @@ impl ListEndpointGroupsInput {
 }
 impl ListEndpointGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListEndpointGroupsInput`](crate::operation::list_endpoint_groups::ListEndpointGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_endpoint_groups::builders::ListEndpointGroupsInputBuilder {
+    pub fn builder() -> crate::operation::list_endpoint_groups::builders::ListEndpointGroupsInputBuilder {
         crate::operation::list_endpoint_groups::builders::ListEndpointGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEndpointGroupsInput`](crate::operation::list_endpoint_groups::ListEndpointGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEndpointGroupsInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -91,16 +88,11 @@ impl ListEndpointGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListEndpointGroupsInput`](crate::operation::list_endpoint_groups::ListEndpointGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_endpoint_groups::ListEndpointGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_endpoint_groups::ListEndpointGroupsInput {
-                listener_arn: self.listener_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_endpoint_groups::ListEndpointGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_endpoint_groups::ListEndpointGroupsInput {
+            listener_arn: self.listener_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

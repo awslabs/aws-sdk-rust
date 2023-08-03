@@ -30,9 +30,7 @@ impl LoadBalancerTlsCertificateSummary {
 
 /// A builder for [`LoadBalancerTlsCertificateSummary`](crate::types::LoadBalancerTlsCertificateSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoadBalancerTlsCertificateSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) is_attached: ::std::option::Option<bool>,

@@ -15,8 +15,7 @@ pub struct XavcSettings {
     pub framerate_control: ::std::option::Option<crate::types::XavcFramerateControl>,
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
     #[doc(hidden)]
-    pub framerate_conversion_algorithm:
-        ::std::option::Option<crate::types::XavcFramerateConversionAlgorithm>,
+    pub framerate_conversion_algorithm: ::std::option::Option<crate::types::XavcFramerateConversionAlgorithm>,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Frame rate. In this example, specify 23.976.
     #[doc(hidden)]
     pub framerate_denominator: ::std::option::Option<i32>,
@@ -34,36 +33,29 @@ pub struct XavcSettings {
     pub softness: ::std::option::Option<i32>,
     /// The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. For this setting, keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
     #[doc(hidden)]
-    pub spatial_adaptive_quantization:
-        ::std::option::Option<crate::types::XavcSpatialAdaptiveQuantization>,
+    pub spatial_adaptive_quantization: ::std::option::Option<crate::types::XavcSpatialAdaptiveQuantization>,
     /// The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. For this setting, keep the default value, Enabled, to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal adaptive quantization, adjust the strength of the filter with the setting Adaptive quantization.
     #[doc(hidden)]
-    pub temporal_adaptive_quantization:
-        ::std::option::Option<crate::types::XavcTemporalAdaptiveQuantization>,
+    pub temporal_adaptive_quantization: ::std::option::Option<crate::types::XavcTemporalAdaptiveQuantization>,
     /// Required when you set Profile to the value XAVC_4K_INTRA_CBG.
     #[doc(hidden)]
-    pub xavc4k_intra_cbg_profile_settings:
-        ::std::option::Option<crate::types::Xavc4kIntraCbgProfileSettings>,
+    pub xavc4k_intra_cbg_profile_settings: ::std::option::Option<crate::types::Xavc4kIntraCbgProfileSettings>,
     /// Required when you set Profile to the value XAVC_4K_INTRA_VBR.
     #[doc(hidden)]
-    pub xavc4k_intra_vbr_profile_settings:
-        ::std::option::Option<crate::types::Xavc4kIntraVbrProfileSettings>,
+    pub xavc4k_intra_vbr_profile_settings: ::std::option::Option<crate::types::Xavc4kIntraVbrProfileSettings>,
     /// Required when you set Profile to the value XAVC_4K.
     #[doc(hidden)]
     pub xavc4k_profile_settings: ::std::option::Option<crate::types::Xavc4kProfileSettings>,
     /// Required when you set Profile to the value XAVC_HD_INTRA_CBG.
     #[doc(hidden)]
-    pub xavc_hd_intra_cbg_profile_settings:
-        ::std::option::Option<crate::types::XavcHdIntraCbgProfileSettings>,
+    pub xavc_hd_intra_cbg_profile_settings: ::std::option::Option<crate::types::XavcHdIntraCbgProfileSettings>,
     /// Required when you set Profile to the value XAVC_HD.
     #[doc(hidden)]
     pub xavc_hd_profile_settings: ::std::option::Option<crate::types::XavcHdProfileSettings>,
 }
 impl XavcSettings {
     /// Keep the default value, Auto, for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set Adaptive quantization to a value other than Auto. Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization to Off. Related settings: The value that you choose here applies to the following settings: Flicker adaptive quantization (flickerAdaptiveQuantization), Spatial adaptive quantization, and Temporal adaptive quantization.
-    pub fn adaptive_quantization(
-        &self,
-    ) -> ::std::option::Option<&crate::types::XavcAdaptiveQuantization> {
+    pub fn adaptive_quantization(&self) -> ::std::option::Option<&crate::types::XavcAdaptiveQuantization> {
         self.adaptive_quantization.as_ref()
     }
     /// Optional. Choose a specific entropy encoding mode only when you want to override XAVC recommendations. If you choose the value auto, MediaConvert uses the mode that the XAVC file format specifies given this output's operating point.
@@ -75,9 +67,7 @@ impl XavcSettings {
         self.framerate_control.as_ref()
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
-    pub fn framerate_conversion_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::XavcFramerateConversionAlgorithm> {
+    pub fn framerate_conversion_algorithm(&self) -> ::std::option::Option<&crate::types::XavcFramerateConversionAlgorithm> {
         self.framerate_conversion_algorithm.as_ref()
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Frame rate. In this example, specify 23.976.
@@ -101,45 +91,31 @@ impl XavcSettings {
         self.softness
     }
     /// The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. For this setting, keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
-    pub fn spatial_adaptive_quantization(
-        &self,
-    ) -> ::std::option::Option<&crate::types::XavcSpatialAdaptiveQuantization> {
+    pub fn spatial_adaptive_quantization(&self) -> ::std::option::Option<&crate::types::XavcSpatialAdaptiveQuantization> {
         self.spatial_adaptive_quantization.as_ref()
     }
     /// The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. For this setting, keep the default value, Enabled, to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal adaptive quantization, adjust the strength of the filter with the setting Adaptive quantization.
-    pub fn temporal_adaptive_quantization(
-        &self,
-    ) -> ::std::option::Option<&crate::types::XavcTemporalAdaptiveQuantization> {
+    pub fn temporal_adaptive_quantization(&self) -> ::std::option::Option<&crate::types::XavcTemporalAdaptiveQuantization> {
         self.temporal_adaptive_quantization.as_ref()
     }
     /// Required when you set Profile to the value XAVC_4K_INTRA_CBG.
-    pub fn xavc4k_intra_cbg_profile_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Xavc4kIntraCbgProfileSettings> {
+    pub fn xavc4k_intra_cbg_profile_settings(&self) -> ::std::option::Option<&crate::types::Xavc4kIntraCbgProfileSettings> {
         self.xavc4k_intra_cbg_profile_settings.as_ref()
     }
     /// Required when you set Profile to the value XAVC_4K_INTRA_VBR.
-    pub fn xavc4k_intra_vbr_profile_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Xavc4kIntraVbrProfileSettings> {
+    pub fn xavc4k_intra_vbr_profile_settings(&self) -> ::std::option::Option<&crate::types::Xavc4kIntraVbrProfileSettings> {
         self.xavc4k_intra_vbr_profile_settings.as_ref()
     }
     /// Required when you set Profile to the value XAVC_4K.
-    pub fn xavc4k_profile_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Xavc4kProfileSettings> {
+    pub fn xavc4k_profile_settings(&self) -> ::std::option::Option<&crate::types::Xavc4kProfileSettings> {
         self.xavc4k_profile_settings.as_ref()
     }
     /// Required when you set Profile to the value XAVC_HD_INTRA_CBG.
-    pub fn xavc_hd_intra_cbg_profile_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::XavcHdIntraCbgProfileSettings> {
+    pub fn xavc_hd_intra_cbg_profile_settings(&self) -> ::std::option::Option<&crate::types::XavcHdIntraCbgProfileSettings> {
         self.xavc_hd_intra_cbg_profile_settings.as_ref()
     }
     /// Required when you set Profile to the value XAVC_HD.
-    pub fn xavc_hd_profile_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::XavcHdProfileSettings> {
+    pub fn xavc_hd_profile_settings(&self) -> ::std::option::Option<&crate::types::XavcHdProfileSettings> {
         self.xavc_hd_profile_settings.as_ref()
     }
 }
@@ -152,31 +128,23 @@ impl XavcSettings {
 
 /// A builder for [`XavcSettings`](crate::types::XavcSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct XavcSettingsBuilder {
     pub(crate) adaptive_quantization: ::std::option::Option<crate::types::XavcAdaptiveQuantization>,
     pub(crate) entropy_encoding: ::std::option::Option<crate::types::XavcEntropyEncoding>,
     pub(crate) framerate_control: ::std::option::Option<crate::types::XavcFramerateControl>,
-    pub(crate) framerate_conversion_algorithm:
-        ::std::option::Option<crate::types::XavcFramerateConversionAlgorithm>,
+    pub(crate) framerate_conversion_algorithm: ::std::option::Option<crate::types::XavcFramerateConversionAlgorithm>,
     pub(crate) framerate_denominator: ::std::option::Option<i32>,
     pub(crate) framerate_numerator: ::std::option::Option<i32>,
     pub(crate) profile: ::std::option::Option<crate::types::XavcProfile>,
     pub(crate) slow_pal: ::std::option::Option<crate::types::XavcSlowPal>,
     pub(crate) softness: ::std::option::Option<i32>,
-    pub(crate) spatial_adaptive_quantization:
-        ::std::option::Option<crate::types::XavcSpatialAdaptiveQuantization>,
-    pub(crate) temporal_adaptive_quantization:
-        ::std::option::Option<crate::types::XavcTemporalAdaptiveQuantization>,
-    pub(crate) xavc4k_intra_cbg_profile_settings:
-        ::std::option::Option<crate::types::Xavc4kIntraCbgProfileSettings>,
-    pub(crate) xavc4k_intra_vbr_profile_settings:
-        ::std::option::Option<crate::types::Xavc4kIntraVbrProfileSettings>,
+    pub(crate) spatial_adaptive_quantization: ::std::option::Option<crate::types::XavcSpatialAdaptiveQuantization>,
+    pub(crate) temporal_adaptive_quantization: ::std::option::Option<crate::types::XavcTemporalAdaptiveQuantization>,
+    pub(crate) xavc4k_intra_cbg_profile_settings: ::std::option::Option<crate::types::Xavc4kIntraCbgProfileSettings>,
+    pub(crate) xavc4k_intra_vbr_profile_settings: ::std::option::Option<crate::types::Xavc4kIntraVbrProfileSettings>,
     pub(crate) xavc4k_profile_settings: ::std::option::Option<crate::types::Xavc4kProfileSettings>,
-    pub(crate) xavc_hd_intra_cbg_profile_settings:
-        ::std::option::Option<crate::types::XavcHdIntraCbgProfileSettings>,
+    pub(crate) xavc_hd_intra_cbg_profile_settings: ::std::option::Option<crate::types::XavcHdIntraCbgProfileSettings>,
     pub(crate) xavc_hd_profile_settings: ::std::option::Option<crate::types::XavcHdProfileSettings>,
 }
 impl XavcSettingsBuilder {
@@ -186,17 +154,12 @@ impl XavcSettingsBuilder {
         self
     }
     /// Keep the default value, Auto, for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set Adaptive quantization to a value other than Auto. Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization to Off. Related settings: The value that you choose here applies to the following settings: Flicker adaptive quantization (flickerAdaptiveQuantization), Spatial adaptive quantization, and Temporal adaptive quantization.
-    pub fn set_adaptive_quantization(
-        mut self,
-        input: ::std::option::Option<crate::types::XavcAdaptiveQuantization>,
-    ) -> Self {
+    pub fn set_adaptive_quantization(mut self, input: ::std::option::Option<crate::types::XavcAdaptiveQuantization>) -> Self {
         self.adaptive_quantization = input;
         self
     }
     /// Keep the default value, Auto, for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set Adaptive quantization to a value other than Auto. Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization to Off. Related settings: The value that you choose here applies to the following settings: Flicker adaptive quantization (flickerAdaptiveQuantization), Spatial adaptive quantization, and Temporal adaptive quantization.
-    pub fn get_adaptive_quantization(
-        &self,
-    ) -> &::std::option::Option<crate::types::XavcAdaptiveQuantization> {
+    pub fn get_adaptive_quantization(&self) -> &::std::option::Option<crate::types::XavcAdaptiveQuantization> {
         &self.adaptive_quantization
     }
     /// Optional. Choose a specific entropy encoding mode only when you want to override XAVC recommendations. If you choose the value auto, MediaConvert uses the mode that the XAVC file format specifies given this output's operating point.
@@ -205,17 +168,12 @@ impl XavcSettingsBuilder {
         self
     }
     /// Optional. Choose a specific entropy encoding mode only when you want to override XAVC recommendations. If you choose the value auto, MediaConvert uses the mode that the XAVC file format specifies given this output's operating point.
-    pub fn set_entropy_encoding(
-        mut self,
-        input: ::std::option::Option<crate::types::XavcEntropyEncoding>,
-    ) -> Self {
+    pub fn set_entropy_encoding(mut self, input: ::std::option::Option<crate::types::XavcEntropyEncoding>) -> Self {
         self.entropy_encoding = input;
         self
     }
     /// Optional. Choose a specific entropy encoding mode only when you want to override XAVC recommendations. If you choose the value auto, MediaConvert uses the mode that the XAVC file format specifies given this output's operating point.
-    pub fn get_entropy_encoding(
-        &self,
-    ) -> &::std::option::Option<crate::types::XavcEntropyEncoding> {
+    pub fn get_entropy_encoding(&self) -> &::std::option::Option<crate::types::XavcEntropyEncoding> {
         &self.entropy_encoding
     }
     /// If you are using the console, use the Frame rate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list. The framerates shown in the dropdown list are decimal approximations of fractions.
@@ -224,39 +182,26 @@ impl XavcSettingsBuilder {
         self
     }
     /// If you are using the console, use the Frame rate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list. The framerates shown in the dropdown list are decimal approximations of fractions.
-    pub fn set_framerate_control(
-        mut self,
-        input: ::std::option::Option<crate::types::XavcFramerateControl>,
-    ) -> Self {
+    pub fn set_framerate_control(mut self, input: ::std::option::Option<crate::types::XavcFramerateControl>) -> Self {
         self.framerate_control = input;
         self
     }
     /// If you are using the console, use the Frame rate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list. The framerates shown in the dropdown list are decimal approximations of fractions.
-    pub fn get_framerate_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::XavcFramerateControl> {
+    pub fn get_framerate_control(&self) -> &::std::option::Option<crate::types::XavcFramerateControl> {
         &self.framerate_control
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
-    pub fn framerate_conversion_algorithm(
-        mut self,
-        input: crate::types::XavcFramerateConversionAlgorithm,
-    ) -> Self {
+    pub fn framerate_conversion_algorithm(mut self, input: crate::types::XavcFramerateConversionAlgorithm) -> Self {
         self.framerate_conversion_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
-    pub fn set_framerate_conversion_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::XavcFramerateConversionAlgorithm>,
-    ) -> Self {
+    pub fn set_framerate_conversion_algorithm(mut self, input: ::std::option::Option<crate::types::XavcFramerateConversionAlgorithm>) -> Self {
         self.framerate_conversion_algorithm = input;
         self
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
-    pub fn get_framerate_conversion_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::XavcFramerateConversionAlgorithm> {
+    pub fn get_framerate_conversion_algorithm(&self) -> &::std::option::Option<crate::types::XavcFramerateConversionAlgorithm> {
         &self.framerate_conversion_algorithm
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Frame rate. In this example, specify 23.976.
@@ -330,91 +275,59 @@ impl XavcSettingsBuilder {
         &self.softness
     }
     /// The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. For this setting, keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
-    pub fn spatial_adaptive_quantization(
-        mut self,
-        input: crate::types::XavcSpatialAdaptiveQuantization,
-    ) -> Self {
+    pub fn spatial_adaptive_quantization(mut self, input: crate::types::XavcSpatialAdaptiveQuantization) -> Self {
         self.spatial_adaptive_quantization = ::std::option::Option::Some(input);
         self
     }
     /// The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. For this setting, keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
-    pub fn set_spatial_adaptive_quantization(
-        mut self,
-        input: ::std::option::Option<crate::types::XavcSpatialAdaptiveQuantization>,
-    ) -> Self {
+    pub fn set_spatial_adaptive_quantization(mut self, input: ::std::option::Option<crate::types::XavcSpatialAdaptiveQuantization>) -> Self {
         self.spatial_adaptive_quantization = input;
         self
     }
     /// The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. For this setting, keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
-    pub fn get_spatial_adaptive_quantization(
-        &self,
-    ) -> &::std::option::Option<crate::types::XavcSpatialAdaptiveQuantization> {
+    pub fn get_spatial_adaptive_quantization(&self) -> &::std::option::Option<crate::types::XavcSpatialAdaptiveQuantization> {
         &self.spatial_adaptive_quantization
     }
     /// The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. For this setting, keep the default value, Enabled, to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal adaptive quantization, adjust the strength of the filter with the setting Adaptive quantization.
-    pub fn temporal_adaptive_quantization(
-        mut self,
-        input: crate::types::XavcTemporalAdaptiveQuantization,
-    ) -> Self {
+    pub fn temporal_adaptive_quantization(mut self, input: crate::types::XavcTemporalAdaptiveQuantization) -> Self {
         self.temporal_adaptive_quantization = ::std::option::Option::Some(input);
         self
     }
     /// The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. For this setting, keep the default value, Enabled, to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal adaptive quantization, adjust the strength of the filter with the setting Adaptive quantization.
-    pub fn set_temporal_adaptive_quantization(
-        mut self,
-        input: ::std::option::Option<crate::types::XavcTemporalAdaptiveQuantization>,
-    ) -> Self {
+    pub fn set_temporal_adaptive_quantization(mut self, input: ::std::option::Option<crate::types::XavcTemporalAdaptiveQuantization>) -> Self {
         self.temporal_adaptive_quantization = input;
         self
     }
     /// The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. For this setting, keep the default value, Enabled, to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal adaptive quantization, adjust the strength of the filter with the setting Adaptive quantization.
-    pub fn get_temporal_adaptive_quantization(
-        &self,
-    ) -> &::std::option::Option<crate::types::XavcTemporalAdaptiveQuantization> {
+    pub fn get_temporal_adaptive_quantization(&self) -> &::std::option::Option<crate::types::XavcTemporalAdaptiveQuantization> {
         &self.temporal_adaptive_quantization
     }
     /// Required when you set Profile to the value XAVC_4K_INTRA_CBG.
-    pub fn xavc4k_intra_cbg_profile_settings(
-        mut self,
-        input: crate::types::Xavc4kIntraCbgProfileSettings,
-    ) -> Self {
+    pub fn xavc4k_intra_cbg_profile_settings(mut self, input: crate::types::Xavc4kIntraCbgProfileSettings) -> Self {
         self.xavc4k_intra_cbg_profile_settings = ::std::option::Option::Some(input);
         self
     }
     /// Required when you set Profile to the value XAVC_4K_INTRA_CBG.
-    pub fn set_xavc4k_intra_cbg_profile_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Xavc4kIntraCbgProfileSettings>,
-    ) -> Self {
+    pub fn set_xavc4k_intra_cbg_profile_settings(mut self, input: ::std::option::Option<crate::types::Xavc4kIntraCbgProfileSettings>) -> Self {
         self.xavc4k_intra_cbg_profile_settings = input;
         self
     }
     /// Required when you set Profile to the value XAVC_4K_INTRA_CBG.
-    pub fn get_xavc4k_intra_cbg_profile_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::Xavc4kIntraCbgProfileSettings> {
+    pub fn get_xavc4k_intra_cbg_profile_settings(&self) -> &::std::option::Option<crate::types::Xavc4kIntraCbgProfileSettings> {
         &self.xavc4k_intra_cbg_profile_settings
     }
     /// Required when you set Profile to the value XAVC_4K_INTRA_VBR.
-    pub fn xavc4k_intra_vbr_profile_settings(
-        mut self,
-        input: crate::types::Xavc4kIntraVbrProfileSettings,
-    ) -> Self {
+    pub fn xavc4k_intra_vbr_profile_settings(mut self, input: crate::types::Xavc4kIntraVbrProfileSettings) -> Self {
         self.xavc4k_intra_vbr_profile_settings = ::std::option::Option::Some(input);
         self
     }
     /// Required when you set Profile to the value XAVC_4K_INTRA_VBR.
-    pub fn set_xavc4k_intra_vbr_profile_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Xavc4kIntraVbrProfileSettings>,
-    ) -> Self {
+    pub fn set_xavc4k_intra_vbr_profile_settings(mut self, input: ::std::option::Option<crate::types::Xavc4kIntraVbrProfileSettings>) -> Self {
         self.xavc4k_intra_vbr_profile_settings = input;
         self
     }
     /// Required when you set Profile to the value XAVC_4K_INTRA_VBR.
-    pub fn get_xavc4k_intra_vbr_profile_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::Xavc4kIntraVbrProfileSettings> {
+    pub fn get_xavc4k_intra_vbr_profile_settings(&self) -> &::std::option::Option<crate::types::Xavc4kIntraVbrProfileSettings> {
         &self.xavc4k_intra_vbr_profile_settings
     }
     /// Required when you set Profile to the value XAVC_4K.
@@ -423,39 +336,26 @@ impl XavcSettingsBuilder {
         self
     }
     /// Required when you set Profile to the value XAVC_4K.
-    pub fn set_xavc4k_profile_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Xavc4kProfileSettings>,
-    ) -> Self {
+    pub fn set_xavc4k_profile_settings(mut self, input: ::std::option::Option<crate::types::Xavc4kProfileSettings>) -> Self {
         self.xavc4k_profile_settings = input;
         self
     }
     /// Required when you set Profile to the value XAVC_4K.
-    pub fn get_xavc4k_profile_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::Xavc4kProfileSettings> {
+    pub fn get_xavc4k_profile_settings(&self) -> &::std::option::Option<crate::types::Xavc4kProfileSettings> {
         &self.xavc4k_profile_settings
     }
     /// Required when you set Profile to the value XAVC_HD_INTRA_CBG.
-    pub fn xavc_hd_intra_cbg_profile_settings(
-        mut self,
-        input: crate::types::XavcHdIntraCbgProfileSettings,
-    ) -> Self {
+    pub fn xavc_hd_intra_cbg_profile_settings(mut self, input: crate::types::XavcHdIntraCbgProfileSettings) -> Self {
         self.xavc_hd_intra_cbg_profile_settings = ::std::option::Option::Some(input);
         self
     }
     /// Required when you set Profile to the value XAVC_HD_INTRA_CBG.
-    pub fn set_xavc_hd_intra_cbg_profile_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::XavcHdIntraCbgProfileSettings>,
-    ) -> Self {
+    pub fn set_xavc_hd_intra_cbg_profile_settings(mut self, input: ::std::option::Option<crate::types::XavcHdIntraCbgProfileSettings>) -> Self {
         self.xavc_hd_intra_cbg_profile_settings = input;
         self
     }
     /// Required when you set Profile to the value XAVC_HD_INTRA_CBG.
-    pub fn get_xavc_hd_intra_cbg_profile_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::XavcHdIntraCbgProfileSettings> {
+    pub fn get_xavc_hd_intra_cbg_profile_settings(&self) -> &::std::option::Option<crate::types::XavcHdIntraCbgProfileSettings> {
         &self.xavc_hd_intra_cbg_profile_settings
     }
     /// Required when you set Profile to the value XAVC_HD.
@@ -464,17 +364,12 @@ impl XavcSettingsBuilder {
         self
     }
     /// Required when you set Profile to the value XAVC_HD.
-    pub fn set_xavc_hd_profile_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::XavcHdProfileSettings>,
-    ) -> Self {
+    pub fn set_xavc_hd_profile_settings(mut self, input: ::std::option::Option<crate::types::XavcHdProfileSettings>) -> Self {
         self.xavc_hd_profile_settings = input;
         self
     }
     /// Required when you set Profile to the value XAVC_HD.
-    pub fn get_xavc_hd_profile_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::XavcHdProfileSettings> {
+    pub fn get_xavc_hd_profile_settings(&self) -> &::std::option::Option<crate::types::XavcHdProfileSettings> {
         &self.xavc_hd_profile_settings
     }
     /// Consumes the builder and constructs a [`XavcSettings`](crate::types::XavcSettings).

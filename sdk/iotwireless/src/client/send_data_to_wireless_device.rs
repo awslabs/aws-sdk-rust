@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`SendDataToWirelessDeviceOutput`](crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceOutput) with field(s):
     ///   - [`message_id(Option<String>)`](crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceOutput::message_id): <p>The ID of the message sent to the wireless device.</p>
     /// - On failure, responds with [`SdkError<SendDataToWirelessDeviceError>`](crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceError)
-    pub fn send_data_to_wireless_device(&self) -> crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceFluentBuilder{
+    pub fn send_data_to_wireless_device(&self) -> crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceFluentBuilder {
         crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceFluentBuilder::new(self.handle.clone())
     }
 }

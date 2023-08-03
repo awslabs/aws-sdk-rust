@@ -26,7 +26,7 @@ impl GetPackageVersionHistoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPackageVersionHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_package_version_history::builders::GetPackageVersionHistoryInputBuilder,
+    inner: crate::operation::get_package_version_history::builders::GetPackageVersionHistoryInputBuilder,
 }
 impl GetPackageVersionHistoryFluentBuilder {
     /// Creates a new `GetPackageVersionHistory`.
@@ -37,7 +37,7 @@ impl GetPackageVersionHistoryFluentBuilder {
         }
     }
     /// Access the GetPackageVersionHistory as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_package_version_history::builders::GetPackageVersionHistoryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_package_version_history::builders::GetPackageVersionHistoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetPackageVersionHistoryFluentBuilder {
             crate::operation::get_package_version_history::GetPackageVersionHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_package_version_history::GetPackageVersionHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_package_version_history::GetPackageVersionHistoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetPackageVersionHistoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetPackageVersionHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_package_version_history::GetPackageVersionHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_package_version_history::GetPackageVersionHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_package_version_history::GetPackageVersionHistoryError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetPackageVersionHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_package_version_history::GetPackageVersionHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_package_version_history::GetPackageVersionHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_package_version_history::GetPackageVersionHistoryError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl GetPackageVersionHistoryFluentBuilder {
             crate::operation::get_package_version_history::GetPackageVersionHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_package_version_history::GetPackageVersionHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_package_version_history::GetPackageVersionHistoryError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_package_version_history::paginator::GetPackageVersionHistoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_package_version_history::paginator::GetPackageVersionHistoryPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::get_package_version_history::paginator::GetPackageVersionHistoryPaginator {
         crate::operation::get_package_version_history::paginator::GetPackageVersionHistoryPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier of the package.</p>

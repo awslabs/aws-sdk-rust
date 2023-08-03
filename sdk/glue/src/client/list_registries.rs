@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`registries(Option<Vec<RegistryListItem>>)`](crate::operation::list_registries::ListRegistriesOutput::registries): <p>An array of <code>RegistryDetailedListItem</code> objects containing minimal details of each registry.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_registries::ListRegistriesOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     /// - On failure, responds with [`SdkError<ListRegistriesError>`](crate::operation::list_registries::ListRegistriesError)
-    pub fn list_registries(
-        &self,
-    ) -> crate::operation::list_registries::builders::ListRegistriesFluentBuilder {
-        crate::operation::list_registries::builders::ListRegistriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_registries(&self) -> crate::operation::list_registries::builders::ListRegistriesFluentBuilder {
+        crate::operation::list_registries::builders::ListRegistriesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -36,18 +36,14 @@ impl ::aws_http::request_id::RequestId for GetApplicationRevisionOutput {
 }
 impl GetApplicationRevisionOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationRevisionOutput`](crate::operation::get_application_revision::GetApplicationRevisionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_application_revision::builders::GetApplicationRevisionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_application_revision::builders::GetApplicationRevisionOutputBuilder {
         crate::operation::get_application_revision::builders::GetApplicationRevisionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetApplicationRevisionOutput`](crate::operation::get_application_revision::GetApplicationRevisionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApplicationRevisionOutputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) revision: ::std::option::Option<crate::types::RevisionLocation>,
@@ -56,18 +52,12 @@ pub struct GetApplicationRevisionOutputBuilder {
 }
 impl GetApplicationRevisionOutputBuilder {
     /// <p>The name of the application that corresponds to the revision.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application that corresponds to the revision.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -81,10 +71,7 @@ impl GetApplicationRevisionOutputBuilder {
         self
     }
     /// <p>Additional information about the revision, including type and location.</p>
-    pub fn set_revision(
-        mut self,
-        input: ::std::option::Option<crate::types::RevisionLocation>,
-    ) -> Self {
+    pub fn set_revision(mut self, input: ::std::option::Option<crate::types::RevisionLocation>) -> Self {
         self.revision = input;
         self
     }
@@ -98,10 +85,7 @@ impl GetApplicationRevisionOutputBuilder {
         self
     }
     /// <p>General information about the revision.</p>
-    pub fn set_revision_info(
-        mut self,
-        input: ::std::option::Option<crate::types::GenericRevisionInfo>,
-    ) -> Self {
+    pub fn set_revision_info(mut self, input: ::std::option::Option<crate::types::GenericRevisionInfo>) -> Self {
         self.revision_info = input;
         self
     }

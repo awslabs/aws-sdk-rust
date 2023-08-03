@@ -6,10 +6,7 @@ pub fn ser_update_quick_connect_config_input(
     if let Some(var_1) = &input.quick_connect_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("QuickConnectConfig").start_object();
-        crate::protocol_serde::shape_quick_connect_config::ser_quick_connect_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_quick_connect_config::ser_quick_connect_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

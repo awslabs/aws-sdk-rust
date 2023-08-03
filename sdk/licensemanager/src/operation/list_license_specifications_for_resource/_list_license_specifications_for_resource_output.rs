@@ -5,8 +5,7 @@
 pub struct ListLicenseSpecificationsForResourceOutput {
     /// <p>License configurations associated with a resource.</p>
     #[doc(hidden)]
-    pub license_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
+    pub license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListLicenseSpecificationsForResourceOutput {
 }
 impl ListLicenseSpecificationsForResourceOutput {
     /// <p>License configurations associated with a resource.</p>
-    pub fn license_specifications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LicenseSpecification]> {
+    pub fn license_specifications(&self) -> ::std::option::Option<&[crate::types::LicenseSpecification]> {
         self.license_specifications.as_deref()
     }
     /// <p>Token for the next set of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListLicenseSpecificationsForResourceO
 }
 impl ListLicenseSpecificationsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListLicenseSpecificationsForResourceOutput`](crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceOutput).
-    pub fn builder() -> crate::operation::list_license_specifications_for_resource::builders::ListLicenseSpecificationsForResourceOutputBuilder{
+    pub fn builder() -> crate::operation::list_license_specifications_for_resource::builders::ListLicenseSpecificationsForResourceOutputBuilder {
         crate::operation::list_license_specifications_for_resource::builders::ListLicenseSpecificationsForResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLicenseSpecificationsForResourceOutput`](crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLicenseSpecificationsForResourceOutputBuilder {
-    pub(crate) license_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
+    pub(crate) license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListLicenseSpecificationsForResourceOutputBuilder {
         self
     }
     /// <p>License configurations associated with a resource.</p>
-    pub fn set_license_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
-    ) -> Self {
+    pub fn set_license_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>) -> Self {
         self.license_specifications = input;
         self
     }
     /// <p>License configurations associated with a resource.</p>
-    pub fn get_license_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>> {
+    pub fn get_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>> {
         &self.license_specifications
     }
     /// <p>Token for the next set of results.</p>
@@ -97,12 +86,10 @@ impl ListLicenseSpecificationsForResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListLicenseSpecificationsForResourceOutput`](crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceOutput).
-    pub fn build(self) -> crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceOutput{
+    pub fn build(self) -> crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceOutput {
         crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceOutput {
-            license_specifications: self.license_specifications
-            ,
-            next_token: self.next_token
-            ,
+            license_specifications: self.license_specifications,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

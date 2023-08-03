@@ -122,9 +122,7 @@ impl NetworkResource {
         self.return_information.as_ref()
     }
     /// <p>Information about the commitment period for the radio unit. Shows the duration, the date and time that the contract started and ends, and the renewal status of the commitment period.</p>
-    pub fn commitment_information(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CommitmentInformation> {
+    pub fn commitment_information(&self) -> ::std::option::Option<&crate::types::CommitmentInformation> {
         self.commitment_information.as_ref()
     }
 }
@@ -137,9 +135,7 @@ impl NetworkResource {
 
 /// A builder for [`NetworkResource`](crate::types::NetworkResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkResourceBuilder {
     pub(crate) network_resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -161,18 +157,12 @@ pub struct NetworkResourceBuilder {
 }
 impl NetworkResourceBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn network_resource_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn set_network_resource_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_resource_arn = input;
         self
     }
@@ -200,10 +190,7 @@ impl NetworkResourceBuilder {
         self
     }
     /// <p>The type of the network resource.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkResourceType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NetworkResourceType>) -> Self {
         self.r#type = input;
         self
     }
@@ -217,10 +204,7 @@ impl NetworkResourceBuilder {
         self
     }
     /// <p>The status of the network resource.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkResourceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::NetworkResourceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -229,18 +213,12 @@ impl NetworkResourceBuilder {
         &self.status
     }
     /// <p>The status reason of the network resource.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status reason of the network resource.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -277,18 +255,12 @@ impl NetworkResourceBuilder {
         &self.model
     }
     /// <p>The serial number of the network resource.</p>
-    pub fn serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serial_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The serial number of the network resource.</p>
-    pub fn set_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.serial_number = input;
         self
     }
@@ -325,18 +297,12 @@ impl NetworkResourceBuilder {
         &self.network_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the network site on which this network resource appears.</p>
-    pub fn network_site_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network site on which this network resource appears.</p>
-    pub fn set_network_site_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_site_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_site_arn = input;
         self
     }
@@ -370,17 +336,12 @@ impl NetworkResourceBuilder {
         self
     }
     /// <p>The attributes of the network resource.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The attributes of the network resource.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>> {
         &self.attributes
     }
     /// <p>The position of the network resource.</p>
@@ -403,10 +364,7 @@ impl NetworkResourceBuilder {
         self
     }
     /// <p>The creation time of the network resource.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -420,17 +378,12 @@ impl NetworkResourceBuilder {
         self
     }
     /// <p>Information about a request to return the network resource.</p>
-    pub fn set_return_information(
-        mut self,
-        input: ::std::option::Option<crate::types::ReturnInformation>,
-    ) -> Self {
+    pub fn set_return_information(mut self, input: ::std::option::Option<crate::types::ReturnInformation>) -> Self {
         self.return_information = input;
         self
     }
     /// <p>Information about a request to return the network resource.</p>
-    pub fn get_return_information(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReturnInformation> {
+    pub fn get_return_information(&self) -> &::std::option::Option<crate::types::ReturnInformation> {
         &self.return_information
     }
     /// <p>Information about the commitment period for the radio unit. Shows the duration, the date and time that the contract started and ends, and the renewal status of the commitment period.</p>
@@ -439,17 +392,12 @@ impl NetworkResourceBuilder {
         self
     }
     /// <p>Information about the commitment period for the radio unit. Shows the duration, the date and time that the contract started and ends, and the renewal status of the commitment period.</p>
-    pub fn set_commitment_information(
-        mut self,
-        input: ::std::option::Option<crate::types::CommitmentInformation>,
-    ) -> Self {
+    pub fn set_commitment_information(mut self, input: ::std::option::Option<crate::types::CommitmentInformation>) -> Self {
         self.commitment_information = input;
         self
     }
     /// <p>Information about the commitment period for the radio unit. Shows the duration, the date and time that the contract started and ends, and the renewal status of the commitment period.</p>
-    pub fn get_commitment_information(
-        &self,
-    ) -> &::std::option::Option<crate::types::CommitmentInformation> {
+    pub fn get_commitment_information(&self) -> &::std::option::Option<crate::types::CommitmentInformation> {
         &self.commitment_information
     }
     /// Consumes the builder and constructs a [`NetworkResource`](crate::types::NetworkResource).

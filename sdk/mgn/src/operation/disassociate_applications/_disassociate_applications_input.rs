@@ -29,18 +29,14 @@ impl DisassociateApplicationsInput {
 }
 impl DisassociateApplicationsInput {
     /// Creates a new builder-style object to manufacture [`DisassociateApplicationsInput`](crate::operation::disassociate_applications::DisassociateApplicationsInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_applications::builders::DisassociateApplicationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_applications::builders::DisassociateApplicationsInputBuilder {
         crate::operation::disassociate_applications::builders::DisassociateApplicationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateApplicationsInput`](crate::operation::disassociate_applications::DisassociateApplicationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateApplicationsInputBuilder {
     pub(crate) wave_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -66,27 +62,19 @@ impl DisassociateApplicationsInputBuilder {
     /// To override the contents of this collection use [`set_application_i_ds`](Self::set_application_i_ds).
     ///
     /// <p>Application IDs list.</p>
-    pub fn application_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.application_i_ds.unwrap_or_default();
         v.push(input.into());
         self.application_i_ds = ::std::option::Option::Some(v);
         self
     }
     /// <p>Application IDs list.</p>
-    pub fn set_application_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_application_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.application_i_ds = input;
         self
     }
     /// <p>Application IDs list.</p>
-    pub fn get_application_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_application_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.application_i_ds
     }
     /// <p>Account ID.</p>
@@ -110,12 +98,10 @@ impl DisassociateApplicationsInputBuilder {
         crate::operation::disassociate_applications::DisassociateApplicationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_applications::DisassociateApplicationsInput {
-                wave_id: self.wave_id,
-                application_i_ds: self.application_i_ds,
-                account_id: self.account_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_applications::DisassociateApplicationsInput {
+            wave_id: self.wave_id,
+            application_i_ds: self.application_i_ds,
+            account_id: self.account_id,
+        })
     }
 }

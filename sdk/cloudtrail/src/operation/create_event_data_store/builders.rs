@@ -37,10 +37,7 @@ impl CreateEventDataStoreFluentBuilder {
         }
     }
     /// Access the CreateEventDataStore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_event_data_store::builders::CreateEventDataStoreInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_event_data_store::builders::CreateEventDataStoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateEventDataStoreFluentBuilder {
             crate::operation::create_event_data_store::CreateEventDataStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_data_store::CreateEventDataStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_data_store::CreateEventDataStoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateEventDataStoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateEventDataStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_data_store::CreateEventDataStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_data_store::CreateEventDataStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_data_store::CreateEventDataStoreError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateEventDataStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_data_store::CreateEventDataStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_data_store::CreateEventDataStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_data_store::CreateEventDataStoreError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateEventDataStoreFluentBuilder {
             crate::operation::create_event_data_store::CreateEventDataStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_data_store::CreateEventDataStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_data_store::CreateEventDataStoreError>,
     > {
         self.customize_middleware().await
     }
@@ -153,10 +139,7 @@ impl CreateEventDataStoreFluentBuilder {
     /// <p> For more information about how to use advanced event selectors to log CloudTrail events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log events by using advanced event selectors</a> in the CloudTrail User Guide.</p>
     /// <p>For more information about how to use advanced event selectors to include Config configuration items in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-eds-config">Create an event data store for Config configuration items</a> in the CloudTrail User Guide.</p>
     /// <p>For more information about how to use advanced event selectors to include non-Amazon Web Services events in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-integration">Create an integration to log events from outside Amazon Web Services</a> in the CloudTrail User Guide.</p>
-    pub fn set_advanced_event_selectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
-    ) -> Self {
+    pub fn set_advanced_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>) -> Self {
         self.inner = self.inner.set_advanced_event_selectors(input);
         self
     }
@@ -164,9 +147,7 @@ impl CreateEventDataStoreFluentBuilder {
     /// <p> For more information about how to use advanced event selectors to log CloudTrail events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log events by using advanced event selectors</a> in the CloudTrail User Guide.</p>
     /// <p>For more information about how to use advanced event selectors to include Config configuration items in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-eds-config">Create an event data store for Config configuration items</a> in the CloudTrail User Guide.</p>
     /// <p>For more information about how to use advanced event selectors to include non-Amazon Web Services events in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-integration">Create an integration to log events from outside Amazon Web Services</a> in the CloudTrail User Guide.</p>
-    pub fn get_advanced_event_selectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
+    pub fn get_advanced_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
         self.inner.get_advanced_event_selectors()
     }
     /// <p>Specifies whether the event data store includes events from all Regions, or only from the Region in which the event data store is created.</p>
@@ -217,10 +198,7 @@ impl CreateEventDataStoreFluentBuilder {
         self
     }
     /// <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
-    pub fn set_termination_protection_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_termination_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_termination_protection_enabled(input);
         self
     }
@@ -238,10 +216,7 @@ impl CreateEventDataStoreFluentBuilder {
         self
     }
     /// <p>A list of tags.</p>
-    pub fn set_tags_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags_list(input);
         self
     }

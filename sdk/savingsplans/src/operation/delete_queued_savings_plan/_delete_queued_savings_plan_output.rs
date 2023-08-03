@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteQueuedSavingsPlanOutput {
 }
 impl DeleteQueuedSavingsPlanOutput {
     /// Creates a new builder-style object to manufacture [`DeleteQueuedSavingsPlanOutput`](crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanOutputBuilder {
         crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteQueuedSavingsPlanOutput`](crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteQueuedSavingsPlanOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteQueuedSavingsPlanOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteQueuedSavingsPlanOutput`](crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanOutput {
+    pub fn build(self) -> crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanOutput {
         crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanOutput {
             _request_id: self._request_id,
         }

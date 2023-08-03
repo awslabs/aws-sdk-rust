@@ -15,16 +15,14 @@ impl DescribePartnerEventSourceInput {
 }
 impl DescribePartnerEventSourceInput {
     /// Creates a new builder-style object to manufacture [`DescribePartnerEventSourceInput`](crate::operation::describe_partner_event_source::DescribePartnerEventSourceInput).
-    pub fn builder() -> crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceInputBuilder{
+    pub fn builder() -> crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceInputBuilder {
         crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePartnerEventSourceInput`](crate::operation::describe_partner_event_source::DescribePartnerEventSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePartnerEventSourceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DescribePartnerEventSourceInputBuilder {
         crate::operation::describe_partner_event_source::DescribePartnerEventSourceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_partner_event_source::DescribePartnerEventSourceInput {
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_partner_event_source::DescribePartnerEventSourceInput { name: self.name })
     }
 }

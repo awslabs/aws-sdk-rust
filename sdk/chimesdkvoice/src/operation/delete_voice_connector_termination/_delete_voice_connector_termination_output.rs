@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVoiceConnectorTerminationOutput
 }
 impl DeleteVoiceConnectorTerminationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceConnectorTerminationOutput`](crate::operation::delete_voice_connector_termination::DeleteVoiceConnectorTerminationOutput).
-    pub fn builder() -> crate::operation::delete_voice_connector_termination::builders::DeleteVoiceConnectorTerminationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_voice_connector_termination::builders::DeleteVoiceConnectorTerminationOutputBuilder {
         crate::operation::delete_voice_connector_termination::builders::DeleteVoiceConnectorTerminationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVoiceConnectorTerminationOutput`](crate::operation::delete_voice_connector_termination::DeleteVoiceConnectorTerminationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVoiceConnectorTerminationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteVoiceConnectorTerminationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVoiceConnectorTerminationOutput`](crate::operation::delete_voice_connector_termination::DeleteVoiceConnectorTerminationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_voice_connector_termination::DeleteVoiceConnectorTerminationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_voice_connector_termination::DeleteVoiceConnectorTerminationOutput {
         crate::operation::delete_voice_connector_termination::DeleteVoiceConnectorTerminationOutput {
             _request_id: self._request_id,
         }

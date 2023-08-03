@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutAccessPointPolicyOutput {
 }
 impl PutAccessPointPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyOutput`](crate::operation::put_access_point_policy::PutAccessPointPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_access_point_policy::builders::PutAccessPointPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_access_point_policy::builders::PutAccessPointPolicyOutputBuilder {
         crate::operation::put_access_point_policy::builders::PutAccessPointPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutAccessPointPolicyOutput`](crate::operation::put_access_point_policy::PutAccessPointPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccessPointPolicyOutputBuilder {
     _request_id: Option<String>,
 }

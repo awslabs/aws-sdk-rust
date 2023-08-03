@@ -30,9 +30,7 @@ impl ManagedResourceSummary {
 
 /// A builder for [`ManagedResourceSummary`](crate::types::ManagedResourceSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedResourceSummaryBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) association_count: ::std::option::Option<i64>,
@@ -44,10 +42,7 @@ impl ManagedResourceSummaryBuilder {
         self
     }
     /// <p>Type of resource associated with a license.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }

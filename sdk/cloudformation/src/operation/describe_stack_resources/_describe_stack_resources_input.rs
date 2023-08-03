@@ -50,18 +50,14 @@ impl DescribeStackResourcesInput {
 }
 impl DescribeStackResourcesInput {
     /// Creates a new builder-style object to manufacture [`DescribeStackResourcesInput`](crate::operation::describe_stack_resources::DescribeStackResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_stack_resources::builders::DescribeStackResourcesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_stack_resources::builders::DescribeStackResourcesInputBuilder {
         crate::operation::describe_stack_resources::builders::DescribeStackResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStackResourcesInput`](crate::operation::describe_stack_resources::DescribeStackResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackResourcesInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) logical_resource_id: ::std::option::Option<::std::string::String>,
@@ -102,19 +98,13 @@ impl DescribeStackResourcesInputBuilder {
     }
     /// <p>The logical name of the resource as specified in the template.</p>
     /// <p>Default: There is no default value.</p>
-    pub fn logical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The logical name of the resource as specified in the template.</p>
     /// <p>Default: There is no default value.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logical_resource_id = input;
         self
     }
@@ -127,10 +117,7 @@ impl DescribeStackResourcesInputBuilder {
     /// <p>For example, for an Amazon Elastic Compute Cloud (EC2) instance, <code>PhysicalResourceId</code> corresponds to the <code>InstanceId</code>. You can pass the EC2 <code>InstanceId</code> to <code>DescribeStackResources</code> to find which stack the instance belongs to and what other resources are part of the stack.</p>
     /// <p>Required: Conditional. If you don't specify <code>PhysicalResourceId</code>, you must specify <code>StackName</code>.</p>
     /// <p>Default: There is no default value.</p>
-    pub fn physical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn physical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.physical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -138,10 +125,7 @@ impl DescribeStackResourcesInputBuilder {
     /// <p>For example, for an Amazon Elastic Compute Cloud (EC2) instance, <code>PhysicalResourceId</code> corresponds to the <code>InstanceId</code>. You can pass the EC2 <code>InstanceId</code> to <code>DescribeStackResources</code> to find which stack the instance belongs to and what other resources are part of the stack.</p>
     /// <p>Required: Conditional. If you don't specify <code>PhysicalResourceId</code>, you must specify <code>StackName</code>.</p>
     /// <p>Default: There is no default value.</p>
-    pub fn set_physical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_physical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.physical_resource_id = input;
         self
     }
@@ -155,16 +139,12 @@ impl DescribeStackResourcesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStackResourcesInput`](crate::operation::describe_stack_resources::DescribeStackResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_stack_resources::DescribeStackResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_stack_resources::DescribeStackResourcesInput {
-                stack_name: self.stack_name,
-                logical_resource_id: self.logical_resource_id,
-                physical_resource_id: self.physical_resource_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_stack_resources::DescribeStackResourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_stack_resources::DescribeStackResourcesInput {
+            stack_name: self.stack_name,
+            logical_resource_id: self.logical_resource_id,
+            physical_resource_id: self.physical_resource_id,
+        })
     }
 }

@@ -47,9 +47,7 @@ impl PutLogEventsInput {
 
 /// A builder for [`PutLogEventsInput`](crate::operation::put_log_events::PutLogEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutLogEventsInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_stream_name: ::std::option::Option<::std::string::String>,
@@ -58,18 +56,12 @@ pub struct PutLogEventsInputBuilder {
 }
 impl PutLogEventsInputBuilder {
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
@@ -78,18 +70,12 @@ impl PutLogEventsInputBuilder {
         &self.log_group_name
     }
     /// <p>The name of the log stream.</p>
-    pub fn log_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the log stream.</p>
-    pub fn set_log_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_stream_name = input;
         self
     }
@@ -109,36 +95,25 @@ impl PutLogEventsInputBuilder {
         self
     }
     /// <p>The log events.</p>
-    pub fn set_log_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputLogEvent>>,
-    ) -> Self {
+    pub fn set_log_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputLogEvent>>) -> Self {
         self.log_events = input;
         self
     }
     /// <p>The log events.</p>
-    pub fn get_log_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputLogEvent>> {
+    pub fn get_log_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputLogEvent>> {
         &self.log_events
     }
     /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p> <important>
     /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
     /// </important>
-    pub fn sequence_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p> <important>
     /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
     /// </important>
-    pub fn set_sequence_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_token = input;
         self
     }
@@ -151,10 +126,7 @@ impl PutLogEventsInputBuilder {
     /// Consumes the builder and constructs a [`PutLogEventsInput`](crate::operation::put_log_events::PutLogEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_log_events::PutLogEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_log_events::PutLogEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_log_events::PutLogEventsInput {
             log_group_name: self.log_group_name,
             log_stream_name: self.log_stream_name,

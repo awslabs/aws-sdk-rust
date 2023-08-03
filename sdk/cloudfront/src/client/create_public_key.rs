@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::create_public_key::CreatePublicKeyOutput::location): <p>The URL of the public key.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::create_public_key::CreatePublicKeyOutput::e_tag): <p>The identifier for this version of the public key.</p>
     /// - On failure, responds with [`SdkError<CreatePublicKeyError>`](crate::operation::create_public_key::CreatePublicKeyError)
-    pub fn create_public_key(
-        &self,
-    ) -> crate::operation::create_public_key::builders::CreatePublicKeyFluentBuilder {
-        crate::operation::create_public_key::builders::CreatePublicKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_public_key(&self) -> crate::operation::create_public_key::builders::CreatePublicKeyFluentBuilder {
+        crate::operation::create_public_key::builders::CreatePublicKeyFluentBuilder::new(self.handle.clone())
     }
 }

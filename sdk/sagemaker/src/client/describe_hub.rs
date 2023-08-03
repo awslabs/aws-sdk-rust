@@ -16,9 +16,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_hub::DescribeHubOutput::creation_time): <p>The date and time that the hub was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_hub::DescribeHubOutput::last_modified_time): <p>The date and time that the hub was last modified.</p>
     /// - On failure, responds with [`SdkError<DescribeHubError>`](crate::operation::describe_hub::DescribeHubError)
-    pub fn describe_hub(
-        &self,
-    ) -> crate::operation::describe_hub::builders::DescribeHubFluentBuilder {
+    pub fn describe_hub(&self) -> crate::operation::describe_hub::builders::DescribeHubFluentBuilder {
         crate::operation::describe_hub::builders::DescribeHubFluentBuilder::new(self.handle.clone())
     }
 }

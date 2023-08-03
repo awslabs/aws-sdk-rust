@@ -36,9 +36,7 @@ impl DescribeSchemasOutput {
 
 /// A builder for [`DescribeSchemasOutput`](crate::operation::describe_schemas::DescribeSchemasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSchemasOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) schemas: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -71,10 +69,7 @@ impl DescribeSchemasOutputBuilder {
         self
     }
     /// <p>The described schema.</p>
-    pub fn set_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.schemas = input;
         self
     }

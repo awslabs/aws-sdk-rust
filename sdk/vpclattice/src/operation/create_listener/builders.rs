@@ -10,10 +10,7 @@ impl CreateListenerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_listener::CreateListenerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_listener::CreateListenerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_listener::CreateListenerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_listener();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateListenerFluentBuilder {
         }
     }
     /// Access the CreateListener as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_listener::builders::CreateListenerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_listener::builders::CreateListenerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateListenerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl CreateListenerFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_service_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_identifier(input);
         self
     }
@@ -154,10 +140,7 @@ impl CreateListenerFluentBuilder {
         self
     }
     /// <p>The listener protocol HTTP or HTTPS.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ListenerProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ListenerProtocol>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
     }
@@ -185,10 +168,7 @@ impl CreateListenerFluentBuilder {
         self
     }
     /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed. </p>
-    pub fn set_default_action(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleAction>,
-    ) -> Self {
+    pub fn set_default_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
         self.inner = self.inner.set_default_action(input);
         self
     }
@@ -215,30 +195,17 @@ impl CreateListenerFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags for the listener.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags for the listener.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags for the listener.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

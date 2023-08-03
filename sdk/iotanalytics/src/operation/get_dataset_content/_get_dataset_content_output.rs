@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for GetDatasetContentOutput {
 }
 impl GetDatasetContentOutput {
     /// Creates a new builder-style object to manufacture [`GetDatasetContentOutput`](crate::operation::get_dataset_content::GetDatasetContentOutput).
-    pub fn builder(
-    ) -> crate::operation::get_dataset_content::builders::GetDatasetContentOutputBuilder {
+    pub fn builder() -> crate::operation::get_dataset_content::builders::GetDatasetContentOutputBuilder {
         crate::operation::get_dataset_content::builders::GetDatasetContentOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDatasetContentOutput`](crate::operation::get_dataset_content::GetDatasetContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDatasetContentOutputBuilder {
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::DatasetEntry>>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -65,17 +62,12 @@ impl GetDatasetContentOutputBuilder {
         self
     }
     /// <p>A list of <code>DatasetEntry</code> objects.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>A list of <code>DatasetEntry</code> objects.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetEntry>> {
         &self.entries
     }
     /// <p>The time when the request was made.</p>
@@ -84,10 +76,7 @@ impl GetDatasetContentOutputBuilder {
         self
     }
     /// <p>The time when the request was made.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
@@ -101,10 +90,7 @@ impl GetDatasetContentOutputBuilder {
         self
     }
     /// <p>The status of the dataset content.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetContentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatasetContentStatus>) -> Self {
         self.status = input;
         self
     }

@@ -34,9 +34,7 @@ impl NotificationChannelConfig {
 
 /// A builder for [`NotificationChannelConfig`](crate::types::NotificationChannelConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationChannelConfigBuilder {
     pub(crate) sns: ::std::option::Option<crate::types::SnsChannelConfig>,
     pub(crate) filters: ::std::option::Option<crate::types::NotificationFilterConfig>,
@@ -68,10 +66,7 @@ impl NotificationChannelConfigBuilder {
         self
     }
     /// <p> The filter configurations for the Amazon SNS notification topic you use with DevOps Guru. If you do not provide filter configurations, the default configurations are to receive notifications for all message types of <code>High</code> or <code>Medium</code> severity. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationFilterConfig>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::NotificationFilterConfig>) -> Self {
         self.filters = input;
         self
     }

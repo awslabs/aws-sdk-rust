@@ -37,10 +37,7 @@ impl ActivateContactChannelFluentBuilder {
         }
     }
     /// Access the ActivateContactChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::activate_contact_channel::builders::ActivateContactChannelInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::activate_contact_channel::builders::ActivateContactChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ActivateContactChannelFluentBuilder {
             crate::operation::activate_contact_channel::ActivateContactChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_contact_channel::ActivateContactChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_contact_channel::ActivateContactChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ActivateContactChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ActivateContactChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::activate_contact_channel::ActivateContactChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_contact_channel::ActivateContactChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_contact_channel::ActivateContactChannelError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ActivateContactChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::activate_contact_channel::ActivateContactChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_contact_channel::ActivateContactChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_contact_channel::ActivateContactChannelError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl ActivateContactChannelFluentBuilder {
             crate::operation::activate_contact_channel::ActivateContactChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_contact_channel::ActivateContactChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_contact_channel::ActivateContactChannelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn contact_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_channel_id(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn set_contact_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_channel_id(input);
         self
     }
@@ -144,18 +124,12 @@ impl ActivateContactChannelFluentBuilder {
         self.inner.get_contact_channel_id()
     }
     /// <p>The code sent to the contact channel when it was created in the contact.</p>
-    pub fn activation_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn activation_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.activation_code(input.into());
         self
     }
     /// <p>The code sent to the contact channel when it was created in the contact.</p>
-    pub fn set_activation_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_activation_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_activation_code(input);
         self
     }

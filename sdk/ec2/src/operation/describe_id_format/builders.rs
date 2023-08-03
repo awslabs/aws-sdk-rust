@@ -10,10 +10,7 @@ impl DescribeIdFormatInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_id_format::DescribeIdFormatOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_id_format::DescribeIdFormatError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_id_format::DescribeIdFormatError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_id_format();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DescribeIdFormatFluentBuilder {
         }
     }
     /// Access the DescribeIdFormat as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_id_format::builders::DescribeIdFormatInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_id_format::builders::DescribeIdFormatInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DescribeIdFormatFluentBuilder {
             crate::operation::describe_id_format::DescribeIdFormat,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_id_format::DescribeIdFormatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_id_format::DescribeIdFormatError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DescribeIdFormatFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DescribeIdFormatFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_id_format::DescribeIdFormatOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_id_format::DescribeIdFormatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_id_format::DescribeIdFormatError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DescribeIdFormatFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_id_format::DescribeIdFormatOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_id_format::DescribeIdFormatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_id_format::DescribeIdFormatError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl DescribeIdFormatFluentBuilder {
             crate::operation::describe_id_format::DescribeIdFormat,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_id_format::DescribeIdFormatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_id_format::DescribeIdFormatError>,
     > {
         self.customize_middleware().await
     }

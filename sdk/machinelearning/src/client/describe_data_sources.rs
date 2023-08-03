@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`results(Option<Vec<DataSource>>)`](crate::operation::describe_data_sources::DescribeDataSourcesOutput::results): <p>A list of <code>DataSource</code> that meet the search criteria. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_data_sources::DescribeDataSourcesOutput::next_token): <p>An ID of the next page in the paginated results that indicates at least one more page follows.</p>
     /// - On failure, responds with [`SdkError<DescribeDataSourcesError>`](crate::operation::describe_data_sources::DescribeDataSourcesError)
-    pub fn describe_data_sources(
-        &self,
-    ) -> crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder {
-        crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_data_sources(&self) -> crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder {
+        crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder::new(self.handle.clone())
     }
 }

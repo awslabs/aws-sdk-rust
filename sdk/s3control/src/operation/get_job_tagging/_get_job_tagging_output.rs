@@ -28,9 +28,7 @@ impl GetJobTaggingOutput {
 
 /// A builder for [`GetJobTaggingOutput`](crate::operation::get_job_tagging::GetJobTaggingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobTaggingOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
     _request_id: Option<String>,
@@ -48,10 +46,7 @@ impl GetJobTaggingOutputBuilder {
         self
     }
     /// <p>The set of tags associated with the S3 Batch Operations job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>) -> Self {
         self.tags = input;
         self
     }

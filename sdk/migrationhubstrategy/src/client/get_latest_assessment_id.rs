@@ -6,10 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetLatestAssessmentIdOutput`](crate::operation::get_latest_assessment_id::GetLatestAssessmentIdOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_latest_assessment_id::GetLatestAssessmentIdOutput::id): <p>The latest ID for the specific assessment task.</p>
     /// - On failure, responds with [`SdkError<GetLatestAssessmentIdError>`](crate::operation::get_latest_assessment_id::GetLatestAssessmentIdError)
-    pub fn get_latest_assessment_id(
-        &self,
-    ) -> crate::operation::get_latest_assessment_id::builders::GetLatestAssessmentIdFluentBuilder
-    {
+    pub fn get_latest_assessment_id(&self) -> crate::operation::get_latest_assessment_id::builders::GetLatestAssessmentIdFluentBuilder {
         crate::operation::get_latest_assessment_id::builders::GetLatestAssessmentIdFluentBuilder::new(self.handle.clone())
     }
 }

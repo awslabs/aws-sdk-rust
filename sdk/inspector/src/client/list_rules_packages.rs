@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`rules_package_arns(Option<Vec<String>>)`](crate::operation::list_rules_packages::ListRulesPackagesOutput::rules_package_arns): <p>The list of ARNs that specifies the rules packages returned by the action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_rules_packages::ListRulesPackagesOutput::next_token): <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     /// - On failure, responds with [`SdkError<ListRulesPackagesError>`](crate::operation::list_rules_packages::ListRulesPackagesError)
-    pub fn list_rules_packages(
-        &self,
-    ) -> crate::operation::list_rules_packages::builders::ListRulesPackagesFluentBuilder {
-        crate::operation::list_rules_packages::builders::ListRulesPackagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_rules_packages(&self) -> crate::operation::list_rules_packages::builders::ListRulesPackagesFluentBuilder {
+        crate::operation::list_rules_packages::builders::ListRulesPackagesFluentBuilder::new(self.handle.clone())
     }
 }

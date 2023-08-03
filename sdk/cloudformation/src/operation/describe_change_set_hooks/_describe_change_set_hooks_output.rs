@@ -63,18 +63,14 @@ impl ::aws_http::request_id::RequestId for DescribeChangeSetHooksOutput {
 }
 impl DescribeChangeSetHooksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChangeSetHooksOutput`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHooksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHooksOutputBuilder {
         crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHooksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeChangeSetHooksOutput`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeChangeSetHooksOutputBuilder {
     pub(crate) change_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_set_name: ::std::option::Option<::std::string::String>,
@@ -87,18 +83,12 @@ pub struct DescribeChangeSetHooksOutputBuilder {
 }
 impl DescribeChangeSetHooksOutputBuilder {
     /// <p>The change set identifier (stack ID).</p>
-    pub fn change_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The change set identifier (stack ID).</p>
-    pub fn set_change_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_id = input;
         self
     }
@@ -107,18 +97,12 @@ impl DescribeChangeSetHooksOutputBuilder {
         &self.change_set_id
     }
     /// <p>The change set name.</p>
-    pub fn change_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The change set name.</p>
-    pub fn set_change_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_name = input;
         self
     }
@@ -138,17 +122,12 @@ impl DescribeChangeSetHooksOutputBuilder {
         self
     }
     /// <p>List of hook objects.</p>
-    pub fn set_hooks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetHook>>,
-    ) -> Self {
+    pub fn set_hooks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetHook>>) -> Self {
         self.hooks = input;
         self
     }
     /// <p>List of hook objects.</p>
-    pub fn get_hooks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeSetHook>> {
+    pub fn get_hooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeSetHook>> {
         &self.hooks
     }
     /// <p>Provides the status of the change set hook.</p>
@@ -157,10 +136,7 @@ impl DescribeChangeSetHooksOutputBuilder {
         self
     }
     /// <p>Provides the status of the change set hook.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeSetHooksStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChangeSetHooksStatus>) -> Self {
         self.status = input;
         self
     }
@@ -220,9 +196,7 @@ impl DescribeChangeSetHooksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeChangeSetHooksOutput`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput {
+    pub fn build(self) -> crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput {
         crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput {
             change_set_id: self.change_set_id,
             change_set_name: self.change_set_name,

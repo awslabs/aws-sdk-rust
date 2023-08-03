@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for GetPropertyValueHistoryOutput {
 }
 impl GetPropertyValueHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetPropertyValueHistoryOutput`](crate::operation::get_property_value_history::GetPropertyValueHistoryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_property_value_history::builders::GetPropertyValueHistoryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_property_value_history::builders::GetPropertyValueHistoryOutputBuilder {
         crate::operation::get_property_value_history::builders::GetPropertyValueHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPropertyValueHistoryOutput`](crate::operation::get_property_value_history::GetPropertyValueHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPropertyValueHistoryOutputBuilder {
-    pub(crate) property_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::PropertyValueHistory>>,
+    pub(crate) property_values: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValueHistory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl GetPropertyValueHistoryOutputBuilder {
         self
     }
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn set_property_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValueHistory>>,
-    ) -> Self {
+    pub fn set_property_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValueHistory>>) -> Self {
         self.property_values = input;
         self
     }
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn get_property_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyValueHistory>> {
+    pub fn get_property_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyValueHistory>> {
         &self.property_values
     }
     /// <p>The string that specifies the next page of results.</p>
@@ -96,9 +86,7 @@ impl GetPropertyValueHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPropertyValueHistoryOutput`](crate::operation::get_property_value_history::GetPropertyValueHistoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_property_value_history::GetPropertyValueHistoryOutput {
+    pub fn build(self) -> crate::operation::get_property_value_history::GetPropertyValueHistoryOutput {
         crate::operation::get_property_value_history::GetPropertyValueHistoryOutput {
             property_values: self.property_values,
             next_token: self.next_token,

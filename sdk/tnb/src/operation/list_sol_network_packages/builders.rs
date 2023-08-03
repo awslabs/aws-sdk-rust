@@ -27,8 +27,7 @@ impl ListSolNetworkPackagesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSolNetworkPackagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesInputBuilder,
+    inner: crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesInputBuilder,
 }
 impl ListSolNetworkPackagesFluentBuilder {
     /// Creates a new `ListSolNetworkPackages`.
@@ -39,10 +38,7 @@ impl ListSolNetworkPackagesFluentBuilder {
         }
     }
     /// Access the ListSolNetworkPackages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl ListSolNetworkPackagesFluentBuilder {
             crate::operation::list_sol_network_packages::ListSolNetworkPackages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_network_packages::ListSolNetworkPackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sol_network_packages::ListSolNetworkPackagesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl ListSolNetworkPackagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl ListSolNetworkPackagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_network_packages::ListSolNetworkPackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sol_network_packages::ListSolNetworkPackagesError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl ListSolNetworkPackagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_network_packages::ListSolNetworkPackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sol_network_packages::ListSolNetworkPackagesError>,
     > {
         self.send_middleware().await
     }
@@ -119,23 +106,15 @@ impl ListSolNetworkPackagesFluentBuilder {
             crate::operation::list_sol_network_packages::ListSolNetworkPackages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_network_packages::ListSolNetworkPackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sol_network_packages::ListSolNetworkPackagesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_sol_network_packages::paginator::ListSolNetworkPackagesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_sol_network_packages::paginator::ListSolNetworkPackagesPaginator
-    {
-        crate::operation::list_sol_network_packages::paginator::ListSolNetworkPackagesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_sol_network_packages::paginator::ListSolNetworkPackagesPaginator {
+        crate::operation::list_sol_network_packages::paginator::ListSolNetworkPackagesPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to include in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {

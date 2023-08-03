@@ -22,22 +22,17 @@ impl BatchRevokePermissionsInput {
 }
 impl BatchRevokePermissionsInput {
     /// Creates a new builder-style object to manufacture [`BatchRevokePermissionsInput`](crate::operation::batch_revoke_permissions::BatchRevokePermissionsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_revoke_permissions::builders::BatchRevokePermissionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_revoke_permissions::builders::BatchRevokePermissionsInputBuilder {
         crate::operation::batch_revoke_permissions::builders::BatchRevokePermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchRevokePermissionsInput`](crate::operation::batch_revoke_permissions::BatchRevokePermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchRevokePermissionsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
-    pub(crate) entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>,
 }
 impl BatchRevokePermissionsInputBuilder {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -66,31 +61,22 @@ impl BatchRevokePermissionsInputBuilder {
         self
     }
     /// <p>A list of up to 20 entries for resource permissions to be revoked by batch operation to the principal.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>A list of up to 20 entries for resource permissions to be revoked by batch operation to the principal.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>> {
         &self.entries
     }
     /// Consumes the builder and constructs a [`BatchRevokePermissionsInput`](crate::operation::batch_revoke_permissions::BatchRevokePermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_revoke_permissions::BatchRevokePermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_revoke_permissions::BatchRevokePermissionsInput {
-                catalog_id: self.catalog_id,
-                entries: self.entries,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_revoke_permissions::BatchRevokePermissionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_revoke_permissions::BatchRevokePermissionsInput {
+            catalog_id: self.catalog_id,
+            entries: self.entries,
+        })
     }
 }

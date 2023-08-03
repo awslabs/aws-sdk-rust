@@ -32,16 +32,14 @@ impl DescribeReplicationTaskAssessmentRunsInput {
 }
 impl DescribeReplicationTaskAssessmentRunsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTaskAssessmentRunsInput`](crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsInput).
-    pub fn builder() -> crate::operation::describe_replication_task_assessment_runs::builders::DescribeReplicationTaskAssessmentRunsInputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_task_assessment_runs::builders::DescribeReplicationTaskAssessmentRunsInputBuilder {
         crate::operation::describe_replication_task_assessment_runs::builders::DescribeReplicationTaskAssessmentRunsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationTaskAssessmentRunsInput`](crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationTaskAssessmentRunsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -62,10 +60,7 @@ impl DescribeReplicationTaskAssessmentRunsInputBuilder {
     }
     /// <p>Filters applied to the premigration assessment runs described in the form of key-value pairs.</p>
     /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>replication-instance-arn</code>, <code>status</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -103,16 +98,18 @@ impl DescribeReplicationTaskAssessmentRunsInputBuilder {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeReplicationTaskAssessmentRunsInput`](crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsInput {
-                filters: self.filters
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                filters: self.filters,
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }

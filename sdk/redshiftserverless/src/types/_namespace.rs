@@ -126,18 +126,12 @@ pub struct NamespaceBuilder {
 }
 impl NamespaceBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with a namespace.</p>
-    pub fn namespace_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) associated with a namespace.</p>
-    pub fn set_namespace_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_arn = input;
         self
     }
@@ -160,18 +154,12 @@ impl NamespaceBuilder {
         &self.namespace_id
     }
     /// <p>The name of the namespace. Must be between 3-64 alphanumeric characters in lowercase, and it cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the namespace. Must be between 3-64 alphanumeric characters in lowercase, and it cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }
@@ -180,18 +168,12 @@ impl NamespaceBuilder {
         &self.namespace_name
     }
     /// <p>The username of the administrator for the first database created in the namespace.</p>
-    pub fn admin_username(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The username of the administrator for the first database created in the namespace.</p>
-    pub fn set_admin_username(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_username = input;
         self
     }
@@ -228,18 +210,12 @@ impl NamespaceBuilder {
         &self.kms_key_id
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
-    pub fn default_iam_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_iam_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
-    pub fn set_default_iam_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_iam_role_arn = input;
         self
     }
@@ -259,10 +235,7 @@ impl NamespaceBuilder {
         self
     }
     /// <p>A list of IAM roles to associate with the namespace.</p>
-    pub fn set_iam_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_iam_roles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.iam_roles = input;
         self
     }
@@ -282,17 +255,12 @@ impl NamespaceBuilder {
         self
     }
     /// <p>The types of logs the namespace can export. Available export types are User log, Connection log, and User activity log.</p>
-    pub fn set_log_exports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>,
-    ) -> Self {
+    pub fn set_log_exports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>) -> Self {
         self.log_exports = input;
         self
     }
     /// <p>The types of logs the namespace can export. Available export types are User log, Connection log, and User activity log.</p>
-    pub fn get_log_exports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogExport>> {
+    pub fn get_log_exports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogExport>> {
         &self.log_exports
     }
     /// <p>The status of the namespace.</p>
@@ -301,10 +269,7 @@ impl NamespaceBuilder {
         self
     }
     /// <p>The status of the namespace.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::NamespaceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::NamespaceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -318,10 +283,7 @@ impl NamespaceBuilder {
         self
     }
     /// <p>The date of when the namespace was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

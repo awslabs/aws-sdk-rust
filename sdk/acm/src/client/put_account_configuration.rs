@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`idempotency_token(impl ::std::convert::Into<String>)`](crate::operation::put_account_configuration::builders::PutAccountConfigurationFluentBuilder::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::operation::put_account_configuration::builders::PutAccountConfigurationFluentBuilder::set_idempotency_token): <p>Customer-chosen string used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with the same unexpired idempotency token, ACM treats it as the same request and returns the original result. If you change the idempotency token for each call, ACM treats each call as a new request.</p>
     /// - On success, responds with [`PutAccountConfigurationOutput`](crate::operation::put_account_configuration::PutAccountConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutAccountConfigurationError>`](crate::operation::put_account_configuration::PutAccountConfigurationError)
-    pub fn put_account_configuration(
-        &self,
-    ) -> crate::operation::put_account_configuration::builders::PutAccountConfigurationFluentBuilder
-    {
+    pub fn put_account_configuration(&self) -> crate::operation::put_account_configuration::builders::PutAccountConfigurationFluentBuilder {
         crate::operation::put_account_configuration::builders::PutAccountConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

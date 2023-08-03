@@ -5,63 +5,53 @@
 pub struct CreateFieldLevelEncryptionConfigInput {
     /// <p>The request to create a new field-level encryption configuration.</p>
     #[doc(hidden)]
-    pub field_level_encryption_config:
-        ::std::option::Option<crate::types::FieldLevelEncryptionConfig>,
+    pub field_level_encryption_config: ::std::option::Option<crate::types::FieldLevelEncryptionConfig>,
 }
 impl CreateFieldLevelEncryptionConfigInput {
     /// <p>The request to create a new field-level encryption configuration.</p>
-    pub fn field_level_encryption_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FieldLevelEncryptionConfig> {
+    pub fn field_level_encryption_config(&self) -> ::std::option::Option<&crate::types::FieldLevelEncryptionConfig> {
         self.field_level_encryption_config.as_ref()
     }
 }
 impl CreateFieldLevelEncryptionConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateFieldLevelEncryptionConfigInput`](crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigInput).
-    pub fn builder() -> crate::operation::create_field_level_encryption_config::builders::CreateFieldLevelEncryptionConfigInputBuilder{
+    pub fn builder() -> crate::operation::create_field_level_encryption_config::builders::CreateFieldLevelEncryptionConfigInputBuilder {
         crate::operation::create_field_level_encryption_config::builders::CreateFieldLevelEncryptionConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFieldLevelEncryptionConfigInput`](crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFieldLevelEncryptionConfigInputBuilder {
-    pub(crate) field_level_encryption_config:
-        ::std::option::Option<crate::types::FieldLevelEncryptionConfig>,
+    pub(crate) field_level_encryption_config: ::std::option::Option<crate::types::FieldLevelEncryptionConfig>,
 }
 impl CreateFieldLevelEncryptionConfigInputBuilder {
     /// <p>The request to create a new field-level encryption configuration.</p>
-    pub fn field_level_encryption_config(
-        mut self,
-        input: crate::types::FieldLevelEncryptionConfig,
-    ) -> Self {
+    pub fn field_level_encryption_config(mut self, input: crate::types::FieldLevelEncryptionConfig) -> Self {
         self.field_level_encryption_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The request to create a new field-level encryption configuration.</p>
-    pub fn set_field_level_encryption_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldLevelEncryptionConfig>,
-    ) -> Self {
+    pub fn set_field_level_encryption_config(mut self, input: ::std::option::Option<crate::types::FieldLevelEncryptionConfig>) -> Self {
         self.field_level_encryption_config = input;
         self
     }
     /// <p>The request to create a new field-level encryption configuration.</p>
-    pub fn get_field_level_encryption_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::FieldLevelEncryptionConfig> {
+    pub fn get_field_level_encryption_config(&self) -> &::std::option::Option<crate::types::FieldLevelEncryptionConfig> {
         &self.field_level_encryption_config
     }
     /// Consumes the builder and constructs a [`CreateFieldLevelEncryptionConfigInput`](crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigInput {
-                field_level_encryption_config: self.field_level_encryption_config
-                ,
-            }
+                field_level_encryption_config: self.field_level_encryption_config,
+            },
         )
     }
 }

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`product_code(Option<String>)`](crate::operation::get_usage_plan::GetUsagePlanOutput::product_code): <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_usage_plan::GetUsagePlanOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     /// - On failure, responds with [`SdkError<GetUsagePlanError>`](crate::operation::get_usage_plan::GetUsagePlanError)
-    pub fn get_usage_plan(
-        &self,
-    ) -> crate::operation::get_usage_plan::builders::GetUsagePlanFluentBuilder {
-        crate::operation::get_usage_plan::builders::GetUsagePlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_usage_plan(&self) -> crate::operation::get_usage_plan::builders::GetUsagePlanFluentBuilder {
+        crate::operation::get_usage_plan::builders::GetUsagePlanFluentBuilder::new(self.handle.clone())
     }
 }

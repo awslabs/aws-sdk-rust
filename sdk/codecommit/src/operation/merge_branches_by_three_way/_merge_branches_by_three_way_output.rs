@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for MergeBranchesByThreeWayOutput {
 }
 impl MergeBranchesByThreeWayOutput {
     /// Creates a new builder-style object to manufacture [`MergeBranchesByThreeWayOutput`](crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayOutput).
-    pub fn builder(
-    ) -> crate::operation::merge_branches_by_three_way::builders::MergeBranchesByThreeWayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::merge_branches_by_three_way::builders::MergeBranchesByThreeWayOutputBuilder {
         crate::operation::merge_branches_by_three_way::builders::MergeBranchesByThreeWayOutputBuilder::default()
     }
 }
 
 /// A builder for [`MergeBranchesByThreeWayOutput`](crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MergeBranchesByThreeWayOutputBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) tree_id: ::std::option::Option<::std::string::String>,
@@ -84,9 +80,7 @@ impl MergeBranchesByThreeWayOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`MergeBranchesByThreeWayOutput`](crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayOutput {
+    pub fn build(self) -> crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayOutput {
         crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayOutput {
             commit_id: self.commit_id,
             tree_id: self.tree_id,

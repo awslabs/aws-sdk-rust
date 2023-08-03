@@ -78,9 +78,7 @@ impl EndpointMessageResult {
 
 /// A builder for [`EndpointMessageResult`](crate::types::EndpointMessageResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointMessageResultBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_status: ::std::option::Option<crate::types::DeliveryStatus>,
@@ -130,10 +128,7 @@ impl EndpointMessageResultBuilder {
     /// <li><p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li>
     /// <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li>
     /// </ul>
-    pub fn set_delivery_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeliveryStatus>,
-    ) -> Self {
+    pub fn set_delivery_status(mut self, input: ::std::option::Option<crate::types::DeliveryStatus>) -> Self {
         self.delivery_status = input;
         self
     }
@@ -180,18 +175,12 @@ impl EndpointMessageResultBuilder {
         &self.status_code
     }
     /// <p>The status message for delivering the message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message for delivering the message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -200,18 +189,12 @@ impl EndpointMessageResultBuilder {
         &self.status_message
     }
     /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
-    pub fn updated_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn updated_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
-    pub fn set_updated_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_updated_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_token = input;
         self
     }

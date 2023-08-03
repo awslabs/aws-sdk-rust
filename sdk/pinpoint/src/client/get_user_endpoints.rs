@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetUserEndpointsOutput`](crate::operation::get_user_endpoints::GetUserEndpointsOutput) with field(s):
     ///   - [`endpoints_response(Option<EndpointsResponse>)`](crate::operation::get_user_endpoints::GetUserEndpointsOutput::endpoints_response): <p>Provides information about all the endpoints that are associated with a user ID.</p>
     /// - On failure, responds with [`SdkError<GetUserEndpointsError>`](crate::operation::get_user_endpoints::GetUserEndpointsError)
-    pub fn get_user_endpoints(
-        &self,
-    ) -> crate::operation::get_user_endpoints::builders::GetUserEndpointsFluentBuilder {
-        crate::operation::get_user_endpoints::builders::GetUserEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_user_endpoints(&self) -> crate::operation::get_user_endpoints::builders::GetUserEndpointsFluentBuilder {
+        crate::operation::get_user_endpoints::builders::GetUserEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -24,8 +24,7 @@ pub struct ListIntentMetricsInput {
     /// <li> <p> <code>IntentEndState</code> – The final state of the intent. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-intents">Key definitions</a> in the user guide.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub group_by:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentGroupBySpecification>>,
+    pub group_by: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentGroupBySpecification>>,
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentFilter>>,
@@ -63,9 +62,7 @@ impl ListIntentMetricsInput {
     /// <li> <p> <code>IntentName</code> – The name of the intent.</p> </li>
     /// <li> <p> <code>IntentEndState</code> – The final state of the intent. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-intents">Key definitions</a> in the user guide.</p> </li>
     /// </ul>
-    pub fn group_by(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AnalyticsIntentGroupBySpecification]> {
+    pub fn group_by(&self) -> ::std::option::Option<&[crate::types::AnalyticsIntentGroupBySpecification]> {
         self.group_by.as_deref()
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
@@ -84,26 +81,21 @@ impl ListIntentMetricsInput {
 }
 impl ListIntentMetricsInput {
     /// Creates a new builder-style object to manufacture [`ListIntentMetricsInput`](crate::operation::list_intent_metrics::ListIntentMetricsInput).
-    pub fn builder(
-    ) -> crate::operation::list_intent_metrics::builders::ListIntentMetricsInputBuilder {
+    pub fn builder() -> crate::operation::list_intent_metrics::builders::ListIntentMetricsInputBuilder {
         crate::operation::list_intent_metrics::builders::ListIntentMetricsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListIntentMetricsInput`](crate::operation::list_intent_metrics::ListIntentMetricsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIntentMetricsInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentMetric>>,
-    pub(crate) bin_by:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>,
-    pub(crate) group_by:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentGroupBySpecification>>,
+    pub(crate) bin_by: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>,
+    pub(crate) group_by: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentGroupBySpecification>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -129,10 +121,7 @@ impl ListIntentMetricsInputBuilder {
         self
     }
     /// <p>The timestamp that marks the beginning of the range of time for which you want to see intent metrics.</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date_time = input;
         self
     }
@@ -146,10 +135,7 @@ impl ListIntentMetricsInputBuilder {
         self
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see intent metrics.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date_time = input;
         self
     }
@@ -169,17 +155,12 @@ impl ListIntentMetricsInputBuilder {
         self
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the order by which to organize the results.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentMetric>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentMetric>>) -> Self {
         self.metrics = input;
         self
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the order by which to organize the results.</p>
-    pub fn get_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentMetric>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentMetric>> {
         &self.metrics
     }
     /// Appends an item to `bin_by`.
@@ -194,17 +175,12 @@ impl ListIntentMetricsInputBuilder {
         self
     }
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
-    pub fn set_bin_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>,
-    ) -> Self {
+    pub fn set_bin_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>) -> Self {
         self.bin_by = input;
         self
     }
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
-    pub fn get_bin_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>> {
+    pub fn get_bin_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>> {
         &self.bin_by
     }
     /// Appends an item to `group_by`.
@@ -227,12 +203,7 @@ impl ListIntentMetricsInputBuilder {
     /// <li> <p> <code>IntentName</code> – The name of the intent.</p> </li>
     /// <li> <p> <code>IntentEndState</code> – The final state of the intent. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-intents">Key definitions</a> in the user guide.</p> </li>
     /// </ul>
-    pub fn set_group_by(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AnalyticsIntentGroupBySpecification>,
-        >,
-    ) -> Self {
+    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentGroupBySpecification>>) -> Self {
         self.group_by = input;
         self
     }
@@ -241,10 +212,7 @@ impl ListIntentMetricsInputBuilder {
     /// <li> <p> <code>IntentName</code> – The name of the intent.</p> </li>
     /// <li> <p> <code>IntentEndState</code> – The final state of the intent. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-intents">Key definitions</a> in the user guide.</p> </li>
     /// </ul>
-    pub fn get_group_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentGroupBySpecification>>
-    {
+    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentGroupBySpecification>> {
         &self.group_by
     }
     /// Appends an item to `filters`.
@@ -259,17 +227,12 @@ impl ListIntentMetricsInputBuilder {
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentFilter>> {
         &self.filters
     }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
@@ -306,22 +269,17 @@ impl ListIntentMetricsInputBuilder {
     /// Consumes the builder and constructs a [`ListIntentMetricsInput`](crate::operation::list_intent_metrics::ListIntentMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_intent_metrics::ListIntentMetricsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_intent_metrics::ListIntentMetricsInput {
-                bot_id: self.bot_id,
-                start_date_time: self.start_date_time,
-                end_date_time: self.end_date_time,
-                metrics: self.metrics,
-                bin_by: self.bin_by,
-                group_by: self.group_by,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_intent_metrics::ListIntentMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_intent_metrics::ListIntentMetricsInput {
+            bot_id: self.bot_id,
+            start_date_time: self.start_date_time,
+            end_date_time: self.end_date_time,
+            metrics: self.metrics,
+            bin_by: self.bin_by,
+            group_by: self.group_by,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

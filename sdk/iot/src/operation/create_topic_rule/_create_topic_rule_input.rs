@@ -45,9 +45,7 @@ impl CreateTopicRuleInput {
 
 /// A builder for [`CreateTopicRuleInput`](crate::operation::create_topic_rule::CreateTopicRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTopicRuleInputBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) topic_rule_payload: ::std::option::Option<crate::types::TopicRulePayload>,
@@ -74,10 +72,7 @@ impl CreateTopicRuleInputBuilder {
         self
     }
     /// <p>The rule payload.</p>
-    pub fn set_topic_rule_payload(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicRulePayload>,
-    ) -> Self {
+    pub fn set_topic_rule_payload(mut self, input: ::std::option::Option<crate::types::TopicRulePayload>) -> Self {
         self.topic_rule_payload = input;
         self
     }
@@ -114,10 +109,7 @@ impl CreateTopicRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreateTopicRuleInput`](crate::operation::create_topic_rule::CreateTopicRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_topic_rule::CreateTopicRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_topic_rule::CreateTopicRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_topic_rule::CreateTopicRuleInput {
             rule_name: self.rule_name,
             topic_rule_payload: self.topic_rule_payload,

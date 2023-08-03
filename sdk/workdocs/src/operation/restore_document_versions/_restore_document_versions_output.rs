@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for RestoreDocumentVersionsOutput {
 }
 impl RestoreDocumentVersionsOutput {
     /// Creates a new builder-style object to manufacture [`RestoreDocumentVersionsOutput`](crate::operation::restore_document_versions::RestoreDocumentVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::restore_document_versions::builders::RestoreDocumentVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::restore_document_versions::builders::RestoreDocumentVersionsOutputBuilder {
         crate::operation::restore_document_versions::builders::RestoreDocumentVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreDocumentVersionsOutput`](crate::operation::restore_document_versions::RestoreDocumentVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreDocumentVersionsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl RestoreDocumentVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RestoreDocumentVersionsOutput`](crate::operation::restore_document_versions::RestoreDocumentVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_document_versions::RestoreDocumentVersionsOutput {
+    pub fn build(self) -> crate::operation::restore_document_versions::RestoreDocumentVersionsOutput {
         crate::operation::restore_document_versions::RestoreDocumentVersionsOutput {
             _request_id: self._request_id,
         }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`object_reference(ObjectReference)`](crate::operation::detach_policy::builders::DetachPolicyFluentBuilder::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::operation::detach_policy::builders::DetachPolicyFluentBuilder::set_object_reference): <p>Reference that identifies the object whose policy object will be detached.</p>
     /// - On success, responds with [`DetachPolicyOutput`](crate::operation::detach_policy::DetachPolicyOutput)
     /// - On failure, responds with [`SdkError<DetachPolicyError>`](crate::operation::detach_policy::DetachPolicyError)
-    pub fn detach_policy(
-        &self,
-    ) -> crate::operation::detach_policy::builders::DetachPolicyFluentBuilder {
-        crate::operation::detach_policy::builders::DetachPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detach_policy(&self) -> crate::operation::detach_policy::builders::DetachPolicyFluentBuilder {
+        crate::operation::detach_policy::builders::DetachPolicyFluentBuilder::new(self.handle.clone())
     }
 }

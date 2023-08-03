@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for ExtendTransactionOutput {
 }
 impl ExtendTransactionOutput {
     /// Creates a new builder-style object to manufacture [`ExtendTransactionOutput`](crate::operation::extend_transaction::ExtendTransactionOutput).
-    pub fn builder(
-    ) -> crate::operation::extend_transaction::builders::ExtendTransactionOutputBuilder {
+    pub fn builder() -> crate::operation::extend_transaction::builders::ExtendTransactionOutputBuilder {
         crate::operation::extend_transaction::builders::ExtendTransactionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExtendTransactionOutput`](crate::operation::extend_transaction::ExtendTransactionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExtendTransactionOutputBuilder {
     _request_id: Option<String>,
 }

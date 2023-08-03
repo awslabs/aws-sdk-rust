@@ -27,8 +27,7 @@ pub struct RepositoryDescription {
     pub upstreams: ::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepositoryInfo>>,
     /// <p> An array of external connections associated with the repository. </p>
     #[doc(hidden)]
-    pub external_connections:
-        ::std::option::Option<::std::vec::Vec<crate::types::RepositoryExternalConnectionInfo>>,
+    pub external_connections: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryExternalConnectionInfo>>,
     /// <p>A timestamp that represents the date and time the repository was created.</p>
     #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -63,9 +62,7 @@ impl RepositoryDescription {
         self.upstreams.as_deref()
     }
     /// <p> An array of external connections associated with the repository. </p>
-    pub fn external_connections(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RepositoryExternalConnectionInfo]> {
+    pub fn external_connections(&self) -> ::std::option::Option<&[crate::types::RepositoryExternalConnectionInfo]> {
         self.external_connections.as_deref()
     }
     /// <p>A timestamp that represents the date and time the repository was created.</p>
@@ -82,9 +79,7 @@ impl RepositoryDescription {
 
 /// A builder for [`RepositoryDescription`](crate::types::RepositoryDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryDescriptionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) administrator_account: ::std::option::Option<::std::string::String>,
@@ -92,10 +87,8 @@ pub struct RepositoryDescriptionBuilder {
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) upstreams:
-        ::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepositoryInfo>>,
-    pub(crate) external_connections:
-        ::std::option::Option<::std::vec::Vec<crate::types::RepositoryExternalConnectionInfo>>,
+    pub(crate) upstreams: ::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepositoryInfo>>,
+    pub(crate) external_connections: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryExternalConnectionInfo>>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RepositoryDescriptionBuilder {
@@ -114,18 +107,12 @@ impl RepositoryDescriptionBuilder {
         &self.name
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that manages the repository. </p>
-    pub fn administrator_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn administrator_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.administrator_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that manages the repository. </p>
-    pub fn set_administrator_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_administrator_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.administrator_account = input;
         self
     }
@@ -201,17 +188,12 @@ impl RepositoryDescriptionBuilder {
         self
     }
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    pub fn set_upstreams(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepositoryInfo>>,
-    ) -> Self {
+    pub fn set_upstreams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepositoryInfo>>) -> Self {
         self.upstreams = input;
         self
     }
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    pub fn get_upstreams(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepositoryInfo>> {
+    pub fn get_upstreams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepositoryInfo>> {
         &self.upstreams
     }
     /// Appends an item to `external_connections`.
@@ -219,30 +201,19 @@ impl RepositoryDescriptionBuilder {
     /// To override the contents of this collection use [`set_external_connections`](Self::set_external_connections).
     ///
     /// <p> An array of external connections associated with the repository. </p>
-    pub fn external_connections(
-        mut self,
-        input: crate::types::RepositoryExternalConnectionInfo,
-    ) -> Self {
+    pub fn external_connections(mut self, input: crate::types::RepositoryExternalConnectionInfo) -> Self {
         let mut v = self.external_connections.unwrap_or_default();
         v.push(input);
         self.external_connections = ::std::option::Option::Some(v);
         self
     }
     /// <p> An array of external connections associated with the repository. </p>
-    pub fn set_external_connections(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::RepositoryExternalConnectionInfo>,
-        >,
-    ) -> Self {
+    pub fn set_external_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryExternalConnectionInfo>>) -> Self {
         self.external_connections = input;
         self
     }
     /// <p> An array of external connections associated with the repository. </p>
-    pub fn get_external_connections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryExternalConnectionInfo>>
-    {
+    pub fn get_external_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryExternalConnectionInfo>> {
         &self.external_connections
     }
     /// <p>A timestamp that represents the date and time the repository was created.</p>
@@ -251,10 +222,7 @@ impl RepositoryDescriptionBuilder {
         self
     }
     /// <p>A timestamp that represents the date and time the repository was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }

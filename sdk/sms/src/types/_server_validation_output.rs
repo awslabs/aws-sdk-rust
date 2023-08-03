@@ -23,9 +23,7 @@ impl ServerValidationOutput {
 
 /// A builder for [`ServerValidationOutput`](crate::types::ServerValidationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerValidationOutputBuilder {
     pub(crate) server: ::std::option::Option<crate::types::Server>,
 }
@@ -46,8 +44,6 @@ impl ServerValidationOutputBuilder {
     }
     /// Consumes the builder and constructs a [`ServerValidationOutput`](crate::types::ServerValidationOutput).
     pub fn build(self) -> crate::types::ServerValidationOutput {
-        crate::types::ServerValidationOutput {
-            server: self.server,
-        }
+        crate::types::ServerValidationOutput { server: self.server }
     }
 }

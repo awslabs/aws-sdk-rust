@@ -22,9 +22,7 @@ pub fn ser_create_replication_configuration_template_input(
         object.key("dataPlaneRouting").string(var_4.as_str());
     }
     if let Some(var_5) = &input.default_large_staging_disk_type {
-        object
-            .key("defaultLargeStagingDiskType")
-            .string(var_5.as_str());
+        object.key("defaultLargeStagingDiskType").string(var_5.as_str());
     }
     if let Some(var_6) = &input.ebs_encryption {
         object.key("ebsEncryption").string(var_6.as_str());
@@ -38,24 +36,17 @@ pub fn ser_create_replication_configuration_template_input(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_pit_policy_rule::ser_pit_policy_rule(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_pit_policy_rule::ser_pit_policy_rule(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }
         array_9.finish();
     }
     if let Some(var_12) = &input.replication_server_instance_type {
-        object
-            .key("replicationServerInstanceType")
-            .string(var_12.as_str());
+        object.key("replicationServerInstanceType").string(var_12.as_str());
     }
     if let Some(var_13) = &input.replication_servers_security_groups_i_ds {
-        let mut array_14 = object
-            .key("replicationServersSecurityGroupsIDs")
-            .start_array();
+        let mut array_14 = object.key("replicationServersSecurityGroupsIDs").start_array();
         for item_15 in var_13 {
             {
                 array_14.value().string(item_15.as_str());

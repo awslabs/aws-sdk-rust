@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeCachediScsiVolumesOutput`](crate::operation::describe_cachedi_scsi_volumes::DescribeCachediScsiVolumesOutput) with field(s):
     ///   - [`cachedi_scsi_volumes(Option<Vec<CachediScsiVolume>>)`](crate::operation::describe_cachedi_scsi_volumes::DescribeCachediScsiVolumesOutput::cachedi_scsi_volumes): <p>An array of objects where each object contains metadata about one cached volume.</p>
     /// - On failure, responds with [`SdkError<DescribeCachediSCSIVolumesError>`](crate::operation::describe_cachedi_scsi_volumes::DescribeCachediSCSIVolumesError)
-    pub fn describe_cachedi_scsi_volumes(&self) -> crate::operation::describe_cachedi_scsi_volumes::builders::DescribeCachediSCSIVolumesFluentBuilder{
+    pub fn describe_cachedi_scsi_volumes(
+        &self,
+    ) -> crate::operation::describe_cachedi_scsi_volumes::builders::DescribeCachediSCSIVolumesFluentBuilder {
         crate::operation::describe_cachedi_scsi_volumes::builders::DescribeCachediSCSIVolumesFluentBuilder::new(self.handle.clone())
     }
 }

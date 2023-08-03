@@ -49,8 +49,7 @@ impl ::aws_http::request_id::RequestId for GetConfigurationOutput {
 }
 impl GetConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationOutput`](crate::operation::get_configuration::GetConfigurationOutput).
-    pub fn builder() -> crate::operation::get_configuration::builders::GetConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_configuration::builders::GetConfigurationOutputBuilder {
         crate::operation::get_configuration::builders::GetConfigurationOutputBuilder::default()
     }
 }
@@ -86,18 +85,12 @@ impl GetConfigurationOutputBuilder {
         &self.content
     }
     /// <p>The configuration version.</p>
-    pub fn configuration_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration version.</p>
-    pub fn set_configuration_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_version = input;
         self
     }

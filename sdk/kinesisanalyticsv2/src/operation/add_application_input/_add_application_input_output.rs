@@ -35,39 +35,28 @@ impl ::aws_http::request_id::RequestId for AddApplicationInputOutput {
 }
 impl AddApplicationInputOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationInputOutput`](crate::operation::add_application_input::AddApplicationInputOutput).
-    pub fn builder(
-    ) -> crate::operation::add_application_input::builders::AddApplicationInputOutputBuilder {
-        crate::operation::add_application_input::builders::AddApplicationInputOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::add_application_input::builders::AddApplicationInputOutputBuilder {
+        crate::operation::add_application_input::builders::AddApplicationInputOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddApplicationInputOutput`](crate::operation::add_application_input::AddApplicationInputOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddApplicationInputOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_version_id: ::std::option::Option<i64>,
-    pub(crate) input_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>,
+    pub(crate) input_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>,
     _request_id: Option<String>,
 }
 impl AddApplicationInputOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -101,17 +90,12 @@ impl AddApplicationInputOutputBuilder {
         self
     }
     /// <p>Describes the application input configuration. </p>
-    pub fn set_input_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>,
-    ) -> Self {
+    pub fn set_input_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>) -> Self {
         self.input_descriptions = input;
         self
     }
     /// <p>Describes the application input configuration. </p>
-    pub fn get_input_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDescription>> {
+    pub fn get_input_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDescription>> {
         &self.input_descriptions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

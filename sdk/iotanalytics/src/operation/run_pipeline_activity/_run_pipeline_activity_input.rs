@@ -22,18 +22,14 @@ impl RunPipelineActivityInput {
 }
 impl RunPipelineActivityInput {
     /// Creates a new builder-style object to manufacture [`RunPipelineActivityInput`](crate::operation::run_pipeline_activity::RunPipelineActivityInput).
-    pub fn builder(
-    ) -> crate::operation::run_pipeline_activity::builders::RunPipelineActivityInputBuilder {
-        crate::operation::run_pipeline_activity::builders::RunPipelineActivityInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::run_pipeline_activity::builders::RunPipelineActivityInputBuilder {
+        crate::operation::run_pipeline_activity::builders::RunPipelineActivityInputBuilder::default()
     }
 }
 
 /// A builder for [`RunPipelineActivityInput`](crate::operation::run_pipeline_activity::RunPipelineActivityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RunPipelineActivityInputBuilder {
     pub(crate) pipeline_activity: ::std::option::Option<crate::types::PipelineActivity>,
     pub(crate) payloads: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
@@ -45,10 +41,7 @@ impl RunPipelineActivityInputBuilder {
         self
     }
     /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
-    pub fn set_pipeline_activity(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineActivity>,
-    ) -> Self {
+    pub fn set_pipeline_activity(mut self, input: ::std::option::Option<crate::types::PipelineActivity>) -> Self {
         self.pipeline_activity = input;
         self
     }
@@ -68,31 +61,22 @@ impl RunPipelineActivityInputBuilder {
         self
     }
     /// <p>The sample message payloads on which the pipeline activity is run.</p>
-    pub fn set_payloads(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
-    ) -> Self {
+    pub fn set_payloads(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>) -> Self {
         self.payloads = input;
         self
     }
     /// <p>The sample message payloads on which the pipeline activity is run.</p>
-    pub fn get_payloads(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
+    pub fn get_payloads(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
         &self.payloads
     }
     /// Consumes the builder and constructs a [`RunPipelineActivityInput`](crate::operation::run_pipeline_activity::RunPipelineActivityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::run_pipeline_activity::RunPipelineActivityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::run_pipeline_activity::RunPipelineActivityInput {
-                pipeline_activity: self.pipeline_activity,
-                payloads: self.payloads,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::run_pipeline_activity::RunPipelineActivityInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::run_pipeline_activity::RunPipelineActivityInput {
+            pipeline_activity: self.pipeline_activity,
+            payloads: self.payloads,
+        })
     }
 }

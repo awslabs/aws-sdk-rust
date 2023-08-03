@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteUserEndpointsOutput`](crate::operation::delete_user_endpoints::DeleteUserEndpointsOutput) with field(s):
     ///   - [`endpoints_response(Option<EndpointsResponse>)`](crate::operation::delete_user_endpoints::DeleteUserEndpointsOutput::endpoints_response): <p>Provides information about all the endpoints that are associated with a user ID.</p>
     /// - On failure, responds with [`SdkError<DeleteUserEndpointsError>`](crate::operation::delete_user_endpoints::DeleteUserEndpointsError)
-    pub fn delete_user_endpoints(
-        &self,
-    ) -> crate::operation::delete_user_endpoints::builders::DeleteUserEndpointsFluentBuilder {
-        crate::operation::delete_user_endpoints::builders::DeleteUserEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_user_endpoints(&self) -> crate::operation::delete_user_endpoints::builders::DeleteUserEndpointsFluentBuilder {
+        crate::operation::delete_user_endpoints::builders::DeleteUserEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

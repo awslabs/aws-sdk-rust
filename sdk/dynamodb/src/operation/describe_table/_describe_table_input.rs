@@ -23,9 +23,7 @@ impl DescribeTableInput {
 
 /// A builder for [`DescribeTableInput`](crate::operation::describe_table::DescribeTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTableInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +45,7 @@ impl DescribeTableInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTableInput`](crate::operation::describe_table::DescribeTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_table::DescribeTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_table::DescribeTableInput {
-            table_name: self.table_name,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_table::DescribeTableInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_table::DescribeTableInput { table_name: self.table_name })
     }
 }

@@ -65,9 +65,7 @@ impl JourneyDateRangeKpiResponse {
 
 /// A builder for [`JourneyDateRangeKpiResponse`](crate::types::JourneyDateRangeKpiResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JourneyDateRangeKpiResponseBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -79,18 +77,12 @@ pub struct JourneyDateRangeKpiResponseBuilder {
 }
 impl JourneyDateRangeKpiResponseBuilder {
     /// <p>The unique identifier for the application that the metric applies to.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application that the metric applies to.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -104,10 +96,7 @@ impl JourneyDateRangeKpiResponseBuilder {
         self
     }
     /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -149,10 +138,7 @@ impl JourneyDateRangeKpiResponseBuilder {
         self
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the value for the metric and metadata about that value.</p>
-    pub fn set_kpi_result(
-        mut self,
-        input: ::std::option::Option<crate::types::BaseKpiResult>,
-    ) -> Self {
+    pub fn set_kpi_result(mut self, input: ::std::option::Option<crate::types::BaseKpiResult>) -> Self {
         self.kpi_result = input;
         self
     }
@@ -180,10 +166,7 @@ impl JourneyDateRangeKpiResponseBuilder {
         self
     }
     /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }

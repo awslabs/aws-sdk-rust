@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StartDeploymentOutput`](crate::operation::start_deployment::StartDeploymentOutput) with field(s):
     ///   - [`job_summary(Option<JobSummary>)`](crate::operation::start_deployment::StartDeploymentOutput::job_summary): <p> The summary for the job. </p>
     /// - On failure, responds with [`SdkError<StartDeploymentError>`](crate::operation::start_deployment::StartDeploymentError)
-    pub fn start_deployment(
-        &self,
-    ) -> crate::operation::start_deployment::builders::StartDeploymentFluentBuilder {
-        crate::operation::start_deployment::builders::StartDeploymentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_deployment(&self) -> crate::operation::start_deployment::builders::StartDeploymentFluentBuilder {
+        crate::operation::start_deployment::builders::StartDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

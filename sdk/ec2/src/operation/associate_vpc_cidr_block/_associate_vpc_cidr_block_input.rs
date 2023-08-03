@@ -84,18 +84,14 @@ impl AssociateVpcCidrBlockInput {
 }
 impl AssociateVpcCidrBlockInput {
     /// Creates a new builder-style object to manufacture [`AssociateVpcCidrBlockInput`](crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockInput).
-    pub fn builder(
-    ) -> crate::operation::associate_vpc_cidr_block::builders::AssociateVpcCidrBlockInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_vpc_cidr_block::builders::AssociateVpcCidrBlockInputBuilder {
         crate::operation::associate_vpc_cidr_block::builders::AssociateVpcCidrBlockInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateVpcCidrBlockInput`](crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateVpcCidrBlockInputBuilder {
     pub(crate) amazon_provided_ipv6_cidr_block: ::std::option::Option<bool>,
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
@@ -115,10 +111,7 @@ impl AssociateVpcCidrBlockInputBuilder {
         self
     }
     /// <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IPv6 addresses, or the size of the CIDR block.</p>
-    pub fn set_amazon_provided_ipv6_cidr_block(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_amazon_provided_ipv6_cidr_block(mut self, input: ::std::option::Option<bool>) -> Self {
         self.amazon_provided_ipv6_cidr_block = input;
         self
     }
@@ -157,29 +150,21 @@ impl AssociateVpcCidrBlockInputBuilder {
     /// <p>The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CIDR block to this location.</p>
     /// <p> You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.</p>
     /// <p> You can have one IPv6 CIDR block association per network border group.</p>
-    pub fn ipv6_cidr_block_network_border_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipv6_cidr_block_network_border_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_cidr_block_network_border_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CIDR block to this location.</p>
     /// <p> You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.</p>
     /// <p> You can have one IPv6 CIDR block association per network border group.</p>
-    pub fn set_ipv6_cidr_block_network_border_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipv6_cidr_block_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_cidr_block_network_border_group = input;
         self
     }
     /// <p>The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CIDR block to this location.</p>
     /// <p> You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.</p>
     /// <p> You can have one IPv6 CIDR block association per network border group.</p>
-    pub fn get_ipv6_cidr_block_network_border_group(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_ipv6_cidr_block_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv6_cidr_block_network_border_group
     }
     /// <p>The ID of an IPv6 address pool from which to allocate the IPv6 CIDR block.</p>
@@ -198,19 +183,13 @@ impl AssociateVpcCidrBlockInputBuilder {
     }
     /// <p>An IPv6 CIDR block from the IPv6 address pool. You must also specify <code>Ipv6Pool</code> in the request.</p>
     /// <p>To let Amazon choose the IPv6 CIDR block for you, omit this parameter.</p>
-    pub fn ipv6_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An IPv6 CIDR block from the IPv6 address pool. You must also specify <code>Ipv6Pool</code> in the request.</p>
     /// <p>To let Amazon choose the IPv6 CIDR block for you, omit this parameter.</p>
-    pub fn set_ipv6_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_cidr_block = input;
         self
     }
@@ -220,18 +199,12 @@ impl AssociateVpcCidrBlockInputBuilder {
         &self.ipv6_cidr_block
     }
     /// <p>Associate a CIDR allocated from an IPv4 IPAM pool to a VPC. For more information about Amazon VPC IP Address Manager (IPAM), see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn ipv4_ipam_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipv4_ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv4_ipam_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Associate a CIDR allocated from an IPv4 IPAM pool to a VPC. For more information about Amazon VPC IP Address Manager (IPAM), see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn set_ipv4_ipam_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipv4_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv4_ipam_pool_id = input;
         self
     }
@@ -254,18 +227,12 @@ impl AssociateVpcCidrBlockInputBuilder {
         &self.ipv4_netmask_length
     }
     /// <p>Associates a CIDR allocated from an IPv6 IPAM pool to a VPC. For more information about Amazon VPC IP Address Manager (IPAM), see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn ipv6_ipam_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipv6_ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_ipam_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Associates a CIDR allocated from an IPv6 IPAM pool to a VPC. For more information about Amazon VPC IP Address Manager (IPAM), see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn set_ipv6_ipam_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipv6_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_ipam_pool_id = input;
         self
     }
@@ -290,23 +257,19 @@ impl AssociateVpcCidrBlockInputBuilder {
     /// Consumes the builder and constructs a [`AssociateVpcCidrBlockInput`](crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockInput {
-                amazon_provided_ipv6_cidr_block: self.amazon_provided_ipv6_cidr_block,
-                cidr_block: self.cidr_block,
-                vpc_id: self.vpc_id,
-                ipv6_cidr_block_network_border_group: self.ipv6_cidr_block_network_border_group,
-                ipv6_pool: self.ipv6_pool,
-                ipv6_cidr_block: self.ipv6_cidr_block,
-                ipv4_ipam_pool_id: self.ipv4_ipam_pool_id,
-                ipv4_netmask_length: self.ipv4_netmask_length,
-                ipv6_ipam_pool_id: self.ipv6_ipam_pool_id,
-                ipv6_netmask_length: self.ipv6_netmask_length,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockInput {
+            amazon_provided_ipv6_cidr_block: self.amazon_provided_ipv6_cidr_block,
+            cidr_block: self.cidr_block,
+            vpc_id: self.vpc_id,
+            ipv6_cidr_block_network_border_group: self.ipv6_cidr_block_network_border_group,
+            ipv6_pool: self.ipv6_pool,
+            ipv6_cidr_block: self.ipv6_cidr_block,
+            ipv4_ipam_pool_id: self.ipv4_ipam_pool_id,
+            ipv4_netmask_length: self.ipv4_netmask_length,
+            ipv6_ipam_pool_id: self.ipv6_ipam_pool_id,
+            ipv6_netmask_length: self.ipv6_netmask_length,
+        })
     }
 }

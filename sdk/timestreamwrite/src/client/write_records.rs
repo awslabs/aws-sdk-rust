@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`WriteRecordsOutput`](crate::operation::write_records::WriteRecordsOutput) with field(s):
     ///   - [`records_ingested(Option<RecordsIngested>)`](crate::operation::write_records::WriteRecordsOutput::records_ingested): <p>Information on the records ingested by this request.</p>
     /// - On failure, responds with [`SdkError<WriteRecordsError>`](crate::operation::write_records::WriteRecordsError)
-    pub fn write_records(
-        &self,
-    ) -> crate::operation::write_records::builders::WriteRecordsFluentBuilder {
-        crate::operation::write_records::builders::WriteRecordsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn write_records(&self) -> crate::operation::write_records::builders::WriteRecordsFluentBuilder {
+        crate::operation::write_records::builders::WriteRecordsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,8 +26,7 @@ impl StartSimulationJobBatchInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartSimulationJobBatchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::start_simulation_job_batch::builders::StartSimulationJobBatchInputBuilder,
+    inner: crate::operation::start_simulation_job_batch::builders::StartSimulationJobBatchInputBuilder,
 }
 impl StartSimulationJobBatchFluentBuilder {
     /// Creates a new `StartSimulationJobBatch`.
@@ -38,10 +37,7 @@ impl StartSimulationJobBatchFluentBuilder {
         }
     }
     /// Access the StartSimulationJobBatch as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_simulation_job_batch::builders::StartSimulationJobBatchInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_simulation_job_batch::builders::StartSimulationJobBatchInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl StartSimulationJobBatchFluentBuilder {
             crate::operation::start_simulation_job_batch::StartSimulationJobBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_simulation_job_batch::StartSimulationJobBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_simulation_job_batch::StartSimulationJobBatchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl StartSimulationJobBatchFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl StartSimulationJobBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_simulation_job_batch::StartSimulationJobBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_simulation_job_batch::StartSimulationJobBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_simulation_job_batch::StartSimulationJobBatchError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl StartSimulationJobBatchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_simulation_job_batch::StartSimulationJobBatchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_simulation_job_batch::StartSimulationJobBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_simulation_job_batch::StartSimulationJobBatchError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl StartSimulationJobBatchFluentBuilder {
             crate::operation::start_simulation_job_batch::StartSimulationJobBatch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_simulation_job_batch::StartSimulationJobBatchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_simulation_job_batch::StartSimulationJobBatchError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -150,10 +129,7 @@ impl StartSimulationJobBatchFluentBuilder {
         self
     }
     /// <p>The batch policy.</p>
-    pub fn set_batch_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchPolicy>,
-    ) -> Self {
+    pub fn set_batch_policy(mut self, input: ::std::option::Option<crate::types::BatchPolicy>) -> Self {
         self.inner = self.inner.set_batch_policy(input);
         self
     }
@@ -166,25 +142,17 @@ impl StartSimulationJobBatchFluentBuilder {
     /// To override the contents of this collection use [`set_create_simulation_job_requests`](Self::set_create_simulation_job_requests).
     ///
     /// <p>A list of simulation job requests to create in the batch.</p>
-    pub fn create_simulation_job_requests(
-        mut self,
-        input: crate::types::SimulationJobRequest,
-    ) -> Self {
+    pub fn create_simulation_job_requests(mut self, input: crate::types::SimulationJobRequest) -> Self {
         self.inner = self.inner.create_simulation_job_requests(input);
         self
     }
     /// <p>A list of simulation job requests to create in the batch.</p>
-    pub fn set_create_simulation_job_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobRequest>>,
-    ) -> Self {
+    pub fn set_create_simulation_job_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobRequest>>) -> Self {
         self.inner = self.inner.set_create_simulation_job_requests(input);
         self
     }
     /// <p>A list of simulation job requests to create in the batch.</p>
-    pub fn get_create_simulation_job_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationJobRequest>> {
+    pub fn get_create_simulation_job_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationJobRequest>> {
         self.inner.get_create_simulation_job_requests()
     }
     /// Adds a key-value pair to `tags`.
@@ -192,30 +160,17 @@ impl StartSimulationJobBatchFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

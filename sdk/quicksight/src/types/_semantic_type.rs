@@ -12,9 +12,7 @@ pub struct SemanticType {
     pub sub_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The semantic type parameters.</p>
     #[doc(hidden)]
-    pub type_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub type_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The semantic type truthy cell value.</p>
     #[doc(hidden)]
     pub truthy_cell_value: ::std::option::Option<::std::string::String>,
@@ -38,11 +36,7 @@ impl SemanticType {
         self.sub_type_name.as_deref()
     }
     /// <p>The semantic type parameters.</p>
-    pub fn type_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn type_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.type_parameters.as_ref()
     }
     /// <p>The semantic type truthy cell value.</p>
@@ -69,15 +63,9 @@ impl ::std::fmt::Debug for SemanticType {
         formatter.field("sub_type_name", &self.sub_type_name);
         formatter.field("type_parameters", &self.type_parameters);
         formatter.field("truthy_cell_value", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "truthy_cell_value_synonyms",
-            &self.truthy_cell_value_synonyms,
-        );
+        formatter.field("truthy_cell_value_synonyms", &self.truthy_cell_value_synonyms);
         formatter.field("falsey_cell_value", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "falsey_cell_value_synonyms",
-            &self.falsey_cell_value_synonyms,
-        );
+        formatter.field("falsey_cell_value_synonyms", &self.falsey_cell_value_synonyms);
         formatter.finish()
     }
 }
@@ -94,15 +82,11 @@ impl SemanticType {
 pub struct SemanticTypeBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
     pub(crate) sub_type_name: ::std::option::Option<::std::string::String>,
-    pub(crate) type_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) type_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) truthy_cell_value: ::std::option::Option<::std::string::String>,
-    pub(crate) truthy_cell_value_synonyms:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) truthy_cell_value_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) falsey_cell_value: ::std::option::Option<::std::string::String>,
-    pub(crate) falsey_cell_value_synonyms:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) falsey_cell_value_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SemanticTypeBuilder {
     /// <p>The semantic type name.</p>
@@ -120,18 +104,12 @@ impl SemanticTypeBuilder {
         &self.type_name
     }
     /// <p>The semantic type sub type name.</p>
-    pub fn sub_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The semantic type sub type name.</p>
-    pub fn set_sub_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_type_name = input;
         self
     }
@@ -157,34 +135,22 @@ impl SemanticTypeBuilder {
     /// <p>The semantic type parameters.</p>
     pub fn set_type_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.type_parameters = input;
         self
     }
     /// <p>The semantic type parameters.</p>
-    pub fn get_type_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_type_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.type_parameters
     }
     /// <p>The semantic type truthy cell value.</p>
-    pub fn truthy_cell_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn truthy_cell_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.truthy_cell_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The semantic type truthy cell value.</p>
-    pub fn set_truthy_cell_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_truthy_cell_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.truthy_cell_value = input;
         self
     }
@@ -197,42 +163,28 @@ impl SemanticTypeBuilder {
     /// To override the contents of this collection use [`set_truthy_cell_value_synonyms`](Self::set_truthy_cell_value_synonyms).
     ///
     /// <p>The other names or aliases for the true cell value.</p>
-    pub fn truthy_cell_value_synonyms(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn truthy_cell_value_synonyms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.truthy_cell_value_synonyms.unwrap_or_default();
         v.push(input.into());
         self.truthy_cell_value_synonyms = ::std::option::Option::Some(v);
         self
     }
     /// <p>The other names or aliases for the true cell value.</p>
-    pub fn set_truthy_cell_value_synonyms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_truthy_cell_value_synonyms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.truthy_cell_value_synonyms = input;
         self
     }
     /// <p>The other names or aliases for the true cell value.</p>
-    pub fn get_truthy_cell_value_synonyms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_truthy_cell_value_synonyms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.truthy_cell_value_synonyms
     }
     /// <p>The semantic type falsey cell value.</p>
-    pub fn falsey_cell_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn falsey_cell_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.falsey_cell_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The semantic type falsey cell value.</p>
-    pub fn set_falsey_cell_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_falsey_cell_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.falsey_cell_value = input;
         self
     }
@@ -245,27 +197,19 @@ impl SemanticTypeBuilder {
     /// To override the contents of this collection use [`set_falsey_cell_value_synonyms`](Self::set_falsey_cell_value_synonyms).
     ///
     /// <p>The other names or aliases for the false cell value.</p>
-    pub fn falsey_cell_value_synonyms(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn falsey_cell_value_synonyms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.falsey_cell_value_synonyms.unwrap_or_default();
         v.push(input.into());
         self.falsey_cell_value_synonyms = ::std::option::Option::Some(v);
         self
     }
     /// <p>The other names or aliases for the false cell value.</p>
-    pub fn set_falsey_cell_value_synonyms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_falsey_cell_value_synonyms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.falsey_cell_value_synonyms = input;
         self
     }
     /// <p>The other names or aliases for the false cell value.</p>
-    pub fn get_falsey_cell_value_synonyms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_falsey_cell_value_synonyms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.falsey_cell_value_synonyms
     }
     /// Consumes the builder and constructs a [`SemanticType`](crate::types::SemanticType).
@@ -288,15 +232,9 @@ impl ::std::fmt::Debug for SemanticTypeBuilder {
         formatter.field("sub_type_name", &self.sub_type_name);
         formatter.field("type_parameters", &self.type_parameters);
         formatter.field("truthy_cell_value", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "truthy_cell_value_synonyms",
-            &self.truthy_cell_value_synonyms,
-        );
+        formatter.field("truthy_cell_value_synonyms", &self.truthy_cell_value_synonyms);
         formatter.field("falsey_cell_value", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "falsey_cell_value_synonyms",
-            &self.falsey_cell_value_synonyms,
-        );
+        formatter.field("falsey_cell_value_synonyms", &self.falsey_cell_value_synonyms);
         formatter.finish()
     }
 }

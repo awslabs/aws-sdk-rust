@@ -37,10 +37,7 @@ impl ListDomainsForPackageFluentBuilder {
         }
     }
     /// Access the ListDomainsForPackage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_domains_for_package::builders::ListDomainsForPackageInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_domains_for_package::builders::ListDomainsForPackageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListDomainsForPackageFluentBuilder {
             crate::operation::list_domains_for_package::ListDomainsForPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_domains_for_package::ListDomainsForPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_domains_for_package::ListDomainsForPackageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListDomainsForPackageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListDomainsForPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_domains_for_package::ListDomainsForPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_domains_for_package::ListDomainsForPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_domains_for_package::ListDomainsForPackageError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListDomainsForPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_domains_for_package::ListDomainsForPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_domains_for_package::ListDomainsForPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_domains_for_package::ListDomainsForPackageError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListDomainsForPackageFluentBuilder {
             crate::operation::list_domains_for_package::ListDomainsForPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_domains_for_package::ListDomainsForPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_domains_for_package::ListDomainsForPackageError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_domains_for_package::paginator::ListDomainsForPackagePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_domains_for_package::paginator::ListDomainsForPackagePaginator {
-        crate::operation::list_domains_for_package::paginator::ListDomainsForPackagePaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_domains_for_package::paginator::ListDomainsForPackagePaginator {
+        crate::operation::list_domains_for_package::paginator::ListDomainsForPackagePaginator::new(self.handle, self.inner)
     }
     /// <p>The package for which to list domains.</p>
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

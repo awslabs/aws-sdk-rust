@@ -29,18 +29,14 @@ impl ListClientVpcConnectionsInput {
 }
 impl ListClientVpcConnectionsInput {
     /// Creates a new builder-style object to manufacture [`ListClientVpcConnectionsInput`](crate::operation::list_client_vpc_connections::ListClientVpcConnectionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_client_vpc_connections::builders::ListClientVpcConnectionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_client_vpc_connections::builders::ListClientVpcConnectionsInputBuilder {
         crate::operation::list_client_vpc_connections::builders::ListClientVpcConnectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListClientVpcConnectionsInput`](crate::operation::list_client_vpc_connections::ListClientVpcConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClientVpcConnectionsInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -96,12 +92,10 @@ impl ListClientVpcConnectionsInputBuilder {
         crate::operation::list_client_vpc_connections::ListClientVpcConnectionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_client_vpc_connections::ListClientVpcConnectionsInput {
-                cluster_arn: self.cluster_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_client_vpc_connections::ListClientVpcConnectionsInput {
+            cluster_arn: self.cluster_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

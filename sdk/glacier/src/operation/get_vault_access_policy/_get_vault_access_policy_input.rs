@@ -23,17 +23,14 @@ impl GetVaultAccessPolicyInput {
 }
 impl GetVaultAccessPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetVaultAccessPolicyInput`](crate::operation::get_vault_access_policy::GetVaultAccessPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_vault_access_policy::builders::GetVaultAccessPolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_vault_access_policy::builders::GetVaultAccessPolicyInputBuilder {
         crate::operation::get_vault_access_policy::builders::GetVaultAccessPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetVaultAccessPolicyInput`](crate::operation::get_vault_access_policy::GetVaultAccessPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVaultAccessPolicyInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,11 @@ impl GetVaultAccessPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetVaultAccessPolicyInput`](crate::operation::get_vault_access_policy::GetVaultAccessPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_vault_access_policy::GetVaultAccessPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_vault_access_policy::GetVaultAccessPolicyInput {
-                account_id: self.account_id,
-                vault_name: self.vault_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_vault_access_policy::GetVaultAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_vault_access_policy::GetVaultAccessPolicyInput {
+            account_id: self.account_id,
+            vault_name: self.vault_name,
+        })
     }
 }

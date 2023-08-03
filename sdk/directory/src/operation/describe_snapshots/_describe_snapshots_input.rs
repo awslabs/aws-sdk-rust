@@ -37,17 +37,14 @@ impl DescribeSnapshotsInput {
 }
 impl DescribeSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
-    pub fn builder() -> crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder {
         crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnapshotsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -81,17 +78,12 @@ impl DescribeSnapshotsInputBuilder {
         self
     }
     /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
-    pub fn set_snapshot_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.snapshot_ids = input;
         self
     }
     /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
-    pub fn get_snapshot_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.snapshot_ids
     }
     /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
@@ -125,17 +117,12 @@ impl DescribeSnapshotsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_snapshots::DescribeSnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_snapshots::DescribeSnapshotsInput {
-                directory_id: self.directory_id,
-                snapshot_ids: self.snapshot_ids,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_snapshots::DescribeSnapshotsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_snapshots::DescribeSnapshotsInput {
+            directory_id: self.directory_id,
+            snapshot_ids: self.snapshot_ids,
+            next_token: self.next_token,
+            limit: self.limit,
+        })
     }
 }

@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`CreateTransitGatewayPeeringOutput`](crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringOutput) with field(s):
     ///   - [`transit_gateway_peering(Option<TransitGatewayPeering>)`](crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringOutput::transit_gateway_peering): <p>Returns information about the transit gateway peering connection request.</p>
     /// - On failure, responds with [`SdkError<CreateTransitGatewayPeeringError>`](crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringError)
-    pub fn create_transit_gateway_peering(&self) -> crate::operation::create_transit_gateway_peering::builders::CreateTransitGatewayPeeringFluentBuilder{
+    pub fn create_transit_gateway_peering(
+        &self,
+    ) -> crate::operation::create_transit_gateway_peering::builders::CreateTransitGatewayPeeringFluentBuilder {
         crate::operation::create_transit_gateway_peering::builders::CreateTransitGatewayPeeringFluentBuilder::new(self.handle.clone())
     }
 }

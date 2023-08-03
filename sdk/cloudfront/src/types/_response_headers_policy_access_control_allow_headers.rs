@@ -24,17 +24,14 @@ impl ResponseHeadersPolicyAccessControlAllowHeaders {
 }
 impl ResponseHeadersPolicyAccessControlAllowHeaders {
     /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAccessControlAllowHeaders`](crate::types::ResponseHeadersPolicyAccessControlAllowHeaders).
-    pub fn builder() -> crate::types::builders::ResponseHeadersPolicyAccessControlAllowHeadersBuilder
-    {
+    pub fn builder() -> crate::types::builders::ResponseHeadersPolicyAccessControlAllowHeadersBuilder {
         crate::types::builders::ResponseHeadersPolicyAccessControlAllowHeadersBuilder::default()
     }
 }
 
 /// A builder for [`ResponseHeadersPolicyAccessControlAllowHeaders`](crate::types::ResponseHeadersPolicyAccessControlAllowHeaders).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlAllowHeadersBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -66,10 +63,7 @@ impl ResponseHeadersPolicyAccessControlAllowHeadersBuilder {
         self
     }
     /// <p>The list of HTTP header names. You can specify <code>*</code> to allow all headers.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.items = input;
         self
     }

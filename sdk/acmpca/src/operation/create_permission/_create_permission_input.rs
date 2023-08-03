@@ -38,17 +38,14 @@ impl CreatePermissionInput {
 }
 impl CreatePermissionInput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionInput`](crate::operation::create_permission::CreatePermissionInput).
-    pub fn builder() -> crate::operation::create_permission::builders::CreatePermissionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_permission::builders::CreatePermissionInputBuilder {
         crate::operation::create_permission::builders::CreatePermissionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePermissionInput`](crate::operation::create_permission::CreatePermissionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePermissionInputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
@@ -58,19 +55,13 @@ pub struct CreatePermissionInputBuilder {
 impl CreatePermissionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_arn = input;
         self
     }
@@ -94,18 +85,12 @@ impl CreatePermissionInputBuilder {
         &self.principal
     }
     /// <p>The ID of the calling account.</p>
-    pub fn source_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the calling account.</p>
-    pub fn set_source_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_account = input;
         self
     }
@@ -125,10 +110,7 @@ impl CreatePermissionInputBuilder {
         self
     }
     /// <p>The actions that the specified Amazon Web Services service principal can use. These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>) -> Self {
         self.actions = input;
         self
     }
@@ -139,10 +121,7 @@ impl CreatePermissionInputBuilder {
     /// Consumes the builder and constructs a [`CreatePermissionInput`](crate::operation::create_permission::CreatePermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_permission::CreatePermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_permission::CreatePermissionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_permission::CreatePermissionInput {
             certificate_authority_arn: self.certificate_authority_arn,
             principal: self.principal,

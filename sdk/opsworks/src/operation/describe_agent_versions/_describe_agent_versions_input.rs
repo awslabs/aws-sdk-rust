@@ -16,30 +16,23 @@ impl DescribeAgentVersionsInput {
         self.stack_id.as_deref()
     }
     /// <p>The configuration manager.</p>
-    pub fn configuration_manager(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackConfigurationManager> {
+    pub fn configuration_manager(&self) -> ::std::option::Option<&crate::types::StackConfigurationManager> {
         self.configuration_manager.as_ref()
     }
 }
 impl DescribeAgentVersionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAgentVersionsInput`](crate::operation::describe_agent_versions::DescribeAgentVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_agent_versions::builders::DescribeAgentVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_agent_versions::builders::DescribeAgentVersionsInputBuilder {
         crate::operation::describe_agent_versions::builders::DescribeAgentVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAgentVersionsInput`](crate::operation::describe_agent_versions::DescribeAgentVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAgentVersionsInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
-    pub(crate) configuration_manager:
-        ::std::option::Option<crate::types::StackConfigurationManager>,
+    pub(crate) configuration_manager: ::std::option::Option<crate::types::StackConfigurationManager>,
 }
 impl DescribeAgentVersionsInputBuilder {
     /// <p>The stack ID.</p>
@@ -62,31 +55,22 @@ impl DescribeAgentVersionsInputBuilder {
         self
     }
     /// <p>The configuration manager.</p>
-    pub fn set_configuration_manager(
-        mut self,
-        input: ::std::option::Option<crate::types::StackConfigurationManager>,
-    ) -> Self {
+    pub fn set_configuration_manager(mut self, input: ::std::option::Option<crate::types::StackConfigurationManager>) -> Self {
         self.configuration_manager = input;
         self
     }
     /// <p>The configuration manager.</p>
-    pub fn get_configuration_manager(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackConfigurationManager> {
+    pub fn get_configuration_manager(&self) -> &::std::option::Option<crate::types::StackConfigurationManager> {
         &self.configuration_manager
     }
     /// Consumes the builder and constructs a [`DescribeAgentVersionsInput`](crate::operation::describe_agent_versions::DescribeAgentVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_agent_versions::DescribeAgentVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_agent_versions::DescribeAgentVersionsInput {
-                stack_id: self.stack_id,
-                configuration_manager: self.configuration_manager,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_agent_versions::DescribeAgentVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_agent_versions::DescribeAgentVersionsInput {
+            stack_id: self.stack_id,
+            configuration_manager: self.configuration_manager,
+        })
     }
 }

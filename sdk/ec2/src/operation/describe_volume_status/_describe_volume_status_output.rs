@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeVolumeStatusOutput {
 }
 impl DescribeVolumeStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVolumeStatusOutput`](crate::operation::describe_volume_status::DescribeVolumeStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_volume_status::builders::DescribeVolumeStatusOutputBuilder {
+    pub fn builder() -> crate::operation::describe_volume_status::builders::DescribeVolumeStatusOutputBuilder {
         crate::operation::describe_volume_status::builders::DescribeVolumeStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVolumeStatusOutput`](crate::operation::describe_volume_status::DescribeVolumeStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVolumeStatusOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) volume_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusItem>>,
+    pub(crate) volume_statuses: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusItem>>,
     _request_id: Option<String>,
 }
 impl DescribeVolumeStatusOutputBuilder {
@@ -72,17 +68,12 @@ impl DescribeVolumeStatusOutputBuilder {
         self
     }
     /// <p>Information about the status of the volumes.</p>
-    pub fn set_volume_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusItem>>,
-    ) -> Self {
+    pub fn set_volume_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusItem>>) -> Self {
         self.volume_statuses = input;
         self
     }
     /// <p>Information about the status of the volumes.</p>
-    pub fn get_volume_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusItem>> {
+    pub fn get_volume_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusItem>> {
         &self.volume_statuses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

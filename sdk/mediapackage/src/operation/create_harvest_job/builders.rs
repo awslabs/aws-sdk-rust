@@ -10,10 +10,7 @@ impl CreateHarvestJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_harvest_job::CreateHarvestJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_harvest_job::CreateHarvestJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_harvest_job::CreateHarvestJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_harvest_job();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateHarvestJobFluentBuilder {
         }
     }
     /// Access the CreateHarvestJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_harvest_job::builders::CreateHarvestJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_harvest_job::builders::CreateHarvestJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateHarvestJobFluentBuilder {
             crate::operation::create_harvest_job::CreateHarvestJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_harvest_job::CreateHarvestJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_harvest_job::CreateHarvestJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateHarvestJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateHarvestJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_harvest_job::CreateHarvestJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_harvest_job::CreateHarvestJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_harvest_job::CreateHarvestJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateHarvestJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_harvest_job::CreateHarvestJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_harvest_job::CreateHarvestJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_harvest_job::CreateHarvestJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateHarvestJobFluentBuilder {
             crate::operation::create_harvest_job::CreateHarvestJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_harvest_job::CreateHarvestJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_harvest_job::CreateHarvestJobError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl CreateHarvestJobFluentBuilder {
         self.inner.get_id()
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
-    pub fn origin_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origin_endpoint_id(input.into());
         self
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
-    pub fn set_origin_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origin_endpoint_id(input);
         self
     }
@@ -176,10 +154,7 @@ impl CreateHarvestJobFluentBuilder {
         self
     }
     /// Configuration parameters for where in an S3 bucket to place the harvested content
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Destination>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::S3Destination>) -> Self {
         self.inner = self.inner.set_s3_destination(input);
         self
     }

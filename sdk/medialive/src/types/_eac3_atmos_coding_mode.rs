@@ -39,13 +39,7 @@
 /// Eac3 Atmos Coding Mode
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Eac3AtmosCodingMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for Eac3AtmosCodingMode {
             "CODING_MODE_5_1_4" => Eac3AtmosCodingMode::CodingMode514,
             "CODING_MODE_7_1_4" => Eac3AtmosCodingMode::CodingMode714,
             "CODING_MODE_9_1_6" => Eac3AtmosCodingMode::CodingMode916,
-            other => Eac3AtmosCodingMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Eac3AtmosCodingMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl Eac3AtmosCodingMode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CODING_MODE_5_1_4",
-            "CODING_MODE_7_1_4",
-            "CODING_MODE_9_1_6",
-        ]
+        &["CODING_MODE_5_1_4", "CODING_MODE_7_1_4", "CODING_MODE_9_1_6"]
     }
 }
 impl ::std::convert::AsRef<str> for Eac3AtmosCodingMode {

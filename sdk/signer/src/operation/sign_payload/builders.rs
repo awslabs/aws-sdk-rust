@@ -10,10 +10,7 @@ impl SignPayloadInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::sign_payload::SignPayloadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::sign_payload::SignPayloadError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::sign_payload::SignPayloadError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.sign_payload();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl SignPayloadFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::sign_payload::SignPayload,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::sign_payload::SignPayload, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::sign_payload::SignPayloadError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl SignPayloadFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl SignPayloadFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::sign_payload::SignPayload,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::sign_payload::SignPayload, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::sign_payload::SignPayloadError>,
     > {
         self.customize_middleware().await
@@ -127,18 +115,12 @@ impl SignPayloadFluentBuilder {
         self.inner.get_profile_name()
     }
     /// <p>The AWS account ID of the profile owner.</p>
-    pub fn profile_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_owner(input.into());
         self
     }
     /// <p>The AWS account ID of the profile owner.</p>
-    pub fn set_profile_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_owner(input);
         self
     }
@@ -161,18 +143,12 @@ impl SignPayloadFluentBuilder {
         self.inner.get_payload()
     }
     /// <p>Payload content type</p>
-    pub fn payload_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn payload_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payload_format(input.into());
         self
     }
     /// <p>Payload content type</p>
-    pub fn set_payload_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_payload_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payload_format(input);
         self
     }

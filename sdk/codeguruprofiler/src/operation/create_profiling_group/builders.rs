@@ -37,9 +37,7 @@ impl CreateProfilingGroupFluentBuilder {
         }
     }
     /// Access the CreateProfilingGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_profiling_group::builders::CreateProfilingGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_profiling_group::builders::CreateProfilingGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateProfilingGroupFluentBuilder {
             crate::operation::create_profiling_group::CreateProfilingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_profiling_group::CreateProfilingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_profiling_group::CreateProfilingGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateProfilingGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateProfilingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_profiling_group::CreateProfilingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_profiling_group::CreateProfilingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_profiling_group::CreateProfilingGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateProfilingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_profiling_group::CreateProfilingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_profiling_group::CreateProfilingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_profiling_group::CreateProfilingGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl CreateProfilingGroupFluentBuilder {
             crate::operation::create_profiling_group::CreateProfilingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_profiling_group::CreateProfilingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_profiling_group::CreateProfilingGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the profiling group to create.</p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
     /// <p>The name of the profiling group to create.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
@@ -148,10 +129,7 @@ impl CreateProfilingGroupFluentBuilder {
         self
     }
     /// <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used. </p>
-    pub fn set_compute_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputePlatform>,
-    ) -> Self {
+    pub fn set_compute_platform(mut self, input: ::std::option::Option<crate::types::ComputePlatform>) -> Self {
         self.inner = self.inner.set_compute_platform(input);
         self
     }
@@ -174,25 +152,17 @@ impl CreateProfilingGroupFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
-    pub fn agent_orchestration_config(
-        mut self,
-        input: crate::types::AgentOrchestrationConfig,
-    ) -> Self {
+    pub fn agent_orchestration_config(mut self, input: crate::types::AgentOrchestrationConfig) -> Self {
         self.inner = self.inner.agent_orchestration_config(input);
         self
     }
     /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
-    pub fn set_agent_orchestration_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AgentOrchestrationConfig>,
-    ) -> Self {
+    pub fn set_agent_orchestration_config(mut self, input: ::std::option::Option<crate::types::AgentOrchestrationConfig>) -> Self {
         self.inner = self.inner.set_agent_orchestration_config(input);
         self
     }
     /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
-    pub fn get_agent_orchestration_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AgentOrchestrationConfig> {
+    pub fn get_agent_orchestration_config(&self) -> &::std::option::Option<crate::types::AgentOrchestrationConfig> {
         self.inner.get_agent_orchestration_config()
     }
     /// Adds a key-value pair to `tags`.
@@ -200,30 +170,17 @@ impl CreateProfilingGroupFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> A list of tags to add to the created profiling group. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> A list of tags to add to the created profiling group. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> A list of tags to add to the created profiling group. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

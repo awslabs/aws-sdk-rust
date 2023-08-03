@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`message(Option<String>)`](crate::operation::test_identity_provider::TestIdentityProviderOutput::message): <p>A message that indicates whether the test was successful or not.</p> <note>   <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>  </note>
     ///   - [`url(Option<String>)`](crate::operation::test_identity_provider::TestIdentityProviderOutput::url): <p>The endpoint of the service used to authenticate a user.</p>
     /// - On failure, responds with [`SdkError<TestIdentityProviderError>`](crate::operation::test_identity_provider::TestIdentityProviderError)
-    pub fn test_identity_provider(
-        &self,
-    ) -> crate::operation::test_identity_provider::builders::TestIdentityProviderFluentBuilder {
-        crate::operation::test_identity_provider::builders::TestIdentityProviderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn test_identity_provider(&self) -> crate::operation::test_identity_provider::builders::TestIdentityProviderFluentBuilder {
+        crate::operation::test_identity_provider::builders::TestIdentityProviderFluentBuilder::new(self.handle.clone())
     }
 }

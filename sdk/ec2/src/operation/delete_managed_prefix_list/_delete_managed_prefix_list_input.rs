@@ -22,18 +22,14 @@ impl DeleteManagedPrefixListInput {
 }
 impl DeleteManagedPrefixListInput {
     /// Creates a new builder-style object to manufacture [`DeleteManagedPrefixListInput`](crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListInput).
-    pub fn builder(
-    ) -> crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListInputBuilder {
         crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteManagedPrefixListInput`](crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteManagedPrefixListInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DeleteManagedPrefixListInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_id = input;
         self
     }
@@ -80,11 +70,9 @@ impl DeleteManagedPrefixListInputBuilder {
         crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListInput {
-                dry_run: self.dry_run,
-                prefix_list_id: self.prefix_list_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListInput {
+            dry_run: self.dry_run,
+            prefix_list_id: self.prefix_list_id,
+        })
     }
 }

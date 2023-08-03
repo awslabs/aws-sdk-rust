@@ -10,10 +10,7 @@ impl SendApiAssetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_api_asset::SendApiAssetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_api_asset::SendApiAssetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_api_asset::SendApiAssetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_api_asset();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SendApiAssetFluentBuilder {
         }
     }
     /// Access the SendApiAsset as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::send_api_asset::builders::SendApiAssetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::send_api_asset::builders::SendApiAssetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl SendApiAssetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -144,19 +136,13 @@ impl SendApiAssetFluentBuilder {
     /// <p>Attach query string parameters to the end of the URI (for example, /v1/examplePath?exampleParam=exampleValue).</p>
     pub fn set_query_string_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_query_string_parameters(input);
         self
     }
     /// <p>Attach query string parameters to the end of the URI (for example, /v1/examplePath?exampleParam=exampleValue).</p>
-    pub fn get_query_string_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_query_string_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_query_string_parameters()
     }
     /// <p>Asset ID value for the API request.</p>
@@ -203,19 +189,13 @@ impl SendApiAssetFluentBuilder {
     /// <p>Any header value prefixed with x-amzn-dataexchange-header- will have that stripped before sending the Asset API request. Use this when you want to override a header that AWS Data Exchange uses. Alternatively, you can use the header without a prefix to the HTTP request.</p>
     pub fn set_request_headers(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_request_headers(input);
         self
     }
     /// <p>Any header value prefixed with x-amzn-dataexchange-header- will have that stripped before sending the Asset API request. Use this when you want to override a header that AWS Data Exchange uses. Alternatively, you can use the header without a prefix to the HTTP request.</p>
-    pub fn get_request_headers(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_request_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_request_headers()
     }
     /// <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>

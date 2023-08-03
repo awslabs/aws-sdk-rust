@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteConfigurationSetTrackingOptions
 }
 impl DeleteConfigurationSetTrackingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetTrackingOptionsOutput`](crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsOutput).
-    pub fn builder() -> crate::operation::delete_configuration_set_tracking_options::builders::DeleteConfigurationSetTrackingOptionsOutputBuilder{
+    pub fn builder() -> crate::operation::delete_configuration_set_tracking_options::builders::DeleteConfigurationSetTrackingOptionsOutputBuilder {
         crate::operation::delete_configuration_set_tracking_options::builders::DeleteConfigurationSetTrackingOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConfigurationSetTrackingOptionsOutput`](crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConfigurationSetTrackingOptionsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,7 +35,7 @@ impl DeleteConfigurationSetTrackingOptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteConfigurationSetTrackingOptionsOutput`](crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsOutput).
-    pub fn build(self) -> crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsOutput{
+    pub fn build(self) -> crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsOutput {
         crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsOutput {
             _request_id: self._request_id,
         }

@@ -53,16 +53,14 @@ impl PutMobileDeviceAccessOverrideInput {
 }
 impl PutMobileDeviceAccessOverrideInput {
     /// Creates a new builder-style object to manufacture [`PutMobileDeviceAccessOverrideInput`](crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideInput).
-    pub fn builder() -> crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideInputBuilder{
+    pub fn builder() -> crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideInputBuilder {
         crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideInputBuilder::default()
     }
 }
 
 /// A builder for [`PutMobileDeviceAccessOverrideInput`](crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMobileDeviceAccessOverrideInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -72,18 +70,12 @@ pub struct PutMobileDeviceAccessOverrideInputBuilder {
 }
 impl PutMobileDeviceAccessOverrideInputBuilder {
     /// <p>Identifies the WorkMail organization for which you create the override.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifies the WorkMail organization for which you create the override.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -140,10 +132,7 @@ impl PutMobileDeviceAccessOverrideInputBuilder {
         self
     }
     /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
-    pub fn set_effect(
-        mut self,
-        input: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>,
-    ) -> Self {
+    pub fn set_effect(mut self, input: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>) -> Self {
         self.effect = input;
         self
     }
@@ -172,19 +161,12 @@ impl PutMobileDeviceAccessOverrideInputBuilder {
         crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideInput {
-                organization_id: self.organization_id
-                ,
-                user_id: self.user_id
-                ,
-                device_id: self.device_id
-                ,
-                effect: self.effect
-                ,
-                description: self.description
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideInput {
+            organization_id: self.organization_id,
+            user_id: self.user_id,
+            device_id: self.device_id,
+            effect: self.effect,
+            description: self.description,
+        })
     }
 }

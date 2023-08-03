@@ -66,9 +66,7 @@ impl NetworkInterfaceAttachment {
         self.status.as_ref()
     }
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
-    pub fn ena_srd_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AttachmentEnaSrdSpecification> {
+    pub fn ena_srd_specification(&self) -> ::std::option::Option<&crate::types::AttachmentEnaSrdSpecification> {
         self.ena_srd_specification.as_ref()
     }
 }
@@ -81,9 +79,7 @@ impl NetworkInterfaceAttachment {
 
 /// A builder for [`NetworkInterfaceAttachment`](crate::types::NetworkInterfaceAttachment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkInterfaceAttachmentBuilder {
     pub(crate) attach_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
@@ -93,8 +89,7 @@ pub struct NetworkInterfaceAttachmentBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AttachmentStatus>,
-    pub(crate) ena_srd_specification:
-        ::std::option::Option<crate::types::AttachmentEnaSrdSpecification>,
+    pub(crate) ena_srd_specification: ::std::option::Option<crate::types::AttachmentEnaSrdSpecification>,
 }
 impl NetworkInterfaceAttachmentBuilder {
     /// <p>The timestamp indicating when the attachment initiated.</p>
@@ -103,10 +98,7 @@ impl NetworkInterfaceAttachmentBuilder {
         self
     }
     /// <p>The timestamp indicating when the attachment initiated.</p>
-    pub fn set_attach_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_attach_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.attach_time = input;
         self
     }
@@ -115,18 +107,12 @@ impl NetworkInterfaceAttachmentBuilder {
         &self.attach_time
     }
     /// <p>The ID of the network interface attachment.</p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface attachment.</p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_id = input;
         self
     }
@@ -191,18 +177,12 @@ impl NetworkInterfaceAttachmentBuilder {
         &self.instance_id
     }
     /// <p>The Amazon Web Services account ID of the owner of the instance.</p>
-    pub fn instance_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the owner of the instance.</p>
-    pub fn set_instance_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_owner_id = input;
         self
     }
@@ -216,10 +196,7 @@ impl NetworkInterfaceAttachmentBuilder {
         self
     }
     /// <p>The attachment state.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AttachmentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AttachmentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -228,25 +205,17 @@ impl NetworkInterfaceAttachmentBuilder {
         &self.status
     }
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
-    pub fn ena_srd_specification(
-        mut self,
-        input: crate::types::AttachmentEnaSrdSpecification,
-    ) -> Self {
+    pub fn ena_srd_specification(mut self, input: crate::types::AttachmentEnaSrdSpecification) -> Self {
         self.ena_srd_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
-    pub fn set_ena_srd_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::AttachmentEnaSrdSpecification>,
-    ) -> Self {
+    pub fn set_ena_srd_specification(mut self, input: ::std::option::Option<crate::types::AttachmentEnaSrdSpecification>) -> Self {
         self.ena_srd_specification = input;
         self
     }
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
-    pub fn get_ena_srd_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttachmentEnaSrdSpecification> {
+    pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::AttachmentEnaSrdSpecification> {
         &self.ena_srd_specification
     }
     /// Consumes the builder and constructs a [`NetworkInterfaceAttachment`](crate::types::NetworkInterfaceAttachment).

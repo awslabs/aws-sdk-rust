@@ -8,8 +8,7 @@ pub struct ListPhoneNumbersV2Output {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
     #[doc(hidden)]
-    pub list_phone_numbers_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListPhoneNumbersSummary>>,
+    pub list_phone_numbers_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ListPhoneNumbersSummary>>,
     _request_id: Option<String>,
 }
 impl ListPhoneNumbersV2Output {
@@ -18,9 +17,7 @@ impl ListPhoneNumbersV2Output {
         self.next_token.as_deref()
     }
     /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
-    pub fn list_phone_numbers_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListPhoneNumbersSummary]> {
+    pub fn list_phone_numbers_summary_list(&self) -> ::std::option::Option<&[crate::types::ListPhoneNumbersSummary]> {
         self.list_phone_numbers_summary_list.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListPhoneNumbersV2Output {
 }
 impl ListPhoneNumbersV2Output {
     /// Creates a new builder-style object to manufacture [`ListPhoneNumbersV2Output`](crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Output).
-    pub fn builder(
-    ) -> crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2OutputBuilder {
-        crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2OutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2OutputBuilder {
+        crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2OutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPhoneNumbersV2Output`](crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Output).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPhoneNumbersV2OutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) list_phone_numbers_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListPhoneNumbersSummary>>,
+    pub(crate) list_phone_numbers_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ListPhoneNumbersSummary>>,
     _request_id: Option<String>,
 }
 impl ListPhoneNumbersV2OutputBuilder {
@@ -69,10 +61,7 @@ impl ListPhoneNumbersV2OutputBuilder {
     /// To override the contents of this collection use [`set_list_phone_numbers_summary_list`](Self::set_list_phone_numbers_summary_list).
     ///
     /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
-    pub fn list_phone_numbers_summary_list(
-        mut self,
-        input: crate::types::ListPhoneNumbersSummary,
-    ) -> Self {
+    pub fn list_phone_numbers_summary_list(mut self, input: crate::types::ListPhoneNumbersSummary) -> Self {
         let mut v = self.list_phone_numbers_summary_list.unwrap_or_default();
         v.push(input);
         self.list_phone_numbers_summary_list = ::std::option::Option::Some(v);
@@ -87,9 +76,7 @@ impl ListPhoneNumbersV2OutputBuilder {
         self
     }
     /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
-    pub fn get_list_phone_numbers_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListPhoneNumbersSummary>> {
+    pub fn get_list_phone_numbers_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListPhoneNumbersSummary>> {
         &self.list_phone_numbers_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

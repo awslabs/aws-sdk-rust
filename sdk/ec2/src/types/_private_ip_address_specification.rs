@@ -30,9 +30,7 @@ impl PrivateIpAddressSpecification {
 
 /// A builder for [`PrivateIpAddressSpecification`](crate::types::PrivateIpAddressSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrivateIpAddressSpecificationBuilder {
     pub(crate) primary: ::std::option::Option<bool>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl PrivateIpAddressSpecificationBuilder {
         &self.primary
     }
     /// <p>The private IPv4 address.</p>
-    pub fn private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private IPv4 address.</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ip_address = input;
         self
     }

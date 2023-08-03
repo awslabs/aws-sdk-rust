@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`group_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::group_identifier) / [`set_group_identifier(Option<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::set_group_identifier): <p>Specifies which group to delete. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
     /// - On success, responds with [`DeleteGroupOutput`](crate::operation::delete_group::DeleteGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::operation::delete_group::DeleteGroupError)
-    pub fn delete_group(
-        &self,
-    ) -> crate::operation::delete_group::builders::DeleteGroupFluentBuilder {
+    pub fn delete_group(&self) -> crate::operation::delete_group::builders::DeleteGroupFluentBuilder {
         crate::operation::delete_group::builders::DeleteGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl ImportCertificateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::import_certificate::ImportCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_certificate::ImportCertificateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_certificate::ImportCertificateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.import_certificate();
         fluent_builder.inner = self;
@@ -56,9 +53,7 @@ impl ImportCertificateFluentBuilder {
         }
     }
     /// Access the ImportCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_certificate::builders::ImportCertificateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::import_certificate::builders::ImportCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -70,9 +65,7 @@ impl ImportCertificateFluentBuilder {
             crate::operation::import_certificate::ImportCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_certificate::ImportCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_certificate::ImportCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -82,10 +75,7 @@ impl ImportCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -94,9 +84,7 @@ impl ImportCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_certificate::ImportCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_certificate::ImportCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_certificate::ImportCertificateError>,
     > {
         let op = self
             .inner
@@ -119,9 +107,7 @@ impl ImportCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_certificate::ImportCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_certificate::ImportCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_certificate::ImportCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -135,25 +121,17 @@ impl ImportCertificateFluentBuilder {
             crate::operation::import_certificate::ImportCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_certificate::ImportCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_certificate::ImportCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_arn(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
@@ -167,10 +145,7 @@ impl ImportCertificateFluentBuilder {
         self
     }
     /// <p>The certificate to import.</p>
-    pub fn set_certificate(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_certificate(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_certificate(input);
         self
     }
@@ -184,10 +159,7 @@ impl ImportCertificateFluentBuilder {
         self
     }
     /// <p>The private key that matches the public key in the certificate.</p>
-    pub fn set_private_key(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_private_key(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_private_key(input);
         self
     }
@@ -201,10 +173,7 @@ impl ImportCertificateFluentBuilder {
         self
     }
     /// <p>The PEM encoded certificate chain.</p>
-    pub fn set_certificate_chain(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_certificate_chain(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_certificate_chain(input);
         self
     }
@@ -224,10 +193,7 @@ impl ImportCertificateFluentBuilder {
     }
     /// <p>One or more resource tags to associate with the imported certificate. </p>
     /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -15,41 +15,30 @@ impl GetServiceNetworkVpcAssociationInput {
 }
 impl GetServiceNetworkVpcAssociationInput {
     /// Creates a new builder-style object to manufacture [`GetServiceNetworkVpcAssociationInput`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationInput).
-    pub fn builder() -> crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationInputBuilder{
+    pub fn builder() -> crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationInputBuilder {
         crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceNetworkVpcAssociationInput`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceNetworkVpcAssociationInputBuilder {
-    pub(crate) service_network_vpc_association_identifier:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) service_network_vpc_association_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceNetworkVpcAssociationInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn service_network_vpc_association_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_network_vpc_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_vpc_association_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn set_service_network_vpc_association_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_network_vpc_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_vpc_association_identifier = input;
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn get_service_network_vpc_association_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_service_network_vpc_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_network_vpc_association_identifier
     }
     /// Consumes the builder and constructs a [`GetServiceNetworkVpcAssociationInput`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationInput).
@@ -61,9 +50,8 @@ impl GetServiceNetworkVpcAssociationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationInput {
-                service_network_vpc_association_identifier: self.service_network_vpc_association_identifier
-                ,
-            }
+                service_network_vpc_association_identifier: self.service_network_vpc_association_identifier,
+            },
         )
     }
 }

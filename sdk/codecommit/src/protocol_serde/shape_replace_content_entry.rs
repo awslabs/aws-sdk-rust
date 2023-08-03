@@ -10,9 +10,7 @@ pub fn ser_replace_content_entry(
         object.key("replacementType").string(var_2.as_str());
     }
     if let Some(var_3) = &input.content {
-        object
-            .key("content")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_3));
+        object.key("content").string_unchecked(&::aws_smithy_types::base64::encode(var_3));
     }
     if let Some(var_4) = &input.file_mode {
         object.key("fileMode").string(var_4.as_str());

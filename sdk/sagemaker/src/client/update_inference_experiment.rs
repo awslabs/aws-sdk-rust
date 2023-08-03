@@ -12,7 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateInferenceExperimentOutput`](crate::operation::update_inference_experiment::UpdateInferenceExperimentOutput) with field(s):
     ///   - [`inference_experiment_arn(Option<String>)`](crate::operation::update_inference_experiment::UpdateInferenceExperimentOutput::inference_experiment_arn): <p>The ARN of the updated inference experiment.</p>
     /// - On failure, responds with [`SdkError<UpdateInferenceExperimentError>`](crate::operation::update_inference_experiment::UpdateInferenceExperimentError)
-    pub fn update_inference_experiment(&self) -> crate::operation::update_inference_experiment::builders::UpdateInferenceExperimentFluentBuilder{
+    pub fn update_inference_experiment(&self) -> crate::operation::update_inference_experiment::builders::UpdateInferenceExperimentFluentBuilder {
         crate::operation::update_inference_experiment::builders::UpdateInferenceExperimentFluentBuilder::new(self.handle.clone())
     }
 }

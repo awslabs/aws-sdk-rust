@@ -16,17 +16,14 @@ impl GetRetainedMessageInput {
 }
 impl GetRetainedMessageInput {
     /// Creates a new builder-style object to manufacture [`GetRetainedMessageInput`](crate::operation::get_retained_message::GetRetainedMessageInput).
-    pub fn builder(
-    ) -> crate::operation::get_retained_message::builders::GetRetainedMessageInputBuilder {
+    pub fn builder() -> crate::operation::get_retained_message::builders::GetRetainedMessageInputBuilder {
         crate::operation::get_retained_message::builders::GetRetainedMessageInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRetainedMessageInput`](crate::operation::get_retained_message::GetRetainedMessageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRetainedMessageInputBuilder {
     pub(crate) topic: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +45,7 @@ impl GetRetainedMessageInputBuilder {
     /// Consumes the builder and constructs a [`GetRetainedMessageInput`](crate::operation::get_retained_message::GetRetainedMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_retained_message::GetRetainedMessageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_retained_message::GetRetainedMessageInput { topic: self.topic },
-        )
+    ) -> ::std::result::Result<crate::operation::get_retained_message::GetRetainedMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_retained_message::GetRetainedMessageInput { topic: self.topic })
     }
 }

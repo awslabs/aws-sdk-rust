@@ -51,9 +51,7 @@ impl PutRecordsOutput {
 
 /// A builder for [`PutRecordsOutput`](crate::operation::put_records::PutRecordsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRecordsOutputBuilder {
     pub(crate) failed_record_count: ::std::option::Option<i32>,
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordsResultEntry>>,
@@ -87,17 +85,12 @@ impl PutRecordsOutputBuilder {
         self
     }
     /// <p>An array of successfully and unsuccessfully processed record results. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to a stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
-    pub fn set_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordsResultEntry>>,
-    ) -> Self {
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordsResultEntry>>) -> Self {
         self.records = input;
         self
     }
     /// <p>An array of successfully and unsuccessfully processed record results. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to a stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
-    pub fn get_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutRecordsResultEntry>> {
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutRecordsResultEntry>> {
         &self.records
     }
     /// <p>The encryption type used on the records. This parameter can be one of the following values:</p>
@@ -114,10 +107,7 @@ impl PutRecordsOutputBuilder {
     /// <li> <p> <code>NONE</code>: Do not encrypt the records.</p> </li>
     /// <li> <p> <code>KMS</code>: Use server-side encryption on the records using a customer-managed Amazon Web Services KMS key.</p> </li>
     /// </ul>
-    pub fn set_encryption_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionType>,
-    ) -> Self {
+    pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.encryption_type = input;
         self
     }

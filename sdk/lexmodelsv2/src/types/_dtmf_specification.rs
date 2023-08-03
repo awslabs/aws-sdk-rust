@@ -44,9 +44,7 @@ impl DtmfSpecification {
 
 /// A builder for [`DtmfSpecification`](crate::types::DtmfSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DtmfSpecificationBuilder {
     pub(crate) max_length: ::std::option::Option<i32>,
     pub(crate) end_timeout_ms: ::std::option::Option<i32>,
@@ -83,18 +81,12 @@ impl DtmfSpecificationBuilder {
         &self.end_timeout_ms
     }
     /// <p>The DTMF character that clears the accumulated DTMF digits and immediately ends the input.</p>
-    pub fn deletion_character(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deletion_character(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deletion_character = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DTMF character that clears the accumulated DTMF digits and immediately ends the input.</p>
-    pub fn set_deletion_character(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deletion_character(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deletion_character = input;
         self
     }
@@ -103,18 +95,12 @@ impl DtmfSpecificationBuilder {
         &self.deletion_character
     }
     /// <p>The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.</p>
-    pub fn end_character(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn end_character(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_character = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.</p>
-    pub fn set_end_character(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_end_character(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_character = input;
         self
     }

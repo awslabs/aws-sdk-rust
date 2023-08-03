@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`protocols_list(Option<ProtocolsListData>)`](crate::operation::put_protocols_list::PutProtocolsListOutput::protocols_list): <p>The details of the Firewall Manager protocols list.</p>
     ///   - [`protocols_list_arn(Option<String>)`](crate::operation::put_protocols_list::PutProtocolsListOutput::protocols_list_arn): <p>The Amazon Resource Name (ARN) of the protocols list.</p>
     /// - On failure, responds with [`SdkError<PutProtocolsListError>`](crate::operation::put_protocols_list::PutProtocolsListError)
-    pub fn put_protocols_list(
-        &self,
-    ) -> crate::operation::put_protocols_list::builders::PutProtocolsListFluentBuilder {
-        crate::operation::put_protocols_list::builders::PutProtocolsListFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_protocols_list(&self) -> crate::operation::put_protocols_list::builders::PutProtocolsListFluentBuilder {
+        crate::operation::put_protocols_list::builders::PutProtocolsListFluentBuilder::new(self.handle.clone())
     }
 }

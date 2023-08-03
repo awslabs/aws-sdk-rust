@@ -38,9 +38,7 @@ impl ServiceConnectClientAlias {
 
 /// A builder for [`ServiceConnectClientAlias`](crate::types::ServiceConnectClientAlias).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceConnectClientAliasBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,

@@ -43,9 +43,7 @@ impl GetComplianceDetailFluentBuilder {
         }
     }
     /// Access the GetComplianceDetail as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_compliance_detail::builders::GetComplianceDetailInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_compliance_detail::builders::GetComplianceDetailInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +55,7 @@ impl GetComplianceDetailFluentBuilder {
             crate::operation::get_compliance_detail::GetComplianceDetail,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_compliance_detail::GetComplianceDetailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_compliance_detail::GetComplianceDetailError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +65,7 @@ impl GetComplianceDetailFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +74,7 @@ impl GetComplianceDetailFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_compliance_detail::GetComplianceDetailOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_compliance_detail::GetComplianceDetailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_compliance_detail::GetComplianceDetailError>,
     > {
         let op = self
             .inner
@@ -106,9 +97,7 @@ impl GetComplianceDetailFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_compliance_detail::GetComplianceDetailOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_compliance_detail::GetComplianceDetailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_compliance_detail::GetComplianceDetailError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +111,7 @@ impl GetComplianceDetailFluentBuilder {
             crate::operation::get_compliance_detail::GetComplianceDetail,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_compliance_detail::GetComplianceDetailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_compliance_detail::GetComplianceDetailError>,
     > {
         self.customize_middleware().await
     }
@@ -143,18 +130,12 @@ impl GetComplianceDetailFluentBuilder {
         self.inner.get_policy_id()
     }
     /// <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
-    pub fn member_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_account(input.into());
         self
     }
     /// <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
-    pub fn set_member_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_member_account(input);
         self
     }

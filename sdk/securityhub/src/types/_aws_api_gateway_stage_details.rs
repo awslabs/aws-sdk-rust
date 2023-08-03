@@ -27,8 +27,7 @@ pub struct AwsApiGatewayStageDetails {
     pub cache_cluster_status: ::std::option::Option<::std::string::String>,
     /// <p>Defines the method settings for the stage.</p>
     #[doc(hidden)]
-    pub method_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsApiGatewayMethodSettings>>,
+    pub method_settings: ::std::option::Option<::std::vec::Vec<crate::types::AwsApiGatewayMethodSettings>>,
     /// <p>A map that defines the stage variables for the stage.</p>
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
     /// <p>Variable values can contain the following characters:</p>
@@ -38,9 +37,7 @@ pub struct AwsApiGatewayStageDetails {
     /// <li> <p>Special characters -._~:/?#&amp;=,</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The version of the API documentation that is associated with the stage.</p>
     #[doc(hidden)]
     pub documentation_version: ::std::option::Option<::std::string::String>,
@@ -95,9 +92,7 @@ impl AwsApiGatewayStageDetails {
         self.cache_cluster_status.as_deref()
     }
     /// <p>Defines the method settings for the stage.</p>
-    pub fn method_settings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsApiGatewayMethodSettings]> {
+    pub fn method_settings(&self) -> ::std::option::Option<&[crate::types::AwsApiGatewayMethodSettings]> {
         self.method_settings.as_deref()
     }
     /// <p>A map that defines the stage variables for the stage.</p>
@@ -108,11 +103,7 @@ impl AwsApiGatewayStageDetails {
     /// <li> <p>Numbers</p> </li>
     /// <li> <p>Special characters -._~:/?#&amp;=,</p> </li>
     /// </ul>
-    pub fn variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.variables.as_ref()
     }
     /// <p>The version of the API documentation that is associated with the stage.</p>
@@ -120,15 +111,11 @@ impl AwsApiGatewayStageDetails {
         self.documentation_version.as_deref()
     }
     /// <p>Settings for logging access for the stage.</p>
-    pub fn access_log_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsApiGatewayAccessLogSettings> {
+    pub fn access_log_settings(&self) -> ::std::option::Option<&crate::types::AwsApiGatewayAccessLogSettings> {
         self.access_log_settings.as_ref()
     }
     /// <p>Information about settings for canary deployment in the stage.</p>
-    pub fn canary_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsApiGatewayCanarySettings> {
+    pub fn canary_settings(&self) -> ::std::option::Option<&crate::types::AwsApiGatewayCanarySettings> {
         self.canary_settings.as_ref()
     }
     /// <p>Indicates whether active tracing with X-Ray is enabled for the stage.</p>
@@ -159,9 +146,7 @@ impl AwsApiGatewayStageDetails {
 
 /// A builder for [`AwsApiGatewayStageDetails`](crate::types::AwsApiGatewayStageDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsApiGatewayStageDetailsBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_certificate_id: ::std::option::Option<::std::string::String>,
@@ -170,14 +155,10 @@ pub struct AwsApiGatewayStageDetailsBuilder {
     pub(crate) cache_cluster_enabled: ::std::option::Option<bool>,
     pub(crate) cache_cluster_size: ::std::option::Option<::std::string::String>,
     pub(crate) cache_cluster_status: ::std::option::Option<::std::string::String>,
-    pub(crate) method_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsApiGatewayMethodSettings>>,
-    pub(crate) variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) method_settings: ::std::option::Option<::std::vec::Vec<crate::types::AwsApiGatewayMethodSettings>>,
+    pub(crate) variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) documentation_version: ::std::option::Option<::std::string::String>,
-    pub(crate) access_log_settings:
-        ::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings>,
+    pub(crate) access_log_settings: ::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings>,
     pub(crate) canary_settings: ::std::option::Option<crate::types::AwsApiGatewayCanarySettings>,
     pub(crate) tracing_enabled: ::std::option::Option<bool>,
     pub(crate) created_date: ::std::option::Option<::std::string::String>,
@@ -186,18 +167,12 @@ pub struct AwsApiGatewayStageDetailsBuilder {
 }
 impl AwsApiGatewayStageDetailsBuilder {
     /// <p>The identifier of the deployment that the stage points to.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the deployment that the stage points to.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -206,18 +181,12 @@ impl AwsApiGatewayStageDetailsBuilder {
         &self.deployment_id
     }
     /// <p>The identifier of the client certificate for the stage.</p>
-    pub fn client_certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the client certificate for the stage.</p>
-    pub fn set_client_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_certificate_id = input;
         self
     }
@@ -268,18 +237,12 @@ impl AwsApiGatewayStageDetailsBuilder {
         &self.cache_cluster_enabled
     }
     /// <p>If a cache cluster is enabled, the size of the cache cluster.</p>
-    pub fn cache_cluster_size(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_cluster_size = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a cache cluster is enabled, the size of the cache cluster.</p>
-    pub fn set_cache_cluster_size(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_cluster_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_cluster_size = input;
         self
     }
@@ -288,18 +251,12 @@ impl AwsApiGatewayStageDetailsBuilder {
         &self.cache_cluster_size
     }
     /// <p>If a cache cluster is enabled, the status of the cache cluster.</p>
-    pub fn cache_cluster_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_cluster_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a cache cluster is enabled, the status of the cache cluster.</p>
-    pub fn set_cache_cluster_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_cluster_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_cluster_status = input;
         self
     }
@@ -319,17 +276,12 @@ impl AwsApiGatewayStageDetailsBuilder {
         self
     }
     /// <p>Defines the method settings for the stage.</p>
-    pub fn set_method_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsApiGatewayMethodSettings>>,
-    ) -> Self {
+    pub fn set_method_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsApiGatewayMethodSettings>>) -> Self {
         self.method_settings = input;
         self
     }
     /// <p>Defines the method settings for the stage.</p>
-    pub fn get_method_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsApiGatewayMethodSettings>> {
+    pub fn get_method_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsApiGatewayMethodSettings>> {
         &self.method_settings
     }
     /// Adds a key-value pair to `variables`.
@@ -344,11 +296,7 @@ impl AwsApiGatewayStageDetailsBuilder {
     /// <li> <p>Numbers</p> </li>
     /// <li> <p>Special characters -._~:/?#&amp;=,</p> </li>
     /// </ul>
-    pub fn variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.variables.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.variables = ::std::option::Option::Some(hash_map);
@@ -362,12 +310,7 @@ impl AwsApiGatewayStageDetailsBuilder {
     /// <li> <p>Numbers</p> </li>
     /// <li> <p>Special characters -._~:/?#&amp;=,</p> </li>
     /// </ul>
-    pub fn set_variables(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.variables = input;
         self
     }
@@ -379,26 +322,16 @@ impl AwsApiGatewayStageDetailsBuilder {
     /// <li> <p>Numbers</p> </li>
     /// <li> <p>Special characters -._~:/?#&amp;=,</p> </li>
     /// </ul>
-    pub fn get_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.variables
     }
     /// <p>The version of the API documentation that is associated with the stage.</p>
-    pub fn documentation_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn documentation_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.documentation_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the API documentation that is associated with the stage.</p>
-    pub fn set_documentation_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_documentation_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.documentation_version = input;
         self
     }
@@ -407,25 +340,17 @@ impl AwsApiGatewayStageDetailsBuilder {
         &self.documentation_version
     }
     /// <p>Settings for logging access for the stage.</p>
-    pub fn access_log_settings(
-        mut self,
-        input: crate::types::AwsApiGatewayAccessLogSettings,
-    ) -> Self {
+    pub fn access_log_settings(mut self, input: crate::types::AwsApiGatewayAccessLogSettings) -> Self {
         self.access_log_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>Settings for logging access for the stage.</p>
-    pub fn set_access_log_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings>,
-    ) -> Self {
+    pub fn set_access_log_settings(mut self, input: ::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings>) -> Self {
         self.access_log_settings = input;
         self
     }
     /// <p>Settings for logging access for the stage.</p>
-    pub fn get_access_log_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings> {
+    pub fn get_access_log_settings(&self) -> &::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings> {
         &self.access_log_settings
     }
     /// <p>Information about settings for canary deployment in the stage.</p>
@@ -434,17 +359,12 @@ impl AwsApiGatewayStageDetailsBuilder {
         self
     }
     /// <p>Information about settings for canary deployment in the stage.</p>
-    pub fn set_canary_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsApiGatewayCanarySettings>,
-    ) -> Self {
+    pub fn set_canary_settings(mut self, input: ::std::option::Option<crate::types::AwsApiGatewayCanarySettings>) -> Self {
         self.canary_settings = input;
         self
     }
     /// <p>Information about settings for canary deployment in the stage.</p>
-    pub fn get_canary_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsApiGatewayCanarySettings> {
+    pub fn get_canary_settings(&self) -> &::std::option::Option<crate::types::AwsApiGatewayCanarySettings> {
         &self.canary_settings
     }
     /// <p>Indicates whether active tracing with X-Ray is enabled for the stage.</p>
@@ -480,19 +400,13 @@ impl AwsApiGatewayStageDetailsBuilder {
     }
     /// <p>Indicates when the stage was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn last_updated_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the stage was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_last_updated_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_date = input;
         self
     }

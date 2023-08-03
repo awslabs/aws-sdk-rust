@@ -5,8 +5,7 @@
 pub struct DescribeDataRepositoryAssociationsOutput {
     /// <p>An array of one or more data repository association descriptions.</p>
     #[doc(hidden)]
-    pub associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryAssociation>>,
+    pub associations: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryAssociation>>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeDataRepositoryAssociationsOutput {
 }
 impl DescribeDataRepositoryAssociationsOutput {
     /// <p>An array of one or more data repository association descriptions.</p>
-    pub fn associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataRepositoryAssociation]> {
+    pub fn associations(&self) -> ::std::option::Option<&[crate::types::DataRepositoryAssociation]> {
         self.associations.as_deref()
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeDataRepositoryAssociationsOut
 }
 impl DescribeDataRepositoryAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataRepositoryAssociationsOutput`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput).
-    pub fn builder() -> crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsOutputBuilder {
         crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataRepositoryAssociationsOutput`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataRepositoryAssociationsOutputBuilder {
-    pub(crate) associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryAssociation>>,
+    pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeDataRepositoryAssociationsOutputBuilder {
         self
     }
     /// <p>An array of one or more data repository association descriptions.</p>
-    pub fn set_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryAssociation>>,
-    ) -> Self {
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryAssociation>>) -> Self {
         self.associations = input;
         self
     }
     /// <p>An array of one or more data repository association descriptions.</p>
-    pub fn get_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryAssociation>> {
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataRepositoryAssociation>> {
         &self.associations
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
@@ -97,12 +86,10 @@ impl DescribeDataRepositoryAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDataRepositoryAssociationsOutput`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput).
-    pub fn build(self) -> crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput{
+    pub fn build(self) -> crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput {
         crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput {
-            associations: self.associations
-            ,
-            next_token: self.next_token
-            ,
+            associations: self.associations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

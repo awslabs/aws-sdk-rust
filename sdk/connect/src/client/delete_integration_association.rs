@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`integration_association_id(impl ::std::convert::Into<String>)`](crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationFluentBuilder::integration_association_id) / [`set_integration_association_id(Option<String>)`](crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationFluentBuilder::set_integration_association_id): <p>The identifier for the integration association.</p>
     /// - On success, responds with [`DeleteIntegrationAssociationOutput`](crate::operation::delete_integration_association::DeleteIntegrationAssociationOutput)
     /// - On failure, responds with [`SdkError<DeleteIntegrationAssociationError>`](crate::operation::delete_integration_association::DeleteIntegrationAssociationError)
-    pub fn delete_integration_association(&self) -> crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationFluentBuilder{
+    pub fn delete_integration_association(
+        &self,
+    ) -> crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationFluentBuilder {
         crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationFluentBuilder::new(self.handle.clone())
     }
 }

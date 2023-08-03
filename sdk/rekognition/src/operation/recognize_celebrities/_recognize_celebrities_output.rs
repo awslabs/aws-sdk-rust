@@ -34,9 +34,7 @@ impl RecognizeCelebritiesOutput {
     /// <p>The orientation of the input image (counterclockwise direction). If your application displays the image, you can use this value to correct the orientation. The bounding box coordinates returned in <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> represent face locations before the image orientation is corrected. </p> <note>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata. </p>
     /// </note>
-    pub fn orientation_correction(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OrientationCorrection> {
+    pub fn orientation_correction(&self) -> ::std::option::Option<&crate::types::OrientationCorrection> {
         self.orientation_correction.as_ref()
     }
 }
@@ -47,21 +45,17 @@ impl ::aws_http::request_id::RequestId for RecognizeCelebritiesOutput {
 }
 impl RecognizeCelebritiesOutput {
     /// Creates a new builder-style object to manufacture [`RecognizeCelebritiesOutput`](crate::operation::recognize_celebrities::RecognizeCelebritiesOutput).
-    pub fn builder(
-    ) -> crate::operation::recognize_celebrities::builders::RecognizeCelebritiesOutputBuilder {
+    pub fn builder() -> crate::operation::recognize_celebrities::builders::RecognizeCelebritiesOutputBuilder {
         crate::operation::recognize_celebrities::builders::RecognizeCelebritiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`RecognizeCelebritiesOutput`](crate::operation::recognize_celebrities::RecognizeCelebritiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecognizeCelebritiesOutputBuilder {
     pub(crate) celebrity_faces: ::std::option::Option<::std::vec::Vec<crate::types::Celebrity>>,
-    pub(crate) unrecognized_faces:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComparedFace>>,
+    pub(crate) unrecognized_faces: ::std::option::Option<::std::vec::Vec<crate::types::ComparedFace>>,
     pub(crate) orientation_correction: ::std::option::Option<crate::types::OrientationCorrection>,
     _request_id: Option<String>,
 }
@@ -78,17 +72,12 @@ impl RecognizeCelebritiesOutputBuilder {
         self
     }
     /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an image. Each celebrity object includes the following attributes: <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>, <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>, <code>Urls</code>.</p>
-    pub fn set_celebrity_faces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Celebrity>>,
-    ) -> Self {
+    pub fn set_celebrity_faces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Celebrity>>) -> Self {
         self.celebrity_faces = input;
         self
     }
     /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an image. Each celebrity object includes the following attributes: <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>, <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>, <code>Urls</code>.</p>
-    pub fn get_celebrity_faces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Celebrity>> {
+    pub fn get_celebrity_faces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Celebrity>> {
         &self.celebrity_faces
     }
     /// Appends an item to `unrecognized_faces`.
@@ -103,17 +92,12 @@ impl RecognizeCelebritiesOutputBuilder {
         self
     }
     /// <p>Details about each unrecognized face in the image.</p>
-    pub fn set_unrecognized_faces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComparedFace>>,
-    ) -> Self {
+    pub fn set_unrecognized_faces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComparedFace>>) -> Self {
         self.unrecognized_faces = input;
         self
     }
     /// <p>Details about each unrecognized face in the image.</p>
-    pub fn get_unrecognized_faces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComparedFace>> {
+    pub fn get_unrecognized_faces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComparedFace>> {
         &self.unrecognized_faces
     }
     /// <note>
@@ -132,10 +116,7 @@ impl RecognizeCelebritiesOutputBuilder {
     /// <p>The orientation of the input image (counterclockwise direction). If your application displays the image, you can use this value to correct the orientation. The bounding box coordinates returned in <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> represent face locations before the image orientation is corrected. </p> <note>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata. </p>
     /// </note>
-    pub fn set_orientation_correction(
-        mut self,
-        input: ::std::option::Option<crate::types::OrientationCorrection>,
-    ) -> Self {
+    pub fn set_orientation_correction(mut self, input: ::std::option::Option<crate::types::OrientationCorrection>) -> Self {
         self.orientation_correction = input;
         self
     }
@@ -145,9 +126,7 @@ impl RecognizeCelebritiesOutputBuilder {
     /// <p>The orientation of the input image (counterclockwise direction). If your application displays the image, you can use this value to correct the orientation. The bounding box coordinates returned in <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> represent face locations before the image orientation is corrected. </p> <note>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata. </p>
     /// </note>
-    pub fn get_orientation_correction(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrientationCorrection> {
+    pub fn get_orientation_correction(&self) -> &::std::option::Option<crate::types::OrientationCorrection> {
         &self.orientation_correction
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

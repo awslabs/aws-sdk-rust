@@ -65,18 +65,14 @@ impl HttpGatewayRouteMatch {
 
 /// A builder for [`HttpGatewayRouteMatch`](crate::types::HttpGatewayRouteMatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpGatewayRouteMatchBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) path: ::std::option::Option<crate::types::HttpPathMatch>,
-    pub(crate) query_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::HttpQueryParameter>>,
+    pub(crate) query_parameters: ::std::option::Option<::std::vec::Vec<crate::types::HttpQueryParameter>>,
     pub(crate) method: ::std::option::Option<crate::types::HttpMethod>,
     pub(crate) hostname: ::std::option::Option<crate::types::GatewayRouteHostnameMatch>,
-    pub(crate) headers:
-        ::std::option::Option<::std::vec::Vec<crate::types::HttpGatewayRouteHeader>>,
+    pub(crate) headers: ::std::option::Option<::std::vec::Vec<crate::types::HttpGatewayRouteHeader>>,
     pub(crate) port: ::std::option::Option<i32>,
 }
 impl HttpGatewayRouteMatchBuilder {
@@ -120,17 +116,12 @@ impl HttpGatewayRouteMatchBuilder {
         self
     }
     /// <p>The query parameter to match on.</p>
-    pub fn set_query_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HttpQueryParameter>>,
-    ) -> Self {
+    pub fn set_query_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HttpQueryParameter>>) -> Self {
         self.query_parameters = input;
         self
     }
     /// <p>The query parameter to match on.</p>
-    pub fn get_query_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpQueryParameter>> {
+    pub fn get_query_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpQueryParameter>> {
         &self.query_parameters
     }
     /// <p>The method to match on.</p>
@@ -153,10 +144,7 @@ impl HttpGatewayRouteMatchBuilder {
         self
     }
     /// <p>The host name to match on.</p>
-    pub fn set_hostname(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayRouteHostnameMatch>,
-    ) -> Self {
+    pub fn set_hostname(mut self, input: ::std::option::Option<crate::types::GatewayRouteHostnameMatch>) -> Self {
         self.hostname = input;
         self
     }
@@ -176,17 +164,12 @@ impl HttpGatewayRouteMatchBuilder {
         self
     }
     /// <p>The client request headers to match on.</p>
-    pub fn set_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HttpGatewayRouteHeader>>,
-    ) -> Self {
+    pub fn set_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HttpGatewayRouteHeader>>) -> Self {
         self.headers = input;
         self
     }
     /// <p>The client request headers to match on.</p>
-    pub fn get_headers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpGatewayRouteHeader>> {
+    pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpGatewayRouteHeader>> {
         &self.headers
     }
     /// <p>The port number to match on.</p>

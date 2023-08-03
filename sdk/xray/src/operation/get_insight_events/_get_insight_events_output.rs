@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetInsightEventsOutput {
 }
 impl GetInsightEventsOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightEventsOutput`](crate::operation::get_insight_events::GetInsightEventsOutput).
-    pub fn builder() -> crate::operation::get_insight_events::builders::GetInsightEventsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_insight_events::builders::GetInsightEventsOutputBuilder {
         crate::operation::get_insight_events::builders::GetInsightEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInsightEventsOutput`](crate::operation::get_insight_events::GetInsightEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInsightEventsOutputBuilder {
     pub(crate) insight_events: ::std::option::Option<::std::vec::Vec<crate::types::InsightEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetInsightEventsOutputBuilder {
         self
     }
     /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
-    pub fn set_insight_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InsightEvent>>,
-    ) -> Self {
+    pub fn set_insight_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightEvent>>) -> Self {
         self.insight_events = input;
         self
     }
     /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
-    pub fn get_insight_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightEvent>> {
+    pub fn get_insight_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightEvent>> {
         &self.insight_events
     }
     /// <p>Use this token to retrieve the next page of insight events.</p>

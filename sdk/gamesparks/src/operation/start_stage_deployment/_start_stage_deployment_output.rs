@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StartStageDeploymentOutput {
 }
 impl StartStageDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`StartStageDeploymentOutput`](crate::operation::start_stage_deployment::StartStageDeploymentOutput).
-    pub fn builder(
-    ) -> crate::operation::start_stage_deployment::builders::StartStageDeploymentOutputBuilder {
+    pub fn builder() -> crate::operation::start_stage_deployment::builders::StartStageDeploymentOutputBuilder {
         crate::operation::start_stage_deployment::builders::StartStageDeploymentOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartStageDeploymentOutput`](crate::operation::start_stage_deployment::StartStageDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartStageDeploymentOutputBuilder {
     pub(crate) stage_deployment: ::std::option::Option<crate::types::StageDeploymentDetails>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl StartStageDeploymentOutputBuilder {
         self
     }
     /// <p>Properties that describe the stage deployment.</p>
-    pub fn set_stage_deployment(
-        mut self,
-        input: ::std::option::Option<crate::types::StageDeploymentDetails>,
-    ) -> Self {
+    pub fn set_stage_deployment(mut self, input: ::std::option::Option<crate::types::StageDeploymentDetails>) -> Self {
         self.stage_deployment = input;
         self
     }
     /// <p>Properties that describe the stage deployment.</p>
-    pub fn get_stage_deployment(
-        &self,
-    ) -> &::std::option::Option<crate::types::StageDeploymentDetails> {
+    pub fn get_stage_deployment(&self) -> &::std::option::Option<crate::types::StageDeploymentDetails> {
         &self.stage_deployment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

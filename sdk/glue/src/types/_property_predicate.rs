@@ -37,9 +37,7 @@ impl PropertyPredicate {
 
 /// A builder for [`PropertyPredicate`](crate::types::PropertyPredicate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyPredicateBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl PropertyPredicateBuilder {
         self
     }
     /// <p>The comparator used to compare this property to others.</p>
-    pub fn set_comparator(
-        mut self,
-        input: ::std::option::Option<crate::types::Comparator>,
-    ) -> Self {
+    pub fn set_comparator(mut self, input: ::std::option::Option<crate::types::Comparator>) -> Self {
         self.comparator = input;
         self
     }

@@ -37,9 +37,7 @@ impl IsBinaryFile {
 
 /// A builder for [`IsBinaryFile`](crate::types::IsBinaryFile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IsBinaryFileBuilder {
     pub(crate) source: ::std::option::Option<bool>,
     pub(crate) destination: ::std::option::Option<bool>,

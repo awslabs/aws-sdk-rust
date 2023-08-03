@@ -39,10 +39,7 @@ impl CreateReceiptRuleSetFluentBuilder {
         }
     }
     /// Access the CreateReceiptRuleSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_receipt_rule_set::builders::CreateReceiptRuleSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_receipt_rule_set::builders::CreateReceiptRuleSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl CreateReceiptRuleSetFluentBuilder {
             crate::operation::create_receipt_rule_set::CreateReceiptRuleSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_receipt_rule_set::CreateReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_receipt_rule_set::CreateReceiptRuleSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl CreateReceiptRuleSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl CreateReceiptRuleSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_receipt_rule_set::CreateReceiptRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_receipt_rule_set::CreateReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_receipt_rule_set::CreateReceiptRuleSetError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl CreateReceiptRuleSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_receipt_rule_set::CreateReceiptRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_receipt_rule_set::CreateReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_receipt_rule_set::CreateReceiptRuleSetError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl CreateReceiptRuleSetFluentBuilder {
             crate::operation::create_receipt_rule_set::CreateReceiptRuleSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_receipt_rule_set::CreateReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_receipt_rule_set::CreateReceiptRuleSetError>,
     > {
         self.customize_middleware().await
     }
@@ -131,10 +117,7 @@ impl CreateReceiptRuleSetFluentBuilder {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
-    pub fn rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_set_name(input.into());
         self
     }
@@ -144,10 +127,7 @@ impl CreateReceiptRuleSetFluentBuilder {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
-    pub fn set_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_set_name(input);
         self
     }

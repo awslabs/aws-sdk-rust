@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelSolNetworkOperationOutput {
 }
 impl CancelSolNetworkOperationOutput {
     /// Creates a new builder-style object to manufacture [`CancelSolNetworkOperationOutput`](crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationOutput).
-    pub fn builder() -> crate::operation::cancel_sol_network_operation::builders::CancelSolNetworkOperationOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_sol_network_operation::builders::CancelSolNetworkOperationOutputBuilder {
         crate::operation::cancel_sol_network_operation::builders::CancelSolNetworkOperationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelSolNetworkOperationOutput`](crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelSolNetworkOperationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl CancelSolNetworkOperationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelSolNetworkOperationOutput`](crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationOutput {
+    pub fn build(self) -> crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationOutput {
         crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationOutput {
             _request_id: self._request_id,
         }

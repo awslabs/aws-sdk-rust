@@ -8,11 +8,9 @@ pub fn ser_assistant_association_input_data(
             object_2.key("knowledgeBaseId").string(inner.as_str());
         }
         crate::types::AssistantAssociationInputData::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "AssistantAssociationInputData",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "AssistantAssociationInputData",
+            ))
         }
     }
     Ok(())

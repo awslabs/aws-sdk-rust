@@ -10,10 +10,7 @@ impl SubmitFeedbackInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::submit_feedback::SubmitFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::submit_feedback::SubmitFeedbackError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::submit_feedback::SubmitFeedbackError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.submit_feedback();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SubmitFeedbackFluentBuilder {
         }
     }
     /// Access the SubmitFeedback as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl SubmitFeedbackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl SubmitFeedbackFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
@@ -135,18 +121,12 @@ impl SubmitFeedbackFluentBuilder {
         self.inner.get_profiling_group_name()
     }
     /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
-    pub fn anomaly_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.anomaly_instance_id(input.into());
         self
     }
     /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
-    pub fn set_anomaly_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_anomaly_instance_id(input);
         self
     }

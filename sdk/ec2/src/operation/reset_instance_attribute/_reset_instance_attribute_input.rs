@@ -33,18 +33,14 @@ impl ResetInstanceAttributeInput {
 }
 impl ResetInstanceAttributeInput {
     /// Creates a new builder-style object to manufacture [`ResetInstanceAttributeInput`](crate::operation::reset_instance_attribute::ResetInstanceAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::reset_instance_attribute::builders::ResetInstanceAttributeInputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_instance_attribute::builders::ResetInstanceAttributeInputBuilder {
         crate::operation::reset_instance_attribute::builders::ResetInstanceAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`ResetInstanceAttributeInput`](crate::operation::reset_instance_attribute::ResetInstanceAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetInstanceAttributeInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::InstanceAttributeName>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -61,10 +57,7 @@ impl ResetInstanceAttributeInputBuilder {
     /// <p>The attribute to reset.</p> <important>
     /// <p>You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code> | <code>sourceDestCheck</code>.</p>
     /// </important>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::InstanceAttributeName>) -> Self {
         self.attribute = input;
         self
     }
@@ -105,16 +98,12 @@ impl ResetInstanceAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ResetInstanceAttributeInput`](crate::operation::reset_instance_attribute::ResetInstanceAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_instance_attribute::ResetInstanceAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::reset_instance_attribute::ResetInstanceAttributeInput {
-                attribute: self.attribute,
-                dry_run: self.dry_run,
-                instance_id: self.instance_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::reset_instance_attribute::ResetInstanceAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::reset_instance_attribute::ResetInstanceAttributeInput {
+            attribute: self.attribute,
+            dry_run: self.dry_run,
+            instance_id: self.instance_id,
+        })
     }
 }

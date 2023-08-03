@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteBasePathMappingOutput {
 }
 impl DeleteBasePathMappingOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBasePathMappingOutput`](crate::operation::delete_base_path_mapping::DeleteBasePathMappingOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_base_path_mapping::builders::DeleteBasePathMappingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_base_path_mapping::builders::DeleteBasePathMappingOutputBuilder {
         crate::operation::delete_base_path_mapping::builders::DeleteBasePathMappingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBasePathMappingOutput`](crate::operation::delete_base_path_mapping::DeleteBasePathMappingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBasePathMappingOutputBuilder {
     _request_id: Option<String>,
 }

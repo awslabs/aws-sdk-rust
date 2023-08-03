@@ -38,9 +38,7 @@ impl GetEnrollmentStatusFluentBuilder {
         }
     }
     /// Access the GetEnrollmentStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_enrollment_status::builders::GetEnrollmentStatusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_enrollment_status::builders::GetEnrollmentStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl GetEnrollmentStatusFluentBuilder {
             crate::operation::get_enrollment_status::GetEnrollmentStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_enrollment_status::GetEnrollmentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_enrollment_status::GetEnrollmentStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl GetEnrollmentStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl GetEnrollmentStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_enrollment_status::GetEnrollmentStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_enrollment_status::GetEnrollmentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_enrollment_status::GetEnrollmentStatusError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl GetEnrollmentStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_enrollment_status::GetEnrollmentStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_enrollment_status::GetEnrollmentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_enrollment_status::GetEnrollmentStatusError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl GetEnrollmentStatusFluentBuilder {
             crate::operation::get_enrollment_status::GetEnrollmentStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_enrollment_status::GetEnrollmentStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_enrollment_status::GetEnrollmentStatusError>,
     > {
         self.customize_middleware().await
     }

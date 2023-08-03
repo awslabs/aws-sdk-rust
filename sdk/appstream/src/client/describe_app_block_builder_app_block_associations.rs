@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`app_block_builder_app_block_associations(Option<Vec<AppBlockBuilderAppBlockAssociation>>)`](crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsOutput::app_block_builder_app_block_associations): <p>This list of app block builders associated with app blocks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     /// - On failure, responds with [`SdkError<DescribeAppBlockBuilderAppBlockAssociationsError>`](crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsError)
-    pub fn describe_app_block_builder_app_block_associations(&self) -> crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder{
-        crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder::new(self.handle.clone())
+    pub fn describe_app_block_builder_app_block_associations(
+        &self,
+    ) -> crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder {
+        crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

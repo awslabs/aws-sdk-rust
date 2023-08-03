@@ -42,15 +42,11 @@ impl Destination {
         self.storage_class.as_ref()
     }
     /// <p>Specify this only in a cross-account scenario (where source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p>
-    pub fn access_control_translation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AccessControlTranslation> {
+    pub fn access_control_translation(&self) -> ::std::option::Option<&crate::types::AccessControlTranslation> {
         self.access_control_translation.as_ref()
     }
     /// <p>A container that provides information about encryption. If <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
-    pub fn encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p> A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p>
@@ -71,17 +67,13 @@ impl Destination {
 
 /// A builder for [`Destination`](crate::types::Destination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DestinationBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) account: ::std::option::Option<::std::string::String>,
     pub(crate) storage_class: ::std::option::Option<crate::types::StorageClass>,
-    pub(crate) access_control_translation:
-        ::std::option::Option<crate::types::AccessControlTranslation>,
-    pub(crate) encryption_configuration:
-        ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) access_control_translation: ::std::option::Option<crate::types::AccessControlTranslation>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) replication_time: ::std::option::Option<crate::types::ReplicationTime>,
     pub(crate) metrics: ::std::option::Option<crate::types::Metrics>,
 }
@@ -122,10 +114,7 @@ impl DestinationBuilder {
     }
     /// <p> The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica. </p>
     /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
-    pub fn set_storage_class(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageClass>,
-    ) -> Self {
+    pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::StorageClass>) -> Self {
         self.storage_class = input;
         self
     }
@@ -135,47 +124,31 @@ impl DestinationBuilder {
         &self.storage_class
     }
     /// <p>Specify this only in a cross-account scenario (where source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p>
-    pub fn access_control_translation(
-        mut self,
-        input: crate::types::AccessControlTranslation,
-    ) -> Self {
+    pub fn access_control_translation(mut self, input: crate::types::AccessControlTranslation) -> Self {
         self.access_control_translation = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify this only in a cross-account scenario (where source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p>
-    pub fn set_access_control_translation(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessControlTranslation>,
-    ) -> Self {
+    pub fn set_access_control_translation(mut self, input: ::std::option::Option<crate::types::AccessControlTranslation>) -> Self {
         self.access_control_translation = input;
         self
     }
     /// <p>Specify this only in a cross-account scenario (where source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p>
-    pub fn get_access_control_translation(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessControlTranslation> {
+    pub fn get_access_control_translation(&self) -> &::std::option::Option<crate::types::AccessControlTranslation> {
         &self.access_control_translation
     }
     /// <p>A container that provides information about encryption. If <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A container that provides information about encryption. If <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
     /// <p>A container that provides information about encryption. If <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
     /// <p> A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p>
@@ -184,10 +157,7 @@ impl DestinationBuilder {
         self
     }
     /// <p> A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p>
-    pub fn set_replication_time(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationTime>,
-    ) -> Self {
+    pub fn set_replication_time(mut self, input: ::std::option::Option<crate::types::ReplicationTime>) -> Self {
         self.replication_time = input;
         self
     }

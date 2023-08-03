@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateApplicationSettingsOutput {
 }
 impl UpdateApplicationSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationSettingsOutput`](crate::operation::update_application_settings::UpdateApplicationSettingsOutput).
-    pub fn builder() -> crate::operation::update_application_settings::builders::UpdateApplicationSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::update_application_settings::builders::UpdateApplicationSettingsOutputBuilder {
         crate::operation::update_application_settings::builders::UpdateApplicationSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApplicationSettingsOutput`](crate::operation::update_application_settings::UpdateApplicationSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationSettingsOutputBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) operation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,27 +61,19 @@ impl UpdateApplicationSettingsOutputBuilder {
     /// To override the contents of this collection use [`set_operation_ids`](Self::set_operation_ids).
     ///
     /// <p>The IDs of the operations.</p>
-    pub fn operation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.operation_ids.unwrap_or_default();
         v.push(input.into());
         self.operation_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the operations.</p>
-    pub fn set_operation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_operation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.operation_ids = input;
         self
     }
     /// <p>The IDs of the operations.</p>
-    pub fn get_operation_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_operation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.operation_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -96,9 +86,7 @@ impl UpdateApplicationSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateApplicationSettingsOutput`](crate::operation::update_application_settings::UpdateApplicationSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_application_settings::UpdateApplicationSettingsOutput {
+    pub fn build(self) -> crate::operation::update_application_settings::UpdateApplicationSettingsOutput {
         crate::operation::update_application_settings::UpdateApplicationSettingsOutput {
             message: self.message,
             operation_ids: self.operation_ids,

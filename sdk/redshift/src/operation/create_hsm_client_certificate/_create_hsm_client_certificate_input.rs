@@ -23,41 +23,31 @@ impl CreateHsmClientCertificateInput {
 }
 impl CreateHsmClientCertificateInput {
     /// Creates a new builder-style object to manufacture [`CreateHsmClientCertificateInput`](crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateInput).
-    pub fn builder() -> crate::operation::create_hsm_client_certificate::builders::CreateHsmClientCertificateInputBuilder{
+    pub fn builder() -> crate::operation::create_hsm_client_certificate::builders::CreateHsmClientCertificateInputBuilder {
         crate::operation::create_hsm_client_certificate::builders::CreateHsmClientCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateHsmClientCertificateInput`](crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHsmClientCertificateInputBuilder {
     pub(crate) hsm_client_certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateHsmClientCertificateInputBuilder {
     /// <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
-    pub fn hsm_client_certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hsm_client_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_client_certificate_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
-    pub fn set_hsm_client_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hsm_client_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hsm_client_certificate_identifier = input;
         self
     }
     /// <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
-    pub fn get_hsm_client_certificate_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hsm_client_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.hsm_client_certificate_identifier
     }
     /// Appends an item to `tags`.
@@ -72,10 +62,7 @@ impl CreateHsmClientCertificateInputBuilder {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -90,11 +77,9 @@ impl CreateHsmClientCertificateInputBuilder {
         crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateInput {
-                hsm_client_certificate_identifier: self.hsm_client_certificate_identifier,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateInput {
+            hsm_client_certificate_identifier: self.hsm_client_certificate_identifier,
+            tags: self.tags,
+        })
     }
 }

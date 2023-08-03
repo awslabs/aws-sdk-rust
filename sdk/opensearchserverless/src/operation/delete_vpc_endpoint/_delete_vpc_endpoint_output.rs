@@ -10,9 +10,7 @@ pub struct DeleteVpcEndpointOutput {
 }
 impl DeleteVpcEndpointOutput {
     /// <p>Details about the deleted endpoint.</p>
-    pub fn delete_vpc_endpoint_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeleteVpcEndpointDetail> {
+    pub fn delete_vpc_endpoint_detail(&self) -> ::std::option::Option<&crate::types::DeleteVpcEndpointDetail> {
         self.delete_vpc_endpoint_detail.as_ref()
     }
 }
@@ -23,43 +21,31 @@ impl ::aws_http::request_id::RequestId for DeleteVpcEndpointOutput {
 }
 impl DeleteVpcEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcEndpointOutput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointOutputBuilder {
         crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpcEndpointOutput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpcEndpointOutputBuilder {
-    pub(crate) delete_vpc_endpoint_detail:
-        ::std::option::Option<crate::types::DeleteVpcEndpointDetail>,
+    pub(crate) delete_vpc_endpoint_detail: ::std::option::Option<crate::types::DeleteVpcEndpointDetail>,
     _request_id: Option<String>,
 }
 impl DeleteVpcEndpointOutputBuilder {
     /// <p>Details about the deleted endpoint.</p>
-    pub fn delete_vpc_endpoint_detail(
-        mut self,
-        input: crate::types::DeleteVpcEndpointDetail,
-    ) -> Self {
+    pub fn delete_vpc_endpoint_detail(mut self, input: crate::types::DeleteVpcEndpointDetail) -> Self {
         self.delete_vpc_endpoint_detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the deleted endpoint.</p>
-    pub fn set_delete_vpc_endpoint_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::DeleteVpcEndpointDetail>,
-    ) -> Self {
+    pub fn set_delete_vpc_endpoint_detail(mut self, input: ::std::option::Option<crate::types::DeleteVpcEndpointDetail>) -> Self {
         self.delete_vpc_endpoint_detail = input;
         self
     }
     /// <p>Details about the deleted endpoint.</p>
-    pub fn get_delete_vpc_endpoint_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeleteVpcEndpointDetail> {
+    pub fn get_delete_vpc_endpoint_detail(&self) -> &::std::option::Option<crate::types::DeleteVpcEndpointDetail> {
         &self.delete_vpc_endpoint_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

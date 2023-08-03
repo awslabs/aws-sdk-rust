@@ -37,13 +37,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AutotuneMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -55,9 +49,7 @@ impl ::std::convert::From<&str> for AutotuneMode {
     fn from(s: &str) -> Self {
         match s {
             "Enabled" => AutotuneMode::Enabled,
-            other => {
-                AutotuneMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AutotuneMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

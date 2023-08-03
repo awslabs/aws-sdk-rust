@@ -58,9 +58,7 @@ impl RuleGroupSourceStatefulRulesHeaderDetails {
 
 /// A builder for [`RuleGroupSourceStatefulRulesHeaderDetails`](crate::types::RuleGroupSourceStatefulRulesHeaderDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatefulRulesHeaderDetailsBuilder {
     pub(crate) destination: ::std::option::Option<::std::string::String>,
     pub(crate) destination_port: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl RuleGroupSourceStatefulRulesHeaderDetailsBuilder {
         &self.destination
     }
     /// <p>The destination port to inspect for. You can specify an individual port, such as <code>1994</code>. You also can specify a port range, such as <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
-    pub fn destination_port(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_port(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_port = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination port to inspect for. You can specify an individual port, such as <code>1994</code>. You also can specify a port range, such as <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
-    pub fn set_destination_port(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_port(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_port = input;
         self
     }

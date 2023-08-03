@@ -37,10 +37,7 @@ impl PutMailboxPermissionsFluentBuilder {
         }
     }
     /// Access the PutMailboxPermissions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_mailbox_permissions::builders::PutMailboxPermissionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_mailbox_permissions::builders::PutMailboxPermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl PutMailboxPermissionsFluentBuilder {
             crate::operation::put_mailbox_permissions::PutMailboxPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_mailbox_permissions::PutMailboxPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_mailbox_permissions::PutMailboxPermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl PutMailboxPermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl PutMailboxPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_mailbox_permissions::PutMailboxPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_mailbox_permissions::PutMailboxPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_mailbox_permissions::PutMailboxPermissionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl PutMailboxPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_mailbox_permissions::PutMailboxPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_mailbox_permissions::PutMailboxPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_mailbox_permissions::PutMailboxPermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl PutMailboxPermissionsFluentBuilder {
             crate::operation::put_mailbox_permissions::PutMailboxPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_mailbox_permissions::PutMailboxPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_mailbox_permissions::PutMailboxPermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }
@@ -181,17 +161,12 @@ impl PutMailboxPermissionsFluentBuilder {
         self
     }
     /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
-    pub fn set_permission_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
-    ) -> Self {
+    pub fn set_permission_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>) -> Self {
         self.inner = self.inner.set_permission_values(input);
         self
     }
     /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
-    pub fn get_permission_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
+    pub fn get_permission_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         self.inner.get_permission_values()
     }
 }

@@ -29,16 +29,14 @@ impl FailoverGlobalReplicationGroupInput {
 }
 impl FailoverGlobalReplicationGroupInput {
     /// Creates a new builder-style object to manufacture [`FailoverGlobalReplicationGroupInput`](crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupInput).
-    pub fn builder() -> crate::operation::failover_global_replication_group::builders::FailoverGlobalReplicationGroupInputBuilder{
+    pub fn builder() -> crate::operation::failover_global_replication_group::builders::FailoverGlobalReplicationGroupInputBuilder {
         crate::operation::failover_global_replication_group::builders::FailoverGlobalReplicationGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`FailoverGlobalReplicationGroupInput`](crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailoverGlobalReplicationGroupInputBuilder {
     pub(crate) global_replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) primary_region: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct FailoverGlobalReplicationGroupInputBuilder {
 }
 impl FailoverGlobalReplicationGroupInputBuilder {
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Global datastore</p>
-    pub fn set_global_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_replication_group_id = input;
         self
     }
@@ -66,18 +58,12 @@ impl FailoverGlobalReplicationGroupInputBuilder {
         &self.global_replication_group_id
     }
     /// <p>The Amazon region of the primary cluster of the Global datastore</p>
-    pub fn primary_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon region of the primary cluster of the Global datastore</p>
-    pub fn set_primary_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_region = input;
         self
     }
@@ -86,25 +72,17 @@ impl FailoverGlobalReplicationGroupInputBuilder {
         &self.primary_region
     }
     /// <p>The name of the primary replication group</p>
-    pub fn primary_replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the primary replication group</p>
-    pub fn set_primary_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_replication_group_id = input;
         self
     }
     /// <p>The name of the primary replication group</p>
-    pub fn get_primary_replication_group_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_primary_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.primary_replication_group_id
     }
     /// Consumes the builder and constructs a [`FailoverGlobalReplicationGroupInput`](crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupInput).
@@ -114,15 +92,10 @@ impl FailoverGlobalReplicationGroupInputBuilder {
         crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupInput {
-                global_replication_group_id: self.global_replication_group_id
-                ,
-                primary_region: self.primary_region
-                ,
-                primary_replication_group_id: self.primary_replication_group_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupInput {
+            global_replication_group_id: self.global_replication_group_id,
+            primary_region: self.primary_region,
+            primary_replication_group_id: self.primary_replication_group_id,
+        })
     }
 }

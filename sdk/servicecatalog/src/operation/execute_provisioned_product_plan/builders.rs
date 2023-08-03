@@ -26,7 +26,7 @@ impl ExecuteProvisionedProductPlanInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExecuteProvisionedProductPlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::execute_provisioned_product_plan::builders::ExecuteProvisionedProductPlanInputBuilder,
+    inner: crate::operation::execute_provisioned_product_plan::builders::ExecuteProvisionedProductPlanInputBuilder,
 }
 impl ExecuteProvisionedProductPlanFluentBuilder {
     /// Creates a new `ExecuteProvisionedProductPlan`.
@@ -37,7 +37,7 @@ impl ExecuteProvisionedProductPlanFluentBuilder {
         }
     }
     /// Access the ExecuteProvisionedProductPlan as a reference.
-    pub fn as_input(&self) -> &crate::operation::execute_provisioned_product_plan::builders::ExecuteProvisionedProductPlanInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::execute_provisioned_product_plan::builders::ExecuteProvisionedProductPlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ExecuteProvisionedProductPlanFluentBuilder {
             crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ExecuteProvisionedProductPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ExecuteProvisionedProductPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ExecuteProvisionedProductPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ExecuteProvisionedProductPlanFluentBuilder {
             crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanError>,
     > {
         self.customize_middleware().await
     }
@@ -125,10 +114,7 @@ impl ExecuteProvisionedProductPlanFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -137,10 +123,7 @@ impl ExecuteProvisionedProductPlanFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -167,18 +150,12 @@ impl ExecuteProvisionedProductPlanFluentBuilder {
         self.inner.get_plan_id()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }

@@ -9,8 +9,7 @@ pub struct DescribeReplicationSubnetGroupsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A description of the replication subnet groups.</p>
     #[doc(hidden)]
-    pub replication_subnet_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationSubnetGroup>>,
+    pub replication_subnet_groups: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationSubnetGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationSubnetGroupsOutput {
@@ -19,9 +18,7 @@ impl DescribeReplicationSubnetGroupsOutput {
         self.marker.as_deref()
     }
     /// <p>A description of the replication subnet groups.</p>
-    pub fn replication_subnet_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReplicationSubnetGroup]> {
+    pub fn replication_subnet_groups(&self) -> ::std::option::Option<&[crate::types::ReplicationSubnetGroup]> {
         self.replication_subnet_groups.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeReplicationSubnetGroupsOutput
 }
 impl DescribeReplicationSubnetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationSubnetGroupsOutput`](crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsOutput).
-    pub fn builder() -> crate::operation::describe_replication_subnet_groups::builders::DescribeReplicationSubnetGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_subnet_groups::builders::DescribeReplicationSubnetGroupsOutputBuilder {
         crate::operation::describe_replication_subnet_groups::builders::DescribeReplicationSubnetGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationSubnetGroupsOutput`](crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationSubnetGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_subnet_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationSubnetGroup>>,
+    pub(crate) replication_subnet_groups: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationSubnetGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationSubnetGroupsOutputBuilder {
@@ -68,27 +62,19 @@ impl DescribeReplicationSubnetGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_replication_subnet_groups`](Self::set_replication_subnet_groups).
     ///
     /// <p>A description of the replication subnet groups.</p>
-    pub fn replication_subnet_groups(
-        mut self,
-        input: crate::types::ReplicationSubnetGroup,
-    ) -> Self {
+    pub fn replication_subnet_groups(mut self, input: crate::types::ReplicationSubnetGroup) -> Self {
         let mut v = self.replication_subnet_groups.unwrap_or_default();
         v.push(input);
         self.replication_subnet_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A description of the replication subnet groups.</p>
-    pub fn set_replication_subnet_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationSubnetGroup>>,
-    ) -> Self {
+    pub fn set_replication_subnet_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationSubnetGroup>>) -> Self {
         self.replication_subnet_groups = input;
         self
     }
     /// <p>A description of the replication subnet groups.</p>
-    pub fn get_replication_subnet_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationSubnetGroup>> {
+    pub fn get_replication_subnet_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationSubnetGroup>> {
         &self.replication_subnet_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -101,15 +87,10 @@ impl DescribeReplicationSubnetGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReplicationSubnetGroupsOutput`](crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsOutput {
         crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsOutput {
-            marker: self.marker
-            ,
-            replication_subnet_groups: self.replication_subnet_groups
-            ,
+            marker: self.marker,
+            replication_subnet_groups: self.replication_subnet_groups,
             _request_id: self._request_id,
         }
     }

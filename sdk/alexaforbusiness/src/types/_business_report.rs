@@ -51,9 +51,7 @@ impl BusinessReport {
 
 /// A builder for [`BusinessReport`](crate::types::BusinessReport).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BusinessReportBuilder {
     pub(crate) status: ::std::option::Option<crate::types::BusinessReportStatus>,
     pub(crate) failure_code: ::std::option::Option<crate::types::BusinessReportFailureCode>,
@@ -68,10 +66,7 @@ impl BusinessReportBuilder {
         self
     }
     /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or FAILED).</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BusinessReportStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::BusinessReportStatus>) -> Self {
         self.status = input;
         self
     }
@@ -85,17 +80,12 @@ impl BusinessReportBuilder {
         self
     }
     /// <p>The failure code.</p>
-    pub fn set_failure_code(
-        mut self,
-        input: ::std::option::Option<crate::types::BusinessReportFailureCode>,
-    ) -> Self {
+    pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::BusinessReportFailureCode>) -> Self {
         self.failure_code = input;
         self
     }
     /// <p>The failure code.</p>
-    pub fn get_failure_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::BusinessReportFailureCode> {
+    pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::BusinessReportFailureCode> {
         &self.failure_code
     }
     /// <p>The S3 location of the output reports.</p>
@@ -104,17 +94,12 @@ impl BusinessReportBuilder {
         self
     }
     /// <p>The S3 location of the output reports.</p>
-    pub fn set_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::BusinessReportS3Location>,
-    ) -> Self {
+    pub fn set_s3_location(mut self, input: ::std::option::Option<crate::types::BusinessReportS3Location>) -> Self {
         self.s3_location = input;
         self
     }
     /// <p>The S3 location of the output reports.</p>
-    pub fn get_s3_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::BusinessReportS3Location> {
+    pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::BusinessReportS3Location> {
         &self.s3_location
     }
     /// <p>The time of report delivery.</p>
@@ -123,10 +108,7 @@ impl BusinessReportBuilder {
         self
     }
     /// <p>The time of report delivery.</p>
-    pub fn set_delivery_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_delivery_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.delivery_time = input;
         self
     }

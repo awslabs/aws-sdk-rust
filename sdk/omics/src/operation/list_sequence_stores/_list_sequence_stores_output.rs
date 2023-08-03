@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListSequenceStoresOutput {
 }
 impl ListSequenceStoresOutput {
     /// Creates a new builder-style object to manufacture [`ListSequenceStoresOutput`](crate::operation::list_sequence_stores::ListSequenceStoresOutput).
-    pub fn builder(
-    ) -> crate::operation::list_sequence_stores::builders::ListSequenceStoresOutputBuilder {
+    pub fn builder() -> crate::operation::list_sequence_stores::builders::ListSequenceStoresOutputBuilder {
         crate::operation::list_sequence_stores::builders::ListSequenceStoresOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSequenceStoresOutput`](crate::operation::list_sequence_stores::ListSequenceStoresOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSequenceStoresOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) sequence_stores:
-        ::std::option::Option<::std::vec::Vec<crate::types::SequenceStoreDetail>>,
+    pub(crate) sequence_stores: ::std::option::Option<::std::vec::Vec<crate::types::SequenceStoreDetail>>,
     _request_id: Option<String>,
 }
 impl ListSequenceStoresOutputBuilder {
@@ -72,17 +68,12 @@ impl ListSequenceStoresOutputBuilder {
         self
     }
     /// <p>A list of sequence stores.</p>
-    pub fn set_sequence_stores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SequenceStoreDetail>>,
-    ) -> Self {
+    pub fn set_sequence_stores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SequenceStoreDetail>>) -> Self {
         self.sequence_stores = input;
         self
     }
     /// <p>A list of sequence stores.</p>
-    pub fn get_sequence_stores(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SequenceStoreDetail>> {
+    pub fn get_sequence_stores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SequenceStoreDetail>> {
         &self.sequence_stores
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

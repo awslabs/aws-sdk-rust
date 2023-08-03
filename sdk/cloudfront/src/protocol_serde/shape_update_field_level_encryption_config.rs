@@ -2,8 +2,7 @@
 pub fn ser_update_field_level_encryption_config_headers(
     input: &crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.if_match {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_update_field_level_encryption_config_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "if_match",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("If-Match", header_value);
@@ -33,13 +29,14 @@ pub fn de_update_field_level_encryption_config_http_error(
     crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
@@ -236,15 +233,16 @@ pub fn de_update_field_level_encryption_config_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::update_field_level_encryption_config::builders::UpdateFieldLevelEncryptionConfigOutputBuilder::default();
         output = output.set_e_tag(
-            crate::protocol_serde::shape_update_field_level_encryption_config_output::de_e_tag_header(_response_headers)
-                                    .map_err(|_|crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError::unhandled("Failed to parse ETag from header `ETag"))?
+            crate::protocol_serde::shape_update_field_level_encryption_config_output::de_e_tag_header(_response_headers).map_err(|_| {
+                crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError::unhandled(
+                    "Failed to parse ETag from header `ETag",
+                )
+            })?,
         );
         output = output.set_field_level_encryption(
-            crate::protocol_serde::shape_update_field_level_encryption_config_output::de_field_level_encryption_payload(_response_body)?
+            crate::protocol_serde::shape_update_field_level_encryption_config_output::de_field_level_encryption_payload(_response_body)?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

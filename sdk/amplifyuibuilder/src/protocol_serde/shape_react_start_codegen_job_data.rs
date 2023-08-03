@@ -13,31 +13,19 @@ pub fn ser_react_start_codegen_job_data(
         object.key("script").string(var_3.as_str());
     }
     if input.render_type_declarations {
-        object
-            .key("renderTypeDeclarations")
-            .boolean(input.render_type_declarations);
+        object.key("renderTypeDeclarations").boolean(input.render_type_declarations);
     }
     if input.inline_source_map {
-        object
-            .key("inlineSourceMap")
-            .boolean(input.inline_source_map);
+        object.key("inlineSourceMap").boolean(input.inline_source_map);
     }
     Ok(())
 }
 
 pub(crate) fn de_react_start_codegen_job_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ReactStartCodegenJobData>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ReactStartCodegenJobData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -47,76 +35,49 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "module" => {
-                                builder = builder.set_module(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::JsModule::from(u.as_ref()))
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "module" => {
+                            builder = builder.set_module(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::JsModule::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "target" => {
-                                builder = builder.set_target(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::JsTarget::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "script" => {
-                                builder = builder.set_script(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::JsScript::from(u.as_ref()))
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "renderTypeDeclarations" => {
-                                builder = builder.set_render_type_declarations(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "inlineSourceMap" => {
-                                builder = builder.set_inline_source_map(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "target" => {
+                            builder = builder.set_target(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::JsTarget::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "script" => {
+                            builder = builder.set_script(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::JsScript::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "renderTypeDeclarations" => {
+                            builder =
+                                builder.set_render_type_declarations(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "inlineSourceMap" => {
+                            builder = builder.set_inline_source_map(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

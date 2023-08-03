@@ -17,17 +17,14 @@ impl CancelBatchImportJobInput {
 }
 impl CancelBatchImportJobInput {
     /// Creates a new builder-style object to manufacture [`CancelBatchImportJobInput`](crate::operation::cancel_batch_import_job::CancelBatchImportJobInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_batch_import_job::builders::CancelBatchImportJobInputBuilder {
+    pub fn builder() -> crate::operation::cancel_batch_import_job::builders::CancelBatchImportJobInputBuilder {
         crate::operation::cancel_batch_import_job::builders::CancelBatchImportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelBatchImportJobInput`](crate::operation::cancel_batch_import_job::CancelBatchImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelBatchImportJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,14 +49,8 @@ impl CancelBatchImportJobInputBuilder {
     /// Consumes the builder and constructs a [`CancelBatchImportJobInput`](crate::operation::cancel_batch_import_job::CancelBatchImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_batch_import_job::CancelBatchImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_batch_import_job::CancelBatchImportJobInput {
-                job_id: self.job_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_batch_import_job::CancelBatchImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::cancel_batch_import_job::CancelBatchImportJobInput { job_id: self.job_id })
     }
 }

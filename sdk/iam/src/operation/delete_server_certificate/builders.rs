@@ -29,8 +29,7 @@ impl DeleteServerCertificateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteServerCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_server_certificate::builders::DeleteServerCertificateInputBuilder,
+    inner: crate::operation::delete_server_certificate::builders::DeleteServerCertificateInputBuilder,
 }
 impl DeleteServerCertificateFluentBuilder {
     /// Creates a new `DeleteServerCertificate`.
@@ -41,10 +40,7 @@ impl DeleteServerCertificateFluentBuilder {
         }
     }
     /// Access the DeleteServerCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_server_certificate::builders::DeleteServerCertificateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_server_certificate::builders::DeleteServerCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +52,7 @@ impl DeleteServerCertificateFluentBuilder {
             crate::operation::delete_server_certificate::DeleteServerCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_server_certificate::DeleteServerCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_server_certificate::DeleteServerCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +62,7 @@ impl DeleteServerCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +71,7 @@ impl DeleteServerCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_server_certificate::DeleteServerCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_server_certificate::DeleteServerCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_server_certificate::DeleteServerCertificateError>,
     > {
         let op = self
             .inner
@@ -105,9 +94,7 @@ impl DeleteServerCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_server_certificate::DeleteServerCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_server_certificate::DeleteServerCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_server_certificate::DeleteServerCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -121,27 +108,19 @@ impl DeleteServerCertificateFluentBuilder {
             crate::operation::delete_server_certificate::DeleteServerCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_server_certificate::DeleteServerCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_server_certificate::DeleteServerCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the server certificate you want to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn server_certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_certificate_name(input.into());
         self
     }
     /// <p>The name of the server certificate you want to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_server_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_certificate_name(input);
         self
     }

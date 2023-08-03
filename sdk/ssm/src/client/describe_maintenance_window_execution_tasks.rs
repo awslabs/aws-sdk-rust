@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`window_execution_task_identities(Option<Vec<MaintenanceWindowExecutionTaskIdentity>>)`](crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksOutput::window_execution_task_identities): <p>Information about the task executions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowExecutionTasksError>`](crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksError)
-    pub fn describe_maintenance_window_execution_tasks(&self) -> crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder{
-        crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder::new(self.handle.clone())
+    pub fn describe_maintenance_window_execution_tasks(
+        &self,
+    ) -> crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder {
+        crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

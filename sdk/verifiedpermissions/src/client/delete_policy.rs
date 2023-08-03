@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`policy_id(impl ::std::convert::Into<String>)`](crate::operation::delete_policy::builders::DeletePolicyFluentBuilder::policy_id) / [`set_policy_id(Option<String>)`](crate::operation::delete_policy::builders::DeletePolicyFluentBuilder::set_policy_id): <p>Specifies the ID of the policy that you want to delete.</p>
     /// - On success, responds with [`DeletePolicyOutput`](crate::operation::delete_policy::DeletePolicyOutput)
     /// - On failure, responds with [`SdkError<DeletePolicyError>`](crate::operation::delete_policy::DeletePolicyError)
-    pub fn delete_policy(
-        &self,
-    ) -> crate::operation::delete_policy::builders::DeletePolicyFluentBuilder {
-        crate::operation::delete_policy::builders::DeletePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_policy(&self) -> crate::operation::delete_policy::builders::DeletePolicyFluentBuilder {
+        crate::operation::delete_policy::builders::DeletePolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -19,9 +19,7 @@ impl DeleteSchemaOutput {
 
 /// A builder for [`DeleteSchemaOutput`](crate::operation::delete_schema::DeleteSchemaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSchemaOutputBuilder {
     _request_id: Option<String>,
 }

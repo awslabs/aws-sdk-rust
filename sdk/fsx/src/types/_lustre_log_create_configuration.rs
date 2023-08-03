@@ -59,9 +59,7 @@ impl LustreLogCreateConfiguration {
 
 /// A builder for [`LustreLogCreateConfiguration`](crate::types::LustreLogCreateConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LustreLogCreateConfigurationBuilder {
     pub(crate) level: ::std::option::Option<crate::types::LustreAccessAuditLogLevel>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl LustreLogCreateConfigurationBuilder {
     /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
     /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
     /// </ul>
-    pub fn set_level(
-        mut self,
-        input: ::std::option::Option<crate::types::LustreAccessAuditLogLevel>,
-    ) -> Self {
+    pub fn set_level(mut self, input: ::std::option::Option<crate::types::LustreAccessAuditLogLevel>) -> Self {
         self.level = input;
         self
     }

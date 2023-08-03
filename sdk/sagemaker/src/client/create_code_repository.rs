@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCodeRepositoryOutput`](crate::operation::create_code_repository::CreateCodeRepositoryOutput) with field(s):
     ///   - [`code_repository_arn(Option<String>)`](crate::operation::create_code_repository::CreateCodeRepositoryOutput::code_repository_arn): <p>The Amazon Resource Name (ARN) of the new repository.</p>
     /// - On failure, responds with [`SdkError<CreateCodeRepositoryError>`](crate::operation::create_code_repository::CreateCodeRepositoryError)
-    pub fn create_code_repository(
-        &self,
-    ) -> crate::operation::create_code_repository::builders::CreateCodeRepositoryFluentBuilder {
-        crate::operation::create_code_repository::builders::CreateCodeRepositoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_code_repository(&self) -> crate::operation::create_code_repository::builders::CreateCodeRepositoryFluentBuilder {
+        crate::operation::create_code_repository::builders::CreateCodeRepositoryFluentBuilder::new(self.handle.clone())
     }
 }

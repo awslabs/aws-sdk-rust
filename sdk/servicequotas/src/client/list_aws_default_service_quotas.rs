@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     ///   - [`quotas(Option<Vec<ServiceQuota>>)`](crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasOutput::quotas): <p>Information about the quotas.</p>
     /// - On failure, responds with [`SdkError<ListAWSDefaultServiceQuotasError>`](crate::operation::list_aws_default_service_quotas::ListAWSDefaultServiceQuotasError)
-    pub fn list_aws_default_service_quotas(&self) -> crate::operation::list_aws_default_service_quotas::builders::ListAWSDefaultServiceQuotasFluentBuilder{
+    pub fn list_aws_default_service_quotas(
+        &self,
+    ) -> crate::operation::list_aws_default_service_quotas::builders::ListAWSDefaultServiceQuotasFluentBuilder {
         crate::operation::list_aws_default_service_quotas::builders::ListAWSDefaultServiceQuotasFluentBuilder::new(self.handle.clone())
     }
 }

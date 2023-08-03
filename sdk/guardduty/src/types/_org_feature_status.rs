@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OrgFeatureStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for OrgFeatureStatus {
         match s {
             "NEW" => OrgFeatureStatus::New,
             "NONE" => OrgFeatureStatus::None,
-            other => {
-                OrgFeatureStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => OrgFeatureStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

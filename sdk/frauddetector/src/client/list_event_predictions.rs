@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`event_prediction_summaries(Option<Vec<EventPredictionSummary>>)`](crate::operation::list_event_predictions::ListEventPredictionsOutput::event_prediction_summaries): <p> The summary of the past predictions. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_predictions::ListEventPredictionsOutput::next_token): <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     /// - On failure, responds with [`SdkError<ListEventPredictionsError>`](crate::operation::list_event_predictions::ListEventPredictionsError)
-    pub fn list_event_predictions(
-        &self,
-    ) -> crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder {
-        crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_event_predictions(&self) -> crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder {
+        crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder::new(self.handle.clone())
     }
 }

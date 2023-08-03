@@ -26,7 +26,7 @@ impl ListDeviceDefinitionVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDeviceDefinitionVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsInputBuilder,
+    inner: crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsInputBuilder,
 }
 impl ListDeviceDefinitionVersionsFluentBuilder {
     /// Creates a new `ListDeviceDefinitionVersions`.
@@ -37,7 +37,7 @@ impl ListDeviceDefinitionVersionsFluentBuilder {
         }
     }
     /// Access the ListDeviceDefinitionVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListDeviceDefinitionVersionsFluentBuilder {
             crate::operation::list_device_definition_versions::ListDeviceDefinitionVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListDeviceDefinitionVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListDeviceDefinitionVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListDeviceDefinitionVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ListDeviceDefinitionVersionsFluentBuilder {
             crate::operation::list_device_definition_versions::ListDeviceDefinitionVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the device definition.
-    pub fn device_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_definition_id(input.into());
         self
     }
     /// The ID of the device definition.
-    pub fn set_device_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_definition_id(input);
         self
     }

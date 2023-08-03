@@ -37,10 +37,7 @@ impl DeleteFolderMembershipFluentBuilder {
         }
     }
     /// Access the DeleteFolderMembership as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_folder_membership::builders::DeleteFolderMembershipInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_folder_membership::builders::DeleteFolderMembershipInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteFolderMembershipFluentBuilder {
             crate::operation::delete_folder_membership::DeleteFolderMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_folder_membership::DeleteFolderMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_folder_membership::DeleteFolderMembershipError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteFolderMembershipFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteFolderMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_folder_membership::DeleteFolderMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_folder_membership::DeleteFolderMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_folder_membership::DeleteFolderMembershipError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteFolderMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_folder_membership::DeleteFolderMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_folder_membership::DeleteFolderMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_folder_membership::DeleteFolderMembershipError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteFolderMembershipFluentBuilder {
             crate::operation::delete_folder_membership::DeleteFolderMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_folder_membership::DeleteFolderMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_folder_membership::DeleteFolderMembershipError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -177,10 +157,7 @@ impl DeleteFolderMembershipFluentBuilder {
         self
     }
     /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </p>
-    pub fn set_member_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MemberType>,
-    ) -> Self {
+    pub fn set_member_type(mut self, input: ::std::option::Option<crate::types::MemberType>) -> Self {
         self.inner = self.inner.set_member_type(input);
         self
     }

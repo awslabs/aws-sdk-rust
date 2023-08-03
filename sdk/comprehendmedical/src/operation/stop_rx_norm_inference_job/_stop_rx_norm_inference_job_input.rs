@@ -15,18 +15,14 @@ impl StopRxNormInferenceJobInput {
 }
 impl StopRxNormInferenceJobInput {
     /// Creates a new builder-style object to manufacture [`StopRxNormInferenceJobInput`](crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobInput).
-    pub fn builder(
-    ) -> crate::operation::stop_rx_norm_inference_job::builders::StopRxNormInferenceJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_rx_norm_inference_job::builders::StopRxNormInferenceJobInputBuilder {
         crate::operation::stop_rx_norm_inference_job::builders::StopRxNormInferenceJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopRxNormInferenceJobInput`](crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopRxNormInferenceJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl StopRxNormInferenceJobInputBuilder {
         crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobInput {
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobInput { job_id: self.job_id })
     }
 }

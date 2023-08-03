@@ -29,17 +29,14 @@ impl DescribeReleaseLabelInput {
 }
 impl DescribeReleaseLabelInput {
     /// Creates a new builder-style object to manufacture [`DescribeReleaseLabelInput`](crate::operation::describe_release_label::DescribeReleaseLabelInput).
-    pub fn builder(
-    ) -> crate::operation::describe_release_label::builders::DescribeReleaseLabelInputBuilder {
+    pub fn builder() -> crate::operation::describe_release_label::builders::DescribeReleaseLabelInputBuilder {
         crate::operation::describe_release_label::builders::DescribeReleaseLabelInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReleaseLabelInput`](crate::operation::describe_release_label::DescribeReleaseLabelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReleaseLabelInputBuilder {
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct DescribeReleaseLabelInputBuilder {
 }
 impl DescribeReleaseLabelInputBuilder {
     /// <p>The target release label to be described.</p>
-    pub fn release_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target release label to be described.</p>
-    pub fn set_release_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_label = input;
         self
     }
@@ -97,16 +88,12 @@ impl DescribeReleaseLabelInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReleaseLabelInput`](crate::operation::describe_release_label::DescribeReleaseLabelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_release_label::DescribeReleaseLabelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_release_label::DescribeReleaseLabelInput {
-                release_label: self.release_label,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_release_label::DescribeReleaseLabelInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_release_label::DescribeReleaseLabelInput {
+            release_label: self.release_label,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

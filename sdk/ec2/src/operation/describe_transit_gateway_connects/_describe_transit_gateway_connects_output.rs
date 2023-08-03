@@ -5,8 +5,7 @@
 pub struct DescribeTransitGatewayConnectsOutput {
     /// <p>Information about the Connect attachments.</p>
     #[doc(hidden)]
-    pub transit_gateway_connects:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnect>>,
+    pub transit_gateway_connects: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnect>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeTransitGatewayConnectsOutput {
 }
 impl DescribeTransitGatewayConnectsOutput {
     /// <p>Information about the Connect attachments.</p>
-    pub fn transit_gateway_connects(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TransitGatewayConnect]> {
+    pub fn transit_gateway_connects(&self) -> ::std::option::Option<&[crate::types::TransitGatewayConnect]> {
         self.transit_gateway_connects.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeTransitGatewayConnectsOutput 
 }
 impl DescribeTransitGatewayConnectsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTransitGatewayConnectsOutput`](crate::operation::describe_transit_gateway_connects::DescribeTransitGatewayConnectsOutput).
-    pub fn builder() -> crate::operation::describe_transit_gateway_connects::builders::DescribeTransitGatewayConnectsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_transit_gateway_connects::builders::DescribeTransitGatewayConnectsOutputBuilder {
         crate::operation::describe_transit_gateway_connects::builders::DescribeTransitGatewayConnectsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTransitGatewayConnectsOutput`](crate::operation::describe_transit_gateway_connects::DescribeTransitGatewayConnectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTransitGatewayConnectsOutputBuilder {
-    pub(crate) transit_gateway_connects:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnect>>,
+    pub(crate) transit_gateway_connects: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnect>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeTransitGatewayConnectsOutputBuilder {
         self
     }
     /// <p>Information about the Connect attachments.</p>
-    pub fn set_transit_gateway_connects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnect>>,
-    ) -> Self {
+    pub fn set_transit_gateway_connects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnect>>) -> Self {
         self.transit_gateway_connects = input;
         self
     }
     /// <p>Information about the Connect attachments.</p>
-    pub fn get_transit_gateway_connects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnect>> {
+    pub fn get_transit_gateway_connects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnect>> {
         &self.transit_gateway_connects
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -97,10 +86,7 @@ impl DescribeTransitGatewayConnectsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTransitGatewayConnectsOutput`](crate::operation::describe_transit_gateway_connects::DescribeTransitGatewayConnectsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_transit_gateway_connects::DescribeTransitGatewayConnectsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_transit_gateway_connects::DescribeTransitGatewayConnectsOutput {
         crate::operation::describe_transit_gateway_connects::DescribeTransitGatewayConnectsOutput {
             transit_gateway_connects: self.transit_gateway_connects,
             next_token: self.next_token,

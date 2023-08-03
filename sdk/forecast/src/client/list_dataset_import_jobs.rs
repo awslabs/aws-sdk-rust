@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`dataset_import_jobs(Option<Vec<DatasetImportJobSummary>>)`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput::dataset_import_jobs): <p>An array of objects that summarize each dataset import job's properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput::next_token): <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListDatasetImportJobsError>`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError)
-    pub fn list_dataset_import_jobs(
-        &self,
-    ) -> crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsFluentBuilder
-    {
+    pub fn list_dataset_import_jobs(&self) -> crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsFluentBuilder {
         crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsFluentBuilder::new(self.handle.clone())
     }
 }

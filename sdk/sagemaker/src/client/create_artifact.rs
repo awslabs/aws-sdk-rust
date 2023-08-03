@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateArtifactOutput`](crate::operation::create_artifact::CreateArtifactOutput) with field(s):
     ///   - [`artifact_arn(Option<String>)`](crate::operation::create_artifact::CreateArtifactOutput::artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact.</p>
     /// - On failure, responds with [`SdkError<CreateArtifactError>`](crate::operation::create_artifact::CreateArtifactError)
-    pub fn create_artifact(
-        &self,
-    ) -> crate::operation::create_artifact::builders::CreateArtifactFluentBuilder {
-        crate::operation::create_artifact::builders::CreateArtifactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_artifact(&self) -> crate::operation::create_artifact::builders::CreateArtifactFluentBuilder {
+        crate::operation::create_artifact::builders::CreateArtifactFluentBuilder::new(self.handle.clone())
     }
 }

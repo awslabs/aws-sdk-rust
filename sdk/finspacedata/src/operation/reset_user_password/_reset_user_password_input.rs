@@ -22,17 +22,14 @@ impl ResetUserPasswordInput {
 }
 impl ResetUserPasswordInput {
     /// Creates a new builder-style object to manufacture [`ResetUserPasswordInput`](crate::operation::reset_user_password::ResetUserPasswordInput).
-    pub fn builder(
-    ) -> crate::operation::reset_user_password::builders::ResetUserPasswordInputBuilder {
+    pub fn builder() -> crate::operation::reset_user_password::builders::ResetUserPasswordInputBuilder {
         crate::operation::reset_user_password::builders::ResetUserPasswordInputBuilder::default()
     }
 }
 
 /// A builder for [`ResetUserPasswordInput`](crate::operation::reset_user_password::ResetUserPasswordInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetUserPasswordInputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl ResetUserPasswordInputBuilder {
     /// Consumes the builder and constructs a [`ResetUserPasswordInput`](crate::operation::reset_user_password::ResetUserPasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_user_password::ResetUserPasswordInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::reset_user_password::ResetUserPasswordInput {
-                user_id: self.user_id,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::reset_user_password::ResetUserPasswordInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::reset_user_password::ResetUserPasswordInput {
+            user_id: self.user_id,
+            client_token: self.client_token,
+        })
     }
 }

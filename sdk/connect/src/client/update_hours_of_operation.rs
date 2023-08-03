@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`config(Vec<HoursOfOperationConfig>)`](crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationFluentBuilder::config) / [`set_config(Option<Vec<HoursOfOperationConfig>>)`](crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationFluentBuilder::set_config): <p>Configuration information of the hours of operation.</p>
     /// - On success, responds with [`UpdateHoursOfOperationOutput`](crate::operation::update_hours_of_operation::UpdateHoursOfOperationOutput)
     /// - On failure, responds with [`SdkError<UpdateHoursOfOperationError>`](crate::operation::update_hours_of_operation::UpdateHoursOfOperationError)
-    pub fn update_hours_of_operation(
-        &self,
-    ) -> crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationFluentBuilder
-    {
+    pub fn update_hours_of_operation(&self) -> crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationFluentBuilder {
         crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationFluentBuilder::new(self.handle.clone())
     }
 }

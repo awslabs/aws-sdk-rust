@@ -29,18 +29,14 @@ impl DescribeVirtualServiceInput {
 }
 impl DescribeVirtualServiceInput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualServiceInput`](crate::operation::describe_virtual_service::DescribeVirtualServiceInput).
-    pub fn builder(
-    ) -> crate::operation::describe_virtual_service::builders::DescribeVirtualServiceInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_virtual_service::builders::DescribeVirtualServiceInputBuilder {
         crate::operation::describe_virtual_service::builders::DescribeVirtualServiceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVirtualServiceInput`](crate::operation::describe_virtual_service::DescribeVirtualServiceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVirtualServiceInputBuilder {
     pub(crate) virtual_service_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct DescribeVirtualServiceInputBuilder {
 }
 impl DescribeVirtualServiceInputBuilder {
     /// <p>The name of the virtual service to describe.</p>
-    pub fn virtual_service_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual service to describe.</p>
-    pub fn set_virtual_service_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_service_name = input;
         self
     }
@@ -98,16 +88,12 @@ impl DescribeVirtualServiceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVirtualServiceInput`](crate::operation::describe_virtual_service::DescribeVirtualServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_virtual_service::DescribeVirtualServiceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_virtual_service::DescribeVirtualServiceInput {
-                virtual_service_name: self.virtual_service_name,
-                mesh_name: self.mesh_name,
-                mesh_owner: self.mesh_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_virtual_service::DescribeVirtualServiceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_virtual_service::DescribeVirtualServiceInput {
+            virtual_service_name: self.virtual_service_name,
+            mesh_name: self.mesh_name,
+            mesh_owner: self.mesh_owner,
+        })
     }
 }

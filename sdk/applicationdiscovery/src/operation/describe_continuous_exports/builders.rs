@@ -26,7 +26,7 @@ impl DescribeContinuousExportsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeContinuousExportsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsInputBuilder,
+    inner: crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsInputBuilder,
 }
 impl DescribeContinuousExportsFluentBuilder {
     /// Creates a new `DescribeContinuousExports`.
@@ -37,7 +37,7 @@ impl DescribeContinuousExportsFluentBuilder {
         }
     }
     /// Access the DescribeContinuousExports as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeContinuousExportsFluentBuilder {
             crate::operation::describe_continuous_exports::DescribeContinuousExports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_continuous_exports::DescribeContinuousExportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_continuous_exports::DescribeContinuousExportsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeContinuousExportsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeContinuousExportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_continuous_exports::DescribeContinuousExportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_continuous_exports::DescribeContinuousExportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_continuous_exports::DescribeContinuousExportsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeContinuousExportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_continuous_exports::DescribeContinuousExportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_continuous_exports::DescribeContinuousExportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_continuous_exports::DescribeContinuousExportsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl DescribeContinuousExportsFluentBuilder {
             crate::operation::describe_continuous_exports::DescribeContinuousExports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_continuous_exports::DescribeContinuousExportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_continuous_exports::DescribeContinuousExportsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_continuous_exports::paginator::DescribeContinuousExportsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_continuous_exports::paginator::DescribeContinuousExportsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_continuous_exports::paginator::DescribeContinuousExportsPaginator {
         crate::operation::describe_continuous_exports::paginator::DescribeContinuousExportsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `exportIds`.
@@ -139,10 +125,7 @@ impl DescribeContinuousExportsFluentBuilder {
         self
     }
     /// <p>The unique IDs assigned to the exports.</p>
-    pub fn set_export_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_export_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_export_ids(input);
         self
     }

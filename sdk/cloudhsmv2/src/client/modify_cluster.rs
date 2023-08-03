@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyClusterOutput`](crate::operation::modify_cluster::ModifyClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::modify_cluster::ModifyClusterOutput::cluster): <p>Contains information about an AWS CloudHSM cluster.</p>
     /// - On failure, responds with [`SdkError<ModifyClusterError>`](crate::operation::modify_cluster::ModifyClusterError)
-    pub fn modify_cluster(
-        &self,
-    ) -> crate::operation::modify_cluster::builders::ModifyClusterFluentBuilder {
-        crate::operation::modify_cluster::builders::ModifyClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_cluster(&self) -> crate::operation::modify_cluster::builders::ModifyClusterFluentBuilder {
+        crate::operation::modify_cluster::builders::ModifyClusterFluentBuilder::new(self.handle.clone())
     }
 }

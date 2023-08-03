@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeResourcePoliciesOutput {
 }
 impl DescribeResourcePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResourcePoliciesOutput`](crate::operation::describe_resource_policies::DescribeResourcePoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesOutputBuilder {
         crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeResourcePoliciesOutput`](crate::operation::describe_resource_policies::DescribeResourcePoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeResourcePoliciesOutputBuilder {
-    pub(crate) resource_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePolicy>>,
+    pub(crate) resource_policies: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePolicy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeResourcePoliciesOutputBuilder {
         self
     }
     /// <p>The resource policies that exist in this account.</p>
-    pub fn set_resource_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePolicy>>,
-    ) -> Self {
+    pub fn set_resource_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePolicy>>) -> Self {
         self.resource_policies = input;
         self
     }
     /// <p>The resource policies that exist in this account.</p>
-    pub fn get_resource_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePolicy>> {
+    pub fn get_resource_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePolicy>> {
         &self.resource_policies
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -96,9 +86,7 @@ impl DescribeResourcePoliciesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeResourcePoliciesOutput`](crate::operation::describe_resource_policies::DescribeResourcePoliciesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_resource_policies::DescribeResourcePoliciesOutput {
+    pub fn build(self) -> crate::operation::describe_resource_policies::DescribeResourcePoliciesOutput {
         crate::operation::describe_resource_policies::DescribeResourcePoliciesOutput {
             resource_policies: self.resource_policies,
             next_token: self.next_token,

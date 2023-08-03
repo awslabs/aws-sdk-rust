@@ -37,9 +37,7 @@ impl LaunchedInstance {
 
 /// A builder for [`LaunchedInstance`](crate::types::LaunchedInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchedInstanceBuilder {
     pub(crate) ec2_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct LaunchedInstanceBuilder {
 }
 impl LaunchedInstanceBuilder {
     /// <p>Launched instance EC2 ID.</p>
-    pub fn ec2_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Launched instance EC2 ID.</p>
-    pub fn set_ec2_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_instance_id = input;
         self
     }

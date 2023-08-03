@@ -10,10 +10,7 @@ impl RegisterGameServerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_game_server::RegisterGameServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_game_server::RegisterGameServerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_game_server::RegisterGameServerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.register_game_server();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl RegisterGameServerFluentBuilder {
         }
     }
     /// Access the RegisterGameServer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_game_server::builders::RegisterGameServerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::register_game_server::builders::RegisterGameServerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl RegisterGameServerFluentBuilder {
             crate::operation::register_game_server::RegisterGameServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_game_server::RegisterGameServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_game_server::RegisterGameServerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl RegisterGameServerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl RegisterGameServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_game_server::RegisterGameServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_game_server::RegisterGameServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_game_server::RegisterGameServerError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl RegisterGameServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_game_server::RegisterGameServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_game_server::RegisterGameServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_game_server::RegisterGameServerError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +107,17 @@ impl RegisterGameServerFluentBuilder {
             crate::operation::register_game_server::RegisterGameServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_game_server::RegisterGameServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_game_server::RegisterGameServerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_group_name(input.into());
         self
     }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
@@ -148,18 +126,12 @@ impl RegisterGameServerFluentBuilder {
         self.inner.get_game_server_group_name()
     }
     /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your Amazon Web Services account.</p>
-    pub fn game_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_id(input.into());
         self
     }
     /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your Amazon Web Services account.</p>
-    pub fn set_game_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_id(input);
         self
     }
@@ -182,18 +154,12 @@ impl RegisterGameServerFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.</p>
-    pub fn connection_info(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_info(input.into());
         self
     }
     /// <p>Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.</p>
-    pub fn set_connection_info(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_info(input);
         self
     }
@@ -202,18 +168,12 @@ impl RegisterGameServerFluentBuilder {
         self.inner.get_connection_info()
     }
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
-    pub fn game_server_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_data(input.into());
         self
     }
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
-    pub fn set_game_server_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_data(input);
         self
     }

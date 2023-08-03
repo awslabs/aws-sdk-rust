@@ -5,16 +5,16 @@ pub use crate::operation::set_identity_headers_in_notifications_enabled::_set_id
 
 impl SetIdentityHeadersInNotificationsEnabledInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.set_identity_headers_in_notifications_enabled();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl SetIdentityHeadersInNotificationsEnabledInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetIdentityHeadersInNotificationsEnabledFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledInputBuilder,
+    inner: crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledInputBuilder,
 }
 impl SetIdentityHeadersInNotificationsEnabledFluentBuilder {
     /// Creates a new `SetIdentityHeadersInNotificationsEnabled`.
@@ -39,15 +39,24 @@ impl SetIdentityHeadersInNotificationsEnabledFluentBuilder {
         }
     }
     /// Access the SetIdentityHeadersInNotificationsEnabled as a reference.
-    pub fn as_input(&self) -> &crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabled, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabled,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +65,19 @@ impl SetIdentityHeadersInNotificationsEnabledFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -83,17 +95,30 @@ impl SetIdentityHeadersInNotificationsEnabledFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabled, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabled,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identity for which to enable or disable headers in notifications. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
@@ -116,10 +141,7 @@ impl SetIdentityHeadersInNotificationsEnabledFluentBuilder {
         self
     }
     /// <p>The notification type for which to enable or disable headers in notifications. </p>
-    pub fn set_notification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationType>,
-    ) -> Self {
+    pub fn set_notification_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
         self.inner = self.inner.set_notification_type(input);
         self
     }

@@ -19,10 +19,7 @@ impl super::Client {
     ///   - [`status_description(Option<String>)`](crate::operation::describe_package_version::DescribePackageVersionOutput::status_description): <p>The version's status description.</p>
     ///   - [`registered_time(Option<DateTime>)`](crate::operation::describe_package_version::DescribePackageVersionOutput::registered_time): <p>The version's registered time.</p>
     /// - On failure, responds with [`SdkError<DescribePackageVersionError>`](crate::operation::describe_package_version::DescribePackageVersionError)
-    pub fn describe_package_version(
-        &self,
-    ) -> crate::operation::describe_package_version::builders::DescribePackageVersionFluentBuilder
-    {
+    pub fn describe_package_version(&self) -> crate::operation::describe_package_version::builders::DescribePackageVersionFluentBuilder {
         crate::operation::describe_package_version::builders::DescribePackageVersionFluentBuilder::new(self.handle.clone())
     }
 }

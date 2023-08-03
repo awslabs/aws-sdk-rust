@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteConferenceProviderOutput {
 }
 impl DeleteConferenceProviderOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConferenceProviderOutput`](crate::operation::delete_conference_provider::DeleteConferenceProviderOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_conference_provider::builders::DeleteConferenceProviderOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_conference_provider::builders::DeleteConferenceProviderOutputBuilder {
         crate::operation::delete_conference_provider::builders::DeleteConferenceProviderOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConferenceProviderOutput`](crate::operation::delete_conference_provider::DeleteConferenceProviderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConferenceProviderOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteConferenceProviderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteConferenceProviderOutput`](crate::operation::delete_conference_provider::DeleteConferenceProviderOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_conference_provider::DeleteConferenceProviderOutput {
+    pub fn build(self) -> crate::operation::delete_conference_provider::DeleteConferenceProviderOutput {
         crate::operation::delete_conference_provider::DeleteConferenceProviderOutput {
             _request_id: self._request_id,
         }

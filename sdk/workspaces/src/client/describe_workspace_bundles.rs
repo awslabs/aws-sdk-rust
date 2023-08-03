@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`bundles(Option<Vec<WorkspaceBundle>>)`](crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput::bundles): <p>Information about the bundles.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. This token is valid for one day and must be used within that time frame.</p>
     /// - On failure, responds with [`SdkError<DescribeWorkspaceBundlesError>`](crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesError)
-    pub fn describe_workspace_bundles(
-        &self,
-    ) -> crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesFluentBuilder
-    {
+    pub fn describe_workspace_bundles(&self) -> crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesFluentBuilder {
         crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesFluentBuilder::new(self.handle.clone())
     }
 }

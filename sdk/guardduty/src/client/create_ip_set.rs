@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateIpSetOutput`](crate::operation::create_ip_set::CreateIpSetOutput) with field(s):
     ///   - [`ip_set_id(Option<String>)`](crate::operation::create_ip_set::CreateIpSetOutput::ip_set_id): <p>The ID of the IPSet resource.</p>
     /// - On failure, responds with [`SdkError<CreateIPSetError>`](crate::operation::create_ip_set::CreateIPSetError)
-    pub fn create_ip_set(
-        &self,
-    ) -> crate::operation::create_ip_set::builders::CreateIPSetFluentBuilder {
-        crate::operation::create_ip_set::builders::CreateIPSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_ip_set(&self) -> crate::operation::create_ip_set::builders::CreateIPSetFluentBuilder {
+        crate::operation::create_ip_set::builders::CreateIPSetFluentBuilder::new(self.handle.clone())
     }
 }

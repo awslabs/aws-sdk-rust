@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`revert(bool)`](crate::operation::update_hit_review_status::builders::UpdateHITReviewStatusFluentBuilder::revert) / [`set_revert(Option<bool>)`](crate::operation::update_hit_review_status::builders::UpdateHITReviewStatusFluentBuilder::set_revert): <p> Specifies how to update the HIT status. Default is <code>False</code>. </p>  <ul>   <li> <p> Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code> </p> </li>   <li> <p> Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code> </p> </li>  </ul>
     /// - On success, responds with [`UpdateHitReviewStatusOutput`](crate::operation::update_hit_review_status::UpdateHitReviewStatusOutput)
     /// - On failure, responds with [`SdkError<UpdateHITReviewStatusError>`](crate::operation::update_hit_review_status::UpdateHITReviewStatusError)
-    pub fn update_hit_review_status(
-        &self,
-    ) -> crate::operation::update_hit_review_status::builders::UpdateHITReviewStatusFluentBuilder
-    {
+    pub fn update_hit_review_status(&self) -> crate::operation::update_hit_review_status::builders::UpdateHITReviewStatusFluentBuilder {
         crate::operation::update_hit_review_status::builders::UpdateHITReviewStatusFluentBuilder::new(self.handle.clone())
     }
 }

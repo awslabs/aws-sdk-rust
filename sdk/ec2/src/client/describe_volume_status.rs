@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_volume_status::DescribeVolumeStatusOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     ///   - [`volume_statuses(Option<Vec<VolumeStatusItem>>)`](crate::operation::describe_volume_status::DescribeVolumeStatusOutput::volume_statuses): <p>Information about the status of the volumes.</p>
     /// - On failure, responds with [`SdkError<DescribeVolumeStatusError>`](crate::operation::describe_volume_status::DescribeVolumeStatusError)
-    pub fn describe_volume_status(
-        &self,
-    ) -> crate::operation::describe_volume_status::builders::DescribeVolumeStatusFluentBuilder {
-        crate::operation::describe_volume_status::builders::DescribeVolumeStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_volume_status(&self) -> crate::operation::describe_volume_status::builders::DescribeVolumeStatusFluentBuilder {
+        crate::operation::describe_volume_status::builders::DescribeVolumeStatusFluentBuilder::new(self.handle.clone())
     }
 }

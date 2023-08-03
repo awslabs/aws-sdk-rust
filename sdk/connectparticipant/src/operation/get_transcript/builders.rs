@@ -10,10 +10,7 @@ impl GetTranscriptInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_transcript::GetTranscriptOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_transcript::GetTranscriptError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_transcript::GetTranscriptError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_transcript();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl GetTranscriptFluentBuilder {
         }
     }
     /// Access the GetTranscript as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_transcript::builders::GetTranscriptInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_transcript::builders::GetTranscriptInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl GetTranscriptFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -120,13 +112,8 @@ impl GetTranscriptFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_transcript::paginator::GetTranscriptPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_transcript::paginator::GetTranscriptPaginator {
-        crate::operation::get_transcript::paginator::GetTranscriptPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_transcript::paginator::GetTranscriptPaginator {
+        crate::operation::get_transcript::paginator::GetTranscriptPaginator::new(self.handle, self.inner)
     }
     /// <p>The contactId from the current contact chain for which transcript is needed.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -176,10 +163,7 @@ impl GetTranscriptFluentBuilder {
         self
     }
     /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
-    pub fn set_scan_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::ScanDirection>,
-    ) -> Self {
+    pub fn set_scan_direction(mut self, input: ::std::option::Option<crate::types::ScanDirection>) -> Self {
         self.inner = self.inner.set_scan_direction(input);
         self
     }
@@ -207,10 +191,7 @@ impl GetTranscriptFluentBuilder {
         self
     }
     /// <p>A filtering option for where to start.</p>
-    pub fn set_start_position(
-        mut self,
-        input: ::std::option::Option<crate::types::StartPosition>,
-    ) -> Self {
+    pub fn set_start_position(mut self, input: ::std::option::Option<crate::types::StartPosition>) -> Self {
         self.inner = self.inner.set_start_position(input);
         self
     }
@@ -219,18 +200,12 @@ impl GetTranscriptFluentBuilder {
         self.inner.get_start_position()
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn connection_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_token(input.into());
         self
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn set_connection_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_token(input);
         self
     }

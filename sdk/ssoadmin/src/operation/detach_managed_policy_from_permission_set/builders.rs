@@ -5,16 +5,16 @@ pub use crate::operation::detach_managed_policy_from_permission_set::_detach_man
 
 impl DetachManagedPolicyFromPermissionSetInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.detach_managed_policy_from_permission_set();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DetachManagedPolicyFromPermissionSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetachManagedPolicyFromPermissionSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::detach_managed_policy_from_permission_set::builders::DetachManagedPolicyFromPermissionSetInputBuilder,
+    inner: crate::operation::detach_managed_policy_from_permission_set::builders::DetachManagedPolicyFromPermissionSetInputBuilder,
 }
 impl DetachManagedPolicyFromPermissionSetFluentBuilder {
     /// Creates a new `DetachManagedPolicyFromPermissionSet`.
@@ -37,15 +37,22 @@ impl DetachManagedPolicyFromPermissionSetFluentBuilder {
         }
     }
     /// Access the DetachManagedPolicyFromPermissionSet as a reference.
-    pub fn as_input(&self) -> &crate::operation::detach_managed_policy_from_permission_set::builders::DetachManagedPolicyFromPermissionSetInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::detach_managed_policy_from_permission_set::builders::DetachManagedPolicyFromPermissionSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSet, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSet,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl DetachManagedPolicyFromPermissionSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetOutput, ::aws_smithy_http::result::SdkError<crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +89,26 @@ impl DetachManagedPolicyFromPermissionSetFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetOutput, ::aws_smithy_http::result::SdkError<crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSet, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSet,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
@@ -109,18 +126,12 @@ impl DetachManagedPolicyFromPermissionSetFluentBuilder {
         self.inner.get_instance_arn()
     }
     /// <p>The ARN of the <code>PermissionSet</code> from which the policy should be detached.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_set_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>PermissionSet</code> from which the policy should be detached.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_set_arn(input);
         self
     }
@@ -129,18 +140,12 @@ impl DetachManagedPolicyFromPermissionSetFluentBuilder {
         self.inner.get_permission_set_arn()
     }
     /// <p>The AWS managed policy ARN to be detached from a permission set.</p>
-    pub fn managed_policy_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn managed_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.managed_policy_arn(input.into());
         self
     }
     /// <p>The AWS managed policy ARN to be detached from a permission set.</p>
-    pub fn set_managed_policy_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_managed_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_managed_policy_arn(input);
         self
     }

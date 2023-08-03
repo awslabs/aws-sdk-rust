@@ -29,27 +29,19 @@ impl DeleteExtensionInput {
 
 /// A builder for [`DeleteExtensionInput`](crate::operation::delete_extension::DeleteExtensionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteExtensionInputBuilder {
     pub(crate) extension_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) version_number: ::std::option::Option<i32>,
 }
 impl DeleteExtensionInputBuilder {
     /// <p>The name, ID, or Amazon Resource Name (ARN) of the extension you want to delete.</p>
-    pub fn extension_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extension_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extension_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name, ID, or Amazon Resource Name (ARN) of the extension you want to delete.</p>
-    pub fn set_extension_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extension_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extension_identifier = input;
         self
     }
@@ -74,10 +66,7 @@ impl DeleteExtensionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteExtensionInput`](crate::operation::delete_extension::DeleteExtensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_extension::DeleteExtensionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_extension::DeleteExtensionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_extension::DeleteExtensionInput {
             extension_identifier: self.extension_identifier,
             version_number: self.version_number,

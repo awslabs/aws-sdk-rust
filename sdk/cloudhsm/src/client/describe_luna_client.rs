@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`last_modified_timestamp(Option<String>)`](crate::operation::describe_luna_client::DescribeLunaClientOutput::last_modified_timestamp): <p>The date and time the client was last modified.</p>
     ///   - [`label(Option<String>)`](crate::operation::describe_luna_client::DescribeLunaClientOutput::label): <p>The label of the client.</p>
     /// - On failure, responds with [`SdkError<DescribeLunaClientError>`](crate::operation::describe_luna_client::DescribeLunaClientError)
-    pub fn describe_luna_client(
-        &self,
-    ) -> crate::operation::describe_luna_client::builders::DescribeLunaClientFluentBuilder {
-        crate::operation::describe_luna_client::builders::DescribeLunaClientFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_luna_client(&self) -> crate::operation::describe_luna_client::builders::DescribeLunaClientFluentBuilder {
+        crate::operation::describe_luna_client::builders::DescribeLunaClientFluentBuilder::new(self.handle.clone())
     }
 }

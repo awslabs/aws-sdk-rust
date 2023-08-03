@@ -10,10 +10,7 @@ impl GetLaunchProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_launch_profile::GetLaunchProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_launch_profile::GetLaunchProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_launch_profile::GetLaunchProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_launch_profile();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetLaunchProfileFluentBuilder {
         }
     }
     /// Access the GetLaunchProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_launch_profile::builders::GetLaunchProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_launch_profile::builders::GetLaunchProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetLaunchProfileFluentBuilder {
             crate::operation::get_launch_profile::GetLaunchProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_launch_profile::GetLaunchProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_launch_profile::GetLaunchProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetLaunchProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetLaunchProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_launch_profile::GetLaunchProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_launch_profile::GetLaunchProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_launch_profile::GetLaunchProfileError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetLaunchProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_launch_profile::GetLaunchProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_launch_profile::GetLaunchProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_launch_profile::GetLaunchProfileError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetLaunchProfileFluentBuilder {
             crate::operation::get_launch_profile::GetLaunchProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_launch_profile::GetLaunchProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_launch_profile::GetLaunchProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_profile_id(input.into());
         self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn set_launch_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_profile_id(input);
         self
     }

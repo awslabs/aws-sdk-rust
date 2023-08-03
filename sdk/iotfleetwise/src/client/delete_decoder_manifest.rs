@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::delete_decoder_manifest::DeleteDecoderManifestOutput::name): <p>The name of the deleted decoder manifest.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_decoder_manifest::DeleteDecoderManifestOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted decoder manifest.</p>
     /// - On failure, responds with [`SdkError<DeleteDecoderManifestError>`](crate::operation::delete_decoder_manifest::DeleteDecoderManifestError)
-    pub fn delete_decoder_manifest(
-        &self,
-    ) -> crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestFluentBuilder
-    {
-        crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_decoder_manifest(&self) -> crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestFluentBuilder {
+        crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestFluentBuilder::new(self.handle.clone())
     }
 }

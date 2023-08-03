@@ -22,20 +22,17 @@ impl BatchDeleteFeaturedResultsSetInput {
 }
 impl BatchDeleteFeaturedResultsSetInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteFeaturedResultsSetInput`](crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetInput).
-    pub fn builder() -> crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetInputBuilder{
+    pub fn builder() -> crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetInputBuilder {
         crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteFeaturedResultsSetInput`](crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteFeaturedResultsSetInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
-    pub(crate) featured_results_set_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) featured_results_set_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteFeaturedResultsSetInputBuilder {
     /// <p>The identifier of the index used for featuring results.</p>
@@ -57,27 +54,19 @@ impl BatchDeleteFeaturedResultsSetInputBuilder {
     /// To override the contents of this collection use [`set_featured_results_set_ids`](Self::set_featured_results_set_ids).
     ///
     /// <p>The identifiers of the featured results sets that you want to delete.</p>
-    pub fn featured_results_set_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn featured_results_set_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.featured_results_set_ids.unwrap_or_default();
         v.push(input.into());
         self.featured_results_set_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifiers of the featured results sets that you want to delete.</p>
-    pub fn set_featured_results_set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_featured_results_set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.featured_results_set_ids = input;
         self
     }
     /// <p>The identifiers of the featured results sets that you want to delete.</p>
-    pub fn get_featured_results_set_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_featured_results_set_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.featured_results_set_ids
     }
     /// Consumes the builder and constructs a [`BatchDeleteFeaturedResultsSetInput`](crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetInput).
@@ -87,13 +76,9 @@ impl BatchDeleteFeaturedResultsSetInputBuilder {
         crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetInput {
-                index_id: self.index_id
-                ,
-                featured_results_set_ids: self.featured_results_set_ids
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetInput {
+            index_id: self.index_id,
+            featured_results_set_ids: self.featured_results_set_ids,
+        })
     }
 }

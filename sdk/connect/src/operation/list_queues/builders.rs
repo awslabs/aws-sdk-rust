@@ -10,10 +10,7 @@ impl ListQueuesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_queues::ListQueuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_queues::ListQueuesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_queues::ListQueuesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_queues();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl ListQueuesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_queues::ListQueues,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_queues::ListQueues, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_queues::ListQueuesError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl ListQueuesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl ListQueuesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_queues::ListQueues,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_queues::ListQueues, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_queues::ListQueuesError>,
     > {
         self.customize_middleware().await
@@ -144,17 +132,12 @@ impl ListQueuesFluentBuilder {
         self
     }
     /// <p>The type of queue.</p>
-    pub fn set_queue_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QueueType>>,
-    ) -> Self {
+    pub fn set_queue_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueueType>>) -> Self {
         self.inner = self.inner.set_queue_types(input);
         self
     }
     /// <p>The type of queue.</p>
-    pub fn get_queue_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueueType>> {
+    pub fn get_queue_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueueType>> {
         self.inner.get_queue_types()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>

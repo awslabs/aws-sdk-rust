@@ -15,17 +15,14 @@ impl GetContainerImagesInput {
 }
 impl GetContainerImagesInput {
     /// Creates a new builder-style object to manufacture [`GetContainerImagesInput`](crate::operation::get_container_images::GetContainerImagesInput).
-    pub fn builder(
-    ) -> crate::operation::get_container_images::builders::GetContainerImagesInputBuilder {
+    pub fn builder() -> crate::operation::get_container_images::builders::GetContainerImagesInputBuilder {
         crate::operation::get_container_images::builders::GetContainerImagesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetContainerImagesInput`](crate::operation::get_container_images::GetContainerImagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContainerImagesInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl GetContainerImagesInputBuilder {
     /// Consumes the builder and constructs a [`GetContainerImagesInput`](crate::operation::get_container_images::GetContainerImagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_container_images::GetContainerImagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_container_images::GetContainerImagesInput {
-                service_name: self.service_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_container_images::GetContainerImagesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_container_images::GetContainerImagesInput {
+            service_name: self.service_name,
+        })
     }
 }

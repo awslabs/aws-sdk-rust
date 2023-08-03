@@ -9,8 +9,7 @@ pub struct DescribeHsmClientCertificatesOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
     #[doc(hidden)]
-    pub hsm_client_certificates:
-        ::std::option::Option<::std::vec::Vec<crate::types::HsmClientCertificate>>,
+    pub hsm_client_certificates: ::std::option::Option<::std::vec::Vec<crate::types::HsmClientCertificate>>,
     _request_id: Option<String>,
 }
 impl DescribeHsmClientCertificatesOutput {
@@ -19,9 +18,7 @@ impl DescribeHsmClientCertificatesOutput {
         self.marker.as_deref()
     }
     /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
-    pub fn hsm_client_certificates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HsmClientCertificate]> {
+    pub fn hsm_client_certificates(&self) -> ::std::option::Option<&[crate::types::HsmClientCertificate]> {
         self.hsm_client_certificates.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeHsmClientCertificatesOutput {
 }
 impl DescribeHsmClientCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHsmClientCertificatesOutput`](crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesOutput).
-    pub fn builder() -> crate::operation::describe_hsm_client_certificates::builders::DescribeHsmClientCertificatesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_hsm_client_certificates::builders::DescribeHsmClientCertificatesOutputBuilder {
         crate::operation::describe_hsm_client_certificates::builders::DescribeHsmClientCertificatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHsmClientCertificatesOutput`](crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHsmClientCertificatesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) hsm_client_certificates:
-        ::std::option::Option<::std::vec::Vec<crate::types::HsmClientCertificate>>,
+    pub(crate) hsm_client_certificates: ::std::option::Option<::std::vec::Vec<crate::types::HsmClientCertificate>>,
     _request_id: Option<String>,
 }
 impl DescribeHsmClientCertificatesOutputBuilder {
@@ -75,17 +69,12 @@ impl DescribeHsmClientCertificatesOutputBuilder {
         self
     }
     /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
-    pub fn set_hsm_client_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HsmClientCertificate>>,
-    ) -> Self {
+    pub fn set_hsm_client_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HsmClientCertificate>>) -> Self {
         self.hsm_client_certificates = input;
         self
     }
     /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
-    pub fn get_hsm_client_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HsmClientCertificate>> {
+    pub fn get_hsm_client_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HsmClientCertificate>> {
         &self.hsm_client_certificates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -98,10 +87,7 @@ impl DescribeHsmClientCertificatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeHsmClientCertificatesOutput`](crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesOutput
-    {
+    pub fn build(self) -> crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesOutput {
         crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesOutput {
             marker: self.marker,
             hsm_client_certificates: self.hsm_client_certificates,

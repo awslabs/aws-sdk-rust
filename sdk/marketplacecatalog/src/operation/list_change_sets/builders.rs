@@ -10,10 +10,7 @@ impl ListChangeSetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_change_sets::ListChangeSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_change_sets::ListChangeSetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_change_sets::ListChangeSetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_change_sets();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListChangeSetsFluentBuilder {
         }
     }
     /// Access the ListChangeSets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_change_sets::builders::ListChangeSetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_change_sets::builders::ListChangeSetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListChangeSetsFluentBuilder {
             crate::operation::list_change_sets::ListChangeSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_change_sets::ListChangeSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_change_sets::ListChangeSetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListChangeSetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListChangeSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_change_sets::ListChangeSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_change_sets::ListChangeSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_change_sets::ListChangeSetsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListChangeSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_change_sets::ListChangeSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_change_sets::ListChangeSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_change_sets::ListChangeSetsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListChangeSetsFluentBuilder {
             crate::operation::list_change_sets::ListChangeSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_change_sets::ListChangeSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_change_sets::ListChangeSetsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_change_sets::paginator::ListChangeSetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_change_sets::paginator::ListChangeSetsPaginator {
-        crate::operation::list_change_sets::paginator::ListChangeSetsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_change_sets::paginator::ListChangeSetsPaginator {
+        crate::operation::list_change_sets::paginator::ListChangeSetsPaginator::new(self.handle, self.inner)
     }
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,10 +137,7 @@ impl ListChangeSetsFluentBuilder {
         self
     }
     /// <p>An array of filter objects.</p>
-    pub fn set_filter_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filter_list(input);
         self
     }

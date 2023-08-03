@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListLinuxSubscriptionInstancesOutput 
 }
 impl ListLinuxSubscriptionInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListLinuxSubscriptionInstancesOutput`](crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesOutput).
-    pub fn builder() -> crate::operation::list_linux_subscription_instances::builders::ListLinuxSubscriptionInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::list_linux_subscription_instances::builders::ListLinuxSubscriptionInstancesOutputBuilder {
         crate::operation::list_linux_subscription_instances::builders::ListLinuxSubscriptionInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLinuxSubscriptionInstancesOutput`](crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLinuxSubscriptionInstancesOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListLinuxSubscriptionInstancesOutputBuilder {
         self
     }
     /// <p>An array that contains instance objects.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>) -> Self {
         self.instances = input;
         self
     }
@@ -91,10 +86,7 @@ impl ListLinuxSubscriptionInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListLinuxSubscriptionInstancesOutput`](crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesOutput
-    {
+    pub fn build(self) -> crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesOutput {
         crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesOutput {
             instances: self.instances,
             next_token: self.next_token,

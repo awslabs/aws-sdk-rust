@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteImageBuilderOutput {
 }
 impl DeleteImageBuilderOutput {
     /// Creates a new builder-style object to manufacture [`DeleteImageBuilderOutput`](crate::operation::delete_image_builder::DeleteImageBuilderOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_image_builder::builders::DeleteImageBuilderOutputBuilder {
+    pub fn builder() -> crate::operation::delete_image_builder::builders::DeleteImageBuilderOutputBuilder {
         crate::operation::delete_image_builder::builders::DeleteImageBuilderOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteImageBuilderOutput`](crate::operation::delete_image_builder::DeleteImageBuilderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteImageBuilderOutputBuilder {
     pub(crate) image_builder: ::std::option::Option<crate::types::ImageBuilder>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteImageBuilderOutputBuilder {
         self
     }
     /// <p>Information about the image builder.</p>
-    pub fn set_image_builder(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageBuilder>,
-    ) -> Self {
+    pub fn set_image_builder(mut self, input: ::std::option::Option<crate::types::ImageBuilder>) -> Self {
         self.image_builder = input;
         self
     }

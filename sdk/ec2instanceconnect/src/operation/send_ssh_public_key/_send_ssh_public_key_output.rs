@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for SendSshPublicKeyOutput {
 }
 impl SendSshPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`SendSshPublicKeyOutput`](crate::operation::send_ssh_public_key::SendSshPublicKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::send_ssh_public_key::builders::SendSshPublicKeyOutputBuilder {
+    pub fn builder() -> crate::operation::send_ssh_public_key::builders::SendSshPublicKeyOutputBuilder {
         crate::operation::send_ssh_public_key::builders::SendSshPublicKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendSshPublicKeyOutput`](crate::operation::send_ssh_public_key::SendSshPublicKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendSshPublicKeyOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) success: ::std::option::Option<bool>,

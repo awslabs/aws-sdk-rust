@@ -23,9 +23,7 @@ impl StopRunInput {
 
 /// A builder for [`StopRunInput`](crate::operation::stop_run::StopRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopRunInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -45,12 +43,7 @@ impl StopRunInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`StopRunInput`](crate::operation::stop_run::StopRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_run::StopRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_run::StopRunInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_run::StopRunInput { arn: self.arn })
     }
 }

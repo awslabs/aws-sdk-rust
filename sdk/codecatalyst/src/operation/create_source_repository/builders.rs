@@ -37,10 +37,7 @@ impl CreateSourceRepositoryFluentBuilder {
         }
     }
     /// Access the CreateSourceRepository as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_source_repository::builders::CreateSourceRepositoryInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_source_repository::builders::CreateSourceRepositoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateSourceRepositoryFluentBuilder {
             crate::operation::create_source_repository::CreateSourceRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_source_repository::CreateSourceRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_source_repository::CreateSourceRepositoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateSourceRepositoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateSourceRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_source_repository::CreateSourceRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_source_repository::CreateSourceRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_source_repository::CreateSourceRepositoryError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateSourceRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_source_repository::CreateSourceRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_source_repository::CreateSourceRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_source_repository::CreateSourceRepositoryError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateSourceRepositoryFluentBuilder {
             crate::operation::create_source_repository::CreateSourceRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_source_repository::CreateSourceRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_source_repository::CreateSourceRepositoryError>,
     > {
         self.customize_middleware().await
     }

@@ -5,8 +5,7 @@
 pub struct DescribeStoreImageTasksOutput {
     /// <p>The information about the AMI store tasks.</p>
     #[doc(hidden)]
-    pub store_image_task_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::StoreImageTaskResult>>,
+    pub store_image_task_results: ::std::option::Option<::std::vec::Vec<crate::types::StoreImageTaskResult>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeStoreImageTasksOutput {
 }
 impl DescribeStoreImageTasksOutput {
     /// <p>The information about the AMI store tasks.</p>
-    pub fn store_image_task_results(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StoreImageTaskResult]> {
+    pub fn store_image_task_results(&self) -> ::std::option::Option<&[crate::types::StoreImageTaskResult]> {
         self.store_image_task_results.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeStoreImageTasksOutput {
 }
 impl DescribeStoreImageTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStoreImageTasksOutput`](crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksOutputBuilder {
         crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStoreImageTasksOutput`](crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStoreImageTasksOutputBuilder {
-    pub(crate) store_image_task_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::StoreImageTaskResult>>,
+    pub(crate) store_image_task_results: ::std::option::Option<::std::vec::Vec<crate::types::StoreImageTaskResult>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl DescribeStoreImageTasksOutputBuilder {
         self
     }
     /// <p>The information about the AMI store tasks.</p>
-    pub fn set_store_image_task_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StoreImageTaskResult>>,
-    ) -> Self {
+    pub fn set_store_image_task_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StoreImageTaskResult>>) -> Self {
         self.store_image_task_results = input;
         self
     }
     /// <p>The information about the AMI store tasks.</p>
-    pub fn get_store_image_task_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StoreImageTaskResult>> {
+    pub fn get_store_image_task_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StoreImageTaskResult>> {
         &self.store_image_task_results
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -99,9 +86,7 @@ impl DescribeStoreImageTasksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeStoreImageTasksOutput`](crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput {
+    pub fn build(self) -> crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput {
         crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput {
             store_image_task_results: self.store_image_task_results,
             next_token: self.next_token,

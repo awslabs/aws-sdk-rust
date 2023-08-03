@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`log_target_configurations(Option<Vec<LogTargetConfiguration>>)`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsOutput::log_target_configurations): <p>The logging configuration for a target.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListV2LoggingLevelsError>`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsError)
-    pub fn list_v2_logging_levels(
-        &self,
-    ) -> crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsFluentBuilder {
-        crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_v2_logging_levels(&self) -> crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsFluentBuilder {
+        crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsFluentBuilder::new(self.handle.clone())
     }
 }

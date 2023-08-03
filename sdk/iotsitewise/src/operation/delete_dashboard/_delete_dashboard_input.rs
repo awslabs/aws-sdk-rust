@@ -29,9 +29,7 @@ impl DeleteDashboardInput {
 
 /// A builder for [`DeleteDashboardInput`](crate::operation::delete_dashboard::DeleteDashboardInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDashboardInputBuilder {
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DeleteDashboardInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDashboardInput`](crate::operation::delete_dashboard::DeleteDashboardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_dashboard::DeleteDashboardInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_dashboard::DeleteDashboardInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_dashboard::DeleteDashboardInput {
             dashboard_id: self.dashboard_id,
             client_token: self.client_token,

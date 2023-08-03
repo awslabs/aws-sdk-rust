@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for GetServerCertificateOutput {
 }
 impl GetServerCertificateOutput {
     /// Creates a new builder-style object to manufacture [`GetServerCertificateOutput`](crate::operation::get_server_certificate::GetServerCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::get_server_certificate::builders::GetServerCertificateOutputBuilder {
+    pub fn builder() -> crate::operation::get_server_certificate::builders::GetServerCertificateOutputBuilder {
         crate::operation::get_server_certificate::builders::GetServerCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetServerCertificateOutput`](crate::operation::get_server_certificate::GetServerCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServerCertificateOutputBuilder {
     pub(crate) server_certificate: ::std::option::Option<crate::types::ServerCertificate>,
     _request_id: Option<String>,
@@ -44,17 +41,12 @@ impl GetServerCertificateOutputBuilder {
         self
     }
     /// <p>A structure containing details about the server certificate.</p>
-    pub fn set_server_certificate(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerCertificate>,
-    ) -> Self {
+    pub fn set_server_certificate(mut self, input: ::std::option::Option<crate::types::ServerCertificate>) -> Self {
         self.server_certificate = input;
         self
     }
     /// <p>A structure containing details about the server certificate.</p>
-    pub fn get_server_certificate(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServerCertificate> {
+    pub fn get_server_certificate(&self) -> &::std::option::Option<crate::types::ServerCertificate> {
         &self.server_certificate
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

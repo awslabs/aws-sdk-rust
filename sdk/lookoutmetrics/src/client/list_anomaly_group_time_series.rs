@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     ///   - [`time_series_list(Option<Vec<TimeSeries>>)`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput::time_series_list): <p>A list of anomalous metrics.</p>
     /// - On failure, responds with [`SdkError<ListAnomalyGroupTimeSeriesError>`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesError)
-    pub fn list_anomaly_group_time_series(&self) -> crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder{
+    pub fn list_anomaly_group_time_series(
+        &self,
+    ) -> crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder {
         crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesFluentBuilder::new(self.handle.clone())
     }
 }

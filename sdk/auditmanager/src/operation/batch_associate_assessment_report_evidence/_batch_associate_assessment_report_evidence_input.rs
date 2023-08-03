@@ -29,16 +29,14 @@ impl BatchAssociateAssessmentReportEvidenceInput {
 }
 impl BatchAssociateAssessmentReportEvidenceInput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateAssessmentReportEvidenceInput`](crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceInput).
-    pub fn builder() -> crate::operation::batch_associate_assessment_report_evidence::builders::BatchAssociateAssessmentReportEvidenceInputBuilder{
+    pub fn builder() -> crate::operation::batch_associate_assessment_report_evidence::builders::BatchAssociateAssessmentReportEvidenceInputBuilder {
         crate::operation::batch_associate_assessment_report_evidence::builders::BatchAssociateAssessmentReportEvidenceInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchAssociateAssessmentReportEvidenceInput`](crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAssociateAssessmentReportEvidenceInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) evidence_folder_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct BatchAssociateAssessmentReportEvidenceInputBuilder {
 }
 impl BatchAssociateAssessmentReportEvidenceInputBuilder {
     /// <p> The identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
@@ -66,18 +58,12 @@ impl BatchAssociateAssessmentReportEvidenceInputBuilder {
         &self.assessment_id
     }
     /// <p> The identifier for the folder that the evidence is stored in. </p>
-    pub fn evidence_folder_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evidence_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evidence_folder_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the folder that the evidence is stored in. </p>
-    pub fn set_evidence_folder_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evidence_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evidence_folder_id = input;
         self
     }
@@ -97,30 +83,27 @@ impl BatchAssociateAssessmentReportEvidenceInputBuilder {
         self
     }
     /// <p> The list of evidence identifiers. </p>
-    pub fn set_evidence_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_evidence_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.evidence_ids = input;
         self
     }
     /// <p> The list of evidence identifiers. </p>
-    pub fn get_evidence_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_evidence_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.evidence_ids
     }
     /// Consumes the builder and constructs a [`BatchAssociateAssessmentReportEvidenceInput`](crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceInput {
-                assessment_id: self.assessment_id
-                ,
-                evidence_folder_id: self.evidence_folder_id
-                ,
-                evidence_ids: self.evidence_ids
-                ,
-            }
+                assessment_id: self.assessment_id,
+                evidence_folder_id: self.evidence_folder_id,
+                evidence_ids: self.evidence_ids,
+            },
         )
     }
 }

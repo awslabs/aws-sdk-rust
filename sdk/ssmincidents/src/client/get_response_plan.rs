@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`actions(Option<Vec<Action>>)`](crate::operation::get_response_plan::GetResponsePlanOutput::actions): <p>The actions that this response plan takes at the beginning of the incident.</p>
     ///   - [`integrations(Option<Vec<Integration>>)`](crate::operation::get_response_plan::GetResponsePlanOutput::integrations): <p>Information about third-party services integrated into the Incident Manager response plan.</p>
     /// - On failure, responds with [`SdkError<GetResponsePlanError>`](crate::operation::get_response_plan::GetResponsePlanError)
-    pub fn get_response_plan(
-        &self,
-    ) -> crate::operation::get_response_plan::builders::GetResponsePlanFluentBuilder {
-        crate::operation::get_response_plan::builders::GetResponsePlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_response_plan(&self) -> crate::operation::get_response_plan::builders::GetResponsePlanFluentBuilder {
+        crate::operation::get_response_plan::builders::GetResponsePlanFluentBuilder::new(self.handle.clone())
     }
 }

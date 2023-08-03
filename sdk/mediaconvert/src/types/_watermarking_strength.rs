@@ -41,13 +41,7 @@
 /// Optional. Ignore this setting unless Nagra support directs you to specify a value. When you don't specify a value here, the Nagra NexGuard library uses its default value.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WatermarkingStrength {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for WatermarkingStrength {
             "LIGHTEST" => WatermarkingStrength::Lightest,
             "STRONGER" => WatermarkingStrength::Stronger,
             "STRONGEST" => WatermarkingStrength::Strongest,
-            other => WatermarkingStrength::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WatermarkingStrength::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

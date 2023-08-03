@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for StopLabelingJobOutput {
 }
 impl StopLabelingJobOutput {
     /// Creates a new builder-style object to manufacture [`StopLabelingJobOutput`](crate::operation::stop_labeling_job::StopLabelingJobOutput).
-    pub fn builder() -> crate::operation::stop_labeling_job::builders::StopLabelingJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_labeling_job::builders::StopLabelingJobOutputBuilder {
         crate::operation::stop_labeling_job::builders::StopLabelingJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopLabelingJobOutput`](crate::operation::stop_labeling_job::StopLabelingJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopLabelingJobOutputBuilder {
     _request_id: Option<String>,
 }

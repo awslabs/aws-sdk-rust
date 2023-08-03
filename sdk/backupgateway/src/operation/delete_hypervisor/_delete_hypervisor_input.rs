@@ -15,34 +15,25 @@ impl DeleteHypervisorInput {
 }
 impl DeleteHypervisorInput {
     /// Creates a new builder-style object to manufacture [`DeleteHypervisorInput`](crate::operation::delete_hypervisor::DeleteHypervisorInput).
-    pub fn builder() -> crate::operation::delete_hypervisor::builders::DeleteHypervisorInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_hypervisor::builders::DeleteHypervisorInputBuilder {
         crate::operation::delete_hypervisor::builders::DeleteHypervisorInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteHypervisorInput`](crate::operation::delete_hypervisor::DeleteHypervisorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHypervisorInputBuilder {
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteHypervisorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
-    pub fn hypervisor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
-    pub fn set_hypervisor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hypervisor_arn = input;
         self
     }
@@ -53,10 +44,7 @@ impl DeleteHypervisorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteHypervisorInput`](crate::operation::delete_hypervisor::DeleteHypervisorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_hypervisor::DeleteHypervisorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_hypervisor::DeleteHypervisorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_hypervisor::DeleteHypervisorInput {
             hypervisor_arn: self.hypervisor_arn,
         })

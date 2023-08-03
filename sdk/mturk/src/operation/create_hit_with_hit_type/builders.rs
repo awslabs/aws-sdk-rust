@@ -41,10 +41,7 @@ impl CreateHITWithHITTypeFluentBuilder {
         }
     }
     /// Access the CreateHITWithHITType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_hit_with_hit_type::builders::CreateHitWithHitTypeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_hit_with_hit_type::builders::CreateHitWithHitTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl CreateHITWithHITTypeFluentBuilder {
             crate::operation::create_hit_with_hit_type::CreateHITWithHITType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hit_with_hit_type::CreateHITWithHITTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hit_with_hit_type::CreateHITWithHITTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl CreateHITWithHITTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl CreateHITWithHITTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hit_with_hit_type::CreateHITWithHITTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hit_with_hit_type::CreateHITWithHITTypeError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl CreateHITWithHITTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hit_with_hit_type::CreateHITWithHITTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hit_with_hit_type::CreateHITWithHITTypeError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +109,7 @@ impl CreateHITWithHITTypeFluentBuilder {
             crate::operation::create_hit_with_hit_type::CreateHITWithHITType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_hit_with_hit_type::CreateHITWithHITTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hit_with_hit_type::CreateHITWithHITTypeError>,
     > {
         self.customize_middleware().await
     }
@@ -192,20 +178,14 @@ impl CreateHITWithHITTypeFluentBuilder {
     /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
     /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
     /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
-    pub fn requester_annotation(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requester_annotation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.requester_annotation(input.into());
         self
     }
     /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
     /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
     /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
-    pub fn set_requester_annotation(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_requester_annotation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_requester_annotation(input);
         self
     }
@@ -218,20 +198,14 @@ impl CreateHITWithHITTypeFluentBuilder {
     /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
     /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
     /// </note>
-    pub fn unique_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn unique_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.unique_request_token(input.into());
         self
     }
     /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
     /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
     /// </note>
-    pub fn set_unique_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_unique_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_unique_request_token(input);
         self
     }
@@ -247,17 +221,12 @@ impl CreateHITWithHITTypeFluentBuilder {
         self
     }
     /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
-    pub fn set_assignment_review_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ReviewPolicy>,
-    ) -> Self {
+    pub fn set_assignment_review_policy(mut self, input: ::std::option::Option<crate::types::ReviewPolicy>) -> Self {
         self.inner = self.inner.set_assignment_review_policy(input);
         self
     }
     /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
-    pub fn get_assignment_review_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReviewPolicy> {
+    pub fn get_assignment_review_policy(&self) -> &::std::option::Option<crate::types::ReviewPolicy> {
         self.inner.get_assignment_review_policy()
     }
     /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
@@ -266,10 +235,7 @@ impl CreateHITWithHITTypeFluentBuilder {
         self
     }
     /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
-    pub fn set_hit_review_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ReviewPolicy>,
-    ) -> Self {
+    pub fn set_hit_review_policy(mut self, input: ::std::option::Option<crate::types::ReviewPolicy>) -> Self {
         self.inner = self.inner.set_hit_review_policy(input);
         self
     }
@@ -279,19 +245,13 @@ impl CreateHITWithHITTypeFluentBuilder {
     }
     /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
     /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
-    pub fn hit_layout_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hit_layout_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hit_layout_id(input.into());
         self
     }
     /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
     /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
-    pub fn set_hit_layout_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hit_layout_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hit_layout_id(input);
         self
     }
@@ -310,17 +270,12 @@ impl CreateHITWithHITTypeFluentBuilder {
         self
     }
     /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
-    pub fn set_hit_layout_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>>,
-    ) -> Self {
+    pub fn set_hit_layout_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>>) -> Self {
         self.inner = self.inner.set_hit_layout_parameters(input);
         self
     }
     /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
-    pub fn get_hit_layout_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>> {
+    pub fn get_hit_layout_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>> {
         self.inner.get_hit_layout_parameters()
     }
 }

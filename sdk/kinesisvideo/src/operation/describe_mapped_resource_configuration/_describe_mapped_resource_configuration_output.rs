@@ -5,8 +5,7 @@
 pub struct DescribeMappedResourceConfigurationOutput {
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
     #[doc(hidden)]
-    pub mapped_resource_configuration_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MappedResourceConfigurationListItem>>,
+    pub mapped_resource_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::MappedResourceConfigurationListItem>>,
     /// <p>The token that was used in the <code>NextToken</code>request to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeMappedResourceConfigurationOutput {
 }
 impl DescribeMappedResourceConfigurationOutput {
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn mapped_resource_configuration_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MappedResourceConfigurationListItem]> {
+    pub fn mapped_resource_configuration_list(&self) -> ::std::option::Option<&[crate::types::MappedResourceConfigurationListItem]> {
         self.mapped_resource_configuration_list.as_deref()
     }
     /// <p>The token that was used in the <code>NextToken</code>request to fetch the next set of results. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeMappedResourceConfigurationOu
 }
 impl DescribeMappedResourceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMappedResourceConfigurationOutput`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationOutputBuilder {
         crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMappedResourceConfigurationOutput`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMappedResourceConfigurationOutputBuilder {
-    pub(crate) mapped_resource_configuration_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MappedResourceConfigurationListItem>>,
+    pub(crate) mapped_resource_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::MappedResourceConfigurationListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeMappedResourceConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_mapped_resource_configuration_list`](Self::set_mapped_resource_configuration_list).
     ///
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn mapped_resource_configuration_list(
-        mut self,
-        input: crate::types::MappedResourceConfigurationListItem,
-    ) -> Self {
+    pub fn mapped_resource_configuration_list(mut self, input: crate::types::MappedResourceConfigurationListItem) -> Self {
         let mut v = self.mapped_resource_configuration_list.unwrap_or_default();
         v.push(input);
         self.mapped_resource_configuration_list = ::std::option::Option::Some(v);
@@ -65,9 +56,7 @@ impl DescribeMappedResourceConfigurationOutputBuilder {
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
     pub fn set_mapped_resource_configuration_list(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::MappedResourceConfigurationListItem>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MappedResourceConfigurationListItem>>,
     ) -> Self {
         self.mapped_resource_configuration_list = input;
         self
@@ -75,8 +64,7 @@ impl DescribeMappedResourceConfigurationOutputBuilder {
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
     pub fn get_mapped_resource_configuration_list(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MappedResourceConfigurationListItem>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MappedResourceConfigurationListItem>> {
         &self.mapped_resource_configuration_list
     }
     /// <p>The token that was used in the <code>NextToken</code>request to fetch the next set of results. </p>
@@ -103,12 +91,10 @@ impl DescribeMappedResourceConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMappedResourceConfigurationOutput`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationOutput{
+    pub fn build(self) -> crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationOutput {
         crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationOutput {
-            mapped_resource_configuration_list: self.mapped_resource_configuration_list
-            ,
-            next_token: self.next_token
-            ,
+            mapped_resource_configuration_list: self.mapped_resource_configuration_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

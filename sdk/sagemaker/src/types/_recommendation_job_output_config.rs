@@ -35,8 +35,7 @@ pub struct RecommendationJobOutputConfig {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the output configuration for the compiled model.</p>
     #[doc(hidden)]
-    pub compiled_output_config:
-        ::std::option::Option<crate::types::RecommendationJobCompiledOutputConfig>,
+    pub compiled_output_config: ::std::option::Option<crate::types::RecommendationJobCompiledOutputConfig>,
 }
 impl RecommendationJobOutputConfig {
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
@@ -70,9 +69,7 @@ impl RecommendationJobOutputConfig {
         self.kms_key_id.as_deref()
     }
     /// <p>Provides information about the output configuration for the compiled model.</p>
-    pub fn compiled_output_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationJobCompiledOutputConfig> {
+    pub fn compiled_output_config(&self) -> ::std::option::Option<&crate::types::RecommendationJobCompiledOutputConfig> {
         self.compiled_output_config.as_ref()
     }
 }
@@ -85,13 +82,10 @@ impl RecommendationJobOutputConfig {
 
 /// A builder for [`RecommendationJobOutputConfig`](crate::types::RecommendationJobOutputConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationJobOutputConfigBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) compiled_output_config:
-        ::std::option::Option<crate::types::RecommendationJobCompiledOutputConfig>,
+    pub(crate) compiled_output_config: ::std::option::Option<crate::types::RecommendationJobCompiledOutputConfig>,
 }
 impl RecommendationJobOutputConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
@@ -187,25 +181,17 @@ impl RecommendationJobOutputConfigBuilder {
         &self.kms_key_id
     }
     /// <p>Provides information about the output configuration for the compiled model.</p>
-    pub fn compiled_output_config(
-        mut self,
-        input: crate::types::RecommendationJobCompiledOutputConfig,
-    ) -> Self {
+    pub fn compiled_output_config(mut self, input: crate::types::RecommendationJobCompiledOutputConfig) -> Self {
         self.compiled_output_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about the output configuration for the compiled model.</p>
-    pub fn set_compiled_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationJobCompiledOutputConfig>,
-    ) -> Self {
+    pub fn set_compiled_output_config(mut self, input: ::std::option::Option<crate::types::RecommendationJobCompiledOutputConfig>) -> Self {
         self.compiled_output_config = input;
         self
     }
     /// <p>Provides information about the output configuration for the compiled model.</p>
-    pub fn get_compiled_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationJobCompiledOutputConfig> {
+    pub fn get_compiled_output_config(&self) -> &::std::option::Option<crate::types::RecommendationJobCompiledOutputConfig> {
         &self.compiled_output_config
     }
     /// Consumes the builder and constructs a [`RecommendationJobOutputConfig`](crate::types::RecommendationJobOutputConfig).

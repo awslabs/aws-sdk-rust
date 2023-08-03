@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`evaluation_form_version(i32)`](crate::operation::delete_evaluation_form::builders::DeleteEvaluationFormFluentBuilder::evaluation_form_version) / [`set_evaluation_form_version(Option<i32>)`](crate::operation::delete_evaluation_form::builders::DeleteEvaluationFormFluentBuilder::set_evaluation_form_version): <p>The unique identifier for the evaluation form.</p>
     /// - On success, responds with [`DeleteEvaluationFormOutput`](crate::operation::delete_evaluation_form::DeleteEvaluationFormOutput)
     /// - On failure, responds with [`SdkError<DeleteEvaluationFormError>`](crate::operation::delete_evaluation_form::DeleteEvaluationFormError)
-    pub fn delete_evaluation_form(
-        &self,
-    ) -> crate::operation::delete_evaluation_form::builders::DeleteEvaluationFormFluentBuilder {
-        crate::operation::delete_evaluation_form::builders::DeleteEvaluationFormFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_evaluation_form(&self) -> crate::operation::delete_evaluation_form::builders::DeleteEvaluationFormFluentBuilder {
+        crate::operation::delete_evaluation_form::builders::DeleteEvaluationFormFluentBuilder::new(self.handle.clone())
     }
 }

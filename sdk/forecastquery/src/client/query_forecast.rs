@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`QueryForecastOutput`](crate::operation::query_forecast::QueryForecastOutput) with field(s):
     ///   - [`forecast(Option<Forecast>)`](crate::operation::query_forecast::QueryForecastOutput::forecast): <p>The forecast.</p>
     /// - On failure, responds with [`SdkError<QueryForecastError>`](crate::operation::query_forecast::QueryForecastError)
-    pub fn query_forecast(
-        &self,
-    ) -> crate::operation::query_forecast::builders::QueryForecastFluentBuilder {
-        crate::operation::query_forecast::builders::QueryForecastFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn query_forecast(&self) -> crate::operation::query_forecast::builders::QueryForecastFluentBuilder {
+        crate::operation::query_forecast::builders::QueryForecastFluentBuilder::new(self.handle.clone())
     }
 }

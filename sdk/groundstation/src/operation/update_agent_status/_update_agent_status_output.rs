@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateAgentStatusOutput {
 }
 impl UpdateAgentStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAgentStatusOutput`](crate::operation::update_agent_status::UpdateAgentStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::update_agent_status::builders::UpdateAgentStatusOutputBuilder {
+    pub fn builder() -> crate::operation::update_agent_status::builders::UpdateAgentStatusOutputBuilder {
         crate::operation::update_agent_status::builders::UpdateAgentStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAgentStatusOutput`](crate::operation::update_agent_status::UpdateAgentStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAgentStatusOutputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -26,7 +26,7 @@ impl TerminateClientVpnConnectionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TerminateClientVpnConnectionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsInputBuilder,
+    inner: crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsInputBuilder,
 }
 impl TerminateClientVpnConnectionsFluentBuilder {
     /// Creates a new `TerminateClientVpnConnections`.
@@ -37,7 +37,7 @@ impl TerminateClientVpnConnectionsFluentBuilder {
         }
     }
     /// Access the TerminateClientVpnConnections as a reference.
-    pub fn as_input(&self) -> &crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl TerminateClientVpnConnectionsFluentBuilder {
             crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl TerminateClientVpnConnectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl TerminateClientVpnConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl TerminateClientVpnConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl TerminateClientVpnConnectionsFluentBuilder {
             crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_vpn_endpoint_id(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_vpn_endpoint_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl TerminateClientVpnConnectionsFluentBuilder {
         self.inner.get_client_vpn_endpoint_id()
     }
     /// <p>The ID of the client connection to be terminated.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the client connection to be terminated.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }

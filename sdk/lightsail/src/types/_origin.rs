@@ -32,9 +32,7 @@ impl Origin {
         self.region_name.as_ref()
     }
     /// <p>The protocol that your Amazon Lightsail distribution uses when establishing a connection with your origin to pull content.</p>
-    pub fn protocol_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginProtocolPolicyEnum> {
+    pub fn protocol_policy(&self) -> ::std::option::Option<&crate::types::OriginProtocolPolicyEnum> {
         self.protocol_policy.as_ref()
     }
 }
@@ -47,9 +45,7 @@ impl Origin {
 
 /// A builder for [`Origin`](crate::types::Origin).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -77,10 +73,7 @@ impl OriginBuilder {
         self
     }
     /// <p>The resource type of the origin resource (e.g., <i>Instance</i>).</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -94,10 +87,7 @@ impl OriginBuilder {
         self
     }
     /// <p>The AWS Region name of the origin resource.</p>
-    pub fn set_region_name(
-        mut self,
-        input: ::std::option::Option<crate::types::RegionName>,
-    ) -> Self {
+    pub fn set_region_name(mut self, input: ::std::option::Option<crate::types::RegionName>) -> Self {
         self.region_name = input;
         self
     }
@@ -111,17 +101,12 @@ impl OriginBuilder {
         self
     }
     /// <p>The protocol that your Amazon Lightsail distribution uses when establishing a connection with your origin to pull content.</p>
-    pub fn set_protocol_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginProtocolPolicyEnum>,
-    ) -> Self {
+    pub fn set_protocol_policy(mut self, input: ::std::option::Option<crate::types::OriginProtocolPolicyEnum>) -> Self {
         self.protocol_policy = input;
         self
     }
     /// <p>The protocol that your Amazon Lightsail distribution uses when establishing a connection with your origin to pull content.</p>
-    pub fn get_protocol_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginProtocolPolicyEnum> {
+    pub fn get_protocol_policy(&self) -> &::std::option::Option<crate::types::OriginProtocolPolicyEnum> {
         &self.protocol_policy
     }
     /// Consumes the builder and constructs a [`Origin`](crate::types::Origin).

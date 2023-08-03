@@ -10,10 +10,7 @@ impl PutPermissionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_permission::PutPermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_permission::PutPermissionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_permission::PutPermissionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_permission();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl PutPermissionFluentBuilder {
         }
     }
     /// Access the PutPermission as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_permission::builders::PutPermissionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_permission::builders::PutPermissionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl PutPermissionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,18 +110,12 @@ impl PutPermissionFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the profiling group to grant access to.</p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
     /// <p>The name of the profiling group to grant access to.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
@@ -143,10 +129,7 @@ impl PutPermissionFluentBuilder {
         self
     }
     /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
-    pub fn set_action_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionGroup>,
-    ) -> Self {
+    pub fn set_action_group(mut self, input: ::std::option::Option<crate::types::ActionGroup>) -> Self {
         self.inner = self.inner.set_action_group(input);
         self
     }
@@ -164,10 +147,7 @@ impl PutPermissionFluentBuilder {
         self
     }
     /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_principals(input);
         self
     }

@@ -13,9 +13,7 @@ impl DynatraceMetadata {
 
 /// A builder for [`DynatraceMetadata`](crate::types::DynatraceMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DynatraceMetadataBuilder {}
 impl DynatraceMetadataBuilder {
     /// Consumes the builder and constructs a [`DynatraceMetadata`](crate::types::DynatraceMetadata).

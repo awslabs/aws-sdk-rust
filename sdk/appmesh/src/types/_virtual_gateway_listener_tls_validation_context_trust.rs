@@ -21,10 +21,7 @@ pub enum VirtualGatewayListenerTlsValidationContextTrust {
 impl VirtualGatewayListenerTlsValidationContextTrust {
     /// Tries to convert the enum instance into [`File`](crate::types::VirtualGatewayListenerTlsValidationContextTrust::File), extracting the inner [`VirtualGatewayTlsValidationContextFileTrust`](crate::types::VirtualGatewayTlsValidationContextFileTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(
-        &self,
-    ) -> ::std::result::Result<&crate::types::VirtualGatewayTlsValidationContextFileTrust, &Self>
-    {
+    pub fn as_file(&self) -> ::std::result::Result<&crate::types::VirtualGatewayTlsValidationContextFileTrust, &Self> {
         if let VirtualGatewayListenerTlsValidationContextTrust::File(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -37,10 +34,7 @@ impl VirtualGatewayListenerTlsValidationContextTrust {
     }
     /// Tries to convert the enum instance into [`Sds`](crate::types::VirtualGatewayListenerTlsValidationContextTrust::Sds), extracting the inner [`VirtualGatewayTlsValidationContextSdsTrust`](crate::types::VirtualGatewayTlsValidationContextSdsTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sds(
-        &self,
-    ) -> ::std::result::Result<&crate::types::VirtualGatewayTlsValidationContextSdsTrust, &Self>
-    {
+    pub fn as_sds(&self) -> ::std::result::Result<&crate::types::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
         if let VirtualGatewayListenerTlsValidationContextTrust::Sds(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

@@ -30,9 +30,7 @@ impl ResourceCount {
 
 /// A builder for [`ResourceCount`](crate::types::ResourceCount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceCountBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) count: ::std::option::Option<i64>,
@@ -44,10 +42,7 @@ impl ResourceCountBuilder {
         self
     }
     /// <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }

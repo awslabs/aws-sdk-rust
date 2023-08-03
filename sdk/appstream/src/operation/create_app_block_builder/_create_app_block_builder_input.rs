@@ -18,9 +18,7 @@ pub struct CreateAppBlockBuilderInput {
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The platform of the app block builder.</p>
     /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     #[doc(hidden)]
@@ -68,11 +66,7 @@ impl CreateAppBlockBuilderInput {
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The platform of the app block builder.</p>
@@ -112,32 +106,25 @@ impl CreateAppBlockBuilderInput {
 }
 impl CreateAppBlockBuilderInput {
     /// Creates a new builder-style object to manufacture [`CreateAppBlockBuilderInput`](crate::operation::create_app_block_builder::CreateAppBlockBuilderInput).
-    pub fn builder(
-    ) -> crate::operation::create_app_block_builder::builders::CreateAppBlockBuilderInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_app_block_builder::builders::CreateAppBlockBuilderInputBuilder {
         crate::operation::create_app_block_builder::builders::CreateAppBlockBuilderInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAppBlockBuilderInput`](crate::operation::create_app_block_builder::CreateAppBlockBuilderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppBlockBuilderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) platform: ::std::option::Option<crate::types::AppBlockBuilderPlatformType>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) enable_default_internet_access: ::std::option::Option<bool>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) access_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
 }
 impl CreateAppBlockBuilderInputBuilder {
     /// <p>The unique name for the app block builder.</p>
@@ -191,11 +178,7 @@ impl CreateAppBlockBuilderInputBuilder {
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
@@ -206,12 +189,7 @@ impl CreateAppBlockBuilderInputBuilder {
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
@@ -220,11 +198,7 @@ impl CreateAppBlockBuilderInputBuilder {
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The platform of the app block builder.</p>
@@ -235,18 +209,13 @@ impl CreateAppBlockBuilderInputBuilder {
     }
     /// <p>The platform of the app block builder.</p>
     /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
-    pub fn set_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::AppBlockBuilderPlatformType>,
-    ) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::AppBlockBuilderPlatformType>) -> Self {
         self.platform = input;
         self
     }
     /// <p>The platform of the app block builder.</p>
     /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
-    pub fn get_platform(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppBlockBuilderPlatformType> {
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::AppBlockBuilderPlatformType> {
         &self.platform
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
@@ -257,10 +226,7 @@ impl CreateAppBlockBuilderInputBuilder {
     /// <li> <p>stream.standard.xlarge</p> </li>
     /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -272,10 +238,7 @@ impl CreateAppBlockBuilderInputBuilder {
     /// <li> <p>stream.standard.xlarge</p> </li>
     /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -313,10 +276,7 @@ impl CreateAppBlockBuilderInputBuilder {
         self
     }
     /// <p>Enables or disables default internet access for the app block builder.</p>
-    pub fn set_enable_default_internet_access(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_default_internet_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_default_internet_access = input;
         self
     }
@@ -353,39 +313,30 @@ impl CreateAppBlockBuilderInputBuilder {
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    pub fn set_access_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
-    ) -> Self {
+    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>) -> Self {
         self.access_endpoints = input;
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    pub fn get_access_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
         &self.access_endpoints
     }
     /// Consumes the builder and constructs a [`CreateAppBlockBuilderInput`](crate::operation::create_app_block_builder::CreateAppBlockBuilderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_app_block_builder::CreateAppBlockBuilderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_app_block_builder::CreateAppBlockBuilderInput {
-                name: self.name,
-                description: self.description,
-                display_name: self.display_name,
-                tags: self.tags,
-                platform: self.platform,
-                instance_type: self.instance_type,
-                vpc_config: self.vpc_config,
-                enable_default_internet_access: self.enable_default_internet_access,
-                iam_role_arn: self.iam_role_arn,
-                access_endpoints: self.access_endpoints,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_app_block_builder::CreateAppBlockBuilderInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_app_block_builder::CreateAppBlockBuilderInput {
+            name: self.name,
+            description: self.description,
+            display_name: self.display_name,
+            tags: self.tags,
+            platform: self.platform,
+            instance_type: self.instance_type,
+            vpc_config: self.vpc_config,
+            enable_default_internet_access: self.enable_default_internet_access,
+            iam_role_arn: self.iam_role_arn,
+            access_endpoints: self.access_endpoints,
+        })
     }
 }

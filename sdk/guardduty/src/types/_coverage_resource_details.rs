@@ -13,9 +13,7 @@ pub struct CoverageResourceDetails {
 }
 impl CoverageResourceDetails {
     /// <p>EKS cluster details involved in the coverage statistics.</p>
-    pub fn eks_cluster_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CoverageEksClusterDetails> {
+    pub fn eks_cluster_details(&self) -> ::std::option::Option<&crate::types::CoverageEksClusterDetails> {
         self.eks_cluster_details.as_ref()
     }
     /// <p>The type of Amazon Web Services resource.</p>
@@ -32,9 +30,7 @@ impl CoverageResourceDetails {
 
 /// A builder for [`CoverageResourceDetails`](crate::types::CoverageResourceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoverageResourceDetailsBuilder {
     pub(crate) eks_cluster_details: ::std::option::Option<crate::types::CoverageEksClusterDetails>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -46,17 +42,12 @@ impl CoverageResourceDetailsBuilder {
         self
     }
     /// <p>EKS cluster details involved in the coverage statistics.</p>
-    pub fn set_eks_cluster_details(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageEksClusterDetails>,
-    ) -> Self {
+    pub fn set_eks_cluster_details(mut self, input: ::std::option::Option<crate::types::CoverageEksClusterDetails>) -> Self {
         self.eks_cluster_details = input;
         self
     }
     /// <p>EKS cluster details involved in the coverage statistics.</p>
-    pub fn get_eks_cluster_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::CoverageEksClusterDetails> {
+    pub fn get_eks_cluster_details(&self) -> &::std::option::Option<crate::types::CoverageEksClusterDetails> {
         &self.eks_cluster_details
     }
     /// <p>The type of Amazon Web Services resource.</p>
@@ -65,10 +56,7 @@ impl CoverageResourceDetailsBuilder {
         self
     }
     /// <p>The type of Amazon Web Services resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }

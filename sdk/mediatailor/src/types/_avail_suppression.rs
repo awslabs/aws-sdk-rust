@@ -37,9 +37,7 @@ impl AvailSuppression {
 
 /// A builder for [`AvailSuppression`](crate::types::AvailSuppression).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AvailSuppressionBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::Mode>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl AvailSuppressionBuilder {
         self
     }
     /// <p>Defines the policy to apply to the avail suppression mode. <code>BEHIND_LIVE_EDGE</code> will always use the full avail suppression policy. <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad break fills when a session starts mid-break.</p>
-    pub fn set_fill_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::FillPolicy>,
-    ) -> Self {
+    pub fn set_fill_policy(mut self, input: ::std::option::Option<crate::types::FillPolicy>) -> Self {
         self.fill_policy = input;
         self
     }

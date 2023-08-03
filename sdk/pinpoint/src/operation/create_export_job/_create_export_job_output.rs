@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateExportJobOutput {
 }
 impl CreateExportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateExportJobOutput`](crate::operation::create_export_job::CreateExportJobOutput).
-    pub fn builder() -> crate::operation::create_export_job::builders::CreateExportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_export_job::builders::CreateExportJobOutputBuilder {
         crate::operation::create_export_job::builders::CreateExportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateExportJobOutput`](crate::operation::create_export_job::CreateExportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateExportJobOutputBuilder {
     pub(crate) export_job_response: ::std::option::Option<crate::types::ExportJobResponse>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl CreateExportJobOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
-    pub fn set_export_job_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportJobResponse>,
-    ) -> Self {
+    pub fn set_export_job_response(mut self, input: ::std::option::Option<crate::types::ExportJobResponse>) -> Self {
         self.export_job_response = input;
         self
     }
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
-    pub fn get_export_job_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportJobResponse> {
+    pub fn get_export_job_response(&self) -> &::std::option::Option<crate::types::ExportJobResponse> {
         &self.export_job_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

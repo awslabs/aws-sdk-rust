@@ -27,7 +27,7 @@ impl DescribeDefaultAuthorizerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDefaultAuthorizerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_default_authorizer::builders::DescribeDefaultAuthorizerInputBuilder,
+    inner: crate::operation::describe_default_authorizer::builders::DescribeDefaultAuthorizerInputBuilder,
 }
 impl DescribeDefaultAuthorizerFluentBuilder {
     /// Creates a new `DescribeDefaultAuthorizer`.
@@ -38,7 +38,7 @@ impl DescribeDefaultAuthorizerFluentBuilder {
         }
     }
     /// Access the DescribeDefaultAuthorizer as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_default_authorizer::builders::DescribeDefaultAuthorizerInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_default_authorizer::builders::DescribeDefaultAuthorizerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeDefaultAuthorizerFluentBuilder {
             crate::operation::describe_default_authorizer::DescribeDefaultAuthorizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeDefaultAuthorizerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeDefaultAuthorizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeDefaultAuthorizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DescribeDefaultAuthorizerFluentBuilder {
             crate::operation::describe_default_authorizer::DescribeDefaultAuthorizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerError>,
     > {
         self.customize_middleware().await
     }

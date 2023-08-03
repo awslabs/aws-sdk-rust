@@ -15,33 +15,25 @@ impl ConfirmPublicVirtualInterfaceInput {
 }
 impl ConfirmPublicVirtualInterfaceInput {
     /// Creates a new builder-style object to manufacture [`ConfirmPublicVirtualInterfaceInput`](crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceInput).
-    pub fn builder() -> crate::operation::confirm_public_virtual_interface::builders::ConfirmPublicVirtualInterfaceInputBuilder{
+    pub fn builder() -> crate::operation::confirm_public_virtual_interface::builders::ConfirmPublicVirtualInterfaceInputBuilder {
         crate::operation::confirm_public_virtual_interface::builders::ConfirmPublicVirtualInterfaceInputBuilder::default()
     }
 }
 
 /// A builder for [`ConfirmPublicVirtualInterfaceInput`](crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfirmPublicVirtualInterfaceInputBuilder {
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
 }
 impl ConfirmPublicVirtualInterfaceInputBuilder {
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_interface_id = input;
         self
     }
@@ -56,11 +48,8 @@ impl ConfirmPublicVirtualInterfaceInputBuilder {
         crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceInput {
-                virtual_interface_id: self.virtual_interface_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceInput {
+            virtual_interface_id: self.virtual_interface_id,
+        })
     }
 }

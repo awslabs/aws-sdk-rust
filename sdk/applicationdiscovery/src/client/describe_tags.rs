@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<ConfigurationTag>>)`](crate::operation::describe_tags::DescribeTagsOutput::tags): <p>Depending on the input, this is a list of configuration items tagged with a specific tag, or a list of tags for a specific configuration item.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_tags::DescribeTagsOutput::next_token): <p>The call returns a token. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::operation::describe_tags::DescribeTagsError)
-    pub fn describe_tags(
-        &self,
-    ) -> crate::operation::describe_tags::builders::DescribeTagsFluentBuilder {
-        crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_tags(&self) -> crate::operation::describe_tags::builders::DescribeTagsFluentBuilder {
+        crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::new(self.handle.clone())
     }
 }

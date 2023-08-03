@@ -26,8 +26,7 @@ impl DescribeAccountPoliciesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_account_policies::builders::DescribeAccountPoliciesInputBuilder,
+    inner: crate::operation::describe_account_policies::builders::DescribeAccountPoliciesInputBuilder,
 }
 impl DescribeAccountPoliciesFluentBuilder {
     /// Creates a new `DescribeAccountPolicies`.
@@ -38,10 +37,7 @@ impl DescribeAccountPoliciesFluentBuilder {
         }
     }
     /// Access the DescribeAccountPolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_account_policies::builders::DescribeAccountPoliciesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_account_policies::builders::DescribeAccountPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeAccountPoliciesFluentBuilder {
             crate::operation::describe_account_policies::DescribeAccountPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_policies::DescribeAccountPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_policies::DescribeAccountPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeAccountPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeAccountPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_policies::DescribeAccountPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_policies::DescribeAccountPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_policies::DescribeAccountPoliciesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeAccountPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_policies::DescribeAccountPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_policies::DescribeAccountPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_policies::DescribeAccountPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DescribeAccountPoliciesFluentBuilder {
             crate::operation::describe_account_policies::DescribeAccountPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_policies::DescribeAccountPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_policies::DescribeAccountPoliciesError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +115,7 @@ impl DescribeAccountPoliciesFluentBuilder {
         self
     }
     /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
-    pub fn set_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyType>,
-    ) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.inner = self.inner.set_policy_type(input);
         self
     }
@@ -161,27 +143,19 @@ impl DescribeAccountPoliciesFluentBuilder {
     ///
     /// <p>If you are using an account that is set up as a monitoring account for CloudWatch unified cross-account observability, you can use this to specify the account ID of a source account. If you do, the operation returns the account policy for the specified account. Currently, you can specify only one account ID in this parameter.</p>
     /// <p>If you omit this parameter, only the policy in the current account is returned.</p>
-    pub fn account_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_identifiers(input.into());
         self
     }
     /// <p>If you are using an account that is set up as a monitoring account for CloudWatch unified cross-account observability, you can use this to specify the account ID of a source account. If you do, the operation returns the account policy for the specified account. Currently, you can specify only one account ID in this parameter.</p>
     /// <p>If you omit this parameter, only the policy in the current account is returned.</p>
-    pub fn set_account_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_identifiers(input);
         self
     }
     /// <p>If you are using an account that is set up as a monitoring account for CloudWatch unified cross-account observability, you can use this to specify the account ID of a source account. If you do, the operation returns the account policy for the specified account. Currently, you can specify only one account ID in this parameter.</p>
     /// <p>If you omit this parameter, only the policy in the current account is returned.</p>
-    pub fn get_account_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_identifiers()
     }
 }

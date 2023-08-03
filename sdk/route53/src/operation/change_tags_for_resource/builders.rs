@@ -38,10 +38,7 @@ impl ChangeTagsForResourceFluentBuilder {
         }
     }
     /// Access the ChangeTagsForResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::change_tags_for_resource::builders::ChangeTagsForResourceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::change_tags_for_resource::builders::ChangeTagsForResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ChangeTagsForResourceFluentBuilder {
             crate::operation::change_tags_for_resource::ChangeTagsForResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_tags_for_resource::ChangeTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_tags_for_resource::ChangeTagsForResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ChangeTagsForResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ChangeTagsForResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_tags_for_resource::ChangeTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_tags_for_resource::ChangeTagsForResourceError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ChangeTagsForResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_tags_for_resource::ChangeTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_tags_for_resource::ChangeTagsForResourceError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl ChangeTagsForResourceFluentBuilder {
             crate::operation::change_tags_for_resource::ChangeTagsForResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_tags_for_resource::ChangeTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_tags_for_resource::ChangeTagsForResourceError>,
     > {
         self.customize_middleware().await
     }
@@ -138,10 +124,7 @@ impl ChangeTagsForResourceFluentBuilder {
     /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
     /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TagResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TagResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -179,10 +162,7 @@ impl ChangeTagsForResourceFluentBuilder {
     }
     /// <p>A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
     /// <p>You can add a maximum of 10 tags to a health check or a hosted zone.</p>
-    pub fn set_add_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_add_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_add_tags(input);
         self
     }
@@ -196,25 +176,17 @@ impl ChangeTagsForResourceFluentBuilder {
     /// To override the contents of this collection use [`set_remove_tag_keys`](Self::set_remove_tag_keys).
     ///
     /// <p>A complex type that contains a list of the tags that you want to delete from the specified health check or hosted zone. You can specify up to 10 keys.</p>
-    pub fn remove_tag_keys(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remove_tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remove_tag_keys(input.into());
         self
     }
     /// <p>A complex type that contains a list of the tags that you want to delete from the specified health check or hosted zone. You can specify up to 10 keys.</p>
-    pub fn set_remove_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_remove_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_remove_tag_keys(input);
         self
     }
     /// <p>A complex type that contains a list of the tags that you want to delete from the specified health check or hosted zone. You can specify up to 10 keys.</p>
-    pub fn get_remove_tag_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_tag_keys()
     }
 }

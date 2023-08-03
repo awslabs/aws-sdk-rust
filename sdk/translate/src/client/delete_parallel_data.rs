@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::delete_parallel_data::DeleteParallelDataOutput::name): <p>The name of the parallel data resource that is being deleted.</p>
     ///   - [`status(Option<ParallelDataStatus>)`](crate::operation::delete_parallel_data::DeleteParallelDataOutput::status): <p>The status of the parallel data deletion.</p>
     /// - On failure, responds with [`SdkError<DeleteParallelDataError>`](crate::operation::delete_parallel_data::DeleteParallelDataError)
-    pub fn delete_parallel_data(
-        &self,
-    ) -> crate::operation::delete_parallel_data::builders::DeleteParallelDataFluentBuilder {
-        crate::operation::delete_parallel_data::builders::DeleteParallelDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_parallel_data(&self) -> crate::operation::delete_parallel_data::builders::DeleteParallelDataFluentBuilder {
+        crate::operation::delete_parallel_data::builders::DeleteParallelDataFluentBuilder::new(self.handle.clone())
     }
 }

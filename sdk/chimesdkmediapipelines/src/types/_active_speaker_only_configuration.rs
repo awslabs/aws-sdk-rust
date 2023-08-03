@@ -10,9 +10,7 @@ pub struct ActiveSpeakerOnlyConfiguration {
 }
 impl ActiveSpeakerOnlyConfiguration {
     /// <p>The position of the <code>ActiveSpeakerOnly</code> video tile.</p>
-    pub fn active_speaker_position(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ActiveSpeakerPosition> {
+    pub fn active_speaker_position(&self) -> ::std::option::Option<&crate::types::ActiveSpeakerPosition> {
         self.active_speaker_position.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl ActiveSpeakerOnlyConfiguration {
 
 /// A builder for [`ActiveSpeakerOnlyConfiguration`](crate::types::ActiveSpeakerOnlyConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActiveSpeakerOnlyConfigurationBuilder {
     pub(crate) active_speaker_position: ::std::option::Option<crate::types::ActiveSpeakerPosition>,
 }
@@ -38,17 +34,12 @@ impl ActiveSpeakerOnlyConfigurationBuilder {
         self
     }
     /// <p>The position of the <code>ActiveSpeakerOnly</code> video tile.</p>
-    pub fn set_active_speaker_position(
-        mut self,
-        input: ::std::option::Option<crate::types::ActiveSpeakerPosition>,
-    ) -> Self {
+    pub fn set_active_speaker_position(mut self, input: ::std::option::Option<crate::types::ActiveSpeakerPosition>) -> Self {
         self.active_speaker_position = input;
         self
     }
     /// <p>The position of the <code>ActiveSpeakerOnly</code> video tile.</p>
-    pub fn get_active_speaker_position(
-        &self,
-    ) -> &::std::option::Option<crate::types::ActiveSpeakerPosition> {
+    pub fn get_active_speaker_position(&self) -> &::std::option::Option<crate::types::ActiveSpeakerPosition> {
         &self.active_speaker_position
     }
     /// Consumes the builder and constructs a [`ActiveSpeakerOnlyConfiguration`](crate::types::ActiveSpeakerOnlyConfiguration).

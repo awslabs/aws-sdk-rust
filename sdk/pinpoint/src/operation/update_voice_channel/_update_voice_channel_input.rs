@@ -16,43 +16,32 @@ impl UpdateVoiceChannelInput {
         self.application_id.as_deref()
     }
     /// <p>Specifies the status and settings of the voice channel for an application.</p>
-    pub fn voice_channel_request(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VoiceChannelRequest> {
+    pub fn voice_channel_request(&self) -> ::std::option::Option<&crate::types::VoiceChannelRequest> {
         self.voice_channel_request.as_ref()
     }
 }
 impl UpdateVoiceChannelInput {
     /// Creates a new builder-style object to manufacture [`UpdateVoiceChannelInput`](crate::operation::update_voice_channel::UpdateVoiceChannelInput).
-    pub fn builder(
-    ) -> crate::operation::update_voice_channel::builders::UpdateVoiceChannelInputBuilder {
+    pub fn builder() -> crate::operation::update_voice_channel::builders::UpdateVoiceChannelInputBuilder {
         crate::operation::update_voice_channel::builders::UpdateVoiceChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVoiceChannelInput`](crate::operation::update_voice_channel::UpdateVoiceChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVoiceChannelInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) voice_channel_request: ::std::option::Option<crate::types::VoiceChannelRequest>,
 }
 impl UpdateVoiceChannelInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -66,31 +55,21 @@ impl UpdateVoiceChannelInputBuilder {
         self
     }
     /// <p>Specifies the status and settings of the voice channel for an application.</p>
-    pub fn set_voice_channel_request(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceChannelRequest>,
-    ) -> Self {
+    pub fn set_voice_channel_request(mut self, input: ::std::option::Option<crate::types::VoiceChannelRequest>) -> Self {
         self.voice_channel_request = input;
         self
     }
     /// <p>Specifies the status and settings of the voice channel for an application.</p>
-    pub fn get_voice_channel_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::VoiceChannelRequest> {
+    pub fn get_voice_channel_request(&self) -> &::std::option::Option<crate::types::VoiceChannelRequest> {
         &self.voice_channel_request
     }
     /// Consumes the builder and constructs a [`UpdateVoiceChannelInput`](crate::operation::update_voice_channel::UpdateVoiceChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_voice_channel::UpdateVoiceChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_voice_channel::UpdateVoiceChannelInput {
-                application_id: self.application_id,
-                voice_channel_request: self.voice_channel_request,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_voice_channel::UpdateVoiceChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_voice_channel::UpdateVoiceChannelInput {
+            application_id: self.application_id,
+            voice_channel_request: self.voice_channel_request,
+        })
     }
 }

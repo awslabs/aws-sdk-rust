@@ -45,9 +45,7 @@ impl VariableImpactExplanation {
 
 /// A builder for [`VariableImpactExplanation`](crate::types::VariableImpactExplanation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VariableImpactExplanationBuilder {
     pub(crate) event_variable_name: ::std::option::Option<::std::string::String>,
     pub(crate) relative_impact: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct VariableImpactExplanationBuilder {
 }
 impl VariableImpactExplanationBuilder {
     /// <p> The event variable name. </p>
-    pub fn event_variable_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_variable_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_variable_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The event variable name. </p>
-    pub fn set_event_variable_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_variable_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_variable_name = input;
         self
     }
@@ -75,18 +67,12 @@ impl VariableImpactExplanationBuilder {
         &self.event_variable_name
     }
     /// <p> The event variable's relative impact in terms of magnitude on the prediction scores. The relative impact values consist of a numerical rating (0-5, 5 being the highest) and direction (increased/decreased) impact of the fraud risk. </p>
-    pub fn relative_impact(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relative_impact(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relative_impact = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The event variable's relative impact in terms of magnitude on the prediction scores. The relative impact values consist of a numerical rating (0-5, 5 being the highest) and direction (increased/decreased) impact of the fraud risk. </p>
-    pub fn set_relative_impact(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relative_impact(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relative_impact = input;
         self
     }

@@ -37,10 +37,7 @@ impl BatchDeleteTableRowsFluentBuilder {
         }
     }
     /// Access the BatchDeleteTableRows as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_delete_table_rows::builders::BatchDeleteTableRowsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_delete_table_rows::builders::BatchDeleteTableRowsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl BatchDeleteTableRowsFluentBuilder {
             crate::operation::batch_delete_table_rows::BatchDeleteTableRows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl BatchDeleteTableRowsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl BatchDeleteTableRowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_table_rows::BatchDeleteTableRowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl BatchDeleteTableRowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_table_rows::BatchDeleteTableRowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl BatchDeleteTableRowsFluentBuilder {
             crate::operation::batch_delete_table_rows::BatchDeleteTableRows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_table_rows::BatchDeleteTableRowsError>,
     > {
         self.customize_middleware().await
     }
@@ -169,10 +155,7 @@ impl BatchDeleteTableRowsFluentBuilder {
     }
     /// <p> The list of row ids to delete from the table. You need to specify at least one row id in this list. </p>
     /// <p> Note that if one of the row ids provided in the request does not exist in the table, then the request fails and no rows are deleted from the table. </p>
-    pub fn set_row_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_row_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_row_ids(input);
         self
     }
@@ -183,19 +166,13 @@ impl BatchDeleteTableRowsFluentBuilder {
     }
     /// <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

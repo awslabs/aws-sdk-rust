@@ -10,10 +10,7 @@ impl SetDesiredCapacityInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::set_desired_capacity::SetDesiredCapacityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_desired_capacity::SetDesiredCapacityError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_desired_capacity::SetDesiredCapacityError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.set_desired_capacity();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl SetDesiredCapacityFluentBuilder {
         }
     }
     /// Access the SetDesiredCapacity as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_desired_capacity::builders::SetDesiredCapacityInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_desired_capacity::builders::SetDesiredCapacityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl SetDesiredCapacityFluentBuilder {
             crate::operation::set_desired_capacity::SetDesiredCapacity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_desired_capacity::SetDesiredCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_desired_capacity::SetDesiredCapacityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl SetDesiredCapacityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl SetDesiredCapacityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_desired_capacity::SetDesiredCapacityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_desired_capacity::SetDesiredCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_desired_capacity::SetDesiredCapacityError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl SetDesiredCapacityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_desired_capacity::SetDesiredCapacityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_desired_capacity::SetDesiredCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_desired_capacity::SetDesiredCapacityError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl SetDesiredCapacityFluentBuilder {
             crate::operation::set_desired_capacity::SetDesiredCapacity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_desired_capacity::SetDesiredCapacityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_desired_capacity::SetDesiredCapacityError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }

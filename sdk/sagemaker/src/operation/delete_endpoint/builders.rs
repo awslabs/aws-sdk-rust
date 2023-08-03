@@ -10,10 +10,7 @@ impl DeleteEndpointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_endpoint::DeleteEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_endpoint::DeleteEndpointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_endpoint::DeleteEndpointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_endpoint();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeleteEndpointFluentBuilder {
         }
     }
     /// Access the DeleteEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_endpoint::builders::DeleteEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_endpoint::builders::DeleteEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl DeleteEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,18 +109,12 @@ impl DeleteEndpointFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the endpoint that you want to delete.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
         self
     }
     /// <p>The name of the endpoint that you want to delete.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }

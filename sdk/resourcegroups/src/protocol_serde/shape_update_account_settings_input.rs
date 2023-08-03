@@ -4,9 +4,7 @@ pub fn ser_update_account_settings_input(
     input: &crate::operation::update_account_settings::UpdateAccountSettingsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.group_lifecycle_events_desired_status {
-        object
-            .key("GroupLifecycleEventsDesiredStatus")
-            .string(var_1.as_str());
+        object.key("GroupLifecycleEventsDesiredStatus").string(var_1.as_str());
     }
     Ok(())
 }

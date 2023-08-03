@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`rule_name(impl ::std::convert::Into<String>)`](crate::operation::disable_topic_rule::builders::DisableTopicRuleFluentBuilder::rule_name) / [`set_rule_name(Option<String>)`](crate::operation::disable_topic_rule::builders::DisableTopicRuleFluentBuilder::set_rule_name): <p>The name of the rule to disable.</p>
     /// - On success, responds with [`DisableTopicRuleOutput`](crate::operation::disable_topic_rule::DisableTopicRuleOutput)
     /// - On failure, responds with [`SdkError<DisableTopicRuleError>`](crate::operation::disable_topic_rule::DisableTopicRuleError)
-    pub fn disable_topic_rule(
-        &self,
-    ) -> crate::operation::disable_topic_rule::builders::DisableTopicRuleFluentBuilder {
-        crate::operation::disable_topic_rule::builders::DisableTopicRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disable_topic_rule(&self) -> crate::operation::disable_topic_rule::builders::DisableTopicRuleFluentBuilder {
+        crate::operation::disable_topic_rule::builders::DisableTopicRuleFluentBuilder::new(self.handle.clone())
     }
 }

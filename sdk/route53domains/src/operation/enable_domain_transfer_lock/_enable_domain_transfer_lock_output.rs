@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for EnableDomainTransferLockOutput {
 }
 impl EnableDomainTransferLockOutput {
     /// Creates a new builder-style object to manufacture [`EnableDomainTransferLockOutput`](crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockOutput).
-    pub fn builder() -> crate::operation::enable_domain_transfer_lock::builders::EnableDomainTransferLockOutputBuilder{
+    pub fn builder() -> crate::operation::enable_domain_transfer_lock::builders::EnableDomainTransferLockOutputBuilder {
         crate::operation::enable_domain_transfer_lock::builders::EnableDomainTransferLockOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableDomainTransferLockOutput`](crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableDomainTransferLockOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -61,9 +59,7 @@ impl EnableDomainTransferLockOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableDomainTransferLockOutput`](crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockOutput {
+    pub fn build(self) -> crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockOutput {
         crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockOutput {
             operation_id: self.operation_id,
             _request_id: self._request_id,

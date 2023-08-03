@@ -39,10 +39,7 @@ pub fn ser_create_crawler_input(
     if let Some(var_12) = &input.schema_change_policy {
         #[allow(unused_mut)]
         let mut object_13 = object.key("SchemaChangePolicy").start_object();
-        crate::protocol_serde::shape_schema_change_policy::ser_schema_change_policy(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_schema_change_policy::ser_schema_change_policy(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.recrawl_policy {
@@ -54,10 +51,7 @@ pub fn ser_create_crawler_input(
     if let Some(var_16) = &input.lineage_configuration {
         #[allow(unused_mut)]
         let mut object_17 = object.key("LineageConfiguration").start_object();
-        crate::protocol_serde::shape_lineage_configuration::ser_lineage_configuration(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_lineage_configuration::ser_lineage_configuration(&mut object_17, var_16)?;
         object_17.finish();
     }
     if let Some(var_18) = &input.lake_formation_configuration {
@@ -70,9 +64,7 @@ pub fn ser_create_crawler_input(
         object.key("Configuration").string(var_20.as_str());
     }
     if let Some(var_21) = &input.crawler_security_configuration {
-        object
-            .key("CrawlerSecurityConfiguration")
-            .string(var_21.as_str());
+        object.key("CrawlerSecurityConfiguration").string(var_21.as_str());
     }
     if let Some(var_22) = &input.tags {
         #[allow(unused_mut)]

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`permission(Option<ResourceSharePermissionSummary>)`](crate::operation::create_permission::CreatePermissionOutput::permission): <p>A structure with information about this customer managed permission.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::create_permission::CreatePermissionOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     /// - On failure, responds with [`SdkError<CreatePermissionError>`](crate::operation::create_permission::CreatePermissionError)
-    pub fn create_permission(
-        &self,
-    ) -> crate::operation::create_permission::builders::CreatePermissionFluentBuilder {
-        crate::operation::create_permission::builders::CreatePermissionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_permission(&self) -> crate::operation::create_permission::builders::CreatePermissionFluentBuilder {
+        crate::operation::create_permission::builders::CreatePermissionFluentBuilder::new(self.handle.clone())
     }
 }

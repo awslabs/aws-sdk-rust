@@ -21,9 +21,7 @@ pub enum PinVerificationAttributes {
 impl PinVerificationAttributes {
     /// Tries to convert the enum instance into [`Ibm3624Pin`](crate::types::PinVerificationAttributes::Ibm3624Pin), extracting the inner [`Ibm3624PinVerification`](crate::types::Ibm3624PinVerification).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_ibm3624_pin(
-        &self,
-    ) -> ::std::result::Result<&crate::types::Ibm3624PinVerification, &Self> {
+    pub fn as_ibm3624_pin(&self) -> ::std::result::Result<&crate::types::Ibm3624PinVerification, &Self> {
         if let PinVerificationAttributes::Ibm3624Pin(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

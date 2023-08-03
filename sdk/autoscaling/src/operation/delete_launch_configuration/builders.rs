@@ -27,7 +27,7 @@ impl DeleteLaunchConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLaunchConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationInputBuilder,
+    inner: crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationInputBuilder,
 }
 impl DeleteLaunchConfigurationFluentBuilder {
     /// Creates a new `DeleteLaunchConfiguration`.
@@ -38,7 +38,7 @@ impl DeleteLaunchConfigurationFluentBuilder {
         }
     }
     /// Access the DeleteLaunchConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DeleteLaunchConfigurationFluentBuilder {
             crate::operation::delete_launch_configuration::DeleteLaunchConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DeleteLaunchConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DeleteLaunchConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_launch_configuration::DeleteLaunchConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DeleteLaunchConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_launch_configuration::DeleteLaunchConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl DeleteLaunchConfigurationFluentBuilder {
             crate::operation::delete_launch_configuration::DeleteLaunchConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the launch configuration.</p>
-    pub fn launch_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_configuration_name(input.into());
         self
     }
     /// <p>The name of the launch configuration.</p>
-    pub fn set_launch_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_configuration_name(input);
         self
     }

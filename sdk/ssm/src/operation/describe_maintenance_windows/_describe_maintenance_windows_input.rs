@@ -29,19 +29,16 @@ impl DescribeMaintenanceWindowsInput {
 }
 impl DescribeMaintenanceWindowsInput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowsInput`](crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsInput).
-    pub fn builder() -> crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsInputBuilder{
+    pub fn builder() -> crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsInputBuilder {
         crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMaintenanceWindowsInput`](crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowsInputBuilder {
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -58,17 +55,12 @@ impl DescribeMaintenanceWindowsInputBuilder {
         self
     }
     /// <p>Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys are <code>Name</code> and <code>Enabled</code>. For example, <code>Name=MyMaintenanceWindow</code> and <code>Enabled=True</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys are <code>Name</code> and <code>Enabled</code>. For example, <code>Name=MyMaintenanceWindow</code> and <code>Enabled=True</code>.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -106,12 +98,10 @@ impl DescribeMaintenanceWindowsInputBuilder {
         crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

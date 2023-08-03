@@ -31,17 +31,14 @@ impl ::aws_http::request_id::RequestId for GetByteMatchSetOutput {
 }
 impl GetByteMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`GetByteMatchSetOutput`](crate::operation::get_byte_match_set::GetByteMatchSetOutput).
-    pub fn builder() -> crate::operation::get_byte_match_set::builders::GetByteMatchSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_byte_match_set::builders::GetByteMatchSetOutputBuilder {
         crate::operation::get_byte_match_set::builders::GetByteMatchSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetByteMatchSetOutput`](crate::operation::get_byte_match_set::GetByteMatchSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetByteMatchSetOutputBuilder {
     pub(crate) byte_match_set: ::std::option::Option<crate::types::ByteMatchSet>,
     _request_id: Option<String>,
@@ -63,10 +60,7 @@ impl GetByteMatchSetOutputBuilder {
     /// <li> <p> <code>ByteMatchTuples</code>: Contains an array of <code>ByteMatchTuple</code> objects. Each <code>ByteMatchTuple</code> object contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn set_byte_match_set(
-        mut self,
-        input: ::std::option::Option<crate::types::ByteMatchSet>,
-    ) -> Self {
+    pub fn set_byte_match_set(mut self, input: ::std::option::Option<crate::types::ByteMatchSet>) -> Self {
         self.byte_match_set = input;
         self
     }

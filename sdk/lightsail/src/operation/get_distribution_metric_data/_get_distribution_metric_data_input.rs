@@ -119,16 +119,14 @@ impl GetDistributionMetricDataInput {
 }
 impl GetDistributionMetricDataInput {
     /// Creates a new builder-style object to manufacture [`GetDistributionMetricDataInput`](crate::operation::get_distribution_metric_data::GetDistributionMetricDataInput).
-    pub fn builder() -> crate::operation::get_distribution_metric_data::builders::GetDistributionMetricDataInputBuilder{
+    pub fn builder() -> crate::operation::get_distribution_metric_data::builders::GetDistributionMetricDataInputBuilder {
         crate::operation::get_distribution_metric_data::builders::GetDistributionMetricDataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDistributionMetricDataInput`](crate::operation::get_distribution_metric_data::GetDistributionMetricDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDistributionMetricDataInputBuilder {
     pub(crate) distribution_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<crate::types::DistributionMetricName>,
@@ -141,19 +139,13 @@ pub struct GetDistributionMetricDataInputBuilder {
 impl GetDistributionMetricDataInputBuilder {
     /// <p>The name of the distribution for which to get metric data.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn distribution_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the distribution for which to get metric data.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn set_distribution_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_name = input;
         self
     }
@@ -186,10 +178,7 @@ impl GetDistributionMetricDataInputBuilder {
     /// <li> <p> <b> <code>4xxErrorRate</code> </b> - The percentage of all viewer requests for which the response's HTTP status cod was 4xx. In these cases, the client or client viewer may have made an error. For example, a status code of 404 (Not Found) means that the client requested an object that could not be found.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>
     /// <li> <p> <b> <code>5xxErrorRate</code> </b> - The percentage of all viewer requests for which the response's HTTP status code was 5xx. In these cases, the origin server did not satisfy the requests. For example, a status code of 503 (Service Unavailable) means that the origin server is currently unavailable.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>
     /// </ul>
-    pub fn set_metric_name(
-        mut self,
-        input: ::std::option::Option<crate::types::DistributionMetricName>,
-    ) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::DistributionMetricName>) -> Self {
         self.metric_name = input;
         self
     }
@@ -224,10 +213,7 @@ impl GetDistributionMetricDataInputBuilder {
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -259,10 +245,7 @@ impl GetDistributionMetricDataInputBuilder {
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -335,10 +318,7 @@ impl GetDistributionMetricDataInputBuilder {
     /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>) -> Self {
         self.statistics = input;
         self
     }
@@ -351,9 +331,7 @@ impl GetDistributionMetricDataInputBuilder {
     /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn get_statistics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
+    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
         &self.statistics
     }
     /// Consumes the builder and constructs a [`GetDistributionMetricDataInput`](crate::operation::get_distribution_metric_data::GetDistributionMetricDataInput).
@@ -363,16 +341,14 @@ impl GetDistributionMetricDataInputBuilder {
         crate::operation::get_distribution_metric_data::GetDistributionMetricDataInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_distribution_metric_data::GetDistributionMetricDataInput {
-                distribution_name: self.distribution_name,
-                metric_name: self.metric_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                period: self.period,
-                unit: self.unit,
-                statistics: self.statistics,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_distribution_metric_data::GetDistributionMetricDataInput {
+            distribution_name: self.distribution_name,
+            metric_name: self.metric_name,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            period: self.period,
+            unit: self.unit,
+            statistics: self.statistics,
+        })
     }
 }

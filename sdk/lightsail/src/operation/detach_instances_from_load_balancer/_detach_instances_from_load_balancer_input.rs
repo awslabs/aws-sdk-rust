@@ -22,34 +22,26 @@ impl DetachInstancesFromLoadBalancerInput {
 }
 impl DetachInstancesFromLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`DetachInstancesFromLoadBalancerInput`](crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput).
-    pub fn builder() -> crate::operation::detach_instances_from_load_balancer::builders::DetachInstancesFromLoadBalancerInputBuilder{
+    pub fn builder() -> crate::operation::detach_instances_from_load_balancer::builders::DetachInstancesFromLoadBalancerInputBuilder {
         crate::operation::detach_instances_from_load_balancer::builders::DetachInstancesFromLoadBalancerInputBuilder::default()
     }
 }
 
 /// A builder for [`DetachInstancesFromLoadBalancerInput`](crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachInstancesFromLoadBalancerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DetachInstancesFromLoadBalancerInputBuilder {
     /// <p>The name of the Lightsail load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Lightsail load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
@@ -62,27 +54,19 @@ impl DetachInstancesFromLoadBalancerInputBuilder {
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
     ///
     /// <p>An array of strings containing the names of the instances you want to detach from the load balancer.</p>
-    pub fn instance_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_names.unwrap_or_default();
         v.push(input.into());
         self.instance_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of strings containing the names of the instances you want to detach from the load balancer.</p>
-    pub fn set_instance_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_names = input;
         self
     }
     /// <p>An array of strings containing the names of the instances you want to detach from the load balancer.</p>
-    pub fn get_instance_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_names
     }
     /// Consumes the builder and constructs a [`DetachInstancesFromLoadBalancerInput`](crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput).
@@ -94,11 +78,9 @@ impl DetachInstancesFromLoadBalancerInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput {
-                load_balancer_name: self.load_balancer_name
-                ,
-                instance_names: self.instance_names
-                ,
-            }
+                load_balancer_name: self.load_balancer_name,
+                instance_names: self.instance_names,
+            },
         )
     }
 }

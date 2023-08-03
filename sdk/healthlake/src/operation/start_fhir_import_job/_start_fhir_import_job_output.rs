@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for StartFhirImportJobOutput {
 }
 impl StartFhirImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartFhirImportJobOutput`](crate::operation::start_fhir_import_job::StartFhirImportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_fhir_import_job::builders::StartFhirImportJobOutputBuilder {
-        crate::operation::start_fhir_import_job::builders::StartFhirImportJobOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_fhir_import_job::builders::StartFhirImportJobOutputBuilder {
+        crate::operation::start_fhir_import_job::builders::StartFhirImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartFhirImportJobOutput`](crate::operation::start_fhir_import_job::StartFhirImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFhirImportJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,

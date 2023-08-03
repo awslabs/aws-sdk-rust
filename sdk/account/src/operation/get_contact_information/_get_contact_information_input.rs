@@ -21,18 +21,14 @@ impl GetContactInformationInput {
 }
 impl GetContactInformationInput {
     /// Creates a new builder-style object to manufacture [`GetContactInformationInput`](crate::operation::get_contact_information::GetContactInformationInput).
-    pub fn builder(
-    ) -> crate::operation::get_contact_information::builders::GetContactInformationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_contact_information::builders::GetContactInformationInputBuilder {
         crate::operation::get_contact_information::builders::GetContactInformationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetContactInformationInput`](crate::operation::get_contact_information::GetContactInformationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContactInformationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
@@ -63,14 +59,8 @@ impl GetContactInformationInputBuilder {
     /// Consumes the builder and constructs a [`GetContactInformationInput`](crate::operation::get_contact_information::GetContactInformationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_contact_information::GetContactInformationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_contact_information::GetContactInformationInput {
-                account_id: self.account_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_contact_information::GetContactInformationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_contact_information::GetContactInformationInput { account_id: self.account_id })
     }
 }

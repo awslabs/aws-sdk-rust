@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListGameServerGroupsOutput {
 }
 impl ListGameServerGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListGameServerGroupsOutput`](crate::operation::list_game_server_groups::ListGameServerGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_game_server_groups::builders::ListGameServerGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_game_server_groups::builders::ListGameServerGroupsOutputBuilder {
         crate::operation::list_game_server_groups::builders::ListGameServerGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListGameServerGroupsOutput`](crate::operation::list_game_server_groups::ListGameServerGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGameServerGroupsOutputBuilder {
-    pub(crate) game_server_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroup>>,
+    pub(crate) game_server_groups: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListGameServerGroupsOutputBuilder {
         self
     }
     /// <p>The game server groups' game server groups.</p>
-    pub fn set_game_server_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroup>>,
-    ) -> Self {
+    pub fn set_game_server_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroup>>) -> Self {
         self.game_server_groups = input;
         self
     }
     /// <p>The game server groups' game server groups.</p>
-    pub fn get_game_server_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerGroup>> {
+    pub fn get_game_server_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerGroup>> {
         &self.game_server_groups
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateWorkspaceOutput`](crate::operation::update_workspace::UpdateWorkspaceOutput) with field(s):
     ///   - [`update_date_time(Option<DateTime>)`](crate::operation::update_workspace::UpdateWorkspaceOutput::update_date_time): <p>The date and time of the current update.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkspaceError>`](crate::operation::update_workspace::UpdateWorkspaceError)
-    pub fn update_workspace(
-        &self,
-    ) -> crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder {
-        crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_workspace(&self) -> crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder {
+        crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,18 +22,14 @@ impl DescribeSignalingChannelInput {
 }
 impl DescribeSignalingChannelInput {
     /// Creates a new builder-style object to manufacture [`DescribeSignalingChannelInput`](crate::operation::describe_signaling_channel::DescribeSignalingChannelInput).
-    pub fn builder(
-    ) -> crate::operation::describe_signaling_channel::builders::DescribeSignalingChannelInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_signaling_channel::builders::DescribeSignalingChannelInputBuilder {
         crate::operation::describe_signaling_channel::builders::DescribeSignalingChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSignalingChannelInput`](crate::operation::describe_signaling_channel::DescribeSignalingChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSignalingChannelInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl DescribeSignalingChannelInputBuilder {
         crate::operation::describe_signaling_channel::DescribeSignalingChannelInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_signaling_channel::DescribeSignalingChannelInput {
-                channel_name: self.channel_name,
-                channel_arn: self.channel_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_signaling_channel::DescribeSignalingChannelInput {
+            channel_name: self.channel_name,
+            channel_arn: self.channel_arn,
+        })
     }
 }

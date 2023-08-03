@@ -42,9 +42,7 @@ impl UpdateEnvironmentInput {
     /// </ul> <note>
     /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
     /// </note>
-    pub fn managed_credentials_action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ManagedCredentialsAction> {
+    pub fn managed_credentials_action(&self) -> ::std::option::Option<&crate::types::ManagedCredentialsAction> {
         self.managed_credentials_action.as_ref()
     }
 }
@@ -54,17 +52,13 @@ impl ::std::fmt::Debug for UpdateEnvironmentInput {
         formatter.field("environment_id", &self.environment_id);
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "managed_credentials_action",
-            &self.managed_credentials_action,
-        );
+        formatter.field("managed_credentials_action", &self.managed_credentials_action);
         formatter.finish()
     }
 }
 impl UpdateEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
-    pub fn builder() -> crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder {
         crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder::default()
     }
 }
@@ -76,23 +70,16 @@ pub struct UpdateEnvironmentInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) managed_credentials_action:
-        ::std::option::Option<crate::types::ManagedCredentialsAction>,
+    pub(crate) managed_credentials_action: ::std::option::Option<crate::types::ManagedCredentialsAction>,
 }
 impl UpdateEnvironmentInputBuilder {
     /// <p>The ID of the environment to change settings.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the environment to change settings.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -135,10 +122,7 @@ impl UpdateEnvironmentInputBuilder {
     /// </ul> <note>
     /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
     /// </note>
-    pub fn managed_credentials_action(
-        mut self,
-        input: crate::types::ManagedCredentialsAction,
-    ) -> Self {
+    pub fn managed_credentials_action(mut self, input: crate::types::ManagedCredentialsAction) -> Self {
         self.managed_credentials_action = ::std::option::Option::Some(input);
         self
     }
@@ -149,10 +133,7 @@ impl UpdateEnvironmentInputBuilder {
     /// </ul> <note>
     /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
     /// </note>
-    pub fn set_managed_credentials_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ManagedCredentialsAction>,
-    ) -> Self {
+    pub fn set_managed_credentials_action(mut self, input: ::std::option::Option<crate::types::ManagedCredentialsAction>) -> Self {
         self.managed_credentials_action = input;
         self
     }
@@ -163,26 +144,19 @@ impl UpdateEnvironmentInputBuilder {
     /// </ul> <note>
     /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
     /// </note>
-    pub fn get_managed_credentials_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::ManagedCredentialsAction> {
+    pub fn get_managed_credentials_action(&self) -> &::std::option::Option<crate::types::ManagedCredentialsAction> {
         &self.managed_credentials_action
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_environment::UpdateEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_environment::UpdateEnvironmentInput {
-                environment_id: self.environment_id,
-                name: self.name,
-                description: self.description,
-                managed_credentials_action: self.managed_credentials_action,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_environment::UpdateEnvironmentInput {
+            environment_id: self.environment_id,
+            name: self.name,
+            description: self.description,
+            managed_credentials_action: self.managed_credentials_action,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateEnvironmentInputBuilder {
@@ -191,10 +165,7 @@ impl ::std::fmt::Debug for UpdateEnvironmentInputBuilder {
         formatter.field("environment_id", &self.environment_id);
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "managed_credentials_action",
-            &self.managed_credentials_action,
-        );
+        formatter.field("managed_credentials_action", &self.managed_credentials_action);
         formatter.finish()
     }
 }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`custom_line_items(Option<Vec<CustomLineItemListElement>>)`](crate::operation::list_custom_line_items::ListCustomLineItemsOutput::custom_line_items): <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_line_items::ListCustomLineItemsOutput::next_token): <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     /// - On failure, responds with [`SdkError<ListCustomLineItemsError>`](crate::operation::list_custom_line_items::ListCustomLineItemsError)
-    pub fn list_custom_line_items(
-        &self,
-    ) -> crate::operation::list_custom_line_items::builders::ListCustomLineItemsFluentBuilder {
-        crate::operation::list_custom_line_items::builders::ListCustomLineItemsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_custom_line_items(&self) -> crate::operation::list_custom_line_items::builders::ListCustomLineItemsFluentBuilder {
+        crate::operation::list_custom_line_items::builders::ListCustomLineItemsFluentBuilder::new(self.handle.clone())
     }
 }

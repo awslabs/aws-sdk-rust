@@ -27,7 +27,7 @@ impl CreateClusterSubnetGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateClusterSubnetGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupInputBuilder,
+    inner: crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupInputBuilder,
 }
 impl CreateClusterSubnetGroupFluentBuilder {
     /// Creates a new `CreateClusterSubnetGroup`.
@@ -38,7 +38,7 @@ impl CreateClusterSubnetGroupFluentBuilder {
         }
     }
     /// Access the CreateClusterSubnetGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateClusterSubnetGroupFluentBuilder {
             crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateClusterSubnetGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateClusterSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateClusterSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl CreateClusterSubnetGroupFluentBuilder {
             crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +118,7 @@ impl CreateClusterSubnetGroupFluentBuilder {
     /// <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>examplesubnetgroup</code> </p>
-    pub fn cluster_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_subnet_group_name(input.into());
         self
     }
@@ -144,10 +130,7 @@ impl CreateClusterSubnetGroupFluentBuilder {
     /// <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>examplesubnetgroup</code> </p>
-    pub fn set_cluster_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_subnet_group_name(input);
         self
     }
@@ -186,10 +169,7 @@ impl CreateClusterSubnetGroupFluentBuilder {
         self
     }
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -207,10 +187,7 @@ impl CreateClusterSubnetGroupFluentBuilder {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

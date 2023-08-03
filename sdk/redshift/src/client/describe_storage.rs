@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`total_backup_size_in_mega_bytes(f64)`](crate::operation::describe_storage::DescribeStorageOutput::total_backup_size_in_mega_bytes): <p>The total amount of storage currently used for snapshots.</p>
     ///   - [`total_provisioned_storage_in_mega_bytes(f64)`](crate::operation::describe_storage::DescribeStorageOutput::total_provisioned_storage_in_mega_bytes): <p>The total amount of storage currently provisioned.</p>
     /// - On failure, responds with [`SdkError<DescribeStorageError>`](crate::operation::describe_storage::DescribeStorageError)
-    pub fn describe_storage(
-        &self,
-    ) -> crate::operation::describe_storage::builders::DescribeStorageFluentBuilder {
-        crate::operation::describe_storage::builders::DescribeStorageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_storage(&self) -> crate::operation::describe_storage::builders::DescribeStorageFluentBuilder {
+        crate::operation::describe_storage::builders::DescribeStorageFluentBuilder::new(self.handle.clone())
     }
 }

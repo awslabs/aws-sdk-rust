@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ConfigureAccessPointOutput {
 }
 impl ConfigureAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`ConfigureAccessPointOutput`](crate::operation::configure_access_point::ConfigureAccessPointOutput).
-    pub fn builder(
-    ) -> crate::operation::configure_access_point::builders::ConfigureAccessPointOutputBuilder {
+    pub fn builder() -> crate::operation::configure_access_point::builders::ConfigureAccessPointOutputBuilder {
         crate::operation::configure_access_point::builders::ConfigureAccessPointOutputBuilder::default()
     }
 }
 
 /// A builder for [`ConfigureAccessPointOutput`](crate::operation::configure_access_point::ConfigureAccessPointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigureAccessPointOutputBuilder {
     pub(crate) access_point: ::std::option::Option<crate::types::NetworkResource>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl ConfigureAccessPointOutputBuilder {
         self
     }
     /// <p>Information about the network resource.</p>
-    pub fn set_access_point(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkResource>,
-    ) -> Self {
+    pub fn set_access_point(mut self, input: ::std::option::Option<crate::types::NetworkResource>) -> Self {
         self.access_point = input;
         self
     }

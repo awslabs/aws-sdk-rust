@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetAccessPointPolicyOutput`](crate::operation::get_access_point_policy::GetAccessPointPolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::get_access_point_policy::GetAccessPointPolicyOutput::policy): <p>The access point policy associated with the specified access point.</p>
     /// - On failure, responds with [`SdkError<GetAccessPointPolicyError>`](crate::operation::get_access_point_policy::GetAccessPointPolicyError)
-    pub fn get_access_point_policy(
-        &self,
-    ) -> crate::operation::get_access_point_policy::builders::GetAccessPointPolicyFluentBuilder
-    {
-        crate::operation::get_access_point_policy::builders::GetAccessPointPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_access_point_policy(&self) -> crate::operation::get_access_point_policy::builders::GetAccessPointPolicyFluentBuilder {
+        crate::operation::get_access_point_policy::builders::GetAccessPointPolicyFluentBuilder::new(self.handle.clone())
     }
 }

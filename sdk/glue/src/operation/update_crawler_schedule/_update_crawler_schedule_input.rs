@@ -22,18 +22,14 @@ impl UpdateCrawlerScheduleInput {
 }
 impl UpdateCrawlerScheduleInput {
     /// Creates a new builder-style object to manufacture [`UpdateCrawlerScheduleInput`](crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::update_crawler_schedule::builders::UpdateCrawlerScheduleInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_crawler_schedule::builders::UpdateCrawlerScheduleInputBuilder {
         crate::operation::update_crawler_schedule::builders::UpdateCrawlerScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCrawlerScheduleInput`](crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCrawlerScheduleInputBuilder {
     pub(crate) crawler_name: ::std::option::Option<::std::string::String>,
     pub(crate) schedule: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl UpdateCrawlerScheduleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCrawlerScheduleInput`](crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput {
-                crawler_name: self.crawler_name,
-                schedule: self.schedule,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput {
+            crawler_name: self.crawler_name,
+            schedule: self.schedule,
+        })
     }
 }

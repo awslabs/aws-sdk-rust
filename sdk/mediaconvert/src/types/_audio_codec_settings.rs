@@ -93,9 +93,7 @@ impl AudioCodecSettings {
 
 /// A builder for [`AudioCodecSettings`](crate::types::AudioCodecSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioCodecSettingsBuilder {
     pub(crate) aac_settings: ::std::option::Option<crate::types::AacSettings>,
     pub(crate) ac3_settings: ::std::option::Option<crate::types::Ac3Settings>,
@@ -116,10 +114,7 @@ impl AudioCodecSettingsBuilder {
         self
     }
     /// Required when you set Codec to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode to "VBR" or "CBR". In VBR mode, you control the audio quality with the setting VBR quality. In CBR mode, you use the setting Bitrate. Defaults and valid values depend on the rate control mode.
-    pub fn set_aac_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AacSettings>,
-    ) -> Self {
+    pub fn set_aac_settings(mut self, input: ::std::option::Option<crate::types::AacSettings>) -> Self {
         self.aac_settings = input;
         self
     }
@@ -133,10 +128,7 @@ impl AudioCodecSettingsBuilder {
         self
     }
     /// Required when you set Codec to the value AC3.
-    pub fn set_ac3_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Ac3Settings>,
-    ) -> Self {
+    pub fn set_ac3_settings(mut self, input: ::std::option::Option<crate::types::Ac3Settings>) -> Self {
         self.ac3_settings = input;
         self
     }
@@ -150,10 +142,7 @@ impl AudioCodecSettingsBuilder {
         self
     }
     /// Required when you set Codec to the value AIFF.
-    pub fn set_aiff_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AiffSettings>,
-    ) -> Self {
+    pub fn set_aiff_settings(mut self, input: ::std::option::Option<crate::types::AiffSettings>) -> Self {
         self.aiff_settings = input;
         self
     }
@@ -181,17 +170,12 @@ impl AudioCodecSettingsBuilder {
         self
     }
     /// Required when you set Codec to the value EAC3_ATMOS.
-    pub fn set_eac3_atmos_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3AtmosSettings>,
-    ) -> Self {
+    pub fn set_eac3_atmos_settings(mut self, input: ::std::option::Option<crate::types::Eac3AtmosSettings>) -> Self {
         self.eac3_atmos_settings = input;
         self
     }
     /// Required when you set Codec to the value EAC3_ATMOS.
-    pub fn get_eac3_atmos_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::Eac3AtmosSettings> {
+    pub fn get_eac3_atmos_settings(&self) -> &::std::option::Option<crate::types::Eac3AtmosSettings> {
         &self.eac3_atmos_settings
     }
     /// Required when you set Codec to the value EAC3.
@@ -200,10 +184,7 @@ impl AudioCodecSettingsBuilder {
         self
     }
     /// Required when you set Codec to the value EAC3.
-    pub fn set_eac3_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3Settings>,
-    ) -> Self {
+    pub fn set_eac3_settings(mut self, input: ::std::option::Option<crate::types::Eac3Settings>) -> Self {
         self.eac3_settings = input;
         self
     }
@@ -217,10 +198,7 @@ impl AudioCodecSettingsBuilder {
         self
     }
     /// Required when you set Codec to the value MP2.
-    pub fn set_mp2_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Mp2Settings>,
-    ) -> Self {
+    pub fn set_mp2_settings(mut self, input: ::std::option::Option<crate::types::Mp2Settings>) -> Self {
         self.mp2_settings = input;
         self
     }
@@ -234,10 +212,7 @@ impl AudioCodecSettingsBuilder {
         self
     }
     /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value MP3.
-    pub fn set_mp3_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Mp3Settings>,
-    ) -> Self {
+    pub fn set_mp3_settings(mut self, input: ::std::option::Option<crate::types::Mp3Settings>) -> Self {
         self.mp3_settings = input;
         self
     }
@@ -251,10 +226,7 @@ impl AudioCodecSettingsBuilder {
         self
     }
     /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value OPUS.
-    pub fn set_opus_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::OpusSettings>,
-    ) -> Self {
+    pub fn set_opus_settings(mut self, input: ::std::option::Option<crate::types::OpusSettings>) -> Self {
         self.opus_settings = input;
         self
     }
@@ -268,10 +240,7 @@ impl AudioCodecSettingsBuilder {
         self
     }
     /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value Vorbis.
-    pub fn set_vorbis_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::VorbisSettings>,
-    ) -> Self {
+    pub fn set_vorbis_settings(mut self, input: ::std::option::Option<crate::types::VorbisSettings>) -> Self {
         self.vorbis_settings = input;
         self
     }
@@ -285,10 +254,7 @@ impl AudioCodecSettingsBuilder {
         self
     }
     /// Required when you set Codec to the value WAV.
-    pub fn set_wav_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::WavSettings>,
-    ) -> Self {
+    pub fn set_wav_settings(mut self, input: ::std::option::Option<crate::types::WavSettings>) -> Self {
         self.wav_settings = input;
         self
     }

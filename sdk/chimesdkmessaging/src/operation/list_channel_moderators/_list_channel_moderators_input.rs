@@ -46,9 +46,7 @@ impl ::std::fmt::Debug for ListChannelModeratorsInput {
 }
 impl ListChannelModeratorsInput {
     /// Creates a new builder-style object to manufacture [`ListChannelModeratorsInput`](crate::operation::list_channel_moderators::ListChannelModeratorsInput).
-    pub fn builder(
-    ) -> crate::operation::list_channel_moderators::builders::ListChannelModeratorsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_channel_moderators::builders::ListChannelModeratorsInputBuilder {
         crate::operation::list_channel_moderators::builders::ListChannelModeratorsInputBuilder::default()
     }
 }
@@ -122,18 +120,14 @@ impl ListChannelModeratorsInputBuilder {
     /// Consumes the builder and constructs a [`ListChannelModeratorsInput`](crate::operation::list_channel_moderators::ListChannelModeratorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_channel_moderators::ListChannelModeratorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_channel_moderators::ListChannelModeratorsInput {
-                channel_arn: self.channel_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                chime_bearer: self.chime_bearer,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_channel_moderators::ListChannelModeratorsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_channel_moderators::ListChannelModeratorsInput {
+            channel_arn: self.channel_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            chime_bearer: self.chime_bearer,
+        })
     }
 }
 impl ::std::fmt::Debug for ListChannelModeratorsInputBuilder {

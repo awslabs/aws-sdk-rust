@@ -10,10 +10,7 @@ impl GetInventoryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_inventory::GetInventoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_inventory::GetInventoryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_inventory::GetInventoryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_inventory();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetInventoryFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_inventory::GetInventory,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_inventory::GetInventory, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_inventory::GetInventoryError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetInventoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetInventoryFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_inventory::GetInventory,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_inventory::GetInventory, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_inventory::GetInventoryError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl GetInventoryFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_inventory::paginator::GetInventoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_inventory::paginator::GetInventoryPaginator {
-        crate::operation::get_inventory::paginator::GetInventoryPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_inventory::paginator::GetInventoryPaginator {
+        crate::operation::get_inventory::paginator::GetInventoryPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -133,17 +116,12 @@ impl GetInventoryFluentBuilder {
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
         self.inner.get_filters()
     }
     /// Appends an item to `Aggregators`.
@@ -156,17 +134,12 @@ impl GetInventoryFluentBuilder {
         self
     }
     /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
-    pub fn set_aggregators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>>,
-    ) -> Self {
+    pub fn set_aggregators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>>) -> Self {
         self.inner = self.inner.set_aggregators(input);
         self
     }
     /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
-    pub fn get_aggregators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>> {
+    pub fn get_aggregators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>> {
         self.inner.get_aggregators()
     }
     /// Appends an item to `ResultAttributes`.
@@ -179,17 +152,12 @@ impl GetInventoryFluentBuilder {
         self
     }
     /// <p>The list of inventory item types to return.</p>
-    pub fn set_result_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>>,
-    ) -> Self {
+    pub fn set_result_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>>) -> Self {
         self.inner = self.inner.set_result_attributes(input);
         self
     }
     /// <p>The list of inventory item types to return.</p>
-    pub fn get_result_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>> {
+    pub fn get_result_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>> {
         self.inner.get_result_attributes()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>

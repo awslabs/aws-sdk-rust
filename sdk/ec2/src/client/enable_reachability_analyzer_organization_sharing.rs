@@ -7,7 +7,12 @@ impl super::Client {
     /// - On success, responds with [`EnableReachabilityAnalyzerOrganizationSharingOutput`](crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingOutput) with field(s):
     ///   - [`return_value(Option<bool>)`](crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingOutput::return_value): <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     /// - On failure, responds with [`SdkError<EnableReachabilityAnalyzerOrganizationSharingError>`](crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingError)
-    pub fn enable_reachability_analyzer_organization_sharing(&self) -> crate::operation::enable_reachability_analyzer_organization_sharing::builders::EnableReachabilityAnalyzerOrganizationSharingFluentBuilder{
-        crate::operation::enable_reachability_analyzer_organization_sharing::builders::EnableReachabilityAnalyzerOrganizationSharingFluentBuilder::new(self.handle.clone())
+    pub fn enable_reachability_analyzer_organization_sharing(
+        &self,
+    ) -> crate::operation::enable_reachability_analyzer_organization_sharing::builders::EnableReachabilityAnalyzerOrganizationSharingFluentBuilder
+    {
+        crate::operation::enable_reachability_analyzer_organization_sharing::builders::EnableReachabilityAnalyzerOrganizationSharingFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

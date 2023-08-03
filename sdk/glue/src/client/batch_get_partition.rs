@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`partitions(Option<Vec<Partition>>)`](crate::operation::batch_get_partition::BatchGetPartitionOutput::partitions): <p>A list of the requested partitions.</p>
     ///   - [`unprocessed_keys(Option<Vec<PartitionValueList>>)`](crate::operation::batch_get_partition::BatchGetPartitionOutput::unprocessed_keys): <p>A list of the partition values in the request for which partitions were not returned.</p>
     /// - On failure, responds with [`SdkError<BatchGetPartitionError>`](crate::operation::batch_get_partition::BatchGetPartitionError)
-    pub fn batch_get_partition(
-        &self,
-    ) -> crate::operation::batch_get_partition::builders::BatchGetPartitionFluentBuilder {
-        crate::operation::batch_get_partition::builders::BatchGetPartitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_partition(&self) -> crate::operation::batch_get_partition::builders::BatchGetPartitionFluentBuilder {
+        crate::operation::batch_get_partition::builders::BatchGetPartitionFluentBuilder::new(self.handle.clone())
     }
 }

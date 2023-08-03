@@ -6,8 +6,7 @@
 pub struct BatchCreateIndex {
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
     #[doc(hidden)]
-    pub ordered_indexed_attribute_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeKey>>,
+    pub ordered_indexed_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKey>>,
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
     #[doc(hidden)]
     pub is_unique: bool,
@@ -23,9 +22,7 @@ pub struct BatchCreateIndex {
 }
 impl BatchCreateIndex {
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
-    pub fn ordered_indexed_attribute_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AttributeKey]> {
+    pub fn ordered_indexed_attribute_list(&self) -> ::std::option::Option<&[crate::types::AttributeKey]> {
         self.ordered_indexed_attribute_list.as_deref()
     }
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
@@ -54,12 +51,9 @@ impl BatchCreateIndex {
 
 /// A builder for [`BatchCreateIndex`](crate::types::BatchCreateIndex).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateIndexBuilder {
-    pub(crate) ordered_indexed_attribute_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeKey>>,
+    pub(crate) ordered_indexed_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKey>>,
     pub(crate) is_unique: ::std::option::Option<bool>,
     pub(crate) parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) link_name: ::std::option::Option<::std::string::String>,
@@ -78,17 +72,12 @@ impl BatchCreateIndexBuilder {
         self
     }
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
-    pub fn set_ordered_indexed_attribute_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKey>>,
-    ) -> Self {
+    pub fn set_ordered_indexed_attribute_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKey>>) -> Self {
         self.ordered_indexed_attribute_list = input;
         self
     }
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
-    pub fn get_ordered_indexed_attribute_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKey>> {
+    pub fn get_ordered_indexed_attribute_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKey>> {
         &self.ordered_indexed_attribute_list
     }
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
@@ -111,10 +100,7 @@ impl BatchCreateIndexBuilder {
         self
     }
     /// <p>A reference to the parent object that contains the index object.</p>
-    pub fn set_parent_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_parent_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.parent_reference = input;
         self
     }
@@ -137,18 +123,12 @@ impl BatchCreateIndexBuilder {
         &self.link_name
     }
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-    pub fn batch_reference_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_reference_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_reference_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-    pub fn set_batch_reference_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_reference_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.batch_reference_name = input;
         self
     }

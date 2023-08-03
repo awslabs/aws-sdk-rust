@@ -15,16 +15,14 @@ impl DisassociateThirdPartyFirewallInput {
 }
 impl DisassociateThirdPartyFirewallInput {
     /// Creates a new builder-style object to manufacture [`DisassociateThirdPartyFirewallInput`](crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallInput).
-    pub fn builder() -> crate::operation::disassociate_third_party_firewall::builders::DisassociateThirdPartyFirewallInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_third_party_firewall::builders::DisassociateThirdPartyFirewallInputBuilder {
         crate::operation::disassociate_third_party_firewall::builders::DisassociateThirdPartyFirewallInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateThirdPartyFirewallInput`](crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateThirdPartyFirewallInputBuilder {
     pub(crate) third_party_firewall: ::std::option::Option<crate::types::ThirdPartyFirewall>,
 }
@@ -35,17 +33,12 @@ impl DisassociateThirdPartyFirewallInputBuilder {
         self
     }
     /// <p>The name of the third-party firewall vendor.</p>
-    pub fn set_third_party_firewall(
-        mut self,
-        input: ::std::option::Option<crate::types::ThirdPartyFirewall>,
-    ) -> Self {
+    pub fn set_third_party_firewall(mut self, input: ::std::option::Option<crate::types::ThirdPartyFirewall>) -> Self {
         self.third_party_firewall = input;
         self
     }
     /// <p>The name of the third-party firewall vendor.</p>
-    pub fn get_third_party_firewall(
-        &self,
-    ) -> &::std::option::Option<crate::types::ThirdPartyFirewall> {
+    pub fn get_third_party_firewall(&self) -> &::std::option::Option<crate::types::ThirdPartyFirewall> {
         &self.third_party_firewall
     }
     /// Consumes the builder and constructs a [`DisassociateThirdPartyFirewallInput`](crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallInput).
@@ -55,11 +48,8 @@ impl DisassociateThirdPartyFirewallInputBuilder {
         crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallInput {
-                third_party_firewall: self.third_party_firewall
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallInput {
+            third_party_firewall: self.third_party_firewall,
+        })
     }
 }

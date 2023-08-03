@@ -38,13 +38,7 @@
 /// When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum M3u8PcrControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for M3u8PcrControl {
         match s {
             "CONFIGURED_PCR_PERIOD" => M3u8PcrControl::ConfiguredPcrPeriod,
             "PCR_EVERY_PES_PACKET" => M3u8PcrControl::PcrEveryPesPacket,
-            other => {
-                M3u8PcrControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => M3u8PcrControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

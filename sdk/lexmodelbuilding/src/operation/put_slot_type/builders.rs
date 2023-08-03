@@ -10,10 +10,7 @@ impl PutSlotTypeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_slot_type::PutSlotTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_slot_type::PutSlotTypeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_slot_type::PutSlotTypeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_slot_type();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl PutSlotTypeFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_slot_type::PutSlotType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_slot_type::PutSlotType, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_slot_type::PutSlotTypeError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl PutSlotTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +98,7 @@ impl PutSlotTypeFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_slot_type::PutSlotType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_slot_type::PutSlotType, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_slot_type::PutSlotTypeError>,
     > {
         self.customize_middleware().await
@@ -163,19 +151,14 @@ impl PutSlotTypeFluentBuilder {
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot. </p>
     /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
     /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use. </p>
-    pub fn set_enumeration_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>>,
-    ) -> Self {
+    pub fn set_enumeration_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>>) -> Self {
         self.inner = self.inner.set_enumeration_values(input);
         self
     }
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot. </p>
     /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
     /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use. </p>
-    pub fn get_enumeration_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>> {
+    pub fn get_enumeration_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>> {
         self.inner.get_enumeration_values()
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
@@ -204,10 +187,7 @@ impl PutSlotTypeFluentBuilder {
     /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
-    pub fn value_selection_strategy(
-        mut self,
-        input: crate::types::SlotValueSelectionStrategy,
-    ) -> Self {
+    pub fn value_selection_strategy(mut self, input: crate::types::SlotValueSelectionStrategy) -> Self {
         self.inner = self.inner.value_selection_strategy(input);
         self
     }
@@ -217,10 +197,7 @@ impl PutSlotTypeFluentBuilder {
     /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
-    pub fn set_value_selection_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotValueSelectionStrategy>,
-    ) -> Self {
+    pub fn set_value_selection_strategy(mut self, input: ::std::option::Option<crate::types::SlotValueSelectionStrategy>) -> Self {
         self.inner = self.inner.set_value_selection_strategy(input);
         self
     }
@@ -230,9 +207,7 @@ impl PutSlotTypeFluentBuilder {
     /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
-    pub fn get_value_selection_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::SlotValueSelectionStrategy> {
+    pub fn get_value_selection_strategy(&self) -> &::std::option::Option<crate::types::SlotValueSelectionStrategy> {
         self.inner.get_value_selection_strategy()
     }
     /// <p>When set to <code>true</code> a new numbered version of the slot type is created. This is the same as calling the <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>.</p>
@@ -251,19 +226,13 @@ impl PutSlotTypeFluentBuilder {
     }
     /// <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p>
     /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
-    pub fn parent_slot_type_signature(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_slot_type_signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_slot_type_signature(input.into());
         self
     }
     /// <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p>
     /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
-    pub fn set_parent_slot_type_signature(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_slot_type_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_slot_type_signature(input);
         self
     }
@@ -282,17 +251,12 @@ impl PutSlotTypeFluentBuilder {
         self
     }
     /// <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
-    pub fn set_slot_type_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>>,
-    ) -> Self {
+    pub fn set_slot_type_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>>) -> Self {
         self.inner = self.inner.set_slot_type_configurations(input);
         self
     }
     /// <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
-    pub fn get_slot_type_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>> {
+    pub fn get_slot_type_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>> {
         self.inner.get_slot_type_configurations()
     }
 }

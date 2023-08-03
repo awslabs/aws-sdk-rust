@@ -37,9 +37,7 @@ impl UpdateProfilingGroupFluentBuilder {
         }
     }
     /// Access the UpdateProfilingGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_profiling_group::builders::UpdateProfilingGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_profiling_group::builders::UpdateProfilingGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateProfilingGroupFluentBuilder {
             crate::operation::update_profiling_group::UpdateProfilingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_profiling_group::UpdateProfilingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_profiling_group::UpdateProfilingGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateProfilingGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateProfilingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_profiling_group::UpdateProfilingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_profiling_group::UpdateProfilingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_profiling_group::UpdateProfilingGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateProfilingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_profiling_group::UpdateProfilingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_profiling_group::UpdateProfilingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_profiling_group::UpdateProfilingGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateProfilingGroupFluentBuilder {
             crate::operation::update_profiling_group::UpdateProfilingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_profiling_group::UpdateProfilingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_profiling_group::UpdateProfilingGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the profiling group to update.</p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
     /// <p>The name of the profiling group to update.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
@@ -143,25 +124,17 @@ impl UpdateProfilingGroupFluentBuilder {
         self.inner.get_profiling_group_name()
     }
     /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
-    pub fn agent_orchestration_config(
-        mut self,
-        input: crate::types::AgentOrchestrationConfig,
-    ) -> Self {
+    pub fn agent_orchestration_config(mut self, input: crate::types::AgentOrchestrationConfig) -> Self {
         self.inner = self.inner.agent_orchestration_config(input);
         self
     }
     /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
-    pub fn set_agent_orchestration_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AgentOrchestrationConfig>,
-    ) -> Self {
+    pub fn set_agent_orchestration_config(mut self, input: ::std::option::Option<crate::types::AgentOrchestrationConfig>) -> Self {
         self.inner = self.inner.set_agent_orchestration_config(input);
         self
     }
     /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
-    pub fn get_agent_orchestration_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AgentOrchestrationConfig> {
+    pub fn get_agent_orchestration_config(&self) -> &::std::option::Option<crate::types::AgentOrchestrationConfig> {
         self.inner.get_agent_orchestration_config()
     }
 }

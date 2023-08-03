@@ -56,9 +56,7 @@ impl CreateAnalysisOutput {
 
 /// A builder for [`CreateAnalysisOutput`](crate::operation::create_analysis::CreateAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAnalysisOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl CreateAnalysisOutputBuilder {
         self
     }
     /// <p>The status of the creation of the analysis. </p>
-    pub fn set_creation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_creation_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.creation_status = input;
         self
     }

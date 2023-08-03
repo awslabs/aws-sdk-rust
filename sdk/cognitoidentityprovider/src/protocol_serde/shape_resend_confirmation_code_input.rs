@@ -12,10 +12,7 @@ pub fn ser_resend_confirmation_code_input(
     if let Some(var_3) = &input.user_context_data {
         #[allow(unused_mut)]
         let mut object_4 = object.key("UserContextData").start_object();
-        crate::protocol_serde::shape_user_context_data_type::ser_user_context_data_type(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_user_context_data_type::ser_user_context_data_type(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.username {
@@ -24,10 +21,7 @@ pub fn ser_resend_confirmation_code_input(
     if let Some(var_6) = &input.analytics_metadata {
         #[allow(unused_mut)]
         let mut object_7 = object.key("AnalyticsMetadata").start_object();
-        crate::protocol_serde::shape_analytics_metadata_type::ser_analytics_metadata_type(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_analytics_metadata_type::ser_analytics_metadata_type(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.client_metadata {

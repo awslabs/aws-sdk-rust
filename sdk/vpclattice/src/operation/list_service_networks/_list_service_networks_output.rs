@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListServiceNetworksOutput {
 }
 impl ListServiceNetworksOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceNetworksOutput`](crate::operation::list_service_networks::ListServiceNetworksOutput).
-    pub fn builder(
-    ) -> crate::operation::list_service_networks::builders::ListServiceNetworksOutputBuilder {
-        crate::operation::list_service_networks::builders::ListServiceNetworksOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_service_networks::builders::ListServiceNetworksOutputBuilder {
+        crate::operation::list_service_networks::builders::ListServiceNetworksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceNetworksOutput`](crate::operation::list_service_networks::ListServiceNetworksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceNetworksOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListServiceNetworksOutputBuilder {
         self
     }
     /// <p>Information about the service networks.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Information about the service networks.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkSummary>> {
         &self.items
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>

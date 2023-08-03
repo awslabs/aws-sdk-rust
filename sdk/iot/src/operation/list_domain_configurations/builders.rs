@@ -27,7 +27,7 @@ impl ListDomainConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDomainConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_domain_configurations::builders::ListDomainConfigurationsInputBuilder,
+    inner: crate::operation::list_domain_configurations::builders::ListDomainConfigurationsInputBuilder,
 }
 impl ListDomainConfigurationsFluentBuilder {
     /// Creates a new `ListDomainConfigurations`.
@@ -38,10 +38,7 @@ impl ListDomainConfigurationsFluentBuilder {
         }
     }
     /// Access the ListDomainConfigurations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_domain_configurations::builders::ListDomainConfigurationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_domain_configurations::builders::ListDomainConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ListDomainConfigurationsFluentBuilder {
             crate::operation::list_domain_configurations::ListDomainConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_domain_configurations::ListDomainConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_domain_configurations::ListDomainConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ListDomainConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ListDomainConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_domain_configurations::ListDomainConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_domain_configurations::ListDomainConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_domain_configurations::ListDomainConfigurationsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ListDomainConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_domain_configurations::ListDomainConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_domain_configurations::ListDomainConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_domain_configurations::ListDomainConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +106,14 @@ impl ListDomainConfigurationsFluentBuilder {
             crate::operation::list_domain_configurations::ListDomainConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_domain_configurations::ListDomainConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_domain_configurations::ListDomainConfigurationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_domain_configurations::paginator::ListDomainConfigurationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_domain_configurations::paginator::ListDomainConfigurationsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_domain_configurations::paginator::ListDomainConfigurationsPaginator {
         crate::operation::list_domain_configurations::paginator::ListDomainConfigurationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The marker for the next set of results.</p>
@@ -167,10 +150,7 @@ impl ListDomainConfigurationsFluentBuilder {
         self
     }
     /// <p>The type of service delivered by the endpoint.</p>
-    pub fn set_service_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceType>,
-    ) -> Self {
+    pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.inner = self.inner.set_service_type(input);
         self
     }

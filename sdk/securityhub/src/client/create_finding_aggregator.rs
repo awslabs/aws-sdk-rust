@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`region_linking_mode(Option<String>)`](crate::operation::create_finding_aggregator::CreateFindingAggregatorOutput::region_linking_mode): <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
     ///   - [`regions(Option<Vec<String>>)`](crate::operation::create_finding_aggregator::CreateFindingAggregatorOutput::regions): <p>The list of excluded Regions or included Regions.</p>
     /// - On failure, responds with [`SdkError<CreateFindingAggregatorError>`](crate::operation::create_finding_aggregator::CreateFindingAggregatorError)
-    pub fn create_finding_aggregator(
-        &self,
-    ) -> crate::operation::create_finding_aggregator::builders::CreateFindingAggregatorFluentBuilder
-    {
+    pub fn create_finding_aggregator(&self) -> crate::operation::create_finding_aggregator::builders::CreateFindingAggregatorFluentBuilder {
         crate::operation::create_finding_aggregator::builders::CreateFindingAggregatorFluentBuilder::new(self.handle.clone())
     }
 }

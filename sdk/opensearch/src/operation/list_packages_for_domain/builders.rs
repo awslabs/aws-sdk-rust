@@ -37,10 +37,7 @@ impl ListPackagesForDomainFluentBuilder {
         }
     }
     /// Access the ListPackagesForDomain as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_packages_for_domain::builders::ListPackagesForDomainInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_packages_for_domain::builders::ListPackagesForDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListPackagesForDomainFluentBuilder {
             crate::operation::list_packages_for_domain::ListPackagesForDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_packages_for_domain::ListPackagesForDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_packages_for_domain::ListPackagesForDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListPackagesForDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListPackagesForDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_packages_for_domain::ListPackagesForDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_packages_for_domain::ListPackagesForDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_packages_for_domain::ListPackagesForDomainError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListPackagesForDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_packages_for_domain::ListPackagesForDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_packages_for_domain::ListPackagesForDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_packages_for_domain::ListPackagesForDomainError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListPackagesForDomainFluentBuilder {
             crate::operation::list_packages_for_domain::ListPackagesForDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_packages_for_domain::ListPackagesForDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_packages_for_domain::ListPackagesForDomainError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_packages_for_domain::paginator::ListPackagesForDomainPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_packages_for_domain::paginator::ListPackagesForDomainPaginator {
-        crate::operation::list_packages_for_domain::paginator::ListPackagesForDomainPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_packages_for_domain::paginator::ListPackagesForDomainPaginator {
+        crate::operation::list_packages_for_domain::paginator::ListPackagesForDomainPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the domain for which you want to list associated packages.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

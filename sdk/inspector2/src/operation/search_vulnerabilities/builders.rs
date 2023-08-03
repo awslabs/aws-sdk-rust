@@ -37,10 +37,7 @@ impl SearchVulnerabilitiesFluentBuilder {
         }
     }
     /// Access the SearchVulnerabilities as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl SearchVulnerabilitiesFluentBuilder {
             crate::operation::search_vulnerabilities::SearchVulnerabilities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_vulnerabilities::SearchVulnerabilitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_vulnerabilities::SearchVulnerabilitiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl SearchVulnerabilitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl SearchVulnerabilitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_vulnerabilities::SearchVulnerabilitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_vulnerabilities::SearchVulnerabilitiesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl SearchVulnerabilitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_vulnerabilities::SearchVulnerabilitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_vulnerabilities::SearchVulnerabilitiesError>,
     > {
         self.send_middleware().await
     }
@@ -117,43 +105,28 @@ impl SearchVulnerabilitiesFluentBuilder {
             crate::operation::search_vulnerabilities::SearchVulnerabilities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_vulnerabilities::SearchVulnerabilitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_vulnerabilities::SearchVulnerabilitiesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_vulnerabilities::paginator::SearchVulnerabilitiesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_vulnerabilities::paginator::SearchVulnerabilitiesPaginator {
-        crate::operation::search_vulnerabilities::paginator::SearchVulnerabilitiesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_vulnerabilities::paginator::SearchVulnerabilitiesPaginator {
+        crate::operation::search_vulnerabilities::paginator::SearchVulnerabilitiesPaginator::new(self.handle, self.inner)
     }
     /// <p>The criteria used to filter the results of a vulnerability search.</p>
-    pub fn filter_criteria(
-        mut self,
-        input: crate::types::SearchVulnerabilitiesFilterCriteria,
-    ) -> Self {
+    pub fn filter_criteria(mut self, input: crate::types::SearchVulnerabilitiesFilterCriteria) -> Self {
         self.inner = self.inner.filter_criteria(input);
         self
     }
     /// <p>The criteria used to filter the results of a vulnerability search.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchVulnerabilitiesFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::SearchVulnerabilitiesFilterCriteria>) -> Self {
         self.inner = self.inner.set_filter_criteria(input);
         self
     }
     /// <p>The criteria used to filter the results of a vulnerability search.</p>
-    pub fn get_filter_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::SearchVulnerabilitiesFilterCriteria> {
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::SearchVulnerabilitiesFilterCriteria> {
         self.inner.get_filter_criteria()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>

@@ -7,23 +7,17 @@ pub fn ser_scheduled_action_type(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ResizeCluster");
     if let Some(var_2) = &input.resize_cluster {
-        crate::protocol_serde::shape_resize_cluster_message::ser_resize_cluster_message(
-            scope_1, var_2,
-        )?;
+        crate::protocol_serde::shape_resize_cluster_message::ser_resize_cluster_message(scope_1, var_2)?;
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("PauseCluster");
     if let Some(var_4) = &input.pause_cluster {
-        crate::protocol_serde::shape_pause_cluster_message::ser_pause_cluster_message(
-            scope_3, var_4,
-        )?;
+        crate::protocol_serde::shape_pause_cluster_message::ser_pause_cluster_message(scope_3, var_4)?;
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("ResumeCluster");
     if let Some(var_6) = &input.resume_cluster {
-        crate::protocol_serde::shape_resume_cluster_message::ser_resume_cluster_message(
-            scope_5, var_6,
-        )?;
+        crate::protocol_serde::shape_resume_cluster_message::ser_resume_cluster_message(scope_5, var_6)?;
     }
     Ok(())
 }

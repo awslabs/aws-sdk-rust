@@ -37,9 +37,7 @@ impl InputSourceRequest {
 
 /// A builder for [`InputSourceRequest`](crate::types::InputSourceRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputSourceRequestBuilder {
     pub(crate) password_param: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct InputSourceRequestBuilder {
 }
 impl InputSourceRequestBuilder {
     /// The key used to extract the password from EC2 Parameter store.
-    pub fn password_param(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn password_param(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password_param = ::std::option::Option::Some(input.into());
         self
     }
     /// The key used to extract the password from EC2 Parameter store.
-    pub fn set_password_param(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_password_param(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password_param = input;
         self
     }

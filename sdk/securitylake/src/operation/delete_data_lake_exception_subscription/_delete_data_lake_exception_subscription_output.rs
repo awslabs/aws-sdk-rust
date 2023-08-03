@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDataLakeExceptionSubscriptionOu
 }
 impl DeleteDataLakeExceptionSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataLakeExceptionSubscriptionOutput`](crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionOutput).
-    pub fn builder() -> crate::operation::delete_data_lake_exception_subscription::builders::DeleteDataLakeExceptionSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_data_lake_exception_subscription::builders::DeleteDataLakeExceptionSubscriptionOutputBuilder {
         crate::operation::delete_data_lake_exception_subscription::builders::DeleteDataLakeExceptionSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDataLakeExceptionSubscriptionOutput`](crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDataLakeExceptionSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteDataLakeExceptionSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDataLakeExceptionSubscriptionOutput`](crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionOutput).
-    pub fn build(self) -> crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionOutput{
+    pub fn build(self) -> crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionOutput {
         crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionOutput {
             _request_id: self._request_id,
         }

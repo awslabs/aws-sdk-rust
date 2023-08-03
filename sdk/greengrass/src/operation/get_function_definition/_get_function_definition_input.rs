@@ -15,35 +15,25 @@ impl GetFunctionDefinitionInput {
 }
 impl GetFunctionDefinitionInput {
     /// Creates a new builder-style object to manufacture [`GetFunctionDefinitionInput`](crate::operation::get_function_definition::GetFunctionDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::get_function_definition::builders::GetFunctionDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_function_definition::builders::GetFunctionDefinitionInputBuilder {
         crate::operation::get_function_definition::builders::GetFunctionDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFunctionDefinitionInput`](crate::operation::get_function_definition::GetFunctionDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFunctionDefinitionInputBuilder {
     pub(crate) function_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl GetFunctionDefinitionInputBuilder {
     /// The ID of the Lambda function definition.
-    pub fn function_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the Lambda function definition.
-    pub fn set_function_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_definition_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetFunctionDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`GetFunctionDefinitionInput`](crate::operation::get_function_definition::GetFunctionDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_function_definition::GetFunctionDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_function_definition::GetFunctionDefinitionInput {
-                function_definition_id: self.function_definition_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_function_definition::GetFunctionDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_function_definition::GetFunctionDefinitionInput {
+            function_definition_id: self.function_definition_id,
+        })
     }
 }

@@ -39,9 +39,7 @@ impl DescribeRouteTablesFluentBuilder {
         }
     }
     /// Access the DescribeRouteTables as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_route_tables::builders::DescribeRouteTablesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_route_tables::builders::DescribeRouteTablesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DescribeRouteTablesFluentBuilder {
             crate::operation::describe_route_tables::DescribeRouteTables,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_route_tables::DescribeRouteTablesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_route_tables::DescribeRouteTablesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DescribeRouteTablesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DescribeRouteTablesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_route_tables::DescribeRouteTablesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_route_tables::DescribeRouteTablesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_route_tables::DescribeRouteTablesError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DescribeRouteTablesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_route_tables::DescribeRouteTablesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_route_tables::DescribeRouteTablesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_route_tables::DescribeRouteTablesError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +107,15 @@ impl DescribeRouteTablesFluentBuilder {
             crate::operation::describe_route_tables::DescribeRouteTables,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_route_tables::DescribeRouteTablesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_route_tables::DescribeRouteTablesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_route_tables::paginator::DescribeRouteTablesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_route_tables::paginator::DescribeRouteTablesPaginator {
-        crate::operation::describe_route_tables::paginator::DescribeRouteTablesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_route_tables::paginator::DescribeRouteTablesPaginator {
+        crate::operation::describe_route_tables::paginator::DescribeRouteTablesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -201,10 +183,7 @@ impl DescribeRouteTablesFluentBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -260,27 +239,19 @@ impl DescribeRouteTablesFluentBuilder {
     ///
     /// <p>The IDs of the route tables.</p>
     /// <p>Default: Describes all your route tables.</p>
-    pub fn route_table_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_table_ids(input.into());
         self
     }
     /// <p>The IDs of the route tables.</p>
     /// <p>Default: Describes all your route tables.</p>
-    pub fn set_route_table_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_route_table_ids(input);
         self
     }
     /// <p>The IDs of the route tables.</p>
     /// <p>Default: Describes all your route tables.</p>
-    pub fn get_route_table_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_route_table_ids()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>

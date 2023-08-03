@@ -61,18 +61,14 @@ impl UpdateTimelineEventInput {
 }
 impl UpdateTimelineEventInput {
     /// Creates a new builder-style object to manufacture [`UpdateTimelineEventInput`](crate::operation::update_timeline_event::UpdateTimelineEventInput).
-    pub fn builder(
-    ) -> crate::operation::update_timeline_event::builders::UpdateTimelineEventInputBuilder {
-        crate::operation::update_timeline_event::builders::UpdateTimelineEventInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_timeline_event::builders::UpdateTimelineEventInputBuilder {
+        crate::operation::update_timeline_event::builders::UpdateTimelineEventInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTimelineEventInput`](crate::operation::update_timeline_event::UpdateTimelineEventInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTimelineEventInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) incident_record_arn: ::std::option::Option<::std::string::String>,
@@ -80,8 +76,7 @@ pub struct UpdateTimelineEventInputBuilder {
     pub(crate) event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) event_type: ::std::option::Option<::std::string::String>,
     pub(crate) event_data: ::std::option::Option<::std::string::String>,
-    pub(crate) event_references:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>,
+    pub(crate) event_references: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>,
 }
 impl UpdateTimelineEventInputBuilder {
     /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
@@ -99,18 +94,12 @@ impl UpdateTimelineEventInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn incident_record_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_record_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn set_incident_record_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.incident_record_arn = input;
         self
     }
@@ -138,10 +127,7 @@ impl UpdateTimelineEventInputBuilder {
         self
     }
     /// <p>The time that the event occurred.</p>
-    pub fn set_event_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_time = input;
         self
     }
@@ -193,38 +179,29 @@ impl UpdateTimelineEventInputBuilder {
     /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p> <important>
     /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>
     /// </important>
-    pub fn set_event_references(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>,
-    ) -> Self {
+    pub fn set_event_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>) -> Self {
         self.event_references = input;
         self
     }
     /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p> <important>
     /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>
     /// </important>
-    pub fn get_event_references(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventReference>> {
+    pub fn get_event_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventReference>> {
         &self.event_references
     }
     /// Consumes the builder and constructs a [`UpdateTimelineEventInput`](crate::operation::update_timeline_event::UpdateTimelineEventInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_timeline_event::UpdateTimelineEventInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_timeline_event::UpdateTimelineEventInput {
-                client_token: self.client_token,
-                incident_record_arn: self.incident_record_arn,
-                event_id: self.event_id,
-                event_time: self.event_time,
-                event_type: self.event_type,
-                event_data: self.event_data,
-                event_references: self.event_references,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_timeline_event::UpdateTimelineEventInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_timeline_event::UpdateTimelineEventInput {
+            client_token: self.client_token,
+            incident_record_arn: self.incident_record_arn,
+            event_id: self.event_id,
+            event_time: self.event_time,
+            event_type: self.event_type,
+            event_data: self.event_data,
+            event_references: self.event_references,
+        })
     }
 }

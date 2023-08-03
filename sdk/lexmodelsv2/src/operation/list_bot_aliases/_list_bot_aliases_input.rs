@@ -36,9 +36,7 @@ impl ListBotAliasesInput {
 
 /// A builder for [`ListBotAliasesInput`](crate::operation::list_bot_aliases::ListBotAliasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBotAliasesInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -90,10 +88,7 @@ impl ListBotAliasesInputBuilder {
     /// Consumes the builder and constructs a [`ListBotAliasesInput`](crate::operation::list_bot_aliases::ListBotAliasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bot_aliases::ListBotAliasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_bot_aliases::ListBotAliasesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_bot_aliases::ListBotAliasesInput {
             bot_id: self.bot_id,
             max_results: self.max_results,

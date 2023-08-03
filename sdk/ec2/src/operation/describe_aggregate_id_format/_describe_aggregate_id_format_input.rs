@@ -15,16 +15,14 @@ impl DescribeAggregateIdFormatInput {
 }
 impl DescribeAggregateIdFormatInput {
     /// Creates a new builder-style object to manufacture [`DescribeAggregateIdFormatInput`](crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatInput).
-    pub fn builder() -> crate::operation::describe_aggregate_id_format::builders::DescribeAggregateIdFormatInputBuilder{
+    pub fn builder() -> crate::operation::describe_aggregate_id_format::builders::DescribeAggregateIdFormatInputBuilder {
         crate::operation::describe_aggregate_id_format::builders::DescribeAggregateIdFormatInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAggregateIdFormatInput`](crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAggregateIdFormatInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
@@ -50,10 +48,6 @@ impl DescribeAggregateIdFormatInputBuilder {
         crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatInput {
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatInput { dry_run: self.dry_run })
     }
 }

@@ -29,9 +29,7 @@ impl GetDelegationsInput {
 
 /// A builder for [`GetDelegationsInput`](crate::operation::get_delegations::GetDelegationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDelegationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -68,10 +66,7 @@ impl GetDelegationsInputBuilder {
     /// Consumes the builder and constructs a [`GetDelegationsInput`](crate::operation::get_delegations::GetDelegationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_delegations::GetDelegationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_delegations::GetDelegationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_delegations::GetDelegationsInput {
             next_token: self.next_token,
             max_results: self.max_results,

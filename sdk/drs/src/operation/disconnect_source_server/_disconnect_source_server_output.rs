@@ -11,9 +11,7 @@ pub struct DisconnectSourceServerOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the Source Server.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
     #[doc(hidden)]
     pub recovery_instance_id: ::std::option::Option<::std::string::String>,
@@ -56,11 +54,7 @@ impl DisconnectSourceServerOutput {
         self.arn.as_deref()
     }
     /// <p>The tags associated with the Source Server.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
@@ -72,9 +66,7 @@ impl DisconnectSourceServerOutput {
         self.last_launch_result.as_ref()
     }
     /// <p>The Data Replication Info of the Source Server.</p>
-    pub fn data_replication_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataReplicationInfo> {
+    pub fn data_replication_info(&self) -> ::std::option::Option<&crate::types::DataReplicationInfo> {
         self.data_replication_info.as_ref()
     }
     /// <p>The lifecycle information of this Source Server.</p>
@@ -90,15 +82,11 @@ impl DisconnectSourceServerOutput {
         self.staging_area.as_ref()
     }
     /// <p>Source cloud properties of the Source Server.</p>
-    pub fn source_cloud_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceCloudProperties> {
+    pub fn source_cloud_properties(&self) -> ::std::option::Option<&crate::types::SourceCloudProperties> {
         self.source_cloud_properties.as_ref()
     }
     /// <p>Replication direction of the Source Server.</p>
-    pub fn replication_direction(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReplicationDirection> {
+    pub fn replication_direction(&self) -> ::std::option::Option<&crate::types::ReplicationDirection> {
         self.replication_direction.as_ref()
     }
     /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
@@ -124,10 +112,7 @@ impl ::std::fmt::Debug for DisconnectSourceServerOutput {
         formatter.field("staging_area", &self.staging_area);
         formatter.field("source_cloud_properties", &self.source_cloud_properties);
         formatter.field("replication_direction", &self.replication_direction);
-        formatter.field(
-            "reversed_direction_source_server_arn",
-            &self.reversed_direction_source_server_arn,
-        );
+        formatter.field("reversed_direction_source_server_arn", &self.reversed_direction_source_server_arn);
         formatter.field("source_network_id", &self.source_network_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -140,9 +125,7 @@ impl ::aws_http::request_id::RequestId for DisconnectSourceServerOutput {
 }
 impl DisconnectSourceServerOutput {
     /// Creates a new builder-style object to manufacture [`DisconnectSourceServerOutput`](crate::operation::disconnect_source_server::DisconnectSourceServerOutput).
-    pub fn builder(
-    ) -> crate::operation::disconnect_source_server::builders::DisconnectSourceServerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disconnect_source_server::builders::DisconnectSourceServerOutputBuilder {
         crate::operation::disconnect_source_server::builders::DisconnectSourceServerOutputBuilder::default()
     }
 }
@@ -153,9 +136,7 @@ impl DisconnectSourceServerOutput {
 pub struct DisconnectSourceServerOutputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) recovery_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) last_launch_result: ::std::option::Option<crate::types::LastLaunchResult>,
     pub(crate) data_replication_info: ::std::option::Option<crate::types::DataReplicationInfo>,
@@ -170,18 +151,12 @@ pub struct DisconnectSourceServerOutputBuilder {
 }
 impl DisconnectSourceServerOutputBuilder {
     /// <p>The ID of the Source Server.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Source Server.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -208,47 +183,28 @@ impl DisconnectSourceServerOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags associated with the Source Server.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags associated with the Source Server.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags associated with the Source Server.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
-    pub fn recovery_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
-    pub fn set_recovery_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_instance_id = input;
         self
     }
@@ -262,10 +218,7 @@ impl DisconnectSourceServerOutputBuilder {
         self
     }
     /// <p>The status of the last recovery launch of this Source Server.</p>
-    pub fn set_last_launch_result(
-        mut self,
-        input: ::std::option::Option<crate::types::LastLaunchResult>,
-    ) -> Self {
+    pub fn set_last_launch_result(mut self, input: ::std::option::Option<crate::types::LastLaunchResult>) -> Self {
         self.last_launch_result = input;
         self
     }
@@ -279,17 +232,12 @@ impl DisconnectSourceServerOutputBuilder {
         self
     }
     /// <p>The Data Replication Info of the Source Server.</p>
-    pub fn set_data_replication_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DataReplicationInfo>,
-    ) -> Self {
+    pub fn set_data_replication_info(mut self, input: ::std::option::Option<crate::types::DataReplicationInfo>) -> Self {
         self.data_replication_info = input;
         self
     }
     /// <p>The Data Replication Info of the Source Server.</p>
-    pub fn get_data_replication_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataReplicationInfo> {
+    pub fn get_data_replication_info(&self) -> &::std::option::Option<crate::types::DataReplicationInfo> {
         &self.data_replication_info
     }
     /// <p>The lifecycle information of this Source Server.</p>
@@ -312,10 +260,7 @@ impl DisconnectSourceServerOutputBuilder {
         self
     }
     /// <p>The source properties of the Source Server.</p>
-    pub fn set_source_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceProperties>,
-    ) -> Self {
+    pub fn set_source_properties(mut self, input: ::std::option::Option<crate::types::SourceProperties>) -> Self {
         self.source_properties = input;
         self
     }
@@ -329,10 +274,7 @@ impl DisconnectSourceServerOutputBuilder {
         self
     }
     /// <p>The staging area of the source server.</p>
-    pub fn set_staging_area(
-        mut self,
-        input: ::std::option::Option<crate::types::StagingArea>,
-    ) -> Self {
+    pub fn set_staging_area(mut self, input: ::std::option::Option<crate::types::StagingArea>) -> Self {
         self.staging_area = input;
         self
     }
@@ -346,17 +288,12 @@ impl DisconnectSourceServerOutputBuilder {
         self
     }
     /// <p>Source cloud properties of the Source Server.</p>
-    pub fn set_source_cloud_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceCloudProperties>,
-    ) -> Self {
+    pub fn set_source_cloud_properties(mut self, input: ::std::option::Option<crate::types::SourceCloudProperties>) -> Self {
         self.source_cloud_properties = input;
         self
     }
     /// <p>Source cloud properties of the Source Server.</p>
-    pub fn get_source_cloud_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceCloudProperties> {
+    pub fn get_source_cloud_properties(&self) -> &::std::option::Option<crate::types::SourceCloudProperties> {
         &self.source_cloud_properties
     }
     /// <p>Replication direction of the Source Server.</p>
@@ -365,54 +302,35 @@ impl DisconnectSourceServerOutputBuilder {
         self
     }
     /// <p>Replication direction of the Source Server.</p>
-    pub fn set_replication_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationDirection>,
-    ) -> Self {
+    pub fn set_replication_direction(mut self, input: ::std::option::Option<crate::types::ReplicationDirection>) -> Self {
         self.replication_direction = input;
         self
     }
     /// <p>Replication direction of the Source Server.</p>
-    pub fn get_replication_direction(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationDirection> {
+    pub fn get_replication_direction(&self) -> &::std::option::Option<crate::types::ReplicationDirection> {
         &self.replication_direction
     }
     /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
-    pub fn reversed_direction_source_server_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reversed_direction_source_server_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reversed_direction_source_server_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
-    pub fn set_reversed_direction_source_server_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reversed_direction_source_server_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reversed_direction_source_server_arn = input;
         self
     }
     /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
-    pub fn get_reversed_direction_source_server_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reversed_direction_source_server_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.reversed_direction_source_server_arn
     }
     /// <p>ID of the Source Network which is protecting this Source Server's network.</p>
-    pub fn source_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the Source Network which is protecting this Source Server's network.</p>
-    pub fn set_source_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_network_id = input;
         self
     }
@@ -463,10 +381,7 @@ impl ::std::fmt::Debug for DisconnectSourceServerOutputBuilder {
         formatter.field("staging_area", &self.staging_area);
         formatter.field("source_cloud_properties", &self.source_cloud_properties);
         formatter.field("replication_direction", &self.replication_direction);
-        formatter.field(
-            "reversed_direction_source_server_arn",
-            &self.reversed_direction_source_server_arn,
-        );
+        formatter.field("reversed_direction_source_server_arn", &self.reversed_direction_source_server_arn);
         formatter.field("source_network_id", &self.source_network_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

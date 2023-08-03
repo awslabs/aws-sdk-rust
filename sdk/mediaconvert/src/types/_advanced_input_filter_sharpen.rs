@@ -39,13 +39,7 @@
 /// Optionally specify the amount of sharpening to apply when you use the Advanced input filter. Sharpening adds contrast to the edges of your video content and can reduce softness. To apply no sharpening: Keep the default value, Off. To apply a minimal amount of sharpening choose Low, or for the maximum choose High.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AdvancedInputFilterSharpen {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for AdvancedInputFilterSharpen {
             "HIGH" => AdvancedInputFilterSharpen::High,
             "LOW" => AdvancedInputFilterSharpen::Low,
             "OFF" => AdvancedInputFilterSharpen::Off,
-            other => AdvancedInputFilterSharpen::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AdvancedInputFilterSharpen::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

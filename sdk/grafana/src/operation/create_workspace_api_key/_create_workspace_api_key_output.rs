@@ -45,9 +45,7 @@ impl ::aws_http::request_id::RequestId for CreateWorkspaceApiKeyOutput {
 }
 impl CreateWorkspaceApiKeyOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspaceApiKeyOutput`](crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyOutputBuilder {
         crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyOutputBuilder::default()
     }
 }

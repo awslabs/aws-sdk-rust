@@ -15,17 +15,14 @@ impl BatchGetVariableInput {
 }
 impl BatchGetVariableInput {
     /// Creates a new builder-style object to manufacture [`BatchGetVariableInput`](crate::operation::batch_get_variable::BatchGetVariableInput).
-    pub fn builder() -> crate::operation::batch_get_variable::builders::BatchGetVariableInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_variable::builders::BatchGetVariableInputBuilder {
         crate::operation::batch_get_variable::builders::BatchGetVariableInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetVariableInput`](crate::operation::batch_get_variable::BatchGetVariableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetVariableInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +39,7 @@ impl BatchGetVariableInputBuilder {
         self
     }
     /// <p>The list of variable names to get.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -56,12 +50,7 @@ impl BatchGetVariableInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetVariableInput`](crate::operation::batch_get_variable::BatchGetVariableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_variable::BatchGetVariableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_variable::BatchGetVariableInput { names: self.names },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_variable::BatchGetVariableInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_get_variable::BatchGetVariableInput { names: self.names })
     }
 }

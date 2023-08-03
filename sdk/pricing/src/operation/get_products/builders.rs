@@ -10,10 +10,7 @@ impl GetProductsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_products::GetProductsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_products::GetProductsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_products::GetProductsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_products();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetProductsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_products::GetProducts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_products::GetProducts, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_products::GetProductsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetProductsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetProductsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_products::GetProducts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_products::GetProducts, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_products::GetProductsError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl GetProductsFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_products::paginator::GetProductsPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::get_products::paginator::GetProductsPaginator {
-        crate::operation::get_products::paginator::GetProductsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::get_products::paginator::GetProductsPaginator::new(self.handle, self.inner)
     }
     /// <p>The code for the service whose products you want to retrieve. </p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,10 +130,7 @@ impl GetProductsFluentBuilder {
         self
     }
     /// <p>The list of filters that limit the returned products. only products that match all filters are returned.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -158,19 +140,13 @@ impl GetProductsFluentBuilder {
     }
     /// <p>The format version that you want the response to be in.</p>
     /// <p>Valid values are: <code>aws_v1</code> </p>
-    pub fn format_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn format_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.format_version(input.into());
         self
     }
     /// <p>The format version that you want the response to be in.</p>
     /// <p>Valid values are: <code>aws_v1</code> </p>
-    pub fn set_format_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_format_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_format_version(input);
         self
     }

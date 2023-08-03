@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`document_source(Option<String>)`](crate::operation::describe_job::DescribeJobOutput::document_source): <p>An S3 link to the job document.</p>
     ///   - [`job(Option<Job>)`](crate::operation::describe_job::DescribeJobOutput::job): <p>Information about the job.</p>
     /// - On failure, responds with [`SdkError<DescribeJobError>`](crate::operation::describe_job::DescribeJobError)
-    pub fn describe_job(
-        &self,
-    ) -> crate::operation::describe_job::builders::DescribeJobFluentBuilder {
+    pub fn describe_job(&self) -> crate::operation::describe_job::builders::DescribeJobFluentBuilder {
         crate::operation::describe_job::builders::DescribeJobFluentBuilder::new(self.handle.clone())
     }
 }

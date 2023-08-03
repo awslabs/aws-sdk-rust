@@ -18,11 +18,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCanaryOutput`](crate::operation::create_canary::CreateCanaryOutput) with field(s):
     ///   - [`canary(Option<Canary>)`](crate::operation::create_canary::CreateCanaryOutput::canary): <p>The full details about the canary you have created.</p>
     /// - On failure, responds with [`SdkError<CreateCanaryError>`](crate::operation::create_canary::CreateCanaryError)
-    pub fn create_canary(
-        &self,
-    ) -> crate::operation::create_canary::builders::CreateCanaryFluentBuilder {
-        crate::operation::create_canary::builders::CreateCanaryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_canary(&self) -> crate::operation::create_canary::builders::CreateCanaryFluentBuilder {
+        crate::operation::create_canary::builders::CreateCanaryFluentBuilder::new(self.handle.clone())
     }
 }

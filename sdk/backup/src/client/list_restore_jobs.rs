@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`restore_jobs(Option<Vec<RestoreJobsListMember>>)`](crate::operation::list_restore_jobs::ListRestoreJobsOutput::restore_jobs): <p>An array of objects that contain detailed information about jobs to restore saved resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_restore_jobs::ListRestoreJobsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     /// - On failure, responds with [`SdkError<ListRestoreJobsError>`](crate::operation::list_restore_jobs::ListRestoreJobsError)
-    pub fn list_restore_jobs(
-        &self,
-    ) -> crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder {
-        crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_restore_jobs(&self) -> crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder {
+        crate::operation::list_restore_jobs::builders::ListRestoreJobsFluentBuilder::new(self.handle.clone())
     }
 }

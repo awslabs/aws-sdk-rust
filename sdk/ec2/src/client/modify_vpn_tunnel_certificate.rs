@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`ModifyVpnTunnelCertificateOutput`](crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificateOutput) with field(s):
     ///   - [`vpn_connection(Option<VpnConnection>)`](crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificateOutput::vpn_connection): <p>Information about the VPN connection.</p>
     /// - On failure, responds with [`SdkError<ModifyVpnTunnelCertificateError>`](crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificateError)
-    pub fn modify_vpn_tunnel_certificate(&self) -> crate::operation::modify_vpn_tunnel_certificate::builders::ModifyVpnTunnelCertificateFluentBuilder{
+    pub fn modify_vpn_tunnel_certificate(
+        &self,
+    ) -> crate::operation::modify_vpn_tunnel_certificate::builders::ModifyVpnTunnelCertificateFluentBuilder {
         crate::operation::modify_vpn_tunnel_certificate::builders::ModifyVpnTunnelCertificateFluentBuilder::new(self.handle.clone())
     }
 }

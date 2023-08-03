@@ -64,9 +64,7 @@ pub struct VideoParameters {
     /// <p> <b>LoopCount (Gif Only)</b> </p>
     /// <p>The number of times you want the output gif to loop. Valid values include <code>Infinite</code> and integers between <code>0</code> and <code>100</code>, inclusive.</p>
     #[doc(hidden)]
-    pub codec_options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub codec_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.</p>
     /// <p>The maximum number of frames between key frames. Key frames are fully encoded frames; the frames between key frames are encoded based, in part, on the content of the key frames. The value is an integer formatted as a string; valid values are between 1 (every frame is a key frame) and 100000, inclusive. A higher value results in higher compression but may also discernibly decrease video quality.</p>
     /// <p>For <code>Smooth</code> outputs, the <code>FrameRate</code> must have a constant ratio to the <code>KeyframesMaxDist</code>. This allows <code>Smooth</code> playlists to switch between different quality levels while the file is being played.</p>
@@ -263,11 +261,7 @@ impl VideoParameters {
     /// <p> <code>yuv420p</code> samples the chroma information of every other horizontal and every other vertical line, <code>yuv422p</code> samples the color information of every horizontal line and every other vertical line.</p>
     /// <p> <b>LoopCount (Gif Only)</b> </p>
     /// <p>The number of times you want the output gif to loop. Valid values include <code>Infinite</code> and integers between <code>0</code> and <code>100</code>, inclusive.</p>
-    pub fn codec_options(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn codec_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.codec_options.as_ref()
     }
     /// <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.</p>
@@ -427,14 +421,10 @@ impl VideoParameters {
 
 /// A builder for [`VideoParameters`](crate::types::VideoParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VideoParametersBuilder {
     pub(crate) codec: ::std::option::Option<::std::string::String>,
-    pub(crate) codec_options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) codec_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) keyframes_max_dist: ::std::option::Option<::std::string::String>,
     pub(crate) fixed_gop: ::std::option::Option<::std::string::String>,
     pub(crate) bit_rate: ::std::option::Option<::std::string::String>,
@@ -524,11 +514,7 @@ impl VideoParametersBuilder {
     /// <p> <code>yuv420p</code> samples the chroma information of every other horizontal and every other vertical line, <code>yuv422p</code> samples the color information of every horizontal line and every other vertical line.</p>
     /// <p> <b>LoopCount (Gif Only)</b> </p>
     /// <p>The number of times you want the output gif to loop. Valid values include <code>Infinite</code> and integers between <code>0</code> and <code>100</code>, inclusive.</p>
-    pub fn codec_options(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn codec_options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.codec_options.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.codec_options = ::std::option::Option::Some(hash_map);
@@ -592,9 +578,7 @@ impl VideoParametersBuilder {
     /// <p>The number of times you want the output gif to loop. Valid values include <code>Infinite</code> and integers between <code>0</code> and <code>100</code>, inclusive.</p>
     pub fn set_codec_options(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.codec_options = input;
         self
@@ -655,11 +639,7 @@ impl VideoParametersBuilder {
     /// <p> <code>yuv420p</code> samples the chroma information of every other horizontal and every other vertical line, <code>yuv422p</code> samples the color information of every horizontal line and every other vertical line.</p>
     /// <p> <b>LoopCount (Gif Only)</b> </p>
     /// <p>The number of times you want the output gif to loop. Valid values include <code>Infinite</code> and integers between <code>0</code> and <code>100</code>, inclusive.</p>
-    pub fn get_codec_options(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_codec_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.codec_options
     }
     /// <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>, <code>MPEG2</code>, or <code>VP8</code>.</p>
@@ -667,10 +647,7 @@ impl VideoParametersBuilder {
     /// <p>For <code>Smooth</code> outputs, the <code>FrameRate</code> must have a constant ratio to the <code>KeyframesMaxDist</code>. This allows <code>Smooth</code> playlists to switch between different quality levels while the file is being played.</p>
     /// <p>For example, an input file can have a <code>FrameRate</code> of 30 with a <code>KeyframesMaxDist</code> of 90. The output file then needs to have a ratio of 1:3. Valid outputs would have <code>FrameRate</code> of 30, 25, and 10, and <code>KeyframesMaxDist</code> of 90, 75, and 30, respectively.</p>
     /// <p>Alternately, this can be achieved by setting <code>FrameRate</code> to auto and having the same values for <code>MaxFrameRate</code> and <code>KeyframesMaxDist</code>.</p>
-    pub fn keyframes_max_dist(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keyframes_max_dist(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyframes_max_dist = ::std::option::Option::Some(input.into());
         self
     }
@@ -679,10 +656,7 @@ impl VideoParametersBuilder {
     /// <p>For <code>Smooth</code> outputs, the <code>FrameRate</code> must have a constant ratio to the <code>KeyframesMaxDist</code>. This allows <code>Smooth</code> playlists to switch between different quality levels while the file is being played.</p>
     /// <p>For example, an input file can have a <code>FrameRate</code> of 30 with a <code>KeyframesMaxDist</code> of 90. The output file then needs to have a ratio of 1:3. Valid outputs would have <code>FrameRate</code> of 30, 25, and 10, and <code>KeyframesMaxDist</code> of 90, 75, and 30, respectively.</p>
     /// <p>Alternately, this can be achieved by setting <code>FrameRate</code> to auto and having the same values for <code>MaxFrameRate</code> and <code>KeyframesMaxDist</code>.</p>
-    pub fn set_keyframes_max_dist(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_keyframes_max_dist(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.keyframes_max_dist = input;
         self
     }
@@ -872,18 +846,12 @@ impl VideoParametersBuilder {
         &self.frame_rate
     }
     /// <p>If you specify <code>auto</code> for <code>FrameRate</code>, Elastic Transcoder uses the frame rate of the input video for the frame rate of the output video. Specify the maximum frame rate that you want Elastic Transcoder to use when the frame rate of the input video is greater than the desired maximum frame rate of the output video. Valid values include: <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code>.</p>
-    pub fn max_frame_rate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn max_frame_rate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_frame_rate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If you specify <code>auto</code> for <code>FrameRate</code>, Elastic Transcoder uses the frame rate of the input video for the frame rate of the output video. Specify the maximum frame rate that you want Elastic Transcoder to use when the frame rate of the input video is greater than the desired maximum frame rate of the output video. Valid values include: <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code>.</p>
-    pub fn set_max_frame_rate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_max_frame_rate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_frame_rate = input;
         self
     }
@@ -1056,18 +1024,12 @@ impl VideoParametersBuilder {
         &self.max_height
     }
     /// <p>The value that Elastic Transcoder adds to the metadata in the output file.</p>
-    pub fn display_aspect_ratio(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn display_aspect_ratio(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_aspect_ratio = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that Elastic Transcoder adds to the metadata in the output file.</p>
-    pub fn set_display_aspect_ratio(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_display_aspect_ratio(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_aspect_ratio = input;
         self
     }
@@ -1084,10 +1046,7 @@ impl VideoParametersBuilder {
     /// <li> <p> <code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the video up.</p> </li>
     /// <li> <p> <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale the video up.</p> </li>
     /// </ul>
-    pub fn sizing_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sizing_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sizing_policy = ::std::option::Option::Some(input.into());
         self
     }
@@ -1100,10 +1059,7 @@ impl VideoParametersBuilder {
     /// <li> <p> <code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the video up.</p> </li>
     /// <li> <p> <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale the video up.</p> </li>
     /// </ul>
-    pub fn set_sizing_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sizing_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sizing_policy = input;
         self
     }
@@ -1120,18 +1076,12 @@ impl VideoParametersBuilder {
         &self.sizing_policy
     }
     /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the top and bottom and/or left and right sides of the output video to make the total size of the output video match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>.</p>
-    pub fn padding_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn padding_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.padding_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the top and bottom and/or left and right sides of the output video to make the total size of the output video match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>.</p>
-    pub fn set_padding_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_padding_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.padding_policy = input;
         self
     }
@@ -1155,19 +1105,14 @@ impl VideoParametersBuilder {
     /// <p>Settings for the size, location, and opacity of graphics that you want Elastic Transcoder to overlay over videos that are transcoded using this preset. You can specify settings for up to four watermarks. Watermarks appear in the specified size and location, and with the specified opacity for the duration of the transcoded video.</p>
     /// <p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p>
     /// <p>When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.</p>
-    pub fn set_watermarks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PresetWatermark>>,
-    ) -> Self {
+    pub fn set_watermarks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PresetWatermark>>) -> Self {
         self.watermarks = input;
         self
     }
     /// <p>Settings for the size, location, and opacity of graphics that you want Elastic Transcoder to overlay over videos that are transcoded using this preset. You can specify settings for up to four watermarks. Watermarks appear in the specified size and location, and with the specified opacity for the duration of the transcoded video.</p>
     /// <p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p>
     /// <p>When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.</p>
-    pub fn get_watermarks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PresetWatermark>> {
+    pub fn get_watermarks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PresetWatermark>> {
         &self.watermarks
     }
     /// Consumes the builder and constructs a [`VideoParameters`](crate::types::VideoParameters).

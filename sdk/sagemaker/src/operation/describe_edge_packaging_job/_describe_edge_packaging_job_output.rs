@@ -84,9 +84,7 @@ impl DescribeEdgePackagingJobOutput {
         self.resource_key.as_deref()
     }
     /// <p>The current status of the packaging job.</p>
-    pub fn edge_packaging_job_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EdgePackagingJobStatus> {
+    pub fn edge_packaging_job_status(&self) -> ::std::option::Option<&crate::types::EdgePackagingJobStatus> {
         self.edge_packaging_job_status.as_ref()
     }
     /// <p>Returns a message describing the job status and error messages.</p>
@@ -110,9 +108,7 @@ impl DescribeEdgePackagingJobOutput {
         self.model_signature.as_deref()
     }
     /// <p>The output of a SageMaker Edge Manager deployable resource.</p>
-    pub fn preset_deployment_output(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EdgePresetDeploymentOutput> {
+    pub fn preset_deployment_output(&self) -> ::std::option::Option<&crate::types::EdgePresetDeploymentOutput> {
         self.preset_deployment_output.as_ref()
     }
 }
@@ -123,16 +119,14 @@ impl ::aws_http::request_id::RequestId for DescribeEdgePackagingJobOutput {
 }
 impl DescribeEdgePackagingJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEdgePackagingJobOutput`](crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobOutput).
-    pub fn builder() -> crate::operation::describe_edge_packaging_job::builders::DescribeEdgePackagingJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_edge_packaging_job::builders::DescribeEdgePackagingJobOutputBuilder {
         crate::operation::describe_edge_packaging_job::builders::DescribeEdgePackagingJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEdgePackagingJobOutput`](crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEdgePackagingJobOutputBuilder {
     pub(crate) edge_packaging_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) edge_packaging_job_name: ::std::option::Option<::std::string::String>,
@@ -142,31 +136,23 @@ pub struct DescribeEdgePackagingJobOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) output_config: ::std::option::Option<crate::types::EdgeOutputConfig>,
     pub(crate) resource_key: ::std::option::Option<::std::string::String>,
-    pub(crate) edge_packaging_job_status:
-        ::std::option::Option<crate::types::EdgePackagingJobStatus>,
+    pub(crate) edge_packaging_job_status: ::std::option::Option<crate::types::EdgePackagingJobStatus>,
     pub(crate) edge_packaging_job_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) model_artifact: ::std::option::Option<::std::string::String>,
     pub(crate) model_signature: ::std::option::Option<::std::string::String>,
-    pub(crate) preset_deployment_output:
-        ::std::option::Option<crate::types::EdgePresetDeploymentOutput>,
+    pub(crate) preset_deployment_output: ::std::option::Option<crate::types::EdgePresetDeploymentOutput>,
     _request_id: Option<String>,
 }
 impl DescribeEdgePackagingJobOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
-    pub fn edge_packaging_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_packaging_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_packaging_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
-    pub fn set_edge_packaging_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_packaging_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_packaging_job_arn = input;
         self
     }
@@ -175,18 +161,12 @@ impl DescribeEdgePackagingJobOutputBuilder {
         &self.edge_packaging_job_arn
     }
     /// <p>The name of the edge packaging job.</p>
-    pub fn edge_packaging_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_packaging_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_packaging_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the edge packaging job.</p>
-    pub fn set_edge_packaging_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_packaging_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_packaging_job_name = input;
         self
     }
@@ -195,18 +175,12 @@ impl DescribeEdgePackagingJobOutputBuilder {
         &self.edge_packaging_job_name
     }
     /// <p>The name of the SageMaker Neo compilation job that is used to locate model artifacts that are being packaged.</p>
-    pub fn compilation_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compilation_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compilation_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SageMaker Neo compilation job that is used to locate model artifacts that are being packaged.</p>
-    pub fn set_compilation_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compilation_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compilation_job_name = input;
         self
     }
@@ -229,18 +203,12 @@ impl DescribeEdgePackagingJobOutputBuilder {
         &self.model_name
     }
     /// <p>The version of the model.</p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the model.</p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_version = input;
         self
     }
@@ -268,10 +236,7 @@ impl DescribeEdgePackagingJobOutputBuilder {
         self
     }
     /// <p>The output configuration for the edge packaging job.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgeOutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::EdgeOutputConfig>) -> Self {
         self.output_config = input;
         self
     }
@@ -294,47 +259,31 @@ impl DescribeEdgePackagingJobOutputBuilder {
         &self.resource_key
     }
     /// <p>The current status of the packaging job.</p>
-    pub fn edge_packaging_job_status(
-        mut self,
-        input: crate::types::EdgePackagingJobStatus,
-    ) -> Self {
+    pub fn edge_packaging_job_status(mut self, input: crate::types::EdgePackagingJobStatus) -> Self {
         self.edge_packaging_job_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the packaging job.</p>
-    pub fn set_edge_packaging_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgePackagingJobStatus>,
-    ) -> Self {
+    pub fn set_edge_packaging_job_status(mut self, input: ::std::option::Option<crate::types::EdgePackagingJobStatus>) -> Self {
         self.edge_packaging_job_status = input;
         self
     }
     /// <p>The current status of the packaging job.</p>
-    pub fn get_edge_packaging_job_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::EdgePackagingJobStatus> {
+    pub fn get_edge_packaging_job_status(&self) -> &::std::option::Option<crate::types::EdgePackagingJobStatus> {
         &self.edge_packaging_job_status
     }
     /// <p>Returns a message describing the job status and error messages.</p>
-    pub fn edge_packaging_job_status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_packaging_job_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_packaging_job_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns a message describing the job status and error messages.</p>
-    pub fn set_edge_packaging_job_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_packaging_job_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_packaging_job_status_message = input;
         self
     }
     /// <p>Returns a message describing the job status and error messages.</p>
-    pub fn get_edge_packaging_job_status_message(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_edge_packaging_job_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.edge_packaging_job_status_message
     }
     /// <p>The timestamp of when the packaging job was created.</p>
@@ -343,10 +292,7 @@ impl DescribeEdgePackagingJobOutputBuilder {
         self
     }
     /// <p>The timestamp of when the packaging job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -360,10 +306,7 @@ impl DescribeEdgePackagingJobOutputBuilder {
         self
     }
     /// <p>The timestamp of when the job was last updated.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -372,18 +315,12 @@ impl DescribeEdgePackagingJobOutputBuilder {
         &self.last_modified_time
     }
     /// <p>The Amazon Simple Storage (S3) URI where model artifacts ares stored.</p>
-    pub fn model_artifact(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_artifact(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_artifact = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Simple Storage (S3) URI where model artifacts ares stored.</p>
-    pub fn set_model_artifact(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_artifact(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_artifact = input;
         self
     }
@@ -392,18 +329,12 @@ impl DescribeEdgePackagingJobOutputBuilder {
         &self.model_artifact
     }
     /// <p>The signature document of files in the model artifact.</p>
-    pub fn model_signature(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_signature = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signature document of files in the model artifact.</p>
-    pub fn set_model_signature(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_signature = input;
         self
     }
@@ -412,25 +343,17 @@ impl DescribeEdgePackagingJobOutputBuilder {
         &self.model_signature
     }
     /// <p>The output of a SageMaker Edge Manager deployable resource.</p>
-    pub fn preset_deployment_output(
-        mut self,
-        input: crate::types::EdgePresetDeploymentOutput,
-    ) -> Self {
+    pub fn preset_deployment_output(mut self, input: crate::types::EdgePresetDeploymentOutput) -> Self {
         self.preset_deployment_output = ::std::option::Option::Some(input);
         self
     }
     /// <p>The output of a SageMaker Edge Manager deployable resource.</p>
-    pub fn set_preset_deployment_output(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgePresetDeploymentOutput>,
-    ) -> Self {
+    pub fn set_preset_deployment_output(mut self, input: ::std::option::Option<crate::types::EdgePresetDeploymentOutput>) -> Self {
         self.preset_deployment_output = input;
         self
     }
     /// <p>The output of a SageMaker Edge Manager deployable resource.</p>
-    pub fn get_preset_deployment_output(
-        &self,
-    ) -> &::std::option::Option<crate::types::EdgePresetDeploymentOutput> {
+    pub fn get_preset_deployment_output(&self) -> &::std::option::Option<crate::types::EdgePresetDeploymentOutput> {
         &self.preset_deployment_output
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -443,9 +366,7 @@ impl DescribeEdgePackagingJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEdgePackagingJobOutput`](crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobOutput {
+    pub fn build(self) -> crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobOutput {
         crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobOutput {
             edge_packaging_job_arn: self.edge_packaging_job_arn,
             edge_packaging_job_name: self.edge_packaging_job_name,

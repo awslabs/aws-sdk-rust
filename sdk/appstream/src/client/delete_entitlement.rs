@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`stack_name(impl ::std::convert::Into<String>)`](crate::operation::delete_entitlement::builders::DeleteEntitlementFluentBuilder::stack_name) / [`set_stack_name(Option<String>)`](crate::operation::delete_entitlement::builders::DeleteEntitlementFluentBuilder::set_stack_name): <p>The name of the stack with which the entitlement is associated.</p>
     /// - On success, responds with [`DeleteEntitlementOutput`](crate::operation::delete_entitlement::DeleteEntitlementOutput)
     /// - On failure, responds with [`SdkError<DeleteEntitlementError>`](crate::operation::delete_entitlement::DeleteEntitlementError)
-    pub fn delete_entitlement(
-        &self,
-    ) -> crate::operation::delete_entitlement::builders::DeleteEntitlementFluentBuilder {
-        crate::operation::delete_entitlement::builders::DeleteEntitlementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_entitlement(&self) -> crate::operation::delete_entitlement::builders::DeleteEntitlementFluentBuilder {
+        crate::operation::delete_entitlement::builders::DeleteEntitlementFluentBuilder::new(self.handle.clone())
     }
 }

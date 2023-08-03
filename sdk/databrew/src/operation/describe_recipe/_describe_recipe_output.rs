@@ -35,9 +35,7 @@ pub struct DescribeRecipeOutput {
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>,
     /// <p>Metadata tags associated with this project.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ARN of the recipe.</p>
     #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
@@ -88,11 +86,7 @@ impl DescribeRecipeOutput {
         self.steps.as_deref()
     }
     /// <p>Metadata tags associated with this project.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The ARN of the recipe.</p>
@@ -118,9 +112,7 @@ impl DescribeRecipeOutput {
 
 /// A builder for [`DescribeRecipeOutput`](crate::operation::describe_recipe::DescribeRecipeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecipeOutputBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -132,9 +124,7 @@ pub struct DescribeRecipeOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) recipe_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -160,10 +150,7 @@ impl DescribeRecipeOutputBuilder {
         self
     }
     /// <p>The date and time that the recipe was created.</p>
-    pub fn set_create_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_date = input;
         self
     }
@@ -172,18 +159,12 @@ impl DescribeRecipeOutputBuilder {
         &self.create_date
     }
     /// <p>The identifier (user name) of the user who last modified the recipe.</p>
-    pub fn last_modified_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier (user name) of the user who last modified the recipe.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -197,10 +178,7 @@ impl DescribeRecipeOutputBuilder {
         self
     }
     /// <p>The date and time that the recipe was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -242,10 +220,7 @@ impl DescribeRecipeOutputBuilder {
         self
     }
     /// <p>The date and time when the recipe was last published.</p>
-    pub fn set_published_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_published_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.published_date = input;
         self
     }
@@ -293,10 +268,7 @@ impl DescribeRecipeOutputBuilder {
         self
     }
     /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
-    pub fn set_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>,
-    ) -> Self {
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>) -> Self {
         self.steps = input;
         self
     }
@@ -309,32 +281,19 @@ impl DescribeRecipeOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata tags associated with this project.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Metadata tags associated with this project.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Metadata tags associated with this project.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The ARN of the recipe.</p>
@@ -352,18 +311,12 @@ impl DescribeRecipeOutputBuilder {
         &self.resource_arn
     }
     /// <p>The recipe version identifier.</p>
-    pub fn recipe_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recipe_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recipe version identifier.</p>
-    pub fn set_recipe_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recipe_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe_version = input;
         self
     }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`database_list(Option<Vec<Database>>)`](crate::operation::get_databases::GetDatabasesOutput::database_list): <p>A list of <code>Database</code> objects from the specified catalog.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_databases::GetDatabasesOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     /// - On failure, responds with [`SdkError<GetDatabasesError>`](crate::operation::get_databases::GetDatabasesError)
-    pub fn get_databases(
-        &self,
-    ) -> crate::operation::get_databases::builders::GetDatabasesFluentBuilder {
-        crate::operation::get_databases::builders::GetDatabasesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_databases(&self) -> crate::operation::get_databases::builders::GetDatabasesFluentBuilder {
+        crate::operation::get_databases::builders::GetDatabasesFluentBuilder::new(self.handle.clone())
     }
 }

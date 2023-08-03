@@ -10,10 +10,7 @@ impl DeleteQuickConnectInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_quick_connect::DeleteQuickConnectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_quick_connect::DeleteQuickConnectError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_quick_connect::DeleteQuickConnectError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_quick_connect();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteQuickConnectFluentBuilder {
         }
     }
     /// Access the DeleteQuickConnect as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_quick_connect::builders::DeleteQuickConnectInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_quick_connect::builders::DeleteQuickConnectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteQuickConnectFluentBuilder {
             crate::operation::delete_quick_connect::DeleteQuickConnect,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_quick_connect::DeleteQuickConnectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_quick_connect::DeleteQuickConnectError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteQuickConnectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteQuickConnectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_quick_connect::DeleteQuickConnectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_quick_connect::DeleteQuickConnectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_quick_connect::DeleteQuickConnectError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteQuickConnectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_quick_connect::DeleteQuickConnectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_quick_connect::DeleteQuickConnectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_quick_connect::DeleteQuickConnectError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteQuickConnectFluentBuilder {
             crate::operation::delete_quick_connect::DeleteQuickConnect,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_quick_connect::DeleteQuickConnectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_quick_connect::DeleteQuickConnectError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl DeleteQuickConnectFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier for the quick connect.</p>
-    pub fn quick_connect_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quick_connect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.quick_connect_id(input.into());
         self
     }
     /// <p>The identifier for the quick connect.</p>
-    pub fn set_quick_connect_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_quick_connect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_quick_connect_id(input);
         self
     }

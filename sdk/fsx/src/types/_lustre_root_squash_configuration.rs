@@ -49,9 +49,7 @@ impl LustreRootSquashConfiguration {
 
 /// A builder for [`LustreRootSquashConfiguration`](crate::types::LustreRootSquashConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LustreRootSquashConfigurationBuilder {
     pub(crate) root_squash: ::std::option::Option<::std::string::String>,
     pub(crate) no_squash_nids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -95,10 +93,7 @@ impl LustreRootSquashConfigurationBuilder {
     /// <li> <p>A single address is described in standard Lustre NID format by specifying the client’s IP address followed by the Lustre network ID (for example, <code>10.0.1.6@tcp</code>).</p> </li>
     /// <li> <p>An address range is described using a dash to separate the range (for example, <code>10.0.[2-10].[1-255]@tcp</code>).</p> </li>
     /// </ul>
-    pub fn no_squash_nids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn no_squash_nids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.no_squash_nids.unwrap_or_default();
         v.push(input.into());
         self.no_squash_nids = ::std::option::Option::Some(v);
@@ -109,10 +104,7 @@ impl LustreRootSquashConfigurationBuilder {
     /// <li> <p>A single address is described in standard Lustre NID format by specifying the client’s IP address followed by the Lustre network ID (for example, <code>10.0.1.6@tcp</code>).</p> </li>
     /// <li> <p>An address range is described using a dash to separate the range (for example, <code>10.0.[2-10].[1-255]@tcp</code>).</p> </li>
     /// </ul>
-    pub fn set_no_squash_nids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_no_squash_nids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.no_squash_nids = input;
         self
     }
@@ -121,9 +113,7 @@ impl LustreRootSquashConfigurationBuilder {
     /// <li> <p>A single address is described in standard Lustre NID format by specifying the client’s IP address followed by the Lustre network ID (for example, <code>10.0.1.6@tcp</code>).</p> </li>
     /// <li> <p>An address range is described using a dash to separate the range (for example, <code>10.0.[2-10].[1-255]@tcp</code>).</p> </li>
     /// </ul>
-    pub fn get_no_squash_nids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_no_squash_nids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.no_squash_nids
     }
     /// Consumes the builder and constructs a [`LustreRootSquashConfiguration`](crate::types::LustreRootSquashConfiguration).

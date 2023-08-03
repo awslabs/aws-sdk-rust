@@ -26,7 +26,7 @@ impl CreateDeviceDefinitionVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDeviceDefinitionVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_device_definition_version::builders::CreateDeviceDefinitionVersionInputBuilder,
+    inner: crate::operation::create_device_definition_version::builders::CreateDeviceDefinitionVersionInputBuilder,
 }
 impl CreateDeviceDefinitionVersionFluentBuilder {
     /// Creates a new `CreateDeviceDefinitionVersion`.
@@ -37,7 +37,7 @@ impl CreateDeviceDefinitionVersionFluentBuilder {
         }
     }
     /// Access the CreateDeviceDefinitionVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_device_definition_version::builders::CreateDeviceDefinitionVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_device_definition_version::builders::CreateDeviceDefinitionVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateDeviceDefinitionVersionFluentBuilder {
             crate::operation::create_device_definition_version::CreateDeviceDefinitionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateDeviceDefinitionVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateDeviceDefinitionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateDeviceDefinitionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateDeviceDefinitionVersionFluentBuilder {
             crate::operation::create_device_definition_version::CreateDeviceDefinitionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionError>,
     > {
         self.customize_middleware().await
     }
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.amzn_client_token(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
@@ -141,18 +124,12 @@ impl CreateDeviceDefinitionVersionFluentBuilder {
         self.inner.get_amzn_client_token()
     }
     /// The ID of the device definition.
-    pub fn device_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_definition_id(input.into());
         self
     }
     /// The ID of the device definition.
-    pub fn set_device_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_definition_id(input);
         self
     }
@@ -170,10 +147,7 @@ impl CreateDeviceDefinitionVersionFluentBuilder {
         self
     }
     /// A list of devices in the definition version.
-    pub fn set_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
-    ) -> Self {
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>) -> Self {
         self.inner = self.inner.set_devices(input);
         self
     }

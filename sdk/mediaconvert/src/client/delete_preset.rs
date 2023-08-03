@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_preset::builders::DeletePresetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_preset::builders::DeletePresetFluentBuilder::set_name): The name of the preset to be deleted.
     /// - On success, responds with [`DeletePresetOutput`](crate::operation::delete_preset::DeletePresetOutput)
     /// - On failure, responds with [`SdkError<DeletePresetError>`](crate::operation::delete_preset::DeletePresetError)
-    pub fn delete_preset(
-        &self,
-    ) -> crate::operation::delete_preset::builders::DeletePresetFluentBuilder {
-        crate::operation::delete_preset::builders::DeletePresetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_preset(&self) -> crate::operation::delete_preset::builders::DeletePresetFluentBuilder {
+        crate::operation::delete_preset::builders::DeletePresetFluentBuilder::new(self.handle.clone())
     }
 }

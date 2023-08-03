@@ -9,49 +9,36 @@ pub struct StartDetectorModelAnalysisInput {
 }
 impl StartDetectorModelAnalysisInput {
     /// <p>Information that defines how a detector operates.</p>
-    pub fn detector_model_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DetectorModelDefinition> {
+    pub fn detector_model_definition(&self) -> ::std::option::Option<&crate::types::DetectorModelDefinition> {
         self.detector_model_definition.as_ref()
     }
 }
 impl StartDetectorModelAnalysisInput {
     /// Creates a new builder-style object to manufacture [`StartDetectorModelAnalysisInput`](crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput).
-    pub fn builder() -> crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisInputBuilder{
+    pub fn builder() -> crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisInputBuilder {
         crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisInputBuilder::default()
     }
 }
 
 /// A builder for [`StartDetectorModelAnalysisInput`](crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDetectorModelAnalysisInputBuilder {
-    pub(crate) detector_model_definition:
-        ::std::option::Option<crate::types::DetectorModelDefinition>,
+    pub(crate) detector_model_definition: ::std::option::Option<crate::types::DetectorModelDefinition>,
 }
 impl StartDetectorModelAnalysisInputBuilder {
     /// <p>Information that defines how a detector operates.</p>
-    pub fn detector_model_definition(
-        mut self,
-        input: crate::types::DetectorModelDefinition,
-    ) -> Self {
+    pub fn detector_model_definition(mut self, input: crate::types::DetectorModelDefinition) -> Self {
         self.detector_model_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information that defines how a detector operates.</p>
-    pub fn set_detector_model_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectorModelDefinition>,
-    ) -> Self {
+    pub fn set_detector_model_definition(mut self, input: ::std::option::Option<crate::types::DetectorModelDefinition>) -> Self {
         self.detector_model_definition = input;
         self
     }
     /// <p>Information that defines how a detector operates.</p>
-    pub fn get_detector_model_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::DetectorModelDefinition> {
+    pub fn get_detector_model_definition(&self) -> &::std::option::Option<crate::types::DetectorModelDefinition> {
         &self.detector_model_definition
     }
     /// Consumes the builder and constructs a [`StartDetectorModelAnalysisInput`](crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput).
@@ -61,10 +48,8 @@ impl StartDetectorModelAnalysisInputBuilder {
         crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput {
-                detector_model_definition: self.detector_model_definition,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput {
+            detector_model_definition: self.detector_model_definition,
+        })
     }
 }

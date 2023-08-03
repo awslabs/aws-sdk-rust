@@ -35,9 +35,7 @@ impl ListExperimentsOutput {
 
 /// A builder for [`ListExperimentsOutput`](crate::operation::list_experiments::ListExperimentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExperimentsOutputBuilder {
     pub(crate) experiments: ::std::option::Option<::std::vec::Vec<crate::types::Experiment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListExperimentsOutputBuilder {
         self
     }
     /// <p>An array of structures that contain the configuration details of the experiments in the specified project.</p>
-    pub fn set_experiments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Experiment>>,
-    ) -> Self {
+    pub fn set_experiments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Experiment>>) -> Self {
         self.experiments = input;
         self
     }
     /// <p>An array of structures that contain the configuration details of the experiments in the specified project.</p>
-    pub fn get_experiments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Experiment>> {
+    pub fn get_experiments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Experiment>> {
         &self.experiments
     }
     /// <p>The token to use in a subsequent <code>ListExperiments</code> operation to return the next set of results.</p>

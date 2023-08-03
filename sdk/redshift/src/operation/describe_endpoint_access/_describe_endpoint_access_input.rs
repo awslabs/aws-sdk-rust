@@ -50,18 +50,14 @@ impl DescribeEndpointAccessInput {
 }
 impl DescribeEndpointAccessInput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointAccessInput`](crate::operation::describe_endpoint_access::DescribeEndpointAccessInput).
-    pub fn builder(
-    ) -> crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessInputBuilder {
         crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointAccessInput`](crate::operation::describe_endpoint_access::DescribeEndpointAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointAccessInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_owner: ::std::option::Option<::std::string::String>,
@@ -72,18 +68,12 @@ pub struct DescribeEndpointAccessInputBuilder {
 }
 impl DescribeEndpointAccessInputBuilder {
     /// <p>The cluster identifier associated with the described endpoint.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier associated with the described endpoint.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -92,18 +82,12 @@ impl DescribeEndpointAccessInputBuilder {
         &self.cluster_identifier
     }
     /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
-    pub fn resource_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
-    pub fn set_resource_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_owner = input;
         self
     }
@@ -112,18 +96,12 @@ impl DescribeEndpointAccessInputBuilder {
         &self.resource_owner
     }
     /// <p>The name of the endpoint to be described.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the endpoint to be described.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_name = input;
         self
     }
@@ -176,19 +154,15 @@ impl DescribeEndpointAccessInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEndpointAccessInput`](crate::operation::describe_endpoint_access::DescribeEndpointAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_endpoint_access::DescribeEndpointAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_endpoint_access::DescribeEndpointAccessInput {
-                cluster_identifier: self.cluster_identifier,
-                resource_owner: self.resource_owner,
-                endpoint_name: self.endpoint_name,
-                vpc_id: self.vpc_id,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_endpoint_access::DescribeEndpointAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_endpoint_access::DescribeEndpointAccessInput {
+            cluster_identifier: self.cluster_identifier,
+            resource_owner: self.resource_owner,
+            endpoint_name: self.endpoint_name,
+            vpc_id: self.vpc_id,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

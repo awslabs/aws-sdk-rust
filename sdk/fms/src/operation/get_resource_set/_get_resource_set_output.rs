@@ -35,9 +35,7 @@ impl GetResourceSetOutput {
 
 /// A builder for [`GetResourceSetOutput`](crate::operation::get_resource_set::GetResourceSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceSetOutputBuilder {
     pub(crate) resource_set: ::std::option::Option<crate::types::ResourceSet>,
     pub(crate) resource_set_arn: ::std::option::Option<::std::string::String>,
@@ -50,10 +48,7 @@ impl GetResourceSetOutputBuilder {
         self
     }
     /// <p>Information about the specified resource set.</p>
-    pub fn set_resource_set(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSet>,
-    ) -> Self {
+    pub fn set_resource_set(mut self, input: ::std::option::Option<crate::types::ResourceSet>) -> Self {
         self.resource_set = input;
         self
     }
@@ -62,18 +57,12 @@ impl GetResourceSetOutputBuilder {
         &self.resource_set
     }
     /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
-    pub fn resource_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
-    pub fn set_resource_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_set_arn = input;
         self
     }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCustomActionTypeOutput {
 }
 impl DeleteCustomActionTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomActionTypeOutput`](crate::operation::delete_custom_action_type::DeleteCustomActionTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeOutputBuilder {
         crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomActionTypeOutput`](crate::operation::delete_custom_action_type::DeleteCustomActionTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomActionTypeOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteCustomActionTypeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteCustomActionTypeOutput`](crate::operation::delete_custom_action_type::DeleteCustomActionTypeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_custom_action_type::DeleteCustomActionTypeOutput {
+    pub fn build(self) -> crate::operation::delete_custom_action_type::DeleteCustomActionTypeOutput {
         crate::operation::delete_custom_action_type::DeleteCustomActionTypeOutput {
             _request_id: self._request_id,
         }

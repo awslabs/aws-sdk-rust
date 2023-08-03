@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`cluster_identifier(Option<String>)`](crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationOutput::cluster_identifier): <p>The identifier of the cluster associated with the result for the changed custom domain association.</p>
     ///   - [`custom_domain_cert_expiry_time(Option<String>)`](crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationOutput::custom_domain_cert_expiry_time): <p>The certificate expiration time associated with the result for the changed custom domain association.</p>
     /// - On failure, responds with [`SdkError<ModifyCustomDomainAssociationError>`](crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationError)
-    pub fn modify_custom_domain_association(&self) -> crate::operation::modify_custom_domain_association::builders::ModifyCustomDomainAssociationFluentBuilder{
+    pub fn modify_custom_domain_association(
+        &self,
+    ) -> crate::operation::modify_custom_domain_association::builders::ModifyCustomDomainAssociationFluentBuilder {
         crate::operation::modify_custom_domain_association::builders::ModifyCustomDomainAssociationFluentBuilder::new(self.handle.clone())
     }
 }

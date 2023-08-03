@@ -51,9 +51,7 @@ impl ServiceStatistics {
 
 /// A builder for [`ServiceStatistics`](crate::types::ServiceStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceStatisticsBuilder {
     pub(crate) ok_count: ::std::option::Option<i64>,
     pub(crate) error_statistics: ::std::option::Option<crate::types::ErrorStatistics>,
@@ -82,10 +80,7 @@ impl ServiceStatisticsBuilder {
         self
     }
     /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
-    pub fn set_error_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorStatistics>,
-    ) -> Self {
+    pub fn set_error_statistics(mut self, input: ::std::option::Option<crate::types::ErrorStatistics>) -> Self {
         self.error_statistics = input;
         self
     }
@@ -99,10 +94,7 @@ impl ServiceStatisticsBuilder {
         self
     }
     /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
-    pub fn set_fault_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::FaultStatistics>,
-    ) -> Self {
+    pub fn set_fault_statistics(mut self, input: ::std::option::Option<crate::types::FaultStatistics>) -> Self {
         self.fault_statistics = input;
         self
     }

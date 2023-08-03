@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteVerifiedAccessTrustProviderOutput`](crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderOutput) with field(s):
     ///   - [`verified_access_trust_provider(Option<VerifiedAccessTrustProvider>)`](crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderOutput::verified_access_trust_provider): <p>The ID of the Verified Access trust provider.</p>
     /// - On failure, responds with [`SdkError<DeleteVerifiedAccessTrustProviderError>`](crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderError)
-    pub fn delete_verified_access_trust_provider(&self) -> crate::operation::delete_verified_access_trust_provider::builders::DeleteVerifiedAccessTrustProviderFluentBuilder{
+    pub fn delete_verified_access_trust_provider(
+        &self,
+    ) -> crate::operation::delete_verified_access_trust_provider::builders::DeleteVerifiedAccessTrustProviderFluentBuilder {
         crate::operation::delete_verified_access_trust_provider::builders::DeleteVerifiedAccessTrustProviderFluentBuilder::new(self.handle.clone())
     }
 }

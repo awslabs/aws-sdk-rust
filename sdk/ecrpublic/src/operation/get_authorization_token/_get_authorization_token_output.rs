@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetAuthorizationTokenOutput {
 }
 impl GetAuthorizationTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetAuthorizationTokenOutput`](crate::operation::get_authorization_token::GetAuthorizationTokenOutput).
-    pub fn builder(
-    ) -> crate::operation::get_authorization_token::builders::GetAuthorizationTokenOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_authorization_token::builders::GetAuthorizationTokenOutputBuilder {
         crate::operation::get_authorization_token::builders::GetAuthorizationTokenOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAuthorizationTokenOutput`](crate::operation::get_authorization_token::GetAuthorizationTokenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAuthorizationTokenOutputBuilder {
     pub(crate) authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetAuthorizationTokenOutputBuilder {
         self
     }
     /// <p>An authorization token data object that corresponds to a public registry.</p>
-    pub fn set_authorization_data(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizationData>,
-    ) -> Self {
+    pub fn set_authorization_data(mut self, input: ::std::option::Option<crate::types::AuthorizationData>) -> Self {
         self.authorization_data = input;
         self
     }
     /// <p>An authorization token data object that corresponds to a public registry.</p>
-    pub fn get_authorization_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthorizationData> {
+    pub fn get_authorization_data(&self) -> &::std::option::Option<crate::types::AuthorizationData> {
         &self.authorization_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

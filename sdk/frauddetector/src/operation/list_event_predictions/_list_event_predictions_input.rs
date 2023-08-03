@@ -43,9 +43,7 @@ impl ListEventPredictionsInput {
         self.detector_version_id.as_ref()
     }
     /// <p> The time period for when the predictions were generated. </p>
-    pub fn prediction_time_range(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PredictionTimeRange> {
+    pub fn prediction_time_range(&self) -> ::std::option::Option<&crate::types::PredictionTimeRange> {
         self.prediction_time_range.as_ref()
     }
     /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
@@ -59,17 +57,14 @@ impl ListEventPredictionsInput {
 }
 impl ListEventPredictionsInput {
     /// Creates a new builder-style object to manufacture [`ListEventPredictionsInput`](crate::operation::list_event_predictions::ListEventPredictionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_event_predictions::builders::ListEventPredictionsInputBuilder {
+    pub fn builder() -> crate::operation::list_event_predictions::builders::ListEventPredictionsInputBuilder {
         crate::operation::list_event_predictions::builders::ListEventPredictionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventPredictionsInput`](crate::operation::list_event_predictions::ListEventPredictionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventPredictionsInputBuilder {
     pub(crate) event_id: ::std::option::Option<crate::types::FilterCondition>,
     pub(crate) event_type: ::std::option::Option<crate::types::FilterCondition>,
@@ -86,10 +81,7 @@ impl ListEventPredictionsInputBuilder {
         self
     }
     /// <p> The event ID. </p>
-    pub fn set_event_id(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterCondition>,
-    ) -> Self {
+    pub fn set_event_id(mut self, input: ::std::option::Option<crate::types::FilterCondition>) -> Self {
         self.event_id = input;
         self
     }
@@ -103,10 +95,7 @@ impl ListEventPredictionsInputBuilder {
         self
     }
     /// <p> The event type associated with the detector. </p>
-    pub fn set_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterCondition>,
-    ) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::FilterCondition>) -> Self {
         self.event_type = input;
         self
     }
@@ -120,10 +109,7 @@ impl ListEventPredictionsInputBuilder {
         self
     }
     /// <p> The detector ID. </p>
-    pub fn set_detector_id(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterCondition>,
-    ) -> Self {
+    pub fn set_detector_id(mut self, input: ::std::option::Option<crate::types::FilterCondition>) -> Self {
         self.detector_id = input;
         self
     }
@@ -137,10 +123,7 @@ impl ListEventPredictionsInputBuilder {
         self
     }
     /// <p> The detector version ID. </p>
-    pub fn set_detector_version_id(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterCondition>,
-    ) -> Self {
+    pub fn set_detector_version_id(mut self, input: ::std::option::Option<crate::types::FilterCondition>) -> Self {
         self.detector_version_id = input;
         self
     }
@@ -154,17 +137,12 @@ impl ListEventPredictionsInputBuilder {
         self
     }
     /// <p> The time period for when the predictions were generated. </p>
-    pub fn set_prediction_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::PredictionTimeRange>,
-    ) -> Self {
+    pub fn set_prediction_time_range(mut self, input: ::std::option::Option<crate::types::PredictionTimeRange>) -> Self {
         self.prediction_time_range = input;
         self
     }
     /// <p> The time period for when the predictions were generated. </p>
-    pub fn get_prediction_time_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::PredictionTimeRange> {
+    pub fn get_prediction_time_range(&self) -> &::std::option::Option<crate::types::PredictionTimeRange> {
         &self.prediction_time_range
     }
     /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
@@ -198,20 +176,16 @@ impl ListEventPredictionsInputBuilder {
     /// Consumes the builder and constructs a [`ListEventPredictionsInput`](crate::operation::list_event_predictions::ListEventPredictionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_event_predictions::ListEventPredictionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_event_predictions::ListEventPredictionsInput {
-                event_id: self.event_id,
-                event_type: self.event_type,
-                detector_id: self.detector_id,
-                detector_version_id: self.detector_version_id,
-                prediction_time_range: self.prediction_time_range,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_event_predictions::ListEventPredictionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_event_predictions::ListEventPredictionsInput {
+            event_id: self.event_id,
+            event_type: self.event_type,
+            detector_id: self.detector_id,
+            detector_version_id: self.detector_version_id,
+            prediction_time_range: self.prediction_time_range,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

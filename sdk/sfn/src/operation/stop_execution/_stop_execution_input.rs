@@ -53,18 +53,12 @@ pub struct StopExecutionInputBuilder {
 }
 impl StopExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
-    pub fn execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
-    pub fn set_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_arn = input;
         self
     }
@@ -103,10 +97,7 @@ impl StopExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StopExecutionInput`](crate::operation::stop_execution::StopExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_execution::StopExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::stop_execution::StopExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_execution::StopExecutionInput {
             execution_arn: self.execution_arn,
             error: self.error,

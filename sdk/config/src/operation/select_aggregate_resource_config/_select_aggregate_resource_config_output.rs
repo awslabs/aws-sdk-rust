@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for SelectAggregateResourceConfigOutput {
 }
 impl SelectAggregateResourceConfigOutput {
     /// Creates a new builder-style object to manufacture [`SelectAggregateResourceConfigOutput`](crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigOutput).
-    pub fn builder() -> crate::operation::select_aggregate_resource_config::builders::SelectAggregateResourceConfigOutputBuilder{
+    pub fn builder() -> crate::operation::select_aggregate_resource_config::builders::SelectAggregateResourceConfigOutputBuilder {
         crate::operation::select_aggregate_resource_config::builders::SelectAggregateResourceConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`SelectAggregateResourceConfigOutput`](crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelectAggregateResourceConfigOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) query_info: ::std::option::Option<crate::types::QueryInfo>,
@@ -64,10 +62,7 @@ impl SelectAggregateResourceConfigOutputBuilder {
         self
     }
     /// <p>Returns the results for the SQL query.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.results = input;
         self
     }
@@ -113,10 +108,7 @@ impl SelectAggregateResourceConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SelectAggregateResourceConfigOutput`](crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigOutput
-    {
+    pub fn build(self) -> crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigOutput {
         crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigOutput {
             results: self.results,
             query_info: self.query_info,

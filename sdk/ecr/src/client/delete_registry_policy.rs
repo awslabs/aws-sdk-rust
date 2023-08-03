@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`registry_id(Option<String>)`](crate::operation::delete_registry_policy::DeleteRegistryPolicyOutput::registry_id): <p>The registry ID associated with the request.</p>
     ///   - [`policy_text(Option<String>)`](crate::operation::delete_registry_policy::DeleteRegistryPolicyOutput::policy_text): <p>The contents of the registry permissions policy that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteRegistryPolicyError>`](crate::operation::delete_registry_policy::DeleteRegistryPolicyError)
-    pub fn delete_registry_policy(
-        &self,
-    ) -> crate::operation::delete_registry_policy::builders::DeleteRegistryPolicyFluentBuilder {
-        crate::operation::delete_registry_policy::builders::DeleteRegistryPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_registry_policy(&self) -> crate::operation::delete_registry_policy::builders::DeleteRegistryPolicyFluentBuilder {
+        crate::operation::delete_registry_policy::builders::DeleteRegistryPolicyFluentBuilder::new(self.handle.clone())
     }
 }

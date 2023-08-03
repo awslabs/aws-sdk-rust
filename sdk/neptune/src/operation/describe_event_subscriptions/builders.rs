@@ -27,7 +27,7 @@ impl DescribeEventSubscriptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEventSubscriptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsInputBuilder,
+    inner: crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsInputBuilder,
 }
 impl DescribeEventSubscriptionsFluentBuilder {
     /// Creates a new `DescribeEventSubscriptions`.
@@ -38,7 +38,7 @@ impl DescribeEventSubscriptionsFluentBuilder {
         }
     }
     /// Access the DescribeEventSubscriptions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeEventSubscriptionsFluentBuilder {
             crate::operation::describe_event_subscriptions::DescribeEventSubscriptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeEventSubscriptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeEventSubscriptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeEventSubscriptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError>,
     > {
         self.send_middleware().await
     }
@@ -115,31 +106,23 @@ impl DescribeEventSubscriptionsFluentBuilder {
             crate::operation::describe_event_subscriptions::DescribeEventSubscriptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_event_subscriptions::paginator::DescribeEventSubscriptionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_event_subscriptions::paginator::DescribeEventSubscriptionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_event_subscriptions::paginator::DescribeEventSubscriptionsPaginator {
         crate::operation::describe_event_subscriptions::paginator::DescribeEventSubscriptionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the event notification subscription you want to describe.</p>
-    pub fn subscription_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscription_name(input.into());
         self
     }
     /// <p>The name of the event notification subscription you want to describe.</p>
-    pub fn set_subscription_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_name(input);
         self
     }
@@ -157,10 +140,7 @@ impl DescribeEventSubscriptionsFluentBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

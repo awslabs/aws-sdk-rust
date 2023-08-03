@@ -39,13 +39,7 @@
 /// Rtmp Caption Data
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RtmpCaptionData {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for RtmpCaptionData {
             "ALL" => RtmpCaptionData::All,
             "FIELD1_608" => RtmpCaptionData::Field1608,
             "FIELD1_AND_FIELD2_608" => RtmpCaptionData::Field1AndField2608,
-            other => {
-                RtmpCaptionData::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => RtmpCaptionData::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

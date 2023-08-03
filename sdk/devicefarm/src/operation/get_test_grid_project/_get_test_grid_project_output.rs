@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetTestGridProjectOutput {
 }
 impl GetTestGridProjectOutput {
     /// Creates a new builder-style object to manufacture [`GetTestGridProjectOutput`](crate::operation::get_test_grid_project::GetTestGridProjectOutput).
-    pub fn builder(
-    ) -> crate::operation::get_test_grid_project::builders::GetTestGridProjectOutputBuilder {
-        crate::operation::get_test_grid_project::builders::GetTestGridProjectOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_test_grid_project::builders::GetTestGridProjectOutputBuilder {
+        crate::operation::get_test_grid_project::builders::GetTestGridProjectOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTestGridProjectOutput`](crate::operation::get_test_grid_project::GetTestGridProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTestGridProjectOutputBuilder {
     pub(crate) test_grid_project: ::std::option::Option<crate::types::TestGridProject>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetTestGridProjectOutputBuilder {
         self
     }
     /// <p>A <code>TestGridProject</code>.</p>
-    pub fn set_test_grid_project(
-        mut self,
-        input: ::std::option::Option<crate::types::TestGridProject>,
-    ) -> Self {
+    pub fn set_test_grid_project(mut self, input: ::std::option::Option<crate::types::TestGridProject>) -> Self {
         self.test_grid_project = input;
         self
     }

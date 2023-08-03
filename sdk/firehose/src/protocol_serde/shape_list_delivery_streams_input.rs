@@ -13,9 +13,7 @@ pub fn ser_list_delivery_streams_input(
         object.key("DeliveryStreamType").string(var_2.as_str());
     }
     if let Some(var_3) = &input.exclusive_start_delivery_stream_name {
-        object
-            .key("ExclusiveStartDeliveryStreamName")
-            .string(var_3.as_str());
+        object.key("ExclusiveStartDeliveryStreamName").string(var_3.as_str());
     }
     Ok(())
 }

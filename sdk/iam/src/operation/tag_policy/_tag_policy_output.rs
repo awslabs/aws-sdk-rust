@@ -19,9 +19,7 @@ impl TagPolicyOutput {
 
 /// A builder for [`TagPolicyOutput`](crate::operation::tag_policy::TagPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagPolicyOutputBuilder {
     _request_id: Option<String>,
 }

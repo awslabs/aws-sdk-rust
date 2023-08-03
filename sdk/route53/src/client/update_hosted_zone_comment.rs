@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateHostedZoneCommentOutput`](crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentOutput) with field(s):
     ///   - [`hosted_zone(Option<HostedZone>)`](crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentOutput::hosted_zone): <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
     /// - On failure, responds with [`SdkError<UpdateHostedZoneCommentError>`](crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentError)
-    pub fn update_hosted_zone_comment(
-        &self,
-    ) -> crate::operation::update_hosted_zone_comment::builders::UpdateHostedZoneCommentFluentBuilder
-    {
+    pub fn update_hosted_zone_comment(&self) -> crate::operation::update_hosted_zone_comment::builders::UpdateHostedZoneCommentFluentBuilder {
         crate::operation::update_hosted_zone_comment::builders::UpdateHostedZoneCommentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`subscription_type(Option<String>)`](crate::operation::get_subscription::GetSubscriptionOutput::subscription_type): <p>The type of the billing plan for the space.</p>
     ///   - [`aws_account_name(Option<String>)`](crate::operation::get_subscription::GetSubscriptionOutput::aws_account_name): <p>The display name of the Amazon Web Services account used for billing for the space.</p>
     /// - On failure, responds with [`SdkError<GetSubscriptionError>`](crate::operation::get_subscription::GetSubscriptionError)
-    pub fn get_subscription(
-        &self,
-    ) -> crate::operation::get_subscription::builders::GetSubscriptionFluentBuilder {
-        crate::operation::get_subscription::builders::GetSubscriptionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_subscription(&self) -> crate::operation::get_subscription::builders::GetSubscriptionFluentBuilder {
+        crate::operation::get_subscription::builders::GetSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

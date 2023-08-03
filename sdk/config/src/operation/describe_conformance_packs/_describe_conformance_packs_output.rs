@@ -5,8 +5,7 @@
 pub struct DescribeConformancePacksOutput {
     /// <p>Returns a list of <code>ConformancePackDetail</code> objects.</p>
     #[doc(hidden)]
-    pub conformance_pack_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackDetail>>,
+    pub conformance_pack_details: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackDetail>>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeConformancePacksOutput {
 }
 impl DescribeConformancePacksOutput {
     /// <p>Returns a list of <code>ConformancePackDetail</code> objects.</p>
-    pub fn conformance_pack_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConformancePackDetail]> {
+    pub fn conformance_pack_details(&self) -> ::std::option::Option<&[crate::types::ConformancePackDetail]> {
         self.conformance_pack_details.as_deref()
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeConformancePacksOutput {
 }
 impl DescribeConformancePacksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConformancePacksOutput`](crate::operation::describe_conformance_packs::DescribeConformancePacksOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_conformance_packs::builders::DescribeConformancePacksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_conformance_packs::builders::DescribeConformancePacksOutputBuilder {
         crate::operation::describe_conformance_packs::builders::DescribeConformancePacksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConformancePacksOutput`](crate::operation::describe_conformance_packs::DescribeConformancePacksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConformancePacksOutputBuilder {
-    pub(crate) conformance_pack_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackDetail>>,
+    pub(crate) conformance_pack_details: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl DescribeConformancePacksOutputBuilder {
         self
     }
     /// <p>Returns a list of <code>ConformancePackDetail</code> objects.</p>
-    pub fn set_conformance_pack_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackDetail>>,
-    ) -> Self {
+    pub fn set_conformance_pack_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackDetail>>) -> Self {
         self.conformance_pack_details = input;
         self
     }
     /// <p>Returns a list of <code>ConformancePackDetail</code> objects.</p>
-    pub fn get_conformance_pack_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackDetail>> {
+    pub fn get_conformance_pack_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackDetail>> {
         &self.conformance_pack_details
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -99,9 +86,7 @@ impl DescribeConformancePacksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeConformancePacksOutput`](crate::operation::describe_conformance_packs::DescribeConformancePacksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_conformance_packs::DescribeConformancePacksOutput {
+    pub fn build(self) -> crate::operation::describe_conformance_packs::DescribeConformancePacksOutput {
         crate::operation::describe_conformance_packs::DescribeConformancePacksOutput {
             conformance_pack_details: self.conformance_pack_details,
             next_token: self.next_token,

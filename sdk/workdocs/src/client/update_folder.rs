@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`resource_state(ResourceStateType)`](crate::operation::update_folder::builders::UpdateFolderFluentBuilder::resource_state) / [`set_resource_state(Option<ResourceStateType>)`](crate::operation::update_folder::builders::UpdateFolderFluentBuilder::set_resource_state): <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
     /// - On success, responds with [`UpdateFolderOutput`](crate::operation::update_folder::UpdateFolderOutput)
     /// - On failure, responds with [`SdkError<UpdateFolderError>`](crate::operation::update_folder::UpdateFolderError)
-    pub fn update_folder(
-        &self,
-    ) -> crate::operation::update_folder::builders::UpdateFolderFluentBuilder {
-        crate::operation::update_folder::builders::UpdateFolderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_folder(&self) -> crate::operation::update_folder::builders::UpdateFolderFluentBuilder {
+        crate::operation::update_folder::builders::UpdateFolderFluentBuilder::new(self.handle.clone())
     }
 }

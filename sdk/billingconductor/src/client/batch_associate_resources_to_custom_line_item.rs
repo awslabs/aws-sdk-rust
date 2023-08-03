@@ -10,7 +10,11 @@ impl super::Client {
     ///   - [`successfully_associated_resources(Option<Vec<AssociateResourceResponseElement>>)`](crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput::successfully_associated_resources): <p> A list of <code>AssociateResourceResponseElement</code> for each resource that's been associated to a percentage custom line item successfully. </p>
     ///   - [`failed_associated_resources(Option<Vec<AssociateResourceResponseElement>>)`](crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput::failed_associated_resources): <p> A list of <code>AssociateResourceResponseElement</code> for each resource that failed association to a percentage custom line item. </p>
     /// - On failure, responds with [`SdkError<BatchAssociateResourcesToCustomLineItemError>`](crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError)
-    pub fn batch_associate_resources_to_custom_line_item(&self) -> crate::operation::batch_associate_resources_to_custom_line_item::builders::BatchAssociateResourcesToCustomLineItemFluentBuilder{
-        crate::operation::batch_associate_resources_to_custom_line_item::builders::BatchAssociateResourcesToCustomLineItemFluentBuilder::new(self.handle.clone())
+    pub fn batch_associate_resources_to_custom_line_item(
+        &self,
+    ) -> crate::operation::batch_associate_resources_to_custom_line_item::builders::BatchAssociateResourcesToCustomLineItemFluentBuilder {
+        crate::operation::batch_associate_resources_to_custom_line_item::builders::BatchAssociateResourcesToCustomLineItemFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

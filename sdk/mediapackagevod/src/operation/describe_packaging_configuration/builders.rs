@@ -26,7 +26,7 @@ impl DescribePackagingConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePackagingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationInputBuilder,
+    inner: crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationInputBuilder,
 }
 impl DescribePackagingConfigurationFluentBuilder {
     /// Creates a new `DescribePackagingConfiguration`.
@@ -37,7 +37,7 @@ impl DescribePackagingConfigurationFluentBuilder {
         }
     }
     /// Access the DescribePackagingConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribePackagingConfigurationFluentBuilder {
             crate::operation::describe_packaging_configuration::DescribePackagingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_packaging_configuration::DescribePackagingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_packaging_configuration::DescribePackagingConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribePackagingConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribePackagingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_packaging_configuration::DescribePackagingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_packaging_configuration::DescribePackagingConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribePackagingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_packaging_configuration::DescribePackagingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_packaging_configuration::DescribePackagingConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribePackagingConfigurationFluentBuilder {
             crate::operation::describe_packaging_configuration::DescribePackagingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_packaging_configuration::DescribePackagingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_packaging_configuration::DescribePackagingConfigurationError>,
     > {
         self.customize_middleware().await
     }

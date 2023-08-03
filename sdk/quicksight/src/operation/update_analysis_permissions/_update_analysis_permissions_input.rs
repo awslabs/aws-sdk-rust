@@ -14,8 +14,7 @@ pub struct UpdateAnalysisPermissionsInput {
     pub grant_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>A structure that describes the permissions to remove and the principal to remove them from.</p>
     #[doc(hidden)]
-    pub revoke_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub revoke_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl UpdateAnalysisPermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're updating. You must be using the Amazon Web Services account that the analysis is in.</p>
@@ -37,38 +36,28 @@ impl UpdateAnalysisPermissionsInput {
 }
 impl UpdateAnalysisPermissionsInput {
     /// Creates a new builder-style object to manufacture [`UpdateAnalysisPermissionsInput`](crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsInput).
-    pub fn builder() -> crate::operation::update_analysis_permissions::builders::UpdateAnalysisPermissionsInputBuilder{
+    pub fn builder() -> crate::operation::update_analysis_permissions::builders::UpdateAnalysisPermissionsInputBuilder {
         crate::operation::update_analysis_permissions::builders::UpdateAnalysisPermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAnalysisPermissionsInput`](crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAnalysisPermissionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
-    pub(crate) grant_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    pub(crate) revoke_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) grant_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) revoke_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl UpdateAnalysisPermissionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're updating. You must be using the Amazon Web Services account that the analysis is in.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're updating. You must be using the Amazon Web Services account that the analysis is in.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -102,17 +91,12 @@ impl UpdateAnalysisPermissionsInputBuilder {
         self
     }
     /// <p>A structure that describes the permissions to add and the principal to add them to.</p>
-    pub fn set_grant_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_grant_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.grant_permissions = input;
         self
     }
     /// <p>A structure that describes the permissions to add and the principal to add them to.</p>
-    pub fn get_grant_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_grant_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.grant_permissions
     }
     /// Appends an item to `revoke_permissions`.
@@ -127,17 +111,12 @@ impl UpdateAnalysisPermissionsInputBuilder {
         self
     }
     /// <p>A structure that describes the permissions to remove and the principal to remove them from.</p>
-    pub fn set_revoke_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_revoke_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.revoke_permissions = input;
         self
     }
     /// <p>A structure that describes the permissions to remove and the principal to remove them from.</p>
-    pub fn get_revoke_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_revoke_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.revoke_permissions
     }
     /// Consumes the builder and constructs a [`UpdateAnalysisPermissionsInput`](crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsInput).
@@ -147,13 +126,11 @@ impl UpdateAnalysisPermissionsInputBuilder {
         crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsInput {
-                aws_account_id: self.aws_account_id,
-                analysis_id: self.analysis_id,
-                grant_permissions: self.grant_permissions,
-                revoke_permissions: self.revoke_permissions,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsInput {
+            aws_account_id: self.aws_account_id,
+            analysis_id: self.analysis_id,
+            grant_permissions: self.grant_permissions,
+            revoke_permissions: self.revoke_permissions,
+        })
     }
 }

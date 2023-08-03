@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`status_reason(Option<String>)`](crate::operation::update_billing_group::UpdateBillingGroupOutput::status_reason): <p> The reason why the billing group is in its current status. </p>
     ///   - [`account_grouping(Option<UpdateBillingGroupAccountGrouping>)`](crate::operation::update_billing_group::UpdateBillingGroupOutput::account_grouping): <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
     /// - On failure, responds with [`SdkError<UpdateBillingGroupError>`](crate::operation::update_billing_group::UpdateBillingGroupError)
-    pub fn update_billing_group(
-        &self,
-    ) -> crate::operation::update_billing_group::builders::UpdateBillingGroupFluentBuilder {
-        crate::operation::update_billing_group::builders::UpdateBillingGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_billing_group(&self) -> crate::operation::update_billing_group::builders::UpdateBillingGroupFluentBuilder {
+        crate::operation::update_billing_group::builders::UpdateBillingGroupFluentBuilder::new(self.handle.clone())
     }
 }

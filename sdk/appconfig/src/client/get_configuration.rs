@@ -16,11 +16,7 @@ impl super::Client {
     #[deprecated(
         note = "This API has been deprecated in favor of the GetLatestConfiguration API used in conjunction with StartConfigurationSession."
     )]
-    pub fn get_configuration(
-        &self,
-    ) -> crate::operation::get_configuration::builders::GetConfigurationFluentBuilder {
-        crate::operation::get_configuration::builders::GetConfigurationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_configuration(&self) -> crate::operation::get_configuration::builders::GetConfigurationFluentBuilder {
+        crate::operation::get_configuration::builders::GetConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

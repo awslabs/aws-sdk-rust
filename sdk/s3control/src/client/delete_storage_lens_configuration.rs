@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::delete_storage_lens_configuration::builders::DeleteStorageLensConfigurationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_storage_lens_configuration::builders::DeleteStorageLensConfigurationFluentBuilder::set_account_id): <p>The account ID of the requester.</p>
     /// - On success, responds with [`DeleteStorageLensConfigurationOutput`](crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteStorageLensConfigurationError>`](crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationError)
-    pub fn delete_storage_lens_configuration(&self) -> crate::operation::delete_storage_lens_configuration::builders::DeleteStorageLensConfigurationFluentBuilder{
+    pub fn delete_storage_lens_configuration(
+        &self,
+    ) -> crate::operation::delete_storage_lens_configuration::builders::DeleteStorageLensConfigurationFluentBuilder {
         crate::operation::delete_storage_lens_configuration::builders::DeleteStorageLensConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

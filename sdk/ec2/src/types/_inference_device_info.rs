@@ -44,9 +44,7 @@ impl InferenceDeviceInfo {
 
 /// A builder for [`InferenceDeviceInfo`](crate::types::InferenceDeviceInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferenceDeviceInfoBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -102,17 +100,12 @@ impl InferenceDeviceInfoBuilder {
         self
     }
     /// <p>Describes the memory available to the inference accelerator.</p>
-    pub fn set_memory_info(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceDeviceMemoryInfo>,
-    ) -> Self {
+    pub fn set_memory_info(mut self, input: ::std::option::Option<crate::types::InferenceDeviceMemoryInfo>) -> Self {
         self.memory_info = input;
         self
     }
     /// <p>Describes the memory available to the inference accelerator.</p>
-    pub fn get_memory_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceDeviceMemoryInfo> {
+    pub fn get_memory_info(&self) -> &::std::option::Option<crate::types::InferenceDeviceMemoryInfo> {
         &self.memory_info
     }
     /// Consumes the builder and constructs a [`InferenceDeviceInfo`](crate::types::InferenceDeviceInfo).

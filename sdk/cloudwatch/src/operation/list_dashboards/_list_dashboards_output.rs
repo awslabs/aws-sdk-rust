@@ -35,12 +35,9 @@ impl ListDashboardsOutput {
 
 /// A builder for [`ListDashboardsOutput`](crate::operation::list_dashboards::ListDashboardsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDashboardsOutputBuilder {
-    pub(crate) dashboard_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DashboardEntry>>,
+    pub(crate) dashboard_entries: ::std::option::Option<::std::vec::Vec<crate::types::DashboardEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListDashboardsOutputBuilder {
         self
     }
     /// <p>The list of matching dashboards.</p>
-    pub fn set_dashboard_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DashboardEntry>>,
-    ) -> Self {
+    pub fn set_dashboard_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DashboardEntry>>) -> Self {
         self.dashboard_entries = input;
         self
     }
     /// <p>The list of matching dashboards.</p>
-    pub fn get_dashboard_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardEntry>> {
+    pub fn get_dashboard_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardEntry>> {
         &self.dashboard_entries
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>

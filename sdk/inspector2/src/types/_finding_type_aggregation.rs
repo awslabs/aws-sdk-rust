@@ -44,9 +44,7 @@ impl FindingTypeAggregation {
 
 /// A builder for [`FindingTypeAggregation`](crate::types::FindingTypeAggregation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindingTypeAggregationBuilder {
     pub(crate) finding_type: ::std::option::Option<crate::types::AggregationFindingType>,
     pub(crate) resource_type: ::std::option::Option<crate::types::AggregationResourceType>,
@@ -60,10 +58,7 @@ impl FindingTypeAggregationBuilder {
         self
     }
     /// <p>The finding type to aggregate.</p>
-    pub fn set_finding_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationFindingType>,
-    ) -> Self {
+    pub fn set_finding_type(mut self, input: ::std::option::Option<crate::types::AggregationFindingType>) -> Self {
         self.finding_type = input;
         self
     }
@@ -77,17 +72,12 @@ impl FindingTypeAggregationBuilder {
         self
     }
     /// <p>The resource type to aggregate.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::AggregationResourceType>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The resource type to aggregate.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AggregationResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::AggregationResourceType> {
         &self.resource_type
     }
     /// <p>The order to sort results by.</p>
@@ -110,10 +100,7 @@ impl FindingTypeAggregationBuilder {
         self
     }
     /// <p>The value to sort results by.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingTypeSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::FindingTypeSortBy>) -> Self {
         self.sort_by = input;
         self
     }

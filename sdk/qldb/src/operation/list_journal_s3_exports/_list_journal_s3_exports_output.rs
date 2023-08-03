@@ -5,8 +5,7 @@
 pub struct ListJournalS3ExportsOutput {
     /// <p>The journal export jobs for all ledgers that are associated with the current Amazon Web Services account and Region.</p>
     #[doc(hidden)]
-    pub journal_s3_exports:
-        ::std::option::Option<::std::vec::Vec<crate::types::JournalS3ExportDescription>>,
+    pub journal_s3_exports: ::std::option::Option<::std::vec::Vec<crate::types::JournalS3ExportDescription>>,
     /// <ul>
     /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
     /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3Exports</code> call.</p> </li>
@@ -17,9 +16,7 @@ pub struct ListJournalS3ExportsOutput {
 }
 impl ListJournalS3ExportsOutput {
     /// <p>The journal export jobs for all ledgers that are associated with the current Amazon Web Services account and Region.</p>
-    pub fn journal_s3_exports(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::JournalS3ExportDescription]> {
+    pub fn journal_s3_exports(&self) -> ::std::option::Option<&[crate::types::JournalS3ExportDescription]> {
         self.journal_s3_exports.as_deref()
     }
     /// <ul>
@@ -37,21 +34,16 @@ impl ::aws_http::request_id::RequestId for ListJournalS3ExportsOutput {
 }
 impl ListJournalS3ExportsOutput {
     /// Creates a new builder-style object to manufacture [`ListJournalS3ExportsOutput`](crate::operation::list_journal_s3_exports::ListJournalS3ExportsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_journal_s3_exports::builders::ListJournalS3ExportsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_journal_s3_exports::builders::ListJournalS3ExportsOutputBuilder {
         crate::operation::list_journal_s3_exports::builders::ListJournalS3ExportsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListJournalS3ExportsOutput`](crate::operation::list_journal_s3_exports::ListJournalS3ExportsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJournalS3ExportsOutputBuilder {
-    pub(crate) journal_s3_exports:
-        ::std::option::Option<::std::vec::Vec<crate::types::JournalS3ExportDescription>>,
+    pub(crate) journal_s3_exports: ::std::option::Option<::std::vec::Vec<crate::types::JournalS3ExportDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -68,17 +60,12 @@ impl ListJournalS3ExportsOutputBuilder {
         self
     }
     /// <p>The journal export jobs for all ledgers that are associated with the current Amazon Web Services account and Region.</p>
-    pub fn set_journal_s3_exports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JournalS3ExportDescription>>,
-    ) -> Self {
+    pub fn set_journal_s3_exports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JournalS3ExportDescription>>) -> Self {
         self.journal_s3_exports = input;
         self
     }
     /// <p>The journal export jobs for all ledgers that are associated with the current Amazon Web Services account and Region.</p>
-    pub fn get_journal_s3_exports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JournalS3ExportDescription>> {
+    pub fn get_journal_s3_exports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JournalS3ExportDescription>> {
         &self.journal_s3_exports
     }
     /// <ul>

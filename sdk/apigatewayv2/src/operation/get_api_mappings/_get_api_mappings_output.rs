@@ -35,9 +35,7 @@ impl GetApiMappingsOutput {
 
 /// A builder for [`GetApiMappingsOutput`](crate::operation::get_api_mappings::GetApiMappingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApiMappingsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ApiMapping>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetApiMappingsOutputBuilder {
         self
     }
     /// <p>The elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApiMapping>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApiMapping>>) -> Self {
         self.items = input;
         self
     }

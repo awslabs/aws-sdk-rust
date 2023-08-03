@@ -70,9 +70,7 @@ impl StartImportOutput {
 
 /// A builder for [`StartImportOutput`](crate::operation::start_import::StartImportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartImportOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -104,10 +102,7 @@ impl StartImportOutputBuilder {
         self
     }
     /// <p>The type of resource to import.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -121,10 +116,7 @@ impl StartImportOutputBuilder {
         self
     }
     /// <p>The action to take when there is a merge conflict.</p>
-    pub fn set_merge_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::MergeStrategy>,
-    ) -> Self {
+    pub fn set_merge_strategy(mut self, input: ::std::option::Option<crate::types::MergeStrategy>) -> Self {
         self.merge_strategy = input;
         self
     }
@@ -152,10 +144,7 @@ impl StartImportOutputBuilder {
         self
     }
     /// <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure using the <code>GetImport</code> operation.</p>
-    pub fn set_import_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportStatus>,
-    ) -> Self {
+    pub fn set_import_status(mut self, input: ::std::option::Option<crate::types::ImportStatus>) -> Self {
         self.import_status = input;
         self
     }
@@ -175,10 +164,7 @@ impl StartImportOutputBuilder {
         self
     }
     /// <p>A list of tags added to the imported bot.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -192,10 +178,7 @@ impl StartImportOutputBuilder {
         self
     }
     /// <p>A timestamp for the date and time that the import job was requested.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }

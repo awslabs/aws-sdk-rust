@@ -51,17 +51,14 @@ impl ListTaskTemplatesInput {
 }
 impl ListTaskTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListTaskTemplatesInput`](crate::operation::list_task_templates::ListTaskTemplatesInput).
-    pub fn builder(
-    ) -> crate::operation::list_task_templates::builders::ListTaskTemplatesInputBuilder {
+    pub fn builder() -> crate::operation::list_task_templates::builders::ListTaskTemplatesInputBuilder {
         crate::operation::list_task_templates::builders::ListTaskTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTaskTemplatesInput`](crate::operation::list_task_templates::ListTaskTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTaskTemplatesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -130,10 +127,7 @@ impl ListTaskTemplatesInputBuilder {
         self
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskTemplateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskTemplateStatus>) -> Self {
         self.status = input;
         self
     }
@@ -158,18 +152,13 @@ impl ListTaskTemplatesInputBuilder {
     /// Consumes the builder and constructs a [`ListTaskTemplatesInput`](crate::operation::list_task_templates::ListTaskTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_task_templates::ListTaskTemplatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_task_templates::ListTaskTemplatesInput {
-                instance_id: self.instance_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                status: self.status,
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_task_templates::ListTaskTemplatesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_task_templates::ListTaskTemplatesInput {
+            instance_id: self.instance_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            status: self.status,
+            name: self.name,
+        })
     }
 }

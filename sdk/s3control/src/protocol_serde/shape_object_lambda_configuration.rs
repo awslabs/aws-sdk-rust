@@ -11,10 +11,7 @@ pub fn ser_object_lambda_configuration(
     }
     if input.cloud_watch_metrics_enabled {
         let mut inner_writer = scope.start_el("CloudWatchMetricsEnabled").finish();
-        inner_writer.data(
-            ::aws_smithy_types::primitive::Encoder::from(input.cloud_watch_metrics_enabled)
-                .encode(),
-        );
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.cloud_watch_metrics_enabled).encode());
     }
     if let Some(var_2) = &input.allowed_features {
         let mut inner_writer = scope.start_el("AllowedFeatures").finish();
@@ -30,7 +27,10 @@ pub fn ser_object_lambda_configuration(
         for list_item_5 in var_4 {
             {
                 let inner_writer = inner_writer.start_el("TransformationConfiguration");
-                crate::protocol_serde::shape_object_lambda_transformation_configuration::ser_object_lambda_transformation_configuration(list_item_5, inner_writer)?
+                crate::protocol_serde::shape_object_lambda_transformation_configuration::ser_object_lambda_transformation_configuration(
+                    list_item_5,
+                    inner_writer,
+                )?
             }
         }
     }

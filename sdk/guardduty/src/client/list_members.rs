@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`members(Option<Vec<Member>>)`](crate::operation::list_members::ListMembersOutput::members): <p>A list of members.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_members::ListMembersOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     /// - On failure, responds with [`SdkError<ListMembersError>`](crate::operation::list_members::ListMembersError)
-    pub fn list_members(
-        &self,
-    ) -> crate::operation::list_members::builders::ListMembersFluentBuilder {
+    pub fn list_members(&self) -> crate::operation::list_members::builders::ListMembersFluentBuilder {
         crate::operation::list_members::builders::ListMembersFluentBuilder::new(self.handle.clone())
     }
 }

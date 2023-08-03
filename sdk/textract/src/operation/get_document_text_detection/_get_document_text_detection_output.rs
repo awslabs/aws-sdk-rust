@@ -63,16 +63,14 @@ impl ::aws_http::request_id::RequestId for GetDocumentTextDetectionOutput {
 }
 impl GetDocumentTextDetectionOutput {
     /// Creates a new builder-style object to manufacture [`GetDocumentTextDetectionOutput`](crate::operation::get_document_text_detection::GetDocumentTextDetectionOutput).
-    pub fn builder() -> crate::operation::get_document_text_detection::builders::GetDocumentTextDetectionOutputBuilder{
+    pub fn builder() -> crate::operation::get_document_text_detection::builders::GetDocumentTextDetectionOutputBuilder {
         crate::operation::get_document_text_detection::builders::GetDocumentTextDetectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDocumentTextDetectionOutput`](crate::operation::get_document_text_detection::GetDocumentTextDetectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDocumentTextDetectionOutputBuilder {
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
@@ -90,10 +88,7 @@ impl GetDocumentTextDetectionOutputBuilder {
         self
     }
     /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
-    pub fn set_document_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentMetadata>,
-    ) -> Self {
+    pub fn set_document_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadata>) -> Self {
         self.document_metadata = input;
         self
     }
@@ -141,10 +136,7 @@ impl GetDocumentTextDetectionOutputBuilder {
         self
     }
     /// <p>The results of the text-detection operation.</p>
-    pub fn set_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
-    ) -> Self {
+    pub fn set_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Block>>) -> Self {
         self.blocks = input;
         self
     }
@@ -164,10 +156,7 @@ impl GetDocumentTextDetectionOutputBuilder {
         self
     }
     /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
-    pub fn set_warnings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
-    ) -> Self {
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>) -> Self {
         self.warnings = input;
         self
     }
@@ -176,18 +165,12 @@ impl GetDocumentTextDetectionOutputBuilder {
         &self.warnings
     }
     /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -196,25 +179,17 @@ impl GetDocumentTextDetectionOutputBuilder {
         &self.status_message
     }
     /// <p></p>
-    pub fn detect_document_text_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detect_document_text_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detect_document_text_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_detect_document_text_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detect_document_text_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detect_document_text_model_version = input;
         self
     }
     /// <p></p>
-    pub fn get_detect_document_text_model_version(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_detect_document_text_model_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.detect_document_text_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -227,9 +202,7 @@ impl GetDocumentTextDetectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDocumentTextDetectionOutput`](crate::operation::get_document_text_detection::GetDocumentTextDetectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_document_text_detection::GetDocumentTextDetectionOutput {
+    pub fn build(self) -> crate::operation::get_document_text_detection::GetDocumentTextDetectionOutput {
         crate::operation::get_document_text_detection::GetDocumentTextDetectionOutput {
             document_metadata: self.document_metadata,
             job_status: self.job_status,

@@ -31,9 +31,7 @@ pub struct UpdateChannelOutput {
     pub playback_mode: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The tier associated with this Channel.</p>
     #[doc(hidden)]
     pub tier: ::std::option::Option<::std::string::String>,
@@ -75,11 +73,7 @@ impl UpdateChannelOutput {
         self.playback_mode.as_deref()
     }
     /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The tier associated with this Channel.</p>
@@ -101,9 +95,7 @@ impl UpdateChannelOutput {
 
 /// A builder for [`UpdateChannelOutput`](crate::operation::update_channel::UpdateChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateChannelOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
@@ -113,9 +105,7 @@ pub struct UpdateChannelOutputBuilder {
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::ResponseOutputItem>>,
     pub(crate) playback_mode: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -154,10 +144,7 @@ impl UpdateChannelOutputBuilder {
         self
     }
     /// <p>Returns the state whether the channel is running or not.</p>
-    pub fn set_channel_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelState>,
-    ) -> Self {
+    pub fn set_channel_state(mut self, input: ::std::option::Option<crate::types::ChannelState>) -> Self {
         self.channel_state = input;
         self
     }
@@ -171,10 +158,7 @@ impl UpdateChannelOutputBuilder {
         self
     }
     /// <p>The timestamp of when the channel was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -188,10 +172,7 @@ impl UpdateChannelOutputBuilder {
         self
     }
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
-    pub fn set_filler_slate(
-        mut self,
-        input: ::std::option::Option<crate::types::SlateSource>,
-    ) -> Self {
+    pub fn set_filler_slate(mut self, input: ::std::option::Option<crate::types::SlateSource>) -> Self {
         self.filler_slate = input;
         self
     }
@@ -205,10 +186,7 @@ impl UpdateChannelOutputBuilder {
         self
     }
     /// <p>The timestamp that indicates when the channel was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -228,36 +206,25 @@ impl UpdateChannelOutputBuilder {
         self
     }
     /// <p>The channel's output properties.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseOutputItem>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseOutputItem>>) -> Self {
         self.outputs = input;
         self
     }
     /// <p>The channel's output properties.</p>
-    pub fn get_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseOutputItem>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseOutputItem>> {
         &self.outputs
     }
     /// <p>The type of playback mode for this channel.</p>
     /// <p> <code>LINEAR</code> - Programs play back-to-back only once.</p>
     /// <p> <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
-    pub fn playback_mode(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn playback_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_mode = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of playback mode for this channel.</p>
     /// <p> <code>LINEAR</code> - Programs play back-to-back only once.</p>
     /// <p> <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
-    pub fn set_playback_mode(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_playback_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.playback_mode = input;
         self
     }
@@ -272,32 +239,19 @@ impl UpdateChannelOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The tier associated with this Channel.</p>

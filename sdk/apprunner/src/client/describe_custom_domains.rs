@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`vpc_dns_targets(Option<Vec<VpcDnsTarget>>)`](crate::operation::describe_custom_domains::DescribeCustomDomainsOutput::vpc_dns_targets): <p>DNS Target records for the custom domains of this Amazon VPC. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_custom_domains::DescribeCustomDomainsOutput::next_token): <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     /// - On failure, responds with [`SdkError<DescribeCustomDomainsError>`](crate::operation::describe_custom_domains::DescribeCustomDomainsError)
-    pub fn describe_custom_domains(
-        &self,
-    ) -> crate::operation::describe_custom_domains::builders::DescribeCustomDomainsFluentBuilder
-    {
-        crate::operation::describe_custom_domains::builders::DescribeCustomDomainsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_custom_domains(&self) -> crate::operation::describe_custom_domains::builders::DescribeCustomDomainsFluentBuilder {
+        crate::operation::describe_custom_domains::builders::DescribeCustomDomainsFluentBuilder::new(self.handle.clone())
     }
 }

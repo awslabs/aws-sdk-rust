@@ -26,7 +26,7 @@ impl StartConfigurationSessionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartConfigurationSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_configuration_session::builders::StartConfigurationSessionInputBuilder,
+    inner: crate::operation::start_configuration_session::builders::StartConfigurationSessionInputBuilder,
 }
 impl StartConfigurationSessionFluentBuilder {
     /// Creates a new `StartConfigurationSession`.
@@ -37,7 +37,7 @@ impl StartConfigurationSessionFluentBuilder {
         }
     }
     /// Access the StartConfigurationSession as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_configuration_session::builders::StartConfigurationSessionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_configuration_session::builders::StartConfigurationSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartConfigurationSessionFluentBuilder {
             crate::operation::start_configuration_session::StartConfigurationSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_configuration_session::StartConfigurationSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_configuration_session::StartConfigurationSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartConfigurationSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartConfigurationSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_configuration_session::StartConfigurationSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_configuration_session::StartConfigurationSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_configuration_session::StartConfigurationSessionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartConfigurationSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_configuration_session::StartConfigurationSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_configuration_session::StartConfigurationSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_configuration_session::StartConfigurationSessionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl StartConfigurationSessionFluentBuilder {
             crate::operation::start_configuration_session::StartConfigurationSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_configuration_session::StartConfigurationSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_configuration_session::StartConfigurationSessionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The application ID or the application name.</p>
-    pub fn application_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_identifier(input.into());
         self
     }
     /// <p>The application ID or the application name.</p>
-    pub fn set_application_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_identifier(input);
         self
     }
@@ -141,18 +124,12 @@ impl StartConfigurationSessionFluentBuilder {
         self.inner.get_application_identifier()
     }
     /// <p>The environment ID or the environment name.</p>
-    pub fn environment_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_identifier(input.into());
         self
     }
     /// <p>The environment ID or the environment name.</p>
-    pub fn set_environment_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_identifier(input);
         self
     }
@@ -161,25 +138,17 @@ impl StartConfigurationSessionFluentBuilder {
         self.inner.get_environment_identifier()
     }
     /// <p>The configuration profile ID or the configuration profile name.</p>
-    pub fn configuration_profile_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_profile_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_profile_identifier(input.into());
         self
     }
     /// <p>The configuration profile ID or the configuration profile name.</p>
-    pub fn set_configuration_profile_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_profile_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_profile_identifier(input);
         self
     }
     /// <p>The configuration profile ID or the configuration profile name.</p>
-    pub fn get_configuration_profile_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_configuration_profile_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_profile_identifier()
     }
     /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
@@ -188,13 +157,8 @@ impl StartConfigurationSessionFluentBuilder {
         self
     }
     /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
-    pub fn set_required_minimum_poll_interval_in_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_required_minimum_poll_interval_in_seconds(input);
+    pub fn set_required_minimum_poll_interval_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_required_minimum_poll_interval_in_seconds(input);
         self
     }
     /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>

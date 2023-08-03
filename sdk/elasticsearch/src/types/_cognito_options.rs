@@ -44,9 +44,7 @@ impl CognitoOptions {
 
 /// A builder for [`CognitoOptions`](crate::types::CognitoOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CognitoOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
@@ -83,18 +81,12 @@ impl CognitoOptionsBuilder {
         &self.user_pool_id
     }
     /// <p>Specifies the Cognito identity pool ID for Kibana authentication.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Cognito identity pool ID for Kibana authentication.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }

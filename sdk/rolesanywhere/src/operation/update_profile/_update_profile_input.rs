@@ -57,9 +57,7 @@ impl UpdateProfileInput {
 
 /// A builder for [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProfileInputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -98,18 +96,12 @@ impl UpdateProfileInputBuilder {
         &self.name
     }
     /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
-    pub fn session_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
-    pub fn set_session_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_policy = input;
         self
     }
@@ -129,10 +121,7 @@ impl UpdateProfileInputBuilder {
         self
     }
     /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
-    pub fn set_role_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_role_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.role_arns = input;
         self
     }
@@ -145,27 +134,19 @@ impl UpdateProfileInputBuilder {
     /// To override the contents of this collection use [`set_managed_policy_arns`](Self::set_managed_policy_arns).
     ///
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-    pub fn managed_policy_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn managed_policy_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.managed_policy_arns.unwrap_or_default();
         v.push(input.into());
         self.managed_policy_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-    pub fn set_managed_policy_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_managed_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.managed_policy_arns = input;
         self
     }
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-    pub fn get_managed_policy_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_managed_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.managed_policy_arns
     }
     /// <p> The number of seconds the vended session credentials are valid for. </p>
@@ -185,10 +166,7 @@ impl UpdateProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_profile::UpdateProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_profile::UpdateProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_profile::UpdateProfileInput {
             profile_id: self.profile_id,
             name: self.name,

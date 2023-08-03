@@ -79,9 +79,7 @@ impl SubjectDetail {
 
 /// A builder for [`SubjectDetail`](crate::types::SubjectDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubjectDetailBuilder {
     pub(crate) subject_arn: ::std::option::Option<::std::string::String>,
     pub(crate) subject_id: ::std::option::Option<::std::string::String>,
@@ -91,8 +89,7 @@ pub struct SubjectDetailBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) credentials: ::std::option::Option<::std::vec::Vec<crate::types::CredentialSummary>>,
-    pub(crate) instance_properties:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceProperty>>,
+    pub(crate) instance_properties: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProperty>>,
 }
 impl SubjectDetailBuilder {
     /// <p>The ARN of the resource.</p>
@@ -157,10 +154,7 @@ impl SubjectDetailBuilder {
         self
     }
     /// <p>The ISO-8601 timestamp of the last time this subject requested temporary session credentials.</p>
-    pub fn set_last_seen_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_seen_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_seen_at = input;
         self
     }
@@ -174,10 +168,7 @@ impl SubjectDetailBuilder {
         self
     }
     /// <p>The ISO-8601 timestamp when the subject was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -191,10 +182,7 @@ impl SubjectDetailBuilder {
         self
     }
     /// <p>The ISO-8601 timestamp when the subject was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -214,17 +202,12 @@ impl SubjectDetailBuilder {
         self
     }
     /// <p>The temporary session credentials vended at the last authenticating call with this subject.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CredentialSummary>>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CredentialSummary>>) -> Self {
         self.credentials = input;
         self
     }
     /// <p>The temporary session credentials vended at the last authenticating call with this subject.</p>
-    pub fn get_credentials(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CredentialSummary>> {
+    pub fn get_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CredentialSummary>> {
         &self.credentials
     }
     /// Appends an item to `instance_properties`.
@@ -239,17 +222,12 @@ impl SubjectDetailBuilder {
         self
     }
     /// <p>The specified instance properties associated with the request.</p>
-    pub fn set_instance_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProperty>>,
-    ) -> Self {
+    pub fn set_instance_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProperty>>) -> Self {
         self.instance_properties = input;
         self
     }
     /// <p>The specified instance properties associated with the request.</p>
-    pub fn get_instance_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceProperty>> {
+    pub fn get_instance_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceProperty>> {
         &self.instance_properties
     }
     /// Consumes the builder and constructs a [`SubjectDetail`](crate::types::SubjectDetail).

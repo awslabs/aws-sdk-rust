@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateGameServerGroupOutput {
 }
 impl CreateGameServerGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateGameServerGroupOutput`](crate::operation::create_game_server_group::CreateGameServerGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_game_server_group::builders::CreateGameServerGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_game_server_group::builders::CreateGameServerGroupOutputBuilder {
         crate::operation::create_game_server_group::builders::CreateGameServerGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGameServerGroupOutput`](crate::operation::create_game_server_group::CreateGameServerGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGameServerGroupOutputBuilder {
     pub(crate) game_server_group: ::std::option::Option<crate::types::GameServerGroup>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateGameServerGroupOutputBuilder {
         self
     }
     /// <p>The newly created game server group object, including the new ARN value for the Amazon GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
-    pub fn set_game_server_group(
-        mut self,
-        input: ::std::option::Option<crate::types::GameServerGroup>,
-    ) -> Self {
+    pub fn set_game_server_group(mut self, input: ::std::option::Option<crate::types::GameServerGroup>) -> Self {
         self.game_server_group = input;
         self
     }

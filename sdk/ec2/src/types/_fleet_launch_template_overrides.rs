@@ -82,9 +82,7 @@ impl FleetLaunchTemplateOverrides {
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
-    pub fn instance_requirements(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceRequirements> {
+    pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirements> {
         self.instance_requirements.as_ref()
     }
     /// <p>The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
@@ -101,9 +99,7 @@ impl FleetLaunchTemplateOverrides {
 
 /// A builder for [`FleetLaunchTemplateOverrides`](crate::types::FleetLaunchTemplateOverrides).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FleetLaunchTemplateOverridesBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) max_price: ::std::option::Option<::std::string::String>,
@@ -128,10 +124,7 @@ impl FleetLaunchTemplateOverridesBuilder {
     /// <p> <code>mac1.metal</code> is not supported as a launch template override.</p> <note>
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
     /// </note>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
@@ -177,18 +170,12 @@ impl FleetLaunchTemplateOverridesBuilder {
         &self.subnet_id
     }
     /// <p>The Availability Zone in which to launch the instances.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone in which to launch the instances.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -239,10 +226,7 @@ impl FleetLaunchTemplateOverridesBuilder {
         self
     }
     /// <p>The location where the instance launched, if applicable.</p>
-    pub fn set_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::PlacementResponse>,
-    ) -> Self {
+    pub fn set_placement(mut self, input: ::std::option::Option<crate::types::PlacementResponse>) -> Self {
         self.placement = input;
         self
     }
@@ -260,19 +244,14 @@ impl FleetLaunchTemplateOverridesBuilder {
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
-    pub fn set_instance_requirements(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceRequirements>,
-    ) -> Self {
+    pub fn set_instance_requirements(mut self, input: ::std::option::Option<crate::types::InstanceRequirements>) -> Self {
         self.instance_requirements = input;
         self
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
-    pub fn get_instance_requirements(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceRequirements> {
+    pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::InstanceRequirements> {
         &self.instance_requirements
     }
     /// <p>The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>

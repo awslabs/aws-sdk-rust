@@ -39,9 +39,7 @@ impl CreatePlacementGroupFluentBuilder {
         }
     }
     /// Access the CreatePlacementGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_placement_group::builders::CreatePlacementGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_placement_group::builders::CreatePlacementGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl CreatePlacementGroupFluentBuilder {
             crate::operation::create_placement_group::CreatePlacementGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_placement_group::CreatePlacementGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_placement_group::CreatePlacementGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl CreatePlacementGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl CreatePlacementGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_placement_group::CreatePlacementGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_placement_group::CreatePlacementGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_placement_group::CreatePlacementGroupError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl CreatePlacementGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_placement_group::CreatePlacementGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_placement_group::CreatePlacementGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_placement_group::CreatePlacementGroupError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl CreatePlacementGroupFluentBuilder {
             crate::operation::create_placement_group::CreatePlacementGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_placement_group::CreatePlacementGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_placement_group::CreatePlacementGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -161,10 +148,7 @@ impl CreatePlacementGroupFluentBuilder {
         self
     }
     /// <p>The placement strategy.</p>
-    pub fn set_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::PlacementStrategy>,
-    ) -> Self {
+    pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::PlacementStrategy>) -> Self {
         self.inner = self.inner.set_strategy(input);
         self
     }
@@ -196,17 +180,12 @@ impl CreatePlacementGroupFluentBuilder {
         self
     }
     /// <p>The tags to apply to the new placement group.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the new placement group.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Determines how placement groups spread instances. </p>
@@ -223,10 +202,7 @@ impl CreatePlacementGroupFluentBuilder {
     /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li>
     /// <li> <p>Rack – No usage restrictions.</p> </li>
     /// </ul>
-    pub fn set_spread_level(
-        mut self,
-        input: ::std::option::Option<crate::types::SpreadLevel>,
-    ) -> Self {
+    pub fn set_spread_level(mut self, input: ::std::option::Option<crate::types::SpreadLevel>) -> Self {
         self.inner = self.inner.set_spread_level(input);
         self
     }

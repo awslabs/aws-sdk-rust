@@ -35,9 +35,7 @@ impl ListFleetsOutput {
 
 /// A builder for [`ListFleetsOutput`](crate::operation::list_fleets::ListFleetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFleetsOutputBuilder {
     pub(crate) fleet_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FleetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListFleetsOutputBuilder {
         self
     }
     /// <p> A list of information for each fleet. </p>
-    pub fn set_fleet_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetSummary>>,
-    ) -> Self {
+    pub fn set_fleet_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetSummary>>) -> Self {
         self.fleet_summaries = input;
         self
     }
     /// <p> A list of information for each fleet. </p>
-    pub fn get_fleet_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetSummary>> {
+    pub fn get_fleet_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetSummary>> {
         &self.fleet_summaries
     }
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>

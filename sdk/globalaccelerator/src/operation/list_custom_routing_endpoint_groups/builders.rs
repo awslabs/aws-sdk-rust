@@ -5,16 +5,16 @@ pub use crate::operation::list_custom_routing_endpoint_groups::_list_custom_rout
 
 impl ListCustomRoutingEndpointGroupsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_custom_routing_endpoint_groups();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListCustomRoutingEndpointGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCustomRoutingEndpointGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsInputBuilder,
+    inner: crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsInputBuilder,
 }
 impl ListCustomRoutingEndpointGroupsFluentBuilder {
     /// Creates a new `ListCustomRoutingEndpointGroups`.
@@ -37,15 +37,20 @@ impl ListCustomRoutingEndpointGroupsFluentBuilder {
         }
     }
     /// Access the ListCustomRoutingEndpointGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroups, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroups,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListCustomRoutingEndpointGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,23 +87,32 @@ impl ListCustomRoutingEndpointGroupsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroups, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroups,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_custom_routing_endpoint_groups::paginator::ListCustomRoutingEndpointGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_custom_routing_endpoint_groups::paginator::ListCustomRoutingEndpointGroupsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_custom_routing_endpoint_groups::paginator::ListCustomRoutingEndpointGroupsPaginator {
         crate::operation::list_custom_routing_endpoint_groups::paginator::ListCustomRoutingEndpointGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the listener to list endpoint groups for.</p>

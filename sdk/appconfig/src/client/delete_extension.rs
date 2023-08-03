@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`version_number(i32)`](crate::operation::delete_extension::builders::DeleteExtensionFluentBuilder::version_number) / [`set_version_number(Option<i32>)`](crate::operation::delete_extension::builders::DeleteExtensionFluentBuilder::set_version_number): <p>A specific version of an extension to delete. If omitted, the highest version is deleted.</p>
     /// - On success, responds with [`DeleteExtensionOutput`](crate::operation::delete_extension::DeleteExtensionOutput)
     /// - On failure, responds with [`SdkError<DeleteExtensionError>`](crate::operation::delete_extension::DeleteExtensionError)
-    pub fn delete_extension(
-        &self,
-    ) -> crate::operation::delete_extension::builders::DeleteExtensionFluentBuilder {
-        crate::operation::delete_extension::builders::DeleteExtensionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_extension(&self) -> crate::operation::delete_extension::builders::DeleteExtensionFluentBuilder {
+        crate::operation::delete_extension::builders::DeleteExtensionFluentBuilder::new(self.handle.clone())
     }
 }

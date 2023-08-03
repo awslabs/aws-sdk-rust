@@ -38,9 +38,7 @@ impl CreateCodeRepositoryFluentBuilder {
         }
     }
     /// Access the CreateCodeRepository as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_code_repository::builders::CreateCodeRepositoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_code_repository::builders::CreateCodeRepositoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl CreateCodeRepositoryFluentBuilder {
             crate::operation::create_code_repository::CreateCodeRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_code_repository::CreateCodeRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_code_repository::CreateCodeRepositoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl CreateCodeRepositoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl CreateCodeRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_code_repository::CreateCodeRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_code_repository::CreateCodeRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_code_repository::CreateCodeRepositoryError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl CreateCodeRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_code_repository::CreateCodeRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_code_repository::CreateCodeRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_code_repository::CreateCodeRepositoryError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl CreateCodeRepositoryFluentBuilder {
             crate::operation::create_code_repository::CreateCodeRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_code_repository::CreateCodeRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_code_repository::CreateCodeRepositoryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-    pub fn code_repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code_repository_name(input.into());
         self
     }
     /// <p>The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-    pub fn set_code_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code_repository_name(input);
         self
     }
@@ -167,10 +148,7 @@ impl CreateCodeRepositoryFluentBuilder {
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

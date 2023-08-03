@@ -9,8 +9,7 @@ pub struct LoadBalancerTlsCertificateDomainValidationOption {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the domain validation. Valid values are listed below.</p>
     #[doc(hidden)]
-    pub validation_status:
-        ::std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus>,
+    pub validation_status: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus>,
 }
 impl LoadBalancerTlsCertificateDomainValidationOption {
     /// <p>The fully qualified domain name in the certificate request.</p>
@@ -18,29 +17,23 @@ impl LoadBalancerTlsCertificateDomainValidationOption {
         self.domain_name.as_deref()
     }
     /// <p>The status of the domain validation. Valid values are listed below.</p>
-    pub fn validation_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LoadBalancerTlsCertificateDomainStatus> {
+    pub fn validation_status(&self) -> ::std::option::Option<&crate::types::LoadBalancerTlsCertificateDomainStatus> {
         self.validation_status.as_ref()
     }
 }
 impl LoadBalancerTlsCertificateDomainValidationOption {
     /// Creates a new builder-style object to manufacture [`LoadBalancerTlsCertificateDomainValidationOption`](crate::types::LoadBalancerTlsCertificateDomainValidationOption).
-    pub fn builder(
-    ) -> crate::types::builders::LoadBalancerTlsCertificateDomainValidationOptionBuilder {
+    pub fn builder() -> crate::types::builders::LoadBalancerTlsCertificateDomainValidationOptionBuilder {
         crate::types::builders::LoadBalancerTlsCertificateDomainValidationOptionBuilder::default()
     }
 }
 
 /// A builder for [`LoadBalancerTlsCertificateDomainValidationOption`](crate::types::LoadBalancerTlsCertificateDomainValidationOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoadBalancerTlsCertificateDomainValidationOptionBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
-    pub(crate) validation_status:
-        ::std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus>,
+    pub(crate) validation_status: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus>,
 }
 impl LoadBalancerTlsCertificateDomainValidationOptionBuilder {
     /// <p>The fully qualified domain name in the certificate request.</p>
@@ -58,25 +51,17 @@ impl LoadBalancerTlsCertificateDomainValidationOptionBuilder {
         &self.domain_name
     }
     /// <p>The status of the domain validation. Valid values are listed below.</p>
-    pub fn validation_status(
-        mut self,
-        input: crate::types::LoadBalancerTlsCertificateDomainStatus,
-    ) -> Self {
+    pub fn validation_status(mut self, input: crate::types::LoadBalancerTlsCertificateDomainStatus) -> Self {
         self.validation_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the domain validation. Valid values are listed below.</p>
-    pub fn set_validation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus>,
-    ) -> Self {
+    pub fn set_validation_status(mut self, input: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus>) -> Self {
         self.validation_status = input;
         self
     }
     /// <p>The status of the domain validation. Valid values are listed below.</p>
-    pub fn get_validation_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus> {
+    pub fn get_validation_status(&self) -> &::std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus> {
         &self.validation_status
     }
     /// Consumes the builder and constructs a [`LoadBalancerTlsCertificateDomainValidationOption`](crate::types::LoadBalancerTlsCertificateDomainValidationOption).

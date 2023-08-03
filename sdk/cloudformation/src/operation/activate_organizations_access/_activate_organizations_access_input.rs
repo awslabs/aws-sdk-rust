@@ -5,16 +5,14 @@
 pub struct ActivateOrganizationsAccessInput {}
 impl ActivateOrganizationsAccessInput {
     /// Creates a new builder-style object to manufacture [`ActivateOrganizationsAccessInput`](crate::operation::activate_organizations_access::ActivateOrganizationsAccessInput).
-    pub fn builder() -> crate::operation::activate_organizations_access::builders::ActivateOrganizationsAccessInputBuilder{
+    pub fn builder() -> crate::operation::activate_organizations_access::builders::ActivateOrganizationsAccessInputBuilder {
         crate::operation::activate_organizations_access::builders::ActivateOrganizationsAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`ActivateOrganizationsAccessInput`](crate::operation::activate_organizations_access::ActivateOrganizationsAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivateOrganizationsAccessInputBuilder {}
 impl ActivateOrganizationsAccessInputBuilder {
     /// Consumes the builder and constructs a [`ActivateOrganizationsAccessInput`](crate::operation::activate_organizations_access::ActivateOrganizationsAccessInput).
@@ -24,8 +22,6 @@ impl ActivateOrganizationsAccessInputBuilder {
         crate::operation::activate_organizations_access::ActivateOrganizationsAccessInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::activate_organizations_access::ActivateOrganizationsAccessInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::activate_organizations_access::ActivateOrganizationsAccessInput {})
     }
 }

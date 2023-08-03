@@ -36,16 +36,14 @@ impl ListIntegrationAssociationsInput {
 }
 impl ListIntegrationAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListIntegrationAssociationsInput`](crate::operation::list_integration_associations::ListIntegrationAssociationsInput).
-    pub fn builder() -> crate::operation::list_integration_associations::builders::ListIntegrationAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::list_integration_associations::builders::ListIntegrationAssociationsInputBuilder {
         crate::operation::list_integration_associations::builders::ListIntegrationAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListIntegrationAssociationsInput`](crate::operation::list_integration_associations::ListIntegrationAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIntegrationAssociationsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) integration_type: ::std::option::Option<crate::types::IntegrationType>,
@@ -73,10 +71,7 @@ impl ListIntegrationAssociationsInputBuilder {
         self
     }
     /// <p>The integration type.</p>
-    pub fn set_integration_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IntegrationType>,
-    ) -> Self {
+    pub fn set_integration_type(mut self, input: ::std::option::Option<crate::types::IntegrationType>) -> Self {
         self.integration_type = input;
         self
     }
@@ -119,13 +114,11 @@ impl ListIntegrationAssociationsInputBuilder {
         crate::operation::list_integration_associations::ListIntegrationAssociationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_integration_associations::ListIntegrationAssociationsInput {
-                instance_id: self.instance_id,
-                integration_type: self.integration_type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_integration_associations::ListIntegrationAssociationsInput {
+            instance_id: self.instance_id,
+            integration_type: self.integration_type,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

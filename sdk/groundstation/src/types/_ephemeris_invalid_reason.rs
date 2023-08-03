@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EphemerisInvalidReason {
     /// Provided KMS key is invalid
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for EphemerisInvalidReason {
             "TIME_RANGE_INVALID" => EphemerisInvalidReason::TimeRangeInvalid,
             "TRAJECTORY_INVALID" => EphemerisInvalidReason::TrajectoryInvalid,
             "VALIDATION_ERROR" => EphemerisInvalidReason::ValidationError,
-            other => EphemerisInvalidReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => EphemerisInvalidReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

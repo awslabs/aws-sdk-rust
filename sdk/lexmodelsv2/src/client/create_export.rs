@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`export_status(Option<ExportStatus>)`](crate::operation::create_export::CreateExportOutput::export_status): <p>The status of the export. When the status is <code>Completed</code>, you can use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a> operation to get the pre-signed S3 URL link to your exported bot or bot locale.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::create_export::CreateExportOutput::creation_date_time): <p>The date and time that the request to export a bot was created.</p>
     /// - On failure, responds with [`SdkError<CreateExportError>`](crate::operation::create_export::CreateExportError)
-    pub fn create_export(
-        &self,
-    ) -> crate::operation::create_export::builders::CreateExportFluentBuilder {
-        crate::operation::create_export::builders::CreateExportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_export(&self) -> crate::operation::create_export::builders::CreateExportFluentBuilder {
+        crate::operation::create_export::builders::CreateExportFluentBuilder::new(self.handle.clone())
     }
 }

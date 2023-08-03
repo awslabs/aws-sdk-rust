@@ -10,10 +10,7 @@ impl ListInsightsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_insights::ListInsightsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_insights::ListInsightsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_insights::ListInsightsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_insights();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListInsightsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_insights::ListInsights,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_insights::ListInsights, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_insights::ListInsightsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListInsightsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListInsightsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_insights::ListInsights,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_insights::ListInsights, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_insights::ListInsightsError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl ListInsightsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_insights::paginator::ListInsightsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_insights::paginator::ListInsightsPaginator {
-        crate::operation::list_insights::paginator::ListInsightsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_insights::paginator::ListInsightsPaginator {
+        crate::operation::list_insights::paginator::ListInsightsPaginator::new(self.handle, self.inner)
     }
     /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
     pub fn status_filter(mut self, input: crate::types::ListInsightsStatusFilter) -> Self {
@@ -129,17 +112,12 @@ impl ListInsightsFluentBuilder {
         self
     }
     /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
-    pub fn set_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListInsightsStatusFilter>,
-    ) -> Self {
+    pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::ListInsightsStatusFilter>) -> Self {
         self.inner = self.inner.set_status_filter(input);
         self
     }
     /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
-    pub fn get_status_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListInsightsStatusFilter> {
+    pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::ListInsightsStatusFilter> {
         self.inner.get_status_filter()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>

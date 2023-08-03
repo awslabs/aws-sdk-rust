@@ -15,18 +15,14 @@ impl CancelSimulationJobBatchInput {
 }
 impl CancelSimulationJobBatchInput {
     /// Creates a new builder-style object to manufacture [`CancelSimulationJobBatchInput`](crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchInputBuilder {
         crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelSimulationJobBatchInput`](crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelSimulationJobBatchInputBuilder {
     pub(crate) batch: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl CancelSimulationJobBatchInputBuilder {
         crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput {
-                batch: self.batch,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput { batch: self.batch })
     }
 }

@@ -15,35 +15,25 @@ impl DeleteAppInstanceUserInput {
 }
 impl DeleteAppInstanceUserInput {
     /// Creates a new builder-style object to manufacture [`DeleteAppInstanceUserInput`](crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput).
-    pub fn builder(
-    ) -> crate::operation::delete_app_instance_user::builders::DeleteAppInstanceUserInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_app_instance_user::builders::DeleteAppInstanceUserInputBuilder {
         crate::operation::delete_app_instance_user::builders::DeleteAppInstanceUserInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppInstanceUserInput`](crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppInstanceUserInputBuilder {
     pub(crate) app_instance_user_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAppInstanceUserInputBuilder {
     /// <p>The ARN of the user request being deleted.</p>
-    pub fn app_instance_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the user request being deleted.</p>
-    pub fn set_app_instance_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_user_arn = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteAppInstanceUserInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAppInstanceUserInput`](crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput {
-                app_instance_user_arn: self.app_instance_user_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput {
+            app_instance_user_arn: self.app_instance_user_arn,
+        })
     }
 }

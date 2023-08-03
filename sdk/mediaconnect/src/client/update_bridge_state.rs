@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`bridge_arn(Option<String>)`](crate::operation::update_bridge_state::UpdateBridgeStateOutput::bridge_arn): The Amazon Resource Number (ARN) of the bridge.
     ///   - [`desired_state(Option<DesiredState>)`](crate::operation::update_bridge_state::UpdateBridgeStateOutput::desired_state): The state of the bridge. ACTIVE or STANDBY.
     /// - On failure, responds with [`SdkError<UpdateBridgeStateError>`](crate::operation::update_bridge_state::UpdateBridgeStateError)
-    pub fn update_bridge_state(
-        &self,
-    ) -> crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder {
-        crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_bridge_state(&self) -> crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder {
+        crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::new(self.handle.clone())
     }
 }

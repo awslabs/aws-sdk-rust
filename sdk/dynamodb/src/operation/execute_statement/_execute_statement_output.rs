@@ -5,11 +5,7 @@
 pub struct ExecuteStatementOutput {
     /// <p>If a read operation was used, this property will contain the result of the read operation; a map of attribute names and their values. For the write operations this value will be empty.</p>
     #[doc(hidden)]
-    pub items: ::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-        >,
-    >,
+    pub items: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>>,
     /// <p>If the response of a read request exceeds the response payload limit DynamoDB will set this value in the response. If set, you can use that this value in the subsequent request to get the remaining results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -18,18 +14,12 @@ pub struct ExecuteStatementOutput {
     pub consumed_capacity: ::std::option::Option<crate::types::ConsumedCapacity>,
     /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request. If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty. </p>
     #[doc(hidden)]
-    pub last_evaluated_key: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-    >,
+    pub last_evaluated_key: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     _request_id: Option<String>,
 }
 impl ExecuteStatementOutput {
     /// <p>If a read operation was used, this property will contain the result of the read operation; a map of attribute names and their values. For the write operations this value will be empty.</p>
-    pub fn items(
-        &self,
-    ) -> ::std::option::Option<
-        &[::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>],
-    > {
+    pub fn items(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>]> {
         self.items.as_deref()
     }
     /// <p>If the response of a read request exceeds the response payload limit DynamoDB will set this value in the response. If set, you can use that this value in the subsequent request to get the remaining results.</p>
@@ -41,11 +31,7 @@ impl ExecuteStatementOutput {
         self.consumed_capacity.as_ref()
     }
     /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request. If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty. </p>
-    pub fn last_evaluated_key(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-    > {
+    pub fn last_evaluated_key(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
         self.last_evaluated_key.as_ref()
     }
 }
@@ -56,28 +42,19 @@ impl ::aws_http::request_id::RequestId for ExecuteStatementOutput {
 }
 impl ExecuteStatementOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteStatementOutput`](crate::operation::execute_statement::ExecuteStatementOutput).
-    pub fn builder() -> crate::operation::execute_statement::builders::ExecuteStatementOutputBuilder
-    {
+    pub fn builder() -> crate::operation::execute_statement::builders::ExecuteStatementOutputBuilder {
         crate::operation::execute_statement::builders::ExecuteStatementOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExecuteStatementOutput`](crate::operation::execute_statement::ExecuteStatementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteStatementOutputBuilder {
-    pub(crate) items: ::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-        >,
-    >,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) consumed_capacity: ::std::option::Option<crate::types::ConsumedCapacity>,
-    pub(crate) last_evaluated_key: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-    >,
+    pub(crate) last_evaluated_key: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     _request_id: Option<String>,
 }
 impl ExecuteStatementOutputBuilder {
@@ -86,10 +63,7 @@ impl ExecuteStatementOutputBuilder {
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
     /// <p>If a read operation was used, this property will contain the result of the read operation; a map of attribute names and their values. For the write operations this value will be empty.</p>
-    pub fn items(
-        mut self,
-        input: ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-    ) -> Self {
+    pub fn items(mut self, input: ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = ::std::option::Option::Some(v);
@@ -98,11 +72,7 @@ impl ExecuteStatementOutputBuilder {
     /// <p>If a read operation was used, this property will contain the result of the read operation; a map of attribute names and their values. For the write operations this value will be empty.</p>
     pub fn set_items(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>>,
     ) -> Self {
         self.items = input;
         self
@@ -110,11 +80,7 @@ impl ExecuteStatementOutputBuilder {
     /// <p>If a read operation was used, this property will contain the result of the read operation; a map of attribute names and their values. For the write operations this value will be empty.</p>
     pub fn get_items(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>> {
         &self.items
     }
     /// <p>If the response of a read request exceeds the response payload limit DynamoDB will set this value in the response. If set, you can use that this value in the subsequent request to get the remaining results.</p>
@@ -137,10 +103,7 @@ impl ExecuteStatementOutputBuilder {
         self
     }
     /// <p>The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn set_consumed_capacity(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsumedCapacity>,
-    ) -> Self {
+    pub fn set_consumed_capacity(mut self, input: ::std::option::Option<crate::types::ConsumedCapacity>) -> Self {
         self.consumed_capacity = input;
         self
     }
@@ -153,11 +116,7 @@ impl ExecuteStatementOutputBuilder {
     /// To override the contents of this collection use [`set_last_evaluated_key`](Self::set_last_evaluated_key).
     ///
     /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request. If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty. </p>
-    pub fn last_evaluated_key(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::AttributeValue,
-    ) -> Self {
+    pub fn last_evaluated_key(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AttributeValue) -> Self {
         let mut hash_map = self.last_evaluated_key.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.last_evaluated_key = ::std::option::Option::Some(hash_map);
@@ -166,19 +125,13 @@ impl ExecuteStatementOutputBuilder {
     /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request. If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty. </p>
     pub fn set_last_evaluated_key(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     ) -> Self {
         self.last_evaluated_key = input;
         self
     }
     /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request. If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved. If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty. </p>
-    pub fn get_last_evaluated_key(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-    > {
+    pub fn get_last_evaluated_key(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
         &self.last_evaluated_key
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -23,9 +23,7 @@ impl VpcInfoCidrBlockSetDetails {
 
 /// A builder for [`VpcInfoCidrBlockSetDetails`](crate::types::VpcInfoCidrBlockSetDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcInfoCidrBlockSetDetailsBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl VpcInfoCidrBlockSetDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`VpcInfoCidrBlockSetDetails`](crate::types::VpcInfoCidrBlockSetDetails).
     pub fn build(self) -> crate::types::VpcInfoCidrBlockSetDetails {
-        crate::types::VpcInfoCidrBlockSetDetails {
-            cidr_block: self.cidr_block,
-        }
+        crate::types::VpcInfoCidrBlockSetDetails { cidr_block: self.cidr_block }
     }
 }

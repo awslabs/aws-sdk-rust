@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`TerminateTargetInstancesOutput`](crate::operation::terminate_target_instances::TerminateTargetInstancesOutput) with field(s):
     ///   - [`job(Option<Job>)`](crate::operation::terminate_target_instances::TerminateTargetInstancesOutput::job): <p>Terminate Target instance Job response.</p>
     /// - On failure, responds with [`SdkError<TerminateTargetInstancesError>`](crate::operation::terminate_target_instances::TerminateTargetInstancesError)
-    pub fn terminate_target_instances(
-        &self,
-    ) -> crate::operation::terminate_target_instances::builders::TerminateTargetInstancesFluentBuilder
-    {
+    pub fn terminate_target_instances(&self) -> crate::operation::terminate_target_instances::builders::TerminateTargetInstancesFluentBuilder {
         crate::operation::terminate_target_instances::builders::TerminateTargetInstancesFluentBuilder::new(self.handle.clone())
     }
 }

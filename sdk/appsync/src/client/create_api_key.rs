@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateApiKeyOutput`](crate::operation::create_api_key::CreateApiKeyOutput) with field(s):
     ///   - [`api_key(Option<ApiKey>)`](crate::operation::create_api_key::CreateApiKeyOutput::api_key): <p>The API key.</p>
     /// - On failure, responds with [`SdkError<CreateApiKeyError>`](crate::operation::create_api_key::CreateApiKeyError)
-    pub fn create_api_key(
-        &self,
-    ) -> crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder {
-        crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_api_key(&self) -> crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder {
+        crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder::new(self.handle.clone())
     }
 }

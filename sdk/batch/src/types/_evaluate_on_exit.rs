@@ -46,9 +46,7 @@ impl EvaluateOnExit {
 
 /// A builder for [`EvaluateOnExit`](crate::types::EvaluateOnExit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluateOnExitBuilder {
     pub(crate) on_status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) on_reason: ::std::option::Option<::std::string::String>,
@@ -57,18 +55,12 @@ pub struct EvaluateOnExitBuilder {
 }
 impl EvaluateOnExitBuilder {
     /// <p>Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can contain up to 512 characters. It can contain letters, numbers, periods (.), colons (:), and white spaces (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
-    pub fn on_status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn on_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.on_status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The pattern can contain up to 512 characters. It can contain letters, numbers, periods (.), colons (:), and white spaces (including spaces or tabs). It can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.</p>
-    pub fn set_on_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_on_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.on_status_reason = input;
         self
     }

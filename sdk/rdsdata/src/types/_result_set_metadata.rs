@@ -30,13 +30,10 @@ impl ResultSetMetadata {
 
 /// A builder for [`ResultSetMetadata`](crate::types::ResultSetMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultSetMetadataBuilder {
     pub(crate) column_count: ::std::option::Option<i64>,
-    pub(crate) column_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
+    pub(crate) column_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
 }
 impl ResultSetMetadataBuilder {
     /// <p>The number of columns in the result set.</p>
@@ -65,17 +62,12 @@ impl ResultSetMetadataBuilder {
         self
     }
     /// <p>The metadata of the columns in the result set.</p>
-    pub fn set_column_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
-    ) -> Self {
+    pub fn set_column_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>) -> Self {
         self.column_metadata = input;
         self
     }
     /// <p>The metadata of the columns in the result set.</p>
-    pub fn get_column_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
+    pub fn get_column_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
         &self.column_metadata
     }
     /// Consumes the builder and constructs a [`ResultSetMetadata`](crate::types::ResultSetMetadata).

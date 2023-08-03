@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`event_id(impl ::std::convert::Into<String>)`](crate::operation::delete_timeline_event::builders::DeleteTimelineEventFluentBuilder::event_id) / [`set_event_id(Option<String>)`](crate::operation::delete_timeline_event::builders::DeleteTimelineEventFluentBuilder::set_event_id): <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     /// - On success, responds with [`DeleteTimelineEventOutput`](crate::operation::delete_timeline_event::DeleteTimelineEventOutput)
     /// - On failure, responds with [`SdkError<DeleteTimelineEventError>`](crate::operation::delete_timeline_event::DeleteTimelineEventError)
-    pub fn delete_timeline_event(
-        &self,
-    ) -> crate::operation::delete_timeline_event::builders::DeleteTimelineEventFluentBuilder {
-        crate::operation::delete_timeline_event::builders::DeleteTimelineEventFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_timeline_event(&self) -> crate::operation::delete_timeline_event::builders::DeleteTimelineEventFluentBuilder {
+        crate::operation::delete_timeline_event::builders::DeleteTimelineEventFluentBuilder::new(self.handle.clone())
     }
 }

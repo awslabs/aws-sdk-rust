@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`private_key_base64(Option<String>)`](crate::operation::create_key_pair::CreateKeyPairOutput::private_key_base64): <p>A base64-encoded RSA private key.</p>
     ///   - [`operation(Option<Operation>)`](crate::operation::create_key_pair::CreateKeyPairOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CreateKeyPairError>`](crate::operation::create_key_pair::CreateKeyPairError)
-    pub fn create_key_pair(
-        &self,
-    ) -> crate::operation::create_key_pair::builders::CreateKeyPairFluentBuilder {
-        crate::operation::create_key_pair::builders::CreateKeyPairFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_key_pair(&self) -> crate::operation::create_key_pair::builders::CreateKeyPairFluentBuilder {
+        crate::operation::create_key_pair::builders::CreateKeyPairFluentBuilder::new(self.handle.clone())
     }
 }

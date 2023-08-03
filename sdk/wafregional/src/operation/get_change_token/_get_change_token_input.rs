@@ -12,18 +12,13 @@ impl GetChangeTokenInput {
 
 /// A builder for [`GetChangeTokenInput`](crate::operation::get_change_token::GetChangeTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChangeTokenInputBuilder {}
 impl GetChangeTokenInputBuilder {
     /// Consumes the builder and constructs a [`GetChangeTokenInput`](crate::operation::get_change_token::GetChangeTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_change_token::GetChangeTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_change_token::GetChangeTokenInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_change_token::GetChangeTokenInput {})
     }
 }

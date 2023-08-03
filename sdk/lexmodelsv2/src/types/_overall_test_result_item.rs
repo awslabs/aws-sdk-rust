@@ -12,14 +12,10 @@ pub struct OverallTestResultItem {
     pub total_result_count: ::std::option::Option<i32>,
     /// <p>The number of speech transcription results in the overall test.</p>
     #[doc(hidden)]
-    pub speech_transcription_result_counts: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>,
-    >,
+    pub speech_transcription_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
     /// <p>The number of results that succeeded.</p>
     #[doc(hidden)]
-    pub end_to_end_result_counts: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>,
-    >,
+    pub end_to_end_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
 }
 impl OverallTestResultItem {
     /// <p>Indicates whether the conversation contains multiple turns or not.</p>
@@ -33,15 +29,11 @@ impl OverallTestResultItem {
     /// <p>The number of speech transcription results in the overall test.</p>
     pub fn speech_transcription_result_counts(
         &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>
-    {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>> {
         self.speech_transcription_result_counts.as_ref()
     }
     /// <p>The number of results that succeeded.</p>
-    pub fn end_to_end_result_counts(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>
-    {
+    pub fn end_to_end_result_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>> {
         self.end_to_end_result_counts.as_ref()
     }
 }
@@ -54,18 +46,12 @@ impl OverallTestResultItem {
 
 /// A builder for [`OverallTestResultItem`](crate::types::OverallTestResultItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OverallTestResultItemBuilder {
     pub(crate) multi_turn_conversation: ::std::option::Option<bool>,
     pub(crate) total_result_count: ::std::option::Option<i32>,
-    pub(crate) speech_transcription_result_counts: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>,
-    >,
-    pub(crate) end_to_end_result_counts: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>,
-    >,
+    pub(crate) speech_transcription_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
+    pub(crate) end_to_end_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
 }
 impl OverallTestResultItemBuilder {
     /// <p>Indicates whether the conversation contains multiple turns or not.</p>
@@ -101,11 +87,7 @@ impl OverallTestResultItemBuilder {
     /// To override the contents of this collection use [`set_speech_transcription_result_counts`](Self::set_speech_transcription_result_counts).
     ///
     /// <p>The number of speech transcription results in the overall test.</p>
-    pub fn speech_transcription_result_counts(
-        mut self,
-        k: crate::types::TestResultMatchStatus,
-        v: i32,
-    ) -> Self {
+    pub fn speech_transcription_result_counts(mut self, k: crate::types::TestResultMatchStatus, v: i32) -> Self {
         let mut hash_map = self.speech_transcription_result_counts.unwrap_or_default();
         hash_map.insert(k, v);
         self.speech_transcription_result_counts = ::std::option::Option::Some(hash_map);
@@ -114,9 +96,7 @@ impl OverallTestResultItemBuilder {
     /// <p>The number of speech transcription results in the overall test.</p>
     pub fn set_speech_transcription_result_counts(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
     ) -> Self {
         self.speech_transcription_result_counts = input;
         self
@@ -124,8 +104,7 @@ impl OverallTestResultItemBuilder {
     /// <p>The number of speech transcription results in the overall test.</p>
     pub fn get_speech_transcription_result_counts(
         &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>
-    {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>> {
         &self.speech_transcription_result_counts
     }
     /// Adds a key-value pair to `end_to_end_result_counts`.
@@ -133,11 +112,7 @@ impl OverallTestResultItemBuilder {
     /// To override the contents of this collection use [`set_end_to_end_result_counts`](Self::set_end_to_end_result_counts).
     ///
     /// <p>The number of results that succeeded.</p>
-    pub fn end_to_end_result_counts(
-        mut self,
-        k: crate::types::TestResultMatchStatus,
-        v: i32,
-    ) -> Self {
+    pub fn end_to_end_result_counts(mut self, k: crate::types::TestResultMatchStatus, v: i32) -> Self {
         let mut hash_map = self.end_to_end_result_counts.unwrap_or_default();
         hash_map.insert(k, v);
         self.end_to_end_result_counts = ::std::option::Option::Some(hash_map);
@@ -146,18 +121,13 @@ impl OverallTestResultItemBuilder {
     /// <p>The number of results that succeeded.</p>
     pub fn set_end_to_end_result_counts(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
     ) -> Self {
         self.end_to_end_result_counts = input;
         self
     }
     /// <p>The number of results that succeeded.</p>
-    pub fn get_end_to_end_result_counts(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>
-    {
+    pub fn get_end_to_end_result_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>> {
         &self.end_to_end_result_counts
     }
     /// Consumes the builder and constructs a [`OverallTestResultItem`](crate::types::OverallTestResultItem).

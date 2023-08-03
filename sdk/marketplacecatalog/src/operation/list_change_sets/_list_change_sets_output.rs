@@ -5,8 +5,7 @@
 pub struct ListChangeSetsOutput {
     /// <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
     #[doc(hidden)]
-    pub change_set_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummaryListItem>>,
+    pub change_set_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummaryListItem>>,
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListChangeSetsOutput {
 }
 impl ListChangeSetsOutput {
     /// <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
-    pub fn change_set_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ChangeSetSummaryListItem]> {
+    pub fn change_set_summary_list(&self) -> ::std::option::Option<&[crate::types::ChangeSetSummaryListItem]> {
         self.change_set_summary_list.as_deref()
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
@@ -38,12 +35,9 @@ impl ListChangeSetsOutput {
 
 /// A builder for [`ListChangeSetsOutput`](crate::operation::list_change_sets::ListChangeSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChangeSetsOutputBuilder {
-    pub(crate) change_set_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummaryListItem>>,
+    pub(crate) change_set_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummaryListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl ListChangeSetsOutputBuilder {
     /// To override the contents of this collection use [`set_change_set_summary_list`](Self::set_change_set_summary_list).
     ///
     /// <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
-    pub fn change_set_summary_list(
-        mut self,
-        input: crate::types::ChangeSetSummaryListItem,
-    ) -> Self {
+    pub fn change_set_summary_list(mut self, input: crate::types::ChangeSetSummaryListItem) -> Self {
         let mut v = self.change_set_summary_list.unwrap_or_default();
         v.push(input);
         self.change_set_summary_list = ::std::option::Option::Some(v);
         self
     }
     /// <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
-    pub fn set_change_set_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummaryListItem>>,
-    ) -> Self {
+    pub fn set_change_set_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummaryListItem>>) -> Self {
         self.change_set_summary_list = input;
         self
     }
     /// <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
-    pub fn get_change_set_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummaryListItem>> {
+    pub fn get_change_set_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummaryListItem>> {
         &self.change_set_summary_list
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>

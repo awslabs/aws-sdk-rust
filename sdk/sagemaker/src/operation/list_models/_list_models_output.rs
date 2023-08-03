@@ -35,9 +35,7 @@ impl ListModelsOutput {
 
 /// A builder for [`ListModelsOutput`](crate::operation::list_models::ListModelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelsOutputBuilder {
     pub(crate) models: ::std::option::Option<::std::vec::Vec<crate::types::ModelSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListModelsOutputBuilder {
         self
     }
     /// <p>An array of <code>ModelSummary</code> objects, each of which lists a model.</p>
-    pub fn set_models(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelSummary>>,
-    ) -> Self {
+    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelSummary>>) -> Self {
         self.models = input;
         self
     }
     /// <p>An array of <code>ModelSummary</code> objects, each of which lists a model.</p>
-    pub fn get_models(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelSummary>> {
+    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelSummary>> {
         &self.models
     }
     /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of models, use it in the subsequent request. </p>

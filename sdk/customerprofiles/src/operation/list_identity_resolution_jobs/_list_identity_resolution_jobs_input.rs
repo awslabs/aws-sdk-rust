@@ -29,16 +29,14 @@ impl ListIdentityResolutionJobsInput {
 }
 impl ListIdentityResolutionJobsInput {
     /// Creates a new builder-style object to manufacture [`ListIdentityResolutionJobsInput`](crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsInput).
-    pub fn builder() -> crate::operation::list_identity_resolution_jobs::builders::ListIdentityResolutionJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_identity_resolution_jobs::builders::ListIdentityResolutionJobsInputBuilder {
         crate::operation::list_identity_resolution_jobs::builders::ListIdentityResolutionJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListIdentityResolutionJobsInput`](crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityResolutionJobsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -94,12 +92,10 @@ impl ListIdentityResolutionJobsInputBuilder {
         crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsInput {
-                domain_name: self.domain_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsInput {
+            domain_name: self.domain_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

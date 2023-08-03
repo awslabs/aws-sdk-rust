@@ -45,16 +45,14 @@ impl GetWorkflowExecutionHistoryInput {
 }
 impl GetWorkflowExecutionHistoryInput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowExecutionHistoryInput`](crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryInput).
-    pub fn builder() -> crate::operation::get_workflow_execution_history::builders::GetWorkflowExecutionHistoryInputBuilder{
+    pub fn builder() -> crate::operation::get_workflow_execution_history::builders::GetWorkflowExecutionHistoryInputBuilder {
         crate::operation::get_workflow_execution_history::builders::GetWorkflowExecutionHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWorkflowExecutionHistoryInput`](crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowExecutionHistoryInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) execution: ::std::option::Option<crate::types::WorkflowExecution>,
@@ -83,10 +81,7 @@ impl GetWorkflowExecutionHistoryInputBuilder {
         self
     }
     /// <p>Specifies the workflow execution for which to return the history.</p>
-    pub fn set_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecution>,
-    ) -> Self {
+    pub fn set_execution(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
         self.execution = input;
         self
     }
@@ -96,19 +91,13 @@ impl GetWorkflowExecutionHistoryInputBuilder {
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -152,14 +141,12 @@ impl GetWorkflowExecutionHistoryInputBuilder {
         crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryInput {
-                domain: self.domain,
-                execution: self.execution,
-                next_page_token: self.next_page_token,
-                maximum_page_size: self.maximum_page_size,
-                reverse_order: self.reverse_order,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryInput {
+            domain: self.domain,
+            execution: self.execution,
+            next_page_token: self.next_page_token,
+            maximum_page_size: self.maximum_page_size,
+            reverse_order: self.reverse_order,
+        })
     }
 }

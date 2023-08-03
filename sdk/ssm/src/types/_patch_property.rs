@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PatchProperty {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for PatchProperty {
             "PRODUCT" => PatchProperty::Product,
             "PRODUCT_FAMILY" => PatchProperty::PatchProductFamily,
             "SEVERITY" => PatchProperty::PatchSeverity,
-            other => {
-                PatchProperty::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => PatchProperty::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl PatchProperty {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLASSIFICATION",
-            "MSRC_SEVERITY",
-            "PRIORITY",
-            "PRODUCT",
-            "PRODUCT_FAMILY",
-            "SEVERITY",
-        ]
+        &["CLASSIFICATION", "MSRC_SEVERITY", "PRIORITY", "PRODUCT", "PRODUCT_FAMILY", "SEVERITY"]
     }
 }
 impl ::std::convert::AsRef<str> for PatchProperty {

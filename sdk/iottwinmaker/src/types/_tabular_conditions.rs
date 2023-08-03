@@ -32,13 +32,10 @@ impl TabularConditions {
 
 /// A builder for [`TabularConditions`](crate::types::TabularConditions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TabularConditionsBuilder {
     pub(crate) order_by: ::std::option::Option<::std::vec::Vec<crate::types::OrderBy>>,
-    pub(crate) property_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
+    pub(crate) property_filters: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
 }
 impl TabularConditionsBuilder {
     /// Appends an item to `order_by`.
@@ -53,10 +50,7 @@ impl TabularConditionsBuilder {
         self
     }
     /// <p>Filter criteria that orders the output. It can be sorted in ascending or descending order.</p>
-    pub fn set_order_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OrderBy>>,
-    ) -> Self {
+    pub fn set_order_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OrderBy>>) -> Self {
         self.order_by = input;
         self
     }
@@ -78,18 +72,13 @@ impl TabularConditionsBuilder {
     }
     /// <p>You can filter the request using various logical operators and a key-value format. For example:</p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
-    pub fn set_property_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
-    ) -> Self {
+    pub fn set_property_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>) -> Self {
         self.property_filters = input;
         self
     }
     /// <p>You can filter the request using various logical operators and a key-value format. For example:</p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
-    pub fn get_property_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>> {
+    pub fn get_property_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>> {
         &self.property_filters
     }
     /// Consumes the builder and constructs a [`TabularConditions`](crate::types::TabularConditions).

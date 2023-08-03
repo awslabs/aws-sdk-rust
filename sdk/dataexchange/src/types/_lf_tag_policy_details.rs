@@ -37,9 +37,7 @@ impl LfTagPolicyDetails {
 
 /// A builder for [`LfTagPolicyDetails`](crate::types::LfTagPolicyDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LfTagPolicyDetailsBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::LfResourceType>,
@@ -66,10 +64,7 @@ impl LfTagPolicyDetailsBuilder {
         self
     }
     /// <p>The resource type for which the LF-tag policy applies.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LfResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::LfResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -83,10 +78,7 @@ impl LfTagPolicyDetailsBuilder {
         self
     }
     /// <p>Details for the Lake Formation Resources included in the LF-tag policy.</p>
-    pub fn set_resource_details(
-        mut self,
-        input: ::std::option::Option<crate::types::LfResourceDetails>,
-    ) -> Self {
+    pub fn set_resource_details(mut self, input: ::std::option::Option<crate::types::LfResourceDetails>) -> Self {
         self.resource_details = input;
         self
     }

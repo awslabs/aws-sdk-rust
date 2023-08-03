@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DeleteTapeArchiveOutput {
 }
 impl DeleteTapeArchiveOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTapeArchiveOutput`](crate::operation::delete_tape_archive::DeleteTapeArchiveOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_tape_archive::builders::DeleteTapeArchiveOutputBuilder {
+    pub fn builder() -> crate::operation::delete_tape_archive::builders::DeleteTapeArchiveOutputBuilder {
         crate::operation::delete_tape_archive::builders::DeleteTapeArchiveOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTapeArchiveOutput`](crate::operation::delete_tape_archive::DeleteTapeArchiveOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTapeArchiveOutputBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

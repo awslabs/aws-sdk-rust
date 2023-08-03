@@ -36,9 +36,7 @@ impl DetachObjectInput {
 
 /// A builder for [`DetachObjectInput`](crate::operation::detach_object::DetachObjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachObjectInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) parent_reference: ::std::option::Option<crate::types::ObjectReference>,
@@ -46,18 +44,12 @@ pub struct DetachObjectInputBuilder {
 }
 impl DetachObjectInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_arn = input;
         self
     }
@@ -71,10 +63,7 @@ impl DetachObjectInputBuilder {
         self
     }
     /// <p>The parent reference from which the object with the specified link name is detached.</p>
-    pub fn set_parent_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_parent_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.parent_reference = input;
         self
     }
@@ -97,12 +86,7 @@ impl DetachObjectInputBuilder {
         &self.link_name
     }
     /// Consumes the builder and constructs a [`DetachObjectInput`](crate::operation::detach_object::DetachObjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detach_object::DetachObjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::detach_object::DetachObjectInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_object::DetachObjectInput {
             directory_arn: self.directory_arn,
             parent_reference: self.parent_reference,

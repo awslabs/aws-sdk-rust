@@ -23,9 +23,7 @@ impl Destination {
 
 /// A builder for [`Destination`](crate::types::Destination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DestinationBuilder {
     pub(crate) s3_destination: ::std::option::Option<crate::types::S3Destination>,
 }
@@ -36,10 +34,7 @@ impl DestinationBuilder {
         self
     }
     /// <p>Describes the location in S3 of the updated firmware.</p>
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Destination>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::S3Destination>) -> Self {
         self.s3_destination = input;
         self
     }

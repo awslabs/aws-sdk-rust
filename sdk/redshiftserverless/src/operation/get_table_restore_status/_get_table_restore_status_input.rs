@@ -15,35 +15,25 @@ impl GetTableRestoreStatusInput {
 }
 impl GetTableRestoreStatusInput {
     /// Creates a new builder-style object to manufacture [`GetTableRestoreStatusInput`](crate::operation::get_table_restore_status::GetTableRestoreStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_table_restore_status::builders::GetTableRestoreStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_table_restore_status::builders::GetTableRestoreStatusInputBuilder {
         crate::operation::get_table_restore_status::builders::GetTableRestoreStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTableRestoreStatusInput`](crate::operation::get_table_restore_status::GetTableRestoreStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTableRestoreStatusInputBuilder {
     pub(crate) table_restore_request_id: ::std::option::Option<::std::string::String>,
 }
 impl GetTableRestoreStatusInputBuilder {
     /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
-    pub fn table_restore_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn table_restore_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_restore_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
-    pub fn set_table_restore_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_table_restore_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_restore_request_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetTableRestoreStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetTableRestoreStatusInput`](crate::operation::get_table_restore_status::GetTableRestoreStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_table_restore_status::GetTableRestoreStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_table_restore_status::GetTableRestoreStatusInput {
-                table_restore_request_id: self.table_restore_request_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_table_restore_status::GetTableRestoreStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_table_restore_status::GetTableRestoreStatusInput {
+            table_restore_request_id: self.table_restore_request_id,
+        })
     }
 }

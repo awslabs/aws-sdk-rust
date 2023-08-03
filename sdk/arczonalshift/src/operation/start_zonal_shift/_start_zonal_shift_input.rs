@@ -59,9 +59,7 @@ impl StartZonalShiftInput {
 
 /// A builder for [`StartZonalShiftInput`](crate::operation::start_zonal_shift::StartZonalShiftInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartZonalShiftInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) away_from: ::std::option::Option<::std::string::String>,
@@ -71,19 +69,13 @@ pub struct StartZonalShiftInputBuilder {
 impl StartZonalShiftInputBuilder {
     /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
@@ -158,10 +150,7 @@ impl StartZonalShiftInputBuilder {
     /// Consumes the builder and constructs a [`StartZonalShiftInput`](crate::operation::start_zonal_shift::StartZonalShiftInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_zonal_shift::StartZonalShiftInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_zonal_shift::StartZonalShiftInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_zonal_shift::StartZonalShiftInput {
             resource_identifier: self.resource_identifier,
             away_from: self.away_from,

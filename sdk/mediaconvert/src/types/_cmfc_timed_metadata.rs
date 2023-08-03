@@ -38,13 +38,7 @@
 /// To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in Custom ID3 metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CmfcTimedMetadata {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for CmfcTimedMetadata {
         match s {
             "NONE" => CmfcTimedMetadata::None,
             "PASSTHROUGH" => CmfcTimedMetadata::Passthrough,
-            other => {
-                CmfcTimedMetadata::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => CmfcTimedMetadata::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`custom_vocabulary_items(Option<Vec<CustomVocabularyItem>>)`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput::custom_vocabulary_items): <p>The custom vocabulary items from the list custom vocabulary response.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput::next_token): <p>The nextToken identifier to the list custom vocabulary response.</p>
     /// - On failure, responds with [`SdkError<ListCustomVocabularyItemsError>`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError)
-    pub fn list_custom_vocabulary_items(&self) -> crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder{
+    pub fn list_custom_vocabulary_items(&self) -> crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder {
         crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder::new(self.handle.clone())
     }
 }

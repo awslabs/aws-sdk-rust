@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EcsServiceRecommendationFindingReasonCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -65,15 +59,9 @@ impl ::std::convert::From<&str> for EcsServiceRecommendationFindingReasonCode {
         match s {
             "CPUOverprovisioned" => EcsServiceRecommendationFindingReasonCode::CpuOverProvisioned,
             "CPUUnderprovisioned" => EcsServiceRecommendationFindingReasonCode::CpuUnderProvisioned,
-            "MemoryOverprovisioned" => {
-                EcsServiceRecommendationFindingReasonCode::MemoryOverProvisioned
-            }
-            "MemoryUnderprovisioned" => {
-                EcsServiceRecommendationFindingReasonCode::MemoryUnderProvisioned
-            }
-            other => EcsServiceRecommendationFindingReasonCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "MemoryOverprovisioned" => EcsServiceRecommendationFindingReasonCode::MemoryOverProvisioned,
+            "MemoryUnderprovisioned" => EcsServiceRecommendationFindingReasonCode::MemoryUnderProvisioned,
+            other => EcsServiceRecommendationFindingReasonCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -90,12 +78,8 @@ impl EcsServiceRecommendationFindingReasonCode {
         match self {
             EcsServiceRecommendationFindingReasonCode::CpuOverProvisioned => "CPUOverprovisioned",
             EcsServiceRecommendationFindingReasonCode::CpuUnderProvisioned => "CPUUnderprovisioned",
-            EcsServiceRecommendationFindingReasonCode::MemoryOverProvisioned => {
-                "MemoryOverprovisioned"
-            }
-            EcsServiceRecommendationFindingReasonCode::MemoryUnderProvisioned => {
-                "MemoryUnderprovisioned"
-            }
+            EcsServiceRecommendationFindingReasonCode::MemoryOverProvisioned => "MemoryOverprovisioned",
+            EcsServiceRecommendationFindingReasonCode::MemoryUnderProvisioned => "MemoryUnderprovisioned",
             EcsServiceRecommendationFindingReasonCode::Unknown(value) => value.as_str(),
         }
     }

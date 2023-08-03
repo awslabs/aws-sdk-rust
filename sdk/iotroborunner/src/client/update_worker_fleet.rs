@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::update_worker_fleet::UpdateWorkerFleetOutput::updated_at): Timestamp at which the resource was last updated.
     ///   - [`additional_fixed_properties(Option<String>)`](crate::operation::update_worker_fleet::UpdateWorkerFleetOutput::additional_fixed_properties): JSON blob containing additional fixed properties regarding the worker fleet
     /// - On failure, responds with [`SdkError<UpdateWorkerFleetError>`](crate::operation::update_worker_fleet::UpdateWorkerFleetError)
-    pub fn update_worker_fleet(
-        &self,
-    ) -> crate::operation::update_worker_fleet::builders::UpdateWorkerFleetFluentBuilder {
-        crate::operation::update_worker_fleet::builders::UpdateWorkerFleetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_worker_fleet(&self) -> crate::operation::update_worker_fleet::builders::UpdateWorkerFleetFluentBuilder {
+        crate::operation::update_worker_fleet::builders::UpdateWorkerFleetFluentBuilder::new(self.handle.clone())
     }
 }

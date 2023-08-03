@@ -44,10 +44,7 @@ impl StartContactRecordingFluentBuilder {
         }
     }
     /// Access the StartContactRecording as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_contact_recording::builders::StartContactRecordingInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_contact_recording::builders::StartContactRecordingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +56,7 @@ impl StartContactRecordingFluentBuilder {
             crate::operation::start_contact_recording::StartContactRecording,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_contact_recording::StartContactRecordingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_contact_recording::StartContactRecordingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +66,7 @@ impl StartContactRecordingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +75,7 @@ impl StartContactRecordingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_contact_recording::StartContactRecordingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_contact_recording::StartContactRecordingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_contact_recording::StartContactRecordingError>,
     > {
         let op = self
             .inner
@@ -108,9 +98,7 @@ impl StartContactRecordingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_contact_recording::StartContactRecordingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_contact_recording::StartContactRecordingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_contact_recording::StartContactRecordingError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +112,7 @@ impl StartContactRecordingFluentBuilder {
             crate::operation::start_contact_recording::StartContactRecording,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_contact_recording::StartContactRecordingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_contact_recording::StartContactRecordingError>,
     > {
         self.customize_middleware().await
     }
@@ -159,18 +145,12 @@ impl StartContactRecordingFluentBuilder {
         self.inner.get_contact_id()
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
-    pub fn initial_contact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initial_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.initial_contact_id(input.into());
         self
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
-    pub fn set_initial_contact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initial_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_initial_contact_id(input);
         self
     }
@@ -179,25 +159,17 @@ impl StartContactRecordingFluentBuilder {
         self.inner.get_initial_contact_id()
     }
     /// <p>The person being recorded.</p>
-    pub fn voice_recording_configuration(
-        mut self,
-        input: crate::types::VoiceRecordingConfiguration,
-    ) -> Self {
+    pub fn voice_recording_configuration(mut self, input: crate::types::VoiceRecordingConfiguration) -> Self {
         self.inner = self.inner.voice_recording_configuration(input);
         self
     }
     /// <p>The person being recorded.</p>
-    pub fn set_voice_recording_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceRecordingConfiguration>,
-    ) -> Self {
+    pub fn set_voice_recording_configuration(mut self, input: ::std::option::Option<crate::types::VoiceRecordingConfiguration>) -> Self {
         self.inner = self.inner.set_voice_recording_configuration(input);
         self
     }
     /// <p>The person being recorded.</p>
-    pub fn get_voice_recording_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::VoiceRecordingConfiguration> {
+    pub fn get_voice_recording_configuration(&self) -> &::std::option::Option<crate::types::VoiceRecordingConfiguration> {
         self.inner.get_voice_recording_configuration()
     }
 }

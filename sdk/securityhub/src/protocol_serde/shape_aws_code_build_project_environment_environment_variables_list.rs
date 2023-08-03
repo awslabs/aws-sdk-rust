@@ -2,18 +2,11 @@
 pub(crate) fn de_aws_code_build_project_environment_environment_variables_list<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<
-    Option<
-        ::std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>,
-    >,
+    Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -37,10 +30,8 @@ where
             }
             Ok(Some(items))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start array or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start array or null",
+        )),
     }
 }

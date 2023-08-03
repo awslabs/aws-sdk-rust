@@ -6,14 +6,11 @@
 pub struct ClusterConfiguration {
     /// <p>The details of the execute command configuration.</p>
     #[doc(hidden)]
-    pub execute_command_configuration:
-        ::std::option::Option<crate::types::ExecuteCommandConfiguration>,
+    pub execute_command_configuration: ::std::option::Option<crate::types::ExecuteCommandConfiguration>,
 }
 impl ClusterConfiguration {
     /// <p>The details of the execute command configuration.</p>
-    pub fn execute_command_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExecuteCommandConfiguration> {
+    pub fn execute_command_configuration(&self) -> ::std::option::Option<&crate::types::ExecuteCommandConfiguration> {
         self.execute_command_configuration.as_ref()
     }
 }
@@ -26,34 +23,23 @@ impl ClusterConfiguration {
 
 /// A builder for [`ClusterConfiguration`](crate::types::ClusterConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterConfigurationBuilder {
-    pub(crate) execute_command_configuration:
-        ::std::option::Option<crate::types::ExecuteCommandConfiguration>,
+    pub(crate) execute_command_configuration: ::std::option::Option<crate::types::ExecuteCommandConfiguration>,
 }
 impl ClusterConfigurationBuilder {
     /// <p>The details of the execute command configuration.</p>
-    pub fn execute_command_configuration(
-        mut self,
-        input: crate::types::ExecuteCommandConfiguration,
-    ) -> Self {
+    pub fn execute_command_configuration(mut self, input: crate::types::ExecuteCommandConfiguration) -> Self {
         self.execute_command_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details of the execute command configuration.</p>
-    pub fn set_execute_command_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecuteCommandConfiguration>,
-    ) -> Self {
+    pub fn set_execute_command_configuration(mut self, input: ::std::option::Option<crate::types::ExecuteCommandConfiguration>) -> Self {
         self.execute_command_configuration = input;
         self
     }
     /// <p>The details of the execute command configuration.</p>
-    pub fn get_execute_command_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExecuteCommandConfiguration> {
+    pub fn get_execute_command_configuration(&self) -> &::std::option::Option<crate::types::ExecuteCommandConfiguration> {
         &self.execute_command_configuration
     }
     /// Consumes the builder and constructs a [`ClusterConfiguration`](crate::types::ClusterConfiguration).

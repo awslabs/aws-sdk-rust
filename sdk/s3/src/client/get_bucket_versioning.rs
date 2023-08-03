@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`status(Option<BucketVersioningStatus>)`](crate::operation::get_bucket_versioning::GetBucketVersioningOutput::status): <p>The versioning state of the bucket.</p>
     ///   - [`mfa_delete(Option<MfaDeleteStatus>)`](crate::operation::get_bucket_versioning::GetBucketVersioningOutput::mfa_delete): <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
     /// - On failure, responds with [`SdkError<GetBucketVersioningError>`](crate::operation::get_bucket_versioning::GetBucketVersioningError)
-    pub fn get_bucket_versioning(
-        &self,
-    ) -> crate::operation::get_bucket_versioning::builders::GetBucketVersioningFluentBuilder {
-        crate::operation::get_bucket_versioning::builders::GetBucketVersioningFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_bucket_versioning(&self) -> crate::operation::get_bucket_versioning::builders::GetBucketVersioningFluentBuilder {
+        crate::operation::get_bucket_versioning::builders::GetBucketVersioningFluentBuilder::new(self.handle.clone())
     }
 }

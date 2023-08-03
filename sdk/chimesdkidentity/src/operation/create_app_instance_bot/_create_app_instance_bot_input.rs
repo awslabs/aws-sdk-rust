@@ -62,8 +62,7 @@ impl ::std::fmt::Debug for CreateAppInstanceBotInput {
 }
 impl CreateAppInstanceBotInput {
     /// Creates a new builder-style object to manufacture [`CreateAppInstanceBotInput`](crate::operation::create_app_instance_bot::CreateAppInstanceBotInput).
-    pub fn builder(
-    ) -> crate::operation::create_app_instance_bot::builders::CreateAppInstanceBotInputBuilder {
+    pub fn builder() -> crate::operation::create_app_instance_bot::builders::CreateAppInstanceBotInputBuilder {
         crate::operation::create_app_instance_bot::builders::CreateAppInstanceBotInputBuilder::default()
     }
 }
@@ -81,18 +80,12 @@ pub struct CreateAppInstanceBotInputBuilder {
 }
 impl CreateAppInstanceBotInputBuilder {
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_arn = input;
         self
     }
@@ -129,18 +122,12 @@ impl CreateAppInstanceBotInputBuilder {
         &self.metadata
     }
     /// <p>The unique ID for the client making the request. Use different tokens for different <code>AppInstanceBots</code>.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the client making the request. Use different tokens for different <code>AppInstanceBots</code>.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -160,10 +147,7 @@ impl CreateAppInstanceBotInputBuilder {
         self
     }
     /// <p>The tags assigned to the <code>AppInstanceBot</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -177,10 +161,7 @@ impl CreateAppInstanceBotInputBuilder {
         self
     }
     /// <p>Configuration information about the Amazon Lex V2 V2 bot.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::Configuration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::Configuration>) -> Self {
         self.configuration = input;
         self
     }
@@ -191,20 +172,16 @@ impl CreateAppInstanceBotInputBuilder {
     /// Consumes the builder and constructs a [`CreateAppInstanceBotInput`](crate::operation::create_app_instance_bot::CreateAppInstanceBotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_app_instance_bot::CreateAppInstanceBotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_app_instance_bot::CreateAppInstanceBotInput {
-                app_instance_arn: self.app_instance_arn,
-                name: self.name,
-                metadata: self.metadata,
-                client_request_token: self.client_request_token,
-                tags: self.tags,
-                configuration: self.configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_app_instance_bot::CreateAppInstanceBotInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_app_instance_bot::CreateAppInstanceBotInput {
+            app_instance_arn: self.app_instance_arn,
+            name: self.name,
+            metadata: self.metadata,
+            client_request_token: self.client_request_token,
+            tags: self.tags,
+            configuration: self.configuration,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateAppInstanceBotInputBuilder {

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteGlobalNetworkOutput`](crate::operation::delete_global_network::DeleteGlobalNetworkOutput) with field(s):
     ///   - [`global_network(Option<GlobalNetwork>)`](crate::operation::delete_global_network::DeleteGlobalNetworkOutput::global_network): <p>Information about the global network.</p>
     /// - On failure, responds with [`SdkError<DeleteGlobalNetworkError>`](crate::operation::delete_global_network::DeleteGlobalNetworkError)
-    pub fn delete_global_network(
-        &self,
-    ) -> crate::operation::delete_global_network::builders::DeleteGlobalNetworkFluentBuilder {
-        crate::operation::delete_global_network::builders::DeleteGlobalNetworkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_global_network(&self) -> crate::operation::delete_global_network::builders::DeleteGlobalNetworkFluentBuilder {
+        crate::operation::delete_global_network::builders::DeleteGlobalNetworkFluentBuilder::new(self.handle.clone())
     }
 }

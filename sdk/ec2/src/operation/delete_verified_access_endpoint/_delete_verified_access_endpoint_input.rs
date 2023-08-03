@@ -29,16 +29,14 @@ impl DeleteVerifiedAccessEndpointInput {
 }
 impl DeleteVerifiedAccessEndpointInput {
     /// Creates a new builder-style object to manufacture [`DeleteVerifiedAccessEndpointInput`](crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointInput).
-    pub fn builder() -> crate::operation::delete_verified_access_endpoint::builders::DeleteVerifiedAccessEndpointInputBuilder{
+    pub fn builder() -> crate::operation::delete_verified_access_endpoint::builders::DeleteVerifiedAccessEndpointInputBuilder {
         crate::operation::delete_verified_access_endpoint::builders::DeleteVerifiedAccessEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVerifiedAccessEndpointInput`](crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVerifiedAccessEndpointInputBuilder {
     pub(crate) verified_access_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DeleteVerifiedAccessEndpointInputBuilder {
 }
 impl DeleteVerifiedAccessEndpointInputBuilder {
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn verified_access_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn set_verified_access_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verified_access_endpoint_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl DeleteVerifiedAccessEndpointInputBuilder {
         crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointInput {
-                verified_access_endpoint_id: self.verified_access_endpoint_id,
-                client_token: self.client_token,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointInput {
+            verified_access_endpoint_id: self.verified_access_endpoint_id,
+            client_token: self.client_token,
+            dry_run: self.dry_run,
+        })
     }
 }

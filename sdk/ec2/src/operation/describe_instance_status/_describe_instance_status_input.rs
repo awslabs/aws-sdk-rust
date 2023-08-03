@@ -88,18 +88,14 @@ impl DescribeInstanceStatusInput {
 }
 impl DescribeInstanceStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceStatusInput`](crate::operation::describe_instance_status::DescribeInstanceStatusInput).
-    pub fn builder(
-    ) -> crate::operation::describe_instance_status::builders::DescribeInstanceStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_instance_status::builders::DescribeInstanceStatusInputBuilder {
         crate::operation::describe_instance_status::builders::DescribeInstanceStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceStatusInput`](crate::operation::describe_instance_status::DescribeInstanceStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceStatusInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -151,10 +147,7 @@ impl DescribeInstanceStatusInputBuilder {
     /// <li> <p> <code>system-status.reachability</code> - Filters on system status where the name is <code>reachability</code> (<code>passed</code> | <code>failed</code> | <code>initializing</code> | <code>insufficient-data</code>).</p> </li>
     /// <li> <p> <code>system-status.status</code> - The system status of the instance (<code>ok</code> | <code>impaired</code> | <code>initializing</code> | <code>insufficient-data</code> | <code>not-applicable</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -193,19 +186,14 @@ impl DescribeInstanceStatusInputBuilder {
     /// <p>The instance IDs.</p>
     /// <p>Default: Describes all your instances.</p>
     /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>The instance IDs.</p>
     /// <p>Default: Describes all your instances.</p>
     /// <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -273,19 +261,15 @@ impl DescribeInstanceStatusInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInstanceStatusInput`](crate::operation::describe_instance_status::DescribeInstanceStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_instance_status::DescribeInstanceStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_instance_status::DescribeInstanceStatusInput {
-                filters: self.filters,
-                instance_ids: self.instance_ids,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                dry_run: self.dry_run,
-                include_all_instances: self.include_all_instances,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_instance_status::DescribeInstanceStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_instance_status::DescribeInstanceStatusInput {
+            filters: self.filters,
+            instance_ids: self.instance_ids,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            dry_run: self.dry_run,
+            include_all_instances: self.include_all_instances,
+        })
     }
 }

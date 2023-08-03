@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for StartSchemaExtensionOutput {
 }
 impl StartSchemaExtensionOutput {
     /// Creates a new builder-style object to manufacture [`StartSchemaExtensionOutput`](crate::operation::start_schema_extension::StartSchemaExtensionOutput).
-    pub fn builder(
-    ) -> crate::operation::start_schema_extension::builders::StartSchemaExtensionOutputBuilder {
+    pub fn builder() -> crate::operation::start_schema_extension::builders::StartSchemaExtensionOutputBuilder {
         crate::operation::start_schema_extension::builders::StartSchemaExtensionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartSchemaExtensionOutput`](crate::operation::start_schema_extension::StartSchemaExtensionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSchemaExtensionOutputBuilder {
     pub(crate) schema_extension_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartSchemaExtensionOutputBuilder {
     /// <p>The identifier of the schema extension that will be applied.</p>
-    pub fn schema_extension_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_extension_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_extension_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the schema extension that will be applied.</p>
-    pub fn set_schema_extension_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_extension_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_extension_id = input;
         self
     }

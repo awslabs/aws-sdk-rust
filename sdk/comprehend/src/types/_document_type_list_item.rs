@@ -30,9 +30,7 @@ impl DocumentTypeListItem {
 
 /// A builder for [`DocumentTypeListItem`](crate::types::DocumentTypeListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentTypeListItemBuilder {
     pub(crate) page: ::std::option::Option<i32>,
     pub(crate) r#type: ::std::option::Option<crate::types::DocumentType>,

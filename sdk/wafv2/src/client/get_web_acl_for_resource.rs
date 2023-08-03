@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetWebAclForResourceOutput`](crate::operation::get_web_acl_for_resource::GetWebAclForResourceOutput) with field(s):
     ///   - [`web_acl(Option<WebAcl>)`](crate::operation::get_web_acl_for_resource::GetWebAclForResourceOutput::web_acl): <p>The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.</p>
     /// - On failure, responds with [`SdkError<GetWebACLForResourceError>`](crate::operation::get_web_acl_for_resource::GetWebACLForResourceError)
-    pub fn get_web_acl_for_resource(
-        &self,
-    ) -> crate::operation::get_web_acl_for_resource::builders::GetWebACLForResourceFluentBuilder
-    {
-        crate::operation::get_web_acl_for_resource::builders::GetWebACLForResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_web_acl_for_resource(&self) -> crate::operation::get_web_acl_for_resource::builders::GetWebACLForResourceFluentBuilder {
+        crate::operation::get_web_acl_for_resource::builders::GetWebACLForResourceFluentBuilder::new(self.handle.clone())
     }
 }

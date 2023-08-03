@@ -44,9 +44,7 @@ impl HorizontalLayoutConfiguration {
 
 /// A builder for [`HorizontalLayoutConfiguration`](crate::types::HorizontalLayoutConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HorizontalLayoutConfigurationBuilder {
     pub(crate) tile_order: ::std::option::Option<crate::types::TileOrder>,
     pub(crate) tile_position: ::std::option::Option<crate::types::HorizontalTilePosition>,
@@ -74,17 +72,12 @@ impl HorizontalLayoutConfigurationBuilder {
         self
     }
     /// <p>Sets the position of horizontal tiles.</p>
-    pub fn set_tile_position(
-        mut self,
-        input: ::std::option::Option<crate::types::HorizontalTilePosition>,
-    ) -> Self {
+    pub fn set_tile_position(mut self, input: ::std::option::Option<crate::types::HorizontalTilePosition>) -> Self {
         self.tile_position = input;
         self
     }
     /// <p>Sets the position of horizontal tiles.</p>
-    pub fn get_tile_position(
-        &self,
-    ) -> &::std::option::Option<crate::types::HorizontalTilePosition> {
+    pub fn get_tile_position(&self) -> &::std::option::Option<crate::types::HorizontalTilePosition> {
         &self.tile_position
     }
     /// <p>The maximum number of video tiles to display.</p>
@@ -102,18 +95,12 @@ impl HorizontalLayoutConfigurationBuilder {
         &self.tile_count
     }
     /// <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
-    pub fn tile_aspect_ratio(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tile_aspect_ratio(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tile_aspect_ratio = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
-    pub fn set_tile_aspect_ratio(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tile_aspect_ratio(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tile_aspect_ratio = input;
         self
     }

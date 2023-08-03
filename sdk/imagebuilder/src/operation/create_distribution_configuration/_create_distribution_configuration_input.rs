@@ -14,9 +14,7 @@ pub struct CreateDistributionConfigurationInput {
     pub distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
     /// <p>The tags of the distribution configuration.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The idempotency token of the distribution configuration.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -35,11 +33,7 @@ impl CreateDistributionConfigurationInput {
         self.distributions.as_deref()
     }
     /// <p>The tags of the distribution configuration.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The idempotency token of the distribution configuration.</p>
@@ -49,23 +43,19 @@ impl CreateDistributionConfigurationInput {
 }
 impl CreateDistributionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateDistributionConfigurationInput`](crate::operation::create_distribution_configuration::CreateDistributionConfigurationInput).
-    pub fn builder() -> crate::operation::create_distribution_configuration::builders::CreateDistributionConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::create_distribution_configuration::builders::CreateDistributionConfigurationInputBuilder {
         crate::operation::create_distribution_configuration::builders::CreateDistributionConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDistributionConfigurationInput`](crate::operation::create_distribution_configuration::CreateDistributionConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDistributionConfigurationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateDistributionConfigurationInputBuilder {
@@ -109,17 +99,12 @@ impl CreateDistributionConfigurationInputBuilder {
         self
     }
     /// <p>The distributions of the distribution configuration.</p>
-    pub fn set_distributions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
-    ) -> Self {
+    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>) -> Self {
         self.distributions = input;
         self
     }
     /// <p>The distributions of the distribution configuration.</p>
-    pub fn get_distributions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
+    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
         &self.distributions
     }
     /// Adds a key-value pair to `tags`.
@@ -127,32 +112,19 @@ impl CreateDistributionConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the distribution configuration.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags of the distribution configuration.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags of the distribution configuration.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The idempotency token of the distribution configuration.</p>
@@ -178,17 +150,12 @@ impl CreateDistributionConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_distribution_configuration::CreateDistributionConfigurationInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                distributions: self.distributions
-                ,
-                tags: self.tags
-                ,
-                client_token: self.client_token
-                ,
-            }
+                name: self.name,
+                description: self.description,
+                distributions: self.distributions,
+                tags: self.tags,
+                client_token: self.client_token,
+            },
         )
     }
 }

@@ -5,8 +5,7 @@
 pub struct DescribeLocalGatewayVirtualInterfaceGroupsInput {
     /// <p>The IDs of the virtual interface groups.</p>
     #[doc(hidden)]
-    pub local_gateway_virtual_interface_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub local_gateway_virtual_interface_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li> <p> <code>local-gateway-id</code> - The ID of a local gateway.</p> </li>
@@ -28,9 +27,7 @@ pub struct DescribeLocalGatewayVirtualInterfaceGroupsInput {
 }
 impl DescribeLocalGatewayVirtualInterfaceGroupsInput {
     /// <p>The IDs of the virtual interface groups.</p>
-    pub fn local_gateway_virtual_interface_group_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn local_gateway_virtual_interface_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.local_gateway_virtual_interface_group_ids.as_deref()
     }
     /// <p>One or more filters.</p>
@@ -58,19 +55,17 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsInput {
 }
 impl DescribeLocalGatewayVirtualInterfaceGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLocalGatewayVirtualInterfaceGroupsInput`](crate::operation::describe_local_gateway_virtual_interface_groups::DescribeLocalGatewayVirtualInterfaceGroupsInput).
-    pub fn builder() -> crate::operation::describe_local_gateway_virtual_interface_groups::builders::DescribeLocalGatewayVirtualInterfaceGroupsInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_local_gateway_virtual_interface_groups::builders::DescribeLocalGatewayVirtualInterfaceGroupsInputBuilder {
         crate::operation::describe_local_gateway_virtual_interface_groups::builders::DescribeLocalGatewayVirtualInterfaceGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocalGatewayVirtualInterfaceGroupsInput`](crate::operation::describe_local_gateway_virtual_interface_groups::DescribeLocalGatewayVirtualInterfaceGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocalGatewayVirtualInterfaceGroupsInputBuilder {
-    pub(crate) local_gateway_virtual_interface_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) local_gateway_virtual_interface_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -82,29 +77,19 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsInputBuilder {
     /// To override the contents of this collection use [`set_local_gateway_virtual_interface_group_ids`](Self::set_local_gateway_virtual_interface_group_ids).
     ///
     /// <p>The IDs of the virtual interface groups.</p>
-    pub fn local_gateway_virtual_interface_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self
-            .local_gateway_virtual_interface_group_ids
-            .unwrap_or_default();
+    pub fn local_gateway_virtual_interface_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.local_gateway_virtual_interface_group_ids.unwrap_or_default();
         v.push(input.into());
         self.local_gateway_virtual_interface_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the virtual interface groups.</p>
-    pub fn set_local_gateway_virtual_interface_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_local_gateway_virtual_interface_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.local_gateway_virtual_interface_group_ids = input;
         self
     }
     /// <p>The IDs of the virtual interface groups.</p>
-    pub fn get_local_gateway_virtual_interface_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_local_gateway_virtual_interface_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.local_gateway_virtual_interface_group_ids
     }
     /// Appends an item to `filters`.
@@ -131,10 +116,7 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsInputBuilder {
     /// <li> <p> <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.</p> </li>
     /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -191,20 +173,20 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeLocalGatewayVirtualInterfaceGroupsInput`](crate::operation::describe_local_gateway_virtual_interface_groups::DescribeLocalGatewayVirtualInterfaceGroupsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_local_gateway_virtual_interface_groups::DescribeLocalGatewayVirtualInterfaceGroupsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_local_gateway_virtual_interface_groups::DescribeLocalGatewayVirtualInterfaceGroupsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_local_gateway_virtual_interface_groups::DescribeLocalGatewayVirtualInterfaceGroupsInput {
-                local_gateway_virtual_interface_group_ids: self.local_gateway_virtual_interface_group_ids
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                local_gateway_virtual_interface_group_ids: self.local_gateway_virtual_interface_group_ids,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

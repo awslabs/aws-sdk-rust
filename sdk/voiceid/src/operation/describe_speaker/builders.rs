@@ -10,10 +10,7 @@ impl DescribeSpeakerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_speaker::DescribeSpeakerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_speaker::DescribeSpeakerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_speaker::DescribeSpeakerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_speaker();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeSpeakerFluentBuilder {
         }
     }
     /// Access the DescribeSpeaker as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_speaker::builders::DescribeSpeakerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_speaker::builders::DescribeSpeakerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeSpeakerFluentBuilder {
             crate::operation::describe_speaker::DescribeSpeaker,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_speaker::DescribeSpeakerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_speaker::DescribeSpeakerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeSpeakerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeSpeakerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_speaker::DescribeSpeakerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_speaker::DescribeSpeakerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_speaker::DescribeSpeakerError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeSpeakerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_speaker::DescribeSpeakerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_speaker::DescribeSpeakerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_speaker::DescribeSpeakerError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeSpeakerFluentBuilder {
             crate::operation::describe_speaker::DescribeSpeaker,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_speaker::DescribeSpeakerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_speaker::DescribeSpeakerError>,
     > {
         self.customize_middleware().await
     }

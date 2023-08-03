@@ -22,9 +22,7 @@ impl super::Client {
     ///   - [`errors(Option<Vec<CreateFleetError>>)`](crate::operation::create_fleet::CreateFleetOutput::errors): <p>Information about the instances that could not be launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
     ///   - [`instances(Option<Vec<CreateFleetInstance>>)`](crate::operation::create_fleet::CreateFleetOutput::instances): <p>Information about the instances that were launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
     /// - On failure, responds with [`SdkError<CreateFleetError>`](crate::operation::create_fleet::CreateFleetError)
-    pub fn create_fleet(
-        &self,
-    ) -> crate::operation::create_fleet::builders::CreateFleetFluentBuilder {
+    pub fn create_fleet(&self) -> crate::operation::create_fleet::builders::CreateFleetFluentBuilder {
         crate::operation::create_fleet::builders::CreateFleetFluentBuilder::new(self.handle.clone())
     }
 }

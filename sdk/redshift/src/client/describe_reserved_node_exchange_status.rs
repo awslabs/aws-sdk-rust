@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`reserved_node_exchange_status_details(Option<Vec<ReservedNodeExchangeStatus>>)`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusOutput::reserved_node_exchange_status_details): <p>The details of the reserved-node exchange request, including the status, request time, source reserved-node identifier, and additional details.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusOutput::marker): <p>A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.</p>
     /// - On failure, responds with [`SdkError<DescribeReservedNodeExchangeStatusError>`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusError)
-    pub fn describe_reserved_node_exchange_status(&self) -> crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusFluentBuilder{
+    pub fn describe_reserved_node_exchange_status(
+        &self,
+    ) -> crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusFluentBuilder {
         crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusFluentBuilder::new(self.handle.clone())
     }
 }

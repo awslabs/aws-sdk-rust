@@ -44,9 +44,7 @@ impl HlsCaptionLanguageMapping {
 
 /// A builder for [`HlsCaptionLanguageMapping`](crate::types::HlsCaptionLanguageMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsCaptionLanguageMappingBuilder {
     pub(crate) caption_channel: ::std::option::Option<i32>,
     pub(crate) custom_language_code: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl HlsCaptionLanguageMappingBuilder {
         &self.caption_channel
     }
     /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
-    pub fn custom_language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
-    pub fn set_custom_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_language_code = input;
         self
     }
@@ -94,10 +86,7 @@ impl HlsCaptionLanguageMappingBuilder {
         self
     }
     /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -106,18 +95,12 @@ impl HlsCaptionLanguageMappingBuilder {
         &self.language_code
     }
     /// Caption language description.
-    pub fn language_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_description = ::std::option::Option::Some(input.into());
         self
     }
     /// Caption language description.
-    pub fn set_language_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_description = input;
         self
     }

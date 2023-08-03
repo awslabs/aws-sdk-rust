@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::list_refresh_schedules::ListRefreshSchedulesOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_refresh_schedules::ListRefreshSchedulesOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<ListRefreshSchedulesError>`](crate::operation::list_refresh_schedules::ListRefreshSchedulesError)
-    pub fn list_refresh_schedules(
-        &self,
-    ) -> crate::operation::list_refresh_schedules::builders::ListRefreshSchedulesFluentBuilder {
-        crate::operation::list_refresh_schedules::builders::ListRefreshSchedulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_refresh_schedules(&self) -> crate::operation::list_refresh_schedules::builders::ListRefreshSchedulesFluentBuilder {
+        crate::operation::list_refresh_schedules::builders::ListRefreshSchedulesFluentBuilder::new(self.handle.clone())
     }
 }

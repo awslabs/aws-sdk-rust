@@ -10,10 +10,7 @@ impl CreateDeploymentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_deployment::CreateDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_deployment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateDeploymentFluentBuilder {
         }
     }
     /// Access the CreateDeployment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateDeploymentFluentBuilder {
             crate::operation::create_deployment::CreateDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateDeploymentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_deployment::CreateDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_deployment::CreateDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateDeploymentFluentBuilder {
             crate::operation::create_deployment::CreateDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>,
     > {
         self.customize_middleware().await
     }
@@ -155,30 +139,17 @@ impl CreateDeploymentFluentBuilder {
     /// To override the contents of this collection use [`set_file_map`](Self::set_file_map).
     ///
     /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
-    pub fn file_map(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_map(k.into(), v.into());
         self
     }
     /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
-    pub fn set_file_map(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_file_map(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_file_map(input);
         self
     }
     /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
-    pub fn get_file_map(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_file_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_file_map()
     }
 }

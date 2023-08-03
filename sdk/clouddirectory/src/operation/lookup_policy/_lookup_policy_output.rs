@@ -35,12 +35,9 @@ impl LookupPolicyOutput {
 
 /// A builder for [`LookupPolicyOutput`](crate::operation::lookup_policy::LookupPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LookupPolicyOutputBuilder {
-    pub(crate) policy_to_path_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PolicyToPath>>,
+    pub(crate) policy_to_path_list: ::std::option::Option<::std::vec::Vec<crate::types::PolicyToPath>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl LookupPolicyOutputBuilder {
         self
     }
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-    pub fn set_policy_to_path_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyToPath>>,
-    ) -> Self {
+    pub fn set_policy_to_path_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyToPath>>) -> Self {
         self.policy_to_path_list = input;
         self
     }
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-    pub fn get_policy_to_path_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyToPath>> {
+    pub fn get_policy_to_path_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyToPath>> {
         &self.policy_to_path_list
     }
     /// <p>The pagination token.</p>

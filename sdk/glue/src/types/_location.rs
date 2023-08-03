@@ -37,9 +37,7 @@ impl Location {
 
 /// A builder for [`Location`](crate::types::Location).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocationBuilder {
     pub(crate) jdbc: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
     pub(crate) s3: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
@@ -58,17 +56,12 @@ impl LocationBuilder {
         self
     }
     /// <p>A JDBC location.</p>
-    pub fn set_jdbc(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
-    ) -> Self {
+    pub fn set_jdbc(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>) -> Self {
         self.jdbc = input;
         self
     }
     /// <p>A JDBC location.</p>
-    pub fn get_jdbc(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>> {
+    pub fn get_jdbc(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>> {
         &self.jdbc
     }
     /// Appends an item to `s3`.
@@ -83,10 +76,7 @@ impl LocationBuilder {
         self
     }
     /// <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
-    pub fn set_s3(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
-    ) -> Self {
+    pub fn set_s3(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>) -> Self {
         self.s3 = input;
         self
     }
@@ -106,17 +96,12 @@ impl LocationBuilder {
         self
     }
     /// <p>An Amazon DynamoDB table location.</p>
-    pub fn set_dynamo_db(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
-    ) -> Self {
+    pub fn set_dynamo_db(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>) -> Self {
         self.dynamo_db = input;
         self
     }
     /// <p>An Amazon DynamoDB table location.</p>
-    pub fn get_dynamo_db(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>> {
+    pub fn get_dynamo_db(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>> {
         &self.dynamo_db
     }
     /// Consumes the builder and constructs a [`Location`](crate::types::Location).

@@ -36,18 +36,14 @@ impl NotifyApplicationStateInput {
 }
 impl NotifyApplicationStateInput {
     /// Creates a new builder-style object to manufacture [`NotifyApplicationStateInput`](crate::operation::notify_application_state::NotifyApplicationStateInput).
-    pub fn builder(
-    ) -> crate::operation::notify_application_state::builders::NotifyApplicationStateInputBuilder
-    {
+    pub fn builder() -> crate::operation::notify_application_state::builders::NotifyApplicationStateInputBuilder {
         crate::operation::notify_application_state::builders::NotifyApplicationStateInputBuilder::default()
     }
 }
 
 /// A builder for [`NotifyApplicationStateInput`](crate::operation::notify_application_state::NotifyApplicationStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyApplicationStateInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ApplicationStatus>,
@@ -56,18 +52,12 @@ pub struct NotifyApplicationStateInputBuilder {
 }
 impl NotifyApplicationStateInputBuilder {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -81,10 +71,7 @@ impl NotifyApplicationStateInputBuilder {
         self
     }
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -98,10 +85,7 @@ impl NotifyApplicationStateInputBuilder {
         self
     }
     /// <p>The timestamp when the application state changed.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date_time = input;
         self
     }
@@ -126,17 +110,13 @@ impl NotifyApplicationStateInputBuilder {
     /// Consumes the builder and constructs a [`NotifyApplicationStateInput`](crate::operation::notify_application_state::NotifyApplicationStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::notify_application_state::NotifyApplicationStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::notify_application_state::NotifyApplicationStateInput {
-                application_id: self.application_id,
-                status: self.status,
-                update_date_time: self.update_date_time,
-                dry_run: self.dry_run.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::notify_application_state::NotifyApplicationStateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::notify_application_state::NotifyApplicationStateInput {
+            application_id: self.application_id,
+            status: self.status,
+            update_date_time: self.update_date_time,
+            dry_run: self.dry_run.unwrap_or_default(),
+        })
     }
 }

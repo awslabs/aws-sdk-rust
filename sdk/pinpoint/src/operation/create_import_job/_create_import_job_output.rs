@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateImportJobOutput {
 }
 impl CreateImportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateImportJobOutput`](crate::operation::create_import_job::CreateImportJobOutput).
-    pub fn builder() -> crate::operation::create_import_job::builders::CreateImportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_import_job::builders::CreateImportJobOutputBuilder {
         crate::operation::create_import_job::builders::CreateImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateImportJobOutput`](crate::operation::create_import_job::CreateImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateImportJobOutputBuilder {
     pub(crate) import_job_response: ::std::option::Option<crate::types::ImportJobResponse>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl CreateImportJobOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
-    pub fn set_import_job_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportJobResponse>,
-    ) -> Self {
+    pub fn set_import_job_response(mut self, input: ::std::option::Option<crate::types::ImportJobResponse>) -> Self {
         self.import_job_response = input;
         self
     }
     /// <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
-    pub fn get_import_job_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImportJobResponse> {
+    pub fn get_import_job_response(&self) -> &::std::option::Option<crate::types::ImportJobResponse> {
         &self.import_job_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

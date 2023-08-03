@@ -36,16 +36,14 @@ impl ListPipelineExecutionStepsInput {
 }
 impl ListPipelineExecutionStepsInput {
     /// Creates a new builder-style object to manufacture [`ListPipelineExecutionStepsInput`](crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsInput).
-    pub fn builder() -> crate::operation::list_pipeline_execution_steps::builders::ListPipelineExecutionStepsInputBuilder{
+    pub fn builder() -> crate::operation::list_pipeline_execution_steps::builders::ListPipelineExecutionStepsInputBuilder {
         crate::operation::list_pipeline_execution_steps::builders::ListPipelineExecutionStepsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPipelineExecutionStepsInput`](crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPipelineExecutionStepsInputBuilder {
     pub(crate) pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct ListPipelineExecutionStepsInputBuilder {
 }
 impl ListPipelineExecutionStepsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn set_pipeline_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_execution_arn = input;
         self
     }
@@ -122,13 +114,11 @@ impl ListPipelineExecutionStepsInputBuilder {
         crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsInput {
-                pipeline_execution_arn: self.pipeline_execution_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                sort_order: self.sort_order,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsInput {
+            pipeline_execution_arn: self.pipeline_execution_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            sort_order: self.sort_order,
+        })
     }
 }

@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_traffic_policy_instance::builders::DeleteTrafficPolicyInstanceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_traffic_policy_instance::builders::DeleteTrafficPolicyInstanceFluentBuilder::set_id): <p>The ID of the traffic policy instance that you want to delete. </p> <important>   <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p>  </important>
     /// - On success, responds with [`DeleteTrafficPolicyInstanceOutput`](crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceOutput)
     /// - On failure, responds with [`SdkError<DeleteTrafficPolicyInstanceError>`](crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceError)
-    pub fn delete_traffic_policy_instance(&self) -> crate::operation::delete_traffic_policy_instance::builders::DeleteTrafficPolicyInstanceFluentBuilder{
+    pub fn delete_traffic_policy_instance(
+        &self,
+    ) -> crate::operation::delete_traffic_policy_instance::builders::DeleteTrafficPolicyInstanceFluentBuilder {
         crate::operation::delete_traffic_policy_instance::builders::DeleteTrafficPolicyInstanceFluentBuilder::new(self.handle.clone())
     }
 }

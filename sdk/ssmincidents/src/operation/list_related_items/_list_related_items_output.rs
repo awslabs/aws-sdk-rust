@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListRelatedItemsOutput {
 }
 impl ListRelatedItemsOutput {
     /// Creates a new builder-style object to manufacture [`ListRelatedItemsOutput`](crate::operation::list_related_items::ListRelatedItemsOutput).
-    pub fn builder() -> crate::operation::list_related_items::builders::ListRelatedItemsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_related_items::builders::ListRelatedItemsOutputBuilder {
         crate::operation::list_related_items::builders::ListRelatedItemsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRelatedItemsOutput`](crate::operation::list_related_items::ListRelatedItemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRelatedItemsOutputBuilder {
     pub(crate) related_items: ::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListRelatedItemsOutputBuilder {
         self
     }
     /// <p>Details about each related item.</p>
-    pub fn set_related_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>>,
-    ) -> Self {
+    pub fn set_related_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>>) -> Self {
         self.related_items = input;
         self
     }
     /// <p>Details about each related item.</p>
-    pub fn get_related_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>> {
+    pub fn get_related_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>> {
         &self.related_items
     }
     /// <p>The pagination token to continue to the next page of results.</p>

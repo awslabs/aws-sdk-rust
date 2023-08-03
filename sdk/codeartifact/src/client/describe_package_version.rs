@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`DescribePackageVersionOutput`](crate::operation::describe_package_version::DescribePackageVersionOutput) with field(s):
     ///   - [`package_version(Option<PackageVersionDescription>)`](crate::operation::describe_package_version::DescribePackageVersionOutput::package_version): <p> A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> object that contains information about the requested package version. </p>
     /// - On failure, responds with [`SdkError<DescribePackageVersionError>`](crate::operation::describe_package_version::DescribePackageVersionError)
-    pub fn describe_package_version(
-        &self,
-    ) -> crate::operation::describe_package_version::builders::DescribePackageVersionFluentBuilder
-    {
+    pub fn describe_package_version(&self) -> crate::operation::describe_package_version::builders::DescribePackageVersionFluentBuilder {
         crate::operation::describe_package_version::builders::DescribePackageVersionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -77,9 +77,7 @@ impl UpdateListenerOutput {
 
 /// A builder for [`UpdateListenerOutput`](crate::operation::update_listener::UpdateListenerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateListenerOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -140,10 +138,7 @@ impl UpdateListenerOutputBuilder {
         self
     }
     /// <p>The protocol of the listener.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ListenerProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ListenerProtocol>) -> Self {
         self.protocol = input;
         self
     }
@@ -199,10 +194,7 @@ impl UpdateListenerOutputBuilder {
         self
     }
     /// <p>The action for the default rule.</p>
-    pub fn set_default_action(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleAction>,
-    ) -> Self {
+    pub fn set_default_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
         self.default_action = input;
         self
     }

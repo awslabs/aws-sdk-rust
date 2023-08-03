@@ -10,10 +10,7 @@ impl DescribeProtectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_protection::DescribeProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_protection::DescribeProtectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_protection::DescribeProtectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_protection();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeProtectionFluentBuilder {
         }
     }
     /// Access the DescribeProtection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_protection::builders::DescribeProtectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_protection::builders::DescribeProtectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeProtectionFluentBuilder {
             crate::operation::describe_protection::DescribeProtection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_protection::DescribeProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_protection::DescribeProtectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeProtectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeProtectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_protection::DescribeProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_protection::DescribeProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_protection::DescribeProtectionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeProtectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_protection::DescribeProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_protection::DescribeProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_protection::DescribeProtectionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DescribeProtectionFluentBuilder {
             crate::operation::describe_protection::DescribeProtection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_protection::DescribeProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_protection::DescribeProtectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
-    pub fn protection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.protection_id(input.into());
         self
     }
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
-    pub fn set_protection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_protection_id(input);
         self
     }

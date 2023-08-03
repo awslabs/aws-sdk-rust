@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateVirtualGatewayOutput`](crate::operation::update_virtual_gateway::UpdateVirtualGatewayOutput) with field(s):
     ///   - [`virtual_gateway(Option<VirtualGatewayData>)`](crate::operation::update_virtual_gateway::UpdateVirtualGatewayOutput::virtual_gateway): <p>A full description of the virtual gateway that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateVirtualGatewayError>`](crate::operation::update_virtual_gateway::UpdateVirtualGatewayError)
-    pub fn update_virtual_gateway(
-        &self,
-    ) -> crate::operation::update_virtual_gateway::builders::UpdateVirtualGatewayFluentBuilder {
-        crate::operation::update_virtual_gateway::builders::UpdateVirtualGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_virtual_gateway(&self) -> crate::operation::update_virtual_gateway::builders::UpdateVirtualGatewayFluentBuilder {
+        crate::operation::update_virtual_gateway::builders::UpdateVirtualGatewayFluentBuilder::new(self.handle.clone())
     }
 }

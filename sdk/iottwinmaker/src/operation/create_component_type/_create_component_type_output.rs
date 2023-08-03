@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateComponentTypeOutput {
 }
 impl CreateComponentTypeOutput {
     /// Creates a new builder-style object to manufacture [`CreateComponentTypeOutput`](crate::operation::create_component_type::CreateComponentTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::create_component_type::builders::CreateComponentTypeOutputBuilder {
-        crate::operation::create_component_type::builders::CreateComponentTypeOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_component_type::builders::CreateComponentTypeOutputBuilder {
+        crate::operation::create_component_type::builders::CreateComponentTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateComponentTypeOutput`](crate::operation::create_component_type::CreateComponentTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateComponentTypeOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -74,10 +70,7 @@ impl CreateComponentTypeOutputBuilder {
         self
     }
     /// <p>The date and time when the entity was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }

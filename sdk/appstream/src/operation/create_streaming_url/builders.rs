@@ -10,10 +10,7 @@ impl CreateStreamingUrlInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_streaming_url::CreateStreamingUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_streaming_url::CreateStreamingURLError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_streaming_url::CreateStreamingURLError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_streaming_url();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateStreamingURLFluentBuilder {
         }
     }
     /// Access the CreateStreamingURL as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_streaming_url::builders::CreateStreamingUrlInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_streaming_url::builders::CreateStreamingUrlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateStreamingURLFluentBuilder {
             crate::operation::create_streaming_url::CreateStreamingURL,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_streaming_url::CreateStreamingURLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_streaming_url::CreateStreamingURLError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateStreamingURLFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateStreamingURLFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_streaming_url::CreateStreamingUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_streaming_url::CreateStreamingURLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_streaming_url::CreateStreamingURLError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateStreamingURLFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_streaming_url::CreateStreamingUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_streaming_url::CreateStreamingURLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_streaming_url::CreateStreamingURLError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateStreamingURLFluentBuilder {
             crate::operation::create_streaming_url::CreateStreamingURL,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_streaming_url::CreateStreamingURLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_streaming_url::CreateStreamingURLError>,
     > {
         self.customize_middleware().await
     }
@@ -165,18 +149,12 @@ impl CreateStreamingURLFluentBuilder {
         self.inner.get_user_id()
     }
     /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -199,18 +177,12 @@ impl CreateStreamingURLFluentBuilder {
         self.inner.get_validity()
     }
     /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn session_context(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_context(input.into());
         self
     }
     /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn set_session_context(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_context(input);
         self
     }

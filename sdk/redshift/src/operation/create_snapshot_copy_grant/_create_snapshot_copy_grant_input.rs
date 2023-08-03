@@ -46,18 +46,14 @@ impl CreateSnapshotCopyGrantInput {
 }
 impl CreateSnapshotCopyGrantInput {
     /// Creates a new builder-style object to manufacture [`CreateSnapshotCopyGrantInput`](crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantInput).
-    pub fn builder(
-    ) -> crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantInputBuilder {
         crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSnapshotCopyGrantInput`](crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSnapshotCopyGrantInputBuilder {
     pub(crate) snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
@@ -73,10 +69,7 @@ impl CreateSnapshotCopyGrantInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
-    pub fn snapshot_copy_grant_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_copy_grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_copy_grant_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -89,10 +82,7 @@ impl CreateSnapshotCopyGrantInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
-    pub fn set_snapshot_copy_grant_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_copy_grant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_copy_grant_name = input;
         self
     }
@@ -134,10 +124,7 @@ impl CreateSnapshotCopyGrantInputBuilder {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -152,12 +139,10 @@ impl CreateSnapshotCopyGrantInputBuilder {
         crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantInput {
-                snapshot_copy_grant_name: self.snapshot_copy_grant_name,
-                kms_key_id: self.kms_key_id,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantInput {
+            snapshot_copy_grant_name: self.snapshot_copy_grant_name,
+            kms_key_id: self.kms_key_id,
+            tags: self.tags,
+        })
     }
 }

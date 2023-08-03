@@ -18,37 +18,27 @@ impl RotateEncryptionKeyInput {
 }
 impl RotateEncryptionKeyInput {
     /// Creates a new builder-style object to manufacture [`RotateEncryptionKeyInput`](crate::operation::rotate_encryption_key::RotateEncryptionKeyInput).
-    pub fn builder(
-    ) -> crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyInputBuilder {
-        crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyInputBuilder {
+        crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`RotateEncryptionKeyInput`](crate::operation::rotate_encryption_key::RotateEncryptionKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RotateEncryptionKeyInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl RotateEncryptionKeyInputBuilder {
     /// <p>The unique identifier of the cluster that you want to rotate the encryption keys for.</p>
     /// <p>Constraints: Must be the name of valid cluster that has encryption enabled.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the cluster that you want to rotate the encryption keys for.</p>
     /// <p>Constraints: Must be the name of valid cluster that has encryption enabled.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -60,14 +50,10 @@ impl RotateEncryptionKeyInputBuilder {
     /// Consumes the builder and constructs a [`RotateEncryptionKeyInput`](crate::operation::rotate_encryption_key::RotateEncryptionKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::rotate_encryption_key::RotateEncryptionKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::rotate_encryption_key::RotateEncryptionKeyInput {
-                cluster_identifier: self.cluster_identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::rotate_encryption_key::RotateEncryptionKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::rotate_encryption_key::RotateEncryptionKeyInput {
+            cluster_identifier: self.cluster_identifier,
+        })
     }
 }

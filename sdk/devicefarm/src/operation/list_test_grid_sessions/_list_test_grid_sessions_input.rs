@@ -64,17 +64,14 @@ impl ListTestGridSessionsInput {
 }
 impl ListTestGridSessionsInput {
     /// Creates a new builder-style object to manufacture [`ListTestGridSessionsInput`](crate::operation::list_test_grid_sessions::ListTestGridSessionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsInputBuilder {
+    pub fn builder() -> crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsInputBuilder {
         crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTestGridSessionsInput`](crate::operation::list_test_grid_sessions::ListTestGridSessionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestGridSessionsInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TestGridSessionStatus>,
@@ -106,10 +103,7 @@ impl ListTestGridSessionsInputBuilder {
         self
     }
     /// <p>Return only sessions in this state.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TestGridSessionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TestGridSessionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -123,10 +117,7 @@ impl ListTestGridSessionsInputBuilder {
         self
     }
     /// <p>Return only sessions created after this time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -140,10 +131,7 @@ impl ListTestGridSessionsInputBuilder {
         self
     }
     /// <p>Return only sessions created before this time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -157,10 +145,7 @@ impl ListTestGridSessionsInputBuilder {
         self
     }
     /// <p>Return only sessions that ended after this time.</p>
-    pub fn set_end_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time_after = input;
         self
     }
@@ -174,10 +159,7 @@ impl ListTestGridSessionsInputBuilder {
         self
     }
     /// <p>Return only sessions that ended before this time.</p>
-    pub fn set_end_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time_before = input;
         self
     }
@@ -216,21 +198,17 @@ impl ListTestGridSessionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTestGridSessionsInput`](crate::operation::list_test_grid_sessions::ListTestGridSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_test_grid_sessions::ListTestGridSessionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_test_grid_sessions::ListTestGridSessionsInput {
-                project_arn: self.project_arn,
-                status: self.status,
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                end_time_after: self.end_time_after,
-                end_time_before: self.end_time_before,
-                max_result: self.max_result,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_test_grid_sessions::ListTestGridSessionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_test_grid_sessions::ListTestGridSessionsInput {
+            project_arn: self.project_arn,
+            status: self.status,
+            creation_time_after: self.creation_time_after,
+            creation_time_before: self.creation_time_before,
+            end_time_after: self.end_time_after,
+            end_time_before: self.end_time_before,
+            max_result: self.max_result,
+            next_token: self.next_token,
+        })
     }
 }

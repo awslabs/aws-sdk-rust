@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`size_constraint_set(Option<SizeConstraintSet>)`](crate::operation::create_size_constraint_set::CreateSizeConstraintSetOutput::size_constraint_set): <p>A <code>SizeConstraintSet</code> that contains no <code>SizeConstraint</code> objects.</p>
     ///   - [`change_token(Option<String>)`](crate::operation::create_size_constraint_set::CreateSizeConstraintSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<CreateSizeConstraintSetError>`](crate::operation::create_size_constraint_set::CreateSizeConstraintSetError)
-    pub fn create_size_constraint_set(
-        &self,
-    ) -> crate::operation::create_size_constraint_set::builders::CreateSizeConstraintSetFluentBuilder
-    {
+    pub fn create_size_constraint_set(&self) -> crate::operation::create_size_constraint_set::builders::CreateSizeConstraintSetFluentBuilder {
         crate::operation::create_size_constraint_set::builders::CreateSizeConstraintSetFluentBuilder::new(self.handle.clone())
     }
 }

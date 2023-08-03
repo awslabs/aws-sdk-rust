@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<TagDescription>>)`](crate::operation::describe_tags::DescribeTagsOutput::tags): <p>One or more tags.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_tags::DescribeTagsOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::operation::describe_tags::DescribeTagsError)
-    pub fn describe_tags(
-        &self,
-    ) -> crate::operation::describe_tags::builders::DescribeTagsFluentBuilder {
-        crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_tags(&self) -> crate::operation::describe_tags::builders::DescribeTagsFluentBuilder {
+        crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::new(self.handle.clone())
     }
 }

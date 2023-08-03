@@ -45,9 +45,7 @@ impl FieldBasedTooltip {
 
 /// A builder for [`FieldBasedTooltip`](crate::types::FieldBasedTooltip).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldBasedTooltipBuilder {
     pub(crate) aggregation_visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) tooltip_title_type: ::std::option::Option<crate::types::TooltipTitleType>,
@@ -60,10 +58,7 @@ impl FieldBasedTooltipBuilder {
         self
     }
     /// <p>The visibility of <code>Show aggregations</code>.</p>
-    pub fn set_aggregation_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_aggregation_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.aggregation_visibility = input;
         self
     }
@@ -85,10 +80,7 @@ impl FieldBasedTooltipBuilder {
     /// <li> <p> <code>NONE</code>: Doesn't use the primary value as the title.</p> </li>
     /// <li> <p> <code>PRIMARY_VALUE</code>: Uses primary value as the title.</p> </li>
     /// </ul>
-    pub fn set_tooltip_title_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TooltipTitleType>,
-    ) -> Self {
+    pub fn set_tooltip_title_type(mut self, input: ::std::option::Option<crate::types::TooltipTitleType>) -> Self {
         self.tooltip_title_type = input;
         self
     }
@@ -112,17 +104,12 @@ impl FieldBasedTooltipBuilder {
         self
     }
     /// <p>The fields configuration in the tooltip.</p>
-    pub fn set_tooltip_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TooltipItem>>,
-    ) -> Self {
+    pub fn set_tooltip_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TooltipItem>>) -> Self {
         self.tooltip_fields = input;
         self
     }
     /// <p>The fields configuration in the tooltip.</p>
-    pub fn get_tooltip_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TooltipItem>> {
+    pub fn get_tooltip_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TooltipItem>> {
         &self.tooltip_fields
     }
     /// Consumes the builder and constructs a [`FieldBasedTooltip`](crate::types::FieldBasedTooltip).

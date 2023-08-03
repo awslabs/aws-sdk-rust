@@ -26,8 +26,7 @@ impl GetOutpostInstanceTypesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetOutpostInstanceTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesInputBuilder,
+    inner: crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesInputBuilder,
 }
 impl GetOutpostInstanceTypesFluentBuilder {
     /// Creates a new `GetOutpostInstanceTypes`.
@@ -38,10 +37,7 @@ impl GetOutpostInstanceTypesFluentBuilder {
         }
     }
     /// Access the GetOutpostInstanceTypes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetOutpostInstanceTypesFluentBuilder {
             crate::operation::get_outpost_instance_types::GetOutpostInstanceTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetOutpostInstanceTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetOutpostInstanceTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetOutpostInstanceTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl GetOutpostInstanceTypesFluentBuilder {
             crate::operation::get_outpost_instance_types::GetOutpostInstanceTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_outpost_instance_types::paginator::GetOutpostInstanceTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_outpost_instance_types::paginator::GetOutpostInstanceTypesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::get_outpost_instance_types::paginator::GetOutpostInstanceTypesPaginator {
         crate::operation::get_outpost_instance_types::paginator::GetOutpostInstanceTypesPaginator::new(self.handle, self.inner)
     }
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>

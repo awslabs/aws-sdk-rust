@@ -52,9 +52,7 @@ impl AthenaSourceConfig {
         self.s3_results_path.as_deref()
     }
     /// <p>Settings for backtest mode.</p>
-    pub fn back_test_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BackTestConfiguration> {
+    pub fn back_test_configuration(&self) -> ::std::option::Option<&crate::types::BackTestConfiguration> {
         self.back_test_configuration.as_ref()
     }
 }
@@ -67,9 +65,7 @@ impl AthenaSourceConfig {
 
 /// A builder for [`AthenaSourceConfig`](crate::types::AthenaSourceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AthenaSourceConfigBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -95,18 +91,12 @@ impl AthenaSourceConfigBuilder {
         &self.role_arn
     }
     /// <p>The database's name.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database's name.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -143,18 +133,12 @@ impl AthenaSourceConfigBuilder {
         &self.table_name
     }
     /// <p>The database's work group name.</p>
-    pub fn work_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn work_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database's work group name.</p>
-    pub fn set_work_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_work_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.work_group_name = input;
         self
     }
@@ -163,18 +147,12 @@ impl AthenaSourceConfigBuilder {
         &self.work_group_name
     }
     /// <p>The database's results path.</p>
-    pub fn s3_results_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_results_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_results_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database's results path.</p>
-    pub fn set_s3_results_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_results_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_results_path = input;
         self
     }
@@ -188,17 +166,12 @@ impl AthenaSourceConfigBuilder {
         self
     }
     /// <p>Settings for backtest mode.</p>
-    pub fn set_back_test_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::BackTestConfiguration>,
-    ) -> Self {
+    pub fn set_back_test_configuration(mut self, input: ::std::option::Option<crate::types::BackTestConfiguration>) -> Self {
         self.back_test_configuration = input;
         self
     }
     /// <p>Settings for backtest mode.</p>
-    pub fn get_back_test_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::BackTestConfiguration> {
+    pub fn get_back_test_configuration(&self) -> &::std::option::Option<crate::types::BackTestConfiguration> {
         &self.back_test_configuration
     }
     /// Consumes the builder and constructs a [`AthenaSourceConfig`](crate::types::AthenaSourceConfig).

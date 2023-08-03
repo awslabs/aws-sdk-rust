@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateVpceConfigurationOutput`](crate::operation::create_vpce_configuration::CreateVpceConfigurationOutput) with field(s):
     ///   - [`vpce_configuration(Option<VpceConfiguration>)`](crate::operation::create_vpce_configuration::CreateVpceConfigurationOutput::vpce_configuration): <p>An object that contains information about your VPC endpoint configuration.</p>
     /// - On failure, responds with [`SdkError<CreateVPCEConfigurationError>`](crate::operation::create_vpce_configuration::CreateVPCEConfigurationError)
-    pub fn create_vpce_configuration(
-        &self,
-    ) -> crate::operation::create_vpce_configuration::builders::CreateVPCEConfigurationFluentBuilder
-    {
+    pub fn create_vpce_configuration(&self) -> crate::operation::create_vpce_configuration::builders::CreateVPCEConfigurationFluentBuilder {
         crate::operation::create_vpce_configuration::builders::CreateVPCEConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "CONFIGURED_TABLE" => ResourceType::ConfiguredTable,
             "CONFIGURED_TABLE_ASSOCIATION" => ResourceType::ConfiguredTableAssociation,
             "MEMBERSHIP" => ResourceType::Membership,
-            other => {
-                ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl ResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "COLLABORATION",
-            "CONFIGURED_TABLE",
-            "CONFIGURED_TABLE_ASSOCIATION",
-            "MEMBERSHIP",
-        ]
+        &["COLLABORATION", "CONFIGURED_TABLE", "CONFIGURED_TABLE_ASSOCIATION", "MEMBERSHIP"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceType {

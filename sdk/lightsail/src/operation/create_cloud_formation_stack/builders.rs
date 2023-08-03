@@ -28,7 +28,7 @@ impl CreateCloudFormationStackInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCloudFormationStackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_cloud_formation_stack::builders::CreateCloudFormationStackInputBuilder,
+    inner: crate::operation::create_cloud_formation_stack::builders::CreateCloudFormationStackInputBuilder,
 }
 impl CreateCloudFormationStackFluentBuilder {
     /// Creates a new `CreateCloudFormationStack`.
@@ -39,7 +39,7 @@ impl CreateCloudFormationStackFluentBuilder {
         }
     }
     /// Access the CreateCloudFormationStack as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_cloud_formation_stack::builders::CreateCloudFormationStackInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_cloud_formation_stack::builders::CreateCloudFormationStackInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl CreateCloudFormationStackFluentBuilder {
             crate::operation::create_cloud_formation_stack::CreateCloudFormationStack,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl CreateCloudFormationStackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl CreateCloudFormationStackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cloud_formation_stack::CreateCloudFormationStackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl CreateCloudFormationStackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cloud_formation_stack::CreateCloudFormationStackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl CreateCloudFormationStackFluentBuilder {
             crate::operation::create_cloud_formation_stack::CreateCloudFormationStack,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +121,12 @@ impl CreateCloudFormationStackFluentBuilder {
         self
     }
     /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only pass one instance entry at a time in this array. You will get an invalid parameter error if you pass more than one instance entry in this array.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEntry>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEntry>>) -> Self {
         self.inner = self.inner.set_instances(input);
         self
     }
     /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only pass one instance entry at a time in this array. You will get an invalid parameter error if you pass more than one instance entry in this array.</p>
-    pub fn get_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceEntry>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceEntry>> {
         self.inner.get_instances()
     }
 }

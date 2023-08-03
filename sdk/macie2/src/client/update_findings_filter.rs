@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::update_findings_filter::UpdateFindingsFilterOutput::arn): <p>The Amazon Resource Name (ARN) of the filter that was updated.</p>
     ///   - [`id(Option<String>)`](crate::operation::update_findings_filter::UpdateFindingsFilterOutput::id): <p>The unique identifier for the filter that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateFindingsFilterError>`](crate::operation::update_findings_filter::UpdateFindingsFilterError)
-    pub fn update_findings_filter(
-        &self,
-    ) -> crate::operation::update_findings_filter::builders::UpdateFindingsFilterFluentBuilder {
-        crate::operation::update_findings_filter::builders::UpdateFindingsFilterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_findings_filter(&self) -> crate::operation::update_findings_filter::builders::UpdateFindingsFilterFluentBuilder {
+        crate::operation::update_findings_filter::builders::UpdateFindingsFilterFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl BuildBotLocaleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::build_bot_locale::BuildBotLocaleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::build_bot_locale::BuildBotLocaleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::build_bot_locale::BuildBotLocaleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.build_bot_locale();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BuildBotLocaleFluentBuilder {
         }
     }
     /// Access the BuildBotLocale as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::build_bot_locale::builders::BuildBotLocaleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::build_bot_locale::builders::BuildBotLocaleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BuildBotLocaleFluentBuilder {
             crate::operation::build_bot_locale::BuildBotLocale,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::build_bot_locale::BuildBotLocaleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::build_bot_locale::BuildBotLocaleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BuildBotLocaleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BuildBotLocaleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::build_bot_locale::BuildBotLocaleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::build_bot_locale::BuildBotLocaleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::build_bot_locale::BuildBotLocaleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BuildBotLocaleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::build_bot_locale::BuildBotLocaleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::build_bot_locale::BuildBotLocaleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::build_bot_locale::BuildBotLocaleError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BuildBotLocaleFluentBuilder {
             crate::operation::build_bot_locale::BuildBotLocale,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::build_bot_locale::BuildBotLocaleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::build_bot_locale::BuildBotLocaleError>,
     > {
         self.customize_middleware().await
     }

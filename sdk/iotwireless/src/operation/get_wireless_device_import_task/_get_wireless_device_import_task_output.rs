@@ -91,16 +91,14 @@ impl ::aws_http::request_id::RequestId for GetWirelessDeviceImportTaskOutput {
 }
 impl GetWirelessDeviceImportTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessDeviceImportTaskOutput`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput).
-    pub fn builder() -> crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskOutputBuilder{
+    pub fn builder() -> crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskOutputBuilder {
         crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetWirelessDeviceImportTaskOutput`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWirelessDeviceImportTaskOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -145,18 +143,12 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         &self.arn
     }
     /// <p>The name of the destination that's assigned to the wireless devices in the import task.</p>
-    pub fn destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the destination that's assigned to the wireless devices in the import task.</p>
-    pub fn set_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_name = input;
         self
     }
@@ -170,10 +162,7 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         self
     }
     /// <p>The Sidewalk-related information about an import task.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<crate::types::SidewalkGetStartImportInfo>,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkGetStartImportInfo>) -> Self {
         self.sidewalk = input;
         self
     }
@@ -187,10 +176,7 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         self
     }
     /// <p>The time at which the import task was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -204,10 +190,7 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         self
     }
     /// <p>The import task status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportTaskStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ImportTaskStatus>) -> Self {
         self.status = input;
         self
     }
@@ -216,18 +199,12 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         &self.status
     }
     /// <p>The reason for the provided status information, such as a validation error that causes the import task to fail.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the provided status information, such as a validation error that causes the import task to fail.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -241,10 +218,7 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         self
     }
     /// <p>The number of devices in the import task that are waiting for the control log to start processing.</p>
-    pub fn set_initialized_imported_device_count(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_initialized_imported_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.initialized_imported_device_count = input;
         self
     }
@@ -272,10 +246,7 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         self
     }
     /// <p>The number of devices in the import task that have been onboarded to the import task.</p>
-    pub fn set_onboarded_imported_device_count(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_onboarded_imported_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.onboarded_imported_device_count = input;
         self
     }
@@ -307,9 +278,7 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetWirelessDeviceImportTaskOutput`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput {
+    pub fn build(self) -> crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput {
         crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput {
             id: self.id,
             arn: self.arn,

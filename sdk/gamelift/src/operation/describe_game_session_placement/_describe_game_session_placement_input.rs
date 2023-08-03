@@ -15,16 +15,14 @@ impl DescribeGameSessionPlacementInput {
 }
 impl DescribeGameSessionPlacementInput {
     /// Creates a new builder-style object to manufacture [`DescribeGameSessionPlacementInput`](crate::operation::describe_game_session_placement::DescribeGameSessionPlacementInput).
-    pub fn builder() -> crate::operation::describe_game_session_placement::builders::DescribeGameSessionPlacementInputBuilder{
+    pub fn builder() -> crate::operation::describe_game_session_placement::builders::DescribeGameSessionPlacementInputBuilder {
         crate::operation::describe_game_session_placement::builders::DescribeGameSessionPlacementInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGameSessionPlacementInput`](crate::operation::describe_game_session_placement::DescribeGameSessionPlacementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGameSessionPlacementInputBuilder {
     pub(crate) placement_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl DescribeGameSessionPlacementInputBuilder {
         crate::operation::describe_game_session_placement::DescribeGameSessionPlacementInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_game_session_placement::DescribeGameSessionPlacementInput {
-                placement_id: self.placement_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_game_session_placement::DescribeGameSessionPlacementInput {
+            placement_id: self.placement_id,
+        })
     }
 }

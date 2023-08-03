@@ -8,8 +8,7 @@ pub struct ListInfrastructureConfigurationsOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of infrastructure configurations.</p>
     #[doc(hidden)]
-    pub infrastructure_configuration_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::InfrastructureConfigurationSummary>>,
+    pub infrastructure_configuration_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::InfrastructureConfigurationSummary>>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl ListInfrastructureConfigurationsOutput {
         self.request_id.as_deref()
     }
     /// <p>The list of infrastructure configurations.</p>
-    pub fn infrastructure_configuration_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InfrastructureConfigurationSummary]> {
+    pub fn infrastructure_configuration_summary_list(&self) -> ::std::option::Option<&[crate::types::InfrastructureConfigurationSummary]> {
         self.infrastructure_configuration_summary_list.as_deref()
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
@@ -38,20 +35,17 @@ impl ::aws_http::request_id::RequestId for ListInfrastructureConfigurationsOutpu
 }
 impl ListInfrastructureConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListInfrastructureConfigurationsOutput`](crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_infrastructure_configurations::builders::ListInfrastructureConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_infrastructure_configurations::builders::ListInfrastructureConfigurationsOutputBuilder {
         crate::operation::list_infrastructure_configurations::builders::ListInfrastructureConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInfrastructureConfigurationsOutput`](crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInfrastructureConfigurationsOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) infrastructure_configuration_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::InfrastructureConfigurationSummary>>,
+    pub(crate) infrastructure_configuration_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::InfrastructureConfigurationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -75,13 +69,8 @@ impl ListInfrastructureConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_infrastructure_configuration_summary_list`](Self::set_infrastructure_configuration_summary_list).
     ///
     /// <p>The list of infrastructure configurations.</p>
-    pub fn infrastructure_configuration_summary_list(
-        mut self,
-        input: crate::types::InfrastructureConfigurationSummary,
-    ) -> Self {
-        let mut v = self
-            .infrastructure_configuration_summary_list
-            .unwrap_or_default();
+    pub fn infrastructure_configuration_summary_list(mut self, input: crate::types::InfrastructureConfigurationSummary) -> Self {
+        let mut v = self.infrastructure_configuration_summary_list.unwrap_or_default();
         v.push(input);
         self.infrastructure_configuration_summary_list = ::std::option::Option::Some(v);
         self
@@ -89,9 +78,7 @@ impl ListInfrastructureConfigurationsOutputBuilder {
     /// <p>The list of infrastructure configurations.</p>
     pub fn set_infrastructure_configuration_summary_list(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::InfrastructureConfigurationSummary>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InfrastructureConfigurationSummary>>,
     ) -> Self {
         self.infrastructure_configuration_summary_list = input;
         self
@@ -99,8 +86,7 @@ impl ListInfrastructureConfigurationsOutputBuilder {
     /// <p>The list of infrastructure configurations.</p>
     pub fn get_infrastructure_configuration_summary_list(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InfrastructureConfigurationSummary>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InfrastructureConfigurationSummary>> {
         &self.infrastructure_configuration_summary_list
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
@@ -127,17 +113,11 @@ impl ListInfrastructureConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListInfrastructureConfigurationsOutput`](crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsOutput {
         crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsOutput {
-            request_id: self.request_id
-            ,
-            infrastructure_configuration_summary_list: self.infrastructure_configuration_summary_list
-            ,
-            next_token: self.next_token
-            ,
+            request_id: self.request_id,
+            infrastructure_configuration_summary_list: self.infrastructure_configuration_summary_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

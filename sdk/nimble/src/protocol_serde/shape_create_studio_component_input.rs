@@ -27,7 +27,10 @@ pub fn ser_create_studio_component_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_studio_component_initialization_script::ser_studio_component_initialization_script(&mut object_10, item_9)?;
+                crate::protocol_serde::shape_studio_component_initialization_script::ser_studio_component_initialization_script(
+                    &mut object_10,
+                    item_9,
+                )?;
                 object_10.finish();
             }
         }
@@ -52,9 +55,7 @@ pub fn ser_create_studio_component_input(
         array_14.finish();
     }
     if let Some(var_17) = &input.secure_initialization_role_arn {
-        object
-            .key("secureInitializationRoleArn")
-            .string(var_17.as_str());
+        object.key("secureInitializationRoleArn").string(var_17.as_str());
     }
     if let Some(var_18) = &input.subtype {
         object.key("subtype").string(var_18.as_str());

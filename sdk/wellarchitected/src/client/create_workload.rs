@@ -25,11 +25,7 @@ impl super::Client {
     ///   - [`workload_id(Option<String>)`](crate::operation::create_workload::CreateWorkloadOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     ///   - [`workload_arn(Option<String>)`](crate::operation::create_workload::CreateWorkloadOutput::workload_arn): <p>The ARN for the workload.</p>
     /// - On failure, responds with [`SdkError<CreateWorkloadError>`](crate::operation::create_workload::CreateWorkloadError)
-    pub fn create_workload(
-        &self,
-    ) -> crate::operation::create_workload::builders::CreateWorkloadFluentBuilder {
-        crate::operation::create_workload::builders::CreateWorkloadFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_workload(&self) -> crate::operation::create_workload::builders::CreateWorkloadFluentBuilder {
+        crate::operation::create_workload::builders::CreateWorkloadFluentBuilder::new(self.handle.clone())
     }
 }

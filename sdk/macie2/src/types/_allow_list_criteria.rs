@@ -30,9 +30,7 @@ impl AllowListCriteria {
 
 /// A builder for [`AllowListCriteria`](crate::types::AllowListCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllowListCriteriaBuilder {
     pub(crate) regex: ::std::option::Option<::std::string::String>,
     pub(crate) s3_words_list: ::std::option::Option<crate::types::S3WordsList>,
@@ -58,10 +56,7 @@ impl AllowListCriteriaBuilder {
         self
     }
     /// <p>The location and name of the S3 object that lists specific text to ignore.</p>
-    pub fn set_s3_words_list(
-        mut self,
-        input: ::std::option::Option<crate::types::S3WordsList>,
-    ) -> Self {
+    pub fn set_s3_words_list(mut self, input: ::std::option::Option<crate::types::S3WordsList>) -> Self {
         self.s3_words_list = input;
         self
     }

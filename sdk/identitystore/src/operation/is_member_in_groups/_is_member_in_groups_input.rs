@@ -29,17 +29,14 @@ impl IsMemberInGroupsInput {
 }
 impl IsMemberInGroupsInput {
     /// Creates a new builder-style object to manufacture [`IsMemberInGroupsInput`](crate::operation::is_member_in_groups::IsMemberInGroupsInput).
-    pub fn builder() -> crate::operation::is_member_in_groups::builders::IsMemberInGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::is_member_in_groups::builders::IsMemberInGroupsInputBuilder {
         crate::operation::is_member_in_groups::builders::IsMemberInGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`IsMemberInGroupsInput`](crate::operation::is_member_in_groups::IsMemberInGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IsMemberInGroupsInputBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_id: ::std::option::Option<crate::types::MemberId>,
@@ -47,18 +44,12 @@ pub struct IsMemberInGroupsInputBuilder {
 }
 impl IsMemberInGroupsInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_store_id = input;
         self
     }
@@ -92,10 +83,7 @@ impl IsMemberInGroupsInputBuilder {
         self
     }
     /// <p>A list of identifiers for groups in the identity store.</p>
-    pub fn set_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.group_ids = input;
         self
     }
@@ -106,16 +94,11 @@ impl IsMemberInGroupsInputBuilder {
     /// Consumes the builder and constructs a [`IsMemberInGroupsInput`](crate::operation::is_member_in_groups::IsMemberInGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::is_member_in_groups::IsMemberInGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::is_member_in_groups::IsMemberInGroupsInput {
-                identity_store_id: self.identity_store_id,
-                member_id: self.member_id,
-                group_ids: self.group_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::is_member_in_groups::IsMemberInGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::is_member_in_groups::IsMemberInGroupsInput {
+            identity_store_id: self.identity_store_id,
+            member_id: self.member_id,
+            group_ids: self.group_ids,
+        })
     }
 }

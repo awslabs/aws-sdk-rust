@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::terminate_app::builders::TerminateAppFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::terminate_app::builders::TerminateAppFluentBuilder::set_app_id): <p>The ID of the application.</p>
     /// - On success, responds with [`TerminateAppOutput`](crate::operation::terminate_app::TerminateAppOutput)
     /// - On failure, responds with [`SdkError<TerminateAppError>`](crate::operation::terminate_app::TerminateAppError)
-    pub fn terminate_app(
-        &self,
-    ) -> crate::operation::terminate_app::builders::TerminateAppFluentBuilder {
-        crate::operation::terminate_app::builders::TerminateAppFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn terminate_app(&self) -> crate::operation::terminate_app::builders::TerminateAppFluentBuilder {
+        crate::operation::terminate_app::builders::TerminateAppFluentBuilder::new(self.handle.clone())
     }
 }

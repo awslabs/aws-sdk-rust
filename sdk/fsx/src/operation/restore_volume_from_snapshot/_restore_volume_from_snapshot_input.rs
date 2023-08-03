@@ -44,37 +44,28 @@ impl RestoreVolumeFromSnapshotInput {
 }
 impl RestoreVolumeFromSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreVolumeFromSnapshotInput`](crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotInput).
-    pub fn builder() -> crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotInputBuilder{
+    pub fn builder() -> crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotInputBuilder {
         crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreVolumeFromSnapshotInput`](crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreVolumeFromSnapshotInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
-    pub(crate) options:
-        ::std::option::Option<::std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>>,
+    pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>>,
 }
 impl RestoreVolumeFromSnapshotInputBuilder {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -130,10 +121,7 @@ impl RestoreVolumeFromSnapshotInputBuilder {
     /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// </ul>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>>) -> Self {
         self.options = input;
         self
     }
@@ -142,9 +130,7 @@ impl RestoreVolumeFromSnapshotInputBuilder {
     /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// </ul>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>> {
         &self.options
     }
     /// Consumes the builder and constructs a [`RestoreVolumeFromSnapshotInput`](crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotInput).
@@ -154,13 +140,11 @@ impl RestoreVolumeFromSnapshotInputBuilder {
         crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotInput {
-                client_request_token: self.client_request_token,
-                volume_id: self.volume_id,
-                snapshot_id: self.snapshot_id,
-                options: self.options,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotInput {
+            client_request_token: self.client_request_token,
+            volume_id: self.volume_id,
+            snapshot_id: self.snapshot_id,
+            options: self.options,
+        })
     }
 }

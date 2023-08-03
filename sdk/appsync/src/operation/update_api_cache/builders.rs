@@ -10,10 +10,7 @@ impl UpdateApiCacheInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_api_cache::UpdateApiCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_api_cache::UpdateApiCacheError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_api_cache::UpdateApiCacheError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_api_cache();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateApiCacheFluentBuilder {
         }
     }
     /// Access the UpdateApiCache as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_api_cache::builders::UpdateApiCacheInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_api_cache::builders::UpdateApiCacheInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateApiCacheFluentBuilder {
             crate::operation::update_api_cache::UpdateApiCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_api_cache::UpdateApiCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_api_cache::UpdateApiCacheError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateApiCacheFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateApiCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_api_cache::UpdateApiCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_api_cache::UpdateApiCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_api_cache::UpdateApiCacheError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateApiCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_api_cache::UpdateApiCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_api_cache::UpdateApiCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_api_cache::UpdateApiCacheError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateApiCacheFluentBuilder {
             crate::operation::update_api_cache::UpdateApiCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_api_cache::UpdateApiCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_api_cache::UpdateApiCacheError>,
     > {
         self.customize_middleware().await
     }
@@ -167,10 +151,7 @@ impl UpdateApiCacheFluentBuilder {
     /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
     /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
-    pub fn set_api_caching_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::ApiCachingBehavior>,
-    ) -> Self {
+    pub fn set_api_caching_behavior(mut self, input: ::std::option::Option<crate::types::ApiCachingBehavior>) -> Self {
         self.inner = self.inner.set_api_caching_behavior(input);
         self
     }
@@ -179,9 +160,7 @@ impl UpdateApiCacheFluentBuilder {
     /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
     /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
-    pub fn get_api_caching_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApiCachingBehavior> {
+    pub fn get_api_caching_behavior(&self) -> &::std::option::Option<crate::types::ApiCachingBehavior> {
         self.inner.get_api_caching_behavior()
     }
     /// <p>The cache instance type. Valid values are </p>

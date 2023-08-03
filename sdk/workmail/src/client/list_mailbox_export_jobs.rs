@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`jobs(Option<Vec<MailboxExportJob>>)`](crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsOutput::jobs): <p>The mailbox export job details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListMailboxExportJobsError>`](crate::operation::list_mailbox_export_jobs::ListMailboxExportJobsError)
-    pub fn list_mailbox_export_jobs(
-        &self,
-    ) -> crate::operation::list_mailbox_export_jobs::builders::ListMailboxExportJobsFluentBuilder
-    {
+    pub fn list_mailbox_export_jobs(&self) -> crate::operation::list_mailbox_export_jobs::builders::ListMailboxExportJobsFluentBuilder {
         crate::operation::list_mailbox_export_jobs::builders::ListMailboxExportJobsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl GetStatisticsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_statistics::GetStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_statistics::GetStatisticsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_statistics::GetStatisticsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_statistics();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetStatisticsFluentBuilder {
         }
     }
     /// Access the GetStatistics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_statistics::builders::GetStatisticsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_statistics::builders::GetStatisticsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl GetStatisticsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -144,18 +136,12 @@ impl GetStatisticsFluentBuilder {
         self.inner.get_query_string()
     }
     /// <p>The aggregation field name.</p>
-    pub fn aggregation_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aggregation_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aggregation_field(input.into());
         self
     }
     /// <p>The aggregation field name.</p>
-    pub fn set_aggregation_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aggregation_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aggregation_field(input);
         self
     }
@@ -164,18 +150,12 @@ impl GetStatisticsFluentBuilder {
         self.inner.get_aggregation_field()
     }
     /// <p>The version of the query used to search.</p>
-    pub fn query_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_version(input.into());
         self
     }
     /// <p>The version of the query used to search.</p>
-    pub fn set_query_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_version(input);
         self
     }

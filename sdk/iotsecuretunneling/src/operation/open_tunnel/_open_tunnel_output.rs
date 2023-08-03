@@ -41,10 +41,7 @@ impl ::std::fmt::Debug for OpenTunnelOutput {
         formatter.field("tunnel_id", &self.tunnel_id);
         formatter.field("tunnel_arn", &self.tunnel_arn);
         formatter.field("source_access_token", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "destination_access_token",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("destination_access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -101,18 +98,12 @@ impl OpenTunnelOutputBuilder {
         &self.tunnel_arn
     }
     /// <p>The access token the source local proxy uses to connect to IoT Secure Tunneling.</p>
-    pub fn source_access_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_access_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The access token the source local proxy uses to connect to IoT Secure Tunneling.</p>
-    pub fn set_source_access_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_access_token = input;
         self
     }
@@ -121,18 +112,12 @@ impl OpenTunnelOutputBuilder {
         &self.source_access_token
     }
     /// <p>The access token the destination local proxy uses to connect to IoT Secure Tunneling.</p>
-    pub fn destination_access_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_access_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The access token the destination local proxy uses to connect to IoT Secure Tunneling.</p>
-    pub fn set_destination_access_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_access_token = input;
         self
     }
@@ -166,10 +151,7 @@ impl ::std::fmt::Debug for OpenTunnelOutputBuilder {
         formatter.field("tunnel_id", &self.tunnel_id);
         formatter.field("tunnel_arn", &self.tunnel_arn);
         formatter.field("source_access_token", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "destination_access_token",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("destination_access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

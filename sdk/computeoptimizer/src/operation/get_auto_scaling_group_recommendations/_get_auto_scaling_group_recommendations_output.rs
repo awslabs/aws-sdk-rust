@@ -9,8 +9,7 @@ pub struct GetAutoScalingGroupRecommendationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe Auto Scaling group recommendations.</p>
     #[doc(hidden)]
-    pub auto_scaling_group_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroupRecommendation>>,
+    pub auto_scaling_group_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroupRecommendation>>,
     /// <p>An array of objects that describe errors of the request.</p>
     /// <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group.</p>
     #[doc(hidden)]
@@ -24,9 +23,7 @@ impl GetAutoScalingGroupRecommendationsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that describe Auto Scaling group recommendations.</p>
-    pub fn auto_scaling_group_recommendations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AutoScalingGroupRecommendation]> {
+    pub fn auto_scaling_group_recommendations(&self) -> ::std::option::Option<&[crate::types::AutoScalingGroupRecommendation]> {
         self.auto_scaling_group_recommendations.as_deref()
     }
     /// <p>An array of objects that describe errors of the request.</p>
@@ -42,20 +39,17 @@ impl ::aws_http::request_id::RequestId for GetAutoScalingGroupRecommendationsOut
 }
 impl GetAutoScalingGroupRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`GetAutoScalingGroupRecommendationsOutput`](crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsOutput).
-    pub fn builder() -> crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsOutputBuilder {
         crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAutoScalingGroupRecommendationsOutput`](crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAutoScalingGroupRecommendationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) auto_scaling_group_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroupRecommendation>>,
+    pub(crate) auto_scaling_group_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroupRecommendation>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>,
     _request_id: Option<String>,
 }
@@ -82,10 +76,7 @@ impl GetAutoScalingGroupRecommendationsOutputBuilder {
     /// To override the contents of this collection use [`set_auto_scaling_group_recommendations`](Self::set_auto_scaling_group_recommendations).
     ///
     /// <p>An array of objects that describe Auto Scaling group recommendations.</p>
-    pub fn auto_scaling_group_recommendations(
-        mut self,
-        input: crate::types::AutoScalingGroupRecommendation,
-    ) -> Self {
+    pub fn auto_scaling_group_recommendations(mut self, input: crate::types::AutoScalingGroupRecommendation) -> Self {
         let mut v = self.auto_scaling_group_recommendations.unwrap_or_default();
         v.push(input);
         self.auto_scaling_group_recommendations = ::std::option::Option::Some(v);
@@ -100,9 +91,7 @@ impl GetAutoScalingGroupRecommendationsOutputBuilder {
         self
     }
     /// <p>An array of objects that describe Auto Scaling group recommendations.</p>
-    pub fn get_auto_scaling_group_recommendations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroupRecommendation>> {
+    pub fn get_auto_scaling_group_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroupRecommendation>> {
         &self.auto_scaling_group_recommendations
     }
     /// Appends an item to `errors`.
@@ -119,18 +108,13 @@ impl GetAutoScalingGroupRecommendationsOutputBuilder {
     }
     /// <p>An array of objects that describe errors of the request.</p>
     /// <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>An array of objects that describe errors of the request.</p>
     /// <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -143,14 +127,11 @@ impl GetAutoScalingGroupRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAutoScalingGroupRecommendationsOutput`](crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsOutput).
-    pub fn build(self) -> crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsOutput{
+    pub fn build(self) -> crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsOutput {
         crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsOutput {
-            next_token: self.next_token
-            ,
-            auto_scaling_group_recommendations: self.auto_scaling_group_recommendations
-            ,
-            errors: self.errors
-            ,
+            next_token: self.next_token,
+            auto_scaling_group_recommendations: self.auto_scaling_group_recommendations,
+            errors: self.errors,
             _request_id: self._request_id,
         }
     }

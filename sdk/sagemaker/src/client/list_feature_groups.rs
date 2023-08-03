@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`feature_group_summaries(Option<Vec<FeatureGroupSummary>>)`](crate::operation::list_feature_groups::ListFeatureGroupsOutput::feature_group_summaries): <p>A summary of feature groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_feature_groups::ListFeatureGroupsOutput::next_token): <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
     /// - On failure, responds with [`SdkError<ListFeatureGroupsError>`](crate::operation::list_feature_groups::ListFeatureGroupsError)
-    pub fn list_feature_groups(
-        &self,
-    ) -> crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder {
-        crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_feature_groups(&self) -> crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder {
+        crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder::new(self.handle.clone())
     }
 }

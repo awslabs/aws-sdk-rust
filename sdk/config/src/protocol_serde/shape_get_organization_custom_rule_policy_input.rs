@@ -4,9 +4,7 @@ pub fn ser_get_organization_custom_rule_policy_input(
     input: &crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.organization_config_rule_name {
-        object
-            .key("OrganizationConfigRuleName")
-            .string(var_1.as_str());
+        object.key("OrganizationConfigRuleName").string(var_1.as_str());
     }
     Ok(())
 }

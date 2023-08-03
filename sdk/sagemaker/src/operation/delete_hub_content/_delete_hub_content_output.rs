@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteHubContentOutput {
 }
 impl DeleteHubContentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHubContentOutput`](crate::operation::delete_hub_content::DeleteHubContentOutput).
-    pub fn builder() -> crate::operation::delete_hub_content::builders::DeleteHubContentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_hub_content::builders::DeleteHubContentOutputBuilder {
         crate::operation::delete_hub_content::builders::DeleteHubContentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteHubContentOutput`](crate::operation::delete_hub_content::DeleteHubContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHubContentOutputBuilder {
     _request_id: Option<String>,
 }

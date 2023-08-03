@@ -44,9 +44,7 @@ impl PartialFailure {
 
 /// A builder for [`PartialFailure`](crate::types::PartialFailure).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PartialFailureBuilder {
     pub(crate) failure_resource: ::std::option::Option<::std::string::String>,
     pub(crate) exception_type: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct PartialFailureBuilder {
 }
 impl PartialFailureBuilder {
     /// <p>The specified rule that could not be deleted.</p>
-    pub fn failure_resource(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_resource = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The specified rule that could not be deleted.</p>
-    pub fn set_failure_resource(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_resource = input;
         self
     }
@@ -75,18 +67,12 @@ impl PartialFailureBuilder {
         &self.failure_resource
     }
     /// <p>The type of error.</p>
-    pub fn exception_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exception_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exception_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of error.</p>
-    pub fn set_exception_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exception_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exception_type = input;
         self
     }
@@ -109,18 +95,12 @@ impl PartialFailureBuilder {
         &self.failure_code
     }
     /// <p>A description of the error.</p>
-    pub fn failure_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the error.</p>
-    pub fn set_failure_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_description = input;
         self
     }

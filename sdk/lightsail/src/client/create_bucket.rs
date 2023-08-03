@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`bucket(Option<Bucket>)`](crate::operation::create_bucket::CreateBucketOutput::bucket): <p>An object that describes the bucket that is created.</p>
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::create_bucket::CreateBucketOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CreateBucketError>`](crate::operation::create_bucket::CreateBucketError)
-    pub fn create_bucket(
-        &self,
-    ) -> crate::operation::create_bucket::builders::CreateBucketFluentBuilder {
-        crate::operation::create_bucket::builders::CreateBucketFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_bucket(&self) -> crate::operation::create_bucket::builders::CreateBucketFluentBuilder {
+        crate::operation::create_bucket::builders::CreateBucketFluentBuilder::new(self.handle.clone())
     }
 }

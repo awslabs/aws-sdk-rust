@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NumericQuestionPropertyAutomationLabel {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,27 +69,15 @@ pub enum NumericQuestionPropertyAutomationLabel {
 impl ::std::convert::From<&str> for NumericQuestionPropertyAutomationLabel {
     fn from(s: &str) -> Self {
         match s {
-            "AGENT_INTERACTION_DURATION" => {
-                NumericQuestionPropertyAutomationLabel::AgentInteractionDuration
-            }
+            "AGENT_INTERACTION_DURATION" => NumericQuestionPropertyAutomationLabel::AgentInteractionDuration,
             "CONTACT_DURATION" => NumericQuestionPropertyAutomationLabel::ContactDuration,
             "CUSTOMER_HOLD_TIME" => NumericQuestionPropertyAutomationLabel::CustomerHoldTime,
             "NON_TALK_TIME" => NumericQuestionPropertyAutomationLabel::NonTalkTime,
-            "NON_TALK_TIME_PERCENTAGE" => {
-                NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage
-            }
-            "NUMBER_OF_INTERRUPTIONS" => {
-                NumericQuestionPropertyAutomationLabel::NumberOfInterruptions
-            }
-            "OVERALL_AGENT_SENTIMENT_SCORE" => {
-                NumericQuestionPropertyAutomationLabel::OverallAgentSentimentScore
-            }
-            "OVERALL_CUSTOMER_SENTIMENT_SCORE" => {
-                NumericQuestionPropertyAutomationLabel::OverallCustomerSentimentScore
-            }
-            other => NumericQuestionPropertyAutomationLabel::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "NON_TALK_TIME_PERCENTAGE" => NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage,
+            "NUMBER_OF_INTERRUPTIONS" => NumericQuestionPropertyAutomationLabel::NumberOfInterruptions,
+            "OVERALL_AGENT_SENTIMENT_SCORE" => NumericQuestionPropertyAutomationLabel::OverallAgentSentimentScore,
+            "OVERALL_CUSTOMER_SENTIMENT_SCORE" => NumericQuestionPropertyAutomationLabel::OverallCustomerSentimentScore,
+            other => NumericQuestionPropertyAutomationLabel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -110,24 +92,14 @@ impl NumericQuestionPropertyAutomationLabel {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            NumericQuestionPropertyAutomationLabel::AgentInteractionDuration => {
-                "AGENT_INTERACTION_DURATION"
-            }
+            NumericQuestionPropertyAutomationLabel::AgentInteractionDuration => "AGENT_INTERACTION_DURATION",
             NumericQuestionPropertyAutomationLabel::ContactDuration => "CONTACT_DURATION",
             NumericQuestionPropertyAutomationLabel::CustomerHoldTime => "CUSTOMER_HOLD_TIME",
             NumericQuestionPropertyAutomationLabel::NonTalkTime => "NON_TALK_TIME",
-            NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage => {
-                "NON_TALK_TIME_PERCENTAGE"
-            }
-            NumericQuestionPropertyAutomationLabel::NumberOfInterruptions => {
-                "NUMBER_OF_INTERRUPTIONS"
-            }
-            NumericQuestionPropertyAutomationLabel::OverallAgentSentimentScore => {
-                "OVERALL_AGENT_SENTIMENT_SCORE"
-            }
-            NumericQuestionPropertyAutomationLabel::OverallCustomerSentimentScore => {
-                "OVERALL_CUSTOMER_SENTIMENT_SCORE"
-            }
+            NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage => "NON_TALK_TIME_PERCENTAGE",
+            NumericQuestionPropertyAutomationLabel::NumberOfInterruptions => "NUMBER_OF_INTERRUPTIONS",
+            NumericQuestionPropertyAutomationLabel::OverallAgentSentimentScore => "OVERALL_AGENT_SENTIMENT_SCORE",
+            NumericQuestionPropertyAutomationLabel::OverallCustomerSentimentScore => "OVERALL_CUSTOMER_SENTIMENT_SCORE",
             NumericQuestionPropertyAutomationLabel::Unknown(value) => value.as_str(),
         }
     }

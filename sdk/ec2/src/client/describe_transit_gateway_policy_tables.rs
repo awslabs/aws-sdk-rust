@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`transit_gateway_policy_tables(Option<Vec<TransitGatewayPolicyTable>>)`](crate::operation::describe_transit_gateway_policy_tables::DescribeTransitGatewayPolicyTablesOutput::transit_gateway_policy_tables): <p>Describes the transit gateway policy tables.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_transit_gateway_policy_tables::DescribeTransitGatewayPolicyTablesOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<DescribeTransitGatewayPolicyTablesError>`](crate::operation::describe_transit_gateway_policy_tables::DescribeTransitGatewayPolicyTablesError)
-    pub fn describe_transit_gateway_policy_tables(&self) -> crate::operation::describe_transit_gateway_policy_tables::builders::DescribeTransitGatewayPolicyTablesFluentBuilder{
+    pub fn describe_transit_gateway_policy_tables(
+        &self,
+    ) -> crate::operation::describe_transit_gateway_policy_tables::builders::DescribeTransitGatewayPolicyTablesFluentBuilder {
         crate::operation::describe_transit_gateway_policy_tables::builders::DescribeTransitGatewayPolicyTablesFluentBuilder::new(self.handle.clone())
     }
 }

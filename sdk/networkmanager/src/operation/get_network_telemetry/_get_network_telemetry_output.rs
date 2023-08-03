@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for GetNetworkTelemetryOutput {
 }
 impl GetNetworkTelemetryOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkTelemetryOutput`](crate::operation::get_network_telemetry::GetNetworkTelemetryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_network_telemetry::builders::GetNetworkTelemetryOutputBuilder {
-        crate::operation::get_network_telemetry::builders::GetNetworkTelemetryOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_network_telemetry::builders::GetNetworkTelemetryOutputBuilder {
+        crate::operation::get_network_telemetry::builders::GetNetworkTelemetryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetNetworkTelemetryOutput`](crate::operation::get_network_telemetry::GetNetworkTelemetryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNetworkTelemetryOutputBuilder {
-    pub(crate) network_telemetry:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkTelemetry>>,
+    pub(crate) network_telemetry: ::std::option::Option<::std::vec::Vec<crate::types::NetworkTelemetry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl GetNetworkTelemetryOutputBuilder {
         self
     }
     /// <p>The network telemetry.</p>
-    pub fn set_network_telemetry(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkTelemetry>>,
-    ) -> Self {
+    pub fn set_network_telemetry(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkTelemetry>>) -> Self {
         self.network_telemetry = input;
         self
     }
     /// <p>The network telemetry.</p>
-    pub fn get_network_telemetry(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkTelemetry>> {
+    pub fn get_network_telemetry(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkTelemetry>> {
         &self.network_telemetry
     }
     /// <p>The token for the next page of results.</p>

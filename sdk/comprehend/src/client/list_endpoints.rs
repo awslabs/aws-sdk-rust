@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`endpoint_properties_list(Option<Vec<EndpointProperties>>)`](crate::operation::list_endpoints::ListEndpointsOutput::endpoint_properties_list): <p>Displays a list of endpoint properties being retrieved by the service in response to the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_endpoints::ListEndpointsOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::operation::list_endpoints::ListEndpointsError)
-    pub fn list_endpoints(
-        &self,
-    ) -> crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder {
-        crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_endpoints(&self) -> crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder {
+        crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

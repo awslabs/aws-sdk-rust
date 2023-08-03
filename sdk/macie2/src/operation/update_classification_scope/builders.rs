@@ -26,7 +26,7 @@ impl UpdateClassificationScopeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateClassificationScopeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_classification_scope::builders::UpdateClassificationScopeInputBuilder,
+    inner: crate::operation::update_classification_scope::builders::UpdateClassificationScopeInputBuilder,
 }
 impl UpdateClassificationScopeFluentBuilder {
     /// Creates a new `UpdateClassificationScope`.
@@ -37,7 +37,7 @@ impl UpdateClassificationScopeFluentBuilder {
         }
     }
     /// Access the UpdateClassificationScope as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_classification_scope::builders::UpdateClassificationScopeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_classification_scope::builders::UpdateClassificationScopeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateClassificationScopeFluentBuilder {
             crate::operation::update_classification_scope::UpdateClassificationScope,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_classification_scope::UpdateClassificationScopeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_classification_scope::UpdateClassificationScopeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateClassificationScopeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateClassificationScopeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_classification_scope::UpdateClassificationScopeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_classification_scope::UpdateClassificationScopeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_classification_scope::UpdateClassificationScopeError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateClassificationScopeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_classification_scope::UpdateClassificationScopeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_classification_scope::UpdateClassificationScopeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_classification_scope::UpdateClassificationScopeError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateClassificationScopeFluentBuilder {
             crate::operation::update_classification_scope::UpdateClassificationScope,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_classification_scope::UpdateClassificationScopeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_classification_scope::UpdateClassificationScopeError>,
     > {
         self.customize_middleware().await
     }
@@ -140,10 +129,7 @@ impl UpdateClassificationScopeFluentBuilder {
         self
     }
     /// <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
-    pub fn set_s3(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ClassificationScopeUpdate>,
-    ) -> Self {
+    pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3ClassificationScopeUpdate>) -> Self {
         self.inner = self.inner.set_s3(input);
         self
     }

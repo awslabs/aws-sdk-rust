@@ -9,76 +9,69 @@ pub fn de_remove_role_from_db_cluster_http_error(
     crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(
-            crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError::unhandled(
+        None => {
+            return Err(crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError::unhandled(
                 generic,
-            ),
-        ),
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DBClusterNotFoundFault" => crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError::DbClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "DBClusterRoleNotFound" => crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError::DbClusterRoleNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbClusterRoleNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_cluster_role_not_found_fault::de_db_cluster_role_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbClusterRoleNotFoundFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_db_cluster_role_not_found_fault::de_db_cluster_role_not_found_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidDBClusterStateFault" => crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError::InvalidDbClusterStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(_response_body, output).map_err(crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError::generic(generic)
+        _ => crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError::generic(generic),
     })
 }
 
@@ -94,9 +87,7 @@ pub fn de_remove_role_from_db_cluster_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::remove_role_from_db_cluster::builders::RemoveRoleFromDbClusterOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

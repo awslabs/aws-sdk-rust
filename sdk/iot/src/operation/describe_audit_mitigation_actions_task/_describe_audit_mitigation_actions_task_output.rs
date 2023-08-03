@@ -14,20 +14,14 @@ pub struct DescribeAuditMitigationActionsTaskOutput {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Aggregate counts of the results when the mitigation tasks were applied to the findings for this audit mitigation actions task.</p>
     #[doc(hidden)]
-    pub task_statistics: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::TaskStatisticsForAuditCheck,
-        >,
-    >,
+    pub task_statistics: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaskStatisticsForAuditCheck>>,
     /// <p>Identifies the findings to which the mitigation actions are applied. This can be by audit checks, by audit task, or a set of findings.</p>
     #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::AuditMitigationActionsTaskTarget>,
     /// <p>Specifies the mitigation actions that should be applied to specific audit checks.</p>
     #[doc(hidden)]
-    pub audit_check_to_actions_mapping: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub audit_check_to_actions_mapping:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>Specifies the mitigation actions and their parameters that are applied as part of this task.</p>
     #[doc(hidden)]
     pub actions_definition: ::std::option::Option<::std::vec::Vec<crate::types::MitigationAction>>,
@@ -35,9 +29,7 @@ pub struct DescribeAuditMitigationActionsTaskOutput {
 }
 impl DescribeAuditMitigationActionsTaskOutput {
     /// <p>The current status of the task.</p>
-    pub fn task_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuditMitigationActionsTaskStatus> {
+    pub fn task_status(&self) -> ::std::option::Option<&crate::types::AuditMitigationActionsTaskStatus> {
         self.task_status.as_ref()
     }
     /// <p>The date and time when the task was started.</p>
@@ -51,12 +43,7 @@ impl DescribeAuditMitigationActionsTaskOutput {
     /// <p>Aggregate counts of the results when the mitigation tasks were applied to the findings for this audit mitigation actions task.</p>
     pub fn task_statistics(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::TaskStatisticsForAuditCheck,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::TaskStatisticsForAuditCheck>> {
         self.task_statistics.as_ref()
     }
     /// <p>Identifies the findings to which the mitigation actions are applied. This can be by audit checks, by audit task, or a set of findings.</p>
@@ -66,9 +53,7 @@ impl DescribeAuditMitigationActionsTaskOutput {
     /// <p>Specifies the mitigation actions that should be applied to specific audit checks.</p>
     pub fn audit_check_to_actions_mapping(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.audit_check_to_actions_mapping.as_ref()
     }
     /// <p>Specifies the mitigation actions and their parameters that are applied as part of this task.</p>
@@ -83,32 +68,23 @@ impl ::aws_http::request_id::RequestId for DescribeAuditMitigationActionsTaskOut
 }
 impl DescribeAuditMitigationActionsTaskOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAuditMitigationActionsTaskOutput`](crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskOutput).
-    pub fn builder() -> crate::operation::describe_audit_mitigation_actions_task::builders::DescribeAuditMitigationActionsTaskOutputBuilder{
+    pub fn builder() -> crate::operation::describe_audit_mitigation_actions_task::builders::DescribeAuditMitigationActionsTaskOutputBuilder {
         crate::operation::describe_audit_mitigation_actions_task::builders::DescribeAuditMitigationActionsTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAuditMitigationActionsTaskOutput`](crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAuditMitigationActionsTaskOutputBuilder {
     pub(crate) task_status: ::std::option::Option<crate::types::AuditMitigationActionsTaskStatus>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) task_statistics: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::TaskStatisticsForAuditCheck,
-        >,
-    >,
+    pub(crate) task_statistics: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaskStatisticsForAuditCheck>>,
     pub(crate) target: ::std::option::Option<crate::types::AuditMitigationActionsTaskTarget>,
-    pub(crate) audit_check_to_actions_mapping: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
-    pub(crate) actions_definition:
-        ::std::option::Option<::std::vec::Vec<crate::types::MitigationAction>>,
+    pub(crate) audit_check_to_actions_mapping:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) actions_definition: ::std::option::Option<::std::vec::Vec<crate::types::MitigationAction>>,
     _request_id: Option<String>,
 }
 impl DescribeAuditMitigationActionsTaskOutputBuilder {
@@ -118,17 +94,12 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
         self
     }
     /// <p>The current status of the task.</p>
-    pub fn set_task_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditMitigationActionsTaskStatus>,
-    ) -> Self {
+    pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::AuditMitigationActionsTaskStatus>) -> Self {
         self.task_status = input;
         self
     }
     /// <p>The current status of the task.</p>
-    pub fn get_task_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskStatus> {
+    pub fn get_task_status(&self) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskStatus> {
         &self.task_status
     }
     /// <p>The date and time when the task was started.</p>
@@ -137,10 +108,7 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
         self
     }
     /// <p>The date and time when the task was started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -154,10 +122,7 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
         self
     }
     /// <p>The date and time when the task was completed or canceled.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -170,11 +135,7 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
     /// To override the contents of this collection use [`set_task_statistics`](Self::set_task_statistics).
     ///
     /// <p>Aggregate counts of the results when the mitigation tasks were applied to the findings for this audit mitigation actions task.</p>
-    pub fn task_statistics(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::TaskStatisticsForAuditCheck,
-    ) -> Self {
+    pub fn task_statistics(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::TaskStatisticsForAuditCheck) -> Self {
         let mut hash_map = self.task_statistics.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.task_statistics = ::std::option::Option::Some(hash_map);
@@ -183,12 +144,7 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
     /// <p>Aggregate counts of the results when the mitigation tasks were applied to the findings for this audit mitigation actions task.</p>
     pub fn set_task_statistics(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::TaskStatisticsForAuditCheck,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaskStatisticsForAuditCheck>>,
     ) -> Self {
         self.task_statistics = input;
         self
@@ -196,12 +152,7 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
     /// <p>Aggregate counts of the results when the mitigation tasks were applied to the findings for this audit mitigation actions task.</p>
     pub fn get_task_statistics(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::TaskStatisticsForAuditCheck,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaskStatisticsForAuditCheck>> {
         &self.task_statistics
     }
     /// <p>Identifies the findings to which the mitigation actions are applied. This can be by audit checks, by audit task, or a set of findings.</p>
@@ -210,17 +161,12 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
         self
     }
     /// <p>Identifies the findings to which the mitigation actions are applied. This can be by audit checks, by audit task, or a set of findings.</p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditMitigationActionsTaskTarget>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::AuditMitigationActionsTaskTarget>) -> Self {
         self.target = input;
         self
     }
     /// <p>Identifies the findings to which the mitigation actions are applied. This can be by audit checks, by audit task, or a set of findings.</p>
-    pub fn get_target(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskTarget> {
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskTarget> {
         &self.target
     }
     /// Adds a key-value pair to `audit_check_to_actions_mapping`.
@@ -241,12 +187,7 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
     /// <p>Specifies the mitigation actions that should be applied to specific audit checks.</p>
     pub fn set_audit_check_to_actions_mapping(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.audit_check_to_actions_mapping = input;
         self
@@ -254,9 +195,7 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
     /// <p>Specifies the mitigation actions that should be applied to specific audit checks.</p>
     pub fn get_audit_check_to_actions_mapping(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.audit_check_to_actions_mapping
     }
     /// Appends an item to `actions_definition`.
@@ -271,17 +210,12 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
         self
     }
     /// <p>Specifies the mitigation actions and their parameters that are applied as part of this task.</p>
-    pub fn set_actions_definition(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MitigationAction>>,
-    ) -> Self {
+    pub fn set_actions_definition(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MitigationAction>>) -> Self {
         self.actions_definition = input;
         self
     }
     /// <p>Specifies the mitigation actions and their parameters that are applied as part of this task.</p>
-    pub fn get_actions_definition(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MitigationAction>> {
+    pub fn get_actions_definition(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MitigationAction>> {
         &self.actions_definition
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -294,22 +228,15 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAuditMitigationActionsTaskOutput`](crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskOutput).
-    pub fn build(self) -> crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskOutput{
+    pub fn build(self) -> crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskOutput {
         crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskOutput {
-            task_status: self.task_status
-            ,
-            start_time: self.start_time
-            ,
-            end_time: self.end_time
-            ,
-            task_statistics: self.task_statistics
-            ,
-            target: self.target
-            ,
-            audit_check_to_actions_mapping: self.audit_check_to_actions_mapping
-            ,
-            actions_definition: self.actions_definition
-            ,
+            task_status: self.task_status,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            task_statistics: self.task_statistics,
+            target: self.target,
+            audit_check_to_actions_mapping: self.audit_check_to_actions_mapping,
+            actions_definition: self.actions_definition,
             _request_id: self._request_id,
         }
     }

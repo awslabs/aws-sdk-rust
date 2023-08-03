@@ -12,7 +12,10 @@ pub fn ser_aws_s3_bucket_website_configuration(
     if let Some(var_3) = &input.redirect_all_requests_to {
         #[allow(unused_mut)]
         let mut object_4 = object.key("RedirectAllRequestsTo").start_object();
-        crate::protocol_serde::shape_aws_s3_bucket_website_configuration_redirect_to::ser_aws_s3_bucket_website_configuration_redirect_to(&mut object_4, var_3)?;
+        crate::protocol_serde::shape_aws_s3_bucket_website_configuration_redirect_to::ser_aws_s3_bucket_website_configuration_redirect_to(
+            &mut object_4,
+            var_3,
+        )?;
         object_4.finish();
     }
     if let Some(var_5) = &input.routing_rules {
@@ -21,7 +24,10 @@ pub fn ser_aws_s3_bucket_website_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_aws_s3_bucket_website_configuration_routing_rule::ser_aws_s3_bucket_website_configuration_routing_rule(&mut object_8, item_7)?;
+                crate::protocol_serde::shape_aws_s3_bucket_website_configuration_routing_rule::ser_aws_s3_bucket_website_configuration_routing_rule(
+                    &mut object_8,
+                    item_7,
+                )?;
                 object_8.finish();
             }
         }
@@ -32,75 +38,57 @@ pub fn ser_aws_s3_bucket_website_configuration(
 
 pub(crate) fn de_aws_s3_bucket_website_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsS3BucketWebsiteConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsS3BucketWebsiteConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::AwsS3BucketWebsiteConfigurationBuilder::default();
+            let mut builder = crate::types::builders::AwsS3BucketWebsiteConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "ErrorDocument" => {
-                                builder = builder.set_error_document(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "ErrorDocument" => {
+                            builder = builder.set_error_document(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "IndexDocumentSuffix" => {
-                                builder = builder.set_index_document_suffix(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "IndexDocumentSuffix" => {
+                            builder = builder.set_index_document_suffix(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "RedirectAllRequestsTo" => {
-                                builder = builder.set_redirect_all_requests_to(
+                            );
+                        }
+                        "RedirectAllRequestsTo" => {
+                            builder = builder.set_redirect_all_requests_to(
                                     crate::protocol_serde::shape_aws_s3_bucket_website_configuration_redirect_to::de_aws_s3_bucket_website_configuration_redirect_to(tokens)?
                                 );
-                            }
-                            "RoutingRules" => {
-                                builder = builder.set_routing_rules(
+                        }
+                        "RoutingRules" => {
+                            builder = builder.set_routing_rules(
                                     crate::protocol_serde::shape_aws_s3_bucket_website_configuration_routing_rules::de_aws_s3_bucket_website_configuration_routing_rules(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

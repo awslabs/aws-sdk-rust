@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeSubscribedWorkteamOutput {
 }
 impl DescribeSubscribedWorkteamOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSubscribedWorkteamOutput`](crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamOutput).
-    pub fn builder() -> crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamOutputBuilder{
+    pub fn builder() -> crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamOutputBuilder {
         crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSubscribedWorkteamOutput`](crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSubscribedWorkteamOutputBuilder {
     pub(crate) subscribed_workteam: ::std::option::Option<crate::types::SubscribedWorkteam>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl DescribeSubscribedWorkteamOutputBuilder {
         self
     }
     /// <p>A <code>Workteam</code> instance that contains information about the work team.</p>
-    pub fn set_subscribed_workteam(
-        mut self,
-        input: ::std::option::Option<crate::types::SubscribedWorkteam>,
-    ) -> Self {
+    pub fn set_subscribed_workteam(mut self, input: ::std::option::Option<crate::types::SubscribedWorkteam>) -> Self {
         self.subscribed_workteam = input;
         self
     }
     /// <p>A <code>Workteam</code> instance that contains information about the work team.</p>
-    pub fn get_subscribed_workteam(
-        &self,
-    ) -> &::std::option::Option<crate::types::SubscribedWorkteam> {
+    pub fn get_subscribed_workteam(&self) -> &::std::option::Option<crate::types::SubscribedWorkteam> {
         &self.subscribed_workteam
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl DescribeSubscribedWorkteamOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSubscribedWorkteamOutput`](crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamOutput {
+    pub fn build(self) -> crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamOutput {
         crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamOutput {
             subscribed_workteam: self.subscribed_workteam,
             _request_id: self._request_id,

@@ -33,17 +33,14 @@ impl GetGeneratedPolicyInput {
 }
 impl GetGeneratedPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetGeneratedPolicyInput`](crate::operation::get_generated_policy::GetGeneratedPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_generated_policy::builders::GetGeneratedPolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_generated_policy::builders::GetGeneratedPolicyInputBuilder {
         crate::operation::get_generated_policy::builders::GetGeneratedPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetGeneratedPolicyInput`](crate::operation::get_generated_policy::GetGeneratedPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGeneratedPolicyInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) include_resource_placeholders: ::std::option::Option<bool>,
@@ -89,10 +86,7 @@ impl GetGeneratedPolicyInputBuilder {
     }
     /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
     /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
-    pub fn set_include_service_level_template(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_include_service_level_template(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_service_level_template = input;
         self
     }
@@ -104,16 +98,11 @@ impl GetGeneratedPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetGeneratedPolicyInput`](crate::operation::get_generated_policy::GetGeneratedPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_generated_policy::GetGeneratedPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_generated_policy::GetGeneratedPolicyInput {
-                job_id: self.job_id,
-                include_resource_placeholders: self.include_resource_placeholders,
-                include_service_level_template: self.include_service_level_template,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_generated_policy::GetGeneratedPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_generated_policy::GetGeneratedPolicyInput {
+            job_id: self.job_id,
+            include_resource_placeholders: self.include_resource_placeholders,
+            include_service_level_template: self.include_service_level_template,
+        })
     }
 }

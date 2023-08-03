@@ -10,10 +10,7 @@ impl ListInstancesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_instances::ListInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instances::ListInstancesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instances::ListInstancesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_instances();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListInstancesFluentBuilder {
         }
     }
     /// Access the ListInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_instances::builders::ListInstancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_instances::builders::ListInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListInstancesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_instances::paginator::ListInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_instances::paginator::ListInstancesPaginator {
-        crate::operation::list_instances::paginator::ListInstancesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_instances::paginator::ListInstancesPaginator {
+        crate::operation::list_instances::paginator::ListInstancesPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the cluster for which to list the instances.</p>
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,18 +127,12 @@ impl ListInstancesFluentBuilder {
         self.inner.get_cluster_id()
     }
     /// <p>The identifier of the instance group for which to list the instances.</p>
-    pub fn instance_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_group_id(input.into());
         self
     }
     /// <p>The identifier of the instance group for which to list the instances.</p>
-    pub fn set_instance_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_group_id(input);
         self
     }
@@ -169,32 +150,21 @@ impl ListInstancesFluentBuilder {
         self
     }
     /// <p>The type of instance group for which to list the instances.</p>
-    pub fn set_instance_group_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupType>>,
-    ) -> Self {
+    pub fn set_instance_group_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupType>>) -> Self {
         self.inner = self.inner.set_instance_group_types(input);
         self
     }
     /// <p>The type of instance group for which to list the instances.</p>
-    pub fn get_instance_group_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupType>> {
+    pub fn get_instance_group_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupType>> {
         self.inner.get_instance_group_types()
     }
     /// <p>The unique identifier of the instance fleet.</p>
-    pub fn instance_fleet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_fleet_id(input.into());
         self
     }
     /// <p>The unique identifier of the instance fleet.</p>
-    pub fn set_instance_fleet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_fleet_id(input);
         self
     }
@@ -208,17 +178,12 @@ impl ListInstancesFluentBuilder {
         self
     }
     /// <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
-    pub fn set_instance_fleet_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceFleetType>,
-    ) -> Self {
+    pub fn set_instance_fleet_type(mut self, input: ::std::option::Option<crate::types::InstanceFleetType>) -> Self {
         self.inner = self.inner.set_instance_fleet_type(input);
         self
     }
     /// <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
-    pub fn get_instance_fleet_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceFleetType> {
+    pub fn get_instance_fleet_type(&self) -> &::std::option::Option<crate::types::InstanceFleetType> {
         self.inner.get_instance_fleet_type()
     }
     /// Appends an item to `InstanceStates`.
@@ -231,17 +196,12 @@ impl ListInstancesFluentBuilder {
         self
     }
     /// <p>A list of instance states that will filter the instances returned with this request.</p>
-    pub fn set_instance_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceState>>,
-    ) -> Self {
+    pub fn set_instance_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceState>>) -> Self {
         self.inner = self.inner.set_instance_states(input);
         self
     }
     /// <p>A list of instance states that will filter the instances returned with this request.</p>
-    pub fn get_instance_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceState>> {
+    pub fn get_instance_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceState>> {
         self.inner.get_instance_states()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>

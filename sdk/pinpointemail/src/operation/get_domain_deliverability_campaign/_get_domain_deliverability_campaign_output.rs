@@ -6,15 +6,12 @@
 pub struct GetDomainDeliverabilityCampaignOutput {
     /// <p>An object that contains the deliverability data for the campaign.</p>
     #[doc(hidden)]
-    pub domain_deliverability_campaign:
-        ::std::option::Option<crate::types::DomainDeliverabilityCampaign>,
+    pub domain_deliverability_campaign: ::std::option::Option<crate::types::DomainDeliverabilityCampaign>,
     _request_id: Option<String>,
 }
 impl GetDomainDeliverabilityCampaignOutput {
     /// <p>An object that contains the deliverability data for the campaign.</p>
-    pub fn domain_deliverability_campaign(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DomainDeliverabilityCampaign> {
+    pub fn domain_deliverability_campaign(&self) -> ::std::option::Option<&crate::types::DomainDeliverabilityCampaign> {
         self.domain_deliverability_campaign.as_ref()
     }
 }
@@ -25,42 +22,31 @@ impl ::aws_http::request_id::RequestId for GetDomainDeliverabilityCampaignOutput
 }
 impl GetDomainDeliverabilityCampaignOutput {
     /// Creates a new builder-style object to manufacture [`GetDomainDeliverabilityCampaignOutput`](crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignOutput).
-    pub fn builder() -> crate::operation::get_domain_deliverability_campaign::builders::GetDomainDeliverabilityCampaignOutputBuilder{
+    pub fn builder() -> crate::operation::get_domain_deliverability_campaign::builders::GetDomainDeliverabilityCampaignOutputBuilder {
         crate::operation::get_domain_deliverability_campaign::builders::GetDomainDeliverabilityCampaignOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDomainDeliverabilityCampaignOutput`](crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDomainDeliverabilityCampaignOutputBuilder {
-    pub(crate) domain_deliverability_campaign:
-        ::std::option::Option<crate::types::DomainDeliverabilityCampaign>,
+    pub(crate) domain_deliverability_campaign: ::std::option::Option<crate::types::DomainDeliverabilityCampaign>,
     _request_id: Option<String>,
 }
 impl GetDomainDeliverabilityCampaignOutputBuilder {
     /// <p>An object that contains the deliverability data for the campaign.</p>
-    pub fn domain_deliverability_campaign(
-        mut self,
-        input: crate::types::DomainDeliverabilityCampaign,
-    ) -> Self {
+    pub fn domain_deliverability_campaign(mut self, input: crate::types::DomainDeliverabilityCampaign) -> Self {
         self.domain_deliverability_campaign = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the deliverability data for the campaign.</p>
-    pub fn set_domain_deliverability_campaign(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainDeliverabilityCampaign>,
-    ) -> Self {
+    pub fn set_domain_deliverability_campaign(mut self, input: ::std::option::Option<crate::types::DomainDeliverabilityCampaign>) -> Self {
         self.domain_deliverability_campaign = input;
         self
     }
     /// <p>An object that contains the deliverability data for the campaign.</p>
-    pub fn get_domain_deliverability_campaign(
-        &self,
-    ) -> &::std::option::Option<crate::types::DomainDeliverabilityCampaign> {
+    pub fn get_domain_deliverability_campaign(&self) -> &::std::option::Option<crate::types::DomainDeliverabilityCampaign> {
         &self.domain_deliverability_campaign
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -73,13 +59,9 @@ impl GetDomainDeliverabilityCampaignOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDomainDeliverabilityCampaignOutput`](crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignOutput
-    {
+    pub fn build(self) -> crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignOutput {
         crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignOutput {
-            domain_deliverability_campaign: self.domain_deliverability_campaign
-            ,
+            domain_deliverability_campaign: self.domain_deliverability_campaign,
             _request_id: self._request_id,
         }
     }

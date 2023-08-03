@@ -50,17 +50,14 @@ impl ImportTerminologyInput {
 }
 impl ImportTerminologyInput {
     /// Creates a new builder-style object to manufacture [`ImportTerminologyInput`](crate::operation::import_terminology::ImportTerminologyInput).
-    pub fn builder() -> crate::operation::import_terminology::builders::ImportTerminologyInputBuilder
-    {
+    pub fn builder() -> crate::operation::import_terminology::builders::ImportTerminologyInputBuilder {
         crate::operation::import_terminology::builders::ImportTerminologyInputBuilder::default()
     }
 }
 
 /// A builder for [`ImportTerminologyInput`](crate::operation::import_terminology::ImportTerminologyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportTerminologyInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) merge_strategy: ::std::option::Option<crate::types::MergeStrategy>,
@@ -90,10 +87,7 @@ impl ImportTerminologyInputBuilder {
         self
     }
     /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
-    pub fn set_merge_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::MergeStrategy>,
-    ) -> Self {
+    pub fn set_merge_strategy(mut self, input: ::std::option::Option<crate::types::MergeStrategy>) -> Self {
         self.merge_strategy = input;
         self
     }
@@ -121,10 +115,7 @@ impl ImportTerminologyInputBuilder {
         self
     }
     /// <p>The terminology data for the custom terminology being imported.</p>
-    pub fn set_terminology_data(
-        mut self,
-        input: ::std::option::Option<crate::types::TerminologyData>,
-    ) -> Self {
+    pub fn set_terminology_data(mut self, input: ::std::option::Option<crate::types::TerminologyData>) -> Self {
         self.terminology_data = input;
         self
     }
@@ -138,10 +129,7 @@ impl ImportTerminologyInputBuilder {
         self
     }
     /// <p>The encryption key for the custom terminology being imported.</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionKey>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<crate::types::EncryptionKey>) -> Self {
         self.encryption_key = input;
         self
     }
@@ -161,10 +149,7 @@ impl ImportTerminologyInputBuilder {
         self
     }
     /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -175,19 +160,14 @@ impl ImportTerminologyInputBuilder {
     /// Consumes the builder and constructs a [`ImportTerminologyInput`](crate::operation::import_terminology::ImportTerminologyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_terminology::ImportTerminologyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::import_terminology::ImportTerminologyInput {
-                name: self.name,
-                merge_strategy: self.merge_strategy,
-                description: self.description,
-                terminology_data: self.terminology_data,
-                encryption_key: self.encryption_key,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::import_terminology::ImportTerminologyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::import_terminology::ImportTerminologyInput {
+            name: self.name,
+            merge_strategy: self.merge_strategy,
+            description: self.description,
+            terminology_data: self.terminology_data,
+            encryption_key: self.encryption_key,
+            tags: self.tags,
+        })
     }
 }

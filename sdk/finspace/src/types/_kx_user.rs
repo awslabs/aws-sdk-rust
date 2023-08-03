@@ -51,9 +51,7 @@ impl KxUser {
 
 /// A builder for [`KxUser`](crate::types::KxUser).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KxUserBuilder {
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl KxUserBuilder {
         self
     }
     /// <p>The timestamp at which the kdb user was created. </p>
-    pub fn set_create_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_timestamp = input;
         self
     }
@@ -127,10 +122,7 @@ impl KxUserBuilder {
         self
     }
     /// <p>The timestamp at which the kdb user was updated. </p>
-    pub fn set_update_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_timestamp = input;
         self
     }

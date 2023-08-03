@@ -15,16 +15,14 @@ impl DisassociateDeviceFromRoomInput {
 }
 impl DisassociateDeviceFromRoomInput {
     /// Creates a new builder-style object to manufacture [`DisassociateDeviceFromRoomInput`](crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomInput).
-    pub fn builder() -> crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomInputBuilder {
         crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateDeviceFromRoomInput`](crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateDeviceFromRoomInputBuilder {
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DisassociateDeviceFromRoomInputBuilder {
         crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomInput {
-                device_arn: self.device_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomInput { device_arn: self.device_arn })
     }
 }

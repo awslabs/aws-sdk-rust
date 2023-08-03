@@ -43,9 +43,7 @@ impl Domain {
 
 /// A builder for [`Domain`](crate::types::Domain).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::LifecycleManagementStrategy>,
@@ -83,10 +81,7 @@ impl DomainBuilder {
     /// <li> <p> <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.</p> </li>
     /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the <code>StopApp</code> API to stop the apps.</p> </li>
     /// </ul>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecycleManagementStrategy>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::LifecycleManagementStrategy>) -> Self {
         self.lifecycle = input;
         self
     }
@@ -97,9 +92,7 @@ impl DomainBuilder {
     /// <li> <p> <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.</p> </li>
     /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the <code>StopApp</code> API to stop the apps.</p> </li>
     /// </ul>
-    pub fn get_lifecycle(
-        &self,
-    ) -> &::std::option::Option<crate::types::LifecycleManagementStrategy> {
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::LifecycleManagementStrategy> {
         &self.lifecycle
     }
     /// Consumes the builder and constructs a [`Domain`](crate::types::Domain).

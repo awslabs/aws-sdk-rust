@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`AddProfilePermissionOutput`](crate::operation::add_profile_permission::AddProfilePermissionOutput) with field(s):
     ///   - [`revision_id(Option<String>)`](crate::operation::add_profile_permission::AddProfilePermissionOutput::revision_id): <p>A unique identifier for the current profile revision.</p>
     /// - On failure, responds with [`SdkError<AddProfilePermissionError>`](crate::operation::add_profile_permission::AddProfilePermissionError)
-    pub fn add_profile_permission(
-        &self,
-    ) -> crate::operation::add_profile_permission::builders::AddProfilePermissionFluentBuilder {
-        crate::operation::add_profile_permission::builders::AddProfilePermissionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_profile_permission(&self) -> crate::operation::add_profile_permission::builders::AddProfilePermissionFluentBuilder {
+        crate::operation::add_profile_permission::builders::AddProfilePermissionFluentBuilder::new(self.handle.clone())
     }
 }

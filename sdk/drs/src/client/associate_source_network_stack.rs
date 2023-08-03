@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateSourceNetworkStackOutput`](crate::operation::associate_source_network_stack::AssociateSourceNetworkStackOutput) with field(s):
     ///   - [`job(Option<Job>)`](crate::operation::associate_source_network_stack::AssociateSourceNetworkStackOutput::job): <p>The Source Network association Job.</p>
     /// - On failure, responds with [`SdkError<AssociateSourceNetworkStackError>`](crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError)
-    pub fn associate_source_network_stack(&self) -> crate::operation::associate_source_network_stack::builders::AssociateSourceNetworkStackFluentBuilder{
+    pub fn associate_source_network_stack(
+        &self,
+    ) -> crate::operation::associate_source_network_stack::builders::AssociateSourceNetworkStackFluentBuilder {
         crate::operation::associate_source_network_stack::builders::AssociateSourceNetworkStackFluentBuilder::new(self.handle.clone())
     }
 }

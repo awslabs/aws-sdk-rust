@@ -39,9 +39,7 @@ impl ConditionExpression {
 
 /// A builder for [`ConditionExpression`](crate::types::ConditionExpression).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConditionExpressionBuilder {
     pub(crate) condition: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl ConditionExpressionBuilder {
         &self.value
     }
     /// <p>A column to apply this condition to.</p>
-    pub fn target_column(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_column(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_column = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A column to apply this condition to.</p>
-    pub fn set_target_column(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_column(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_column = input;
         self
     }

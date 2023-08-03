@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDomainConfigOutput`](crate::operation::describe_domain_config::DescribeDomainConfigOutput) with field(s):
     ///   - [`domain_config(Option<DomainConfig>)`](crate::operation::describe_domain_config::DescribeDomainConfigOutput::domain_config): <p>Container for the configuration of the OpenSearch Service domain.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainConfigError>`](crate::operation::describe_domain_config::DescribeDomainConfigError)
-    pub fn describe_domain_config(
-        &self,
-    ) -> crate::operation::describe_domain_config::builders::DescribeDomainConfigFluentBuilder {
-        crate::operation::describe_domain_config::builders::DescribeDomainConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_domain_config(&self) -> crate::operation::describe_domain_config::builders::DescribeDomainConfigFluentBuilder {
+        crate::operation::describe_domain_config::builders::DescribeDomainConfigFluentBuilder::new(self.handle.clone())
     }
 }

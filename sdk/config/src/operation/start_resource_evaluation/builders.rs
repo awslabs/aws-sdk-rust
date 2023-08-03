@@ -30,8 +30,7 @@ impl StartResourceEvaluationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartResourceEvaluationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::start_resource_evaluation::builders::StartResourceEvaluationInputBuilder,
+    inner: crate::operation::start_resource_evaluation::builders::StartResourceEvaluationInputBuilder,
 }
 impl StartResourceEvaluationFluentBuilder {
     /// Creates a new `StartResourceEvaluation`.
@@ -42,10 +41,7 @@ impl StartResourceEvaluationFluentBuilder {
         }
     }
     /// Access the StartResourceEvaluation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_resource_evaluation::builders::StartResourceEvaluationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_resource_evaluation::builders::StartResourceEvaluationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl StartResourceEvaluationFluentBuilder {
             crate::operation::start_resource_evaluation::StartResourceEvaluation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_resource_evaluation::StartResourceEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_resource_evaluation::StartResourceEvaluationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl StartResourceEvaluationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl StartResourceEvaluationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_resource_evaluation::StartResourceEvaluationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_resource_evaluation::StartResourceEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_resource_evaluation::StartResourceEvaluationError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl StartResourceEvaluationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_resource_evaluation::StartResourceEvaluationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_resource_evaluation::StartResourceEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_resource_evaluation::StartResourceEvaluationError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +109,7 @@ impl StartResourceEvaluationFluentBuilder {
             crate::operation::start_resource_evaluation::StartResourceEvaluation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_resource_evaluation::StartResourceEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_resource_evaluation::StartResourceEvaluationError>,
     > {
         self.customize_middleware().await
     }
@@ -134,10 +119,7 @@ impl StartResourceEvaluationFluentBuilder {
         self
     }
     /// <p>Returns a <code>ResourceDetails</code> object.</p>
-    pub fn set_resource_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDetails>,
-    ) -> Self {
+    pub fn set_resource_details(mut self, input: ::std::option::Option<crate::types::ResourceDetails>) -> Self {
         self.inner = self.inner.set_resource_details(input);
         self
     }
@@ -151,17 +133,12 @@ impl StartResourceEvaluationFluentBuilder {
         self
     }
     /// <p>Returns an <code>EvaluationContext</code> object.</p>
-    pub fn set_evaluation_context(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationContext>,
-    ) -> Self {
+    pub fn set_evaluation_context(mut self, input: ::std::option::Option<crate::types::EvaluationContext>) -> Self {
         self.inner = self.inner.set_evaluation_context(input);
         self
     }
     /// <p>Returns an <code>EvaluationContext</code> object.</p>
-    pub fn get_evaluation_context(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvaluationContext> {
+    pub fn get_evaluation_context(&self) -> &::std::option::Option<crate::types::EvaluationContext> {
         self.inner.get_evaluation_context()
     }
     /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
@@ -170,10 +147,7 @@ impl StartResourceEvaluationFluentBuilder {
         self
     }
     /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
-    pub fn set_evaluation_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationMode>,
-    ) -> Self {
+    pub fn set_evaluation_mode(mut self, input: ::std::option::Option<crate::types::EvaluationMode>) -> Self {
         self.inner = self.inner.set_evaluation_mode(input);
         self
     }

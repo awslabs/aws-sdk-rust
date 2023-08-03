@@ -5,16 +5,16 @@ pub use crate::operation::get_relational_database_master_user_password::_get_rel
 
 impl GetRelationalDatabaseMasterUserPasswordInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_relational_database_master_user_password();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl GetRelationalDatabaseMasterUserPasswordInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseMasterUserPasswordFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordInputBuilder,
+    inner: crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordInputBuilder,
 }
 impl GetRelationalDatabaseMasterUserPasswordFluentBuilder {
     /// Creates a new `GetRelationalDatabaseMasterUserPassword`.
@@ -38,15 +38,24 @@ impl GetRelationalDatabaseMasterUserPasswordFluentBuilder {
         }
     }
     /// Access the GetRelationalDatabaseMasterUserPassword as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPassword, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPassword,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +64,19 @@ impl GetRelationalDatabaseMasterUserPasswordFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -82,32 +94,39 @@ impl GetRelationalDatabaseMasterUserPasswordFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPassword, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPassword,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of your database for which to get the master user password.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.relational_database_name(input.into());
         self
     }
     /// <p>The name of your database for which to get the master user password.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }
@@ -118,29 +137,21 @@ impl GetRelationalDatabaseMasterUserPasswordFluentBuilder {
     /// <p>The password version to return.</p>
     /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>
     /// <p>Default: <code>CURRENT</code> </p>
-    pub fn password_version(
-        mut self,
-        input: crate::types::RelationalDatabasePasswordVersion,
-    ) -> Self {
+    pub fn password_version(mut self, input: crate::types::RelationalDatabasePasswordVersion) -> Self {
         self.inner = self.inner.password_version(input);
         self
     }
     /// <p>The password version to return.</p>
     /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>
     /// <p>Default: <code>CURRENT</code> </p>
-    pub fn set_password_version(
-        mut self,
-        input: ::std::option::Option<crate::types::RelationalDatabasePasswordVersion>,
-    ) -> Self {
+    pub fn set_password_version(mut self, input: ::std::option::Option<crate::types::RelationalDatabasePasswordVersion>) -> Self {
         self.inner = self.inner.set_password_version(input);
         self
     }
     /// <p>The password version to return.</p>
     /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>
     /// <p>Default: <code>CURRENT</code> </p>
-    pub fn get_password_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelationalDatabasePasswordVersion> {
+    pub fn get_password_version(&self) -> &::std::option::Option<crate::types::RelationalDatabasePasswordVersion> {
         self.inner.get_password_version()
     }
 }

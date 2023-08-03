@@ -9,9 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateInputOutput`](crate::operation::update_input::UpdateInputOutput) with field(s):
     ///   - [`input_configuration(Option<InputConfiguration>)`](crate::operation::update_input::UpdateInputOutput::input_configuration): <p>Information about the configuration of the input.</p>
     /// - On failure, responds with [`SdkError<UpdateInputError>`](crate::operation::update_input::UpdateInputError)
-    pub fn update_input(
-        &self,
-    ) -> crate::operation::update_input::builders::UpdateInputFluentBuilder {
+    pub fn update_input(&self) -> crate::operation::update_input::builders::UpdateInputFluentBuilder {
         crate::operation::update_input::builders::UpdateInputFluentBuilder::new(self.handle.clone())
     }
 }

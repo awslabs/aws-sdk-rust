@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAssessmentTargetOutput`](crate::operation::create_assessment_target::CreateAssessmentTargetOutput) with field(s):
     ///   - [`assessment_target_arn(Option<String>)`](crate::operation::create_assessment_target::CreateAssessmentTargetOutput::assessment_target_arn): <p>The ARN that specifies the assessment target that is created.</p>
     /// - On failure, responds with [`SdkError<CreateAssessmentTargetError>`](crate::operation::create_assessment_target::CreateAssessmentTargetError)
-    pub fn create_assessment_target(
-        &self,
-    ) -> crate::operation::create_assessment_target::builders::CreateAssessmentTargetFluentBuilder
-    {
+    pub fn create_assessment_target(&self) -> crate::operation::create_assessment_target::builders::CreateAssessmentTargetFluentBuilder {
         crate::operation::create_assessment_target::builders::CreateAssessmentTargetFluentBuilder::new(self.handle.clone())
     }
 }

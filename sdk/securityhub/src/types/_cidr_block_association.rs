@@ -37,9 +37,7 @@ impl CidrBlockAssociation {
 
 /// A builder for [`CidrBlockAssociation`](crate::types::CidrBlockAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CidrBlockAssociationBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct CidrBlockAssociationBuilder {
 }
 impl CidrBlockAssociationBuilder {
     /// <p>The association ID for the IPv4 CIDR block.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association ID for the IPv4 CIDR block.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -81,18 +73,12 @@ impl CidrBlockAssociationBuilder {
         &self.cidr_block
     }
     /// <p>Information about the state of the IPv4 CIDR block.</p>
-    pub fn cidr_block_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cidr_block_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr_block_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the state of the IPv4 CIDR block.</p>
-    pub fn set_cidr_block_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cidr_block_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr_block_state = input;
         self
     }

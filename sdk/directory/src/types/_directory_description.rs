@@ -149,9 +149,7 @@ impl DirectoryDescription {
         self.launch_time.as_ref()
     }
     /// <p>The date and time that the stage was last updated.</p>
-    pub fn stage_last_updated_date_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn stage_last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stage_last_updated_date_time.as_ref()
     }
     /// <p>The directory size.</p>
@@ -159,15 +157,11 @@ impl DirectoryDescription {
         self.r#type.as_ref()
     }
     /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
-    pub fn vpc_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DirectoryVpcSettingsDescription> {
+    pub fn vpc_settings(&self) -> ::std::option::Option<&crate::types::DirectoryVpcSettingsDescription> {
         self.vpc_settings.as_ref()
     }
     /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
-    pub fn connect_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DirectoryConnectSettingsDescription> {
+    pub fn connect_settings(&self) -> ::std::option::Option<&crate::types::DirectoryConnectSettingsDescription> {
         self.connect_settings.as_ref()
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server configured for this directory.</p>
@@ -191,9 +185,7 @@ impl DirectoryDescription {
         self.desired_number_of_domain_controllers
     }
     /// <p>Describes the Managed Microsoft AD directory in the directory owner account.</p>
-    pub fn owner_directory_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OwnerDirectoryDescription> {
+    pub fn owner_directory_description(&self) -> ::std::option::Option<&crate::types::OwnerDirectoryDescription> {
         self.owner_directory_description.as_ref()
     }
     /// <p>Lists the Regions where the directory has replicated.</p>
@@ -222,10 +214,7 @@ impl ::std::fmt::Debug for DirectoryDescription {
         formatter.field("share_method", &self.share_method);
         formatter.field("share_notes", &"*** Sensitive Data Redacted ***");
         formatter.field("launch_time", &self.launch_time);
-        formatter.field(
-            "stage_last_updated_date_time",
-            &self.stage_last_updated_date_time,
-        );
+        formatter.field("stage_last_updated_date_time", &self.stage_last_updated_date_time);
         formatter.field("r#type", &self.r#type);
         formatter.field("vpc_settings", &self.vpc_settings);
         formatter.field("connect_settings", &self.connect_settings);
@@ -233,14 +222,8 @@ impl ::std::fmt::Debug for DirectoryDescription {
         formatter.field("radius_status", &self.radius_status);
         formatter.field("stage_reason", &self.stage_reason);
         formatter.field("sso_enabled", &self.sso_enabled);
-        formatter.field(
-            "desired_number_of_domain_controllers",
-            &self.desired_number_of_domain_controllers,
-        );
-        formatter.field(
-            "owner_directory_description",
-            &self.owner_directory_description,
-        );
+        formatter.field("desired_number_of_domain_controllers", &self.desired_number_of_domain_controllers);
+        formatter.field("owner_directory_description", &self.owner_directory_description);
         formatter.field("regions_info", &self.regions_info);
         formatter.field("os_version", &self.os_version);
         formatter.finish()
@@ -274,15 +257,13 @@ pub struct DirectoryDescriptionBuilder {
     pub(crate) stage_last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) r#type: ::std::option::Option<crate::types::DirectoryType>,
     pub(crate) vpc_settings: ::std::option::Option<crate::types::DirectoryVpcSettingsDescription>,
-    pub(crate) connect_settings:
-        ::std::option::Option<crate::types::DirectoryConnectSettingsDescription>,
+    pub(crate) connect_settings: ::std::option::Option<crate::types::DirectoryConnectSettingsDescription>,
     pub(crate) radius_settings: ::std::option::Option<crate::types::RadiusSettings>,
     pub(crate) radius_status: ::std::option::Option<crate::types::RadiusStatus>,
     pub(crate) stage_reason: ::std::option::Option<::std::string::String>,
     pub(crate) sso_enabled: ::std::option::Option<bool>,
     pub(crate) desired_number_of_domain_controllers: ::std::option::Option<i32>,
-    pub(crate) owner_directory_description:
-        ::std::option::Option<crate::types::OwnerDirectoryDescription>,
+    pub(crate) owner_directory_description: ::std::option::Option<crate::types::OwnerDirectoryDescription>,
     pub(crate) regions_info: ::std::option::Option<crate::types::RegionsInfo>,
     pub(crate) os_version: ::std::option::Option<crate::types::OsVersion>,
 }
@@ -349,10 +330,7 @@ impl DirectoryDescriptionBuilder {
         self
     }
     /// <p>The edition associated with this directory.</p>
-    pub fn set_edition(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryEdition>,
-    ) -> Self {
+    pub fn set_edition(mut self, input: ::std::option::Option<crate::types::DirectoryEdition>) -> Self {
         self.edition = input;
         self
     }
@@ -426,17 +404,12 @@ impl DirectoryDescriptionBuilder {
         self
     }
     /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
-    pub fn set_dns_ip_addrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_ip_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_ip_addrs = input;
         self
     }
     /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
-    pub fn get_dns_ip_addrs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ip_addrs
     }
     /// <p>The current stage of the directory.</p>
@@ -459,10 +432,7 @@ impl DirectoryDescriptionBuilder {
         self
     }
     /// <p>Current directory status of the shared Managed Microsoft AD directory.</p>
-    pub fn set_share_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareStatus>,
-    ) -> Self {
+    pub fn set_share_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
         self.share_status = input;
         self
     }
@@ -476,10 +446,7 @@ impl DirectoryDescriptionBuilder {
         self
     }
     /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
-    pub fn set_share_method(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareMethod>,
-    ) -> Self {
+    pub fn set_share_method(mut self, input: ::std::option::Option<crate::types::ShareMethod>) -> Self {
         self.share_method = input;
         self
     }
@@ -507,10 +474,7 @@ impl DirectoryDescriptionBuilder {
         self
     }
     /// <p>Specifies when the directory was created.</p>
-    pub fn set_launch_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_launch_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.launch_time = input;
         self
     }
@@ -524,17 +488,12 @@ impl DirectoryDescriptionBuilder {
         self
     }
     /// <p>The date and time that the stage was last updated.</p>
-    pub fn set_stage_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stage_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stage_last_updated_date_time = input;
         self
     }
     /// <p>The date and time that the stage was last updated.</p>
-    pub fn get_stage_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_stage_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.stage_last_updated_date_time
     }
     /// <p>The directory size.</p>
@@ -557,39 +516,26 @@ impl DirectoryDescriptionBuilder {
         self
     }
     /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
-    pub fn set_vpc_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryVpcSettingsDescription>,
-    ) -> Self {
+    pub fn set_vpc_settings(mut self, input: ::std::option::Option<crate::types::DirectoryVpcSettingsDescription>) -> Self {
         self.vpc_settings = input;
         self
     }
     /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
-    pub fn get_vpc_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::DirectoryVpcSettingsDescription> {
+    pub fn get_vpc_settings(&self) -> &::std::option::Option<crate::types::DirectoryVpcSettingsDescription> {
         &self.vpc_settings
     }
     /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
-    pub fn connect_settings(
-        mut self,
-        input: crate::types::DirectoryConnectSettingsDescription,
-    ) -> Self {
+    pub fn connect_settings(mut self, input: crate::types::DirectoryConnectSettingsDescription) -> Self {
         self.connect_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
-    pub fn set_connect_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryConnectSettingsDescription>,
-    ) -> Self {
+    pub fn set_connect_settings(mut self, input: ::std::option::Option<crate::types::DirectoryConnectSettingsDescription>) -> Self {
         self.connect_settings = input;
         self
     }
     /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
-    pub fn get_connect_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::DirectoryConnectSettingsDescription> {
+    pub fn get_connect_settings(&self) -> &::std::option::Option<crate::types::DirectoryConnectSettingsDescription> {
         &self.connect_settings
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server configured for this directory.</p>
@@ -598,10 +544,7 @@ impl DirectoryDescriptionBuilder {
         self
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server configured for this directory.</p>
-    pub fn set_radius_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RadiusSettings>,
-    ) -> Self {
+    pub fn set_radius_settings(mut self, input: ::std::option::Option<crate::types::RadiusSettings>) -> Self {
         self.radius_settings = input;
         self
     }
@@ -615,10 +558,7 @@ impl DirectoryDescriptionBuilder {
         self
     }
     /// <p>The status of the RADIUS MFA server connection.</p>
-    pub fn set_radius_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RadiusStatus>,
-    ) -> Self {
+    pub fn set_radius_status(mut self, input: ::std::option::Option<crate::types::RadiusStatus>) -> Self {
         self.radius_status = input;
         self
     }
@@ -660,10 +600,7 @@ impl DirectoryDescriptionBuilder {
         self
     }
     /// <p>The desired number of domain controllers in the directory if the directory is Microsoft AD.</p>
-    pub fn set_desired_number_of_domain_controllers(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_desired_number_of_domain_controllers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_number_of_domain_controllers = input;
         self
     }
@@ -672,25 +609,17 @@ impl DirectoryDescriptionBuilder {
         &self.desired_number_of_domain_controllers
     }
     /// <p>Describes the Managed Microsoft AD directory in the directory owner account.</p>
-    pub fn owner_directory_description(
-        mut self,
-        input: crate::types::OwnerDirectoryDescription,
-    ) -> Self {
+    pub fn owner_directory_description(mut self, input: crate::types::OwnerDirectoryDescription) -> Self {
         self.owner_directory_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the Managed Microsoft AD directory in the directory owner account.</p>
-    pub fn set_owner_directory_description(
-        mut self,
-        input: ::std::option::Option<crate::types::OwnerDirectoryDescription>,
-    ) -> Self {
+    pub fn set_owner_directory_description(mut self, input: ::std::option::Option<crate::types::OwnerDirectoryDescription>) -> Self {
         self.owner_directory_description = input;
         self
     }
     /// <p>Describes the Managed Microsoft AD directory in the directory owner account.</p>
-    pub fn get_owner_directory_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::OwnerDirectoryDescription> {
+    pub fn get_owner_directory_description(&self) -> &::std::option::Option<crate::types::OwnerDirectoryDescription> {
         &self.owner_directory_description
     }
     /// <p>Lists the Regions where the directory has replicated.</p>
@@ -699,10 +628,7 @@ impl DirectoryDescriptionBuilder {
         self
     }
     /// <p>Lists the Regions where the directory has replicated.</p>
-    pub fn set_regions_info(
-        mut self,
-        input: ::std::option::Option<crate::types::RegionsInfo>,
-    ) -> Self {
+    pub fn set_regions_info(mut self, input: ::std::option::Option<crate::types::RegionsInfo>) -> Self {
         self.regions_info = input;
         self
     }
@@ -749,9 +675,7 @@ impl DirectoryDescriptionBuilder {
             radius_status: self.radius_status,
             stage_reason: self.stage_reason,
             sso_enabled: self.sso_enabled.unwrap_or_default(),
-            desired_number_of_domain_controllers: self
-                .desired_number_of_domain_controllers
-                .unwrap_or_default(),
+            desired_number_of_domain_controllers: self.desired_number_of_domain_controllers.unwrap_or_default(),
             owner_directory_description: self.owner_directory_description,
             regions_info: self.regions_info,
             os_version: self.os_version,
@@ -775,10 +699,7 @@ impl ::std::fmt::Debug for DirectoryDescriptionBuilder {
         formatter.field("share_method", &self.share_method);
         formatter.field("share_notes", &"*** Sensitive Data Redacted ***");
         formatter.field("launch_time", &self.launch_time);
-        formatter.field(
-            "stage_last_updated_date_time",
-            &self.stage_last_updated_date_time,
-        );
+        formatter.field("stage_last_updated_date_time", &self.stage_last_updated_date_time);
         formatter.field("r#type", &self.r#type);
         formatter.field("vpc_settings", &self.vpc_settings);
         formatter.field("connect_settings", &self.connect_settings);
@@ -786,14 +707,8 @@ impl ::std::fmt::Debug for DirectoryDescriptionBuilder {
         formatter.field("radius_status", &self.radius_status);
         formatter.field("stage_reason", &self.stage_reason);
         formatter.field("sso_enabled", &self.sso_enabled);
-        formatter.field(
-            "desired_number_of_domain_controllers",
-            &self.desired_number_of_domain_controllers,
-        );
-        formatter.field(
-            "owner_directory_description",
-            &self.owner_directory_description,
-        );
+        formatter.field("desired_number_of_domain_controllers", &self.desired_number_of_domain_controllers);
+        formatter.field("owner_directory_description", &self.owner_directory_description);
         formatter.field("regions_info", &self.regions_info);
         formatter.field("os_version", &self.os_version);
         formatter.finish()

@@ -37,9 +37,7 @@ impl CreateAutomationRuleFluentBuilder {
         }
     }
     /// Access the CreateAutomationRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_automation_rule::builders::CreateAutomationRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_automation_rule::builders::CreateAutomationRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateAutomationRuleFluentBuilder {
             crate::operation::create_automation_rule::CreateAutomationRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_automation_rule::CreateAutomationRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_automation_rule::CreateAutomationRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateAutomationRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateAutomationRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_automation_rule::CreateAutomationRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_automation_rule::CreateAutomationRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_automation_rule::CreateAutomationRuleError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateAutomationRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_automation_rule::CreateAutomationRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_automation_rule::CreateAutomationRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_automation_rule::CreateAutomationRuleError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateAutomationRuleFluentBuilder {
             crate::operation::create_automation_rule::CreateAutomationRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_automation_rule::CreateAutomationRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_automation_rule::CreateAutomationRuleError>,
     > {
         self.customize_middleware().await
     }
@@ -127,30 +114,17 @@ impl CreateAutomationRuleFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> User-defined tags that help you label the purpose of a rule. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> User-defined tags that help you label the purpose of a rule. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> User-defined tags that help you label the purpose of a rule. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p> Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. To change the value of this parameter after creating a rule, use <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html"> <code>BatchUpdateAutomationRules</code> </a>. </p>
@@ -159,10 +133,7 @@ impl CreateAutomationRuleFluentBuilder {
         self
     }
     /// <p> Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. To change the value of this parameter after creating a rule, use <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html"> <code>BatchUpdateAutomationRules</code> </a>. </p>
-    pub fn set_rule_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleStatus>,
-    ) -> Self {
+    pub fn set_rule_status(mut self, input: ::std::option::Option<crate::types::RuleStatus>) -> Self {
         self.inner = self.inner.set_rule_status(input);
         self
     }
@@ -232,17 +203,12 @@ impl CreateAutomationRuleFluentBuilder {
         self
     }
     /// <p> A set of ASFF finding field attributes and corresponding expected values that Security Hub uses to filter findings. If a rule is enabled and a finding matches the conditions specified in this parameter, Security Hub applies the rule action to the finding. </p>
-    pub fn set_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::AutomationRulesFindingFilters>,
-    ) -> Self {
+    pub fn set_criteria(mut self, input: ::std::option::Option<crate::types::AutomationRulesFindingFilters>) -> Self {
         self.inner = self.inner.set_criteria(input);
         self
     }
     /// <p> A set of ASFF finding field attributes and corresponding expected values that Security Hub uses to filter findings. If a rule is enabled and a finding matches the conditions specified in this parameter, Security Hub applies the rule action to the finding. </p>
-    pub fn get_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutomationRulesFindingFilters> {
+    pub fn get_criteria(&self) -> &::std::option::Option<crate::types::AutomationRulesFindingFilters> {
         self.inner.get_criteria()
     }
     /// Appends an item to `Actions`.
@@ -255,17 +221,12 @@ impl CreateAutomationRuleFluentBuilder {
         self
     }
     /// <p> One or more actions to update finding fields if a finding matches the conditions specified in <code>Criteria</code>. </p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>>) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
     /// <p> One or more actions to update finding fields if a finding matches the conditions specified in <code>Criteria</code>. </p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>> {
         self.inner.get_actions()
     }
 }

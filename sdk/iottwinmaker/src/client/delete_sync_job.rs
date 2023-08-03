@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSyncJobOutput`](crate::operation::delete_sync_job::DeleteSyncJobOutput) with field(s):
     ///   - [`state(Option<SyncJobState>)`](crate::operation::delete_sync_job::DeleteSyncJobOutput::state): <p>The SyncJob response state.</p>
     /// - On failure, responds with [`SdkError<DeleteSyncJobError>`](crate::operation::delete_sync_job::DeleteSyncJobError)
-    pub fn delete_sync_job(
-        &self,
-    ) -> crate::operation::delete_sync_job::builders::DeleteSyncJobFluentBuilder {
-        crate::operation::delete_sync_job::builders::DeleteSyncJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_sync_job(&self) -> crate::operation::delete_sync_job::builders::DeleteSyncJobFluentBuilder {
+        crate::operation::delete_sync_job::builders::DeleteSyncJobFluentBuilder::new(self.handle.clone())
     }
 }

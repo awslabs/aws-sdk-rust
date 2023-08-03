@@ -10,10 +10,7 @@ impl UnsubscribeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::unsubscribe::UnsubscribeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unsubscribe::UnsubscribeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unsubscribe::UnsubscribeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.unsubscribe();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl UnsubscribeFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::unsubscribe::Unsubscribe,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::unsubscribe::Unsubscribe, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::unsubscribe::UnsubscribeError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl UnsubscribeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,27 +98,18 @@ impl UnsubscribeFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::unsubscribe::Unsubscribe,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::unsubscribe::Unsubscribe, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::unsubscribe::UnsubscribeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the subscription to be deleted.</p>
-    pub fn subscription_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscription_arn(input.into());
         self
     }
     /// <p>The ARN of the subscription to be deleted.</p>
-    pub fn set_subscription_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_arn(input);
         self
     }

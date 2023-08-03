@@ -18,8 +18,7 @@ pub struct AdvancedEventSelector {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Contains all selector statements in an advanced event selector.</p>
     #[doc(hidden)]
-    pub field_selectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdvancedFieldSelector>>,
+    pub field_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedFieldSelector>>,
 }
 impl AdvancedEventSelector {
     /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events for only two S3 buckets".</p>
@@ -40,13 +39,10 @@ impl AdvancedEventSelector {
 
 /// A builder for [`AdvancedEventSelector`](crate::types::AdvancedEventSelector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdvancedEventSelectorBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) field_selectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdvancedFieldSelector>>,
+    pub(crate) field_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedFieldSelector>>,
 }
 impl AdvancedEventSelectorBuilder {
     /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events for only two S3 buckets".</p>
@@ -75,17 +71,12 @@ impl AdvancedEventSelectorBuilder {
         self
     }
     /// <p>Contains all selector statements in an advanced event selector.</p>
-    pub fn set_field_selectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedFieldSelector>>,
-    ) -> Self {
+    pub fn set_field_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedFieldSelector>>) -> Self {
         self.field_selectors = input;
         self
     }
     /// <p>Contains all selector statements in an advanced event selector.</p>
-    pub fn get_field_selectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedFieldSelector>> {
+    pub fn get_field_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedFieldSelector>> {
         &self.field_selectors
     }
     /// Consumes the builder and constructs a [`AdvancedEventSelector`](crate::types::AdvancedEventSelector).

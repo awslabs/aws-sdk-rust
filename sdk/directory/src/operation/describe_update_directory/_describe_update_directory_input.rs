@@ -36,18 +36,14 @@ impl DescribeUpdateDirectoryInput {
 }
 impl DescribeUpdateDirectoryInput {
     /// Creates a new builder-style object to manufacture [`DescribeUpdateDirectoryInput`](crate::operation::describe_update_directory::DescribeUpdateDirectoryInput).
-    pub fn builder(
-    ) -> crate::operation::describe_update_directory::builders::DescribeUpdateDirectoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_update_directory::builders::DescribeUpdateDirectoryInputBuilder {
         crate::operation::describe_update_directory::builders::DescribeUpdateDirectoryInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUpdateDirectoryInput`](crate::operation::describe_update_directory::DescribeUpdateDirectoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUpdateDirectoryInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) update_type: ::std::option::Option<crate::types::UpdateType>,
@@ -75,10 +71,7 @@ impl DescribeUpdateDirectoryInputBuilder {
         self
     }
     /// <p> The type of updates you want to describe for the directory. </p>
-    pub fn set_update_type(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateType>,
-    ) -> Self {
+    pub fn set_update_type(mut self, input: ::std::option::Option<crate::types::UpdateType>) -> Self {
         self.update_type = input;
         self
     }
@@ -121,13 +114,11 @@ impl DescribeUpdateDirectoryInputBuilder {
         crate::operation::describe_update_directory::DescribeUpdateDirectoryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_update_directory::DescribeUpdateDirectoryInput {
-                directory_id: self.directory_id,
-                update_type: self.update_type,
-                region_name: self.region_name,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_update_directory::DescribeUpdateDirectoryInput {
+            directory_id: self.directory_id,
+            update_type: self.update_type,
+            region_name: self.region_name,
+            next_token: self.next_token,
+        })
     }
 }

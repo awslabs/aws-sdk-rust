@@ -17,10 +17,7 @@ impl ReservedDbInstanceAlreadyExistsFault {
 }
 impl ::std::fmt::Display for ReservedDbInstanceAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "ReservedDbInstanceAlreadyExistsFault [ReservedDBInstanceAlreadyExistsFault]"
-        )?;
+        ::std::write!(f, "ReservedDbInstanceAlreadyExistsFault [ReservedDBInstanceAlreadyExistsFault]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -30,17 +27,13 @@ impl ::std::fmt::Display for ReservedDbInstanceAlreadyExistsFault {
     }
 }
 impl ::std::error::Error for ReservedDbInstanceAlreadyExistsFault {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::ReservedDbInstanceAlreadyExistsFault
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::ReservedDbInstanceAlreadyExistsFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ReservedDbInstanceAlreadyExistsFault
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ReservedDbInstanceAlreadyExistsFault {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -54,9 +47,7 @@ impl ReservedDbInstanceAlreadyExistsFault {
 
 /// A builder for [`ReservedDbInstanceAlreadyExistsFault`](crate::types::error::ReservedDbInstanceAlreadyExistsFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservedDbInstanceAlreadyExistsFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -83,10 +74,7 @@ impl ReservedDbInstanceAlreadyExistsFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -35,9 +35,7 @@ impl ListLfTagsOutput {
 
 /// A builder for [`ListLfTagsOutput`](crate::operation::list_lf_tags::ListLfTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLfTagsOutputBuilder {
     pub(crate) lf_tags: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListLfTagsOutputBuilder {
         self
     }
     /// <p>A list of LF-tags that the requested has permission to view.</p>
-    pub fn set_lf_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
-    ) -> Self {
+    pub fn set_lf_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>) -> Self {
         self.lf_tags = input;
         self
     }

@@ -38,9 +38,7 @@ impl ModifyActivityStreamFluentBuilder {
         }
     }
     /// Access the ModifyActivityStream as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_activity_stream::builders::ModifyActivityStreamInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_activity_stream::builders::ModifyActivityStreamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ModifyActivityStreamFluentBuilder {
             crate::operation::modify_activity_stream::ModifyActivityStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_activity_stream::ModifyActivityStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_activity_stream::ModifyActivityStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ModifyActivityStreamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ModifyActivityStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_activity_stream::ModifyActivityStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_activity_stream::ModifyActivityStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_activity_stream::ModifyActivityStreamError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ModifyActivityStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_activity_stream::ModifyActivityStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_activity_stream::ModifyActivityStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_activity_stream::ModifyActivityStreamError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl ModifyActivityStreamFluentBuilder {
             crate::operation::modify_activity_stream::ModifyActivityStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_activity_stream::ModifyActivityStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_activity_stream::ModifyActivityStreamError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +130,7 @@ impl ModifyActivityStreamFluentBuilder {
         self
     }
     /// <p>The audit policy state. When a policy is unlocked, it is read/write. When it is locked, it is read-only. You can edit your audit policy only when the activity stream is unlocked or stopped.</p>
-    pub fn set_audit_policy_state(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditPolicyState>,
-    ) -> Self {
+    pub fn set_audit_policy_state(mut self, input: ::std::option::Option<crate::types::AuditPolicyState>) -> Self {
         self.inner = self.inner.set_audit_policy_state(input);
         self
     }

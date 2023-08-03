@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeChannelOutput`](crate::operation::describe_channel::DescribeChannelOutput) with field(s):
     ///   - [`channel(Option<Channel>)`](crate::operation::describe_channel::DescribeChannelOutput::channel): <p>The channel details.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::operation::describe_channel::DescribeChannelError)
-    pub fn describe_channel(
-        &self,
-    ) -> crate::operation::describe_channel::builders::DescribeChannelFluentBuilder {
-        crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_channel(&self) -> crate::operation::describe_channel::builders::DescribeChannelFluentBuilder {
+        crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::new(self.handle.clone())
     }
 }

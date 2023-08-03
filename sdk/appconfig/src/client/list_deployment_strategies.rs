@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<DeploymentStrategy>>)`](crate::operation::list_deployment_strategies::ListDeploymentStrategiesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_deployment_strategies::ListDeploymentStrategiesOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListDeploymentStrategiesError>`](crate::operation::list_deployment_strategies::ListDeploymentStrategiesError)
-    pub fn list_deployment_strategies(
-        &self,
-    ) -> crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesFluentBuilder
-    {
+    pub fn list_deployment_strategies(&self) -> crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesFluentBuilder {
         crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesFluentBuilder::new(self.handle.clone())
     }
 }

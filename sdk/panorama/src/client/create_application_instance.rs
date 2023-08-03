@@ -14,7 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateApplicationInstanceOutput`](crate::operation::create_application_instance::CreateApplicationInstanceOutput) with field(s):
     ///   - [`application_instance_id(Option<String>)`](crate::operation::create_application_instance::CreateApplicationInstanceOutput::application_instance_id): <p>The application instance's ID.</p>
     /// - On failure, responds with [`SdkError<CreateApplicationInstanceError>`](crate::operation::create_application_instance::CreateApplicationInstanceError)
-    pub fn create_application_instance(&self) -> crate::operation::create_application_instance::builders::CreateApplicationInstanceFluentBuilder{
+    pub fn create_application_instance(&self) -> crate::operation::create_application_instance::builders::CreateApplicationInstanceFluentBuilder {
         crate::operation::create_application_instance::builders::CreateApplicationInstanceFluentBuilder::new(self.handle.clone())
     }
 }

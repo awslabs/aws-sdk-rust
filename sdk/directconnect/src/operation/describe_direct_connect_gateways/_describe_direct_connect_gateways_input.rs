@@ -31,16 +31,14 @@ impl DescribeDirectConnectGatewaysInput {
 }
 impl DescribeDirectConnectGatewaysInput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewaysInput`](crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysInput).
-    pub fn builder() -> crate::operation::describe_direct_connect_gateways::builders::DescribeDirectConnectGatewaysInputBuilder{
+    pub fn builder() -> crate::operation::describe_direct_connect_gateways::builders::DescribeDirectConnectGatewaysInputBuilder {
         crate::operation::describe_direct_connect_gateways::builders::DescribeDirectConnectGatewaysInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDirectConnectGatewaysInput`](crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewaysInputBuilder {
     pub(crate) direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -48,18 +46,12 @@ pub struct DescribeDirectConnectGatewaysInputBuilder {
 }
 impl DescribeDirectConnectGatewaysInputBuilder {
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = input;
         self
     }
@@ -105,15 +97,10 @@ impl DescribeDirectConnectGatewaysInputBuilder {
         crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysInput {
-                direct_connect_gateway_id: self.direct_connect_gateway_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysInput {
+            direct_connect_gateway_id: self.direct_connect_gateway_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

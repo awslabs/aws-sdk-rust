@@ -22,34 +22,26 @@ impl PutVoiceConnectorOriginationInput {
 }
 impl PutVoiceConnectorOriginationInput {
     /// Creates a new builder-style object to manufacture [`PutVoiceConnectorOriginationInput`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationInput).
-    pub fn builder() -> crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationInputBuilder{
+    pub fn builder() -> crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationInputBuilder {
         crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutVoiceConnectorOriginationInput`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutVoiceConnectorOriginationInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) origination: ::std::option::Option<crate::types::Origination>,
 }
 impl PutVoiceConnectorOriginationInputBuilder {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_id = input;
         self
     }
@@ -63,10 +55,7 @@ impl PutVoiceConnectorOriginationInputBuilder {
         self
     }
     /// <p>The origination settings being updated.</p>
-    pub fn set_origination(
-        mut self,
-        input: ::std::option::Option<crate::types::Origination>,
-    ) -> Self {
+    pub fn set_origination(mut self, input: ::std::option::Option<crate::types::Origination>) -> Self {
         self.origination = input;
         self
     }
@@ -81,11 +70,9 @@ impl PutVoiceConnectorOriginationInputBuilder {
         crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationInput {
-                voice_connector_id: self.voice_connector_id,
-                origination: self.origination,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationInput {
+            voice_connector_id: self.voice_connector_id,
+            origination: self.origination,
+        })
     }
 }

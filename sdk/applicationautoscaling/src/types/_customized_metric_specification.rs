@@ -29,8 +29,7 @@ pub struct CustomizedMetricSpecification {
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw metric and metric math expressions.</p>
     #[doc(hidden)]
-    pub metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>>,
+    pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>>,
 }
 impl CustomizedMetricSpecification {
     /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that's returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
@@ -68,17 +67,14 @@ impl CustomizedMetricSpecification {
 
 /// A builder for [`CustomizedMetricSpecification`](crate::types::CustomizedMetricSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomizedMetricSpecificationBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>,
     pub(crate) statistic: ::std::option::Option<crate::types::MetricStatistic>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,
-    pub(crate) metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>>,
 }
 impl CustomizedMetricSpecificationBuilder {
     /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that's returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
@@ -123,18 +119,13 @@ impl CustomizedMetricSpecificationBuilder {
     }
     /// <p>The dimensions of the metric. </p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The dimensions of the metric. </p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>> {
         &self.dimensions
     }
     /// <p>The statistic of the metric.</p>
@@ -143,10 +134,7 @@ impl CustomizedMetricSpecificationBuilder {
         self
     }
     /// <p>The statistic of the metric.</p>
-    pub fn set_statistic(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricStatistic>,
-    ) -> Self {
+    pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::MetricStatistic>) -> Self {
         self.statistic = input;
         self
     }
@@ -180,17 +168,12 @@ impl CustomizedMetricSpecificationBuilder {
         self
     }
     /// <p>The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw metric and metric math expressions.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>>) -> Self {
         self.metrics = input;
         self
     }
     /// <p>The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw metric and metric math expressions.</p>
-    pub fn get_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>> {
         &self.metrics
     }
     /// Consumes the builder and constructs a [`CustomizedMetricSpecification`](crate::types::CustomizedMetricSpecification).

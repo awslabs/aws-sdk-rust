@@ -72,9 +72,7 @@ impl CustomerGateway {
 
 /// A builder for [`CustomerGateway`](crate::types::CustomerGateway).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomerGatewayBuilder {
     pub(crate) bgp_asn: ::std::option::Option<::std::string::String>,
     pub(crate) customer_gateway_id: ::std::option::Option<::std::string::String>,
@@ -101,18 +99,12 @@ impl CustomerGatewayBuilder {
         &self.bgp_asn
     }
     /// <p>The ID of the customer gateway.</p>
-    pub fn customer_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the customer gateway.</p>
-    pub fn set_customer_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_gateway_id = input;
         self
     }
@@ -135,18 +127,12 @@ impl CustomerGatewayBuilder {
         &self.ip_address
     }
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -208,10 +194,7 @@ impl CustomerGatewayBuilder {
         self
     }
     /// <p>Any tags assigned to the customer gateway.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`subscription_name(impl ::std::convert::Into<String>)`](crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionFluentBuilder::subscription_name) / [`set_subscription_name(Option<String>)`](crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionFluentBuilder::set_subscription_name): <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
     /// - On success, responds with [`DeleteEventSubscriptionOutput`](crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput)
     /// - On failure, responds with [`SdkError<DeleteEventSubscriptionError>`](crate::operation::delete_event_subscription::DeleteEventSubscriptionError)
-    pub fn delete_event_subscription(
-        &self,
-    ) -> crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionFluentBuilder
-    {
+    pub fn delete_event_subscription(&self) -> crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionFluentBuilder {
         crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

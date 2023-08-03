@@ -9,33 +9,35 @@ pub fn de_describe_pending_maintenance_actions_http_error(
     crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundFault" => crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsError::ResourceNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ResourceNotFoundFault" => {
+            crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsError::ResourceNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_fault::de_resource_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_fault::de_resource_not_found_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsError::generic(generic),
     })
 }
 
@@ -51,16 +53,21 @@ pub fn de_describe_pending_maintenance_actions_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsOutputBuilder::default();
-        output = crate::protocol_serde::shape_describe_pending_maintenance_actions::de_describe_pending_maintenance_actions(_response_body, output).map_err(crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_describe_pending_maintenance_actions::de_describe_pending_maintenance_actions(_response_body, output)
+            .map_err(crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_describe_pending_maintenance_actions(inp: &[u8], mut builder: crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsOutputBuilder) -> Result<crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_describe_pending_maintenance_actions(
+    inp: &[u8],
+    mut builder: crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsOutputBuilder,
+) -> Result<
+    crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

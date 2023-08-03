@@ -30,27 +30,19 @@ impl Relationship {
 
 /// A builder for [`Relationship`](crate::types::Relationship).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RelationshipBuilder {
     pub(crate) target_component_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) relationship_type: ::std::option::Option<::std::string::String>,
 }
 impl RelationshipBuilder {
     /// <p>The ID of the target component type associated with this relationship.</p>
-    pub fn target_component_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_component_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_component_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the target component type associated with this relationship.</p>
-    pub fn set_target_component_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_component_type_id = input;
         self
     }
@@ -59,18 +51,12 @@ impl RelationshipBuilder {
         &self.target_component_type_id
     }
     /// <p>The type of the relationship.</p>
-    pub fn relationship_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relationship_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relationship_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the relationship.</p>
-    pub fn set_relationship_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relationship_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relationship_type = input;
         self
     }

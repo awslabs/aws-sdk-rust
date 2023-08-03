@@ -23,9 +23,7 @@ impl S3TableOutputOptions {
 
 /// A builder for [`S3TableOutputOptions`](crate::types::S3TableOutputOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3TableOutputOptionsBuilder {
     pub(crate) location: ::std::option::Option<crate::types::S3Location>,
 }
@@ -46,8 +44,6 @@ impl S3TableOutputOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`S3TableOutputOptions`](crate::types::S3TableOutputOptions).
     pub fn build(self) -> crate::types::S3TableOutputOptions {
-        crate::types::S3TableOutputOptions {
-            location: self.location,
-        }
+        crate::types::S3TableOutputOptions { location: self.location }
     }
 }

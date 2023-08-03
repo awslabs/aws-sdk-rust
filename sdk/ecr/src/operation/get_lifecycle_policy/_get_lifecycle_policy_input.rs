@@ -22,17 +22,14 @@ impl GetLifecyclePolicyInput {
 }
 impl GetLifecyclePolicyInput {
     /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyInput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyInputBuilder {
         crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLifecyclePolicyInput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLifecyclePolicyInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl GetLifecyclePolicyInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -75,15 +66,10 @@ impl GetLifecyclePolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetLifecyclePolicyInput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput {
+            registry_id: self.registry_id,
+            repository_name: self.repository_name,
+        })
     }
 }

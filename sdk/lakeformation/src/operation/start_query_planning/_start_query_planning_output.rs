@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for StartQueryPlanningOutput {
 }
 impl StartQueryPlanningOutput {
     /// Creates a new builder-style object to manufacture [`StartQueryPlanningOutput`](crate::operation::start_query_planning::StartQueryPlanningOutput).
-    pub fn builder(
-    ) -> crate::operation::start_query_planning::builders::StartQueryPlanningOutputBuilder {
+    pub fn builder() -> crate::operation::start_query_planning::builders::StartQueryPlanningOutputBuilder {
         crate::operation::start_query_planning::builders::StartQueryPlanningOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartQueryPlanningOutput`](crate::operation::start_query_planning::StartQueryPlanningOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartQueryPlanningOutputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

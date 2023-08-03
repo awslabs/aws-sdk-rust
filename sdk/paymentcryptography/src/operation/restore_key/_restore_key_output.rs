@@ -28,9 +28,7 @@ impl RestoreKeyOutput {
 
 /// A builder for [`RestoreKeyOutput`](crate::operation::restore_key::RestoreKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreKeyOutputBuilder {
     pub(crate) key: ::std::option::Option<crate::types::Key>,
     _request_id: Option<String>,

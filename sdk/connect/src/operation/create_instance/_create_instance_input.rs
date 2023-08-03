@@ -99,32 +99,21 @@ impl CreateInstanceInputBuilder {
         self
     }
     /// <p>The type of identity management for your Amazon Connect users.</p>
-    pub fn set_identity_management_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryType>,
-    ) -> Self {
+    pub fn set_identity_management_type(mut self, input: ::std::option::Option<crate::types::DirectoryType>) -> Self {
         self.identity_management_type = input;
         self
     }
     /// <p>The type of identity management for your Amazon Connect users.</p>
-    pub fn get_identity_management_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DirectoryType> {
+    pub fn get_identity_management_type(&self) -> &::std::option::Option<crate::types::DirectoryType> {
         &self.identity_management_type
     }
     /// <p>The name for your instance.</p>
-    pub fn instance_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for your instance.</p>
-    pub fn set_instance_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_alias = input;
         self
     }
@@ -177,10 +166,7 @@ impl CreateInstanceInputBuilder {
     /// Consumes the builder and constructs a [`CreateInstanceInput`](crate::operation::create_instance::CreateInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_instance::CreateInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_instance::CreateInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_instance::CreateInstanceInput {
             client_token: self.client_token,
             identity_management_type: self.identity_management_type,

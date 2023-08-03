@@ -38,10 +38,7 @@ impl DeleteObjectsOnCancelFluentBuilder {
         }
     }
     /// Access the DeleteObjectsOnCancel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_objects_on_cancel::builders::DeleteObjectsOnCancelInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_objects_on_cancel::builders::DeleteObjectsOnCancelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeleteObjectsOnCancelFluentBuilder {
             crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeleteObjectsOnCancelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeleteObjectsOnCancelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeleteObjectsOnCancelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DeleteObjectsOnCancelFluentBuilder {
             crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +125,12 @@ impl DeleteObjectsOnCancelFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The database that contains the governed table.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The database that contains the governed table.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -173,18 +153,12 @@ impl DeleteObjectsOnCancelFluentBuilder {
         self.inner.get_table_name()
     }
     /// <p>ID of the transaction that the writes occur in.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transaction_id(input.into());
         self
     }
     /// <p>ID of the transaction that the writes occur in.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
@@ -202,17 +176,12 @@ impl DeleteObjectsOnCancelFluentBuilder {
         self
     }
     /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
-    pub fn set_objects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualObject>>,
-    ) -> Self {
+    pub fn set_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualObject>>) -> Self {
         self.inner = self.inner.set_objects(input);
         self
     }
     /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
-    pub fn get_objects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualObject>> {
+    pub fn get_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualObject>> {
         self.inner.get_objects()
     }
 }

@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ParameterExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ParameterExceptionReason {
             "ILLEGAL_COMBINATION" => ParameterExceptionReason::IllegalCombination,
             "INVALID_OPTION" => ParameterExceptionReason::InvalidOption,
             "INVALID_TAG_KEY" => ParameterExceptionReason::InvalidTagKey,
-            other => ParameterExceptionReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ParameterExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl ParameterExceptionReason {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ILLEGAL_ARGUMENT",
-            "ILLEGAL_COMBINATION",
-            "INVALID_OPTION",
-            "INVALID_TAG_KEY",
-        ]
+        &["ILLEGAL_ARGUMENT", "ILLEGAL_COMBINATION", "INVALID_OPTION", "INVALID_TAG_KEY"]
     }
 }
 impl ::std::convert::AsRef<str> for ParameterExceptionReason {

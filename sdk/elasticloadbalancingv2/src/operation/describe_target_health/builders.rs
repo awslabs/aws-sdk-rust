@@ -37,9 +37,7 @@ impl DescribeTargetHealthFluentBuilder {
         }
     }
     /// Access the DescribeTargetHealth as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_target_health::builders::DescribeTargetHealthInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_target_health::builders::DescribeTargetHealthInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeTargetHealthFluentBuilder {
             crate::operation::describe_target_health::DescribeTargetHealth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_target_health::DescribeTargetHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_target_health::DescribeTargetHealthError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeTargetHealthFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeTargetHealthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_target_health::DescribeTargetHealthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_target_health::DescribeTargetHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_target_health::DescribeTargetHealthError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeTargetHealthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_target_health::DescribeTargetHealthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_target_health::DescribeTargetHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_target_health::DescribeTargetHealthError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeTargetHealthFluentBuilder {
             crate::operation::describe_target_health::DescribeTargetHealth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_target_health::DescribeTargetHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_target_health::DescribeTargetHealthError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_group_arn(input);
         self
     }
@@ -152,17 +133,12 @@ impl DescribeTargetHealthFluentBuilder {
         self
     }
     /// <p>The targets.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>>) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }
     /// <p>The targets.</p>
-    pub fn get_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>> {
         self.inner.get_targets()
     }
 }

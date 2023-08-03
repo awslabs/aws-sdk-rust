@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`CreateObservabilityConfigurationOutput`](crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput) with field(s):
     ///   - [`observability_configuration(Option<ObservabilityConfiguration>)`](crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput::observability_configuration): <p>A description of the App Runner observability configuration that's created by this request.</p>
     /// - On failure, responds with [`SdkError<CreateObservabilityConfigurationError>`](crate::operation::create_observability_configuration::CreateObservabilityConfigurationError)
-    pub fn create_observability_configuration(&self) -> crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationFluentBuilder{
+    pub fn create_observability_configuration(
+        &self,
+    ) -> crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationFluentBuilder {
         crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

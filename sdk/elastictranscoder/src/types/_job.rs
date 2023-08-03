@@ -51,9 +51,7 @@ pub struct Job {
     /// <li> <p>The following symbols: <code>_.:/=+-%@</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub user_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub user_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Details about the timing of a job.</p>
     #[doc(hidden)]
     pub timing: ::std::option::Option<crate::types::Timing>,
@@ -115,11 +113,7 @@ impl Job {
     /// <li> <p> <code>Space</code> </p> </li>
     /// <li> <p>The following symbols: <code>_.:/=+-%@</code> </p> </li>
     /// </ul>
-    pub fn user_metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn user_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.user_metadata.as_ref()
     }
     /// <p>Details about the timing of a job.</p>
@@ -136,9 +130,7 @@ impl Job {
 
 /// A builder for [`Job`](crate::types::Job).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -150,9 +142,7 @@ pub struct JobBuilder {
     pub(crate) output_key_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) playlists: ::std::option::Option<::std::vec::Vec<crate::types::Playlist>>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
-    pub(crate) user_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) user_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) timing: ::std::option::Option<crate::types::Timing>,
 }
 impl JobBuilder {
@@ -224,10 +214,7 @@ impl JobBuilder {
         self
     }
     /// <p>Information about the files that you're transcoding. If you specified multiple files for this job, Elastic Transcoder stitches the files together to make one output.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobInput>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobInput>>) -> Self {
         self.inputs = input;
         self
     }
@@ -272,10 +259,7 @@ impl JobBuilder {
     }
     /// <p>Information about the output files. We recommend that you use the <code>Outputs</code> syntax for all jobs, even when you want Elastic Transcoder to transcode a file into only one format. Do not use both the <code>Outputs</code> and <code>Output</code> syntaxes in the same request. You can create a maximum of 30 outputs per job. </p>
     /// <p>If you specify more than one output for a job, Elastic Transcoder creates the files for each output in the order in which you specify them in the job.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobOutput>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobOutput>>) -> Self {
         self.outputs = input;
         self
     }
@@ -285,18 +269,12 @@ impl JobBuilder {
         &self.outputs
     }
     /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists. We recommend that you add a / or some other delimiter to the end of the <code>OutputKeyPrefix</code>.</p>
-    pub fn output_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists. We recommend that you add a / or some other delimiter to the end of the <code>OutputKeyPrefix</code>.</p>
-    pub fn set_output_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_key_prefix = input;
         self
     }
@@ -324,10 +302,7 @@ impl JobBuilder {
     /// </important>
     /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information about the master playlists that you want Elastic Transcoder to create.</p>
     /// <p>The maximum number of master playlists in a job is 30.</p>
-    pub fn set_playlists(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Playlist>>,
-    ) -> Self {
+    pub fn set_playlists(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Playlist>>) -> Self {
         self.playlists = input;
         self
     }
@@ -365,11 +340,7 @@ impl JobBuilder {
     /// <li> <p> <code>Space</code> </p> </li>
     /// <li> <p>The following symbols: <code>_.:/=+-%@</code> </p> </li>
     /// </ul>
-    pub fn user_metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.user_metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.user_metadata = ::std::option::Option::Some(hash_map);
@@ -385,9 +356,7 @@ impl JobBuilder {
     /// </ul>
     pub fn set_user_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.user_metadata = input;
         self
@@ -400,11 +369,7 @@ impl JobBuilder {
     /// <li> <p> <code>Space</code> </p> </li>
     /// <li> <p>The following symbols: <code>_.:/=+-%@</code> </p> </li>
     /// </ul>
-    pub fn get_user_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_user_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.user_metadata
     }
     /// <p>Details about the timing of a job.</p>

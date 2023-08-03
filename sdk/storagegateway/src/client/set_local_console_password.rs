@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`SetLocalConsolePasswordOutput`](crate::operation::set_local_console_password::SetLocalConsolePasswordOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::set_local_console_password::SetLocalConsolePasswordOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<SetLocalConsolePasswordError>`](crate::operation::set_local_console_password::SetLocalConsolePasswordError)
-    pub fn set_local_console_password(
-        &self,
-    ) -> crate::operation::set_local_console_password::builders::SetLocalConsolePasswordFluentBuilder
-    {
+    pub fn set_local_console_password(&self) -> crate::operation::set_local_console_password::builders::SetLocalConsolePasswordFluentBuilder {
         crate::operation::set_local_console_password::builders::SetLocalConsolePasswordFluentBuilder::new(self.handle.clone())
     }
 }

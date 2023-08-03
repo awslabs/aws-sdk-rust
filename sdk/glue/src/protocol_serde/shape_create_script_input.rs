@@ -9,10 +9,7 @@ pub fn ser_create_script_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_code_gen_node::ser_code_gen_node(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_code_gen_node::ser_code_gen_node(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_create_script_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_code_gen_edge::ser_code_gen_edge(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_code_gen_edge::ser_code_gen_edge(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }

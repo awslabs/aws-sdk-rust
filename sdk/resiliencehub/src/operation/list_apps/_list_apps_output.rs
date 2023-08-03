@@ -35,9 +35,7 @@ impl ListAppsOutput {
 
 /// A builder for [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppsOutputBuilder {
     pub(crate) app_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AppSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListAppsOutputBuilder {
         self
     }
     /// <p>Summaries for the Resilience Hub application.</p>
-    pub fn set_app_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppSummary>>,
-    ) -> Self {
+    pub fn set_app_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppSummary>>) -> Self {
         self.app_summaries = input;
         self
     }
     /// <p>Summaries for the Resilience Hub application.</p>
-    pub fn get_app_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppSummary>> {
+    pub fn get_app_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppSummary>> {
         &self.app_summaries
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

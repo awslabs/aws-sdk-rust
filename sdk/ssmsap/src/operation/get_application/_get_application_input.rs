@@ -36,9 +36,7 @@ impl GetApplicationInput {
 
 /// A builder for [`GetApplicationInput`](crate::operation::get_application::GetApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApplicationInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct GetApplicationInputBuilder {
 }
 impl GetApplicationInputBuilder {
     /// <p>The ID of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -66,18 +58,12 @@ impl GetApplicationInputBuilder {
         &self.application_id
     }
     /// <p>The Amazon Resource Name (ARN) of the application. </p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application. </p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -86,18 +72,12 @@ impl GetApplicationInputBuilder {
         &self.application_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the application registry.</p>
-    pub fn app_registry_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_registry_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_registry_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application registry.</p>
-    pub fn set_app_registry_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_registry_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_registry_arn = input;
         self
     }
@@ -108,10 +88,7 @@ impl GetApplicationInputBuilder {
     /// Consumes the builder and constructs a [`GetApplicationInput`](crate::operation::get_application::GetApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_application::GetApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_application::GetApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_application::GetApplicationInput {
             application_id: self.application_id,
             application_arn: self.application_arn,

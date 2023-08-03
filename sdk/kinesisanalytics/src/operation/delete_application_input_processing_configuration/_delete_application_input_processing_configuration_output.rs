@@ -12,16 +12,16 @@ impl ::aws_http::request_id::RequestId for DeleteApplicationInputProcessingConfi
 }
 impl DeleteApplicationInputProcessingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationInputProcessingConfigurationOutput`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationOutputBuilder
+    {
         crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationInputProcessingConfigurationOutput`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationInputProcessingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +36,7 @@ impl DeleteApplicationInputProcessingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteApplicationInputProcessingConfigurationOutput`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput).
-    pub fn build(self) -> crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput{
+    pub fn build(self) -> crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput {
         crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput {
             _request_id: self._request_id,
         }

@@ -27,7 +27,7 @@ impl GetDistributionMetricDataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDistributionMetricDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_distribution_metric_data::builders::GetDistributionMetricDataInputBuilder,
+    inner: crate::operation::get_distribution_metric_data::builders::GetDistributionMetricDataInputBuilder,
 }
 impl GetDistributionMetricDataFluentBuilder {
     /// Creates a new `GetDistributionMetricData`.
@@ -38,7 +38,7 @@ impl GetDistributionMetricDataFluentBuilder {
         }
     }
     /// Access the GetDistributionMetricData as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_distribution_metric_data::builders::GetDistributionMetricDataInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_distribution_metric_data::builders::GetDistributionMetricDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetDistributionMetricDataFluentBuilder {
             crate::operation::get_distribution_metric_data::GetDistributionMetricData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_distribution_metric_data::GetDistributionMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_metric_data::GetDistributionMetricDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetDistributionMetricDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetDistributionMetricDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_distribution_metric_data::GetDistributionMetricDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_distribution_metric_data::GetDistributionMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_metric_data::GetDistributionMetricDataError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetDistributionMetricDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_distribution_metric_data::GetDistributionMetricDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_distribution_metric_data::GetDistributionMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_metric_data::GetDistributionMetricDataError>,
     > {
         self.send_middleware().await
     }
@@ -115,27 +106,19 @@ impl GetDistributionMetricDataFluentBuilder {
             crate::operation::get_distribution_metric_data::GetDistributionMetricData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_distribution_metric_data::GetDistributionMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_metric_data::GetDistributionMetricDataError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the distribution for which to get metric data.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn distribution_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distribution_name(input.into());
         self
     }
     /// <p>The name of the distribution for which to get metric data.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn set_distribution_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distribution_name(input);
         self
     }
@@ -168,10 +151,7 @@ impl GetDistributionMetricDataFluentBuilder {
     /// <li> <p> <b> <code>4xxErrorRate</code> </b> - The percentage of all viewer requests for which the response's HTTP status cod was 4xx. In these cases, the client or client viewer may have made an error. For example, a status code of 404 (Not Found) means that the client requested an object that could not be found.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>
     /// <li> <p> <b> <code>5xxErrorRate</code> </b> - The percentage of all viewer requests for which the response's HTTP status code was 5xx. In these cases, the origin server did not satisfy the requests. For example, a status code of 503 (Service Unavailable) means that the origin server is currently unavailable.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>
     /// </ul>
-    pub fn set_metric_name(
-        mut self,
-        input: ::std::option::Option<crate::types::DistributionMetricName>,
-    ) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::DistributionMetricName>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
     }
@@ -206,10 +186,7 @@ impl GetDistributionMetricDataFluentBuilder {
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -241,10 +218,7 @@ impl GetDistributionMetricDataFluentBuilder {
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -315,10 +289,7 @@ impl GetDistributionMetricDataFluentBuilder {
     /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>) -> Self {
         self.inner = self.inner.set_statistics(input);
         self
     }
@@ -331,9 +302,7 @@ impl GetDistributionMetricDataFluentBuilder {
     /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn get_statistics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
+    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
         self.inner.get_statistics()
     }
 }

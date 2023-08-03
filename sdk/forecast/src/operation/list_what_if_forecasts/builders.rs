@@ -37,9 +37,7 @@ impl ListWhatIfForecastsFluentBuilder {
         }
     }
     /// Access the ListWhatIfForecasts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_what_if_forecasts::builders::ListWhatIfForecastsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_what_if_forecasts::builders::ListWhatIfForecastsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListWhatIfForecastsFluentBuilder {
             crate::operation::list_what_if_forecasts::ListWhatIfForecasts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_what_if_forecasts::ListWhatIfForecastsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_what_if_forecasts::ListWhatIfForecastsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListWhatIfForecastsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListWhatIfForecastsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_what_if_forecasts::ListWhatIfForecastsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_what_if_forecasts::ListWhatIfForecastsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_what_if_forecasts::ListWhatIfForecastsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListWhatIfForecastsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_what_if_forecasts::ListWhatIfForecastsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_what_if_forecasts::ListWhatIfForecastsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_what_if_forecasts::ListWhatIfForecastsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListWhatIfForecastsFluentBuilder {
             crate::operation::list_what_if_forecasts::ListWhatIfForecasts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_what_if_forecasts::ListWhatIfForecastsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_what_if_forecasts::ListWhatIfForecastsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_what_if_forecasts::paginator::ListWhatIfForecastsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_what_if_forecasts::paginator::ListWhatIfForecastsPaginator {
-        crate::operation::list_what_if_forecasts::paginator::ListWhatIfForecastsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_what_if_forecasts::paginator::ListWhatIfForecastsPaginator {
+        crate::operation::list_what_if_forecasts::paginator::ListWhatIfForecastsPaginator::new(self.handle, self.inner)
     }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -193,10 +175,7 @@ impl ListWhatIfForecastsFluentBuilder {
     /// <acct-id>
     /// :forecast/electricityWhatIfForecast" } ]
     /// </acct-id></code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

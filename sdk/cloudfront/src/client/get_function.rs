@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`e_tag(Option<String>)`](crate::operation::get_function::GetFunctionOutput::e_tag): <p>The version identifier for the current version of the CloudFront function.</p>
     ///   - [`content_type(Option<String>)`](crate::operation::get_function::GetFunctionOutput::content_type): <p>The content type (media type) of the response.</p>
     /// - On failure, responds with [`SdkError<GetFunctionError>`](crate::operation::get_function::GetFunctionError)
-    pub fn get_function(
-        &self,
-    ) -> crate::operation::get_function::builders::GetFunctionFluentBuilder {
+    pub fn get_function(&self) -> crate::operation::get_function::builders::GetFunctionFluentBuilder {
         crate::operation::get_function::builders::GetFunctionFluentBuilder::new(self.handle.clone())
     }
 }

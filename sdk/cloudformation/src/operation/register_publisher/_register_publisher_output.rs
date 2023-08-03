@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for RegisterPublisherOutput {
 }
 impl RegisterPublisherOutput {
     /// Creates a new builder-style object to manufacture [`RegisterPublisherOutput`](crate::operation::register_publisher::RegisterPublisherOutput).
-    pub fn builder(
-    ) -> crate::operation::register_publisher::builders::RegisterPublisherOutputBuilder {
+    pub fn builder() -> crate::operation::register_publisher::builders::RegisterPublisherOutputBuilder {
         crate::operation::register_publisher::builders::RegisterPublisherOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterPublisherOutput`](crate::operation::register_publisher::RegisterPublisherOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterPublisherOutputBuilder {
     pub(crate) publisher_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

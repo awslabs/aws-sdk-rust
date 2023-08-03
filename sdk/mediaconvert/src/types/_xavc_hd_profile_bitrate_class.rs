@@ -39,13 +39,7 @@
 /// Specify the XAVC HD (Long GOP) Bitrate Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum XavcHdProfileBitrateClass {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for XavcHdProfileBitrateClass {
             "BITRATE_CLASS_25" => XavcHdProfileBitrateClass::BitrateClass25,
             "BITRATE_CLASS_35" => XavcHdProfileBitrateClass::BitrateClass35,
             "BITRATE_CLASS_50" => XavcHdProfileBitrateClass::BitrateClass50,
-            other => XavcHdProfileBitrateClass::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => XavcHdProfileBitrateClass::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -30,9 +30,7 @@ impl FilledMapShapeConditionalFormatting {
 
 /// A builder for [`FilledMapShapeConditionalFormatting`](crate::types::FilledMapShapeConditionalFormatting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilledMapShapeConditionalFormattingBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::ShapeConditionalFormat>,
@@ -58,10 +56,7 @@ impl FilledMapShapeConditionalFormattingBuilder {
         self
     }
     /// <p>The conditional formatting that determines the background color of a filled map's shape.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ShapeConditionalFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::ShapeConditionalFormat>) -> Self {
         self.format = input;
         self
     }

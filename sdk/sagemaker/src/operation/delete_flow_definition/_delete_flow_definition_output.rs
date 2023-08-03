@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteFlowDefinitionOutput {
 }
 impl DeleteFlowDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFlowDefinitionOutput`](crate::operation::delete_flow_definition::DeleteFlowDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_flow_definition::builders::DeleteFlowDefinitionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_flow_definition::builders::DeleteFlowDefinitionOutputBuilder {
         crate::operation::delete_flow_definition::builders::DeleteFlowDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFlowDefinitionOutput`](crate::operation::delete_flow_definition::DeleteFlowDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFlowDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

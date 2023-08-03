@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`wireless_device_type(WirelessDeviceType)`](crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesFluentBuilder::wireless_device_type) / [`set_wireless_device_type(Option<WirelessDeviceType>)`](crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesFluentBuilder::set_wireless_device_type): <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
     /// - On success, responds with [`DeleteQueuedMessagesOutput`](crate::operation::delete_queued_messages::DeleteQueuedMessagesOutput)
     /// - On failure, responds with [`SdkError<DeleteQueuedMessagesError>`](crate::operation::delete_queued_messages::DeleteQueuedMessagesError)
-    pub fn delete_queued_messages(
-        &self,
-    ) -> crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesFluentBuilder {
-        crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_queued_messages(&self) -> crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesFluentBuilder {
+        crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesFluentBuilder::new(self.handle.clone())
     }
 }

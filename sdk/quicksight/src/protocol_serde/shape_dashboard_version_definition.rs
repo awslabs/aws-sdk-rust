@@ -21,10 +21,7 @@ pub fn ser_dashboard_version_definition(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_sheet_definition::ser_sheet_definition(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_sheet_definition::ser_sheet_definition(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -36,10 +33,7 @@ pub fn ser_dashboard_version_definition(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_calculated_field::ser_calculated_field(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_calculated_field::ser_calculated_field(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -51,10 +45,7 @@ pub fn ser_dashboard_version_definition(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_parameter_declaration::ser_parameter_declaration(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_parameter_declaration::ser_parameter_declaration(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }
@@ -66,10 +57,7 @@ pub fn ser_dashboard_version_definition(
             {
                 #[allow(unused_mut)]
                 let mut object_20 = array_18.value().start_object();
-                crate::protocol_serde::shape_filter_group::ser_filter_group(
-                    &mut object_20,
-                    item_19,
-                )?;
+                crate::protocol_serde::shape_filter_group::ser_filter_group(&mut object_20, item_19)?;
                 object_20.finish();
             }
         }
@@ -81,10 +69,7 @@ pub fn ser_dashboard_version_definition(
             {
                 #[allow(unused_mut)]
                 let mut object_24 = array_22.value().start_object();
-                crate::protocol_serde::shape_column_configuration::ser_column_configuration(
-                    &mut object_24,
-                    item_23,
-                )?;
+                crate::protocol_serde::shape_column_configuration::ser_column_configuration(&mut object_24, item_23)?;
                 object_24.finish();
             }
         }
@@ -93,10 +78,7 @@ pub fn ser_dashboard_version_definition(
     if let Some(var_25) = &input.analysis_defaults {
         #[allow(unused_mut)]
         let mut object_26 = object.key("AnalysisDefaults").start_object();
-        crate::protocol_serde::shape_analysis_defaults::ser_analysis_defaults(
-            &mut object_26,
-            var_25,
-        )?;
+        crate::protocol_serde::shape_analysis_defaults::ser_analysis_defaults(&mut object_26, var_25)?;
         object_26.finish();
     }
     Ok(())
@@ -104,17 +86,9 @@ pub fn ser_dashboard_version_definition(
 
 pub(crate) fn de_dashboard_version_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::DashboardVersionDefinition>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::DashboardVersionDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -124,61 +98,48 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "DataSetIdentifierDeclarations" => {
-                                builder = builder.set_data_set_identifier_declarations(
-                                    crate::protocol_serde::shape_data_set_identifier_declaration_list::de_data_set_identifier_declaration_list(tokens)?
-                                );
-                            }
-                            "Sheets" => {
-                                builder = builder.set_sheets(
-                                    crate::protocol_serde::shape_sheet_definition_list::de_sheet_definition_list(tokens)?
-                                );
-                            }
-                            "CalculatedFields" => {
-                                builder = builder.set_calculated_fields(
-                                    crate::protocol_serde::shape_calculated_fields::de_calculated_fields(tokens)?
-                                );
-                            }
-                            "ParameterDeclarations" => {
-                                builder = builder.set_parameter_declarations(
-                                    crate::protocol_serde::shape_parameter_declaration_list::de_parameter_declaration_list(tokens)?
-                                );
-                            }
-                            "FilterGroups" => {
-                                builder = builder.set_filter_groups(
-                                    crate::protocol_serde::shape_filter_group_list::de_filter_group_list(tokens)?
-                                );
-                            }
-                            "ColumnConfigurations" => {
-                                builder = builder.set_column_configurations(
-                                    crate::protocol_serde::shape_column_configuration_list::de_column_configuration_list(tokens)?
-                                );
-                            }
-                            "AnalysisDefaults" => {
-                                builder = builder.set_analysis_defaults(
-                                    crate::protocol_serde::shape_analysis_defaults::de_analysis_defaults(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "DataSetIdentifierDeclarations" => {
+                            builder = builder.set_data_set_identifier_declarations(
+                                crate::protocol_serde::shape_data_set_identifier_declaration_list::de_data_set_identifier_declaration_list(tokens)?,
+                            );
                         }
-                    }
+                        "Sheets" => {
+                            builder = builder.set_sheets(crate::protocol_serde::shape_sheet_definition_list::de_sheet_definition_list(tokens)?);
+                        }
+                        "CalculatedFields" => {
+                            builder = builder.set_calculated_fields(crate::protocol_serde::shape_calculated_fields::de_calculated_fields(tokens)?);
+                        }
+                        "ParameterDeclarations" => {
+                            builder = builder.set_parameter_declarations(
+                                crate::protocol_serde::shape_parameter_declaration_list::de_parameter_declaration_list(tokens)?,
+                            );
+                        }
+                        "FilterGroups" => {
+                            builder = builder.set_filter_groups(crate::protocol_serde::shape_filter_group_list::de_filter_group_list(tokens)?);
+                        }
+                        "ColumnConfigurations" => {
+                            builder = builder.set_column_configurations(
+                                crate::protocol_serde::shape_column_configuration_list::de_column_configuration_list(tokens)?,
+                            );
+                        }
+                        "AnalysisDefaults" => {
+                            builder = builder.set_analysis_defaults(crate::protocol_serde::shape_analysis_defaults::de_analysis_defaults(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

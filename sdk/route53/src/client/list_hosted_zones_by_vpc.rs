@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`max_items(Option<i32>)`](crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcOutput::max_items): <p>The value that you specified for <code>MaxItems</code> in the most recent <code>ListHostedZonesByVPC</code> request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcOutput::next_token): <p>The value that you will use for <code>NextToken</code> in the next <code>ListHostedZonesByVPC</code> request.</p>
     /// - On failure, responds with [`SdkError<ListHostedZonesByVPCError>`](crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVPCError)
-    pub fn list_hosted_zones_by_vpc(
-        &self,
-    ) -> crate::operation::list_hosted_zones_by_vpc::builders::ListHostedZonesByVPCFluentBuilder
-    {
-        crate::operation::list_hosted_zones_by_vpc::builders::ListHostedZonesByVPCFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_hosted_zones_by_vpc(&self) -> crate::operation::list_hosted_zones_by_vpc::builders::ListHostedZonesByVPCFluentBuilder {
+        crate::operation::list_hosted_zones_by_vpc::builders::ListHostedZonesByVPCFluentBuilder::new(self.handle.clone())
     }
 }

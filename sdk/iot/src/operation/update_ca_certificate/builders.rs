@@ -38,9 +38,7 @@ impl UpdateCACertificateFluentBuilder {
         }
     }
     /// Access the UpdateCACertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_ca_certificate::builders::UpdateCaCertificateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_ca_certificate::builders::UpdateCaCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl UpdateCACertificateFluentBuilder {
             crate::operation::update_ca_certificate::UpdateCACertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ca_certificate::UpdateCACertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ca_certificate::UpdateCACertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl UpdateCACertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl UpdateCACertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ca_certificate::UpdateCaCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ca_certificate::UpdateCACertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ca_certificate::UpdateCACertificateError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl UpdateCACertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ca_certificate::UpdateCaCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ca_certificate::UpdateCACertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ca_certificate::UpdateCACertificateError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl UpdateCACertificateFluentBuilder {
             crate::operation::update_ca_certificate::UpdateCACertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ca_certificate::UpdateCACertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ca_certificate::UpdateCACertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The CA certificate identifier.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_id(input.into());
         self
     }
     /// <p>The CA certificate identifier.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_id(input);
         self
     }
@@ -151,10 +132,7 @@ impl UpdateCACertificateFluentBuilder {
     }
     /// <p>The updated status of the CA certificate.</p>
     /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
-    pub fn set_new_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CaCertificateStatus>,
-    ) -> Self {
+    pub fn set_new_status(mut self, input: ::std::option::Option<crate::types::CaCertificateStatus>) -> Self {
         self.inner = self.inner.set_new_status(input);
         self
     }
@@ -164,25 +142,17 @@ impl UpdateCACertificateFluentBuilder {
         self.inner.get_new_status()
     }
     /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
-    pub fn new_auto_registration_status(
-        mut self,
-        input: crate::types::AutoRegistrationStatus,
-    ) -> Self {
+    pub fn new_auto_registration_status(mut self, input: crate::types::AutoRegistrationStatus) -> Self {
         self.inner = self.inner.new_auto_registration_status(input);
         self
     }
     /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
-    pub fn set_new_auto_registration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoRegistrationStatus>,
-    ) -> Self {
+    pub fn set_new_auto_registration_status(mut self, input: ::std::option::Option<crate::types::AutoRegistrationStatus>) -> Self {
         self.inner = self.inner.set_new_auto_registration_status(input);
         self
     }
     /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
-    pub fn get_new_auto_registration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoRegistrationStatus> {
+    pub fn get_new_auto_registration_status(&self) -> &::std::option::Option<crate::types::AutoRegistrationStatus> {
         self.inner.get_new_auto_registration_status()
     }
     /// <p>Information about the registration configuration.</p>
@@ -191,17 +161,12 @@ impl UpdateCACertificateFluentBuilder {
         self
     }
     /// <p>Information about the registration configuration.</p>
-    pub fn set_registration_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationConfig>,
-    ) -> Self {
+    pub fn set_registration_config(mut self, input: ::std::option::Option<crate::types::RegistrationConfig>) -> Self {
         self.inner = self.inner.set_registration_config(input);
         self
     }
     /// <p>Information about the registration configuration.</p>
-    pub fn get_registration_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistrationConfig> {
+    pub fn get_registration_config(&self) -> &::std::option::Option<crate::types::RegistrationConfig> {
         self.inner.get_registration_config()
     }
     /// <p>If true, removes auto registration.</p>

@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`virtual_interface_test_history(Option<Vec<VirtualInterfaceTestHistory>>)`](crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryOutput::virtual_interface_test_history): <p>The ID of the tested virtual interface.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListVirtualInterfaceTestHistoryError>`](crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryError)
-    pub fn list_virtual_interface_test_history(&self) -> crate::operation::list_virtual_interface_test_history::builders::ListVirtualInterfaceTestHistoryFluentBuilder{
+    pub fn list_virtual_interface_test_history(
+        &self,
+    ) -> crate::operation::list_virtual_interface_test_history::builders::ListVirtualInterfaceTestHistoryFluentBuilder {
         crate::operation::list_virtual_interface_test_history::builders::ListVirtualInterfaceTestHistoryFluentBuilder::new(self.handle.clone())
     }
 }

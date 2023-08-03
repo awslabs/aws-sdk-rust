@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`StartSpeakerSearchTaskOutput`](crate::operation::start_speaker_search_task::StartSpeakerSearchTaskOutput) with field(s):
     ///   - [`speaker_search_task(Option<SpeakerSearchTask>)`](crate::operation::start_speaker_search_task::StartSpeakerSearchTaskOutput::speaker_search_task): <p>The details of the speaker search task.</p>
     /// - On failure, responds with [`SdkError<StartSpeakerSearchTaskError>`](crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError)
-    pub fn start_speaker_search_task(
-        &self,
-    ) -> crate::operation::start_speaker_search_task::builders::StartSpeakerSearchTaskFluentBuilder
-    {
+    pub fn start_speaker_search_task(&self) -> crate::operation::start_speaker_search_task::builders::StartSpeakerSearchTaskFluentBuilder {
         crate::operation::start_speaker_search_task::builders::StartSpeakerSearchTaskFluentBuilder::new(self.handle.clone())
     }
 }

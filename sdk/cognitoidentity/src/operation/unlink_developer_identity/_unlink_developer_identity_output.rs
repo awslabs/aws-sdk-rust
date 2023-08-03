@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UnlinkDeveloperIdentityOutput {
 }
 impl UnlinkDeveloperIdentityOutput {
     /// Creates a new builder-style object to manufacture [`UnlinkDeveloperIdentityOutput`](crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityOutput).
-    pub fn builder(
-    ) -> crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityOutputBuilder
-    {
+    pub fn builder() -> crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityOutputBuilder {
         crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityOutputBuilder::default()
     }
 }
 
 /// A builder for [`UnlinkDeveloperIdentityOutput`](crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnlinkDeveloperIdentityOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UnlinkDeveloperIdentityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UnlinkDeveloperIdentityOutput`](crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityOutput {
+    pub fn build(self) -> crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityOutput {
         crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityOutput {
             _request_id: self._request_id,
         }

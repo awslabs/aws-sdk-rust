@@ -34,9 +34,7 @@ impl StartSessionInput {
         self.work_group.as_deref()
     }
     /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
-    pub fn engine_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EngineConfiguration> {
+    pub fn engine_configuration(&self) -> ::std::option::Option<&crate::types::EngineConfiguration> {
         self.engine_configuration.as_ref()
     }
     /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
@@ -63,9 +61,7 @@ impl StartSessionInput {
 
 /// A builder for [`StartSessionInput`](crate::operation::start_session::StartSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSessionInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
@@ -109,32 +105,21 @@ impl StartSessionInputBuilder {
         self
     }
     /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
-    pub fn set_engine_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineConfiguration>,
-    ) -> Self {
+    pub fn set_engine_configuration(mut self, input: ::std::option::Option<crate::types::EngineConfiguration>) -> Self {
         self.engine_configuration = input;
         self
     }
     /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
-    pub fn get_engine_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EngineConfiguration> {
+    pub fn get_engine_configuration(&self) -> &::std::option::Option<crate::types::EngineConfiguration> {
         &self.engine_configuration
     }
     /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
-    pub fn notebook_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notebook_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
-    pub fn set_notebook_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notebook_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notebook_version = input;
         self
     }
@@ -148,10 +133,7 @@ impl StartSessionInputBuilder {
         self
     }
     /// <p>The idle timeout in minutes for the session.</p>
-    pub fn set_session_idle_timeout_in_minutes(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_session_idle_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_idle_timeout_in_minutes = input;
         self
     }
@@ -162,20 +144,14 @@ impl StartSessionInputBuilder {
     /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -186,12 +162,7 @@ impl StartSessionInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`StartSessionInput`](crate::operation::start_session::StartSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_session::StartSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_session::StartSessionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_session::StartSessionInput {
             description: self.description,
             work_group: self.work_group,

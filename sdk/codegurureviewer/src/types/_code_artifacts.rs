@@ -34,49 +34,33 @@ impl CodeArtifacts {
 
 /// A builder for [`CodeArtifacts`](crate::types::CodeArtifacts).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeArtifactsBuilder {
     pub(crate) source_code_artifacts_object_key: ::std::option::Option<::std::string::String>,
     pub(crate) build_artifacts_object_key: ::std::option::Option<::std::string::String>,
 }
 impl CodeArtifactsBuilder {
     /// <p>The S3 object key for a source code .zip file. This is required for all code reviews.</p>
-    pub fn source_code_artifacts_object_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_code_artifacts_object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_code_artifacts_object_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 object key for a source code .zip file. This is required for all code reviews.</p>
-    pub fn set_source_code_artifacts_object_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_code_artifacts_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_code_artifacts_object_key = input;
         self
     }
     /// <p>The S3 object key for a source code .zip file. This is required for all code reviews.</p>
-    pub fn get_source_code_artifacts_object_key(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_code_artifacts_object_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_code_artifacts_object_key
     }
     /// <p>The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
-    pub fn build_artifacts_object_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn build_artifacts_object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.build_artifacts_object_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
-    pub fn set_build_artifacts_object_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_build_artifacts_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.build_artifacts_object_key = input;
         self
     }

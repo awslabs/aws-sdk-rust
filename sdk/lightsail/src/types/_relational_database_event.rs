@@ -44,9 +44,7 @@ impl RelationalDatabaseEvent {
 
 /// A builder for [`RelationalDatabaseEvent`](crate::types::RelationalDatabaseEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RelationalDatabaseEventBuilder {
     pub(crate) resource: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -74,10 +72,7 @@ impl RelationalDatabaseEventBuilder {
         self
     }
     /// <p>The timestamp when the database event was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -104,27 +99,19 @@ impl RelationalDatabaseEventBuilder {
     /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
     ///
     /// <p>The category that the database event belongs to.</p>
-    pub fn event_categories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_categories.unwrap_or_default();
         v.push(input.into());
         self.event_categories = ::std::option::Option::Some(v);
         self
     }
     /// <p>The category that the database event belongs to.</p>
-    pub fn set_event_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_categories = input;
         self
     }
     /// <p>The category that the database event belongs to.</p>
-    pub fn get_event_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_categories
     }
     /// Consumes the builder and constructs a [`RelationalDatabaseEvent`](crate::types::RelationalDatabaseEvent).

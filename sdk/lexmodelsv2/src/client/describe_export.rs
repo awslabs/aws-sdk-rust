@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::describe_export::DescribeExportOutput::creation_date_time): <p>The date and time that the export was created.</p>
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::describe_export::DescribeExportOutput::last_updated_date_time): <p>The last date and time that the export was updated.</p>
     /// - On failure, responds with [`SdkError<DescribeExportError>`](crate::operation::describe_export::DescribeExportError)
-    pub fn describe_export(
-        &self,
-    ) -> crate::operation::describe_export::builders::DescribeExportFluentBuilder {
-        crate::operation::describe_export::builders::DescribeExportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_export(&self) -> crate::operation::describe_export::builders::DescribeExportFluentBuilder {
+        crate::operation::describe_export::builders::DescribeExportFluentBuilder::new(self.handle.clone())
     }
 }

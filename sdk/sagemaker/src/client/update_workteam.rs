@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateWorkteamOutput`](crate::operation::update_workteam::UpdateWorkteamOutput) with field(s):
     ///   - [`workteam(Option<Workteam>)`](crate::operation::update_workteam::UpdateWorkteamOutput::workteam): <p>A <code>Workteam</code> object that describes the updated work team.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkteamError>`](crate::operation::update_workteam::UpdateWorkteamError)
-    pub fn update_workteam(
-        &self,
-    ) -> crate::operation::update_workteam::builders::UpdateWorkteamFluentBuilder {
-        crate::operation::update_workteam::builders::UpdateWorkteamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_workteam(&self) -> crate::operation::update_workteam::builders::UpdateWorkteamFluentBuilder {
+        crate::operation::update_workteam::builders::UpdateWorkteamFluentBuilder::new(self.handle.clone())
     }
 }

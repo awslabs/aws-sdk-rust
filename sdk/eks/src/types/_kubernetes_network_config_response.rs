@@ -37,9 +37,7 @@ impl KubernetesNetworkConfigResponse {
 
 /// A builder for [`KubernetesNetworkConfigResponse`](crate::types::KubernetesNetworkConfigResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KubernetesNetworkConfigResponseBuilder {
     pub(crate) service_ipv4_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) service_ipv6_cidr: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct KubernetesNetworkConfigResponseBuilder {
 }
 impl KubernetesNetworkConfigResponseBuilder {
     /// <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this was specified, then it was specified when the cluster was created and it can't be changed.</p>
-    pub fn service_ipv4_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_ipv4_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_ipv4_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this was specified, then it was specified when the cluster was created and it can't be changed.</p>
-    pub fn set_service_ipv4_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_ipv4_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_ipv4_cidr = input;
         self
     }
@@ -67,18 +59,12 @@ impl KubernetesNetworkConfigResponseBuilder {
         &self.service_ipv4_cidr
     }
     /// <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from if you created a 1.21 or later cluster with version 1.10.1 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> for <b>ipFamily</b> when you created the cluster. Kubernetes assigns service addresses from the unique local address range (<code>fc00::/7</code>) because you can't specify a custom IPv6 CIDR block when you create the cluster.</p>
-    pub fn service_ipv6_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_ipv6_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_ipv6_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from if you created a 1.21 or later cluster with version 1.10.1 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> for <b>ipFamily</b> when you created the cluster. Kubernetes assigns service addresses from the unique local address range (<code>fc00::/7</code>) because you can't specify a custom IPv6 CIDR block when you create the cluster.</p>
-    pub fn set_service_ipv6_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_ipv6_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_ipv6_cidr = input;
         self
     }

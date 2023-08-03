@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`portfolio_share_token(Option<String>)`](crate::operation::update_portfolio_share::UpdatePortfolioShareOutput::portfolio_share_token): <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
     ///   - [`status(Option<ShareStatus>)`](crate::operation::update_portfolio_share::UpdatePortfolioShareOutput::status): <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
     /// - On failure, responds with [`SdkError<UpdatePortfolioShareError>`](crate::operation::update_portfolio_share::UpdatePortfolioShareError)
-    pub fn update_portfolio_share(
-        &self,
-    ) -> crate::operation::update_portfolio_share::builders::UpdatePortfolioShareFluentBuilder {
-        crate::operation::update_portfolio_share::builders::UpdatePortfolioShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_portfolio_share(&self) -> crate::operation::update_portfolio_share::builders::UpdatePortfolioShareFluentBuilder {
+        crate::operation::update_portfolio_share::builders::UpdatePortfolioShareFluentBuilder::new(self.handle.clone())
     }
 }

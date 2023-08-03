@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DisassociateResourceSharePermissionOu
 }
 impl DisassociateResourceSharePermissionOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateResourceSharePermissionOutput`](crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionOutput).
-    pub fn builder() -> crate::operation::disassociate_resource_share_permission::builders::DisassociateResourceSharePermissionOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_resource_share_permission::builders::DisassociateResourceSharePermissionOutputBuilder {
         crate::operation::disassociate_resource_share_permission::builders::DisassociateResourceSharePermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateResourceSharePermissionOutput`](crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateResourceSharePermissionOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -82,12 +80,10 @@ impl DisassociateResourceSharePermissionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateResourceSharePermissionOutput`](crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionOutput).
-    pub fn build(self) -> crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionOutput{
+    pub fn build(self) -> crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionOutput {
         crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionOutput {
-            return_value: self.return_value
-            ,
-            client_token: self.client_token
-            ,
+            return_value: self.return_value,
+            client_token: self.client_token,
             _request_id: self._request_id,
         }
     }

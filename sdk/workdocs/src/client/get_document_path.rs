@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`GetDocumentPathOutput`](crate::operation::get_document_path::GetDocumentPathOutput) with field(s):
     ///   - [`path(Option<ResourcePath>)`](crate::operation::get_document_path::GetDocumentPathOutput::path): <p>The path information.</p>
     /// - On failure, responds with [`SdkError<GetDocumentPathError>`](crate::operation::get_document_path::GetDocumentPathError)
-    pub fn get_document_path(
-        &self,
-    ) -> crate::operation::get_document_path::builders::GetDocumentPathFluentBuilder {
-        crate::operation::get_document_path::builders::GetDocumentPathFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_document_path(&self) -> crate::operation::get_document_path::builders::GetDocumentPathFluentBuilder {
+        crate::operation::get_document_path::builders::GetDocumentPathFluentBuilder::new(self.handle.clone())
     }
 }

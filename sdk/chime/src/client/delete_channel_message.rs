@@ -8,14 +8,8 @@ impl super::Client {
     ///   - [`chime_bearer(impl ::std::convert::Into<String>)`](crate::operation::delete_channel_message::builders::DeleteChannelMessageFluentBuilder::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::operation::delete_channel_message::builders::DeleteChannelMessageFluentBuilder::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`DeleteChannelMessageOutput`](crate::operation::delete_channel_message::DeleteChannelMessageOutput)
     /// - On failure, responds with [`SdkError<DeleteChannelMessageError>`](crate::operation::delete_channel_message::DeleteChannelMessageError)
-    #[deprecated(
-        note = "Replaced by DeleteChannelMessage in the Amazon Chime SDK Messaging Namespace"
-    )]
-    pub fn delete_channel_message(
-        &self,
-    ) -> crate::operation::delete_channel_message::builders::DeleteChannelMessageFluentBuilder {
-        crate::operation::delete_channel_message::builders::DeleteChannelMessageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    #[deprecated(note = "Replaced by DeleteChannelMessage in the Amazon Chime SDK Messaging Namespace")]
+    pub fn delete_channel_message(&self) -> crate::operation::delete_channel_message::builders::DeleteChannelMessageFluentBuilder {
+        crate::operation::delete_channel_message::builders::DeleteChannelMessageFluentBuilder::new(self.handle.clone())
     }
 }

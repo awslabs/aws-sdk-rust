@@ -33,9 +33,7 @@ pub struct Problem {
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Feedback provided by the user about the problem.</p>
     #[doc(hidden)]
-    pub feedback: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>,
-    >,
+    pub feedback: ::std::option::Option<::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>>,
     /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
     #[doc(hidden)]
     pub recurring_count: ::std::option::Option<i64>,
@@ -81,11 +79,7 @@ impl Problem {
         self.resource_group_name.as_deref()
     }
     /// <p>Feedback provided by the user about the problem.</p>
-    pub fn feedback(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>,
-    > {
+    pub fn feedback(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>> {
         self.feedback.as_ref()
     }
     /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
@@ -106,9 +100,7 @@ impl Problem {
 
 /// A builder for [`Problem`](crate::types::Problem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProblemBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
@@ -119,9 +111,7 @@ pub struct ProblemBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) severity_level: ::std::option::Option<crate::types::SeverityLevel>,
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) feedback: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>,
-    >,
+    pub(crate) feedback: ::std::option::Option<::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>>,
     pub(crate) recurring_count: ::std::option::Option<i64>,
     pub(crate) last_recurrence_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -183,18 +173,12 @@ impl ProblemBuilder {
         &self.status
     }
     /// <p>The resource affected by the problem.</p>
-    pub fn affected_resource(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn affected_resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.affected_resource = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource affected by the problem.</p>
-    pub fn set_affected_resource(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_affected_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.affected_resource = input;
         self
     }
@@ -208,10 +192,7 @@ impl ProblemBuilder {
         self
     }
     /// <p>The time when the problem started, in epoch seconds.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -225,10 +206,7 @@ impl ProblemBuilder {
         self
     }
     /// <p>The time when the problem ended, in epoch seconds.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -242,10 +220,7 @@ impl ProblemBuilder {
         self
     }
     /// <p>A measure of the level of impact of the problem.</p>
-    pub fn set_severity_level(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityLevel>,
-    ) -> Self {
+    pub fn set_severity_level(mut self, input: ::std::option::Option<crate::types::SeverityLevel>) -> Self {
         self.severity_level = input;
         self
     }
@@ -254,18 +229,12 @@ impl ProblemBuilder {
         &self.severity_level
     }
     /// <p>The name of the resource group affected by the problem.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group affected by the problem.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }
@@ -278,11 +247,7 @@ impl ProblemBuilder {
     /// To override the contents of this collection use [`set_feedback`](Self::set_feedback).
     ///
     /// <p>Feedback provided by the user about the problem.</p>
-    pub fn feedback(
-        mut self,
-        k: crate::types::FeedbackKey,
-        v: crate::types::FeedbackValue,
-    ) -> Self {
+    pub fn feedback(mut self, k: crate::types::FeedbackKey, v: crate::types::FeedbackValue) -> Self {
         let mut hash_map = self.feedback.unwrap_or_default();
         hash_map.insert(k, v);
         self.feedback = ::std::option::Option::Some(hash_map);
@@ -291,19 +256,13 @@ impl ProblemBuilder {
     /// <p>Feedback provided by the user about the problem.</p>
     pub fn set_feedback(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>>,
     ) -> Self {
         self.feedback = input;
         self
     }
     /// <p>Feedback provided by the user about the problem.</p>
-    pub fn get_feedback(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>,
-    > {
+    pub fn get_feedback(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>> {
         &self.feedback
     }
     /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
@@ -326,10 +285,7 @@ impl ProblemBuilder {
         self
     }
     /// <p> The last time that the problem reoccurred after its last resolution. </p>
-    pub fn set_last_recurrence_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_recurrence_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_recurrence_time = input;
         self
     }

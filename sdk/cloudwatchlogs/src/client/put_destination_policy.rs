@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`force_update(bool)`](crate::operation::put_destination_policy::builders::PutDestinationPolicyFluentBuilder::force_update) / [`set_force_update(Option<bool>)`](crate::operation::put_destination_policy::builders::PutDestinationPolicyFluentBuilder::set_force_update): <p>Specify true if you are updating an existing destination policy to grant permission to an organization ID instead of granting permission to individual Amazon Web Services accounts. Before you update a destination policy this way, you must first update the subscription filters in the accounts that send logs to this destination. If you do not, the subscription filters might stop working. By specifying <code>true</code> for <code>forceUpdate</code>, you are affirming that you have already updated the subscription filters. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Cross-Account-Log_Subscription-Update.html"> Updating an existing cross-account subscription</a> </p>  <p>If you omit this parameter, the default of <code>false</code> is used.</p>
     /// - On success, responds with [`PutDestinationPolicyOutput`](crate::operation::put_destination_policy::PutDestinationPolicyOutput)
     /// - On failure, responds with [`SdkError<PutDestinationPolicyError>`](crate::operation::put_destination_policy::PutDestinationPolicyError)
-    pub fn put_destination_policy(
-        &self,
-    ) -> crate::operation::put_destination_policy::builders::PutDestinationPolicyFluentBuilder {
-        crate::operation::put_destination_policy::builders::PutDestinationPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_destination_policy(&self) -> crate::operation::put_destination_policy::builders::PutDestinationPolicyFluentBuilder {
+        crate::operation::put_destination_policy::builders::PutDestinationPolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -50,17 +50,14 @@ impl UpgradeLensReviewInput {
 }
 impl UpgradeLensReviewInput {
     /// Creates a new builder-style object to manufacture [`UpgradeLensReviewInput`](crate::operation::upgrade_lens_review::UpgradeLensReviewInput).
-    pub fn builder(
-    ) -> crate::operation::upgrade_lens_review::builders::UpgradeLensReviewInputBuilder {
+    pub fn builder() -> crate::operation::upgrade_lens_review::builders::UpgradeLensReviewInputBuilder {
         crate::operation::upgrade_lens_review::builders::UpgradeLensReviewInputBuilder::default()
     }
 }
 
 /// A builder for [`UpgradeLensReviewInput`](crate::operation::upgrade_lens_review::UpgradeLensReviewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpgradeLensReviewInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
@@ -107,19 +104,13 @@ impl UpgradeLensReviewInputBuilder {
     }
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
-    pub fn milestone_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn milestone_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.milestone_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
-    pub fn set_milestone_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_milestone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.milestone_name = input;
         self
     }
@@ -132,10 +123,7 @@ impl UpgradeLensReviewInputBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
@@ -143,10 +131,7 @@ impl UpgradeLensReviewInputBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -160,17 +145,12 @@ impl UpgradeLensReviewInputBuilder {
     /// Consumes the builder and constructs a [`UpgradeLensReviewInput`](crate::operation::upgrade_lens_review::UpgradeLensReviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::upgrade_lens_review::UpgradeLensReviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::upgrade_lens_review::UpgradeLensReviewInput {
-                workload_id: self.workload_id,
-                lens_alias: self.lens_alias,
-                milestone_name: self.milestone_name,
-                client_request_token: self.client_request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::upgrade_lens_review::UpgradeLensReviewInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::upgrade_lens_review::UpgradeLensReviewInput {
+            workload_id: self.workload_id,
+            lens_alias: self.lens_alias,
+            milestone_name: self.milestone_name,
+            client_request_token: self.client_request_token,
+        })
     }
 }

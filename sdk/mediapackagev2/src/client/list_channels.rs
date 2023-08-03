@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ChannelListConfiguration>>)`](crate::operation::list_channels::ListChannelsOutput::items): <p>The objects being returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channels::ListChannelsOutput::next_token): <p>The pagination token from the GET list request.</p>
     /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::operation::list_channels::ListChannelsError)
-    pub fn list_channels(
-        &self,
-    ) -> crate::operation::list_channels::builders::ListChannelsFluentBuilder {
-        crate::operation::list_channels::builders::ListChannelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_channels(&self) -> crate::operation::list_channels::builders::ListChannelsFluentBuilder {
+        crate::operation::list_channels::builders::ListChannelsFluentBuilder::new(self.handle.clone())
     }
 }

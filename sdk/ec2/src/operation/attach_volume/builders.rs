@@ -10,10 +10,7 @@ impl AttachVolumeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::attach_volume::AttachVolumeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_volume::AttachVolumeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_volume::AttachVolumeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.attach_volume();
         fluent_builder.inner = self;
@@ -55,10 +52,7 @@ impl AttachVolumeFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::attach_volume::AttachVolume,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::attach_volume::AttachVolume, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::attach_volume::AttachVolumeError>,
     > {
         let handle = self.handle.clone();
@@ -69,10 +63,7 @@ impl AttachVolumeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -114,10 +105,7 @@ impl AttachVolumeFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::attach_volume::AttachVolume,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::attach_volume::AttachVolume, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::attach_volume::AttachVolumeError>,
     > {
         self.customize_middleware().await

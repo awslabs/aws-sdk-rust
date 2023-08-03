@@ -9,16 +9,11 @@ pub fn ser_update_anomaly_detector_input(
     if let Some(var_2) = &input.anomaly_detector_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("AnomalyDetectorConfig").start_object();
-        crate::protocol_serde::shape_anomaly_detector_config::ser_anomaly_detector_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_anomaly_detector_config::ser_anomaly_detector_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.anomaly_detector_description {
-        object
-            .key("AnomalyDetectorDescription")
-            .string(var_4.as_str());
+        object.key("AnomalyDetectorDescription").string(var_4.as_str());
     }
     if let Some(var_5) = &input.kms_key_arn {
         object.key("KmsKeyArn").string(var_5.as_str());

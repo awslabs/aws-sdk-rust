@@ -17,18 +17,14 @@ impl GetResponseHeadersPolicyInput {
 }
 impl GetResponseHeadersPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetResponseHeadersPolicyInput`](crate::operation::get_response_headers_policy::GetResponseHeadersPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_response_headers_policy::builders::GetResponseHeadersPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_response_headers_policy::builders::GetResponseHeadersPolicyInputBuilder {
         crate::operation::get_response_headers_policy::builders::GetResponseHeadersPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResponseHeadersPolicyInput`](crate::operation::get_response_headers_policy::GetResponseHeadersPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResponseHeadersPolicyInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -57,10 +53,6 @@ impl GetResponseHeadersPolicyInputBuilder {
         crate::operation::get_response_headers_policy::GetResponseHeadersPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_response_headers_policy::GetResponseHeadersPolicyInput {
-                id: self.id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_response_headers_policy::GetResponseHeadersPolicyInput { id: self.id })
     }
 }

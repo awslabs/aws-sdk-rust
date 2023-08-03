@@ -44,9 +44,7 @@ impl DatabaseInputDefinition {
 
 /// A builder for [`DatabaseInputDefinition`](crate::types::DatabaseInputDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatabaseInputDefinitionBuilder {
     pub(crate) glue_connection_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_table_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct DatabaseInputDefinitionBuilder {
 }
 impl DatabaseInputDefinitionBuilder {
     /// <p>The Glue Connection that stores the connection information for the target database.</p>
-    pub fn glue_connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn glue_connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.glue_connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Glue Connection that stores the connection information for the target database.</p>
-    pub fn set_glue_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_glue_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.glue_connection_name = input;
         self
     }
@@ -75,18 +67,12 @@ impl DatabaseInputDefinitionBuilder {
         &self.glue_connection_name
     }
     /// <p>The table within the target database.</p>
-    pub fn database_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The table within the target database.</p>
-    pub fn set_database_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_table_name = input;
         self
     }
@@ -100,10 +86,7 @@ impl DatabaseInputDefinitionBuilder {
         self
     }
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
-    pub fn set_temp_directory(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_temp_directory(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.temp_directory = input;
         self
     }

@@ -10,10 +10,7 @@ impl ListTableMetadataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_table_metadata::ListTableMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_table_metadata::ListTableMetadataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_table_metadata::ListTableMetadataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_table_metadata();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListTableMetadataFluentBuilder {
         }
     }
     /// Access the ListTableMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_table_metadata::builders::ListTableMetadataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_table_metadata::builders::ListTableMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListTableMetadataFluentBuilder {
             crate::operation::list_table_metadata::ListTableMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_table_metadata::ListTableMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_table_metadata::ListTableMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListTableMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListTableMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_table_metadata::ListTableMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_table_metadata::ListTableMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_table_metadata::ListTableMetadataError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListTableMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_table_metadata::ListTableMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_table_metadata::ListTableMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_table_metadata::ListTableMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListTableMetadataFluentBuilder {
             crate::operation::list_table_metadata::ListTableMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_table_metadata::ListTableMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_table_metadata::ListTableMetadataError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_table_metadata::paginator::ListTableMetadataPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_table_metadata::paginator::ListTableMetadataPaginator {
-        crate::operation::list_table_metadata::paginator::ListTableMetadataPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_table_metadata::paginator::ListTableMetadataPaginator {
+        crate::operation::list_table_metadata::paginator::ListTableMetadataPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the data catalog for which table metadata should be returned.</p>
     pub fn catalog_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,18 +127,12 @@ impl ListTableMetadataFluentBuilder {
         self.inner.get_catalog_name()
     }
     /// <p>The name of the database for which table metadata should be returned.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the database for which table metadata should be returned.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }

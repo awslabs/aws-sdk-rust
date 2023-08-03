@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_human_task_ui::DescribeHumanTaskUiOutput::creation_time): <p>The timestamp when the human task user interface was created.</p>
     ///   - [`ui_template(Option<UiTemplateInfo>)`](crate::operation::describe_human_task_ui::DescribeHumanTaskUiOutput::ui_template): <p>Container for user interface template information.</p>
     /// - On failure, responds with [`SdkError<DescribeHumanTaskUiError>`](crate::operation::describe_human_task_ui::DescribeHumanTaskUiError)
-    pub fn describe_human_task_ui(
-        &self,
-    ) -> crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiFluentBuilder {
-        crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_human_task_ui(&self) -> crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiFluentBuilder {
+        crate::operation::describe_human_task_ui::builders::DescribeHumanTaskUiFluentBuilder::new(self.handle.clone())
     }
 }

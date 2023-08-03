@@ -28,9 +28,7 @@ impl CreateProposalOutput {
 
 /// A builder for [`CreateProposalOutput`](crate::operation::create_proposal::CreateProposalOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProposalOutputBuilder {
     pub(crate) proposal_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

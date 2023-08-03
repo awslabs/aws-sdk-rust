@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDatasetOutput`](crate::operation::update_dataset::UpdateDatasetOutput) with field(s):
     ///   - [`dataset_arn(Option<String>)`](crate::operation::update_dataset::UpdateDatasetOutput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset you updated.</p>
     /// - On failure, responds with [`SdkError<UpdateDatasetError>`](crate::operation::update_dataset::UpdateDatasetError)
-    pub fn update_dataset(
-        &self,
-    ) -> crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder {
-        crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_dataset(&self) -> crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder {
+        crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder::new(self.handle.clone())
     }
 }

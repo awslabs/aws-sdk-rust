@@ -45,9 +45,7 @@ impl InterMetricImpactDetails {
 
 /// A builder for [`InterMetricImpactDetails`](crate::types::InterMetricImpactDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InterMetricImpactDetailsBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_group_id: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ impl InterMetricImpactDetailsBuilder {
         &self.metric_name
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn set_anomaly_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_group_id = input;
         self
     }
@@ -95,10 +87,7 @@ impl InterMetricImpactDetailsBuilder {
         self
     }
     /// <p>Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).</p>
-    pub fn set_relationship_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RelationshipType>,
-    ) -> Self {
+    pub fn set_relationship_type(mut self, input: ::std::option::Option<crate::types::RelationshipType>) -> Self {
         self.relationship_type = input;
         self
     }

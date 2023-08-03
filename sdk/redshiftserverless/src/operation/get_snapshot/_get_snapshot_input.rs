@@ -36,9 +36,7 @@ impl GetSnapshotInput {
 
 /// A builder for [`GetSnapshotInput`](crate::operation::get_snapshot::GetSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSnapshotInputBuilder {
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct GetSnapshotInputBuilder {
 }
 impl GetSnapshotInputBuilder {
     /// <p>The name of the snapshot to return.</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the snapshot to return.</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_name = input;
         self
     }
@@ -66,18 +58,12 @@ impl GetSnapshotInputBuilder {
         &self.snapshot_name
     }
     /// <p>The owner Amazon Web Services account of a snapshot shared with another user.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The owner Amazon Web Services account of a snapshot shared with another user.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -100,12 +86,7 @@ impl GetSnapshotInputBuilder {
         &self.snapshot_arn
     }
     /// Consumes the builder and constructs a [`GetSnapshotInput`](crate::operation::get_snapshot::GetSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_snapshot::GetSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_snapshot::GetSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_snapshot::GetSnapshotInput {
             snapshot_name: self.snapshot_name,
             owner_account: self.owner_account,

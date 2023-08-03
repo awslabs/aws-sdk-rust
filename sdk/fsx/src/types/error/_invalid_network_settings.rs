@@ -70,9 +70,7 @@ impl InvalidNetworkSettings {
 
 /// A builder for [`InvalidNetworkSettings`](crate::types::error::InvalidNetworkSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidNetworkSettingsBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) invalid_subnet_id: ::std::option::Option<::std::string::String>,
@@ -96,18 +94,12 @@ impl InvalidNetworkSettingsBuilder {
         &self.message
     }
     /// <p>The subnet ID that is either invalid or not part of the VPC specified.</p>
-    pub fn invalid_subnet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invalid_subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invalid_subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subnet ID that is either invalid or not part of the VPC specified.</p>
-    pub fn set_invalid_subnet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invalid_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invalid_subnet_id = input;
         self
     }
@@ -116,18 +108,12 @@ impl InvalidNetworkSettingsBuilder {
         &self.invalid_subnet_id
     }
     /// <p>The security group ID is either invalid or not part of the VPC specified.</p>
-    pub fn invalid_security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invalid_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invalid_security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The security group ID is either invalid or not part of the VPC specified.</p>
-    pub fn set_invalid_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invalid_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invalid_security_group_id = input;
         self
     }
@@ -136,18 +122,12 @@ impl InvalidNetworkSettingsBuilder {
         &self.invalid_security_group_id
     }
     /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
-    pub fn invalid_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invalid_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invalid_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The route table ID is either invalid or not part of the VPC specified.</p>
-    pub fn set_invalid_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invalid_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invalid_route_table_id = input;
         self
     }
@@ -162,10 +142,7 @@ impl InvalidNetworkSettingsBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

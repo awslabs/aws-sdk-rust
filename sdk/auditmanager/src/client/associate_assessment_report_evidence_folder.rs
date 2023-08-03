@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`evidence_folder_id(impl ::std::convert::Into<String>)`](crate::operation::associate_assessment_report_evidence_folder::builders::AssociateAssessmentReportEvidenceFolderFluentBuilder::evidence_folder_id) / [`set_evidence_folder_id(Option<String>)`](crate::operation::associate_assessment_report_evidence_folder::builders::AssociateAssessmentReportEvidenceFolderFluentBuilder::set_evidence_folder_id): <p> The identifier for the folder that the evidence is stored in. </p>
     /// - On success, responds with [`AssociateAssessmentReportEvidenceFolderOutput`](crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderOutput)
     /// - On failure, responds with [`SdkError<AssociateAssessmentReportEvidenceFolderError>`](crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderError)
-    pub fn associate_assessment_report_evidence_folder(&self) -> crate::operation::associate_assessment_report_evidence_folder::builders::AssociateAssessmentReportEvidenceFolderFluentBuilder{
-        crate::operation::associate_assessment_report_evidence_folder::builders::AssociateAssessmentReportEvidenceFolderFluentBuilder::new(self.handle.clone())
+    pub fn associate_assessment_report_evidence_folder(
+        &self,
+    ) -> crate::operation::associate_assessment_report_evidence_folder::builders::AssociateAssessmentReportEvidenceFolderFluentBuilder {
+        crate::operation::associate_assessment_report_evidence_folder::builders::AssociateAssessmentReportEvidenceFolderFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -36,9 +36,7 @@ impl StartObjectInput {
 
 /// A builder for [`StartObjectInput`](crate::operation::start_object::StartObjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartObjectInputBuilder {
     pub(crate) backup_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) object_name: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct StartObjectInputBuilder {
 }
 impl StartObjectInputBuilder {
     /// Backup job Id for the in-progress backup
-    pub fn backup_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Backup job Id for the in-progress backup
-    pub fn set_backup_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_job_id = input;
         self
     }
@@ -94,12 +86,7 @@ impl StartObjectInputBuilder {
         &self.throw_on_duplicate
     }
     /// Consumes the builder and constructs a [`StartObjectInput`](crate::operation::start_object::StartObjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_object::StartObjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_object::StartObjectInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_object::StartObjectInput {
             backup_job_id: self.backup_job_id,
             object_name: self.object_name,

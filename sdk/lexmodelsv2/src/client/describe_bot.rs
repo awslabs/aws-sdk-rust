@@ -18,9 +18,7 @@ impl super::Client {
     ///   - [`bot_members(Option<Vec<BotMember>>)`](crate::operation::describe_bot::DescribeBotOutput::bot_members): <p>The list of bots in the network that was described.</p>
     ///   - [`failure_reasons(Option<Vec<String>>)`](crate::operation::describe_bot::DescribeBotOutput::failure_reasons): <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot couldn't be built.</p>
     /// - On failure, responds with [`SdkError<DescribeBotError>`](crate::operation::describe_bot::DescribeBotError)
-    pub fn describe_bot(
-        &self,
-    ) -> crate::operation::describe_bot::builders::DescribeBotFluentBuilder {
+    pub fn describe_bot(&self) -> crate::operation::describe_bot::builders::DescribeBotFluentBuilder {
         crate::operation::describe_bot::builders::DescribeBotFluentBuilder::new(self.handle.clone())
     }
 }

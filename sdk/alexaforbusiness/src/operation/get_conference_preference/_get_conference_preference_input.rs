@@ -5,18 +5,14 @@
 pub struct GetConferencePreferenceInput {}
 impl GetConferencePreferenceInput {
     /// Creates a new builder-style object to manufacture [`GetConferencePreferenceInput`](crate::operation::get_conference_preference::GetConferencePreferenceInput).
-    pub fn builder(
-    ) -> crate::operation::get_conference_preference::builders::GetConferencePreferenceInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_conference_preference::builders::GetConferencePreferenceInputBuilder {
         crate::operation::get_conference_preference::builders::GetConferencePreferenceInputBuilder::default()
     }
 }
 
 /// A builder for [`GetConferencePreferenceInput`](crate::operation::get_conference_preference::GetConferencePreferenceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConferencePreferenceInputBuilder {}
 impl GetConferencePreferenceInputBuilder {
     /// Consumes the builder and constructs a [`GetConferencePreferenceInput`](crate::operation::get_conference_preference::GetConferencePreferenceInput).
@@ -26,8 +22,6 @@ impl GetConferencePreferenceInputBuilder {
         crate::operation::get_conference_preference::GetConferencePreferenceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_conference_preference::GetConferencePreferenceInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::get_conference_preference::GetConferencePreferenceInput {})
     }
 }

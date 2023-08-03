@@ -10,10 +10,7 @@ impl DetectCustomLabelsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::detect_custom_labels::DetectCustomLabelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_custom_labels::DetectCustomLabelsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_custom_labels::DetectCustomLabelsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.detect_custom_labels();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl DetectCustomLabelsFluentBuilder {
         }
     }
     /// Access the DetectCustomLabels as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detect_custom_labels::builders::DetectCustomLabelsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::detect_custom_labels::builders::DetectCustomLabelsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl DetectCustomLabelsFluentBuilder {
             crate::operation::detect_custom_labels::DetectCustomLabels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_custom_labels::DetectCustomLabelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_custom_labels::DetectCustomLabelsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl DetectCustomLabelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl DetectCustomLabelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_custom_labels::DetectCustomLabelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_custom_labels::DetectCustomLabelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_custom_labels::DetectCustomLabelsError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl DetectCustomLabelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_custom_labels::DetectCustomLabelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_custom_labels::DetectCustomLabelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_custom_labels::DetectCustomLabelsError>,
     > {
         self.send_middleware().await
     }
@@ -124,25 +110,17 @@ impl DetectCustomLabelsFluentBuilder {
             crate::operation::detect_custom_labels::DetectCustomLabels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_custom_labels::DetectCustomLabelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_custom_labels::DetectCustomLabelsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the model version that you want to use.</p>
-    pub fn project_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_version_arn(input.into());
         self
     }
     /// <p>The ARN of the model version that you want to use.</p>
-    pub fn set_project_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_version_arn(input);
         self
     }

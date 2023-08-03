@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`stage_name(impl ::std::convert::Into<String>)`](crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageFluentBuilder::set_stage_name): <p>The name of the stage to stop.</p>
     /// - On success, responds with [`StopEdgeDeploymentStageOutput`](crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageOutput)
     /// - On failure, responds with [`SdkError<StopEdgeDeploymentStageError>`](crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageError)
-    pub fn stop_edge_deployment_stage(
-        &self,
-    ) -> crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageFluentBuilder
-    {
+    pub fn stop_edge_deployment_stage(&self) -> crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageFluentBuilder {
         crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageFluentBuilder::new(self.handle.clone())
     }
 }

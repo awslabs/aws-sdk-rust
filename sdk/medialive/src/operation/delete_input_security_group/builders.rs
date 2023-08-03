@@ -26,7 +26,7 @@ impl DeleteInputSecurityGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteInputSecurityGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupInputBuilder,
+    inner: crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupInputBuilder,
 }
 impl DeleteInputSecurityGroupFluentBuilder {
     /// Creates a new `DeleteInputSecurityGroup`.
@@ -37,7 +37,7 @@ impl DeleteInputSecurityGroupFluentBuilder {
         }
     }
     /// Access the DeleteInputSecurityGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteInputSecurityGroupFluentBuilder {
             crate::operation::delete_input_security_group::DeleteInputSecurityGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_input_security_group::DeleteInputSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_input_security_group::DeleteInputSecurityGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteInputSecurityGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteInputSecurityGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_input_security_group::DeleteInputSecurityGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_input_security_group::DeleteInputSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_input_security_group::DeleteInputSecurityGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteInputSecurityGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_input_security_group::DeleteInputSecurityGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_input_security_group::DeleteInputSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_input_security_group::DeleteInputSecurityGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteInputSecurityGroupFluentBuilder {
             crate::operation::delete_input_security_group::DeleteInputSecurityGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_input_security_group::DeleteInputSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_input_security_group::DeleteInputSecurityGroupError>,
     > {
         self.customize_middleware().await
     }
     /// The Input Security Group to delete
-    pub fn input_security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_security_group_id(input.into());
         self
     }
     /// The Input Security Group to delete
-    pub fn set_input_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_security_group_id(input);
         self
     }

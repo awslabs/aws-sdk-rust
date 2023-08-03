@@ -66,8 +66,7 @@ pub struct CallAnalyticsJob {
     pub settings: ::std::option::Option<crate::types::CallAnalyticsJobSettings>,
     /// <p>Indicates which speaker is on which channel.</p>
     #[doc(hidden)]
-    pub channel_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
+    pub channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
 }
 impl CallAnalyticsJob {
     /// <p>The name of the Call Analytics job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
@@ -76,9 +75,7 @@ impl CallAnalyticsJob {
     }
     /// <p>Provides the status of the specified Call Analytics job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
-    pub fn call_analytics_job_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CallAnalyticsJobStatus> {
+    pub fn call_analytics_job_status(&self) -> ::std::option::Option<&crate::types::CallAnalyticsJobStatus> {
         self.call_analytics_job_status.as_ref()
     }
     /// <p>The language code used to create your Call Analytics job. For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
@@ -157,13 +154,10 @@ impl CallAnalyticsJob {
 
 /// A builder for [`CallAnalyticsJob`](crate::types::CallAnalyticsJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CallAnalyticsJobBuilder {
     pub(crate) call_analytics_job_name: ::std::option::Option<::std::string::String>,
-    pub(crate) call_analytics_job_status:
-        ::std::option::Option<crate::types::CallAnalyticsJobStatus>,
+    pub(crate) call_analytics_job_status: ::std::option::Option<crate::types::CallAnalyticsJobStatus>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
     pub(crate) media_sample_rate_hertz: ::std::option::Option<i32>,
     pub(crate) media_format: ::std::option::Option<crate::types::MediaFormat>,
@@ -176,23 +170,16 @@ pub struct CallAnalyticsJobBuilder {
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) identified_language_score: ::std::option::Option<f32>,
     pub(crate) settings: ::std::option::Option<crate::types::CallAnalyticsJobSettings>,
-    pub(crate) channel_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
+    pub(crate) channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
 }
 impl CallAnalyticsJobBuilder {
     /// <p>The name of the Call Analytics job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
-    pub fn call_analytics_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn call_analytics_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.call_analytics_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Call Analytics job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
-    pub fn set_call_analytics_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_call_analytics_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.call_analytics_job_name = input;
         self
     }
@@ -202,27 +189,19 @@ impl CallAnalyticsJobBuilder {
     }
     /// <p>Provides the status of the specified Call Analytics job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
-    pub fn call_analytics_job_status(
-        mut self,
-        input: crate::types::CallAnalyticsJobStatus,
-    ) -> Self {
+    pub fn call_analytics_job_status(mut self, input: crate::types::CallAnalyticsJobStatus) -> Self {
         self.call_analytics_job_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the status of the specified Call Analytics job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
-    pub fn set_call_analytics_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CallAnalyticsJobStatus>,
-    ) -> Self {
+    pub fn set_call_analytics_job_status(mut self, input: ::std::option::Option<crate::types::CallAnalyticsJobStatus>) -> Self {
         self.call_analytics_job_status = input;
         self
     }
     /// <p>Provides the status of the specified Call Analytics job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
-    pub fn get_call_analytics_job_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::CallAnalyticsJobStatus> {
+    pub fn get_call_analytics_job_status(&self) -> &::std::option::Option<crate::types::CallAnalyticsJobStatus> {
         &self.call_analytics_job_status
     }
     /// <p>The language code used to create your Call Analytics job. For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
@@ -233,10 +212,7 @@ impl CallAnalyticsJobBuilder {
     }
     /// <p>The language code used to create your Call Analytics job. For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     /// <p>If you don't know the language spoken in your media file, you can omit this field and let Amazon Transcribe automatically identify the language of your media. To improve the accuracy of language identification, you can include several language codes and Amazon Transcribe chooses the closest match for your transcription.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -265,10 +241,7 @@ impl CallAnalyticsJobBuilder {
         self
     }
     /// <p>The format of the input media file.</p>
-    pub fn set_media_format(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaFormat>,
-    ) -> Self {
+    pub fn set_media_format(mut self, input: ::std::option::Option<crate::types::MediaFormat>) -> Self {
         self.media_format = input;
         self
     }
@@ -296,10 +269,7 @@ impl CallAnalyticsJobBuilder {
         self
     }
     /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
-    pub fn set_transcript(
-        mut self,
-        input: ::std::option::Option<crate::types::Transcript>,
-    ) -> Self {
+    pub fn set_transcript(mut self, input: ::std::option::Option<crate::types::Transcript>) -> Self {
         self.transcript = input;
         self
     }
@@ -315,10 +285,7 @@ impl CallAnalyticsJobBuilder {
     }
     /// <p>The date and time the specified Call Analytics job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -335,10 +302,7 @@ impl CallAnalyticsJobBuilder {
     }
     /// <p>The date and time the specified Call Analytics job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -355,10 +319,7 @@ impl CallAnalyticsJobBuilder {
     }
     /// <p>The date and time the specified Call Analytics job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
-    pub fn set_completion_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completion_time = input;
         self
     }
@@ -377,10 +338,7 @@ impl CallAnalyticsJobBuilder {
     /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// </ul>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
@@ -394,10 +352,7 @@ impl CallAnalyticsJobBuilder {
     /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
     /// </ul>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -415,18 +370,12 @@ impl CallAnalyticsJobBuilder {
         &self.failure_reason
     }
     /// <p>The Amazon Resource Name (ARN) you included in your request.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) you included in your request.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -457,10 +406,7 @@ impl CallAnalyticsJobBuilder {
         self
     }
     /// <p>Provides information on any additional settings that were included in your request. Additional settings include content redaction and language identification settings.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::CallAnalyticsJobSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::CallAnalyticsJobSettings>) -> Self {
         self.settings = input;
         self
     }
@@ -480,17 +426,12 @@ impl CallAnalyticsJobBuilder {
         self
     }
     /// <p>Indicates which speaker is on which channel.</p>
-    pub fn set_channel_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
-    ) -> Self {
+    pub fn set_channel_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>) -> Self {
         self.channel_definitions = input;
         self
     }
     /// <p>Indicates which speaker is on which channel.</p>
-    pub fn get_channel_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>> {
+    pub fn get_channel_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>> {
         &self.channel_definitions
     }
     /// Consumes the builder and constructs a [`CallAnalyticsJob`](crate::types::CallAnalyticsJob).

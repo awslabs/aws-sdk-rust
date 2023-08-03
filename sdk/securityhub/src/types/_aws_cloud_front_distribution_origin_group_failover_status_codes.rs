@@ -23,18 +23,14 @@ impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
 }
 impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
     /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes).
-    pub fn builder(
-    ) -> crate::types::builders::AwsCloudFrontDistributionOriginGroupFailoverStatusCodesBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsCloudFrontDistributionOriginGroupFailoverStatusCodesBuilder {
         crate::types::builders::AwsCloudFrontDistributionOriginGroupFailoverStatusCodesBuilder::default()
     }
 }
 
 /// A builder for [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionOriginGroupFailoverStatusCodesBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<i32>>,
     pub(crate) quantity: ::std::option::Option<i32>,

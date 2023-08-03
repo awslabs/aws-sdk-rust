@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UnsuccessfulInstanceCreditSpecificationErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,12 +57,12 @@ pub enum UnsuccessfulInstanceCreditSpecificationErrorCode {
 impl ::std::convert::From<&str> for UnsuccessfulInstanceCreditSpecificationErrorCode {
     fn from(s: &str) -> Self {
         match s {
-                        "IncorrectInstanceState" => UnsuccessfulInstanceCreditSpecificationErrorCode::IncorrectInstanceState,
-"InstanceCreditSpecification.NotSupported" => UnsuccessfulInstanceCreditSpecificationErrorCode::InstanceCreditSpecificationNotSupported,
-"InvalidInstanceID.Malformed" => UnsuccessfulInstanceCreditSpecificationErrorCode::InvalidInstanceId,
-"InvalidInstanceID.NotFound" => UnsuccessfulInstanceCreditSpecificationErrorCode::InstanceNotFound,
-other => UnsuccessfulInstanceCreditSpecificationErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
+            "IncorrectInstanceState" => UnsuccessfulInstanceCreditSpecificationErrorCode::IncorrectInstanceState,
+            "InstanceCreditSpecification.NotSupported" => UnsuccessfulInstanceCreditSpecificationErrorCode::InstanceCreditSpecificationNotSupported,
+            "InvalidInstanceID.Malformed" => UnsuccessfulInstanceCreditSpecificationErrorCode::InvalidInstanceId,
+            "InvalidInstanceID.NotFound" => UnsuccessfulInstanceCreditSpecificationErrorCode::InstanceNotFound,
+            other => UnsuccessfulInstanceCreditSpecificationErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
     }
 }
 impl ::std::str::FromStr for UnsuccessfulInstanceCreditSpecificationErrorCode {
@@ -82,12 +76,12 @@ impl UnsuccessfulInstanceCreditSpecificationErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-    UnsuccessfulInstanceCreditSpecificationErrorCode::IncorrectInstanceState => "IncorrectInstanceState",
-    UnsuccessfulInstanceCreditSpecificationErrorCode::InstanceCreditSpecificationNotSupported => "InstanceCreditSpecification.NotSupported",
-    UnsuccessfulInstanceCreditSpecificationErrorCode::InvalidInstanceId => "InvalidInstanceID.Malformed",
-    UnsuccessfulInstanceCreditSpecificationErrorCode::InstanceNotFound => "InvalidInstanceID.NotFound",
-    UnsuccessfulInstanceCreditSpecificationErrorCode::Unknown(value) => value.as_str()
-}
+            UnsuccessfulInstanceCreditSpecificationErrorCode::IncorrectInstanceState => "IncorrectInstanceState",
+            UnsuccessfulInstanceCreditSpecificationErrorCode::InstanceCreditSpecificationNotSupported => "InstanceCreditSpecification.NotSupported",
+            UnsuccessfulInstanceCreditSpecificationErrorCode::InvalidInstanceId => "InvalidInstanceID.Malformed",
+            UnsuccessfulInstanceCreditSpecificationErrorCode::InstanceNotFound => "InvalidInstanceID.NotFound",
+            UnsuccessfulInstanceCreditSpecificationErrorCode::Unknown(value) => value.as_str(),
+        }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {

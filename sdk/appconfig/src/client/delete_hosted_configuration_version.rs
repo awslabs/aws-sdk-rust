@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`version_number(i32)`](crate::operation::delete_hosted_configuration_version::builders::DeleteHostedConfigurationVersionFluentBuilder::version_number) / [`set_version_number(Option<i32>)`](crate::operation::delete_hosted_configuration_version::builders::DeleteHostedConfigurationVersionFluentBuilder::set_version_number): <p>The versions number to delete.</p>
     /// - On success, responds with [`DeleteHostedConfigurationVersionOutput`](crate::operation::delete_hosted_configuration_version::DeleteHostedConfigurationVersionOutput)
     /// - On failure, responds with [`SdkError<DeleteHostedConfigurationVersionError>`](crate::operation::delete_hosted_configuration_version::DeleteHostedConfigurationVersionError)
-    pub fn delete_hosted_configuration_version(&self) -> crate::operation::delete_hosted_configuration_version::builders::DeleteHostedConfigurationVersionFluentBuilder{
+    pub fn delete_hosted_configuration_version(
+        &self,
+    ) -> crate::operation::delete_hosted_configuration_version::builders::DeleteHostedConfigurationVersionFluentBuilder {
         crate::operation::delete_hosted_configuration_version::builders::DeleteHostedConfigurationVersionFluentBuilder::new(self.handle.clone())
     }
 }

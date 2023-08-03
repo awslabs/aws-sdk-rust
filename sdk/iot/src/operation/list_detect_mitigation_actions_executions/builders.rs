@@ -5,16 +5,16 @@ pub use crate::operation::list_detect_mitigation_actions_executions::_list_detec
 
 impl ListDetectMitigationActionsExecutionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_detect_mitigation_actions_executions();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl ListDetectMitigationActionsExecutionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDetectMitigationActionsExecutionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsInputBuilder,
+    inner: crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsInputBuilder,
 }
 impl ListDetectMitigationActionsExecutionsFluentBuilder {
     /// Creates a new `ListDetectMitigationActionsExecutions`.
@@ -38,15 +38,22 @@ impl ListDetectMitigationActionsExecutionsFluentBuilder {
         }
     }
     /// Access the ListDetectMitigationActionsExecutions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +62,17 @@ impl ListDetectMitigationActionsExecutionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,24 +90,38 @@ impl ListDetectMitigationActionsExecutionsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_detect_mitigation_actions_executions::paginator::ListDetectMitigationActionsExecutionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_detect_mitigation_actions_executions::paginator::ListDetectMitigationActionsExecutionsPaginator{
-        crate::operation::list_detect_mitigation_actions_executions::paginator::ListDetectMitigationActionsExecutionsPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_detect_mitigation_actions_executions::paginator::ListDetectMitigationActionsExecutionsPaginator {
+        crate::operation::list_detect_mitigation_actions_executions::paginator::ListDetectMitigationActionsExecutionsPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p> The unique identifier of the task. </p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,10 +171,7 @@ impl ListDetectMitigationActionsExecutionsFluentBuilder {
         self
     }
     /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -166,10 +185,7 @@ impl ListDetectMitigationActionsExecutionsFluentBuilder {
         self
     }
     /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

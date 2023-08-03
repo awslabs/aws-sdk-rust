@@ -30,9 +30,7 @@ impl CollectionFilters {
 
 /// A builder for [`CollectionFilters`](crate::types::CollectionFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CollectionFiltersBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CollectionStatus>,
@@ -58,10 +56,7 @@ impl CollectionFiltersBuilder {
         self
     }
     /// <p>The current status of the collection.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CollectionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CollectionStatus>) -> Self {
         self.status = input;
         self
     }

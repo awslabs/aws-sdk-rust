@@ -22,16 +22,14 @@ impl UpdateAuditStreamConfigurationInput {
 }
 impl UpdateAuditStreamConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateAuditStreamConfigurationInput`](crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationInput).
-    pub fn builder() -> crate::operation::update_audit_stream_configuration::builders::UpdateAuditStreamConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_audit_stream_configuration::builders::UpdateAuditStreamConfigurationInputBuilder {
         crate::operation::update_audit_stream_configuration::builders::UpdateAuditStreamConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAuditStreamConfigurationInput`](crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAuditStreamConfigurationInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) audit_stream_arn: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl UpdateAuditStreamConfigurationInputBuilder {
         &self.fleet_arn
     }
     /// <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>
-    pub fn audit_stream_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audit_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audit_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>
-    pub fn set_audit_stream_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audit_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audit_stream_arn = input;
         self
     }
@@ -78,13 +70,9 @@ impl UpdateAuditStreamConfigurationInputBuilder {
         crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationInput {
-                fleet_arn: self.fleet_arn
-                ,
-                audit_stream_arn: self.audit_stream_arn
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationInput {
+            fleet_arn: self.fleet_arn,
+            audit_stream_arn: self.audit_stream_arn,
+        })
     }
 }

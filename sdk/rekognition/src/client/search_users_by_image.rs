@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`searched_face(Option<SearchedFaceDetails>)`](crate::operation::search_users_by_image::SearchUsersByImageOutput::searched_face): <p>A list of FaceDetail objects containing the BoundingBox for the largest face in image, as well as the confidence in the bounding box, that was searched for matches. If no valid face is detected in the image the response will contain no SearchedFace object.</p>
     ///   - [`unsearched_faces(Option<Vec<UnsearchedFace>>)`](crate::operation::search_users_by_image::SearchUsersByImageOutput::unsearched_faces): <p>List of UnsearchedFace objects. Contains the face details infered from the specified image but not used for search. Contains reasons that describe why a face wasn't used for Search. </p>
     /// - On failure, responds with [`SdkError<SearchUsersByImageError>`](crate::operation::search_users_by_image::SearchUsersByImageError)
-    pub fn search_users_by_image(
-        &self,
-    ) -> crate::operation::search_users_by_image::builders::SearchUsersByImageFluentBuilder {
-        crate::operation::search_users_by_image::builders::SearchUsersByImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_users_by_image(&self) -> crate::operation::search_users_by_image::builders::SearchUsersByImageFluentBuilder {
+        crate::operation::search_users_by_image::builders::SearchUsersByImageFluentBuilder::new(self.handle.clone())
     }
 }

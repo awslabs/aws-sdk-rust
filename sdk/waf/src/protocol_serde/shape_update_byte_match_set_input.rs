@@ -15,10 +15,7 @@ pub fn ser_update_byte_match_set_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_byte_match_set_update::ser_byte_match_set_update(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_byte_match_set_update::ser_byte_match_set_update(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

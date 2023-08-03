@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteResolverQueryLogConfigOutput`](crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigOutput) with field(s):
     ///   - [`resolver_query_log_config(Option<ResolverQueryLogConfig>)`](crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigOutput::resolver_query_log_config): <p>Information about the query logging configuration that you deleted, including the status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteResolverQueryLogConfigError>`](crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError)
-    pub fn delete_resolver_query_log_config(&self) -> crate::operation::delete_resolver_query_log_config::builders::DeleteResolverQueryLogConfigFluentBuilder{
+    pub fn delete_resolver_query_log_config(
+        &self,
+    ) -> crate::operation::delete_resolver_query_log_config::builders::DeleteResolverQueryLogConfigFluentBuilder {
         crate::operation::delete_resolver_query_log_config::builders::DeleteResolverQueryLogConfigFluentBuilder::new(self.handle.clone())
     }
 }

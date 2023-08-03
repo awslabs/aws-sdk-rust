@@ -12,7 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDataQualityRulesetOutput`](crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetOutput::name): <p>A unique name for the data quality ruleset.</p>
     /// - On failure, responds with [`SdkError<CreateDataQualityRulesetError>`](crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetError)
-    pub fn create_data_quality_ruleset(&self) -> crate::operation::create_data_quality_ruleset::builders::CreateDataQualityRulesetFluentBuilder{
+    pub fn create_data_quality_ruleset(&self) -> crate::operation::create_data_quality_ruleset::builders::CreateDataQualityRulesetFluentBuilder {
         crate::operation::create_data_quality_ruleset::builders::CreateDataQualityRulesetFluentBuilder::new(self.handle.clone())
     }
 }

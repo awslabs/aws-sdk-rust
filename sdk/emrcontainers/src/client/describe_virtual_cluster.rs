@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeVirtualClusterOutput`](crate::operation::describe_virtual_cluster::DescribeVirtualClusterOutput) with field(s):
     ///   - [`virtual_cluster(Option<VirtualCluster>)`](crate::operation::describe_virtual_cluster::DescribeVirtualClusterOutput::virtual_cluster): <p>This output displays information about the specified virtual cluster.</p>
     /// - On failure, responds with [`SdkError<DescribeVirtualClusterError>`](crate::operation::describe_virtual_cluster::DescribeVirtualClusterError)
-    pub fn describe_virtual_cluster(
-        &self,
-    ) -> crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterFluentBuilder
-    {
+    pub fn describe_virtual_cluster(&self) -> crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterFluentBuilder {
         crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterFluentBuilder::new(self.handle.clone())
     }
 }

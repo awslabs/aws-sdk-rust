@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetOutpostResolverOutput {
 }
 impl GetOutpostResolverOutput {
     /// Creates a new builder-style object to manufacture [`GetOutpostResolverOutput`](crate::operation::get_outpost_resolver::GetOutpostResolverOutput).
-    pub fn builder(
-    ) -> crate::operation::get_outpost_resolver::builders::GetOutpostResolverOutputBuilder {
+    pub fn builder() -> crate::operation::get_outpost_resolver::builders::GetOutpostResolverOutputBuilder {
         crate::operation::get_outpost_resolver::builders::GetOutpostResolverOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetOutpostResolverOutput`](crate::operation::get_outpost_resolver::GetOutpostResolverOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOutpostResolverOutputBuilder {
     pub(crate) outpost_resolver: ::std::option::Option<crate::types::OutpostResolver>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetOutpostResolverOutputBuilder {
         self
     }
     /// <p>Information about the <code>GetOutpostResolver</code> request, including the status of the request.</p>
-    pub fn set_outpost_resolver(
-        mut self,
-        input: ::std::option::Option<crate::types::OutpostResolver>,
-    ) -> Self {
+    pub fn set_outpost_resolver(mut self, input: ::std::option::Option<crate::types::OutpostResolver>) -> Self {
         self.outpost_resolver = input;
         self
     }

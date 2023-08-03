@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`valid(bool)`](crate::operation::check_schema_version_validity::CheckSchemaVersionValidityOutput::valid): <p>Return true, if the schema is valid and false otherwise.</p>
     ///   - [`error(Option<String>)`](crate::operation::check_schema_version_validity::CheckSchemaVersionValidityOutput::error): <p>A validation failure error message.</p>
     /// - On failure, responds with [`SdkError<CheckSchemaVersionValidityError>`](crate::operation::check_schema_version_validity::CheckSchemaVersionValidityError)
-    pub fn check_schema_version_validity(&self) -> crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityFluentBuilder{
+    pub fn check_schema_version_validity(
+        &self,
+    ) -> crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityFluentBuilder {
         crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityFluentBuilder::new(self.handle.clone())
     }
 }

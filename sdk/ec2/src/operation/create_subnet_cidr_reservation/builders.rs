@@ -26,7 +26,7 @@ impl CreateSubnetCidrReservationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSubnetCidrReservationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_subnet_cidr_reservation::builders::CreateSubnetCidrReservationInputBuilder,
+    inner: crate::operation::create_subnet_cidr_reservation::builders::CreateSubnetCidrReservationInputBuilder,
 }
 impl CreateSubnetCidrReservationFluentBuilder {
     /// Creates a new `CreateSubnetCidrReservation`.
@@ -37,7 +37,7 @@ impl CreateSubnetCidrReservationFluentBuilder {
         }
     }
     /// Access the CreateSubnetCidrReservation as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_subnet_cidr_reservation::builders::CreateSubnetCidrReservationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_subnet_cidr_reservation::builders::CreateSubnetCidrReservationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateSubnetCidrReservationFluentBuilder {
             crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateSubnetCidrReservationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateSubnetCidrReservationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateSubnetCidrReservationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateSubnetCidrReservationFluentBuilder {
             crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationError>,
     > {
         self.customize_middleware().await
     }
@@ -164,10 +153,7 @@ impl CreateSubnetCidrReservationFluentBuilder {
     /// <li> <p> <code>prefix</code>: The Amazon EC2 Prefix Delegation feature assigns the IP addresses to network interfaces that are associated with an instance. For information about Prefix Delegation, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation.html">Prefix Delegation for Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
     /// <li> <p> <code>explicit</code>: You manually assign the IP addresses to resources that reside in your subnet. </p> </li>
     /// </ul>
-    pub fn set_reservation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SubnetCidrReservationType>,
-    ) -> Self {
+    pub fn set_reservation_type(mut self, input: ::std::option::Option<crate::types::SubnetCidrReservationType>) -> Self {
         self.inner = self.inner.set_reservation_type(input);
         self
     }
@@ -177,9 +163,7 @@ impl CreateSubnetCidrReservationFluentBuilder {
     /// <li> <p> <code>prefix</code>: The Amazon EC2 Prefix Delegation feature assigns the IP addresses to network interfaces that are associated with an instance. For information about Prefix Delegation, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation.html">Prefix Delegation for Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
     /// <li> <p> <code>explicit</code>: You manually assign the IP addresses to resources that reside in your subnet. </p> </li>
     /// </ul>
-    pub fn get_reservation_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::SubnetCidrReservationType> {
+    pub fn get_reservation_type(&self) -> &::std::option::Option<crate::types::SubnetCidrReservationType> {
         self.inner.get_reservation_type()
     }
     /// <p>The description to assign to the subnet CIDR reservation.</p>
@@ -220,17 +204,12 @@ impl CreateSubnetCidrReservationFluentBuilder {
         self
     }
     /// <p>The tags to assign to the subnet CIDR reservation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to assign to the subnet CIDR reservation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
 }

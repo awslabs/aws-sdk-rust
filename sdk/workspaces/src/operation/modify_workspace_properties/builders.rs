@@ -28,7 +28,7 @@ impl ModifyWorkspacePropertiesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyWorkspacePropertiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesInputBuilder,
+    inner: crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesInputBuilder,
 }
 impl ModifyWorkspacePropertiesFluentBuilder {
     /// Creates a new `ModifyWorkspaceProperties`.
@@ -39,7 +39,7 @@ impl ModifyWorkspacePropertiesFluentBuilder {
         }
     }
     /// Access the ModifyWorkspaceProperties as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl ModifyWorkspacePropertiesFluentBuilder {
             crate::operation::modify_workspace_properties::ModifyWorkspaceProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl ModifyWorkspacePropertiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl ModifyWorkspacePropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl ModifyWorkspacePropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl ModifyWorkspacePropertiesFluentBuilder {
             crate::operation::modify_workspace_properties::ModifyWorkspaceProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesError>,
     > {
         self.customize_middleware().await
     }
@@ -142,17 +131,12 @@ impl ModifyWorkspacePropertiesFluentBuilder {
         self
     }
     /// <p>The properties of the WorkSpace.</p>
-    pub fn set_workspace_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceProperties>,
-    ) -> Self {
+    pub fn set_workspace_properties(mut self, input: ::std::option::Option<crate::types::WorkspaceProperties>) -> Self {
         self.inner = self.inner.set_workspace_properties(input);
         self
     }
     /// <p>The properties of the WorkSpace.</p>
-    pub fn get_workspace_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkspaceProperties> {
+    pub fn get_workspace_properties(&self) -> &::std::option::Option<crate::types::WorkspaceProperties> {
         self.inner.get_workspace_properties()
     }
 }

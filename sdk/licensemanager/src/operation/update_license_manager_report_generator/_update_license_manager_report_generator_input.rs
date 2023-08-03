@@ -65,16 +65,14 @@ impl UpdateLicenseManagerReportGeneratorInput {
 }
 impl UpdateLicenseManagerReportGeneratorInput {
     /// Creates a new builder-style object to manufacture [`UpdateLicenseManagerReportGeneratorInput`](crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorInput).
-    pub fn builder() -> crate::operation::update_license_manager_report_generator::builders::UpdateLicenseManagerReportGeneratorInputBuilder{
+    pub fn builder() -> crate::operation::update_license_manager_report_generator::builders::UpdateLicenseManagerReportGeneratorInputBuilder {
         crate::operation::update_license_manager_report_generator::builders::UpdateLicenseManagerReportGeneratorInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLicenseManagerReportGeneratorInput`](crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLicenseManagerReportGeneratorInputBuilder {
     pub(crate) license_manager_report_generator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) report_generator_name: ::std::option::Option<::std::string::String>,
@@ -86,40 +84,26 @@ pub struct UpdateLicenseManagerReportGeneratorInputBuilder {
 }
 impl UpdateLicenseManagerReportGeneratorInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
-    pub fn license_manager_report_generator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_manager_report_generator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_manager_report_generator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
-    pub fn set_license_manager_report_generator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_manager_report_generator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_manager_report_generator_arn = input;
         self
     }
     /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
-    pub fn get_license_manager_report_generator_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_license_manager_report_generator_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_manager_report_generator_arn
     }
     /// <p>Name of the report generator.</p>
-    pub fn report_generator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_generator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_generator_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the report generator.</p>
-    pub fn set_report_generator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_generator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_generator_name = input;
         self
     }
@@ -147,10 +131,7 @@ impl UpdateLicenseManagerReportGeneratorInputBuilder {
     /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
     /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReportType>>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportType>>) -> Self {
         self.r#type = input;
         self
     }
@@ -168,10 +149,7 @@ impl UpdateLicenseManagerReportGeneratorInputBuilder {
         self
     }
     /// <p>The report context.</p>
-    pub fn set_report_context(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportContext>,
-    ) -> Self {
+    pub fn set_report_context(mut self, input: ::std::option::Option<crate::types::ReportContext>) -> Self {
         self.report_context = input;
         self
     }
@@ -185,10 +163,7 @@ impl UpdateLicenseManagerReportGeneratorInputBuilder {
         self
     }
     /// <p>Frequency by which reports are generated.</p>
-    pub fn set_report_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportFrequency>,
-    ) -> Self {
+    pub fn set_report_frequency(mut self, input: ::std::option::Option<crate::types::ReportFrequency>) -> Self {
         self.report_frequency = input;
         self
     }
@@ -225,24 +200,22 @@ impl UpdateLicenseManagerReportGeneratorInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateLicenseManagerReportGeneratorInput`](crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorInput {
-                license_manager_report_generator_arn: self.license_manager_report_generator_arn
-                ,
-                report_generator_name: self.report_generator_name
-                ,
-                r#type: self.r#type
-                ,
-                report_context: self.report_context
-                ,
-                report_frequency: self.report_frequency
-                ,
-                client_token: self.client_token
-                ,
-                description: self.description
-                ,
-            }
+                license_manager_report_generator_arn: self.license_manager_report_generator_arn,
+                report_generator_name: self.report_generator_name,
+                r#type: self.r#type,
+                report_context: self.report_context,
+                report_frequency: self.report_frequency,
+                client_token: self.client_token,
+                description: self.description,
+            },
         )
     }
 }

@@ -37,10 +37,7 @@ impl ListDistributedGrantsFluentBuilder {
         }
     }
     /// Access the ListDistributedGrants as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_distributed_grants::builders::ListDistributedGrantsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_distributed_grants::builders::ListDistributedGrantsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListDistributedGrantsFluentBuilder {
             crate::operation::list_distributed_grants::ListDistributedGrants,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distributed_grants::ListDistributedGrantsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distributed_grants::ListDistributedGrantsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListDistributedGrantsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListDistributedGrantsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_distributed_grants::ListDistributedGrantsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distributed_grants::ListDistributedGrantsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distributed_grants::ListDistributedGrantsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListDistributedGrantsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_distributed_grants::ListDistributedGrantsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distributed_grants::ListDistributedGrantsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distributed_grants::ListDistributedGrantsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ListDistributedGrantsFluentBuilder {
             crate::operation::list_distributed_grants::ListDistributedGrants,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distributed_grants::ListDistributedGrantsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distributed_grants::ListDistributedGrantsError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +119,7 @@ impl ListDistributedGrantsFluentBuilder {
         self
     }
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
-    pub fn set_grant_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_grant_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_grant_arns(input);
         self
     }
@@ -168,10 +151,7 @@ impl ListDistributedGrantsFluentBuilder {
     /// <li> <p> <code>ProductSKU</code> </p> </li>
     /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

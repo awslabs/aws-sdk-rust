@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_schema_as_json::GetSchemaAsJsonOutput::name): <p>The name of the retrieved schema.</p>
     ///   - [`document(Option<String>)`](crate::operation::get_schema_as_json::GetSchemaAsJsonOutput::document): <p>The JSON representation of the schema document.</p>
     /// - On failure, responds with [`SdkError<GetSchemaAsJsonError>`](crate::operation::get_schema_as_json::GetSchemaAsJsonError)
-    pub fn get_schema_as_json(
-        &self,
-    ) -> crate::operation::get_schema_as_json::builders::GetSchemaAsJsonFluentBuilder {
-        crate::operation::get_schema_as_json::builders::GetSchemaAsJsonFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_schema_as_json(&self) -> crate::operation::get_schema_as_json::builders::GetSchemaAsJsonFluentBuilder {
+        crate::operation::get_schema_as_json::builders::GetSchemaAsJsonFluentBuilder::new(self.handle.clone())
     }
 }

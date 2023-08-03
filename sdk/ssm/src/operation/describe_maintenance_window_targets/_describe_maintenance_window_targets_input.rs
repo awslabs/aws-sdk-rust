@@ -36,20 +36,17 @@ impl DescribeMaintenanceWindowTargetsInput {
 }
 impl DescribeMaintenanceWindowTargetsInput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowTargetsInput`](crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsInput).
-    pub fn builder() -> crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsInputBuilder{
+    pub fn builder() -> crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsInputBuilder {
         crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMaintenanceWindowTargetsInput`](crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowTargetsInputBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -80,17 +77,12 @@ impl DescribeMaintenanceWindowTargetsInputBuilder {
         self
     }
     /// <p>Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -122,18 +114,19 @@ impl DescribeMaintenanceWindowTargetsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowTargetsInput`](crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsInput {
-                window_id: self.window_id
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                window_id: self.window_id,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

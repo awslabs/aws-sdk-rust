@@ -10,10 +10,7 @@ impl SearchDataSetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_data_sets::SearchDataSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_data_sets::SearchDataSetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_data_sets::SearchDataSetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_data_sets();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SearchDataSetsFluentBuilder {
         }
     }
     /// Access the SearchDataSets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_data_sets::builders::SearchDataSetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_data_sets::builders::SearchDataSetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SearchDataSetsFluentBuilder {
             crate::operation::search_data_sets::SearchDataSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_data_sets::SearchDataSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_data_sets::SearchDataSetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SearchDataSetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SearchDataSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_data_sets::SearchDataSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_data_sets::SearchDataSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_data_sets::SearchDataSetsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SearchDataSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_data_sets::SearchDataSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_data_sets::SearchDataSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_data_sets::SearchDataSetsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl SearchDataSetsFluentBuilder {
             crate::operation::search_data_sets::SearchDataSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_data_sets::SearchDataSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_data_sets::SearchDataSetsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_data_sets::paginator::SearchDataSetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_data_sets::paginator::SearchDataSetsPaginator {
-        crate::operation::search_data_sets::paginator::SearchDataSetsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_data_sets::paginator::SearchDataSetsPaginator {
+        crate::operation::search_data_sets::paginator::SearchDataSetsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -163,17 +136,12 @@ impl SearchDataSetsFluentBuilder {
         self
     }
     /// <p>The filters to apply to the search.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetSearchFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetSearchFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>The filters to apply to the search.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetSearchFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetSearchFilter>> {
         self.inner.get_filters()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>

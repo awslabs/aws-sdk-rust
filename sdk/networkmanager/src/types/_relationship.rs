@@ -30,9 +30,7 @@ impl Relationship {
 
 /// A builder for [`Relationship`](crate::types::Relationship).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RelationshipBuilder {
     pub(crate) from: ::std::option::Option<::std::string::String>,
     pub(crate) to: ::std::option::Option<::std::string::String>,

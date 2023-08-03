@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeIdentityPoolUsageOutput`](crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput) with field(s):
     ///   - [`identity_pool_usage(Option<IdentityPoolUsage>)`](crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput::identity_pool_usage): Information about the usage of the identity pool.
     /// - On failure, responds with [`SdkError<DescribeIdentityPoolUsageError>`](crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError)
-    pub fn describe_identity_pool_usage(&self) -> crate::operation::describe_identity_pool_usage::builders::DescribeIdentityPoolUsageFluentBuilder{
+    pub fn describe_identity_pool_usage(&self) -> crate::operation::describe_identity_pool_usage::builders::DescribeIdentityPoolUsageFluentBuilder {
         crate::operation::describe_identity_pool_usage::builders::DescribeIdentityPoolUsageFluentBuilder::new(self.handle.clone())
     }
 }

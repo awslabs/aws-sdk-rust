@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateUserHierarchyGroupOutput {
 }
 impl CreateUserHierarchyGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserHierarchyGroupOutput`](crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupOutput).
-    pub fn builder() -> crate::operation::create_user_hierarchy_group::builders::CreateUserHierarchyGroupOutputBuilder{
+    pub fn builder() -> crate::operation::create_user_hierarchy_group::builders::CreateUserHierarchyGroupOutputBuilder {
         crate::operation::create_user_hierarchy_group::builders::CreateUserHierarchyGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUserHierarchyGroupOutput`](crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUserHierarchyGroupOutputBuilder {
     pub(crate) hierarchy_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) hierarchy_group_arn: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct CreateUserHierarchyGroupOutputBuilder {
 }
 impl CreateUserHierarchyGroupOutputBuilder {
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn hierarchy_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hierarchy_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hierarchy_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn set_hierarchy_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hierarchy_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hierarchy_group_id = input;
         self
     }
@@ -65,18 +57,12 @@ impl CreateUserHierarchyGroupOutputBuilder {
         &self.hierarchy_group_id
     }
     /// <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
-    pub fn hierarchy_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hierarchy_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hierarchy_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
-    pub fn set_hierarchy_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hierarchy_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hierarchy_group_arn = input;
         self
     }
@@ -94,9 +80,7 @@ impl CreateUserHierarchyGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateUserHierarchyGroupOutput`](crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupOutput {
+    pub fn build(self) -> crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupOutput {
         crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupOutput {
             hierarchy_group_id: self.hierarchy_group_id,
             hierarchy_group_arn: self.hierarchy_group_arn,

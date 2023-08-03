@@ -30,9 +30,7 @@ impl TimeRange {
 
 /// A builder for [`TimeRange`](crate::types::TimeRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeRangeBuilder {
     pub(crate) after: ::std::option::Option<i64>,
     pub(crate) before: ::std::option::Option<i64>,

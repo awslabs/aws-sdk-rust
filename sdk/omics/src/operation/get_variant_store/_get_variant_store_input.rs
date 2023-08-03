@@ -22,9 +22,7 @@ impl GetVariantStoreInput {
 
 /// A builder for [`GetVariantStoreInput`](crate::operation::get_variant_store::GetVariantStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVariantStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetVariantStoreInputBuilder {
     /// Consumes the builder and constructs a [`GetVariantStoreInput`](crate::operation::get_variant_store::GetVariantStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_variant_store::GetVariantStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_variant_store::GetVariantStoreInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::get_variant_store::GetVariantStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_variant_store::GetVariantStoreInput { name: self.name })
     }
 }

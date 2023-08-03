@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for RegisterSchemaVersionOutput {
 }
 impl RegisterSchemaVersionOutput {
     /// Creates a new builder-style object to manufacture [`RegisterSchemaVersionOutput`](crate::operation::register_schema_version::RegisterSchemaVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::register_schema_version::builders::RegisterSchemaVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::register_schema_version::builders::RegisterSchemaVersionOutputBuilder {
         crate::operation::register_schema_version::builders::RegisterSchemaVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterSchemaVersionOutput`](crate::operation::register_schema_version::RegisterSchemaVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterSchemaVersionOutputBuilder {
     pub(crate) schema_version_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_number: ::std::option::Option<i64>,
@@ -55,18 +51,12 @@ pub struct RegisterSchemaVersionOutputBuilder {
 }
 impl RegisterSchemaVersionOutputBuilder {
     /// <p>The unique ID that represents the version of this schema.</p>
-    pub fn schema_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID that represents the version of this schema.</p>
-    pub fn set_schema_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version_id = input;
         self
     }
@@ -94,10 +84,7 @@ impl RegisterSchemaVersionOutputBuilder {
         self
     }
     /// <p>The status of the schema version.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SchemaVersionStatus>) -> Self {
         self.status = input;
         self
     }

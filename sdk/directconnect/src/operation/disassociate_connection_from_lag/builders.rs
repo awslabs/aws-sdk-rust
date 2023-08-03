@@ -27,7 +27,7 @@ impl DisassociateConnectionFromLagInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateConnectionFromLagFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_connection_from_lag::builders::DisassociateConnectionFromLagInputBuilder,
+    inner: crate::operation::disassociate_connection_from_lag::builders::DisassociateConnectionFromLagInputBuilder,
 }
 impl DisassociateConnectionFromLagFluentBuilder {
     /// Creates a new `DisassociateConnectionFromLag`.
@@ -38,7 +38,7 @@ impl DisassociateConnectionFromLagFluentBuilder {
         }
     }
     /// Access the DisassociateConnectionFromLag as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_connection_from_lag::builders::DisassociateConnectionFromLagInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_connection_from_lag::builders::DisassociateConnectionFromLagInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DisassociateConnectionFromLagFluentBuilder {
             crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLag,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DisassociateConnectionFromLagFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DisassociateConnectionFromLagFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DisassociateConnectionFromLagFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl DisassociateConnectionFromLagFluentBuilder {
             crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLag,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }

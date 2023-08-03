@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ReverseReplicationOutput`](crate::operation::reverse_replication::ReverseReplicationOutput) with field(s):
     ///   - [`reversed_direction_source_server_arn(Option<String>)`](crate::operation::reverse_replication::ReverseReplicationOutput::reversed_direction_source_server_arn): <p>ARN of created SourceServer.</p>
     /// - On failure, responds with [`SdkError<ReverseReplicationError>`](crate::operation::reverse_replication::ReverseReplicationError)
-    pub fn reverse_replication(
-        &self,
-    ) -> crate::operation::reverse_replication::builders::ReverseReplicationFluentBuilder {
-        crate::operation::reverse_replication::builders::ReverseReplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reverse_replication(&self) -> crate::operation::reverse_replication::builders::ReverseReplicationFluentBuilder {
+        crate::operation::reverse_replication::builders::ReverseReplicationFluentBuilder::new(self.handle.clone())
     }
 }

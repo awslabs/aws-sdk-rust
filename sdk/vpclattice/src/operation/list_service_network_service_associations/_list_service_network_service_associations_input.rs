@@ -36,16 +36,14 @@ impl ListServiceNetworkServiceAssociationsInput {
 }
 impl ListServiceNetworkServiceAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListServiceNetworkServiceAssociationsInput`](crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsInput).
-    pub fn builder() -> crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsInputBuilder {
         crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceNetworkServiceAssociationsInput`](crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceNetworkServiceAssociationsInputBuilder {
     pub(crate) service_network_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) service_identifier: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct ListServiceNetworkServiceAssociationsInputBuilder {
 }
 impl ListServiceNetworkServiceAssociationsInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn service_network_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn set_service_network_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_network_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_identifier = input;
         self
     }
@@ -74,18 +66,12 @@ impl ListServiceNetworkServiceAssociationsInputBuilder {
         &self.service_network_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_service_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_identifier = input;
         self
     }
@@ -122,18 +108,19 @@ impl ListServiceNetworkServiceAssociationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListServiceNetworkServiceAssociationsInput`](crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsInput {
-                service_network_identifier: self.service_network_identifier
-                ,
-                service_identifier: self.service_identifier
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                service_network_identifier: self.service_network_identifier,
+                service_identifier: self.service_identifier,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

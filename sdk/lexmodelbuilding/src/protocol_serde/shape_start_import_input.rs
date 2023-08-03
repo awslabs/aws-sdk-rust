@@ -7,9 +7,7 @@ pub fn ser_start_import_input(
         object.key("mergeStrategy").string(var_1.as_str());
     }
     if let Some(var_2) = &input.payload {
-        object
-            .key("payload")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_2));
+        object.key("payload").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
     }
     if let Some(var_3) = &input.resource_type {
         object.key("resourceType").string(var_3.as_str());

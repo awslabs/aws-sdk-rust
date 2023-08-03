@@ -44,9 +44,7 @@ impl UpdateClusterConfigFluentBuilder {
         }
     }
     /// Access the UpdateClusterConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_cluster_config::builders::UpdateClusterConfigInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_cluster_config::builders::UpdateClusterConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +56,7 @@ impl UpdateClusterConfigFluentBuilder {
             crate::operation::update_cluster_config::UpdateClusterConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_cluster_config::UpdateClusterConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cluster_config::UpdateClusterConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +66,7 @@ impl UpdateClusterConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +75,7 @@ impl UpdateClusterConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_cluster_config::UpdateClusterConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_cluster_config::UpdateClusterConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cluster_config::UpdateClusterConfigError>,
     > {
         let op = self
             .inner
@@ -107,9 +98,7 @@ impl UpdateClusterConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_cluster_config::UpdateClusterConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_cluster_config::UpdateClusterConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cluster_config::UpdateClusterConfigError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +112,7 @@ impl UpdateClusterConfigFluentBuilder {
             crate::operation::update_cluster_config::UpdateClusterConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_cluster_config::UpdateClusterConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cluster_config::UpdateClusterConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -149,17 +136,12 @@ impl UpdateClusterConfigFluentBuilder {
         self
     }
     /// <p>An object representing the VPC configuration to use for an Amazon EKS cluster.</p>
-    pub fn set_resources_vpc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfigRequest>,
-    ) -> Self {
+    pub fn set_resources_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfigRequest>) -> Self {
         self.inner = self.inner.set_resources_vpc_config(input);
         self
     }
     /// <p>An object representing the VPC configuration to use for an Amazon EKS cluster.</p>
-    pub fn get_resources_vpc_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcConfigRequest> {
+    pub fn get_resources_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfigRequest> {
         self.inner.get_resources_vpc_config()
     }
     /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
@@ -183,18 +165,12 @@ impl UpdateClusterConfigFluentBuilder {
         self.inner.get_logging()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

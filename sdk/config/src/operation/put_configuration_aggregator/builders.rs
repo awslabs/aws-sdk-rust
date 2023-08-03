@@ -33,7 +33,7 @@ impl PutConfigurationAggregatorInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutConfigurationAggregatorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_configuration_aggregator::builders::PutConfigurationAggregatorInputBuilder,
+    inner: crate::operation::put_configuration_aggregator::builders::PutConfigurationAggregatorInputBuilder,
 }
 impl PutConfigurationAggregatorFluentBuilder {
     /// Creates a new `PutConfigurationAggregator`.
@@ -44,7 +44,7 @@ impl PutConfigurationAggregatorFluentBuilder {
         }
     }
     /// Access the PutConfigurationAggregator as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_configuration_aggregator::builders::PutConfigurationAggregatorInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_configuration_aggregator::builders::PutConfigurationAggregatorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +56,7 @@ impl PutConfigurationAggregatorFluentBuilder {
             crate::operation::put_configuration_aggregator::PutConfigurationAggregator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +66,7 @@ impl PutConfigurationAggregatorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +75,7 @@ impl PutConfigurationAggregatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_configuration_aggregator::PutConfigurationAggregatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError>,
     > {
         let op = self
             .inner
@@ -105,9 +98,7 @@ impl PutConfigurationAggregatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_configuration_aggregator::PutConfigurationAggregatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError>,
     > {
         self.send_middleware().await
     }
@@ -121,32 +112,22 @@ impl PutConfigurationAggregatorFluentBuilder {
             crate::operation::put_configuration_aggregator::PutConfigurationAggregator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn configuration_aggregator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_aggregator_name(input.into());
         self
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn set_configuration_aggregator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_aggregator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_aggregator_name(input);
         self
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn get_configuration_aggregator_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_configuration_aggregator_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_aggregator_name()
     }
     /// Appends an item to `AccountAggregationSources`.
@@ -154,47 +135,31 @@ impl PutConfigurationAggregatorFluentBuilder {
     /// To override the contents of this collection use [`set_account_aggregation_sources`](Self::set_account_aggregation_sources).
     ///
     /// <p>A list of AccountAggregationSource object. </p>
-    pub fn account_aggregation_sources(
-        mut self,
-        input: crate::types::AccountAggregationSource,
-    ) -> Self {
+    pub fn account_aggregation_sources(mut self, input: crate::types::AccountAggregationSource) -> Self {
         self.inner = self.inner.account_aggregation_sources(input);
         self
     }
     /// <p>A list of AccountAggregationSource object. </p>
-    pub fn set_account_aggregation_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAggregationSource>>,
-    ) -> Self {
+    pub fn set_account_aggregation_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAggregationSource>>) -> Self {
         self.inner = self.inner.set_account_aggregation_sources(input);
         self
     }
     /// <p>A list of AccountAggregationSource object. </p>
-    pub fn get_account_aggregation_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAggregationSource>> {
+    pub fn get_account_aggregation_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAggregationSource>> {
         self.inner.get_account_aggregation_sources()
     }
     /// <p>An OrganizationAggregationSource object.</p>
-    pub fn organization_aggregation_source(
-        mut self,
-        input: crate::types::OrganizationAggregationSource,
-    ) -> Self {
+    pub fn organization_aggregation_source(mut self, input: crate::types::OrganizationAggregationSource) -> Self {
         self.inner = self.inner.organization_aggregation_source(input);
         self
     }
     /// <p>An OrganizationAggregationSource object.</p>
-    pub fn set_organization_aggregation_source(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationAggregationSource>,
-    ) -> Self {
+    pub fn set_organization_aggregation_source(mut self, input: ::std::option::Option<crate::types::OrganizationAggregationSource>) -> Self {
         self.inner = self.inner.set_organization_aggregation_source(input);
         self
     }
     /// <p>An OrganizationAggregationSource object.</p>
-    pub fn get_organization_aggregation_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationAggregationSource> {
+    pub fn get_organization_aggregation_source(&self) -> &::std::option::Option<crate::types::OrganizationAggregationSource> {
         self.inner.get_organization_aggregation_source()
     }
     /// Appends an item to `Tags`.
@@ -207,10 +172,7 @@ impl PutConfigurationAggregatorFluentBuilder {
         self
     }
     /// <p>An array of tag object.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

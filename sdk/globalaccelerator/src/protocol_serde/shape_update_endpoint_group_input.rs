@@ -12,10 +12,7 @@ pub fn ser_update_endpoint_group_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_endpoint_configuration::ser_endpoint_configuration(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_endpoint_configuration::ser_endpoint_configuration(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -57,10 +54,7 @@ pub fn ser_update_endpoint_group_input(
             {
                 #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_port_override::ser_port_override(
-                    &mut object_15,
-                    item_14,
-                )?;
+                crate::protocol_serde::shape_port_override::ser_port_override(&mut object_15, item_14)?;
                 object_15.finish();
             }
         }

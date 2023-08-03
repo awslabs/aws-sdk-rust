@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`BatchAssociateProjectAssetsOutput`](crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsOutput) with field(s):
     ///   - [`errors(Option<Vec<AssetErrorDetails>>)`](crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsOutput::errors): <p>A list of associated error information, if any.</p>
     /// - On failure, responds with [`SdkError<BatchAssociateProjectAssetsError>`](crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsError)
-    pub fn batch_associate_project_assets(&self) -> crate::operation::batch_associate_project_assets::builders::BatchAssociateProjectAssetsFluentBuilder{
+    pub fn batch_associate_project_assets(
+        &self,
+    ) -> crate::operation::batch_associate_project_assets::builders::BatchAssociateProjectAssetsFluentBuilder {
         crate::operation::batch_associate_project_assets::builders::BatchAssociateProjectAssetsFluentBuilder::new(self.handle.clone())
     }
 }

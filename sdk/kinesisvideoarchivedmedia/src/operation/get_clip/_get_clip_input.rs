@@ -27,9 +27,7 @@ impl GetClipInput {
         self.stream_arn.as_deref()
     }
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
-    pub fn clip_fragment_selector(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClipFragmentSelector> {
+    pub fn clip_fragment_selector(&self) -> ::std::option::Option<&crate::types::ClipFragmentSelector> {
         self.clip_fragment_selector.as_ref()
     }
 }
@@ -42,9 +40,7 @@ impl GetClipInput {
 
 /// A builder for [`GetClipInput`](crate::operation::get_clip::GetClipInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClipInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -91,26 +87,16 @@ impl GetClipInputBuilder {
         self
     }
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
-    pub fn set_clip_fragment_selector(
-        mut self,
-        input: ::std::option::Option<crate::types::ClipFragmentSelector>,
-    ) -> Self {
+    pub fn set_clip_fragment_selector(mut self, input: ::std::option::Option<crate::types::ClipFragmentSelector>) -> Self {
         self.clip_fragment_selector = input;
         self
     }
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
-    pub fn get_clip_fragment_selector(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClipFragmentSelector> {
+    pub fn get_clip_fragment_selector(&self) -> &::std::option::Option<crate::types::ClipFragmentSelector> {
         &self.clip_fragment_selector
     }
     /// Consumes the builder and constructs a [`GetClipInput`](crate::operation::get_clip::GetClipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_clip::GetClipInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_clip::GetClipInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_clip::GetClipInput {
             stream_name: self.stream_name,
             stream_arn: self.stream_arn,

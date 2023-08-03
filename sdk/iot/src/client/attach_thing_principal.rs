@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`principal(impl ::std::convert::Into<String>)`](crate::operation::attach_thing_principal::builders::AttachThingPrincipalFluentBuilder::principal) / [`set_principal(Option<String>)`](crate::operation::attach_thing_principal::builders::AttachThingPrincipalFluentBuilder::set_principal): <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     /// - On success, responds with [`AttachThingPrincipalOutput`](crate::operation::attach_thing_principal::AttachThingPrincipalOutput)
     /// - On failure, responds with [`SdkError<AttachThingPrincipalError>`](crate::operation::attach_thing_principal::AttachThingPrincipalError)
-    pub fn attach_thing_principal(
-        &self,
-    ) -> crate::operation::attach_thing_principal::builders::AttachThingPrincipalFluentBuilder {
-        crate::operation::attach_thing_principal::builders::AttachThingPrincipalFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn attach_thing_principal(&self) -> crate::operation::attach_thing_principal::builders::AttachThingPrincipalFluentBuilder {
+        crate::operation::attach_thing_principal::builders::AttachThingPrincipalFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`new_budget(Budget)`](crate::operation::update_budget::builders::UpdateBudgetFluentBuilder::new_budget) / [`set_new_budget(Option<Budget>)`](crate::operation::update_budget::builders::UpdateBudgetFluentBuilder::set_new_budget): <p>The budget that you want to update your budget to.</p>
     /// - On success, responds with [`UpdateBudgetOutput`](crate::operation::update_budget::UpdateBudgetOutput)
     /// - On failure, responds with [`SdkError<UpdateBudgetError>`](crate::operation::update_budget::UpdateBudgetError)
-    pub fn update_budget(
-        &self,
-    ) -> crate::operation::update_budget::builders::UpdateBudgetFluentBuilder {
-        crate::operation::update_budget::builders::UpdateBudgetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_budget(&self) -> crate::operation::update_budget::builders::UpdateBudgetFluentBuilder {
+        crate::operation::update_budget::builders::UpdateBudgetFluentBuilder::new(self.handle.clone())
     }
 }

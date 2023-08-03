@@ -27,7 +27,7 @@ impl UpdateProvisioningTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProvisioningTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateInputBuilder,
+    inner: crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateInputBuilder,
 }
 impl UpdateProvisioningTemplateFluentBuilder {
     /// Creates a new `UpdateProvisioningTemplate`.
@@ -38,7 +38,7 @@ impl UpdateProvisioningTemplateFluentBuilder {
         }
     }
     /// Access the UpdateProvisioningTemplate as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateProvisioningTemplateFluentBuilder {
             crate::operation::update_provisioning_template::UpdateProvisioningTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_provisioning_template::UpdateProvisioningTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_provisioning_template::UpdateProvisioningTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateProvisioningTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateProvisioningTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_provisioning_template::UpdateProvisioningTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_provisioning_template::UpdateProvisioningTemplateError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateProvisioningTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_provisioning_template::UpdateProvisioningTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_provisioning_template::UpdateProvisioningTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl UpdateProvisioningTemplateFluentBuilder {
             crate::operation::update_provisioning_template::UpdateProvisioningTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_provisioning_template::UpdateProvisioningTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_provisioning_template::UpdateProvisioningTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -184,18 +167,12 @@ impl UpdateProvisioningTemplateFluentBuilder {
         self.inner.get_default_version_id()
     }
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
-    pub fn provisioning_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provisioning_role_arn(input.into());
         self
     }
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
-    pub fn set_provisioning_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provisioning_role_arn(input);
         self
     }
@@ -209,17 +186,12 @@ impl UpdateProvisioningTemplateFluentBuilder {
         self
     }
     /// <p>Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
-    pub fn set_pre_provisioning_hook(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisioningHook>,
-    ) -> Self {
+    pub fn set_pre_provisioning_hook(mut self, input: ::std::option::Option<crate::types::ProvisioningHook>) -> Self {
         self.inner = self.inner.set_pre_provisioning_hook(input);
         self
     }
     /// <p>Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
-    pub fn get_pre_provisioning_hook(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisioningHook> {
+    pub fn get_pre_provisioning_hook(&self) -> &::std::option::Option<crate::types::ProvisioningHook> {
         self.inner.get_pre_provisioning_hook()
     }
     /// <p>Removes pre-provisioning hook template.</p>

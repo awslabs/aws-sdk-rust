@@ -21,9 +21,7 @@ pub struct SparkConnectorTarget {
     pub connection_type: ::std::option::Option<::std::string::String>,
     /// <p>Additional connection options for the connector.</p>
     #[doc(hidden)]
-    pub additional_options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies the data schema for the custom spark target.</p>
     #[doc(hidden)]
     pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
@@ -50,11 +48,7 @@ impl SparkConnectorTarget {
         self.connection_type.as_deref()
     }
     /// <p>Additional connection options for the connector.</p>
-    pub fn additional_options(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn additional_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_options.as_ref()
     }
     /// <p>Specifies the data schema for the custom spark target.</p>
@@ -71,18 +65,14 @@ impl SparkConnectorTarget {
 
 /// A builder for [`SparkConnectorTarget`](crate::types::SparkConnectorTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SparkConnectorTargetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
     pub(crate) connector_name: ::std::option::Option<::std::string::String>,
     pub(crate) connection_type: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_options: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl SparkConnectorTargetBuilder {
@@ -112,10 +102,7 @@ impl SparkConnectorTargetBuilder {
         self
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inputs = input;
         self
     }
@@ -124,18 +111,12 @@ impl SparkConnectorTargetBuilder {
         &self.inputs
     }
     /// <p>The name of a connection for an Apache Spark connector.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a connection for an Apache Spark connector.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_name = input;
         self
     }
@@ -144,18 +125,12 @@ impl SparkConnectorTargetBuilder {
         &self.connection_name
     }
     /// <p>The name of an Apache Spark connector.</p>
-    pub fn connector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an Apache Spark connector.</p>
-    pub fn set_connector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_name = input;
         self
     }
@@ -164,18 +139,12 @@ impl SparkConnectorTargetBuilder {
         &self.connector_name
     }
     /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
-    pub fn connection_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
-    pub fn set_connection_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_type = input;
         self
     }
@@ -201,19 +170,13 @@ impl SparkConnectorTargetBuilder {
     /// <p>Additional connection options for the connector.</p>
     pub fn set_additional_options(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.additional_options = input;
         self
     }
     /// <p>Additional connection options for the connector.</p>
-    pub fn get_additional_options(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_additional_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.additional_options
     }
     /// Appends an item to `output_schemas`.
@@ -228,17 +191,12 @@ impl SparkConnectorTargetBuilder {
         self
     }
     /// <p>Specifies the data schema for the custom spark target.</p>
-    pub fn set_output_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
-    ) -> Self {
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
         self.output_schemas = input;
         self
     }
     /// <p>Specifies the data schema for the custom spark target.</p>
-    pub fn get_output_schemas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`SparkConnectorTarget`](crate::types::SparkConnectorTarget).

@@ -30,9 +30,7 @@ impl UserSummary {
 
 /// A builder for [`UserSummary`](crate::types::UserSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserSummaryBuilder {
     pub(crate) pending_change: ::std::option::Option<crate::types::ChangeType>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl UserSummaryBuilder {
         self
     }
     /// <p>The type of change pending for the broker user.</p>
-    pub fn set_pending_change(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeType>,
-    ) -> Self {
+    pub fn set_pending_change(mut self, input: ::std::option::Option<crate::types::ChangeType>) -> Self {
         self.pending_change = input;
         self
     }

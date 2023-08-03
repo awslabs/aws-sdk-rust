@@ -37,9 +37,7 @@ impl PlayerLatency {
 
 /// A builder for [`PlayerLatency`](crate::types::PlayerLatency).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlayerLatencyBuilder {
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
     pub(crate) region_identifier: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl PlayerLatencyBuilder {
         &self.player_id
     }
     /// <p>Name of the Region that is associated with the latency value.</p>
-    pub fn region_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn region_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the Region that is associated with the latency value.</p>
-    pub fn set_region_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_region_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_identifier = input;
         self
     }

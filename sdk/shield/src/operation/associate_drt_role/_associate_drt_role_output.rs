@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateDrtRoleOutput {
 }
 impl AssociateDrtRoleOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDrtRoleOutput`](crate::operation::associate_drt_role::AssociateDrtRoleOutput).
-    pub fn builder() -> crate::operation::associate_drt_role::builders::AssociateDrtRoleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_drt_role::builders::AssociateDrtRoleOutputBuilder {
         crate::operation::associate_drt_role::builders::AssociateDrtRoleOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDrtRoleOutput`](crate::operation::associate_drt_role::AssociateDrtRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDrtRoleOutputBuilder {
     _request_id: Option<String>,
 }

@@ -38,9 +38,7 @@ impl UpdateRdsDbInstanceFluentBuilder {
         }
     }
     /// Access the UpdateRdsDbInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl UpdateRdsDbInstanceFluentBuilder {
             crate::operation::update_rds_db_instance::UpdateRdsDbInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rds_db_instance::UpdateRdsDbInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rds_db_instance::UpdateRdsDbInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl UpdateRdsDbInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl UpdateRdsDbInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rds_db_instance::UpdateRdsDbInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rds_db_instance::UpdateRdsDbInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rds_db_instance::UpdateRdsDbInstanceError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl UpdateRdsDbInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rds_db_instance::UpdateRdsDbInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rds_db_instance::UpdateRdsDbInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rds_db_instance::UpdateRdsDbInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl UpdateRdsDbInstanceFluentBuilder {
             crate::operation::update_rds_db_instance::UpdateRdsDbInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rds_db_instance::UpdateRdsDbInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rds_db_instance::UpdateRdsDbInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn rds_db_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rds_db_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rds_db_instance_arn(input.into());
         self
     }
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn set_rds_db_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rds_db_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rds_db_instance_arn(input);
         self
     }

@@ -35,38 +35,28 @@ impl ::aws_http::request_id::RequestId for GetAutoSnapshotsOutput {
 }
 impl GetAutoSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`GetAutoSnapshotsOutput`](crate::operation::get_auto_snapshots::GetAutoSnapshotsOutput).
-    pub fn builder() -> crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsOutputBuilder {
         crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAutoSnapshotsOutput`](crate::operation::get_auto_snapshots::GetAutoSnapshotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAutoSnapshotsOutputBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
-    pub(crate) auto_snapshots:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoSnapshotDetails>>,
+    pub(crate) auto_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::AutoSnapshotDetails>>,
     _request_id: Option<String>,
 }
 impl GetAutoSnapshotsOutputBuilder {
     /// <p>The name of the source instance or disk for the automatic snapshots.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source instance or disk for the automatic snapshots.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -80,10 +70,7 @@ impl GetAutoSnapshotsOutputBuilder {
         self
     }
     /// <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -103,17 +90,12 @@ impl GetAutoSnapshotsOutputBuilder {
         self
     }
     /// <p>An array of objects that describe the automatic snapshots that are available for the specified source instance or disk.</p>
-    pub fn set_auto_snapshots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoSnapshotDetails>>,
-    ) -> Self {
+    pub fn set_auto_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoSnapshotDetails>>) -> Self {
         self.auto_snapshots = input;
         self
     }
     /// <p>An array of objects that describe the automatic snapshots that are available for the specified source instance or disk.</p>
-    pub fn get_auto_snapshots(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoSnapshotDetails>> {
+    pub fn get_auto_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoSnapshotDetails>> {
         &self.auto_snapshots
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -90,16 +90,14 @@ impl ::aws_http::request_id::RequestId for DescribeAnalysisDefinitionOutput {
 }
 impl DescribeAnalysisDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnalysisDefinitionOutput`](crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionOutput).
-    pub fn builder() -> crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionOutputBuilder {
         crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAnalysisDefinitionOutput`](crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAnalysisDefinitionOutputBuilder {
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -152,17 +150,12 @@ impl DescribeAnalysisDefinitionOutputBuilder {
         self
     }
     /// <p>Errors associated with the analysis.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Errors associated with the analysis.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisError>> {
         &self.errors
     }
     /// <p>Status associated with the analysis.</p>
@@ -189,10 +182,7 @@ impl DescribeAnalysisDefinitionOutputBuilder {
     /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
     /// <li> <p> <code>DELETED</code> </p> </li>
     /// </ul>
-    pub fn set_resource_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_resource_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.resource_status = input;
         self
     }
@@ -231,10 +221,7 @@ impl DescribeAnalysisDefinitionOutputBuilder {
     }
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisDefinition>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::AnalysisDefinition>) -> Self {
         self.definition = input;
         self
     }
@@ -281,9 +268,7 @@ impl DescribeAnalysisDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAnalysisDefinitionOutput`](crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionOutput {
+    pub fn build(self) -> crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionOutput {
         crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionOutput {
             analysis_id: self.analysis_id,
             name: self.name,

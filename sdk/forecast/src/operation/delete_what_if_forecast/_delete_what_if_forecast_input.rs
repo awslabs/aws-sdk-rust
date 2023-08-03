@@ -15,34 +15,25 @@ impl DeleteWhatIfForecastInput {
 }
 impl DeleteWhatIfForecastInput {
     /// Creates a new builder-style object to manufacture [`DeleteWhatIfForecastInput`](crate::operation::delete_what_if_forecast::DeleteWhatIfForecastInput).
-    pub fn builder(
-    ) -> crate::operation::delete_what_if_forecast::builders::DeleteWhatIfForecastInputBuilder {
+    pub fn builder() -> crate::operation::delete_what_if_forecast::builders::DeleteWhatIfForecastInputBuilder {
         crate::operation::delete_what_if_forecast::builders::DeleteWhatIfForecastInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWhatIfForecastInput`](crate::operation::delete_what_if_forecast::DeleteWhatIfForecastInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWhatIfForecastInputBuilder {
     pub(crate) what_if_forecast_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWhatIfForecastInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you want to delete.</p>
-    pub fn what_if_forecast_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_forecast_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you want to delete.</p>
-    pub fn set_what_if_forecast_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_what_if_forecast_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.what_if_forecast_arn = input;
         self
     }
@@ -53,14 +44,10 @@ impl DeleteWhatIfForecastInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWhatIfForecastInput`](crate::operation::delete_what_if_forecast::DeleteWhatIfForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_what_if_forecast::DeleteWhatIfForecastInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_what_if_forecast::DeleteWhatIfForecastInput {
-                what_if_forecast_arn: self.what_if_forecast_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_what_if_forecast::DeleteWhatIfForecastInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_what_if_forecast::DeleteWhatIfForecastInput {
+            what_if_forecast_arn: self.what_if_forecast_arn,
+        })
     }
 }

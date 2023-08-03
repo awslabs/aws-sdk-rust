@@ -29,9 +29,7 @@ impl ListSubjectsInput {
 
 /// A builder for [`ListSubjectsInput`](crate::operation::list_subjects::ListSubjectsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSubjectsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,
@@ -66,12 +64,7 @@ impl ListSubjectsInputBuilder {
         &self.page_size
     }
     /// Consumes the builder and constructs a [`ListSubjectsInput`](crate::operation::list_subjects::ListSubjectsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_subjects::ListSubjectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_subjects::ListSubjectsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_subjects::ListSubjectsInput {
             next_token: self.next_token,
             page_size: self.page_size,

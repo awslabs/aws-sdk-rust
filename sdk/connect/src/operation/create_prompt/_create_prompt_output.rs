@@ -35,9 +35,7 @@ impl CreatePromptOutput {
 
 /// A builder for [`CreatePromptOutput`](crate::operation::create_prompt::CreatePromptOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePromptOutputBuilder {
     pub(crate) prompt_arn: ::std::option::Option<::std::string::String>,
     pub(crate) prompt_id: ::std::option::Option<::std::string::String>,

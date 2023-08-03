@@ -36,12 +36,9 @@ impl ListVaultsOutput {
 
 /// A builder for [`ListVaultsOutput`](crate::operation::list_vaults::ListVaultsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVaultsOutputBuilder {
-    pub(crate) vault_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DescribeVaultOutput>>,
+    pub(crate) vault_list: ::std::option::Option<::std::vec::Vec<crate::types::DescribeVaultOutput>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +55,12 @@ impl ListVaultsOutputBuilder {
         self
     }
     /// <p>List of vaults.</p>
-    pub fn set_vault_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DescribeVaultOutput>>,
-    ) -> Self {
+    pub fn set_vault_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DescribeVaultOutput>>) -> Self {
         self.vault_list = input;
         self
     }
     /// <p>List of vaults.</p>
-    pub fn get_vault_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeVaultOutput>> {
+    pub fn get_vault_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeVaultOutput>> {
         &self.vault_list
     }
     /// <p>The vault ARN at which to continue pagination of the results. You use the marker in another List Vaults request to obtain more vaults in the list.</p>

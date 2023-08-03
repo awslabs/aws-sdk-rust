@@ -12,10 +12,7 @@ pub fn ser_retry_pipeline_execution_input(
     if let Some(var_3) = &input.parallelism_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("ParallelismConfiguration").start_object();
-        crate::protocol_serde::shape_parallelism_configuration::ser_parallelism_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_parallelism_configuration::ser_parallelism_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

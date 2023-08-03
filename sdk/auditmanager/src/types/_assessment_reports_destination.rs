@@ -13,9 +13,7 @@ pub struct AssessmentReportsDestination {
 }
 impl AssessmentReportsDestination {
     /// <p> The destination type, such as Amazon S3. </p>
-    pub fn destination_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AssessmentReportDestinationType> {
+    pub fn destination_type(&self) -> ::std::option::Option<&crate::types::AssessmentReportDestinationType> {
         self.destination_type.as_ref()
     }
     /// <p> The destination bucket where Audit Manager stores assessment reports. </p>
@@ -32,35 +30,24 @@ impl AssessmentReportsDestination {
 
 /// A builder for [`AssessmentReportsDestination`](crate::types::AssessmentReportsDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssessmentReportsDestinationBuilder {
-    pub(crate) destination_type:
-        ::std::option::Option<crate::types::AssessmentReportDestinationType>,
+    pub(crate) destination_type: ::std::option::Option<crate::types::AssessmentReportDestinationType>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,
 }
 impl AssessmentReportsDestinationBuilder {
     /// <p> The destination type, such as Amazon S3. </p>
-    pub fn destination_type(
-        mut self,
-        input: crate::types::AssessmentReportDestinationType,
-    ) -> Self {
+    pub fn destination_type(mut self, input: crate::types::AssessmentReportDestinationType) -> Self {
         self.destination_type = ::std::option::Option::Some(input);
         self
     }
     /// <p> The destination type, such as Amazon S3. </p>
-    pub fn set_destination_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentReportDestinationType>,
-    ) -> Self {
+    pub fn set_destination_type(mut self, input: ::std::option::Option<crate::types::AssessmentReportDestinationType>) -> Self {
         self.destination_type = input;
         self
     }
     /// <p> The destination type, such as Amazon S3. </p>
-    pub fn get_destination_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssessmentReportDestinationType> {
+    pub fn get_destination_type(&self) -> &::std::option::Option<crate::types::AssessmentReportDestinationType> {
         &self.destination_type
     }
     /// <p> The destination bucket where Audit Manager stores assessment reports. </p>

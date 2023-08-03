@@ -30,8 +30,7 @@ pub struct Account {
     pub account_status: ::std::option::Option<crate::types::AccountStatus>,
     /// <p>The sign-in delegate groups associated with the account.</p>
     #[doc(hidden)]
-    pub signin_delegate_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::SigninDelegateGroup>>,
+    pub signin_delegate_groups: ::std::option::Option<::std::vec::Vec<crate::types::SigninDelegateGroup>>,
 }
 impl Account {
     /// <p>The AWS account ID.</p>
@@ -67,9 +66,7 @@ impl Account {
         self.account_status.as_ref()
     }
     /// <p>The sign-in delegate groups associated with the account.</p>
-    pub fn signin_delegate_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SigninDelegateGroup]> {
+    pub fn signin_delegate_groups(&self) -> ::std::option::Option<&[crate::types::SigninDelegateGroup]> {
         self.signin_delegate_groups.as_deref()
     }
 }
@@ -82,9 +79,7 @@ impl Account {
 
 /// A builder for [`Account`](crate::types::Account).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -94,23 +89,16 @@ pub struct AccountBuilder {
     pub(crate) default_license: ::std::option::Option<crate::types::License>,
     pub(crate) supported_licenses: ::std::option::Option<::std::vec::Vec<crate::types::License>>,
     pub(crate) account_status: ::std::option::Option<crate::types::AccountStatus>,
-    pub(crate) signin_delegate_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::SigninDelegateGroup>>,
+    pub(crate) signin_delegate_groups: ::std::option::Option<::std::vec::Vec<crate::types::SigninDelegateGroup>>,
 }
 impl AccountBuilder {
     /// <p>The AWS account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -152,10 +140,7 @@ impl AccountBuilder {
         self
     }
     /// <p>The Amazon Chime account type. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
-    pub fn set_account_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountType>,
-    ) -> Self {
+    pub fn set_account_type(mut self, input: ::std::option::Option<crate::types::AccountType>) -> Self {
         self.account_type = input;
         self
     }
@@ -169,10 +154,7 @@ impl AccountBuilder {
         self
     }
     /// <p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -186,10 +168,7 @@ impl AccountBuilder {
         self
     }
     /// <p>The default license for the Amazon Chime account.</p>
-    pub fn set_default_license(
-        mut self,
-        input: ::std::option::Option<crate::types::License>,
-    ) -> Self {
+    pub fn set_default_license(mut self, input: ::std::option::Option<crate::types::License>) -> Self {
         self.default_license = input;
         self
     }
@@ -209,17 +188,12 @@ impl AccountBuilder {
         self
     }
     /// <p>Supported licenses for the Amazon Chime account.</p>
-    pub fn set_supported_licenses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::License>>,
-    ) -> Self {
+    pub fn set_supported_licenses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::License>>) -> Self {
         self.supported_licenses = input;
         self
     }
     /// <p>Supported licenses for the Amazon Chime account.</p>
-    pub fn get_supported_licenses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::License>> {
+    pub fn get_supported_licenses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::License>> {
         &self.supported_licenses
     }
     /// <p>The status of the account.</p>
@@ -228,10 +202,7 @@ impl AccountBuilder {
         self
     }
     /// <p>The status of the account.</p>
-    pub fn set_account_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountStatus>,
-    ) -> Self {
+    pub fn set_account_status(mut self, input: ::std::option::Option<crate::types::AccountStatus>) -> Self {
         self.account_status = input;
         self
     }
@@ -251,17 +222,12 @@ impl AccountBuilder {
         self
     }
     /// <p>The sign-in delegate groups associated with the account.</p>
-    pub fn set_signin_delegate_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SigninDelegateGroup>>,
-    ) -> Self {
+    pub fn set_signin_delegate_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SigninDelegateGroup>>) -> Self {
         self.signin_delegate_groups = input;
         self
     }
     /// <p>The sign-in delegate groups associated with the account.</p>
-    pub fn get_signin_delegate_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SigninDelegateGroup>> {
+    pub fn get_signin_delegate_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SigninDelegateGroup>> {
         &self.signin_delegate_groups
     }
     /// Consumes the builder and constructs a [`Account`](crate::types::Account).

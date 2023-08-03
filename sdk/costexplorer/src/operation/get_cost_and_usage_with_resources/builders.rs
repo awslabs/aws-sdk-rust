@@ -28,7 +28,7 @@ impl GetCostAndUsageWithResourcesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCostAndUsageWithResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_cost_and_usage_with_resources::builders::GetCostAndUsageWithResourcesInputBuilder,
+    inner: crate::operation::get_cost_and_usage_with_resources::builders::GetCostAndUsageWithResourcesInputBuilder,
 }
 impl GetCostAndUsageWithResourcesFluentBuilder {
     /// Creates a new `GetCostAndUsageWithResources`.
@@ -39,7 +39,7 @@ impl GetCostAndUsageWithResourcesFluentBuilder {
         }
     }
     /// Access the GetCostAndUsageWithResources as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_cost_and_usage_with_resources::builders::GetCostAndUsageWithResourcesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_cost_and_usage_with_resources::builders::GetCostAndUsageWithResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl GetCostAndUsageWithResourcesFluentBuilder {
             crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl GetCostAndUsageWithResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl GetCostAndUsageWithResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl GetCostAndUsageWithResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl GetCostAndUsageWithResourcesFluentBuilder {
             crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +117,7 @@ impl GetCostAndUsageWithResourcesFluentBuilder {
         self
     }
     /// <p>Sets the start and end dates for retrieving Amazon Web Services costs. The range must be within the last 14 days (the start date cannot be earlier than 14 days ago). The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.inner = self.inner.set_time_period(input);
         self
     }
@@ -145,10 +131,7 @@ impl GetCostAndUsageWithResourcesFluentBuilder {
         self
     }
     /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
-    pub fn set_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::Granularity>,
-    ) -> Self {
+    pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::Granularity>) -> Self {
         self.inner = self.inner.set_granularity(input);
         self
     }
@@ -197,10 +180,7 @@ impl GetCostAndUsageWithResourcesFluentBuilder {
     /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
     /// </note>
     /// <p> <code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_metrics(input);
         self
     }
@@ -222,32 +202,21 @@ impl GetCostAndUsageWithResourcesFluentBuilder {
         self
     }
     /// <p>You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
-    pub fn set_group_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
-    ) -> Self {
+    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>) -> Self {
         self.inner = self.inner.set_group_by(input);
         self
     }
     /// <p>You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
-    pub fn get_group_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
+    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
         self.inner.get_group_by()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }

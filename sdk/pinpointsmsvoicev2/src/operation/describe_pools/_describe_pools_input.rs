@@ -43,9 +43,7 @@ impl DescribePoolsInput {
 
 /// A builder for [`DescribePoolsInput`](crate::operation::describe_pools::DescribePoolsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePoolsInputBuilder {
     pub(crate) pool_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::PoolFilter>>,
@@ -65,10 +63,7 @@ impl DescribePoolsInputBuilder {
         self
     }
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p>
-    pub fn set_pool_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pool_ids = input;
         self
     }
@@ -88,10 +83,7 @@ impl DescribePoolsInputBuilder {
         self
     }
     /// <p>An array of PoolFilter objects to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PoolFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PoolFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -130,10 +122,7 @@ impl DescribePoolsInputBuilder {
     /// Consumes the builder and constructs a [`DescribePoolsInput`](crate::operation::describe_pools::DescribePoolsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_pools::DescribePoolsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_pools::DescribePoolsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_pools::DescribePoolsInput {
             pool_ids: self.pool_ids,
             filters: self.filters,

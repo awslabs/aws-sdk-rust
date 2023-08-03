@@ -40,7 +40,7 @@ impl TerminateWorkflowExecutionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TerminateWorkflowExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::terminate_workflow_execution::builders::TerminateWorkflowExecutionInputBuilder,
+    inner: crate::operation::terminate_workflow_execution::builders::TerminateWorkflowExecutionInputBuilder,
 }
 impl TerminateWorkflowExecutionFluentBuilder {
     /// Creates a new `TerminateWorkflowExecution`.
@@ -51,7 +51,7 @@ impl TerminateWorkflowExecutionFluentBuilder {
         }
     }
     /// Access the TerminateWorkflowExecution as a reference.
-    pub fn as_input(&self) -> &crate::operation::terminate_workflow_execution::builders::TerminateWorkflowExecutionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::terminate_workflow_execution::builders::TerminateWorkflowExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +63,7 @@ impl TerminateWorkflowExecutionFluentBuilder {
             crate::operation::terminate_workflow_execution::TerminateWorkflowExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +73,7 @@ impl TerminateWorkflowExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +82,7 @@ impl TerminateWorkflowExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionError>,
     > {
         let op = self
             .inner
@@ -112,9 +105,7 @@ impl TerminateWorkflowExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -128,9 +119,7 @@ impl TerminateWorkflowExecutionFluentBuilder {
             crate::operation::terminate_workflow_execution::TerminateWorkflowExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionError>,
     > {
         self.customize_middleware().await
     }
@@ -226,10 +215,7 @@ impl TerminateWorkflowExecutionFluentBuilder {
     /// </ul> <note>
     /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
-    pub fn set_child_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ChildPolicy>,
-    ) -> Self {
+    pub fn set_child_policy(mut self, input: ::std::option::Option<crate::types::ChildPolicy>) -> Self {
         self.inner = self.inner.set_child_policy(input);
         self
     }

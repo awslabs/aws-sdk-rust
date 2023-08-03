@@ -30,9 +30,7 @@ impl DomainEndpointOptionsStatus {
 
 /// A builder for [`DomainEndpointOptionsStatus`](crate::types::DomainEndpointOptionsStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainEndpointOptionsStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
@@ -44,10 +42,7 @@ impl DomainEndpointOptionsStatusBuilder {
         self
     }
     /// <p>The domain endpoint options configured for the domain.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainEndpointOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::DomainEndpointOptions>) -> Self {
         self.options = input;
         self
     }

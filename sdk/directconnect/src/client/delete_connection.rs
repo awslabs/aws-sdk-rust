@@ -28,11 +28,7 @@ impl super::Client {
     ///   - [`encryption_mode(Option<String>)`](crate::operation::delete_connection::DeleteConnectionOutput::encryption_mode): <p>The MAC Security (MACsec) connection encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::operation::delete_connection::DeleteConnectionOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::operation::delete_connection::DeleteConnectionError)
-    pub fn delete_connection(
-        &self,
-    ) -> crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder {
-        crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_connection(&self) -> crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder {
+        crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -36,19 +36,16 @@ impl ::aws_http::request_id::RequestId for ListInstanceProfilesForRoleOutput {
 }
 impl ListInstanceProfilesForRoleOutput {
     /// Creates a new builder-style object to manufacture [`ListInstanceProfilesForRoleOutput`](crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleOutput).
-    pub fn builder() -> crate::operation::list_instance_profiles_for_role::builders::ListInstanceProfilesForRoleOutputBuilder{
+    pub fn builder() -> crate::operation::list_instance_profiles_for_role::builders::ListInstanceProfilesForRoleOutputBuilder {
         crate::operation::list_instance_profiles_for_role::builders::ListInstanceProfilesForRoleOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInstanceProfilesForRoleOutput`](crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstanceProfilesForRoleOutputBuilder {
-    pub(crate) instance_profiles:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>>,
+    pub(crate) instance_profiles: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -66,17 +63,12 @@ impl ListInstanceProfilesForRoleOutputBuilder {
         self
     }
     /// <p>A list of instance profiles.</p>
-    pub fn set_instance_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>>,
-    ) -> Self {
+    pub fn set_instance_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>>) -> Self {
         self.instance_profiles = input;
         self
     }
     /// <p>A list of instance profiles.</p>
-    pub fn get_instance_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>> {
+    pub fn get_instance_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>> {
         &self.instance_profiles
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -117,9 +109,7 @@ impl ListInstanceProfilesForRoleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListInstanceProfilesForRoleOutput`](crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleOutput {
+    pub fn build(self) -> crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleOutput {
         crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleOutput {
             instance_profiles: self.instance_profiles,
             is_truncated: self.is_truncated.unwrap_or_default(),

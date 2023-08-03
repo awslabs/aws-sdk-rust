@@ -28,7 +28,7 @@ impl ExportServerEngineAttributeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportServerEngineAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::export_server_engine_attribute::builders::ExportServerEngineAttributeInputBuilder,
+    inner: crate::operation::export_server_engine_attribute::builders::ExportServerEngineAttributeInputBuilder,
 }
 impl ExportServerEngineAttributeFluentBuilder {
     /// Creates a new `ExportServerEngineAttribute`.
@@ -39,7 +39,7 @@ impl ExportServerEngineAttributeFluentBuilder {
         }
     }
     /// Access the ExportServerEngineAttribute as a reference.
-    pub fn as_input(&self) -> &crate::operation::export_server_engine_attribute::builders::ExportServerEngineAttributeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::export_server_engine_attribute::builders::ExportServerEngineAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl ExportServerEngineAttributeFluentBuilder {
             crate::operation::export_server_engine_attribute::ExportServerEngineAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_server_engine_attribute::ExportServerEngineAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_server_engine_attribute::ExportServerEngineAttributeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl ExportServerEngineAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl ExportServerEngineAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_server_engine_attribute::ExportServerEngineAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_server_engine_attribute::ExportServerEngineAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_server_engine_attribute::ExportServerEngineAttributeError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl ExportServerEngineAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_server_engine_attribute::ExportServerEngineAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_server_engine_attribute::ExportServerEngineAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_server_engine_attribute::ExportServerEngineAttributeError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl ExportServerEngineAttributeFluentBuilder {
             crate::operation::export_server_engine_attribute::ExportServerEngineAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_server_engine_attribute::ExportServerEngineAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_server_engine_attribute::ExportServerEngineAttributeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>. This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
-    pub fn export_attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn export_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.export_attribute_name(input.into());
         self
     }
     /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>. This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
-    pub fn set_export_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_export_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_export_attribute_name(input);
         self
     }
@@ -178,10 +161,7 @@ impl ExportServerEngineAttributeFluentBuilder {
     /// <li> <p> <b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box). In Puppet, this parameter is ignored.</p> </li>
     /// <li> <p> <b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet, this parameter is ignored.</p> </li>
     /// </ul>
-    pub fn set_input_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
-    ) -> Self {
+    pub fn set_input_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
         self.inner = self.inner.set_input_attributes(input);
         self
     }
@@ -192,9 +172,7 @@ impl ExportServerEngineAttributeFluentBuilder {
     /// <li> <p> <b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box). In Puppet, this parameter is ignored.</p> </li>
     /// <li> <p> <b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet, this parameter is ignored.</p> </li>
     /// </ul>
-    pub fn get_input_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
+    pub fn get_input_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
         self.inner.get_input_attributes()
     }
 }

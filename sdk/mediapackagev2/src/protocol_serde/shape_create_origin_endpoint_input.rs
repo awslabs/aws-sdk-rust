@@ -27,7 +27,10 @@ pub fn ser_create_origin_endpoint_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_create_low_latency_hls_manifest_configuration::ser_create_low_latency_hls_manifest_configuration(&mut object_10, item_9)?;
+                crate::protocol_serde::shape_create_low_latency_hls_manifest_configuration::ser_create_low_latency_hls_manifest_configuration(
+                    &mut object_10,
+                    item_9,
+                )?;
                 object_10.finish();
             }
         }

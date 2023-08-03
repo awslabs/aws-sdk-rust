@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_trial::DescribeTrialOutput::last_modified_by): <p>Who last modified the trial.</p>
     ///   - [`metadata_properties(Option<MetadataProperties>)`](crate::operation::describe_trial::DescribeTrialOutput::metadata_properties): <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     /// - On failure, responds with [`SdkError<DescribeTrialError>`](crate::operation::describe_trial::DescribeTrialError)
-    pub fn describe_trial(
-        &self,
-    ) -> crate::operation::describe_trial::builders::DescribeTrialFluentBuilder {
-        crate::operation::describe_trial::builders::DescribeTrialFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_trial(&self) -> crate::operation::describe_trial::builders::DescribeTrialFluentBuilder {
+        crate::operation::describe_trial::builders::DescribeTrialFluentBuilder::new(self.handle.clone())
     }
 }

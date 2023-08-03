@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTagsForDeliveryStreamOutput {
 }
 impl ListTagsForDeliveryStreamOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForDeliveryStreamOutput`](crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput).
-    pub fn builder() -> crate::operation::list_tags_for_delivery_stream::builders::ListTagsForDeliveryStreamOutputBuilder{
+    pub fn builder() -> crate::operation::list_tags_for_delivery_stream::builders::ListTagsForDeliveryStreamOutputBuilder {
         crate::operation::list_tags_for_delivery_stream::builders::ListTagsForDeliveryStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTagsForDeliveryStreamOutput`](crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsForDeliveryStreamOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) has_more_tags: ::std::option::Option<bool>,
@@ -56,10 +54,7 @@ impl ListTagsForDeliveryStreamOutputBuilder {
         self
     }
     /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -91,9 +86,7 @@ impl ListTagsForDeliveryStreamOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTagsForDeliveryStreamOutput`](crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput {
+    pub fn build(self) -> crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput {
         crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput {
             tags: self.tags,
             has_more_tags: self.has_more_tags,

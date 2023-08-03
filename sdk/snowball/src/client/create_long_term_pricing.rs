@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLongTermPricingOutput`](crate::operation::create_long_term_pricing::CreateLongTermPricingOutput) with field(s):
     ///   - [`long_term_pricing_id(Option<String>)`](crate::operation::create_long_term_pricing::CreateLongTermPricingOutput::long_term_pricing_id): <p>The ID of the long-term pricing type for the device.</p>
     /// - On failure, responds with [`SdkError<CreateLongTermPricingError>`](crate::operation::create_long_term_pricing::CreateLongTermPricingError)
-    pub fn create_long_term_pricing(
-        &self,
-    ) -> crate::operation::create_long_term_pricing::builders::CreateLongTermPricingFluentBuilder
-    {
+    pub fn create_long_term_pricing(&self) -> crate::operation::create_long_term_pricing::builders::CreateLongTermPricingFluentBuilder {
         crate::operation::create_long_term_pricing::builders::CreateLongTermPricingFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,16 +22,14 @@ impl GetPatchBaselineForPatchGroupInput {
 }
 impl GetPatchBaselineForPatchGroupInput {
     /// Creates a new builder-style object to manufacture [`GetPatchBaselineForPatchGroupInput`](crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupInput).
-    pub fn builder() -> crate::operation::get_patch_baseline_for_patch_group::builders::GetPatchBaselineForPatchGroupInputBuilder{
+    pub fn builder() -> crate::operation::get_patch_baseline_for_patch_group::builders::GetPatchBaselineForPatchGroupInputBuilder {
         crate::operation::get_patch_baseline_for_patch_group::builders::GetPatchBaselineForPatchGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPatchBaselineForPatchGroupInput`](crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPatchBaselineForPatchGroupInputBuilder {
     pub(crate) patch_group: ::std::option::Option<::std::string::String>,
     pub(crate) operating_system: ::std::option::Option<crate::types::OperatingSystem>,
@@ -57,10 +55,7 @@ impl GetPatchBaselineForPatchGroupInputBuilder {
         self
     }
     /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
@@ -75,13 +70,9 @@ impl GetPatchBaselineForPatchGroupInputBuilder {
         crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupInput {
-                patch_group: self.patch_group
-                ,
-                operating_system: self.operating_system
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupInput {
+            patch_group: self.patch_group,
+            operating_system: self.operating_system,
+        })
     }
 }

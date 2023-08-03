@@ -20,9 +20,7 @@ impl InputStartingPositionConfiguration {
     /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Firehose delivery stream.</p> </li>
     /// <li> <p> <code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p> </li>
     /// </ul>
-    pub fn input_starting_position(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputStartingPosition> {
+    pub fn input_starting_position(&self) -> ::std::option::Option<&crate::types::InputStartingPosition> {
         self.input_starting_position.as_ref()
     }
 }
@@ -35,9 +33,7 @@ impl InputStartingPositionConfiguration {
 
 /// A builder for [`InputStartingPositionConfiguration`](crate::types::InputStartingPositionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputStartingPositionConfigurationBuilder {
     pub(crate) input_starting_position: ::std::option::Option<crate::types::InputStartingPosition>,
 }
@@ -58,10 +54,7 @@ impl InputStartingPositionConfigurationBuilder {
     /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Firehose delivery stream.</p> </li>
     /// <li> <p> <code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p> </li>
     /// </ul>
-    pub fn set_input_starting_position(
-        mut self,
-        input: ::std::option::Option<crate::types::InputStartingPosition>,
-    ) -> Self {
+    pub fn set_input_starting_position(mut self, input: ::std::option::Option<crate::types::InputStartingPosition>) -> Self {
         self.input_starting_position = input;
         self
     }
@@ -71,9 +64,7 @@ impl InputStartingPositionConfigurationBuilder {
     /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Firehose delivery stream.</p> </li>
     /// <li> <p> <code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p> </li>
     /// </ul>
-    pub fn get_input_starting_position(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputStartingPosition> {
+    pub fn get_input_starting_position(&self) -> &::std::option::Option<crate::types::InputStartingPosition> {
         &self.input_starting_position
     }
     /// Consumes the builder and constructs a [`InputStartingPositionConfiguration`](crate::types::InputStartingPositionConfiguration).

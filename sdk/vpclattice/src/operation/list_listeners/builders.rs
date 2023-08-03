@@ -10,10 +10,7 @@ impl ListListenersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_listeners::ListListenersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_listeners::ListListenersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_listeners::ListListenersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_listeners();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListListenersFluentBuilder {
         }
     }
     /// Access the ListListeners as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_listeners::builders::ListListenersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_listeners::builders::ListListenersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListListenersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,27 +109,16 @@ impl ListListenersFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_listeners::paginator::ListListenersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_listeners::paginator::ListListenersPaginator {
-        crate::operation::list_listeners::paginator::ListListenersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_listeners::paginator::ListListenersPaginator {
+        crate::operation::list_listeners::paginator::ListListenersPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_service_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_identifier(input);
         self
     }

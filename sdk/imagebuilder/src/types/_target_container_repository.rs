@@ -30,9 +30,7 @@ impl TargetContainerRepository {
 
 /// A builder for [`TargetContainerRepository`](crate::types::TargetContainerRepository).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetContainerRepositoryBuilder {
     pub(crate) service: ::std::option::Option<crate::types::ContainerRepositoryService>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl TargetContainerRepositoryBuilder {
         self
     }
     /// <p>Specifies the service in which this image was registered.</p>
-    pub fn set_service(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerRepositoryService>,
-    ) -> Self {
+    pub fn set_service(mut self, input: ::std::option::Option<crate::types::ContainerRepositoryService>) -> Self {
         self.service = input;
         self
     }
@@ -56,18 +51,12 @@ impl TargetContainerRepositoryBuilder {
         &self.service
     }
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }

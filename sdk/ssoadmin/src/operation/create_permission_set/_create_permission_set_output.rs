@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreatePermissionSetOutput {
 }
 impl CreatePermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionSetOutput`](crate::operation::create_permission_set::CreatePermissionSetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_permission_set::builders::CreatePermissionSetOutputBuilder {
-        crate::operation::create_permission_set::builders::CreatePermissionSetOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_permission_set::builders::CreatePermissionSetOutputBuilder {
+        crate::operation::create_permission_set::builders::CreatePermissionSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePermissionSetOutput`](crate::operation::create_permission_set::CreatePermissionSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePermissionSetOutputBuilder {
     pub(crate) permission_set: ::std::option::Option<crate::types::PermissionSet>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreatePermissionSetOutputBuilder {
         self
     }
     /// <p>Defines the level of access on an AWS account.</p>
-    pub fn set_permission_set(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionSet>,
-    ) -> Self {
+    pub fn set_permission_set(mut self, input: ::std::option::Option<crate::types::PermissionSet>) -> Self {
         self.permission_set = input;
         self
     }

@@ -36,17 +36,14 @@ impl SampleChannelDataInput {
 }
 impl SampleChannelDataInput {
     /// Creates a new builder-style object to manufacture [`SampleChannelDataInput`](crate::operation::sample_channel_data::SampleChannelDataInput).
-    pub fn builder(
-    ) -> crate::operation::sample_channel_data::builders::SampleChannelDataInputBuilder {
+    pub fn builder() -> crate::operation::sample_channel_data::builders::SampleChannelDataInputBuilder {
         crate::operation::sample_channel_data::builders::SampleChannelDataInputBuilder::default()
     }
 }
 
 /// A builder for [`SampleChannelDataInput`](crate::operation::sample_channel_data::SampleChannelDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SampleChannelDataInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_messages: ::std::option::Option<i32>,
@@ -88,10 +85,7 @@ impl SampleChannelDataInputBuilder {
         self
     }
     /// <p>The start of the time window from which sample messages are retrieved.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -105,10 +99,7 @@ impl SampleChannelDataInputBuilder {
         self
     }
     /// <p>The end of the time window from which sample messages are retrieved.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -119,17 +110,12 @@ impl SampleChannelDataInputBuilder {
     /// Consumes the builder and constructs a [`SampleChannelDataInput`](crate::operation::sample_channel_data::SampleChannelDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::sample_channel_data::SampleChannelDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::sample_channel_data::SampleChannelDataInput {
-                channel_name: self.channel_name,
-                max_messages: self.max_messages,
-                start_time: self.start_time,
-                end_time: self.end_time,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::sample_channel_data::SampleChannelDataInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::sample_channel_data::SampleChannelDataInput {
+            channel_name: self.channel_name,
+            max_messages: self.max_messages,
+            start_time: self.start_time,
+            end_time: self.end_time,
+        })
     }
 }

@@ -10,9 +10,7 @@ pub fn ser_create_unreferenced_merge_commit_input(
         object.key("sourceCommitSpecifier").string(var_2.as_str());
     }
     if let Some(var_3) = &input.destination_commit_specifier {
-        object
-            .key("destinationCommitSpecifier")
-            .string(var_3.as_str());
+        object.key("destinationCommitSpecifier").string(var_3.as_str());
     }
     if let Some(var_4) = &input.merge_option {
         object.key("mergeOption").string(var_4.as_str());
@@ -21,9 +19,7 @@ pub fn ser_create_unreferenced_merge_commit_input(
         object.key("conflictDetailLevel").string(var_5.as_str());
     }
     if let Some(var_6) = &input.conflict_resolution_strategy {
-        object
-            .key("conflictResolutionStrategy")
-            .string(var_6.as_str());
+        object.key("conflictResolutionStrategy").string(var_6.as_str());
     }
     if let Some(var_7) = &input.author_name {
         object.key("authorName").string(var_7.as_str());
@@ -35,17 +31,12 @@ pub fn ser_create_unreferenced_merge_commit_input(
         object.key("commitMessage").string(var_9.as_str());
     }
     if input.keep_empty_folders {
-        object
-            .key("keepEmptyFolders")
-            .boolean(input.keep_empty_folders);
+        object.key("keepEmptyFolders").boolean(input.keep_empty_folders);
     }
     if let Some(var_10) = &input.conflict_resolution {
         #[allow(unused_mut)]
         let mut object_11 = object.key("conflictResolution").start_object();
-        crate::protocol_serde::shape_conflict_resolution::ser_conflict_resolution(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_conflict_resolution::ser_conflict_resolution(&mut object_11, var_10)?;
         object_11.finish();
     }
     Ok(())

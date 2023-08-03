@@ -16,17 +16,14 @@ impl AwsNetworkFirewallFirewallSubnetMappingsDetails {
 }
 impl AwsNetworkFirewallFirewallSubnetMappingsDetails {
     /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsNetworkFirewallFirewallSubnetMappingsDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsNetworkFirewallFirewallSubnetMappingsDetailsBuilder {
         crate::types::builders::AwsNetworkFirewallFirewallSubnetMappingsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsNetworkFirewallFirewallSubnetMappingsDetailsBuilder {
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,8 +44,6 @@ impl AwsNetworkFirewallFirewallSubnetMappingsDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails).
     pub fn build(self) -> crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails {
-        crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails {
-            subnet_id: self.subnet_id,
-        }
+        crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails { subnet_id: self.subnet_id }
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`datastore_status(Option<DatastoreStatus>)`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput::datastore_status): <p>The status of the data store that the user has requested to be deleted. </p>
     ///   - [`datastore_endpoint(Option<String>)`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput::datastore_endpoint): <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteFHIRDatastoreError>`](crate::operation::delete_fhir_datastore::DeleteFHIRDatastoreError)
-    pub fn delete_fhir_datastore(
-        &self,
-    ) -> crate::operation::delete_fhir_datastore::builders::DeleteFHIRDatastoreFluentBuilder {
-        crate::operation::delete_fhir_datastore::builders::DeleteFHIRDatastoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_fhir_datastore(&self) -> crate::operation::delete_fhir_datastore::builders::DeleteFHIRDatastoreFluentBuilder {
+        crate::operation::delete_fhir_datastore::builders::DeleteFHIRDatastoreFluentBuilder::new(self.handle.clone())
     }
 }

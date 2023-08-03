@@ -3,10 +3,7 @@
 pub fn de_too_many_cloud_front_origin_access_identities_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::TooManyCloudFrontOriginAccessIdentitiesBuilder,
-) -> Result<
-    crate::types::error::builders::TooManyCloudFrontOriginAccessIdentitiesBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::TooManyCloudFrontOriginAccessIdentitiesBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

@@ -22,9 +22,7 @@ impl GetQueryResultsInput {
 
 /// A builder for [`GetQueryResultsInput`](crate::operation::get_query_results::GetQueryResultsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQueryResultsInputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetQueryResultsInputBuilder {
     /// Consumes the builder and constructs a [`GetQueryResultsInput`](crate::operation::get_query_results::GetQueryResultsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_query_results::GetQueryResultsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_query_results::GetQueryResultsInput {
-            query_id: self.query_id,
-        })
+    ) -> ::std::result::Result<crate::operation::get_query_results::GetQueryResultsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_query_results::GetQueryResultsInput { query_id: self.query_id })
     }
 }

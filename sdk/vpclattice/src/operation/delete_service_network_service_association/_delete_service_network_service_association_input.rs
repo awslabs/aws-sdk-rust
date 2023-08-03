@@ -5,63 +5,53 @@
 pub struct DeleteServiceNetworkServiceAssociationInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
     #[doc(hidden)]
-    pub service_network_service_association_identifier:
-        ::std::option::Option<::std::string::String>,
+    pub service_network_service_association_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServiceNetworkServiceAssociationInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
     pub fn service_network_service_association_identifier(&self) -> ::std::option::Option<&str> {
-        self.service_network_service_association_identifier
-            .as_deref()
+        self.service_network_service_association_identifier.as_deref()
     }
 }
 impl DeleteServiceNetworkServiceAssociationInput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceNetworkServiceAssociationInput`](crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationInput).
-    pub fn builder() -> crate::operation::delete_service_network_service_association::builders::DeleteServiceNetworkServiceAssociationInputBuilder{
+    pub fn builder() -> crate::operation::delete_service_network_service_association::builders::DeleteServiceNetworkServiceAssociationInputBuilder {
         crate::operation::delete_service_network_service_association::builders::DeleteServiceNetworkServiceAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteServiceNetworkServiceAssociationInput`](crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceNetworkServiceAssociationInputBuilder {
-    pub(crate) service_network_service_association_identifier:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) service_network_service_association_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServiceNetworkServiceAssociationInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn service_network_service_association_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.service_network_service_association_identifier =
-            ::std::option::Option::Some(input.into());
+    pub fn service_network_service_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_network_service_association_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn set_service_network_service_association_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_network_service_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_service_association_identifier = input;
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn get_service_network_service_association_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_service_network_service_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_network_service_association_identifier
     }
     /// Consumes the builder and constructs a [`DeleteServiceNetworkServiceAssociationInput`](crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationInput {
-                service_network_service_association_identifier: self.service_network_service_association_identifier
-                ,
-            }
+                service_network_service_association_identifier: self.service_network_service_association_identifier,
+            },
         )
     }
 }

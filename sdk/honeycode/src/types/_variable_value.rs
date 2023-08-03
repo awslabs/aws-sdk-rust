@@ -51,9 +51,7 @@ impl VariableValueBuilder {
     }
     /// Consumes the builder and constructs a [`VariableValue`](crate::types::VariableValue).
     pub fn build(self) -> crate::types::VariableValue {
-        crate::types::VariableValue {
-            raw_value: self.raw_value,
-        }
+        crate::types::VariableValue { raw_value: self.raw_value }
     }
 }
 impl ::std::fmt::Debug for VariableValueBuilder {

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCacheSubnetGroupOutput {
 }
 impl DeleteCacheSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCacheSubnetGroupOutput`](crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_cache_subnet_group::builders::DeleteCacheSubnetGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_cache_subnet_group::builders::DeleteCacheSubnetGroupOutputBuilder {
         crate::operation::delete_cache_subnet_group::builders::DeleteCacheSubnetGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCacheSubnetGroupOutput`](crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCacheSubnetGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteCacheSubnetGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteCacheSubnetGroupOutput`](crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupOutput {
+    pub fn build(self) -> crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupOutput {
         crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupOutput {
             _request_id: self._request_id,
         }

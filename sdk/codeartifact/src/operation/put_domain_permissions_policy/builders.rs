@@ -27,7 +27,7 @@ impl PutDomainPermissionsPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutDomainPermissionsPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_domain_permissions_policy::builders::PutDomainPermissionsPolicyInputBuilder,
+    inner: crate::operation::put_domain_permissions_policy::builders::PutDomainPermissionsPolicyInputBuilder,
 }
 impl PutDomainPermissionsPolicyFluentBuilder {
     /// Creates a new `PutDomainPermissionsPolicy`.
@@ -38,7 +38,7 @@ impl PutDomainPermissionsPolicyFluentBuilder {
         }
     }
     /// Access the PutDomainPermissionsPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_domain_permissions_policy::builders::PutDomainPermissionsPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_domain_permissions_policy::builders::PutDomainPermissionsPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl PutDomainPermissionsPolicyFluentBuilder {
             crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl PutDomainPermissionsPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl PutDomainPermissionsPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl PutDomainPermissionsPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl PutDomainPermissionsPolicyFluentBuilder {
             crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -150,18 +139,12 @@ impl PutDomainPermissionsPolicyFluentBuilder {
         self.inner.get_domain_owner()
     }
     /// <p> The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
-    pub fn policy_revision(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_revision(input.into());
         self
     }
     /// <p> The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
-    pub fn set_policy_revision(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_revision(input);
         self
     }
@@ -170,18 +153,12 @@ impl PutDomainPermissionsPolicyFluentBuilder {
         self.inner.get_policy_revision()
     }
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. </p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_document(input.into());
         self
     }
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. </p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
     }

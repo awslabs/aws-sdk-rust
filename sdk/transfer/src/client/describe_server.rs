@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeServerOutput`](crate::operation::describe_server::DescribeServerOutput) with field(s):
     ///   - [`server(Option<DescribedServer>)`](crate::operation::describe_server::DescribeServerOutput::server): <p>An array containing the properties of a server with the <code>ServerID</code> you specified.</p>
     /// - On failure, responds with [`SdkError<DescribeServerError>`](crate::operation::describe_server::DescribeServerError)
-    pub fn describe_server(
-        &self,
-    ) -> crate::operation::describe_server::builders::DescribeServerFluentBuilder {
-        crate::operation::describe_server::builders::DescribeServerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_server(&self) -> crate::operation::describe_server::builders::DescribeServerFluentBuilder {
+        crate::operation::describe_server::builders::DescribeServerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,16 +22,14 @@ impl ListCrossAccountAuthorizationsInput {
 }
 impl ListCrossAccountAuthorizationsInput {
     /// Creates a new builder-style object to manufacture [`ListCrossAccountAuthorizationsInput`](crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsInput).
-    pub fn builder() -> crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsInputBuilder{
+    pub fn builder() -> crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsInputBuilder {
         crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCrossAccountAuthorizationsInput`](crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCrossAccountAuthorizationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -72,13 +70,9 @@ impl ListCrossAccountAuthorizationsInputBuilder {
         crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

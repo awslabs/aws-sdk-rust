@@ -43,16 +43,14 @@ impl ListIamPolicyAssignmentsForUserInput {
 }
 impl ListIamPolicyAssignmentsForUserInput {
     /// Creates a new builder-style object to manufacture [`ListIamPolicyAssignmentsForUserInput`](crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserInput).
-    pub fn builder() -> crate::operation::list_iam_policy_assignments_for_user::builders::ListIamPolicyAssignmentsForUserInputBuilder{
+    pub fn builder() -> crate::operation::list_iam_policy_assignments_for_user::builders::ListIamPolicyAssignmentsForUserInputBuilder {
         crate::operation::list_iam_policy_assignments_for_user::builders::ListIamPolicyAssignmentsForUserInputBuilder::default()
     }
 }
 
 /// A builder for [`ListIamPolicyAssignmentsForUserInput`](crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIamPolicyAssignmentsForUserInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct ListIamPolicyAssignmentsForUserInputBuilder {
 }
 impl ListIamPolicyAssignmentsForUserInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the assignments.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the assignments.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -138,20 +130,20 @@ impl ListIamPolicyAssignmentsForUserInputBuilder {
         &self.namespace
     }
     /// Consumes the builder and constructs a [`ListIamPolicyAssignmentsForUserInput`](crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserInput {
-                aws_account_id: self.aws_account_id
-                ,
-                user_name: self.user_name
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                namespace: self.namespace
-                ,
-            }
+                aws_account_id: self.aws_account_id,
+                user_name: self.user_name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                namespace: self.namespace,
+            },
         )
     }
 }

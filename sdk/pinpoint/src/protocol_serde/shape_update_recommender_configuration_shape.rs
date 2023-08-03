@@ -20,29 +20,19 @@ pub fn ser_update_recommender_configuration_shape(
         object.key("Name").string(var_6.as_str());
     }
     if let Some(var_7) = &input.recommendation_provider_id_type {
-        object
-            .key("RecommendationProviderIdType")
-            .string(var_7.as_str());
+        object.key("RecommendationProviderIdType").string(var_7.as_str());
     }
     if let Some(var_8) = &input.recommendation_provider_role_arn {
-        object
-            .key("RecommendationProviderRoleArn")
-            .string(var_8.as_str());
+        object.key("RecommendationProviderRoleArn").string(var_8.as_str());
     }
     if let Some(var_9) = &input.recommendation_provider_uri {
-        object
-            .key("RecommendationProviderUri")
-            .string(var_9.as_str());
+        object.key("RecommendationProviderUri").string(var_9.as_str());
     }
     if let Some(var_10) = &input.recommendation_transformer_uri {
-        object
-            .key("RecommendationTransformerUri")
-            .string(var_10.as_str());
+        object.key("RecommendationTransformerUri").string(var_10.as_str());
     }
     if let Some(var_11) = &input.recommendations_display_name {
-        object
-            .key("RecommendationsDisplayName")
-            .string(var_11.as_str());
+        object.key("RecommendationsDisplayName").string(var_11.as_str());
     }
     if let Some(var_12) = &input.recommendations_per_message {
         object.key("RecommendationsPerMessage").number(

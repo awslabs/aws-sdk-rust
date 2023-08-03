@@ -32,9 +32,7 @@ impl SqlStatementResult {
 
 /// A builder for [`SqlStatementResult`](crate::types::SqlStatementResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SqlStatementResultBuilder {
     pub(crate) result_frame: ::std::option::Option<crate::types::ResultFrame>,
     pub(crate) number_of_records_updated: ::std::option::Option<i64>,
@@ -46,10 +44,7 @@ impl SqlStatementResultBuilder {
         self
     }
     /// <p>The result set of the SQL statement.</p>
-    pub fn set_result_frame(
-        mut self,
-        input: ::std::option::Option<crate::types::ResultFrame>,
-    ) -> Self {
+    pub fn set_result_frame(mut self, input: ::std::option::Option<crate::types::ResultFrame>) -> Self {
         self.result_frame = input;
         self
     }

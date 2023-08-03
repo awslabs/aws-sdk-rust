@@ -30,14 +30,10 @@ pub struct AutomationExecution {
     pub step_executions_truncated: bool,
     /// <p>The key-value map of execution parameters, which were supplied when calling <code>StartAutomationExecution</code>.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
     #[doc(hidden)]
-    pub outputs: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub outputs: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>A message describing why an execution has failed, if the status is set to Failed.</p>
     #[doc(hidden)]
     pub failure_message: ::std::option::Option<::std::string::String>,
@@ -64,14 +60,8 @@ pub struct AutomationExecution {
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>The specified key-value mapping of document parameters to target resources.</p>
     #[doc(hidden)]
-    pub target_maps: ::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    >,
+    pub target_maps:
+        ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     /// <p>A list of resolved targets in the rate control execution.</p>
     #[doc(hidden)]
     pub resolved_targets: ::std::option::Option<crate::types::ResolvedTargets>,
@@ -95,8 +85,7 @@ pub struct AutomationExecution {
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>The CloudWatch alarm that was invoked by the automation.</p>
     #[doc(hidden)]
-    pub triggered_alarms:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
     #[doc(hidden)]
     pub automation_subtype: ::std::option::Option<crate::types::AutomationSubtype>,
@@ -140,9 +129,7 @@ impl AutomationExecution {
         self.execution_end_time.as_ref()
     }
     /// <p>The execution status of the Automation.</p>
-    pub fn automation_execution_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutomationExecutionStatus> {
+    pub fn automation_execution_status(&self) -> ::std::option::Option<&crate::types::AutomationExecutionStatus> {
         self.automation_execution_status.as_ref()
     }
     /// <p>A list of details about the current state of all steps that comprise an execution. An Automation runbook contains a list of steps that are run in order.</p>
@@ -154,19 +141,11 @@ impl AutomationExecution {
         self.step_executions_truncated
     }
     /// <p>The key-value map of execution parameters, which were supplied when calling <code>StartAutomationExecution</code>.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.parameters.as_ref()
     }
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
-    pub fn outputs(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn outputs(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.outputs.as_ref()
     }
     /// <p>A message describing why an execution has failed, if the status is set to Failed.</p>
@@ -204,12 +183,7 @@ impl AutomationExecution {
     /// <p>The specified key-value mapping of document parameters to target resources.</p>
     pub fn target_maps(
         &self,
-    ) -> ::std::option::Option<
-        &[::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::string::String>,
-        >],
-    > {
+    ) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>]> {
         self.target_maps.as_deref()
     }
     /// <p>A list of resolved targets in the rate control execution.</p>
@@ -241,9 +215,7 @@ impl AutomationExecution {
         self.alarm_configuration.as_ref()
     }
     /// <p>The CloudWatch alarm that was invoked by the automation.</p>
-    pub fn triggered_alarms(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
+    pub fn triggered_alarms(&self) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
         self.triggered_alarms.as_deref()
     }
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
@@ -282,25 +254,18 @@ impl AutomationExecution {
 
 /// A builder for [`AutomationExecution`](crate::types::AutomationExecution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutomationExecutionBuilder {
     pub(crate) automation_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) document_name: ::std::option::Option<::std::string::String>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,
     pub(crate) execution_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) execution_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) automation_execution_status:
-        ::std::option::Option<crate::types::AutomationExecutionStatus>,
+    pub(crate) automation_execution_status: ::std::option::Option<crate::types::AutomationExecutionStatus>,
     pub(crate) step_executions: ::std::option::Option<::std::vec::Vec<crate::types::StepExecution>>,
     pub(crate) step_executions_truncated: ::std::option::Option<bool>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
-    pub(crate) outputs: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) outputs: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
     pub(crate) mode: ::std::option::Option<crate::types::ExecutionMode>,
     pub(crate) parent_automation_execution_id: ::std::option::Option<::std::string::String>,
@@ -309,24 +274,16 @@ pub struct AutomationExecutionBuilder {
     pub(crate) current_action: ::std::option::Option<::std::string::String>,
     pub(crate) target_parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    pub(crate) target_maps: ::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    >,
+    pub(crate) target_maps:
+        ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     pub(crate) resolved_targets: ::std::option::Option<crate::types::ResolvedTargets>,
     pub(crate) max_concurrency: ::std::option::Option<::std::string::String>,
     pub(crate) max_errors: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<::std::string::String>,
-    pub(crate) target_locations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
+    pub(crate) target_locations: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
     pub(crate) progress_counters: ::std::option::Option<crate::types::ProgressCounters>,
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
-    pub(crate) triggered_alarms:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub(crate) triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
     pub(crate) automation_subtype: ::std::option::Option<crate::types::AutomationSubtype>,
     pub(crate) scheduled_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) runbooks: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>,
@@ -336,18 +293,12 @@ pub struct AutomationExecutionBuilder {
 }
 impl AutomationExecutionBuilder {
     /// <p>The execution ID.</p>
-    pub fn automation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn automation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.automation_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The execution ID.</p>
-    pub fn set_automation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_automation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.automation_execution_id = input;
         self
     }
@@ -356,18 +307,12 @@ impl AutomationExecutionBuilder {
         &self.automation_execution_id
     }
     /// <p>The name of the Automation runbook used during the execution.</p>
-    pub fn document_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Automation runbook used during the execution.</p>
-    pub fn set_document_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_name = input;
         self
     }
@@ -376,18 +321,12 @@ impl AutomationExecutionBuilder {
         &self.document_name
     }
     /// <p>The version of the document to use during execution.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the document to use during execution.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -401,10 +340,7 @@ impl AutomationExecutionBuilder {
         self
     }
     /// <p>The time the execution started.</p>
-    pub fn set_execution_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_execution_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.execution_start_time = input;
         self
     }
@@ -418,10 +354,7 @@ impl AutomationExecutionBuilder {
         self
     }
     /// <p>The time the execution finished.</p>
-    pub fn set_execution_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_execution_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.execution_end_time = input;
         self
     }
@@ -430,25 +363,17 @@ impl AutomationExecutionBuilder {
         &self.execution_end_time
     }
     /// <p>The execution status of the Automation.</p>
-    pub fn automation_execution_status(
-        mut self,
-        input: crate::types::AutomationExecutionStatus,
-    ) -> Self {
+    pub fn automation_execution_status(mut self, input: crate::types::AutomationExecutionStatus) -> Self {
         self.automation_execution_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The execution status of the Automation.</p>
-    pub fn set_automation_execution_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AutomationExecutionStatus>,
-    ) -> Self {
+    pub fn set_automation_execution_status(mut self, input: ::std::option::Option<crate::types::AutomationExecutionStatus>) -> Self {
         self.automation_execution_status = input;
         self
     }
     /// <p>The execution status of the Automation.</p>
-    pub fn get_automation_execution_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutomationExecutionStatus> {
+    pub fn get_automation_execution_status(&self) -> &::std::option::Option<crate::types::AutomationExecutionStatus> {
         &self.automation_execution_status
     }
     /// Appends an item to `step_executions`.
@@ -463,17 +388,12 @@ impl AutomationExecutionBuilder {
         self
     }
     /// <p>A list of details about the current state of all steps that comprise an execution. An Automation runbook contains a list of steps that are run in order.</p>
-    pub fn set_step_executions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StepExecution>>,
-    ) -> Self {
+    pub fn set_step_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StepExecution>>) -> Self {
         self.step_executions = input;
         self
     }
     /// <p>A list of details about the current state of all steps that comprise an execution. An Automation runbook contains a list of steps that are run in order.</p>
-    pub fn get_step_executions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StepExecution>> {
+    pub fn get_step_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepExecution>> {
         &self.step_executions
     }
     /// <p>A boolean value that indicates if the response contains the full list of the Automation step executions. If true, use the DescribeAutomationStepExecutions API operation to get the full list of step executions.</p>
@@ -495,11 +415,7 @@ impl AutomationExecutionBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The key-value map of execution parameters, which were supplied when calling <code>StartAutomationExecution</code>.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.parameters = ::std::option::Option::Some(hash_map);
@@ -508,12 +424,7 @@ impl AutomationExecutionBuilder {
     /// <p>The key-value map of execution parameters, which were supplied when calling <code>StartAutomationExecution</code>.</p>
     pub fn set_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.parameters = input;
         self
@@ -521,9 +432,7 @@ impl AutomationExecutionBuilder {
     /// <p>The key-value map of execution parameters, which were supplied when calling <code>StartAutomationExecution</code>.</p>
     pub fn get_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.parameters
     }
     /// Adds a key-value pair to `outputs`.
@@ -531,11 +440,7 @@ impl AutomationExecutionBuilder {
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
     ///
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
-    pub fn outputs(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn outputs(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.outputs.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.outputs = ::std::option::Option::Some(hash_map);
@@ -544,37 +449,22 @@ impl AutomationExecutionBuilder {
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
     pub fn set_outputs(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.outputs = input;
         self
     }
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
-    pub fn get_outputs(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.outputs
     }
     /// <p>A message describing why an execution has failed, if the status is set to Failed.</p>
-    pub fn failure_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message describing why an execution has failed, if the status is set to Failed.</p>
-    pub fn set_failure_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_message = input;
         self
     }
@@ -597,25 +487,17 @@ impl AutomationExecutionBuilder {
         &self.mode
     }
     /// <p>The AutomationExecutionId of the parent automation.</p>
-    pub fn parent_automation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_automation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_automation_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AutomationExecutionId of the parent automation.</p>
-    pub fn set_parent_automation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_automation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_automation_execution_id = input;
         self
     }
     /// <p>The AutomationExecutionId of the parent automation.</p>
-    pub fn get_parent_automation_execution_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_parent_automation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_automation_execution_id
     }
     /// <p>The Amazon Resource Name (ARN) of the user who ran the automation.</p>
@@ -633,18 +515,12 @@ impl AutomationExecutionBuilder {
         &self.executed_by
     }
     /// <p>The name of the step that is currently running.</p>
-    pub fn current_step_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_step_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_step_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the step that is currently running.</p>
-    pub fn set_current_step_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_step_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_step_name = input;
         self
     }
@@ -653,18 +529,12 @@ impl AutomationExecutionBuilder {
         &self.current_step_name
     }
     /// <p>The action of the step that is currently running.</p>
-    pub fn current_action(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action of the step that is currently running.</p>
-    pub fn set_current_action(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_action = input;
         self
     }
@@ -673,18 +543,12 @@ impl AutomationExecutionBuilder {
         &self.current_action
     }
     /// <p>The parameter name.</p>
-    pub fn target_parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter name.</p>
-    pub fn set_target_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_parameter_name = input;
         self
     }
@@ -704,10 +568,7 @@ impl AutomationExecutionBuilder {
         self
     }
     /// <p>The specified targets.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
@@ -720,13 +581,7 @@ impl AutomationExecutionBuilder {
     /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
     ///
     /// <p>The specified key-value mapping of document parameters to target resources.</p>
-    pub fn target_maps(
-        mut self,
-        input: ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn target_maps(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>) -> Self {
         let mut v = self.target_maps.unwrap_or_default();
         v.push(input);
         self.target_maps = ::std::option::Option::Some(v);
@@ -735,14 +590,7 @@ impl AutomationExecutionBuilder {
     /// <p>The specified key-value mapping of document parameters to target resources.</p>
     pub fn set_target_maps(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    ::std::vec::Vec<::std::string::String>,
-                >,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     ) -> Self {
         self.target_maps = input;
         self
@@ -750,14 +598,7 @@ impl AutomationExecutionBuilder {
     /// <p>The specified key-value mapping of document parameters to target resources.</p>
     pub fn get_target_maps(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>> {
         &self.target_maps
     }
     /// <p>A list of resolved targets in the rate control execution.</p>
@@ -766,10 +607,7 @@ impl AutomationExecutionBuilder {
         self
     }
     /// <p>A list of resolved targets in the rate control execution.</p>
-    pub fn set_resolved_targets(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolvedTargets>,
-    ) -> Self {
+    pub fn set_resolved_targets(mut self, input: ::std::option::Option<crate::types::ResolvedTargets>) -> Self {
         self.resolved_targets = input;
         self
     }
@@ -778,18 +616,12 @@ impl AutomationExecutionBuilder {
         &self.resolved_targets
     }
     /// <p>The <code>MaxConcurrency</code> value specified by the user when the execution started.</p>
-    pub fn max_concurrency(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn max_concurrency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_concurrency = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>MaxConcurrency</code> value specified by the user when the execution started.</p>
-    pub fn set_max_concurrency(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_max_concurrency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_concurrency = input;
         self
     }
@@ -837,17 +669,12 @@ impl AutomationExecutionBuilder {
         self
     }
     /// <p>The combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the Automation.</p>
-    pub fn set_target_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
-    ) -> Self {
+    pub fn set_target_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>) -> Self {
         self.target_locations = input;
         self
     }
     /// <p>The combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the Automation.</p>
-    pub fn get_target_locations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>> {
+    pub fn get_target_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>> {
         &self.target_locations
     }
     /// <p>An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a multi-Region and multi-account Automation execution.</p>
@@ -856,10 +683,7 @@ impl AutomationExecutionBuilder {
         self
     }
     /// <p>An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a multi-Region and multi-account Automation execution.</p>
-    pub fn set_progress_counters(
-        mut self,
-        input: ::std::option::Option<crate::types::ProgressCounters>,
-    ) -> Self {
+    pub fn set_progress_counters(mut self, input: ::std::option::Option<crate::types::ProgressCounters>) -> Self {
         self.progress_counters = input;
         self
     }
@@ -873,17 +697,12 @@ impl AutomationExecutionBuilder {
         self
     }
     /// <p>The details for the CloudWatch alarm applied to your automation.</p>
-    pub fn set_alarm_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmConfiguration>,
-    ) -> Self {
+    pub fn set_alarm_configuration(mut self, input: ::std::option::Option<crate::types::AlarmConfiguration>) -> Self {
         self.alarm_configuration = input;
         self
     }
     /// <p>The details for the CloudWatch alarm applied to your automation.</p>
-    pub fn get_alarm_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlarmConfiguration> {
+    pub fn get_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         &self.alarm_configuration
     }
     /// Appends an item to `triggered_alarms`.
@@ -898,17 +717,12 @@ impl AutomationExecutionBuilder {
         self
     }
     /// <p>The CloudWatch alarm that was invoked by the automation.</p>
-    pub fn set_triggered_alarms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
-    ) -> Self {
+    pub fn set_triggered_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>) -> Self {
         self.triggered_alarms = input;
         self
     }
     /// <p>The CloudWatch alarm that was invoked by the automation.</p>
-    pub fn get_triggered_alarms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
+    pub fn get_triggered_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
         &self.triggered_alarms
     }
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
@@ -917,17 +731,12 @@ impl AutomationExecutionBuilder {
         self
     }
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
-    pub fn set_automation_subtype(
-        mut self,
-        input: ::std::option::Option<crate::types::AutomationSubtype>,
-    ) -> Self {
+    pub fn set_automation_subtype(mut self, input: ::std::option::Option<crate::types::AutomationSubtype>) -> Self {
         self.automation_subtype = input;
         self
     }
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
-    pub fn get_automation_subtype(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutomationSubtype> {
+    pub fn get_automation_subtype(&self) -> &::std::option::Option<crate::types::AutomationSubtype> {
         &self.automation_subtype
     }
     /// <p>The date and time the Automation operation is scheduled to start.</p>
@@ -936,10 +745,7 @@ impl AutomationExecutionBuilder {
         self
     }
     /// <p>The date and time the Automation operation is scheduled to start.</p>
-    pub fn set_scheduled_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.scheduled_time = input;
         self
     }
@@ -963,10 +769,7 @@ impl AutomationExecutionBuilder {
     /// <p>Information about the Automation runbooks that are run as part of a runbook workflow.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
-    pub fn set_runbooks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>,
-    ) -> Self {
+    pub fn set_runbooks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>) -> Self {
         self.runbooks = input;
         self
     }
@@ -991,18 +794,12 @@ impl AutomationExecutionBuilder {
         &self.ops_item_id
     }
     /// <p>The ID of a State Manager association used in the Automation operation.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a State Manager association used in the Automation operation.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -1011,18 +808,12 @@ impl AutomationExecutionBuilder {
         &self.association_id
     }
     /// <p>The name of the Change Manager change request.</p>
-    pub fn change_request_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_request_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_request_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Change Manager change request.</p>
-    pub fn set_change_request_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_request_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_request_name = input;
         self
     }

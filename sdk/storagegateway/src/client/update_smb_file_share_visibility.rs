@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateSmbFileShareVisibilityOutput`](crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<UpdateSMBFileShareVisibilityError>`](crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError)
-    pub fn update_smb_file_share_visibility(&self) -> crate::operation::update_smb_file_share_visibility::builders::UpdateSMBFileShareVisibilityFluentBuilder{
+    pub fn update_smb_file_share_visibility(
+        &self,
+    ) -> crate::operation::update_smb_file_share_visibility::builders::UpdateSMBFileShareVisibilityFluentBuilder {
         crate::operation::update_smb_file_share_visibility::builders::UpdateSMBFileShareVisibilityFluentBuilder::new(self.handle.clone())
     }
 }

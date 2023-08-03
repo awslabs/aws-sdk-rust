@@ -22,10 +22,7 @@ pub fn ser_update_component_data(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = object_6.key(key_7.as_str()).start_object();
-                crate::protocol_serde::shape_component_property::ser_component_property(
-                    &mut object_9,
-                    value_8,
-                )?;
+                crate::protocol_serde::shape_component_property::ser_component_property(&mut object_9, value_8)?;
                 object_9.finish();
             }
         }
@@ -37,10 +34,7 @@ pub fn ser_update_component_data(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_component_child::ser_component_child(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_component_child::ser_component_child(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }
@@ -52,10 +46,7 @@ pub fn ser_update_component_data(
             {
                 #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_component_variant::ser_component_variant(
-                    &mut object_17,
-                    item_16,
-                )?;
+                crate::protocol_serde::shape_component_variant::ser_component_variant(&mut object_17, item_16)?;
                 object_17.finish();
             }
         }
@@ -111,10 +102,7 @@ pub fn ser_update_component_data(
             {
                 #[allow(unused_mut)]
                 let mut object_39 = object_36.key(key_37.as_str()).start_object();
-                crate::protocol_serde::shape_component_event::ser_component_event(
-                    &mut object_39,
-                    value_38,
-                )?;
+                crate::protocol_serde::shape_component_event::ser_component_event(&mut object_39, value_38)?;
                 object_39.finish();
             }
         }

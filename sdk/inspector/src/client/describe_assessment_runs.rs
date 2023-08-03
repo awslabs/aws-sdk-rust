@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`assessment_runs(Option<Vec<AssessmentRun>>)`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsOutput::assessment_runs): <p>Information about the assessment run.</p>
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsOutput::failed_items): <p>Assessment run details that cannot be described. An error code is provided for each failed item.</p>
     /// - On failure, responds with [`SdkError<DescribeAssessmentRunsError>`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsError)
-    pub fn describe_assessment_runs(
-        &self,
-    ) -> crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsFluentBuilder
-    {
+    pub fn describe_assessment_runs(&self) -> crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsFluentBuilder {
         crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsFluentBuilder::new(self.handle.clone())
     }
 }

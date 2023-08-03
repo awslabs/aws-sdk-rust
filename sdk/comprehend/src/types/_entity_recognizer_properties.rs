@@ -101,15 +101,11 @@ impl EntityRecognizerProperties {
         self.training_end_time.as_ref()
     }
     /// <p>The input data properties of an entity recognizer.</p>
-    pub fn input_data_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EntityRecognizerInputDataConfig> {
+    pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::EntityRecognizerInputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p> Provides information about an entity recognizer.</p>
-    pub fn recognizer_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EntityRecognizerMetadata> {
+    pub fn recognizer_metadata(&self) -> ::std::option::Option<&crate::types::EntityRecognizerMetadata> {
         self.recognizer_metadata.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
@@ -149,9 +145,7 @@ impl EntityRecognizerProperties {
         self.flywheel_arn.as_deref()
     }
     /// <p>Output data configuration.</p>
-    pub fn output_data_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EntityRecognizerOutputDataConfig> {
+    pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::EntityRecognizerOutputDataConfig> {
         self.output_data_config.as_ref()
     }
 }
@@ -198,8 +192,7 @@ pub struct EntityRecognizerPropertiesBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) training_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) training_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) input_data_config:
-        ::std::option::Option<crate::types::EntityRecognizerInputDataConfig>,
+    pub(crate) input_data_config: ::std::option::Option<crate::types::EntityRecognizerInputDataConfig>,
     pub(crate) recognizer_metadata: ::std::option::Option<crate::types::EntityRecognizerMetadata>,
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) volume_kms_key_id: ::std::option::Option<::std::string::String>,
@@ -208,23 +201,16 @@ pub struct EntityRecognizerPropertiesBuilder {
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) flywheel_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) output_data_config:
-        ::std::option::Option<crate::types::EntityRecognizerOutputDataConfig>,
+    pub(crate) output_data_config: ::std::option::Option<crate::types::EntityRecognizerOutputDataConfig>,
 }
 impl EntityRecognizerPropertiesBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
-    pub fn entity_recognizer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_recognizer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_recognizer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
-    pub fn set_entity_recognizer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entity_recognizer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_recognizer_arn = input;
         self
     }
@@ -238,10 +224,7 @@ impl EntityRecognizerPropertiesBuilder {
         self
     }
     /// <p> The language of the input documents. All documents must be in the same language. Only English ("en") is currently supported.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -283,10 +266,7 @@ impl EntityRecognizerPropertiesBuilder {
         self
     }
     /// <p>The time that the recognizer was submitted for processing.</p>
-    pub fn set_submit_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_submit_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.submit_time = input;
         self
     }
@@ -300,10 +280,7 @@ impl EntityRecognizerPropertiesBuilder {
         self
     }
     /// <p>The time that the recognizer creation completed.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -317,10 +294,7 @@ impl EntityRecognizerPropertiesBuilder {
         self
     }
     /// <p>The time that training of the entity recognizer started.</p>
-    pub fn set_training_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_training_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.training_start_time = input;
         self
     }
@@ -334,10 +308,7 @@ impl EntityRecognizerPropertiesBuilder {
         self
     }
     /// <p>The time that training of the entity recognizer was completed.</p>
-    pub fn set_training_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_training_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.training_end_time = input;
         self
     }
@@ -346,25 +317,17 @@ impl EntityRecognizerPropertiesBuilder {
         &self.training_end_time
     }
     /// <p>The input data properties of an entity recognizer.</p>
-    pub fn input_data_config(
-        mut self,
-        input: crate::types::EntityRecognizerInputDataConfig,
-    ) -> Self {
+    pub fn input_data_config(mut self, input: crate::types::EntityRecognizerInputDataConfig) -> Self {
         self.input_data_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The input data properties of an entity recognizer.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityRecognizerInputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::EntityRecognizerInputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }
     /// <p>The input data properties of an entity recognizer.</p>
-    pub fn get_input_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::EntityRecognizerInputDataConfig> {
+    pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::EntityRecognizerInputDataConfig> {
         &self.input_data_config
     }
     /// <p> Provides information about an entity recognizer.</p>
@@ -373,32 +336,21 @@ impl EntityRecognizerPropertiesBuilder {
         self
     }
     /// <p> Provides information about an entity recognizer.</p>
-    pub fn set_recognizer_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityRecognizerMetadata>,
-    ) -> Self {
+    pub fn set_recognizer_metadata(mut self, input: ::std::option::Option<crate::types::EntityRecognizerMetadata>) -> Self {
         self.recognizer_metadata = input;
         self
     }
     /// <p> Provides information about an entity recognizer.</p>
-    pub fn get_recognizer_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::EntityRecognizerMetadata> {
+    pub fn get_recognizer_metadata(&self) -> &::std::option::Option<crate::types::EntityRecognizerMetadata> {
         &self.recognizer_metadata
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -411,10 +363,7 @@ impl EntityRecognizerPropertiesBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn volume_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -423,10 +372,7 @@ impl EntityRecognizerPropertiesBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn set_volume_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_kms_key_id = input;
         self
     }
@@ -457,10 +403,7 @@ impl EntityRecognizerPropertiesBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn model_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -469,10 +412,7 @@ impl EntityRecognizerPropertiesBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn set_model_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_kms_key_id = input;
         self
     }
@@ -499,18 +439,12 @@ impl EntityRecognizerPropertiesBuilder {
         &self.version_name
     }
     /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services account to create the entity recognizer model in your Amazon Web Services account.</p>
-    pub fn source_model_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_model_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services account to create the entity recognizer model in your Amazon Web Services account.</p>
-    pub fn set_source_model_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_model_arn = input;
         self
     }
@@ -533,25 +467,17 @@ impl EntityRecognizerPropertiesBuilder {
         &self.flywheel_arn
     }
     /// <p>Output data configuration.</p>
-    pub fn output_data_config(
-        mut self,
-        input: crate::types::EntityRecognizerOutputDataConfig,
-    ) -> Self {
+    pub fn output_data_config(mut self, input: crate::types::EntityRecognizerOutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Output data configuration.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityRecognizerOutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::EntityRecognizerOutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
     /// <p>Output data configuration.</p>
-    pub fn get_output_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::EntityRecognizerOutputDataConfig> {
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::EntityRecognizerOutputDataConfig> {
         &self.output_data_config
     }
     /// Consumes the builder and constructs a [`EntityRecognizerProperties`](crate::types::EntityRecognizerProperties).

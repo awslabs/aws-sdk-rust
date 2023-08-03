@@ -22,35 +22,26 @@ impl StartApplicationInput {
 }
 impl StartApplicationInput {
     /// Creates a new builder-style object to manufacture [`StartApplicationInput`](crate::operation::start_application::StartApplicationInput).
-    pub fn builder() -> crate::operation::start_application::builders::StartApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_application::builders::StartApplicationInputBuilder {
         crate::operation::start_application::builders::StartApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`StartApplicationInput`](crate::operation::start_application::StartApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartApplicationInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) run_configuration: ::std::option::Option<crate::types::RunConfiguration>,
 }
 impl StartApplicationInputBuilder {
     /// <p>The name of the application.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -64,10 +55,7 @@ impl StartApplicationInputBuilder {
         self
     }
     /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
-    pub fn set_run_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RunConfiguration>,
-    ) -> Self {
+    pub fn set_run_configuration(mut self, input: ::std::option::Option<crate::types::RunConfiguration>) -> Self {
         self.run_configuration = input;
         self
     }
@@ -78,10 +66,7 @@ impl StartApplicationInputBuilder {
     /// Consumes the builder and constructs a [`StartApplicationInput`](crate::operation::start_application::StartApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_application::StartApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_application::StartApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_application::StartApplicationInput {
             application_name: self.application_name,
             run_configuration: self.run_configuration,

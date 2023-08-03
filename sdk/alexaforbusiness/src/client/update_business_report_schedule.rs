@@ -12,7 +12,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateBusinessReportScheduleOutput`](crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleOutput)
     /// - On failure, responds with [`SdkError<UpdateBusinessReportScheduleError>`](crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn update_business_report_schedule(&self) -> crate::operation::update_business_report_schedule::builders::UpdateBusinessReportScheduleFluentBuilder{
+    pub fn update_business_report_schedule(
+        &self,
+    ) -> crate::operation::update_business_report_schedule::builders::UpdateBusinessReportScheduleFluentBuilder {
         crate::operation::update_business_report_schedule::builders::UpdateBusinessReportScheduleFluentBuilder::new(self.handle.clone())
     }
 }

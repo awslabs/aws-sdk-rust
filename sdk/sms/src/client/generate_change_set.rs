@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GenerateChangeSetOutput`](crate::operation::generate_change_set::GenerateChangeSetOutput) with field(s):
     ///   - [`s3_location(Option<S3Location>)`](crate::operation::generate_change_set::GenerateChangeSetOutput::s3_location): <p>The location of the Amazon S3 object.</p>
     /// - On failure, responds with [`SdkError<GenerateChangeSetError>`](crate::operation::generate_change_set::GenerateChangeSetError)
-    pub fn generate_change_set(
-        &self,
-    ) -> crate::operation::generate_change_set::builders::GenerateChangeSetFluentBuilder {
-        crate::operation::generate_change_set::builders::GenerateChangeSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn generate_change_set(&self) -> crate::operation::generate_change_set::builders::GenerateChangeSetFluentBuilder {
+        crate::operation::generate_change_set::builders::GenerateChangeSetFluentBuilder::new(self.handle.clone())
     }
 }

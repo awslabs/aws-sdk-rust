@@ -12,10 +12,7 @@ pub fn ser_create_endpoint_config_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_production_variant::ser_production_variant(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_production_variant::ser_production_variant(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_create_endpoint_config_input(
     if let Some(var_6) = &input.data_capture_config {
         #[allow(unused_mut)]
         let mut object_7 = object.key("DataCaptureConfig").start_object();
-        crate::protocol_serde::shape_data_capture_config::ser_data_capture_config(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_data_capture_config::ser_data_capture_config(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.tags {
@@ -48,19 +42,13 @@ pub fn ser_create_endpoint_config_input(
     if let Some(var_13) = &input.async_inference_config {
         #[allow(unused_mut)]
         let mut object_14 = object.key("AsyncInferenceConfig").start_object();
-        crate::protocol_serde::shape_async_inference_config::ser_async_inference_config(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_async_inference_config::ser_async_inference_config(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.explainer_config {
         #[allow(unused_mut)]
         let mut object_16 = object.key("ExplainerConfig").start_object();
-        crate::protocol_serde::shape_explainer_config::ser_explainer_config(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_explainer_config::ser_explainer_config(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.shadow_production_variants {
@@ -69,10 +57,7 @@ pub fn ser_create_endpoint_config_input(
             {
                 #[allow(unused_mut)]
                 let mut object_20 = array_18.value().start_object();
-                crate::protocol_serde::shape_production_variant::ser_production_variant(
-                    &mut object_20,
-                    item_19,
-                )?;
+                crate::protocol_serde::shape_production_variant::ser_production_variant(&mut object_20, item_19)?;
                 object_20.finish();
             }
         }

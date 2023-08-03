@@ -16,9 +16,7 @@ pub struct DescribeDryRunProgressOutput {
 }
 impl DescribeDryRunProgressOutput {
     /// <p>The current status of the dry run, including any validation errors.</p>
-    pub fn dry_run_progress_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DryRunProgressStatus> {
+    pub fn dry_run_progress_status(&self) -> ::std::option::Option<&crate::types::DryRunProgressStatus> {
         self.dry_run_progress_status.as_ref()
     }
     /// <p>Details about the changes you're planning to make on the domain.</p>
@@ -37,18 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeDryRunProgressOutput {
 }
 impl DescribeDryRunProgressOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDryRunProgressOutput`](crate::operation::describe_dry_run_progress::DescribeDryRunProgressOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_dry_run_progress::builders::DescribeDryRunProgressOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_dry_run_progress::builders::DescribeDryRunProgressOutputBuilder {
         crate::operation::describe_dry_run_progress::builders::DescribeDryRunProgressOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDryRunProgressOutput`](crate::operation::describe_dry_run_progress::DescribeDryRunProgressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDryRunProgressOutputBuilder {
     pub(crate) dry_run_progress_status: ::std::option::Option<crate::types::DryRunProgressStatus>,
     pub(crate) dry_run_config: ::std::option::Option<crate::types::DomainStatus>,
@@ -62,17 +56,12 @@ impl DescribeDryRunProgressOutputBuilder {
         self
     }
     /// <p>The current status of the dry run, including any validation errors.</p>
-    pub fn set_dry_run_progress_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DryRunProgressStatus>,
-    ) -> Self {
+    pub fn set_dry_run_progress_status(mut self, input: ::std::option::Option<crate::types::DryRunProgressStatus>) -> Self {
         self.dry_run_progress_status = input;
         self
     }
     /// <p>The current status of the dry run, including any validation errors.</p>
-    pub fn get_dry_run_progress_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::DryRunProgressStatus> {
+    pub fn get_dry_run_progress_status(&self) -> &::std::option::Option<crate::types::DryRunProgressStatus> {
         &self.dry_run_progress_status
     }
     /// <p>Details about the changes you're planning to make on the domain.</p>
@@ -81,10 +70,7 @@ impl DescribeDryRunProgressOutputBuilder {
         self
     }
     /// <p>Details about the changes you're planning to make on the domain.</p>
-    pub fn set_dry_run_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainStatus>,
-    ) -> Self {
+    pub fn set_dry_run_config(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
         self.dry_run_config = input;
         self
     }
@@ -98,10 +84,7 @@ impl DescribeDryRunProgressOutputBuilder {
         self
     }
     /// <p>The results of the dry run. </p>
-    pub fn set_dry_run_results(
-        mut self,
-        input: ::std::option::Option<crate::types::DryRunResults>,
-    ) -> Self {
+    pub fn set_dry_run_results(mut self, input: ::std::option::Option<crate::types::DryRunResults>) -> Self {
         self.dry_run_results = input;
         self
     }
@@ -119,9 +102,7 @@ impl DescribeDryRunProgressOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDryRunProgressOutput`](crate::operation::describe_dry_run_progress::DescribeDryRunProgressOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_dry_run_progress::DescribeDryRunProgressOutput {
+    pub fn build(self) -> crate::operation::describe_dry_run_progress::DescribeDryRunProgressOutput {
         crate::operation::describe_dry_run_progress::DescribeDryRunProgressOutput {
             dry_run_progress_status: self.dry_run_progress_status,
             dry_run_config: self.dry_run_config,

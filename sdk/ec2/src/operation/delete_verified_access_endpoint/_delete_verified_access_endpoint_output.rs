@@ -10,9 +10,7 @@ pub struct DeleteVerifiedAccessEndpointOutput {
 }
 impl DeleteVerifiedAccessEndpointOutput {
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn verified_access_endpoint(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VerifiedAccessEndpoint> {
+    pub fn verified_access_endpoint(&self) -> ::std::option::Option<&crate::types::VerifiedAccessEndpoint> {
         self.verified_access_endpoint.as_ref()
     }
 }
@@ -23,19 +21,16 @@ impl ::aws_http::request_id::RequestId for DeleteVerifiedAccessEndpointOutput {
 }
 impl DeleteVerifiedAccessEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVerifiedAccessEndpointOutput`](crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointOutput).
-    pub fn builder() -> crate::operation::delete_verified_access_endpoint::builders::DeleteVerifiedAccessEndpointOutputBuilder{
+    pub fn builder() -> crate::operation::delete_verified_access_endpoint::builders::DeleteVerifiedAccessEndpointOutputBuilder {
         crate::operation::delete_verified_access_endpoint::builders::DeleteVerifiedAccessEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVerifiedAccessEndpointOutput`](crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVerifiedAccessEndpointOutputBuilder {
-    pub(crate) verified_access_endpoint:
-        ::std::option::Option<crate::types::VerifiedAccessEndpoint>,
+    pub(crate) verified_access_endpoint: ::std::option::Option<crate::types::VerifiedAccessEndpoint>,
     _request_id: Option<String>,
 }
 impl DeleteVerifiedAccessEndpointOutputBuilder {
@@ -45,17 +40,12 @@ impl DeleteVerifiedAccessEndpointOutputBuilder {
         self
     }
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn set_verified_access_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifiedAccessEndpoint>,
-    ) -> Self {
+    pub fn set_verified_access_endpoint(mut self, input: ::std::option::Option<crate::types::VerifiedAccessEndpoint>) -> Self {
         self.verified_access_endpoint = input;
         self
     }
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn get_verified_access_endpoint(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifiedAccessEndpoint> {
+    pub fn get_verified_access_endpoint(&self) -> &::std::option::Option<crate::types::VerifiedAccessEndpoint> {
         &self.verified_access_endpoint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,9 +58,7 @@ impl DeleteVerifiedAccessEndpointOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVerifiedAccessEndpointOutput`](crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointOutput {
+    pub fn build(self) -> crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointOutput {
         crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointOutput {
             verified_access_endpoint: self.verified_access_endpoint,
             _request_id: self._request_id,

@@ -36,9 +36,7 @@ impl UpdateTestSetInput {
 
 /// A builder for [`UpdateTestSetInput`](crate::operation::update_test_set::UpdateTestSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTestSetInputBuilder {
     pub(crate) test_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_set_name: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl UpdateTestSetInputBuilder {
         &self.test_set_id
     }
     /// <p>The new test set name.</p>
-    pub fn test_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new test set name.</p>
-    pub fn set_test_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_set_name = input;
         self
     }
@@ -96,10 +88,7 @@ impl UpdateTestSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTestSetInput`](crate::operation::update_test_set::UpdateTestSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_test_set::UpdateTestSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_test_set::UpdateTestSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_test_set::UpdateTestSetInput {
             test_set_id: self.test_set_id,
             test_set_name: self.test_set_name,

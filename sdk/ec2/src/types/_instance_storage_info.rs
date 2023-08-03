@@ -31,9 +31,7 @@ impl InstanceStorageInfo {
         self.nvme_support.as_ref()
     }
     /// <p>Indicates whether data is encrypted at rest.</p>
-    pub fn encryption_support(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceStorageEncryptionSupport> {
+    pub fn encryption_support(&self) -> ::std::option::Option<&crate::types::InstanceStorageEncryptionSupport> {
         self.encryption_support.as_ref()
     }
 }
@@ -46,15 +44,12 @@ impl InstanceStorageInfo {
 
 /// A builder for [`InstanceStorageInfo`](crate::types::InstanceStorageInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceStorageInfoBuilder {
     pub(crate) total_size_in_gb: ::std::option::Option<i64>,
     pub(crate) disks: ::std::option::Option<::std::vec::Vec<crate::types::DiskInfo>>,
     pub(crate) nvme_support: ::std::option::Option<crate::types::EphemeralNvmeSupport>,
-    pub(crate) encryption_support:
-        ::std::option::Option<crate::types::InstanceStorageEncryptionSupport>,
+    pub(crate) encryption_support: ::std::option::Option<crate::types::InstanceStorageEncryptionSupport>,
 }
 impl InstanceStorageInfoBuilder {
     /// <p>The total size of the disks, in GB.</p>
@@ -83,10 +78,7 @@ impl InstanceStorageInfoBuilder {
         self
     }
     /// <p>Describes the disks that are available for the instance type.</p>
-    pub fn set_disks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DiskInfo>>,
-    ) -> Self {
+    pub fn set_disks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DiskInfo>>) -> Self {
         self.disks = input;
         self
     }
@@ -100,10 +92,7 @@ impl InstanceStorageInfoBuilder {
         self
     }
     /// <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
-    pub fn set_nvme_support(
-        mut self,
-        input: ::std::option::Option<crate::types::EphemeralNvmeSupport>,
-    ) -> Self {
+    pub fn set_nvme_support(mut self, input: ::std::option::Option<crate::types::EphemeralNvmeSupport>) -> Self {
         self.nvme_support = input;
         self
     }
@@ -112,25 +101,17 @@ impl InstanceStorageInfoBuilder {
         &self.nvme_support
     }
     /// <p>Indicates whether data is encrypted at rest.</p>
-    pub fn encryption_support(
-        mut self,
-        input: crate::types::InstanceStorageEncryptionSupport,
-    ) -> Self {
+    pub fn encryption_support(mut self, input: crate::types::InstanceStorageEncryptionSupport) -> Self {
         self.encryption_support = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether data is encrypted at rest.</p>
-    pub fn set_encryption_support(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStorageEncryptionSupport>,
-    ) -> Self {
+    pub fn set_encryption_support(mut self, input: ::std::option::Option<crate::types::InstanceStorageEncryptionSupport>) -> Self {
         self.encryption_support = input;
         self
     }
     /// <p>Indicates whether data is encrypted at rest.</p>
-    pub fn get_encryption_support(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceStorageEncryptionSupport> {
+    pub fn get_encryption_support(&self) -> &::std::option::Option<crate::types::InstanceStorageEncryptionSupport> {
         &self.encryption_support
     }
     /// Consumes the builder and constructs a [`InstanceStorageInfo`](crate::types::InstanceStorageInfo).

@@ -30,17 +30,14 @@ impl InitiateVaultLockInput {
 }
 impl InitiateVaultLockInput {
     /// Creates a new builder-style object to manufacture [`InitiateVaultLockInput`](crate::operation::initiate_vault_lock::InitiateVaultLockInput).
-    pub fn builder(
-    ) -> crate::operation::initiate_vault_lock::builders::InitiateVaultLockInputBuilder {
+    pub fn builder() -> crate::operation::initiate_vault_lock::builders::InitiateVaultLockInputBuilder {
         crate::operation::initiate_vault_lock::builders::InitiateVaultLockInputBuilder::default()
     }
 }
 
 /// A builder for [`InitiateVaultLockInput`](crate::operation::initiate_vault_lock::InitiateVaultLockInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InitiateVaultLockInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
@@ -81,10 +78,7 @@ impl InitiateVaultLockInputBuilder {
         self
     }
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-    pub fn set_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::VaultLockPolicy>,
-    ) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<crate::types::VaultLockPolicy>) -> Self {
         self.policy = input;
         self
     }
@@ -95,16 +89,11 @@ impl InitiateVaultLockInputBuilder {
     /// Consumes the builder and constructs a [`InitiateVaultLockInput`](crate::operation::initiate_vault_lock::InitiateVaultLockInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::initiate_vault_lock::InitiateVaultLockInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::initiate_vault_lock::InitiateVaultLockInput {
-                account_id: self.account_id,
-                vault_name: self.vault_name,
-                policy: self.policy,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::initiate_vault_lock::InitiateVaultLockInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::initiate_vault_lock::InitiateVaultLockInput {
+            account_id: self.account_id,
+            vault_name: self.vault_name,
+            policy: self.policy,
+        })
     }
 }

@@ -50,16 +50,14 @@ impl GetIpamDiscoveredResourceCidrsInput {
 }
 impl GetIpamDiscoveredResourceCidrsInput {
     /// Creates a new builder-style object to manufacture [`GetIpamDiscoveredResourceCidrsInput`](crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsInput).
-    pub fn builder() -> crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsInputBuilder{
+    pub fn builder() -> crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsInputBuilder {
         crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIpamDiscoveredResourceCidrsInput`](crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIpamDiscoveredResourceCidrsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_resource_discovery_id: ::std::option::Option<::std::string::String>,
@@ -84,18 +82,12 @@ impl GetIpamDiscoveredResourceCidrsInputBuilder {
         &self.dry_run
     }
     /// <p>A resource discovery ID.</p>
-    pub fn ipam_resource_discovery_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_resource_discovery_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_resource_discovery_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A resource discovery ID.</p>
-    pub fn set_ipam_resource_discovery_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_resource_discovery_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_resource_discovery_id = input;
         self
     }
@@ -104,18 +96,12 @@ impl GetIpamDiscoveredResourceCidrsInputBuilder {
         &self.ipam_resource_discovery_id
     }
     /// <p>A resource Region.</p>
-    pub fn resource_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A resource Region.</p>
-    pub fn set_resource_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_region = input;
         self
     }
@@ -135,10 +121,7 @@ impl GetIpamDiscoveredResourceCidrsInputBuilder {
         self
     }
     /// <p>Filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -183,19 +166,13 @@ impl GetIpamDiscoveredResourceCidrsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsInput {
-                dry_run: self.dry_run
-                ,
-                ipam_resource_discovery_id: self.ipam_resource_discovery_id
-                ,
-                resource_region: self.resource_region
-                ,
-                filters: self.filters
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                dry_run: self.dry_run,
+                ipam_resource_discovery_id: self.ipam_resource_discovery_id,
+                resource_region: self.resource_region,
+                filters: self.filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ListTagsForCertificateOutput`](crate::operation::list_tags_for_certificate::ListTagsForCertificateOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::list_tags_for_certificate::ListTagsForCertificateOutput::tags): <p>The key-value pairs that define the applied tags.</p>
     /// - On failure, responds with [`SdkError<ListTagsForCertificateError>`](crate::operation::list_tags_for_certificate::ListTagsForCertificateError)
-    pub fn list_tags_for_certificate(
-        &self,
-    ) -> crate::operation::list_tags_for_certificate::builders::ListTagsForCertificateFluentBuilder
-    {
+    pub fn list_tags_for_certificate(&self) -> crate::operation::list_tags_for_certificate::builders::ListTagsForCertificateFluentBuilder {
         crate::operation::list_tags_for_certificate::builders::ListTagsForCertificateFluentBuilder::new(self.handle.clone())
     }
 }

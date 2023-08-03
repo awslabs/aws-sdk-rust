@@ -36,17 +36,14 @@ impl CreateParameterGroupInput {
 }
 impl CreateParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateParameterGroupInput`](crate::operation::create_parameter_group::CreateParameterGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_parameter_group::builders::CreateParameterGroupInputBuilder {
+    pub fn builder() -> crate::operation::create_parameter_group::builders::CreateParameterGroupInputBuilder {
         crate::operation::create_parameter_group::builders::CreateParameterGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateParameterGroupInput`](crate::operation::create_parameter_group::CreateParameterGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateParameterGroupInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) family: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct CreateParameterGroupInputBuilder {
 }
 impl CreateParameterGroupInputBuilder {
     /// <p>The name of the parameter group.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter group.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_name = input;
         self
     }
@@ -114,10 +105,7 @@ impl CreateParameterGroupInputBuilder {
         self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -128,17 +116,13 @@ impl CreateParameterGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateParameterGroupInput`](crate::operation::create_parameter_group::CreateParameterGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_parameter_group::CreateParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_parameter_group::CreateParameterGroupInput {
-                parameter_group_name: self.parameter_group_name,
-                family: self.family,
-                description: self.description,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_parameter_group::CreateParameterGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_parameter_group::CreateParameterGroupInput {
+            parameter_group_name: self.parameter_group_name,
+            family: self.family,
+            description: self.description,
+            tags: self.tags,
+        })
     }
 }

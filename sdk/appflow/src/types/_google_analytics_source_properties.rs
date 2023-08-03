@@ -23,9 +23,7 @@ impl GoogleAnalyticsSourceProperties {
 
 /// A builder for [`GoogleAnalyticsSourceProperties`](crate::types::GoogleAnalyticsSourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GoogleAnalyticsSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl GoogleAnalyticsSourcePropertiesBuilder {
     }
     /// Consumes the builder and constructs a [`GoogleAnalyticsSourceProperties`](crate::types::GoogleAnalyticsSourceProperties).
     pub fn build(self) -> crate::types::GoogleAnalyticsSourceProperties {
-        crate::types::GoogleAnalyticsSourceProperties {
-            object: self.object,
-        }
+        crate::types::GoogleAnalyticsSourceProperties { object: self.object }
     }
 }

@@ -54,8 +54,7 @@ impl ::std::fmt::Debug for StartSyncExecutionInput {
 }
 impl StartSyncExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartSyncExecutionInput`](crate::operation::start_sync_execution::StartSyncExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::start_sync_execution::builders::StartSyncExecutionInputBuilder {
+    pub fn builder() -> crate::operation::start_sync_execution::builders::StartSyncExecutionInputBuilder {
         crate::operation::start_sync_execution::builders::StartSyncExecutionInputBuilder::default()
     }
 }
@@ -71,18 +70,12 @@ pub struct StartSyncExecutionInputBuilder {
 }
 impl StartSyncExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
-    pub fn state_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_arn = input;
         self
     }
@@ -147,18 +140,13 @@ impl StartSyncExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StartSyncExecutionInput`](crate::operation::start_sync_execution::StartSyncExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_sync_execution::StartSyncExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_sync_execution::StartSyncExecutionInput {
-                state_machine_arn: self.state_machine_arn,
-                name: self.name,
-                input: self.input,
-                trace_header: self.trace_header,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_sync_execution::StartSyncExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_sync_execution::StartSyncExecutionInput {
+            state_machine_arn: self.state_machine_arn,
+            name: self.name,
+            input: self.input,
+            trace_header: self.trace_header,
+        })
     }
 }
 impl ::std::fmt::Debug for StartSyncExecutionInputBuilder {

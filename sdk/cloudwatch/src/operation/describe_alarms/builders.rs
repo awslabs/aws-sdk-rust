@@ -10,10 +10,7 @@ impl DescribeAlarmsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_alarms::DescribeAlarmsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_alarms::DescribeAlarmsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_alarms::DescribeAlarmsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_alarms();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeAlarmsFluentBuilder {
         }
     }
     /// Access the DescribeAlarms as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_alarms::builders::DescribeAlarmsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_alarms::builders::DescribeAlarmsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl DescribeAlarmsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,13 +110,8 @@ impl DescribeAlarmsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_alarms::paginator::DescribeAlarmsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_alarms::paginator::DescribeAlarmsPaginator {
-        crate::operation::describe_alarms::paginator::DescribeAlarmsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_alarms::paginator::DescribeAlarmsPaginator {
+        crate::operation::describe_alarms::paginator::DescribeAlarmsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `AlarmNames`.
     ///
@@ -136,34 +123,23 @@ impl DescribeAlarmsFluentBuilder {
         self
     }
     /// <p>The names of the alarms to retrieve information about.</p>
-    pub fn set_alarm_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_alarm_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_alarm_names(input);
         self
     }
     /// <p>The names of the alarms to retrieve information about.</p>
-    pub fn get_alarm_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alarm_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_alarm_names()
     }
     /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p>
     /// <p>If this parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
-    pub fn alarm_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alarm_name_prefix(input.into());
         self
     }
     /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p>
     /// <p>If this parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
-    pub fn set_alarm_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alarm_name_prefix(input);
         self
     }
@@ -182,27 +158,19 @@ impl DescribeAlarmsFluentBuilder {
         self
     }
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
-    pub fn set_alarm_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>,
-    ) -> Self {
+    pub fn set_alarm_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>) -> Self {
         self.inner = self.inner.set_alarm_types(input);
         self
     }
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
-    pub fn get_alarm_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmType>> {
+    pub fn get_alarm_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmType>> {
         self.inner.get_alarm_types()
     }
     /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p>
     /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
     /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
     /// </note>
-    pub fn children_of_alarm_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn children_of_alarm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.children_of_alarm_name(input.into());
         self
     }
@@ -210,10 +178,7 @@ impl DescribeAlarmsFluentBuilder {
     /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
     /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
     /// </note>
-    pub fn set_children_of_alarm_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_children_of_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_children_of_alarm_name(input);
         self
     }
@@ -228,10 +193,7 @@ impl DescribeAlarmsFluentBuilder {
     /// <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
     /// <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
     /// </note>
-    pub fn parents_of_alarm_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parents_of_alarm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parents_of_alarm_name(input.into());
         self
     }
@@ -239,10 +201,7 @@ impl DescribeAlarmsFluentBuilder {
     /// <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
     /// <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
     /// </note>
-    pub fn set_parents_of_alarm_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parents_of_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parents_of_alarm_name(input);
         self
     }
@@ -259,10 +218,7 @@ impl DescribeAlarmsFluentBuilder {
         self
     }
     /// <p>Specify this parameter to receive information only about alarms that are currently in the state that you specify.</p>
-    pub fn set_state_value(
-        mut self,
-        input: ::std::option::Option<crate::types::StateValue>,
-    ) -> Self {
+    pub fn set_state_value(mut self, input: ::std::option::Option<crate::types::StateValue>) -> Self {
         self.inner = self.inner.set_state_value(input);
         self
     }
@@ -271,18 +227,12 @@ impl DescribeAlarmsFluentBuilder {
         self.inner.get_state_value()
     }
     /// <p>Use this parameter to filter the results of the operation to only those alarms that use a certain alarm action. For example, you could specify the ARN of an SNS topic to find all alarms that send notifications to that topic.</p>
-    pub fn action_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn action_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_prefix(input.into());
         self
     }
     /// <p>Use this parameter to filter the results of the operation to only those alarms that use a certain alarm action. For example, you could specify the ARN of an SNS topic to find all alarms that send notifications to that topic.</p>
-    pub fn set_action_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_action_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_prefix(input);
         self
     }

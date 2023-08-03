@@ -58,9 +58,7 @@ impl CommentMetadata {
 
 /// A builder for [`CommentMetadata`](crate::types::CommentMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommentMetadataBuilder {
     pub(crate) comment_id: ::std::option::Option<::std::string::String>,
     pub(crate) contributor: ::std::option::Option<crate::types::User>,
@@ -104,10 +102,7 @@ impl CommentMetadataBuilder {
         self
     }
     /// <p>The timestamp that the comment was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -121,10 +116,7 @@ impl CommentMetadataBuilder {
         self
     }
     /// <p>The status of the comment.</p>
-    pub fn set_comment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CommentStatusType>,
-    ) -> Self {
+    pub fn set_comment_status(mut self, input: ::std::option::Option<crate::types::CommentStatusType>) -> Self {
         self.comment_status = input;
         self
     }
@@ -147,18 +139,12 @@ impl CommentMetadataBuilder {
         &self.recipient_id
     }
     /// <p>The ID of the user who made the comment.</p>
-    pub fn contributor_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contributor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contributor_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the user who made the comment.</p>
-    pub fn set_contributor_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contributor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contributor_id = input;
         self
     }

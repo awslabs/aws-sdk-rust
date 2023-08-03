@@ -37,9 +37,7 @@ impl DescribeLocationEfsFluentBuilder {
         }
     }
     /// Access the DescribeLocationEfs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_location_efs::builders::DescribeLocationEfsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_location_efs::builders::DescribeLocationEfsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeLocationEfsFluentBuilder {
             crate::operation::describe_location_efs::DescribeLocationEfs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_efs::DescribeLocationEfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_efs::DescribeLocationEfsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeLocationEfsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeLocationEfsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_efs::DescribeLocationEfsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_efs::DescribeLocationEfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_efs::DescribeLocationEfsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeLocationEfsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_efs::DescribeLocationEfsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_efs::DescribeLocationEfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_efs::DescribeLocationEfsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeLocationEfsFluentBuilder {
             crate::operation::describe_location_efs::DescribeLocationEfs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_efs::DescribeLocationEfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_efs::DescribeLocationEfsError>,
     > {
         self.customize_middleware().await
     }

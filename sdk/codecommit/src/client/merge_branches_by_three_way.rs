@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`commit_id(Option<String>)`](crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayOutput::commit_id): <p>The commit ID of the merge in the destination or target branch.</p>
     ///   - [`tree_id(Option<String>)`](crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayOutput::tree_id): <p>The tree ID of the merge in the destination or target branch.</p>
     /// - On failure, responds with [`SdkError<MergeBranchesByThreeWayError>`](crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError)
-    pub fn merge_branches_by_three_way(
-        &self,
-    ) -> crate::operation::merge_branches_by_three_way::builders::MergeBranchesByThreeWayFluentBuilder
-    {
+    pub fn merge_branches_by_three_way(&self) -> crate::operation::merge_branches_by_three_way::builders::MergeBranchesByThreeWayFluentBuilder {
         crate::operation::merge_branches_by_three_way::builders::MergeBranchesByThreeWayFluentBuilder::new(self.handle.clone())
     }
 }

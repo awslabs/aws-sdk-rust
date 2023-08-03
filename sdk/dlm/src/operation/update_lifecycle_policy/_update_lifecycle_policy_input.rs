@@ -43,18 +43,14 @@ impl UpdateLifecyclePolicyInput {
 }
 impl UpdateLifecyclePolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdateLifecyclePolicyInput`](crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyInputBuilder {
         crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLifecyclePolicyInput`](crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLifecyclePolicyInputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
@@ -78,18 +74,12 @@ impl UpdateLifecyclePolicyInputBuilder {
         &self.policy_id
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -103,10 +93,7 @@ impl UpdateLifecyclePolicyInputBuilder {
         self
     }
     /// <p>The desired activation state of the lifecycle policy after creation.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::SettablePolicyStateValues>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::SettablePolicyStateValues>) -> Self {
         self.state = input;
         self
     }
@@ -134,10 +121,7 @@ impl UpdateLifecyclePolicyInputBuilder {
         self
     }
     /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
-    pub fn set_policy_details(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyDetails>,
-    ) -> Self {
+    pub fn set_policy_details(mut self, input: ::std::option::Option<crate::types::PolicyDetails>) -> Self {
         self.policy_details = input;
         self
     }
@@ -148,18 +132,14 @@ impl UpdateLifecyclePolicyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateLifecyclePolicyInput`](crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput {
-                policy_id: self.policy_id,
-                execution_role_arn: self.execution_role_arn,
-                state: self.state,
-                description: self.description,
-                policy_details: self.policy_details,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput {
+            policy_id: self.policy_id,
+            execution_role_arn: self.execution_role_arn,
+            state: self.state,
+            description: self.description,
+            policy_details: self.policy_details,
+        })
     }
 }

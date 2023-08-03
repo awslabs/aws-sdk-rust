@@ -44,9 +44,7 @@ impl ListedProfile {
 
 /// A builder for [`ListedProfile`](crate::types::ListedProfile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListedProfileBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl ListedProfileBuilder {
         self
     }
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
-    pub fn set_profile_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProfileType>,
-    ) -> Self {
+    pub fn set_profile_type(mut self, input: ::std::option::Option<crate::types::ProfileType>) -> Self {
         self.profile_type = input;
         self
     }

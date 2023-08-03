@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::stop_app_replication::builders::StopAppReplicationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::stop_app_replication::builders::StopAppReplicationFluentBuilder::set_app_id): <p>The ID of the application.</p>
     /// - On success, responds with [`StopAppReplicationOutput`](crate::operation::stop_app_replication::StopAppReplicationOutput)
     /// - On failure, responds with [`SdkError<StopAppReplicationError>`](crate::operation::stop_app_replication::StopAppReplicationError)
-    pub fn stop_app_replication(
-        &self,
-    ) -> crate::operation::stop_app_replication::builders::StopAppReplicationFluentBuilder {
-        crate::operation::stop_app_replication::builders::StopAppReplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_app_replication(&self) -> crate::operation::stop_app_replication::builders::StopAppReplicationFluentBuilder {
+        crate::operation::stop_app_replication::builders::StopAppReplicationFluentBuilder::new(self.handle.clone())
     }
 }

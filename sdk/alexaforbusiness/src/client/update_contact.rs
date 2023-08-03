@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateContactOutput`](crate::operation::update_contact::UpdateContactOutput)
     /// - On failure, responds with [`SdkError<UpdateContactError>`](crate::operation::update_contact::UpdateContactError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn update_contact(
-        &self,
-    ) -> crate::operation::update_contact::builders::UpdateContactFluentBuilder {
-        crate::operation::update_contact::builders::UpdateContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_contact(&self) -> crate::operation::update_contact::builders::UpdateContactFluentBuilder {
+        crate::operation::update_contact::builders::UpdateContactFluentBuilder::new(self.handle.clone())
     }
 }

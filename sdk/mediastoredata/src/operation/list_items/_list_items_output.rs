@@ -35,9 +35,7 @@ impl ListItemsOutput {
 
 /// A builder for [`ListItemsOutput`](crate::operation::list_items::ListItemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListItemsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Item>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListItemsOutputBuilder {
         self
     }
     /// <p>The metadata entries for the folders and objects at the requested path.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Item>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Item>>) -> Self {
         self.items = input;
         self
     }

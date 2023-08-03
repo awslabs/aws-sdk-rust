@@ -27,7 +27,7 @@ impl PutSolNetworkPackageContentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutSolNetworkPackageContentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentInputBuilder,
+    inner: crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentInputBuilder,
 }
 impl PutSolNetworkPackageContentFluentBuilder {
     /// Creates a new `PutSolNetworkPackageContent`.
@@ -38,7 +38,7 @@ impl PutSolNetworkPackageContentFluentBuilder {
         }
     }
     /// Access the PutSolNetworkPackageContent as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_sol_network_package_content::builders::PutSolNetworkPackageContentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl PutSolNetworkPackageContentFluentBuilder {
             crate::operation::put_sol_network_package_content::PutSolNetworkPackageContent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl PutSolNetworkPackageContentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl PutSolNetworkPackageContentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl PutSolNetworkPackageContentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl PutSolNetworkPackageContentFluentBuilder {
             crate::operation::put_sol_network_package_content::PutSolNetworkPackageContent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError>,
     > {
         self.customize_middleware().await
     }
@@ -141,10 +130,7 @@ impl PutSolNetworkPackageContentFluentBuilder {
         self
     }
     /// <p>Network package content type.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::PackageContentType>) -> Self {
         self.inner = self.inner.set_content_type(input);
         self
     }

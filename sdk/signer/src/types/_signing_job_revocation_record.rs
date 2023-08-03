@@ -37,9 +37,7 @@ impl SigningJobRevocationRecord {
 
 /// A builder for [`SigningJobRevocationRecord`](crate::types::SigningJobRevocationRecord).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SigningJobRevocationRecordBuilder {
     pub(crate) reason: ::std::option::Option<::std::string::String>,
     pub(crate) revoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -66,10 +64,7 @@ impl SigningJobRevocationRecordBuilder {
         self
     }
     /// <p>The time of revocation.</p>
-    pub fn set_revoked_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_revoked_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.revoked_at = input;
         self
     }

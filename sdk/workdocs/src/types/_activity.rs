@@ -79,9 +79,7 @@ impl Activity {
 
 /// A builder for [`Activity`](crate::types::Activity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivityBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ActivityType>,
     pub(crate) time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -114,10 +112,7 @@ impl ActivityBuilder {
         self
     }
     /// <p>The timestamp when the action was performed.</p>
-    pub fn set_time_stamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.time_stamp = input;
         self
     }
@@ -140,18 +135,12 @@ impl ActivityBuilder {
         &self.is_indirect_activity
     }
     /// <p>The ID of the organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -165,10 +154,7 @@ impl ActivityBuilder {
         self
     }
     /// <p>The user who performed the action.</p>
-    pub fn set_initiator(
-        mut self,
-        input: ::std::option::Option<crate::types::UserMetadata>,
-    ) -> Self {
+    pub fn set_initiator(mut self, input: ::std::option::Option<crate::types::UserMetadata>) -> Self {
         self.initiator = input;
         self
     }
@@ -182,10 +168,7 @@ impl ActivityBuilder {
         self
     }
     /// <p>The list of users or groups impacted by this action. This is an optional field and is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED, DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
-    pub fn set_participants(
-        mut self,
-        input: ::std::option::Option<crate::types::Participants>,
-    ) -> Self {
+    pub fn set_participants(mut self, input: ::std::option::Option<crate::types::Participants>) -> Self {
         self.participants = input;
         self
     }
@@ -199,10 +182,7 @@ impl ActivityBuilder {
         self
     }
     /// <p>The metadata of the resource involved in the user action.</p>
-    pub fn set_resource_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceMetadata>,
-    ) -> Self {
+    pub fn set_resource_metadata(mut self, input: ::std::option::Option<crate::types::ResourceMetadata>) -> Self {
         self.resource_metadata = input;
         self
     }
@@ -216,10 +196,7 @@ impl ActivityBuilder {
         self
     }
     /// <p>The original parent of the resource. This is an optional field and is filled for move activities.</p>
-    pub fn set_original_parent(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceMetadata>,
-    ) -> Self {
+    pub fn set_original_parent(mut self, input: ::std::option::Option<crate::types::ResourceMetadata>) -> Self {
         self.original_parent = input;
         self
     }
@@ -233,10 +210,7 @@ impl ActivityBuilder {
         self
     }
     /// <p>Metadata of the commenting activity. This is an optional field and is filled for commenting activities.</p>
-    pub fn set_comment_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::CommentMetadata>,
-    ) -> Self {
+    pub fn set_comment_metadata(mut self, input: ::std::option::Option<crate::types::CommentMetadata>) -> Self {
         self.comment_metadata = input;
         self
     }

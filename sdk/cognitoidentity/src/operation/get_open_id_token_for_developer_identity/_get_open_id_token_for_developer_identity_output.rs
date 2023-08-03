@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for GetOpenIdTokenForDeveloperIdentityOut
 }
 impl GetOpenIdTokenForDeveloperIdentityOutput {
     /// Creates a new builder-style object to manufacture [`GetOpenIdTokenForDeveloperIdentityOutput`](crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput).
-    pub fn builder() -> crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityOutputBuilder{
+    pub fn builder() -> crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityOutputBuilder {
         crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetOpenIdTokenForDeveloperIdentityOutput`](crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOpenIdTokenForDeveloperIdentityOutputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
     pub(crate) token: ::std::option::Option<::std::string::String>,
@@ -83,12 +81,10 @@ impl GetOpenIdTokenForDeveloperIdentityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetOpenIdTokenForDeveloperIdentityOutput`](crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput).
-    pub fn build(self) -> crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput{
+    pub fn build(self) -> crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput {
         crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput {
-            identity_id: self.identity_id
-            ,
-            token: self.token
-            ,
+            identity_id: self.identity_id,
+            token: self.token,
             _request_id: self._request_id,
         }
     }

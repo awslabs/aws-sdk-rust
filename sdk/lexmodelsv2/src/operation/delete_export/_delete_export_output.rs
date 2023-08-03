@@ -35,9 +35,7 @@ impl DeleteExportOutput {
 
 /// A builder for [`DeleteExportOutput`](crate::operation::delete_export::DeleteExportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteExportOutputBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
     pub(crate) export_status: ::std::option::Option<crate::types::ExportStatus>,
@@ -64,10 +62,7 @@ impl DeleteExportOutputBuilder {
         self
     }
     /// <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
-    pub fn set_export_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportStatus>,
-    ) -> Self {
+    pub fn set_export_status(mut self, input: ::std::option::Option<crate::types::ExportStatus>) -> Self {
         self.export_status = input;
         self
     }

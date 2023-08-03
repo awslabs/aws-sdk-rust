@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`resource_mappings(Option<Vec<ResourceMapping>>)`](crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsOutput::resource_mappings): <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListAppVersionResourceMappingsError>`](crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsError)
-    pub fn list_app_version_resource_mappings(&self) -> crate::operation::list_app_version_resource_mappings::builders::ListAppVersionResourceMappingsFluentBuilder{
+    pub fn list_app_version_resource_mappings(
+        &self,
+    ) -> crate::operation::list_app_version_resource_mappings::builders::ListAppVersionResourceMappingsFluentBuilder {
         crate::operation::list_app_version_resource_mappings::builders::ListAppVersionResourceMappingsFluentBuilder::new(self.handle.clone())
     }
 }

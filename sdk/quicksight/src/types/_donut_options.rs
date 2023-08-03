@@ -42,9 +42,7 @@ impl DonutOptions {
 
 /// A builder for [`DonutOptions`](crate::types::DonutOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DonutOptionsBuilder {
     pub(crate) arc_options: ::std::option::Option<crate::types::ArcOptions>,
     pub(crate) donut_center_options: ::std::option::Option<crate::types::DonutCenterOptions>,
@@ -68,10 +66,7 @@ impl DonutOptionsBuilder {
     /// <li> <p> <code>MEDIUM</code>- A medium-sized donut chart</p> </li>
     /// <li> <p> <code>LARGE</code>- A large-sized donut chart</p> </li>
     /// </ul>
-    pub fn set_arc_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ArcOptions>,
-    ) -> Self {
+    pub fn set_arc_options(mut self, input: ::std::option::Option<crate::types::ArcOptions>) -> Self {
         self.arc_options = input;
         self
     }
@@ -91,17 +86,12 @@ impl DonutOptionsBuilder {
         self
     }
     /// <p>The label options of the label that is displayed in the center of a donut chart. This option isn't available for pie charts.</p>
-    pub fn set_donut_center_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DonutCenterOptions>,
-    ) -> Self {
+    pub fn set_donut_center_options(mut self, input: ::std::option::Option<crate::types::DonutCenterOptions>) -> Self {
         self.donut_center_options = input;
         self
     }
     /// <p>The label options of the label that is displayed in the center of a donut chart. This option isn't available for pie charts.</p>
-    pub fn get_donut_center_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::DonutCenterOptions> {
+    pub fn get_donut_center_options(&self) -> &::std::option::Option<crate::types::DonutCenterOptions> {
         &self.donut_center_options
     }
     /// Consumes the builder and constructs a [`DonutOptions`](crate::types::DonutOptions).

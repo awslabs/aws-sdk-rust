@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for GetTrafficPolicyInstanceCountOutput {
 }
 impl GetTrafficPolicyInstanceCountOutput {
     /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInstanceCountOutput`](crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput).
-    pub fn builder() -> crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountOutputBuilder{
+    pub fn builder() -> crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountOutputBuilder {
         crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTrafficPolicyInstanceCountOutput`](crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTrafficPolicyInstanceCountOutputBuilder {
     pub(crate) traffic_policy_instance_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -61,10 +59,7 @@ impl GetTrafficPolicyInstanceCountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTrafficPolicyInstanceCountOutput`](crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput
-    {
+    pub fn build(self) -> crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput {
         crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput {
             traffic_policy_instance_count: self.traffic_policy_instance_count,
             _request_id: self._request_id,

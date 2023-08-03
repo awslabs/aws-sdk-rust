@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetIdentityPoliciesOutput`](crate::operation::get_identity_policies::GetIdentityPoliciesOutput) with field(s):
     ///   - [`policies(Option<HashMap<String, String>>)`](crate::operation::get_identity_policies::GetIdentityPoliciesOutput::policies): <p>A map of policy names to policies.</p>
     /// - On failure, responds with [`SdkError<GetIdentityPoliciesError>`](crate::operation::get_identity_policies::GetIdentityPoliciesError)
-    pub fn get_identity_policies(
-        &self,
-    ) -> crate::operation::get_identity_policies::builders::GetIdentityPoliciesFluentBuilder {
-        crate::operation::get_identity_policies::builders::GetIdentityPoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_identity_policies(&self) -> crate::operation::get_identity_policies::builders::GetIdentityPoliciesFluentBuilder {
+        crate::operation::get_identity_policies::builders::GetIdentityPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl GetIpamPoolCidrsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_ipam_pool_cidrs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetIpamPoolCidrsFluentBuilder {
         }
     }
     /// Access the GetIpamPoolCidrs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetIpamPoolCidrsFluentBuilder {
             crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetIpamPoolCidrsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetIpamPoolCidrsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetIpamPoolCidrsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetIpamPoolCidrsFluentBuilder {
             crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_ipam_pool_cidrs::paginator::GetIpamPoolCidrsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_ipam_pool_cidrs::paginator::GetIpamPoolCidrsPaginator {
-        crate::operation::get_ipam_pool_cidrs::paginator::GetIpamPoolCidrsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_ipam_pool_cidrs::paginator::GetIpamPoolCidrsPaginator {
+        crate::operation::get_ipam_pool_cidrs::paginator::GetIpamPoolCidrsPaginator::new(self.handle, self.inner)
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -171,10 +150,7 @@ impl GetIpamPoolCidrsFluentBuilder {
         self
     }
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

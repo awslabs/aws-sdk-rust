@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_experience::builders::UpdateExperienceFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_experience::builders::UpdateExperienceFluentBuilder::set_description): <p>A new description for your Amazon Kendra experience.</p>
     /// - On success, responds with [`UpdateExperienceOutput`](crate::operation::update_experience::UpdateExperienceOutput)
     /// - On failure, responds with [`SdkError<UpdateExperienceError>`](crate::operation::update_experience::UpdateExperienceError)
-    pub fn update_experience(
-        &self,
-    ) -> crate::operation::update_experience::builders::UpdateExperienceFluentBuilder {
-        crate::operation::update_experience::builders::UpdateExperienceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_experience(&self) -> crate::operation::update_experience::builders::UpdateExperienceFluentBuilder {
+        crate::operation::update_experience::builders::UpdateExperienceFluentBuilder::new(self.handle.clone())
     }
 }

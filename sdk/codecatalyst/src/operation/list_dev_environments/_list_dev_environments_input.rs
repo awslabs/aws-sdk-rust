@@ -43,18 +43,14 @@ impl ListDevEnvironmentsInput {
 }
 impl ListDevEnvironmentsInput {
     /// Creates a new builder-style object to manufacture [`ListDevEnvironmentsInput`](crate::operation::list_dev_environments::ListDevEnvironmentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_dev_environments::builders::ListDevEnvironmentsInputBuilder {
-        crate::operation::list_dev_environments::builders::ListDevEnvironmentsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_dev_environments::builders::ListDevEnvironmentsInputBuilder {
+        crate::operation::list_dev_environments::builders::ListDevEnvironmentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDevEnvironmentsInput`](crate::operation::list_dev_environments::ListDevEnvironmentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDevEnvironmentsInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -103,10 +99,7 @@ impl ListDevEnvironmentsInputBuilder {
         self
     }
     /// <p>Information about filters to apply to narrow the results returned in the list.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -145,18 +138,14 @@ impl ListDevEnvironmentsInputBuilder {
     /// Consumes the builder and constructs a [`ListDevEnvironmentsInput`](crate::operation::list_dev_environments::ListDevEnvironmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_dev_environments::ListDevEnvironmentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_dev_environments::ListDevEnvironmentsInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_dev_environments::ListDevEnvironmentsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_dev_environments::ListDevEnvironmentsInput {
+            space_name: self.space_name,
+            project_name: self.project_name,
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

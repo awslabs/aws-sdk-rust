@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListBuildBatchesForProjectOutput {
 }
 impl ListBuildBatchesForProjectOutput {
     /// Creates a new builder-style object to manufacture [`ListBuildBatchesForProjectOutput`](crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectOutput).
-    pub fn builder() -> crate::operation::list_build_batches_for_project::builders::ListBuildBatchesForProjectOutputBuilder{
+    pub fn builder() -> crate::operation::list_build_batches_for_project::builders::ListBuildBatchesForProjectOutputBuilder {
         crate::operation::list_build_batches_for_project::builders::ListBuildBatchesForProjectOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBuildBatchesForProjectOutput`](crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBuildBatchesForProjectOutputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListBuildBatchesForProjectOutputBuilder {
         self
     }
     /// <p>An array of strings that contains the batch build identifiers.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }
@@ -91,9 +86,7 @@ impl ListBuildBatchesForProjectOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListBuildBatchesForProjectOutput`](crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectOutput {
+    pub fn build(self) -> crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectOutput {
         crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectOutput {
             ids: self.ids,
             next_token: self.next_token,

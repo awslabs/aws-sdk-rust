@@ -38,9 +38,7 @@ impl ListSyncJobsInput {
 
 /// A builder for [`ListSyncJobsInput`](crate::operation::list_sync_jobs::ListSyncJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSyncJobsInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -95,10 +93,7 @@ impl ListSyncJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListSyncJobsInput`](crate::operation::list_sync_jobs::ListSyncJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_sync_jobs::ListSyncJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_sync_jobs::ListSyncJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_sync_jobs::ListSyncJobsInput {
             workspace_id: self.workspace_id,
             max_results: self.max_results,

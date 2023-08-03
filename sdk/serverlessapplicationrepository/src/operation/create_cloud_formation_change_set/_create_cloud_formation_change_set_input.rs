@@ -89,9 +89,7 @@ impl CreateCloudFormationChangeSetInput {
         self.resource_types.as_deref()
     }
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    pub fn rollback_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RollbackConfiguration> {
+    pub fn rollback_configuration(&self) -> ::std::option::Option<&crate::types::RollbackConfiguration> {
         self.rollback_configuration.as_ref()
     }
     /// <p>The semantic version of the application:</p>
@@ -115,16 +113,14 @@ impl CreateCloudFormationChangeSetInput {
 }
 impl CreateCloudFormationChangeSetInput {
     /// Creates a new builder-style object to manufacture [`CreateCloudFormationChangeSetInput`](crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetInput).
-    pub fn builder() -> crate::operation::create_cloud_formation_change_set::builders::CreateCloudFormationChangeSetInputBuilder{
+    pub fn builder() -> crate::operation::create_cloud_formation_change_set::builders::CreateCloudFormationChangeSetInputBuilder {
         crate::operation::create_cloud_formation_change_set::builders::CreateCloudFormationChangeSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCloudFormationChangeSetInput`](crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCloudFormationChangeSetInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -132,8 +128,7 @@ pub struct CreateCloudFormationChangeSetInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) parameter_overrides:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
+    pub(crate) parameter_overrides: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) rollback_configuration: ::std::option::Option<crate::types::RollbackConfiguration>,
     pub(crate) semantic_version: ::std::option::Option<::std::string::String>,
@@ -143,18 +138,12 @@ pub struct CreateCloudFormationChangeSetInputBuilder {
 }
 impl CreateCloudFormationChangeSetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -184,10 +173,7 @@ impl CreateCloudFormationChangeSetInputBuilder {
     /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p>
     /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
     /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
-    pub fn set_capabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.capabilities = input;
         self
     }
@@ -197,24 +183,16 @@ impl CreateCloudFormationChangeSetInputBuilder {
     /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p>
     /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
     /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
-    pub fn get_capabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.capabilities
     }
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    pub fn change_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    pub fn set_change_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_name = input;
         self
     }
@@ -255,27 +233,19 @@ impl CreateCloudFormationChangeSetInputBuilder {
     /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
     ///
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    pub fn notification_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.notification_arns.unwrap_or_default();
         v.push(input.into());
         self.notification_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    pub fn set_notification_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.notification_arns = input;
         self
     }
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    pub fn get_notification_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.notification_arns
     }
     /// Appends an item to `parameter_overrides`.
@@ -290,17 +260,12 @@ impl CreateCloudFormationChangeSetInputBuilder {
         self
     }
     /// <p>A list of parameter values for the parameters of the application.</p>
-    pub fn set_parameter_overrides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
-    ) -> Self {
+    pub fn set_parameter_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>) -> Self {
         self.parameter_overrides = input;
         self
     }
     /// <p>A list of parameter values for the parameters of the application.</p>
-    pub fn get_parameter_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
+    pub fn get_parameter_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
         &self.parameter_overrides
     }
     /// Appends an item to `resource_types`.
@@ -308,27 +273,19 @@ impl CreateCloudFormationChangeSetInputBuilder {
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
     ///
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    pub fn resource_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
         v.push(input.into());
         self.resource_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    pub fn set_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_types = input;
         self
     }
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    pub fn get_resource_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_types
     }
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
@@ -337,34 +294,23 @@ impl CreateCloudFormationChangeSetInputBuilder {
         self
     }
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    pub fn set_rollback_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RollbackConfiguration>,
-    ) -> Self {
+    pub fn set_rollback_configuration(mut self, input: ::std::option::Option<crate::types::RollbackConfiguration>) -> Self {
         self.rollback_configuration = input;
         self
     }
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    pub fn get_rollback_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RollbackConfiguration> {
+    pub fn get_rollback_configuration(&self) -> &::std::option::Option<crate::types::RollbackConfiguration> {
         &self.rollback_configuration
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn semantic_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn set_semantic_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.semantic_version = input;
         self
     }
@@ -399,10 +345,7 @@ impl CreateCloudFormationChangeSetInputBuilder {
         self
     }
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -434,35 +377,20 @@ impl CreateCloudFormationChangeSetInputBuilder {
         crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetInput {
-                application_id: self.application_id
-                ,
-                capabilities: self.capabilities
-                ,
-                change_set_name: self.change_set_name
-                ,
-                client_token: self.client_token
-                ,
-                description: self.description
-                ,
-                notification_arns: self.notification_arns
-                ,
-                parameter_overrides: self.parameter_overrides
-                ,
-                resource_types: self.resource_types
-                ,
-                rollback_configuration: self.rollback_configuration
-                ,
-                semantic_version: self.semantic_version
-                ,
-                stack_name: self.stack_name
-                ,
-                tags: self.tags
-                ,
-                template_id: self.template_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetInput {
+            application_id: self.application_id,
+            capabilities: self.capabilities,
+            change_set_name: self.change_set_name,
+            client_token: self.client_token,
+            description: self.description,
+            notification_arns: self.notification_arns,
+            parameter_overrides: self.parameter_overrides,
+            resource_types: self.resource_types,
+            rollback_configuration: self.rollback_configuration,
+            semantic_version: self.semantic_version,
+            stack_name: self.stack_name,
+            tags: self.tags,
+            template_id: self.template_id,
+        })
     }
 }

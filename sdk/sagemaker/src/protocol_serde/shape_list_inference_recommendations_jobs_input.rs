@@ -48,9 +48,7 @@ pub fn ser_list_inference_recommendations_jobs_input(
         object.key("ModelNameEquals").string(var_11.as_str());
     }
     if let Some(var_12) = &input.model_package_version_arn_equals {
-        object
-            .key("ModelPackageVersionArnEquals")
-            .string(var_12.as_str());
+        object.key("ModelPackageVersionArnEquals").string(var_12.as_str());
     }
     Ok(())
 }

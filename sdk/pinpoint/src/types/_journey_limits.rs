@@ -44,9 +44,7 @@ impl JourneyLimits {
 
 /// A builder for [`JourneyLimits`](crate::types::JourneyLimits).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JourneyLimitsBuilder {
     pub(crate) daily_cap: ::std::option::Option<i32>,
     pub(crate) endpoint_reentry_cap: ::std::option::Option<i32>,
@@ -97,18 +95,12 @@ impl JourneyLimitsBuilder {
         &self.messages_per_second
     }
     /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
-    pub fn endpoint_reentry_interval(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_reentry_interval(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_reentry_interval = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
-    pub fn set_endpoint_reentry_interval(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_reentry_interval(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_reentry_interval = input;
         self
     }

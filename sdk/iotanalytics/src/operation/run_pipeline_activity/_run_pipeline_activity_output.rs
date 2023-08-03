@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for RunPipelineActivityOutput {
 }
 impl RunPipelineActivityOutput {
     /// Creates a new builder-style object to manufacture [`RunPipelineActivityOutput`](crate::operation::run_pipeline_activity::RunPipelineActivityOutput).
-    pub fn builder(
-    ) -> crate::operation::run_pipeline_activity::builders::RunPipelineActivityOutputBuilder {
-        crate::operation::run_pipeline_activity::builders::RunPipelineActivityOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::run_pipeline_activity::builders::RunPipelineActivityOutputBuilder {
+        crate::operation::run_pipeline_activity::builders::RunPipelineActivityOutputBuilder::default()
     }
 }
 
 /// A builder for [`RunPipelineActivityOutput`](crate::operation::run_pipeline_activity::RunPipelineActivityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RunPipelineActivityOutputBuilder {
     pub(crate) payloads: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
     pub(crate) log_result: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl RunPipelineActivityOutputBuilder {
         self
     }
     /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The results of running the pipeline activity on each input sample message payload, encoded in base64.)</p>
-    pub fn set_payloads(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
-    ) -> Self {
+    pub fn set_payloads(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>) -> Self {
         self.payloads = input;
         self
     }
     /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The results of running the pipeline activity on each input sample message payload, encoded in base64.)</p>
-    pub fn get_payloads(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
+    pub fn get_payloads(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
         &self.payloads
     }
     /// <p>In case the pipeline activity fails, the log message that is generated.</p>

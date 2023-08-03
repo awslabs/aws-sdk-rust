@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_routing_profile_name::builders::UpdateRoutingProfileNameFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_routing_profile_name::builders::UpdateRoutingProfileNameFluentBuilder::set_description): <p>The description of the routing profile. Must not be more than 250 characters.</p>
     /// - On success, responds with [`UpdateRoutingProfileNameOutput`](crate::operation::update_routing_profile_name::UpdateRoutingProfileNameOutput)
     /// - On failure, responds with [`SdkError<UpdateRoutingProfileNameError>`](crate::operation::update_routing_profile_name::UpdateRoutingProfileNameError)
-    pub fn update_routing_profile_name(&self) -> crate::operation::update_routing_profile_name::builders::UpdateRoutingProfileNameFluentBuilder{
+    pub fn update_routing_profile_name(&self) -> crate::operation::update_routing_profile_name::builders::UpdateRoutingProfileNameFluentBuilder {
         crate::operation::update_routing_profile_name::builders::UpdateRoutingProfileNameFluentBuilder::new(self.handle.clone())
     }
 }

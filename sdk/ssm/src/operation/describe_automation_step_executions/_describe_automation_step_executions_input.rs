@@ -43,16 +43,14 @@ impl DescribeAutomationStepExecutionsInput {
 }
 impl DescribeAutomationStepExecutionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAutomationStepExecutionsInput`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsInput).
-    pub fn builder() -> crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsInputBuilder {
         crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAutomationStepExecutionsInput`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAutomationStepExecutionsInputBuilder {
     pub(crate) automation_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::StepExecutionFilter>>,
@@ -62,18 +60,12 @@ pub struct DescribeAutomationStepExecutionsInputBuilder {
 }
 impl DescribeAutomationStepExecutionsInputBuilder {
     /// <p>The Automation execution ID for which you want step execution descriptions.</p>
-    pub fn automation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn automation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.automation_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Automation execution ID for which you want step execution descriptions.</p>
-    pub fn set_automation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_automation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.automation_execution_id = input;
         self
     }
@@ -93,17 +85,12 @@ impl DescribeAutomationStepExecutionsInputBuilder {
         self
     }
     /// <p>One or more filters to limit the number of step executions returned by the request.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StepExecutionFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StepExecutionFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>One or more filters to limit the number of step executions returned by the request.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StepExecutionFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepExecutionFilter>> {
         &self.filters
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -149,20 +136,20 @@ impl DescribeAutomationStepExecutionsInputBuilder {
         &self.reverse_order
     }
     /// Consumes the builder and constructs a [`DescribeAutomationStepExecutionsInput`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsInput {
-                automation_execution_id: self.automation_execution_id
-                ,
-                filters: self.filters
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                reverse_order: self.reverse_order
-                ,
-            }
+                automation_execution_id: self.automation_execution_id,
+                filters: self.filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                reverse_order: self.reverse_order,
+            },
         )
     }
 }

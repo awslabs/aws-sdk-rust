@@ -14,8 +14,7 @@ pub struct GetSchemaMappingOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Venice uses for matching.</p>
     #[doc(hidden)]
-    pub mapped_input_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>,
+    pub mapped_input_fields: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>,
     /// <p>The timestamp of when the <code>SchemaMapping</code> was created.</p>
     #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -24,9 +23,7 @@ pub struct GetSchemaMappingOutput {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSchemaMappingOutput {
@@ -43,9 +40,7 @@ impl GetSchemaMappingOutput {
         self.description.as_deref()
     }
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Venice uses for matching.</p>
-    pub fn mapped_input_fields(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SchemaInputAttribute]> {
+    pub fn mapped_input_fields(&self) -> ::std::option::Option<&[crate::types::SchemaInputAttribute]> {
         self.mapped_input_fields.as_deref()
     }
     /// <p>The timestamp of when the <code>SchemaMapping</code> was created.</p>
@@ -57,11 +52,7 @@ impl GetSchemaMappingOutput {
         self.updated_at.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -72,28 +63,22 @@ impl ::aws_http::request_id::RequestId for GetSchemaMappingOutput {
 }
 impl GetSchemaMappingOutput {
     /// Creates a new builder-style object to manufacture [`GetSchemaMappingOutput`](crate::operation::get_schema_mapping::GetSchemaMappingOutput).
-    pub fn builder() -> crate::operation::get_schema_mapping::builders::GetSchemaMappingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_schema_mapping::builders::GetSchemaMappingOutputBuilder {
         crate::operation::get_schema_mapping::builders::GetSchemaMappingOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSchemaMappingOutput`](crate::operation::get_schema_mapping::GetSchemaMappingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSchemaMappingOutputBuilder {
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) mapped_input_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>,
+    pub(crate) mapped_input_fields: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSchemaMappingOutputBuilder {
@@ -151,17 +136,12 @@ impl GetSchemaMappingOutputBuilder {
         self
     }
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Venice uses for matching.</p>
-    pub fn set_mapped_input_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>,
-    ) -> Self {
+    pub fn set_mapped_input_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>) -> Self {
         self.mapped_input_fields = input;
         self
     }
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information Venice uses for matching.</p>
-    pub fn get_mapped_input_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>> {
+    pub fn get_mapped_input_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>> {
         &self.mapped_input_fields
     }
     /// <p>The timestamp of when the <code>SchemaMapping</code> was created.</p>
@@ -170,10 +150,7 @@ impl GetSchemaMappingOutputBuilder {
         self
     }
     /// <p>The timestamp of when the <code>SchemaMapping</code> was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -187,10 +164,7 @@ impl GetSchemaMappingOutputBuilder {
         self
     }
     /// <p>The timestamp of when the <code>SchemaMapping</code> was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -203,32 +177,19 @@ impl GetSchemaMappingOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`metric_name(impl ::std::convert::Into<String>)`](crate::operation::delete_custom_metric::builders::DeleteCustomMetricFluentBuilder::metric_name) / [`set_metric_name(Option<String>)`](crate::operation::delete_custom_metric::builders::DeleteCustomMetricFluentBuilder::set_metric_name): <p> The name of the custom metric. </p>
     /// - On success, responds with [`DeleteCustomMetricOutput`](crate::operation::delete_custom_metric::DeleteCustomMetricOutput)
     /// - On failure, responds with [`SdkError<DeleteCustomMetricError>`](crate::operation::delete_custom_metric::DeleteCustomMetricError)
-    pub fn delete_custom_metric(
-        &self,
-    ) -> crate::operation::delete_custom_metric::builders::DeleteCustomMetricFluentBuilder {
-        crate::operation::delete_custom_metric::builders::DeleteCustomMetricFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_custom_metric(&self) -> crate::operation::delete_custom_metric::builders::DeleteCustomMetricFluentBuilder {
+        crate::operation::delete_custom_metric::builders::DeleteCustomMetricFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`instance_profile_name(impl ::std::convert::Into<String>)`](crate::operation::delete_instance_profile::builders::DeleteInstanceProfileFluentBuilder::instance_profile_name) / [`set_instance_profile_name(Option<String>)`](crate::operation::delete_instance_profile::builders::DeleteInstanceProfileFluentBuilder::set_instance_profile_name): <p>The name of the instance profile to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     /// - On success, responds with [`DeleteInstanceProfileOutput`](crate::operation::delete_instance_profile::DeleteInstanceProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteInstanceProfileError>`](crate::operation::delete_instance_profile::DeleteInstanceProfileError)
-    pub fn delete_instance_profile(
-        &self,
-    ) -> crate::operation::delete_instance_profile::builders::DeleteInstanceProfileFluentBuilder
-    {
-        crate::operation::delete_instance_profile::builders::DeleteInstanceProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_instance_profile(&self) -> crate::operation::delete_instance_profile::builders::DeleteInstanceProfileFluentBuilder {
+        crate::operation::delete_instance_profile::builders::DeleteInstanceProfileFluentBuilder::new(self.handle.clone())
     }
 }

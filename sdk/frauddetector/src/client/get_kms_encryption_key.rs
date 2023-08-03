@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetKmsEncryptionKeyOutput`](crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyOutput) with field(s):
     ///   - [`kms_key(Option<KmsKey>)`](crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyOutput::kms_key): <p>The KMS encryption key.</p>
     /// - On failure, responds with [`SdkError<GetKMSEncryptionKeyError>`](crate::operation::get_kms_encryption_key::GetKMSEncryptionKeyError)
-    pub fn get_kms_encryption_key(
-        &self,
-    ) -> crate::operation::get_kms_encryption_key::builders::GetKMSEncryptionKeyFluentBuilder {
-        crate::operation::get_kms_encryption_key::builders::GetKMSEncryptionKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_kms_encryption_key(&self) -> crate::operation::get_kms_encryption_key::builders::GetKMSEncryptionKeyFluentBuilder {
+        crate::operation::get_kms_encryption_key::builders::GetKMSEncryptionKeyFluentBuilder::new(self.handle.clone())
     }
 }

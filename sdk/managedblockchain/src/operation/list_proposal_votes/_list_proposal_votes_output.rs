@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListProposalVotesOutput {
 }
 impl ListProposalVotesOutput {
     /// Creates a new builder-style object to manufacture [`ListProposalVotesOutput`](crate::operation::list_proposal_votes::ListProposalVotesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_proposal_votes::builders::ListProposalVotesOutputBuilder {
+    pub fn builder() -> crate::operation::list_proposal_votes::builders::ListProposalVotesOutputBuilder {
         crate::operation::list_proposal_votes::builders::ListProposalVotesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProposalVotesOutput`](crate::operation::list_proposal_votes::ListProposalVotesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProposalVotesOutputBuilder {
     pub(crate) proposal_votes: ::std::option::Option<::std::vec::Vec<crate::types::VoteSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListProposalVotesOutputBuilder {
         self
     }
     /// <p> The list of votes. </p>
-    pub fn set_proposal_votes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VoteSummary>>,
-    ) -> Self {
+    pub fn set_proposal_votes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VoteSummary>>) -> Self {
         self.proposal_votes = input;
         self
     }
     /// <p> The list of votes. </p>
-    pub fn get_proposal_votes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VoteSummary>> {
+    pub fn get_proposal_votes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VoteSummary>> {
         &self.proposal_votes
     }
     /// <p> The pagination token that indicates the next set of results to retrieve. </p>

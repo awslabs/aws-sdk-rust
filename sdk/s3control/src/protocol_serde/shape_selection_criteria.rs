@@ -15,10 +15,7 @@ pub fn ser_selection_criteria(
     }
     if input.min_storage_bytes_percentage != 0.0 {
         let mut inner_writer = scope.start_el("MinStorageBytesPercentage").finish();
-        inner_writer.data(
-            ::aws_smithy_types::primitive::Encoder::from(input.min_storage_bytes_percentage)
-                .encode(),
-        );
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.min_storage_bytes_percentage).encode());
     }
     scope.finish();
     Ok(())

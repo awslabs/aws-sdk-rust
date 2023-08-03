@@ -32,9 +32,7 @@ impl RecoveryInstanceProperties {
         self.last_updated_date_time.as_deref()
     }
     /// <p>Hints used to uniquely identify a machine.</p>
-    pub fn identification_hints(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IdentificationHints> {
+    pub fn identification_hints(&self) -> ::std::option::Option<&crate::types::IdentificationHints> {
         self.identification_hints.as_ref()
     }
     /// <p>An array of network interfaces.</p>
@@ -67,14 +65,11 @@ impl RecoveryInstanceProperties {
 
 /// A builder for [`RecoveryInstanceProperties`](crate::types::RecoveryInstanceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecoveryInstancePropertiesBuilder {
     pub(crate) last_updated_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) identification_hints: ::std::option::Option<crate::types::IdentificationHints>,
-    pub(crate) network_interfaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
+    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     pub(crate) disks: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstanceDisk>>,
     pub(crate) cpus: ::std::option::Option<::std::vec::Vec<crate::types::Cpu>>,
     pub(crate) ram_bytes: ::std::option::Option<i64>,
@@ -82,18 +77,12 @@ pub struct RecoveryInstancePropertiesBuilder {
 }
 impl RecoveryInstancePropertiesBuilder {
     /// <p>The date and time the Recovery Instance properties were last updated on.</p>
-    pub fn last_updated_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time the Recovery Instance properties were last updated on.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_date_time = input;
         self
     }
@@ -107,17 +96,12 @@ impl RecoveryInstancePropertiesBuilder {
         self
     }
     /// <p>Hints used to uniquely identify a machine.</p>
-    pub fn set_identification_hints(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentificationHints>,
-    ) -> Self {
+    pub fn set_identification_hints(mut self, input: ::std::option::Option<crate::types::IdentificationHints>) -> Self {
         self.identification_hints = input;
         self
     }
     /// <p>Hints used to uniquely identify a machine.</p>
-    pub fn get_identification_hints(
-        &self,
-    ) -> &::std::option::Option<crate::types::IdentificationHints> {
+    pub fn get_identification_hints(&self) -> &::std::option::Option<crate::types::IdentificationHints> {
         &self.identification_hints
     }
     /// Appends an item to `network_interfaces`.
@@ -132,17 +116,12 @@ impl RecoveryInstancePropertiesBuilder {
         self
     }
     /// <p>An array of network interfaces.</p>
-    pub fn set_network_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
-    ) -> Self {
+    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
         self.network_interfaces = input;
         self
     }
     /// <p>An array of network interfaces.</p>
-    pub fn get_network_interfaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
         &self.network_interfaces
     }
     /// Appends an item to `disks`.
@@ -157,17 +136,12 @@ impl RecoveryInstancePropertiesBuilder {
         self
     }
     /// <p>An array of disks.</p>
-    pub fn set_disks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstanceDisk>>,
-    ) -> Self {
+    pub fn set_disks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstanceDisk>>) -> Self {
         self.disks = input;
         self
     }
     /// <p>An array of disks.</p>
-    pub fn get_disks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstanceDisk>> {
+    pub fn get_disks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryInstanceDisk>> {
         &self.disks
     }
     /// Appends an item to `cpus`.
@@ -182,10 +156,7 @@ impl RecoveryInstancePropertiesBuilder {
         self
     }
     /// <p>An array of CPUs.</p>
-    pub fn set_cpus(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Cpu>>,
-    ) -> Self {
+    pub fn set_cpus(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Cpu>>) -> Self {
         self.cpus = input;
         self
     }

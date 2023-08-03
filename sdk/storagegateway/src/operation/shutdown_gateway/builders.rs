@@ -10,10 +10,7 @@ impl ShutdownGatewayInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::shutdown_gateway::ShutdownGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::shutdown_gateway::ShutdownGatewayError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::shutdown_gateway::ShutdownGatewayError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.shutdown_gateway();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl ShutdownGatewayFluentBuilder {
         }
     }
     /// Access the ShutdownGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::shutdown_gateway::builders::ShutdownGatewayInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::shutdown_gateway::builders::ShutdownGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl ShutdownGatewayFluentBuilder {
             crate::operation::shutdown_gateway::ShutdownGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::shutdown_gateway::ShutdownGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::shutdown_gateway::ShutdownGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl ShutdownGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl ShutdownGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::shutdown_gateway::ShutdownGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::shutdown_gateway::ShutdownGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::shutdown_gateway::ShutdownGatewayError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl ShutdownGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::shutdown_gateway::ShutdownGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::shutdown_gateway::ShutdownGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::shutdown_gateway::ShutdownGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl ShutdownGatewayFluentBuilder {
             crate::operation::shutdown_gateway::ShutdownGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::shutdown_gateway::ShutdownGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::shutdown_gateway::ShutdownGatewayError>,
     > {
         self.customize_middleware().await
     }

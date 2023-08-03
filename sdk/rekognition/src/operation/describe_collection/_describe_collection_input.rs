@@ -15,34 +15,25 @@ impl DescribeCollectionInput {
 }
 impl DescribeCollectionInput {
     /// Creates a new builder-style object to manufacture [`DescribeCollectionInput`](crate::operation::describe_collection::DescribeCollectionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_collection::builders::DescribeCollectionInputBuilder {
+    pub fn builder() -> crate::operation::describe_collection::builders::DescribeCollectionInputBuilder {
         crate::operation::describe_collection::builders::DescribeCollectionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCollectionInput`](crate::operation::describe_collection::DescribeCollectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCollectionInputBuilder {
     pub(crate) collection_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCollectionInputBuilder {
     /// <p>The ID of the collection to describe.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the collection to describe.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl DescribeCollectionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCollectionInput`](crate::operation::describe_collection::DescribeCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_collection::DescribeCollectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_collection::DescribeCollectionInput {
-                collection_id: self.collection_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_collection::DescribeCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_collection::DescribeCollectionInput {
+            collection_id: self.collection_id,
+        })
     }
 }

@@ -15,12 +15,7 @@ impl super::Client {
     ///   - [`successful_versions(Option<HashMap<String, SuccessfulPackageVersionInfo>>)`](crate::operation::delete_package_versions::DeletePackageVersionsOutput::successful_versions): <p> A list of the package versions that were successfully deleted. The status of every successful version will be <code>Deleted</code>. </p>
     ///   - [`failed_versions(Option<HashMap<String, PackageVersionError>>)`](crate::operation::delete_package_versions::DeletePackageVersionsOutput::failed_versions): <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the deleted package that failed. The possible error codes are: </p>  <ul>   <li> <p> <code>ALREADY_EXISTS</code> </p> </li>   <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>   <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>   <li> <p> <code>NOT_ALLOWED</code> </p> </li>   <li> <p> <code>NOT_FOUND</code> </p> </li>   <li> <p> <code>SKIPPED</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DeletePackageVersionsError>`](crate::operation::delete_package_versions::DeletePackageVersionsError)
-    pub fn delete_package_versions(
-        &self,
-    ) -> crate::operation::delete_package_versions::builders::DeletePackageVersionsFluentBuilder
-    {
-        crate::operation::delete_package_versions::builders::DeletePackageVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_package_versions(&self) -> crate::operation::delete_package_versions::builders::DeletePackageVersionsFluentBuilder {
+        crate::operation::delete_package_versions::builders::DeletePackageVersionsFluentBuilder::new(self.handle.clone())
     }
 }

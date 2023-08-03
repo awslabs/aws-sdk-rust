@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`status_message(Option<HashMap<String, String>>)`](crate::operation::update_service_settings::UpdateServiceSettingsOutput::status_message): <p>A message which details the Linux subscriptions service settings current status.</p>
     ///   - [`home_regions(Option<Vec<String>>)`](crate::operation::update_service_settings::UpdateServiceSettingsOutput::home_regions): <p>The Region in which License Manager displays the aggregated data for Linux subscriptions.</p>
     /// - On failure, responds with [`SdkError<UpdateServiceSettingsError>`](crate::operation::update_service_settings::UpdateServiceSettingsError)
-    pub fn update_service_settings(
-        &self,
-    ) -> crate::operation::update_service_settings::builders::UpdateServiceSettingsFluentBuilder
-    {
-        crate::operation::update_service_settings::builders::UpdateServiceSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_service_settings(&self) -> crate::operation::update_service_settings::builders::UpdateServiceSettingsFluentBuilder {
+        crate::operation::update_service_settings::builders::UpdateServiceSettingsFluentBuilder::new(self.handle.clone())
     }
 }

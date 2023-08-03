@@ -14,8 +14,7 @@ pub struct UpdateProgramInput {
     pub program_name: ::std::option::Option<::std::string::String>,
     /// <p>The schedule configuration settings.</p>
     #[doc(hidden)]
-    pub schedule_configuration:
-        ::std::option::Option<crate::types::UpdateProgramScheduleConfiguration>,
+    pub schedule_configuration: ::std::option::Option<crate::types::UpdateProgramScheduleConfiguration>,
 }
 impl UpdateProgramInput {
     /// <p>The ad break configuration settings.</p>
@@ -31,9 +30,7 @@ impl UpdateProgramInput {
         self.program_name.as_deref()
     }
     /// <p>The schedule configuration settings.</p>
-    pub fn schedule_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateProgramScheduleConfiguration> {
+    pub fn schedule_configuration(&self) -> ::std::option::Option<&crate::types::UpdateProgramScheduleConfiguration> {
         self.schedule_configuration.as_ref()
     }
 }
@@ -46,15 +43,12 @@ impl UpdateProgramInput {
 
 /// A builder for [`UpdateProgramInput`](crate::operation::update_program::UpdateProgramInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProgramInputBuilder {
     pub(crate) ad_breaks: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>,
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) program_name: ::std::option::Option<::std::string::String>,
-    pub(crate) schedule_configuration:
-        ::std::option::Option<crate::types::UpdateProgramScheduleConfiguration>,
+    pub(crate) schedule_configuration: ::std::option::Option<crate::types::UpdateProgramScheduleConfiguration>,
 }
 impl UpdateProgramInputBuilder {
     /// Appends an item to `ad_breaks`.
@@ -69,10 +63,7 @@ impl UpdateProgramInputBuilder {
         self
     }
     /// <p>The ad break configuration settings.</p>
-    pub fn set_ad_breaks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>,
-    ) -> Self {
+    pub fn set_ad_breaks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>) -> Self {
         self.ad_breaks = input;
         self
     }
@@ -109,34 +100,23 @@ impl UpdateProgramInputBuilder {
         &self.program_name
     }
     /// <p>The schedule configuration settings.</p>
-    pub fn schedule_configuration(
-        mut self,
-        input: crate::types::UpdateProgramScheduleConfiguration,
-    ) -> Self {
+    pub fn schedule_configuration(mut self, input: crate::types::UpdateProgramScheduleConfiguration) -> Self {
         self.schedule_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The schedule configuration settings.</p>
-    pub fn set_schedule_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateProgramScheduleConfiguration>,
-    ) -> Self {
+    pub fn set_schedule_configuration(mut self, input: ::std::option::Option<crate::types::UpdateProgramScheduleConfiguration>) -> Self {
         self.schedule_configuration = input;
         self
     }
     /// <p>The schedule configuration settings.</p>
-    pub fn get_schedule_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateProgramScheduleConfiguration> {
+    pub fn get_schedule_configuration(&self) -> &::std::option::Option<crate::types::UpdateProgramScheduleConfiguration> {
         &self.schedule_configuration
     }
     /// Consumes the builder and constructs a [`UpdateProgramInput`](crate::operation::update_program::UpdateProgramInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_program::UpdateProgramInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_program::UpdateProgramInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_program::UpdateProgramInput {
             ad_breaks: self.ad_breaks,
             channel_name: self.channel_name,

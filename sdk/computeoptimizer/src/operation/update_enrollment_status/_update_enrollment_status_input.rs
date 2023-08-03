@@ -36,18 +36,14 @@ impl UpdateEnrollmentStatusInput {
 }
 impl UpdateEnrollmentStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateEnrollmentStatusInput`](crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput).
-    pub fn builder(
-    ) -> crate::operation::update_enrollment_status::builders::UpdateEnrollmentStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_enrollment_status::builders::UpdateEnrollmentStatusInputBuilder {
         crate::operation::update_enrollment_status::builders::UpdateEnrollmentStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEnrollmentStatusInput`](crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEnrollmentStatusInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) include_member_accounts: ::std::option::Option<bool>,
@@ -105,15 +101,11 @@ impl UpdateEnrollmentStatusInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEnrollmentStatusInput`](crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput {
-                status: self.status,
-                include_member_accounts: self.include_member_accounts,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput {
+            status: self.status,
+            include_member_accounts: self.include_member_accounts,
+        })
     }
 }

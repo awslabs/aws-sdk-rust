@@ -37,10 +37,7 @@ impl SetTypeDefaultVersionFluentBuilder {
         }
     }
     /// Access the SetTypeDefaultVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_type_default_version::builders::SetTypeDefaultVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_type_default_version::builders::SetTypeDefaultVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl SetTypeDefaultVersionFluentBuilder {
             crate::operation::set_type_default_version::SetTypeDefaultVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_type_default_version::SetTypeDefaultVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_type_default_version::SetTypeDefaultVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl SetTypeDefaultVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl SetTypeDefaultVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_type_default_version::SetTypeDefaultVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_type_default_version::SetTypeDefaultVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_type_default_version::SetTypeDefaultVersionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl SetTypeDefaultVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_type_default_version::SetTypeDefaultVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_type_default_version::SetTypeDefaultVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_type_default_version::SetTypeDefaultVersionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl SetTypeDefaultVersionFluentBuilder {
             crate::operation::set_type_default_version::SetTypeDefaultVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_type_default_version::SetTypeDefaultVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_type_default_version::SetTypeDefaultVersionError>,
     > {
         self.customize_middleware().await
     }

@@ -30,9 +30,7 @@ impl PathMatch {
 
 /// A builder for [`PathMatch`](crate::types::PathMatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PathMatchBuilder {
     pub(crate) r#match: ::std::option::Option<crate::types::PathMatchType>,
     pub(crate) case_sensitive: ::std::option::Option<bool>,

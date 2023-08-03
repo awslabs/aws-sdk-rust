@@ -10,9 +10,7 @@ pub fn ser_create_workflow_input(
         object.key("definitionUri").string(var_2.as_str());
     }
     if let Some(var_3) = &input.definition_zip {
-        object
-            .key("definitionZip")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_3));
+        object.key("definitionZip").string_unchecked(&::aws_smithy_types::base64::encode(var_3));
     }
     if let Some(var_4) = &input.description {
         object.key("description").string(var_4.as_str());
@@ -33,10 +31,7 @@ pub fn ser_create_workflow_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = object_9.key(key_10.as_str()).start_object();
-                crate::protocol_serde::shape_workflow_parameter::ser_workflow_parameter(
-                    &mut object_12,
-                    value_11,
-                )?;
+                crate::protocol_serde::shape_workflow_parameter::ser_workflow_parameter(&mut object_12, value_11)?;
                 object_12.finish();
             }
         }

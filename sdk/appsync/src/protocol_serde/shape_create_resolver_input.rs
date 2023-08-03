@@ -37,17 +37,12 @@ pub fn ser_create_resolver_input(
         object.key("requestMappingTemplate").string(var_10.as_str());
     }
     if let Some(var_11) = &input.response_mapping_template {
-        object
-            .key("responseMappingTemplate")
-            .string(var_11.as_str());
+        object.key("responseMappingTemplate").string(var_11.as_str());
     }
     if let Some(var_12) = &input.runtime {
         #[allow(unused_mut)]
         let mut object_13 = object.key("runtime").start_object();
-        crate::protocol_serde::shape_app_sync_runtime::ser_app_sync_runtime(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_app_sync_runtime::ser_app_sync_runtime(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.sync_config {

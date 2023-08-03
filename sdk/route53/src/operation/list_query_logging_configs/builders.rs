@@ -27,8 +27,7 @@ impl ListQueryLoggingConfigsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListQueryLoggingConfigsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_query_logging_configs::builders::ListQueryLoggingConfigsInputBuilder,
+    inner: crate::operation::list_query_logging_configs::builders::ListQueryLoggingConfigsInputBuilder,
 }
 impl ListQueryLoggingConfigsFluentBuilder {
     /// Creates a new `ListQueryLoggingConfigs`.
@@ -39,10 +38,7 @@ impl ListQueryLoggingConfigsFluentBuilder {
         }
     }
     /// Access the ListQueryLoggingConfigs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_query_logging_configs::builders::ListQueryLoggingConfigsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_query_logging_configs::builders::ListQueryLoggingConfigsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl ListQueryLoggingConfigsFluentBuilder {
             crate::operation::list_query_logging_configs::ListQueryLoggingConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_query_logging_configs::ListQueryLoggingConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_query_logging_configs::ListQueryLoggingConfigsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl ListQueryLoggingConfigsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl ListQueryLoggingConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_query_logging_configs::ListQueryLoggingConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_query_logging_configs::ListQueryLoggingConfigsError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl ListQueryLoggingConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_query_logging_configs::ListQueryLoggingConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_query_logging_configs::ListQueryLoggingConfigsError>,
     > {
         self.send_middleware().await
     }
@@ -119,36 +106,25 @@ impl ListQueryLoggingConfigsFluentBuilder {
             crate::operation::list_query_logging_configs::ListQueryLoggingConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_query_logging_configs::ListQueryLoggingConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_query_logging_configs::ListQueryLoggingConfigsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_query_logging_configs::paginator::ListQueryLoggingConfigsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_query_logging_configs::paginator::ListQueryLoggingConfigsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_query_logging_configs::paginator::ListQueryLoggingConfigsPaginator {
         crate::operation::list_query_logging_configs::paginator::ListQueryLoggingConfigsPaginator::new(self.handle, self.inner)
     }
     /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
     /// <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations that are associated with the current Amazon Web Services account.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hosted_zone_id(input.into());
         self
     }
     /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
     /// <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations that are associated with the current Amazon Web Services account.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }

@@ -30,27 +30,19 @@ impl CmafAdditionalManifest {
 
 /// A builder for [`CmafAdditionalManifest`](crate::types::CmafAdditionalManifest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CmafAdditionalManifestBuilder {
     pub(crate) manifest_name_modifier: ::std::option::Option<::std::string::String>,
     pub(crate) selected_outputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CmafAdditionalManifestBuilder {
     /// Specify a name modifier that the service adds to the name of this manifest to make it different from the file names of the other main manifests in the output group. For example, say that the default main manifest for your HLS group is film-name.m3u8. If you enter "-no-premium" for this setting, then the file name the service generates for this top-level manifest is film-name-no-premium.m3u8. For HLS output groups, specify a manifestNameModifier that is different from the nameModifier of the output. The service uses the output name modifier to create unique names for the individual variant manifests.
-    pub fn manifest_name_modifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn manifest_name_modifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest_name_modifier = ::std::option::Option::Some(input.into());
         self
     }
     /// Specify a name modifier that the service adds to the name of this manifest to make it different from the file names of the other main manifests in the output group. For example, say that the default main manifest for your HLS group is film-name.m3u8. If you enter "-no-premium" for this setting, then the file name the service generates for this top-level manifest is film-name-no-premium.m3u8. For HLS output groups, specify a manifestNameModifier that is different from the nameModifier of the output. The service uses the output name modifier to create unique names for the individual variant manifests.
-    pub fn set_manifest_name_modifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_manifest_name_modifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.manifest_name_modifier = input;
         self
     }
@@ -63,27 +55,19 @@ impl CmafAdditionalManifestBuilder {
     /// To override the contents of this collection use [`set_selected_outputs`](Self::set_selected_outputs).
     ///
     /// Specify the outputs that you want this additional top-level manifest to reference.
-    pub fn selected_outputs(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selected_outputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.selected_outputs.unwrap_or_default();
         v.push(input.into());
         self.selected_outputs = ::std::option::Option::Some(v);
         self
     }
     /// Specify the outputs that you want this additional top-level manifest to reference.
-    pub fn set_selected_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_selected_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.selected_outputs = input;
         self
     }
     /// Specify the outputs that you want this additional top-level manifest to reference.
-    pub fn get_selected_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_outputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.selected_outputs
     }
     /// Consumes the builder and constructs a [`CmafAdditionalManifest`](crate::types::CmafAdditionalManifest).

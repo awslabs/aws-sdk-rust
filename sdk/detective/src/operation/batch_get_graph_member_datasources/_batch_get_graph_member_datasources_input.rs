@@ -22,16 +22,14 @@ impl BatchGetGraphMemberDatasourcesInput {
 }
 impl BatchGetGraphMemberDatasourcesInput {
     /// Creates a new builder-style object to manufacture [`BatchGetGraphMemberDatasourcesInput`](crate::operation::batch_get_graph_member_datasources::BatchGetGraphMemberDatasourcesInput).
-    pub fn builder() -> crate::operation::batch_get_graph_member_datasources::builders::BatchGetGraphMemberDatasourcesInputBuilder{
+    pub fn builder() -> crate::operation::batch_get_graph_member_datasources::builders::BatchGetGraphMemberDatasourcesInputBuilder {
         crate::operation::batch_get_graph_member_datasources::builders::BatchGetGraphMemberDatasourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetGraphMemberDatasourcesInput`](crate::operation::batch_get_graph_member_datasources::BatchGetGraphMemberDatasourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetGraphMemberDatasourcesInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,17 +61,12 @@ impl BatchGetGraphMemberDatasourcesInputBuilder {
         self
     }
     /// <p>The list of Amazon Web Services accounts to get data source package information on.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The list of Amazon Web Services accounts to get data source package information on.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`BatchGetGraphMemberDatasourcesInput`](crate::operation::batch_get_graph_member_datasources::BatchGetGraphMemberDatasourcesInput).
@@ -85,11 +78,9 @@ impl BatchGetGraphMemberDatasourcesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_get_graph_member_datasources::BatchGetGraphMemberDatasourcesInput {
-                graph_arn: self.graph_arn
-                ,
-                account_ids: self.account_ids
-                ,
-            }
+                graph_arn: self.graph_arn,
+                account_ids: self.account_ids,
+            },
         )
     }
 }

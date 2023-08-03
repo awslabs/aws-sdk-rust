@@ -9,10 +9,7 @@ pub fn ser_ownership_controls(
         for list_item_2 in var_1 {
             {
                 let inner_writer = scope.start_el("Rule");
-                crate::protocol_serde::shape_ownership_controls_rule::ser_ownership_controls_rule(
-                    list_item_2,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_ownership_controls_rule::ser_ownership_controls_rule(list_item_2, inner_writer)?
             }
         }
     }

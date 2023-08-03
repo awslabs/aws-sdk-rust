@@ -36,17 +36,14 @@ impl UpdateThemeAliasInput {
 }
 impl UpdateThemeAliasInput {
     /// Creates a new builder-style object to manufacture [`UpdateThemeAliasInput`](crate::operation::update_theme_alias::UpdateThemeAliasInput).
-    pub fn builder() -> crate::operation::update_theme_alias::builders::UpdateThemeAliasInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_theme_alias::builders::UpdateThemeAliasInputBuilder {
         crate::operation::update_theme_alias::builders::UpdateThemeAliasInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateThemeAliasInput`](crate::operation::update_theme_alias::UpdateThemeAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateThemeAliasInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) theme_id: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct UpdateThemeAliasInputBuilder {
 }
 impl UpdateThemeAliasInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -119,17 +110,12 @@ impl UpdateThemeAliasInputBuilder {
     /// Consumes the builder and constructs a [`UpdateThemeAliasInput`](crate::operation::update_theme_alias::UpdateThemeAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_theme_alias::UpdateThemeAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_theme_alias::UpdateThemeAliasInput {
-                aws_account_id: self.aws_account_id,
-                theme_id: self.theme_id,
-                alias_name: self.alias_name,
-                theme_version_number: self.theme_version_number,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_theme_alias::UpdateThemeAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_theme_alias::UpdateThemeAliasInput {
+            aws_account_id: self.aws_account_id,
+            theme_id: self.theme_id,
+            alias_name: self.alias_name,
+            theme_version_number: self.theme_version_number,
+        })
     }
 }

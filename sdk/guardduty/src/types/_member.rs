@@ -72,9 +72,7 @@ impl Member {
 
 /// A builder for [`Member`](crate::types::Member).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
@@ -143,18 +141,12 @@ impl MemberBuilder {
         &self.email
     }
     /// <p>The status of the relationship between the member and the administrator.</p>
-    pub fn relationship_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relationship_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relationship_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the relationship between the member and the administrator.</p>
-    pub fn set_relationship_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relationship_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relationship_status = input;
         self
     }
@@ -191,18 +183,12 @@ impl MemberBuilder {
         &self.updated_at
     }
     /// <p>The administrator account ID.</p>
-    pub fn administrator_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn administrator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.administrator_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The administrator account ID.</p>
-    pub fn set_administrator_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_administrator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.administrator_id = input;
         self
     }

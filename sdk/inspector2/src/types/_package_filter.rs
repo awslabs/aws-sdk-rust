@@ -65,9 +65,7 @@ impl PackageFilter {
 
 /// A builder for [`PackageFilter`](crate::types::PackageFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PackageFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::StringFilter>,
     pub(crate) version: ::std::option::Option<crate::types::StringFilter>,
@@ -140,10 +138,7 @@ impl PackageFilterBuilder {
         self
     }
     /// <p>An object that contains details on the package architecture type to filter on.</p>
-    pub fn set_architecture(
-        mut self,
-        input: ::std::option::Option<crate::types::StringFilter>,
-    ) -> Self {
+    pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::StringFilter>) -> Self {
         self.architecture = input;
         self
     }
@@ -157,10 +152,7 @@ impl PackageFilterBuilder {
         self
     }
     /// <p>An object that contains details on the source layer hash to filter on.</p>
-    pub fn set_source_layer_hash(
-        mut self,
-        input: ::std::option::Option<crate::types::StringFilter>,
-    ) -> Self {
+    pub fn set_source_layer_hash(mut self, input: ::std::option::Option<crate::types::StringFilter>) -> Self {
         self.source_layer_hash = input;
         self
     }
@@ -174,17 +166,12 @@ impl PackageFilterBuilder {
         self
     }
     /// <p>An object that describes the details of a string filter.</p>
-    pub fn set_source_lambda_layer_arn(
-        mut self,
-        input: ::std::option::Option<crate::types::StringFilter>,
-    ) -> Self {
+    pub fn set_source_lambda_layer_arn(mut self, input: ::std::option::Option<crate::types::StringFilter>) -> Self {
         self.source_lambda_layer_arn = input;
         self
     }
     /// <p>An object that describes the details of a string filter.</p>
-    pub fn get_source_lambda_layer_arn(
-        &self,
-    ) -> &::std::option::Option<crate::types::StringFilter> {
+    pub fn get_source_lambda_layer_arn(&self) -> &::std::option::Option<crate::types::StringFilter> {
         &self.source_lambda_layer_arn
     }
     /// Consumes the builder and constructs a [`PackageFilter`](crate::types::PackageFilter).

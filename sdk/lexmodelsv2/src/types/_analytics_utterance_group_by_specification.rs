@@ -23,9 +23,7 @@ impl AnalyticsUtteranceGroupBySpecification {
 
 /// A builder for [`AnalyticsUtteranceGroupBySpecification`](crate::types::AnalyticsUtteranceGroupBySpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsUtteranceGroupBySpecificationBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsUtteranceField>,
 }
@@ -36,10 +34,7 @@ impl AnalyticsUtteranceGroupBySpecificationBuilder {
         self
     }
     /// <p>Specifies whether to group the utterances by their text or their state.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsUtteranceField>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsUtteranceField>) -> Self {
         self.name = input;
         self
     }

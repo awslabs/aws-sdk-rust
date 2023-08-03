@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeSecurityGroupReferencesOutput`](crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesOutput) with field(s):
     ///   - [`security_group_reference_set(Option<Vec<SecurityGroupReference>>)`](crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesOutput::security_group_reference_set): <p>Information about the VPCs with the referencing security groups.</p>
     /// - On failure, responds with [`SdkError<DescribeSecurityGroupReferencesError>`](crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesError)
-    pub fn describe_security_group_references(&self) -> crate::operation::describe_security_group_references::builders::DescribeSecurityGroupReferencesFluentBuilder{
+    pub fn describe_security_group_references(
+        &self,
+    ) -> crate::operation::describe_security_group_references::builders::DescribeSecurityGroupReferencesFluentBuilder {
         crate::operation::describe_security_group_references::builders::DescribeSecurityGroupReferencesFluentBuilder::new(self.handle.clone())
     }
 }

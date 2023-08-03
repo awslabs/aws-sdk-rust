@@ -30,9 +30,7 @@ impl AwsLocation {
 
 /// A builder for [`AwsLocation`](crate::types::AwsLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsLocationBuilder {
     pub(crate) zone: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_arn: ::std::option::Option<::std::string::String>,

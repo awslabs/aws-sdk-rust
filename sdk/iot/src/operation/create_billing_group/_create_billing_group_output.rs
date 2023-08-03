@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateBillingGroupOutput {
 }
 impl CreateBillingGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateBillingGroupOutput`](crate::operation::create_billing_group::CreateBillingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_billing_group::builders::CreateBillingGroupOutputBuilder {
+    pub fn builder() -> crate::operation::create_billing_group::builders::CreateBillingGroupOutputBuilder {
         crate::operation::create_billing_group::builders::CreateBillingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBillingGroupOutput`](crate::operation::create_billing_group::CreateBillingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBillingGroupOutputBuilder {
     pub(crate) billing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) billing_group_arn: ::std::option::Option<::std::string::String>,
@@ -54,18 +51,12 @@ pub struct CreateBillingGroupOutputBuilder {
 }
 impl CreateBillingGroupOutputBuilder {
     /// <p>The name you gave to the billing group.</p>
-    pub fn billing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name you gave to the billing group.</p>
-    pub fn set_billing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_group_name = input;
         self
     }
@@ -74,18 +65,12 @@ impl CreateBillingGroupOutputBuilder {
         &self.billing_group_name
     }
     /// <p>The ARN of the billing group.</p>
-    pub fn billing_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the billing group.</p>
-    pub fn set_billing_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_group_arn = input;
         self
     }
@@ -94,18 +79,12 @@ impl CreateBillingGroupOutputBuilder {
         &self.billing_group_arn
     }
     /// <p>The ID of the billing group.</p>
-    pub fn billing_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the billing group.</p>
-    pub fn set_billing_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_group_id = input;
         self
     }

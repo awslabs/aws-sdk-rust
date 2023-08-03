@@ -22,8 +22,7 @@ pub struct EventDestination {
     pub matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
     /// <p>An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
     #[doc(hidden)]
-    pub kinesis_firehose_destination:
-        ::std::option::Option<crate::types::KinesisFirehoseDestination>,
+    pub kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
     /// <p>An object that contains the names, default values, and sources of the dimensions associated with an Amazon CloudWatch event destination.</p>
     #[doc(hidden)]
     pub cloud_watch_destination: ::std::option::Option<crate::types::CloudWatchDestination>,
@@ -49,15 +48,11 @@ impl EventDestination {
         self.matching_event_types.as_deref()
     }
     /// <p>An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
-    pub fn kinesis_firehose_destination(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KinesisFirehoseDestination> {
+    pub fn kinesis_firehose_destination(&self) -> ::std::option::Option<&crate::types::KinesisFirehoseDestination> {
         self.kinesis_firehose_destination.as_ref()
     }
     /// <p>An object that contains the names, default values, and sources of the dimensions associated with an Amazon CloudWatch event destination.</p>
-    pub fn cloud_watch_destination(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchDestination> {
+    pub fn cloud_watch_destination(&self) -> ::std::option::Option<&crate::types::CloudWatchDestination> {
         self.cloud_watch_destination.as_ref()
     }
     /// <p>An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p>
@@ -74,16 +69,12 @@ impl EventDestination {
 
 /// A builder for [`EventDestination`](crate::types::EventDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventDestinationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
-    pub(crate) matching_event_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
-    pub(crate) kinesis_firehose_destination:
-        ::std::option::Option<crate::types::KinesisFirehoseDestination>,
+    pub(crate) matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
+    pub(crate) kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
     pub(crate) cloud_watch_destination: ::std::option::Option<crate::types::CloudWatchDestination>,
     pub(crate) sns_destination: ::std::option::Option<crate::types::SnsDestination>,
 }
@@ -140,39 +131,26 @@ impl EventDestinationBuilder {
         self
     }
     /// <p>The type of email sending events to publish to the event destination.</p>
-    pub fn set_matching_event_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
-    ) -> Self {
+    pub fn set_matching_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>) -> Self {
         self.matching_event_types = input;
         self
     }
     /// <p>The type of email sending events to publish to the event destination.</p>
-    pub fn get_matching_event_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
+    pub fn get_matching_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
         &self.matching_event_types
     }
     /// <p>An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
-    pub fn kinesis_firehose_destination(
-        mut self,
-        input: crate::types::KinesisFirehoseDestination,
-    ) -> Self {
+    pub fn kinesis_firehose_destination(mut self, input: crate::types::KinesisFirehoseDestination) -> Self {
         self.kinesis_firehose_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
-    pub fn set_kinesis_firehose_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
-    ) -> Self {
+    pub fn set_kinesis_firehose_destination(mut self, input: ::std::option::Option<crate::types::KinesisFirehoseDestination>) -> Self {
         self.kinesis_firehose_destination = input;
         self
     }
     /// <p>An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
-    pub fn get_kinesis_firehose_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisFirehoseDestination> {
+    pub fn get_kinesis_firehose_destination(&self) -> &::std::option::Option<crate::types::KinesisFirehoseDestination> {
         &self.kinesis_firehose_destination
     }
     /// <p>An object that contains the names, default values, and sources of the dimensions associated with an Amazon CloudWatch event destination.</p>
@@ -181,17 +159,12 @@ impl EventDestinationBuilder {
         self
     }
     /// <p>An object that contains the names, default values, and sources of the dimensions associated with an Amazon CloudWatch event destination.</p>
-    pub fn set_cloud_watch_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchDestination>,
-    ) -> Self {
+    pub fn set_cloud_watch_destination(mut self, input: ::std::option::Option<crate::types::CloudWatchDestination>) -> Self {
         self.cloud_watch_destination = input;
         self
     }
     /// <p>An object that contains the names, default values, and sources of the dimensions associated with an Amazon CloudWatch event destination.</p>
-    pub fn get_cloud_watch_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchDestination> {
+    pub fn get_cloud_watch_destination(&self) -> &::std::option::Option<crate::types::CloudWatchDestination> {
         &self.cloud_watch_destination
     }
     /// <p>An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p>
@@ -200,10 +173,7 @@ impl EventDestinationBuilder {
         self
     }
     /// <p>An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p>
-    pub fn set_sns_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::SnsDestination>,
-    ) -> Self {
+    pub fn set_sns_destination(mut self, input: ::std::option::Option<crate::types::SnsDestination>) -> Self {
         self.sns_destination = input;
         self
     }

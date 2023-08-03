@@ -15,17 +15,14 @@ impl StartTransactionInput {
 }
 impl StartTransactionInput {
     /// Creates a new builder-style object to manufacture [`StartTransactionInput`](crate::operation::start_transaction::StartTransactionInput).
-    pub fn builder() -> crate::operation::start_transaction::builders::StartTransactionInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_transaction::builders::StartTransactionInputBuilder {
         crate::operation::start_transaction::builders::StartTransactionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartTransactionInput`](crate::operation::start_transaction::StartTransactionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTransactionInputBuilder {
     pub(crate) transaction_type: ::std::option::Option<crate::types::TransactionType>,
 }
@@ -36,10 +33,7 @@ impl StartTransactionInputBuilder {
         self
     }
     /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
-    pub fn set_transaction_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TransactionType>,
-    ) -> Self {
+    pub fn set_transaction_type(mut self, input: ::std::option::Option<crate::types::TransactionType>) -> Self {
         self.transaction_type = input;
         self
     }
@@ -50,10 +44,7 @@ impl StartTransactionInputBuilder {
     /// Consumes the builder and constructs a [`StartTransactionInput`](crate::operation::start_transaction::StartTransactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_transaction::StartTransactionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_transaction::StartTransactionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_transaction::StartTransactionInput {
             transaction_type: self.transaction_type,
         })

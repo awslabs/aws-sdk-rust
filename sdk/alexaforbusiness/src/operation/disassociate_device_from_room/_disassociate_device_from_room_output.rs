@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateDeviceFromRoomOutput {
 }
 impl DisassociateDeviceFromRoomOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateDeviceFromRoomOutput`](crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomOutput).
-    pub fn builder() -> crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomOutputBuilder {
         crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateDeviceFromRoomOutput`](crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateDeviceFromRoomOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisassociateDeviceFromRoomOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateDeviceFromRoomOutput`](crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomOutput {
+    pub fn build(self) -> crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomOutput {
         crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomOutput {
             _request_id: self._request_id,
         }

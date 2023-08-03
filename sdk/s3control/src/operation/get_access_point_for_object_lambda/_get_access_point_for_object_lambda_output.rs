@@ -8,8 +8,7 @@ pub struct GetAccessPointForObjectLambdaOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
     #[doc(hidden)]
-    pub public_access_block_configuration:
-        ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
+    pub public_access_block_configuration: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
     #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -24,9 +23,7 @@ impl GetAccessPointForObjectLambdaOutput {
         self.name.as_deref()
     }
     /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
-    pub fn public_access_block_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PublicAccessBlockConfiguration> {
+    pub fn public_access_block_configuration(&self) -> ::std::option::Option<&crate::types::PublicAccessBlockConfiguration> {
         self.public_access_block_configuration.as_ref()
     }
     /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
@@ -45,20 +42,17 @@ impl ::aws_http::request_id::RequestId for GetAccessPointForObjectLambdaOutput {
 }
 impl GetAccessPointForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointForObjectLambdaOutput`](crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaOutput).
-    pub fn builder() -> crate::operation::get_access_point_for_object_lambda::builders::GetAccessPointForObjectLambdaOutputBuilder{
+    pub fn builder() -> crate::operation::get_access_point_for_object_lambda::builders::GetAccessPointForObjectLambdaOutputBuilder {
         crate::operation::get_access_point_for_object_lambda::builders::GetAccessPointForObjectLambdaOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccessPointForObjectLambdaOutput`](crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessPointForObjectLambdaOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) public_access_block_configuration:
-        ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
+    pub(crate) public_access_block_configuration: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) alias: ::std::option::Option<crate::types::ObjectLambdaAccessPointAlias>,
     _request_id: Option<String>,
@@ -79,25 +73,17 @@ impl GetAccessPointForObjectLambdaOutputBuilder {
         &self.name
     }
     /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
-    pub fn public_access_block_configuration(
-        mut self,
-        input: crate::types::PublicAccessBlockConfiguration,
-    ) -> Self {
+    pub fn public_access_block_configuration(mut self, input: crate::types::PublicAccessBlockConfiguration) -> Self {
         self.public_access_block_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
-    pub fn set_public_access_block_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
-    ) -> Self {
+    pub fn set_public_access_block_configuration(mut self, input: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>) -> Self {
         self.public_access_block_configuration = input;
         self
     }
     /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
-    pub fn get_public_access_block_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
+    pub fn get_public_access_block_configuration(&self) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
         &self.public_access_block_configuration
     }
     /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
@@ -106,10 +92,7 @@ impl GetAccessPointForObjectLambdaOutputBuilder {
         self
     }
     /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -123,10 +106,7 @@ impl GetAccessPointForObjectLambdaOutputBuilder {
         self
     }
     /// <p>The alias of the Object Lambda Access Point.</p>
-    pub fn set_alias(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectLambdaAccessPointAlias>,
-    ) -> Self {
+    pub fn set_alias(mut self, input: ::std::option::Option<crate::types::ObjectLambdaAccessPointAlias>) -> Self {
         self.alias = input;
         self
     }
@@ -144,10 +124,7 @@ impl GetAccessPointForObjectLambdaOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAccessPointForObjectLambdaOutput`](crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaOutput
-    {
+    pub fn build(self) -> crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaOutput {
         crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaOutput {
             name: self.name,
             public_access_block_configuration: self.public_access_block_configuration,

@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for DisassociateCustomDomainOutput {
 }
 impl DisassociateCustomDomainOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateCustomDomainOutput`](crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainOutputBuilder {
         crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateCustomDomainOutput`](crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateCustomDomainOutputBuilder {
     pub(crate) dns_target: ::std::option::Option<::std::string::String>,
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
@@ -96,10 +92,7 @@ impl DisassociateCustomDomainOutputBuilder {
         self
     }
     /// <p>A description of the domain name that's being disassociated.</p>
-    pub fn set_custom_domain(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomDomain>,
-    ) -> Self {
+    pub fn set_custom_domain(mut self, input: ::std::option::Option<crate::types::CustomDomain>) -> Self {
         self.custom_domain = input;
         self
     }
@@ -119,17 +112,12 @@ impl DisassociateCustomDomainOutputBuilder {
         self
     }
     /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
-    pub fn set_vpc_dns_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>>,
-    ) -> Self {
+    pub fn set_vpc_dns_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>>) -> Self {
         self.vpc_dns_targets = input;
         self
     }
     /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
-    pub fn get_vpc_dns_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>> {
+    pub fn get_vpc_dns_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>> {
         &self.vpc_dns_targets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -142,9 +130,7 @@ impl DisassociateCustomDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateCustomDomainOutput`](crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput {
+    pub fn build(self) -> crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput {
         crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput {
             dns_target: self.dns_target,
             service_arn: self.service_arn,

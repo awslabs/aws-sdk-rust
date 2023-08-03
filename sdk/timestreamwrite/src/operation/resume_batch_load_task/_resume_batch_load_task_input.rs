@@ -15,18 +15,14 @@ impl ResumeBatchLoadTaskInput {
 }
 impl ResumeBatchLoadTaskInput {
     /// Creates a new builder-style object to manufacture [`ResumeBatchLoadTaskInput`](crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput).
-    pub fn builder(
-    ) -> crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskInputBuilder {
-        crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskInputBuilder {
+        crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`ResumeBatchLoadTaskInput`](crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResumeBatchLoadTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl ResumeBatchLoadTaskInputBuilder {
     /// Consumes the builder and constructs a [`ResumeBatchLoadTaskInput`](crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput {
-                task_id: self.task_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput { task_id: self.task_id })
     }
 }

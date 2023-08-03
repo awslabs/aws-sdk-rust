@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_security_configuration::builders::DeleteSecurityConfigurationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_security_configuration::builders::DeleteSecurityConfigurationFluentBuilder::set_name): <p>The name of the security configuration to delete.</p>
     /// - On success, responds with [`DeleteSecurityConfigurationOutput`](crate::operation::delete_security_configuration::DeleteSecurityConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteSecurityConfigurationError>`](crate::operation::delete_security_configuration::DeleteSecurityConfigurationError)
-    pub fn delete_security_configuration(&self) -> crate::operation::delete_security_configuration::builders::DeleteSecurityConfigurationFluentBuilder{
+    pub fn delete_security_configuration(
+        &self,
+    ) -> crate::operation::delete_security_configuration::builders::DeleteSecurityConfigurationFluentBuilder {
         crate::operation::delete_security_configuration::builders::DeleteSecurityConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

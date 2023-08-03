@@ -5,8 +5,7 @@
 pub struct ListDeviceFleetsOutput {
     /// <p>Summary of the device fleet.</p>
     #[doc(hidden)]
-    pub device_fleet_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeviceFleetSummary>>,
+    pub device_fleet_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFleetSummary>>,
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDeviceFleetsOutput {
 }
 impl ListDeviceFleetsOutput {
     /// <p>Summary of the device fleet.</p>
-    pub fn device_fleet_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DeviceFleetSummary]> {
+    pub fn device_fleet_summaries(&self) -> ::std::option::Option<&[crate::types::DeviceFleetSummary]> {
         self.device_fleet_summaries.as_deref()
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDeviceFleetsOutput {
 }
 impl ListDeviceFleetsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeviceFleetsOutput`](crate::operation::list_device_fleets::ListDeviceFleetsOutput).
-    pub fn builder() -> crate::operation::list_device_fleets::builders::ListDeviceFleetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_device_fleets::builders::ListDeviceFleetsOutputBuilder {
         crate::operation::list_device_fleets::builders::ListDeviceFleetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeviceFleetsOutput`](crate::operation::list_device_fleets::ListDeviceFleetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeviceFleetsOutputBuilder {
-    pub(crate) device_fleet_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeviceFleetSummary>>,
+    pub(crate) device_fleet_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFleetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListDeviceFleetsOutputBuilder {
         self
     }
     /// <p>Summary of the device fleet.</p>
-    pub fn set_device_fleet_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFleetSummary>>,
-    ) -> Self {
+    pub fn set_device_fleet_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFleetSummary>>) -> Self {
         self.device_fleet_summaries = input;
         self
     }
     /// <p>Summary of the device fleet.</p>
-    pub fn get_device_fleet_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceFleetSummary>> {
+    pub fn get_device_fleet_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceFleetSummary>> {
         &self.device_fleet_summaries
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>

@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`query_definitions(Option<Vec<QueryDefinition>>)`](crate::operation::describe_query_definitions::DescribeQueryDefinitionsOutput::query_definitions): <p>The list of query definitions that match your request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_query_definitions::DescribeQueryDefinitionsOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     /// - On failure, responds with [`SdkError<DescribeQueryDefinitionsError>`](crate::operation::describe_query_definitions::DescribeQueryDefinitionsError)
-    pub fn describe_query_definitions(
-        &self,
-    ) -> crate::operation::describe_query_definitions::builders::DescribeQueryDefinitionsFluentBuilder
-    {
+    pub fn describe_query_definitions(&self) -> crate::operation::describe_query_definitions::builders::DescribeQueryDefinitionsFluentBuilder {
         crate::operation::describe_query_definitions::builders::DescribeQueryDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

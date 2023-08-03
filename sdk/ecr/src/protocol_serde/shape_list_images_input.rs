@@ -21,10 +21,7 @@ pub fn ser_list_images_input(
     if let Some(var_5) = &input.filter {
         #[allow(unused_mut)]
         let mut object_6 = object.key("filter").start_object();
-        crate::protocol_serde::shape_list_images_filter::ser_list_images_filter(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_list_images_filter::ser_list_images_filter(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

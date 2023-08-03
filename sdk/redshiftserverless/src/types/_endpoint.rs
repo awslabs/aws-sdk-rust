@@ -37,9 +37,7 @@ impl Endpoint {
 
 /// A builder for [`Endpoint`](crate::types::Endpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
@@ -86,17 +84,12 @@ impl EndpointBuilder {
         self
     }
     /// <p>An array of <code>VpcEndpoint</code> objects.</p>
-    pub fn set_vpc_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
-    ) -> Self {
+    pub fn set_vpc_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>) -> Self {
         self.vpc_endpoints = input;
         self
     }
     /// <p>An array of <code>VpcEndpoint</code> objects.</p>
-    pub fn get_vpc_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>> {
+    pub fn get_vpc_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>> {
         &self.vpc_endpoints
     }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).

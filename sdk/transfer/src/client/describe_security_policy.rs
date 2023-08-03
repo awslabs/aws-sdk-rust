@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeSecurityPolicyOutput`](crate::operation::describe_security_policy::DescribeSecurityPolicyOutput) with field(s):
     ///   - [`security_policy(Option<DescribedSecurityPolicy>)`](crate::operation::describe_security_policy::DescribeSecurityPolicyOutput::security_policy): <p>An array containing the properties of the security policy.</p>
     /// - On failure, responds with [`SdkError<DescribeSecurityPolicyError>`](crate::operation::describe_security_policy::DescribeSecurityPolicyError)
-    pub fn describe_security_policy(
-        &self,
-    ) -> crate::operation::describe_security_policy::builders::DescribeSecurityPolicyFluentBuilder
-    {
+    pub fn describe_security_policy(&self) -> crate::operation::describe_security_policy::builders::DescribeSecurityPolicyFluentBuilder {
         crate::operation::describe_security_policy::builders::DescribeSecurityPolicyFluentBuilder::new(self.handle.clone())
     }
 }

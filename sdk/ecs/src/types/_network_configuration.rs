@@ -14,9 +14,7 @@ impl NetworkConfiguration {
     /// <p>The VPC subnets and security groups that are associated with a task.</p> <note>
     /// <p>All specified subnets and security groups must be from the same VPC.</p>
     /// </note>
-    pub fn awsvpc_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsVpcConfiguration> {
+    pub fn awsvpc_configuration(&self) -> ::std::option::Option<&crate::types::AwsVpcConfiguration> {
         self.awsvpc_configuration.as_ref()
     }
 }
@@ -29,9 +27,7 @@ impl NetworkConfiguration {
 
 /// A builder for [`NetworkConfiguration`](crate::types::NetworkConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkConfigurationBuilder {
     pub(crate) awsvpc_configuration: ::std::option::Option<crate::types::AwsVpcConfiguration>,
 }
@@ -46,19 +42,14 @@ impl NetworkConfigurationBuilder {
     /// <p>The VPC subnets and security groups that are associated with a task.</p> <note>
     /// <p>All specified subnets and security groups must be from the same VPC.</p>
     /// </note>
-    pub fn set_awsvpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsVpcConfiguration>,
-    ) -> Self {
+    pub fn set_awsvpc_configuration(mut self, input: ::std::option::Option<crate::types::AwsVpcConfiguration>) -> Self {
         self.awsvpc_configuration = input;
         self
     }
     /// <p>The VPC subnets and security groups that are associated with a task.</p> <note>
     /// <p>All specified subnets and security groups must be from the same VPC.</p>
     /// </note>
-    pub fn get_awsvpc_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsVpcConfiguration> {
+    pub fn get_awsvpc_configuration(&self) -> &::std::option::Option<crate::types::AwsVpcConfiguration> {
         &self.awsvpc_configuration
     }
     /// Consumes the builder and constructs a [`NetworkConfiguration`](crate::types::NetworkConfiguration).

@@ -37,9 +37,7 @@ impl DescribeTargetGroupsFluentBuilder {
         }
     }
     /// Access the DescribeTargetGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_target_groups::builders::DescribeTargetGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_target_groups::builders::DescribeTargetGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeTargetGroupsFluentBuilder {
             crate::operation::describe_target_groups::DescribeTargetGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_target_groups::DescribeTargetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_target_groups::DescribeTargetGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeTargetGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeTargetGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_target_groups::DescribeTargetGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_target_groups::DescribeTargetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_target_groups::DescribeTargetGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeTargetGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_target_groups::DescribeTargetGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_target_groups::DescribeTargetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_target_groups::DescribeTargetGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl DescribeTargetGroupsFluentBuilder {
             crate::operation::describe_target_groups::DescribeTargetGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_target_groups::DescribeTargetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_target_groups::DescribeTargetGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_target_groups::paginator::DescribeTargetGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_target_groups::paginator::DescribeTargetGroupsPaginator {
-        crate::operation::describe_target_groups::paginator::DescribeTargetGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_target_groups::paginator::DescribeTargetGroupsPaginator {
+        crate::operation::describe_target_groups::paginator::DescribeTargetGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_arn(input);
         self
     }
@@ -158,25 +134,17 @@ impl DescribeTargetGroupsFluentBuilder {
     /// To override the contents of this collection use [`set_target_group_arns`](Self::set_target_group_arns).
     ///
     /// <p>The Amazon Resource Names (ARN) of the target groups.</p>
-    pub fn target_group_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_group_arns(input.into());
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups.</p>
-    pub fn set_target_group_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_target_group_arns(input);
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups.</p>
-    pub fn get_target_group_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_target_group_arns()
     }
     /// Appends an item to `Names`.
@@ -189,10 +157,7 @@ impl DescribeTargetGroupsFluentBuilder {
         self
     }
     /// <p>The names of the target groups.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }

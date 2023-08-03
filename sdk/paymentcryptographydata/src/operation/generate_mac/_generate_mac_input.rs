@@ -43,9 +43,7 @@ impl GenerateMacInput {
 
 /// A builder for [`GenerateMacInput`](crate::operation::generate_mac::GenerateMacInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateMacInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) message_data: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct GenerateMacInputBuilder {
 }
 impl GenerateMacInputBuilder {
     /// <p>The <code>keyARN</code> of the MAC generation encryption key.</p>
-    pub fn key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the MAC generation encryption key.</p>
-    pub fn set_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_identifier = input;
         self
     }
@@ -93,10 +85,7 @@ impl GenerateMacInputBuilder {
         self
     }
     /// <p>The attributes and data values to use for MAC generation within Amazon Web Services Payment Cryptography.</p>
-    pub fn set_generation_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::MacAttributes>,
-    ) -> Self {
+    pub fn set_generation_attributes(mut self, input: ::std::option::Option<crate::types::MacAttributes>) -> Self {
         self.generation_attributes = input;
         self
     }
@@ -119,12 +108,7 @@ impl GenerateMacInputBuilder {
         &self.mac_length
     }
     /// Consumes the builder and constructs a [`GenerateMacInput`](crate::operation::generate_mac::GenerateMacInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::generate_mac::GenerateMacInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::generate_mac::GenerateMacInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::generate_mac::GenerateMacInput {
             key_identifier: self.key_identifier,
             message_data: self.message_data,

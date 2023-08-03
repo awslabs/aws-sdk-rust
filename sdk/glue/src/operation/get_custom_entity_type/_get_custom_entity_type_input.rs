@@ -15,18 +15,14 @@ impl GetCustomEntityTypeInput {
 }
 impl GetCustomEntityTypeInput {
     /// Creates a new builder-style object to manufacture [`GetCustomEntityTypeInput`](crate::operation::get_custom_entity_type::GetCustomEntityTypeInput).
-    pub fn builder(
-    ) -> crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeInputBuilder {
-        crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeInputBuilder {
+        crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCustomEntityTypeInput`](crate::operation::get_custom_entity_type::GetCustomEntityTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCustomEntityTypeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl GetCustomEntityTypeInputBuilder {
     /// Consumes the builder and constructs a [`GetCustomEntityTypeInput`](crate::operation::get_custom_entity_type::GetCustomEntityTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_custom_entity_type::GetCustomEntityTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_custom_entity_type::GetCustomEntityTypeInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::get_custom_entity_type::GetCustomEntityTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_custom_entity_type::GetCustomEntityTypeInput { name: self.name })
     }
 }

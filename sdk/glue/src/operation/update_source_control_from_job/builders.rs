@@ -27,7 +27,7 @@ impl UpdateSourceControlFromJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSourceControlFromJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_source_control_from_job::builders::UpdateSourceControlFromJobInputBuilder,
+    inner: crate::operation::update_source_control_from_job::builders::UpdateSourceControlFromJobInputBuilder,
 }
 impl UpdateSourceControlFromJobFluentBuilder {
     /// Creates a new `UpdateSourceControlFromJob`.
@@ -38,7 +38,7 @@ impl UpdateSourceControlFromJobFluentBuilder {
         }
     }
     /// Access the UpdateSourceControlFromJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_source_control_from_job::builders::UpdateSourceControlFromJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_source_control_from_job::builders::UpdateSourceControlFromJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateSourceControlFromJobFluentBuilder {
             crate::operation::update_source_control_from_job::UpdateSourceControlFromJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_source_control_from_job::UpdateSourceControlFromJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_source_control_from_job::UpdateSourceControlFromJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateSourceControlFromJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateSourceControlFromJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_source_control_from_job::UpdateSourceControlFromJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_source_control_from_job::UpdateSourceControlFromJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_source_control_from_job::UpdateSourceControlFromJobError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateSourceControlFromJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_source_control_from_job::UpdateSourceControlFromJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_source_control_from_job::UpdateSourceControlFromJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_source_control_from_job::UpdateSourceControlFromJobError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl UpdateSourceControlFromJobFluentBuilder {
             crate::operation::update_source_control_from_job::UpdateSourceControlFromJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_source_control_from_job::UpdateSourceControlFromJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_source_control_from_job::UpdateSourceControlFromJobError>,
     > {
         self.customize_middleware().await
     }
@@ -141,10 +130,7 @@ impl UpdateSourceControlFromJobFluentBuilder {
         self
     }
     /// <p>The provider for the remote repository.</p>
-    pub fn set_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceControlProvider>,
-    ) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::SourceControlProvider>) -> Self {
         self.inner = self.inner.set_provider(input);
         self
     }
@@ -153,18 +139,12 @@ impl UpdateSourceControlFromJobFluentBuilder {
         self.inner.get_provider()
     }
     /// <p>The name of the remote repository that contains the job artifacts.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the remote repository that contains the job artifacts.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -173,18 +153,12 @@ impl UpdateSourceControlFromJobFluentBuilder {
         self.inner.get_repository_name()
     }
     /// <p>The owner of the remote repository that contains the job artifacts.</p>
-    pub fn repository_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_owner(input.into());
         self
     }
     /// <p>The owner of the remote repository that contains the job artifacts.</p>
-    pub fn set_repository_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_owner(input);
         self
     }
@@ -240,17 +214,12 @@ impl UpdateSourceControlFromJobFluentBuilder {
         self
     }
     /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
-    pub fn set_auth_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceControlAuthStrategy>,
-    ) -> Self {
+    pub fn set_auth_strategy(mut self, input: ::std::option::Option<crate::types::SourceControlAuthStrategy>) -> Self {
         self.inner = self.inner.set_auth_strategy(input);
         self
     }
     /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
-    pub fn get_auth_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceControlAuthStrategy> {
+    pub fn get_auth_strategy(&self) -> &::std::option::Option<crate::types::SourceControlAuthStrategy> {
         self.inner.get_auth_strategy()
     }
     /// <p>The value of the authorization token.</p>

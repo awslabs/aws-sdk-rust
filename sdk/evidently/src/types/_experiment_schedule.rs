@@ -23,9 +23,7 @@ impl ExperimentSchedule {
 
 /// A builder for [`ExperimentSchedule`](crate::types::ExperimentSchedule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentScheduleBuilder {
     pub(crate) analysis_complete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -36,17 +34,12 @@ impl ExperimentScheduleBuilder {
         self
     }
     /// <p>The time and date that Evidently completed the analysis of the experiment.</p>
-    pub fn set_analysis_complete_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_analysis_complete_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.analysis_complete_time = input;
         self
     }
     /// <p>The time and date that Evidently completed the analysis of the experiment.</p>
-    pub fn get_analysis_complete_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_analysis_complete_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.analysis_complete_time
     }
     /// Consumes the builder and constructs a [`ExperimentSchedule`](crate::types::ExperimentSchedule).

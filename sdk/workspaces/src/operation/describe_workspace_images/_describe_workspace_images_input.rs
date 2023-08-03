@@ -36,18 +36,14 @@ impl DescribeWorkspaceImagesInput {
 }
 impl DescribeWorkspaceImagesInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceImagesInput`](crate::operation::describe_workspace_images::DescribeWorkspaceImagesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesInputBuilder {
         crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspaceImagesInput`](crate::operation::describe_workspace_images::DescribeWorkspaceImagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceImagesInputBuilder {
     pub(crate) image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) image_type: ::std::option::Option<crate::types::ImageType>,
@@ -67,10 +63,7 @@ impl DescribeWorkspaceImagesInputBuilder {
         self
     }
     /// <p>The identifier of the image.</p>
-    pub fn set_image_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.image_ids = input;
         self
     }
@@ -127,13 +120,11 @@ impl DescribeWorkspaceImagesInputBuilder {
         crate::operation::describe_workspace_images::DescribeWorkspaceImagesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_workspace_images::DescribeWorkspaceImagesInput {
-                image_ids: self.image_ids,
-                image_type: self.image_type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_workspace_images::DescribeWorkspaceImagesInput {
+            image_ids: self.image_ids,
+            image_type: self.image_type,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ArchiveStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for ArchiveStatus {
         match s {
             "ARCHIVE_ACCESS" => ArchiveStatus::ArchiveAccess,
             "DEEP_ARCHIVE_ACCESS" => ArchiveStatus::DeepArchiveAccess,
-            other => {
-                ArchiveStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ArchiveStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

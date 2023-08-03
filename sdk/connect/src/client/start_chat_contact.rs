@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`participant_token(Option<String>)`](crate::operation::start_chat_contact::StartChatContactOutput::participant_token): <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
     ///   - [`continued_from_contact_id(Option<String>)`](crate::operation::start_chat_contact::StartChatContactOutput::continued_from_contact_id): <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chats.</p>
     /// - On failure, responds with [`SdkError<StartChatContactError>`](crate::operation::start_chat_contact::StartChatContactError)
-    pub fn start_chat_contact(
-        &self,
-    ) -> crate::operation::start_chat_contact::builders::StartChatContactFluentBuilder {
-        crate::operation::start_chat_contact::builders::StartChatContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_chat_contact(&self) -> crate::operation::start_chat_contact::builders::StartChatContactFluentBuilder {
+        crate::operation::start_chat_contact::builders::StartChatContactFluentBuilder::new(self.handle.clone())
     }
 }

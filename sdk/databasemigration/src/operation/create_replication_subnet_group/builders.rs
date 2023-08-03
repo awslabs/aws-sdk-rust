@@ -28,7 +28,7 @@ impl CreateReplicationSubnetGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateReplicationSubnetGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_replication_subnet_group::builders::CreateReplicationSubnetGroupInputBuilder,
+    inner: crate::operation::create_replication_subnet_group::builders::CreateReplicationSubnetGroupInputBuilder,
 }
 impl CreateReplicationSubnetGroupFluentBuilder {
     /// Creates a new `CreateReplicationSubnetGroup`.
@@ -39,7 +39,7 @@ impl CreateReplicationSubnetGroupFluentBuilder {
         }
     }
     /// Access the CreateReplicationSubnetGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_replication_subnet_group::builders::CreateReplicationSubnetGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_replication_subnet_group::builders::CreateReplicationSubnetGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl CreateReplicationSubnetGroupFluentBuilder {
             crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl CreateReplicationSubnetGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl CreateReplicationSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl CreateReplicationSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,62 +107,42 @@ impl CreateReplicationSubnetGroupFluentBuilder {
             crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn replication_subnet_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_subnet_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_subnet_group_identifier(input.into());
         self
     }
     /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn set_replication_subnet_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_subnet_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_subnet_group_identifier(input);
         self
     }
     /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn get_replication_subnet_group_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_subnet_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_replication_subnet_group_identifier()
     }
     /// <p>The description for the subnet group.</p>
-    pub fn replication_subnet_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .replication_subnet_group_description(input.into());
+    pub fn replication_subnet_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.replication_subnet_group_description(input.into());
         self
     }
     /// <p>The description for the subnet group.</p>
-    pub fn set_replication_subnet_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_subnet_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_subnet_group_description(input);
         self
     }
     /// <p>The description for the subnet group.</p>
-    pub fn get_replication_subnet_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_subnet_group_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_replication_subnet_group_description()
     }
     /// Appends an item to `SubnetIds`.
@@ -184,10 +155,7 @@ impl CreateReplicationSubnetGroupFluentBuilder {
         self
     }
     /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -205,10 +173,7 @@ impl CreateReplicationSubnetGroupFluentBuilder {
         self
     }
     /// <p>One or more tags to be assigned to the subnet group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

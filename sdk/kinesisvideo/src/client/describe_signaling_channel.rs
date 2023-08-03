@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeSignalingChannelOutput`](crate::operation::describe_signaling_channel::DescribeSignalingChannelOutput) with field(s):
     ///   - [`channel_info(Option<ChannelInfo>)`](crate::operation::describe_signaling_channel::DescribeSignalingChannelOutput::channel_info): <p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>
     /// - On failure, responds with [`SdkError<DescribeSignalingChannelError>`](crate::operation::describe_signaling_channel::DescribeSignalingChannelError)
-    pub fn describe_signaling_channel(
-        &self,
-    ) -> crate::operation::describe_signaling_channel::builders::DescribeSignalingChannelFluentBuilder
-    {
+    pub fn describe_signaling_channel(&self) -> crate::operation::describe_signaling_channel::builders::DescribeSignalingChannelFluentBuilder {
         crate::operation::describe_signaling_channel::builders::DescribeSignalingChannelFluentBuilder::new(self.handle.clone())
     }
 }

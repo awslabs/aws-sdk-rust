@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ResourceStatus {
             "PENDING" => ResourceStatus::Pending,
             "UNAVAILABLE" => ResourceStatus::Unavailable,
             "ZONAL_RESOURCE_INACCESSIBLE" => ResourceStatus::ZonalResourceInaccessible,
-            other => {
-                ResourceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl ResourceStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE",
-            "LIMIT_EXCEEDED",
-            "PENDING",
-            "UNAVAILABLE",
-            "ZONAL_RESOURCE_INACCESSIBLE",
-        ]
+        &["AVAILABLE", "LIMIT_EXCEEDED", "PENDING", "UNAVAILABLE", "ZONAL_RESOURCE_INACCESSIBLE"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceStatus {

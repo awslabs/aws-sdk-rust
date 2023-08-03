@@ -58,9 +58,7 @@ impl Predicate {
 
 /// A builder for [`Predicate`](crate::types::Predicate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredicateBuilder {
     pub(crate) or: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
     pub(crate) and: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
@@ -82,10 +80,7 @@ impl PredicateBuilder {
         self
     }
     /// <p>A list of predicates to combine logically.</p>
-    pub fn set_or(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
-    ) -> Self {
+    pub fn set_or(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>) -> Self {
         self.or = input;
         self
     }
@@ -105,10 +100,7 @@ impl PredicateBuilder {
         self
     }
     /// <p>A list of predicates to combine logically.</p>
-    pub fn set_and(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
-    ) -> Self {
+    pub fn set_and(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>) -> Self {
         self.and = input;
         self
     }

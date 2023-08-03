@@ -36,9 +36,7 @@ impl ListUsageTotalsInput {
 
 /// A builder for [`ListUsageTotalsInput`](crate::operation::list_usage_totals::ListUsageTotalsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUsageTotalsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -85,26 +83,18 @@ impl ListUsageTotalsInputBuilder {
         self
     }
     /// <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`ListUsageTotalsInput`](crate::operation::list_usage_totals::ListUsageTotalsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_usage_totals::ListUsageTotalsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_usage_totals::ListUsageTotalsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_usage_totals::ListUsageTotalsInput {
             max_results: self.max_results,
             next_token: self.next_token,

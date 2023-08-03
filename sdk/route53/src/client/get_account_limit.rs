@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`limit(Option<AccountLimit>)`](crate::operation::get_account_limit::GetAccountLimitOutput::limit): <p>The current setting for the specified limit. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of health checks that you can create using the current account.</p>
     ///   - [`count(i64)`](crate::operation::get_account_limit::GetAccountLimitOutput::count): <p>The current number of entities that you have created of the specified type. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Count</code> is the current number of health checks that you have created using the current account.</p>
     /// - On failure, responds with [`SdkError<GetAccountLimitError>`](crate::operation::get_account_limit::GetAccountLimitError)
-    pub fn get_account_limit(
-        &self,
-    ) -> crate::operation::get_account_limit::builders::GetAccountLimitFluentBuilder {
-        crate::operation::get_account_limit::builders::GetAccountLimitFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_account_limit(&self) -> crate::operation::get_account_limit::builders::GetAccountLimitFluentBuilder {
+        crate::operation::get_account_limit::builders::GetAccountLimitFluentBuilder::new(self.handle.clone())
     }
 }

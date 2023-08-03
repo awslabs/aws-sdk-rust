@@ -22,9 +22,7 @@ impl StartFlowInput {
 
 /// A builder for [`StartFlowInput`](crate::operation::start_flow::StartFlowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFlowInputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl StartFlowInputBuilder {
         &self.flow_arn
     }
     /// Consumes the builder and constructs a [`StartFlowInput`](crate::operation::start_flow::StartFlowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_flow::StartFlowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_flow::StartFlowInput {
-            flow_arn: self.flow_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_flow::StartFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_flow::StartFlowInput { flow_arn: self.flow_arn })
     }
 }

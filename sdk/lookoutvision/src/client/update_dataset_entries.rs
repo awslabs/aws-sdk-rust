@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDatasetEntriesOutput`](crate::operation::update_dataset_entries::UpdateDatasetEntriesOutput) with field(s):
     ///   - [`status(Option<DatasetStatus>)`](crate::operation::update_dataset_entries::UpdateDatasetEntriesOutput::status): <p>The status of the dataset update.</p>
     /// - On failure, responds with [`SdkError<UpdateDatasetEntriesError>`](crate::operation::update_dataset_entries::UpdateDatasetEntriesError)
-    pub fn update_dataset_entries(
-        &self,
-    ) -> crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesFluentBuilder {
-        crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_dataset_entries(&self) -> crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesFluentBuilder {
+        crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,8 +5,7 @@
 pub struct ListResourceInventoryOutput {
     /// <p>Information about the resources.</p>
     #[doc(hidden)]
-    pub resource_inventory_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceInventory>>,
+    pub resource_inventory_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInventory>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListResourceInventoryOutput {
 }
 impl ListResourceInventoryOutput {
     /// <p>Information about the resources.</p>
-    pub fn resource_inventory_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceInventory]> {
+    pub fn resource_inventory_list(&self) -> ::std::option::Option<&[crate::types::ResourceInventory]> {
         self.resource_inventory_list.as_deref()
     }
     /// <p>Token for the next set of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListResourceInventoryOutput {
 }
 impl ListResourceInventoryOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceInventoryOutput`](crate::operation::list_resource_inventory::ListResourceInventoryOutput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_inventory::builders::ListResourceInventoryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resource_inventory::builders::ListResourceInventoryOutputBuilder {
         crate::operation::list_resource_inventory::builders::ListResourceInventoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceInventoryOutput`](crate::operation::list_resource_inventory::ListResourceInventoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceInventoryOutputBuilder {
-    pub(crate) resource_inventory_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceInventory>>,
+    pub(crate) resource_inventory_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInventory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListResourceInventoryOutputBuilder {
         self
     }
     /// <p>Information about the resources.</p>
-    pub fn set_resource_inventory_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInventory>>,
-    ) -> Self {
+    pub fn set_resource_inventory_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInventory>>) -> Self {
         self.resource_inventory_list = input;
         self
     }
     /// <p>Information about the resources.</p>
-    pub fn get_resource_inventory_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceInventory>> {
+    pub fn get_resource_inventory_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceInventory>> {
         &self.resource_inventory_list
     }
     /// <p>Token for the next set of results.</p>

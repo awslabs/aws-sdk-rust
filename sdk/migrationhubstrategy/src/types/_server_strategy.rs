@@ -44,9 +44,7 @@ impl ServerStrategy {
 
 /// A builder for [`ServerStrategy`](crate::types::ServerStrategy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerStrategyBuilder {
     pub(crate) recommendation: ::std::option::Option<crate::types::RecommendationSet>,
     pub(crate) status: ::std::option::Option<crate::types::StrategyRecommendation>,
@@ -60,10 +58,7 @@ impl ServerStrategyBuilder {
         self
     }
     /// <p> Strategy recommendation for the server. </p>
-    pub fn set_recommendation(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationSet>,
-    ) -> Self {
+    pub fn set_recommendation(mut self, input: ::std::option::Option<crate::types::RecommendationSet>) -> Self {
         self.recommendation = input;
         self
     }
@@ -77,10 +72,7 @@ impl ServerStrategyBuilder {
         self
     }
     /// <p> The recommendation status of the strategy for the server. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StrategyRecommendation>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StrategyRecommendation>) -> Self {
         self.status = input;
         self
     }
@@ -94,10 +86,7 @@ impl ServerStrategyBuilder {
         self
     }
     /// <p> The number of application components with this strategy recommendation running on the server. </p>
-    pub fn set_number_of_application_components(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_number_of_application_components(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_application_components = input;
         self
     }

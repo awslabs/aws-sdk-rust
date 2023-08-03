@@ -16,34 +16,25 @@ impl GetEmailTemplateInput {
 }
 impl GetEmailTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetEmailTemplateInput`](crate::operation::get_email_template::GetEmailTemplateInput).
-    pub fn builder() -> crate::operation::get_email_template::builders::GetEmailTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_email_template::builders::GetEmailTemplateInputBuilder {
         crate::operation::get_email_template::builders::GetEmailTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEmailTemplateInput`](crate::operation::get_email_template::GetEmailTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEmailTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
 }
 impl GetEmailTemplateInputBuilder {
     /// <p>The name of the template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -54,14 +45,9 @@ impl GetEmailTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetEmailTemplateInput`](crate::operation::get_email_template::GetEmailTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_email_template::GetEmailTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_email_template::GetEmailTemplateInput {
-                template_name: self.template_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_email_template::GetEmailTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_email_template::GetEmailTemplateInput {
+            template_name: self.template_name,
+        })
     }
 }

@@ -15,18 +15,14 @@ impl DeregisterElasticIpInput {
 }
 impl DeregisterElasticIpInput {
     /// Creates a new builder-style object to manufacture [`DeregisterElasticIpInput`](crate::operation::deregister_elastic_ip::DeregisterElasticIpInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_elastic_ip::builders::DeregisterElasticIpInputBuilder {
-        crate::operation::deregister_elastic_ip::builders::DeregisterElasticIpInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::deregister_elastic_ip::builders::DeregisterElasticIpInputBuilder {
+        crate::operation::deregister_elastic_ip::builders::DeregisterElasticIpInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterElasticIpInput`](crate::operation::deregister_elastic_ip::DeregisterElasticIpInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterElasticIpInputBuilder {
     pub(crate) elastic_ip: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl DeregisterElasticIpInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterElasticIpInput`](crate::operation::deregister_elastic_ip::DeregisterElasticIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_elastic_ip::DeregisterElasticIpInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::deregister_elastic_ip::DeregisterElasticIpInput {
-                elastic_ip: self.elastic_ip,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::deregister_elastic_ip::DeregisterElasticIpInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::deregister_elastic_ip::DeregisterElasticIpInput { elastic_ip: self.elastic_ip })
     }
 }

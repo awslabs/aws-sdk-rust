@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ResetResourceLogLevelOutput {
 }
 impl ResetResourceLogLevelOutput {
     /// Creates a new builder-style object to manufacture [`ResetResourceLogLevelOutput`](crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput).
-    pub fn builder(
-    ) -> crate::operation::reset_resource_log_level::builders::ResetResourceLogLevelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_resource_log_level::builders::ResetResourceLogLevelOutputBuilder {
         crate::operation::reset_resource_log_level::builders::ResetResourceLogLevelOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetResourceLogLevelOutput`](crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetResourceLogLevelOutputBuilder {
     _request_id: Option<String>,
 }

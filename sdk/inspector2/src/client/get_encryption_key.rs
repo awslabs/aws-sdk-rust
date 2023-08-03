@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetEncryptionKeyOutput`](crate::operation::get_encryption_key::GetEncryptionKeyOutput) with field(s):
     ///   - [`kms_key_id(Option<String>)`](crate::operation::get_encryption_key::GetEncryptionKeyOutput::kms_key_id): <p>A kms key ID.</p>
     /// - On failure, responds with [`SdkError<GetEncryptionKeyError>`](crate::operation::get_encryption_key::GetEncryptionKeyError)
-    pub fn get_encryption_key(
-        &self,
-    ) -> crate::operation::get_encryption_key::builders::GetEncryptionKeyFluentBuilder {
-        crate::operation::get_encryption_key::builders::GetEncryptionKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_encryption_key(&self) -> crate::operation::get_encryption_key::builders::GetEncryptionKeyFluentBuilder {
+        crate::operation::get_encryption_key::builders::GetEncryptionKeyFluentBuilder::new(self.handle.clone())
     }
 }

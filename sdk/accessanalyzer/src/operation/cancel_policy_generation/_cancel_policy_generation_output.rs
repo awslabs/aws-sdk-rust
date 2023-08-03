@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelPolicyGenerationOutput {
 }
 impl CancelPolicyGenerationOutput {
     /// Creates a new builder-style object to manufacture [`CancelPolicyGenerationOutput`](crate::operation::cancel_policy_generation::CancelPolicyGenerationOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_policy_generation::builders::CancelPolicyGenerationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_policy_generation::builders::CancelPolicyGenerationOutputBuilder {
         crate::operation::cancel_policy_generation::builders::CancelPolicyGenerationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelPolicyGenerationOutput`](crate::operation::cancel_policy_generation::CancelPolicyGenerationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelPolicyGenerationOutputBuilder {
     _request_id: Option<String>,
 }

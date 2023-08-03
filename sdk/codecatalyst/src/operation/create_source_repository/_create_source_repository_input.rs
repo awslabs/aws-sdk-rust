@@ -36,18 +36,14 @@ impl CreateSourceRepositoryInput {
 }
 impl CreateSourceRepositoryInput {
     /// Creates a new builder-style object to manufacture [`CreateSourceRepositoryInput`](crate::operation::create_source_repository::CreateSourceRepositoryInput).
-    pub fn builder(
-    ) -> crate::operation::create_source_repository::builders::CreateSourceRepositoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_source_repository::builders::CreateSourceRepositoryInputBuilder {
         crate::operation::create_source_repository::builders::CreateSourceRepositoryInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSourceRepositoryInput`](crate::operation::create_source_repository::CreateSourceRepositoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSourceRepositoryInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -114,17 +110,13 @@ impl CreateSourceRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`CreateSourceRepositoryInput`](crate::operation::create_source_repository::CreateSourceRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_source_repository::CreateSourceRepositoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_source_repository::CreateSourceRepositoryInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                name: self.name,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_source_repository::CreateSourceRepositoryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_source_repository::CreateSourceRepositoryInput {
+            space_name: self.space_name,
+            project_name: self.project_name,
+            name: self.name,
+            description: self.description,
+        })
     }
 }

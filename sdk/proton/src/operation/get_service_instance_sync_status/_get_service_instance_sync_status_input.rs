@@ -22,16 +22,14 @@ impl GetServiceInstanceSyncStatusInput {
 }
 impl GetServiceInstanceSyncStatusInput {
     /// Creates a new builder-style object to manufacture [`GetServiceInstanceSyncStatusInput`](crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusInput).
-    pub fn builder() -> crate::operation::get_service_instance_sync_status::builders::GetServiceInstanceSyncStatusInputBuilder{
+    pub fn builder() -> crate::operation::get_service_instance_sync_status::builders::GetServiceInstanceSyncStatusInputBuilder {
         crate::operation::get_service_instance_sync_status::builders::GetServiceInstanceSyncStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceInstanceSyncStatusInput`](crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceInstanceSyncStatusInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_instance_name: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl GetServiceInstanceSyncStatusInputBuilder {
         &self.service_name
     }
     /// <p>The name of the service instance that you want the sync status input for.</p>
-    pub fn service_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service instance that you want the sync status input for.</p>
-    pub fn set_service_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_instance_name = input;
         self
     }
@@ -78,11 +70,9 @@ impl GetServiceInstanceSyncStatusInputBuilder {
         crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusInput {
-                service_name: self.service_name,
-                service_instance_name: self.service_instance_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusInput {
+            service_name: self.service_name,
+            service_instance_name: self.service_instance_name,
+        })
     }
 }

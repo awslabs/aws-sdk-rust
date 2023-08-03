@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`queue_references(Vec<RoutingProfileQueueReference>)`](crate::operation::disassociate_routing_profile_queues::builders::DisassociateRoutingProfileQueuesFluentBuilder::queue_references) / [`set_queue_references(Option<Vec<RoutingProfileQueueReference>>)`](crate::operation::disassociate_routing_profile_queues::builders::DisassociateRoutingProfileQueuesFluentBuilder::set_queue_references): <p>The queues to disassociate from this routing profile.</p>
     /// - On success, responds with [`DisassociateRoutingProfileQueuesOutput`](crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesOutput)
     /// - On failure, responds with [`SdkError<DisassociateRoutingProfileQueuesError>`](crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesError)
-    pub fn disassociate_routing_profile_queues(&self) -> crate::operation::disassociate_routing_profile_queues::builders::DisassociateRoutingProfileQueuesFluentBuilder{
+    pub fn disassociate_routing_profile_queues(
+        &self,
+    ) -> crate::operation::disassociate_routing_profile_queues::builders::DisassociateRoutingProfileQueuesFluentBuilder {
         crate::operation::disassociate_routing_profile_queues::builders::DisassociateRoutingProfileQueuesFluentBuilder::new(self.handle.clone())
     }
 }

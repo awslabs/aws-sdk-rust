@@ -10,10 +10,7 @@ impl BatchSuspendUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_suspend_user::BatchSuspendUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_suspend_user::BatchSuspendUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_suspend_user::BatchSuspendUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_suspend_user();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl BatchSuspendUserFluentBuilder {
         }
     }
     /// Access the BatchSuspendUser as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_suspend_user::builders::BatchSuspendUserInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_suspend_user::builders::BatchSuspendUserInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl BatchSuspendUserFluentBuilder {
             crate::operation::batch_suspend_user::BatchSuspendUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_suspend_user::BatchSuspendUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_suspend_user::BatchSuspendUserError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl BatchSuspendUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl BatchSuspendUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_suspend_user::BatchSuspendUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_suspend_user::BatchSuspendUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_suspend_user::BatchSuspendUserError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl BatchSuspendUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_suspend_user::BatchSuspendUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_suspend_user::BatchSuspendUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_suspend_user::BatchSuspendUserError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl BatchSuspendUserFluentBuilder {
             crate::operation::batch_suspend_user::BatchSuspendUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_suspend_user::BatchSuspendUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_suspend_user::BatchSuspendUserError>,
     > {
         self.customize_middleware().await
     }
@@ -149,17 +133,12 @@ impl BatchSuspendUserFluentBuilder {
         self
     }
     /// <p>The request containing the user IDs to suspend.</p>
-    pub fn set_user_id_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_user_id_list(input);
         self
     }
     /// <p>The request containing the user IDs to suspend.</p>
-    pub fn get_user_id_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_user_id_list()
     }
 }

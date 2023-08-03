@@ -29,27 +29,19 @@ impl PutRecordBatchInput {
 
 /// A builder for [`PutRecordBatchInput`](crate::operation::put_record_batch::PutRecordBatchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRecordBatchInputBuilder {
     pub(crate) delivery_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
 }
 impl PutRecordBatchInputBuilder {
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the delivery stream.</p>
-    pub fn set_delivery_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_stream_name = input;
         self
     }
@@ -69,10 +61,7 @@ impl PutRecordBatchInputBuilder {
         self
     }
     /// <p>One or more records.</p>
-    pub fn set_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
-    ) -> Self {
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>) -> Self {
         self.records = input;
         self
     }
@@ -83,10 +72,7 @@ impl PutRecordBatchInputBuilder {
     /// Consumes the builder and constructs a [`PutRecordBatchInput`](crate::operation::put_record_batch::PutRecordBatchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_record_batch::PutRecordBatchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_record_batch::PutRecordBatchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_record_batch::PutRecordBatchInput {
             delivery_stream_name: self.delivery_stream_name,
             records: self.records,

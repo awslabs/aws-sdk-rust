@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteMatchmakingConfigurationOutput 
 }
 impl DeleteMatchmakingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMatchmakingConfigurationOutput`](crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_matchmaking_configuration::builders::DeleteMatchmakingConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_matchmaking_configuration::builders::DeleteMatchmakingConfigurationOutputBuilder {
         crate::operation::delete_matchmaking_configuration::builders::DeleteMatchmakingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMatchmakingConfigurationOutput`](crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMatchmakingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteMatchmakingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteMatchmakingConfigurationOutput`](crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationOutput {
         crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationOutput {
             _request_id: self._request_id,
         }

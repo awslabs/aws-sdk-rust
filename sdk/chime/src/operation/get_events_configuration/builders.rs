@@ -37,10 +37,7 @@ impl GetEventsConfigurationFluentBuilder {
         }
     }
     /// Access the GetEventsConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_events_configuration::builders::GetEventsConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_events_configuration::builders::GetEventsConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetEventsConfigurationFluentBuilder {
             crate::operation::get_events_configuration::GetEventsConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_events_configuration::GetEventsConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_events_configuration::GetEventsConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetEventsConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetEventsConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_events_configuration::GetEventsConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_events_configuration::GetEventsConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_events_configuration::GetEventsConfigurationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetEventsConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_events_configuration::GetEventsConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_events_configuration::GetEventsConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_events_configuration::GetEventsConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetEventsConfigurationFluentBuilder {
             crate::operation::get_events_configuration::GetEventsConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_events_configuration::GetEventsConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_events_configuration::GetEventsConfigurationError>,
     > {
         self.customize_middleware().await
     }

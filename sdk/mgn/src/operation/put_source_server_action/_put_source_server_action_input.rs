@@ -32,17 +32,11 @@ pub struct PutSourceServerActionInput {
     pub must_succeed_for_cutover: ::std::option::Option<bool>,
     /// <p>Source server post migration custom action parameters.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-        >,
-    >,
+    pub parameters:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>>,
     /// <p>Source server post migration custom action external parameters.</p>
     #[doc(hidden)]
-    pub external_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-    >,
+    pub external_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>>,
     /// <p>Source server post migration custom action description.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
@@ -93,20 +87,13 @@ impl PutSourceServerActionInput {
     /// <p>Source server post migration custom action parameters.</p>
     pub fn parameters(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>> {
         self.parameters.as_ref()
     }
     /// <p>Source server post migration custom action external parameters.</p>
     pub fn external_parameters(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>> {
         self.external_parameters.as_ref()
     }
     /// <p>Source server post migration custom action description.</p>
@@ -124,18 +111,14 @@ impl PutSourceServerActionInput {
 }
 impl PutSourceServerActionInput {
     /// Creates a new builder-style object to manufacture [`PutSourceServerActionInput`](crate::operation::put_source_server_action::PutSourceServerActionInput).
-    pub fn builder(
-    ) -> crate::operation::put_source_server_action::builders::PutSourceServerActionInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_source_server_action::builders::PutSourceServerActionInputBuilder {
         crate::operation::put_source_server_action::builders::PutSourceServerActionInputBuilder::default()
     }
 }
 
 /// A builder for [`PutSourceServerActionInput`](crate::operation::put_source_server_action::PutSourceServerActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSourceServerActionInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
@@ -146,33 +129,21 @@ pub struct PutSourceServerActionInputBuilder {
     pub(crate) active: ::std::option::Option<bool>,
     pub(crate) timeout_seconds: ::std::option::Option<i32>,
     pub(crate) must_succeed_for_cutover: ::std::option::Option<bool>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-        >,
-    >,
-    pub(crate) external_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-    >,
+    pub(crate) parameters:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>>,
+    pub(crate) external_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) category: ::std::option::Option<crate::types::ActionCategory>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl PutSourceServerActionInputBuilder {
     /// <p>Source server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Source server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -195,18 +166,12 @@ impl PutSourceServerActionInputBuilder {
         &self.action_name
     }
     /// <p>Source server post migration custom action document identifier.</p>
-    pub fn document_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Source server post migration custom action document identifier.</p>
-    pub fn set_document_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_identifier = input;
         self
     }
@@ -243,18 +208,12 @@ impl PutSourceServerActionInputBuilder {
         &self.action_id
     }
     /// <p>Source server post migration custom action document version.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Source server post migration custom action document version.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -322,12 +281,7 @@ impl PutSourceServerActionInputBuilder {
     /// <p>Source server post migration custom action parameters.</p>
     pub fn set_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>>,
     ) -> Self {
         self.parameters = input;
         self
@@ -335,12 +289,7 @@ impl PutSourceServerActionInputBuilder {
     /// <p>Source server post migration custom action parameters.</p>
     pub fn get_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>> {
         &self.parameters
     }
     /// Adds a key-value pair to `external_parameters`.
@@ -348,11 +297,7 @@ impl PutSourceServerActionInputBuilder {
     /// To override the contents of this collection use [`set_external_parameters`](Self::set_external_parameters).
     ///
     /// <p>Source server post migration custom action external parameters.</p>
-    pub fn external_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::SsmExternalParameter,
-    ) -> Self {
+    pub fn external_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SsmExternalParameter) -> Self {
         let mut hash_map = self.external_parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.external_parameters = ::std::option::Option::Some(hash_map);
@@ -361,9 +306,7 @@ impl PutSourceServerActionInputBuilder {
     /// <p>Source server post migration custom action external parameters.</p>
     pub fn set_external_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>>,
     ) -> Self {
         self.external_parameters = input;
         self
@@ -371,9 +314,7 @@ impl PutSourceServerActionInputBuilder {
     /// <p>Source server post migration custom action external parameters.</p>
     pub fn get_external_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>> {
         &self.external_parameters
     }
     /// <p>Source server post migration custom action description.</p>
@@ -396,10 +337,7 @@ impl PutSourceServerActionInputBuilder {
         self
     }
     /// <p>Source server post migration custom action category.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.category = input;
         self
     }
@@ -424,27 +362,23 @@ impl PutSourceServerActionInputBuilder {
     /// Consumes the builder and constructs a [`PutSourceServerActionInput`](crate::operation::put_source_server_action::PutSourceServerActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_source_server_action::PutSourceServerActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_source_server_action::PutSourceServerActionInput {
-                source_server_id: self.source_server_id,
-                action_name: self.action_name,
-                document_identifier: self.document_identifier,
-                order: self.order.unwrap_or_default(),
-                action_id: self.action_id,
-                document_version: self.document_version,
-                active: self.active,
-                timeout_seconds: self.timeout_seconds.unwrap_or_default(),
-                must_succeed_for_cutover: self.must_succeed_for_cutover,
-                parameters: self.parameters,
-                external_parameters: self.external_parameters,
-                description: self.description,
-                category: self.category,
-                account_id: self.account_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_source_server_action::PutSourceServerActionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_source_server_action::PutSourceServerActionInput {
+            source_server_id: self.source_server_id,
+            action_name: self.action_name,
+            document_identifier: self.document_identifier,
+            order: self.order.unwrap_or_default(),
+            action_id: self.action_id,
+            document_version: self.document_version,
+            active: self.active,
+            timeout_seconds: self.timeout_seconds.unwrap_or_default(),
+            must_succeed_for_cutover: self.must_succeed_for_cutover,
+            parameters: self.parameters,
+            external_parameters: self.external_parameters,
+            description: self.description,
+            category: self.category,
+            account_id: self.account_id,
+        })
     }
 }

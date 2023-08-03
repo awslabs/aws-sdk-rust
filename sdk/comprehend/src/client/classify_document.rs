@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`errors(Option<Vec<ErrorsListItem>>)`](crate::operation::classify_document::ClassifyDocumentOutput::errors): <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
     ///   - [`warnings(Option<Vec<WarningsListItem>>)`](crate::operation::classify_document::ClassifyDocumentOutput::warnings): <p>Warnings detected while processing the input document. The response includes a warning if there is a mismatch between the input document type and the model type associated with the endpoint that you specified. The response can also include warnings for individual pages that have a mismatch. </p>  <p>The field is empty if the system generated no warnings.</p>
     /// - On failure, responds with [`SdkError<ClassifyDocumentError>`](crate::operation::classify_document::ClassifyDocumentError)
-    pub fn classify_document(
-        &self,
-    ) -> crate::operation::classify_document::builders::ClassifyDocumentFluentBuilder {
-        crate::operation::classify_document::builders::ClassifyDocumentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn classify_document(&self) -> crate::operation::classify_document::builders::ClassifyDocumentFluentBuilder {
+        crate::operation::classify_document::builders::ClassifyDocumentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,17 +22,14 @@ impl UpdateDatasetEntriesInput {
 }
 impl UpdateDatasetEntriesInput {
     /// Creates a new builder-style object to manufacture [`UpdateDatasetEntriesInput`](crate::operation::update_dataset_entries::UpdateDatasetEntriesInput).
-    pub fn builder(
-    ) -> crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesInputBuilder {
+    pub fn builder() -> crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesInputBuilder {
         crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDatasetEntriesInput`](crate::operation::update_dataset_entries::UpdateDatasetEntriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDatasetEntriesInputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) changes: ::std::option::Option<crate::types::DatasetChanges>,
@@ -58,10 +55,7 @@ impl UpdateDatasetEntriesInputBuilder {
         self
     }
     /// <p> The changes that you want to make to the dataset. </p>
-    pub fn set_changes(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetChanges>,
-    ) -> Self {
+    pub fn set_changes(mut self, input: ::std::option::Option<crate::types::DatasetChanges>) -> Self {
         self.changes = input;
         self
     }
@@ -72,15 +66,11 @@ impl UpdateDatasetEntriesInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDatasetEntriesInput`](crate::operation::update_dataset_entries::UpdateDatasetEntriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_dataset_entries::UpdateDatasetEntriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_dataset_entries::UpdateDatasetEntriesInput {
-                dataset_arn: self.dataset_arn,
-                changes: self.changes,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_dataset_entries::UpdateDatasetEntriesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_dataset_entries::UpdateDatasetEntriesInput {
+            dataset_arn: self.dataset_arn,
+            changes: self.changes,
+        })
     }
 }

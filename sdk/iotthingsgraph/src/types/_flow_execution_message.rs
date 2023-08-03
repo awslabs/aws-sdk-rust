@@ -44,9 +44,7 @@ impl FlowExecutionMessage {
 
 /// A builder for [`FlowExecutionMessage`](crate::types::FlowExecutionMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlowExecutionMessageBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_type: ::std::option::Option<crate::types::FlowExecutionEventType>,
@@ -74,10 +72,7 @@ impl FlowExecutionMessageBuilder {
         self
     }
     /// <p>The type of flow event .</p>
-    pub fn set_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FlowExecutionEventType>,
-    ) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::FlowExecutionEventType>) -> Self {
         self.event_type = input;
         self
     }
@@ -91,10 +86,7 @@ impl FlowExecutionMessageBuilder {
         self
     }
     /// <p>The date and time when the message was last updated.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }

@@ -43,17 +43,14 @@ impl DescribeInstancesInput {
 }
 impl DescribeInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancesInput`](crate::operation::describe_instances::DescribeInstancesInput).
-    pub fn builder() -> crate::operation::describe_instances::builders::DescribeInstancesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_instances::builders::DescribeInstancesInputBuilder {
         crate::operation::describe_instances::builders::DescribeInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstancesInput`](crate::operation::describe_instances::DescribeInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstancesInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -135,18 +132,13 @@ impl DescribeInstancesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInstancesInput`](crate::operation::describe_instances::DescribeInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_instances::DescribeInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_instances::DescribeInstancesInput {
-                fleet_id: self.fleet_id,
-                instance_id: self.instance_id,
-                limit: self.limit,
-                next_token: self.next_token,
-                location: self.location,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_instances::DescribeInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_instances::DescribeInstancesInput {
+            fleet_id: self.fleet_id,
+            instance_id: self.instance_id,
+            limit: self.limit,
+            next_token: self.next_token,
+            location: self.location,
+        })
     }
 }

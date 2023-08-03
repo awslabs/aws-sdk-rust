@@ -5,8 +5,7 @@
 pub struct ListMetricSetsOutput {
     /// <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
     #[doc(hidden)]
-    pub metric_set_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricSetSummary>>,
+    pub metric_set_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetSummary>>,
     /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListMetricSetsOutput {
 }
 impl ListMetricSetsOutput {
     /// <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
-    pub fn metric_set_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MetricSetSummary]> {
+    pub fn metric_set_summary_list(&self) -> ::std::option::Option<&[crate::types::MetricSetSummary]> {
         self.metric_set_summary_list.as_deref()
     }
     /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
@@ -38,12 +35,9 @@ impl ListMetricSetsOutput {
 
 /// A builder for [`ListMetricSetsOutput`](crate::operation::list_metric_sets::ListMetricSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMetricSetsOutputBuilder {
-    pub(crate) metric_set_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricSetSummary>>,
+    pub(crate) metric_set_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListMetricSetsOutputBuilder {
         self
     }
     /// <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
-    pub fn set_metric_set_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetSummary>>,
-    ) -> Self {
+    pub fn set_metric_set_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetSummary>>) -> Self {
         self.metric_set_summary_list = input;
         self
     }
     /// <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
-    pub fn get_metric_set_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSetSummary>> {
+    pub fn get_metric_set_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSetSummary>> {
         &self.metric_set_summary_list
     }
     /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>

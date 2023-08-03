@@ -6,24 +6,15 @@
 pub struct GetIdentityMailFromDomainAttributesOutput {
     /// <p>A map of identities to custom MAIL FROM attributes.</p>
     #[doc(hidden)]
-    pub mail_from_domain_attributes: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::IdentityMailFromDomainAttributes,
-        >,
-    >,
+    pub mail_from_domain_attributes:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityMailFromDomainAttributes>>,
     _request_id: Option<String>,
 }
 impl GetIdentityMailFromDomainAttributesOutput {
     /// <p>A map of identities to custom MAIL FROM attributes.</p>
     pub fn mail_from_domain_attributes(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::IdentityMailFromDomainAttributes,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::IdentityMailFromDomainAttributes>> {
         self.mail_from_domain_attributes.as_ref()
     }
 }
@@ -34,23 +25,17 @@ impl ::aws_http::request_id::RequestId for GetIdentityMailFromDomainAttributesOu
 }
 impl GetIdentityMailFromDomainAttributesOutput {
     /// Creates a new builder-style object to manufacture [`GetIdentityMailFromDomainAttributesOutput`](crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput).
-    pub fn builder() -> crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesOutputBuilder {
         crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIdentityMailFromDomainAttributesOutput`](crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityMailFromDomainAttributesOutputBuilder {
-    pub(crate) mail_from_domain_attributes: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::IdentityMailFromDomainAttributes,
-        >,
-    >,
+    pub(crate) mail_from_domain_attributes:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityMailFromDomainAttributes>>,
     _request_id: Option<String>,
 }
 impl GetIdentityMailFromDomainAttributesOutputBuilder {
@@ -72,12 +57,7 @@ impl GetIdentityMailFromDomainAttributesOutputBuilder {
     /// <p>A map of identities to custom MAIL FROM attributes.</p>
     pub fn set_mail_from_domain_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::IdentityMailFromDomainAttributes,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityMailFromDomainAttributes>>,
     ) -> Self {
         self.mail_from_domain_attributes = input;
         self
@@ -85,12 +65,7 @@ impl GetIdentityMailFromDomainAttributesOutputBuilder {
     /// <p>A map of identities to custom MAIL FROM attributes.</p>
     pub fn get_mail_from_domain_attributes(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::IdentityMailFromDomainAttributes,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityMailFromDomainAttributes>> {
         &self.mail_from_domain_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -103,10 +78,9 @@ impl GetIdentityMailFromDomainAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetIdentityMailFromDomainAttributesOutput`](crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput).
-    pub fn build(self) -> crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput{
+    pub fn build(self) -> crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput {
         crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput {
-            mail_from_domain_attributes: self.mail_from_domain_attributes
-            ,
+            mail_from_domain_attributes: self.mail_from_domain_attributes,
             _request_id: self._request_id,
         }
     }

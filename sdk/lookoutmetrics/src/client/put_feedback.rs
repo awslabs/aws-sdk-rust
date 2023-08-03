@@ -7,9 +7,7 @@ impl super::Client {
     ///   - [`anomaly_group_time_series_feedback(AnomalyGroupTimeSeriesFeedback)`](crate::operation::put_feedback::builders::PutFeedbackFluentBuilder::anomaly_group_time_series_feedback) / [`set_anomaly_group_time_series_feedback(Option<AnomalyGroupTimeSeriesFeedback>)`](crate::operation::put_feedback::builders::PutFeedbackFluentBuilder::set_anomaly_group_time_series_feedback): <p>Feedback for an anomalous metric.</p>
     /// - On success, responds with [`PutFeedbackOutput`](crate::operation::put_feedback::PutFeedbackOutput)
     /// - On failure, responds with [`SdkError<PutFeedbackError>`](crate::operation::put_feedback::PutFeedbackError)
-    pub fn put_feedback(
-        &self,
-    ) -> crate::operation::put_feedback::builders::PutFeedbackFluentBuilder {
+    pub fn put_feedback(&self) -> crate::operation::put_feedback::builders::PutFeedbackFluentBuilder {
         crate::operation::put_feedback::builders::PutFeedbackFluentBuilder::new(self.handle.clone())
     }
 }

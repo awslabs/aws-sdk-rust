@@ -10,10 +10,7 @@ impl CreateExperienceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_experience::CreateExperienceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_experience::CreateExperienceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_experience::CreateExperienceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_experience();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateExperienceFluentBuilder {
         }
     }
     /// Access the CreateExperience as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_experience::builders::CreateExperienceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_experience::builders::CreateExperienceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateExperienceFluentBuilder {
             crate::operation::create_experience::CreateExperience,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_experience::CreateExperienceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_experience::CreateExperienceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateExperienceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateExperienceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_experience::CreateExperienceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_experience::CreateExperienceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_experience::CreateExperienceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateExperienceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_experience::CreateExperienceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_experience::CreateExperienceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_experience::CreateExperienceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateExperienceFluentBuilder {
             crate::operation::create_experience::CreateExperience,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_experience::CreateExperienceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_experience::CreateExperienceError>,
     > {
         self.customize_middleware().await
     }
@@ -170,17 +154,12 @@ impl CreateExperienceFluentBuilder {
         self
     }
     /// <p>Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperienceConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ExperienceConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
     /// <p>Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExperienceConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ExperienceConfiguration> {
         self.inner.get_configuration()
     }
     /// <p>A description for your Amazon Kendra experience.</p>

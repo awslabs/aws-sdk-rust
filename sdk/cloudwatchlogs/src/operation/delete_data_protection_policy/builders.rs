@@ -27,7 +27,7 @@ impl DeleteDataProtectionPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDataProtectionPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_data_protection_policy::builders::DeleteDataProtectionPolicyInputBuilder,
+    inner: crate::operation::delete_data_protection_policy::builders::DeleteDataProtectionPolicyInputBuilder,
 }
 impl DeleteDataProtectionPolicyFluentBuilder {
     /// Creates a new `DeleteDataProtectionPolicy`.
@@ -38,7 +38,7 @@ impl DeleteDataProtectionPolicyFluentBuilder {
         }
     }
     /// Access the DeleteDataProtectionPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_data_protection_policy::builders::DeleteDataProtectionPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_data_protection_policy::builders::DeleteDataProtectionPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DeleteDataProtectionPolicyFluentBuilder {
             crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DeleteDataProtectionPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DeleteDataProtectionPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DeleteDataProtectionPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl DeleteDataProtectionPolicyFluentBuilder {
             crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name or ARN of the log group that you want to delete the data protection policy for.</p>
-    pub fn log_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_identifier(input.into());
         self
     }
     /// <p>The name or ARN of the log group that you want to delete the data protection policy for.</p>
-    pub fn set_log_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_identifier(input);
         self
     }

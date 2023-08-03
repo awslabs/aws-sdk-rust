@@ -61,8 +61,7 @@ pub struct GetCampaignOutput {
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. </p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
     #[doc(hidden)]
-    pub data_destination_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>,
+    pub data_destination_configs: ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>,
     _request_id: Option<String>,
 }
 impl GetCampaignOutput {
@@ -141,9 +140,7 @@ impl GetCampaignOutput {
     /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. </p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
-    pub fn data_destination_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataDestinationConfig]> {
+    pub fn data_destination_configs(&self) -> ::std::option::Option<&[crate::types::DataDestinationConfig]> {
         self.data_destination_configs.as_deref()
     }
 }
@@ -161,9 +158,7 @@ impl GetCampaignOutput {
 
 /// A builder for [`GetCampaignOutput`](crate::operation::get_campaign::GetCampaignOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCampaignOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -178,14 +173,12 @@ pub struct GetCampaignOutputBuilder {
     pub(crate) spooling_mode: ::std::option::Option<crate::types::SpoolingMode>,
     pub(crate) compression: ::std::option::Option<crate::types::Compression>,
     pub(crate) priority: ::std::option::Option<i32>,
-    pub(crate) signals_to_collect:
-        ::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>>,
+    pub(crate) signals_to_collect: ::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>>,
     pub(crate) collection_scheme: ::std::option::Option<crate::types::CollectionScheme>,
     pub(crate) data_extra_dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) data_destination_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>,
+    pub(crate) data_destination_configs: ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>,
     _request_id: Option<String>,
 }
 impl GetCampaignOutputBuilder {
@@ -232,18 +225,12 @@ impl GetCampaignOutputBuilder {
         &self.description
     }
     /// <p> The ARN of a signal catalog. </p>
-    pub fn signal_catalog_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signal_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signal_catalog_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ARN of a signal catalog. </p>
-    pub fn set_signal_catalog_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signal_catalog_arn = input;
         self
     }
@@ -271,10 +258,7 @@ impl GetCampaignOutputBuilder {
         self
     }
     /// <p>The state of the campaign. The status can be one of: <code>CREATING</code>, <code>WAITING_FOR_APPROVAL</code>, <code>RUNNING</code>, and <code>SUSPENDED</code>. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CampaignStatus>) -> Self {
         self.status = input;
         self
     }
@@ -288,10 +272,7 @@ impl GetCampaignOutputBuilder {
         self
     }
     /// <p> The time, in milliseconds, to deliver a campaign after it was approved.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -305,10 +286,7 @@ impl GetCampaignOutputBuilder {
         self
     }
     /// <p> The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires.</p>
-    pub fn set_expiry_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiry_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiry_time = input;
         self
     }
@@ -322,10 +300,7 @@ impl GetCampaignOutputBuilder {
         self
     }
     /// <p> How long (in seconds) to collect raw data after a triggering event initiates the collection. </p>
-    pub fn set_post_trigger_collection_duration(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_post_trigger_collection_duration(mut self, input: ::std::option::Option<i64>) -> Self {
         self.post_trigger_collection_duration = input;
         self
     }
@@ -339,10 +314,7 @@ impl GetCampaignOutputBuilder {
         self
     }
     /// <p> Option for a vehicle to send diagnostic trouble codes to Amazon Web Services IoT FleetWise. </p>
-    pub fn set_diagnostics_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DiagnosticsMode>,
-    ) -> Self {
+    pub fn set_diagnostics_mode(mut self, input: ::std::option::Option<crate::types::DiagnosticsMode>) -> Self {
         self.diagnostics_mode = input;
         self
     }
@@ -356,10 +328,7 @@ impl GetCampaignOutputBuilder {
         self
     }
     /// <p> Whether to store collected data after a vehicle lost a connection with the cloud. After a connection is re-established, the data is automatically forwarded to Amazon Web Services IoT FleetWise. </p>
-    pub fn set_spooling_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::SpoolingMode>,
-    ) -> Self {
+    pub fn set_spooling_mode(mut self, input: ::std::option::Option<crate::types::SpoolingMode>) -> Self {
         self.spooling_mode = input;
         self
     }
@@ -373,10 +342,7 @@ impl GetCampaignOutputBuilder {
         self
     }
     /// <p> Whether to compress signals before transmitting data to Amazon Web Services IoT FleetWise. If <code>OFF</code> is specified, the signals aren't compressed. If it's not specified, <code>SNAPPY</code> is used. </p>
-    pub fn set_compression(
-        mut self,
-        input: ::std::option::Option<crate::types::Compression>,
-    ) -> Self {
+    pub fn set_compression(mut self, input: ::std::option::Option<crate::types::Compression>) -> Self {
         self.compression = input;
         self
     }
@@ -410,17 +376,12 @@ impl GetCampaignOutputBuilder {
         self
     }
     /// <p> Information about a list of signals to collect data on. </p>
-    pub fn set_signals_to_collect(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>>,
-    ) -> Self {
+    pub fn set_signals_to_collect(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>>) -> Self {
         self.signals_to_collect = input;
         self
     }
     /// <p> Information about a list of signals to collect data on. </p>
-    pub fn get_signals_to_collect(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>> {
+    pub fn get_signals_to_collect(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>> {
         &self.signals_to_collect
     }
     /// <p> Information about the data collection scheme associated with the campaign. </p>
@@ -429,10 +390,7 @@ impl GetCampaignOutputBuilder {
         self
     }
     /// <p> Information about the data collection scheme associated with the campaign. </p>
-    pub fn set_collection_scheme(
-        mut self,
-        input: ::std::option::Option<crate::types::CollectionScheme>,
-    ) -> Self {
+    pub fn set_collection_scheme(mut self, input: ::std::option::Option<crate::types::CollectionScheme>) -> Self {
         self.collection_scheme = input;
         self
     }
@@ -445,27 +403,19 @@ impl GetCampaignOutputBuilder {
     /// To override the contents of this collection use [`set_data_extra_dimensions`](Self::set_data_extra_dimensions).
     ///
     /// <p> A list of vehicle attributes associated with the campaign. </p>
-    pub fn data_extra_dimensions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_extra_dimensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.data_extra_dimensions.unwrap_or_default();
         v.push(input.into());
         self.data_extra_dimensions = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of vehicle attributes associated with the campaign. </p>
-    pub fn set_data_extra_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_data_extra_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.data_extra_dimensions = input;
         self
     }
     /// <p> A list of vehicle attributes associated with the campaign. </p>
-    pub fn get_data_extra_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_data_extra_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.data_extra_dimensions
     }
     /// <p> The time the campaign was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
@@ -474,10 +424,7 @@ impl GetCampaignOutputBuilder {
         self
     }
     /// <p> The time the campaign was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -491,17 +438,12 @@ impl GetCampaignOutputBuilder {
         self
     }
     /// <p>The last time the campaign was modified.</p>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
     /// <p>The last time the campaign was modified.</p>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     /// Appends an item to `data_destination_configs`.
@@ -520,19 +462,14 @@ impl GetCampaignOutputBuilder {
     /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. </p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
-    pub fn set_data_destination_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>,
-    ) -> Self {
+    pub fn set_data_destination_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>) -> Self {
         self.data_destination_configs = input;
         self
     }
     /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. </p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
-    pub fn get_data_destination_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>> {
+    pub fn get_data_destination_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>> {
         &self.data_destination_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

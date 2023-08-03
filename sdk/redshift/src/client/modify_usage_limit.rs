@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`breach_action(Option<UsageLimitBreachAction>)`](crate::operation::modify_usage_limit::ModifyUsageLimitOutput::breach_action): <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>  <ul>   <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li>   <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>   <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>  </ul>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::modify_usage_limit::ModifyUsageLimitOutput::tags): <p>A list of tag instances.</p>
     /// - On failure, responds with [`SdkError<ModifyUsageLimitError>`](crate::operation::modify_usage_limit::ModifyUsageLimitError)
-    pub fn modify_usage_limit(
-        &self,
-    ) -> crate::operation::modify_usage_limit::builders::ModifyUsageLimitFluentBuilder {
-        crate::operation::modify_usage_limit::builders::ModifyUsageLimitFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_usage_limit(&self) -> crate::operation::modify_usage_limit::builders::ModifyUsageLimitFluentBuilder {
+        crate::operation::modify_usage_limit::builders::ModifyUsageLimitFluentBuilder::new(self.handle.clone())
     }
 }

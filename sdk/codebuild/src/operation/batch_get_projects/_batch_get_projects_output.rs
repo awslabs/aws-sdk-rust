@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for BatchGetProjectsOutput {
 }
 impl BatchGetProjectsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetProjectsOutput`](crate::operation::batch_get_projects::BatchGetProjectsOutput).
-    pub fn builder() -> crate::operation::batch_get_projects::builders::BatchGetProjectsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_projects::builders::BatchGetProjectsOutputBuilder {
         crate::operation::batch_get_projects::builders::BatchGetProjectsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetProjectsOutput`](crate::operation::batch_get_projects::BatchGetProjectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetProjectsOutputBuilder {
     pub(crate) projects: ::std::option::Option<::std::vec::Vec<crate::types::Project>>,
     pub(crate) projects_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,10 +54,7 @@ impl BatchGetProjectsOutputBuilder {
         self
     }
     /// <p>Information about the requested build projects.</p>
-    pub fn set_projects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Project>>,
-    ) -> Self {
+    pub fn set_projects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Project>>) -> Self {
         self.projects = input;
         self
     }
@@ -73,27 +67,19 @@ impl BatchGetProjectsOutputBuilder {
     /// To override the contents of this collection use [`set_projects_not_found`](Self::set_projects_not_found).
     ///
     /// <p>The names of build projects for which information could not be found.</p>
-    pub fn projects_not_found(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn projects_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.projects_not_found.unwrap_or_default();
         v.push(input.into());
         self.projects_not_found = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of build projects for which information could not be found.</p>
-    pub fn set_projects_not_found(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_projects_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.projects_not_found = input;
         self
     }
     /// <p>The names of build projects for which information could not be found.</p>
-    pub fn get_projects_not_found(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_projects_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.projects_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -20,9 +20,7 @@ impl GetAssessmentOutput {
         self.id.as_deref()
     }
     /// <p> Detailed information about the assessment. </p>
-    pub fn data_collection_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataCollectionDetails> {
+    pub fn data_collection_details(&self) -> ::std::option::Option<&crate::types::DataCollectionDetails> {
         self.data_collection_details.as_ref()
     }
     /// <p>List of criteria for assessment.</p>
@@ -44,14 +42,11 @@ impl GetAssessmentOutput {
 
 /// A builder for [`GetAssessmentOutput`](crate::operation::get_assessment::GetAssessmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssessmentOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) data_collection_details: ::std::option::Option<crate::types::DataCollectionDetails>,
-    pub(crate) assessment_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>>,
+    pub(crate) assessment_targets: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>>,
     _request_id: Option<String>,
 }
 impl GetAssessmentOutputBuilder {
@@ -75,17 +70,12 @@ impl GetAssessmentOutputBuilder {
         self
     }
     /// <p> Detailed information about the assessment. </p>
-    pub fn set_data_collection_details(
-        mut self,
-        input: ::std::option::Option<crate::types::DataCollectionDetails>,
-    ) -> Self {
+    pub fn set_data_collection_details(mut self, input: ::std::option::Option<crate::types::DataCollectionDetails>) -> Self {
         self.data_collection_details = input;
         self
     }
     /// <p> Detailed information about the assessment. </p>
-    pub fn get_data_collection_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataCollectionDetails> {
+    pub fn get_data_collection_details(&self) -> &::std::option::Option<crate::types::DataCollectionDetails> {
         &self.data_collection_details
     }
     /// Appends an item to `assessment_targets`.
@@ -100,17 +90,12 @@ impl GetAssessmentOutputBuilder {
         self
     }
     /// <p>List of criteria for assessment.</p>
-    pub fn set_assessment_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>>,
-    ) -> Self {
+    pub fn set_assessment_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>>) -> Self {
         self.assessment_targets = input;
         self
     }
     /// <p>List of criteria for assessment.</p>
-    pub fn get_assessment_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>> {
+    pub fn get_assessment_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>> {
         &self.assessment_targets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

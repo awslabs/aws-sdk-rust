@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for RetrieveTapeRecoveryPointOutput {
 }
 impl RetrieveTapeRecoveryPointOutput {
     /// Creates a new builder-style object to manufacture [`RetrieveTapeRecoveryPointOutput`](crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointOutput).
-    pub fn builder() -> crate::operation::retrieve_tape_recovery_point::builders::RetrieveTapeRecoveryPointOutputBuilder{
+    pub fn builder() -> crate::operation::retrieve_tape_recovery_point::builders::RetrieveTapeRecoveryPointOutputBuilder {
         crate::operation::retrieve_tape_recovery_point::builders::RetrieveTapeRecoveryPointOutputBuilder::default()
     }
 }
 
 /// A builder for [`RetrieveTapeRecoveryPointOutput`](crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetrieveTapeRecoveryPointOutputBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -61,9 +59,7 @@ impl RetrieveTapeRecoveryPointOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RetrieveTapeRecoveryPointOutput`](crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointOutput {
+    pub fn build(self) -> crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointOutput {
         crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointOutput {
             tape_arn: self.tape_arn,
             _request_id: self._request_id,

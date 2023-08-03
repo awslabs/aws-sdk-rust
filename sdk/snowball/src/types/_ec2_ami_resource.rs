@@ -30,9 +30,7 @@ impl Ec2AmiResource {
 
 /// A builder for [`Ec2AmiResource`](crate::types::Ec2AmiResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2AmiResourceBuilder {
     pub(crate) ami_id: ::std::option::Option<::std::string::String>,
     pub(crate) snowball_ami_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl Ec2AmiResourceBuilder {
         &self.ami_id
     }
     /// <p>The ID of the AMI on the Snow device.</p>
-    pub fn snowball_ami_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snowball_ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snowball_ami_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the AMI on the Snow device.</p>
-    pub fn set_snowball_ami_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snowball_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snowball_ami_id = input;
         self
     }

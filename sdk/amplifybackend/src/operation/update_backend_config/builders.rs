@@ -37,9 +37,7 @@ impl UpdateBackendConfigFluentBuilder {
         }
     }
     /// Access the UpdateBackendConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_backend_config::builders::UpdateBackendConfigInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_backend_config::builders::UpdateBackendConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateBackendConfigFluentBuilder {
             crate::operation::update_backend_config::UpdateBackendConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_backend_config::UpdateBackendConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_backend_config::UpdateBackendConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateBackendConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateBackendConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_backend_config::UpdateBackendConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_backend_config::UpdateBackendConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_backend_config::UpdateBackendConfigError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateBackendConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_backend_config::UpdateBackendConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_backend_config::UpdateBackendConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_backend_config::UpdateBackendConfigError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateBackendConfigFluentBuilder {
             crate::operation::update_backend_config::UpdateBackendConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_backend_config::UpdateBackendConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_backend_config::UpdateBackendConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -142,17 +129,12 @@ impl UpdateBackendConfigFluentBuilder {
         self
     }
     /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
-    pub fn set_login_auth_config(
-        mut self,
-        input: ::std::option::Option<crate::types::LoginAuthConfigReqObj>,
-    ) -> Self {
+    pub fn set_login_auth_config(mut self, input: ::std::option::Option<crate::types::LoginAuthConfigReqObj>) -> Self {
         self.inner = self.inner.set_login_auth_config(input);
         self
     }
     /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
-    pub fn get_login_auth_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoginAuthConfigReqObj> {
+    pub fn get_login_auth_config(&self) -> &::std::option::Option<crate::types::LoginAuthConfigReqObj> {
         self.inner.get_login_auth_config()
     }
 }

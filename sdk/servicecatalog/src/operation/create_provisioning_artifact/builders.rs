@@ -28,7 +28,7 @@ impl CreateProvisioningArtifactInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProvisioningArtifactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_provisioning_artifact::builders::CreateProvisioningArtifactInputBuilder,
+    inner: crate::operation::create_provisioning_artifact::builders::CreateProvisioningArtifactInputBuilder,
 }
 impl CreateProvisioningArtifactFluentBuilder {
     /// Creates a new `CreateProvisioningArtifact`.
@@ -39,7 +39,7 @@ impl CreateProvisioningArtifactFluentBuilder {
         }
     }
     /// Access the CreateProvisioningArtifact as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_provisioning_artifact::builders::CreateProvisioningArtifactInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_provisioning_artifact::builders::CreateProvisioningArtifactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl CreateProvisioningArtifactFluentBuilder {
             crate::operation::create_provisioning_artifact::CreateProvisioningArtifact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_provisioning_artifact::CreateProvisioningArtifactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_provisioning_artifact::CreateProvisioningArtifactError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl CreateProvisioningArtifactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl CreateProvisioningArtifactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_provisioning_artifact::CreateProvisioningArtifactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_provisioning_artifact::CreateProvisioningArtifactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_provisioning_artifact::CreateProvisioningArtifactError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl CreateProvisioningArtifactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_provisioning_artifact::CreateProvisioningArtifactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_provisioning_artifact::CreateProvisioningArtifactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_provisioning_artifact::CreateProvisioningArtifactError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl CreateProvisioningArtifactFluentBuilder {
             crate::operation::create_provisioning_artifact::CreateProvisioningArtifact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_provisioning_artifact::CreateProvisioningArtifactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_provisioning_artifact::CreateProvisioningArtifactError>,
     > {
         self.customize_middleware().await
     }
@@ -127,10 +116,7 @@ impl CreateProvisioningArtifactFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -139,10 +125,7 @@ impl CreateProvisioningArtifactFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -174,32 +157,21 @@ impl CreateProvisioningArtifactFluentBuilder {
         self
     }
     /// <p>The configuration for the provisioning artifact.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisioningArtifactProperties>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactProperties>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
     /// <p>The configuration for the provisioning artifact.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisioningArtifactProperties> {
+    pub fn get_parameters(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactProperties> {
         self.inner.get_parameters()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }

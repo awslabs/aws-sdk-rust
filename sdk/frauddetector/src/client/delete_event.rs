@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`delete_audit_history(bool)`](crate::operation::delete_event::builders::DeleteEventFluentBuilder::delete_audit_history) / [`set_delete_audit_history(Option<bool>)`](crate::operation::delete_event::builders::DeleteEventFluentBuilder::set_delete_audit_history): <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>, </p>
     /// - On success, responds with [`DeleteEventOutput`](crate::operation::delete_event::DeleteEventOutput)
     /// - On failure, responds with [`SdkError<DeleteEventError>`](crate::operation::delete_event::DeleteEventError)
-    pub fn delete_event(
-        &self,
-    ) -> crate::operation::delete_event::builders::DeleteEventFluentBuilder {
+    pub fn delete_event(&self) -> crate::operation::delete_event::builders::DeleteEventFluentBuilder {
         crate::operation::delete_event::builders::DeleteEventFluentBuilder::new(self.handle.clone())
     }
 }

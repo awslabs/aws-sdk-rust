@@ -28,9 +28,7 @@ impl ListChannelModeratorsInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelModerators.html">ListChannelModerators</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by ListChannelModerators in the Amazon Chime SDK Messaging Namespace"
-)]
+#[deprecated(note = "Replaced by ListChannelModerators in the Amazon Chime SDK Messaging Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListChannelModeratorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -45,10 +43,7 @@ impl ListChannelModeratorsFluentBuilder {
         }
     }
     /// Access the ListChannelModerators as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_channel_moderators::builders::ListChannelModeratorsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_channel_moderators::builders::ListChannelModeratorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +55,7 @@ impl ListChannelModeratorsFluentBuilder {
             crate::operation::list_channel_moderators::ListChannelModerators,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_moderators::ListChannelModeratorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_moderators::ListChannelModeratorsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +65,7 @@ impl ListChannelModeratorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +74,7 @@ impl ListChannelModeratorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_channel_moderators::ListChannelModeratorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_moderators::ListChannelModeratorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_moderators::ListChannelModeratorsError>,
     > {
         let op = self
             .inner
@@ -109,9 +97,7 @@ impl ListChannelModeratorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_channel_moderators::ListChannelModeratorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_moderators::ListChannelModeratorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_moderators::ListChannelModeratorsError>,
     > {
         self.send_middleware().await
     }
@@ -125,22 +111,15 @@ impl ListChannelModeratorsFluentBuilder {
             crate::operation::list_channel_moderators::ListChannelModerators,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_moderators::ListChannelModeratorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_moderators::ListChannelModeratorsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_channel_moderators::paginator::ListChannelModeratorsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_channel_moderators::paginator::ListChannelModeratorsPaginator {
-        crate::operation::list_channel_moderators::paginator::ListChannelModeratorsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_channel_moderators::paginator::ListChannelModeratorsPaginator {
+        crate::operation::list_channel_moderators::paginator::ListChannelModeratorsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

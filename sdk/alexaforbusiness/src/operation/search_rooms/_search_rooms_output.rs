@@ -42,9 +42,7 @@ impl SearchRoomsOutput {
 
 /// A builder for [`SearchRoomsOutput`](crate::operation::search_rooms::SearchRoomsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchRoomsOutputBuilder {
     pub(crate) rooms: ::std::option::Option<::std::vec::Vec<crate::types::RoomData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -64,10 +62,7 @@ impl SearchRoomsOutputBuilder {
         self
     }
     /// <p>The rooms that meet the specified set of filter criteria, in sort order.</p>
-    pub fn set_rooms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoomData>>,
-    ) -> Self {
+    pub fn set_rooms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoomData>>) -> Self {
         self.rooms = input;
         self
     }

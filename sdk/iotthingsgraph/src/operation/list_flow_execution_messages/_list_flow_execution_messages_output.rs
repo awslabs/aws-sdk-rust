@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListFlowExecutionMessagesOutput {
 }
 impl ListFlowExecutionMessagesOutput {
     /// Creates a new builder-style object to manufacture [`ListFlowExecutionMessagesOutput`](crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput).
-    pub fn builder() -> crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesOutputBuilder{
+    pub fn builder() -> crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesOutputBuilder {
         crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFlowExecutionMessagesOutput`](crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFlowExecutionMessagesOutputBuilder {
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::FlowExecutionMessage>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListFlowExecutionMessagesOutputBuilder {
         self
     }
     /// <p>A list of objects that contain information about events in the specified flow execution.</p>
-    pub fn set_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FlowExecutionMessage>>,
-    ) -> Self {
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlowExecutionMessage>>) -> Self {
         self.messages = input;
         self
     }
     /// <p>A list of objects that contain information about events in the specified flow execution.</p>
-    pub fn get_messages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowExecutionMessage>> {
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowExecutionMessage>> {
         &self.messages
     }
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
@@ -93,9 +86,7 @@ impl ListFlowExecutionMessagesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFlowExecutionMessagesOutput`](crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput {
+    pub fn build(self) -> crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput {
         crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput {
             messages: self.messages,
             next_token: self.next_token,

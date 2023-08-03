@@ -9,8 +9,7 @@ pub struct SecretsManagerSecretResourceData {
     pub arn: ::std::option::Option<::std::string::String>,
     /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
     #[doc(hidden)]
-    pub additional_staging_labels_to_download:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub additional_staging_labels_to_download: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SecretsManagerSecretResourceData {
     /// The ARN of the Secrets Manager secret to make available on the core. The value of the secret's latest version (represented by the ''AWSCURRENT'' staging label) is included by default.
@@ -18,9 +17,7 @@ impl SecretsManagerSecretResourceData {
         self.arn.as_deref()
     }
     /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
-    pub fn additional_staging_labels_to_download(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn additional_staging_labels_to_download(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.additional_staging_labels_to_download.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl SecretsManagerSecretResourceData {
 
 /// A builder for [`SecretsManagerSecretResourceData`](crate::types::SecretsManagerSecretResourceData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecretsManagerSecretResourceDataBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_staging_labels_to_download:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) additional_staging_labels_to_download: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SecretsManagerSecretResourceDataBuilder {
     /// The ARN of the Secrets Manager secret to make available on the core. The value of the secret's latest version (represented by the ''AWSCURRENT'' staging label) is included by default.
@@ -61,29 +55,19 @@ impl SecretsManagerSecretResourceDataBuilder {
     /// To override the contents of this collection use [`set_additional_staging_labels_to_download`](Self::set_additional_staging_labels_to_download).
     ///
     /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
-    pub fn additional_staging_labels_to_download(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self
-            .additional_staging_labels_to_download
-            .unwrap_or_default();
+    pub fn additional_staging_labels_to_download(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.additional_staging_labels_to_download.unwrap_or_default();
         v.push(input.into());
         self.additional_staging_labels_to_download = ::std::option::Option::Some(v);
         self
     }
     /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
-    pub fn set_additional_staging_labels_to_download(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_additional_staging_labels_to_download(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.additional_staging_labels_to_download = input;
         self
     }
     /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
-    pub fn get_additional_staging_labels_to_download(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_staging_labels_to_download(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.additional_staging_labels_to_download
     }
     /// Consumes the builder and constructs a [`SecretsManagerSecretResourceData`](crate::types::SecretsManagerSecretResourceData).

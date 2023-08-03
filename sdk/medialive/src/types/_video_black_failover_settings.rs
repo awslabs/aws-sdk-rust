@@ -30,9 +30,7 @@ impl VideoBlackFailoverSettings {
 
 /// A builder for [`VideoBlackFailoverSettings`](crate::types::VideoBlackFailoverSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VideoBlackFailoverSettingsBuilder {
     pub(crate) black_detect_threshold: ::std::option::Option<f64>,
     pub(crate) video_black_threshold_msec: ::std::option::Option<i32>,

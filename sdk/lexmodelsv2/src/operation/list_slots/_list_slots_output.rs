@@ -63,9 +63,7 @@ impl ListSlotsOutput {
 
 /// A builder for [`ListSlotsOutput`](crate::operation::list_slots::ListSlotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSlotsOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -144,17 +142,12 @@ impl ListSlotsOutputBuilder {
         self
     }
     /// <p>Summary information for the slots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slots available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn set_slot_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SlotSummary>>,
-    ) -> Self {
+    pub fn set_slot_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotSummary>>) -> Self {
         self.slot_summaries = input;
         self
     }
     /// <p>Summary information for the slots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slots available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn get_slot_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotSummary>> {
+    pub fn get_slot_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotSummary>> {
         &self.slot_summaries
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListSlots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListSlots</code> operation request to get the next page of results.</p>

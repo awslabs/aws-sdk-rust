@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateServicePrimaryTaskSetOutput`](crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetOutput) with field(s):
     ///   - [`task_set(Option<TaskSet>)`](crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetOutput::task_set): <p>The details about the task set.</p>
     /// - On failure, responds with [`SdkError<UpdateServicePrimaryTaskSetError>`](crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetError)
-    pub fn update_service_primary_task_set(&self) -> crate::operation::update_service_primary_task_set::builders::UpdateServicePrimaryTaskSetFluentBuilder{
+    pub fn update_service_primary_task_set(
+        &self,
+    ) -> crate::operation::update_service_primary_task_set::builders::UpdateServicePrimaryTaskSetFluentBuilder {
         crate::operation::update_service_primary_task_set::builders::UpdateServicePrimaryTaskSetFluentBuilder::new(self.handle.clone())
     }
 }

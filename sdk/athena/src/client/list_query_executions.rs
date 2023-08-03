@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`query_execution_ids(Option<Vec<String>>)`](crate::operation::list_query_executions::ListQueryExecutionsOutput::query_execution_ids): <p>The unique IDs of each query execution as an array of strings.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_query_executions::ListQueryExecutionsOutput::next_token): <p>A token to be used by the next request if this request is truncated.</p>
     /// - On failure, responds with [`SdkError<ListQueryExecutionsError>`](crate::operation::list_query_executions::ListQueryExecutionsError)
-    pub fn list_query_executions(
-        &self,
-    ) -> crate::operation::list_query_executions::builders::ListQueryExecutionsFluentBuilder {
-        crate::operation::list_query_executions::builders::ListQueryExecutionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_query_executions(&self) -> crate::operation::list_query_executions::builders::ListQueryExecutionsFluentBuilder {
+        crate::operation::list_query_executions::builders::ListQueryExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

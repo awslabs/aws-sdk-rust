@@ -58,13 +58,10 @@ impl Ec2InstanceAggregation {
 
 /// A builder for [`Ec2InstanceAggregation`](crate::types::Ec2InstanceAggregation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2InstanceAggregationBuilder {
     pub(crate) amis: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) operating_systems:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) operating_systems: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) instance_tags: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
@@ -83,10 +80,7 @@ impl Ec2InstanceAggregationBuilder {
         self
     }
     /// <p>The AMI IDs associated with the Amazon EC2 instances to aggregate findings for.</p>
-    pub fn set_amis(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_amis(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.amis = input;
         self
     }
@@ -106,17 +100,12 @@ impl Ec2InstanceAggregationBuilder {
         self
     }
     /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and underscore separated, examples are <code>ORACLE_LINUX_7</code> and <code>ALPINE_LINUX_3_8</code>.</p>
-    pub fn set_operating_systems(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_operating_systems(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.operating_systems = input;
         self
     }
     /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and underscore separated, examples are <code>ORACLE_LINUX_7</code> and <code>ALPINE_LINUX_3_8</code>.</p>
-    pub fn get_operating_systems(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_operating_systems(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.operating_systems
     }
     /// Appends an item to `instance_ids`.
@@ -131,17 +120,12 @@ impl Ec2InstanceAggregationBuilder {
         self
     }
     /// <p>The Amazon EC2 instance IDs to aggregate findings for.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>The Amazon EC2 instance IDs to aggregate findings for.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.instance_ids
     }
     /// Appends an item to `instance_tags`.
@@ -156,17 +140,12 @@ impl Ec2InstanceAggregationBuilder {
         self
     }
     /// <p>The Amazon EC2 instance tags to aggregate findings for.</p>
-    pub fn set_instance_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
-    ) -> Self {
+    pub fn set_instance_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>) -> Self {
         self.instance_tags = input;
         self
     }
     /// <p>The Amazon EC2 instance tags to aggregate findings for.</p>
-    pub fn get_instance_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
+    pub fn get_instance_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
         &self.instance_tags
     }
     /// <p>The order to sort results by.</p>
@@ -189,10 +168,7 @@ impl Ec2InstanceAggregationBuilder {
         self
     }
     /// <p>The value to sort results by.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2InstanceSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::Ec2InstanceSortBy>) -> Self {
         self.sort_by = input;
         self
     }

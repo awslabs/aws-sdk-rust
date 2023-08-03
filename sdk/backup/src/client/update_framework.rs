@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`framework_arn(Option<String>)`](crate::operation::update_framework::UpdateFrameworkOutput::framework_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::update_framework::UpdateFrameworkOutput::creation_time): <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     /// - On failure, responds with [`SdkError<UpdateFrameworkError>`](crate::operation::update_framework::UpdateFrameworkError)
-    pub fn update_framework(
-        &self,
-    ) -> crate::operation::update_framework::builders::UpdateFrameworkFluentBuilder {
-        crate::operation::update_framework::builders::UpdateFrameworkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_framework(&self) -> crate::operation::update_framework::builders::UpdateFrameworkFluentBuilder {
+        crate::operation::update_framework::builders::UpdateFrameworkFluentBuilder::new(self.handle.clone())
     }
 }

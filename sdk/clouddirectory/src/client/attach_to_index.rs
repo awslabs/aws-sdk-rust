@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AttachToIndexOutput`](crate::operation::attach_to_index::AttachToIndexOutput) with field(s):
     ///   - [`attached_object_identifier(Option<String>)`](crate::operation::attach_to_index::AttachToIndexOutput::attached_object_identifier): <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
     /// - On failure, responds with [`SdkError<AttachToIndexError>`](crate::operation::attach_to_index::AttachToIndexError)
-    pub fn attach_to_index(
-        &self,
-    ) -> crate::operation::attach_to_index::builders::AttachToIndexFluentBuilder {
-        crate::operation::attach_to_index::builders::AttachToIndexFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn attach_to_index(&self) -> crate::operation::attach_to_index::builders::AttachToIndexFluentBuilder {
+        crate::operation::attach_to_index::builders::AttachToIndexFluentBuilder::new(self.handle.clone())
     }
 }

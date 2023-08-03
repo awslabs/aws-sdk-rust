@@ -11,8 +11,7 @@ pub struct AutoScalingGroupRecommendationOption {
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
     #[doc(hidden)]
-    pub projected_utilization_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
+    pub projected_utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
     /// <p>The performance risk of the Auto Scaling group configuration recommendation.</p>
     /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs of your workload. Compute Optimizer calculates an individual performance risk score for each specification of the recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and network PPS. The performance risk of the recommended instance is calculated as the maximum performance risk score across the analyzed resource specifications.</p>
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning that the recommended resource is predicted to always provide enough hardware capability. The higher the performance risk is, the more likely you should validate whether the recommendation will meet the performance requirements of your workload before migrating your resource.</p>
@@ -32,17 +31,13 @@ pub struct AutoScalingGroupRecommendationOption {
 }
 impl AutoScalingGroupRecommendationOption {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
-    pub fn configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoScalingGroupConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::AutoScalingGroupConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
-    pub fn projected_utilization_metrics(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UtilizationMetric]> {
+    pub fn projected_utilization_metrics(&self) -> ::std::option::Option<&[crate::types::UtilizationMetric]> {
         self.projected_utilization_metrics.as_deref()
     }
     /// <p>The performance risk of the Auto Scaling group configuration recommendation.</p>
@@ -75,13 +70,10 @@ impl AutoScalingGroupRecommendationOption {
 
 /// A builder for [`AutoScalingGroupRecommendationOption`](crate::types::AutoScalingGroupRecommendationOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoScalingGroupRecommendationOptionBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::AutoScalingGroupConfiguration>,
-    pub(crate) projected_utilization_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
+    pub(crate) projected_utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
     pub(crate) performance_risk: ::std::option::Option<f64>,
     pub(crate) rank: ::std::option::Option<i32>,
     pub(crate) savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
@@ -94,17 +86,12 @@ impl AutoScalingGroupRecommendationOptionBuilder {
         self
     }
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingGroupConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AutoScalingGroupConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoScalingGroupConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AutoScalingGroupConfiguration> {
         &self.configuration
     }
     /// Appends an item to `projected_utilization_metrics`.
@@ -123,19 +110,14 @@ impl AutoScalingGroupRecommendationOptionBuilder {
     /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
-    pub fn set_projected_utilization_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
-    ) -> Self {
+    pub fn set_projected_utilization_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>) -> Self {
         self.projected_utilization_metrics = input;
         self
     }
     /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
-    pub fn get_projected_utilization_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>> {
+    pub fn get_projected_utilization_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>> {
         &self.projected_utilization_metrics
     }
     /// <p>The performance risk of the Auto Scaling group configuration recommendation.</p>
@@ -181,17 +163,12 @@ impl AutoScalingGroupRecommendationOptionBuilder {
         self
     }
     /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
-    pub fn set_savings_opportunity(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsOpportunity>,
-    ) -> Self {
+    pub fn set_savings_opportunity(mut self, input: ::std::option::Option<crate::types::SavingsOpportunity>) -> Self {
         self.savings_opportunity = input;
         self
     }
     /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
-    pub fn get_savings_opportunity(
-        &self,
-    ) -> &::std::option::Option<crate::types::SavingsOpportunity> {
+    pub fn get_savings_opportunity(&self) -> &::std::option::Option<crate::types::SavingsOpportunity> {
         &self.savings_opportunity
     }
     /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
@@ -202,10 +179,7 @@ impl AutoScalingGroupRecommendationOptionBuilder {
     }
     /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
     /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
-    pub fn set_migration_effort(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationEffort>,
-    ) -> Self {
+    pub fn set_migration_effort(mut self, input: ::std::option::Option<crate::types::MigrationEffort>) -> Self {
         self.migration_effort = input;
         self
     }

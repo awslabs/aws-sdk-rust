@@ -10,10 +10,7 @@ impl CreateHostInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_host::CreateHostOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_host::CreateHostError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_host::CreateHostError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_host();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl CreateHostFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_host::CreateHost,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_host::CreateHost, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_host::CreateHostError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl CreateHostFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl CreateHostFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_host::CreateHost,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_host::CreateHost, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_host::CreateHostError>,
     > {
         self.customize_middleware().await
@@ -134,10 +122,7 @@ impl CreateHostFluentBuilder {
         self
     }
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
-    pub fn set_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProviderType>,
-    ) -> Self {
+    pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
         self.inner = self.inner.set_provider_type(input);
         self
     }
@@ -146,18 +131,12 @@ impl CreateHostFluentBuilder {
         self.inner.get_provider_type()
     }
     /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
-    pub fn provider_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider_endpoint(input.into());
         self
     }
     /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
-    pub fn set_provider_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider_endpoint(input);
         self
     }
@@ -171,10 +150,7 @@ impl CreateHostFluentBuilder {
         self
     }
     /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfiguration>,
-    ) -> Self {
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
         self.inner = self.inner.set_vpc_configuration(input);
         self
     }
@@ -192,10 +168,7 @@ impl CreateHostFluentBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

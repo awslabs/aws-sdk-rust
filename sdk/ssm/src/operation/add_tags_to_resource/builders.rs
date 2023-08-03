@@ -10,10 +10,7 @@ impl AddTagsToResourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_tags_to_resource::AddTagsToResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_resource::AddTagsToResourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_resource::AddTagsToResourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_tags_to_resource();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl AddTagsToResourceFluentBuilder {
         }
     }
     /// Access the AddTagsToResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +57,7 @@ impl AddTagsToResourceFluentBuilder {
             crate::operation::add_tags_to_resource::AddTagsToResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_resource::AddTagsToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_resource::AddTagsToResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +67,7 @@ impl AddTagsToResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +76,7 @@ impl AddTagsToResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_tags_to_resource::AddTagsToResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_resource::AddTagsToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_resource::AddTagsToResourceError>,
     > {
         let op = self
             .inner
@@ -111,9 +99,7 @@ impl AddTagsToResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_tags_to_resource::AddTagsToResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_resource::AddTagsToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_resource::AddTagsToResourceError>,
     > {
         self.send_middleware().await
     }
@@ -127,9 +113,7 @@ impl AddTagsToResourceFluentBuilder {
             crate::operation::add_tags_to_resource::AddTagsToResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_tags_to_resource::AddTagsToResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_tags_to_resource::AddTagsToResourceError>,
     > {
         self.customize_middleware().await
     }
@@ -143,19 +127,14 @@ impl AddTagsToResourceFluentBuilder {
     /// <p>Specifies the type of resource you are tagging.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceTypeForTagging>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceTypeForTagging>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
     /// <p>Specifies the type of resource you are tagging.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceTypeForTagging> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceTypeForTagging> {
         self.inner.get_resource_type()
     }
     /// <p>The resource ID you want to tag.</p>
@@ -213,10 +192,7 @@ impl AddTagsToResourceFluentBuilder {
     /// <p>One or more tags. The value parameter is required.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

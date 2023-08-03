@@ -12,8 +12,7 @@ pub struct NodeConfiguration {
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
     #[doc(hidden)]
-    pub log_publishing_configuration:
-        ::std::option::Option<crate::types::NodeLogPublishingConfiguration>,
+    pub log_publishing_configuration: ::std::option::Option<crate::types::NodeLogPublishingConfiguration>,
     /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
     #[doc(hidden)]
@@ -29,9 +28,7 @@ impl NodeConfiguration {
         self.availability_zone.as_deref()
     }
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
-    pub fn log_publishing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NodeLogPublishingConfiguration> {
+    pub fn log_publishing_configuration(&self) -> ::std::option::Option<&crate::types::NodeLogPublishingConfiguration> {
         self.log_publishing_configuration.as_ref()
     }
     /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p>
@@ -49,30 +46,21 @@ impl NodeConfiguration {
 
 /// A builder for [`NodeConfiguration`](crate::types::NodeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeConfigurationBuilder {
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
-    pub(crate) log_publishing_configuration:
-        ::std::option::Option<crate::types::NodeLogPublishingConfiguration>,
+    pub(crate) log_publishing_configuration: ::std::option::Option<crate::types::NodeLogPublishingConfiguration>,
     pub(crate) state_db: ::std::option::Option<crate::types::StateDbType>,
 }
 impl NodeConfigurationBuilder {
     /// <p>The Amazon Managed Blockchain instance type for the node.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Managed Blockchain instance type for the node.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -81,18 +69,12 @@ impl NodeConfigurationBuilder {
         &self.instance_type
     }
     /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -101,25 +83,17 @@ impl NodeConfigurationBuilder {
         &self.availability_zone
     }
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
-    pub fn log_publishing_configuration(
-        mut self,
-        input: crate::types::NodeLogPublishingConfiguration,
-    ) -> Self {
+    pub fn log_publishing_configuration(mut self, input: crate::types::NodeLogPublishingConfiguration) -> Self {
         self.log_publishing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
-    pub fn set_log_publishing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NodeLogPublishingConfiguration>,
-    ) -> Self {
+    pub fn set_log_publishing_configuration(mut self, input: ::std::option::Option<crate::types::NodeLogPublishingConfiguration>) -> Self {
         self.log_publishing_configuration = input;
         self
     }
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
-    pub fn get_log_publishing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NodeLogPublishingConfiguration> {
+    pub fn get_log_publishing_configuration(&self) -> &::std::option::Option<crate::types::NodeLogPublishingConfiguration> {
         &self.log_publishing_configuration
     }
     /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p>

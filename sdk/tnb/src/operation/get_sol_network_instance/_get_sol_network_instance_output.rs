@@ -34,9 +34,7 @@ pub struct GetSolNetworkInstanceOutput {
     pub metadata: ::std::option::Option<crate::types::GetSolNetworkInstanceMetadata>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSolNetworkInstanceOutput {
@@ -79,11 +77,7 @@ impl GetSolNetworkInstanceOutput {
         self.metadata.as_ref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -111,9 +105,7 @@ impl ::aws_http::request_id::RequestId for GetSolNetworkInstanceOutput {
 }
 impl GetSolNetworkInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetSolNetworkInstanceOutput`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceOutputBuilder {
         crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceOutputBuilder::default()
     }
 }
@@ -131,9 +123,7 @@ pub struct GetSolNetworkInstanceOutputBuilder {
     pub(crate) ns_state: ::std::option::Option<crate::types::NsState>,
     pub(crate) lcm_op_info: ::std::option::Option<crate::types::LcmOperationInfo>,
     pub(crate) metadata: ::std::option::Option<crate::types::GetSolNetworkInstanceMetadata>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSolNetworkInstanceOutputBuilder {
@@ -166,18 +156,12 @@ impl GetSolNetworkInstanceOutputBuilder {
         &self.arn
     }
     /// <p>Network instance name.</p>
-    pub fn ns_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ns_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Network instance name.</p>
-    pub fn set_ns_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ns_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ns_instance_name = input;
         self
     }
@@ -186,18 +170,12 @@ impl GetSolNetworkInstanceOutputBuilder {
         &self.ns_instance_name
     }
     /// <p>Network instance description.</p>
-    pub fn ns_instance_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ns_instance_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_instance_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Network instance description.</p>
-    pub fn set_ns_instance_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ns_instance_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ns_instance_description = input;
         self
     }
@@ -255,10 +233,7 @@ impl GetSolNetworkInstanceOutputBuilder {
     }
     /// <p>Lifecycle management operation details on the network instance.</p>
     /// <p>Lifecycle management operations are deploy, update, or delete operations.</p>
-    pub fn set_lcm_op_info(
-        mut self,
-        input: ::std::option::Option<crate::types::LcmOperationInfo>,
-    ) -> Self {
+    pub fn set_lcm_op_info(mut self, input: ::std::option::Option<crate::types::LcmOperationInfo>) -> Self {
         self.lcm_op_info = input;
         self
     }
@@ -275,18 +250,13 @@ impl GetSolNetworkInstanceOutputBuilder {
     }
     /// <p>The metadata of a network instance.</p>
     /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::GetSolNetworkInstanceMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::GetSolNetworkInstanceMetadata>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>The metadata of a network instance.</p>
     /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::GetSolNetworkInstanceMetadata> {
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::GetSolNetworkInstanceMetadata> {
         &self.metadata
     }
     /// Adds a key-value pair to `tags`.
@@ -294,32 +264,19 @@ impl GetSolNetworkInstanceOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

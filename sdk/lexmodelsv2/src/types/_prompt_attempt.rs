@@ -42,13 +42,7 @@
 /// <p>The attempt name of attempts of a prompt.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PromptAttempt {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for PromptAttempt {
             "Retry3" => PromptAttempt::Retry3,
             "Retry4" => PromptAttempt::Retry4,
             "Retry5" => PromptAttempt::Retry5,
-            other => {
-                PromptAttempt::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => PromptAttempt::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

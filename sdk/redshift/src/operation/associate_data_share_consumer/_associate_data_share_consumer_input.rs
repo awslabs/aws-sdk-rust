@@ -36,16 +36,14 @@ impl AssociateDataShareConsumerInput {
 }
 impl AssociateDataShareConsumerInput {
     /// Creates a new builder-style object to manufacture [`AssociateDataShareConsumerInput`](crate::operation::associate_data_share_consumer::AssociateDataShareConsumerInput).
-    pub fn builder() -> crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerInputBuilder{
+    pub fn builder() -> crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerInputBuilder {
         crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDataShareConsumerInput`](crate::operation::associate_data_share_consumer::AssociateDataShareConsumerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDataShareConsumerInputBuilder {
     pub(crate) data_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) associate_entire_account: ::std::option::Option<bool>,
@@ -54,18 +52,12 @@ pub struct AssociateDataShareConsumerInputBuilder {
 }
 impl AssociateDataShareConsumerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
-    pub fn data_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
-    pub fn set_data_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_share_arn = input;
         self
     }
@@ -102,18 +94,12 @@ impl AssociateDataShareConsumerInputBuilder {
         &self.consumer_arn
     }
     /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
-    pub fn consumer_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn consumer_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumer_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
-    pub fn set_consumer_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_consumer_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.consumer_region = input;
         self
     }
@@ -128,13 +114,11 @@ impl AssociateDataShareConsumerInputBuilder {
         crate::operation::associate_data_share_consumer::AssociateDataShareConsumerInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_data_share_consumer::AssociateDataShareConsumerInput {
-                data_share_arn: self.data_share_arn,
-                associate_entire_account: self.associate_entire_account,
-                consumer_arn: self.consumer_arn,
-                consumer_region: self.consumer_region,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_data_share_consumer::AssociateDataShareConsumerInput {
+            data_share_arn: self.data_share_arn,
+            associate_entire_account: self.associate_entire_account,
+            consumer_arn: self.consumer_arn,
+            consumer_region: self.consumer_region,
+        })
     }
 }

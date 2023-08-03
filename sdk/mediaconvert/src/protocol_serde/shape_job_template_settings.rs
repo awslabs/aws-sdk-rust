@@ -24,10 +24,7 @@ pub fn ser_job_template_settings(
     if let Some(var_6) = &input.extended_data_services {
         #[allow(unused_mut)]
         let mut object_7 = object.key("extendedDataServices").start_object();
-        crate::protocol_serde::shape_extended_data_services::ser_extended_data_services(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_extended_data_services::ser_extended_data_services(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.inputs {
@@ -36,10 +33,7 @@ pub fn ser_job_template_settings(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_input_template::ser_input_template(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_input_template::ser_input_template(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }
@@ -48,28 +42,19 @@ pub fn ser_job_template_settings(
     if let Some(var_12) = &input.kantar_watermark {
         #[allow(unused_mut)]
         let mut object_13 = object.key("kantarWatermark").start_object();
-        crate::protocol_serde::shape_kantar_watermark_settings::ser_kantar_watermark_settings(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_kantar_watermark_settings::ser_kantar_watermark_settings(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.motion_image_inserter {
         #[allow(unused_mut)]
         let mut object_15 = object.key("motionImageInserter").start_object();
-        crate::protocol_serde::shape_motion_image_inserter::ser_motion_image_inserter(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_motion_image_inserter::ser_motion_image_inserter(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.nielsen_configuration {
         #[allow(unused_mut)]
         let mut object_17 = object.key("nielsenConfiguration").start_object();
-        crate::protocol_serde::shape_nielsen_configuration::ser_nielsen_configuration(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_nielsen_configuration::ser_nielsen_configuration(&mut object_17, var_16)?;
         object_17.finish();
     }
     if let Some(var_18) = &input.nielsen_non_linear_watermark {
@@ -84,10 +69,7 @@ pub fn ser_job_template_settings(
             {
                 #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_output_group::ser_output_group(
-                    &mut object_23,
-                    item_22,
-                )?;
+                crate::protocol_serde::shape_output_group::ser_output_group(&mut object_23, item_22)?;
                 object_23.finish();
             }
         }
@@ -102,10 +84,7 @@ pub fn ser_job_template_settings(
     if let Some(var_26) = &input.timed_metadata_insertion {
         #[allow(unused_mut)]
         let mut object_27 = object.key("timedMetadataInsertion").start_object();
-        crate::protocol_serde::shape_timed_metadata_insertion::ser_timed_metadata_insertion(
-            &mut object_27,
-            var_26,
-        )?;
+        crate::protocol_serde::shape_timed_metadata_insertion::ser_timed_metadata_insertion(&mut object_27, var_26)?;
         object_27.finish();
     }
     Ok(())
@@ -113,17 +92,9 @@ pub fn ser_job_template_settings(
 
 pub(crate) fn de_job_template_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::JobTemplateSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::JobTemplateSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -133,94 +104,73 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "adAvailOffset" => {
-                                builder = builder.set_ad_avail_offset(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "adAvailOffset" => {
+                            builder = builder.set_ad_avail_offset(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "availBlanking" => {
-                                builder = builder.set_avail_blanking(
-                                    crate::protocol_serde::shape_avail_blanking::de_avail_blanking(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "esam" => {
-                                builder = builder.set_esam(
-                                    crate::protocol_serde::shape_esam_settings::de_esam_settings(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "extendedDataServices" => {
-                                builder = builder.set_extended_data_services(
-                                    crate::protocol_serde::shape_extended_data_services::de_extended_data_services(tokens)?
-                                );
-                            }
-                            "inputs" => {
-                                builder = builder.set_inputs(
-                                    crate::protocol_serde::shape___list_of_input_template::de___list_of_input_template(tokens)?
-                                );
-                            }
-                            "kantarWatermark" => {
-                                builder = builder.set_kantar_watermark(
-                                    crate::protocol_serde::shape_kantar_watermark_settings::de_kantar_watermark_settings(tokens)?
-                                );
-                            }
-                            "motionImageInserter" => {
-                                builder = builder.set_motion_image_inserter(
-                                    crate::protocol_serde::shape_motion_image_inserter::de_motion_image_inserter(tokens)?
-                                );
-                            }
-                            "nielsenConfiguration" => {
-                                builder = builder.set_nielsen_configuration(
-                                    crate::protocol_serde::shape_nielsen_configuration::de_nielsen_configuration(tokens)?
-                                );
-                            }
-                            "nielsenNonLinearWatermark" => {
-                                builder = builder.set_nielsen_non_linear_watermark(
-                                    crate::protocol_serde::shape_nielsen_non_linear_watermark_settings::de_nielsen_non_linear_watermark_settings(tokens)?
-                                );
-                            }
-                            "outputGroups" => {
-                                builder = builder.set_output_groups(
-                                    crate::protocol_serde::shape___list_of_output_group::de___list_of_output_group(tokens)?
-                                );
-                            }
-                            "timecodeConfig" => {
-                                builder = builder.set_timecode_config(
-                                    crate::protocol_serde::shape_timecode_config::de_timecode_config(tokens)?
-                                );
-                            }
-                            "timedMetadataInsertion" => {
-                                builder = builder.set_timed_metadata_insertion(
-                                    crate::protocol_serde::shape_timed_metadata_insertion::de_timed_metadata_insertion(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "availBlanking" => {
+                            builder = builder.set_avail_blanking(crate::protocol_serde::shape_avail_blanking::de_avail_blanking(tokens)?);
+                        }
+                        "esam" => {
+                            builder = builder.set_esam(crate::protocol_serde::shape_esam_settings::de_esam_settings(tokens)?);
+                        }
+                        "extendedDataServices" => {
+                            builder = builder
+                                .set_extended_data_services(crate::protocol_serde::shape_extended_data_services::de_extended_data_services(tokens)?);
+                        }
+                        "inputs" => {
+                            builder = builder.set_inputs(crate::protocol_serde::shape___list_of_input_template::de___list_of_input_template(
+                                tokens,
+                            )?);
+                        }
+                        "kantarWatermark" => {
+                            builder = builder.set_kantar_watermark(
+                                crate::protocol_serde::shape_kantar_watermark_settings::de_kantar_watermark_settings(tokens)?,
+                            );
+                        }
+                        "motionImageInserter" => {
+                            builder = builder
+                                .set_motion_image_inserter(crate::protocol_serde::shape_motion_image_inserter::de_motion_image_inserter(tokens)?);
+                        }
+                        "nielsenConfiguration" => {
+                            builder = builder
+                                .set_nielsen_configuration(crate::protocol_serde::shape_nielsen_configuration::de_nielsen_configuration(tokens)?);
+                        }
+                        "nielsenNonLinearWatermark" => {
+                            builder = builder.set_nielsen_non_linear_watermark(
+                                crate::protocol_serde::shape_nielsen_non_linear_watermark_settings::de_nielsen_non_linear_watermark_settings(tokens)?,
+                            );
+                        }
+                        "outputGroups" => {
+                            builder =
+                                builder.set_output_groups(crate::protocol_serde::shape___list_of_output_group::de___list_of_output_group(tokens)?);
+                        }
+                        "timecodeConfig" => {
+                            builder = builder.set_timecode_config(crate::protocol_serde::shape_timecode_config::de_timecode_config(tokens)?);
+                        }
+                        "timedMetadataInsertion" => {
+                            builder = builder.set_timed_metadata_insertion(
+                                crate::protocol_serde::shape_timed_metadata_insertion::de_timed_metadata_insertion(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

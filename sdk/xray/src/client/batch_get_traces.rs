@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`unprocessed_trace_ids(Option<Vec<String>>)`](crate::operation::batch_get_traces::BatchGetTracesOutput::unprocessed_trace_ids): <p>Trace IDs of requests that haven't been processed.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::batch_get_traces::BatchGetTracesOutput::next_token): <p>Pagination token.</p>
     /// - On failure, responds with [`SdkError<BatchGetTracesError>`](crate::operation::batch_get_traces::BatchGetTracesError)
-    pub fn batch_get_traces(
-        &self,
-    ) -> crate::operation::batch_get_traces::builders::BatchGetTracesFluentBuilder {
-        crate::operation::batch_get_traces::builders::BatchGetTracesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_traces(&self) -> crate::operation::batch_get_traces::builders::BatchGetTracesFluentBuilder {
+        crate::operation::batch_get_traces::builders::BatchGetTracesFluentBuilder::new(self.handle.clone())
     }
 }

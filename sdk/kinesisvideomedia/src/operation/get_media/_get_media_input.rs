@@ -36,9 +36,7 @@ impl GetMediaInput {
 
 /// A builder for [`GetMediaInput`](crate::operation::get_media::GetMediaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMediaInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -79,10 +77,7 @@ impl GetMediaInputBuilder {
         self
     }
     /// <p>Identifies the starting chunk to get from the specified stream. </p>
-    pub fn set_start_selector(
-        mut self,
-        input: ::std::option::Option<crate::types::StartSelector>,
-    ) -> Self {
+    pub fn set_start_selector(mut self, input: ::std::option::Option<crate::types::StartSelector>) -> Self {
         self.start_selector = input;
         self
     }
@@ -91,12 +86,7 @@ impl GetMediaInputBuilder {
         &self.start_selector
     }
     /// Consumes the builder and constructs a [`GetMediaInput`](crate::operation::get_media::GetMediaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_media::GetMediaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_media::GetMediaInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_media::GetMediaInput {
             stream_name: self.stream_name,
             stream_arn: self.stream_arn,

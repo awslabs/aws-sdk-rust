@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_clusters::DescribeDbClustersOutput::marker): <p>A pagination token that can be used in a subsequent DescribeDBClusters request.</p>
     ///   - [`db_clusters(Option<Vec<DbCluster>>)`](crate::operation::describe_db_clusters::DescribeDbClustersOutput::db_clusters): <p>Contains a list of DB clusters for the user.</p>
     /// - On failure, responds with [`SdkError<DescribeDBClustersError>`](crate::operation::describe_db_clusters::DescribeDBClustersError)
-    pub fn describe_db_clusters(
-        &self,
-    ) -> crate::operation::describe_db_clusters::builders::DescribeDBClustersFluentBuilder {
-        crate::operation::describe_db_clusters::builders::DescribeDBClustersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_db_clusters(&self) -> crate::operation::describe_db_clusters::builders::DescribeDBClustersFluentBuilder {
+        crate::operation::describe_db_clusters::builders::DescribeDBClustersFluentBuilder::new(self.handle.clone())
     }
 }

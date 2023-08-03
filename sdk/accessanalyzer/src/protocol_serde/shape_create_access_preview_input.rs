@@ -16,10 +16,7 @@ pub fn ser_create_access_preview_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = object_4.key(key_5.as_str()).start_object();
-                crate::protocol_serde::shape_configuration::ser_configuration(
-                    &mut object_7,
-                    value_6,
-                )?;
+                crate::protocol_serde::shape_configuration::ser_configuration(&mut object_7, value_6)?;
                 object_7.finish();
             }
         }

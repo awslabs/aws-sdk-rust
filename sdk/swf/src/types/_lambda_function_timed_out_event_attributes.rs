@@ -37,9 +37,7 @@ impl LambdaFunctionTimedOutEventAttributes {
 
 /// A builder for [`LambdaFunctionTimedOutEventAttributes`](crate::types::LambdaFunctionTimedOutEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaFunctionTimedOutEventAttributesBuilder {
     pub(crate) scheduled_event_id: ::std::option::Option<i64>,
     pub(crate) started_event_id: ::std::option::Option<i64>,
@@ -80,17 +78,12 @@ impl LambdaFunctionTimedOutEventAttributesBuilder {
         self
     }
     /// <p>The type of the timeout that caused this event.</p>
-    pub fn set_timeout_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaFunctionTimeoutType>,
-    ) -> Self {
+    pub fn set_timeout_type(mut self, input: ::std::option::Option<crate::types::LambdaFunctionTimeoutType>) -> Self {
         self.timeout_type = input;
         self
     }
     /// <p>The type of the timeout that caused this event.</p>
-    pub fn get_timeout_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::LambdaFunctionTimeoutType> {
+    pub fn get_timeout_type(&self) -> &::std::option::Option<crate::types::LambdaFunctionTimeoutType> {
         &self.timeout_type
     }
     /// Consumes the builder and constructs a [`LambdaFunctionTimedOutEventAttributes`](crate::types::LambdaFunctionTimedOutEventAttributes).

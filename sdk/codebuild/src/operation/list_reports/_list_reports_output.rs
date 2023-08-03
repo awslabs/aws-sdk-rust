@@ -35,9 +35,7 @@ impl ListReportsOutput {
 
 /// A builder for [`ListReportsOutput`](crate::operation::list_reports::ListReportsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReportsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) reports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -70,10 +68,7 @@ impl ListReportsOutputBuilder {
         self
     }
     /// <p> The list of returned ARNs for the reports in the current Amazon Web Services account. </p>
-    pub fn set_reports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_reports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.reports = input;
         self
     }

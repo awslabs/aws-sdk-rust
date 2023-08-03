@@ -29,18 +29,14 @@ impl CompleteAttachmentUploadInput {
 }
 impl CompleteAttachmentUploadInput {
     /// Creates a new builder-style object to manufacture [`CompleteAttachmentUploadInput`](crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput).
-    pub fn builder(
-    ) -> crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadInputBuilder
-    {
+    pub fn builder() -> crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadInputBuilder {
         crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadInputBuilder::default()
     }
 }
 
 /// A builder for [`CompleteAttachmentUploadInput`](crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteAttachmentUploadInputBuilder {
     pub(crate) attachment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -52,27 +48,19 @@ impl CompleteAttachmentUploadInputBuilder {
     /// To override the contents of this collection use [`set_attachment_ids`](Self::set_attachment_ids).
     ///
     /// <p>A list of unique identifiers for the attachments.</p>
-    pub fn attachment_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attachment_ids.unwrap_or_default();
         v.push(input.into());
         self.attachment_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of unique identifiers for the attachments.</p>
-    pub fn set_attachment_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_attachment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.attachment_ids = input;
         self
     }
     /// <p>A list of unique identifiers for the attachments.</p>
-    pub fn get_attachment_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attachment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.attachment_ids
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -90,18 +78,12 @@ impl CompleteAttachmentUploadInputBuilder {
         &self.client_token
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn connection_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn set_connection_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_token = input;
         self
     }
@@ -116,12 +98,10 @@ impl CompleteAttachmentUploadInputBuilder {
         crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput {
-                attachment_ids: self.attachment_ids,
-                client_token: self.client_token,
-                connection_token: self.connection_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput {
+            attachment_ids: self.attachment_ids,
+            client_token: self.client_token,
+            connection_token: self.connection_token,
+        })
     }
 }

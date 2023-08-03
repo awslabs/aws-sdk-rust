@@ -15,17 +15,14 @@ impl BatchDeleteWorldsInput {
 }
 impl BatchDeleteWorldsInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteWorldsInput`](crate::operation::batch_delete_worlds::BatchDeleteWorldsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsInputBuilder {
+    pub fn builder() -> crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsInputBuilder {
         crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteWorldsInput`](crate::operation::batch_delete_worlds::BatchDeleteWorldsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteWorldsInputBuilder {
     pub(crate) worlds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +39,7 @@ impl BatchDeleteWorldsInputBuilder {
         self
     }
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
-    pub fn set_worlds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_worlds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.worlds = input;
         self
     }
@@ -56,14 +50,7 @@ impl BatchDeleteWorldsInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteWorldsInput`](crate::operation::batch_delete_worlds::BatchDeleteWorldsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_worlds::BatchDeleteWorldsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_delete_worlds::BatchDeleteWorldsInput {
-                worlds: self.worlds,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_delete_worlds::BatchDeleteWorldsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_delete_worlds::BatchDeleteWorldsInput { worlds: self.worlds })
     }
 }

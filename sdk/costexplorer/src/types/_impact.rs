@@ -51,9 +51,7 @@ impl Impact {
 
 /// A builder for [`Impact`](crate::types::Impact).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImpactBuilder {
     pub(crate) max_impact: ::std::option::Option<f64>,
     pub(crate) total_impact: ::std::option::Option<f64>,

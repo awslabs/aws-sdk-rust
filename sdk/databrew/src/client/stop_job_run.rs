@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StopJobRunOutput`](crate::operation::stop_job_run::StopJobRunOutput) with field(s):
     ///   - [`run_id(Option<String>)`](crate::operation::stop_job_run::StopJobRunOutput::run_id): <p>The ID of the job run that you stopped.</p>
     /// - On failure, responds with [`SdkError<StopJobRunError>`](crate::operation::stop_job_run::StopJobRunError)
-    pub fn stop_job_run(
-        &self,
-    ) -> crate::operation::stop_job_run::builders::StopJobRunFluentBuilder {
+    pub fn stop_job_run(&self) -> crate::operation::stop_job_run::builders::StopJobRunFluentBuilder {
         crate::operation::stop_job_run::builders::StopJobRunFluentBuilder::new(self.handle.clone())
     }
 }

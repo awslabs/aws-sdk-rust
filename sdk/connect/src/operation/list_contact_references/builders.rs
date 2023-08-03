@@ -38,10 +38,7 @@ impl ListContactReferencesFluentBuilder {
         }
     }
     /// Access the ListContactReferences as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_contact_references::builders::ListContactReferencesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_contact_references::builders::ListContactReferencesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ListContactReferencesFluentBuilder {
             crate::operation::list_contact_references::ListContactReferences,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_references::ListContactReferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contact_references::ListContactReferencesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ListContactReferencesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ListContactReferencesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_contact_references::ListContactReferencesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_references::ListContactReferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contact_references::ListContactReferencesError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ListContactReferencesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_contact_references::ListContactReferencesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_references::ListContactReferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contact_references::ListContactReferencesError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +106,15 @@ impl ListContactReferencesFluentBuilder {
             crate::operation::list_contact_references::ListContactReferences,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_references::ListContactReferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contact_references::ListContactReferencesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_contact_references::paginator::ListContactReferencesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_contact_references::paginator::ListContactReferencesPaginator {
-        crate::operation::list_contact_references::paginator::ListContactReferencesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_contact_references::paginator::ListContactReferencesPaginator {
+        crate::operation::list_contact_references::paginator::ListContactReferencesPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -173,17 +154,12 @@ impl ListContactReferencesFluentBuilder {
         self
     }
     /// <p>The type of reference.</p>
-    pub fn set_reference_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceType>>,
-    ) -> Self {
+    pub fn set_reference_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceType>>) -> Self {
         self.inner = self.inner.set_reference_types(input);
         self
     }
     /// <p>The type of reference.</p>
-    pub fn get_reference_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceType>> {
+    pub fn get_reference_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceType>> {
         self.inner.get_reference_types()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>

@@ -36,9 +36,7 @@ impl UpdatePublicKeyInput {
 
 /// A builder for [`UpdatePublicKeyInput`](crate::operation::update_public_key::UpdatePublicKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePublicKeyInputBuilder {
     pub(crate) public_key_config: ::std::option::Option<crate::types::PublicKeyConfig>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -51,10 +49,7 @@ impl UpdatePublicKeyInputBuilder {
         self
     }
     /// <p>A public key configuration.</p>
-    pub fn set_public_key_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicKeyConfig>,
-    ) -> Self {
+    pub fn set_public_key_config(mut self, input: ::std::option::Option<crate::types::PublicKeyConfig>) -> Self {
         self.public_key_config = input;
         self
     }
@@ -93,10 +88,7 @@ impl UpdatePublicKeyInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePublicKeyInput`](crate::operation::update_public_key::UpdatePublicKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_public_key::UpdatePublicKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_public_key::UpdatePublicKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_public_key::UpdatePublicKeyInput {
             public_key_config: self.public_key_config,
             id: self.id,

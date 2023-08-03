@@ -17,10 +17,7 @@ impl super::Client {
     ///   - [`allowed_vp_cs(Option<Vec<String>>)`](crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessOutput::allowed_vp_cs): <p>The VPCs allowed access to the cluster.</p>
     ///   - [`endpoint_count(i32)`](crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessOutput::endpoint_count): <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
     /// - On failure, responds with [`SdkError<AuthorizeEndpointAccessError>`](crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError)
-    pub fn authorize_endpoint_access(
-        &self,
-    ) -> crate::operation::authorize_endpoint_access::builders::AuthorizeEndpointAccessFluentBuilder
-    {
+    pub fn authorize_endpoint_access(&self) -> crate::operation::authorize_endpoint_access::builders::AuthorizeEndpointAccessFluentBuilder {
         crate::operation::authorize_endpoint_access::builders::AuthorizeEndpointAccessFluentBuilder::new(self.handle.clone())
     }
 }

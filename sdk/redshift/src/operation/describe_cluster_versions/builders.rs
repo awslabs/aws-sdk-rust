@@ -26,8 +26,7 @@ impl DescribeClusterVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeClusterVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_cluster_versions::builders::DescribeClusterVersionsInputBuilder,
+    inner: crate::operation::describe_cluster_versions::builders::DescribeClusterVersionsInputBuilder,
 }
 impl DescribeClusterVersionsFluentBuilder {
     /// Creates a new `DescribeClusterVersions`.
@@ -38,10 +37,7 @@ impl DescribeClusterVersionsFluentBuilder {
         }
     }
     /// Access the DescribeClusterVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_cluster_versions::builders::DescribeClusterVersionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_cluster_versions::builders::DescribeClusterVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeClusterVersionsFluentBuilder {
             crate::operation::describe_cluster_versions::DescribeClusterVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_versions::DescribeClusterVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_versions::DescribeClusterVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeClusterVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeClusterVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_versions::DescribeClusterVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_versions::DescribeClusterVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_versions::DescribeClusterVersionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeClusterVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_versions::DescribeClusterVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_versions::DescribeClusterVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_versions::DescribeClusterVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,36 +105,25 @@ impl DescribeClusterVersionsFluentBuilder {
             crate::operation::describe_cluster_versions::DescribeClusterVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_versions::DescribeClusterVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_versions::DescribeClusterVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_versions::paginator::DescribeClusterVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_cluster_versions::paginator::DescribeClusterVersionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_cluster_versions::paginator::DescribeClusterVersionsPaginator {
         crate::operation::describe_cluster_versions::paginator::DescribeClusterVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The specific cluster version to return.</p>
     /// <p>Example: <code>1.0</code> </p>
-    pub fn cluster_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_version(input.into());
         self
     }
     /// <p>The specific cluster version to return.</p>
     /// <p>Example: <code>1.0</code> </p>
-    pub fn set_cluster_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_version(input);
         self
     }
@@ -163,10 +139,7 @@ impl DescribeClusterVersionsFluentBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn cluster_parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_parameter_group_family(input.into());
         self
     }
@@ -177,10 +150,7 @@ impl DescribeClusterVersionsFluentBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn set_cluster_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_parameter_group_family(input);
         self
     }
@@ -191,9 +161,7 @@ impl DescribeClusterVersionsFluentBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn get_cluster_parameter_group_family(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cluster_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_parameter_group_family()
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>

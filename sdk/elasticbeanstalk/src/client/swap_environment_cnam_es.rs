@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`destination_environment_name(impl ::std::convert::Into<String>)`](crate::operation::swap_environment_cnam_es::builders::SwapEnvironmentCNAMEsFluentBuilder::destination_environment_name) / [`set_destination_environment_name(Option<String>)`](crate::operation::swap_environment_cnam_es::builders::SwapEnvironmentCNAMEsFluentBuilder::set_destination_environment_name): <p>The name of the destination environment.</p>  <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>. </p>
     /// - On success, responds with [`SwapEnvironmentCnamEsOutput`](crate::operation::swap_environment_cnam_es::SwapEnvironmentCnamEsOutput)
     /// - On failure, responds with [`SdkError<SwapEnvironmentCNAMEsError>`](crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError)
-    pub fn swap_environment_cnam_es(
-        &self,
-    ) -> crate::operation::swap_environment_cnam_es::builders::SwapEnvironmentCNAMEsFluentBuilder
-    {
+    pub fn swap_environment_cnam_es(&self) -> crate::operation::swap_environment_cnam_es::builders::SwapEnvironmentCNAMEsFluentBuilder {
         crate::operation::swap_environment_cnam_es::builders::SwapEnvironmentCNAMEsFluentBuilder::new(self.handle.clone())
     }
 }

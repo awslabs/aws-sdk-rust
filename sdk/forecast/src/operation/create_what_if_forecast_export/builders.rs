@@ -42,7 +42,7 @@ impl CreateWhatIfForecastExportInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWhatIfForecastExportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_what_if_forecast_export::builders::CreateWhatIfForecastExportInputBuilder,
+    inner: crate::operation::create_what_if_forecast_export::builders::CreateWhatIfForecastExportInputBuilder,
 }
 impl CreateWhatIfForecastExportFluentBuilder {
     /// Creates a new `CreateWhatIfForecastExport`.
@@ -53,7 +53,7 @@ impl CreateWhatIfForecastExportFluentBuilder {
         }
     }
     /// Access the CreateWhatIfForecastExport as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_what_if_forecast_export::builders::CreateWhatIfForecastExportInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_what_if_forecast_export::builders::CreateWhatIfForecastExportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,9 +65,7 @@ impl CreateWhatIfForecastExportFluentBuilder {
             crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -77,10 +75,7 @@ impl CreateWhatIfForecastExportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -89,9 +84,7 @@ impl CreateWhatIfForecastExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportError>,
     > {
         let op = self
             .inner
@@ -114,9 +107,7 @@ impl CreateWhatIfForecastExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportError>,
     > {
         self.send_middleware().await
     }
@@ -130,32 +121,22 @@ impl CreateWhatIfForecastExportFluentBuilder {
             crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the what-if forecast to export.</p>
-    pub fn what_if_forecast_export_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_forecast_export_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.what_if_forecast_export_name(input.into());
         self
     }
     /// <p>The name of the what-if forecast to export.</p>
-    pub fn set_what_if_forecast_export_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_what_if_forecast_export_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_what_if_forecast_export_name(input);
         self
     }
     /// <p>The name of the what-if forecast to export.</p>
-    pub fn get_what_if_forecast_export_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_what_if_forecast_export_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_what_if_forecast_export_name()
     }
     /// Appends an item to `WhatIfForecastArns`.
@@ -163,25 +144,17 @@ impl CreateWhatIfForecastExportFluentBuilder {
     /// To override the contents of this collection use [`set_what_if_forecast_arns`](Self::set_what_if_forecast_arns).
     ///
     /// <p>The list of what-if forecast Amazon Resource Names (ARNs) to export.</p>
-    pub fn what_if_forecast_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_forecast_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.what_if_forecast_arns(input.into());
         self
     }
     /// <p>The list of what-if forecast Amazon Resource Names (ARNs) to export.</p>
-    pub fn set_what_if_forecast_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_what_if_forecast_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_what_if_forecast_arns(input);
         self
     }
     /// <p>The list of what-if forecast Amazon Resource Names (ARNs) to export.</p>
-    pub fn get_what_if_forecast_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_what_if_forecast_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_what_if_forecast_arns()
     }
     /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
@@ -192,10 +165,7 @@ impl CreateWhatIfForecastExportFluentBuilder {
     }
     /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::DataDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::DataDestination>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
     }
@@ -214,10 +184,7 @@ impl CreateWhatIfForecastExportFluentBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

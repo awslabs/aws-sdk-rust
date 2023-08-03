@@ -35,12 +35,9 @@ impl ListAssistantsOutput {
 
 /// A builder for [`ListAssistantsOutput`](crate::operation::list_assistants::ListAssistantsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssistantsOutputBuilder {
-    pub(crate) assistant_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssistantSummary>>,
+    pub(crate) assistant_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssistantSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListAssistantsOutputBuilder {
         self
     }
     /// <p>Information about the assistants.</p>
-    pub fn set_assistant_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssistantSummary>>,
-    ) -> Self {
+    pub fn set_assistant_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssistantSummary>>) -> Self {
         self.assistant_summaries = input;
         self
     }
     /// <p>Information about the assistants.</p>
-    pub fn get_assistant_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssistantSummary>> {
+    pub fn get_assistant_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssistantSummary>> {
         &self.assistant_summaries
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

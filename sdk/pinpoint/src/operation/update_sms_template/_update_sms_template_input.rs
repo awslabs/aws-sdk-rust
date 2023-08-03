@@ -54,17 +54,14 @@ impl UpdateSmsTemplateInput {
 }
 impl UpdateSmsTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateSmsTemplateInput`](crate::operation::update_sms_template::UpdateSmsTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::update_sms_template::builders::UpdateSmsTemplateInputBuilder {
+    pub fn builder() -> crate::operation::update_sms_template::builders::UpdateSmsTemplateInputBuilder {
         crate::operation::update_sms_template::builders::UpdateSmsTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSmsTemplateInput`](crate::operation::update_sms_template::UpdateSmsTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSmsTemplateInputBuilder {
     pub(crate) create_new_version: ::std::option::Option<bool>,
     pub(crate) sms_template_request: ::std::option::Option<crate::types::SmsTemplateRequest>,
@@ -95,32 +92,21 @@ impl UpdateSmsTemplateInputBuilder {
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-    pub fn set_sms_template_request(
-        mut self,
-        input: ::std::option::Option<crate::types::SmsTemplateRequest>,
-    ) -> Self {
+    pub fn set_sms_template_request(mut self, input: ::std::option::Option<crate::types::SmsTemplateRequest>) -> Self {
         self.sms_template_request = input;
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-    pub fn get_sms_template_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmsTemplateRequest> {
+    pub fn get_sms_template_request(&self) -> &::std::option::Option<crate::types::SmsTemplateRequest> {
         &self.sms_template_request
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -169,17 +155,12 @@ impl UpdateSmsTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSmsTemplateInput`](crate::operation::update_sms_template::UpdateSmsTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_sms_template::UpdateSmsTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_sms_template::UpdateSmsTemplateInput {
-                create_new_version: self.create_new_version,
-                sms_template_request: self.sms_template_request,
-                template_name: self.template_name,
-                version: self.version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_sms_template::UpdateSmsTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_sms_template::UpdateSmsTemplateInput {
+            create_new_version: self.create_new_version,
+            sms_template_request: self.sms_template_request,
+            template_name: self.template_name,
+            version: self.version,
+        })
     }
 }

@@ -24,14 +24,8 @@ impl AlexaForBusinessMetadata {
 impl ::std::fmt::Debug for AlexaForBusinessMetadata {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AlexaForBusinessMetadata");
-        formatter.field(
-            "is_alexa_for_business_enabled",
-            &self.is_alexa_for_business_enabled,
-        );
-        formatter.field(
-            "alexa_for_business_room_arn",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("is_alexa_for_business_enabled", &self.is_alexa_for_business_enabled);
+        formatter.field("alexa_for_business_room_arn", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -65,18 +59,12 @@ impl AlexaForBusinessMetadataBuilder {
         &self.is_alexa_for_business_enabled
     }
     /// <p>The ARN of the room resource.</p>
-    pub fn alexa_for_business_room_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alexa_for_business_room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alexa_for_business_room_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the room resource.</p>
-    pub fn set_alexa_for_business_room_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alexa_for_business_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alexa_for_business_room_arn = input;
         self
     }
@@ -95,14 +83,8 @@ impl AlexaForBusinessMetadataBuilder {
 impl ::std::fmt::Debug for AlexaForBusinessMetadataBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AlexaForBusinessMetadataBuilder");
-        formatter.field(
-            "is_alexa_for_business_enabled",
-            &self.is_alexa_for_business_enabled,
-        );
-        formatter.field(
-            "alexa_for_business_room_arn",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("is_alexa_for_business_enabled", &self.is_alexa_for_business_enabled);
+        formatter.field("alexa_for_business_room_arn", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

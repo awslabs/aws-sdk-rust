@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`pull_request_ids(Option<Vec<String>>)`](crate::operation::list_pull_requests::ListPullRequestsOutput::pull_request_ids): <p>The system-generated IDs of the pull requests.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pull_requests::ListPullRequestsOutput::next_token): <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     /// - On failure, responds with [`SdkError<ListPullRequestsError>`](crate::operation::list_pull_requests::ListPullRequestsError)
-    pub fn list_pull_requests(
-        &self,
-    ) -> crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder {
-        crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_pull_requests(&self) -> crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder {
+        crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::new(self.handle.clone())
     }
 }

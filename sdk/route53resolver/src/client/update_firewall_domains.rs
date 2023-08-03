@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`status(Option<FirewallDomainListStatus>)`](crate::operation::update_firewall_domains::UpdateFirewallDomainsOutput::status): <p>Status of the <code>UpdateFirewallDomains</code> request.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::update_firewall_domains::UpdateFirewallDomainsOutput::status_message): <p>Additional information about the status of the list, if available.</p>
     /// - On failure, responds with [`SdkError<UpdateFirewallDomainsError>`](crate::operation::update_firewall_domains::UpdateFirewallDomainsError)
-    pub fn update_firewall_domains(
-        &self,
-    ) -> crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsFluentBuilder
-    {
-        crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_firewall_domains(&self) -> crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsFluentBuilder {
+        crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsFluentBuilder::new(self.handle.clone())
     }
 }

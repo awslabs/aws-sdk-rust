@@ -27,10 +27,7 @@ pub fn ser_update_theme_data(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_theme_values::ser_theme_values(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_theme_values::ser_theme_values(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }

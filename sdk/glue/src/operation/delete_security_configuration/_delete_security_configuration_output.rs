@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSecurityConfigurationOutput {
 }
 impl DeleteSecurityConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSecurityConfigurationOutput`](crate::operation::delete_security_configuration::DeleteSecurityConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_security_configuration::builders::DeleteSecurityConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_security_configuration::builders::DeleteSecurityConfigurationOutputBuilder {
         crate::operation::delete_security_configuration::builders::DeleteSecurityConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSecurityConfigurationOutput`](crate::operation::delete_security_configuration::DeleteSecurityConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSecurityConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteSecurityConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteSecurityConfigurationOutput`](crate::operation::delete_security_configuration::DeleteSecurityConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_security_configuration::DeleteSecurityConfigurationOutput {
+    pub fn build(self) -> crate::operation::delete_security_configuration::DeleteSecurityConfigurationOutput {
         crate::operation::delete_security_configuration::DeleteSecurityConfigurationOutput {
             _request_id: self._request_id,
         }

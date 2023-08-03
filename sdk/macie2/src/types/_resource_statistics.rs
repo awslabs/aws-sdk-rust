@@ -79,9 +79,7 @@ impl ResourceStatistics {
 
 /// A builder for [`ResourceStatistics`](crate::types::ResourceStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceStatisticsBuilder {
     pub(crate) total_bytes_classified: ::std::option::Option<i64>,
     pub(crate) total_detections: ::std::option::Option<i64>,
@@ -184,10 +182,7 @@ impl ResourceStatisticsBuilder {
         self
     }
     /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects are encrypted with a key that Macie can't access. The objects use server-side encryption with customer-provided keys (SSE-C).</p>
-    pub fn set_total_items_skipped_invalid_encryption(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_total_items_skipped_invalid_encryption(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_items_skipped_invalid_encryption = input;
         self
     }
@@ -201,10 +196,7 @@ impl ResourceStatisticsBuilder {
         self
     }
     /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects are encrypted with KMS keys that were disabled, are scheduled for deletion, or were deleted.</p>
-    pub fn set_total_items_skipped_invalid_kms(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_total_items_skipped_invalid_kms(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_items_skipped_invalid_kms = input;
         self
     }
@@ -218,10 +210,7 @@ impl ResourceStatisticsBuilder {
         self
     }
     /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to the permissions settings for the objects or the permissions settings for the keys that were used to encrypt the objects.</p>
-    pub fn set_total_items_skipped_permission_denied(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_total_items_skipped_permission_denied(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_items_skipped_permission_denied = input;
         self
     }

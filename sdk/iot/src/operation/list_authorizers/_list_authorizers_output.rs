@@ -35,9 +35,7 @@ impl ListAuthorizersOutput {
 
 /// A builder for [`ListAuthorizersOutput`](crate::operation::list_authorizers::ListAuthorizersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAuthorizersOutputBuilder {
     pub(crate) authorizers: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizerSummary>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListAuthorizersOutputBuilder {
         self
     }
     /// <p>The authorizers.</p>
-    pub fn set_authorizers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizerSummary>>,
-    ) -> Self {
+    pub fn set_authorizers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizerSummary>>) -> Self {
         self.authorizers = input;
         self
     }
     /// <p>The authorizers.</p>
-    pub fn get_authorizers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorizerSummary>> {
+    pub fn get_authorizers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorizerSummary>> {
         &self.authorizers
     }
     /// <p>A marker used to get the next set of results.</p>

@@ -42,10 +42,7 @@ impl DeleteTaskDefinitionsFluentBuilder {
         }
     }
     /// Access the DeleteTaskDefinitions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_task_definitions::builders::DeleteTaskDefinitionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_task_definitions::builders::DeleteTaskDefinitionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +54,7 @@ impl DeleteTaskDefinitionsFluentBuilder {
             crate::operation::delete_task_definitions::DeleteTaskDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_task_definitions::DeleteTaskDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_task_definitions::DeleteTaskDefinitionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +64,7 @@ impl DeleteTaskDefinitionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +73,7 @@ impl DeleteTaskDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_task_definitions::DeleteTaskDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_task_definitions::DeleteTaskDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_task_definitions::DeleteTaskDefinitionsError>,
     > {
         let op = self
             .inner
@@ -106,9 +96,7 @@ impl DeleteTaskDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_task_definitions::DeleteTaskDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_task_definitions::DeleteTaskDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_task_definitions::DeleteTaskDefinitionsError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +110,7 @@ impl DeleteTaskDefinitionsFluentBuilder {
             crate::operation::delete_task_definitions::DeleteTaskDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_task_definitions::DeleteTaskDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_task_definitions::DeleteTaskDefinitionsError>,
     > {
         self.customize_middleware().await
     }
@@ -134,27 +120,19 @@ impl DeleteTaskDefinitionsFluentBuilder {
     ///
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to delete. You must specify a <code>revision</code>.</p>
     /// <p>You can specify up to 10 task definitions as a comma separated list.</p>
-    pub fn task_definitions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_definitions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_definitions(input.into());
         self
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to delete. You must specify a <code>revision</code>.</p>
     /// <p>You can specify up to 10 task definitions as a comma separated list.</p>
-    pub fn set_task_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_task_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_task_definitions(input);
         self
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to delete. You must specify a <code>revision</code>.</p>
     /// <p>You can specify up to 10 task definitions as a comma separated list.</p>
-    pub fn get_task_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_task_definitions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_task_definitions()
     }
 }

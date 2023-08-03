@@ -10,10 +10,7 @@ impl DeleteMapInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_map::DeleteMapOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_map::DeleteMapError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_map::DeleteMapError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_map();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl DeleteMapFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_map::DeleteMap,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::delete_map::DeleteMap, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_map::DeleteMapError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl DeleteMapFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl DeleteMapFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_map::DeleteMap,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::delete_map::DeleteMap, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_map::DeleteMapError>,
     > {
         self.customize_middleware().await

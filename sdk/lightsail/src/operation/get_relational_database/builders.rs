@@ -37,10 +37,7 @@ impl GetRelationalDatabaseFluentBuilder {
         }
     }
     /// Access the GetRelationalDatabase as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_relational_database::builders::GetRelationalDatabaseInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_relational_database::builders::GetRelationalDatabaseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetRelationalDatabaseFluentBuilder {
             crate::operation::get_relational_database::GetRelationalDatabase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_relational_database::GetRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database::GetRelationalDatabaseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetRelationalDatabaseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetRelationalDatabaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_relational_database::GetRelationalDatabaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_relational_database::GetRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database::GetRelationalDatabaseError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetRelationalDatabaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_relational_database::GetRelationalDatabaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_relational_database::GetRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database::GetRelationalDatabaseError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetRelationalDatabaseFluentBuilder {
             crate::operation::get_relational_database::GetRelationalDatabase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_relational_database::GetRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database::GetRelationalDatabaseError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the database that you are looking up.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.relational_database_name(input.into());
         self
     }
     /// <p>The name of the database that you are looking up.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }

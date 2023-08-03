@@ -60,9 +60,7 @@ impl DescribeSmbSettingsOutput {
     /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li>
     /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>
     /// </ul>
-    pub fn active_directory_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ActiveDirectoryStatus> {
+    pub fn active_directory_status(&self) -> ::std::option::Option<&crate::types::ActiveDirectoryStatus> {
         self.active_directory_status.as_ref()
     }
     /// <p>This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise <code>false</code>. Only supported for S3 File Gateways.</p>
@@ -76,9 +74,7 @@ impl DescribeSmbSettingsOutput {
     /// <li> <p> <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p> </li>
     /// <li> <p> <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p> </li>
     /// </ul>
-    pub fn smb_security_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SmbSecurityStrategy> {
+    pub fn smb_security_strategy(&self) -> ::std::option::Option<&crate::types::SmbSecurityStrategy> {
         self.smb_security_strategy.as_ref()
     }
     /// <p>The shares on this gateway appear when listing shares. Only supported for S3 File Gateways. </p>
@@ -97,18 +93,14 @@ impl ::aws_http::request_id::RequestId for DescribeSmbSettingsOutput {
 }
 impl DescribeSmbSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSmbSettingsOutput`](crate::operation::describe_smb_settings::DescribeSmbSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_smb_settings::builders::DescribeSmbSettingsOutputBuilder {
-        crate::operation::describe_smb_settings::builders::DescribeSmbSettingsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_smb_settings::builders::DescribeSmbSettingsOutputBuilder {
+        crate::operation::describe_smb_settings::builders::DescribeSmbSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSmbSettingsOutput`](crate::operation::describe_smb_settings::DescribeSmbSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSmbSettingsOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -172,10 +164,7 @@ impl DescribeSmbSettingsOutputBuilder {
     /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li>
     /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>
     /// </ul>
-    pub fn set_active_directory_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ActiveDirectoryStatus>,
-    ) -> Self {
+    pub fn set_active_directory_status(mut self, input: ::std::option::Option<crate::types::ActiveDirectoryStatus>) -> Self {
         self.active_directory_status = input;
         self
     }
@@ -189,9 +178,7 @@ impl DescribeSmbSettingsOutputBuilder {
     /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li>
     /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>
     /// </ul>
-    pub fn get_active_directory_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ActiveDirectoryStatus> {
+    pub fn get_active_directory_status(&self) -> &::std::option::Option<crate::types::ActiveDirectoryStatus> {
         &self.active_directory_status
     }
     /// <p>This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise <code>false</code>. Only supported for S3 File Gateways.</p>
@@ -227,10 +214,7 @@ impl DescribeSmbSettingsOutputBuilder {
     /// <li> <p> <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p> </li>
     /// <li> <p> <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p> </li>
     /// </ul>
-    pub fn set_smb_security_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::SmbSecurityStrategy>,
-    ) -> Self {
+    pub fn set_smb_security_strategy(mut self, input: ::std::option::Option<crate::types::SmbSecurityStrategy>) -> Self {
         self.smb_security_strategy = input;
         self
     }
@@ -240,9 +224,7 @@ impl DescribeSmbSettingsOutputBuilder {
     /// <li> <p> <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p> </li>
     /// <li> <p> <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p> </li>
     /// </ul>
-    pub fn get_smb_security_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmbSecurityStrategy> {
+    pub fn get_smb_security_strategy(&self) -> &::std::option::Option<crate::types::SmbSecurityStrategy> {
         &self.smb_security_strategy
     }
     /// <p>The shares on this gateway appear when listing shares. Only supported for S3 File Gateways. </p>
@@ -265,10 +247,7 @@ impl DescribeSmbSettingsOutputBuilder {
         self
     }
     /// <p>A list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.</p>
-    pub fn set_smb_local_groups(
-        mut self,
-        input: ::std::option::Option<crate::types::SmbLocalGroups>,
-    ) -> Self {
+    pub fn set_smb_local_groups(mut self, input: ::std::option::Option<crate::types::SmbLocalGroups>) -> Self {
         self.smb_local_groups = input;
         self
     }

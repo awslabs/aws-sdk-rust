@@ -13,12 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateThreatIntelSetOutput`](crate::operation::create_threat_intel_set::CreateThreatIntelSetOutput) with field(s):
     ///   - [`threat_intel_set_id(Option<String>)`](crate::operation::create_threat_intel_set::CreateThreatIntelSetOutput::threat_intel_set_id): <p>The ID of the ThreatIntelSet resource.</p>
     /// - On failure, responds with [`SdkError<CreateThreatIntelSetError>`](crate::operation::create_threat_intel_set::CreateThreatIntelSetError)
-    pub fn create_threat_intel_set(
-        &self,
-    ) -> crate::operation::create_threat_intel_set::builders::CreateThreatIntelSetFluentBuilder
-    {
-        crate::operation::create_threat_intel_set::builders::CreateThreatIntelSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_threat_intel_set(&self) -> crate::operation::create_threat_intel_set::builders::CreateThreatIntelSetFluentBuilder {
+        crate::operation::create_threat_intel_set::builders::CreateThreatIntelSetFluentBuilder::new(self.handle.clone())
     }
 }

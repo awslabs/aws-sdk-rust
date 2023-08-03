@@ -5,16 +5,16 @@ pub use crate::operation::update_firewall_delete_protection::_update_firewall_de
 
 impl UpdateFirewallDeleteProtectionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_firewall_delete_protection();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateFirewallDeleteProtectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFirewallDeleteProtectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_firewall_delete_protection::builders::UpdateFirewallDeleteProtectionInputBuilder,
+    inner: crate::operation::update_firewall_delete_protection::builders::UpdateFirewallDeleteProtectionInputBuilder,
 }
 impl UpdateFirewallDeleteProtectionFluentBuilder {
     /// Creates a new `UpdateFirewallDeleteProtection`.
@@ -37,15 +37,20 @@ impl UpdateFirewallDeleteProtectionFluentBuilder {
         }
     }
     /// Access the UpdateFirewallDeleteProtection as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_firewall_delete_protection::builders::UpdateFirewallDeleteProtectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_firewall_delete_protection::builders::UpdateFirewallDeleteProtectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtection, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtection,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl UpdateFirewallDeleteProtectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl UpdateFirewallDeleteProtectionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtection, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtection,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -133,19 +148,13 @@ impl UpdateFirewallDeleteProtectionFluentBuilder {
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_name(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_name(input);
         self
     }

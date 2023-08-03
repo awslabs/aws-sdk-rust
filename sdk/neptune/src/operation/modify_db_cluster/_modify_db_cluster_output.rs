@@ -23,17 +23,14 @@ impl ::aws_http::request_id::RequestId for ModifyDbClusterOutput {
 }
 impl ModifyDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterOutput`](crate::operation::modify_db_cluster::ModifyDbClusterOutput).
-    pub fn builder() -> crate::operation::modify_db_cluster::builders::ModifyDbClusterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_db_cluster::builders::ModifyDbClusterOutputBuilder {
         crate::operation::modify_db_cluster::builders::ModifyDbClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyDbClusterOutput`](crate::operation::modify_db_cluster::ModifyDbClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyDbClusterOutputBuilder {
     pub(crate) db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,

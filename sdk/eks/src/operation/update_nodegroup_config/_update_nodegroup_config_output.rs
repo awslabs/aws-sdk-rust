@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateNodegroupConfigOutput {
 }
 impl UpdateNodegroupConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNodegroupConfigOutput`](crate::operation::update_nodegroup_config::UpdateNodegroupConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::update_nodegroup_config::builders::UpdateNodegroupConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_nodegroup_config::builders::UpdateNodegroupConfigOutputBuilder {
         crate::operation::update_nodegroup_config::builders::UpdateNodegroupConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNodegroupConfigOutput`](crate::operation::update_nodegroup_config::UpdateNodegroupConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNodegroupConfigOutputBuilder {
     pub(crate) update: ::std::option::Option<crate::types::Update>,
     _request_id: Option<String>,

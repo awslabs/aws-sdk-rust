@@ -18,9 +18,7 @@ pub fn ser_update_account_audit_configuration_input(
     }
     if let Some(var_6) = &input.audit_notification_target_configurations {
         #[allow(unused_mut)]
-        let mut object_7 = object
-            .key("auditNotificationTargetConfigurations")
-            .start_object();
+        let mut object_7 = object.key("auditNotificationTargetConfigurations").start_object();
         for (key_8, value_9) in var_6 {
             {
                 #[allow(unused_mut)]

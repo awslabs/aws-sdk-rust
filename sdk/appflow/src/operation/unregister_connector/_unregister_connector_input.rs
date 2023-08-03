@@ -22,35 +22,26 @@ impl UnregisterConnectorInput {
 }
 impl UnregisterConnectorInput {
     /// Creates a new builder-style object to manufacture [`UnregisterConnectorInput`](crate::operation::unregister_connector::UnregisterConnectorInput).
-    pub fn builder(
-    ) -> crate::operation::unregister_connector::builders::UnregisterConnectorInputBuilder {
+    pub fn builder() -> crate::operation::unregister_connector::builders::UnregisterConnectorInputBuilder {
         crate::operation::unregister_connector::builders::UnregisterConnectorInputBuilder::default()
     }
 }
 
 /// A builder for [`UnregisterConnectorInput`](crate::operation::unregister_connector::UnregisterConnectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnregisterConnectorInputBuilder {
     pub(crate) connector_label: ::std::option::Option<::std::string::String>,
     pub(crate) force_delete: ::std::option::Option<bool>,
 }
 impl UnregisterConnectorInputBuilder {
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
-    pub fn connector_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
-    pub fn set_connector_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_label = input;
         self
     }
@@ -75,15 +66,11 @@ impl UnregisterConnectorInputBuilder {
     /// Consumes the builder and constructs a [`UnregisterConnectorInput`](crate::operation::unregister_connector::UnregisterConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::unregister_connector::UnregisterConnectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::unregister_connector::UnregisterConnectorInput {
-                connector_label: self.connector_label,
-                force_delete: self.force_delete,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::unregister_connector::UnregisterConnectorInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::unregister_connector::UnregisterConnectorInput {
+            connector_label: self.connector_label,
+            force_delete: self.force_delete,
+        })
     }
 }

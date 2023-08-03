@@ -77,17 +77,14 @@ impl ::aws_http::request_id::RequestId for DescribeChangeSetOutput {
 }
 impl DescribeChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChangeSetOutput`](crate::operation::describe_change_set::DescribeChangeSetOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_change_set::builders::DescribeChangeSetOutputBuilder {
+    pub fn builder() -> crate::operation::describe_change_set::builders::DescribeChangeSetOutputBuilder {
         crate::operation::describe_change_set::builders::DescribeChangeSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeChangeSetOutput`](crate::operation::describe_change_set::DescribeChangeSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeChangeSetOutputBuilder {
     pub(crate) change_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_set_arn: ::std::option::Option<::std::string::String>,
@@ -102,18 +99,12 @@ pub struct DescribeChangeSetOutputBuilder {
 }
 impl DescribeChangeSetOutputBuilder {
     /// <p>Required. The unique identifier for the change set referenced in this request.</p>
-    pub fn change_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Required. The unique identifier for the change set referenced in this request.</p>
-    pub fn set_change_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_id = input;
         self
     }
@@ -122,18 +113,12 @@ impl DescribeChangeSetOutputBuilder {
         &self.change_set_id
     }
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
-    pub fn change_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
-    pub fn set_change_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_arn = input;
         self
     }
@@ -142,18 +127,12 @@ impl DescribeChangeSetOutputBuilder {
         &self.change_set_arn
     }
     /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
-    pub fn change_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
-    pub fn set_change_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_name = input;
         self
     }
@@ -209,10 +188,7 @@ impl DescribeChangeSetOutputBuilder {
         self
     }
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
-    pub fn set_failure_code(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureCode>,
-    ) -> Self {
+    pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::FailureCode>) -> Self {
         self.failure_code = input;
         self
     }
@@ -221,18 +197,12 @@ impl DescribeChangeSetOutputBuilder {
         &self.failure_code
     }
     /// <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
-    pub fn failure_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
-    pub fn set_failure_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_description = input;
         self
     }
@@ -252,17 +222,12 @@ impl DescribeChangeSetOutputBuilder {
         self
     }
     /// <p>An array of <code>ChangeSummary</code> objects.</p>
-    pub fn set_change_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSummary>>,
-    ) -> Self {
+    pub fn set_change_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSummary>>) -> Self {
         self.change_set = input;
         self
     }
     /// <p>An array of <code>ChangeSummary</code> objects.</p>
-    pub fn get_change_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeSummary>> {
+    pub fn get_change_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeSummary>> {
         &self.change_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -29,9 +29,7 @@ impl ListCrlsInput {
 
 /// A builder for [`ListCrlsInput`](crate::operation::list_crls::ListCrlsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCrlsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,
@@ -66,12 +64,7 @@ impl ListCrlsInputBuilder {
         &self.page_size
     }
     /// Consumes the builder and constructs a [`ListCrlsInput`](crate::operation::list_crls::ListCrlsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_crls::ListCrlsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_crls::ListCrlsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_crls::ListCrlsInput {
             next_token: self.next_token,
             page_size: self.page_size,

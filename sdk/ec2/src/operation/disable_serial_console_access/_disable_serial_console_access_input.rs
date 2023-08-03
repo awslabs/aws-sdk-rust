@@ -15,16 +15,14 @@ impl DisableSerialConsoleAccessInput {
 }
 impl DisableSerialConsoleAccessInput {
     /// Creates a new builder-style object to manufacture [`DisableSerialConsoleAccessInput`](crate::operation::disable_serial_console_access::DisableSerialConsoleAccessInput).
-    pub fn builder() -> crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessInputBuilder{
+    pub fn builder() -> crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessInputBuilder {
         crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableSerialConsoleAccessInput`](crate::operation::disable_serial_console_access::DisableSerialConsoleAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableSerialConsoleAccessInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
@@ -50,10 +48,6 @@ impl DisableSerialConsoleAccessInputBuilder {
         crate::operation::disable_serial_console_access::DisableSerialConsoleAccessInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disable_serial_console_access::DisableSerialConsoleAccessInput {
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disable_serial_console_access::DisableSerialConsoleAccessInput { dry_run: self.dry_run })
     }
 }

@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteApnsVoipChannelOutput`](crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelOutput) with field(s):
     ///   - [`apns_voip_channel_response(Option<ApnsVoipChannelResponse>)`](crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelOutput::apns_voip_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteApnsVoipChannelError>`](crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError)
-    pub fn delete_apns_voip_channel(
-        &self,
-    ) -> crate::operation::delete_apns_voip_channel::builders::DeleteApnsVoipChannelFluentBuilder
-    {
+    pub fn delete_apns_voip_channel(&self) -> crate::operation::delete_apns_voip_channel::builders::DeleteApnsVoipChannelFluentBuilder {
         crate::operation::delete_apns_voip_channel::builders::DeleteApnsVoipChannelFluentBuilder::new(self.handle.clone())
     }
 }

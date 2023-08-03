@@ -41,9 +41,7 @@ impl TestAlarmInput {
 
 /// A builder for [`TestAlarmInput`](crate::operation::test_alarm::TestAlarmInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestAlarmInputBuilder {
     pub(crate) alarm_name: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::AlarmState>,
@@ -96,12 +94,7 @@ impl TestAlarmInputBuilder {
         &self.state
     }
     /// Consumes the builder and constructs a [`TestAlarmInput`](crate::operation::test_alarm::TestAlarmInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::test_alarm::TestAlarmInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_alarm::TestAlarmInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_alarm::TestAlarmInput {
             alarm_name: self.alarm_name,
             state: self.state,

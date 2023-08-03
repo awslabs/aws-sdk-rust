@@ -22,17 +22,14 @@ impl UpdateAnomalyMonitorInput {
 }
 impl UpdateAnomalyMonitorInput {
     /// Creates a new builder-style object to manufacture [`UpdateAnomalyMonitorInput`](crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorInput).
-    pub fn builder(
-    ) -> crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorInputBuilder {
+    pub fn builder() -> crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorInputBuilder {
         crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAnomalyMonitorInput`](crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAnomalyMonitorInputBuilder {
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl UpdateAnomalyMonitorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAnomalyMonitorInput`](crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorInput {
-                monitor_arn: self.monitor_arn,
-                monitor_name: self.monitor_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorInput {
+            monitor_arn: self.monitor_arn,
+            monitor_name: self.monitor_name,
+        })
     }
 }

@@ -13,10 +13,7 @@ pub fn ser_open_hours(
                     {
                         #[allow(unused_mut)]
                         let mut object_7 = array_5.value().start_object();
-                        crate::protocol_serde::shape_open_hours_rule::ser_open_hours_rule(
-                            &mut object_7,
-                            item_6,
-                        )?;
+                        crate::protocol_serde::shape_open_hours_rule::ser_open_hours_rule(&mut object_7, item_6)?;
                         object_7.finish();
                     }
                 }
@@ -35,10 +32,7 @@ pub fn ser_open_hours(
                     {
                         #[allow(unused_mut)]
                         let mut object_14 = array_12.value().start_object();
-                        crate::protocol_serde::shape_open_hours_rule::ser_open_hours_rule(
-                            &mut object_14,
-                            item_13,
-                        )?;
+                        crate::protocol_serde::shape_open_hours_rule::ser_open_hours_rule(&mut object_14, item_13)?;
                         object_14.finish();
                     }
                 }
@@ -57,10 +51,7 @@ pub fn ser_open_hours(
                     {
                         #[allow(unused_mut)]
                         let mut object_21 = array_19.value().start_object();
-                        crate::protocol_serde::shape_open_hours_rule::ser_open_hours_rule(
-                            &mut object_21,
-                            item_20,
-                        )?;
+                        crate::protocol_serde::shape_open_hours_rule::ser_open_hours_rule(&mut object_21, item_20)?;
                         object_21.finish();
                     }
                 }
@@ -79,10 +70,7 @@ pub fn ser_open_hours(
                     {
                         #[allow(unused_mut)]
                         let mut object_28 = array_26.value().start_object();
-                        crate::protocol_serde::shape_open_hours_rule::ser_open_hours_rule(
-                            &mut object_28,
-                            item_27,
-                        )?;
+                        crate::protocol_serde::shape_open_hours_rule::ser_open_hours_rule(&mut object_28, item_27)?;
                         object_28.finish();
                     }
                 }
@@ -101,10 +89,7 @@ pub fn ser_open_hours(
                     {
                         #[allow(unused_mut)]
                         let mut object_35 = array_33.value().start_object();
-                        crate::protocol_serde::shape_open_hours_rule::ser_open_hours_rule(
-                            &mut object_35,
-                            item_34,
-                        )?;
+                        crate::protocol_serde::shape_open_hours_rule::ser_open_hours_rule(&mut object_35, item_34)?;
                         object_35.finish();
                     }
                 }
@@ -120,12 +105,7 @@ pub(crate) fn de_open_hours<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::OpenHours>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -135,51 +115,42 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "EMAIL" => {
-                                builder = builder.set_email(
-                                    crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens)?
-                                );
-                            }
-                            "SMS" => {
-                                builder = builder.set_sms(
-                                    crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens)?
-                                );
-                            }
-                            "PUSH" => {
-                                builder = builder.set_push(
-                                    crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens)?
-                                );
-                            }
-                            "VOICE" => {
-                                builder = builder.set_voice(
-                                    crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens)?
-                                );
-                            }
-                            "CUSTOM" => {
-                                builder = builder.set_custom(
-                                    crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "EMAIL" => {
+                            builder = builder
+                                .set_email(crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens)?);
                         }
-                    }
+                        "SMS" => {
+                            builder = builder
+                                .set_sms(crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens)?);
+                        }
+                        "PUSH" => {
+                            builder = builder
+                                .set_push(crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens)?);
+                        }
+                        "VOICE" => {
+                            builder = builder
+                                .set_voice(crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens)?);
+                        }
+                        "CUSTOM" => {
+                            builder = builder.set_custom(
+                                crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

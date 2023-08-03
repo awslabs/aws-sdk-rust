@@ -27,7 +27,7 @@ impl ListPlatformApplicationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPlatformApplicationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_platform_applications::builders::ListPlatformApplicationsInputBuilder,
+    inner: crate::operation::list_platform_applications::builders::ListPlatformApplicationsInputBuilder,
 }
 impl ListPlatformApplicationsFluentBuilder {
     /// Creates a new `ListPlatformApplications`.
@@ -38,10 +38,7 @@ impl ListPlatformApplicationsFluentBuilder {
         }
     }
     /// Access the ListPlatformApplications as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_platform_applications::builders::ListPlatformApplicationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_platform_applications::builders::ListPlatformApplicationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ListPlatformApplicationsFluentBuilder {
             crate::operation::list_platform_applications::ListPlatformApplications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_platform_applications::ListPlatformApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_platform_applications::ListPlatformApplicationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ListPlatformApplicationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ListPlatformApplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_platform_applications::ListPlatformApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_platform_applications::ListPlatformApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_platform_applications::ListPlatformApplicationsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ListPlatformApplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_platform_applications::ListPlatformApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_platform_applications::ListPlatformApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_platform_applications::ListPlatformApplicationsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +106,14 @@ impl ListPlatformApplicationsFluentBuilder {
             crate::operation::list_platform_applications::ListPlatformApplications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_platform_applications::ListPlatformApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_platform_applications::ListPlatformApplicationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_platform_applications::paginator::ListPlatformApplicationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_platform_applications::paginator::ListPlatformApplicationsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_platform_applications::paginator::ListPlatformApplicationsPaginator {
         crate::operation::list_platform_applications::paginator::ListPlatformApplicationsPaginator::new(self.handle, self.inner)
     }
     /// <p>NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are available after the first page results.</p>

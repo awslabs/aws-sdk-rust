@@ -48,13 +48,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeviceFilterAttribute {
     #[allow(missing_docs)] // documentation missing in model
@@ -99,9 +93,7 @@ impl ::std::convert::From<&str> for DeviceFilterAttribute {
             "PLATFORM" => DeviceFilterAttribute::Platform,
             "REMOTE_ACCESS_ENABLED" => DeviceFilterAttribute::RemoteAccessEnabled,
             "REMOTE_DEBUG_ENABLED" => DeviceFilterAttribute::RemoteDebugEnabled,
-            other => DeviceFilterAttribute::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DeviceFilterAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

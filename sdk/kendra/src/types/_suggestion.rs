@@ -39,14 +39,11 @@ impl Suggestion {
 
 /// A builder for [`Suggestion`](crate::types::Suggestion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuggestionBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<crate::types::SuggestionValue>,
-    pub(crate) source_documents:
-        ::std::option::Option<::std::vec::Vec<crate::types::SourceDocument>>,
+    pub(crate) source_documents: ::std::option::Option<::std::vec::Vec<crate::types::SourceDocument>>,
 }
 impl SuggestionBuilder {
     /// <p>The UUID (universally unique identifier) of a single query suggestion.</p>
@@ -71,10 +68,7 @@ impl SuggestionBuilder {
     }
     /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p>
     /// <p>The value is the text string of a suggestion.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<crate::types::SuggestionValue>,
-    ) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::SuggestionValue>) -> Self {
         self.value = input;
         self
     }
@@ -95,17 +89,12 @@ impl SuggestionBuilder {
         self
     }
     /// <p>The list of document IDs and their fields/attributes that are used for a single query suggestion, if document fields set to use for query suggestions.</p>
-    pub fn set_source_documents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceDocument>>,
-    ) -> Self {
+    pub fn set_source_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceDocument>>) -> Self {
         self.source_documents = input;
         self
     }
     /// <p>The list of document IDs and their fields/attributes that are used for a single query suggestion, if document fields set to use for query suggestions.</p>
-    pub fn get_source_documents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceDocument>> {
+    pub fn get_source_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceDocument>> {
         &self.source_documents
     }
     /// Consumes the builder and constructs a [`Suggestion`](crate::types::Suggestion).

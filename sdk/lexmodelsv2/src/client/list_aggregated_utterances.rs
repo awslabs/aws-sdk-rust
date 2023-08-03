@@ -25,10 +25,7 @@ impl super::Client {
     ///   - [`aggregated_utterances_summaries(Option<Vec<AggregatedUtterancesSummary>>)`](crate::operation::list_aggregated_utterances::ListAggregatedUtterancesOutput::aggregated_utterances_summaries): <p>Summaries of the aggregated utterance data. Each response contains information about the number of times that the utterance was seen during the time period, whether it was detected or missed, and when it was seen during the time period.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_aggregated_utterances::ListAggregatedUtterancesOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListAggregatedUtterances</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListAggregatedUtterances</code> operation request to get the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListAggregatedUtterancesError>`](crate::operation::list_aggregated_utterances::ListAggregatedUtterancesError)
-    pub fn list_aggregated_utterances(
-        &self,
-    ) -> crate::operation::list_aggregated_utterances::builders::ListAggregatedUtterancesFluentBuilder
-    {
+    pub fn list_aggregated_utterances(&self) -> crate::operation::list_aggregated_utterances::builders::ListAggregatedUtterancesFluentBuilder {
         crate::operation::list_aggregated_utterances::builders::ListAggregatedUtterancesFluentBuilder::new(self.handle.clone())
     }
 }

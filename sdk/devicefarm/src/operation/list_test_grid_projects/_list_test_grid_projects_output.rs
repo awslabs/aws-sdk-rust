@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListTestGridProjectsOutput {
 }
 impl ListTestGridProjectsOutput {
     /// Creates a new builder-style object to manufacture [`ListTestGridProjectsOutput`](crate::operation::list_test_grid_projects::ListTestGridProjectsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_test_grid_projects::builders::ListTestGridProjectsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_test_grid_projects::builders::ListTestGridProjectsOutputBuilder {
         crate::operation::list_test_grid_projects::builders::ListTestGridProjectsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTestGridProjectsOutput`](crate::operation::list_test_grid_projects::ListTestGridProjectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestGridProjectsOutputBuilder {
-    pub(crate) test_grid_projects:
-        ::std::option::Option<::std::vec::Vec<crate::types::TestGridProject>>,
+    pub(crate) test_grid_projects: ::std::option::Option<::std::vec::Vec<crate::types::TestGridProject>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListTestGridProjectsOutputBuilder {
         self
     }
     /// <p>The list of TestGridProjects, based on a <code>ListTestGridProjectsRequest</code>.</p>
-    pub fn set_test_grid_projects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TestGridProject>>,
-    ) -> Self {
+    pub fn set_test_grid_projects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestGridProject>>) -> Self {
         self.test_grid_projects = input;
         self
     }
     /// <p>The list of TestGridProjects, based on a <code>ListTestGridProjectsRequest</code>.</p>
-    pub fn get_test_grid_projects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestGridProject>> {
+    pub fn get_test_grid_projects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestGridProject>> {
         &self.test_grid_projects
     }
     /// <p>Used for pagination. Pass into <code>ListTestGridProjects</code> to get more results in a paginated request.</p>

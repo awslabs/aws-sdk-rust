@@ -43,9 +43,7 @@ impl ListRegistriesInput {
 
 /// A builder for [`ListRegistriesInput`](crate::operation::list_registries::ListRegistriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRegistriesInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -82,18 +80,12 @@ impl ListRegistriesInputBuilder {
         &self.next_token
     }
     /// <p>Specifying this limits the results to only those registry names that start with the specified prefix.</p>
-    pub fn registry_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifying this limits the results to only those registry names that start with the specified prefix.</p>
-    pub fn set_registry_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_name_prefix = input;
         self
     }
@@ -118,10 +110,7 @@ impl ListRegistriesInputBuilder {
     /// Consumes the builder and constructs a [`ListRegistriesInput`](crate::operation::list_registries::ListRegistriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_registries::ListRegistriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_registries::ListRegistriesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_registries::ListRegistriesInput {
             limit: self.limit,
             next_token: self.next_token,

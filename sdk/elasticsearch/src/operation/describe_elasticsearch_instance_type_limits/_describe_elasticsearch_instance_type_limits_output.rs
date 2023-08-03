@@ -12,9 +12,7 @@ pub struct DescribeElasticsearchInstanceTypeLimitsOutput {
     /// </ul>
     /// <p></p>
     #[doc(hidden)]
-    pub limits_by_role: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Limits>,
-    >,
+    pub limits_by_role: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Limits>>,
     _request_id: Option<String>,
 }
 impl DescribeElasticsearchInstanceTypeLimitsOutput {
@@ -25,11 +23,7 @@ impl DescribeElasticsearchInstanceTypeLimitsOutput {
     /// <li>ultra_warm: If the given InstanceType is used as warm node</li>
     /// </ul>
     /// <p></p>
-    pub fn limits_by_role(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Limits>,
-    > {
+    pub fn limits_by_role(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Limits>> {
         self.limits_by_role.as_ref()
     }
 }
@@ -40,20 +34,17 @@ impl ::aws_http::request_id::RequestId for DescribeElasticsearchInstanceTypeLimi
 }
 impl DescribeElasticsearchInstanceTypeLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeElasticsearchInstanceTypeLimitsOutput`](crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsOutput).
-    pub fn builder() -> crate::operation::describe_elasticsearch_instance_type_limits::builders::DescribeElasticsearchInstanceTypeLimitsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_elasticsearch_instance_type_limits::builders::DescribeElasticsearchInstanceTypeLimitsOutputBuilder
+    {
         crate::operation::describe_elasticsearch_instance_type_limits::builders::DescribeElasticsearchInstanceTypeLimitsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeElasticsearchInstanceTypeLimitsOutput`](crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeElasticsearchInstanceTypeLimitsOutputBuilder {
-    pub(crate) limits_by_role: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Limits>,
-    >,
+    pub(crate) limits_by_role: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Limits>>,
     _request_id: Option<String>,
 }
 impl DescribeElasticsearchInstanceTypeLimitsOutputBuilder {
@@ -68,11 +59,7 @@ impl DescribeElasticsearchInstanceTypeLimitsOutputBuilder {
     /// <li>ultra_warm: If the given InstanceType is used as warm node</li>
     /// </ul>
     /// <p></p>
-    pub fn limits_by_role(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Limits,
-    ) -> Self {
+    pub fn limits_by_role(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Limits) -> Self {
         let mut hash_map = self.limits_by_role.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.limits_by_role = ::std::option::Option::Some(hash_map);
@@ -87,9 +74,7 @@ impl DescribeElasticsearchInstanceTypeLimitsOutputBuilder {
     /// <p></p>
     pub fn set_limits_by_role(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Limits>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Limits>>,
     ) -> Self {
         self.limits_by_role = input;
         self
@@ -101,11 +86,7 @@ impl DescribeElasticsearchInstanceTypeLimitsOutputBuilder {
     /// <li>ultra_warm: If the given InstanceType is used as warm node</li>
     /// </ul>
     /// <p></p>
-    pub fn get_limits_by_role(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Limits>,
-    > {
+    pub fn get_limits_by_role(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Limits>> {
         &self.limits_by_role
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -118,10 +99,9 @@ impl DescribeElasticsearchInstanceTypeLimitsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeElasticsearchInstanceTypeLimitsOutput`](crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsOutput).
-    pub fn build(self) -> crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsOutput{
+    pub fn build(self) -> crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsOutput {
         crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsOutput {
-            limits_by_role: self.limits_by_role
-            ,
+            limits_by_role: self.limits_by_role,
             _request_id: self._request_id,
         }
     }

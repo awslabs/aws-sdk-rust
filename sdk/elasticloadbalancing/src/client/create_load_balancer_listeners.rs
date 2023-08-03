@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`listeners(Vec<Listener>)`](crate::operation::create_load_balancer_listeners::builders::CreateLoadBalancerListenersFluentBuilder::listeners) / [`set_listeners(Option<Vec<Listener>>)`](crate::operation::create_load_balancer_listeners::builders::CreateLoadBalancerListenersFluentBuilder::set_listeners): <p>The listeners.</p>
     /// - On success, responds with [`CreateLoadBalancerListenersOutput`](crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersOutput)
     /// - On failure, responds with [`SdkError<CreateLoadBalancerListenersError>`](crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError)
-    pub fn create_load_balancer_listeners(&self) -> crate::operation::create_load_balancer_listeners::builders::CreateLoadBalancerListenersFluentBuilder{
+    pub fn create_load_balancer_listeners(
+        &self,
+    ) -> crate::operation::create_load_balancer_listeners::builders::CreateLoadBalancerListenersFluentBuilder {
         crate::operation::create_load_balancer_listeners::builders::CreateLoadBalancerListenersFluentBuilder::new(self.handle.clone())
     }
 }

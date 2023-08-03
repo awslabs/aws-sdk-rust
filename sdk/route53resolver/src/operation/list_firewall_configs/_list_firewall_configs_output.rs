@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListFirewallConfigsOutput {
 }
 impl ListFirewallConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListFirewallConfigsOutput`](crate::operation::list_firewall_configs::ListFirewallConfigsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_firewall_configs::builders::ListFirewallConfigsOutputBuilder {
-        crate::operation::list_firewall_configs::builders::ListFirewallConfigsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_firewall_configs::builders::ListFirewallConfigsOutputBuilder {
+        crate::operation::list_firewall_configs::builders::ListFirewallConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFirewallConfigsOutput`](crate::operation::list_firewall_configs::ListFirewallConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFirewallConfigsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) firewall_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::FirewallConfig>>,
+    pub(crate) firewall_configs: ::std::option::Option<::std::vec::Vec<crate::types::FirewallConfig>>,
     _request_id: Option<String>,
 }
 impl ListFirewallConfigsOutputBuilder {
@@ -73,17 +68,12 @@ impl ListFirewallConfigsOutputBuilder {
         self
     }
     /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
-    pub fn set_firewall_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallConfig>>,
-    ) -> Self {
+    pub fn set_firewall_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallConfig>>) -> Self {
         self.firewall_configs = input;
         self
     }
     /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
-    pub fn get_firewall_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallConfig>> {
+    pub fn get_firewall_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallConfig>> {
         &self.firewall_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

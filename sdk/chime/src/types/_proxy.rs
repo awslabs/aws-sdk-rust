@@ -38,10 +38,7 @@ impl Proxy {
 impl ::std::fmt::Debug for Proxy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Proxy");
-        formatter.field(
-            "default_session_expiry_minutes",
-            &self.default_session_expiry_minutes,
-        );
+        formatter.field("default_session_expiry_minutes", &self.default_session_expiry_minutes);
         formatter.field("disabled", &self.disabled);
         formatter.field("fall_back_phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("phone_number_countries", &self.phone_number_countries);
@@ -62,8 +59,7 @@ pub struct ProxyBuilder {
     pub(crate) default_session_expiry_minutes: ::std::option::Option<i32>,
     pub(crate) disabled: ::std::option::Option<bool>,
     pub(crate) fall_back_phone_number: ::std::option::Option<::std::string::String>,
-    pub(crate) phone_number_countries:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) phone_number_countries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ProxyBuilder {
     /// <p>The default number of minutes allowed for proxy sessions.</p>
@@ -95,18 +91,12 @@ impl ProxyBuilder {
         &self.disabled
     }
     /// <p>The phone number to route calls to after a proxy session expires.</p>
-    pub fn fall_back_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fall_back_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fall_back_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number to route calls to after a proxy session expires.</p>
-    pub fn set_fall_back_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fall_back_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fall_back_phone_number = input;
         self
     }
@@ -119,27 +109,19 @@ impl ProxyBuilder {
     /// To override the contents of this collection use [`set_phone_number_countries`](Self::set_phone_number_countries).
     ///
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    pub fn phone_number_countries(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_countries(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.phone_number_countries.unwrap_or_default();
         v.push(input.into());
         self.phone_number_countries = ::std::option::Option::Some(v);
         self
     }
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    pub fn set_phone_number_countries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_phone_number_countries(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.phone_number_countries = input;
         self
     }
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    pub fn get_phone_number_countries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_phone_number_countries(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.phone_number_countries
     }
     /// Consumes the builder and constructs a [`Proxy`](crate::types::Proxy).
@@ -155,10 +137,7 @@ impl ProxyBuilder {
 impl ::std::fmt::Debug for ProxyBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ProxyBuilder");
-        formatter.field(
-            "default_session_expiry_minutes",
-            &self.default_session_expiry_minutes,
-        );
+        formatter.field("default_session_expiry_minutes", &self.default_session_expiry_minutes);
         formatter.field("disabled", &self.disabled);
         formatter.field("fall_back_phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("phone_number_countries", &self.phone_number_countries);

@@ -9,8 +9,7 @@ pub struct LaunchPathSummary {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The constraints on the portfolio-product relationship.</p>
     #[doc(hidden)]
-    pub constraint_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConstraintSummary>>,
+    pub constraint_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ConstraintSummary>>,
     /// <p>The tags associated with this product path.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -24,9 +23,7 @@ impl LaunchPathSummary {
         self.id.as_deref()
     }
     /// <p>The constraints on the portfolio-product relationship.</p>
-    pub fn constraint_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConstraintSummary]> {
+    pub fn constraint_summaries(&self) -> ::std::option::Option<&[crate::types::ConstraintSummary]> {
         self.constraint_summaries.as_deref()
     }
     /// <p>The tags associated with this product path.</p>
@@ -47,13 +44,10 @@ impl LaunchPathSummary {
 
 /// A builder for [`LaunchPathSummary`](crate::types::LaunchPathSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchPathSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) constraint_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConstraintSummary>>,
+    pub(crate) constraint_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ConstraintSummary>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -84,17 +78,12 @@ impl LaunchPathSummaryBuilder {
         self
     }
     /// <p>The constraints on the portfolio-product relationship.</p>
-    pub fn set_constraint_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConstraintSummary>>,
-    ) -> Self {
+    pub fn set_constraint_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConstraintSummary>>) -> Self {
         self.constraint_summaries = input;
         self
     }
     /// <p>The constraints on the portfolio-product relationship.</p>
-    pub fn get_constraint_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConstraintSummary>> {
+    pub fn get_constraint_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConstraintSummary>> {
         &self.constraint_summaries
     }
     /// Appends an item to `tags`.
@@ -109,10 +98,7 @@ impl LaunchPathSummaryBuilder {
         self
     }
     /// <p>The tags associated with this product path.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

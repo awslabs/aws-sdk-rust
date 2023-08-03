@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`last_uplink_received_at(Option<String>)`](crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsOutput::last_uplink_received_at): <p>The date and time when the most recent uplink was received.</p> <note>   <p>This value is only valid for 3 months.</p>  </note>
     ///   - [`connection_status(Option<ConnectionStatus>)`](crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsOutput::connection_status): <p>The connection status of the wireless gateway.</p>
     /// - On failure, responds with [`SdkError<GetWirelessGatewayStatisticsError>`](crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsError)
-    pub fn get_wireless_gateway_statistics(&self) -> crate::operation::get_wireless_gateway_statistics::builders::GetWirelessGatewayStatisticsFluentBuilder{
+    pub fn get_wireless_gateway_statistics(
+        &self,
+    ) -> crate::operation::get_wireless_gateway_statistics::builders::GetWirelessGatewayStatisticsFluentBuilder {
         crate::operation::get_wireless_gateway_statistics::builders::GetWirelessGatewayStatisticsFluentBuilder::new(self.handle.clone())
     }
 }

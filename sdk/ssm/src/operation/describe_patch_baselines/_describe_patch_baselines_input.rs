@@ -41,21 +41,16 @@ impl DescribePatchBaselinesInput {
 }
 impl DescribePatchBaselinesInput {
     /// Creates a new builder-style object to manufacture [`DescribePatchBaselinesInput`](crate::operation::describe_patch_baselines::DescribePatchBaselinesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesInputBuilder {
         crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePatchBaselinesInput`](crate::operation::describe_patch_baselines::DescribePatchBaselinesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePatchBaselinesInputBuilder {
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -84,10 +79,7 @@ impl DescribePatchBaselinesInputBuilder {
     /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>
     /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -98,9 +90,7 @@ impl DescribePatchBaselinesInputBuilder {
     /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>
     /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
         &self.filters
     }
     /// <p>The maximum number of patch baselines to return (per page).</p>
@@ -134,16 +124,12 @@ impl DescribePatchBaselinesInputBuilder {
     /// Consumes the builder and constructs a [`DescribePatchBaselinesInput`](crate::operation::describe_patch_baselines::DescribePatchBaselinesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_patch_baselines::DescribePatchBaselinesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_patch_baselines::DescribePatchBaselinesInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_patch_baselines::DescribePatchBaselinesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_patch_baselines::DescribePatchBaselinesInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

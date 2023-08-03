@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DetachClassicLinkVpcOutput {
 }
 impl DetachClassicLinkVpcOutput {
     /// Creates a new builder-style object to manufacture [`DetachClassicLinkVpcOutput`](crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcOutput).
-    pub fn builder(
-    ) -> crate::operation::detach_classic_link_vpc::builders::DetachClassicLinkVpcOutputBuilder
-    {
+    pub fn builder() -> crate::operation::detach_classic_link_vpc::builders::DetachClassicLinkVpcOutputBuilder {
         crate::operation::detach_classic_link_vpc::builders::DetachClassicLinkVpcOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetachClassicLinkVpcOutput`](crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachClassicLinkVpcOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

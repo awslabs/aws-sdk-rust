@@ -10,9 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAliasOutput`](crate::operation::create_alias::CreateAliasOutput) with field(s):
     ///   - [`alias(Option<Alias>)`](crate::operation::create_alias::CreateAliasOutput::alias): <p>The newly created alias resource.</p>
     /// - On failure, responds with [`SdkError<CreateAliasError>`](crate::operation::create_alias::CreateAliasError)
-    pub fn create_alias(
-        &self,
-    ) -> crate::operation::create_alias::builders::CreateAliasFluentBuilder {
+    pub fn create_alias(&self) -> crate::operation::create_alias::builders::CreateAliasFluentBuilder {
         crate::operation::create_alias::builders::CreateAliasFluentBuilder::new(self.handle.clone())
     }
 }

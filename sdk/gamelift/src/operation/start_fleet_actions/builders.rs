@@ -10,10 +10,7 @@ impl StartFleetActionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_fleet_actions::StartFleetActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fleet_actions::StartFleetActionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_fleet_actions::StartFleetActionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_fleet_actions();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl StartFleetActionsFluentBuilder {
         }
     }
     /// Access the StartFleetActions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_fleet_actions::builders::StartFleetActionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_fleet_actions::builders::StartFleetActionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl StartFleetActionsFluentBuilder {
             crate::operation::start_fleet_actions::StartFleetActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fleet_actions::StartFleetActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_fleet_actions::StartFleetActionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl StartFleetActionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl StartFleetActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_fleet_actions::StartFleetActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fleet_actions::StartFleetActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_fleet_actions::StartFleetActionsError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl StartFleetActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_fleet_actions::StartFleetActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fleet_actions::StartFleetActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_fleet_actions::StartFleetActionsError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +110,7 @@ impl StartFleetActionsFluentBuilder {
             crate::operation::start_fleet_actions::StartFleetActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_fleet_actions::StartFleetActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_fleet_actions::StartFleetActionsError>,
     > {
         self.customize_middleware().await
     }
@@ -154,17 +138,12 @@ impl StartFleetActionsFluentBuilder {
         self
     }
     /// <p>List of actions to restart on the fleet.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
     /// <p>List of actions to restart on the fleet.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAction>> {
         self.inner.get_actions()
     }
     /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>

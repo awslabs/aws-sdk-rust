@@ -12,19 +12,13 @@ pub fn ser_audio_and_dtmf_input_specification(
     if let Some(var_2) = &input.audio_specification {
         #[allow(unused_mut)]
         let mut object_3 = object.key("audioSpecification").start_object();
-        crate::protocol_serde::shape_audio_specification::ser_audio_specification(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_audio_specification::ser_audio_specification(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.dtmf_specification {
         #[allow(unused_mut)]
         let mut object_5 = object.key("dtmfSpecification").start_object();
-        crate::protocol_serde::shape_dtmf_specification::ser_dtmf_specification(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_dtmf_specification::ser_dtmf_specification(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())
@@ -32,66 +26,47 @@ pub fn ser_audio_and_dtmf_input_specification(
 
 pub(crate) fn de_audio_and_dtmf_input_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AudioAndDtmfInputSpecification>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AudioAndDtmfInputSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::AudioAndDtmfInputSpecificationBuilder::default();
+            let mut builder = crate::types::builders::AudioAndDtmfInputSpecificationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "startTimeoutMs" => {
-                                builder = builder.set_start_timeout_ms(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "startTimeoutMs" => {
+                            builder = builder.set_start_timeout_ms(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "audioSpecification" => {
-                                builder = builder.set_audio_specification(
-                                    crate::protocol_serde::shape_audio_specification::de_audio_specification(tokens)?
-                                );
-                            }
-                            "dtmfSpecification" => {
-                                builder = builder.set_dtmf_specification(
-                                    crate::protocol_serde::shape_dtmf_specification::de_dtmf_specification(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "audioSpecification" => {
+                            builder =
+                                builder.set_audio_specification(crate::protocol_serde::shape_audio_specification::de_audio_specification(tokens)?);
+                        }
+                        "dtmfSpecification" => {
+                            builder = builder.set_dtmf_specification(crate::protocol_serde::shape_dtmf_specification::de_dtmf_specification(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

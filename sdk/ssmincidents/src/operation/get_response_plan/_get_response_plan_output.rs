@@ -70,17 +70,14 @@ impl ::aws_http::request_id::RequestId for GetResponsePlanOutput {
 }
 impl GetResponsePlanOutput {
     /// Creates a new builder-style object to manufacture [`GetResponsePlanOutput`](crate::operation::get_response_plan::GetResponsePlanOutput).
-    pub fn builder() -> crate::operation::get_response_plan::builders::GetResponsePlanOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_response_plan::builders::GetResponsePlanOutputBuilder {
         crate::operation::get_response_plan::builders::GetResponsePlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResponsePlanOutput`](crate::operation::get_response_plan::GetResponsePlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResponsePlanOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -141,10 +138,7 @@ impl GetResponsePlanOutputBuilder {
         self
     }
     /// <p>Details used to create the incident when using this response plan.</p>
-    pub fn set_incident_template(
-        mut self,
-        input: ::std::option::Option<crate::types::IncidentTemplate>,
-    ) -> Self {
+    pub fn set_incident_template(mut self, input: ::std::option::Option<crate::types::IncidentTemplate>) -> Self {
         self.incident_template = input;
         self
     }
@@ -158,10 +152,7 @@ impl GetResponsePlanOutputBuilder {
         self
     }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
-    pub fn set_chat_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::ChatChannel>,
-    ) -> Self {
+    pub fn set_chat_channel(mut self, input: ::std::option::Option<crate::types::ChatChannel>) -> Self {
         self.chat_channel = input;
         self
     }
@@ -181,17 +172,12 @@ impl GetResponsePlanOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn set_engagements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_engagements(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.engagements = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn get_engagements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_engagements(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.engagements
     }
     /// Appends an item to `actions`.
@@ -206,10 +192,7 @@ impl GetResponsePlanOutputBuilder {
         self
     }
     /// <p>The actions that this response plan takes at the beginning of the incident.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.actions = input;
         self
     }
@@ -229,17 +212,12 @@ impl GetResponsePlanOutputBuilder {
         self
     }
     /// <p>Information about third-party services integrated into the Incident Manager response plan.</p>
-    pub fn set_integrations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
-    ) -> Self {
+    pub fn set_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>) -> Self {
         self.integrations = input;
         self
     }
     /// <p>Information about third-party services integrated into the Incident Manager response plan.</p>
-    pub fn get_integrations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
+    pub fn get_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
         &self.integrations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

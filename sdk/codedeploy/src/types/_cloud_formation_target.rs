@@ -65,33 +65,24 @@ impl CloudFormationTarget {
 
 /// A builder for [`CloudFormationTarget`](crate::types::CloudFormationTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudFormationTargetBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_id: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) lifecycle_events:
-        ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>,
+    pub(crate) lifecycle_events: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>,
     pub(crate) status: ::std::option::Option<crate::types::TargetStatus>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) target_version_weight: ::std::option::Option<f64>,
 }
 impl CloudFormationTargetBuilder {
     /// <p>The unique ID of an CloudFormation blue/green deployment.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of an CloudFormation blue/green deployment.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -119,10 +110,7 @@ impl CloudFormationTargetBuilder {
         self
     }
     /// <p> The date and time when the target application was updated by an CloudFormation blue/green deployment. </p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -142,17 +130,12 @@ impl CloudFormationTargetBuilder {
         self
     }
     /// <p> The lifecycle events of the CloudFormation blue/green deployment to this target application. </p>
-    pub fn set_lifecycle_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>,
-    ) -> Self {
+    pub fn set_lifecycle_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>) -> Self {
         self.lifecycle_events = input;
         self
     }
     /// <p> The lifecycle events of the CloudFormation blue/green deployment to this target application. </p>
-    pub fn get_lifecycle_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>> {
+    pub fn get_lifecycle_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>> {
         &self.lifecycle_events
     }
     /// <p> The status of an CloudFormation blue/green deployment's target application. </p>
@@ -170,18 +153,12 @@ impl CloudFormationTargetBuilder {
         &self.status
     }
     /// <p>The resource type for the CloudFormation blue/green deployment.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type for the CloudFormation blue/green deployment.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }

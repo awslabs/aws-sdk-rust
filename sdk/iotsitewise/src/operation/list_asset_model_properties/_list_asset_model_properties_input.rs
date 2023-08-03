@@ -46,18 +46,14 @@ impl ListAssetModelPropertiesInput {
 }
 impl ListAssetModelPropertiesInput {
     /// Creates a new builder-style object to manufacture [`ListAssetModelPropertiesInput`](crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput).
-    pub fn builder(
-    ) -> crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesInputBuilder {
         crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssetModelPropertiesInput`](crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssetModelPropertiesInputBuilder {
     pub(crate) asset_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -66,18 +62,12 @@ pub struct ListAssetModelPropertiesInputBuilder {
 }
 impl ListAssetModelPropertiesInputBuilder {
     /// <p>The ID of the asset model.</p>
-    pub fn asset_model_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the asset model.</p>
-    pub fn set_asset_model_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_id = input;
         self
     }
@@ -129,10 +119,7 @@ impl ListAssetModelPropertiesInputBuilder {
     /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li>
     /// </ul>
     /// <p>Default: <code>BASE</code> </p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListAssetModelPropertiesFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListAssetModelPropertiesFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -142,9 +129,7 @@ impl ListAssetModelPropertiesInputBuilder {
     /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li>
     /// </ul>
     /// <p>Default: <code>BASE</code> </p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListAssetModelPropertiesFilter> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListAssetModelPropertiesFilter> {
         &self.filter
     }
     /// Consumes the builder and constructs a [`ListAssetModelPropertiesInput`](crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput).
@@ -154,13 +139,11 @@ impl ListAssetModelPropertiesInputBuilder {
         crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput {
-                asset_model_id: self.asset_model_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filter: self.filter,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput {
+            asset_model_id: self.asset_model_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filter: self.filter,
+        })
     }
 }

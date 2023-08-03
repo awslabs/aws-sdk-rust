@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateCampaignNameOutput {
 }
 impl UpdateCampaignNameOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCampaignNameOutput`](crate::operation::update_campaign_name::UpdateCampaignNameOutput).
-    pub fn builder(
-    ) -> crate::operation::update_campaign_name::builders::UpdateCampaignNameOutputBuilder {
+    pub fn builder() -> crate::operation::update_campaign_name::builders::UpdateCampaignNameOutputBuilder {
         crate::operation::update_campaign_name::builders::UpdateCampaignNameOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCampaignNameOutput`](crate::operation::update_campaign_name::UpdateCampaignNameOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCampaignNameOutputBuilder {
     _request_id: Option<String>,
 }

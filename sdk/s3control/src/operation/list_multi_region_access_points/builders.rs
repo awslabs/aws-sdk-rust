@@ -34,7 +34,7 @@ impl ListMultiRegionAccessPointsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMultiRegionAccessPointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_multi_region_access_points::builders::ListMultiRegionAccessPointsInputBuilder,
+    inner: crate::operation::list_multi_region_access_points::builders::ListMultiRegionAccessPointsInputBuilder,
 }
 impl ListMultiRegionAccessPointsFluentBuilder {
     /// Creates a new `ListMultiRegionAccessPoints`.
@@ -45,7 +45,7 @@ impl ListMultiRegionAccessPointsFluentBuilder {
         }
     }
     /// Access the ListMultiRegionAccessPoints as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_multi_region_access_points::builders::ListMultiRegionAccessPointsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_multi_region_access_points::builders::ListMultiRegionAccessPointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl ListMultiRegionAccessPointsFluentBuilder {
             crate::operation::list_multi_region_access_points::ListMultiRegionAccessPoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl ListMultiRegionAccessPointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl ListMultiRegionAccessPointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl ListMultiRegionAccessPointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError>,
     > {
         self.send_middleware().await
     }
@@ -122,16 +113,14 @@ impl ListMultiRegionAccessPointsFluentBuilder {
             crate::operation::list_multi_region_access_points::ListMultiRegionAccessPoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_multi_region_access_points::paginator::ListMultiRegionAccessPointsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_multi_region_access_points::paginator::ListMultiRegionAccessPointsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_multi_region_access_points::paginator::ListMultiRegionAccessPointsPaginator {
         crate::operation::list_multi_region_access_points::paginator::ListMultiRegionAccessPointsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>

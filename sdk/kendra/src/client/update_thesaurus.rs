@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`source_s3_path(S3Path)`](crate::operation::update_thesaurus::builders::UpdateThesaurusFluentBuilder::source_s3_path) / [`set_source_s3_path(Option<S3Path>)`](crate::operation::update_thesaurus::builders::UpdateThesaurusFluentBuilder::set_source_s3_path): <p>Information required to find a specific file in an Amazon S3 bucket.</p>
     /// - On success, responds with [`UpdateThesaurusOutput`](crate::operation::update_thesaurus::UpdateThesaurusOutput)
     /// - On failure, responds with [`SdkError<UpdateThesaurusError>`](crate::operation::update_thesaurus::UpdateThesaurusError)
-    pub fn update_thesaurus(
-        &self,
-    ) -> crate::operation::update_thesaurus::builders::UpdateThesaurusFluentBuilder {
-        crate::operation::update_thesaurus::builders::UpdateThesaurusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_thesaurus(&self) -> crate::operation::update_thesaurus::builders::UpdateThesaurusFluentBuilder {
+        crate::operation::update_thesaurus::builders::UpdateThesaurusFluentBuilder::new(self.handle.clone())
     }
 }

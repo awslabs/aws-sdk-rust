@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`partition_input(PartitionInput)`](crate::operation::create_partition::builders::CreatePartitionFluentBuilder::partition_input) / [`set_partition_input(Option<PartitionInput>)`](crate::operation::create_partition::builders::CreatePartitionFluentBuilder::set_partition_input): <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
     /// - On success, responds with [`CreatePartitionOutput`](crate::operation::create_partition::CreatePartitionOutput)
     /// - On failure, responds with [`SdkError<CreatePartitionError>`](crate::operation::create_partition::CreatePartitionError)
-    pub fn create_partition(
-        &self,
-    ) -> crate::operation::create_partition::builders::CreatePartitionFluentBuilder {
-        crate::operation::create_partition::builders::CreatePartitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_partition(&self) -> crate::operation::create_partition::builders::CreatePartitionFluentBuilder {
+        crate::operation::create_partition::builders::CreatePartitionFluentBuilder::new(self.handle.clone())
     }
 }

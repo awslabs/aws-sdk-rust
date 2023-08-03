@@ -30,9 +30,7 @@ impl ComponentState {
 
 /// A builder for [`ComponentState`](crate::types::ComponentState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ComponentStatus>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ComponentStateBuilder {
         self
     }
     /// <p>The current state of the component.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ComponentStatus>) -> Self {
         self.status = input;
         self
     }

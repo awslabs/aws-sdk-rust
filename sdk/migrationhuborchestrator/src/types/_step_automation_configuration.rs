@@ -26,9 +26,7 @@ impl StepAutomationConfiguration {
         self.script_location_s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 key for the script location.</p>
-    pub fn script_location_s3_key(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PlatformScriptKey> {
+    pub fn script_location_s3_key(&self) -> ::std::option::Option<&crate::types::PlatformScriptKey> {
         self.script_location_s3_key.as_ref()
     }
     /// <p>The command to run the script.</p>
@@ -53,9 +51,7 @@ impl StepAutomationConfiguration {
 
 /// A builder for [`StepAutomationConfiguration`](crate::types::StepAutomationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StepAutomationConfigurationBuilder {
     pub(crate) script_location_s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) script_location_s3_key: ::std::option::Option<crate::types::PlatformScriptKey>,
@@ -65,18 +61,12 @@ pub struct StepAutomationConfigurationBuilder {
 }
 impl StepAutomationConfigurationBuilder {
     /// <p>The Amazon S3 bucket where the script is located.</p>
-    pub fn script_location_s3_bucket(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn script_location_s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.script_location_s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket where the script is located.</p>
-    pub fn set_script_location_s3_bucket(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_script_location_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.script_location_s3_bucket = input;
         self
     }
@@ -90,17 +80,12 @@ impl StepAutomationConfigurationBuilder {
         self
     }
     /// <p>The Amazon S3 key for the script location.</p>
-    pub fn set_script_location_s3_key(
-        mut self,
-        input: ::std::option::Option<crate::types::PlatformScriptKey>,
-    ) -> Self {
+    pub fn set_script_location_s3_key(mut self, input: ::std::option::Option<crate::types::PlatformScriptKey>) -> Self {
         self.script_location_s3_key = input;
         self
     }
     /// <p>The Amazon S3 key for the script location.</p>
-    pub fn get_script_location_s3_key(
-        &self,
-    ) -> &::std::option::Option<crate::types::PlatformScriptKey> {
+    pub fn get_script_location_s3_key(&self) -> &::std::option::Option<crate::types::PlatformScriptKey> {
         &self.script_location_s3_key
     }
     /// <p>The command to run the script.</p>
@@ -109,10 +94,7 @@ impl StepAutomationConfigurationBuilder {
         self
     }
     /// <p>The command to run the script.</p>
-    pub fn set_command(
-        mut self,
-        input: ::std::option::Option<crate::types::PlatformCommand>,
-    ) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<crate::types::PlatformCommand>) -> Self {
         self.command = input;
         self
     }
@@ -126,10 +108,7 @@ impl StepAutomationConfigurationBuilder {
         self
     }
     /// <p>The source or target environment.</p>
-    pub fn set_run_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::RunEnvironment>,
-    ) -> Self {
+    pub fn set_run_environment(mut self, input: ::std::option::Option<crate::types::RunEnvironment>) -> Self {
         self.run_environment = input;
         self
     }
@@ -143,10 +122,7 @@ impl StepAutomationConfigurationBuilder {
         self
     }
     /// <p>The servers on which to run the script.</p>
-    pub fn set_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetType>,
-    ) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::TargetType>) -> Self {
         self.target_type = input;
         self
     }

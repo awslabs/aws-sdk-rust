@@ -22,16 +22,14 @@ impl UpdateMediaInsightsPipelineStatusInput {
 }
 impl UpdateMediaInsightsPipelineStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateMediaInsightsPipelineStatusInput`](crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusInput).
-    pub fn builder() -> crate::operation::update_media_insights_pipeline_status::builders::UpdateMediaInsightsPipelineStatusInputBuilder{
+    pub fn builder() -> crate::operation::update_media_insights_pipeline_status::builders::UpdateMediaInsightsPipelineStatusInputBuilder {
         crate::operation::update_media_insights_pipeline_status::builders::UpdateMediaInsightsPipelineStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMediaInsightsPipelineStatusInput`](crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMediaInsightsPipelineStatusInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) update_status: ::std::option::Option<crate::types::MediaPipelineStatusUpdate>,
@@ -57,28 +55,26 @@ impl UpdateMediaInsightsPipelineStatusInputBuilder {
         self
     }
     /// <p>The requested status of the media insights pipeline.</p>
-    pub fn set_update_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaPipelineStatusUpdate>,
-    ) -> Self {
+    pub fn set_update_status(mut self, input: ::std::option::Option<crate::types::MediaPipelineStatusUpdate>) -> Self {
         self.update_status = input;
         self
     }
     /// <p>The requested status of the media insights pipeline.</p>
-    pub fn get_update_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::MediaPipelineStatusUpdate> {
+    pub fn get_update_status(&self) -> &::std::option::Option<crate::types::MediaPipelineStatusUpdate> {
         &self.update_status
     }
     /// Consumes the builder and constructs a [`UpdateMediaInsightsPipelineStatusInput`](crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusInput {
-                identifier: self.identifier
-                ,
-                update_status: self.update_status
-                ,
-            }
+                identifier: self.identifier,
+                update_status: self.update_status,
+            },
         )
     }
 }

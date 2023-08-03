@@ -23,9 +23,7 @@ impl ServiceEndpoint {
 
 /// A builder for [`ServiceEndpoint`](crate::types::ServiceEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceEndpointBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ServiceEndpointBuilder {
     }
     /// Consumes the builder and constructs a [`ServiceEndpoint`](crate::types::ServiceEndpoint).
     pub fn build(self) -> crate::types::ServiceEndpoint {
-        crate::types::ServiceEndpoint {
-            endpoint: self.endpoint,
-        }
+        crate::types::ServiceEndpoint { endpoint: self.endpoint }
     }
 }

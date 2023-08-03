@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`media_type(impl ::std::convert::Into<String>)`](crate::operation::update_stream::builders::UpdateStreamFluentBuilder::media_type) / [`set_media_type(Option<String>)`](crate::operation::update_stream::builders::UpdateStreamFluentBuilder::set_media_type): <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p>  <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
     /// - On success, responds with [`UpdateStreamOutput`](crate::operation::update_stream::UpdateStreamOutput)
     /// - On failure, responds with [`SdkError<UpdateStreamError>`](crate::operation::update_stream::UpdateStreamError)
-    pub fn update_stream(
-        &self,
-    ) -> crate::operation::update_stream::builders::UpdateStreamFluentBuilder {
-        crate::operation::update_stream::builders::UpdateStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_stream(&self) -> crate::operation::update_stream::builders::UpdateStreamFluentBuilder {
+        crate::operation::update_stream::builders::UpdateStreamFluentBuilder::new(self.handle.clone())
     }
 }

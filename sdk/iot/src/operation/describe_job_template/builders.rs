@@ -37,9 +37,7 @@ impl DescribeJobTemplateFluentBuilder {
         }
     }
     /// Access the DescribeJobTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_job_template::builders::DescribeJobTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_job_template::builders::DescribeJobTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeJobTemplateFluentBuilder {
             crate::operation::describe_job_template::DescribeJobTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_template::DescribeJobTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_template::DescribeJobTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeJobTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeJobTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_job_template::DescribeJobTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_template::DescribeJobTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_template::DescribeJobTemplateError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeJobTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_job_template::DescribeJobTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_template::DescribeJobTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_template::DescribeJobTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeJobTemplateFluentBuilder {
             crate::operation::describe_job_template::DescribeJobTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_job_template::DescribeJobTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_job_template::DescribeJobTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the job template.</p>
-    pub fn job_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_template_id(input.into());
         self
     }
     /// <p>The unique identifier of the job template.</p>
-    pub fn set_job_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_template_id(input);
         self
     }

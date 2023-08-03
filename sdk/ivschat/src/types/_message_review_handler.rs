@@ -30,9 +30,7 @@ impl MessageReviewHandler {
 
 /// A builder for [`MessageReviewHandler`](crate::types::MessageReviewHandler).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageReviewHandlerBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) fallback_result: ::std::option::Option<crate::types::FallbackResult>,
@@ -58,10 +56,7 @@ impl MessageReviewHandlerBuilder {
         self
     }
     /// <p>Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid response, encounters an error, or times out. (For the timeout period, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the message is delivered with returned content to all users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.</p>
-    pub fn set_fallback_result(
-        mut self,
-        input: ::std::option::Option<crate::types::FallbackResult>,
-    ) -> Self {
+    pub fn set_fallback_result(mut self, input: ::std::option::Option<crate::types::FallbackResult>) -> Self {
         self.fallback_result = input;
         self
     }

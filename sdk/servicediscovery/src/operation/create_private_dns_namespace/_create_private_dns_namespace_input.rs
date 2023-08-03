@@ -44,24 +44,20 @@ impl CreatePrivateDnsNamespaceInput {
         self.tags.as_deref()
     }
     /// <p>Properties for the private DNS namespace.</p>
-    pub fn properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PrivateDnsNamespaceProperties> {
+    pub fn properties(&self) -> ::std::option::Option<&crate::types::PrivateDnsNamespaceProperties> {
         self.properties.as_ref()
     }
 }
 impl CreatePrivateDnsNamespaceInput {
     /// Creates a new builder-style object to manufacture [`CreatePrivateDnsNamespaceInput`](crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceInput).
-    pub fn builder() -> crate::operation::create_private_dns_namespace::builders::CreatePrivateDnsNamespaceInputBuilder{
+    pub fn builder() -> crate::operation::create_private_dns_namespace::builders::CreatePrivateDnsNamespaceInputBuilder {
         crate::operation::create_private_dns_namespace::builders::CreatePrivateDnsNamespaceInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePrivateDnsNamespaceInput`](crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePrivateDnsNamespaceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
@@ -86,18 +82,12 @@ impl CreatePrivateDnsNamespaceInputBuilder {
         &self.name
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
@@ -145,10 +135,7 @@ impl CreatePrivateDnsNamespaceInputBuilder {
         self
     }
     /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -162,17 +149,12 @@ impl CreatePrivateDnsNamespaceInputBuilder {
         self
     }
     /// <p>Properties for the private DNS namespace.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::PrivateDnsNamespaceProperties>,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<crate::types::PrivateDnsNamespaceProperties>) -> Self {
         self.properties = input;
         self
     }
     /// <p>Properties for the private DNS namespace.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::PrivateDnsNamespaceProperties> {
+    pub fn get_properties(&self) -> &::std::option::Option<crate::types::PrivateDnsNamespaceProperties> {
         &self.properties
     }
     /// Consumes the builder and constructs a [`CreatePrivateDnsNamespaceInput`](crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceInput).
@@ -182,15 +164,13 @@ impl CreatePrivateDnsNamespaceInputBuilder {
         crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceInput {
-                name: self.name,
-                creator_request_id: self.creator_request_id,
-                description: self.description,
-                vpc: self.vpc,
-                tags: self.tags,
-                properties: self.properties,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceInput {
+            name: self.name,
+            creator_request_id: self.creator_request_id,
+            description: self.description,
+            vpc: self.vpc,
+            tags: self.tags,
+            properties: self.properties,
+        })
     }
 }

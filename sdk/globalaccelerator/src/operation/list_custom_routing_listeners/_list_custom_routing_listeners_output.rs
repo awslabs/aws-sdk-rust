@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCustomRoutingListenersOutput {
 }
 impl ListCustomRoutingListenersOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingListenersOutput`](crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersOutput).
-    pub fn builder() -> crate::operation::list_custom_routing_listeners::builders::ListCustomRoutingListenersOutputBuilder{
+    pub fn builder() -> crate::operation::list_custom_routing_listeners::builders::ListCustomRoutingListenersOutputBuilder {
         crate::operation::list_custom_routing_listeners::builders::ListCustomRoutingListenersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomRoutingListenersOutput`](crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomRoutingListenersOutputBuilder {
-    pub(crate) listeners:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingListener>>,
+    pub(crate) listeners: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingListener>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListCustomRoutingListenersOutputBuilder {
         self
     }
     /// <p>The list of listeners for a custom routing accelerator.</p>
-    pub fn set_listeners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingListener>>,
-    ) -> Self {
+    pub fn set_listeners(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingListener>>) -> Self {
         self.listeners = input;
         self
     }
     /// <p>The list of listeners for a custom routing accelerator.</p>
-    pub fn get_listeners(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingListener>> {
+    pub fn get_listeners(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingListener>> {
         &self.listeners
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -94,9 +86,7 @@ impl ListCustomRoutingListenersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCustomRoutingListenersOutput`](crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersOutput {
+    pub fn build(self) -> crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersOutput {
         crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersOutput {
             listeners: self.listeners,
             next_token: self.next_token,

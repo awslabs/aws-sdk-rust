@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyBackupAttributesOutput {
 }
 impl ModifyBackupAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ModifyBackupAttributesOutput`](crate::operation::modify_backup_attributes::ModifyBackupAttributesOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_backup_attributes::builders::ModifyBackupAttributesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_backup_attributes::builders::ModifyBackupAttributesOutputBuilder {
         crate::operation::modify_backup_attributes::builders::ModifyBackupAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyBackupAttributesOutput`](crate::operation::modify_backup_attributes::ModifyBackupAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyBackupAttributesOutputBuilder {
     pub(crate) backup: ::std::option::Option<crate::types::Backup>,
     _request_id: Option<String>,

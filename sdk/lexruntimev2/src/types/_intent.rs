@@ -9,9 +9,7 @@ pub struct Intent {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A map of all of the slots for the intent. The name of the slot maps to the value of the slot. If a slot has not been filled, the value is null.</p>
     #[doc(hidden)]
-    pub slots: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Slot>,
-    >,
+    pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Slot>>,
     /// <p>Contains fulfillment information for the intent. </p>
     #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::IntentState>,
@@ -25,11 +23,7 @@ impl Intent {
         self.name.as_deref()
     }
     /// <p>A map of all of the slots for the intent. The name of the slot maps to the value of the slot. If a slot has not been filled, the value is null.</p>
-    pub fn slots(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Slot>,
-    > {
+    pub fn slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Slot>> {
         self.slots.as_ref()
     }
     /// <p>Contains fulfillment information for the intent. </p>
@@ -50,14 +44,10 @@ impl Intent {
 
 /// A builder for [`Intent`](crate::types::Intent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntentBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) slots: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Slot>,
-    >,
+    pub(crate) slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Slot>>,
     pub(crate) state: ::std::option::Option<crate::types::IntentState>,
     pub(crate) confirmation_state: ::std::option::Option<crate::types::ConfirmationState>,
 }
@@ -81,32 +71,19 @@ impl IntentBuilder {
     /// To override the contents of this collection use [`set_slots`](Self::set_slots).
     ///
     /// <p>A map of all of the slots for the intent. The name of the slot maps to the value of the slot. If a slot has not been filled, the value is null.</p>
-    pub fn slots(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Slot,
-    ) -> Self {
+    pub fn slots(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Slot) -> Self {
         let mut hash_map = self.slots.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.slots = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of all of the slots for the intent. The name of the slot maps to the value of the slot. If a slot has not been filled, the value is null.</p>
-    pub fn set_slots(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Slot>,
-        >,
-    ) -> Self {
+    pub fn set_slots(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Slot>>) -> Self {
         self.slots = input;
         self
     }
     /// <p>A map of all of the slots for the intent. The name of the slot maps to the value of the slot. If a slot has not been filled, the value is null.</p>
-    pub fn get_slots(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Slot>,
-    > {
+    pub fn get_slots(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Slot>> {
         &self.slots
     }
     /// <p>Contains fulfillment information for the intent. </p>
@@ -129,17 +106,12 @@ impl IntentBuilder {
         self
     }
     /// <p>Contains information about whether fulfillment of the intent has been confirmed.</p>
-    pub fn set_confirmation_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfirmationState>,
-    ) -> Self {
+    pub fn set_confirmation_state(mut self, input: ::std::option::Option<crate::types::ConfirmationState>) -> Self {
         self.confirmation_state = input;
         self
     }
     /// <p>Contains information about whether fulfillment of the intent has been confirmed.</p>
-    pub fn get_confirmation_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfirmationState> {
+    pub fn get_confirmation_state(&self) -> &::std::option::Option<crate::types::ConfirmationState> {
         &self.confirmation_state
     }
     /// Consumes the builder and constructs a [`Intent`](crate::types::Intent).

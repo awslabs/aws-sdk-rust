@@ -43,17 +43,14 @@ impl GetIpamPoolCidrsInput {
 }
 impl GetIpamPoolCidrsInput {
     /// Creates a new builder-style object to manufacture [`GetIpamPoolCidrsInput`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsInput).
-    pub fn builder() -> crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsInputBuilder {
         crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIpamPoolCidrsInput`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIpamPoolCidrsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_pool_id: ::std::option::Option<::std::string::String>,
@@ -102,10 +99,7 @@ impl GetIpamPoolCidrsInputBuilder {
         self
     }
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -144,18 +138,13 @@ impl GetIpamPoolCidrsInputBuilder {
     /// Consumes the builder and constructs a [`GetIpamPoolCidrsInput`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsInput {
-                dry_run: self.dry_run,
-                ipam_pool_id: self.ipam_pool_id,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsInput {
+            dry_run: self.dry_run,
+            ipam_pool_id: self.ipam_pool_id,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

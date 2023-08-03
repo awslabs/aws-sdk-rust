@@ -4,9 +4,7 @@ pub fn ser_start_medical_transcription_job_input(
     input: &crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.medical_transcription_job_name {
-        object
-            .key("MedicalTranscriptionJobName")
-            .string(var_1.as_str());
+        object.key("MedicalTranscriptionJobName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.language_code {
         object.key("LanguageCode").string(var_2.as_str());
@@ -33,9 +31,7 @@ pub fn ser_start_medical_transcription_job_input(
         object.key("OutputKey").string(var_8.as_str());
     }
     if let Some(var_9) = &input.output_encryption_kms_key_id {
-        object
-            .key("OutputEncryptionKMSKeyId")
-            .string(var_9.as_str());
+        object.key("OutputEncryptionKMSKeyId").string(var_9.as_str());
     }
     if let Some(var_10) = &input.kms_encryption_context {
         #[allow(unused_mut)]
@@ -54,9 +50,7 @@ pub fn ser_start_medical_transcription_job_input(
         object_15.finish();
     }
     if let Some(var_16) = &input.content_identification_type {
-        object
-            .key("ContentIdentificationType")
-            .string(var_16.as_str());
+        object.key("ContentIdentificationType").string(var_16.as_str());
     }
     if let Some(var_17) = &input.specialty {
         object.key("Specialty").string(var_17.as_str());

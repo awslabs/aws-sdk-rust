@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`UpdatePortalOutput`](crate::operation::update_portal::UpdatePortalOutput) with field(s):
     ///   - [`portal_status(Option<PortalStatus>)`](crate::operation::update_portal::UpdatePortalOutput::portal_status): <p>The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     /// - On failure, responds with [`SdkError<UpdatePortalError>`](crate::operation::update_portal::UpdatePortalError)
-    pub fn update_portal(
-        &self,
-    ) -> crate::operation::update_portal::builders::UpdatePortalFluentBuilder {
-        crate::operation::update_portal::builders::UpdatePortalFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_portal(&self) -> crate::operation::update_portal::builders::UpdatePortalFluentBuilder {
+        crate::operation::update_portal::builders::UpdatePortalFluentBuilder::new(self.handle.clone())
     }
 }

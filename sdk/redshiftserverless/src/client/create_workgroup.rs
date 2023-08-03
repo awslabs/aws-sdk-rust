@@ -16,11 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateWorkgroupOutput`](crate::operation::create_workgroup::CreateWorkgroupOutput) with field(s):
     ///   - [`workgroup(Option<Workgroup>)`](crate::operation::create_workgroup::CreateWorkgroupOutput::workgroup): <p>The created workgroup object.</p>
     /// - On failure, responds with [`SdkError<CreateWorkgroupError>`](crate::operation::create_workgroup::CreateWorkgroupError)
-    pub fn create_workgroup(
-        &self,
-    ) -> crate::operation::create_workgroup::builders::CreateWorkgroupFluentBuilder {
-        crate::operation::create_workgroup::builders::CreateWorkgroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_workgroup(&self) -> crate::operation::create_workgroup::builders::CreateWorkgroupFluentBuilder {
+        crate::operation::create_workgroup::builders::CreateWorkgroupFluentBuilder::new(self.handle.clone())
     }
 }

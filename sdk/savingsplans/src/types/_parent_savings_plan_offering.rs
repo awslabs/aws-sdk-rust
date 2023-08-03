@@ -58,9 +58,7 @@ impl ParentSavingsPlanOffering {
 
 /// A builder for [`ParentSavingsPlanOffering`](crate::types::ParentSavingsPlanOffering).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParentSavingsPlanOfferingBuilder {
     pub(crate) offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) payment_option: ::std::option::Option<crate::types::SavingsPlanPaymentOption>,
@@ -90,17 +88,12 @@ impl ParentSavingsPlanOfferingBuilder {
         self
     }
     /// <p>The payment option.</p>
-    pub fn set_payment_option(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsPlanPaymentOption>,
-    ) -> Self {
+    pub fn set_payment_option(mut self, input: ::std::option::Option<crate::types::SavingsPlanPaymentOption>) -> Self {
         self.payment_option = input;
         self
     }
     /// <p>The payment option.</p>
-    pub fn get_payment_option(
-        &self,
-    ) -> &::std::option::Option<crate::types::SavingsPlanPaymentOption> {
+    pub fn get_payment_option(&self) -> &::std::option::Option<crate::types::SavingsPlanPaymentOption> {
         &self.payment_option
     }
     /// <p>The plan type.</p>
@@ -109,10 +102,7 @@ impl ParentSavingsPlanOfferingBuilder {
         self
     }
     /// <p>The plan type.</p>
-    pub fn set_plan_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsPlanType>,
-    ) -> Self {
+    pub fn set_plan_type(mut self, input: ::std::option::Option<crate::types::SavingsPlanType>) -> Self {
         self.plan_type = input;
         self
     }
@@ -140,10 +130,7 @@ impl ParentSavingsPlanOfferingBuilder {
         self
     }
     /// <p>The currency.</p>
-    pub fn set_currency(
-        mut self,
-        input: ::std::option::Option<crate::types::CurrencyCode>,
-    ) -> Self {
+    pub fn set_currency(mut self, input: ::std::option::Option<crate::types::CurrencyCode>) -> Self {
         self.currency = input;
         self
     }
@@ -152,18 +139,12 @@ impl ParentSavingsPlanOfferingBuilder {
         &self.currency
     }
     /// <p>The description.</p>
-    pub fn plan_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn plan_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.plan_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description.</p>
-    pub fn set_plan_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_plan_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.plan_description = input;
         self
     }

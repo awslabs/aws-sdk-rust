@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ScalableDimension {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,25 +69,15 @@ pub enum ScalableDimension {
 impl ::std::convert::From<&str> for ScalableDimension {
     fn from(s: &str) -> Self {
         match s {
-            "autoscaling:autoScalingGroup:DesiredCapacity" => {
-                ScalableDimension::AutoScalingGroupDesiredCapacity
-            }
+            "autoscaling:autoScalingGroup:DesiredCapacity" => ScalableDimension::AutoScalingGroupDesiredCapacity,
             "dynamodb:index:ReadCapacityUnits" => ScalableDimension::DynamoDbIndexReadCapacityUnits,
-            "dynamodb:index:WriteCapacityUnits" => {
-                ScalableDimension::DynamoDbIndexWriteCapacityUnits
-            }
+            "dynamodb:index:WriteCapacityUnits" => ScalableDimension::DynamoDbIndexWriteCapacityUnits,
             "dynamodb:table:ReadCapacityUnits" => ScalableDimension::DynamoDbTableReadCapacityUnits,
-            "dynamodb:table:WriteCapacityUnits" => {
-                ScalableDimension::DynamoDbTableWriteCapacityUnits
-            }
-            "ec2:spot-fleet-request:TargetCapacity" => {
-                ScalableDimension::Ec2SpotFleetRequestTargetCapacity
-            }
+            "dynamodb:table:WriteCapacityUnits" => ScalableDimension::DynamoDbTableWriteCapacityUnits,
+            "ec2:spot-fleet-request:TargetCapacity" => ScalableDimension::Ec2SpotFleetRequestTargetCapacity,
             "ecs:service:DesiredCount" => ScalableDimension::EcsServiceDesiredCount,
             "rds:cluster:ReadReplicaCount" => ScalableDimension::RdsClusterReadReplicaCount,
-            other => {
-                ScalableDimension::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ScalableDimension::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,20 +92,12 @@ impl ScalableDimension {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ScalableDimension::AutoScalingGroupDesiredCapacity => {
-                "autoscaling:autoScalingGroup:DesiredCapacity"
-            }
+            ScalableDimension::AutoScalingGroupDesiredCapacity => "autoscaling:autoScalingGroup:DesiredCapacity",
             ScalableDimension::DynamoDbIndexReadCapacityUnits => "dynamodb:index:ReadCapacityUnits",
-            ScalableDimension::DynamoDbIndexWriteCapacityUnits => {
-                "dynamodb:index:WriteCapacityUnits"
-            }
+            ScalableDimension::DynamoDbIndexWriteCapacityUnits => "dynamodb:index:WriteCapacityUnits",
             ScalableDimension::DynamoDbTableReadCapacityUnits => "dynamodb:table:ReadCapacityUnits",
-            ScalableDimension::DynamoDbTableWriteCapacityUnits => {
-                "dynamodb:table:WriteCapacityUnits"
-            }
-            ScalableDimension::Ec2SpotFleetRequestTargetCapacity => {
-                "ec2:spot-fleet-request:TargetCapacity"
-            }
+            ScalableDimension::DynamoDbTableWriteCapacityUnits => "dynamodb:table:WriteCapacityUnits",
+            ScalableDimension::Ec2SpotFleetRequestTargetCapacity => "ec2:spot-fleet-request:TargetCapacity",
             ScalableDimension::EcsServiceDesiredCount => "ecs:service:DesiredCount",
             ScalableDimension::RdsClusterReadReplicaCount => "rds:cluster:ReadReplicaCount",
             ScalableDimension::Unknown(value) => value.as_str(),

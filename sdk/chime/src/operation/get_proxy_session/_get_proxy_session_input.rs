@@ -29,27 +29,19 @@ impl GetProxySessionInput {
 
 /// A builder for [`GetProxySessionInput`](crate::operation::get_proxy_session::GetProxySessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProxySessionInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) proxy_session_id: ::std::option::Option<::std::string::String>,
 }
 impl GetProxySessionInputBuilder {
     /// <p>The Amazon Chime voice connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Chime voice connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_id = input;
         self
     }
@@ -58,18 +50,12 @@ impl GetProxySessionInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The proxy session ID.</p>
-    pub fn proxy_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn proxy_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proxy_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The proxy session ID.</p>
-    pub fn set_proxy_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_proxy_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.proxy_session_id = input;
         self
     }
@@ -80,10 +66,7 @@ impl GetProxySessionInputBuilder {
     /// Consumes the builder and constructs a [`GetProxySessionInput`](crate::operation::get_proxy_session::GetProxySessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_proxy_session::GetProxySessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_proxy_session::GetProxySessionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_proxy_session::GetProxySessionInput {
             voice_connector_id: self.voice_connector_id,
             proxy_session_id: self.proxy_session_id,

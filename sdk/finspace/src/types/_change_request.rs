@@ -45,9 +45,7 @@ impl ChangeRequest {
 
 /// A builder for [`ChangeRequest`](crate::types::ChangeRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeRequestBuilder {
     pub(crate) change_type: ::std::option::Option<crate::types::ChangeType>,
     pub(crate) s3_path: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl ChangeRequestBuilder {
     /// <li> <p>PUT – Adds or updates files in a database.</p> </li>
     /// <li> <p>DELETE – Deletes files in a database.</p> </li>
     /// </ul>
-    pub fn set_change_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeType>,
-    ) -> Self {
+    pub fn set_change_type(mut self, input: ::std::option::Option<crate::types::ChangeType>) -> Self {
         self.change_type = input;
         self
     }

@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::deauthorize_connection::DeauthorizeConnectionOutput::last_modified_time): <p>A time stamp for the time that the connection was last updated.</p>
     ///   - [`last_authorized_time(Option<DateTime>)`](crate::operation::deauthorize_connection::DeauthorizeConnectionOutput::last_authorized_time): <p>A time stamp for the time that the connection was last authorized.</p>
     /// - On failure, responds with [`SdkError<DeauthorizeConnectionError>`](crate::operation::deauthorize_connection::DeauthorizeConnectionError)
-    pub fn deauthorize_connection(
-        &self,
-    ) -> crate::operation::deauthorize_connection::builders::DeauthorizeConnectionFluentBuilder
-    {
-        crate::operation::deauthorize_connection::builders::DeauthorizeConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deauthorize_connection(&self) -> crate::operation::deauthorize_connection::builders::DeauthorizeConnectionFluentBuilder {
+        crate::operation::deauthorize_connection::builders::DeauthorizeConnectionFluentBuilder::new(self.handle.clone())
     }
 }

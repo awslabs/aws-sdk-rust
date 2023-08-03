@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`budgets(Option<Vec<BudgetDetail>>)`](crate::operation::describe_product::DescribeProductOutput::budgets): <p>Information about the associated budgets.</p>
     ///   - [`launch_paths(Option<Vec<LaunchPath>>)`](crate::operation::describe_product::DescribeProductOutput::launch_paths): <p>Information about the associated launch paths.</p>
     /// - On failure, responds with [`SdkError<DescribeProductError>`](crate::operation::describe_product::DescribeProductError)
-    pub fn describe_product(
-        &self,
-    ) -> crate::operation::describe_product::builders::DescribeProductFluentBuilder {
-        crate::operation::describe_product::builders::DescribeProductFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_product(&self) -> crate::operation::describe_product::builders::DescribeProductFluentBuilder {
+        crate::operation::describe_product::builders::DescribeProductFluentBuilder::new(self.handle.clone())
     }
 }

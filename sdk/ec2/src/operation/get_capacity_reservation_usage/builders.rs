@@ -26,7 +26,7 @@ impl GetCapacityReservationUsageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCapacityReservationUsageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageInputBuilder,
+    inner: crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageInputBuilder,
 }
 impl GetCapacityReservationUsageFluentBuilder {
     /// Creates a new `GetCapacityReservationUsage`.
@@ -37,7 +37,7 @@ impl GetCapacityReservationUsageFluentBuilder {
         }
     }
     /// Access the GetCapacityReservationUsage as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetCapacityReservationUsageFluentBuilder {
             crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetCapacityReservationUsageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetCapacityReservationUsageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetCapacityReservationUsageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetCapacityReservationUsageFluentBuilder {
             crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn capacity_reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.capacity_reservation_id(input.into());
         self
     }
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn set_capacity_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_capacity_reservation_id(input);
         self
     }

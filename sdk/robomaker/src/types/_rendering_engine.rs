@@ -30,9 +30,7 @@ impl RenderingEngine {
 
 /// A builder for [`RenderingEngine`](crate::types::RenderingEngine).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RenderingEngineBuilder {
     pub(crate) name: ::std::option::Option<crate::types::RenderingEngineType>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl RenderingEngineBuilder {
         self
     }
     /// <p>The name of the rendering engine.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::RenderingEngineType>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::RenderingEngineType>) -> Self {
         self.name = input;
         self
     }

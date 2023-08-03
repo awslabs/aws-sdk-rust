@@ -10,10 +10,7 @@ impl RevokeRevisionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::revoke_revision::RevokeRevisionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_revision::RevokeRevisionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_revision::RevokeRevisionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.revoke_revision();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RevokeRevisionFluentBuilder {
         }
     }
     /// Access the RevokeRevision as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::revoke_revision::builders::RevokeRevisionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::revoke_revision::builders::RevokeRevisionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl RevokeRevisionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -143,18 +135,12 @@ impl RevokeRevisionFluentBuilder {
         self.inner.get_revision_id()
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-    pub fn revocation_comment(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn revocation_comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revocation_comment(input.into());
         self
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-    pub fn set_revocation_comment(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_revocation_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revocation_comment(input);
         self
     }

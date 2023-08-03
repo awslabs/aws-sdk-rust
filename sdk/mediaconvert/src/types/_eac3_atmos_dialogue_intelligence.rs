@@ -38,13 +38,7 @@
 /// Enable Dolby Dialogue Intelligence to adjust loudness based on dialogue analysis.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Eac3AtmosDialogueIntelligence {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Eac3AtmosDialogueIntelligence {
         match s {
             "DISABLED" => Eac3AtmosDialogueIntelligence::Disabled,
             "ENABLED" => Eac3AtmosDialogueIntelligence::Enabled,
-            other => Eac3AtmosDialogueIntelligence::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => Eac3AtmosDialogueIntelligence::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

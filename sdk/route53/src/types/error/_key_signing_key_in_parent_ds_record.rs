@@ -17,10 +17,7 @@ impl KeySigningKeyInParentDsRecord {
 }
 impl ::std::fmt::Display for KeySigningKeyInParentDsRecord {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "KeySigningKeyInParentDsRecord [KeySigningKeyInParentDSRecord]"
-        )?;
+        ::std::write!(f, "KeySigningKeyInParentDsRecord [KeySigningKeyInParentDSRecord]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -50,9 +47,7 @@ impl KeySigningKeyInParentDsRecord {
 
 /// A builder for [`KeySigningKeyInParentDsRecord`](crate::types::error::KeySigningKeyInParentDsRecord).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeySigningKeyInParentDsRecordBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -79,10 +74,7 @@ impl KeySigningKeyInParentDsRecordBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

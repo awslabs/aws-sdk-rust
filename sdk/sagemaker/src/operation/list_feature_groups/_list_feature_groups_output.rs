@@ -5,8 +5,7 @@
 pub struct ListFeatureGroupsOutput {
     /// <p>A summary of feature groups.</p>
     #[doc(hidden)]
-    pub feature_group_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::FeatureGroupSummary>>,
+    pub feature_group_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FeatureGroupSummary>>,
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListFeatureGroupsOutput {
 }
 impl ListFeatureGroupsOutput {
     /// <p>A summary of feature groups.</p>
-    pub fn feature_group_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FeatureGroupSummary]> {
+    pub fn feature_group_summaries(&self) -> ::std::option::Option<&[crate::types::FeatureGroupSummary]> {
         self.feature_group_summaries.as_deref()
     }
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListFeatureGroupsOutput {
 }
 impl ListFeatureGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListFeatureGroupsOutput`](crate::operation::list_feature_groups::ListFeatureGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_feature_groups::builders::ListFeatureGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_feature_groups::builders::ListFeatureGroupsOutputBuilder {
         crate::operation::list_feature_groups::builders::ListFeatureGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFeatureGroupsOutput`](crate::operation::list_feature_groups::ListFeatureGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFeatureGroupsOutputBuilder {
-    pub(crate) feature_group_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::FeatureGroupSummary>>,
+    pub(crate) feature_group_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FeatureGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListFeatureGroupsOutputBuilder {
         self
     }
     /// <p>A summary of feature groups.</p>
-    pub fn set_feature_group_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureGroupSummary>>,
-    ) -> Self {
+    pub fn set_feature_group_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureGroupSummary>>) -> Self {
         self.feature_group_summaries = input;
         self
     }
     /// <p>A summary of feature groups.</p>
-    pub fn get_feature_group_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureGroupSummary>> {
+    pub fn get_feature_group_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureGroupSummary>> {
         &self.feature_group_summaries
     }
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>

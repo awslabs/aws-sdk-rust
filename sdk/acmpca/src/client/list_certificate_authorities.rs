@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`certificate_authorities(Option<Vec<CertificateAuthority>>)`](crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput::certificate_authorities): <p>Summary information about each certificate authority you have created.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput::next_token): <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
     /// - On failure, responds with [`SdkError<ListCertificateAuthoritiesError>`](crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError)
-    pub fn list_certificate_authorities(&self) -> crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesFluentBuilder{
+    pub fn list_certificate_authorities(&self) -> crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesFluentBuilder {
         crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesFluentBuilder::new(self.handle.clone())
     }
 }

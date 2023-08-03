@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_package::CreatePackageOutput::arn): <p>The package's ARN.</p>
     ///   - [`storage_location(Option<StorageLocation>)`](crate::operation::create_package::CreatePackageOutput::storage_location): <p>The package's storage location.</p>
     /// - On failure, responds with [`SdkError<CreatePackageError>`](crate::operation::create_package::CreatePackageError)
-    pub fn create_package(
-        &self,
-    ) -> crate::operation::create_package::builders::CreatePackageFluentBuilder {
-        crate::operation::create_package::builders::CreatePackageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_package(&self) -> crate::operation::create_package::builders::CreatePackageFluentBuilder {
+        crate::operation::create_package::builders::CreatePackageFluentBuilder::new(self.handle.clone())
     }
 }

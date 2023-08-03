@@ -15,34 +15,25 @@ impl DeleteDiskSnapshotInput {
 }
 impl DeleteDiskSnapshotInput {
     /// Creates a new builder-style object to manufacture [`DeleteDiskSnapshotInput`](crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::delete_disk_snapshot::builders::DeleteDiskSnapshotInputBuilder {
+    pub fn builder() -> crate::operation::delete_disk_snapshot::builders::DeleteDiskSnapshotInputBuilder {
         crate::operation::delete_disk_snapshot::builders::DeleteDiskSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDiskSnapshotInput`](crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDiskSnapshotInputBuilder {
     pub(crate) disk_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDiskSnapshotInputBuilder {
     /// <p>The name of the disk snapshot you want to delete (e.g., <code>my-disk-snapshot</code>).</p>
-    pub fn disk_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disk_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the disk snapshot you want to delete (e.g., <code>my-disk-snapshot</code>).</p>
-    pub fn set_disk_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_disk_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_snapshot_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteDiskSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDiskSnapshotInput`](crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput {
-                disk_snapshot_name: self.disk_snapshot_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput {
+            disk_snapshot_name: self.disk_snapshot_name,
+        })
     }
 }

@@ -268,9 +268,7 @@ impl KeySigningKey {
 
 /// A builder for [`KeySigningKey`](crate::types::KeySigningKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeySigningKeyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_arn: ::std::option::Option<::std::string::String>,
@@ -444,18 +442,12 @@ impl KeySigningKeyBuilder {
         &self.flag
     }
     /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
-    pub fn signing_algorithm_mnemonic(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signing_algorithm_mnemonic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_algorithm_mnemonic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
-    pub fn set_signing_algorithm_mnemonic(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signing_algorithm_mnemonic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signing_algorithm_mnemonic = input;
         self
     }
@@ -478,18 +470,12 @@ impl KeySigningKeyBuilder {
         &self.signing_algorithm_type
     }
     /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>. </p>
-    pub fn digest_algorithm_mnemonic(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn digest_algorithm_mnemonic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.digest_algorithm_mnemonic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>. </p>
-    pub fn set_digest_algorithm_mnemonic(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_digest_algorithm_mnemonic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.digest_algorithm_mnemonic = input;
         self
     }
@@ -568,18 +554,12 @@ impl KeySigningKeyBuilder {
         &self.ds_record
     }
     /// <p>A string that represents a DNSKEY record.</p>
-    pub fn dnskey_record(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dnskey_record(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dnskey_record = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that represents a DNSKEY record.</p>
-    pub fn set_dnskey_record(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dnskey_record(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dnskey_record = input;
         self
     }
@@ -701,18 +681,12 @@ impl KeySigningKeyBuilder {
         &self.status
     }
     /// <p>The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code> or <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code> or <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -726,10 +700,7 @@ impl KeySigningKeyBuilder {
         self
     }
     /// <p>The date when the key-signing key (KSK) was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -743,10 +714,7 @@ impl KeySigningKeyBuilder {
         self
     }
     /// <p>The last time that the key-signing key (KSK) was changed.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }

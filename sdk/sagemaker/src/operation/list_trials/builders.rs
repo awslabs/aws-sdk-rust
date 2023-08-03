@@ -10,10 +10,7 @@ impl ListTrialsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_trials::ListTrialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_trials::ListTrialsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_trials::ListTrialsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_trials();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListTrialsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_trials::ListTrials,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_trials::ListTrials, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_trials::ListTrialsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListTrialsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListTrialsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_trials::ListTrials,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_trials::ListTrials, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_trials::ListTrialsError>,
     > {
         self.customize_middleware().await
@@ -119,18 +107,12 @@ impl ListTrialsFluentBuilder {
         crate::operation::list_trials::paginator::ListTrialsPaginator::new(self.handle, self.inner)
     }
     /// <p>A filter that returns only trials that are part of the specified experiment.</p>
-    pub fn experiment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.experiment_name(input.into());
         self
     }
     /// <p>A filter that returns only trials that are part of the specified experiment.</p>
-    pub fn set_experiment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_experiment_name(input);
         self
     }
@@ -139,18 +121,12 @@ impl ListTrialsFluentBuilder {
         self.inner.get_experiment_name()
     }
     /// <p>A filter that returns only trials that are associated with the specified trial component.</p>
-    pub fn trial_component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trial_component_name(input.into());
         self
     }
     /// <p>A filter that returns only trials that are associated with the specified trial component.</p>
-    pub fn set_trial_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trial_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trial_component_name(input);
         self
     }
@@ -164,10 +140,7 @@ impl ListTrialsFluentBuilder {
         self
     }
     /// <p>A filter that returns only trials created after the specified time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
     }
@@ -181,10 +154,7 @@ impl ListTrialsFluentBuilder {
         self
     }
     /// <p>A filter that returns only trials created before the specified time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
     }

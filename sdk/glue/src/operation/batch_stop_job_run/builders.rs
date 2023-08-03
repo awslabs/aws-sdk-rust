@@ -10,10 +10,7 @@ impl BatchStopJobRunInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_stop_job_run::BatchStopJobRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_stop_job_run::BatchStopJobRunError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_stop_job_run::BatchStopJobRunError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_stop_job_run();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchStopJobRunFluentBuilder {
         }
     }
     /// Access the BatchStopJobRun as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_stop_job_run::builders::BatchStopJobRunInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_stop_job_run::builders::BatchStopJobRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchStopJobRunFluentBuilder {
             crate::operation::batch_stop_job_run::BatchStopJobRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_stop_job_run::BatchStopJobRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_stop_job_run::BatchStopJobRunError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchStopJobRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchStopJobRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_stop_job_run::BatchStopJobRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_stop_job_run::BatchStopJobRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_stop_job_run::BatchStopJobRunError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchStopJobRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_stop_job_run::BatchStopJobRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_stop_job_run::BatchStopJobRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_stop_job_run::BatchStopJobRunError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchStopJobRunFluentBuilder {
             crate::operation::batch_stop_job_run::BatchStopJobRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_stop_job_run::BatchStopJobRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_stop_job_run::BatchStopJobRunError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +130,12 @@ impl BatchStopJobRunFluentBuilder {
         self
     }
     /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
-    pub fn set_job_run_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_job_run_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_job_run_ids(input);
         self
     }
     /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
-    pub fn get_job_run_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_run_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_job_run_ids()
     }
 }

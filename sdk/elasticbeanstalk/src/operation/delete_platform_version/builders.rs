@@ -37,10 +37,7 @@ impl DeletePlatformVersionFluentBuilder {
         }
     }
     /// Access the DeletePlatformVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_platform_version::builders::DeletePlatformVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_platform_version::builders::DeletePlatformVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeletePlatformVersionFluentBuilder {
             crate::operation::delete_platform_version::DeletePlatformVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_platform_version::DeletePlatformVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_platform_version::DeletePlatformVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeletePlatformVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeletePlatformVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_platform_version::DeletePlatformVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_platform_version::DeletePlatformVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_platform_version::DeletePlatformVersionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeletePlatformVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_platform_version::DeletePlatformVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_platform_version::DeletePlatformVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_platform_version::DeletePlatformVersionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeletePlatformVersionFluentBuilder {
             crate::operation::delete_platform_version::DeletePlatformVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_platform_version::DeletePlatformVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_platform_version::DeletePlatformVersionError>,
     > {
         self.customize_middleware().await
     }

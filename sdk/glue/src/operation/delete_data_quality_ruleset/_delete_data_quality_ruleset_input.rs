@@ -15,18 +15,14 @@ impl DeleteDataQualityRulesetInput {
 }
 impl DeleteDataQualityRulesetInput {
     /// Creates a new builder-style object to manufacture [`DeleteDataQualityRulesetInput`](crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetInput).
-    pub fn builder(
-    ) -> crate::operation::delete_data_quality_ruleset::builders::DeleteDataQualityRulesetInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_data_quality_ruleset::builders::DeleteDataQualityRulesetInputBuilder {
         crate::operation::delete_data_quality_ruleset::builders::DeleteDataQualityRulesetInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDataQualityRulesetInput`](crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDataQualityRulesetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl DeleteDataQualityRulesetInputBuilder {
         crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetInput {
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetInput { name: self.name })
     }
 }

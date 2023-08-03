@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`object_reference(ObjectReference)`](crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectFluentBuilder::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectFluentBuilder::set_object_reference): <p>A reference to the object to remove the facet from.</p>
     /// - On success, responds with [`RemoveFacetFromObjectOutput`](crate::operation::remove_facet_from_object::RemoveFacetFromObjectOutput)
     /// - On failure, responds with [`SdkError<RemoveFacetFromObjectError>`](crate::operation::remove_facet_from_object::RemoveFacetFromObjectError)
-    pub fn remove_facet_from_object(
-        &self,
-    ) -> crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectFluentBuilder
-    {
+    pub fn remove_facet_from_object(&self) -> crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectFluentBuilder {
         crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectFluentBuilder::new(self.handle.clone())
     }
 }

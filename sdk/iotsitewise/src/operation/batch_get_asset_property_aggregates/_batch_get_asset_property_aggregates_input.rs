@@ -5,8 +5,7 @@
 pub struct BatchGetAssetPropertyAggregatesInput {
     /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
     #[doc(hidden)]
-    pub entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>>,
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -20,9 +19,7 @@ pub struct BatchGetAssetPropertyAggregatesInput {
 }
 impl BatchGetAssetPropertyAggregatesInput {
     /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
-    pub fn entries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchGetAssetPropertyAggregatesEntry]> {
+    pub fn entries(&self) -> ::std::option::Option<&[crate::types::BatchGetAssetPropertyAggregatesEntry]> {
         self.entries.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results.</p>
@@ -40,19 +37,16 @@ impl BatchGetAssetPropertyAggregatesInput {
 }
 impl BatchGetAssetPropertyAggregatesInput {
     /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesInput`](crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesInput).
-    pub fn builder() -> crate::operation::batch_get_asset_property_aggregates::builders::BatchGetAssetPropertyAggregatesInputBuilder{
+    pub fn builder() -> crate::operation::batch_get_asset_property_aggregates::builders::BatchGetAssetPropertyAggregatesInputBuilder {
         crate::operation::batch_get_asset_property_aggregates::builders::BatchGetAssetPropertyAggregatesInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetAssetPropertyAggregatesInput`](crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyAggregatesInputBuilder {
-    pub(crate) entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -69,20 +63,12 @@ impl BatchGetAssetPropertyAggregatesInputBuilder {
         self
     }
     /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>,
-        >,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>The list of asset property aggregate entries for the batch get request. You can specify up to 16 entries per request.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>>
-    {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesEntry>> {
         &self.entries
     }
     /// <p>The token to be used for the next set of paginated results.</p>
@@ -134,13 +120,10 @@ impl BatchGetAssetPropertyAggregatesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesInput {
-                entries: self.entries
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                entries: self.entries,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

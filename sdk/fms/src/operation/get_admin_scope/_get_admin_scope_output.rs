@@ -47,9 +47,7 @@ impl GetAdminScopeOutput {
 
 /// A builder for [`GetAdminScopeOutput`](crate::operation::get_admin_scope::GetAdminScopeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAdminScopeOutputBuilder {
     pub(crate) admin_scope: ::std::option::Option<crate::types::AdminScope>,
     pub(crate) status: ::std::option::Option<crate::types::OrganizationStatus>,
@@ -62,10 +60,7 @@ impl GetAdminScopeOutputBuilder {
         self
     }
     /// <p>Contains details about the administrative scope of the requested account.</p>
-    pub fn set_admin_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::AdminScope>,
-    ) -> Self {
+    pub fn set_admin_scope(mut self, input: ::std::option::Option<crate::types::AdminScope>) -> Self {
         self.admin_scope = input;
         self
     }
@@ -91,10 +86,7 @@ impl GetAdminScopeOutputBuilder {
     /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li>
     /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OrganizationStatus>) -> Self {
         self.status = input;
         self
     }

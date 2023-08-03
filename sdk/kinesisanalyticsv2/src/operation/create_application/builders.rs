@@ -10,10 +10,7 @@ impl CreateApplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_application::CreateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_application();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateApplicationFluentBuilder {
         }
     }
     /// Access the CreateApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_application::builders::CreateApplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_application::builders::CreateApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateApplicationFluentBuilder {
             crate::operation::create_application::CreateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_application::CreateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_application::CreateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateApplicationFluentBuilder {
             crate::operation::create_application::CreateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_application::CreateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of your application (for example, <code>sample-app</code>).</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of your application (for example, <code>sample-app</code>).</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -143,18 +121,12 @@ impl CreateApplicationFluentBuilder {
         self.inner.get_application_name()
     }
     /// <p>A summary description of the application.</p>
-    pub fn application_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_description(input.into());
         self
     }
     /// <p>A summary description of the application.</p>
-    pub fn set_application_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_description(input);
         self
     }
@@ -168,32 +140,21 @@ impl CreateApplicationFluentBuilder {
         self
     }
     /// <p>The runtime environment for the application.</p>
-    pub fn set_runtime_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::RuntimeEnvironment>,
-    ) -> Self {
+    pub fn set_runtime_environment(mut self, input: ::std::option::Option<crate::types::RuntimeEnvironment>) -> Self {
         self.inner = self.inner.set_runtime_environment(input);
         self
     }
     /// <p>The runtime environment for the application.</p>
-    pub fn get_runtime_environment(
-        &self,
-    ) -> &::std::option::Option<crate::types::RuntimeEnvironment> {
+    pub fn get_runtime_environment(&self) -> &::std::option::Option<crate::types::RuntimeEnvironment> {
         self.inner.get_runtime_environment()
     }
     /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
-    pub fn service_execution_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_execution_role(input.into());
         self
     }
     /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
-    pub fn set_service_execution_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_execution_role(input);
         self
     }
@@ -202,25 +163,17 @@ impl CreateApplicationFluentBuilder {
         self.inner.get_service_execution_role()
     }
     /// <p>Use this parameter to configure the application.</p>
-    pub fn application_configuration(
-        mut self,
-        input: crate::types::ApplicationConfiguration,
-    ) -> Self {
+    pub fn application_configuration(mut self, input: crate::types::ApplicationConfiguration) -> Self {
         self.inner = self.inner.application_configuration(input);
         self
     }
     /// <p>Use this parameter to configure the application.</p>
-    pub fn set_application_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationConfiguration>,
-    ) -> Self {
+    pub fn set_application_configuration(mut self, input: ::std::option::Option<crate::types::ApplicationConfiguration>) -> Self {
         self.inner = self.inner.set_application_configuration(input);
         self
     }
     /// <p>Use this parameter to configure the application.</p>
-    pub fn get_application_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationConfiguration> {
+    pub fn get_application_configuration(&self) -> &::std::option::Option<crate::types::ApplicationConfiguration> {
         self.inner.get_application_configuration()
     }
     /// Appends an item to `CloudWatchLoggingOptions`.
@@ -228,25 +181,17 @@ impl CreateApplicationFluentBuilder {
     /// To override the contents of this collection use [`set_cloud_watch_logging_options`](Self::set_cloud_watch_logging_options).
     ///
     /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
-    pub fn cloud_watch_logging_options(
-        mut self,
-        input: crate::types::CloudWatchLoggingOption,
-    ) -> Self {
+    pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOption) -> Self {
         self.inner = self.inner.cloud_watch_logging_options(input);
         self
     }
     /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
-    pub fn set_cloud_watch_logging_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>>,
-    ) -> Self {
+    pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>>) -> Self {
         self.inner = self.inner.set_cloud_watch_logging_options(input);
         self
     }
     /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
-    pub fn get_cloud_watch_logging_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>> {
+    pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>> {
         self.inner.get_cloud_watch_logging_options()
     }
     /// Appends an item to `Tags`.
@@ -259,10 +204,7 @@ impl CreateApplicationFluentBuilder {
         self
     }
     /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -276,10 +218,7 @@ impl CreateApplicationFluentBuilder {
         self
     }
     /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
-    pub fn set_application_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationMode>,
-    ) -> Self {
+    pub fn set_application_mode(mut self, input: ::std::option::Option<crate::types::ApplicationMode>) -> Self {
         self.inner = self.inner.set_application_mode(input);
         self
     }

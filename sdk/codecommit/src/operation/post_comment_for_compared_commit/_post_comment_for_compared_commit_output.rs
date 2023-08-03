@@ -63,16 +63,14 @@ impl ::aws_http::request_id::RequestId for PostCommentForComparedCommitOutput {
 }
 impl PostCommentForComparedCommitOutput {
     /// Creates a new builder-style object to manufacture [`PostCommentForComparedCommitOutput`](crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput).
-    pub fn builder() -> crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitOutputBuilder{
+    pub fn builder() -> crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitOutputBuilder {
         crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitOutputBuilder::default()
     }
 }
 
 /// A builder for [`PostCommentForComparedCommitOutput`](crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PostCommentForComparedCommitOutputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) before_commit_id: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ pub struct PostCommentForComparedCommitOutputBuilder {
 }
 impl PostCommentForComparedCommitOutputBuilder {
     /// <p>The name of the repository where you posted a comment on the comparison between commits.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository where you posted a comment on the comparison between commits.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -105,18 +97,12 @@ impl PostCommentForComparedCommitOutputBuilder {
         &self.repository_name
     }
     /// <p>In the directionality you established, the full commit ID of the before commit.</p>
-    pub fn before_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>In the directionality you established, the full commit ID of the before commit.</p>
-    pub fn set_before_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_commit_id = input;
         self
     }
@@ -125,18 +111,12 @@ impl PostCommentForComparedCommitOutputBuilder {
         &self.before_commit_id
     }
     /// <p>In the directionality you established, the full commit ID of the after commit.</p>
-    pub fn after_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>In the directionality you established, the full commit ID of the after commit.</p>
-    pub fn set_after_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_commit_id = input;
         self
     }
@@ -145,18 +125,12 @@ impl PostCommentForComparedCommitOutputBuilder {
         &self.after_commit_id
     }
     /// <p>In the directionality you established, the blob ID of the before blob.</p>
-    pub fn before_blob_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_blob_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>In the directionality you established, the blob ID of the before blob.</p>
-    pub fn set_before_blob_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_blob_id = input;
         self
     }
@@ -165,18 +139,12 @@ impl PostCommentForComparedCommitOutputBuilder {
         &self.before_blob_id
     }
     /// <p>In the directionality you established, the blob ID of the after blob.</p>
-    pub fn after_blob_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_blob_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>In the directionality you established, the blob ID of the after blob.</p>
-    pub fn set_after_blob_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_blob_id = input;
         self
     }
@@ -222,10 +190,7 @@ impl PostCommentForComparedCommitOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PostCommentForComparedCommitOutput`](crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput
-    {
+    pub fn build(self) -> crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput {
         crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput {
             repository_name: self.repository_name,
             before_commit_id: self.before_commit_id,

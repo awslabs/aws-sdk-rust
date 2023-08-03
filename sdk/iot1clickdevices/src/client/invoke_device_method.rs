@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`InvokeDeviceMethodOutput`](crate::operation::invoke_device_method::InvokeDeviceMethodOutput) with field(s):
     ///   - [`device_method_response(Option<String>)`](crate::operation::invoke_device_method::InvokeDeviceMethodOutput::device_method_response): <p>A JSON encoded string containing the device method response.</p>
     /// - On failure, responds with [`SdkError<InvokeDeviceMethodError>`](crate::operation::invoke_device_method::InvokeDeviceMethodError)
-    pub fn invoke_device_method(
-        &self,
-    ) -> crate::operation::invoke_device_method::builders::InvokeDeviceMethodFluentBuilder {
-        crate::operation::invoke_device_method::builders::InvokeDeviceMethodFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn invoke_device_method(&self) -> crate::operation::invoke_device_method::builders::InvokeDeviceMethodFluentBuilder {
+        crate::operation::invoke_device_method::builders::InvokeDeviceMethodFluentBuilder::new(self.handle.clone())
     }
 }

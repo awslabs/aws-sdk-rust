@@ -19,10 +19,7 @@ impl super::Client {
     ///   - [`edge_packaging_job_summaries(Option<Vec<EdgePackagingJobSummary>>)`](crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsOutput::edge_packaging_job_summaries): <p>Summaries of edge packaging jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsOutput::next_token): <p>Token to use when calling the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListEdgePackagingJobsError>`](crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsError)
-    pub fn list_edge_packaging_jobs(
-        &self,
-    ) -> crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder
-    {
+    pub fn list_edge_packaging_jobs(&self) -> crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder {
         crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder::new(self.handle.clone())
     }
 }

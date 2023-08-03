@@ -15,16 +15,14 @@ impl GetProfileObjectTypeTemplateInput {
 }
 impl GetProfileObjectTypeTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetProfileObjectTypeTemplateInput`](crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateInput).
-    pub fn builder() -> crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateInputBuilder{
+    pub fn builder() -> crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateInputBuilder {
         crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetProfileObjectTypeTemplateInput`](crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProfileObjectTypeTemplateInputBuilder {
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl GetProfileObjectTypeTemplateInputBuilder {
         crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateInput {
-                template_id: self.template_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateInput {
+            template_id: self.template_id,
+        })
     }
 }

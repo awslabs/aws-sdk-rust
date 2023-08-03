@@ -5,16 +5,16 @@ pub use crate::operation::merge_pull_request_by_fast_forward::_merge_pull_reques
 
 impl MergePullRequestByFastForwardInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.merge_pull_request_by_fast_forward();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl MergePullRequestByFastForwardInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct MergePullRequestByFastForwardFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardInputBuilder,
+    inner: crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardInputBuilder,
 }
 impl MergePullRequestByFastForwardFluentBuilder {
     /// Creates a new `MergePullRequestByFastForward`.
@@ -37,15 +37,20 @@ impl MergePullRequestByFastForwardFluentBuilder {
         }
     }
     /// Access the MergePullRequestByFastForward as a reference.
-    pub fn as_input(&self) -> &crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForward, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForward,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl MergePullRequestByFastForwardFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardOutput, ::aws_smithy_http::result::SdkError<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl MergePullRequestByFastForwardFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardOutput, ::aws_smithy_http::result::SdkError<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForward, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForward,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pull_request_id(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
@@ -115,18 +124,12 @@ impl MergePullRequestByFastForwardFluentBuilder {
         self.inner.get_pull_request_id()
     }
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -135,18 +138,12 @@ impl MergePullRequestByFastForwardFluentBuilder {
         self.inner.get_repository_name()
     }
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
-    pub fn source_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_commit_id(input.into());
         self
     }
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
-    pub fn set_source_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_commit_id(input);
         self
     }

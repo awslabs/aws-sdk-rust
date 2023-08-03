@@ -26,13 +26,10 @@ pub struct UpdateOriginEndpointInput {
     pub startover_window_seconds: ::std::option::Option<i32>,
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
     #[doc(hidden)]
-    pub hls_manifests:
-        ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
+    pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
     /// <p>A low-latency HLS manifest configuration.</p>
     #[doc(hidden)]
-    pub low_latency_hls_manifests: ::std::option::Option<
-        ::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>,
-    >,
+    pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
 }
 impl UpdateOriginEndpointInput {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
@@ -64,31 +61,24 @@ impl UpdateOriginEndpointInput {
         self.startover_window_seconds
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn hls_manifests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CreateHlsManifestConfiguration]> {
+    pub fn hls_manifests(&self) -> ::std::option::Option<&[crate::types::CreateHlsManifestConfiguration]> {
         self.hls_manifests.as_deref()
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn low_latency_hls_manifests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CreateLowLatencyHlsManifestConfiguration]> {
+    pub fn low_latency_hls_manifests(&self) -> ::std::option::Option<&[crate::types::CreateLowLatencyHlsManifestConfiguration]> {
         self.low_latency_hls_manifests.as_deref()
     }
 }
 impl UpdateOriginEndpointInput {
     /// Creates a new builder-style object to manufacture [`UpdateOriginEndpointInput`](crate::operation::update_origin_endpoint::UpdateOriginEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::update_origin_endpoint::builders::UpdateOriginEndpointInputBuilder {
+    pub fn builder() -> crate::operation::update_origin_endpoint::builders::UpdateOriginEndpointInputBuilder {
         crate::operation::update_origin_endpoint::builders::UpdateOriginEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateOriginEndpointInput`](crate::operation::update_origin_endpoint::UpdateOriginEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateOriginEndpointInputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
@@ -97,26 +87,17 @@ pub struct UpdateOriginEndpointInputBuilder {
     pub(crate) segment: ::std::option::Option<crate::types::Segment>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) startover_window_seconds: ::std::option::Option<i32>,
-    pub(crate) hls_manifests:
-        ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
-    pub(crate) low_latency_hls_manifests: ::std::option::Option<
-        ::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>,
-    >,
+    pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
+    pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
 }
 impl UpdateOriginEndpointInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn set_channel_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_group_name = input;
         self
     }
@@ -139,18 +120,12 @@ impl UpdateOriginEndpointInputBuilder {
         &self.channel_name
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
-    pub fn origin_endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
-    pub fn set_origin_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_endpoint_name = input;
         self
     }
@@ -164,10 +139,7 @@ impl UpdateOriginEndpointInputBuilder {
         self
     }
     /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. </p>
-    pub fn set_container_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerType>,
-    ) -> Self {
+    pub fn set_container_type(mut self, input: ::std::option::Option<crate::types::ContainerType>) -> Self {
         self.container_type = input;
         self
     }
@@ -229,17 +201,12 @@ impl UpdateOriginEndpointInputBuilder {
         self
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn set_hls_manifests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
-    ) -> Self {
+    pub fn set_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>) -> Self {
         self.hls_manifests = input;
         self
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn get_hls_manifests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>> {
+    pub fn get_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>> {
         &self.hls_manifests
     }
     /// Appends an item to `low_latency_hls_manifests`.
@@ -247,10 +214,7 @@ impl UpdateOriginEndpointInputBuilder {
     /// To override the contents of this collection use [`set_low_latency_hls_manifests`](Self::set_low_latency_hls_manifests).
     ///
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn low_latency_hls_manifests(
-        mut self,
-        input: crate::types::CreateLowLatencyHlsManifestConfiguration,
-    ) -> Self {
+    pub fn low_latency_hls_manifests(mut self, input: crate::types::CreateLowLatencyHlsManifestConfiguration) -> Self {
         let mut v = self.low_latency_hls_manifests.unwrap_or_default();
         v.push(input);
         self.low_latency_hls_manifests = ::std::option::Option::Some(v);
@@ -259,40 +223,30 @@ impl UpdateOriginEndpointInputBuilder {
     /// <p>A low-latency HLS manifest configuration.</p>
     pub fn set_low_latency_hls_manifests(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
     ) -> Self {
         self.low_latency_hls_manifests = input;
         self
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn get_low_latency_hls_manifests(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>,
-    > {
+    pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>> {
         &self.low_latency_hls_manifests
     }
     /// Consumes the builder and constructs a [`UpdateOriginEndpointInput`](crate::operation::update_origin_endpoint::UpdateOriginEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_origin_endpoint::UpdateOriginEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_origin_endpoint::UpdateOriginEndpointInput {
-                channel_group_name: self.channel_group_name,
-                channel_name: self.channel_name,
-                origin_endpoint_name: self.origin_endpoint_name,
-                container_type: self.container_type,
-                segment: self.segment,
-                description: self.description,
-                startover_window_seconds: self.startover_window_seconds,
-                hls_manifests: self.hls_manifests,
-                low_latency_hls_manifests: self.low_latency_hls_manifests,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_origin_endpoint::UpdateOriginEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_origin_endpoint::UpdateOriginEndpointInput {
+            channel_group_name: self.channel_group_name,
+            channel_name: self.channel_name,
+            origin_endpoint_name: self.origin_endpoint_name,
+            container_type: self.container_type,
+            segment: self.segment,
+            description: self.description,
+            startover_window_seconds: self.startover_window_seconds,
+            hls_manifests: self.hls_manifests,
+            low_latency_hls_manifests: self.low_latency_hls_manifests,
+        })
     }
 }

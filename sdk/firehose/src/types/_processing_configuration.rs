@@ -30,9 +30,7 @@ impl ProcessingConfiguration {
 
 /// A builder for [`ProcessingConfiguration`](crate::types::ProcessingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessingConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) processors: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
@@ -64,17 +62,12 @@ impl ProcessingConfigurationBuilder {
         self
     }
     /// <p>The data processors.</p>
-    pub fn set_processors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
-    ) -> Self {
+    pub fn set_processors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>) -> Self {
         self.processors = input;
         self
     }
     /// <p>The data processors.</p>
-    pub fn get_processors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
+    pub fn get_processors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
         &self.processors
     }
     /// Consumes the builder and constructs a [`ProcessingConfiguration`](crate::types::ProcessingConfiguration).

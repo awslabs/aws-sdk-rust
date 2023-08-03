@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListTrustAnchorsOutput {
 }
 impl ListTrustAnchorsOutput {
     /// Creates a new builder-style object to manufacture [`ListTrustAnchorsOutput`](crate::operation::list_trust_anchors::ListTrustAnchorsOutput).
-    pub fn builder() -> crate::operation::list_trust_anchors::builders::ListTrustAnchorsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_trust_anchors::builders::ListTrustAnchorsOutputBuilder {
         crate::operation::list_trust_anchors::builders::ListTrustAnchorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTrustAnchorsOutput`](crate::operation::list_trust_anchors::ListTrustAnchorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrustAnchorsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) trust_anchors:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrustAnchorDetail>>,
+    pub(crate) trust_anchors: ::std::option::Option<::std::vec::Vec<crate::types::TrustAnchorDetail>>,
     _request_id: Option<String>,
 }
 impl ListTrustAnchorsOutputBuilder {
@@ -72,17 +68,12 @@ impl ListTrustAnchorsOutputBuilder {
         self
     }
     /// <p>A list of trust anchors.</p>
-    pub fn set_trust_anchors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrustAnchorDetail>>,
-    ) -> Self {
+    pub fn set_trust_anchors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrustAnchorDetail>>) -> Self {
         self.trust_anchors = input;
         self
     }
     /// <p>A list of trust anchors.</p>
-    pub fn get_trust_anchors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrustAnchorDetail>> {
+    pub fn get_trust_anchors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrustAnchorDetail>> {
         &self.trust_anchors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

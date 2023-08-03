@@ -5,8 +5,7 @@
 pub struct ListIcd10CmInferenceJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub comprehend_medical_async_job_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>,
+    pub comprehend_medical_async_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListIcd10CmInferenceJobsOutput {
 }
 impl ListIcd10CmInferenceJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn comprehend_medical_async_job_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ComprehendMedicalAsyncJobProperties]> {
+    pub fn comprehend_medical_async_job_properties_list(&self) -> ::std::option::Option<&[crate::types::ComprehendMedicalAsyncJobProperties]> {
         self.comprehend_medical_async_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -31,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListIcd10CmInferenceJobsOutput {
 }
 impl ListIcd10CmInferenceJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListIcd10CmInferenceJobsOutput`](crate::operation::list_icd10_cm_inference_jobs::ListIcd10CmInferenceJobsOutput).
-    pub fn builder() -> crate::operation::list_icd10_cm_inference_jobs::builders::ListIcd10CmInferenceJobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_icd10_cm_inference_jobs::builders::ListIcd10CmInferenceJobsOutputBuilder {
         crate::operation::list_icd10_cm_inference_jobs::builders::ListIcd10CmInferenceJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIcd10CmInferenceJobsOutput`](crate::operation::list_icd10_cm_inference_jobs::ListIcd10CmInferenceJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIcd10CmInferenceJobsOutputBuilder {
     pub(crate) comprehend_medical_async_job_properties_list:
         ::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>,
@@ -53,13 +48,8 @@ impl ListIcd10CmInferenceJobsOutputBuilder {
     /// To override the contents of this collection use [`set_comprehend_medical_async_job_properties_list`](Self::set_comprehend_medical_async_job_properties_list).
     ///
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn comprehend_medical_async_job_properties_list(
-        mut self,
-        input: crate::types::ComprehendMedicalAsyncJobProperties,
-    ) -> Self {
-        let mut v = self
-            .comprehend_medical_async_job_properties_list
-            .unwrap_or_default();
+    pub fn comprehend_medical_async_job_properties_list(mut self, input: crate::types::ComprehendMedicalAsyncJobProperties) -> Self {
+        let mut v = self.comprehend_medical_async_job_properties_list.unwrap_or_default();
         v.push(input);
         self.comprehend_medical_async_job_properties_list = ::std::option::Option::Some(v);
         self
@@ -67,9 +57,7 @@ impl ListIcd10CmInferenceJobsOutputBuilder {
     /// <p>A list containing the properties of each job that is returned.</p>
     pub fn set_comprehend_medical_async_job_properties_list(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>,
     ) -> Self {
         self.comprehend_medical_async_job_properties_list = input;
         self
@@ -77,8 +65,7 @@ impl ListIcd10CmInferenceJobsOutputBuilder {
     /// <p>A list containing the properties of each job that is returned.</p>
     pub fn get_comprehend_medical_async_job_properties_list(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>> {
         &self.comprehend_medical_async_job_properties_list
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -105,12 +92,9 @@ impl ListIcd10CmInferenceJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListIcd10CmInferenceJobsOutput`](crate::operation::list_icd10_cm_inference_jobs::ListIcd10CmInferenceJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_icd10_cm_inference_jobs::ListIcd10CmInferenceJobsOutput {
+    pub fn build(self) -> crate::operation::list_icd10_cm_inference_jobs::ListIcd10CmInferenceJobsOutput {
         crate::operation::list_icd10_cm_inference_jobs::ListIcd10CmInferenceJobsOutput {
-            comprehend_medical_async_job_properties_list: self
-                .comprehend_medical_async_job_properties_list,
+            comprehend_medical_async_job_properties_list: self.comprehend_medical_async_job_properties_list,
             next_token: self.next_token,
             _request_id: self._request_id,
         }

@@ -35,9 +35,7 @@ impl ListSpacesOutput {
 
 /// A builder for [`ListSpacesOutput`](crate::operation::list_spaces::ListSpacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSpacesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::SpaceSummary>>,
@@ -70,10 +68,7 @@ impl ListSpacesOutputBuilder {
         self
     }
     /// <p>Information about the spaces. </p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpaceSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpaceSummary>>) -> Self {
         self.items = input;
         self
     }

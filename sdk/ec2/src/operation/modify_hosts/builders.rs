@@ -10,10 +10,7 @@ impl ModifyHostsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_hosts::ModifyHostsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_hosts::ModifyHostsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_hosts::ModifyHostsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_hosts();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ModifyHostsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_hosts::ModifyHosts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::modify_hosts::ModifyHosts, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::modify_hosts::ModifyHostsError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ModifyHostsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl ModifyHostsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_hosts::ModifyHosts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::modify_hosts::ModifyHosts, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::modify_hosts::ModifyHostsError>,
     > {
         self.customize_middleware().await
@@ -119,10 +107,7 @@ impl ModifyHostsFluentBuilder {
         self
     }
     /// <p>Specify whether to enable or disable auto-placement.</p>
-    pub fn set_auto_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoPlacement>,
-    ) -> Self {
+    pub fn set_auto_placement(mut self, input: ::std::option::Option<crate::types::AutoPlacement>) -> Self {
         self.inner = self.inner.set_auto_placement(input);
         self
     }
@@ -140,10 +125,7 @@ impl ModifyHostsFluentBuilder {
         self
     }
     /// <p>The IDs of the Dedicated Hosts to modify.</p>
-    pub fn set_host_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_host_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_host_ids(input);
         self
     }
@@ -157,10 +139,7 @@ impl ModifyHostsFluentBuilder {
         self
     }
     /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_host_recovery(
-        mut self,
-        input: ::std::option::Option<crate::types::HostRecovery>,
-    ) -> Self {
+    pub fn set_host_recovery(mut self, input: ::std::option::Option<crate::types::HostRecovery>) -> Self {
         self.inner = self.inner.set_host_recovery(input);
         self
     }
@@ -170,19 +149,13 @@ impl ModifyHostsFluentBuilder {
     }
     /// <p>Specifies the instance type to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated Host to support only a specific instance type.</p>
     /// <p>If you want to modify a Dedicated Host to support multiple instance types in its current instance family, omit this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and <b>InstanceFamily</b> in the same request.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_type(input.into());
         self
     }
     /// <p>Specifies the instance type to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated Host to support only a specific instance type.</p>
     /// <p>If you want to modify a Dedicated Host to support multiple instance types in its current instance family, omit this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and <b>InstanceFamily</b> in the same request.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
@@ -193,19 +166,13 @@ impl ModifyHostsFluentBuilder {
     }
     /// <p>Specifies the instance family to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated Host to support multiple instance types within its current instance family.</p>
     /// <p>If you want to modify a Dedicated Host to support a specific instance type only, omit this parameter and specify <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same request.</p>
-    pub fn instance_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_family(input.into());
         self
     }
     /// <p>Specifies the instance family to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated Host to support multiple instance types within its current instance family.</p>
     /// <p>If you want to modify a Dedicated Host to support a specific instance type only, omit this parameter and specify <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same request.</p>
-    pub fn set_instance_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_family(input);
         self
     }
@@ -220,10 +187,7 @@ impl ModifyHostsFluentBuilder {
         self
     }
     /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_host_maintenance(
-        mut self,
-        input: ::std::option::Option<crate::types::HostMaintenance>,
-    ) -> Self {
+    pub fn set_host_maintenance(mut self, input: ::std::option::Option<crate::types::HostMaintenance>) -> Self {
         self.inner = self.inner.set_host_maintenance(input);
         self
     }

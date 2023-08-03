@@ -54,9 +54,7 @@ impl TestConnectionOutput {
 
 /// A builder for [`TestConnectionOutput`](crate::operation::test_connection::TestConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestConnectionOutputBuilder {
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -99,10 +97,7 @@ impl TestConnectionOutputBuilder {
     /// <li> <p> <b>Private key not found</b>: Verify that the secret exists and is formatted correctly.</p> </li>
     /// <li> <p> <b>Invalid trusted host keys</b>: Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code> output.</p> </li>
     /// </ul>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
@@ -113,10 +108,7 @@ impl TestConnectionOutputBuilder {
     /// <li> <p> <b>Private key not found</b>: Verify that the secret exists and is formatted correctly.</p> </li>
     /// <li> <p> <b>Invalid trusted host keys</b>: Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code> output.</p> </li>
     /// </ul>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

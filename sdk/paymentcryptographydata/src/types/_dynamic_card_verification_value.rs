@@ -44,9 +44,7 @@ impl DynamicCardVerificationValue {
 
 /// A builder for [`DynamicCardVerificationValue`](crate::types::DynamicCardVerificationValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DynamicCardVerificationValueBuilder {
     pub(crate) pan_sequence_number: ::std::option::Option<::std::string::String>,
     pub(crate) card_expiry_date: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct DynamicCardVerificationValueBuilder {
 }
 impl DynamicCardVerificationValueBuilder {
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
-    pub fn pan_sequence_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pan_sequence_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pan_sequence_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
-    pub fn set_pan_sequence_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pan_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pan_sequence_number = input;
         self
     }
@@ -75,18 +67,12 @@ impl DynamicCardVerificationValueBuilder {
         &self.pan_sequence_number
     }
     /// <p>The expiry date of a payment card.</p>
-    pub fn card_expiry_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn card_expiry_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.card_expiry_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expiry date of a payment card.</p>
-    pub fn set_card_expiry_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_card_expiry_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.card_expiry_date = input;
         self
     }
@@ -109,25 +95,17 @@ impl DynamicCardVerificationValueBuilder {
         &self.service_code
     }
     /// <p>The transaction counter value that comes from the terminal.</p>
-    pub fn application_transaction_counter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_transaction_counter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_transaction_counter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transaction counter value that comes from the terminal.</p>
-    pub fn set_application_transaction_counter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_transaction_counter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_transaction_counter = input;
         self
     }
     /// <p>The transaction counter value that comes from the terminal.</p>
-    pub fn get_application_transaction_counter(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_application_transaction_counter(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_transaction_counter
     }
     /// Consumes the builder and constructs a [`DynamicCardVerificationValue`](crate::types::DynamicCardVerificationValue).

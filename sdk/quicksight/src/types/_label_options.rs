@@ -37,9 +37,7 @@ impl LabelOptions {
 
 /// A builder for [`LabelOptions`](crate::types::LabelOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LabelOptionsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
@@ -52,10 +50,7 @@ impl LabelOptionsBuilder {
         self
     }
     /// <p>Determines whether or not the label is visible.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.visibility = input;
         self
     }
@@ -69,17 +64,12 @@ impl LabelOptionsBuilder {
         self
     }
     /// <p>The font configuration of the label.</p>
-    pub fn set_font_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FontConfiguration>,
-    ) -> Self {
+    pub fn set_font_configuration(mut self, input: ::std::option::Option<crate::types::FontConfiguration>) -> Self {
         self.font_configuration = input;
         self
     }
     /// <p>The font configuration of the label.</p>
-    pub fn get_font_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FontConfiguration> {
+    pub fn get_font_configuration(&self) -> &::std::option::Option<crate::types::FontConfiguration> {
         &self.font_configuration
     }
     /// <p>The text for the label.</p>

@@ -42,10 +42,7 @@ pub fn ser_create_data_set_input(
             {
                 #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_dataset_parameter::ser_dataset_parameter(
-                    &mut object_15,
-                    item_14,
-                )?;
+                crate::protocol_serde::shape_dataset_parameter::ser_dataset_parameter(&mut object_15, item_14)?;
                 object_15.finish();
             }
         }
@@ -58,10 +55,7 @@ pub fn ser_create_data_set_input(
             {
                 #[allow(unused_mut)]
                 let mut object_20 = object_17.key(key_18.as_str()).start_object();
-                crate::protocol_serde::shape_field_folder::ser_field_folder(
-                    &mut object_20,
-                    value_19,
-                )?;
+                crate::protocol_serde::shape_field_folder::ser_field_folder(&mut object_20, value_19)?;
                 object_20.finish();
             }
         }
@@ -77,10 +71,7 @@ pub fn ser_create_data_set_input(
             {
                 #[allow(unused_mut)]
                 let mut object_26 = object_23.key(key_24.as_str()).start_object();
-                crate::protocol_serde::shape_logical_table::ser_logical_table(
-                    &mut object_26,
-                    value_25,
-                )?;
+                crate::protocol_serde::shape_logical_table::ser_logical_table(&mut object_26, value_25)?;
                 object_26.finish();
             }
         }
@@ -95,10 +86,7 @@ pub fn ser_create_data_set_input(
             {
                 #[allow(unused_mut)]
                 let mut object_31 = array_29.value().start_object();
-                crate::protocol_serde::shape_resource_permission::ser_resource_permission(
-                    &mut object_31,
-                    item_30,
-                )?;
+                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_31, item_30)?;
                 object_31.finish();
             }
         }
@@ -111,10 +99,7 @@ pub fn ser_create_data_set_input(
             {
                 #[allow(unused_mut)]
                 let mut object_36 = object_33.key(key_34.as_str()).start_object();
-                crate::protocol_serde::shape_physical_table::ser_physical_table(
-                    &mut object_36,
-                    value_35,
-                )?;
+                crate::protocol_serde::shape_physical_table::ser_physical_table(&mut object_36, value_35)?;
                 object_36.finish();
             }
         }
@@ -128,9 +113,7 @@ pub fn ser_create_data_set_input(
     }
     if let Some(var_39) = &input.row_level_permission_tag_configuration {
         #[allow(unused_mut)]
-        let mut object_40 = object
-            .key("RowLevelPermissionTagConfiguration")
-            .start_object();
+        let mut object_40 = object.key("RowLevelPermissionTagConfiguration").start_object();
         crate::protocol_serde::shape_row_level_permission_tag_configuration::ser_row_level_permission_tag_configuration(&mut object_40, var_39)?;
         object_40.finish();
     }

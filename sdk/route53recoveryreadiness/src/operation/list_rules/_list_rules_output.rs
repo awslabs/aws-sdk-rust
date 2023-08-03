@@ -35,9 +35,7 @@ impl ListRulesOutput {
 
 /// A builder for [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRulesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::ListRulesOutput>>,
@@ -70,17 +68,12 @@ impl ListRulesOutputBuilder {
         self
     }
     /// <p>A list of readiness rules for a specific resource type.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListRulesOutput>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListRulesOutput>>) -> Self {
         self.rules = input;
         self
     }
     /// <p>A list of readiness rules for a specific resource type.</p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListRulesOutput>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListRulesOutput>> {
         &self.rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

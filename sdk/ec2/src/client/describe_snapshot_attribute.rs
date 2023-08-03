@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`product_codes(Option<Vec<ProductCode>>)`](crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeOutput::product_codes): <p>The product codes.</p>
     ///   - [`snapshot_id(Option<String>)`](crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeOutput::snapshot_id): <p>The ID of the EBS snapshot.</p>
     /// - On failure, responds with [`SdkError<DescribeSnapshotAttributeError>`](crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeError)
-    pub fn describe_snapshot_attribute(&self) -> crate::operation::describe_snapshot_attribute::builders::DescribeSnapshotAttributeFluentBuilder{
+    pub fn describe_snapshot_attribute(&self) -> crate::operation::describe_snapshot_attribute::builders::DescribeSnapshotAttributeFluentBuilder {
         crate::operation::describe_snapshot_attribute::builders::DescribeSnapshotAttributeFluentBuilder::new(self.handle.clone())
     }
 }

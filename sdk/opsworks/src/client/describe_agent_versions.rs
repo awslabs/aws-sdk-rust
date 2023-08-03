@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAgentVersionsOutput`](crate::operation::describe_agent_versions::DescribeAgentVersionsOutput) with field(s):
     ///   - [`agent_versions(Option<Vec<AgentVersion>>)`](crate::operation::describe_agent_versions::DescribeAgentVersionsOutput::agent_versions): <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
     /// - On failure, responds with [`SdkError<DescribeAgentVersionsError>`](crate::operation::describe_agent_versions::DescribeAgentVersionsError)
-    pub fn describe_agent_versions(
-        &self,
-    ) -> crate::operation::describe_agent_versions::builders::DescribeAgentVersionsFluentBuilder
-    {
-        crate::operation::describe_agent_versions::builders::DescribeAgentVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_agent_versions(&self) -> crate::operation::describe_agent_versions::builders::DescribeAgentVersionsFluentBuilder {
+        crate::operation::describe_agent_versions::builders::DescribeAgentVersionsFluentBuilder::new(self.handle.clone())
     }
 }

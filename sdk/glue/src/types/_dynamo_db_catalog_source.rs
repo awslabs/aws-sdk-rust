@@ -37,9 +37,7 @@ impl DynamoDbCatalogSource {
 
 /// A builder for [`DynamoDbCatalogSource`](crate::types::DynamoDbCatalogSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DynamoDbCatalogSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,

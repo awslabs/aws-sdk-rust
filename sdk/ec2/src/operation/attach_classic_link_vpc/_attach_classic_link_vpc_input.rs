@@ -36,17 +36,14 @@ impl AttachClassicLinkVpcInput {
 }
 impl AttachClassicLinkVpcInput {
     /// Creates a new builder-style object to manufacture [`AttachClassicLinkVpcInput`](crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput).
-    pub fn builder(
-    ) -> crate::operation::attach_classic_link_vpc::builders::AttachClassicLinkVpcInputBuilder {
+    pub fn builder() -> crate::operation::attach_classic_link_vpc::builders::AttachClassicLinkVpcInputBuilder {
         crate::operation::attach_classic_link_vpc::builders::AttachClassicLinkVpcInputBuilder::default()
     }
 }
 
 /// A builder for [`AttachClassicLinkVpcInput`](crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachClassicLinkVpcInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -80,10 +77,7 @@ impl AttachClassicLinkVpcInputBuilder {
         self
     }
     /// <p>The IDs of the security groups. You cannot specify security groups from a different VPC.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.groups = input;
         self
     }
@@ -122,17 +116,13 @@ impl AttachClassicLinkVpcInputBuilder {
     /// Consumes the builder and constructs a [`AttachClassicLinkVpcInput`](crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput {
-                dry_run: self.dry_run,
-                groups: self.groups,
-                instance_id: self.instance_id,
-                vpc_id: self.vpc_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput {
+            dry_run: self.dry_run,
+            groups: self.groups,
+            instance_id: self.instance_id,
+            vpc_id: self.vpc_id,
+        })
     }
 }

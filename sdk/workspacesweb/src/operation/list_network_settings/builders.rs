@@ -37,9 +37,7 @@ impl ListNetworkSettingsFluentBuilder {
         }
     }
     /// Access the ListNetworkSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_network_settings::builders::ListNetworkSettingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_network_settings::builders::ListNetworkSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListNetworkSettingsFluentBuilder {
             crate::operation::list_network_settings::ListNetworkSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_network_settings::ListNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_network_settings::ListNetworkSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListNetworkSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListNetworkSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_network_settings::ListNetworkSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_network_settings::ListNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_network_settings::ListNetworkSettingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListNetworkSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_network_settings::ListNetworkSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_network_settings::ListNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_network_settings::ListNetworkSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListNetworkSettingsFluentBuilder {
             crate::operation::list_network_settings::ListNetworkSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_network_settings::ListNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_network_settings::ListNetworkSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_network_settings::paginator::ListNetworkSettingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_network_settings::paginator::ListNetworkSettingsPaginator {
-        crate::operation::list_network_settings::paginator::ListNetworkSettingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_network_settings::paginator::ListNetworkSettingsPaginator {
+        crate::operation::list_network_settings::paginator::ListNetworkSettingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

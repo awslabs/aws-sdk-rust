@@ -5,8 +5,7 @@
 pub struct CreateDhcpOptionsInput {
     /// <p>A DHCP configuration option.</p>
     #[doc(hidden)]
-    pub dhcp_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::NewDhcpConfiguration>>,
+    pub dhcp_configurations: ::std::option::Option<::std::vec::Vec<crate::types::NewDhcpConfiguration>>,
     /// <p>The tags to assign to the DHCP option.</p>
     #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
@@ -16,9 +15,7 @@ pub struct CreateDhcpOptionsInput {
 }
 impl CreateDhcpOptionsInput {
     /// <p>A DHCP configuration option.</p>
-    pub fn dhcp_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NewDhcpConfiguration]> {
+    pub fn dhcp_configurations(&self) -> ::std::option::Option<&[crate::types::NewDhcpConfiguration]> {
         self.dhcp_configurations.as_deref()
     }
     /// <p>The tags to assign to the DHCP option.</p>
@@ -32,22 +29,17 @@ impl CreateDhcpOptionsInput {
 }
 impl CreateDhcpOptionsInput {
     /// Creates a new builder-style object to manufacture [`CreateDhcpOptionsInput`](crate::operation::create_dhcp_options::CreateDhcpOptionsInput).
-    pub fn builder(
-    ) -> crate::operation::create_dhcp_options::builders::CreateDhcpOptionsInputBuilder {
+    pub fn builder() -> crate::operation::create_dhcp_options::builders::CreateDhcpOptionsInputBuilder {
         crate::operation::create_dhcp_options::builders::CreateDhcpOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDhcpOptionsInput`](crate::operation::create_dhcp_options::CreateDhcpOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDhcpOptionsInputBuilder {
-    pub(crate) dhcp_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::NewDhcpConfiguration>>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) dhcp_configurations: ::std::option::Option<::std::vec::Vec<crate::types::NewDhcpConfiguration>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateDhcpOptionsInputBuilder {
@@ -63,17 +55,12 @@ impl CreateDhcpOptionsInputBuilder {
         self
     }
     /// <p>A DHCP configuration option.</p>
-    pub fn set_dhcp_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NewDhcpConfiguration>>,
-    ) -> Self {
+    pub fn set_dhcp_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NewDhcpConfiguration>>) -> Self {
         self.dhcp_configurations = input;
         self
     }
     /// <p>A DHCP configuration option.</p>
-    pub fn get_dhcp_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NewDhcpConfiguration>> {
+    pub fn get_dhcp_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NewDhcpConfiguration>> {
         &self.dhcp_configurations
     }
     /// Appends an item to `tag_specifications`.
@@ -88,17 +75,12 @@ impl CreateDhcpOptionsInputBuilder {
         self
     }
     /// <p>The tags to assign to the DHCP option.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to assign to the DHCP option.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -118,16 +100,11 @@ impl CreateDhcpOptionsInputBuilder {
     /// Consumes the builder and constructs a [`CreateDhcpOptionsInput`](crate::operation::create_dhcp_options::CreateDhcpOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_dhcp_options::CreateDhcpOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_dhcp_options::CreateDhcpOptionsInput {
-                dhcp_configurations: self.dhcp_configurations,
-                tag_specifications: self.tag_specifications,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_dhcp_options::CreateDhcpOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_dhcp_options::CreateDhcpOptionsInput {
+            dhcp_configurations: self.dhcp_configurations,
+            tag_specifications: self.tag_specifications,
+            dry_run: self.dry_run,
+        })
     }
 }

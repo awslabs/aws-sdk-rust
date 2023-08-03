@@ -24,7 +24,7 @@ impl super::Client {
     ///   - [`metadata_options(InstanceMetadataOptions)`](crate::operation::create_launch_configuration::builders::CreateLaunchConfigurationFluentBuilder::metadata_options) / [`set_metadata_options(Option<InstanceMetadataOptions>)`](crate::operation::create_launch_configuration::builders::CreateLaunchConfigurationFluentBuilder::set_metadata_options): <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// - On success, responds with [`CreateLaunchConfigurationOutput`](crate::operation::create_launch_configuration::CreateLaunchConfigurationOutput)
     /// - On failure, responds with [`SdkError<CreateLaunchConfigurationError>`](crate::operation::create_launch_configuration::CreateLaunchConfigurationError)
-    pub fn create_launch_configuration(&self) -> crate::operation::create_launch_configuration::builders::CreateLaunchConfigurationFluentBuilder{
+    pub fn create_launch_configuration(&self) -> crate::operation::create_launch_configuration::builders::CreateLaunchConfigurationFluentBuilder {
         crate::operation::create_launch_configuration::builders::CreateLaunchConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

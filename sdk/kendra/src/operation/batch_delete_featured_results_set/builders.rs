@@ -26,7 +26,7 @@ impl BatchDeleteFeaturedResultsSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeleteFeaturedResultsSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetInputBuilder,
+    inner: crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetInputBuilder,
 }
 impl BatchDeleteFeaturedResultsSetFluentBuilder {
     /// Creates a new `BatchDeleteFeaturedResultsSet`.
@@ -37,7 +37,7 @@ impl BatchDeleteFeaturedResultsSetFluentBuilder {
         }
     }
     /// Access the BatchDeleteFeaturedResultsSet as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchDeleteFeaturedResultsSetFluentBuilder {
             crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchDeleteFeaturedResultsSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchDeleteFeaturedResultsSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchDeleteFeaturedResultsSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchDeleteFeaturedResultsSetFluentBuilder {
             crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError>,
     > {
         self.customize_middleware().await
     }
@@ -139,25 +128,17 @@ impl BatchDeleteFeaturedResultsSetFluentBuilder {
     /// To override the contents of this collection use [`set_featured_results_set_ids`](Self::set_featured_results_set_ids).
     ///
     /// <p>The identifiers of the featured results sets that you want to delete.</p>
-    pub fn featured_results_set_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn featured_results_set_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.featured_results_set_ids(input.into());
         self
     }
     /// <p>The identifiers of the featured results sets that you want to delete.</p>
-    pub fn set_featured_results_set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_featured_results_set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_featured_results_set_ids(input);
         self
     }
     /// <p>The identifiers of the featured results sets that you want to delete.</p>
-    pub fn get_featured_results_set_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_featured_results_set_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_featured_results_set_ids()
     }
 }

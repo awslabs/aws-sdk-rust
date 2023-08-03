@@ -15,9 +15,7 @@ pub struct CreateVehicleRequestItem {
     pub decoder_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engine Type"</code> : <code>"v6"</code> </p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing thing as a vehicle.</p>
     #[doc(hidden)]
     pub association_behavior: ::std::option::Option<crate::types::VehicleAssociationBehavior>,
@@ -39,17 +37,11 @@ impl CreateVehicleRequestItem {
         self.decoder_manifest_arn.as_deref()
     }
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engine Type"</code> : <code>"v6"</code> </p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing thing as a vehicle.</p>
-    pub fn association_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VehicleAssociationBehavior> {
+    pub fn association_behavior(&self) -> ::std::option::Option<&crate::types::VehicleAssociationBehavior> {
         self.association_behavior.as_ref()
     }
     /// <p>Metadata which can be used to manage the vehicle.</p>
@@ -66,18 +58,13 @@ impl CreateVehicleRequestItem {
 
 /// A builder for [`CreateVehicleRequestItem`](crate::types::CreateVehicleRequestItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVehicleRequestItemBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_manifest_arn: ::std::option::Option<::std::string::String>,
     pub(crate) decoder_manifest_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) association_behavior:
-        ::std::option::Option<crate::types::VehicleAssociationBehavior>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) association_behavior: ::std::option::Option<crate::types::VehicleAssociationBehavior>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateVehicleRequestItemBuilder {
@@ -96,18 +83,12 @@ impl CreateVehicleRequestItemBuilder {
         &self.vehicle_name
     }
     /// <p>The ARN of the vehicle model (model manifest) to create the vehicle from.</p>
-    pub fn model_manifest_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_manifest_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the vehicle model (model manifest) to create the vehicle from.</p>
-    pub fn set_model_manifest_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_manifest_arn = input;
         self
     }
@@ -116,18 +97,12 @@ impl CreateVehicleRequestItemBuilder {
         &self.model_manifest_arn
     }
     /// <p>The Amazon Resource Name (ARN) of a decoder manifest associated with the vehicle to create. </p>
-    pub fn decoder_manifest_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn decoder_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.decoder_manifest_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a decoder manifest associated with the vehicle to create. </p>
-    pub fn set_decoder_manifest_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_decoder_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.decoder_manifest_arn = input;
         self
     }
@@ -140,32 +115,19 @@ impl CreateVehicleRequestItemBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engine Type"</code> : <code>"v6"</code> </p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engine Type"</code> : <code>"v6"</code> </p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engine Type"</code> : <code>"v6"</code> </p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing thing as a vehicle.</p>
@@ -174,17 +136,12 @@ impl CreateVehicleRequestItemBuilder {
         self
     }
     /// <p>An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing thing as a vehicle.</p>
-    pub fn set_association_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::VehicleAssociationBehavior>,
-    ) -> Self {
+    pub fn set_association_behavior(mut self, input: ::std::option::Option<crate::types::VehicleAssociationBehavior>) -> Self {
         self.association_behavior = input;
         self
     }
     /// <p>An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing thing as a vehicle.</p>
-    pub fn get_association_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::VehicleAssociationBehavior> {
+    pub fn get_association_behavior(&self) -> &::std::option::Option<crate::types::VehicleAssociationBehavior> {
         &self.association_behavior
     }
     /// Appends an item to `tags`.
@@ -199,10 +156,7 @@ impl CreateVehicleRequestItemBuilder {
         self
     }
     /// <p>Metadata which can be used to manage the vehicle.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

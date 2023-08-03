@@ -34,9 +34,7 @@ pub fn ser_modify_endpoint_input(
         object.key("DatabaseName").string(var_9.as_str());
     }
     if let Some(var_10) = &input.extra_connection_attributes {
-        object
-            .key("ExtraConnectionAttributes")
-            .string(var_10.as_str());
+        object.key("ExtraConnectionAttributes").string(var_10.as_str());
     }
     if let Some(var_11) = &input.certificate_arn {
         object.key("CertificateArn").string(var_11.as_str());
@@ -48,17 +46,12 @@ pub fn ser_modify_endpoint_input(
         object.key("ServiceAccessRoleArn").string(var_13.as_str());
     }
     if let Some(var_14) = &input.external_table_definition {
-        object
-            .key("ExternalTableDefinition")
-            .string(var_14.as_str());
+        object.key("ExternalTableDefinition").string(var_14.as_str());
     }
     if let Some(var_15) = &input.dynamo_db_settings {
         #[allow(unused_mut)]
         let mut object_16 = object.key("DynamoDbSettings").start_object();
-        crate::protocol_serde::shape_dynamo_db_settings::ser_dynamo_db_settings(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_dynamo_db_settings::ser_dynamo_db_settings(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.s3_settings {
@@ -70,28 +63,19 @@ pub fn ser_modify_endpoint_input(
     if let Some(var_19) = &input.dms_transfer_settings {
         #[allow(unused_mut)]
         let mut object_20 = object.key("DmsTransferSettings").start_object();
-        crate::protocol_serde::shape_dms_transfer_settings::ser_dms_transfer_settings(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_dms_transfer_settings::ser_dms_transfer_settings(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.mongo_db_settings {
         #[allow(unused_mut)]
         let mut object_22 = object.key("MongoDbSettings").start_object();
-        crate::protocol_serde::shape_mongo_db_settings::ser_mongo_db_settings(
-            &mut object_22,
-            var_21,
-        )?;
+        crate::protocol_serde::shape_mongo_db_settings::ser_mongo_db_settings(&mut object_22, var_21)?;
         object_22.finish();
     }
     if let Some(var_23) = &input.kinesis_settings {
         #[allow(unused_mut)]
         let mut object_24 = object.key("KinesisSettings").start_object();
-        crate::protocol_serde::shape_kinesis_settings::ser_kinesis_settings(
-            &mut object_24,
-            var_23,
-        )?;
+        crate::protocol_serde::shape_kinesis_settings::ser_kinesis_settings(&mut object_24, var_23)?;
         object_24.finish();
     }
     if let Some(var_25) = &input.kafka_settings {
@@ -103,37 +87,25 @@ pub fn ser_modify_endpoint_input(
     if let Some(var_27) = &input.elasticsearch_settings {
         #[allow(unused_mut)]
         let mut object_28 = object.key("ElasticsearchSettings").start_object();
-        crate::protocol_serde::shape_elasticsearch_settings::ser_elasticsearch_settings(
-            &mut object_28,
-            var_27,
-        )?;
+        crate::protocol_serde::shape_elasticsearch_settings::ser_elasticsearch_settings(&mut object_28, var_27)?;
         object_28.finish();
     }
     if let Some(var_29) = &input.neptune_settings {
         #[allow(unused_mut)]
         let mut object_30 = object.key("NeptuneSettings").start_object();
-        crate::protocol_serde::shape_neptune_settings::ser_neptune_settings(
-            &mut object_30,
-            var_29,
-        )?;
+        crate::protocol_serde::shape_neptune_settings::ser_neptune_settings(&mut object_30, var_29)?;
         object_30.finish();
     }
     if let Some(var_31) = &input.redshift_settings {
         #[allow(unused_mut)]
         let mut object_32 = object.key("RedshiftSettings").start_object();
-        crate::protocol_serde::shape_redshift_settings::ser_redshift_settings(
-            &mut object_32,
-            var_31,
-        )?;
+        crate::protocol_serde::shape_redshift_settings::ser_redshift_settings(&mut object_32, var_31)?;
         object_32.finish();
     }
     if let Some(var_33) = &input.postgre_sql_settings {
         #[allow(unused_mut)]
         let mut object_34 = object.key("PostgreSQLSettings").start_object();
-        crate::protocol_serde::shape_postgre_sql_settings::ser_postgre_sql_settings(
-            &mut object_34,
-            var_33,
-        )?;
+        crate::protocol_serde::shape_postgre_sql_settings::ser_postgre_sql_settings(&mut object_34, var_33)?;
         object_34.finish();
     }
     if let Some(var_35) = &input.my_sql_settings {
@@ -163,10 +135,7 @@ pub fn ser_modify_endpoint_input(
     if let Some(var_43) = &input.ibm_db2_settings {
         #[allow(unused_mut)]
         let mut object_44 = object.key("IBMDb2Settings").start_object();
-        crate::protocol_serde::shape_ibm_db2_settings::ser_ibm_db2_settings(
-            &mut object_44,
-            var_43,
-        )?;
+        crate::protocol_serde::shape_ibm_db2_settings::ser_ibm_db2_settings(&mut object_44, var_43)?;
         object_44.finish();
     }
     if let Some(var_45) = &input.doc_db_settings {
@@ -187,19 +156,13 @@ pub fn ser_modify_endpoint_input(
     if let Some(var_50) = &input.gcp_my_sql_settings {
         #[allow(unused_mut)]
         let mut object_51 = object.key("GcpMySQLSettings").start_object();
-        crate::protocol_serde::shape_gcp_my_sql_settings::ser_gcp_my_sql_settings(
-            &mut object_51,
-            var_50,
-        )?;
+        crate::protocol_serde::shape_gcp_my_sql_settings::ser_gcp_my_sql_settings(&mut object_51, var_50)?;
         object_51.finish();
     }
     if let Some(var_52) = &input.timestream_settings {
         #[allow(unused_mut)]
         let mut object_53 = object.key("TimestreamSettings").start_object();
-        crate::protocol_serde::shape_timestream_settings::ser_timestream_settings(
-            &mut object_53,
-            var_52,
-        )?;
+        crate::protocol_serde::shape_timestream_settings::ser_timestream_settings(&mut object_53, var_52)?;
         object_53.finish();
     }
     Ok(())

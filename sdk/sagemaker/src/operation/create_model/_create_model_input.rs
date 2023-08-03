@@ -44,9 +44,7 @@ impl CreateModelInput {
         self.containers.as_deref()
     }
     /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
-    pub fn inference_execution_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InferenceExecutionConfig> {
+    pub fn inference_execution_config(&self) -> ::std::option::Option<&crate::types::InferenceExecutionConfig> {
         self.inference_execution_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
@@ -77,16 +75,12 @@ impl CreateModelInput {
 
 /// A builder for [`CreateModelInput`](crate::operation::create_model::CreateModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateModelInputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) primary_container: ::std::option::Option<crate::types::ContainerDefinition>,
-    pub(crate) containers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>,
-    pub(crate) inference_execution_config:
-        ::std::option::Option<crate::types::InferenceExecutionConfig>,
+    pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>,
+    pub(crate) inference_execution_config: ::std::option::Option<crate::types::InferenceExecutionConfig>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
@@ -113,17 +107,12 @@ impl CreateModelInputBuilder {
         self
     }
     /// <p>The location of the primary docker image containing inference code, associated artifacts, and custom environment map that the inference code uses when the model is deployed for predictions. </p>
-    pub fn set_primary_container(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerDefinition>,
-    ) -> Self {
+    pub fn set_primary_container(mut self, input: ::std::option::Option<crate::types::ContainerDefinition>) -> Self {
         self.primary_container = input;
         self
     }
     /// <p>The location of the primary docker image containing inference code, associated artifacts, and custom environment map that the inference code uses when the model is deployed for predictions. </p>
-    pub fn get_primary_container(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerDefinition> {
+    pub fn get_primary_container(&self) -> &::std::option::Option<crate::types::ContainerDefinition> {
         &self.primary_container
     }
     /// Appends an item to `containers`.
@@ -138,58 +127,39 @@ impl CreateModelInputBuilder {
         self
     }
     /// <p>Specifies the containers in the inference pipeline.</p>
-    pub fn set_containers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>,
-    ) -> Self {
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>) -> Self {
         self.containers = input;
         self
     }
     /// <p>Specifies the containers in the inference pipeline.</p>
-    pub fn get_containers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>> {
         &self.containers
     }
     /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
-    pub fn inference_execution_config(
-        mut self,
-        input: crate::types::InferenceExecutionConfig,
-    ) -> Self {
+    pub fn inference_execution_config(mut self, input: crate::types::InferenceExecutionConfig) -> Self {
         self.inference_execution_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
-    pub fn set_inference_execution_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExecutionConfig>,
-    ) -> Self {
+    pub fn set_inference_execution_config(mut self, input: ::std::option::Option<crate::types::InferenceExecutionConfig>) -> Self {
         self.inference_execution_config = input;
         self
     }
     /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
-    pub fn get_inference_execution_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceExecutionConfig> {
+    pub fn get_inference_execution_config(&self) -> &::std::option::Option<crate::types::InferenceExecutionConfig> {
         &self.inference_execution_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
     /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
     /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -211,10 +181,7 @@ impl CreateModelInputBuilder {
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -251,12 +218,7 @@ impl CreateModelInputBuilder {
         &self.enable_network_isolation
     }
     /// Consumes the builder and constructs a [`CreateModelInput`](crate::operation::create_model::CreateModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_model::CreateModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_model::CreateModelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_model::CreateModelInput {
             model_name: self.model_name,
             primary_container: self.primary_container,

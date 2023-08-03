@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeOrganizationsAccessOutput {
 }
 impl DescribeOrganizationsAccessOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationsAccessOutput`](crate::operation::describe_organizations_access::DescribeOrganizationsAccessOutput).
-    pub fn builder() -> crate::operation::describe_organizations_access::builders::DescribeOrganizationsAccessOutputBuilder{
+    pub fn builder() -> crate::operation::describe_organizations_access::builders::DescribeOrganizationsAccessOutputBuilder {
         crate::operation::describe_organizations_access::builders::DescribeOrganizationsAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationsAccessOutput`](crate::operation::describe_organizations_access::DescribeOrganizationsAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationsAccessOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::OrganizationStatus>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeOrganizationsAccessOutputBuilder {
         self
     }
     /// <p>Presents the status of the <code>OrganizationAccess</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OrganizationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -63,9 +58,7 @@ impl DescribeOrganizationsAccessOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationsAccessOutput`](crate::operation::describe_organizations_access::DescribeOrganizationsAccessOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_organizations_access::DescribeOrganizationsAccessOutput {
+    pub fn build(self) -> crate::operation::describe_organizations_access::DescribeOrganizationsAccessOutput {
         crate::operation::describe_organizations_access::DescribeOrganizationsAccessOutput {
             status: self.status,
             _request_id: self._request_id,

@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`conformance_pack_rule_evaluation_results(Option<Vec<ConformancePackEvaluationResult>>)`](crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsOutput::conformance_pack_rule_evaluation_results): <p>Returns a list of <code>ConformancePackEvaluationResult</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsOutput::next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<GetConformancePackComplianceDetailsError>`](crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError)
-    pub fn get_conformance_pack_compliance_details(&self) -> crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder{
-        crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder::new(self.handle.clone())
+    pub fn get_conformance_pack_compliance_details(
+        &self,
+    ) -> crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder {
+        crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

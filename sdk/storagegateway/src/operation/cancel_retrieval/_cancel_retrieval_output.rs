@@ -29,9 +29,7 @@ impl CancelRetrievalOutput {
 
 /// A builder for [`CancelRetrievalOutput`](crate::operation::cancel_retrieval::CancelRetrievalOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelRetrievalOutputBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

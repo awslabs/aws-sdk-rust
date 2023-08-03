@@ -26,7 +26,7 @@ impl UpdateDatasourcePackagesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDatasourcePackagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_datasource_packages::builders::UpdateDatasourcePackagesInputBuilder,
+    inner: crate::operation::update_datasource_packages::builders::UpdateDatasourcePackagesInputBuilder,
 }
 impl UpdateDatasourcePackagesFluentBuilder {
     /// Creates a new `UpdateDatasourcePackages`.
@@ -37,10 +37,7 @@ impl UpdateDatasourcePackagesFluentBuilder {
         }
     }
     /// Access the UpdateDatasourcePackages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_datasource_packages::builders::UpdateDatasourcePackagesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_datasource_packages::builders::UpdateDatasourcePackagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateDatasourcePackagesFluentBuilder {
             crate::operation::update_datasource_packages::UpdateDatasourcePackages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_datasource_packages::UpdateDatasourcePackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_datasource_packages::UpdateDatasourcePackagesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateDatasourcePackagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateDatasourcePackagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_datasource_packages::UpdateDatasourcePackagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_datasource_packages::UpdateDatasourcePackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_datasource_packages::UpdateDatasourcePackagesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateDatasourcePackagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_datasource_packages::UpdateDatasourcePackagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_datasource_packages::UpdateDatasourcePackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_datasource_packages::UpdateDatasourcePackagesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateDatasourcePackagesFluentBuilder {
             crate::operation::update_datasource_packages::UpdateDatasourcePackages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_datasource_packages::UpdateDatasourcePackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_datasource_packages::UpdateDatasourcePackagesError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +133,12 @@ impl UpdateDatasourcePackagesFluentBuilder {
         self
     }
     /// <p>The data source package start for the behavior graph.</p>
-    pub fn set_datasource_packages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>>,
-    ) -> Self {
+    pub fn set_datasource_packages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>>) -> Self {
         self.inner = self.inner.set_datasource_packages(input);
         self
     }
     /// <p>The data source package start for the behavior graph.</p>
-    pub fn get_datasource_packages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>> {
+    pub fn get_datasource_packages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>> {
         self.inner.get_datasource_packages()
     }
 }

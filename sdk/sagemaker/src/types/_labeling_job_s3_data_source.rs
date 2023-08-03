@@ -35,9 +35,7 @@ impl LabelingJobS3DataSource {
 
 /// A builder for [`LabelingJobS3DataSource`](crate::types::LabelingJobS3DataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LabelingJobS3DataSourceBuilder {
     pub(crate) manifest_s3_uri: ::std::option::Option<::std::string::String>,
 }
@@ -49,10 +47,7 @@ impl LabelingJobS3DataSourceBuilder {
     /// <li> <p> <code>source</code>: The source of the object is the value. Use this value when the object is a text value.</p> </li>
     /// </ul>
     /// <p>If you are a new user of Ground Truth, it is recommended you review <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use an Input Manifest File </a> in the Amazon SageMaker Developer Guide to learn how to create an input manifest file.</p>
-    pub fn manifest_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn manifest_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
@@ -63,10 +58,7 @@ impl LabelingJobS3DataSourceBuilder {
     /// <li> <p> <code>source</code>: The source of the object is the value. Use this value when the object is a text value.</p> </li>
     /// </ul>
     /// <p>If you are a new user of Ground Truth, it is recommended you review <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use an Input Manifest File </a> in the Amazon SageMaker Developer Guide to learn how to create an input manifest file.</p>
-    pub fn set_manifest_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_manifest_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.manifest_s3_uri = input;
         self
     }

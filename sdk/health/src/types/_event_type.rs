@@ -39,9 +39,7 @@ impl EventType {
 
 /// A builder for [`EventType`](crate::types::EventType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventTypeBuilder {
     pub(crate) service: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,
@@ -82,10 +80,7 @@ impl EventTypeBuilder {
         self
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::EventTypeCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::EventTypeCategory>) -> Self {
         self.category = input;
         self
     }

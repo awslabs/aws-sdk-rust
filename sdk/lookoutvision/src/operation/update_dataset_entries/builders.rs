@@ -43,9 +43,7 @@ impl UpdateDatasetEntriesFluentBuilder {
         }
     }
     /// Access the UpdateDatasetEntries as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +55,7 @@ impl UpdateDatasetEntriesFluentBuilder {
             crate::operation::update_dataset_entries::UpdateDatasetEntries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dataset_entries::UpdateDatasetEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dataset_entries::UpdateDatasetEntriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +65,7 @@ impl UpdateDatasetEntriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +74,7 @@ impl UpdateDatasetEntriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_dataset_entries::UpdateDatasetEntriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dataset_entries::UpdateDatasetEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dataset_entries::UpdateDatasetEntriesError>,
     > {
         let op = self
             .inner
@@ -106,9 +97,7 @@ impl UpdateDatasetEntriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_dataset_entries::UpdateDatasetEntriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dataset_entries::UpdateDatasetEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dataset_entries::UpdateDatasetEntriesError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +111,7 @@ impl UpdateDatasetEntriesFluentBuilder {
             crate::operation::update_dataset_entries::UpdateDatasetEntries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dataset_entries::UpdateDatasetEntriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dataset_entries::UpdateDatasetEntriesError>,
     > {
         self.customize_middleware().await
     }

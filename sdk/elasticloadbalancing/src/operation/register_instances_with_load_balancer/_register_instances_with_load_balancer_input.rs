@@ -23,34 +23,26 @@ impl RegisterInstancesWithLoadBalancerInput {
 }
 impl RegisterInstancesWithLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`RegisterInstancesWithLoadBalancerInput`](crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerInput).
-    pub fn builder() -> crate::operation::register_instances_with_load_balancer::builders::RegisterInstancesWithLoadBalancerInputBuilder{
+    pub fn builder() -> crate::operation::register_instances_with_load_balancer::builders::RegisterInstancesWithLoadBalancerInputBuilder {
         crate::operation::register_instances_with_load_balancer::builders::RegisterInstancesWithLoadBalancerInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterInstancesWithLoadBalancerInput`](crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterInstancesWithLoadBalancerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
 }
 impl RegisterInstancesWithLoadBalancerInputBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
@@ -70,10 +62,7 @@ impl RegisterInstancesWithLoadBalancerInputBuilder {
         self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>) -> Self {
         self.instances = input;
         self
     }
@@ -82,14 +71,17 @@ impl RegisterInstancesWithLoadBalancerInputBuilder {
         &self.instances
     }
     /// Consumes the builder and constructs a [`RegisterInstancesWithLoadBalancerInput`](crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerInput {
-                load_balancer_name: self.load_balancer_name
-                ,
-                instances: self.instances
-                ,
-            }
+                load_balancer_name: self.load_balancer_name,
+                instances: self.instances,
+            },
         )
     }
 }

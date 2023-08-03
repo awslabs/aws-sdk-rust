@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeBatchSegmentJobOutput {
 }
 impl DescribeBatchSegmentJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBatchSegmentJobOutput`](crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobOutputBuilder {
         crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBatchSegmentJobOutput`](crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBatchSegmentJobOutputBuilder {
     pub(crate) batch_segment_job: ::std::option::Option<crate::types::BatchSegmentJob>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeBatchSegmentJobOutputBuilder {
         self
     }
     /// <p>Information on the specified batch segment job.</p>
-    pub fn set_batch_segment_job(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchSegmentJob>,
-    ) -> Self {
+    pub fn set_batch_segment_job(mut self, input: ::std::option::Option<crate::types::BatchSegmentJob>) -> Self {
         self.batch_segment_job = input;
         self
     }
@@ -65,9 +58,7 @@ impl DescribeBatchSegmentJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeBatchSegmentJobOutput`](crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput {
+    pub fn build(self) -> crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput {
         crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput {
             batch_segment_job: self.batch_segment_job,
             _request_id: self._request_id,

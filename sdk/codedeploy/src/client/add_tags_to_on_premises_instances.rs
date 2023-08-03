@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`instance_names(Vec<String>)`](crate::operation::add_tags_to_on_premises_instances::builders::AddTagsToOnPremisesInstancesFluentBuilder::instance_names) / [`set_instance_names(Option<Vec<String>>)`](crate::operation::add_tags_to_on_premises_instances::builders::AddTagsToOnPremisesInstancesFluentBuilder::set_instance_names): <p>The names of the on-premises instances to which to add tags.</p>
     /// - On success, responds with [`AddTagsToOnPremisesInstancesOutput`](crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesOutput)
     /// - On failure, responds with [`SdkError<AddTagsToOnPremisesInstancesError>`](crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesError)
-    pub fn add_tags_to_on_premises_instances(&self) -> crate::operation::add_tags_to_on_premises_instances::builders::AddTagsToOnPremisesInstancesFluentBuilder{
+    pub fn add_tags_to_on_premises_instances(
+        &self,
+    ) -> crate::operation::add_tags_to_on_premises_instances::builders::AddTagsToOnPremisesInstancesFluentBuilder {
         crate::operation::add_tags_to_on_premises_instances::builders::AddTagsToOnPremisesInstancesFluentBuilder::new(self.handle.clone())
     }
 }

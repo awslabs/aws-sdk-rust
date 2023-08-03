@@ -35,13 +35,10 @@ impl GetDnssecOutput {
 
 /// A builder for [`GetDnssecOutput`](crate::operation::get_dnssec::GetDnssecOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDnssecOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DnssecStatus>,
-    pub(crate) key_signing_keys:
-        ::std::option::Option<::std::vec::Vec<crate::types::KeySigningKey>>,
+    pub(crate) key_signing_keys: ::std::option::Option<::std::vec::Vec<crate::types::KeySigningKey>>,
     _request_id: Option<String>,
 }
 impl GetDnssecOutputBuilder {
@@ -71,17 +68,12 @@ impl GetDnssecOutputBuilder {
         self
     }
     /// <p>The key-signing keys (KSKs) in your account.</p>
-    pub fn set_key_signing_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeySigningKey>>,
-    ) -> Self {
+    pub fn set_key_signing_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeySigningKey>>) -> Self {
         self.key_signing_keys = input;
         self
     }
     /// <p>The key-signing keys (KSKs) in your account.</p>
-    pub fn get_key_signing_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySigningKey>> {
+    pub fn get_key_signing_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySigningKey>> {
         &self.key_signing_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

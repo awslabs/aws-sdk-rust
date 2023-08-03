@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`total(Option<MetricValue>)`](crate::operation::get_usage_forecast::GetUsageForecastOutput::total): <p>How much you're forecasted to use over the forecast period.</p>
     ///   - [`forecast_results_by_time(Option<Vec<ForecastResult>>)`](crate::operation::get_usage_forecast::GetUsageForecastOutput::forecast_results_by_time): <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
     /// - On failure, responds with [`SdkError<GetUsageForecastError>`](crate::operation::get_usage_forecast::GetUsageForecastError)
-    pub fn get_usage_forecast(
-        &self,
-    ) -> crate::operation::get_usage_forecast::builders::GetUsageForecastFluentBuilder {
-        crate::operation::get_usage_forecast::builders::GetUsageForecastFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_usage_forecast(&self) -> crate::operation::get_usage_forecast::builders::GetUsageForecastFluentBuilder {
+        crate::operation::get_usage_forecast::builders::GetUsageForecastFluentBuilder::new(self.handle.clone())
     }
 }

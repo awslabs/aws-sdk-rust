@@ -51,9 +51,7 @@ impl VehicleStatus {
 
 /// A builder for [`VehicleStatus`](crate::types::VehicleStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VehicleStatusBuilder {
     pub(crate) campaign_name: ::std::option::Option<::std::string::String>,
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ pub struct VehicleStatusBuilder {
 }
 impl VehicleStatusBuilder {
     /// <p>The name of a campaign.</p>
-    pub fn campaign_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn campaign_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.campaign_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a campaign.</p>
-    pub fn set_campaign_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_campaign_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.campaign_name = input;
         self
     }

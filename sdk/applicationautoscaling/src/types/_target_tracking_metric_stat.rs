@@ -40,9 +40,7 @@ impl TargetTrackingMetricStat {
 
 /// A builder for [`TargetTrackingMetricStat`](crate::types::TargetTrackingMetricStat).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetTrackingMetricStatBuilder {
     pub(crate) metric: ::std::option::Option<crate::types::TargetTrackingMetric>,
     pub(crate) stat: ::std::option::Option<::std::string::String>,
@@ -55,10 +53,7 @@ impl TargetTrackingMetricStatBuilder {
         self
     }
     /// <p>The CloudWatch metric to return, including the metric name, namespace, and dimensions. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that is returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
-    pub fn set_metric(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetTrackingMetric>,
-    ) -> Self {
+    pub fn set_metric(mut self, input: ::std::option::Option<crate::types::TargetTrackingMetric>) -> Self {
         self.metric = input;
         self
     }

@@ -84,10 +84,7 @@ impl CreateBuildOutputBuilder {
         self
     }
     /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>. </p>
-    pub fn set_upload_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsCredentials>,
-    ) -> Self {
+    pub fn set_upload_credentials(mut self, input: ::std::option::Option<crate::types::AwsCredentials>) -> Self {
         self.upload_credentials = input;
         self
     }
@@ -101,10 +98,7 @@ impl CreateBuildOutputBuilder {
         self
     }
     /// <p>Amazon S3 location for your game build file, including bucket name and key.</p>
-    pub fn set_storage_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_storage_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.storage_location = input;
         self
     }

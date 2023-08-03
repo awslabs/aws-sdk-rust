@@ -22,43 +22,31 @@ impl ::aws_http::request_id::RequestId for ModifyReservedInstancesOutput {
 }
 impl ModifyReservedInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ModifyReservedInstancesOutput`](crate::operation::modify_reserved_instances::ModifyReservedInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_reserved_instances::builders::ModifyReservedInstancesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_reserved_instances::builders::ModifyReservedInstancesOutputBuilder {
         crate::operation::modify_reserved_instances::builders::ModifyReservedInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyReservedInstancesOutput`](crate::operation::modify_reserved_instances::ModifyReservedInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyReservedInstancesOutputBuilder {
     pub(crate) reserved_instances_modification_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ModifyReservedInstancesOutputBuilder {
     /// <p>The ID for the modification.</p>
-    pub fn reserved_instances_modification_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instances_modification_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_instances_modification_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the modification.</p>
-    pub fn set_reserved_instances_modification_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_instances_modification_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_instances_modification_id = input;
         self
     }
     /// <p>The ID for the modification.</p>
-    pub fn get_reserved_instances_modification_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reserved_instances_modification_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reserved_instances_modification_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,9 +59,7 @@ impl ModifyReservedInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyReservedInstancesOutput`](crate::operation::modify_reserved_instances::ModifyReservedInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_reserved_instances::ModifyReservedInstancesOutput {
+    pub fn build(self) -> crate::operation::modify_reserved_instances::ModifyReservedInstancesOutput {
         crate::operation::modify_reserved_instances::ModifyReservedInstancesOutput {
             reserved_instances_modification_id: self.reserved_instances_modification_id,
             _request_id: self._request_id,

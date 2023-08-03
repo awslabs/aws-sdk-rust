@@ -38,13 +38,7 @@
 /// Audio Language Selection Policy
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AudioLanguageSelectionPolicy {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for AudioLanguageSelectionPolicy {
         match s {
             "LOOSE" => AudioLanguageSelectionPolicy::Loose,
             "STRICT" => AudioLanguageSelectionPolicy::Strict,
-            other => AudioLanguageSelectionPolicy::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AudioLanguageSelectionPolicy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

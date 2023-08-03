@@ -40,9 +40,7 @@ impl CreateEventBusInput {
 
 /// A builder for [`CreateEventBusInput`](crate::operation::create_event_bus::CreateEventBusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEventBusInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) event_source_name: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ impl CreateEventBusInputBuilder {
         &self.name
     }
     /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
-    pub fn event_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
-    pub fn set_event_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_source_name = input;
         self
     }
@@ -101,10 +93,7 @@ impl CreateEventBusInputBuilder {
         self
     }
     /// <p>Tags to associate with the event bus.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -115,10 +104,7 @@ impl CreateEventBusInputBuilder {
     /// Consumes the builder and constructs a [`CreateEventBusInput`](crate::operation::create_event_bus::CreateEventBusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_event_bus::CreateEventBusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_event_bus::CreateEventBusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_event_bus::CreateEventBusInput {
             name: self.name,
             event_source_name: self.event_source_name,

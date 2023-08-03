@@ -4,14 +4,10 @@ pub fn ser_update_global_settings_input(
     input: &crate::operation::update_global_settings::UpdateGlobalSettingsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.discovery_integration_status {
-        object
-            .key("DiscoveryIntegrationStatus")
-            .string(var_1.as_str());
+        object.key("DiscoveryIntegrationStatus").string(var_1.as_str());
     }
     if let Some(var_2) = &input.organization_sharing_status {
-        object
-            .key("OrganizationSharingStatus")
-            .string(var_2.as_str());
+        object.key("OrganizationSharingStatus").string(var_2.as_str());
     }
     Ok(())
 }

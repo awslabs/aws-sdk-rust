@@ -24,9 +24,7 @@ pub struct TableMetadata {
     pub partition_keys: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     /// <p>A set of custom key/value pairs for table properties.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TableMetadata {
     /// <p>The name of the table.</p>
@@ -54,11 +52,7 @@ impl TableMetadata {
         self.partition_keys.as_deref()
     }
     /// <p>A set of custom key/value pairs for table properties.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
 }
@@ -71,9 +65,7 @@ impl TableMetadata {
 
 /// A builder for [`TableMetadata`](crate::types::TableMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableMetadataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -81,9 +73,7 @@ pub struct TableMetadataBuilder {
     pub(crate) table_type: ::std::option::Option<::std::string::String>,
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     pub(crate) partition_keys: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TableMetadataBuilder {
     /// <p>The name of the table.</p>
@@ -106,10 +96,7 @@ impl TableMetadataBuilder {
         self
     }
     /// <p>The time that the table was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -123,10 +110,7 @@ impl TableMetadataBuilder {
         self
     }
     /// <p>The last time the table was accessed.</p>
-    pub fn set_last_access_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_access_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_access_time = input;
         self
     }
@@ -160,10 +144,7 @@ impl TableMetadataBuilder {
         self
     }
     /// <p>A list of the columns in the table.</p>
-    pub fn set_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
-    ) -> Self {
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Column>>) -> Self {
         self.columns = input;
         self
     }
@@ -183,17 +164,12 @@ impl TableMetadataBuilder {
         self
     }
     /// <p>A list of the partition keys in the table.</p>
-    pub fn set_partition_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
-    ) -> Self {
+    pub fn set_partition_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Column>>) -> Self {
         self.partition_keys = input;
         self
     }
     /// <p>A list of the partition keys in the table.</p>
-    pub fn get_partition_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Column>> {
+    pub fn get_partition_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Column>> {
         &self.partition_keys
     }
     /// Adds a key-value pair to `parameters`.
@@ -201,32 +177,19 @@ impl TableMetadataBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>A set of custom key/value pairs for table properties.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A set of custom key/value pairs for table properties.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>A set of custom key/value pairs for table properties.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`TableMetadata`](crate::types::TableMetadata).

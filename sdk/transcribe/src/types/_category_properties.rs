@@ -55,9 +55,7 @@ impl CategoryProperties {
 
 /// A builder for [`CategoryProperties`](crate::types::CategoryProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CategoryPropertiesBuilder {
     pub(crate) category_name: ::std::option::Option<::std::string::String>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
@@ -67,18 +65,12 @@ pub struct CategoryPropertiesBuilder {
 }
 impl CategoryPropertiesBuilder {
     /// <p>The name of the Call Analytics category. Category names are case sensitive and must be unique within an Amazon Web Services account.</p>
-    pub fn category_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn category_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Call Analytics category. Category names are case sensitive and must be unique within an Amazon Web Services account.</p>
-    pub fn set_category_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_category_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category_name = input;
         self
     }
@@ -98,10 +90,7 @@ impl CategoryPropertiesBuilder {
         self
     }
     /// <p>The rules used to define a Call Analytics category. Each category can have between 1 and 20 rules.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.rules = input;
         self
     }
@@ -117,10 +106,7 @@ impl CategoryPropertiesBuilder {
     }
     /// <p>The date and time the specified Call Analytics category was created.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -137,10 +123,7 @@ impl CategoryPropertiesBuilder {
     }
     /// <p>The date and time the specified Call Analytics category was last updated.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-05T12:45:32.691000-07:00</code> represents 12:45 PM UTC-7 on May 5, 2022.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }

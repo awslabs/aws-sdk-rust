@@ -36,18 +36,14 @@ impl UpdateFindingsFeedbackInput {
 }
 impl UpdateFindingsFeedbackInput {
     /// Creates a new builder-style object to manufacture [`UpdateFindingsFeedbackInput`](crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput).
-    pub fn builder(
-    ) -> crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackInputBuilder {
         crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFindingsFeedbackInput`](crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFindingsFeedbackInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) finding_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -81,17 +77,12 @@ impl UpdateFindingsFeedbackInputBuilder {
         self
     }
     /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
-    pub fn set_finding_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_finding_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.finding_ids = input;
         self
     }
     /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
-    pub fn get_finding_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.finding_ids
     }
     /// <p>The feedback for the finding.</p>
@@ -125,17 +116,13 @@ impl UpdateFindingsFeedbackInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFindingsFeedbackInput`](crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput {
-                detector_id: self.detector_id,
-                finding_ids: self.finding_ids,
-                feedback: self.feedback,
-                comments: self.comments,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput {
+            detector_id: self.detector_id,
+            finding_ids: self.finding_ids,
+            feedback: self.feedback,
+            comments: self.comments,
+        })
     }
 }

@@ -29,16 +29,14 @@ impl DisassociateTrunkInterfaceInput {
 }
 impl DisassociateTrunkInterfaceInput {
     /// Creates a new builder-style object to manufacture [`DisassociateTrunkInterfaceInput`](crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceInput).
-    pub fn builder() -> crate::operation::disassociate_trunk_interface::builders::DisassociateTrunkInterfaceInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_trunk_interface::builders::DisassociateTrunkInterfaceInputBuilder {
         crate::operation::disassociate_trunk_interface::builders::DisassociateTrunkInterfaceInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateTrunkInterfaceInput`](crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateTrunkInterfaceInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DisassociateTrunkInterfaceInputBuilder {
 }
 impl DisassociateTrunkInterfaceInputBuilder {
     /// <p>The ID of the association</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the association</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl DisassociateTrunkInterfaceInputBuilder {
         crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceInput {
-                association_id: self.association_id,
-                client_token: self.client_token,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceInput {
+            association_id: self.association_id,
+            client_token: self.client_token,
+            dry_run: self.dry_run,
+        })
     }
 }

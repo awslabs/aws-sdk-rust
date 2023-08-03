@@ -30,8 +30,7 @@ impl GetBucketRequestPaymentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBucketRequestPaymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_bucket_request_payment::builders::GetBucketRequestPaymentInputBuilder,
+    inner: crate::operation::get_bucket_request_payment::builders::GetBucketRequestPaymentInputBuilder,
 }
 impl GetBucketRequestPaymentFluentBuilder {
     /// Creates a new `GetBucketRequestPayment`.
@@ -42,10 +41,7 @@ impl GetBucketRequestPaymentFluentBuilder {
         }
     }
     /// Access the GetBucketRequestPayment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_bucket_request_payment::builders::GetBucketRequestPaymentInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_bucket_request_payment::builders::GetBucketRequestPaymentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl GetBucketRequestPaymentFluentBuilder {
             crate::operation::get_bucket_request_payment::GetBucketRequestPayment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_request_payment::GetBucketRequestPaymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_request_payment::GetBucketRequestPaymentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl GetBucketRequestPaymentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl GetBucketRequestPaymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bucket_request_payment::GetBucketRequestPaymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_request_payment::GetBucketRequestPaymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_request_payment::GetBucketRequestPaymentError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl GetBucketRequestPaymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bucket_request_payment::GetBucketRequestPaymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_request_payment::GetBucketRequestPaymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_request_payment::GetBucketRequestPaymentError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +109,7 @@ impl GetBucketRequestPaymentFluentBuilder {
             crate::operation::get_bucket_request_payment::GetBucketRequestPayment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_request_payment::GetBucketRequestPaymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_request_payment::GetBucketRequestPaymentError>,
     > {
         self.customize_middleware().await
     }
@@ -143,18 +128,12 @@ impl GetBucketRequestPaymentFluentBuilder {
         self.inner.get_bucket()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_bucket_owner(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }

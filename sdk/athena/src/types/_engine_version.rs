@@ -30,27 +30,19 @@ impl EngineVersion {
 
 /// A builder for [`EngineVersion`](crate::types::EngineVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EngineVersionBuilder {
     pub(crate) selected_engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) effective_engine_version: ::std::option::Option<::std::string::String>,
 }
 impl EngineVersionBuilder {
     /// <p>The engine version requested by the user. Possible values are determined by the output of <code>ListEngineVersions</code>, including AUTO. The default is AUTO.</p>
-    pub fn selected_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selected_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selected_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The engine version requested by the user. Possible values are determined by the output of <code>ListEngineVersions</code>, including AUTO. The default is AUTO.</p>
-    pub fn set_selected_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_selected_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.selected_engine_version = input;
         self
     }
@@ -59,18 +51,12 @@ impl EngineVersionBuilder {
         &self.selected_engine_version
     }
     /// <p>Read only. The engine version on which the query runs. If the user requests a valid engine version other than Auto, the effective engine version is the same as the engine version that the user requested. If the user requests Auto, the effective engine version is chosen by Athena. When a request to update the engine version is made by a <code>CreateWorkGroup</code> or <code>UpdateWorkGroup</code> operation, the <code>EffectiveEngineVersion</code> field is ignored.</p>
-    pub fn effective_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn effective_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.effective_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Read only. The engine version on which the query runs. If the user requests a valid engine version other than Auto, the effective engine version is the same as the engine version that the user requested. If the user requests Auto, the effective engine version is chosen by Athena. When a request to update the engine version is made by a <code>CreateWorkGroup</code> or <code>UpdateWorkGroup</code> operation, the <code>EffectiveEngineVersion</code> field is ignored.</p>
-    pub fn set_effective_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_effective_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.effective_engine_version = input;
         self
     }

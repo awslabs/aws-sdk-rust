@@ -56,9 +56,7 @@ impl TooManyRequestsException {
 
 /// A builder for [`TooManyRequestsException`](crate::types::error::TooManyRequestsException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TooManyRequestsExceptionBuilder {
     pub(crate) invalid_parameter: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -66,18 +64,12 @@ pub struct TooManyRequestsExceptionBuilder {
 }
 impl TooManyRequestsExceptionBuilder {
     /// <p>The parameter that caused the error.</p>
-    pub fn invalid_parameter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invalid_parameter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invalid_parameter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter that caused the error.</p>
-    pub fn set_invalid_parameter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invalid_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invalid_parameter = input;
         self
     }
@@ -106,10 +98,7 @@ impl TooManyRequestsExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

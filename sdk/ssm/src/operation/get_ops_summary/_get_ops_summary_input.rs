@@ -57,15 +57,12 @@ impl GetOpsSummaryInput {
 
 /// A builder for [`GetOpsSummaryInput`](crate::operation::get_ops_summary::GetOpsSummaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOpsSummaryInputBuilder {
     pub(crate) sync_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>>,
     pub(crate) aggregators: ::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>>,
-    pub(crate) result_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>>,
+    pub(crate) result_attributes: ::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -96,10 +93,7 @@ impl GetOpsSummaryInputBuilder {
         self
     }
     /// <p>Optional filters used to scope down the returned OpsData. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -119,17 +113,12 @@ impl GetOpsSummaryInputBuilder {
         self
     }
     /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
-    pub fn set_aggregators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>>,
-    ) -> Self {
+    pub fn set_aggregators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>>) -> Self {
         self.aggregators = input;
         self
     }
     /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
-    pub fn get_aggregators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>> {
+    pub fn get_aggregators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>> {
         &self.aggregators
     }
     /// Appends an item to `result_attributes`.
@@ -144,17 +133,12 @@ impl GetOpsSummaryInputBuilder {
         self
     }
     /// <p>The OpsData data type to return.</p>
-    pub fn set_result_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>>,
-    ) -> Self {
+    pub fn set_result_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>>) -> Self {
         self.result_attributes = input;
         self
     }
     /// <p>The OpsData data type to return.</p>
-    pub fn get_result_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>> {
+    pub fn get_result_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>> {
         &self.result_attributes
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
@@ -188,10 +172,7 @@ impl GetOpsSummaryInputBuilder {
     /// Consumes the builder and constructs a [`GetOpsSummaryInput`](crate::operation::get_ops_summary::GetOpsSummaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ops_summary::GetOpsSummaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_ops_summary::GetOpsSummaryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ops_summary::GetOpsSummaryInput {
             sync_name: self.sync_name,
             filters: self.filters,

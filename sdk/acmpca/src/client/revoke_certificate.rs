@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`revocation_reason(RevocationReason)`](crate::operation::revoke_certificate::builders::RevokeCertificateFluentBuilder::revocation_reason) / [`set_revocation_reason(Option<RevocationReason>)`](crate::operation::revoke_certificate::builders::RevokeCertificateFluentBuilder::set_revocation_reason): <p>Specifies why you revoked the certificate.</p>
     /// - On success, responds with [`RevokeCertificateOutput`](crate::operation::revoke_certificate::RevokeCertificateOutput)
     /// - On failure, responds with [`SdkError<RevokeCertificateError>`](crate::operation::revoke_certificate::RevokeCertificateError)
-    pub fn revoke_certificate(
-        &self,
-    ) -> crate::operation::revoke_certificate::builders::RevokeCertificateFluentBuilder {
-        crate::operation::revoke_certificate::builders::RevokeCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn revoke_certificate(&self) -> crate::operation::revoke_certificate::builders::RevokeCertificateFluentBuilder {
+        crate::operation::revoke_certificate::builders::RevokeCertificateFluentBuilder::new(self.handle.clone())
     }
 }

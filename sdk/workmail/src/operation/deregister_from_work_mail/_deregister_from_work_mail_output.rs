@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterFromWorkMailOutput {
 }
 impl DeregisterFromWorkMailOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterFromWorkMailOutput`](crate::operation::deregister_from_work_mail::DeregisterFromWorkMailOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailOutputBuilder {
         crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterFromWorkMailOutput`](crate::operation::deregister_from_work_mail::DeregisterFromWorkMailOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterFromWorkMailOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeregisterFromWorkMailOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterFromWorkMailOutput`](crate::operation::deregister_from_work_mail::DeregisterFromWorkMailOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deregister_from_work_mail::DeregisterFromWorkMailOutput {
+    pub fn build(self) -> crate::operation::deregister_from_work_mail::DeregisterFromWorkMailOutput {
         crate::operation::deregister_from_work_mail::DeregisterFromWorkMailOutput {
             _request_id: self._request_id,
         }

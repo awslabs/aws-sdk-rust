@@ -22,9 +22,7 @@ impl DeleteClusterInput {
 
 /// A builder for [`DeleteClusterInput`](crate::operation::delete_cluster::DeleteClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteClusterInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteClusterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteClusterInput`](crate::operation::delete_cluster::DeleteClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_cluster::DeleteClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_cluster::DeleteClusterInput {
-            cluster_id: self.cluster_id,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_cluster::DeleteClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_cluster::DeleteClusterInput { cluster_id: self.cluster_id })
     }
 }

@@ -26,7 +26,7 @@ impl GetRepositoryCatalogDataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRepositoryCatalogDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_repository_catalog_data::builders::GetRepositoryCatalogDataInputBuilder,
+    inner: crate::operation::get_repository_catalog_data::builders::GetRepositoryCatalogDataInputBuilder,
 }
 impl GetRepositoryCatalogDataFluentBuilder {
     /// Creates a new `GetRepositoryCatalogData`.
@@ -37,7 +37,7 @@ impl GetRepositoryCatalogDataFluentBuilder {
         }
     }
     /// Access the GetRepositoryCatalogData as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_repository_catalog_data::builders::GetRepositoryCatalogDataInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_repository_catalog_data::builders::GetRepositoryCatalogDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetRepositoryCatalogDataFluentBuilder {
             crate::operation::get_repository_catalog_data::GetRepositoryCatalogData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_repository_catalog_data::GetRepositoryCatalogDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_repository_catalog_data::GetRepositoryCatalogDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetRepositoryCatalogDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetRepositoryCatalogDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_repository_catalog_data::GetRepositoryCatalogDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_repository_catalog_data::GetRepositoryCatalogDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_repository_catalog_data::GetRepositoryCatalogDataError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetRepositoryCatalogDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_repository_catalog_data::GetRepositoryCatalogDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_repository_catalog_data::GetRepositoryCatalogDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_repository_catalog_data::GetRepositoryCatalogDataError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetRepositoryCatalogDataFluentBuilder {
             crate::operation::get_repository_catalog_data::GetRepositoryCatalogData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_repository_catalog_data::GetRepositoryCatalogDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_repository_catalog_data::GetRepositoryCatalogDataError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl GetRepositoryCatalogDataFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The name of the repository to retrieve the catalog metadata for.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository to retrieve the catalog metadata for.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }

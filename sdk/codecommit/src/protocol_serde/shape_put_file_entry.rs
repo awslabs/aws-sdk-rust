@@ -10,17 +10,12 @@ pub fn ser_put_file_entry(
         object.key("fileMode").string(var_2.as_str());
     }
     if let Some(var_3) = &input.file_content {
-        object
-            .key("fileContent")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_3));
+        object.key("fileContent").string_unchecked(&::aws_smithy_types::base64::encode(var_3));
     }
     if let Some(var_4) = &input.source_file {
         #[allow(unused_mut)]
         let mut object_5 = object.key("sourceFile").start_object();
-        crate::protocol_serde::shape_source_file_specifier::ser_source_file_specifier(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_source_file_specifier::ser_source_file_specifier(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

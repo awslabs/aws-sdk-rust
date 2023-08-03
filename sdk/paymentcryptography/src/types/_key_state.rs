@@ -40,13 +40,7 @@
 /// Defines the state of a key
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum KeyState {
     #[allow(missing_docs)] // documentation missing in model
@@ -91,12 +85,7 @@ impl KeyState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_COMPLETE",
-            "CREATE_IN_PROGRESS",
-            "DELETE_COMPLETE",
-            "DELETE_PENDING",
-        ]
+        &["CREATE_COMPLETE", "CREATE_IN_PROGRESS", "DELETE_COMPLETE", "DELETE_PENDING"]
     }
 }
 impl ::std::convert::AsRef<str> for KeyState {

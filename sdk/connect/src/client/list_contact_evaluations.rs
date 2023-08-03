@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`evaluation_summary_list(Option<Vec<EvaluationSummary>>)`](crate::operation::list_contact_evaluations::ListContactEvaluationsOutput::evaluation_summary_list): <p>Provides details about a list of contact evaluations belonging to an instance.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_contact_evaluations::ListContactEvaluationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p> <important>   <p>This is always returned as null in the response.</p>  </important>
     /// - On failure, responds with [`SdkError<ListContactEvaluationsError>`](crate::operation::list_contact_evaluations::ListContactEvaluationsError)
-    pub fn list_contact_evaluations(
-        &self,
-    ) -> crate::operation::list_contact_evaluations::builders::ListContactEvaluationsFluentBuilder
-    {
+    pub fn list_contact_evaluations(&self) -> crate::operation::list_contact_evaluations::builders::ListContactEvaluationsFluentBuilder {
         crate::operation::list_contact_evaluations::builders::ListContactEvaluationsFluentBuilder::new(self.handle.clone())
     }
 }

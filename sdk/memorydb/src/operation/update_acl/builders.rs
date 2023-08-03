@@ -10,10 +10,7 @@ impl UpdateAclInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_acl::UpdateAclOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_acl::UpdateACLError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_acl::UpdateACLError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_acl();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateACLFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_acl::UpdateACL,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_acl::UpdateACL, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_acl::UpdateACLError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateACLFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateACLFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_acl::UpdateACL,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_acl::UpdateACL, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_acl::UpdateACLError>,
     > {
         self.customize_middleware().await
@@ -131,25 +119,17 @@ impl UpdateACLFluentBuilder {
     /// To override the contents of this collection use [`set_user_names_to_add`](Self::set_user_names_to_add).
     ///
     /// <p>The list of users to add to the Access Control List</p>
-    pub fn user_names_to_add(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_names_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_names_to_add(input.into());
         self
     }
     /// <p>The list of users to add to the Access Control List</p>
-    pub fn set_user_names_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_names_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_user_names_to_add(input);
         self
     }
     /// <p>The list of users to add to the Access Control List</p>
-    pub fn get_user_names_to_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_names_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_user_names_to_add()
     }
     /// Appends an item to `UserNamesToRemove`.
@@ -157,25 +137,17 @@ impl UpdateACLFluentBuilder {
     /// To override the contents of this collection use [`set_user_names_to_remove`](Self::set_user_names_to_remove).
     ///
     /// <p>The list of users to remove from the Access Control List</p>
-    pub fn user_names_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_names_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_names_to_remove(input.into());
         self
     }
     /// <p>The list of users to remove from the Access Control List</p>
-    pub fn set_user_names_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_names_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_user_names_to_remove(input);
         self
     }
     /// <p>The list of users to remove from the Access Control List</p>
-    pub fn get_user_names_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_names_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_user_names_to_remove()
     }
 }

@@ -27,17 +27,13 @@ impl ::std::fmt::Display for ApprovalRuleContentRequiredException {
     }
 }
 impl ::std::error::Error for ApprovalRuleContentRequiredException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::ApprovalRuleContentRequiredException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::ApprovalRuleContentRequiredException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ApprovalRuleContentRequiredException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ApprovalRuleContentRequiredException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -51,9 +47,7 @@ impl ApprovalRuleContentRequiredException {
 
 /// A builder for [`ApprovalRuleContentRequiredException`](crate::types::error::ApprovalRuleContentRequiredException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApprovalRuleContentRequiredExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -80,10 +74,7 @@ impl ApprovalRuleContentRequiredExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

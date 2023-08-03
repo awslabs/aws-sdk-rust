@@ -15,20 +15,16 @@ pub struct DataLakeSettings {
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
     #[doc(hidden)]
-    pub create_database_default_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
+    pub create_database_default_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
     /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
     #[doc(hidden)]
-    pub create_table_default_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
+    pub create_table_default_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
     /// <p>A key-value map that provides an additional configuration on your data lake. CrossAccountVersion is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
     /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
     #[doc(hidden)]
@@ -44,12 +40,10 @@ pub struct DataLakeSettings {
     pub allow_full_table_external_data_access: ::std::option::Option<bool>,
     /// <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.&gt;</p>
     #[doc(hidden)]
-    pub external_data_filtering_allow_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
+    pub external_data_filtering_allow_list: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
     /// <p>Lake Formation relies on a privileged process secured by Amazon EMR or the third party integrator to tag the user's role while assuming it. Lake Formation will publish the acceptable key-value pair, for example key = "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator must properly tag the temporary security credentials that will be used to call Lake Formation's administrative APIs.</p>
     #[doc(hidden)]
-    pub authorized_session_tag_value_list:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub authorized_session_tag_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DataLakeSettings {
     /// <p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
@@ -64,26 +58,18 @@ impl DataLakeSettings {
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
-    pub fn create_database_default_permissions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PrincipalPermissions]> {
+    pub fn create_database_default_permissions(&self) -> ::std::option::Option<&[crate::types::PrincipalPermissions]> {
         self.create_database_default_permissions.as_deref()
     }
     /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
-    pub fn create_table_default_permissions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PrincipalPermissions]> {
+    pub fn create_table_default_permissions(&self) -> ::std::option::Option<&[crate::types::PrincipalPermissions]> {
         self.create_table_default_permissions.as_deref()
     }
     /// <p>A key-value map that provides an additional configuration on your data lake. CrossAccountVersion is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
@@ -103,15 +89,11 @@ impl DataLakeSettings {
         self.allow_full_table_external_data_access
     }
     /// <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.&gt;</p>
-    pub fn external_data_filtering_allow_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataLakePrincipal]> {
+    pub fn external_data_filtering_allow_list(&self) -> ::std::option::Option<&[crate::types::DataLakePrincipal]> {
         self.external_data_filtering_allow_list.as_deref()
     }
     /// <p>Lake Formation relies on a privileged process secured by Amazon EMR or the third party integrator to tag the user's role while assuming it. Lake Formation will publish the acceptable key-value pair, for example key = "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator must properly tag the temporary security credentials that will be used to call Lake Formation's administrative APIs.</p>
-    pub fn authorized_session_tag_value_list(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn authorized_session_tag_value_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.authorized_session_tag_value_list.as_deref()
     }
 }
@@ -124,29 +106,18 @@ impl DataLakeSettings {
 
 /// A builder for [`DataLakeSettings`](crate::types::DataLakeSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataLakeSettingsBuilder {
-    pub(crate) data_lake_admins:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
-    pub(crate) read_only_admins:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
-    pub(crate) create_database_default_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
-    pub(crate) create_table_default_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) trusted_resource_owners:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) data_lake_admins: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
+    pub(crate) read_only_admins: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
+    pub(crate) create_database_default_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
+    pub(crate) create_table_default_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) trusted_resource_owners: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allow_external_data_filtering: ::std::option::Option<bool>,
     pub(crate) allow_full_table_external_data_access: ::std::option::Option<bool>,
-    pub(crate) external_data_filtering_allow_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
-    pub(crate) authorized_session_tag_value_list:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) external_data_filtering_allow_list: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
+    pub(crate) authorized_session_tag_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DataLakeSettingsBuilder {
     /// Appends an item to `data_lake_admins`.
@@ -161,17 +132,12 @@ impl DataLakeSettingsBuilder {
         self
     }
     /// <p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
-    pub fn set_data_lake_admins(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
-    ) -> Self {
+    pub fn set_data_lake_admins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>) -> Self {
         self.data_lake_admins = input;
         self
     }
     /// <p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
-    pub fn get_data_lake_admins(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>> {
+    pub fn get_data_lake_admins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>> {
         &self.data_lake_admins
     }
     /// Appends an item to `read_only_admins`.
@@ -186,17 +152,12 @@ impl DataLakeSettingsBuilder {
         self
     }
     /// <p>A list of Lake Formation principals with only view access to the resources, without the ability to make changes. Supported principals are IAM users or IAM roles.</p>
-    pub fn set_read_only_admins(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
-    ) -> Self {
+    pub fn set_read_only_admins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>) -> Self {
         self.read_only_admins = input;
         self
     }
     /// <p>A list of Lake Formation principals with only view access to the resources, without the ability to make changes. Supported principals are IAM users or IAM roles.</p>
-    pub fn get_read_only_admins(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>> {
+    pub fn get_read_only_admins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>> {
         &self.read_only_admins
     }
     /// Appends an item to `create_database_default_permissions`.
@@ -207,10 +168,7 @@ impl DataLakeSettingsBuilder {
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
-    pub fn create_database_default_permissions(
-        mut self,
-        input: crate::types::PrincipalPermissions,
-    ) -> Self {
+    pub fn create_database_default_permissions(mut self, input: crate::types::PrincipalPermissions) -> Self {
         let mut v = self.create_database_default_permissions.unwrap_or_default();
         v.push(input);
         self.create_database_default_permissions = ::std::option::Option::Some(v);
@@ -231,9 +189,7 @@ impl DataLakeSettingsBuilder {
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
-    pub fn get_create_database_default_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>> {
+    pub fn get_create_database_default_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>> {
         &self.create_database_default_permissions
     }
     /// Appends an item to `create_table_default_permissions`.
@@ -244,10 +200,7 @@ impl DataLakeSettingsBuilder {
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
-    pub fn create_table_default_permissions(
-        mut self,
-        input: crate::types::PrincipalPermissions,
-    ) -> Self {
+    pub fn create_table_default_permissions(mut self, input: crate::types::PrincipalPermissions) -> Self {
         let mut v = self.create_table_default_permissions.unwrap_or_default();
         v.push(input);
         self.create_table_default_permissions = ::std::option::Option::Some(v);
@@ -257,10 +210,7 @@ impl DataLakeSettingsBuilder {
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
-    pub fn set_create_table_default_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
-    ) -> Self {
+    pub fn set_create_table_default_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>) -> Self {
         self.create_table_default_permissions = input;
         self
     }
@@ -268,9 +218,7 @@ impl DataLakeSettingsBuilder {
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
-    pub fn get_create_table_default_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>> {
+    pub fn get_create_table_default_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>> {
         &self.create_table_default_permissions
     }
     /// Adds a key-value pair to `parameters`.
@@ -278,32 +226,19 @@ impl DataLakeSettingsBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>A key-value map that provides an additional configuration on your data lake. CrossAccountVersion is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A key-value map that provides an additional configuration on your data lake. CrossAccountVersion is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>A key-value map that provides an additional configuration on your data lake. CrossAccountVersion is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Appends an item to `trusted_resource_owners`.
@@ -312,10 +247,7 @@ impl DataLakeSettingsBuilder {
     ///
     /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
     /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
-    pub fn trusted_resource_owners(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trusted_resource_owners(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.trusted_resource_owners.unwrap_or_default();
         v.push(input.into());
         self.trusted_resource_owners = ::std::option::Option::Some(v);
@@ -323,18 +255,13 @@ impl DataLakeSettingsBuilder {
     }
     /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
     /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
-    pub fn set_trusted_resource_owners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_trusted_resource_owners(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.trusted_resource_owners = input;
         self
     }
     /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
     /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
-    pub fn get_trusted_resource_owners(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_trusted_resource_owners(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.trusted_resource_owners
     }
     /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
@@ -366,10 +293,7 @@ impl DataLakeSettingsBuilder {
         self
     }
     /// <p>Whether to allow a third-party query engine to get data access credentials without session tags when a caller has full data access permissions.</p>
-    pub fn set_allow_full_table_external_data_access(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_allow_full_table_external_data_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_full_table_external_data_access = input;
         self
     }
@@ -382,27 +306,19 @@ impl DataLakeSettingsBuilder {
     /// To override the contents of this collection use [`set_external_data_filtering_allow_list`](Self::set_external_data_filtering_allow_list).
     ///
     /// <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.&gt;</p>
-    pub fn external_data_filtering_allow_list(
-        mut self,
-        input: crate::types::DataLakePrincipal,
-    ) -> Self {
+    pub fn external_data_filtering_allow_list(mut self, input: crate::types::DataLakePrincipal) -> Self {
         let mut v = self.external_data_filtering_allow_list.unwrap_or_default();
         v.push(input);
         self.external_data_filtering_allow_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.&gt;</p>
-    pub fn set_external_data_filtering_allow_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
-    ) -> Self {
+    pub fn set_external_data_filtering_allow_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>) -> Self {
         self.external_data_filtering_allow_list = input;
         self
     }
     /// <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.&gt;</p>
-    pub fn get_external_data_filtering_allow_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>> {
+    pub fn get_external_data_filtering_allow_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>> {
         &self.external_data_filtering_allow_list
     }
     /// Appends an item to `authorized_session_tag_value_list`.
@@ -410,27 +326,19 @@ impl DataLakeSettingsBuilder {
     /// To override the contents of this collection use [`set_authorized_session_tag_value_list`](Self::set_authorized_session_tag_value_list).
     ///
     /// <p>Lake Formation relies on a privileged process secured by Amazon EMR or the third party integrator to tag the user's role while assuming it. Lake Formation will publish the acceptable key-value pair, for example key = "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator must properly tag the temporary security credentials that will be used to call Lake Formation's administrative APIs.</p>
-    pub fn authorized_session_tag_value_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorized_session_tag_value_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.authorized_session_tag_value_list.unwrap_or_default();
         v.push(input.into());
         self.authorized_session_tag_value_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Lake Formation relies on a privileged process secured by Amazon EMR or the third party integrator to tag the user's role while assuming it. Lake Formation will publish the acceptable key-value pair, for example key = "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator must properly tag the temporary security credentials that will be used to call Lake Formation's administrative APIs.</p>
-    pub fn set_authorized_session_tag_value_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_authorized_session_tag_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.authorized_session_tag_value_list = input;
         self
     }
     /// <p>Lake Formation relies on a privileged process secured by Amazon EMR or the third party integrator to tag the user's role while assuming it. Lake Formation will publish the acceptable key-value pair, for example key = "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator must properly tag the temporary security credentials that will be used to call Lake Formation's administrative APIs.</p>
-    pub fn get_authorized_session_tag_value_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_authorized_session_tag_value_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.authorized_session_tag_value_list
     }
     /// Consumes the builder and constructs a [`DataLakeSettings`](crate::types::DataLakeSettings).

@@ -5,16 +5,16 @@ pub use crate::operation::describe_event_details_for_organization::_describe_eve
 
 impl DescribeEventDetailsForOrganizationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_event_details_for_organization();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -36,7 +36,7 @@ impl DescribeEventDetailsForOrganizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEventDetailsForOrganizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_event_details_for_organization::builders::DescribeEventDetailsForOrganizationInputBuilder,
+    inner: crate::operation::describe_event_details_for_organization::builders::DescribeEventDetailsForOrganizationInputBuilder,
 }
 impl DescribeEventDetailsForOrganizationFluentBuilder {
     /// Creates a new `DescribeEventDetailsForOrganization`.
@@ -47,15 +47,20 @@ impl DescribeEventDetailsForOrganizationFluentBuilder {
         }
     }
     /// Access the DescribeEventDetailsForOrganization as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_event_details_for_organization::builders::DescribeEventDetailsForOrganizationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_event_details_for_organization::builders::DescribeEventDetailsForOrganizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganization, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganization,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -64,16 +69,17 @@ impl DescribeEventDetailsForOrganizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -91,17 +97,26 @@ impl DescribeEventDetailsForOrganizationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganization, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganization,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationError>,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `organizationEventDetailFilters`.
@@ -109,25 +124,17 @@ impl DescribeEventDetailsForOrganizationFluentBuilder {
     /// To override the contents of this collection use [`set_organization_event_detail_filters`](Self::set_organization_event_detail_filters).
     ///
     /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
-    pub fn organization_event_detail_filters(
-        mut self,
-        input: crate::types::EventAccountFilter,
-    ) -> Self {
+    pub fn organization_event_detail_filters(mut self, input: crate::types::EventAccountFilter) -> Self {
         self.inner = self.inner.organization_event_detail_filters(input);
         self
     }
     /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
-    pub fn set_organization_event_detail_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>>,
-    ) -> Self {
+    pub fn set_organization_event_detail_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>>) -> Self {
         self.inner = self.inner.set_organization_event_detail_filters(input);
         self
     }
     /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
-    pub fn get_organization_event_detail_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>> {
+    pub fn get_organization_event_detail_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>> {
         self.inner.get_organization_event_detail_filters()
     }
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>

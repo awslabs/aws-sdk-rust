@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdatePermissionSetOutput {
 }
 impl UpdatePermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePermissionSetOutput`](crate::operation::update_permission_set::UpdatePermissionSetOutput).
-    pub fn builder(
-    ) -> crate::operation::update_permission_set::builders::UpdatePermissionSetOutputBuilder {
-        crate::operation::update_permission_set::builders::UpdatePermissionSetOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_permission_set::builders::UpdatePermissionSetOutputBuilder {
+        crate::operation::update_permission_set::builders::UpdatePermissionSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePermissionSetOutput`](crate::operation::update_permission_set::UpdatePermissionSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePermissionSetOutputBuilder {
     _request_id: Option<String>,
 }

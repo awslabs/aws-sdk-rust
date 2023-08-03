@@ -5,16 +5,16 @@ pub use crate::operation::list_recovery_points_by_backup_vault::_list_recovery_p
 
 impl ListRecoveryPointsByBackupVaultInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_recovery_points_by_backup_vault();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRecoveryPointsByBackupVaultFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultInputBuilder,
+    inner: crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultInputBuilder,
 }
 impl ListRecoveryPointsByBackupVaultFluentBuilder {
     /// Creates a new `ListRecoveryPointsByBackupVault`.
@@ -37,15 +37,20 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
         }
     }
     /// Access the ListRecoveryPointsByBackupVault as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVault, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVault,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,42 +87,45 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVault, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVault,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_recovery_points_by_backup_vault::paginator::ListRecoveryPointsByBackupVaultPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_recovery_points_by_backup_vault::paginator::ListRecoveryPointsByBackupVaultPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_recovery_points_by_backup_vault::paginator::ListRecoveryPointsByBackupVaultPaginator {
         crate::operation::list_recovery_points_by_backup_vault::paginator::ListRecoveryPointsByBackupVaultPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note>
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
     /// </note>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_name(input.into());
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note>
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
     /// </note>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_vault_name(input);
         self
     }
@@ -155,18 +164,12 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>Returns only recovery points that match the specified resource Amazon Resource Name (ARN).</p>
-    pub fn by_resource_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_resource_arn(input.into());
         self
     }
     /// <p>Returns only recovery points that match the specified resource Amazon Resource Name (ARN).</p>
-    pub fn set_by_resource_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_resource_arn(input);
         self
     }
@@ -175,18 +178,12 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
         self.inner.get_by_resource_arn()
     }
     /// <p>Returns only recovery points that match the specified resource type.</p>
-    pub fn by_resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_resource_type(input.into());
         self
     }
     /// <p>Returns only recovery points that match the specified resource type.</p>
-    pub fn set_by_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_resource_type(input);
         self
     }
@@ -195,18 +192,12 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
         self.inner.get_by_resource_type()
     }
     /// <p>Returns only recovery points that match the specified backup plan ID.</p>
-    pub fn by_backup_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_backup_plan_id(input.into());
         self
     }
     /// <p>Returns only recovery points that match the specified backup plan ID.</p>
-    pub fn set_by_backup_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_backup_plan_id(input);
         self
     }
@@ -220,10 +211,7 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
         self
     }
     /// <p>Returns only recovery points that were created before the specified timestamp.</p>
-    pub fn set_by_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_by_created_before(input);
         self
     }
@@ -237,10 +225,7 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
         self
     }
     /// <p>Returns only recovery points that were created after the specified timestamp.</p>
-    pub fn set_by_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_by_created_after(input);
         self
     }
@@ -249,25 +234,17 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
         self.inner.get_by_created_after()
     }
     /// <p>This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name (ARN).</p>
-    pub fn by_parent_recovery_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_parent_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_parent_recovery_point_arn(input.into());
         self
     }
     /// <p>This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name (ARN).</p>
-    pub fn set_by_parent_recovery_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_parent_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_parent_recovery_point_arn(input);
         self
     }
     /// <p>This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name (ARN).</p>
-    pub fn get_by_parent_recovery_point_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_by_parent_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_by_parent_recovery_point_arn()
     }
 }

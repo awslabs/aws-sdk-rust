@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeProtectionOutput {
 }
 impl DescribeProtectionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProtectionOutput`](crate::operation::describe_protection::DescribeProtectionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_protection::builders::DescribeProtectionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_protection::builders::DescribeProtectionOutputBuilder {
         crate::operation::describe_protection::builders::DescribeProtectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProtectionOutput`](crate::operation::describe_protection::DescribeProtectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProtectionOutputBuilder {
     pub(crate) protection: ::std::option::Option<crate::types::Protection>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeProtectionOutputBuilder {
         self
     }
     /// <p>The <code>Protection</code> that you requested. </p>
-    pub fn set_protection(
-        mut self,
-        input: ::std::option::Option<crate::types::Protection>,
-    ) -> Self {
+    pub fn set_protection(mut self, input: ::std::option::Option<crate::types::Protection>) -> Self {
         self.protection = input;
         self
     }

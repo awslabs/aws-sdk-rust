@@ -30,9 +30,7 @@ impl ListTransactionsSort {
 
 /// A builder for [`ListTransactionsSort`](crate::types::ListTransactionsSort).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTransactionsSortBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::ListTransactionsSortBy>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
@@ -44,10 +42,7 @@ impl ListTransactionsSortBuilder {
         self
     }
     /// <p>Defaults to the value <code>TRANSACTION_TIMESTAMP</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListTransactionsSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListTransactionsSortBy>) -> Self {
         self.sort_by = input;
         self
     }

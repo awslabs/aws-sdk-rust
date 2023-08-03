@@ -7,8 +7,7 @@ pub struct CostCategoryInheritedValueDimension {
     /// <p>The name of the dimension that's used to group costs.</p>
     /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
     #[doc(hidden)]
-    pub dimension_name:
-        ::std::option::Option<crate::types::CostCategoryInheritedValueDimensionName>,
+    pub dimension_name: ::std::option::Option<crate::types::CostCategoryInheritedValueDimensionName>,
     /// <p>The key to extract cost category values.</p>
     #[doc(hidden)]
     pub dimension_key: ::std::option::Option<::std::string::String>,
@@ -16,9 +15,7 @@ pub struct CostCategoryInheritedValueDimension {
 impl CostCategoryInheritedValueDimension {
     /// <p>The name of the dimension that's used to group costs.</p>
     /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
-    pub fn dimension_name(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CostCategoryInheritedValueDimensionName> {
+    pub fn dimension_name(&self) -> ::std::option::Option<&crate::types::CostCategoryInheritedValueDimensionName> {
         self.dimension_name.as_ref()
     }
     /// <p>The key to extract cost category values.</p>
@@ -35,53 +32,36 @@ impl CostCategoryInheritedValueDimension {
 
 /// A builder for [`CostCategoryInheritedValueDimension`](crate::types::CostCategoryInheritedValueDimension).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CostCategoryInheritedValueDimensionBuilder {
-    pub(crate) dimension_name:
-        ::std::option::Option<crate::types::CostCategoryInheritedValueDimensionName>,
+    pub(crate) dimension_name: ::std::option::Option<crate::types::CostCategoryInheritedValueDimensionName>,
     pub(crate) dimension_key: ::std::option::Option<::std::string::String>,
 }
 impl CostCategoryInheritedValueDimensionBuilder {
     /// <p>The name of the dimension that's used to group costs.</p>
     /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
-    pub fn dimension_name(
-        mut self,
-        input: crate::types::CostCategoryInheritedValueDimensionName,
-    ) -> Self {
+    pub fn dimension_name(mut self, input: crate::types::CostCategoryInheritedValueDimensionName) -> Self {
         self.dimension_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the dimension that's used to group costs.</p>
     /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
-    pub fn set_dimension_name(
-        mut self,
-        input: ::std::option::Option<crate::types::CostCategoryInheritedValueDimensionName>,
-    ) -> Self {
+    pub fn set_dimension_name(mut self, input: ::std::option::Option<crate::types::CostCategoryInheritedValueDimensionName>) -> Self {
         self.dimension_name = input;
         self
     }
     /// <p>The name of the dimension that's used to group costs.</p>
     /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
-    pub fn get_dimension_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::CostCategoryInheritedValueDimensionName> {
+    pub fn get_dimension_name(&self) -> &::std::option::Option<crate::types::CostCategoryInheritedValueDimensionName> {
         &self.dimension_name
     }
     /// <p>The key to extract cost category values.</p>
-    pub fn dimension_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key to extract cost category values.</p>
-    pub fn set_dimension_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dimension_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dimension_key = input;
         self
     }

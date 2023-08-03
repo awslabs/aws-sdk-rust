@@ -8,8 +8,7 @@ pub struct ListStreamingSessionBackupsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the streaming session backups.</p>
     #[doc(hidden)]
-    pub streaming_session_backups:
-        ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionBackup>>,
+    pub streaming_session_backups: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionBackup>>,
     _request_id: Option<String>,
 }
 impl ListStreamingSessionBackupsOutput {
@@ -18,9 +17,7 @@ impl ListStreamingSessionBackupsOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the streaming session backups.</p>
-    pub fn streaming_session_backups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StreamingSessionBackup]> {
+    pub fn streaming_session_backups(&self) -> ::std::option::Option<&[crate::types::StreamingSessionBackup]> {
         self.streaming_session_backups.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListStreamingSessionBackupsOutput {
 }
 impl ListStreamingSessionBackupsOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamingSessionBackupsOutput`](crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput).
-    pub fn builder() -> crate::operation::list_streaming_session_backups::builders::ListStreamingSessionBackupsOutputBuilder{
+    pub fn builder() -> crate::operation::list_streaming_session_backups::builders::ListStreamingSessionBackupsOutputBuilder {
         crate::operation::list_streaming_session_backups::builders::ListStreamingSessionBackupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStreamingSessionBackupsOutput`](crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamingSessionBackupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) streaming_session_backups:
-        ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionBackup>>,
+    pub(crate) streaming_session_backups: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionBackup>>,
     _request_id: Option<String>,
 }
 impl ListStreamingSessionBackupsOutputBuilder {
@@ -67,27 +61,19 @@ impl ListStreamingSessionBackupsOutputBuilder {
     /// To override the contents of this collection use [`set_streaming_session_backups`](Self::set_streaming_session_backups).
     ///
     /// <p>Information about the streaming session backups.</p>
-    pub fn streaming_session_backups(
-        mut self,
-        input: crate::types::StreamingSessionBackup,
-    ) -> Self {
+    pub fn streaming_session_backups(mut self, input: crate::types::StreamingSessionBackup) -> Self {
         let mut v = self.streaming_session_backups.unwrap_or_default();
         v.push(input);
         self.streaming_session_backups = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the streaming session backups.</p>
-    pub fn set_streaming_session_backups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionBackup>>,
-    ) -> Self {
+    pub fn set_streaming_session_backups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionBackup>>) -> Self {
         self.streaming_session_backups = input;
         self
     }
     /// <p>Information about the streaming session backups.</p>
-    pub fn get_streaming_session_backups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionBackup>> {
+    pub fn get_streaming_session_backups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionBackup>> {
         &self.streaming_session_backups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -100,9 +86,7 @@ impl ListStreamingSessionBackupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListStreamingSessionBackupsOutput`](crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput {
+    pub fn build(self) -> crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput {
         crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput {
             next_token: self.next_token,
             streaming_session_backups: self.streaming_session_backups,

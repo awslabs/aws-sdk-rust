@@ -26,7 +26,7 @@ impl DescribeBotRecommendationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBotRecommendationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_bot_recommendation::builders::DescribeBotRecommendationInputBuilder,
+    inner: crate::operation::describe_bot_recommendation::builders::DescribeBotRecommendationInputBuilder,
 }
 impl DescribeBotRecommendationFluentBuilder {
     /// Creates a new `DescribeBotRecommendation`.
@@ -37,7 +37,7 @@ impl DescribeBotRecommendationFluentBuilder {
         }
     }
     /// Access the DescribeBotRecommendation as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_bot_recommendation::builders::DescribeBotRecommendationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_bot_recommendation::builders::DescribeBotRecommendationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeBotRecommendationFluentBuilder {
             crate::operation::describe_bot_recommendation::DescribeBotRecommendation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_bot_recommendation::DescribeBotRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_bot_recommendation::DescribeBotRecommendationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeBotRecommendationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeBotRecommendationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_bot_recommendation::DescribeBotRecommendationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_bot_recommendation::DescribeBotRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_bot_recommendation::DescribeBotRecommendationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeBotRecommendationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_bot_recommendation::DescribeBotRecommendationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_bot_recommendation::DescribeBotRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_bot_recommendation::DescribeBotRecommendationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeBotRecommendationFluentBuilder {
             crate::operation::describe_bot_recommendation::DescribeBotRecommendation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_bot_recommendation::DescribeBotRecommendationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_bot_recommendation::DescribeBotRecommendationError>,
     > {
         self.customize_middleware().await
     }
@@ -163,18 +152,12 @@ impl DescribeBotRecommendationFluentBuilder {
         self.inner.get_locale_id()
     }
     /// <p>The identifier of the bot recommendation to describe.</p>
-    pub fn bot_recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_recommendation_id(input.into());
         self
     }
     /// <p>The identifier of the bot recommendation to describe.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_recommendation_id(input);
         self
     }

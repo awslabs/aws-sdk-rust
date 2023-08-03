@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for RevokeClientVpnIngressOutput {
 }
 impl RevokeClientVpnIngressOutput {
     /// Creates a new builder-style object to manufacture [`RevokeClientVpnIngressOutput`](crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressOutput).
-    pub fn builder(
-    ) -> crate::operation::revoke_client_vpn_ingress::builders::RevokeClientVpnIngressOutputBuilder
-    {
+    pub fn builder() -> crate::operation::revoke_client_vpn_ingress::builders::RevokeClientVpnIngressOutputBuilder {
         crate::operation::revoke_client_vpn_ingress::builders::RevokeClientVpnIngressOutputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeClientVpnIngressOutput`](crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeClientVpnIngressOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl RevokeClientVpnIngressOutputBuilder {
         self
     }
     /// <p>The current state of the authorization rule.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The current state of the authorization rule.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl RevokeClientVpnIngressOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RevokeClientVpnIngressOutput`](crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressOutput {
+    pub fn build(self) -> crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressOutput {
         crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressOutput {
             status: self.status,
             _request_id: self._request_id,

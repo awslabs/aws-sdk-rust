@@ -37,10 +37,7 @@ impl StartPipelineExecutionFluentBuilder {
         }
     }
     /// Access the StartPipelineExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_pipeline_execution::builders::StartPipelineExecutionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_pipeline_execution::builders::StartPipelineExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StartPipelineExecutionFluentBuilder {
             crate::operation::start_pipeline_execution::StartPipelineExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pipeline_execution::StartPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_pipeline_execution::StartPipelineExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StartPipelineExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StartPipelineExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_pipeline_execution::StartPipelineExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pipeline_execution::StartPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_pipeline_execution::StartPipelineExecutionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StartPipelineExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_pipeline_execution::StartPipelineExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pipeline_execution::StartPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_pipeline_execution::StartPipelineExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl StartPipelineExecutionFluentBuilder {
             crate::operation::start_pipeline_execution::StartPipelineExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_pipeline_execution::StartPipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_pipeline_execution::StartPipelineExecutionError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl StartPipelineExecutionFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The system-generated unique ID used to identify a unique execution request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The system-generated unique ID used to identify a unique execution request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

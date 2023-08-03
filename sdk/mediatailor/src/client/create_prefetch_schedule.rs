@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`retrieval(Option<PrefetchRetrieval>)`](crate::operation::create_prefetch_schedule::CreatePrefetchScheduleOutput::retrieval): <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
     ///   - [`stream_id(Option<String>)`](crate::operation::create_prefetch_schedule::CreatePrefetchScheduleOutput::stream_id): <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
     /// - On failure, responds with [`SdkError<CreatePrefetchScheduleError>`](crate::operation::create_prefetch_schedule::CreatePrefetchScheduleError)
-    pub fn create_prefetch_schedule(
-        &self,
-    ) -> crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleFluentBuilder
-    {
+    pub fn create_prefetch_schedule(&self) -> crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleFluentBuilder {
         crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleFluentBuilder::new(self.handle.clone())
     }
 }

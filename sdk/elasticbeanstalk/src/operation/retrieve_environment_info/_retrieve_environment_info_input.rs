@@ -38,18 +38,14 @@ impl RetrieveEnvironmentInfoInput {
 }
 impl RetrieveEnvironmentInfoInput {
     /// Creates a new builder-style object to manufacture [`RetrieveEnvironmentInfoInput`](crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoInput).
-    pub fn builder(
-    ) -> crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoInputBuilder
-    {
+    pub fn builder() -> crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoInputBuilder {
         crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoInputBuilder::default()
     }
 }
 
 /// A builder for [`RetrieveEnvironmentInfoInput`](crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetrieveEnvironmentInfoInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -59,20 +55,14 @@ impl RetrieveEnvironmentInfoInputBuilder {
     /// <p>The ID of the data's environment.</p>
     /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the data's environment.</p>
     /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -85,20 +75,14 @@ impl RetrieveEnvironmentInfoInputBuilder {
     /// <p>The name of the data's environment.</p>
     /// <p> If no such environment is found, returns an <code>InvalidParameterValue</code> error. </p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the data's environment.</p>
     /// <p> If no such environment is found, returns an <code>InvalidParameterValue</code> error. </p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -114,10 +98,7 @@ impl RetrieveEnvironmentInfoInputBuilder {
         self
     }
     /// <p>The type of information to retrieve.</p>
-    pub fn set_info_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentInfoType>,
-    ) -> Self {
+    pub fn set_info_type(mut self, input: ::std::option::Option<crate::types::EnvironmentInfoType>) -> Self {
         self.info_type = input;
         self
     }
@@ -132,12 +113,10 @@ impl RetrieveEnvironmentInfoInputBuilder {
         crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoInput {
-                environment_id: self.environment_id,
-                environment_name: self.environment_name,
-                info_type: self.info_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoInput {
+            environment_id: self.environment_id,
+            environment_name: self.environment_name,
+            info_type: self.info_type,
+        })
     }
 }

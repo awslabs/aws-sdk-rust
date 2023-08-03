@@ -10,10 +10,7 @@ impl ListLfTagsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_lf_tags::ListLfTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_lf_tags::ListLFTagsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_lf_tags::ListLFTagsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_lf_tags();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListLFTagsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_lf_tags::ListLFTags,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_lf_tags::ListLFTags, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_lf_tags::ListLFTagsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListLFTagsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListLFTagsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_lf_tags::ListLFTags,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_lf_tags::ListLFTags, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_lf_tags::ListLFTagsError>,
     > {
         self.customize_middleware().await
@@ -138,17 +126,12 @@ impl ListLFTagsFluentBuilder {
         self
     }
     /// <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
-    pub fn set_resource_share_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceShareType>,
-    ) -> Self {
+    pub fn set_resource_share_type(mut self, input: ::std::option::Option<crate::types::ResourceShareType>) -> Self {
         self.inner = self.inner.set_resource_share_type(input);
         self
     }
     /// <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>, returns all share LF-tags that the requester can view. If no resource share type is passed, lists LF-tags in the given catalog ID that the requester has permission to view.</p>
-    pub fn get_resource_share_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceShareType> {
+    pub fn get_resource_share_type(&self) -> &::std::option::Option<crate::types::ResourceShareType> {
         self.inner.get_resource_share_type()
     }
     /// <p>The maximum number of results to return.</p>

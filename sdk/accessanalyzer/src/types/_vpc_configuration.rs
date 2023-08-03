@@ -23,9 +23,7 @@ impl VpcConfiguration {
 
 /// A builder for [`VpcConfiguration`](crate::types::VpcConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcConfigurationBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl VpcConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`VpcConfiguration`](crate::types::VpcConfiguration).
     pub fn build(self) -> crate::types::VpcConfiguration {
-        crate::types::VpcConfiguration {
-            vpc_id: self.vpc_id,
-        }
+        crate::types::VpcConfiguration { vpc_id: self.vpc_id }
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`summaries(Option<Vec<DecoderManifestSummary>>)`](crate::operation::list_decoder_manifests::ListDecoderManifestsOutput::summaries): <p> A list of information about each decoder manifest. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_decoder_manifests::ListDecoderManifestsOutput::next_token): <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     /// - On failure, responds with [`SdkError<ListDecoderManifestsError>`](crate::operation::list_decoder_manifests::ListDecoderManifestsError)
-    pub fn list_decoder_manifests(
-        &self,
-    ) -> crate::operation::list_decoder_manifests::builders::ListDecoderManifestsFluentBuilder {
-        crate::operation::list_decoder_manifests::builders::ListDecoderManifestsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_decoder_manifests(&self) -> crate::operation::list_decoder_manifests::builders::ListDecoderManifestsFluentBuilder {
+        crate::operation::list_decoder_manifests::builders::ListDecoderManifestsFluentBuilder::new(self.handle.clone())
     }
 }

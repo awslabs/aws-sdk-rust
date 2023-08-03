@@ -86,9 +86,7 @@ impl UtteranceEvent {
 
 /// A builder for [`UtteranceEvent`](crate::types::UtteranceEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UtteranceEventBuilder {
     pub(crate) utterance_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_partial: ::std::option::Option<bool>,
@@ -136,10 +134,7 @@ impl UtteranceEventBuilder {
         self
     }
     /// <p>Provides the role of the speaker for each audio channel, either <code>CUSTOMER</code> or <code>AGENT</code>.</p>
-    pub fn set_participant_role(
-        mut self,
-        input: ::std::option::Option<crate::types::ParticipantRole>,
-    ) -> Self {
+    pub fn set_participant_role(mut self, input: ::std::option::Option<crate::types::ParticipantRole>) -> Self {
         self.participant_role = input;
         self
     }
@@ -201,17 +196,12 @@ impl UtteranceEventBuilder {
         self
     }
     /// <p>Contains words, phrases, or punctuation marks that are associated with the specified <code>UtteranceEvent</code>.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Contains words, phrases, or punctuation marks that are associated with the specified <code>UtteranceEvent</code>.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsItem>> {
         &self.items
     }
     /// Appends an item to `entities`.
@@ -226,17 +216,12 @@ impl UtteranceEventBuilder {
         self
     }
     /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsEntity>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsEntity>>) -> Self {
         self.entities = input;
         self
     }
     /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
-    pub fn get_entities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsEntity>> {
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsEntity>> {
         &self.entities
     }
     /// <p>Provides the sentiment that was detected in the specified segment.</p>
@@ -265,17 +250,12 @@ impl UtteranceEventBuilder {
         self
     }
     /// <p>Provides the issue that was detected in the specified segment.</p>
-    pub fn set_issues_detected(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>>,
-    ) -> Self {
+    pub fn set_issues_detected(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>>) -> Self {
         self.issues_detected = input;
         self
     }
     /// <p>Provides the issue that was detected in the specified segment.</p>
-    pub fn get_issues_detected(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>> {
+    pub fn get_issues_detected(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>> {
         &self.issues_detected
     }
     /// Consumes the builder and constructs a [`UtteranceEvent`](crate::types::UtteranceEvent).

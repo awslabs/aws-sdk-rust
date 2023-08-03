@@ -21,19 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeLifecycleConfigurationOutput 
 }
 impl DescribeLifecycleConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLifecycleConfigurationOutput`](crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationOutputBuilder {
         crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLifecycleConfigurationOutput`](crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLifecycleConfigurationOutputBuilder {
-    pub(crate) lifecycle_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>,
+    pub(crate) lifecycle_policies: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>,
     _request_id: Option<String>,
 }
 impl DescribeLifecycleConfigurationOutputBuilder {
@@ -49,17 +46,12 @@ impl DescribeLifecycleConfigurationOutputBuilder {
         self
     }
     /// <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
-    pub fn set_lifecycle_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>,
-    ) -> Self {
+    pub fn set_lifecycle_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>) -> Self {
         self.lifecycle_policies = input;
         self
     }
     /// <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
-    pub fn get_lifecycle_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>> {
+    pub fn get_lifecycle_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>> {
         &self.lifecycle_policies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +64,7 @@ impl DescribeLifecycleConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeLifecycleConfigurationOutput`](crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationOutput {
         crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationOutput {
             lifecycle_policies: self.lifecycle_policies,
             _request_id: self._request_id,

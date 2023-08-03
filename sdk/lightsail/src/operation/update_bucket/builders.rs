@@ -10,10 +10,7 @@ impl UpdateBucketInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_bucket::UpdateBucketOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bucket::UpdateBucketError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bucket::UpdateBucketError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_bucket();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl UpdateBucketFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_bucket::UpdateBucket,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_bucket::UpdateBucket, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_bucket::UpdateBucketError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl UpdateBucketFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl UpdateBucketFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_bucket::UpdateBucket,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_bucket::UpdateBucket, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_bucket::UpdateBucketError>,
     > {
         self.customize_middleware().await
@@ -133,10 +121,7 @@ impl UpdateBucketFluentBuilder {
         self
     }
     /// <p>An object that sets the public accessibility of objects in the specified bucket.</p>
-    pub fn set_access_rules(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessRules>,
-    ) -> Self {
+    pub fn set_access_rules(mut self, input: ::std::option::Option<crate::types::AccessRules>) -> Self {
         self.inner = self.inner.set_access_rules(input);
         self
     }
@@ -179,27 +164,19 @@ impl UpdateBucketFluentBuilder {
     ///
     /// <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>
     /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
-    pub fn readonly_access_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn readonly_access_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.readonly_access_accounts(input.into());
         self
     }
     /// <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>
     /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
-    pub fn set_readonly_access_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_readonly_access_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_readonly_access_accounts(input);
         self
     }
     /// <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>
     /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
-    pub fn get_readonly_access_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_readonly_access_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_readonly_access_accounts()
     }
     /// <p>An object that describes the access log configuration for the bucket.</p>
@@ -208,17 +185,12 @@ impl UpdateBucketFluentBuilder {
         self
     }
     /// <p>An object that describes the access log configuration for the bucket.</p>
-    pub fn set_access_log_config(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketAccessLogConfig>,
-    ) -> Self {
+    pub fn set_access_log_config(mut self, input: ::std::option::Option<crate::types::BucketAccessLogConfig>) -> Self {
         self.inner = self.inner.set_access_log_config(input);
         self
     }
     /// <p>An object that describes the access log configuration for the bucket.</p>
-    pub fn get_access_log_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::BucketAccessLogConfig> {
+    pub fn get_access_log_config(&self) -> &::std::option::Option<crate::types::BucketAccessLogConfig> {
         self.inner.get_access_log_config()
     }
 }

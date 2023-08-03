@@ -42,9 +42,7 @@ impl ComponentDependencyRequirement {
 
 /// A builder for [`ComponentDependencyRequirement`](crate::types::ComponentDependencyRequirement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentDependencyRequirementBuilder {
     pub(crate) version_requirement: ::std::option::Option<::std::string::String>,
     pub(crate) dependency_type: ::std::option::Option<crate::types::ComponentDependencyType>,
@@ -52,19 +50,13 @@ pub struct ComponentDependencyRequirementBuilder {
 impl ComponentDependencyRequirementBuilder {
     /// <p>The component version requirement for the component dependency.</p>
     /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
-    pub fn version_requirement(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_requirement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_requirement = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The component version requirement for the component dependency.</p>
     /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
-    pub fn set_version_requirement(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_requirement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_requirement = input;
         self
     }
@@ -89,10 +81,7 @@ impl ComponentDependencyRequirementBuilder {
     /// <li> <p> <code>HARD</code> – The component restarts if the dependency changes state.</p> </li>
     /// </ul>
     /// <p>Default: <code>HARD</code> </p>
-    pub fn set_dependency_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentDependencyType>,
-    ) -> Self {
+    pub fn set_dependency_type(mut self, input: ::std::option::Option<crate::types::ComponentDependencyType>) -> Self {
         self.dependency_type = input;
         self
     }
@@ -102,9 +91,7 @@ impl ComponentDependencyRequirementBuilder {
     /// <li> <p> <code>HARD</code> – The component restarts if the dependency changes state.</p> </li>
     /// </ul>
     /// <p>Default: <code>HARD</code> </p>
-    pub fn get_dependency_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComponentDependencyType> {
+    pub fn get_dependency_type(&self) -> &::std::option::Option<crate::types::ComponentDependencyType> {
         &self.dependency_type
     }
     /// Consumes the builder and constructs a [`ComponentDependencyRequirement`](crate::types::ComponentDependencyRequirement).

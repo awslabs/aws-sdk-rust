@@ -9,16 +9,14 @@ pub struct AwsIamRoleDetails {
     pub assume_role_policy_document: ::std::option::Option<::std::string::String>,
     /// <p>The list of the managed policies that are attached to the role.</p>
     #[doc(hidden)]
-    pub attached_managed_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
+    pub attached_managed_policies: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
     /// <p>Indicates when the role was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub create_date: ::std::option::Option<::std::string::String>,
     /// <p>The list of instance profiles that contain this role.</p>
     #[doc(hidden)]
-    pub instance_profile_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfile>>,
+    pub instance_profile_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfile>>,
     /// <p>Information about the policy used to set the permissions boundary for an IAM principal.</p>
     #[doc(hidden)]
     pub permissions_boundary: ::std::option::Option<crate::types::AwsIamPermissionsBoundary>,
@@ -44,9 +42,7 @@ impl AwsIamRoleDetails {
         self.assume_role_policy_document.as_deref()
     }
     /// <p>The list of the managed policies that are attached to the role.</p>
-    pub fn attached_managed_policies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsIamAttachedManagedPolicy]> {
+    pub fn attached_managed_policies(&self) -> ::std::option::Option<&[crate::types::AwsIamAttachedManagedPolicy]> {
         self.attached_managed_policies.as_deref()
     }
     /// <p>Indicates when the role was created.</p>
@@ -55,15 +51,11 @@ impl AwsIamRoleDetails {
         self.create_date.as_deref()
     }
     /// <p>The list of instance profiles that contain this role.</p>
-    pub fn instance_profile_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsIamInstanceProfile]> {
+    pub fn instance_profile_list(&self) -> ::std::option::Option<&[crate::types::AwsIamInstanceProfile]> {
         self.instance_profile_list.as_deref()
     }
     /// <p>Information about the policy used to set the permissions boundary for an IAM principal.</p>
-    pub fn permissions_boundary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsIamPermissionsBoundary> {
+    pub fn permissions_boundary(&self) -> ::std::option::Option<&crate::types::AwsIamPermissionsBoundary> {
         self.permissions_boundary.as_ref()
     }
     /// <p>The stable and unique string identifying the role.</p>
@@ -96,38 +88,27 @@ impl AwsIamRoleDetails {
 
 /// A builder for [`AwsIamRoleDetails`](crate::types::AwsIamRoleDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsIamRoleDetailsBuilder {
     pub(crate) assume_role_policy_document: ::std::option::Option<::std::string::String>,
-    pub(crate) attached_managed_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
+    pub(crate) attached_managed_policies: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
     pub(crate) create_date: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_profile_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfile>>,
+    pub(crate) instance_profile_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfile>>,
     pub(crate) permissions_boundary: ::std::option::Option<crate::types::AwsIamPermissionsBoundary>,
     pub(crate) role_id: ::std::option::Option<::std::string::String>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
-    pub(crate) role_policy_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsIamRolePolicy>>,
+    pub(crate) role_policy_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamRolePolicy>>,
     pub(crate) max_session_duration: ::std::option::Option<i32>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamRoleDetailsBuilder {
     /// <p>The trust policy that grants permission to assume the role.</p>
-    pub fn assume_role_policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assume_role_policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assume_role_policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The trust policy that grants permission to assume the role.</p>
-    pub fn set_assume_role_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assume_role_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assume_role_policy_document = input;
         self
     }
@@ -140,27 +121,19 @@ impl AwsIamRoleDetailsBuilder {
     /// To override the contents of this collection use [`set_attached_managed_policies`](Self::set_attached_managed_policies).
     ///
     /// <p>The list of the managed policies that are attached to the role.</p>
-    pub fn attached_managed_policies(
-        mut self,
-        input: crate::types::AwsIamAttachedManagedPolicy,
-    ) -> Self {
+    pub fn attached_managed_policies(mut self, input: crate::types::AwsIamAttachedManagedPolicy) -> Self {
         let mut v = self.attached_managed_policies.unwrap_or_default();
         v.push(input);
         self.attached_managed_policies = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of the managed policies that are attached to the role.</p>
-    pub fn set_attached_managed_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
-    ) -> Self {
+    pub fn set_attached_managed_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>) -> Self {
         self.attached_managed_policies = input;
         self
     }
     /// <p>The list of the managed policies that are attached to the role.</p>
-    pub fn get_attached_managed_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>> {
+    pub fn get_attached_managed_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>> {
         &self.attached_managed_policies
     }
     /// <p>Indicates when the role was created.</p>
@@ -192,17 +165,12 @@ impl AwsIamRoleDetailsBuilder {
         self
     }
     /// <p>The list of instance profiles that contain this role.</p>
-    pub fn set_instance_profile_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfile>>,
-    ) -> Self {
+    pub fn set_instance_profile_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfile>>) -> Self {
         self.instance_profile_list = input;
         self
     }
     /// <p>The list of instance profiles that contain this role.</p>
-    pub fn get_instance_profile_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfile>> {
+    pub fn get_instance_profile_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfile>> {
         &self.instance_profile_list
     }
     /// <p>Information about the policy used to set the permissions boundary for an IAM principal.</p>
@@ -211,17 +179,12 @@ impl AwsIamRoleDetailsBuilder {
         self
     }
     /// <p>Information about the policy used to set the permissions boundary for an IAM principal.</p>
-    pub fn set_permissions_boundary(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsIamPermissionsBoundary>,
-    ) -> Self {
+    pub fn set_permissions_boundary(mut self, input: ::std::option::Option<crate::types::AwsIamPermissionsBoundary>) -> Self {
         self.permissions_boundary = input;
         self
     }
     /// <p>Information about the policy used to set the permissions boundary for an IAM principal.</p>
-    pub fn get_permissions_boundary(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsIamPermissionsBoundary> {
+    pub fn get_permissions_boundary(&self) -> &::std::option::Option<crate::types::AwsIamPermissionsBoundary> {
         &self.permissions_boundary
     }
     /// <p>The stable and unique string identifying the role.</p>
@@ -264,17 +227,12 @@ impl AwsIamRoleDetailsBuilder {
         self
     }
     /// <p>The list of inline policies that are embedded in the role.</p>
-    pub fn set_role_policy_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamRolePolicy>>,
-    ) -> Self {
+    pub fn set_role_policy_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamRolePolicy>>) -> Self {
         self.role_policy_list = input;
         self
     }
     /// <p>The list of inline policies that are embedded in the role.</p>
-    pub fn get_role_policy_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamRolePolicy>> {
+    pub fn get_role_policy_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamRolePolicy>> {
         &self.role_policy_list
     }
     /// <p>The maximum session duration (in seconds) that you want to set for the specified role.</p>

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateAssessmentOutput {
 }
 impl CreateAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssessmentOutput`](crate::operation::create_assessment::CreateAssessmentOutput).
-    pub fn builder() -> crate::operation::create_assessment::builders::CreateAssessmentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_assessment::builders::CreateAssessmentOutputBuilder {
         crate::operation::create_assessment::builders::CreateAssessmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAssessmentOutput`](crate::operation::create_assessment::CreateAssessmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAssessmentOutputBuilder {
     pub(crate) assessment: ::std::option::Option<crate::types::Assessment>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateAssessmentOutputBuilder {
         self
     }
     /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
-    pub fn set_assessment(
-        mut self,
-        input: ::std::option::Option<crate::types::Assessment>,
-    ) -> Self {
+    pub fn set_assessment(mut self, input: ::std::option::Option<crate::types::Assessment>) -> Self {
         self.assessment = input;
         self
     }

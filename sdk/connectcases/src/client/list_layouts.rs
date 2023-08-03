@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`layouts(Option<Vec<LayoutSummary>>)`](crate::operation::list_layouts::ListLayoutsOutput::layouts): <p>The layouts for the domain.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_layouts::ListLayoutsOutput::next_token): <p>The token for the next set of results. This is null if there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListLayoutsError>`](crate::operation::list_layouts::ListLayoutsError)
-    pub fn list_layouts(
-        &self,
-    ) -> crate::operation::list_layouts::builders::ListLayoutsFluentBuilder {
+    pub fn list_layouts(&self) -> crate::operation::list_layouts::builders::ListLayoutsFluentBuilder {
         crate::operation::list_layouts::builders::ListLayoutsFluentBuilder::new(self.handle.clone())
     }
 }

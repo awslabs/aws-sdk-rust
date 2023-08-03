@@ -15,18 +15,14 @@ impl EnableDomainAutoRenewInput {
 }
 impl EnableDomainAutoRenewInput {
     /// Creates a new builder-style object to manufacture [`EnableDomainAutoRenewInput`](crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput).
-    pub fn builder(
-    ) -> crate::operation::enable_domain_auto_renew::builders::EnableDomainAutoRenewInputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_domain_auto_renew::builders::EnableDomainAutoRenewInputBuilder {
         crate::operation::enable_domain_auto_renew::builders::EnableDomainAutoRenewInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableDomainAutoRenewInput`](crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableDomainAutoRenewInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,10 @@ impl EnableDomainAutoRenewInputBuilder {
     /// Consumes the builder and constructs a [`EnableDomainAutoRenewInput`](crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput {
-                domain_name: self.domain_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput {
+            domain_name: self.domain_name,
+        })
     }
 }

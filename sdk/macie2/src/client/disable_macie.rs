@@ -5,11 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::disable_macie::builders::DisableMacieFluentBuilder::send) it.
     /// - On success, responds with [`DisableMacieOutput`](crate::operation::disable_macie::DisableMacieOutput)
     /// - On failure, responds with [`SdkError<DisableMacieError>`](crate::operation::disable_macie::DisableMacieError)
-    pub fn disable_macie(
-        &self,
-    ) -> crate::operation::disable_macie::builders::DisableMacieFluentBuilder {
-        crate::operation::disable_macie::builders::DisableMacieFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disable_macie(&self) -> crate::operation::disable_macie::builders::DisableMacieFluentBuilder {
+        crate::operation::disable_macie::builders::DisableMacieFluentBuilder::new(self.handle.clone())
     }
 }

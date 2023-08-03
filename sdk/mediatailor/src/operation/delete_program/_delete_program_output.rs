@@ -19,9 +19,7 @@ impl DeleteProgramOutput {
 
 /// A builder for [`DeleteProgramOutput`](crate::operation::delete_program::DeleteProgramOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProgramOutputBuilder {
     _request_id: Option<String>,
 }

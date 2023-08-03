@@ -28,8 +28,7 @@ impl GetPublicKeyCertificateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPublicKeyCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateInputBuilder,
+    inner: crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateInputBuilder,
 }
 impl GetPublicKeyCertificateFluentBuilder {
     /// Creates a new `GetPublicKeyCertificate`.
@@ -40,10 +39,7 @@ impl GetPublicKeyCertificateFluentBuilder {
         }
     }
     /// Access the GetPublicKeyCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl GetPublicKeyCertificateFluentBuilder {
             crate::operation::get_public_key_certificate::GetPublicKeyCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_public_key_certificate::GetPublicKeyCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_public_key_certificate::GetPublicKeyCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl GetPublicKeyCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl GetPublicKeyCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_public_key_certificate::GetPublicKeyCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_public_key_certificate::GetPublicKeyCertificateError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl GetPublicKeyCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_public_key_certificate::GetPublicKeyCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_public_key_certificate::GetPublicKeyCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +107,17 @@ impl GetPublicKeyCertificateFluentBuilder {
             crate::operation::get_public_key_certificate::GetPublicKeyCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_public_key_certificate::GetPublicKeyCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_public_key_certificate::GetPublicKeyCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>KeyARN</code> of the asymmetric key pair.</p>
-    pub fn key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_identifier(input.into());
         self
     }
     /// <p>The <code>KeyARN</code> of the asymmetric key pair.</p>
-    pub fn set_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_identifier(input);
         self
     }

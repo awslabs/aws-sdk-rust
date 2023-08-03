@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`column_statistics_list(Option<Vec<ColumnStatistics>>)`](crate::operation::get_column_statistics_for_table::GetColumnStatisticsForTableOutput::column_statistics_list): <p>List of ColumnStatistics.</p>
     ///   - [`errors(Option<Vec<ColumnError>>)`](crate::operation::get_column_statistics_for_table::GetColumnStatisticsForTableOutput::errors): <p>List of ColumnStatistics that failed to be retrieved.</p>
     /// - On failure, responds with [`SdkError<GetColumnStatisticsForTableError>`](crate::operation::get_column_statistics_for_table::GetColumnStatisticsForTableError)
-    pub fn get_column_statistics_for_table(&self) -> crate::operation::get_column_statistics_for_table::builders::GetColumnStatisticsForTableFluentBuilder{
+    pub fn get_column_statistics_for_table(
+        &self,
+    ) -> crate::operation::get_column_statistics_for_table::builders::GetColumnStatisticsForTableFluentBuilder {
         crate::operation::get_column_statistics_for_table::builders::GetColumnStatisticsForTableFluentBuilder::new(self.handle.clone())
     }
 }

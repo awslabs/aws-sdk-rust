@@ -21,9 +21,7 @@ pub enum AnalysisRulePolicyV1 {
 impl AnalysisRulePolicyV1 {
     /// Tries to convert the enum instance into [`Aggregation`](crate::types::AnalysisRulePolicyV1::Aggregation), extracting the inner [`AnalysisRuleAggregation`](crate::types::AnalysisRuleAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_aggregation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AnalysisRuleAggregation, &Self> {
+    pub fn as_aggregation(&self) -> ::std::result::Result<&crate::types::AnalysisRuleAggregation, &Self> {
         if let AnalysisRulePolicyV1::Aggregation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

@@ -10,10 +10,7 @@ impl DeleteStateMachineInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_state_machine::DeleteStateMachineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_state_machine::DeleteStateMachineError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_state_machine::DeleteStateMachineError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_state_machine();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl DeleteStateMachineFluentBuilder {
         }
     }
     /// Access the DeleteStateMachine as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_state_machine::builders::DeleteStateMachineInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_state_machine::builders::DeleteStateMachineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +57,7 @@ impl DeleteStateMachineFluentBuilder {
             crate::operation::delete_state_machine::DeleteStateMachine,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_state_machine::DeleteStateMachineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_state_machine::DeleteStateMachineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +67,7 @@ impl DeleteStateMachineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +76,7 @@ impl DeleteStateMachineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_state_machine::DeleteStateMachineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_state_machine::DeleteStateMachineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_state_machine::DeleteStateMachineError>,
     > {
         let op = self
             .inner
@@ -111,9 +99,7 @@ impl DeleteStateMachineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_state_machine::DeleteStateMachineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_state_machine::DeleteStateMachineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_state_machine::DeleteStateMachineError>,
     > {
         self.send_middleware().await
     }
@@ -127,25 +113,17 @@ impl DeleteStateMachineFluentBuilder {
             crate::operation::delete_state_machine::DeleteStateMachine,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_state_machine::DeleteStateMachineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_state_machine::DeleteStateMachineError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
-    pub fn state_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.state_machine_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_state_machine_arn(input);
         self
     }

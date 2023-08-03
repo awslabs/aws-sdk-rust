@@ -10,10 +10,7 @@ impl CreateDiscovererInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_discoverer::CreateDiscovererOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_discoverer::CreateDiscovererError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_discoverer::CreateDiscovererError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_discoverer();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateDiscovererFluentBuilder {
         }
     }
     /// Access the CreateDiscoverer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_discoverer::builders::CreateDiscovererInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_discoverer::builders::CreateDiscovererInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateDiscovererFluentBuilder {
             crate::operation::create_discoverer::CreateDiscoverer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_discoverer::CreateDiscovererError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_discoverer::CreateDiscovererError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateDiscovererFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateDiscovererFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_discoverer::CreateDiscovererOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_discoverer::CreateDiscovererError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_discoverer::CreateDiscovererError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateDiscovererFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_discoverer::CreateDiscovererOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_discoverer::CreateDiscovererError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_discoverer::CreateDiscovererError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateDiscovererFluentBuilder {
             crate::operation::create_discoverer::CreateDiscoverer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_discoverer::CreateDiscovererError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_discoverer::CreateDiscovererError>,
     > {
         self.customize_middleware().await
     }
@@ -169,30 +153,17 @@ impl CreateDiscovererFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags associated with the resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

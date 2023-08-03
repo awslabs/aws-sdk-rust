@@ -44,9 +44,7 @@ impl MultiplexSettings {
 
 /// A builder for [`MultiplexSettings`](crate::types::MultiplexSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultiplexSettingsBuilder {
     pub(crate) maximum_video_buffer_delay_milliseconds: ::std::option::Option<i32>,
     pub(crate) transport_stream_bitrate: ::std::option::Option<i32>,
@@ -60,10 +58,7 @@ impl MultiplexSettingsBuilder {
         self
     }
     /// Maximum video buffer delay in milliseconds.
-    pub fn set_maximum_video_buffer_delay_milliseconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_maximum_video_buffer_delay_milliseconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_video_buffer_delay_milliseconds = input;
         self
     }
@@ -105,10 +100,7 @@ impl MultiplexSettingsBuilder {
         self
     }
     /// Transport stream reserved bit rate.
-    pub fn set_transport_stream_reserved_bitrate(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_transport_stream_reserved_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.transport_stream_reserved_bitrate = input;
         self
     }

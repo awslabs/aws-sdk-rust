@@ -107,9 +107,7 @@ impl InstanceDetails {
 
 /// A builder for [`InstanceDetails`](crate::types::InstanceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceDetailsBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfile>,
@@ -120,26 +118,19 @@ pub struct InstanceDetailsBuilder {
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) launch_time: ::std::option::Option<::std::string::String>,
-    pub(crate) network_interfaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
+    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     pub(crate) platform: ::std::option::Option<::std::string::String>,
     pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl InstanceDetailsBuilder {
     /// <p>The Availability Zone of the EC2 instance.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone of the EC2 instance.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -153,32 +144,21 @@ impl InstanceDetailsBuilder {
         self
     }
     /// <p>The profile information of the EC2 instance.</p>
-    pub fn set_iam_instance_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::IamInstanceProfile>,
-    ) -> Self {
+    pub fn set_iam_instance_profile(mut self, input: ::std::option::Option<crate::types::IamInstanceProfile>) -> Self {
         self.iam_instance_profile = input;
         self
     }
     /// <p>The profile information of the EC2 instance.</p>
-    pub fn get_iam_instance_profile(
-        &self,
-    ) -> &::std::option::Option<crate::types::IamInstanceProfile> {
+    pub fn get_iam_instance_profile(&self) -> &::std::option::Option<crate::types::IamInstanceProfile> {
         &self.iam_instance_profile
     }
     /// <p>The image description of the EC2 instance.</p>
-    pub fn image_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The image description of the EC2 instance.</p>
-    pub fn set_image_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_description = input;
         self
     }
@@ -215,18 +195,12 @@ impl InstanceDetailsBuilder {
         &self.instance_id
     }
     /// <p>The state of the EC2 instance.</p>
-    pub fn instance_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of the EC2 instance.</p>
-    pub fn set_instance_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_state = input;
         self
     }
@@ -235,18 +209,12 @@ impl InstanceDetailsBuilder {
         &self.instance_state
     }
     /// <p>The type of the EC2 instance.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the EC2 instance.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -294,17 +262,12 @@ impl InstanceDetailsBuilder {
         self
     }
     /// <p>The elastic network interface information of the EC2 instance.</p>
-    pub fn set_network_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
-    ) -> Self {
+    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
         self.network_interfaces = input;
         self
     }
     /// <p>The elastic network interface information of the EC2 instance.</p>
-    pub fn get_network_interfaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
         &self.network_interfaces
     }
     /// <p>The platform of the EC2 instance.</p>
@@ -333,17 +296,12 @@ impl InstanceDetailsBuilder {
         self
     }
     /// <p>The product code of the EC2 instance.</p>
-    pub fn set_product_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
-    ) -> Self {
+    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>) -> Self {
         self.product_codes = input;
         self
     }
     /// <p>The product code of the EC2 instance.</p>
-    pub fn get_product_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
+    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
         &self.product_codes
     }
     /// Appends an item to `tags`.
@@ -358,10 +316,7 @@ impl InstanceDetailsBuilder {
         self
     }
     /// <p>The tags of the EC2 instance.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

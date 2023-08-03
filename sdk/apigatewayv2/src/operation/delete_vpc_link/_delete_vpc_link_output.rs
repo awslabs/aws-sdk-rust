@@ -19,9 +19,7 @@ impl DeleteVpcLinkOutput {
 
 /// A builder for [`DeleteVpcLinkOutput`](crate::operation::delete_vpc_link::DeleteVpcLinkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpcLinkOutputBuilder {
     _request_id: Option<String>,
 }

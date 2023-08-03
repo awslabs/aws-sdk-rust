@@ -27,7 +27,7 @@ impl CreatePrivateVirtualInterfaceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePrivateVirtualInterfaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_private_virtual_interface::builders::CreatePrivateVirtualInterfaceInputBuilder,
+    inner: crate::operation::create_private_virtual_interface::builders::CreatePrivateVirtualInterfaceInputBuilder,
 }
 impl CreatePrivateVirtualInterfaceFluentBuilder {
     /// Creates a new `CreatePrivateVirtualInterface`.
@@ -38,7 +38,7 @@ impl CreatePrivateVirtualInterfaceFluentBuilder {
         }
     }
     /// Access the CreatePrivateVirtualInterface as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_private_virtual_interface::builders::CreatePrivateVirtualInterfaceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_private_virtual_interface::builders::CreatePrivateVirtualInterfaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreatePrivateVirtualInterfaceFluentBuilder {
             crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreatePrivateVirtualInterfaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreatePrivateVirtualInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreatePrivateVirtualInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl CreatePrivateVirtualInterfaceFluentBuilder {
             crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }
@@ -142,25 +125,17 @@ impl CreatePrivateVirtualInterfaceFluentBuilder {
         self.inner.get_connection_id()
     }
     /// <p>Information about the private virtual interface.</p>
-    pub fn new_private_virtual_interface(
-        mut self,
-        input: crate::types::NewPrivateVirtualInterface,
-    ) -> Self {
+    pub fn new_private_virtual_interface(mut self, input: crate::types::NewPrivateVirtualInterface) -> Self {
         self.inner = self.inner.new_private_virtual_interface(input);
         self
     }
     /// <p>Information about the private virtual interface.</p>
-    pub fn set_new_private_virtual_interface(
-        mut self,
-        input: ::std::option::Option<crate::types::NewPrivateVirtualInterface>,
-    ) -> Self {
+    pub fn set_new_private_virtual_interface(mut self, input: ::std::option::Option<crate::types::NewPrivateVirtualInterface>) -> Self {
         self.inner = self.inner.set_new_private_virtual_interface(input);
         self
     }
     /// <p>Information about the private virtual interface.</p>
-    pub fn get_new_private_virtual_interface(
-        &self,
-    ) -> &::std::option::Option<crate::types::NewPrivateVirtualInterface> {
+    pub fn get_new_private_virtual_interface(&self) -> &::std::option::Option<crate::types::NewPrivateVirtualInterface> {
         self.inner.get_new_private_virtual_interface()
     }
 }

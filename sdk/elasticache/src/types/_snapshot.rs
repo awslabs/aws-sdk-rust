@@ -210,9 +210,7 @@ impl Snapshot {
         self.preferred_outpost_arn.as_deref()
     }
     /// <p>The date and time when the source cluster was created.</p>
-    pub fn cache_cluster_create_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn cache_cluster_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.cache_cluster_create_time.as_ref()
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
@@ -269,9 +267,7 @@ impl Snapshot {
         self.num_node_groups
     }
     /// <p>Indicates the status of automatic failover for the source Redis replication group.</p>
-    pub fn automatic_failover(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutomaticFailoverStatus> {
+    pub fn automatic_failover(&self) -> ::std::option::Option<&crate::types::AutomaticFailoverStatus> {
         self.automatic_failover.as_ref()
     }
     /// <p>A list of the cache nodes in the source cluster.</p>
@@ -300,9 +296,7 @@ impl Snapshot {
 
 /// A builder for [`Snapshot`](crate::types::Snapshot).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotBuilder {
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
@@ -335,18 +329,12 @@ pub struct SnapshotBuilder {
 }
 impl SnapshotBuilder {
     /// <p>The name of a snapshot. For an automatic snapshot, the name is system-generated. For a manual snapshot, this is the user-provided name.</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a snapshot. For an automatic snapshot, the name is system-generated. For a manual snapshot, this is the user-provided name.</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_name = input;
         self
     }
@@ -355,18 +343,12 @@ impl SnapshotBuilder {
         &self.snapshot_name
     }
     /// <p>The unique identifier of the source replication group.</p>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the source replication group.</p>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_group_id = input;
         self
     }
@@ -375,40 +357,26 @@ impl SnapshotBuilder {
         &self.replication_group_id
     }
     /// <p>A description of the source replication group.</p>
-    pub fn replication_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the source replication group.</p>
-    pub fn set_replication_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_group_description = input;
         self
     }
     /// <p>A description of the source replication group.</p>
-    pub fn get_replication_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_group_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_group_description
     }
     /// <p>The user-supplied identifier of the source cluster.</p>
-    pub fn cache_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-supplied identifier of the source cluster.</p>
-    pub fn set_cache_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_cluster_id = input;
         self
     }
@@ -417,18 +385,12 @@ impl SnapshotBuilder {
         &self.cache_cluster_id
     }
     /// <p>The status of the snapshot. Valid values: <code>creating</code> | <code>available</code> | <code>restoring</code> | <code>copying</code> | <code>deleting</code>.</p>
-    pub fn snapshot_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the snapshot. Valid values: <code>creating</code> | <code>available</code> | <code>restoring</code> | <code>copying</code> | <code>deleting</code>.</p>
-    pub fn set_snapshot_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_status = input;
         self
     }
@@ -437,18 +399,12 @@ impl SnapshotBuilder {
         &self.snapshot_status
     }
     /// <p>Indicates whether the snapshot is from an automatic backup (<code>automated</code>) or was created manually (<code>manual</code>).</p>
-    pub fn snapshot_source(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates whether the snapshot is from an automatic backup (<code>automated</code>) or was created manually (<code>manual</code>).</p>
-    pub fn set_snapshot_source(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_source = input;
         self
     }
@@ -485,10 +441,7 @@ impl SnapshotBuilder {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
-    pub fn cache_node_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_node_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -521,10 +474,7 @@ impl SnapshotBuilder {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
-    pub fn set_cache_node_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_node_type = input;
         self
     }
@@ -575,18 +525,12 @@ impl SnapshotBuilder {
         &self.engine
     }
     /// <p>The version of the cache engine version that is used by the source cluster.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the cache engine version that is used by the source cluster.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -612,18 +556,12 @@ impl SnapshotBuilder {
         &self.num_cache_nodes
     }
     /// <p>The name of the Availability Zone in which the source cluster is located.</p>
-    pub fn preferred_availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Availability Zone in which the source cluster is located.</p>
-    pub fn set_preferred_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_availability_zone = input;
         self
     }
@@ -632,18 +570,12 @@ impl SnapshotBuilder {
         &self.preferred_availability_zone
     }
     /// <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
-    pub fn preferred_outpost_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
-    pub fn set_preferred_outpost_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_outpost_arn = input;
         self
     }
@@ -657,17 +589,12 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The date and time when the source cluster was created.</p>
-    pub fn set_cache_cluster_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_cache_cluster_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.cache_cluster_create_time = input;
         self
     }
     /// <p>The date and time when the source cluster was created.</p>
-    pub fn get_cache_cluster_create_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_cache_cluster_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.cache_cluster_create_time
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
@@ -682,10 +609,7 @@ impl SnapshotBuilder {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -701,10 +625,7 @@ impl SnapshotBuilder {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
@@ -720,9 +641,7 @@ impl SnapshotBuilder {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
     /// <p>The Amazon Resource Name (ARN) for the topic used by the source cluster for publishing notifications.</p>
@@ -754,18 +673,12 @@ impl SnapshotBuilder {
         &self.port
     }
     /// <p>The cache parameter group that is associated with the source cluster.</p>
-    pub fn cache_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cache parameter group that is associated with the source cluster.</p>
-    pub fn set_cache_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_parameter_group_name = input;
         self
     }
@@ -774,18 +687,12 @@ impl SnapshotBuilder {
         &self.cache_parameter_group_name
     }
     /// <p>The name of the cache subnet group associated with the source cluster.</p>
-    pub fn cache_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cache subnet group associated with the source cluster.</p>
-    pub fn set_cache_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_subnet_group_name = input;
         self
     }
@@ -842,18 +749,12 @@ impl SnapshotBuilder {
         &self.snapshot_retention_limit
     }
     /// <p>The daily time range during which ElastiCache takes daily snapshots of the source cluster.</p>
-    pub fn snapshot_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The daily time range during which ElastiCache takes daily snapshots of the source cluster.</p>
-    pub fn set_snapshot_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_window = input;
         self
     }
@@ -881,17 +782,12 @@ impl SnapshotBuilder {
         self
     }
     /// <p>Indicates the status of automatic failover for the source Redis replication group.</p>
-    pub fn set_automatic_failover(
-        mut self,
-        input: ::std::option::Option<crate::types::AutomaticFailoverStatus>,
-    ) -> Self {
+    pub fn set_automatic_failover(mut self, input: ::std::option::Option<crate::types::AutomaticFailoverStatus>) -> Self {
         self.automatic_failover = input;
         self
     }
     /// <p>Indicates the status of automatic failover for the source Redis replication group.</p>
-    pub fn get_automatic_failover(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutomaticFailoverStatus> {
+    pub fn get_automatic_failover(&self) -> &::std::option::Option<crate::types::AutomaticFailoverStatus> {
         &self.automatic_failover
     }
     /// Appends an item to `node_snapshots`.
@@ -906,17 +802,12 @@ impl SnapshotBuilder {
         self
     }
     /// <p>A list of the cache nodes in the source cluster.</p>
-    pub fn set_node_snapshots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NodeSnapshot>>,
-    ) -> Self {
+    pub fn set_node_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeSnapshot>>) -> Self {
         self.node_snapshots = input;
         self
     }
     /// <p>A list of the cache nodes in the source cluster.</p>
-    pub fn get_node_snapshots(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeSnapshot>> {
+    pub fn get_node_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeSnapshot>> {
         &self.node_snapshots
     }
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
@@ -953,10 +844,7 @@ impl SnapshotBuilder {
         self
     }
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
-    pub fn set_data_tiering(
-        mut self,
-        input: ::std::option::Option<crate::types::DataTieringStatus>,
-    ) -> Self {
+    pub fn set_data_tiering(mut self, input: ::std::option::Option<crate::types::DataTieringStatus>) -> Self {
         self.data_tiering = input;
         self
     }

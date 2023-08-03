@@ -10,10 +10,7 @@ impl DeleteApplicationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_applications::DeleteApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_applications::DeleteApplicationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_applications::DeleteApplicationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_applications();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteApplicationsFluentBuilder {
         }
     }
     /// Access the DeleteApplications as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_applications::builders::DeleteApplicationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_applications::builders::DeleteApplicationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteApplicationsFluentBuilder {
             crate::operation::delete_applications::DeleteApplications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_applications::DeleteApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_applications::DeleteApplicationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteApplicationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteApplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_applications::DeleteApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_applications::DeleteApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_applications::DeleteApplicationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteApplicationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_applications::DeleteApplicationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_applications::DeleteApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_applications::DeleteApplicationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteApplicationsFluentBuilder {
             crate::operation::delete_applications::DeleteApplications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_applications::DeleteApplicationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_applications::DeleteApplicationsError>,
     > {
         self.customize_middleware().await
     }
@@ -127,25 +111,17 @@ impl DeleteApplicationsFluentBuilder {
     /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
     ///
     /// <p>Configuration ID of an application to be deleted.</p>
-    pub fn configuration_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_ids(input.into());
         self
     }
     /// <p>Configuration ID of an application to be deleted.</p>
-    pub fn set_configuration_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_configuration_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_configuration_ids(input);
         self
     }
     /// <p>Configuration ID of an application to be deleted.</p>
-    pub fn get_configuration_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_configuration_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_configuration_ids()
     }
 }

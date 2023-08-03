@@ -50,9 +50,7 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultInput {
 
 /// A builder for [`NotifyTerminateProvisionedProductEngineWorkflowResultInput`](crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
     pub(crate) workflow_token: ::std::option::Option<::std::string::String>,
     pub(crate) record_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
 }
 impl NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
     /// <p> The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts. </p>
-    pub fn workflow_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts. </p>
-    pub fn set_workflow_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_token = input;
         self
     }
@@ -101,10 +93,7 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
         self
     }
     /// <p> The status of the terminate engine execution. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineWorkflowStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EngineWorkflowStatus>) -> Self {
         self.status = input;
         self
     }
@@ -113,18 +102,12 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
         &self.status
     }
     /// <p> The reason why the terminate engine execution failed. </p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The reason why the terminate engine execution failed. </p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -133,18 +116,12 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
         &self.failure_reason
     }
     /// <p> The idempotency token that identifies the terminate engine execution. </p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The idempotency token that identifies the terminate engine execution. </p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }
@@ -153,7 +130,12 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
         &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`NotifyTerminateProvisionedProductEngineWorkflowResultInput`](crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultInput {
                 workflow_token: self.workflow_token

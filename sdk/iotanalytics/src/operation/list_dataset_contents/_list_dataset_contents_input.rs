@@ -43,18 +43,14 @@ impl ListDatasetContentsInput {
 }
 impl ListDatasetContentsInput {
     /// Creates a new builder-style object to manufacture [`ListDatasetContentsInput`](crate::operation::list_dataset_contents::ListDatasetContentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_dataset_contents::builders::ListDatasetContentsInputBuilder {
-        crate::operation::list_dataset_contents::builders::ListDatasetContentsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_dataset_contents::builders::ListDatasetContentsInputBuilder {
+        crate::operation::list_dataset_contents::builders::ListDatasetContentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDatasetContentsInput`](crate::operation::list_dataset_contents::ListDatasetContentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetContentsInputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -111,17 +107,12 @@ impl ListDatasetContentsInputBuilder {
         self
     }
     /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
-    pub fn set_scheduled_on_or_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_on_or_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.scheduled_on_or_after = input;
         self
     }
     /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
-    pub fn get_scheduled_on_or_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_scheduled_on_or_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.scheduled_on_or_after
     }
     /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
@@ -130,10 +121,7 @@ impl ListDatasetContentsInputBuilder {
         self
     }
     /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
-    pub fn set_scheduled_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.scheduled_before = input;
         self
     }
@@ -144,18 +132,14 @@ impl ListDatasetContentsInputBuilder {
     /// Consumes the builder and constructs a [`ListDatasetContentsInput`](crate::operation::list_dataset_contents::ListDatasetContentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_dataset_contents::ListDatasetContentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_dataset_contents::ListDatasetContentsInput {
-                dataset_name: self.dataset_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                scheduled_on_or_after: self.scheduled_on_or_after,
-                scheduled_before: self.scheduled_before,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_dataset_contents::ListDatasetContentsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_dataset_contents::ListDatasetContentsInput {
+            dataset_name: self.dataset_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            scheduled_on_or_after: self.scheduled_on_or_after,
+            scheduled_before: self.scheduled_before,
+        })
     }
 }

@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`custom_entity_types(Option<Vec<CustomEntityType>>)`](crate::operation::list_custom_entity_types::ListCustomEntityTypesOutput::custom_entity_types): <p>A list of <code>CustomEntityType</code> objects representing custom patterns.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_entity_types::ListCustomEntityTypesOutput::next_token): <p>A pagination token, if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListCustomEntityTypesError>`](crate::operation::list_custom_entity_types::ListCustomEntityTypesError)
-    pub fn list_custom_entity_types(
-        &self,
-    ) -> crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesFluentBuilder
-    {
+    pub fn list_custom_entity_types(&self) -> crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesFluentBuilder {
         crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesFluentBuilder::new(self.handle.clone())
     }
 }

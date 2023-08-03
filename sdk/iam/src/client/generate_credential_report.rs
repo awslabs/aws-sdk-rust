@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`state(Option<ReportStateType>)`](crate::operation::generate_credential_report::GenerateCredentialReportOutput::state): <p>Information about the state of the credential report.</p>
     ///   - [`description(Option<String>)`](crate::operation::generate_credential_report::GenerateCredentialReportOutput::description): <p>Information about the credential report.</p>
     /// - On failure, responds with [`SdkError<GenerateCredentialReportError>`](crate::operation::generate_credential_report::GenerateCredentialReportError)
-    pub fn generate_credential_report(
-        &self,
-    ) -> crate::operation::generate_credential_report::builders::GenerateCredentialReportFluentBuilder
-    {
+    pub fn generate_credential_report(&self) -> crate::operation::generate_credential_report::builders::GenerateCredentialReportFluentBuilder {
         crate::operation::generate_credential_report::builders::GenerateCredentialReportFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl CustomDataIdentifiers {
 
 /// A builder for [`CustomDataIdentifiers`](crate::types::CustomDataIdentifiers).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomDataIdentifiersBuilder {
     pub(crate) detections: ::std::option::Option<::std::vec::Vec<crate::types::CustomDetection>>,
     pub(crate) total_count: ::std::option::Option<i64>,
@@ -50,17 +48,12 @@ impl CustomDataIdentifiersBuilder {
         self
     }
     /// <p>The custom data identifiers that detected the data, and the number of occurrences of the data that each identifier detected.</p>
-    pub fn set_detections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomDetection>>,
-    ) -> Self {
+    pub fn set_detections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomDetection>>) -> Self {
         self.detections = input;
         self
     }
     /// <p>The custom data identifiers that detected the data, and the number of occurrences of the data that each identifier detected.</p>
-    pub fn get_detections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDetection>> {
+    pub fn get_detections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDetection>> {
         &self.detections
     }
     /// <p>The total number of occurrences of the data that was detected by the custom data identifiers and produced the finding.</p>

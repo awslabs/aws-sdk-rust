@@ -9,8 +9,7 @@ pub struct DescribeReservedDbInstancesOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of reserved DB instances.</p>
     #[doc(hidden)]
-    pub reserved_db_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstance>>,
+    pub reserved_db_instances: ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedDbInstancesOutput {
@@ -19,9 +18,7 @@ impl DescribeReservedDbInstancesOutput {
         self.marker.as_deref()
     }
     /// <p>A list of reserved DB instances.</p>
-    pub fn reserved_db_instances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReservedDbInstance]> {
+    pub fn reserved_db_instances(&self) -> ::std::option::Option<&[crate::types::ReservedDbInstance]> {
         self.reserved_db_instances.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeReservedDbInstancesOutput {
 }
 impl DescribeReservedDbInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedDbInstancesOutput`](crate::operation::describe_reserved_db_instances::DescribeReservedDbInstancesOutput).
-    pub fn builder() -> crate::operation::describe_reserved_db_instances::builders::DescribeReservedDbInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_db_instances::builders::DescribeReservedDbInstancesOutputBuilder {
         crate::operation::describe_reserved_db_instances::builders::DescribeReservedDbInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedDbInstancesOutput`](crate::operation::describe_reserved_db_instances::DescribeReservedDbInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedDbInstancesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_db_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstance>>,
+    pub(crate) reserved_db_instances: ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedDbInstancesOutputBuilder {
@@ -75,17 +69,12 @@ impl DescribeReservedDbInstancesOutputBuilder {
         self
     }
     /// <p>A list of reserved DB instances.</p>
-    pub fn set_reserved_db_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstance>>,
-    ) -> Self {
+    pub fn set_reserved_db_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstance>>) -> Self {
         self.reserved_db_instances = input;
         self
     }
     /// <p>A list of reserved DB instances.</p>
-    pub fn get_reserved_db_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstance>> {
+    pub fn get_reserved_db_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstance>> {
         &self.reserved_db_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -98,9 +87,7 @@ impl DescribeReservedDbInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReservedDbInstancesOutput`](crate::operation::describe_reserved_db_instances::DescribeReservedDbInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_reserved_db_instances::DescribeReservedDbInstancesOutput {
+    pub fn build(self) -> crate::operation::describe_reserved_db_instances::DescribeReservedDbInstancesOutput {
         crate::operation::describe_reserved_db_instances::DescribeReservedDbInstancesOutput {
             marker: self.marker,
             reserved_db_instances: self.reserved_db_instances,

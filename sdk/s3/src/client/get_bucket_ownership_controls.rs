@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetBucketOwnershipControlsOutput`](crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsOutput) with field(s):
     ///   - [`ownership_controls(Option<OwnershipControls>)`](crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsOutput::ownership_controls): <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in effect for this Amazon S3 bucket.</p>
     /// - On failure, responds with [`SdkError<GetBucketOwnershipControlsError>`](crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsError)
-    pub fn get_bucket_ownership_controls(&self) -> crate::operation::get_bucket_ownership_controls::builders::GetBucketOwnershipControlsFluentBuilder{
+    pub fn get_bucket_ownership_controls(
+        &self,
+    ) -> crate::operation::get_bucket_ownership_controls::builders::GetBucketOwnershipControlsFluentBuilder {
         crate::operation::get_bucket_ownership_controls::builders::GetBucketOwnershipControlsFluentBuilder::new(self.handle.clone())
     }
 }

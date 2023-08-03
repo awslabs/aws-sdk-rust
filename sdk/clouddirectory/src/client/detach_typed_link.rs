@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`typed_link_specifier(TypedLinkSpecifier)`](crate::operation::detach_typed_link::builders::DetachTypedLinkFluentBuilder::typed_link_specifier) / [`set_typed_link_specifier(Option<TypedLinkSpecifier>)`](crate::operation::detach_typed_link::builders::DetachTypedLinkFluentBuilder::set_typed_link_specifier): <p>Used to accept a typed link specifier as input.</p>
     /// - On success, responds with [`DetachTypedLinkOutput`](crate::operation::detach_typed_link::DetachTypedLinkOutput)
     /// - On failure, responds with [`SdkError<DetachTypedLinkError>`](crate::operation::detach_typed_link::DetachTypedLinkError)
-    pub fn detach_typed_link(
-        &self,
-    ) -> crate::operation::detach_typed_link::builders::DetachTypedLinkFluentBuilder {
-        crate::operation::detach_typed_link::builders::DetachTypedLinkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detach_typed_link(&self) -> crate::operation::detach_typed_link::builders::DetachTypedLinkFluentBuilder {
+        crate::operation::detach_typed_link::builders::DetachTypedLinkFluentBuilder::new(self.handle.clone())
     }
 }

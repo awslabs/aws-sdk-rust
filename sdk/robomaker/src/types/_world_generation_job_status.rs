@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WorldGenerationJobStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for WorldGenerationJobStatus {
             "PartialFailed" => WorldGenerationJobStatus::PartialFailed,
             "Pending" => WorldGenerationJobStatus::Pending,
             "Running" => WorldGenerationJobStatus::Running,
-            other => WorldGenerationJobStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WorldGenerationJobStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl WorldGenerationJobStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Canceled",
-            "Canceling",
-            "Completed",
-            "Failed",
-            "PartialFailed",
-            "Pending",
-            "Running",
-        ]
+        &["Canceled", "Canceling", "Completed", "Failed", "PartialFailed", "Pending", "Running"]
     }
 }
 impl ::std::convert::AsRef<str> for WorldGenerationJobStatus {

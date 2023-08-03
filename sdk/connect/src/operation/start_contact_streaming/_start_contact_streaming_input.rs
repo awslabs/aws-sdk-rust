@@ -11,8 +11,7 @@ pub struct StartContactStreamingInput {
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
     #[doc(hidden)]
-    pub chat_streaming_configuration:
-        ::std::option::Option<crate::types::ChatStreamingConfiguration>,
+    pub chat_streaming_configuration: ::std::option::Option<crate::types::ChatStreamingConfiguration>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -27,9 +26,7 @@ impl StartContactStreamingInput {
         self.contact_id.as_deref()
     }
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
-    pub fn chat_streaming_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChatStreamingConfiguration> {
+    pub fn chat_streaming_configuration(&self) -> ::std::option::Option<&crate::types::ChatStreamingConfiguration> {
         self.chat_streaming_configuration.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -39,23 +36,18 @@ impl StartContactStreamingInput {
 }
 impl StartContactStreamingInput {
     /// Creates a new builder-style object to manufacture [`StartContactStreamingInput`](crate::operation::start_contact_streaming::StartContactStreamingInput).
-    pub fn builder(
-    ) -> crate::operation::start_contact_streaming::builders::StartContactStreamingInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_contact_streaming::builders::StartContactStreamingInputBuilder {
         crate::operation::start_contact_streaming::builders::StartContactStreamingInputBuilder::default()
     }
 }
 
 /// A builder for [`StartContactStreamingInput`](crate::operation::start_contact_streaming::StartContactStreamingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartContactStreamingInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
-    pub(crate) chat_streaming_configuration:
-        ::std::option::Option<crate::types::ChatStreamingConfiguration>,
+    pub(crate) chat_streaming_configuration: ::std::option::Option<crate::types::ChatStreamingConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartContactStreamingInputBuilder {
@@ -88,25 +80,17 @@ impl StartContactStreamingInputBuilder {
         &self.contact_id
     }
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
-    pub fn chat_streaming_configuration(
-        mut self,
-        input: crate::types::ChatStreamingConfiguration,
-    ) -> Self {
+    pub fn chat_streaming_configuration(mut self, input: crate::types::ChatStreamingConfiguration) -> Self {
         self.chat_streaming_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
-    pub fn set_chat_streaming_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ChatStreamingConfiguration>,
-    ) -> Self {
+    pub fn set_chat_streaming_configuration(mut self, input: ::std::option::Option<crate::types::ChatStreamingConfiguration>) -> Self {
         self.chat_streaming_configuration = input;
         self
     }
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
-    pub fn get_chat_streaming_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChatStreamingConfiguration> {
+    pub fn get_chat_streaming_configuration(&self) -> &::std::option::Option<crate::types::ChatStreamingConfiguration> {
         &self.chat_streaming_configuration
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -126,17 +110,13 @@ impl StartContactStreamingInputBuilder {
     /// Consumes the builder and constructs a [`StartContactStreamingInput`](crate::operation::start_contact_streaming::StartContactStreamingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_contact_streaming::StartContactStreamingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_contact_streaming::StartContactStreamingInput {
-                instance_id: self.instance_id,
-                contact_id: self.contact_id,
-                chat_streaming_configuration: self.chat_streaming_configuration,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_contact_streaming::StartContactStreamingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_contact_streaming::StartContactStreamingInput {
+            instance_id: self.instance_id,
+            contact_id: self.contact_id,
+            chat_streaming_configuration: self.chat_streaming_configuration,
+            client_token: self.client_token,
+        })
     }
 }

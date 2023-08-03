@@ -5,8 +5,7 @@
 pub struct ListWebsiteAuthorizationProvidersOutput {
     /// <p>The website authorization providers.</p>
     #[doc(hidden)]
-    pub website_authorization_providers:
-        ::std::option::Option<::std::vec::Vec<crate::types::WebsiteAuthorizationProviderSummary>>,
+    pub website_authorization_providers: ::std::option::Option<::std::vec::Vec<crate::types::WebsiteAuthorizationProviderSummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListWebsiteAuthorizationProvidersOutput {
 }
 impl ListWebsiteAuthorizationProvidersOutput {
     /// <p>The website authorization providers.</p>
-    pub fn website_authorization_providers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WebsiteAuthorizationProviderSummary]> {
+    pub fn website_authorization_providers(&self) -> ::std::option::Option<&[crate::types::WebsiteAuthorizationProviderSummary]> {
         self.website_authorization_providers.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListWebsiteAuthorizationProvidersOutp
 }
 impl ListWebsiteAuthorizationProvidersOutput {
     /// Creates a new builder-style object to manufacture [`ListWebsiteAuthorizationProvidersOutput`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersOutput).
-    pub fn builder() -> crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersOutputBuilder{
+    pub fn builder() -> crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersOutputBuilder {
         crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWebsiteAuthorizationProvidersOutput`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWebsiteAuthorizationProvidersOutputBuilder {
-    pub(crate) website_authorization_providers:
-        ::std::option::Option<::std::vec::Vec<crate::types::WebsiteAuthorizationProviderSummary>>,
+    pub(crate) website_authorization_providers: ::std::option::Option<::std::vec::Vec<crate::types::WebsiteAuthorizationProviderSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListWebsiteAuthorizationProvidersOutputBuilder {
     /// To override the contents of this collection use [`set_website_authorization_providers`](Self::set_website_authorization_providers).
     ///
     /// <p>The website authorization providers.</p>
-    pub fn website_authorization_providers(
-        mut self,
-        input: crate::types::WebsiteAuthorizationProviderSummary,
-    ) -> Self {
+    pub fn website_authorization_providers(mut self, input: crate::types::WebsiteAuthorizationProviderSummary) -> Self {
         let mut v = self.website_authorization_providers.unwrap_or_default();
         v.push(input);
         self.website_authorization_providers = ::std::option::Option::Some(v);
@@ -65,18 +56,13 @@ impl ListWebsiteAuthorizationProvidersOutputBuilder {
     /// <p>The website authorization providers.</p>
     pub fn set_website_authorization_providers(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::WebsiteAuthorizationProviderSummary>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::WebsiteAuthorizationProviderSummary>>,
     ) -> Self {
         self.website_authorization_providers = input;
         self
     }
     /// <p>The website authorization providers.</p>
-    pub fn get_website_authorization_providers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WebsiteAuthorizationProviderSummary>>
-    {
+    pub fn get_website_authorization_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WebsiteAuthorizationProviderSummary>> {
         &self.website_authorization_providers
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -103,12 +89,10 @@ impl ListWebsiteAuthorizationProvidersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWebsiteAuthorizationProvidersOutput`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersOutput).
-    pub fn build(self) -> crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersOutput{
+    pub fn build(self) -> crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersOutput {
         crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersOutput {
-            website_authorization_providers: self.website_authorization_providers
-            ,
-            next_token: self.next_token
-            ,
+            website_authorization_providers: self.website_authorization_providers,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

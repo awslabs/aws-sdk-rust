@@ -29,7 +29,7 @@ impl StartMeetingTranscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMeetingTranscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_meeting_transcription::builders::StartMeetingTranscriptionInputBuilder,
+    inner: crate::operation::start_meeting_transcription::builders::StartMeetingTranscriptionInputBuilder,
 }
 impl StartMeetingTranscriptionFluentBuilder {
     /// Creates a new `StartMeetingTranscription`.
@@ -40,7 +40,7 @@ impl StartMeetingTranscriptionFluentBuilder {
         }
     }
     /// Access the StartMeetingTranscription as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_meeting_transcription::builders::StartMeetingTranscriptionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_meeting_transcription::builders::StartMeetingTranscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl StartMeetingTranscriptionFluentBuilder {
             crate::operation::start_meeting_transcription::StartMeetingTranscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_meeting_transcription::StartMeetingTranscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_meeting_transcription::StartMeetingTranscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl StartMeetingTranscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl StartMeetingTranscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_meeting_transcription::StartMeetingTranscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_meeting_transcription::StartMeetingTranscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_meeting_transcription::StartMeetingTranscriptionError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl StartMeetingTranscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_meeting_transcription::StartMeetingTranscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_meeting_transcription::StartMeetingTranscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_meeting_transcription::StartMeetingTranscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl StartMeetingTranscriptionFluentBuilder {
             crate::operation::start_meeting_transcription::StartMeetingTranscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_meeting_transcription::StartMeetingTranscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_meeting_transcription::StartMeetingTranscriptionError>,
     > {
         self.customize_middleware().await
     }
@@ -138,25 +127,17 @@ impl StartMeetingTranscriptionFluentBuilder {
         self.inner.get_meeting_id()
     }
     /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
-    pub fn transcription_configuration(
-        mut self,
-        input: crate::types::TranscriptionConfiguration,
-    ) -> Self {
+    pub fn transcription_configuration(mut self, input: crate::types::TranscriptionConfiguration) -> Self {
         self.inner = self.inner.transcription_configuration(input);
         self
     }
     /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
-    pub fn set_transcription_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscriptionConfiguration>,
-    ) -> Self {
+    pub fn set_transcription_configuration(mut self, input: ::std::option::Option<crate::types::TranscriptionConfiguration>) -> Self {
         self.inner = self.inner.set_transcription_configuration(input);
         self
     }
     /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
-    pub fn get_transcription_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranscriptionConfiguration> {
+    pub fn get_transcription_configuration(&self) -> &::std::option::Option<crate::types::TranscriptionConfiguration> {
         self.inner.get_transcription_configuration()
     }
 }

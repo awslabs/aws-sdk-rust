@@ -76,9 +76,7 @@ impl AttributeFilter {
         self.greater_than.as_ref()
     }
     /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
-    pub fn greater_than_or_equals(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DocumentAttribute> {
+    pub fn greater_than_or_equals(&self) -> ::std::option::Option<&crate::types::DocumentAttribute> {
         self.greater_than_or_equals.as_ref()
     }
     /// <p>Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
@@ -99,14 +97,10 @@ impl AttributeFilter {
 
 /// A builder for [`AttributeFilter`](crate::types::AttributeFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttributeFilterBuilder {
-    pub(crate) and_all_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>>,
-    pub(crate) or_all_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>>,
+    pub(crate) and_all_filters: ::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>>,
+    pub(crate) or_all_filters: ::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>>,
     pub(crate) not_filter: ::std::option::Option<::std::boxed::Box<crate::types::AttributeFilter>>,
     pub(crate) equals_to: ::std::option::Option<crate::types::DocumentAttribute>,
     pub(crate) contains_all: ::std::option::Option<crate::types::DocumentAttribute>,
@@ -129,17 +123,12 @@ impl AttributeFilterBuilder {
         self
     }
     /// <p>Performs a logical <code>AND</code> operation on all supplied filters.</p>
-    pub fn set_and_all_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>>,
-    ) -> Self {
+    pub fn set_and_all_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>>) -> Self {
         self.and_all_filters = input;
         self
     }
     /// <p>Performs a logical <code>AND</code> operation on all supplied filters.</p>
-    pub fn get_and_all_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>> {
+    pub fn get_and_all_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>> {
         &self.and_all_filters
     }
     /// Appends an item to `or_all_filters`.
@@ -154,39 +143,26 @@ impl AttributeFilterBuilder {
         self
     }
     /// <p>Performs a logical <code>OR</code> operation on all supplied filters.</p>
-    pub fn set_or_all_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>>,
-    ) -> Self {
+    pub fn set_or_all_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>>) -> Self {
         self.or_all_filters = input;
         self
     }
     /// <p>Performs a logical <code>OR</code> operation on all supplied filters.</p>
-    pub fn get_or_all_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>> {
+    pub fn get_or_all_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>> {
         &self.or_all_filters
     }
     /// <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
-    pub fn not_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::boxed::Box<crate::types::AttributeFilter>>,
-    ) -> Self {
+    pub fn not_filter(mut self, input: impl ::std::convert::Into<::std::boxed::Box<crate::types::AttributeFilter>>) -> Self {
         self.not_filter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
-    pub fn set_not_filter(
-        mut self,
-        input: ::std::option::Option<::std::boxed::Box<crate::types::AttributeFilter>>,
-    ) -> Self {
+    pub fn set_not_filter(mut self, input: ::std::option::Option<::std::boxed::Box<crate::types::AttributeFilter>>) -> Self {
         self.not_filter = input;
         self
     }
     /// <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
-    pub fn get_not_filter(
-        &self,
-    ) -> &::std::option::Option<::std::boxed::Box<crate::types::AttributeFilter>> {
+    pub fn get_not_filter(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::AttributeFilter>> {
         &self.not_filter
     }
     /// <p>Performs an equals operation on two document attributes or metadata fields.</p>
@@ -195,10 +171,7 @@ impl AttributeFilterBuilder {
         self
     }
     /// <p>Performs an equals operation on two document attributes or metadata fields.</p>
-    pub fn set_equals_to(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentAttribute>,
-    ) -> Self {
+    pub fn set_equals_to(mut self, input: ::std::option::Option<crate::types::DocumentAttribute>) -> Self {
         self.equals_to = input;
         self
     }
@@ -212,10 +185,7 @@ impl AttributeFilterBuilder {
         self
     }
     /// <p>Returns true when a document contains all of the specified document attributes or metadata fields. This filter is only applicable to <code>StringListValue</code> metadata.</p>
-    pub fn set_contains_all(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentAttribute>,
-    ) -> Self {
+    pub fn set_contains_all(mut self, input: ::std::option::Option<crate::types::DocumentAttribute>) -> Self {
         self.contains_all = input;
         self
     }
@@ -229,10 +199,7 @@ impl AttributeFilterBuilder {
         self
     }
     /// <p>Returns true when a document contains any of the specified document attributes or metadata fields. This filter is only applicable to <code>StringListValue</code> metadata.</p>
-    pub fn set_contains_any(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentAttribute>,
-    ) -> Self {
+    pub fn set_contains_any(mut self, input: ::std::option::Option<crate::types::DocumentAttribute>) -> Self {
         self.contains_any = input;
         self
     }
@@ -246,10 +213,7 @@ impl AttributeFilterBuilder {
         self
     }
     /// <p>Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
-    pub fn set_greater_than(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentAttribute>,
-    ) -> Self {
+    pub fn set_greater_than(mut self, input: ::std::option::Option<crate::types::DocumentAttribute>) -> Self {
         self.greater_than = input;
         self
     }
@@ -263,17 +227,12 @@ impl AttributeFilterBuilder {
         self
     }
     /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
-    pub fn set_greater_than_or_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentAttribute>,
-    ) -> Self {
+    pub fn set_greater_than_or_equals(mut self, input: ::std::option::Option<crate::types::DocumentAttribute>) -> Self {
         self.greater_than_or_equals = input;
         self
     }
     /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
-    pub fn get_greater_than_or_equals(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentAttribute> {
+    pub fn get_greater_than_or_equals(&self) -> &::std::option::Option<crate::types::DocumentAttribute> {
         &self.greater_than_or_equals
     }
     /// <p>Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
@@ -282,10 +241,7 @@ impl AttributeFilterBuilder {
         self
     }
     /// <p>Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
-    pub fn set_less_than(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentAttribute>,
-    ) -> Self {
+    pub fn set_less_than(mut self, input: ::std::option::Option<crate::types::DocumentAttribute>) -> Self {
         self.less_than = input;
         self
     }
@@ -299,17 +255,12 @@ impl AttributeFilterBuilder {
         self
     }
     /// <p>Performs a less than or equals operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
-    pub fn set_less_than_or_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentAttribute>,
-    ) -> Self {
+    pub fn set_less_than_or_equals(mut self, input: ::std::option::Option<crate::types::DocumentAttribute>) -> Self {
         self.less_than_or_equals = input;
         self
     }
     /// <p>Performs a less than or equals operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
-    pub fn get_less_than_or_equals(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentAttribute> {
+    pub fn get_less_than_or_equals(&self) -> &::std::option::Option<crate::types::DocumentAttribute> {
         &self.less_than_or_equals
     }
     /// Consumes the builder and constructs a [`AttributeFilter`](crate::types::AttributeFilter).

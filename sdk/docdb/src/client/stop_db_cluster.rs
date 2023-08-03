@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StopDbClusterOutput`](crate::operation::stop_db_cluster::StopDbClusterOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::stop_db_cluster::StopDbClusterOutput::db_cluster): <p>Detailed information about a cluster. </p>
     /// - On failure, responds with [`SdkError<StopDBClusterError>`](crate::operation::stop_db_cluster::StopDBClusterError)
-    pub fn stop_db_cluster(
-        &self,
-    ) -> crate::operation::stop_db_cluster::builders::StopDBClusterFluentBuilder {
-        crate::operation::stop_db_cluster::builders::StopDBClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_db_cluster(&self) -> crate::operation::stop_db_cluster::builders::StopDBClusterFluentBuilder {
+        crate::operation::stop_db_cluster::builders::StopDBClusterFluentBuilder::new(self.handle.clone())
     }
 }

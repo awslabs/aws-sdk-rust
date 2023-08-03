@@ -10,10 +10,7 @@ impl GetDifferencesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_differences::GetDifferencesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_differences::GetDifferencesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_differences::GetDifferencesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_differences();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetDifferencesFluentBuilder {
         }
     }
     /// Access the GetDifferences as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_differences::builders::GetDifferencesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_differences::builders::GetDifferencesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetDifferencesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,27 +109,16 @@ impl GetDifferencesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_differences::paginator::GetDifferencesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_differences::paginator::GetDifferencesPaginator {
-        crate::operation::get_differences::paginator::GetDifferencesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_differences::paginator::GetDifferencesPaginator {
+        crate::operation::get_differences::paginator::GetDifferencesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the repository where you want to get differences.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository where you want to get differences.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -146,18 +127,12 @@ impl GetDifferencesFluentBuilder {
         self.inner.get_repository_name()
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>
-    pub fn before_commit_specifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.before_commit_specifier(input.into());
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>
-    pub fn set_before_commit_specifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_before_commit_specifier(input);
         self
     }
@@ -166,18 +141,12 @@ impl GetDifferencesFluentBuilder {
         self.inner.get_before_commit_specifier()
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
-    pub fn after_commit_specifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.after_commit_specifier(input.into());
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
-    pub fn set_after_commit_specifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_after_commit_specifier(input);
         self
     }

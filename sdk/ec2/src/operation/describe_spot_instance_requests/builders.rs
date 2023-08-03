@@ -29,7 +29,7 @@ impl DescribeSpotInstanceRequestsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSpotInstanceRequestsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsInputBuilder,
+    inner: crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsInputBuilder,
 }
 impl DescribeSpotInstanceRequestsFluentBuilder {
     /// Creates a new `DescribeSpotInstanceRequests`.
@@ -40,7 +40,7 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
         }
     }
     /// Access the DescribeSpotInstanceRequests as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
             crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequests,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError>,
     > {
         self.send_middleware().await
     }
@@ -117,16 +108,14 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
             crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequests,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_spot_instance_requests::paginator::DescribeSpotInstanceRequestsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_spot_instance_requests::paginator::DescribeSpotInstanceRequestsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_spot_instance_requests::paginator::DescribeSpotInstanceRequestsPaginator {
         crate::operation::describe_spot_instance_requests::paginator::DescribeSpotInstanceRequestsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
@@ -223,10 +212,7 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
     /// <li> <p> <code>valid-from</code> - The start date of the request.</p> </li>
     /// <li> <p> <code>valid-until</code> - The end date of the request.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -295,25 +281,17 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
     /// To override the contents of this collection use [`set_spot_instance_request_ids`](Self::set_spot_instance_request_ids).
     ///
     /// <p>The IDs of the Spot Instance requests.</p>
-    pub fn spot_instance_request_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_instance_request_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.spot_instance_request_ids(input.into());
         self
     }
     /// <p>The IDs of the Spot Instance requests.</p>
-    pub fn set_spot_instance_request_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_spot_instance_request_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_spot_instance_request_ids(input);
         self
     }
     /// <p>The IDs of the Spot Instance requests.</p>
-    pub fn get_spot_instance_request_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_spot_instance_request_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_spot_instance_request_ids()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>

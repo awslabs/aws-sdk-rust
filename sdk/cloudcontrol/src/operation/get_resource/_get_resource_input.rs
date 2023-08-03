@@ -53,9 +53,7 @@ impl GetResourceInput {
 
 /// A builder for [`GetResourceInput`](crate::operation::get_resource::GetResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceInputBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
     pub(crate) type_version_id: ::std::option::Option<::std::string::String>,
@@ -78,18 +76,12 @@ impl GetResourceInputBuilder {
         &self.type_name
     }
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    pub fn type_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    pub fn set_type_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_type_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_version_id = input;
         self
     }
@@ -141,12 +133,7 @@ impl GetResourceInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetResourceInput`](crate::operation::get_resource::GetResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resource::GetResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource::GetResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_resource::GetResourceInput {
             type_name: self.type_name,
             type_version_id: self.type_version_id,

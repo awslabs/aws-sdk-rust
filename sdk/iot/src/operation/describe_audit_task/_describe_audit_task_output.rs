@@ -20,9 +20,7 @@ pub struct DescribeAuditTaskOutput {
     pub scheduled_audit_name: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about each check performed during this audit.</p>
     #[doc(hidden)]
-    pub audit_details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AuditCheckDetails>,
-    >,
+    pub audit_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckDetails>>,
     _request_id: Option<String>,
 }
 impl DescribeAuditTaskOutput {
@@ -47,11 +45,7 @@ impl DescribeAuditTaskOutput {
         self.scheduled_audit_name.as_deref()
     }
     /// <p>Detailed information about each check performed during this audit.</p>
-    pub fn audit_details(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::AuditCheckDetails>,
-    > {
+    pub fn audit_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AuditCheckDetails>> {
         self.audit_details.as_ref()
     }
 }
@@ -62,26 +56,21 @@ impl ::aws_http::request_id::RequestId for DescribeAuditTaskOutput {
 }
 impl DescribeAuditTaskOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAuditTaskOutput`](crate::operation::describe_audit_task::DescribeAuditTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_audit_task::builders::DescribeAuditTaskOutputBuilder {
+    pub fn builder() -> crate::operation::describe_audit_task::builders::DescribeAuditTaskOutputBuilder {
         crate::operation::describe_audit_task::builders::DescribeAuditTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAuditTaskOutput`](crate::operation::describe_audit_task::DescribeAuditTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAuditTaskOutputBuilder {
     pub(crate) task_status: ::std::option::Option<crate::types::AuditTaskStatus>,
     pub(crate) task_type: ::std::option::Option<crate::types::AuditTaskType>,
     pub(crate) task_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) task_statistics: ::std::option::Option<crate::types::TaskStatistics>,
     pub(crate) scheduled_audit_name: ::std::option::Option<::std::string::String>,
-    pub(crate) audit_details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AuditCheckDetails>,
-    >,
+    pub(crate) audit_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckDetails>>,
     _request_id: Option<String>,
 }
 impl DescribeAuditTaskOutputBuilder {
@@ -91,10 +80,7 @@ impl DescribeAuditTaskOutputBuilder {
         self
     }
     /// <p>The status of the audit: one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
-    pub fn set_task_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditTaskStatus>,
-    ) -> Self {
+    pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::AuditTaskStatus>) -> Self {
         self.task_status = input;
         self
     }
@@ -108,10 +94,7 @@ impl DescribeAuditTaskOutputBuilder {
         self
     }
     /// <p>The type of audit: "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".</p>
-    pub fn set_task_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditTaskType>,
-    ) -> Self {
+    pub fn set_task_type(mut self, input: ::std::option::Option<crate::types::AuditTaskType>) -> Self {
         self.task_type = input;
         self
     }
@@ -125,10 +108,7 @@ impl DescribeAuditTaskOutputBuilder {
         self
     }
     /// <p>The time the audit started.</p>
-    pub fn set_task_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_task_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.task_start_time = input;
         self
     }
@@ -142,10 +122,7 @@ impl DescribeAuditTaskOutputBuilder {
         self
     }
     /// <p>Statistical information about the audit.</p>
-    pub fn set_task_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskStatistics>,
-    ) -> Self {
+    pub fn set_task_statistics(mut self, input: ::std::option::Option<crate::types::TaskStatistics>) -> Self {
         self.task_statistics = input;
         self
     }
@@ -154,18 +131,12 @@ impl DescribeAuditTaskOutputBuilder {
         &self.task_statistics
     }
     /// <p>The name of the scheduled audit (only if the audit was a scheduled audit).</p>
-    pub fn scheduled_audit_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_audit_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_audit_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scheduled audit (only if the audit was a scheduled audit).</p>
-    pub fn set_scheduled_audit_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_audit_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_audit_name = input;
         self
     }
@@ -178,11 +149,7 @@ impl DescribeAuditTaskOutputBuilder {
     /// To override the contents of this collection use [`set_audit_details`](Self::set_audit_details).
     ///
     /// <p>Detailed information about each check performed during this audit.</p>
-    pub fn audit_details(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::AuditCheckDetails,
-    ) -> Self {
+    pub fn audit_details(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AuditCheckDetails) -> Self {
         let mut hash_map = self.audit_details.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.audit_details = ::std::option::Option::Some(hash_map);
@@ -191,19 +158,13 @@ impl DescribeAuditTaskOutputBuilder {
     /// <p>Detailed information about each check performed during this audit.</p>
     pub fn set_audit_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::AuditCheckDetails>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckDetails>>,
     ) -> Self {
         self.audit_details = input;
         self
     }
     /// <p>Detailed information about each check performed during this audit.</p>
-    pub fn get_audit_details(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AuditCheckDetails>,
-    > {
+    pub fn get_audit_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckDetails>> {
         &self.audit_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

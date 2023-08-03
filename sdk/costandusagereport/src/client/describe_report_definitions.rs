@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`report_definitions(Option<Vec<ReportDefinition>>)`](crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput::report_definitions): <p>A list of AWS Cost and Usage reports owned by the account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput::next_token): <p>A generic string.</p>
     /// - On failure, responds with [`SdkError<DescribeReportDefinitionsError>`](crate::operation::describe_report_definitions::DescribeReportDefinitionsError)
-    pub fn describe_report_definitions(&self) -> crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder{
+    pub fn describe_report_definitions(&self) -> crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder {
         crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

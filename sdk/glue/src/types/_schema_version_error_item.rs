@@ -30,9 +30,7 @@ impl SchemaVersionErrorItem {
 
 /// A builder for [`SchemaVersionErrorItem`](crate::types::SchemaVersionErrorItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaVersionErrorItemBuilder {
     pub(crate) version_number: ::std::option::Option<i64>,
     pub(crate) error_details: ::std::option::Option<crate::types::ErrorDetails>,
@@ -58,10 +56,7 @@ impl SchemaVersionErrorItemBuilder {
         self
     }
     /// <p>The details of the error for the schema version.</p>
-    pub fn set_error_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorDetails>,
-    ) -> Self {
+    pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
         self.error_details = input;
         self
     }

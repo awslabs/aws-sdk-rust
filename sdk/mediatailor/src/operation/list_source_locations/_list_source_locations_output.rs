@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListSourceLocationsOutput {
 }
 impl ListSourceLocationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSourceLocationsOutput`](crate::operation::list_source_locations::ListSourceLocationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_source_locations::builders::ListSourceLocationsOutputBuilder {
-        crate::operation::list_source_locations::builders::ListSourceLocationsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_source_locations::builders::ListSourceLocationsOutputBuilder {
+        crate::operation::list_source_locations::builders::ListSourceLocationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSourceLocationsOutput`](crate::operation::list_source_locations::ListSourceLocationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSourceLocationsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::SourceLocation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListSourceLocationsOutputBuilder {
         self
     }
     /// <p>A list of source locations.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceLocation>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceLocation>>) -> Self {
         self.items = input;
         self
     }
     /// <p>A list of source locations.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceLocation>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceLocation>> {
         &self.items
     }
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>

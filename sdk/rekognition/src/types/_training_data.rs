@@ -23,9 +23,7 @@ impl TrainingData {
 
 /// A builder for [`TrainingData`](crate::types::TrainingData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrainingDataBuilder {
     pub(crate) assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
 }
@@ -42,10 +40,7 @@ impl TrainingDataBuilder {
         self
     }
     /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
-    pub fn set_assets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
-    ) -> Self {
+    pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>) -> Self {
         self.assets = input;
         self
     }
@@ -55,8 +50,6 @@ impl TrainingDataBuilder {
     }
     /// Consumes the builder and constructs a [`TrainingData`](crate::types::TrainingData).
     pub fn build(self) -> crate::types::TrainingData {
-        crate::types::TrainingData {
-            assets: self.assets,
-        }
+        crate::types::TrainingData { assets: self.assets }
     }
 }

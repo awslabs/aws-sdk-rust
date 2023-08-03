@@ -15,40 +15,30 @@ impl GetDistributionConfigurationInput {
 }
 impl GetDistributionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetDistributionConfigurationInput`](crate::operation::get_distribution_configuration::GetDistributionConfigurationInput).
-    pub fn builder() -> crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationInputBuilder {
         crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDistributionConfigurationInput`](crate::operation::get_distribution_configuration::GetDistributionConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDistributionConfigurationInputBuilder {
     pub(crate) distribution_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetDistributionConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
-    pub fn distribution_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
-    pub fn set_distribution_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_configuration_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
-    pub fn get_distribution_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_distribution_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.distribution_configuration_arn
     }
     /// Consumes the builder and constructs a [`GetDistributionConfigurationInput`](crate::operation::get_distribution_configuration::GetDistributionConfigurationInput).
@@ -58,10 +48,8 @@ impl GetDistributionConfigurationInputBuilder {
         crate::operation::get_distribution_configuration::GetDistributionConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_distribution_configuration::GetDistributionConfigurationInput {
-                distribution_configuration_arn: self.distribution_configuration_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_distribution_configuration::GetDistributionConfigurationInput {
+            distribution_configuration_arn: self.distribution_configuration_arn,
+        })
     }
 }

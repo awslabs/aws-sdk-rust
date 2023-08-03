@@ -30,16 +30,14 @@ impl ::aws_http::request_id::RequestId for ExportEbsVolumeRecommendationsOutput 
 }
 impl ExportEbsVolumeRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ExportEbsVolumeRecommendationsOutput`](crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsOutput).
-    pub fn builder() -> crate::operation::export_ebs_volume_recommendations::builders::ExportEbsVolumeRecommendationsOutputBuilder{
+    pub fn builder() -> crate::operation::export_ebs_volume_recommendations::builders::ExportEbsVolumeRecommendationsOutputBuilder {
         crate::operation::export_ebs_volume_recommendations::builders::ExportEbsVolumeRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExportEbsVolumeRecommendationsOutput`](crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportEbsVolumeRecommendationsOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_destination: ::std::option::Option<crate::types::S3Destination>,
@@ -69,10 +67,7 @@ impl ExportEbsVolumeRecommendationsOutputBuilder {
         self
     }
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Destination>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::S3Destination>) -> Self {
         self.s3_destination = input;
         self
     }
@@ -90,10 +85,7 @@ impl ExportEbsVolumeRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ExportEbsVolumeRecommendationsOutput`](crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsOutput
-    {
+    pub fn build(self) -> crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsOutput {
         crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsOutput {
             job_id: self.job_id,
             s3_destination: self.s3_destination,

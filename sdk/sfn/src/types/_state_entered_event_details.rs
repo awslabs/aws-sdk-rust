@@ -24,9 +24,7 @@ impl StateEnteredEventDetails {
         self.input.as_deref()
     }
     /// <p>Contains details about the input for an execution history event.</p>
-    pub fn input_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
+    pub fn input_details(&self) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
         self.input_details.as_ref()
     }
 }
@@ -89,17 +87,12 @@ impl StateEnteredEventDetailsBuilder {
         self
     }
     /// <p>Contains details about the input for an execution history event.</p>
-    pub fn set_input_details(
-        mut self,
-        input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
-    ) -> Self {
+    pub fn set_input_details(mut self, input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>) -> Self {
         self.input_details = input;
         self
     }
     /// <p>Contains details about the input for an execution history event.</p>
-    pub fn get_input_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
+    pub fn get_input_details(&self) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
         &self.input_details
     }
     /// Consumes the builder and constructs a [`StateEnteredEventDetails`](crate::types::StateEnteredEventDetails).

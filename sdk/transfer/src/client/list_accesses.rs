@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`server_id(Option<String>)`](crate::operation::list_accesses::ListAccessesOutput::server_id): <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
     ///   - [`accesses(Option<Vec<ListedAccess>>)`](crate::operation::list_accesses::ListAccessesOutput::accesses): <p>Returns the accesses and their properties for the <code>ServerId</code> value that you specify.</p>
     /// - On failure, responds with [`SdkError<ListAccessesError>`](crate::operation::list_accesses::ListAccessesError)
-    pub fn list_accesses(
-        &self,
-    ) -> crate::operation::list_accesses::builders::ListAccessesFluentBuilder {
-        crate::operation::list_accesses::builders::ListAccessesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_accesses(&self) -> crate::operation::list_accesses::builders::ListAccessesFluentBuilder {
+        crate::operation::list_accesses::builders::ListAccessesFluentBuilder::new(self.handle.clone())
     }
 }

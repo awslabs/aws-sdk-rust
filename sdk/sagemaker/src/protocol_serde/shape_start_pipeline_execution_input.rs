@@ -7,9 +7,7 @@ pub fn ser_start_pipeline_execution_input(
         object.key("PipelineName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.pipeline_execution_display_name {
-        object
-            .key("PipelineExecutionDisplayName")
-            .string(var_2.as_str());
+        object.key("PipelineExecutionDisplayName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.pipeline_parameters {
         let mut array_4 = object.key("PipelineParameters").start_array();
@@ -24,9 +22,7 @@ pub fn ser_start_pipeline_execution_input(
         array_4.finish();
     }
     if let Some(var_7) = &input.pipeline_execution_description {
-        object
-            .key("PipelineExecutionDescription")
-            .string(var_7.as_str());
+        object.key("PipelineExecutionDescription").string(var_7.as_str());
     }
     if let Some(var_8) = &input.client_request_token {
         object.key("ClientRequestToken").string(var_8.as_str());
@@ -34,19 +30,13 @@ pub fn ser_start_pipeline_execution_input(
     if let Some(var_9) = &input.parallelism_configuration {
         #[allow(unused_mut)]
         let mut object_10 = object.key("ParallelismConfiguration").start_object();
-        crate::protocol_serde::shape_parallelism_configuration::ser_parallelism_configuration(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_parallelism_configuration::ser_parallelism_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.selective_execution_config {
         #[allow(unused_mut)]
         let mut object_12 = object.key("SelectiveExecutionConfig").start_object();
-        crate::protocol_serde::shape_selective_execution_config::ser_selective_execution_config(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_selective_execution_config::ser_selective_execution_config(&mut object_12, var_11)?;
         object_12.finish();
     }
     Ok(())

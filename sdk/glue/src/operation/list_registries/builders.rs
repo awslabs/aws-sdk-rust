@@ -10,10 +10,7 @@ impl ListRegistriesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_registries::ListRegistriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_registries::ListRegistriesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_registries::ListRegistriesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_registries();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListRegistriesFluentBuilder {
         }
     }
     /// Access the ListRegistries as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_registries::builders::ListRegistriesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_registries::builders::ListRegistriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListRegistriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListRegistriesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_registries::paginator::ListRegistriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_registries::paginator::ListRegistriesPaginator {
-        crate::operation::list_registries::paginator::ListRegistriesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_registries::paginator::ListRegistriesPaginator {
+        crate::operation::list_registries::paginator::ListRegistriesPaginator::new(self.handle, self.inner)
     }
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {

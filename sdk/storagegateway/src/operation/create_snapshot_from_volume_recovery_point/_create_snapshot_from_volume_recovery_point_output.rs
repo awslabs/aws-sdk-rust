@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateSnapshotFromVolumeRecoveryPoint
 }
 impl CreateSnapshotFromVolumeRecoveryPointOutput {
     /// Creates a new builder-style object to manufacture [`CreateSnapshotFromVolumeRecoveryPointOutput`](crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointOutput).
-    pub fn builder() -> crate::operation::create_snapshot_from_volume_recovery_point::builders::CreateSnapshotFromVolumeRecoveryPointOutputBuilder{
+    pub fn builder() -> crate::operation::create_snapshot_from_volume_recovery_point::builders::CreateSnapshotFromVolumeRecoveryPointOutputBuilder {
         crate::operation::create_snapshot_from_volume_recovery_point::builders::CreateSnapshotFromVolumeRecoveryPointOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSnapshotFromVolumeRecoveryPointOutput`](crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSnapshotFromVolumeRecoveryPointOutputBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
@@ -81,18 +79,12 @@ impl CreateSnapshotFromVolumeRecoveryPointOutputBuilder {
         &self.volume_arn
     }
     /// <p>The time the volume was created from the recovery point.</p>
-    pub fn volume_recovery_point_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_recovery_point_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_recovery_point_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time the volume was created from the recovery point.</p>
-    pub fn set_volume_recovery_point_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_recovery_point_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_recovery_point_time = input;
         self
     }
@@ -110,14 +102,11 @@ impl CreateSnapshotFromVolumeRecoveryPointOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateSnapshotFromVolumeRecoveryPointOutput`](crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointOutput).
-    pub fn build(self) -> crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointOutput{
+    pub fn build(self) -> crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointOutput {
         crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointOutput {
-            snapshot_id: self.snapshot_id
-            ,
-            volume_arn: self.volume_arn
-            ,
-            volume_recovery_point_time: self.volume_recovery_point_time
-            ,
+            snapshot_id: self.snapshot_id,
+            volume_arn: self.volume_arn,
+            volume_recovery_point_time: self.volume_recovery_point_time,
             _request_id: self._request_id,
         }
     }

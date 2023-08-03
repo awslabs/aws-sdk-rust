@@ -16,7 +16,7 @@ impl super::Client {
     /// - On success, responds with [`StartOutboundVoiceContactOutput`](crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactOutput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactOutput::contact_id): <p>The identifier of this contact within the Amazon Connect instance.</p>
     /// - On failure, responds with [`SdkError<StartOutboundVoiceContactError>`](crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactError)
-    pub fn start_outbound_voice_contact(&self) -> crate::operation::start_outbound_voice_contact::builders::StartOutboundVoiceContactFluentBuilder{
+    pub fn start_outbound_voice_contact(&self) -> crate::operation::start_outbound_voice_contact::builders::StartOutboundVoiceContactFluentBuilder {
         crate::operation::start_outbound_voice_contact::builders::StartOutboundVoiceContactFluentBuilder::new(self.handle.clone())
     }
 }

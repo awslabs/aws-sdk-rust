@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LaunchTemplateErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,17 +65,11 @@ impl ::std::convert::From<&str> for LaunchTemplateErrorCode {
         match s {
             "launchTemplateIdDoesNotExist" => LaunchTemplateErrorCode::LaunchTemplateIdDoesNotExist,
             "launchTemplateIdMalformed" => LaunchTemplateErrorCode::LaunchTemplateIdMalformed,
-            "launchTemplateNameDoesNotExist" => {
-                LaunchTemplateErrorCode::LaunchTemplateNameDoesNotExist
-            }
+            "launchTemplateNameDoesNotExist" => LaunchTemplateErrorCode::LaunchTemplateNameDoesNotExist,
             "launchTemplateNameMalformed" => LaunchTemplateErrorCode::LaunchTemplateNameMalformed,
-            "launchTemplateVersionDoesNotExist" => {
-                LaunchTemplateErrorCode::LaunchTemplateVersionDoesNotExist
-            }
+            "launchTemplateVersionDoesNotExist" => LaunchTemplateErrorCode::LaunchTemplateVersionDoesNotExist,
             "unexpectedError" => LaunchTemplateErrorCode::UnexpectedError,
-            other => LaunchTemplateErrorCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LaunchTemplateErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +86,9 @@ impl LaunchTemplateErrorCode {
         match self {
             LaunchTemplateErrorCode::LaunchTemplateIdDoesNotExist => "launchTemplateIdDoesNotExist",
             LaunchTemplateErrorCode::LaunchTemplateIdMalformed => "launchTemplateIdMalformed",
-            LaunchTemplateErrorCode::LaunchTemplateNameDoesNotExist => {
-                "launchTemplateNameDoesNotExist"
-            }
+            LaunchTemplateErrorCode::LaunchTemplateNameDoesNotExist => "launchTemplateNameDoesNotExist",
             LaunchTemplateErrorCode::LaunchTemplateNameMalformed => "launchTemplateNameMalformed",
-            LaunchTemplateErrorCode::LaunchTemplateVersionDoesNotExist => {
-                "launchTemplateVersionDoesNotExist"
-            }
+            LaunchTemplateErrorCode::LaunchTemplateVersionDoesNotExist => "launchTemplateVersionDoesNotExist",
             LaunchTemplateErrorCode::UnexpectedError => "unexpectedError",
             LaunchTemplateErrorCode::Unknown(value) => value.as_str(),
         }

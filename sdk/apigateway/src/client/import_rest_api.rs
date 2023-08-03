@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::import_rest_api::ImportRestApiOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     ///   - [`disable_execute_api_endpoint(bool)`](crate::operation::import_rest_api::ImportRestApiOutput::disable_execute_api_endpoint): <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     /// - On failure, responds with [`SdkError<ImportRestApiError>`](crate::operation::import_rest_api::ImportRestApiError)
-    pub fn import_rest_api(
-        &self,
-    ) -> crate::operation::import_rest_api::builders::ImportRestApiFluentBuilder {
-        crate::operation::import_rest_api::builders::ImportRestApiFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_rest_api(&self) -> crate::operation::import_rest_api::builders::ImportRestApiFluentBuilder {
+        crate::operation::import_rest_api::builders::ImportRestApiFluentBuilder::new(self.handle.clone())
     }
 }

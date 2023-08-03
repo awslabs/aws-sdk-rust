@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`step_executions(Option<Vec<StepExecution>>)`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsOutput::step_executions): <p>A list of details about the current state of all steps that make up an execution.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeAutomationStepExecutionsError>`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError)
-    pub fn describe_automation_step_executions(&self) -> crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder{
+    pub fn describe_automation_step_executions(
+        &self,
+    ) -> crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder {
         crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

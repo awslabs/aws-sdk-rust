@@ -11,13 +11,10 @@ pub struct UpdateMediaInsightsPipelineConfigurationInput {
     pub resource_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings for real-time alerts for the media insights pipeline.</p>
     #[doc(hidden)]
-    pub real_time_alert_configuration:
-        ::std::option::Option<crate::types::RealTimeAlertConfiguration>,
+    pub real_time_alert_configuration: ::std::option::Option<crate::types::RealTimeAlertConfiguration>,
     /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream..</p>
     #[doc(hidden)]
-    pub elements: ::std::option::Option<
-        ::std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>,
-    >,
+    pub elements: ::std::option::Option<::std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>>,
 }
 impl UpdateMediaInsightsPipelineConfigurationInput {
     /// <p>The unique identifier for the resource to be updated. Valid values include the name and ARN of the media insights pipeline configuration.</p>
@@ -29,15 +26,11 @@ impl UpdateMediaInsightsPipelineConfigurationInput {
         self.resource_access_role_arn.as_deref()
     }
     /// <p>The configuration settings for real-time alerts for the media insights pipeline.</p>
-    pub fn real_time_alert_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RealTimeAlertConfiguration> {
+    pub fn real_time_alert_configuration(&self) -> ::std::option::Option<&crate::types::RealTimeAlertConfiguration> {
         self.real_time_alert_configuration.as_ref()
     }
     /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream..</p>
-    pub fn elements(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MediaInsightsPipelineConfigurationElement]> {
+    pub fn elements(&self) -> ::std::option::Option<&[crate::types::MediaInsightsPipelineConfigurationElement]> {
         self.elements.as_deref()
     }
 }
@@ -45,21 +38,16 @@ impl ::std::fmt::Debug for UpdateMediaInsightsPipelineConfigurationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMediaInsightsPipelineConfigurationInput");
         formatter.field("identifier", &self.identifier);
-        formatter.field(
-            "resource_access_role_arn",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field(
-            "real_time_alert_configuration",
-            &self.real_time_alert_configuration,
-        );
+        formatter.field("resource_access_role_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("real_time_alert_configuration", &self.real_time_alert_configuration);
         formatter.field("elements", &self.elements);
         formatter.finish()
     }
 }
 impl UpdateMediaInsightsPipelineConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateMediaInsightsPipelineConfigurationInput`](crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationInput).
-    pub fn builder() -> crate::operation::update_media_insights_pipeline_configuration::builders::UpdateMediaInsightsPipelineConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_media_insights_pipeline_configuration::builders::UpdateMediaInsightsPipelineConfigurationInputBuilder
+    {
         crate::operation::update_media_insights_pipeline_configuration::builders::UpdateMediaInsightsPipelineConfigurationInputBuilder::default()
     }
 }
@@ -70,11 +58,8 @@ impl UpdateMediaInsightsPipelineConfigurationInput {
 pub struct UpdateMediaInsightsPipelineConfigurationInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_access_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) real_time_alert_configuration:
-        ::std::option::Option<crate::types::RealTimeAlertConfiguration>,
-    pub(crate) elements: ::std::option::Option<
-        ::std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>,
-    >,
+    pub(crate) real_time_alert_configuration: ::std::option::Option<crate::types::RealTimeAlertConfiguration>,
+    pub(crate) elements: ::std::option::Option<::std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>>,
 }
 impl UpdateMediaInsightsPipelineConfigurationInputBuilder {
     /// <p>The unique identifier for the resource to be updated. Valid values include the name and ARN of the media insights pipeline configuration.</p>
@@ -92,18 +77,12 @@ impl UpdateMediaInsightsPipelineConfigurationInputBuilder {
         &self.identifier
     }
     /// <p>The ARN of the role used by the service to access Amazon Web Services resources.</p>
-    pub fn resource_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the role used by the service to access Amazon Web Services resources.</p>
-    pub fn set_resource_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_access_role_arn = input;
         self
     }
@@ -112,25 +91,17 @@ impl UpdateMediaInsightsPipelineConfigurationInputBuilder {
         &self.resource_access_role_arn
     }
     /// <p>The configuration settings for real-time alerts for the media insights pipeline.</p>
-    pub fn real_time_alert_configuration(
-        mut self,
-        input: crate::types::RealTimeAlertConfiguration,
-    ) -> Self {
+    pub fn real_time_alert_configuration(mut self, input: crate::types::RealTimeAlertConfiguration) -> Self {
         self.real_time_alert_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration settings for real-time alerts for the media insights pipeline.</p>
-    pub fn set_real_time_alert_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RealTimeAlertConfiguration>,
-    ) -> Self {
+    pub fn set_real_time_alert_configuration(mut self, input: ::std::option::Option<crate::types::RealTimeAlertConfiguration>) -> Self {
         self.real_time_alert_configuration = input;
         self
     }
     /// <p>The configuration settings for real-time alerts for the media insights pipeline.</p>
-    pub fn get_real_time_alert_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RealTimeAlertConfiguration> {
+    pub fn get_real_time_alert_configuration(&self) -> &::std::option::Option<crate::types::RealTimeAlertConfiguration> {
         &self.real_time_alert_configuration
     }
     /// Appends an item to `elements`.
@@ -138,46 +109,35 @@ impl UpdateMediaInsightsPipelineConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_elements`](Self::set_elements).
     ///
     /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream..</p>
-    pub fn elements(
-        mut self,
-        input: crate::types::MediaInsightsPipelineConfigurationElement,
-    ) -> Self {
+    pub fn elements(mut self, input: crate::types::MediaInsightsPipelineConfigurationElement) -> Self {
         let mut v = self.elements.unwrap_or_default();
         v.push(input);
         self.elements = ::std::option::Option::Some(v);
         self
     }
     /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream..</p>
-    pub fn set_elements(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>,
-        >,
-    ) -> Self {
+    pub fn set_elements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>>) -> Self {
         self.elements = input;
         self
     }
     /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream..</p>
-    pub fn get_elements(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>,
-    > {
+    pub fn get_elements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>> {
         &self.elements
     }
     /// Consumes the builder and constructs a [`UpdateMediaInsightsPipelineConfigurationInput`](crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationInput {
-                identifier: self.identifier
-                ,
-                resource_access_role_arn: self.resource_access_role_arn
-                ,
-                real_time_alert_configuration: self.real_time_alert_configuration
-                ,
-                elements: self.elements
-                ,
-            }
+                identifier: self.identifier,
+                resource_access_role_arn: self.resource_access_role_arn,
+                real_time_alert_configuration: self.real_time_alert_configuration,
+                elements: self.elements,
+            },
         )
     }
 }
@@ -185,14 +145,8 @@ impl ::std::fmt::Debug for UpdateMediaInsightsPipelineConfigurationInputBuilder 
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMediaInsightsPipelineConfigurationInputBuilder");
         formatter.field("identifier", &self.identifier);
-        formatter.field(
-            "resource_access_role_arn",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field(
-            "real_time_alert_configuration",
-            &self.real_time_alert_configuration,
-        );
+        formatter.field("resource_access_role_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("real_time_alert_configuration", &self.real_time_alert_configuration);
         formatter.field("elements", &self.elements);
         formatter.finish()
     }

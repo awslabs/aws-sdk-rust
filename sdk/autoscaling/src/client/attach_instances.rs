@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`auto_scaling_group_name(impl ::std::convert::Into<String>)`](crate::operation::attach_instances::builders::AttachInstancesFluentBuilder::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::operation::attach_instances::builders::AttachInstancesFluentBuilder::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
     /// - On success, responds with [`AttachInstancesOutput`](crate::operation::attach_instances::AttachInstancesOutput)
     /// - On failure, responds with [`SdkError<AttachInstancesError>`](crate::operation::attach_instances::AttachInstancesError)
-    pub fn attach_instances(
-        &self,
-    ) -> crate::operation::attach_instances::builders::AttachInstancesFluentBuilder {
-        crate::operation::attach_instances::builders::AttachInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn attach_instances(&self) -> crate::operation::attach_instances::builders::AttachInstancesFluentBuilder {
+        crate::operation::attach_instances::builders::AttachInstancesFluentBuilder::new(self.handle.clone())
     }
 }

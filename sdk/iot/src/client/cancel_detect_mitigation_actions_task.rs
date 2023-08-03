@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`task_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_detect_mitigation_actions_task::builders::CancelDetectMitigationActionsTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::cancel_detect_mitigation_actions_task::builders::CancelDetectMitigationActionsTaskFluentBuilder::set_task_id): <p> The unique identifier of the task. </p>
     /// - On success, responds with [`CancelDetectMitigationActionsTaskOutput`](crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskOutput)
     /// - On failure, responds with [`SdkError<CancelDetectMitigationActionsTaskError>`](crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskError)
-    pub fn cancel_detect_mitigation_actions_task(&self) -> crate::operation::cancel_detect_mitigation_actions_task::builders::CancelDetectMitigationActionsTaskFluentBuilder{
+    pub fn cancel_detect_mitigation_actions_task(
+        &self,
+    ) -> crate::operation::cancel_detect_mitigation_actions_task::builders::CancelDetectMitigationActionsTaskFluentBuilder {
         crate::operation::cancel_detect_mitigation_actions_task::builders::CancelDetectMitigationActionsTaskFluentBuilder::new(self.handle.clone())
     }
 }

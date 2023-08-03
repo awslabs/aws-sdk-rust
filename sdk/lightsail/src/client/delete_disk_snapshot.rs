@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDiskSnapshotOutput`](crate::operation::delete_disk_snapshot::DeleteDiskSnapshotOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::delete_disk_snapshot::DeleteDiskSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteDiskSnapshotError>`](crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError)
-    pub fn delete_disk_snapshot(
-        &self,
-    ) -> crate::operation::delete_disk_snapshot::builders::DeleteDiskSnapshotFluentBuilder {
-        crate::operation::delete_disk_snapshot::builders::DeleteDiskSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_disk_snapshot(&self) -> crate::operation::delete_disk_snapshot::builders::DeleteDiskSnapshotFluentBuilder {
+        crate::operation::delete_disk_snapshot::builders::DeleteDiskSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

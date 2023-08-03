@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`tags_to_update(Vec<Tag>)`](crate::operation::update_tags_for_domain::builders::UpdateTagsForDomainFluentBuilder::tags_to_update) / [`set_tags_to_update(Option<Vec<Tag>>)`](crate::operation::update_tags_for_domain::builders::UpdateTagsForDomainFluentBuilder::set_tags_to_update): <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
     /// - On success, responds with [`UpdateTagsForDomainOutput`](crate::operation::update_tags_for_domain::UpdateTagsForDomainOutput)
     /// - On failure, responds with [`SdkError<UpdateTagsForDomainError>`](crate::operation::update_tags_for_domain::UpdateTagsForDomainError)
-    pub fn update_tags_for_domain(
-        &self,
-    ) -> crate::operation::update_tags_for_domain::builders::UpdateTagsForDomainFluentBuilder {
-        crate::operation::update_tags_for_domain::builders::UpdateTagsForDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_tags_for_domain(&self) -> crate::operation::update_tags_for_domain::builders::UpdateTagsForDomainFluentBuilder {
+        crate::operation::update_tags_for_domain::builders::UpdateTagsForDomainFluentBuilder::new(self.handle.clone())
     }
 }

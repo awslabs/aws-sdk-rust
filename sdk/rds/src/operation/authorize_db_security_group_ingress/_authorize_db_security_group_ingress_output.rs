@@ -23,16 +23,14 @@ impl ::aws_http::request_id::RequestId for AuthorizeDbSecurityGroupIngressOutput
 }
 impl AuthorizeDbSecurityGroupIngressOutput {
     /// Creates a new builder-style object to manufacture [`AuthorizeDbSecurityGroupIngressOutput`](crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput).
-    pub fn builder() -> crate::operation::authorize_db_security_group_ingress::builders::AuthorizeDbSecurityGroupIngressOutputBuilder{
+    pub fn builder() -> crate::operation::authorize_db_security_group_ingress::builders::AuthorizeDbSecurityGroupIngressOutputBuilder {
         crate::operation::authorize_db_security_group_ingress::builders::AuthorizeDbSecurityGroupIngressOutputBuilder::default()
     }
 }
 
 /// A builder for [`AuthorizeDbSecurityGroupIngressOutput`](crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizeDbSecurityGroupIngressOutputBuilder {
     pub(crate) db_security_group: ::std::option::Option<crate::types::DbSecurityGroup>,
     _request_id: Option<String>,
@@ -46,10 +44,7 @@ impl AuthorizeDbSecurityGroupIngressOutputBuilder {
     }
     /// <p>Contains the details for an Amazon RDS DB security group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
-    pub fn set_db_security_group(
-        mut self,
-        input: ::std::option::Option<crate::types::DbSecurityGroup>,
-    ) -> Self {
+    pub fn set_db_security_group(mut self, input: ::std::option::Option<crate::types::DbSecurityGroup>) -> Self {
         self.db_security_group = input;
         self
     }
@@ -68,13 +63,9 @@ impl AuthorizeDbSecurityGroupIngressOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AuthorizeDbSecurityGroupIngressOutput`](crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput
-    {
+    pub fn build(self) -> crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput {
         crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput {
-            db_security_group: self.db_security_group
-            ,
+            db_security_group: self.db_security_group,
             _request_id: self._request_id,
         }
     }

@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeSecurityConfigurationOutput {
 }
 impl DescribeSecurityConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityConfigurationOutput`](crate::operation::describe_security_configuration::DescribeSecurityConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_security_configuration::builders::DescribeSecurityConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_security_configuration::builders::DescribeSecurityConfigurationOutputBuilder {
         crate::operation::describe_security_configuration::builders::DescribeSecurityConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSecurityConfigurationOutput`](crate::operation::describe_security_configuration::DescribeSecurityConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSecurityConfigurationOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) security_configuration: ::std::option::Option<::std::string::String>,
@@ -67,18 +65,12 @@ impl DescribeSecurityConfigurationOutputBuilder {
         &self.name
     }
     /// <p>The security configuration details in JSON format.</p>
-    pub fn security_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The security configuration details in JSON format.</p>
-    pub fn set_security_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_configuration = input;
         self
     }
@@ -92,10 +84,7 @@ impl DescribeSecurityConfigurationOutputBuilder {
         self
     }
     /// <p>The date and time the security configuration was created</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -113,10 +102,7 @@ impl DescribeSecurityConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSecurityConfigurationOutput`](crate::operation::describe_security_configuration::DescribeSecurityConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_security_configuration::DescribeSecurityConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::describe_security_configuration::DescribeSecurityConfigurationOutput {
         crate::operation::describe_security_configuration::DescribeSecurityConfigurationOutput {
             name: self.name,
             security_configuration: self.security_configuration,

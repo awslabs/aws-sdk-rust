@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`jobs(Option<Vec<SimulationJob>>)`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput::jobs): <p>A list of simulation jobs.</p>
     ///   - [`unprocessed_jobs(Option<Vec<String>>)`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput::unprocessed_jobs): <p>A list of unprocessed simulation job Amazon Resource Names (ARNs).</p>
     /// - On failure, responds with [`SdkError<BatchDescribeSimulationJobError>`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError)
-    pub fn batch_describe_simulation_job(&self) -> crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobFluentBuilder{
+    pub fn batch_describe_simulation_job(
+        &self,
+    ) -> crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobFluentBuilder {
         crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobFluentBuilder::new(self.handle.clone())
     }
 }

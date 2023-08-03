@@ -10,10 +10,7 @@ impl ArchiveFindingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::archive_findings::ArchiveFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::archive_findings::ArchiveFindingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::archive_findings::ArchiveFindingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.archive_findings();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ArchiveFindingsFluentBuilder {
         }
     }
     /// Access the ArchiveFindings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::archive_findings::builders::ArchiveFindingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::archive_findings::builders::ArchiveFindingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl ArchiveFindingsFluentBuilder {
             crate::operation::archive_findings::ArchiveFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::archive_findings::ArchiveFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::archive_findings::ArchiveFindingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl ArchiveFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl ArchiveFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::archive_findings::ArchiveFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::archive_findings::ArchiveFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::archive_findings::ArchiveFindingsError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl ArchiveFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::archive_findings::ArchiveFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::archive_findings::ArchiveFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::archive_findings::ArchiveFindingsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl ArchiveFindingsFluentBuilder {
             crate::operation::archive_findings::ArchiveFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::archive_findings::ArchiveFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::archive_findings::ArchiveFindingsError>,
     > {
         self.customize_middleware().await
     }
@@ -148,17 +132,12 @@ impl ArchiveFindingsFluentBuilder {
         self
     }
     /// <p>The IDs of the findings that you want to archive.</p>
-    pub fn set_finding_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_finding_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_finding_ids(input);
         self
     }
     /// <p>The IDs of the findings that you want to archive.</p>
-    pub fn get_finding_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_finding_ids()
     }
 }

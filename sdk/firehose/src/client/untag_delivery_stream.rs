@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`tag_keys(Vec<String>)`](crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder::set_tag_keys): <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
     /// - On success, responds with [`UntagDeliveryStreamOutput`](crate::operation::untag_delivery_stream::UntagDeliveryStreamOutput)
     /// - On failure, responds with [`SdkError<UntagDeliveryStreamError>`](crate::operation::untag_delivery_stream::UntagDeliveryStreamError)
-    pub fn untag_delivery_stream(
-        &self,
-    ) -> crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder {
-        crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn untag_delivery_stream(&self) -> crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder {
+        crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder::new(self.handle.clone())
     }
 }

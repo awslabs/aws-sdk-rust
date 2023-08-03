@@ -10,10 +10,7 @@ impl DescribeImageTagsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_image_tags::DescribeImageTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_tags::DescribeImageTagsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_tags::DescribeImageTagsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_image_tags();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeImageTagsFluentBuilder {
         }
     }
     /// Access the DescribeImageTags as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_image_tags::builders::DescribeImageTagsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_image_tags::builders::DescribeImageTagsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeImageTagsFluentBuilder {
             crate::operation::describe_image_tags::DescribeImageTags,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_tags::DescribeImageTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_tags::DescribeImageTagsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeImageTagsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeImageTagsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_image_tags::DescribeImageTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_tags::DescribeImageTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_tags::DescribeImageTagsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeImageTagsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_image_tags::DescribeImageTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_tags::DescribeImageTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_tags::DescribeImageTagsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl DescribeImageTagsFluentBuilder {
             crate::operation::describe_image_tags::DescribeImageTags,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_tags::DescribeImageTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_tags::DescribeImageTagsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_image_tags::paginator::DescribeImageTagsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_image_tags::paginator::DescribeImageTagsPaginator {
-        crate::operation::describe_image_tags::paginator::DescribeImageTagsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_image_tags::paginator::DescribeImageTagsPaginator {
+        crate::operation::describe_image_tags::paginator::DescribeImageTagsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository where images are described. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,18 +127,12 @@ impl DescribeImageTagsFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The name of the repository that contains the image tag details to describe.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository that contains the image tag details to describe.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }

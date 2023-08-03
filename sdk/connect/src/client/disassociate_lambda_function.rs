@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`function_arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionFluentBuilder::function_arn) / [`set_function_arn(Option<String>)`](crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionFluentBuilder::set_function_arn): <p>The Amazon Resource Name (ARN) of the Lambda function being disassociated.</p>
     /// - On success, responds with [`DisassociateLambdaFunctionOutput`](crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionOutput)
     /// - On failure, responds with [`SdkError<DisassociateLambdaFunctionError>`](crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionError)
-    pub fn disassociate_lambda_function(&self) -> crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionFluentBuilder{
+    pub fn disassociate_lambda_function(&self) -> crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionFluentBuilder {
         crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionFluentBuilder::new(self.handle.clone())
     }
 }

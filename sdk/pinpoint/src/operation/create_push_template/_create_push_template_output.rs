@@ -5,15 +5,12 @@
 pub struct CreatePushTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
     #[doc(hidden)]
-    pub create_template_message_body:
-        ::std::option::Option<crate::types::CreateTemplateMessageBody>,
+    pub create_template_message_body: ::std::option::Option<crate::types::CreateTemplateMessageBody>,
     _request_id: Option<String>,
 }
 impl CreatePushTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn create_template_message_body(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateTemplateMessageBody> {
+    pub fn create_template_message_body(&self) -> ::std::option::Option<&crate::types::CreateTemplateMessageBody> {
         self.create_template_message_body.as_ref()
     }
 }
@@ -24,43 +21,31 @@ impl ::aws_http::request_id::RequestId for CreatePushTemplateOutput {
 }
 impl CreatePushTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreatePushTemplateOutput`](crate::operation::create_push_template::CreatePushTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::create_push_template::builders::CreatePushTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::create_push_template::builders::CreatePushTemplateOutputBuilder {
         crate::operation::create_push_template::builders::CreatePushTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePushTemplateOutput`](crate::operation::create_push_template::CreatePushTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePushTemplateOutputBuilder {
-    pub(crate) create_template_message_body:
-        ::std::option::Option<crate::types::CreateTemplateMessageBody>,
+    pub(crate) create_template_message_body: ::std::option::Option<crate::types::CreateTemplateMessageBody>,
     _request_id: Option<String>,
 }
 impl CreatePushTemplateOutputBuilder {
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn create_template_message_body(
-        mut self,
-        input: crate::types::CreateTemplateMessageBody,
-    ) -> Self {
+    pub fn create_template_message_body(mut self, input: crate::types::CreateTemplateMessageBody) -> Self {
         self.create_template_message_body = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn set_create_template_message_body(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateTemplateMessageBody>,
-    ) -> Self {
+    pub fn set_create_template_message_body(mut self, input: ::std::option::Option<crate::types::CreateTemplateMessageBody>) -> Self {
         self.create_template_message_body = input;
         self
     }
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn get_create_template_message_body(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateTemplateMessageBody> {
+    pub fn get_create_template_message_body(&self) -> &::std::option::Option<crate::types::CreateTemplateMessageBody> {
         &self.create_template_message_body
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -29,27 +29,19 @@ impl DeleteConnectorInput {
 
 /// A builder for [`DeleteConnectorInput`](crate::operation::delete_connector::DeleteConnectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConnectorInputBuilder {
     pub(crate) connector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConnectorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to delete.</p>
-    pub fn connector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to delete.</p>
-    pub fn set_connector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_arn = input;
         self
     }
@@ -58,18 +50,12 @@ impl DeleteConnectorInputBuilder {
         &self.connector_arn
     }
     /// <p>The current version of the connector that you want to delete.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current version of the connector that you want to delete.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_version = input;
         self
     }
@@ -80,10 +66,7 @@ impl DeleteConnectorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConnectorInput`](crate::operation::delete_connector::DeleteConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_connector::DeleteConnectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_connector::DeleteConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_connector::DeleteConnectorInput {
             connector_arn: self.connector_arn,
             current_version: self.current_version,

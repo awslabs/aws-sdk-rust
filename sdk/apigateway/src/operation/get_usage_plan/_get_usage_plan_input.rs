@@ -23,26 +23,18 @@ impl GetUsagePlanInput {
 
 /// A builder for [`GetUsagePlanInput`](crate::operation::get_usage_plan::GetUsagePlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUsagePlanInputBuilder {
     pub(crate) usage_plan_id: ::std::option::Option<::std::string::String>,
 }
 impl GetUsagePlanInputBuilder {
     /// <p>The identifier of the UsagePlan resource to be retrieved.</p>
-    pub fn usage_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the UsagePlan resource to be retrieved.</p>
-    pub fn set_usage_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.usage_plan_id = input;
         self
     }
@@ -53,10 +45,7 @@ impl GetUsagePlanInputBuilder {
     /// Consumes the builder and constructs a [`GetUsagePlanInput`](crate::operation::get_usage_plan::GetUsagePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_usage_plan::GetUsagePlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_usage_plan::GetUsagePlanInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_usage_plan::GetUsagePlanInput {
             usage_plan_id: self.usage_plan_id,
         })

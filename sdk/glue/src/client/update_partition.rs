@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`partition_input(PartitionInput)`](crate::operation::update_partition::builders::UpdatePartitionFluentBuilder::partition_input) / [`set_partition_input(Option<PartitionInput>)`](crate::operation::update_partition::builders::UpdatePartitionFluentBuilder::set_partition_input): <p>The new partition object to update the partition to.</p>  <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
     /// - On success, responds with [`UpdatePartitionOutput`](crate::operation::update_partition::UpdatePartitionOutput)
     /// - On failure, responds with [`SdkError<UpdatePartitionError>`](crate::operation::update_partition::UpdatePartitionError)
-    pub fn update_partition(
-        &self,
-    ) -> crate::operation::update_partition::builders::UpdatePartitionFluentBuilder {
-        crate::operation::update_partition::builders::UpdatePartitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_partition(&self) -> crate::operation::update_partition::builders::UpdatePartitionFluentBuilder {
+        crate::operation::update_partition::builders::UpdatePartitionFluentBuilder::new(self.handle.clone())
     }
 }

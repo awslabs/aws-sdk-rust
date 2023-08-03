@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRecommenderOutput`](crate::operation::create_recommender::CreateRecommenderOutput) with field(s):
     ///   - [`recommender_arn(Option<String>)`](crate::operation::create_recommender::CreateRecommenderOutput::recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender.</p>
     /// - On failure, responds with [`SdkError<CreateRecommenderError>`](crate::operation::create_recommender::CreateRecommenderError)
-    pub fn create_recommender(
-        &self,
-    ) -> crate::operation::create_recommender::builders::CreateRecommenderFluentBuilder {
-        crate::operation::create_recommender::builders::CreateRecommenderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_recommender(&self) -> crate::operation::create_recommender::builders::CreateRecommenderFluentBuilder {
+        crate::operation::create_recommender::builders::CreateRecommenderFluentBuilder::new(self.handle.clone())
     }
 }

@@ -24,17 +24,14 @@ impl ::aws_http::request_id::RequestId for DescribeAttachmentOutput {
 }
 impl DescribeAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAttachmentOutput`](crate::operation::describe_attachment::DescribeAttachmentOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_attachment::builders::DescribeAttachmentOutputBuilder {
+    pub fn builder() -> crate::operation::describe_attachment::builders::DescribeAttachmentOutputBuilder {
         crate::operation::describe_attachment::builders::DescribeAttachmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAttachmentOutput`](crate::operation::describe_attachment::DescribeAttachmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAttachmentOutputBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
     _request_id: Option<String>,
@@ -48,10 +45,7 @@ impl DescribeAttachmentOutputBuilder {
     }
     /// <p>This object includes the attachment content and file name.</p>
     /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-    pub fn set_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::Attachment>,
-    ) -> Self {
+    pub fn set_attachment(mut self, input: ::std::option::Option<crate::types::Attachment>) -> Self {
         self.attachment = input;
         self
     }

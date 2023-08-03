@@ -15,9 +15,7 @@ impl Method {
 
 /// A builder for [`Method`](crate::types::Method).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MethodBuilder {}
 impl MethodBuilder {
     /// Consumes the builder and constructs a [`Method`](crate::types::Method).

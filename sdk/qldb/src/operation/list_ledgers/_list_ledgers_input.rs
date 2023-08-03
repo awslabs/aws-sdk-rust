@@ -29,9 +29,7 @@ impl ListLedgersInput {
 
 /// A builder for [`ListLedgersInput`](crate::operation::list_ledgers::ListLedgersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLedgersInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl ListLedgersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListLedgersInput`](crate::operation::list_ledgers::ListLedgersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_ledgers::ListLedgersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_ledgers::ListLedgersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ledgers::ListLedgersInput {
             max_results: self.max_results,
             next_token: self.next_token,

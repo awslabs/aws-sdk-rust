@@ -26,9 +26,7 @@ pub struct GetAttributeGroupOutput {
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Key-value pairs associated with the attribute group.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The service principal that created the attribute group.</p>
     #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
@@ -64,11 +62,7 @@ impl GetAttributeGroupOutput {
         self.last_update_time.as_ref()
     }
     /// <p>Key-value pairs associated with the attribute group.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The service principal that created the attribute group.</p>
@@ -83,17 +77,14 @@ impl ::aws_http::request_id::RequestId for GetAttributeGroupOutput {
 }
 impl GetAttributeGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetAttributeGroupOutput`](crate::operation::get_attribute_group::GetAttributeGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::get_attribute_group::builders::GetAttributeGroupOutputBuilder {
+    pub fn builder() -> crate::operation::get_attribute_group::builders::GetAttributeGroupOutputBuilder {
         crate::operation::get_attribute_group::builders::GetAttributeGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAttributeGroupOutput`](crate::operation::get_attribute_group::GetAttributeGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAttributeGroupOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -102,9 +93,7 @@ pub struct GetAttributeGroupOutputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -185,10 +174,7 @@ impl GetAttributeGroupOutputBuilder {
         self
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -202,10 +188,7 @@ impl GetAttributeGroupOutputBuilder {
         self
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }
@@ -218,32 +201,19 @@ impl GetAttributeGroupOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Key-value pairs associated with the attribute group.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Key-value pairs associated with the attribute group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Key-value pairs associated with the attribute group.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The service principal that created the attribute group.</p>

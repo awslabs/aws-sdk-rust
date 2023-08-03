@@ -9,92 +9,85 @@ pub fn de_create_global_cluster_http_error(
     crate::operation::create_global_cluster::CreateGlobalClusterError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::create_global_cluster::CreateGlobalClusterError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_global_cluster::CreateGlobalClusterError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::create_global_cluster::CreateGlobalClusterError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::create_global_cluster::CreateGlobalClusterError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DBClusterNotFoundFault" => crate::operation::create_global_cluster::CreateGlobalClusterError::DbClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::create_global_cluster::CreateGlobalClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_global_cluster::CreateGlobalClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "GlobalClusterAlreadyExistsFault" => crate::operation::create_global_cluster::CreateGlobalClusterError::GlobalClusterAlreadyExistsFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::GlobalClusterAlreadyExistsFaultBuilder::default();
-                    output = crate::protocol_serde::shape_global_cluster_already_exists_fault::de_global_cluster_already_exists_fault_xml_err(_response_body, output).map_err(crate::operation::create_global_cluster::CreateGlobalClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::GlobalClusterAlreadyExistsFaultBuilder::default();
+                output = crate::protocol_serde::shape_global_cluster_already_exists_fault::de_global_cluster_already_exists_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_global_cluster::CreateGlobalClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "GlobalClusterQuotaExceededFault" => crate::operation::create_global_cluster::CreateGlobalClusterError::GlobalClusterQuotaExceededFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::GlobalClusterQuotaExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_global_cluster_quota_exceeded_fault::de_global_cluster_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::create_global_cluster::CreateGlobalClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::GlobalClusterQuotaExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_global_cluster_quota_exceeded_fault::de_global_cluster_quota_exceeded_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_global_cluster::CreateGlobalClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidDBClusterStateFault" => crate::operation::create_global_cluster::CreateGlobalClusterError::InvalidDbClusterStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(_response_body, output).map_err(crate::operation::create_global_cluster::CreateGlobalClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::create_global_cluster::CreateGlobalClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::create_global_cluster::CreateGlobalClusterError::generic(generic)
+        _ => crate::operation::create_global_cluster::CreateGlobalClusterError::generic(generic),
     })
 }
 
@@ -110,14 +103,9 @@ pub fn de_create_global_cluster_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_global_cluster::builders::CreateGlobalClusterOutputBuilder::default();
-        output = crate::protocol_serde::shape_create_global_cluster::de_create_global_cluster(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::create_global_cluster::CreateGlobalClusterError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_create_global_cluster::de_create_global_cluster(_response_body, output)
+            .map_err(crate::operation::create_global_cluster::CreateGlobalClusterError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -126,10 +114,7 @@ pub fn de_create_global_cluster_http_response_with_props(
 pub fn de_create_global_cluster(
     inp: &[u8],
     mut builder: crate::operation::create_global_cluster::builders::CreateGlobalClusterOutputBuilder,
-) -> Result<
-    crate::operation::create_global_cluster::builders::CreateGlobalClusterOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::create_global_cluster::builders::CreateGlobalClusterOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -166,9 +151,7 @@ pub fn de_create_global_cluster(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected CreateGlobalClusterResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected CreateGlobalClusterResult tag"));
     };
     Ok(builder)
 }

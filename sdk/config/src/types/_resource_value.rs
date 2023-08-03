@@ -23,9 +23,7 @@ impl ResourceValue {
 
 /// A builder for [`ResourceValue`](crate::types::ResourceValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceValueBuilder {
     pub(crate) value: ::std::option::Option<crate::types::ResourceValueType>,
 }
@@ -36,10 +34,7 @@ impl ResourceValueBuilder {
         self
     }
     /// <p>The value is a resource ID.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceValueType>,
-    ) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::ResourceValueType>) -> Self {
         self.value = input;
         self
     }

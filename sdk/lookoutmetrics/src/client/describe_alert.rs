@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAlertOutput`](crate::operation::describe_alert::DescribeAlertOutput) with field(s):
     ///   - [`alert(Option<Alert>)`](crate::operation::describe_alert::DescribeAlertOutput::alert): <p>Contains information about an alert.</p>
     /// - On failure, responds with [`SdkError<DescribeAlertError>`](crate::operation::describe_alert::DescribeAlertError)
-    pub fn describe_alert(
-        &self,
-    ) -> crate::operation::describe_alert::builders::DescribeAlertFluentBuilder {
-        crate::operation::describe_alert::builders::DescribeAlertFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_alert(&self) -> crate::operation::describe_alert::builders::DescribeAlertFluentBuilder {
+        crate::operation::describe_alert::builders::DescribeAlertFluentBuilder::new(self.handle.clone())
     }
 }

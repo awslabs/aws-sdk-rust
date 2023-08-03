@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_metric_data_v2::GetMetricDataV2Output::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`metric_results(Option<Vec<MetricResultV2>>)`](crate::operation::get_metric_data_v2::GetMetricDataV2Output::metric_results): <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned. </p>
     /// - On failure, responds with [`SdkError<GetMetricDataV2Error>`](crate::operation::get_metric_data_v2::GetMetricDataV2Error)
-    pub fn get_metric_data_v2(
-        &self,
-    ) -> crate::operation::get_metric_data_v2::builders::GetMetricDataV2FluentBuilder {
-        crate::operation::get_metric_data_v2::builders::GetMetricDataV2FluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_metric_data_v2(&self) -> crate::operation::get_metric_data_v2::builders::GetMetricDataV2FluentBuilder {
+        crate::operation::get_metric_data_v2::builders::GetMetricDataV2FluentBuilder::new(self.handle.clone())
     }
 }

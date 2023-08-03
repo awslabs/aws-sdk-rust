@@ -6,20 +6,14 @@
 pub struct LogPublishingOptionsStatus {
     /// <p>The log publishing options configured for the domain.</p>
     #[doc(hidden)]
-    pub options: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
-    >,
+    pub options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
     /// <p>The status of the log publishing options for the domain.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl LogPublishingOptionsStatus {
     /// <p>The log publishing options configured for the domain.</p>
-    pub fn options(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
-    > {
+    pub fn options(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>> {
         self.options.as_ref()
     }
     /// <p>The status of the log publishing options for the domain.</p>
@@ -36,13 +30,9 @@ impl LogPublishingOptionsStatus {
 
 /// A builder for [`LogPublishingOptionsStatus`](crate::types::LogPublishingOptionsStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogPublishingOptionsStatusBuilder {
-    pub(crate) options: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
-    >,
+    pub(crate) options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl LogPublishingOptionsStatusBuilder {
@@ -51,11 +41,7 @@ impl LogPublishingOptionsStatusBuilder {
     /// To override the contents of this collection use [`set_options`](Self::set_options).
     ///
     /// <p>The log publishing options configured for the domain.</p>
-    pub fn options(
-        mut self,
-        k: crate::types::LogType,
-        v: crate::types::LogPublishingOption,
-    ) -> Self {
+    pub fn options(mut self, k: crate::types::LogType, v: crate::types::LogPublishingOption) -> Self {
         let mut hash_map = self.options.unwrap_or_default();
         hash_map.insert(k, v);
         self.options = ::std::option::Option::Some(hash_map);
@@ -64,19 +50,13 @@ impl LogPublishingOptionsStatusBuilder {
     /// <p>The log publishing options configured for the domain.</p>
     pub fn set_options(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
     ) -> Self {
         self.options = input;
         self
     }
     /// <p>The log publishing options configured for the domain.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
-    > {
+    pub fn get_options(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>> {
         &self.options
     }
     /// <p>The status of the log publishing options for the domain.</p>

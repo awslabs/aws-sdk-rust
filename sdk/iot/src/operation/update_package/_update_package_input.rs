@@ -104,19 +104,13 @@ impl UpdatePackageInputBuilder {
     }
     /// <p>The name of the default package version.</p>
     /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
-    pub fn default_version_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_version_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the default package version.</p>
     /// <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
-    pub fn set_default_version_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_version_name = input;
         self
     }
@@ -159,10 +153,7 @@ impl UpdatePackageInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePackageInput`](crate::operation::update_package::UpdatePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_package::UpdatePackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_package::UpdatePackageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_package::UpdatePackageInput {
             package_name: self.package_name,
             description: self.description,

@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`metric_filters(Option<Vec<MetricFilter>>)`](crate::operation::describe_metric_filters::DescribeMetricFiltersOutput::metric_filters): <p>The metric filters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_metric_filters::DescribeMetricFiltersOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     /// - On failure, responds with [`SdkError<DescribeMetricFiltersError>`](crate::operation::describe_metric_filters::DescribeMetricFiltersError)
-    pub fn describe_metric_filters(
-        &self,
-    ) -> crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder
-    {
-        crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_metric_filters(&self) -> crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder {
+        crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder::new(self.handle.clone())
     }
 }

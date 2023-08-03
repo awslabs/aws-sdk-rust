@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for CreateChangeSetOutput {
 }
 impl CreateChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateChangeSetOutput`](crate::operation::create_change_set::CreateChangeSetOutput).
-    pub fn builder() -> crate::operation::create_change_set::builders::CreateChangeSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_change_set::builders::CreateChangeSetOutputBuilder {
         crate::operation::create_change_set::builders::CreateChangeSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateChangeSetOutput`](crate::operation::create_change_set::CreateChangeSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateChangeSetOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,

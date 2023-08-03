@@ -10,10 +10,7 @@ impl GetContactMethodsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_contact_methods::GetContactMethodsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_methods::GetContactMethodsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_methods::GetContactMethodsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_contact_methods();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetContactMethodsFluentBuilder {
         }
     }
     /// Access the GetContactMethods as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_contact_methods::builders::GetContactMethodsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_contact_methods::builders::GetContactMethodsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl GetContactMethodsFluentBuilder {
             crate::operation::get_contact_methods::GetContactMethods,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_methods::GetContactMethodsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_methods::GetContactMethodsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl GetContactMethodsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl GetContactMethodsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_contact_methods::GetContactMethodsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_methods::GetContactMethodsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_methods::GetContactMethodsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl GetContactMethodsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_contact_methods::GetContactMethodsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_methods::GetContactMethodsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_methods::GetContactMethodsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl GetContactMethodsFluentBuilder {
             crate::operation::get_contact_methods::GetContactMethods,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_methods::GetContactMethodsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_methods::GetContactMethodsError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +119,13 @@ impl GetContactMethodsFluentBuilder {
     }
     /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code> (text messaging).</p>
     /// <p>Specify a protocol in your request to return information about a specific contact method protocol.</p>
-    pub fn set_protocols(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>,
-    ) -> Self {
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>) -> Self {
         self.inner = self.inner.set_protocols(input);
         self
     }
     /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code> (text messaging).</p>
     /// <p>Specify a protocol in your request to return information about a specific contact method protocol.</p>
-    pub fn get_protocols(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>> {
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>> {
         self.inner.get_protocols()
     }
 }

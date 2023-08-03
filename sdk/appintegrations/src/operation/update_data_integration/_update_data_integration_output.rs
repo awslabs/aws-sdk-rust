@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDataIntegrationOutput {
 }
 impl UpdateDataIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataIntegrationOutput`](crate::operation::update_data_integration::UpdateDataIntegrationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_data_integration::builders::UpdateDataIntegrationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_data_integration::builders::UpdateDataIntegrationOutputBuilder {
         crate::operation::update_data_integration::builders::UpdateDataIntegrationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDataIntegrationOutput`](crate::operation::update_data_integration::UpdateDataIntegrationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDataIntegrationOutputBuilder {
     _request_id: Option<String>,
 }

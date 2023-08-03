@@ -43,9 +43,7 @@ impl ListEndpointsInput {
 
 /// A builder for [`ListEndpointsInput`](crate::operation::list_endpoints::ListEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEndpointsInputBuilder {
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) home_region: ::std::option::Option<::std::string::String>,
@@ -112,10 +110,7 @@ impl ListEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`ListEndpointsInput`](crate::operation::list_endpoints::ListEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_endpoints::ListEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_endpoints::ListEndpointsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_endpoints::ListEndpointsInput {
             name_prefix: self.name_prefix,
             home_region: self.home_region,

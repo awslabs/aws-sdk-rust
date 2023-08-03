@@ -37,17 +37,14 @@ impl ListMultipartUploadsInput {
 }
 impl ListMultipartUploadsInput {
     /// Creates a new builder-style object to manufacture [`ListMultipartUploadsInput`](crate::operation::list_multipart_uploads::ListMultipartUploadsInput).
-    pub fn builder(
-    ) -> crate::operation::list_multipart_uploads::builders::ListMultipartUploadsInputBuilder {
+    pub fn builder() -> crate::operation::list_multipart_uploads::builders::ListMultipartUploadsInputBuilder {
         crate::operation::list_multipart_uploads::builders::ListMultipartUploadsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMultipartUploadsInput`](crate::operation::list_multipart_uploads::ListMultipartUploadsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMultipartUploadsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
@@ -114,17 +111,13 @@ impl ListMultipartUploadsInputBuilder {
     /// Consumes the builder and constructs a [`ListMultipartUploadsInput`](crate::operation::list_multipart_uploads::ListMultipartUploadsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_multipart_uploads::ListMultipartUploadsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_multipart_uploads::ListMultipartUploadsInput {
-                account_id: self.account_id,
-                vault_name: self.vault_name,
-                limit: self.limit,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_multipart_uploads::ListMultipartUploadsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_multipart_uploads::ListMultipartUploadsInput {
+            account_id: self.account_id,
+            vault_name: self.vault_name,
+            limit: self.limit,
+            marker: self.marker,
+        })
     }
 }

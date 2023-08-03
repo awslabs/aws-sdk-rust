@@ -27,7 +27,7 @@ impl UpdateTrafficDistributionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTrafficDistributionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionInputBuilder,
+    inner: crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionInputBuilder,
 }
 impl UpdateTrafficDistributionFluentBuilder {
     /// Creates a new `UpdateTrafficDistribution`.
@@ -38,7 +38,7 @@ impl UpdateTrafficDistributionFluentBuilder {
         }
     }
     /// Access the UpdateTrafficDistribution as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateTrafficDistributionFluentBuilder {
             crate::operation::update_traffic_distribution::UpdateTrafficDistribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_traffic_distribution::UpdateTrafficDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_traffic_distribution::UpdateTrafficDistributionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateTrafficDistributionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateTrafficDistributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_traffic_distribution::UpdateTrafficDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_traffic_distribution::UpdateTrafficDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_traffic_distribution::UpdateTrafficDistributionError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateTrafficDistributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_traffic_distribution::UpdateTrafficDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_traffic_distribution::UpdateTrafficDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_traffic_distribution::UpdateTrafficDistributionError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl UpdateTrafficDistributionFluentBuilder {
             crate::operation::update_traffic_distribution::UpdateTrafficDistribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_traffic_distribution::UpdateTrafficDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_traffic_distribution::UpdateTrafficDistributionError>,
     > {
         self.customize_middleware().await
     }
@@ -141,10 +130,7 @@ impl UpdateTrafficDistributionFluentBuilder {
         self
     }
     /// <p>The distribution of traffic between the instance and its replica(s).</p>
-    pub fn set_telephony_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TelephonyConfig>,
-    ) -> Self {
+    pub fn set_telephony_config(mut self, input: ::std::option::Option<crate::types::TelephonyConfig>) -> Self {
         self.inner = self.inner.set_telephony_config(input);
         self
     }

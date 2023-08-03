@@ -29,18 +29,14 @@ impl ListEnvironmentOutputsInput {
 }
 impl ListEnvironmentOutputsInput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentOutputsInput`](crate::operation::list_environment_outputs::ListEnvironmentOutputsInput).
-    pub fn builder(
-    ) -> crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsInputBuilder {
         crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEnvironmentOutputsInput`](crate::operation::list_environment_outputs::ListEnvironmentOutputsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnvironmentOutputsInputBuilder {
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct ListEnvironmentOutputsInputBuilder {
 }
 impl ListEnvironmentOutputsInputBuilder {
     /// <p>The environment name.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The environment name.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -82,18 +72,12 @@ impl ListEnvironmentOutputsInputBuilder {
         &self.next_token
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -104,16 +88,12 @@ impl ListEnvironmentOutputsInputBuilder {
     /// Consumes the builder and constructs a [`ListEnvironmentOutputsInput`](crate::operation::list_environment_outputs::ListEnvironmentOutputsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_environment_outputs::ListEnvironmentOutputsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_environment_outputs::ListEnvironmentOutputsInput {
-                environment_name: self.environment_name,
-                next_token: self.next_token,
-                deployment_id: self.deployment_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_environment_outputs::ListEnvironmentOutputsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_environment_outputs::ListEnvironmentOutputsInput {
+            environment_name: self.environment_name,
+            next_token: self.next_token,
+            deployment_id: self.deployment_id,
+        })
     }
 }

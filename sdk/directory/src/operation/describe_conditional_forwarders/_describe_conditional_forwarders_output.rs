@@ -6,15 +6,12 @@
 pub struct DescribeConditionalForwardersOutput {
     /// <p>The list of conditional forwarders that have been created.</p>
     #[doc(hidden)]
-    pub conditional_forwarders:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConditionalForwarder>>,
+    pub conditional_forwarders: ::std::option::Option<::std::vec::Vec<crate::types::ConditionalForwarder>>,
     _request_id: Option<String>,
 }
 impl DescribeConditionalForwardersOutput {
     /// <p>The list of conditional forwarders that have been created.</p>
-    pub fn conditional_forwarders(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConditionalForwarder]> {
+    pub fn conditional_forwarders(&self) -> ::std::option::Option<&[crate::types::ConditionalForwarder]> {
         self.conditional_forwarders.as_deref()
     }
 }
@@ -25,19 +22,16 @@ impl ::aws_http::request_id::RequestId for DescribeConditionalForwardersOutput {
 }
 impl DescribeConditionalForwardersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConditionalForwardersOutput`](crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersOutput).
-    pub fn builder() -> crate::operation::describe_conditional_forwarders::builders::DescribeConditionalForwardersOutputBuilder{
+    pub fn builder() -> crate::operation::describe_conditional_forwarders::builders::DescribeConditionalForwardersOutputBuilder {
         crate::operation::describe_conditional_forwarders::builders::DescribeConditionalForwardersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConditionalForwardersOutput`](crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConditionalForwardersOutputBuilder {
-    pub(crate) conditional_forwarders:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConditionalForwarder>>,
+    pub(crate) conditional_forwarders: ::std::option::Option<::std::vec::Vec<crate::types::ConditionalForwarder>>,
     _request_id: Option<String>,
 }
 impl DescribeConditionalForwardersOutputBuilder {
@@ -53,17 +47,12 @@ impl DescribeConditionalForwardersOutputBuilder {
         self
     }
     /// <p>The list of conditional forwarders that have been created.</p>
-    pub fn set_conditional_forwarders(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConditionalForwarder>>,
-    ) -> Self {
+    pub fn set_conditional_forwarders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConditionalForwarder>>) -> Self {
         self.conditional_forwarders = input;
         self
     }
     /// <p>The list of conditional forwarders that have been created.</p>
-    pub fn get_conditional_forwarders(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConditionalForwarder>> {
+    pub fn get_conditional_forwarders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConditionalForwarder>> {
         &self.conditional_forwarders
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -76,10 +65,7 @@ impl DescribeConditionalForwardersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeConditionalForwardersOutput`](crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersOutput
-    {
+    pub fn build(self) -> crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersOutput {
         crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersOutput {
             conditional_forwarders: self.conditional_forwarders,
             _request_id: self._request_id,

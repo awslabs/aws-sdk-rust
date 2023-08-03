@@ -36,21 +36,18 @@ impl UpdateThingGroupsForThingInput {
 }
 impl UpdateThingGroupsForThingInput {
     /// Creates a new builder-style object to manufacture [`UpdateThingGroupsForThingInput`](crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingInput).
-    pub fn builder() -> crate::operation::update_thing_groups_for_thing::builders::UpdateThingGroupsForThingInputBuilder{
+    pub fn builder() -> crate::operation::update_thing_groups_for_thing::builders::UpdateThingGroupsForThingInputBuilder {
         crate::operation::update_thing_groups_for_thing::builders::UpdateThingGroupsForThingInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateThingGroupsForThingInput`](crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateThingGroupsForThingInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_groups_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) thing_groups_to_remove:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) thing_groups_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) override_dynamic_groups: ::std::option::Option<bool>,
 }
 impl UpdateThingGroupsForThingInputBuilder {
@@ -73,27 +70,19 @@ impl UpdateThingGroupsForThingInputBuilder {
     /// To override the contents of this collection use [`set_thing_groups_to_add`](Self::set_thing_groups_to_add).
     ///
     /// <p>The groups to which the thing will be added.</p>
-    pub fn thing_groups_to_add(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_groups_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.thing_groups_to_add.unwrap_or_default();
         v.push(input.into());
         self.thing_groups_to_add = ::std::option::Option::Some(v);
         self
     }
     /// <p>The groups to which the thing will be added.</p>
-    pub fn set_thing_groups_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_thing_groups_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.thing_groups_to_add = input;
         self
     }
     /// <p>The groups to which the thing will be added.</p>
-    pub fn get_thing_groups_to_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_thing_groups_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.thing_groups_to_add
     }
     /// Appends an item to `thing_groups_to_remove`.
@@ -101,27 +90,19 @@ impl UpdateThingGroupsForThingInputBuilder {
     /// To override the contents of this collection use [`set_thing_groups_to_remove`](Self::set_thing_groups_to_remove).
     ///
     /// <p>The groups from which the thing will be removed.</p>
-    pub fn thing_groups_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_groups_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.thing_groups_to_remove.unwrap_or_default();
         v.push(input.into());
         self.thing_groups_to_remove = ::std::option::Option::Some(v);
         self
     }
     /// <p>The groups from which the thing will be removed.</p>
-    pub fn set_thing_groups_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_thing_groups_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.thing_groups_to_remove = input;
         self
     }
     /// <p>The groups from which the thing will be removed.</p>
-    pub fn get_thing_groups_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_thing_groups_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.thing_groups_to_remove
     }
     /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
@@ -145,13 +126,11 @@ impl UpdateThingGroupsForThingInputBuilder {
         crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingInput {
-                thing_name: self.thing_name,
-                thing_groups_to_add: self.thing_groups_to_add,
-                thing_groups_to_remove: self.thing_groups_to_remove,
-                override_dynamic_groups: self.override_dynamic_groups,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingInput {
+            thing_name: self.thing_name,
+            thing_groups_to_add: self.thing_groups_to_add,
+            thing_groups_to_remove: self.thing_groups_to_remove,
+            override_dynamic_groups: self.override_dynamic_groups,
+        })
     }
 }

@@ -30,9 +30,7 @@ impl EffectivePatch {
 
 /// A builder for [`EffectivePatch`](crate::types::EffectivePatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EffectivePatchBuilder {
     pub(crate) patch: ::std::option::Option<crate::types::Patch>,
     pub(crate) patch_status: ::std::option::Option<crate::types::PatchStatus>,
@@ -58,10 +56,7 @@ impl EffectivePatchBuilder {
         self
     }
     /// <p>The status of the patch in a patch baseline. This includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.</p>
-    pub fn set_patch_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchStatus>,
-    ) -> Self {
+    pub fn set_patch_status(mut self, input: ::std::option::Option<crate::types::PatchStatus>) -> Self {
         self.patch_status = input;
         self
     }

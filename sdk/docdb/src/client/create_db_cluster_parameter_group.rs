@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`CreateDbClusterParameterGroupOutput`](crate::operation::create_db_cluster_parameter_group::CreateDbClusterParameterGroupOutput) with field(s):
     ///   - [`db_cluster_parameter_group(Option<DbClusterParameterGroup>)`](crate::operation::create_db_cluster_parameter_group::CreateDbClusterParameterGroupOutput::db_cluster_parameter_group): <p>Detailed information about a cluster parameter group. </p>
     /// - On failure, responds with [`SdkError<CreateDBClusterParameterGroupError>`](crate::operation::create_db_cluster_parameter_group::CreateDBClusterParameterGroupError)
-    pub fn create_db_cluster_parameter_group(&self) -> crate::operation::create_db_cluster_parameter_group::builders::CreateDBClusterParameterGroupFluentBuilder{
+    pub fn create_db_cluster_parameter_group(
+        &self,
+    ) -> crate::operation::create_db_cluster_parameter_group::builders::CreateDBClusterParameterGroupFluentBuilder {
         crate::operation::create_db_cluster_parameter_group::builders::CreateDBClusterParameterGroupFluentBuilder::new(self.handle.clone())
     }
 }

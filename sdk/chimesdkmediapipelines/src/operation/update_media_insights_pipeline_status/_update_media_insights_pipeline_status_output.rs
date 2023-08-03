@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateMediaInsightsPipelineStatusOutp
 }
 impl UpdateMediaInsightsPipelineStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMediaInsightsPipelineStatusOutput`](crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusOutput).
-    pub fn builder() -> crate::operation::update_media_insights_pipeline_status::builders::UpdateMediaInsightsPipelineStatusOutputBuilder{
+    pub fn builder() -> crate::operation::update_media_insights_pipeline_status::builders::UpdateMediaInsightsPipelineStatusOutputBuilder {
         crate::operation::update_media_insights_pipeline_status::builders::UpdateMediaInsightsPipelineStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMediaInsightsPipelineStatusOutput`](crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMediaInsightsPipelineStatusOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl UpdateMediaInsightsPipelineStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateMediaInsightsPipelineStatusOutput`](crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusOutput).
-    pub fn build(self) -> crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusOutput{
+    pub fn build(self) -> crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusOutput {
         crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusOutput {
             _request_id: self._request_id,
         }

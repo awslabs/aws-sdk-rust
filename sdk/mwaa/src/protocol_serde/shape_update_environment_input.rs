@@ -28,10 +28,7 @@ pub fn ser_update_environment_input(
     if let Some(var_9) = &input.logging_configuration {
         #[allow(unused_mut)]
         let mut object_10 = object.key("LoggingConfiguration").start_object();
-        crate::protocol_serde::shape_logging_configuration_input::ser_logging_configuration_input(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_logging_configuration_input::ser_logging_configuration_input(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.max_workers {
@@ -59,9 +56,7 @@ pub fn ser_update_environment_input(
         object.key("PluginsS3Path").string(var_16.as_str());
     }
     if let Some(var_17) = &input.requirements_s3_object_version {
-        object
-            .key("RequirementsS3ObjectVersion")
-            .string(var_17.as_str());
+        object.key("RequirementsS3ObjectVersion").string(var_17.as_str());
     }
     if let Some(var_18) = &input.requirements_s3_path {
         object.key("RequirementsS3Path").string(var_18.as_str());
@@ -76,9 +71,7 @@ pub fn ser_update_environment_input(
         object.key("SourceBucketArn").string(var_20.as_str());
     }
     if let Some(var_21) = &input.startup_script_s3_object_version {
-        object
-            .key("StartupScriptS3ObjectVersion")
-            .string(var_21.as_str());
+        object.key("StartupScriptS3ObjectVersion").string(var_21.as_str());
     }
     if let Some(var_22) = &input.startup_script_s3_path {
         object.key("StartupScriptS3Path").string(var_22.as_str());
@@ -87,9 +80,7 @@ pub fn ser_update_environment_input(
         object.key("WebserverAccessMode").string(var_23.as_str());
     }
     if let Some(var_24) = &input.weekly_maintenance_window_start {
-        object
-            .key("WeeklyMaintenanceWindowStart")
-            .string(var_24.as_str());
+        object.key("WeeklyMaintenanceWindowStart").string(var_24.as_str());
     }
     Ok(())
 }

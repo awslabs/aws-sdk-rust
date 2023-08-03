@@ -17,17 +17,14 @@ impl StartMetricStreamsInput {
 }
 impl StartMetricStreamsInput {
     /// Creates a new builder-style object to manufacture [`StartMetricStreamsInput`](crate::operation::start_metric_streams::StartMetricStreamsInput).
-    pub fn builder(
-    ) -> crate::operation::start_metric_streams::builders::StartMetricStreamsInputBuilder {
+    pub fn builder() -> crate::operation::start_metric_streams::builders::StartMetricStreamsInputBuilder {
         crate::operation::start_metric_streams::builders::StartMetricStreamsInputBuilder::default()
     }
 }
 
 /// A builder for [`StartMetricStreamsInput`](crate::operation::start_metric_streams::StartMetricStreamsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMetricStreamsInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -46,10 +43,7 @@ impl StartMetricStreamsInputBuilder {
     }
     /// <p>The array of the names of metric streams to start streaming.</p>
     /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will start streaming.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -61,12 +55,7 @@ impl StartMetricStreamsInputBuilder {
     /// Consumes the builder and constructs a [`StartMetricStreamsInput`](crate::operation::start_metric_streams::StartMetricStreamsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_metric_streams::StartMetricStreamsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_metric_streams::StartMetricStreamsInput { names: self.names },
-        )
+    ) -> ::std::result::Result<crate::operation::start_metric_streams::StartMetricStreamsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_metric_streams::StartMetricStreamsInput { names: self.names })
     }
 }

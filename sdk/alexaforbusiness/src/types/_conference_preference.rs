@@ -23,33 +23,23 @@ impl ConferencePreference {
 
 /// A builder for [`ConferencePreference`](crate::types::ConferencePreference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConferencePreferenceBuilder {
     pub(crate) default_conference_provider_arn: ::std::option::Option<::std::string::String>,
 }
 impl ConferencePreferenceBuilder {
     /// <p>The ARN of the default conference provider.</p>
-    pub fn default_conference_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_conference_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_conference_provider_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the default conference provider.</p>
-    pub fn set_default_conference_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_conference_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_conference_provider_arn = input;
         self
     }
     /// <p>The ARN of the default conference provider.</p>
-    pub fn get_default_conference_provider_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_default_conference_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_conference_provider_arn
     }
     /// Consumes the builder and constructs a [`ConferencePreference`](crate::types::ConferencePreference).

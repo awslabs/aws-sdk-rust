@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAppVersionResourceMappingsOutput 
 }
 impl ListAppVersionResourceMappingsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppVersionResourceMappingsOutput`](crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsOutput).
-    pub fn builder() -> crate::operation::list_app_version_resource_mappings::builders::ListAppVersionResourceMappingsOutputBuilder{
+    pub fn builder() -> crate::operation::list_app_version_resource_mappings::builders::ListAppVersionResourceMappingsOutputBuilder {
         crate::operation::list_app_version_resource_mappings::builders::ListAppVersionResourceMappingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppVersionResourceMappingsOutput`](crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppVersionResourceMappingsOutputBuilder {
-    pub(crate) resource_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>,
+    pub(crate) resource_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListAppVersionResourceMappingsOutputBuilder {
         self
     }
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-    pub fn set_resource_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>,
-    ) -> Self {
+    pub fn set_resource_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>) -> Self {
         self.resource_mappings = input;
         self
     }
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-    pub fn get_resource_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>> {
+    pub fn get_resource_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>> {
         &self.resource_mappings
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -94,10 +86,7 @@ impl ListAppVersionResourceMappingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAppVersionResourceMappingsOutput`](crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsOutput
-    {
+    pub fn build(self) -> crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsOutput {
         crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsOutput {
             resource_mappings: self.resource_mappings,
             next_token: self.next_token,

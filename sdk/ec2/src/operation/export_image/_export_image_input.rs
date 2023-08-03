@@ -50,9 +50,7 @@ impl ExportImageInput {
         self.image_id.as_deref()
     }
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist.</p>
-    pub fn s3_export_location(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExportTaskS3LocationRequest> {
+    pub fn s3_export_location(&self) -> ::std::option::Option<&crate::types::ExportTaskS3LocationRequest> {
         self.s3_export_location.as_ref()
     }
     /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket. If this parameter is not specified, the default role is named 'vmimport'.</p>
@@ -73,9 +71,7 @@ impl ExportImageInput {
 
 /// A builder for [`ExportImageInput`](crate::operation::export_image::ExportImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportImageInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -84,8 +80,7 @@ pub struct ExportImageInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_export_location: ::std::option::Option<crate::types::ExportTaskS3LocationRequest>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl ExportImageInputBuilder {
     /// <p>Token to enable idempotency for export image requests.</p>
@@ -122,10 +117,7 @@ impl ExportImageInputBuilder {
         self
     }
     /// <p>The disk image format.</p>
-    pub fn set_disk_image_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DiskImageFormat>,
-    ) -> Self {
+    pub fn set_disk_image_format(mut self, input: ::std::option::Option<crate::types::DiskImageFormat>) -> Self {
         self.disk_image_format = input;
         self
     }
@@ -167,17 +159,12 @@ impl ExportImageInputBuilder {
         self
     }
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist.</p>
-    pub fn set_s3_export_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportTaskS3LocationRequest>,
-    ) -> Self {
+    pub fn set_s3_export_location(mut self, input: ::std::option::Option<crate::types::ExportTaskS3LocationRequest>) -> Self {
         self.s3_export_location = input;
         self
     }
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist.</p>
-    pub fn get_s3_export_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportTaskS3LocationRequest> {
+    pub fn get_s3_export_location(&self) -> &::std::option::Option<crate::types::ExportTaskS3LocationRequest> {
         &self.s3_export_location
     }
     /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket. If this parameter is not specified, the default role is named 'vmimport'.</p>
@@ -206,26 +193,16 @@ impl ExportImageInputBuilder {
         self
     }
     /// <p>The tags to apply to the export image task during creation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the export image task during creation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`ExportImageInput`](crate::operation::export_image::ExportImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::export_image::ExportImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_image::ExportImageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_image::ExportImageInput {
             client_token: self.client_token,
             description: self.description,

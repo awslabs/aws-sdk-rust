@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for CreateSubscriptionDefinitionVersionOu
 }
 impl CreateSubscriptionDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriptionDefinitionVersionOutput`](crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionOutput).
-    pub fn builder() -> crate::operation::create_subscription_definition_version::builders::CreateSubscriptionDefinitionVersionOutputBuilder{
+    pub fn builder() -> crate::operation::create_subscription_definition_version::builders::CreateSubscriptionDefinitionVersionOutputBuilder {
         crate::operation::create_subscription_definition_version::builders::CreateSubscriptionDefinitionVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSubscriptionDefinitionVersionOutput`](crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSubscriptionDefinitionVersionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl CreateSubscriptionDefinitionVersionOutputBuilder {
         &self.arn
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn creation_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -132,16 +124,12 @@ impl CreateSubscriptionDefinitionVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateSubscriptionDefinitionVersionOutput`](crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionOutput).
-    pub fn build(self) -> crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionOutput{
+    pub fn build(self) -> crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionOutput {
         crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionOutput {
-            arn: self.arn
-            ,
-            creation_timestamp: self.creation_timestamp
-            ,
-            id: self.id
-            ,
-            version: self.version
-            ,
+            arn: self.arn,
+            creation_timestamp: self.creation_timestamp,
+            id: self.id,
+            version: self.version,
             _request_id: self._request_id,
         }
     }

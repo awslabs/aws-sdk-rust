@@ -3,10 +3,7 @@
 pub fn de_insufficient_s3_bucket_policy_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InsufficientS3BucketPolicyFaultBuilder,
-) -> Result<
-    crate::types::error::builders::InsufficientS3BucketPolicyFaultBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::InsufficientS3BucketPolicyFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

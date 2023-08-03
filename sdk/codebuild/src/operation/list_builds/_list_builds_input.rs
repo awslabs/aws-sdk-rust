@@ -37,9 +37,7 @@ impl ListBuildsInput {
 
 /// A builder for [`ListBuildsInput`](crate::operation::list_builds::ListBuildsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBuildsInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrderType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,10 +57,7 @@ impl ListBuildsInputBuilder {
     /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li>
     /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li>
     /// </ul>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.sort_order = input;
         self
     }
@@ -89,12 +84,7 @@ impl ListBuildsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBuildsInput`](crate::operation::list_builds::ListBuildsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_builds::ListBuildsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_builds::ListBuildsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_builds::ListBuildsInput {
             sort_order: self.sort_order,
             next_token: self.next_token,

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`group_name(impl ::std::convert::Into<String>)`](crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder::set_group_name): <p>The group name.</p>
     /// - On success, responds with [`AdminAddUserToGroupOutput`](crate::operation::admin_add_user_to_group::AdminAddUserToGroupOutput)
     /// - On failure, responds with [`SdkError<AdminAddUserToGroupError>`](crate::operation::admin_add_user_to_group::AdminAddUserToGroupError)
-    pub fn admin_add_user_to_group(
-        &self,
-    ) -> crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder {
-        crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn admin_add_user_to_group(&self) -> crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder {
+        crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder::new(self.handle.clone())
     }
 }

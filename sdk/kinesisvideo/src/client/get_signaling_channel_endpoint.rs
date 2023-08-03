@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetSignalingChannelEndpointOutput`](crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput) with field(s):
     ///   - [`resource_endpoint_list(Option<Vec<ResourceEndpointListItem>>)`](crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput::resource_endpoint_list): <p>A list of endpoints for the specified signaling channel.</p>
     /// - On failure, responds with [`SdkError<GetSignalingChannelEndpointError>`](crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError)
-    pub fn get_signaling_channel_endpoint(&self) -> crate::operation::get_signaling_channel_endpoint::builders::GetSignalingChannelEndpointFluentBuilder{
+    pub fn get_signaling_channel_endpoint(
+        &self,
+    ) -> crate::operation::get_signaling_channel_endpoint::builders::GetSignalingChannelEndpointFluentBuilder {
         crate::operation::get_signaling_channel_endpoint::builders::GetSignalingChannelEndpointFluentBuilder::new(self.handle.clone())
     }
 }

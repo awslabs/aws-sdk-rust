@@ -36,9 +36,7 @@ impl UpdateBlueprintInput {
 
 /// A builder for [`UpdateBlueprintInput`](crate::operation::update_blueprint::UpdateBlueprintInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBlueprintInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ impl UpdateBlueprintInputBuilder {
         &self.description
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
-    pub fn blueprint_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blueprint_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
-    pub fn set_blueprint_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blueprint_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blueprint_location = input;
         self
     }
@@ -96,10 +88,7 @@ impl UpdateBlueprintInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBlueprintInput`](crate::operation::update_blueprint::UpdateBlueprintInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_blueprint::UpdateBlueprintInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_blueprint::UpdateBlueprintInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_blueprint::UpdateBlueprintInput {
             name: self.name,
             description: self.description,

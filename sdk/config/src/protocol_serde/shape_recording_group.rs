@@ -7,9 +7,7 @@ pub fn ser_recording_group(
         object.key("allSupported").boolean(input.all_supported);
     }
     if input.include_global_resource_types {
-        object
-            .key("includeGlobalResourceTypes")
-            .boolean(input.include_global_resource_types);
+        object.key("includeGlobalResourceTypes").boolean(input.include_global_resource_types);
     }
     if let Some(var_1) = &input.resource_types {
         let mut array_2 = object.key("resourceTypes").start_array();
@@ -23,19 +21,13 @@ pub fn ser_recording_group(
     if let Some(var_4) = &input.exclusion_by_resource_types {
         #[allow(unused_mut)]
         let mut object_5 = object.key("exclusionByResourceTypes").start_object();
-        crate::protocol_serde::shape_exclusion_by_resource_types::ser_exclusion_by_resource_types(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_exclusion_by_resource_types::ser_exclusion_by_resource_types(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.recording_strategy {
         #[allow(unused_mut)]
         let mut object_7 = object.key("recordingStrategy").start_object();
-        crate::protocol_serde::shape_recording_strategy::ser_recording_strategy(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_recording_strategy::ser_recording_strategy(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())
@@ -43,17 +35,9 @@ pub fn ser_recording_group(
 
 pub(crate) fn de_recording_group<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::RecordingGroup>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::RecordingGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -63,55 +47,39 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "allSupported" => {
-                                builder = builder.set_all_supported(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "includeGlobalResourceTypes" => {
-                                builder = builder.set_include_global_resource_types(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "resourceTypes" => {
-                                builder = builder.set_resource_types(
-                                    crate::protocol_serde::shape_resource_type_list::de_resource_type_list(tokens)?
-                                );
-                            }
-                            "exclusionByResourceTypes" => {
-                                builder = builder.set_exclusion_by_resource_types(
-                                    crate::protocol_serde::shape_exclusion_by_resource_types::de_exclusion_by_resource_types(tokens)?
-                                );
-                            }
-                            "recordingStrategy" => {
-                                builder = builder.set_recording_strategy(
-                                    crate::protocol_serde::shape_recording_strategy::de_recording_strategy(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "allSupported" => {
+                            builder = builder.set_all_supported(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
-                    }
+                        "includeGlobalResourceTypes" => {
+                            builder =
+                                builder.set_include_global_resource_types(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "resourceTypes" => {
+                            builder = builder.set_resource_types(crate::protocol_serde::shape_resource_type_list::de_resource_type_list(tokens)?);
+                        }
+                        "exclusionByResourceTypes" => {
+                            builder = builder.set_exclusion_by_resource_types(
+                                crate::protocol_serde::shape_exclusion_by_resource_types::de_exclusion_by_resource_types(tokens)?,
+                            );
+                        }
+                        "recordingStrategy" => {
+                            builder = builder.set_recording_strategy(crate::protocol_serde::shape_recording_strategy::de_recording_strategy(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

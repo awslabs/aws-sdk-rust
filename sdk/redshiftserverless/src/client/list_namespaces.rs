@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_namespaces::ListNamespacesOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     ///   - [`namespaces(Option<Vec<Namespace>>)`](crate::operation::list_namespaces::ListNamespacesOutput::namespaces): <p>The list of returned namespaces.</p>
     /// - On failure, responds with [`SdkError<ListNamespacesError>`](crate::operation::list_namespaces::ListNamespacesError)
-    pub fn list_namespaces(
-        &self,
-    ) -> crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder {
-        crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_namespaces(&self) -> crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder {
+        crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,17 +15,14 @@ impl GetFindingsFilterInput {
 }
 impl GetFindingsFilterInput {
     /// Creates a new builder-style object to manufacture [`GetFindingsFilterInput`](crate::operation::get_findings_filter::GetFindingsFilterInput).
-    pub fn builder(
-    ) -> crate::operation::get_findings_filter::builders::GetFindingsFilterInputBuilder {
+    pub fn builder() -> crate::operation::get_findings_filter::builders::GetFindingsFilterInputBuilder {
         crate::operation::get_findings_filter::builders::GetFindingsFilterInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFindingsFilterInput`](crate::operation::get_findings_filter::GetFindingsFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingsFilterInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl GetFindingsFilterInputBuilder {
     /// Consumes the builder and constructs a [`GetFindingsFilterInput`](crate::operation::get_findings_filter::GetFindingsFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_findings_filter::GetFindingsFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_findings_filter::GetFindingsFilterInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::get_findings_filter::GetFindingsFilterInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_findings_filter::GetFindingsFilterInput { id: self.id })
     }
 }

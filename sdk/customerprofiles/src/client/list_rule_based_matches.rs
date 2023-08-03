@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`match_ids(Option<Vec<String>>)`](crate::operation::list_rule_based_matches::ListRuleBasedMatchesOutput::match_ids): <p>The list of <code>MatchIds</code> for the given domain.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_rule_based_matches::ListRuleBasedMatchesOutput::next_token): <p>The pagination token from the previous <code>ListRuleBasedMatches</code> API call.</p>
     /// - On failure, responds with [`SdkError<ListRuleBasedMatchesError>`](crate::operation::list_rule_based_matches::ListRuleBasedMatchesError)
-    pub fn list_rule_based_matches(
-        &self,
-    ) -> crate::operation::list_rule_based_matches::builders::ListRuleBasedMatchesFluentBuilder
-    {
-        crate::operation::list_rule_based_matches::builders::ListRuleBasedMatchesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_rule_based_matches(&self) -> crate::operation::list_rule_based_matches::builders::ListRuleBasedMatchesFluentBuilder {
+        crate::operation::list_rule_based_matches::builders::ListRuleBasedMatchesFluentBuilder::new(self.handle.clone())
     }
 }

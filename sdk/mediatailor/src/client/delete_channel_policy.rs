@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`channel_name(impl ::std::convert::Into<String>)`](crate::operation::delete_channel_policy::builders::DeleteChannelPolicyFluentBuilder::channel_name) / [`set_channel_name(Option<String>)`](crate::operation::delete_channel_policy::builders::DeleteChannelPolicyFluentBuilder::set_channel_name): <p>The name of the channel associated with this channel policy.</p>
     /// - On success, responds with [`DeleteChannelPolicyOutput`](crate::operation::delete_channel_policy::DeleteChannelPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteChannelPolicyError>`](crate::operation::delete_channel_policy::DeleteChannelPolicyError)
-    pub fn delete_channel_policy(
-        &self,
-    ) -> crate::operation::delete_channel_policy::builders::DeleteChannelPolicyFluentBuilder {
-        crate::operation::delete_channel_policy::builders::DeleteChannelPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_channel_policy(&self) -> crate::operation::delete_channel_policy::builders::DeleteChannelPolicyFluentBuilder {
+        crate::operation::delete_channel_policy::builders::DeleteChannelPolicyFluentBuilder::new(self.handle.clone())
     }
 }

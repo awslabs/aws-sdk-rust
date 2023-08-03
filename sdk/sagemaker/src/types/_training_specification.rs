@@ -12,12 +12,10 @@ pub struct TrainingSpecification {
     pub training_image_digest: ::std::option::Option<::std::string::String>,
     /// <p>A list of the <code>HyperParameterSpecification</code> objects, that define the supported hyperparameters. This is required if the algorithm supports automatic model tuning.&gt;</p>
     #[doc(hidden)]
-    pub supported_hyper_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterSpecification>>,
+    pub supported_hyper_parameters: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterSpecification>>,
     /// <p>A list of the instance types that this algorithm can use for training.</p>
     #[doc(hidden)]
-    pub supported_training_instance_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrainingInstanceType>>,
+    pub supported_training_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::TrainingInstanceType>>,
     /// <p>Indicates whether the algorithm supports distributed training. If set to false, buyers can't request more than one instance during training.</p>
     #[doc(hidden)]
     pub supports_distributed_training: bool,
@@ -26,12 +24,10 @@ pub struct TrainingSpecification {
     pub metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
     /// <p>A list of <code>ChannelSpecification</code> objects, which specify the input sources to be used by the algorithm.</p>
     #[doc(hidden)]
-    pub training_channels:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelSpecification>>,
+    pub training_channels: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSpecification>>,
     /// <p>A list of the metrics that the algorithm emits that can be used as the objective metric in a hyperparameter tuning job.</p>
     #[doc(hidden)]
-    pub supported_tuning_job_objective_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningJobObjective>>,
+    pub supported_tuning_job_objective_metrics: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningJobObjective>>,
 }
 impl TrainingSpecification {
     /// <p>The Amazon ECR registry path of the Docker image that contains the training algorithm.</p>
@@ -43,15 +39,11 @@ impl TrainingSpecification {
         self.training_image_digest.as_deref()
     }
     /// <p>A list of the <code>HyperParameterSpecification</code> objects, that define the supported hyperparameters. This is required if the algorithm supports automatic model tuning.&gt;</p>
-    pub fn supported_hyper_parameters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HyperParameterSpecification]> {
+    pub fn supported_hyper_parameters(&self) -> ::std::option::Option<&[crate::types::HyperParameterSpecification]> {
         self.supported_hyper_parameters.as_deref()
     }
     /// <p>A list of the instance types that this algorithm can use for training.</p>
-    pub fn supported_training_instance_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrainingInstanceType]> {
+    pub fn supported_training_instance_types(&self) -> ::std::option::Option<&[crate::types::TrainingInstanceType]> {
         self.supported_training_instance_types.as_deref()
     }
     /// <p>Indicates whether the algorithm supports distributed training. If set to false, buyers can't request more than one instance during training.</p>
@@ -63,15 +55,11 @@ impl TrainingSpecification {
         self.metric_definitions.as_deref()
     }
     /// <p>A list of <code>ChannelSpecification</code> objects, which specify the input sources to be used by the algorithm.</p>
-    pub fn training_channels(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ChannelSpecification]> {
+    pub fn training_channels(&self) -> ::std::option::Option<&[crate::types::ChannelSpecification]> {
         self.training_channels.as_deref()
     }
     /// <p>A list of the metrics that the algorithm emits that can be used as the objective metric in a hyperparameter tuning job.</p>
-    pub fn supported_tuning_job_objective_metrics(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HyperParameterTuningJobObjective]> {
+    pub fn supported_tuning_job_objective_metrics(&self) -> ::std::option::Option<&[crate::types::HyperParameterTuningJobObjective]> {
         self.supported_tuning_job_objective_metrics.as_deref()
     }
 }
@@ -84,38 +72,25 @@ impl TrainingSpecification {
 
 /// A builder for [`TrainingSpecification`](crate::types::TrainingSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrainingSpecificationBuilder {
     pub(crate) training_image: ::std::option::Option<::std::string::String>,
     pub(crate) training_image_digest: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_hyper_parameters:
-        ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterSpecification>>,
-    pub(crate) supported_training_instance_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrainingInstanceType>>,
+    pub(crate) supported_hyper_parameters: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterSpecification>>,
+    pub(crate) supported_training_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::TrainingInstanceType>>,
     pub(crate) supports_distributed_training: ::std::option::Option<bool>,
-    pub(crate) metric_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
-    pub(crate) training_channels:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelSpecification>>,
-    pub(crate) supported_tuning_job_objective_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningJobObjective>>,
+    pub(crate) metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
+    pub(crate) training_channels: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSpecification>>,
+    pub(crate) supported_tuning_job_objective_metrics: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningJobObjective>>,
 }
 impl TrainingSpecificationBuilder {
     /// <p>The Amazon ECR registry path of the Docker image that contains the training algorithm.</p>
-    pub fn training_image(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn training_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_image = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon ECR registry path of the Docker image that contains the training algorithm.</p>
-    pub fn set_training_image(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_training_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.training_image = input;
         self
     }
@@ -124,18 +99,12 @@ impl TrainingSpecificationBuilder {
         &self.training_image
     }
     /// <p>An MD5 hash of the training algorithm that identifies the Docker image used for training.</p>
-    pub fn training_image_digest(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn training_image_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_image_digest = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An MD5 hash of the training algorithm that identifies the Docker image used for training.</p>
-    pub fn set_training_image_digest(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_training_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.training_image_digest = input;
         self
     }
@@ -148,10 +117,7 @@ impl TrainingSpecificationBuilder {
     /// To override the contents of this collection use [`set_supported_hyper_parameters`](Self::set_supported_hyper_parameters).
     ///
     /// <p>A list of the <code>HyperParameterSpecification</code> objects, that define the supported hyperparameters. This is required if the algorithm supports automatic model tuning.&gt;</p>
-    pub fn supported_hyper_parameters(
-        mut self,
-        input: crate::types::HyperParameterSpecification,
-    ) -> Self {
+    pub fn supported_hyper_parameters(mut self, input: crate::types::HyperParameterSpecification) -> Self {
         let mut v = self.supported_hyper_parameters.unwrap_or_default();
         v.push(input);
         self.supported_hyper_parameters = ::std::option::Option::Some(v);
@@ -166,9 +132,7 @@ impl TrainingSpecificationBuilder {
         self
     }
     /// <p>A list of the <code>HyperParameterSpecification</code> objects, that define the supported hyperparameters. This is required if the algorithm supports automatic model tuning.&gt;</p>
-    pub fn get_supported_hyper_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HyperParameterSpecification>> {
+    pub fn get_supported_hyper_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HyperParameterSpecification>> {
         &self.supported_hyper_parameters
     }
     /// Appends an item to `supported_training_instance_types`.
@@ -176,10 +140,7 @@ impl TrainingSpecificationBuilder {
     /// To override the contents of this collection use [`set_supported_training_instance_types`](Self::set_supported_training_instance_types).
     ///
     /// <p>A list of the instance types that this algorithm can use for training.</p>
-    pub fn supported_training_instance_types(
-        mut self,
-        input: crate::types::TrainingInstanceType,
-    ) -> Self {
+    pub fn supported_training_instance_types(mut self, input: crate::types::TrainingInstanceType) -> Self {
         let mut v = self.supported_training_instance_types.unwrap_or_default();
         v.push(input);
         self.supported_training_instance_types = ::std::option::Option::Some(v);
@@ -194,9 +155,7 @@ impl TrainingSpecificationBuilder {
         self
     }
     /// <p>A list of the instance types that this algorithm can use for training.</p>
-    pub fn get_supported_training_instance_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrainingInstanceType>> {
+    pub fn get_supported_training_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrainingInstanceType>> {
         &self.supported_training_instance_types
     }
     /// <p>Indicates whether the algorithm supports distributed training. If set to false, buyers can't request more than one instance during training.</p>
@@ -225,17 +184,12 @@ impl TrainingSpecificationBuilder {
         self
     }
     /// <p>A list of <code>MetricDefinition</code> objects, which are used for parsing metrics generated by the algorithm.</p>
-    pub fn set_metric_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
-    ) -> Self {
+    pub fn set_metric_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>) -> Self {
         self.metric_definitions = input;
         self
     }
     /// <p>A list of <code>MetricDefinition</code> objects, which are used for parsing metrics generated by the algorithm.</p>
-    pub fn get_metric_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>> {
+    pub fn get_metric_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>> {
         &self.metric_definitions
     }
     /// Appends an item to `training_channels`.
@@ -250,17 +204,12 @@ impl TrainingSpecificationBuilder {
         self
     }
     /// <p>A list of <code>ChannelSpecification</code> objects, which specify the input sources to be used by the algorithm.</p>
-    pub fn set_training_channels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSpecification>>,
-    ) -> Self {
+    pub fn set_training_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSpecification>>) -> Self {
         self.training_channels = input;
         self
     }
     /// <p>A list of <code>ChannelSpecification</code> objects, which specify the input sources to be used by the algorithm.</p>
-    pub fn get_training_channels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelSpecification>> {
+    pub fn get_training_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelSpecification>> {
         &self.training_channels
     }
     /// Appends an item to `supported_tuning_job_objective_metrics`.
@@ -268,13 +217,8 @@ impl TrainingSpecificationBuilder {
     /// To override the contents of this collection use [`set_supported_tuning_job_objective_metrics`](Self::set_supported_tuning_job_objective_metrics).
     ///
     /// <p>A list of the metrics that the algorithm emits that can be used as the objective metric in a hyperparameter tuning job.</p>
-    pub fn supported_tuning_job_objective_metrics(
-        mut self,
-        input: crate::types::HyperParameterTuningJobObjective,
-    ) -> Self {
-        let mut v = self
-            .supported_tuning_job_objective_metrics
-            .unwrap_or_default();
+    pub fn supported_tuning_job_objective_metrics(mut self, input: crate::types::HyperParameterTuningJobObjective) -> Self {
+        let mut v = self.supported_tuning_job_objective_metrics.unwrap_or_default();
         v.push(input);
         self.supported_tuning_job_objective_metrics = ::std::option::Option::Some(v);
         self
@@ -282,9 +226,7 @@ impl TrainingSpecificationBuilder {
     /// <p>A list of the metrics that the algorithm emits that can be used as the objective metric in a hyperparameter tuning job.</p>
     pub fn set_supported_tuning_job_objective_metrics(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::HyperParameterTuningJobObjective>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningJobObjective>>,
     ) -> Self {
         self.supported_tuning_job_objective_metrics = input;
         self
@@ -292,8 +234,7 @@ impl TrainingSpecificationBuilder {
     /// <p>A list of the metrics that the algorithm emits that can be used as the objective metric in a hyperparameter tuning job.</p>
     pub fn get_supported_tuning_job_objective_metrics(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningJobObjective>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningJobObjective>> {
         &self.supported_tuning_job_objective_metrics
     }
     /// Consumes the builder and constructs a [`TrainingSpecification`](crate::types::TrainingSpecification).

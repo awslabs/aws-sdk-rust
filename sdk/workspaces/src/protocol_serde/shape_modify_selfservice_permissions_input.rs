@@ -9,10 +9,7 @@ pub fn ser_modify_selfservice_permissions_input(
     if let Some(var_2) = &input.selfservice_permissions {
         #[allow(unused_mut)]
         let mut object_3 = object.key("SelfservicePermissions").start_object();
-        crate::protocol_serde::shape_selfservice_permissions::ser_selfservice_permissions(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_selfservice_permissions::ser_selfservice_permissions(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

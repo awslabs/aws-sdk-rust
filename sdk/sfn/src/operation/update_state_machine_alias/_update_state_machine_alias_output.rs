@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateStateMachineAliasOutput {
 }
 impl UpdateStateMachineAliasOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStateMachineAliasOutput`](crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput).
-    pub fn builder(
-    ) -> crate::operation::update_state_machine_alias::builders::UpdateStateMachineAliasOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_state_machine_alias::builders::UpdateStateMachineAliasOutputBuilder {
         crate::operation::update_state_machine_alias::builders::UpdateStateMachineAliasOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateStateMachineAliasOutput`](crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStateMachineAliasOutputBuilder {
     pub(crate) update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateStateMachineAliasOutputBuilder {
         self
     }
     /// <p>The date and time the state machine alias was updated.</p>
-    pub fn set_update_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date = input;
         self
     }
@@ -65,9 +58,7 @@ impl UpdateStateMachineAliasOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateStateMachineAliasOutput`](crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput {
+    pub fn build(self) -> crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput {
         crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput {
             update_date: self.update_date,
             _request_id: self._request_id,

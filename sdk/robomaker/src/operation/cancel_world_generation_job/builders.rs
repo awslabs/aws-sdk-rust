@@ -26,7 +26,7 @@ impl CancelWorldGenerationJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelWorldGenerationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobInputBuilder,
+    inner: crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobInputBuilder,
 }
 impl CancelWorldGenerationJobFluentBuilder {
     /// Creates a new `CancelWorldGenerationJob`.
@@ -37,7 +37,7 @@ impl CancelWorldGenerationJobFluentBuilder {
         }
     }
     /// Access the CancelWorldGenerationJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CancelWorldGenerationJobFluentBuilder {
             crate::operation::cancel_world_generation_job::CancelWorldGenerationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CancelWorldGenerationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CancelWorldGenerationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_world_generation_job::CancelWorldGenerationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CancelWorldGenerationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_world_generation_job::CancelWorldGenerationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CancelWorldGenerationJobFluentBuilder {
             crate::operation::cancel_world_generation_job::CancelWorldGenerationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError>,
     > {
         self.customize_middleware().await
     }

@@ -58,9 +58,7 @@ impl PricingPlan {
 
 /// A builder for [`PricingPlan`](crate::types::PricingPlan).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PricingPlanBuilder {
     pub(crate) billable_entity_count: ::std::option::Option<i64>,
     pub(crate) bundle_information: ::std::option::Option<crate::types::BundleInformation>,
@@ -90,17 +88,12 @@ impl PricingPlanBuilder {
         self
     }
     /// <p>The pricing plan's bundle information.</p>
-    pub fn set_bundle_information(
-        mut self,
-        input: ::std::option::Option<crate::types::BundleInformation>,
-    ) -> Self {
+    pub fn set_bundle_information(mut self, input: ::std::option::Option<crate::types::BundleInformation>) -> Self {
         self.bundle_information = input;
         self
     }
     /// <p>The pricing plan's bundle information.</p>
-    pub fn get_bundle_information(
-        &self,
-    ) -> &::std::option::Option<crate::types::BundleInformation> {
+    pub fn get_bundle_information(&self) -> &::std::option::Option<crate::types::BundleInformation> {
         &self.bundle_information
     }
     /// <p>The effective date and time of the pricing plan.</p>
@@ -109,10 +102,7 @@ impl PricingPlanBuilder {
         self
     }
     /// <p>The effective date and time of the pricing plan.</p>
-    pub fn set_effective_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_effective_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.effective_date_time = input;
         self
     }
@@ -126,10 +116,7 @@ impl PricingPlanBuilder {
         self
     }
     /// <p>The pricing mode.</p>
-    pub fn set_pricing_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingMode>,
-    ) -> Self {
+    pub fn set_pricing_mode(mut self, input: ::std::option::Option<crate::types::PricingMode>) -> Self {
         self.pricing_mode = input;
         self
     }
@@ -143,10 +130,7 @@ impl PricingPlanBuilder {
         self
     }
     /// <p>The set date and time for updating a pricing plan.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date_time = input;
         self
     }
@@ -160,10 +144,7 @@ impl PricingPlanBuilder {
         self
     }
     /// <p>The update reason for changing a pricing plan.</p>
-    pub fn set_update_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateReason>,
-    ) -> Self {
+    pub fn set_update_reason(mut self, input: ::std::option::Option<crate::types::UpdateReason>) -> Self {
         self.update_reason = input;
         self
     }

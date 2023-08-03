@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`metadata(Option<GetSolNetworkInstanceMetadata>)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::metadata): <p>The metadata of a network instance.</p>  <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::tags): <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     /// - On failure, responds with [`SdkError<GetSolNetworkInstanceError>`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceError)
-    pub fn get_sol_network_instance(
-        &self,
-    ) -> crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceFluentBuilder
-    {
+    pub fn get_sol_network_instance(&self) -> crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceFluentBuilder {
         crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceFluentBuilder::new(self.handle.clone())
     }
 }

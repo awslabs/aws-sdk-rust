@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_wireless_gateway::CreateWirelessGatewayOutput::arn): <p>The Amazon Resource Name of the new resource.</p>
     ///   - [`id(Option<String>)`](crate::operation::create_wireless_gateway::CreateWirelessGatewayOutput::id): <p>The ID of the new wireless gateway.</p>
     /// - On failure, responds with [`SdkError<CreateWirelessGatewayError>`](crate::operation::create_wireless_gateway::CreateWirelessGatewayError)
-    pub fn create_wireless_gateway(
-        &self,
-    ) -> crate::operation::create_wireless_gateway::builders::CreateWirelessGatewayFluentBuilder
-    {
-        crate::operation::create_wireless_gateway::builders::CreateWirelessGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_wireless_gateway(&self) -> crate::operation::create_wireless_gateway::builders::CreateWirelessGatewayFluentBuilder {
+        crate::operation::create_wireless_gateway::builders::CreateWirelessGatewayFluentBuilder::new(self.handle.clone())
     }
 }

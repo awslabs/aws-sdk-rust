@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_permission_policy::builders::DeletePermissionPolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::delete_permission_policy::builders::DeletePermissionPolicyFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the policy.</p>  <p>You must be the owner of the rule group to perform this operation.</p>
     /// - On success, responds with [`DeletePermissionPolicyOutput`](crate::operation::delete_permission_policy::DeletePermissionPolicyOutput)
     /// - On failure, responds with [`SdkError<DeletePermissionPolicyError>`](crate::operation::delete_permission_policy::DeletePermissionPolicyError)
-    pub fn delete_permission_policy(
-        &self,
-    ) -> crate::operation::delete_permission_policy::builders::DeletePermissionPolicyFluentBuilder
-    {
+    pub fn delete_permission_policy(&self) -> crate::operation::delete_permission_policy::builders::DeletePermissionPolicyFluentBuilder {
         crate::operation::delete_permission_policy::builders::DeletePermissionPolicyFluentBuilder::new(self.handle.clone())
     }
 }

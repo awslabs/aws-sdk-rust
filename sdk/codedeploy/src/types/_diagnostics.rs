@@ -62,9 +62,7 @@ impl Diagnostics {
 
 /// A builder for [`Diagnostics`](crate::types::Diagnostics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiagnosticsBuilder {
     pub(crate) error_code: ::std::option::Option<crate::types::LifecycleErrorCode>,
     pub(crate) script_name: ::std::option::Option<::std::string::String>,
@@ -94,10 +92,7 @@ impl DiagnosticsBuilder {
     /// <li> <p>ScriptFailed: The specified script failed to run as expected.</p> </li>
     /// <li> <p>UnknownError: The specified script did not run for an unknown reason.</p> </li>
     /// </ul>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecycleErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::LifecycleErrorCode>) -> Self {
         self.error_code = input;
         self
     }

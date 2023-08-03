@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteModelExplainabilityJobDefinitio
 }
 impl DeleteModelExplainabilityJobDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteModelExplainabilityJobDefinitionOutput`](crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionOutput).
-    pub fn builder() -> crate::operation::delete_model_explainability_job_definition::builders::DeleteModelExplainabilityJobDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_model_explainability_job_definition::builders::DeleteModelExplainabilityJobDefinitionOutputBuilder {
         crate::operation::delete_model_explainability_job_definition::builders::DeleteModelExplainabilityJobDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteModelExplainabilityJobDefinitionOutput`](crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteModelExplainabilityJobDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteModelExplainabilityJobDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteModelExplainabilityJobDefinitionOutput`](crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionOutput).
-    pub fn build(self) -> crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionOutput{
+    pub fn build(self) -> crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionOutput {
         crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionOutput {
             _request_id: self._request_id,
         }

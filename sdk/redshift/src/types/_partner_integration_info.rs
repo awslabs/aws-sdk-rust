@@ -58,9 +58,7 @@ impl PartnerIntegrationInfo {
 
 /// A builder for [`PartnerIntegrationInfo`](crate::types::PartnerIntegrationInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PartnerIntegrationInfoBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) partner_name: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct PartnerIntegrationInfoBuilder {
 }
 impl PartnerIntegrationInfoBuilder {
     /// <p>The name of the database that receives data from a partner.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database that receives data from a partner.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -110,10 +102,7 @@ impl PartnerIntegrationInfoBuilder {
         self
     }
     /// <p>The partner integration status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PartnerIntegrationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PartnerIntegrationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -122,18 +111,12 @@ impl PartnerIntegrationInfoBuilder {
         &self.status
     }
     /// <p>The status message provided by the partner.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message provided by the partner.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -147,10 +130,7 @@ impl PartnerIntegrationInfoBuilder {
         self
     }
     /// <p>The date (UTC) that the partner integration was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -164,10 +144,7 @@ impl PartnerIntegrationInfoBuilder {
         self
     }
     /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

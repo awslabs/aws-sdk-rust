@@ -26,7 +26,7 @@ impl DescribeWorldGenerationJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeWorldGenerationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_world_generation_job::builders::DescribeWorldGenerationJobInputBuilder,
+    inner: crate::operation::describe_world_generation_job::builders::DescribeWorldGenerationJobInputBuilder,
 }
 impl DescribeWorldGenerationJobFluentBuilder {
     /// Creates a new `DescribeWorldGenerationJob`.
@@ -37,7 +37,7 @@ impl DescribeWorldGenerationJobFluentBuilder {
         }
     }
     /// Access the DescribeWorldGenerationJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_world_generation_job::builders::DescribeWorldGenerationJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_world_generation_job::builders::DescribeWorldGenerationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeWorldGenerationJobFluentBuilder {
             crate::operation::describe_world_generation_job::DescribeWorldGenerationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeWorldGenerationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeWorldGenerationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeWorldGenerationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeWorldGenerationJobFluentBuilder {
             crate::operation::describe_world_generation_job::DescribeWorldGenerationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError>,
     > {
         self.customize_middleware().await
     }

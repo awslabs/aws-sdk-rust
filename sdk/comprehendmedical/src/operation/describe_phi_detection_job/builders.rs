@@ -26,8 +26,7 @@ impl DescribePhiDetectionJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePHIDetectionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_phi_detection_job::builders::DescribePhiDetectionJobInputBuilder,
+    inner: crate::operation::describe_phi_detection_job::builders::DescribePhiDetectionJobInputBuilder,
 }
 impl DescribePHIDetectionJobFluentBuilder {
     /// Creates a new `DescribePHIDetectionJob`.
@@ -38,10 +37,7 @@ impl DescribePHIDetectionJobFluentBuilder {
         }
     }
     /// Access the DescribePHIDetectionJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_phi_detection_job::builders::DescribePhiDetectionJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_phi_detection_job::builders::DescribePhiDetectionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribePHIDetectionJobFluentBuilder {
             crate::operation::describe_phi_detection_job::DescribePHIDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribePHIDetectionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribePHIDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_phi_detection_job::DescribePhiDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribePHIDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_phi_detection_job::DescribePhiDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DescribePHIDetectionJobFluentBuilder {
             crate::operation::describe_phi_detection_job::DescribePHIDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError>,
     > {
         self.customize_middleware().await
     }

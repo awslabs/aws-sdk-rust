@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateResourceProfileOutput {
 }
 impl UpdateResourceProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceProfileOutput`](crate::operation::update_resource_profile::UpdateResourceProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::update_resource_profile::builders::UpdateResourceProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_resource_profile::builders::UpdateResourceProfileOutputBuilder {
         crate::operation::update_resource_profile::builders::UpdateResourceProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResourceProfileOutput`](crate::operation::update_resource_profile::UpdateResourceProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourceProfileOutputBuilder {
     _request_id: Option<String>,
 }

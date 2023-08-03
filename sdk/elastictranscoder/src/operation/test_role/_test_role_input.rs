@@ -45,9 +45,7 @@ impl TestRoleInput {
 
 /// A builder for [`TestRoleInput`](crate::operation::test_role::TestRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestRoleInputBuilder {
     pub(crate) role: ::std::option::Option<::std::string::String>,
     pub(crate) input_bucket: ::std::option::Option<::std::string::String>,
@@ -84,18 +82,12 @@ impl TestRoleInputBuilder {
         &self.input_bucket
     }
     /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
-    pub fn output_bucket(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
-    pub fn set_output_bucket(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_bucket = input;
         self
     }
@@ -115,10 +107,7 @@ impl TestRoleInputBuilder {
         self
     }
     /// <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
-    pub fn set_topics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_topics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.topics = input;
         self
     }
@@ -127,12 +116,7 @@ impl TestRoleInputBuilder {
         &self.topics
     }
     /// Consumes the builder and constructs a [`TestRoleInput`](crate::operation::test_role::TestRoleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::test_role::TestRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_role::TestRoleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_role::TestRoleInput {
             role: self.role,
             input_bucket: self.input_bucket,

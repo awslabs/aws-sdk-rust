@@ -37,9 +37,7 @@ impl ExportBundleInput {
 
 /// A builder for [`ExportBundleInput`](crate::operation::export_bundle::ExportBundleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportBundleInputBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
@@ -89,12 +87,7 @@ impl ExportBundleInputBuilder {
         &self.platform
     }
     /// Consumes the builder and constructs a [`ExportBundleInput`](crate::operation::export_bundle::ExportBundleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::export_bundle::ExportBundleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_bundle::ExportBundleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_bundle::ExportBundleInput {
             bundle_id: self.bundle_id,
             project_id: self.project_id,

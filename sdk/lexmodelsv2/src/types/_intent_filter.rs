@@ -37,9 +37,7 @@ impl IntentFilter {
 
 /// A builder for [`IntentFilter`](crate::types::IntentFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntentFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::IntentFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -52,10 +50,7 @@ impl IntentFilterBuilder {
         self
     }
     /// <p>The name of the field to use for the filter.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::IntentFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::IntentFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -75,10 +70,7 @@ impl IntentFilterBuilder {
         self
     }
     /// <p>The value to use for the filter.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -92,10 +84,7 @@ impl IntentFilterBuilder {
         self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::IntentFilterOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::IntentFilterOperator>) -> Self {
         self.operator = input;
         self
     }

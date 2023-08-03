@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetPreparedStatementOutput {
 }
 impl GetPreparedStatementOutput {
     /// Creates a new builder-style object to manufacture [`GetPreparedStatementOutput`](crate::operation::get_prepared_statement::GetPreparedStatementOutput).
-    pub fn builder(
-    ) -> crate::operation::get_prepared_statement::builders::GetPreparedStatementOutputBuilder {
+    pub fn builder() -> crate::operation::get_prepared_statement::builders::GetPreparedStatementOutputBuilder {
         crate::operation::get_prepared_statement::builders::GetPreparedStatementOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPreparedStatementOutput`](crate::operation::get_prepared_statement::GetPreparedStatementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPreparedStatementOutputBuilder {
     pub(crate) prepared_statement: ::std::option::Option<crate::types::PreparedStatement>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl GetPreparedStatementOutputBuilder {
         self
     }
     /// <p>The name of the prepared statement that was retrieved.</p>
-    pub fn set_prepared_statement(
-        mut self,
-        input: ::std::option::Option<crate::types::PreparedStatement>,
-    ) -> Self {
+    pub fn set_prepared_statement(mut self, input: ::std::option::Option<crate::types::PreparedStatement>) -> Self {
         self.prepared_statement = input;
         self
     }
     /// <p>The name of the prepared statement that was retrieved.</p>
-    pub fn get_prepared_statement(
-        &self,
-    ) -> &::std::option::Option<crate::types::PreparedStatement> {
+    pub fn get_prepared_statement(&self) -> &::std::option::Option<crate::types::PreparedStatement> {
         &self.prepared_statement
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

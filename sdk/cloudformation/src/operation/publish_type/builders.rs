@@ -10,10 +10,7 @@ impl PublishTypeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::publish_type::PublishTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::publish_type::PublishTypeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::publish_type::PublishTypeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.publish_type();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl PublishTypeFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::publish_type::PublishType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::publish_type::PublishType, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::publish_type::PublishTypeError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl PublishTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl PublishTypeFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::publish_type::PublishType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::publish_type::PublishType, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::publish_type::PublishTypeError>,
     > {
         self.customize_middleware().await
@@ -170,10 +158,7 @@ impl PublishTypeFluentBuilder {
     /// <p>For more information, see <a href="https://semver.org/">Semantic Versioning 2.0.0</a>.</p>
     /// <p>If you don't specify a version number, CloudFormation increments the version number by one minor version release.</p>
     /// <p>You cannot specify a version number the first time you publish a type. CloudFormation automatically sets the first version number to be <code>1.0.0</code>.</p>
-    pub fn public_version_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_version_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.public_version_number(input.into());
         self
     }
@@ -183,10 +168,7 @@ impl PublishTypeFluentBuilder {
     /// <p>For more information, see <a href="https://semver.org/">Semantic Versioning 2.0.0</a>.</p>
     /// <p>If you don't specify a version number, CloudFormation increments the version number by one minor version release.</p>
     /// <p>You cannot specify a version number the first time you publish a type. CloudFormation automatically sets the first version number to be <code>1.0.0</code>.</p>
-    pub fn set_public_version_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_public_version_number(input);
         self
     }

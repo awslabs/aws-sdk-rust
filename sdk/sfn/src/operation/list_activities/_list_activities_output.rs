@@ -35,9 +35,7 @@ impl ListActivitiesOutput {
 
 /// A builder for [`ListActivitiesOutput`](crate::operation::list_activities::ListActivitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListActivitiesOutputBuilder {
     pub(crate) activities: ::std::option::Option<::std::vec::Vec<crate::types::ActivityListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListActivitiesOutputBuilder {
         self
     }
     /// <p>The list of activities.</p>
-    pub fn set_activities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActivityListItem>>,
-    ) -> Self {
+    pub fn set_activities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActivityListItem>>) -> Self {
         self.activities = input;
         self
     }
     /// <p>The list of activities.</p>
-    pub fn get_activities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActivityListItem>> {
+    pub fn get_activities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActivityListItem>> {
         &self.activities
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>

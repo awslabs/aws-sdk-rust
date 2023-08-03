@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetFlowTemplateRevisionsOutput {
 }
 impl GetFlowTemplateRevisionsOutput {
     /// Creates a new builder-style object to manufacture [`GetFlowTemplateRevisionsOutput`](crate::operation::get_flow_template_revisions::GetFlowTemplateRevisionsOutput).
-    pub fn builder() -> crate::operation::get_flow_template_revisions::builders::GetFlowTemplateRevisionsOutputBuilder{
+    pub fn builder() -> crate::operation::get_flow_template_revisions::builders::GetFlowTemplateRevisionsOutputBuilder {
         crate::operation::get_flow_template_revisions::builders::GetFlowTemplateRevisionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFlowTemplateRevisionsOutput`](crate::operation::get_flow_template_revisions::GetFlowTemplateRevisionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFlowTemplateRevisionsOutputBuilder {
     pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetFlowTemplateRevisionsOutputBuilder {
         self
     }
     /// <p>An array of objects that provide summary data about each revision.</p>
-    pub fn set_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateSummary>>,
-    ) -> Self {
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateSummary>>) -> Self {
         self.summaries = input;
         self
     }
     /// <p>An array of objects that provide summary data about each revision.</p>
-    pub fn get_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateSummary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateSummary>> {
         &self.summaries
     }
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
@@ -93,9 +86,7 @@ impl GetFlowTemplateRevisionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetFlowTemplateRevisionsOutput`](crate::operation::get_flow_template_revisions::GetFlowTemplateRevisionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_flow_template_revisions::GetFlowTemplateRevisionsOutput {
+    pub fn build(self) -> crate::operation::get_flow_template_revisions::GetFlowTemplateRevisionsOutput {
         crate::operation::get_flow_template_revisions::GetFlowTemplateRevisionsOutput {
             summaries: self.summaries,
             next_token: self.next_token,

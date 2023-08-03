@@ -30,9 +30,7 @@ impl AttackStatisticsDataItem {
 
 /// A builder for [`AttackStatisticsDataItem`](crate::types::AttackStatisticsDataItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttackStatisticsDataItemBuilder {
     pub(crate) attack_volume: ::std::option::Option<crate::types::AttackVolume>,
     pub(crate) attack_count: ::std::option::Option<i64>,
@@ -44,10 +42,7 @@ impl AttackStatisticsDataItemBuilder {
         self
     }
     /// <p>Information about the volume of attacks during the time period. If the accompanying <code>AttackCount</code> is zero, this setting might be empty.</p>
-    pub fn set_attack_volume(
-        mut self,
-        input: ::std::option::Option<crate::types::AttackVolume>,
-    ) -> Self {
+    pub fn set_attack_volume(mut self, input: ::std::option::Option<crate::types::AttackVolume>) -> Self {
         self.attack_volume = input;
         self
     }

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`bucket(impl ::std::convert::Into<String>)`](crate::operation::delete_bucket_lifecycle_configuration::builders::DeleteBucketLifecycleConfigurationFluentBuilder::bucket) / [`set_bucket(Option<String>)`](crate::operation::delete_bucket_lifecycle_configuration::builders::DeleteBucketLifecycleConfigurationFluentBuilder::set_bucket): <p>Specifies the bucket.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /bucket/      <my-bucket-name></my-bucket-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     /// - On success, responds with [`DeleteBucketLifecycleConfigurationOutput`](crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteBucketLifecycleConfigurationError>`](crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationError)
-    pub fn delete_bucket_lifecycle_configuration(&self) -> crate::operation::delete_bucket_lifecycle_configuration::builders::DeleteBucketLifecycleConfigurationFluentBuilder{
+    pub fn delete_bucket_lifecycle_configuration(
+        &self,
+    ) -> crate::operation::delete_bucket_lifecycle_configuration::builders::DeleteBucketLifecycleConfigurationFluentBuilder {
         crate::operation::delete_bucket_lifecycle_configuration::builders::DeleteBucketLifecycleConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

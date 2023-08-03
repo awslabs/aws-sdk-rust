@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum S3DataDistribution {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for S3DataDistribution {
         match s {
             "FullyReplicated" => S3DataDistribution::FullyReplicated,
             "ShardedByS3Key" => S3DataDistribution::ShardedByS3Key,
-            other => S3DataDistribution::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => S3DataDistribution::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

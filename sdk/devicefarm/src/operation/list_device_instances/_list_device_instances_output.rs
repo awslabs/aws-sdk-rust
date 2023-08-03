@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDeviceInstancesOutput {
 }
 impl ListDeviceInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListDeviceInstancesOutput`](crate::operation::list_device_instances::ListDeviceInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_device_instances::builders::ListDeviceInstancesOutputBuilder {
-        crate::operation::list_device_instances::builders::ListDeviceInstancesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_device_instances::builders::ListDeviceInstancesOutputBuilder {
+        crate::operation::list_device_instances::builders::ListDeviceInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeviceInstancesOutput`](crate::operation::list_device_instances::ListDeviceInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeviceInstancesOutputBuilder {
-    pub(crate) device_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeviceInstance>>,
+    pub(crate) device_instances: ::std::option::Option<::std::vec::Vec<crate::types::DeviceInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListDeviceInstancesOutputBuilder {
         self
     }
     /// <p>An object that contains information about your device instances.</p>
-    pub fn set_device_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceInstance>>,
-    ) -> Self {
+    pub fn set_device_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceInstance>>) -> Self {
         self.device_instances = input;
         self
     }
     /// <p>An object that contains information about your device instances.</p>
-    pub fn get_device_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceInstance>> {
+    pub fn get_device_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceInstance>> {
         &self.device_instances
     }
     /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>

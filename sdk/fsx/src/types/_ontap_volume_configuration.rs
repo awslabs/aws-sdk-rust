@@ -69,9 +69,7 @@ impl OntapVolumeConfiguration {
     /// <li> <p> <code>ORIGIN</code> specifies that the volume is the origin volume for a FlexCache volume.</p> </li>
     /// <li> <p> <code>CACHE</code> specifies that the volume is a FlexCache volume.</p> </li>
     /// </ul>
-    pub fn flex_cache_endpoint_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FlexCacheEndpointType> {
+    pub fn flex_cache_endpoint_type(&self) -> ::std::option::Option<&crate::types::FlexCacheEndpointType> {
         self.flex_cache_endpoint_type.as_ref()
     }
     /// <p>Specifies the directory that network-attached storage (NAS) clients use to mount the volume, along with the storage virtual machine (SVM) Domain Name System (DNS) name or IP address. You can create a <code>JunctionPath</code> directly below a parent volume junction or on a directory within a volume. A <code>JunctionPath</code> for a volume named <code>vol3</code> might be <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>, or even <code>/dir1/dir2/vol3</code>.</p>
@@ -132,9 +130,7 @@ impl OntapVolumeConfiguration {
         self.copy_tags_to_backups
     }
     /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
-    pub fn snaplock_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SnaplockConfiguration> {
+    pub fn snaplock_configuration(&self) -> ::std::option::Option<&crate::types::SnaplockConfiguration> {
         self.snaplock_configuration.as_ref()
     }
 }
@@ -147,9 +143,7 @@ impl OntapVolumeConfiguration {
 
 /// A builder for [`OntapVolumeConfiguration`](crate::types::OntapVolumeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OntapVolumeConfigurationBuilder {
     pub(crate) flex_cache_endpoint_type: ::std::option::Option<crate::types::FlexCacheEndpointType>,
     pub(crate) junction_path: ::std::option::Option<::std::string::String>,
@@ -182,10 +176,7 @@ impl OntapVolumeConfigurationBuilder {
     /// <li> <p> <code>ORIGIN</code> specifies that the volume is the origin volume for a FlexCache volume.</p> </li>
     /// <li> <p> <code>CACHE</code> specifies that the volume is a FlexCache volume.</p> </li>
     /// </ul>
-    pub fn set_flex_cache_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FlexCacheEndpointType>,
-    ) -> Self {
+    pub fn set_flex_cache_endpoint_type(mut self, input: ::std::option::Option<crate::types::FlexCacheEndpointType>) -> Self {
         self.flex_cache_endpoint_type = input;
         self
     }
@@ -195,24 +186,16 @@ impl OntapVolumeConfigurationBuilder {
     /// <li> <p> <code>ORIGIN</code> specifies that the volume is the origin volume for a FlexCache volume.</p> </li>
     /// <li> <p> <code>CACHE</code> specifies that the volume is a FlexCache volume.</p> </li>
     /// </ul>
-    pub fn get_flex_cache_endpoint_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::FlexCacheEndpointType> {
+    pub fn get_flex_cache_endpoint_type(&self) -> &::std::option::Option<crate::types::FlexCacheEndpointType> {
         &self.flex_cache_endpoint_type
     }
     /// <p>Specifies the directory that network-attached storage (NAS) clients use to mount the volume, along with the storage virtual machine (SVM) Domain Name System (DNS) name or IP address. You can create a <code>JunctionPath</code> directly below a parent volume junction or on a directory within a volume. A <code>JunctionPath</code> for a volume named <code>vol3</code> might be <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>, or even <code>/dir1/dir2/vol3</code>.</p>
-    pub fn junction_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn junction_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.junction_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the directory that network-attached storage (NAS) clients use to mount the volume, along with the storage virtual machine (SVM) Domain Name System (DNS) name or IP address. You can create a <code>JunctionPath</code> directly below a parent volume junction or on a directory within a volume. A <code>JunctionPath</code> for a volume named <code>vol3</code> might be <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>, or even <code>/dir1/dir2/vol3</code>.</p>
-    pub fn set_junction_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_junction_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.junction_path = input;
         self
     }
@@ -226,10 +209,7 @@ impl OntapVolumeConfigurationBuilder {
         self
     }
     /// <p>The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>, or <code>MIXED</code>.</p>
-    pub fn set_security_style(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityStyle>,
-    ) -> Self {
+    pub fn set_security_style(mut self, input: ::std::option::Option<crate::types::SecurityStyle>) -> Self {
         self.security_style = input;
         self
     }
@@ -266,18 +246,12 @@ impl OntapVolumeConfigurationBuilder {
         &self.storage_efficiency_enabled
     }
     /// <p>The ID of the volume's storage virtual machine.</p>
-    pub fn storage_virtual_machine_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_virtual_machine_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_virtual_machine_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the volume's storage virtual machine.</p>
-    pub fn set_storage_virtual_machine_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_virtual_machine_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_virtual_machine_id = input;
         self
     }
@@ -308,10 +282,7 @@ impl OntapVolumeConfigurationBuilder {
         self
     }
     /// <p>The volume's <code>TieringPolicy</code> setting.</p>
-    pub fn set_tiering_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::TieringPolicy>,
-    ) -> Self {
+    pub fn set_tiering_policy(mut self, input: ::std::option::Option<crate::types::TieringPolicy>) -> Self {
         self.tiering_policy = input;
         self
     }
@@ -349,10 +320,7 @@ impl OntapVolumeConfigurationBuilder {
     /// <li> <p> <code>DP</code> specifies a data-protection volume. You can protect data by replicating it to data-protection mirror copies. If a disaster occurs, you can use these data-protection mirror copies to recover data.</p> </li>
     /// <li> <p> <code>LS</code> specifies a load-sharing mirror volume. A load-sharing mirror reduces the network traffic to a FlexVol volume by providing additional read-only access to clients.</p> </li>
     /// </ul>
-    pub fn set_ontap_volume_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OntapVolumeType>,
-    ) -> Self {
+    pub fn set_ontap_volume_type(mut self, input: ::std::option::Option<crate::types::OntapVolumeType>) -> Self {
         self.ontap_volume_type = input;
         self
     }
@@ -373,10 +341,7 @@ impl OntapVolumeConfigurationBuilder {
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
-    pub fn snapshot_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_policy = ::std::option::Option::Some(input.into());
         self
     }
@@ -388,10 +353,7 @@ impl OntapVolumeConfigurationBuilder {
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
-    pub fn set_snapshot_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_policy = input;
         self
     }
@@ -426,17 +388,12 @@ impl OntapVolumeConfigurationBuilder {
         self
     }
     /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
-    pub fn set_snaplock_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SnaplockConfiguration>,
-    ) -> Self {
+    pub fn set_snaplock_configuration(mut self, input: ::std::option::Option<crate::types::SnaplockConfiguration>) -> Self {
         self.snaplock_configuration = input;
         self
     }
     /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
-    pub fn get_snaplock_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SnaplockConfiguration> {
+    pub fn get_snaplock_configuration(&self) -> &::std::option::Option<crate::types::SnaplockConfiguration> {
         &self.snaplock_configuration
     }
     /// Consumes the builder and constructs a [`OntapVolumeConfiguration`](crate::types::OntapVolumeConfiguration).

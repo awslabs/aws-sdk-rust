@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`keyword_message(Option<String>)`](crate::operation::delete_keyword::DeleteKeywordOutput::keyword_message): <p>The message that was associated with the deleted keyword.</p>
     ///   - [`keyword_action(Option<KeywordAction>)`](crate::operation::delete_keyword::DeleteKeywordOutput::keyword_action): <p>The action that was associated with the deleted keyword.</p>
     /// - On failure, responds with [`SdkError<DeleteKeywordError>`](crate::operation::delete_keyword::DeleteKeywordError)
-    pub fn delete_keyword(
-        &self,
-    ) -> crate::operation::delete_keyword::builders::DeleteKeywordFluentBuilder {
-        crate::operation::delete_keyword::builders::DeleteKeywordFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_keyword(&self) -> crate::operation::delete_keyword::builders::DeleteKeywordFluentBuilder {
+        crate::operation::delete_keyword::builders::DeleteKeywordFluentBuilder::new(self.handle.clone())
     }
 }

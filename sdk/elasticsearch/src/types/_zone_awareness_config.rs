@@ -23,9 +23,7 @@ impl ZoneAwarenessConfig {
 
 /// A builder for [`ZoneAwarenessConfig`](crate::types::ZoneAwarenessConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ZoneAwarenessConfigBuilder {
     pub(crate) availability_zone_count: ::std::option::Option<i32>,
 }

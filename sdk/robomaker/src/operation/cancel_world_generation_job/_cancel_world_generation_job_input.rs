@@ -15,18 +15,14 @@ impl CancelWorldGenerationJobInput {
 }
 impl CancelWorldGenerationJobInput {
     /// Creates a new builder-style object to manufacture [`CancelWorldGenerationJobInput`](crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobInputBuilder {
         crate::operation::cancel_world_generation_job::builders::CancelWorldGenerationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelWorldGenerationJobInput`](crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelWorldGenerationJobInputBuilder {
     pub(crate) job: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl CancelWorldGenerationJobInputBuilder {
         crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput {
-                job: self.job,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput { job: self.job })
     }
 }

@@ -38,9 +38,7 @@ impl GetExperimentResultsFluentBuilder {
         }
     }
     /// Access the GetExperimentResults as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_experiment_results::builders::GetExperimentResultsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_experiment_results::builders::GetExperimentResultsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl GetExperimentResultsFluentBuilder {
             crate::operation::get_experiment_results::GetExperimentResults,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_experiment_results::GetExperimentResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_experiment_results::GetExperimentResultsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl GetExperimentResultsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl GetExperimentResultsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_experiment_results::GetExperimentResultsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_experiment_results::GetExperimentResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_experiment_results::GetExperimentResultsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl GetExperimentResultsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_experiment_results::GetExperimentResultsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_experiment_results::GetExperimentResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_experiment_results::GetExperimentResultsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl GetExperimentResultsFluentBuilder {
             crate::operation::get_experiment_results::GetExperimentResults,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_experiment_results::GetExperimentResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_experiment_results::GetExperimentResultsError>,
     > {
         self.customize_middleware().await
     }
@@ -157,10 +144,7 @@ impl GetExperimentResultsFluentBuilder {
         self
     }
     /// <p>The date and time that the experiment started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -174,10 +158,7 @@ impl GetExperimentResultsFluentBuilder {
         self
     }
     /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -195,17 +176,12 @@ impl GetExperimentResultsFluentBuilder {
         self
     }
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
-    pub fn set_metric_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metric_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_metric_names(input);
         self
     }
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
-    pub fn get_metric_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metric_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_metric_names()
     }
     /// Appends an item to `treatmentNames`.
@@ -213,25 +189,17 @@ impl GetExperimentResultsFluentBuilder {
     /// To override the contents of this collection use [`set_treatment_names`](Self::set_treatment_names).
     ///
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
-    pub fn treatment_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn treatment_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.treatment_names(input.into());
         self
     }
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
-    pub fn set_treatment_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_treatment_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_treatment_names(input);
         self
     }
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
-    pub fn get_treatment_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_treatment_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_treatment_names()
     }
     /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
@@ -240,10 +208,7 @@ impl GetExperimentResultsFluentBuilder {
         self
     }
     /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
-    pub fn set_base_stat(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentBaseStat>,
-    ) -> Self {
+    pub fn set_base_stat(mut self, input: ::std::option::Option<crate::types::ExperimentBaseStat>) -> Self {
         self.inner = self.inner.set_base_stat(input);
         self
     }
@@ -273,10 +238,7 @@ impl GetExperimentResultsFluentBuilder {
     /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>
     /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>
     /// </ul>
-    pub fn set_result_stats(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultRequestType>>,
-    ) -> Self {
+    pub fn set_result_stats(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultRequestType>>) -> Self {
         self.inner = self.inner.set_result_stats(input);
         self
     }
@@ -287,9 +249,7 @@ impl GetExperimentResultsFluentBuilder {
     /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>
     /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>
     /// </ul>
-    pub fn get_result_stats(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultRequestType>> {
+    pub fn get_result_stats(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultRequestType>> {
         self.inner.get_result_stats()
     }
     /// Appends an item to `reportNames`.
@@ -302,17 +262,12 @@ impl GetExperimentResultsFluentBuilder {
         self
     }
     /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
-    pub fn set_report_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentReportName>>,
-    ) -> Self {
+    pub fn set_report_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentReportName>>) -> Self {
         self.inner = self.inner.set_report_names(input);
         self
     }
     /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
-    pub fn get_report_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentReportName>> {
+    pub fn get_report_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentReportName>> {
         self.inner.get_report_names()
     }
     /// <p>In seconds, the amount of time to aggregate results together. </p>

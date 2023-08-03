@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_policy_principals::ListPolicyPrincipalsOutput::next_marker): <p>The marker for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListPolicyPrincipalsError>`](crate::operation::list_policy_principals::ListPolicyPrincipalsError)
     #[deprecated]
-    pub fn list_policy_principals(
-        &self,
-    ) -> crate::operation::list_policy_principals::builders::ListPolicyPrincipalsFluentBuilder {
-        crate::operation::list_policy_principals::builders::ListPolicyPrincipalsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_policy_principals(&self) -> crate::operation::list_policy_principals::builders::ListPolicyPrincipalsFluentBuilder {
+        crate::operation::list_policy_principals::builders::ListPolicyPrincipalsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl DeletePricingRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_pricing_rule::DeletePricingRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_pricing_rule::DeletePricingRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_pricing_rule::DeletePricingRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_pricing_rule();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeletePricingRuleFluentBuilder {
         }
     }
     /// Access the DeletePricingRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_pricing_rule::builders::DeletePricingRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_pricing_rule::builders::DeletePricingRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeletePricingRuleFluentBuilder {
             crate::operation::delete_pricing_rule::DeletePricingRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_pricing_rule::DeletePricingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_pricing_rule::DeletePricingRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeletePricingRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeletePricingRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_pricing_rule::DeletePricingRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_pricing_rule::DeletePricingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_pricing_rule::DeletePricingRuleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeletePricingRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_pricing_rule::DeletePricingRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_pricing_rule::DeletePricingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_pricing_rule::DeletePricingRuleError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeletePricingRuleFluentBuilder {
             crate::operation::delete_pricing_rule::DeletePricingRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_pricing_rule::DeletePricingRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_pricing_rule::DeletePricingRuleError>,
     > {
         self.customize_middleware().await
     }

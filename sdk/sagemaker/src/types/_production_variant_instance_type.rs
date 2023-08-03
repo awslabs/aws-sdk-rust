@@ -183,13 +183,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ProductionVariantInstanceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -639,9 +633,7 @@ impl ::std::convert::From<&str> for ProductionVariantInstanceType {
             "ml.t2.xlarge" => ProductionVariantInstanceType::MlT2Xlarge,
             "ml.trn1.2xlarge" => ProductionVariantInstanceType::MlTrn12Xlarge,
             "ml.trn1.32xlarge" => ProductionVariantInstanceType::MlTrn132Xlarge,
-            other => ProductionVariantInstanceType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ProductionVariantInstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

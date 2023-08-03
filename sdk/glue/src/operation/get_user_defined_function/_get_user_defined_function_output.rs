@@ -10,9 +10,7 @@ pub struct GetUserDefinedFunctionOutput {
 }
 impl GetUserDefinedFunctionOutput {
     /// <p>The requested function definition.</p>
-    pub fn user_defined_function(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UserDefinedFunction> {
+    pub fn user_defined_function(&self) -> ::std::option::Option<&crate::types::UserDefinedFunction> {
         self.user_defined_function.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetUserDefinedFunctionOutput {
 }
 impl GetUserDefinedFunctionOutput {
     /// Creates a new builder-style object to manufacture [`GetUserDefinedFunctionOutput`](crate::operation::get_user_defined_function::GetUserDefinedFunctionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_user_defined_function::builders::GetUserDefinedFunctionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_user_defined_function::builders::GetUserDefinedFunctionOutputBuilder {
         crate::operation::get_user_defined_function::builders::GetUserDefinedFunctionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetUserDefinedFunctionOutput`](crate::operation::get_user_defined_function::GetUserDefinedFunctionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUserDefinedFunctionOutputBuilder {
     pub(crate) user_defined_function: ::std::option::Option<crate::types::UserDefinedFunction>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl GetUserDefinedFunctionOutputBuilder {
         self
     }
     /// <p>The requested function definition.</p>
-    pub fn set_user_defined_function(
-        mut self,
-        input: ::std::option::Option<crate::types::UserDefinedFunction>,
-    ) -> Self {
+    pub fn set_user_defined_function(mut self, input: ::std::option::Option<crate::types::UserDefinedFunction>) -> Self {
         self.user_defined_function = input;
         self
     }
     /// <p>The requested function definition.</p>
-    pub fn get_user_defined_function(
-        &self,
-    ) -> &::std::option::Option<crate::types::UserDefinedFunction> {
+    pub fn get_user_defined_function(&self) -> &::std::option::Option<crate::types::UserDefinedFunction> {
         &self.user_defined_function
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -69,9 +58,7 @@ impl GetUserDefinedFunctionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetUserDefinedFunctionOutput`](crate::operation::get_user_defined_function::GetUserDefinedFunctionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_user_defined_function::GetUserDefinedFunctionOutput {
+    pub fn build(self) -> crate::operation::get_user_defined_function::GetUserDefinedFunctionOutput {
         crate::operation::get_user_defined_function::GetUserDefinedFunctionOutput {
             user_defined_function: self.user_defined_function,
             _request_id: self._request_id,

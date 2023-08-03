@@ -54,9 +54,7 @@ impl AppIntegrationsConfiguration {
 
 /// A builder for [`AppIntegrationsConfiguration`](crate::types::AppIntegrationsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppIntegrationsConfigurationBuilder {
     pub(crate) app_integration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) object_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -69,10 +67,7 @@ impl AppIntegrationsConfigurationBuilder {
     /// <li> <p> For <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/"> Zendesk</a>, your AppIntegrations DataIntegration must have an ObjectConfiguration if <code>objectFields</code> is not provided, including at least <code>id</code>, <code>title</code>, <code>updated_at</code>, and <code>draft</code> as source fields. </p> </li>
     /// <li> <p> For <a href="https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/sharepoint-net-server-csom-jsom-and-rest-api-index"> SharePoint</a>, your AppIntegrations DataIntegration must have a FileConfiguration, including only file extensions that are among <code>docx</code>, <code>pdf</code>, <code>html</code>, <code>htm</code>, and <code>txt</code>. </p> </li>
     /// </ul>
-    pub fn app_integration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_integration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_integration_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -83,10 +78,7 @@ impl AppIntegrationsConfigurationBuilder {
     /// <li> <p> For <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/"> Zendesk</a>, your AppIntegrations DataIntegration must have an ObjectConfiguration if <code>objectFields</code> is not provided, including at least <code>id</code>, <code>title</code>, <code>updated_at</code>, and <code>draft</code> as source fields. </p> </li>
     /// <li> <p> For <a href="https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/sharepoint-net-server-csom-jsom-and-rest-api-index"> SharePoint</a>, your AppIntegrations DataIntegration must have a FileConfiguration, including only file extensions that are among <code>docx</code>, <code>pdf</code>, <code>html</code>, <code>htm</code>, and <code>txt</code>. </p> </li>
     /// </ul>
-    pub fn set_app_integration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_integration_arn = input;
         self
     }
@@ -111,10 +103,7 @@ impl AppIntegrationsConfigurationBuilder {
     /// <li> <p>For <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/"> Zendesk</a>, you must include at least <code>id</code>, <code>title</code>, <code>updated_at</code>, and <code>draft</code>. </p> </li>
     /// </ul>
     /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
-    pub fn object_fields(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.object_fields.unwrap_or_default();
         v.push(input.into());
         self.object_fields = ::std::option::Option::Some(v);
@@ -127,10 +116,7 @@ impl AppIntegrationsConfigurationBuilder {
     /// <li> <p>For <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/"> Zendesk</a>, you must include at least <code>id</code>, <code>title</code>, <code>updated_at</code>, and <code>draft</code>. </p> </li>
     /// </ul>
     /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
-    pub fn set_object_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_object_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.object_fields = input;
         self
     }
@@ -141,9 +127,7 @@ impl AppIntegrationsConfigurationBuilder {
     /// <li> <p>For <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/"> Zendesk</a>, you must include at least <code>id</code>, <code>title</code>, <code>updated_at</code>, and <code>draft</code>. </p> </li>
     /// </ul>
     /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
-    pub fn get_object_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_object_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.object_fields
     }
     /// Consumes the builder and constructs a [`AppIntegrationsConfiguration`](crate::types::AppIntegrationsConfiguration).

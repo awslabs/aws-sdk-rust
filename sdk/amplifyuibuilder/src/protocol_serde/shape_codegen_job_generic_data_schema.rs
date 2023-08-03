@@ -50,17 +50,9 @@ pub fn ser_codegen_job_generic_data_schema(
 
 pub(crate) fn de_codegen_job_generic_data_schema<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::CodegenJobGenericDataSchema>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::CodegenJobGenericDataSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -70,56 +62,43 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "dataSourceType" => {
-                                builder = builder.set_data_source_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::CodegenJobGenericDataSourceType::from(
-                                                u.as_ref(),
-                                            )
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "dataSourceType" => {
+                            builder = builder.set_data_source_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CodegenJobGenericDataSourceType::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "models" => {
-                                builder = builder.set_models(
-                                    crate::protocol_serde::shape_codegen_generic_data_models::de_codegen_generic_data_models(tokens)?
-                                );
-                            }
-                            "enums" => {
-                                builder = builder.set_enums(
-                                    crate::protocol_serde::shape_codegen_generic_data_enums::de_codegen_generic_data_enums(tokens)?
-                                );
-                            }
-                            "nonModels" => {
-                                builder = builder.set_non_models(
-                                    crate::protocol_serde::shape_codegen_generic_data_non_models::de_codegen_generic_data_non_models(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "models" => {
+                            builder = builder.set_models(crate::protocol_serde::shape_codegen_generic_data_models::de_codegen_generic_data_models(
+                                tokens,
+                            )?);
+                        }
+                        "enums" => {
+                            builder = builder.set_enums(crate::protocol_serde::shape_codegen_generic_data_enums::de_codegen_generic_data_enums(
+                                tokens,
+                            )?);
+                        }
+                        "nonModels" => {
+                            builder = builder.set_non_models(
+                                crate::protocol_serde::shape_codegen_generic_data_non_models::de_codegen_generic_data_non_models(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

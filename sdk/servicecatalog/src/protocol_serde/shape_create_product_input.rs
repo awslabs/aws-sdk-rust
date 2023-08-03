@@ -54,10 +54,7 @@ pub fn ser_create_product_input(
     if let Some(var_17) = &input.source_connection {
         #[allow(unused_mut)]
         let mut object_18 = object.key("SourceConnection").start_object();
-        crate::protocol_serde::shape_source_connection::ser_source_connection(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_source_connection::ser_source_connection(&mut object_18, var_17)?;
         object_18.finish();
     }
     Ok(())

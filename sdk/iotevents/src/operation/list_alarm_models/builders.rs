@@ -10,10 +10,7 @@ impl ListAlarmModelsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_alarm_models::ListAlarmModelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_alarm_models::ListAlarmModelsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_alarm_models::ListAlarmModelsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_alarm_models();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListAlarmModelsFluentBuilder {
         }
     }
     /// Access the ListAlarmModels as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_alarm_models::builders::ListAlarmModelsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_alarm_models::builders::ListAlarmModelsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListAlarmModelsFluentBuilder {
             crate::operation::list_alarm_models::ListAlarmModels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_alarm_models::ListAlarmModelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_alarm_models::ListAlarmModelsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListAlarmModelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListAlarmModelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_alarm_models::ListAlarmModelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_alarm_models::ListAlarmModelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_alarm_models::ListAlarmModelsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListAlarmModelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_alarm_models::ListAlarmModelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_alarm_models::ListAlarmModelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_alarm_models::ListAlarmModelsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ListAlarmModelsFluentBuilder {
             crate::operation::list_alarm_models::ListAlarmModels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_alarm_models::ListAlarmModelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_alarm_models::ListAlarmModelsError>,
     > {
         self.customize_middleware().await
     }

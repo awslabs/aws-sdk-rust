@@ -24,8 +24,7 @@ pub struct Repository {
     pub image_tag_mutability: ::std::option::Option<crate::types::ImageTagMutability>,
     /// <p>The image scanning configuration for a repository.</p>
     #[doc(hidden)]
-    pub image_scanning_configuration:
-        ::std::option::Option<crate::types::ImageScanningConfiguration>,
+    pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
     /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
     #[doc(hidden)]
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
@@ -56,15 +55,11 @@ impl Repository {
         self.image_tag_mutability.as_ref()
     }
     /// <p>The image scanning configuration for a repository.</p>
-    pub fn image_scanning_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
+    pub fn image_scanning_configuration(&self) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
     /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
-    pub fn encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
@@ -77,9 +72,7 @@ impl Repository {
 
 /// A builder for [`Repository`](crate::types::Repository).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryBuilder {
     pub(crate) repository_arn: ::std::option::Option<::std::string::String>,
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
@@ -87,25 +80,17 @@ pub struct RepositoryBuilder {
     pub(crate) repository_uri: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) image_tag_mutability: ::std::option::Option<crate::types::ImageTagMutability>,
-    pub(crate) image_scanning_configuration:
-        ::std::option::Option<crate::types::ImageScanningConfiguration>,
-    pub(crate) encryption_configuration:
-        ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl RepositoryBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the repository, Amazon Web Services account ID of the repository owner, repository namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
-    pub fn repository_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the repository, Amazon Web Services account ID of the repository owner, repository namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
-    pub fn set_repository_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_arn = input;
         self
     }
@@ -128,18 +113,12 @@ impl RepositoryBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -148,18 +127,12 @@ impl RepositoryBuilder {
         &self.repository_name
     }
     /// <p>The URI for the repository. You can use this URI for container image <code>push</code> and <code>pull</code> operations.</p>
-    pub fn repository_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI for the repository. You can use this URI for container image <code>push</code> and <code>pull</code> operations.</p>
-    pub fn set_repository_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_uri = input;
         self
     }
@@ -173,10 +146,7 @@ impl RepositoryBuilder {
         self
     }
     /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -190,61 +160,40 @@ impl RepositoryBuilder {
         self
     }
     /// <p>The tag mutability setting for the repository.</p>
-    pub fn set_image_tag_mutability(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageTagMutability>,
-    ) -> Self {
+    pub fn set_image_tag_mutability(mut self, input: ::std::option::Option<crate::types::ImageTagMutability>) -> Self {
         self.image_tag_mutability = input;
         self
     }
     /// <p>The tag mutability setting for the repository.</p>
-    pub fn get_image_tag_mutability(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageTagMutability> {
+    pub fn get_image_tag_mutability(&self) -> &::std::option::Option<crate::types::ImageTagMutability> {
         &self.image_tag_mutability
     }
     /// <p>The image scanning configuration for a repository.</p>
-    pub fn image_scanning_configuration(
-        mut self,
-        input: crate::types::ImageScanningConfiguration,
-    ) -> Self {
+    pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.image_scanning_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The image scanning configuration for a repository.</p>
-    pub fn set_image_scanning_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageScanningConfiguration>,
-    ) -> Self {
+    pub fn set_image_scanning_configuration(mut self, input: ::std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
         self.image_scanning_configuration = input;
         self
     }
     /// <p>The image scanning configuration for a repository.</p>
-    pub fn get_image_scanning_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
+    pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         &self.image_scanning_configuration
     }
     /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
     /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
     /// Consumes the builder and constructs a [`Repository`](crate::types::Repository).

@@ -9,9 +9,7 @@ pub struct UploadMetadata {
     pub upload_url: ::std::option::Option<::std::string::String>,
     /// <p>The signed headers.</p>
     #[doc(hidden)]
-    pub signed_headers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub signed_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UploadMetadata {
     /// <p>The URL of the upload.</p>
@@ -19,11 +17,7 @@ impl UploadMetadata {
         self.upload_url.as_deref()
     }
     /// <p>The signed headers.</p>
-    pub fn signed_headers(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn signed_headers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.signed_headers.as_ref()
     }
 }
@@ -47,9 +41,7 @@ impl UploadMetadata {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UploadMetadataBuilder {
     pub(crate) upload_url: ::std::option::Option<::std::string::String>,
-    pub(crate) signed_headers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) signed_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UploadMetadataBuilder {
     /// <p>The URL of the upload.</p>
@@ -84,19 +76,13 @@ impl UploadMetadataBuilder {
     /// <p>The signed headers.</p>
     pub fn set_signed_headers(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.signed_headers = input;
         self
     }
     /// <p>The signed headers.</p>
-    pub fn get_signed_headers(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_signed_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.signed_headers
     }
     /// Consumes the builder and constructs a [`UploadMetadata`](crate::types::UploadMetadata).

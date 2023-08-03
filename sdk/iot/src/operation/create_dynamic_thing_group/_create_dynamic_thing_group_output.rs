@@ -56,18 +56,14 @@ impl ::aws_http::request_id::RequestId for CreateDynamicThingGroupOutput {
 }
 impl CreateDynamicThingGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateDynamicThingGroupOutput`](crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_dynamic_thing_group::builders::CreateDynamicThingGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_dynamic_thing_group::builders::CreateDynamicThingGroupOutputBuilder {
         crate::operation::create_dynamic_thing_group::builders::CreateDynamicThingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDynamicThingGroupOutput`](crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDynamicThingGroupOutputBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_group_arn: ::std::option::Option<::std::string::String>,
@@ -79,18 +75,12 @@ pub struct CreateDynamicThingGroupOutputBuilder {
 }
 impl CreateDynamicThingGroupOutputBuilder {
     /// <p>The dynamic thing group name.</p>
-    pub fn thing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The dynamic thing group name.</p>
-    pub fn set_thing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_group_name = input;
         self
     }
@@ -99,18 +89,12 @@ impl CreateDynamicThingGroupOutputBuilder {
         &self.thing_group_name
     }
     /// <p>The dynamic thing group ARN.</p>
-    pub fn thing_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The dynamic thing group ARN.</p>
-    pub fn set_thing_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_group_arn = input;
         self
     }
@@ -119,18 +103,12 @@ impl CreateDynamicThingGroupOutputBuilder {
         &self.thing_group_arn
     }
     /// <p>The dynamic thing group ID.</p>
-    pub fn thing_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The dynamic thing group ID.</p>
-    pub fn set_thing_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_group_id = input;
         self
     }
@@ -167,18 +145,12 @@ impl CreateDynamicThingGroupOutputBuilder {
         &self.query_string
     }
     /// <p>The dynamic thing group query version.</p>
-    pub fn query_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The dynamic thing group query version.</p>
-    pub fn set_query_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_version = input;
         self
     }
@@ -196,9 +168,7 @@ impl CreateDynamicThingGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDynamicThingGroupOutput`](crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupOutput {
+    pub fn build(self) -> crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupOutput {
         crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupOutput {
             thing_group_name: self.thing_group_name,
             thing_group_arn: self.thing_group_arn,

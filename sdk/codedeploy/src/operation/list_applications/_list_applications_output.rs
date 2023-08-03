@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for ListApplicationsOutput {
 }
 impl ListApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput).
-    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsOutputBuilder {
         crate::operation::list_applications::builders::ListApplicationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationsOutputBuilder {
     pub(crate) applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +55,12 @@ impl ListApplicationsOutputBuilder {
         self
     }
     /// <p>A list of application names.</p>
-    pub fn set_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.applications = input;
         self
     }
     /// <p>A list of application names.</p>
-    pub fn get_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.applications
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list applications call to return the next set of applications in the list.</p>

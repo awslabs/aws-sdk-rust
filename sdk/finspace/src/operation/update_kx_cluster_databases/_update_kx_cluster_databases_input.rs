@@ -36,39 +36,28 @@ impl UpdateKxClusterDatabasesInput {
 }
 impl UpdateKxClusterDatabasesInput {
     /// Creates a new builder-style object to manufacture [`UpdateKxClusterDatabasesInput`](crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesInput).
-    pub fn builder(
-    ) -> crate::operation::update_kx_cluster_databases::builders::UpdateKxClusterDatabasesInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_kx_cluster_databases::builders::UpdateKxClusterDatabasesInputBuilder {
         crate::operation::update_kx_cluster_databases::builders::UpdateKxClusterDatabasesInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateKxClusterDatabasesInput`](crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateKxClusterDatabasesInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) databases:
-        ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>,
+    pub(crate) databases: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>,
 }
 impl UpdateKxClusterDatabasesInputBuilder {
     /// <p>The unique identifier of a kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of a kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -116,17 +105,12 @@ impl UpdateKxClusterDatabasesInputBuilder {
         self
     }
     /// <p> The structure of databases mounted on the cluster.</p>
-    pub fn set_databases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>,
-    ) -> Self {
+    pub fn set_databases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>) -> Self {
         self.databases = input;
         self
     }
     /// <p> The structure of databases mounted on the cluster.</p>
-    pub fn get_databases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>> {
+    pub fn get_databases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>> {
         &self.databases
     }
     /// Consumes the builder and constructs a [`UpdateKxClusterDatabasesInput`](crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesInput).
@@ -136,13 +120,11 @@ impl UpdateKxClusterDatabasesInputBuilder {
         crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesInput {
-                environment_id: self.environment_id,
-                cluster_name: self.cluster_name,
-                client_token: self.client_token,
-                databases: self.databases,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesInput {
+            environment_id: self.environment_id,
+            cluster_name: self.cluster_name,
+            client_token: self.client_token,
+            databases: self.databases,
+        })
     }
 }

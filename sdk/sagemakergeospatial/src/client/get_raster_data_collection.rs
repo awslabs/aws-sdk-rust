@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`image_source_bands(Option<Vec<String>>)`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput::image_source_bands): <p>The list of image source bands in the raster data collection.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput::tags): <p>Each tag consists of a key and a value.</p>
     /// - On failure, responds with [`SdkError<GetRasterDataCollectionError>`](crate::operation::get_raster_data_collection::GetRasterDataCollectionError)
-    pub fn get_raster_data_collection(
-        &self,
-    ) -> crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionFluentBuilder
-    {
+    pub fn get_raster_data_collection(&self) -> crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionFluentBuilder {
         crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteFlowTemplateOutput {
 }
 impl DeleteFlowTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFlowTemplateOutput`](crate::operation::delete_flow_template::DeleteFlowTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_flow_template::builders::DeleteFlowTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::delete_flow_template::builders::DeleteFlowTemplateOutputBuilder {
         crate::operation::delete_flow_template::builders::DeleteFlowTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFlowTemplateOutput`](crate::operation::delete_flow_template::DeleteFlowTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFlowTemplateOutputBuilder {
     _request_id: Option<String>,
 }

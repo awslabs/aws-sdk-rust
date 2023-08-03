@@ -56,18 +56,14 @@ impl ::aws_http::request_id::RequestId for StartActivityStreamOutput {
 }
 impl StartActivityStreamOutput {
     /// Creates a new builder-style object to manufacture [`StartActivityStreamOutput`](crate::operation::start_activity_stream::StartActivityStreamOutput).
-    pub fn builder(
-    ) -> crate::operation::start_activity_stream::builders::StartActivityStreamOutputBuilder {
-        crate::operation::start_activity_stream::builders::StartActivityStreamOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_activity_stream::builders::StartActivityStreamOutputBuilder {
+        crate::operation::start_activity_stream::builders::StartActivityStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartActivityStreamOutput`](crate::operation::start_activity_stream::StartActivityStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartActivityStreamOutputBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) kinesis_stream_name: ::std::option::Option<::std::string::String>,
@@ -93,18 +89,12 @@ impl StartActivityStreamOutputBuilder {
         &self.kms_key_id
     }
     /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
-    pub fn kinesis_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kinesis_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kinesis_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
-    pub fn set_kinesis_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kinesis_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kinesis_stream_name = input;
         self
     }
@@ -118,10 +108,7 @@ impl StartActivityStreamOutputBuilder {
         self
     }
     /// <p>The status of the database activity stream.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivityStreamStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActivityStreamStatus>) -> Self {
         self.status = input;
         self
     }
@@ -135,10 +122,7 @@ impl StartActivityStreamOutputBuilder {
         self
     }
     /// <p>The mode of the database activity stream.</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivityStreamMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ActivityStreamMode>) -> Self {
         self.mode = input;
         self
     }
@@ -166,10 +150,7 @@ impl StartActivityStreamOutputBuilder {
         self
     }
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
-    pub fn set_engine_native_audit_fields_included(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_engine_native_audit_fields_included(mut self, input: ::std::option::Option<bool>) -> Self {
         self.engine_native_audit_fields_included = input;
         self
     }

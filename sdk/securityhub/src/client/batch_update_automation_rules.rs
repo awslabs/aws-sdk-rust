@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`processed_automation_rules(Option<Vec<String>>)`](crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesOutput::processed_automation_rules): <p> A list of properly processed rule ARNs. </p>
     ///   - [`unprocessed_automation_rules(Option<Vec<UnprocessedAutomationRule>>)`](crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesOutput::unprocessed_automation_rules): <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't update and why. </p>
     /// - On failure, responds with [`SdkError<BatchUpdateAutomationRulesError>`](crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesError)
-    pub fn batch_update_automation_rules(&self) -> crate::operation::batch_update_automation_rules::builders::BatchUpdateAutomationRulesFluentBuilder{
+    pub fn batch_update_automation_rules(
+        &self,
+    ) -> crate::operation::batch_update_automation_rules::builders::BatchUpdateAutomationRulesFluentBuilder {
         crate::operation::batch_update_automation_rules::builders::BatchUpdateAutomationRulesFluentBuilder::new(self.handle.clone())
     }
 }

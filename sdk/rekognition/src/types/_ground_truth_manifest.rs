@@ -27,9 +27,7 @@ impl GroundTruthManifest {
 
 /// A builder for [`GroundTruthManifest`](crate::types::GroundTruthManifest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroundTruthManifestBuilder {
     pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
 }
@@ -56,8 +54,6 @@ impl GroundTruthManifestBuilder {
     }
     /// Consumes the builder and constructs a [`GroundTruthManifest`](crate::types::GroundTruthManifest).
     pub fn build(self) -> crate::types::GroundTruthManifest {
-        crate::types::GroundTruthManifest {
-            s3_object: self.s3_object,
-        }
+        crate::types::GroundTruthManifest { s3_object: self.s3_object }
     }
 }

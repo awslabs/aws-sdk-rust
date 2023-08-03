@@ -22,9 +22,7 @@ impl DeleteTrackerInput {
 
 /// A builder for [`DeleteTrackerInput`](crate::operation::delete_tracker::DeleteTrackerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrackerInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DeleteTrackerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTrackerInput`](crate::operation::delete_tracker::DeleteTrackerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_tracker::DeleteTrackerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_tracker::DeleteTrackerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_tracker::DeleteTrackerInput {
             tracker_name: self.tracker_name,
         })

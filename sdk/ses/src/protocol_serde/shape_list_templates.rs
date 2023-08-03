@@ -4,17 +4,10 @@ pub fn de_list_templates_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::list_templates::ListTemplatesOutput,
-    crate::operation::list_templates::ListTemplatesError,
-> {
+) -> std::result::Result<crate::operation::list_templates::ListTemplatesOutput, crate::operation::list_templates::ListTemplatesError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::list_templates::ListTemplatesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::list_templates::ListTemplatesError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::list_templates::ListTemplatesError::generic(generic))
@@ -25,20 +18,13 @@ pub fn de_list_templates_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::list_templates::ListTemplatesOutput,
-    crate::operation::list_templates::ListTemplatesError,
-> {
+) -> std::result::Result<crate::operation::list_templates::ListTemplatesOutput, crate::operation::list_templates::ListTemplatesError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::list_templates::builders::ListTemplatesOutputBuilder::default();
-        output =
-            crate::protocol_serde::shape_list_templates::de_list_templates(_response_body, output)
-                .map_err(crate::operation::list_templates::ListTemplatesError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::list_templates::builders::ListTemplatesOutputBuilder::default();
+        output = crate::protocol_serde::shape_list_templates::de_list_templates(_response_body, output)
+            .map_err(crate::operation::list_templates::ListTemplatesError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -47,10 +33,7 @@ pub fn de_list_templates_http_response_with_props(
 pub fn de_list_templates(
     inp: &[u8],
     mut builder: crate::operation::list_templates::builders::ListTemplatesOutputBuilder,
-) -> Result<
-    crate::operation::list_templates::builders::ListTemplatesOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::list_templates::builders::ListTemplatesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -100,9 +83,7 @@ pub fn de_list_templates(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected ListTemplatesResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected ListTemplatesResult tag"));
     };
     Ok(builder)
 }

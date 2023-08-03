@@ -9,7 +9,11 @@ impl super::Client {
     ///   - [`team_name(Option<String>)`](crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationOutput::team_name): <p>The name of the Slack workspace.</p>
     ///   - [`account_type(Option<AccountType>)`](crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationOutput::account_type): <p>Whether the Amazon Web Services account is a management or member account that's part of an organization in Organizations.</p>
     /// - On failure, responds with [`SdkError<RegisterSlackWorkspaceForOrganizationError>`](crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationError)
-    pub fn register_slack_workspace_for_organization(&self) -> crate::operation::register_slack_workspace_for_organization::builders::RegisterSlackWorkspaceForOrganizationFluentBuilder{
-        crate::operation::register_slack_workspace_for_organization::builders::RegisterSlackWorkspaceForOrganizationFluentBuilder::new(self.handle.clone())
+    pub fn register_slack_workspace_for_organization(
+        &self,
+    ) -> crate::operation::register_slack_workspace_for_organization::builders::RegisterSlackWorkspaceForOrganizationFluentBuilder {
+        crate::operation::register_slack_workspace_for_organization::builders::RegisterSlackWorkspaceForOrganizationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

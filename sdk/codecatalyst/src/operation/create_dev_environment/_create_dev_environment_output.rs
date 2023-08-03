@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateDevEnvironmentOutput {
 }
 impl CreateDevEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateDevEnvironmentOutput`](crate::operation::create_dev_environment::CreateDevEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::create_dev_environment::builders::CreateDevEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::create_dev_environment::builders::CreateDevEnvironmentOutputBuilder {
         crate::operation::create_dev_environment::builders::CreateDevEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDevEnvironmentOutput`](crate::operation::create_dev_environment::CreateDevEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDevEnvironmentOutputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_device_profile::builders::DeleteDeviceProfileFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_device_profile::builders::DeleteDeviceProfileFluentBuilder::set_id): <p>The ID of the resource to delete.</p>
     /// - On success, responds with [`DeleteDeviceProfileOutput`](crate::operation::delete_device_profile::DeleteDeviceProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteDeviceProfileError>`](crate::operation::delete_device_profile::DeleteDeviceProfileError)
-    pub fn delete_device_profile(
-        &self,
-    ) -> crate::operation::delete_device_profile::builders::DeleteDeviceProfileFluentBuilder {
-        crate::operation::delete_device_profile::builders::DeleteDeviceProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_device_profile(&self) -> crate::operation::delete_device_profile::builders::DeleteDeviceProfileFluentBuilder {
+        crate::operation::delete_device_profile::builders::DeleteDeviceProfileFluentBuilder::new(self.handle.clone())
     }
 }

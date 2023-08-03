@@ -10,10 +10,7 @@ impl DisassociateFacesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disassociate_faces::DisassociateFacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_faces::DisassociateFacesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_faces::DisassociateFacesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disassociate_faces();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DisassociateFacesFluentBuilder {
         }
     }
     /// Access the DisassociateFaces as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_faces::builders::DisassociateFacesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disassociate_faces::builders::DisassociateFacesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DisassociateFacesFluentBuilder {
             crate::operation::disassociate_faces::DisassociateFaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_faces::DisassociateFacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_faces::DisassociateFacesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DisassociateFacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DisassociateFacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_faces::DisassociateFacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_faces::DisassociateFacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_faces::DisassociateFacesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DisassociateFacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_faces::DisassociateFacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_faces::DisassociateFacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_faces::DisassociateFacesError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DisassociateFacesFluentBuilder {
             crate::operation::disassociate_faces::DisassociateFaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_faces::DisassociateFacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_faces::DisassociateFacesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of an existing collection containing the UserID.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_id(input.into());
         self
     }
     /// <p>The ID of an existing collection containing the UserID.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_id(input);
         self
     }
@@ -157,18 +135,12 @@ impl DisassociateFacesFluentBuilder {
         self.inner.get_user_id()
     }
     /// <p>Idempotent token used to identify the request to <code>DisassociateFaces</code>. If you use the same token with multiple <code>DisassociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Idempotent token used to identify the request to <code>DisassociateFaces</code>. If you use the same token with multiple <code>DisassociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -186,10 +158,7 @@ impl DisassociateFacesFluentBuilder {
         self
     }
     /// <p>An array of face IDs to disassociate from the UserID. </p>
-    pub fn set_face_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_face_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_face_ids(input);
         self
     }

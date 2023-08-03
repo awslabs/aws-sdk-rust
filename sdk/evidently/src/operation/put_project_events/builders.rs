@@ -10,10 +10,7 @@ impl PutProjectEventsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_project_events::PutProjectEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_project_events::PutProjectEventsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_project_events::PutProjectEventsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_project_events();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutProjectEventsFluentBuilder {
         }
     }
     /// Access the PutProjectEvents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_project_events::builders::PutProjectEventsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_project_events::builders::PutProjectEventsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutProjectEventsFluentBuilder {
             crate::operation::put_project_events::PutProjectEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_project_events::PutProjectEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_project_events::PutProjectEventsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutProjectEventsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutProjectEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_project_events::PutProjectEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_project_events::PutProjectEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_project_events::PutProjectEventsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutProjectEventsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_project_events::PutProjectEventsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_project_events::PutProjectEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_project_events::PutProjectEventsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl PutProjectEventsFluentBuilder {
             crate::operation::put_project_events::PutProjectEvents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_project_events::PutProjectEventsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_project_events::PutProjectEventsError>,
     > {
         self.customize_middleware().await
     }
@@ -146,10 +130,7 @@ impl PutProjectEventsFluentBuilder {
         self
     }
     /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
         self.inner = self.inner.set_events(input);
         self
     }

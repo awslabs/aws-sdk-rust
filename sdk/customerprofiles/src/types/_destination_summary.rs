@@ -37,9 +37,7 @@ impl DestinationSummary {
 
 /// A builder for [`DestinationSummary`](crate::types::DestinationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DestinationSummaryBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::EventStreamDestinationStatus>,
@@ -66,10 +64,7 @@ impl DestinationSummaryBuilder {
         self
     }
     /// <p>The status of enabling the Kinesis stream as a destination for export.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EventStreamDestinationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EventStreamDestinationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -83,10 +78,7 @@ impl DestinationSummaryBuilder {
         self
     }
     /// <p>The timestamp when the status last changed to <code>UNHEALHY</code>.</p>
-    pub fn set_unhealthy_since(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_unhealthy_since(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.unhealthy_since = input;
         self
     }

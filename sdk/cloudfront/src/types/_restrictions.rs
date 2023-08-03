@@ -23,9 +23,7 @@ impl Restrictions {
 
 /// A builder for [`Restrictions`](crate::types::Restrictions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestrictionsBuilder {
     pub(crate) geo_restriction: ::std::option::Option<crate::types::GeoRestriction>,
 }
@@ -36,10 +34,7 @@ impl RestrictionsBuilder {
         self
     }
     /// <p>A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.</p>
-    pub fn set_geo_restriction(
-        mut self,
-        input: ::std::option::Option<crate::types::GeoRestriction>,
-    ) -> Self {
+    pub fn set_geo_restriction(mut self, input: ::std::option::Option<crate::types::GeoRestriction>) -> Self {
         self.geo_restriction = input;
         self
     }

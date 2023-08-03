@@ -28,7 +28,7 @@ impl DescribeScheduledActionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeScheduledActionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder,
+    inner: crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder,
 }
 impl DescribeScheduledActionsFluentBuilder {
     /// Creates a new `DescribeScheduledActions`.
@@ -39,10 +39,7 @@ impl DescribeScheduledActionsFluentBuilder {
         }
     }
     /// Access the DescribeScheduledActions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DescribeScheduledActionsFluentBuilder {
             crate::operation::describe_scheduled_actions::DescribeScheduledActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DescribeScheduledActionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DescribeScheduledActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DescribeScheduledActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError>,
     > {
         self.send_middleware().await
     }
@@ -119,19 +107,14 @@ impl DescribeScheduledActionsFluentBuilder {
             crate::operation::describe_scheduled_actions::DescribeScheduledActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_actions::DescribeScheduledActionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator {
         crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `ScheduledActionNames`.
@@ -139,25 +122,17 @@ impl DescribeScheduledActionsFluentBuilder {
     /// To override the contents of this collection use [`set_scheduled_action_names`](Self::set_scheduled_action_names).
     ///
     /// <p>The names of the scheduled actions to describe.</p>
-    pub fn scheduled_action_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_action_names(input.into());
         self
     }
     /// <p>The names of the scheduled actions to describe.</p>
-    pub fn set_scheduled_action_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_scheduled_action_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_scheduled_action_names(input);
         self
     }
     /// <p>The names of the scheduled actions to describe.</p>
-    pub fn get_scheduled_action_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_scheduled_action_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_scheduled_action_names()
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
@@ -166,10 +141,7 @@ impl DescribeScheduledActionsFluentBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.inner = self.inner.set_service_namespace(input);
         self
     }
@@ -300,10 +272,7 @@ impl DescribeScheduledActionsFluentBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.inner = self.inner.set_scalable_dimension(input);
         self
     }
@@ -331,9 +300,7 @@ impl DescribeScheduledActionsFluentBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         self.inner.get_scalable_dimension()
     }
     /// <p>The maximum number of scheduled action results. This value can be between 1 and 50. The default value is 50.</p>

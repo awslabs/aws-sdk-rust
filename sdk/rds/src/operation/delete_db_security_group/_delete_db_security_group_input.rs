@@ -34,18 +34,14 @@ impl DeleteDbSecurityGroupInput {
 }
 impl DeleteDbSecurityGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteDbSecurityGroupInput`](crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_db_security_group::builders::DeleteDbSecurityGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_db_security_group::builders::DeleteDbSecurityGroupInputBuilder {
         crate::operation::delete_db_security_group::builders::DeleteDbSecurityGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDbSecurityGroupInput`](crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbSecurityGroupInputBuilder {
     pub(crate) db_security_group_name: ::std::option::Option<::std::string::String>,
 }
@@ -60,10 +56,7 @@ impl DeleteDbSecurityGroupInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// <li> <p>Must not be "Default"</p> </li>
     /// </ul>
-    pub fn db_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -77,10 +70,7 @@ impl DeleteDbSecurityGroupInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// <li> <p>Must not be "Default"</p> </li>
     /// </ul>
-    pub fn set_db_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_security_group_name = input;
         self
     }
@@ -100,14 +90,10 @@ impl DeleteDbSecurityGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDbSecurityGroupInput`](crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput {
-                db_security_group_name: self.db_security_group_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput {
+            db_security_group_name: self.db_security_group_name,
+        })
     }
 }

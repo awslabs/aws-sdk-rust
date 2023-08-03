@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_problems::ListProblemsOutput::next_token): <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     ///   - [`resource_group_name(Option<String>)`](crate::operation::list_problems::ListProblemsOutput::resource_group_name): <p> The name of the resource group. </p>
     /// - On failure, responds with [`SdkError<ListProblemsError>`](crate::operation::list_problems::ListProblemsError)
-    pub fn list_problems(
-        &self,
-    ) -> crate::operation::list_problems::builders::ListProblemsFluentBuilder {
-        crate::operation::list_problems::builders::ListProblemsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_problems(&self) -> crate::operation::list_problems::builders::ListProblemsFluentBuilder {
+        crate::operation::list_problems::builders::ListProblemsFluentBuilder::new(self.handle.clone())
     }
 }

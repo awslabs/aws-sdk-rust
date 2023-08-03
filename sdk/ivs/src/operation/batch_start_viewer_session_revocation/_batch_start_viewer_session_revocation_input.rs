@@ -5,35 +5,26 @@
 pub struct BatchStartViewerSessionRevocationInput {
     /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
     #[doc(hidden)]
-    pub viewer_sessions: ::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>,
-    >,
+    pub viewer_sessions: ::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>>,
 }
 impl BatchStartViewerSessionRevocationInput {
     /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
-    pub fn viewer_sessions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchStartViewerSessionRevocationViewerSession]>
-    {
+    pub fn viewer_sessions(&self) -> ::std::option::Option<&[crate::types::BatchStartViewerSessionRevocationViewerSession]> {
         self.viewer_sessions.as_deref()
     }
 }
 impl BatchStartViewerSessionRevocationInput {
     /// Creates a new builder-style object to manufacture [`BatchStartViewerSessionRevocationInput`](crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput).
-    pub fn builder() -> crate::operation::batch_start_viewer_session_revocation::builders::BatchStartViewerSessionRevocationInputBuilder{
+    pub fn builder() -> crate::operation::batch_start_viewer_session_revocation::builders::BatchStartViewerSessionRevocationInputBuilder {
         crate::operation::batch_start_viewer_session_revocation::builders::BatchStartViewerSessionRevocationInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchStartViewerSessionRevocationInput`](crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchStartViewerSessionRevocationInputBuilder {
-    pub(crate) viewer_sessions: ::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>,
-    >,
+    pub(crate) viewer_sessions: ::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>>,
 }
 impl BatchStartViewerSessionRevocationInputBuilder {
     /// Appends an item to `viewer_sessions`.
@@ -41,10 +32,7 @@ impl BatchStartViewerSessionRevocationInputBuilder {
     /// To override the contents of this collection use [`set_viewer_sessions`](Self::set_viewer_sessions).
     ///
     /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
-    pub fn viewer_sessions(
-        mut self,
-        input: crate::types::BatchStartViewerSessionRevocationViewerSession,
-    ) -> Self {
+    pub fn viewer_sessions(mut self, input: crate::types::BatchStartViewerSessionRevocationViewerSession) -> Self {
         let mut v = self.viewer_sessions.unwrap_or_default();
         v.push(input);
         self.viewer_sessions = ::std::option::Option::Some(v);
@@ -53,28 +41,26 @@ impl BatchStartViewerSessionRevocationInputBuilder {
     /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
     pub fn set_viewer_sessions(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>>,
     ) -> Self {
         self.viewer_sessions = input;
         self
     }
     /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
-    pub fn get_viewer_sessions(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>,
-    > {
+    pub fn get_viewer_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>> {
         &self.viewer_sessions
     }
     /// Consumes the builder and constructs a [`BatchStartViewerSessionRevocationInput`](crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput {
-                viewer_sessions: self.viewer_sessions
-                ,
-            }
+                viewer_sessions: self.viewer_sessions,
+            },
         )
     }
 }

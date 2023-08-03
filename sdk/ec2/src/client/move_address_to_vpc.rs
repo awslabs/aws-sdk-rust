@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`allocation_id(Option<String>)`](crate::operation::move_address_to_vpc::MoveAddressToVpcOutput::allocation_id): <p>The allocation ID for the Elastic IP address.</p>
     ///   - [`status(Option<Status>)`](crate::operation::move_address_to_vpc::MoveAddressToVpcOutput::status): <p>The status of the move of the IP address.</p>
     /// - On failure, responds with [`SdkError<MoveAddressToVpcError>`](crate::operation::move_address_to_vpc::MoveAddressToVpcError)
-    pub fn move_address_to_vpc(
-        &self,
-    ) -> crate::operation::move_address_to_vpc::builders::MoveAddressToVpcFluentBuilder {
-        crate::operation::move_address_to_vpc::builders::MoveAddressToVpcFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn move_address_to_vpc(&self) -> crate::operation::move_address_to_vpc::builders::MoveAddressToVpcFluentBuilder {
+        crate::operation::move_address_to_vpc::builders::MoveAddressToVpcFluentBuilder::new(self.handle.clone())
     }
 }

@@ -20,8 +20,7 @@ pub struct SyncDeploymentJobOutput {
     pub deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
     /// <p>Information about the deployment application configurations.</p>
     #[doc(hidden)]
-    pub deployment_application_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
+    pub deployment_application_configs: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
     /// <p>The failure reason if the job fails.</p>
     #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
@@ -137,9 +136,7 @@ impl SyncDeploymentJobOutput {
         self.deployment_config.as_ref()
     }
     /// <p>Information about the deployment application configurations.</p>
-    pub fn deployment_application_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DeploymentApplicationConfig]> {
+    pub fn deployment_application_configs(&self) -> ::std::option::Option<&[crate::types::DeploymentApplicationConfig]> {
         self.deployment_application_configs.as_deref()
     }
     /// <p>The failure reason if the job fails.</p>
@@ -248,24 +245,20 @@ impl ::aws_http::request_id::RequestId for SyncDeploymentJobOutput {
 }
 impl SyncDeploymentJobOutput {
     /// Creates a new builder-style object to manufacture [`SyncDeploymentJobOutput`](crate::operation::sync_deployment_job::SyncDeploymentJobOutput).
-    pub fn builder(
-    ) -> crate::operation::sync_deployment_job::builders::SyncDeploymentJobOutputBuilder {
+    pub fn builder() -> crate::operation::sync_deployment_job::builders::SyncDeploymentJobOutputBuilder {
         crate::operation::sync_deployment_job::builders::SyncDeploymentJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`SyncDeploymentJobOutput`](crate::operation::sync_deployment_job::SyncDeploymentJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SyncDeploymentJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) fleet: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DeploymentStatus>,
     pub(crate) deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
-    pub(crate) deployment_application_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
+    pub(crate) deployment_application_configs: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) failure_code: ::std::option::Option<crate::types::DeploymentJobErrorCode>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -306,10 +299,7 @@ impl SyncDeploymentJobOutputBuilder {
         self
     }
     /// <p>The status of the synchronization job.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -323,10 +313,7 @@ impl SyncDeploymentJobOutputBuilder {
         self
     }
     /// <p>Information about the deployment configuration.</p>
-    pub fn set_deployment_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentConfig>,
-    ) -> Self {
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfig>) -> Self {
         self.deployment_config = input;
         self
     }
@@ -339,10 +326,7 @@ impl SyncDeploymentJobOutputBuilder {
     /// To override the contents of this collection use [`set_deployment_application_configs`](Self::set_deployment_application_configs).
     ///
     /// <p>Information about the deployment application configurations.</p>
-    pub fn deployment_application_configs(
-        mut self,
-        input: crate::types::DeploymentApplicationConfig,
-    ) -> Self {
+    pub fn deployment_application_configs(mut self, input: crate::types::DeploymentApplicationConfig) -> Self {
         let mut v = self.deployment_application_configs.unwrap_or_default();
         v.push(input);
         self.deployment_application_configs = ::std::option::Option::Some(v);
@@ -357,24 +341,16 @@ impl SyncDeploymentJobOutputBuilder {
         self
     }
     /// <p>Information about the deployment application configurations.</p>
-    pub fn get_deployment_application_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>> {
+    pub fn get_deployment_application_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>> {
         &self.deployment_application_configs
     }
     /// <p>The failure reason if the job fails.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The failure reason if the job fails.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -560,10 +536,7 @@ impl SyncDeploymentJobOutputBuilder {
     /// <p>Etag for SimulationApplication does not match value during version creation.</p>
     /// </dd>
     /// </dl>
-    pub fn set_failure_code(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentJobErrorCode>,
-    ) -> Self {
+    pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::DeploymentJobErrorCode>) -> Self {
         self.failure_code = input;
         self
     }
@@ -663,10 +636,7 @@ impl SyncDeploymentJobOutputBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }

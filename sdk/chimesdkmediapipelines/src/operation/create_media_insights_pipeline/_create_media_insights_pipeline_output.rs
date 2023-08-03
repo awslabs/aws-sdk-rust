@@ -10,9 +10,7 @@ pub struct CreateMediaInsightsPipelineOutput {
 }
 impl CreateMediaInsightsPipelineOutput {
     /// <p>The media insights pipeline object.</p>
-    pub fn media_insights_pipeline(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MediaInsightsPipeline> {
+    pub fn media_insights_pipeline(&self) -> ::std::option::Option<&crate::types::MediaInsightsPipeline> {
         self.media_insights_pipeline.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateMediaInsightsPipelineOutput {
 }
 impl CreateMediaInsightsPipelineOutput {
     /// Creates a new builder-style object to manufacture [`CreateMediaInsightsPipelineOutput`](crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineOutput).
-    pub fn builder() -> crate::operation::create_media_insights_pipeline::builders::CreateMediaInsightsPipelineOutputBuilder{
+    pub fn builder() -> crate::operation::create_media_insights_pipeline::builders::CreateMediaInsightsPipelineOutputBuilder {
         crate::operation::create_media_insights_pipeline::builders::CreateMediaInsightsPipelineOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMediaInsightsPipelineOutput`](crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMediaInsightsPipelineOutputBuilder {
     pub(crate) media_insights_pipeline: ::std::option::Option<crate::types::MediaInsightsPipeline>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateMediaInsightsPipelineOutputBuilder {
         self
     }
     /// <p>The media insights pipeline object.</p>
-    pub fn set_media_insights_pipeline(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaInsightsPipeline>,
-    ) -> Self {
+    pub fn set_media_insights_pipeline(mut self, input: ::std::option::Option<crate::types::MediaInsightsPipeline>) -> Self {
         self.media_insights_pipeline = input;
         self
     }
     /// <p>The media insights pipeline object.</p>
-    pub fn get_media_insights_pipeline(
-        &self,
-    ) -> &::std::option::Option<crate::types::MediaInsightsPipeline> {
+    pub fn get_media_insights_pipeline(&self) -> &::std::option::Option<crate::types::MediaInsightsPipeline> {
         &self.media_insights_pipeline
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl CreateMediaInsightsPipelineOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateMediaInsightsPipelineOutput`](crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineOutput {
+    pub fn build(self) -> crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineOutput {
         crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineOutput {
             media_insights_pipeline: self.media_insights_pipeline,
             _request_id: self._request_id,

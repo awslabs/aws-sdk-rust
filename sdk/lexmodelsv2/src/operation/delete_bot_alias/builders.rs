@@ -10,10 +10,7 @@ impl DeleteBotAliasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_bot_alias::DeleteBotAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bot_alias::DeleteBotAliasError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bot_alias::DeleteBotAliasError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_bot_alias();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteBotAliasFluentBuilder {
         }
     }
     /// Access the DeleteBotAlias as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_bot_alias::builders::DeleteBotAliasInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_bot_alias::builders::DeleteBotAliasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteBotAliasFluentBuilder {
             crate::operation::delete_bot_alias::DeleteBotAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bot_alias::DeleteBotAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bot_alias::DeleteBotAliasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteBotAliasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteBotAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bot_alias::DeleteBotAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bot_alias::DeleteBotAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bot_alias::DeleteBotAliasError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteBotAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bot_alias::DeleteBotAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bot_alias::DeleteBotAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bot_alias::DeleteBotAliasError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteBotAliasFluentBuilder {
             crate::operation::delete_bot_alias::DeleteBotAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bot_alias::DeleteBotAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bot_alias::DeleteBotAliasError>,
     > {
         self.customize_middleware().await
     }

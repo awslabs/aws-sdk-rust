@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_migration_tasks::ListMigrationTasksOutput::next_token): <p>If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     ///   - [`migration_task_summary_list(Option<Vec<MigrationTaskSummary>>)`](crate::operation::list_migration_tasks::ListMigrationTasksOutput::migration_task_summary_list): <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
     /// - On failure, responds with [`SdkError<ListMigrationTasksError>`](crate::operation::list_migration_tasks::ListMigrationTasksError)
-    pub fn list_migration_tasks(
-        &self,
-    ) -> crate::operation::list_migration_tasks::builders::ListMigrationTasksFluentBuilder {
-        crate::operation::list_migration_tasks::builders::ListMigrationTasksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_migration_tasks(&self) -> crate::operation::list_migration_tasks::builders::ListMigrationTasksFluentBuilder {
+        crate::operation::list_migration_tasks::builders::ListMigrationTasksFluentBuilder::new(self.handle.clone())
     }
 }

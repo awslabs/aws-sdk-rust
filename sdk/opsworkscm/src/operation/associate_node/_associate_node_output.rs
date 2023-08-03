@@ -28,34 +28,24 @@ impl AssociateNodeOutput {
 
 /// A builder for [`AssociateNodeOutput`](crate::operation::associate_node::AssociateNodeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateNodeOutputBuilder {
     pub(crate) node_association_status_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssociateNodeOutputBuilder {
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request. </p>
-    pub fn node_association_status_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn node_association_status_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_association_status_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request. </p>
-    pub fn set_node_association_status_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_node_association_status_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_association_status_token = input;
         self
     }
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request. </p>
-    pub fn get_node_association_status_token(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_node_association_status_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_association_status_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -15,33 +15,25 @@ impl DescribeEmailMonitoringConfigurationInput {
 }
 impl DescribeEmailMonitoringConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeEmailMonitoringConfigurationInput`](crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationInput).
-    pub fn builder() -> crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationInputBuilder {
         crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEmailMonitoringConfigurationInput`](crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEmailMonitoringConfigurationInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEmailMonitoringConfigurationInputBuilder {
     /// <p>The ID of the organization for which the email monitoring configuration is described.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the organization for which the email monitoring configuration is described.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -50,12 +42,16 @@ impl DescribeEmailMonitoringConfigurationInputBuilder {
         &self.organization_id
     }
     /// Consumes the builder and constructs a [`DescribeEmailMonitoringConfigurationInput`](crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationInput {
-                organization_id: self.organization_id
-                ,
-            }
+                organization_id: self.organization_id,
+            },
         )
     }
 }

@@ -51,9 +51,7 @@ impl Reservation {
 
 /// A builder for [`Reservation`](crate::types::Reservation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservationBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
@@ -74,17 +72,12 @@ impl ReservationBuilder {
         self
     }
     /// <p>Not supported.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
         self.groups = input;
         self
     }
     /// <p>Not supported.</p>
-    pub fn get_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
         &self.groups
     }
     /// Appends an item to `instances`.
@@ -99,10 +92,7 @@ impl ReservationBuilder {
         self
     }
     /// <p>The instances.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>) -> Self {
         self.instances = input;
         self
     }
@@ -139,18 +129,12 @@ impl ReservationBuilder {
         &self.requester_id
     }
     /// <p>The ID of the reservation.</p>
-    pub fn reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the reservation.</p>
-    pub fn set_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reservation_id = input;
         self
     }

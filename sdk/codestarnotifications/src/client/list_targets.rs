@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`targets(Option<Vec<TargetSummary>>)`](crate::operation::list_targets::ListTargetsOutput::targets): <p>The list of notification rule targets. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_targets::ListTargetsOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of results.</p>
     /// - On failure, responds with [`SdkError<ListTargetsError>`](crate::operation::list_targets::ListTargetsError)
-    pub fn list_targets(
-        &self,
-    ) -> crate::operation::list_targets::builders::ListTargetsFluentBuilder {
+    pub fn list_targets(&self) -> crate::operation::list_targets::builders::ListTargetsFluentBuilder {
         crate::operation::list_targets::builders::ListTargetsFluentBuilder::new(self.handle.clone())
     }
 }

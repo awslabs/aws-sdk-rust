@@ -43,16 +43,14 @@ impl CreateTransitGatewayRouteInput {
 }
 impl CreateTransitGatewayRouteInput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayRouteInput`](crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteInput).
-    pub fn builder() -> crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteInputBuilder{
+    pub fn builder() -> crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteInputBuilder {
         crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTransitGatewayRouteInput`](crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayRouteInputBuilder {
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct CreateTransitGatewayRouteInputBuilder {
 }
 impl CreateTransitGatewayRouteInputBuilder {
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_cidr_block = input;
         self
     }
@@ -82,47 +74,31 @@ impl CreateTransitGatewayRouteInputBuilder {
         &self.destination_cidr_block
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn set_transit_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = input;
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn get_transit_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_route_table_id
     }
     /// <p>The ID of the attachment.</p>
-    pub fn transit_gateway_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_transit_gateway_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = input;
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn get_transit_gateway_attachment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_attachment_id
     }
     /// <p>Indicates whether to drop traffic that matches this route.</p>
@@ -160,14 +136,12 @@ impl CreateTransitGatewayRouteInputBuilder {
         crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteInput {
-                destination_cidr_block: self.destination_cidr_block,
-                transit_gateway_route_table_id: self.transit_gateway_route_table_id,
-                transit_gateway_attachment_id: self.transit_gateway_attachment_id,
-                blackhole: self.blackhole,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteInput {
+            destination_cidr_block: self.destination_cidr_block,
+            transit_gateway_route_table_id: self.transit_gateway_route_table_id,
+            transit_gateway_attachment_id: self.transit_gateway_attachment_id,
+            blackhole: self.blackhole,
+            dry_run: self.dry_run,
+        })
     }
 }

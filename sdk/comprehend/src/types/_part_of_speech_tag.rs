@@ -30,9 +30,7 @@ impl PartOfSpeechTag {
 
 /// A builder for [`PartOfSpeechTag`](crate::types::PartOfSpeechTag).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PartOfSpeechTagBuilder {
     pub(crate) tag: ::std::option::Option<crate::types::PartOfSpeechTagType>,
     pub(crate) score: ::std::option::Option<f32>,
@@ -44,10 +42,7 @@ impl PartOfSpeechTagBuilder {
         self
     }
     /// <p>Identifies the part of speech that the token represents.</p>
-    pub fn set_tag(
-        mut self,
-        input: ::std::option::Option<crate::types::PartOfSpeechTagType>,
-    ) -> Self {
+    pub fn set_tag(mut self, input: ::std::option::Option<crate::types::PartOfSpeechTagType>) -> Self {
         self.tag = input;
         self
     }

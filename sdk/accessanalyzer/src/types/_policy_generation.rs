@@ -51,9 +51,7 @@ impl PolicyGeneration {
 
 /// A builder for [`PolicyGeneration`](crate::types::PolicyGeneration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyGenerationBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl PolicyGenerationBuilder {
         &self.job_id
     }
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_arn = input;
         self
     }
@@ -116,10 +108,7 @@ impl PolicyGenerationBuilder {
         self
     }
     /// <p>A timestamp of when the policy generation started.</p>
-    pub fn set_started_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_on = input;
         self
     }
@@ -133,10 +122,7 @@ impl PolicyGenerationBuilder {
         self
     }
     /// <p>A timestamp of when the policy generation was completed.</p>
-    pub fn set_completed_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completed_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed_on = input;
         self
     }

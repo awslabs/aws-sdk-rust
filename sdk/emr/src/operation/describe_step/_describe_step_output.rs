@@ -29,9 +29,7 @@ impl DescribeStepOutput {
 
 /// A builder for [`DescribeStepOutput`](crate::operation::describe_step::DescribeStepOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStepOutputBuilder {
     pub(crate) step: ::std::option::Option<crate::types::Step>,
     _request_id: Option<String>,

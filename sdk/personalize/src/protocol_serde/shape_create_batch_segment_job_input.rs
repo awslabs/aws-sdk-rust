@@ -21,19 +21,13 @@ pub fn ser_create_batch_segment_job_input(
     if let Some(var_5) = &input.job_input {
         #[allow(unused_mut)]
         let mut object_6 = object.key("jobInput").start_object();
-        crate::protocol_serde::shape_batch_segment_job_input::ser_batch_segment_job_input(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_batch_segment_job_input::ser_batch_segment_job_input(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.job_output {
         #[allow(unused_mut)]
         let mut object_8 = object.key("jobOutput").start_object();
-        crate::protocol_serde::shape_batch_segment_job_output::ser_batch_segment_job_output(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_batch_segment_job_output::ser_batch_segment_job_output(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.role_arn {

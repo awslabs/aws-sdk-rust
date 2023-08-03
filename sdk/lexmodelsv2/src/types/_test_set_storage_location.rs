@@ -37,9 +37,7 @@ impl TestSetStorageLocation {
 
 /// A builder for [`TestSetStorageLocation`](crate::types::TestSetStorageLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestSetStorageLocationBuilder {
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_path: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct TestSetStorageLocationBuilder {
 }
 impl TestSetStorageLocationBuilder {
     /// <p>The name of the Amazon S3 bucket in which the test set is stored.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon S3 bucket in which the test set is stored.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }

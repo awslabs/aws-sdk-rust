@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListWorkerFleetsOutput {
 }
 impl ListWorkerFleetsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkerFleetsOutput`](crate::operation::list_worker_fleets::ListWorkerFleetsOutput).
-    pub fn builder() -> crate::operation::list_worker_fleets::builders::ListWorkerFleetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_worker_fleets::builders::ListWorkerFleetsOutputBuilder {
         crate::operation::list_worker_fleets::builders::ListWorkerFleetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorkerFleetsOutput`](crate::operation::list_worker_fleets::ListWorkerFleetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkerFleetsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) worker_fleets: ::std::option::Option<::std::vec::Vec<crate::types::WorkerFleet>>,
@@ -71,17 +68,12 @@ impl ListWorkerFleetsOutputBuilder {
         self
     }
     /// List of worker fleets.
-    pub fn set_worker_fleets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkerFleet>>,
-    ) -> Self {
+    pub fn set_worker_fleets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkerFleet>>) -> Self {
         self.worker_fleets = input;
         self
     }
     /// List of worker fleets.
-    pub fn get_worker_fleets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkerFleet>> {
+    pub fn get_worker_fleets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkerFleet>> {
         &self.worker_fleets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

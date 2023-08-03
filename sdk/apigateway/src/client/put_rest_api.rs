@@ -23,9 +23,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::put_rest_api::PutRestApiOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     ///   - [`disable_execute_api_endpoint(bool)`](crate::operation::put_rest_api::PutRestApiOutput::disable_execute_api_endpoint): <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     /// - On failure, responds with [`SdkError<PutRestApiError>`](crate::operation::put_rest_api::PutRestApiError)
-    pub fn put_rest_api(
-        &self,
-    ) -> crate::operation::put_rest_api::builders::PutRestApiFluentBuilder {
+    pub fn put_rest_api(&self) -> crate::operation::put_rest_api::builders::PutRestApiFluentBuilder {
         crate::operation::put_rest_api::builders::PutRestApiFluentBuilder::new(self.handle.clone())
     }
 }

@@ -99,9 +99,7 @@ impl GetTileInput {
 
 /// A builder for [`GetTileInput`](crate::operation::get_tile::GetTileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTileInputBuilder {
     pub(crate) x: ::std::option::Option<i32>,
     pub(crate) y: ::std::option::Option<i32>,
@@ -171,17 +169,12 @@ impl GetTileInputBuilder {
         self
     }
     /// <p>The particular assets or bands to tile.</p>
-    pub fn set_image_assets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_image_assets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.image_assets = input;
         self
     }
     /// <p>The particular assets or bands to tile.</p>
-    pub fn get_image_assets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_image_assets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.image_assets
     }
     /// <p>Determines what part of the Earth Observation job to tile. 'INPUT' or 'OUTPUT' are the valid options.</p>
@@ -227,18 +220,12 @@ impl GetTileInputBuilder {
         &self.image_mask
     }
     /// <p>The data format of the output tile. The formats include .npy, .png and .jpg.</p>
-    pub fn output_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data format of the output tile. The formats include .npy, .png and .jpg.</p>
-    pub fn set_output_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_format = input;
         self
     }
@@ -247,18 +234,12 @@ impl GetTileInputBuilder {
         &self.output_format
     }
     /// <p>Time range filter applied to imagery to find the images to tile.</p>
-    pub fn time_range_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn time_range_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_range_filter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Time range filter applied to imagery to find the images to tile.</p>
-    pub fn set_time_range_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_time_range_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_range_filter = input;
         self
     }
@@ -267,18 +248,12 @@ impl GetTileInputBuilder {
         &self.time_range_filter
     }
     /// <p>Property filters for the imagery to tile.</p>
-    pub fn property_filters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_filters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_filters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Property filters for the imagery to tile.</p>
-    pub fn set_property_filters(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_filters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_filters = input;
         self
     }
@@ -292,10 +267,7 @@ impl GetTileInputBuilder {
         self
     }
     /// <p>The output data type of the tile operation.</p>
-    pub fn set_output_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputType>,
-    ) -> Self {
+    pub fn set_output_data_type(mut self, input: ::std::option::Option<crate::types::OutputType>) -> Self {
         self.output_data_type = input;
         self
     }
@@ -304,18 +276,12 @@ impl GetTileInputBuilder {
         &self.output_data_type
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -324,12 +290,7 @@ impl GetTileInputBuilder {
         &self.execution_role_arn
     }
     /// Consumes the builder and constructs a [`GetTileInput`](crate::operation::get_tile::GetTileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_tile::GetTileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_tile::GetTileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_tile::GetTileInput {
             x: self.x,
             y: self.y,

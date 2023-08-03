@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`domain_arn(Option<String>)`](crate::operation::create_domain::CreateDomainOutput::domain_arn): <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
     ///   - [`domain_status(Option<DomainStatus>)`](crate::operation::create_domain::CreateDomainOutput::domain_status): <p>The status of the domain.</p>
     /// - On failure, responds with [`SdkError<CreateDomainError>`](crate::operation::create_domain::CreateDomainError)
-    pub fn create_domain(
-        &self,
-    ) -> crate::operation::create_domain::builders::CreateDomainFluentBuilder {
-        crate::operation::create_domain::builders::CreateDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_domain(&self) -> crate::operation::create_domain::builders::CreateDomainFluentBuilder {
+        crate::operation::create_domain::builders::CreateDomainFluentBuilder::new(self.handle.clone())
     }
 }

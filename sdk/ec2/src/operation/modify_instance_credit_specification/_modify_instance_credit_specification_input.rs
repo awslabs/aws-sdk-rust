@@ -11,8 +11,7 @@ pub struct ModifyInstanceCreditSpecificationInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the credit option for CPU usage.</p>
     #[doc(hidden)]
-    pub instance_credit_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecificationRequest>>,
+    pub instance_credit_specifications: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecificationRequest>>,
 }
 impl ModifyInstanceCreditSpecificationInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -24,29 +23,24 @@ impl ModifyInstanceCreditSpecificationInput {
         self.client_token.as_deref()
     }
     /// <p>Information about the credit option for CPU usage.</p>
-    pub fn instance_credit_specifications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceCreditSpecificationRequest]> {
+    pub fn instance_credit_specifications(&self) -> ::std::option::Option<&[crate::types::InstanceCreditSpecificationRequest]> {
         self.instance_credit_specifications.as_deref()
     }
 }
 impl ModifyInstanceCreditSpecificationInput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceCreditSpecificationInput`](crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationInput).
-    pub fn builder() -> crate::operation::modify_instance_credit_specification::builders::ModifyInstanceCreditSpecificationInputBuilder{
+    pub fn builder() -> crate::operation::modify_instance_credit_specification::builders::ModifyInstanceCreditSpecificationInputBuilder {
         crate::operation::modify_instance_credit_specification::builders::ModifyInstanceCreditSpecificationInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyInstanceCreditSpecificationInput`](crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyInstanceCreditSpecificationInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_credit_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecificationRequest>>,
+    pub(crate) instance_credit_specifications: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecificationRequest>>,
 }
 impl ModifyInstanceCreditSpecificationInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -82,10 +76,7 @@ impl ModifyInstanceCreditSpecificationInputBuilder {
     /// To override the contents of this collection use [`set_instance_credit_specifications`](Self::set_instance_credit_specifications).
     ///
     /// <p>Information about the credit option for CPU usage.</p>
-    pub fn instance_credit_specifications(
-        mut self,
-        input: crate::types::InstanceCreditSpecificationRequest,
-    ) -> Self {
+    pub fn instance_credit_specifications(mut self, input: crate::types::InstanceCreditSpecificationRequest) -> Self {
         let mut v = self.instance_credit_specifications.unwrap_or_default();
         v.push(input);
         self.instance_credit_specifications = ::std::option::Option::Some(v);
@@ -94,31 +85,28 @@ impl ModifyInstanceCreditSpecificationInputBuilder {
     /// <p>Information about the credit option for CPU usage.</p>
     pub fn set_instance_credit_specifications(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::InstanceCreditSpecificationRequest>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecificationRequest>>,
     ) -> Self {
         self.instance_credit_specifications = input;
         self
     }
     /// <p>Information about the credit option for CPU usage.</p>
-    pub fn get_instance_credit_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecificationRequest>>
-    {
+    pub fn get_instance_credit_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceCreditSpecificationRequest>> {
         &self.instance_credit_specifications
     }
     /// Consumes the builder and constructs a [`ModifyInstanceCreditSpecificationInput`](crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationInput {
-                dry_run: self.dry_run
-                ,
-                client_token: self.client_token
-                ,
-                instance_credit_specifications: self.instance_credit_specifications
-                ,
-            }
+                dry_run: self.dry_run,
+                client_token: self.client_token,
+                instance_credit_specifications: self.instance_credit_specifications,
+            },
         )
     }
 }

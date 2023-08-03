@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ProvisionedProductStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ProvisionedProductStatus {
             "PLAN_IN_PROGRESS" => ProvisionedProductStatus::PlanInProgress,
             "TAINTED" => ProvisionedProductStatus::Tainted,
             "UNDER_CHANGE" => ProvisionedProductStatus::UnderChange,
-            other => ProvisionedProductStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ProvisionedProductStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl ProvisionedProductStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE",
-            "ERROR",
-            "PLAN_IN_PROGRESS",
-            "TAINTED",
-            "UNDER_CHANGE",
-        ]
+        &["AVAILABLE", "ERROR", "PLAN_IN_PROGRESS", "TAINTED", "UNDER_CHANGE"]
     }
 }
 impl ::std::convert::AsRef<str> for ProvisionedProductStatus {

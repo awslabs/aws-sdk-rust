@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListFleetMetricsOutput {
 }
 impl ListFleetMetricsOutput {
     /// Creates a new builder-style object to manufacture [`ListFleetMetricsOutput`](crate::operation::list_fleet_metrics::ListFleetMetricsOutput).
-    pub fn builder() -> crate::operation::list_fleet_metrics::builders::ListFleetMetricsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_fleet_metrics::builders::ListFleetMetricsOutputBuilder {
         crate::operation::list_fleet_metrics::builders::ListFleetMetricsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFleetMetricsOutput`](crate::operation::list_fleet_metrics::ListFleetMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFleetMetricsOutputBuilder {
-    pub(crate) fleet_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::FleetMetricNameAndArn>>,
+    pub(crate) fleet_metrics: ::std::option::Option<::std::vec::Vec<crate::types::FleetMetricNameAndArn>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListFleetMetricsOutputBuilder {
         self
     }
     /// <p>The list of fleet metrics objects.</p>
-    pub fn set_fleet_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetMetricNameAndArn>>,
-    ) -> Self {
+    pub fn set_fleet_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetMetricNameAndArn>>) -> Self {
         self.fleet_metrics = input;
         self
     }
     /// <p>The list of fleet metrics objects.</p>
-    pub fn get_fleet_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetMetricNameAndArn>> {
+    pub fn get_fleet_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetMetricNameAndArn>> {
         &self.fleet_metrics
     }
     /// <p>The token for the next set of results. Will not be returned if the operation has returned all results.</p>

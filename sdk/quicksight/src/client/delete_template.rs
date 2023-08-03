@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`template_id(Option<String>)`](crate::operation::delete_template::DeleteTemplateOutput::template_id): <p>An ID for the template.</p>
     ///   - [`status(i32)`](crate::operation::delete_template::DeleteTemplateOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteTemplateError>`](crate::operation::delete_template::DeleteTemplateError)
-    pub fn delete_template(
-        &self,
-    ) -> crate::operation::delete_template::builders::DeleteTemplateFluentBuilder {
-        crate::operation::delete_template::builders::DeleteTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_template(&self) -> crate::operation::delete_template::builders::DeleteTemplateFluentBuilder {
+        crate::operation::delete_template::builders::DeleteTemplateFluentBuilder::new(self.handle.clone())
     }
 }

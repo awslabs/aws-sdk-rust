@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_world_template::DescribeWorldTemplateOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world template.</p>
     ///   - [`version(Option<String>)`](crate::operation::describe_world_template::DescribeWorldTemplateOutput::version): <p>The version of the world template that you're using.</p>
     /// - On failure, responds with [`SdkError<DescribeWorldTemplateError>`](crate::operation::describe_world_template::DescribeWorldTemplateError)
-    pub fn describe_world_template(
-        &self,
-    ) -> crate::operation::describe_world_template::builders::DescribeWorldTemplateFluentBuilder
-    {
-        crate::operation::describe_world_template::builders::DescribeWorldTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_world_template(&self) -> crate::operation::describe_world_template::builders::DescribeWorldTemplateFluentBuilder {
+        crate::operation::describe_world_template::builders::DescribeWorldTemplateFluentBuilder::new(self.handle.clone())
     }
 }

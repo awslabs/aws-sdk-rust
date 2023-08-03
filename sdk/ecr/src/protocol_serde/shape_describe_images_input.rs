@@ -15,10 +15,7 @@ pub fn ser_describe_images_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_image_identifier::ser_image_identifier(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_image_identifier::ser_image_identifier(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -36,10 +33,7 @@ pub fn ser_describe_images_input(
     if let Some(var_9) = &input.filter {
         #[allow(unused_mut)]
         let mut object_10 = object.key("filter").start_object();
-        crate::protocol_serde::shape_describe_images_filter::ser_describe_images_filter(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_describe_images_filter::ser_describe_images_filter(&mut object_10, var_9)?;
         object_10.finish();
     }
     Ok(())

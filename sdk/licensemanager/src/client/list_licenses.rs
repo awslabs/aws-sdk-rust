@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`licenses(Option<Vec<License>>)`](crate::operation::list_licenses::ListLicensesOutput::licenses): <p>License details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_licenses::ListLicensesOutput::next_token): <p>Token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListLicensesError>`](crate::operation::list_licenses::ListLicensesError)
-    pub fn list_licenses(
-        &self,
-    ) -> crate::operation::list_licenses::builders::ListLicensesFluentBuilder {
-        crate::operation::list_licenses::builders::ListLicensesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_licenses(&self) -> crate::operation::list_licenses::builders::ListLicensesFluentBuilder {
+        crate::operation::list_licenses::builders::ListLicensesFluentBuilder::new(self.handle.clone())
     }
 }

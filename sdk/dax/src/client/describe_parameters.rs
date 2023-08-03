@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_parameters::DescribeParametersOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`parameters(Option<Vec<Parameter>>)`](crate::operation::describe_parameters::DescribeParametersOutput::parameters): <p>A list of parameters within a parameter group. Each element in the list represents one parameter.</p>
     /// - On failure, responds with [`SdkError<DescribeParametersError>`](crate::operation::describe_parameters::DescribeParametersError)
-    pub fn describe_parameters(
-        &self,
-    ) -> crate::operation::describe_parameters::builders::DescribeParametersFluentBuilder {
-        crate::operation::describe_parameters::builders::DescribeParametersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_parameters(&self) -> crate::operation::describe_parameters::builders::DescribeParametersFluentBuilder {
+        crate::operation::describe_parameters::builders::DescribeParametersFluentBuilder::new(self.handle.clone())
     }
 }

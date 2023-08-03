@@ -22,9 +22,7 @@ impl StopPipeInput {
 
 /// A builder for [`StopPipeInput`](crate::operation::stop_pipe::StopPipeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopPipeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl StopPipeInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StopPipeInput`](crate::operation::stop_pipe::StopPipeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_pipe::StopPipeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_pipe::StopPipeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_pipe::StopPipeInput { name: self.name })
     }
 }

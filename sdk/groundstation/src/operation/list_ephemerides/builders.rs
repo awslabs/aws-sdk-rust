@@ -10,10 +10,7 @@ impl ListEphemeridesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_ephemerides::ListEphemeridesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ephemerides::ListEphemeridesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ephemerides::ListEphemeridesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_ephemerides();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListEphemeridesFluentBuilder {
         }
     }
     /// Access the ListEphemerides as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_ephemerides::builders::ListEphemeridesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_ephemerides::builders::ListEphemeridesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListEphemeridesFluentBuilder {
             crate::operation::list_ephemerides::ListEphemerides,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ephemerides::ListEphemeridesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ephemerides::ListEphemeridesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListEphemeridesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListEphemeridesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_ephemerides::ListEphemeridesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ephemerides::ListEphemeridesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ephemerides::ListEphemeridesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListEphemeridesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_ephemerides::ListEphemeridesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ephemerides::ListEphemeridesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ephemerides::ListEphemeridesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListEphemeridesFluentBuilder {
             crate::operation::list_ephemerides::ListEphemerides,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_ephemerides::ListEphemeridesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_ephemerides::ListEphemeridesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_ephemerides::paginator::ListEphemeridesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_ephemerides::paginator::ListEphemeridesPaginator {
-        crate::operation::list_ephemerides::paginator::ListEphemeridesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_ephemerides::paginator::ListEphemeridesPaginator {
+        crate::operation::list_ephemerides::paginator::ListEphemeridesPaginator::new(self.handle, self.inner)
     }
     /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
     pub fn satellite_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,10 +132,7 @@ impl ListEphemeridesFluentBuilder {
         self
     }
     /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -170,10 +146,7 @@ impl ListEphemeridesFluentBuilder {
         self
     }
     /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -191,17 +164,12 @@ impl ListEphemeridesFluentBuilder {
         self
     }
     /// <p>The list of ephemeris status to return.</p>
-    pub fn set_status_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisStatus>>,
-    ) -> Self {
+    pub fn set_status_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisStatus>>) -> Self {
         self.inner = self.inner.set_status_list(input);
         self
     }
     /// <p>The list of ephemeris status to return.</p>
-    pub fn get_status_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EphemerisStatus>> {
+    pub fn get_status_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EphemerisStatus>> {
         self.inner.get_status_list()
     }
     /// <p>Maximum number of ephemerides to return.</p>

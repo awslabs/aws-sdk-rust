@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`iot_job_id(Option<String>)`](crate::operation::create_software_update_job::CreateSoftwareUpdateJobOutput::iot_job_id): The IoT Job Id corresponding to this update.
     ///   - [`platform_software_version(Option<String>)`](crate::operation::create_software_update_job::CreateSoftwareUpdateJobOutput::platform_software_version): The software version installed on the device or devices after the update.
     /// - On failure, responds with [`SdkError<CreateSoftwareUpdateJobError>`](crate::operation::create_software_update_job::CreateSoftwareUpdateJobError)
-    pub fn create_software_update_job(
-        &self,
-    ) -> crate::operation::create_software_update_job::builders::CreateSoftwareUpdateJobFluentBuilder
-    {
+    pub fn create_software_update_job(&self) -> crate::operation::create_software_update_job::builders::CreateSoftwareUpdateJobFluentBuilder {
         crate::operation::create_software_update_job::builders::CreateSoftwareUpdateJobFluentBuilder::new(self.handle.clone())
     }
 }

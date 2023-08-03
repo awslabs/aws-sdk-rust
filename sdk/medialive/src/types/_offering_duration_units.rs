@@ -37,13 +37,7 @@
 /// Units for duration, e.g. 'MONTHS'
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OfferingDurationUnits {
     #[allow(missing_docs)] // documentation missing in model
@@ -55,9 +49,7 @@ impl ::std::convert::From<&str> for OfferingDurationUnits {
     fn from(s: &str) -> Self {
         match s {
             "MONTHS" => OfferingDurationUnits::Months,
-            other => OfferingDurationUnits::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => OfferingDurationUnits::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

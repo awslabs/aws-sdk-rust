@@ -17,9 +17,7 @@ impl VideoSelectorSettings {
         self.video_selector_pid.as_ref()
     }
     /// Video Selector Program Id
-    pub fn video_selector_program_id(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VideoSelectorProgramId> {
+    pub fn video_selector_program_id(&self) -> ::std::option::Option<&crate::types::VideoSelectorProgramId> {
         self.video_selector_program_id.as_ref()
     }
 }
@@ -32,13 +30,10 @@ impl VideoSelectorSettings {
 
 /// A builder for [`VideoSelectorSettings`](crate::types::VideoSelectorSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VideoSelectorSettingsBuilder {
     pub(crate) video_selector_pid: ::std::option::Option<crate::types::VideoSelectorPid>,
-    pub(crate) video_selector_program_id:
-        ::std::option::Option<crate::types::VideoSelectorProgramId>,
+    pub(crate) video_selector_program_id: ::std::option::Option<crate::types::VideoSelectorProgramId>,
 }
 impl VideoSelectorSettingsBuilder {
     /// Video Selector Pid
@@ -47,10 +42,7 @@ impl VideoSelectorSettingsBuilder {
         self
     }
     /// Video Selector Pid
-    pub fn set_video_selector_pid(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoSelectorPid>,
-    ) -> Self {
+    pub fn set_video_selector_pid(mut self, input: ::std::option::Option<crate::types::VideoSelectorPid>) -> Self {
         self.video_selector_pid = input;
         self
     }
@@ -59,25 +51,17 @@ impl VideoSelectorSettingsBuilder {
         &self.video_selector_pid
     }
     /// Video Selector Program Id
-    pub fn video_selector_program_id(
-        mut self,
-        input: crate::types::VideoSelectorProgramId,
-    ) -> Self {
+    pub fn video_selector_program_id(mut self, input: crate::types::VideoSelectorProgramId) -> Self {
         self.video_selector_program_id = ::std::option::Option::Some(input);
         self
     }
     /// Video Selector Program Id
-    pub fn set_video_selector_program_id(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoSelectorProgramId>,
-    ) -> Self {
+    pub fn set_video_selector_program_id(mut self, input: ::std::option::Option<crate::types::VideoSelectorProgramId>) -> Self {
         self.video_selector_program_id = input;
         self
     }
     /// Video Selector Program Id
-    pub fn get_video_selector_program_id(
-        &self,
-    ) -> &::std::option::Option<crate::types::VideoSelectorProgramId> {
+    pub fn get_video_selector_program_id(&self) -> &::std::option::Option<crate::types::VideoSelectorProgramId> {
         &self.video_selector_program_id
     }
     /// Consumes the builder and constructs a [`VideoSelectorSettings`](crate::types::VideoSelectorSettings).

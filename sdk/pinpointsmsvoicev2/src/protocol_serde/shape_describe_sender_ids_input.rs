@@ -9,10 +9,7 @@ pub fn ser_describe_sender_ids_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_sender_id_and_country::ser_sender_id_and_country(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_sender_id_and_country::ser_sender_id_and_country(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_describe_sender_ids_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_sender_id_filter::ser_sender_id_filter(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_sender_id_filter::ser_sender_id_filter(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }

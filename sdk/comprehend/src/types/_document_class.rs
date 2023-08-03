@@ -37,9 +37,7 @@ impl DocumentClass {
 
 /// A builder for [`DocumentClass`](crate::types::DocumentClass).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentClassBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) score: ::std::option::Option<f32>,

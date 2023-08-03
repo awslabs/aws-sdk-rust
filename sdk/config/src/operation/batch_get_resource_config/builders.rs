@@ -31,8 +31,7 @@ impl BatchGetResourceConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetResourceConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::batch_get_resource_config::builders::BatchGetResourceConfigInputBuilder,
+    inner: crate::operation::batch_get_resource_config::builders::BatchGetResourceConfigInputBuilder,
 }
 impl BatchGetResourceConfigFluentBuilder {
     /// Creates a new `BatchGetResourceConfig`.
@@ -43,10 +42,7 @@ impl BatchGetResourceConfigFluentBuilder {
         }
     }
     /// Access the BatchGetResourceConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_resource_config::builders::BatchGetResourceConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_get_resource_config::builders::BatchGetResourceConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +54,7 @@ impl BatchGetResourceConfigFluentBuilder {
             crate::operation::batch_get_resource_config::BatchGetResourceConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_resource_config::BatchGetResourceConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_resource_config::BatchGetResourceConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +64,7 @@ impl BatchGetResourceConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +73,7 @@ impl BatchGetResourceConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_resource_config::BatchGetResourceConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_resource_config::BatchGetResourceConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_resource_config::BatchGetResourceConfigError>,
     > {
         let op = self
             .inner
@@ -107,9 +96,7 @@ impl BatchGetResourceConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_resource_config::BatchGetResourceConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_resource_config::BatchGetResourceConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_resource_config::BatchGetResourceConfigError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +110,7 @@ impl BatchGetResourceConfigFluentBuilder {
             crate::operation::batch_get_resource_config::BatchGetResourceConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_resource_config::BatchGetResourceConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_resource_config::BatchGetResourceConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -139,17 +124,12 @@ impl BatchGetResourceConfigFluentBuilder {
         self
     }
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
-    pub fn set_resource_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
-    ) -> Self {
+    pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>) -> Self {
         self.inner = self.inner.set_resource_keys(input);
         self
     }
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
-    pub fn get_resource_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
+    pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
         self.inner.get_resource_keys()
     }
 }

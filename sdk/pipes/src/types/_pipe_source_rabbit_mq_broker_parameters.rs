@@ -49,10 +49,7 @@ impl ::std::fmt::Debug for PipeSourceRabbitMqBrokerParameters {
         formatter.field("queue_name", &"*** Sensitive Data Redacted ***");
         formatter.field("virtual_host", &"*** Sensitive Data Redacted ***");
         formatter.field("batch_size", &self.batch_size);
-        formatter.field(
-            "maximum_batching_window_in_seconds",
-            &self.maximum_batching_window_in_seconds,
-        );
+        formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
         formatter.finish()
     }
 }
@@ -80,17 +77,12 @@ impl PipeSourceRabbitMqBrokerParametersBuilder {
         self
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::MqBrokerAccessCredentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::MqBrokerAccessCredentials>) -> Self {
         self.credentials = input;
         self
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn get_credentials(
-        &self,
-    ) -> &::std::option::Option<crate::types::MqBrokerAccessCredentials> {
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::MqBrokerAccessCredentials> {
         &self.credentials
     }
     /// <p>The name of the destination queue to consume.</p>
@@ -141,10 +133,7 @@ impl PipeSourceRabbitMqBrokerParametersBuilder {
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
-    pub fn set_maximum_batching_window_in_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_maximum_batching_window_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_batching_window_in_seconds = input;
         self
     }
@@ -170,10 +159,7 @@ impl ::std::fmt::Debug for PipeSourceRabbitMqBrokerParametersBuilder {
         formatter.field("queue_name", &"*** Sensitive Data Redacted ***");
         formatter.field("virtual_host", &"*** Sensitive Data Redacted ***");
         formatter.field("batch_size", &self.batch_size);
-        formatter.field(
-            "maximum_batching_window_in_seconds",
-            &self.maximum_batching_window_in_seconds,
-        );
+        formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
         formatter.finish()
     }
 }

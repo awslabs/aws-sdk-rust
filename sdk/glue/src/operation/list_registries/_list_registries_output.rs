@@ -35,9 +35,7 @@ impl ListRegistriesOutput {
 
 /// A builder for [`ListRegistriesOutput`](crate::operation::list_registries::ListRegistriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRegistriesOutputBuilder {
     pub(crate) registries: ::std::option::Option<::std::vec::Vec<crate::types::RegistryListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListRegistriesOutputBuilder {
         self
     }
     /// <p>An array of <code>RegistryDetailedListItem</code> objects containing minimal details of each registry.</p>
-    pub fn set_registries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegistryListItem>>,
-    ) -> Self {
+    pub fn set_registries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistryListItem>>) -> Self {
         self.registries = input;
         self
     }
     /// <p>An array of <code>RegistryDetailedListItem</code> objects containing minimal details of each registry.</p>
-    pub fn get_registries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryListItem>> {
+    pub fn get_registries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryListItem>> {
         &self.registries
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>

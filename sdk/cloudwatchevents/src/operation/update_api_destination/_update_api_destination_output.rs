@@ -23,9 +23,7 @@ impl UpdateApiDestinationOutput {
         self.api_destination_arn.as_deref()
     }
     /// <p>The state of the API destination that was updated.</p>
-    pub fn api_destination_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApiDestinationState> {
+    pub fn api_destination_state(&self) -> ::std::option::Option<&crate::types::ApiDestinationState> {
         self.api_destination_state.as_ref()
     }
     /// <p>A time stamp for the time that the API destination was created.</p>
@@ -44,17 +42,14 @@ impl ::aws_http::request_id::RequestId for UpdateApiDestinationOutput {
 }
 impl UpdateApiDestinationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApiDestinationOutput`](crate::operation::update_api_destination::UpdateApiDestinationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_api_destination::builders::UpdateApiDestinationOutputBuilder {
+    pub fn builder() -> crate::operation::update_api_destination::builders::UpdateApiDestinationOutputBuilder {
         crate::operation::update_api_destination::builders::UpdateApiDestinationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApiDestinationOutput`](crate::operation::update_api_destination::UpdateApiDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApiDestinationOutputBuilder {
     pub(crate) api_destination_arn: ::std::option::Option<::std::string::String>,
     pub(crate) api_destination_state: ::std::option::Option<crate::types::ApiDestinationState>,
@@ -64,18 +59,12 @@ pub struct UpdateApiDestinationOutputBuilder {
 }
 impl UpdateApiDestinationOutputBuilder {
     /// <p>The ARN of the API destination that was updated.</p>
-    pub fn api_destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the API destination that was updated.</p>
-    pub fn set_api_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_destination_arn = input;
         self
     }
@@ -89,17 +78,12 @@ impl UpdateApiDestinationOutputBuilder {
         self
     }
     /// <p>The state of the API destination that was updated.</p>
-    pub fn set_api_destination_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ApiDestinationState>,
-    ) -> Self {
+    pub fn set_api_destination_state(mut self, input: ::std::option::Option<crate::types::ApiDestinationState>) -> Self {
         self.api_destination_state = input;
         self
     }
     /// <p>The state of the API destination that was updated.</p>
-    pub fn get_api_destination_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApiDestinationState> {
+    pub fn get_api_destination_state(&self) -> &::std::option::Option<crate::types::ApiDestinationState> {
         &self.api_destination_state
     }
     /// <p>A time stamp for the time that the API destination was created.</p>
@@ -108,10 +92,7 @@ impl UpdateApiDestinationOutputBuilder {
         self
     }
     /// <p>A time stamp for the time that the API destination was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -125,10 +106,7 @@ impl UpdateApiDestinationOutputBuilder {
         self
     }
     /// <p>A time stamp for the time that the API destination was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

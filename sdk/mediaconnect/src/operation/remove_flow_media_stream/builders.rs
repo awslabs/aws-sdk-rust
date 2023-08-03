@@ -37,10 +37,7 @@ impl RemoveFlowMediaStreamFluentBuilder {
         }
     }
     /// Access the RemoveFlowMediaStream as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl RemoveFlowMediaStreamFluentBuilder {
             crate::operation::remove_flow_media_stream::RemoveFlowMediaStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl RemoveFlowMediaStreamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl RemoveFlowMediaStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl RemoveFlowMediaStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl RemoveFlowMediaStreamFluentBuilder {
             crate::operation::remove_flow_media_stream::RemoveFlowMediaStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl RemoveFlowMediaStreamFluentBuilder {
         self.inner.get_flow_arn()
     }
     /// The name of the media stream that you want to remove.
-    pub fn media_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.media_stream_name(input.into());
         self
     }
     /// The name of the media stream that you want to remove.
-    pub fn set_media_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_media_stream_name(input);
         self
     }

@@ -23,9 +23,7 @@ impl InputParallelismUpdate {
 
 /// A builder for [`InputParallelismUpdate`](crate::types::InputParallelismUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputParallelismUpdateBuilder {
     pub(crate) count_update: ::std::option::Option<i32>,
 }

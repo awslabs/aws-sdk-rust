@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`ip_set(Option<IpSet>)`](crate::operation::create_ip_set::CreateIpSetOutput::ip_set): <p>The <code>IPSet</code> returned in the <code>CreateIPSet</code> response.</p>
     ///   - [`change_token(Option<String>)`](crate::operation::create_ip_set::CreateIpSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<CreateIPSetError>`](crate::operation::create_ip_set::CreateIPSetError)
-    pub fn create_ip_set(
-        &self,
-    ) -> crate::operation::create_ip_set::builders::CreateIPSetFluentBuilder {
-        crate::operation::create_ip_set::builders::CreateIPSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_ip_set(&self) -> crate::operation::create_ip_set::builders::CreateIPSetFluentBuilder {
+        crate::operation::create_ip_set::builders::CreateIPSetFluentBuilder::new(self.handle.clone())
     }
 }

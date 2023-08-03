@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<PlaybackConfiguration>>)`](crate::operation::list_playback_configurations::ListPlaybackConfigurationsOutput::items): <p>Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_playback_configurations::ListPlaybackConfigurationsOutput::next_token): <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListPlaybackConfigurationsError>`](crate::operation::list_playback_configurations::ListPlaybackConfigurationsError)
-    pub fn list_playback_configurations(&self) -> crate::operation::list_playback_configurations::builders::ListPlaybackConfigurationsFluentBuilder{
+    pub fn list_playback_configurations(&self) -> crate::operation::list_playback_configurations::builders::ListPlaybackConfigurationsFluentBuilder {
         crate::operation::list_playback_configurations::builders::ListPlaybackConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

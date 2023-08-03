@@ -18,10 +18,7 @@ pub fn ser_import_table_input(
     if let Some(var_5) = &input.input_format_options {
         #[allow(unused_mut)]
         let mut object_6 = object.key("InputFormatOptions").start_object();
-        crate::protocol_serde::shape_input_format_options::ser_input_format_options(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_input_format_options::ser_input_format_options(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.input_compression_type {
@@ -30,10 +27,7 @@ pub fn ser_import_table_input(
     if let Some(var_8) = &input.table_creation_parameters {
         #[allow(unused_mut)]
         let mut object_9 = object.key("TableCreationParameters").start_object();
-        crate::protocol_serde::shape_table_creation_parameters::ser_table_creation_parameters(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_table_creation_parameters::ser_table_creation_parameters(&mut object_9, var_8)?;
         object_9.finish();
     }
     Ok(())

@@ -5,16 +5,16 @@ pub use crate::operation::create_data_lake_exception_subscription::_create_data_
 
 impl CreateDataLakeExceptionSubscriptionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_data_lake_exception_subscription();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl CreateDataLakeExceptionSubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataLakeExceptionSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_data_lake_exception_subscription::builders::CreateDataLakeExceptionSubscriptionInputBuilder,
+    inner: crate::operation::create_data_lake_exception_subscription::builders::CreateDataLakeExceptionSubscriptionInputBuilder,
 }
 impl CreateDataLakeExceptionSubscriptionFluentBuilder {
     /// Creates a new `CreateDataLakeExceptionSubscription`.
@@ -37,15 +37,20 @@ impl CreateDataLakeExceptionSubscriptionFluentBuilder {
         }
     }
     /// Access the CreateDataLakeExceptionSubscription as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_data_lake_exception_subscription::builders::CreateDataLakeExceptionSubscriptionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_data_lake_exception_subscription::builders::CreateDataLakeExceptionSubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscription, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscription,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl CreateDataLakeExceptionSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl CreateDataLakeExceptionSubscriptionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscription, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscription,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The subscription protocol to which exception notifications are posted.</p>
-    pub fn subscription_protocol(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscription_protocol(input.into());
         self
     }
     /// <p>The subscription protocol to which exception notifications are posted.</p>
-    pub fn set_subscription_protocol(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_protocol(input);
         self
     }
@@ -115,18 +124,12 @@ impl CreateDataLakeExceptionSubscriptionFluentBuilder {
         self.inner.get_subscription_protocol()
     }
     /// <p>The Amazon Web Services account where you want to receive exception notifications.</p>
-    pub fn notification_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_endpoint(input.into());
         self
     }
     /// <p>The Amazon Web Services account where you want to receive exception notifications.</p>
-    pub fn set_notification_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notification_endpoint(input);
         self
     }

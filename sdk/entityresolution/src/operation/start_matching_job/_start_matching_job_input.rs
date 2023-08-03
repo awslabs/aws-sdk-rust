@@ -15,34 +15,25 @@ impl StartMatchingJobInput {
 }
 impl StartMatchingJobInput {
     /// Creates a new builder-style object to manufacture [`StartMatchingJobInput`](crate::operation::start_matching_job::StartMatchingJobInput).
-    pub fn builder() -> crate::operation::start_matching_job::builders::StartMatchingJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_matching_job::builders::StartMatchingJobInputBuilder {
         crate::operation::start_matching_job::builders::StartMatchingJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartMatchingJobInput`](crate::operation::start_matching_job::StartMatchingJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMatchingJobInputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
 }
 impl StartMatchingJobInputBuilder {
     /// <p>The name of the matching job to be retrieved.</p>
-    pub fn workflow_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the matching job to be retrieved.</p>
-    pub fn set_workflow_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl StartMatchingJobInputBuilder {
     /// Consumes the builder and constructs a [`StartMatchingJobInput`](crate::operation::start_matching_job::StartMatchingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_matching_job::StartMatchingJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_matching_job::StartMatchingJobInput {
-                workflow_name: self.workflow_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_matching_job::StartMatchingJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_matching_job::StartMatchingJobInput {
+            workflow_name: self.workflow_name,
+        })
     }
 }

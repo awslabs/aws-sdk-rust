@@ -45,13 +45,7 @@
 /// </p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Platform {
     #[allow(missing_docs)] // documentation missing in model
@@ -108,15 +102,7 @@ impl Platform {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANDROID",
-            "JAVASCRIPT",
-            "LINUX",
-            "OBJC",
-            "OSX",
-            "SWIFT",
-            "WINDOWS",
-        ]
+        &["ANDROID", "JAVASCRIPT", "LINUX", "OBJC", "OSX", "SWIFT", "WINDOWS"]
     }
 }
 impl ::std::convert::AsRef<str> for Platform {

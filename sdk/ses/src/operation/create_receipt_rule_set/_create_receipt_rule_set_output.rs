@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for CreateReceiptRuleSetOutput {
 }
 impl CreateReceiptRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateReceiptRuleSetOutput`](crate::operation::create_receipt_rule_set::CreateReceiptRuleSetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_receipt_rule_set::builders::CreateReceiptRuleSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_receipt_rule_set::builders::CreateReceiptRuleSetOutputBuilder {
         crate::operation::create_receipt_rule_set::builders::CreateReceiptRuleSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReceiptRuleSetOutput`](crate::operation::create_receipt_rule_set::CreateReceiptRuleSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReceiptRuleSetOutputBuilder {
     _request_id: Option<String>,
 }

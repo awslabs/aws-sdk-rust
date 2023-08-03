@@ -38,13 +38,7 @@
 /// <p>The preferred time zone for logs streamed to CloudWatch Logs. Valid values are <code>LOCAL</code> and <code>UTC</code>, for Coordinated Universal Time.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CloudWatchLogsTimeZone {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for CloudWatchLogsTimeZone {
         match s {
             "LOCAL" => CloudWatchLogsTimeZone::Local,
             "UTC" => CloudWatchLogsTimeZone::Utc,
-            other => CloudWatchLogsTimeZone::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CloudWatchLogsTimeZone::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeAppInstanceUserOutput {
 }
 impl DescribeAppInstanceUserOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceUserOutput`](crate::operation::describe_app_instance_user::DescribeAppInstanceUserOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_app_instance_user::builders::DescribeAppInstanceUserOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_app_instance_user::builders::DescribeAppInstanceUserOutputBuilder {
         crate::operation::describe_app_instance_user::builders::DescribeAppInstanceUserOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAppInstanceUserOutput`](crate::operation::describe_app_instance_user::DescribeAppInstanceUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppInstanceUserOutputBuilder {
     pub(crate) app_instance_user: ::std::option::Option<crate::types::AppInstanceUser>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeAppInstanceUserOutputBuilder {
         self
     }
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user(
-        mut self,
-        input: ::std::option::Option<crate::types::AppInstanceUser>,
-    ) -> Self {
+    pub fn set_app_instance_user(mut self, input: ::std::option::Option<crate::types::AppInstanceUser>) -> Self {
         self.app_instance_user = input;
         self
     }
@@ -65,9 +58,7 @@ impl DescribeAppInstanceUserOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAppInstanceUserOutput`](crate::operation::describe_app_instance_user::DescribeAppInstanceUserOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_app_instance_user::DescribeAppInstanceUserOutput {
+    pub fn build(self) -> crate::operation::describe_app_instance_user::DescribeAppInstanceUserOutput {
         crate::operation::describe_app_instance_user::DescribeAppInstanceUserOutput {
             app_instance_user: self.app_instance_user,
             _request_id: self._request_id,

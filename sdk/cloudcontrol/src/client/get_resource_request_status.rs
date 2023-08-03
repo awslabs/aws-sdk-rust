@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetResourceRequestStatusOutput`](crate::operation::get_resource_request_status::GetResourceRequestStatusOutput) with field(s):
     ///   - [`progress_event(Option<ProgressEvent>)`](crate::operation::get_resource_request_status::GetResourceRequestStatusOutput::progress_event): <p>Represents the current status of the resource operation request.</p>
     /// - On failure, responds with [`SdkError<GetResourceRequestStatusError>`](crate::operation::get_resource_request_status::GetResourceRequestStatusError)
-    pub fn get_resource_request_status(&self) -> crate::operation::get_resource_request_status::builders::GetResourceRequestStatusFluentBuilder{
+    pub fn get_resource_request_status(&self) -> crate::operation::get_resource_request_status::builders::GetResourceRequestStatusFluentBuilder {
         crate::operation::get_resource_request_status::builders::GetResourceRequestStatusFluentBuilder::new(self.handle.clone())
     }
 }

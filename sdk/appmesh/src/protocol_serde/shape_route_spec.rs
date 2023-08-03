@@ -40,12 +40,7 @@ pub(crate) fn de_route_spec<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::RouteSpec>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -55,55 +50,40 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "priority" => {
-                                builder = builder.set_priority(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "priority" => {
+                            builder = builder.set_priority(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "httpRoute" => {
-                                builder = builder.set_http_route(
-                                    crate::protocol_serde::shape_http_route::de_http_route(tokens)?,
-                                );
-                            }
-                            "tcpRoute" => {
-                                builder = builder.set_tcp_route(
-                                    crate::protocol_serde::shape_tcp_route::de_tcp_route(tokens)?,
-                                );
-                            }
-                            "http2Route" => {
-                                builder = builder.set_http2_route(
-                                    crate::protocol_serde::shape_http_route::de_http_route(tokens)?,
-                                );
-                            }
-                            "grpcRoute" => {
-                                builder = builder.set_grpc_route(
-                                    crate::protocol_serde::shape_grpc_route::de_grpc_route(tokens)?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "httpRoute" => {
+                            builder = builder.set_http_route(crate::protocol_serde::shape_http_route::de_http_route(tokens)?);
+                        }
+                        "tcpRoute" => {
+                            builder = builder.set_tcp_route(crate::protocol_serde::shape_tcp_route::de_tcp_route(tokens)?);
+                        }
+                        "http2Route" => {
+                            builder = builder.set_http2_route(crate::protocol_serde::shape_http_route::de_http_route(tokens)?);
+                        }
+                        "grpcRoute" => {
+                            builder = builder.set_grpc_route(crate::protocol_serde::shape_grpc_route::de_grpc_route(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

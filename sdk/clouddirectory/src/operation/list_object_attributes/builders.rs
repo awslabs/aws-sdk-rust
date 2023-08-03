@@ -37,9 +37,7 @@ impl ListObjectAttributesFluentBuilder {
         }
     }
     /// Access the ListObjectAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_object_attributes::builders::ListObjectAttributesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_object_attributes::builders::ListObjectAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListObjectAttributesFluentBuilder {
             crate::operation::list_object_attributes::ListObjectAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_attributes::ListObjectAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_attributes::ListObjectAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListObjectAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListObjectAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_object_attributes::ListObjectAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_attributes::ListObjectAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_attributes::ListObjectAttributesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListObjectAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_object_attributes::ListObjectAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_attributes::ListObjectAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_attributes::ListObjectAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl ListObjectAttributesFluentBuilder {
             crate::operation::list_object_attributes::ListObjectAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_object_attributes::ListObjectAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_object_attributes::ListObjectAttributesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_object_attributes::paginator::ListObjectAttributesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_object_attributes::paginator::ListObjectAttributesPaginator {
-        crate::operation::list_object_attributes::paginator::ListObjectAttributesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_object_attributes::paginator::ListObjectAttributesPaginator {
+        crate::operation::list_object_attributes::paginator::ListObjectAttributesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -159,10 +135,7 @@ impl ListObjectAttributesFluentBuilder {
         self
     }
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_object_reference(input);
         self
     }
@@ -204,10 +177,7 @@ impl ListObjectAttributesFluentBuilder {
         self
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
+    pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
     }
@@ -221,10 +191,7 @@ impl ListObjectAttributesFluentBuilder {
         self
     }
     /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
-    pub fn set_facet_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaFacet>,
-    ) -> Self {
+    pub fn set_facet_filter(mut self, input: ::std::option::Option<crate::types::SchemaFacet>) -> Self {
         self.inner = self.inner.set_facet_filter(input);
         self
     }

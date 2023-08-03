@@ -36,16 +36,14 @@ impl DescribeConnectionAliasesInput {
 }
 impl DescribeConnectionAliasesInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionAliasesInput`](crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput).
-    pub fn builder() -> crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesInputBuilder{
+    pub fn builder() -> crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesInputBuilder {
         crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectionAliasesInput`](crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectionAliasesInputBuilder {
     pub(crate) alias_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -65,10 +63,7 @@ impl DescribeConnectionAliasesInputBuilder {
         self
     }
     /// <p>The identifiers of the connection aliases to describe.</p>
-    pub fn set_alias_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_alias_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.alias_ids = input;
         self
     }
@@ -125,13 +120,11 @@ impl DescribeConnectionAliasesInputBuilder {
         crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput {
-                alias_ids: self.alias_ids,
-                resource_id: self.resource_id,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput {
+            alias_ids: self.alias_ids,
+            resource_id: self.resource_id,
+            limit: self.limit,
+            next_token: self.next_token,
+        })
     }
 }

@@ -50,8 +50,16 @@ impl DescribeVerifiedAccessInstanceLoggingConfigurationsPaginator {
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
-                pub fn send(self) -> impl ::tokio_stream::Stream<Item = ::std::result::Result<crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsError>>> + ::std::marker::Unpin
-                 {
+    pub fn send(
+        self,
+    ) -> impl ::tokio_stream::Stream<
+        Item = ::std::result::Result<
+            crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput,
+            ::aws_smithy_http::result::SdkError<
+                crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsError,
+            >,
+        >,
+    > + ::std::marker::Unpin {
         // Move individual fields out of self for the borrow checker
         let builder = self.builder;
         let handle = self.handle;
@@ -59,10 +67,7 @@ impl DescribeVerifiedAccessInstanceLoggingConfigurationsPaginator {
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder
-                    .build()
-                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                {
+                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
                     ::std::result::Result::Ok(input) => input,
                     ::std::result::Result::Err(e) => {
                         let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -89,10 +94,7 @@ impl DescribeVerifiedAccessInstanceLoggingConfigurationsPaginator {
                         ::std::result::Result::Ok(ref resp) => {
                             let new_token = crate::lens::reflens_describe_verified_access_instance_logging_configurations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty
-                                && new_token == input.next_token.as_ref()
-                                && self.stop_on_duplicate_token
-                            {
+                            if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                 true
                             } else {
                                 input.next_token = new_token.cloned();
@@ -117,9 +119,7 @@ impl DescribeVerifiedAccessInstanceLoggingConfigurationsPaginator {
 /// Flattened paginator for `DescribeVerifiedAccessInstanceLoggingConfigurationsPaginator`
 ///
 /// This is created with [`.items()`](DescribeVerifiedAccessInstanceLoggingConfigurationsPaginator::items)
-pub struct DescribeVerifiedAccessInstanceLoggingConfigurationsPaginatorItems(
-    DescribeVerifiedAccessInstanceLoggingConfigurationsPaginator,
-);
+pub struct DescribeVerifiedAccessInstanceLoggingConfigurationsPaginatorItems(DescribeVerifiedAccessInstanceLoggingConfigurationsPaginator);
 
 impl DescribeVerifiedAccessInstanceLoggingConfigurationsPaginatorItems {
     /// Create the pagination stream
@@ -127,8 +127,20 @@ impl DescribeVerifiedAccessInstanceLoggingConfigurationsPaginatorItems {
     /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
     ///
     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
-                    pub fn send(self) -> impl ::tokio_stream::Stream<Item = ::std::result::Result<crate::types::VerifiedAccessInstanceLoggingConfiguration, ::aws_smithy_http::result::SdkError<crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsError>>> + ::std::marker::Unpin
-                     {
-        ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_verified_access_instance_logging_configurations_output_logging_configurations(page).unwrap_or_default().into_iter())
+    pub fn send(
+        self,
+    ) -> impl ::tokio_stream::Stream<
+        Item = ::std::result::Result<
+            crate::types::VerifiedAccessInstanceLoggingConfiguration,
+            ::aws_smithy_http::result::SdkError<
+                crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsError,
+            >,
+        >,
+    > + ::std::marker::Unpin {
+        ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_verified_access_instance_logging_configurations_output_logging_configurations(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

@@ -23,15 +23,11 @@ pub struct DestinationParameterValueConfiguration {
 }
 impl DestinationParameterValueConfiguration {
     /// <p>The configuration of custom values for destination parameter in <code>DestinationParameterValueConfiguration</code>.</p>
-    pub fn custom_values_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomValuesConfiguration> {
+    pub fn custom_values_configuration(&self) -> ::std::option::Option<&crate::types::CustomValuesConfiguration> {
         self.custom_values_configuration.as_ref()
     }
     /// <p>The configuration that selects all options.</p>
-    pub fn select_all_value_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SelectAllValueOptions> {
+    pub fn select_all_value_options(&self) -> ::std::option::Option<&crate::types::SelectAllValueOptions> {
         self.select_all_value_options.as_ref()
     }
     /// <p>The source parameter name of the destination parameter.</p>
@@ -56,12 +52,9 @@ impl DestinationParameterValueConfiguration {
 
 /// A builder for [`DestinationParameterValueConfiguration`](crate::types::DestinationParameterValueConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DestinationParameterValueConfigurationBuilder {
-    pub(crate) custom_values_configuration:
-        ::std::option::Option<crate::types::CustomValuesConfiguration>,
+    pub(crate) custom_values_configuration: ::std::option::Option<crate::types::CustomValuesConfiguration>,
     pub(crate) select_all_value_options: ::std::option::Option<crate::types::SelectAllValueOptions>,
     pub(crate) source_parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_field: ::std::option::Option<::std::string::String>,
@@ -69,25 +62,17 @@ pub struct DestinationParameterValueConfigurationBuilder {
 }
 impl DestinationParameterValueConfigurationBuilder {
     /// <p>The configuration of custom values for destination parameter in <code>DestinationParameterValueConfiguration</code>.</p>
-    pub fn custom_values_configuration(
-        mut self,
-        input: crate::types::CustomValuesConfiguration,
-    ) -> Self {
+    pub fn custom_values_configuration(mut self, input: crate::types::CustomValuesConfiguration) -> Self {
         self.custom_values_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of custom values for destination parameter in <code>DestinationParameterValueConfiguration</code>.</p>
-    pub fn set_custom_values_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomValuesConfiguration>,
-    ) -> Self {
+    pub fn set_custom_values_configuration(mut self, input: ::std::option::Option<crate::types::CustomValuesConfiguration>) -> Self {
         self.custom_values_configuration = input;
         self
     }
     /// <p>The configuration of custom values for destination parameter in <code>DestinationParameterValueConfiguration</code>.</p>
-    pub fn get_custom_values_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomValuesConfiguration> {
+    pub fn get_custom_values_configuration(&self) -> &::std::option::Option<crate::types::CustomValuesConfiguration> {
         &self.custom_values_configuration
     }
     /// <p>The configuration that selects all options.</p>
@@ -96,32 +81,21 @@ impl DestinationParameterValueConfigurationBuilder {
         self
     }
     /// <p>The configuration that selects all options.</p>
-    pub fn set_select_all_value_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SelectAllValueOptions>,
-    ) -> Self {
+    pub fn set_select_all_value_options(mut self, input: ::std::option::Option<crate::types::SelectAllValueOptions>) -> Self {
         self.select_all_value_options = input;
         self
     }
     /// <p>The configuration that selects all options.</p>
-    pub fn get_select_all_value_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::SelectAllValueOptions> {
+    pub fn get_select_all_value_options(&self) -> &::std::option::Option<crate::types::SelectAllValueOptions> {
         &self.select_all_value_options
     }
     /// <p>The source parameter name of the destination parameter.</p>
-    pub fn source_parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source parameter name of the destination parameter.</p>
-    pub fn set_source_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_parameter_name = input;
         self
     }
@@ -149,10 +123,7 @@ impl DestinationParameterValueConfigurationBuilder {
         self
     }
     /// <p>A column of a data set.</p>
-    pub fn set_source_column(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
+    pub fn set_source_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
         self.source_column = input;
         self
     }

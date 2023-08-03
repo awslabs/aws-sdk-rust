@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartDataSourceSyncJobOutput {
 }
 impl StartDataSourceSyncJobOutput {
     /// Creates a new builder-style object to manufacture [`StartDataSourceSyncJobOutput`](crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobOutputBuilder {
         crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartDataSourceSyncJobOutput`](crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDataSourceSyncJobOutputBuilder {
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl StartDataSourceSyncJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartDataSourceSyncJobOutput`](crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput {
+    pub fn build(self) -> crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput {
         crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput {
             execution_id: self.execution_id,
             _request_id: self._request_id,

@@ -30,9 +30,7 @@ impl DetectedJsonFormatDescriptor {
 
 /// A builder for [`DetectedJsonFormatDescriptor`](crate::types::DetectedJsonFormatDescriptor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectedJsonFormatDescriptorBuilder {
     pub(crate) file_compression: ::std::option::Option<crate::types::DetectedField>,
     pub(crate) charset: ::std::option::Option<crate::types::DetectedField>,
@@ -44,10 +42,7 @@ impl DetectedJsonFormatDescriptorBuilder {
         self
     }
     /// <p>The format's file compression.</p>
-    pub fn set_file_compression(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectedField>,
-    ) -> Self {
+    pub fn set_file_compression(mut self, input: ::std::option::Option<crate::types::DetectedField>) -> Self {
         self.file_compression = input;
         self
     }
@@ -61,10 +56,7 @@ impl DetectedJsonFormatDescriptorBuilder {
         self
     }
     /// <p>The format's character set.</p>
-    pub fn set_charset(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectedField>,
-    ) -> Self {
+    pub fn set_charset(mut self, input: ::std::option::Option<crate::types::DetectedField>) -> Self {
         self.charset = input;
         self
     }

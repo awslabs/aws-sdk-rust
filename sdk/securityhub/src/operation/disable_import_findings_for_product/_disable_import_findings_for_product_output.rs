@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisableImportFindingsForProductOutput
 }
 impl DisableImportFindingsForProductOutput {
     /// Creates a new builder-style object to manufacture [`DisableImportFindingsForProductOutput`](crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductOutput).
-    pub fn builder() -> crate::operation::disable_import_findings_for_product::builders::DisableImportFindingsForProductOutputBuilder{
+    pub fn builder() -> crate::operation::disable_import_findings_for_product::builders::DisableImportFindingsForProductOutputBuilder {
         crate::operation::disable_import_findings_for_product::builders::DisableImportFindingsForProductOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableImportFindingsForProductOutput`](crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableImportFindingsForProductOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DisableImportFindingsForProductOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableImportFindingsForProductOutput`](crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductOutput
-    {
+    pub fn build(self) -> crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductOutput {
         crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductOutput {
             _request_id: self._request_id,
         }

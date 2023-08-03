@@ -38,9 +38,7 @@ impl GetSolNetworkPackageMetadata {
 
 /// A builder for [`GetSolNetworkPackageMetadata`](crate::types::GetSolNetworkPackageMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolNetworkPackageMetadataBuilder {
     pub(crate) nsd: ::std::option::Option<crate::types::NetworkArtifactMeta>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -53,10 +51,7 @@ impl GetSolNetworkPackageMetadataBuilder {
         self
     }
     /// <p>Metadata related to the onboarded network service descriptor in the network package.</p>
-    pub fn set_nsd(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkArtifactMeta>,
-    ) -> Self {
+    pub fn set_nsd(mut self, input: ::std::option::Option<crate::types::NetworkArtifactMeta>) -> Self {
         self.nsd = input;
         self
     }
@@ -70,10 +65,7 @@ impl GetSolNetworkPackageMetadataBuilder {
         self
     }
     /// <p>The date that the resource was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -87,10 +79,7 @@ impl GetSolNetworkPackageMetadataBuilder {
         self
     }
     /// <p>The date that the resource was last modified.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }

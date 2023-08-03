@@ -44,9 +44,7 @@ impl DataCellsFilterResource {
 
 /// A builder for [`DataCellsFilterResource`](crate::types::DataCellsFilterResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataCellsFilterResourceBuilder {
     pub(crate) table_catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct DataCellsFilterResourceBuilder {
 }
 impl DataCellsFilterResourceBuilder {
     /// <p>The ID of the catalog to which the table belongs.</p>
-    pub fn table_catalog_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn table_catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_catalog_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the catalog to which the table belongs.</p>
-    pub fn set_table_catalog_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_table_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_catalog_id = input;
         self
     }
@@ -75,18 +67,12 @@ impl DataCellsFilterResourceBuilder {
         &self.table_catalog_id
     }
     /// <p>A database in the Glue Data Catalog.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A database in the Glue Data Catalog.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }

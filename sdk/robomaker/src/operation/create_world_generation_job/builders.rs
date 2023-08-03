@@ -26,7 +26,7 @@ impl CreateWorldGenerationJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorldGenerationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_world_generation_job::builders::CreateWorldGenerationJobInputBuilder,
+    inner: crate::operation::create_world_generation_job::builders::CreateWorldGenerationJobInputBuilder,
 }
 impl CreateWorldGenerationJobFluentBuilder {
     /// Creates a new `CreateWorldGenerationJob`.
@@ -37,7 +37,7 @@ impl CreateWorldGenerationJobFluentBuilder {
         }
     }
     /// Access the CreateWorldGenerationJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_world_generation_job::builders::CreateWorldGenerationJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_world_generation_job::builders::CreateWorldGenerationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateWorldGenerationJobFluentBuilder {
             crate::operation::create_world_generation_job::CreateWorldGenerationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_world_generation_job::CreateWorldGenerationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_world_generation_job::CreateWorldGenerationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateWorldGenerationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateWorldGenerationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_world_generation_job::CreateWorldGenerationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_world_generation_job::CreateWorldGenerationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_world_generation_job::CreateWorldGenerationJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateWorldGenerationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_world_generation_job::CreateWorldGenerationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_world_generation_job::CreateWorldGenerationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_world_generation_job::CreateWorldGenerationJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateWorldGenerationJobFluentBuilder {
             crate::operation::create_world_generation_job::CreateWorldGenerationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_world_generation_job::CreateWorldGenerationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_world_generation_job::CreateWorldGenerationJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -160,10 +143,7 @@ impl CreateWorldGenerationJobFluentBuilder {
         self
     }
     /// <p>Information about the world count.</p>
-    pub fn set_world_count(
-        mut self,
-        input: ::std::option::Option<crate::types::WorldCount>,
-    ) -> Self {
+    pub fn set_world_count(mut self, input: ::std::option::Option<crate::types::WorldCount>) -> Self {
         self.inner = self.inner.set_world_count(input);
         self
     }
@@ -176,30 +156,17 @@ impl CreateWorldGenerationJobFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// Adds a key-value pair to `worldTags`.
@@ -207,30 +174,17 @@ impl CreateWorldGenerationJobFluentBuilder {
     /// To override the contents of this collection use [`set_world_tags`](Self::set_world_tags).
     ///
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    pub fn world_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn world_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.world_tags(k.into(), v.into());
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    pub fn set_world_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_world_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_world_tags(input);
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    pub fn get_world_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_world_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_world_tags()
     }
 }

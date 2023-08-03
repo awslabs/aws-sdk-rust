@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AbortMultipartUploadOutput {
 }
 impl AbortMultipartUploadOutput {
     /// Creates a new builder-style object to manufacture [`AbortMultipartUploadOutput`](crate::operation::abort_multipart_upload::AbortMultipartUploadOutput).
-    pub fn builder(
-    ) -> crate::operation::abort_multipart_upload::builders::AbortMultipartUploadOutputBuilder {
+    pub fn builder() -> crate::operation::abort_multipart_upload::builders::AbortMultipartUploadOutputBuilder {
         crate::operation::abort_multipart_upload::builders::AbortMultipartUploadOutputBuilder::default()
     }
 }
 
 /// A builder for [`AbortMultipartUploadOutput`](crate::operation::abort_multipart_upload::AbortMultipartUploadOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AbortMultipartUploadOutputBuilder {
     _request_id: Option<String>,
 }

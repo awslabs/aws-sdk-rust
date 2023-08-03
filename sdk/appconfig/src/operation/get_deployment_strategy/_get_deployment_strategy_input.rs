@@ -15,35 +15,25 @@ impl GetDeploymentStrategyInput {
 }
 impl GetDeploymentStrategyInput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentStrategyInput`](crate::operation::get_deployment_strategy::GetDeploymentStrategyInput).
-    pub fn builder(
-    ) -> crate::operation::get_deployment_strategy::builders::GetDeploymentStrategyInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_deployment_strategy::builders::GetDeploymentStrategyInputBuilder {
         crate::operation::get_deployment_strategy::builders::GetDeploymentStrategyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeploymentStrategyInput`](crate::operation::get_deployment_strategy::GetDeploymentStrategyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeploymentStrategyInputBuilder {
     pub(crate) deployment_strategy_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDeploymentStrategyInputBuilder {
     /// <p>The ID of the deployment strategy to get.</p>
-    pub fn deployment_strategy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_strategy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_strategy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the deployment strategy to get.</p>
-    pub fn set_deployment_strategy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_strategy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_strategy_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetDeploymentStrategyInputBuilder {
     /// Consumes the builder and constructs a [`GetDeploymentStrategyInput`](crate::operation::get_deployment_strategy::GetDeploymentStrategyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_deployment_strategy::GetDeploymentStrategyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_deployment_strategy::GetDeploymentStrategyInput {
-                deployment_strategy_id: self.deployment_strategy_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_deployment_strategy::GetDeploymentStrategyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_deployment_strategy::GetDeploymentStrategyInput {
+            deployment_strategy_id: self.deployment_strategy_id,
+        })
     }
 }

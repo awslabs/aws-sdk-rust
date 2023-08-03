@@ -15,17 +15,14 @@ impl DeletePlaceIndexInput {
 }
 impl DeletePlaceIndexInput {
     /// Creates a new builder-style object to manufacture [`DeletePlaceIndexInput`](crate::operation::delete_place_index::DeletePlaceIndexInput).
-    pub fn builder() -> crate::operation::delete_place_index::builders::DeletePlaceIndexInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_place_index::builders::DeletePlaceIndexInputBuilder {
         crate::operation::delete_place_index::builders::DeletePlaceIndexInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePlaceIndexInput`](crate::operation::delete_place_index::DeletePlaceIndexInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePlaceIndexInputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl DeletePlaceIndexInputBuilder {
     /// Consumes the builder and constructs a [`DeletePlaceIndexInput`](crate::operation::delete_place_index::DeletePlaceIndexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_place_index::DeletePlaceIndexInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_place_index::DeletePlaceIndexInput {
-                index_name: self.index_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_place_index::DeletePlaceIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_place_index::DeletePlaceIndexInput { index_name: self.index_name })
     }
 }

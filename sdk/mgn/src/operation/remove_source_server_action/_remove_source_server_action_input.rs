@@ -29,18 +29,14 @@ impl RemoveSourceServerActionInput {
 }
 impl RemoveSourceServerActionInput {
     /// Creates a new builder-style object to manufacture [`RemoveSourceServerActionInput`](crate::operation::remove_source_server_action::RemoveSourceServerActionInput).
-    pub fn builder(
-    ) -> crate::operation::remove_source_server_action::builders::RemoveSourceServerActionInputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_source_server_action::builders::RemoveSourceServerActionInputBuilder {
         crate::operation::remove_source_server_action::builders::RemoveSourceServerActionInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveSourceServerActionInput`](crate::operation::remove_source_server_action::RemoveSourceServerActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveSourceServerActionInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct RemoveSourceServerActionInputBuilder {
 }
 impl RemoveSourceServerActionInputBuilder {
     /// <p>Source server ID of the post migration custom action to remove.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Source server ID of the post migration custom action to remove.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -102,12 +92,10 @@ impl RemoveSourceServerActionInputBuilder {
         crate::operation::remove_source_server_action::RemoveSourceServerActionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_source_server_action::RemoveSourceServerActionInput {
-                source_server_id: self.source_server_id,
-                action_id: self.action_id,
-                account_id: self.account_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_source_server_action::RemoveSourceServerActionInput {
+            source_server_id: self.source_server_id,
+            action_id: self.action_id,
+            account_id: self.account_id,
+        })
     }
 }

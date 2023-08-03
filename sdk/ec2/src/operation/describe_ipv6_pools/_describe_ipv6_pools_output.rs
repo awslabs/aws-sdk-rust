@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeIpv6PoolsOutput {
 }
 impl DescribeIpv6PoolsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIpv6PoolsOutput`](crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsOutputBuilder {
         crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIpv6PoolsOutput`](crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpv6PoolsOutputBuilder {
     pub(crate) ipv6_pools: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6Pool>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeIpv6PoolsOutputBuilder {
         self
     }
     /// <p>Information about the IPv6 address pools.</p>
-    pub fn set_ipv6_pools(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6Pool>>,
-    ) -> Self {
+    pub fn set_ipv6_pools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6Pool>>) -> Self {
         self.ipv6_pools = input;
         self
     }
     /// <p>Information about the IPv6 address pools.</p>
-    pub fn get_ipv6_pools(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6Pool>> {
+    pub fn get_ipv6_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6Pool>> {
         &self.ipv6_pools
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`nat_gateways(Option<Vec<NatGateway>>)`](crate::operation::describe_nat_gateways::DescribeNatGatewaysOutput::nat_gateways): <p>Information about the NAT gateways.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_nat_gateways::DescribeNatGatewaysOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeNatGatewaysError>`](crate::operation::describe_nat_gateways::DescribeNatGatewaysError)
-    pub fn describe_nat_gateways(
-        &self,
-    ) -> crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysFluentBuilder {
-        crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_nat_gateways(&self) -> crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysFluentBuilder {
+        crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysFluentBuilder::new(self.handle.clone())
     }
 }

@@ -86,9 +86,7 @@ impl DatasetProperties {
 
 /// A builder for [`DatasetProperties`](crate::types::DatasetProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetPropertiesBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
@@ -136,10 +134,7 @@ impl DatasetPropertiesBuilder {
         self
     }
     /// <p>The dataset type (training data or test data).</p>
-    pub fn set_dataset_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetType>,
-    ) -> Self {
+    pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetType>) -> Self {
         self.dataset_type = input;
         self
     }
@@ -148,18 +143,12 @@ impl DatasetPropertiesBuilder {
         &self.dataset_type
     }
     /// <p>The S3 URI where the dataset is stored.</p>
-    pub fn dataset_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 URI where the dataset is stored.</p>
-    pub fn set_dataset_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_s3_uri = input;
         self
     }
@@ -229,10 +218,7 @@ impl DatasetPropertiesBuilder {
         self
     }
     /// <p>Creation time of the dataset.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -246,10 +232,7 @@ impl DatasetPropertiesBuilder {
         self
     }
     /// <p>Time when the data from the dataset becomes available in the data lake.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }

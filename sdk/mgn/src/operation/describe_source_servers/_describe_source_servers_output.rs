@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeSourceServersOutput {
 }
 impl DescribeSourceServersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSourceServersOutput`](crate::operation::describe_source_servers::DescribeSourceServersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_source_servers::builders::DescribeSourceServersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_source_servers::builders::DescribeSourceServersOutputBuilder {
         crate::operation::describe_source_servers::builders::DescribeSourceServersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSourceServersOutput`](crate::operation::describe_source_servers::DescribeSourceServersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSourceServersOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::SourceServer>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl DescribeSourceServersOutputBuilder {
         self
     }
     /// <p>Request to filter Source Servers list by item.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceServer>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceServer>>) -> Self {
         self.items = input;
         self
     }

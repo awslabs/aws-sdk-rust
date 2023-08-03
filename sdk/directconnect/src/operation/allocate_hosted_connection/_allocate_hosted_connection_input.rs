@@ -50,18 +50,14 @@ impl AllocateHostedConnectionInput {
 }
 impl AllocateHostedConnectionInput {
     /// Creates a new builder-style object to manufacture [`AllocateHostedConnectionInput`](crate::operation::allocate_hosted_connection::AllocateHostedConnectionInput).
-    pub fn builder(
-    ) -> crate::operation::allocate_hosted_connection::builders::AllocateHostedConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::allocate_hosted_connection::builders::AllocateHostedConnectionInputBuilder {
         crate::operation::allocate_hosted_connection::builders::AllocateHostedConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`AllocateHostedConnectionInput`](crate::operation::allocate_hosted_connection::AllocateHostedConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllocateHostedConnectionInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
@@ -72,18 +68,12 @@ pub struct AllocateHostedConnectionInputBuilder {
 }
 impl AllocateHostedConnectionInputBuilder {
     /// <p>The ID of the interconnect or LAG.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the interconnect or LAG.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -92,18 +82,12 @@ impl AllocateHostedConnectionInputBuilder {
         &self.connection_id
     }
     /// <p>The ID of the Amazon Web Services account ID of the customer for the connection.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account ID of the customer for the connection.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -126,18 +110,12 @@ impl AllocateHostedConnectionInputBuilder {
         &self.bandwidth
     }
     /// <p>The name of the hosted connection.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the hosted connection.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_name = input;
         self
     }
@@ -171,10 +149,7 @@ impl AllocateHostedConnectionInputBuilder {
         self
     }
     /// <p>The tags associated with the connection.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -189,15 +164,13 @@ impl AllocateHostedConnectionInputBuilder {
         crate::operation::allocate_hosted_connection::AllocateHostedConnectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::allocate_hosted_connection::AllocateHostedConnectionInput {
-                connection_id: self.connection_id,
-                owner_account: self.owner_account,
-                bandwidth: self.bandwidth,
-                connection_name: self.connection_name,
-                vlan: self.vlan,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::allocate_hosted_connection::AllocateHostedConnectionInput {
+            connection_id: self.connection_id,
+            owner_account: self.owner_account,
+            bandwidth: self.bandwidth,
+            connection_name: self.connection_name,
+            vlan: self.vlan,
+            tags: self.tags,
+        })
     }
 }

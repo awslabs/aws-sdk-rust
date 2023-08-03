@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetExperimentTemplateOutput {
 }
 impl GetExperimentTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetExperimentTemplateOutput`](crate::operation::get_experiment_template::GetExperimentTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::get_experiment_template::builders::GetExperimentTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_experiment_template::builders::GetExperimentTemplateOutputBuilder {
         crate::operation::get_experiment_template::builders::GetExperimentTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetExperimentTemplateOutput`](crate::operation::get_experiment_template::GetExperimentTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExperimentTemplateOutputBuilder {
     pub(crate) experiment_template: ::std::option::Option<crate::types::ExperimentTemplate>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetExperimentTemplateOutputBuilder {
         self
     }
     /// <p>Information about the experiment template.</p>
-    pub fn set_experiment_template(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentTemplate>,
-    ) -> Self {
+    pub fn set_experiment_template(mut self, input: ::std::option::Option<crate::types::ExperimentTemplate>) -> Self {
         self.experiment_template = input;
         self
     }
     /// <p>Information about the experiment template.</p>
-    pub fn get_experiment_template(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExperimentTemplate> {
+    pub fn get_experiment_template(&self) -> &::std::option::Option<crate::types::ExperimentTemplate> {
         &self.experiment_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

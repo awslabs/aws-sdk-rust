@@ -53,9 +53,7 @@ impl GetObjectInput {
 
 /// A builder for [`GetObjectInput`](crate::operation::get_object::GetObjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetObjectInputBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) range: ::std::option::Option<::std::string::String>,
@@ -126,12 +124,7 @@ impl GetObjectInputBuilder {
         &self.range
     }
     /// Consumes the builder and constructs a [`GetObjectInput`](crate::operation::get_object::GetObjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_object::GetObjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_object::GetObjectInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_object::GetObjectInput {
             path: self.path,
             range: self.range,

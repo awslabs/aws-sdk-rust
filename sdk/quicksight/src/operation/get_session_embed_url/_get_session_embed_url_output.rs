@@ -45,10 +45,8 @@ impl ::aws_http::request_id::RequestId for GetSessionEmbedUrlOutput {
 }
 impl GetSessionEmbedUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetSessionEmbedUrlOutput`](crate::operation::get_session_embed_url::GetSessionEmbedUrlOutput).
-    pub fn builder(
-    ) -> crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlOutputBuilder {
-        crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlOutputBuilder {
+        crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlOutputBuilder::default()
     }
 }
 

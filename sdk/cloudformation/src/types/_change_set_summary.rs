@@ -100,9 +100,7 @@ impl ChangeSetSummary {
 
 /// A builder for [`ChangeSetSummary`](crate::types::ChangeSetSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeSetSummaryBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
@@ -147,18 +145,12 @@ impl ChangeSetSummaryBuilder {
         &self.stack_name
     }
     /// <p>The ID of the change set.</p>
-    pub fn change_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the change set.</p>
-    pub fn set_change_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_id = input;
         self
     }
@@ -167,18 +159,12 @@ impl ChangeSetSummaryBuilder {
         &self.change_set_id
     }
     /// <p>The name of the change set.</p>
-    pub fn change_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the change set.</p>
-    pub fn set_change_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_set_name = input;
         self
     }
@@ -192,10 +178,7 @@ impl ChangeSetSummaryBuilder {
         self
     }
     /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change set. If you can't execute the change set, the status indicates why. For example, a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still creating it or in an <code>OBSOLETE</code> state because the stack was already updated.</p>
-    pub fn set_execution_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionStatus>,
-    ) -> Self {
+    pub fn set_execution_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.execution_status = input;
         self
     }
@@ -209,10 +192,7 @@ impl ChangeSetSummaryBuilder {
         self
     }
     /// <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeSetStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChangeSetStatus>) -> Self {
         self.status = input;
         self
     }
@@ -221,18 +201,12 @@ impl ChangeSetSummaryBuilder {
         &self.status
     }
     /// <p>A description of the change set's status. For example, if your change set is in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the change set's status. For example, if your change set is in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -246,10 +220,7 @@ impl ChangeSetSummaryBuilder {
         self
     }
     /// <p>The start time when the change set was created, in UTC.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -286,18 +257,12 @@ impl ChangeSetSummaryBuilder {
         &self.include_nested_stacks
     }
     /// <p>The parent change set ID.</p>
-    pub fn parent_change_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_change_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_change_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parent change set ID.</p>
-    pub fn set_parent_change_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_change_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_change_set_id = input;
         self
     }
@@ -306,18 +271,12 @@ impl ChangeSetSummaryBuilder {
         &self.parent_change_set_id
     }
     /// <p>The root change set ID.</p>
-    pub fn root_change_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn root_change_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.root_change_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The root change set ID.</p>
-    pub fn set_root_change_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_root_change_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.root_change_set_id = input;
         self
     }

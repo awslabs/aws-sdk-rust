@@ -28,9 +28,7 @@ impl CreateContentOutput {
 
 /// A builder for [`CreateContentOutput`](crate::operation::create_content::CreateContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateContentOutputBuilder {
     pub(crate) content: ::std::option::Option<crate::types::ContentData>,
     _request_id: Option<String>,

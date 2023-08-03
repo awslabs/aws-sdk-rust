@@ -10,10 +10,7 @@ impl CreateThingTypeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_thing_type::CreateThingTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_thing_type::CreateThingTypeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_thing_type::CreateThingTypeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_thing_type();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateThingTypeFluentBuilder {
         }
     }
     /// Access the CreateThingType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_thing_type::builders::CreateThingTypeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_thing_type::builders::CreateThingTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateThingTypeFluentBuilder {
             crate::operation::create_thing_type::CreateThingType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_thing_type::CreateThingTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_thing_type::CreateThingTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateThingTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateThingTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_thing_type::CreateThingTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_thing_type::CreateThingTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_thing_type::CreateThingTypeError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateThingTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_thing_type::CreateThingTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_thing_type::CreateThingTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_thing_type::CreateThingTypeError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl CreateThingTypeFluentBuilder {
             crate::operation::create_thing_type::CreateThingType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_thing_type::CreateThingTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_thing_type::CreateThingTypeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_type_name(input.into());
         self
     }
     /// <p>The name of the thing type.</p>
-    pub fn set_thing_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_type_name(input);
         self
     }
@@ -149,17 +127,12 @@ impl CreateThingTypeFluentBuilder {
         self
     }
     /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
-    pub fn set_thing_type_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ThingTypeProperties>,
-    ) -> Self {
+    pub fn set_thing_type_properties(mut self, input: ::std::option::Option<crate::types::ThingTypeProperties>) -> Self {
         self.inner = self.inner.set_thing_type_properties(input);
         self
     }
     /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
-    pub fn get_thing_type_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::ThingTypeProperties> {
+    pub fn get_thing_type_properties(&self) -> &::std::option::Option<crate::types::ThingTypeProperties> {
         self.inner.get_thing_type_properties()
     }
     /// Appends an item to `tags`.
@@ -172,10 +145,7 @@ impl CreateThingTypeFluentBuilder {
         self
     }
     /// <p>Metadata which can be used to manage the thing type.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

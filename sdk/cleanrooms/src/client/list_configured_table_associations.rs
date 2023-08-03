@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`configured_table_association_summaries(Option<Vec<ConfiguredTableAssociationSummary>>)`](crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput::configured_table_association_summaries): <p>The retrieved list of configured table associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListConfiguredTableAssociationsError>`](crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError)
-    pub fn list_configured_table_associations(&self) -> crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsFluentBuilder{
+    pub fn list_configured_table_associations(
+        &self,
+    ) -> crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsFluentBuilder {
         crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

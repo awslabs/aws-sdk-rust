@@ -45,9 +45,7 @@ impl AwsVpcConfiguration {
 
 /// A builder for [`AwsVpcConfiguration`](crate::types::AwsVpcConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsVpcConfigurationBuilder {
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -70,10 +68,7 @@ impl AwsVpcConfigurationBuilder {
     /// <p>The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
     /// <p>All specified subnets must be from the same VPC.</p>
     /// </note>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnets = input;
         self
     }
@@ -90,10 +85,7 @@ impl AwsVpcConfigurationBuilder {
     /// <p>The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
     /// <p>All specified security groups must be from the same VPC.</p>
     /// </note>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
@@ -102,19 +94,14 @@ impl AwsVpcConfigurationBuilder {
     /// <p>The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
     /// <p>All specified security groups must be from the same VPC.</p>
     /// </note>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
     /// <p>All specified security groups must be from the same VPC.</p>
     /// </note>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>DISABLED</code>.</p>
@@ -123,10 +110,7 @@ impl AwsVpcConfigurationBuilder {
         self
     }
     /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>DISABLED</code>.</p>
-    pub fn set_assign_public_ip(
-        mut self,
-        input: ::std::option::Option<crate::types::AssignPublicIp>,
-    ) -> Self {
+    pub fn set_assign_public_ip(mut self, input: ::std::option::Option<crate::types::AssignPublicIp>) -> Self {
         self.assign_public_ip = input;
         self
     }

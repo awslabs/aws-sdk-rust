@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`fleet_arn(Option<String>)`](crate::operation::delete_fleet_locations::DeleteFleetLocationsOutput::fleet_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>.</p>
     ///   - [`location_states(Option<Vec<LocationState>>)`](crate::operation::delete_fleet_locations::DeleteFleetLocationsOutput::location_states): <p>The remote locations that are being deleted, with each location status set to <code>DELETING</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteFleetLocationsError>`](crate::operation::delete_fleet_locations::DeleteFleetLocationsError)
-    pub fn delete_fleet_locations(
-        &self,
-    ) -> crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsFluentBuilder {
-        crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_fleet_locations(&self) -> crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsFluentBuilder {
+        crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsFluentBuilder::new(self.handle.clone())
     }
 }

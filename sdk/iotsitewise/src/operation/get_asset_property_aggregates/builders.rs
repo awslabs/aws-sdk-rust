@@ -31,7 +31,7 @@ impl GetAssetPropertyAggregatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAssetPropertyAggregatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesInputBuilder,
+    inner: crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesInputBuilder,
 }
 impl GetAssetPropertyAggregatesFluentBuilder {
     /// Creates a new `GetAssetPropertyAggregates`.
@@ -42,7 +42,7 @@ impl GetAssetPropertyAggregatesFluentBuilder {
         }
     }
     /// Access the GetAssetPropertyAggregates as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl GetAssetPropertyAggregatesFluentBuilder {
             crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl GetAssetPropertyAggregatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl GetAssetPropertyAggregatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl GetAssetPropertyAggregatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError>,
     > {
         self.send_middleware().await
     }
@@ -119,16 +110,14 @@ impl GetAssetPropertyAggregatesFluentBuilder {
             crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_asset_property_aggregates::paginator::GetAssetPropertyAggregatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_asset_property_aggregates::paginator::GetAssetPropertyAggregatesPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_asset_property_aggregates::paginator::GetAssetPropertyAggregatesPaginator {
         crate::operation::get_asset_property_aggregates::paginator::GetAssetPropertyAggregatesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the asset.</p>
@@ -160,18 +149,12 @@ impl GetAssetPropertyAggregatesFluentBuilder {
         self.inner.get_property_id()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.property_alias(input.into());
         self
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_property_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_property_alias(input);
         self
     }
@@ -189,17 +172,12 @@ impl GetAssetPropertyAggregatesFluentBuilder {
         self
     }
     /// <p>The data aggregating function.</p>
-    pub fn set_aggregate_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateType>>,
-    ) -> Self {
+    pub fn set_aggregate_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateType>>) -> Self {
         self.inner = self.inner.set_aggregate_types(input);
         self
     }
     /// <p>The data aggregating function.</p>
-    pub fn get_aggregate_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateType>> {
+    pub fn get_aggregate_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateType>> {
         self.inner.get_aggregate_types()
     }
     /// <p>The time interval over which to aggregate data.</p>
@@ -226,10 +204,7 @@ impl GetAssetPropertyAggregatesFluentBuilder {
         self
     }
     /// <p>The quality by which to filter asset data.</p>
-    pub fn set_qualities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Quality>>,
-    ) -> Self {
+    pub fn set_qualities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Quality>>) -> Self {
         self.inner = self.inner.set_qualities(input);
         self
     }
@@ -243,10 +218,7 @@ impl GetAssetPropertyAggregatesFluentBuilder {
         self
     }
     /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_date(input);
         self
     }
@@ -260,10 +232,7 @@ impl GetAssetPropertyAggregatesFluentBuilder {
         self
     }
     /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_date(input);
         self
     }
@@ -279,10 +248,7 @@ impl GetAssetPropertyAggregatesFluentBuilder {
     }
     /// <p>The chronological sorting order of the requested information.</p>
     /// <p>Default: <code>ASCENDING</code> </p>
-    pub fn set_time_ordering(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeOrdering>,
-    ) -> Self {
+    pub fn set_time_ordering(mut self, input: ::std::option::Option<crate::types::TimeOrdering>) -> Self {
         self.inner = self.inner.set_time_ordering(input);
         self
     }

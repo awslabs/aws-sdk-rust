@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteModelPackageGroupOutput {
 }
 impl DeleteModelPackageGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteModelPackageGroupOutput`](crate::operation::delete_model_package_group::DeleteModelPackageGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_model_package_group::builders::DeleteModelPackageGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_model_package_group::builders::DeleteModelPackageGroupOutputBuilder {
         crate::operation::delete_model_package_group::builders::DeleteModelPackageGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteModelPackageGroupOutput`](crate::operation::delete_model_package_group::DeleteModelPackageGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteModelPackageGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteModelPackageGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteModelPackageGroupOutput`](crate::operation::delete_model_package_group::DeleteModelPackageGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_model_package_group::DeleteModelPackageGroupOutput {
+    pub fn build(self) -> crate::operation::delete_model_package_group::DeleteModelPackageGroupOutput {
         crate::operation::delete_model_package_group::DeleteModelPackageGroupOutput {
             _request_id: self._request_id,
         }

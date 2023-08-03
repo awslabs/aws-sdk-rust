@@ -22,9 +22,7 @@ pub fn ser_update_replication_configuration_input(
         object.key("dataPlaneRouting").string(var_4.as_str());
     }
     if let Some(var_5) = &input.default_large_staging_disk_type {
-        object
-            .key("defaultLargeStagingDiskType")
-            .string(var_5.as_str());
+        object.key("defaultLargeStagingDiskType").string(var_5.as_str());
     }
     if let Some(var_6) = &input.ebs_encryption {
         object.key("ebsEncryption").string(var_6.as_str());
@@ -41,21 +39,20 @@ pub fn ser_update_replication_configuration_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_replication_configuration_replicated_disk::ser_replication_configuration_replicated_disk(&mut object_12, item_11)?;
+                crate::protocol_serde::shape_replication_configuration_replicated_disk::ser_replication_configuration_replicated_disk(
+                    &mut object_12,
+                    item_11,
+                )?;
                 object_12.finish();
             }
         }
         array_10.finish();
     }
     if let Some(var_13) = &input.replication_server_instance_type {
-        object
-            .key("replicationServerInstanceType")
-            .string(var_13.as_str());
+        object.key("replicationServerInstanceType").string(var_13.as_str());
     }
     if let Some(var_14) = &input.replication_servers_security_groups_i_ds {
-        let mut array_15 = object
-            .key("replicationServersSecurityGroupsIDs")
-            .start_array();
+        let mut array_15 = object.key("replicationServersSecurityGroupsIDs").start_array();
         for item_16 in var_14 {
             {
                 array_15.value().string(item_16.as_str());

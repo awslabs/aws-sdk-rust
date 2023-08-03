@@ -37,9 +37,7 @@ impl P95Metrics {
 
 /// A builder for [`P95Metrics`](crate::types::P95Metrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct P95MetricsBuilder {
     pub(crate) iops: ::std::option::Option<crate::types::Iops>,
     pub(crate) throughput: ::std::option::Option<crate::types::Throughput>,
@@ -66,10 +64,7 @@ impl P95MetricsBuilder {
         self
     }
     /// <p>The throughput peaks for an on-premises storage system resource. Each data point represents the 95th percentile peak value during a 1-hour interval.</p>
-    pub fn set_throughput(
-        mut self,
-        input: ::std::option::Option<crate::types::Throughput>,
-    ) -> Self {
+    pub fn set_throughput(mut self, input: ::std::option::Option<crate::types::Throughput>) -> Self {
         self.throughput = input;
         self
     }

@@ -58,9 +58,7 @@ impl Update {
 
 /// A builder for [`Update`](crate::types::Update).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::UpdateStatus>,
@@ -124,10 +122,7 @@ impl UpdateBuilder {
         self
     }
     /// <p>A key-value map that contains the parameters associated with the update.</p>
-    pub fn set_params(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateParam>>,
-    ) -> Self {
+    pub fn set_params(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateParam>>) -> Self {
         self.params = input;
         self
     }
@@ -141,10 +136,7 @@ impl UpdateBuilder {
         self
     }
     /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -164,10 +156,7 @@ impl UpdateBuilder {
         self
     }
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>) -> Self {
         self.errors = input;
         self
     }

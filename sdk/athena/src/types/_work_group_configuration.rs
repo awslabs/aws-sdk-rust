@@ -30,8 +30,7 @@ pub struct WorkGroupConfiguration {
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
     #[doc(hidden)]
-    pub customer_content_encryption_configuration:
-        ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
+    pub customer_content_encryption_configuration: ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
     /// <p>Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or higher when they submit queries.</p>
     /// <p>The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the workgroup configuration for encryption is used.</p>
     #[doc(hidden)]
@@ -39,9 +38,7 @@ pub struct WorkGroupConfiguration {
 }
 impl WorkGroupConfiguration {
     /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. To run the query, you must specify the query results location using one of the ways: either in the workgroup using this setting, or for individual queries (client-side), using <code>ResultConfiguration$OutputLocation</code>. If none of them is set, Athena issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and output files</a>.</p>
-    pub fn result_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResultConfiguration> {
+    pub fn result_configuration(&self) -> ::std::option::Option<&crate::types::ResultConfiguration> {
         self.result_configuration.as_ref()
     }
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
@@ -73,9 +70,7 @@ impl WorkGroupConfiguration {
         self.execution_role.as_deref()
     }
     /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
-    pub fn customer_content_encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomerContentEncryptionConfiguration> {
+    pub fn customer_content_encryption_configuration(&self) -> ::std::option::Option<&crate::types::CustomerContentEncryptionConfiguration> {
         self.customer_content_encryption_configuration.as_ref()
     }
     /// <p>Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or higher when they submit queries.</p>
@@ -93,9 +88,7 @@ impl WorkGroupConfiguration {
 
 /// A builder for [`WorkGroupConfiguration`](crate::types::WorkGroupConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkGroupConfigurationBuilder {
     pub(crate) result_configuration: ::std::option::Option<crate::types::ResultConfiguration>,
     pub(crate) enforce_work_group_configuration: ::std::option::Option<bool>,
@@ -105,8 +98,7 @@ pub struct WorkGroupConfigurationBuilder {
     pub(crate) engine_version: ::std::option::Option<crate::types::EngineVersion>,
     pub(crate) additional_configuration: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
-    pub(crate) customer_content_encryption_configuration:
-        ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
+    pub(crate) customer_content_encryption_configuration: ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
     pub(crate) enable_minimum_encryption_configuration: ::std::option::Option<bool>,
 }
 impl WorkGroupConfigurationBuilder {
@@ -116,17 +108,12 @@ impl WorkGroupConfigurationBuilder {
         self
     }
     /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. To run the query, you must specify the query results location using one of the ways: either in the workgroup using this setting, or for individual queries (client-side), using <code>ResultConfiguration$OutputLocation</code>. If none of them is set, Athena issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and output files</a>.</p>
-    pub fn set_result_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ResultConfiguration>,
-    ) -> Self {
+    pub fn set_result_configuration(mut self, input: ::std::option::Option<crate::types::ResultConfiguration>) -> Self {
         self.result_configuration = input;
         self
     }
     /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. To run the query, you must specify the query results location using one of the ways: either in the workgroup using this setting, or for individual queries (client-side), using <code>ResultConfiguration$OutputLocation</code>. If none of them is set, Athena issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and output files</a>.</p>
-    pub fn get_result_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResultConfiguration> {
+    pub fn get_result_configuration(&self) -> &::std::option::Option<crate::types::ResultConfiguration> {
         &self.result_configuration
     }
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
@@ -135,10 +122,7 @@ impl WorkGroupConfigurationBuilder {
         self
     }
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
-    pub fn set_enforce_work_group_configuration(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enforce_work_group_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enforce_work_group_configuration = input;
         self
     }
@@ -152,10 +136,7 @@ impl WorkGroupConfigurationBuilder {
         self
     }
     /// <p>Indicates that the Amazon CloudWatch metrics are enabled for the workgroup.</p>
-    pub fn set_publish_cloud_watch_metrics_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_publish_cloud_watch_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publish_cloud_watch_metrics_enabled = input;
         self
     }
@@ -197,10 +178,7 @@ impl WorkGroupConfigurationBuilder {
         self
     }
     /// <p>The engine version that all queries running on the workgroup use. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineVersion>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<crate::types::EngineVersion>) -> Self {
         self.engine_version = input;
         self
     }
@@ -209,18 +187,12 @@ impl WorkGroupConfigurationBuilder {
         &self.engine_version
     }
     /// <p>Specifies a user defined JSON string that is passed to the notebook engine.</p>
-    pub fn additional_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.additional_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a user defined JSON string that is passed to the notebook engine.</p>
-    pub fn set_additional_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.additional_configuration = input;
         self
     }
@@ -229,18 +201,12 @@ impl WorkGroupConfigurationBuilder {
         &self.additional_configuration
     }
     /// <p>Role used in a session for accessing the user's resources.</p>
-    pub fn execution_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Role used in a session for accessing the user's resources.</p>
-    pub fn set_execution_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role = input;
         self
     }
@@ -249,10 +215,7 @@ impl WorkGroupConfigurationBuilder {
         &self.execution_role
     }
     /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
-    pub fn customer_content_encryption_configuration(
-        mut self,
-        input: crate::types::CustomerContentEncryptionConfiguration,
-    ) -> Self {
+    pub fn customer_content_encryption_configuration(mut self, input: crate::types::CustomerContentEncryptionConfiguration) -> Self {
         self.customer_content_encryption_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -265,9 +228,7 @@ impl WorkGroupConfigurationBuilder {
         self
     }
     /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
-    pub fn get_customer_content_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomerContentEncryptionConfiguration> {
+    pub fn get_customer_content_encryption_configuration(&self) -> &::std::option::Option<crate::types::CustomerContentEncryptionConfiguration> {
         &self.customer_content_encryption_configuration
     }
     /// <p>Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or higher when they submit queries.</p>
@@ -278,10 +239,7 @@ impl WorkGroupConfigurationBuilder {
     }
     /// <p>Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or higher when they submit queries.</p>
     /// <p>The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the workgroup configuration for encryption is used.</p>
-    pub fn set_enable_minimum_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_minimum_encryption_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_minimum_encryption_configuration = input;
         self
     }
@@ -301,8 +259,7 @@ impl WorkGroupConfigurationBuilder {
             engine_version: self.engine_version,
             additional_configuration: self.additional_configuration,
             execution_role: self.execution_role,
-            customer_content_encryption_configuration: self
-                .customer_content_encryption_configuration,
+            customer_content_encryption_configuration: self.customer_content_encryption_configuration,
             enable_minimum_encryption_configuration: self.enable_minimum_encryption_configuration,
         }
     }

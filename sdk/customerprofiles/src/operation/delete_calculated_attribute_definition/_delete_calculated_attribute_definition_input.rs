@@ -22,16 +22,14 @@ impl DeleteCalculatedAttributeDefinitionInput {
 }
 impl DeleteCalculatedAttributeDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteCalculatedAttributeDefinitionInput`](crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionInput).
-    pub fn builder() -> crate::operation::delete_calculated_attribute_definition::builders::DeleteCalculatedAttributeDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::delete_calculated_attribute_definition::builders::DeleteCalculatedAttributeDefinitionInputBuilder {
         crate::operation::delete_calculated_attribute_definition::builders::DeleteCalculatedAttributeDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCalculatedAttributeDefinitionInput`](crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCalculatedAttributeDefinitionInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) calculated_attribute_name: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DeleteCalculatedAttributeDefinitionInputBuilder {
         &self.domain_name
     }
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn calculated_attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculated_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculated_attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn set_calculated_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculated_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculated_attribute_name = input;
         self
     }
@@ -72,14 +64,17 @@ impl DeleteCalculatedAttributeDefinitionInputBuilder {
         &self.calculated_attribute_name
     }
     /// Consumes the builder and constructs a [`DeleteCalculatedAttributeDefinitionInput`](crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionInput {
-                domain_name: self.domain_name
-                ,
-                calculated_attribute_name: self.calculated_attribute_name
-                ,
-            }
+                domain_name: self.domain_name,
+                calculated_attribute_name: self.calculated_attribute_name,
+            },
         )
     }
 }

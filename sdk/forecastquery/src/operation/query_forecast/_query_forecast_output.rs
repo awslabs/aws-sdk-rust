@@ -28,9 +28,7 @@ impl QueryForecastOutput {
 
 /// A builder for [`QueryForecastOutput`](crate::operation::query_forecast::QueryForecastOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryForecastOutputBuilder {
     pub(crate) forecast: ::std::option::Option<crate::types::Forecast>,
     _request_id: Option<String>,

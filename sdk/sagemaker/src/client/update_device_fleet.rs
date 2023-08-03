@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`enable_iot_role_alias(bool)`](crate::operation::update_device_fleet::builders::UpdateDeviceFleetFluentBuilder::enable_iot_role_alias) / [`set_enable_iot_role_alias(Option<bool>)`](crate::operation::update_device_fleet::builders::UpdateDeviceFleetFluentBuilder::set_enable_iot_role_alias): <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>  <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
     /// - On success, responds with [`UpdateDeviceFleetOutput`](crate::operation::update_device_fleet::UpdateDeviceFleetOutput)
     /// - On failure, responds with [`SdkError<UpdateDeviceFleetError>`](crate::operation::update_device_fleet::UpdateDeviceFleetError)
-    pub fn update_device_fleet(
-        &self,
-    ) -> crate::operation::update_device_fleet::builders::UpdateDeviceFleetFluentBuilder {
-        crate::operation::update_device_fleet::builders::UpdateDeviceFleetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_device_fleet(&self) -> crate::operation::update_device_fleet::builders::UpdateDeviceFleetFluentBuilder {
+        crate::operation::update_device_fleet::builders::UpdateDeviceFleetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -80,9 +80,7 @@ impl GetExportOutput {
 
 /// A builder for [`GetExportOutput`](crate::operation::get_export::GetExportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExportOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -128,10 +126,7 @@ impl GetExportOutputBuilder {
         self
     }
     /// <p>The type of the exported resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -145,10 +140,7 @@ impl GetExportOutputBuilder {
         self
     }
     /// <p>The format of the exported data.</p>
-    pub fn set_export_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportType>,
-    ) -> Self {
+    pub fn set_export_type(mut self, input: ::std::option::Option<crate::types::ExportType>) -> Self {
         self.export_type = input;
         self
     }
@@ -172,10 +164,7 @@ impl GetExportOutputBuilder {
     /// <li> <p> <code>READY</code> - The export is complete.</p> </li>
     /// <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li>
     /// </ul>
-    pub fn set_export_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportStatus>,
-    ) -> Self {
+    pub fn set_export_status(mut self, input: ::std::option::Option<crate::types::ExportStatus>) -> Self {
         self.export_status = input;
         self
     }
@@ -189,18 +178,12 @@ impl GetExportOutputBuilder {
         &self.export_status
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to export the resource.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to export the resource.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }

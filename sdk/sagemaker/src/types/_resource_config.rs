@@ -102,9 +102,7 @@ impl ResourceConfig {
 
 /// A builder for [`ResourceConfig`](crate::types::ResourceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceConfigBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
     pub(crate) instance_count: ::std::option::Option<i32>,
@@ -136,10 +134,7 @@ impl ResourceConfigBuilder {
     /// </ul>
     /// <p>To request quota limit increase and start using P4de instances, contact the SageMaker Training service team through your account team.</p>
     /// </note>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingInstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::TrainingInstanceType>) -> Self {
         self.instance_type = input;
         self
     }
@@ -208,10 +203,7 @@ impl ResourceConfigBuilder {
     /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn volume_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -225,10 +217,7 @@ impl ResourceConfigBuilder {
     /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn set_volume_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_kms_key_id = input;
         self
     }
@@ -257,17 +246,12 @@ impl ResourceConfigBuilder {
         self
     }
     /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
-    pub fn set_instance_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
-    ) -> Self {
+    pub fn set_instance_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>) -> Self {
         self.instance_groups = input;
         self
     }
     /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
-    pub fn get_instance_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>> {
+    pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>> {
         &self.instance_groups
     }
     /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>

@@ -26,7 +26,7 @@ impl ApplyPendingMaintenanceActionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ApplyPendingMaintenanceActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionInputBuilder,
+    inner: crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionInputBuilder,
 }
 impl ApplyPendingMaintenanceActionFluentBuilder {
     /// Creates a new `ApplyPendingMaintenanceAction`.
@@ -37,7 +37,7 @@ impl ApplyPendingMaintenanceActionFluentBuilder {
         }
     }
     /// Access the ApplyPendingMaintenanceAction as a reference.
-    pub fn as_input(&self) -> &crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ApplyPendingMaintenanceActionFluentBuilder {
             crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ApplyPendingMaintenanceActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ApplyPendingMaintenanceActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ApplyPendingMaintenanceActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ApplyPendingMaintenanceActionFluentBuilder {
             crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
-    pub fn replication_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_instance_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
-    pub fn set_replication_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_instance_arn(input);
         self
     }

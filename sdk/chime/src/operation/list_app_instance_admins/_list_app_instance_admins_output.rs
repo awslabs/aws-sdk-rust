@@ -8,8 +8,7 @@ pub struct ListAppInstanceAdminsOutput {
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The information for each administrator.</p>
     #[doc(hidden)]
-    pub app_instance_admins:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceAdminSummary>>,
+    pub app_instance_admins: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceAdminSummary>>,
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl ListAppInstanceAdminsOutput {
         self.app_instance_arn.as_deref()
     }
     /// <p>The information for each administrator.</p>
-    pub fn app_instance_admins(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AppInstanceAdminSummary]> {
+    pub fn app_instance_admins(&self) -> ::std::option::Option<&[crate::types::AppInstanceAdminSummary]> {
         self.app_instance_admins.as_deref()
     }
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
@@ -48,9 +45,7 @@ impl ::aws_http::request_id::RequestId for ListAppInstanceAdminsOutput {
 }
 impl ListAppInstanceAdminsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppInstanceAdminsOutput`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsOutputBuilder {
         crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsOutputBuilder::default()
     }
 }
@@ -60,25 +55,18 @@ impl ListAppInstanceAdminsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListAppInstanceAdminsOutputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) app_instance_admins:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceAdminSummary>>,
+    pub(crate) app_instance_admins: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceAdminSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAppInstanceAdminsOutputBuilder {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_arn = input;
         self
     }
@@ -98,17 +86,12 @@ impl ListAppInstanceAdminsOutputBuilder {
         self
     }
     /// <p>The information for each administrator.</p>
-    pub fn set_app_instance_admins(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceAdminSummary>>,
-    ) -> Self {
+    pub fn set_app_instance_admins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceAdminSummary>>) -> Self {
         self.app_instance_admins = input;
         self
     }
     /// <p>The information for each administrator.</p>
-    pub fn get_app_instance_admins(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceAdminSummary>> {
+    pub fn get_app_instance_admins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceAdminSummary>> {
         &self.app_instance_admins
     }
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>

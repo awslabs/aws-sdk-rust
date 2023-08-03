@@ -43,9 +43,7 @@ impl DashboardVisualId {
 
 /// A builder for [`DashboardVisualId`](crate::types::DashboardVisualId).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DashboardVisualIdBuilder {
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
     pub(crate) sheet_id: ::std::option::Option<::std::string::String>,

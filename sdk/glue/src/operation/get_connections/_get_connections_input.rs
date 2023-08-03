@@ -50,9 +50,7 @@ impl GetConnectionsInput {
 
 /// A builder for [`GetConnectionsInput`](crate::operation::get_connections::GetConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConnectionsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::GetConnectionsFilter>,
@@ -81,10 +79,7 @@ impl GetConnectionsInputBuilder {
         self
     }
     /// <p>A filter that controls which connections are returned.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::GetConnectionsFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::GetConnectionsFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -137,10 +132,7 @@ impl GetConnectionsInputBuilder {
     /// Consumes the builder and constructs a [`GetConnectionsInput`](crate::operation::get_connections::GetConnectionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_connections::GetConnectionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_connections::GetConnectionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_connections::GetConnectionsInput {
             catalog_id: self.catalog_id,
             filter: self.filter,

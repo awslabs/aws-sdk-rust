@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`runtime_versions(Option<Vec<RuntimeVersion>>)`](crate::operation::describe_runtime_versions::DescribeRuntimeVersionsOutput::runtime_versions): <p>An array of objects that display the details about each Synthetics canary runtime version.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_runtime_versions::DescribeRuntimeVersionsOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<DescribeRuntimeVersionsError>`](crate::operation::describe_runtime_versions::DescribeRuntimeVersionsError)
-    pub fn describe_runtime_versions(
-        &self,
-    ) -> crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsFluentBuilder
-    {
+    pub fn describe_runtime_versions(&self) -> crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsFluentBuilder {
         crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsFluentBuilder::new(self.handle.clone())
     }
 }

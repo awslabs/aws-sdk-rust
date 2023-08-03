@@ -26,7 +26,7 @@ impl ListUserAccessLoggingSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListUserAccessLoggingSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsInputBuilder,
+    inner: crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsInputBuilder,
 }
 impl ListUserAccessLoggingSettingsFluentBuilder {
     /// Creates a new `ListUserAccessLoggingSettings`.
@@ -37,7 +37,7 @@ impl ListUserAccessLoggingSettingsFluentBuilder {
         }
     }
     /// Access the ListUserAccessLoggingSettings as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListUserAccessLoggingSettingsFluentBuilder {
             crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListUserAccessLoggingSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListUserAccessLoggingSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListUserAccessLoggingSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListUserAccessLoggingSettingsFluentBuilder {
             crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_user_access_logging_settings::paginator::ListUserAccessLoggingSettingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_user_access_logging_settings::paginator::ListUserAccessLoggingSettingsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_user_access_logging_settings::paginator::ListUserAccessLoggingSettingsPaginator {
         crate::operation::list_user_access_logging_settings::paginator::ListUserAccessLoggingSettingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>

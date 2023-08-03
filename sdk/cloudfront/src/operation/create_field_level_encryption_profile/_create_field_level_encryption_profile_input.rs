@@ -5,39 +5,30 @@
 pub struct CreateFieldLevelEncryptionProfileInput {
     /// <p>The request to create a field-level encryption profile.</p>
     #[doc(hidden)]
-    pub field_level_encryption_profile_config:
-        ::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig>,
+    pub field_level_encryption_profile_config: ::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig>,
 }
 impl CreateFieldLevelEncryptionProfileInput {
     /// <p>The request to create a field-level encryption profile.</p>
-    pub fn field_level_encryption_profile_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FieldLevelEncryptionProfileConfig> {
+    pub fn field_level_encryption_profile_config(&self) -> ::std::option::Option<&crate::types::FieldLevelEncryptionProfileConfig> {
         self.field_level_encryption_profile_config.as_ref()
     }
 }
 impl CreateFieldLevelEncryptionProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateFieldLevelEncryptionProfileInput`](crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileInput).
-    pub fn builder() -> crate::operation::create_field_level_encryption_profile::builders::CreateFieldLevelEncryptionProfileInputBuilder{
+    pub fn builder() -> crate::operation::create_field_level_encryption_profile::builders::CreateFieldLevelEncryptionProfileInputBuilder {
         crate::operation::create_field_level_encryption_profile::builders::CreateFieldLevelEncryptionProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFieldLevelEncryptionProfileInput`](crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFieldLevelEncryptionProfileInputBuilder {
-    pub(crate) field_level_encryption_profile_config:
-        ::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig>,
+    pub(crate) field_level_encryption_profile_config: ::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig>,
 }
 impl CreateFieldLevelEncryptionProfileInputBuilder {
     /// <p>The request to create a field-level encryption profile.</p>
-    pub fn field_level_encryption_profile_config(
-        mut self,
-        input: crate::types::FieldLevelEncryptionProfileConfig,
-    ) -> Self {
+    pub fn field_level_encryption_profile_config(mut self, input: crate::types::FieldLevelEncryptionProfileConfig) -> Self {
         self.field_level_encryption_profile_config = ::std::option::Option::Some(input);
         self
     }
@@ -50,18 +41,20 @@ impl CreateFieldLevelEncryptionProfileInputBuilder {
         self
     }
     /// <p>The request to create a field-level encryption profile.</p>
-    pub fn get_field_level_encryption_profile_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig> {
+    pub fn get_field_level_encryption_profile_config(&self) -> &::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig> {
         &self.field_level_encryption_profile_config
     }
     /// Consumes the builder and constructs a [`CreateFieldLevelEncryptionProfileInput`](crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileInput {
-                field_level_encryption_profile_config: self.field_level_encryption_profile_config
-                ,
-            }
+                field_level_encryption_profile_config: self.field_level_encryption_profile_config,
+            },
         )
     }
 }

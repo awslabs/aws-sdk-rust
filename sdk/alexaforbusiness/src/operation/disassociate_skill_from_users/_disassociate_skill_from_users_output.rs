@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateSkillFromUsersOutput {
 }
 impl DisassociateSkillFromUsersOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateSkillFromUsersOutput`](crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersOutput).
-    pub fn builder() -> crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersOutputBuilder {
         crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateSkillFromUsersOutput`](crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateSkillFromUsersOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisassociateSkillFromUsersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateSkillFromUsersOutput`](crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersOutput {
+    pub fn build(self) -> crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersOutput {
         crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersOutput {
             _request_id: self._request_id,
         }

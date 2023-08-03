@@ -34,9 +34,7 @@ impl CreateServiceOutput {
 
 /// A builder for [`CreateServiceOutput`](crate::operation::create_service::CreateServiceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateServiceOutputBuilder {
     pub(crate) service: ::std::option::Option<crate::types::Service>,
     _request_id: Option<String>,

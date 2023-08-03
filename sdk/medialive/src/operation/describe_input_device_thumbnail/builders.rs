@@ -26,7 +26,7 @@ impl DescribeInputDeviceThumbnailInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInputDeviceThumbnailFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_input_device_thumbnail::builders::DescribeInputDeviceThumbnailInputBuilder,
+    inner: crate::operation::describe_input_device_thumbnail::builders::DescribeInputDeviceThumbnailInputBuilder,
 }
 impl DescribeInputDeviceThumbnailFluentBuilder {
     /// Creates a new `DescribeInputDeviceThumbnail`.
@@ -37,7 +37,7 @@ impl DescribeInputDeviceThumbnailFluentBuilder {
         }
     }
     /// Access the DescribeInputDeviceThumbnail as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_input_device_thumbnail::builders::DescribeInputDeviceThumbnailInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_input_device_thumbnail::builders::DescribeInputDeviceThumbnailInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeInputDeviceThumbnailFluentBuilder {
             crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnail,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeInputDeviceThumbnailFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeInputDeviceThumbnailFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeInputDeviceThumbnailFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeInputDeviceThumbnailFluentBuilder {
             crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnail,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailError>,
     > {
         self.customize_middleware().await
     }
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub fn input_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_device_id(input.into());
         self
     }
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub fn set_input_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_device_id(input);
         self
     }

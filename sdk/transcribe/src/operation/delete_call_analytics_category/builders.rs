@@ -26,7 +26,7 @@ impl DeleteCallAnalyticsCategoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCallAnalyticsCategoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_call_analytics_category::builders::DeleteCallAnalyticsCategoryInputBuilder,
+    inner: crate::operation::delete_call_analytics_category::builders::DeleteCallAnalyticsCategoryInputBuilder,
 }
 impl DeleteCallAnalyticsCategoryFluentBuilder {
     /// Creates a new `DeleteCallAnalyticsCategory`.
@@ -37,7 +37,7 @@ impl DeleteCallAnalyticsCategoryFluentBuilder {
         }
     }
     /// Access the DeleteCallAnalyticsCategory as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_call_analytics_category::builders::DeleteCallAnalyticsCategoryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_call_analytics_category::builders::DeleteCallAnalyticsCategoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteCallAnalyticsCategoryFluentBuilder {
             crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteCallAnalyticsCategoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteCallAnalyticsCategoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteCallAnalyticsCategoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteCallAnalyticsCategoryFluentBuilder {
             crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Call Analytics category you want to delete. Category names are case sensitive.</p>
-    pub fn category_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn category_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.category_name(input.into());
         self
     }
     /// <p>The name of the Call Analytics category you want to delete. Category names are case sensitive.</p>
-    pub fn set_category_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_category_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_category_name(input);
         self
     }

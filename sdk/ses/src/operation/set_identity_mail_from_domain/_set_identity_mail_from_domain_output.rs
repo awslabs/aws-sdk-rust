@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for SetIdentityMailFromDomainOutput {
 }
 impl SetIdentityMailFromDomainOutput {
     /// Creates a new builder-style object to manufacture [`SetIdentityMailFromDomainOutput`](crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainOutput).
-    pub fn builder() -> crate::operation::set_identity_mail_from_domain::builders::SetIdentityMailFromDomainOutputBuilder{
+    pub fn builder() -> crate::operation::set_identity_mail_from_domain::builders::SetIdentityMailFromDomainOutputBuilder {
         crate::operation::set_identity_mail_from_domain::builders::SetIdentityMailFromDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetIdentityMailFromDomainOutput`](crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetIdentityMailFromDomainOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,9 +35,7 @@ impl SetIdentityMailFromDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SetIdentityMailFromDomainOutput`](crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainOutput {
+    pub fn build(self) -> crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainOutput {
         crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainOutput {
             _request_id: self._request_id,
         }

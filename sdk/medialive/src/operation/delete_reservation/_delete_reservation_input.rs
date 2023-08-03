@@ -16,34 +16,25 @@ impl DeleteReservationInput {
 }
 impl DeleteReservationInput {
     /// Creates a new builder-style object to manufacture [`DeleteReservationInput`](crate::operation::delete_reservation::DeleteReservationInput).
-    pub fn builder() -> crate::operation::delete_reservation::builders::DeleteReservationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_reservation::builders::DeleteReservationInputBuilder {
         crate::operation::delete_reservation::builders::DeleteReservationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReservationInput`](crate::operation::delete_reservation::DeleteReservationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReservationInputBuilder {
     pub(crate) reservation_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReservationInputBuilder {
     /// Unique reservation ID, e.g. '1234567'
-    pub fn reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Unique reservation ID, e.g. '1234567'
-    pub fn set_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reservation_id = input;
         self
     }
@@ -54,14 +45,9 @@ impl DeleteReservationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReservationInput`](crate::operation::delete_reservation::DeleteReservationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_reservation::DeleteReservationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_reservation::DeleteReservationInput {
-                reservation_id: self.reservation_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_reservation::DeleteReservationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_reservation::DeleteReservationInput {
+            reservation_id: self.reservation_id,
+        })
     }
 }

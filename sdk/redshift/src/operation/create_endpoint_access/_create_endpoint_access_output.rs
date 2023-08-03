@@ -30,8 +30,7 @@ pub struct CreateEndpointAccessOutput {
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The security groups associated with the endpoint.</p>
     #[doc(hidden)]
-    pub vpc_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
+    pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
     #[doc(hidden)]
     pub vpc_endpoint: ::std::option::Option<crate::types::VpcEndpoint>,
@@ -71,9 +70,7 @@ impl CreateEndpointAccessOutput {
         self.address.as_deref()
     }
     /// <p>The security groups associated with the endpoint.</p>
-    pub fn vpc_security_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
+    pub fn vpc_security_groups(&self) -> ::std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
         self.vpc_security_groups.as_deref()
     }
     /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
@@ -88,17 +85,14 @@ impl ::aws_http::request_id::RequestId for CreateEndpointAccessOutput {
 }
 impl CreateEndpointAccessOutput {
     /// Creates a new builder-style object to manufacture [`CreateEndpointAccessOutput`](crate::operation::create_endpoint_access::CreateEndpointAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::create_endpoint_access::builders::CreateEndpointAccessOutputBuilder {
+    pub fn builder() -> crate::operation::create_endpoint_access::builders::CreateEndpointAccessOutputBuilder {
         crate::operation::create_endpoint_access::builders::CreateEndpointAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEndpointAccessOutput`](crate::operation::create_endpoint_access::CreateEndpointAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEndpointAccessOutputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_owner: ::std::option::Option<::std::string::String>,
@@ -108,25 +102,18 @@ pub struct CreateEndpointAccessOutputBuilder {
     pub(crate) endpoint_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) address: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
+    pub(crate) vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     pub(crate) vpc_endpoint: ::std::option::Option<crate::types::VpcEndpoint>,
     _request_id: Option<String>,
 }
 impl CreateEndpointAccessOutputBuilder {
     /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -135,18 +122,12 @@ impl CreateEndpointAccessOutputBuilder {
         &self.cluster_identifier
     }
     /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
-    pub fn resource_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
-    pub fn set_resource_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_owner = input;
         self
     }
@@ -155,18 +136,12 @@ impl CreateEndpointAccessOutputBuilder {
         &self.resource_owner
     }
     /// <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
-    pub fn subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
-    pub fn set_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_group_name = input;
         self
     }
@@ -175,18 +150,12 @@ impl CreateEndpointAccessOutputBuilder {
         &self.subnet_group_name
     }
     /// <p>The status of the endpoint.</p>
-    pub fn endpoint_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the endpoint.</p>
-    pub fn set_endpoint_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_status = input;
         self
     }
@@ -195,18 +164,12 @@ impl CreateEndpointAccessOutputBuilder {
         &self.endpoint_status
     }
     /// <p>The name of the endpoint.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the endpoint.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_name = input;
         self
     }
@@ -220,10 +183,7 @@ impl CreateEndpointAccessOutputBuilder {
         self
     }
     /// <p>The time (UTC) that the endpoint was created.</p>
-    pub fn set_endpoint_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_endpoint_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.endpoint_create_time = input;
         self
     }
@@ -271,17 +231,12 @@ impl CreateEndpointAccessOutputBuilder {
         self
     }
     /// <p>The security groups associated with the endpoint.</p>
-    pub fn set_vpc_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
-    ) -> Self {
+    pub fn set_vpc_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>) -> Self {
         self.vpc_security_groups = input;
         self
     }
     /// <p>The security groups associated with the endpoint.</p>
-    pub fn get_vpc_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>> {
+    pub fn get_vpc_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>> {
         &self.vpc_security_groups
     }
     /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
@@ -290,10 +245,7 @@ impl CreateEndpointAccessOutputBuilder {
         self
     }
     /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
-    pub fn set_vpc_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcEndpoint>,
-    ) -> Self {
+    pub fn set_vpc_endpoint(mut self, input: ::std::option::Option<crate::types::VpcEndpoint>) -> Self {
         self.vpc_endpoint = input;
         self
     }

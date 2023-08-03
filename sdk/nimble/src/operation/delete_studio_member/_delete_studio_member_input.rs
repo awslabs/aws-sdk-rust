@@ -29,17 +29,14 @@ impl DeleteStudioMemberInput {
 }
 impl DeleteStudioMemberInput {
     /// Creates a new builder-style object to manufacture [`DeleteStudioMemberInput`](crate::operation::delete_studio_member::DeleteStudioMemberInput).
-    pub fn builder(
-    ) -> crate::operation::delete_studio_member::builders::DeleteStudioMemberInputBuilder {
+    pub fn builder() -> crate::operation::delete_studio_member::builders::DeleteStudioMemberInputBuilder {
         crate::operation::delete_studio_member::builders::DeleteStudioMemberInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStudioMemberInput`](crate::operation::delete_studio_member::DeleteStudioMemberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStudioMemberInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl DeleteStudioMemberInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStudioMemberInput`](crate::operation::delete_studio_member::DeleteStudioMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_studio_member::DeleteStudioMemberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_studio_member::DeleteStudioMemberInput {
-                client_token: self.client_token,
-                principal_id: self.principal_id,
-                studio_id: self.studio_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_studio_member::DeleteStudioMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_studio_member::DeleteStudioMemberInput {
+            client_token: self.client_token,
+            principal_id: self.principal_id,
+            studio_id: self.studio_id,
+        })
     }
 }

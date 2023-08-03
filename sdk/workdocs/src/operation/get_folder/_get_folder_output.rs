@@ -8,9 +8,7 @@ pub struct GetFolderOutput {
     pub metadata: ::std::option::Option<crate::types::FolderMetadata>,
     /// <p>The custom metadata on the folder.</p>
     #[doc(hidden)]
-    pub custom_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub custom_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetFolderOutput {
@@ -19,11 +17,7 @@ impl GetFolderOutput {
         self.metadata.as_ref()
     }
     /// <p>The custom metadata on the folder.</p>
-    pub fn custom_metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn custom_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.custom_metadata.as_ref()
     }
 }
@@ -41,14 +35,10 @@ impl GetFolderOutput {
 
 /// A builder for [`GetFolderOutput`](crate::operation::get_folder::GetFolderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFolderOutputBuilder {
     pub(crate) metadata: ::std::option::Option<crate::types::FolderMetadata>,
-    pub(crate) custom_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) custom_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetFolderOutputBuilder {
@@ -58,10 +48,7 @@ impl GetFolderOutputBuilder {
         self
     }
     /// <p>The metadata of the folder.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::FolderMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::FolderMetadata>) -> Self {
         self.metadata = input;
         self
     }
@@ -87,19 +74,13 @@ impl GetFolderOutputBuilder {
     /// <p>The custom metadata on the folder.</p>
     pub fn set_custom_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.custom_metadata = input;
         self
     }
     /// <p>The custom metadata on the folder.</p>
-    pub fn get_custom_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_custom_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.custom_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

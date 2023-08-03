@@ -22,26 +22,18 @@ impl DeleteLocationInput {
 
 /// A builder for [`DeleteLocationInput`](crate::operation::delete_location::DeleteLocationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLocationInputBuilder {
     pub(crate) location_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLocationInputBuilder {
     /// <p>The location name of the custom location to be deleted.</p>
-    pub fn location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location name of the custom location to be deleted.</p>
-    pub fn set_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_name = input;
         self
     }
@@ -52,10 +44,7 @@ impl DeleteLocationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLocationInput`](crate::operation::delete_location::DeleteLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_location::DeleteLocationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_location::DeleteLocationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_location::DeleteLocationInput {
             location_name: self.location_name,
         })

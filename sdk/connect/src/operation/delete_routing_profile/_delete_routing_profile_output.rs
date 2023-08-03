@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRoutingProfileOutput {
 }
 impl DeleteRoutingProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRoutingProfileOutput`](crate::operation::delete_routing_profile::DeleteRoutingProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_routing_profile::builders::DeleteRoutingProfileOutputBuilder {
+    pub fn builder() -> crate::operation::delete_routing_profile::builders::DeleteRoutingProfileOutputBuilder {
         crate::operation::delete_routing_profile::builders::DeleteRoutingProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRoutingProfileOutput`](crate::operation::delete_routing_profile::DeleteRoutingProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRoutingProfileOutputBuilder {
     _request_id: Option<String>,
 }

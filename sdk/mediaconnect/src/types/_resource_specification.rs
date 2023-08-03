@@ -30,9 +30,7 @@ impl ResourceSpecification {
 
 /// A builder for [`ResourceSpecification`](crate::types::ResourceSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceSpecificationBuilder {
     pub(crate) reserved_bitrate: ::std::option::Option<i32>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -58,10 +56,7 @@ impl ResourceSpecificationBuilder {
         self
     }
     /// The type of resource and the unit that is being billed for.
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }

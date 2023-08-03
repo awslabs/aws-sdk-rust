@@ -23,16 +23,14 @@ impl DeleteCloudFrontOriginAccessIdentityInput {
 }
 impl DeleteCloudFrontOriginAccessIdentityInput {
     /// Creates a new builder-style object to manufacture [`DeleteCloudFrontOriginAccessIdentityInput`](crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityInput).
-    pub fn builder() -> crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityInputBuilder{
+    pub fn builder() -> crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityInputBuilder {
         crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCloudFrontOriginAccessIdentityInput`](crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCloudFrontOriginAccessIdentityInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
@@ -67,14 +65,17 @@ impl DeleteCloudFrontOriginAccessIdentityInputBuilder {
         &self.if_match
     }
     /// Consumes the builder and constructs a [`DeleteCloudFrontOriginAccessIdentityInput`](crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityInput {
-                id: self.id
-                ,
-                if_match: self.if_match
-                ,
-            }
+                id: self.id,
+                if_match: self.if_match,
+            },
         )
     }
 }

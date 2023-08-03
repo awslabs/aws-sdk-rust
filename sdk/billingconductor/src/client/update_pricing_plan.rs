@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`size(i64)`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput::size): <p> The pricing rules count that's currently associated with this pricing plan list. </p>
     ///   - [`last_modified_time(i64)`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput::last_modified_time): <p> The most recent time when the pricing plan was modified. </p>
     /// - On failure, responds with [`SdkError<UpdatePricingPlanError>`](crate::operation::update_pricing_plan::UpdatePricingPlanError)
-    pub fn update_pricing_plan(
-        &self,
-    ) -> crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder {
-        crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_pricing_plan(&self) -> crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder {
+        crate::operation::update_pricing_plan::builders::UpdatePricingPlanFluentBuilder::new(self.handle.clone())
     }
 }

@@ -27,7 +27,7 @@ impl UpdateConferenceProviderInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConferenceProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_conference_provider::builders::UpdateConferenceProviderInputBuilder,
+    inner: crate::operation::update_conference_provider::builders::UpdateConferenceProviderInputBuilder,
 }
 impl UpdateConferenceProviderFluentBuilder {
     /// Creates a new `UpdateConferenceProvider`.
@@ -38,10 +38,7 @@ impl UpdateConferenceProviderFluentBuilder {
         }
     }
     /// Access the UpdateConferenceProvider as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_conference_provider::builders::UpdateConferenceProviderInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_conference_provider::builders::UpdateConferenceProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl UpdateConferenceProviderFluentBuilder {
             crate::operation::update_conference_provider::UpdateConferenceProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_conference_provider::UpdateConferenceProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_conference_provider::UpdateConferenceProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl UpdateConferenceProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl UpdateConferenceProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_conference_provider::UpdateConferenceProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_conference_provider::UpdateConferenceProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_conference_provider::UpdateConferenceProviderError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl UpdateConferenceProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_conference_provider::UpdateConferenceProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_conference_provider::UpdateConferenceProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_conference_provider::UpdateConferenceProviderError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl UpdateConferenceProviderFluentBuilder {
             crate::operation::update_conference_provider::UpdateConferenceProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_conference_provider::UpdateConferenceProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_conference_provider::UpdateConferenceProviderError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the conference provider.</p>
-    pub fn conference_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conference_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conference_provider_arn(input.into());
         self
     }
     /// <p>The ARN of the conference provider.</p>
-    pub fn set_conference_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conference_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_conference_provider_arn(input);
         self
     }
@@ -150,17 +130,12 @@ impl UpdateConferenceProviderFluentBuilder {
         self
     }
     /// <p>The type of the conference provider.</p>
-    pub fn set_conference_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConferenceProviderType>,
-    ) -> Self {
+    pub fn set_conference_provider_type(mut self, input: ::std::option::Option<crate::types::ConferenceProviderType>) -> Self {
         self.inner = self.inner.set_conference_provider_type(input);
         self
     }
     /// <p>The type of the conference provider.</p>
-    pub fn get_conference_provider_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConferenceProviderType> {
+    pub fn get_conference_provider_type(&self) -> &::std::option::Option<crate::types::ConferenceProviderType> {
         self.inner.get_conference_provider_type()
     }
     /// <p>The IP endpoint and protocol for calling.</p>
@@ -183,10 +158,7 @@ impl UpdateConferenceProviderFluentBuilder {
         self
     }
     /// <p>The information for PSTN conferencing.</p>
-    pub fn set_pstn_dial_in(
-        mut self,
-        input: ::std::option::Option<crate::types::PstnDialIn>,
-    ) -> Self {
+    pub fn set_pstn_dial_in(mut self, input: ::std::option::Option<crate::types::PstnDialIn>) -> Self {
         self.inner = self.inner.set_pstn_dial_in(input);
         self
     }
@@ -200,10 +172,7 @@ impl UpdateConferenceProviderFluentBuilder {
         self
     }
     /// <p>The meeting settings for the conference provider.</p>
-    pub fn set_meeting_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::MeetingSetting>,
-    ) -> Self {
+    pub fn set_meeting_setting(mut self, input: ::std::option::Option<crate::types::MeetingSetting>) -> Self {
         self.inner = self.inner.set_meeting_setting(input);
         self
     }

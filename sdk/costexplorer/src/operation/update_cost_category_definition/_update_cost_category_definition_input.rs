@@ -20,8 +20,7 @@ pub struct UpdateCostCategoryDefinitionInput {
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
     #[doc(hidden)]
-    pub split_charge_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
+    pub split_charge_rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
 }
 impl UpdateCostCategoryDefinitionInput {
     /// <p>The unique identifier for your Cost Category.</p>
@@ -45,47 +44,36 @@ impl UpdateCostCategoryDefinitionInput {
         self.default_value.as_deref()
     }
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
-    pub fn split_charge_rules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CostCategorySplitChargeRule]> {
+    pub fn split_charge_rules(&self) -> ::std::option::Option<&[crate::types::CostCategorySplitChargeRule]> {
         self.split_charge_rules.as_deref()
     }
 }
 impl UpdateCostCategoryDefinitionInput {
     /// Creates a new builder-style object to manufacture [`UpdateCostCategoryDefinitionInput`](crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionInput).
-    pub fn builder() -> crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionInputBuilder {
         crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCostCategoryDefinitionInput`](crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCostCategoryDefinitionInputBuilder {
     pub(crate) cost_category_arn: ::std::option::Option<::std::string::String>,
     pub(crate) effective_start: ::std::option::Option<::std::string::String>,
     pub(crate) rule_version: ::std::option::Option<crate::types::CostCategoryRuleVersion>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>,
     pub(crate) default_value: ::std::option::Option<::std::string::String>,
-    pub(crate) split_charge_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
+    pub(crate) split_charge_rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
 }
 impl UpdateCostCategoryDefinitionInputBuilder {
     /// <p>The unique identifier for your Cost Category.</p>
-    pub fn cost_category_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cost_category_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for your Cost Category.</p>
-    pub fn set_cost_category_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cost_category_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cost_category_arn = input;
         self
     }
@@ -94,18 +82,12 @@ impl UpdateCostCategoryDefinitionInputBuilder {
         &self.cost_category_arn
     }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
-    pub fn effective_start(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn effective_start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.effective_start = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
-    pub fn set_effective_start(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_effective_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.effective_start = input;
         self
     }
@@ -119,17 +101,12 @@ impl UpdateCostCategoryDefinitionInputBuilder {
         self
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
-    pub fn set_rule_version(
-        mut self,
-        input: ::std::option::Option<crate::types::CostCategoryRuleVersion>,
-    ) -> Self {
+    pub fn set_rule_version(mut self, input: ::std::option::Option<crate::types::CostCategoryRuleVersion>) -> Self {
         self.rule_version = input;
         self
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
-    pub fn get_rule_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::CostCategoryRuleVersion> {
+    pub fn get_rule_version(&self) -> &::std::option::Option<crate::types::CostCategoryRuleVersion> {
         &self.rule_version
     }
     /// Appends an item to `rules`.
@@ -144,32 +121,21 @@ impl UpdateCostCategoryDefinitionInputBuilder {
         self
     }
     /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>) -> Self {
         self.rules = input;
         self
     }
     /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>> {
         &self.rules
     }
     /// <p>The default value for the cost category.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value for the cost category.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }
@@ -189,17 +155,12 @@ impl UpdateCostCategoryDefinitionInputBuilder {
         self
     }
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
-    pub fn set_split_charge_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
-    ) -> Self {
+    pub fn set_split_charge_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>) -> Self {
         self.split_charge_rules = input;
         self
     }
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
-    pub fn get_split_charge_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>> {
+    pub fn get_split_charge_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>> {
         &self.split_charge_rules
     }
     /// Consumes the builder and constructs a [`UpdateCostCategoryDefinitionInput`](crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionInput).
@@ -209,15 +170,13 @@ impl UpdateCostCategoryDefinitionInputBuilder {
         crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionInput {
-                cost_category_arn: self.cost_category_arn,
-                effective_start: self.effective_start,
-                rule_version: self.rule_version,
-                rules: self.rules,
-                default_value: self.default_value,
-                split_charge_rules: self.split_charge_rules,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionInput {
+            cost_category_arn: self.cost_category_arn,
+            effective_start: self.effective_start,
+            rule_version: self.rule_version,
+            rules: self.rules,
+            default_value: self.default_value,
+            split_charge_rules: self.split_charge_rules,
+        })
     }
 }

@@ -46,17 +46,14 @@ impl StartReplicationInput {
 }
 impl StartReplicationInput {
     /// Creates a new builder-style object to manufacture [`StartReplicationInput`](crate::operation::start_replication::StartReplicationInput).
-    pub fn builder() -> crate::operation::start_replication::builders::StartReplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_replication::builders::StartReplicationInputBuilder {
         crate::operation::start_replication::builders::StartReplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`StartReplicationInput`](crate::operation::start_replication::StartReplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartReplicationInputBuilder {
     pub(crate) replication_config_arn: ::std::option::Option<::std::string::String>,
     pub(crate) start_replication_type: ::std::option::Option<::std::string::String>,
@@ -66,18 +63,12 @@ pub struct StartReplicationInputBuilder {
 }
 impl StartReplicationInputBuilder {
     /// <p>The Amazon Resource Name of the replication for which to start replication.</p>
-    pub fn replication_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name of the replication for which to start replication.</p>
-    pub fn set_replication_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_config_arn = input;
         self
     }
@@ -86,18 +77,12 @@ impl StartReplicationInputBuilder {
         &self.replication_config_arn
     }
     /// <p>The replication type.</p>
-    pub fn start_replication_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_replication_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_replication_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The replication type.</p>
-    pub fn set_start_replication_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_replication_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_replication_type = input;
         self
     }
@@ -111,10 +96,7 @@ impl StartReplicationInputBuilder {
         self
     }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    pub fn set_cdc_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_cdc_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.cdc_start_time = input;
         self
     }
@@ -124,19 +106,13 @@ impl StartReplicationInputBuilder {
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
-    pub fn cdc_start_position(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cdc_start_position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cdc_start_position = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
-    pub fn set_cdc_start_position(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cdc_start_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cdc_start_position = input;
         self
     }
@@ -146,18 +122,12 @@ impl StartReplicationInputBuilder {
         &self.cdc_start_position
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
-    pub fn cdc_stop_position(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cdc_stop_position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cdc_stop_position = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
-    pub fn set_cdc_stop_position(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cdc_stop_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cdc_stop_position = input;
         self
     }
@@ -168,10 +138,7 @@ impl StartReplicationInputBuilder {
     /// Consumes the builder and constructs a [`StartReplicationInput`](crate::operation::start_replication::StartReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_replication::StartReplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_replication::StartReplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_replication::StartReplicationInput {
             replication_config_arn: self.replication_config_arn,
             start_replication_type: self.start_replication_type,

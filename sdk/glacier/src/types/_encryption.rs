@@ -37,9 +37,7 @@ impl Encryption {
 
 /// A builder for [`Encryption`](crate::types::Encryption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionBuilder {
     pub(crate) encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl EncryptionBuilder {
         self
     }
     /// <p>The server-side encryption algorithm used when storing job results in Amazon S3, for example <code>AES256</code> or <code>aws:kms</code>.</p>
-    pub fn set_encryption_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionType>,
-    ) -> Self {
+    pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.encryption_type = input;
         self
     }

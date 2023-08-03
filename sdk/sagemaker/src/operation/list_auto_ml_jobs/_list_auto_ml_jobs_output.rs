@@ -5,8 +5,7 @@
 pub struct ListAutoMlJobsOutput {
     /// <p>Returns a summary list of jobs.</p>
     #[doc(hidden)]
-    pub auto_ml_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobSummary>>,
+    pub auto_ml_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobSummary>>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAutoMlJobsOutput {
 }
 impl ListAutoMlJobsOutput {
     /// <p>Returns a summary list of jobs.</p>
-    pub fn auto_ml_job_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AutoMlJobSummary]> {
+    pub fn auto_ml_job_summaries(&self) -> ::std::option::Option<&[crate::types::AutoMlJobSummary]> {
         self.auto_ml_job_summaries.as_deref()
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
@@ -38,12 +35,9 @@ impl ListAutoMlJobsOutput {
 
 /// A builder for [`ListAutoMlJobsOutput`](crate::operation::list_auto_ml_jobs::ListAutoMlJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAutoMlJobsOutputBuilder {
-    pub(crate) auto_ml_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobSummary>>,
+    pub(crate) auto_ml_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListAutoMlJobsOutputBuilder {
         self
     }
     /// <p>Returns a summary list of jobs.</p>
-    pub fn set_auto_ml_job_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobSummary>>,
-    ) -> Self {
+    pub fn set_auto_ml_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobSummary>>) -> Self {
         self.auto_ml_job_summaries = input;
         self
     }
     /// <p>Returns a summary list of jobs.</p>
-    pub fn get_auto_ml_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobSummary>> {
+    pub fn get_auto_ml_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobSummary>> {
         &self.auto_ml_job_summaries
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>

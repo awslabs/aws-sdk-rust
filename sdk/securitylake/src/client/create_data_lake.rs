@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDataLakeOutput`](crate::operation::create_data_lake::CreateDataLakeOutput) with field(s):
     ///   - [`data_lakes(Option<Vec<DataLakeResource>>)`](crate::operation::create_data_lake::CreateDataLakeOutput::data_lakes): <p>The created Security Lake configuration object.</p>
     /// - On failure, responds with [`SdkError<CreateDataLakeError>`](crate::operation::create_data_lake::CreateDataLakeError)
-    pub fn create_data_lake(
-        &self,
-    ) -> crate::operation::create_data_lake::builders::CreateDataLakeFluentBuilder {
-        crate::operation::create_data_lake::builders::CreateDataLakeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_data_lake(&self) -> crate::operation::create_data_lake::builders::CreateDataLakeFluentBuilder {
+        crate::operation::create_data_lake::builders::CreateDataLakeFluentBuilder::new(self.handle.clone())
     }
 }

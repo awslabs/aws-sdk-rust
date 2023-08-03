@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`device_instances(Option<Vec<DeviceInstance>>)`](crate::operation::list_device_instances::ListDeviceInstancesOutput::device_instances): <p>An object that contains information about your device instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_instances::ListDeviceInstancesOutput::next_token): <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListDeviceInstancesError>`](crate::operation::list_device_instances::ListDeviceInstancesError)
-    pub fn list_device_instances(
-        &self,
-    ) -> crate::operation::list_device_instances::builders::ListDeviceInstancesFluentBuilder {
-        crate::operation::list_device_instances::builders::ListDeviceInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_device_instances(&self) -> crate::operation::list_device_instances::builders::ListDeviceInstancesFluentBuilder {
+        crate::operation::list_device_instances::builders::ListDeviceInstancesFluentBuilder::new(self.handle.clone())
     }
 }

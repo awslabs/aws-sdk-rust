@@ -56,16 +56,14 @@ impl ::aws_http::request_id::RequestId for DescribeTopicRefreshScheduleOutput {
 }
 impl DescribeTopicRefreshScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTopicRefreshScheduleOutput`](crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleOutput).
-    pub fn builder() -> crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleOutputBuilder{
+    pub fn builder() -> crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleOutputBuilder {
         crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTopicRefreshScheduleOutput`](crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTopicRefreshScheduleOutputBuilder {
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
@@ -124,17 +122,12 @@ impl DescribeTopicRefreshScheduleOutputBuilder {
         self
     }
     /// <p>The definition of a refresh schedule.</p>
-    pub fn set_refresh_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicRefreshSchedule>,
-    ) -> Self {
+    pub fn set_refresh_schedule(mut self, input: ::std::option::Option<crate::types::TopicRefreshSchedule>) -> Self {
         self.refresh_schedule = input;
         self
     }
     /// <p>The definition of a refresh schedule.</p>
-    pub fn get_refresh_schedule(
-        &self,
-    ) -> &::std::option::Option<crate::types::TopicRefreshSchedule> {
+    pub fn get_refresh_schedule(&self) -> &::std::option::Option<crate::types::TopicRefreshSchedule> {
         &self.refresh_schedule
     }
     /// <p>The HTTP status of the request.</p>
@@ -175,9 +168,7 @@ impl DescribeTopicRefreshScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTopicRefreshScheduleOutput`](crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleOutput {
+    pub fn build(self) -> crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleOutput {
         crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleOutput {
             topic_id: self.topic_id,
             topic_arn: self.topic_arn,

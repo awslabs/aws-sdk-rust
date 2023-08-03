@@ -37,10 +37,7 @@ impl DescribeFlowDefinitionFluentBuilder {
         }
     }
     /// Access the DescribeFlowDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeFlowDefinitionFluentBuilder {
             crate::operation::describe_flow_definition::DescribeFlowDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_flow_definition::DescribeFlowDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_flow_definition::DescribeFlowDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeFlowDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeFlowDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_flow_definition::DescribeFlowDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_flow_definition::DescribeFlowDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_flow_definition::DescribeFlowDefinitionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeFlowDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_flow_definition::DescribeFlowDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_flow_definition::DescribeFlowDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_flow_definition::DescribeFlowDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeFlowDefinitionFluentBuilder {
             crate::operation::describe_flow_definition::DescribeFlowDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_flow_definition::DescribeFlowDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_flow_definition::DescribeFlowDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the flow definition.</p>
-    pub fn flow_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_definition_name(input.into());
         self
     }
     /// <p>The name of the flow definition.</p>
-    pub fn set_flow_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_definition_name(input);
         self
     }

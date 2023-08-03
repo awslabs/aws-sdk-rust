@@ -11,8 +11,7 @@ pub struct DescribeOptedOutNumbersOutput {
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
     #[doc(hidden)]
-    pub opted_out_numbers:
-        ::std::option::Option<::std::vec::Vec<crate::types::OptedOutNumberInformation>>,
+    pub opted_out_numbers: ::std::option::Option<::std::vec::Vec<crate::types::OptedOutNumberInformation>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -28,9 +27,7 @@ impl DescribeOptedOutNumbersOutput {
         self.opt_out_list_name.as_deref()
     }
     /// <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
-    pub fn opted_out_numbers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OptedOutNumberInformation]> {
+    pub fn opted_out_numbers(&self) -> ::std::option::Option<&[crate::types::OptedOutNumberInformation]> {
         self.opted_out_numbers.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
@@ -45,40 +42,29 @@ impl ::aws_http::request_id::RequestId for DescribeOptedOutNumbersOutput {
 }
 impl DescribeOptedOutNumbersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOptedOutNumbersOutput`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersOutputBuilder {
         crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOptedOutNumbersOutput`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOptedOutNumbersOutputBuilder {
     pub(crate) opt_out_list_arn: ::std::option::Option<::std::string::String>,
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
-    pub(crate) opted_out_numbers:
-        ::std::option::Option<::std::vec::Vec<crate::types::OptedOutNumberInformation>>,
+    pub(crate) opted_out_numbers: ::std::option::Option<::std::vec::Vec<crate::types::OptedOutNumberInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeOptedOutNumbersOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
-    pub fn opt_out_list_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
-    pub fn set_opt_out_list_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out_list_arn = input;
         self
     }
@@ -87,18 +73,12 @@ impl DescribeOptedOutNumbersOutputBuilder {
         &self.opt_out_list_arn
     }
     /// <p>The name of the OptOutList.</p>
-    pub fn opt_out_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the OptOutList.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out_list_name = input;
         self
     }
@@ -118,17 +98,12 @@ impl DescribeOptedOutNumbersOutputBuilder {
         self
     }
     /// <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
-    pub fn set_opted_out_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OptedOutNumberInformation>>,
-    ) -> Self {
+    pub fn set_opted_out_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptedOutNumberInformation>>) -> Self {
         self.opted_out_numbers = input;
         self
     }
     /// <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
-    pub fn get_opted_out_numbers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptedOutNumberInformation>> {
+    pub fn get_opted_out_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptedOutNumberInformation>> {
         &self.opted_out_numbers
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
@@ -155,9 +130,7 @@ impl DescribeOptedOutNumbersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeOptedOutNumbersOutput`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput {
+    pub fn build(self) -> crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput {
         crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput {
             opt_out_list_arn: self.opt_out_list_arn,
             opt_out_list_name: self.opt_out_list_name,

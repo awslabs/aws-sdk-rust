@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateLocationSmbOutput {
 }
 impl CreateLocationSmbOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationSmbOutput`](crate::operation::create_location_smb::CreateLocationSmbOutput).
-    pub fn builder(
-    ) -> crate::operation::create_location_smb::builders::CreateLocationSmbOutputBuilder {
+    pub fn builder() -> crate::operation::create_location_smb::builders::CreateLocationSmbOutputBuilder {
         crate::operation::create_location_smb::builders::CreateLocationSmbOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLocationSmbOutput`](crate::operation::create_location_smb::CreateLocationSmbOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocationSmbOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

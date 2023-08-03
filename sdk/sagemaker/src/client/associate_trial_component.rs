@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`trial_component_arn(Option<String>)`](crate::operation::associate_trial_component::AssociateTrialComponentOutput::trial_component_arn): <p>The Amazon Resource Name (ARN) of the trial component.</p>
     ///   - [`trial_arn(Option<String>)`](crate::operation::associate_trial_component::AssociateTrialComponentOutput::trial_arn): <p>The Amazon Resource Name (ARN) of the trial.</p>
     /// - On failure, responds with [`SdkError<AssociateTrialComponentError>`](crate::operation::associate_trial_component::AssociateTrialComponentError)
-    pub fn associate_trial_component(
-        &self,
-    ) -> crate::operation::associate_trial_component::builders::AssociateTrialComponentFluentBuilder
-    {
+    pub fn associate_trial_component(&self) -> crate::operation::associate_trial_component::builders::AssociateTrialComponentFluentBuilder {
         crate::operation::associate_trial_component::builders::AssociateTrialComponentFluentBuilder::new(self.handle.clone())
     }
 }

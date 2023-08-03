@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for ReportTaskRunnerHeartbeatOutput {
 }
 impl ReportTaskRunnerHeartbeatOutput {
     /// Creates a new builder-style object to manufacture [`ReportTaskRunnerHeartbeatOutput`](crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput).
-    pub fn builder() -> crate::operation::report_task_runner_heartbeat::builders::ReportTaskRunnerHeartbeatOutputBuilder{
+    pub fn builder() -> crate::operation::report_task_runner_heartbeat::builders::ReportTaskRunnerHeartbeatOutputBuilder {
         crate::operation::report_task_runner_heartbeat::builders::ReportTaskRunnerHeartbeatOutputBuilder::default()
     }
 }
 
 /// A builder for [`ReportTaskRunnerHeartbeatOutput`](crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportTaskRunnerHeartbeatOutputBuilder {
     pub(crate) terminate: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -61,9 +59,7 @@ impl ReportTaskRunnerHeartbeatOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ReportTaskRunnerHeartbeatOutput`](crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput {
+    pub fn build(self) -> crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput {
         crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput {
             terminate: self.terminate.unwrap_or_default(),
             _request_id: self._request_id,

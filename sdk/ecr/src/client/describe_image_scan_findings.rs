@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`image_scan_findings(Option<ImageScanFindings>)`](crate::operation::describe_image_scan_findings::DescribeImageScanFindingsOutput::image_scan_findings): <p>The information contained in the image scan findings.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_image_scan_findings::DescribeImageScanFindingsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeImageScanFindings</code> request. When the results of a <code>DescribeImageScanFindings</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeImageScanFindingsError>`](crate::operation::describe_image_scan_findings::DescribeImageScanFindingsError)
-    pub fn describe_image_scan_findings(&self) -> crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsFluentBuilder{
+    pub fn describe_image_scan_findings(&self) -> crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsFluentBuilder {
         crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsFluentBuilder::new(self.handle.clone())
     }
 }

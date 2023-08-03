@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RequestCancelActivityTaskFailedCause {
     #[allow(missing_docs)] // documentation missing in model
@@ -58,12 +52,8 @@ impl ::std::convert::From<&str> for RequestCancelActivityTaskFailedCause {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVITY_ID_UNKNOWN" => RequestCancelActivityTaskFailedCause::ActivityIdUnknown,
-            "OPERATION_NOT_PERMITTED" => {
-                RequestCancelActivityTaskFailedCause::OperationNotPermitted
-            }
-            other => RequestCancelActivityTaskFailedCause::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "OPERATION_NOT_PERMITTED" => RequestCancelActivityTaskFailedCause::OperationNotPermitted,
+            other => RequestCancelActivityTaskFailedCause::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -79,9 +69,7 @@ impl RequestCancelActivityTaskFailedCause {
     pub fn as_str(&self) -> &str {
         match self {
             RequestCancelActivityTaskFailedCause::ActivityIdUnknown => "ACTIVITY_ID_UNKNOWN",
-            RequestCancelActivityTaskFailedCause::OperationNotPermitted => {
-                "OPERATION_NOT_PERMITTED"
-            }
+            RequestCancelActivityTaskFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
             RequestCancelActivityTaskFailedCause::Unknown(value) => value.as_str(),
         }
     }

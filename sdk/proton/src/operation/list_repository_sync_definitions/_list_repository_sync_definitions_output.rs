@@ -8,8 +8,7 @@ pub struct ListRepositorySyncDefinitionsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of repository sync definitions.</p>
     #[doc(hidden)]
-    pub sync_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncDefinition>>,
+    pub sync_definitions: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncDefinition>>,
     _request_id: Option<String>,
 }
 impl ListRepositorySyncDefinitionsOutput {
@@ -18,9 +17,7 @@ impl ListRepositorySyncDefinitionsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of repository sync definitions.</p>
-    pub fn sync_definitions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RepositorySyncDefinition]> {
+    pub fn sync_definitions(&self) -> ::std::option::Option<&[crate::types::RepositorySyncDefinition]> {
         self.sync_definitions.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListRepositorySyncDefinitionsOutput {
 }
 impl ListRepositorySyncDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListRepositorySyncDefinitionsOutput`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput).
-    pub fn builder() -> crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsOutputBuilder {
         crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRepositorySyncDefinitionsOutput`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRepositorySyncDefinitionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) sync_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncDefinition>>,
+    pub(crate) sync_definitions: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncDefinition>>,
     _request_id: Option<String>,
 }
 impl ListRepositorySyncDefinitionsOutputBuilder {
@@ -74,17 +68,12 @@ impl ListRepositorySyncDefinitionsOutputBuilder {
         self
     }
     /// <p>An array of repository sync definitions.</p>
-    pub fn set_sync_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncDefinition>>,
-    ) -> Self {
+    pub fn set_sync_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncDefinition>>) -> Self {
         self.sync_definitions = input;
         self
     }
     /// <p>An array of repository sync definitions.</p>
-    pub fn get_sync_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncDefinition>> {
+    pub fn get_sync_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncDefinition>> {
         &self.sync_definitions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,10 +86,7 @@ impl ListRepositorySyncDefinitionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRepositorySyncDefinitionsOutput`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput
-    {
+    pub fn build(self) -> crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput {
         crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput {
             next_token: self.next_token,
             sync_definitions: self.sync_definitions,

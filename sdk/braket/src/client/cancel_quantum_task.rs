@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`quantum_task_arn(Option<String>)`](crate::operation::cancel_quantum_task::CancelQuantumTaskOutput::quantum_task_arn): <p>The ARN of the task.</p>
     ///   - [`cancellation_status(Option<CancellationStatus>)`](crate::operation::cancel_quantum_task::CancelQuantumTaskOutput::cancellation_status): <p>The status of the cancellation request.</p>
     /// - On failure, responds with [`SdkError<CancelQuantumTaskError>`](crate::operation::cancel_quantum_task::CancelQuantumTaskError)
-    pub fn cancel_quantum_task(
-        &self,
-    ) -> crate::operation::cancel_quantum_task::builders::CancelQuantumTaskFluentBuilder {
-        crate::operation::cancel_quantum_task::builders::CancelQuantumTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_quantum_task(&self) -> crate::operation::cancel_quantum_task::builders::CancelQuantumTaskFluentBuilder {
+        crate::operation::cancel_quantum_task::builders::CancelQuantumTaskFluentBuilder::new(self.handle.clone())
     }
 }

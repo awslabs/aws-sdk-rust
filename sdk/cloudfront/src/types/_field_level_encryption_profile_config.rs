@@ -44,9 +44,7 @@ impl FieldLevelEncryptionProfileConfig {
 
 /// A builder for [`FieldLevelEncryptionProfileConfig`](crate::types::FieldLevelEncryptionProfileConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfileConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) caller_reference: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl FieldLevelEncryptionProfileConfigBuilder {
         &self.name
     }
     /// <p>A unique number that ensures that the request can't be replayed.</p>
-    pub fn caller_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique number that ensures that the request can't be replayed.</p>
-    pub fn set_caller_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.caller_reference = input;
         self
     }
@@ -108,17 +100,12 @@ impl FieldLevelEncryptionProfileConfigBuilder {
         self
     }
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
-    pub fn set_encryption_entities(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionEntities>,
-    ) -> Self {
+    pub fn set_encryption_entities(mut self, input: ::std::option::Option<crate::types::EncryptionEntities>) -> Self {
         self.encryption_entities = input;
         self
     }
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
-    pub fn get_encryption_entities(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionEntities> {
+    pub fn get_encryption_entities(&self) -> &::std::option::Option<crate::types::EncryptionEntities> {
         &self.encryption_entities
     }
     /// Consumes the builder and constructs a [`FieldLevelEncryptionProfileConfig`](crate::types::FieldLevelEncryptionProfileConfig).

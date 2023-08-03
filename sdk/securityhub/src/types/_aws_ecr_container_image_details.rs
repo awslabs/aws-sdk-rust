@@ -70,9 +70,7 @@ impl AwsEcrContainerImageDetails {
 
 /// A builder for [`AwsEcrContainerImageDetails`](crate::types::AwsEcrContainerImageDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcrContainerImageDetailsBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -97,18 +95,12 @@ impl AwsEcrContainerImageDetailsBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository that the image belongs to.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository that the image belongs to.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -171,10 +163,7 @@ impl AwsEcrContainerImageDetailsBuilder {
         self
     }
     /// <p>The list of tags that are associated with the image.</p>
-    pub fn set_image_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.image_tags = input;
         self
     }
@@ -184,19 +173,13 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The date and time when the image was pushed to the repository.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn image_published_at(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_published_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_published_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time when the image was pushed to the repository.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_image_published_at(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_published_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_published_at = input;
         self
     }

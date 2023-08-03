@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AutoRollbackEvent {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for AutoRollbackEvent {
             "DEPLOYMENT_FAILURE" => AutoRollbackEvent::DeploymentFailure,
             "DEPLOYMENT_STOP_ON_ALARM" => AutoRollbackEvent::DeploymentStopOnAlarm,
             "DEPLOYMENT_STOP_ON_REQUEST" => AutoRollbackEvent::DeploymentStopOnRequest,
-            other => {
-                AutoRollbackEvent::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AutoRollbackEvent::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl AutoRollbackEvent {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DEPLOYMENT_FAILURE",
-            "DEPLOYMENT_STOP_ON_ALARM",
-            "DEPLOYMENT_STOP_ON_REQUEST",
-        ]
+        &["DEPLOYMENT_FAILURE", "DEPLOYMENT_STOP_ON_ALARM", "DEPLOYMENT_STOP_ON_REQUEST"]
     }
 }
 impl ::std::convert::AsRef<str> for AutoRollbackEvent {

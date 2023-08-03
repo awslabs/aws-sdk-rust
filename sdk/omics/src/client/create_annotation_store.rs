@@ -19,12 +19,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_annotation_store::CreateAnnotationStoreOutput::name): <p>The store's name.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::create_annotation_store::CreateAnnotationStoreOutput::creation_time): <p>When the store was created.</p>
     /// - On failure, responds with [`SdkError<CreateAnnotationStoreError>`](crate::operation::create_annotation_store::CreateAnnotationStoreError)
-    pub fn create_annotation_store(
-        &self,
-    ) -> crate::operation::create_annotation_store::builders::CreateAnnotationStoreFluentBuilder
-    {
-        crate::operation::create_annotation_store::builders::CreateAnnotationStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_annotation_store(&self) -> crate::operation::create_annotation_store::builders::CreateAnnotationStoreFluentBuilder {
+        crate::operation::create_annotation_store::builders::CreateAnnotationStoreFluentBuilder::new(self.handle.clone())
     }
 }

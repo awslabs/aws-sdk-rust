@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StartLendingAnalysisOutput {
 }
 impl StartLendingAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`StartLendingAnalysisOutput`](crate::operation::start_lending_analysis::StartLendingAnalysisOutput).
-    pub fn builder(
-    ) -> crate::operation::start_lending_analysis::builders::StartLendingAnalysisOutputBuilder {
+    pub fn builder() -> crate::operation::start_lending_analysis::builders::StartLendingAnalysisOutputBuilder {
         crate::operation::start_lending_analysis::builders::StartLendingAnalysisOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartLendingAnalysisOutput`](crate::operation::start_lending_analysis::StartLendingAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartLendingAnalysisOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -30,9 +30,7 @@ impl Authentication {
 
 /// A builder for [`Authentication`](crate::types::Authentication).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthenticationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AuthenticationType>,
     pub(crate) password_count: ::std::option::Option<i32>,
@@ -44,10 +42,7 @@ impl AuthenticationBuilder {
         self
     }
     /// <p>Indicates whether the user requires a password to authenticate.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
         self.r#type = input;
         self
     }

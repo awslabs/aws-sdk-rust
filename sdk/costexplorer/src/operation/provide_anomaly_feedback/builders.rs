@@ -37,10 +37,7 @@ impl ProvideAnomalyFeedbackFluentBuilder {
         }
     }
     /// Access the ProvideAnomalyFeedback as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ProvideAnomalyFeedbackFluentBuilder {
             crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ProvideAnomalyFeedbackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ProvideAnomalyFeedbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ProvideAnomalyFeedbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ProvideAnomalyFeedbackFluentBuilder {
             crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +129,7 @@ impl ProvideAnomalyFeedbackFluentBuilder {
         self
     }
     /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
-    pub fn set_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyFeedbackType>,
-    ) -> Self {
+    pub fn set_feedback(mut self, input: ::std::option::Option<crate::types::AnomalyFeedbackType>) -> Self {
         self.inner = self.inner.set_feedback(input);
         self
     }

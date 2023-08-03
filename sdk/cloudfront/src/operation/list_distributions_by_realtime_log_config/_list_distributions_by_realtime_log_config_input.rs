@@ -36,16 +36,14 @@ impl ListDistributionsByRealtimeLogConfigInput {
 }
 impl ListDistributionsByRealtimeLogConfigInput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByRealtimeLogConfigInput`](crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput).
-    pub fn builder() -> crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigInputBuilder{
+    pub fn builder() -> crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigInputBuilder {
         crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDistributionsByRealtimeLogConfigInput`](crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDistributionsByRealtimeLogConfigInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -82,18 +80,12 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
         &self.max_items
     }
     /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
-    pub fn realtime_log_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn realtime_log_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.realtime_log_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
-    pub fn set_realtime_log_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_realtime_log_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.realtime_log_config_name = input;
         self
     }
@@ -102,18 +94,12 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
         &self.realtime_log_config_name
     }
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
-    pub fn realtime_log_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn realtime_log_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.realtime_log_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
-    pub fn set_realtime_log_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_realtime_log_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.realtime_log_config_arn = input;
         self
     }
@@ -122,18 +108,19 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
         &self.realtime_log_config_arn
     }
     /// Consumes the builder and constructs a [`ListDistributionsByRealtimeLogConfigInput`](crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput {
-                marker: self.marker
-                ,
-                max_items: self.max_items
-                ,
-                realtime_log_config_name: self.realtime_log_config_name
-                ,
-                realtime_log_config_arn: self.realtime_log_config_arn
-                ,
-            }
+                marker: self.marker,
+                max_items: self.max_items,
+                realtime_log_config_name: self.realtime_log_config_name,
+                realtime_log_config_arn: self.realtime_log_config_arn,
+            },
         )
     }
 }

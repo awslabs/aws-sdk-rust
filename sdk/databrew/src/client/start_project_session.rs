@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::start_project_session::StartProjectSessionOutput::name): <p>The name of the project to be acted upon.</p>
     ///   - [`client_session_id(Option<String>)`](crate::operation::start_project_session::StartProjectSessionOutput::client_session_id): <p>A system-generated identifier for the session.</p>
     /// - On failure, responds with [`SdkError<StartProjectSessionError>`](crate::operation::start_project_session::StartProjectSessionError)
-    pub fn start_project_session(
-        &self,
-    ) -> crate::operation::start_project_session::builders::StartProjectSessionFluentBuilder {
-        crate::operation::start_project_session::builders::StartProjectSessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_project_session(&self) -> crate::operation::start_project_session::builders::StartProjectSessionFluentBuilder {
+        crate::operation::start_project_session::builders::StartProjectSessionFluentBuilder::new(self.handle.clone())
     }
 }

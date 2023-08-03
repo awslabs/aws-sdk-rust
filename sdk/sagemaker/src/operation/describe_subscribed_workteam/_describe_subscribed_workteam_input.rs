@@ -15,16 +15,14 @@ impl DescribeSubscribedWorkteamInput {
 }
 impl DescribeSubscribedWorkteamInput {
     /// Creates a new builder-style object to manufacture [`DescribeSubscribedWorkteamInput`](crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput).
-    pub fn builder() -> crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamInputBuilder{
+    pub fn builder() -> crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamInputBuilder {
         crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSubscribedWorkteamInput`](crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSubscribedWorkteamInputBuilder {
     pub(crate) workteam_arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,8 @@ impl DescribeSubscribedWorkteamInputBuilder {
         crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput {
-                workteam_arn: self.workteam_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput {
+            workteam_arn: self.workteam_arn,
+        })
     }
 }

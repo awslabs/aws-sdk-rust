@@ -112,9 +112,7 @@ impl AwsApiGatewayMethodSettings {
 
 /// A builder for [`AwsApiGatewayMethodSettings`](crate::types::AwsApiGatewayMethodSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsApiGatewayMethodSettingsBuilder {
     pub(crate) metrics_enabled: ::std::option::Option<bool>,
     pub(crate) logging_level: ::std::option::Option<::std::string::String>,
@@ -125,8 +123,7 @@ pub struct AwsApiGatewayMethodSettingsBuilder {
     pub(crate) cache_ttl_in_seconds: ::std::option::Option<i32>,
     pub(crate) cache_data_encrypted: ::std::option::Option<bool>,
     pub(crate) require_authorization_for_cache_control: ::std::option::Option<bool>,
-    pub(crate) unauthorized_cache_control_header_strategy:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) unauthorized_cache_control_header_strategy: ::std::option::Option<::std::string::String>,
     pub(crate) http_method: ::std::option::Option<::std::string::String>,
     pub(crate) resource_path: ::std::option::Option<::std::string::String>,
 }
@@ -149,10 +146,7 @@ impl AwsApiGatewayMethodSettingsBuilder {
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
     /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
-    pub fn logging_level(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logging_level(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logging_level = ::std::option::Option::Some(input.into());
         self
     }
@@ -160,10 +154,7 @@ impl AwsApiGatewayMethodSettingsBuilder {
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
     /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
-    pub fn set_logging_level(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logging_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logging_level = input;
         self
     }
@@ -264,10 +255,7 @@ impl AwsApiGatewayMethodSettingsBuilder {
         self
     }
     /// <p>Indicates whether authorization is required for a cache invalidation request.</p>
-    pub fn set_require_authorization_for_cache_control(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_require_authorization_for_cache_control(mut self, input: ::std::option::Option<bool>) -> Self {
         self.require_authorization_for_cache_control = input;
         self
     }
@@ -277,27 +265,19 @@ impl AwsApiGatewayMethodSettingsBuilder {
     }
     /// <p>Indicates how to handle unauthorized requests for cache invalidation.</p>
     /// <p>Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code> | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code> </p>
-    pub fn unauthorized_cache_control_header_strategy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn unauthorized_cache_control_header_strategy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unauthorized_cache_control_header_strategy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates how to handle unauthorized requests for cache invalidation.</p>
     /// <p>Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code> | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code> </p>
-    pub fn set_unauthorized_cache_control_header_strategy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_unauthorized_cache_control_header_strategy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unauthorized_cache_control_header_strategy = input;
         self
     }
     /// <p>Indicates how to handle unauthorized requests for cache invalidation.</p>
     /// <p>Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code> | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code> </p>
-    pub fn get_unauthorized_cache_control_header_strategy(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_unauthorized_cache_control_header_strategy(&self) -> &::std::option::Option<::std::string::String> {
         &self.unauthorized_cache_control_header_strategy
     }
     /// <p>The HTTP method. You can use an asterisk (*) as a wildcard to apply method settings to multiple methods.</p>
@@ -317,20 +297,14 @@ impl AwsApiGatewayMethodSettingsBuilder {
     /// <p>The resource path for this method. Forward slashes (/) are encoded as ~1 . The initial slash must include a forward slash.</p>
     /// <p>For example, the path value <code>/resource/subresource</code> must be encoded as <code>/~1resource~1subresource</code>.</p>
     /// <p>To specify the root path, use only a slash (/). You can use an asterisk (*) as a wildcard to apply method settings to multiple methods.</p>
-    pub fn resource_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource path for this method. Forward slashes (/) are encoded as ~1 . The initial slash must include a forward slash.</p>
     /// <p>For example, the path value <code>/resource/subresource</code> must be encoded as <code>/~1resource~1subresource</code>.</p>
     /// <p>To specify the root path, use only a slash (/). You can use an asterisk (*) as a wildcard to apply method settings to multiple methods.</p>
-    pub fn set_resource_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_path = input;
         self
     }
@@ -351,11 +325,8 @@ impl AwsApiGatewayMethodSettingsBuilder {
             caching_enabled: self.caching_enabled.unwrap_or_default(),
             cache_ttl_in_seconds: self.cache_ttl_in_seconds.unwrap_or_default(),
             cache_data_encrypted: self.cache_data_encrypted.unwrap_or_default(),
-            require_authorization_for_cache_control: self
-                .require_authorization_for_cache_control
-                .unwrap_or_default(),
-            unauthorized_cache_control_header_strategy: self
-                .unauthorized_cache_control_header_strategy,
+            require_authorization_for_cache_control: self.require_authorization_for_cache_control.unwrap_or_default(),
+            unauthorized_cache_control_header_strategy: self.unauthorized_cache_control_header_strategy,
             http_method: self.http_method,
             resource_path: self.resource_path,
         }

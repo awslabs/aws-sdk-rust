@@ -10,10 +10,7 @@ impl UpdateEnvironmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_environment::UpdateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment::UpdateEnvironmentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_environment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateEnvironmentFluentBuilder {
         }
     }
     /// Access the UpdateEnvironment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateEnvironmentFluentBuilder {
             crate::operation::update_environment::UpdateEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment::UpdateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateEnvironmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_environment::UpdateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment::UpdateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_environment::UpdateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment::UpdateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateEnvironmentFluentBuilder {
             crate::operation::update_environment::UpdateEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_environment::UpdateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_environment::UpdateEnvironmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the FinSpace environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>The identifier of the FinSpace environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -184,10 +162,7 @@ impl UpdateEnvironmentFluentBuilder {
     /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
     /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
     /// </ul>
-    pub fn set_federation_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::FederationMode>,
-    ) -> Self {
+    pub fn set_federation_mode(mut self, input: ::std::option::Option<crate::types::FederationMode>) -> Self {
         self.inner = self.inner.set_federation_mode(input);
         self
     }
@@ -205,17 +180,12 @@ impl UpdateEnvironmentFluentBuilder {
         self
     }
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
-    pub fn set_federation_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::FederationParameters>,
-    ) -> Self {
+    pub fn set_federation_parameters(mut self, input: ::std::option::Option<crate::types::FederationParameters>) -> Self {
         self.inner = self.inner.set_federation_parameters(input);
         self
     }
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
-    pub fn get_federation_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::FederationParameters> {
+    pub fn get_federation_parameters(&self) -> &::std::option::Option<crate::types::FederationParameters> {
         self.inner.get_federation_parameters()
     }
 }

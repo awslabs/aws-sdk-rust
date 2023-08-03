@@ -21,8 +21,7 @@ pub struct AssessmentMetadata {
     pub status: ::std::option::Option<crate::types::AssessmentStatus>,
     /// <p> The destination that evidence reports are stored in for the assessment. </p>
     #[doc(hidden)]
-    pub assessment_reports_destination:
-        ::std::option::Option<crate::types::AssessmentReportsDestination>,
+    pub assessment_reports_destination: ::std::option::Option<crate::types::AssessmentReportsDestination>,
     /// <p> The wrapper of Amazon Web Services accounts and services that are in scope for the assessment. </p>
     #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
@@ -61,9 +60,7 @@ impl AssessmentMetadata {
         self.status.as_ref()
     }
     /// <p> The destination that evidence reports are stored in for the assessment. </p>
-    pub fn assessment_reports_destination(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AssessmentReportsDestination> {
+    pub fn assessment_reports_destination(&self) -> ::std::option::Option<&crate::types::AssessmentReportsDestination> {
         self.assessment_reports_destination.as_ref()
     }
     /// <p> The wrapper of Amazon Web Services accounts and services that are in scope for the assessment. </p>
@@ -96,17 +93,14 @@ impl AssessmentMetadata {
 
 /// A builder for [`AssessmentMetadata`](crate::types::AssessmentMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssessmentMetadataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) compliance_type: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AssessmentStatus>,
-    pub(crate) assessment_reports_destination:
-        ::std::option::Option<crate::types::AssessmentReportsDestination>,
+    pub(crate) assessment_reports_destination: ::std::option::Option<crate::types::AssessmentReportsDestination>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
     pub(crate) delegations: ::std::option::Option<::std::vec::Vec<crate::types::Delegation>>,
@@ -157,18 +151,12 @@ impl AssessmentMetadataBuilder {
         &self.description
     }
     /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS. </p>
-    pub fn compliance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compliance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compliance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS. </p>
-    pub fn set_compliance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compliance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compliance_type = input;
         self
     }
@@ -182,10 +170,7 @@ impl AssessmentMetadataBuilder {
         self
     }
     /// <p> The overall status of the assessment. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AssessmentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -194,25 +179,17 @@ impl AssessmentMetadataBuilder {
         &self.status
     }
     /// <p> The destination that evidence reports are stored in for the assessment. </p>
-    pub fn assessment_reports_destination(
-        mut self,
-        input: crate::types::AssessmentReportsDestination,
-    ) -> Self {
+    pub fn assessment_reports_destination(mut self, input: crate::types::AssessmentReportsDestination) -> Self {
         self.assessment_reports_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p> The destination that evidence reports are stored in for the assessment. </p>
-    pub fn set_assessment_reports_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentReportsDestination>,
-    ) -> Self {
+    pub fn set_assessment_reports_destination(mut self, input: ::std::option::Option<crate::types::AssessmentReportsDestination>) -> Self {
         self.assessment_reports_destination = input;
         self
     }
     /// <p> The destination that evidence reports are stored in for the assessment. </p>
-    pub fn get_assessment_reports_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
+    pub fn get_assessment_reports_destination(&self) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
         &self.assessment_reports_destination
     }
     /// <p> The wrapper of Amazon Web Services accounts and services that are in scope for the assessment. </p>
@@ -241,10 +218,7 @@ impl AssessmentMetadataBuilder {
         self
     }
     /// <p> The roles that are associated with the assessment. </p>
-    pub fn set_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
-    ) -> Self {
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>) -> Self {
         self.roles = input;
         self
     }
@@ -264,17 +238,12 @@ impl AssessmentMetadataBuilder {
         self
     }
     /// <p> The delegations that are associated with the assessment. </p>
-    pub fn set_delegations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Delegation>>,
-    ) -> Self {
+    pub fn set_delegations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Delegation>>) -> Self {
         self.delegations = input;
         self
     }
     /// <p> The delegations that are associated with the assessment. </p>
-    pub fn get_delegations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Delegation>> {
+    pub fn get_delegations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Delegation>> {
         &self.delegations
     }
     /// <p> Specifies when the assessment was created. </p>
@@ -283,10 +252,7 @@ impl AssessmentMetadataBuilder {
         self
     }
     /// <p> Specifies when the assessment was created. </p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -300,10 +266,7 @@ impl AssessmentMetadataBuilder {
         self
     }
     /// <p> The time of the most recent update. </p>
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }

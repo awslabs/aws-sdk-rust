@@ -39,9 +39,7 @@ impl ListNamespacesOutput {
 
 /// A builder for [`ListNamespacesOutput`](crate::operation::list_namespaces::ListNamespacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNamespacesOutputBuilder {
     pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -60,17 +58,12 @@ impl ListNamespacesOutputBuilder {
         self
     }
     /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
-    pub fn set_namespaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceSummary>>,
-    ) -> Self {
+    pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceSummary>>) -> Self {
         self.namespaces = input;
         self
     }
     /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
-    pub fn get_namespaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NamespaceSummary>> {
+    pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NamespaceSummary>> {
         &self.namespaces
     }
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UntagResourcesOutput`](crate::operation::untag_resources::UntagResourcesOutput) with field(s):
     ///   - [`failed_resources_map(Option<HashMap<String, FailureInfo>>)`](crate::operation::untag_resources::UntagResourcesOutput::failed_resources_map): <p>A map containing a key-value pair for each failed item that couldn't be untagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
     /// - On failure, responds with [`SdkError<UntagResourcesError>`](crate::operation::untag_resources::UntagResourcesError)
-    pub fn untag_resources(
-        &self,
-    ) -> crate::operation::untag_resources::builders::UntagResourcesFluentBuilder {
-        crate::operation::untag_resources::builders::UntagResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn untag_resources(&self) -> crate::operation::untag_resources::builders::UntagResourcesFluentBuilder {
+        crate::operation::untag_resources::builders::UntagResourcesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -17,17 +17,14 @@ impl DescribePublisherInput {
 }
 impl DescribePublisherInput {
     /// Creates a new builder-style object to manufacture [`DescribePublisherInput`](crate::operation::describe_publisher::DescribePublisherInput).
-    pub fn builder() -> crate::operation::describe_publisher::builders::DescribePublisherInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_publisher::builders::DescribePublisherInputBuilder {
         crate::operation::describe_publisher::builders::DescribePublisherInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePublisherInput`](crate::operation::describe_publisher::DescribePublisherInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePublisherInputBuilder {
     pub(crate) publisher_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,14 +49,9 @@ impl DescribePublisherInputBuilder {
     /// Consumes the builder and constructs a [`DescribePublisherInput`](crate::operation::describe_publisher::DescribePublisherInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_publisher::DescribePublisherInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_publisher::DescribePublisherInput {
-                publisher_id: self.publisher_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_publisher::DescribePublisherInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_publisher::DescribePublisherInput {
+            publisher_id: self.publisher_id,
+        })
     }
 }

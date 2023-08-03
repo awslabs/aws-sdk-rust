@@ -11,8 +11,7 @@ pub fn ser_request_http_payload(
 
 pub fn ser_request_payload(
     input: &crate::types::ExchangeCodeForTokenRequestBody,
-) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_exchange_code_for_token_request_body::ser_exchange_code_for_token_request_body(&mut object, input)?;

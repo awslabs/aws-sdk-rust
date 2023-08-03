@@ -22,35 +22,26 @@ impl DeleteScalingPlanInput {
 }
 impl DeleteScalingPlanInput {
     /// Creates a new builder-style object to manufacture [`DeleteScalingPlanInput`](crate::operation::delete_scaling_plan::DeleteScalingPlanInput).
-    pub fn builder(
-    ) -> crate::operation::delete_scaling_plan::builders::DeleteScalingPlanInputBuilder {
+    pub fn builder() -> crate::operation::delete_scaling_plan::builders::DeleteScalingPlanInputBuilder {
         crate::operation::delete_scaling_plan::builders::DeleteScalingPlanInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteScalingPlanInput`](crate::operation::delete_scaling_plan::DeleteScalingPlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteScalingPlanInputBuilder {
     pub(crate) scaling_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_plan_version: ::std::option::Option<i64>,
 }
 impl DeleteScalingPlanInputBuilder {
     /// <p>The name of the scaling plan.</p>
-    pub fn scaling_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scaling_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scaling_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scaling plan.</p>
-    pub fn set_scaling_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scaling_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scaling_plan_name = input;
         self
     }
@@ -75,15 +66,10 @@ impl DeleteScalingPlanInputBuilder {
     /// Consumes the builder and constructs a [`DeleteScalingPlanInput`](crate::operation::delete_scaling_plan::DeleteScalingPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_scaling_plan::DeleteScalingPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_scaling_plan::DeleteScalingPlanInput {
-                scaling_plan_name: self.scaling_plan_name,
-                scaling_plan_version: self.scaling_plan_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_scaling_plan::DeleteScalingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_scaling_plan::DeleteScalingPlanInput {
+            scaling_plan_name: self.scaling_plan_name,
+            scaling_plan_version: self.scaling_plan_version,
+        })
     }
 }

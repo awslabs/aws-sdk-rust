@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`job_start_time(Option<DateTime>)`](crate::operation::describe_discovery_job::DescribeDiscoveryJobOutput::job_start_time): <p>The time when the discovery job started.</p>
     ///   - [`job_end_time(Option<DateTime>)`](crate::operation::describe_discovery_job::DescribeDiscoveryJobOutput::job_end_time): <p>The time when the discovery job ended.</p>
     /// - On failure, responds with [`SdkError<DescribeDiscoveryJobError>`](crate::operation::describe_discovery_job::DescribeDiscoveryJobError)
-    pub fn describe_discovery_job(
-        &self,
-    ) -> crate::operation::describe_discovery_job::builders::DescribeDiscoveryJobFluentBuilder {
-        crate::operation::describe_discovery_job::builders::DescribeDiscoveryJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_discovery_job(&self) -> crate::operation::describe_discovery_job::builders::DescribeDiscoveryJobFluentBuilder {
+        crate::operation::describe_discovery_job::builders::DescribeDiscoveryJobFluentBuilder::new(self.handle.clone())
     }
 }

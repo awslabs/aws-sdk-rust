@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`CreateWebAclMigrationStackOutput`](crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput) with field(s):
     ///   - [`s3_object_url(Option<String>)`](crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput::s3_object_url): <p>The URL of the template created in Amazon S3. </p>
     /// - On failure, responds with [`SdkError<CreateWebACLMigrationStackError>`](crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError)
-    pub fn create_web_acl_migration_stack(&self) -> crate::operation::create_web_acl_migration_stack::builders::CreateWebACLMigrationStackFluentBuilder{
+    pub fn create_web_acl_migration_stack(
+        &self,
+    ) -> crate::operation::create_web_acl_migration_stack::builders::CreateWebACLMigrationStackFluentBuilder {
         crate::operation::create_web_acl_migration_stack::builders::CreateWebACLMigrationStackFluentBuilder::new(self.handle.clone())
     }
 }

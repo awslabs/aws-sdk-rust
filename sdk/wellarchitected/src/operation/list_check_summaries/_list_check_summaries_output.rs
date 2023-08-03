@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListCheckSummariesOutput {
 }
 impl ListCheckSummariesOutput {
     /// Creates a new builder-style object to manufacture [`ListCheckSummariesOutput`](crate::operation::list_check_summaries::ListCheckSummariesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_check_summaries::builders::ListCheckSummariesOutputBuilder {
+    pub fn builder() -> crate::operation::list_check_summaries::builders::ListCheckSummariesOutputBuilder {
         crate::operation::list_check_summaries::builders::ListCheckSummariesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCheckSummariesOutput`](crate::operation::list_check_summaries::ListCheckSummariesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCheckSummariesOutputBuilder {
     pub(crate) check_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CheckSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListCheckSummariesOutputBuilder {
         self
     }
     /// <p>List of Trusted Advisor summaries related to the Well-Architected best practice.</p>
-    pub fn set_check_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CheckSummary>>,
-    ) -> Self {
+    pub fn set_check_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CheckSummary>>) -> Self {
         self.check_summaries = input;
         self
     }
     /// <p>List of Trusted Advisor summaries related to the Well-Architected best practice.</p>
-    pub fn get_check_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CheckSummary>> {
+    pub fn get_check_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CheckSummary>> {
         &self.check_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>

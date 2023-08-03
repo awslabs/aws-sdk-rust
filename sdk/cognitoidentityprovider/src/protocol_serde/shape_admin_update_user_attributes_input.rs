@@ -15,10 +15,7 @@ pub fn ser_admin_update_user_attributes_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_attribute_type::ser_attribute_type(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_attribute_type::ser_attribute_type(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

@@ -44,9 +44,7 @@ impl BucketCountByEncryptionType {
 
 /// A builder for [`BucketCountByEncryptionType`](crate::types::BucketCountByEncryptionType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BucketCountByEncryptionTypeBuilder {
     pub(crate) kms_managed: ::std::option::Option<i64>,
     pub(crate) s3_managed: ::std::option::Option<i64>,

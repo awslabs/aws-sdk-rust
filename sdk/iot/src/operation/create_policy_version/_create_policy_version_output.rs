@@ -43,18 +43,14 @@ impl ::aws_http::request_id::RequestId for CreatePolicyVersionOutput {
 }
 impl CreatePolicyVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreatePolicyVersionOutput`](crate::operation::create_policy_version::CreatePolicyVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_policy_version::builders::CreatePolicyVersionOutputBuilder {
-        crate::operation::create_policy_version::builders::CreatePolicyVersionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_policy_version::builders::CreatePolicyVersionOutputBuilder {
+        crate::operation::create_policy_version::builders::CreatePolicyVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePolicyVersionOutput`](crate::operation::create_policy_version::CreatePolicyVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePolicyVersionOutputBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
@@ -78,18 +74,12 @@ impl CreatePolicyVersionOutputBuilder {
         &self.policy_arn
     }
     /// <p>The JSON document that describes the policy.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON document that describes the policy.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
@@ -98,18 +88,12 @@ impl CreatePolicyVersionOutputBuilder {
         &self.policy_document
     }
     /// <p>The policy version ID.</p>
-    pub fn policy_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy version ID.</p>
-    pub fn set_policy_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_version_id = input;
         self
     }

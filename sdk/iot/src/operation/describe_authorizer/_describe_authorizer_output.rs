@@ -10,9 +10,7 @@ pub struct DescribeAuthorizerOutput {
 }
 impl DescribeAuthorizerOutput {
     /// <p>The authorizer description.</p>
-    pub fn authorizer_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuthorizerDescription> {
+    pub fn authorizer_description(&self) -> ::std::option::Option<&crate::types::AuthorizerDescription> {
         self.authorizer_description.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeAuthorizerOutput {
 }
 impl DescribeAuthorizerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAuthorizerOutput`](crate::operation::describe_authorizer::DescribeAuthorizerOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_authorizer::builders::DescribeAuthorizerOutputBuilder {
+    pub fn builder() -> crate::operation::describe_authorizer::builders::DescribeAuthorizerOutputBuilder {
         crate::operation::describe_authorizer::builders::DescribeAuthorizerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAuthorizerOutput`](crate::operation::describe_authorizer::DescribeAuthorizerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAuthorizerOutputBuilder {
     pub(crate) authorizer_description: ::std::option::Option<crate::types::AuthorizerDescription>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl DescribeAuthorizerOutputBuilder {
         self
     }
     /// <p>The authorizer description.</p>
-    pub fn set_authorizer_description(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizerDescription>,
-    ) -> Self {
+    pub fn set_authorizer_description(mut self, input: ::std::option::Option<crate::types::AuthorizerDescription>) -> Self {
         self.authorizer_description = input;
         self
     }
     /// <p>The authorizer description.</p>
-    pub fn get_authorizer_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthorizerDescription> {
+    pub fn get_authorizer_description(&self) -> &::std::option::Option<crate::types::AuthorizerDescription> {
         &self.authorizer_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

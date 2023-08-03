@@ -58,9 +58,7 @@ impl ComponentLatestVersion {
 
 /// A builder for [`ComponentLatestVersion`](crate::types::ComponentLatestVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentLatestVersionBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) component_version: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl ComponentLatestVersionBuilder {
         &self.arn
     }
     /// <p>The version of the component.</p>
-    pub fn component_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the component.</p>
-    pub fn set_component_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_version = input;
         self
     }
@@ -110,10 +102,7 @@ impl ComponentLatestVersionBuilder {
         self
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -161,17 +150,12 @@ impl ComponentLatestVersionBuilder {
         self
     }
     /// <p>The platforms that the component version supports.</p>
-    pub fn set_platforms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentPlatform>>,
-    ) -> Self {
+    pub fn set_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentPlatform>>) -> Self {
         self.platforms = input;
         self
     }
     /// <p>The platforms that the component version supports.</p>
-    pub fn get_platforms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentPlatform>> {
+    pub fn get_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentPlatform>> {
         &self.platforms
     }
     /// Consumes the builder and constructs a [`ComponentLatestVersion`](crate::types::ComponentLatestVersion).

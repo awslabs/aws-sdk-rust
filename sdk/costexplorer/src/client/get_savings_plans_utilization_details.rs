@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`time_period(Option<DateInterval>)`](crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput::time_period): <p>The time period of the request. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput::next_token): <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     /// - On failure, responds with [`SdkError<GetSavingsPlansUtilizationDetailsError>`](crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError)
-    pub fn get_savings_plans_utilization_details(&self) -> crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsFluentBuilder{
+    pub fn get_savings_plans_utilization_details(
+        &self,
+    ) -> crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsFluentBuilder {
         crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsFluentBuilder::new(self.handle.clone())
     }
 }

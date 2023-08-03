@@ -36,23 +36,19 @@ impl BatchCreatePartitionInput {
 }
 impl BatchCreatePartitionInput {
     /// Creates a new builder-style object to manufacture [`BatchCreatePartitionInput`](crate::operation::batch_create_partition::BatchCreatePartitionInput).
-    pub fn builder(
-    ) -> crate::operation::batch_create_partition::builders::BatchCreatePartitionInputBuilder {
+    pub fn builder() -> crate::operation::batch_create_partition::builders::BatchCreatePartitionInputBuilder {
         crate::operation::batch_create_partition::builders::BatchCreatePartitionInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchCreatePartitionInput`](crate::operation::batch_create_partition::BatchCreatePartitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreatePartitionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) partition_input_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PartitionInput>>,
+    pub(crate) partition_input_list: ::std::option::Option<::std::vec::Vec<crate::types::PartitionInput>>,
 }
 impl BatchCreatePartitionInputBuilder {
     /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID.</p>
@@ -70,18 +66,12 @@ impl BatchCreatePartitionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the metadata database in which the partition is to be created.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the metadata database in which the partition is to be created.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -115,33 +105,24 @@ impl BatchCreatePartitionInputBuilder {
         self
     }
     /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
-    pub fn set_partition_input_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionInput>>,
-    ) -> Self {
+    pub fn set_partition_input_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionInput>>) -> Self {
         self.partition_input_list = input;
         self
     }
     /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
-    pub fn get_partition_input_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionInput>> {
+    pub fn get_partition_input_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionInput>> {
         &self.partition_input_list
     }
     /// Consumes the builder and constructs a [`BatchCreatePartitionInput`](crate::operation::batch_create_partition::BatchCreatePartitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_create_partition::BatchCreatePartitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_create_partition::BatchCreatePartitionInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                partition_input_list: self.partition_input_list,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_create_partition::BatchCreatePartitionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_create_partition::BatchCreatePartitionInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            table_name: self.table_name,
+            partition_input_list: self.partition_input_list,
+        })
     }
 }

@@ -51,9 +51,7 @@ impl SpaceDetails {
 
 /// A builder for [`SpaceDetails`](crate::types::SpaceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpaceDetailsBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl SpaceDetailsBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -127,10 +122,7 @@ impl SpaceDetailsBuilder {
         self
     }
     /// <p>The last modified time.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

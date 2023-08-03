@@ -47,13 +47,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ManagedCredentialsStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -89,23 +83,13 @@ impl ::std::convert::From<&str> for ManagedCredentialsStatus {
             "DISABLED_BY_OWNER" => ManagedCredentialsStatus::DisabledByOwner,
             "ENABLED_BY_OWNER" => ManagedCredentialsStatus::EnabledByOwner,
             "ENABLED_ON_CREATE" => ManagedCredentialsStatus::EnabledOnCreate,
-            "FAILED_REMOVAL_BY_COLLABORATOR" => {
-                ManagedCredentialsStatus::FailedRemovalByCollaborator
-            }
+            "FAILED_REMOVAL_BY_COLLABORATOR" => ManagedCredentialsStatus::FailedRemovalByCollaborator,
             "FAILED_REMOVAL_BY_OWNER" => ManagedCredentialsStatus::FailedRemovalByOwner,
-            "PENDING_REMOVAL_BY_COLLABORATOR" => {
-                ManagedCredentialsStatus::PendingRemovalByCollaborator
-            }
+            "PENDING_REMOVAL_BY_COLLABORATOR" => ManagedCredentialsStatus::PendingRemovalByCollaborator,
             "PENDING_REMOVAL_BY_OWNER" => ManagedCredentialsStatus::PendingRemovalByOwner,
-            "PENDING_START_REMOVAL_BY_COLLABORATOR" => {
-                ManagedCredentialsStatus::PendingStartRemovalByCollaborator
-            }
-            "PENDING_START_REMOVAL_BY_OWNER" => {
-                ManagedCredentialsStatus::PendingStartRemovalByOwner
-            }
-            other => ManagedCredentialsStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "PENDING_START_REMOVAL_BY_COLLABORATOR" => ManagedCredentialsStatus::PendingStartRemovalByCollaborator,
+            "PENDING_START_REMOVAL_BY_OWNER" => ManagedCredentialsStatus::PendingStartRemovalByOwner,
+            other => ManagedCredentialsStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -125,20 +109,12 @@ impl ManagedCredentialsStatus {
             ManagedCredentialsStatus::DisabledByOwner => "DISABLED_BY_OWNER",
             ManagedCredentialsStatus::EnabledByOwner => "ENABLED_BY_OWNER",
             ManagedCredentialsStatus::EnabledOnCreate => "ENABLED_ON_CREATE",
-            ManagedCredentialsStatus::FailedRemovalByCollaborator => {
-                "FAILED_REMOVAL_BY_COLLABORATOR"
-            }
+            ManagedCredentialsStatus::FailedRemovalByCollaborator => "FAILED_REMOVAL_BY_COLLABORATOR",
             ManagedCredentialsStatus::FailedRemovalByOwner => "FAILED_REMOVAL_BY_OWNER",
-            ManagedCredentialsStatus::PendingRemovalByCollaborator => {
-                "PENDING_REMOVAL_BY_COLLABORATOR"
-            }
+            ManagedCredentialsStatus::PendingRemovalByCollaborator => "PENDING_REMOVAL_BY_COLLABORATOR",
             ManagedCredentialsStatus::PendingRemovalByOwner => "PENDING_REMOVAL_BY_OWNER",
-            ManagedCredentialsStatus::PendingStartRemovalByCollaborator => {
-                "PENDING_START_REMOVAL_BY_COLLABORATOR"
-            }
-            ManagedCredentialsStatus::PendingStartRemovalByOwner => {
-                "PENDING_START_REMOVAL_BY_OWNER"
-            }
+            ManagedCredentialsStatus::PendingStartRemovalByCollaborator => "PENDING_START_REMOVAL_BY_COLLABORATOR",
+            ManagedCredentialsStatus::PendingStartRemovalByOwner => "PENDING_START_REMOVAL_BY_OWNER",
             ManagedCredentialsStatus::Unknown(value) => value.as_str(),
         }
     }

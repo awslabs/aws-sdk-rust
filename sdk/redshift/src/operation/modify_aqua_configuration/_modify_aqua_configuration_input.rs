@@ -16,45 +16,32 @@ impl ModifyAquaConfigurationInput {
         self.cluster_identifier.as_deref()
     }
     /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    pub fn aqua_configuration_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AquaConfigurationStatus> {
+    pub fn aqua_configuration_status(&self) -> ::std::option::Option<&crate::types::AquaConfigurationStatus> {
         self.aqua_configuration_status.as_ref()
     }
 }
 impl ModifyAquaConfigurationInput {
     /// Creates a new builder-style object to manufacture [`ModifyAquaConfigurationInput`](crate::operation::modify_aqua_configuration::ModifyAquaConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::modify_aqua_configuration::builders::ModifyAquaConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_aqua_configuration::builders::ModifyAquaConfigurationInputBuilder {
         crate::operation::modify_aqua_configuration::builders::ModifyAquaConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyAquaConfigurationInput`](crate::operation::modify_aqua_configuration::ModifyAquaConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyAquaConfigurationInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) aqua_configuration_status:
-        ::std::option::Option<crate::types::AquaConfigurationStatus>,
+    pub(crate) aqua_configuration_status: ::std::option::Option<crate::types::AquaConfigurationStatus>,
 }
 impl ModifyAquaConfigurationInputBuilder {
     /// <p>The identifier of the cluster to be modified.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster to be modified.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -63,25 +50,17 @@ impl ModifyAquaConfigurationInputBuilder {
         &self.cluster_identifier
     }
     /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    pub fn aqua_configuration_status(
-        mut self,
-        input: crate::types::AquaConfigurationStatus,
-    ) -> Self {
+    pub fn aqua_configuration_status(mut self, input: crate::types::AquaConfigurationStatus) -> Self {
         self.aqua_configuration_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    pub fn set_aqua_configuration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AquaConfigurationStatus>,
-    ) -> Self {
+    pub fn set_aqua_configuration_status(mut self, input: ::std::option::Option<crate::types::AquaConfigurationStatus>) -> Self {
         self.aqua_configuration_status = input;
         self
     }
     /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    pub fn get_aqua_configuration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AquaConfigurationStatus> {
+    pub fn get_aqua_configuration_status(&self) -> &::std::option::Option<crate::types::AquaConfigurationStatus> {
         &self.aqua_configuration_status
     }
     /// Consumes the builder and constructs a [`ModifyAquaConfigurationInput`](crate::operation::modify_aqua_configuration::ModifyAquaConfigurationInput).
@@ -91,11 +70,9 @@ impl ModifyAquaConfigurationInputBuilder {
         crate::operation::modify_aqua_configuration::ModifyAquaConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_aqua_configuration::ModifyAquaConfigurationInput {
-                cluster_identifier: self.cluster_identifier,
-                aqua_configuration_status: self.aqua_configuration_status,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_aqua_configuration::ModifyAquaConfigurationInput {
+            cluster_identifier: self.cluster_identifier,
+            aqua_configuration_status: self.aqua_configuration_status,
+        })
     }
 }

@@ -22,18 +22,14 @@ impl DeleteContactEvaluationInput {
 }
 impl DeleteContactEvaluationInput {
     /// Creates a new builder-style object to manufacture [`DeleteContactEvaluationInput`](crate::operation::delete_contact_evaluation::DeleteContactEvaluationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_contact_evaluation::builders::DeleteContactEvaluationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_contact_evaluation::builders::DeleteContactEvaluationInputBuilder {
         crate::operation::delete_contact_evaluation::builders::DeleteContactEvaluationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteContactEvaluationInput`](crate::operation::delete_contact_evaluation::DeleteContactEvaluationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteContactEvaluationInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DeleteContactEvaluationInputBuilder {
         &self.instance_id
     }
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn set_evaluation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_id = input;
         self
     }
@@ -80,11 +70,9 @@ impl DeleteContactEvaluationInputBuilder {
         crate::operation::delete_contact_evaluation::DeleteContactEvaluationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_contact_evaluation::DeleteContactEvaluationInput {
-                instance_id: self.instance_id,
-                evaluation_id: self.evaluation_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_contact_evaluation::DeleteContactEvaluationInput {
+            instance_id: self.instance_id,
+            evaluation_id: self.evaluation_id,
+        })
     }
 }

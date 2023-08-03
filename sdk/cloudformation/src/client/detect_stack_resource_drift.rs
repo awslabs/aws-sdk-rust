@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DetectStackResourceDriftOutput`](crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput) with field(s):
     ///   - [`stack_resource_drift(Option<StackResourceDrift>)`](crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput::stack_resource_drift): <p>Information about whether the resource's actual configuration has drifted from its expected template configuration, including actual and expected property values and any differences detected.</p>
     /// - On failure, responds with [`SdkError<DetectStackResourceDriftError>`](crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError)
-    pub fn detect_stack_resource_drift(&self) -> crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftFluentBuilder{
+    pub fn detect_stack_resource_drift(&self) -> crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftFluentBuilder {
         crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftFluentBuilder::new(self.handle.clone())
     }
 }

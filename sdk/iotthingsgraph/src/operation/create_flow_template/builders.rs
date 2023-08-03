@@ -10,10 +10,7 @@ impl CreateFlowTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_flow_template::CreateFlowTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_flow_template::CreateFlowTemplateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flow_template::CreateFlowTemplateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_flow_template();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateFlowTemplateFluentBuilder {
         }
     }
     /// Access the CreateFlowTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_flow_template::builders::CreateFlowTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_flow_template::builders::CreateFlowTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateFlowTemplateFluentBuilder {
             crate::operation::create_flow_template::CreateFlowTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_flow_template::CreateFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flow_template::CreateFlowTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateFlowTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateFlowTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_flow_template::CreateFlowTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_flow_template::CreateFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flow_template::CreateFlowTemplateError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateFlowTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_flow_template::CreateFlowTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_flow_template::CreateFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flow_template::CreateFlowTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateFlowTemplateFluentBuilder {
             crate::operation::create_flow_template::CreateFlowTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_flow_template::CreateFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flow_template::CreateFlowTemplateError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +113,7 @@ impl CreateFlowTemplateFluentBuilder {
         self
     }
     /// <p>The workflow <code>DefinitionDocument</code>.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DefinitionDocument>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }

@@ -51,9 +51,7 @@ impl UserDataFilters {
 
 /// A builder for [`UserDataFilters`](crate::types::UserDataFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserDataFiltersBuilder {
     pub(crate) queues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) contact_filter: ::std::option::Option<crate::types::ContactFilter>,
@@ -74,10 +72,7 @@ impl UserDataFiltersBuilder {
         self
     }
     /// <p>A list of up to 100 queues or ARNs.</p>
-    pub fn set_queues(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_queues(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.queues = input;
         self
     }
@@ -91,10 +86,7 @@ impl UserDataFiltersBuilder {
         self
     }
     /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
-    pub fn set_contact_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactFilter>,
-    ) -> Self {
+    pub fn set_contact_filter(mut self, input: ::std::option::Option<crate::types::ContactFilter>) -> Self {
         self.contact_filter = input;
         self
     }
@@ -107,27 +99,19 @@ impl UserDataFiltersBuilder {
     /// To override the contents of this collection use [`set_routing_profiles`](Self::set_routing_profiles).
     ///
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    pub fn routing_profiles(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_profiles(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.routing_profiles.unwrap_or_default();
         v.push(input.into());
         self.routing_profiles = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    pub fn set_routing_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_routing_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.routing_profiles = input;
         self
     }
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    pub fn get_routing_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_routing_profiles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.routing_profiles
     }
     /// Appends an item to `agents`.
@@ -142,10 +126,7 @@ impl UserDataFiltersBuilder {
         self
     }
     /// <p>A list of up to 100 agent IDs or ARNs.</p>
-    pub fn set_agents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agents(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agents = input;
         self
     }
@@ -158,27 +139,19 @@ impl UserDataFiltersBuilder {
     /// To override the contents of this collection use [`set_user_hierarchy_groups`](Self::set_user_hierarchy_groups).
     ///
     /// <p>A UserHierarchyGroup ID or ARN.</p>
-    pub fn user_hierarchy_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_hierarchy_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_hierarchy_groups.unwrap_or_default();
         v.push(input.into());
         self.user_hierarchy_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A UserHierarchyGroup ID or ARN.</p>
-    pub fn set_user_hierarchy_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_hierarchy_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_hierarchy_groups = input;
         self
     }
     /// <p>A UserHierarchyGroup ID or ARN.</p>
-    pub fn get_user_hierarchy_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_hierarchy_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.user_hierarchy_groups
     }
     /// Consumes the builder and constructs a [`UserDataFilters`](crate::types::UserDataFilters).

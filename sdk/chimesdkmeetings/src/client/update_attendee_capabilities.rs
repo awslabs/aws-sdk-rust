@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAttendeeCapabilitiesOutput`](crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesOutput) with field(s):
     ///   - [`attendee(Option<Attendee>)`](crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesOutput::attendee): <p>The updated attendee data.</p>
     /// - On failure, responds with [`SdkError<UpdateAttendeeCapabilitiesError>`](crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesError)
-    pub fn update_attendee_capabilities(&self) -> crate::operation::update_attendee_capabilities::builders::UpdateAttendeeCapabilitiesFluentBuilder{
+    pub fn update_attendee_capabilities(&self) -> crate::operation::update_attendee_capabilities::builders::UpdateAttendeeCapabilitiesFluentBuilder {
         crate::operation::update_attendee_capabilities::builders::UpdateAttendeeCapabilitiesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl StartActivityStreamFluentBuilder {
         }
     }
     /// Access the StartActivityStream as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_activity_stream::builders::StartActivityStreamInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_activity_stream::builders::StartActivityStreamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl StartActivityStreamFluentBuilder {
             crate::operation::start_activity_stream::StartActivityStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_activity_stream::StartActivityStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_activity_stream::StartActivityStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl StartActivityStreamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl StartActivityStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_activity_stream::StartActivityStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_activity_stream::StartActivityStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_activity_stream::StartActivityStreamError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl StartActivityStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_activity_stream::StartActivityStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_activity_stream::StartActivityStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_activity_stream::StartActivityStreamError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl StartActivityStreamFluentBuilder {
             crate::operation::start_activity_stream::StartActivityStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_activity_stream::StartActivityStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_activity_stream::StartActivityStreamError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +129,7 @@ impl StartActivityStreamFluentBuilder {
         self
     }
     /// <p>Specifies the mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously.</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivityStreamMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ActivityStreamMode>) -> Self {
         self.inner = self.inner.set_mode(input);
         self
     }
@@ -187,10 +171,7 @@ impl StartActivityStreamFluentBuilder {
         self
     }
     /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option applies to an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.</p>
-    pub fn set_engine_native_audit_fields_included(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_engine_native_audit_fields_included(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_engine_native_audit_fields_included(input);
         self
     }

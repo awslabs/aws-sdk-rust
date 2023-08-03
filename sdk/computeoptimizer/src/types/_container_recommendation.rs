@@ -20,9 +20,7 @@ impl ContainerRecommendation {
         self.container_name.as_deref()
     }
     /// <p> The recommended memory size configurations for the container. </p>
-    pub fn memory_size_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MemorySizeConfiguration> {
+    pub fn memory_size_configuration(&self) -> ::std::option::Option<&crate::types::MemorySizeConfiguration> {
         self.memory_size_configuration.as_ref()
     }
     /// <p> The recommended number of CPU units reserved for the container. </p>
@@ -39,29 +37,20 @@ impl ContainerRecommendation {
 
 /// A builder for [`ContainerRecommendation`](crate::types::ContainerRecommendation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerRecommendationBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
-    pub(crate) memory_size_configuration:
-        ::std::option::Option<crate::types::MemorySizeConfiguration>,
+    pub(crate) memory_size_configuration: ::std::option::Option<crate::types::MemorySizeConfiguration>,
     pub(crate) cpu: ::std::option::Option<i32>,
 }
 impl ContainerRecommendationBuilder {
     /// <p> The name of the container. </p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the container. </p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }
@@ -70,25 +59,17 @@ impl ContainerRecommendationBuilder {
         &self.container_name
     }
     /// <p> The recommended memory size configurations for the container. </p>
-    pub fn memory_size_configuration(
-        mut self,
-        input: crate::types::MemorySizeConfiguration,
-    ) -> Self {
+    pub fn memory_size_configuration(mut self, input: crate::types::MemorySizeConfiguration) -> Self {
         self.memory_size_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> The recommended memory size configurations for the container. </p>
-    pub fn set_memory_size_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MemorySizeConfiguration>,
-    ) -> Self {
+    pub fn set_memory_size_configuration(mut self, input: ::std::option::Option<crate::types::MemorySizeConfiguration>) -> Self {
         self.memory_size_configuration = input;
         self
     }
     /// <p> The recommended memory size configurations for the container. </p>
-    pub fn get_memory_size_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MemorySizeConfiguration> {
+    pub fn get_memory_size_configuration(&self) -> &::std::option::Option<crate::types::MemorySizeConfiguration> {
         &self.memory_size_configuration
     }
     /// <p> The recommended number of CPU units reserved for the container. </p>

@@ -46,17 +46,14 @@ impl ListReportGroupsInput {
 }
 impl ListReportGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListReportGroupsInput`](crate::operation::list_report_groups::ListReportGroupsInput).
-    pub fn builder() -> crate::operation::list_report_groups::builders::ListReportGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_report_groups::builders::ListReportGroupsInputBuilder {
         crate::operation::list_report_groups::builders::ListReportGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReportGroupsInput`](crate::operation::list_report_groups::ListReportGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReportGroupsInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrderType>,
     pub(crate) sort_by: ::std::option::Option<crate::types::ReportGroupSortByType>,
@@ -70,10 +67,7 @@ impl ListReportGroupsInputBuilder {
         self
     }
     /// <p> Used to specify the order to sort the list of returned report groups. Valid values are <code>ASCENDING</code> and <code>DESCENDING</code>. </p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.sort_order = input;
         self
     }
@@ -97,10 +91,7 @@ impl ListReportGroupsInputBuilder {
     /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p> </li>
     /// <li> <p> <code>NAME</code>: List based on each report group's name.</p> </li>
     /// </ul>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportGroupSortByType>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ReportGroupSortByType>) -> Self {
         self.sort_by = input;
         self
     }
@@ -144,17 +135,12 @@ impl ListReportGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListReportGroupsInput`](crate::operation::list_report_groups::ListReportGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_report_groups::ListReportGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_report_groups::ListReportGroupsInput {
-                sort_order: self.sort_order,
-                sort_by: self.sort_by,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_report_groups::ListReportGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_report_groups::ListReportGroupsInput {
+            sort_order: self.sort_order,
+            sort_by: self.sort_by,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

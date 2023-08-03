@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AttachmentType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for AttachmentType {
             "SITE_TO_SITE_VPN" => AttachmentType::SiteToSiteVpn,
             "TRANSIT_GATEWAY_ROUTE_TABLE" => AttachmentType::TransitGatewayRouteTable,
             "VPC" => AttachmentType::Vpc,
-            other => {
-                AttachmentType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AttachmentType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl AttachmentType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONNECT",
-            "SITE_TO_SITE_VPN",
-            "TRANSIT_GATEWAY_ROUTE_TABLE",
-            "VPC",
-        ]
+        &["CONNECT", "SITE_TO_SITE_VPN", "TRANSIT_GATEWAY_ROUTE_TABLE", "VPC"]
     }
 }
 impl ::std::convert::AsRef<str> for AttachmentType {

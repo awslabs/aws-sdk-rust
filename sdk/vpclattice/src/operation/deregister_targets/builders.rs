@@ -10,10 +10,7 @@ impl DeregisterTargetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::deregister_targets::DeregisterTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_targets::DeregisterTargetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_targets::DeregisterTargetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.deregister_targets();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeregisterTargetsFluentBuilder {
         }
     }
     /// Access the DeregisterTargets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deregister_targets::builders::DeregisterTargetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::deregister_targets::builders::DeregisterTargetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeregisterTargetsFluentBuilder {
             crate::operation::deregister_targets::DeregisterTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_targets::DeregisterTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_targets::DeregisterTargetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeregisterTargetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeregisterTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_targets::DeregisterTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_targets::DeregisterTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_targets::DeregisterTargetsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeregisterTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_targets::DeregisterTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_targets::DeregisterTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_targets::DeregisterTargetsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeregisterTargetsFluentBuilder {
             crate::operation::deregister_targets::DeregisterTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_targets::DeregisterTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_targets::DeregisterTargetsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_group_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_group_identifier(input);
         self
     }
@@ -152,10 +130,7 @@ impl DeregisterTargetsFluentBuilder {
         self
     }
     /// <p>The targets to deregister.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }

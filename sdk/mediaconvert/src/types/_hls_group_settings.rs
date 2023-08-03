@@ -9,8 +9,7 @@ pub struct HlsGroupSettings {
     pub ad_markers: ::std::option::Option<::std::vec::Vec<crate::types::HlsAdMarkers>>,
     /// By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job. This default manifest references every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here.
     #[doc(hidden)]
-    pub additional_manifests:
-        ::std::option::Option<::std::vec::Vec<crate::types::HlsAdditionalManifest>>,
+    pub additional_manifests: ::std::option::Option<::std::vec::Vec<crate::types::HlsAdditionalManifest>>,
     /// Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the default value, Include, to output audio-only headers. Choose Exclude to remove the audio-only headers from your audio segments.
     #[doc(hidden)]
     pub audio_only_header: ::std::option::Option<crate::types::HlsAudioOnlyHeader>,
@@ -19,15 +18,13 @@ pub struct HlsGroupSettings {
     pub base_url: ::std::option::Option<::std::string::String>,
     /// Language to be used on Caption outputs
     #[doc(hidden)]
-    pub caption_language_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::HlsCaptionLanguageMapping>>,
+    pub caption_language_mappings: ::std::option::Option<::std::vec::Vec<crate::types::HlsCaptionLanguageMapping>>,
     /// Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest.
     #[doc(hidden)]
     pub caption_language_setting: ::std::option::Option<crate::types::HlsCaptionLanguageSetting>,
     /// Set Caption segment length control to Match video to create caption segments that align with the video segments from the first video output in this output group. For example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments to create caption segments that are 300 seconds long.
     #[doc(hidden)]
-    pub caption_segment_length_control:
-        ::std::option::Option<crate::types::HlsCaptionSegmentLengthControl>,
+    pub caption_segment_length_control: ::std::option::Option<crate::types::HlsCaptionSegmentLengthControl>,
     /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http header.
     #[doc(hidden)]
     pub client_cache: ::std::option::Option<crate::types::HlsClientCache>,
@@ -51,8 +48,7 @@ pub struct HlsGroupSettings {
     pub image_based_trick_play: ::std::option::Option<crate::types::HlsImageBasedTrickPlay>,
     /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
     #[doc(hidden)]
-    pub image_based_trick_play_settings:
-        ::std::option::Option<crate::types::HlsImageBasedTrickPlaySettings>,
+    pub image_based_trick_play_settings: ::std::option::Option<crate::types::HlsImageBasedTrickPlaySettings>,
     /// When set to GZIP, compresses HLS playlist.
     #[doc(hidden)]
     pub manifest_compression: ::std::option::Option<crate::types::HlsManifestCompression>,
@@ -76,8 +72,7 @@ pub struct HlsGroupSettings {
     pub program_date_time_period: ::std::option::Option<i32>,
     /// Specify whether MediaConvert generates HLS manifests while your job is running or when your job is complete. To generate HLS manifests while your job is running: Choose Enabled. Use if you want to play back your content as soon as it's available. MediaConvert writes the parent and child manifests after the first three media segments are written to your destination S3 bucket. It then writes new updated manifests after each additional segment is written. The parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes, and child manifests include the latest available media segment. When your job completes, the final child playlists include an EXT-X-ENDLIST tag. To generate HLS manifests only when your job completes: Choose Disabled.
     #[doc(hidden)]
-    pub progressive_write_hls_manifest:
-        ::std::option::Option<crate::types::HlsProgressiveWriteHlsManifest>,
+    pub progressive_write_hls_manifest: ::std::option::Option<crate::types::HlsProgressiveWriteHlsManifest>,
     /// When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index segment for playback.
     #[doc(hidden)]
     pub segment_control: ::std::option::Option<crate::types::HlsSegmentControl>,
@@ -95,8 +90,7 @@ pub struct HlsGroupSettings {
     pub stream_inf_resolution: ::std::option::Option<crate::types::HlsStreamInfResolution>,
     /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
     #[doc(hidden)]
-    pub target_duration_compatibility_mode:
-        ::std::option::Option<crate::types::HlsTargetDurationCompatibilityMode>,
+    pub target_duration_compatibility_mode: ::std::option::Option<crate::types::HlsTargetDurationCompatibilityMode>,
     /// Specify the type of the ID3 frame to use for ID3 timestamps in your output. To include ID3 timestamps: Specify PRIV or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to None.
     #[doc(hidden)]
     pub timed_metadata_id3_frame: ::std::option::Option<crate::types::HlsTimedMetadataId3Frame>,
@@ -113,9 +107,7 @@ impl HlsGroupSettings {
         self.ad_markers.as_deref()
     }
     /// By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job. This default manifest references every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here.
-    pub fn additional_manifests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HlsAdditionalManifest]> {
+    pub fn additional_manifests(&self) -> ::std::option::Option<&[crate::types::HlsAdditionalManifest]> {
         self.additional_manifests.as_deref()
     }
     /// Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the default value, Include, to output audio-only headers. Choose Exclude to remove the audio-only headers from your audio segments.
@@ -127,21 +119,15 @@ impl HlsGroupSettings {
         self.base_url.as_deref()
     }
     /// Language to be used on Caption outputs
-    pub fn caption_language_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HlsCaptionLanguageMapping]> {
+    pub fn caption_language_mappings(&self) -> ::std::option::Option<&[crate::types::HlsCaptionLanguageMapping]> {
         self.caption_language_mappings.as_deref()
     }
     /// Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest.
-    pub fn caption_language_setting(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsCaptionLanguageSetting> {
+    pub fn caption_language_setting(&self) -> ::std::option::Option<&crate::types::HlsCaptionLanguageSetting> {
         self.caption_language_setting.as_ref()
     }
     /// Set Caption segment length control to Match video to create caption segments that align with the video segments from the first video output in this output group. For example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments to create caption segments that are 300 seconds long.
-    pub fn caption_segment_length_control(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsCaptionSegmentLengthControl> {
+    pub fn caption_segment_length_control(&self) -> ::std::option::Option<&crate::types::HlsCaptionSegmentLengthControl> {
         self.caption_segment_length_control.as_ref()
     }
     /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http header.
@@ -149,9 +135,7 @@ impl HlsGroupSettings {
         self.client_cache.as_ref()
     }
     /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
-    pub fn codec_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsCodecSpecification> {
+    pub fn codec_specification(&self) -> ::std::option::Option<&crate::types::HlsCodecSpecification> {
         self.codec_specification.as_ref()
     }
     /// Use Destination to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
@@ -159,15 +143,11 @@ impl HlsGroupSettings {
         self.destination.as_deref()
     }
     /// Settings associated with the destination. Will vary based on the type of destination
-    pub fn destination_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DestinationSettings> {
+    pub fn destination_settings(&self) -> ::std::option::Option<&crate::types::DestinationSettings> {
         self.destination_settings.as_ref()
     }
     /// Indicates whether segments should be placed in subdirectories.
-    pub fn directory_structure(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsDirectoryStructure> {
+    pub fn directory_structure(&self) -> ::std::option::Option<&crate::types::HlsDirectoryStructure> {
         self.directory_structure.as_ref()
     }
     /// DRM settings.
@@ -175,27 +155,19 @@ impl HlsGroupSettings {
         self.encryption.as_ref()
     }
     /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
-    pub fn image_based_trick_play(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsImageBasedTrickPlay> {
+    pub fn image_based_trick_play(&self) -> ::std::option::Option<&crate::types::HlsImageBasedTrickPlay> {
         self.image_based_trick_play.as_ref()
     }
     /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
-    pub fn image_based_trick_play_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsImageBasedTrickPlaySettings> {
+    pub fn image_based_trick_play_settings(&self) -> ::std::option::Option<&crate::types::HlsImageBasedTrickPlaySettings> {
         self.image_based_trick_play_settings.as_ref()
     }
     /// When set to GZIP, compresses HLS playlist.
-    pub fn manifest_compression(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsManifestCompression> {
+    pub fn manifest_compression(&self) -> ::std::option::Option<&crate::types::HlsManifestCompression> {
         self.manifest_compression.as_ref()
     }
     /// Indicates whether the output manifest should use floating point values for segment duration.
-    pub fn manifest_duration_format(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsManifestDurationFormat> {
+    pub fn manifest_duration_format(&self) -> ::std::option::Option<&crate::types::HlsManifestDurationFormat> {
         self.manifest_duration_format.as_ref()
     }
     /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
@@ -219,9 +191,7 @@ impl HlsGroupSettings {
         self.program_date_time_period
     }
     /// Specify whether MediaConvert generates HLS manifests while your job is running or when your job is complete. To generate HLS manifests while your job is running: Choose Enabled. Use if you want to play back your content as soon as it's available. MediaConvert writes the parent and child manifests after the first three media segments are written to your destination S3 bucket. It then writes new updated manifests after each additional segment is written. The parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes, and child manifests include the latest available media segment. When your job completes, the final child playlists include an EXT-X-ENDLIST tag. To generate HLS manifests only when your job completes: Choose Disabled.
-    pub fn progressive_write_hls_manifest(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsProgressiveWriteHlsManifest> {
+    pub fn progressive_write_hls_manifest(&self) -> ::std::option::Option<&crate::types::HlsProgressiveWriteHlsManifest> {
         self.progressive_write_hls_manifest.as_ref()
     }
     /// When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index segment for playback.
@@ -233,9 +203,7 @@ impl HlsGroupSettings {
         self.segment_length
     }
     /// Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
-    pub fn segment_length_control(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsSegmentLengthControl> {
+    pub fn segment_length_control(&self) -> ::std::option::Option<&crate::types::HlsSegmentLengthControl> {
         self.segment_length_control.as_ref()
     }
     /// Specify the number of segments to write to a subdirectory before starting a new one. You must also set Directory structure to Subdirectory per stream for this setting to have an effect.
@@ -243,21 +211,15 @@ impl HlsGroupSettings {
         self.segments_per_subdirectory
     }
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
-    pub fn stream_inf_resolution(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsStreamInfResolution> {
+    pub fn stream_inf_resolution(&self) -> ::std::option::Option<&crate::types::HlsStreamInfResolution> {
         self.stream_inf_resolution.as_ref()
     }
     /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
-    pub fn target_duration_compatibility_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsTargetDurationCompatibilityMode> {
+    pub fn target_duration_compatibility_mode(&self) -> ::std::option::Option<&crate::types::HlsTargetDurationCompatibilityMode> {
         self.target_duration_compatibility_mode.as_ref()
     }
     /// Specify the type of the ID3 frame to use for ID3 timestamps in your output. To include ID3 timestamps: Specify PRIV or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to None.
-    pub fn timed_metadata_id3_frame(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsTimedMetadataId3Frame> {
+    pub fn timed_metadata_id3_frame(&self) -> ::std::option::Option<&crate::types::HlsTimedMetadataId3Frame> {
         self.timed_metadata_id3_frame.as_ref()
     }
     /// Specify the interval in seconds to write ID3 timestamps in your output. The first timestamp starts at the output timecode and date, and increases incrementally with each ID3 timestamp. To use the default interval of 10 seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type to PRIV or TDRL, and set ID3 metadata to Passthrough.
@@ -278,21 +240,15 @@ impl HlsGroupSettings {
 
 /// A builder for [`HlsGroupSettings`](crate::types::HlsGroupSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsGroupSettingsBuilder {
     pub(crate) ad_markers: ::std::option::Option<::std::vec::Vec<crate::types::HlsAdMarkers>>,
-    pub(crate) additional_manifests:
-        ::std::option::Option<::std::vec::Vec<crate::types::HlsAdditionalManifest>>,
+    pub(crate) additional_manifests: ::std::option::Option<::std::vec::Vec<crate::types::HlsAdditionalManifest>>,
     pub(crate) audio_only_header: ::std::option::Option<crate::types::HlsAudioOnlyHeader>,
     pub(crate) base_url: ::std::option::Option<::std::string::String>,
-    pub(crate) caption_language_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::HlsCaptionLanguageMapping>>,
-    pub(crate) caption_language_setting:
-        ::std::option::Option<crate::types::HlsCaptionLanguageSetting>,
-    pub(crate) caption_segment_length_control:
-        ::std::option::Option<crate::types::HlsCaptionSegmentLengthControl>,
+    pub(crate) caption_language_mappings: ::std::option::Option<::std::vec::Vec<crate::types::HlsCaptionLanguageMapping>>,
+    pub(crate) caption_language_setting: ::std::option::Option<crate::types::HlsCaptionLanguageSetting>,
+    pub(crate) caption_segment_length_control: ::std::option::Option<crate::types::HlsCaptionSegmentLengthControl>,
     pub(crate) client_cache: ::std::option::Option<crate::types::HlsClientCache>,
     pub(crate) codec_specification: ::std::option::Option<crate::types::HlsCodecSpecification>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,
@@ -300,27 +256,22 @@ pub struct HlsGroupSettingsBuilder {
     pub(crate) directory_structure: ::std::option::Option<crate::types::HlsDirectoryStructure>,
     pub(crate) encryption: ::std::option::Option<crate::types::HlsEncryptionSettings>,
     pub(crate) image_based_trick_play: ::std::option::Option<crate::types::HlsImageBasedTrickPlay>,
-    pub(crate) image_based_trick_play_settings:
-        ::std::option::Option<crate::types::HlsImageBasedTrickPlaySettings>,
+    pub(crate) image_based_trick_play_settings: ::std::option::Option<crate::types::HlsImageBasedTrickPlaySettings>,
     pub(crate) manifest_compression: ::std::option::Option<crate::types::HlsManifestCompression>,
-    pub(crate) manifest_duration_format:
-        ::std::option::Option<crate::types::HlsManifestDurationFormat>,
+    pub(crate) manifest_duration_format: ::std::option::Option<crate::types::HlsManifestDurationFormat>,
     pub(crate) min_final_segment_length: ::std::option::Option<f64>,
     pub(crate) min_segment_length: ::std::option::Option<i32>,
     pub(crate) output_selection: ::std::option::Option<crate::types::HlsOutputSelection>,
     pub(crate) program_date_time: ::std::option::Option<crate::types::HlsProgramDateTime>,
     pub(crate) program_date_time_period: ::std::option::Option<i32>,
-    pub(crate) progressive_write_hls_manifest:
-        ::std::option::Option<crate::types::HlsProgressiveWriteHlsManifest>,
+    pub(crate) progressive_write_hls_manifest: ::std::option::Option<crate::types::HlsProgressiveWriteHlsManifest>,
     pub(crate) segment_control: ::std::option::Option<crate::types::HlsSegmentControl>,
     pub(crate) segment_length: ::std::option::Option<i32>,
     pub(crate) segment_length_control: ::std::option::Option<crate::types::HlsSegmentLengthControl>,
     pub(crate) segments_per_subdirectory: ::std::option::Option<i32>,
     pub(crate) stream_inf_resolution: ::std::option::Option<crate::types::HlsStreamInfResolution>,
-    pub(crate) target_duration_compatibility_mode:
-        ::std::option::Option<crate::types::HlsTargetDurationCompatibilityMode>,
-    pub(crate) timed_metadata_id3_frame:
-        ::std::option::Option<crate::types::HlsTimedMetadataId3Frame>,
+    pub(crate) target_duration_compatibility_mode: ::std::option::Option<crate::types::HlsTargetDurationCompatibilityMode>,
+    pub(crate) timed_metadata_id3_frame: ::std::option::Option<crate::types::HlsTimedMetadataId3Frame>,
     pub(crate) timed_metadata_id3_period: ::std::option::Option<i32>,
     pub(crate) timestamp_delta_milliseconds: ::std::option::Option<i32>,
 }
@@ -337,17 +288,12 @@ impl HlsGroupSettingsBuilder {
         self
     }
     /// Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine whether SCTE-35 markers appear in the outputs themselves.
-    pub fn set_ad_markers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HlsAdMarkers>>,
-    ) -> Self {
+    pub fn set_ad_markers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HlsAdMarkers>>) -> Self {
         self.ad_markers = input;
         self
     }
     /// Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine whether SCTE-35 markers appear in the outputs themselves.
-    pub fn get_ad_markers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsAdMarkers>> {
+    pub fn get_ad_markers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsAdMarkers>> {
         &self.ad_markers
     }
     /// Appends an item to `additional_manifests`.
@@ -362,17 +308,12 @@ impl HlsGroupSettingsBuilder {
         self
     }
     /// By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job. This default manifest references every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here.
-    pub fn set_additional_manifests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HlsAdditionalManifest>>,
-    ) -> Self {
+    pub fn set_additional_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HlsAdditionalManifest>>) -> Self {
         self.additional_manifests = input;
         self
     }
     /// By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job. This default manifest references every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here.
-    pub fn get_additional_manifests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsAdditionalManifest>> {
+    pub fn get_additional_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsAdditionalManifest>> {
         &self.additional_manifests
     }
     /// Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the default value, Include, to output audio-only headers. Choose Exclude to remove the audio-only headers from your audio segments.
@@ -381,17 +322,12 @@ impl HlsGroupSettingsBuilder {
         self
     }
     /// Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the default value, Include, to output audio-only headers. Choose Exclude to remove the audio-only headers from your audio segments.
-    pub fn set_audio_only_header(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsAudioOnlyHeader>,
-    ) -> Self {
+    pub fn set_audio_only_header(mut self, input: ::std::option::Option<crate::types::HlsAudioOnlyHeader>) -> Self {
         self.audio_only_header = input;
         self
     }
     /// Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the default value, Include, to output audio-only headers. Choose Exclude to remove the audio-only headers from your audio segments.
-    pub fn get_audio_only_header(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsAudioOnlyHeader> {
+    pub fn get_audio_only_header(&self) -> &::std::option::Option<crate::types::HlsAudioOnlyHeader> {
         &self.audio_only_header
     }
     /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
@@ -413,71 +349,47 @@ impl HlsGroupSettingsBuilder {
     /// To override the contents of this collection use [`set_caption_language_mappings`](Self::set_caption_language_mappings).
     ///
     /// Language to be used on Caption outputs
-    pub fn caption_language_mappings(
-        mut self,
-        input: crate::types::HlsCaptionLanguageMapping,
-    ) -> Self {
+    pub fn caption_language_mappings(mut self, input: crate::types::HlsCaptionLanguageMapping) -> Self {
         let mut v = self.caption_language_mappings.unwrap_or_default();
         v.push(input);
         self.caption_language_mappings = ::std::option::Option::Some(v);
         self
     }
     /// Language to be used on Caption outputs
-    pub fn set_caption_language_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HlsCaptionLanguageMapping>>,
-    ) -> Self {
+    pub fn set_caption_language_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HlsCaptionLanguageMapping>>) -> Self {
         self.caption_language_mappings = input;
         self
     }
     /// Language to be used on Caption outputs
-    pub fn get_caption_language_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsCaptionLanguageMapping>> {
+    pub fn get_caption_language_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsCaptionLanguageMapping>> {
         &self.caption_language_mappings
     }
     /// Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest.
-    pub fn caption_language_setting(
-        mut self,
-        input: crate::types::HlsCaptionLanguageSetting,
-    ) -> Self {
+    pub fn caption_language_setting(mut self, input: crate::types::HlsCaptionLanguageSetting) -> Self {
         self.caption_language_setting = ::std::option::Option::Some(input);
         self
     }
     /// Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest.
-    pub fn set_caption_language_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsCaptionLanguageSetting>,
-    ) -> Self {
+    pub fn set_caption_language_setting(mut self, input: ::std::option::Option<crate::types::HlsCaptionLanguageSetting>) -> Self {
         self.caption_language_setting = input;
         self
     }
     /// Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest.
-    pub fn get_caption_language_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsCaptionLanguageSetting> {
+    pub fn get_caption_language_setting(&self) -> &::std::option::Option<crate::types::HlsCaptionLanguageSetting> {
         &self.caption_language_setting
     }
     /// Set Caption segment length control to Match video to create caption segments that align with the video segments from the first video output in this output group. For example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments to create caption segments that are 300 seconds long.
-    pub fn caption_segment_length_control(
-        mut self,
-        input: crate::types::HlsCaptionSegmentLengthControl,
-    ) -> Self {
+    pub fn caption_segment_length_control(mut self, input: crate::types::HlsCaptionSegmentLengthControl) -> Self {
         self.caption_segment_length_control = ::std::option::Option::Some(input);
         self
     }
     /// Set Caption segment length control to Match video to create caption segments that align with the video segments from the first video output in this output group. For example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments to create caption segments that are 300 seconds long.
-    pub fn set_caption_segment_length_control(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsCaptionSegmentLengthControl>,
-    ) -> Self {
+    pub fn set_caption_segment_length_control(mut self, input: ::std::option::Option<crate::types::HlsCaptionSegmentLengthControl>) -> Self {
         self.caption_segment_length_control = input;
         self
     }
     /// Set Caption segment length control to Match video to create caption segments that align with the video segments from the first video output in this output group. For example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments to create caption segments that are 300 seconds long.
-    pub fn get_caption_segment_length_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsCaptionSegmentLengthControl> {
+    pub fn get_caption_segment_length_control(&self) -> &::std::option::Option<crate::types::HlsCaptionSegmentLengthControl> {
         &self.caption_segment_length_control
     }
     /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http header.
@@ -486,10 +398,7 @@ impl HlsGroupSettingsBuilder {
         self
     }
     /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http header.
-    pub fn set_client_cache(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsClientCache>,
-    ) -> Self {
+    pub fn set_client_cache(mut self, input: ::std::option::Option<crate::types::HlsClientCache>) -> Self {
         self.client_cache = input;
         self
     }
@@ -503,17 +412,12 @@ impl HlsGroupSettingsBuilder {
         self
     }
     /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
-    pub fn set_codec_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsCodecSpecification>,
-    ) -> Self {
+    pub fn set_codec_specification(mut self, input: ::std::option::Option<crate::types::HlsCodecSpecification>) -> Self {
         self.codec_specification = input;
         self
     }
     /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
-    pub fn get_codec_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsCodecSpecification> {
+    pub fn get_codec_specification(&self) -> &::std::option::Option<crate::types::HlsCodecSpecification> {
         &self.codec_specification
     }
     /// Use Destination to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
@@ -536,17 +440,12 @@ impl HlsGroupSettingsBuilder {
         self
     }
     /// Settings associated with the destination. Will vary based on the type of destination
-    pub fn set_destination_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationSettings>,
-    ) -> Self {
+    pub fn set_destination_settings(mut self, input: ::std::option::Option<crate::types::DestinationSettings>) -> Self {
         self.destination_settings = input;
         self
     }
     /// Settings associated with the destination. Will vary based on the type of destination
-    pub fn get_destination_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationSettings> {
+    pub fn get_destination_settings(&self) -> &::std::option::Option<crate::types::DestinationSettings> {
         &self.destination_settings
     }
     /// Indicates whether segments should be placed in subdirectories.
@@ -555,17 +454,12 @@ impl HlsGroupSettingsBuilder {
         self
     }
     /// Indicates whether segments should be placed in subdirectories.
-    pub fn set_directory_structure(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsDirectoryStructure>,
-    ) -> Self {
+    pub fn set_directory_structure(mut self, input: ::std::option::Option<crate::types::HlsDirectoryStructure>) -> Self {
         self.directory_structure = input;
         self
     }
     /// Indicates whether segments should be placed in subdirectories.
-    pub fn get_directory_structure(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsDirectoryStructure> {
+    pub fn get_directory_structure(&self) -> &::std::option::Option<crate::types::HlsDirectoryStructure> {
         &self.directory_structure
     }
     /// DRM settings.
@@ -574,10 +468,7 @@ impl HlsGroupSettingsBuilder {
         self
     }
     /// DRM settings.
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsEncryptionSettings>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::HlsEncryptionSettings>) -> Self {
         self.encryption = input;
         self
     }
@@ -591,39 +482,26 @@ impl HlsGroupSettingsBuilder {
         self
     }
     /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
-    pub fn set_image_based_trick_play(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsImageBasedTrickPlay>,
-    ) -> Self {
+    pub fn set_image_based_trick_play(mut self, input: ::std::option::Option<crate::types::HlsImageBasedTrickPlay>) -> Self {
         self.image_based_trick_play = input;
         self
     }
     /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
-    pub fn get_image_based_trick_play(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsImageBasedTrickPlay> {
+    pub fn get_image_based_trick_play(&self) -> &::std::option::Option<crate::types::HlsImageBasedTrickPlay> {
         &self.image_based_trick_play
     }
     /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
-    pub fn image_based_trick_play_settings(
-        mut self,
-        input: crate::types::HlsImageBasedTrickPlaySettings,
-    ) -> Self {
+    pub fn image_based_trick_play_settings(mut self, input: crate::types::HlsImageBasedTrickPlaySettings) -> Self {
         self.image_based_trick_play_settings = ::std::option::Option::Some(input);
         self
     }
     /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
-    pub fn set_image_based_trick_play_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsImageBasedTrickPlaySettings>,
-    ) -> Self {
+    pub fn set_image_based_trick_play_settings(mut self, input: ::std::option::Option<crate::types::HlsImageBasedTrickPlaySettings>) -> Self {
         self.image_based_trick_play_settings = input;
         self
     }
     /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
-    pub fn get_image_based_trick_play_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsImageBasedTrickPlaySettings> {
+    pub fn get_image_based_trick_play_settings(&self) -> &::std::option::Option<crate::types::HlsImageBasedTrickPlaySettings> {
         &self.image_based_trick_play_settings
     }
     /// When set to GZIP, compresses HLS playlist.
@@ -632,39 +510,26 @@ impl HlsGroupSettingsBuilder {
         self
     }
     /// When set to GZIP, compresses HLS playlist.
-    pub fn set_manifest_compression(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsManifestCompression>,
-    ) -> Self {
+    pub fn set_manifest_compression(mut self, input: ::std::option::Option<crate::types::HlsManifestCompression>) -> Self {
         self.manifest_compression = input;
         self
     }
     /// When set to GZIP, compresses HLS playlist.
-    pub fn get_manifest_compression(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsManifestCompression> {
+    pub fn get_manifest_compression(&self) -> &::std::option::Option<crate::types::HlsManifestCompression> {
         &self.manifest_compression
     }
     /// Indicates whether the output manifest should use floating point values for segment duration.
-    pub fn manifest_duration_format(
-        mut self,
-        input: crate::types::HlsManifestDurationFormat,
-    ) -> Self {
+    pub fn manifest_duration_format(mut self, input: crate::types::HlsManifestDurationFormat) -> Self {
         self.manifest_duration_format = ::std::option::Option::Some(input);
         self
     }
     /// Indicates whether the output manifest should use floating point values for segment duration.
-    pub fn set_manifest_duration_format(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsManifestDurationFormat>,
-    ) -> Self {
+    pub fn set_manifest_duration_format(mut self, input: ::std::option::Option<crate::types::HlsManifestDurationFormat>) -> Self {
         self.manifest_duration_format = input;
         self
     }
     /// Indicates whether the output manifest should use floating point values for segment duration.
-    pub fn get_manifest_duration_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsManifestDurationFormat> {
+    pub fn get_manifest_duration_format(&self) -> &::std::option::Option<crate::types::HlsManifestDurationFormat> {
         &self.manifest_duration_format
     }
     /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
@@ -701,10 +566,7 @@ impl HlsGroupSettingsBuilder {
         self
     }
     /// Indicates whether the .m3u8 manifest file should be generated for this HLS output group.
-    pub fn set_output_selection(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsOutputSelection>,
-    ) -> Self {
+    pub fn set_output_selection(mut self, input: ::std::option::Option<crate::types::HlsOutputSelection>) -> Self {
         self.output_selection = input;
         self
     }
@@ -718,17 +580,12 @@ impl HlsGroupSettingsBuilder {
         self
     }
     /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestamp_offset.
-    pub fn set_program_date_time(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsProgramDateTime>,
-    ) -> Self {
+    pub fn set_program_date_time(mut self, input: ::std::option::Option<crate::types::HlsProgramDateTime>) -> Self {
         self.program_date_time = input;
         self
     }
     /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestamp_offset.
-    pub fn get_program_date_time(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsProgramDateTime> {
+    pub fn get_program_date_time(&self) -> &::std::option::Option<crate::types::HlsProgramDateTime> {
         &self.program_date_time
     }
     /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
@@ -746,25 +603,17 @@ impl HlsGroupSettingsBuilder {
         &self.program_date_time_period
     }
     /// Specify whether MediaConvert generates HLS manifests while your job is running or when your job is complete. To generate HLS manifests while your job is running: Choose Enabled. Use if you want to play back your content as soon as it's available. MediaConvert writes the parent and child manifests after the first three media segments are written to your destination S3 bucket. It then writes new updated manifests after each additional segment is written. The parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes, and child manifests include the latest available media segment. When your job completes, the final child playlists include an EXT-X-ENDLIST tag. To generate HLS manifests only when your job completes: Choose Disabled.
-    pub fn progressive_write_hls_manifest(
-        mut self,
-        input: crate::types::HlsProgressiveWriteHlsManifest,
-    ) -> Self {
+    pub fn progressive_write_hls_manifest(mut self, input: crate::types::HlsProgressiveWriteHlsManifest) -> Self {
         self.progressive_write_hls_manifest = ::std::option::Option::Some(input);
         self
     }
     /// Specify whether MediaConvert generates HLS manifests while your job is running or when your job is complete. To generate HLS manifests while your job is running: Choose Enabled. Use if you want to play back your content as soon as it's available. MediaConvert writes the parent and child manifests after the first three media segments are written to your destination S3 bucket. It then writes new updated manifests after each additional segment is written. The parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes, and child manifests include the latest available media segment. When your job completes, the final child playlists include an EXT-X-ENDLIST tag. To generate HLS manifests only when your job completes: Choose Disabled.
-    pub fn set_progressive_write_hls_manifest(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsProgressiveWriteHlsManifest>,
-    ) -> Self {
+    pub fn set_progressive_write_hls_manifest(mut self, input: ::std::option::Option<crate::types::HlsProgressiveWriteHlsManifest>) -> Self {
         self.progressive_write_hls_manifest = input;
         self
     }
     /// Specify whether MediaConvert generates HLS manifests while your job is running or when your job is complete. To generate HLS manifests while your job is running: Choose Enabled. Use if you want to play back your content as soon as it's available. MediaConvert writes the parent and child manifests after the first three media segments are written to your destination S3 bucket. It then writes new updated manifests after each additional segment is written. The parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes, and child manifests include the latest available media segment. When your job completes, the final child playlists include an EXT-X-ENDLIST tag. To generate HLS manifests only when your job completes: Choose Disabled.
-    pub fn get_progressive_write_hls_manifest(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsProgressiveWriteHlsManifest> {
+    pub fn get_progressive_write_hls_manifest(&self) -> &::std::option::Option<crate::types::HlsProgressiveWriteHlsManifest> {
         &self.progressive_write_hls_manifest
     }
     /// When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index segment for playback.
@@ -773,10 +622,7 @@ impl HlsGroupSettingsBuilder {
         self
     }
     /// When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index segment for playback.
-    pub fn set_segment_control(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsSegmentControl>,
-    ) -> Self {
+    pub fn set_segment_control(mut self, input: ::std::option::Option<crate::types::HlsSegmentControl>) -> Self {
         self.segment_control = input;
         self
     }
@@ -804,17 +650,12 @@ impl HlsGroupSettingsBuilder {
         self
     }
     /// Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
-    pub fn set_segment_length_control(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsSegmentLengthControl>,
-    ) -> Self {
+    pub fn set_segment_length_control(mut self, input: ::std::option::Option<crate::types::HlsSegmentLengthControl>) -> Self {
         self.segment_length_control = input;
         self
     }
     /// Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
-    pub fn get_segment_length_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsSegmentLengthControl> {
+    pub fn get_segment_length_control(&self) -> &::std::option::Option<crate::types::HlsSegmentLengthControl> {
         &self.segment_length_control
     }
     /// Specify the number of segments to write to a subdirectory before starting a new one. You must also set Directory structure to Subdirectory per stream for this setting to have an effect.
@@ -837,61 +678,40 @@ impl HlsGroupSettingsBuilder {
         self
     }
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
-    pub fn set_stream_inf_resolution(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsStreamInfResolution>,
-    ) -> Self {
+    pub fn set_stream_inf_resolution(mut self, input: ::std::option::Option<crate::types::HlsStreamInfResolution>) -> Self {
         self.stream_inf_resolution = input;
         self
     }
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
-    pub fn get_stream_inf_resolution(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsStreamInfResolution> {
+    pub fn get_stream_inf_resolution(&self) -> &::std::option::Option<crate::types::HlsStreamInfResolution> {
         &self.stream_inf_resolution
     }
     /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
-    pub fn target_duration_compatibility_mode(
-        mut self,
-        input: crate::types::HlsTargetDurationCompatibilityMode,
-    ) -> Self {
+    pub fn target_duration_compatibility_mode(mut self, input: crate::types::HlsTargetDurationCompatibilityMode) -> Self {
         self.target_duration_compatibility_mode = ::std::option::Option::Some(input);
         self
     }
     /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
-    pub fn set_target_duration_compatibility_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsTargetDurationCompatibilityMode>,
-    ) -> Self {
+    pub fn set_target_duration_compatibility_mode(mut self, input: ::std::option::Option<crate::types::HlsTargetDurationCompatibilityMode>) -> Self {
         self.target_duration_compatibility_mode = input;
         self
     }
     /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
-    pub fn get_target_duration_compatibility_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsTargetDurationCompatibilityMode> {
+    pub fn get_target_duration_compatibility_mode(&self) -> &::std::option::Option<crate::types::HlsTargetDurationCompatibilityMode> {
         &self.target_duration_compatibility_mode
     }
     /// Specify the type of the ID3 frame to use for ID3 timestamps in your output. To include ID3 timestamps: Specify PRIV or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to None.
-    pub fn timed_metadata_id3_frame(
-        mut self,
-        input: crate::types::HlsTimedMetadataId3Frame,
-    ) -> Self {
+    pub fn timed_metadata_id3_frame(mut self, input: crate::types::HlsTimedMetadataId3Frame) -> Self {
         self.timed_metadata_id3_frame = ::std::option::Option::Some(input);
         self
     }
     /// Specify the type of the ID3 frame to use for ID3 timestamps in your output. To include ID3 timestamps: Specify PRIV or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to None.
-    pub fn set_timed_metadata_id3_frame(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsTimedMetadataId3Frame>,
-    ) -> Self {
+    pub fn set_timed_metadata_id3_frame(mut self, input: ::std::option::Option<crate::types::HlsTimedMetadataId3Frame>) -> Self {
         self.timed_metadata_id3_frame = input;
         self
     }
     /// Specify the type of the ID3 frame to use for ID3 timestamps in your output. To include ID3 timestamps: Specify PRIV or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to None.
-    pub fn get_timed_metadata_id3_frame(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsTimedMetadataId3Frame> {
+    pub fn get_timed_metadata_id3_frame(&self) -> &::std::option::Option<crate::types::HlsTimedMetadataId3Frame> {
         &self.timed_metadata_id3_frame
     }
     /// Specify the interval in seconds to write ID3 timestamps in your output. The first timestamp starts at the output timecode and date, and increases incrementally with each ID3 timestamp. To use the default interval of 10 seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type to PRIV or TDRL, and set ID3 metadata to Passthrough.

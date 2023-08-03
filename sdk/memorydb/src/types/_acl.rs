@@ -65,9 +65,7 @@ impl Acl {
 
 /// A builder for [`Acl`](crate::types::Acl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AclBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -118,10 +116,7 @@ impl AclBuilder {
         self
     }
     /// <p>The list of user names that belong to the ACL.</p>
-    pub fn set_user_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_names = input;
         self
     }
@@ -130,18 +125,12 @@ impl AclBuilder {
         &self.user_names
     }
     /// <p>The minimum engine version supported for the ACL</p>
-    pub fn minimum_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minimum_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minimum_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minimum engine version supported for the ACL</p>
-    pub fn set_minimum_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minimum_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minimum_engine_version = input;
         self
     }
@@ -155,10 +144,7 @@ impl AclBuilder {
         self
     }
     /// <p>A list of updates being applied to the ACL.</p>
-    pub fn set_pending_changes(
-        mut self,
-        input: ::std::option::Option<crate::types::AclPendingChanges>,
-    ) -> Self {
+    pub fn set_pending_changes(mut self, input: ::std::option::Option<crate::types::AclPendingChanges>) -> Self {
         self.pending_changes = input;
         self
     }
@@ -178,10 +164,7 @@ impl AclBuilder {
         self
     }
     /// <p>A list of clusters associated with the ACL.</p>
-    pub fn set_clusters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.clusters = input;
         self
     }

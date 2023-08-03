@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateLocationSmbOutput {
 }
 impl UpdateLocationSmbOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLocationSmbOutput`](crate::operation::update_location_smb::UpdateLocationSmbOutput).
-    pub fn builder(
-    ) -> crate::operation::update_location_smb::builders::UpdateLocationSmbOutputBuilder {
+    pub fn builder() -> crate::operation::update_location_smb::builders::UpdateLocationSmbOutputBuilder {
         crate::operation::update_location_smb::builders::UpdateLocationSmbOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLocationSmbOutput`](crate::operation::update_location_smb::UpdateLocationSmbOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLocationSmbOutputBuilder {
     _request_id: Option<String>,
 }

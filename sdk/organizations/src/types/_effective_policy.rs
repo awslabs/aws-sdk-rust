@@ -44,9 +44,7 @@ impl EffectivePolicy {
 
 /// A builder for [`EffectivePolicy`](crate::types::EffectivePolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EffectivePolicyBuilder {
     pub(crate) policy_content: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -55,18 +53,12 @@ pub struct EffectivePolicyBuilder {
 }
 impl EffectivePolicyBuilder {
     /// <p>The text content of the policy.</p>
-    pub fn policy_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text content of the policy.</p>
-    pub fn set_policy_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_content = input;
         self
     }
@@ -80,17 +72,12 @@ impl EffectivePolicyBuilder {
         self
     }
     /// <p>The time of the last update to this policy.</p>
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_timestamp = input;
         self
     }
     /// <p>The time of the last update to this policy.</p>
-    pub fn get_last_updated_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_timestamp
     }
     /// <p>The account ID of the policy target. </p>
@@ -113,10 +100,7 @@ impl EffectivePolicyBuilder {
         self
     }
     /// <p>The policy type.</p>
-    pub fn set_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EffectivePolicyType>,
-    ) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::EffectivePolicyType>) -> Self {
         self.policy_type = input;
         self
     }

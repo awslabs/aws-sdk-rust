@@ -15,34 +15,25 @@ impl GetInstanceStateInput {
 }
 impl GetInstanceStateInput {
     /// Creates a new builder-style object to manufacture [`GetInstanceStateInput`](crate::operation::get_instance_state::GetInstanceStateInput).
-    pub fn builder() -> crate::operation::get_instance_state::builders::GetInstanceStateInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_instance_state::builders::GetInstanceStateInputBuilder {
         crate::operation::get_instance_state::builders::GetInstanceStateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceStateInput`](crate::operation::get_instance_state::GetInstanceStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceStateInputBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
 }
 impl GetInstanceStateInputBuilder {
     /// <p>The name of the instance to get state information about.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the instance to get state information about.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl GetInstanceStateInputBuilder {
     /// Consumes the builder and constructs a [`GetInstanceStateInput`](crate::operation::get_instance_state::GetInstanceStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_instance_state::GetInstanceStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_instance_state::GetInstanceStateInput {
-                instance_name: self.instance_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_instance_state::GetInstanceStateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_instance_state::GetInstanceStateInput {
+            instance_name: self.instance_name,
+        })
     }
 }

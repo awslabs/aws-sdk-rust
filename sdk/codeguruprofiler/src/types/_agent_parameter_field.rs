@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AgentParameterField {
     /// Maximum stack depth to be captured by the CodeGuru Profiler.
@@ -68,16 +62,10 @@ impl ::std::convert::From<&str> for AgentParameterField {
         match s {
             "MaxStackDepth" => AgentParameterField::MaxStackDepth,
             "MemoryUsageLimitPercent" => AgentParameterField::MemoryUsageLimitPercent,
-            "MinimumTimeForReportingInMilliseconds" => {
-                AgentParameterField::MinimumTimeForReportingInMilliseconds
-            }
-            "ReportingIntervalInMilliseconds" => {
-                AgentParameterField::ReportingIntervalInMilliseconds
-            }
+            "MinimumTimeForReportingInMilliseconds" => AgentParameterField::MinimumTimeForReportingInMilliseconds,
+            "ReportingIntervalInMilliseconds" => AgentParameterField::ReportingIntervalInMilliseconds,
             "SamplingIntervalInMilliseconds" => AgentParameterField::SamplingIntervalInMilliseconds,
-            other => AgentParameterField::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AgentParameterField::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -94,12 +82,8 @@ impl AgentParameterField {
         match self {
             AgentParameterField::MaxStackDepth => "MaxStackDepth",
             AgentParameterField::MemoryUsageLimitPercent => "MemoryUsageLimitPercent",
-            AgentParameterField::MinimumTimeForReportingInMilliseconds => {
-                "MinimumTimeForReportingInMilliseconds"
-            }
-            AgentParameterField::ReportingIntervalInMilliseconds => {
-                "ReportingIntervalInMilliseconds"
-            }
+            AgentParameterField::MinimumTimeForReportingInMilliseconds => "MinimumTimeForReportingInMilliseconds",
+            AgentParameterField::ReportingIntervalInMilliseconds => "ReportingIntervalInMilliseconds",
             AgentParameterField::SamplingIntervalInMilliseconds => "SamplingIntervalInMilliseconds",
             AgentParameterField::Unknown(value) => value.as_str(),
         }

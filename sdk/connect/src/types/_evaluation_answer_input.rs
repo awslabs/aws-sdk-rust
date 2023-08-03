@@ -23,9 +23,7 @@ impl EvaluationAnswerInput {
 
 /// A builder for [`EvaluationAnswerInput`](crate::types::EvaluationAnswerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationAnswerInputBuilder {
     pub(crate) value: ::std::option::Option<crate::types::EvaluationAnswerData>,
 }
@@ -36,10 +34,7 @@ impl EvaluationAnswerInputBuilder {
         self
     }
     /// <p>The value for an answer in a contact evaluation.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationAnswerData>,
-    ) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::EvaluationAnswerData>) -> Self {
         self.value = input;
         self
     }

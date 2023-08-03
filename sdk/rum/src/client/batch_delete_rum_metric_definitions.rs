@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`errors(Option<Vec<BatchDeleteRumMetricDefinitionsError>>)`](crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput::errors): <p>An array of error objects, if the operation caused any errors.</p>
     ///   - [`metric_definition_ids(Option<Vec<String>>)`](crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput::metric_definition_ids): <p>The IDs of the metric definitions that were deleted.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteRumMetricDefinitionsError>`](crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError)
-    pub fn batch_delete_rum_metric_definitions(&self) -> crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsFluentBuilder{
+    pub fn batch_delete_rum_metric_definitions(
+        &self,
+    ) -> crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsFluentBuilder {
         crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

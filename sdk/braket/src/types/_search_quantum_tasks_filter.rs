@@ -24,9 +24,7 @@ impl SearchQuantumTasksFilter {
         self.values.as_deref()
     }
     /// <p>An operator to use in the filter.</p>
-    pub fn operator(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SearchQuantumTasksFilterOperator> {
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::SearchQuantumTasksFilterOperator> {
         self.operator.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl SearchQuantumTasksFilter {
 
 /// A builder for [`SearchQuantumTasksFilter`](crate::types::SearchQuantumTasksFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchQuantumTasksFilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -74,10 +70,7 @@ impl SearchQuantumTasksFilterBuilder {
         self
     }
     /// <p>The values to use for the filter.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -91,17 +84,12 @@ impl SearchQuantumTasksFilterBuilder {
         self
     }
     /// <p>An operator to use in the filter.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchQuantumTasksFilterOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::SearchQuantumTasksFilterOperator>) -> Self {
         self.operator = input;
         self
     }
     /// <p>An operator to use in the filter.</p>
-    pub fn get_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::SearchQuantumTasksFilterOperator> {
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::SearchQuantumTasksFilterOperator> {
         &self.operator
     }
     /// Consumes the builder and constructs a [`SearchQuantumTasksFilter`](crate::types::SearchQuantumTasksFilter).

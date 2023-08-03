@@ -44,9 +44,7 @@ impl EdgeModel {
 
 /// A builder for [`EdgeModel`](crate::types::EdgeModel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EdgeModelBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_version: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl EdgeModelBuilder {
         &self.model_name
     }
     /// <p>The model version.</p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The model version.</p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_version = input;
         self
     }
@@ -94,10 +86,7 @@ impl EdgeModelBuilder {
         self
     }
     /// <p>The timestamp of the last data sample taken.</p>
-    pub fn set_latest_sample_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_sample_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_sample_time = input;
         self
     }
@@ -111,10 +100,7 @@ impl EdgeModelBuilder {
         self
     }
     /// <p>The timestamp of the last inference that was made.</p>
-    pub fn set_latest_inference(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_inference(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_inference = input;
         self
     }

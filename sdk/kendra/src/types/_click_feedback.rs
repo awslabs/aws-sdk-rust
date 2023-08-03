@@ -30,9 +30,7 @@ impl ClickFeedback {
 
 /// A builder for [`ClickFeedback`](crate::types::ClickFeedback).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClickFeedbackBuilder {
     pub(crate) result_id: ::std::option::Option<::std::string::String>,
     pub(crate) click_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -58,10 +56,7 @@ impl ClickFeedbackBuilder {
         self
     }
     /// <p>The Unix timestamp when the result was clicked.</p>
-    pub fn set_click_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_click_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.click_time = input;
         self
     }

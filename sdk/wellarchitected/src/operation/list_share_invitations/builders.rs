@@ -37,9 +37,7 @@ impl ListShareInvitationsFluentBuilder {
         }
     }
     /// Access the ListShareInvitations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_share_invitations::builders::ListShareInvitationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_share_invitations::builders::ListShareInvitationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListShareInvitationsFluentBuilder {
             crate::operation::list_share_invitations::ListShareInvitations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_share_invitations::ListShareInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_share_invitations::ListShareInvitationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListShareInvitationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListShareInvitationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_share_invitations::ListShareInvitationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_share_invitations::ListShareInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_share_invitations::ListShareInvitationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListShareInvitationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_share_invitations::ListShareInvitationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_share_invitations::ListShareInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_share_invitations::ListShareInvitationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl ListShareInvitationsFluentBuilder {
             crate::operation::list_share_invitations::ListShareInvitations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_share_invitations::ListShareInvitationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_share_invitations::ListShareInvitationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_share_invitations::paginator::ListShareInvitationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_share_invitations::paginator::ListShareInvitationsPaginator {
-        crate::operation::list_share_invitations::paginator::ListShareInvitationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_share_invitations::paginator::ListShareInvitationsPaginator {
+        crate::operation::list_share_invitations::paginator::ListShareInvitationsPaginator::new(self.handle, self.inner)
     }
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
-    pub fn workload_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workload_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workload_name_prefix(input.into());
         self
     }
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
-    pub fn set_workload_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workload_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workload_name_prefix(input);
         self
     }
@@ -154,18 +130,12 @@ impl ListShareInvitationsFluentBuilder {
         self.inner.get_workload_name_prefix()
     }
     /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
-    pub fn lens_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lens_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lens_name_prefix(input.into());
         self
     }
     /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
-    pub fn set_lens_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lens_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lens_name_prefix(input);
         self
     }
@@ -179,17 +149,12 @@ impl ListShareInvitationsFluentBuilder {
         self
     }
     /// <p>The type of share invitations to be returned.</p>
-    pub fn set_share_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareResourceType>,
-    ) -> Self {
+    pub fn set_share_resource_type(mut self, input: ::std::option::Option<crate::types::ShareResourceType>) -> Self {
         self.inner = self.inner.set_share_resource_type(input);
         self
     }
     /// <p>The type of share invitations to be returned.</p>
-    pub fn get_share_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ShareResourceType> {
+    pub fn get_share_resource_type(&self) -> &::std::option::Option<crate::types::ShareResourceType> {
         self.inner.get_share_resource_type()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -221,18 +186,12 @@ impl ListShareInvitationsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>Profile name prefix.</p>
-    pub fn profile_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_name_prefix(input.into());
         self
     }
     /// <p>Profile name prefix.</p>
-    pub fn set_profile_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_name_prefix(input);
         self
     }

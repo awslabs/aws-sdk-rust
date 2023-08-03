@@ -23,9 +23,7 @@ impl ServiceVersion {
 
 /// A builder for [`ServiceVersion`](crate::types::ServiceVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceVersionBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ServiceVersionBuilder {
     }
     /// Consumes the builder and constructs a [`ServiceVersion`](crate::types::ServiceVersion).
     pub fn build(self) -> crate::types::ServiceVersion {
-        crate::types::ServiceVersion {
-            version: self.version,
-        }
+        crate::types::ServiceVersion { version: self.version }
     }
 }

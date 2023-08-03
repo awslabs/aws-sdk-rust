@@ -37,10 +37,7 @@ impl PutEventsConfigurationFluentBuilder {
         }
     }
     /// Access the PutEventsConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_events_configuration::builders::PutEventsConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_events_configuration::builders::PutEventsConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl PutEventsConfigurationFluentBuilder {
             crate::operation::put_events_configuration::PutEventsConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_events_configuration::PutEventsConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_events_configuration::PutEventsConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl PutEventsConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl PutEventsConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_events_configuration::PutEventsConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_events_configuration::PutEventsConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_events_configuration::PutEventsConfigurationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl PutEventsConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_events_configuration::PutEventsConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_events_configuration::PutEventsConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_events_configuration::PutEventsConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl PutEventsConfigurationFluentBuilder {
             crate::operation::put_events_configuration::PutEventsConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_events_configuration::PutEventsConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_events_configuration::PutEventsConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -152,40 +138,26 @@ impl PutEventsConfigurationFluentBuilder {
         self.inner.get_bot_id()
     }
     /// <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
-    pub fn outbound_events_https_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn outbound_events_https_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.outbound_events_https_endpoint(input.into());
         self
     }
     /// <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
-    pub fn set_outbound_events_https_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_outbound_events_https_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_outbound_events_https_endpoint(input);
         self
     }
     /// <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
-    pub fn get_outbound_events_https_endpoint(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_outbound_events_https_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_outbound_events_https_endpoint()
     }
     /// <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
-    pub fn lambda_function_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lambda_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lambda_function_arn(input.into());
         self
     }
     /// <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
-    pub fn set_lambda_function_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lambda_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lambda_function_arn(input);
         self
     }

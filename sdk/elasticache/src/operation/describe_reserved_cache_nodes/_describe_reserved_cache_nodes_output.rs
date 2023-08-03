@@ -9,8 +9,7 @@ pub struct DescribeReservedCacheNodesOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
     #[doc(hidden)]
-    pub reserved_cache_nodes:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNode>>,
+    pub reserved_cache_nodes: ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNode>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedCacheNodesOutput {
@@ -19,9 +18,7 @@ impl DescribeReservedCacheNodesOutput {
         self.marker.as_deref()
     }
     /// <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
-    pub fn reserved_cache_nodes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReservedCacheNode]> {
+    pub fn reserved_cache_nodes(&self) -> ::std::option::Option<&[crate::types::ReservedCacheNode]> {
         self.reserved_cache_nodes.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeReservedCacheNodesOutput {
 }
 impl DescribeReservedCacheNodesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedCacheNodesOutput`](crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesOutput).
-    pub fn builder() -> crate::operation::describe_reserved_cache_nodes::builders::DescribeReservedCacheNodesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_cache_nodes::builders::DescribeReservedCacheNodesOutputBuilder {
         crate::operation::describe_reserved_cache_nodes::builders::DescribeReservedCacheNodesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedCacheNodesOutput`](crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedCacheNodesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_cache_nodes:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNode>>,
+    pub(crate) reserved_cache_nodes: ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNode>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedCacheNodesOutputBuilder {
@@ -75,17 +69,12 @@ impl DescribeReservedCacheNodesOutputBuilder {
         self
     }
     /// <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
-    pub fn set_reserved_cache_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNode>>,
-    ) -> Self {
+    pub fn set_reserved_cache_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNode>>) -> Self {
         self.reserved_cache_nodes = input;
         self
     }
     /// <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
-    pub fn get_reserved_cache_nodes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNode>> {
+    pub fn get_reserved_cache_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNode>> {
         &self.reserved_cache_nodes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -98,9 +87,7 @@ impl DescribeReservedCacheNodesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReservedCacheNodesOutput`](crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesOutput {
+    pub fn build(self) -> crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesOutput {
         crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesOutput {
             marker: self.marker,
             reserved_cache_nodes: self.reserved_cache_nodes,

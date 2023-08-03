@@ -6,7 +6,11 @@ impl super::Client {
     /// - On success, responds with [`DescribeHealthServiceStatusForOrganizationOutput`](crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationOutput) with field(s):
     ///   - [`health_service_access_status_for_organization(Option<String>)`](crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationOutput::health_service_access_status_for_organization): <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>  <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
     /// - On failure, responds with [`SdkError<DescribeHealthServiceStatusForOrganizationError>`](crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationError)
-    pub fn describe_health_service_status_for_organization(&self) -> crate::operation::describe_health_service_status_for_organization::builders::DescribeHealthServiceStatusForOrganizationFluentBuilder{
-        crate::operation::describe_health_service_status_for_organization::builders::DescribeHealthServiceStatusForOrganizationFluentBuilder::new(self.handle.clone())
+    pub fn describe_health_service_status_for_organization(
+        &self,
+    ) -> crate::operation::describe_health_service_status_for_organization::builders::DescribeHealthServiceStatusForOrganizationFluentBuilder {
+        crate::operation::describe_health_service_status_for_organization::builders::DescribeHealthServiceStatusForOrganizationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

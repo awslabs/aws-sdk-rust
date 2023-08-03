@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`member_id(impl ::std::convert::Into<String>)`](crate::operation::associate_member_to_group::builders::AssociateMemberToGroupFluentBuilder::member_id) / [`set_member_id(Option<String>)`](crate::operation::associate_member_to_group::builders::AssociateMemberToGroupFluentBuilder::set_member_id): <p>The member (user or group) to associate to the group.</p>
     /// - On success, responds with [`AssociateMemberToGroupOutput`](crate::operation::associate_member_to_group::AssociateMemberToGroupOutput)
     /// - On failure, responds with [`SdkError<AssociateMemberToGroupError>`](crate::operation::associate_member_to_group::AssociateMemberToGroupError)
-    pub fn associate_member_to_group(
-        &self,
-    ) -> crate::operation::associate_member_to_group::builders::AssociateMemberToGroupFluentBuilder
-    {
+    pub fn associate_member_to_group(&self) -> crate::operation::associate_member_to_group::builders::AssociateMemberToGroupFluentBuilder {
         crate::operation::associate_member_to_group::builders::AssociateMemberToGroupFluentBuilder::new(self.handle.clone())
     }
 }

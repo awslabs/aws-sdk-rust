@@ -72,17 +72,14 @@ impl CreateLoadBalancerInput {
 }
 impl CreateLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerInput`](crate::operation::create_load_balancer::CreateLoadBalancerInput).
-    pub fn builder(
-    ) -> crate::operation::create_load_balancer::builders::CreateLoadBalancerInputBuilder {
+    pub fn builder() -> crate::operation::create_load_balancer::builders::CreateLoadBalancerInputBuilder {
         crate::operation::create_load_balancer::builders::CreateLoadBalancerInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLoadBalancerInput`](crate::operation::create_load_balancer::CreateLoadBalancerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
@@ -95,19 +92,13 @@ pub struct CreateLoadBalancerInputBuilder {
 impl CreateLoadBalancerInputBuilder {
     /// <p>The name of the load balancer.</p>
     /// <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
     /// <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
@@ -130,10 +121,7 @@ impl CreateLoadBalancerInputBuilder {
     }
     /// <p>The listeners.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    pub fn set_listeners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
-    ) -> Self {
+    pub fn set_listeners(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>) -> Self {
         self.listeners = input;
         self
     }
@@ -149,10 +137,7 @@ impl CreateLoadBalancerInputBuilder {
     /// <p>One or more Availability Zones from the same region as the load balancer.</p>
     /// <p>You must specify at least one Availability Zone.</p>
     /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
         self.availability_zones = ::std::option::Option::Some(v);
@@ -161,19 +146,14 @@ impl CreateLoadBalancerInputBuilder {
     /// <p>One or more Availability Zones from the same region as the load balancer.</p>
     /// <p>You must specify at least one Availability Zone.</p>
     /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>One or more Availability Zones from the same region as the load balancer.</p>
     /// <p>You must specify at least one Availability Zone.</p>
     /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
     /// Appends an item to `subnets`.
@@ -188,10 +168,7 @@ impl CreateLoadBalancerInputBuilder {
         self
     }
     /// <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnets = input;
         self
     }
@@ -204,27 +181,19 @@ impl CreateLoadBalancerInputBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The IDs of the security groups to assign to the load balancer.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the security groups to assign to the load balancer.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>The IDs of the security groups to assign to the load balancer.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
@@ -261,10 +230,7 @@ impl CreateLoadBalancerInputBuilder {
     }
     /// <p>A list of tags to assign to the load balancer.</p>
     /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -276,20 +242,15 @@ impl CreateLoadBalancerInputBuilder {
     /// Consumes the builder and constructs a [`CreateLoadBalancerInput`](crate::operation::create_load_balancer::CreateLoadBalancerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_load_balancer::CreateLoadBalancerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_load_balancer::CreateLoadBalancerInput {
-                load_balancer_name: self.load_balancer_name,
-                listeners: self.listeners,
-                availability_zones: self.availability_zones,
-                subnets: self.subnets,
-                security_groups: self.security_groups,
-                scheme: self.scheme,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_load_balancer::CreateLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_load_balancer::CreateLoadBalancerInput {
+            load_balancer_name: self.load_balancer_name,
+            listeners: self.listeners,
+            availability_zones: self.availability_zones,
+            subnets: self.subnets,
+            security_groups: self.security_groups,
+            scheme: self.scheme,
+            tags: self.tags,
+        })
     }
 }

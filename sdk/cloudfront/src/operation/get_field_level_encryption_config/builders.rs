@@ -26,7 +26,7 @@ impl GetFieldLevelEncryptionConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFieldLevelEncryptionConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_field_level_encryption_config::builders::GetFieldLevelEncryptionConfigInputBuilder,
+    inner: crate::operation::get_field_level_encryption_config::builders::GetFieldLevelEncryptionConfigInputBuilder,
 }
 impl GetFieldLevelEncryptionConfigFluentBuilder {
     /// Creates a new `GetFieldLevelEncryptionConfig`.
@@ -37,7 +37,7 @@ impl GetFieldLevelEncryptionConfigFluentBuilder {
         }
     }
     /// Access the GetFieldLevelEncryptionConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_field_level_encryption_config::builders::GetFieldLevelEncryptionConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_field_level_encryption_config::builders::GetFieldLevelEncryptionConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetFieldLevelEncryptionConfigFluentBuilder {
             crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetFieldLevelEncryptionConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetFieldLevelEncryptionConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetFieldLevelEncryptionConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetFieldLevelEncryptionConfigFluentBuilder {
             crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError>,
     > {
         self.customize_middleware().await
     }

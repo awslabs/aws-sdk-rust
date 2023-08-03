@@ -34,10 +34,8 @@ impl ::aws_http::request_id::RequestId for SelectObjectContentOutput {
 }
 impl SelectObjectContentOutput {
     /// Creates a new builder-style object to manufacture [`SelectObjectContentOutput`](crate::operation::select_object_content::SelectObjectContentOutput).
-    pub fn builder(
-    ) -> crate::operation::select_object_content::builders::SelectObjectContentOutputBuilder {
-        crate::operation::select_object_content::builders::SelectObjectContentOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::select_object_content::builders::SelectObjectContentOutputBuilder {
+        crate::operation::select_object_content::builders::SelectObjectContentOutputBuilder::default()
     }
 }
 
@@ -95,10 +93,7 @@ impl SelectObjectContentOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }
@@ -114,20 +109,17 @@ impl SelectObjectContentOutputBuilder {
     /// Consumes the builder and constructs a [`SelectObjectContentOutput`](crate::operation::select_object_content::SelectObjectContentOutput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::select_object_content::SelectObjectContentOutput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::select_object_content::SelectObjectContentOutput {
-                payload: self.payload
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("payload", "payload was not specified but it is required when building SelectObjectContentOutput")
-                    )?
-                ,
-                _extended_request_id: self._extended_request_id,
-                _request_id: self._request_id,
-            }
-        )
+    ) -> ::std::result::Result<crate::operation::select_object_content::SelectObjectContentOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::select_object_content::SelectObjectContentOutput {
+            payload: self.payload.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "payload",
+                    "payload was not specified but it is required when building SelectObjectContentOutput",
+                )
+            })?,
+            _extended_request_id: self._extended_request_id,
+            _request_id: self._request_id,
+        })
     }
 }

@@ -10,9 +10,7 @@ pub struct DatasetSource {
 }
 impl DatasetSource {
     /// <p>Location information for the manifest file.</p>
-    pub fn ground_truth_manifest(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DatasetGroundTruthManifest> {
+    pub fn ground_truth_manifest(&self) -> ::std::option::Option<&crate::types::DatasetGroundTruthManifest> {
         self.ground_truth_manifest.as_ref()
     }
 }
@@ -25,34 +23,23 @@ impl DatasetSource {
 
 /// A builder for [`DatasetSource`](crate::types::DatasetSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetSourceBuilder {
-    pub(crate) ground_truth_manifest:
-        ::std::option::Option<crate::types::DatasetGroundTruthManifest>,
+    pub(crate) ground_truth_manifest: ::std::option::Option<crate::types::DatasetGroundTruthManifest>,
 }
 impl DatasetSourceBuilder {
     /// <p>Location information for the manifest file.</p>
-    pub fn ground_truth_manifest(
-        mut self,
-        input: crate::types::DatasetGroundTruthManifest,
-    ) -> Self {
+    pub fn ground_truth_manifest(mut self, input: crate::types::DatasetGroundTruthManifest) -> Self {
         self.ground_truth_manifest = ::std::option::Option::Some(input);
         self
     }
     /// <p>Location information for the manifest file.</p>
-    pub fn set_ground_truth_manifest(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetGroundTruthManifest>,
-    ) -> Self {
+    pub fn set_ground_truth_manifest(mut self, input: ::std::option::Option<crate::types::DatasetGroundTruthManifest>) -> Self {
         self.ground_truth_manifest = input;
         self
     }
     /// <p>Location information for the manifest file.</p>
-    pub fn get_ground_truth_manifest(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatasetGroundTruthManifest> {
+    pub fn get_ground_truth_manifest(&self) -> &::std::option::Option<crate::types::DatasetGroundTruthManifest> {
         &self.ground_truth_manifest
     }
     /// Consumes the builder and constructs a [`DatasetSource`](crate::types::DatasetSource).

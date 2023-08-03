@@ -29,18 +29,14 @@ impl ListBackupPlanVersionsInput {
 }
 impl ListBackupPlanVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListBackupPlanVersionsInput`](crate::operation::list_backup_plan_versions::ListBackupPlanVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_backup_plan_versions::builders::ListBackupPlanVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_backup_plan_versions::builders::ListBackupPlanVersionsInputBuilder {
         crate::operation::list_backup_plan_versions::builders::ListBackupPlanVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBackupPlanVersionsInput`](crate::operation::list_backup_plan_versions::ListBackupPlanVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBackupPlanVersionsInputBuilder {
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct ListBackupPlanVersionsInputBuilder {
 }
 impl ListBackupPlanVersionsInputBuilder {
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn set_backup_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_id = input;
         self
     }
@@ -102,12 +92,10 @@ impl ListBackupPlanVersionsInputBuilder {
         crate::operation::list_backup_plan_versions::ListBackupPlanVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_backup_plan_versions::ListBackupPlanVersionsInput {
-                backup_plan_id: self.backup_plan_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_backup_plan_versions::ListBackupPlanVersionsInput {
+            backup_plan_id: self.backup_plan_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

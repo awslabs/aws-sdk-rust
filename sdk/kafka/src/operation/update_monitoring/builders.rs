@@ -10,10 +10,7 @@ impl UpdateMonitoringInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_monitoring::UpdateMonitoringOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_monitoring::UpdateMonitoringError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_monitoring::UpdateMonitoringError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_monitoring();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateMonitoringFluentBuilder {
         }
     }
     /// Access the UpdateMonitoring as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_monitoring::builders::UpdateMonitoringInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_monitoring::builders::UpdateMonitoringInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateMonitoringFluentBuilder {
             crate::operation::update_monitoring::UpdateMonitoring,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_monitoring::UpdateMonitoringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_monitoring::UpdateMonitoringError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateMonitoringFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateMonitoringFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_monitoring::UpdateMonitoringOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_monitoring::UpdateMonitoringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_monitoring::UpdateMonitoringError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateMonitoringFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_monitoring::UpdateMonitoringOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_monitoring::UpdateMonitoringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_monitoring::UpdateMonitoringError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateMonitoringFluentBuilder {
             crate::operation::update_monitoring::UpdateMonitoring,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_monitoring::UpdateMonitoringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_monitoring::UpdateMonitoringError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl UpdateMonitoringFluentBuilder {
         self.inner.get_cluster_arn()
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_version(input.into());
         self
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
     }
@@ -162,17 +140,12 @@ impl UpdateMonitoringFluentBuilder {
         self
     }
     /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
-    pub fn set_enhanced_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::EnhancedMonitoring>,
-    ) -> Self {
+    pub fn set_enhanced_monitoring(mut self, input: ::std::option::Option<crate::types::EnhancedMonitoring>) -> Self {
         self.inner = self.inner.set_enhanced_monitoring(input);
         self
     }
     /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
-    pub fn get_enhanced_monitoring(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnhancedMonitoring> {
+    pub fn get_enhanced_monitoring(&self) -> &::std::option::Option<crate::types::EnhancedMonitoring> {
         self.inner.get_enhanced_monitoring()
     }
     /// <p>The settings for open monitoring.</p>
@@ -181,10 +154,7 @@ impl UpdateMonitoringFluentBuilder {
         self
     }
     /// <p>The settings for open monitoring.</p>
-    pub fn set_open_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenMonitoringInfo>,
-    ) -> Self {
+    pub fn set_open_monitoring(mut self, input: ::std::option::Option<crate::types::OpenMonitoringInfo>) -> Self {
         self.inner = self.inner.set_open_monitoring(input);
         self
     }
@@ -198,10 +168,7 @@ impl UpdateMonitoringFluentBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_logging_info(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingInfo>,
-    ) -> Self {
+    pub fn set_logging_info(mut self, input: ::std::option::Option<crate::types::LoggingInfo>) -> Self {
         self.inner = self.inner.set_logging_info(input);
         self
     }

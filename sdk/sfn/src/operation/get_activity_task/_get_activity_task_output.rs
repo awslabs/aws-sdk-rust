@@ -37,8 +37,7 @@ impl ::aws_http::request_id::RequestId for GetActivityTaskOutput {
 }
 impl GetActivityTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetActivityTaskOutput`](crate::operation::get_activity_task::GetActivityTaskOutput).
-    pub fn builder() -> crate::operation::get_activity_task::builders::GetActivityTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_activity_task::builders::GetActivityTaskOutputBuilder {
         crate::operation::get_activity_task::builders::GetActivityTaskOutputBuilder::default()
     }
 }

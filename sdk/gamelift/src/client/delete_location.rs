@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`location_name(impl ::std::convert::Into<String>)`](crate::operation::delete_location::builders::DeleteLocationFluentBuilder::location_name) / [`set_location_name(Option<String>)`](crate::operation::delete_location::builders::DeleteLocationFluentBuilder::set_location_name): <p>The location name of the custom location to be deleted.</p>
     /// - On success, responds with [`DeleteLocationOutput`](crate::operation::delete_location::DeleteLocationOutput)
     /// - On failure, responds with [`SdkError<DeleteLocationError>`](crate::operation::delete_location::DeleteLocationError)
-    pub fn delete_location(
-        &self,
-    ) -> crate::operation::delete_location::builders::DeleteLocationFluentBuilder {
-        crate::operation::delete_location::builders::DeleteLocationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_location(&self) -> crate::operation::delete_location::builders::DeleteLocationFluentBuilder {
+        crate::operation::delete_location::builders::DeleteLocationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,8 +8,7 @@ pub struct GetBandwidthRateLimitScheduleOutput {
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
     #[doc(hidden)]
-    pub bandwidth_rate_limit_intervals:
-        ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
+    pub bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
     _request_id: Option<String>,
 }
 impl GetBandwidthRateLimitScheduleOutput {
@@ -18,9 +17,7 @@ impl GetBandwidthRateLimitScheduleOutput {
         self.gateway_arn.as_deref()
     }
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
-    pub fn bandwidth_rate_limit_intervals(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BandwidthRateLimitInterval]> {
+    pub fn bandwidth_rate_limit_intervals(&self) -> ::std::option::Option<&[crate::types::BandwidthRateLimitInterval]> {
         self.bandwidth_rate_limit_intervals.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for GetBandwidthRateLimitScheduleOutput {
 }
 impl GetBandwidthRateLimitScheduleOutput {
     /// Creates a new builder-style object to manufacture [`GetBandwidthRateLimitScheduleOutput`](crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleOutput).
-    pub fn builder() -> crate::operation::get_bandwidth_rate_limit_schedule::builders::GetBandwidthRateLimitScheduleOutputBuilder{
+    pub fn builder() -> crate::operation::get_bandwidth_rate_limit_schedule::builders::GetBandwidthRateLimitScheduleOutputBuilder {
         crate::operation::get_bandwidth_rate_limit_schedule::builders::GetBandwidthRateLimitScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBandwidthRateLimitScheduleOutput`](crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBandwidthRateLimitScheduleOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) bandwidth_rate_limit_intervals:
-        ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
+    pub(crate) bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
     _request_id: Option<String>,
 }
 impl GetBandwidthRateLimitScheduleOutputBuilder {
@@ -67,10 +61,7 @@ impl GetBandwidthRateLimitScheduleOutputBuilder {
     /// To override the contents of this collection use [`set_bandwidth_rate_limit_intervals`](Self::set_bandwidth_rate_limit_intervals).
     ///
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
-    pub fn bandwidth_rate_limit_intervals(
-        mut self,
-        input: crate::types::BandwidthRateLimitInterval,
-    ) -> Self {
+    pub fn bandwidth_rate_limit_intervals(mut self, input: crate::types::BandwidthRateLimitInterval) -> Self {
         let mut v = self.bandwidth_rate_limit_intervals.unwrap_or_default();
         v.push(input);
         self.bandwidth_rate_limit_intervals = ::std::option::Option::Some(v);
@@ -85,9 +76,7 @@ impl GetBandwidthRateLimitScheduleOutputBuilder {
         self
     }
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
-    pub fn get_bandwidth_rate_limit_intervals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>> {
+    pub fn get_bandwidth_rate_limit_intervals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>> {
         &self.bandwidth_rate_limit_intervals
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -100,10 +89,7 @@ impl GetBandwidthRateLimitScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetBandwidthRateLimitScheduleOutput`](crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleOutput
-    {
+    pub fn build(self) -> crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleOutput {
         crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleOutput {
             gateway_arn: self.gateway_arn,
             bandwidth_rate_limit_intervals: self.bandwidth_rate_limit_intervals,

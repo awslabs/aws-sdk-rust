@@ -37,9 +37,7 @@ impl NotifyObjectCompleteFluentBuilder {
         }
     }
     /// Access the NotifyObjectComplete as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::notify_object_complete::builders::NotifyObjectCompleteInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::notify_object_complete::builders::NotifyObjectCompleteInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl NotifyObjectCompleteFluentBuilder {
             crate::operation::notify_object_complete::NotifyObjectComplete,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_object_complete::NotifyObjectCompleteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_object_complete::NotifyObjectCompleteError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl NotifyObjectCompleteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl NotifyObjectCompleteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::notify_object_complete::NotifyObjectCompleteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_object_complete::NotifyObjectCompleteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_object_complete::NotifyObjectCompleteError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl NotifyObjectCompleteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::notify_object_complete::NotifyObjectCompleteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_object_complete::NotifyObjectCompleteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_object_complete::NotifyObjectCompleteError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl NotifyObjectCompleteFluentBuilder {
             crate::operation::notify_object_complete::NotifyObjectComplete,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::notify_object_complete::NotifyObjectCompleteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::notify_object_complete::NotifyObjectCompleteError>,
     > {
         self.customize_middleware().await
     }
     /// Backup job Id for the in-progress backup
-    pub fn backup_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_job_id(input.into());
         self
     }
     /// Backup job Id for the in-progress backup
-    pub fn set_backup_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_job_id(input);
         self
     }
@@ -157,18 +138,12 @@ impl NotifyObjectCompleteFluentBuilder {
         self.inner.get_upload_id()
     }
     /// Object checksum
-    pub fn object_checksum(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.object_checksum(input.into());
         self
     }
     /// Object checksum
-    pub fn set_object_checksum(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_object_checksum(input);
         self
     }
@@ -177,40 +152,26 @@ impl NotifyObjectCompleteFluentBuilder {
         self.inner.get_object_checksum()
     }
     /// Checksum algorithm
-    pub fn object_checksum_algorithm(
-        mut self,
-        input: crate::types::SummaryChecksumAlgorithm,
-    ) -> Self {
+    pub fn object_checksum_algorithm(mut self, input: crate::types::SummaryChecksumAlgorithm) -> Self {
         self.inner = self.inner.object_checksum_algorithm(input);
         self
     }
     /// Checksum algorithm
-    pub fn set_object_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_object_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>) -> Self {
         self.inner = self.inner.set_object_checksum_algorithm(input);
         self
     }
     /// Checksum algorithm
-    pub fn get_object_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::SummaryChecksumAlgorithm> {
+    pub fn get_object_checksum_algorithm(&self) -> &::std::option::Option<crate::types::SummaryChecksumAlgorithm> {
         self.inner.get_object_checksum_algorithm()
     }
     /// Optional metadata associated with an Object. Maximum string length is 256 bytes.
-    pub fn metadata_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata_string(input.into());
         self
     }
     /// Optional metadata associated with an Object. Maximum string length is 256 bytes.
-    pub fn set_metadata_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metadata_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metadata_string(input);
         self
     }
@@ -224,17 +185,12 @@ impl NotifyObjectCompleteFluentBuilder {
         self
     }
     /// Optional metadata associated with an Object. Maximum length is 4MB.
-    pub fn set_metadata_blob(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_metadata_blob(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_metadata_blob(input);
         self
     }
     /// Optional metadata associated with an Object. Maximum length is 4MB.
-    pub fn get_metadata_blob(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_metadata_blob(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         self.inner.get_metadata_blob()
     }
     /// The size of MetadataBlob.
@@ -252,18 +208,12 @@ impl NotifyObjectCompleteFluentBuilder {
         self.inner.get_metadata_blob_length()
     }
     /// Checksum of MetadataBlob.
-    pub fn metadata_blob_checksum(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata_blob_checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata_blob_checksum(input.into());
         self
     }
     /// Checksum of MetadataBlob.
-    pub fn set_metadata_blob_checksum(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metadata_blob_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metadata_blob_checksum(input);
         self
     }
@@ -272,25 +222,17 @@ impl NotifyObjectCompleteFluentBuilder {
         self.inner.get_metadata_blob_checksum()
     }
     /// Checksum algorithm.
-    pub fn metadata_blob_checksum_algorithm(
-        mut self,
-        input: crate::types::DataChecksumAlgorithm,
-    ) -> Self {
+    pub fn metadata_blob_checksum_algorithm(mut self, input: crate::types::DataChecksumAlgorithm) -> Self {
         self.inner = self.inner.metadata_blob_checksum_algorithm(input);
         self
     }
     /// Checksum algorithm.
-    pub fn set_metadata_blob_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_metadata_blob_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::DataChecksumAlgorithm>) -> Self {
         self.inner = self.inner.set_metadata_blob_checksum_algorithm(input);
         self
     }
     /// Checksum algorithm.
-    pub fn get_metadata_blob_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
+    pub fn get_metadata_blob_checksum_algorithm(&self) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
         self.inner.get_metadata_blob_checksum_algorithm()
     }
 }

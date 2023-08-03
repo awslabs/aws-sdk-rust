@@ -26,7 +26,7 @@ impl DescribeAllManagedProductsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAllManagedProductsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_all_managed_products::builders::DescribeAllManagedProductsInputBuilder,
+    inner: crate::operation::describe_all_managed_products::builders::DescribeAllManagedProductsInputBuilder,
 }
 impl DescribeAllManagedProductsFluentBuilder {
     /// Creates a new `DescribeAllManagedProducts`.
@@ -37,7 +37,7 @@ impl DescribeAllManagedProductsFluentBuilder {
         }
     }
     /// Access the DescribeAllManagedProducts as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_all_managed_products::builders::DescribeAllManagedProductsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_all_managed_products::builders::DescribeAllManagedProductsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeAllManagedProductsFluentBuilder {
             crate::operation::describe_all_managed_products::DescribeAllManagedProducts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_all_managed_products::DescribeAllManagedProductsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_all_managed_products::DescribeAllManagedProductsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeAllManagedProductsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeAllManagedProductsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_all_managed_products::DescribeAllManagedProductsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_all_managed_products::DescribeAllManagedProductsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_all_managed_products::DescribeAllManagedProductsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeAllManagedProductsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_all_managed_products::DescribeAllManagedProductsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_all_managed_products::DescribeAllManagedProductsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_all_managed_products::DescribeAllManagedProductsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeAllManagedProductsFluentBuilder {
             crate::operation::describe_all_managed_products::DescribeAllManagedProducts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_all_managed_products::DescribeAllManagedProductsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_all_managed_products::DescribeAllManagedProductsError>,
     > {
         self.customize_middleware().await
     }

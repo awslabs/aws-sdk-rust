@@ -29,17 +29,14 @@ impl UpdateConnectionInput {
 }
 impl UpdateConnectionInput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
-    pub fn builder() -> crate::operation::update_connection::builders::UpdateConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_connection::builders::UpdateConnectionInputBuilder {
         crate::operation::update_connection::builders::UpdateConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConnectionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -80,10 +77,7 @@ impl UpdateConnectionInputBuilder {
         self
     }
     /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
-    pub fn set_connection_input(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionInput>,
-    ) -> Self {
+    pub fn set_connection_input(mut self, input: ::std::option::Option<crate::types::ConnectionInput>) -> Self {
         self.connection_input = input;
         self
     }
@@ -94,10 +88,7 @@ impl UpdateConnectionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_connection::UpdateConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_connection::UpdateConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_connection::UpdateConnectionInput {
             catalog_id: self.catalog_id,
             name: self.name,

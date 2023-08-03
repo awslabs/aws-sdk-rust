@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for SetInstanceHealthOutput {
 }
 impl SetInstanceHealthOutput {
     /// Creates a new builder-style object to manufacture [`SetInstanceHealthOutput`](crate::operation::set_instance_health::SetInstanceHealthOutput).
-    pub fn builder(
-    ) -> crate::operation::set_instance_health::builders::SetInstanceHealthOutputBuilder {
+    pub fn builder() -> crate::operation::set_instance_health::builders::SetInstanceHealthOutputBuilder {
         crate::operation::set_instance_health::builders::SetInstanceHealthOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetInstanceHealthOutput`](crate::operation::set_instance_health::SetInstanceHealthOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetInstanceHealthOutputBuilder {
     _request_id: Option<String>,
 }

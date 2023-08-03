@@ -44,9 +44,7 @@ impl LoadBasedAutoScalingConfiguration {
 
 /// A builder for [`LoadBasedAutoScalingConfiguration`](crate::types::LoadBasedAutoScalingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoadBasedAutoScalingConfigurationBuilder {
     pub(crate) layer_id: ::std::option::Option<::std::string::String>,
     pub(crate) enable: ::std::option::Option<bool>,
@@ -88,10 +86,7 @@ impl LoadBasedAutoScalingConfigurationBuilder {
         self
     }
     /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
-    pub fn set_up_scaling(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingThresholds>,
-    ) -> Self {
+    pub fn set_up_scaling(mut self, input: ::std::option::Option<crate::types::AutoScalingThresholds>) -> Self {
         self.up_scaling = input;
         self
     }
@@ -105,10 +100,7 @@ impl LoadBasedAutoScalingConfigurationBuilder {
         self
     }
     /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
-    pub fn set_down_scaling(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingThresholds>,
-    ) -> Self {
+    pub fn set_down_scaling(mut self, input: ::std::option::Option<crate::types::AutoScalingThresholds>) -> Self {
         self.down_scaling = input;
         self
     }

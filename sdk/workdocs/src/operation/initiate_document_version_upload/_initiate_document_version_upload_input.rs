@@ -42,15 +42,11 @@ impl InitiateDocumentVersionUploadInput {
         self.name.as_deref()
     }
     /// <p>The timestamp when the content of the document was originally created.</p>
-    pub fn content_created_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn content_created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.content_created_timestamp.as_ref()
     }
     /// <p>The timestamp when the content of the document was modified.</p>
-    pub fn content_modified_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn content_modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.content_modified_timestamp.as_ref()
     }
     /// <p>The content type of the document.</p>
@@ -73,10 +69,7 @@ impl ::std::fmt::Debug for InitiateDocumentVersionUploadInput {
         formatter.field("id", &self.id);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("content_created_timestamp", &self.content_created_timestamp);
-        formatter.field(
-            "content_modified_timestamp",
-            &self.content_modified_timestamp,
-        );
+        formatter.field("content_modified_timestamp", &self.content_modified_timestamp);
         formatter.field("content_type", &self.content_type);
         formatter.field("document_size_in_bytes", &self.document_size_in_bytes);
         formatter.field("parent_folder_id", &self.parent_folder_id);
@@ -85,7 +78,7 @@ impl ::std::fmt::Debug for InitiateDocumentVersionUploadInput {
 }
 impl InitiateDocumentVersionUploadInput {
     /// Creates a new builder-style object to manufacture [`InitiateDocumentVersionUploadInput`](crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadInput).
-    pub fn builder() -> crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadInputBuilder{
+    pub fn builder() -> crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadInputBuilder {
         crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadInputBuilder::default()
     }
 }
@@ -105,18 +98,12 @@ pub struct InitiateDocumentVersionUploadInputBuilder {
 }
 impl InitiateDocumentVersionUploadInputBuilder {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_token = input;
         self
     }
@@ -158,17 +145,12 @@ impl InitiateDocumentVersionUploadInputBuilder {
         self
     }
     /// <p>The timestamp when the content of the document was originally created.</p>
-    pub fn set_content_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_content_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.content_created_timestamp = input;
         self
     }
     /// <p>The timestamp when the content of the document was originally created.</p>
-    pub fn get_content_created_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_content_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.content_created_timestamp
     }
     /// <p>The timestamp when the content of the document was modified.</p>
@@ -177,17 +159,12 @@ impl InitiateDocumentVersionUploadInputBuilder {
         self
     }
     /// <p>The timestamp when the content of the document was modified.</p>
-    pub fn set_content_modified_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_content_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.content_modified_timestamp = input;
         self
     }
     /// <p>The timestamp when the content of the document was modified.</p>
-    pub fn get_content_modified_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_content_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.content_modified_timestamp
     }
     /// <p>The content type of the document.</p>
@@ -219,18 +196,12 @@ impl InitiateDocumentVersionUploadInputBuilder {
         &self.document_size_in_bytes
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn parent_folder_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_folder_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn set_parent_folder_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_folder_id = input;
         self
     }
@@ -245,26 +216,16 @@ impl InitiateDocumentVersionUploadInputBuilder {
         crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadInput {
-                authentication_token: self.authentication_token
-                ,
-                id: self.id
-                ,
-                name: self.name
-                ,
-                content_created_timestamp: self.content_created_timestamp
-                ,
-                content_modified_timestamp: self.content_modified_timestamp
-                ,
-                content_type: self.content_type
-                ,
-                document_size_in_bytes: self.document_size_in_bytes
-                ,
-                parent_folder_id: self.parent_folder_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadInput {
+            authentication_token: self.authentication_token,
+            id: self.id,
+            name: self.name,
+            content_created_timestamp: self.content_created_timestamp,
+            content_modified_timestamp: self.content_modified_timestamp,
+            content_type: self.content_type,
+            document_size_in_bytes: self.document_size_in_bytes,
+            parent_folder_id: self.parent_folder_id,
+        })
     }
 }
 impl ::std::fmt::Debug for InitiateDocumentVersionUploadInputBuilder {
@@ -274,10 +235,7 @@ impl ::std::fmt::Debug for InitiateDocumentVersionUploadInputBuilder {
         formatter.field("id", &self.id);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("content_created_timestamp", &self.content_created_timestamp);
-        formatter.field(
-            "content_modified_timestamp",
-            &self.content_modified_timestamp,
-        );
+        formatter.field("content_modified_timestamp", &self.content_modified_timestamp);
         formatter.field("content_type", &self.content_type);
         formatter.field("document_size_in_bytes", &self.document_size_in_bytes);
         formatter.field("parent_folder_id", &self.parent_folder_id);

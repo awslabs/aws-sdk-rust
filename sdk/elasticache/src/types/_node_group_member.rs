@@ -58,9 +58,7 @@ impl NodeGroupMember {
 
 /// A builder for [`NodeGroupMember`](crate::types::NodeGroupMember).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeGroupMemberBuilder {
     pub(crate) cache_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) cache_node_id: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct NodeGroupMemberBuilder {
 }
 impl NodeGroupMemberBuilder {
     /// <p>The ID of the cluster to which the node belongs.</p>
-    pub fn cache_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the cluster to which the node belongs.</p>
-    pub fn set_cache_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_cluster_id = input;
         self
     }
@@ -91,18 +83,12 @@ impl NodeGroupMemberBuilder {
         &self.cache_cluster_id
     }
     /// <p>The ID of the node within its cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
-    pub fn cache_node_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_node_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the node within its cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
-    pub fn set_cache_node_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_node_id = input;
         self
     }
@@ -116,10 +102,7 @@ impl NodeGroupMemberBuilder {
         self
     }
     /// <p>The information required for client programs to connect to a node for read operations. The read endpoint is only applicable on Redis (cluster mode disabled) clusters.</p>
-    pub fn set_read_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::Endpoint>,
-    ) -> Self {
+    pub fn set_read_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
         self.read_endpoint = input;
         self
     }
@@ -128,18 +111,12 @@ impl NodeGroupMemberBuilder {
         &self.read_endpoint
     }
     /// <p>The name of the Availability Zone in which the node is located.</p>
-    pub fn preferred_availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Availability Zone in which the node is located.</p>
-    pub fn set_preferred_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_availability_zone = input;
         self
     }
@@ -148,18 +125,12 @@ impl NodeGroupMemberBuilder {
         &self.preferred_availability_zone
     }
     /// <p>The outpost ARN of the node group member.</p>
-    pub fn preferred_outpost_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The outpost ARN of the node group member.</p>
-    pub fn set_preferred_outpost_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_outpost_arn = input;
         self
     }

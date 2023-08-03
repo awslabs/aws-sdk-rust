@@ -17,9 +17,7 @@ impl LinuxSubscriptionsDiscoverySettings {
         self.source_regions.as_deref()
     }
     /// <p>Details if you have enabled resource discovery across your accounts in Organizations.</p>
-    pub fn organization_integration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OrganizationIntegration> {
+    pub fn organization_integration(&self) -> ::std::option::Option<&crate::types::OrganizationIntegration> {
         self.organization_integration.as_ref()
     }
 }
@@ -32,13 +30,10 @@ impl LinuxSubscriptionsDiscoverySettings {
 
 /// A builder for [`LinuxSubscriptionsDiscoverySettings`](crate::types::LinuxSubscriptionsDiscoverySettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LinuxSubscriptionsDiscoverySettingsBuilder {
     pub(crate) source_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) organization_integration:
-        ::std::option::Option<crate::types::OrganizationIntegration>,
+    pub(crate) organization_integration: ::std::option::Option<crate::types::OrganizationIntegration>,
 }
 impl LinuxSubscriptionsDiscoverySettingsBuilder {
     /// Appends an item to `source_regions`.
@@ -46,49 +41,33 @@ impl LinuxSubscriptionsDiscoverySettingsBuilder {
     /// To override the contents of this collection use [`set_source_regions`](Self::set_source_regions).
     ///
     /// <p>The Regions in which to discover data for Linux subscriptions.</p>
-    pub fn source_regions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_regions.unwrap_or_default();
         v.push(input.into());
         self.source_regions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Regions in which to discover data for Linux subscriptions.</p>
-    pub fn set_source_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_regions = input;
         self
     }
     /// <p>The Regions in which to discover data for Linux subscriptions.</p>
-    pub fn get_source_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_regions
     }
     /// <p>Details if you have enabled resource discovery across your accounts in Organizations.</p>
-    pub fn organization_integration(
-        mut self,
-        input: crate::types::OrganizationIntegration,
-    ) -> Self {
+    pub fn organization_integration(mut self, input: crate::types::OrganizationIntegration) -> Self {
         self.organization_integration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details if you have enabled resource discovery across your accounts in Organizations.</p>
-    pub fn set_organization_integration(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationIntegration>,
-    ) -> Self {
+    pub fn set_organization_integration(mut self, input: ::std::option::Option<crate::types::OrganizationIntegration>) -> Self {
         self.organization_integration = input;
         self
     }
     /// <p>Details if you have enabled resource discovery across your accounts in Organizations.</p>
-    pub fn get_organization_integration(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationIntegration> {
+    pub fn get_organization_integration(&self) -> &::std::option::Option<crate::types::OrganizationIntegration> {
         &self.organization_integration
     }
     /// Consumes the builder and constructs a [`LinuxSubscriptionsDiscoverySettings`](crate::types::LinuxSubscriptionsDiscoverySettings).

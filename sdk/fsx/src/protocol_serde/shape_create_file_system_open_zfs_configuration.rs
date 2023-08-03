@@ -16,9 +16,7 @@ pub fn ser_create_file_system_open_zfs_configuration(
         object.key("CopyTagsToVolumes").boolean(*var_3);
     }
     if let Some(var_4) = &input.daily_automatic_backup_start_time {
-        object
-            .key("DailyAutomaticBackupStartTime")
-            .string(var_4.as_str());
+        object.key("DailyAutomaticBackupStartTime").string(var_4.as_str());
     }
     if let Some(var_5) = &input.deployment_type {
         object.key("DeploymentType").string(var_5.as_str());
@@ -30,23 +28,21 @@ pub fn ser_create_file_system_open_zfs_configuration(
         );
     }
     if let Some(var_7) = &input.weekly_maintenance_start_time {
-        object
-            .key("WeeklyMaintenanceStartTime")
-            .string(var_7.as_str());
+        object.key("WeeklyMaintenanceStartTime").string(var_7.as_str());
     }
     if let Some(var_8) = &input.disk_iops_configuration {
         #[allow(unused_mut)]
         let mut object_9 = object.key("DiskIopsConfiguration").start_object();
-        crate::protocol_serde::shape_disk_iops_configuration::ser_disk_iops_configuration(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_disk_iops_configuration::ser_disk_iops_configuration(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.root_volume_configuration {
         #[allow(unused_mut)]
         let mut object_11 = object.key("RootVolumeConfiguration").start_object();
-        crate::protocol_serde::shape_open_zfs_create_root_volume_configuration::ser_open_zfs_create_root_volume_configuration(&mut object_11, var_10)?;
+        crate::protocol_serde::shape_open_zfs_create_root_volume_configuration::ser_open_zfs_create_root_volume_configuration(
+            &mut object_11,
+            var_10,
+        )?;
         object_11.finish();
     }
     Ok(())

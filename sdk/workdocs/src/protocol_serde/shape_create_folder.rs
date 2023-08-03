@@ -2,8 +2,7 @@
 pub fn ser_create_folder_headers(
     input: &crate::operation::create_folder::CreateFolderInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.authentication_token {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_create_folder_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "authentication_token",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &"*** Sensitive Data Redacted ***", err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
             })?;
             builder = builder.header("Authentication", header_value);
@@ -25,8 +21,7 @@ pub fn ser_create_folder_headers(
 
 pub fn ser_create_folder_input(
     input: &crate::operation::create_folder::CreateFolderInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_folder_input::ser_create_folder_input(&mut object, input)?;
@@ -39,17 +34,10 @@ pub fn de_create_folder_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_folder::CreateFolderOutput,
-    crate::operation::create_folder::CreateFolderError,
-> {
+) -> std::result::Result<crate::operation::create_folder::CreateFolderOutput, crate::operation::create_folder::CreateFolderError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
@@ -59,176 +47,168 @@ pub fn de_create_folder_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModificationException" => {
-            crate::operation::create_folder::CreateFolderError::ConcurrentModificationException({
+        "ConcurrentModificationException" => crate::operation::create_folder::CreateFolderError::ConcurrentModificationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(_response_body, output).map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ConflictingOperationException" => {
-            crate::operation::create_folder::CreateFolderError::ConflictingOperationException({
+                let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ConflictingOperationException" => crate::operation::create_folder::CreateFolderError::ConflictingOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConflictingOperationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(_response_body, output).map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "EntityAlreadyExistsException" => {
-            crate::operation::create_folder::CreateFolderError::EntityAlreadyExistsException({
+                let mut output = crate::types::error::builders::ConflictingOperationExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "EntityAlreadyExistsException" => crate::operation::create_folder::CreateFolderError::EntityAlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::EntityAlreadyExistsExceptionBuilder::default(
-                        );
-                    output = crate::protocol_serde::shape_entity_already_exists_exception::de_entity_already_exists_exception_json_err(_response_body, output).map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "EntityNotExistsException" => {
-            crate::operation::create_folder::CreateFolderError::EntityNotExistsException({
+                let mut output = crate::types::error::builders::EntityAlreadyExistsExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_entity_already_exists_exception::de_entity_already_exists_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "EntityNotExistsException" => crate::operation::create_folder::CreateFolderError::EntityNotExistsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::EntityNotExistsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_entity_not_exists_exception::de_entity_not_exists_exception_json_err(_response_body, output).map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "FailedDependencyException" => {
-            crate::operation::create_folder::CreateFolderError::FailedDependencyException({
+                let mut output = crate::types::error::builders::EntityNotExistsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_entity_not_exists_exception::de_entity_not_exists_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "FailedDependencyException" => crate::operation::create_folder::CreateFolderError::FailedDependencyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::FailedDependencyExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_failed_dependency_exception::de_failed_dependency_exception_json_err(_response_body, output).map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "LimitExceededException" => {
-            crate::operation::create_folder::CreateFolderError::LimitExceededException({
+                let mut output = crate::types::error::builders::FailedDependencyExceptionBuilder::default();
+                output = crate::protocol_serde::shape_failed_dependency_exception::de_failed_dependency_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::create_folder::CreateFolderError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ProhibitedStateException" => {
-            crate::operation::create_folder::CreateFolderError::ProhibitedStateException({
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ProhibitedStateException" => crate::operation::create_folder::CreateFolderError::ProhibitedStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ProhibitedStateExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_prohibited_state_exception::de_prohibited_state_exception_json_err(_response_body, output).map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::operation::create_folder::CreateFolderError::ServiceUnavailableException({
+                let mut output = crate::types::error::builders::ProhibitedStateExceptionBuilder::default();
+                output = crate::protocol_serde::shape_prohibited_state_exception::de_prohibited_state_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::create_folder::CreateFolderError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
-                        );
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "UnauthorizedOperationException" => {
-            crate::operation::create_folder::CreateFolderError::UnauthorizedOperationException({
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnauthorizedOperationException" => crate::operation::create_folder::CreateFolderError::UnauthorizedOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnauthorizedOperationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_operation_exception::de_unauthorized_operation_exception_json_err(_response_body, output).map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "UnauthorizedResourceAccessException" => {
-            crate::operation::create_folder::CreateFolderError::UnauthorizedResourceAccessException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnauthorizedResourceAccessExceptionBuilder::default();
-                        output = crate::protocol_serde::shape_unauthorized_resource_access_exception::de_unauthorized_resource_access_exception_json_err(_response_body, output).map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
+                let mut output = crate::types::error::builders::UnauthorizedOperationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_operation_exception::de_unauthorized_operation_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnauthorizedResourceAccessException" => crate::operation::create_folder::CreateFolderError::UnauthorizedResourceAccessException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnauthorizedResourceAccessExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_resource_access_exception::de_unauthorized_resource_access_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::create_folder::CreateFolderError::generic(generic),
     })
 }
@@ -238,20 +218,13 @@ pub fn de_create_folder_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_folder::CreateFolderOutput,
-    crate::operation::create_folder::CreateFolderError,
-> {
+) -> std::result::Result<crate::operation::create_folder::CreateFolderOutput, crate::operation::create_folder::CreateFolderError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::create_folder::builders::CreateFolderOutputBuilder::default();
-        output =
-            crate::protocol_serde::shape_create_folder::de_create_folder(_response_body, output)
-                .map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::create_folder::builders::CreateFolderOutputBuilder::default();
+        output = crate::protocol_serde::shape_create_folder::de_create_folder(_response_body, output)
+            .map_err(crate::operation::create_folder::CreateFolderError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -259,46 +232,31 @@ pub fn de_create_folder_http_response_with_props(
 pub(crate) fn de_create_folder(
     value: &[u8],
     mut builder: crate::operation::create_folder::builders::CreateFolderOutputBuilder,
-) -> Result<
-    crate::operation::create_folder::builders::CreateFolderOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+) -> Result<crate::operation::create_folder::builders::CreateFolderOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "Metadata" => {
-                        builder = builder.set_metadata(
-                            crate::protocol_serde::shape_folder_metadata::de_folder_metadata(
-                                tokens,
-                            )?,
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "Metadata" => {
+                    builder = builder.set_metadata(crate::protocol_serde::shape_folder_metadata::de_folder_metadata(tokens)?);
                 }
-            }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

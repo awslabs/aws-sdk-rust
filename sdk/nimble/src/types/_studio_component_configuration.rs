@@ -25,9 +25,7 @@ pub enum StudioComponentConfiguration {
 impl StudioComponentConfiguration {
     /// Tries to convert the enum instance into [`ActiveDirectoryConfiguration`](crate::types::StudioComponentConfiguration::ActiveDirectoryConfiguration), extracting the inner [`ActiveDirectoryConfiguration`](crate::types::ActiveDirectoryConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_active_directory_configuration(
-        &self,
-    ) -> ::std::result::Result<&crate::types::ActiveDirectoryConfiguration, &Self> {
+    pub fn as_active_directory_configuration(&self) -> ::std::result::Result<&crate::types::ActiveDirectoryConfiguration, &Self> {
         if let StudioComponentConfiguration::ActiveDirectoryConfiguration(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -40,9 +38,7 @@ impl StudioComponentConfiguration {
     }
     /// Tries to convert the enum instance into [`ComputeFarmConfiguration`](crate::types::StudioComponentConfiguration::ComputeFarmConfiguration), extracting the inner [`ComputeFarmConfiguration`](crate::types::ComputeFarmConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_compute_farm_configuration(
-        &self,
-    ) -> ::std::result::Result<&crate::types::ComputeFarmConfiguration, &Self> {
+    pub fn as_compute_farm_configuration(&self) -> ::std::result::Result<&crate::types::ComputeFarmConfiguration, &Self> {
         if let StudioComponentConfiguration::ComputeFarmConfiguration(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -55,9 +51,7 @@ impl StudioComponentConfiguration {
     }
     /// Tries to convert the enum instance into [`LicenseServiceConfiguration`](crate::types::StudioComponentConfiguration::LicenseServiceConfiguration), extracting the inner [`LicenseServiceConfiguration`](crate::types::LicenseServiceConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_license_service_configuration(
-        &self,
-    ) -> ::std::result::Result<&crate::types::LicenseServiceConfiguration, &Self> {
+    pub fn as_license_service_configuration(&self) -> ::std::result::Result<&crate::types::LicenseServiceConfiguration, &Self> {
         if let StudioComponentConfiguration::LicenseServiceConfiguration(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -70,9 +64,7 @@ impl StudioComponentConfiguration {
     }
     /// Tries to convert the enum instance into [`SharedFileSystemConfiguration`](crate::types::StudioComponentConfiguration::SharedFileSystemConfiguration), extracting the inner [`SharedFileSystemConfiguration`](crate::types::SharedFileSystemConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_shared_file_system_configuration(
-        &self,
-    ) -> ::std::result::Result<&crate::types::SharedFileSystemConfiguration, &Self> {
+    pub fn as_shared_file_system_configuration(&self) -> ::std::result::Result<&crate::types::SharedFileSystemConfiguration, &Self> {
         if let StudioComponentConfiguration::SharedFileSystemConfiguration(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

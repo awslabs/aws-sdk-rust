@@ -36,9 +36,7 @@ impl GetIntegrationsInput {
 
 /// A builder for [`GetIntegrationsInput`](crate::operation::get_integrations::GetIntegrationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIntegrationsInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl GetIntegrationsInputBuilder {
     /// Consumes the builder and constructs a [`GetIntegrationsInput`](crate::operation::get_integrations::GetIntegrationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_integrations::GetIntegrationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_integrations::GetIntegrationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_integrations::GetIntegrationsInput {
             api_id: self.api_id,
             max_results: self.max_results,

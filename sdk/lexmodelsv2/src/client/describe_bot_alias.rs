@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::describe_bot_alias::DescribeBotAliasOutput::last_updated_date_time): <p>A timestamp of the date and time that the alias was last updated.</p>
     ///   - [`parent_bot_networks(Option<Vec<ParentBotNetwork>>)`](crate::operation::describe_bot_alias::DescribeBotAliasOutput::parent_bot_networks): <p>A list of the networks to which the bot alias you described belongs.</p>
     /// - On failure, responds with [`SdkError<DescribeBotAliasError>`](crate::operation::describe_bot_alias::DescribeBotAliasError)
-    pub fn describe_bot_alias(
-        &self,
-    ) -> crate::operation::describe_bot_alias::builders::DescribeBotAliasFluentBuilder {
-        crate::operation::describe_bot_alias::builders::DescribeBotAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_bot_alias(&self) -> crate::operation::describe_bot_alias::builders::DescribeBotAliasFluentBuilder {
+        crate::operation::describe_bot_alias::builders::DescribeBotAliasFluentBuilder::new(self.handle.clone())
     }
 }

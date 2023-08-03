@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`status(Option<ChangesetStatus>)`](crate::operation::create_kx_changeset::CreateKxChangesetOutput::status): <p>Status of the changeset creation process.</p>  <ul>   <li> <p>Pending – Changeset creation is pending.</p> </li>   <li> <p>Processing – Changeset creation is running.</p> </li>   <li> <p>Failed – Changeset creation has failed.</p> </li>   <li> <p>Complete – Changeset creation has succeeded.</p> </li>  </ul>
     ///   - [`error_info(Option<ErrorInfo>)`](crate::operation::create_kx_changeset::CreateKxChangesetOutput::error_info): <p>The details of the error that you receive when creating a changeset. It consists of the type of error and the error message.</p>
     /// - On failure, responds with [`SdkError<CreateKxChangesetError>`](crate::operation::create_kx_changeset::CreateKxChangesetError)
-    pub fn create_kx_changeset(
-        &self,
-    ) -> crate::operation::create_kx_changeset::builders::CreateKxChangesetFluentBuilder {
-        crate::operation::create_kx_changeset::builders::CreateKxChangesetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_kx_changeset(&self) -> crate::operation::create_kx_changeset::builders::CreateKxChangesetFluentBuilder {
+        crate::operation::create_kx_changeset::builders::CreateKxChangesetFluentBuilder::new(self.handle.clone())
     }
 }

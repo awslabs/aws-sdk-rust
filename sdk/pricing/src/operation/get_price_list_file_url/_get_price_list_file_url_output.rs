@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetPriceListFileUrlOutput {
 }
 impl GetPriceListFileUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetPriceListFileUrlOutput`](crate::operation::get_price_list_file_url::GetPriceListFileUrlOutput).
-    pub fn builder(
-    ) -> crate::operation::get_price_list_file_url::builders::GetPriceListFileUrlOutputBuilder {
+    pub fn builder() -> crate::operation::get_price_list_file_url::builders::GetPriceListFileUrlOutputBuilder {
         crate::operation::get_price_list_file_url::builders::GetPriceListFileUrlOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPriceListFileUrlOutput`](crate::operation::get_price_list_file_url::GetPriceListFileUrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPriceListFileUrlOutputBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

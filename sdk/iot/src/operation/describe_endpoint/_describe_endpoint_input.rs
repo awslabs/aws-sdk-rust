@@ -42,17 +42,14 @@ impl DescribeEndpointInput {
 }
 impl DescribeEndpointInput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
-    pub fn builder() -> crate::operation::describe_endpoint::builders::DescribeEndpointInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_endpoint::builders::DescribeEndpointInputBuilder {
         crate::operation::describe_endpoint::builders::DescribeEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointInputBuilder {
     pub(crate) endpoint_type: ::std::option::Option<::std::string::String>,
 }
@@ -71,10 +68,7 @@ impl DescribeEndpointInputBuilder {
     /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
     /// </ul>
     /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
-    pub fn endpoint_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -92,10 +86,7 @@ impl DescribeEndpointInputBuilder {
     /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
     /// </ul>
     /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
-    pub fn set_endpoint_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_type = input;
         self
     }
@@ -119,10 +110,7 @@ impl DescribeEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_endpoint::DescribeEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_endpoint::DescribeEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_endpoint::DescribeEndpointInput {
             endpoint_type: self.endpoint_type,
         })

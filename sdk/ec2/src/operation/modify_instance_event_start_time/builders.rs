@@ -26,7 +26,7 @@ impl ModifyInstanceEventStartTimeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyInstanceEventStartTimeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_instance_event_start_time::builders::ModifyInstanceEventStartTimeInputBuilder,
+    inner: crate::operation::modify_instance_event_start_time::builders::ModifyInstanceEventStartTimeInputBuilder,
 }
 impl ModifyInstanceEventStartTimeFluentBuilder {
     /// Creates a new `ModifyInstanceEventStartTime`.
@@ -37,7 +37,7 @@ impl ModifyInstanceEventStartTimeFluentBuilder {
         }
     }
     /// Access the ModifyInstanceEventStartTime as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_instance_event_start_time::builders::ModifyInstanceEventStartTimeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_instance_event_start_time::builders::ModifyInstanceEventStartTimeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifyInstanceEventStartTimeFluentBuilder {
             crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTime,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifyInstanceEventStartTimeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifyInstanceEventStartTimeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifyInstanceEventStartTimeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ModifyInstanceEventStartTimeFluentBuilder {
             crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTime,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeError>,
     > {
         self.customize_middleware().await
     }
@@ -149,18 +138,12 @@ impl ModifyInstanceEventStartTimeFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The ID of the event whose date and time you are modifying.</p>
-    pub fn instance_event_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_event_id(input.into());
         self
     }
     /// <p>The ID of the event whose date and time you are modifying.</p>
-    pub fn set_instance_event_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_event_id(input);
         self
     }
@@ -174,10 +157,7 @@ impl ModifyInstanceEventStartTimeFluentBuilder {
         self
     }
     /// <p>The new date and time when the event will take place.</p>
-    pub fn set_not_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_not_before(input);
         self
     }

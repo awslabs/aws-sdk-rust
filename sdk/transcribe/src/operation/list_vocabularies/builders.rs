@@ -10,10 +10,7 @@ impl ListVocabulariesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_vocabularies::ListVocabulariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vocabularies::ListVocabulariesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vocabularies::ListVocabulariesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_vocabularies();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListVocabulariesFluentBuilder {
         }
     }
     /// Access the ListVocabularies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_vocabularies::builders::ListVocabulariesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_vocabularies::builders::ListVocabulariesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListVocabulariesFluentBuilder {
             crate::operation::list_vocabularies::ListVocabularies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vocabularies::ListVocabulariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vocabularies::ListVocabulariesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListVocabulariesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListVocabulariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vocabularies::ListVocabulariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vocabularies::ListVocabulariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vocabularies::ListVocabulariesError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListVocabulariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vocabularies::ListVocabulariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vocabularies::ListVocabulariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vocabularies::ListVocabulariesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListVocabulariesFluentBuilder {
             crate::operation::list_vocabularies::ListVocabularies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vocabularies::ListVocabulariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vocabularies::ListVocabulariesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_vocabularies::paginator::ListVocabulariesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_vocabularies::paginator::ListVocabulariesPaginator {
-        crate::operation::list_vocabularies::paginator::ListVocabulariesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_vocabularies::paginator::ListVocabulariesPaginator {
+        crate::operation::list_vocabularies::paginator::ListVocabulariesPaginator::new(self.handle, self.inner)
     }
     /// <p>If your <code>ListVocabularies</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,10 +147,7 @@ impl ListVocabulariesFluentBuilder {
         self
     }
     /// <p>Returns only custom vocabularies with the specified state. Vocabularies are ordered by creation date, with the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical vocabularies are returned.</p>
-    pub fn set_state_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyState>,
-    ) -> Self {
+    pub fn set_state_equals(mut self, input: ::std::option::Option<crate::types::VocabularyState>) -> Self {
         self.inner = self.inner.set_state_equals(input);
         self
     }
@@ -180,18 +156,12 @@ impl ListVocabulariesFluentBuilder {
         self.inner.get_state_equals()
     }
     /// <p>Returns only the custom vocabularies that contain the specified string. The search is not case sensitive.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>Returns only the custom vocabularies that contain the specified string. The search is not case sensitive.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }

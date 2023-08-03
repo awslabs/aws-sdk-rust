@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeAlarmHistoryOutput {
 }
 impl DescribeAlarmHistoryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAlarmHistoryOutput`](crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryOutputBuilder {
+    pub fn builder() -> crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryOutputBuilder {
         crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAlarmHistoryOutput`](crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAlarmHistoryOutputBuilder {
-    pub(crate) alarm_history_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlarmHistoryItem>>,
+    pub(crate) alarm_history_items: ::std::option::Option<::std::vec::Vec<crate::types::AlarmHistoryItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl DescribeAlarmHistoryOutputBuilder {
         self
     }
     /// <p>The alarm histories, in JSON format.</p>
-    pub fn set_alarm_history_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmHistoryItem>>,
-    ) -> Self {
+    pub fn set_alarm_history_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmHistoryItem>>) -> Self {
         self.alarm_history_items = input;
         self
     }
     /// <p>The alarm histories, in JSON format.</p>
-    pub fn get_alarm_history_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmHistoryItem>> {
+    pub fn get_alarm_history_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmHistoryItem>> {
         &self.alarm_history_items
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>

@@ -37,9 +37,7 @@ impl ListRouteCalculatorsFluentBuilder {
         }
     }
     /// Access the ListRouteCalculators as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_route_calculators::builders::ListRouteCalculatorsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_route_calculators::builders::ListRouteCalculatorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListRouteCalculatorsFluentBuilder {
             crate::operation::list_route_calculators::ListRouteCalculators,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_route_calculators::ListRouteCalculatorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_route_calculators::ListRouteCalculatorsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListRouteCalculatorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListRouteCalculatorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_route_calculators::ListRouteCalculatorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_route_calculators::ListRouteCalculatorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_route_calculators::ListRouteCalculatorsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListRouteCalculatorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_route_calculators::ListRouteCalculatorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_route_calculators::ListRouteCalculatorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_route_calculators::ListRouteCalculatorsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListRouteCalculatorsFluentBuilder {
             crate::operation::list_route_calculators::ListRouteCalculators,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_route_calculators::ListRouteCalculatorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_route_calculators::ListRouteCalculatorsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_route_calculators::paginator::ListRouteCalculatorsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_route_calculators::paginator::ListRouteCalculatorsPaginator {
-        crate::operation::list_route_calculators::paginator::ListRouteCalculatorsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_route_calculators::paginator::ListRouteCalculatorsPaginator {
+        crate::operation::list_route_calculators::paginator::ListRouteCalculatorsPaginator::new(self.handle, self.inner)
     }
     /// <p>An optional maximum number of results returned in a single call.</p>
     /// <p>Default Value: <code>100</code> </p>

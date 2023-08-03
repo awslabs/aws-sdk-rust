@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`app_version(Option<String>)`](crate::operation::create_app_version_app_component::CreateAppVersionAppComponentOutput::app_version): <p>The Resilience Hub application version.</p>
     ///   - [`app_component(Option<AppComponent>)`](crate::operation::create_app_version_app_component::CreateAppVersionAppComponentOutput::app_component): <p>The list of Application Components that belong to this resource.</p>
     /// - On failure, responds with [`SdkError<CreateAppVersionAppComponentError>`](crate::operation::create_app_version_app_component::CreateAppVersionAppComponentError)
-    pub fn create_app_version_app_component(&self) -> crate::operation::create_app_version_app_component::builders::CreateAppVersionAppComponentFluentBuilder{
+    pub fn create_app_version_app_component(
+        &self,
+    ) -> crate::operation::create_app_version_app_component::builders::CreateAppVersionAppComponentFluentBuilder {
         crate::operation::create_app_version_app_component::builders::CreateAppVersionAppComponentFluentBuilder::new(self.handle.clone())
     }
 }

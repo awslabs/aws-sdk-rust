@@ -15,33 +15,25 @@ impl DeleteCallAnalyticsCategoryInput {
 }
 impl DeleteCallAnalyticsCategoryInput {
     /// Creates a new builder-style object to manufacture [`DeleteCallAnalyticsCategoryInput`](crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryInput).
-    pub fn builder() -> crate::operation::delete_call_analytics_category::builders::DeleteCallAnalyticsCategoryInputBuilder{
+    pub fn builder() -> crate::operation::delete_call_analytics_category::builders::DeleteCallAnalyticsCategoryInputBuilder {
         crate::operation::delete_call_analytics_category::builders::DeleteCallAnalyticsCategoryInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCallAnalyticsCategoryInput`](crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCallAnalyticsCategoryInputBuilder {
     pub(crate) category_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCallAnalyticsCategoryInputBuilder {
     /// <p>The name of the Call Analytics category you want to delete. Category names are case sensitive.</p>
-    pub fn category_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn category_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Call Analytics category you want to delete. Category names are case sensitive.</p>
-    pub fn set_category_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_category_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category_name = input;
         self
     }
@@ -56,10 +48,8 @@ impl DeleteCallAnalyticsCategoryInputBuilder {
         crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryInput {
-                category_name: self.category_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryInput {
+            category_name: self.category_name,
+        })
     }
 }

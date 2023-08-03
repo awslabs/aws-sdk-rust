@@ -37,9 +37,7 @@ impl JobStats {
 
 /// A builder for [`JobStats`](crate::types::JobStats).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobStatsBuilder {
     pub(crate) number_of_profiles_reviewed: ::std::option::Option<i64>,
     pub(crate) number_of_matches_found: ::std::option::Option<i64>,

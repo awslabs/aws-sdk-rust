@@ -16,17 +16,14 @@ impl CreateVerifiedAccessTrustProviderDeviceOptions {
 }
 impl CreateVerifiedAccessTrustProviderDeviceOptions {
     /// Creates a new builder-style object to manufacture [`CreateVerifiedAccessTrustProviderDeviceOptions`](crate::types::CreateVerifiedAccessTrustProviderDeviceOptions).
-    pub fn builder() -> crate::types::builders::CreateVerifiedAccessTrustProviderDeviceOptionsBuilder
-    {
+    pub fn builder() -> crate::types::builders::CreateVerifiedAccessTrustProviderDeviceOptionsBuilder {
         crate::types::builders::CreateVerifiedAccessTrustProviderDeviceOptionsBuilder::default()
     }
 }
 
 /// A builder for [`CreateVerifiedAccessTrustProviderDeviceOptions`](crate::types::CreateVerifiedAccessTrustProviderDeviceOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVerifiedAccessTrustProviderDeviceOptionsBuilder {
     pub(crate) tenant_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,8 +44,6 @@ impl CreateVerifiedAccessTrustProviderDeviceOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`CreateVerifiedAccessTrustProviderDeviceOptions`](crate::types::CreateVerifiedAccessTrustProviderDeviceOptions).
     pub fn build(self) -> crate::types::CreateVerifiedAccessTrustProviderDeviceOptions {
-        crate::types::CreateVerifiedAccessTrustProviderDeviceOptions {
-            tenant_id: self.tenant_id,
-        }
+        crate::types::CreateVerifiedAccessTrustProviderDeviceOptions { tenant_id: self.tenant_id }
     }
 }

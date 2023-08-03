@@ -27,7 +27,7 @@ impl SetTimeBasedAutoScalingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetTimeBasedAutoScalingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingInputBuilder,
+    inner: crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingInputBuilder,
 }
 impl SetTimeBasedAutoScalingFluentBuilder {
     /// Creates a new `SetTimeBasedAutoScaling`.
@@ -38,10 +38,7 @@ impl SetTimeBasedAutoScalingFluentBuilder {
         }
     }
     /// Access the SetTimeBasedAutoScaling as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl SetTimeBasedAutoScalingFluentBuilder {
             crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScaling,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl SetTimeBasedAutoScalingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl SetTimeBasedAutoScalingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl SetTimeBasedAutoScalingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl SetTimeBasedAutoScalingFluentBuilder {
             crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScaling,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingError>,
     > {
         self.customize_middleware().await
     }
@@ -144,17 +130,12 @@ impl SetTimeBasedAutoScalingFluentBuilder {
         self
     }
     /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
-    pub fn set_auto_scaling_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::WeeklyAutoScalingSchedule>,
-    ) -> Self {
+    pub fn set_auto_scaling_schedule(mut self, input: ::std::option::Option<crate::types::WeeklyAutoScalingSchedule>) -> Self {
         self.inner = self.inner.set_auto_scaling_schedule(input);
         self
     }
     /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
-    pub fn get_auto_scaling_schedule(
-        &self,
-    ) -> &::std::option::Option<crate::types::WeeklyAutoScalingSchedule> {
+    pub fn get_auto_scaling_schedule(&self) -> &::std::option::Option<crate::types::WeeklyAutoScalingSchedule> {
         self.inner.get_auto_scaling_schedule()
     }
 }

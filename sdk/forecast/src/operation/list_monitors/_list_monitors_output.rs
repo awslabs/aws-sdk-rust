@@ -35,9 +35,7 @@ impl ListMonitorsOutput {
 
 /// A builder for [`ListMonitorsOutput`](crate::operation::list_monitors::ListMonitorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitorsOutputBuilder {
     pub(crate) monitors: ::std::option::Option<::std::vec::Vec<crate::types::MonitorSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListMonitorsOutputBuilder {
         self
     }
     /// <p>An array of objects that summarize each monitor's properties.</p>
-    pub fn set_monitors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorSummary>>,
-    ) -> Self {
+    pub fn set_monitors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorSummary>>) -> Self {
         self.monitors = input;
         self
     }
     /// <p>An array of objects that summarize each monitor's properties.</p>
-    pub fn get_monitors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorSummary>> {
+    pub fn get_monitors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorSummary>> {
         &self.monitors
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>

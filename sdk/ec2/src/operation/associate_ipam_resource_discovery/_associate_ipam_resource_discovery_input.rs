@@ -43,22 +43,19 @@ impl AssociateIpamResourceDiscoveryInput {
 }
 impl AssociateIpamResourceDiscoveryInput {
     /// Creates a new builder-style object to manufacture [`AssociateIpamResourceDiscoveryInput`](crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryInput).
-    pub fn builder() -> crate::operation::associate_ipam_resource_discovery::builders::AssociateIpamResourceDiscoveryInputBuilder{
+    pub fn builder() -> crate::operation::associate_ipam_resource_discovery::builders::AssociateIpamResourceDiscoveryInputBuilder {
         crate::operation::associate_ipam_resource_discovery::builders::AssociateIpamResourceDiscoveryInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateIpamResourceDiscoveryInput`](crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateIpamResourceDiscoveryInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_id: ::std::option::Option<::std::string::String>,
     pub(crate) ipam_resource_discovery_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl AssociateIpamResourceDiscoveryInputBuilder {
@@ -91,18 +88,12 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
         &self.ipam_id
     }
     /// <p>A resource discovery ID.</p>
-    pub fn ipam_resource_discovery_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_resource_discovery_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_resource_discovery_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A resource discovery ID.</p>
-    pub fn set_ipam_resource_discovery_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_resource_discovery_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_resource_discovery_id = input;
         self
     }
@@ -122,17 +113,12 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
         self
     }
     /// <p>Tag specifications.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>Tag specifications.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>A client token.</p>
@@ -156,19 +142,12 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
         crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryInput {
-                dry_run: self.dry_run
-                ,
-                ipam_id: self.ipam_id
-                ,
-                ipam_resource_discovery_id: self.ipam_resource_discovery_id
-                ,
-                tag_specifications: self.tag_specifications
-                ,
-                client_token: self.client_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryInput {
+            dry_run: self.dry_run,
+            ipam_id: self.ipam_id,
+            ipam_resource_discovery_id: self.ipam_resource_discovery_id,
+            tag_specifications: self.tag_specifications,
+            client_token: self.client_token,
+        })
     }
 }

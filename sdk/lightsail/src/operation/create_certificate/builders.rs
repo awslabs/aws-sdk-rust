@@ -10,10 +10,7 @@ impl CreateCertificateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_certificate::CreateCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_certificate::CreateCertificateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_certificate::CreateCertificateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_certificate();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateCertificateFluentBuilder {
         }
     }
     /// Access the CreateCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_certificate::builders::CreateCertificateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_certificate::builders::CreateCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl CreateCertificateFluentBuilder {
             crate::operation::create_certificate::CreateCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_certificate::CreateCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_certificate::CreateCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl CreateCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl CreateCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_certificate::CreateCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_certificate::CreateCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_certificate::CreateCertificateError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl CreateCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_certificate::CreateCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_certificate::CreateCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_certificate::CreateCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +105,17 @@ impl CreateCertificateFluentBuilder {
             crate::operation::create_certificate::CreateCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_certificate::CreateCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_certificate::CreateCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name for the certificate.</p>
-    pub fn certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_name(input.into());
         self
     }
     /// <p>The name for the certificate.</p>
-    pub fn set_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_name(input);
         self
     }
@@ -166,29 +144,21 @@ impl CreateCertificateFluentBuilder {
     /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
     /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
     /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
-    pub fn subject_alternative_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subject_alternative_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subject_alternative_names(input.into());
         self
     }
     /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
     /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
     /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
-    pub fn set_subject_alternative_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subject_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subject_alternative_names(input);
         self
     }
     /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
     /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
     /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
-    pub fn get_subject_alternative_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subject_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subject_alternative_names()
     }
     /// Appends an item to `tags`.
@@ -203,10 +173,7 @@ impl CreateCertificateFluentBuilder {
     }
     /// <p>The tag keys and optional values to add to the certificate during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

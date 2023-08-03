@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for StopCompilationJobOutput {
 }
 impl StopCompilationJobOutput {
     /// Creates a new builder-style object to manufacture [`StopCompilationJobOutput`](crate::operation::stop_compilation_job::StopCompilationJobOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_compilation_job::builders::StopCompilationJobOutputBuilder {
+    pub fn builder() -> crate::operation::stop_compilation_job::builders::StopCompilationJobOutputBuilder {
         crate::operation::stop_compilation_job::builders::StopCompilationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopCompilationJobOutput`](crate::operation::stop_compilation_job::StopCompilationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopCompilationJobOutputBuilder {
     _request_id: Option<String>,
 }

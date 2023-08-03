@@ -13,7 +13,10 @@ impl super::Client {
     ///   - [`transit_gateway_route_table_announcements(Option<Vec<TransitGatewayRouteTableAnnouncement>>)`](crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsOutput::transit_gateway_route_table_announcements): <p>Describes the transit gateway route table announcement.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<DescribeTransitGatewayRouteTableAnnouncementsError>`](crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsError)
-    pub fn describe_transit_gateway_route_table_announcements(&self) -> crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder{
+    pub fn describe_transit_gateway_route_table_announcements(
+        &self,
+    ) -> crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder
+    {
         crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder::new(self.handle.clone())
     }
 }

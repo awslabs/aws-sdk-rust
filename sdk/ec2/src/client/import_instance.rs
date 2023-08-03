@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`ImportInstanceOutput`](crate::operation::import_instance::ImportInstanceOutput) with field(s):
     ///   - [`conversion_task(Option<ConversionTask>)`](crate::operation::import_instance::ImportInstanceOutput::conversion_task): <p>Information about the conversion task.</p>
     /// - On failure, responds with [`SdkError<ImportInstanceError>`](crate::operation::import_instance::ImportInstanceError)
-    pub fn import_instance(
-        &self,
-    ) -> crate::operation::import_instance::builders::ImportInstanceFluentBuilder {
-        crate::operation::import_instance::builders::ImportInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_instance(&self) -> crate::operation::import_instance::builders::ImportInstanceFluentBuilder {
+        crate::operation::import_instance::builders::ImportInstanceFluentBuilder::new(self.handle.clone())
     }
 }

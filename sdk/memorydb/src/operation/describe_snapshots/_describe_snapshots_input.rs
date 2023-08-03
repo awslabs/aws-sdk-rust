@@ -50,17 +50,14 @@ impl DescribeSnapshotsInput {
 }
 impl DescribeSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
-    pub fn builder() -> crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder {
         crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnapshotsInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
@@ -85,18 +82,12 @@ impl DescribeSnapshotsInputBuilder {
         &self.cluster_name
     }
     /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_name = input;
         self
     }
@@ -163,19 +154,14 @@ impl DescribeSnapshotsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_snapshots::DescribeSnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_snapshots::DescribeSnapshotsInput {
-                cluster_name: self.cluster_name,
-                snapshot_name: self.snapshot_name,
-                source: self.source,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                show_detail: self.show_detail,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_snapshots::DescribeSnapshotsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_snapshots::DescribeSnapshotsInput {
+            cluster_name: self.cluster_name,
+            snapshot_name: self.snapshot_name,
+            source: self.source,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            show_detail: self.show_detail,
+        })
     }
 }

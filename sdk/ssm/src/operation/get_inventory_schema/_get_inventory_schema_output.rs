@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetInventorySchemaOutput {
 }
 impl GetInventorySchemaOutput {
     /// Creates a new builder-style object to manufacture [`GetInventorySchemaOutput`](crate::operation::get_inventory_schema::GetInventorySchemaOutput).
-    pub fn builder(
-    ) -> crate::operation::get_inventory_schema::builders::GetInventorySchemaOutputBuilder {
+    pub fn builder() -> crate::operation::get_inventory_schema::builders::GetInventorySchemaOutputBuilder {
         crate::operation::get_inventory_schema::builders::GetInventorySchemaOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInventorySchemaOutput`](crate::operation::get_inventory_schema::GetInventorySchemaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInventorySchemaOutputBuilder {
     pub(crate) schemas: ::std::option::Option<::std::vec::Vec<crate::types::InventoryItemSchema>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetInventorySchemaOutputBuilder {
         self
     }
     /// <p>Inventory schemas returned by the request.</p>
-    pub fn set_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryItemSchema>>,
-    ) -> Self {
+    pub fn set_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryItemSchema>>) -> Self {
         self.schemas = input;
         self
     }
     /// <p>Inventory schemas returned by the request.</p>
-    pub fn get_schemas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryItemSchema>> {
+    pub fn get_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryItemSchema>> {
         &self.schemas
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>

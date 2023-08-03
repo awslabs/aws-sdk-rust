@@ -29,9 +29,7 @@ impl CloseTunnelInput {
 
 /// A builder for [`CloseTunnelInput`](crate::operation::close_tunnel::CloseTunnelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloseTunnelInputBuilder {
     pub(crate) tunnel_id: ::std::option::Option<::std::string::String>,
     pub(crate) delete: ::std::option::Option<bool>,
@@ -66,12 +64,7 @@ impl CloseTunnelInputBuilder {
         &self.delete
     }
     /// Consumes the builder and constructs a [`CloseTunnelInput`](crate::operation::close_tunnel::CloseTunnelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::close_tunnel::CloseTunnelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::close_tunnel::CloseTunnelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::close_tunnel::CloseTunnelInput {
             tunnel_id: self.tunnel_id,
             delete: self.delete,

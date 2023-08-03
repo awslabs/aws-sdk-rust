@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`security_control_definitions(Option<Vec<SecurityControlDefinition>>)`](crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput::security_control_definitions): <p> An array of controls that apply to the specified standard. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput::next_token): <p> A pagination parameter that's included in the response only if it was included in the request. </p>
     /// - On failure, responds with [`SdkError<ListSecurityControlDefinitionsError>`](crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError)
-    pub fn list_security_control_definitions(&self) -> crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsFluentBuilder{
+    pub fn list_security_control_definitions(
+        &self,
+    ) -> crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsFluentBuilder {
         crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`infrastructure_configuration_summary_list(Option<Vec<InfrastructureConfigurationSummary>>)`](crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsOutput::infrastructure_configuration_summary_list): <p>The list of infrastructure configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsOutput::next_token): <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     /// - On failure, responds with [`SdkError<ListInfrastructureConfigurationsError>`](crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError)
-    pub fn list_infrastructure_configurations(&self) -> crate::operation::list_infrastructure_configurations::builders::ListInfrastructureConfigurationsFluentBuilder{
+    pub fn list_infrastructure_configurations(
+        &self,
+    ) -> crate::operation::list_infrastructure_configurations::builders::ListInfrastructureConfigurationsFluentBuilder {
         crate::operation::list_infrastructure_configurations::builders::ListInfrastructureConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

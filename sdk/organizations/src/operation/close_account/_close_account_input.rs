@@ -22,9 +22,7 @@ impl CloseAccountInput {
 
 /// A builder for [`CloseAccountInput`](crate::operation::close_account::CloseAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloseAccountInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl CloseAccountInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`CloseAccountInput`](crate::operation::close_account::CloseAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::close_account::CloseAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::close_account::CloseAccountInput {
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::close_account::CloseAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::close_account::CloseAccountInput { account_id: self.account_id })
     }
 }

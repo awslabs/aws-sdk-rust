@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`StartNetworkInsightsAccessScopeAnalysisOutput`](crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisOutput) with field(s):
     ///   - [`network_insights_access_scope_analysis(Option<NetworkInsightsAccessScopeAnalysis>)`](crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisOutput::network_insights_access_scope_analysis): <p>The Network Access Scope analysis.</p>
     /// - On failure, responds with [`SdkError<StartNetworkInsightsAccessScopeAnalysisError>`](crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisError)
-    pub fn start_network_insights_access_scope_analysis(&self) -> crate::operation::start_network_insights_access_scope_analysis::builders::StartNetworkInsightsAccessScopeAnalysisFluentBuilder{
-        crate::operation::start_network_insights_access_scope_analysis::builders::StartNetworkInsightsAccessScopeAnalysisFluentBuilder::new(self.handle.clone())
+    pub fn start_network_insights_access_scope_analysis(
+        &self,
+    ) -> crate::operation::start_network_insights_access_scope_analysis::builders::StartNetworkInsightsAccessScopeAnalysisFluentBuilder {
+        crate::operation::start_network_insights_access_scope_analysis::builders::StartNetworkInsightsAccessScopeAnalysisFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

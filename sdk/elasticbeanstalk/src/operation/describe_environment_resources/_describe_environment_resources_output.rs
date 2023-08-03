@@ -11,9 +11,7 @@ pub struct DescribeEnvironmentResourcesOutput {
 }
 impl DescribeEnvironmentResourcesOutput {
     /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
-    pub fn environment_resources(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EnvironmentResourceDescription> {
+    pub fn environment_resources(&self) -> ::std::option::Option<&crate::types::EnvironmentResourceDescription> {
         self.environment_resources.as_ref()
     }
 }
@@ -24,42 +22,31 @@ impl ::aws_http::request_id::RequestId for DescribeEnvironmentResourcesOutput {
 }
 impl DescribeEnvironmentResourcesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentResourcesOutput`](crate::operation::describe_environment_resources::DescribeEnvironmentResourcesOutput).
-    pub fn builder() -> crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesOutputBuilder {
         crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEnvironmentResourcesOutput`](crate::operation::describe_environment_resources::DescribeEnvironmentResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentResourcesOutputBuilder {
-    pub(crate) environment_resources:
-        ::std::option::Option<crate::types::EnvironmentResourceDescription>,
+    pub(crate) environment_resources: ::std::option::Option<crate::types::EnvironmentResourceDescription>,
     _request_id: Option<String>,
 }
 impl DescribeEnvironmentResourcesOutputBuilder {
     /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
-    pub fn environment_resources(
-        mut self,
-        input: crate::types::EnvironmentResourceDescription,
-    ) -> Self {
+    pub fn environment_resources(mut self, input: crate::types::EnvironmentResourceDescription) -> Self {
         self.environment_resources = ::std::option::Option::Some(input);
         self
     }
     /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
-    pub fn set_environment_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentResourceDescription>,
-    ) -> Self {
+    pub fn set_environment_resources(mut self, input: ::std::option::Option<crate::types::EnvironmentResourceDescription>) -> Self {
         self.environment_resources = input;
         self
     }
     /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
-    pub fn get_environment_resources(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnvironmentResourceDescription> {
+    pub fn get_environment_resources(&self) -> &::std::option::Option<crate::types::EnvironmentResourceDescription> {
         &self.environment_resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +59,7 @@ impl DescribeEnvironmentResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEnvironmentResourcesOutput`](crate::operation::describe_environment_resources::DescribeEnvironmentResourcesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_environment_resources::DescribeEnvironmentResourcesOutput {
+    pub fn build(self) -> crate::operation::describe_environment_resources::DescribeEnvironmentResourcesOutput {
         crate::operation::describe_environment_resources::DescribeEnvironmentResourcesOutput {
             environment_resources: self.environment_resources,
             _request_id: self._request_id,

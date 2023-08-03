@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`state(Option<MultiplexState>)`](crate::operation::stop_multiplex::StopMultiplexOutput::state): The current state of the multiplex.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::stop_multiplex::StopMultiplexOutput::tags): A collection of key-value pairs.
     /// - On failure, responds with [`SdkError<StopMultiplexError>`](crate::operation::stop_multiplex::StopMultiplexError)
-    pub fn stop_multiplex(
-        &self,
-    ) -> crate::operation::stop_multiplex::builders::StopMultiplexFluentBuilder {
-        crate::operation::stop_multiplex::builders::StopMultiplexFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_multiplex(&self) -> crate::operation::stop_multiplex::builders::StopMultiplexFluentBuilder {
+        crate::operation::stop_multiplex::builders::StopMultiplexFluentBuilder::new(self.handle.clone())
     }
 }

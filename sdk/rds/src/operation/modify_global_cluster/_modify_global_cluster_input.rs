@@ -77,18 +77,14 @@ impl ModifyGlobalClusterInput {
 }
 impl ModifyGlobalClusterInput {
     /// Creates a new builder-style object to manufacture [`ModifyGlobalClusterInput`](crate::operation::modify_global_cluster::ModifyGlobalClusterInput).
-    pub fn builder(
-    ) -> crate::operation::modify_global_cluster::builders::ModifyGlobalClusterInputBuilder {
-        crate::operation::modify_global_cluster::builders::ModifyGlobalClusterInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::modify_global_cluster::builders::ModifyGlobalClusterInputBuilder {
+        crate::operation::modify_global_cluster::builders::ModifyGlobalClusterInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyGlobalClusterInput`](crate::operation::modify_global_cluster::ModifyGlobalClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyGlobalClusterInputBuilder {
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) new_global_cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -102,10 +98,7 @@ impl ModifyGlobalClusterInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
     /// </ul>
-    pub fn global_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -114,10 +107,7 @@ impl ModifyGlobalClusterInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
     /// </ul>
-    pub fn set_global_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_cluster_identifier = input;
         self
     }
@@ -137,10 +127,7 @@ impl ModifyGlobalClusterInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    pub fn new_global_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -152,10 +139,7 @@ impl ModifyGlobalClusterInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    pub fn set_new_global_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_global_cluster_identifier = input;
         self
     }
@@ -167,9 +151,7 @@ impl ModifyGlobalClusterInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    pub fn get_new_global_cluster_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_new_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_global_cluster_identifier
     }
     /// <p>Specifies whether to enable deletion protection for the global database cluster. The global database cluster can't be deleted when deletion protection is enabled.</p>
@@ -191,10 +173,7 @@ impl ModifyGlobalClusterInputBuilder {
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
     /// <p>To list all of the available engine versions for <code>aurora-postgresql</code> (for PostgreSQL-based Aurora global databases), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
@@ -203,10 +182,7 @@ impl ModifyGlobalClusterInputBuilder {
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
     /// <p>To list all of the available engine versions for <code>aurora-postgresql</code> (for PostgreSQL-based Aurora global databases), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -241,18 +217,14 @@ impl ModifyGlobalClusterInputBuilder {
     /// Consumes the builder and constructs a [`ModifyGlobalClusterInput`](crate::operation::modify_global_cluster::ModifyGlobalClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_global_cluster::ModifyGlobalClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_global_cluster::ModifyGlobalClusterInput {
-                global_cluster_identifier: self.global_cluster_identifier,
-                new_global_cluster_identifier: self.new_global_cluster_identifier,
-                deletion_protection: self.deletion_protection,
-                engine_version: self.engine_version,
-                allow_major_version_upgrade: self.allow_major_version_upgrade,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_global_cluster::ModifyGlobalClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::modify_global_cluster::ModifyGlobalClusterInput {
+            global_cluster_identifier: self.global_cluster_identifier,
+            new_global_cluster_identifier: self.new_global_cluster_identifier,
+            deletion_protection: self.deletion_protection,
+            engine_version: self.engine_version,
+            allow_major_version_upgrade: self.allow_major_version_upgrade,
+        })
     }
 }

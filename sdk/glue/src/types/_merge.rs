@@ -15,8 +15,7 @@ pub struct Merge {
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The list of primary key fields to match records from the source and staging dynamic frames.</p>
     #[doc(hidden)]
-    pub primary_keys:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub primary_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
 }
 impl Merge {
     /// <p>The name of the transform node.</p>
@@ -45,15 +44,12 @@ impl Merge {
 
 /// A builder for [`Merge`](crate::types::Merge).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MergeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
-    pub(crate) primary_keys:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) primary_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
 }
 impl MergeBuilder {
     /// <p>The name of the transform node.</p>
@@ -82,10 +78,7 @@ impl MergeBuilder {
         self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inputs = input;
         self
     }
@@ -119,17 +112,12 @@ impl MergeBuilder {
         self
     }
     /// <p>The list of primary key fields to match records from the source and staging dynamic frames.</p>
-    pub fn set_primary_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
+    pub fn set_primary_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
         self.primary_keys = input;
         self
     }
     /// <p>The list of primary key fields to match records from the source and staging dynamic frames.</p>
-    pub fn get_primary_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_primary_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
         &self.primary_keys
     }
     /// Consumes the builder and constructs a [`Merge`](crate::types::Merge).

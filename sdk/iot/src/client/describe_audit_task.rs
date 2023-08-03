@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`scheduled_audit_name(Option<String>)`](crate::operation::describe_audit_task::DescribeAuditTaskOutput::scheduled_audit_name): <p>The name of the scheduled audit (only if the audit was a scheduled audit).</p>
     ///   - [`audit_details(Option<HashMap<String, AuditCheckDetails>>)`](crate::operation::describe_audit_task::DescribeAuditTaskOutput::audit_details): <p>Detailed information about each check performed during this audit.</p>
     /// - On failure, responds with [`SdkError<DescribeAuditTaskError>`](crate::operation::describe_audit_task::DescribeAuditTaskError)
-    pub fn describe_audit_task(
-        &self,
-    ) -> crate::operation::describe_audit_task::builders::DescribeAuditTaskFluentBuilder {
-        crate::operation::describe_audit_task::builders::DescribeAuditTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_audit_task(&self) -> crate::operation::describe_audit_task::builders::DescribeAuditTaskFluentBuilder {
+        crate::operation::describe_audit_task::builders::DescribeAuditTaskFluentBuilder::new(self.handle.clone())
     }
 }

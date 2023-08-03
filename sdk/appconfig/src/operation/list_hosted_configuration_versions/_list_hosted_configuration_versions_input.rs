@@ -43,16 +43,14 @@ impl ListHostedConfigurationVersionsInput {
 }
 impl ListHostedConfigurationVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListHostedConfigurationVersionsInput`](crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsInput).
-    pub fn builder() -> crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsInputBuilder {
         crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListHostedConfigurationVersionsInput`](crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHostedConfigurationVersionsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_profile_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct ListHostedConfigurationVersionsInputBuilder {
 }
 impl ListHostedConfigurationVersionsInputBuilder {
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -82,18 +74,12 @@ impl ListHostedConfigurationVersionsInputBuilder {
         &self.application_id
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration profile ID.</p>
-    pub fn set_configuration_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_profile_id = input;
         self
     }
@@ -130,18 +116,12 @@ impl ListHostedConfigurationVersionsInputBuilder {
         &self.next_token
     }
     /// <p>An optional filter that can be used to specify the version label of an AppConfig hosted configuration version. This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't specify an asterisk at the end of the value, only an exact match is returned.</p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional filter that can be used to specify the version label of an AppConfig hosted configuration version. This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't specify an asterisk at the end of the value, only an exact match is returned.</p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_label = input;
         self
     }
@@ -158,17 +138,12 @@ impl ListHostedConfigurationVersionsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsInput {
-                application_id: self.application_id
-                ,
-                configuration_profile_id: self.configuration_profile_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                version_label: self.version_label
-                ,
-            }
+                application_id: self.application_id,
+                configuration_profile_id: self.configuration_profile_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                version_label: self.version_label,
+            },
         )
     }
 }

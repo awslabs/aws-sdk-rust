@@ -23,9 +23,7 @@ impl NotificationTargetActions {
 
 /// A builder for [`NotificationTargetActions`](crate::types::NotificationTargetActions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationTargetActionsBuilder {
     pub(crate) lambda_action: ::std::option::Option<crate::types::LambdaAction>,
 }
@@ -36,10 +34,7 @@ impl NotificationTargetActionsBuilder {
         self
     }
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
-    pub fn set_lambda_action(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaAction>,
-    ) -> Self {
+    pub fn set_lambda_action(mut self, input: ::std::option::Option<crate::types::LambdaAction>) -> Self {
         self.lambda_action = input;
         self
     }

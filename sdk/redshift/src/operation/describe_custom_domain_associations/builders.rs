@@ -5,16 +5,16 @@ pub use crate::operation::describe_custom_domain_associations::_describe_custom_
 
 impl DescribeCustomDomainAssociationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_custom_domain_associations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeCustomDomainAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCustomDomainAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsInputBuilder,
+    inner: crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsInputBuilder,
 }
 impl DescribeCustomDomainAssociationsFluentBuilder {
     /// Creates a new `DescribeCustomDomainAssociations`.
@@ -37,15 +37,20 @@ impl DescribeCustomDomainAssociationsFluentBuilder {
         }
     }
     /// Access the DescribeCustomDomainAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeCustomDomainAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,38 +87,41 @@ impl DescribeCustomDomainAssociationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_custom_domain_associations::paginator::DescribeCustomDomainAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_custom_domain_associations::paginator::DescribeCustomDomainAssociationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_custom_domain_associations::paginator::DescribeCustomDomainAssociationsPaginator {
         crate::operation::describe_custom_domain_associations::paginator::DescribeCustomDomainAssociationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The custom domain name for the custom domain association.</p>
-    pub fn custom_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_domain_name(input.into());
         self
     }
     /// <p>The custom domain name for the custom domain association.</p>
-    pub fn set_custom_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_domain_name(input);
         self
     }
@@ -121,25 +130,17 @@ impl DescribeCustomDomainAssociationsFluentBuilder {
         self.inner.get_custom_domain_name()
     }
     /// <p>The certificate Amazon Resource Name (ARN) for the custom domain association.</p>
-    pub fn custom_domain_certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_domain_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_domain_certificate_arn(input.into());
         self
     }
     /// <p>The certificate Amazon Resource Name (ARN) for the custom domain association.</p>
-    pub fn set_custom_domain_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_domain_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_domain_certificate_arn(input);
         self
     }
     /// <p>The certificate Amazon Resource Name (ARN) for the custom domain association.</p>
-    pub fn get_custom_domain_certificate_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_custom_domain_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_domain_certificate_arn()
     }
     /// <p>The maximum records setting for the associated custom domain.</p>

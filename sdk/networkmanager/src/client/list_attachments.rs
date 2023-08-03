@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`attachments(Option<Vec<Attachment>>)`](crate::operation::list_attachments::ListAttachmentsOutput::attachments): <p>Describes the list of attachments.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_attachments::ListAttachmentsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListAttachmentsError>`](crate::operation::list_attachments::ListAttachmentsError)
-    pub fn list_attachments(
-        &self,
-    ) -> crate::operation::list_attachments::builders::ListAttachmentsFluentBuilder {
-        crate::operation::list_attachments::builders::ListAttachmentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_attachments(&self) -> crate::operation::list_attachments::builders::ListAttachmentsFluentBuilder {
+        crate::operation::list_attachments::builders::ListAttachmentsFluentBuilder::new(self.handle.clone())
     }
 }

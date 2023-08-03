@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`retain_record_in_days(i64)`](crate::operation::cancel_legal_hold::builders::CancelLegalHoldFluentBuilder::retain_record_in_days) / [`set_retain_record_in_days(Option<i64>)`](crate::operation::cancel_legal_hold::builders::CancelLegalHoldFluentBuilder::set_retain_record_in_days): <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
     /// - On success, responds with [`CancelLegalHoldOutput`](crate::operation::cancel_legal_hold::CancelLegalHoldOutput)
     /// - On failure, responds with [`SdkError<CancelLegalHoldError>`](crate::operation::cancel_legal_hold::CancelLegalHoldError)
-    pub fn cancel_legal_hold(
-        &self,
-    ) -> crate::operation::cancel_legal_hold::builders::CancelLegalHoldFluentBuilder {
-        crate::operation::cancel_legal_hold::builders::CancelLegalHoldFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_legal_hold(&self) -> crate::operation::cancel_legal_hold::builders::CancelLegalHoldFluentBuilder {
+        crate::operation::cancel_legal_hold::builders::CancelLegalHoldFluentBuilder::new(self.handle.clone())
     }
 }

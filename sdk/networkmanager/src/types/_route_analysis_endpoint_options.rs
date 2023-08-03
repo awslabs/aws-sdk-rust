@@ -37,9 +37,7 @@ impl RouteAnalysisEndpointOptions {
 
 /// A builder for [`RouteAnalysisEndpointOptions`](crate::types::RouteAnalysisEndpointOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RouteAnalysisEndpointOptionsBuilder {
     pub(crate) transit_gateway_attachment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_arn: ::std::option::Option<::std::string::String>,
@@ -47,40 +45,26 @@ pub struct RouteAnalysisEndpointOptionsBuilder {
 }
 impl RouteAnalysisEndpointOptionsBuilder {
     /// <p>The ARN of the transit gateway attachment.</p>
-    pub fn transit_gateway_attachment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_attachment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the transit gateway attachment.</p>
-    pub fn set_transit_gateway_attachment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_attachment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_attachment_arn = input;
         self
     }
     /// <p>The ARN of the transit gateway attachment.</p>
-    pub fn get_transit_gateway_attachment_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_attachment_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_attachment_arn
     }
     /// <p>The ARN of the transit gateway.</p>
-    pub fn transit_gateway_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the transit gateway.</p>
-    pub fn set_transit_gateway_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_arn = input;
         self
     }

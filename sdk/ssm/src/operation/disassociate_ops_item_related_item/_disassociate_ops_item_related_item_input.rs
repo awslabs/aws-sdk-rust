@@ -22,16 +22,14 @@ impl DisassociateOpsItemRelatedItemInput {
 }
 impl DisassociateOpsItemRelatedItemInput {
     /// Creates a new builder-style object to manufacture [`DisassociateOpsItemRelatedItemInput`](crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemInput).
-    pub fn builder() -> crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemInputBuilder {
         crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateOpsItemRelatedItemInput`](crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateOpsItemRelatedItemInputBuilder {
     pub(crate) ops_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DisassociateOpsItemRelatedItemInputBuilder {
         &self.ops_item_id
     }
     /// <p>The ID of the association for which you want to delete an association between the OpsItem and a related item.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the association for which you want to delete an association between the OpsItem and a related item.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -80,11 +72,9 @@ impl DisassociateOpsItemRelatedItemInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemInput {
-                ops_item_id: self.ops_item_id
-                ,
-                association_id: self.association_id
-                ,
-            }
+                ops_item_id: self.ops_item_id,
+                association_id: self.association_id,
+            },
         )
     }
 }

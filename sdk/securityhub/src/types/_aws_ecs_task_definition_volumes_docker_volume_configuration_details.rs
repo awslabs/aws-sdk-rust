@@ -12,14 +12,10 @@ pub struct AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
     pub driver: ::std::option::Option<::std::string::String>,
     /// <p>A map of Docker driver-specific options that are passed through.</p>
     #[doc(hidden)]
-    pub driver_opts: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub driver_opts: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Custom metadata to add to the Docker volume.</p>
     #[doc(hidden)]
-    pub labels: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
     #[doc(hidden)]
     pub scope: ::std::option::Option<::std::string::String>,
@@ -34,19 +30,11 @@ impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
         self.driver.as_deref()
     }
     /// <p>A map of Docker driver-specific options that are passed through.</p>
-    pub fn driver_opts(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn driver_opts(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.driver_opts.as_ref()
     }
     /// <p>Custom metadata to add to the Docker volume.</p>
-    pub fn labels(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn labels(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.labels.as_ref()
     }
     /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
@@ -56,27 +44,19 @@ impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
 }
 impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails`](crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails`](crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder {
     pub(crate) autoprovision: ::std::option::Option<bool>,
     pub(crate) driver: ::std::option::Option<::std::string::String>,
-    pub(crate) driver_opts: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) labels: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) driver_opts: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) scope: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder {
@@ -113,11 +93,7 @@ impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder {
     /// To override the contents of this collection use [`set_driver_opts`](Self::set_driver_opts).
     ///
     /// <p>A map of Docker driver-specific options that are passed through.</p>
-    pub fn driver_opts(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn driver_opts(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.driver_opts.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.driver_opts = ::std::option::Option::Some(hash_map);
@@ -126,19 +102,13 @@ impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder {
     /// <p>A map of Docker driver-specific options that are passed through.</p>
     pub fn set_driver_opts(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.driver_opts = input;
         self
     }
     /// <p>A map of Docker driver-specific options that are passed through.</p>
-    pub fn get_driver_opts(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_driver_opts(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.driver_opts
     }
     /// Adds a key-value pair to `labels`.
@@ -146,32 +116,19 @@ impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder {
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
     ///
     /// <p>Custom metadata to add to the Docker volume.</p>
-    pub fn labels(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn labels(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.labels.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.labels = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Custom metadata to add to the Docker volume.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
     /// <p>Custom metadata to add to the Docker volume.</p>
-    pub fn get_labels(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.labels
     }
     /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are provisioned automatically when the task starts and destroyed when the task stops. Docker volumes that are shared persist after the task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
@@ -189,9 +146,7 @@ impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder {
         &self.scope
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails`](crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
+    pub fn build(self) -> crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
         crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
             autoprovision: self.autoprovision.unwrap_or_default(),
             driver: self.driver,

@@ -39,9 +39,7 @@ impl ListTagsForResourceFluentBuilder {
         }
     }
     /// Access the ListTagsForResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl ListTagsForResourceFluentBuilder {
             crate::operation::list_tags_for_resource::ListTagsForResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl ListTagsForResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl ListTagsForResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl ListTagsForResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError>,
     > {
         self.send_middleware().await
     }
@@ -118,27 +107,19 @@ impl ListTagsForResourceFluentBuilder {
             crate::operation::list_tags_for_resource::ListTagsForResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_name(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
     }

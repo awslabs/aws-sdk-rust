@@ -39,18 +39,14 @@ impl ListDeliveryStreamsInput {
 }
 impl ListDeliveryStreamsInput {
     /// Creates a new builder-style object to manufacture [`ListDeliveryStreamsInput`](crate::operation::list_delivery_streams::ListDeliveryStreamsInput).
-    pub fn builder(
-    ) -> crate::operation::list_delivery_streams::builders::ListDeliveryStreamsInputBuilder {
-        crate::operation::list_delivery_streams::builders::ListDeliveryStreamsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_delivery_streams::builders::ListDeliveryStreamsInputBuilder {
+        crate::operation::list_delivery_streams::builders::ListDeliveryStreamsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeliveryStreamsInput`](crate::operation::list_delivery_streams::ListDeliveryStreamsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeliveryStreamsInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) delivery_stream_type: ::std::option::Option<crate::types::DeliveryStreamType>,
@@ -87,10 +83,7 @@ impl ListDeliveryStreamsInputBuilder {
     /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
     /// </ul>
     /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
-    pub fn set_delivery_stream_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeliveryStreamType>,
-    ) -> Self {
+    pub fn set_delivery_stream_type(mut self, input: ::std::option::Option<crate::types::DeliveryStreamType>) -> Self {
         self.delivery_stream_type = input;
         self
     }
@@ -100,46 +93,32 @@ impl ListDeliveryStreamsInputBuilder {
     /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
     /// </ul>
     /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
-    pub fn get_delivery_stream_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeliveryStreamType> {
+    pub fn get_delivery_stream_type(&self) -> &::std::option::Option<crate::types::DeliveryStreamType> {
         &self.delivery_stream_type
     }
     /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
-    pub fn exclusive_start_delivery_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclusive_start_delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exclusive_start_delivery_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
-    pub fn set_exclusive_start_delivery_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exclusive_start_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exclusive_start_delivery_stream_name = input;
         self
     }
     /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
-    pub fn get_exclusive_start_delivery_stream_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_exclusive_start_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.exclusive_start_delivery_stream_name
     }
     /// Consumes the builder and constructs a [`ListDeliveryStreamsInput`](crate::operation::list_delivery_streams::ListDeliveryStreamsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_delivery_streams::ListDeliveryStreamsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_delivery_streams::ListDeliveryStreamsInput {
-                limit: self.limit,
-                delivery_stream_type: self.delivery_stream_type,
-                exclusive_start_delivery_stream_name: self.exclusive_start_delivery_stream_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_delivery_streams::ListDeliveryStreamsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_delivery_streams::ListDeliveryStreamsInput {
+            limit: self.limit,
+            delivery_stream_type: self.delivery_stream_type,
+            exclusive_start_delivery_stream_name: self.exclusive_start_delivery_stream_name,
+        })
     }
 }

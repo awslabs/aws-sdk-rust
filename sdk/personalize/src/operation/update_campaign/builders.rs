@@ -10,10 +10,7 @@ impl UpdateCampaignInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_campaign::UpdateCampaignOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_campaign::UpdateCampaignError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_campaign::UpdateCampaignError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_campaign();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl UpdateCampaignFluentBuilder {
         }
     }
     /// Access the UpdateCampaign as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_campaign::builders::UpdateCampaignInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_campaign::builders::UpdateCampaignInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,10 +60,7 @@ impl UpdateCampaignFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -133,18 +125,12 @@ impl UpdateCampaignFluentBuilder {
         self.inner.get_campaign_arn()
     }
     /// <p>The ARN of a new solution version to deploy.</p>
-    pub fn solution_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.solution_version_arn(input.into());
         self
     }
     /// <p>The ARN of a new solution version to deploy.</p>
-    pub fn set_solution_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_solution_version_arn(input);
         self
     }
@@ -172,10 +158,7 @@ impl UpdateCampaignFluentBuilder {
         self
     }
     /// <p>The configuration details of a campaign.</p>
-    pub fn set_campaign_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignConfig>,
-    ) -> Self {
+    pub fn set_campaign_config(mut self, input: ::std::option::Option<crate::types::CampaignConfig>) -> Self {
         self.inner = self.inner.set_campaign_config(input);
         self
     }

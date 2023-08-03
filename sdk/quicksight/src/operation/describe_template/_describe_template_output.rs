@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeTemplateOutput {
 }
 impl DescribeTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTemplateOutput`](crate::operation::describe_template::DescribeTemplateOutput).
-    pub fn builder() -> crate::operation::describe_template::builders::DescribeTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_template::builders::DescribeTemplateOutputBuilder {
         crate::operation::describe_template::builders::DescribeTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTemplateOutput`](crate::operation::describe_template::DescribeTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTemplateOutputBuilder {
     pub(crate) template: ::std::option::Option<crate::types::Template>,
     pub(crate) status: ::std::option::Option<i32>,

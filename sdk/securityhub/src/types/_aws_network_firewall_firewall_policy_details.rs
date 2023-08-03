@@ -51,9 +51,7 @@ impl AwsNetworkFirewallFirewallPolicyDetails {
 
 /// A builder for [`AwsNetworkFirewallFirewallPolicyDetails`](crate::types::AwsNetworkFirewallFirewallPolicyDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsNetworkFirewallFirewallPolicyDetailsBuilder {
     pub(crate) firewall_policy: ::std::option::Option<crate::types::FirewallPolicyDetails>,
     pub(crate) firewall_policy_arn: ::std::option::Option<::std::string::String>,
@@ -68,32 +66,21 @@ impl AwsNetworkFirewallFirewallPolicyDetailsBuilder {
         self
     }
     /// <p>The firewall policy configuration.</p>
-    pub fn set_firewall_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallPolicyDetails>,
-    ) -> Self {
+    pub fn set_firewall_policy(mut self, input: ::std::option::Option<crate::types::FirewallPolicyDetails>) -> Self {
         self.firewall_policy = input;
         self
     }
     /// <p>The firewall policy configuration.</p>
-    pub fn get_firewall_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::FirewallPolicyDetails> {
+    pub fn get_firewall_policy(&self) -> &::std::option::Option<crate::types::FirewallPolicyDetails> {
         &self.firewall_policy
     }
     /// <p>The ARN of the firewall policy.</p>
-    pub fn firewall_policy_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the firewall policy.</p>
-    pub fn set_firewall_policy_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_policy_arn = input;
         self
     }
@@ -102,18 +89,12 @@ impl AwsNetworkFirewallFirewallPolicyDetailsBuilder {
         &self.firewall_policy_arn
     }
     /// <p>The identifier of the firewall policy.</p>
-    pub fn firewall_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the firewall policy.</p>
-    pub fn set_firewall_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_policy_id = input;
         self
     }
@@ -122,18 +103,12 @@ impl AwsNetworkFirewallFirewallPolicyDetailsBuilder {
         &self.firewall_policy_id
     }
     /// <p>The name of the firewall policy.</p>
-    pub fn firewall_policy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the firewall policy.</p>
-    pub fn set_firewall_policy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_policy_name = input;
         self
     }

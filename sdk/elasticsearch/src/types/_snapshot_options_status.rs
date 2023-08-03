@@ -30,9 +30,7 @@ impl SnapshotOptionsStatus {
 
 /// A builder for [`SnapshotOptionsStatus`](crate::types::SnapshotOptionsStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotOptionsStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::SnapshotOptions>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
@@ -44,10 +42,7 @@ impl SnapshotOptionsStatusBuilder {
         self
     }
     /// <p>Specifies the daily snapshot options specified for the Elasticsearch domain.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::SnapshotOptions>) -> Self {
         self.options = input;
         self
     }

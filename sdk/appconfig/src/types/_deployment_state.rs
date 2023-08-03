@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeploymentState {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for DeploymentState {
             "ROLLED_BACK" => DeploymentState::RolledBack,
             "ROLLING_BACK" => DeploymentState::RollingBack,
             "VALIDATING" => DeploymentState::Validating,
-            other => {
-                DeploymentState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DeploymentState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl DeploymentState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BAKING",
-            "COMPLETE",
-            "DEPLOYING",
-            "ROLLED_BACK",
-            "ROLLING_BACK",
-            "VALIDATING",
-        ]
+        &["BAKING", "COMPLETE", "DEPLOYING", "ROLLED_BACK", "ROLLING_BACK", "VALIDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for DeploymentState {

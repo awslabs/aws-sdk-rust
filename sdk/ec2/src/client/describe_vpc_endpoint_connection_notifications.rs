@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`connection_notification_set(Option<Vec<ConnectionNotification>>)`](crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsOutput::connection_notification_set): <p>The notifications.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcEndpointConnectionNotificationsError>`](crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsError)
-    pub fn describe_vpc_endpoint_connection_notifications(&self) -> crate::operation::describe_vpc_endpoint_connection_notifications::builders::DescribeVpcEndpointConnectionNotificationsFluentBuilder{
-        crate::operation::describe_vpc_endpoint_connection_notifications::builders::DescribeVpcEndpointConnectionNotificationsFluentBuilder::new(self.handle.clone())
+    pub fn describe_vpc_endpoint_connection_notifications(
+        &self,
+    ) -> crate::operation::describe_vpc_endpoint_connection_notifications::builders::DescribeVpcEndpointConnectionNotificationsFluentBuilder {
+        crate::operation::describe_vpc_endpoint_connection_notifications::builders::DescribeVpcEndpointConnectionNotificationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

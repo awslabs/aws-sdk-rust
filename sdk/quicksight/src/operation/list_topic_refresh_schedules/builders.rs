@@ -26,7 +26,7 @@ impl ListTopicRefreshSchedulesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTopicRefreshSchedulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_topic_refresh_schedules::builders::ListTopicRefreshSchedulesInputBuilder,
+    inner: crate::operation::list_topic_refresh_schedules::builders::ListTopicRefreshSchedulesInputBuilder,
 }
 impl ListTopicRefreshSchedulesFluentBuilder {
     /// Creates a new `ListTopicRefreshSchedules`.
@@ -37,7 +37,7 @@ impl ListTopicRefreshSchedulesFluentBuilder {
         }
     }
     /// Access the ListTopicRefreshSchedules as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_topic_refresh_schedules::builders::ListTopicRefreshSchedulesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_topic_refresh_schedules::builders::ListTopicRefreshSchedulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListTopicRefreshSchedulesFluentBuilder {
             crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListTopicRefreshSchedulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListTopicRefreshSchedulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListTopicRefreshSchedulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ListTopicRefreshSchedulesFluentBuilder {
             crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want described.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want described.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

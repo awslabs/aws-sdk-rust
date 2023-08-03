@@ -26,7 +26,7 @@ impl UpdateStreamingDistributionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateStreamingDistributionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_streaming_distribution::builders::UpdateStreamingDistributionInputBuilder,
+    inner: crate::operation::update_streaming_distribution::builders::UpdateStreamingDistributionInputBuilder,
 }
 impl UpdateStreamingDistributionFluentBuilder {
     /// Creates a new `UpdateStreamingDistribution`.
@@ -37,7 +37,7 @@ impl UpdateStreamingDistributionFluentBuilder {
         }
     }
     /// Access the UpdateStreamingDistribution as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_streaming_distribution::builders::UpdateStreamingDistributionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_streaming_distribution::builders::UpdateStreamingDistributionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateStreamingDistributionFluentBuilder {
             crate::operation::update_streaming_distribution::UpdateStreamingDistribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_streaming_distribution::UpdateStreamingDistributionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateStreamingDistributionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateStreamingDistributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_streaming_distribution::UpdateStreamingDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_streaming_distribution::UpdateStreamingDistributionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateStreamingDistributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_streaming_distribution::UpdateStreamingDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_streaming_distribution::UpdateStreamingDistributionError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl UpdateStreamingDistributionFluentBuilder {
             crate::operation::update_streaming_distribution::UpdateStreamingDistribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_streaming_distribution::UpdateStreamingDistributionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The streaming distribution's configuration information.</p>
-    pub fn streaming_distribution_config(
-        mut self,
-        input: crate::types::StreamingDistributionConfig,
-    ) -> Self {
+    pub fn streaming_distribution_config(mut self, input: crate::types::StreamingDistributionConfig) -> Self {
         self.inner = self.inner.streaming_distribution_config(input);
         self
     }
     /// <p>The streaming distribution's configuration information.</p>
-    pub fn set_streaming_distribution_config(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingDistributionConfig>,
-    ) -> Self {
+    pub fn set_streaming_distribution_config(mut self, input: ::std::option::Option<crate::types::StreamingDistributionConfig>) -> Self {
         self.inner = self.inner.set_streaming_distribution_config(input);
         self
     }
     /// <p>The streaming distribution's configuration information.</p>
-    pub fn get_streaming_distribution_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamingDistributionConfig> {
+    pub fn get_streaming_distribution_config(&self) -> &::std::option::Option<crate::types::StreamingDistributionConfig> {
         self.inner.get_streaming_distribution_config()
     }
     /// <p>The streaming distribution's id.</p>

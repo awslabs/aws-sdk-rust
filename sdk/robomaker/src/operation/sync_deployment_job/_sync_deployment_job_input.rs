@@ -25,35 +25,26 @@ impl SyncDeploymentJobInput {
 }
 impl SyncDeploymentJobInput {
     /// Creates a new builder-style object to manufacture [`SyncDeploymentJobInput`](crate::operation::sync_deployment_job::SyncDeploymentJobInput).
-    pub fn builder(
-    ) -> crate::operation::sync_deployment_job::builders::SyncDeploymentJobInputBuilder {
+    pub fn builder() -> crate::operation::sync_deployment_job::builders::SyncDeploymentJobInputBuilder {
         crate::operation::sync_deployment_job::builders::SyncDeploymentJobInputBuilder::default()
     }
 }
 
 /// A builder for [`SyncDeploymentJobInput`](crate::operation::sync_deployment_job::SyncDeploymentJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SyncDeploymentJobInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) fleet: ::std::option::Option<::std::string::String>,
 }
 impl SyncDeploymentJobInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -78,15 +69,10 @@ impl SyncDeploymentJobInputBuilder {
     /// Consumes the builder and constructs a [`SyncDeploymentJobInput`](crate::operation::sync_deployment_job::SyncDeploymentJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::sync_deployment_job::SyncDeploymentJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::sync_deployment_job::SyncDeploymentJobInput {
-                client_request_token: self.client_request_token,
-                fleet: self.fleet,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::sync_deployment_job::SyncDeploymentJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::sync_deployment_job::SyncDeploymentJobInput {
+            client_request_token: self.client_request_token,
+            fleet: self.fleet,
+        })
     }
 }

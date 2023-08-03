@@ -9,8 +9,7 @@ pub struct DescribeReplicationTaskAssessmentRunsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
     #[doc(hidden)]
-    pub replication_task_assessment_runs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentRun>>,
+    pub replication_task_assessment_runs: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentRun>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTaskAssessmentRunsOutput {
@@ -19,9 +18,7 @@ impl DescribeReplicationTaskAssessmentRunsOutput {
         self.marker.as_deref()
     }
     /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
-    pub fn replication_task_assessment_runs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReplicationTaskAssessmentRun]> {
+    pub fn replication_task_assessment_runs(&self) -> ::std::option::Option<&[crate::types::ReplicationTaskAssessmentRun]> {
         self.replication_task_assessment_runs.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeReplicationTaskAssessmentRuns
 }
 impl DescribeReplicationTaskAssessmentRunsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTaskAssessmentRunsOutput`](crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsOutput).
-    pub fn builder() -> crate::operation::describe_replication_task_assessment_runs::builders::DescribeReplicationTaskAssessmentRunsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_task_assessment_runs::builders::DescribeReplicationTaskAssessmentRunsOutputBuilder {
         crate::operation::describe_replication_task_assessment_runs::builders::DescribeReplicationTaskAssessmentRunsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationTaskAssessmentRunsOutput`](crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationTaskAssessmentRunsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_task_assessment_runs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentRun>>,
+    pub(crate) replication_task_assessment_runs: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentRun>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTaskAssessmentRunsOutputBuilder {
@@ -68,10 +62,7 @@ impl DescribeReplicationTaskAssessmentRunsOutputBuilder {
     /// To override the contents of this collection use [`set_replication_task_assessment_runs`](Self::set_replication_task_assessment_runs).
     ///
     /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
-    pub fn replication_task_assessment_runs(
-        mut self,
-        input: crate::types::ReplicationTaskAssessmentRun,
-    ) -> Self {
+    pub fn replication_task_assessment_runs(mut self, input: crate::types::ReplicationTaskAssessmentRun) -> Self {
         let mut v = self.replication_task_assessment_runs.unwrap_or_default();
         v.push(input);
         self.replication_task_assessment_runs = ::std::option::Option::Some(v);
@@ -86,9 +77,7 @@ impl DescribeReplicationTaskAssessmentRunsOutputBuilder {
         self
     }
     /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
-    pub fn get_replication_task_assessment_runs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentRun>> {
+    pub fn get_replication_task_assessment_runs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentRun>> {
         &self.replication_task_assessment_runs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -101,12 +90,10 @@ impl DescribeReplicationTaskAssessmentRunsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReplicationTaskAssessmentRunsOutput`](crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsOutput).
-    pub fn build(self) -> crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsOutput{
+    pub fn build(self) -> crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsOutput {
         crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsOutput {
-            marker: self.marker
-            ,
-            replication_task_assessment_runs: self.replication_task_assessment_runs
-            ,
+            marker: self.marker,
+            replication_task_assessment_runs: self.replication_task_assessment_runs,
             _request_id: self._request_id,
         }
     }

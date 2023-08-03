@@ -32,18 +32,14 @@ impl ::aws_http::request_id::RequestId for DescribeAddonVersionsOutput {
 }
 impl DescribeAddonVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAddonVersionsOutput`](crate::operation::describe_addon_versions::DescribeAddonVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_addon_versions::builders::DescribeAddonVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_addon_versions::builders::DescribeAddonVersionsOutputBuilder {
         crate::operation::describe_addon_versions::builders::DescribeAddonVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAddonVersionsOutput`](crate::operation::describe_addon_versions::DescribeAddonVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddonVersionsOutputBuilder {
     pub(crate) addons: ::std::option::Option<::std::vec::Vec<crate::types::AddonInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -62,10 +58,7 @@ impl DescribeAddonVersionsOutputBuilder {
         self
     }
     /// <p>The list of available versions with Kubernetes version compatibility and other properties.</p>
-    pub fn set_addons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddonInfo>>,
-    ) -> Self {
+    pub fn set_addons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddonInfo>>) -> Self {
         self.addons = input;
         self
     }

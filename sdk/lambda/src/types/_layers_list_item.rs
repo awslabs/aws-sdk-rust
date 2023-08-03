@@ -24,9 +24,7 @@ impl LayersListItem {
         self.layer_arn.as_deref()
     }
     /// <p>The newest version of the layer.</p>
-    pub fn latest_matching_version(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LayerVersionsListItem> {
+    pub fn latest_matching_version(&self) -> ::std::option::Option<&crate::types::LayerVersionsListItem> {
         self.latest_matching_version.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl LayersListItem {
 
 /// A builder for [`LayersListItem`](crate::types::LayersListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LayersListItemBuilder {
     pub(crate) layer_name: ::std::option::Option<::std::string::String>,
     pub(crate) layer_arn: ::std::option::Option<::std::string::String>,
@@ -82,17 +78,12 @@ impl LayersListItemBuilder {
         self
     }
     /// <p>The newest version of the layer.</p>
-    pub fn set_latest_matching_version(
-        mut self,
-        input: ::std::option::Option<crate::types::LayerVersionsListItem>,
-    ) -> Self {
+    pub fn set_latest_matching_version(mut self, input: ::std::option::Option<crate::types::LayerVersionsListItem>) -> Self {
         self.latest_matching_version = input;
         self
     }
     /// <p>The newest version of the layer.</p>
-    pub fn get_latest_matching_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::LayerVersionsListItem> {
+    pub fn get_latest_matching_version(&self) -> &::std::option::Option<crate::types::LayerVersionsListItem> {
         &self.latest_matching_version
     }
     /// Consumes the builder and constructs a [`LayersListItem`](crate::types::LayersListItem).

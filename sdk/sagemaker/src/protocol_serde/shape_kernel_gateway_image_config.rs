@@ -18,10 +18,7 @@ pub fn ser_kernel_gateway_image_config(
     if let Some(var_5) = &input.file_system_config {
         #[allow(unused_mut)]
         let mut object_6 = object.key("FileSystemConfig").start_object();
-        crate::protocol_serde::shape_file_system_config::ser_file_system_config(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_file_system_config::ser_file_system_config(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())
@@ -29,17 +26,9 @@ pub fn ser_kernel_gateway_image_config(
 
 pub(crate) fn de_kernel_gateway_image_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::KernelGatewayImageConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::KernelGatewayImageConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -49,37 +38,27 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "KernelSpecs" => {
-                            builder = builder.set_kernel_specs(
-                                crate::protocol_serde::shape_kernel_specs::de_kernel_specs(tokens)?,
-                            );
+                            builder = builder.set_kernel_specs(crate::protocol_serde::shape_kernel_specs::de_kernel_specs(tokens)?);
                         }
                         "FileSystemConfig" => {
-                            builder = builder.set_file_system_config(
-                                    crate::protocol_serde::shape_file_system_config::de_file_system_config(tokens)?
-                                );
+                            builder = builder.set_file_system_config(crate::protocol_serde::shape_file_system_config::de_file_system_config(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

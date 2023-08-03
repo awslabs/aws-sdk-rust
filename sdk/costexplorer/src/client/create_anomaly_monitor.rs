@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAnomalyMonitorOutput`](crate::operation::create_anomaly_monitor::CreateAnomalyMonitorOutput) with field(s):
     ///   - [`monitor_arn(Option<String>)`](crate::operation::create_anomaly_monitor::CreateAnomalyMonitorOutput::monitor_arn): <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
     /// - On failure, responds with [`SdkError<CreateAnomalyMonitorError>`](crate::operation::create_anomaly_monitor::CreateAnomalyMonitorError)
-    pub fn create_anomaly_monitor(
-        &self,
-    ) -> crate::operation::create_anomaly_monitor::builders::CreateAnomalyMonitorFluentBuilder {
-        crate::operation::create_anomaly_monitor::builders::CreateAnomalyMonitorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_anomaly_monitor(&self) -> crate::operation::create_anomaly_monitor::builders::CreateAnomalyMonitorFluentBuilder {
+        crate::operation::create_anomaly_monitor::builders::CreateAnomalyMonitorFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for PutSnapshotBlockOutput {
 }
 impl PutSnapshotBlockOutput {
     /// Creates a new builder-style object to manufacture [`PutSnapshotBlockOutput`](crate::operation::put_snapshot_block::PutSnapshotBlockOutput).
-    pub fn builder() -> crate::operation::put_snapshot_block::builders::PutSnapshotBlockOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_snapshot_block::builders::PutSnapshotBlockOutputBuilder {
         crate::operation::put_snapshot_block::builders::PutSnapshotBlockOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutSnapshotBlockOutput`](crate::operation::put_snapshot_block::PutSnapshotBlockOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSnapshotBlockOutputBuilder {
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
     pub(crate) checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
@@ -65,17 +62,12 @@ impl PutSnapshotBlockOutputBuilder {
         self
     }
     /// <p>The algorithm used by Amazon EBS to generate the checksum.</p>
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::ChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
         self.checksum_algorithm = input;
         self
     }
     /// <p>The algorithm used by Amazon EBS to generate the checksum.</p>
-    pub fn get_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
         &self.checksum_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -37,9 +37,7 @@ impl FolderConfiguration {
 
 /// A builder for [`FolderConfiguration`](crate::types::FolderConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FolderConfigurationBuilder {
     pub(crate) name: ::std::option::Option<crate::types::FolderName>,
     pub(crate) action: ::std::option::Option<crate::types::RetentionAction>,
@@ -66,10 +64,7 @@ impl FolderConfigurationBuilder {
         self
     }
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::RetentionAction>) -> Self {
         self.action = input;
         self
     }

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`endpoint_descriptions(Option<Vec<EndpointDescription>>)`](crate::operation::add_endpoints::AddEndpointsOutput::endpoint_descriptions): <p>The list of endpoint objects.</p>
     ///   - [`endpoint_group_arn(Option<String>)`](crate::operation::add_endpoints::AddEndpointsOutput::endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     /// - On failure, responds with [`SdkError<AddEndpointsError>`](crate::operation::add_endpoints::AddEndpointsError)
-    pub fn add_endpoints(
-        &self,
-    ) -> crate::operation::add_endpoints::builders::AddEndpointsFluentBuilder {
-        crate::operation::add_endpoints::builders::AddEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_endpoints(&self) -> crate::operation::add_endpoints::builders::AddEndpointsFluentBuilder {
+        crate::operation::add_endpoints::builders::AddEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

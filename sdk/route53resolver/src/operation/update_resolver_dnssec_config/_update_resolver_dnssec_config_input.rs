@@ -22,16 +22,14 @@ impl UpdateResolverDnssecConfigInput {
 }
 impl UpdateResolverDnssecConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateResolverDnssecConfigInput`](crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigInput).
-    pub fn builder() -> crate::operation::update_resolver_dnssec_config::builders::UpdateResolverDnssecConfigInputBuilder{
+    pub fn builder() -> crate::operation::update_resolver_dnssec_config::builders::UpdateResolverDnssecConfigInputBuilder {
         crate::operation::update_resolver_dnssec_config::builders::UpdateResolverDnssecConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResolverDnssecConfigInput`](crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResolverDnssecConfigInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) validation: ::std::option::Option<crate::types::Validation>,
@@ -57,10 +55,7 @@ impl UpdateResolverDnssecConfigInputBuilder {
         self
     }
     /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code> or <code>DISABLE</code>. Be aware that it can take time for a validation status change to be completed.</p>
-    pub fn set_validation(
-        mut self,
-        input: ::std::option::Option<crate::types::Validation>,
-    ) -> Self {
+    pub fn set_validation(mut self, input: ::std::option::Option<crate::types::Validation>) -> Self {
         self.validation = input;
         self
     }
@@ -75,11 +70,9 @@ impl UpdateResolverDnssecConfigInputBuilder {
         crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigInput {
-                resource_id: self.resource_id,
-                validation: self.validation,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigInput {
+            resource_id: self.resource_id,
+            validation: self.validation,
+        })
     }
 }

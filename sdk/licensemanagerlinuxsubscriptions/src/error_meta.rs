@@ -22,32 +22,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_settings::GetServiceSettingsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_service_settings::GetServiceSettingsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_service_settings::GetServiceSettingsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_service_settings::GetServiceSettingsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -64,59 +48,51 @@ impl From<crate::operation::get_service_settings::GetServiceSettingsError> for E
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError>
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError, R>>
     for Error
-{
-    fn from(
-        err: crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError,
-    ) -> Self {
-        match err {
-            crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError,
-            R,
-        >,
-    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError> for Error {
+    fn from(err: crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError) -> Self {
+        match err {
+            crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -126,39 +102,25 @@ where
 impl From<crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError> for Error {
     fn from(err: crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError) -> Self {
         match err {
-            crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_settings::UpdateServiceSettingsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_service_settings::UpdateServiceSettingsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -168,7 +130,9 @@ where
 impl From<crate::operation::update_service_settings::UpdateServiceSettingsError> for Error {
     fn from(err: crate::operation::update_service_settings::UpdateServiceSettingsError) -> Self {
         match err {
-            crate::operation::update_service_settings::UpdateServiceSettingsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_service_settings::UpdateServiceSettingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::update_service_settings::UpdateServiceSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_service_settings::UpdateServiceSettingsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_service_settings::UpdateServiceSettingsError::Unhandled(inner) => Error::Unhandled(inner),

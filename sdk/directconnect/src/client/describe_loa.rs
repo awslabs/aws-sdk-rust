@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`loa_content(Option<Blob>)`](crate::operation::describe_loa::DescribeLoaOutput::loa_content): <p>The binary contents of the LOA-CFA document.</p>
     ///   - [`loa_content_type(Option<LoaContentType>)`](crate::operation::describe_loa::DescribeLoaOutput::loa_content_type): <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     /// - On failure, responds with [`SdkError<DescribeLoaError>`](crate::operation::describe_loa::DescribeLoaError)
-    pub fn describe_loa(
-        &self,
-    ) -> crate::operation::describe_loa::builders::DescribeLoaFluentBuilder {
+    pub fn describe_loa(&self) -> crate::operation::describe_loa::builders::DescribeLoaFluentBuilder {
         crate::operation::describe_loa::builders::DescribeLoaFluentBuilder::new(self.handle.clone())
     }
 }

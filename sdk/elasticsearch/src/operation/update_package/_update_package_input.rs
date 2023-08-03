@@ -44,9 +44,7 @@ impl UpdatePackageInput {
 
 /// A builder for [`UpdatePackageInput`](crate::operation::update_package::UpdatePackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePackageInputBuilder {
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
     pub(crate) package_source: ::std::option::Option<crate::types::PackageSource>,
@@ -74,10 +72,7 @@ impl UpdatePackageInputBuilder {
         self
     }
     /// <p>The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code></p>
-    pub fn set_package_source(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageSource>,
-    ) -> Self {
+    pub fn set_package_source(mut self, input: ::std::option::Option<crate::types::PackageSource>) -> Self {
         self.package_source = input;
         self
     }
@@ -86,18 +81,12 @@ impl UpdatePackageInputBuilder {
         &self.package_source
     }
     /// <p>New description of the package.</p>
-    pub fn package_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>New description of the package.</p>
-    pub fn set_package_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_description = input;
         self
     }
@@ -106,18 +95,12 @@ impl UpdatePackageInputBuilder {
         &self.package_description
     }
     /// <p>An info message for the new version which will be shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
-    pub fn commit_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn commit_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commit_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An info message for the new version which will be shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
-    pub fn set_commit_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_commit_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commit_message = input;
         self
     }
@@ -128,10 +111,7 @@ impl UpdatePackageInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePackageInput`](crate::operation::update_package::UpdatePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_package::UpdatePackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_package::UpdatePackageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_package::UpdatePackageInput {
             package_id: self.package_id,
             package_source: self.package_source,

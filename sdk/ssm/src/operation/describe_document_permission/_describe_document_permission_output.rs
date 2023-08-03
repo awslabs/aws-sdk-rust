@@ -8,8 +8,7 @@ pub struct DescribeDocumentPermissionOutput {
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
     #[doc(hidden)]
-    pub account_sharing_info_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountSharingInfo>>,
+    pub account_sharing_info_list: ::std::option::Option<::std::vec::Vec<crate::types::AccountSharingInfo>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl DescribeDocumentPermissionOutput {
         self.account_ids.as_deref()
     }
     /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
-    pub fn account_sharing_info_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AccountSharingInfo]> {
+    pub fn account_sharing_info_list(&self) -> ::std::option::Option<&[crate::types::AccountSharingInfo]> {
         self.account_sharing_info_list.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -38,20 +35,17 @@ impl ::aws_http::request_id::RequestId for DescribeDocumentPermissionOutput {
 }
 impl DescribeDocumentPermissionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentPermissionOutput`](crate::operation::describe_document_permission::DescribeDocumentPermissionOutput).
-    pub fn builder() -> crate::operation::describe_document_permission::builders::DescribeDocumentPermissionOutputBuilder{
+    pub fn builder() -> crate::operation::describe_document_permission::builders::DescribeDocumentPermissionOutputBuilder {
         crate::operation::describe_document_permission::builders::DescribeDocumentPermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDocumentPermissionOutput`](crate::operation::describe_document_permission::DescribeDocumentPermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDocumentPermissionOutputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) account_sharing_info_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountSharingInfo>>,
+    pub(crate) account_sharing_info_list: ::std::option::Option<::std::vec::Vec<crate::types::AccountSharingInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -68,17 +62,12 @@ impl DescribeDocumentPermissionOutputBuilder {
         self
     }
     /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Appends an item to `account_sharing_info_list`.
@@ -93,17 +82,12 @@ impl DescribeDocumentPermissionOutputBuilder {
         self
     }
     /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
-    pub fn set_account_sharing_info_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountSharingInfo>>,
-    ) -> Self {
+    pub fn set_account_sharing_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountSharingInfo>>) -> Self {
         self.account_sharing_info_list = input;
         self
     }
     /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
-    pub fn get_account_sharing_info_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountSharingInfo>> {
+    pub fn get_account_sharing_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountSharingInfo>> {
         &self.account_sharing_info_list
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -130,9 +114,7 @@ impl DescribeDocumentPermissionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDocumentPermissionOutput`](crate::operation::describe_document_permission::DescribeDocumentPermissionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_document_permission::DescribeDocumentPermissionOutput {
+    pub fn build(self) -> crate::operation::describe_document_permission::DescribeDocumentPermissionOutput {
         crate::operation::describe_document_permission::DescribeDocumentPermissionOutput {
             account_ids: self.account_ids,
             account_sharing_info_list: self.account_sharing_info_list,

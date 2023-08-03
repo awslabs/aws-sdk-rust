@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeWorkspaceBundlesOutput {
 }
 impl DescribeWorkspaceBundlesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceBundlesOutput`](crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesOutputBuilder {
         crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspaceBundlesOutput`](crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceBundlesOutputBuilder {
     pub(crate) bundles: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceBundle>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeWorkspaceBundlesOutputBuilder {
         self
     }
     /// <p>Information about the bundles.</p>
-    pub fn set_bundles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceBundle>>,
-    ) -> Self {
+    pub fn set_bundles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceBundle>>) -> Self {
         self.bundles = input;
         self
     }
     /// <p>Information about the bundles.</p>
-    pub fn get_bundles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceBundle>> {
+    pub fn get_bundles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceBundle>> {
         &self.bundles
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. This token is valid for one day and must be used within that time frame.</p>
@@ -95,9 +86,7 @@ impl DescribeWorkspaceBundlesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceBundlesOutput`](crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput {
+    pub fn build(self) -> crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput {
         crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput {
             bundles: self.bundles,
             next_token: self.next_token,

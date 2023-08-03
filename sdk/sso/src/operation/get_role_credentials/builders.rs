@@ -10,10 +10,7 @@ impl GetRoleCredentialsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_role_credentials::GetRoleCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_role_credentials::GetRoleCredentialsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_role_credentials::GetRoleCredentialsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_role_credentials();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetRoleCredentialsFluentBuilder {
         }
     }
     /// Access the GetRoleCredentials as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_role_credentials::builders::GetRoleCredentialsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_role_credentials::builders::GetRoleCredentialsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetRoleCredentialsFluentBuilder {
             crate::operation::get_role_credentials::GetRoleCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_role_credentials::GetRoleCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_role_credentials::GetRoleCredentialsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetRoleCredentialsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetRoleCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_role_credentials::GetRoleCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_role_credentials::GetRoleCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_role_credentials::GetRoleCredentialsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetRoleCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_role_credentials::GetRoleCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_role_credentials::GetRoleCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_role_credentials::GetRoleCredentialsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetRoleCredentialsFluentBuilder {
             crate::operation::get_role_credentials::GetRoleCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_role_credentials::GetRoleCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_role_credentials::GetRoleCredentialsError>,
     > {
         self.customize_middleware().await
     }

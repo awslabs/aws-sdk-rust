@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeReportJobOutput {
 }
 impl DescribeReportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReportJobOutput`](crate::operation::describe_report_job::DescribeReportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_report_job::builders::DescribeReportJobOutputBuilder {
+    pub fn builder() -> crate::operation::describe_report_job::builders::DescribeReportJobOutputBuilder {
         crate::operation::describe_report_job::builders::DescribeReportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReportJobOutput`](crate::operation::describe_report_job::DescribeReportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReportJobOutputBuilder {
     pub(crate) report_job: ::std::option::Option<crate::types::ReportJob>,
     _request_id: Option<String>,

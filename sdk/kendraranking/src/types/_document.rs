@@ -65,9 +65,7 @@ impl Document {
 
 /// A builder for [`Document`](crate::types::Document).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
@@ -139,27 +137,19 @@ impl DocumentBuilder {
     /// To override the contents of this collection use [`set_tokenized_title`](Self::set_tokenized_title).
     ///
     /// <p>The title of the search service's document represented as a list of tokens or words. You must choose to provide <code>Title</code> or <code>TokenizedTitle</code>. You cannot provide both.</p>
-    pub fn tokenized_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tokenized_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tokenized_title.unwrap_or_default();
         v.push(input.into());
         self.tokenized_title = ::std::option::Option::Some(v);
         self
     }
     /// <p>The title of the search service's document represented as a list of tokens or words. You must choose to provide <code>Title</code> or <code>TokenizedTitle</code>. You cannot provide both.</p>
-    pub fn set_tokenized_title(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tokenized_title(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tokenized_title = input;
         self
     }
     /// <p>The title of the search service's document represented as a list of tokens or words. You must choose to provide <code>Title</code> or <code>TokenizedTitle</code>. You cannot provide both.</p>
-    pub fn get_tokenized_title(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tokenized_title(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tokenized_title
     }
     /// Appends an item to `tokenized_body`.
@@ -167,27 +157,19 @@ impl DocumentBuilder {
     /// To override the contents of this collection use [`set_tokenized_body`](Self::set_tokenized_body).
     ///
     /// <p>The body text of the search service's document represented as a list of tokens or words. You must choose to provide <code>Body</code> or <code>TokenizedBody</code>. You cannot provide both.</p>
-    pub fn tokenized_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tokenized_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tokenized_body.unwrap_or_default();
         v.push(input.into());
         self.tokenized_body = ::std::option::Option::Some(v);
         self
     }
     /// <p>The body text of the search service's document represented as a list of tokens or words. You must choose to provide <code>Body</code> or <code>TokenizedBody</code>. You cannot provide both.</p>
-    pub fn set_tokenized_body(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tokenized_body(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tokenized_body = input;
         self
     }
     /// <p>The body text of the search service's document represented as a list of tokens or words. You must choose to provide <code>Body</code> or <code>TokenizedBody</code>. You cannot provide both.</p>
-    pub fn get_tokenized_body(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tokenized_body(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tokenized_body
     }
     /// <p>The original document score or rank from the search service. Amazon Kendra Intelligent Ranking gives the document a new score or rank based on its intelligent search algorithms.</p>

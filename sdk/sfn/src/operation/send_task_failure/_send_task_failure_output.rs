@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for SendTaskFailureOutput {
 }
 impl SendTaskFailureOutput {
     /// Creates a new builder-style object to manufacture [`SendTaskFailureOutput`](crate::operation::send_task_failure::SendTaskFailureOutput).
-    pub fn builder() -> crate::operation::send_task_failure::builders::SendTaskFailureOutputBuilder
-    {
+    pub fn builder() -> crate::operation::send_task_failure::builders::SendTaskFailureOutputBuilder {
         crate::operation::send_task_failure::builders::SendTaskFailureOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendTaskFailureOutput`](crate::operation::send_task_failure::SendTaskFailureOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendTaskFailureOutputBuilder {
     _request_id: Option<String>,
 }

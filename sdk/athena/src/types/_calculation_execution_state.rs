@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CalculationExecutionState {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for CalculationExecutionState {
             "FAILED" => CalculationExecutionState::Failed,
             "QUEUED" => CalculationExecutionState::Queued,
             "RUNNING" => CalculationExecutionState::Running,
-            other => CalculationExecutionState::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CalculationExecutionState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -113,16 +105,7 @@ impl CalculationExecutionState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELED",
-            "CANCELING",
-            "COMPLETED",
-            "CREATED",
-            "CREATING",
-            "FAILED",
-            "QUEUED",
-            "RUNNING",
-        ]
+        &["CANCELED", "CANCELING", "COMPLETED", "CREATED", "CREATING", "FAILED", "QUEUED", "RUNNING"]
     }
 }
 impl ::std::convert::AsRef<str> for CalculationExecutionState {

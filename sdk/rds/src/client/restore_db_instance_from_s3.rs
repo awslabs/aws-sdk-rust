@@ -54,10 +54,7 @@ impl super::Client {
     /// - On success, responds with [`RestoreDbInstanceFromS3Output`](crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output) with field(s):
     ///   - [`db_instance(Option<DbInstance>)`](crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output::db_instance): <p>Contains the details of an Amazon RDS DB instance.</p>  <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     /// - On failure, responds with [`SdkError<RestoreDBInstanceFromS3Error>`](crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error)
-    pub fn restore_db_instance_from_s3(
-        &self,
-    ) -> crate::operation::restore_db_instance_from_s3::builders::RestoreDBInstanceFromS3FluentBuilder
-    {
+    pub fn restore_db_instance_from_s3(&self) -> crate::operation::restore_db_instance_from_s3::builders::RestoreDBInstanceFromS3FluentBuilder {
         crate::operation::restore_db_instance_from_s3::builders::RestoreDBInstanceFromS3FluentBuilder::new(self.handle.clone())
     }
 }

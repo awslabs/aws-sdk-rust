@@ -26,34 +26,27 @@ pub struct ManagedRuleGroupConfig {
     /// <note>
     /// <p>Instead of this setting, provide your configuration under the request inspection configuration for <code>AWSManagedRulesATPRuleSet</code> or <code>AWSManagedRulesACFPRuleSet</code>. </p>
     /// </note>
-    #[deprecated(
-        note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection UsernameField"
-    )]
+    #[deprecated(note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection UsernameField")]
     #[doc(hidden)]
     pub username_field: ::std::option::Option<crate::types::UsernameField>,
     /// <note>
     /// <p>Instead of this setting, provide your configuration under the request inspection configuration for <code>AWSManagedRulesATPRuleSet</code> or <code>AWSManagedRulesACFPRuleSet</code>. </p>
     /// </note>
-    #[deprecated(
-        note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection PasswordField"
-    )]
+    #[deprecated(note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection PasswordField")]
     #[doc(hidden)]
     pub password_field: ::std::option::Option<crate::types::PasswordField>,
     /// <p>Additional configuration for using the Bot Control managed rule group. Use this to specify the inspection level that you want to use. For information about using the Bot Control managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot Control rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF Bot Control</a> in the <i>WAF Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub aws_managed_rules_bot_control_rule_set:
-        ::std::option::Option<crate::types::AwsManagedRulesBotControlRuleSet>,
+    pub aws_managed_rules_bot_control_rule_set: ::std::option::Option<crate::types::AwsManagedRulesBotControlRuleSet>,
     /// <p>Additional configuration for using the account takeover prevention (ATP) managed rule group, <code>AWSManagedRulesATPRuleSet</code>. Use this to provide login request information to the rule group. For web ACLs that protect CloudFront distributions, use this to also provide the information about how your distribution responds to login requests. </p>
     /// <p>This configuration replaces the individual configuration fields in <code>ManagedRuleGroupConfig</code> and provides additional feature configuration. </p>
     /// <p>For information about using the ATP managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-atp.html">WAF Fraud Control account takeover prevention (ATP) rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-atp.html">WAF Fraud Control account takeover prevention (ATP)</a> in the <i>WAF Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub aws_managed_rules_atp_rule_set:
-        ::std::option::Option<crate::types::AwsManagedRulesAtpRuleSet>,
+    pub aws_managed_rules_atp_rule_set: ::std::option::Option<crate::types::AwsManagedRulesAtpRuleSet>,
     /// <p>Additional configuration for using the account creation fraud prevention (ACFP) managed rule group, <code>AWSManagedRulesACFPRuleSet</code>. Use this to provide account creation request information to the rule group. For web ACLs that protect CloudFront distributions, use this to also provide the information about how your distribution responds to account creation requests. </p>
     /// <p>For information about using the ACFP managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-acfp.html">WAF Fraud Control account creation fraud prevention (ACFP) rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-acfp.html">WAF Fraud Control account creation fraud prevention (ACFP)</a> in the <i>WAF Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub aws_managed_rules_acfp_rule_set:
-        ::std::option::Option<crate::types::AwsManagedRulesAcfpRuleSet>,
+    pub aws_managed_rules_acfp_rule_set: ::std::option::Option<crate::types::AwsManagedRulesAcfpRuleSet>,
 }
 impl ManagedRuleGroupConfig {
     /// <note>
@@ -73,40 +66,30 @@ impl ManagedRuleGroupConfig {
     /// <note>
     /// <p>Instead of this setting, provide your configuration under the request inspection configuration for <code>AWSManagedRulesATPRuleSet</code> or <code>AWSManagedRulesACFPRuleSet</code>. </p>
     /// </note>
-    #[deprecated(
-        note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection UsernameField"
-    )]
+    #[deprecated(note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection UsernameField")]
     pub fn username_field(&self) -> ::std::option::Option<&crate::types::UsernameField> {
         self.username_field.as_ref()
     }
     /// <note>
     /// <p>Instead of this setting, provide your configuration under the request inspection configuration for <code>AWSManagedRulesATPRuleSet</code> or <code>AWSManagedRulesACFPRuleSet</code>. </p>
     /// </note>
-    #[deprecated(
-        note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection PasswordField"
-    )]
+    #[deprecated(note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection PasswordField")]
     pub fn password_field(&self) -> ::std::option::Option<&crate::types::PasswordField> {
         self.password_field.as_ref()
     }
     /// <p>Additional configuration for using the Bot Control managed rule group. Use this to specify the inspection level that you want to use. For information about using the Bot Control managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot Control rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF Bot Control</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn aws_managed_rules_bot_control_rule_set(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsManagedRulesBotControlRuleSet> {
+    pub fn aws_managed_rules_bot_control_rule_set(&self) -> ::std::option::Option<&crate::types::AwsManagedRulesBotControlRuleSet> {
         self.aws_managed_rules_bot_control_rule_set.as_ref()
     }
     /// <p>Additional configuration for using the account takeover prevention (ATP) managed rule group, <code>AWSManagedRulesATPRuleSet</code>. Use this to provide login request information to the rule group. For web ACLs that protect CloudFront distributions, use this to also provide the information about how your distribution responds to login requests. </p>
     /// <p>This configuration replaces the individual configuration fields in <code>ManagedRuleGroupConfig</code> and provides additional feature configuration. </p>
     /// <p>For information about using the ATP managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-atp.html">WAF Fraud Control account takeover prevention (ATP) rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-atp.html">WAF Fraud Control account takeover prevention (ATP)</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn aws_managed_rules_atp_rule_set(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsManagedRulesAtpRuleSet> {
+    pub fn aws_managed_rules_atp_rule_set(&self) -> ::std::option::Option<&crate::types::AwsManagedRulesAtpRuleSet> {
         self.aws_managed_rules_atp_rule_set.as_ref()
     }
     /// <p>Additional configuration for using the account creation fraud prevention (ACFP) managed rule group, <code>AWSManagedRulesACFPRuleSet</code>. Use this to provide account creation request information to the rule group. For web ACLs that protect CloudFront distributions, use this to also provide the information about how your distribution responds to account creation requests. </p>
     /// <p>For information about using the ACFP managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-acfp.html">WAF Fraud Control account creation fraud prevention (ACFP) rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-acfp.html">WAF Fraud Control account creation fraud prevention (ACFP)</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn aws_managed_rules_acfp_rule_set(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsManagedRulesAcfpRuleSet> {
+    pub fn aws_managed_rules_acfp_rule_set(&self) -> ::std::option::Option<&crate::types::AwsManagedRulesAcfpRuleSet> {
         self.aws_managed_rules_acfp_rule_set.as_ref()
     }
 }
@@ -119,20 +102,15 @@ impl ManagedRuleGroupConfig {
 
 /// A builder for [`ManagedRuleGroupConfig`](crate::types::ManagedRuleGroupConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedRuleGroupConfigBuilder {
     pub(crate) login_path: ::std::option::Option<::std::string::String>,
     pub(crate) payload_type: ::std::option::Option<crate::types::PayloadType>,
     pub(crate) username_field: ::std::option::Option<crate::types::UsernameField>,
     pub(crate) password_field: ::std::option::Option<crate::types::PasswordField>,
-    pub(crate) aws_managed_rules_bot_control_rule_set:
-        ::std::option::Option<crate::types::AwsManagedRulesBotControlRuleSet>,
-    pub(crate) aws_managed_rules_atp_rule_set:
-        ::std::option::Option<crate::types::AwsManagedRulesAtpRuleSet>,
-    pub(crate) aws_managed_rules_acfp_rule_set:
-        ::std::option::Option<crate::types::AwsManagedRulesAcfpRuleSet>,
+    pub(crate) aws_managed_rules_bot_control_rule_set: ::std::option::Option<crate::types::AwsManagedRulesBotControlRuleSet>,
+    pub(crate) aws_managed_rules_atp_rule_set: ::std::option::Option<crate::types::AwsManagedRulesAtpRuleSet>,
+    pub(crate) aws_managed_rules_acfp_rule_set: ::std::option::Option<crate::types::AwsManagedRulesAcfpRuleSet>,
 }
 impl ManagedRuleGroupConfigBuilder {
     /// <note>
@@ -170,10 +148,7 @@ impl ManagedRuleGroupConfigBuilder {
     /// <p>Instead of this setting, provide your configuration under the request inspection configuration for <code>AWSManagedRulesATPRuleSet</code> or <code>AWSManagedRulesACFPRuleSet</code>. </p>
     /// </note>
     #[deprecated(note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection PayloadType")]
-    pub fn set_payload_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PayloadType>,
-    ) -> Self {
+    pub fn set_payload_type(mut self, input: ::std::option::Option<crate::types::PayloadType>) -> Self {
         self.payload_type = input;
         self
     }
@@ -187,9 +162,7 @@ impl ManagedRuleGroupConfigBuilder {
     /// <note>
     /// <p>Instead of this setting, provide your configuration under the request inspection configuration for <code>AWSManagedRulesATPRuleSet</code> or <code>AWSManagedRulesACFPRuleSet</code>. </p>
     /// </note>
-    #[deprecated(
-        note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection UsernameField"
-    )]
+    #[deprecated(note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection UsernameField")]
     pub fn username_field(mut self, input: crate::types::UsernameField) -> Self {
         self.username_field = ::std::option::Option::Some(input);
         self
@@ -197,31 +170,22 @@ impl ManagedRuleGroupConfigBuilder {
     /// <note>
     /// <p>Instead of this setting, provide your configuration under the request inspection configuration for <code>AWSManagedRulesATPRuleSet</code> or <code>AWSManagedRulesACFPRuleSet</code>. </p>
     /// </note>
-    #[deprecated(
-        note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection UsernameField"
-    )]
-    pub fn set_username_field(
-        mut self,
-        input: ::std::option::Option<crate::types::UsernameField>,
-    ) -> Self {
+    #[deprecated(note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection UsernameField")]
+    pub fn set_username_field(mut self, input: ::std::option::Option<crate::types::UsernameField>) -> Self {
         self.username_field = input;
         self
     }
     /// <note>
     /// <p>Instead of this setting, provide your configuration under the request inspection configuration for <code>AWSManagedRulesATPRuleSet</code> or <code>AWSManagedRulesACFPRuleSet</code>. </p>
     /// </note>
-    #[deprecated(
-        note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection UsernameField"
-    )]
+    #[deprecated(note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection UsernameField")]
     pub fn get_username_field(&self) -> &::std::option::Option<crate::types::UsernameField> {
         &self.username_field
     }
     /// <note>
     /// <p>Instead of this setting, provide your configuration under the request inspection configuration for <code>AWSManagedRulesATPRuleSet</code> or <code>AWSManagedRulesACFPRuleSet</code>. </p>
     /// </note>
-    #[deprecated(
-        note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection PasswordField"
-    )]
+    #[deprecated(note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection PasswordField")]
     pub fn password_field(mut self, input: crate::types::PasswordField) -> Self {
         self.password_field = ::std::option::Option::Some(input);
         self
@@ -229,30 +193,20 @@ impl ManagedRuleGroupConfigBuilder {
     /// <note>
     /// <p>Instead of this setting, provide your configuration under the request inspection configuration for <code>AWSManagedRulesATPRuleSet</code> or <code>AWSManagedRulesACFPRuleSet</code>. </p>
     /// </note>
-    #[deprecated(
-        note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection PasswordField"
-    )]
-    pub fn set_password_field(
-        mut self,
-        input: ::std::option::Option<crate::types::PasswordField>,
-    ) -> Self {
+    #[deprecated(note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection PasswordField")]
+    pub fn set_password_field(mut self, input: ::std::option::Option<crate::types::PasswordField>) -> Self {
         self.password_field = input;
         self
     }
     /// <note>
     /// <p>Instead of this setting, provide your configuration under the request inspection configuration for <code>AWSManagedRulesATPRuleSet</code> or <code>AWSManagedRulesACFPRuleSet</code>. </p>
     /// </note>
-    #[deprecated(
-        note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection PasswordField"
-    )]
+    #[deprecated(note = "Deprecated. Use AWSManagedRulesATPRuleSet RequestInspection PasswordField")]
     pub fn get_password_field(&self) -> &::std::option::Option<crate::types::PasswordField> {
         &self.password_field
     }
     /// <p>Additional configuration for using the Bot Control managed rule group. Use this to specify the inspection level that you want to use. For information about using the Bot Control managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot Control rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF Bot Control</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn aws_managed_rules_bot_control_rule_set(
-        mut self,
-        input: crate::types::AwsManagedRulesBotControlRuleSet,
-    ) -> Self {
+    pub fn aws_managed_rules_bot_control_rule_set(mut self, input: crate::types::AwsManagedRulesBotControlRuleSet) -> Self {
         self.aws_managed_rules_bot_control_rule_set = ::std::option::Option::Some(input);
         self
     }
@@ -265,62 +219,44 @@ impl ManagedRuleGroupConfigBuilder {
         self
     }
     /// <p>Additional configuration for using the Bot Control managed rule group. Use this to specify the inspection level that you want to use. For information about using the Bot Control managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot Control rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF Bot Control</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn get_aws_managed_rules_bot_control_rule_set(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsManagedRulesBotControlRuleSet> {
+    pub fn get_aws_managed_rules_bot_control_rule_set(&self) -> &::std::option::Option<crate::types::AwsManagedRulesBotControlRuleSet> {
         &self.aws_managed_rules_bot_control_rule_set
     }
     /// <p>Additional configuration for using the account takeover prevention (ATP) managed rule group, <code>AWSManagedRulesATPRuleSet</code>. Use this to provide login request information to the rule group. For web ACLs that protect CloudFront distributions, use this to also provide the information about how your distribution responds to login requests. </p>
     /// <p>This configuration replaces the individual configuration fields in <code>ManagedRuleGroupConfig</code> and provides additional feature configuration. </p>
     /// <p>For information about using the ATP managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-atp.html">WAF Fraud Control account takeover prevention (ATP) rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-atp.html">WAF Fraud Control account takeover prevention (ATP)</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn aws_managed_rules_atp_rule_set(
-        mut self,
-        input: crate::types::AwsManagedRulesAtpRuleSet,
-    ) -> Self {
+    pub fn aws_managed_rules_atp_rule_set(mut self, input: crate::types::AwsManagedRulesAtpRuleSet) -> Self {
         self.aws_managed_rules_atp_rule_set = ::std::option::Option::Some(input);
         self
     }
     /// <p>Additional configuration for using the account takeover prevention (ATP) managed rule group, <code>AWSManagedRulesATPRuleSet</code>. Use this to provide login request information to the rule group. For web ACLs that protect CloudFront distributions, use this to also provide the information about how your distribution responds to login requests. </p>
     /// <p>This configuration replaces the individual configuration fields in <code>ManagedRuleGroupConfig</code> and provides additional feature configuration. </p>
     /// <p>For information about using the ATP managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-atp.html">WAF Fraud Control account takeover prevention (ATP) rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-atp.html">WAF Fraud Control account takeover prevention (ATP)</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn set_aws_managed_rules_atp_rule_set(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsManagedRulesAtpRuleSet>,
-    ) -> Self {
+    pub fn set_aws_managed_rules_atp_rule_set(mut self, input: ::std::option::Option<crate::types::AwsManagedRulesAtpRuleSet>) -> Self {
         self.aws_managed_rules_atp_rule_set = input;
         self
     }
     /// <p>Additional configuration for using the account takeover prevention (ATP) managed rule group, <code>AWSManagedRulesATPRuleSet</code>. Use this to provide login request information to the rule group. For web ACLs that protect CloudFront distributions, use this to also provide the information about how your distribution responds to login requests. </p>
     /// <p>This configuration replaces the individual configuration fields in <code>ManagedRuleGroupConfig</code> and provides additional feature configuration. </p>
     /// <p>For information about using the ATP managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-atp.html">WAF Fraud Control account takeover prevention (ATP) rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-atp.html">WAF Fraud Control account takeover prevention (ATP)</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn get_aws_managed_rules_atp_rule_set(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsManagedRulesAtpRuleSet> {
+    pub fn get_aws_managed_rules_atp_rule_set(&self) -> &::std::option::Option<crate::types::AwsManagedRulesAtpRuleSet> {
         &self.aws_managed_rules_atp_rule_set
     }
     /// <p>Additional configuration for using the account creation fraud prevention (ACFP) managed rule group, <code>AWSManagedRulesACFPRuleSet</code>. Use this to provide account creation request information to the rule group. For web ACLs that protect CloudFront distributions, use this to also provide the information about how your distribution responds to account creation requests. </p>
     /// <p>For information about using the ACFP managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-acfp.html">WAF Fraud Control account creation fraud prevention (ACFP) rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-acfp.html">WAF Fraud Control account creation fraud prevention (ACFP)</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn aws_managed_rules_acfp_rule_set(
-        mut self,
-        input: crate::types::AwsManagedRulesAcfpRuleSet,
-    ) -> Self {
+    pub fn aws_managed_rules_acfp_rule_set(mut self, input: crate::types::AwsManagedRulesAcfpRuleSet) -> Self {
         self.aws_managed_rules_acfp_rule_set = ::std::option::Option::Some(input);
         self
     }
     /// <p>Additional configuration for using the account creation fraud prevention (ACFP) managed rule group, <code>AWSManagedRulesACFPRuleSet</code>. Use this to provide account creation request information to the rule group. For web ACLs that protect CloudFront distributions, use this to also provide the information about how your distribution responds to account creation requests. </p>
     /// <p>For information about using the ACFP managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-acfp.html">WAF Fraud Control account creation fraud prevention (ACFP) rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-acfp.html">WAF Fraud Control account creation fraud prevention (ACFP)</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn set_aws_managed_rules_acfp_rule_set(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsManagedRulesAcfpRuleSet>,
-    ) -> Self {
+    pub fn set_aws_managed_rules_acfp_rule_set(mut self, input: ::std::option::Option<crate::types::AwsManagedRulesAcfpRuleSet>) -> Self {
         self.aws_managed_rules_acfp_rule_set = input;
         self
     }
     /// <p>Additional configuration for using the account creation fraud prevention (ACFP) managed rule group, <code>AWSManagedRulesACFPRuleSet</code>. Use this to provide account creation request information to the rule group. For web ACLs that protect CloudFront distributions, use this to also provide the information about how your distribution responds to account creation requests. </p>
     /// <p>For information about using the ACFP managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-acfp.html">WAF Fraud Control account creation fraud prevention (ACFP) rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-acfp.html">WAF Fraud Control account creation fraud prevention (ACFP)</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn get_aws_managed_rules_acfp_rule_set(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsManagedRulesAcfpRuleSet> {
+    pub fn get_aws_managed_rules_acfp_rule_set(&self) -> &::std::option::Option<crate::types::AwsManagedRulesAcfpRuleSet> {
         &self.aws_managed_rules_acfp_rule_set
     }
     /// Consumes the builder and constructs a [`ManagedRuleGroupConfig`](crate::types::ManagedRuleGroupConfig).

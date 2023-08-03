@@ -26,8 +26,7 @@ impl DeleteProfileObjectTypeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteProfileObjectTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_profile_object_type::builders::DeleteProfileObjectTypeInputBuilder,
+    inner: crate::operation::delete_profile_object_type::builders::DeleteProfileObjectTypeInputBuilder,
 }
 impl DeleteProfileObjectTypeFluentBuilder {
     /// Creates a new `DeleteProfileObjectType`.
@@ -38,10 +37,7 @@ impl DeleteProfileObjectTypeFluentBuilder {
         }
     }
     /// Access the DeleteProfileObjectType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_profile_object_type::builders::DeleteProfileObjectTypeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_profile_object_type::builders::DeleteProfileObjectTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteProfileObjectTypeFluentBuilder {
             crate::operation::delete_profile_object_type::DeleteProfileObjectType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteProfileObjectTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteProfileObjectTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_profile_object_type::DeleteProfileObjectTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteProfileObjectTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_profile_object_type::DeleteProfileObjectTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DeleteProfileObjectTypeFluentBuilder {
             crate::operation::delete_profile_object_type::DeleteProfileObjectType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl DeleteProfileObjectTypeFluentBuilder {
         self.inner.get_domain_name()
     }
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.object_type_name(input.into());
         self
     }
     /// <p>The name of the profile object type.</p>
-    pub fn set_object_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_object_type_name(input);
         self
     }

@@ -29,18 +29,14 @@ impl UpdateDataIntegrationInput {
 }
 impl UpdateDataIntegrationInput {
     /// Creates a new builder-style object to manufacture [`UpdateDataIntegrationInput`](crate::operation::update_data_integration::UpdateDataIntegrationInput).
-    pub fn builder(
-    ) -> crate::operation::update_data_integration::builders::UpdateDataIntegrationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_data_integration::builders::UpdateDataIntegrationInputBuilder {
         crate::operation::update_data_integration::builders::UpdateDataIntegrationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDataIntegrationInput`](crate::operation::update_data_integration::UpdateDataIntegrationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDataIntegrationInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl UpdateDataIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDataIntegrationInput`](crate::operation::update_data_integration::UpdateDataIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_data_integration::UpdateDataIntegrationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_data_integration::UpdateDataIntegrationInput {
-                identifier: self.identifier,
-                name: self.name,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_data_integration::UpdateDataIntegrationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_data_integration::UpdateDataIntegrationInput {
+            identifier: self.identifier,
+            name: self.name,
+            description: self.description,
+        })
     }
 }

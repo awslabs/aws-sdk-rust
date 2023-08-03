@@ -30,8 +30,7 @@ pub struct AwsCloudWatchAlarmDetails {
     pub datapoints_to_alarm: i32,
     /// <p>The dimensions for the metric associated with the alarm. </p>
     #[doc(hidden)]
-    pub dimensions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudWatchAlarmDimensionsDetails>>,
+    pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudWatchAlarmDimensionsDetails>>,
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available. </p>
     #[doc(hidden)]
     pub evaluate_low_sample_count_percentile: ::std::option::Option<::std::string::String>,
@@ -108,9 +107,7 @@ impl AwsCloudWatchAlarmDetails {
         self.datapoints_to_alarm
     }
     /// <p>The dimensions for the metric associated with the alarm. </p>
-    pub fn dimensions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsCloudWatchAlarmDimensionsDetails]> {
+    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::AwsCloudWatchAlarmDimensionsDetails]> {
         self.dimensions.as_deref()
     }
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available. </p>
@@ -177,9 +174,7 @@ impl AwsCloudWatchAlarmDetails {
 
 /// A builder for [`AwsCloudWatchAlarmDetails`](crate::types::AwsCloudWatchAlarmDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCloudWatchAlarmDetailsBuilder {
     pub(crate) actions_enabled: ::std::option::Option<bool>,
     pub(crate) alarm_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -189,13 +184,11 @@ pub struct AwsCloudWatchAlarmDetailsBuilder {
     pub(crate) alarm_name: ::std::option::Option<::std::string::String>,
     pub(crate) comparison_operator: ::std::option::Option<::std::string::String>,
     pub(crate) datapoints_to_alarm: ::std::option::Option<i32>,
-    pub(crate) dimensions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudWatchAlarmDimensionsDetails>>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudWatchAlarmDimensionsDetails>>,
     pub(crate) evaluate_low_sample_count_percentile: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_periods: ::std::option::Option<i32>,
     pub(crate) extended_statistic: ::std::option::Option<::std::string::String>,
-    pub(crate) insufficient_data_actions:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) insufficient_data_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) ok_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -226,27 +219,19 @@ impl AwsCloudWatchAlarmDetailsBuilder {
     /// To override the contents of this collection use [`set_alarm_actions`](Self::set_alarm_actions).
     ///
     /// <p>The list of actions, specified as Amazon Resource Names (ARNs) to execute when this alarm transitions into an <code>ALARM</code> state from any other state. </p>
-    pub fn alarm_actions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alarm_actions.unwrap_or_default();
         v.push(input.into());
         self.alarm_actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of actions, specified as Amazon Resource Names (ARNs) to execute when this alarm transitions into an <code>ALARM</code> state from any other state. </p>
-    pub fn set_alarm_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_alarm_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.alarm_actions = input;
         self
     }
     /// <p>The list of actions, specified as Amazon Resource Names (ARNs) to execute when this alarm transitions into an <code>ALARM</code> state from any other state. </p>
-    pub fn get_alarm_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alarm_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.alarm_actions
     }
     /// <p>The ARN of the alarm. </p>
@@ -264,40 +249,26 @@ impl AwsCloudWatchAlarmDetailsBuilder {
         &self.alarm_arn
     }
     /// <p>The time stamp of the last update to the alarm configuration. </p>
-    pub fn alarm_configuration_updated_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_configuration_updated_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_configuration_updated_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time stamp of the last update to the alarm configuration. </p>
-    pub fn set_alarm_configuration_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_configuration_updated_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_configuration_updated_timestamp = input;
         self
     }
     /// <p>The time stamp of the last update to the alarm configuration. </p>
-    pub fn get_alarm_configuration_updated_timestamp(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_alarm_configuration_updated_timestamp(&self) -> &::std::option::Option<::std::string::String> {
         &self.alarm_configuration_updated_timestamp
     }
     /// <p>The description of the alarm. </p>
-    pub fn alarm_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the alarm. </p>
-    pub fn set_alarm_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_description = input;
         self
     }
@@ -320,18 +291,12 @@ impl AwsCloudWatchAlarmDetailsBuilder {
         &self.alarm_name
     }
     /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand. </p>
-    pub fn comparison_operator(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn comparison_operator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand. </p>
-    pub fn set_comparison_operator(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_comparison_operator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comparison_operator = input;
         self
     }
@@ -365,42 +330,26 @@ impl AwsCloudWatchAlarmDetailsBuilder {
         self
     }
     /// <p>The dimensions for the metric associated with the alarm. </p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsCloudWatchAlarmDimensionsDetails>,
-        >,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudWatchAlarmDimensionsDetails>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The dimensions for the metric associated with the alarm. </p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCloudWatchAlarmDimensionsDetails>>
-    {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCloudWatchAlarmDimensionsDetails>> {
         &self.dimensions
     }
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available. </p>
-    pub fn evaluate_low_sample_count_percentile(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluate_low_sample_count_percentile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluate_low_sample_count_percentile = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available. </p>
-    pub fn set_evaluate_low_sample_count_percentile(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluate_low_sample_count_percentile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluate_low_sample_count_percentile = input;
         self
     }
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available. </p>
-    pub fn get_evaluate_low_sample_count_percentile(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_evaluate_low_sample_count_percentile(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluate_low_sample_count_percentile
     }
     /// <p>The number of periods over which data is compared to the specified threshold. </p>
@@ -418,18 +367,12 @@ impl AwsCloudWatchAlarmDetailsBuilder {
         &self.evaluation_periods
     }
     /// <p>The percentile statistic for the metric associated with the alarm. </p>
-    pub fn extended_statistic(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extended_statistic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extended_statistic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The percentile statistic for the metric associated with the alarm. </p>
-    pub fn set_extended_statistic(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extended_statistic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extended_statistic = input;
         self
     }
@@ -442,27 +385,19 @@ impl AwsCloudWatchAlarmDetailsBuilder {
     /// To override the contents of this collection use [`set_insufficient_data_actions`](Self::set_insufficient_data_actions).
     ///
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an ARN. </p>
-    pub fn insufficient_data_actions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn insufficient_data_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.insufficient_data_actions.unwrap_or_default();
         v.push(input.into());
         self.insufficient_data_actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an ARN. </p>
-    pub fn set_insufficient_data_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_insufficient_data_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.insufficient_data_actions = input;
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an ARN. </p>
-    pub fn get_insufficient_data_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_insufficient_data_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.insufficient_data_actions
     }
     /// <p>The name of the metric associated with the alarm. This is required for an alarm based on a metric. For an alarm based on a math expression, you use <code>Metrics</code> instead and you can't specify <code>MetricName</code>. </p>
@@ -505,10 +440,7 @@ impl AwsCloudWatchAlarmDetailsBuilder {
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state from any other state. Each action is specified as an ARN. </p>
-    pub fn set_ok_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ok_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ok_actions = input;
         self
     }
@@ -565,18 +497,12 @@ impl AwsCloudWatchAlarmDetailsBuilder {
         &self.threshold
     }
     /// <p>n an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm. </p>
-    pub fn threshold_metric_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn threshold_metric_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.threshold_metric_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>n an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm. </p>
-    pub fn set_threshold_metric_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_threshold_metric_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.threshold_metric_id = input;
         self
     }
@@ -585,18 +511,12 @@ impl AwsCloudWatchAlarmDetailsBuilder {
         &self.threshold_metric_id
     }
     /// <p>Sets how this alarm is to handle missing data points. </p>
-    pub fn treat_missing_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn treat_missing_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.treat_missing_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Sets how this alarm is to handle missing data points. </p>
-    pub fn set_treat_missing_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_treat_missing_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.treat_missing_data = input;
         self
     }

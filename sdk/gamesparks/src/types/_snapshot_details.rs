@@ -12,9 +12,7 @@ pub struct SnapshotDetails {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The sections in the snapshot.</p>
     #[doc(hidden)]
-    pub sections: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Section>,
-    >,
+    pub sections: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Section>>,
     /// <p>The timestamp of when the snapshot was created.</p>
     #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -32,11 +30,7 @@ impl SnapshotDetails {
         self.description.as_deref()
     }
     /// <p>The sections in the snapshot.</p>
-    pub fn sections(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Section>,
-    > {
+    pub fn sections(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Section>> {
         self.sections.as_ref()
     }
     /// <p>The timestamp of when the snapshot was created.</p>
@@ -57,15 +51,11 @@ impl SnapshotDetails {
 
 /// A builder for [`SnapshotDetails`](crate::types::SnapshotDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotDetailsBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) sections: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Section>,
-    >,
+    pub(crate) sections: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Section>>,
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -103,32 +93,19 @@ impl SnapshotDetailsBuilder {
     /// To override the contents of this collection use [`set_sections`](Self::set_sections).
     ///
     /// <p>The sections in the snapshot.</p>
-    pub fn sections(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Section,
-    ) -> Self {
+    pub fn sections(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Section) -> Self {
         let mut hash_map = self.sections.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.sections = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The sections in the snapshot.</p>
-    pub fn set_sections(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Section>,
-        >,
-    ) -> Self {
+    pub fn set_sections(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Section>>) -> Self {
         self.sections = input;
         self
     }
     /// <p>The sections in the snapshot.</p>
-    pub fn get_sections(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Section>,
-    > {
+    pub fn get_sections(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Section>> {
         &self.sections
     }
     /// <p>The timestamp of when the snapshot was created.</p>
@@ -137,10 +114,7 @@ impl SnapshotDetailsBuilder {
         self
     }
     /// <p>The timestamp of when the snapshot was created.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -154,10 +128,7 @@ impl SnapshotDetailsBuilder {
         self
     }
     /// <p>The timestamp of when the snapshot was last updated.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }

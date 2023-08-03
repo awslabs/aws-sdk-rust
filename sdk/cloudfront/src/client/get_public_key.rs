@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`public_key(Option<PublicKey>)`](crate::operation::get_public_key::GetPublicKeyOutput::public_key): <p>The public key.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_public_key::GetPublicKeyOutput::e_tag): <p>The identifier for this version of the public key.</p>
     /// - On failure, responds with [`SdkError<GetPublicKeyError>`](crate::operation::get_public_key::GetPublicKeyError)
-    pub fn get_public_key(
-        &self,
-    ) -> crate::operation::get_public_key::builders::GetPublicKeyFluentBuilder {
-        crate::operation::get_public_key::builders::GetPublicKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_public_key(&self) -> crate::operation::get_public_key::builders::GetPublicKeyFluentBuilder {
+        crate::operation::get_public_key::builders::GetPublicKeyFluentBuilder::new(self.handle.clone())
     }
 }

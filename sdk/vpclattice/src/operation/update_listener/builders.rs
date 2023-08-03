@@ -10,10 +10,7 @@ impl UpdateListenerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_listener::UpdateListenerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_listener::UpdateListenerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_listener::UpdateListenerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_listener();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateListenerFluentBuilder {
         }
     }
     /// Access the UpdateListener as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_listener::builders::UpdateListenerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_listener::builders::UpdateListenerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateListenerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl UpdateListenerFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_service_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_identifier(input);
         self
     }
@@ -135,18 +121,12 @@ impl UpdateListenerFluentBuilder {
         self.inner.get_service_identifier()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn listener_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.listener_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn set_listener_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_listener_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_listener_identifier(input);
         self
     }
@@ -160,10 +140,7 @@ impl UpdateListenerFluentBuilder {
         self
     }
     /// <p>The action for the default rule.</p>
-    pub fn set_default_action(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleAction>,
-    ) -> Self {
+    pub fn set_default_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
         self.inner = self.inner.set_default_action(input);
         self
     }

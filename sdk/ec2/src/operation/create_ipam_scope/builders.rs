@@ -10,10 +10,7 @@ impl CreateIpamScopeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_ipam_scope::CreateIpamScopeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ipam_scope::CreateIpamScopeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ipam_scope::CreateIpamScopeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_ipam_scope();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateIpamScopeFluentBuilder {
         }
     }
     /// Access the CreateIpamScope as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_ipam_scope::builders::CreateIpamScopeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_ipam_scope::builders::CreateIpamScopeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateIpamScopeFluentBuilder {
             crate::operation::create_ipam_scope::CreateIpamScope,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ipam_scope::CreateIpamScopeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ipam_scope::CreateIpamScopeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateIpamScopeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateIpamScopeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ipam_scope::CreateIpamScopeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ipam_scope::CreateIpamScopeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ipam_scope::CreateIpamScopeError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateIpamScopeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ipam_scope::CreateIpamScopeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ipam_scope::CreateIpamScopeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ipam_scope::CreateIpamScopeError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateIpamScopeFluentBuilder {
             crate::operation::create_ipam_scope::CreateIpamScope,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ipam_scope::CreateIpamScopeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ipam_scope::CreateIpamScopeError>,
     > {
         self.customize_middleware().await
     }
@@ -175,17 +159,12 @@ impl CreateIpamScopeFluentBuilder {
         self
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>

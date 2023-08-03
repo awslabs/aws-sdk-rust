@@ -2,8 +2,7 @@
 pub fn ser_abort_multipart_upload_headers(
     input: &crate::operation::abort_multipart_upload::AbortMultipartUploadInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.request_payer {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_abort_multipart_upload_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_payer",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-request-payer", header_value);
@@ -27,10 +23,7 @@ pub fn ser_abort_multipart_upload_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
@@ -49,45 +42,33 @@ pub fn de_abort_multipart_upload_http_error(
     crate::operation::abort_multipart_upload::AbortMultipartUploadError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::abort_multipart_upload::AbortMultipartUploadError::unhandled)?;
-    generic_builder =
-        crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::abort_multipart_upload::AbortMultipartUploadError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::abort_multipart_upload::AbortMultipartUploadError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::abort_multipart_upload::AbortMultipartUploadError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchUpload" => {
-            crate::operation::abort_multipart_upload::AbortMultipartUploadError::NoSuchUpload({
+        "NoSuchUpload" => crate::operation::abort_multipart_upload::AbortMultipartUploadError::NoSuchUpload({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchUploadBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_upload::de_no_such_upload_xml_err(_response_body, output).map_err(crate::operation::abort_multipart_upload::AbortMultipartUploadError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::NoSuchUploadBuilder::default();
+                output = crate::protocol_serde::shape_no_such_upload::de_no_such_upload_xml_err(_response_body, output)
+                    .map_err(crate::operation::abort_multipart_upload::AbortMultipartUploadError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::abort_multipart_upload::AbortMultipartUploadError::generic(generic),
     })
 }
@@ -105,22 +86,14 @@ pub fn de_abort_multipart_upload_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::abort_multipart_upload::builders::AbortMultipartUploadOutputBuilder::default();
         output = output.set_request_charged(
-            crate::protocol_serde::shape_abort_multipart_upload_output::de_request_charged_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_abort_multipart_upload_output::de_request_charged_header(_response_headers).map_err(|_| {
                 crate::operation::abort_multipart_upload::AbortMultipartUploadError::unhandled(
                     "Failed to parse RequestCharged from header `x-amz-request-charged",
                 )
             })?,
         );
-        output._set_extended_request_id(
-            crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers)
-                .map(str::to_string),
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

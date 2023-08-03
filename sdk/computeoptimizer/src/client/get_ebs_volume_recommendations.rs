@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`volume_recommendations(Option<Vec<VolumeRecommendation>>)`](crate::operation::get_ebs_volume_recommendations::GetEbsVolumeRecommendationsOutput::volume_recommendations): <p>An array of objects that describe volume recommendations.</p>
     ///   - [`errors(Option<Vec<GetRecommendationError>>)`](crate::operation::get_ebs_volume_recommendations::GetEbsVolumeRecommendationsOutput::errors): <p>An array of objects that describe errors of the request.</p>  <p>For example, an error is returned if you request recommendations for an unsupported volume.</p>
     /// - On failure, responds with [`SdkError<GetEBSVolumeRecommendationsError>`](crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError)
-    pub fn get_ebs_volume_recommendations(&self) -> crate::operation::get_ebs_volume_recommendations::builders::GetEBSVolumeRecommendationsFluentBuilder{
+    pub fn get_ebs_volume_recommendations(
+        &self,
+    ) -> crate::operation::get_ebs_volume_recommendations::builders::GetEBSVolumeRecommendationsFluentBuilder {
         crate::operation::get_ebs_volume_recommendations::builders::GetEBSVolumeRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

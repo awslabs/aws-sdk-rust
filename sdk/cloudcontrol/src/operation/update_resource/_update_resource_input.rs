@@ -110,18 +110,12 @@ impl UpdateResourceInputBuilder {
         &self.type_name
     }
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    pub fn type_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    pub fn set_type_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_type_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_version_id = input;
         self
     }
@@ -196,18 +190,12 @@ impl UpdateResourceInputBuilder {
         &self.identifier
     }
     /// <p>A JavaScript Object Notation (JSON) document listing the patch operations that represent the updates to apply to the current resource properties. For details, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-update.html#resource-operations-update-patch">Composing the patch document</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    pub fn patch_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn patch_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JavaScript Object Notation (JSON) document listing the patch operations that represent the updates to apply to the current resource properties. For details, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-update.html#resource-operations-update-patch">Composing the patch document</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    pub fn set_patch_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_patch_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.patch_document = input;
         self
     }
@@ -218,10 +206,7 @@ impl UpdateResourceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResourceInput`](crate::operation::update_resource::UpdateResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resource::UpdateResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_resource::UpdateResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_resource::UpdateResourceInput {
             type_name: self.type_name,
             type_version_id: self.type_version_id,

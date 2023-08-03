@@ -12,8 +12,7 @@ pub struct BackupPlanInput {
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::BackupRuleInput>>,
     /// <p>Specifies a list of <code>BackupOptions</code> for each resource type. These settings are only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     #[doc(hidden)]
-    pub advanced_backup_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
+    pub advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
 }
 impl BackupPlanInput {
     /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -25,9 +24,7 @@ impl BackupPlanInput {
         self.rules.as_deref()
     }
     /// <p>Specifies a list of <code>BackupOptions</code> for each resource type. These settings are only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
-    pub fn advanced_backup_settings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AdvancedBackupSetting]> {
+    pub fn advanced_backup_settings(&self) -> ::std::option::Option<&[crate::types::AdvancedBackupSetting]> {
         self.advanced_backup_settings.as_deref()
     }
 }
@@ -40,29 +37,20 @@ impl BackupPlanInput {
 
 /// A builder for [`BackupPlanInput`](crate::types::BackupPlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackupPlanInputBuilder {
     pub(crate) backup_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::BackupRuleInput>>,
-    pub(crate) advanced_backup_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
+    pub(crate) advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
 }
 impl BackupPlanInputBuilder {
     /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub fn backup_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub fn set_backup_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_name = input;
         self
     }
@@ -82,17 +70,12 @@ impl BackupPlanInputBuilder {
         self
     }
     /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BackupRuleInput>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackupRuleInput>>) -> Self {
         self.rules = input;
         self
     }
     /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources.</p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupRuleInput>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupRuleInput>> {
         &self.rules
     }
     /// Appends an item to `advanced_backup_settings`.
@@ -107,17 +90,12 @@ impl BackupPlanInputBuilder {
         self
     }
     /// <p>Specifies a list of <code>BackupOptions</code> for each resource type. These settings are only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
-    pub fn set_advanced_backup_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
-    ) -> Self {
+    pub fn set_advanced_backup_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>) -> Self {
         self.advanced_backup_settings = input;
         self
     }
     /// <p>Specifies a list of <code>BackupOptions</code> for each resource type. These settings are only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
-    pub fn get_advanced_backup_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>> {
+    pub fn get_advanced_backup_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>> {
         &self.advanced_backup_settings
     }
     /// Consumes the builder and constructs a [`BackupPlanInput`](crate::types::BackupPlanInput).

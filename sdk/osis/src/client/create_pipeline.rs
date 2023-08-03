@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePipelineOutput`](crate::operation::create_pipeline::CreatePipelineOutput) with field(s):
     ///   - [`pipeline(Option<Pipeline>)`](crate::operation::create_pipeline::CreatePipelineOutput::pipeline): <p>Container for information about the created pipeline.</p>
     /// - On failure, responds with [`SdkError<CreatePipelineError>`](crate::operation::create_pipeline::CreatePipelineError)
-    pub fn create_pipeline(
-        &self,
-    ) -> crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder {
-        crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_pipeline(&self) -> crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder {
+        crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::new(self.handle.clone())
     }
 }

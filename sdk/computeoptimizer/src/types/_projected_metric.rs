@@ -54,9 +54,7 @@ impl ProjectedMetric {
 
 /// A builder for [`ProjectedMetric`](crate::types::ProjectedMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectedMetricBuilder {
     pub(crate) name: ::std::option::Option<crate::types::MetricName>,
     pub(crate) timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
@@ -110,17 +108,12 @@ impl ProjectedMetricBuilder {
         self
     }
     /// <p>The timestamps of the projected utilization metric.</p>
-    pub fn set_timestamps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
-    ) -> Self {
+    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
         self.timestamps = input;
         self
     }
     /// <p>The timestamps of the projected utilization metric.</p>
-    pub fn get_timestamps(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
         &self.timestamps
     }
     /// Appends an item to `values`.

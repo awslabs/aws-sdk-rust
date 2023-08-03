@@ -38,13 +38,7 @@
 /// When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise the value in Audio Type is included in the output. Note that this field and audioType are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AudioTypeControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for AudioTypeControl {
         match s {
             "FOLLOW_INPUT" => AudioTypeControl::FollowInput,
             "USE_CONFIGURED" => AudioTypeControl::UseConfigured,
-            other => {
-                AudioTypeControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AudioTypeControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

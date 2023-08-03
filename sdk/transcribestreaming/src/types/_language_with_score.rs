@@ -30,9 +30,7 @@ impl LanguageWithScore {
 
 /// A builder for [`LanguageWithScore`](crate::types::LanguageWithScore).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LanguageWithScoreBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
     pub(crate) score: ::std::option::Option<f64>,
@@ -44,10 +42,7 @@ impl LanguageWithScoreBuilder {
         self
     }
     /// <p>The language code of the identified language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }

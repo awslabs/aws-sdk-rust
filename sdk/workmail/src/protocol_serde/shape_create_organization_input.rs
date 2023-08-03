@@ -28,9 +28,7 @@ pub fn ser_create_organization_input(
         object.key("KmsKeyArn").string(var_8.as_str());
     }
     if input.enable_interoperability {
-        object
-            .key("EnableInteroperability")
-            .boolean(input.enable_interoperability);
+        object.key("EnableInteroperability").boolean(input.enable_interoperability);
     }
     Ok(())
 }

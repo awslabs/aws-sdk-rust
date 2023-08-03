@@ -24,9 +24,7 @@ impl ReservedNodeConfigurationOption {
         self.target_reserved_node_count
     }
     /// <p>Describes a reserved node offering.</p>
-    pub fn target_reserved_node_offering(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReservedNodeOffering> {
+    pub fn target_reserved_node_offering(&self) -> ::std::option::Option<&crate::types::ReservedNodeOffering> {
         self.target_reserved_node_offering.as_ref()
     }
 }
@@ -39,14 +37,11 @@ impl ReservedNodeConfigurationOption {
 
 /// A builder for [`ReservedNodeConfigurationOption`](crate::types::ReservedNodeConfigurationOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservedNodeConfigurationOptionBuilder {
     pub(crate) source_reserved_node: ::std::option::Option<crate::types::ReservedNode>,
     pub(crate) target_reserved_node_count: ::std::option::Option<i32>,
-    pub(crate) target_reserved_node_offering:
-        ::std::option::Option<crate::types::ReservedNodeOffering>,
+    pub(crate) target_reserved_node_offering: ::std::option::Option<crate::types::ReservedNodeOffering>,
 }
 impl ReservedNodeConfigurationOptionBuilder {
     /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
@@ -55,10 +50,7 @@ impl ReservedNodeConfigurationOptionBuilder {
         self
     }
     /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
-    pub fn set_source_reserved_node(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservedNode>,
-    ) -> Self {
+    pub fn set_source_reserved_node(mut self, input: ::std::option::Option<crate::types::ReservedNode>) -> Self {
         self.source_reserved_node = input;
         self
     }
@@ -81,25 +73,17 @@ impl ReservedNodeConfigurationOptionBuilder {
         &self.target_reserved_node_count
     }
     /// <p>Describes a reserved node offering.</p>
-    pub fn target_reserved_node_offering(
-        mut self,
-        input: crate::types::ReservedNodeOffering,
-    ) -> Self {
+    pub fn target_reserved_node_offering(mut self, input: crate::types::ReservedNodeOffering) -> Self {
         self.target_reserved_node_offering = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes a reserved node offering.</p>
-    pub fn set_target_reserved_node_offering(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservedNodeOffering>,
-    ) -> Self {
+    pub fn set_target_reserved_node_offering(mut self, input: ::std::option::Option<crate::types::ReservedNodeOffering>) -> Self {
         self.target_reserved_node_offering = input;
         self
     }
     /// <p>Describes a reserved node offering.</p>
-    pub fn get_target_reserved_node_offering(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservedNodeOffering> {
+    pub fn get_target_reserved_node_offering(&self) -> &::std::option::Option<crate::types::ReservedNodeOffering> {
         &self.target_reserved_node_offering
     }
     /// Consumes the builder and constructs a [`ReservedNodeConfigurationOption`](crate::types::ReservedNodeConfigurationOption).

@@ -58,9 +58,7 @@ impl Cors {
 
 /// A builder for [`Cors`](crate::types::Cors).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CorsBuilder {
     pub(crate) allow_credentials: ::std::option::Option<bool>,
     pub(crate) allow_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -89,27 +87,19 @@ impl CorsBuilder {
     /// To override the contents of this collection use [`set_allow_headers`](Self::set_allow_headers).
     ///
     /// <p>Represents a collection of allowed headers. Supported only for HTTP APIs.</p>
-    pub fn allow_headers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allow_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allow_headers.unwrap_or_default();
         v.push(input.into());
         self.allow_headers = ::std::option::Option::Some(v);
         self
     }
     /// <p>Represents a collection of allowed headers. Supported only for HTTP APIs.</p>
-    pub fn set_allow_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allow_headers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allow_headers = input;
         self
     }
     /// <p>Represents a collection of allowed headers. Supported only for HTTP APIs.</p>
-    pub fn get_allow_headers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allow_headers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allow_headers
     }
     /// Appends an item to `allow_methods`.
@@ -117,27 +107,19 @@ impl CorsBuilder {
     /// To override the contents of this collection use [`set_allow_methods`](Self::set_allow_methods).
     ///
     /// <p>Represents a collection of allowed HTTP methods. Supported only for HTTP APIs.</p>
-    pub fn allow_methods(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allow_methods(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allow_methods.unwrap_or_default();
         v.push(input.into());
         self.allow_methods = ::std::option::Option::Some(v);
         self
     }
     /// <p>Represents a collection of allowed HTTP methods. Supported only for HTTP APIs.</p>
-    pub fn set_allow_methods(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allow_methods(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allow_methods = input;
         self
     }
     /// <p>Represents a collection of allowed HTTP methods. Supported only for HTTP APIs.</p>
-    pub fn get_allow_methods(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allow_methods(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allow_methods
     }
     /// Appends an item to `allow_origins`.
@@ -145,27 +127,19 @@ impl CorsBuilder {
     /// To override the contents of this collection use [`set_allow_origins`](Self::set_allow_origins).
     ///
     /// <p>Represents a collection of allowed origins. Supported only for HTTP APIs.</p>
-    pub fn allow_origins(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allow_origins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allow_origins.unwrap_or_default();
         v.push(input.into());
         self.allow_origins = ::std::option::Option::Some(v);
         self
     }
     /// <p>Represents a collection of allowed origins. Supported only for HTTP APIs.</p>
-    pub fn set_allow_origins(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allow_origins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allow_origins = input;
         self
     }
     /// <p>Represents a collection of allowed origins. Supported only for HTTP APIs.</p>
-    pub fn get_allow_origins(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allow_origins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allow_origins
     }
     /// Appends an item to `expose_headers`.
@@ -173,27 +147,19 @@ impl CorsBuilder {
     /// To override the contents of this collection use [`set_expose_headers`](Self::set_expose_headers).
     ///
     /// <p>Represents a collection of exposed headers. Supported only for HTTP APIs.</p>
-    pub fn expose_headers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expose_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.expose_headers.unwrap_or_default();
         v.push(input.into());
         self.expose_headers = ::std::option::Option::Some(v);
         self
     }
     /// <p>Represents a collection of exposed headers. Supported only for HTTP APIs.</p>
-    pub fn set_expose_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_expose_headers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.expose_headers = input;
         self
     }
     /// <p>Represents a collection of exposed headers. Supported only for HTTP APIs.</p>
-    pub fn get_expose_headers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_expose_headers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.expose_headers
     }
     /// <p>The number of seconds that the browser should cache preflight request results. Supported only for HTTP APIs.</p>

@@ -9,8 +9,7 @@ pub struct BatchUpdateObjectAttributes {
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Attributes update structure.</p>
     #[doc(hidden)]
-    pub attribute_updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>>,
+    pub attribute_updates: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>>,
 }
 impl BatchUpdateObjectAttributes {
     /// <p>Reference that identifies the object.</p>
@@ -18,9 +17,7 @@ impl BatchUpdateObjectAttributes {
         self.object_reference.as_ref()
     }
     /// <p>Attributes update structure.</p>
-    pub fn attribute_updates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ObjectAttributeUpdate]> {
+    pub fn attribute_updates(&self) -> ::std::option::Option<&[crate::types::ObjectAttributeUpdate]> {
         self.attribute_updates.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl BatchUpdateObjectAttributes {
 
 /// A builder for [`BatchUpdateObjectAttributes`](crate::types::BatchUpdateObjectAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateObjectAttributesBuilder {
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
-    pub(crate) attribute_updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>>,
+    pub(crate) attribute_updates: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>>,
 }
 impl BatchUpdateObjectAttributesBuilder {
     /// <p>Reference that identifies the object.</p>
@@ -48,10 +42,7 @@ impl BatchUpdateObjectAttributesBuilder {
         self
     }
     /// <p>Reference that identifies the object.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.object_reference = input;
         self
     }
@@ -71,17 +62,12 @@ impl BatchUpdateObjectAttributesBuilder {
         self
     }
     /// <p>Attributes update structure.</p>
-    pub fn set_attribute_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>>,
-    ) -> Self {
+    pub fn set_attribute_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>>) -> Self {
         self.attribute_updates = input;
         self
     }
     /// <p>Attributes update structure.</p>
-    pub fn get_attribute_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>> {
+    pub fn get_attribute_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>> {
         &self.attribute_updates
     }
     /// Consumes the builder and constructs a [`BatchUpdateObjectAttributes`](crate::types::BatchUpdateObjectAttributes).

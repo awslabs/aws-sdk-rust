@@ -3,10 +3,7 @@
 pub fn de_too_many_origin_groups_per_distribution_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::TooManyOriginGroupsPerDistributionBuilder,
-) -> Result<
-    crate::types::error::builders::TooManyOriginGroupsPerDistributionBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::TooManyOriginGroupsPerDistributionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

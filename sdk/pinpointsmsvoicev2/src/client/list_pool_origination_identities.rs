@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`origination_identities(Option<Vec<OriginationIdentityMetadata>>)`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput::origination_identities): <p>An array of any OriginationIdentityMetadata objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListPoolOriginationIdentitiesError>`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesError)
-    pub fn list_pool_origination_identities(&self) -> crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesFluentBuilder{
+    pub fn list_pool_origination_identities(
+        &self,
+    ) -> crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesFluentBuilder {
         crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesFluentBuilder::new(self.handle.clone())
     }
 }

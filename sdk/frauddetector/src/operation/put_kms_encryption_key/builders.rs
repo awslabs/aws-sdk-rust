@@ -37,9 +37,7 @@ impl PutKMSEncryptionKeyFluentBuilder {
         }
     }
     /// Access the PutKMSEncryptionKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_kms_encryption_key::builders::PutKmsEncryptionKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_kms_encryption_key::builders::PutKmsEncryptionKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl PutKMSEncryptionKeyFluentBuilder {
             crate::operation::put_kms_encryption_key::PutKMSEncryptionKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_kms_encryption_key::PutKMSEncryptionKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_kms_encryption_key::PutKMSEncryptionKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl PutKMSEncryptionKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl PutKMSEncryptionKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_kms_encryption_key::PutKmsEncryptionKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_kms_encryption_key::PutKMSEncryptionKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_kms_encryption_key::PutKMSEncryptionKeyError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl PutKMSEncryptionKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_kms_encryption_key::PutKmsEncryptionKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_kms_encryption_key::PutKMSEncryptionKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_kms_encryption_key::PutKMSEncryptionKeyError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +105,19 @@ impl PutKMSEncryptionKeyFluentBuilder {
             crate::operation::put_kms_encryption_key::PutKMSEncryptionKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_kms_encryption_key::PutKMSEncryptionKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_kms_encryption_key::PutKMSEncryptionKeyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The KMS encryption key ARN.</p>
     /// <p>The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.</p>
-    pub fn kms_encryption_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kms_encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_encryption_key_arn(input.into());
         self
     }
     /// <p>The KMS encryption key ARN.</p>
     /// <p>The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.</p>
-    pub fn set_kms_encryption_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_kms_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_encryption_key_arn(input);
         self
     }

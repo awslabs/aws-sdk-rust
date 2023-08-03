@@ -10,10 +10,7 @@ impl GetInsightsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_insights::GetInsightsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insights::GetInsightsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insights::GetInsightsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_insights();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetInsightsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_insights::GetInsights,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_insights::GetInsights, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_insights::GetInsightsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetInsightsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetInsightsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_insights::GetInsights,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_insights::GetInsights, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_insights::GetInsightsError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl GetInsightsFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_insights::paginator::GetInsightsPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::get_insights::paginator::GetInsightsPaginator {
-        crate::operation::get_insights::paginator::GetInsightsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::get_insights::paginator::GetInsightsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `InsightArns`.
     ///
@@ -131,17 +116,12 @@ impl GetInsightsFluentBuilder {
         self
     }
     /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
-    pub fn set_insight_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_insight_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_insight_arns(input);
         self
     }
     /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
-    pub fn get_insight_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_insight_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_insight_arns()
     }
     /// <p>The token that is required for pagination. On your first call to the <code>GetInsights</code> operation, set the value of this parameter to <code>NULL</code>.</p>

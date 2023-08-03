@@ -22,34 +22,26 @@ impl DisassociateSkillGroupFromRoomInput {
 }
 impl DisassociateSkillGroupFromRoomInput {
     /// Creates a new builder-style object to manufacture [`DisassociateSkillGroupFromRoomInput`](crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomInput).
-    pub fn builder() -> crate::operation::disassociate_skill_group_from_room::builders::DisassociateSkillGroupFromRoomInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_skill_group_from_room::builders::DisassociateSkillGroupFromRoomInputBuilder {
         crate::operation::disassociate_skill_group_from_room::builders::DisassociateSkillGroupFromRoomInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateSkillGroupFromRoomInput`](crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateSkillGroupFromRoomInputBuilder {
     pub(crate) skill_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) room_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateSkillGroupFromRoomInputBuilder {
     /// <p>The ARN of the skill group to disassociate from a room. Required.</p>
-    pub fn skill_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skill_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the skill group to disassociate from a room. Required.</p>
-    pub fn set_skill_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_skill_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.skill_group_arn = input;
         self
     }
@@ -80,11 +72,9 @@ impl DisassociateSkillGroupFromRoomInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomInput {
-                skill_group_arn: self.skill_group_arn
-                ,
-                room_arn: self.room_arn
-                ,
-            }
+                skill_group_arn: self.skill_group_arn,
+                room_arn: self.room_arn,
+            },
         )
     }
 }

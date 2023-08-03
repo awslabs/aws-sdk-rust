@@ -39,10 +39,7 @@ impl DeleteDecoderManifestFluentBuilder {
         }
     }
     /// Access the DeleteDecoderManifest as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DeleteDecoderManifestFluentBuilder {
             crate::operation::delete_decoder_manifest::DeleteDecoderManifest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_decoder_manifest::DeleteDecoderManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_decoder_manifest::DeleteDecoderManifestError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DeleteDecoderManifestFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DeleteDecoderManifestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_decoder_manifest::DeleteDecoderManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_decoder_manifest::DeleteDecoderManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_decoder_manifest::DeleteDecoderManifestError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DeleteDecoderManifestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_decoder_manifest::DeleteDecoderManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_decoder_manifest::DeleteDecoderManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_decoder_manifest::DeleteDecoderManifestError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl DeleteDecoderManifestFluentBuilder {
             crate::operation::delete_decoder_manifest::DeleteDecoderManifest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_decoder_manifest::DeleteDecoderManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_decoder_manifest::DeleteDecoderManifestError>,
     > {
         self.customize_middleware().await
     }

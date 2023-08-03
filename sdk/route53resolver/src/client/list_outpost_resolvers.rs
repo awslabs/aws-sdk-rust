@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`outpost_resolvers(Option<Vec<OutpostResolver>>)`](crate::operation::list_outpost_resolvers::ListOutpostResolversOutput::outpost_resolvers): <p>The Resolvers on Outposts that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_outpost_resolvers::ListOutpostResolversOutput::next_token): <p>If more than <code>MaxResults</code> Resolvers match the specified criteria, you can submit another <code>ListOutpostResolver</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     /// - On failure, responds with [`SdkError<ListOutpostResolversError>`](crate::operation::list_outpost_resolvers::ListOutpostResolversError)
-    pub fn list_outpost_resolvers(
-        &self,
-    ) -> crate::operation::list_outpost_resolvers::builders::ListOutpostResolversFluentBuilder {
-        crate::operation::list_outpost_resolvers::builders::ListOutpostResolversFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_outpost_resolvers(&self) -> crate::operation::list_outpost_resolvers::builders::ListOutpostResolversFluentBuilder {
+        crate::operation::list_outpost_resolvers::builders::ListOutpostResolversFluentBuilder::new(self.handle.clone())
     }
 }

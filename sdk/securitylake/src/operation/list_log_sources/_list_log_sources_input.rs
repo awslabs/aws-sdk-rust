@@ -50,9 +50,7 @@ impl ListLogSourcesInput {
 
 /// A builder for [`ListLogSourcesInput`](crate::operation::list_log_sources::ListLogSourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLogSourcesInputBuilder {
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -73,10 +71,7 @@ impl ListLogSourcesInputBuilder {
         self
     }
     /// <p>The list of Amazon Web Services accounts for which log sources are displayed.</p>
-    pub fn set_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.accounts = input;
         self
     }
@@ -96,10 +91,7 @@ impl ListLogSourcesInputBuilder {
         self
     }
     /// <p>The list of regions for which log sources are displayed.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
@@ -119,17 +111,12 @@ impl ListLogSourcesInputBuilder {
         self
     }
     /// <p>The list of sources for which log sources are displayed.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>The list of sources for which log sources are displayed.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
         &self.sources
     }
     /// <p>The maximum number of accounts for which the log sources are displayed.</p>
@@ -163,10 +150,7 @@ impl ListLogSourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListLogSourcesInput`](crate::operation::list_log_sources::ListLogSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_log_sources::ListLogSourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_log_sources::ListLogSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_log_sources::ListLogSourcesInput {
             accounts: self.accounts,
             regions: self.regions,

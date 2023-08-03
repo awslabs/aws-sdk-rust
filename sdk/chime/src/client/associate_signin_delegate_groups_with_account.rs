@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`signin_delegate_groups(Vec<SigninDelegateGroup>)`](crate::operation::associate_signin_delegate_groups_with_account::builders::AssociateSigninDelegateGroupsWithAccountFluentBuilder::signin_delegate_groups) / [`set_signin_delegate_groups(Option<Vec<SigninDelegateGroup>>)`](crate::operation::associate_signin_delegate_groups_with_account::builders::AssociateSigninDelegateGroupsWithAccountFluentBuilder::set_signin_delegate_groups): <p>The sign-in delegate groups.</p>
     /// - On success, responds with [`AssociateSigninDelegateGroupsWithAccountOutput`](crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountOutput)
     /// - On failure, responds with [`SdkError<AssociateSigninDelegateGroupsWithAccountError>`](crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountError)
-    pub fn associate_signin_delegate_groups_with_account(&self) -> crate::operation::associate_signin_delegate_groups_with_account::builders::AssociateSigninDelegateGroupsWithAccountFluentBuilder{
-        crate::operation::associate_signin_delegate_groups_with_account::builders::AssociateSigninDelegateGroupsWithAccountFluentBuilder::new(self.handle.clone())
+    pub fn associate_signin_delegate_groups_with_account(
+        &self,
+    ) -> crate::operation::associate_signin_delegate_groups_with_account::builders::AssociateSigninDelegateGroupsWithAccountFluentBuilder {
+        crate::operation::associate_signin_delegate_groups_with_account::builders::AssociateSigninDelegateGroupsWithAccountFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

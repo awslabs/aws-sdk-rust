@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for DeleteMediaInsightsPipelineConfigurat
 }
 impl DeleteMediaInsightsPipelineConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMediaInsightsPipelineConfigurationOutput`](crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_media_insights_pipeline_configuration::builders::DeleteMediaInsightsPipelineConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_media_insights_pipeline_configuration::builders::DeleteMediaInsightsPipelineConfigurationOutputBuilder
+    {
         crate::operation::delete_media_insights_pipeline_configuration::builders::DeleteMediaInsightsPipelineConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMediaInsightsPipelineConfigurationOutput`](crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMediaInsightsPipelineConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl DeleteMediaInsightsPipelineConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteMediaInsightsPipelineConfigurationOutput`](crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationOutput).
-    pub fn build(self) -> crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationOutput{
+    pub fn build(self) -> crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationOutput {
         crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationOutput {
             _request_id: self._request_id,
         }

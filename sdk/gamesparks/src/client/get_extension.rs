@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetExtensionOutput`](crate::operation::get_extension::GetExtensionOutput) with field(s):
     ///   - [`extension(Option<ExtensionDetails>)`](crate::operation::get_extension::GetExtensionOutput::extension): <p>Details about the extension.</p>
     /// - On failure, responds with [`SdkError<GetExtensionError>`](crate::operation::get_extension::GetExtensionError)
-    pub fn get_extension(
-        &self,
-    ) -> crate::operation::get_extension::builders::GetExtensionFluentBuilder {
-        crate::operation::get_extension::builders::GetExtensionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_extension(&self) -> crate::operation::get_extension::builders::GetExtensionFluentBuilder {
+        crate::operation::get_extension::builders::GetExtensionFluentBuilder::new(self.handle.clone())
     }
 }

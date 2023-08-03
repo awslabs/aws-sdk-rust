@@ -19,7 +19,7 @@ impl super::Client {
     ///   - [`preview_results(Option<Vec<LifecyclePolicyPreviewResult>>)`](crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput::preview_results): <p>The results of the lifecycle policy preview request.</p>
     ///   - [`summary(Option<LifecyclePolicyPreviewSummary>)`](crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput::summary): <p>The list of images that is returned as a result of the action.</p>
     /// - On failure, responds with [`SdkError<GetLifecyclePolicyPreviewError>`](crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError)
-    pub fn get_lifecycle_policy_preview(&self) -> crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewFluentBuilder{
+    pub fn get_lifecycle_policy_preview(&self) -> crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewFluentBuilder {
         crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewFluentBuilder::new(self.handle.clone())
     }
 }

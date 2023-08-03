@@ -30,9 +30,7 @@ impl AnalysisSchemeStatus {
 
 /// A builder for [`AnalysisSchemeStatus`](crate::types::AnalysisSchemeStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisSchemeStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::AnalysisScheme>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
@@ -44,10 +42,7 @@ impl AnalysisSchemeStatusBuilder {
         self
     }
     /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisScheme>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::AnalysisScheme>) -> Self {
         self.options = input;
         self
     }

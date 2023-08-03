@@ -2,8 +2,7 @@
 pub fn ser_get_job_output_headers(
     input: &crate::operation::get_job_output::GetJobOutputInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.range {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_get_job_output_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "range",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("Range", header_value);
@@ -26,16 +22,10 @@ pub fn ser_get_job_output_headers(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_job_output_op_response(
     op_response: &mut ::aws_smithy_http::operation::Response,
-) -> ::std::result::Result<
-    crate::operation::get_job_output::GetJobOutputOutput,
-    crate::operation::get_job_output::GetJobOutputError,
-> {
+) -> ::std::result::Result<crate::operation::get_job_output::GetJobOutputOutput, crate::operation::get_job_output::GetJobOutputError> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
-    crate::protocol_serde::shape_get_job_output::de_get_job_output_http_response_with_props(
-        response,
-        &properties,
-    )
+    crate::protocol_serde::shape_get_job_output::de_get_job_output_http_response_with_props(response, &properties)
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -43,95 +33,86 @@ pub fn de_get_job_output_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_job_output::GetJobOutputOutput,
-    crate::operation::get_job_output::GetJobOutputError,
-> {
+) -> std::result::Result<crate::operation::get_job_output::GetJobOutputOutput, crate::operation::get_job_output::GetJobOutputError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_job_output::GetJobOutputError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_job_output::GetJobOutputError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::get_job_output::GetJobOutputError::unhandled(generic))
-        }
+        None => return Err(crate::operation::get_job_output::GetJobOutputError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => {
-            crate::operation::get_job_output::GetJobOutputError::InvalidParameterValueException({
+        "InvalidParameterValueException" => crate::operation::get_job_output::GetJobOutputError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::get_job_output::GetJobOutputError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "MissingParameterValueException" => {
-            crate::operation::get_job_output::GetJobOutputError::MissingParameterValueException({
+                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::get_job_output::GetJobOutputError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MissingParameterValueException" => crate::operation::get_job_output::GetJobOutputError::MissingParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::get_job_output::GetJobOutputError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::operation::get_job_output::GetJobOutputError::ResourceNotFoundException({
+                let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
+                output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::get_job_output::GetJobOutputError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_job_output::GetJobOutputError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_job_output::GetJobOutputError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::operation::get_job_output::GetJobOutputError::ServiceUnavailableException({
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_job_output::GetJobOutputError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::get_job_output::GetJobOutputError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
-                        );
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::get_job_output::GetJobOutputError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::get_job_output::GetJobOutputError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::get_job_output::GetJobOutputError::generic(generic),
     })
 }
@@ -141,10 +122,7 @@ pub fn de_get_job_output_http_error(
 pub fn de_get_job_output_http_response_with_props(
     response: &mut ::http::Response<::aws_smithy_http::body::SdkBody>,
     properties: &::aws_smithy_http::property_bag::PropertyBag,
-) -> std::result::Result<
-    crate::operation::get_job_output::GetJobOutputOutput,
-    crate::operation::get_job_output::GetJobOutputError,
-> {
+) -> std::result::Result<crate::operation::get_job_output::GetJobOutputOutput, crate::operation::get_job_output::GetJobOutputError> {
     let mut _response_body = ::aws_smithy_http::body::SdkBody::taken();
     std::mem::swap(&mut _response_body, response.body_mut());
     let _response_body = &mut _response_body;
@@ -153,65 +131,37 @@ pub fn de_get_job_output_http_response_with_props(
     let _response_headers = response.headers();
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::get_job_output::builders::GetJobOutputOutputBuilder::default();
+        let mut output = crate::operation::get_job_output::builders::GetJobOutputOutputBuilder::default();
         output = output.set_accept_ranges(
-            crate::protocol_serde::shape_get_job_output_output::de_accept_ranges_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::get_job_output::GetJobOutputError::unhandled(
-                    "Failed to parse acceptRanges from header `Accept-Ranges",
-                )
+            crate::protocol_serde::shape_get_job_output_output::de_accept_ranges_header(_response_headers).map_err(|_| {
+                crate::operation::get_job_output::GetJobOutputError::unhandled("Failed to parse acceptRanges from header `Accept-Ranges")
             })?,
         );
         output = output.set_archive_description(
-            crate::protocol_serde::shape_get_job_output_output::de_archive_description_header(
-                _response_headers,
-            )
-            .map_err(|_| {
+            crate::protocol_serde::shape_get_job_output_output::de_archive_description_header(_response_headers).map_err(|_| {
                 crate::operation::get_job_output::GetJobOutputError::unhandled(
                     "Failed to parse archiveDescription from header `x-amz-archive-description",
                 )
             })?,
         );
-        output = output.set_body(Some(
-            crate::protocol_serde::shape_get_job_output_output::de_body_payload(_response_body)?,
-        ));
+        output = output.set_body(Some(crate::protocol_serde::shape_get_job_output_output::de_body_payload(_response_body)?));
         output = output.set_checksum(
-            crate::protocol_serde::shape_get_job_output_output::de_checksum_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::get_job_output::GetJobOutputError::unhandled(
-                    "Failed to parse checksum from header `x-amz-sha256-tree-hash",
-                )
+            crate::protocol_serde::shape_get_job_output_output::de_checksum_header(_response_headers).map_err(|_| {
+                crate::operation::get_job_output::GetJobOutputError::unhandled("Failed to parse checksum from header `x-amz-sha256-tree-hash")
             })?,
         );
         output = output.set_content_range(
-            crate::protocol_serde::shape_get_job_output_output::de_content_range_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::get_job_output::GetJobOutputError::unhandled(
-                    "Failed to parse contentRange from header `Content-Range",
-                )
+            crate::protocol_serde::shape_get_job_output_output::de_content_range_header(_response_headers).map_err(|_| {
+                crate::operation::get_job_output::GetJobOutputError::unhandled("Failed to parse contentRange from header `Content-Range")
             })?,
         );
         output = output.set_content_type(
-            crate::protocol_serde::shape_get_job_output_output::de_content_type_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::get_job_output::GetJobOutputError::unhandled(
-                    "Failed to parse contentType from header `Content-Type",
-                )
+            crate::protocol_serde::shape_get_job_output_output::de_content_type_header(_response_headers).map_err(|_| {
+                crate::operation::get_job_output::GetJobOutputError::unhandled("Failed to parse contentType from header `Content-Type")
             })?,
         );
         output = output.set_status(Some(_response_status as _));
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

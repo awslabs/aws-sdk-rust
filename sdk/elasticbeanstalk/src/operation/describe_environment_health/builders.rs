@@ -26,7 +26,7 @@ impl DescribeEnvironmentHealthInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentHealthFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_environment_health::builders::DescribeEnvironmentHealthInputBuilder,
+    inner: crate::operation::describe_environment_health::builders::DescribeEnvironmentHealthInputBuilder,
 }
 impl DescribeEnvironmentHealthFluentBuilder {
     /// Creates a new `DescribeEnvironmentHealth`.
@@ -37,7 +37,7 @@ impl DescribeEnvironmentHealthFluentBuilder {
         }
     }
     /// Access the DescribeEnvironmentHealth as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_environment_health::builders::DescribeEnvironmentHealthInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_environment_health::builders::DescribeEnvironmentHealthInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeEnvironmentHealthFluentBuilder {
             crate::operation::describe_environment_health::DescribeEnvironmentHealth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environment_health::DescribeEnvironmentHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environment_health::DescribeEnvironmentHealthError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeEnvironmentHealthFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeEnvironmentHealthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_environment_health::DescribeEnvironmentHealthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environment_health::DescribeEnvironmentHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environment_health::DescribeEnvironmentHealthError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeEnvironmentHealthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_environment_health::DescribeEnvironmentHealthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environment_health::DescribeEnvironmentHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environment_health::DescribeEnvironmentHealthError>,
     > {
         self.send_middleware().await
     }
@@ -114,27 +105,19 @@ impl DescribeEnvironmentHealthFluentBuilder {
             crate::operation::describe_environment_health::DescribeEnvironmentHealth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environment_health::DescribeEnvironmentHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environment_health::DescribeEnvironmentHealthError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specify the environment by name.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>Specify the environment by name.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
@@ -145,19 +128,13 @@ impl DescribeEnvironmentHealthFluentBuilder {
     }
     /// <p>Specify the environment by ID.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>Specify the environment by ID.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -176,17 +153,12 @@ impl DescribeEnvironmentHealthFluentBuilder {
         self
     }
     /// <p>Specify the response elements to return. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns the name of the environment.</p>
-    pub fn set_attribute_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentHealthAttribute>>,
-    ) -> Self {
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentHealthAttribute>>) -> Self {
         self.inner = self.inner.set_attribute_names(input);
         self
     }
     /// <p>Specify the response elements to return. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns the name of the environment.</p>
-    pub fn get_attribute_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentHealthAttribute>> {
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentHealthAttribute>> {
         self.inner.get_attribute_names()
     }
 }

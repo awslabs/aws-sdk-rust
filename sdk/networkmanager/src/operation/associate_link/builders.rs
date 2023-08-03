@@ -10,10 +10,7 @@ impl AssociateLinkInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_link::AssociateLinkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_link::AssociateLinkError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_link::AssociateLinkError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.associate_link();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AssociateLinkFluentBuilder {
         }
     }
     /// Access the AssociateLink as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_link::builders::AssociateLinkInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_link::builders::AssociateLinkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl AssociateLinkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl AssociateLinkFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }

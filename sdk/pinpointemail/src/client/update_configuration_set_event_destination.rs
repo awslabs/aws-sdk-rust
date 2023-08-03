@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`event_destination(EventDestinationDefinition)`](crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationFluentBuilder::event_destination) / [`set_event_destination(Option<EventDestinationDefinition>)`](crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationFluentBuilder::set_event_destination): <p>An object that defines the event destination.</p>
     /// - On success, responds with [`UpdateConfigurationSetEventDestinationOutput`](crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationOutput)
     /// - On failure, responds with [`SdkError<UpdateConfigurationSetEventDestinationError>`](crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationError)
-    pub fn update_configuration_set_event_destination(&self) -> crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationFluentBuilder{
-        crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationFluentBuilder::new(self.handle.clone())
+    pub fn update_configuration_set_event_destination(
+        &self,
+    ) -> crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationFluentBuilder {
+        crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

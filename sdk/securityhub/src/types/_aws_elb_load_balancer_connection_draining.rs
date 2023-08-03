@@ -30,9 +30,7 @@ impl AwsElbLoadBalancerConnectionDraining {
 
 /// A builder for [`AwsElbLoadBalancerConnectionDraining`](crate::types::AwsElbLoadBalancerConnectionDraining).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerConnectionDrainingBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) timeout: ::std::option::Option<i32>,

@@ -27,7 +27,7 @@ impl CreateInstanceExportTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateInstanceExportTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_instance_export_task::builders::CreateInstanceExportTaskInputBuilder,
+    inner: crate::operation::create_instance_export_task::builders::CreateInstanceExportTaskInputBuilder,
 }
 impl CreateInstanceExportTaskFluentBuilder {
     /// Creates a new `CreateInstanceExportTask`.
@@ -38,7 +38,7 @@ impl CreateInstanceExportTaskFluentBuilder {
         }
     }
     /// Access the CreateInstanceExportTask as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_instance_export_task::builders::CreateInstanceExportTaskInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_instance_export_task::builders::CreateInstanceExportTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateInstanceExportTaskFluentBuilder {
             crate::operation::create_instance_export_task::CreateInstanceExportTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_export_task::CreateInstanceExportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_export_task::CreateInstanceExportTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateInstanceExportTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateInstanceExportTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instance_export_task::CreateInstanceExportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_export_task::CreateInstanceExportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_export_task::CreateInstanceExportTaskError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateInstanceExportTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instance_export_task::CreateInstanceExportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_export_task::CreateInstanceExportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_export_task::CreateInstanceExportTaskError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl CreateInstanceExportTaskFluentBuilder {
             crate::operation::create_instance_export_task::CreateInstanceExportTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instance_export_task::CreateInstanceExportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instance_export_task::CreateInstanceExportTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -141,17 +130,12 @@ impl CreateInstanceExportTaskFluentBuilder {
         self
     }
     /// <p>The format and location for an export instance task.</p>
-    pub fn set_export_to_s3_task(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportToS3TaskSpecification>,
-    ) -> Self {
+    pub fn set_export_to_s3_task(mut self, input: ::std::option::Option<crate::types::ExportToS3TaskSpecification>) -> Self {
         self.inner = self.inner.set_export_to_s3_task(input);
         self
     }
     /// <p>The format and location for an export instance task.</p>
-    pub fn get_export_to_s3_task(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportToS3TaskSpecification> {
+    pub fn get_export_to_s3_task(&self) -> &::std::option::Option<crate::types::ExportToS3TaskSpecification> {
         self.inner.get_export_to_s3_task()
     }
     /// <p>The ID of the instance.</p>
@@ -174,17 +158,12 @@ impl CreateInstanceExportTaskFluentBuilder {
         self
     }
     /// <p>The target virtualization environment.</p>
-    pub fn set_target_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportEnvironment>,
-    ) -> Self {
+    pub fn set_target_environment(mut self, input: ::std::option::Option<crate::types::ExportEnvironment>) -> Self {
         self.inner = self.inner.set_target_environment(input);
         self
     }
     /// <p>The target virtualization environment.</p>
-    pub fn get_target_environment(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportEnvironment> {
+    pub fn get_target_environment(&self) -> &::std::option::Option<crate::types::ExportEnvironment> {
         self.inner.get_target_environment()
     }
     /// Appends an item to `TagSpecifications`.
@@ -197,17 +176,12 @@ impl CreateInstanceExportTaskFluentBuilder {
         self
     }
     /// <p>The tags to apply to the export instance task during creation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the export instance task during creation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
 }

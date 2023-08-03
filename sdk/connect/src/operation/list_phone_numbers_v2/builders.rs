@@ -10,10 +10,7 @@ impl ListPhoneNumbersV2InputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_phone_numbers_v2();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListPhoneNumbersV2FluentBuilder {
         }
     }
     /// Access the ListPhoneNumbersV2 as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2InputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2InputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListPhoneNumbersV2FluentBuilder {
             crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListPhoneNumbersV2FluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListPhoneNumbersV2FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListPhoneNumbersV2FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListPhoneNumbersV2FluentBuilder {
             crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_phone_numbers_v2::paginator::ListPhoneNumbersV2Paginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_phone_numbers_v2::paginator::ListPhoneNumbersV2Paginator {
-        crate::operation::list_phone_numbers_v2::paginator::ListPhoneNumbersV2Paginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_phone_numbers_v2::paginator::ListPhoneNumbersV2Paginator {
+        crate::operation::list_phone_numbers_v2::paginator::ListPhoneNumbersV2Paginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same Amazon Web Services Region as the request.</p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,25 +160,17 @@ impl ListPhoneNumbersV2FluentBuilder {
     /// To override the contents of this collection use [`set_phone_number_country_codes`](Self::set_phone_number_country_codes).
     ///
     /// <p>The ISO country code.</p>
-    pub fn phone_number_country_codes(
-        mut self,
-        input: crate::types::PhoneNumberCountryCode,
-    ) -> Self {
+    pub fn phone_number_country_codes(mut self, input: crate::types::PhoneNumberCountryCode) -> Self {
         self.inner = self.inner.phone_number_country_codes(input);
         self
     }
     /// <p>The ISO country code.</p>
-    pub fn set_phone_number_country_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>>,
-    ) -> Self {
+    pub fn set_phone_number_country_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>>) -> Self {
         self.inner = self.inner.set_phone_number_country_codes(input);
         self
     }
     /// <p>The ISO country code.</p>
-    pub fn get_phone_number_country_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>> {
+    pub fn get_phone_number_country_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>> {
         self.inner.get_phone_number_country_codes()
     }
     /// Appends an item to `PhoneNumberTypes`.
@@ -212,32 +183,21 @@ impl ListPhoneNumbersV2FluentBuilder {
         self
     }
     /// <p>The type of phone number.</p>
-    pub fn set_phone_number_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,
-    ) -> Self {
+    pub fn set_phone_number_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>) -> Self {
         self.inner = self.inner.set_phone_number_types(input);
         self
     }
     /// <p>The type of phone number.</p>
-    pub fn get_phone_number_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>> {
+    pub fn get_phone_number_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>> {
         self.inner.get_phone_number_types()
     }
     /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
-    pub fn phone_number_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.phone_number_prefix(input.into());
         self
     }
     /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
-    pub fn set_phone_number_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_phone_number_prefix(input);
         self
     }

@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteResolverEndpointOutput`](crate::operation::delete_resolver_endpoint::DeleteResolverEndpointOutput) with field(s):
     ///   - [`resolver_endpoint(Option<ResolverEndpoint>)`](crate::operation::delete_resolver_endpoint::DeleteResolverEndpointOutput::resolver_endpoint): <p>Information about the <code>DeleteResolverEndpoint</code> request, including the status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteResolverEndpointError>`](crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError)
-    pub fn delete_resolver_endpoint(
-        &self,
-    ) -> crate::operation::delete_resolver_endpoint::builders::DeleteResolverEndpointFluentBuilder
-    {
+    pub fn delete_resolver_endpoint(&self) -> crate::operation::delete_resolver_endpoint::builders::DeleteResolverEndpointFluentBuilder {
         crate::operation::delete_resolver_endpoint::builders::DeleteResolverEndpointFluentBuilder::new(self.handle.clone())
     }
 }

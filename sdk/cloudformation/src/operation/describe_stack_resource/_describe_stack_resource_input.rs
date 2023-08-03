@@ -35,18 +35,14 @@ impl DescribeStackResourceInput {
 }
 impl DescribeStackResourceInput {
     /// Creates a new builder-style object to manufacture [`DescribeStackResourceInput`](crate::operation::describe_stack_resource::DescribeStackResourceInput).
-    pub fn builder(
-    ) -> crate::operation::describe_stack_resource::builders::DescribeStackResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_stack_resource::builders::DescribeStackResourceInputBuilder {
         crate::operation::describe_stack_resource::builders::DescribeStackResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStackResourceInput`](crate::operation::describe_stack_resource::DescribeStackResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackResourceInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) logical_resource_id: ::std::option::Option<::std::string::String>,
@@ -83,19 +79,13 @@ impl DescribeStackResourceInputBuilder {
     }
     /// <p>The logical name of the resource as specified in the template.</p>
     /// <p>Default: There is no default value.</p>
-    pub fn logical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The logical name of the resource as specified in the template.</p>
     /// <p>Default: There is no default value.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logical_resource_id = input;
         self
     }
@@ -107,15 +97,11 @@ impl DescribeStackResourceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStackResourceInput`](crate::operation::describe_stack_resource::DescribeStackResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_stack_resource::DescribeStackResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_stack_resource::DescribeStackResourceInput {
-                stack_name: self.stack_name,
-                logical_resource_id: self.logical_resource_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_stack_resource::DescribeStackResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_stack_resource::DescribeStackResourceInput {
+            stack_name: self.stack_name,
+            logical_resource_id: self.logical_resource_id,
+        })
     }
 }

@@ -22,34 +22,26 @@ impl DetachElasticLoadBalancerInput {
 }
 impl DetachElasticLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`DetachElasticLoadBalancerInput`](crate::operation::detach_elastic_load_balancer::DetachElasticLoadBalancerInput).
-    pub fn builder() -> crate::operation::detach_elastic_load_balancer::builders::DetachElasticLoadBalancerInputBuilder{
+    pub fn builder() -> crate::operation::detach_elastic_load_balancer::builders::DetachElasticLoadBalancerInputBuilder {
         crate::operation::detach_elastic_load_balancer::builders::DetachElasticLoadBalancerInputBuilder::default()
     }
 }
 
 /// A builder for [`DetachElasticLoadBalancerInput`](crate::operation::detach_elastic_load_balancer::DetachElasticLoadBalancerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachElasticLoadBalancerInputBuilder {
     pub(crate) elastic_load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) layer_id: ::std::option::Option<::std::string::String>,
 }
 impl DetachElasticLoadBalancerInputBuilder {
     /// <p>The Elastic Load Balancing instance's name.</p>
-    pub fn elastic_load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn elastic_load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elastic_load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Elastic Load Balancing instance's name.</p>
-    pub fn set_elastic_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_elastic_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.elastic_load_balancer_name = input;
         self
     }
@@ -78,11 +70,9 @@ impl DetachElasticLoadBalancerInputBuilder {
         crate::operation::detach_elastic_load_balancer::DetachElasticLoadBalancerInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::detach_elastic_load_balancer::DetachElasticLoadBalancerInput {
-                elastic_load_balancer_name: self.elastic_load_balancer_name,
-                layer_id: self.layer_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::detach_elastic_load_balancer::DetachElasticLoadBalancerInput {
+            elastic_load_balancer_name: self.elastic_load_balancer_name,
+            layer_id: self.layer_id,
+        })
     }
 }

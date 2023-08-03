@@ -40,13 +40,7 @@
 /// Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum S3ObjectCannedAcl {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for S3ObjectCannedAcl {
             "BUCKET_OWNER_FULL_CONTROL" => S3ObjectCannedAcl::BucketOwnerFullControl,
             "BUCKET_OWNER_READ" => S3ObjectCannedAcl::BucketOwnerRead,
             "PUBLIC_READ" => S3ObjectCannedAcl::PublicRead,
-            other => {
-                S3ObjectCannedAcl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => S3ObjectCannedAcl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl S3ObjectCannedAcl {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUTHENTICATED_READ",
-            "BUCKET_OWNER_FULL_CONTROL",
-            "BUCKET_OWNER_READ",
-            "PUBLIC_READ",
-        ]
+        &["AUTHENTICATED_READ", "BUCKET_OWNER_FULL_CONTROL", "BUCKET_OWNER_READ", "PUBLIC_READ"]
     }
 }
 impl ::std::convert::AsRef<str> for S3ObjectCannedAcl {

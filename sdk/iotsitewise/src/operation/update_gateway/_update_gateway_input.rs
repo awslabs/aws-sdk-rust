@@ -29,9 +29,7 @@ impl UpdateGatewayInput {
 
 /// A builder for [`UpdateGatewayInput`](crate::operation::update_gateway::UpdateGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGatewayInputBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_name: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl UpdateGatewayInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGatewayInput`](crate::operation::update_gateway::UpdateGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_gateway::UpdateGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_gateway::UpdateGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_gateway::UpdateGatewayInput {
             gateway_id: self.gateway_id,
             gateway_name: self.gateway_name,

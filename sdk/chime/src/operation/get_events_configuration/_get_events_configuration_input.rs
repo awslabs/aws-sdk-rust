@@ -22,18 +22,14 @@ impl GetEventsConfigurationInput {
 }
 impl GetEventsConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetEventsConfigurationInput`](crate::operation::get_events_configuration::GetEventsConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::get_events_configuration::builders::GetEventsConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_events_configuration::builders::GetEventsConfigurationInputBuilder {
         crate::operation::get_events_configuration::builders::GetEventsConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEventsConfigurationInput`](crate::operation::get_events_configuration::GetEventsConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEventsConfigurationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl GetEventsConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetEventsConfigurationInput`](crate::operation::get_events_configuration::GetEventsConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_events_configuration::GetEventsConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_events_configuration::GetEventsConfigurationInput {
-                account_id: self.account_id,
-                bot_id: self.bot_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_events_configuration::GetEventsConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_events_configuration::GetEventsConfigurationInput {
+            account_id: self.account_id,
+            bot_id: self.bot_id,
+        })
     }
 }

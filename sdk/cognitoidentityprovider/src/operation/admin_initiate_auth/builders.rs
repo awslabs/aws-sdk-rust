@@ -10,10 +10,7 @@ impl AdminInitiateAuthInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::admin_initiate_auth::AdminInitiateAuthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_initiate_auth::AdminInitiateAuthError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_initiate_auth::AdminInitiateAuthError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.admin_initiate_auth();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl AdminInitiateAuthFluentBuilder {
         }
     }
     /// Access the AdminInitiateAuth as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::admin_initiate_auth::builders::AdminInitiateAuthInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::admin_initiate_auth::builders::AdminInitiateAuthInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl AdminInitiateAuthFluentBuilder {
             crate::operation::admin_initiate_auth::AdminInitiateAuth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_initiate_auth::AdminInitiateAuthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_initiate_auth::AdminInitiateAuthError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl AdminInitiateAuthFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl AdminInitiateAuthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_initiate_auth::AdminInitiateAuthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_initiate_auth::AdminInitiateAuthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_initiate_auth::AdminInitiateAuthError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl AdminInitiateAuthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_initiate_auth::AdminInitiateAuthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_initiate_auth::AdminInitiateAuthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_initiate_auth::AdminInitiateAuthError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl AdminInitiateAuthFluentBuilder {
             crate::operation::admin_initiate_auth::AdminInitiateAuth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_initiate_auth::AdminInitiateAuthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_initiate_auth::AdminInitiateAuthError>,
     > {
         self.customize_middleware().await
     }
@@ -186,10 +170,7 @@ impl AdminInitiateAuthFluentBuilder {
     /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled for calling the app client.</p> </li>
     /// <li> <p> <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in the request instead of using the SRP process to verify passwords.</p> </li>
     /// </ul>
-    pub fn set_auth_flow(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthFlowType>,
-    ) -> Self {
+    pub fn set_auth_flow(mut self, input: ::std::option::Option<crate::types::AuthFlowType>) -> Self {
         self.inner = self.inner.set_auth_flow(input);
         self
     }
@@ -238,9 +219,7 @@ impl AdminInitiateAuthFluentBuilder {
     /// </ul>
     pub fn set_auth_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_auth_parameters(input);
         self
@@ -252,11 +231,7 @@ impl AdminInitiateAuthFluentBuilder {
     /// <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li>
     /// <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>
     /// </ul>
-    pub fn get_auth_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_auth_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_auth_parameters()
     }
     /// Adds a key-value pair to `ClientMetadata`.
@@ -323,9 +298,7 @@ impl AdminInitiateAuthFluentBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_client_metadata(input);
         self
@@ -355,11 +328,7 @@ impl AdminInitiateAuthFluentBuilder {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_client_metadata()
     }
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminInitiateAuth</code> calls.</p>
@@ -368,17 +337,12 @@ impl AdminInitiateAuthFluentBuilder {
         self
     }
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminInitiateAuth</code> calls.</p>
-    pub fn set_analytics_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsMetadataType>,
-    ) -> Self {
+    pub fn set_analytics_metadata(mut self, input: ::std::option::Option<crate::types::AnalyticsMetadataType>) -> Self {
         self.inner = self.inner.set_analytics_metadata(input);
         self
     }
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminInitiateAuth</code> calls.</p>
-    pub fn get_analytics_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
+    pub fn get_analytics_metadata(&self) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
         self.inner.get_analytics_metadata()
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
@@ -387,10 +351,7 @@ impl AdminInitiateAuthFluentBuilder {
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    pub fn set_context_data(
-        mut self,
-        input: ::std::option::Option<crate::types::ContextDataType>,
-    ) -> Self {
+    pub fn set_context_data(mut self, input: ::std::option::Option<crate::types::ContextDataType>) -> Self {
         self.inner = self.inner.set_context_data(input);
         self
     }

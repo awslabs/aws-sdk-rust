@@ -10,10 +10,7 @@ impl GetVocabularyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_vocabulary::GetVocabularyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vocabulary::GetVocabularyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vocabulary::GetVocabularyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_vocabulary();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetVocabularyFluentBuilder {
         }
     }
     /// Access the GetVocabulary as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_vocabulary::builders::GetVocabularyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_vocabulary::builders::GetVocabularyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl GetVocabularyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,18 +109,12 @@ impl GetVocabularyFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the custom vocabulary you want information about. Custom vocabulary names are case sensitive.</p>
-    pub fn vocabulary_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vocabulary_name(input.into());
         self
     }
     /// <p>The name of the custom vocabulary you want information about. Custom vocabulary names are case sensitive.</p>
-    pub fn set_vocabulary_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vocabulary_name(input);
         self
     }

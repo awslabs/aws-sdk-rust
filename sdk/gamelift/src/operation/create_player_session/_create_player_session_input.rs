@@ -29,18 +29,14 @@ impl CreatePlayerSessionInput {
 }
 impl CreatePlayerSessionInput {
     /// Creates a new builder-style object to manufacture [`CreatePlayerSessionInput`](crate::operation::create_player_session::CreatePlayerSessionInput).
-    pub fn builder(
-    ) -> crate::operation::create_player_session::builders::CreatePlayerSessionInputBuilder {
-        crate::operation::create_player_session::builders::CreatePlayerSessionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_player_session::builders::CreatePlayerSessionInputBuilder {
+        crate::operation::create_player_session::builders::CreatePlayerSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePlayerSessionInput`](crate::operation::create_player_session::CreatePlayerSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePlayerSessionInputBuilder {
     pub(crate) game_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct CreatePlayerSessionInputBuilder {
 }
 impl CreatePlayerSessionInputBuilder {
     /// <p>A unique identifier for the game session to add a player to.</p>
-    pub fn game_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the game session to add a player to.</p>
-    pub fn set_game_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_id = input;
         self
     }
@@ -98,16 +88,12 @@ impl CreatePlayerSessionInputBuilder {
     /// Consumes the builder and constructs a [`CreatePlayerSessionInput`](crate::operation::create_player_session::CreatePlayerSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_player_session::CreatePlayerSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_player_session::CreatePlayerSessionInput {
-                game_session_id: self.game_session_id,
-                player_id: self.player_id,
-                player_data: self.player_data,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_player_session::CreatePlayerSessionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_player_session::CreatePlayerSessionInput {
+            game_session_id: self.game_session_id,
+            player_id: self.player_id,
+            player_data: self.player_data,
+        })
     }
 }

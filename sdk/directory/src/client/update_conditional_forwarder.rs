@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`dns_ip_addrs(Vec<String>)`](crate::operation::update_conditional_forwarder::builders::UpdateConditionalForwarderFluentBuilder::dns_ip_addrs) / [`set_dns_ip_addrs(Option<Vec<String>>)`](crate::operation::update_conditional_forwarder::builders::UpdateConditionalForwarderFluentBuilder::set_dns_ip_addrs): <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
     /// - On success, responds with [`UpdateConditionalForwarderOutput`](crate::operation::update_conditional_forwarder::UpdateConditionalForwarderOutput)
     /// - On failure, responds with [`SdkError<UpdateConditionalForwarderError>`](crate::operation::update_conditional_forwarder::UpdateConditionalForwarderError)
-    pub fn update_conditional_forwarder(&self) -> crate::operation::update_conditional_forwarder::builders::UpdateConditionalForwarderFluentBuilder{
+    pub fn update_conditional_forwarder(&self) -> crate::operation::update_conditional_forwarder::builders::UpdateConditionalForwarderFluentBuilder {
         crate::operation::update_conditional_forwarder::builders::UpdateConditionalForwarderFluentBuilder::new(self.handle.clone())
     }
 }

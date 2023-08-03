@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDatabaseOutput`](crate::operation::update_database::UpdateDatabaseOutput) with field(s):
     ///   - [`database(Option<Database>)`](crate::operation::update_database::UpdateDatabaseOutput::database): <p>A top-level container for a table. Databases and tables are the fundamental management concepts in Amazon Timestream. All tables in a database are encrypted with the same KMS key.</p>
     /// - On failure, responds with [`SdkError<UpdateDatabaseError>`](crate::operation::update_database::UpdateDatabaseError)
-    pub fn update_database(
-        &self,
-    ) -> crate::operation::update_database::builders::UpdateDatabaseFluentBuilder {
-        crate::operation::update_database::builders::UpdateDatabaseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_database(&self) -> crate::operation::update_database::builders::UpdateDatabaseFluentBuilder {
+        crate::operation::update_database::builders::UpdateDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

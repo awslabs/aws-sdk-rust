@@ -22,21 +22,16 @@ impl ::aws_http::request_id::RequestId for BatchGetDeploymentsOutput {
 }
 impl BatchGetDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentsOutput`](crate::operation::batch_get_deployments::BatchGetDeploymentsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_deployments::builders::BatchGetDeploymentsOutputBuilder {
-        crate::operation::batch_get_deployments::builders::BatchGetDeploymentsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_get_deployments::builders::BatchGetDeploymentsOutputBuilder {
+        crate::operation::batch_get_deployments::builders::BatchGetDeploymentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetDeploymentsOutput`](crate::operation::batch_get_deployments::BatchGetDeploymentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentsOutputBuilder {
-    pub(crate) deployments_info:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentInfo>>,
+    pub(crate) deployments_info: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentInfo>>,
     _request_id: Option<String>,
 }
 impl BatchGetDeploymentsOutputBuilder {
@@ -52,17 +47,12 @@ impl BatchGetDeploymentsOutputBuilder {
         self
     }
     /// <p> Information about the deployments. </p>
-    pub fn set_deployments_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentInfo>>,
-    ) -> Self {
+    pub fn set_deployments_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentInfo>>) -> Self {
         self.deployments_info = input;
         self
     }
     /// <p> Information about the deployments. </p>
-    pub fn get_deployments_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentInfo>> {
+    pub fn get_deployments_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentInfo>> {
         &self.deployments_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

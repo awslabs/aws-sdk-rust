@@ -19,9 +19,7 @@ impl DeleteOutcomeOutput {
 
 /// A builder for [`DeleteOutcomeOutput`](crate::operation::delete_outcome::DeleteOutcomeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOutcomeOutputBuilder {
     _request_id: Option<String>,
 }

@@ -37,10 +37,7 @@ impl ListExperienceEntitiesFluentBuilder {
         }
     }
     /// Access the ListExperienceEntities as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_experience_entities::builders::ListExperienceEntitiesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_experience_entities::builders::ListExperienceEntitiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListExperienceEntitiesFluentBuilder {
             crate::operation::list_experience_entities::ListExperienceEntities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_experience_entities::ListExperienceEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_experience_entities::ListExperienceEntitiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListExperienceEntitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListExperienceEntitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_experience_entities::ListExperienceEntitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_experience_entities::ListExperienceEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_experience_entities::ListExperienceEntitiesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListExperienceEntitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_experience_entities::ListExperienceEntitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_experience_entities::ListExperienceEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_experience_entities::ListExperienceEntitiesError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl ListExperienceEntitiesFluentBuilder {
             crate::operation::list_experience_entities::ListExperienceEntities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_experience_entities::ListExperienceEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_experience_entities::ListExperienceEntitiesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_experience_entities::paginator::ListExperienceEntitiesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_experience_entities::paginator::ListExperienceEntitiesPaginator
-    {
-        crate::operation::list_experience_entities::paginator::ListExperienceEntitiesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_experience_entities::paginator::ListExperienceEntitiesPaginator {
+        crate::operation::list_experience_entities::paginator::ListExperienceEntitiesPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of your Amazon Kendra experience.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

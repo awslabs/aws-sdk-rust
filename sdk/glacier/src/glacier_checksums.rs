@@ -59,18 +59,13 @@ pub async fn add_checksum_treehash(request: &mut Request) -> Result<(), byte_str
         );
     }
     // if we end up hitting the signer later, no need to recompute the checksum
-    request
-        .properties_mut()
-        .insert(SignableBody::Precomputed(complete_hash));
+    request.properties_mut().insert(SignableBody::Precomputed(complete_hash));
     // for convenience & protocol tests, write it in directly here as well
     Ok(())
 }
 
 const MEGABYTE: usize = 1024 * 1024;
-async fn compute_hashes(
-    body: SdkBody,
-    chunk_size: usize,
-) -> Result<(Digest, Vec<Digest>), byte_stream::error::Error> {
+async fn compute_hashes(body: SdkBody, chunk_size: usize) -> Result<(Digest, Vec<Digest>), byte_stream::error::Error> {
     let mut hashes = vec![];
     let mut remaining_in_chunk = chunk_size;
     let mut body = ByteStream::new(body);
@@ -127,9 +122,7 @@ fn compute_hash_tree(mut hashes: Vec<Digest>) -> Digest {
 
 #[cfg(test)]
 mod test {
-    use crate::glacier_checksums::{
-        add_checksum_treehash, compute_hash_tree, compute_hashes, MEGABYTE, TREE_HASH_HEADER,
-    };
+    use crate::glacier_checksums::{add_checksum_treehash, compute_hash_tree, compute_hashes, MEGABYTE, TREE_HASH_HEADER};
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_http::byte_stream::ByteStream;
     use aws_smithy_http::operation::Request;
@@ -183,13 +176,7 @@ mod test {
         assert_eq!(hashes.len(), 5);
         assert_eq!(complete.as_ref(), hash!("1234567891011").as_ref());
         let final_digest = compute_hash_tree(hashes);
-        let expected_digest = hash!(
-            hash!(
-                hash!(hash!("123"), hash!("456")),
-                hash!(hash!("789"), hash!("101"))
-            ),
-            hash!("1")
-        );
+        let expected_digest = hash!(hash!(hash!(hash!("123"), hash!("456")), hash!(hash!("789"), hash!("101"))), hash!("1"));
         assert_eq!(expected_digest.as_ref(), final_digest.as_ref());
     }
 
@@ -205,21 +192,11 @@ mod test {
         }
         let target = tempfile::NamedTempFile::new().unwrap();
         tokio::fs::write(target.path(), test_data).await.unwrap();
-        let body = ByteStream::from_path(target.path())
-            .await
-            .expect("should be valid")
-            .into_inner();
+        let body = ByteStream::from_path(target.path()).await.expect("should be valid").into_inner();
 
-        let mut http_req = Request::new(
-            http::Request::builder()
-                .uri("http://example.com/hello")
-                .body(body)
-                .unwrap(),
-        );
+        let mut http_req = Request::new(http::Request::builder().uri("http://example.com/hello").body(body).unwrap());
 
-        add_checksum_treehash(&mut http_req)
-            .await
-            .expect("should succeed");
+        add_checksum_treehash(&mut http_req).await.expect("should succeed");
         // hash value verified with AWS CLI
         assert_eq!(
             http_req.http().headers().get(TREE_HASH_HEADER).unwrap(),

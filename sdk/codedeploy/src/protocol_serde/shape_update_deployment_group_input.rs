@@ -7,9 +7,7 @@ pub fn ser_update_deployment_group_input(
         object.key("applicationName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.current_deployment_group_name {
-        object
-            .key("currentDeploymentGroupName")
-            .string(var_2.as_str());
+        object.key("currentDeploymentGroupName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.new_deployment_group_name {
         object.key("newDeploymentGroupName").string(var_3.as_str());
@@ -23,10 +21,7 @@ pub fn ser_update_deployment_group_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_ec2_tag_filter::ser_ec2_tag_filter(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_ec2_tag_filter::ser_ec2_tag_filter(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -62,10 +57,7 @@ pub fn ser_update_deployment_group_input(
             {
                 #[allow(unused_mut)]
                 let mut object_20 = array_18.value().start_object();
-                crate::protocol_serde::shape_trigger_config::ser_trigger_config(
-                    &mut object_20,
-                    item_19,
-                )?;
+                crate::protocol_serde::shape_trigger_config::ser_trigger_config(&mut object_20, item_19)?;
                 object_20.finish();
             }
         }
@@ -74,50 +66,34 @@ pub fn ser_update_deployment_group_input(
     if let Some(var_21) = &input.alarm_configuration {
         #[allow(unused_mut)]
         let mut object_22 = object.key("alarmConfiguration").start_object();
-        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(
-            &mut object_22,
-            var_21,
-        )?;
+        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_22, var_21)?;
         object_22.finish();
     }
     if let Some(var_23) = &input.auto_rollback_configuration {
         #[allow(unused_mut)]
         let mut object_24 = object.key("autoRollbackConfiguration").start_object();
-        crate::protocol_serde::shape_auto_rollback_configuration::ser_auto_rollback_configuration(
-            &mut object_24,
-            var_23,
-        )?;
+        crate::protocol_serde::shape_auto_rollback_configuration::ser_auto_rollback_configuration(&mut object_24, var_23)?;
         object_24.finish();
     }
     if let Some(var_25) = &input.outdated_instances_strategy {
-        object
-            .key("outdatedInstancesStrategy")
-            .string(var_25.as_str());
+        object.key("outdatedInstancesStrategy").string(var_25.as_str());
     }
     if let Some(var_26) = &input.deployment_style {
         #[allow(unused_mut)]
         let mut object_27 = object.key("deploymentStyle").start_object();
-        crate::protocol_serde::shape_deployment_style::ser_deployment_style(
-            &mut object_27,
-            var_26,
-        )?;
+        crate::protocol_serde::shape_deployment_style::ser_deployment_style(&mut object_27, var_26)?;
         object_27.finish();
     }
     if let Some(var_28) = &input.blue_green_deployment_configuration {
         #[allow(unused_mut)]
-        let mut object_29 = object
-            .key("blueGreenDeploymentConfiguration")
-            .start_object();
+        let mut object_29 = object.key("blueGreenDeploymentConfiguration").start_object();
         crate::protocol_serde::shape_blue_green_deployment_configuration::ser_blue_green_deployment_configuration(&mut object_29, var_28)?;
         object_29.finish();
     }
     if let Some(var_30) = &input.load_balancer_info {
         #[allow(unused_mut)]
         let mut object_31 = object.key("loadBalancerInfo").start_object();
-        crate::protocol_serde::shape_load_balancer_info::ser_load_balancer_info(
-            &mut object_31,
-            var_30,
-        )?;
+        crate::protocol_serde::shape_load_balancer_info::ser_load_balancer_info(&mut object_31, var_30)?;
         object_31.finish();
     }
     if let Some(var_32) = &input.ec2_tag_set {
@@ -141,10 +117,7 @@ pub fn ser_update_deployment_group_input(
     if let Some(var_38) = &input.on_premises_tag_set {
         #[allow(unused_mut)]
         let mut object_39 = object.key("onPremisesTagSet").start_object();
-        crate::protocol_serde::shape_on_premises_tag_set::ser_on_premises_tag_set(
-            &mut object_39,
-            var_38,
-        )?;
+        crate::protocol_serde::shape_on_premises_tag_set::ser_on_premises_tag_set(&mut object_39, var_38)?;
         object_39.finish();
     }
     Ok(())

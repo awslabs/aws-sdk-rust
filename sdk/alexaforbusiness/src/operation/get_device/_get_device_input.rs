@@ -22,9 +22,7 @@ impl GetDeviceInput {
 
 /// A builder for [`GetDeviceInput`](crate::operation::get_device::GetDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeviceInputBuilder {
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetDeviceInputBuilder {
         &self.device_arn
     }
     /// Consumes the builder and constructs a [`GetDeviceInput`](crate::operation::get_device::GetDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_device::GetDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_device::GetDeviceInput {
-            device_arn: self.device_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_device::GetDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_device::GetDeviceInput { device_arn: self.device_arn })
     }
 }

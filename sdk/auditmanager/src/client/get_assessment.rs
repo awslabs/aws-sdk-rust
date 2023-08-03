@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`assessment(Option<Assessment>)`](crate::operation::get_assessment::GetAssessmentOutput::assessment): <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
     ///   - [`user_role(Option<Role>)`](crate::operation::get_assessment::GetAssessmentOutput::user_role): <p> The wrapper that contains the Audit Manager role information of the current user. This includes the role type and IAM Amazon Resource Name (ARN). </p>
     /// - On failure, responds with [`SdkError<GetAssessmentError>`](crate::operation::get_assessment::GetAssessmentError)
-    pub fn get_assessment(
-        &self,
-    ) -> crate::operation::get_assessment::builders::GetAssessmentFluentBuilder {
-        crate::operation::get_assessment::builders::GetAssessmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_assessment(&self) -> crate::operation::get_assessment::builders::GetAssessmentFluentBuilder {
+        crate::operation::get_assessment::builders::GetAssessmentFluentBuilder::new(self.handle.clone())
     }
 }

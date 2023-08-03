@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeApplicationOutput {
 }
 impl DescribeApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_application::builders::DescribeApplicationOutputBuilder {
-        crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_application::builders::DescribeApplicationOutputBuilder {
+        crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationOutputBuilder {
     pub(crate) application_info: ::std::option::Option<crate::types::ApplicationInfo>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeApplicationOutputBuilder {
         self
     }
     /// <p>Information about the application.</p>
-    pub fn set_application_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationInfo>,
-    ) -> Self {
+    pub fn set_application_info(mut self, input: ::std::option::Option<crate::types::ApplicationInfo>) -> Self {
         self.application_info = input;
         self
     }

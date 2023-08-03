@@ -44,9 +44,7 @@ impl UploadArchiveOutput {
 
 /// A builder for [`UploadArchiveOutput`](crate::operation::upload_archive::UploadArchiveOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UploadArchiveOutputBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) checksum: ::std::option::Option<::std::string::String>,

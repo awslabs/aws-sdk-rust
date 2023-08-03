@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for GetPatchBaselineForPatchGroupOutput {
 }
 impl GetPatchBaselineForPatchGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetPatchBaselineForPatchGroupOutput`](crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupOutput).
-    pub fn builder() -> crate::operation::get_patch_baseline_for_patch_group::builders::GetPatchBaselineForPatchGroupOutputBuilder{
+    pub fn builder() -> crate::operation::get_patch_baseline_for_patch_group::builders::GetPatchBaselineForPatchGroupOutputBuilder {
         crate::operation::get_patch_baseline_for_patch_group::builders::GetPatchBaselineForPatchGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPatchBaselineForPatchGroupOutput`](crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPatchBaselineForPatchGroupOutputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
     pub(crate) patch_group: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl GetPatchBaselineForPatchGroupOutputBuilder {
         self
     }
     /// <p>The operating system rule specified for patch groups using the patch baseline.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
@@ -107,10 +102,7 @@ impl GetPatchBaselineForPatchGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPatchBaselineForPatchGroupOutput`](crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupOutput
-    {
+    pub fn build(self) -> crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupOutput {
         crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupOutput {
             baseline_id: self.baseline_id,
             patch_group: self.patch_group,

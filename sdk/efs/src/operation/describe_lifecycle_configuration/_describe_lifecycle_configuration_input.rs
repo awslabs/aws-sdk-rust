@@ -15,33 +15,25 @@ impl DescribeLifecycleConfigurationInput {
 }
 impl DescribeLifecycleConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeLifecycleConfigurationInput`](crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput).
-    pub fn builder() -> crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationInputBuilder {
         crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLifecycleConfigurationInput`](crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLifecycleConfigurationInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLifecycleConfigurationInputBuilder {
     /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -56,11 +48,8 @@ impl DescribeLifecycleConfigurationInputBuilder {
         crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput {
-                file_system_id: self.file_system_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput {
+            file_system_id: self.file_system_id,
+        })
     }
 }

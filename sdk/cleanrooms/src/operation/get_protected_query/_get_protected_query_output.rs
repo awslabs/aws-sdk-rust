@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetProtectedQueryOutput {
 }
 impl GetProtectedQueryOutput {
     /// Creates a new builder-style object to manufacture [`GetProtectedQueryOutput`](crate::operation::get_protected_query::GetProtectedQueryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_protected_query::builders::GetProtectedQueryOutputBuilder {
+    pub fn builder() -> crate::operation::get_protected_query::builders::GetProtectedQueryOutputBuilder {
         crate::operation::get_protected_query::builders::GetProtectedQueryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetProtectedQueryOutput`](crate::operation::get_protected_query::GetProtectedQueryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProtectedQueryOutputBuilder {
     pub(crate) protected_query: ::std::option::Option<crate::types::ProtectedQuery>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetProtectedQueryOutputBuilder {
         self
     }
     /// <p>The query processing metadata.</p>
-    pub fn set_protected_query(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedQuery>,
-    ) -> Self {
+    pub fn set_protected_query(mut self, input: ::std::option::Option<crate::types::ProtectedQuery>) -> Self {
         self.protected_query = input;
         self
     }

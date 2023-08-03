@@ -60,18 +60,14 @@ impl UpdateRegexPatternSetInput {
 }
 impl UpdateRegexPatternSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateRegexPatternSetInput`](crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput).
-    pub fn builder(
-    ) -> crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetInputBuilder {
         crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRegexPatternSetInput`](crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRegexPatternSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
@@ -164,17 +160,12 @@ impl UpdateRegexPatternSetInputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_regular_expression_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>,
-    ) -> Self {
+    pub fn set_regular_expression_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>) -> Self {
         self.regular_expression_list = input;
         self
     }
     /// <p></p>
-    pub fn get_regular_expression_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Regex>> {
+    pub fn get_regular_expression_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Regex>> {
         &self.regular_expression_list
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -194,19 +185,15 @@ impl UpdateRegexPatternSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRegexPatternSetInput`](crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput {
-                name: self.name,
-                scope: self.scope,
-                id: self.id,
-                description: self.description,
-                regular_expression_list: self.regular_expression_list,
-                lock_token: self.lock_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput {
+            name: self.name,
+            scope: self.scope,
+            id: self.id,
+            description: self.description,
+            regular_expression_list: self.regular_expression_list,
+            lock_token: self.lock_token,
+        })
     }
 }

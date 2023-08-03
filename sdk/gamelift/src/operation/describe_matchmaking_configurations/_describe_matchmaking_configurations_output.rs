@@ -5,8 +5,7 @@
 pub struct DescribeMatchmakingConfigurationsOutput {
     /// <p>A collection of requested matchmaking configurations.</p>
     #[doc(hidden)]
-    pub configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingConfiguration>>,
+    pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingConfiguration>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeMatchmakingConfigurationsOutput {
 }
 impl DescribeMatchmakingConfigurationsOutput {
     /// <p>A collection of requested matchmaking configurations.</p>
-    pub fn configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MatchmakingConfiguration]> {
+    pub fn configurations(&self) -> ::std::option::Option<&[crate::types::MatchmakingConfiguration]> {
         self.configurations.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeMatchmakingConfigurationsOutp
 }
 impl DescribeMatchmakingConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMatchmakingConfigurationsOutput`](crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput).
-    pub fn builder() -> crate::operation::describe_matchmaking_configurations::builders::DescribeMatchmakingConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_matchmaking_configurations::builders::DescribeMatchmakingConfigurationsOutputBuilder {
         crate::operation::describe_matchmaking_configurations::builders::DescribeMatchmakingConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMatchmakingConfigurationsOutput`](crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMatchmakingConfigurationsOutputBuilder {
-    pub(crate) configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingConfiguration>>,
+    pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeMatchmakingConfigurationsOutputBuilder {
         self
     }
     /// <p>A collection of requested matchmaking configurations.</p>
-    pub fn set_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingConfiguration>>,
-    ) -> Self {
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchmakingConfiguration>>) -> Self {
         self.configurations = input;
         self
     }
     /// <p>A collection of requested matchmaking configurations.</p>
-    pub fn get_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchmakingConfiguration>> {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchmakingConfiguration>> {
         &self.configurations
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -97,12 +86,10 @@ impl DescribeMatchmakingConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMatchmakingConfigurationsOutput`](crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput).
-    pub fn build(self) -> crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput{
+    pub fn build(self) -> crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput {
         crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput {
-            configurations: self.configurations
-            ,
-            next_token: self.next_token
-            ,
+            configurations: self.configurations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

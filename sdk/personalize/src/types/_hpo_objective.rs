@@ -39,9 +39,7 @@ impl HpoObjective {
 
 /// A builder for [`HpoObjective`](crate::types::HpoObjective).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HpoObjectiveBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,7 @@ pub struct DashPackage {
     pub include_iframe_only_stream: ::std::option::Option<bool>,
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Asset contains SCTE-35 ad markers.
     #[doc(hidden)]
-    pub period_triggers:
-        ::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>>,
+    pub period_triggers: ::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>>,
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
     #[doc(hidden)]
     pub segment_duration_seconds: ::std::option::Option<i32>,
@@ -53,9 +52,7 @@ impl DashPackage {
         self.segment_duration_seconds
     }
     /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
-    pub fn segment_template_format(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SegmentTemplateFormat> {
+    pub fn segment_template_format(&self) -> ::std::option::Option<&crate::types::SegmentTemplateFormat> {
         self.segment_template_format.as_ref()
     }
 }
@@ -68,16 +65,13 @@ impl DashPackage {
 
 /// A builder for [`DashPackage`](crate::types::DashPackage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DashPackageBuilder {
     pub(crate) dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::DashManifest>>,
     pub(crate) encryption: ::std::option::Option<crate::types::DashEncryption>,
     pub(crate) include_encoder_configuration_in_segments: ::std::option::Option<bool>,
     pub(crate) include_iframe_only_stream: ::std::option::Option<bool>,
-    pub(crate) period_triggers:
-        ::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>>,
+    pub(crate) period_triggers: ::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>>,
     pub(crate) segment_duration_seconds: ::std::option::Option<i32>,
     pub(crate) segment_template_format: ::std::option::Option<crate::types::SegmentTemplateFormat>,
 }
@@ -94,17 +88,12 @@ impl DashPackageBuilder {
         self
     }
     /// A list of DASH manifest configurations.
-    pub fn set_dash_manifests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DashManifest>>,
-    ) -> Self {
+    pub fn set_dash_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DashManifest>>) -> Self {
         self.dash_manifests = input;
         self
     }
     /// A list of DASH manifest configurations.
-    pub fn get_dash_manifests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DashManifest>> {
+    pub fn get_dash_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DashManifest>> {
         &self.dash_manifests
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
@@ -113,10 +102,7 @@ impl DashPackageBuilder {
         self
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::DashEncryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::DashEncryption>) -> Self {
         self.encryption = input;
         self
     }
@@ -130,10 +116,7 @@ impl DashPackageBuilder {
         self
     }
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
-    pub fn set_include_encoder_configuration_in_segments(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_include_encoder_configuration_in_segments(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_encoder_configuration_in_segments = input;
         self
     }
@@ -167,17 +150,12 @@ impl DashPackageBuilder {
         self
     }
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Asset contains SCTE-35 ad markers.
-    pub fn set_period_triggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>>,
-    ) -> Self {
+    pub fn set_period_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>>) -> Self {
         self.period_triggers = input;
         self
     }
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Asset contains SCTE-35 ad markers.
-    pub fn get_period_triggers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>> {
+    pub fn get_period_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>> {
         &self.period_triggers
     }
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
@@ -200,17 +178,12 @@ impl DashPackageBuilder {
         self
     }
     /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
-    pub fn set_segment_template_format(
-        mut self,
-        input: ::std::option::Option<crate::types::SegmentTemplateFormat>,
-    ) -> Self {
+    pub fn set_segment_template_format(mut self, input: ::std::option::Option<crate::types::SegmentTemplateFormat>) -> Self {
         self.segment_template_format = input;
         self
     }
     /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
-    pub fn get_segment_template_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::SegmentTemplateFormat> {
+    pub fn get_segment_template_format(&self) -> &::std::option::Option<crate::types::SegmentTemplateFormat> {
         &self.segment_template_format
     }
     /// Consumes the builder and constructs a [`DashPackage`](crate::types::DashPackage).
@@ -218,8 +191,7 @@ impl DashPackageBuilder {
         crate::types::DashPackage {
             dash_manifests: self.dash_manifests,
             encryption: self.encryption,
-            include_encoder_configuration_in_segments: self
-                .include_encoder_configuration_in_segments,
+            include_encoder_configuration_in_segments: self.include_encoder_configuration_in_segments,
             include_iframe_only_stream: self.include_iframe_only_stream,
             period_triggers: self.period_triggers,
             segment_duration_seconds: self.segment_duration_seconds,

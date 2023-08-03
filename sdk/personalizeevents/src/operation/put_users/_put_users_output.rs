@@ -19,9 +19,7 @@ impl PutUsersOutput {
 
 /// A builder for [`PutUsersOutput`](crate::operation::put_users::PutUsersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutUsersOutputBuilder {
     _request_id: Option<String>,
 }

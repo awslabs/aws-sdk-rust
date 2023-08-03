@@ -37,9 +37,7 @@ impl CreateJobForDevicesFluentBuilder {
         }
     }
     /// Access the CreateJobForDevices as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_job_for_devices::builders::CreateJobForDevicesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_job_for_devices::builders::CreateJobForDevicesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateJobForDevicesFluentBuilder {
             crate::operation::create_job_for_devices::CreateJobForDevices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_job_for_devices::CreateJobForDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_job_for_devices::CreateJobForDevicesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateJobForDevicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateJobForDevicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_job_for_devices::CreateJobForDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_job_for_devices::CreateJobForDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_job_for_devices::CreateJobForDevicesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateJobForDevicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_job_for_devices::CreateJobForDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_job_for_devices::CreateJobForDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_job_for_devices::CreateJobForDevicesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateJobForDevicesFluentBuilder {
             crate::operation::create_job_for_devices::CreateJobForDevices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_job_for_devices::CreateJobForDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_job_for_devices::CreateJobForDevicesError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +119,7 @@ impl CreateJobForDevicesFluentBuilder {
         self
     }
     /// <p>ID of target device.</p>
-    pub fn set_device_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_device_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_device_ids(input);
         self
     }
@@ -149,10 +133,7 @@ impl CreateJobForDevicesFluentBuilder {
         self
     }
     /// <p>Configuration settings for a software update job.</p>
-    pub fn set_device_job_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceJobConfig>,
-    ) -> Self {
+    pub fn set_device_job_config(mut self, input: ::std::option::Option<crate::types::DeviceJobConfig>) -> Self {
         self.inner = self.inner.set_device_job_config(input);
         self
     }

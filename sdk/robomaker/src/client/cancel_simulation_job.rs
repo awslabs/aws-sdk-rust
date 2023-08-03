@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`job(impl ::std::convert::Into<String>)`](crate::operation::cancel_simulation_job::builders::CancelSimulationJobFluentBuilder::job) / [`set_job(Option<String>)`](crate::operation::cancel_simulation_job::builders::CancelSimulationJobFluentBuilder::set_job): <p>The simulation job ARN to cancel.</p>
     /// - On success, responds with [`CancelSimulationJobOutput`](crate::operation::cancel_simulation_job::CancelSimulationJobOutput)
     /// - On failure, responds with [`SdkError<CancelSimulationJobError>`](crate::operation::cancel_simulation_job::CancelSimulationJobError)
-    pub fn cancel_simulation_job(
-        &self,
-    ) -> crate::operation::cancel_simulation_job::builders::CancelSimulationJobFluentBuilder {
-        crate::operation::cancel_simulation_job::builders::CancelSimulationJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_simulation_job(&self) -> crate::operation::cancel_simulation_job::builders::CancelSimulationJobFluentBuilder {
+        crate::operation::cancel_simulation_job::builders::CancelSimulationJobFluentBuilder::new(self.handle.clone())
     }
 }

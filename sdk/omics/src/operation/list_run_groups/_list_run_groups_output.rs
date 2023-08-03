@@ -35,9 +35,7 @@ impl ListRunGroupsOutput {
 
 /// A builder for [`ListRunGroupsOutput`](crate::operation::list_run_groups::ListRunGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRunGroupsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RunGroupListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListRunGroupsOutputBuilder {
         self
     }
     /// <p>A list of groups.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RunGroupListItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RunGroupListItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>A list of groups.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RunGroupListItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RunGroupListItem>> {
         &self.items
     }
     /// <p>A pagination token that's included if more results are available.</p>

@@ -30,9 +30,7 @@ impl PrefixLevelStorageMetrics {
 
 /// A builder for [`PrefixLevelStorageMetrics`](crate::types::PrefixLevelStorageMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrefixLevelStorageMetricsBuilder {
     pub(crate) is_enabled: ::std::option::Option<bool>,
     pub(crate) selection_criteria: ::std::option::Option<crate::types::SelectionCriteria>,
@@ -58,17 +56,12 @@ impl PrefixLevelStorageMetricsBuilder {
         self
     }
     /// <p></p>
-    pub fn set_selection_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::SelectionCriteria>,
-    ) -> Self {
+    pub fn set_selection_criteria(mut self, input: ::std::option::Option<crate::types::SelectionCriteria>) -> Self {
         self.selection_criteria = input;
         self
     }
     /// <p></p>
-    pub fn get_selection_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::SelectionCriteria> {
+    pub fn get_selection_criteria(&self) -> &::std::option::Option<crate::types::SelectionCriteria> {
         &self.selection_criteria
     }
     /// Consumes the builder and constructs a [`PrefixLevelStorageMetrics`](crate::types::PrefixLevelStorageMetrics).

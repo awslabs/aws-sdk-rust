@@ -10,10 +10,7 @@ impl DescribeUpdateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_update::DescribeUpdateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_update::DescribeUpdateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_update::DescribeUpdateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_update();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeUpdateFluentBuilder {
         }
     }
     /// Access the DescribeUpdate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_update::builders::DescribeUpdateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_update::builders::DescribeUpdateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl DescribeUpdateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -144,18 +136,12 @@ impl DescribeUpdateFluentBuilder {
         self.inner.get_update_id()
     }
     /// <p>The name of the Amazon EKS node group associated with the update. This parameter is required if the update is a node group update.</p>
-    pub fn nodegroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nodegroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nodegroup_name(input.into());
         self
     }
     /// <p>The name of the Amazon EKS node group associated with the update. This parameter is required if the update is a node group update.</p>
-    pub fn set_nodegroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nodegroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_nodegroup_name(input);
         self
     }

@@ -38,9 +38,7 @@ impl DeprovisionByoipCidrFluentBuilder {
         }
     }
     /// Access the DeprovisionByoipCidr as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DeprovisionByoipCidrFluentBuilder {
             crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DeprovisionByoipCidrFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DeprovisionByoipCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DeprovisionByoipCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl DeprovisionByoipCidrFluentBuilder {
             crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrError>,
     > {
         self.customize_middleware().await
     }

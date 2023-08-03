@@ -6,7 +6,9 @@ impl super::Client {
     /// - On success, responds with [`GetTrafficPolicyInstanceCountOutput`](crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput) with field(s):
     ///   - [`traffic_policy_instance_count(Option<i32>)`](crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput::traffic_policy_instance_count): <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<GetTrafficPolicyInstanceCountError>`](crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountError)
-    pub fn get_traffic_policy_instance_count(&self) -> crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountFluentBuilder{
+    pub fn get_traffic_policy_instance_count(
+        &self,
+    ) -> crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountFluentBuilder {
         crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountFluentBuilder::new(self.handle.clone())
     }
 }

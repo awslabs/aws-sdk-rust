@@ -15,16 +15,14 @@ impl DescribeDominantLanguageDetectionJobInput {
 }
 impl DescribeDominantLanguageDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeDominantLanguageDetectionJobInput`](crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobInput).
-    pub fn builder() -> crate::operation::describe_dominant_language_detection_job::builders::DescribeDominantLanguageDetectionJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_dominant_language_detection_job::builders::DescribeDominantLanguageDetectionJobInputBuilder {
         crate::operation::describe_dominant_language_detection_job::builders::DescribeDominantLanguageDetectionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDominantLanguageDetectionJobInput`](crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDominantLanguageDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl DescribeDominantLanguageDetectionJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`DescribeDominantLanguageDetectionJobInput`](crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobInput {
-                job_id: self.job_id
-                ,
-            }
+            crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobInput { job_id: self.job_id },
         )
     }
 }

@@ -15,7 +15,11 @@ impl super::Client {
     /// - On success, responds with [`CreateRelationalDatabaseFromSnapshotOutput`](crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CreateRelationalDatabaseFromSnapshotError>`](crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError)
-    pub fn create_relational_database_from_snapshot(&self) -> crate::operation::create_relational_database_from_snapshot::builders::CreateRelationalDatabaseFromSnapshotFluentBuilder{
-        crate::operation::create_relational_database_from_snapshot::builders::CreateRelationalDatabaseFromSnapshotFluentBuilder::new(self.handle.clone())
+    pub fn create_relational_database_from_snapshot(
+        &self,
+    ) -> crate::operation::create_relational_database_from_snapshot::builders::CreateRelationalDatabaseFromSnapshotFluentBuilder {
+        crate::operation::create_relational_database_from_snapshot::builders::CreateRelationalDatabaseFromSnapshotFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -23,9 +23,7 @@ impl IdentityProviderConfigResponse {
 
 /// A builder for [`IdentityProviderConfigResponse`](crate::types::IdentityProviderConfigResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdentityProviderConfigResponseBuilder {
     pub(crate) oidc: ::std::option::Option<crate::types::OidcIdentityProviderConfig>,
 }
@@ -36,10 +34,7 @@ impl IdentityProviderConfigResponseBuilder {
         self
     }
     /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
-    pub fn set_oidc(
-        mut self,
-        input: ::std::option::Option<crate::types::OidcIdentityProviderConfig>,
-    ) -> Self {
+    pub fn set_oidc(mut self, input: ::std::option::Option<crate::types::OidcIdentityProviderConfig>) -> Self {
         self.oidc = input;
         self
     }

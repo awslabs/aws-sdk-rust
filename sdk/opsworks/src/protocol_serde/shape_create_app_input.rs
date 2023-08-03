@@ -51,10 +51,7 @@ pub fn ser_create_app_input(
     if let Some(var_16) = &input.ssl_configuration {
         #[allow(unused_mut)]
         let mut object_17 = object.key("SslConfiguration").start_object();
-        crate::protocol_serde::shape_ssl_configuration::ser_ssl_configuration(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_ssl_configuration::ser_ssl_configuration(&mut object_17, var_16)?;
         object_17.finish();
     }
     if let Some(var_18) = &input.attributes {
@@ -73,10 +70,7 @@ pub fn ser_create_app_input(
             {
                 #[allow(unused_mut)]
                 let mut object_25 = array_23.value().start_object();
-                crate::protocol_serde::shape_environment_variable::ser_environment_variable(
-                    &mut object_25,
-                    item_24,
-                )?;
+                crate::protocol_serde::shape_environment_variable::ser_environment_variable(&mut object_25, item_24)?;
                 object_25.finish();
             }
         }

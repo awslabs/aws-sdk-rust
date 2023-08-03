@@ -33,9 +33,7 @@ impl GameServerInstance {
         self.instance_id.as_deref()
     }
     /// <p>Current status of the game server instance</p>
-    pub fn instance_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GameServerInstanceStatus> {
+    pub fn instance_status(&self) -> ::std::option::Option<&crate::types::GameServerInstanceStatus> {
         self.instance_status.as_ref()
     }
 }
@@ -48,9 +46,7 @@ impl GameServerInstance {
 
 /// A builder for [`GameServerInstance`](crate::types::GameServerInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GameServerInstanceBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) game_server_group_arn: ::std::option::Option<::std::string::String>,
@@ -59,18 +55,12 @@ pub struct GameServerInstanceBuilder {
 }
 impl GameServerInstanceBuilder {
     /// <p>A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each Amazon Web Services account.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each Amazon Web Services account.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_group_name = input;
         self
     }
@@ -79,18 +69,12 @@ impl GameServerInstanceBuilder {
         &self.game_server_group_name
     }
     /// <p>A generated unique identifier for the game server group that includes the game server instance. </p>
-    pub fn game_server_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A generated unique identifier for the game server group that includes the game server instance. </p>
-    pub fn set_game_server_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_server_group_arn = input;
         self
     }
@@ -118,17 +102,12 @@ impl GameServerInstanceBuilder {
         self
     }
     /// <p>Current status of the game server instance</p>
-    pub fn set_instance_status(
-        mut self,
-        input: ::std::option::Option<crate::types::GameServerInstanceStatus>,
-    ) -> Self {
+    pub fn set_instance_status(mut self, input: ::std::option::Option<crate::types::GameServerInstanceStatus>) -> Self {
         self.instance_status = input;
         self
     }
     /// <p>Current status of the game server instance</p>
-    pub fn get_instance_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::GameServerInstanceStatus> {
+    pub fn get_instance_status(&self) -> &::std::option::Option<crate::types::GameServerInstanceStatus> {
         &self.instance_status
     }
     /// Consumes the builder and constructs a [`GameServerInstance`](crate::types::GameServerInstance).

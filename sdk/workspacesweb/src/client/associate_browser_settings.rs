@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`portal_arn(Option<String>)`](crate::operation::associate_browser_settings::AssociateBrowserSettingsOutput::portal_arn): <p>The ARN of the web portal.</p>
     ///   - [`browser_settings_arn(Option<String>)`](crate::operation::associate_browser_settings::AssociateBrowserSettingsOutput::browser_settings_arn): <p>The ARN of the browser settings.</p>
     /// - On failure, responds with [`SdkError<AssociateBrowserSettingsError>`](crate::operation::associate_browser_settings::AssociateBrowserSettingsError)
-    pub fn associate_browser_settings(
-        &self,
-    ) -> crate::operation::associate_browser_settings::builders::AssociateBrowserSettingsFluentBuilder
-    {
+    pub fn associate_browser_settings(&self) -> crate::operation::associate_browser_settings::builders::AssociateBrowserSettingsFluentBuilder {
         crate::operation::associate_browser_settings::builders::AssociateBrowserSettingsFluentBuilder::new(self.handle.clone())
     }
 }

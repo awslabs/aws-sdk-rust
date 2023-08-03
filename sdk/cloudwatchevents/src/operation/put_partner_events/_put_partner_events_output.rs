@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for PutPartnerEventsOutput {
 }
 impl PutPartnerEventsOutput {
     /// Creates a new builder-style object to manufacture [`PutPartnerEventsOutput`](crate::operation::put_partner_events::PutPartnerEventsOutput).
-    pub fn builder() -> crate::operation::put_partner_events::builders::PutPartnerEventsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_partner_events::builders::PutPartnerEventsOutputBuilder {
         crate::operation::put_partner_events::builders::PutPartnerEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutPartnerEventsOutput`](crate::operation::put_partner_events::PutPartnerEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPartnerEventsOutputBuilder {
     pub(crate) failed_entry_count: ::std::option::Option<i32>,
-    pub(crate) entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsResultEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsResultEntry>>,
     _request_id: Option<String>,
 }
 impl PutPartnerEventsOutputBuilder {
@@ -72,17 +68,12 @@ impl PutPartnerEventsOutputBuilder {
         self
     }
     /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsResultEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsResultEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsResultEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsResultEntry>> {
         &self.entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`certificates(Option<Vec<Certificate>>)`](crate::operation::list_certificates_by_ca::ListCertificatesByCaOutput::certificates): <p>The device certificates signed by the specified CA certificate.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_certificates_by_ca::ListCertificatesByCaOutput::next_marker): <p>The marker for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListCertificatesByCAError>`](crate::operation::list_certificates_by_ca::ListCertificatesByCAError)
-    pub fn list_certificates_by_ca(
-        &self,
-    ) -> crate::operation::list_certificates_by_ca::builders::ListCertificatesByCAFluentBuilder
-    {
-        crate::operation::list_certificates_by_ca::builders::ListCertificatesByCAFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_certificates_by_ca(&self) -> crate::operation::list_certificates_by_ca::builders::ListCertificatesByCAFluentBuilder {
+        crate::operation::list_certificates_by_ca::builders::ListCertificatesByCAFluentBuilder::new(self.handle.clone())
     }
 }

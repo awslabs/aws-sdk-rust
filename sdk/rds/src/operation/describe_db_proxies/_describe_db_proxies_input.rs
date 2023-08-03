@@ -40,17 +40,14 @@ impl DescribeDbProxiesInput {
 }
 impl DescribeDbProxiesInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbProxiesInput`](crate::operation::describe_db_proxies::DescribeDbProxiesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_proxies::builders::DescribeDbProxiesInputBuilder {
+    pub fn builder() -> crate::operation::describe_db_proxies::builders::DescribeDbProxiesInputBuilder {
         crate::operation::describe_db_proxies::builders::DescribeDbProxiesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbProxiesInput`](crate::operation::describe_db_proxies::DescribeDbProxiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbProxiesInputBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -59,18 +56,12 @@ pub struct DescribeDbProxiesInputBuilder {
 }
 impl DescribeDbProxiesInputBuilder {
     /// <p>The name of the DB proxy. If you omit this parameter, the output includes information about all DB proxies owned by your Amazon Web Services account ID.</p>
-    pub fn db_proxy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB proxy. If you omit this parameter, the output includes information about all DB proxies owned by your Amazon Web Services account ID.</p>
-    pub fn set_db_proxy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_proxy_name = input;
         self
     }
@@ -90,10 +81,7 @@ impl DescribeDbProxiesInputBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -138,17 +126,12 @@ impl DescribeDbProxiesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDbProxiesInput`](crate::operation::describe_db_proxies::DescribeDbProxiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_proxies::DescribeDbProxiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_db_proxies::DescribeDbProxiesInput {
-                db_proxy_name: self.db_proxy_name,
-                filters: self.filters,
-                marker: self.marker,
-                max_records: self.max_records,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_db_proxies::DescribeDbProxiesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_db_proxies::DescribeDbProxiesInput {
+            db_proxy_name: self.db_proxy_name,
+            filters: self.filters,
+            marker: self.marker,
+            max_records: self.max_records,
+        })
     }
 }

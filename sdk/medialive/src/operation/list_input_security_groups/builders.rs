@@ -26,8 +26,7 @@ impl ListInputSecurityGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInputSecurityGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsInputBuilder,
+    inner: crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsInputBuilder,
 }
 impl ListInputSecurityGroupsFluentBuilder {
     /// Creates a new `ListInputSecurityGroups`.
@@ -38,10 +37,7 @@ impl ListInputSecurityGroupsFluentBuilder {
         }
     }
     /// Access the ListInputSecurityGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListInputSecurityGroupsFluentBuilder {
             crate::operation::list_input_security_groups::ListInputSecurityGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_input_security_groups::ListInputSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_input_security_groups::ListInputSecurityGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListInputSecurityGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListInputSecurityGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_input_security_groups::ListInputSecurityGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_input_security_groups::ListInputSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_input_security_groups::ListInputSecurityGroupsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListInputSecurityGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_input_security_groups::ListInputSecurityGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_input_security_groups::ListInputSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_input_security_groups::ListInputSecurityGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListInputSecurityGroupsFluentBuilder {
             crate::operation::list_input_security_groups::ListInputSecurityGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_input_security_groups::ListInputSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_input_security_groups::ListInputSecurityGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_input_security_groups::paginator::ListInputSecurityGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_input_security_groups::paginator::ListInputSecurityGroupsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_input_security_groups::paginator::ListInputSecurityGroupsPaginator {
         crate::operation::list_input_security_groups::paginator::ListInputSecurityGroupsPaginator::new(self.handle, self.inner)
     }
     /// Placeholder documentation for MaxResults

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`custom_data_identifiers(Option<Vec<BatchGetCustomDataIdentifierSummary>>)`](crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersOutput::custom_data_identifiers): <p>An array of objects, one for each custom data identifier that matches the criteria specified in the request.</p>
     ///   - [`not_found_identifier_ids(Option<Vec<String>>)`](crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersOutput::not_found_identifier_ids): <p>An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but doesn't correlate to an existing custom data identifier.</p>
     /// - On failure, responds with [`SdkError<BatchGetCustomDataIdentifiersError>`](crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersError)
-    pub fn batch_get_custom_data_identifiers(&self) -> crate::operation::batch_get_custom_data_identifiers::builders::BatchGetCustomDataIdentifiersFluentBuilder{
+    pub fn batch_get_custom_data_identifiers(
+        &self,
+    ) -> crate::operation::batch_get_custom_data_identifiers::builders::BatchGetCustomDataIdentifiersFluentBuilder {
         crate::operation::batch_get_custom_data_identifiers::builders::BatchGetCustomDataIdentifiersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,9 +21,7 @@ pub enum DataSetImportConfig {
 impl DataSetImportConfig {
     /// Tries to convert the enum instance into [`DataSets`](crate::types::DataSetImportConfig::DataSets), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_data_sets(
-        &self,
-    ) -> ::std::result::Result<&::std::vec::Vec<crate::types::DataSetImportItem>, &Self> {
+    pub fn as_data_sets(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::DataSetImportItem>, &Self> {
         if let DataSetImportConfig::DataSets(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

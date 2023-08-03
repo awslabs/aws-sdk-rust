@@ -17,12 +17,7 @@ pub struct GetLayoutOutput {
     pub content: ::std::option::Option<crate::types::LayoutContent>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     _request_id: Option<String>,
 }
 impl GetLayoutOutput {
@@ -43,14 +38,7 @@ impl GetLayoutOutput {
         self.content.as_ref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.tags.as_ref()
     }
 }
@@ -68,20 +56,13 @@ impl GetLayoutOutput {
 
 /// A builder for [`GetLayoutOutput`](crate::operation::get_layout::GetLayoutOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLayoutOutputBuilder {
     pub(crate) layout_id: ::std::option::Option<::std::string::String>,
     pub(crate) layout_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<crate::types::LayoutContent>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     _request_id: Option<String>,
 }
 impl GetLayoutOutputBuilder {
@@ -133,10 +114,7 @@ impl GetLayoutOutputBuilder {
         self
     }
     /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field. </p>
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<crate::types::LayoutContent>,
-    ) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::LayoutContent>) -> Self {
         self.content = input;
         self
     }
@@ -149,11 +127,7 @@ impl GetLayoutOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::option::Option<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.tags = ::std::option::Option::Some(hash_map);
@@ -162,12 +136,7 @@ impl GetLayoutOutputBuilder {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn set_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::option::Option<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     ) -> Self {
         self.tags = input;
         self
@@ -175,12 +144,7 @@ impl GetLayoutOutputBuilder {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn get_tags(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::option::Option<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

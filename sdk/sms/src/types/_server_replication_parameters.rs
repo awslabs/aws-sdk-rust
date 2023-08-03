@@ -79,9 +79,7 @@ impl ServerReplicationParameters {
 
 /// A builder for [`ServerReplicationParameters`](crate::types::ServerReplicationParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerReplicationParametersBuilder {
     pub(crate) seed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) frequency: ::std::option::Option<i32>,
@@ -98,10 +96,7 @@ impl ServerReplicationParametersBuilder {
         self
     }
     /// <p>The seed time for creating a replication job for the server.</p>
-    pub fn set_seed_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_seed_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.seed_time = input;
         self
     }
@@ -143,10 +138,7 @@ impl ServerReplicationParametersBuilder {
         self
     }
     /// <p>The license type for creating a replication job for the server.</p>
-    pub fn set_license_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LicenseType>,
-    ) -> Self {
+    pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::LicenseType>) -> Self {
         self.license_type = input;
         self
     }

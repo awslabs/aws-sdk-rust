@@ -52,9 +52,7 @@ impl IncidentRecordSummary {
         self.resolved_time.as_ref()
     }
     /// <p>What caused Incident Manager to create the incident.</p>
-    pub fn incident_record_source(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IncidentRecordSource> {
+    pub fn incident_record_source(&self) -> ::std::option::Option<&crate::types::IncidentRecordSource> {
         self.incident_record_source.as_ref()
     }
 }
@@ -67,9 +65,7 @@ impl IncidentRecordSummary {
 
 /// A builder for [`IncidentRecordSummary`](crate::types::IncidentRecordSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IncidentRecordSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
@@ -114,10 +110,7 @@ impl IncidentRecordSummaryBuilder {
         self
     }
     /// <p>The current status of the incident.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IncidentRecordStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::IncidentRecordStatus>) -> Self {
         self.status = input;
         self
     }
@@ -145,10 +138,7 @@ impl IncidentRecordSummaryBuilder {
         self
     }
     /// <p>The time the incident was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -162,10 +152,7 @@ impl IncidentRecordSummaryBuilder {
         self
     }
     /// <p>The time the incident was resolved.</p>
-    pub fn set_resolved_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_resolved_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.resolved_time = input;
         self
     }
@@ -179,17 +166,12 @@ impl IncidentRecordSummaryBuilder {
         self
     }
     /// <p>What caused Incident Manager to create the incident.</p>
-    pub fn set_incident_record_source(
-        mut self,
-        input: ::std::option::Option<crate::types::IncidentRecordSource>,
-    ) -> Self {
+    pub fn set_incident_record_source(mut self, input: ::std::option::Option<crate::types::IncidentRecordSource>) -> Self {
         self.incident_record_source = input;
         self
     }
     /// <p>What caused Incident Manager to create the incident.</p>
-    pub fn get_incident_record_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::IncidentRecordSource> {
+    pub fn get_incident_record_source(&self) -> &::std::option::Option<crate::types::IncidentRecordSource> {
         &self.incident_record_source
     }
     /// Consumes the builder and constructs a [`IncidentRecordSummary`](crate::types::IncidentRecordSummary).

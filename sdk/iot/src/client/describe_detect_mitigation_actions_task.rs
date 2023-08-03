@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`DescribeDetectMitigationActionsTaskOutput`](crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskOutput) with field(s):
     ///   - [`task_summary(Option<DetectMitigationActionsTaskSummary>)`](crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskOutput::task_summary): <p> The description of a task. </p>
     /// - On failure, responds with [`SdkError<DescribeDetectMitigationActionsTaskError>`](crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskError)
-    pub fn describe_detect_mitigation_actions_task(&self) -> crate::operation::describe_detect_mitigation_actions_task::builders::DescribeDetectMitigationActionsTaskFluentBuilder{
-        crate::operation::describe_detect_mitigation_actions_task::builders::DescribeDetectMitigationActionsTaskFluentBuilder::new(self.handle.clone())
+    pub fn describe_detect_mitigation_actions_task(
+        &self,
+    ) -> crate::operation::describe_detect_mitigation_actions_task::builders::DescribeDetectMitigationActionsTaskFluentBuilder {
+        crate::operation::describe_detect_mitigation_actions_task::builders::DescribeDetectMitigationActionsTaskFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

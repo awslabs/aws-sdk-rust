@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`password(impl ::std::convert::Into<String>)`](crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationFluentBuilder::password) / [`set_password(Option<String>)`](crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationFluentBuilder::set_password): <p>The password for the hypervisor.</p>
     /// - On success, responds with [`TestHypervisorConfigurationOutput`](crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationOutput)
     /// - On failure, responds with [`SdkError<TestHypervisorConfigurationError>`](crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationError)
-    pub fn test_hypervisor_configuration(&self) -> crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationFluentBuilder{
+    pub fn test_hypervisor_configuration(
+        &self,
+    ) -> crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationFluentBuilder {
         crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

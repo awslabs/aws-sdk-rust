@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`domain_configuration_name(impl ::std::convert::Into<String>)`](crate::operation::delete_domain_configuration::builders::DeleteDomainConfigurationFluentBuilder::domain_configuration_name) / [`set_domain_configuration_name(Option<String>)`](crate::operation::delete_domain_configuration::builders::DeleteDomainConfigurationFluentBuilder::set_domain_configuration_name): <p>The name of the domain configuration to be deleted.</p>
     /// - On success, responds with [`DeleteDomainConfigurationOutput`](crate::operation::delete_domain_configuration::DeleteDomainConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteDomainConfigurationError>`](crate::operation::delete_domain_configuration::DeleteDomainConfigurationError)
-    pub fn delete_domain_configuration(&self) -> crate::operation::delete_domain_configuration::builders::DeleteDomainConfigurationFluentBuilder{
+    pub fn delete_domain_configuration(&self) -> crate::operation::delete_domain_configuration::builders::DeleteDomainConfigurationFluentBuilder {
         crate::operation::delete_domain_configuration::builders::DeleteDomainConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

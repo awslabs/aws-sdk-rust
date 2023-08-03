@@ -30,9 +30,7 @@ impl ComparedSourceImageFace {
 
 /// A builder for [`ComparedSourceImageFace`](crate::types::ComparedSourceImageFace).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComparedSourceImageFaceBuilder {
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     pub(crate) confidence: ::std::option::Option<f32>,
@@ -44,10 +42,7 @@ impl ComparedSourceImageFaceBuilder {
         self
     }
     /// <p>Bounding box of the face.</p>
-    pub fn set_bounding_box(
-        mut self,
-        input: ::std::option::Option<crate::types::BoundingBox>,
-    ) -> Self {
+    pub fn set_bounding_box(mut self, input: ::std::option::Option<crate::types::BoundingBox>) -> Self {
         self.bounding_box = input;
         self
     }

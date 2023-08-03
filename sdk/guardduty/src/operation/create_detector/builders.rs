@@ -10,10 +10,7 @@ impl CreateDetectorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_detector::CreateDetectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_detector::CreateDetectorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_detector::CreateDetectorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_detector();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateDetectorFluentBuilder {
         }
     }
     /// Access the CreateDetector as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_detector::builders::CreateDetectorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_detector::builders::CreateDetectorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl CreateDetectorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -144,25 +136,17 @@ impl CreateDetectorFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>A value that specifies how frequently updated findings are exported.</p>
-    pub fn finding_publishing_frequency(
-        mut self,
-        input: crate::types::FindingPublishingFrequency,
-    ) -> Self {
+    pub fn finding_publishing_frequency(mut self, input: crate::types::FindingPublishingFrequency) -> Self {
         self.inner = self.inner.finding_publishing_frequency(input);
         self
     }
     /// <p>A value that specifies how frequently updated findings are exported.</p>
-    pub fn set_finding_publishing_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingPublishingFrequency>,
-    ) -> Self {
+    pub fn set_finding_publishing_frequency(mut self, input: ::std::option::Option<crate::types::FindingPublishingFrequency>) -> Self {
         self.inner = self.inner.set_finding_publishing_frequency(input);
         self
     }
     /// <p>A value that specifies how frequently updated findings are exported.</p>
-    pub fn get_finding_publishing_frequency(
-        &self,
-    ) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
+    pub fn get_finding_publishing_frequency(&self) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
         self.inner.get_finding_publishing_frequency()
     }
     /// <p>Describes which data sources will be enabled for the detector.</p>
@@ -175,19 +159,14 @@ impl CreateDetectorFluentBuilder {
     /// <p>Describes which data sources will be enabled for the detector.</p>
     /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn set_data_sources(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceConfigurations>,
-    ) -> Self {
+    pub fn set_data_sources(mut self, input: ::std::option::Option<crate::types::DataSourceConfigurations>) -> Self {
         self.inner = self.inner.set_data_sources(input);
         self
     }
     /// <p>Describes which data sources will be enabled for the detector.</p>
     /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn get_data_sources(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceConfigurations> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<crate::types::DataSourceConfigurations> {
         self.inner.get_data_sources()
     }
     /// Adds a key-value pair to `Tags`.
@@ -195,30 +174,17 @@ impl CreateDetectorFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to be added to a new detector resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to be added to a new detector resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to be added to a new detector resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// Appends an item to `Features`.
@@ -231,17 +197,12 @@ impl CreateDetectorFluentBuilder {
         self
     }
     /// <p>A list of features that will be configured for the detector.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>>,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>>) -> Self {
         self.inner = self.inner.set_features(input);
         self
     }
     /// <p>A list of features that will be configured for the detector.</p>
-    pub fn get_features(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>> {
         self.inner.get_features()
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DisableTrustAnchorOutput`](crate::operation::disable_trust_anchor::DisableTrustAnchorOutput) with field(s):
     ///   - [`trust_anchor(Option<TrustAnchorDetail>)`](crate::operation::disable_trust_anchor::DisableTrustAnchorOutput::trust_anchor): <p>The state of the trust anchor after a read or write operation. </p>
     /// - On failure, responds with [`SdkError<DisableTrustAnchorError>`](crate::operation::disable_trust_anchor::DisableTrustAnchorError)
-    pub fn disable_trust_anchor(
-        &self,
-    ) -> crate::operation::disable_trust_anchor::builders::DisableTrustAnchorFluentBuilder {
-        crate::operation::disable_trust_anchor::builders::DisableTrustAnchorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disable_trust_anchor(&self) -> crate::operation::disable_trust_anchor::builders::DisableTrustAnchorFluentBuilder {
+        crate::operation::disable_trust_anchor::builders::DisableTrustAnchorFluentBuilder::new(self.handle.clone())
     }
 }

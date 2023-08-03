@@ -15,17 +15,14 @@ impl DescribeStatementInput {
 }
 impl DescribeStatementInput {
     /// Creates a new builder-style object to manufacture [`DescribeStatementInput`](crate::operation::describe_statement::DescribeStatementInput).
-    pub fn builder() -> crate::operation::describe_statement::builders::DescribeStatementInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_statement::builders::DescribeStatementInputBuilder {
         crate::operation::describe_statement::builders::DescribeStatementInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStatementInput`](crate::operation::describe_statement::DescribeStatementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStatementInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl DescribeStatementInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStatementInput`](crate::operation::describe_statement::DescribeStatementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_statement::DescribeStatementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_statement::DescribeStatementInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_statement::DescribeStatementInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_statement::DescribeStatementInput { id: self.id })
     }
 }

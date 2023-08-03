@@ -5,18 +5,14 @@
 pub struct DescribeOperatingSystemsInput {}
 impl DescribeOperatingSystemsInput {
     /// Creates a new builder-style object to manufacture [`DescribeOperatingSystemsInput`](crate::operation::describe_operating_systems::DescribeOperatingSystemsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_operating_systems::builders::DescribeOperatingSystemsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_operating_systems::builders::DescribeOperatingSystemsInputBuilder {
         crate::operation::describe_operating_systems::builders::DescribeOperatingSystemsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOperatingSystemsInput`](crate::operation::describe_operating_systems::DescribeOperatingSystemsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOperatingSystemsInputBuilder {}
 impl DescribeOperatingSystemsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOperatingSystemsInput`](crate::operation::describe_operating_systems::DescribeOperatingSystemsInput).
@@ -26,8 +22,6 @@ impl DescribeOperatingSystemsInputBuilder {
         crate::operation::describe_operating_systems::DescribeOperatingSystemsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_operating_systems::DescribeOperatingSystemsInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::describe_operating_systems::DescribeOperatingSystemsInput {})
     }
 }

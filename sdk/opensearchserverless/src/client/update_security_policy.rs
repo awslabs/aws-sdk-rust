@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSecurityPolicyOutput`](crate::operation::update_security_policy::UpdateSecurityPolicyOutput) with field(s):
     ///   - [`security_policy_detail(Option<SecurityPolicyDetail>)`](crate::operation::update_security_policy::UpdateSecurityPolicyOutput::security_policy_detail): <p>Details about the updated security policy.</p>
     /// - On failure, responds with [`SdkError<UpdateSecurityPolicyError>`](crate::operation::update_security_policy::UpdateSecurityPolicyError)
-    pub fn update_security_policy(
-        &self,
-    ) -> crate::operation::update_security_policy::builders::UpdateSecurityPolicyFluentBuilder {
-        crate::operation::update_security_policy::builders::UpdateSecurityPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_security_policy(&self) -> crate::operation::update_security_policy::builders::UpdateSecurityPolicyFluentBuilder {
+        crate::operation::update_security_policy::builders::UpdateSecurityPolicyFluentBuilder::new(self.handle.clone())
     }
 }

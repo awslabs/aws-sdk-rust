@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ChangeResourceRecordSetsOutput`](crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput) with field(s):
     ///   - [`change_info(Option<ChangeInfo>)`](crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput::change_info): <p>A complex type that contains information about changes made to your hosted zone.</p>  <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
     /// - On failure, responds with [`SdkError<ChangeResourceRecordSetsError>`](crate::operation::change_resource_record_sets::ChangeResourceRecordSetsError)
-    pub fn change_resource_record_sets(&self) -> crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsFluentBuilder{
+    pub fn change_resource_record_sets(&self) -> crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsFluentBuilder {
         crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl UpdateDistributionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_distribution::UpdateDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_distribution::UpdateDistributionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_distribution::UpdateDistributionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_distribution();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateDistributionFluentBuilder {
         }
     }
     /// Access the UpdateDistribution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_distribution::builders::UpdateDistributionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_distribution::builders::UpdateDistributionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdateDistributionFluentBuilder {
             crate::operation::update_distribution::UpdateDistribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_distribution::UpdateDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_distribution::UpdateDistributionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdateDistributionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdateDistributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_distribution::UpdateDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_distribution::UpdateDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_distribution::UpdateDistributionError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdateDistributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_distribution::UpdateDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_distribution::UpdateDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_distribution::UpdateDistributionError>,
     > {
         self.send_middleware().await
     }
@@ -117,27 +103,19 @@ impl UpdateDistributionFluentBuilder {
             crate::operation::update_distribution::UpdateDistribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_distribution::UpdateDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_distribution::UpdateDistributionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the distribution to update.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn distribution_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distribution_name(input.into());
         self
     }
     /// <p>The name of the distribution to update.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn set_distribution_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distribution_name(input);
         self
     }
@@ -169,17 +147,12 @@ impl UpdateDistributionFluentBuilder {
         self
     }
     /// <p>An object that describes the default cache behavior for the distribution.</p>
-    pub fn set_default_cache_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheBehavior>,
-    ) -> Self {
+    pub fn set_default_cache_behavior(mut self, input: ::std::option::Option<crate::types::CacheBehavior>) -> Self {
         self.inner = self.inner.set_default_cache_behavior(input);
         self
     }
     /// <p>An object that describes the default cache behavior for the distribution.</p>
-    pub fn get_default_cache_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::CacheBehavior> {
+    pub fn get_default_cache_behavior(&self) -> &::std::option::Option<crate::types::CacheBehavior> {
         self.inner.get_default_cache_behavior()
     }
     /// <p>An object that describes the cache behavior settings for the distribution.</p> <note>
@@ -192,19 +165,14 @@ impl UpdateDistributionFluentBuilder {
     /// <p>An object that describes the cache behavior settings for the distribution.</p> <note>
     /// <p>The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code> will replace your distribution's existing settings.</p>
     /// </note>
-    pub fn set_cache_behavior_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheSettings>,
-    ) -> Self {
+    pub fn set_cache_behavior_settings(mut self, input: ::std::option::Option<crate::types::CacheSettings>) -> Self {
         self.inner = self.inner.set_cache_behavior_settings(input);
         self
     }
     /// <p>An object that describes the cache behavior settings for the distribution.</p> <note>
     /// <p>The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code> will replace your distribution's existing settings.</p>
     /// </note>
-    pub fn get_cache_behavior_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::CacheSettings> {
+    pub fn get_cache_behavior_settings(&self) -> &::std::option::Option<crate::types::CacheSettings> {
         self.inner.get_cache_behavior_settings()
     }
     /// Appends an item to `cacheBehaviors`.
@@ -217,17 +185,12 @@ impl UpdateDistributionFluentBuilder {
         self
     }
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    pub fn set_cache_behaviors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
-    ) -> Self {
+    pub fn set_cache_behaviors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>) -> Self {
         self.inner = self.inner.set_cache_behaviors(input);
         self
     }
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    pub fn get_cache_behaviors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>> {
+    pub fn get_cache_behaviors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>> {
         self.inner.get_cache_behaviors()
     }
     /// <p>Indicates whether to enable the distribution.</p>

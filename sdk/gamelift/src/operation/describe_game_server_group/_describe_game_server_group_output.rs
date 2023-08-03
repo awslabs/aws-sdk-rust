@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeGameServerGroupOutput {
 }
 impl DescribeGameServerGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGameServerGroupOutput`](crate::operation::describe_game_server_group::DescribeGameServerGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_game_server_group::builders::DescribeGameServerGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_game_server_group::builders::DescribeGameServerGroupOutputBuilder {
         crate::operation::describe_game_server_group::builders::DescribeGameServerGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGameServerGroupOutput`](crate::operation::describe_game_server_group::DescribeGameServerGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGameServerGroupOutputBuilder {
     pub(crate) game_server_group: ::std::option::Option<crate::types::GameServerGroup>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DescribeGameServerGroupOutputBuilder {
         self
     }
     /// <p>An object with the property settings for the requested game server group resource. </p>
-    pub fn set_game_server_group(
-        mut self,
-        input: ::std::option::Option<crate::types::GameServerGroup>,
-    ) -> Self {
+    pub fn set_game_server_group(mut self, input: ::std::option::Option<crate::types::GameServerGroup>) -> Self {
         self.game_server_group = input;
         self
     }
@@ -65,9 +58,7 @@ impl DescribeGameServerGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeGameServerGroupOutput`](crate::operation::describe_game_server_group::DescribeGameServerGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_game_server_group::DescribeGameServerGroupOutput {
+    pub fn build(self) -> crate::operation::describe_game_server_group::DescribeGameServerGroupOutput {
         crate::operation::describe_game_server_group::DescribeGameServerGroupOutput {
             game_server_group: self.game_server_group,
             _request_id: self._request_id,

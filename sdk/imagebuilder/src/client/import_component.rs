@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`client_token(Option<String>)`](crate::operation::import_component::ImportComponentOutput::client_token): <p>The idempotency token used to make this request idempotent.</p>
     ///   - [`component_build_version_arn(Option<String>)`](crate::operation::import_component::ImportComponentOutput::component_build_version_arn): <p>The Amazon Resource Name (ARN) of the imported component.</p>
     /// - On failure, responds with [`SdkError<ImportComponentError>`](crate::operation::import_component::ImportComponentError)
-    pub fn import_component(
-        &self,
-    ) -> crate::operation::import_component::builders::ImportComponentFluentBuilder {
-        crate::operation::import_component::builders::ImportComponentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_component(&self) -> crate::operation::import_component::builders::ImportComponentFluentBuilder {
+        crate::operation::import_component::builders::ImportComponentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,9 +10,7 @@ pub struct RegisterIdentityProviderOutput {
 }
 impl RegisterIdentityProviderOutput {
     /// <p>Metadata that describes the results of an identity provider operation.</p>
-    pub fn identity_provider_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IdentityProviderSummary> {
+    pub fn identity_provider_summary(&self) -> ::std::option::Option<&crate::types::IdentityProviderSummary> {
         self.identity_provider_summary.as_ref()
     }
 }
@@ -23,44 +21,31 @@ impl ::aws_http::request_id::RequestId for RegisterIdentityProviderOutput {
 }
 impl RegisterIdentityProviderOutput {
     /// Creates a new builder-style object to manufacture [`RegisterIdentityProviderOutput`](crate::operation::register_identity_provider::RegisterIdentityProviderOutput).
-    pub fn builder(
-    ) -> crate::operation::register_identity_provider::builders::RegisterIdentityProviderOutputBuilder
-    {
+    pub fn builder() -> crate::operation::register_identity_provider::builders::RegisterIdentityProviderOutputBuilder {
         crate::operation::register_identity_provider::builders::RegisterIdentityProviderOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterIdentityProviderOutput`](crate::operation::register_identity_provider::RegisterIdentityProviderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterIdentityProviderOutputBuilder {
-    pub(crate) identity_provider_summary:
-        ::std::option::Option<crate::types::IdentityProviderSummary>,
+    pub(crate) identity_provider_summary: ::std::option::Option<crate::types::IdentityProviderSummary>,
     _request_id: Option<String>,
 }
 impl RegisterIdentityProviderOutputBuilder {
     /// <p>Metadata that describes the results of an identity provider operation.</p>
-    pub fn identity_provider_summary(
-        mut self,
-        input: crate::types::IdentityProviderSummary,
-    ) -> Self {
+    pub fn identity_provider_summary(mut self, input: crate::types::IdentityProviderSummary) -> Self {
         self.identity_provider_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Metadata that describes the results of an identity provider operation.</p>
-    pub fn set_identity_provider_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderSummary>,
-    ) -> Self {
+    pub fn set_identity_provider_summary(mut self, input: ::std::option::Option<crate::types::IdentityProviderSummary>) -> Self {
         self.identity_provider_summary = input;
         self
     }
     /// <p>Metadata that describes the results of an identity provider operation.</p>
-    pub fn get_identity_provider_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::IdentityProviderSummary> {
+    pub fn get_identity_provider_summary(&self) -> &::std::option::Option<crate::types::IdentityProviderSummary> {
         &self.identity_provider_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -73,9 +58,7 @@ impl RegisterIdentityProviderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RegisterIdentityProviderOutput`](crate::operation::register_identity_provider::RegisterIdentityProviderOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::register_identity_provider::RegisterIdentityProviderOutput {
+    pub fn build(self) -> crate::operation::register_identity_provider::RegisterIdentityProviderOutput {
         crate::operation::register_identity_provider::RegisterIdentityProviderOutput {
             identity_provider_summary: self.identity_provider_summary,
             _request_id: self._request_id,

@@ -30,22 +30,18 @@ impl UpdateAuthorizerInput {
 }
 impl UpdateAuthorizerInput {
     /// Creates a new builder-style object to manufacture [`UpdateAuthorizerInput`](crate::operation::update_authorizer::UpdateAuthorizerInput).
-    pub fn builder() -> crate::operation::update_authorizer::builders::UpdateAuthorizerInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_authorizer::builders::UpdateAuthorizerInputBuilder {
         crate::operation::update_authorizer::builders::UpdateAuthorizerInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAuthorizerInput`](crate::operation::update_authorizer::UpdateAuthorizerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAuthorizerInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) authorizer_id: ::std::option::Option<::std::string::String>,
-    pub(crate) patch_operations:
-        ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
+    pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
 }
 impl UpdateAuthorizerInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -63,18 +59,12 @@ impl UpdateAuthorizerInputBuilder {
         &self.rest_api_id
     }
     /// <p>The identifier of the Authorizer resource.</p>
-    pub fn authorizer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Authorizer resource.</p>
-    pub fn set_authorizer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorizer_id = input;
         self
     }
@@ -94,26 +84,18 @@ impl UpdateAuthorizerInputBuilder {
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
-    ) -> Self {
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
         self.patch_operations = input;
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn get_patch_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
         &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateAuthorizerInput`](crate::operation::update_authorizer::UpdateAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_authorizer::UpdateAuthorizerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_authorizer::UpdateAuthorizerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_authorizer::UpdateAuthorizerInput {
             rest_api_id: self.rest_api_id,
             authorizer_id: self.authorizer_id,

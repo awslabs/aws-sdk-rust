@@ -12,7 +12,9 @@ impl super::Client {
     /// - On success, responds with [`GetApplicationDateRangeKpiOutput`](crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiOutput) with field(s):
     ///   - [`application_date_range_kpi_response(Option<ApplicationDateRangeKpiResponse>)`](crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiOutput::application_date_range_kpi_response): <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
     /// - On failure, responds with [`SdkError<GetApplicationDateRangeKpiError>`](crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiError)
-    pub fn get_application_date_range_kpi(&self) -> crate::operation::get_application_date_range_kpi::builders::GetApplicationDateRangeKpiFluentBuilder{
+    pub fn get_application_date_range_kpi(
+        &self,
+    ) -> crate::operation::get_application_date_range_kpi::builders::GetApplicationDateRangeKpiFluentBuilder {
         crate::operation::get_application_date_range_kpi::builders::GetApplicationDateRangeKpiFluentBuilder::new(self.handle.clone())
     }
 }

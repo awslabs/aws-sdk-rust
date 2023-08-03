@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`RetrieveDomainAuthCodeOutput`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput) with field(s):
     ///   - [`auth_code(Option<String>)`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput::auth_code): <p>The authorization code for the domain.</p>
     /// - On failure, responds with [`SdkError<RetrieveDomainAuthCodeError>`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeError)
-    pub fn retrieve_domain_auth_code(
-        &self,
-    ) -> crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeFluentBuilder
-    {
+    pub fn retrieve_domain_auth_code(&self) -> crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeFluentBuilder {
         crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeFluentBuilder::new(self.handle.clone())
     }
 }

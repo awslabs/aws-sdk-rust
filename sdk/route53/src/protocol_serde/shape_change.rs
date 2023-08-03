@@ -11,10 +11,7 @@ pub fn ser_change(
     }
     if let Some(var_2) = &input.resource_record_set {
         let inner_writer = scope.start_el("ResourceRecordSet");
-        crate::protocol_serde::shape_resource_record_set::ser_resource_record_set(
-            var_2,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_resource_record_set::ser_resource_record_set(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())

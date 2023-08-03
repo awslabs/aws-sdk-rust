@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::get_image_recipe::GetImageRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`image_recipe(Option<ImageRecipe>)`](crate::operation::get_image_recipe::GetImageRecipeOutput::image_recipe): <p>The image recipe object.</p>
     /// - On failure, responds with [`SdkError<GetImageRecipeError>`](crate::operation::get_image_recipe::GetImageRecipeError)
-    pub fn get_image_recipe(
-        &self,
-    ) -> crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder {
-        crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_image_recipe(&self) -> crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder {
+        crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder::new(self.handle.clone())
     }
 }

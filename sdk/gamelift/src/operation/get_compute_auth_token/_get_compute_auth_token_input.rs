@@ -22,18 +22,14 @@ impl GetComputeAuthTokenInput {
 }
 impl GetComputeAuthTokenInput {
     /// Creates a new builder-style object to manufacture [`GetComputeAuthTokenInput`](crate::operation::get_compute_auth_token::GetComputeAuthTokenInput).
-    pub fn builder(
-    ) -> crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenInputBuilder {
-        crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenInputBuilder {
+        crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenInputBuilder::default()
     }
 }
 
 /// A builder for [`GetComputeAuthTokenInput`](crate::operation::get_compute_auth_token::GetComputeAuthTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComputeAuthTokenInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) compute_name: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl GetComputeAuthTokenInputBuilder {
     /// Consumes the builder and constructs a [`GetComputeAuthTokenInput`](crate::operation::get_compute_auth_token::GetComputeAuthTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_compute_auth_token::GetComputeAuthTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_compute_auth_token::GetComputeAuthTokenInput {
-                fleet_id: self.fleet_id,
-                compute_name: self.compute_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_compute_auth_token::GetComputeAuthTokenInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_compute_auth_token::GetComputeAuthTokenInput {
+            fleet_id: self.fleet_id,
+            compute_name: self.compute_name,
+        })
     }
 }

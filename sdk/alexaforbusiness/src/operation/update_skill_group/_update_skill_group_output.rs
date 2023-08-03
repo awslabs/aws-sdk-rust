@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateSkillGroupOutput {
 }
 impl UpdateSkillGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSkillGroupOutput`](crate::operation::update_skill_group::UpdateSkillGroupOutput).
-    pub fn builder() -> crate::operation::update_skill_group::builders::UpdateSkillGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_skill_group::builders::UpdateSkillGroupOutputBuilder {
         crate::operation::update_skill_group::builders::UpdateSkillGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSkillGroupOutput`](crate::operation::update_skill_group::UpdateSkillGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSkillGroupOutputBuilder {
     _request_id: Option<String>,
 }

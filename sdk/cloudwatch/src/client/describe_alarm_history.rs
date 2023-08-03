@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`alarm_history_items(Option<Vec<AlarmHistoryItem>>)`](crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput::alarm_history_items): <p>The alarm histories, in JSON format.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput::next_token): <p>The token that marks the start of the next batch of returned results.</p>
     /// - On failure, responds with [`SdkError<DescribeAlarmHistoryError>`](crate::operation::describe_alarm_history::DescribeAlarmHistoryError)
-    pub fn describe_alarm_history(
-        &self,
-    ) -> crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder {
-        crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_alarm_history(&self) -> crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder {
+        crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder::new(self.handle.clone())
     }
 }

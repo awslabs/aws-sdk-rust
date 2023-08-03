@@ -22,12 +22,9 @@ impl CreateMembersInput {
 
 /// A builder for [`CreateMembersInput`](crate::operation::create_members::CreateMembersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMembersInputBuilder {
-    pub(crate) account_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountDetails>>,
+    pub(crate) account_details: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetails>>,
 }
 impl CreateMembersInputBuilder {
     /// Appends an item to `account_details`.
@@ -42,26 +39,18 @@ impl CreateMembersInputBuilder {
         self
     }
     /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
-    pub fn set_account_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetails>>,
-    ) -> Self {
+    pub fn set_account_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetails>>) -> Self {
         self.account_details = input;
         self
     }
     /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
-    pub fn get_account_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountDetails>> {
+    pub fn get_account_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountDetails>> {
         &self.account_details
     }
     /// Consumes the builder and constructs a [`CreateMembersInput`](crate::operation::create_members::CreateMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_members::CreateMembersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_members::CreateMembersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_members::CreateMembersInput {
             account_details: self.account_details,
         })

@@ -37,9 +37,7 @@ impl JobScheduleFrequency {
 
 /// A builder for [`JobScheduleFrequency`](crate::types::JobScheduleFrequency).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobScheduleFrequencyBuilder {
     pub(crate) daily_schedule: ::std::option::Option<crate::types::DailySchedule>,
     pub(crate) monthly_schedule: ::std::option::Option<crate::types::MonthlySchedule>,
@@ -52,10 +50,7 @@ impl JobScheduleFrequencyBuilder {
         self
     }
     /// <p>Specifies a daily recurrence pattern for running the job.</p>
-    pub fn set_daily_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::DailySchedule>,
-    ) -> Self {
+    pub fn set_daily_schedule(mut self, input: ::std::option::Option<crate::types::DailySchedule>) -> Self {
         self.daily_schedule = input;
         self
     }
@@ -69,10 +64,7 @@ impl JobScheduleFrequencyBuilder {
         self
     }
     /// <p>Specifies a monthly recurrence pattern for running the job.</p>
-    pub fn set_monthly_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::MonthlySchedule>,
-    ) -> Self {
+    pub fn set_monthly_schedule(mut self, input: ::std::option::Option<crate::types::MonthlySchedule>) -> Self {
         self.monthly_schedule = input;
         self
     }
@@ -86,10 +78,7 @@ impl JobScheduleFrequencyBuilder {
         self
     }
     /// <p>Specifies a weekly recurrence pattern for running the job.</p>
-    pub fn set_weekly_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::WeeklySchedule>,
-    ) -> Self {
+    pub fn set_weekly_schedule(mut self, input: ::std::option::Option<crate::types::WeeklySchedule>) -> Self {
         self.weekly_schedule = input;
         self
     }

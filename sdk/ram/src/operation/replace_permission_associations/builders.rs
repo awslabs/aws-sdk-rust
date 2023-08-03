@@ -30,7 +30,7 @@ impl ReplacePermissionAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReplacePermissionAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::replace_permission_associations::builders::ReplacePermissionAssociationsInputBuilder,
+    inner: crate::operation::replace_permission_associations::builders::ReplacePermissionAssociationsInputBuilder,
 }
 impl ReplacePermissionAssociationsFluentBuilder {
     /// Creates a new `ReplacePermissionAssociations`.
@@ -41,7 +41,7 @@ impl ReplacePermissionAssociationsFluentBuilder {
         }
     }
     /// Access the ReplacePermissionAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::replace_permission_associations::builders::ReplacePermissionAssociationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::replace_permission_associations::builders::ReplacePermissionAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl ReplacePermissionAssociationsFluentBuilder {
             crate::operation::replace_permission_associations::ReplacePermissionAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replace_permission_associations::ReplacePermissionAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_permission_associations::ReplacePermissionAssociationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl ReplacePermissionAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl ReplacePermissionAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replace_permission_associations::ReplacePermissionAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replace_permission_associations::ReplacePermissionAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_permission_associations::ReplacePermissionAssociationsError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl ReplacePermissionAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replace_permission_associations::ReplacePermissionAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replace_permission_associations::ReplacePermissionAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_permission_associations::ReplacePermissionAssociationsError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +109,17 @@ impl ReplacePermissionAssociationsFluentBuilder {
             crate::operation::replace_permission_associations::ReplacePermissionAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::replace_permission_associations::ReplacePermissionAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::replace_permission_associations::ReplacePermissionAssociationsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission that you want to replace.</p>
-    pub fn from_permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.from_permission_arn(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission that you want to replace.</p>
-    pub fn set_from_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_from_permission_arn(input);
         self
     }
@@ -160,19 +143,13 @@ impl ReplacePermissionAssociationsFluentBuilder {
     }
     /// <p>Specifies the ARN of the managed permission that you want to associate with resource shares in place of the one specified by <code>fromPerssionArn</code> and <code>fromPermissionVersion</code>.</p>
     /// <p>The operation always associates the version that is currently the default for the specified managed permission.</p>
-    pub fn to_permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn to_permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.to_permission_arn(input.into());
         self
     }
     /// <p>Specifies the ARN of the managed permission that you want to associate with resource shares in place of the one specified by <code>fromPerssionArn</code> and <code>fromPermissionVersion</code>.</p>
     /// <p>The operation always associates the version that is currently the default for the specified managed permission.</p>
-    pub fn set_to_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_to_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_to_permission_arn(input);
         self
     }

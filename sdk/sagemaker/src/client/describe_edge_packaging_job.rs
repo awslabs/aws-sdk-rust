@@ -21,7 +21,7 @@ impl super::Client {
     ///   - [`model_signature(Option<String>)`](crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobOutput::model_signature): <p>The signature document of files in the model artifact.</p>
     ///   - [`preset_deployment_output(Option<EdgePresetDeploymentOutput>)`](crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobOutput::preset_deployment_output): <p>The output of a SageMaker Edge Manager deployable resource.</p>
     /// - On failure, responds with [`SdkError<DescribeEdgePackagingJobError>`](crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobError)
-    pub fn describe_edge_packaging_job(&self) -> crate::operation::describe_edge_packaging_job::builders::DescribeEdgePackagingJobFluentBuilder{
+    pub fn describe_edge_packaging_job(&self) -> crate::operation::describe_edge_packaging_job::builders::DescribeEdgePackagingJobFluentBuilder {
         crate::operation::describe_edge_packaging_job::builders::DescribeEdgePackagingJobFluentBuilder::new(self.handle.clone())
     }
 }

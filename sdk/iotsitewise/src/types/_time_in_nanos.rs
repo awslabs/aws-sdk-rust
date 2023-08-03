@@ -30,9 +30,7 @@ impl TimeInNanos {
 
 /// A builder for [`TimeInNanos`](crate::types::TimeInNanos).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeInNanosBuilder {
     pub(crate) time_in_seconds: ::std::option::Option<i64>,
     pub(crate) offset_in_nanos: ::std::option::Option<i32>,

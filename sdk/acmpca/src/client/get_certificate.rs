@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`certificate(Option<String>)`](crate::operation::get_certificate::GetCertificateOutput::certificate): <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>
     ///   - [`certificate_chain(Option<String>)`](crate::operation::get_certificate::GetCertificateOutput::certificate_chain): <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
     /// - On failure, responds with [`SdkError<GetCertificateError>`](crate::operation::get_certificate::GetCertificateError)
-    pub fn get_certificate(
-        &self,
-    ) -> crate::operation::get_certificate::builders::GetCertificateFluentBuilder {
-        crate::operation::get_certificate::builders::GetCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_certificate(&self) -> crate::operation::get_certificate::builders::GetCertificateFluentBuilder {
+        crate::operation::get_certificate::builders::GetCertificateFluentBuilder::new(self.handle.clone())
     }
 }

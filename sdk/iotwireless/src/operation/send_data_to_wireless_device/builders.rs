@@ -26,7 +26,7 @@ impl SendDataToWirelessDeviceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendDataToWirelessDeviceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceInputBuilder,
+    inner: crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceInputBuilder,
 }
 impl SendDataToWirelessDeviceFluentBuilder {
     /// Creates a new `SendDataToWirelessDevice`.
@@ -37,7 +37,7 @@ impl SendDataToWirelessDeviceFluentBuilder {
         }
     }
     /// Access the SendDataToWirelessDevice as a reference.
-    pub fn as_input(&self) -> &crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl SendDataToWirelessDeviceFluentBuilder {
             crate::operation::send_data_to_wireless_device::SendDataToWirelessDevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl SendDataToWirelessDeviceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl SendDataToWirelessDeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl SendDataToWirelessDeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl SendDataToWirelessDeviceFluentBuilder {
             crate::operation::send_data_to_wireless_device::SendDataToWirelessDevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceError>,
     > {
         self.customize_middleware().await
     }
@@ -168,10 +157,7 @@ impl SendDataToWirelessDeviceFluentBuilder {
         self
     }
     /// <p>Metadata about the message request.</p>
-    pub fn set_wireless_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessMetadata>,
-    ) -> Self {
+    pub fn set_wireless_metadata(mut self, input: ::std::option::Option<crate::types::WirelessMetadata>) -> Self {
         self.inner = self.inner.set_wireless_metadata(input);
         self
     }

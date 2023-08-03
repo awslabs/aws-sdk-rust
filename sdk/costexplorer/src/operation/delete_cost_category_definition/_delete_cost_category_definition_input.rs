@@ -15,33 +15,25 @@ impl DeleteCostCategoryDefinitionInput {
 }
 impl DeleteCostCategoryDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteCostCategoryDefinitionInput`](crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionInput).
-    pub fn builder() -> crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionInputBuilder {
         crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCostCategoryDefinitionInput`](crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCostCategoryDefinitionInputBuilder {
     pub(crate) cost_category_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCostCategoryDefinitionInputBuilder {
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn cost_category_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cost_category_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn set_cost_category_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cost_category_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cost_category_arn = input;
         self
     }
@@ -56,10 +48,8 @@ impl DeleteCostCategoryDefinitionInputBuilder {
         crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionInput {
-                cost_category_arn: self.cost_category_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionInput {
+            cost_category_arn: self.cost_category_arn,
+        })
     }
 }

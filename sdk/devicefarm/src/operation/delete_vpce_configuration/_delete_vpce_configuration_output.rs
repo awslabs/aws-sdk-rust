@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVpceConfigurationOutput {
 }
 impl DeleteVpceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpceConfigurationOutput`](crate::operation::delete_vpce_configuration::DeleteVpceConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_vpce_configuration::builders::DeleteVpceConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_vpce_configuration::builders::DeleteVpceConfigurationOutputBuilder {
         crate::operation::delete_vpce_configuration::builders::DeleteVpceConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpceConfigurationOutput`](crate::operation::delete_vpce_configuration::DeleteVpceConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpceConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteVpceConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVpceConfigurationOutput`](crate::operation::delete_vpce_configuration::DeleteVpceConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_vpce_configuration::DeleteVpceConfigurationOutput {
+    pub fn build(self) -> crate::operation::delete_vpce_configuration::DeleteVpceConfigurationOutput {
         crate::operation::delete_vpce_configuration::DeleteVpceConfigurationOutput {
             _request_id: self._request_id,
         }

@@ -31,17 +31,14 @@ impl ListModelManifestsInput {
 }
 impl ListModelManifestsInput {
     /// Creates a new builder-style object to manufacture [`ListModelManifestsInput`](crate::operation::list_model_manifests::ListModelManifestsInput).
-    pub fn builder(
-    ) -> crate::operation::list_model_manifests::builders::ListModelManifestsInputBuilder {
+    pub fn builder() -> crate::operation::list_model_manifests::builders::ListModelManifestsInputBuilder {
         crate::operation::list_model_manifests::builders::ListModelManifestsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListModelManifestsInput`](crate::operation::list_model_manifests::ListModelManifestsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelManifestsInputBuilder {
     pub(crate) signal_catalog_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -49,18 +46,12 @@ pub struct ListModelManifestsInputBuilder {
 }
 impl ListModelManifestsInputBuilder {
     /// <p> The ARN of a signal catalog. If you specify a signal catalog, only the vehicle models associated with it are returned.</p>
-    pub fn signal_catalog_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signal_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signal_catalog_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ARN of a signal catalog. If you specify a signal catalog, only the vehicle models associated with it are returned.</p>
-    pub fn set_signal_catalog_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signal_catalog_arn = input;
         self
     }
@@ -102,16 +93,11 @@ impl ListModelManifestsInputBuilder {
     /// Consumes the builder and constructs a [`ListModelManifestsInput`](crate::operation::list_model_manifests::ListModelManifestsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_model_manifests::ListModelManifestsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_model_manifests::ListModelManifestsInput {
-                signal_catalog_arn: self.signal_catalog_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_model_manifests::ListModelManifestsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_model_manifests::ListModelManifestsInput {
+            signal_catalog_arn: self.signal_catalog_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -28,9 +28,7 @@ impl DescribeModelOutput {
 
 /// A builder for [`DescribeModelOutput`](crate::operation::describe_model::DescribeModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeModelOutputBuilder {
     pub(crate) model_description: ::std::option::Option<crate::types::ModelDescription>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeModelOutputBuilder {
         self
     }
     /// <p>Contains the description of the model.</p>
-    pub fn set_model_description(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelDescription>,
-    ) -> Self {
+    pub fn set_model_description(mut self, input: ::std::option::Option<crate::types::ModelDescription>) -> Self {
         self.model_description = input;
         self
     }

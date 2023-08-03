@@ -19,7 +19,9 @@ impl super::Client {
     ///   - [`content_type(Option<String>)`](crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput::content_type): <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     ///   - [`version_label(Option<String>)`](crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput::version_label): <p>A user-defined label for an AppConfig hosted configuration version.</p>
     /// - On failure, responds with [`SdkError<CreateHostedConfigurationVersionError>`](crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError)
-    pub fn create_hosted_configuration_version(&self) -> crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionFluentBuilder{
+    pub fn create_hosted_configuration_version(
+        &self,
+    ) -> crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionFluentBuilder {
         crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionFluentBuilder::new(self.handle.clone())
     }
 }

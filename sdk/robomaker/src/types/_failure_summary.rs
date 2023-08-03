@@ -30,9 +30,7 @@ impl FailureSummary {
 
 /// A builder for [`FailureSummary`](crate::types::FailureSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailureSummaryBuilder {
     pub(crate) total_failure_count: ::std::option::Option<i32>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::WorldFailure>>,
@@ -64,17 +62,12 @@ impl FailureSummaryBuilder {
         self
     }
     /// <p>The worlds that failed.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorldFailure>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorldFailure>>) -> Self {
         self.failures = input;
         self
     }
     /// <p>The worlds that failed.</p>
-    pub fn get_failures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorldFailure>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorldFailure>> {
         &self.failures
     }
     /// Consumes the builder and constructs a [`FailureSummary`](crate::types::FailureSummary).

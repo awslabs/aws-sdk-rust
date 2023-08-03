@@ -9,8 +9,7 @@ pub struct ListFirewallDomainListsOutput {
     /// <p>A list of the domain lists that you have defined. </p>
     /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
     #[doc(hidden)]
-    pub firewall_domain_lists:
-        ::std::option::Option<::std::vec::Vec<crate::types::FirewallDomainListMetadata>>,
+    pub firewall_domain_lists: ::std::option::Option<::std::vec::Vec<crate::types::FirewallDomainListMetadata>>,
     _request_id: Option<String>,
 }
 impl ListFirewallDomainListsOutput {
@@ -20,9 +19,7 @@ impl ListFirewallDomainListsOutput {
     }
     /// <p>A list of the domain lists that you have defined. </p>
     /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
-    pub fn firewall_domain_lists(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FirewallDomainListMetadata]> {
+    pub fn firewall_domain_lists(&self) -> ::std::option::Option<&[crate::types::FirewallDomainListMetadata]> {
         self.firewall_domain_lists.as_deref()
     }
 }
@@ -33,22 +30,17 @@ impl ::aws_http::request_id::RequestId for ListFirewallDomainListsOutput {
 }
 impl ListFirewallDomainListsOutput {
     /// Creates a new builder-style object to manufacture [`ListFirewallDomainListsOutput`](crate::operation::list_firewall_domain_lists::ListFirewallDomainListsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_firewall_domain_lists::builders::ListFirewallDomainListsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_firewall_domain_lists::builders::ListFirewallDomainListsOutputBuilder {
         crate::operation::list_firewall_domain_lists::builders::ListFirewallDomainListsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFirewallDomainListsOutput`](crate::operation::list_firewall_domain_lists::ListFirewallDomainListsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFirewallDomainListsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) firewall_domain_lists:
-        ::std::option::Option<::std::vec::Vec<crate::types::FirewallDomainListMetadata>>,
+    pub(crate) firewall_domain_lists: ::std::option::Option<::std::vec::Vec<crate::types::FirewallDomainListMetadata>>,
     _request_id: Option<String>,
 }
 impl ListFirewallDomainListsOutputBuilder {
@@ -72,10 +64,7 @@ impl ListFirewallDomainListsOutputBuilder {
     ///
     /// <p>A list of the domain lists that you have defined. </p>
     /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
-    pub fn firewall_domain_lists(
-        mut self,
-        input: crate::types::FirewallDomainListMetadata,
-    ) -> Self {
+    pub fn firewall_domain_lists(mut self, input: crate::types::FirewallDomainListMetadata) -> Self {
         let mut v = self.firewall_domain_lists.unwrap_or_default();
         v.push(input);
         self.firewall_domain_lists = ::std::option::Option::Some(v);
@@ -83,18 +72,13 @@ impl ListFirewallDomainListsOutputBuilder {
     }
     /// <p>A list of the domain lists that you have defined. </p>
     /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
-    pub fn set_firewall_domain_lists(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallDomainListMetadata>>,
-    ) -> Self {
+    pub fn set_firewall_domain_lists(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallDomainListMetadata>>) -> Self {
         self.firewall_domain_lists = input;
         self
     }
     /// <p>A list of the domain lists that you have defined. </p>
     /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
-    pub fn get_firewall_domain_lists(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallDomainListMetadata>> {
+    pub fn get_firewall_domain_lists(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallDomainListMetadata>> {
         &self.firewall_domain_lists
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -107,9 +91,7 @@ impl ListFirewallDomainListsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFirewallDomainListsOutput`](crate::operation::list_firewall_domain_lists::ListFirewallDomainListsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_firewall_domain_lists::ListFirewallDomainListsOutput {
+    pub fn build(self) -> crate::operation::list_firewall_domain_lists::ListFirewallDomainListsOutput {
         crate::operation::list_firewall_domain_lists::ListFirewallDomainListsOutput {
             next_token: self.next_token,
             firewall_domain_lists: self.firewall_domain_lists,

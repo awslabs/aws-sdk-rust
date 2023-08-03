@@ -32,27 +32,19 @@ impl CsvMappingParameters {
 
 /// A builder for [`CsvMappingParameters`](crate::types::CsvMappingParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CsvMappingParametersBuilder {
     pub(crate) record_row_delimiter: ::std::option::Option<::std::string::String>,
     pub(crate) record_column_delimiter: ::std::option::Option<::std::string::String>,
 }
 impl CsvMappingParametersBuilder {
     /// <p>Row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row delimiter.</p>
-    pub fn record_row_delimiter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record_row_delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_row_delimiter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row delimiter.</p>
-    pub fn set_record_row_delimiter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_record_row_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_row_delimiter = input;
         self
     }
@@ -61,18 +53,12 @@ impl CsvMappingParametersBuilder {
         &self.record_row_delimiter
     }
     /// <p>Column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.</p>
-    pub fn record_column_delimiter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record_column_delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_column_delimiter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.</p>
-    pub fn set_record_column_delimiter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_record_column_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_column_delimiter = input;
         self
     }

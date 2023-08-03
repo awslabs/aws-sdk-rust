@@ -15,34 +15,25 @@ impl DeleteTrialComponentInput {
 }
 impl DeleteTrialComponentInput {
     /// Creates a new builder-style object to manufacture [`DeleteTrialComponentInput`](crate::operation::delete_trial_component::DeleteTrialComponentInput).
-    pub fn builder(
-    ) -> crate::operation::delete_trial_component::builders::DeleteTrialComponentInputBuilder {
+    pub fn builder() -> crate::operation::delete_trial_component::builders::DeleteTrialComponentInputBuilder {
         crate::operation::delete_trial_component::builders::DeleteTrialComponentInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTrialComponentInput`](crate::operation::delete_trial_component::DeleteTrialComponentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrialComponentInputBuilder {
     pub(crate) trial_component_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTrialComponentInputBuilder {
     /// <p>The name of the component to delete.</p>
-    pub fn trial_component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component to delete.</p>
-    pub fn set_trial_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trial_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trial_component_name = input;
         self
     }
@@ -53,14 +44,10 @@ impl DeleteTrialComponentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTrialComponentInput`](crate::operation::delete_trial_component::DeleteTrialComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_trial_component::DeleteTrialComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_trial_component::DeleteTrialComponentInput {
-                trial_component_name: self.trial_component_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_trial_component::DeleteTrialComponentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_trial_component::DeleteTrialComponentInput {
+            trial_component_name: self.trial_component_name,
+        })
     }
 }

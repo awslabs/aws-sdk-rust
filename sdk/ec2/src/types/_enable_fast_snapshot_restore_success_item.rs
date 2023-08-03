@@ -101,9 +101,7 @@ impl EnableFastSnapshotRestoreSuccessItem {
 
 /// A builder for [`EnableFastSnapshotRestoreSuccessItem`](crate::types::EnableFastSnapshotRestoreSuccessItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableFastSnapshotRestoreSuccessItemBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
@@ -133,18 +131,12 @@ impl EnableFastSnapshotRestoreSuccessItemBuilder {
         &self.snapshot_id
     }
     /// <p>The Availability Zone.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -158,10 +150,7 @@ impl EnableFastSnapshotRestoreSuccessItemBuilder {
         self
     }
     /// <p>The state of fast snapshot restores.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::FastSnapshotRestoreStateCode>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::FastSnapshotRestoreStateCode>) -> Self {
         self.state = input;
         self
     }
@@ -174,10 +163,7 @@ impl EnableFastSnapshotRestoreSuccessItemBuilder {
     /// <li> <p> <code>Client.UserInitiated</code> - The state successfully transitioned to <code>enabling</code> or <code>disabling</code>.</p> </li>
     /// <li> <p> <code>Client.UserInitiated - Lifecycle state transition</code> - The state successfully transitioned to <code>optimizing</code>, <code>enabled</code>, or <code>disabled</code>.</p> </li>
     /// </ul>
-    pub fn state_transition_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_transition_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_transition_reason = ::std::option::Option::Some(input.into());
         self
     }
@@ -186,10 +172,7 @@ impl EnableFastSnapshotRestoreSuccessItemBuilder {
     /// <li> <p> <code>Client.UserInitiated</code> - The state successfully transitioned to <code>enabling</code> or <code>disabling</code>.</p> </li>
     /// <li> <p> <code>Client.UserInitiated - Lifecycle state transition</code> - The state successfully transitioned to <code>optimizing</code>, <code>enabled</code>, or <code>disabled</code>.</p> </li>
     /// </ul>
-    pub fn set_state_transition_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_transition_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_transition_reason = input;
         self
     }
@@ -235,10 +218,7 @@ impl EnableFastSnapshotRestoreSuccessItemBuilder {
         self
     }
     /// <p>The time at which fast snapshot restores entered the <code>enabling</code> state.</p>
-    pub fn set_enabling_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_enabling_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.enabling_time = input;
         self
     }
@@ -252,10 +232,7 @@ impl EnableFastSnapshotRestoreSuccessItemBuilder {
         self
     }
     /// <p>The time at which fast snapshot restores entered the <code>optimizing</code> state.</p>
-    pub fn set_optimizing_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_optimizing_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.optimizing_time = input;
         self
     }
@@ -269,10 +246,7 @@ impl EnableFastSnapshotRestoreSuccessItemBuilder {
         self
     }
     /// <p>The time at which fast snapshot restores entered the <code>enabled</code> state.</p>
-    pub fn set_enabled_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_enabled_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.enabled_time = input;
         self
     }
@@ -286,10 +260,7 @@ impl EnableFastSnapshotRestoreSuccessItemBuilder {
         self
     }
     /// <p>The time at which fast snapshot restores entered the <code>disabling</code> state.</p>
-    pub fn set_disabling_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_disabling_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.disabling_time = input;
         self
     }
@@ -303,10 +274,7 @@ impl EnableFastSnapshotRestoreSuccessItemBuilder {
         self
     }
     /// <p>The time at which fast snapshot restores entered the <code>disabled</code> state.</p>
-    pub fn set_disabled_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_disabled_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.disabled_time = input;
         self
     }

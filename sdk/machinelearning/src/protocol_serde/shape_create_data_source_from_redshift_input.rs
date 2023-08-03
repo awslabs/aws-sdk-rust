@@ -12,19 +12,14 @@ pub fn ser_create_data_source_from_redshift_input(
     if let Some(var_3) = &input.data_spec {
         #[allow(unused_mut)]
         let mut object_4 = object.key("DataSpec").start_object();
-        crate::protocol_serde::shape_redshift_data_spec::ser_redshift_data_spec(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_redshift_data_spec::ser_redshift_data_spec(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.role_arn {
         object.key("RoleARN").string(var_5.as_str());
     }
     if input.compute_statistics {
-        object
-            .key("ComputeStatistics")
-            .boolean(input.compute_statistics);
+        object.key("ComputeStatistics").boolean(input.compute_statistics);
     }
     Ok(())
 }

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`channel_configuration(UpdateParticipantRoleConfigChannelInfo)`](crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigFluentBuilder::channel_configuration) / [`set_channel_configuration(Option<UpdateParticipantRoleConfigChannelInfo>)`](crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigFluentBuilder::set_channel_configuration): <p>The Amazon Connect channel you want to configure.</p>
     /// - On success, responds with [`UpdateParticipantRoleConfigOutput`](crate::operation::update_participant_role_config::UpdateParticipantRoleConfigOutput)
     /// - On failure, responds with [`SdkError<UpdateParticipantRoleConfigError>`](crate::operation::update_participant_role_config::UpdateParticipantRoleConfigError)
-    pub fn update_participant_role_config(&self) -> crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigFluentBuilder{
+    pub fn update_participant_role_config(
+        &self,
+    ) -> crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigFluentBuilder {
         crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigFluentBuilder::new(self.handle.clone())
     }
 }

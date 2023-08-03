@@ -29,17 +29,14 @@ impl DeleteModelVersionInput {
 }
 impl DeleteModelVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteModelVersionInput`](crate::operation::delete_model_version::DeleteModelVersionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_model_version::builders::DeleteModelVersionInputBuilder {
+    pub fn builder() -> crate::operation::delete_model_version::builders::DeleteModelVersionInputBuilder {
         crate::operation::delete_model_version::builders::DeleteModelVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteModelVersionInput`](crate::operation::delete_model_version::DeleteModelVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteModelVersionInputBuilder {
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
@@ -66,10 +63,7 @@ impl DeleteModelVersionInputBuilder {
         self
     }
     /// <p>The model type of the model version to delete.</p>
-    pub fn set_model_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelTypeEnum>,
-    ) -> Self {
+    pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
         self.model_type = input;
         self
     }
@@ -78,18 +72,12 @@ impl DeleteModelVersionInputBuilder {
         &self.model_type
     }
     /// <p>The model version number of the model version to delete.</p>
-    pub fn model_version_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The model version number of the model version to delete.</p>
-    pub fn set_model_version_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_version_number = input;
         self
     }
@@ -100,16 +88,11 @@ impl DeleteModelVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteModelVersionInput`](crate::operation::delete_model_version::DeleteModelVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_model_version::DeleteModelVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_model_version::DeleteModelVersionInput {
-                model_id: self.model_id,
-                model_type: self.model_type,
-                model_version_number: self.model_version_number,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_model_version::DeleteModelVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_model_version::DeleteModelVersionInput {
+            model_id: self.model_id,
+            model_type: self.model_type,
+            model_version_number: self.model_version_number,
+        })
     }
 }

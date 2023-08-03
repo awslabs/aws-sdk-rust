@@ -15,8 +15,7 @@ pub struct DeploymentJob {
     pub status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>The deployment application configuration.</p>
     #[doc(hidden)]
-    pub deployment_application_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
+    pub deployment_application_configs: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
     /// <p>The deployment configuration.</p>
     #[doc(hidden)]
     pub deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
@@ -44,9 +43,7 @@ impl DeploymentJob {
         self.status.as_ref()
     }
     /// <p>The deployment application configuration.</p>
-    pub fn deployment_application_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DeploymentApplicationConfig]> {
+    pub fn deployment_application_configs(&self) -> ::std::option::Option<&[crate::types::DeploymentApplicationConfig]> {
         self.deployment_application_configs.as_deref()
     }
     /// <p>The deployment configuration.</p>
@@ -75,15 +72,12 @@ impl DeploymentJob {
 
 /// A builder for [`DeploymentJob`](crate::types::DeploymentJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentJobBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) fleet: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DeploymentStatus>,
-    pub(crate) deployment_application_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
+    pub(crate) deployment_application_configs: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
     pub(crate) deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) failure_code: ::std::option::Option<crate::types::DeploymentJobErrorCode>,
@@ -124,10 +118,7 @@ impl DeploymentJobBuilder {
         self
     }
     /// <p>The status of the deployment job.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -140,10 +131,7 @@ impl DeploymentJobBuilder {
     /// To override the contents of this collection use [`set_deployment_application_configs`](Self::set_deployment_application_configs).
     ///
     /// <p>The deployment application configuration.</p>
-    pub fn deployment_application_configs(
-        mut self,
-        input: crate::types::DeploymentApplicationConfig,
-    ) -> Self {
+    pub fn deployment_application_configs(mut self, input: crate::types::DeploymentApplicationConfig) -> Self {
         let mut v = self.deployment_application_configs.unwrap_or_default();
         v.push(input);
         self.deployment_application_configs = ::std::option::Option::Some(v);
@@ -158,9 +146,7 @@ impl DeploymentJobBuilder {
         self
     }
     /// <p>The deployment application configuration.</p>
-    pub fn get_deployment_application_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>> {
+    pub fn get_deployment_application_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>> {
         &self.deployment_application_configs
     }
     /// <p>The deployment configuration.</p>
@@ -169,10 +155,7 @@ impl DeploymentJobBuilder {
         self
     }
     /// <p>The deployment configuration.</p>
-    pub fn set_deployment_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentConfig>,
-    ) -> Self {
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::DeploymentConfig>) -> Self {
         self.deployment_config = input;
         self
     }
@@ -181,18 +164,12 @@ impl DeploymentJobBuilder {
         &self.deployment_config
     }
     /// <p>A short description of the reason why the deployment job failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short description of the reason why the deployment job failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -206,10 +183,7 @@ impl DeploymentJobBuilder {
         self
     }
     /// <p>The deployment job failure code.</p>
-    pub fn set_failure_code(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentJobErrorCode>,
-    ) -> Self {
+    pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::DeploymentJobErrorCode>) -> Self {
         self.failure_code = input;
         self
     }
@@ -223,10 +197,7 @@ impl DeploymentJobBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }

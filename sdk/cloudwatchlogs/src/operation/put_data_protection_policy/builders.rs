@@ -31,8 +31,7 @@ impl PutDataProtectionPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutDataProtectionPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::put_data_protection_policy::builders::PutDataProtectionPolicyInputBuilder,
+    inner: crate::operation::put_data_protection_policy::builders::PutDataProtectionPolicyInputBuilder,
 }
 impl PutDataProtectionPolicyFluentBuilder {
     /// Creates a new `PutDataProtectionPolicy`.
@@ -43,10 +42,7 @@ impl PutDataProtectionPolicyFluentBuilder {
         }
     }
     /// Access the PutDataProtectionPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_data_protection_policy::builders::PutDataProtectionPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_data_protection_policy::builders::PutDataProtectionPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +54,7 @@ impl PutDataProtectionPolicyFluentBuilder {
             crate::operation::put_data_protection_policy::PutDataProtectionPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_data_protection_policy::PutDataProtectionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_data_protection_policy::PutDataProtectionPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +64,7 @@ impl PutDataProtectionPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +73,7 @@ impl PutDataProtectionPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_data_protection_policy::PutDataProtectionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_data_protection_policy::PutDataProtectionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_data_protection_policy::PutDataProtectionPolicyError>,
     > {
         let op = self
             .inner
@@ -107,9 +96,7 @@ impl PutDataProtectionPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_data_protection_policy::PutDataProtectionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_data_protection_policy::PutDataProtectionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_data_protection_policy::PutDataProtectionPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -123,25 +110,17 @@ impl PutDataProtectionPolicyFluentBuilder {
             crate::operation::put_data_protection_policy::PutDataProtectionPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_data_protection_policy::PutDataProtectionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_data_protection_policy::PutDataProtectionPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specify either the log group name or log group ARN.</p>
-    pub fn log_group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_identifier(input.into());
         self
     }
     /// <p>Specify either the log group name or log group ARN.</p>
-    pub fn set_log_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_identifier(input);
         self
     }
@@ -160,10 +139,7 @@ impl PutDataProtectionPolicyFluentBuilder {
     /// </important>
     /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
     /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_document(input.into());
         self
     }
@@ -178,10 +154,7 @@ impl PutDataProtectionPolicyFluentBuilder {
     /// </important>
     /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
     /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
     }

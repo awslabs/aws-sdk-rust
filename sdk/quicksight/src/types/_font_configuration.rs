@@ -51,9 +51,7 @@ impl FontConfiguration {
 
 /// A builder for [`FontConfiguration`](crate::types::FontConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FontConfigurationBuilder {
     pub(crate) font_size: ::std::option::Option<crate::types::FontSize>,
     pub(crate) font_decoration: ::std::option::Option<crate::types::FontDecoration>,
@@ -82,10 +80,7 @@ impl FontConfigurationBuilder {
         self
     }
     /// <p>Determines the appearance of decorative lines on the text.</p>
-    pub fn set_font_decoration(
-        mut self,
-        input: ::std::option::Option<crate::types::FontDecoration>,
-    ) -> Self {
+    pub fn set_font_decoration(mut self, input: ::std::option::Option<crate::types::FontDecoration>) -> Self {
         self.font_decoration = input;
         self
     }
@@ -113,10 +108,7 @@ impl FontConfigurationBuilder {
         self
     }
     /// <p>The option that determines the text display weight, or boldness.</p>
-    pub fn set_font_weight(
-        mut self,
-        input: ::std::option::Option<crate::types::FontWeight>,
-    ) -> Self {
+    pub fn set_font_weight(mut self, input: ::std::option::Option<crate::types::FontWeight>) -> Self {
         self.font_weight = input;
         self
     }

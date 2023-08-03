@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListCustomRoutingPortMappingsOutput {
 }
 impl ListCustomRoutingPortMappingsOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsOutput`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput).
-    pub fn builder() -> crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsOutputBuilder{
+    pub fn builder() -> crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsOutputBuilder {
         crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomRoutingPortMappingsOutput`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomRoutingPortMappingsOutputBuilder {
     pub(crate) port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::PortMapping>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListCustomRoutingPortMappingsOutputBuilder {
         self
     }
     /// <p>The port mappings for a custom routing accelerator.</p>
-    pub fn set_port_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortMapping>>,
-    ) -> Self {
+    pub fn set_port_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortMapping>>) -> Self {
         self.port_mappings = input;
         self
     }
     /// <p>The port mappings for a custom routing accelerator.</p>
-    pub fn get_port_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortMapping>> {
+    pub fn get_port_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortMapping>> {
         &self.port_mappings
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -93,10 +86,7 @@ impl ListCustomRoutingPortMappingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCustomRoutingPortMappingsOutput`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput
-    {
+    pub fn build(self) -> crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput {
         crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput {
             port_mappings: self.port_mappings,
             next_token: self.next_token,

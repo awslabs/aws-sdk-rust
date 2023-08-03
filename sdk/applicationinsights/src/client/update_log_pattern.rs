@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`resource_group_name(Option<String>)`](crate::operation::update_log_pattern::UpdateLogPatternOutput::resource_group_name): <p>The name of the resource group.</p>
     ///   - [`log_pattern(Option<LogPattern>)`](crate::operation::update_log_pattern::UpdateLogPatternOutput::log_pattern): <p>The successfully created log pattern.</p>
     /// - On failure, responds with [`SdkError<UpdateLogPatternError>`](crate::operation::update_log_pattern::UpdateLogPatternError)
-    pub fn update_log_pattern(
-        &self,
-    ) -> crate::operation::update_log_pattern::builders::UpdateLogPatternFluentBuilder {
-        crate::operation::update_log_pattern::builders::UpdateLogPatternFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_log_pattern(&self) -> crate::operation::update_log_pattern::builders::UpdateLogPatternFluentBuilder {
+        crate::operation::update_log_pattern::builders::UpdateLogPatternFluentBuilder::new(self.handle.clone())
     }
 }

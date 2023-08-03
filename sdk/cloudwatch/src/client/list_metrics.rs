@@ -16,9 +16,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_metrics::ListMetricsOutput::next_token): <p>The token that marks the start of the next batch of returned results. </p>
     ///   - [`owning_accounts(Option<Vec<String>>)`](crate::operation::list_metrics::ListMetricsOutput::owning_accounts): <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>  <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
     /// - On failure, responds with [`SdkError<ListMetricsError>`](crate::operation::list_metrics::ListMetricsError)
-    pub fn list_metrics(
-        &self,
-    ) -> crate::operation::list_metrics::builders::ListMetricsFluentBuilder {
+    pub fn list_metrics(&self) -> crate::operation::list_metrics::builders::ListMetricsFluentBuilder {
         crate::operation::list_metrics::builders::ListMetricsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -36,9 +36,7 @@ impl GetDetectorsInput {
 
 /// A builder for [`GetDetectorsInput`](crate::operation::get_detectors::GetDetectorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDetectorsInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -88,12 +86,7 @@ impl GetDetectorsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetDetectorsInput`](crate::operation::get_detectors::GetDetectorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_detectors::GetDetectorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_detectors::GetDetectorsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_detectors::GetDetectorsInput {
             detector_id: self.detector_id,
             next_token: self.next_token,

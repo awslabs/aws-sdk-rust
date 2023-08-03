@@ -22,17 +22,14 @@ impl PutRetentionSettingsInput {
 }
 impl PutRetentionSettingsInput {
     /// Creates a new builder-style object to manufacture [`PutRetentionSettingsInput`](crate::operation::put_retention_settings::PutRetentionSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::put_retention_settings::builders::PutRetentionSettingsInputBuilder {
+    pub fn builder() -> crate::operation::put_retention_settings::builders::PutRetentionSettingsInputBuilder {
         crate::operation::put_retention_settings::builders::PutRetentionSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutRetentionSettingsInput`](crate::operation::put_retention_settings::PutRetentionSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRetentionSettingsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) retention_settings: ::std::option::Option<crate::types::RetentionSettings>,
@@ -58,31 +55,22 @@ impl PutRetentionSettingsInputBuilder {
         self
     }
     /// <p>The retention settings.</p>
-    pub fn set_retention_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionSettings>,
-    ) -> Self {
+    pub fn set_retention_settings(mut self, input: ::std::option::Option<crate::types::RetentionSettings>) -> Self {
         self.retention_settings = input;
         self
     }
     /// <p>The retention settings.</p>
-    pub fn get_retention_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::RetentionSettings> {
+    pub fn get_retention_settings(&self) -> &::std::option::Option<crate::types::RetentionSettings> {
         &self.retention_settings
     }
     /// Consumes the builder and constructs a [`PutRetentionSettingsInput`](crate::operation::put_retention_settings::PutRetentionSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_retention_settings::PutRetentionSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_retention_settings::PutRetentionSettingsInput {
-                account_id: self.account_id,
-                retention_settings: self.retention_settings,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_retention_settings::PutRetentionSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_retention_settings::PutRetentionSettingsInput {
+            account_id: self.account_id,
+            retention_settings: self.retention_settings,
+        })
     }
 }

@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateSavingsPlanOutput {
 }
 impl CreateSavingsPlanOutput {
     /// Creates a new builder-style object to manufacture [`CreateSavingsPlanOutput`](crate::operation::create_savings_plan::CreateSavingsPlanOutput).
-    pub fn builder(
-    ) -> crate::operation::create_savings_plan::builders::CreateSavingsPlanOutputBuilder {
+    pub fn builder() -> crate::operation::create_savings_plan::builders::CreateSavingsPlanOutputBuilder {
         crate::operation::create_savings_plan::builders::CreateSavingsPlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSavingsPlanOutput`](crate::operation::create_savings_plan::CreateSavingsPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSavingsPlanOutputBuilder {
     pub(crate) savings_plan_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateSavingsPlanOutputBuilder {
     /// <p>The ID of the Savings Plan.</p>
-    pub fn savings_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn savings_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.savings_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Savings Plan.</p>
-    pub fn set_savings_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_savings_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.savings_plan_id = input;
         self
     }

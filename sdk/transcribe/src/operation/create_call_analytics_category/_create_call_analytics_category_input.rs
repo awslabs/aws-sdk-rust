@@ -37,16 +37,14 @@ impl CreateCallAnalyticsCategoryInput {
 }
 impl CreateCallAnalyticsCategoryInput {
     /// Creates a new builder-style object to manufacture [`CreateCallAnalyticsCategoryInput`](crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryInput).
-    pub fn builder() -> crate::operation::create_call_analytics_category::builders::CreateCallAnalyticsCategoryInputBuilder{
+    pub fn builder() -> crate::operation::create_call_analytics_category::builders::CreateCallAnalyticsCategoryInputBuilder {
         crate::operation::create_call_analytics_category::builders::CreateCallAnalyticsCategoryInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCallAnalyticsCategoryInput`](crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCallAnalyticsCategoryInputBuilder {
     pub(crate) category_name: ::std::option::Option<::std::string::String>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
@@ -55,19 +53,13 @@ pub struct CreateCallAnalyticsCategoryInputBuilder {
 impl CreateCallAnalyticsCategoryInputBuilder {
     /// <p>A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use <code>sentiment-positive-last30seconds</code> for a category over a generic name like <code>test-category</code>.</p>
     /// <p>Category names are case sensitive.</p>
-    pub fn category_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn category_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use <code>sentiment-positive-last30seconds</code> for a category over a generic name like <code>test-category</code>.</p>
     /// <p>Category names are case sensitive.</p>
-    pub fn set_category_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_category_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category_name = input;
         self
     }
@@ -88,10 +80,7 @@ impl CreateCallAnalyticsCategoryInputBuilder {
         self
     }
     /// <p>Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.rules = input;
         self
     }
@@ -129,12 +118,10 @@ impl CreateCallAnalyticsCategoryInputBuilder {
         crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryInput {
-                category_name: self.category_name,
-                rules: self.rules,
-                input_type: self.input_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryInput {
+            category_name: self.category_name,
+            rules: self.rules,
+            input_type: self.input_type,
+        })
     }
 }

@@ -22,9 +22,7 @@ impl CancelAuditTaskInput {
 
 /// A builder for [`CancelAuditTaskInput`](crate::operation::cancel_audit_task::CancelAuditTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelAuditTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl CancelAuditTaskInputBuilder {
     /// Consumes the builder and constructs a [`CancelAuditTaskInput`](crate::operation::cancel_audit_task::CancelAuditTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_audit_task::CancelAuditTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_audit_task::CancelAuditTaskInput {
-            task_id: self.task_id,
-        })
+    ) -> ::std::result::Result<crate::operation::cancel_audit_task::CancelAuditTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::cancel_audit_task::CancelAuditTaskInput { task_id: self.task_id })
     }
 }

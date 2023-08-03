@@ -28,13 +28,11 @@ impl DescribeChannelMembershipInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelMembership.html">DescribeChannelMembership</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by DescribeChannelMembership in the Amazon Chime SDK Messaging Namespace"
-)]
+#[deprecated(note = "Replaced by DescribeChannelMembership in the Amazon Chime SDK Messaging Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeChannelMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_channel_membership::builders::DescribeChannelMembershipInputBuilder,
+    inner: crate::operation::describe_channel_membership::builders::DescribeChannelMembershipInputBuilder,
 }
 impl DescribeChannelMembershipFluentBuilder {
     /// Creates a new `DescribeChannelMembership`.
@@ -45,7 +43,7 @@ impl DescribeChannelMembershipFluentBuilder {
         }
     }
     /// Access the DescribeChannelMembership as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_channel_membership::builders::DescribeChannelMembershipInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_channel_membership::builders::DescribeChannelMembershipInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +55,7 @@ impl DescribeChannelMembershipFluentBuilder {
             crate::operation::describe_channel_membership::DescribeChannelMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel_membership::DescribeChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel_membership::DescribeChannelMembershipError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +65,7 @@ impl DescribeChannelMembershipFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +74,7 @@ impl DescribeChannelMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_channel_membership::DescribeChannelMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel_membership::DescribeChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel_membership::DescribeChannelMembershipError>,
     > {
         let op = self
             .inner
@@ -106,9 +97,7 @@ impl DescribeChannelMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_channel_membership::DescribeChannelMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel_membership::DescribeChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel_membership::DescribeChannelMembershipError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +111,7 @@ impl DescribeChannelMembershipFluentBuilder {
             crate::operation::describe_channel_membership::DescribeChannelMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel_membership::DescribeChannelMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel_membership::DescribeChannelMembershipError>,
     > {
         self.customize_middleware().await
     }

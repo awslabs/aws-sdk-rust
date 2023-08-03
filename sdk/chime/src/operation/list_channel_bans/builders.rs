@@ -10,10 +10,7 @@ impl ListChannelBansInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_channel_bans::ListChannelBansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_bans::ListChannelBansError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_bans::ListChannelBansError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_channel_bans();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl ListChannelBansFluentBuilder {
         }
     }
     /// Access the ListChannelBans as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_channel_bans::builders::ListChannelBansInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_channel_bans::builders::ListChannelBansInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl ListChannelBansFluentBuilder {
             crate::operation::list_channel_bans::ListChannelBans,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_bans::ListChannelBansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_bans::ListChannelBansError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl ListChannelBansFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl ListChannelBansFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_channel_bans::ListChannelBansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_bans::ListChannelBansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_bans::ListChannelBansError>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl ListChannelBansFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_channel_bans::ListChannelBansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_bans::ListChannelBansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_bans::ListChannelBansError>,
     > {
         self.send_middleware().await
     }
@@ -122,22 +108,15 @@ impl ListChannelBansFluentBuilder {
             crate::operation::list_channel_bans::ListChannelBans,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_bans::ListChannelBansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_bans::ListChannelBansError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_channel_bans::paginator::ListChannelBansPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_channel_bans::paginator::ListChannelBansPaginator {
-        crate::operation::list_channel_bans::paginator::ListChannelBansPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_channel_bans::paginator::ListChannelBansPaginator {
+        crate::operation::list_channel_bans::paginator::ListChannelBansPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

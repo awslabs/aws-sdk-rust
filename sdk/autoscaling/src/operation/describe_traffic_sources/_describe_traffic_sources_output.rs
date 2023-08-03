@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeTrafficSourcesOutput {
 }
 impl DescribeTrafficSourcesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrafficSourcesOutput`](crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesOutputBuilder {
         crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTrafficSourcesOutput`](crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrafficSourcesOutputBuilder {
-    pub(crate) traffic_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceState>>,
+    pub(crate) traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceState>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeTrafficSourcesOutputBuilder {
         self
     }
     /// <p>Information about the traffic sources.</p>
-    pub fn set_traffic_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceState>>,
-    ) -> Self {
+    pub fn set_traffic_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceState>>) -> Self {
         self.traffic_sources = input;
         self
     }
     /// <p>Information about the traffic sources.</p>
-    pub fn get_traffic_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceState>> {
+    pub fn get_traffic_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceState>> {
         &self.traffic_sources
     }
     /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>

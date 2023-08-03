@@ -22,26 +22,18 @@ impl StopKeyUsageInput {
 
 /// A builder for [`StopKeyUsageInput`](crate::operation::stop_key_usage::StopKeyUsageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopKeyUsageInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl StopKeyUsageInputBuilder {
     /// <p>The <code>KeyArn</code> of the key.</p>
-    pub fn key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>KeyArn</code> of the key.</p>
-    pub fn set_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_identifier = input;
         self
     }
@@ -52,10 +44,7 @@ impl StopKeyUsageInputBuilder {
     /// Consumes the builder and constructs a [`StopKeyUsageInput`](crate::operation::stop_key_usage::StopKeyUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_key_usage::StopKeyUsageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::stop_key_usage::StopKeyUsageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_key_usage::StopKeyUsageInput {
             key_identifier: self.key_identifier,
         })

@@ -9,75 +9,71 @@ pub fn de_create_configuration_set_http_error(
     crate::operation::create_configuration_set::CreateConfigurationSetError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::create_configuration_set::CreateConfigurationSetError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_configuration_set::CreateConfigurationSetError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    let error_code =
-        match generic.code() {
-            Some(code) => code,
-            None => return Err(
-                crate::operation::create_configuration_set::CreateConfigurationSetError::unhandled(
-                    generic,
-                ),
-            ),
-        };
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::operation::create_configuration_set::CreateConfigurationSetError::unhandled(
+                generic,
+            ))
+        }
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConfigurationSetAlreadyExists" => crate::operation::create_configuration_set::CreateConfigurationSetError::ConfigurationSetAlreadyExistsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ConfigurationSetAlreadyExists" => {
+            crate::operation::create_configuration_set::CreateConfigurationSetError::ConfigurationSetAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConfigurationSetAlreadyExistsExceptionBuilder::default();
                     output = crate::protocol_serde::shape_configuration_set_already_exists_exception::de_configuration_set_already_exists_exception_xml_err(_response_body, output).map_err(crate::operation::create_configuration_set::CreateConfigurationSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InvalidConfigurationSet" => crate::operation::create_configuration_set::CreateConfigurationSetError::InvalidConfigurationSetException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidConfigurationSetExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_configuration_set_exception::de_invalid_configuration_set_exception_xml_err(_response_body, output).map_err(crate::operation::create_configuration_set::CreateConfigurationSetError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidConfigurationSetExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_configuration_set_exception::de_invalid_configuration_set_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_configuration_set::CreateConfigurationSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "LimitExceeded" => crate::operation::create_configuration_set::CreateConfigurationSetError::LimitExceededException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output).map_err(crate::operation::create_configuration_set::CreateConfigurationSetError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_configuration_set::CreateConfigurationSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::create_configuration_set::CreateConfigurationSetError::generic(generic)
+        _ => crate::operation::create_configuration_set::CreateConfigurationSetError::generic(generic),
     })
 }
 
@@ -93,9 +89,7 @@ pub fn de_create_configuration_set_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_configuration_set::builders::CreateConfigurationSetOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

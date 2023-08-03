@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsOutput::next_token): <p>The unique pagination token returned for you to pass to a subsequent request. Fleet Advisor returns this token when the number of records in the response is greater than the <code>MaxRecords</code> value. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
     ///   - [`limitations(Option<Vec<Limitation>>)`](crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsOutput::limitations): <p>The list of limitations for recommendations of target Amazon Web Services engines.</p>
     /// - On failure, responds with [`SdkError<DescribeRecommendationLimitationsError>`](crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsError)
-    pub fn describe_recommendation_limitations(&self) -> crate::operation::describe_recommendation_limitations::builders::DescribeRecommendationLimitationsFluentBuilder{
+    pub fn describe_recommendation_limitations(
+        &self,
+    ) -> crate::operation::describe_recommendation_limitations::builders::DescribeRecommendationLimitationsFluentBuilder {
         crate::operation::describe_recommendation_limitations::builders::DescribeRecommendationLimitationsFluentBuilder::new(self.handle.clone())
     }
 }

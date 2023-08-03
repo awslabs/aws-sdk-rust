@@ -51,9 +51,7 @@ impl DakCertificateMetadata {
 
 /// A builder for [`DakCertificateMetadata`](crate::types::DakCertificateMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DakCertificateMetadataBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_allowed_signature: ::std::option::Option<i32>,
@@ -63,18 +61,12 @@ pub struct DakCertificateMetadataBuilder {
 }
 impl DakCertificateMetadataBuilder {
     /// <p>The certificate ID for the DAK.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate ID for the DAK.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -125,18 +117,12 @@ impl DakCertificateMetadataBuilder {
         &self.ap_id
     }
     /// <p>The device type ID that's used for prototyping applications.</p>
-    pub fn device_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device type ID that's used for prototyping applications.</p>
-    pub fn set_device_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_type_id = input;
         self
     }

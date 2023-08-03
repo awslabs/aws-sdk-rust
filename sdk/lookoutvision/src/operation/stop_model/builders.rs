@@ -10,10 +10,7 @@ impl StopModelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_model::StopModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_model::StopModelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_model::StopModelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_model();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl StopModelFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::stop_model::StopModel,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::stop_model::StopModel, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::stop_model::StopModelError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl StopModelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl StopModelFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::stop_model::StopModel,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::stop_model::StopModel, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::stop_model::StopModelError>,
     > {
         self.customize_middleware().await
@@ -129,18 +117,12 @@ impl StopModelFluentBuilder {
         self.inner.get_project_name()
     }
     /// <p>The version of the model that you want to stop.</p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_version(input.into());
         self
     }
     /// <p>The version of the model that you want to stop.</p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_version(input);
         self
     }

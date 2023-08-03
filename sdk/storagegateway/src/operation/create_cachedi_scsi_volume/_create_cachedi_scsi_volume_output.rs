@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateCachediScsiVolumeOutput {
 }
 impl CreateCachediScsiVolumeOutput {
     /// Creates a new builder-style object to manufacture [`CreateCachediScsiVolumeOutput`](crate::operation::create_cachedi_scsi_volume::CreateCachediScsiVolumeOutput).
-    pub fn builder(
-    ) -> crate::operation::create_cachedi_scsi_volume::builders::CreateCachediScsiVolumeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_cachedi_scsi_volume::builders::CreateCachediScsiVolumeOutputBuilder {
         crate::operation::create_cachedi_scsi_volume::builders::CreateCachediScsiVolumeOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCachediScsiVolumeOutput`](crate::operation::create_cachedi_scsi_volume::CreateCachediScsiVolumeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCachediScsiVolumeOutputBuilder {
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
@@ -84,9 +80,7 @@ impl CreateCachediScsiVolumeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateCachediScsiVolumeOutput`](crate::operation::create_cachedi_scsi_volume::CreateCachediScsiVolumeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_cachedi_scsi_volume::CreateCachediScsiVolumeOutput {
+    pub fn build(self) -> crate::operation::create_cachedi_scsi_volume::CreateCachediScsiVolumeOutput {
         crate::operation::create_cachedi_scsi_volume::CreateCachediScsiVolumeOutput {
             volume_arn: self.volume_arn,
             target_arn: self.target_arn,

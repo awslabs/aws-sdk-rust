@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for ListTagsForStreamOutput {
 }
 impl ListTagsForStreamOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForStreamOutput`](crate::operation::list_tags_for_stream::ListTagsForStreamOutput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_for_stream::builders::ListTagsForStreamOutputBuilder {
+    pub fn builder() -> crate::operation::list_tags_for_stream::builders::ListTagsForStreamOutputBuilder {
         crate::operation::list_tags_for_stream::builders::ListTagsForStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTagsForStreamOutput`](crate::operation::list_tags_for_stream::ListTagsForStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsForStreamOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) has_more_tags: ::std::option::Option<bool>,
@@ -58,10 +55,7 @@ impl ListTagsForStreamOutputBuilder {
         self
     }
     /// <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

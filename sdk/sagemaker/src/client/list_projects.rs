@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`project_summary_list(Option<Vec<ProjectSummary>>)`](crate::operation::list_projects::ListProjectsOutput::project_summary_list): <p>A list of summaries of projects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_projects::ListProjectsOutput::next_token): <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::operation::list_projects::ListProjectsError)
-    pub fn list_projects(
-        &self,
-    ) -> crate::operation::list_projects::builders::ListProjectsFluentBuilder {
-        crate::operation::list_projects::builders::ListProjectsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_projects(&self) -> crate::operation::list_projects::builders::ListProjectsFluentBuilder {
+        crate::operation::list_projects::builders::ListProjectsFluentBuilder::new(self.handle.clone())
     }
 }

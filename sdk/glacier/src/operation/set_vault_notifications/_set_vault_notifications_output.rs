@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for SetVaultNotificationsOutput {
 }
 impl SetVaultNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`SetVaultNotificationsOutput`](crate::operation::set_vault_notifications::SetVaultNotificationsOutput).
-    pub fn builder(
-    ) -> crate::operation::set_vault_notifications::builders::SetVaultNotificationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_vault_notifications::builders::SetVaultNotificationsOutputBuilder {
         crate::operation::set_vault_notifications::builders::SetVaultNotificationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetVaultNotificationsOutput`](crate::operation::set_vault_notifications::SetVaultNotificationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetVaultNotificationsOutputBuilder {
     _request_id: Option<String>,
 }

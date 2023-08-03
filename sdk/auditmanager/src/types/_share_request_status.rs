@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ShareRequestStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for ShareRequestStatus {
             "REPLICATING" => ShareRequestStatus::Replicating,
             "REVOKED" => ShareRequestStatus::Revoked,
             "SHARED" => ShareRequestStatus::Shared,
-            other => ShareRequestStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ShareRequestStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -113,16 +105,7 @@ impl ShareRequestStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "DECLINED",
-            "EXPIRED",
-            "EXPIRING",
-            "FAILED",
-            "REPLICATING",
-            "REVOKED",
-            "SHARED",
-        ]
+        &["ACTIVE", "DECLINED", "EXPIRED", "EXPIRING", "FAILED", "REPLICATING", "REVOKED", "SHARED"]
     }
 }
 impl ::std::convert::AsRef<str> for ShareRequestStatus {

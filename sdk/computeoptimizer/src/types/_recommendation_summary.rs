@@ -18,12 +18,10 @@ pub struct RecommendationSummary {
     pub savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
     /// <p>An object that describes the performance risk ratings for a given resource type.</p>
     #[doc(hidden)]
-    pub current_performance_risk_ratings:
-        ::std::option::Option<crate::types::CurrentPerformanceRiskRatings>,
+    pub current_performance_risk_ratings: ::std::option::Option<crate::types::CurrentPerformanceRiskRatings>,
     /// <p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for the instances running inferred workload types. </p>
     #[doc(hidden)]
-    pub inferred_workload_savings:
-        ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>>,
+    pub inferred_workload_savings: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>>,
 }
 impl RecommendationSummary {
     /// <p>An array of objects that describe a recommendation summary.</p>
@@ -31,9 +29,7 @@ impl RecommendationSummary {
         self.summaries.as_deref()
     }
     /// <p>The resource type that the recommendation summary applies to.</p>
-    pub fn recommendation_resource_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationSourceType> {
+    pub fn recommendation_resource_type(&self) -> ::std::option::Option<&crate::types::RecommendationSourceType> {
         self.recommendation_resource_type.as_ref()
     }
     /// <p>The Amazon Web Services account ID of the recommendation summary.</p>
@@ -45,15 +41,11 @@ impl RecommendationSummary {
         self.savings_opportunity.as_ref()
     }
     /// <p>An object that describes the performance risk ratings for a given resource type.</p>
-    pub fn current_performance_risk_ratings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CurrentPerformanceRiskRatings> {
+    pub fn current_performance_risk_ratings(&self) -> ::std::option::Option<&crate::types::CurrentPerformanceRiskRatings> {
         self.current_performance_risk_ratings.as_ref()
     }
     /// <p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for the instances running inferred workload types. </p>
-    pub fn inferred_workload_savings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InferredWorkloadSaving]> {
+    pub fn inferred_workload_savings(&self) -> ::std::option::Option<&[crate::types::InferredWorkloadSaving]> {
         self.inferred_workload_savings.as_deref()
     }
 }
@@ -66,19 +58,14 @@ impl RecommendationSummary {
 
 /// A builder for [`RecommendationSummary`](crate::types::RecommendationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationSummaryBuilder {
     pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::Summary>>,
-    pub(crate) recommendation_resource_type:
-        ::std::option::Option<crate::types::RecommendationSourceType>,
+    pub(crate) recommendation_resource_type: ::std::option::Option<crate::types::RecommendationSourceType>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
-    pub(crate) current_performance_risk_ratings:
-        ::std::option::Option<crate::types::CurrentPerformanceRiskRatings>,
-    pub(crate) inferred_workload_savings:
-        ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>>,
+    pub(crate) current_performance_risk_ratings: ::std::option::Option<crate::types::CurrentPerformanceRiskRatings>,
+    pub(crate) inferred_workload_savings: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>>,
 }
 impl RecommendationSummaryBuilder {
     /// Appends an item to `summaries`.
@@ -93,10 +80,7 @@ impl RecommendationSummaryBuilder {
         self
     }
     /// <p>An array of objects that describe a recommendation summary.</p>
-    pub fn set_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Summary>>,
-    ) -> Self {
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Summary>>) -> Self {
         self.summaries = input;
         self
     }
@@ -105,25 +89,17 @@ impl RecommendationSummaryBuilder {
         &self.summaries
     }
     /// <p>The resource type that the recommendation summary applies to.</p>
-    pub fn recommendation_resource_type(
-        mut self,
-        input: crate::types::RecommendationSourceType,
-    ) -> Self {
+    pub fn recommendation_resource_type(mut self, input: crate::types::RecommendationSourceType) -> Self {
         self.recommendation_resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource type that the recommendation summary applies to.</p>
-    pub fn set_recommendation_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationSourceType>,
-    ) -> Self {
+    pub fn set_recommendation_resource_type(mut self, input: ::std::option::Option<crate::types::RecommendationSourceType>) -> Self {
         self.recommendation_resource_type = input;
         self
     }
     /// <p>The resource type that the recommendation summary applies to.</p>
-    pub fn get_recommendation_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationSourceType> {
+    pub fn get_recommendation_resource_type(&self) -> &::std::option::Option<crate::types::RecommendationSourceType> {
         &self.recommendation_resource_type
     }
     /// <p>The Amazon Web Services account ID of the recommendation summary.</p>
@@ -146,39 +122,26 @@ impl RecommendationSummaryBuilder {
         self
     }
     /// <p>An object that describes the savings opportunity for a given resource type. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
-    pub fn set_savings_opportunity(
-        mut self,
-        input: ::std::option::Option<crate::types::SavingsOpportunity>,
-    ) -> Self {
+    pub fn set_savings_opportunity(mut self, input: ::std::option::Option<crate::types::SavingsOpportunity>) -> Self {
         self.savings_opportunity = input;
         self
     }
     /// <p>An object that describes the savings opportunity for a given resource type. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
-    pub fn get_savings_opportunity(
-        &self,
-    ) -> &::std::option::Option<crate::types::SavingsOpportunity> {
+    pub fn get_savings_opportunity(&self) -> &::std::option::Option<crate::types::SavingsOpportunity> {
         &self.savings_opportunity
     }
     /// <p>An object that describes the performance risk ratings for a given resource type.</p>
-    pub fn current_performance_risk_ratings(
-        mut self,
-        input: crate::types::CurrentPerformanceRiskRatings,
-    ) -> Self {
+    pub fn current_performance_risk_ratings(mut self, input: crate::types::CurrentPerformanceRiskRatings) -> Self {
         self.current_performance_risk_ratings = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes the performance risk ratings for a given resource type.</p>
-    pub fn set_current_performance_risk_ratings(
-        mut self,
-        input: ::std::option::Option<crate::types::CurrentPerformanceRiskRatings>,
-    ) -> Self {
+    pub fn set_current_performance_risk_ratings(mut self, input: ::std::option::Option<crate::types::CurrentPerformanceRiskRatings>) -> Self {
         self.current_performance_risk_ratings = input;
         self
     }
     /// <p>An object that describes the performance risk ratings for a given resource type.</p>
-    pub fn get_current_performance_risk_ratings(
-        &self,
-    ) -> &::std::option::Option<crate::types::CurrentPerformanceRiskRatings> {
+    pub fn get_current_performance_risk_ratings(&self) -> &::std::option::Option<crate::types::CurrentPerformanceRiskRatings> {
         &self.current_performance_risk_ratings
     }
     /// Appends an item to `inferred_workload_savings`.
@@ -186,27 +149,19 @@ impl RecommendationSummaryBuilder {
     /// To override the contents of this collection use [`set_inferred_workload_savings`](Self::set_inferred_workload_savings).
     ///
     /// <p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for the instances running inferred workload types. </p>
-    pub fn inferred_workload_savings(
-        mut self,
-        input: crate::types::InferredWorkloadSaving,
-    ) -> Self {
+    pub fn inferred_workload_savings(mut self, input: crate::types::InferredWorkloadSaving) -> Self {
         let mut v = self.inferred_workload_savings.unwrap_or_default();
         v.push(input);
         self.inferred_workload_savings = ::std::option::Option::Some(v);
         self
     }
     /// <p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for the instances running inferred workload types. </p>
-    pub fn set_inferred_workload_savings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>>,
-    ) -> Self {
+    pub fn set_inferred_workload_savings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>>) -> Self {
         self.inferred_workload_savings = input;
         self
     }
     /// <p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for the instances running inferred workload types. </p>
-    pub fn get_inferred_workload_savings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>> {
+    pub fn get_inferred_workload_savings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>> {
         &self.inferred_workload_savings
     }
     /// Consumes the builder and constructs a [`RecommendationSummary`](crate::types::RecommendationSummary).

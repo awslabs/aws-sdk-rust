@@ -38,13 +38,7 @@
 /// The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HlsInitializationVectorInManifest {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for HlsInitializationVectorInManifest {
         match s {
             "EXCLUDE" => HlsInitializationVectorInManifest::Exclude,
             "INCLUDE" => HlsInitializationVectorInManifest::Include,
-            other => HlsInitializationVectorInManifest::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => HlsInitializationVectorInManifest::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

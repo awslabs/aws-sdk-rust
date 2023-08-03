@@ -23,9 +23,7 @@ impl SearchedFace {
 
 /// A builder for [`SearchedFace`](crate::types::SearchedFace).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchedFaceBuilder {
     pub(crate) face_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl SearchedFaceBuilder {
     }
     /// Consumes the builder and constructs a [`SearchedFace`](crate::types::SearchedFace).
     pub fn build(self) -> crate::types::SearchedFace {
-        crate::types::SearchedFace {
-            face_id: self.face_id,
-        }
+        crate::types::SearchedFace { face_id: self.face_id }
     }
 }

@@ -22,41 +22,31 @@ impl DeleteTransitGatewayPolicyTableInput {
 }
 impl DeleteTransitGatewayPolicyTableInput {
     /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayPolicyTableInput`](crate::operation::delete_transit_gateway_policy_table::DeleteTransitGatewayPolicyTableInput).
-    pub fn builder() -> crate::operation::delete_transit_gateway_policy_table::builders::DeleteTransitGatewayPolicyTableInputBuilder{
+    pub fn builder() -> crate::operation::delete_transit_gateway_policy_table::builders::DeleteTransitGatewayPolicyTableInputBuilder {
         crate::operation::delete_transit_gateway_policy_table::builders::DeleteTransitGatewayPolicyTableInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTransitGatewayPolicyTableInput`](crate::operation::delete_transit_gateway_policy_table::DeleteTransitGatewayPolicyTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTransitGatewayPolicyTableInputBuilder {
     pub(crate) transit_gateway_policy_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteTransitGatewayPolicyTableInputBuilder {
     /// <p>The transit gateway policy table to delete.</p>
-    pub fn transit_gateway_policy_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_policy_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_policy_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transit gateway policy table to delete.</p>
-    pub fn set_transit_gateway_policy_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_policy_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_policy_table_id = input;
         self
     }
     /// <p>The transit gateway policy table to delete.</p>
-    pub fn get_transit_gateway_policy_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_policy_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_policy_table_id
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -82,11 +72,9 @@ impl DeleteTransitGatewayPolicyTableInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_transit_gateway_policy_table::DeleteTransitGatewayPolicyTableInput {
-                transit_gateway_policy_table_id: self.transit_gateway_policy_table_id
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                transit_gateway_policy_table_id: self.transit_gateway_policy_table_id,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

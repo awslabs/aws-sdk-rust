@@ -64,9 +64,7 @@ impl SearchCasesInput {
 
 /// A builder for [`SearchCasesInput`](crate::operation::search_cases::SearchCasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchCasesInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -159,10 +157,7 @@ impl SearchCasesInputBuilder {
         self
     }
     /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results. </p>
-    pub fn set_sorts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
-    ) -> Self {
+    pub fn set_sorts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>) -> Self {
         self.sorts = input;
         self
     }
@@ -182,26 +177,16 @@ impl SearchCasesInputBuilder {
         self
     }
     /// <p>The list of field identifiers to be returned as part of the response.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>) -> Self {
         self.fields = input;
         self
     }
     /// <p>The list of field identifiers to be returned as part of the response.</p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
         &self.fields
     }
     /// Consumes the builder and constructs a [`SearchCasesInput`](crate::operation::search_cases::SearchCasesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_cases::SearchCasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_cases::SearchCasesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_cases::SearchCasesInput {
             domain_id: self.domain_id,
             max_results: self.max_results,

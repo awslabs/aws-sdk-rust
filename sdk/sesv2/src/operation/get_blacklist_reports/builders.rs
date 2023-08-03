@@ -37,9 +37,7 @@ impl GetBlacklistReportsFluentBuilder {
         }
     }
     /// Access the GetBlacklistReports as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_blacklist_reports::builders::GetBlacklistReportsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_blacklist_reports::builders::GetBlacklistReportsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetBlacklistReportsFluentBuilder {
             crate::operation::get_blacklist_reports::GetBlacklistReports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_blacklist_reports::GetBlacklistReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_blacklist_reports::GetBlacklistReportsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetBlacklistReportsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetBlacklistReportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_blacklist_reports::GetBlacklistReportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_blacklist_reports::GetBlacklistReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_blacklist_reports::GetBlacklistReportsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetBlacklistReportsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_blacklist_reports::GetBlacklistReportsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_blacklist_reports::GetBlacklistReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_blacklist_reports::GetBlacklistReportsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetBlacklistReportsFluentBuilder {
             crate::operation::get_blacklist_reports::GetBlacklistReports,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_blacklist_reports::GetBlacklistReportsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_blacklist_reports::GetBlacklistReportsError>,
     > {
         self.customize_middleware().await
     }
@@ -127,25 +114,17 @@ impl GetBlacklistReportsFluentBuilder {
     /// To override the contents of this collection use [`set_blacklist_item_names`](Self::set_blacklist_item_names).
     ///
     /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
-    pub fn blacklist_item_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blacklist_item_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.blacklist_item_names(input.into());
         self
     }
     /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
-    pub fn set_blacklist_item_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_blacklist_item_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_blacklist_item_names(input);
         self
     }
     /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
-    pub fn get_blacklist_item_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_blacklist_item_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_blacklist_item_names()
     }
 }

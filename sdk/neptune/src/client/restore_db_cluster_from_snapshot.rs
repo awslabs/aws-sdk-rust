@@ -24,7 +24,9 @@ impl super::Client {
     /// - On success, responds with [`RestoreDbClusterFromSnapshotOutput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     /// - On failure, responds with [`SdkError<RestoreDBClusterFromSnapshotError>`](crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError)
-    pub fn restore_db_cluster_from_snapshot(&self) -> crate::operation::restore_db_cluster_from_snapshot::builders::RestoreDBClusterFromSnapshotFluentBuilder{
+    pub fn restore_db_cluster_from_snapshot(
+        &self,
+    ) -> crate::operation::restore_db_cluster_from_snapshot::builders::RestoreDBClusterFromSnapshotFluentBuilder {
         crate::operation::restore_db_cluster_from_snapshot::builders::RestoreDBClusterFromSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

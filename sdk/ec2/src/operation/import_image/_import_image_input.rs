@@ -56,9 +56,7 @@ pub struct ImportImageInput {
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the license configurations.</p>
     #[doc(hidden)]
-    pub license_specifications: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>,
-    >,
+    pub license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>>,
     /// <p>The tags to apply to the import image task during creation.</p>
     #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
@@ -134,9 +132,7 @@ impl ImportImageInput {
         self.role_name.as_deref()
     }
     /// <p>The ARNs of the license configurations.</p>
-    pub fn license_specifications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ImportImageLicenseConfigurationRequest]> {
+    pub fn license_specifications(&self) -> ::std::option::Option<&[crate::types::ImportImageLicenseConfigurationRequest]> {
         self.license_specifications.as_deref()
     }
     /// <p>The tags to apply to the import image task during creation.</p>
@@ -161,16 +157,13 @@ impl ImportImageInput {
 
 /// A builder for [`ImportImageInput`](crate::operation::import_image::ImportImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportImageInputBuilder {
     pub(crate) architecture: ::std::option::Option<::std::string::String>,
     pub(crate) client_data: ::std::option::Option<crate::types::ClientData>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) disk_containers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>>,
+    pub(crate) disk_containers: ::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) hypervisor: ::std::option::Option<::std::string::String>,
@@ -178,11 +171,8 @@ pub struct ImportImageInputBuilder {
     pub(crate) license_type: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<::std::string::String>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
-    pub(crate) license_specifications: ::std::option::Option<
-        ::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>,
-    >,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) usage_operation: ::std::option::Option<::std::string::String>,
     pub(crate) boot_mode: ::std::option::Option<crate::types::BootModeValues>,
 }
@@ -210,10 +200,7 @@ impl ImportImageInputBuilder {
         self
     }
     /// <p>The client-specific data.</p>
-    pub fn set_client_data(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientData>,
-    ) -> Self {
+    pub fn set_client_data(mut self, input: ::std::option::Option<crate::types::ClientData>) -> Self {
         self.client_data = input;
         self
     }
@@ -261,17 +248,12 @@ impl ImportImageInputBuilder {
         self
     }
     /// <p>Information about the disk containers.</p>
-    pub fn set_disk_containers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>>,
-    ) -> Self {
+    pub fn set_disk_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>>) -> Self {
         self.disk_containers = input;
         self
     }
     /// <p>Information about the disk containers.</p>
-    pub fn get_disk_containers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>> {
+    pub fn get_disk_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>> {
         &self.disk_containers
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -419,10 +401,7 @@ impl ImportImageInputBuilder {
     /// To override the contents of this collection use [`set_license_specifications`](Self::set_license_specifications).
     ///
     /// <p>The ARNs of the license configurations.</p>
-    pub fn license_specifications(
-        mut self,
-        input: crate::types::ImportImageLicenseConfigurationRequest,
-    ) -> Self {
+    pub fn license_specifications(mut self, input: crate::types::ImportImageLicenseConfigurationRequest) -> Self {
         let mut v = self.license_specifications.unwrap_or_default();
         v.push(input);
         self.license_specifications = ::std::option::Option::Some(v);
@@ -431,18 +410,13 @@ impl ImportImageInputBuilder {
     /// <p>The ARNs of the license configurations.</p>
     pub fn set_license_specifications(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>>,
     ) -> Self {
         self.license_specifications = input;
         self
     }
     /// <p>The ARNs of the license configurations.</p>
-    pub fn get_license_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>>
-    {
+    pub fn get_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>> {
         &self.license_specifications
     }
     /// Appends an item to `tag_specifications`.
@@ -457,32 +431,21 @@ impl ImportImageInputBuilder {
         self
     }
     /// <p>The tags to apply to the import image task during creation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the import image task during creation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing options</a> in the <i>VM Import/Export User Guide</i>.</p>
-    pub fn usage_operation(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_operation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing options</a> in the <i>VM Import/Export User Guide</i>.</p>
-    pub fn set_usage_operation(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.usage_operation = input;
         self
     }
@@ -496,10 +459,7 @@ impl ImportImageInputBuilder {
         self
     }
     /// <p>The boot mode of the virtual machine.</p>
-    pub fn set_boot_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::BootModeValues>,
-    ) -> Self {
+    pub fn set_boot_mode(mut self, input: ::std::option::Option<crate::types::BootModeValues>) -> Self {
         self.boot_mode = input;
         self
     }
@@ -508,12 +468,7 @@ impl ImportImageInputBuilder {
         &self.boot_mode
     }
     /// Consumes the builder and constructs a [`ImportImageInput`](crate::operation::import_image::ImportImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::import_image::ImportImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_image::ImportImageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_image::ImportImageInput {
             architecture: self.architecture,
             client_data: self.client_data,

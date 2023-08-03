@@ -31,18 +31,14 @@ impl PollForActivityTaskInput {
 }
 impl PollForActivityTaskInput {
     /// Creates a new builder-style object to manufacture [`PollForActivityTaskInput`](crate::operation::poll_for_activity_task::PollForActivityTaskInput).
-    pub fn builder(
-    ) -> crate::operation::poll_for_activity_task::builders::PollForActivityTaskInputBuilder {
-        crate::operation::poll_for_activity_task::builders::PollForActivityTaskInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::poll_for_activity_task::builders::PollForActivityTaskInputBuilder {
+        crate::operation::poll_for_activity_task::builders::PollForActivityTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`PollForActivityTaskInput`](crate::operation::poll_for_activity_task::PollForActivityTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PollForActivityTaskInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) task_list: ::std::option::Option<crate::types::TaskList>,
@@ -97,16 +93,12 @@ impl PollForActivityTaskInputBuilder {
     /// Consumes the builder and constructs a [`PollForActivityTaskInput`](crate::operation::poll_for_activity_task::PollForActivityTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::poll_for_activity_task::PollForActivityTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::poll_for_activity_task::PollForActivityTaskInput {
-                domain: self.domain,
-                task_list: self.task_list,
-                identity: self.identity,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::poll_for_activity_task::PollForActivityTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::poll_for_activity_task::PollForActivityTaskInput {
+            domain: self.domain,
+            task_list: self.task_list,
+            identity: self.identity,
+        })
     }
 }

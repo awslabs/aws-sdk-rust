@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`platform_arn(Option<String>)`](crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput::platform_arn): <p>The ARN of the platform version.</p>
     ///   - [`options(Option<Vec<ConfigurationOptionDescription>>)`](crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput::options): <p> A list of <code>ConfigurationOptionDescription</code>. </p>
     /// - On failure, responds with [`SdkError<DescribeConfigurationOptionsError>`](crate::operation::describe_configuration_options::DescribeConfigurationOptionsError)
-    pub fn describe_configuration_options(&self) -> crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsFluentBuilder{
+    pub fn describe_configuration_options(
+        &self,
+    ) -> crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsFluentBuilder {
         crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsFluentBuilder::new(self.handle.clone())
     }
 }

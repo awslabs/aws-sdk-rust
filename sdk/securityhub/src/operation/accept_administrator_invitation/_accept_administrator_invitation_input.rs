@@ -22,34 +22,26 @@ impl AcceptAdministratorInvitationInput {
 }
 impl AcceptAdministratorInvitationInput {
     /// Creates a new builder-style object to manufacture [`AcceptAdministratorInvitationInput`](crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput).
-    pub fn builder() -> crate::operation::accept_administrator_invitation::builders::AcceptAdministratorInvitationInputBuilder{
+    pub fn builder() -> crate::operation::accept_administrator_invitation::builders::AcceptAdministratorInvitationInputBuilder {
         crate::operation::accept_administrator_invitation::builders::AcceptAdministratorInvitationInputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptAdministratorInvitationInput`](crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptAdministratorInvitationInputBuilder {
     pub(crate) administrator_id: ::std::option::Option<::std::string::String>,
     pub(crate) invitation_id: ::std::option::Option<::std::string::String>,
 }
 impl AcceptAdministratorInvitationInputBuilder {
     /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
-    pub fn administrator_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn administrator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.administrator_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
-    pub fn set_administrator_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_administrator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.administrator_id = input;
         self
     }
@@ -58,18 +50,12 @@ impl AcceptAdministratorInvitationInputBuilder {
         &self.administrator_id
     }
     /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
-    pub fn invitation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invitation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
-    pub fn set_invitation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invitation_id = input;
         self
     }
@@ -84,11 +70,9 @@ impl AcceptAdministratorInvitationInputBuilder {
         crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput {
-                administrator_id: self.administrator_id,
-                invitation_id: self.invitation_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput {
+            administrator_id: self.administrator_id,
+            invitation_id: self.invitation_id,
+        })
     }
 }

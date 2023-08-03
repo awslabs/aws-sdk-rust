@@ -29,18 +29,14 @@ impl ListReferenceStoresInput {
 }
 impl ListReferenceStoresInput {
     /// Creates a new builder-style object to manufacture [`ListReferenceStoresInput`](crate::operation::list_reference_stores::ListReferenceStoresInput).
-    pub fn builder(
-    ) -> crate::operation::list_reference_stores::builders::ListReferenceStoresInputBuilder {
-        crate::operation::list_reference_stores::builders::ListReferenceStoresInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_reference_stores::builders::ListReferenceStoresInputBuilder {
+        crate::operation::list_reference_stores::builders::ListReferenceStoresInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReferenceStoresInput`](crate::operation::list_reference_stores::ListReferenceStoresInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReferenceStoresInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -81,10 +77,7 @@ impl ListReferenceStoresInputBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceStoreFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ReferenceStoreFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -95,16 +88,12 @@ impl ListReferenceStoresInputBuilder {
     /// Consumes the builder and constructs a [`ListReferenceStoresInput`](crate::operation::list_reference_stores::ListReferenceStoresInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_reference_stores::ListReferenceStoresInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_reference_stores::ListReferenceStoresInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filter: self.filter,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_reference_stores::ListReferenceStoresInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_reference_stores::ListReferenceStoresInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filter: self.filter,
+        })
     }
 }

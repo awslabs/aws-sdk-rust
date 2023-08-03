@@ -47,9 +47,7 @@ impl SpectrumConfig {
 
 /// A builder for [`SpectrumConfig`](crate::types::SpectrumConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpectrumConfigBuilder {
     pub(crate) center_frequency: ::std::option::Option<crate::types::Frequency>,
     pub(crate) bandwidth: ::std::option::Option<crate::types::FrequencyBandwidth>,
@@ -62,10 +60,7 @@ impl SpectrumConfigBuilder {
         self
     }
     /// <p>Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
-    pub fn set_center_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::Frequency>,
-    ) -> Self {
+    pub fn set_center_frequency(mut self, input: ::std::option::Option<crate::types::Frequency>) -> Self {
         self.center_frequency = input;
         self
     }
@@ -89,10 +84,7 @@ impl SpectrumConfigBuilder {
     /// <li> <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p> </li>
     /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// </ul>
-    pub fn set_bandwidth(
-        mut self,
-        input: ::std::option::Option<crate::types::FrequencyBandwidth>,
-    ) -> Self {
+    pub fn set_bandwidth(mut self, input: ::std::option::Option<crate::types::FrequencyBandwidth>) -> Self {
         self.bandwidth = input;
         self
     }
@@ -111,10 +103,7 @@ impl SpectrumConfigBuilder {
         self
     }
     /// <p>Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
-    pub fn set_polarization(
-        mut self,
-        input: ::std::option::Option<crate::types::Polarization>,
-    ) -> Self {
+    pub fn set_polarization(mut self, input: ::std::option::Option<crate::types::Polarization>) -> Self {
         self.polarization = input;
         self
     }

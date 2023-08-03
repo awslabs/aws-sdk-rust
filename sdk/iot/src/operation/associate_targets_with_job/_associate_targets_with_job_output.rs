@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for AssociateTargetsWithJobOutput {
 }
 impl AssociateTargetsWithJobOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTargetsWithJobOutput`](crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobOutputBuilder {
         crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTargetsWithJobOutput`](crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTargetsWithJobOutputBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -106,9 +102,7 @@ impl AssociateTargetsWithJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateTargetsWithJobOutput`](crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput {
+    pub fn build(self) -> crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput {
         crate::operation::associate_targets_with_job::AssociateTargetsWithJobOutput {
             job_arn: self.job_arn,
             job_id: self.job_id,

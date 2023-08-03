@@ -37,9 +37,7 @@ impl ListUserPoolClientsFluentBuilder {
         }
     }
     /// Access the ListUserPoolClients as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_user_pool_clients::builders::ListUserPoolClientsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_user_pool_clients::builders::ListUserPoolClientsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListUserPoolClientsFluentBuilder {
             crate::operation::list_user_pool_clients::ListUserPoolClients,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_pool_clients::ListUserPoolClientsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_pool_clients::ListUserPoolClientsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListUserPoolClientsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListUserPoolClientsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_user_pool_clients::ListUserPoolClientsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_pool_clients::ListUserPoolClientsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_pool_clients::ListUserPoolClientsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListUserPoolClientsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_user_pool_clients::ListUserPoolClientsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_pool_clients::ListUserPoolClientsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_pool_clients::ListUserPoolClientsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListUserPoolClientsFluentBuilder {
             crate::operation::list_user_pool_clients::ListUserPoolClients,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_pool_clients::ListUserPoolClientsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_pool_clients::ListUserPoolClientsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_user_pool_clients::paginator::ListUserPoolClientsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_user_pool_clients::paginator::ListUserPoolClientsPaginator {
-        crate::operation::list_user_pool_clients::paginator::ListUserPoolClientsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_user_pool_clients::paginator::ListUserPoolClientsPaginator {
+        crate::operation::list_user_pool_clients::paginator::ListUserPoolClientsPaginator::new(self.handle, self.inner)
     }
     /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

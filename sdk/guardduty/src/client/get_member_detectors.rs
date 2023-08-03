@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`member_data_source_configurations(Option<Vec<MemberDataSourceConfiguration>>)`](crate::operation::get_member_detectors::GetMemberDetectorsOutput::member_data_source_configurations): <p>An object that describes which data sources are enabled for a member account.</p>
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::operation::get_member_detectors::GetMemberDetectorsOutput::unprocessed_accounts): <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
     /// - On failure, responds with [`SdkError<GetMemberDetectorsError>`](crate::operation::get_member_detectors::GetMemberDetectorsError)
-    pub fn get_member_detectors(
-        &self,
-    ) -> crate::operation::get_member_detectors::builders::GetMemberDetectorsFluentBuilder {
-        crate::operation::get_member_detectors::builders::GetMemberDetectorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_member_detectors(&self) -> crate::operation::get_member_detectors::builders::GetMemberDetectorsFluentBuilder {
+        crate::operation::get_member_detectors::builders::GetMemberDetectorsFluentBuilder::new(self.handle.clone())
     }
 }

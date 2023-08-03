@@ -36,9 +36,7 @@ impl AddTagsOutput {
 
 /// A builder for [`AddTagsOutput`](crate::operation::add_tags::AddTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddTagsOutputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
@@ -65,10 +63,7 @@ impl AddTagsOutputBuilder {
         self
     }
     /// <p>The type of the ML object that was tagged.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TaggableResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TaggableResourceType>) -> Self {
         self.resource_type = input;
         self
     }

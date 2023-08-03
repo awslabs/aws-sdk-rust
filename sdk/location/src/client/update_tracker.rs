@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`tracker_arn(Option<String>)`](crate::operation::update_tracker::UpdateTrackerOutput::tracker_arn): <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>  </ul>
     ///   - [`update_time(Option<DateTime>)`](crate::operation::update_tracker::UpdateTrackerOutput::update_time): <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// - On failure, responds with [`SdkError<UpdateTrackerError>`](crate::operation::update_tracker::UpdateTrackerError)
-    pub fn update_tracker(
-        &self,
-    ) -> crate::operation::update_tracker::builders::UpdateTrackerFluentBuilder {
-        crate::operation::update_tracker::builders::UpdateTrackerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_tracker(&self) -> crate::operation::update_tracker::builders::UpdateTrackerFluentBuilder {
+        crate::operation::update_tracker::builders::UpdateTrackerFluentBuilder::new(self.handle.clone())
     }
 }

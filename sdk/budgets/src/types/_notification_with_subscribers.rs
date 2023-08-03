@@ -30,9 +30,7 @@ impl NotificationWithSubscribers {
 
 /// A builder for [`NotificationWithSubscribers`](crate::types::NotificationWithSubscribers).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationWithSubscribersBuilder {
     pub(crate) notification: ::std::option::Option<crate::types::Notification>,
     pub(crate) subscribers: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
@@ -44,10 +42,7 @@ impl NotificationWithSubscribersBuilder {
         self
     }
     /// <p>The notification that's associated with a budget.</p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::Notification>,
-    ) -> Self {
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
         self.notification = input;
         self
     }
@@ -67,17 +62,12 @@ impl NotificationWithSubscribersBuilder {
         self
     }
     /// <p>A list of subscribers who are subscribed to this notification.</p>
-    pub fn set_subscribers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
-    ) -> Self {
+    pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>) -> Self {
         self.subscribers = input;
         self
     }
     /// <p>A list of subscribers who are subscribed to this notification.</p>
-    pub fn get_subscribers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
+    pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
         &self.subscribers
     }
     /// Consumes the builder and constructs a [`NotificationWithSubscribers`](crate::types::NotificationWithSubscribers).

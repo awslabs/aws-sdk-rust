@@ -43,13 +43,7 @@
 /// _Note: `QueryStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum QueryStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -106,15 +100,7 @@ impl QueryStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Cancelled",
-            "Complete",
-            "Failed",
-            "Running",
-            "Scheduled",
-            "Timeout",
-            "Unknown",
-        ]
+        &["Cancelled", "Complete", "Failed", "Running", "Scheduled", "Timeout", "Unknown"]
     }
 }
 impl ::std::convert::AsRef<str> for QueryStatus {

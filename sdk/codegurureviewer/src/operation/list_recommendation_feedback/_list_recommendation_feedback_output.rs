@@ -5,8 +5,7 @@
 pub struct ListRecommendationFeedbackOutput {
     /// <p>Recommendation feedback summaries corresponding to the code review ARN.</p>
     #[doc(hidden)]
-    pub recommendation_feedback_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationFeedbackSummary>>,
+    pub recommendation_feedback_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationFeedbackSummary>>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListRecommendationFeedbackOutput {
 }
 impl ListRecommendationFeedbackOutput {
     /// <p>Recommendation feedback summaries corresponding to the code review ARN.</p>
-    pub fn recommendation_feedback_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RecommendationFeedbackSummary]> {
+    pub fn recommendation_feedback_summaries(&self) -> ::std::option::Option<&[crate::types::RecommendationFeedbackSummary]> {
         self.recommendation_feedback_summaries.as_deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListRecommendationFeedbackOutput {
 }
 impl ListRecommendationFeedbackOutput {
     /// Creates a new builder-style object to manufacture [`ListRecommendationFeedbackOutput`](crate::operation::list_recommendation_feedback::ListRecommendationFeedbackOutput).
-    pub fn builder() -> crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackOutputBuilder{
+    pub fn builder() -> crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackOutputBuilder {
         crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecommendationFeedbackOutput`](crate::operation::list_recommendation_feedback::ListRecommendationFeedbackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecommendationFeedbackOutputBuilder {
-    pub(crate) recommendation_feedback_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationFeedbackSummary>>,
+    pub(crate) recommendation_feedback_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationFeedbackSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListRecommendationFeedbackOutputBuilder {
     /// To override the contents of this collection use [`set_recommendation_feedback_summaries`](Self::set_recommendation_feedback_summaries).
     ///
     /// <p>Recommendation feedback summaries corresponding to the code review ARN.</p>
-    pub fn recommendation_feedback_summaries(
-        mut self,
-        input: crate::types::RecommendationFeedbackSummary,
-    ) -> Self {
+    pub fn recommendation_feedback_summaries(mut self, input: crate::types::RecommendationFeedbackSummary) -> Self {
         let mut v = self.recommendation_feedback_summaries.unwrap_or_default();
         v.push(input);
         self.recommendation_feedback_summaries = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListRecommendationFeedbackOutputBuilder {
         self
     }
     /// <p>Recommendation feedback summaries corresponding to the code review ARN.</p>
-    pub fn get_recommendation_feedback_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationFeedbackSummary>> {
+    pub fn get_recommendation_feedback_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationFeedbackSummary>> {
         &self.recommendation_feedback_summaries
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
@@ -100,9 +89,7 @@ impl ListRecommendationFeedbackOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRecommendationFeedbackOutput`](crate::operation::list_recommendation_feedback::ListRecommendationFeedbackOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_recommendation_feedback::ListRecommendationFeedbackOutput {
+    pub fn build(self) -> crate::operation::list_recommendation_feedback::ListRecommendationFeedbackOutput {
         crate::operation::list_recommendation_feedback::ListRecommendationFeedbackOutput {
             recommendation_feedback_summaries: self.recommendation_feedback_summaries,
             next_token: self.next_token,

@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_streaming_sessions::ListStreamingSessionsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`sessions(Option<Vec<StreamingSession>>)`](crate::operation::list_streaming_sessions::ListStreamingSessionsOutput::sessions): <p>A collection of streaming sessions.</p>
     /// - On failure, responds with [`SdkError<ListStreamingSessionsError>`](crate::operation::list_streaming_sessions::ListStreamingSessionsError)
-    pub fn list_streaming_sessions(
-        &self,
-    ) -> crate::operation::list_streaming_sessions::builders::ListStreamingSessionsFluentBuilder
-    {
-        crate::operation::list_streaming_sessions::builders::ListStreamingSessionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_streaming_sessions(&self) -> crate::operation::list_streaming_sessions::builders::ListStreamingSessionsFluentBuilder {
+        crate::operation::list_streaming_sessions::builders::ListStreamingSessionsFluentBuilder::new(self.handle.clone())
     }
 }

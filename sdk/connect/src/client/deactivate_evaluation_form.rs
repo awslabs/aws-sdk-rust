@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`evaluation_form_arn(Option<String>)`](crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput::evaluation_form_arn): <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
     ///   - [`evaluation_form_version(Option<i32>)`](crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput::evaluation_form_version): <p>The version of the deactivated evaluation form resource.</p>
     /// - On failure, responds with [`SdkError<DeactivateEvaluationFormError>`](crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormError)
-    pub fn deactivate_evaluation_form(
-        &self,
-    ) -> crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormFluentBuilder
-    {
+    pub fn deactivate_evaluation_form(&self) -> crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormFluentBuilder {
         crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormFluentBuilder::new(self.handle.clone())
     }
 }

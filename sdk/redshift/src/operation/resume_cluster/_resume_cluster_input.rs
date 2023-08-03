@@ -23,26 +23,18 @@ impl ResumeClusterInput {
 
 /// A builder for [`ResumeClusterInput`](crate::operation::resume_cluster::ResumeClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResumeClusterInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ResumeClusterInputBuilder {
     /// <p>The identifier of the cluster to be resumed.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster to be resumed.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -53,10 +45,7 @@ impl ResumeClusterInputBuilder {
     /// Consumes the builder and constructs a [`ResumeClusterInput`](crate::operation::resume_cluster::ResumeClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::resume_cluster::ResumeClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::resume_cluster::ResumeClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::resume_cluster::ResumeClusterInput {
             cluster_identifier: self.cluster_identifier,
         })

@@ -64,9 +64,7 @@ impl TestDnsAnswerOutput {
 
 /// A builder for [`TestDnsAnswerOutput`](crate::operation::test_dns_answer::TestDnsAnswerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestDnsAnswerOutputBuilder {
     pub(crate) nameserver: ::std::option::Option<::std::string::String>,
     pub(crate) record_name: ::std::option::Option<::std::string::String>,
@@ -131,32 +129,21 @@ impl TestDnsAnswerOutputBuilder {
         self
     }
     /// <p>A list that contains values that Amazon Route 53 returned for this resource record set.</p>
-    pub fn set_record_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_record_data(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.record_data = input;
         self
     }
     /// <p>A list that contains values that Amazon Route 53 returned for this resource record set.</p>
-    pub fn get_record_data(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_record_data(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.record_data
     }
     /// <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error. For a list of possible response codes, see <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website. </p>
-    pub fn response_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error. For a list of possible response codes, see <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website. </p>
-    pub fn set_response_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.response_code = input;
         self
     }

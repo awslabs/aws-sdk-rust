@@ -47,16 +47,14 @@ impl BatchCreateChannelMembershipInput {
 }
 impl BatchCreateChannelMembershipInput {
     /// Creates a new builder-style object to manufacture [`BatchCreateChannelMembershipInput`](crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipInput).
-    pub fn builder() -> crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipInputBuilder{
+    pub fn builder() -> crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipInputBuilder {
         crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchCreateChannelMembershipInput`](crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateChannelMembershipInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ChannelMembershipType>,
@@ -85,10 +83,7 @@ impl BatchCreateChannelMembershipInputBuilder {
         self
     }
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMembershipType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMembershipType>) -> Self {
         self.r#type = input;
         self
     }
@@ -108,17 +103,12 @@ impl BatchCreateChannelMembershipInputBuilder {
         self
     }
     /// <p>The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code> and <code>AppInstanceBots</code> can be added as a channel member.</p>
-    pub fn set_member_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_member_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.member_arns = input;
         self
     }
     /// <p>The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code> and <code>AppInstanceBots</code> can be added as a channel member.</p>
-    pub fn get_member_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_member_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.member_arns
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
@@ -138,20 +128,14 @@ impl BatchCreateChannelMembershipInputBuilder {
     /// <p>The ID of the SubChannel in the request. </p> <note>
     /// <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p>
     /// </note>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SubChannel in the request. </p> <note>
     /// <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p>
     /// </note>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_channel_id = input;
         self
     }
@@ -168,14 +152,12 @@ impl BatchCreateChannelMembershipInputBuilder {
         crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipInput {
-                channel_arn: self.channel_arn,
-                r#type: self.r#type,
-                member_arns: self.member_arns,
-                chime_bearer: self.chime_bearer,
-                sub_channel_id: self.sub_channel_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipInput {
+            channel_arn: self.channel_arn,
+            r#type: self.r#type,
+            member_arns: self.member_arns,
+            chime_bearer: self.chime_bearer,
+            sub_channel_id: self.sub_channel_id,
+        })
     }
 }

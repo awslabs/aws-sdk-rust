@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`grafana_version(impl ::std::convert::Into<String>)`](crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationFluentBuilder::grafana_version) / [`set_grafana_version(Option<String>)`](crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationFluentBuilder::set_grafana_version): <p>Specifies the version of Grafana to support in the new workspace.</p>  <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>  <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
     /// - On success, responds with [`UpdateWorkspaceConfigurationOutput`](crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateWorkspaceConfigurationError>`](crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError)
-    pub fn update_workspace_configuration(&self) -> crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationFluentBuilder{
+    pub fn update_workspace_configuration(
+        &self,
+    ) -> crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationFluentBuilder {
         crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -27,9 +27,7 @@ impl SourceConnectionDetail {
         self.r#type.as_ref()
     }
     /// <p>The connection details based on the connection <code>Type</code>.</p>
-    pub fn connection_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceConnectionParameters> {
+    pub fn connection_parameters(&self) -> ::std::option::Option<&crate::types::SourceConnectionParameters> {
         self.connection_parameters.as_ref()
     }
     /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p>
@@ -53,13 +51,10 @@ impl SourceConnectionDetail {
 
 /// A builder for [`SourceConnectionDetail`](crate::types::SourceConnectionDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceConnectionDetailBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SourceType>,
-    pub(crate) connection_parameters:
-        ::std::option::Option<crate::types::SourceConnectionParameters>,
+    pub(crate) connection_parameters: ::std::option::Option<crate::types::SourceConnectionParameters>,
     pub(crate) last_sync: ::std::option::Option<crate::types::LastSync>,
 }
 impl SourceConnectionDetailBuilder {
@@ -78,25 +73,17 @@ impl SourceConnectionDetailBuilder {
         &self.r#type
     }
     /// <p>The connection details based on the connection <code>Type</code>.</p>
-    pub fn connection_parameters(
-        mut self,
-        input: crate::types::SourceConnectionParameters,
-    ) -> Self {
+    pub fn connection_parameters(mut self, input: crate::types::SourceConnectionParameters) -> Self {
         self.connection_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The connection details based on the connection <code>Type</code>.</p>
-    pub fn set_connection_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceConnectionParameters>,
-    ) -> Self {
+    pub fn set_connection_parameters(mut self, input: ::std::option::Option<crate::types::SourceConnectionParameters>) -> Self {
         self.connection_parameters = input;
         self
     }
     /// <p>The connection details based on the connection <code>Type</code>.</p>
-    pub fn get_connection_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceConnectionParameters> {
+    pub fn get_connection_parameters(&self) -> &::std::option::Option<crate::types::SourceConnectionParameters> {
         &self.connection_parameters
     }
     /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p>

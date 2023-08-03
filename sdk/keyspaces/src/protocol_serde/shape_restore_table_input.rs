@@ -23,28 +23,19 @@ pub fn ser_restore_table_input(
     if let Some(var_6) = &input.capacity_specification_override {
         #[allow(unused_mut)]
         let mut object_7 = object.key("capacitySpecificationOverride").start_object();
-        crate::protocol_serde::shape_capacity_specification::ser_capacity_specification(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_capacity_specification::ser_capacity_specification(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.encryption_specification_override {
         #[allow(unused_mut)]
         let mut object_9 = object.key("encryptionSpecificationOverride").start_object();
-        crate::protocol_serde::shape_encryption_specification::ser_encryption_specification(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_encryption_specification::ser_encryption_specification(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.point_in_time_recovery_override {
         #[allow(unused_mut)]
         let mut object_11 = object.key("pointInTimeRecoveryOverride").start_object();
-        crate::protocol_serde::shape_point_in_time_recovery::ser_point_in_time_recovery(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_point_in_time_recovery::ser_point_in_time_recovery(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.tags_override {

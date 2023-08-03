@@ -31,9 +31,7 @@ impl WirelessDeviceEventLogOption {
 
 /// A builder for [`WirelessDeviceEventLogOption`](crate::types::WirelessDeviceEventLogOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WirelessDeviceEventLogOptionBuilder {
     pub(crate) event: ::std::option::Option<crate::types::WirelessDeviceEvent>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,
@@ -45,10 +43,7 @@ impl WirelessDeviceEventLogOptionBuilder {
         self
     }
     /// <p>The event for a log message, if the log message is tied to a wireless device.</p>
-    pub fn set_event(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessDeviceEvent>,
-    ) -> Self {
+    pub fn set_event(mut self, input: ::std::option::Option<crate::types::WirelessDeviceEvent>) -> Self {
         self.event = input;
         self
     }

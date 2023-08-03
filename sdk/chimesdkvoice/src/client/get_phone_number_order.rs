@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetPhoneNumberOrderOutput`](crate::operation::get_phone_number_order::GetPhoneNumberOrderOutput) with field(s):
     ///   - [`phone_number_order(Option<PhoneNumberOrder>)`](crate::operation::get_phone_number_order::GetPhoneNumberOrderOutput::phone_number_order): <p>The phone number order details.</p>
     /// - On failure, responds with [`SdkError<GetPhoneNumberOrderError>`](crate::operation::get_phone_number_order::GetPhoneNumberOrderError)
-    pub fn get_phone_number_order(
-        &self,
-    ) -> crate::operation::get_phone_number_order::builders::GetPhoneNumberOrderFluentBuilder {
-        crate::operation::get_phone_number_order::builders::GetPhoneNumberOrderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_phone_number_order(&self) -> crate::operation::get_phone_number_order::builders::GetPhoneNumberOrderFluentBuilder {
+        crate::operation::get_phone_number_order::builders::GetPhoneNumberOrderFluentBuilder::new(self.handle.clone())
     }
 }

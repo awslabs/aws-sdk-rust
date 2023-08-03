@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`tags(Vec<S3Tag>)`](crate::operation::put_job_tagging::builders::PutJobTaggingFluentBuilder::tags) / [`set_tags(Option<Vec<S3Tag>>)`](crate::operation::put_job_tagging::builders::PutJobTaggingFluentBuilder::set_tags): <p>The set of tags to associate with the S3 Batch Operations job.</p>
     /// - On success, responds with [`PutJobTaggingOutput`](crate::operation::put_job_tagging::PutJobTaggingOutput)
     /// - On failure, responds with [`SdkError<PutJobTaggingError>`](crate::operation::put_job_tagging::PutJobTaggingError)
-    pub fn put_job_tagging(
-        &self,
-    ) -> crate::operation::put_job_tagging::builders::PutJobTaggingFluentBuilder {
-        crate::operation::put_job_tagging::builders::PutJobTaggingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_job_tagging(&self) -> crate::operation::put_job_tagging::builders::PutJobTaggingFluentBuilder {
+        crate::operation::put_job_tagging::builders::PutJobTaggingFluentBuilder::new(self.handle.clone())
     }
 }

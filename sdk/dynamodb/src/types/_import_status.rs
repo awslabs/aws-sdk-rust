@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ImportStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ImportStatus {
             "COMPLETED" => ImportStatus::Completed,
             "FAILED" => ImportStatus::Failed,
             "IN_PROGRESS" => ImportStatus::InProgress,
-            other => {
-                ImportStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ImportStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl ImportStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED",
-            "CANCELLING",
-            "COMPLETED",
-            "FAILED",
-            "IN_PROGRESS",
-        ]
+        &["CANCELLED", "CANCELLING", "COMPLETED", "FAILED", "IN_PROGRESS"]
     }
 }
 impl ::std::convert::AsRef<str> for ImportStatus {

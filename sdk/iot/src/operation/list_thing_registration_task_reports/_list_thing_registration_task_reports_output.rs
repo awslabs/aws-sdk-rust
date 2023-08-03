@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for ListThingRegistrationTaskReportsOutpu
 }
 impl ListThingRegistrationTaskReportsOutput {
     /// Creates a new builder-style object to manufacture [`ListThingRegistrationTaskReportsOutput`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput).
-    pub fn builder() -> crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsOutputBuilder{
+    pub fn builder() -> crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsOutputBuilder {
         crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListThingRegistrationTaskReportsOutput`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThingRegistrationTaskReportsOutputBuilder {
     pub(crate) resource_links: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) report_type: ::std::option::Option<crate::types::ReportType>,
@@ -57,27 +55,19 @@ impl ListThingRegistrationTaskReportsOutputBuilder {
     /// To override the contents of this collection use [`set_resource_links`](Self::set_resource_links).
     ///
     /// <p>Links to the task resources.</p>
-    pub fn resource_links(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_links(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_links.unwrap_or_default();
         v.push(input.into());
         self.resource_links = ::std::option::Option::Some(v);
         self
     }
     /// <p>Links to the task resources.</p>
-    pub fn set_resource_links(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_links(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_links = input;
         self
     }
     /// <p>Links to the task resources.</p>
-    pub fn get_resource_links(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_links(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_links
     }
     /// <p>The type of task report.</p>
@@ -86,10 +76,7 @@ impl ListThingRegistrationTaskReportsOutputBuilder {
         self
     }
     /// <p>The type of task report.</p>
-    pub fn set_report_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportType>,
-    ) -> Self {
+    pub fn set_report_type(mut self, input: ::std::option::Option<crate::types::ReportType>) -> Self {
         self.report_type = input;
         self
     }
@@ -121,14 +108,11 @@ impl ListThingRegistrationTaskReportsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListThingRegistrationTaskReportsOutput`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput).
-    pub fn build(self) -> crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput{
+    pub fn build(self) -> crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput {
         crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput {
-            resource_links: self.resource_links
-            ,
-            report_type: self.report_type
-            ,
-            next_token: self.next_token
-            ,
+            resource_links: self.resource_links,
+            report_type: self.report_type,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

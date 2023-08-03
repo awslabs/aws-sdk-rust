@@ -2,10 +2,7 @@
 pub fn de_mail_from_domain_attributes(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    ::std::collections::HashMap<
-        ::std::string::String,
-        crate::types::IdentityMailFromDomainAttributes,
-    >,
+    ::std::collections::HashMap<::std::string::String, crate::types::IdentityMailFromDomainAttributes>,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = ::std::collections::HashMap::new();
@@ -22,10 +19,7 @@ pub fn de_mail_from_domain_attributes(
 
 pub fn de_mail_from_domain_attributes_entry(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-    out: &mut ::std::collections::HashMap<
-        ::std::string::String,
-        crate::types::IdentityMailFromDomainAttributes,
-    >,
+    out: &mut ::std::collections::HashMap<::std::string::String, crate::types::IdentityMailFromDomainAttributes>,
 ) -> Result<(), ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut k: Option<::std::string::String> = None;
     let mut v: Option<crate::types::IdentityMailFromDomainAttributes> = None;
@@ -51,11 +45,8 @@ pub fn de_mail_from_domain_attributes_entry(
             _ => {}
         }
     }
-    let k =
-        k.ok_or_else(|| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing key map entry"))?;
-    let v = v.ok_or_else(|| {
-        ::aws_smithy_xml::decode::XmlDecodeError::custom("missing value map entry")
-    })?;
+    let k = k.ok_or_else(|| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing key map entry"))?;
+    let v = v.ok_or_else(|| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing value map entry"))?;
     out.insert(k, v);
     Ok(())
 }

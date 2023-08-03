@@ -16,7 +16,9 @@ impl super::Client {
     /// - On success, responds with [`CreateModelQualityJobDefinitionOutput`](crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionOutput) with field(s):
     ///   - [`job_definition_arn(Option<String>)`](crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionOutput::job_definition_arn): <p>The Amazon Resource Name (ARN) of the model quality monitoring job.</p>
     /// - On failure, responds with [`SdkError<CreateModelQualityJobDefinitionError>`](crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionError)
-    pub fn create_model_quality_job_definition(&self) -> crate::operation::create_model_quality_job_definition::builders::CreateModelQualityJobDefinitionFluentBuilder{
+    pub fn create_model_quality_job_definition(
+        &self,
+    ) -> crate::operation::create_model_quality_job_definition::builders::CreateModelQualityJobDefinitionFluentBuilder {
         crate::operation::create_model_quality_job_definition::builders::CreateModelQualityJobDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

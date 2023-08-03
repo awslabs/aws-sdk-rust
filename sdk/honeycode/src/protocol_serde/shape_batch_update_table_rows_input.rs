@@ -12,10 +12,7 @@ pub fn ser_batch_update_table_rows_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_update_row_data::ser_update_row_data(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_update_row_data::ser_update_row_data(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

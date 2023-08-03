@@ -36,18 +36,14 @@ impl ListTableRestoreStatusInput {
 }
 impl ListTableRestoreStatusInput {
     /// Creates a new builder-style object to manufacture [`ListTableRestoreStatusInput`](crate::operation::list_table_restore_status::ListTableRestoreStatusInput).
-    pub fn builder(
-    ) -> crate::operation::list_table_restore_status::builders::ListTableRestoreStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_table_restore_status::builders::ListTableRestoreStatusInputBuilder {
         crate::operation::list_table_restore_status::builders::ListTableRestoreStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTableRestoreStatusInput`](crate::operation::list_table_restore_status::ListTableRestoreStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTableRestoreStatusInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -84,18 +80,12 @@ impl ListTableRestoreStatusInputBuilder {
         &self.max_results
     }
     /// <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }
@@ -104,18 +94,12 @@ impl ListTableRestoreStatusInputBuilder {
         &self.namespace_name
     }
     /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workgroup_name = input;
         self
     }
@@ -130,13 +114,11 @@ impl ListTableRestoreStatusInputBuilder {
         crate::operation::list_table_restore_status::ListTableRestoreStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_table_restore_status::ListTableRestoreStatusInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                namespace_name: self.namespace_name,
-                workgroup_name: self.workgroup_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_table_restore_status::ListTableRestoreStatusInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            namespace_name: self.namespace_name,
+            workgroup_name: self.workgroup_name,
+        })
     }
 }

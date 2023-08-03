@@ -19,9 +19,7 @@ impl DeleteIntentOutput {
 
 /// A builder for [`DeleteIntentOutput`](crate::operation::delete_intent::DeleteIntentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIntentOutputBuilder {
     _request_id: Option<String>,
 }

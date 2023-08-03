@@ -6,28 +6,21 @@
 pub struct RecommendationRelatedAnomaly {
     /// <p> An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object contains the name and type of the resource. </p>
     #[doc(hidden)]
-    pub resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalyResource>>,
+    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalyResource>>,
     /// <p> Information about where the anomalous behavior related the recommendation was found. For example, details in Amazon CloudWatch metrics. </p>
     #[doc(hidden)]
-    pub source_details: ::std::option::Option<
-        ::std::vec::Vec<crate::types::RecommendationRelatedAnomalySourceDetail>,
-    >,
+    pub source_details: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalySourceDetail>>,
     /// <p>The ID of an anomaly that generated the insight with this recommendation.</p>
     #[doc(hidden)]
     pub anomaly_id: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationRelatedAnomaly {
     /// <p> An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object contains the name and type of the resource. </p>
-    pub fn resources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RecommendationRelatedAnomalyResource]> {
+    pub fn resources(&self) -> ::std::option::Option<&[crate::types::RecommendationRelatedAnomalyResource]> {
         self.resources.as_deref()
     }
     /// <p> Information about where the anomalous behavior related the recommendation was found. For example, details in Amazon CloudWatch metrics. </p>
-    pub fn source_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RecommendationRelatedAnomalySourceDetail]> {
+    pub fn source_details(&self) -> ::std::option::Option<&[crate::types::RecommendationRelatedAnomalySourceDetail]> {
         self.source_details.as_deref()
     }
     /// <p>The ID of an anomaly that generated the insight with this recommendation.</p>
@@ -44,15 +37,10 @@ impl RecommendationRelatedAnomaly {
 
 /// A builder for [`RecommendationRelatedAnomaly`](crate::types::RecommendationRelatedAnomaly).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationRelatedAnomalyBuilder {
-    pub(crate) resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalyResource>>,
-    pub(crate) source_details: ::std::option::Option<
-        ::std::vec::Vec<crate::types::RecommendationRelatedAnomalySourceDetail>,
-    >,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalyResource>>,
+    pub(crate) source_details: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalySourceDetail>>,
     pub(crate) anomaly_id: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationRelatedAnomalyBuilder {
@@ -68,20 +56,12 @@ impl RecommendationRelatedAnomalyBuilder {
         self
     }
     /// <p> An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object contains the name and type of the resource. </p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::RecommendationRelatedAnomalyResource>,
-        >,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalyResource>>) -> Self {
         self.resources = input;
         self
     }
     /// <p> An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object contains the name and type of the resource. </p>
-    pub fn get_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalyResource>>
-    {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalyResource>> {
         &self.resources
     }
     /// Appends an item to `source_details`.
@@ -89,10 +69,7 @@ impl RecommendationRelatedAnomalyBuilder {
     /// To override the contents of this collection use [`set_source_details`](Self::set_source_details).
     ///
     /// <p> Information about where the anomalous behavior related the recommendation was found. For example, details in Amazon CloudWatch metrics. </p>
-    pub fn source_details(
-        mut self,
-        input: crate::types::RecommendationRelatedAnomalySourceDetail,
-    ) -> Self {
+    pub fn source_details(mut self, input: crate::types::RecommendationRelatedAnomalySourceDetail) -> Self {
         let mut v = self.source_details.unwrap_or_default();
         v.push(input);
         self.source_details = ::std::option::Option::Some(v);
@@ -101,19 +78,13 @@ impl RecommendationRelatedAnomalyBuilder {
     /// <p> Information about where the anomalous behavior related the recommendation was found. For example, details in Amazon CloudWatch metrics. </p>
     pub fn set_source_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::RecommendationRelatedAnomalySourceDetail>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalySourceDetail>>,
     ) -> Self {
         self.source_details = input;
         self
     }
     /// <p> Information about where the anomalous behavior related the recommendation was found. For example, details in Amazon CloudWatch metrics. </p>
-    pub fn get_source_details(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::RecommendationRelatedAnomalySourceDetail>,
-    > {
+    pub fn get_source_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalySourceDetail>> {
         &self.source_details
     }
     /// <p>The ID of an anomaly that generated the insight with this recommendation.</p>

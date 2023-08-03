@@ -15,34 +15,25 @@ impl GetQueryExecutionInput {
 }
 impl GetQueryExecutionInput {
     /// Creates a new builder-style object to manufacture [`GetQueryExecutionInput`](crate::operation::get_query_execution::GetQueryExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::get_query_execution::builders::GetQueryExecutionInputBuilder {
+    pub fn builder() -> crate::operation::get_query_execution::builders::GetQueryExecutionInputBuilder {
         crate::operation::get_query_execution::builders::GetQueryExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetQueryExecutionInput`](crate::operation::get_query_execution::GetQueryExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQueryExecutionInputBuilder {
     pub(crate) query_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetQueryExecutionInputBuilder {
     /// <p>The unique ID of the query execution.</p>
-    pub fn query_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the query execution.</p>
-    pub fn set_query_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_execution_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl GetQueryExecutionInputBuilder {
     /// Consumes the builder and constructs a [`GetQueryExecutionInput`](crate::operation::get_query_execution::GetQueryExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_query_execution::GetQueryExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_query_execution::GetQueryExecutionInput {
-                query_execution_id: self.query_execution_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_query_execution::GetQueryExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_query_execution::GetQueryExecutionInput {
+            query_execution_id: self.query_execution_id,
+        })
     }
 }

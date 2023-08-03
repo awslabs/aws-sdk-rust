@@ -29,17 +29,14 @@ impl DescribeTopicRefreshInput {
 }
 impl DescribeTopicRefreshInput {
     /// Creates a new builder-style object to manufacture [`DescribeTopicRefreshInput`](crate::operation::describe_topic_refresh::DescribeTopicRefreshInput).
-    pub fn builder(
-    ) -> crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshInputBuilder {
+    pub fn builder() -> crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshInputBuilder {
         crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTopicRefreshInput`](crate::operation::describe_topic_refresh::DescribeTopicRefreshInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTopicRefreshInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct DescribeTopicRefreshInputBuilder {
 }
 impl DescribeTopicRefreshInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh you want to describe.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh you want to describe.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -97,16 +88,12 @@ impl DescribeTopicRefreshInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTopicRefreshInput`](crate::operation::describe_topic_refresh::DescribeTopicRefreshInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_topic_refresh::DescribeTopicRefreshInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_topic_refresh::DescribeTopicRefreshInput {
-                aws_account_id: self.aws_account_id,
-                topic_id: self.topic_id,
-                refresh_id: self.refresh_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_topic_refresh::DescribeTopicRefreshInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_topic_refresh::DescribeTopicRefreshInput {
+            aws_account_id: self.aws_account_id,
+            topic_id: self.topic_id,
+            refresh_id: self.refresh_id,
+        })
     }
 }

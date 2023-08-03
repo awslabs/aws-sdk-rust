@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeLayersOutput`](crate::operation::describe_layers::DescribeLayersOutput) with field(s):
     ///   - [`layers(Option<Vec<Layer>>)`](crate::operation::describe_layers::DescribeLayersOutput::layers): <p>An array of <code>Layer</code> objects that describe the layers.</p>
     /// - On failure, responds with [`SdkError<DescribeLayersError>`](crate::operation::describe_layers::DescribeLayersError)
-    pub fn describe_layers(
-        &self,
-    ) -> crate::operation::describe_layers::builders::DescribeLayersFluentBuilder {
-        crate::operation::describe_layers::builders::DescribeLayersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_layers(&self) -> crate::operation::describe_layers::builders::DescribeLayersFluentBuilder {
+        crate::operation::describe_layers::builders::DescribeLayersFluentBuilder::new(self.handle.clone())
     }
 }

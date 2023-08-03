@@ -26,7 +26,7 @@ impl ModifyDocumentPermissionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyDocumentPermissionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_document_permission::builders::ModifyDocumentPermissionInputBuilder,
+    inner: crate::operation::modify_document_permission::builders::ModifyDocumentPermissionInputBuilder,
 }
 impl ModifyDocumentPermissionFluentBuilder {
     /// Creates a new `ModifyDocumentPermission`.
@@ -37,10 +37,7 @@ impl ModifyDocumentPermissionFluentBuilder {
         }
     }
     /// Access the ModifyDocumentPermission as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_document_permission::builders::ModifyDocumentPermissionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_document_permission::builders::ModifyDocumentPermissionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ModifyDocumentPermissionFluentBuilder {
             crate::operation::modify_document_permission::ModifyDocumentPermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_document_permission::ModifyDocumentPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_document_permission::ModifyDocumentPermissionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ModifyDocumentPermissionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ModifyDocumentPermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_document_permission::ModifyDocumentPermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_document_permission::ModifyDocumentPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_document_permission::ModifyDocumentPermissionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ModifyDocumentPermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_document_permission::ModifyDocumentPermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_document_permission::ModifyDocumentPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_document_permission::ModifyDocumentPermissionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ModifyDocumentPermissionFluentBuilder {
             crate::operation::modify_document_permission::ModifyDocumentPermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_document_permission::ModifyDocumentPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_document_permission::ModifyDocumentPermissionError>,
     > {
         self.customize_middleware().await
     }
@@ -143,17 +129,12 @@ impl ModifyDocumentPermissionFluentBuilder {
         self
     }
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
-    pub fn set_permission_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentPermissionType>,
-    ) -> Self {
+    pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::DocumentPermissionType>) -> Self {
         self.inner = self.inner.set_permission_type(input);
         self
     }
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
-    pub fn get_permission_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentPermissionType> {
+    pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::DocumentPermissionType> {
         self.inner.get_permission_type()
     }
     /// Appends an item to `AccountIdsToAdd`.
@@ -161,25 +142,17 @@ impl ModifyDocumentPermissionFluentBuilder {
     /// To override the contents of this collection use [`set_account_ids_to_add`](Self::set_account_ids_to_add).
     ///
     /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
-    pub fn account_ids_to_add(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_ids_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_ids_to_add(input.into());
         self
     }
     /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
-    pub fn set_account_ids_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids_to_add(input);
         self
     }
     /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
-    pub fn get_account_ids_to_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids_to_add()
     }
     /// Appends an item to `AccountIdsToRemove`.
@@ -187,40 +160,26 @@ impl ModifyDocumentPermissionFluentBuilder {
     /// To override the contents of this collection use [`set_account_ids_to_remove`](Self::set_account_ids_to_remove).
     ///
     /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
-    pub fn account_ids_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_ids_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_ids_to_remove(input.into());
         self
     }
     /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
-    pub fn set_account_ids_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids_to_remove(input);
         self
     }
     /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
-    pub fn get_account_ids_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids_to_remove()
     }
     /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
-    pub fn shared_document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shared_document_version(input.into());
         self
     }
     /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
-    pub fn set_shared_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shared_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shared_document_version(input);
         self
     }

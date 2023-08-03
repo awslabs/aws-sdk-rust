@@ -12,9 +12,7 @@ pub struct CampaignInAppMessage {
     pub content: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
     /// <p>Custom config to be sent to client.</p>
     #[doc(hidden)]
-    pub custom_config: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub custom_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>In-app message layout.</p>
     #[doc(hidden)]
     pub layout: ::std::option::Option<crate::types::Layout>,
@@ -29,11 +27,7 @@ impl CampaignInAppMessage {
         self.content.as_deref()
     }
     /// <p>Custom config to be sent to client.</p>
-    pub fn custom_config(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn custom_config(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.custom_config.as_ref()
     }
     /// <p>In-app message layout.</p>
@@ -50,15 +44,11 @@ impl CampaignInAppMessage {
 
 /// A builder for [`CampaignInAppMessage`](crate::types::CampaignInAppMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CampaignInAppMessageBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
-    pub(crate) custom_config: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) custom_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) layout: ::std::option::Option<crate::types::Layout>,
 }
 impl CampaignInAppMessageBuilder {
@@ -88,17 +78,12 @@ impl CampaignInAppMessageBuilder {
         self
     }
     /// <p>In-app message content.</p>
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
-    ) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>) -> Self {
         self.content = input;
         self
     }
     /// <p>In-app message content.</p>
-    pub fn get_content(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>> {
+    pub fn get_content(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>> {
         &self.content
     }
     /// Adds a key-value pair to `custom_config`.
@@ -106,11 +91,7 @@ impl CampaignInAppMessageBuilder {
     /// To override the contents of this collection use [`set_custom_config`](Self::set_custom_config).
     ///
     /// <p>Custom config to be sent to client.</p>
-    pub fn custom_config(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_config(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.custom_config.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.custom_config = ::std::option::Option::Some(hash_map);
@@ -119,19 +100,13 @@ impl CampaignInAppMessageBuilder {
     /// <p>Custom config to be sent to client.</p>
     pub fn set_custom_config(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.custom_config = input;
         self
     }
     /// <p>Custom config to be sent to client.</p>
-    pub fn get_custom_config(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_custom_config(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.custom_config
     }
     /// <p>In-app message layout.</p>

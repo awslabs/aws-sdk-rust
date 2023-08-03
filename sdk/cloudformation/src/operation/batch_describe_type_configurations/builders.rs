@@ -5,16 +5,16 @@ pub use crate::operation::batch_describe_type_configurations::_batch_describe_ty
 
 impl BatchDescribeTypeConfigurationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.batch_describe_type_configurations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl BatchDescribeTypeConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDescribeTypeConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_describe_type_configurations::builders::BatchDescribeTypeConfigurationsInputBuilder,
+    inner: crate::operation::batch_describe_type_configurations::builders::BatchDescribeTypeConfigurationsInputBuilder,
 }
 impl BatchDescribeTypeConfigurationsFluentBuilder {
     /// Creates a new `BatchDescribeTypeConfigurations`.
@@ -38,15 +38,20 @@ impl BatchDescribeTypeConfigurationsFluentBuilder {
         }
     }
     /// Access the BatchDescribeTypeConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_describe_type_configurations::builders::BatchDescribeTypeConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_describe_type_configurations::builders::BatchDescribeTypeConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl BatchDescribeTypeConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +88,26 @@ impl BatchDescribeTypeConfigurationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError>,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `TypeConfigurationIdentifiers`.
@@ -100,10 +115,7 @@ impl BatchDescribeTypeConfigurationsFluentBuilder {
     /// To override the contents of this collection use [`set_type_configuration_identifiers`](Self::set_type_configuration_identifiers).
     ///
     /// <p>The list of identifiers for the desired extension configurations.</p>
-    pub fn type_configuration_identifiers(
-        mut self,
-        input: crate::types::TypeConfigurationIdentifier,
-    ) -> Self {
+    pub fn type_configuration_identifiers(mut self, input: crate::types::TypeConfigurationIdentifier) -> Self {
         self.inner = self.inner.type_configuration_identifiers(input);
         self
     }
@@ -116,9 +128,7 @@ impl BatchDescribeTypeConfigurationsFluentBuilder {
         self
     }
     /// <p>The list of identifiers for the desired extension configurations.</p>
-    pub fn get_type_configuration_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TypeConfigurationIdentifier>> {
+    pub fn get_type_configuration_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TypeConfigurationIdentifier>> {
         self.inner.get_type_configuration_identifiers()
     }
 }

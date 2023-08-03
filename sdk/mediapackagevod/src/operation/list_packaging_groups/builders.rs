@@ -37,9 +37,7 @@ impl ListPackagingGroupsFluentBuilder {
         }
     }
     /// Access the ListPackagingGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_packaging_groups::builders::ListPackagingGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_packaging_groups::builders::ListPackagingGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListPackagingGroupsFluentBuilder {
             crate::operation::list_packaging_groups::ListPackagingGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_packaging_groups::ListPackagingGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_packaging_groups::ListPackagingGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListPackagingGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListPackagingGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_packaging_groups::ListPackagingGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_packaging_groups::ListPackagingGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_packaging_groups::ListPackagingGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListPackagingGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_packaging_groups::ListPackagingGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_packaging_groups::ListPackagingGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_packaging_groups::ListPackagingGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListPackagingGroupsFluentBuilder {
             crate::operation::list_packaging_groups::ListPackagingGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_packaging_groups::ListPackagingGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_packaging_groups::ListPackagingGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_packaging_groups::paginator::ListPackagingGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_packaging_groups::paginator::ListPackagingGroupsPaginator {
-        crate::operation::list_packaging_groups::paginator::ListPackagingGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_packaging_groups::paginator::ListPackagingGroupsPaginator {
+        crate::operation::list_packaging_groups::paginator::ListPackagingGroupsPaginator::new(self.handle, self.inner)
     }
     /// Upper bound on number of records to return.
     pub fn max_results(mut self, input: i32) -> Self {

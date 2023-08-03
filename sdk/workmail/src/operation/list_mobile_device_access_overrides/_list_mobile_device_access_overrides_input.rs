@@ -53,16 +53,14 @@ impl ListMobileDeviceAccessOverridesInput {
 }
 impl ListMobileDeviceAccessOverridesInput {
     /// Creates a new builder-style object to manufacture [`ListMobileDeviceAccessOverridesInput`](crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesInput).
-    pub fn builder() -> crate::operation::list_mobile_device_access_overrides::builders::ListMobileDeviceAccessOverridesInputBuilder{
+    pub fn builder() -> crate::operation::list_mobile_device_access_overrides::builders::ListMobileDeviceAccessOverridesInputBuilder {
         crate::operation::list_mobile_device_access_overrides::builders::ListMobileDeviceAccessOverridesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMobileDeviceAccessOverridesInput`](crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMobileDeviceAccessOverridesInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -72,18 +70,12 @@ pub struct ListMobileDeviceAccessOverridesInputBuilder {
 }
 impl ListMobileDeviceAccessOverridesInputBuilder {
     /// <p>The WorkMail organization under which to list mobile device access overrides.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The WorkMail organization under which to list mobile device access overrides.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -171,17 +163,12 @@ impl ListMobileDeviceAccessOverridesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesInput {
-                organization_id: self.organization_id
-                ,
-                user_id: self.user_id
-                ,
-                device_id: self.device_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                organization_id: self.organization_id,
+                user_id: self.user_id,
+                device_id: self.device_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

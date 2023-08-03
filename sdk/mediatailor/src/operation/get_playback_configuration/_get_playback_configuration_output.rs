@@ -18,10 +18,7 @@ pub struct GetPlaybackConfigurationOutput {
     /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
     #[doc(hidden)]
     pub configuration_aliases: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
     /// <p>The configuration for DASH content.</p>
     #[doc(hidden)]
@@ -58,9 +55,7 @@ pub struct GetPlaybackConfigurationOutput {
     pub slate_ad_url: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
     #[doc(hidden)]
     pub transcode_profile_name: ::std::option::Option<::std::string::String>,
@@ -90,10 +85,7 @@ impl GetPlaybackConfigurationOutput {
     pub fn configuration_aliases(
         &self,
     ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     > {
         self.configuration_aliases.as_ref()
     }
@@ -106,9 +98,7 @@ impl GetPlaybackConfigurationOutput {
         self.hls_configuration.as_ref()
     }
     /// <p>The configuration for pre-roll ad insertion.</p>
-    pub fn live_pre_roll_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LivePreRollConfiguration> {
+    pub fn live_pre_roll_configuration(&self) -> ::std::option::Option<&crate::types::LivePreRollConfiguration> {
         self.live_pre_roll_configuration.as_ref()
     }
     /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
@@ -116,9 +106,7 @@ impl GetPlaybackConfigurationOutput {
         self.log_configuration.as_ref()
     }
     /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
-    pub fn manifest_processing_rules(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ManifestProcessingRules> {
+    pub fn manifest_processing_rules(&self) -> ::std::option::Option<&crate::types::ManifestProcessingRules> {
         self.manifest_processing_rules.as_ref()
     }
     /// <p>The identifier for the playback configuration.</p>
@@ -146,11 +134,7 @@ impl GetPlaybackConfigurationOutput {
         self.slate_ad_url.as_deref()
     }
     /// <p>The tags assigned to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
@@ -169,63 +153,46 @@ impl ::aws_http::request_id::RequestId for GetPlaybackConfigurationOutput {
 }
 impl GetPlaybackConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetPlaybackConfigurationOutput`](crate::operation::get_playback_configuration::GetPlaybackConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationOutputBuilder {
         crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPlaybackConfigurationOutput`](crate::operation::get_playback_configuration::GetPlaybackConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPlaybackConfigurationOutputBuilder {
     pub(crate) ad_decision_server_url: ::std::option::Option<::std::string::String>,
     pub(crate) avail_suppression: ::std::option::Option<crate::types::AvailSuppression>,
     pub(crate) bumper: ::std::option::Option<crate::types::Bumper>,
     pub(crate) cdn_configuration: ::std::option::Option<crate::types::CdnConfiguration>,
     pub(crate) configuration_aliases: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
     pub(crate) dash_configuration: ::std::option::Option<crate::types::DashConfiguration>,
     pub(crate) hls_configuration: ::std::option::Option<crate::types::HlsConfiguration>,
-    pub(crate) live_pre_roll_configuration:
-        ::std::option::Option<crate::types::LivePreRollConfiguration>,
+    pub(crate) live_pre_roll_configuration: ::std::option::Option<crate::types::LivePreRollConfiguration>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
-    pub(crate) manifest_processing_rules:
-        ::std::option::Option<crate::types::ManifestProcessingRules>,
+    pub(crate) manifest_processing_rules: ::std::option::Option<crate::types::ManifestProcessingRules>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) personalization_threshold_seconds: ::std::option::Option<i32>,
     pub(crate) playback_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) playback_endpoint_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) session_initialization_endpoint_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) slate_ad_url: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) transcode_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) video_content_source_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPlaybackConfigurationOutputBuilder {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
-    pub fn ad_decision_server_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ad_decision_server_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ad_decision_server_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
-    pub fn set_ad_decision_server_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ad_decision_server_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ad_decision_server_url = input;
         self
     }
@@ -239,10 +206,7 @@ impl GetPlaybackConfigurationOutputBuilder {
         self
     }
     /// <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
-    pub fn set_avail_suppression(
-        mut self,
-        input: ::std::option::Option<crate::types::AvailSuppression>,
-    ) -> Self {
+    pub fn set_avail_suppression(mut self, input: ::std::option::Option<crate::types::AvailSuppression>) -> Self {
         self.avail_suppression = input;
         self
     }
@@ -270,10 +234,7 @@ impl GetPlaybackConfigurationOutputBuilder {
         self
     }
     /// <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
-    pub fn set_cdn_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CdnConfiguration>,
-    ) -> Self {
+    pub fn set_cdn_configuration(mut self, input: ::std::option::Option<crate::types::CdnConfiguration>) -> Self {
         self.cdn_configuration = input;
         self
     }
@@ -300,10 +261,7 @@ impl GetPlaybackConfigurationOutputBuilder {
     pub fn set_configuration_aliases(
         mut self,
         input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
         >,
     ) -> Self {
         self.configuration_aliases = input;
@@ -313,10 +271,7 @@ impl GetPlaybackConfigurationOutputBuilder {
     pub fn get_configuration_aliases(
         &self,
     ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     > {
         &self.configuration_aliases
     }
@@ -326,17 +281,12 @@ impl GetPlaybackConfigurationOutputBuilder {
         self
     }
     /// <p>The configuration for DASH content.</p>
-    pub fn set_dash_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DashConfiguration>,
-    ) -> Self {
+    pub fn set_dash_configuration(mut self, input: ::std::option::Option<crate::types::DashConfiguration>) -> Self {
         self.dash_configuration = input;
         self
     }
     /// <p>The configuration for DASH content.</p>
-    pub fn get_dash_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DashConfiguration> {
+    pub fn get_dash_configuration(&self) -> &::std::option::Option<crate::types::DashConfiguration> {
         &self.dash_configuration
     }
     /// <p>The configuration for HLS content.</p>
@@ -345,10 +295,7 @@ impl GetPlaybackConfigurationOutputBuilder {
         self
     }
     /// <p>The configuration for HLS content.</p>
-    pub fn set_hls_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsConfiguration>,
-    ) -> Self {
+    pub fn set_hls_configuration(mut self, input: ::std::option::Option<crate::types::HlsConfiguration>) -> Self {
         self.hls_configuration = input;
         self
     }
@@ -357,25 +304,17 @@ impl GetPlaybackConfigurationOutputBuilder {
         &self.hls_configuration
     }
     /// <p>The configuration for pre-roll ad insertion.</p>
-    pub fn live_pre_roll_configuration(
-        mut self,
-        input: crate::types::LivePreRollConfiguration,
-    ) -> Self {
+    pub fn live_pre_roll_configuration(mut self, input: crate::types::LivePreRollConfiguration) -> Self {
         self.live_pre_roll_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for pre-roll ad insertion.</p>
-    pub fn set_live_pre_roll_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LivePreRollConfiguration>,
-    ) -> Self {
+    pub fn set_live_pre_roll_configuration(mut self, input: ::std::option::Option<crate::types::LivePreRollConfiguration>) -> Self {
         self.live_pre_roll_configuration = input;
         self
     }
     /// <p>The configuration for pre-roll ad insertion.</p>
-    pub fn get_live_pre_roll_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LivePreRollConfiguration> {
+    pub fn get_live_pre_roll_configuration(&self) -> &::std::option::Option<crate::types::LivePreRollConfiguration> {
         &self.live_pre_roll_configuration
     }
     /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
@@ -384,10 +323,7 @@ impl GetPlaybackConfigurationOutputBuilder {
         self
     }
     /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
-    pub fn set_log_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LogConfiguration>,
-    ) -> Self {
+    pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::LogConfiguration>) -> Self {
         self.log_configuration = input;
         self
     }
@@ -396,25 +332,17 @@ impl GetPlaybackConfigurationOutputBuilder {
         &self.log_configuration
     }
     /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
-    pub fn manifest_processing_rules(
-        mut self,
-        input: crate::types::ManifestProcessingRules,
-    ) -> Self {
+    pub fn manifest_processing_rules(mut self, input: crate::types::ManifestProcessingRules) -> Self {
         self.manifest_processing_rules = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
-    pub fn set_manifest_processing_rules(
-        mut self,
-        input: ::std::option::Option<crate::types::ManifestProcessingRules>,
-    ) -> Self {
+    pub fn set_manifest_processing_rules(mut self, input: ::std::option::Option<crate::types::ManifestProcessingRules>) -> Self {
         self.manifest_processing_rules = input;
         self
     }
     /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
-    pub fn get_manifest_processing_rules(
-        &self,
-    ) -> &::std::option::Option<crate::types::ManifestProcessingRules> {
+    pub fn get_manifest_processing_rules(&self) -> &::std::option::Option<crate::types::ManifestProcessingRules> {
         &self.manifest_processing_rules
     }
     /// <p>The identifier for the playback configuration.</p>
@@ -437,10 +365,7 @@ impl GetPlaybackConfigurationOutputBuilder {
         self
     }
     /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
-    pub fn set_personalization_threshold_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_personalization_threshold_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.personalization_threshold_seconds = input;
         self
     }
@@ -449,18 +374,12 @@ impl GetPlaybackConfigurationOutputBuilder {
         &self.personalization_threshold_seconds
     }
     /// <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
-    pub fn playback_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn playback_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
-    pub fn set_playback_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_playback_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.playback_configuration_arn = input;
         self
     }
@@ -469,18 +388,12 @@ impl GetPlaybackConfigurationOutputBuilder {
         &self.playback_configuration_arn
     }
     /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.</p>
-    pub fn playback_endpoint_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn playback_endpoint_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_endpoint_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.</p>
-    pub fn set_playback_endpoint_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_playback_endpoint_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.playback_endpoint_prefix = input;
         self
     }
@@ -489,25 +402,17 @@ impl GetPlaybackConfigurationOutputBuilder {
         &self.playback_endpoint_prefix
     }
     /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
-    pub fn session_initialization_endpoint_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_initialization_endpoint_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_initialization_endpoint_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
-    pub fn set_session_initialization_endpoint_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_initialization_endpoint_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_initialization_endpoint_prefix = input;
         self
     }
     /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
-    pub fn get_session_initialization_endpoint_prefix(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_session_initialization_endpoint_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_initialization_endpoint_prefix
     }
     /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
@@ -529,47 +434,28 @@ impl GetPlaybackConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags assigned to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
-    pub fn transcode_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transcode_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transcode_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
-    pub fn set_transcode_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transcode_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transcode_profile_name = input;
         self
     }
@@ -578,18 +464,12 @@ impl GetPlaybackConfigurationOutputBuilder {
         &self.transcode_profile_name
     }
     /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
-    pub fn video_content_source_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn video_content_source_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.video_content_source_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
-    pub fn set_video_content_source_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_video_content_source_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.video_content_source_url = input;
         self
     }
@@ -607,9 +487,7 @@ impl GetPlaybackConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPlaybackConfigurationOutput`](crate::operation::get_playback_configuration::GetPlaybackConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_playback_configuration::GetPlaybackConfigurationOutput {
+    pub fn build(self) -> crate::operation::get_playback_configuration::GetPlaybackConfigurationOutput {
         crate::operation::get_playback_configuration::GetPlaybackConfigurationOutput {
             ad_decision_server_url: self.ad_decision_server_url,
             avail_suppression: self.avail_suppression,
@@ -622,9 +500,7 @@ impl GetPlaybackConfigurationOutputBuilder {
             log_configuration: self.log_configuration,
             manifest_processing_rules: self.manifest_processing_rules,
             name: self.name,
-            personalization_threshold_seconds: self
-                .personalization_threshold_seconds
-                .unwrap_or_default(),
+            personalization_threshold_seconds: self.personalization_threshold_seconds.unwrap_or_default(),
             playback_configuration_arn: self.playback_configuration_arn,
             playback_endpoint_prefix: self.playback_endpoint_prefix,
             session_initialization_endpoint_prefix: self.session_initialization_endpoint_prefix,

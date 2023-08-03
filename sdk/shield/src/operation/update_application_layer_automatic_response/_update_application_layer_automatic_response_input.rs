@@ -22,16 +22,14 @@ impl UpdateApplicationLayerAutomaticResponseInput {
 }
 impl UpdateApplicationLayerAutomaticResponseInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationLayerAutomaticResponseInput`](crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseInput).
-    pub fn builder() -> crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseInputBuilder{
+    pub fn builder() -> crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseInputBuilder {
         crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApplicationLayerAutomaticResponseInput`](crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationLayerAutomaticResponseInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<crate::types::ResponseAction>,
@@ -57,10 +55,7 @@ impl UpdateApplicationLayerAutomaticResponseInputBuilder {
         self
     }
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::ResponseAction>) -> Self {
         self.action = input;
         self
     }
@@ -69,14 +64,17 @@ impl UpdateApplicationLayerAutomaticResponseInputBuilder {
         &self.action
     }
     /// Consumes the builder and constructs a [`UpdateApplicationLayerAutomaticResponseInput`](crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseInput {
-                resource_arn: self.resource_arn
-                ,
-                action: self.action
-                ,
-            }
+                resource_arn: self.resource_arn,
+                action: self.action,
+            },
         )
     }
 }

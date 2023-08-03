@@ -49,17 +49,14 @@ impl GetShardIteratorInput {
 }
 impl GetShardIteratorInput {
     /// Creates a new builder-style object to manufacture [`GetShardIteratorInput`](crate::operation::get_shard_iterator::GetShardIteratorInput).
-    pub fn builder() -> crate::operation::get_shard_iterator::builders::GetShardIteratorInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_shard_iterator::builders::GetShardIteratorInputBuilder {
         crate::operation::get_shard_iterator::builders::GetShardIteratorInputBuilder::default()
     }
 }
 
 /// A builder for [`GetShardIteratorInput`](crate::operation::get_shard_iterator::GetShardIteratorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetShardIteratorInputBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) shard_id: ::std::option::Option<::std::string::String>,
@@ -113,10 +110,7 @@ impl GetShardIteratorInputBuilder {
     /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
     /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
-    pub fn set_shard_iterator_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ShardIteratorType>,
-    ) -> Self {
+    pub fn set_shard_iterator_type(mut self, input: ::std::option::Option<crate::types::ShardIteratorType>) -> Self {
         self.shard_iterator_type = input;
         self
     }
@@ -127,24 +121,16 @@ impl GetShardIteratorInputBuilder {
     /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
     /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
-    pub fn get_shard_iterator_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ShardIteratorType> {
+    pub fn get_shard_iterator_type(&self) -> &::std::option::Option<crate::types::ShardIteratorType> {
         &self.shard_iterator_type
     }
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
-    pub fn sequence_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
-    pub fn set_sequence_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_number = input;
         self
     }
@@ -155,17 +141,12 @@ impl GetShardIteratorInputBuilder {
     /// Consumes the builder and constructs a [`GetShardIteratorInput`](crate::operation::get_shard_iterator::GetShardIteratorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_shard_iterator::GetShardIteratorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_shard_iterator::GetShardIteratorInput {
-                stream_arn: self.stream_arn,
-                shard_id: self.shard_id,
-                shard_iterator_type: self.shard_iterator_type,
-                sequence_number: self.sequence_number,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_shard_iterator::GetShardIteratorInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_shard_iterator::GetShardIteratorInput {
+            stream_arn: self.stream_arn,
+            shard_id: self.shard_id,
+            shard_iterator_type: self.shard_iterator_type,
+            sequence_number: self.sequence_number,
+        })
     }
 }

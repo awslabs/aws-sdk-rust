@@ -9,10 +9,7 @@ pub fn ser_search_profiles_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_additional_search_key::ser_additional_search_key(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_additional_search_key::ser_additional_search_key(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

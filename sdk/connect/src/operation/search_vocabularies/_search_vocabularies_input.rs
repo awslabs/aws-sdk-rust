@@ -50,17 +50,14 @@ impl SearchVocabulariesInput {
 }
 impl SearchVocabulariesInput {
     /// Creates a new builder-style object to manufacture [`SearchVocabulariesInput`](crate::operation::search_vocabularies::SearchVocabulariesInput).
-    pub fn builder(
-    ) -> crate::operation::search_vocabularies::builders::SearchVocabulariesInputBuilder {
+    pub fn builder() -> crate::operation::search_vocabularies::builders::SearchVocabulariesInputBuilder {
         crate::operation::search_vocabularies::builders::SearchVocabulariesInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchVocabulariesInput`](crate::operation::search_vocabularies::SearchVocabulariesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchVocabulariesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -118,10 +115,7 @@ impl SearchVocabulariesInputBuilder {
         self
     }
     /// <p>The current state of the custom vocabulary.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::VocabularyState>) -> Self {
         self.state = input;
         self
     }
@@ -130,18 +124,12 @@ impl SearchVocabulariesInputBuilder {
         &self.state
     }
     /// <p>The starting pattern of the name of the vocabulary.</p>
-    pub fn name_starts_with(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_starts_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_starts_with = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The starting pattern of the name of the vocabulary.</p>
-    pub fn set_name_starts_with(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_starts_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_starts_with = input;
         self
     }
@@ -155,35 +143,25 @@ impl SearchVocabulariesInputBuilder {
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::VocabularyLanguageCode>) -> Self {
         self.language_code = input;
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn get_language_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
         &self.language_code
     }
     /// Consumes the builder and constructs a [`SearchVocabulariesInput`](crate::operation::search_vocabularies::SearchVocabulariesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_vocabularies::SearchVocabulariesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_vocabularies::SearchVocabulariesInput {
-                instance_id: self.instance_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                state: self.state,
-                name_starts_with: self.name_starts_with,
-                language_code: self.language_code,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_vocabularies::SearchVocabulariesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::search_vocabularies::SearchVocabulariesInput {
+            instance_id: self.instance_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            state: self.state,
+            name_starts_with: self.name_starts_with,
+            language_code: self.language_code,
+        })
     }
 }

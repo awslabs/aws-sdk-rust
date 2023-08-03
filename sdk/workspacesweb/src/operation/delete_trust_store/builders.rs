@@ -10,10 +10,7 @@ impl DeleteTrustStoreInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_trust_store::DeleteTrustStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_trust_store::DeleteTrustStoreError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_trust_store::DeleteTrustStoreError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_trust_store();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteTrustStoreFluentBuilder {
         }
     }
     /// Access the DeleteTrustStore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_trust_store::builders::DeleteTrustStoreInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_trust_store::builders::DeleteTrustStoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteTrustStoreFluentBuilder {
             crate::operation::delete_trust_store::DeleteTrustStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_trust_store::DeleteTrustStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_trust_store::DeleteTrustStoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteTrustStoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteTrustStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_trust_store::DeleteTrustStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_trust_store::DeleteTrustStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_trust_store::DeleteTrustStoreError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteTrustStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_trust_store::DeleteTrustStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_trust_store::DeleteTrustStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_trust_store::DeleteTrustStoreError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteTrustStoreFluentBuilder {
             crate::operation::delete_trust_store::DeleteTrustStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_trust_store::DeleteTrustStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_trust_store::DeleteTrustStoreError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trust_store_arn(input.into());
         self
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn set_trust_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trust_store_arn(input);
         self
     }

@@ -9,10 +9,7 @@ pub fn ser_associate_instance_storage_config_input(
     if let Some(var_2) = &input.storage_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("StorageConfig").start_object();
-        crate::protocol_serde::shape_instance_storage_config::ser_instance_storage_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_instance_storage_config::ser_instance_storage_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

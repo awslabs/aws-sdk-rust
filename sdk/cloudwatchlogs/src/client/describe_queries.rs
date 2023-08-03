@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`queries(Option<Vec<QueryInfo>>)`](crate::operation::describe_queries::DescribeQueriesOutput::queries): <p>The list of queries that match the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_queries::DescribeQueriesOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     /// - On failure, responds with [`SdkError<DescribeQueriesError>`](crate::operation::describe_queries::DescribeQueriesError)
-    pub fn describe_queries(
-        &self,
-    ) -> crate::operation::describe_queries::builders::DescribeQueriesFluentBuilder {
-        crate::operation::describe_queries::builders::DescribeQueriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_queries(&self) -> crate::operation::describe_queries::builders::DescribeQueriesFluentBuilder {
+        crate::operation::describe_queries::builders::DescribeQueriesFluentBuilder::new(self.handle.clone())
     }
 }

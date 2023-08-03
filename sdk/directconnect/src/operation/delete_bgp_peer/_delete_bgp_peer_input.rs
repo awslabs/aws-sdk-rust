@@ -43,9 +43,7 @@ impl DeleteBgpPeerInput {
 
 /// A builder for [`DeleteBgpPeerInput`](crate::operation::delete_bgp_peer::DeleteBgpPeerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBgpPeerInputBuilder {
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) asn: ::std::option::Option<i32>,
@@ -54,18 +52,12 @@ pub struct DeleteBgpPeerInputBuilder {
 }
 impl DeleteBgpPeerInputBuilder {
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_interface_id = input;
         self
     }
@@ -88,18 +80,12 @@ impl DeleteBgpPeerInputBuilder {
         &self.asn
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn customer_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn set_customer_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_address = input;
         self
     }
@@ -124,10 +110,7 @@ impl DeleteBgpPeerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBgpPeerInput`](crate::operation::delete_bgp_peer::DeleteBgpPeerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_bgp_peer::DeleteBgpPeerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_bgp_peer::DeleteBgpPeerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_bgp_peer::DeleteBgpPeerInput {
             virtual_interface_id: self.virtual_interface_id,
             asn: self.asn,

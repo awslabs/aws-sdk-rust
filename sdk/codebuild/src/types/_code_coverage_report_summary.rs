@@ -60,9 +60,7 @@ impl CodeCoverageReportSummary {
 
 /// A builder for [`CodeCoverageReportSummary`](crate::types::CodeCoverageReportSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeCoverageReportSummaryBuilder {
     pub(crate) line_coverage_percentage: ::std::option::Option<f64>,
     pub(crate) lines_covered: ::std::option::Option<i32>,

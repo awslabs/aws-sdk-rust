@@ -59,17 +59,14 @@ impl CreateConnectionInput {
 }
 impl CreateConnectionInput {
     /// Creates a new builder-style object to manufacture [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
-    pub fn builder() -> crate::operation::create_connection::builders::CreateConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_connection::builders::CreateConnectionInputBuilder {
         crate::operation::create_connection::builders::CreateConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectionInputBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) bandwidth: ::std::option::Option<::std::string::String>,
@@ -109,18 +106,12 @@ impl CreateConnectionInputBuilder {
         &self.bandwidth
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connection.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_name = input;
         self
     }
@@ -154,10 +145,7 @@ impl CreateConnectionInputBuilder {
         self
     }
     /// <p>The tags to associate with the lag.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -166,18 +154,12 @@ impl CreateConnectionInputBuilder {
         &self.tags
     }
     /// <p>The name of the service provider associated with the requested connection.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service provider associated with the requested connection.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_name = input;
         self
     }
@@ -205,10 +187,7 @@ impl CreateConnectionInputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_connection::CreateConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_connection::CreateConnectionInput {
             location: self.location,
             bandwidth: self.bandwidth,

@@ -37,9 +37,7 @@ impl BatchListObjectParents {
 
 /// A builder for [`BatchListObjectParents`](crate::types::BatchListObjectParents).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchListObjectParentsBuilder {
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl BatchListObjectParentsBuilder {
         self
     }
     /// <p>The reference that identifies an object.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.object_reference = input;
         self
     }

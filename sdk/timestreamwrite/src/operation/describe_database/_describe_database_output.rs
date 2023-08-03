@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeDatabaseOutput {
 }
 impl DescribeDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDatabaseOutput`](crate::operation::describe_database::DescribeDatabaseOutput).
-    pub fn builder() -> crate::operation::describe_database::builders::DescribeDatabaseOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_database::builders::DescribeDatabaseOutputBuilder {
         crate::operation::describe_database::builders::DescribeDatabaseOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDatabaseOutput`](crate::operation::describe_database::DescribeDatabaseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatabaseOutputBuilder {
     pub(crate) database: ::std::option::Option<crate::types::Database>,
     _request_id: Option<String>,

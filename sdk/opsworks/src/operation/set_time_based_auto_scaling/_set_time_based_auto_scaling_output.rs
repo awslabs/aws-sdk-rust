@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for SetTimeBasedAutoScalingOutput {
 }
 impl SetTimeBasedAutoScalingOutput {
     /// Creates a new builder-style object to manufacture [`SetTimeBasedAutoScalingOutput`](crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingOutput).
-    pub fn builder(
-    ) -> crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingOutputBuilder {
         crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetTimeBasedAutoScalingOutput`](crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetTimeBasedAutoScalingOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl SetTimeBasedAutoScalingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SetTimeBasedAutoScalingOutput`](crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingOutput {
+    pub fn build(self) -> crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingOutput {
         crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingOutput {
             _request_id: self._request_id,
         }

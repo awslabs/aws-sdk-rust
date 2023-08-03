@@ -57,9 +57,7 @@ impl UpdateRateBasedRuleFluentBuilder {
         }
     }
     /// Access the UpdateRateBasedRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_rate_based_rule::builders::UpdateRateBasedRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_rate_based_rule::builders::UpdateRateBasedRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -71,9 +69,7 @@ impl UpdateRateBasedRuleFluentBuilder {
             crate::operation::update_rate_based_rule::UpdateRateBasedRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rate_based_rule::UpdateRateBasedRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -83,10 +79,7 @@ impl UpdateRateBasedRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -95,9 +88,7 @@ impl UpdateRateBasedRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rate_based_rule::UpdateRateBasedRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rate_based_rule::UpdateRateBasedRuleError>,
     > {
         let op = self
             .inner
@@ -120,9 +111,7 @@ impl UpdateRateBasedRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rate_based_rule::UpdateRateBasedRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rate_based_rule::UpdateRateBasedRuleError>,
     > {
         self.send_middleware().await
     }
@@ -136,9 +125,7 @@ impl UpdateRateBasedRuleFluentBuilder {
             crate::operation::update_rate_based_rule::UpdateRateBasedRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rate_based_rule::UpdateRateBasedRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rate_based_rule::UpdateRateBasedRuleError>,
     > {
         self.customize_middleware().await
     }
@@ -180,10 +167,7 @@ impl UpdateRateBasedRuleFluentBuilder {
         self
     }
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>RateBasedRule</code>. </p>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>>) -> Self {
         self.inner = self.inner.set_updates(input);
         self
     }

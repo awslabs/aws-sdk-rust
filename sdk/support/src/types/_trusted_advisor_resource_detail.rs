@@ -18,8 +18,7 @@ pub struct TrustedAdvisorResourceDetail {
     pub is_suppressed: bool,
     /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
     #[doc(hidden)]
-    pub metadata:
-        ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
+    pub metadata: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
 }
 impl TrustedAdvisorResourceDetail {
     /// <p>The status code for the resource identified in the Trusted Advisor check.</p>
@@ -39,9 +38,7 @@ impl TrustedAdvisorResourceDetail {
         self.is_suppressed
     }
     /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<&[::std::option::Option<::std::string::String>]> {
+    pub fn metadata(&self) -> ::std::option::Option<&[::std::option::Option<::std::string::String>]> {
         self.metadata.as_deref()
     }
 }
@@ -54,16 +51,13 @@ impl TrustedAdvisorResourceDetail {
 
 /// A builder for [`TrustedAdvisorResourceDetail`](crate::types::TrustedAdvisorResourceDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrustedAdvisorResourceDetailBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_suppressed: ::std::option::Option<bool>,
-    pub(crate) metadata:
-        ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
+    pub(crate) metadata: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
 }
 impl TrustedAdvisorResourceDetailBuilder {
     /// <p>The status code for the resource identified in the Trusted Advisor check.</p>
@@ -134,17 +128,12 @@ impl TrustedAdvisorResourceDetailBuilder {
         self
     }
     /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>> {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>> {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`TrustedAdvisorResourceDetail`](crate::types::TrustedAdvisorResourceDetail).

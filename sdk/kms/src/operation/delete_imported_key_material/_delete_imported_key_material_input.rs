@@ -29,16 +29,14 @@ impl DeleteImportedKeyMaterialInput {
 }
 impl DeleteImportedKeyMaterialInput {
     /// Creates a new builder-style object to manufacture [`DeleteImportedKeyMaterialInput`](crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialInput).
-    pub fn builder() -> crate::operation::delete_imported_key_material::builders::DeleteImportedKeyMaterialInputBuilder{
+    pub fn builder() -> crate::operation::delete_imported_key_material::builders::DeleteImportedKeyMaterialInputBuilder {
         crate::operation::delete_imported_key_material::builders::DeleteImportedKeyMaterialInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteImportedKeyMaterialInput`](crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteImportedKeyMaterialInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }
@@ -85,10 +83,6 @@ impl DeleteImportedKeyMaterialInputBuilder {
         crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialInput {
-                key_id: self.key_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialInput { key_id: self.key_id })
     }
 }

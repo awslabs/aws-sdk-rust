@@ -36,18 +36,14 @@ impl ListVariantImportJobsInput {
 }
 impl ListVariantImportJobsInput {
     /// Creates a new builder-style object to manufacture [`ListVariantImportJobsInput`](crate::operation::list_variant_import_jobs::ListVariantImportJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsInputBuilder {
         crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVariantImportJobsInput`](crate::operation::list_variant_import_jobs::ListVariantImportJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVariantImportJobsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -81,10 +77,7 @@ impl ListVariantImportJobsInputBuilder {
         self
     }
     /// <p>A list of job IDs.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }
@@ -112,10 +105,7 @@ impl ListVariantImportJobsInputBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListVariantImportJobsFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListVariantImportJobsFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -126,17 +116,13 @@ impl ListVariantImportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListVariantImportJobsInput`](crate::operation::list_variant_import_jobs::ListVariantImportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_variant_import_jobs::ListVariantImportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_variant_import_jobs::ListVariantImportJobsInput {
-                max_results: self.max_results,
-                ids: self.ids,
-                next_token: self.next_token,
-                filter: self.filter,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_variant_import_jobs::ListVariantImportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_variant_import_jobs::ListVariantImportJobsInput {
+            max_results: self.max_results,
+            ids: self.ids,
+            next_token: self.next_token,
+            filter: self.filter,
+        })
     }
 }

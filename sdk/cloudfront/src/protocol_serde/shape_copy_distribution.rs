@@ -2,8 +2,7 @@
 pub fn ser_copy_distribution_headers(
     input: &crate::operation::copy_distribution::CopyDistributionInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.staging {
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_1);
         let formatted_2 = encoder.encode();
@@ -12,10 +11,7 @@ pub fn ser_copy_distribution_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "staging",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("Staging", header_value);
@@ -28,10 +24,7 @@ pub fn ser_copy_distribution_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "if_match",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("If-Match", header_value);
@@ -42,8 +35,7 @@ pub fn ser_copy_distribution_headers(
 
 pub fn ser_copy_distribution_op_input(
     input: &crate::operation::copy_distribution::CopyDistributionInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -51,9 +43,7 @@ pub fn ser_copy_distribution_op_input(
         let mut root = writer
             .start_el("CopyDistributionRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::protocol_serde::shape_copy_distribution_input::ser_copy_distribution_input_input(
-            input, root,
-        )?
+        crate::protocol_serde::shape_copy_distribution_input::ser_copy_distribution_input_input(input, root)?
     }
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }
@@ -63,1039 +53,1016 @@ pub fn de_copy_distribution_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::copy_distribution::CopyDistributionOutput,
-    crate::operation::copy_distribution::CopyDistributionError,
-> {
+) -> std::result::Result<crate::operation::copy_distribution::CopyDistributionOutput, crate::operation::copy_distribution::CopyDistributionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::copy_distribution::CopyDistributionError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::copy_distribution::CopyDistributionError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::operation::copy_distribution::CopyDistributionError::AccessDenied({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
+                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "CNAMEAlreadyExists" => crate::operation::copy_distribution::CopyDistributionError::CnameAlreadyExists({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::CnameAlreadyExistsBuilder::default();
-                    output = crate::protocol_serde::shape_cname_already_exists::de_cname_already_exists_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CnameAlreadyExistsBuilder::default();
+                output = crate::protocol_serde::shape_cname_already_exists::de_cname_already_exists_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "DistributionAlreadyExists" => crate::operation::copy_distribution::CopyDistributionError::DistributionAlreadyExists({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DistributionAlreadyExistsBuilder::default();
-                    output = crate::protocol_serde::shape_distribution_already_exists::de_distribution_already_exists_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DistributionAlreadyExistsBuilder::default();
+                output = crate::protocol_serde::shape_distribution_already_exists::de_distribution_already_exists_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior" => crate::operation::copy_distribution::CopyDistributionError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior" => {
+            crate::operation::copy_distribution::CopyDistributionError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorBuilder::default();
                     output = crate::protocol_serde::shape_illegal_field_level_encryption_config_association_with_cache_behavior::de_illegal_field_level_encryption_config_association_with_cache_behavior_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InconsistentQuantities" => crate::operation::copy_distribution::CopyDistributionError::InconsistentQuantities({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InconsistentQuantitiesBuilder::default();
-                    output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InconsistentQuantitiesBuilder::default();
+                output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidArgument" => crate::operation::copy_distribution::CopyDistributionError::InvalidArgument({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
+                output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidDefaultRootObject" => crate::operation::copy_distribution::CopyDistributionError::InvalidDefaultRootObject({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidDefaultRootObjectBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_default_root_object::de_invalid_default_root_object_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDefaultRootObjectBuilder::default();
+                output = crate::protocol_serde::shape_invalid_default_root_object::de_invalid_default_root_object_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidErrorCode" => crate::operation::copy_distribution::CopyDistributionError::InvalidErrorCode({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidErrorCodeBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_error_code::de_invalid_error_code_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidErrorCodeBuilder::default();
+                output = crate::protocol_serde::shape_invalid_error_code::de_invalid_error_code_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidForwardCookies" => crate::operation::copy_distribution::CopyDistributionError::InvalidForwardCookies({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidForwardCookiesBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_forward_cookies::de_invalid_forward_cookies_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidForwardCookiesBuilder::default();
+                output = crate::protocol_serde::shape_invalid_forward_cookies::de_invalid_forward_cookies_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidFunctionAssociation" => crate::operation::copy_distribution::CopyDistributionError::InvalidFunctionAssociation({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidFunctionAssociationBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_function_association::de_invalid_function_association_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidFunctionAssociationBuilder::default();
+                output = crate::protocol_serde::shape_invalid_function_association::de_invalid_function_association_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidGeoRestrictionParameter" => crate::operation::copy_distribution::CopyDistributionError::InvalidGeoRestrictionParameter({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidGeoRestrictionParameterBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_geo_restriction_parameter::de_invalid_geo_restriction_parameter_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidGeoRestrictionParameterBuilder::default();
+                output = crate::protocol_serde::shape_invalid_geo_restriction_parameter::de_invalid_geo_restriction_parameter_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidHeadersForS3Origin" => crate::operation::copy_distribution::CopyDistributionError::InvalidHeadersForS3Origin({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidHeadersForS3OriginBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_headers_for_s3_origin::de_invalid_headers_for_s3_origin_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidHeadersForS3OriginBuilder::default();
+                output = crate::protocol_serde::shape_invalid_headers_for_s3_origin::de_invalid_headers_for_s3_origin_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidIfMatchVersion" => crate::operation::copy_distribution::CopyDistributionError::InvalidIfMatchVersion({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidIfMatchVersionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_if_match_version::de_invalid_if_match_version_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidIfMatchVersionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_if_match_version::de_invalid_if_match_version_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidLambdaFunctionAssociation" => crate::operation::copy_distribution::CopyDistributionError::InvalidLambdaFunctionAssociation({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidLambdaFunctionAssociationBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_lambda_function_association::de_invalid_lambda_function_association_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidLambdaFunctionAssociationBuilder::default();
+                output = crate::protocol_serde::shape_invalid_lambda_function_association::de_invalid_lambda_function_association_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidLocationCode" => crate::operation::copy_distribution::CopyDistributionError::InvalidLocationCode({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidLocationCodeBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_location_code::de_invalid_location_code_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidLocationCodeBuilder::default();
+                output = crate::protocol_serde::shape_invalid_location_code::de_invalid_location_code_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidMinimumProtocolVersion" => crate::operation::copy_distribution::CopyDistributionError::InvalidMinimumProtocolVersion({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidMinimumProtocolVersionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_minimum_protocol_version::de_invalid_minimum_protocol_version_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidMinimumProtocolVersionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_minimum_protocol_version::de_invalid_minimum_protocol_version_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidOrigin" => crate::operation::copy_distribution::CopyDistributionError::InvalidOrigin({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidOriginBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_origin::de_invalid_origin_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidOriginBuilder::default();
+                output = crate::protocol_serde::shape_invalid_origin::de_invalid_origin_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidOriginAccessControl" => crate::operation::copy_distribution::CopyDistributionError::InvalidOriginAccessControl({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidOriginAccessControlBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_origin_access_control::de_invalid_origin_access_control_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidOriginAccessControlBuilder::default();
+                output = crate::protocol_serde::shape_invalid_origin_access_control::de_invalid_origin_access_control_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidOriginAccessIdentity" => crate::operation::copy_distribution::CopyDistributionError::InvalidOriginAccessIdentity({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidOriginAccessIdentityBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_origin_access_identity::de_invalid_origin_access_identity_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidOriginAccessIdentityBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_origin_access_identity::de_invalid_origin_access_identity_xml_err(_response_body, output)
+                        .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidOriginKeepaliveTimeout" => crate::operation::copy_distribution::CopyDistributionError::InvalidOriginKeepaliveTimeout({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidOriginKeepaliveTimeoutBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_origin_keepalive_timeout::de_invalid_origin_keepalive_timeout_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidOriginKeepaliveTimeoutBuilder::default();
+                output = crate::protocol_serde::shape_invalid_origin_keepalive_timeout::de_invalid_origin_keepalive_timeout_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidOriginReadTimeout" => crate::operation::copy_distribution::CopyDistributionError::InvalidOriginReadTimeout({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidOriginReadTimeoutBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_origin_read_timeout::de_invalid_origin_read_timeout_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidOriginReadTimeoutBuilder::default();
+                output = crate::protocol_serde::shape_invalid_origin_read_timeout::de_invalid_origin_read_timeout_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidProtocolSettings" => crate::operation::copy_distribution::CopyDistributionError::InvalidProtocolSettings({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidProtocolSettingsBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_protocol_settings::de_invalid_protocol_settings_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidProtocolSettingsBuilder::default();
+                output = crate::protocol_serde::shape_invalid_protocol_settings::de_invalid_protocol_settings_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidQueryStringParameters" => crate::operation::copy_distribution::CopyDistributionError::InvalidQueryStringParameters({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidQueryStringParametersBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_query_string_parameters::de_invalid_query_string_parameters_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidQueryStringParametersBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_query_string_parameters::de_invalid_query_string_parameters_xml_err(_response_body, output)
+                        .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidRelativePath" => crate::operation::copy_distribution::CopyDistributionError::InvalidRelativePath({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidRelativePathBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_relative_path::de_invalid_relative_path_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidRelativePathBuilder::default();
+                output = crate::protocol_serde::shape_invalid_relative_path::de_invalid_relative_path_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidRequiredProtocol" => crate::operation::copy_distribution::CopyDistributionError::InvalidRequiredProtocol({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidRequiredProtocolBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_required_protocol::de_invalid_required_protocol_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidRequiredProtocolBuilder::default();
+                output = crate::protocol_serde::shape_invalid_required_protocol::de_invalid_required_protocol_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidResponseCode" => crate::operation::copy_distribution::CopyDistributionError::InvalidResponseCode({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidResponseCodeBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_response_code::de_invalid_response_code_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidResponseCodeBuilder::default();
+                output = crate::protocol_serde::shape_invalid_response_code::de_invalid_response_code_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidTTLOrder" => crate::operation::copy_distribution::CopyDistributionError::InvalidTtlOrder({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidTtlOrderBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_ttl_order::de_invalid_ttl_order_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidTtlOrderBuilder::default();
+                output = crate::protocol_serde::shape_invalid_ttl_order::de_invalid_ttl_order_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidViewerCertificate" => crate::operation::copy_distribution::CopyDistributionError::InvalidViewerCertificate({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidViewerCertificateBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_viewer_certificate::de_invalid_viewer_certificate_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidViewerCertificateBuilder::default();
+                output = crate::protocol_serde::shape_invalid_viewer_certificate::de_invalid_viewer_certificate_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidWebACLId" => crate::operation::copy_distribution::CopyDistributionError::InvalidWebAclId({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidWebAclIdBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_web_acl_id::de_invalid_web_acl_id_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidWebAclIdBuilder::default();
+                output = crate::protocol_serde::shape_invalid_web_acl_id::de_invalid_web_acl_id_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "MissingBody" => crate::operation::copy_distribution::CopyDistributionError::MissingBody({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::MissingBodyBuilder::default();
-                    output = crate::protocol_serde::shape_missing_body::de_missing_body_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::MissingBodyBuilder::default();
+                output = crate::protocol_serde::shape_missing_body::de_missing_body_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NoSuchCachePolicy" => crate::operation::copy_distribution::CopyDistributionError::NoSuchCachePolicy({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchCachePolicyBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_cache_policy::de_no_such_cache_policy_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchCachePolicyBuilder::default();
+                output = crate::protocol_serde::shape_no_such_cache_policy::de_no_such_cache_policy_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NoSuchDistribution" => crate::operation::copy_distribution::CopyDistributionError::NoSuchDistribution({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchDistributionBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchDistributionBuilder::default();
+                output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NoSuchFieldLevelEncryptionConfig" => crate::operation::copy_distribution::CopyDistributionError::NoSuchFieldLevelEncryptionConfig({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchFieldLevelEncryptionConfigBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_field_level_encryption_config::de_no_such_field_level_encryption_config_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchFieldLevelEncryptionConfigBuilder::default();
+                output = crate::protocol_serde::shape_no_such_field_level_encryption_config::de_no_such_field_level_encryption_config_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NoSuchOrigin" => crate::operation::copy_distribution::CopyDistributionError::NoSuchOrigin({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchOriginBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_origin::de_no_such_origin_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchOriginBuilder::default();
+                output = crate::protocol_serde::shape_no_such_origin::de_no_such_origin_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NoSuchOriginRequestPolicy" => crate::operation::copy_distribution::CopyDistributionError::NoSuchOriginRequestPolicy({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchOriginRequestPolicyBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_origin_request_policy::de_no_such_origin_request_policy_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchOriginRequestPolicyBuilder::default();
+                output = crate::protocol_serde::shape_no_such_origin_request_policy::de_no_such_origin_request_policy_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NoSuchRealtimeLogConfig" => crate::operation::copy_distribution::CopyDistributionError::NoSuchRealtimeLogConfig({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchRealtimeLogConfigBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_realtime_log_config::de_no_such_realtime_log_config_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchRealtimeLogConfigBuilder::default();
+                output = crate::protocol_serde::shape_no_such_realtime_log_config::de_no_such_realtime_log_config_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NoSuchResponseHeadersPolicy" => crate::operation::copy_distribution::CopyDistributionError::NoSuchResponseHeadersPolicy({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchResponseHeadersPolicyBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_response_headers_policy::de_no_such_response_headers_policy_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchResponseHeadersPolicyBuilder::default();
+                output =
+                    crate::protocol_serde::shape_no_such_response_headers_policy::de_no_such_response_headers_policy_xml_err(_response_body, output)
+                        .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "PreconditionFailed" => crate::operation::copy_distribution::CopyDistributionError::PreconditionFailed({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::PreconditionFailedBuilder::default();
-                    output = crate::protocol_serde::shape_precondition_failed::de_precondition_failed_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::PreconditionFailedBuilder::default();
+                output = crate::protocol_serde::shape_precondition_failed::de_precondition_failed_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "RealtimeLogConfigOwnerMismatch" => crate::operation::copy_distribution::CopyDistributionError::RealtimeLogConfigOwnerMismatch({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::RealtimeLogConfigOwnerMismatchBuilder::default();
-                    output = crate::protocol_serde::shape_realtime_log_config_owner_mismatch::de_realtime_log_config_owner_mismatch_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RealtimeLogConfigOwnerMismatchBuilder::default();
+                output = crate::protocol_serde::shape_realtime_log_config_owner_mismatch::de_realtime_log_config_owner_mismatch_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyCacheBehaviors" => crate::operation::copy_distribution::CopyDistributionError::TooManyCacheBehaviors({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyCacheBehaviorsBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_cache_behaviors::de_too_many_cache_behaviors_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyCacheBehaviorsBuilder::default();
+                output = crate::protocol_serde::shape_too_many_cache_behaviors::de_too_many_cache_behaviors_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyCertificates" => crate::operation::copy_distribution::CopyDistributionError::TooManyCertificates({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyCertificatesBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_certificates::de_too_many_certificates_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyCertificatesBuilder::default();
+                output = crate::protocol_serde::shape_too_many_certificates::de_too_many_certificates_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyCookieNamesInWhiteList" => crate::operation::copy_distribution::CopyDistributionError::TooManyCookieNamesInWhiteList({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyCookieNamesInWhiteListBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_cookie_names_in_white_list::de_too_many_cookie_names_in_white_list_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyCookieNamesInWhiteListBuilder::default();
+                output = crate::protocol_serde::shape_too_many_cookie_names_in_white_list::de_too_many_cookie_names_in_white_list_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyDistributionCNAMEs" => crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionCnamEs({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyDistributionCnamEsBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_distribution_cnam_es::de_too_many_distribution_cnam_es_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyDistributionCnamEsBuilder::default();
+                output = crate::protocol_serde::shape_too_many_distribution_cnam_es::de_too_many_distribution_cnam_es_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyDistributions" => crate::operation::copy_distribution::CopyDistributionError::TooManyDistributions({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyDistributionsBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_distributions::de_too_many_distributions_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyDistributionsBuilder::default();
+                output = crate::protocol_serde::shape_too_many_distributions::de_too_many_distributions_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "TooManyDistributionsAssociatedToCachePolicy" => crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToCachePolicy({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "TooManyDistributionsAssociatedToCachePolicy" => {
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToCachePolicy({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToCachePolicyBuilder::default();
                     output = crate::protocol_serde::shape_too_many_distributions_associated_to_cache_policy::de_too_many_distributions_associated_to_cache_policy_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig" => crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig" => {
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToFieldLevelEncryptionConfigBuilder::default();
                     output = crate::protocol_serde::shape_too_many_distributions_associated_to_field_level_encryption_config::de_too_many_distributions_associated_to_field_level_encryption_config_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "TooManyDistributionsAssociatedToKeyGroup" => crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToKeyGroup({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyDistributionsAssociatedToKeyGroup" => {
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToKeyGroup({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToKeyGroupBuilder::default();
                     output = crate::protocol_serde::shape_too_many_distributions_associated_to_key_group::de_too_many_distributions_associated_to_key_group_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "TooManyDistributionsAssociatedToOriginRequestPolicy" => crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToOriginRequestPolicy({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyDistributionsAssociatedToOriginRequestPolicy" => {
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToOriginRequestPolicy({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToOriginRequestPolicyBuilder::default();
                     output = crate::protocol_serde::shape_too_many_distributions_associated_to_origin_request_policy::de_too_many_distributions_associated_to_origin_request_policy_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "TooManyDistributionsAssociatedToResponseHeadersPolicy" => crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToResponseHeadersPolicy({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyDistributionsAssociatedToResponseHeadersPolicy" => {
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToResponseHeadersPolicy({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToResponseHeadersPolicyBuilder::default();
                     output = crate::protocol_serde::shape_too_many_distributions_associated_to_response_headers_policy::de_too_many_distributions_associated_to_response_headers_policy_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "TooManyDistributionsWithFunctionAssociations" => crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsWithFunctionAssociations({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyDistributionsWithFunctionAssociations" => {
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsWithFunctionAssociations({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsWithFunctionAssociationsBuilder::default();
                     output = crate::protocol_serde::shape_too_many_distributions_with_function_associations::de_too_many_distributions_with_function_associations_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "TooManyDistributionsWithLambdaAssociations" => crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsWithLambdaAssociations({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyDistributionsWithLambdaAssociations" => {
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsWithLambdaAssociations({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsWithLambdaAssociationsBuilder::default();
                     output = crate::protocol_serde::shape_too_many_distributions_with_lambda_associations::de_too_many_distributions_with_lambda_associations_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "TooManyDistributionsWithSingleFunctionARN" => crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsWithSingleFunctionArn({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyDistributionsWithSingleFunctionARN" => {
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsWithSingleFunctionArn({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsWithSingleFunctionArnBuilder::default();
                     output = crate::protocol_serde::shape_too_many_distributions_with_single_function_arn::de_too_many_distributions_with_single_function_arn_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "TooManyFunctionAssociations" => crate::operation::copy_distribution::CopyDistributionError::TooManyFunctionAssociations({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyFunctionAssociationsBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_function_associations::de_too_many_function_associations_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyFunctionAssociationsBuilder::default();
+                output =
+                    crate::protocol_serde::shape_too_many_function_associations::de_too_many_function_associations_xml_err(_response_body, output)
+                        .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyHeadersInForwardedValues" => crate::operation::copy_distribution::CopyDistributionError::TooManyHeadersInForwardedValues({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyHeadersInForwardedValuesBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_headers_in_forwarded_values::de_too_many_headers_in_forwarded_values_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyHeadersInForwardedValuesBuilder::default();
+                output = crate::protocol_serde::shape_too_many_headers_in_forwarded_values::de_too_many_headers_in_forwarded_values_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "TooManyKeyGroupsAssociatedToDistribution" => crate::operation::copy_distribution::CopyDistributionError::TooManyKeyGroupsAssociatedToDistribution({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "TooManyKeyGroupsAssociatedToDistribution" => {
+            crate::operation::copy_distribution::CopyDistributionError::TooManyKeyGroupsAssociatedToDistribution({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyKeyGroupsAssociatedToDistributionBuilder::default();
                     output = crate::protocol_serde::shape_too_many_key_groups_associated_to_distribution::de_too_many_key_groups_associated_to_distribution_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "TooManyLambdaFunctionAssociations" => crate::operation::copy_distribution::CopyDistributionError::TooManyLambdaFunctionAssociations({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyLambdaFunctionAssociationsBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_lambda_function_associations::de_too_many_lambda_function_associations_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyLambdaFunctionAssociationsBuilder::default();
+                output = crate::protocol_serde::shape_too_many_lambda_function_associations::de_too_many_lambda_function_associations_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyOriginCustomHeaders" => crate::operation::copy_distribution::CopyDistributionError::TooManyOriginCustomHeaders({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyOriginCustomHeadersBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_origin_custom_headers::de_too_many_origin_custom_headers_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyOriginCustomHeadersBuilder::default();
+                output =
+                    crate::protocol_serde::shape_too_many_origin_custom_headers::de_too_many_origin_custom_headers_xml_err(_response_body, output)
+                        .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyOriginGroupsPerDistribution" => crate::operation::copy_distribution::CopyDistributionError::TooManyOriginGroupsPerDistribution({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyOriginGroupsPerDistributionBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_origin_groups_per_distribution::de_too_many_origin_groups_per_distribution_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyOriginGroupsPerDistributionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_origin_groups_per_distribution::de_too_many_origin_groups_per_distribution_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyOrigins" => crate::operation::copy_distribution::CopyDistributionError::TooManyOrigins({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyOriginsBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_origins::de_too_many_origins_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyOriginsBuilder::default();
+                output = crate::protocol_serde::shape_too_many_origins::de_too_many_origins_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyQueryStringParameters" => crate::operation::copy_distribution::CopyDistributionError::TooManyQueryStringParameters({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyQueryStringParametersBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_query_string_parameters::de_too_many_query_string_parameters_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyQueryStringParametersBuilder::default();
+                output = crate::protocol_serde::shape_too_many_query_string_parameters::de_too_many_query_string_parameters_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyTrustedSigners" => crate::operation::copy_distribution::CopyDistributionError::TooManyTrustedSigners({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyTrustedSignersBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_trusted_signers::de_too_many_trusted_signers_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyTrustedSignersBuilder::default();
+                output = crate::protocol_serde::shape_too_many_trusted_signers::de_too_many_trusted_signers_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TrustedKeyGroupDoesNotExist" => crate::operation::copy_distribution::CopyDistributionError::TrustedKeyGroupDoesNotExist({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TrustedKeyGroupDoesNotExistBuilder::default();
-                    output = crate::protocol_serde::shape_trusted_key_group_does_not_exist::de_trusted_key_group_does_not_exist_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TrustedKeyGroupDoesNotExistBuilder::default();
+                output = crate::protocol_serde::shape_trusted_key_group_does_not_exist::de_trusted_key_group_does_not_exist_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TrustedSignerDoesNotExist" => crate::operation::copy_distribution::CopyDistributionError::TrustedSignerDoesNotExist({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TrustedSignerDoesNotExistBuilder::default();
-                    output = crate::protocol_serde::shape_trusted_signer_does_not_exist::de_trusted_signer_does_not_exist_xml_err(_response_body, output).map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TrustedSignerDoesNotExistBuilder::default();
+                output = crate::protocol_serde::shape_trusted_signer_does_not_exist::de_trusted_signer_does_not_exist_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_distribution::CopyDistributionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::copy_distribution::CopyDistributionError::generic(generic)
+        _ => crate::operation::copy_distribution::CopyDistributionError::generic(generic),
     })
 }
 
@@ -1104,42 +1071,23 @@ pub fn de_copy_distribution_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::copy_distribution::CopyDistributionOutput,
-    crate::operation::copy_distribution::CopyDistributionError,
-> {
+) -> std::result::Result<crate::operation::copy_distribution::CopyDistributionOutput, crate::operation::copy_distribution::CopyDistributionError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::copy_distribution::builders::CopyDistributionOutputBuilder::default();
-        output = output.set_distribution(
-            crate::protocol_serde::shape_copy_distribution_output::de_distribution_payload(
-                _response_body,
-            )?,
-        );
+        let mut output = crate::operation::copy_distribution::builders::CopyDistributionOutputBuilder::default();
+        output = output.set_distribution(crate::protocol_serde::shape_copy_distribution_output::de_distribution_payload(
+            _response_body,
+        )?);
         output = output.set_e_tag(
-            crate::protocol_serde::shape_copy_distribution_output::de_e_tag_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::copy_distribution::CopyDistributionError::unhandled(
-                    "Failed to parse ETag from header `ETag",
-                )
-            })?,
+            crate::protocol_serde::shape_copy_distribution_output::de_e_tag_header(_response_headers)
+                .map_err(|_| crate::operation::copy_distribution::CopyDistributionError::unhandled("Failed to parse ETag from header `ETag"))?,
         );
         output = output.set_location(
-            crate::protocol_serde::shape_copy_distribution_output::de_location_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::copy_distribution::CopyDistributionError::unhandled(
-                    "Failed to parse Location from header `Location",
-                )
+            crate::protocol_serde::shape_copy_distribution_output::de_location_header(_response_headers).map_err(|_| {
+                crate::operation::copy_distribution::CopyDistributionError::unhandled("Failed to parse Location from header `Location")
             })?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`BatchDeletePartitionOutput`](crate::operation::batch_delete_partition::BatchDeletePartitionOutput) with field(s):
     ///   - [`errors(Option<Vec<PartitionError>>)`](crate::operation::batch_delete_partition::BatchDeletePartitionOutput::errors): <p>The errors encountered when trying to delete the requested partitions.</p>
     /// - On failure, responds with [`SdkError<BatchDeletePartitionError>`](crate::operation::batch_delete_partition::BatchDeletePartitionError)
-    pub fn batch_delete_partition(
-        &self,
-    ) -> crate::operation::batch_delete_partition::builders::BatchDeletePartitionFluentBuilder {
-        crate::operation::batch_delete_partition::builders::BatchDeletePartitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_delete_partition(&self) -> crate::operation::batch_delete_partition::builders::BatchDeletePartitionFluentBuilder {
+        crate::operation::batch_delete_partition::builders::BatchDeletePartitionFluentBuilder::new(self.handle.clone())
     }
 }

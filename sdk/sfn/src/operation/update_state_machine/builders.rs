@@ -10,10 +10,7 @@ impl UpdateStateMachineInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_state_machine::UpdateStateMachineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_state_machine::UpdateStateMachineError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_state_machine::UpdateStateMachineError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_state_machine();
         fluent_builder.inner = self;
@@ -74,9 +71,7 @@ impl UpdateStateMachineFluentBuilder {
         }
     }
     /// Access the UpdateStateMachine as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_state_machine::builders::UpdateStateMachineInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_state_machine::builders::UpdateStateMachineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +83,7 @@ impl UpdateStateMachineFluentBuilder {
             crate::operation::update_state_machine::UpdateStateMachine,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_state_machine::UpdateStateMachineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_state_machine::UpdateStateMachineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -100,10 +93,7 @@ impl UpdateStateMachineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -112,9 +102,7 @@ impl UpdateStateMachineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_state_machine::UpdateStateMachineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_state_machine::UpdateStateMachineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_state_machine::UpdateStateMachineError>,
     > {
         let op = self
             .inner
@@ -137,9 +125,7 @@ impl UpdateStateMachineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_state_machine::UpdateStateMachineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_state_machine::UpdateStateMachineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_state_machine::UpdateStateMachineError>,
     > {
         self.send_middleware().await
     }
@@ -153,25 +139,17 @@ impl UpdateStateMachineFluentBuilder {
             crate::operation::update_state_machine::UpdateStateMachine,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_state_machine::UpdateStateMachineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_state_machine::UpdateStateMachineError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
-    pub fn state_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.state_machine_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_state_machine_arn(input);
         self
     }
@@ -213,17 +191,12 @@ impl UpdateStateMachineFluentBuilder {
         self
     }
     /// <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs options.</p>
-    pub fn set_logging_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfiguration>,
-    ) -> Self {
+    pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
         self.inner = self.inner.set_logging_configuration(input);
         self
     }
     /// <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs options.</p>
-    pub fn get_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+    pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         self.inner.get_logging_configuration()
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
@@ -232,17 +205,12 @@ impl UpdateStateMachineFluentBuilder {
         self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn set_tracing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TracingConfiguration>,
-    ) -> Self {
+    pub fn set_tracing_configuration(mut self, input: ::std::option::Option<crate::types::TracingConfiguration>) -> Self {
         self.inner = self.inner.set_tracing_configuration(input);
         self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn get_tracing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TracingConfiguration> {
+    pub fn get_tracing_configuration(&self) -> &::std::option::Option<crate::types::TracingConfiguration> {
         self.inner.get_tracing_configuration()
     }
     /// <p>Specifies whether the state machine version is published. The default is <code>false</code>. To publish a version after updating the state machine, set <code>publish</code> to <code>true</code>.</p>
@@ -261,19 +229,13 @@ impl UpdateStateMachineFluentBuilder {
     }
     /// <p>An optional description of the state machine version to publish.</p>
     /// <p>You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code> to <code>true</code>.</p>
-    pub fn version_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_description(input.into());
         self
     }
     /// <p>An optional description of the state machine version to publish.</p>
     /// <p>You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code> to <code>true</code>.</p>
-    pub fn set_version_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_description(input);
         self
     }

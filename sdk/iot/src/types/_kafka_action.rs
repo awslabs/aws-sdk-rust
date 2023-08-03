@@ -18,9 +18,7 @@ pub struct KafkaAction {
     pub partition: ::std::option::Option<::std::string::String>,
     /// <p>Properties of the Apache Kafka producer client.</p>
     #[doc(hidden)]
-    pub client_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub client_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl KafkaAction {
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
@@ -40,11 +38,7 @@ impl KafkaAction {
         self.partition.as_deref()
     }
     /// <p>Properties of the Apache Kafka producer client.</p>
-    pub fn client_properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn client_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.client_properties.as_ref()
     }
 }
@@ -57,32 +51,22 @@ impl KafkaAction {
 
 /// A builder for [`KafkaAction`](crate::types::KafkaAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KafkaActionBuilder {
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
     pub(crate) topic: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) partition: ::std::option::Option<::std::string::String>,
-    pub(crate) client_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) client_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl KafkaActionBuilder {
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -150,19 +134,13 @@ impl KafkaActionBuilder {
     /// <p>Properties of the Apache Kafka producer client.</p>
     pub fn set_client_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.client_properties = input;
         self
     }
     /// <p>Properties of the Apache Kafka producer client.</p>
-    pub fn get_client_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_client_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.client_properties
     }
     /// Consumes the builder and constructs a [`KafkaAction`](crate::types::KafkaAction).

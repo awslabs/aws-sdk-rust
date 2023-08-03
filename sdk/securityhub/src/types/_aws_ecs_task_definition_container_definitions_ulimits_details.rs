@@ -64,17 +64,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
     pub(crate) hard_limit: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

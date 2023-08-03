@@ -9,8 +9,7 @@ pub struct NodeGroupUpdateStatus {
     pub node_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the service update on the node group member</p>
     #[doc(hidden)]
-    pub node_group_member_update_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMemberUpdateStatus>>,
+    pub node_group_member_update_status: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMemberUpdateStatus>>,
 }
 impl NodeGroupUpdateStatus {
     /// <p>The ID of the node group</p>
@@ -18,9 +17,7 @@ impl NodeGroupUpdateStatus {
         self.node_group_id.as_deref()
     }
     /// <p>The status of the service update on the node group member</p>
-    pub fn node_group_member_update_status(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NodeGroupMemberUpdateStatus]> {
+    pub fn node_group_member_update_status(&self) -> ::std::option::Option<&[crate::types::NodeGroupMemberUpdateStatus]> {
         self.node_group_member_update_status.as_deref()
     }
 }
@@ -33,28 +30,19 @@ impl NodeGroupUpdateStatus {
 
 /// A builder for [`NodeGroupUpdateStatus`](crate::types::NodeGroupUpdateStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeGroupUpdateStatusBuilder {
     pub(crate) node_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) node_group_member_update_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMemberUpdateStatus>>,
+    pub(crate) node_group_member_update_status: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMemberUpdateStatus>>,
 }
 impl NodeGroupUpdateStatusBuilder {
     /// <p>The ID of the node group</p>
-    pub fn node_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn node_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the node group</p>
-    pub fn set_node_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_node_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_group_id = input;
         self
     }
@@ -67,10 +55,7 @@ impl NodeGroupUpdateStatusBuilder {
     /// To override the contents of this collection use [`set_node_group_member_update_status`](Self::set_node_group_member_update_status).
     ///
     /// <p>The status of the service update on the node group member</p>
-    pub fn node_group_member_update_status(
-        mut self,
-        input: crate::types::NodeGroupMemberUpdateStatus,
-    ) -> Self {
+    pub fn node_group_member_update_status(mut self, input: crate::types::NodeGroupMemberUpdateStatus) -> Self {
         let mut v = self.node_group_member_update_status.unwrap_or_default();
         v.push(input);
         self.node_group_member_update_status = ::std::option::Option::Some(v);
@@ -85,9 +70,7 @@ impl NodeGroupUpdateStatusBuilder {
         self
     }
     /// <p>The status of the service update on the node group member</p>
-    pub fn get_node_group_member_update_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMemberUpdateStatus>> {
+    pub fn get_node_group_member_update_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMemberUpdateStatus>> {
         &self.node_group_member_update_status
     }
     /// Consumes the builder and constructs a [`NodeGroupUpdateStatus`](crate::types::NodeGroupUpdateStatus).

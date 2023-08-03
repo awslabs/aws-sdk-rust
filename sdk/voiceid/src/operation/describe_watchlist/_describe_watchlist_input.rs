@@ -22,17 +22,14 @@ impl DescribeWatchlistInput {
 }
 impl DescribeWatchlistInput {
     /// Creates a new builder-style object to manufacture [`DescribeWatchlistInput`](crate::operation::describe_watchlist::DescribeWatchlistInput).
-    pub fn builder() -> crate::operation::describe_watchlist::builders::DescribeWatchlistInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_watchlist::builders::DescribeWatchlistInputBuilder {
         crate::operation::describe_watchlist::builders::DescribeWatchlistInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWatchlistInput`](crate::operation::describe_watchlist::DescribeWatchlistInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWatchlistInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) watchlist_id: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl DescribeWatchlistInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWatchlistInput`](crate::operation::describe_watchlist::DescribeWatchlistInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_watchlist::DescribeWatchlistInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_watchlist::DescribeWatchlistInput {
-                domain_id: self.domain_id,
-                watchlist_id: self.watchlist_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_watchlist::DescribeWatchlistInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_watchlist::DescribeWatchlistInput {
+            domain_id: self.domain_id,
+            watchlist_id: self.watchlist_id,
+        })
     }
 }

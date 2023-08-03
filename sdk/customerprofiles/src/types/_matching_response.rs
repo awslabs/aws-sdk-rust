@@ -44,9 +44,7 @@ impl MatchingResponse {
 
 /// A builder for [`MatchingResponse`](crate::types::MatchingResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MatchingResponseBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) job_schedule: ::std::option::Option<crate::types::JobSchedule>,
@@ -74,10 +72,7 @@ impl MatchingResponseBuilder {
         self
     }
     /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
-    pub fn set_job_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::JobSchedule>,
-    ) -> Self {
+    pub fn set_job_schedule(mut self, input: ::std::option::Option<crate::types::JobSchedule>) -> Self {
         self.job_schedule = input;
         self
     }
@@ -91,10 +86,7 @@ impl MatchingResponseBuilder {
         self
     }
     /// <p>Configuration information about the auto-merging process.</p>
-    pub fn set_auto_merging(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMerging>,
-    ) -> Self {
+    pub fn set_auto_merging(mut self, input: ::std::option::Option<crate::types::AutoMerging>) -> Self {
         self.auto_merging = input;
         self
     }
@@ -108,10 +100,7 @@ impl MatchingResponseBuilder {
         self
     }
     /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
-    pub fn set_exporting_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportingConfig>,
-    ) -> Self {
+    pub fn set_exporting_config(mut self, input: ::std::option::Option<crate::types::ExportingConfig>) -> Self {
         self.exporting_config = input;
         self
     }

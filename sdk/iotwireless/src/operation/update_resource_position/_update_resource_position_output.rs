@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateResourcePositionOutput {
 }
 impl UpdateResourcePositionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResourcePositionOutput`](crate::operation::update_resource_position::UpdateResourcePositionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_resource_position::builders::UpdateResourcePositionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_resource_position::builders::UpdateResourcePositionOutputBuilder {
         crate::operation::update_resource_position::builders::UpdateResourcePositionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResourcePositionOutput`](crate::operation::update_resource_position::UpdateResourcePositionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourcePositionOutputBuilder {
     _request_id: Option<String>,
 }

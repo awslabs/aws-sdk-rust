@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LaunchProfileValidationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,19 +57,11 @@ pub enum LaunchProfileValidationType {
 impl ::std::convert::From<&str> for LaunchProfileValidationType {
     fn from(s: &str) -> Self {
         match s {
-            "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT" => {
-                LaunchProfileValidationType::ValidateActiveDirectoryStudioComponent
-            }
-            "VALIDATE_NETWORK_ACL_ASSOCIATION" => {
-                LaunchProfileValidationType::ValidateNetworkAclAssociation
-            }
-            "VALIDATE_SECURITY_GROUP_ASSOCIATION" => {
-                LaunchProfileValidationType::ValidateSecurityGroupAssociation
-            }
+            "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT" => LaunchProfileValidationType::ValidateActiveDirectoryStudioComponent,
+            "VALIDATE_NETWORK_ACL_ASSOCIATION" => LaunchProfileValidationType::ValidateNetworkAclAssociation,
+            "VALIDATE_SECURITY_GROUP_ASSOCIATION" => LaunchProfileValidationType::ValidateSecurityGroupAssociation,
             "VALIDATE_SUBNET_ASSOCIATION" => LaunchProfileValidationType::ValidateSubnetAssociation,
-            other => LaunchProfileValidationType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LaunchProfileValidationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -90,15 +76,9 @@ impl LaunchProfileValidationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            LaunchProfileValidationType::ValidateActiveDirectoryStudioComponent => {
-                "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT"
-            }
-            LaunchProfileValidationType::ValidateNetworkAclAssociation => {
-                "VALIDATE_NETWORK_ACL_ASSOCIATION"
-            }
-            LaunchProfileValidationType::ValidateSecurityGroupAssociation => {
-                "VALIDATE_SECURITY_GROUP_ASSOCIATION"
-            }
+            LaunchProfileValidationType::ValidateActiveDirectoryStudioComponent => "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT",
+            LaunchProfileValidationType::ValidateNetworkAclAssociation => "VALIDATE_NETWORK_ACL_ASSOCIATION",
+            LaunchProfileValidationType::ValidateSecurityGroupAssociation => "VALIDATE_SECURITY_GROUP_ASSOCIATION",
             LaunchProfileValidationType::ValidateSubnetAssociation => "VALIDATE_SUBNET_ASSOCIATION",
             LaunchProfileValidationType::Unknown(value) => value.as_str(),
         }

@@ -26,7 +26,7 @@ impl DescribeOrganizationOverviewInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOrganizationOverviewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewInputBuilder,
+    inner: crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewInputBuilder,
 }
 impl DescribeOrganizationOverviewFluentBuilder {
     /// Creates a new `DescribeOrganizationOverview`.
@@ -37,7 +37,7 @@ impl DescribeOrganizationOverviewFluentBuilder {
         }
     }
     /// Access the DescribeOrganizationOverview as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_organization_overview::builders::DescribeOrganizationOverviewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeOrganizationOverviewFluentBuilder {
             crate::operation::describe_organization_overview::DescribeOrganizationOverview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_organization_overview::DescribeOrganizationOverviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_organization_overview::DescribeOrganizationOverviewError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeOrganizationOverviewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeOrganizationOverviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_organization_overview::DescribeOrganizationOverviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_organization_overview::DescribeOrganizationOverviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_organization_overview::DescribeOrganizationOverviewError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeOrganizationOverviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_organization_overview::DescribeOrganizationOverviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_organization_overview::DescribeOrganizationOverviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_organization_overview::DescribeOrganizationOverviewError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeOrganizationOverviewFluentBuilder {
             crate::operation::describe_organization_overview::DescribeOrganizationOverview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_organization_overview::DescribeOrganizationOverviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_organization_overview::DescribeOrganizationOverviewError>,
     > {
         self.customize_middleware().await
     }
@@ -126,10 +115,7 @@ impl DescribeOrganizationOverviewFluentBuilder {
         self
     }
     /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
-    pub fn set_from_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_from_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_from_time(input);
         self
     }
@@ -143,10 +129,7 @@ impl DescribeOrganizationOverviewFluentBuilder {
         self
     }
     /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
-    pub fn set_to_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_to_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_to_time(input);
         self
     }
@@ -164,17 +147,12 @@ impl DescribeOrganizationOverviewFluentBuilder {
         self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
     /// Appends an item to `OrganizationalUnitIds`.
@@ -182,25 +160,17 @@ impl DescribeOrganizationOverviewFluentBuilder {
     /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
     ///
     /// <p>The ID of the organizational unit.</p>
-    pub fn organizational_unit_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organizational_unit_ids(input.into());
         self
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn set_organizational_unit_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_organizational_unit_ids(input);
         self
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn get_organizational_unit_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_organizational_unit_ids()
     }
 }

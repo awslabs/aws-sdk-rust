@@ -10,17 +10,12 @@ pub fn ser_update_infrastructure_configuration_input(
         object.key("description").string(var_2.as_str());
     }
     if let Some(var_3) = &input.infrastructure_configuration_arn {
-        object
-            .key("infrastructureConfigurationArn")
-            .string(var_3.as_str());
+        object.key("infrastructureConfigurationArn").string(var_3.as_str());
     }
     if let Some(var_4) = &input.instance_metadata_options {
         #[allow(unused_mut)]
         let mut object_5 = object.key("instanceMetadataOptions").start_object();
-        crate::protocol_serde::shape_instance_metadata_options::ser_instance_metadata_options(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_instance_metadata_options::ser_instance_metadata_options(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.instance_profile_name {

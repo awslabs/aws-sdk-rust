@@ -22,26 +22,18 @@ impl DeleteWorkforceInput {
 
 /// A builder for [`DeleteWorkforceInput`](crate::operation::delete_workforce::DeleteWorkforceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkforceInputBuilder {
     pub(crate) workforce_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWorkforceInputBuilder {
     /// <p>The name of the workforce.</p>
-    pub fn workforce_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workforce_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workforce_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workforce.</p>
-    pub fn set_workforce_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workforce_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workforce_name = input;
         self
     }
@@ -52,10 +44,7 @@ impl DeleteWorkforceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkforceInput`](crate::operation::delete_workforce::DeleteWorkforceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_workforce::DeleteWorkforceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_workforce::DeleteWorkforceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_workforce::DeleteWorkforceInput {
             workforce_name: self.workforce_name,
         })

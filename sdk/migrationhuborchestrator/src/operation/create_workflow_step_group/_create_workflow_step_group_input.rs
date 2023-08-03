@@ -43,18 +43,14 @@ impl CreateWorkflowStepGroupInput {
 }
 impl CreateWorkflowStepGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkflowStepGroupInput`](crate::operation::create_workflow_step_group::CreateWorkflowStepGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_workflow_step_group::builders::CreateWorkflowStepGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_workflow_step_group::builders::CreateWorkflowStepGroupInputBuilder {
         crate::operation::create_workflow_step_group::builders::CreateWorkflowStepGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWorkflowStepGroupInput`](crate::operation::create_workflow_step_group::CreateWorkflowStepGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkflowStepGroupInputBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -117,10 +113,7 @@ impl CreateWorkflowStepGroupInputBuilder {
         self
     }
     /// <p>The next step group.</p>
-    pub fn set_next(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.next = input;
         self
     }
@@ -140,10 +133,7 @@ impl CreateWorkflowStepGroupInputBuilder {
         self
     }
     /// <p>The previous step group.</p>
-    pub fn set_previous(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.previous = input;
         self
     }
@@ -158,14 +148,12 @@ impl CreateWorkflowStepGroupInputBuilder {
         crate::operation::create_workflow_step_group::CreateWorkflowStepGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_workflow_step_group::CreateWorkflowStepGroupInput {
-                workflow_id: self.workflow_id,
-                name: self.name,
-                description: self.description,
-                next: self.next,
-                previous: self.previous,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_workflow_step_group::CreateWorkflowStepGroupInput {
+            workflow_id: self.workflow_id,
+            name: self.name,
+            description: self.description,
+            next: self.next,
+            previous: self.previous,
+        })
     }
 }

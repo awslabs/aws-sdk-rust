@@ -25,17 +25,14 @@ impl AwsCertificateManagerCertificateExtendedKeyUsage {
 }
 impl AwsCertificateManagerCertificateExtendedKeyUsage {
     /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateExtendedKeyUsage`](crate::types::AwsCertificateManagerCertificateExtendedKeyUsage).
-    pub fn builder(
-    ) -> crate::types::builders::AwsCertificateManagerCertificateExtendedKeyUsageBuilder {
+    pub fn builder() -> crate::types::builders::AwsCertificateManagerCertificateExtendedKeyUsageBuilder {
         crate::types::builders::AwsCertificateManagerCertificateExtendedKeyUsageBuilder::default()
     }
 }
 
 /// A builder for [`AwsCertificateManagerCertificateExtendedKeyUsage`](crate::types::AwsCertificateManagerCertificateExtendedKeyUsage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCertificateManagerCertificateExtendedKeyUsageBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) o_id: ::std::option::Option<::std::string::String>,

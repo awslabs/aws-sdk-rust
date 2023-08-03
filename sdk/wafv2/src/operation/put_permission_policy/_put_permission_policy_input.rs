@@ -40,18 +40,14 @@ impl PutPermissionPolicyInput {
 }
 impl PutPermissionPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutPermissionPolicyInput`](crate::operation::put_permission_policy::PutPermissionPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_permission_policy::builders::PutPermissionPolicyInputBuilder {
-        crate::operation::put_permission_policy::builders::PutPermissionPolicyInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_permission_policy::builders::PutPermissionPolicyInputBuilder {
+        crate::operation::put_permission_policy::builders::PutPermissionPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutPermissionPolicyInput`](crate::operation::put_permission_policy::PutPermissionPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPermissionPolicyInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
@@ -115,15 +111,11 @@ impl PutPermissionPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutPermissionPolicyInput`](crate::operation::put_permission_policy::PutPermissionPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_permission_policy::PutPermissionPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_permission_policy::PutPermissionPolicyInput {
-                resource_arn: self.resource_arn,
-                policy: self.policy,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_permission_policy::PutPermissionPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_permission_policy::PutPermissionPolicyInput {
+            resource_arn: self.resource_arn,
+            policy: self.policy,
+        })
     }
 }

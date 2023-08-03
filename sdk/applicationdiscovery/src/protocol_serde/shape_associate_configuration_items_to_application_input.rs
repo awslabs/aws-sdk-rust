@@ -4,9 +4,7 @@ pub fn ser_associate_configuration_items_to_application_input(
     input: &crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.application_configuration_id {
-        object
-            .key("applicationConfigurationId")
-            .string(var_1.as_str());
+        object.key("applicationConfigurationId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.configuration_ids {
         let mut array_3 = object.key("configurationIds").start_array();

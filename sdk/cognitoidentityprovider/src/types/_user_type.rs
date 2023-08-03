@@ -133,17 +133,12 @@ impl UserTypeBuilder {
         self
     }
     /// <p>A container with information about the user type attributes.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>A container with information about the user type attributes.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
         &self.attributes
     }
     /// <p>The creation date of the user.</p>
@@ -152,10 +147,7 @@ impl UserTypeBuilder {
         self
     }
     /// <p>The creation date of the user.</p>
-    pub fn set_user_create_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_user_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.user_create_date = input;
         self
     }
@@ -169,17 +161,12 @@ impl UserTypeBuilder {
         self
     }
     /// <p>The last modified date of the user.</p>
-    pub fn set_user_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_user_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.user_last_modified_date = input;
         self
     }
     /// <p>The last modified date of the user.</p>
-    pub fn get_user_last_modified_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_user_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.user_last_modified_date
     }
     /// <p>Specifies whether the user is enabled.</p>
@@ -220,10 +207,7 @@ impl UserTypeBuilder {
     /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
     /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
     /// </ul>
-    pub fn set_user_status(
-        mut self,
-        input: ::std::option::Option<crate::types::UserStatusType>,
-    ) -> Self {
+    pub fn set_user_status(mut self, input: ::std::option::Option<crate::types::UserStatusType>) -> Self {
         self.user_status = input;
         self
     }
@@ -252,17 +236,12 @@ impl UserTypeBuilder {
         self
     }
     /// <p>The MFA options for the user.</p>
-    pub fn set_mfa_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
-    ) -> Self {
+    pub fn set_mfa_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>) -> Self {
         self.mfa_options = input;
         self
     }
     /// <p>The MFA options for the user.</p>
-    pub fn get_mfa_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
+    pub fn get_mfa_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
         &self.mfa_options
     }
     /// Consumes the builder and constructs a [`UserType`](crate::types::UserType).

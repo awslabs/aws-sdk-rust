@@ -5,19 +5,14 @@ pub fn ser_update_settings_input(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.default_assessment_reports_destination {
         #[allow(unused_mut)]
-        let mut object_2 = object
-            .key("defaultAssessmentReportsDestination")
-            .start_object();
+        let mut object_2 = object.key("defaultAssessmentReportsDestination").start_object();
         crate::protocol_serde::shape_assessment_reports_destination::ser_assessment_reports_destination(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.default_export_destination {
         #[allow(unused_mut)]
         let mut object_4 = object.key("defaultExportDestination").start_object();
-        crate::protocol_serde::shape_default_export_destination::ser_default_export_destination(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_default_export_destination::ser_default_export_destination(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.default_process_owners {
@@ -35,10 +30,7 @@ pub fn ser_update_settings_input(
     if let Some(var_9) = &input.deregistration_policy {
         #[allow(unused_mut)]
         let mut object_10 = object.key("deregistrationPolicy").start_object();
-        crate::protocol_serde::shape_deregistration_policy::ser_deregistration_policy(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_deregistration_policy::ser_deregistration_policy(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.evidence_finder_enabled {

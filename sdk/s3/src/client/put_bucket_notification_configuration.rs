@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`skip_destination_validation(bool)`](crate::operation::put_bucket_notification_configuration::builders::PutBucketNotificationConfigurationFluentBuilder::skip_destination_validation) / [`set_skip_destination_validation(Option<bool>)`](crate::operation::put_bucket_notification_configuration::builders::PutBucketNotificationConfigurationFluentBuilder::set_skip_destination_validation): <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or false value.</p>
     /// - On success, responds with [`PutBucketNotificationConfigurationOutput`](crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutBucketNotificationConfigurationError>`](crate::operation::put_bucket_notification_configuration::PutBucketNotificationConfigurationError)
-    pub fn put_bucket_notification_configuration(&self) -> crate::operation::put_bucket_notification_configuration::builders::PutBucketNotificationConfigurationFluentBuilder{
+    pub fn put_bucket_notification_configuration(
+        &self,
+    ) -> crate::operation::put_bucket_notification_configuration::builders::PutBucketNotificationConfigurationFluentBuilder {
         crate::operation::put_bucket_notification_configuration::builders::PutBucketNotificationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl DeleteArchiveInput {
 
 /// A builder for [`DeleteArchiveInput`](crate::operation::delete_archive::DeleteArchiveInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteArchiveInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
@@ -91,10 +89,7 @@ impl DeleteArchiveInputBuilder {
     /// Consumes the builder and constructs a [`DeleteArchiveInput`](crate::operation::delete_archive::DeleteArchiveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_archive::DeleteArchiveInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_archive::DeleteArchiveInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_archive::DeleteArchiveInput {
             account_id: self.account_id,
             vault_name: self.vault_name,

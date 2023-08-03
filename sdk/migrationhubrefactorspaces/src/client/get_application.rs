@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::last_updated_time): <p>A timestamp that indicates when the application was last updated. </p>
     ///   - [`created_time(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::created_time): <p>A timestamp that indicates when the application is created. </p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
-    pub fn get_application(
-        &self,
-    ) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
-        crate::operation::get_application::builders::GetApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
+        crate::operation::get_application::builders::GetApplicationFluentBuilder::new(self.handle.clone())
     }
 }

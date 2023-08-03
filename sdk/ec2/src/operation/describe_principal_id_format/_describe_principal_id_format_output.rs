@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribePrincipalIdFormatOutput {
 }
 impl DescribePrincipalIdFormatOutput {
     /// Creates a new builder-style object to manufacture [`DescribePrincipalIdFormatOutput`](crate::operation::describe_principal_id_format::DescribePrincipalIdFormatOutput).
-    pub fn builder() -> crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatOutputBuilder{
+    pub fn builder() -> crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatOutputBuilder {
         crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePrincipalIdFormatOutput`](crate::operation::describe_principal_id_format::DescribePrincipalIdFormatOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePrincipalIdFormatOutputBuilder {
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalIdFormat>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribePrincipalIdFormatOutputBuilder {
         self
     }
     /// <p>Information about the ID format settings for the ARN.</p>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalIdFormat>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalIdFormat>>) -> Self {
         self.principals = input;
         self
     }
     /// <p>Information about the ID format settings for the ARN.</p>
-    pub fn get_principals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrincipalIdFormat>> {
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrincipalIdFormat>> {
         &self.principals
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -93,9 +86,7 @@ impl DescribePrincipalIdFormatOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePrincipalIdFormatOutput`](crate::operation::describe_principal_id_format::DescribePrincipalIdFormatOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_principal_id_format::DescribePrincipalIdFormatOutput {
+    pub fn build(self) -> crate::operation::describe_principal_id_format::DescribePrincipalIdFormatOutput {
         crate::operation::describe_principal_id_format::DescribePrincipalIdFormatOutput {
             principals: self.principals,
             next_token: self.next_token,

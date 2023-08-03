@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`tags_to_delete(Vec<String>)`](crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainFluentBuilder::tags_to_delete) / [`set_tags_to_delete(Option<Vec<String>>)`](crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainFluentBuilder::set_tags_to_delete): <p>A list of tag keys to delete.</p>
     /// - On success, responds with [`DeleteTagsForDomainOutput`](crate::operation::delete_tags_for_domain::DeleteTagsForDomainOutput)
     /// - On failure, responds with [`SdkError<DeleteTagsForDomainError>`](crate::operation::delete_tags_for_domain::DeleteTagsForDomainError)
-    pub fn delete_tags_for_domain(
-        &self,
-    ) -> crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainFluentBuilder {
-        crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_tags_for_domain(&self) -> crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainFluentBuilder {
+        crate::operation::delete_tags_for_domain::builders::DeleteTagsForDomainFluentBuilder::new(self.handle.clone())
     }
 }

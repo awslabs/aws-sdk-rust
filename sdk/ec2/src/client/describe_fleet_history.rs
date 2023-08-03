@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`fleet_id(Option<String>)`](crate::operation::describe_fleet_history::DescribeFleetHistoryOutput::fleet_id): <p>The ID of the EC Fleet.</p>
     ///   - [`start_time(Option<DateTime>)`](crate::operation::describe_fleet_history::DescribeFleetHistoryOutput::start_time): <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     /// - On failure, responds with [`SdkError<DescribeFleetHistoryError>`](crate::operation::describe_fleet_history::DescribeFleetHistoryError)
-    pub fn describe_fleet_history(
-        &self,
-    ) -> crate::operation::describe_fleet_history::builders::DescribeFleetHistoryFluentBuilder {
-        crate::operation::describe_fleet_history::builders::DescribeFleetHistoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_fleet_history(&self) -> crate::operation::describe_fleet_history::builders::DescribeFleetHistoryFluentBuilder {
+        crate::operation::describe_fleet_history::builders::DescribeFleetHistoryFluentBuilder::new(self.handle.clone())
     }
 }

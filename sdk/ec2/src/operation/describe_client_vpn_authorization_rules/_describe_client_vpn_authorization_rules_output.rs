@@ -5,8 +5,7 @@
 pub struct DescribeClientVpnAuthorizationRulesOutput {
     /// <p>Information about the authorization rules.</p>
     #[doc(hidden)]
-    pub authorization_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuthorizationRule>>,
+    pub authorization_rules: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizationRule>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeClientVpnAuthorizationRulesOu
 }
 impl DescribeClientVpnAuthorizationRulesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClientVpnAuthorizationRulesOutput`](crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesOutput).
-    pub fn builder() -> crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesOutputBuilder {
         crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClientVpnAuthorizationRulesOutput`](crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClientVpnAuthorizationRulesOutputBuilder {
-    pub(crate) authorization_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuthorizationRule>>,
+    pub(crate) authorization_rules: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizationRule>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl DescribeClientVpnAuthorizationRulesOutputBuilder {
         self
     }
     /// <p>Information about the authorization rules.</p>
-    pub fn set_authorization_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizationRule>>,
-    ) -> Self {
+    pub fn set_authorization_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizationRule>>) -> Self {
         self.authorization_rules = input;
         self
     }
     /// <p>Information about the authorization rules.</p>
-    pub fn get_authorization_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorizationRule>> {
+    pub fn get_authorization_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorizationRule>> {
         &self.authorization_rules
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -95,12 +86,10 @@ impl DescribeClientVpnAuthorizationRulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeClientVpnAuthorizationRulesOutput`](crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesOutput).
-    pub fn build(self) -> crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesOutput{
+    pub fn build(self) -> crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesOutput {
         crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesOutput {
-            authorization_rules: self.authorization_rules
-            ,
-            next_token: self.next_token
-            ,
+            authorization_rules: self.authorization_rules,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

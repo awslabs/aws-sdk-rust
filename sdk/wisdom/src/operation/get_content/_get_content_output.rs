@@ -28,9 +28,7 @@ impl GetContentOutput {
 
 /// A builder for [`GetContentOutput`](crate::operation::get_content::GetContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContentOutputBuilder {
     pub(crate) content: ::std::option::Option<crate::types::ContentData>,
     _request_id: Option<String>,

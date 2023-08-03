@@ -16,11 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateInstancesOutput`](crate::operation::create_instances::CreateInstancesOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::create_instances::CreateInstancesOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CreateInstancesError>`](crate::operation::create_instances::CreateInstancesError)
-    pub fn create_instances(
-        &self,
-    ) -> crate::operation::create_instances::builders::CreateInstancesFluentBuilder {
-        crate::operation::create_instances::builders::CreateInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_instances(&self) -> crate::operation::create_instances::builders::CreateInstancesFluentBuilder {
+        crate::operation::create_instances::builders::CreateInstancesFluentBuilder::new(self.handle.clone())
     }
 }

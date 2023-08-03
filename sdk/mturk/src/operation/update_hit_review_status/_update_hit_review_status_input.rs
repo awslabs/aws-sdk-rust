@@ -30,18 +30,14 @@ impl UpdateHitReviewStatusInput {
 }
 impl UpdateHitReviewStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateHitReviewStatusInput`](crate::operation::update_hit_review_status::UpdateHitReviewStatusInput).
-    pub fn builder(
-    ) -> crate::operation::update_hit_review_status::builders::UpdateHitReviewStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_hit_review_status::builders::UpdateHitReviewStatusInputBuilder {
         crate::operation::update_hit_review_status::builders::UpdateHitReviewStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateHitReviewStatusInput`](crate::operation::update_hit_review_status::UpdateHitReviewStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateHitReviewStatusInputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
     pub(crate) revert: ::std::option::Option<bool>,
@@ -90,15 +86,11 @@ impl UpdateHitReviewStatusInputBuilder {
     /// Consumes the builder and constructs a [`UpdateHitReviewStatusInput`](crate::operation::update_hit_review_status::UpdateHitReviewStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_hit_review_status::UpdateHitReviewStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_hit_review_status::UpdateHitReviewStatusInput {
-                hit_id: self.hit_id,
-                revert: self.revert,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_hit_review_status::UpdateHitReviewStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_hit_review_status::UpdateHitReviewStatusInput {
+            hit_id: self.hit_id,
+            revert: self.revert,
+        })
     }
 }

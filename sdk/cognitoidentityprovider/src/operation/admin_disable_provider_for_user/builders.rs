@@ -31,7 +31,7 @@ impl AdminDisableProviderForUserInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AdminDisableProviderForUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::admin_disable_provider_for_user::builders::AdminDisableProviderForUserInputBuilder,
+    inner: crate::operation::admin_disable_provider_for_user::builders::AdminDisableProviderForUserInputBuilder,
 }
 impl AdminDisableProviderForUserFluentBuilder {
     /// Creates a new `AdminDisableProviderForUser`.
@@ -42,7 +42,7 @@ impl AdminDisableProviderForUserFluentBuilder {
         }
     }
     /// Access the AdminDisableProviderForUser as a reference.
-    pub fn as_input(&self) -> &crate::operation::admin_disable_provider_for_user::builders::AdminDisableProviderForUserInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::admin_disable_provider_for_user::builders::AdminDisableProviderForUserInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl AdminDisableProviderForUserFluentBuilder {
             crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl AdminDisableProviderForUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl AdminDisableProviderForUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl AdminDisableProviderForUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +110,7 @@ impl AdminDisableProviderForUserFluentBuilder {
             crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError>,
     > {
         self.customize_middleware().await
     }
@@ -145,10 +134,7 @@ impl AdminDisableProviderForUserFluentBuilder {
         self
     }
     /// <p>The user to be disabled.</p>
-    pub fn set_user(
-        mut self,
-        input: ::std::option::Option<crate::types::ProviderUserIdentifierType>,
-    ) -> Self {
+    pub fn set_user(mut self, input: ::std::option::Option<crate::types::ProviderUserIdentifierType>) -> Self {
         self.inner = self.inner.set_user(input);
         self
     }

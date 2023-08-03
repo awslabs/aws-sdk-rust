@@ -22,9 +22,7 @@ impl DetachDiskInput {
 
 /// A builder for [`DetachDiskInput`](crate::operation::detach_disk::DetachDiskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachDiskInputBuilder {
     pub(crate) disk_name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DetachDiskInputBuilder {
         &self.disk_name
     }
     /// Consumes the builder and constructs a [`DetachDiskInput`](crate::operation::detach_disk::DetachDiskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detach_disk::DetachDiskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::detach_disk::DetachDiskInput {
-            disk_name: self.disk_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detach_disk::DetachDiskInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::detach_disk::DetachDiskInput { disk_name: self.disk_name })
     }
 }

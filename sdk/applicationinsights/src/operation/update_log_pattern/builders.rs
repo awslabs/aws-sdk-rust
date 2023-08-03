@@ -10,10 +10,7 @@ impl UpdateLogPatternInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_log_pattern::UpdateLogPatternOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_log_pattern::UpdateLogPatternError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_log_pattern::UpdateLogPatternError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_log_pattern();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateLogPatternFluentBuilder {
         }
     }
     /// Access the UpdateLogPattern as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_log_pattern::builders::UpdateLogPatternInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_log_pattern::builders::UpdateLogPatternInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateLogPatternFluentBuilder {
             crate::operation::update_log_pattern::UpdateLogPattern,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_log_pattern::UpdateLogPatternError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_log_pattern::UpdateLogPatternError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateLogPatternFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateLogPatternFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_log_pattern::UpdateLogPatternOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_log_pattern::UpdateLogPatternError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_log_pattern::UpdateLogPatternError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateLogPatternFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_log_pattern::UpdateLogPatternOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_log_pattern::UpdateLogPatternError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_log_pattern::UpdateLogPatternError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateLogPatternFluentBuilder {
             crate::operation::update_log_pattern::UpdateLogPattern,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_log_pattern::UpdateLogPatternError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_log_pattern::UpdateLogPatternError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_group_name(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_group_name(input);
         self
     }
@@ -143,18 +121,12 @@ impl UpdateLogPatternFluentBuilder {
         self.inner.get_resource_group_name()
     }
     /// <p>The name of the log pattern set.</p>
-    pub fn pattern_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pattern_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pattern_set_name(input.into());
         self
     }
     /// <p>The name of the log pattern set.</p>
-    pub fn set_pattern_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pattern_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pattern_set_name(input);
         self
     }

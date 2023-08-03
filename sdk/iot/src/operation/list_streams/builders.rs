@@ -10,10 +10,7 @@ impl ListStreamsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_streams::ListStreamsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_streams::ListStreamsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_streams::ListStreamsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_streams();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ListStreamsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_streams::ListStreams,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_streams::ListStreams, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_streams::ListStreamsError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ListStreamsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl ListStreamsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_streams::ListStreams,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_streams::ListStreams, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_streams::ListStreamsError>,
     > {
         self.customize_middleware().await
@@ -117,10 +105,7 @@ impl ListStreamsFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_streams::paginator::ListStreamsPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_streams::paginator::ListStreamsPaginator {
-        crate::operation::list_streams::paginator::ListStreamsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_streams::paginator::ListStreamsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to return at a time.</p>
     pub fn max_results(mut self, input: i32) -> Self {

@@ -50,15 +50,11 @@ impl GetInventoryInput {
 
 /// A builder for [`GetInventoryInput`](crate::operation::get_inventory::GetInventoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInventoryInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>,
-    pub(crate) aggregators:
-        ::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>>,
-    pub(crate) result_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>>,
+    pub(crate) aggregators: ::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>>,
+    pub(crate) result_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -75,17 +71,12 @@ impl GetInventoryInputBuilder {
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
         &self.filters
     }
     /// Appends an item to `aggregators`.
@@ -100,17 +91,12 @@ impl GetInventoryInputBuilder {
         self
     }
     /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
-    pub fn set_aggregators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>>,
-    ) -> Self {
+    pub fn set_aggregators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>>) -> Self {
         self.aggregators = input;
         self
     }
     /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
-    pub fn get_aggregators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>> {
+    pub fn get_aggregators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>> {
         &self.aggregators
     }
     /// Appends an item to `result_attributes`.
@@ -125,17 +111,12 @@ impl GetInventoryInputBuilder {
         self
     }
     /// <p>The list of inventory item types to return.</p>
-    pub fn set_result_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>>,
-    ) -> Self {
+    pub fn set_result_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>>) -> Self {
         self.result_attributes = input;
         self
     }
     /// <p>The list of inventory item types to return.</p>
-    pub fn get_result_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>> {
+    pub fn get_result_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>> {
         &self.result_attributes
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -167,12 +148,7 @@ impl GetInventoryInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetInventoryInput`](crate::operation::get_inventory::GetInventoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_inventory::GetInventoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_inventory::GetInventoryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_inventory::GetInventoryInput {
             filters: self.filters,
             aggregators: self.aggregators,

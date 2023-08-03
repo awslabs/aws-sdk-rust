@@ -29,9 +29,7 @@ impl GetTraceGraphInput {
 
 /// A builder for [`GetTraceGraphInput`](crate::operation::get_trace_graph::GetTraceGraphInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTraceGraphInputBuilder {
     pub(crate) trace_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -49,10 +47,7 @@ impl GetTraceGraphInputBuilder {
         self
     }
     /// <p>Trace IDs of requests for which to generate a service graph.</p>
-    pub fn set_trace_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_trace_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.trace_ids = input;
         self
     }
@@ -77,10 +72,7 @@ impl GetTraceGraphInputBuilder {
     /// Consumes the builder and constructs a [`GetTraceGraphInput`](crate::operation::get_trace_graph::GetTraceGraphInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_trace_graph::GetTraceGraphInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_trace_graph::GetTraceGraphInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_trace_graph::GetTraceGraphInput {
             trace_ids: self.trace_ids,
             next_token: self.next_token,

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`cluster_list_entries(Option<Vec<ClusterListEntry>>)`](crate::operation::list_clusters::ListClustersOutput::cluster_list_entries): <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_clusters::ListClustersOutput::next_token): <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of returned clusters will start from this point in the array.</p>
     /// - On failure, responds with [`SdkError<ListClustersError>`](crate::operation::list_clusters::ListClustersError)
-    pub fn list_clusters(
-        &self,
-    ) -> crate::operation::list_clusters::builders::ListClustersFluentBuilder {
-        crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_clusters(&self) -> crate::operation::list_clusters::builders::ListClustersFluentBuilder {
+        crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(self.handle.clone())
     }
 }

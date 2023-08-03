@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`destination(Option<Destination>)`](crate::operation::get_findings_report_status::GetFindingsReportStatusOutput::destination): <p>The destination of the report.</p>
     ///   - [`filter_criteria(Option<FilterCriteria>)`](crate::operation::get_findings_report_status::GetFindingsReportStatusOutput::filter_criteria): <p>The filter criteria associated with the report.</p>
     /// - On failure, responds with [`SdkError<GetFindingsReportStatusError>`](crate::operation::get_findings_report_status::GetFindingsReportStatusError)
-    pub fn get_findings_report_status(
-        &self,
-    ) -> crate::operation::get_findings_report_status::builders::GetFindingsReportStatusFluentBuilder
-    {
+    pub fn get_findings_report_status(&self) -> crate::operation::get_findings_report_status::builders::GetFindingsReportStatusFluentBuilder {
         crate::operation::get_findings_report_status::builders::GetFindingsReportStatusFluentBuilder::new(self.handle.clone())
     }
 }

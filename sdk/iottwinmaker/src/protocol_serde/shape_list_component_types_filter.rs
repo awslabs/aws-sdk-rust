@@ -14,11 +14,9 @@ pub fn ser_list_component_types_filter(
             object_4.key("isAbstract").boolean(*inner);
         }
         crate::types::ListComponentTypesFilter::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "ListComponentTypesFilter",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "ListComponentTypesFilter",
+            ))
         }
     }
     Ok(())

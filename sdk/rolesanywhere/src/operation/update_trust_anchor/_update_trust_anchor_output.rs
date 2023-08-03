@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateTrustAnchorOutput {
 }
 impl UpdateTrustAnchorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTrustAnchorOutput`](crate::operation::update_trust_anchor::UpdateTrustAnchorOutput).
-    pub fn builder(
-    ) -> crate::operation::update_trust_anchor::builders::UpdateTrustAnchorOutputBuilder {
+    pub fn builder() -> crate::operation::update_trust_anchor::builders::UpdateTrustAnchorOutputBuilder {
         crate::operation::update_trust_anchor::builders::UpdateTrustAnchorOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTrustAnchorOutput`](crate::operation::update_trust_anchor::UpdateTrustAnchorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTrustAnchorOutputBuilder {
     pub(crate) trust_anchor: ::std::option::Option<crate::types::TrustAnchorDetail>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateTrustAnchorOutputBuilder {
         self
     }
     /// <p>The state of the trust anchor after a read or write operation. </p>
-    pub fn set_trust_anchor(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustAnchorDetail>,
-    ) -> Self {
+    pub fn set_trust_anchor(mut self, input: ::std::option::Option<crate::types::TrustAnchorDetail>) -> Self {
         self.trust_anchor = input;
         self
     }

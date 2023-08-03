@@ -15,18 +15,14 @@ impl DeleteExperimentTemplateInput {
 }
 impl DeleteExperimentTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteExperimentTemplateInput`](crate::operation::delete_experiment_template::DeleteExperimentTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateInputBuilder {
         crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteExperimentTemplateInput`](crate::operation::delete_experiment_template::DeleteExperimentTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteExperimentTemplateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl DeleteExperimentTemplateInputBuilder {
         crate::operation::delete_experiment_template::DeleteExperimentTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_experiment_template::DeleteExperimentTemplateInput {
-                id: self.id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_experiment_template::DeleteExperimentTemplateInput { id: self.id })
     }
 }

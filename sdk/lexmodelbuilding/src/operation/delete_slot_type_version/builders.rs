@@ -38,10 +38,7 @@ impl DeleteSlotTypeVersionFluentBuilder {
         }
     }
     /// Access the DeleteSlotTypeVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeleteSlotTypeVersionFluentBuilder {
             crate::operation::delete_slot_type_version::DeleteSlotTypeVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeleteSlotTypeVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeleteSlotTypeVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_slot_type_version::DeleteSlotTypeVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeleteSlotTypeVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_slot_type_version::DeleteSlotTypeVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DeleteSlotTypeVersionFluentBuilder {
             crate::operation::delete_slot_type_version::DeleteSlotTypeVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError>,
     > {
         self.customize_middleware().await
     }

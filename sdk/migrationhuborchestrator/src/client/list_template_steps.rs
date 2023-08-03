@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_template_steps::ListTemplateStepsOutput::next_token): <p>The pagination token.</p>
     ///   - [`template_step_summary_list(Option<Vec<TemplateStepSummary>>)`](crate::operation::list_template_steps::ListTemplateStepsOutput::template_step_summary_list): <p>The list of summaries of steps in a template.</p>
     /// - On failure, responds with [`SdkError<ListTemplateStepsError>`](crate::operation::list_template_steps::ListTemplateStepsError)
-    pub fn list_template_steps(
-        &self,
-    ) -> crate::operation::list_template_steps::builders::ListTemplateStepsFluentBuilder {
-        crate::operation::list_template_steps::builders::ListTemplateStepsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_template_steps(&self) -> crate::operation::list_template_steps::builders::ListTemplateStepsFluentBuilder {
+        crate::operation::list_template_steps::builders::ListTemplateStepsFluentBuilder::new(self.handle.clone())
     }
 }

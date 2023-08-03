@@ -11,8 +11,7 @@ pub struct UpdateProfileInput {
     pub profile_description: ::std::option::Option<::std::string::String>,
     /// <p>Profile questions.</p>
     #[doc(hidden)]
-    pub profile_questions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>>,
+    pub profile_questions: ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>>,
 }
 impl UpdateProfileInput {
     /// <p>The profile ARN.</p>
@@ -24,9 +23,7 @@ impl UpdateProfileInput {
         self.profile_description.as_deref()
     }
     /// <p>Profile questions.</p>
-    pub fn profile_questions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProfileQuestionUpdate]> {
+    pub fn profile_questions(&self) -> ::std::option::Option<&[crate::types::ProfileQuestionUpdate]> {
         self.profile_questions.as_deref()
     }
 }
@@ -39,14 +36,11 @@ impl UpdateProfileInput {
 
 /// A builder for [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProfileInputBuilder {
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_description: ::std::option::Option<::std::string::String>,
-    pub(crate) profile_questions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>>,
+    pub(crate) profile_questions: ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>>,
 }
 impl UpdateProfileInputBuilder {
     /// <p>The profile ARN.</p>
@@ -64,18 +58,12 @@ impl UpdateProfileInputBuilder {
         &self.profile_arn
     }
     /// <p>The profile description.</p>
-    pub fn profile_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The profile description.</p>
-    pub fn set_profile_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_description = input;
         self
     }
@@ -95,26 +83,18 @@ impl UpdateProfileInputBuilder {
         self
     }
     /// <p>Profile questions.</p>
-    pub fn set_profile_questions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>>,
-    ) -> Self {
+    pub fn set_profile_questions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>>) -> Self {
         self.profile_questions = input;
         self
     }
     /// <p>Profile questions.</p>
-    pub fn get_profile_questions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>> {
+    pub fn get_profile_questions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>> {
         &self.profile_questions
     }
     /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_profile::UpdateProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_profile::UpdateProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_profile::UpdateProfileInput {
             profile_arn: self.profile_arn,
             profile_description: self.profile_description,

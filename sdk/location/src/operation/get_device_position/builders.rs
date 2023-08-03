@@ -10,10 +10,7 @@ impl GetDevicePositionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_device_position::GetDevicePositionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_position::GetDevicePositionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_position::GetDevicePositionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_device_position();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetDevicePositionFluentBuilder {
         }
     }
     /// Access the GetDevicePosition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_device_position::builders::GetDevicePositionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_device_position::builders::GetDevicePositionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl GetDevicePositionFluentBuilder {
             crate::operation::get_device_position::GetDevicePosition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_position::GetDevicePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_position::GetDevicePositionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl GetDevicePositionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl GetDevicePositionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_device_position::GetDevicePositionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_position::GetDevicePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_position::GetDevicePositionError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl GetDevicePositionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_device_position::GetDevicePositionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_position::GetDevicePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_position::GetDevicePositionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl GetDevicePositionFluentBuilder {
             crate::operation::get_device_position::GetDevicePosition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_position::GetDevicePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_position::GetDevicePositionError>,
     > {
         self.customize_middleware().await
     }

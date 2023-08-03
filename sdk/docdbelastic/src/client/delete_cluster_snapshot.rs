@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteClusterSnapshotOutput`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotOutput) with field(s):
     ///   - [`snapshot(Option<ClusterSnapshot>)`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotOutput::snapshot): <p>Returns information about the newly deleted Elastic DocumentDB snapshot.</p>
     /// - On failure, responds with [`SdkError<DeleteClusterSnapshotError>`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError)
-    pub fn delete_cluster_snapshot(
-        &self,
-    ) -> crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotFluentBuilder
-    {
-        crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_cluster_snapshot(&self) -> crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotFluentBuilder {
+        crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

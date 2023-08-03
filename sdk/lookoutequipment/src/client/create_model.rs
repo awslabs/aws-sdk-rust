@@ -21,9 +21,7 @@ impl super::Client {
     ///   - [`model_arn(Option<String>)`](crate::operation::create_model::CreateModelOutput::model_arn): <p>The Amazon Resource Name (ARN) of the model being created. </p>
     ///   - [`status(Option<ModelStatus>)`](crate::operation::create_model::CreateModelOutput::status): <p>Indicates the status of the <code>CreateModel</code> operation. </p>
     /// - On failure, responds with [`SdkError<CreateModelError>`](crate::operation::create_model::CreateModelError)
-    pub fn create_model(
-        &self,
-    ) -> crate::operation::create_model::builders::CreateModelFluentBuilder {
+    pub fn create_model(&self) -> crate::operation::create_model::builders::CreateModelFluentBuilder {
         crate::operation::create_model::builders::CreateModelFluentBuilder::new(self.handle.clone())
     }
 }

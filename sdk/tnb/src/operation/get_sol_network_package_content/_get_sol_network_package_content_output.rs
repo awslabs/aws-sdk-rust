@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetSolNetworkPackageContentOutput {
 }
 impl GetSolNetworkPackageContentOutput {
     /// Creates a new builder-style object to manufacture [`GetSolNetworkPackageContentOutput`](crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentOutput).
-    pub fn builder() -> crate::operation::get_sol_network_package_content::builders::GetSolNetworkPackageContentOutputBuilder{
+    pub fn builder() -> crate::operation::get_sol_network_package_content::builders::GetSolNetworkPackageContentOutputBuilder {
         crate::operation::get_sol_network_package_content::builders::GetSolNetworkPackageContentOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSolNetworkPackageContentOutput`](crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolNetworkPackageContentOutputBuilder {
     pub(crate) content_type: ::std::option::Option<crate::types::PackageContentType>,
     pub(crate) nsd_content: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -50,10 +48,7 @@ impl GetSolNetworkPackageContentOutputBuilder {
         self
     }
     /// <p>Indicates the media type of the resource.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::PackageContentType>) -> Self {
         self.content_type = input;
         self
     }
@@ -67,10 +62,7 @@ impl GetSolNetworkPackageContentOutputBuilder {
         self
     }
     /// <p>Content of the network service descriptor in the network package.</p>
-    pub fn set_nsd_content(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_nsd_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.nsd_content = input;
         self
     }
@@ -88,9 +80,7 @@ impl GetSolNetworkPackageContentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSolNetworkPackageContentOutput`](crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentOutput {
+    pub fn build(self) -> crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentOutput {
         crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentOutput {
             content_type: self.content_type,
             nsd_content: self.nsd_content,

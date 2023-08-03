@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateHumanTaskUiOutput {
 }
 impl CreateHumanTaskUiOutput {
     /// Creates a new builder-style object to manufacture [`CreateHumanTaskUiOutput`](crate::operation::create_human_task_ui::CreateHumanTaskUiOutput).
-    pub fn builder(
-    ) -> crate::operation::create_human_task_ui::builders::CreateHumanTaskUiOutputBuilder {
+    pub fn builder() -> crate::operation::create_human_task_ui::builders::CreateHumanTaskUiOutputBuilder {
         crate::operation::create_human_task_ui::builders::CreateHumanTaskUiOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateHumanTaskUiOutput`](crate::operation::create_human_task_ui::CreateHumanTaskUiOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHumanTaskUiOutputBuilder {
     pub(crate) human_task_ui_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateHumanTaskUiOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the human review workflow user interface you create.</p>
-    pub fn human_task_ui_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_task_ui_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the human review workflow user interface you create.</p>
-    pub fn set_human_task_ui_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_human_task_ui_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.human_task_ui_arn = input;
         self
     }

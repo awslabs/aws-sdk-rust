@@ -60,9 +60,7 @@ impl ActionTypeIdentifier {
 
 /// A builder for [`ActionTypeIdentifier`](crate::types::ActionTypeIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionTypeIdentifierBuilder {
     pub(crate) category: ::std::option::Option<crate::types::ActionCategory>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
@@ -92,10 +90,7 @@ impl ActionTypeIdentifierBuilder {
     /// <li> <p> <code>Approval</code> </p> </li>
     /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.category = input;
         self
     }

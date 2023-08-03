@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`CreateFeatureGroupOutput`](crate::operation::create_feature_group::CreateFeatureGroupOutput) with field(s):
     ///   - [`feature_group_arn(Option<String>)`](crate::operation::create_feature_group::CreateFeatureGroupOutput::feature_group_arn): <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique identifier for the feature group. </p>
     /// - On failure, responds with [`SdkError<CreateFeatureGroupError>`](crate::operation::create_feature_group::CreateFeatureGroupError)
-    pub fn create_feature_group(
-        &self,
-    ) -> crate::operation::create_feature_group::builders::CreateFeatureGroupFluentBuilder {
-        crate::operation::create_feature_group::builders::CreateFeatureGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_feature_group(&self) -> crate::operation::create_feature_group::builders::CreateFeatureGroupFluentBuilder {
+        crate::operation::create_feature_group::builders::CreateFeatureGroupFluentBuilder::new(self.handle.clone())
     }
 }

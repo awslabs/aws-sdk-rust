@@ -44,9 +44,7 @@ impl DomainSummary {
 
 /// A builder for [`DomainSummary`](crate::types::DomainSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainSummaryBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_renew: ::std::option::Option<bool>,
@@ -102,10 +100,7 @@ impl DomainSummaryBuilder {
         self
     }
     /// <p>Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn set_expiry(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiry(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiry = input;
         self
     }

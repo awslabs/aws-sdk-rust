@@ -38,9 +38,7 @@ impl ListComponentsInput {
 
 /// A builder for [`ListComponentsInput`](crate::operation::list_components::ListComponentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentsInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::ComponentVisibilityScope>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -55,10 +53,7 @@ impl ListComponentsInputBuilder {
     }
     /// <p>The scope of the components to list.</p>
     /// <p>Default: <code>PRIVATE</code> </p>
-    pub fn set_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentVisibilityScope>,
-    ) -> Self {
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::ComponentVisibilityScope>) -> Self {
         self.scope = input;
         self
     }
@@ -98,10 +93,7 @@ impl ListComponentsInputBuilder {
     /// Consumes the builder and constructs a [`ListComponentsInput`](crate::operation::list_components::ListComponentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_components::ListComponentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_components::ListComponentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_components::ListComponentsInput {
             scope: self.scope,
             max_results: self.max_results,

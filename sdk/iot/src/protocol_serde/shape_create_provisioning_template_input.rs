@@ -12,10 +12,7 @@ pub fn ser_create_provisioning_template_input(
     if let Some(var_3) = &input.pre_provisioning_hook {
         #[allow(unused_mut)]
         let mut object_4 = object.key("preProvisioningHook").start_object();
-        crate::protocol_serde::shape_provisioning_hook::ser_provisioning_hook(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_provisioning_hook::ser_provisioning_hook(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.provisioning_role_arn {

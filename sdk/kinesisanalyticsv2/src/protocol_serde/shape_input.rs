@@ -15,28 +15,19 @@ pub fn ser_input(
     if let Some(var_4) = &input.kinesis_streams_input {
         #[allow(unused_mut)]
         let mut object_5 = object.key("KinesisStreamsInput").start_object();
-        crate::protocol_serde::shape_kinesis_streams_input::ser_kinesis_streams_input(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_kinesis_streams_input::ser_kinesis_streams_input(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.kinesis_firehose_input {
         #[allow(unused_mut)]
         let mut object_7 = object.key("KinesisFirehoseInput").start_object();
-        crate::protocol_serde::shape_kinesis_firehose_input::ser_kinesis_firehose_input(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_kinesis_firehose_input::ser_kinesis_firehose_input(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.input_parallelism {
         #[allow(unused_mut)]
         let mut object_9 = object.key("InputParallelism").start_object();
-        crate::protocol_serde::shape_input_parallelism::ser_input_parallelism(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_input_parallelism::ser_input_parallelism(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.input_schema {

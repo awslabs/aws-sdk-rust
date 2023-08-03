@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`policy_version_id(impl ::std::convert::Into<String>)`](crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionFluentBuilder::policy_version_id) / [`set_policy_version_id(Option<String>)`](crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionFluentBuilder::set_policy_version_id): <p>The policy version ID.</p>
     /// - On success, responds with [`SetDefaultPolicyVersionOutput`](crate::operation::set_default_policy_version::SetDefaultPolicyVersionOutput)
     /// - On failure, responds with [`SdkError<SetDefaultPolicyVersionError>`](crate::operation::set_default_policy_version::SetDefaultPolicyVersionError)
-    pub fn set_default_policy_version(
-        &self,
-    ) -> crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionFluentBuilder
-    {
+    pub fn set_default_policy_version(&self) -> crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionFluentBuilder {
         crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionFluentBuilder::new(self.handle.clone())
     }
 }

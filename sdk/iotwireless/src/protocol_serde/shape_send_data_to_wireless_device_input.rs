@@ -15,10 +15,7 @@ pub fn ser_send_data_to_wireless_device_input(
     if let Some(var_3) = &input.wireless_metadata {
         #[allow(unused_mut)]
         let mut object_4 = object.key("WirelessMetadata").start_object();
-        crate::protocol_serde::shape_wireless_metadata::ser_wireless_metadata(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_wireless_metadata::ser_wireless_metadata(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

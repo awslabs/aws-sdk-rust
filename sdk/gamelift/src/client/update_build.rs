@@ -9,9 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateBuildOutput`](crate::operation::update_build::UpdateBuildOutput) with field(s):
     ///   - [`build_value(Option<Build>)`](crate::operation::update_build::UpdateBuildOutput::build_value): <p>The updated build resource.</p>
     /// - On failure, responds with [`SdkError<UpdateBuildError>`](crate::operation::update_build::UpdateBuildError)
-    pub fn update_build(
-        &self,
-    ) -> crate::operation::update_build::builders::UpdateBuildFluentBuilder {
+    pub fn update_build(&self) -> crate::operation::update_build::builders::UpdateBuildFluentBuilder {
         crate::operation::update_build::builders::UpdateBuildFluentBuilder::new(self.handle.clone())
     }
 }

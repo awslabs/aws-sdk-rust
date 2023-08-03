@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DissociateEntityFromThingOutput {
 }
 impl DissociateEntityFromThingOutput {
     /// Creates a new builder-style object to manufacture [`DissociateEntityFromThingOutput`](crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput).
-    pub fn builder() -> crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingOutputBuilder{
+    pub fn builder() -> crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingOutputBuilder {
         crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DissociateEntityFromThingOutput`](crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DissociateEntityFromThingOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DissociateEntityFromThingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DissociateEntityFromThingOutput`](crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput {
+    pub fn build(self) -> crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput {
         crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput {
             _request_id: self._request_id,
         }

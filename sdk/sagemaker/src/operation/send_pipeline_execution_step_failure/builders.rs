@@ -5,16 +5,16 @@ pub use crate::operation::send_pipeline_execution_step_failure::_send_pipeline_e
 
 impl SendPipelineExecutionStepFailureInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.send_pipeline_execution_step_failure();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl SendPipelineExecutionStepFailureInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendPipelineExecutionStepFailureFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::send_pipeline_execution_step_failure::builders::SendPipelineExecutionStepFailureInputBuilder,
+    inner: crate::operation::send_pipeline_execution_step_failure::builders::SendPipelineExecutionStepFailureInputBuilder,
 }
 impl SendPipelineExecutionStepFailureFluentBuilder {
     /// Creates a new `SendPipelineExecutionStepFailure`.
@@ -37,15 +37,20 @@ impl SendPipelineExecutionStepFailureFluentBuilder {
         }
     }
     /// Access the SendPipelineExecutionStepFailure as a reference.
-    pub fn as_input(&self) -> &crate::operation::send_pipeline_execution_step_failure::builders::SendPipelineExecutionStepFailureInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::send_pipeline_execution_step_failure::builders::SendPipelineExecutionStepFailureInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailure, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailure,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl SendPipelineExecutionStepFailureFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput, ::aws_smithy_http::result::SdkError<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl SendPipelineExecutionStepFailureFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput, ::aws_smithy_http::result::SdkError<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailure, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailure,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
-    pub fn callback_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn callback_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.callback_token(input.into());
         self
     }
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
-    pub fn set_callback_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_callback_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_callback_token(input);
         self
     }
@@ -115,18 +124,12 @@ impl SendPipelineExecutionStepFailureFluentBuilder {
         self.inner.get_callback_token()
     }
     /// <p>A message describing why the step failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.failure_reason(input.into());
         self
     }
     /// <p>A message describing why the step failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_failure_reason(input);
         self
     }
@@ -135,18 +138,12 @@ impl SendPipelineExecutionStepFailureFluentBuilder {
         self.inner.get_failure_reason()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

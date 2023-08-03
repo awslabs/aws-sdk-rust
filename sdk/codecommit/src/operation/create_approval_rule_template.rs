@@ -27,27 +27,16 @@ impl CreateApprovalRuleTemplateInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -56,20 +45,13 @@ impl CreateApprovalRuleTemplateInput {
             fn update_http_builder(
                 input: &crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
-            builder = ::aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                ::http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
+            builder = ::aws_smithy_http::header::set_request_header_if_absent(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = ::aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 ::http::header::HeaderName::from_static("x-amz-target"),
@@ -80,14 +62,10 @@ impl CreateApprovalRuleTemplateInput {
         let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = ::aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_create_approval_rule_template::ser_create_approval_rule_template_input(&self)?
+            crate::protocol_serde::shape_create_approval_rule_template::ser_create_approval_rule_template_input(&self)?,
         );
         if let ::std::option::Option::Some(content_length) = body.content_length() {
-            request = ::aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                ::http::header::CONTENT_LENGTH,
-                content_length,
-            );
+            request = ::aws_smithy_http::header::set_request_header_if_absent(request, ::http::header::CONTENT_LENGTH, content_length);
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -99,10 +77,8 @@ impl CreateApprovalRuleTemplateInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -111,29 +87,19 @@ impl CreateApprovalRuleTemplateInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
         let op = ::aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::create_approval_rule_template::CreateApprovalRuleTemplate::new(),
         )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "CreateApprovalRuleTemplate",
-            "codecommit",
-        ));
+        .with_metadata(::aws_smithy_http::operation::Metadata::new("CreateApprovalRuleTemplate", "codecommit"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -162,7 +128,9 @@ impl ::aws_smithy_http::response::ParseStrictResponse for CreateApprovalRuleTemp
         if !success && status != 200 {
             crate::protocol_serde::shape_create_approval_rule_template::de_create_approval_rule_template_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_approval_rule_template::de_create_approval_rule_template_http_response_with_props(status, headers, body)
+            crate::protocol_serde::shape_create_approval_rule_template::de_create_approval_rule_template_http_response_with_props(
+                status, headers, body,
+            )
         }
     }
 }
@@ -179,41 +147,25 @@ pub type CreateApprovalRuleTemplateErrorKind = CreateApprovalRuleTemplateError;
 #[derive(::std::fmt::Debug)]
 pub enum CreateApprovalRuleTemplateError {
     /// <p>The content for the approval rule template is empty. You must provide some content for an approval rule template. The content cannot be null.</p>
-    ApprovalRuleTemplateContentRequiredException(
-        crate::types::error::ApprovalRuleTemplateContentRequiredException,
-    ),
+    ApprovalRuleTemplateContentRequiredException(crate::types::error::ApprovalRuleTemplateContentRequiredException),
     /// <p>You cannot create an approval rule template with that name because a template with that name already exists in this AWS Region for your AWS account. Approval rule template names must be unique.</p>
-    ApprovalRuleTemplateNameAlreadyExistsException(
-        crate::types::error::ApprovalRuleTemplateNameAlreadyExistsException,
-    ),
+    ApprovalRuleTemplateNameAlreadyExistsException(crate::types::error::ApprovalRuleTemplateNameAlreadyExistsException),
     /// <p>An approval rule template name is required, but was not specified.</p>
-    ApprovalRuleTemplateNameRequiredException(
-        crate::types::error::ApprovalRuleTemplateNameRequiredException,
-    ),
+    ApprovalRuleTemplateNameRequiredException(crate::types::error::ApprovalRuleTemplateNameRequiredException),
     /// <p>The content of the approval rule template is not valid.</p>
-    InvalidApprovalRuleTemplateContentException(
-        crate::types::error::InvalidApprovalRuleTemplateContentException,
-    ),
+    InvalidApprovalRuleTemplateContentException(crate::types::error::InvalidApprovalRuleTemplateContentException),
     /// <p>The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a description. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
-    InvalidApprovalRuleTemplateDescriptionException(
-        crate::types::error::InvalidApprovalRuleTemplateDescriptionException,
-    ),
+    InvalidApprovalRuleTemplateDescriptionException(crate::types::error::InvalidApprovalRuleTemplateDescriptionException),
     /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
-    InvalidApprovalRuleTemplateNameException(
-        crate::types::error::InvalidApprovalRuleTemplateNameException,
-    ),
+    InvalidApprovalRuleTemplateNameException(crate::types::error::InvalidApprovalRuleTemplateNameException),
     /// <p>The maximum number of approval rule templates has been exceeded for this AWS Region. </p>
-    NumberOfRuleTemplatesExceededException(
-        crate::types::error::NumberOfRuleTemplatesExceededException,
-    ),
+    NumberOfRuleTemplatesExceededException(crate::types::error::NumberOfRuleTemplatesExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for CreateApprovalRuleTemplateError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -240,36 +192,18 @@ impl ::std::fmt::Display for CreateApprovalRuleTemplateError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateApprovalRuleTemplateError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ApprovalRuleTemplateContentRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ApprovalRuleTemplateNameAlreadyExistsException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ApprovalRuleTemplateNameRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidApprovalRuleTemplateContentException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidApprovalRuleTemplateDescriptionException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidApprovalRuleTemplateNameException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::NumberOfRuleTemplatesExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::ApprovalRuleTemplateContentRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ApprovalRuleTemplateNameAlreadyExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ApprovalRuleTemplateNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidApprovalRuleTemplateContentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidApprovalRuleTemplateDescriptionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidApprovalRuleTemplateNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NumberOfRuleTemplatesExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -285,27 +219,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for CreateApprovalRuleTemplateE
 impl CreateApprovalRuleTemplateError {
     /// Creates the `CreateApprovalRuleTemplateError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `CreateApprovalRuleTemplateError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,
@@ -330,10 +251,7 @@ impl CreateApprovalRuleTemplateError {
     }
     /// Returns `true` if the error kind is `CreateApprovalRuleTemplateError::ApprovalRuleTemplateNameAlreadyExistsException`.
     pub fn is_approval_rule_template_name_already_exists_exception(&self) -> bool {
-        matches!(
-            self,
-            Self::ApprovalRuleTemplateNameAlreadyExistsException(_)
-        )
+        matches!(self, Self::ApprovalRuleTemplateNameAlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `CreateApprovalRuleTemplateError::ApprovalRuleTemplateNameRequiredException`.
     pub fn is_approval_rule_template_name_required_exception(&self) -> bool {
@@ -345,10 +263,7 @@ impl CreateApprovalRuleTemplateError {
     }
     /// Returns `true` if the error kind is `CreateApprovalRuleTemplateError::InvalidApprovalRuleTemplateDescriptionException`.
     pub fn is_invalid_approval_rule_template_description_exception(&self) -> bool {
-        matches!(
-            self,
-            Self::InvalidApprovalRuleTemplateDescriptionException(_)
-        )
+        matches!(self, Self::InvalidApprovalRuleTemplateDescriptionException(_))
     }
     /// Returns `true` if the error kind is `CreateApprovalRuleTemplateError::InvalidApprovalRuleTemplateNameException`.
     pub fn is_invalid_approval_rule_template_name_exception(&self) -> bool {
@@ -362,27 +277,13 @@ impl CreateApprovalRuleTemplateError {
 impl ::std::error::Error for CreateApprovalRuleTemplateError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::ApprovalRuleTemplateContentRequiredException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::ApprovalRuleTemplateNameAlreadyExistsException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::ApprovalRuleTemplateNameRequiredException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::InvalidApprovalRuleTemplateContentException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::InvalidApprovalRuleTemplateDescriptionException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::InvalidApprovalRuleTemplateNameException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::NumberOfRuleTemplatesExceededException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::ApprovalRuleTemplateContentRequiredException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ApprovalRuleTemplateNameAlreadyExistsException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ApprovalRuleTemplateNameRequiredException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidApprovalRuleTemplateContentException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidApprovalRuleTemplateDescriptionException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidApprovalRuleTemplateNameException(_inner) => ::std::option::Option::Some(_inner),
+            Self::NumberOfRuleTemplatesExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

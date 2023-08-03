@@ -22,16 +22,14 @@ impl ListCustomDataIdentifiersInput {
 }
 impl ListCustomDataIdentifiersInput {
     /// Creates a new builder-style object to manufacture [`ListCustomDataIdentifiersInput`](crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersInput).
-    pub fn builder() -> crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersInputBuilder{
+    pub fn builder() -> crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersInputBuilder {
         crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomDataIdentifiersInput`](crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomDataIdentifiersInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl ListCustomDataIdentifiersInputBuilder {
         crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

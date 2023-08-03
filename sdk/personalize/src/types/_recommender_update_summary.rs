@@ -63,9 +63,7 @@ impl RecommenderUpdateSummary {
 
 /// A builder for [`RecommenderUpdateSummary`](crate::types::RecommenderUpdateSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommenderUpdateSummaryBuilder {
     pub(crate) recommender_config: ::std::option::Option<crate::types::RecommenderConfig>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -80,17 +78,12 @@ impl RecommenderUpdateSummaryBuilder {
         self
     }
     /// <p>The configuration details of the recommender update.</p>
-    pub fn set_recommender_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommenderConfig>,
-    ) -> Self {
+    pub fn set_recommender_config(mut self, input: ::std::option::Option<crate::types::RecommenderConfig>) -> Self {
         self.recommender_config = input;
         self
     }
     /// <p>The configuration details of the recommender update.</p>
-    pub fn get_recommender_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommenderConfig> {
+    pub fn get_recommender_config(&self) -> &::std::option::Option<crate::types::RecommenderConfig> {
         &self.recommender_config
     }
     /// <p>The date and time (in Unix format) that the recommender update was created.</p>
@@ -99,10 +92,7 @@ impl RecommenderUpdateSummaryBuilder {
         self
     }
     /// <p>The date and time (in Unix format) that the recommender update was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -116,17 +106,12 @@ impl RecommenderUpdateSummaryBuilder {
         self
     }
     /// <p>The date and time (in Unix time) that the recommender update was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time (in Unix time) that the recommender update was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// <p>The status of the recommender update.</p>
@@ -162,18 +147,12 @@ impl RecommenderUpdateSummaryBuilder {
         &self.status
     }
     /// <p>If a recommender update fails, the reason behind the failure.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a recommender update fails, the reason behind the failure.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }

@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for GetInvitationConfigurationOutput {
 }
 impl GetInvitationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetInvitationConfigurationOutput`](crate::operation::get_invitation_configuration::GetInvitationConfigurationOutput).
-    pub fn builder() -> crate::operation::get_invitation_configuration::builders::GetInvitationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_invitation_configuration::builders::GetInvitationConfigurationOutputBuilder {
         crate::operation::get_invitation_configuration::builders::GetInvitationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInvitationConfigurationOutput`](crate::operation::get_invitation_configuration::GetInvitationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInvitationConfigurationOutputBuilder {
     pub(crate) organization_name: ::std::option::Option<::std::string::String>,
     pub(crate) contact_email: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ pub struct GetInvitationConfigurationOutputBuilder {
 }
 impl GetInvitationConfigurationOutputBuilder {
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
-    pub fn organization_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
-    pub fn set_organization_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_name = input;
         self
     }
@@ -73,18 +65,12 @@ impl GetInvitationConfigurationOutputBuilder {
         &self.organization_name
     }
     /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
-    pub fn contact_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
-    pub fn set_contact_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_email = input;
         self
     }
@@ -97,27 +83,19 @@ impl GetInvitationConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_private_skill_ids`](Self::set_private_skill_ids).
     ///
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
-    pub fn private_skill_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_skill_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.private_skill_ids.unwrap_or_default();
         v.push(input.into());
         self.private_skill_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
-    pub fn set_private_skill_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_private_skill_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.private_skill_ids = input;
         self
     }
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
-    pub fn get_private_skill_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_private_skill_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.private_skill_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -130,9 +108,7 @@ impl GetInvitationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetInvitationConfigurationOutput`](crate::operation::get_invitation_configuration::GetInvitationConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_invitation_configuration::GetInvitationConfigurationOutput {
+    pub fn build(self) -> crate::operation::get_invitation_configuration::GetInvitationConfigurationOutput {
         crate::operation::get_invitation_configuration::GetInvitationConfigurationOutput {
             organization_name: self.organization_name,
             contact_email: self.contact_email,

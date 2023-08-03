@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`streams(Option<Vec<StreamSummary>>)`](crate::operation::list_streams::ListStreamsOutput::streams): <p>List of streams.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_streams::ListStreamsOutput::next_token): <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     /// - On failure, responds with [`SdkError<ListStreamsError>`](crate::operation::list_streams::ListStreamsError)
-    pub fn list_streams(
-        &self,
-    ) -> crate::operation::list_streams::builders::ListStreamsFluentBuilder {
+    pub fn list_streams(&self) -> crate::operation::list_streams::builders::ListStreamsFluentBuilder {
         crate::operation::list_streams::builders::ListStreamsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -115,9 +115,7 @@ impl FieldInputConfig {
         self.is_array
     }
     /// <p>The configuration for the file uploader field.</p>
-    pub fn file_uploader_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FileUploaderFieldConfig> {
+    pub fn file_uploader_config(&self) -> ::std::option::Option<&crate::types::FileUploaderFieldConfig> {
         self.file_uploader_config.as_ref()
     }
 }
@@ -130,9 +128,7 @@ impl FieldInputConfig {
 
 /// A builder for [`FieldInputConfig`](crate::types::FieldInputConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldInputConfigBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) required: ::std::option::Option<bool>,
@@ -209,18 +205,12 @@ impl FieldInputConfigBuilder {
         &self.placeholder
     }
     /// <p>The default value for the field.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value for the field.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }
@@ -229,18 +219,12 @@ impl FieldInputConfigBuilder {
         &self.default_value
     }
     /// <p>The text to display to describe the field.</p>
-    pub fn descriptive_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn descriptive_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.descriptive_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text to display to describe the field.</p>
-    pub fn set_descriptive_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_descriptive_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.descriptive_text = input;
         self
     }
@@ -263,18 +247,12 @@ impl FieldInputConfigBuilder {
         &self.default_checked
     }
     /// <p>The default country code for a phone number.</p>
-    pub fn default_country_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default country code for a phone number.</p>
-    pub fn set_default_country_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_country_code = input;
         self
     }
@@ -288,10 +266,7 @@ impl FieldInputConfigBuilder {
         self
     }
     /// <p>The information to use to customize the input fields with data at runtime.</p>
-    pub fn set_value_mappings(
-        mut self,
-        input: ::std::option::Option<crate::types::ValueMappings>,
-    ) -> Self {
+    pub fn set_value_mappings(mut self, input: ::std::option::Option<crate::types::ValueMappings>) -> Self {
         self.value_mappings = input;
         self
     }
@@ -389,17 +364,12 @@ impl FieldInputConfigBuilder {
         self
     }
     /// <p>The configuration for the file uploader field.</p>
-    pub fn set_file_uploader_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FileUploaderFieldConfig>,
-    ) -> Self {
+    pub fn set_file_uploader_config(mut self, input: ::std::option::Option<crate::types::FileUploaderFieldConfig>) -> Self {
         self.file_uploader_config = input;
         self
     }
     /// <p>The configuration for the file uploader field.</p>
-    pub fn get_file_uploader_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::FileUploaderFieldConfig> {
+    pub fn get_file_uploader_config(&self) -> &::std::option::Option<crate::types::FileUploaderFieldConfig> {
         &self.file_uploader_config
     }
     /// Consumes the builder and constructs a [`FieldInputConfig`](crate::types::FieldInputConfig).

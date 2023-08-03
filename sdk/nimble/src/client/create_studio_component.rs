@@ -19,12 +19,7 @@ impl super::Client {
     /// - On success, responds with [`CreateStudioComponentOutput`](crate::operation::create_studio_component::CreateStudioComponentOutput) with field(s):
     ///   - [`studio_component(Option<StudioComponent>)`](crate::operation::create_studio_component::CreateStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
     /// - On failure, responds with [`SdkError<CreateStudioComponentError>`](crate::operation::create_studio_component::CreateStudioComponentError)
-    pub fn create_studio_component(
-        &self,
-    ) -> crate::operation::create_studio_component::builders::CreateStudioComponentFluentBuilder
-    {
-        crate::operation::create_studio_component::builders::CreateStudioComponentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_studio_component(&self) -> crate::operation::create_studio_component::builders::CreateStudioComponentFluentBuilder {
+        crate::operation::create_studio_component::builders::CreateStudioComponentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`log_groups(Option<Vec<LogGroup>>)`](crate::operation::describe_log_groups::DescribeLogGroupsOutput::log_groups): <p>The log groups.</p>  <p>If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do not expire.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_log_groups::DescribeLogGroupsOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     /// - On failure, responds with [`SdkError<DescribeLogGroupsError>`](crate::operation::describe_log_groups::DescribeLogGroupsError)
-    pub fn describe_log_groups(
-        &self,
-    ) -> crate::operation::describe_log_groups::builders::DescribeLogGroupsFluentBuilder {
-        crate::operation::describe_log_groups::builders::DescribeLogGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_log_groups(&self) -> crate::operation::describe_log_groups::builders::DescribeLogGroupsFluentBuilder {
+        crate::operation::describe_log_groups::builders::DescribeLogGroupsFluentBuilder::new(self.handle.clone())
     }
 }

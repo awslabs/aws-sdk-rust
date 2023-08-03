@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteCarrierGatewayOutput`](crate::operation::delete_carrier_gateway::DeleteCarrierGatewayOutput) with field(s):
     ///   - [`carrier_gateway(Option<CarrierGateway>)`](crate::operation::delete_carrier_gateway::DeleteCarrierGatewayOutput::carrier_gateway): <p>Information about the carrier gateway.</p>
     /// - On failure, responds with [`SdkError<DeleteCarrierGatewayError>`](crate::operation::delete_carrier_gateway::DeleteCarrierGatewayError)
-    pub fn delete_carrier_gateway(
-        &self,
-    ) -> crate::operation::delete_carrier_gateway::builders::DeleteCarrierGatewayFluentBuilder {
-        crate::operation::delete_carrier_gateway::builders::DeleteCarrierGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_carrier_gateway(&self) -> crate::operation::delete_carrier_gateway::builders::DeleteCarrierGatewayFluentBuilder {
+        crate::operation::delete_carrier_gateway::builders::DeleteCarrierGatewayFluentBuilder::new(self.handle.clone())
     }
 }

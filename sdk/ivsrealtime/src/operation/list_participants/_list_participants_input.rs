@@ -57,17 +57,14 @@ impl ListParticipantsInput {
 }
 impl ListParticipantsInput {
     /// Creates a new builder-style object to manufacture [`ListParticipantsInput`](crate::operation::list_participants::ListParticipantsInput).
-    pub fn builder() -> crate::operation::list_participants::builders::ListParticipantsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_participants::builders::ListParticipantsInputBuilder {
         crate::operation::list_participants::builders::ListParticipantsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListParticipantsInput`](crate::operation::list_participants::ListParticipantsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListParticipantsInputBuilder {
     pub(crate) stage_arn: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
@@ -107,18 +104,12 @@ impl ListParticipantsInputBuilder {
         &self.session_id
     }
     /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
-    pub fn filter_by_user_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_by_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_by_user_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.</p>
-    pub fn set_filter_by_user_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_by_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_by_user_id = input;
         self
     }
@@ -146,10 +137,7 @@ impl ListParticipantsInputBuilder {
         self
     }
     /// <p>Filters the response list to only show participants in the specified state. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request.</p>
-    pub fn set_filter_by_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ParticipantState>,
-    ) -> Self {
+    pub fn set_filter_by_state(mut self, input: ::std::option::Option<crate::types::ParticipantState>) -> Self {
         self.filter_by_state = input;
         self
     }
@@ -188,10 +176,7 @@ impl ListParticipantsInputBuilder {
     /// Consumes the builder and constructs a [`ListParticipantsInput`](crate::operation::list_participants::ListParticipantsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_participants::ListParticipantsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_participants::ListParticipantsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_participants::ListParticipantsInput {
             stage_arn: self.stage_arn,
             session_id: self.session_id,

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`previous_state(Option<String>)`](crate::operation::cancel_import_task::CancelImportTaskOutput::previous_state): <p>The current state of the task being canceled.</p>
     ///   - [`state(Option<String>)`](crate::operation::cancel_import_task::CancelImportTaskOutput::state): <p>The current state of the task being canceled.</p>
     /// - On failure, responds with [`SdkError<CancelImportTaskError>`](crate::operation::cancel_import_task::CancelImportTaskError)
-    pub fn cancel_import_task(
-        &self,
-    ) -> crate::operation::cancel_import_task::builders::CancelImportTaskFluentBuilder {
-        crate::operation::cancel_import_task::builders::CancelImportTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_import_task(&self) -> crate::operation::cancel_import_task::builders::CancelImportTaskFluentBuilder {
+        crate::operation::cancel_import_task::builders::CancelImportTaskFluentBuilder::new(self.handle.clone())
     }
 }

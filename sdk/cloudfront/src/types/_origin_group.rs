@@ -20,9 +20,7 @@ impl OriginGroup {
         self.id.as_deref()
     }
     /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
-    pub fn failover_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginGroupFailoverCriteria> {
+    pub fn failover_criteria(&self) -> ::std::option::Option<&crate::types::OriginGroupFailoverCriteria> {
         self.failover_criteria.as_ref()
     }
     /// <p>A complex type that contains information about the origins in an origin group.</p>
@@ -39,9 +37,7 @@ impl OriginGroup {
 
 /// A builder for [`OriginGroup`](crate::types::OriginGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginGroupBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) failover_criteria: ::std::option::Option<crate::types::OriginGroupFailoverCriteria>,
@@ -68,17 +64,12 @@ impl OriginGroupBuilder {
         self
     }
     /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
-    pub fn set_failover_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginGroupFailoverCriteria>,
-    ) -> Self {
+    pub fn set_failover_criteria(mut self, input: ::std::option::Option<crate::types::OriginGroupFailoverCriteria>) -> Self {
         self.failover_criteria = input;
         self
     }
     /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
-    pub fn get_failover_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginGroupFailoverCriteria> {
+    pub fn get_failover_criteria(&self) -> &::std::option::Option<crate::types::OriginGroupFailoverCriteria> {
         &self.failover_criteria
     }
     /// <p>A complex type that contains information about the origins in an origin group.</p>
@@ -87,10 +78,7 @@ impl OriginGroupBuilder {
         self
     }
     /// <p>A complex type that contains information about the origins in an origin group.</p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginGroupMembers>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<crate::types::OriginGroupMembers>) -> Self {
         self.members = input;
         self
     }

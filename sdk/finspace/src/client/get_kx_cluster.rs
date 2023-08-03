@@ -27,11 +27,7 @@ impl super::Client {
     ///   - [`availability_zone_id(Option<String>)`](crate::operation::get_kx_cluster::GetKxClusterOutput::availability_zone_id): <p> The availability zone identifiers for the requested regions. </p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::get_kx_cluster::GetKxClusterOutput::created_timestamp): <p>The timestamp at which the cluster was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     /// - On failure, responds with [`SdkError<GetKxClusterError>`](crate::operation::get_kx_cluster::GetKxClusterError)
-    pub fn get_kx_cluster(
-        &self,
-    ) -> crate::operation::get_kx_cluster::builders::GetKxClusterFluentBuilder {
-        crate::operation::get_kx_cluster::builders::GetKxClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_kx_cluster(&self) -> crate::operation::get_kx_cluster::builders::GetKxClusterFluentBuilder {
+        crate::operation::get_kx_cluster::builders::GetKxClusterFluentBuilder::new(self.handle.clone())
     }
 }

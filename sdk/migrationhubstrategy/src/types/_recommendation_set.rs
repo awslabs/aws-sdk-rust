@@ -37,9 +37,7 @@ impl RecommendationSet {
 
 /// A builder for [`RecommendationSet`](crate::types::RecommendationSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationSetBuilder {
     pub(crate) transformation_tool: ::std::option::Option<crate::types::TransformationTool>,
     pub(crate) target_destination: ::std::option::Option<crate::types::TargetDestination>,
@@ -52,17 +50,12 @@ impl RecommendationSetBuilder {
         self
     }
     /// <p> The target destination for the recommendation set. </p>
-    pub fn set_transformation_tool(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformationTool>,
-    ) -> Self {
+    pub fn set_transformation_tool(mut self, input: ::std::option::Option<crate::types::TransformationTool>) -> Self {
         self.transformation_tool = input;
         self
     }
     /// <p> The target destination for the recommendation set. </p>
-    pub fn get_transformation_tool(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransformationTool> {
+    pub fn get_transformation_tool(&self) -> &::std::option::Option<crate::types::TransformationTool> {
         &self.transformation_tool
     }
     /// <p> The recommended target destination. </p>
@@ -71,17 +64,12 @@ impl RecommendationSetBuilder {
         self
     }
     /// <p> The recommended target destination. </p>
-    pub fn set_target_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetDestination>,
-    ) -> Self {
+    pub fn set_target_destination(mut self, input: ::std::option::Option<crate::types::TargetDestination>) -> Self {
         self.target_destination = input;
         self
     }
     /// <p> The recommended target destination. </p>
-    pub fn get_target_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetDestination> {
+    pub fn get_target_destination(&self) -> &::std::option::Option<crate::types::TargetDestination> {
         &self.target_destination
     }
     /// <p> The recommended strategy. </p>

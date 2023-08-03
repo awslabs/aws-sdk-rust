@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateFindingsReportOutput`](crate::operation::create_findings_report::CreateFindingsReportOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::operation::create_findings_report::CreateFindingsReportOutput::report_id): <p>The ID of the report.</p>
     /// - On failure, responds with [`SdkError<CreateFindingsReportError>`](crate::operation::create_findings_report::CreateFindingsReportError)
-    pub fn create_findings_report(
-        &self,
-    ) -> crate::operation::create_findings_report::builders::CreateFindingsReportFluentBuilder {
-        crate::operation::create_findings_report::builders::CreateFindingsReportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_findings_report(&self) -> crate::operation::create_findings_report::builders::CreateFindingsReportFluentBuilder {
+        crate::operation::create_findings_report::builders::CreateFindingsReportFluentBuilder::new(self.handle.clone())
     }
 }

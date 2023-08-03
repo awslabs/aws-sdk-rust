@@ -26,8 +26,7 @@ impl GetAnnotationImportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAnnotationImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobInputBuilder,
+    inner: crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobInputBuilder,
 }
 impl GetAnnotationImportJobFluentBuilder {
     /// Creates a new `GetAnnotationImportJob`.
@@ -38,10 +37,7 @@ impl GetAnnotationImportJobFluentBuilder {
         }
     }
     /// Access the GetAnnotationImportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetAnnotationImportJobFluentBuilder {
             crate::operation::get_annotation_import_job::GetAnnotationImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_annotation_import_job::GetAnnotationImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_annotation_import_job::GetAnnotationImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetAnnotationImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetAnnotationImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_annotation_import_job::GetAnnotationImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_annotation_import_job::GetAnnotationImportJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetAnnotationImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_annotation_import_job::GetAnnotationImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_annotation_import_job::GetAnnotationImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetAnnotationImportJobFluentBuilder {
             crate::operation::get_annotation_import_job::GetAnnotationImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_annotation_import_job::GetAnnotationImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_annotation_import_job::GetAnnotationImportJobError>,
     > {
         self.customize_middleware().await
     }

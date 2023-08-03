@@ -37,9 +37,7 @@ impl DescribeJobsRequestFilters {
 
 /// A builder for [`DescribeJobsRequestFilters`](crate::types::DescribeJobsRequestFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobsRequestFiltersBuilder {
     pub(crate) job_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) from_date: ::std::option::Option<::std::string::String>,
@@ -58,10 +56,7 @@ impl DescribeJobsRequestFiltersBuilder {
         self
     }
     /// <p>Request to describe Job log filters by job ID.</p>
-    pub fn set_job_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_job_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.job_i_ds = input;
         self
     }

@@ -26,8 +26,7 @@ impl DisableDomainAutoRenewInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableDomainAutoRenewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewInputBuilder,
+    inner: crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewInputBuilder,
 }
 impl DisableDomainAutoRenewFluentBuilder {
     /// Creates a new `DisableDomainAutoRenew`.
@@ -38,10 +37,7 @@ impl DisableDomainAutoRenewFluentBuilder {
         }
     }
     /// Access the DisableDomainAutoRenew as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DisableDomainAutoRenewFluentBuilder {
             crate::operation::disable_domain_auto_renew::DisableDomainAutoRenew,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DisableDomainAutoRenewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DisableDomainAutoRenewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DisableDomainAutoRenewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DisableDomainAutoRenewFluentBuilder {
             crate::operation::disable_domain_auto_renew::DisableDomainAutoRenew,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewError>,
     > {
         self.customize_middleware().await
     }

@@ -5,16 +5,16 @@ pub use crate::operation::search_place_index_for_suggestions::_search_place_inde
 
 impl SearchPlaceIndexForSuggestionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.search_place_index_for_suggestions();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchPlaceIndexForSuggestionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsInputBuilder,
+    inner: crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsInputBuilder,
 }
 impl SearchPlaceIndexForSuggestionsFluentBuilder {
     /// Creates a new `SearchPlaceIndexForSuggestions`.
@@ -40,15 +40,20 @@ impl SearchPlaceIndexForSuggestionsFluentBuilder {
         }
     }
     /// Access the SearchPlaceIndexForSuggestions as a reference.
-    pub fn as_input(&self) -> &crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +62,17 @@ impl SearchPlaceIndexForSuggestionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,17 +90,26 @@ impl SearchPlaceIndexForSuggestionsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the place index resource you want to use for the search.</p>
@@ -193,10 +208,7 @@ impl SearchPlaceIndexForSuggestionsFluentBuilder {
     /// <ul>
     /// <li> <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country code. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
     /// </ul>
-    pub fn filter_countries(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_countries(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_countries(input.into());
         self
     }
@@ -204,10 +216,7 @@ impl SearchPlaceIndexForSuggestionsFluentBuilder {
     /// <ul>
     /// <li> <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country code. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
     /// </ul>
-    pub fn set_filter_countries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_filter_countries(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_filter_countries(input);
         self
     }
@@ -215,9 +224,7 @@ impl SearchPlaceIndexForSuggestionsFluentBuilder {
     /// <ul>
     /// <li> <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country code. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
     /// </ul>
-    pub fn get_filter_countries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_countries(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_filter_countries()
     }
     /// <p>An optional parameter. The maximum number of results returned per request. </p>
@@ -269,27 +276,19 @@ impl SearchPlaceIndexForSuggestionsFluentBuilder {
     ///
     /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn filter_categories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_categories(input.into());
         self
     }
     /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn set_filter_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_filter_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_filter_categories(input);
         self
     }
     /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn get_filter_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_filter_categories()
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>

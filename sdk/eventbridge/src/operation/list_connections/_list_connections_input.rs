@@ -43,9 +43,7 @@ impl ListConnectionsInput {
 
 /// A builder for [`ListConnectionsInput`](crate::operation::list_connections::ListConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConnectionsInputBuilder {
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) connection_state: ::std::option::Option<crate::types::ConnectionState>,
@@ -73,10 +71,7 @@ impl ListConnectionsInputBuilder {
         self
     }
     /// <p>The state of the connection.</p>
-    pub fn set_connection_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionState>,
-    ) -> Self {
+    pub fn set_connection_state(mut self, input: ::std::option::Option<crate::types::ConnectionState>) -> Self {
         self.connection_state = input;
         self
     }
@@ -115,10 +110,7 @@ impl ListConnectionsInputBuilder {
     /// Consumes the builder and constructs a [`ListConnectionsInput`](crate::operation::list_connections::ListConnectionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_connections::ListConnectionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_connections::ListConnectionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_connections::ListConnectionsInput {
             name_prefix: self.name_prefix,
             connection_state: self.connection_state,

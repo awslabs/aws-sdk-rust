@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCertificateAuthorityOutput {
 }
 impl DeleteCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCertificateAuthorityOutput`](crate::operation::delete_certificate_authority::DeleteCertificateAuthorityOutput).
-    pub fn builder() -> crate::operation::delete_certificate_authority::builders::DeleteCertificateAuthorityOutputBuilder{
+    pub fn builder() -> crate::operation::delete_certificate_authority::builders::DeleteCertificateAuthorityOutputBuilder {
         crate::operation::delete_certificate_authority::builders::DeleteCertificateAuthorityOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCertificateAuthorityOutput`](crate::operation::delete_certificate_authority::DeleteCertificateAuthorityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCertificateAuthorityOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteCertificateAuthorityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteCertificateAuthorityOutput`](crate::operation::delete_certificate_authority::DeleteCertificateAuthorityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_certificate_authority::DeleteCertificateAuthorityOutput {
+    pub fn build(self) -> crate::operation::delete_certificate_authority::DeleteCertificateAuthorityOutput {
         crate::operation::delete_certificate_authority::DeleteCertificateAuthorityOutput {
             _request_id: self._request_id,
         }

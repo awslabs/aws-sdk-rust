@@ -26,29 +26,23 @@ impl UpdateResolverConfigInput {
     /// <p>It can take some time for the status change to be completed.</p>
     /// </note>
     /// <p></p>
-    pub fn autodefined_reverse_flag(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutodefinedReverseFlag> {
+    pub fn autodefined_reverse_flag(&self) -> ::std::option::Option<&crate::types::AutodefinedReverseFlag> {
         self.autodefined_reverse_flag.as_ref()
     }
 }
 impl UpdateResolverConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateResolverConfigInput`](crate::operation::update_resolver_config::UpdateResolverConfigInput).
-    pub fn builder(
-    ) -> crate::operation::update_resolver_config::builders::UpdateResolverConfigInputBuilder {
+    pub fn builder() -> crate::operation::update_resolver_config::builders::UpdateResolverConfigInputBuilder {
         crate::operation::update_resolver_config::builders::UpdateResolverConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResolverConfigInput`](crate::operation::update_resolver_config::UpdateResolverConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResolverConfigInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
-    pub(crate) autodefined_reverse_flag:
-        ::std::option::Option<crate::types::AutodefinedReverseFlag>,
+    pub(crate) autodefined_reverse_flag: ::std::option::Option<crate::types::AutodefinedReverseFlag>,
 }
 impl UpdateResolverConfigInputBuilder {
     /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
@@ -81,10 +75,7 @@ impl UpdateResolverConfigInputBuilder {
     /// <p>It can take some time for the status change to be completed.</p>
     /// </note>
     /// <p></p>
-    pub fn set_autodefined_reverse_flag(
-        mut self,
-        input: ::std::option::Option<crate::types::AutodefinedReverseFlag>,
-    ) -> Self {
+    pub fn set_autodefined_reverse_flag(mut self, input: ::std::option::Option<crate::types::AutodefinedReverseFlag>) -> Self {
         self.autodefined_reverse_flag = input;
         self
     }
@@ -94,23 +85,17 @@ impl UpdateResolverConfigInputBuilder {
     /// <p>It can take some time for the status change to be completed.</p>
     /// </note>
     /// <p></p>
-    pub fn get_autodefined_reverse_flag(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutodefinedReverseFlag> {
+    pub fn get_autodefined_reverse_flag(&self) -> &::std::option::Option<crate::types::AutodefinedReverseFlag> {
         &self.autodefined_reverse_flag
     }
     /// Consumes the builder and constructs a [`UpdateResolverConfigInput`](crate::operation::update_resolver_config::UpdateResolverConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resolver_config::UpdateResolverConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_resolver_config::UpdateResolverConfigInput {
-                resource_id: self.resource_id,
-                autodefined_reverse_flag: self.autodefined_reverse_flag,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_resolver_config::UpdateResolverConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_resolver_config::UpdateResolverConfigInput {
+            resource_id: self.resource_id,
+            autodefined_reverse_flag: self.autodefined_reverse_flag,
+        })
     }
 }

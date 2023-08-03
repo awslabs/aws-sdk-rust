@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteConfiguredTableAssociationOutpu
 }
 impl DeleteConfiguredTableAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfiguredTableAssociationOutput`](crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationOutput).
-    pub fn builder() -> crate::operation::delete_configured_table_association::builders::DeleteConfiguredTableAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_configured_table_association::builders::DeleteConfiguredTableAssociationOutputBuilder {
         crate::operation::delete_configured_table_association::builders::DeleteConfiguredTableAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConfiguredTableAssociationOutput`](crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConfiguredTableAssociationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteConfiguredTableAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteConfiguredTableAssociationOutput`](crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationOutput {
         crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationOutput {
             _request_id: self._request_id,
         }

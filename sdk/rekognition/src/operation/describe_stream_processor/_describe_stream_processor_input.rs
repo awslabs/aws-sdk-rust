@@ -15,18 +15,14 @@ impl DescribeStreamProcessorInput {
 }
 impl DescribeStreamProcessorInput {
     /// Creates a new builder-style object to manufacture [`DescribeStreamProcessorInput`](crate::operation::describe_stream_processor::DescribeStreamProcessorInput).
-    pub fn builder(
-    ) -> crate::operation::describe_stream_processor::builders::DescribeStreamProcessorInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_stream_processor::builders::DescribeStreamProcessorInputBuilder {
         crate::operation::describe_stream_processor::builders::DescribeStreamProcessorInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStreamProcessorInput`](crate::operation::describe_stream_processor::DescribeStreamProcessorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStreamProcessorInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl DescribeStreamProcessorInputBuilder {
         crate::operation::describe_stream_processor::DescribeStreamProcessorInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_stream_processor::DescribeStreamProcessorInput {
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_stream_processor::DescribeStreamProcessorInput { name: self.name })
     }
 }

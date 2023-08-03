@@ -37,9 +37,7 @@ impl ValidateE911AddressFluentBuilder {
         }
     }
     /// Access the ValidateE911Address as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::validate_e911_address::builders::ValidateE911AddressInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::validate_e911_address::builders::ValidateE911AddressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ValidateE911AddressFluentBuilder {
             crate::operation::validate_e911_address::ValidateE911Address,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_e911_address::ValidateE911AddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_e911_address::ValidateE911AddressError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ValidateE911AddressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ValidateE911AddressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_e911_address::ValidateE911AddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_e911_address::ValidateE911AddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_e911_address::ValidateE911AddressError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ValidateE911AddressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_e911_address::ValidateE911AddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_e911_address::ValidateE911AddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_e911_address::ValidateE911AddressError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl ValidateE911AddressFluentBuilder {
             crate::operation::validate_e911_address::ValidateE911Address,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_e911_address::ValidateE911AddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_e911_address::ValidateE911AddressError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The AWS account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The AWS account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -143,18 +124,12 @@ impl ValidateE911AddressFluentBuilder {
         self.inner.get_aws_account_id()
     }
     /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
-    pub fn street_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn street_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.street_number(input.into());
         self
     }
     /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
-    pub fn set_street_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_street_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_street_number(input);
         self
     }

@@ -45,8 +45,7 @@ impl ::aws_http::request_id::RequestId for ExportCertificateOutput {
 }
 impl ExportCertificateOutput {
     /// Creates a new builder-style object to manufacture [`ExportCertificateOutput`](crate::operation::export_certificate::ExportCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::export_certificate::builders::ExportCertificateOutputBuilder {
+    pub fn builder() -> crate::operation::export_certificate::builders::ExportCertificateOutputBuilder {
         crate::operation::export_certificate::builders::ExportCertificateOutputBuilder::default()
     }
 }
@@ -76,18 +75,12 @@ impl ExportCertificateOutputBuilder {
         &self.certificate
     }
     /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
-    pub fn certificate_chain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
-    pub fn set_certificate_chain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_chain = input;
         self
     }

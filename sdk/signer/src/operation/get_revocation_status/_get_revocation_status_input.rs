@@ -45,18 +45,14 @@ impl GetRevocationStatusInput {
 }
 impl GetRevocationStatusInput {
     /// Creates a new builder-style object to manufacture [`GetRevocationStatusInput`](crate::operation::get_revocation_status::GetRevocationStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_revocation_status::builders::GetRevocationStatusInputBuilder {
-        crate::operation::get_revocation_status::builders::GetRevocationStatusInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_revocation_status::builders::GetRevocationStatusInputBuilder {
+        crate::operation::get_revocation_status::builders::GetRevocationStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRevocationStatusInput`](crate::operation::get_revocation_status::GetRevocationStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRevocationStatusInputBuilder {
     pub(crate) signature_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) platform_id: ::std::option::Option<::std::string::String>,
@@ -71,10 +67,7 @@ impl GetRevocationStatusInputBuilder {
         self
     }
     /// <p>The timestamp of the signature that validates the profile or job.</p>
-    pub fn set_signature_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_signature_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.signature_timestamp = input;
         self
     }
@@ -97,18 +90,12 @@ impl GetRevocationStatusInputBuilder {
         &self.platform_id
     }
     /// <p>The version of a signing profile.</p>
-    pub fn profile_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of a signing profile.</p>
-    pub fn set_profile_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_version_arn = input;
         self
     }
@@ -136,10 +123,7 @@ impl GetRevocationStatusInputBuilder {
     ///
     /// <p>A list of composite signed hashes that identify certificates.</p>
     /// <p>A certificate identifier consists of a subject certificate TBS hash (signed by the parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA). Root certificates are defined as their own CA.</p>
-    pub fn certificate_hashes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_hashes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.certificate_hashes.unwrap_or_default();
         v.push(input.into());
         self.certificate_hashes = ::std::option::Option::Some(v);
@@ -147,35 +131,26 @@ impl GetRevocationStatusInputBuilder {
     }
     /// <p>A list of composite signed hashes that identify certificates.</p>
     /// <p>A certificate identifier consists of a subject certificate TBS hash (signed by the parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA). Root certificates are defined as their own CA.</p>
-    pub fn set_certificate_hashes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_certificate_hashes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.certificate_hashes = input;
         self
     }
     /// <p>A list of composite signed hashes that identify certificates.</p>
     /// <p>A certificate identifier consists of a subject certificate TBS hash (signed by the parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA). Root certificates are defined as their own CA.</p>
-    pub fn get_certificate_hashes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificate_hashes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.certificate_hashes
     }
     /// Consumes the builder and constructs a [`GetRevocationStatusInput`](crate::operation::get_revocation_status::GetRevocationStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_revocation_status::GetRevocationStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_revocation_status::GetRevocationStatusInput {
-                signature_timestamp: self.signature_timestamp,
-                platform_id: self.platform_id,
-                profile_version_arn: self.profile_version_arn,
-                job_arn: self.job_arn,
-                certificate_hashes: self.certificate_hashes,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_revocation_status::GetRevocationStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_revocation_status::GetRevocationStatusInput {
+            signature_timestamp: self.signature_timestamp,
+            platform_id: self.platform_id,
+            profile_version_arn: self.profile_version_arn,
+            job_arn: self.job_arn,
+            certificate_hashes: self.certificate_hashes,
+        })
     }
 }

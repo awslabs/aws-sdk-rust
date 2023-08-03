@@ -30,9 +30,7 @@ impl FollowUpPrompt {
 
 /// A builder for [`FollowUpPrompt`](crate::types::FollowUpPrompt).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FollowUpPromptBuilder {
     pub(crate) prompt: ::std::option::Option<crate::types::Prompt>,
     pub(crate) rejection_statement: ::std::option::Option<crate::types::Statement>,
@@ -58,10 +56,7 @@ impl FollowUpPromptBuilder {
         self
     }
     /// <p>If the user answers "no" to the question defined in the <code>prompt</code> field, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
-    pub fn set_rejection_statement(
-        mut self,
-        input: ::std::option::Option<crate::types::Statement>,
-    ) -> Self {
+    pub fn set_rejection_statement(mut self, input: ::std::option::Option<crate::types::Statement>) -> Self {
         self.rejection_statement = input;
         self
     }

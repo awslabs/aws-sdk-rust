@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`parallel_data_properties_list(Option<Vec<ParallelDataProperties>>)`](crate::operation::list_parallel_data::ListParallelDataOutput::parallel_data_properties_list): <p>The properties of the parallel data resources returned by this request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_parallel_data::ListParallelDataOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<ListParallelDataError>`](crate::operation::list_parallel_data::ListParallelDataError)
-    pub fn list_parallel_data(
-        &self,
-    ) -> crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder {
-        crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_parallel_data(&self) -> crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder {
+        crate::operation::list_parallel_data::builders::ListParallelDataFluentBuilder::new(self.handle.clone())
     }
 }

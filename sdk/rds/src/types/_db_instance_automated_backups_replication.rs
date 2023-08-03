@@ -23,33 +23,23 @@ impl DbInstanceAutomatedBackupsReplication {
 
 /// A builder for [`DbInstanceAutomatedBackupsReplication`](crate::types::DbInstanceAutomatedBackupsReplication).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbInstanceAutomatedBackupsReplicationBuilder {
     pub(crate) db_instance_automated_backups_arn: ::std::option::Option<::std::string::String>,
 }
 impl DbInstanceAutomatedBackupsReplicationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replicated automated backups.</p>
-    pub fn db_instance_automated_backups_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_automated_backups_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_automated_backups_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replicated automated backups.</p>
-    pub fn set_db_instance_automated_backups_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_automated_backups_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_automated_backups_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replicated automated backups.</p>
-    pub fn get_db_instance_automated_backups_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_instance_automated_backups_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_automated_backups_arn
     }
     /// Consumes the builder and constructs a [`DbInstanceAutomatedBackupsReplication`](crate::types::DbInstanceAutomatedBackupsReplication).

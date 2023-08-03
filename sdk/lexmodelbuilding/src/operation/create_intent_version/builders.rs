@@ -41,9 +41,7 @@ impl CreateIntentVersionFluentBuilder {
         }
     }
     /// Access the CreateIntentVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_intent_version::builders::CreateIntentVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_intent_version::builders::CreateIntentVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl CreateIntentVersionFluentBuilder {
             crate::operation::create_intent_version::CreateIntentVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_intent_version::CreateIntentVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_intent_version::CreateIntentVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl CreateIntentVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl CreateIntentVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_intent_version::CreateIntentVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_intent_version::CreateIntentVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_intent_version::CreateIntentVersionError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl CreateIntentVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_intent_version::CreateIntentVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_intent_version::CreateIntentVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_intent_version::CreateIntentVersionError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +109,7 @@ impl CreateIntentVersionFluentBuilder {
             crate::operation::create_intent_version::CreateIntentVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_intent_version::CreateIntentVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_intent_version::CreateIntentVersionError>,
     > {
         self.customize_middleware().await
     }

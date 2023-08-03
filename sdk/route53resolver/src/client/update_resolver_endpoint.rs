@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateResolverEndpointOutput`](crate::operation::update_resolver_endpoint::UpdateResolverEndpointOutput) with field(s):
     ///   - [`resolver_endpoint(Option<ResolverEndpoint>)`](crate::operation::update_resolver_endpoint::UpdateResolverEndpointOutput::resolver_endpoint): <p>The response to an <code>UpdateResolverEndpoint</code> request.</p>
     /// - On failure, responds with [`SdkError<UpdateResolverEndpointError>`](crate::operation::update_resolver_endpoint::UpdateResolverEndpointError)
-    pub fn update_resolver_endpoint(
-        &self,
-    ) -> crate::operation::update_resolver_endpoint::builders::UpdateResolverEndpointFluentBuilder
-    {
+    pub fn update_resolver_endpoint(&self) -> crate::operation::update_resolver_endpoint::builders::UpdateResolverEndpointFluentBuilder {
         crate::operation::update_resolver_endpoint::builders::UpdateResolverEndpointFluentBuilder::new(self.handle.clone())
     }
 }

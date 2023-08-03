@@ -65,9 +65,7 @@ impl DeleteDbClusterInput {
 
 /// A builder for [`DeleteDbClusterInput`](crate::operation::delete_db_cluster::DeleteDbClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbClusterInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) skip_final_snapshot: ::std::option::Option<bool>,
@@ -79,10 +77,7 @@ impl DeleteDbClusterInputBuilder {
     /// <ul>
     /// <li> <p>Must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -91,10 +86,7 @@ impl DeleteDbClusterInputBuilder {
     /// <ul>
     /// <li> <p>Must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -135,10 +127,7 @@ impl DeleteDbClusterInputBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn final_db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn final_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.final_db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -151,10 +140,7 @@ impl DeleteDbClusterInputBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn set_final_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_final_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.final_db_snapshot_identifier = input;
         self
     }
@@ -167,18 +153,13 @@ impl DeleteDbClusterInputBuilder {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    pub fn get_final_db_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_final_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.final_db_snapshot_identifier
     }
     /// Consumes the builder and constructs a [`DeleteDbClusterInput`](crate::operation::delete_db_cluster::DeleteDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_db_cluster::DeleteDbClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_db_cluster::DeleteDbClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_db_cluster::DeleteDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,
             skip_final_snapshot: self.skip_final_snapshot.unwrap_or_default(),

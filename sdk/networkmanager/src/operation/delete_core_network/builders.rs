@@ -10,10 +10,7 @@ impl DeleteCoreNetworkInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_core_network::DeleteCoreNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_core_network::DeleteCoreNetworkError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_core_network::DeleteCoreNetworkError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_core_network();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteCoreNetworkFluentBuilder {
         }
     }
     /// Access the DeleteCoreNetwork as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_core_network::builders::DeleteCoreNetworkInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_core_network::builders::DeleteCoreNetworkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteCoreNetworkFluentBuilder {
             crate::operation::delete_core_network::DeleteCoreNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_core_network::DeleteCoreNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_core_network::DeleteCoreNetworkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteCoreNetworkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteCoreNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_core_network::DeleteCoreNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_core_network::DeleteCoreNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_core_network::DeleteCoreNetworkError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteCoreNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_core_network::DeleteCoreNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_core_network::DeleteCoreNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_core_network::DeleteCoreNetworkError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteCoreNetworkFluentBuilder {
             crate::operation::delete_core_network::DeleteCoreNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_core_network::DeleteCoreNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_core_network::DeleteCoreNetworkError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The network ID of the deleted core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
         self
     }
     /// <p>The network ID of the deleted core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_id(input);
         self
     }

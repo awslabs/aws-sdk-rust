@@ -19,9 +19,7 @@ impl DeleteSpaceOutput {
 
 /// A builder for [`DeleteSpaceOutput`](crate::operation::delete_space::DeleteSpaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSpaceOutputBuilder {
     _request_id: Option<String>,
 }

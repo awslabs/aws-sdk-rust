@@ -7,14 +7,10 @@ pub fn ser_create_request_validator_input(
         object.key("name").string(var_1.as_str());
     }
     if input.validate_request_body {
-        object
-            .key("validateRequestBody")
-            .boolean(input.validate_request_body);
+        object.key("validateRequestBody").boolean(input.validate_request_body);
     }
     if input.validate_request_parameters {
-        object
-            .key("validateRequestParameters")
-            .boolean(input.validate_request_parameters);
+        object.key("validateRequestParameters").boolean(input.validate_request_parameters);
     }
     Ok(())
 }

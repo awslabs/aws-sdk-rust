@@ -37,9 +37,7 @@ impl InputSpecification {
 
 /// A builder for [`InputSpecification`](crate::types::InputSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputSpecificationBuilder {
     pub(crate) codec: ::std::option::Option<crate::types::InputCodec>,
     pub(crate) maximum_bitrate: ::std::option::Option<crate::types::InputMaximumBitrate>,
@@ -66,10 +64,7 @@ impl InputSpecificationBuilder {
         self
     }
     /// Maximum input bitrate, categorized coarsely
-    pub fn set_maximum_bitrate(
-        mut self,
-        input: ::std::option::Option<crate::types::InputMaximumBitrate>,
-    ) -> Self {
+    pub fn set_maximum_bitrate(mut self, input: ::std::option::Option<crate::types::InputMaximumBitrate>) -> Self {
         self.maximum_bitrate = input;
         self
     }
@@ -83,10 +78,7 @@ impl InputSpecificationBuilder {
         self
     }
     /// Input resolution, categorized coarsely
-    pub fn set_resolution(
-        mut self,
-        input: ::std::option::Option<crate::types::InputResolution>,
-    ) -> Self {
+    pub fn set_resolution(mut self, input: ::std::option::Option<crate::types::InputResolution>) -> Self {
         self.resolution = input;
         self
     }

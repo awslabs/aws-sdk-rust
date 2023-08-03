@@ -4,9 +4,7 @@ pub fn ser_describe_aggregate_compliance_by_config_rules_input(
     input: &crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.configuration_aggregator_name {
-        object
-            .key("ConfigurationAggregatorName")
-            .string(var_1.as_str());
+        object.key("ConfigurationAggregatorName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.filters {
         #[allow(unused_mut)]

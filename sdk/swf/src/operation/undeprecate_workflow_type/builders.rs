@@ -40,8 +40,7 @@ impl UndeprecateWorkflowTypeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UndeprecateWorkflowTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeInputBuilder,
+    inner: crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeInputBuilder,
 }
 impl UndeprecateWorkflowTypeFluentBuilder {
     /// Creates a new `UndeprecateWorkflowType`.
@@ -52,10 +51,7 @@ impl UndeprecateWorkflowTypeFluentBuilder {
         }
     }
     /// Access the UndeprecateWorkflowType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -67,9 +63,7 @@ impl UndeprecateWorkflowTypeFluentBuilder {
             crate::operation::undeprecate_workflow_type::UndeprecateWorkflowType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -79,10 +73,7 @@ impl UndeprecateWorkflowTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -91,9 +82,7 @@ impl UndeprecateWorkflowTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeError>,
     > {
         let op = self
             .inner
@@ -116,9 +105,7 @@ impl UndeprecateWorkflowTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeError>,
     > {
         self.send_middleware().await
     }
@@ -132,9 +119,7 @@ impl UndeprecateWorkflowTypeFluentBuilder {
             crate::operation::undeprecate_workflow_type::UndeprecateWorkflowType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeError>,
     > {
         self.customize_middleware().await
     }
@@ -158,10 +143,7 @@ impl UndeprecateWorkflowTypeFluentBuilder {
         self
     }
     /// <p>The name of the domain of the deprecated workflow type.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.inner = self.inner.set_workflow_type(input);
         self
     }

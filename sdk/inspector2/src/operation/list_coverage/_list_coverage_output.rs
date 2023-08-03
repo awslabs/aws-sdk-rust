@@ -35,13 +35,10 @@ impl ListCoverageOutput {
 
 /// A builder for [`ListCoverageOutput`](crate::operation::list_coverage::ListCoverageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCoverageOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) covered_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoveredResource>>,
+    pub(crate) covered_resources: ::std::option::Option<::std::vec::Vec<crate::types::CoveredResource>>,
     _request_id: Option<String>,
 }
 impl ListCoverageOutputBuilder {
@@ -71,17 +68,12 @@ impl ListCoverageOutputBuilder {
         self
     }
     /// <p>An object that contains details on the covered resources in your environment.</p>
-    pub fn set_covered_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoveredResource>>,
-    ) -> Self {
+    pub fn set_covered_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoveredResource>>) -> Self {
         self.covered_resources = input;
         self
     }
     /// <p>An object that contains details on the covered resources in your environment.</p>
-    pub fn get_covered_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoveredResource>> {
+    pub fn get_covered_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoveredResource>> {
         &self.covered_resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -10,10 +10,7 @@ impl GetIntegrationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_integration::GetIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_integration::GetIntegrationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_integration::GetIntegrationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_integration();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetIntegrationFluentBuilder {
         }
     }
     /// Access the GetIntegration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_integration::builders::GetIntegrationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_integration::builders::GetIntegrationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetIntegrationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl GetIntegrationFluentBuilder {
         self.inner.get_api_id()
     }
     /// <p>The integration ID.</p>
-    pub fn integration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_id(input.into());
         self
     }
     /// <p>The integration ID.</p>
-    pub fn set_integration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_id(input);
         self
     }

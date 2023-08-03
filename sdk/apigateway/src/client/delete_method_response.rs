@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`status_code(impl ::std::convert::Into<String>)`](crate::operation::delete_method_response::builders::DeleteMethodResponseFluentBuilder::status_code) / [`set_status_code(Option<String>)`](crate::operation::delete_method_response::builders::DeleteMethodResponseFluentBuilder::set_status_code): <p>The status code identifier for the MethodResponse resource.</p>
     /// - On success, responds with [`DeleteMethodResponseOutput`](crate::operation::delete_method_response::DeleteMethodResponseOutput)
     /// - On failure, responds with [`SdkError<DeleteMethodResponseError>`](crate::operation::delete_method_response::DeleteMethodResponseError)
-    pub fn delete_method_response(
-        &self,
-    ) -> crate::operation::delete_method_response::builders::DeleteMethodResponseFluentBuilder {
-        crate::operation::delete_method_response::builders::DeleteMethodResponseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_method_response(&self) -> crate::operation::delete_method_response::builders::DeleteMethodResponseFluentBuilder {
+        crate::operation::delete_method_response::builders::DeleteMethodResponseFluentBuilder::new(self.handle.clone())
     }
 }

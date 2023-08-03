@@ -5,16 +5,16 @@ pub use crate::operation::describe_pending_aggregation_requests::_describe_pendi
 
 impl DescribePendingAggregationRequestsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_pending_aggregation_requests();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribePendingAggregationRequestsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePendingAggregationRequestsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsInputBuilder,
+    inner: crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsInputBuilder,
 }
 impl DescribePendingAggregationRequestsFluentBuilder {
     /// Creates a new `DescribePendingAggregationRequests`.
@@ -37,15 +37,20 @@ impl DescribePendingAggregationRequestsFluentBuilder {
         }
     }
     /// Access the DescribePendingAggregationRequests as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequests, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequests,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribePendingAggregationRequestsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,23 +87,32 @@ impl DescribePendingAggregationRequestsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequests, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequests,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_pending_aggregation_requests::paginator::DescribePendingAggregationRequestsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_pending_aggregation_requests::paginator::DescribePendingAggregationRequestsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_pending_aggregation_requests::paginator::DescribePendingAggregationRequestsPaginator {
         crate::operation::describe_pending_aggregation_requests::paginator::DescribePendingAggregationRequestsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>

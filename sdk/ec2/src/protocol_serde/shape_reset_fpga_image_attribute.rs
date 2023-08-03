@@ -9,21 +9,13 @@ pub fn de_reset_fpga_image_attribute_http_error(
     crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(
-        crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeError::generic(
-            generic,
-        ),
-    )
+    Err(crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -38,10 +30,9 @@ pub fn de_reset_fpga_image_attribute_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeOutputBuilder::default();
-        output = crate::protocol_serde::shape_reset_fpga_image_attribute::de_reset_fpga_image_attribute(_response_body, output).map_err(crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_reset_fpga_image_attribute::de_reset_fpga_image_attribute(_response_body, output)
+            .map_err(crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -50,10 +41,7 @@ pub fn de_reset_fpga_image_attribute_http_response_with_props(
 pub fn de_reset_fpga_image_attribute(
     inp: &[u8],
     mut builder: crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeOutputBuilder,
-) -> Result<
-    crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

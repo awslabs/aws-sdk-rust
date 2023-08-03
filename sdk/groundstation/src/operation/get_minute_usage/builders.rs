@@ -10,10 +10,7 @@ impl GetMinuteUsageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_minute_usage::GetMinuteUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_minute_usage::GetMinuteUsageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_minute_usage::GetMinuteUsageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_minute_usage();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetMinuteUsageFluentBuilder {
         }
     }
     /// Access the GetMinuteUsage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_minute_usage::builders::GetMinuteUsageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_minute_usage::builders::GetMinuteUsageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetMinuteUsageFluentBuilder {
             crate::operation::get_minute_usage::GetMinuteUsage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_minute_usage::GetMinuteUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_minute_usage::GetMinuteUsageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetMinuteUsageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetMinuteUsageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_minute_usage::GetMinuteUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_minute_usage::GetMinuteUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_minute_usage::GetMinuteUsageError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetMinuteUsageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_minute_usage::GetMinuteUsageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_minute_usage::GetMinuteUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_minute_usage::GetMinuteUsageError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetMinuteUsageFluentBuilder {
             crate::operation::get_minute_usage::GetMinuteUsage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_minute_usage::GetMinuteUsageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_minute_usage::GetMinuteUsageError>,
     > {
         self.customize_middleware().await
     }

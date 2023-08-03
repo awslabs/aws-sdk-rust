@@ -36,9 +36,7 @@ pub struct ConfirmForgotPasswordInput {
     /// </ul>
     /// </note>
     #[doc(hidden)]
-    pub client_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ConfirmForgotPasswordInput {
     /// <p>The app client ID of the app associated with the user pool.</p>
@@ -62,9 +60,7 @@ impl ConfirmForgotPasswordInput {
         self.password.as_deref()
     }
     /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code> calls.</p>
-    pub fn analytics_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnalyticsMetadataType> {
+    pub fn analytics_metadata(&self) -> ::std::option::Option<&crate::types::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
@@ -81,11 +77,7 @@ impl ConfirmForgotPasswordInput {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn client_metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn client_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.client_metadata.as_ref()
     }
 }
@@ -105,9 +97,7 @@ impl ::std::fmt::Debug for ConfirmForgotPasswordInput {
 }
 impl ConfirmForgotPasswordInput {
     /// Creates a new builder-style object to manufacture [`ConfirmForgotPasswordInput`](crate::operation::confirm_forgot_password::ConfirmForgotPasswordInput).
-    pub fn builder(
-    ) -> crate::operation::confirm_forgot_password::builders::ConfirmForgotPasswordInputBuilder
-    {
+    pub fn builder() -> crate::operation::confirm_forgot_password::builders::ConfirmForgotPasswordInputBuilder {
         crate::operation::confirm_forgot_password::builders::ConfirmForgotPasswordInputBuilder::default()
     }
 }
@@ -123,9 +113,7 @@ pub struct ConfirmForgotPasswordInputBuilder {
     pub(crate) password: ::std::option::Option<::std::string::String>,
     pub(crate) analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     pub(crate) user_context_data: ::std::option::Option<crate::types::UserContextDataType>,
-    pub(crate) client_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ConfirmForgotPasswordInputBuilder {
     /// <p>The app client ID of the app associated with the user pool.</p>
@@ -171,18 +159,12 @@ impl ConfirmForgotPasswordInputBuilder {
         &self.username
     }
     /// <p>The confirmation code from your user's request to reset their password. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
-    pub fn confirmation_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn confirmation_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.confirmation_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The confirmation code from your user's request to reset their password. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
-    pub fn set_confirmation_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_confirmation_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.confirmation_code = input;
         self
     }
@@ -210,17 +192,12 @@ impl ConfirmForgotPasswordInputBuilder {
         self
     }
     /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code> calls.</p>
-    pub fn set_analytics_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsMetadataType>,
-    ) -> Self {
+    pub fn set_analytics_metadata(mut self, input: ::std::option::Option<crate::types::AnalyticsMetadataType>) -> Self {
         self.analytics_metadata = input;
         self
     }
     /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code> calls.</p>
-    pub fn get_analytics_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
+    pub fn get_analytics_metadata(&self) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
         &self.analytics_metadata
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
@@ -229,17 +206,12 @@ impl ConfirmForgotPasswordInputBuilder {
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    pub fn set_user_context_data(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContextDataType>,
-    ) -> Self {
+    pub fn set_user_context_data(mut self, input: ::std::option::Option<crate::types::UserContextDataType>) -> Self {
         self.user_context_data = input;
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    pub fn get_user_context_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::UserContextDataType> {
+    pub fn get_user_context_data(&self) -> &::std::option::Option<crate::types::UserContextDataType> {
         &self.user_context_data
     }
     /// Adds a key-value pair to `client_metadata`.
@@ -278,9 +250,7 @@ impl ConfirmForgotPasswordInputBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.client_metadata = input;
         self
@@ -295,32 +265,24 @@ impl ConfirmForgotPasswordInputBuilder {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.client_metadata
     }
     /// Consumes the builder and constructs a [`ConfirmForgotPasswordInput`](crate::operation::confirm_forgot_password::ConfirmForgotPasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::confirm_forgot_password::ConfirmForgotPasswordInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::confirm_forgot_password::ConfirmForgotPasswordInput {
-                client_id: self.client_id,
-                secret_hash: self.secret_hash,
-                username: self.username,
-                confirmation_code: self.confirmation_code,
-                password: self.password,
-                analytics_metadata: self.analytics_metadata,
-                user_context_data: self.user_context_data,
-                client_metadata: self.client_metadata,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::confirm_forgot_password::ConfirmForgotPasswordInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::confirm_forgot_password::ConfirmForgotPasswordInput {
+            client_id: self.client_id,
+            secret_hash: self.secret_hash,
+            username: self.username,
+            confirmation_code: self.confirmation_code,
+            password: self.password,
+            analytics_metadata: self.analytics_metadata,
+            user_context_data: self.user_context_data,
+            client_metadata: self.client_metadata,
+        })
     }
 }
 impl ::std::fmt::Debug for ConfirmForgotPasswordInputBuilder {

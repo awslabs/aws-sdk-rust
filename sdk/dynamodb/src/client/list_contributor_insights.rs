@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`contributor_insights_summaries(Option<Vec<ContributorInsightsSummary>>)`](crate::operation::list_contributor_insights::ListContributorInsightsOutput::contributor_insights_summaries): <p>A list of ContributorInsightsSummary.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_contributor_insights::ListContributorInsightsOutput::next_token): <p>A token to go to the next page if there is one.</p>
     /// - On failure, responds with [`SdkError<ListContributorInsightsError>`](crate::operation::list_contributor_insights::ListContributorInsightsError)
-    pub fn list_contributor_insights(
-        &self,
-    ) -> crate::operation::list_contributor_insights::builders::ListContributorInsightsFluentBuilder
-    {
+    pub fn list_contributor_insights(&self) -> crate::operation::list_contributor_insights::builders::ListContributorInsightsFluentBuilder {
         crate::operation::list_contributor_insights::builders::ListContributorInsightsFluentBuilder::new(self.handle.clone())
     }
 }

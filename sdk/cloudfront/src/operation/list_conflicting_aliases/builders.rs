@@ -40,10 +40,7 @@ impl ListConflictingAliasesFluentBuilder {
         }
     }
     /// Access the ListConflictingAliases as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_conflicting_aliases::builders::ListConflictingAliasesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_conflicting_aliases::builders::ListConflictingAliasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl ListConflictingAliasesFluentBuilder {
             crate::operation::list_conflicting_aliases::ListConflictingAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_conflicting_aliases::ListConflictingAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_conflicting_aliases::ListConflictingAliasesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl ListConflictingAliasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl ListConflictingAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_conflicting_aliases::ListConflictingAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_conflicting_aliases::ListConflictingAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_conflicting_aliases::ListConflictingAliasesError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl ListConflictingAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_conflicting_aliases::ListConflictingAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_conflicting_aliases::ListConflictingAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_conflicting_aliases::ListConflictingAliasesError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +108,17 @@ impl ListConflictingAliasesFluentBuilder {
             crate::operation::list_conflicting_aliases::ListConflictingAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_conflicting_aliases::ListConflictingAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_conflicting_aliases::ListConflictingAliasesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
-    pub fn distribution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distribution_id(input.into());
         self
     }
     /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
-    pub fn set_distribution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distribution_id(input);
         self
     }

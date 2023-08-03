@@ -26,7 +26,7 @@ impl AssociateNetworkSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateNetworkSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_network_settings::builders::AssociateNetworkSettingsInputBuilder,
+    inner: crate::operation::associate_network_settings::builders::AssociateNetworkSettingsInputBuilder,
 }
 impl AssociateNetworkSettingsFluentBuilder {
     /// Creates a new `AssociateNetworkSettings`.
@@ -37,10 +37,7 @@ impl AssociateNetworkSettingsFluentBuilder {
         }
     }
     /// Access the AssociateNetworkSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_network_settings::builders::AssociateNetworkSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_network_settings::builders::AssociateNetworkSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl AssociateNetworkSettingsFluentBuilder {
             crate::operation::associate_network_settings::AssociateNetworkSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_network_settings::AssociateNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_network_settings::AssociateNetworkSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl AssociateNetworkSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl AssociateNetworkSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_network_settings::AssociateNetworkSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_network_settings::AssociateNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_network_settings::AssociateNetworkSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl AssociateNetworkSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_network_settings::AssociateNetworkSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_network_settings::AssociateNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_network_settings::AssociateNetworkSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl AssociateNetworkSettingsFluentBuilder {
             crate::operation::associate_network_settings::AssociateNetworkSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_network_settings::AssociateNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_network_settings::AssociateNetworkSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl AssociateNetworkSettingsFluentBuilder {
         self.inner.get_portal_arn()
     }
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_settings_arn(input.into());
         self
     }
     /// <p>The ARN of the network settings.</p>
-    pub fn set_network_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_settings_arn(input);
         self
     }

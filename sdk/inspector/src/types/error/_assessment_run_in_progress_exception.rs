@@ -56,9 +56,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::AssessmentRunInP
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for AssessmentRunInProgressException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AssessmentRunInProgressException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -72,9 +70,7 @@ impl AssessmentRunInProgressException {
 
 /// A builder for [`AssessmentRunInProgressException`](crate::types::error::AssessmentRunInProgressException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssessmentRunInProgressExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_run_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -102,27 +98,19 @@ impl AssessmentRunInProgressExceptionBuilder {
     /// To override the contents of this collection use [`set_assessment_run_arns`](Self::set_assessment_run_arns).
     ///
     /// <p>The ARNs of the assessment runs that are currently in progress.</p>
-    pub fn assessment_run_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.assessment_run_arns.unwrap_or_default();
         v.push(input.into());
         self.assessment_run_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ARNs of the assessment runs that are currently in progress.</p>
-    pub fn set_assessment_run_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_assessment_run_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.assessment_run_arns = input;
         self
     }
     /// <p>The ARNs of the assessment runs that are currently in progress.</p>
-    pub fn get_assessment_run_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_run_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.assessment_run_arns
     }
     /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
@@ -160,10 +148,7 @@ impl AssessmentRunInProgressExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

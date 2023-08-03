@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`direct_connect_gateways(Option<Vec<DirectConnectGateway>>)`](crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysOutput::direct_connect_gateways): <p>The Direct Connect gateways.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysOutput::next_token): <p>The token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<DescribeDirectConnectGatewaysError>`](crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysError)
-    pub fn describe_direct_connect_gateways(&self) -> crate::operation::describe_direct_connect_gateways::builders::DescribeDirectConnectGatewaysFluentBuilder{
+    pub fn describe_direct_connect_gateways(
+        &self,
+    ) -> crate::operation::describe_direct_connect_gateways::builders::DescribeDirectConnectGatewaysFluentBuilder {
         crate::operation::describe_direct_connect_gateways::builders::DescribeDirectConnectGatewaysFluentBuilder::new(self.handle.clone())
     }
 }

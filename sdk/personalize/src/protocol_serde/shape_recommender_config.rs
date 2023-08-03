@@ -22,10 +22,7 @@ pub fn ser_recommender_config(
     if let Some(var_6) = &input.training_data_config {
         #[allow(unused_mut)]
         let mut object_7 = object.key("trainingDataConfig").start_object();
-        crate::protocol_serde::shape_training_data_config::ser_training_data_config(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_training_data_config::ser_training_data_config(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())
@@ -33,17 +30,9 @@ pub fn ser_recommender_config(
 
 pub(crate) fn de_recommender_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::RecommenderConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::RecommenderConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -53,45 +42,36 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "itemExplorationConfig" => {
-                                builder = builder.set_item_exploration_config(
-                                    crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens)?
-                                );
-                            }
-                            "minRecommendationRequestsPerSecond" => {
-                                builder = builder.set_min_recommendation_requests_per_second(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "itemExplorationConfig" => {
+                            builder =
+                                builder.set_item_exploration_config(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens)?);
+                        }
+                        "minRecommendationRequestsPerSecond" => {
+                            builder = builder.set_min_recommendation_requests_per_second(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "trainingDataConfig" => {
-                                builder = builder.set_training_data_config(
-                                    crate::protocol_serde::shape_training_data_config::de_training_data_config(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "trainingDataConfig" => {
+                            builder =
+                                builder.set_training_data_config(crate::protocol_serde::shape_training_data_config::de_training_data_config(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

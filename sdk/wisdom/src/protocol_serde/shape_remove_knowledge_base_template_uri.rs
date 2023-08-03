@@ -9,65 +9,68 @@ pub fn de_remove_knowledge_base_template_uri_http_error(
     crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AccessDeniedException" => {
+            crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "ValidationException" => crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError::ValidationException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError::generic(generic)
+        _ => crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriError::generic(generic),
     })
 }
 
@@ -83,9 +86,7 @@ pub fn de_remove_knowledge_base_template_uri_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

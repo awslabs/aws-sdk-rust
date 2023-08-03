@@ -10,10 +10,7 @@ impl CreateDeploymentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_deployment::CreateDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_deployment();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateDeploymentFluentBuilder {
         }
     }
     /// Access the CreateDeployment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateDeploymentFluentBuilder {
             crate::operation::create_deployment::CreateDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateDeploymentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_deployment::CreateDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_deployment::CreateDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateDeploymentFluentBuilder {
             crate::operation::create_deployment::CreateDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_deployment::CreateDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_deployment::CreateDeploymentError>,
     > {
         self.customize_middleware().await
     }
@@ -161,17 +145,12 @@ impl CreateDeploymentFluentBuilder {
         self
     }
     /// <p>The instance IDs for the deployment targets.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
     /// <p>The instance IDs for the deployment targets.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_ids()
     }
     /// Appends an item to `LayerIds`.
@@ -184,10 +163,7 @@ impl CreateDeploymentFluentBuilder {
         self
     }
     /// <p>The layer IDs for the deployment targets.</p>
-    pub fn set_layer_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_layer_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_layer_ids(input);
         self
     }
@@ -201,10 +177,7 @@ impl CreateDeploymentFluentBuilder {
         self
     }
     /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
-    pub fn set_command(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentCommand>,
-    ) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<crate::types::DeploymentCommand>) -> Self {
         self.inner = self.inner.set_command(input);
         self
     }

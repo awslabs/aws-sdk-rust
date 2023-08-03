@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateCostAllocationTagsStatusOutput`](crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput) with field(s):
     ///   - [`errors(Option<Vec<UpdateCostAllocationTagsStatusError>>)`](crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput::errors): <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
     /// - On failure, responds with [`SdkError<UpdateCostAllocationTagsStatusError>`](crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError)
-    pub fn update_cost_allocation_tags_status(&self) -> crate::operation::update_cost_allocation_tags_status::builders::UpdateCostAllocationTagsStatusFluentBuilder{
+    pub fn update_cost_allocation_tags_status(
+        &self,
+    ) -> crate::operation::update_cost_allocation_tags_status::builders::UpdateCostAllocationTagsStatusFluentBuilder {
         crate::operation::update_cost_allocation_tags_status::builders::UpdateCostAllocationTagsStatusFluentBuilder::new(self.handle.clone())
     }
 }

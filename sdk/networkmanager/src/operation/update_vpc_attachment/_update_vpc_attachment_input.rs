@@ -36,18 +36,14 @@ impl UpdateVpcAttachmentInput {
 }
 impl UpdateVpcAttachmentInput {
     /// Creates a new builder-style object to manufacture [`UpdateVpcAttachmentInput`](crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput).
-    pub fn builder(
-    ) -> crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentInputBuilder {
-        crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentInputBuilder {
+        crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVpcAttachmentInput`](crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVpcAttachmentInputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) add_subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -56,18 +52,12 @@ pub struct UpdateVpcAttachmentInputBuilder {
 }
 impl UpdateVpcAttachmentInputBuilder {
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_id = input;
         self
     }
@@ -80,27 +70,19 @@ impl UpdateVpcAttachmentInputBuilder {
     /// To override the contents of this collection use [`set_add_subnet_arns`](Self::set_add_subnet_arns).
     ///
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
-    pub fn add_subnet_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn add_subnet_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.add_subnet_arns.unwrap_or_default();
         v.push(input.into());
         self.add_subnet_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
-    pub fn set_add_subnet_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_add_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.add_subnet_arns = input;
         self
     }
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
-    pub fn get_add_subnet_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_add_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.add_subnet_arns
     }
     /// Appends an item to `remove_subnet_arns`.
@@ -108,27 +90,19 @@ impl UpdateVpcAttachmentInputBuilder {
     /// To override the contents of this collection use [`set_remove_subnet_arns`](Self::set_remove_subnet_arns).
     ///
     /// <p>Removes a subnet ARN from the attachment.</p>
-    pub fn remove_subnet_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remove_subnet_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_subnet_arns.unwrap_or_default();
         v.push(input.into());
         self.remove_subnet_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Removes a subnet ARN from the attachment.</p>
-    pub fn set_remove_subnet_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_remove_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.remove_subnet_arns = input;
         self
     }
     /// <p>Removes a subnet ARN from the attachment.</p>
-    pub fn get_remove_subnet_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.remove_subnet_arns
     }
     /// <p>Additional options for updating the VPC attachment. </p>
@@ -148,17 +122,13 @@ impl UpdateVpcAttachmentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVpcAttachmentInput`](crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput {
-                attachment_id: self.attachment_id,
-                add_subnet_arns: self.add_subnet_arns,
-                remove_subnet_arns: self.remove_subnet_arns,
-                options: self.options,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput {
+            attachment_id: self.attachment_id,
+            add_subnet_arns: self.add_subnet_arns,
+            remove_subnet_arns: self.remove_subnet_arns,
+            options: self.options,
+        })
     }
 }

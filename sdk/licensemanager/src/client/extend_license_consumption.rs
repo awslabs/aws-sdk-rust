@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`license_consumption_token(Option<String>)`](crate::operation::extend_license_consumption::ExtendLicenseConsumptionOutput::license_consumption_token): <p>License consumption token.</p>
     ///   - [`expiration(Option<String>)`](crate::operation::extend_license_consumption::ExtendLicenseConsumptionOutput::expiration): <p>Date and time at which the license consumption expires.</p>
     /// - On failure, responds with [`SdkError<ExtendLicenseConsumptionError>`](crate::operation::extend_license_consumption::ExtendLicenseConsumptionError)
-    pub fn extend_license_consumption(
-        &self,
-    ) -> crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionFluentBuilder
-    {
+    pub fn extend_license_consumption(&self) -> crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionFluentBuilder {
         crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionFluentBuilder::new(self.handle.clone())
     }
 }

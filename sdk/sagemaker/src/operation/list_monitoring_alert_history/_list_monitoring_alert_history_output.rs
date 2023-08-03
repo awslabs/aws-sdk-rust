@@ -5,8 +5,7 @@
 pub struct ListMonitoringAlertHistoryOutput {
     /// <p>An alert history for a model monitoring schedule.</p>
     #[doc(hidden)]
-    pub monitoring_alert_history:
-        ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertHistorySummary>>,
+    pub monitoring_alert_history: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertHistorySummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListMonitoringAlertHistoryOutput {
 }
 impl ListMonitoringAlertHistoryOutput {
     /// <p>An alert history for a model monitoring schedule.</p>
-    pub fn monitoring_alert_history(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MonitoringAlertHistorySummary]> {
+    pub fn monitoring_alert_history(&self) -> ::std::option::Option<&[crate::types::MonitoringAlertHistorySummary]> {
         self.monitoring_alert_history.as_deref()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListMonitoringAlertHistoryOutput {
 }
 impl ListMonitoringAlertHistoryOutput {
     /// Creates a new builder-style object to manufacture [`ListMonitoringAlertHistoryOutput`](crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryOutput).
-    pub fn builder() -> crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryOutputBuilder{
+    pub fn builder() -> crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryOutputBuilder {
         crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMonitoringAlertHistoryOutput`](crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitoringAlertHistoryOutputBuilder {
-    pub(crate) monitoring_alert_history:
-        ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertHistorySummary>>,
+    pub(crate) monitoring_alert_history: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertHistorySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListMonitoringAlertHistoryOutputBuilder {
     /// To override the contents of this collection use [`set_monitoring_alert_history`](Self::set_monitoring_alert_history).
     ///
     /// <p>An alert history for a model monitoring schedule.</p>
-    pub fn monitoring_alert_history(
-        mut self,
-        input: crate::types::MonitoringAlertHistorySummary,
-    ) -> Self {
+    pub fn monitoring_alert_history(mut self, input: crate::types::MonitoringAlertHistorySummary) -> Self {
         let mut v = self.monitoring_alert_history.unwrap_or_default();
         v.push(input);
         self.monitoring_alert_history = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListMonitoringAlertHistoryOutputBuilder {
         self
     }
     /// <p>An alert history for a model monitoring schedule.</p>
-    pub fn get_monitoring_alert_history(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertHistorySummary>> {
+    pub fn get_monitoring_alert_history(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertHistorySummary>> {
         &self.monitoring_alert_history
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
@@ -100,9 +89,7 @@ impl ListMonitoringAlertHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMonitoringAlertHistoryOutput`](crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryOutput {
+    pub fn build(self) -> crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryOutput {
         crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryOutput {
             monitoring_alert_history: self.monitoring_alert_history,
             next_token: self.next_token,

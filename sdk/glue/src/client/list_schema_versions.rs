@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`schemas(Option<Vec<SchemaVersionListItem>>)`](crate::operation::list_schema_versions::ListSchemaVersionsOutput::schemas): <p>An array of <code>SchemaVersionList</code> objects containing details of each schema version.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_schema_versions::ListSchemaVersionsOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     /// - On failure, responds with [`SdkError<ListSchemaVersionsError>`](crate::operation::list_schema_versions::ListSchemaVersionsError)
-    pub fn list_schema_versions(
-        &self,
-    ) -> crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder {
-        crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_schema_versions(&self) -> crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder {
+        crate::operation::list_schema_versions::builders::ListSchemaVersionsFluentBuilder::new(self.handle.clone())
     }
 }

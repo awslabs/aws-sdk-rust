@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`user_pool_id(Option<String>)`](crate::operation::get_csv_header::GetCsvHeaderOutput::user_pool_id): <p>The user pool ID for the user pool that the users are to be imported into.</p>
     ///   - [`csv_header(Option<Vec<String>>)`](crate::operation::get_csv_header::GetCsvHeaderOutput::csv_header): <p>The header information of the CSV file for the user import job.</p>
     /// - On failure, responds with [`SdkError<GetCSVHeaderError>`](crate::operation::get_csv_header::GetCSVHeaderError)
-    pub fn get_csv_header(
-        &self,
-    ) -> crate::operation::get_csv_header::builders::GetCSVHeaderFluentBuilder {
-        crate::operation::get_csv_header::builders::GetCSVHeaderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_csv_header(&self) -> crate::operation::get_csv_header::builders::GetCSVHeaderFluentBuilder {
+        crate::operation::get_csv_header::builders::GetCSVHeaderFluentBuilder::new(self.handle.clone())
     }
 }

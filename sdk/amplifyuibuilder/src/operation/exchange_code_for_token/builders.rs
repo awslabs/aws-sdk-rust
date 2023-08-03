@@ -37,10 +37,7 @@ impl ExchangeCodeForTokenFluentBuilder {
         }
     }
     /// Access the ExchangeCodeForToken as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ExchangeCodeForTokenFluentBuilder {
             crate::operation::exchange_code_for_token::ExchangeCodeForToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::exchange_code_for_token::ExchangeCodeForTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::exchange_code_for_token::ExchangeCodeForTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ExchangeCodeForTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ExchangeCodeForTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::exchange_code_for_token::ExchangeCodeForTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::exchange_code_for_token::ExchangeCodeForTokenError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ExchangeCodeForTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::exchange_code_for_token::ExchangeCodeForTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::exchange_code_for_token::ExchangeCodeForTokenError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ExchangeCodeForTokenFluentBuilder {
             crate::operation::exchange_code_for_token::ExchangeCodeForToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::exchange_code_for_token::ExchangeCodeForTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::exchange_code_for_token::ExchangeCodeForTokenError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +115,7 @@ impl ExchangeCodeForTokenFluentBuilder {
         self
     }
     /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
-    pub fn set_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::TokenProviders>,
-    ) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::TokenProviders>) -> Self {
         self.inner = self.inner.set_provider(input);
         self
     }
@@ -146,17 +129,12 @@ impl ExchangeCodeForTokenFluentBuilder {
         self
     }
     /// <p>Describes the configuration of the request.</p>
-    pub fn set_request(
-        mut self,
-        input: ::std::option::Option<crate::types::ExchangeCodeForTokenRequestBody>,
-    ) -> Self {
+    pub fn set_request(mut self, input: ::std::option::Option<crate::types::ExchangeCodeForTokenRequestBody>) -> Self {
         self.inner = self.inner.set_request(input);
         self
     }
     /// <p>Describes the configuration of the request.</p>
-    pub fn get_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExchangeCodeForTokenRequestBody> {
+    pub fn get_request(&self) -> &::std::option::Option<crate::types::ExchangeCodeForTokenRequestBody> {
         self.inner.get_request()
     }
 }

@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`telephony_config(TelephonyConfig)`](crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionFluentBuilder::telephony_config) / [`set_telephony_config(Option<TelephonyConfig>)`](crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionFluentBuilder::set_telephony_config): <p>The distribution of traffic between the instance and its replica(s).</p>
     /// - On success, responds with [`UpdateTrafficDistributionOutput`](crate::operation::update_traffic_distribution::UpdateTrafficDistributionOutput)
     /// - On failure, responds with [`SdkError<UpdateTrafficDistributionError>`](crate::operation::update_traffic_distribution::UpdateTrafficDistributionError)
-    pub fn update_traffic_distribution(&self) -> crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionFluentBuilder{
+    pub fn update_traffic_distribution(&self) -> crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionFluentBuilder {
         crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionFluentBuilder::new(self.handle.clone())
     }
 }

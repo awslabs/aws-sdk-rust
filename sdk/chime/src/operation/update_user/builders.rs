@@ -10,10 +10,7 @@ impl UpdateUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_user::UpdateUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user::UpdateUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user::UpdateUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_user();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateUserFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_user::UpdateUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_user::UpdateUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_user::UpdateUserError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateUserFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_user::UpdateUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_user::UpdateUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_user::UpdateUserError>,
     > {
         self.customize_middleware().await
@@ -169,25 +157,17 @@ impl UpdateUserFluentBuilder {
         self.inner.get_user_type()
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn alexa_for_business_metadata(
-        mut self,
-        input: crate::types::AlexaForBusinessMetadata,
-    ) -> Self {
+    pub fn alexa_for_business_metadata(mut self, input: crate::types::AlexaForBusinessMetadata) -> Self {
         self.inner = self.inner.alexa_for_business_metadata(input);
         self
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn set_alexa_for_business_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::AlexaForBusinessMetadata>,
-    ) -> Self {
+    pub fn set_alexa_for_business_metadata(mut self, input: ::std::option::Option<crate::types::AlexaForBusinessMetadata>) -> Self {
         self.inner = self.inner.set_alexa_for_business_metadata(input);
         self
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn get_alexa_for_business_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlexaForBusinessMetadata> {
+    pub fn get_alexa_for_business_metadata(&self) -> &::std::option::Option<crate::types::AlexaForBusinessMetadata> {
         self.inner.get_alexa_for_business_metadata()
     }
 }

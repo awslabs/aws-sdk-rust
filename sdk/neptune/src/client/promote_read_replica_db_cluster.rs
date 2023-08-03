@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`PromoteReadReplicaDbClusterOutput`](crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     /// - On failure, responds with [`SdkError<PromoteReadReplicaDBClusterError>`](crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDBClusterError)
-    pub fn promote_read_replica_db_cluster(&self) -> crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDBClusterFluentBuilder{
+    pub fn promote_read_replica_db_cluster(
+        &self,
+    ) -> crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDBClusterFluentBuilder {
         crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDBClusterFluentBuilder::new(self.handle.clone())
     }
 }

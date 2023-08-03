@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDiskSnapshotOutput`](crate::operation::create_disk_snapshot::CreateDiskSnapshotOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::create_disk_snapshot::CreateDiskSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CreateDiskSnapshotError>`](crate::operation::create_disk_snapshot::CreateDiskSnapshotError)
-    pub fn create_disk_snapshot(
-        &self,
-    ) -> crate::operation::create_disk_snapshot::builders::CreateDiskSnapshotFluentBuilder {
-        crate::operation::create_disk_snapshot::builders::CreateDiskSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_disk_snapshot(&self) -> crate::operation::create_disk_snapshot::builders::CreateDiskSnapshotFluentBuilder {
+        crate::operation::create_disk_snapshot::builders::CreateDiskSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

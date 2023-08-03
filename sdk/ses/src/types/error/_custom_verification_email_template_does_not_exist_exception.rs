@@ -36,62 +36,45 @@ impl ::std::fmt::Display for CustomVerificationEmailTemplateDoesNotExistExceptio
     }
 }
 impl ::std::error::Error for CustomVerificationEmailTemplateDoesNotExistException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::CustomVerificationEmailTemplateDoesNotExistException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::CustomVerificationEmailTemplateDoesNotExistException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for CustomVerificationEmailTemplateDoesNotExistException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CustomVerificationEmailTemplateDoesNotExistException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl CustomVerificationEmailTemplateDoesNotExistException {
     /// Creates a new builder-style object to manufacture [`CustomVerificationEmailTemplateDoesNotExistException`](crate::types::error::CustomVerificationEmailTemplateDoesNotExistException).
-    pub fn builder(
-    ) -> crate::types::error::builders::CustomVerificationEmailTemplateDoesNotExistExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::CustomVerificationEmailTemplateDoesNotExistExceptionBuilder {
         crate::types::error::builders::CustomVerificationEmailTemplateDoesNotExistExceptionBuilder::default()
     }
 }
 
 /// A builder for [`CustomVerificationEmailTemplateDoesNotExistException`](crate::types::error::CustomVerificationEmailTemplateDoesNotExistException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomVerificationEmailTemplateDoesNotExistExceptionBuilder {
-    pub(crate) custom_verification_email_template_name:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) custom_verification_email_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl CustomVerificationEmailTemplateDoesNotExistExceptionBuilder {
     /// <p>Indicates that the provided custom verification email template does not exist.</p>
-    pub fn custom_verification_email_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_verification_email_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_verification_email_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates that the provided custom verification email template does not exist.</p>
-    pub fn set_custom_verification_email_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_verification_email_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_verification_email_template_name = input;
         self
     }
     /// <p>Indicates that the provided custom verification email template does not exist.</p>
-    pub fn get_custom_verification_email_template_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_custom_verification_email_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_verification_email_template_name
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -115,17 +98,12 @@ impl CustomVerificationEmailTemplateDoesNotExistExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }
     /// Consumes the builder and constructs a [`CustomVerificationEmailTemplateDoesNotExistException`](crate::types::error::CustomVerificationEmailTemplateDoesNotExistException).
-    pub fn build(
-        self,
-    ) -> crate::types::error::CustomVerificationEmailTemplateDoesNotExistException {
+    pub fn build(self) -> crate::types::error::CustomVerificationEmailTemplateDoesNotExistException {
         crate::types::error::CustomVerificationEmailTemplateDoesNotExistException {
             custom_verification_email_template_name: self.custom_verification_email_template_name,
             message: self.message,

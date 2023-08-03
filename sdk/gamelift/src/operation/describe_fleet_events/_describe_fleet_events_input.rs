@@ -43,18 +43,14 @@ impl DescribeFleetEventsInput {
 }
 impl DescribeFleetEventsInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetEventsInput`](crate::operation::describe_fleet_events::DescribeFleetEventsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_fleet_events::builders::DescribeFleetEventsInputBuilder {
-        crate::operation::describe_fleet_events::builders::DescribeFleetEventsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_fleet_events::builders::DescribeFleetEventsInputBuilder {
+        crate::operation::describe_fleet_events::builders::DescribeFleetEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetEventsInput`](crate::operation::describe_fleet_events::DescribeFleetEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetEventsInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -83,10 +79,7 @@ impl DescribeFleetEventsInputBuilder {
         self
     }
     /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -100,10 +93,7 @@ impl DescribeFleetEventsInputBuilder {
         self
     }
     /// <p>The most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -142,18 +132,14 @@ impl DescribeFleetEventsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFleetEventsInput`](crate::operation::describe_fleet_events::DescribeFleetEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fleet_events::DescribeFleetEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_fleet_events::DescribeFleetEventsInput {
-                fleet_id: self.fleet_id,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_fleet_events::DescribeFleetEventsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_fleet_events::DescribeFleetEventsInput {
+            fleet_id: self.fleet_id,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            limit: self.limit,
+            next_token: self.next_token,
+        })
     }
 }

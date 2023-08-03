@@ -27,7 +27,7 @@ impl DescribeTapeRecoveryPointsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTapeRecoveryPointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsInputBuilder,
+    inner: crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsInputBuilder,
 }
 impl DescribeTapeRecoveryPointsFluentBuilder {
     /// Creates a new `DescribeTapeRecoveryPoints`.
@@ -38,7 +38,7 @@ impl DescribeTapeRecoveryPointsFluentBuilder {
         }
     }
     /// Access the DescribeTapeRecoveryPoints as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeTapeRecoveryPointsFluentBuilder {
             crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeTapeRecoveryPointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeTapeRecoveryPointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeTapeRecoveryPointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError>,
     > {
         self.send_middleware().await
     }
@@ -115,16 +106,14 @@ impl DescribeTapeRecoveryPointsFluentBuilder {
             crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_tape_recovery_points::paginator::DescribeTapeRecoveryPointsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_tape_recovery_points::paginator::DescribeTapeRecoveryPointsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_tape_recovery_points::paginator::DescribeTapeRecoveryPointsPaginator {
         crate::operation::describe_tape_recovery_points::paginator::DescribeTapeRecoveryPointsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>

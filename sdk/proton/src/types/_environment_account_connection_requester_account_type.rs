@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EnvironmentAccountConnectionRequesterAccountType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,15 +51,9 @@ pub enum EnvironmentAccountConnectionRequesterAccountType {
 impl ::std::convert::From<&str> for EnvironmentAccountConnectionRequesterAccountType {
     fn from(s: &str) -> Self {
         match s {
-            "ENVIRONMENT_ACCOUNT" => {
-                EnvironmentAccountConnectionRequesterAccountType::EnvironmentAccount
-            }
-            "MANAGEMENT_ACCOUNT" => {
-                EnvironmentAccountConnectionRequesterAccountType::ManagementAccount
-            }
-            other => EnvironmentAccountConnectionRequesterAccountType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "ENVIRONMENT_ACCOUNT" => EnvironmentAccountConnectionRequesterAccountType::EnvironmentAccount,
+            "MANAGEMENT_ACCOUNT" => EnvironmentAccountConnectionRequesterAccountType::ManagementAccount,
+            other => EnvironmentAccountConnectionRequesterAccountType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -80,12 +68,8 @@ impl EnvironmentAccountConnectionRequesterAccountType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            EnvironmentAccountConnectionRequesterAccountType::EnvironmentAccount => {
-                "ENVIRONMENT_ACCOUNT"
-            }
-            EnvironmentAccountConnectionRequesterAccountType::ManagementAccount => {
-                "MANAGEMENT_ACCOUNT"
-            }
+            EnvironmentAccountConnectionRequesterAccountType::EnvironmentAccount => "ENVIRONMENT_ACCOUNT",
+            EnvironmentAccountConnectionRequesterAccountType::ManagementAccount => "MANAGEMENT_ACCOUNT",
             EnvironmentAccountConnectionRequesterAccountType::Unknown(value) => value.as_str(),
         }
     }

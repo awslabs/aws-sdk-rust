@@ -57,19 +57,16 @@ impl DescribeTrafficMirrorTargetsInput {
 }
 impl DescribeTrafficMirrorTargetsInput {
     /// Creates a new builder-style object to manufacture [`DescribeTrafficMirrorTargetsInput`](crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsInput).
-    pub fn builder() -> crate::operation::describe_traffic_mirror_targets::builders::DescribeTrafficMirrorTargetsInputBuilder{
+    pub fn builder() -> crate::operation::describe_traffic_mirror_targets::builders::DescribeTrafficMirrorTargetsInputBuilder {
         crate::operation::describe_traffic_mirror_targets::builders::DescribeTrafficMirrorTargetsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTrafficMirrorTargetsInput`](crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrafficMirrorTargetsInputBuilder {
-    pub(crate) traffic_mirror_target_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) traffic_mirror_target_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -81,27 +78,19 @@ impl DescribeTrafficMirrorTargetsInputBuilder {
     /// To override the contents of this collection use [`set_traffic_mirror_target_ids`](Self::set_traffic_mirror_target_ids).
     ///
     /// <p>The ID of the Traffic Mirror targets.</p>
-    pub fn traffic_mirror_target_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_target_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.traffic_mirror_target_ids.unwrap_or_default();
         v.push(input.into());
         self.traffic_mirror_target_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of the Traffic Mirror targets.</p>
-    pub fn set_traffic_mirror_target_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_traffic_mirror_target_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.traffic_mirror_target_ids = input;
         self
     }
     /// <p>The ID of the Traffic Mirror targets.</p>
-    pub fn get_traffic_mirror_target_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_traffic_mirror_target_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.traffic_mirror_target_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -144,10 +133,7 @@ impl DescribeTrafficMirrorTargetsInputBuilder {
     /// <li> <p> <code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p> </li>
     /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -197,14 +183,12 @@ impl DescribeTrafficMirrorTargetsInputBuilder {
         crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsInput {
-                traffic_mirror_target_ids: self.traffic_mirror_target_ids,
-                dry_run: self.dry_run,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsInput {
+            traffic_mirror_target_ids: self.traffic_mirror_target_ids,
+            dry_run: self.dry_run,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

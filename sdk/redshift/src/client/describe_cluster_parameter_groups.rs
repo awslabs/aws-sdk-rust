@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     ///   - [`parameter_groups(Option<Vec<ClusterParameterGroup>>)`](crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput::parameter_groups): <p>A list of <code>ClusterParameterGroup</code> instances. Each instance describes one cluster parameter group. </p>
     /// - On failure, responds with [`SdkError<DescribeClusterParameterGroupsError>`](crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError)
-    pub fn describe_cluster_parameter_groups(&self) -> crate::operation::describe_cluster_parameter_groups::builders::DescribeClusterParameterGroupsFluentBuilder{
+    pub fn describe_cluster_parameter_groups(
+        &self,
+    ) -> crate::operation::describe_cluster_parameter_groups::builders::DescribeClusterParameterGroupsFluentBuilder {
         crate::operation::describe_cluster_parameter_groups::builders::DescribeClusterParameterGroupsFluentBuilder::new(self.handle.clone())
     }
 }

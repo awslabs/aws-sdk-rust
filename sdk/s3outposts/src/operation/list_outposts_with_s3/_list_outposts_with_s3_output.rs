@@ -38,18 +38,14 @@ impl ::aws_http::request_id::RequestId for ListOutpostsWithS3Output {
 }
 impl ListOutpostsWithS3Output {
     /// Creates a new builder-style object to manufacture [`ListOutpostsWithS3Output`](crate::operation::list_outposts_with_s3::ListOutpostsWithS3Output).
-    pub fn builder(
-    ) -> crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3OutputBuilder {
-        crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3OutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3OutputBuilder {
+        crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3OutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOutpostsWithS3Output`](crate::operation::list_outposts_with_s3::ListOutpostsWithS3Output).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOutpostsWithS3OutputBuilder {
     pub(crate) outposts: ::std::option::Option<::std::vec::Vec<crate::types::Outpost>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -78,10 +74,7 @@ impl ListOutpostsWithS3OutputBuilder {
     /// <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li>
     /// <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li>
     /// </ul>
-    pub fn set_outposts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Outpost>>,
-    ) -> Self {
+    pub fn set_outposts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Outpost>>) -> Self {
         self.outposts = input;
         self
     }

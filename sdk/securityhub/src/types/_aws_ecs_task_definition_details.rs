@@ -6,9 +6,7 @@
 pub struct AwsEcsTaskDefinitionDetails {
     /// <p>The container definitions that describe the containers that make up the task.</p>
     #[doc(hidden)]
-    pub container_definitions: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>,
-    >,
+    pub container_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>>,
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>256 (.25 vCPU)</code> </p> </li>
@@ -27,9 +25,7 @@ pub struct AwsEcsTaskDefinitionDetails {
     pub family: ::std::option::Option<::std::string::String>,
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
     #[doc(hidden)]
-    pub inference_accelerators: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>,
-    >,
+    pub inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>>,
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>host</code> </p> </li>
@@ -56,13 +52,10 @@ pub struct AwsEcsTaskDefinitionDetails {
     pub pid_mode: ::std::option::Option<::std::string::String>,
     /// <p>The placement constraint objects to use for tasks.</p>
     #[doc(hidden)]
-    pub placement_constraints: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails>,
-    >,
+    pub placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails>>,
     /// <p>The configuration details for the App Mesh proxy.</p>
     #[doc(hidden)]
-    pub proxy_configuration:
-        ::std::option::Option<crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails>,
+    pub proxy_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails>,
     /// <p>The task launch types that the task definition was validated against.</p>
     #[doc(hidden)]
     pub requires_compatibilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -71,15 +64,11 @@ pub struct AwsEcsTaskDefinitionDetails {
     pub task_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The data volume definitions for the task.</p>
     #[doc(hidden)]
-    pub volumes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>>,
+    pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>>,
 }
 impl AwsEcsTaskDefinitionDetails {
     /// <p>The container definitions that describe the containers that make up the task.</p>
-    pub fn container_definitions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails]>
-    {
+    pub fn container_definitions(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails]> {
         self.container_definitions.as_deref()
     }
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
@@ -102,10 +91,7 @@ impl AwsEcsTaskDefinitionDetails {
         self.family.as_deref()
     }
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
-    pub fn inference_accelerators(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails]>
-    {
+    pub fn inference_accelerators(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails]> {
         self.inference_accelerators.as_deref()
     }
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
@@ -137,16 +123,11 @@ impl AwsEcsTaskDefinitionDetails {
         self.pid_mode.as_deref()
     }
     /// <p>The placement constraint objects to use for tasks.</p>
-    pub fn placement_constraints(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails]>
-    {
+    pub fn placement_constraints(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails]> {
         self.placement_constraints.as_deref()
     }
     /// <p>The configuration details for the App Mesh proxy.</p>
-    pub fn proxy_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails> {
+    pub fn proxy_configuration(&self) -> ::std::option::Option<&crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails> {
         self.proxy_configuration.as_ref()
     }
     /// <p>The task launch types that the task definition was validated against.</p>
@@ -158,9 +139,7 @@ impl AwsEcsTaskDefinitionDetails {
         self.task_role_arn.as_deref()
     }
     /// <p>The data volume definitions for the task.</p>
-    pub fn volumes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionVolumesDetails]> {
+    pub fn volumes(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionVolumesDetails]> {
         self.volumes.as_deref()
     }
 }
@@ -173,33 +152,22 @@ impl AwsEcsTaskDefinitionDetails {
 
 /// A builder for [`AwsEcsTaskDefinitionDetails`](crate::types::AwsEcsTaskDefinitionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionDetailsBuilder {
-    pub(crate) container_definitions: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>,
-    >,
+    pub(crate) container_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>>,
     pub(crate) cpu: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) family: ::std::option::Option<::std::string::String>,
-    pub(crate) inference_accelerators: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>,
-    >,
+    pub(crate) inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>>,
     pub(crate) ipc_mode: ::std::option::Option<::std::string::String>,
     pub(crate) memory: ::std::option::Option<::std::string::String>,
     pub(crate) network_mode: ::std::option::Option<::std::string::String>,
     pub(crate) pid_mode: ::std::option::Option<::std::string::String>,
-    pub(crate) placement_constraints: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails>,
-    >,
-    pub(crate) proxy_configuration:
-        ::std::option::Option<crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails>,
-    pub(crate) requires_compatibilities:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails>>,
+    pub(crate) proxy_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails>,
+    pub(crate) requires_compatibilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) task_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) volumes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>>,
+    pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>>,
 }
 impl AwsEcsTaskDefinitionDetailsBuilder {
     /// Appends an item to `container_definitions`.
@@ -207,10 +175,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// To override the contents of this collection use [`set_container_definitions`](Self::set_container_definitions).
     ///
     /// <p>The container definitions that describe the containers that make up the task.</p>
-    pub fn container_definitions(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails,
-    ) -> Self {
+    pub fn container_definitions(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails) -> Self {
         let mut v = self.container_definitions.unwrap_or_default();
         v.push(input);
         self.container_definitions = ::std::option::Option::Some(v);
@@ -219,9 +184,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// <p>The container definitions that describe the containers that make up the task.</p>
     pub fn set_container_definitions(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>>,
     ) -> Self {
         self.container_definitions = input;
         self
@@ -229,9 +192,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// <p>The container definitions that describe the containers that make up the task.</p>
     pub fn get_container_definitions(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>> {
         &self.container_definitions
     }
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
@@ -270,18 +231,12 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
         &self.cpu
     }
     /// <p>The ARN of the task execution role that grants the container agent permission to make API calls on behalf of the container user.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the task execution role that grants the container agent permission to make API calls on behalf of the container user.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -308,10 +263,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// To override the contents of this collection use [`set_inference_accelerators`](Self::set_inference_accelerators).
     ///
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
-    pub fn inference_accelerators(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails,
-    ) -> Self {
+    pub fn inference_accelerators(mut self, input: crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails) -> Self {
         let mut v = self.inference_accelerators.unwrap_or_default();
         v.push(input);
         self.inference_accelerators = ::std::option::Option::Some(v);
@@ -320,9 +272,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
     pub fn set_inference_accelerators(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>>,
     ) -> Self {
         self.inference_accelerators = input;
         self
@@ -330,9 +280,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
     pub fn get_inference_accelerators(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>> {
         &self.inference_accelerators
     }
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
@@ -432,10 +380,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
     ///
     /// <p>The placement constraint objects to use for tasks.</p>
-    pub fn placement_constraints(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails,
-    ) -> Self {
+    pub fn placement_constraints(mut self, input: crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails) -> Self {
         let mut v = self.placement_constraints.unwrap_or_default();
         v.push(input);
         self.placement_constraints = ::std::option::Option::Some(v);
@@ -444,9 +389,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// <p>The placement constraint objects to use for tasks.</p>
     pub fn set_placement_constraints(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails>>,
     ) -> Self {
         self.placement_constraints = input;
         self
@@ -454,31 +397,21 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// <p>The placement constraint objects to use for tasks.</p>
     pub fn get_placement_constraints(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails>> {
         &self.placement_constraints
     }
     /// <p>The configuration details for the App Mesh proxy.</p>
-    pub fn proxy_configuration(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails,
-    ) -> Self {
+    pub fn proxy_configuration(mut self, input: crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails) -> Self {
         self.proxy_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration details for the App Mesh proxy.</p>
-    pub fn set_proxy_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails>,
-    ) -> Self {
+    pub fn set_proxy_configuration(mut self, input: ::std::option::Option<crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails>) -> Self {
         self.proxy_configuration = input;
         self
     }
     /// <p>The configuration details for the App Mesh proxy.</p>
-    pub fn get_proxy_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails> {
+    pub fn get_proxy_configuration(&self) -> &::std::option::Option<crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails> {
         &self.proxy_configuration
     }
     /// Appends an item to `requires_compatibilities`.
@@ -486,42 +419,28 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     /// To override the contents of this collection use [`set_requires_compatibilities`](Self::set_requires_compatibilities).
     ///
     /// <p>The task launch types that the task definition was validated against.</p>
-    pub fn requires_compatibilities(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requires_compatibilities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.requires_compatibilities.unwrap_or_default();
         v.push(input.into());
         self.requires_compatibilities = ::std::option::Option::Some(v);
         self
     }
     /// <p>The task launch types that the task definition was validated against.</p>
-    pub fn set_requires_compatibilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_requires_compatibilities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.requires_compatibilities = input;
         self
     }
     /// <p>The task launch types that the task definition was validated against.</p>
-    pub fn get_requires_compatibilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_requires_compatibilities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.requires_compatibilities
     }
     /// <p>The short name or ARN of the IAM role that grants containers in the task permission to call Amazon Web Services API operations on your behalf.</p>
-    pub fn task_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The short name or ARN of the IAM role that grants containers in the task permission to call Amazon Web Services API operations on your behalf.</p>
-    pub fn set_task_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_role_arn = input;
         self
     }
@@ -541,20 +460,12 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
         self
     }
     /// <p>The data volume definitions for the task.</p>
-    pub fn set_volumes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>,
-        >,
-    ) -> Self {
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>>) -> Self {
         self.volumes = input;
         self
     }
     /// <p>The data volume definitions for the task.</p>
-    pub fn get_volumes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>>
-    {
+    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>> {
         &self.volumes
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionDetails`](crate::types::AwsEcsTaskDefinitionDetails).

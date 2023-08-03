@@ -9,8 +9,7 @@ pub struct DescribeReservedInstanceOfferingsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of Reserved Instance offerings.</p>
     #[doc(hidden)]
-    pub reserved_instance_offerings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstanceOffering>>,
+    pub reserved_instance_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstanceOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstanceOfferingsOutput {
@@ -19,9 +18,7 @@ impl DescribeReservedInstanceOfferingsOutput {
         self.next_token.as_deref()
     }
     /// <p>List of Reserved Instance offerings.</p>
-    pub fn reserved_instance_offerings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReservedInstanceOffering]> {
+    pub fn reserved_instance_offerings(&self) -> ::std::option::Option<&[crate::types::ReservedInstanceOffering]> {
         self.reserved_instance_offerings.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeReservedInstanceOfferingsOutp
 }
 impl DescribeReservedInstanceOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedInstanceOfferingsOutput`](crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsOutput).
-    pub fn builder() -> crate::operation::describe_reserved_instance_offerings::builders::DescribeReservedInstanceOfferingsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_instance_offerings::builders::DescribeReservedInstanceOfferingsOutputBuilder {
         crate::operation::describe_reserved_instance_offerings::builders::DescribeReservedInstanceOfferingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedInstanceOfferingsOutput`](crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedInstanceOfferingsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_instance_offerings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstanceOffering>>,
+    pub(crate) reserved_instance_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstanceOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstanceOfferingsOutputBuilder {
@@ -68,27 +62,19 @@ impl DescribeReservedInstanceOfferingsOutputBuilder {
     /// To override the contents of this collection use [`set_reserved_instance_offerings`](Self::set_reserved_instance_offerings).
     ///
     /// <p>List of Reserved Instance offerings.</p>
-    pub fn reserved_instance_offerings(
-        mut self,
-        input: crate::types::ReservedInstanceOffering,
-    ) -> Self {
+    pub fn reserved_instance_offerings(mut self, input: crate::types::ReservedInstanceOffering) -> Self {
         let mut v = self.reserved_instance_offerings.unwrap_or_default();
         v.push(input);
         self.reserved_instance_offerings = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of Reserved Instance offerings.</p>
-    pub fn set_reserved_instance_offerings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstanceOffering>>,
-    ) -> Self {
+    pub fn set_reserved_instance_offerings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstanceOffering>>) -> Self {
         self.reserved_instance_offerings = input;
         self
     }
     /// <p>List of Reserved Instance offerings.</p>
-    pub fn get_reserved_instance_offerings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstanceOffering>> {
+    pub fn get_reserved_instance_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstanceOffering>> {
         &self.reserved_instance_offerings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -101,12 +87,10 @@ impl DescribeReservedInstanceOfferingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReservedInstanceOfferingsOutput`](crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsOutput).
-    pub fn build(self) -> crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsOutput{
+    pub fn build(self) -> crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsOutput {
         crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsOutput {
-            next_token: self.next_token
-            ,
-            reserved_instance_offerings: self.reserved_instance_offerings
-            ,
+            next_token: self.next_token,
+            reserved_instance_offerings: self.reserved_instance_offerings,
             _request_id: self._request_id,
         }
     }

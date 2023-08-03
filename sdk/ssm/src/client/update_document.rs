@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDocumentOutput`](crate::operation::update_document::UpdateDocumentOutput) with field(s):
     ///   - [`document_description(Option<DocumentDescription>)`](crate::operation::update_document::UpdateDocumentOutput::document_description): <p>A description of the document that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateDocumentError>`](crate::operation::update_document::UpdateDocumentError)
-    pub fn update_document(
-        &self,
-    ) -> crate::operation::update_document::builders::UpdateDocumentFluentBuilder {
-        crate::operation::update_document::builders::UpdateDocumentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_document(&self) -> crate::operation::update_document::builders::UpdateDocumentFluentBuilder {
+        crate::operation::update_document::builders::UpdateDocumentFluentBuilder::new(self.handle.clone())
     }
 }

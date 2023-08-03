@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`inference_scheduler_name(impl ::std::convert::Into<String>)`](crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerFluentBuilder::inference_scheduler_name) / [`set_inference_scheduler_name(Option<String>)`](crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerFluentBuilder::set_inference_scheduler_name): <p>The name of the inference scheduler to be deleted. </p>
     /// - On success, responds with [`DeleteInferenceSchedulerOutput`](crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerOutput)
     /// - On failure, responds with [`SdkError<DeleteInferenceSchedulerError>`](crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerError)
-    pub fn delete_inference_scheduler(
-        &self,
-    ) -> crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerFluentBuilder
-    {
+    pub fn delete_inference_scheduler(&self) -> crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerFluentBuilder {
         crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerFluentBuilder::new(self.handle.clone())
     }
 }

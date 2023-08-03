@@ -26,8 +26,7 @@ impl ListResourceEvaluationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourceEvaluationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsInputBuilder,
+    inner: crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsInputBuilder,
 }
 impl ListResourceEvaluationsFluentBuilder {
     /// Creates a new `ListResourceEvaluations`.
@@ -38,10 +37,7 @@ impl ListResourceEvaluationsFluentBuilder {
         }
     }
     /// Access the ListResourceEvaluations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListResourceEvaluationsFluentBuilder {
             crate::operation::list_resource_evaluations::ListResourceEvaluations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_evaluations::ListResourceEvaluationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_evaluations::ListResourceEvaluationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListResourceEvaluationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListResourceEvaluationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_evaluations::ListResourceEvaluationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_evaluations::ListResourceEvaluationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_evaluations::ListResourceEvaluationsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListResourceEvaluationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_evaluations::ListResourceEvaluationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_evaluations::ListResourceEvaluationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_evaluations::ListResourceEvaluationsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListResourceEvaluationsFluentBuilder {
             crate::operation::list_resource_evaluations::ListResourceEvaluations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_evaluations::ListResourceEvaluationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_evaluations::ListResourceEvaluationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resource_evaluations::paginator::ListResourceEvaluationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_resource_evaluations::paginator::ListResourceEvaluationsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_resource_evaluations::paginator::ListResourceEvaluationsPaginator {
         crate::operation::list_resource_evaluations::paginator::ListResourceEvaluationsPaginator::new(self.handle, self.inner)
     }
     /// <p>Returns a <code>ResourceEvaluationFilters</code> object.</p>
@@ -139,10 +121,7 @@ impl ListResourceEvaluationsFluentBuilder {
         self
     }
     /// <p>Returns a <code>ResourceEvaluationFilters</code> object.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceEvaluationFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ResourceEvaluationFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

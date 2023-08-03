@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateNetworkAclOutput`](crate::operation::create_network_acl::CreateNetworkAclOutput) with field(s):
     ///   - [`network_acl(Option<NetworkAcl>)`](crate::operation::create_network_acl::CreateNetworkAclOutput::network_acl): <p>Information about the network ACL.</p>
     /// - On failure, responds with [`SdkError<CreateNetworkAclError>`](crate::operation::create_network_acl::CreateNetworkAclError)
-    pub fn create_network_acl(
-        &self,
-    ) -> crate::operation::create_network_acl::builders::CreateNetworkAclFluentBuilder {
-        crate::operation::create_network_acl::builders::CreateNetworkAclFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_network_acl(&self) -> crate::operation::create_network_acl::builders::CreateNetworkAclFluentBuilder {
+        crate::operation::create_network_acl::builders::CreateNetworkAclFluentBuilder::new(self.handle.clone())
     }
 }

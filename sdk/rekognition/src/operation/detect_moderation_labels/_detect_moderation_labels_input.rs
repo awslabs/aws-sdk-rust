@@ -33,18 +33,14 @@ impl DetectModerationLabelsInput {
 }
 impl DetectModerationLabelsInput {
     /// Creates a new builder-style object to manufacture [`DetectModerationLabelsInput`](crate::operation::detect_moderation_labels::DetectModerationLabelsInput).
-    pub fn builder(
-    ) -> crate::operation::detect_moderation_labels::builders::DetectModerationLabelsInputBuilder
-    {
+    pub fn builder() -> crate::operation::detect_moderation_labels::builders::DetectModerationLabelsInputBuilder {
         crate::operation::detect_moderation_labels::builders::DetectModerationLabelsInputBuilder::default()
     }
 }
 
 /// A builder for [`DetectModerationLabelsInput`](crate::operation::detect_moderation_labels::DetectModerationLabelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectModerationLabelsInputBuilder {
     pub(crate) image: ::std::option::Option<crate::types::Image>,
     pub(crate) min_confidence: ::std::option::Option<f32>,
@@ -91,10 +87,7 @@ impl DetectModerationLabelsInputBuilder {
         self
     }
     /// <p>Sets up the configuration for human evaluation, including the FlowDefinition the image will be sent to.</p>
-    pub fn set_human_loop_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HumanLoopConfig>,
-    ) -> Self {
+    pub fn set_human_loop_config(mut self, input: ::std::option::Option<crate::types::HumanLoopConfig>) -> Self {
         self.human_loop_config = input;
         self
     }
@@ -105,16 +98,12 @@ impl DetectModerationLabelsInputBuilder {
     /// Consumes the builder and constructs a [`DetectModerationLabelsInput`](crate::operation::detect_moderation_labels::DetectModerationLabelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_moderation_labels::DetectModerationLabelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::detect_moderation_labels::DetectModerationLabelsInput {
-                image: self.image,
-                min_confidence: self.min_confidence,
-                human_loop_config: self.human_loop_config,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::detect_moderation_labels::DetectModerationLabelsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::detect_moderation_labels::DetectModerationLabelsInput {
+            image: self.image,
+            min_confidence: self.min_confidence,
+            human_loop_config: self.human_loop_config,
+        })
     }
 }

@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput::next_marker): <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the next reusable delegation set that Amazon Route 53 will return if you submit another <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
     ///   - [`max_items(Option<i32>)`](crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput::max_items): <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListReusableDelegationSets</code> that produced the current response.</p>
     /// - On failure, responds with [`SdkError<ListReusableDelegationSetsError>`](crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsError)
-    pub fn list_reusable_delegation_sets(&self) -> crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsFluentBuilder{
+    pub fn list_reusable_delegation_sets(
+        &self,
+    ) -> crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsFluentBuilder {
         crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<LiveSource>>)`](crate::operation::list_live_sources::ListLiveSourcesOutput::items): <p>Lists the live sources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_live_sources::ListLiveSourcesOutput::next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListLiveSourcesError>`](crate::operation::list_live_sources::ListLiveSourcesError)
-    pub fn list_live_sources(
-        &self,
-    ) -> crate::operation::list_live_sources::builders::ListLiveSourcesFluentBuilder {
-        crate::operation::list_live_sources::builders::ListLiveSourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_live_sources(&self) -> crate::operation::list_live_sources::builders::ListLiveSourcesFluentBuilder {
+        crate::operation::list_live_sources::builders::ListLiveSourcesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl ErrorDetail {
 
 /// A builder for [`ErrorDetail`](crate::types::ErrorDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorDetailBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ErrorDetailBuilder {
     }
     /// Consumes the builder and constructs a [`ErrorDetail`](crate::types::ErrorDetail).
     pub fn build(self) -> crate::types::ErrorDetail {
-        crate::types::ErrorDetail {
-            message: self.message,
-        }
+        crate::types::ErrorDetail { message: self.message }
     }
 }

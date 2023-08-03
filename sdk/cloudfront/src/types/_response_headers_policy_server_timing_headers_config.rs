@@ -24,17 +24,14 @@ impl ResponseHeadersPolicyServerTimingHeadersConfig {
 }
 impl ResponseHeadersPolicyServerTimingHeadersConfig {
     /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::types::ResponseHeadersPolicyServerTimingHeadersConfig).
-    pub fn builder() -> crate::types::builders::ResponseHeadersPolicyServerTimingHeadersConfigBuilder
-    {
+    pub fn builder() -> crate::types::builders::ResponseHeadersPolicyServerTimingHeadersConfigBuilder {
         crate::types::builders::ResponseHeadersPolicyServerTimingHeadersConfigBuilder::default()
     }
 }
 
 /// A builder for [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::types::ResponseHeadersPolicyServerTimingHeadersConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyServerTimingHeadersConfigBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) sampling_rate: ::std::option::Option<f64>,

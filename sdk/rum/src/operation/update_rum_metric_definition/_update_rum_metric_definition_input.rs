@@ -35,9 +35,7 @@ impl UpdateRumMetricDefinitionInput {
         self.destination_arn.as_deref()
     }
     /// <p>A structure that contains the new definition that you want to use for this metric.</p>
-    pub fn metric_definition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MetricDefinitionRequest> {
+    pub fn metric_definition(&self) -> ::std::option::Option<&crate::types::MetricDefinitionRequest> {
         self.metric_definition.as_ref()
     }
     /// <p>The ID of the metric definition to update.</p>
@@ -47,16 +45,14 @@ impl UpdateRumMetricDefinitionInput {
 }
 impl UpdateRumMetricDefinitionInput {
     /// Creates a new builder-style object to manufacture [`UpdateRumMetricDefinitionInput`](crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionInput).
-    pub fn builder() -> crate::operation::update_rum_metric_definition::builders::UpdateRumMetricDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::update_rum_metric_definition::builders::UpdateRumMetricDefinitionInputBuilder {
         crate::operation::update_rum_metric_definition::builders::UpdateRumMetricDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRumMetricDefinitionInput`](crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRumMetricDefinitionInputBuilder {
     pub(crate) app_monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<crate::types::MetricDestination>,
@@ -66,18 +62,12 @@ pub struct UpdateRumMetricDefinitionInputBuilder {
 }
 impl UpdateRumMetricDefinitionInputBuilder {
     /// <p>The name of the CloudWatch RUM app monitor that sends these metrics.</p>
-    pub fn app_monitor_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_monitor_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the CloudWatch RUM app monitor that sends these metrics.</p>
-    pub fn set_app_monitor_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_monitor_name = input;
         self
     }
@@ -91,10 +81,7 @@ impl UpdateRumMetricDefinitionInputBuilder {
         self
     }
     /// <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::MetricDestination>) -> Self {
         self.destination = input;
         self
     }
@@ -104,19 +91,13 @@ impl UpdateRumMetricDefinitionInputBuilder {
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -131,32 +112,21 @@ impl UpdateRumMetricDefinitionInputBuilder {
         self
     }
     /// <p>A structure that contains the new definition that you want to use for this metric.</p>
-    pub fn set_metric_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricDefinitionRequest>,
-    ) -> Self {
+    pub fn set_metric_definition(mut self, input: ::std::option::Option<crate::types::MetricDefinitionRequest>) -> Self {
         self.metric_definition = input;
         self
     }
     /// <p>A structure that contains the new definition that you want to use for this metric.</p>
-    pub fn get_metric_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetricDefinitionRequest> {
+    pub fn get_metric_definition(&self) -> &::std::option::Option<crate::types::MetricDefinitionRequest> {
         &self.metric_definition
     }
     /// <p>The ID of the metric definition to update.</p>
-    pub fn metric_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the metric definition to update.</p>
-    pub fn set_metric_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_definition_id = input;
         self
     }
@@ -171,14 +141,12 @@ impl UpdateRumMetricDefinitionInputBuilder {
         crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionInput {
-                app_monitor_name: self.app_monitor_name,
-                destination: self.destination,
-                destination_arn: self.destination_arn,
-                metric_definition: self.metric_definition,
-                metric_definition_id: self.metric_definition_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionInput {
+            app_monitor_name: self.app_monitor_name,
+            destination: self.destination,
+            destination_arn: self.destination_arn,
+            metric_definition: self.metric_definition,
+            metric_definition_id: self.metric_definition_id,
+        })
     }
 }

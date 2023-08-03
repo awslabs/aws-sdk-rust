@@ -13,9 +13,7 @@ pub fn ser_issue_certificate_input(
         object.key("CertificateAuthorityArn").string(var_3.as_str());
     }
     if let Some(var_4) = &input.csr {
-        object
-            .key("Csr")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_4));
+        object.key("Csr").string_unchecked(&::aws_smithy_types::base64::encode(var_4));
     }
     if let Some(var_5) = &input.signing_algorithm {
         object.key("SigningAlgorithm").string(var_5.as_str());

@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateAcceleratorAttributesOutput`](crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesOutput) with field(s):
     ///   - [`accelerator_attributes(Option<AcceleratorAttributes>)`](crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesOutput::accelerator_attributes): <p>Updated attributes for the accelerator.</p>
     /// - On failure, responds with [`SdkError<UpdateAcceleratorAttributesError>`](crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesError)
-    pub fn update_accelerator_attributes(&self) -> crate::operation::update_accelerator_attributes::builders::UpdateAcceleratorAttributesFluentBuilder{
+    pub fn update_accelerator_attributes(
+        &self,
+    ) -> crate::operation::update_accelerator_attributes::builders::UpdateAcceleratorAttributesFluentBuilder {
         crate::operation::update_accelerator_attributes::builders::UpdateAcceleratorAttributesFluentBuilder::new(self.handle.clone())
     }
 }

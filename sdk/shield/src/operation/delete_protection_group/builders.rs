@@ -37,10 +37,7 @@ impl DeleteProtectionGroupFluentBuilder {
         }
     }
     /// Access the DeleteProtectionGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_protection_group::builders::DeleteProtectionGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_protection_group::builders::DeleteProtectionGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteProtectionGroupFluentBuilder {
             crate::operation::delete_protection_group::DeleteProtectionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_protection_group::DeleteProtectionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_protection_group::DeleteProtectionGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteProtectionGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteProtectionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_protection_group::DeleteProtectionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_protection_group::DeleteProtectionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_protection_group::DeleteProtectionGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteProtectionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_protection_group::DeleteProtectionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_protection_group::DeleteProtectionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_protection_group::DeleteProtectionGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteProtectionGroupFluentBuilder {
             crate::operation::delete_protection_group::DeleteProtectionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_protection_group::DeleteProtectionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_protection_group::DeleteProtectionGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn protection_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protection_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.protection_group_id(input.into());
         self
     }
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn set_protection_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protection_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_protection_group_id(input);
         self
     }

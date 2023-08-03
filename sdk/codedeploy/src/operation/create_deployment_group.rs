@@ -27,27 +27,16 @@ impl CreateDeploymentGroupInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::create_deployment_group::CreateDeploymentGroupInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -56,20 +45,13 @@ impl CreateDeploymentGroupInput {
             fn update_http_builder(
                 input: &crate::operation::create_deployment_group::CreateDeploymentGroupInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
-            builder = ::aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                ::http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
+            builder = ::aws_smithy_http::header::set_request_header_if_absent(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = ::aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 ::http::header::HeaderName::from_static("x-amz-target"),
@@ -79,15 +61,11 @@ impl CreateDeploymentGroupInput {
         };
         let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = ::aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_create_deployment_group::ser_create_deployment_group_input(&self)?
-        );
+        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_create_deployment_group::ser_create_deployment_group_input(
+            &self,
+        )?);
         if let ::std::option::Option::Some(content_length) = body.content_length() {
-            request = ::aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                ::http::header::CONTENT_LENGTH,
-                content_length,
-            );
+            request = ::aws_smithy_http::header::set_request_header_if_absent(request, ::http::header::CONTENT_LENGTH, content_length);
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -99,10 +77,8 @@ impl CreateDeploymentGroupInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -111,29 +87,16 @@ impl CreateDeploymentGroupInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::create_deployment_group::CreateDeploymentGroup::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "CreateDeploymentGroup",
-            "codedeploy",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::create_deployment_group::CreateDeploymentGroup::new())
+            .with_metadata(::aws_smithy_http::operation::Metadata::new("CreateDeploymentGroup", "codedeploy"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -185,23 +148,15 @@ pub enum CreateDeploymentGroupError {
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::types::error::ApplicationNameRequiredException),
     /// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
-    DeploymentConfigDoesNotExistException(
-        crate::types::error::DeploymentConfigDoesNotExistException,
-    ),
+    DeploymentConfigDoesNotExistException(crate::types::error::DeploymentConfigDoesNotExistException),
     /// <p>A deployment group with the specified name with the IAM user or Amazon Web Services account already exists.</p>
-    DeploymentGroupAlreadyExistsException(
-        crate::types::error::DeploymentGroupAlreadyExistsException,
-    ),
+    DeploymentGroupAlreadyExistsException(crate::types::error::DeploymentGroupAlreadyExistsException),
     /// <p> The deployment groups limit was exceeded.</p>
-    DeploymentGroupLimitExceededException(
-        crate::types::error::DeploymentGroupLimitExceededException,
-    ),
+    DeploymentGroupLimitExceededException(crate::types::error::DeploymentGroupLimitExceededException),
     /// <p>The deployment group name was not specified.</p>
     DeploymentGroupNameRequiredException(crate::types::error::DeploymentGroupNameRequiredException),
     /// <p> The Amazon ECS service is associated with more than one deployment groups. An Amazon ECS service can be associated with only one deployment group. </p>
-    EcsServiceMappingLimitExceededException(
-        crate::types::error::EcsServiceMappingLimitExceededException,
-    ),
+    EcsServiceMappingLimitExceededException(crate::types::error::EcsServiceMappingLimitExceededException),
     /// <p>The format of the alarm configuration is invalid. Possible causes include:</p>
     /// <ul>
     /// <li> <p>The alarm list is null.</p> </li>
@@ -218,9 +173,7 @@ pub enum CreateDeploymentGroupError {
     /// <p>The Auto Scaling group was specified in an invalid format or does not exist.</p>
     InvalidAutoScalingGroupException(crate::types::error::InvalidAutoScalingGroupException),
     /// <p>The configuration for the blue/green deployment group was provided in an invalid format. For information about deployment configuration format, see <code>CreateDeploymentConfig</code>.</p>
-    InvalidBlueGreenDeploymentConfigurationException(
-        crate::types::error::InvalidBlueGreenDeploymentConfigurationException,
-    ),
+    InvalidBlueGreenDeploymentConfigurationException(crate::types::error::InvalidBlueGreenDeploymentConfigurationException),
     /// <p>The deployment configuration name was specified in an invalid format.</p>
     InvalidDeploymentConfigNameException(crate::types::error::InvalidDeploymentConfigNameException),
     /// <p>The deployment group name was specified in an invalid format.</p>
@@ -238,9 +191,7 @@ pub enum CreateDeploymentGroupError {
     /// <p>An invalid load balancer name, or no load balancer name, was specified.</p>
     InvalidLoadBalancerInfoException(crate::types::error::InvalidLoadBalancerInfoException),
     /// <p>A call was submitted that specified both OnPremisesTagFilters and OnPremisesTagSet, but only one of these data types can be used in a single call.</p>
-    InvalidOnPremisesTagCombinationException(
-        crate::types::error::InvalidOnPremisesTagCombinationException,
-    ),
+    InvalidOnPremisesTagCombinationException(crate::types::error::InvalidOnPremisesTagCombinationException),
     /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.</p>
     InvalidRoleException(crate::types::error::InvalidRoleException),
     /// <p>The tag was specified in an invalid format.</p>
@@ -250,9 +201,7 @@ pub enum CreateDeploymentGroupError {
     /// <p> A target group pair associated with this deployment is not valid. </p>
     InvalidTargetGroupPairException(crate::types::error::InvalidTargetGroupPairException),
     /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
-    InvalidTrafficRoutingConfigurationException(
-        crate::types::error::InvalidTrafficRoutingConfigurationException,
-    ),
+    InvalidTrafficRoutingConfigurationException(crate::types::error::InvalidTrafficRoutingConfigurationException),
     /// <p>The trigger was specified in an invalid format.</p>
     InvalidTriggerConfigException(crate::types::error::InvalidTriggerConfigException),
     /// <p>The limit for lifecycle hooks was exceeded.</p>
@@ -270,9 +219,7 @@ pub enum CreateDeploymentGroupError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for CreateDeploymentGroupError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -325,114 +272,44 @@ impl ::std::fmt::Display for CreateDeploymentGroupError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDeploymentGroupError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::AlarmsLimitExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ApplicationDoesNotExistException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ApplicationNameRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::DeploymentConfigDoesNotExistException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::DeploymentGroupAlreadyExistsException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::DeploymentGroupLimitExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::DeploymentGroupNameRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EcsServiceMappingLimitExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidAlarmConfigException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidApplicationNameException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidAutoRollbackConfigException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidAutoScalingGroupException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidBlueGreenDeploymentConfigurationException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidDeploymentConfigNameException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidDeploymentGroupNameException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidDeploymentStyleException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidEc2TagCombinationException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidEc2TagException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidEcsServiceException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidInputException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidLoadBalancerInfoException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidOnPremisesTagCombinationException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidRoleException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidTagException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidTagsToAddException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidTargetGroupPairException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidTrafficRoutingConfigurationException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidTriggerConfigException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::LifecycleHookLimitExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::RoleRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::TagSetListLimitExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ThrottlingException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::TriggerTargetsLimitExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::AlarmsLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ApplicationDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ApplicationNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DeploymentConfigDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DeploymentGroupAlreadyExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DeploymentGroupLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DeploymentGroupNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EcsServiceMappingLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidAlarmConfigException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidApplicationNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidAutoRollbackConfigException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidAutoScalingGroupException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidBlueGreenDeploymentConfigurationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDeploymentConfigNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDeploymentGroupNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDeploymentStyleException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidEc2TagCombinationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidEc2TagException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidEcsServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidLoadBalancerInfoException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidOnPremisesTagCombinationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidRoleException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTagException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTagsToAddException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTargetGroupPairException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTrafficRoutingConfigurationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTriggerConfigException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LifecycleHookLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RoleRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TagSetListLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TriggerTargetsLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::create_deployment_group::CreateDeploymentGroupError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::create_deployment_group::CreateDeploymentGroupError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -448,27 +325,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for CreateDeploymentGroupError 
 impl CreateDeploymentGroupError {
     /// Creates the `CreateDeploymentGroupError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `CreateDeploymentGroupError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,
@@ -563,10 +427,7 @@ impl CreateDeploymentGroupError {
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupError::InvalidBlueGreenDeploymentConfigurationException`.
     pub fn is_invalid_blue_green_deployment_configuration_exception(&self) -> bool {
-        matches!(
-            self,
-            Self::InvalidBlueGreenDeploymentConfigurationException(_)
-        )
+        matches!(self, Self::InvalidBlueGreenDeploymentConfigurationException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentGroupError::InvalidDeploymentConfigNameException`.
     pub fn is_invalid_deployment_config_name_exception(&self) -> bool {
@@ -655,60 +516,36 @@ impl ::std::error::Error for CreateDeploymentGroupError {
             Self::AlarmsLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ApplicationDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
             Self::ApplicationNameRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::DeploymentConfigDoesNotExistException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::DeploymentGroupAlreadyExistsException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::DeploymentGroupLimitExceededException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::DeploymentGroupNameRequiredException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::EcsServiceMappingLimitExceededException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::DeploymentConfigDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DeploymentGroupAlreadyExistsException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DeploymentGroupLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DeploymentGroupNameRequiredException(_inner) => ::std::option::Option::Some(_inner),
+            Self::EcsServiceMappingLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidAlarmConfigException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidApplicationNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidAutoRollbackConfigException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidAutoScalingGroupException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidBlueGreenDeploymentConfigurationException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::InvalidDeploymentConfigNameException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::InvalidDeploymentGroupNameException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::InvalidBlueGreenDeploymentConfigurationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidDeploymentConfigNameException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidDeploymentGroupNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDeploymentStyleException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidEc2TagCombinationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidEc2TagException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidEcsServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidLoadBalancerInfoException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidOnPremisesTagCombinationException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::InvalidOnPremisesTagCombinationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRoleException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTagException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTagsToAddException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTargetGroupPairException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidTrafficRoutingConfigurationException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::InvalidTrafficRoutingConfigurationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTriggerConfigException(_inner) => ::std::option::Option::Some(_inner),
-            Self::LifecycleHookLimitExceededException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::LifecycleHookLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::RoleRequiredException(_inner) => ::std::option::Option::Some(_inner),
             Self::TagSetListLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
-            Self::TriggerTargetsLimitExceededException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::TriggerTargetsLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

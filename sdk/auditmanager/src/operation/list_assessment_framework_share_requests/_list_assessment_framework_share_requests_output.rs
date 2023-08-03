@@ -5,8 +5,7 @@
 pub struct ListAssessmentFrameworkShareRequestsOutput {
     /// <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned. </p>
     #[doc(hidden)]
-    pub assessment_framework_share_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkShareRequest>>,
+    pub assessment_framework_share_requests: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkShareRequest>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAssessmentFrameworkShareRequestsOutput {
 }
 impl ListAssessmentFrameworkShareRequestsOutput {
     /// <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned. </p>
-    pub fn assessment_framework_share_requests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssessmentFrameworkShareRequest]> {
+    pub fn assessment_framework_share_requests(&self) -> ::std::option::Option<&[crate::types::AssessmentFrameworkShareRequest]> {
         self.assessment_framework_share_requests.as_deref()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAssessmentFrameworkShareRequestsO
 }
 impl ListAssessmentFrameworkShareRequestsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentFrameworkShareRequestsOutput`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput).
-    pub fn builder() -> crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsOutputBuilder{
+    pub fn builder() -> crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsOutputBuilder {
         crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssessmentFrameworkShareRequestsOutput`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentFrameworkShareRequestsOutputBuilder {
-    pub(crate) assessment_framework_share_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkShareRequest>>,
+    pub(crate) assessment_framework_share_requests: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkShareRequest>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListAssessmentFrameworkShareRequestsOutputBuilder {
     /// To override the contents of this collection use [`set_assessment_framework_share_requests`](Self::set_assessment_framework_share_requests).
     ///
     /// <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned. </p>
-    pub fn assessment_framework_share_requests(
-        mut self,
-        input: crate::types::AssessmentFrameworkShareRequest,
-    ) -> Self {
+    pub fn assessment_framework_share_requests(mut self, input: crate::types::AssessmentFrameworkShareRequest) -> Self {
         let mut v = self.assessment_framework_share_requests.unwrap_or_default();
         v.push(input);
         self.assessment_framework_share_requests = ::std::option::Option::Some(v);
@@ -65,18 +56,13 @@ impl ListAssessmentFrameworkShareRequestsOutputBuilder {
     /// <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned. </p>
     pub fn set_assessment_framework_share_requests(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AssessmentFrameworkShareRequest>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkShareRequest>>,
     ) -> Self {
         self.assessment_framework_share_requests = input;
         self
     }
     /// <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned. </p>
-    pub fn get_assessment_framework_share_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkShareRequest>>
-    {
+    pub fn get_assessment_framework_share_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkShareRequest>> {
         &self.assessment_framework_share_requests
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -103,12 +89,10 @@ impl ListAssessmentFrameworkShareRequestsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssessmentFrameworkShareRequestsOutput`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput).
-    pub fn build(self) -> crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput{
+    pub fn build(self) -> crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput {
         crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput {
-            assessment_framework_share_requests: self.assessment_framework_share_requests
-            ,
-            next_token: self.next_token
-            ,
+            assessment_framework_share_requests: self.assessment_framework_share_requests,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

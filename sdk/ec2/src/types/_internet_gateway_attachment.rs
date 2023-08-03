@@ -30,9 +30,7 @@ impl InternetGatewayAttachment {
 
 /// A builder for [`InternetGatewayAttachment`](crate::types::InternetGatewayAttachment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InternetGatewayAttachmentBuilder {
     pub(crate) state: ::std::option::Option<crate::types::AttachmentStatus>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl InternetGatewayAttachmentBuilder {
         self
     }
     /// <p>The current state of the attachment. For an internet gateway, the state is <code>available</code> when attached to a VPC; otherwise, this value is not returned.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::AttachmentStatus>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AttachmentStatus>) -> Self {
         self.state = input;
         self
     }

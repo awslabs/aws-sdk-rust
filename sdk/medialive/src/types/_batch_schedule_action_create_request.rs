@@ -23,12 +23,9 @@ impl BatchScheduleActionCreateRequest {
 
 /// A builder for [`BatchScheduleActionCreateRequest`](crate::types::BatchScheduleActionCreateRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchScheduleActionCreateRequestBuilder {
-    pub(crate) schedule_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
+    pub(crate) schedule_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
 }
 impl BatchScheduleActionCreateRequestBuilder {
     /// Appends an item to `schedule_actions`.
@@ -43,17 +40,12 @@ impl BatchScheduleActionCreateRequestBuilder {
         self
     }
     /// A list of schedule actions to create.
-    pub fn set_schedule_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
-    ) -> Self {
+    pub fn set_schedule_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>) -> Self {
         self.schedule_actions = input;
         self
     }
     /// A list of schedule actions to create.
-    pub fn get_schedule_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>> {
+    pub fn get_schedule_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>> {
         &self.schedule_actions
     }
     /// Consumes the builder and constructs a [`BatchScheduleActionCreateRequest`](crate::types::BatchScheduleActionCreateRequest).

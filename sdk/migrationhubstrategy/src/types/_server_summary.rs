@@ -30,9 +30,7 @@ impl ServerSummary {
 
 /// A builder for [`ServerSummary`](crate::types::ServerSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerSummaryBuilder {
     pub(crate) server_os_type: ::std::option::Option<crate::types::ServerOsType>,
     pub(crate) count: ::std::option::Option<i32>,
@@ -44,10 +42,7 @@ impl ServerSummaryBuilder {
         self
     }
     /// <p> Type of operating system for the servers. </p>
-    pub fn set_server_os_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerOsType>,
-    ) -> Self {
+    pub fn set_server_os_type(mut self, input: ::std::option::Option<crate::types::ServerOsType>) -> Self {
         self.server_os_type = input;
         self
     }

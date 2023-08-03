@@ -22,18 +22,14 @@ impl UpdateResourceDefinitionInput {
 }
 impl UpdateResourceDefinitionInput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceDefinitionInput`](crate::operation::update_resource_definition::UpdateResourceDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::update_resource_definition::builders::UpdateResourceDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_resource_definition::builders::UpdateResourceDefinitionInputBuilder {
         crate::operation::update_resource_definition::builders::UpdateResourceDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResourceDefinitionInput`](crate::operation::update_resource_definition::UpdateResourceDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourceDefinitionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_definition_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl UpdateResourceDefinitionInputBuilder {
         &self.name
     }
     /// The ID of the resource definition.
-    pub fn resource_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the resource definition.
-    pub fn set_resource_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_definition_id = input;
         self
     }
@@ -80,11 +70,9 @@ impl UpdateResourceDefinitionInputBuilder {
         crate::operation::update_resource_definition::UpdateResourceDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_resource_definition::UpdateResourceDefinitionInput {
-                name: self.name,
-                resource_definition_id: self.resource_definition_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_resource_definition::UpdateResourceDefinitionInput {
+            name: self.name,
+            resource_definition_id: self.resource_definition_id,
+        })
     }
 }

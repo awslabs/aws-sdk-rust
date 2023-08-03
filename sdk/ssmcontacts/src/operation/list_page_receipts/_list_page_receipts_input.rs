@@ -29,17 +29,14 @@ impl ListPageReceiptsInput {
 }
 impl ListPageReceiptsInput {
     /// Creates a new builder-style object to manufacture [`ListPageReceiptsInput`](crate::operation::list_page_receipts::ListPageReceiptsInput).
-    pub fn builder() -> crate::operation::list_page_receipts::builders::ListPageReceiptsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_page_receipts::builders::ListPageReceiptsInputBuilder {
         crate::operation::list_page_receipts::builders::ListPageReceiptsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPageReceiptsInput`](crate::operation::list_page_receipts::ListPageReceiptsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPageReceiptsInputBuilder {
     pub(crate) page_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl ListPageReceiptsInputBuilder {
     /// Consumes the builder and constructs a [`ListPageReceiptsInput`](crate::operation::list_page_receipts::ListPageReceiptsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_page_receipts::ListPageReceiptsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_page_receipts::ListPageReceiptsInput {
-                page_id: self.page_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_page_receipts::ListPageReceiptsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_page_receipts::ListPageReceiptsInput {
+            page_id: self.page_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

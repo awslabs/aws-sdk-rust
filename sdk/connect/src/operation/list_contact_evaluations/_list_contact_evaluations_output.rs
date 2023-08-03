@@ -5,8 +5,7 @@
 pub struct ListContactEvaluationsOutput {
     /// <p>Provides details about a list of contact evaluations belonging to an instance.</p>
     #[doc(hidden)]
-    pub evaluation_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>>,
+    pub evaluation_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as null in the response.</p>
     /// </important>
@@ -16,9 +15,7 @@ pub struct ListContactEvaluationsOutput {
 }
 impl ListContactEvaluationsOutput {
     /// <p>Provides details about a list of contact evaluations belonging to an instance.</p>
-    pub fn evaluation_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EvaluationSummary]> {
+    pub fn evaluation_summary_list(&self) -> ::std::option::Option<&[crate::types::EvaluationSummary]> {
         self.evaluation_summary_list.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
@@ -35,21 +32,16 @@ impl ::aws_http::request_id::RequestId for ListContactEvaluationsOutput {
 }
 impl ListContactEvaluationsOutput {
     /// Creates a new builder-style object to manufacture [`ListContactEvaluationsOutput`](crate::operation::list_contact_evaluations::ListContactEvaluationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_contact_evaluations::builders::ListContactEvaluationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_contact_evaluations::builders::ListContactEvaluationsOutputBuilder {
         crate::operation::list_contact_evaluations::builders::ListContactEvaluationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListContactEvaluationsOutput`](crate::operation::list_contact_evaluations::ListContactEvaluationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContactEvaluationsOutputBuilder {
-    pub(crate) evaluation_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>>,
+    pub(crate) evaluation_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -66,17 +58,12 @@ impl ListContactEvaluationsOutputBuilder {
         self
     }
     /// <p>Provides details about a list of contact evaluations belonging to an instance.</p>
-    pub fn set_evaluation_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>>,
-    ) -> Self {
+    pub fn set_evaluation_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>>) -> Self {
         self.evaluation_summary_list = input;
         self
     }
     /// <p>Provides details about a list of contact evaluations belonging to an instance.</p>
-    pub fn get_evaluation_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>> {
+    pub fn get_evaluation_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>> {
         &self.evaluation_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p> <important>

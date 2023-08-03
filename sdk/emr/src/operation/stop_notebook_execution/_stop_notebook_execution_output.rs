@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StopNotebookExecutionOutput {
 }
 impl StopNotebookExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StopNotebookExecutionOutput`](crate::operation::stop_notebook_execution::StopNotebookExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_notebook_execution::builders::StopNotebookExecutionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_notebook_execution::builders::StopNotebookExecutionOutputBuilder {
         crate::operation::stop_notebook_execution::builders::StopNotebookExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopNotebookExecutionOutput`](crate::operation::stop_notebook_execution::StopNotebookExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopNotebookExecutionOutputBuilder {
     _request_id: Option<String>,
 }

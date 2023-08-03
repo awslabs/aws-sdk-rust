@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveRoleFromInstanceProfileOutput {
 }
 impl RemoveRoleFromInstanceProfileOutput {
     /// Creates a new builder-style object to manufacture [`RemoveRoleFromInstanceProfileOutput`](crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileOutput).
-    pub fn builder() -> crate::operation::remove_role_from_instance_profile::builders::RemoveRoleFromInstanceProfileOutputBuilder{
+    pub fn builder() -> crate::operation::remove_role_from_instance_profile::builders::RemoveRoleFromInstanceProfileOutputBuilder {
         crate::operation::remove_role_from_instance_profile::builders::RemoveRoleFromInstanceProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveRoleFromInstanceProfileOutput`](crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveRoleFromInstanceProfileOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl RemoveRoleFromInstanceProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveRoleFromInstanceProfileOutput`](crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileOutput
-    {
+    pub fn build(self) -> crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileOutput {
         crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileOutput {
             _request_id: self._request_id,
         }

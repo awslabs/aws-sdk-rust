@@ -59,9 +59,7 @@ impl FleetCapacity {
 
 /// A builder for [`FleetCapacity`](crate::types::FleetCapacity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FleetCapacityBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
@@ -113,10 +111,7 @@ impl FleetCapacityBuilder {
         self
     }
     /// <p>The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the computing resources in use, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::Ec2InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
@@ -130,10 +125,7 @@ impl FleetCapacityBuilder {
         self
     }
     /// <p>Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.</p>
-    pub fn set_instance_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2InstanceCounts>,
-    ) -> Self {
+    pub fn set_instance_counts(mut self, input: ::std::option::Option<crate::types::Ec2InstanceCounts>) -> Self {
         self.instance_counts = input;
         self
     }

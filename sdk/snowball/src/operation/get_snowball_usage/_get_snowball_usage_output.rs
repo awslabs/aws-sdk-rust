@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetSnowballUsageOutput {
 }
 impl GetSnowballUsageOutput {
     /// Creates a new builder-style object to manufacture [`GetSnowballUsageOutput`](crate::operation::get_snowball_usage::GetSnowballUsageOutput).
-    pub fn builder() -> crate::operation::get_snowball_usage::builders::GetSnowballUsageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_snowball_usage::builders::GetSnowballUsageOutputBuilder {
         crate::operation::get_snowball_usage::builders::GetSnowballUsageOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSnowballUsageOutput`](crate::operation::get_snowball_usage::GetSnowballUsageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSnowballUsageOutputBuilder {
     pub(crate) snowball_limit: ::std::option::Option<i32>,
     pub(crate) snowballs_in_use: ::std::option::Option<i32>,

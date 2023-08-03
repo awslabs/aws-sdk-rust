@@ -32,7 +32,7 @@ impl PutRemediationConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRemediationConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_remediation_configurations::builders::PutRemediationConfigurationsInputBuilder,
+    inner: crate::operation::put_remediation_configurations::builders::PutRemediationConfigurationsInputBuilder,
 }
 impl PutRemediationConfigurationsFluentBuilder {
     /// Creates a new `PutRemediationConfigurations`.
@@ -43,7 +43,7 @@ impl PutRemediationConfigurationsFluentBuilder {
         }
     }
     /// Access the PutRemediationConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_remediation_configurations::builders::PutRemediationConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_remediation_configurations::builders::PutRemediationConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl PutRemediationConfigurationsFluentBuilder {
             crate::operation::put_remediation_configurations::PutRemediationConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_remediation_configurations::PutRemediationConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_remediation_configurations::PutRemediationConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl PutRemediationConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl PutRemediationConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_remediation_configurations::PutRemediationConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_remediation_configurations::PutRemediationConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_remediation_configurations::PutRemediationConfigurationsError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl PutRemediationConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_remediation_configurations::PutRemediationConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_remediation_configurations::PutRemediationConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_remediation_configurations::PutRemediationConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +111,7 @@ impl PutRemediationConfigurationsFluentBuilder {
             crate::operation::put_remediation_configurations::PutRemediationConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_remediation_configurations::PutRemediationConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_remediation_configurations::PutRemediationConfigurationsError>,
     > {
         self.customize_middleware().await
     }
@@ -131,25 +120,17 @@ impl PutRemediationConfigurationsFluentBuilder {
     /// To override the contents of this collection use [`set_remediation_configurations`](Self::set_remediation_configurations).
     ///
     /// <p>A list of remediation configuration objects.</p>
-    pub fn remediation_configurations(
-        mut self,
-        input: crate::types::RemediationConfiguration,
-    ) -> Self {
+    pub fn remediation_configurations(mut self, input: crate::types::RemediationConfiguration) -> Self {
         self.inner = self.inner.remediation_configurations(input);
         self
     }
     /// <p>A list of remediation configuration objects.</p>
-    pub fn set_remediation_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>,
-    ) -> Self {
+    pub fn set_remediation_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>) -> Self {
         self.inner = self.inner.set_remediation_configurations(input);
         self
     }
     /// <p>A list of remediation configuration objects.</p>
-    pub fn get_remediation_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>> {
+    pub fn get_remediation_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>> {
         self.inner.get_remediation_configurations()
     }
 }

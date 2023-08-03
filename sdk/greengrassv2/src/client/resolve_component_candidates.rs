@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ResolveComponentCandidatesOutput`](crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput) with field(s):
     ///   - [`resolved_component_versions(Option<Vec<ResolvedComponentVersion>>)`](crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput::resolved_component_versions): <p>A list of components that meet the requirements that you specify in the request. This list includes each component's recipe that you can use to install the component.</p>
     /// - On failure, responds with [`SdkError<ResolveComponentCandidatesError>`](crate::operation::resolve_component_candidates::ResolveComponentCandidatesError)
-    pub fn resolve_component_candidates(&self) -> crate::operation::resolve_component_candidates::builders::ResolveComponentCandidatesFluentBuilder{
+    pub fn resolve_component_candidates(&self) -> crate::operation::resolve_component_candidates::builders::ResolveComponentCandidatesFluentBuilder {
         crate::operation::resolve_component_candidates::builders::ResolveComponentCandidatesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateCrawlerScheduleOutput {
 }
 impl UpdateCrawlerScheduleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCrawlerScheduleOutput`](crate::operation::update_crawler_schedule::UpdateCrawlerScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::update_crawler_schedule::builders::UpdateCrawlerScheduleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_crawler_schedule::builders::UpdateCrawlerScheduleOutputBuilder {
         crate::operation::update_crawler_schedule::builders::UpdateCrawlerScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCrawlerScheduleOutput`](crate::operation::update_crawler_schedule::UpdateCrawlerScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCrawlerScheduleOutputBuilder {
     _request_id: Option<String>,
 }

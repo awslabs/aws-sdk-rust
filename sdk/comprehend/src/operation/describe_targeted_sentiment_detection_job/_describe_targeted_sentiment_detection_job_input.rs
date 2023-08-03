@@ -15,16 +15,14 @@ impl DescribeTargetedSentimentDetectionJobInput {
 }
 impl DescribeTargetedSentimentDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeTargetedSentimentDetectionJobInput`](crate::operation::describe_targeted_sentiment_detection_job::DescribeTargetedSentimentDetectionJobInput).
-    pub fn builder() -> crate::operation::describe_targeted_sentiment_detection_job::builders::DescribeTargetedSentimentDetectionJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_targeted_sentiment_detection_job::builders::DescribeTargetedSentimentDetectionJobInputBuilder {
         crate::operation::describe_targeted_sentiment_detection_job::builders::DescribeTargetedSentimentDetectionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTargetedSentimentDetectionJobInput`](crate::operation::describe_targeted_sentiment_detection_job::DescribeTargetedSentimentDetectionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTargetedSentimentDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl DescribeTargetedSentimentDetectionJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`DescribeTargetedSentimentDetectionJobInput`](crate::operation::describe_targeted_sentiment_detection_job::DescribeTargetedSentimentDetectionJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_targeted_sentiment_detection_job::DescribeTargetedSentimentDetectionJobInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_targeted_sentiment_detection_job::DescribeTargetedSentimentDetectionJobInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::describe_targeted_sentiment_detection_job::DescribeTargetedSentimentDetectionJobInput {
-                job_id: self.job_id
-                ,
-            }
+            crate::operation::describe_targeted_sentiment_detection_job::DescribeTargetedSentimentDetectionJobInput { job_id: self.job_id },
         )
     }
 }

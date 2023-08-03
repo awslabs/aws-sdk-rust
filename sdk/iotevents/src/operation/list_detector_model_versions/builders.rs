@@ -26,7 +26,7 @@ impl ListDetectorModelVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDetectorModelVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_detector_model_versions::builders::ListDetectorModelVersionsInputBuilder,
+    inner: crate::operation::list_detector_model_versions::builders::ListDetectorModelVersionsInputBuilder,
 }
 impl ListDetectorModelVersionsFluentBuilder {
     /// Creates a new `ListDetectorModelVersions`.
@@ -37,7 +37,7 @@ impl ListDetectorModelVersionsFluentBuilder {
         }
     }
     /// Access the ListDetectorModelVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_detector_model_versions::builders::ListDetectorModelVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_detector_model_versions::builders::ListDetectorModelVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListDetectorModelVersionsFluentBuilder {
             crate::operation::list_detector_model_versions::ListDetectorModelVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_detector_model_versions::ListDetectorModelVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_detector_model_versions::ListDetectorModelVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListDetectorModelVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListDetectorModelVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_detector_model_versions::ListDetectorModelVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_detector_model_versions::ListDetectorModelVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_detector_model_versions::ListDetectorModelVersionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListDetectorModelVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_detector_model_versions::ListDetectorModelVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_detector_model_versions::ListDetectorModelVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_detector_model_versions::ListDetectorModelVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ListDetectorModelVersionsFluentBuilder {
             crate::operation::list_detector_model_versions::ListDetectorModelVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_detector_model_versions::ListDetectorModelVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_detector_model_versions::ListDetectorModelVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the detector model whose versions are returned.</p>
-    pub fn detector_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_model_name(input.into());
         self
     }
     /// <p>The name of the detector model whose versions are returned.</p>
-    pub fn set_detector_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_model_name(input);
         self
     }

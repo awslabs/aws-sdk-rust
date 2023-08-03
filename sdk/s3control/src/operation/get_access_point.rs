@@ -9,10 +9,7 @@ impl GetAccessPointInput {
         &self,
         _config: &crate::config::Config,
     ) -> ::std::result::Result<
-        ::aws_smithy_http::operation::Operation<
-            crate::operation::get_access_point::GetAccessPoint,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        ::aws_smithy_http::operation::Operation<crate::operation::get_access_point::GetAccessPoint, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::operation::error::BuildError,
     > {
         assert_ne!(
@@ -31,65 +28,39 @@ impl GetAccessPointInput {
             .set_account_id(self.account_id.clone())
             .set_access_point_name(self.name.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::get_access_point::GetAccessPointInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.name;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("name", "cannot be empty or unset"))?;
+                let name = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
+                if name.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "name",
                         "cannot be empty or unset",
-                    )
-                })?;
-                let name = ::aws_smithy_http::label::fmt_string(
-                    input_1,
-                    ::aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if name.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "name",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
-                ::std::write!(output, "/v20180820/accesspoint/{Name}", Name = name)
-                    .expect("formatting should succeed");
+                ::std::write!(output, "/v20180820/accesspoint/{Name}", Name = name).expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::get_access_point::GetAccessPointInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::protocol_serde::shape_get_access_point::ser_get_access_point_headers(
-                        input, builder,
-                    )?;
+                let builder = crate::protocol_serde::shape_get_access_point::ser_get_access_point_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
@@ -108,10 +79,8 @@ impl GetAccessPointInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -121,29 +90,16 @@ impl GetAccessPointInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::get_access_point::GetAccessPoint::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "GetAccessPoint",
-            "s3control",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::get_access_point::GetAccessPoint::new())
+            .with_metadata(::aws_smithy_http::operation::Metadata::new("GetAccessPoint", "s3control"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -160,19 +116,15 @@ impl GetAccessPoint {
     }
 }
 impl ::aws_smithy_http::response::ParseStrictResponse for GetAccessPoint {
-    type Output = ::std::result::Result<
-        crate::operation::get_access_point::GetAccessPointOutput,
-        crate::operation::get_access_point::GetAccessPointError,
-    >;
+    type Output =
+        ::std::result::Result<crate::operation::get_access_point::GetAccessPointOutput, crate::operation::get_access_point::GetAccessPointError>;
     fn parse(&self, response: &::http::Response<::bytes::Bytes>) -> Self::Output {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
         let body = response.body().as_ref();
         ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
         if !success && status != 200 {
-            crate::protocol_serde::shape_get_access_point::de_get_access_point_http_error(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_access_point::de_get_access_point_http_error(status, headers, body)
         } else {
             crate::protocol_serde::shape_get_access_point::de_get_access_point_http_response_with_props(status, headers, body)
         }
@@ -195,9 +147,7 @@ pub enum GetAccessPointError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for GetAccessPointError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -217,9 +167,7 @@ impl ::std::fmt::Display for GetAccessPointError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetAccessPointError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
@@ -239,27 +187,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for GetAccessPointError {
 impl GetAccessPointError {
     /// Creates the `GetAccessPointError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `GetAccessPointError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,

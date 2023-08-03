@@ -32,11 +32,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::request_phone_number::RequestPhoneNumberOutput::tags): <p>An array of key and value pair tags that are associated with the phone number.</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::request_phone_number::RequestPhoneNumberOutput::created_timestamp): <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     /// - On failure, responds with [`SdkError<RequestPhoneNumberError>`](crate::operation::request_phone_number::RequestPhoneNumberError)
-    pub fn request_phone_number(
-        &self,
-    ) -> crate::operation::request_phone_number::builders::RequestPhoneNumberFluentBuilder {
-        crate::operation::request_phone_number::builders::RequestPhoneNumberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn request_phone_number(&self) -> crate::operation::request_phone_number::builders::RequestPhoneNumberFluentBuilder {
+        crate::operation::request_phone_number::builders::RequestPhoneNumberFluentBuilder::new(self.handle.clone())
     }
 }

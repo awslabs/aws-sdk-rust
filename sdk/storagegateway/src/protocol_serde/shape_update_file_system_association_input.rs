@@ -4,9 +4,7 @@ pub fn ser_update_file_system_association_input(
     input: &crate::operation::update_file_system_association::UpdateFileSystemAssociationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.file_system_association_arn {
-        object
-            .key("FileSystemAssociationARN")
-            .string(var_1.as_str());
+        object.key("FileSystemAssociationARN").string(var_1.as_str());
     }
     if let Some(var_2) = &input.user_name {
         object.key("UserName").string(var_2.as_str());

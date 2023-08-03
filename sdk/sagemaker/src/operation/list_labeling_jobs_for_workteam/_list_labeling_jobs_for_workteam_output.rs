@@ -5,8 +5,7 @@
 pub struct ListLabelingJobsForWorkteamOutput {
     /// <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
     #[doc(hidden)]
-    pub labeling_job_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::LabelingJobForWorkteamSummary>>,
+    pub labeling_job_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::LabelingJobForWorkteamSummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListLabelingJobsForWorkteamOutput {
 }
 impl ListLabelingJobsForWorkteamOutput {
     /// <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
-    pub fn labeling_job_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LabelingJobForWorkteamSummary]> {
+    pub fn labeling_job_summary_list(&self) -> ::std::option::Option<&[crate::types::LabelingJobForWorkteamSummary]> {
         self.labeling_job_summary_list.as_deref()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListLabelingJobsForWorkteamOutput {
 }
 impl ListLabelingJobsForWorkteamOutput {
     /// Creates a new builder-style object to manufacture [`ListLabelingJobsForWorkteamOutput`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamOutput).
-    pub fn builder() -> crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamOutputBuilder{
+    pub fn builder() -> crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamOutputBuilder {
         crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLabelingJobsForWorkteamOutput`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLabelingJobsForWorkteamOutputBuilder {
-    pub(crate) labeling_job_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::LabelingJobForWorkteamSummary>>,
+    pub(crate) labeling_job_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::LabelingJobForWorkteamSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListLabelingJobsForWorkteamOutputBuilder {
     /// To override the contents of this collection use [`set_labeling_job_summary_list`](Self::set_labeling_job_summary_list).
     ///
     /// <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
-    pub fn labeling_job_summary_list(
-        mut self,
-        input: crate::types::LabelingJobForWorkteamSummary,
-    ) -> Self {
+    pub fn labeling_job_summary_list(mut self, input: crate::types::LabelingJobForWorkteamSummary) -> Self {
         let mut v = self.labeling_job_summary_list.unwrap_or_default();
         v.push(input);
         self.labeling_job_summary_list = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListLabelingJobsForWorkteamOutputBuilder {
         self
     }
     /// <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
-    pub fn get_labeling_job_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelingJobForWorkteamSummary>> {
+    pub fn get_labeling_job_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelingJobForWorkteamSummary>> {
         &self.labeling_job_summary_list
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
@@ -100,9 +89,7 @@ impl ListLabelingJobsForWorkteamOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListLabelingJobsForWorkteamOutput`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamOutput {
+    pub fn build(self) -> crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamOutput {
         crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamOutput {
             labeling_job_summary_list: self.labeling_job_summary_list,
             next_token: self.next_token,

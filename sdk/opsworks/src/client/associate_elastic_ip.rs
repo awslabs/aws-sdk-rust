@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::associate_elastic_ip::builders::AssociateElasticIpFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::associate_elastic_ip::builders::AssociateElasticIpFluentBuilder::set_instance_id): <p>The instance ID.</p>
     /// - On success, responds with [`AssociateElasticIpOutput`](crate::operation::associate_elastic_ip::AssociateElasticIpOutput)
     /// - On failure, responds with [`SdkError<AssociateElasticIpError>`](crate::operation::associate_elastic_ip::AssociateElasticIpError)
-    pub fn associate_elastic_ip(
-        &self,
-    ) -> crate::operation::associate_elastic_ip::builders::AssociateElasticIpFluentBuilder {
-        crate::operation::associate_elastic_ip::builders::AssociateElasticIpFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_elastic_ip(&self) -> crate::operation::associate_elastic_ip::builders::AssociateElasticIpFluentBuilder {
+        crate::operation::associate_elastic_ip::builders::AssociateElasticIpFluentBuilder::new(self.handle.clone())
     }
 }

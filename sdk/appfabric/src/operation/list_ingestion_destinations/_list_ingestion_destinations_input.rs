@@ -38,16 +38,14 @@ impl ListIngestionDestinationsInput {
 }
 impl ListIngestionDestinationsInput {
     /// Creates a new builder-style object to manufacture [`ListIngestionDestinationsInput`](crate::operation::list_ingestion_destinations::ListIngestionDestinationsInput).
-    pub fn builder() -> crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsInputBuilder{
+    pub fn builder() -> crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsInputBuilder {
         crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListIngestionDestinationsInput`](crate::operation::list_ingestion_destinations::ListIngestionDestinationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIngestionDestinationsInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_identifier: ::std::option::Option<::std::string::String>,
@@ -56,18 +54,12 @@ pub struct ListIngestionDestinationsInputBuilder {
 }
 impl ListIngestionDestinationsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_bundle_identifier = input;
         self
     }
@@ -76,18 +68,12 @@ impl ListIngestionDestinationsInputBuilder {
         &self.app_bundle_identifier
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
-    pub fn ingestion_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingestion_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
-    pub fn set_ingestion_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ingestion_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ingestion_identifier = input;
         self
     }
@@ -133,13 +119,11 @@ impl ListIngestionDestinationsInputBuilder {
         crate::operation::list_ingestion_destinations::ListIngestionDestinationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_ingestion_destinations::ListIngestionDestinationsInput {
-                app_bundle_identifier: self.app_bundle_identifier,
-                ingestion_identifier: self.ingestion_identifier,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_ingestion_destinations::ListIngestionDestinationsInput {
+            app_bundle_identifier: self.app_bundle_identifier,
+            ingestion_identifier: self.ingestion_identifier,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

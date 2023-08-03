@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteKxDatabaseOutput {
 }
 impl DeleteKxDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`DeleteKxDatabaseOutput`](crate::operation::delete_kx_database::DeleteKxDatabaseOutput).
-    pub fn builder() -> crate::operation::delete_kx_database::builders::DeleteKxDatabaseOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_kx_database::builders::DeleteKxDatabaseOutputBuilder {
         crate::operation::delete_kx_database::builders::DeleteKxDatabaseOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteKxDatabaseOutput`](crate::operation::delete_kx_database::DeleteKxDatabaseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteKxDatabaseOutputBuilder {
     _request_id: Option<String>,
 }

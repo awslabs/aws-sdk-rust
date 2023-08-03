@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`findings(Option<Vec<AccessPreviewFinding>>)`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput::findings): <p>A list of access preview findings that match the specified filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput::next_token): <p>A token used for pagination of results returned.</p>
     /// - On failure, responds with [`SdkError<ListAccessPreviewFindingsError>`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsError)
-    pub fn list_access_preview_findings(&self) -> crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder{
+    pub fn list_access_preview_findings(&self) -> crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder {
         crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder::new(self.handle.clone())
     }
 }

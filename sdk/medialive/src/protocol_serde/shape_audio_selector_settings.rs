@@ -12,28 +12,19 @@ pub fn ser_audio_selector_settings(
     if let Some(var_3) = &input.audio_language_selection {
         #[allow(unused_mut)]
         let mut object_4 = object.key("audioLanguageSelection").start_object();
-        crate::protocol_serde::shape_audio_language_selection::ser_audio_language_selection(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_audio_language_selection::ser_audio_language_selection(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.audio_pid_selection {
         #[allow(unused_mut)]
         let mut object_6 = object.key("audioPidSelection").start_object();
-        crate::protocol_serde::shape_audio_pid_selection::ser_audio_pid_selection(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_audio_pid_selection::ser_audio_pid_selection(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.audio_track_selection {
         #[allow(unused_mut)]
         let mut object_8 = object.key("audioTrackSelection").start_object();
-        crate::protocol_serde::shape_audio_track_selection::ser_audio_track_selection(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_audio_track_selection::ser_audio_track_selection(&mut object_8, var_7)?;
         object_8.finish();
     }
     Ok(())
@@ -41,17 +32,9 @@ pub fn ser_audio_selector_settings(
 
 pub(crate) fn de_audio_selector_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AudioSelectorSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AudioSelectorSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -61,46 +44,39 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "audioHlsRenditionSelection" => {
-                                builder = builder.set_audio_hls_rendition_selection(
-                                    crate::protocol_serde::shape_audio_hls_rendition_selection::de_audio_hls_rendition_selection(tokens)?
-                                );
-                            }
-                            "audioLanguageSelection" => {
-                                builder = builder.set_audio_language_selection(
-                                    crate::protocol_serde::shape_audio_language_selection::de_audio_language_selection(tokens)?
-                                );
-                            }
-                            "audioPidSelection" => {
-                                builder = builder.set_audio_pid_selection(
-                                    crate::protocol_serde::shape_audio_pid_selection::de_audio_pid_selection(tokens)?
-                                );
-                            }
-                            "audioTrackSelection" => {
-                                builder = builder.set_audio_track_selection(
-                                    crate::protocol_serde::shape_audio_track_selection::de_audio_track_selection(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "audioHlsRenditionSelection" => {
+                            builder = builder.set_audio_hls_rendition_selection(
+                                crate::protocol_serde::shape_audio_hls_rendition_selection::de_audio_hls_rendition_selection(tokens)?,
+                            );
                         }
-                    }
+                        "audioLanguageSelection" => {
+                            builder = builder.set_audio_language_selection(
+                                crate::protocol_serde::shape_audio_language_selection::de_audio_language_selection(tokens)?,
+                            );
+                        }
+                        "audioPidSelection" => {
+                            builder =
+                                builder.set_audio_pid_selection(crate::protocol_serde::shape_audio_pid_selection::de_audio_pid_selection(tokens)?);
+                        }
+                        "audioTrackSelection" => {
+                            builder = builder
+                                .set_audio_track_selection(crate::protocol_serde::shape_audio_track_selection::de_audio_track_selection(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

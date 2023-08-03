@@ -5,8 +5,7 @@
 pub struct ListSecurityControlDefinitionsOutput {
     /// <p> An array of controls that apply to the specified standard. </p>
     #[doc(hidden)]
-    pub security_control_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlDefinition>>,
+    pub security_control_definitions: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlDefinition>>,
     /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSecurityControlDefinitionsOutput {
 }
 impl ListSecurityControlDefinitionsOutput {
     /// <p> An array of controls that apply to the specified standard. </p>
-    pub fn security_control_definitions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SecurityControlDefinition]> {
+    pub fn security_control_definitions(&self) -> ::std::option::Option<&[crate::types::SecurityControlDefinition]> {
         self.security_control_definitions.as_deref()
     }
     /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSecurityControlDefinitionsOutput 
 }
 impl ListSecurityControlDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityControlDefinitionsOutput`](crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput).
-    pub fn builder() -> crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsOutputBuilder {
         crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecurityControlDefinitionsOutput`](crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityControlDefinitionsOutputBuilder {
-    pub(crate) security_control_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlDefinition>>,
+    pub(crate) security_control_definitions: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListSecurityControlDefinitionsOutputBuilder {
     /// To override the contents of this collection use [`set_security_control_definitions`](Self::set_security_control_definitions).
     ///
     /// <p> An array of controls that apply to the specified standard. </p>
-    pub fn security_control_definitions(
-        mut self,
-        input: crate::types::SecurityControlDefinition,
-    ) -> Self {
+    pub fn security_control_definitions(mut self, input: crate::types::SecurityControlDefinition) -> Self {
         let mut v = self.security_control_definitions.unwrap_or_default();
         v.push(input);
         self.security_control_definitions = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListSecurityControlDefinitionsOutputBuilder {
         self
     }
     /// <p> An array of controls that apply to the specified standard. </p>
-    pub fn get_security_control_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityControlDefinition>> {
+    pub fn get_security_control_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityControlDefinition>> {
         &self.security_control_definitions
     }
     /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
@@ -100,10 +89,7 @@ impl ListSecurityControlDefinitionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSecurityControlDefinitionsOutput`](crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput
-    {
+    pub fn build(self) -> crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput {
         crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput {
             security_control_definitions: self.security_control_definitions,
             next_token: self.next_token,

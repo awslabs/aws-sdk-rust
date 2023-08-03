@@ -5,9 +5,7 @@
 pub struct ListDominantLanguageDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub dominant_language_detection_job_properties_list: ::std::option::Option<
-        ::std::vec::Vec<crate::types::DominantLanguageDetectionJobProperties>,
-    >,
+    pub dominant_language_detection_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::DominantLanguageDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,11 +13,8 @@ pub struct ListDominantLanguageDetectionJobsOutput {
 }
 impl ListDominantLanguageDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn dominant_language_detection_job_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DominantLanguageDetectionJobProperties]> {
-        self.dominant_language_detection_job_properties_list
-            .as_deref()
+    pub fn dominant_language_detection_job_properties_list(&self) -> ::std::option::Option<&[crate::types::DominantLanguageDetectionJobProperties]> {
+        self.dominant_language_detection_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -33,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListDominantLanguageDetectionJobsOutp
 }
 impl ListDominantLanguageDetectionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListDominantLanguageDetectionJobsOutput`](crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobsOutput).
-    pub fn builder() -> crate::operation::list_dominant_language_detection_jobs::builders::ListDominantLanguageDetectionJobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_dominant_language_detection_jobs::builders::ListDominantLanguageDetectionJobsOutputBuilder {
         crate::operation::list_dominant_language_detection_jobs::builders::ListDominantLanguageDetectionJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDominantLanguageDetectionJobsOutput`](crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDominantLanguageDetectionJobsOutputBuilder {
-    pub(crate) dominant_language_detection_job_properties_list: ::std::option::Option<
-        ::std::vec::Vec<crate::types::DominantLanguageDetectionJobProperties>,
-    >,
+    pub(crate) dominant_language_detection_job_properties_list:
+        ::std::option::Option<::std::vec::Vec<crate::types::DominantLanguageDetectionJobProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -56,13 +48,8 @@ impl ListDominantLanguageDetectionJobsOutputBuilder {
     /// To override the contents of this collection use [`set_dominant_language_detection_job_properties_list`](Self::set_dominant_language_detection_job_properties_list).
     ///
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn dominant_language_detection_job_properties_list(
-        mut self,
-        input: crate::types::DominantLanguageDetectionJobProperties,
-    ) -> Self {
-        let mut v = self
-            .dominant_language_detection_job_properties_list
-            .unwrap_or_default();
+    pub fn dominant_language_detection_job_properties_list(mut self, input: crate::types::DominantLanguageDetectionJobProperties) -> Self {
+        let mut v = self.dominant_language_detection_job_properties_list.unwrap_or_default();
         v.push(input);
         self.dominant_language_detection_job_properties_list = ::std::option::Option::Some(v);
         self
@@ -70,9 +57,7 @@ impl ListDominantLanguageDetectionJobsOutputBuilder {
     /// <p>A list containing the properties of each job that is returned.</p>
     pub fn set_dominant_language_detection_job_properties_list(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::DominantLanguageDetectionJobProperties>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DominantLanguageDetectionJobProperties>>,
     ) -> Self {
         self.dominant_language_detection_job_properties_list = input;
         self
@@ -80,8 +65,7 @@ impl ListDominantLanguageDetectionJobsOutputBuilder {
     /// <p>A list containing the properties of each job that is returned.</p>
     pub fn get_dominant_language_detection_job_properties_list(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DominantLanguageDetectionJobProperties>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DominantLanguageDetectionJobProperties>> {
         &self.dominant_language_detection_job_properties_list
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -108,12 +92,10 @@ impl ListDominantLanguageDetectionJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDominantLanguageDetectionJobsOutput`](crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobsOutput).
-    pub fn build(self) -> crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobsOutput{
+    pub fn build(self) -> crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobsOutput {
         crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobsOutput {
-            dominant_language_detection_job_properties_list: self.dominant_language_detection_job_properties_list
-            ,
-            next_token: self.next_token
-            ,
+            dominant_language_detection_job_properties_list: self.dominant_language_detection_job_properties_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

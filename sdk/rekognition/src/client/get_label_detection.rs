@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`job_tag(Option<String>)`](crate::operation::get_label_detection::GetLabelDetectionOutput::job_tag): <p>A job identifier specified in the call to StartLabelDetection and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
     ///   - [`get_request_metadata(Option<GetLabelDetectionRequestMetadata>)`](crate::operation::get_label_detection::GetLabelDetectionOutput::get_request_metadata): <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
     /// - On failure, responds with [`SdkError<GetLabelDetectionError>`](crate::operation::get_label_detection::GetLabelDetectionError)
-    pub fn get_label_detection(
-        &self,
-    ) -> crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder {
-        crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_label_detection(&self) -> crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder {
+        crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder::new(self.handle.clone())
     }
 }

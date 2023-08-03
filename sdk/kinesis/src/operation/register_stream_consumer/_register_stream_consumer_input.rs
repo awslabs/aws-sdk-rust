@@ -22,18 +22,14 @@ impl RegisterStreamConsumerInput {
 }
 impl RegisterStreamConsumerInput {
     /// Creates a new builder-style object to manufacture [`RegisterStreamConsumerInput`](crate::operation::register_stream_consumer::RegisterStreamConsumerInput).
-    pub fn builder(
-    ) -> crate::operation::register_stream_consumer::builders::RegisterStreamConsumerInputBuilder
-    {
+    pub fn builder() -> crate::operation::register_stream_consumer::builders::RegisterStreamConsumerInputBuilder {
         crate::operation::register_stream_consumer::builders::RegisterStreamConsumerInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterStreamConsumerInput`](crate::operation::register_stream_consumer::RegisterStreamConsumerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterStreamConsumerInputBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) consumer_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl RegisterStreamConsumerInputBuilder {
         &self.stream_arn
     }
     /// <p>For a given Kinesis data stream, each consumer must have a unique name. However, consumer names don't have to be unique across data streams.</p>
-    pub fn consumer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn consumer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For a given Kinesis data stream, each consumer must have a unique name. However, consumer names don't have to be unique across data streams.</p>
-    pub fn set_consumer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_consumer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.consumer_name = input;
         self
     }
@@ -76,15 +66,11 @@ impl RegisterStreamConsumerInputBuilder {
     /// Consumes the builder and constructs a [`RegisterStreamConsumerInput`](crate::operation::register_stream_consumer::RegisterStreamConsumerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_stream_consumer::RegisterStreamConsumerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::register_stream_consumer::RegisterStreamConsumerInput {
-                stream_arn: self.stream_arn,
-                consumer_name: self.consumer_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::register_stream_consumer::RegisterStreamConsumerInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::register_stream_consumer::RegisterStreamConsumerInput {
+            stream_arn: self.stream_arn,
+            consumer_name: self.consumer_name,
+        })
     }
 }

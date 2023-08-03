@@ -21,21 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeEntityAggregatesOutput {
 }
 impl DescribeEntityAggregatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEntityAggregatesOutput`](crate::operation::describe_entity_aggregates::DescribeEntityAggregatesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesOutputBuilder {
         crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEntityAggregatesOutput`](crate::operation::describe_entity_aggregates::DescribeEntityAggregatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEntityAggregatesOutputBuilder {
-    pub(crate) entity_aggregates:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntityAggregate>>,
+    pub(crate) entity_aggregates: ::std::option::Option<::std::vec::Vec<crate::types::EntityAggregate>>,
     _request_id: Option<String>,
 }
 impl DescribeEntityAggregatesOutputBuilder {
@@ -51,17 +46,12 @@ impl DescribeEntityAggregatesOutputBuilder {
         self
     }
     /// <p>The number of entities that are affected by each of the specified events.</p>
-    pub fn set_entity_aggregates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityAggregate>>,
-    ) -> Self {
+    pub fn set_entity_aggregates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityAggregate>>) -> Self {
         self.entity_aggregates = input;
         self
     }
     /// <p>The number of entities that are affected by each of the specified events.</p>
-    pub fn get_entity_aggregates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityAggregate>> {
+    pub fn get_entity_aggregates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityAggregate>> {
         &self.entity_aggregates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -74,9 +64,7 @@ impl DescribeEntityAggregatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEntityAggregatesOutput`](crate::operation::describe_entity_aggregates::DescribeEntityAggregatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_entity_aggregates::DescribeEntityAggregatesOutput {
+    pub fn build(self) -> crate::operation::describe_entity_aggregates::DescribeEntityAggregatesOutput {
         crate::operation::describe_entity_aggregates::DescribeEntityAggregatesOutput {
             entity_aggregates: self.entity_aggregates,
             _request_id: self._request_id,

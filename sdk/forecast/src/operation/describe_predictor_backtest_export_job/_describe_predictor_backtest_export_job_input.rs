@@ -15,49 +15,43 @@ impl DescribePredictorBacktestExportJobInput {
 }
 impl DescribePredictorBacktestExportJobInput {
     /// Creates a new builder-style object to manufacture [`DescribePredictorBacktestExportJobInput`](crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobInput).
-    pub fn builder() -> crate::operation::describe_predictor_backtest_export_job::builders::DescribePredictorBacktestExportJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_predictor_backtest_export_job::builders::DescribePredictorBacktestExportJobInputBuilder {
         crate::operation::describe_predictor_backtest_export_job::builders::DescribePredictorBacktestExportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePredictorBacktestExportJobInput`](crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePredictorBacktestExportJobInputBuilder {
     pub(crate) predictor_backtest_export_job_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribePredictorBacktestExportJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
-    pub fn predictor_backtest_export_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_backtest_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_backtest_export_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
-    pub fn set_predictor_backtest_export_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_backtest_export_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.predictor_backtest_export_job_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
-    pub fn get_predictor_backtest_export_job_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_predictor_backtest_export_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.predictor_backtest_export_job_arn
     }
     /// Consumes the builder and constructs a [`DescribePredictorBacktestExportJobInput`](crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobInput {
-                predictor_backtest_export_job_arn: self.predictor_backtest_export_job_arn
-                ,
-            }
+                predictor_backtest_export_job_arn: self.predictor_backtest_export_job_arn,
+            },
         )
     }
 }

@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`service_configurations(Option<Vec<ServiceConfiguration>>)`](crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsOutput::service_configurations): <p>Information about the services.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcEndpointServiceConfigurationsError>`](crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsError)
-    pub fn describe_vpc_endpoint_service_configurations(&self) -> crate::operation::describe_vpc_endpoint_service_configurations::builders::DescribeVpcEndpointServiceConfigurationsFluentBuilder{
-        crate::operation::describe_vpc_endpoint_service_configurations::builders::DescribeVpcEndpointServiceConfigurationsFluentBuilder::new(self.handle.clone())
+    pub fn describe_vpc_endpoint_service_configurations(
+        &self,
+    ) -> crate::operation::describe_vpc_endpoint_service_configurations::builders::DescribeVpcEndpointServiceConfigurationsFluentBuilder {
+        crate::operation::describe_vpc_endpoint_service_configurations::builders::DescribeVpcEndpointServiceConfigurationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

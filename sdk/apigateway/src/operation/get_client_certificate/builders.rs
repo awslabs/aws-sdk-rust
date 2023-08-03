@@ -37,9 +37,7 @@ impl GetClientCertificateFluentBuilder {
         }
     }
     /// Access the GetClientCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_client_certificate::builders::GetClientCertificateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_client_certificate::builders::GetClientCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetClientCertificateFluentBuilder {
             crate::operation::get_client_certificate::GetClientCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_client_certificate::GetClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_client_certificate::GetClientCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetClientCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetClientCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_client_certificate::GetClientCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_client_certificate::GetClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_client_certificate::GetClientCertificateError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetClientCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_client_certificate::GetClientCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_client_certificate::GetClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_client_certificate::GetClientCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetClientCertificateFluentBuilder {
             crate::operation::get_client_certificate::GetClientCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_client_certificate::GetClientCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_client_certificate::GetClientCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the ClientCertificate resource to be described.</p>
-    pub fn client_certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_certificate_id(input.into());
         self
     }
     /// <p>The identifier of the ClientCertificate resource to be described.</p>
-    pub fn set_client_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_certificate_id(input);
         self
     }

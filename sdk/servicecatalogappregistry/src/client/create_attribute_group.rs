@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAttributeGroupOutput`](crate::operation::create_attribute_group::CreateAttributeGroupOutput) with field(s):
     ///   - [`attribute_group(Option<AttributeGroup>)`](crate::operation::create_attribute_group::CreateAttributeGroupOutput::attribute_group): <p>Information about the attribute group.</p>
     /// - On failure, responds with [`SdkError<CreateAttributeGroupError>`](crate::operation::create_attribute_group::CreateAttributeGroupError)
-    pub fn create_attribute_group(
-        &self,
-    ) -> crate::operation::create_attribute_group::builders::CreateAttributeGroupFluentBuilder {
-        crate::operation::create_attribute_group::builders::CreateAttributeGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_attribute_group(&self) -> crate::operation::create_attribute_group::builders::CreateAttributeGroupFluentBuilder {
+        crate::operation::create_attribute_group::builders::CreateAttributeGroupFluentBuilder::new(self.handle.clone())
     }
 }

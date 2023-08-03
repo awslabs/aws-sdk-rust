@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`key_group(Option<KeyGroup>)`](crate::operation::update_key_group::UpdateKeyGroupOutput::key_group): <p>The key group that was just updated.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::update_key_group::UpdateKeyGroupOutput::e_tag): <p>The identifier for this version of the key group.</p>
     /// - On failure, responds with [`SdkError<UpdateKeyGroupError>`](crate::operation::update_key_group::UpdateKeyGroupError)
-    pub fn update_key_group(
-        &self,
-    ) -> crate::operation::update_key_group::builders::UpdateKeyGroupFluentBuilder {
-        crate::operation::update_key_group::builders::UpdateKeyGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_key_group(&self) -> crate::operation::update_key_group::builders::UpdateKeyGroupFluentBuilder {
+        crate::operation::update_key_group::builders::UpdateKeyGroupFluentBuilder::new(self.handle.clone())
     }
 }

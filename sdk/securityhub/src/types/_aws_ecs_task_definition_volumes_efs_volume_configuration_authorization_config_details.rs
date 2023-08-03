@@ -23,34 +23,26 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails
 }
 impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetailsBuilder {
     pub(crate) access_point_id: ::std::option::Option<::std::string::String>,
     pub(crate) iam: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetailsBuilder {
     /// <p>The Amazon EFS access point identifier to use.</p>
-    pub fn access_point_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EFS access point identifier to use.</p>
-    pub fn set_access_point_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_point_id = input;
         self
     }
@@ -73,10 +65,7 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails
         &self.iam
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails
-    {
+    pub fn build(self) -> crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails {
         crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails {
             access_point_id: self.access_point_id,
             iam: self.iam,

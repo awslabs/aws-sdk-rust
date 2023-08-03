@@ -31,9 +31,7 @@ impl SuspendedProcess {
 
 /// A builder for [`SuspendedProcess`](crate::types::SuspendedProcess).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuspendedProcessBuilder {
     pub(crate) process_name: ::std::option::Option<::std::string::String>,
     pub(crate) suspension_reason: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ impl SuspendedProcessBuilder {
         &self.process_name
     }
     /// <p>The reason that the process was suspended.</p>
-    pub fn suspension_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suspension_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suspension_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason that the process was suspended.</p>
-    pub fn set_suspension_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suspension_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suspension_reason = input;
         self
     }

@@ -10,10 +10,7 @@ impl UpdateDatasetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_dataset::UpdateDatasetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dataset::UpdateDatasetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dataset::UpdateDatasetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_dataset();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateDatasetFluentBuilder {
         }
     }
     /// Access the UpdateDataset as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_dataset::builders::UpdateDatasetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_dataset::builders::UpdateDatasetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateDatasetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -148,10 +140,7 @@ impl UpdateDatasetFluentBuilder {
         self
     }
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
-    pub fn set_format_options(
-        mut self,
-        input: ::std::option::Option<crate::types::FormatOptions>,
-    ) -> Self {
+    pub fn set_format_options(mut self, input: ::std::option::Option<crate::types::FormatOptions>) -> Self {
         self.inner = self.inner.set_format_options(input);
         self
     }
@@ -179,10 +168,7 @@ impl UpdateDatasetFluentBuilder {
         self
     }
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
-    pub fn set_path_options(
-        mut self,
-        input: ::std::option::Option<crate::types::PathOptions>,
-    ) -> Self {
+    pub fn set_path_options(mut self, input: ::std::option::Option<crate::types::PathOptions>) -> Self {
         self.inner = self.inner.set_path_options(input);
         self
     }

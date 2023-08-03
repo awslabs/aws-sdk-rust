@@ -86,9 +86,7 @@ impl HubContentInfo {
 
 /// A builder for [`HubContentInfo`](crate::types::HubContentInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HubContentInfoBuilder {
     pub(crate) hub_content_name: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_arn: ::std::option::Option<::std::string::String>,
@@ -97,25 +95,18 @@ pub struct HubContentInfoBuilder {
     pub(crate) document_schema_version: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_description: ::std::option::Option<::std::string::String>,
-    pub(crate) hub_content_search_keywords:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) hub_content_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) hub_content_status: ::std::option::Option<crate::types::HubContentStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl HubContentInfoBuilder {
     /// <p>The name of the hub content.</p>
-    pub fn hub_content_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the hub content.</p>
-    pub fn set_hub_content_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_content_name = input;
         self
     }
@@ -124,18 +115,12 @@ impl HubContentInfoBuilder {
         &self.hub_content_name
     }
     /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
-    pub fn hub_content_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
-    pub fn set_hub_content_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_content_arn = input;
         self
     }
@@ -144,18 +129,12 @@ impl HubContentInfoBuilder {
         &self.hub_content_arn
     }
     /// <p>The version of the hub content.</p>
-    pub fn hub_content_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the hub content.</p>
-    pub fn set_hub_content_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_content_version = input;
         self
     }
@@ -169,10 +148,7 @@ impl HubContentInfoBuilder {
         self
     }
     /// <p>The type of hub content.</p>
-    pub fn set_hub_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HubContentType>,
-    ) -> Self {
+    pub fn set_hub_content_type(mut self, input: ::std::option::Option<crate::types::HubContentType>) -> Self {
         self.hub_content_type = input;
         self
     }
@@ -181,18 +157,12 @@ impl HubContentInfoBuilder {
         &self.hub_content_type
     }
     /// <p>The version of the hub content document schema.</p>
-    pub fn document_schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_schema_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the hub content document schema.</p>
-    pub fn set_document_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_schema_version = input;
         self
     }
@@ -201,18 +171,12 @@ impl HubContentInfoBuilder {
         &self.document_schema_version
     }
     /// <p>The display name of the hub content.</p>
-    pub fn hub_content_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the hub content.</p>
-    pub fn set_hub_content_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_content_display_name = input;
         self
     }
@@ -221,18 +185,12 @@ impl HubContentInfoBuilder {
         &self.hub_content_display_name
     }
     /// <p>A description of the hub content.</p>
-    pub fn hub_content_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the hub content.</p>
-    pub fn set_hub_content_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_content_description = input;
         self
     }
@@ -245,27 +203,19 @@ impl HubContentInfoBuilder {
     /// To override the contents of this collection use [`set_hub_content_search_keywords`](Self::set_hub_content_search_keywords).
     ///
     /// <p>The searchable keywords for the hub content.</p>
-    pub fn hub_content_search_keywords(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_search_keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hub_content_search_keywords.unwrap_or_default();
         v.push(input.into());
         self.hub_content_search_keywords = ::std::option::Option::Some(v);
         self
     }
     /// <p>The searchable keywords for the hub content.</p>
-    pub fn set_hub_content_search_keywords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_hub_content_search_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.hub_content_search_keywords = input;
         self
     }
     /// <p>The searchable keywords for the hub content.</p>
-    pub fn get_hub_content_search_keywords(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_hub_content_search_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.hub_content_search_keywords
     }
     /// <p>The status of the hub content.</p>
@@ -274,10 +224,7 @@ impl HubContentInfoBuilder {
         self
     }
     /// <p>The status of the hub content.</p>
-    pub fn set_hub_content_status(
-        mut self,
-        input: ::std::option::Option<crate::types::HubContentStatus>,
-    ) -> Self {
+    pub fn set_hub_content_status(mut self, input: ::std::option::Option<crate::types::HubContentStatus>) -> Self {
         self.hub_content_status = input;
         self
     }
@@ -291,10 +238,7 @@ impl HubContentInfoBuilder {
         self
     }
     /// <p>The date and time that the hub content was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

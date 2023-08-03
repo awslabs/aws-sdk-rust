@@ -15,16 +15,14 @@ impl EnableImportFindingsForProductInput {
 }
 impl EnableImportFindingsForProductInput {
     /// Creates a new builder-style object to manufacture [`EnableImportFindingsForProductInput`](crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductInput).
-    pub fn builder() -> crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductInputBuilder{
+    pub fn builder() -> crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductInputBuilder {
         crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableImportFindingsForProductInput`](crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableImportFindingsForProductInputBuilder {
     pub(crate) product_arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,9 +50,8 @@ impl EnableImportFindingsForProductInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductInput {
-                product_arn: self.product_arn
-                ,
-            }
+                product_arn: self.product_arn,
+            },
         )
     }
 }

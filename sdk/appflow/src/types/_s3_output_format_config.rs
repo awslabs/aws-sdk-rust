@@ -52,9 +52,7 @@ impl S3OutputFormatConfig {
 
 /// A builder for [`S3OutputFormatConfig`](crate::types::S3OutputFormatConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3OutputFormatConfigBuilder {
     pub(crate) file_type: ::std::option::Option<crate::types::FileType>,
     pub(crate) prefix_config: ::std::option::Option<crate::types::PrefixConfig>,
@@ -82,10 +80,7 @@ impl S3OutputFormatConfigBuilder {
         self
     }
     /// <p> Determines the prefix that Amazon AppFlow applies to the folder name in the Amazon S3 bucket. You can name folders according to the flow frequency and date. </p>
-    pub fn set_prefix_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PrefixConfig>,
-    ) -> Self {
+    pub fn set_prefix_config(mut self, input: ::std::option::Option<crate::types::PrefixConfig>) -> Self {
         self.prefix_config = input;
         self
     }
@@ -99,17 +94,12 @@ impl S3OutputFormatConfigBuilder {
         self
     }
     /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
-    pub fn set_aggregation_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationConfig>,
-    ) -> Self {
+    pub fn set_aggregation_config(mut self, input: ::std::option::Option<crate::types::AggregationConfig>) -> Self {
         self.aggregation_config = input;
         self
     }
     /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
-    pub fn get_aggregation_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AggregationConfig> {
+    pub fn get_aggregation_config(&self) -> &::std::option::Option<crate::types::AggregationConfig> {
         &self.aggregation_config
     }
     /// <p>If your file output format is Parquet, use this parameter to set whether Amazon AppFlow preserves the data types in your source data when it writes the output to Amazon S3. </p>

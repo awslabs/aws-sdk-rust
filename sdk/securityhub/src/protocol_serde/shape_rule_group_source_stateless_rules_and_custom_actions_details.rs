@@ -9,7 +9,10 @@ pub fn ser_rule_group_source_stateless_rules_and_custom_actions_details(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_rule_group_source_custom_actions_details::ser_rule_group_source_custom_actions_details(&mut object_4, item_3)?;
+                crate::protocol_serde::shape_rule_group_source_custom_actions_details::ser_rule_group_source_custom_actions_details(
+                    &mut object_4,
+                    item_3,
+                )?;
                 object_4.finish();
             }
         }
@@ -21,7 +24,10 @@ pub fn ser_rule_group_source_stateless_rules_and_custom_actions_details(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_rule_group_source_stateless_rules_details::ser_rule_group_source_stateless_rules_details(&mut object_8, item_7)?;
+                crate::protocol_serde::shape_rule_group_source_stateless_rules_details::ser_rule_group_source_stateless_rules_details(
+                    &mut object_8,
+                    item_7,
+                )?;
                 object_8.finish();
             }
         }
@@ -32,17 +38,9 @@ pub fn ser_rule_group_source_stateless_rules_and_custom_actions_details(
 
 pub(crate) fn de_rule_group_source_stateless_rules_and_custom_actions_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::RuleGroupSourceStatelessRulesAndCustomActionsDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::RuleGroupSourceStatelessRulesAndCustomActionsDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -52,36 +50,33 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "CustomActions" => {
-                                builder = builder.set_custom_actions(
-                                    crate::protocol_serde::shape_rule_group_source_custom_actions_list::de_rule_group_source_custom_actions_list(tokens)?
-                                );
-                            }
-                            "StatelessRules" => {
-                                builder = builder.set_stateless_rules(
-                                    crate::protocol_serde::shape_rule_group_source_stateless_rules_list::de_rule_group_source_stateless_rules_list(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "CustomActions" => {
+                            builder = builder.set_custom_actions(
+                                crate::protocol_serde::shape_rule_group_source_custom_actions_list::de_rule_group_source_custom_actions_list(tokens)?,
+                            );
                         }
-                    }
+                        "StatelessRules" => {
+                            builder = builder.set_stateless_rules(
+                                crate::protocol_serde::shape_rule_group_source_stateless_rules_list::de_rule_group_source_stateless_rules_list(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisconnectRecoveryInstanceOutput {
 }
 impl DisconnectRecoveryInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DisconnectRecoveryInstanceOutput`](crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceOutput).
-    pub fn builder() -> crate::operation::disconnect_recovery_instance::builders::DisconnectRecoveryInstanceOutputBuilder{
+    pub fn builder() -> crate::operation::disconnect_recovery_instance::builders::DisconnectRecoveryInstanceOutputBuilder {
         crate::operation::disconnect_recovery_instance::builders::DisconnectRecoveryInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisconnectRecoveryInstanceOutput`](crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisconnectRecoveryInstanceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisconnectRecoveryInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisconnectRecoveryInstanceOutput`](crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceOutput {
+    pub fn build(self) -> crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceOutput {
         crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceOutput {
             _request_id: self._request_id,
         }

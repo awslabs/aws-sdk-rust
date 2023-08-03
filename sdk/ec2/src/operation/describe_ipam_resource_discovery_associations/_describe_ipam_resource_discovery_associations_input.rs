@@ -8,8 +8,7 @@ pub struct DescribeIpamResourceDiscoveryAssociationsInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The resource discovery association IDs.</p>
     #[doc(hidden)]
-    pub ipam_resource_discovery_association_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ipam_resource_discovery_association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -26,9 +25,7 @@ impl DescribeIpamResourceDiscoveryAssociationsInput {
         self.dry_run
     }
     /// <p>The resource discovery association IDs.</p>
-    pub fn ipam_resource_discovery_association_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn ipam_resource_discovery_association_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ipam_resource_discovery_association_ids.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -46,20 +43,18 @@ impl DescribeIpamResourceDiscoveryAssociationsInput {
 }
 impl DescribeIpamResourceDiscoveryAssociationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeIpamResourceDiscoveryAssociationsInput`](crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsInput).
-    pub fn builder() -> crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsInputBuilder {
         crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIpamResourceDiscoveryAssociationsInput`](crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpamResourceDiscoveryAssociationsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) ipam_resource_discovery_association_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ipam_resource_discovery_association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -84,29 +79,19 @@ impl DescribeIpamResourceDiscoveryAssociationsInputBuilder {
     /// To override the contents of this collection use [`set_ipam_resource_discovery_association_ids`](Self::set_ipam_resource_discovery_association_ids).
     ///
     /// <p>The resource discovery association IDs.</p>
-    pub fn ipam_resource_discovery_association_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self
-            .ipam_resource_discovery_association_ids
-            .unwrap_or_default();
+    pub fn ipam_resource_discovery_association_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.ipam_resource_discovery_association_ids.unwrap_or_default();
         v.push(input.into());
         self.ipam_resource_discovery_association_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The resource discovery association IDs.</p>
-    pub fn set_ipam_resource_discovery_association_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ipam_resource_discovery_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ipam_resource_discovery_association_ids = input;
         self
     }
     /// <p>The resource discovery association IDs.</p>
-    pub fn get_ipam_resource_discovery_association_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ipam_resource_discovery_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ipam_resource_discovery_association_ids
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -149,10 +134,7 @@ impl DescribeIpamResourceDiscoveryAssociationsInputBuilder {
         self
     }
     /// <p>The resource discovery association filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -161,20 +143,20 @@ impl DescribeIpamResourceDiscoveryAssociationsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`DescribeIpamResourceDiscoveryAssociationsInput`](crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsInput {
-                dry_run: self.dry_run
-                ,
-                ipam_resource_discovery_association_ids: self.ipam_resource_discovery_association_ids
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                filters: self.filters
-                ,
-            }
+                dry_run: self.dry_run,
+                ipam_resource_discovery_association_ids: self.ipam_resource_discovery_association_ids,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filters: self.filters,
+            },
         )
     }
 }

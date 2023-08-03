@@ -25,9 +25,7 @@ impl CachePolicyCookiesConfig {
     /// <li> <p> <code>allExcept</code> – All cookies in viewer requests are included in the cache key and in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those that are listed in the <code>CookieNames</code> type, which are not included.</p> </li>
     /// <li> <p> <code>all</code> – All cookies in viewer requests are included in the cache key and in requests that CloudFront sends to the origin.</p> </li>
     /// </ul>
-    pub fn cookie_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CachePolicyCookieBehavior> {
+    pub fn cookie_behavior(&self) -> ::std::option::Option<&crate::types::CachePolicyCookieBehavior> {
         self.cookie_behavior.as_ref()
     }
     /// <p>Contains a list of cookie names.</p>
@@ -44,9 +42,7 @@ impl CachePolicyCookiesConfig {
 
 /// A builder for [`CachePolicyCookiesConfig`](crate::types::CachePolicyCookiesConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CachePolicyCookiesConfigBuilder {
     pub(crate) cookie_behavior: ::std::option::Option<crate::types::CachePolicyCookieBehavior>,
     pub(crate) cookies: ::std::option::Option<crate::types::CookieNames>,
@@ -70,10 +66,7 @@ impl CachePolicyCookiesConfigBuilder {
     /// <li> <p> <code>allExcept</code> – All cookies in viewer requests are included in the cache key and in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those that are listed in the <code>CookieNames</code> type, which are not included.</p> </li>
     /// <li> <p> <code>all</code> – All cookies in viewer requests are included in the cache key and in requests that CloudFront sends to the origin.</p> </li>
     /// </ul>
-    pub fn set_cookie_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::CachePolicyCookieBehavior>,
-    ) -> Self {
+    pub fn set_cookie_behavior(mut self, input: ::std::option::Option<crate::types::CachePolicyCookieBehavior>) -> Self {
         self.cookie_behavior = input;
         self
     }
@@ -84,9 +77,7 @@ impl CachePolicyCookiesConfigBuilder {
     /// <li> <p> <code>allExcept</code> – All cookies in viewer requests are included in the cache key and in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those that are listed in the <code>CookieNames</code> type, which are not included.</p> </li>
     /// <li> <p> <code>all</code> – All cookies in viewer requests are included in the cache key and in requests that CloudFront sends to the origin.</p> </li>
     /// </ul>
-    pub fn get_cookie_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::CachePolicyCookieBehavior> {
+    pub fn get_cookie_behavior(&self) -> &::std::option::Option<crate::types::CachePolicyCookieBehavior> {
         &self.cookie_behavior
     }
     /// <p>Contains a list of cookie names.</p>

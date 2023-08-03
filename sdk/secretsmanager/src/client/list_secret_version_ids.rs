@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::list_secret_version_ids::ListSecretVersionIdsOutput::arn): <p>The ARN of the secret.</p>
     ///   - [`name(Option<String>)`](crate::operation::list_secret_version_ids::ListSecretVersionIdsOutput::name): <p>The name of the secret.</p>
     /// - On failure, responds with [`SdkError<ListSecretVersionIdsError>`](crate::operation::list_secret_version_ids::ListSecretVersionIdsError)
-    pub fn list_secret_version_ids(
-        &self,
-    ) -> crate::operation::list_secret_version_ids::builders::ListSecretVersionIdsFluentBuilder
-    {
-        crate::operation::list_secret_version_ids::builders::ListSecretVersionIdsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_secret_version_ids(&self) -> crate::operation::list_secret_version_ids::builders::ListSecretVersionIdsFluentBuilder {
+        crate::operation::list_secret_version_ids::builders::ListSecretVersionIdsFluentBuilder::new(self.handle.clone())
     }
 }

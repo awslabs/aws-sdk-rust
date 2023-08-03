@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`device_key(impl ::std::convert::Into<String>)`](crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder::device_key) / [`set_device_key(Option<String>)`](crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder::set_device_key): <p>The device key.</p>
     /// - On success, responds with [`AdminForgetDeviceOutput`](crate::operation::admin_forget_device::AdminForgetDeviceOutput)
     /// - On failure, responds with [`SdkError<AdminForgetDeviceError>`](crate::operation::admin_forget_device::AdminForgetDeviceError)
-    pub fn admin_forget_device(
-        &self,
-    ) -> crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder {
-        crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn admin_forget_device(&self) -> crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder {
+        crate::operation::admin_forget_device::builders::AdminForgetDeviceFluentBuilder::new(self.handle.clone())
     }
 }

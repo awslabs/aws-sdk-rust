@@ -50,18 +50,14 @@ impl UpdateHoursOfOperationInput {
 }
 impl UpdateHoursOfOperationInput {
     /// Creates a new builder-style object to manufacture [`UpdateHoursOfOperationInput`](crate::operation::update_hours_of_operation::UpdateHoursOfOperationInput).
-    pub fn builder(
-    ) -> crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationInputBuilder {
         crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateHoursOfOperationInput`](crate::operation::update_hours_of_operation::UpdateHoursOfOperationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateHoursOfOperationInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) hours_of_operation_id: ::std::option::Option<::std::string::String>,
@@ -86,18 +82,12 @@ impl UpdateHoursOfOperationInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the hours of operation.</p>
-    pub fn hours_of_operation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hours_of_operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hours_of_operation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the hours of operation.</p>
-    pub fn set_hours_of_operation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hours_of_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hours_of_operation_id = input;
         self
     }
@@ -159,17 +149,12 @@ impl UpdateHoursOfOperationInputBuilder {
         self
     }
     /// <p>Configuration information of the hours of operation.</p>
-    pub fn set_config(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>>,
-    ) -> Self {
+    pub fn set_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>>) -> Self {
         self.config = input;
         self
     }
     /// <p>Configuration information of the hours of operation.</p>
-    pub fn get_config(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>> {
+    pub fn get_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>> {
         &self.config
     }
     /// Consumes the builder and constructs a [`UpdateHoursOfOperationInput`](crate::operation::update_hours_of_operation::UpdateHoursOfOperationInput).
@@ -179,15 +164,13 @@ impl UpdateHoursOfOperationInputBuilder {
         crate::operation::update_hours_of_operation::UpdateHoursOfOperationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_hours_of_operation::UpdateHoursOfOperationInput {
-                instance_id: self.instance_id,
-                hours_of_operation_id: self.hours_of_operation_id,
-                name: self.name,
-                description: self.description,
-                time_zone: self.time_zone,
-                config: self.config,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_hours_of_operation::UpdateHoursOfOperationInput {
+            instance_id: self.instance_id,
+            hours_of_operation_id: self.hours_of_operation_id,
+            name: self.name,
+            description: self.description,
+            time_zone: self.time_zone,
+            config: self.config,
+        })
     }
 }

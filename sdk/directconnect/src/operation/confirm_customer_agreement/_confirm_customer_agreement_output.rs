@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ConfirmCustomerAgreementOutput {
 }
 impl ConfirmCustomerAgreementOutput {
     /// Creates a new builder-style object to manufacture [`ConfirmCustomerAgreementOutput`](crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput).
-    pub fn builder(
-    ) -> crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementOutputBuilder
-    {
+    pub fn builder() -> crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementOutputBuilder {
         crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementOutputBuilder::default()
     }
 }
 
 /// A builder for [`ConfirmCustomerAgreementOutput`](crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfirmCustomerAgreementOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl ConfirmCustomerAgreementOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ConfirmCustomerAgreementOutput`](crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput {
+    pub fn build(self) -> crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput {
         crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput {
             status: self.status,
             _request_id: self._request_id,

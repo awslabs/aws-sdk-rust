@@ -51,9 +51,7 @@ impl EstimateByTime {
 
 /// A builder for [`EstimateByTime`](crate::types::EstimateByTime).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EstimateByTimeBuilder {
     pub(crate) usage_cost: ::std::option::Option<f64>,
     pub(crate) pricing_unit: ::std::option::Option<crate::types::PricingUnit>,
@@ -82,10 +80,7 @@ impl EstimateByTimeBuilder {
         self
     }
     /// <p>The unit of measurement that's used for the cost estimate.</p>
-    pub fn set_pricing_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingUnit>,
-    ) -> Self {
+    pub fn set_pricing_unit(mut self, input: ::std::option::Option<crate::types::PricingUnit>) -> Self {
         self.pricing_unit = input;
         self
     }
@@ -127,10 +122,7 @@ impl EstimateByTimeBuilder {
         self
     }
     /// <p>The period of time, in days, that an estimate covers. The period has a start date and an end date. The start date must come before the end date.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::TimePeriod>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::TimePeriod>) -> Self {
         self.time_period = input;
         self
     }

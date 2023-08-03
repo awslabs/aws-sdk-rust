@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`tag_keys(Vec<String>)`](crate::operation::untag_mfa_device::builders::UntagMFADeviceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_mfa_device::builders::UntagMFADeviceFluentBuilder::set_tag_keys): <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified instance profile.</p>
     /// - On success, responds with [`UntagMfaDeviceOutput`](crate::operation::untag_mfa_device::UntagMfaDeviceOutput)
     /// - On failure, responds with [`SdkError<UntagMFADeviceError>`](crate::operation::untag_mfa_device::UntagMFADeviceError)
-    pub fn untag_mfa_device(
-        &self,
-    ) -> crate::operation::untag_mfa_device::builders::UntagMFADeviceFluentBuilder {
-        crate::operation::untag_mfa_device::builders::UntagMFADeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn untag_mfa_device(&self) -> crate::operation::untag_mfa_device::builders::UntagMFADeviceFluentBuilder {
+        crate::operation::untag_mfa_device::builders::UntagMFADeviceFluentBuilder::new(self.handle.clone())
     }
 }

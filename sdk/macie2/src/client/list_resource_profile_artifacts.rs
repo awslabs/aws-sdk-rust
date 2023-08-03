@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`artifacts(Option<Vec<ResourceProfileArtifact>>)`](crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsOutput::artifacts): <p>An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.</p>  <p>If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value for the ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not sensitive). Macie then populates any remaining items in the array with information about objects where the value for the ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<ListResourceProfileArtifactsError>`](crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsError)
-    pub fn list_resource_profile_artifacts(&self) -> crate::operation::list_resource_profile_artifacts::builders::ListResourceProfileArtifactsFluentBuilder{
+    pub fn list_resource_profile_artifacts(
+        &self,
+    ) -> crate::operation::list_resource_profile_artifacts::builders::ListResourceProfileArtifactsFluentBuilder {
         crate::operation::list_resource_profile_artifacts::builders::ListResourceProfileArtifactsFluentBuilder::new(self.handle.clone())
     }
 }

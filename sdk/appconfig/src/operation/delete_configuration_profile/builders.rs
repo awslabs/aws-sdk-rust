@@ -26,7 +26,7 @@ impl DeleteConfigurationProfileInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConfigurationProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_configuration_profile::builders::DeleteConfigurationProfileInputBuilder,
+    inner: crate::operation::delete_configuration_profile::builders::DeleteConfigurationProfileInputBuilder,
 }
 impl DeleteConfigurationProfileFluentBuilder {
     /// Creates a new `DeleteConfigurationProfile`.
@@ -37,7 +37,7 @@ impl DeleteConfigurationProfileFluentBuilder {
         }
     }
     /// Access the DeleteConfigurationProfile as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_configuration_profile::builders::DeleteConfigurationProfileInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_configuration_profile::builders::DeleteConfigurationProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteConfigurationProfileFluentBuilder {
             crate::operation::delete_configuration_profile::DeleteConfigurationProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_configuration_profile::DeleteConfigurationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_profile::DeleteConfigurationProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteConfigurationProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteConfigurationProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_configuration_profile::DeleteConfigurationProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_configuration_profile::DeleteConfigurationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_profile::DeleteConfigurationProfileError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteConfigurationProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_configuration_profile::DeleteConfigurationProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_configuration_profile::DeleteConfigurationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_profile::DeleteConfigurationProfileError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteConfigurationProfileFluentBuilder {
             crate::operation::delete_configuration_profile::DeleteConfigurationProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_configuration_profile::DeleteConfigurationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_profile::DeleteConfigurationProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The application ID that includes the configuration profile you want to delete.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The application ID that includes the configuration profile you want to delete.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl DeleteConfigurationProfileFluentBuilder {
         self.inner.get_application_id()
     }
     /// <p>The ID of the configuration profile you want to delete.</p>
-    pub fn configuration_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_profile_id(input.into());
         self
     }
     /// <p>The ID of the configuration profile you want to delete.</p>
-    pub fn set_configuration_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_profile_id(input);
         self
     }

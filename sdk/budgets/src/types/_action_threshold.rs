@@ -30,9 +30,7 @@ impl ActionThreshold {
 
 /// A builder for [`ActionThreshold`](crate::types::ActionThreshold).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionThresholdBuilder {
     pub(crate) action_threshold_value: ::std::option::Option<f64>,
     pub(crate) action_threshold_type: ::std::option::Option<crate::types::ThresholdType>,
@@ -58,10 +56,7 @@ impl ActionThresholdBuilder {
         self
     }
     /// <p> The type of threshold for a notification.</p>
-    pub fn set_action_threshold_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ThresholdType>,
-    ) -> Self {
+    pub fn set_action_threshold_type(mut self, input: ::std::option::Option<crate::types::ThresholdType>) -> Self {
         self.action_threshold_type = input;
         self
     }

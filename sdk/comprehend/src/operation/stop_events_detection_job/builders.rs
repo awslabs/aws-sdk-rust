@@ -26,8 +26,7 @@ impl StopEventsDetectionJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopEventsDetectionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobInputBuilder,
+    inner: crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobInputBuilder,
 }
 impl StopEventsDetectionJobFluentBuilder {
     /// Creates a new `StopEventsDetectionJob`.
@@ -38,10 +37,7 @@ impl StopEventsDetectionJobFluentBuilder {
         }
     }
     /// Access the StopEventsDetectionJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl StopEventsDetectionJobFluentBuilder {
             crate::operation::stop_events_detection_job::StopEventsDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_events_detection_job::StopEventsDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_events_detection_job::StopEventsDetectionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl StopEventsDetectionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl StopEventsDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_events_detection_job::StopEventsDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_events_detection_job::StopEventsDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_events_detection_job::StopEventsDetectionJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl StopEventsDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_events_detection_job::StopEventsDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_events_detection_job::StopEventsDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_events_detection_job::StopEventsDetectionJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl StopEventsDetectionJobFluentBuilder {
             crate::operation::stop_events_detection_job::StopEventsDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_events_detection_job::StopEventsDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_events_detection_job::StopEventsDetectionJobError>,
     > {
         self.customize_middleware().await
     }

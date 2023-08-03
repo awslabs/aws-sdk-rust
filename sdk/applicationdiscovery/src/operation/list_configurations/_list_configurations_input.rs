@@ -23,9 +23,7 @@ pub struct ListConfigurationsInput {
 }
 impl ListConfigurationsInput {
     /// <p>A valid configuration identified by Application Discovery Service. </p>
-    pub fn configuration_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConfigurationItemType> {
+    pub fn configuration_type(&self) -> ::std::option::Option<&crate::types::ConfigurationItemType> {
         self.configuration_type.as_ref()
     }
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
@@ -49,17 +47,14 @@ impl ListConfigurationsInput {
 }
 impl ListConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationsInput`](crate::operation::list_configurations::ListConfigurationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_configurations::builders::ListConfigurationsInputBuilder {
+    pub fn builder() -> crate::operation::list_configurations::builders::ListConfigurationsInputBuilder {
         crate::operation::list_configurations::builders::ListConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListConfigurationsInput`](crate::operation::list_configurations::ListConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfigurationsInputBuilder {
     pub(crate) configuration_type: ::std::option::Option<crate::types::ConfigurationItemType>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -74,17 +69,12 @@ impl ListConfigurationsInputBuilder {
         self
     }
     /// <p>A valid configuration identified by Application Discovery Service. </p>
-    pub fn set_configuration_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationItemType>,
-    ) -> Self {
+    pub fn set_configuration_type(mut self, input: ::std::option::Option<crate::types::ConfigurationItemType>) -> Self {
         self.configuration_type = input;
         self
     }
     /// <p>A valid configuration identified by Application Discovery Service. </p>
-    pub fn get_configuration_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationItemType> {
+    pub fn get_configuration_type(&self) -> &::std::option::Option<crate::types::ConfigurationItemType> {
         &self.configuration_type
     }
     /// Appends an item to `filters`.
@@ -103,10 +93,7 @@ impl ListConfigurationsInputBuilder {
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
     /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -156,34 +143,24 @@ impl ListConfigurationsInputBuilder {
         self
     }
     /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
-    pub fn set_order_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OrderByElement>>,
-    ) -> Self {
+    pub fn set_order_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OrderByElement>>) -> Self {
         self.order_by = input;
         self
     }
     /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
-    pub fn get_order_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrderByElement>> {
+    pub fn get_order_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrderByElement>> {
         &self.order_by
     }
     /// Consumes the builder and constructs a [`ListConfigurationsInput`](crate::operation::list_configurations::ListConfigurationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_configurations::ListConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_configurations::ListConfigurationsInput {
-                configuration_type: self.configuration_type,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                order_by: self.order_by,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_configurations::ListConfigurationsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_configurations::ListConfigurationsInput {
+            configuration_type: self.configuration_type,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            order_by: self.order_by,
+        })
     }
 }

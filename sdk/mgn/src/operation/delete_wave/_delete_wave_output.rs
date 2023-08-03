@@ -19,9 +19,7 @@ impl DeleteWaveOutput {
 
 /// A builder for [`DeleteWaveOutput`](crate::operation::delete_wave::DeleteWaveOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWaveOutputBuilder {
     _request_id: Option<String>,
 }

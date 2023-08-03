@@ -37,9 +37,7 @@ impl ServiceChange {
 
 /// A builder for [`ServiceChange`](crate::types::ServiceChange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceChangeBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dns_config: ::std::option::Option<crate::types::DnsConfigChange>,
@@ -66,10 +64,7 @@ impl ServiceChangeBuilder {
         self
     }
     /// <p>Information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
-    pub fn set_dns_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DnsConfigChange>,
-    ) -> Self {
+    pub fn set_dns_config(mut self, input: ::std::option::Option<crate::types::DnsConfigChange>) -> Self {
         self.dns_config = input;
         self
     }
@@ -83,17 +78,12 @@ impl ServiceChangeBuilder {
         self
     }
     /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
-    pub fn set_health_check_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheckConfig>,
-    ) -> Self {
+    pub fn set_health_check_config(mut self, input: ::std::option::Option<crate::types::HealthCheckConfig>) -> Self {
         self.health_check_config = input;
         self
     }
     /// <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
-    pub fn get_health_check_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HealthCheckConfig> {
+    pub fn get_health_check_config(&self) -> &::std::option::Option<crate::types::HealthCheckConfig> {
         &self.health_check_config
     }
     /// Consumes the builder and constructs a [`ServiceChange`](crate::types::ServiceChange).

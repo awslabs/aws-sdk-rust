@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetLatestAssessmentIdOutput {
 }
 impl GetLatestAssessmentIdOutput {
     /// Creates a new builder-style object to manufacture [`GetLatestAssessmentIdOutput`](crate::operation::get_latest_assessment_id::GetLatestAssessmentIdOutput).
-    pub fn builder(
-    ) -> crate::operation::get_latest_assessment_id::builders::GetLatestAssessmentIdOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_latest_assessment_id::builders::GetLatestAssessmentIdOutputBuilder {
         crate::operation::get_latest_assessment_id::builders::GetLatestAssessmentIdOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLatestAssessmentIdOutput`](crate::operation::get_latest_assessment_id::GetLatestAssessmentIdOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLatestAssessmentIdOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

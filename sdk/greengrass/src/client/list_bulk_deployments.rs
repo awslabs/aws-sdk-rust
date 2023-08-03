@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`bulk_deployments(Option<Vec<BulkDeployment>>)`](crate::operation::list_bulk_deployments::ListBulkDeploymentsOutput::bulk_deployments): A list of bulk deployments.
     ///   - [`next_token(Option<String>)`](crate::operation::list_bulk_deployments::ListBulkDeploymentsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     /// - On failure, responds with [`SdkError<ListBulkDeploymentsError>`](crate::operation::list_bulk_deployments::ListBulkDeploymentsError)
-    pub fn list_bulk_deployments(
-        &self,
-    ) -> crate::operation::list_bulk_deployments::builders::ListBulkDeploymentsFluentBuilder {
-        crate::operation::list_bulk_deployments::builders::ListBulkDeploymentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_bulk_deployments(&self) -> crate::operation::list_bulk_deployments::builders::ListBulkDeploymentsFluentBuilder {
+        crate::operation::list_bulk_deployments::builders::ListBulkDeploymentsFluentBuilder::new(self.handle.clone())
     }
 }

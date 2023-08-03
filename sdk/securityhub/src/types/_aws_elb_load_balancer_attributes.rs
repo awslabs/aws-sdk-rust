@@ -11,22 +11,18 @@ pub struct AwsElbLoadBalancerAttributes {
     /// <p>Information about the connection draining configuration for the load balancer.</p>
     /// <p>If connection draining is enabled, the load balancer allows existing requests to complete before it shifts traffic away from a deregistered or unhealthy instance.</p>
     #[doc(hidden)]
-    pub connection_draining:
-        ::std::option::Option<crate::types::AwsElbLoadBalancerConnectionDraining>,
+    pub connection_draining: ::std::option::Option<crate::types::AwsElbLoadBalancerConnectionDraining>,
     /// <p>Connection settings for the load balancer.</p>
     /// <p>If an idle timeout is configured, the load balancer allows connections to remain idle for the specified duration. When a connection is idle, no data is sent over the connection.</p>
     #[doc(hidden)]
-    pub connection_settings:
-        ::std::option::Option<crate::types::AwsElbLoadBalancerConnectionSettings>,
+    pub connection_settings: ::std::option::Option<crate::types::AwsElbLoadBalancerConnectionSettings>,
     /// <p>Cross-zone load balancing settings for the load balancer.</p>
     /// <p>If cross-zone load balancing is enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
     #[doc(hidden)]
-    pub cross_zone_load_balancing:
-        ::std::option::Option<crate::types::AwsElbLoadBalancerCrossZoneLoadBalancing>,
+    pub cross_zone_load_balancing: ::std::option::Option<crate::types::AwsElbLoadBalancerCrossZoneLoadBalancing>,
     /// <p>Any additional attributes for a load balancer.</p>
     #[doc(hidden)]
-    pub additional_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerAdditionalAttribute>>,
+    pub additional_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerAdditionalAttribute>>,
 }
 impl AwsElbLoadBalancerAttributes {
     /// <p>Information about the access log configuration for the load balancer.</p>
@@ -36,29 +32,21 @@ impl AwsElbLoadBalancerAttributes {
     }
     /// <p>Information about the connection draining configuration for the load balancer.</p>
     /// <p>If connection draining is enabled, the load balancer allows existing requests to complete before it shifts traffic away from a deregistered or unhealthy instance.</p>
-    pub fn connection_draining(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsElbLoadBalancerConnectionDraining> {
+    pub fn connection_draining(&self) -> ::std::option::Option<&crate::types::AwsElbLoadBalancerConnectionDraining> {
         self.connection_draining.as_ref()
     }
     /// <p>Connection settings for the load balancer.</p>
     /// <p>If an idle timeout is configured, the load balancer allows connections to remain idle for the specified duration. When a connection is idle, no data is sent over the connection.</p>
-    pub fn connection_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsElbLoadBalancerConnectionSettings> {
+    pub fn connection_settings(&self) -> ::std::option::Option<&crate::types::AwsElbLoadBalancerConnectionSettings> {
         self.connection_settings.as_ref()
     }
     /// <p>Cross-zone load balancing settings for the load balancer.</p>
     /// <p>If cross-zone load balancing is enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
-    pub fn cross_zone_load_balancing(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsElbLoadBalancerCrossZoneLoadBalancing> {
+    pub fn cross_zone_load_balancing(&self) -> ::std::option::Option<&crate::types::AwsElbLoadBalancerCrossZoneLoadBalancing> {
         self.cross_zone_load_balancing.as_ref()
     }
     /// <p>Any additional attributes for a load balancer.</p>
-    pub fn additional_attributes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsElbLoadBalancerAdditionalAttribute]> {
+    pub fn additional_attributes(&self) -> ::std::option::Option<&[crate::types::AwsElbLoadBalancerAdditionalAttribute]> {
         self.additional_attributes.as_deref()
     }
 }
@@ -71,19 +59,13 @@ impl AwsElbLoadBalancerAttributes {
 
 /// A builder for [`AwsElbLoadBalancerAttributes`](crate::types::AwsElbLoadBalancerAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerAttributesBuilder {
     pub(crate) access_log: ::std::option::Option<crate::types::AwsElbLoadBalancerAccessLog>,
-    pub(crate) connection_draining:
-        ::std::option::Option<crate::types::AwsElbLoadBalancerConnectionDraining>,
-    pub(crate) connection_settings:
-        ::std::option::Option<crate::types::AwsElbLoadBalancerConnectionSettings>,
-    pub(crate) cross_zone_load_balancing:
-        ::std::option::Option<crate::types::AwsElbLoadBalancerCrossZoneLoadBalancing>,
-    pub(crate) additional_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerAdditionalAttribute>>,
+    pub(crate) connection_draining: ::std::option::Option<crate::types::AwsElbLoadBalancerConnectionDraining>,
+    pub(crate) connection_settings: ::std::option::Option<crate::types::AwsElbLoadBalancerConnectionSettings>,
+    pub(crate) cross_zone_load_balancing: ::std::option::Option<crate::types::AwsElbLoadBalancerCrossZoneLoadBalancing>,
+    pub(crate) additional_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerAdditionalAttribute>>,
 }
 impl AwsElbLoadBalancerAttributesBuilder {
     /// <p>Information about the access log configuration for the load balancer.</p>
@@ -94,93 +76,64 @@ impl AwsElbLoadBalancerAttributesBuilder {
     }
     /// <p>Information about the access log configuration for the load balancer.</p>
     /// <p>If the access log is enabled, the load balancer captures detailed information about all requests. It delivers the information to a specified S3 bucket.</p>
-    pub fn set_access_log(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsElbLoadBalancerAccessLog>,
-    ) -> Self {
+    pub fn set_access_log(mut self, input: ::std::option::Option<crate::types::AwsElbLoadBalancerAccessLog>) -> Self {
         self.access_log = input;
         self
     }
     /// <p>Information about the access log configuration for the load balancer.</p>
     /// <p>If the access log is enabled, the load balancer captures detailed information about all requests. It delivers the information to a specified S3 bucket.</p>
-    pub fn get_access_log(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsElbLoadBalancerAccessLog> {
+    pub fn get_access_log(&self) -> &::std::option::Option<crate::types::AwsElbLoadBalancerAccessLog> {
         &self.access_log
     }
     /// <p>Information about the connection draining configuration for the load balancer.</p>
     /// <p>If connection draining is enabled, the load balancer allows existing requests to complete before it shifts traffic away from a deregistered or unhealthy instance.</p>
-    pub fn connection_draining(
-        mut self,
-        input: crate::types::AwsElbLoadBalancerConnectionDraining,
-    ) -> Self {
+    pub fn connection_draining(mut self, input: crate::types::AwsElbLoadBalancerConnectionDraining) -> Self {
         self.connection_draining = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the connection draining configuration for the load balancer.</p>
     /// <p>If connection draining is enabled, the load balancer allows existing requests to complete before it shifts traffic away from a deregistered or unhealthy instance.</p>
-    pub fn set_connection_draining(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsElbLoadBalancerConnectionDraining>,
-    ) -> Self {
+    pub fn set_connection_draining(mut self, input: ::std::option::Option<crate::types::AwsElbLoadBalancerConnectionDraining>) -> Self {
         self.connection_draining = input;
         self
     }
     /// <p>Information about the connection draining configuration for the load balancer.</p>
     /// <p>If connection draining is enabled, the load balancer allows existing requests to complete before it shifts traffic away from a deregistered or unhealthy instance.</p>
-    pub fn get_connection_draining(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsElbLoadBalancerConnectionDraining> {
+    pub fn get_connection_draining(&self) -> &::std::option::Option<crate::types::AwsElbLoadBalancerConnectionDraining> {
         &self.connection_draining
     }
     /// <p>Connection settings for the load balancer.</p>
     /// <p>If an idle timeout is configured, the load balancer allows connections to remain idle for the specified duration. When a connection is idle, no data is sent over the connection.</p>
-    pub fn connection_settings(
-        mut self,
-        input: crate::types::AwsElbLoadBalancerConnectionSettings,
-    ) -> Self {
+    pub fn connection_settings(mut self, input: crate::types::AwsElbLoadBalancerConnectionSettings) -> Self {
         self.connection_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>Connection settings for the load balancer.</p>
     /// <p>If an idle timeout is configured, the load balancer allows connections to remain idle for the specified duration. When a connection is idle, no data is sent over the connection.</p>
-    pub fn set_connection_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsElbLoadBalancerConnectionSettings>,
-    ) -> Self {
+    pub fn set_connection_settings(mut self, input: ::std::option::Option<crate::types::AwsElbLoadBalancerConnectionSettings>) -> Self {
         self.connection_settings = input;
         self
     }
     /// <p>Connection settings for the load balancer.</p>
     /// <p>If an idle timeout is configured, the load balancer allows connections to remain idle for the specified duration. When a connection is idle, no data is sent over the connection.</p>
-    pub fn get_connection_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsElbLoadBalancerConnectionSettings> {
+    pub fn get_connection_settings(&self) -> &::std::option::Option<crate::types::AwsElbLoadBalancerConnectionSettings> {
         &self.connection_settings
     }
     /// <p>Cross-zone load balancing settings for the load balancer.</p>
     /// <p>If cross-zone load balancing is enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
-    pub fn cross_zone_load_balancing(
-        mut self,
-        input: crate::types::AwsElbLoadBalancerCrossZoneLoadBalancing,
-    ) -> Self {
+    pub fn cross_zone_load_balancing(mut self, input: crate::types::AwsElbLoadBalancerCrossZoneLoadBalancing) -> Self {
         self.cross_zone_load_balancing = ::std::option::Option::Some(input);
         self
     }
     /// <p>Cross-zone load balancing settings for the load balancer.</p>
     /// <p>If cross-zone load balancing is enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
-    pub fn set_cross_zone_load_balancing(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsElbLoadBalancerCrossZoneLoadBalancing>,
-    ) -> Self {
+    pub fn set_cross_zone_load_balancing(mut self, input: ::std::option::Option<crate::types::AwsElbLoadBalancerCrossZoneLoadBalancing>) -> Self {
         self.cross_zone_load_balancing = input;
         self
     }
     /// <p>Cross-zone load balancing settings for the load balancer.</p>
     /// <p>If cross-zone load balancing is enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
-    pub fn get_cross_zone_load_balancing(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsElbLoadBalancerCrossZoneLoadBalancing> {
+    pub fn get_cross_zone_load_balancing(&self) -> &::std::option::Option<crate::types::AwsElbLoadBalancerCrossZoneLoadBalancing> {
         &self.cross_zone_load_balancing
     }
     /// Appends an item to `additional_attributes`.
@@ -188,10 +141,7 @@ impl AwsElbLoadBalancerAttributesBuilder {
     /// To override the contents of this collection use [`set_additional_attributes`](Self::set_additional_attributes).
     ///
     /// <p>Any additional attributes for a load balancer.</p>
-    pub fn additional_attributes(
-        mut self,
-        input: crate::types::AwsElbLoadBalancerAdditionalAttribute,
-    ) -> Self {
+    pub fn additional_attributes(mut self, input: crate::types::AwsElbLoadBalancerAdditionalAttribute) -> Self {
         let mut v = self.additional_attributes.unwrap_or_default();
         v.push(input);
         self.additional_attributes = ::std::option::Option::Some(v);
@@ -200,18 +150,13 @@ impl AwsElbLoadBalancerAttributesBuilder {
     /// <p>Any additional attributes for a load balancer.</p>
     pub fn set_additional_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsElbLoadBalancerAdditionalAttribute>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerAdditionalAttribute>>,
     ) -> Self {
         self.additional_attributes = input;
         self
     }
     /// <p>Any additional attributes for a load balancer.</p>
-    pub fn get_additional_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerAdditionalAttribute>>
-    {
+    pub fn get_additional_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsElbLoadBalancerAdditionalAttribute>> {
         &self.additional_attributes
     }
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerAttributes`](crate::types::AwsElbLoadBalancerAttributes).

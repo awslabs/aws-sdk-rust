@@ -30,9 +30,7 @@ impl ProductionVariantServerlessUpdateConfig {
 
 /// A builder for [`ProductionVariantServerlessUpdateConfig`](crate::types::ProductionVariantServerlessUpdateConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProductionVariantServerlessUpdateConfigBuilder {
     pub(crate) max_concurrency: ::std::option::Option<i32>,
     pub(crate) provisioned_concurrency: ::std::option::Option<i32>,

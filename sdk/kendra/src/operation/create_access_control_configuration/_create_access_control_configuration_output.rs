@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateAccessControlConfigurationOutpu
 }
 impl CreateAccessControlConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessControlConfigurationOutput`](crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput).
-    pub fn builder() -> crate::operation::create_access_control_configuration::builders::CreateAccessControlConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::create_access_control_configuration::builders::CreateAccessControlConfigurationOutputBuilder {
         crate::operation::create_access_control_configuration::builders::CreateAccessControlConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessControlConfigurationOutput`](crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessControlConfigurationOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,13 +58,9 @@ impl CreateAccessControlConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAccessControlConfigurationOutput`](crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput {
         crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput {
-            id: self.id
-            ,
+            id: self.id,
             _request_id: self._request_id,
         }
     }

@@ -37,10 +37,7 @@ impl ListNotebookInstancesFluentBuilder {
         }
     }
     /// Access the ListNotebookInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_notebook_instances::builders::ListNotebookInstancesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_notebook_instances::builders::ListNotebookInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListNotebookInstancesFluentBuilder {
             crate::operation::list_notebook_instances::ListNotebookInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notebook_instances::ListNotebookInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_instances::ListNotebookInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListNotebookInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListNotebookInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_notebook_instances::ListNotebookInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notebook_instances::ListNotebookInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_instances::ListNotebookInstancesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListNotebookInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_notebook_instances::ListNotebookInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notebook_instances::ListNotebookInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_instances::ListNotebookInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListNotebookInstancesFluentBuilder {
             crate::operation::list_notebook_instances::ListNotebookInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notebook_instances::ListNotebookInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_instances::ListNotebookInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_notebook_instances::paginator::ListNotebookInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_notebook_instances::paginator::ListNotebookInstancesPaginator {
-        crate::operation::list_notebook_instances::paginator::ListNotebookInstancesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_notebook_instances::paginator::ListNotebookInstancesPaginator {
+        crate::operation::list_notebook_instances::paginator::ListNotebookInstancesPaginator::new(self.handle, self.inner)
     }
     /// <p> If the previous call to the <code>ListNotebookInstances</code> is truncated, the response includes a <code>NextToken</code>. You can use this token in your subsequent <code>ListNotebookInstances</code> request to fetch the next set of notebook instances. </p> <note>
     /// <p>You might specify a filter or a sort order in your request. When response is truncated, you must use the same values for the filer and sort order in the next request. </p>
@@ -174,10 +155,7 @@ impl ListNotebookInstancesFluentBuilder {
         self
     }
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::NotebookInstanceSortKey>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::NotebookInstanceSortKey>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -191,32 +169,21 @@ impl ListNotebookInstancesFluentBuilder {
         self
     }
     /// <p>The sort order for results. </p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::NotebookInstanceSortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::NotebookInstanceSortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
     /// <p>The sort order for results. </p>
-    pub fn get_sort_order(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotebookInstanceSortOrder> {
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::NotebookInstanceSortOrder> {
         self.inner.get_sort_order()
     }
     /// <p>A string in the notebook instances' name. This filter returns only notebook instances whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>A string in the notebook instances' name. This filter returns only notebook instances whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -230,10 +197,7 @@ impl ListNotebookInstancesFluentBuilder {
         self
     }
     /// <p>A filter that returns only notebook instances that were created before the specified time (timestamp). </p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -247,10 +211,7 @@ impl ListNotebookInstancesFluentBuilder {
         self
     }
     /// <p>A filter that returns only notebook instances that were created after the specified time (timestamp).</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -264,17 +225,12 @@ impl ListNotebookInstancesFluentBuilder {
         self
     }
     /// <p>A filter that returns only notebook instances that were modified before the specified time (timestamp).</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
     /// <p>A filter that returns only notebook instances that were modified before the specified time (timestamp).</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_before()
     }
     /// <p>A filter that returns only notebook instances that were modified after the specified time (timestamp).</p>
@@ -283,17 +239,12 @@ impl ListNotebookInstancesFluentBuilder {
         self
     }
     /// <p>A filter that returns only notebook instances that were modified after the specified time (timestamp).</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
     /// <p>A filter that returns only notebook instances that were modified after the specified time (timestamp).</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_after()
     }
     /// <p>A filter that returns only notebook instances with the specified status.</p>
@@ -302,88 +253,54 @@ impl ListNotebookInstancesFluentBuilder {
         self
     }
     /// <p>A filter that returns only notebook instances with the specified status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::NotebookInstanceStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::NotebookInstanceStatus>) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
     /// <p>A filter that returns only notebook instances with the specified status.</p>
-    pub fn get_status_equals(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotebookInstanceStatus> {
+    pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::NotebookInstanceStatus> {
         self.inner.get_status_equals()
     }
     /// <p>A string in the name of a notebook instances lifecycle configuration associated with this notebook instance. This filter returns only notebook instances associated with a lifecycle configuration with a name that contains the specified string.</p>
-    pub fn notebook_instance_lifecycle_config_name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .notebook_instance_lifecycle_config_name_contains(input.into());
+    pub fn notebook_instance_lifecycle_config_name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.notebook_instance_lifecycle_config_name_contains(input.into());
         self
     }
     /// <p>A string in the name of a notebook instances lifecycle configuration associated with this notebook instance. This filter returns only notebook instances associated with a lifecycle configuration with a name that contains the specified string.</p>
-    pub fn set_notebook_instance_lifecycle_config_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_notebook_instance_lifecycle_config_name_contains(input);
+    pub fn set_notebook_instance_lifecycle_config_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_notebook_instance_lifecycle_config_name_contains(input);
         self
     }
     /// <p>A string in the name of a notebook instances lifecycle configuration associated with this notebook instance. This filter returns only notebook instances associated with a lifecycle configuration with a name that contains the specified string.</p>
-    pub fn get_notebook_instance_lifecycle_config_name_contains(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
-        self.inner
-            .get_notebook_instance_lifecycle_config_name_contains()
+    pub fn get_notebook_instance_lifecycle_config_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notebook_instance_lifecycle_config_name_contains()
     }
     /// <p>A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only notebook instances associated with a git repository with a name that contains the specified string.</p>
-    pub fn default_code_repository_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_code_repository_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_code_repository_contains(input.into());
         self
     }
     /// <p>A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only notebook instances associated with a git repository with a name that contains the specified string.</p>
-    pub fn set_default_code_repository_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_code_repository_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_code_repository_contains(input);
         self
     }
     /// <p>A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only notebook instances associated with a git repository with a name that contains the specified string.</p>
-    pub fn get_default_code_repository_contains(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_default_code_repository_contains(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_default_code_repository_contains()
     }
     /// <p>A filter that returns only notebook instances with associated with the specified git repository.</p>
-    pub fn additional_code_repository_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_code_repository_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.additional_code_repository_equals(input.into());
         self
     }
     /// <p>A filter that returns only notebook instances with associated with the specified git repository.</p>
-    pub fn set_additional_code_repository_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_code_repository_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_additional_code_repository_equals(input);
         self
     }
     /// <p>A filter that returns only notebook instances with associated with the specified git repository.</p>
-    pub fn get_additional_code_repository_equals(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_additional_code_repository_equals(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_additional_code_repository_equals()
     }
 }

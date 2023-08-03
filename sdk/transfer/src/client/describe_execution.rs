@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`workflow_id(Option<String>)`](crate::operation::describe_execution::DescribeExecutionOutput::workflow_id): <p>A unique identifier for the workflow.</p>
     ///   - [`execution(Option<DescribedExecution>)`](crate::operation::describe_execution::DescribeExecutionOutput::execution): <p>The structure that contains the details of the workflow' execution.</p>
     /// - On failure, responds with [`SdkError<DescribeExecutionError>`](crate::operation::describe_execution::DescribeExecutionError)
-    pub fn describe_execution(
-        &self,
-    ) -> crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder {
-        crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_execution(&self) -> crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder {
+        crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::new(self.handle.clone())
     }
 }

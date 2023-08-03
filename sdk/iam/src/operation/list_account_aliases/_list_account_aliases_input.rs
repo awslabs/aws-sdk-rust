@@ -24,17 +24,14 @@ impl ListAccountAliasesInput {
 }
 impl ListAccountAliasesInput {
     /// Creates a new builder-style object to manufacture [`ListAccountAliasesInput`](crate::operation::list_account_aliases::ListAccountAliasesInput).
-    pub fn builder(
-    ) -> crate::operation::list_account_aliases::builders::ListAccountAliasesInputBuilder {
+    pub fn builder() -> crate::operation::list_account_aliases::builders::ListAccountAliasesInputBuilder {
         crate::operation::list_account_aliases::builders::ListAccountAliasesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountAliasesInput`](crate::operation::list_account_aliases::ListAccountAliasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountAliasesInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -74,15 +71,10 @@ impl ListAccountAliasesInputBuilder {
     /// Consumes the builder and constructs a [`ListAccountAliasesInput`](crate::operation::list_account_aliases::ListAccountAliasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_account_aliases::ListAccountAliasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_account_aliases::ListAccountAliasesInput {
-                marker: self.marker,
-                max_items: self.max_items,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_account_aliases::ListAccountAliasesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_account_aliases::ListAccountAliasesInput {
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

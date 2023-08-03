@@ -46,9 +46,7 @@ impl KeyAttributes {
 
 /// A builder for [`KeyAttributes`](crate::types::KeyAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyAttributesBuilder {
     pub(crate) key_usage: ::std::option::Option<crate::types::KeyUsage>,
     pub(crate) key_class: ::std::option::Option<crate::types::KeyClass>,
@@ -92,10 +90,7 @@ impl KeyAttributesBuilder {
     }
     /// <p>The key algorithm to be use during creation of an Amazon Web Services Payment Cryptography key.</p>
     /// <p>For symmetric keys, Amazon Web Services Payment Cryptography supports <code>AES</code> and <code>TDES</code> algorithms. For asymmetric keys, Amazon Web Services Payment Cryptography supports <code>RSA</code> and <code>ECC_NIST</code> algorithms.</p>
-    pub fn set_key_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyAlgorithm>,
-    ) -> Self {
+    pub fn set_key_algorithm(mut self, input: ::std::option::Option<crate::types::KeyAlgorithm>) -> Self {
         self.key_algorithm = input;
         self
     }
@@ -110,10 +105,7 @@ impl KeyAttributesBuilder {
         self
     }
     /// <p>The list of cryptographic operations that you can perform using the key.</p>
-    pub fn set_key_modes_of_use(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyModesOfUse>,
-    ) -> Self {
+    pub fn set_key_modes_of_use(mut self, input: ::std::option::Option<crate::types::KeyModesOfUse>) -> Self {
         self.key_modes_of_use = input;
         self
     }

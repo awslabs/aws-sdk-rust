@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`session_mappings(Option<Vec<SessionMappingSummary>>)`](crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput::session_mappings): <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListStudioSessionMappingsError>`](crate::operation::list_studio_session_mappings::ListStudioSessionMappingsError)
-    pub fn list_studio_session_mappings(&self) -> crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsFluentBuilder{
+    pub fn list_studio_session_mappings(&self) -> crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsFluentBuilder {
         crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsFluentBuilder::new(self.handle.clone())
     }
 }

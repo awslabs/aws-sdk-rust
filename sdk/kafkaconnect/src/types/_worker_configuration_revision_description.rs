@@ -40,10 +40,7 @@ impl ::std::fmt::Debug for WorkerConfigurationRevisionDescription {
         let mut formatter = f.debug_struct("WorkerConfigurationRevisionDescription");
         formatter.field("creation_time", &self.creation_time);
         formatter.field("description", &self.description);
-        formatter.field(
-            "properties_file_content",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("properties_file_content", &"*** Sensitive Data Redacted ***");
         formatter.field("revision", &self.revision);
         formatter.finish()
     }
@@ -71,10 +68,7 @@ impl WorkerConfigurationRevisionDescriptionBuilder {
         self
     }
     /// <p>The time that the worker configuration was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -97,18 +91,12 @@ impl WorkerConfigurationRevisionDescriptionBuilder {
         &self.description
     }
     /// <p>Base64 encoded contents of the connect-distributed.properties file.</p>
-    pub fn properties_file_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn properties_file_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.properties_file_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Base64 encoded contents of the connect-distributed.properties file.</p>
-    pub fn set_properties_file_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_properties_file_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.properties_file_content = input;
         self
     }
@@ -145,10 +133,7 @@ impl ::std::fmt::Debug for WorkerConfigurationRevisionDescriptionBuilder {
         let mut formatter = f.debug_struct("WorkerConfigurationRevisionDescriptionBuilder");
         formatter.field("creation_time", &self.creation_time);
         formatter.field("description", &self.description);
-        formatter.field(
-            "properties_file_content",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("properties_file_content", &"*** Sensitive Data Redacted ***");
         formatter.field("revision", &self.revision);
         formatter.finish()
     }

@@ -43,9 +43,7 @@ impl UpdateArchiveInput {
 
 /// A builder for [`UpdateArchiveInput`](crate::operation::update_archive::UpdateArchiveInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateArchiveInputBuilder {
     pub(crate) archive_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -82,18 +80,12 @@ impl UpdateArchiveInputBuilder {
         &self.description
     }
     /// <p>The event pattern to use to filter events sent to the archive.</p>
-    pub fn event_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event pattern to use to filter events sent to the archive.</p>
-    pub fn set_event_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_pattern = input;
         self
     }
@@ -118,10 +110,7 @@ impl UpdateArchiveInputBuilder {
     /// Consumes the builder and constructs a [`UpdateArchiveInput`](crate::operation::update_archive::UpdateArchiveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_archive::UpdateArchiveInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_archive::UpdateArchiveInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_archive::UpdateArchiveInput {
             archive_name: self.archive_name,
             description: self.description,

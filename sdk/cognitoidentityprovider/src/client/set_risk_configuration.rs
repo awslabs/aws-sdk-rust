@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`SetRiskConfigurationOutput`](crate::operation::set_risk_configuration::SetRiskConfigurationOutput) with field(s):
     ///   - [`risk_configuration(Option<RiskConfigurationType>)`](crate::operation::set_risk_configuration::SetRiskConfigurationOutput::risk_configuration): <p>The risk configuration.</p>
     /// - On failure, responds with [`SdkError<SetRiskConfigurationError>`](crate::operation::set_risk_configuration::SetRiskConfigurationError)
-    pub fn set_risk_configuration(
-        &self,
-    ) -> crate::operation::set_risk_configuration::builders::SetRiskConfigurationFluentBuilder {
-        crate::operation::set_risk_configuration::builders::SetRiskConfigurationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_risk_configuration(&self) -> crate::operation::set_risk_configuration::builders::SetRiskConfigurationFluentBuilder {
+        crate::operation::set_risk_configuration::builders::SetRiskConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

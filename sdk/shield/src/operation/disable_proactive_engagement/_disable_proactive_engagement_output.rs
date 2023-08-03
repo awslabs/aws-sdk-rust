@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisableProactiveEngagementOutput {
 }
 impl DisableProactiveEngagementOutput {
     /// Creates a new builder-style object to manufacture [`DisableProactiveEngagementOutput`](crate::operation::disable_proactive_engagement::DisableProactiveEngagementOutput).
-    pub fn builder() -> crate::operation::disable_proactive_engagement::builders::DisableProactiveEngagementOutputBuilder{
+    pub fn builder() -> crate::operation::disable_proactive_engagement::builders::DisableProactiveEngagementOutputBuilder {
         crate::operation::disable_proactive_engagement::builders::DisableProactiveEngagementOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableProactiveEngagementOutput`](crate::operation::disable_proactive_engagement::DisableProactiveEngagementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableProactiveEngagementOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisableProactiveEngagementOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableProactiveEngagementOutput`](crate::operation::disable_proactive_engagement::DisableProactiveEngagementOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disable_proactive_engagement::DisableProactiveEngagementOutput {
+    pub fn build(self) -> crate::operation::disable_proactive_engagement::DisableProactiveEngagementOutput {
         crate::operation::disable_proactive_engagement::DisableProactiveEngagementOutput {
             _request_id: self._request_id,
         }

@@ -37,9 +37,7 @@ impl ConditionalForwarder {
 
 /// A builder for [`ConditionalForwarder`](crate::types::ConditionalForwarder).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConditionalForwarderBuilder {
     pub(crate) remote_domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) dns_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -47,18 +45,12 @@ pub struct ConditionalForwarderBuilder {
 }
 impl ConditionalForwarderBuilder {
     /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the conditional forwarder.</p>
-    pub fn remote_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the conditional forwarder.</p>
-    pub fn set_remote_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remote_domain_name = input;
         self
     }
@@ -78,17 +70,12 @@ impl ConditionalForwarderBuilder {
         self
     }
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>
-    pub fn set_dns_ip_addrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_ip_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_ip_addrs = input;
         self
     }
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>
-    pub fn get_dns_ip_addrs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ip_addrs
     }
     /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
@@ -97,10 +84,7 @@ impl ConditionalForwarderBuilder {
         self
     }
     /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
-    pub fn set_replication_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationScope>,
-    ) -> Self {
+    pub fn set_replication_scope(mut self, input: ::std::option::Option<crate::types::ReplicationScope>) -> Self {
         self.replication_scope = input;
         self
     }

@@ -30,9 +30,7 @@ impl DeltaTime {
 
 /// A builder for [`DeltaTime`](crate::types::DeltaTime).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeltaTimeBuilder {
     pub(crate) offset_seconds: ::std::option::Option<i32>,
     pub(crate) time_expression: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl DeltaTimeBuilder {
         &self.offset_seconds
     }
     /// <p>An expression by which the time of the message data might be determined. This can be the name of a timestamp field or a SQL expression that is used to derive the time the message data was generated.</p>
-    pub fn time_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn time_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An expression by which the time of the message data might be determined. This can be the name of a timestamp field or a SQL expression that is used to derive the time the message data was generated.</p>
-    pub fn set_time_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_time_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_expression = input;
         self
     }

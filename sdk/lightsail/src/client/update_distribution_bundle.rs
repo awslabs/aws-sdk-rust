@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDistributionBundleOutput`](crate::operation::update_distribution_bundle::UpdateDistributionBundleOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::operation::update_distribution_bundle::UpdateDistributionBundleOutput::operation): <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<UpdateDistributionBundleError>`](crate::operation::update_distribution_bundle::UpdateDistributionBundleError)
-    pub fn update_distribution_bundle(
-        &self,
-    ) -> crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleFluentBuilder
-    {
+    pub fn update_distribution_bundle(&self) -> crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleFluentBuilder {
         crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleFluentBuilder::new(self.handle.clone())
     }
 }

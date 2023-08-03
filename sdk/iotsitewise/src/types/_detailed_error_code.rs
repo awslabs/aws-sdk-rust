@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DetailedErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -58,12 +52,8 @@ impl ::std::convert::From<&str> for DetailedErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "INCOMPATIBLE_COMPUTE_LOCATION" => DetailedErrorCode::IncompatibleComputeLocation,
-            "INCOMPATIBLE_FORWARDING_CONFIGURATION" => {
-                DetailedErrorCode::IncompatibleForwardingConfiguration
-            }
-            other => {
-                DetailedErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "INCOMPATIBLE_FORWARDING_CONFIGURATION" => DetailedErrorCode::IncompatibleForwardingConfiguration,
+            other => DetailedErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -79,18 +69,13 @@ impl DetailedErrorCode {
     pub fn as_str(&self) -> &str {
         match self {
             DetailedErrorCode::IncompatibleComputeLocation => "INCOMPATIBLE_COMPUTE_LOCATION",
-            DetailedErrorCode::IncompatibleForwardingConfiguration => {
-                "INCOMPATIBLE_FORWARDING_CONFIGURATION"
-            }
+            DetailedErrorCode::IncompatibleForwardingConfiguration => "INCOMPATIBLE_FORWARDING_CONFIGURATION",
             DetailedErrorCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "INCOMPATIBLE_COMPUTE_LOCATION",
-            "INCOMPATIBLE_FORWARDING_CONFIGURATION",
-        ]
+        &["INCOMPATIBLE_COMPUTE_LOCATION", "INCOMPATIBLE_FORWARDING_CONFIGURATION"]
     }
 }
 impl ::std::convert::AsRef<str> for DetailedErrorCode {

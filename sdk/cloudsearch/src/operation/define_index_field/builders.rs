@@ -10,10 +10,7 @@ impl DefineIndexFieldInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::define_index_field::DefineIndexFieldOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_index_field::DefineIndexFieldError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_index_field::DefineIndexFieldError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.define_index_field();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DefineIndexFieldFluentBuilder {
         }
     }
     /// Access the DefineIndexField as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::define_index_field::builders::DefineIndexFieldInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::define_index_field::builders::DefineIndexFieldInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DefineIndexFieldFluentBuilder {
             crate::operation::define_index_field::DefineIndexField,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_index_field::DefineIndexFieldError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_index_field::DefineIndexFieldError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DefineIndexFieldFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DefineIndexFieldFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::define_index_field::DefineIndexFieldOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_index_field::DefineIndexFieldError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_index_field::DefineIndexFieldError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DefineIndexFieldFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::define_index_field::DefineIndexFieldOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_index_field::DefineIndexFieldError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_index_field::DefineIndexFieldError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DefineIndexFieldFluentBuilder {
             crate::operation::define_index_field::DefineIndexField,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::define_index_field::DefineIndexFieldError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::define_index_field::DefineIndexFieldError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl DefineIndexFieldFluentBuilder {
         self
     }
     /// <p>The index field and field options you want to configure. </p>
-    pub fn set_index_field(
-        mut self,
-        input: ::std::option::Option<crate::types::IndexField>,
-    ) -> Self {
+    pub fn set_index_field(mut self, input: ::std::option::Option<crate::types::IndexField>) -> Self {
         self.inner = self.inner.set_index_field(input);
         self
     }

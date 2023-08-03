@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`hours_of_operation_id(impl ::std::convert::Into<String>)`](crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperationFluentBuilder::hours_of_operation_id) / [`set_hours_of_operation_id(Option<String>)`](crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperationFluentBuilder::set_hours_of_operation_id): <p>The identifier for the hours of operation.</p>
     /// - On success, responds with [`DeleteHoursOfOperationOutput`](crate::operation::delete_hours_of_operation::DeleteHoursOfOperationOutput)
     /// - On failure, responds with [`SdkError<DeleteHoursOfOperationError>`](crate::operation::delete_hours_of_operation::DeleteHoursOfOperationError)
-    pub fn delete_hours_of_operation(
-        &self,
-    ) -> crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperationFluentBuilder
-    {
+    pub fn delete_hours_of_operation(&self) -> crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperationFluentBuilder {
         crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,14 +16,11 @@ pub struct TrainingResultV2 {
     /// <p> The variable importance metrics of the aggregated variables. </p>
     /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
     #[doc(hidden)]
-    pub aggregated_variables_importance_metrics:
-        ::std::option::Option<crate::types::AggregatedVariablesImportanceMetrics>,
+    pub aggregated_variables_importance_metrics: ::std::option::Option<crate::types::AggregatedVariablesImportanceMetrics>,
 }
 impl TrainingResultV2 {
     /// <p>The model training data validation metrics.</p>
-    pub fn data_validation_metrics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataValidationMetrics> {
+    pub fn data_validation_metrics(&self) -> ::std::option::Option<&crate::types::DataValidationMetrics> {
         self.data_validation_metrics.as_ref()
     }
     /// <p> The training metric details. </p>
@@ -31,16 +28,12 @@ impl TrainingResultV2 {
         self.training_metrics_v2.as_ref()
     }
     /// <p>The variable importance metrics details.</p>
-    pub fn variable_importance_metrics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VariableImportanceMetrics> {
+    pub fn variable_importance_metrics(&self) -> ::std::option::Option<&crate::types::VariableImportanceMetrics> {
         self.variable_importance_metrics.as_ref()
     }
     /// <p> The variable importance metrics of the aggregated variables. </p>
     /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
-    pub fn aggregated_variables_importance_metrics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AggregatedVariablesImportanceMetrics> {
+    pub fn aggregated_variables_importance_metrics(&self) -> ::std::option::Option<&crate::types::AggregatedVariablesImportanceMetrics> {
         self.aggregated_variables_importance_metrics.as_ref()
     }
 }
@@ -53,16 +46,12 @@ impl TrainingResultV2 {
 
 /// A builder for [`TrainingResultV2`](crate::types::TrainingResultV2).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrainingResultV2Builder {
     pub(crate) data_validation_metrics: ::std::option::Option<crate::types::DataValidationMetrics>,
     pub(crate) training_metrics_v2: ::std::option::Option<crate::types::TrainingMetricsV2>,
-    pub(crate) variable_importance_metrics:
-        ::std::option::Option<crate::types::VariableImportanceMetrics>,
-    pub(crate) aggregated_variables_importance_metrics:
-        ::std::option::Option<crate::types::AggregatedVariablesImportanceMetrics>,
+    pub(crate) variable_importance_metrics: ::std::option::Option<crate::types::VariableImportanceMetrics>,
+    pub(crate) aggregated_variables_importance_metrics: ::std::option::Option<crate::types::AggregatedVariablesImportanceMetrics>,
 }
 impl TrainingResultV2Builder {
     /// <p>The model training data validation metrics.</p>
@@ -71,17 +60,12 @@ impl TrainingResultV2Builder {
         self
     }
     /// <p>The model training data validation metrics.</p>
-    pub fn set_data_validation_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::DataValidationMetrics>,
-    ) -> Self {
+    pub fn set_data_validation_metrics(mut self, input: ::std::option::Option<crate::types::DataValidationMetrics>) -> Self {
         self.data_validation_metrics = input;
         self
     }
     /// <p>The model training data validation metrics.</p>
-    pub fn get_data_validation_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataValidationMetrics> {
+    pub fn get_data_validation_metrics(&self) -> &::std::option::Option<crate::types::DataValidationMetrics> {
         &self.data_validation_metrics
     }
     /// <p> The training metric details. </p>
@@ -90,47 +74,31 @@ impl TrainingResultV2Builder {
         self
     }
     /// <p> The training metric details. </p>
-    pub fn set_training_metrics_v2(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingMetricsV2>,
-    ) -> Self {
+    pub fn set_training_metrics_v2(mut self, input: ::std::option::Option<crate::types::TrainingMetricsV2>) -> Self {
         self.training_metrics_v2 = input;
         self
     }
     /// <p> The training metric details. </p>
-    pub fn get_training_metrics_v2(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrainingMetricsV2> {
+    pub fn get_training_metrics_v2(&self) -> &::std::option::Option<crate::types::TrainingMetricsV2> {
         &self.training_metrics_v2
     }
     /// <p>The variable importance metrics details.</p>
-    pub fn variable_importance_metrics(
-        mut self,
-        input: crate::types::VariableImportanceMetrics,
-    ) -> Self {
+    pub fn variable_importance_metrics(mut self, input: crate::types::VariableImportanceMetrics) -> Self {
         self.variable_importance_metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>The variable importance metrics details.</p>
-    pub fn set_variable_importance_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::VariableImportanceMetrics>,
-    ) -> Self {
+    pub fn set_variable_importance_metrics(mut self, input: ::std::option::Option<crate::types::VariableImportanceMetrics>) -> Self {
         self.variable_importance_metrics = input;
         self
     }
     /// <p>The variable importance metrics details.</p>
-    pub fn get_variable_importance_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::VariableImportanceMetrics> {
+    pub fn get_variable_importance_metrics(&self) -> &::std::option::Option<crate::types::VariableImportanceMetrics> {
         &self.variable_importance_metrics
     }
     /// <p> The variable importance metrics of the aggregated variables. </p>
     /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
-    pub fn aggregated_variables_importance_metrics(
-        mut self,
-        input: crate::types::AggregatedVariablesImportanceMetrics,
-    ) -> Self {
+    pub fn aggregated_variables_importance_metrics(mut self, input: crate::types::AggregatedVariablesImportanceMetrics) -> Self {
         self.aggregated_variables_importance_metrics = ::std::option::Option::Some(input);
         self
     }
@@ -145,9 +113,7 @@ impl TrainingResultV2Builder {
     }
     /// <p> The variable importance metrics of the aggregated variables. </p>
     /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
-    pub fn get_aggregated_variables_importance_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::AggregatedVariablesImportanceMetrics> {
+    pub fn get_aggregated_variables_importance_metrics(&self) -> &::std::option::Option<crate::types::AggregatedVariablesImportanceMetrics> {
         &self.aggregated_variables_importance_metrics
     }
     /// Consumes the builder and constructs a [`TrainingResultV2`](crate::types::TrainingResultV2).

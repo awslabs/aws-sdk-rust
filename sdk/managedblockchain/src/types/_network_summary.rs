@@ -72,9 +72,7 @@ impl NetworkSummary {
 
 /// A builder for [`NetworkSummary`](crate::types::NetworkSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -143,18 +141,12 @@ impl NetworkSummaryBuilder {
         &self.framework
     }
     /// <p>The version of the blockchain framework that the network uses.</p>
-    pub fn framework_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the blockchain framework that the network uses.</p>
-    pub fn set_framework_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_version = input;
         self
     }
@@ -182,10 +174,7 @@ impl NetworkSummaryBuilder {
         self
     }
     /// <p>The date and time that the network was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

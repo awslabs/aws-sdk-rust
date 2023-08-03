@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`vault_name(impl ::std::convert::Into<String>)`](crate::operation::delete_vault_notifications::builders::DeleteVaultNotificationsFluentBuilder::vault_name) / [`set_vault_name(Option<String>)`](crate::operation::delete_vault_notifications::builders::DeleteVaultNotificationsFluentBuilder::set_vault_name): <p>The name of the vault.</p>
     /// - On success, responds with [`DeleteVaultNotificationsOutput`](crate::operation::delete_vault_notifications::DeleteVaultNotificationsOutput)
     /// - On failure, responds with [`SdkError<DeleteVaultNotificationsError>`](crate::operation::delete_vault_notifications::DeleteVaultNotificationsError)
-    pub fn delete_vault_notifications(
-        &self,
-    ) -> crate::operation::delete_vault_notifications::builders::DeleteVaultNotificationsFluentBuilder
-    {
+    pub fn delete_vault_notifications(&self) -> crate::operation::delete_vault_notifications::builders::DeleteVaultNotificationsFluentBuilder {
         crate::operation::delete_vault_notifications::builders::DeleteVaultNotificationsFluentBuilder::new(self.handle.clone())
     }
 }

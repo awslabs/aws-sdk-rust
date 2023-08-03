@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`status(Option<RescoreExecutionPlanStatus>)`](crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanOutput::status): <p>The current status of the rescore execution plan. When the value is <code>ACTIVE</code>, the rescore execution plan is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanOutput::error_message): <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     /// - On failure, responds with [`SdkError<DescribeRescoreExecutionPlanError>`](crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanError)
-    pub fn describe_rescore_execution_plan(&self) -> crate::operation::describe_rescore_execution_plan::builders::DescribeRescoreExecutionPlanFluentBuilder{
+    pub fn describe_rescore_execution_plan(
+        &self,
+    ) -> crate::operation::describe_rescore_execution_plan::builders::DescribeRescoreExecutionPlanFluentBuilder {
         crate::operation::describe_rescore_execution_plan::builders::DescribeRescoreExecutionPlanFluentBuilder::new(self.handle.clone())
     }
 }

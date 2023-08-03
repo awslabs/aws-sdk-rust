@@ -7,9 +7,7 @@ pub fn ser_update_maintenance(
         object.key("maintenanceDay").string(var_1.as_str());
     }
     if let Some(var_2) = &input.maintenance_scheduled_date {
-        object
-            .key("maintenanceScheduledDate")
-            .string(var_2.as_str());
+        object.key("maintenanceScheduledDate").string(var_2.as_str());
     }
     if let Some(var_3) = &input.maintenance_start_hour {
         object.key("maintenanceStartHour").string(var_3.as_str());

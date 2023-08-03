@@ -15,10 +15,7 @@ pub fn ser_submit_feedback_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_click_feedback::ser_click_feedback(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_click_feedback::ser_click_feedback(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -30,10 +27,7 @@ pub fn ser_submit_feedback_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_relevance_feedback::ser_relevance_feedback(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_relevance_feedback::ser_relevance_feedback(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }

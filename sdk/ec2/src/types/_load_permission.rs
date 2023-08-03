@@ -30,9 +30,7 @@ impl LoadPermission {
 
 /// A builder for [`LoadPermission`](crate::types::LoadPermission).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoadPermissionBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) group: ::std::option::Option<crate::types::PermissionGroup>,
@@ -58,10 +56,7 @@ impl LoadPermissionBuilder {
         self
     }
     /// <p>The name of the group.</p>
-    pub fn set_group(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionGroup>,
-    ) -> Self {
+    pub fn set_group(mut self, input: ::std::option::Option<crate::types::PermissionGroup>) -> Self {
         self.group = input;
         self
     }

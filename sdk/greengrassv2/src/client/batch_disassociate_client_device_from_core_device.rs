@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`BatchDisassociateClientDeviceFromCoreDeviceOutput`](crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceOutput) with field(s):
     ///   - [`error_entries(Option<Vec<DisassociateClientDeviceFromCoreDeviceErrorEntry>>)`](crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceOutput::error_entries): <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to disassociate.</p>
     /// - On failure, responds with [`SdkError<BatchDisassociateClientDeviceFromCoreDeviceError>`](crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceError)
-    pub fn batch_disassociate_client_device_from_core_device(&self) -> crate::operation::batch_disassociate_client_device_from_core_device::builders::BatchDisassociateClientDeviceFromCoreDeviceFluentBuilder{
-        crate::operation::batch_disassociate_client_device_from_core_device::builders::BatchDisassociateClientDeviceFromCoreDeviceFluentBuilder::new(self.handle.clone())
+    pub fn batch_disassociate_client_device_from_core_device(
+        &self,
+    ) -> crate::operation::batch_disassociate_client_device_from_core_device::builders::BatchDisassociateClientDeviceFromCoreDeviceFluentBuilder {
+        crate::operation::batch_disassociate_client_device_from_core_device::builders::BatchDisassociateClientDeviceFromCoreDeviceFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

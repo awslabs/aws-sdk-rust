@@ -51,9 +51,7 @@ impl LineageGroupSummary {
 
 /// A builder for [`LineageGroupSummary`](crate::types::LineageGroupSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LineageGroupSummaryBuilder {
     pub(crate) lineage_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lineage_group_name: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct LineageGroupSummaryBuilder {
 }
 impl LineageGroupSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
-    pub fn lineage_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lineage_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lineage_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
-    pub fn set_lineage_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lineage_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lineage_group_arn = input;
         self
     }
@@ -83,18 +75,12 @@ impl LineageGroupSummaryBuilder {
         &self.lineage_group_arn
     }
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
-    pub fn lineage_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lineage_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lineage_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
-    pub fn set_lineage_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lineage_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lineage_group_name = input;
         self
     }
@@ -122,10 +108,7 @@ impl LineageGroupSummaryBuilder {
         self
     }
     /// <p>The creation time of the lineage group summary.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -139,10 +122,7 @@ impl LineageGroupSummaryBuilder {
         self
     }
     /// <p>The last modified time of the lineage group summary.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

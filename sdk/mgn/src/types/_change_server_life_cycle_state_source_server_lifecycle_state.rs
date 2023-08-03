@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ChangeServerLifeCycleStateSourceServerLifecycleState {
     #[allow(missing_docs)] // documentation missing in model
@@ -61,13 +55,9 @@ impl ::std::convert::From<&str> for ChangeServerLifeCycleStateSourceServerLifecy
     fn from(s: &str) -> Self {
         match s {
             "CUTOVER" => ChangeServerLifeCycleStateSourceServerLifecycleState::Cutover,
-            "READY_FOR_CUTOVER" => {
-                ChangeServerLifeCycleStateSourceServerLifecycleState::ReadyForCutover
-            }
+            "READY_FOR_CUTOVER" => ChangeServerLifeCycleStateSourceServerLifecycleState::ReadyForCutover,
             "READY_FOR_TEST" => ChangeServerLifeCycleStateSourceServerLifecycleState::ReadyForTest,
-            other => ChangeServerLifeCycleStateSourceServerLifecycleState::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ChangeServerLifeCycleStateSourceServerLifecycleState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -75,9 +65,7 @@ impl ::std::str::FromStr for ChangeServerLifeCycleStateSourceServerLifecycleStat
     type Err = ::std::convert::Infallible;
 
     fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ChangeServerLifeCycleStateSourceServerLifecycleState::from(
-            s,
-        ))
+        ::std::result::Result::Ok(ChangeServerLifeCycleStateSourceServerLifecycleState::from(s))
     }
 }
 impl ChangeServerLifeCycleStateSourceServerLifecycleState {
@@ -85,9 +73,7 @@ impl ChangeServerLifeCycleStateSourceServerLifecycleState {
     pub fn as_str(&self) -> &str {
         match self {
             ChangeServerLifeCycleStateSourceServerLifecycleState::Cutover => "CUTOVER",
-            ChangeServerLifeCycleStateSourceServerLifecycleState::ReadyForCutover => {
-                "READY_FOR_CUTOVER"
-            }
+            ChangeServerLifeCycleStateSourceServerLifecycleState::ReadyForCutover => "READY_FOR_CUTOVER",
             ChangeServerLifeCycleStateSourceServerLifecycleState::ReadyForTest => "READY_FOR_TEST",
             ChangeServerLifeCycleStateSourceServerLifecycleState::Unknown(value) => value.as_str(),
         }

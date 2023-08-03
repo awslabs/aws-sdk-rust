@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeWorkspaceSnapshotsOutput {
 }
 impl DescribeWorkspaceSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceSnapshotsOutput`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput).
-    pub fn builder() -> crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsOutputBuilder {
         crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspaceSnapshotsOutput`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceSnapshotsOutputBuilder {
     pub(crate) rebuild_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
     pub(crate) restore_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
@@ -56,17 +54,12 @@ impl DescribeWorkspaceSnapshotsOutputBuilder {
         self
     }
     /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
-    pub fn set_rebuild_snapshots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
-    ) -> Self {
+    pub fn set_rebuild_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>) -> Self {
         self.rebuild_snapshots = input;
         self
     }
     /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
-    pub fn get_rebuild_snapshots(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Snapshot>> {
+    pub fn get_rebuild_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Snapshot>> {
         &self.rebuild_snapshots
     }
     /// Appends an item to `restore_snapshots`.
@@ -81,17 +74,12 @@ impl DescribeWorkspaceSnapshotsOutputBuilder {
         self
     }
     /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>
-    pub fn set_restore_snapshots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
-    ) -> Self {
+    pub fn set_restore_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>) -> Self {
         self.restore_snapshots = input;
         self
     }
     /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>
-    pub fn get_restore_snapshots(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Snapshot>> {
+    pub fn get_restore_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Snapshot>> {
         &self.restore_snapshots
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -104,9 +92,7 @@ impl DescribeWorkspaceSnapshotsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceSnapshotsOutput`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput {
+    pub fn build(self) -> crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput {
         crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput {
             rebuild_snapshots: self.rebuild_snapshots,
             restore_snapshots: self.restore_snapshots,

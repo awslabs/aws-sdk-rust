@@ -48,9 +48,7 @@ impl EmailMessageActivity {
 
 /// A builder for [`EmailMessageActivity`](crate::types::EmailMessageActivity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EmailMessageActivityBuilder {
     pub(crate) message_config: ::std::option::Option<crate::types::JourneyEmailMessage>,
     pub(crate) next_activity: ::std::option::Option<::std::string::String>,
@@ -64,10 +62,7 @@ impl EmailMessageActivityBuilder {
         self
     }
     /// <p>Specifies the sender address for an email message that's sent to participants in the journey.</p>
-    pub fn set_message_config(
-        mut self,
-        input: ::std::option::Option<crate::types::JourneyEmailMessage>,
-    ) -> Self {
+    pub fn set_message_config(mut self, input: ::std::option::Option<crate::types::JourneyEmailMessage>) -> Self {
         self.message_config = input;
         self
     }
@@ -76,18 +71,12 @@ impl EmailMessageActivityBuilder {
         &self.message_config
     }
     /// <p>The unique identifier for the next activity to perform, after the message is sent.</p>
-    pub fn next_activity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_activity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_activity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the next activity to perform, after the message is sent.</p>
-    pub fn set_next_activity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_activity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_activity = input;
         self
     }
@@ -96,18 +85,12 @@ impl EmailMessageActivityBuilder {
         &self.next_activity
     }
     /// <p>The name of the email message template to use for the message. If specified, this value must match the name of an existing message template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the email message template to use for the message. If specified, this value must match the name of an existing message template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -118,20 +101,14 @@ impl EmailMessageActivityBuilder {
     /// <p>The unique identifier for the version of the email template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     /// <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
-    pub fn template_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the version of the email template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     /// <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
-    pub fn set_template_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_version = input;
         self
     }

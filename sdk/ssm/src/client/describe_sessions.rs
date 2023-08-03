@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`sessions(Option<Vec<Session>>)`](crate::operation::describe_sessions::DescribeSessionsOutput::sessions): <p>A list of sessions meeting the request parameters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_sessions::DescribeSessionsOutput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     /// - On failure, responds with [`SdkError<DescribeSessionsError>`](crate::operation::describe_sessions::DescribeSessionsError)
-    pub fn describe_sessions(
-        &self,
-    ) -> crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder {
-        crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_sessions(&self) -> crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder {
+        crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder::new(self.handle.clone())
     }
 }

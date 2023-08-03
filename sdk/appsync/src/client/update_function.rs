@@ -18,11 +18,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateFunctionOutput`](crate::operation::update_function::UpdateFunctionOutput) with field(s):
     ///   - [`function_configuration(Option<FunctionConfiguration>)`](crate::operation::update_function::UpdateFunctionOutput::function_configuration): <p>The <code>Function</code> object.</p>
     /// - On failure, responds with [`SdkError<UpdateFunctionError>`](crate::operation::update_function::UpdateFunctionError)
-    pub fn update_function(
-        &self,
-    ) -> crate::operation::update_function::builders::UpdateFunctionFluentBuilder {
-        crate::operation::update_function::builders::UpdateFunctionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_function(&self) -> crate::operation::update_function::builders::UpdateFunctionFluentBuilder {
+        crate::operation::update_function::builders::UpdateFunctionFluentBuilder::new(self.handle.clone())
     }
 }

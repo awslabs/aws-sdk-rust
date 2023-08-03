@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateReportPlanOutput {
 }
 impl CreateReportPlanOutput {
     /// Creates a new builder-style object to manufacture [`CreateReportPlanOutput`](crate::operation::create_report_plan::CreateReportPlanOutput).
-    pub fn builder() -> crate::operation::create_report_plan::builders::CreateReportPlanOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_report_plan::builders::CreateReportPlanOutputBuilder {
         crate::operation::create_report_plan::builders::CreateReportPlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReportPlanOutput`](crate::operation::create_report_plan::CreateReportPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReportPlanOutputBuilder {
     pub(crate) report_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) report_plan_arn: ::std::option::Option<::std::string::String>,
@@ -54,18 +51,12 @@ pub struct CreateReportPlanOutputBuilder {
 }
 impl CreateReportPlanOutputBuilder {
     /// <p>The unique name of the report plan.</p>
-    pub fn report_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the report plan.</p>
-    pub fn set_report_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_plan_name = input;
         self
     }
@@ -74,18 +65,12 @@ impl CreateReportPlanOutputBuilder {
         &self.report_plan_name
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn report_plan_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_plan_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn set_report_plan_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_plan_arn = input;
         self
     }
@@ -99,10 +84,7 @@ impl CreateReportPlanOutputBuilder {
         self
     }
     /// <p>The date and time a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

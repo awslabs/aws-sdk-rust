@@ -19,9 +19,7 @@ impl PutUserStatusOutput {
 
 /// A builder for [`PutUserStatusOutput`](crate::operation::put_user_status::PutUserStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutUserStatusOutputBuilder {
     _request_id: Option<String>,
 }

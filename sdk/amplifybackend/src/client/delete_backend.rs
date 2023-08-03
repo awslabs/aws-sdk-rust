@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`operation(Option<String>)`](crate::operation::delete_backend::DeleteBackendOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::operation::delete_backend::DeleteBackendOutput::status): <p>The current status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteBackendError>`](crate::operation::delete_backend::DeleteBackendError)
-    pub fn delete_backend(
-        &self,
-    ) -> crate::operation::delete_backend::builders::DeleteBackendFluentBuilder {
-        crate::operation::delete_backend::builders::DeleteBackendFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_backend(&self) -> crate::operation::delete_backend::builders::DeleteBackendFluentBuilder {
+        crate::operation::delete_backend::builders::DeleteBackendFluentBuilder::new(self.handle.clone())
     }
 }

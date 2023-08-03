@@ -35,9 +35,7 @@ impl ListStackSetsOutput {
 
 /// A builder for [`ListStackSetsOutput`](crate::operation::list_stack_sets::ListStackSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStackSetsOutputBuilder {
     pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::StackSetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListStackSetsOutputBuilder {
         self
     }
     /// <p>A list of <code>StackSetSummary</code> structures that contain information about the user's stack sets.</p>
-    pub fn set_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StackSetSummary>>,
-    ) -> Self {
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackSetSummary>>) -> Self {
         self.summaries = input;
         self
     }
     /// <p>A list of <code>StackSetSummary</code> structures that contain information about the user's stack sets.</p>
-    pub fn get_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackSetSummary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackSetSummary>> {
         &self.summaries
     }
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>

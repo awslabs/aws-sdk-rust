@@ -48,8 +48,7 @@ pub struct Subnet {
     pub assign_ipv6_address_on_creation: ::std::option::Option<bool>,
     /// <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
     #[doc(hidden)]
-    pub ipv6_cidr_block_association_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::SubnetIpv6CidrBlockAssociation>>,
+    pub ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::SubnetIpv6CidrBlockAssociation>>,
     /// <p>Any tags assigned to the subnet.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -67,8 +66,7 @@ pub struct Subnet {
     pub ipv6_native: ::std::option::Option<bool>,
     /// <p>The type of hostnames to assign to instances in the subnet at launch. An instance hostname is based on the IPv4 address or ID of the instance.</p>
     #[doc(hidden)]
-    pub private_dns_name_options_on_launch:
-        ::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
+    pub private_dns_name_options_on_launch: ::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
 }
 impl Subnet {
     /// <p>The Availability Zone of the subnet.</p>
@@ -128,9 +126,7 @@ impl Subnet {
         self.assign_ipv6_address_on_creation
     }
     /// <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
-    pub fn ipv6_cidr_block_association_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SubnetIpv6CidrBlockAssociation]> {
+    pub fn ipv6_cidr_block_association_set(&self) -> ::std::option::Option<&[crate::types::SubnetIpv6CidrBlockAssociation]> {
         self.ipv6_cidr_block_association_set.as_deref()
     }
     /// <p>Any tags assigned to the subnet.</p>
@@ -154,9 +150,7 @@ impl Subnet {
         self.ipv6_native
     }
     /// <p>The type of hostnames to assign to instances in the subnet at launch. An instance hostname is based on the IPv4 address or ID of the instance.</p>
-    pub fn private_dns_name_options_on_launch(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PrivateDnsNameOptionsOnLaunch> {
+    pub fn private_dns_name_options_on_launch(&self) -> ::std::option::Option<&crate::types::PrivateDnsNameOptionsOnLaunch> {
         self.private_dns_name_options_on_launch.as_ref()
     }
 }
@@ -169,9 +163,7 @@ impl Subnet {
 
 /// A builder for [`Subnet`](crate::types::Subnet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubnetBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
@@ -187,30 +179,22 @@ pub struct SubnetBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) assign_ipv6_address_on_creation: ::std::option::Option<bool>,
-    pub(crate) ipv6_cidr_block_association_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::SubnetIpv6CidrBlockAssociation>>,
+    pub(crate) ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::SubnetIpv6CidrBlockAssociation>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) subnet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enable_dns64: ::std::option::Option<bool>,
     pub(crate) ipv6_native: ::std::option::Option<bool>,
-    pub(crate) private_dns_name_options_on_launch:
-        ::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
+    pub(crate) private_dns_name_options_on_launch: ::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
 }
 impl SubnetBuilder {
     /// <p>The Availability Zone of the subnet.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone of the subnet.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -219,18 +203,12 @@ impl SubnetBuilder {
         &self.availability_zone
     }
     /// <p>The AZ ID of the subnet.</p>
-    pub fn availability_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AZ ID of the subnet.</p>
-    pub fn set_availability_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_id = input;
         self
     }
@@ -314,10 +292,7 @@ impl SubnetBuilder {
         self
     }
     /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives a customer-owned IPv4 address.</p>
-    pub fn set_map_customer_owned_ip_on_launch(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_map_customer_owned_ip_on_launch(mut self, input: ::std::option::Option<bool>) -> Self {
         self.map_customer_owned_ip_on_launch = input;
         self
     }
@@ -326,18 +301,12 @@ impl SubnetBuilder {
         &self.map_customer_owned_ip_on_launch
     }
     /// <p>The customer-owned IPv4 address pool associated with the subnet.</p>
-    pub fn customer_owned_ipv4_pool(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_owned_ipv4_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_owned_ipv4_pool = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer-owned IPv4 address pool associated with the subnet.</p>
-    pub fn set_customer_owned_ipv4_pool(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_owned_ipv4_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_owned_ipv4_pool = input;
         self
     }
@@ -407,10 +376,7 @@ impl SubnetBuilder {
         self
     }
     /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives an IPv6 address.</p>
-    pub fn set_assign_ipv6_address_on_creation(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_assign_ipv6_address_on_creation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.assign_ipv6_address_on_creation = input;
         self
     }
@@ -423,10 +389,7 @@ impl SubnetBuilder {
     /// To override the contents of this collection use [`set_ipv6_cidr_block_association_set`](Self::set_ipv6_cidr_block_association_set).
     ///
     /// <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
-    pub fn ipv6_cidr_block_association_set(
-        mut self,
-        input: crate::types::SubnetIpv6CidrBlockAssociation,
-    ) -> Self {
+    pub fn ipv6_cidr_block_association_set(mut self, input: crate::types::SubnetIpv6CidrBlockAssociation) -> Self {
         let mut v = self.ipv6_cidr_block_association_set.unwrap_or_default();
         v.push(input);
         self.ipv6_cidr_block_association_set = ::std::option::Option::Some(v);
@@ -441,9 +404,7 @@ impl SubnetBuilder {
         self
     }
     /// <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
-    pub fn get_ipv6_cidr_block_association_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetIpv6CidrBlockAssociation>> {
+    pub fn get_ipv6_cidr_block_association_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetIpv6CidrBlockAssociation>> {
         &self.ipv6_cidr_block_association_set
     }
     /// Appends an item to `tags`.
@@ -458,10 +419,7 @@ impl SubnetBuilder {
         self
     }
     /// <p>Any tags assigned to the subnet.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -526,25 +484,17 @@ impl SubnetBuilder {
         &self.ipv6_native
     }
     /// <p>The type of hostnames to assign to instances in the subnet at launch. An instance hostname is based on the IPv4 address or ID of the instance.</p>
-    pub fn private_dns_name_options_on_launch(
-        mut self,
-        input: crate::types::PrivateDnsNameOptionsOnLaunch,
-    ) -> Self {
+    pub fn private_dns_name_options_on_launch(mut self, input: crate::types::PrivateDnsNameOptionsOnLaunch) -> Self {
         self.private_dns_name_options_on_launch = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of hostnames to assign to instances in the subnet at launch. An instance hostname is based on the IPv4 address or ID of the instance.</p>
-    pub fn set_private_dns_name_options_on_launch(
-        mut self,
-        input: ::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
-    ) -> Self {
+    pub fn set_private_dns_name_options_on_launch(mut self, input: ::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>) -> Self {
         self.private_dns_name_options_on_launch = input;
         self
     }
     /// <p>The type of hostnames to assign to instances in the subnet at launch. An instance hostname is based on the IPv4 address or ID of the instance.</p>
-    pub fn get_private_dns_name_options_on_launch(
-        &self,
-    ) -> &::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch> {
+    pub fn get_private_dns_name_options_on_launch(&self) -> &::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch> {
         &self.private_dns_name_options_on_launch
     }
     /// Consumes the builder and constructs a [`Subnet`](crate::types::Subnet).

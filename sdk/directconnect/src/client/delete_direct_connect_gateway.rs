@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteDirectConnectGatewayOutput`](crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayOutput) with field(s):
     ///   - [`direct_connect_gateway(Option<DirectConnectGateway>)`](crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayOutput::direct_connect_gateway): <p>The Direct Connect gateway.</p>
     /// - On failure, responds with [`SdkError<DeleteDirectConnectGatewayError>`](crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayError)
-    pub fn delete_direct_connect_gateway(&self) -> crate::operation::delete_direct_connect_gateway::builders::DeleteDirectConnectGatewayFluentBuilder{
+    pub fn delete_direct_connect_gateway(
+        &self,
+    ) -> crate::operation::delete_direct_connect_gateway::builders::DeleteDirectConnectGatewayFluentBuilder {
         crate::operation::delete_direct_connect_gateway::builders::DeleteDirectConnectGatewayFluentBuilder::new(self.handle.clone())
     }
 }

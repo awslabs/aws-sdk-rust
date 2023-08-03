@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`deployment_status_message(Option<String>)`](crate::operation::get_deployment::GetDeploymentOutput::deployment_status_message): <p>May contain additional feedback on the status of an API deployment.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_deployment::GetDeploymentOutput::description): <p>The description for the deployment.</p>
     /// - On failure, responds with [`SdkError<GetDeploymentError>`](crate::operation::get_deployment::GetDeploymentError)
-    pub fn get_deployment(
-        &self,
-    ) -> crate::operation::get_deployment::builders::GetDeploymentFluentBuilder {
-        crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_deployment(&self) -> crate::operation::get_deployment::builders::GetDeploymentFluentBuilder {
+        crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

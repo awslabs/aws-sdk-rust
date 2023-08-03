@@ -29,18 +29,14 @@ impl ListTestRecommendationsInput {
 }
 impl ListTestRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`ListTestRecommendationsInput`](crate::operation::list_test_recommendations::ListTestRecommendationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_test_recommendations::builders::ListTestRecommendationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_test_recommendations::builders::ListTestRecommendationsInputBuilder {
         crate::operation::list_test_recommendations::builders::ListTestRecommendationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTestRecommendationsInput`](crate::operation::list_test_recommendations::ListTestRecommendationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestRecommendationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -76,18 +72,12 @@ impl ListTestRecommendationsInputBuilder {
         &self.max_results
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn assessment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn set_assessment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_arn = input;
         self
     }
@@ -102,12 +92,10 @@ impl ListTestRecommendationsInputBuilder {
         crate::operation::list_test_recommendations::ListTestRecommendationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_test_recommendations::ListTestRecommendationsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                assessment_arn: self.assessment_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_test_recommendations::ListTestRecommendationsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            assessment_arn: self.assessment_arn,
+        })
     }
 }

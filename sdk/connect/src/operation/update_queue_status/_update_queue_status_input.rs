@@ -29,17 +29,14 @@ impl UpdateQueueStatusInput {
 }
 impl UpdateQueueStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateQueueStatusInput`](crate::operation::update_queue_status::UpdateQueueStatusInput).
-    pub fn builder(
-    ) -> crate::operation::update_queue_status::builders::UpdateQueueStatusInputBuilder {
+    pub fn builder() -> crate::operation::update_queue_status::builders::UpdateQueueStatusInputBuilder {
         crate::operation::update_queue_status::builders::UpdateQueueStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateQueueStatusInput`](crate::operation::update_queue_status::UpdateQueueStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateQueueStatusInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl UpdateQueueStatusInputBuilder {
     /// Consumes the builder and constructs a [`UpdateQueueStatusInput`](crate::operation::update_queue_status::UpdateQueueStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_queue_status::UpdateQueueStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_queue_status::UpdateQueueStatusInput {
-                instance_id: self.instance_id,
-                queue_id: self.queue_id,
-                status: self.status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_queue_status::UpdateQueueStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_queue_status::UpdateQueueStatusInput {
+            instance_id: self.instance_id,
+            queue_id: self.queue_id,
+            status: self.status,
+        })
     }
 }

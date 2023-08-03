@@ -30,9 +30,7 @@ impl PixelAnomaly {
 
 /// A builder for [`PixelAnomaly`](crate::types::PixelAnomaly).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PixelAnomalyBuilder {
     pub(crate) total_percentage_area: ::std::option::Option<f32>,
     pub(crate) color: ::std::option::Option<::std::string::String>,

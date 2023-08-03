@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`stacks(Option<Vec<Stack>>)`](crate::operation::describe_stacks::DescribeStacksOutput::stacks): <p>Information about the stacks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_stacks::DescribeStacksOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<DescribeStacksError>`](crate::operation::describe_stacks::DescribeStacksError)
-    pub fn describe_stacks(
-        &self,
-    ) -> crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder {
-        crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_stacks(&self) -> crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder {
+        crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder::new(self.handle.clone())
     }
 }

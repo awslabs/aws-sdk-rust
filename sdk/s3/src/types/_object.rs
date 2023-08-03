@@ -82,15 +82,12 @@ impl Object {
 
 /// A builder for [`Object`](crate::types::Object).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ObjectBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
-    pub(crate) checksum_algorithm:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>>,
+    pub(crate) checksum_algorithm: ::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>>,
     pub(crate) size: ::std::option::Option<i64>,
     pub(crate) storage_class: ::std::option::Option<crate::types::ObjectStorageClass>,
     pub(crate) owner: ::std::option::Option<crate::types::Owner>,
@@ -117,10 +114,7 @@ impl ObjectBuilder {
         self
     }
     /// <p>Creation date of the object.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }
@@ -169,17 +163,12 @@ impl ObjectBuilder {
         self
     }
     /// <p>The algorithm that was used to create a checksum of the object.</p>
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>>,
-    ) -> Self {
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>>) -> Self {
         self.checksum_algorithm = input;
         self
     }
     /// <p>The algorithm that was used to create a checksum of the object.</p>
-    pub fn get_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>> {
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>> {
         &self.checksum_algorithm
     }
     /// <p>Size in bytes of the object</p>
@@ -202,10 +191,7 @@ impl ObjectBuilder {
         self
     }
     /// <p>The class of storage used to store the object.</p>
-    pub fn set_storage_class(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectStorageClass>,
-    ) -> Self {
+    pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::ObjectStorageClass>) -> Self {
         self.storage_class = input;
         self
     }
@@ -233,10 +219,7 @@ impl ObjectBuilder {
         self
     }
     /// <p>Specifies the restoration status of an object. Objects in certain storage classes must be restored before they can be retrieved. For more information about these storage classes and how to work with archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html"> Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_restore_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RestoreStatus>,
-    ) -> Self {
+    pub fn set_restore_status(mut self, input: ::std::option::Option<crate::types::RestoreStatus>) -> Self {
         self.restore_status = input;
         self
     }

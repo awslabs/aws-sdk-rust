@@ -35,9 +35,7 @@ impl GetSlotTypesOutput {
 
 /// A builder for [`GetSlotTypesOutput`](crate::operation::get_slot_types::GetSlotTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSlotTypesOutputBuilder {
     pub(crate) slot_types: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetSlotTypesOutputBuilder {
         self
     }
     /// <p>An array of objects, one for each slot type, that provides information such as the name of the slot type, the version, and a description.</p>
-    pub fn set_slot_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeMetadata>>,
-    ) -> Self {
+    pub fn set_slot_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeMetadata>>) -> Self {
         self.slot_types = input;
         self
     }
     /// <p>An array of objects, one for each slot type, that provides information such as the name of the slot type, the version, and a description.</p>
-    pub fn get_slot_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeMetadata>> {
+    pub fn get_slot_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeMetadata>> {
         &self.slot_types
     }
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of slot types.</p>

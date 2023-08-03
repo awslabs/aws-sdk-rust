@@ -30,18 +30,14 @@ impl RegisterSchemaVersionInput {
 }
 impl RegisterSchemaVersionInput {
     /// Creates a new builder-style object to manufacture [`RegisterSchemaVersionInput`](crate::operation::register_schema_version::RegisterSchemaVersionInput).
-    pub fn builder(
-    ) -> crate::operation::register_schema_version::builders::RegisterSchemaVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::register_schema_version::builders::RegisterSchemaVersionInputBuilder {
         crate::operation::register_schema_version::builders::RegisterSchemaVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterSchemaVersionInput`](crate::operation::register_schema_version::RegisterSchemaVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterSchemaVersionInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
     pub(crate) schema_definition: ::std::option::Option<::std::string::String>,
@@ -74,18 +70,12 @@ impl RegisterSchemaVersionInputBuilder {
         &self.schema_id
     }
     /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
-    pub fn schema_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
-    pub fn set_schema_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_definition = input;
         self
     }
@@ -96,15 +86,11 @@ impl RegisterSchemaVersionInputBuilder {
     /// Consumes the builder and constructs a [`RegisterSchemaVersionInput`](crate::operation::register_schema_version::RegisterSchemaVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_schema_version::RegisterSchemaVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::register_schema_version::RegisterSchemaVersionInput {
-                schema_id: self.schema_id,
-                schema_definition: self.schema_definition,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::register_schema_version::RegisterSchemaVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::register_schema_version::RegisterSchemaVersionInput {
+            schema_id: self.schema_id,
+            schema_definition: self.schema_definition,
+        })
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AcceptAdministratorInvitationOutput {
 }
 impl AcceptAdministratorInvitationOutput {
     /// Creates a new builder-style object to manufacture [`AcceptAdministratorInvitationOutput`](crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationOutput).
-    pub fn builder() -> crate::operation::accept_administrator_invitation::builders::AcceptAdministratorInvitationOutputBuilder{
+    pub fn builder() -> crate::operation::accept_administrator_invitation::builders::AcceptAdministratorInvitationOutputBuilder {
         crate::operation::accept_administrator_invitation::builders::AcceptAdministratorInvitationOutputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptAdministratorInvitationOutput`](crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptAdministratorInvitationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl AcceptAdministratorInvitationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AcceptAdministratorInvitationOutput`](crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationOutput
-    {
+    pub fn build(self) -> crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationOutput {
         crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationOutput {
             _request_id: self._request_id,
         }

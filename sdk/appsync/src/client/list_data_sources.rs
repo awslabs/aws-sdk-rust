@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`data_sources(Option<Vec<DataSource>>)`](crate::operation::list_data_sources::ListDataSourcesOutput::data_sources): <p>The <code>DataSource</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_sources::ListDataSourcesOutput::next_token): <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListDataSourcesError>`](crate::operation::list_data_sources::ListDataSourcesError)
-    pub fn list_data_sources(
-        &self,
-    ) -> crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder {
-        crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_data_sources(&self) -> crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder {
+        crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::new(self.handle.clone())
     }
 }

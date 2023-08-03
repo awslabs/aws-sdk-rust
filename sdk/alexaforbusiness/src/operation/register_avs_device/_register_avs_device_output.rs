@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for RegisterAvsDeviceOutput {
 }
 impl RegisterAvsDeviceOutput {
     /// Creates a new builder-style object to manufacture [`RegisterAvsDeviceOutput`](crate::operation::register_avs_device::RegisterAvsDeviceOutput).
-    pub fn builder(
-    ) -> crate::operation::register_avs_device::builders::RegisterAvsDeviceOutputBuilder {
+    pub fn builder() -> crate::operation::register_avs_device::builders::RegisterAvsDeviceOutputBuilder {
         crate::operation::register_avs_device::builders::RegisterAvsDeviceOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterAvsDeviceOutput`](crate::operation::register_avs_device::RegisterAvsDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterAvsDeviceOutputBuilder {
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

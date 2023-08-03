@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionOutput::id): The ID of the logger definition version.
     ///   - [`version(Option<String>)`](crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionOutput::version): The version of the logger definition version.
     /// - On failure, responds with [`SdkError<GetLoggerDefinitionVersionError>`](crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionError)
-    pub fn get_logger_definition_version(&self) -> crate::operation::get_logger_definition_version::builders::GetLoggerDefinitionVersionFluentBuilder{
+    pub fn get_logger_definition_version(
+        &self,
+    ) -> crate::operation::get_logger_definition_version::builders::GetLoggerDefinitionVersionFluentBuilder {
         crate::operation::get_logger_definition_version::builders::GetLoggerDefinitionVersionFluentBuilder::new(self.handle.clone())
     }
 }

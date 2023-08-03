@@ -30,17 +30,14 @@ impl DescribePortfolioInput {
 }
 impl DescribePortfolioInput {
     /// Creates a new builder-style object to manufacture [`DescribePortfolioInput`](crate::operation::describe_portfolio::DescribePortfolioInput).
-    pub fn builder() -> crate::operation::describe_portfolio::builders::DescribePortfolioInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_portfolio::builders::DescribePortfolioInputBuilder {
         crate::operation::describe_portfolio::builders::DescribePortfolioInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePortfolioInput`](crate::operation::describe_portfolio::DescribePortfolioInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePortfolioInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -51,10 +48,7 @@ impl DescribePortfolioInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -63,10 +57,7 @@ impl DescribePortfolioInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -95,15 +86,10 @@ impl DescribePortfolioInputBuilder {
     /// Consumes the builder and constructs a [`DescribePortfolioInput`](crate::operation::describe_portfolio::DescribePortfolioInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_portfolio::DescribePortfolioInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_portfolio::DescribePortfolioInput {
-                accept_language: self.accept_language,
-                id: self.id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_portfolio::DescribePortfolioInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_portfolio::DescribePortfolioInput {
+            accept_language: self.accept_language,
+            id: self.id,
+        })
     }
 }

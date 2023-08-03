@@ -24,10 +24,7 @@ pub fn ser_create_grant_input(
     if let Some(var_7) = &input.constraints {
         #[allow(unused_mut)]
         let mut object_8 = object.key("Constraints").start_object();
-        crate::protocol_serde::shape_grant_constraints::ser_grant_constraints(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_grant_constraints::ser_grant_constraints(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.grant_tokens {

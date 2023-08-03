@@ -23,9 +23,7 @@ impl CloudTrailConfigurationResult {
 
 /// A builder for [`CloudTrailConfigurationResult`](crate::types::CloudTrailConfigurationResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudTrailConfigurationResultBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
@@ -36,10 +34,7 @@ impl CloudTrailConfigurationResultBuilder {
         self
     }
     /// <p>Describes whether CloudTrail is enabled as a data source for the detector.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -49,8 +44,6 @@ impl CloudTrailConfigurationResultBuilder {
     }
     /// Consumes the builder and constructs a [`CloudTrailConfigurationResult`](crate::types::CloudTrailConfigurationResult).
     pub fn build(self) -> crate::types::CloudTrailConfigurationResult {
-        crate::types::CloudTrailConfigurationResult {
-            status: self.status,
-        }
+        crate::types::CloudTrailConfigurationResult { status: self.status }
     }
 }

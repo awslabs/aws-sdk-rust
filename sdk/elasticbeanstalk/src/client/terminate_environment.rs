@@ -30,11 +30,7 @@ impl super::Client {
     ///   - [`environment_arn(Option<String>)`](crate::operation::terminate_environment::TerminateEnvironmentOutput::environment_arn): <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
     ///   - [`operations_role(Option<String>)`](crate::operation::terminate_environment::TerminateEnvironmentOutput::operations_role): <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     /// - On failure, responds with [`SdkError<TerminateEnvironmentError>`](crate::operation::terminate_environment::TerminateEnvironmentError)
-    pub fn terminate_environment(
-        &self,
-    ) -> crate::operation::terminate_environment::builders::TerminateEnvironmentFluentBuilder {
-        crate::operation::terminate_environment::builders::TerminateEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn terminate_environment(&self) -> crate::operation::terminate_environment::builders::TerminateEnvironmentFluentBuilder {
+        crate::operation::terminate_environment::builders::TerminateEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

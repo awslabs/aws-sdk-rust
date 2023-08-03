@@ -15,16 +15,14 @@ impl BatchGetMemberEc2DeepInspectionStatusInput {
 }
 impl BatchGetMemberEc2DeepInspectionStatusInput {
     /// Creates a new builder-style object to manufacture [`BatchGetMemberEc2DeepInspectionStatusInput`](crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusInput).
-    pub fn builder() -> crate::operation::batch_get_member_ec2_deep_inspection_status::builders::BatchGetMemberEc2DeepInspectionStatusInputBuilder{
+    pub fn builder() -> crate::operation::batch_get_member_ec2_deep_inspection_status::builders::BatchGetMemberEc2DeepInspectionStatusInputBuilder {
         crate::operation::batch_get_member_ec2_deep_inspection_status::builders::BatchGetMemberEc2DeepInspectionStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetMemberEc2DeepInspectionStatusInput`](crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetMemberEc2DeepInspectionStatusInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,26 +39,25 @@ impl BatchGetMemberEc2DeepInspectionStatusInputBuilder {
         self
     }
     /// <p>The unique identifiers for the Amazon Web Services accounts to retrieve Amazon Inspector deep inspection activation status for. </p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The unique identifiers for the Amazon Web Services accounts to retrieve Amazon Inspector deep inspection activation status for. </p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`BatchGetMemberEc2DeepInspectionStatusInput`](crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusInput {
-                account_ids: self.account_ids
-                ,
-            }
+                account_ids: self.account_ids,
+            },
         )
     }
 }

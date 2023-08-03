@@ -46,15 +46,12 @@ impl EvaluatedModelVersion {
 
 /// A builder for [`EvaluatedModelVersion`](crate::types::EvaluatedModelVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluatedModelVersionBuilder {
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) model_version: ::std::option::Option<::std::string::String>,
     pub(crate) model_type: ::std::option::Option<::std::string::String>,
-    pub(crate) evaluations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionEvaluation>>,
+    pub(crate) evaluations: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionEvaluation>>,
 }
 impl EvaluatedModelVersionBuilder {
     /// <p> The model ID. </p>
@@ -72,18 +69,12 @@ impl EvaluatedModelVersionBuilder {
         &self.model_id
     }
     /// <p> The model version. </p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The model version. </p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_version = input;
         self
     }
@@ -120,17 +111,12 @@ impl EvaluatedModelVersionBuilder {
         self
     }
     /// <p> Evaluations generated for the model version. </p>
-    pub fn set_evaluations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionEvaluation>>,
-    ) -> Self {
+    pub fn set_evaluations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionEvaluation>>) -> Self {
         self.evaluations = input;
         self
     }
     /// <p> Evaluations generated for the model version. </p>
-    pub fn get_evaluations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVersionEvaluation>> {
+    pub fn get_evaluations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVersionEvaluation>> {
         &self.evaluations
     }
     /// Consumes the builder and constructs a [`EvaluatedModelVersion`](crate::types::EvaluatedModelVersion).

@@ -5,16 +5,16 @@ pub use crate::operation::submit_multi_region_access_point_routes::_submit_multi
 
 impl SubmitMultiRegionAccessPointRoutesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.submit_multi_region_access_point_routes();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -39,7 +39,7 @@ impl SubmitMultiRegionAccessPointRoutesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SubmitMultiRegionAccessPointRoutesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesInputBuilder,
+    inner: crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesInputBuilder,
 }
 impl SubmitMultiRegionAccessPointRoutesFluentBuilder {
     /// Creates a new `SubmitMultiRegionAccessPointRoutes`.
@@ -50,15 +50,20 @@ impl SubmitMultiRegionAccessPointRoutesFluentBuilder {
         }
     }
     /// Access the SubmitMultiRegionAccessPointRoutes as a reference.
-    pub fn as_input(&self) -> &crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -67,16 +72,17 @@ impl SubmitMultiRegionAccessPointRoutesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput, ::aws_smithy_http::result::SdkError<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -94,17 +100,26 @@ impl SubmitMultiRegionAccessPointRoutesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput, ::aws_smithy_http::result::SdkError<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
@@ -145,17 +160,12 @@ impl SubmitMultiRegionAccessPointRoutesFluentBuilder {
         self
     }
     /// <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
-    pub fn set_route_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointRoute>>,
-    ) -> Self {
+    pub fn set_route_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointRoute>>) -> Self {
         self.inner = self.inner.set_route_updates(input);
         self
     }
     /// <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
-    pub fn get_route_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointRoute>> {
+    pub fn get_route_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointRoute>> {
         self.inner.get_route_updates()
     }
 }

@@ -36,16 +36,14 @@ impl ListApplicationDependenciesInput {
 }
 impl ListApplicationDependenciesInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationDependenciesInput`](crate::operation::list_application_dependencies::ListApplicationDependenciesInput).
-    pub fn builder() -> crate::operation::list_application_dependencies::builders::ListApplicationDependenciesInputBuilder{
+    pub fn builder() -> crate::operation::list_application_dependencies::builders::ListApplicationDependenciesInputBuilder {
         crate::operation::list_application_dependencies::builders::ListApplicationDependenciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationDependenciesInput`](crate::operation::list_application_dependencies::ListApplicationDependenciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationDependenciesInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -54,18 +52,12 @@ pub struct ListApplicationDependenciesInputBuilder {
 }
 impl ListApplicationDependenciesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -102,18 +94,12 @@ impl ListApplicationDependenciesInputBuilder {
         &self.next_token
     }
     /// <p>The semantic version of the application to get.</p>
-    pub fn semantic_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The semantic version of the application to get.</p>
-    pub fn set_semantic_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.semantic_version = input;
         self
     }
@@ -128,13 +114,11 @@ impl ListApplicationDependenciesInputBuilder {
         crate::operation::list_application_dependencies::ListApplicationDependenciesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_application_dependencies::ListApplicationDependenciesInput {
-                application_id: self.application_id,
-                max_items: self.max_items,
-                next_token: self.next_token,
-                semantic_version: self.semantic_version,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_application_dependencies::ListApplicationDependenciesInput {
+            application_id: self.application_id,
+            max_items: self.max_items,
+            next_token: self.next_token,
+            semantic_version: self.semantic_version,
+        })
     }
 }

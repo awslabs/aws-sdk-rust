@@ -84,9 +84,7 @@ impl LogStream {
 
 /// A builder for [`LogStream`](crate::types::LogStream).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogStreamBuilder {
     pub(crate) log_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<i64>,
@@ -99,18 +97,12 @@ pub struct LogStreamBuilder {
 }
 impl LogStreamBuilder {
     /// <p>The name of the log stream.</p>
-    pub fn log_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the log stream.</p>
-    pub fn set_log_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_stream_name = input;
         self
     }
@@ -177,20 +169,14 @@ impl LogStreamBuilder {
     /// <p>The sequence token.</p> <important>
     /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
     /// </important>
-    pub fn upload_sequence_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn upload_sequence_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_sequence_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sequence token.</p> <important>
     /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
     /// </important>
-    pub fn set_upload_sequence_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_upload_sequence_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_sequence_token = input;
         self
     }

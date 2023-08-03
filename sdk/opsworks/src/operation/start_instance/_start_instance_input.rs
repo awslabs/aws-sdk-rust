@@ -22,9 +22,7 @@ impl StartInstanceInput {
 
 /// A builder for [`StartInstanceInput`](crate::operation::start_instance::StartInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl StartInstanceInputBuilder {
     /// Consumes the builder and constructs a [`StartInstanceInput`](crate::operation::start_instance::StartInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_instance::StartInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_instance::StartInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_instance::StartInstanceInput {
             instance_id: self.instance_id,
         })

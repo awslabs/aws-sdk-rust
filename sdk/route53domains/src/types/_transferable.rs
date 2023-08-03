@@ -73,13 +73,7 @@
 /// </dl>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Transferable {
     #[allow(missing_docs)] // documentation missing in model
@@ -106,9 +100,7 @@ impl ::std::convert::From<&str> for Transferable {
             "PREMIUM_DOMAIN" => Transferable::PremiumDomain,
             "TRANSFERABLE" => Transferable::Transferable,
             "UNTRANSFERABLE" => Transferable::Untransferable,
-            other => {
-                Transferable::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Transferable::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

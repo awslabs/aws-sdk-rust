@@ -58,9 +58,7 @@ impl Properties {
 
 /// A builder for [`Properties`](crate::types::Properties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertiesBuilder {
     pub(crate) eo_cloud_cover: ::std::option::Option<f32>,
     pub(crate) view_off_nadir: ::std::option::Option<f32>,

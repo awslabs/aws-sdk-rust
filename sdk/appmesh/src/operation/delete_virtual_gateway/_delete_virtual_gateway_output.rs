@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteVirtualGatewayOutput {
 }
 impl DeleteVirtualGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualGatewayOutput`](crate::operation::delete_virtual_gateway::DeleteVirtualGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_virtual_gateway::builders::DeleteVirtualGatewayOutputBuilder {
+    pub fn builder() -> crate::operation::delete_virtual_gateway::builders::DeleteVirtualGatewayOutputBuilder {
         crate::operation::delete_virtual_gateway::builders::DeleteVirtualGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVirtualGatewayOutput`](crate::operation::delete_virtual_gateway::DeleteVirtualGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVirtualGatewayOutputBuilder {
     pub(crate) virtual_gateway: ::std::option::Option<crate::types::VirtualGatewayData>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteVirtualGatewayOutputBuilder {
         self
     }
     /// <p>The virtual gateway that was deleted.</p>
-    pub fn set_virtual_gateway(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualGatewayData>,
-    ) -> Self {
+    pub fn set_virtual_gateway(mut self, input: ::std::option::Option<crate::types::VirtualGatewayData>) -> Self {
         self.virtual_gateway = input;
         self
     }

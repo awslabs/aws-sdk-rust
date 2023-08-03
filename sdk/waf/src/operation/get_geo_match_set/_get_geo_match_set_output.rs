@@ -28,9 +28,7 @@ impl GetGeoMatchSetOutput {
 
 /// A builder for [`GetGeoMatchSetOutput`](crate::operation::get_geo_match_set::GetGeoMatchSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGeoMatchSetOutputBuilder {
     pub(crate) geo_match_set: ::std::option::Option<crate::types::GeoMatchSet>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetGeoMatchSetOutputBuilder {
         self
     }
     /// <p>Information about the <code>GeoMatchSet</code> that you specified in the <code>GetGeoMatchSet</code> request. This includes the <code>Type</code>, which for a <code>GeoMatchContraint</code> is always <code>Country</code>, as well as the <code>Value</code>, which is the identifier for a specific country.</p>
-    pub fn set_geo_match_set(
-        mut self,
-        input: ::std::option::Option<crate::types::GeoMatchSet>,
-    ) -> Self {
+    pub fn set_geo_match_set(mut self, input: ::std::option::Option<crate::types::GeoMatchSet>) -> Self {
         self.geo_match_set = input;
         self
     }

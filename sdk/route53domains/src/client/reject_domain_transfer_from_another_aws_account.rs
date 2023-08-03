@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountOutput::operation_id): <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was rejected, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
     /// - On failure, responds with [`SdkError<RejectDomainTransferFromAnotherAwsAccountError>`](crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountError)
-    pub fn reject_domain_transfer_from_another_aws_account(&self) -> crate::operation::reject_domain_transfer_from_another_aws_account::builders::RejectDomainTransferFromAnotherAwsAccountFluentBuilder{
-        crate::operation::reject_domain_transfer_from_another_aws_account::builders::RejectDomainTransferFromAnotherAwsAccountFluentBuilder::new(self.handle.clone())
+    pub fn reject_domain_transfer_from_another_aws_account(
+        &self,
+    ) -> crate::operation::reject_domain_transfer_from_another_aws_account::builders::RejectDomainTransferFromAnotherAwsAccountFluentBuilder {
+        crate::operation::reject_domain_transfer_from_another_aws_account::builders::RejectDomainTransferFromAnotherAwsAccountFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`source_dest_check(impl ::std::convert::Into<String>)`](crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeFluentBuilder::source_dest_check) / [`set_source_dest_check(Option<String>)`](crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeFluentBuilder::set_source_dest_check): <p>The source/destination checking attribute. Resets the value to <code>true</code>.</p>
     /// - On success, responds with [`ResetNetworkInterfaceAttributeOutput`](crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeOutput)
     /// - On failure, responds with [`SdkError<ResetNetworkInterfaceAttributeError>`](crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeError)
-    pub fn reset_network_interface_attribute(&self) -> crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeFluentBuilder{
+    pub fn reset_network_interface_attribute(
+        &self,
+    ) -> crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeFluentBuilder {
         crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeFluentBuilder::new(self.handle.clone())
     }
 }

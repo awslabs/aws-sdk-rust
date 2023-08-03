@@ -42,9 +42,7 @@ impl DescribeFolderOutput {
 
 /// A builder for [`DescribeFolderOutput`](crate::operation::describe_folder::DescribeFolderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFolderOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) folder: ::std::option::Option<crate::types::Folder>,

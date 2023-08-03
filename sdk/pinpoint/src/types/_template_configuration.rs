@@ -44,9 +44,7 @@ impl TemplateConfiguration {
 
 /// A builder for [`TemplateConfiguration`](crate::types::TemplateConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemplateConfigurationBuilder {
     pub(crate) email_template: ::std::option::Option<crate::types::Template>,
     pub(crate) push_template: ::std::option::Option<crate::types::Template>,
@@ -60,10 +58,7 @@ impl TemplateConfigurationBuilder {
         self
     }
     /// <p>The email template to use for the message.</p>
-    pub fn set_email_template(
-        mut self,
-        input: ::std::option::Option<crate::types::Template>,
-    ) -> Self {
+    pub fn set_email_template(mut self, input: ::std::option::Option<crate::types::Template>) -> Self {
         self.email_template = input;
         self
     }
@@ -77,10 +72,7 @@ impl TemplateConfigurationBuilder {
         self
     }
     /// <p>The push notification template to use for the message.</p>
-    pub fn set_push_template(
-        mut self,
-        input: ::std::option::Option<crate::types::Template>,
-    ) -> Self {
+    pub fn set_push_template(mut self, input: ::std::option::Option<crate::types::Template>) -> Self {
         self.push_template = input;
         self
     }
@@ -94,10 +86,7 @@ impl TemplateConfigurationBuilder {
         self
     }
     /// <p>The SMS template to use for the message.</p>
-    pub fn set_sms_template(
-        mut self,
-        input: ::std::option::Option<crate::types::Template>,
-    ) -> Self {
+    pub fn set_sms_template(mut self, input: ::std::option::Option<crate::types::Template>) -> Self {
         self.sms_template = input;
         self
     }
@@ -111,10 +100,7 @@ impl TemplateConfigurationBuilder {
         self
     }
     /// <p>The voice template to use for the message. This object isn't supported for campaigns.</p>
-    pub fn set_voice_template(
-        mut self,
-        input: ::std::option::Option<crate::types::Template>,
-    ) -> Self {
+    pub fn set_voice_template(mut self, input: ::std::option::Option<crate::types::Template>) -> Self {
         self.voice_template = input;
         self
     }

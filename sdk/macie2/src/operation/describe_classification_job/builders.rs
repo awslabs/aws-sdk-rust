@@ -26,7 +26,7 @@ impl DescribeClassificationJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeClassificationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_classification_job::builders::DescribeClassificationJobInputBuilder,
+    inner: crate::operation::describe_classification_job::builders::DescribeClassificationJobInputBuilder,
 }
 impl DescribeClassificationJobFluentBuilder {
     /// Creates a new `DescribeClassificationJob`.
@@ -37,7 +37,7 @@ impl DescribeClassificationJobFluentBuilder {
         }
     }
     /// Access the DescribeClassificationJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_classification_job::builders::DescribeClassificationJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_classification_job::builders::DescribeClassificationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeClassificationJobFluentBuilder {
             crate::operation::describe_classification_job::DescribeClassificationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_classification_job::DescribeClassificationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_classification_job::DescribeClassificationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeClassificationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeClassificationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_classification_job::DescribeClassificationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_classification_job::DescribeClassificationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_classification_job::DescribeClassificationJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeClassificationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_classification_job::DescribeClassificationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_classification_job::DescribeClassificationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_classification_job::DescribeClassificationJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeClassificationJobFluentBuilder {
             crate::operation::describe_classification_job::DescribeClassificationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_classification_job::DescribeClassificationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_classification_job::DescribeClassificationJobError>,
     > {
         self.customize_middleware().await
     }

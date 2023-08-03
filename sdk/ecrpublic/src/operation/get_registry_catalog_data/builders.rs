@@ -26,8 +26,7 @@ impl GetRegistryCatalogDataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRegistryCatalogDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_registry_catalog_data::builders::GetRegistryCatalogDataInputBuilder,
+    inner: crate::operation::get_registry_catalog_data::builders::GetRegistryCatalogDataInputBuilder,
 }
 impl GetRegistryCatalogDataFluentBuilder {
     /// Creates a new `GetRegistryCatalogData`.
@@ -38,10 +37,7 @@ impl GetRegistryCatalogDataFluentBuilder {
         }
     }
     /// Access the GetRegistryCatalogData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_registry_catalog_data::builders::GetRegistryCatalogDataInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_registry_catalog_data::builders::GetRegistryCatalogDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetRegistryCatalogDataFluentBuilder {
             crate::operation::get_registry_catalog_data::GetRegistryCatalogData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_registry_catalog_data::GetRegistryCatalogDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_registry_catalog_data::GetRegistryCatalogDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetRegistryCatalogDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetRegistryCatalogDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_registry_catalog_data::GetRegistryCatalogDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_registry_catalog_data::GetRegistryCatalogDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_registry_catalog_data::GetRegistryCatalogDataError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetRegistryCatalogDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_registry_catalog_data::GetRegistryCatalogDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_registry_catalog_data::GetRegistryCatalogDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_registry_catalog_data::GetRegistryCatalogDataError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetRegistryCatalogDataFluentBuilder {
             crate::operation::get_registry_catalog_data::GetRegistryCatalogData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_registry_catalog_data::GetRegistryCatalogDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_registry_catalog_data::GetRegistryCatalogDataError>,
     > {
         self.customize_middleware().await
     }

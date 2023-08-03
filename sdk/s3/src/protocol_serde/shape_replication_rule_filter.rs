@@ -18,11 +18,9 @@ pub fn ser_replication_rule_filter(
             crate::protocol_serde::shape_replication_rule_and_operator::ser_replication_rule_and_operator(inner, inner_writer)?
         }
         crate::types::ReplicationRuleFilter::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "ReplicationRuleFilter",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "ReplicationRuleFilter",
+            ))
         }
     }
     Ok(())
@@ -64,7 +62,5 @@ pub fn de_replication_rule_filter(
             _unknown => base = Some(crate::types::ReplicationRuleFilter::Unknown),
         }
     }
-    base.ok_or_else(|| {
-        ::aws_smithy_xml::decode::XmlDecodeError::custom("expected union, got nothing")
-    })
+    base.ok_or_else(|| ::aws_smithy_xml::decode::XmlDecodeError::custom("expected union, got nothing"))
 }

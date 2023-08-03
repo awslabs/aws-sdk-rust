@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateListenerOutput`](crate::operation::update_listener::UpdateListenerOutput) with field(s):
     ///   - [`listener(Option<Listener>)`](crate::operation::update_listener::UpdateListenerOutput::listener): <p>Information for the updated listener.</p>
     /// - On failure, responds with [`SdkError<UpdateListenerError>`](crate::operation::update_listener::UpdateListenerError)
-    pub fn update_listener(
-        &self,
-    ) -> crate::operation::update_listener::builders::UpdateListenerFluentBuilder {
-        crate::operation::update_listener::builders::UpdateListenerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_listener(&self) -> crate::operation::update_listener::builders::UpdateListenerFluentBuilder {
+        crate::operation::update_listener::builders::UpdateListenerFluentBuilder::new(self.handle.clone())
     }
 }

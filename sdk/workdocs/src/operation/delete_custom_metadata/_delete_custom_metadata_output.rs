@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCustomMetadataOutput {
 }
 impl DeleteCustomMetadataOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomMetadataOutput`](crate::operation::delete_custom_metadata::DeleteCustomMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_custom_metadata::builders::DeleteCustomMetadataOutputBuilder {
+    pub fn builder() -> crate::operation::delete_custom_metadata::builders::DeleteCustomMetadataOutputBuilder {
         crate::operation::delete_custom_metadata::builders::DeleteCustomMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomMetadataOutput`](crate::operation::delete_custom_metadata::DeleteCustomMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomMetadataOutputBuilder {
     _request_id: Option<String>,
 }

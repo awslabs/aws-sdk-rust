@@ -26,7 +26,7 @@ impl DeleteConnectClientAddInInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConnectClientAddInFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_connect_client_add_in::builders::DeleteConnectClientAddInInputBuilder,
+    inner: crate::operation::delete_connect_client_add_in::builders::DeleteConnectClientAddInInputBuilder,
 }
 impl DeleteConnectClientAddInFluentBuilder {
     /// Creates a new `DeleteConnectClientAddIn`.
@@ -37,7 +37,7 @@ impl DeleteConnectClientAddInFluentBuilder {
         }
     }
     /// Access the DeleteConnectClientAddIn as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_connect_client_add_in::builders::DeleteConnectClientAddInInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_connect_client_add_in::builders::DeleteConnectClientAddInInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteConnectClientAddInFluentBuilder {
             crate::operation::delete_connect_client_add_in::DeleteConnectClientAddIn,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteConnectClientAddInFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteConnectClientAddInFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteConnectClientAddInFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteConnectClientAddInFluentBuilder {
             crate::operation::delete_connect_client_add_in::DeleteConnectClientAddIn,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInError>,
     > {
         self.customize_middleware().await
     }

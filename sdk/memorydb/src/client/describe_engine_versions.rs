@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_engine_versions::DescribeEngineVersionsOutput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     ///   - [`engine_versions(Option<Vec<EngineVersionInfo>>)`](crate::operation::describe_engine_versions::DescribeEngineVersionsOutput::engine_versions): <p>A list of engine version details. Each element in the list contains detailed information about one engine version.</p>
     /// - On failure, responds with [`SdkError<DescribeEngineVersionsError>`](crate::operation::describe_engine_versions::DescribeEngineVersionsError)
-    pub fn describe_engine_versions(
-        &self,
-    ) -> crate::operation::describe_engine_versions::builders::DescribeEngineVersionsFluentBuilder
-    {
+    pub fn describe_engine_versions(&self) -> crate::operation::describe_engine_versions::builders::DescribeEngineVersionsFluentBuilder {
         crate::operation::describe_engine_versions::builders::DescribeEngineVersionsFluentBuilder::new(self.handle.clone())
     }
 }

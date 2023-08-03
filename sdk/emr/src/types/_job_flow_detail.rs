@@ -30,8 +30,7 @@ pub struct JobFlowDetail {
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::StepDetail>>,
     /// <p>A list of the bootstrap actions run by the job flow.</p>
     #[doc(hidden)]
-    pub bootstrap_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::BootstrapActionDetail>>,
+    pub bootstrap_actions: ::std::option::Option<::std::vec::Vec<crate::types::BootstrapActionDetail>>,
     /// <p>A list of strings set by third-party software when the job flow is launched. If you are not using third-party software to manage the job flow, this value is empty.</p>
     #[doc(hidden)]
     pub supported_products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -74,9 +73,7 @@ impl JobFlowDetail {
         self.ami_version.as_deref()
     }
     /// <p>Describes the execution status of the job flow.</p>
-    pub fn execution_status_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::JobFlowExecutionStatusDetail> {
+    pub fn execution_status_detail(&self) -> ::std::option::Option<&crate::types::JobFlowExecutionStatusDetail> {
         self.execution_status_detail.as_ref()
     }
     /// <p>Describes the Amazon EC2 instances of the job flow.</p>
@@ -88,9 +85,7 @@ impl JobFlowDetail {
         self.steps.as_deref()
     }
     /// <p>A list of the bootstrap actions run by the job flow.</p>
-    pub fn bootstrap_actions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BootstrapActionDetail]> {
+    pub fn bootstrap_actions(&self) -> ::std::option::Option<&[crate::types::BootstrapActionDetail]> {
         self.bootstrap_actions.as_deref()
     }
     /// <p>A list of strings set by third-party software when the job flow is launched. If you are not using third-party software to manage the job flow, this value is empty.</p>
@@ -128,21 +123,17 @@ impl JobFlowDetail {
 
 /// A builder for [`JobFlowDetail`](crate::types::JobFlowDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobFlowDetailBuilder {
     pub(crate) job_flow_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) log_uri: ::std::option::Option<::std::string::String>,
     pub(crate) log_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) ami_version: ::std::option::Option<::std::string::String>,
-    pub(crate) execution_status_detail:
-        ::std::option::Option<crate::types::JobFlowExecutionStatusDetail>,
+    pub(crate) execution_status_detail: ::std::option::Option<crate::types::JobFlowExecutionStatusDetail>,
     pub(crate) instances: ::std::option::Option<crate::types::JobFlowInstancesDetail>,
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::StepDetail>>,
-    pub(crate) bootstrap_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::BootstrapActionDetail>>,
+    pub(crate) bootstrap_actions: ::std::option::Option<::std::vec::Vec<crate::types::BootstrapActionDetail>>,
     pub(crate) supported_products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) visible_to_all_users: ::std::option::Option<bool>,
     pub(crate) job_flow_role: ::std::option::Option<::std::string::String>,
@@ -194,18 +185,12 @@ impl JobFlowDetailBuilder {
         &self.log_uri
     }
     /// <p>The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
-    pub fn log_encryption_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_encryption_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_encryption_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
-    pub fn set_log_encryption_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_encryption_kms_key_id = input;
         self
     }
@@ -228,25 +213,17 @@ impl JobFlowDetailBuilder {
         &self.ami_version
     }
     /// <p>Describes the execution status of the job flow.</p>
-    pub fn execution_status_detail(
-        mut self,
-        input: crate::types::JobFlowExecutionStatusDetail,
-    ) -> Self {
+    pub fn execution_status_detail(mut self, input: crate::types::JobFlowExecutionStatusDetail) -> Self {
         self.execution_status_detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the execution status of the job flow.</p>
-    pub fn set_execution_status_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::JobFlowExecutionStatusDetail>,
-    ) -> Self {
+    pub fn set_execution_status_detail(mut self, input: ::std::option::Option<crate::types::JobFlowExecutionStatusDetail>) -> Self {
         self.execution_status_detail = input;
         self
     }
     /// <p>Describes the execution status of the job flow.</p>
-    pub fn get_execution_status_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::JobFlowExecutionStatusDetail> {
+    pub fn get_execution_status_detail(&self) -> &::std::option::Option<crate::types::JobFlowExecutionStatusDetail> {
         &self.execution_status_detail
     }
     /// <p>Describes the Amazon EC2 instances of the job flow.</p>
@@ -255,10 +232,7 @@ impl JobFlowDetailBuilder {
         self
     }
     /// <p>Describes the Amazon EC2 instances of the job flow.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<crate::types::JobFlowInstancesDetail>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<crate::types::JobFlowInstancesDetail>) -> Self {
         self.instances = input;
         self
     }
@@ -278,10 +252,7 @@ impl JobFlowDetailBuilder {
         self
     }
     /// <p>A list of steps run by the job flow.</p>
-    pub fn set_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StepDetail>>,
-    ) -> Self {
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StepDetail>>) -> Self {
         self.steps = input;
         self
     }
@@ -301,17 +272,12 @@ impl JobFlowDetailBuilder {
         self
     }
     /// <p>A list of the bootstrap actions run by the job flow.</p>
-    pub fn set_bootstrap_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BootstrapActionDetail>>,
-    ) -> Self {
+    pub fn set_bootstrap_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BootstrapActionDetail>>) -> Self {
         self.bootstrap_actions = input;
         self
     }
     /// <p>A list of the bootstrap actions run by the job flow.</p>
-    pub fn get_bootstrap_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BootstrapActionDetail>> {
+    pub fn get_bootstrap_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BootstrapActionDetail>> {
         &self.bootstrap_actions
     }
     /// Appends an item to `supported_products`.
@@ -319,27 +285,19 @@ impl JobFlowDetailBuilder {
     /// To override the contents of this collection use [`set_supported_products`](Self::set_supported_products).
     ///
     /// <p>A list of strings set by third-party software when the job flow is launched. If you are not using third-party software to manage the job flow, this value is empty.</p>
-    pub fn supported_products(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supported_products(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_products.unwrap_or_default();
         v.push(input.into());
         self.supported_products = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of strings set by third-party software when the job flow is launched. If you are not using third-party software to manage the job flow, this value is empty.</p>
-    pub fn set_supported_products(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_supported_products(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_products = input;
         self
     }
     /// <p>A list of strings set by third-party software when the job flow is launched. If you are not using third-party software to manage the job flow, this value is empty.</p>
-    pub fn get_supported_products(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_products(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_products
     }
     /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
@@ -360,18 +318,12 @@ impl JobFlowDetailBuilder {
         &self.visible_to_all_users
     }
     /// <p>The IAM role that was specified when the job flow was launched. The Amazon EC2 instances of the job flow assume this role.</p>
-    pub fn job_flow_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_flow_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_flow_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role that was specified when the job flow was launched. The Amazon EC2 instances of the job flow assume this role.</p>
-    pub fn set_job_flow_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_flow_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_flow_role = input;
         self
     }
@@ -394,18 +346,12 @@ impl JobFlowDetailBuilder {
         &self.service_role
     }
     /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the automatic scaling feature to get the required permissions it needs to launch and terminate Amazon EC2 instances in an instance group.</p>
-    pub fn auto_scaling_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the automatic scaling feature to get the required permissions it needs to launch and terminate Amazon EC2 instances in an instance group.</p>
-    pub fn set_auto_scaling_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_role = input;
         self
     }
@@ -419,17 +365,12 @@ impl JobFlowDetailBuilder {
         self
     }
     /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR releases 4.1.0 and later, and is the default for releases of Amazon EMR earlier than 5.1.0.</p>
-    pub fn set_scale_down_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::ScaleDownBehavior>,
-    ) -> Self {
+    pub fn set_scale_down_behavior(mut self, input: ::std::option::Option<crate::types::ScaleDownBehavior>) -> Self {
         self.scale_down_behavior = input;
         self
     }
     /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR releases 4.1.0 and later, and is the default for releases of Amazon EMR earlier than 5.1.0.</p>
-    pub fn get_scale_down_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScaleDownBehavior> {
+    pub fn get_scale_down_behavior(&self) -> &::std::option::Option<crate::types::ScaleDownBehavior> {
         &self.scale_down_behavior
     }
     /// Consumes the builder and constructs a [`JobFlowDetail`](crate::types::JobFlowDetail).

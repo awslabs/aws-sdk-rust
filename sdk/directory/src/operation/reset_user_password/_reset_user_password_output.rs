@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for ResetUserPasswordOutput {
 }
 impl ResetUserPasswordOutput {
     /// Creates a new builder-style object to manufacture [`ResetUserPasswordOutput`](crate::operation::reset_user_password::ResetUserPasswordOutput).
-    pub fn builder(
-    ) -> crate::operation::reset_user_password::builders::ResetUserPasswordOutputBuilder {
+    pub fn builder() -> crate::operation::reset_user_password::builders::ResetUserPasswordOutputBuilder {
         crate::operation::reset_user_password::builders::ResetUserPasswordOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetUserPasswordOutput`](crate::operation::reset_user_password::ResetUserPasswordOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetUserPasswordOutputBuilder {
     _request_id: Option<String>,
 }

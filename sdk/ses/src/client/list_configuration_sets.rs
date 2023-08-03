@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`configuration_sets(Option<Vec<ConfigurationSet>>)`](crate::operation::list_configuration_sets::ListConfigurationSetsOutput::configuration_sets): <p>A list of configuration sets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_configuration_sets::ListConfigurationSetsOutput::next_token): <p>A token indicating that there are additional configuration sets available to be listed. Pass this token to successive calls of <code>ListConfigurationSets</code>. </p>
     /// - On failure, responds with [`SdkError<ListConfigurationSetsError>`](crate::operation::list_configuration_sets::ListConfigurationSetsError)
-    pub fn list_configuration_sets(
-        &self,
-    ) -> crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder
-    {
-        crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_configuration_sets(&self) -> crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder {
+        crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder::new(self.handle.clone())
     }
 }

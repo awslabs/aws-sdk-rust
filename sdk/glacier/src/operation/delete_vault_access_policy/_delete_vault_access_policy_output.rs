@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVaultAccessPolicyOutput {
 }
 impl DeleteVaultAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVaultAccessPolicyOutput`](crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_vault_access_policy::builders::DeleteVaultAccessPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_vault_access_policy::builders::DeleteVaultAccessPolicyOutputBuilder {
         crate::operation::delete_vault_access_policy::builders::DeleteVaultAccessPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVaultAccessPolicyOutput`](crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVaultAccessPolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteVaultAccessPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVaultAccessPolicyOutput`](crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyOutput {
+    pub fn build(self) -> crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyOutput {
         crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyOutput {
             _request_id: self._request_id,
         }

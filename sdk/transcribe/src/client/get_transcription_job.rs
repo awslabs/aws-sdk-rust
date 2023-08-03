@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetTranscriptionJobOutput`](crate::operation::get_transcription_job::GetTranscriptionJobOutput) with field(s):
     ///   - [`transcription_job(Option<TranscriptionJob>)`](crate::operation::get_transcription_job::GetTranscriptionJobOutput::transcription_job): <p>Provides detailed information about the specified transcription job, including job status and, if applicable, failure reason.</p>
     /// - On failure, responds with [`SdkError<GetTranscriptionJobError>`](crate::operation::get_transcription_job::GetTranscriptionJobError)
-    pub fn get_transcription_job(
-        &self,
-    ) -> crate::operation::get_transcription_job::builders::GetTranscriptionJobFluentBuilder {
-        crate::operation::get_transcription_job::builders::GetTranscriptionJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_transcription_job(&self) -> crate::operation::get_transcription_job::builders::GetTranscriptionJobFluentBuilder {
+        crate::operation::get_transcription_job::builders::GetTranscriptionJobFluentBuilder::new(self.handle.clone())
     }
 }

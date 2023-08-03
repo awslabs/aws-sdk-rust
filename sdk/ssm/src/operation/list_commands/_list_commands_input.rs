@@ -54,9 +54,7 @@ impl ListCommandsInput {
 
 /// A builder for [`ListCommandsInput`](crate::operation::list_commands::ListCommandsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCommandsInputBuilder {
     pub(crate) command_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -139,26 +137,16 @@ impl ListCommandsInputBuilder {
         self
     }
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListCommandsInput`](crate::operation::list_commands::ListCommandsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_commands::ListCommandsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_commands::ListCommandsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_commands::ListCommandsInput {
             command_id: self.command_id,
             instance_id: self.instance_id,

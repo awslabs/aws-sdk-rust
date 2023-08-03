@@ -25,8 +25,7 @@ pub struct AssessmentRun {
     pub rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user-defined attributes that are assigned to every generated finding.</p>
     #[doc(hidden)]
-    pub user_attributes_for_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub user_attributes_for_findings: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
     #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,16 +43,13 @@ pub struct AssessmentRun {
     pub data_collected: ::std::option::Option<bool>,
     /// <p>A list of the assessment run state changes.</p>
     #[doc(hidden)]
-    pub state_changes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunStateChange>>,
+    pub state_changes: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunStateChange>>,
     /// <p>A list of notifications for the event subscriptions. A notification about a particular generated finding is added to this list only once.</p>
     #[doc(hidden)]
-    pub notifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunNotification>>,
+    pub notifications: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunNotification>>,
     /// <p>Provides a total count of generated findings per severity.</p>
     #[doc(hidden)]
-    pub finding_counts:
-        ::std::option::Option<::std::collections::HashMap<crate::types::Severity, i32>>,
+    pub finding_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Severity, i32>>,
 }
 impl AssessmentRun {
     /// <p>The ARN of the assessment run.</p>
@@ -81,9 +77,7 @@ impl AssessmentRun {
         self.rules_package_arns.as_deref()
     }
     /// <p>The user-defined attributes that are assigned to every generated finding.</p>
-    pub fn user_attributes_for_findings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::Attribute]> {
+    pub fn user_attributes_for_findings(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
         self.user_attributes_for_findings.as_deref()
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
@@ -107,21 +101,15 @@ impl AssessmentRun {
         self.data_collected
     }
     /// <p>A list of the assessment run state changes.</p>
-    pub fn state_changes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssessmentRunStateChange]> {
+    pub fn state_changes(&self) -> ::std::option::Option<&[crate::types::AssessmentRunStateChange]> {
         self.state_changes.as_deref()
     }
     /// <p>A list of notifications for the event subscriptions. A notification about a particular generated finding is added to this list only once.</p>
-    pub fn notifications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssessmentRunNotification]> {
+    pub fn notifications(&self) -> ::std::option::Option<&[crate::types::AssessmentRunNotification]> {
         self.notifications.as_deref()
     }
     /// <p>Provides a total count of generated findings per severity.</p>
-    pub fn finding_counts(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Severity, i32>> {
+    pub fn finding_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Severity, i32>> {
         self.finding_counts.as_ref()
     }
 }
@@ -134,9 +122,7 @@ impl AssessmentRun {
 
 /// A builder for [`AssessmentRun`](crate::types::AssessmentRun).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssessmentRunBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -144,19 +130,15 @@ pub struct AssessmentRunBuilder {
     pub(crate) state: ::std::option::Option<crate::types::AssessmentRunState>,
     pub(crate) duration_in_seconds: ::std::option::Option<i32>,
     pub(crate) rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) user_attributes_for_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) user_attributes_for_findings: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) state_changed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) data_collected: ::std::option::Option<bool>,
-    pub(crate) state_changes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunStateChange>>,
-    pub(crate) notifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunNotification>>,
-    pub(crate) finding_counts:
-        ::std::option::Option<::std::collections::HashMap<crate::types::Severity, i32>>,
+    pub(crate) state_changes: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunStateChange>>,
+    pub(crate) notifications: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunNotification>>,
+    pub(crate) finding_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Severity, i32>>,
 }
 impl AssessmentRunBuilder {
     /// <p>The ARN of the assessment run.</p>
@@ -188,18 +170,12 @@ impl AssessmentRunBuilder {
         &self.name
     }
     /// <p>The ARN of the assessment template that is associated with the assessment run.</p>
-    pub fn assessment_template_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_template_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the assessment template that is associated with the assessment run.</p>
-    pub fn set_assessment_template_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_template_arn = input;
         self
     }
@@ -213,10 +189,7 @@ impl AssessmentRunBuilder {
         self
     }
     /// <p>The state of the assessment run.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentRunState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AssessmentRunState>) -> Self {
         self.state = input;
         self
     }
@@ -243,27 +216,19 @@ impl AssessmentRunBuilder {
     /// To override the contents of this collection use [`set_rules_package_arns`](Self::set_rules_package_arns).
     ///
     /// <p>The rules packages selected for the assessment run.</p>
-    pub fn rules_package_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rules_package_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rules_package_arns.unwrap_or_default();
         v.push(input.into());
         self.rules_package_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The rules packages selected for the assessment run.</p>
-    pub fn set_rules_package_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_rules_package_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.rules_package_arns = input;
         self
     }
     /// <p>The rules packages selected for the assessment run.</p>
-    pub fn get_rules_package_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rules_package_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.rules_package_arns
     }
     /// Appends an item to `user_attributes_for_findings`.
@@ -278,17 +243,12 @@ impl AssessmentRunBuilder {
         self
     }
     /// <p>The user-defined attributes that are assigned to every generated finding.</p>
-    pub fn set_user_attributes_for_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_user_attributes_for_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.user_attributes_for_findings = input;
         self
     }
     /// <p>The user-defined attributes that are assigned to every generated finding.</p>
-    pub fn get_user_attributes_for_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_user_attributes_for_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.user_attributes_for_findings
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
@@ -297,10 +257,7 @@ impl AssessmentRunBuilder {
         self
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -314,10 +271,7 @@ impl AssessmentRunBuilder {
         self
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
@@ -331,10 +285,7 @@ impl AssessmentRunBuilder {
         self
     }
     /// <p>The assessment run completion time that corresponds to the rules packages evaluation completion time or failure.</p>
-    pub fn set_completed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed_at = input;
         self
     }
@@ -348,10 +299,7 @@ impl AssessmentRunBuilder {
         self
     }
     /// <p>The last time when the assessment run's state changed.</p>
-    pub fn set_state_changed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_state_changed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.state_changed_at = input;
         self
     }
@@ -385,17 +333,12 @@ impl AssessmentRunBuilder {
         self
     }
     /// <p>A list of the assessment run state changes.</p>
-    pub fn set_state_changes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunStateChange>>,
-    ) -> Self {
+    pub fn set_state_changes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunStateChange>>) -> Self {
         self.state_changes = input;
         self
     }
     /// <p>A list of the assessment run state changes.</p>
-    pub fn get_state_changes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunStateChange>> {
+    pub fn get_state_changes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunStateChange>> {
         &self.state_changes
     }
     /// Appends an item to `notifications`.
@@ -410,17 +353,12 @@ impl AssessmentRunBuilder {
         self
     }
     /// <p>A list of notifications for the event subscriptions. A notification about a particular generated finding is added to this list only once.</p>
-    pub fn set_notifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunNotification>>,
-    ) -> Self {
+    pub fn set_notifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunNotification>>) -> Self {
         self.notifications = input;
         self
     }
     /// <p>A list of notifications for the event subscriptions. A notification about a particular generated finding is added to this list only once.</p>
-    pub fn get_notifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunNotification>> {
+    pub fn get_notifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunNotification>> {
         &self.notifications
     }
     /// Adds a key-value pair to `finding_counts`.
@@ -435,17 +373,12 @@ impl AssessmentRunBuilder {
         self
     }
     /// <p>Provides a total count of generated findings per severity.</p>
-    pub fn set_finding_counts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::Severity, i32>>,
-    ) -> Self {
+    pub fn set_finding_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Severity, i32>>) -> Self {
         self.finding_counts = input;
         self
     }
     /// <p>Provides a total count of generated findings per severity.</p>
-    pub fn get_finding_counts(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Severity, i32>> {
+    pub fn get_finding_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Severity, i32>> {
         &self.finding_counts
     }
     /// Consumes the builder and constructs a [`AssessmentRun`](crate::types::AssessmentRun).

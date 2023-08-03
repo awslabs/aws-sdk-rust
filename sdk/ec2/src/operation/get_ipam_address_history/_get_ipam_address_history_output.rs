@@ -5,8 +5,7 @@
 pub struct GetIpamAddressHistoryOutput {
     /// <p>A historical record for a CIDR within an IPAM scope. If the CIDR is associated with an EC2 instance, you will see an object in the response for the instance and one for the network interface.</p>
     #[doc(hidden)]
-    pub history_records:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpamAddressHistoryRecord>>,
+    pub history_records: ::std::option::Option<::std::vec::Vec<crate::types::IpamAddressHistoryRecord>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetIpamAddressHistoryOutput {
 }
 impl GetIpamAddressHistoryOutput {
     /// <p>A historical record for a CIDR within an IPAM scope. If the CIDR is associated with an EC2 instance, you will see an object in the response for the instance and one for the network interface.</p>
-    pub fn history_records(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IpamAddressHistoryRecord]> {
+    pub fn history_records(&self) -> ::std::option::Option<&[crate::types::IpamAddressHistoryRecord]> {
         self.history_records.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for GetIpamAddressHistoryOutput {
 }
 impl GetIpamAddressHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetIpamAddressHistoryOutput`](crate::operation::get_ipam_address_history::GetIpamAddressHistoryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_ipam_address_history::builders::GetIpamAddressHistoryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_ipam_address_history::builders::GetIpamAddressHistoryOutputBuilder {
         crate::operation::get_ipam_address_history::builders::GetIpamAddressHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIpamAddressHistoryOutput`](crate::operation::get_ipam_address_history::GetIpamAddressHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIpamAddressHistoryOutputBuilder {
-    pub(crate) history_records:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpamAddressHistoryRecord>>,
+    pub(crate) history_records: ::std::option::Option<::std::vec::Vec<crate::types::IpamAddressHistoryRecord>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl GetIpamAddressHistoryOutputBuilder {
         self
     }
     /// <p>A historical record for a CIDR within an IPAM scope. If the CIDR is associated with an EC2 instance, you will see an object in the response for the instance and one for the network interface.</p>
-    pub fn set_history_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpamAddressHistoryRecord>>,
-    ) -> Self {
+    pub fn set_history_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamAddressHistoryRecord>>) -> Self {
         self.history_records = input;
         self
     }
     /// <p>A historical record for a CIDR within an IPAM scope. If the CIDR is associated with an EC2 instance, you will see an object in the response for the instance and one for the network interface.</p>
-    pub fn get_history_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamAddressHistoryRecord>> {
+    pub fn get_history_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamAddressHistoryRecord>> {
         &self.history_records
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

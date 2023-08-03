@@ -28,7 +28,7 @@ impl DeleteOpenIdConnectProviderInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteOpenIDConnectProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_open_id_connect_provider::builders::DeleteOpenIdConnectProviderInputBuilder,
+    inner: crate::operation::delete_open_id_connect_provider::builders::DeleteOpenIdConnectProviderInputBuilder,
 }
 impl DeleteOpenIDConnectProviderFluentBuilder {
     /// Creates a new `DeleteOpenIDConnectProvider`.
@@ -39,7 +39,7 @@ impl DeleteOpenIDConnectProviderFluentBuilder {
         }
     }
     /// Access the DeleteOpenIDConnectProvider as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_open_id_connect_provider::builders::DeleteOpenIdConnectProviderInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_open_id_connect_provider::builders::DeleteOpenIdConnectProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DeleteOpenIDConnectProviderFluentBuilder {
             crate::operation::delete_open_id_connect_provider::DeleteOpenIDConnectProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_open_id_connect_provider::DeleteOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_open_id_connect_provider::DeleteOpenIDConnectProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DeleteOpenIDConnectProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DeleteOpenIDConnectProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_open_id_connect_provider::DeleteOpenIdConnectProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_open_id_connect_provider::DeleteOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_open_id_connect_provider::DeleteOpenIDConnectProviderError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DeleteOpenIDConnectProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_open_id_connect_provider::DeleteOpenIdConnectProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_open_id_connect_provider::DeleteOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_open_id_connect_provider::DeleteOpenIDConnectProviderError>,
     > {
         self.send_middleware().await
     }
@@ -116,32 +107,22 @@ impl DeleteOpenIDConnectProviderFluentBuilder {
             crate::operation::delete_open_id_connect_provider::DeleteOpenIDConnectProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_open_id_connect_provider::DeleteOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_open_id_connect_provider::DeleteOpenIDConnectProviderError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource object to delete. You can get a list of OpenID Connect provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
-    pub fn open_id_connect_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn open_id_connect_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.open_id_connect_provider_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource object to delete. You can get a list of OpenID Connect provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
-    pub fn set_open_id_connect_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_open_id_connect_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_open_id_connect_provider_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource object to delete. You can get a list of OpenID Connect provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
-    pub fn get_open_id_connect_provider_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_open_id_connect_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_open_id_connect_provider_arn()
     }
 }

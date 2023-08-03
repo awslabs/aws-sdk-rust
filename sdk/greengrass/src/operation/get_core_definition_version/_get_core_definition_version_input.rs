@@ -22,36 +22,26 @@ impl GetCoreDefinitionVersionInput {
 }
 impl GetCoreDefinitionVersionInput {
     /// Creates a new builder-style object to manufacture [`GetCoreDefinitionVersionInput`](crate::operation::get_core_definition_version::GetCoreDefinitionVersionInput).
-    pub fn builder(
-    ) -> crate::operation::get_core_definition_version::builders::GetCoreDefinitionVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_core_definition_version::builders::GetCoreDefinitionVersionInputBuilder {
         crate::operation::get_core_definition_version::builders::GetCoreDefinitionVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCoreDefinitionVersionInput`](crate::operation::get_core_definition_version::GetCoreDefinitionVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCoreDefinitionVersionInputBuilder {
     pub(crate) core_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_definition_version_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCoreDefinitionVersionInputBuilder {
     /// The ID of the core definition.
-    pub fn core_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the core definition.
-    pub fn set_core_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_definition_id = input;
         self
     }
@@ -60,18 +50,12 @@ impl GetCoreDefinitionVersionInputBuilder {
         &self.core_definition_id
     }
     /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn core_definition_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_definition_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_definition_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn set_core_definition_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_definition_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_definition_version_id = input;
         self
     }
@@ -86,11 +70,9 @@ impl GetCoreDefinitionVersionInputBuilder {
         crate::operation::get_core_definition_version::GetCoreDefinitionVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_core_definition_version::GetCoreDefinitionVersionInput {
-                core_definition_id: self.core_definition_id,
-                core_definition_version_id: self.core_definition_version_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_core_definition_version::GetCoreDefinitionVersionInput {
+            core_definition_id: self.core_definition_id,
+            core_definition_version_id: self.core_definition_version_id,
+        })
     }
 }

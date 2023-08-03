@@ -30,9 +30,7 @@ impl DeviceStatusDetail {
 
 /// A builder for [`DeviceStatusDetail`](crate::types::DeviceStatusDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceStatusDetailBuilder {
     pub(crate) feature: ::std::option::Option<crate::types::Feature>,
     pub(crate) code: ::std::option::Option<crate::types::DeviceStatusDetailCode>,
@@ -58,10 +56,7 @@ impl DeviceStatusDetailBuilder {
         self
     }
     /// <p>The device status detail code.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceStatusDetailCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::DeviceStatusDetailCode>) -> Self {
         self.code = input;
         self
     }

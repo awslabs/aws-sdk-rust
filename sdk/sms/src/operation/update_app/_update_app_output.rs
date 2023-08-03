@@ -42,9 +42,7 @@ impl UpdateAppOutput {
 
 /// A builder for [`UpdateAppOutput`](crate::operation::update_app::UpdateAppOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAppOutputBuilder {
     pub(crate) app_summary: ::std::option::Option<crate::types::AppSummary>,
     pub(crate) server_groups: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>>,
@@ -58,10 +56,7 @@ impl UpdateAppOutputBuilder {
         self
     }
     /// <p>A summary description of the application.</p>
-    pub fn set_app_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::AppSummary>,
-    ) -> Self {
+    pub fn set_app_summary(mut self, input: ::std::option::Option<crate::types::AppSummary>) -> Self {
         self.app_summary = input;
         self
     }
@@ -81,17 +76,12 @@ impl UpdateAppOutputBuilder {
         self
     }
     /// <p>The updated server groups in the application.</p>
-    pub fn set_server_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>>,
-    ) -> Self {
+    pub fn set_server_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>>) -> Self {
         self.server_groups = input;
         self
     }
     /// <p>The updated server groups in the application.</p>
-    pub fn get_server_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>> {
+    pub fn get_server_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>> {
         &self.server_groups
     }
     /// Appends an item to `tags`.
@@ -106,10 +96,7 @@ impl UpdateAppOutputBuilder {
         self
     }
     /// <p>The tags associated with the application.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

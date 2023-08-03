@@ -23,9 +23,7 @@ impl InvalidParameterDetail {
 
 /// A builder for [`InvalidParameterDetail`](crate::types::InvalidParameterDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidParameterDetailBuilder {
     pub(crate) problem: ::std::option::Option<crate::types::InvalidParameterProblem>,
 }
@@ -36,10 +34,7 @@ impl InvalidParameterDetailBuilder {
         self
     }
     /// <p>The reason the parameter is invalid.</p>
-    pub fn set_problem(
-        mut self,
-        input: ::std::option::Option<crate::types::InvalidParameterProblem>,
-    ) -> Self {
+    pub fn set_problem(mut self, input: ::std::option::Option<crate::types::InvalidParameterProblem>) -> Self {
         self.problem = input;
         self
     }
@@ -49,8 +44,6 @@ impl InvalidParameterDetailBuilder {
     }
     /// Consumes the builder and constructs a [`InvalidParameterDetail`](crate::types::InvalidParameterDetail).
     pub fn build(self) -> crate::types::InvalidParameterDetail {
-        crate::types::InvalidParameterDetail {
-            problem: self.problem,
-        }
+        crate::types::InvalidParameterDetail { problem: self.problem }
     }
 }

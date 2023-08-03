@@ -10,9 +10,7 @@ pub struct ArchiveRetainRule {
 }
 impl ArchiveRetainRule {
     /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
-    pub fn retention_archive_tier(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RetentionArchiveTier> {
+    pub fn retention_archive_tier(&self) -> ::std::option::Option<&crate::types::RetentionArchiveTier> {
         self.retention_archive_tier.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl ArchiveRetainRule {
 
 /// A builder for [`ArchiveRetainRule`](crate::types::ArchiveRetainRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArchiveRetainRuleBuilder {
     pub(crate) retention_archive_tier: ::std::option::Option<crate::types::RetentionArchiveTier>,
 }
@@ -38,17 +34,12 @@ impl ArchiveRetainRuleBuilder {
         self
     }
     /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
-    pub fn set_retention_archive_tier(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionArchiveTier>,
-    ) -> Self {
+    pub fn set_retention_archive_tier(mut self, input: ::std::option::Option<crate::types::RetentionArchiveTier>) -> Self {
         self.retention_archive_tier = input;
         self
     }
     /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
-    pub fn get_retention_archive_tier(
-        &self,
-    ) -> &::std::option::Option<crate::types::RetentionArchiveTier> {
+    pub fn get_retention_archive_tier(&self) -> &::std::option::Option<crate::types::RetentionArchiveTier> {
         &self.retention_archive_tier
     }
     /// Consumes the builder and constructs a [`ArchiveRetainRule`](crate::types::ArchiveRetainRule).

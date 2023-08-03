@@ -36,7 +36,7 @@ impl GetWorkflowExecutionHistoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWorkflowExecutionHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_workflow_execution_history::builders::GetWorkflowExecutionHistoryInputBuilder,
+    inner: crate::operation::get_workflow_execution_history::builders::GetWorkflowExecutionHistoryInputBuilder,
 }
 impl GetWorkflowExecutionHistoryFluentBuilder {
     /// Creates a new `GetWorkflowExecutionHistory`.
@@ -47,7 +47,7 @@ impl GetWorkflowExecutionHistoryFluentBuilder {
         }
     }
     /// Access the GetWorkflowExecutionHistory as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_workflow_execution_history::builders::GetWorkflowExecutionHistoryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_workflow_execution_history::builders::GetWorkflowExecutionHistoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +59,7 @@ impl GetWorkflowExecutionHistoryFluentBuilder {
             crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +69,7 @@ impl GetWorkflowExecutionHistoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +78,7 @@ impl GetWorkflowExecutionHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryError>,
     > {
         let op = self
             .inner
@@ -108,9 +101,7 @@ impl GetWorkflowExecutionHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryError>,
     > {
         self.send_middleware().await
     }
@@ -124,16 +115,14 @@ impl GetWorkflowExecutionHistoryFluentBuilder {
             crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_workflow_execution_history::paginator::GetWorkflowExecutionHistoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_workflow_execution_history::paginator::GetWorkflowExecutionHistoryPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_workflow_execution_history::paginator::GetWorkflowExecutionHistoryPaginator {
         crate::operation::get_workflow_execution_history::paginator::GetWorkflowExecutionHistoryPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the domain containing the workflow execution.</p>
@@ -156,10 +145,7 @@ impl GetWorkflowExecutionHistoryFluentBuilder {
         self
     }
     /// <p>Specifies the workflow execution for which to return the history.</p>
-    pub fn set_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecution>,
-    ) -> Self {
+    pub fn set_execution(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
         self.inner = self.inner.set_execution(input);
         self
     }
@@ -169,19 +155,13 @@ impl GetWorkflowExecutionHistoryFluentBuilder {
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }

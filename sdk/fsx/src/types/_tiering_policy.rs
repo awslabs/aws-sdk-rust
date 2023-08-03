@@ -55,9 +55,7 @@ impl TieringPolicy {
 
 /// A builder for [`TieringPolicy`](crate::types::TieringPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TieringPolicyBuilder {
     pub(crate) cooling_period: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<crate::types::TieringPolicyName>,
@@ -95,10 +93,7 @@ impl TieringPolicyBuilder {
     /// <li> <p> <code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p> </li>
     /// <li> <p> <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p> </li>
     /// </ul>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::TieringPolicyName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::TieringPolicyName>) -> Self {
         self.name = input;
         self
     }

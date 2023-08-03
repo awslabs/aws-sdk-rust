@@ -30,9 +30,7 @@ impl BundleInformation {
 
 /// A builder for [`BundleInformation`](crate::types::BundleInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BundleInformationBuilder {
     pub(crate) bundle_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) pricing_tier: ::std::option::Option<crate::types::PricingTier>,
@@ -50,17 +48,12 @@ impl BundleInformationBuilder {
         self
     }
     /// <p>The bundle names.</p>
-    pub fn set_bundle_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_bundle_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.bundle_names = input;
         self
     }
     /// <p>The bundle names.</p>
-    pub fn get_bundle_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bundle_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.bundle_names
     }
     /// <p>The pricing tier.</p>
@@ -69,10 +62,7 @@ impl BundleInformationBuilder {
         self
     }
     /// <p>The pricing tier.</p>
-    pub fn set_pricing_tier(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingTier>,
-    ) -> Self {
+    pub fn set_pricing_tier(mut self, input: ::std::option::Option<crate::types::PricingTier>) -> Self {
         self.pricing_tier = input;
         self
     }

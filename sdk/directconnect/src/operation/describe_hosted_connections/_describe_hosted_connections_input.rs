@@ -15,33 +15,25 @@ impl DescribeHostedConnectionsInput {
 }
 impl DescribeHostedConnectionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeHostedConnectionsInput`](crate::operation::describe_hosted_connections::DescribeHostedConnectionsInput).
-    pub fn builder() -> crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsInputBuilder {
         crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHostedConnectionsInput`](crate::operation::describe_hosted_connections::DescribeHostedConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHostedConnectionsInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHostedConnectionsInputBuilder {
     /// <p>The ID of the interconnect or LAG.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the interconnect or LAG.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl DescribeHostedConnectionsInputBuilder {
         crate::operation::describe_hosted_connections::DescribeHostedConnectionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_hosted_connections::DescribeHostedConnectionsInput {
-                connection_id: self.connection_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_hosted_connections::DescribeHostedConnectionsInput {
+            connection_id: self.connection_id,
+        })
     }
 }

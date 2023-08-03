@@ -58,9 +58,7 @@ impl Snapshot {
 
 /// A builder for [`Snapshot`](crate::types::Snapshot).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
@@ -132,10 +130,7 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The snapshot status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SnapshotStatus>) -> Self {
         self.status = input;
         self
     }
@@ -149,10 +144,7 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The date and time that the snapshot was taken.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }

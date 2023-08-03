@@ -31,9 +31,7 @@ pub struct CreateTriggerInput {
     pub start_on_creation: ::std::option::Option<bool>,
     /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
     #[doc(hidden)]
     pub event_batching_condition: ::std::option::Option<crate::types::EventBatchingCondition>,
@@ -74,17 +72,11 @@ impl CreateTriggerInput {
         self.start_on_creation
     }
     /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
-    pub fn event_batching_condition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EventBatchingCondition> {
+    pub fn event_batching_condition(&self) -> ::std::option::Option<&crate::types::EventBatchingCondition> {
         self.event_batching_condition.as_ref()
     }
 }
@@ -97,9 +89,7 @@ impl CreateTriggerInput {
 
 /// A builder for [`CreateTriggerInput`](crate::operation::create_trigger::CreateTriggerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTriggerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
@@ -109,11 +99,8 @@ pub struct CreateTriggerInputBuilder {
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) start_on_creation: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) event_batching_condition:
-        ::std::option::Option<crate::types::EventBatchingCondition>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) event_batching_condition: ::std::option::Option<crate::types::EventBatchingCondition>,
 }
 impl CreateTriggerInputBuilder {
     /// <p>The name of the trigger.</p>
@@ -131,18 +118,12 @@ impl CreateTriggerInputBuilder {
         &self.name
     }
     /// <p>The name of the workflow associated with the trigger.</p>
-    pub fn workflow_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workflow associated with the trigger.</p>
-    pub fn set_workflow_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_name = input;
         self
     }
@@ -210,10 +191,7 @@ impl CreateTriggerInputBuilder {
         self
     }
     /// <p>The actions initiated by this trigger when it fires.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.actions = input;
         self
     }
@@ -254,32 +232,19 @@ impl CreateTriggerInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
@@ -288,26 +253,18 @@ impl CreateTriggerInputBuilder {
         self
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
-    pub fn set_event_batching_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::EventBatchingCondition>,
-    ) -> Self {
+    pub fn set_event_batching_condition(mut self, input: ::std::option::Option<crate::types::EventBatchingCondition>) -> Self {
         self.event_batching_condition = input;
         self
     }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
-    pub fn get_event_batching_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventBatchingCondition> {
+    pub fn get_event_batching_condition(&self) -> &::std::option::Option<crate::types::EventBatchingCondition> {
         &self.event_batching_condition
     }
     /// Consumes the builder and constructs a [`CreateTriggerInput`](crate::operation::create_trigger::CreateTriggerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_trigger::CreateTriggerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_trigger::CreateTriggerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_trigger::CreateTriggerInput {
             name: self.name,
             workflow_name: self.workflow_name,

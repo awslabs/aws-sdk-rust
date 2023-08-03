@@ -44,9 +44,7 @@ impl SignupResponse {
 
 /// A builder for [`SignupResponse`](crate::types::SignupResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignupResponseBuilder {
     pub(crate) iam_user: ::std::option::Option<bool>,
     pub(crate) user_login_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl SignupResponseBuilder {
         &self.iam_user
     }
     /// <p>The user login name for your Amazon QuickSight account.</p>
-    pub fn user_login_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_login_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_login_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user login name for your Amazon QuickSight account.</p>
-    pub fn set_user_login_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_login_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_login_name = input;
         self
     }
@@ -103,18 +95,12 @@ impl SignupResponseBuilder {
         &self.account_name
     }
     /// <p>The type of Active Directory that is being used to authenticate the Amazon QuickSight account. Valid values are <code>SIMPLE_AD</code>, <code>AD_CONNECTOR</code>, and <code>MICROSOFT_AD</code>.</p>
-    pub fn directory_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of Active Directory that is being used to authenticate the Amazon QuickSight account. Valid values are <code>SIMPLE_AD</code>, <code>AD_CONNECTOR</code>, and <code>MICROSOFT_AD</code>.</p>
-    pub fn set_directory_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_type = input;
         self
     }

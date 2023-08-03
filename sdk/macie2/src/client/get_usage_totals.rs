@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`time_range(Option<TimeRange>)`](crate::operation::get_usage_totals::GetUsageTotalsOutput::time_range): <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
     ///   - [`usage_totals(Option<Vec<UsageTotal>>)`](crate::operation::get_usage_totals::GetUsageTotalsOutput::usage_totals): <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
     /// - On failure, responds with [`SdkError<GetUsageTotalsError>`](crate::operation::get_usage_totals::GetUsageTotalsError)
-    pub fn get_usage_totals(
-        &self,
-    ) -> crate::operation::get_usage_totals::builders::GetUsageTotalsFluentBuilder {
-        crate::operation::get_usage_totals::builders::GetUsageTotalsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_usage_totals(&self) -> crate::operation::get_usage_totals::builders::GetUsageTotalsFluentBuilder {
+        crate::operation::get_usage_totals::builders::GetUsageTotalsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateTransitGatewayRouteTableOutput`](crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableOutput) with field(s):
     ///   - [`association(Option<TransitGatewayAssociation>)`](crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableOutput::association): <p>The ID of the association.</p>
     /// - On failure, responds with [`SdkError<AssociateTransitGatewayRouteTableError>`](crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableError)
-    pub fn associate_transit_gateway_route_table(&self) -> crate::operation::associate_transit_gateway_route_table::builders::AssociateTransitGatewayRouteTableFluentBuilder{
+    pub fn associate_transit_gateway_route_table(
+        &self,
+    ) -> crate::operation::associate_transit_gateway_route_table::builders::AssociateTransitGatewayRouteTableFluentBuilder {
         crate::operation::associate_transit_gateway_route_table::builders::AssociateTransitGatewayRouteTableFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,12 +26,7 @@ impl super::Client {
     /// - On success, responds with [`StartTranscriptionJobOutput`](crate::operation::start_transcription_job::StartTranscriptionJobOutput) with field(s):
     ///   - [`transcription_job(Option<TranscriptionJob>)`](crate::operation::start_transcription_job::StartTranscriptionJobOutput::transcription_job): <p>Provides detailed information about the current transcription job, including job status and, if applicable, failure reason.</p>
     /// - On failure, responds with [`SdkError<StartTranscriptionJobError>`](crate::operation::start_transcription_job::StartTranscriptionJobError)
-    pub fn start_transcription_job(
-        &self,
-    ) -> crate::operation::start_transcription_job::builders::StartTranscriptionJobFluentBuilder
-    {
-        crate::operation::start_transcription_job::builders::StartTranscriptionJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_transcription_job(&self) -> crate::operation::start_transcription_job::builders::StartTranscriptionJobFluentBuilder {
+        crate::operation::start_transcription_job::builders::StartTranscriptionJobFluentBuilder::new(self.handle.clone())
     }
 }

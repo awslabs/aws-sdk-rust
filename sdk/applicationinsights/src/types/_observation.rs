@@ -198,9 +198,7 @@ impl Observation {
         self.cloud_watch_event_id.as_deref()
     }
     /// <p> The source of the CloudWatch Event. </p>
-    pub fn cloud_watch_event_source(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchEventSource> {
+    pub fn cloud_watch_event_source(&self) -> ::std::option::Option<&crate::types::CloudWatchEventSource> {
         self.cloud_watch_event_source.as_ref()
     }
     /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2 Instance State-change Notification</code>. </p>
@@ -333,9 +331,7 @@ impl Observation {
 
 /// A builder for [`Observation`](crate::types::Observation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ObservationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -404,10 +400,7 @@ impl ObservationBuilder {
         self
     }
     /// <p>The time when the observation was first detected, in epoch seconds.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -421,10 +414,7 @@ impl ObservationBuilder {
         self
     }
     /// <p>The time when the observation ended, in epoch seconds.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -480,10 +470,7 @@ impl ObservationBuilder {
         self
     }
     /// <p>The timestamp in the CloudWatch Logs that specifies when the matched line occurred.</p>
-    pub fn set_line_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_line_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.line_time = input;
         self
     }
@@ -520,18 +507,12 @@ impl ObservationBuilder {
         &self.log_filter
     }
     /// <p>The namespace of the observation metric.</p>
-    pub fn metric_namespace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The namespace of the observation metric.</p>
-    pub fn set_metric_namespace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_namespace = input;
         self
     }
@@ -582,18 +563,12 @@ impl ObservationBuilder {
         &self.value
     }
     /// <p> The ID of the CloudWatch Event-based observation related to the detected problem. </p>
-    pub fn cloud_watch_event_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_event_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the CloudWatch Event-based observation related to the detected problem. </p>
-    pub fn set_cloud_watch_event_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_event_id = input;
         self
     }
@@ -607,54 +582,35 @@ impl ObservationBuilder {
         self
     }
     /// <p> The source of the CloudWatch Event. </p>
-    pub fn set_cloud_watch_event_source(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchEventSource>,
-    ) -> Self {
+    pub fn set_cloud_watch_event_source(mut self, input: ::std::option::Option<crate::types::CloudWatchEventSource>) -> Self {
         self.cloud_watch_event_source = input;
         self
     }
     /// <p> The source of the CloudWatch Event. </p>
-    pub fn get_cloud_watch_event_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchEventSource> {
+    pub fn get_cloud_watch_event_source(&self) -> &::std::option::Option<crate::types::CloudWatchEventSource> {
         &self.cloud_watch_event_source
     }
     /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2 Instance State-change Notification</code>. </p>
-    pub fn cloud_watch_event_detail_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_event_detail_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_event_detail_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2 Instance State-change Notification</code>. </p>
-    pub fn set_cloud_watch_event_detail_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_event_detail_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_event_detail_type = input;
         self
     }
     /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2 Instance State-change Notification</code>. </p>
-    pub fn get_cloud_watch_event_detail_type(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cloud_watch_event_detail_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_event_detail_type
     }
     /// <p> The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
-    pub fn health_event_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_event_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_event_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
-    pub fn set_health_event_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_event_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_event_arn = input;
         self
     }
@@ -663,18 +619,12 @@ impl ObservationBuilder {
         &self.health_event_arn
     }
     /// <p> The service to which the AWS Health Event belongs, such as EC2. </p>
-    pub fn health_service(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_service = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The service to which the AWS Health Event belongs, such as EC2. </p>
-    pub fn set_health_service(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_service = input;
         self
     }
@@ -683,18 +633,12 @@ impl ObservationBuilder {
         &self.health_service
     }
     /// <p> The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
-    pub fn health_event_type_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_event_type_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_event_type_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
-    pub fn set_health_event_type_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_event_type_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_event_type_code = input;
         self
     }
@@ -703,18 +647,12 @@ impl ObservationBuilder {
         &self.health_event_type_code
     }
     /// <p> The category of the AWS Health event, such as <code>issue</code>. </p>
-    pub fn health_event_type_category(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_event_type_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_event_type_category = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The category of the AWS Health event, such as <code>issue</code>. </p>
-    pub fn set_health_event_type_category(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_event_type_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_event_type_category = input;
         self
     }
@@ -723,18 +661,12 @@ impl ObservationBuilder {
         &self.health_event_type_category
     }
     /// <p> The description of the AWS Health event provided by the service, such as Amazon EC2. </p>
-    pub fn health_event_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_event_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_event_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The description of the AWS Health event provided by the service, such as Amazon EC2. </p>
-    pub fn set_health_event_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_event_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_event_description = input;
         self
     }
@@ -743,18 +675,12 @@ impl ObservationBuilder {
         &self.health_event_description
     }
     /// <p> The deployment ID of the CodeDeploy-based observation related to the detected problem. </p>
-    pub fn code_deploy_deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_deploy_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_deploy_deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The deployment ID of the CodeDeploy-based observation related to the detected problem. </p>
-    pub fn set_code_deploy_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_deploy_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_deploy_deployment_id = input;
         self
     }
@@ -763,40 +689,26 @@ impl ObservationBuilder {
         &self.code_deploy_deployment_id
     }
     /// <p> The deployment group to which the CodeDeploy deployment belongs. </p>
-    pub fn code_deploy_deployment_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_deploy_deployment_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_deploy_deployment_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The deployment group to which the CodeDeploy deployment belongs. </p>
-    pub fn set_code_deploy_deployment_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_deploy_deployment_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_deploy_deployment_group = input;
         self
     }
     /// <p> The deployment group to which the CodeDeploy deployment belongs. </p>
-    pub fn get_code_deploy_deployment_group(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_code_deploy_deployment_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.code_deploy_deployment_group
     }
     /// <p> The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>. </p>
-    pub fn code_deploy_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_deploy_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_deploy_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>. </p>
-    pub fn set_code_deploy_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_deploy_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_deploy_state = input;
         self
     }
@@ -805,18 +717,12 @@ impl ObservationBuilder {
         &self.code_deploy_state
     }
     /// <p> The CodeDeploy application to which the deployment belongs. </p>
-    pub fn code_deploy_application(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_deploy_application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_deploy_application = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The CodeDeploy application to which the deployment belongs. </p>
-    pub fn set_code_deploy_application(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_deploy_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_deploy_application = input;
         self
     }
@@ -825,25 +731,17 @@ impl ObservationBuilder {
         &self.code_deploy_application
     }
     /// <p> The instance group to which the CodeDeploy instance belongs. </p>
-    pub fn code_deploy_instance_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_deploy_instance_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_deploy_instance_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The instance group to which the CodeDeploy instance belongs. </p>
-    pub fn set_code_deploy_instance_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_deploy_instance_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_deploy_instance_group_id = input;
         self
     }
     /// <p> The instance group to which the CodeDeploy instance belongs. </p>
-    pub fn get_code_deploy_instance_group_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_code_deploy_instance_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.code_deploy_instance_group_id
     }
     /// <p> The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>. </p>
@@ -861,18 +759,12 @@ impl ObservationBuilder {
         &self.ec2_state
     }
     /// <p> The category of an RDS event. </p>
-    pub fn rds_event_categories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rds_event_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rds_event_categories = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The category of an RDS event. </p>
-    pub fn set_rds_event_categories(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rds_event_categories(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rds_event_categories = input;
         self
     }
@@ -881,18 +773,12 @@ impl ObservationBuilder {
         &self.rds_event_categories
     }
     /// <p> The message of an RDS event. </p>
-    pub fn rds_event_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rds_event_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rds_event_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The message of an RDS event. </p>
-    pub fn set_rds_event_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rds_event_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rds_event_message = input;
         self
     }
@@ -901,18 +787,12 @@ impl ObservationBuilder {
         &self.rds_event_message
     }
     /// <p> The name of the S3 CloudWatch Event-based observation. </p>
-    pub fn s3_event_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_event_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_event_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the S3 CloudWatch Event-based observation. </p>
-    pub fn set_s3_event_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_event_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_event_name = input;
         self
     }
@@ -921,18 +801,12 @@ impl ObservationBuilder {
         &self.s3_event_name
     }
     /// <p> The Amazon Resource Name (ARN) of the step function execution-based observation. </p>
-    pub fn states_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn states_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.states_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the step function execution-based observation. </p>
-    pub fn set_states_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_states_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.states_execution_arn = input;
         self
     }
@@ -955,18 +829,12 @@ impl ObservationBuilder {
         &self.states_arn
     }
     /// <p> The status of the step function-related observation. </p>
-    pub fn states_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn states_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.states_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The status of the step function-related observation. </p>
-    pub fn set_states_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_states_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.states_status = input;
         self
     }
@@ -1031,18 +899,12 @@ impl ObservationBuilder {
         &self.ebs_cause
     }
     /// <p> The request ID of an EBS CloudWatch event. </p>
-    pub fn ebs_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ebs_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ebs_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The request ID of an EBS CloudWatch event. </p>
-    pub fn set_ebs_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ebs_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ebs_request_id = input;
         self
     }
@@ -1121,18 +983,12 @@ impl ObservationBuilder {
         &self.x_ray_request_average_latency
     }
     /// <p> The name of the X-Ray node. </p>
-    pub fn x_ray_node_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn x_ray_node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.x_ray_node_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the X-Ray node. </p>
-    pub fn set_x_ray_node_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_x_ray_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.x_ray_node_name = input;
         self
     }
@@ -1141,18 +997,12 @@ impl ObservationBuilder {
         &self.x_ray_node_name
     }
     /// <p> The type of the X-Ray node. </p>
-    pub fn x_ray_node_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn x_ray_node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.x_ray_node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The type of the X-Ray node. </p>
-    pub fn set_x_ray_node_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_x_ray_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.x_ray_node_type = input;
         self
     }

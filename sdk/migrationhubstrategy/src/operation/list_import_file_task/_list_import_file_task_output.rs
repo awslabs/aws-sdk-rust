@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListImportFileTaskOutput {
 }
 impl ListImportFileTaskOutput {
     /// Creates a new builder-style object to manufacture [`ListImportFileTaskOutput`](crate::operation::list_import_file_task::ListImportFileTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::list_import_file_task::builders::ListImportFileTaskOutputBuilder {
-        crate::operation::list_import_file_task::builders::ListImportFileTaskOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_import_file_task::builders::ListImportFileTaskOutputBuilder {
+        crate::operation::list_import_file_task::builders::ListImportFileTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListImportFileTaskOutput`](crate::operation::list_import_file_task::ListImportFileTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImportFileTaskOutputBuilder {
-    pub(crate) task_infos:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImportFileTaskInformation>>,
+    pub(crate) task_infos: ::std::option::Option<::std::vec::Vec<crate::types::ImportFileTaskInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListImportFileTaskOutputBuilder {
         self
     }
     /// <p> Lists information about the files you import.</p>
-    pub fn set_task_infos(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportFileTaskInformation>>,
-    ) -> Self {
+    pub fn set_task_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportFileTaskInformation>>) -> Self {
         self.task_infos = input;
         self
     }
     /// <p> Lists information about the files you import.</p>
-    pub fn get_task_infos(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportFileTaskInformation>> {
+    pub fn get_task_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportFileTaskInformation>> {
         &self.task_infos
     }
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>

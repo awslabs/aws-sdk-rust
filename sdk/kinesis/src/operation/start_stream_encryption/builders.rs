@@ -42,10 +42,7 @@ impl StartStreamEncryptionFluentBuilder {
         }
     }
     /// Access the StartStreamEncryption as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_stream_encryption::builders::StartStreamEncryptionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_stream_encryption::builders::StartStreamEncryptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +54,7 @@ impl StartStreamEncryptionFluentBuilder {
             crate::operation::start_stream_encryption::StartStreamEncryption,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_stream_encryption::StartStreamEncryptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_stream_encryption::StartStreamEncryptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +64,7 @@ impl StartStreamEncryptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +73,7 @@ impl StartStreamEncryptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_stream_encryption::StartStreamEncryptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_stream_encryption::StartStreamEncryptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_stream_encryption::StartStreamEncryptionError>,
     > {
         let op = self
             .inner
@@ -106,9 +96,7 @@ impl StartStreamEncryptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_stream_encryption::StartStreamEncryptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_stream_encryption::StartStreamEncryptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_stream_encryption::StartStreamEncryptionError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +110,7 @@ impl StartStreamEncryptionFluentBuilder {
             crate::operation::start_stream_encryption::StartStreamEncryption,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_stream_encryption::StartStreamEncryptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_stream_encryption::StartStreamEncryptionError>,
     > {
         self.customize_middleware().await
     }
@@ -148,10 +134,7 @@ impl StartStreamEncryptionFluentBuilder {
         self
     }
     /// <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
-    pub fn set_encryption_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionType>,
-    ) -> Self {
+    pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.inner = self.inner.set_encryption_type(input);
         self
     }

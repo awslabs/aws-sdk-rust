@@ -66,13 +66,10 @@ impl RejectedRecordsException {
 
 /// A builder for [`RejectedRecordsException`](crate::types::error::RejectedRecordsException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectedRecordsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) rejected_records:
-        ::std::option::Option<::std::vec::Vec<crate::types::RejectedRecord>>,
+    pub(crate) rejected_records: ::std::option::Option<::std::vec::Vec<crate::types::RejectedRecord>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl RejectedRecordsExceptionBuilder {
@@ -102,17 +99,12 @@ impl RejectedRecordsExceptionBuilder {
         self
     }
     /// <p> </p>
-    pub fn set_rejected_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RejectedRecord>>,
-    ) -> Self {
+    pub fn set_rejected_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RejectedRecord>>) -> Self {
         self.rejected_records = input;
         self
     }
     /// <p> </p>
-    pub fn get_rejected_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RejectedRecord>> {
+    pub fn get_rejected_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RejectedRecord>> {
         &self.rejected_records
     }
     /// Sets error metadata
@@ -122,10 +114,7 @@ impl RejectedRecordsExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -23,9 +23,7 @@ impl BackendDefaults {
 
 /// A builder for [`BackendDefaults`](crate::types::BackendDefaults).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackendDefaultsBuilder {
     pub(crate) client_policy: ::std::option::Option<crate::types::ClientPolicy>,
 }
@@ -36,10 +34,7 @@ impl BackendDefaultsBuilder {
         self
     }
     /// <p>A reference to an object that represents a client policy.</p>
-    pub fn set_client_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientPolicy>,
-    ) -> Self {
+    pub fn set_client_policy(mut self, input: ::std::option::Option<crate::types::ClientPolicy>) -> Self {
         self.client_policy = input;
         self
     }

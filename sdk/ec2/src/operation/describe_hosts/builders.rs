@@ -10,10 +10,7 @@ impl DescribeHostsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_hosts::DescribeHostsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_hosts::DescribeHostsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_hosts::DescribeHostsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_hosts();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeHostsFluentBuilder {
         }
     }
     /// Access the DescribeHosts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_hosts::builders::DescribeHostsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_hosts::builders::DescribeHostsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl DescribeHostsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,13 +110,8 @@ impl DescribeHostsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_hosts::paginator::DescribeHostsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_hosts::paginator::DescribeHostsPaginator {
-        crate::operation::describe_hosts::paginator::DescribeHostsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_hosts::paginator::DescribeHostsPaginator {
+        crate::operation::describe_hosts::paginator::DescribeHostsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filter`.
     ///
@@ -154,10 +141,7 @@ impl DescribeHostsFluentBuilder {
     /// <li> <p> <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> | <code>released-permanent-failure</code>).</p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -184,10 +168,7 @@ impl DescribeHostsFluentBuilder {
         self
     }
     /// <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</p>
-    pub fn set_host_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_host_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_host_ids(input);
         self
     }

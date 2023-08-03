@@ -21,9 +21,7 @@ pub struct ErrorResponse {
     pub resource_type: ::std::option::Option<crate::types::ErrorResourceType>,
     /// <p>Additional details about the error. </p>
     #[doc(hidden)]
-    pub additional_details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub additional_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ErrorResponse {
     /// <p>The error code associated with the error. </p>
@@ -47,11 +45,7 @@ impl ErrorResponse {
         self.resource_type.as_ref()
     }
     /// <p>Additional details about the error. </p>
-    pub fn additional_details(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn additional_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_details.as_ref()
     }
 }
@@ -64,18 +58,14 @@ impl ErrorResponse {
 
 /// A builder for [`ErrorResponse`](crate::types::ErrorResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorResponseBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ErrorResourceType>,
-    pub(crate) additional_details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) additional_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ErrorResponseBuilder {
     /// <p>The error code associated with the error. </p>
@@ -121,18 +111,12 @@ impl ErrorResponseBuilder {
         &self.account_id
     }
     /// <p>The ID of the resource. </p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the resource. </p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
@@ -146,10 +130,7 @@ impl ErrorResponseBuilder {
         self
     }
     /// <p>The type of resource. </p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ErrorResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -175,19 +156,13 @@ impl ErrorResponseBuilder {
     /// <p>Additional details about the error. </p>
     pub fn set_additional_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.additional_details = input;
         self
     }
     /// <p>Additional details about the error. </p>
-    pub fn get_additional_details(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_additional_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.additional_details
     }
     /// Consumes the builder and constructs a [`ErrorResponse`](crate::types::ErrorResponse).

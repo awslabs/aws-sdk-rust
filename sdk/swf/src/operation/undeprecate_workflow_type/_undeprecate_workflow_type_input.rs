@@ -22,18 +22,14 @@ impl UndeprecateWorkflowTypeInput {
 }
 impl UndeprecateWorkflowTypeInput {
     /// Creates a new builder-style object to manufacture [`UndeprecateWorkflowTypeInput`](crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeInput).
-    pub fn builder(
-    ) -> crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeInputBuilder {
         crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`UndeprecateWorkflowTypeInput`](crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UndeprecateWorkflowTypeInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
@@ -59,10 +55,7 @@ impl UndeprecateWorkflowTypeInputBuilder {
         self
     }
     /// <p>The name of the domain of the deprecated workflow type.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.workflow_type = input;
         self
     }
@@ -77,11 +70,9 @@ impl UndeprecateWorkflowTypeInputBuilder {
         crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeInput {
-                domain: self.domain,
-                workflow_type: self.workflow_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeInput {
+            domain: self.domain,
+            workflow_type: self.workflow_type,
+        })
     }
 }

@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLaunchProfileOutput`](crate::operation::create_launch_profile::CreateLaunchProfileOutput) with field(s):
     ///   - [`launch_profile(Option<LaunchProfile>)`](crate::operation::create_launch_profile::CreateLaunchProfileOutput::launch_profile): <p>The launch profile.</p>
     /// - On failure, responds with [`SdkError<CreateLaunchProfileError>`](crate::operation::create_launch_profile::CreateLaunchProfileError)
-    pub fn create_launch_profile(
-        &self,
-    ) -> crate::operation::create_launch_profile::builders::CreateLaunchProfileFluentBuilder {
-        crate::operation::create_launch_profile::builders::CreateLaunchProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_launch_profile(&self) -> crate::operation::create_launch_profile::builders::CreateLaunchProfileFluentBuilder {
+        crate::operation::create_launch_profile::builders::CreateLaunchProfileFluentBuilder::new(self.handle.clone())
     }
 }

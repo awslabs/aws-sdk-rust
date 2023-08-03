@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`last_modified_date_time(Option<String>)`](crate::operation::unarchive_wave::UnarchiveWaveOutput::last_modified_date_time): <p>Wave last modified dateTime.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::unarchive_wave::UnarchiveWaveOutput::tags): <p>Wave tags.</p>
     /// - On failure, responds with [`SdkError<UnarchiveWaveError>`](crate::operation::unarchive_wave::UnarchiveWaveError)
-    pub fn unarchive_wave(
-        &self,
-    ) -> crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder {
-        crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn unarchive_wave(&self) -> crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder {
+        crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder::new(self.handle.clone())
     }
 }

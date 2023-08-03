@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DisassociateFileSystemOutput`](crate::operation::disassociate_file_system::DisassociateFileSystemOutput) with field(s):
     ///   - [`file_system_association_arn(Option<String>)`](crate::operation::disassociate_file_system::DisassociateFileSystemOutput::file_system_association_arn): <p>The Amazon Resource Name (ARN) of the deleted file system association.</p>
     /// - On failure, responds with [`SdkError<DisassociateFileSystemError>`](crate::operation::disassociate_file_system::DisassociateFileSystemError)
-    pub fn disassociate_file_system(
-        &self,
-    ) -> crate::operation::disassociate_file_system::builders::DisassociateFileSystemFluentBuilder
-    {
+    pub fn disassociate_file_system(&self) -> crate::operation::disassociate_file_system::builders::DisassociateFileSystemFluentBuilder {
         crate::operation::disassociate_file_system::builders::DisassociateFileSystemFluentBuilder::new(self.handle.clone())
     }
 }

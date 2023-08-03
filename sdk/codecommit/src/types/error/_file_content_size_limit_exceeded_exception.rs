@@ -27,34 +27,27 @@ impl ::std::fmt::Display for FileContentSizeLimitExceededException {
     }
 }
 impl ::std::error::Error for FileContentSizeLimitExceededException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::FileContentSizeLimitExceededException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::FileContentSizeLimitExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for FileContentSizeLimitExceededException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for FileContentSizeLimitExceededException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl FileContentSizeLimitExceededException {
     /// Creates a new builder-style object to manufacture [`FileContentSizeLimitExceededException`](crate::types::error::FileContentSizeLimitExceededException).
-    pub fn builder() -> crate::types::error::builders::FileContentSizeLimitExceededExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::FileContentSizeLimitExceededExceptionBuilder {
         crate::types::error::builders::FileContentSizeLimitExceededExceptionBuilder::default()
     }
 }
 
 /// A builder for [`FileContentSizeLimitExceededException`](crate::types::error::FileContentSizeLimitExceededException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileContentSizeLimitExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl FileContentSizeLimitExceededExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

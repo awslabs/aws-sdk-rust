@@ -22,18 +22,14 @@ impl ListPageResolutionsInput {
 }
 impl ListPageResolutionsInput {
     /// Creates a new builder-style object to manufacture [`ListPageResolutionsInput`](crate::operation::list_page_resolutions::ListPageResolutionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_page_resolutions::builders::ListPageResolutionsInputBuilder {
-        crate::operation::list_page_resolutions::builders::ListPageResolutionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_page_resolutions::builders::ListPageResolutionsInputBuilder {
+        crate::operation::list_page_resolutions::builders::ListPageResolutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPageResolutionsInput`](crate::operation::list_page_resolutions::ListPageResolutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPageResolutionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_id: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl ListPageResolutionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPageResolutionsInput`](crate::operation::list_page_resolutions::ListPageResolutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_page_resolutions::ListPageResolutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_page_resolutions::ListPageResolutionsInput {
-                next_token: self.next_token,
-                page_id: self.page_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_page_resolutions::ListPageResolutionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_page_resolutions::ListPageResolutionsInput {
+            next_token: self.next_token,
+            page_id: self.page_id,
+        })
     }
 }

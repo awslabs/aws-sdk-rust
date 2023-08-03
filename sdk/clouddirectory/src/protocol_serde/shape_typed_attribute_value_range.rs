@@ -9,10 +9,7 @@ pub fn ser_typed_attribute_value_range(
     if let Some(var_2) = &input.start_value {
         #[allow(unused_mut)]
         let mut object_3 = object.key("StartValue").start_object();
-        crate::protocol_serde::shape_typed_attribute_value::ser_typed_attribute_value(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_typed_attribute_value::ser_typed_attribute_value(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.end_mode {
@@ -21,10 +18,7 @@ pub fn ser_typed_attribute_value_range(
     if let Some(var_5) = &input.end_value {
         #[allow(unused_mut)]
         let mut object_6 = object.key("EndValue").start_object();
-        crate::protocol_serde::shape_typed_attribute_value::ser_typed_attribute_value(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_typed_attribute_value::ser_typed_attribute_value(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

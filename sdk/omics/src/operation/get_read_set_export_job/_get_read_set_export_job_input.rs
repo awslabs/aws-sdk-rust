@@ -22,35 +22,26 @@ impl GetReadSetExportJobInput {
 }
 impl GetReadSetExportJobInput {
     /// Creates a new builder-style object to manufacture [`GetReadSetExportJobInput`](crate::operation::get_read_set_export_job::GetReadSetExportJobInput).
-    pub fn builder(
-    ) -> crate::operation::get_read_set_export_job::builders::GetReadSetExportJobInputBuilder {
+    pub fn builder() -> crate::operation::get_read_set_export_job::builders::GetReadSetExportJobInputBuilder {
         crate::operation::get_read_set_export_job::builders::GetReadSetExportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`GetReadSetExportJobInput`](crate::operation::get_read_set_export_job::GetReadSetExportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReadSetExportJobInputBuilder {
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl GetReadSetExportJobInputBuilder {
     /// <p>The job's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_store_id = input;
         self
     }
@@ -75,15 +66,11 @@ impl GetReadSetExportJobInputBuilder {
     /// Consumes the builder and constructs a [`GetReadSetExportJobInput`](crate::operation::get_read_set_export_job::GetReadSetExportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_read_set_export_job::GetReadSetExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_read_set_export_job::GetReadSetExportJobInput {
-                sequence_store_id: self.sequence_store_id,
-                id: self.id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_read_set_export_job::GetReadSetExportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_read_set_export_job::GetReadSetExportJobInput {
+            sequence_store_id: self.sequence_store_id,
+            id: self.id,
+        })
     }
 }

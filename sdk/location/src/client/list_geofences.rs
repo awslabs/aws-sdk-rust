@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`entries(Option<Vec<ListGeofenceResponseEntry>>)`](crate::operation::list_geofences::ListGeofencesOutput::entries): <p>Contains a list of geofences stored in the geofence collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_geofences::ListGeofencesOutput::next_token): <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListGeofencesError>`](crate::operation::list_geofences::ListGeofencesError)
-    pub fn list_geofences(
-        &self,
-    ) -> crate::operation::list_geofences::builders::ListGeofencesFluentBuilder {
-        crate::operation::list_geofences::builders::ListGeofencesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_geofences(&self) -> crate::operation::list_geofences::builders::ListGeofencesFluentBuilder {
+        crate::operation::list_geofences::builders::ListGeofencesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMeetingDialOutOutput`](crate::operation::create_meeting_dial_out::CreateMeetingDialOutOutput) with field(s):
     ///   - [`transaction_id(Option<String>)`](crate::operation::create_meeting_dial_out::CreateMeetingDialOutOutput::transaction_id): <p>Unique ID that tracks API calls.</p>
     /// - On failure, responds with [`SdkError<CreateMeetingDialOutError>`](crate::operation::create_meeting_dial_out::CreateMeetingDialOutError)
-    pub fn create_meeting_dial_out(
-        &self,
-    ) -> crate::operation::create_meeting_dial_out::builders::CreateMeetingDialOutFluentBuilder
-    {
-        crate::operation::create_meeting_dial_out::builders::CreateMeetingDialOutFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_meeting_dial_out(&self) -> crate::operation::create_meeting_dial_out::builders::CreateMeetingDialOutFluentBuilder {
+        crate::operation::create_meeting_dial_out::builders::CreateMeetingDialOutFluentBuilder::new(self.handle.clone())
     }
 }

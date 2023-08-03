@@ -36,9 +36,7 @@ impl ListRoleAliasesInput {
 
 /// A builder for [`ListRoleAliasesInput`](crate::operation::list_role_aliases::ListRoleAliasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoleAliasesInputBuilder {
     pub(crate) page_size: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl ListRoleAliasesInputBuilder {
     /// Consumes the builder and constructs a [`ListRoleAliasesInput`](crate::operation::list_role_aliases::ListRoleAliasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_role_aliases::ListRoleAliasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_role_aliases::ListRoleAliasesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_role_aliases::ListRoleAliasesInput {
             page_size: self.page_size,
             marker: self.marker,

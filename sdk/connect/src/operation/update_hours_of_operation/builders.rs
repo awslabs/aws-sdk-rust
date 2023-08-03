@@ -27,8 +27,7 @@ impl UpdateHoursOfOperationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateHoursOfOperationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationInputBuilder,
+    inner: crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationInputBuilder,
 }
 impl UpdateHoursOfOperationFluentBuilder {
     /// Creates a new `UpdateHoursOfOperation`.
@@ -39,10 +38,7 @@ impl UpdateHoursOfOperationFluentBuilder {
         }
     }
     /// Access the UpdateHoursOfOperation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl UpdateHoursOfOperationFluentBuilder {
             crate::operation::update_hours_of_operation::UpdateHoursOfOperation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_hours_of_operation::UpdateHoursOfOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_hours_of_operation::UpdateHoursOfOperationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl UpdateHoursOfOperationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl UpdateHoursOfOperationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_hours_of_operation::UpdateHoursOfOperationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_hours_of_operation::UpdateHoursOfOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_hours_of_operation::UpdateHoursOfOperationError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl UpdateHoursOfOperationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_hours_of_operation::UpdateHoursOfOperationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_hours_of_operation::UpdateHoursOfOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_hours_of_operation::UpdateHoursOfOperationError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl UpdateHoursOfOperationFluentBuilder {
             crate::operation::update_hours_of_operation::UpdateHoursOfOperation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_hours_of_operation::UpdateHoursOfOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_hours_of_operation::UpdateHoursOfOperationError>,
     > {
         self.customize_middleware().await
     }
@@ -140,18 +125,12 @@ impl UpdateHoursOfOperationFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier of the hours of operation.</p>
-    pub fn hours_of_operation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hours_of_operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hours_of_operation_id(input.into());
         self
     }
     /// <p>The identifier of the hours of operation.</p>
-    pub fn set_hours_of_operation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hours_of_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hours_of_operation_id(input);
         self
     }
@@ -211,17 +190,12 @@ impl UpdateHoursOfOperationFluentBuilder {
         self
     }
     /// <p>Configuration information of the hours of operation.</p>
-    pub fn set_config(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>>,
-    ) -> Self {
+    pub fn set_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>>) -> Self {
         self.inner = self.inner.set_config(input);
         self
     }
     /// <p>Configuration information of the hours of operation.</p>
-    pub fn get_config(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>> {
+    pub fn get_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>> {
         self.inner.get_config()
     }
 }

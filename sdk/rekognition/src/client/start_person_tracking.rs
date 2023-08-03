@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StartPersonTrackingOutput`](crate::operation::start_person_tracking::StartPersonTrackingOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_person_tracking::StartPersonTrackingOutput::job_id): <p>The identifier for the person detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetPersonTracking</code>.</p>
     /// - On failure, responds with [`SdkError<StartPersonTrackingError>`](crate::operation::start_person_tracking::StartPersonTrackingError)
-    pub fn start_person_tracking(
-        &self,
-    ) -> crate::operation::start_person_tracking::builders::StartPersonTrackingFluentBuilder {
-        crate::operation::start_person_tracking::builders::StartPersonTrackingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_person_tracking(&self) -> crate::operation::start_person_tracking::builders::StartPersonTrackingFluentBuilder {
+        crate::operation::start_person_tracking::builders::StartPersonTrackingFluentBuilder::new(self.handle.clone())
     }
 }

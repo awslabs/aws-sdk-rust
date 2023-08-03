@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`expected_bucket_owner(impl ::std::convert::Into<String>)`](crate::operation::delete_bucket_inventory_configuration::builders::DeleteBucketInventoryConfigurationFluentBuilder::expected_bucket_owner) / [`set_expected_bucket_owner(Option<String>)`](crate::operation::delete_bucket_inventory_configuration::builders::DeleteBucketInventoryConfigurationFluentBuilder::set_expected_bucket_owner): <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     /// - On success, responds with [`DeleteBucketInventoryConfigurationOutput`](crate::operation::delete_bucket_inventory_configuration::DeleteBucketInventoryConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteBucketInventoryConfigurationError>`](crate::operation::delete_bucket_inventory_configuration::DeleteBucketInventoryConfigurationError)
-    pub fn delete_bucket_inventory_configuration(&self) -> crate::operation::delete_bucket_inventory_configuration::builders::DeleteBucketInventoryConfigurationFluentBuilder{
+    pub fn delete_bucket_inventory_configuration(
+        &self,
+    ) -> crate::operation::delete_bucket_inventory_configuration::builders::DeleteBucketInventoryConfigurationFluentBuilder {
         crate::operation::delete_bucket_inventory_configuration::builders::DeleteBucketInventoryConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

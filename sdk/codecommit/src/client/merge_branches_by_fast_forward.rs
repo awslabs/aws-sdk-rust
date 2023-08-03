@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`commit_id(Option<String>)`](crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardOutput::commit_id): <p>The commit ID of the merge in the destination or target branch.</p>
     ///   - [`tree_id(Option<String>)`](crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardOutput::tree_id): <p>The tree ID of the merge in the destination or target branch.</p>
     /// - On failure, responds with [`SdkError<MergeBranchesByFastForwardError>`](crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError)
-    pub fn merge_branches_by_fast_forward(&self) -> crate::operation::merge_branches_by_fast_forward::builders::MergeBranchesByFastForwardFluentBuilder{
+    pub fn merge_branches_by_fast_forward(
+        &self,
+    ) -> crate::operation::merge_branches_by_fast_forward::builders::MergeBranchesByFastForwardFluentBuilder {
         crate::operation::merge_branches_by_fast_forward::builders::MergeBranchesByFastForwardFluentBuilder::new(self.handle.clone())
     }
 }

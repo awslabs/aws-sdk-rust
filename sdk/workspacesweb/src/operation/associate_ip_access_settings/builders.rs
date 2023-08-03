@@ -26,7 +26,7 @@ impl AssociateIpAccessSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateIpAccessSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsInputBuilder,
+    inner: crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsInputBuilder,
 }
 impl AssociateIpAccessSettingsFluentBuilder {
     /// Creates a new `AssociateIpAccessSettings`.
@@ -37,7 +37,7 @@ impl AssociateIpAccessSettingsFluentBuilder {
         }
     }
     /// Access the AssociateIpAccessSettings as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AssociateIpAccessSettingsFluentBuilder {
             crate::operation::associate_ip_access_settings::AssociateIpAccessSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AssociateIpAccessSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AssociateIpAccessSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AssociateIpAccessSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl AssociateIpAccessSettingsFluentBuilder {
             crate::operation::associate_ip_access_settings::AssociateIpAccessSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_ip_access_settings::AssociateIpAccessSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl AssociateIpAccessSettingsFluentBuilder {
         self.inner.get_portal_arn()
     }
     /// <p>The ARN of the IP access settings.</p>
-    pub fn ip_access_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_access_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ip_access_settings_arn(input.into());
         self
     }
     /// <p>The ARN of the IP access settings.</p>
-    pub fn set_ip_access_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_access_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ip_access_settings_arn(input);
         self
     }

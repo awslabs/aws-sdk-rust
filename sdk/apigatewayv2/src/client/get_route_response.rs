@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`route_response_id(Option<String>)`](crate::operation::get_route_response::GetRouteResponseOutput::route_response_id): <p>Represents the identifier of a route response.</p>
     ///   - [`route_response_key(Option<String>)`](crate::operation::get_route_response::GetRouteResponseOutput::route_response_key): <p>Represents the route response key of a route response.</p>
     /// - On failure, responds with [`SdkError<GetRouteResponseError>`](crate::operation::get_route_response::GetRouteResponseError)
-    pub fn get_route_response(
-        &self,
-    ) -> crate::operation::get_route_response::builders::GetRouteResponseFluentBuilder {
-        crate::operation::get_route_response::builders::GetRouteResponseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_route_response(&self) -> crate::operation::get_route_response::builders::GetRouteResponseFluentBuilder {
+        crate::operation::get_route_response::builders::GetRouteResponseFluentBuilder::new(self.handle.clone())
     }
 }

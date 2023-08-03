@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SettingAttribute {
     #[allow(missing_docs)] // documentation missing in model
@@ -76,18 +70,14 @@ impl ::std::convert::From<&str> for SettingAttribute {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => SettingAttribute::All,
-            "DEFAULT_ASSESSMENT_REPORTS_DESTINATION" => {
-                SettingAttribute::DefaultAssessmentReportsDestination
-            }
+            "DEFAULT_ASSESSMENT_REPORTS_DESTINATION" => SettingAttribute::DefaultAssessmentReportsDestination,
             "DEFAULT_EXPORT_DESTINATION" => SettingAttribute::DefaultExportDestination,
             "DEFAULT_PROCESS_OWNERS" => SettingAttribute::DefaultProcessOwners,
             "DEREGISTRATION_POLICY" => SettingAttribute::DeregistrationPolicy,
             "EVIDENCE_FINDER_ENABLEMENT" => SettingAttribute::EvidenceFinderEnablement,
             "IS_AWS_ORG_ENABLED" => SettingAttribute::IsAwsOrgEnabled,
             "SNS_TOPIC" => SettingAttribute::SnsTopic,
-            other => {
-                SettingAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SettingAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,9 +93,7 @@ impl SettingAttribute {
     pub fn as_str(&self) -> &str {
         match self {
             SettingAttribute::All => "ALL",
-            SettingAttribute::DefaultAssessmentReportsDestination => {
-                "DEFAULT_ASSESSMENT_REPORTS_DESTINATION"
-            }
+            SettingAttribute::DefaultAssessmentReportsDestination => "DEFAULT_ASSESSMENT_REPORTS_DESTINATION",
             SettingAttribute::DefaultExportDestination => "DEFAULT_EXPORT_DESTINATION",
             SettingAttribute::DefaultProcessOwners => "DEFAULT_PROCESS_OWNERS",
             SettingAttribute::DeregistrationPolicy => "DEREGISTRATION_POLICY",

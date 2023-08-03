@@ -19,9 +19,7 @@ pub struct CreateReportPlanInput {
     pub report_setting: ::std::option::Option<crate::types::ReportSetting>,
     /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
     #[doc(hidden)]
-    pub report_plan_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub report_plan_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
@@ -36,9 +34,7 @@ impl CreateReportPlanInput {
         self.report_plan_description.as_deref()
     }
     /// <p>A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
-    pub fn report_delivery_channel(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReportDeliveryChannel> {
+    pub fn report_delivery_channel(&self) -> ::std::option::Option<&crate::types::ReportDeliveryChannel> {
         self.report_delivery_channel.as_ref()
     }
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
@@ -48,11 +44,7 @@ impl CreateReportPlanInput {
         self.report_setting.as_ref()
     }
     /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
-    pub fn report_plan_tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn report_plan_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.report_plan_tags.as_ref()
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
@@ -62,41 +54,30 @@ impl CreateReportPlanInput {
 }
 impl CreateReportPlanInput {
     /// Creates a new builder-style object to manufacture [`CreateReportPlanInput`](crate::operation::create_report_plan::CreateReportPlanInput).
-    pub fn builder() -> crate::operation::create_report_plan::builders::CreateReportPlanInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_report_plan::builders::CreateReportPlanInputBuilder {
         crate::operation::create_report_plan::builders::CreateReportPlanInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReportPlanInput`](crate::operation::create_report_plan::CreateReportPlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReportPlanInputBuilder {
     pub(crate) report_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) report_plan_description: ::std::option::Option<::std::string::String>,
     pub(crate) report_delivery_channel: ::std::option::Option<crate::types::ReportDeliveryChannel>,
     pub(crate) report_setting: ::std::option::Option<crate::types::ReportSetting>,
-    pub(crate) report_plan_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) report_plan_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateReportPlanInputBuilder {
     /// <p>The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn report_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn set_report_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_plan_name = input;
         self
     }
@@ -105,18 +86,12 @@ impl CreateReportPlanInputBuilder {
         &self.report_plan_name
     }
     /// <p>An optional description of the report plan with a maximum of 1,024 characters.</p>
-    pub fn report_plan_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_plan_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_plan_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional description of the report plan with a maximum of 1,024 characters.</p>
-    pub fn set_report_plan_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_plan_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_plan_description = input;
         self
     }
@@ -130,17 +105,12 @@ impl CreateReportPlanInputBuilder {
         self
     }
     /// <p>A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
-    pub fn set_report_delivery_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportDeliveryChannel>,
-    ) -> Self {
+    pub fn set_report_delivery_channel(mut self, input: ::std::option::Option<crate::types::ReportDeliveryChannel>) -> Self {
         self.report_delivery_channel = input;
         self
     }
     /// <p>A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
-    pub fn get_report_delivery_channel(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReportDeliveryChannel> {
+    pub fn get_report_delivery_channel(&self) -> &::std::option::Option<crate::types::ReportDeliveryChannel> {
         &self.report_delivery_channel
     }
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
@@ -153,10 +123,7 @@ impl CreateReportPlanInputBuilder {
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
     /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
-    pub fn set_report_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportSetting>,
-    ) -> Self {
+    pub fn set_report_setting(mut self, input: ::std::option::Option<crate::types::ReportSetting>) -> Self {
         self.report_setting = input;
         self
     }
@@ -184,34 +151,22 @@ impl CreateReportPlanInputBuilder {
     /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
     pub fn set_report_plan_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.report_plan_tags = input;
         self
     }
     /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
-    pub fn get_report_plan_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_report_plan_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.report_plan_tags
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }
@@ -222,19 +177,14 @@ impl CreateReportPlanInputBuilder {
     /// Consumes the builder and constructs a [`CreateReportPlanInput`](crate::operation::create_report_plan::CreateReportPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_report_plan::CreateReportPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_report_plan::CreateReportPlanInput {
-                report_plan_name: self.report_plan_name,
-                report_plan_description: self.report_plan_description,
-                report_delivery_channel: self.report_delivery_channel,
-                report_setting: self.report_setting,
-                report_plan_tags: self.report_plan_tags,
-                idempotency_token: self.idempotency_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_report_plan::CreateReportPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_report_plan::CreateReportPlanInput {
+            report_plan_name: self.report_plan_name,
+            report_plan_description: self.report_plan_description,
+            report_delivery_channel: self.report_delivery_channel,
+            report_setting: self.report_setting,
+            report_plan_tags: self.report_plan_tags,
+            idempotency_token: self.idempotency_token,
+        })
     }
 }

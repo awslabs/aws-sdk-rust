@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateIpAccessSettingsOutput {
 }
 impl CreateIpAccessSettingsOutput {
     /// Creates a new builder-style object to manufacture [`CreateIpAccessSettingsOutput`](crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::create_ip_access_settings::builders::CreateIpAccessSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_ip_access_settings::builders::CreateIpAccessSettingsOutputBuilder {
         crate::operation::create_ip_access_settings::builders::CreateIpAccessSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateIpAccessSettingsOutput`](crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateIpAccessSettingsOutputBuilder {
     pub(crate) ip_access_settings_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateIpAccessSettingsOutputBuilder {
     /// <p>The ARN of the IP access settings resource.</p>
-    pub fn ip_access_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_access_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_access_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IP access settings resource.</p>
-    pub fn set_ip_access_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_access_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_access_settings_arn = input;
         self
     }
@@ -68,9 +58,7 @@ impl CreateIpAccessSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateIpAccessSettingsOutput`](crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput {
+    pub fn build(self) -> crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput {
         crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput {
             ip_access_settings_arn: self.ip_access_settings_arn,
             _request_id: self._request_id,

@@ -37,16 +37,14 @@ impl DescribeNotificationsForBudgetInput {
 }
 impl DescribeNotificationsForBudgetInput {
     /// Creates a new builder-style object to manufacture [`DescribeNotificationsForBudgetInput`](crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetInput).
-    pub fn builder() -> crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetInputBuilder{
+    pub fn builder() -> crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetInputBuilder {
         crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNotificationsForBudgetInput`](crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNotificationsForBudgetInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
@@ -117,17 +115,11 @@ impl DescribeNotificationsForBudgetInputBuilder {
         crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetInput {
-                account_id: self.account_id
-                ,
-                budget_name: self.budget_name
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetInput {
+            account_id: self.account_id,
+            budget_name: self.budget_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for PutVoiceConnectorTerminationCredentia
 }
 impl PutVoiceConnectorTerminationCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`PutVoiceConnectorTerminationCredentialsOutput`](crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsOutput).
-    pub fn builder() -> crate::operation::put_voice_connector_termination_credentials::builders::PutVoiceConnectorTerminationCredentialsOutputBuilder{
+    pub fn builder() -> crate::operation::put_voice_connector_termination_credentials::builders::PutVoiceConnectorTerminationCredentialsOutputBuilder
+    {
         crate::operation::put_voice_connector_termination_credentials::builders::PutVoiceConnectorTerminationCredentialsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutVoiceConnectorTerminationCredentialsOutput`](crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutVoiceConnectorTerminationCredentialsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl PutVoiceConnectorTerminationCredentialsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutVoiceConnectorTerminationCredentialsOutput`](crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsOutput).
-    pub fn build(self) -> crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsOutput{
+    pub fn build(self) -> crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsOutput {
         crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsOutput {
             _request_id: self._request_id,
         }

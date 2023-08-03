@@ -10,10 +10,7 @@ impl CreateTargetGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_target_group::CreateTargetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_target_group::CreateTargetGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_target_group::CreateTargetGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_target_group();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl CreateTargetGroupFluentBuilder {
         }
     }
     /// Access the CreateTargetGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_target_group::builders::CreateTargetGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_target_group::builders::CreateTargetGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl CreateTargetGroupFluentBuilder {
             crate::operation::create_target_group::CreateTargetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_target_group::CreateTargetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_target_group::CreateTargetGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl CreateTargetGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl CreateTargetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_target_group::CreateTargetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_target_group::CreateTargetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_target_group::CreateTargetGroupError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl CreateTargetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_target_group::CreateTargetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_target_group::CreateTargetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_target_group::CreateTargetGroupError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl CreateTargetGroupFluentBuilder {
             crate::operation::create_target_group::CreateTargetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_target_group::CreateTargetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_target_group::CreateTargetGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -152,10 +136,7 @@ impl CreateTargetGroupFluentBuilder {
         self
     }
     /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolEnum>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolEnum>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
     }
@@ -164,18 +145,12 @@ impl CreateTargetGroupFluentBuilder {
         self.inner.get_protocol()
     }
     /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
-    pub fn protocol_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protocol_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.protocol_version(input.into());
         self
     }
     /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
-    pub fn set_protocol_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protocol_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_protocol_version(input);
         self
     }
@@ -217,10 +192,7 @@ impl CreateTargetGroupFluentBuilder {
         self
     }
     /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-    pub fn set_health_check_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolEnum>,
-    ) -> Self {
+    pub fn set_health_check_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolEnum>) -> Self {
         self.inner = self.inner.set_health_check_protocol(input);
         self
     }
@@ -229,18 +201,12 @@ impl CreateTargetGroupFluentBuilder {
         self.inner.get_health_check_protocol()
     }
     /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
-    pub fn health_check_port(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_port(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.health_check_port(input.into());
         self
     }
     /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
-    pub fn set_health_check_port(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_port(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_health_check_port(input);
         self
     }
@@ -265,20 +231,14 @@ impl CreateTargetGroupFluentBuilder {
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-    pub fn health_check_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.health_check_path(input.into());
         self
     }
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-    pub fn set_health_check_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_health_check_path(input);
         self
     }
@@ -376,10 +336,7 @@ impl CreateTargetGroupFluentBuilder {
     /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
     /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
     /// </ul>
-    pub fn set_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetTypeEnum>,
-    ) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::TargetTypeEnum>) -> Self {
         self.inner = self.inner.set_target_type(input);
         self
     }
@@ -403,10 +360,7 @@ impl CreateTargetGroupFluentBuilder {
         self
     }
     /// <p>The tags to assign to the target group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -420,17 +374,12 @@ impl CreateTargetGroupFluentBuilder {
         self
     }
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    pub fn get_ip_address_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum> {
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum> {
         self.inner.get_ip_address_type()
     }
 }

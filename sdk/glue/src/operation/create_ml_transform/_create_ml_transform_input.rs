@@ -64,9 +64,7 @@ pub struct CreateMlTransformInput {
     pub max_retries: ::std::option::Option<i32>,
     /// <p>The tags to use with this machine learning transform. You may use tags to limit access to the machine learning transform. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
     #[doc(hidden)]
     pub transform_encryption: ::std::option::Option<crate::types::TransformEncryption>,
@@ -143,33 +141,24 @@ impl CreateMlTransformInput {
         self.max_retries
     }
     /// <p>The tags to use with this machine learning transform. You may use tags to limit access to the machine learning transform. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
-    pub fn transform_encryption(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransformEncryption> {
+    pub fn transform_encryption(&self) -> ::std::option::Option<&crate::types::TransformEncryption> {
         self.transform_encryption.as_ref()
     }
 }
 impl CreateMlTransformInput {
     /// Creates a new builder-style object to manufacture [`CreateMlTransformInput`](crate::operation::create_ml_transform::CreateMlTransformInput).
-    pub fn builder(
-    ) -> crate::operation::create_ml_transform::builders::CreateMlTransformInputBuilder {
+    pub fn builder() -> crate::operation::create_ml_transform::builders::CreateMlTransformInputBuilder {
         crate::operation::create_ml_transform::builders::CreateMlTransformInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMlTransformInput`](crate::operation::create_ml_transform::CreateMlTransformInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMlTransformInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -182,9 +171,7 @@ pub struct CreateMlTransformInputBuilder {
     pub(crate) number_of_workers: ::std::option::Option<i32>,
     pub(crate) timeout: ::std::option::Option<i32>,
     pub(crate) max_retries: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) transform_encryption: ::std::option::Option<crate::types::TransformEncryption>,
 }
 impl CreateMlTransformInputBuilder {
@@ -228,17 +215,12 @@ impl CreateMlTransformInputBuilder {
         self
     }
     /// <p>A list of Glue table definitions used by the transform.</p>
-    pub fn set_input_record_tables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueTable>>,
-    ) -> Self {
+    pub fn set_input_record_tables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueTable>>) -> Self {
         self.input_record_tables = input;
         self
     }
     /// <p>A list of Glue table definitions used by the transform.</p>
-    pub fn get_input_record_tables(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueTable>> {
+    pub fn get_input_record_tables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueTable>> {
         &self.input_record_tables
     }
     /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.</p>
@@ -247,10 +229,7 @@ impl CreateMlTransformInputBuilder {
         self
     }
     /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformParameters>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::TransformParameters>) -> Self {
         self.parameters = input;
         self
     }
@@ -369,10 +348,7 @@ impl CreateMlTransformInputBuilder {
     /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
     /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
     /// </ul>
-    pub fn set_worker_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkerType>,
-    ) -> Self {
+    pub fn set_worker_type(mut self, input: ::std::option::Option<crate::types::WorkerType>) -> Self {
         self.worker_type = input;
         self
     }
@@ -442,32 +418,19 @@ impl CreateMlTransformInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to use with this machine learning transform. You may use tags to limit access to the machine learning transform. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags to use with this machine learning transform. You may use tags to limit access to the machine learning transform. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags to use with this machine learning transform. You may use tags to limit access to the machine learning transform. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
@@ -476,42 +439,32 @@ impl CreateMlTransformInputBuilder {
         self
     }
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
-    pub fn set_transform_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformEncryption>,
-    ) -> Self {
+    pub fn set_transform_encryption(mut self, input: ::std::option::Option<crate::types::TransformEncryption>) -> Self {
         self.transform_encryption = input;
         self
     }
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
-    pub fn get_transform_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransformEncryption> {
+    pub fn get_transform_encryption(&self) -> &::std::option::Option<crate::types::TransformEncryption> {
         &self.transform_encryption
     }
     /// Consumes the builder and constructs a [`CreateMlTransformInput`](crate::operation::create_ml_transform::CreateMlTransformInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_ml_transform::CreateMlTransformInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_ml_transform::CreateMlTransformInput {
-                name: self.name,
-                description: self.description,
-                input_record_tables: self.input_record_tables,
-                parameters: self.parameters,
-                role: self.role,
-                glue_version: self.glue_version,
-                max_capacity: self.max_capacity,
-                worker_type: self.worker_type,
-                number_of_workers: self.number_of_workers,
-                timeout: self.timeout,
-                max_retries: self.max_retries,
-                tags: self.tags,
-                transform_encryption: self.transform_encryption,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_ml_transform::CreateMlTransformInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_ml_transform::CreateMlTransformInput {
+            name: self.name,
+            description: self.description,
+            input_record_tables: self.input_record_tables,
+            parameters: self.parameters,
+            role: self.role,
+            glue_version: self.glue_version,
+            max_capacity: self.max_capacity,
+            worker_type: self.worker_type,
+            number_of_workers: self.number_of_workers,
+            timeout: self.timeout,
+            max_retries: self.max_retries,
+            tags: self.tags,
+            transform_encryption: self.transform_encryption,
+        })
     }
 }

@@ -28,7 +28,7 @@ impl UpdateRelationalDatabaseInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRelationalDatabaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_relational_database::builders::UpdateRelationalDatabaseInputBuilder,
+    inner: crate::operation::update_relational_database::builders::UpdateRelationalDatabaseInputBuilder,
 }
 impl UpdateRelationalDatabaseFluentBuilder {
     /// Creates a new `UpdateRelationalDatabase`.
@@ -39,10 +39,7 @@ impl UpdateRelationalDatabaseFluentBuilder {
         }
     }
     /// Access the UpdateRelationalDatabase as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_relational_database::builders::UpdateRelationalDatabaseInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_relational_database::builders::UpdateRelationalDatabaseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl UpdateRelationalDatabaseFluentBuilder {
             crate::operation::update_relational_database::UpdateRelationalDatabase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_relational_database::UpdateRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_relational_database::UpdateRelationalDatabaseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl UpdateRelationalDatabaseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl UpdateRelationalDatabaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_relational_database::UpdateRelationalDatabaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_relational_database::UpdateRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_relational_database::UpdateRelationalDatabaseError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl UpdateRelationalDatabaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_relational_database::UpdateRelationalDatabaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_relational_database::UpdateRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_relational_database::UpdateRelationalDatabaseError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl UpdateRelationalDatabaseFluentBuilder {
             crate::operation::update_relational_database::UpdateRelationalDatabase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_relational_database::UpdateRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_relational_database::UpdateRelationalDatabaseError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of your Lightsail database resource to update.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.relational_database_name(input.into());
         self
     }
     /// <p>The name of your Lightsail database resource to update.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }
@@ -150,10 +130,7 @@ impl UpdateRelationalDatabaseFluentBuilder {
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-    pub fn master_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_user_password(input.into());
         self
     }
@@ -162,10 +139,7 @@ impl UpdateRelationalDatabaseFluentBuilder {
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-    pub fn set_master_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_user_password(input);
         self
     }
@@ -202,10 +176,7 @@ impl UpdateRelationalDatabaseFluentBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn preferred_backup_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_backup_window(input.into());
         self
     }
@@ -217,10 +188,7 @@ impl UpdateRelationalDatabaseFluentBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn set_preferred_backup_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_backup_window(input);
         self
     }
@@ -245,10 +213,7 @@ impl UpdateRelationalDatabaseFluentBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>
     /// </ul>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
         self
     }
@@ -262,10 +227,7 @@ impl UpdateRelationalDatabaseFluentBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>
     /// </ul>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
@@ -279,9 +241,7 @@ impl UpdateRelationalDatabaseFluentBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>
     /// </ul>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_maintenance_window()
     }
     /// <p>When <code>true</code>, enables automated backup retention for your database.</p>
@@ -353,18 +313,12 @@ impl UpdateRelationalDatabaseFluentBuilder {
         self.inner.get_apply_immediately()
     }
     /// <p>Indicates the certificate that needs to be associated with the database.</p>
-    pub fn ca_certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ca_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ca_certificate_identifier(input.into());
         self
     }
     /// <p>Indicates the certificate that needs to be associated with the database.</p>
-    pub fn set_ca_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ca_certificate_identifier(input);
         self
     }

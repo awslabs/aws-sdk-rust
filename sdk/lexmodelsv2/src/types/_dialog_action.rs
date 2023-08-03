@@ -37,9 +37,7 @@ impl DialogAction {
 
 /// A builder for [`DialogAction`](crate::types::DialogAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DialogActionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DialogActionType>,
     pub(crate) slot_to_elicit: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl DialogActionBuilder {
         self
     }
     /// <p>The action that the bot should execute. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogActionType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DialogActionType>) -> Self {
         self.r#type = input;
         self
     }
@@ -64,18 +59,12 @@ impl DialogActionBuilder {
         &self.r#type
     }
     /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
-    pub fn slot_to_elicit(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn slot_to_elicit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_to_elicit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
-    pub fn set_slot_to_elicit(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_slot_to_elicit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_to_elicit = input;
         self
     }

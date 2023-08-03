@@ -26,7 +26,7 @@ impl DeprovisionPublicIpv4PoolCidrInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeprovisionPublicIpv4PoolCidrFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deprovision_public_ipv4_pool_cidr::builders::DeprovisionPublicIpv4PoolCidrInputBuilder,
+    inner: crate::operation::deprovision_public_ipv4_pool_cidr::builders::DeprovisionPublicIpv4PoolCidrInputBuilder,
 }
 impl DeprovisionPublicIpv4PoolCidrFluentBuilder {
     /// Creates a new `DeprovisionPublicIpv4PoolCidr`.
@@ -37,7 +37,7 @@ impl DeprovisionPublicIpv4PoolCidrFluentBuilder {
         }
     }
     /// Access the DeprovisionPublicIpv4PoolCidr as a reference.
-    pub fn as_input(&self) -> &crate::operation::deprovision_public_ipv4_pool_cidr::builders::DeprovisionPublicIpv4PoolCidrInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::deprovision_public_ipv4_pool_cidr::builders::DeprovisionPublicIpv4PoolCidrInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeprovisionPublicIpv4PoolCidrFluentBuilder {
             crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeprovisionPublicIpv4PoolCidrFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeprovisionPublicIpv4PoolCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeprovisionPublicIpv4PoolCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeprovisionPublicIpv4PoolCidrFluentBuilder {
             crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrError>,
     > {
         self.customize_middleware().await
     }

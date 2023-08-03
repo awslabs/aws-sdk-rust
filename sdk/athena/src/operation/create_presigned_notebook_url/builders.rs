@@ -26,7 +26,7 @@ impl CreatePresignedNotebookUrlInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePresignedNotebookUrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlInputBuilder,
+    inner: crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlInputBuilder,
 }
 impl CreatePresignedNotebookUrlFluentBuilder {
     /// Creates a new `CreatePresignedNotebookUrl`.
@@ -37,7 +37,7 @@ impl CreatePresignedNotebookUrlFluentBuilder {
         }
     }
     /// Access the CreatePresignedNotebookUrl as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreatePresignedNotebookUrlFluentBuilder {
             crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreatePresignedNotebookUrlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreatePresignedNotebookUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreatePresignedNotebookUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreatePresignedNotebookUrlFluentBuilder {
             crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlError>,
     > {
         self.customize_middleware().await
     }

@@ -21,9 +21,7 @@ pub struct GetReservedNodeExchangeConfigurationOptionsInput {
 }
 impl GetReservedNodeExchangeConfigurationOptionsInput {
     /// <p>The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.</p>
-    pub fn action_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReservedNodeExchangeActionType> {
+    pub fn action_type(&self) -> ::std::option::Option<&crate::types::ReservedNodeExchangeActionType> {
         self.action_type.as_ref()
     }
     /// <p>The identifier for the cluster that is the source for a reserved-node exchange.</p>
@@ -45,16 +43,16 @@ impl GetReservedNodeExchangeConfigurationOptionsInput {
 }
 impl GetReservedNodeExchangeConfigurationOptionsInput {
     /// Creates a new builder-style object to manufacture [`GetReservedNodeExchangeConfigurationOptionsInput`](crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsInput).
-    pub fn builder() -> crate::operation::get_reserved_node_exchange_configuration_options::builders::GetReservedNodeExchangeConfigurationOptionsInputBuilder{
-        crate::operation::get_reserved_node_exchange_configuration_options::builders::GetReservedNodeExchangeConfigurationOptionsInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_reserved_node_exchange_configuration_options::builders::GetReservedNodeExchangeConfigurationOptionsInputBuilder {
+        crate::operation::get_reserved_node_exchange_configuration_options::builders::GetReservedNodeExchangeConfigurationOptionsInputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`GetReservedNodeExchangeConfigurationOptionsInput`](crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReservedNodeExchangeConfigurationOptionsInputBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::ReservedNodeExchangeActionType>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -69,32 +67,21 @@ impl GetReservedNodeExchangeConfigurationOptionsInputBuilder {
         self
     }
     /// <p>The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservedNodeExchangeActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ReservedNodeExchangeActionType>) -> Self {
         self.action_type = input;
         self
     }
     /// <p>The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.</p>
-    pub fn get_action_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservedNodeExchangeActionType> {
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ReservedNodeExchangeActionType> {
         &self.action_type
     }
     /// <p>The identifier for the cluster that is the source for a reserved-node exchange.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the cluster that is the source for a reserved-node exchange.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -103,18 +90,12 @@ impl GetReservedNodeExchangeConfigurationOptionsInputBuilder {
         &self.cluster_identifier
     }
     /// <p>The identifier for the snapshot that is the source for the reserved-node exchange.</p>
-    pub fn snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the snapshot that is the source for the reserved-node exchange.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_identifier = input;
         self
     }
@@ -151,20 +132,20 @@ impl GetReservedNodeExchangeConfigurationOptionsInputBuilder {
         &self.marker
     }
     /// Consumes the builder and constructs a [`GetReservedNodeExchangeConfigurationOptionsInput`](crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsInput {
-                action_type: self.action_type
-                ,
-                cluster_identifier: self.cluster_identifier
-                ,
-                snapshot_identifier: self.snapshot_identifier
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                action_type: self.action_type,
+                cluster_identifier: self.cluster_identifier,
+                snapshot_identifier: self.snapshot_identifier,
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }

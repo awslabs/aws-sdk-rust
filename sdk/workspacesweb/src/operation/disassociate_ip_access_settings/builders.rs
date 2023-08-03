@@ -26,7 +26,7 @@ impl DisassociateIpAccessSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateIpAccessSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsInputBuilder,
+    inner: crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsInputBuilder,
 }
 impl DisassociateIpAccessSettingsFluentBuilder {
     /// Creates a new `DisassociateIpAccessSettings`.
@@ -37,7 +37,7 @@ impl DisassociateIpAccessSettingsFluentBuilder {
         }
     }
     /// Access the DisassociateIpAccessSettings as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisassociateIpAccessSettingsFluentBuilder {
             crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisassociateIpAccessSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisassociateIpAccessSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisassociateIpAccessSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DisassociateIpAccessSettingsFluentBuilder {
             crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError>,
     > {
         self.customize_middleware().await
     }

@@ -18,10 +18,7 @@ pub fn ser_create_state_machine_input(
     if let Some(var_5) = &input.logging_configuration {
         #[allow(unused_mut)]
         let mut object_6 = object.key("loggingConfiguration").start_object();
-        crate::protocol_serde::shape_logging_configuration::ser_logging_configuration(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_logging_configuration::ser_logging_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.tags {
@@ -39,10 +36,7 @@ pub fn ser_create_state_machine_input(
     if let Some(var_11) = &input.tracing_configuration {
         #[allow(unused_mut)]
         let mut object_12 = object.key("tracingConfiguration").start_object();
-        crate::protocol_serde::shape_tracing_configuration::ser_tracing_configuration(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_tracing_configuration::ser_tracing_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.publish {

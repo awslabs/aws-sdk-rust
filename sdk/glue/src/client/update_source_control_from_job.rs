@@ -15,7 +15,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateSourceControlFromJobOutput`](crate::operation::update_source_control_from_job::UpdateSourceControlFromJobOutput) with field(s):
     ///   - [`job_name(Option<String>)`](crate::operation::update_source_control_from_job::UpdateSourceControlFromJobOutput::job_name): <p>The name of the Glue job.</p>
     /// - On failure, responds with [`SdkError<UpdateSourceControlFromJobError>`](crate::operation::update_source_control_from_job::UpdateSourceControlFromJobError)
-    pub fn update_source_control_from_job(&self) -> crate::operation::update_source_control_from_job::builders::UpdateSourceControlFromJobFluentBuilder{
+    pub fn update_source_control_from_job(
+        &self,
+    ) -> crate::operation::update_source_control_from_job::builders::UpdateSourceControlFromJobFluentBuilder {
         crate::operation::update_source_control_from_job::builders::UpdateSourceControlFromJobFluentBuilder::new(self.handle.clone())
     }
 }

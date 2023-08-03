@@ -40,9 +40,7 @@ impl ParameterSliderControl {
         self.source_parameter_name.as_deref()
     }
     /// <p>The display options of a control.</p>
-    pub fn display_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SliderControlDisplayOptions> {
+    pub fn display_options(&self) -> ::std::option::Option<&crate::types::SliderControlDisplayOptions> {
         self.display_options.as_ref()
     }
     /// <p>The smaller value that is displayed at the left of the slider.</p>
@@ -67,9 +65,7 @@ impl ParameterSliderControl {
 
 /// A builder for [`ParameterSliderControl`](crate::types::ParameterSliderControl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterSliderControlBuilder {
     pub(crate) parameter_control_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
@@ -81,18 +77,12 @@ pub struct ParameterSliderControlBuilder {
 }
 impl ParameterSliderControlBuilder {
     /// <p>The ID of the <code>ParameterSliderControl</code>.</p>
-    pub fn parameter_control_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the <code>ParameterSliderControl</code>.</p>
-    pub fn set_parameter_control_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_control_id = input;
         self
     }
@@ -115,18 +105,12 @@ impl ParameterSliderControlBuilder {
         &self.title
     }
     /// <p>The source parameter name of the <code>ParameterSliderControl</code>.</p>
-    pub fn source_parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source parameter name of the <code>ParameterSliderControl</code>.</p>
-    pub fn set_source_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_parameter_name = input;
         self
     }
@@ -140,17 +124,12 @@ impl ParameterSliderControlBuilder {
         self
     }
     /// <p>The display options of a control.</p>
-    pub fn set_display_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SliderControlDisplayOptions>,
-    ) -> Self {
+    pub fn set_display_options(mut self, input: ::std::option::Option<crate::types::SliderControlDisplayOptions>) -> Self {
         self.display_options = input;
         self
     }
     /// <p>The display options of a control.</p>
-    pub fn get_display_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::SliderControlDisplayOptions> {
+    pub fn get_display_options(&self) -> &::std::option::Option<crate::types::SliderControlDisplayOptions> {
         &self.display_options
     }
     /// <p>The smaller value that is displayed at the left of the slider.</p>

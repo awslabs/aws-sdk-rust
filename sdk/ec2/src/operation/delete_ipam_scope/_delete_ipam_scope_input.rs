@@ -29,9 +29,7 @@ impl DeleteIpamScopeInput {
 
 /// A builder for [`DeleteIpamScopeInput`](crate::operation::delete_ipam_scope::DeleteIpamScopeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIpamScopeInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_scope_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DeleteIpamScopeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the scope to delete.</p>
-    pub fn ipam_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_scope_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the scope to delete.</p>
-    pub fn set_ipam_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_scope_id = input;
         self
     }
@@ -74,10 +66,7 @@ impl DeleteIpamScopeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIpamScopeInput`](crate::operation::delete_ipam_scope::DeleteIpamScopeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_ipam_scope::DeleteIpamScopeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_ipam_scope::DeleteIpamScopeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ipam_scope::DeleteIpamScopeInput {
             dry_run: self.dry_run,
             ipam_scope_id: self.ipam_scope_id,

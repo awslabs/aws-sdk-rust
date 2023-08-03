@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListChannelGroupsOutput {
 }
 impl ListChannelGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListChannelGroupsOutput`](crate::operation::list_channel_groups::ListChannelGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_channel_groups::builders::ListChannelGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_channel_groups::builders::ListChannelGroupsOutputBuilder {
         crate::operation::list_channel_groups::builders::ListChannelGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListChannelGroupsOutput`](crate::operation::list_channel_groups::ListChannelGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChannelGroupsOutputBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelGroupListConfiguration>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ChannelGroupListConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListChannelGroupsOutputBuilder {
         self
     }
     /// <p>The objects being returned.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelGroupListConfiguration>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelGroupListConfiguration>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The objects being returned.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelGroupListConfiguration>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelGroupListConfiguration>> {
         &self.items
     }
     /// <p>The pagination token from the GET list request. Use the token to fetch the next page of results.</p>

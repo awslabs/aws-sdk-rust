@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`identity_provider_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_identity_provider::builders::DeleteIdentityProviderFluentBuilder::identity_provider_arn) / [`set_identity_provider_arn(Option<String>)`](crate::operation::delete_identity_provider::builders::DeleteIdentityProviderFluentBuilder::set_identity_provider_arn): <p>The ARN of the identity provider.</p>
     /// - On success, responds with [`DeleteIdentityProviderOutput`](crate::operation::delete_identity_provider::DeleteIdentityProviderOutput)
     /// - On failure, responds with [`SdkError<DeleteIdentityProviderError>`](crate::operation::delete_identity_provider::DeleteIdentityProviderError)
-    pub fn delete_identity_provider(
-        &self,
-    ) -> crate::operation::delete_identity_provider::builders::DeleteIdentityProviderFluentBuilder
-    {
+    pub fn delete_identity_provider(&self) -> crate::operation::delete_identity_provider::builders::DeleteIdentityProviderFluentBuilder {
         crate::operation::delete_identity_provider::builders::DeleteIdentityProviderFluentBuilder::new(self.handle.clone())
     }
 }

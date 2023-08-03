@@ -13,9 +13,7 @@ pub fn ser_mac_algorithm_emv(
         object.key("PanSequenceNumber").string(var_3.as_str());
     }
     if let Some(var_4) = &input.session_key_derivation_mode {
-        object
-            .key("SessionKeyDerivationMode")
-            .string(var_4.as_str());
+        object.key("SessionKeyDerivationMode").string(var_4.as_str());
     }
     if let Some(var_5) = &input.session_key_derivation_value {
         #[allow(unused_mut)]

@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`reprocessing_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_pipeline_reprocessing::builders::CancelPipelineReprocessingFluentBuilder::reprocessing_id) / [`set_reprocessing_id(Option<String>)`](crate::operation::cancel_pipeline_reprocessing::builders::CancelPipelineReprocessingFluentBuilder::set_reprocessing_id): <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
     /// - On success, responds with [`CancelPipelineReprocessingOutput`](crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingOutput)
     /// - On failure, responds with [`SdkError<CancelPipelineReprocessingError>`](crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingError)
-    pub fn cancel_pipeline_reprocessing(&self) -> crate::operation::cancel_pipeline_reprocessing::builders::CancelPipelineReprocessingFluentBuilder{
+    pub fn cancel_pipeline_reprocessing(&self) -> crate::operation::cancel_pipeline_reprocessing::builders::CancelPipelineReprocessingFluentBuilder {
         crate::operation::cancel_pipeline_reprocessing::builders::CancelPipelineReprocessingFluentBuilder::new(self.handle.clone())
     }
 }

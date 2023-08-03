@@ -38,13 +38,7 @@
 /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HlsCodecSpecification {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for HlsCodecSpecification {
         match s {
             "RFC_4281" => HlsCodecSpecification::Rfc4281,
             "RFC_6381" => HlsCodecSpecification::Rfc6381,
-            other => HlsCodecSpecification::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => HlsCodecSpecification::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

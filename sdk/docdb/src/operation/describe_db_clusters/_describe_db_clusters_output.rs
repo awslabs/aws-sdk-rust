@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeDbClustersOutput {
 }
 impl DescribeDbClustersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClustersOutput`](crate::operation::describe_db_clusters::DescribeDbClustersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_clusters::builders::DescribeDbClustersOutputBuilder {
+    pub fn builder() -> crate::operation::describe_db_clusters::builders::DescribeDbClustersOutputBuilder {
         crate::operation::describe_db_clusters::builders::DescribeDbClustersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbClustersOutput`](crate::operation::describe_db_clusters::DescribeDbClustersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbClustersOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) db_clusters: ::std::option::Option<::std::vec::Vec<crate::types::DbCluster>>,
@@ -72,17 +69,12 @@ impl DescribeDbClustersOutputBuilder {
         self
     }
     /// <p>A list of clusters.</p>
-    pub fn set_db_clusters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DbCluster>>,
-    ) -> Self {
+    pub fn set_db_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbCluster>>) -> Self {
         self.db_clusters = input;
         self
     }
     /// <p>A list of clusters.</p>
-    pub fn get_db_clusters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbCluster>> {
+    pub fn get_db_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbCluster>> {
         &self.db_clusters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

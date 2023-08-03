@@ -5,8 +5,7 @@
 pub struct DescribeAccountOutput {
     /// <p>The status of BYOL (whether BYOL is enabled or disabled).</p>
     #[doc(hidden)]
-    pub dedicated_tenancy_support:
-        ::std::option::Option<crate::types::DedicatedTenancySupportResultEnum>,
+    pub dedicated_tenancy_support: ::std::option::Option<crate::types::DedicatedTenancySupportResultEnum>,
     /// <p>The IP address range, specified as an IPv4 CIDR block, used for the management network interface.</p>
     /// <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
     #[doc(hidden)]
@@ -15,9 +14,7 @@ pub struct DescribeAccountOutput {
 }
 impl DescribeAccountOutput {
     /// <p>The status of BYOL (whether BYOL is enabled or disabled).</p>
-    pub fn dedicated_tenancy_support(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DedicatedTenancySupportResultEnum> {
+    pub fn dedicated_tenancy_support(&self) -> ::std::option::Option<&crate::types::DedicatedTenancySupportResultEnum> {
         self.dedicated_tenancy_support.as_ref()
     }
     /// <p>The IP address range, specified as an IPv4 CIDR block, used for the management network interface.</p>
@@ -40,62 +37,42 @@ impl DescribeAccountOutput {
 
 /// A builder for [`DescribeAccountOutput`](crate::operation::describe_account::DescribeAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountOutputBuilder {
-    pub(crate) dedicated_tenancy_support:
-        ::std::option::Option<crate::types::DedicatedTenancySupportResultEnum>,
-    pub(crate) dedicated_tenancy_management_cidr_range:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) dedicated_tenancy_support: ::std::option::Option<crate::types::DedicatedTenancySupportResultEnum>,
+    pub(crate) dedicated_tenancy_management_cidr_range: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAccountOutputBuilder {
     /// <p>The status of BYOL (whether BYOL is enabled or disabled).</p>
-    pub fn dedicated_tenancy_support(
-        mut self,
-        input: crate::types::DedicatedTenancySupportResultEnum,
-    ) -> Self {
+    pub fn dedicated_tenancy_support(mut self, input: crate::types::DedicatedTenancySupportResultEnum) -> Self {
         self.dedicated_tenancy_support = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of BYOL (whether BYOL is enabled or disabled).</p>
-    pub fn set_dedicated_tenancy_support(
-        mut self,
-        input: ::std::option::Option<crate::types::DedicatedTenancySupportResultEnum>,
-    ) -> Self {
+    pub fn set_dedicated_tenancy_support(mut self, input: ::std::option::Option<crate::types::DedicatedTenancySupportResultEnum>) -> Self {
         self.dedicated_tenancy_support = input;
         self
     }
     /// <p>The status of BYOL (whether BYOL is enabled or disabled).</p>
-    pub fn get_dedicated_tenancy_support(
-        &self,
-    ) -> &::std::option::Option<crate::types::DedicatedTenancySupportResultEnum> {
+    pub fn get_dedicated_tenancy_support(&self) -> &::std::option::Option<crate::types::DedicatedTenancySupportResultEnum> {
         &self.dedicated_tenancy_support
     }
     /// <p>The IP address range, specified as an IPv4 CIDR block, used for the management network interface.</p>
     /// <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
-    pub fn dedicated_tenancy_management_cidr_range(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dedicated_tenancy_management_cidr_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dedicated_tenancy_management_cidr_range = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address range, specified as an IPv4 CIDR block, used for the management network interface.</p>
     /// <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
-    pub fn set_dedicated_tenancy_management_cidr_range(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dedicated_tenancy_management_cidr_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dedicated_tenancy_management_cidr_range = input;
         self
     }
     /// <p>The IP address range, specified as an IPv4 CIDR block, used for the management network interface.</p>
     /// <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
-    pub fn get_dedicated_tenancy_management_cidr_range(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_dedicated_tenancy_management_cidr_range(&self) -> &::std::option::Option<::std::string::String> {
         &self.dedicated_tenancy_management_cidr_range
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -22,17 +22,14 @@ impl UpdateDeviceStateInput {
 }
 impl UpdateDeviceStateInput {
     /// Creates a new builder-style object to manufacture [`UpdateDeviceStateInput`](crate::operation::update_device_state::UpdateDeviceStateInput).
-    pub fn builder(
-    ) -> crate::operation::update_device_state::builders::UpdateDeviceStateInputBuilder {
+    pub fn builder() -> crate::operation::update_device_state::builders::UpdateDeviceStateInputBuilder {
         crate::operation::update_device_state::builders::UpdateDeviceStateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDeviceStateInput`](crate::operation::update_device_state::UpdateDeviceStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDeviceStateInputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
@@ -69,15 +66,10 @@ impl UpdateDeviceStateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDeviceStateInput`](crate::operation::update_device_state::UpdateDeviceStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_device_state::UpdateDeviceStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_device_state::UpdateDeviceStateInput {
-                device_id: self.device_id,
-                enabled: self.enabled,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_device_state::UpdateDeviceStateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_device_state::UpdateDeviceStateInput {
+            device_id: self.device_id,
+            enabled: self.enabled,
+        })
     }
 }

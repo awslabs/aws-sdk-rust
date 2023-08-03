@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ListTagsForCertificateOutput {
 }
 impl ListTagsForCertificateOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForCertificateOutput`](crate::operation::list_tags_for_certificate::ListTagsForCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_for_certificate::builders::ListTagsForCertificateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_tags_for_certificate::builders::ListTagsForCertificateOutputBuilder {
         crate::operation::list_tags_for_certificate::builders::ListTagsForCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTagsForCertificateOutput`](crate::operation::list_tags_for_certificate::ListTagsForCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsForCertificateOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
@@ -50,10 +46,7 @@ impl ListTagsForCertificateOutputBuilder {
         self
     }
     /// <p>The key-value pairs that define the applied tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -71,9 +64,7 @@ impl ListTagsForCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTagsForCertificateOutput`](crate::operation::list_tags_for_certificate::ListTagsForCertificateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_tags_for_certificate::ListTagsForCertificateOutput {
+    pub fn build(self) -> crate::operation::list_tags_for_certificate::ListTagsForCertificateOutput {
         crate::operation::list_tags_for_certificate::ListTagsForCertificateOutput {
             tags: self.tags,
             _request_id: self._request_id,

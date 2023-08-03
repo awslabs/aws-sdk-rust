@@ -10,10 +10,7 @@ impl DescribeRegionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_regions::DescribeRegionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_regions::DescribeRegionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_regions::DescribeRegionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_regions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeRegionsFluentBuilder {
         }
     }
     /// Access the DescribeRegions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_regions::builders::DescribeRegionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_regions::builders::DescribeRegionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeRegionsFluentBuilder {
             crate::operation::describe_regions::DescribeRegions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_regions::DescribeRegionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_regions::DescribeRegionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeRegionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeRegionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_regions::DescribeRegionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_regions::DescribeRegionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_regions::DescribeRegionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeRegionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_regions::DescribeRegionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_regions::DescribeRegionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_regions::DescribeRegionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl DescribeRegionsFluentBuilder {
             crate::operation::describe_regions::DescribeRegions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_regions::DescribeRegionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_regions::DescribeRegionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_regions::paginator::DescribeRegionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_regions::paginator::DescribeRegionsPaginator {
-        crate::operation::describe_regions::paginator::DescribeRegionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_regions::paginator::DescribeRegionsPaginator {
+        crate::operation::describe_regions::paginator::DescribeRegionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the directory.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

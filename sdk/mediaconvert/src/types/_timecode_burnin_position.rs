@@ -45,13 +45,7 @@
 /// Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TimecodeBurninPosition {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,9 +81,7 @@ impl ::std::convert::From<&str> for TimecodeBurninPosition {
             "TOP_CENTER" => TimecodeBurninPosition::TopCenter,
             "TOP_LEFT" => TimecodeBurninPosition::TopLeft,
             "TOP_RIGHT" => TimecodeBurninPosition::TopRight,
-            other => TimecodeBurninPosition::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => TimecodeBurninPosition::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

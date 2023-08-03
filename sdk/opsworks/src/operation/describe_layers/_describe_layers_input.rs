@@ -29,9 +29,7 @@ impl DescribeLayersInput {
 
 /// A builder for [`DescribeLayersInput`](crate::operation::describe_layers::DescribeLayersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLayersInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) layer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,10 +61,7 @@ impl DescribeLayersInputBuilder {
         self
     }
     /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
-    pub fn set_layer_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_layer_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.layer_ids = input;
         self
     }
@@ -77,10 +72,7 @@ impl DescribeLayersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLayersInput`](crate::operation::describe_layers::DescribeLayersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_layers::DescribeLayersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_layers::DescribeLayersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_layers::DescribeLayersInput {
             stack_id: self.stack_id,
             layer_ids: self.layer_ids,

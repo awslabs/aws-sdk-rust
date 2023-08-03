@@ -23,7 +23,7 @@ impl super::Client {
     ///   - [`on_failure(Option<String>)`](crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionOutput::on_failure): <p>The action to perform if the workflow step fails.</p>
     ///   - [`timeout_seconds(Option<i32>)`](crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionOutput::timeout_seconds): <p>The maximum duration in seconds for this step to complete its action.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowStepExecutionError>`](crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError)
-    pub fn get_workflow_step_execution(&self) -> crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionFluentBuilder{
+    pub fn get_workflow_step_execution(&self) -> crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionFluentBuilder {
         crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionFluentBuilder::new(self.handle.clone())
     }
 }

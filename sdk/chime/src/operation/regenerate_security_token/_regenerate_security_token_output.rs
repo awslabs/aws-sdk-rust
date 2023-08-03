@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for RegenerateSecurityTokenOutput {
 }
 impl RegenerateSecurityTokenOutput {
     /// Creates a new builder-style object to manufacture [`RegenerateSecurityTokenOutput`](crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput).
-    pub fn builder(
-    ) -> crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenOutputBuilder
-    {
+    pub fn builder() -> crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenOutputBuilder {
         crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegenerateSecurityTokenOutput`](crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegenerateSecurityTokenOutputBuilder {
     pub(crate) bot: ::std::option::Option<crate::types::Bot>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl RegenerateSecurityTokenOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RegenerateSecurityTokenOutput`](crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput {
+    pub fn build(self) -> crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput {
         crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput {
             bot: self.bot,
             _request_id: self._request_id,

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateTopicRuleDestinationOutput {
 }
 impl UpdateTopicRuleDestinationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTopicRuleDestinationOutput`](crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationOutput).
-    pub fn builder() -> crate::operation::update_topic_rule_destination::builders::UpdateTopicRuleDestinationOutputBuilder{
+    pub fn builder() -> crate::operation::update_topic_rule_destination::builders::UpdateTopicRuleDestinationOutputBuilder {
         crate::operation::update_topic_rule_destination::builders::UpdateTopicRuleDestinationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTopicRuleDestinationOutput`](crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTopicRuleDestinationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateTopicRuleDestinationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateTopicRuleDestinationOutput`](crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationOutput {
+    pub fn build(self) -> crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationOutput {
         crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationOutput {
             _request_id: self._request_id,
         }

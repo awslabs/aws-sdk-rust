@@ -27,7 +27,7 @@ impl ListCallAnalyticsCategoriesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCallAnalyticsCategoriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesInputBuilder,
+    inner: crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesInputBuilder,
 }
 impl ListCallAnalyticsCategoriesFluentBuilder {
     /// Creates a new `ListCallAnalyticsCategories`.
@@ -38,7 +38,7 @@ impl ListCallAnalyticsCategoriesFluentBuilder {
         }
     }
     /// Access the ListCallAnalyticsCategories as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListCallAnalyticsCategoriesFluentBuilder {
             crate::operation::list_call_analytics_categories::ListCallAnalyticsCategories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListCallAnalyticsCategoriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListCallAnalyticsCategoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListCallAnalyticsCategoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesError>,
     > {
         self.send_middleware().await
     }
@@ -115,16 +106,14 @@ impl ListCallAnalyticsCategoriesFluentBuilder {
             crate::operation::list_call_analytics_categories::ListCallAnalyticsCategories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_call_analytics_categories::paginator::ListCallAnalyticsCategoriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_call_analytics_categories::paginator::ListCallAnalyticsCategoriesPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_call_analytics_categories::paginator::ListCallAnalyticsCategoriesPaginator {
         crate::operation::list_call_analytics_categories::paginator::ListCallAnalyticsCategoriesPaginator::new(self.handle, self.inner)
     }
     /// <p>If your <code>ListCallAnalyticsCategories</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>

@@ -29,17 +29,14 @@ impl ListSecurityProfilesInput {
 }
 impl ListSecurityProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListSecurityProfilesInput`](crate::operation::list_security_profiles::ListSecurityProfilesInput).
-    pub fn builder(
-    ) -> crate::operation::list_security_profiles::builders::ListSecurityProfilesInputBuilder {
+    pub fn builder() -> crate::operation::list_security_profiles::builders::ListSecurityProfilesInputBuilder {
         crate::operation::list_security_profiles::builders::ListSecurityProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecurityProfilesInput`](crate::operation::list_security_profiles::ListSecurityProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityProfilesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,12 @@ impl ListSecurityProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListSecurityProfilesInput`](crate::operation::list_security_profiles::ListSecurityProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_security_profiles::ListSecurityProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_security_profiles::ListSecurityProfilesInput {
-                instance_id: self.instance_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_security_profiles::ListSecurityProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_security_profiles::ListSecurityProfilesInput {
+            instance_id: self.instance_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

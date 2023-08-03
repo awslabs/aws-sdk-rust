@@ -26,7 +26,7 @@ impl DescribeClientPropertiesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeClientPropertiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_client_properties::builders::DescribeClientPropertiesInputBuilder,
+    inner: crate::operation::describe_client_properties::builders::DescribeClientPropertiesInputBuilder,
 }
 impl DescribeClientPropertiesFluentBuilder {
     /// Creates a new `DescribeClientProperties`.
@@ -37,10 +37,7 @@ impl DescribeClientPropertiesFluentBuilder {
         }
     }
     /// Access the DescribeClientProperties as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_client_properties::builders::DescribeClientPropertiesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_client_properties::builders::DescribeClientPropertiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeClientPropertiesFluentBuilder {
             crate::operation::describe_client_properties::DescribeClientProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_client_properties::DescribeClientPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_client_properties::DescribeClientPropertiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeClientPropertiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeClientPropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_client_properties::DescribeClientPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_client_properties::DescribeClientPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_client_properties::DescribeClientPropertiesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeClientPropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_client_properties::DescribeClientPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_client_properties::DescribeClientPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_client_properties::DescribeClientPropertiesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeClientPropertiesFluentBuilder {
             crate::operation::describe_client_properties::DescribeClientProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_client_properties::DescribeClientPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_client_properties::DescribeClientPropertiesError>,
     > {
         self.customize_middleware().await
     }
@@ -133,17 +119,12 @@ impl DescribeClientPropertiesFluentBuilder {
         self
     }
     /// <p>The resource identifier, in the form of directory IDs.</p>
-    pub fn set_resource_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_ids(input);
         self
     }
     /// <p>The resource identifier, in the form of directory IDs.</p>
-    pub fn get_resource_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_ids()
     }
 }

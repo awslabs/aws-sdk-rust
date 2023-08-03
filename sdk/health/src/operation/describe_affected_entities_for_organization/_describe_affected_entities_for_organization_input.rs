@@ -5,8 +5,7 @@
 pub struct DescribeAffectedEntitiesForOrganizationInput {
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
     #[doc(hidden)]
-    pub organization_entity_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>>,
+    pub organization_entity_filters: ::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     #[doc(hidden)]
     pub locale: ::std::option::Option<::std::string::String>,
@@ -19,9 +18,7 @@ pub struct DescribeAffectedEntitiesForOrganizationInput {
 }
 impl DescribeAffectedEntitiesForOrganizationInput {
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
-    pub fn organization_entity_filters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EventAccountFilter]> {
+    pub fn organization_entity_filters(&self) -> ::std::option::Option<&[crate::types::EventAccountFilter]> {
         self.organization_entity_filters.as_deref()
     }
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
@@ -39,19 +36,16 @@ impl DescribeAffectedEntitiesForOrganizationInput {
 }
 impl DescribeAffectedEntitiesForOrganizationInput {
     /// Creates a new builder-style object to manufacture [`DescribeAffectedEntitiesForOrganizationInput`](crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput).
-    pub fn builder() -> crate::operation::describe_affected_entities_for_organization::builders::DescribeAffectedEntitiesForOrganizationInputBuilder{
+    pub fn builder() -> crate::operation::describe_affected_entities_for_organization::builders::DescribeAffectedEntitiesForOrganizationInputBuilder {
         crate::operation::describe_affected_entities_for_organization::builders::DescribeAffectedEntitiesForOrganizationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAffectedEntitiesForOrganizationInput`](crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAffectedEntitiesForOrganizationInputBuilder {
-    pub(crate) organization_entity_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>>,
+    pub(crate) organization_entity_filters: ::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>>,
     pub(crate) locale: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -69,17 +63,12 @@ impl DescribeAffectedEntitiesForOrganizationInputBuilder {
         self
     }
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
-    pub fn set_organization_entity_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>>,
-    ) -> Self {
+    pub fn set_organization_entity_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>>) -> Self {
         self.organization_entity_filters = input;
         self
     }
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
-    pub fn get_organization_entity_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>> {
+    pub fn get_organization_entity_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>> {
         &self.organization_entity_filters
     }
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
@@ -125,18 +114,19 @@ impl DescribeAffectedEntitiesForOrganizationInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeAffectedEntitiesForOrganizationInput`](crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput {
-                organization_entity_filters: self.organization_entity_filters
-                ,
-                locale: self.locale
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                organization_entity_filters: self.organization_entity_filters,
+                locale: self.locale,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

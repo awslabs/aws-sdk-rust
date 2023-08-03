@@ -26,7 +26,7 @@ impl UpdateComputeEnvironmentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateComputeEnvironmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_compute_environment::builders::UpdateComputeEnvironmentInputBuilder,
+    inner: crate::operation::update_compute_environment::builders::UpdateComputeEnvironmentInputBuilder,
 }
 impl UpdateComputeEnvironmentFluentBuilder {
     /// Creates a new `UpdateComputeEnvironment`.
@@ -37,10 +37,7 @@ impl UpdateComputeEnvironmentFluentBuilder {
         }
     }
     /// Access the UpdateComputeEnvironment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_compute_environment::builders::UpdateComputeEnvironmentInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_compute_environment::builders::UpdateComputeEnvironmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateComputeEnvironmentFluentBuilder {
             crate::operation::update_compute_environment::UpdateComputeEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_compute_environment::UpdateComputeEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_compute_environment::UpdateComputeEnvironmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateComputeEnvironmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateComputeEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_compute_environment::UpdateComputeEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_compute_environment::UpdateComputeEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_compute_environment::UpdateComputeEnvironmentError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateComputeEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_compute_environment::UpdateComputeEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_compute_environment::UpdateComputeEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_compute_environment::UpdateComputeEnvironmentError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateComputeEnvironmentFluentBuilder {
             crate::operation::update_compute_environment::UpdateComputeEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_compute_environment::UpdateComputeEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_compute_environment::UpdateComputeEnvironmentError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name or full Amazon Resource Name (ARN) of the compute environment to update.</p>
-    pub fn compute_environment(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compute_environment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compute_environment(input.into());
         self
     }
     /// <p>The name or full Amazon Resource Name (ARN) of the compute environment to update.</p>
-    pub fn set_compute_environment(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compute_environment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compute_environment(input);
         self
     }
@@ -192,17 +172,12 @@ impl UpdateComputeEnvironmentFluentBuilder {
         self
     }
     /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
-    pub fn set_compute_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeResourceUpdate>,
-    ) -> Self {
+    pub fn set_compute_resources(mut self, input: ::std::option::Option<crate::types::ComputeResourceUpdate>) -> Self {
         self.inner = self.inner.set_compute_resources(input);
         self
     }
     /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
-    pub fn get_compute_resources(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComputeResourceUpdate> {
+    pub fn get_compute_resources(&self) -> &::std::option::Option<crate::types::ComputeResourceUpdate> {
         self.inner.get_compute_resources()
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p> <important>
@@ -240,10 +215,7 @@ impl UpdateComputeEnvironmentFluentBuilder {
         self
     }
     /// <p>Specifies the updated infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
-    pub fn set_update_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdatePolicy>,
-    ) -> Self {
+    pub fn set_update_policy(mut self, input: ::std::option::Option<crate::types::UpdatePolicy>) -> Self {
         self.inner = self.inner.set_update_policy(input);
         self
     }

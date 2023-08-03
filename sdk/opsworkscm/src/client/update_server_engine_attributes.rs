@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateServerEngineAttributesOutput`](crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesOutput) with field(s):
     ///   - [`server(Option<Server>)`](crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesOutput::server): <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request. </p>
     /// - On failure, responds with [`SdkError<UpdateServerEngineAttributesError>`](crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesError)
-    pub fn update_server_engine_attributes(&self) -> crate::operation::update_server_engine_attributes::builders::UpdateServerEngineAttributesFluentBuilder{
+    pub fn update_server_engine_attributes(
+        &self,
+    ) -> crate::operation::update_server_engine_attributes::builders::UpdateServerEngineAttributesFluentBuilder {
         crate::operation::update_server_engine_attributes::builders::UpdateServerEngineAttributesFluentBuilder::new(self.handle.clone())
     }
 }

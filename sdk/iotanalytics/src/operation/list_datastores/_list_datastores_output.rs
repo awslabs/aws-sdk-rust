@@ -35,12 +35,9 @@ impl ListDatastoresOutput {
 
 /// A builder for [`ListDatastoresOutput`](crate::operation::list_datastores::ListDatastoresOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatastoresOutputBuilder {
-    pub(crate) datastore_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatastoreSummary>>,
+    pub(crate) datastore_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DatastoreSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListDatastoresOutputBuilder {
         self
     }
     /// <p>A list of <code>DatastoreSummary</code> objects.</p>
-    pub fn set_datastore_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatastoreSummary>>,
-    ) -> Self {
+    pub fn set_datastore_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatastoreSummary>>) -> Self {
         self.datastore_summaries = input;
         self
     }
     /// <p>A list of <code>DatastoreSummary</code> objects.</p>
-    pub fn get_datastore_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatastoreSummary>> {
+    pub fn get_datastore_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatastoreSummary>> {
         &self.datastore_summaries
     }
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>

@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ConfigurationEventResourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ConfigurationEventResourceType {
             "CLOUDWATCH_ALARM" => ConfigurationEventResourceType::CloudwatchAlarm,
             "CLOUDWATCH_LOG" => ConfigurationEventResourceType::CloudwatchLog,
             "SSM_ASSOCIATION" => ConfigurationEventResourceType::SsmAssociation,
-            other => ConfigurationEventResourceType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ConfigurationEventResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl ConfigurationEventResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLOUDFORMATION",
-            "CLOUDWATCH_ALARM",
-            "CLOUDWATCH_LOG",
-            "SSM_ASSOCIATION",
-        ]
+        &["CLOUDFORMATION", "CLOUDWATCH_ALARM", "CLOUDWATCH_LOG", "SSM_ASSOCIATION"]
     }
 }
 impl ::std::convert::AsRef<str> for ConfigurationEventResourceType {

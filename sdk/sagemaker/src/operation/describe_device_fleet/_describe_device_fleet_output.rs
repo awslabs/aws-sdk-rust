@@ -70,18 +70,14 @@ impl ::aws_http::request_id::RequestId for DescribeDeviceFleetOutput {
 }
 impl DescribeDeviceFleetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDeviceFleetOutput`](crate::operation::describe_device_fleet::DescribeDeviceFleetOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_device_fleet::builders::DescribeDeviceFleetOutputBuilder {
-        crate::operation::describe_device_fleet::builders::DescribeDeviceFleetOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_device_fleet::builders::DescribeDeviceFleetOutputBuilder {
+        crate::operation::describe_device_fleet::builders::DescribeDeviceFleetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDeviceFleetOutput`](crate::operation::describe_device_fleet::DescribeDeviceFleetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeviceFleetOutputBuilder {
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_fleet_arn: ::std::option::Option<::std::string::String>,
@@ -95,18 +91,12 @@ pub struct DescribeDeviceFleetOutputBuilder {
 }
 impl DescribeDeviceFleetOutputBuilder {
     /// <p>The name of the fleet.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the fleet.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_name = input;
         self
     }
@@ -115,18 +105,12 @@ impl DescribeDeviceFleetOutputBuilder {
         &self.device_fleet_name
     }
     /// <p>The The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn device_fleet_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn set_device_fleet_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_arn = input;
         self
     }
@@ -140,10 +124,7 @@ impl DescribeDeviceFleetOutputBuilder {
         self
     }
     /// <p>The output configuration for storing sampled data.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EdgeOutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::EdgeOutputConfig>) -> Self {
         self.output_config = input;
         self
     }
@@ -171,10 +152,7 @@ impl DescribeDeviceFleetOutputBuilder {
         self
     }
     /// <p>Timestamp of when the device fleet was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -188,10 +166,7 @@ impl DescribeDeviceFleetOutputBuilder {
         self
     }
     /// <p>Timestamp of when the device fleet was last updated.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -214,18 +189,12 @@ impl DescribeDeviceFleetOutputBuilder {
         &self.role_arn
     }
     /// <p>The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet of Things (IoT).</p>
-    pub fn iot_role_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iot_role_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iot_role_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet of Things (IoT).</p>
-    pub fn set_iot_role_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iot_role_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iot_role_alias = input;
         self
     }

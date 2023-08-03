@@ -23,9 +23,7 @@ impl OutputFileUriValue {
 
 /// A builder for [`OutputFileUriValue`](crate::types::OutputFileUriValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputFileUriValueBuilder {
     pub(crate) file_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl OutputFileUriValueBuilder {
     }
     /// Consumes the builder and constructs a [`OutputFileUriValue`](crate::types::OutputFileUriValue).
     pub fn build(self) -> crate::types::OutputFileUriValue {
-        crate::types::OutputFileUriValue {
-            file_name: self.file_name,
-        }
+        crate::types::OutputFileUriValue { file_name: self.file_name }
     }
 }

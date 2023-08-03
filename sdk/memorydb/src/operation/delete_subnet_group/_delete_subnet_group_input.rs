@@ -15,34 +15,25 @@ impl DeleteSubnetGroupInput {
 }
 impl DeleteSubnetGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteSubnetGroupInput`](crate::operation::delete_subnet_group::DeleteSubnetGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_subnet_group::builders::DeleteSubnetGroupInputBuilder {
+    pub fn builder() -> crate::operation::delete_subnet_group::builders::DeleteSubnetGroupInputBuilder {
         crate::operation::delete_subnet_group::builders::DeleteSubnetGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSubnetGroupInput`](crate::operation::delete_subnet_group::DeleteSubnetGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSubnetGroupInputBuilder {
     pub(crate) subnet_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSubnetGroupInputBuilder {
     /// <p>The name of the subnet group to delete</p>
-    pub fn subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the subnet group to delete</p>
-    pub fn set_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_group_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteSubnetGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSubnetGroupInput`](crate::operation::delete_subnet_group::DeleteSubnetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_subnet_group::DeleteSubnetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_subnet_group::DeleteSubnetGroupInput {
-                subnet_group_name: self.subnet_group_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_subnet_group::DeleteSubnetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_subnet_group::DeleteSubnetGroupInput {
+            subnet_group_name: self.subnet_group_name,
+        })
     }
 }

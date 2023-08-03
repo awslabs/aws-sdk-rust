@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`errors(Option<Vec<FailedCustomVocabularyItem>>)`](crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemOutput::errors): <p>A list of custom vocabulary items that failed to create during the operation. The reason for the error is contained within each error object.</p>
     ///   - [`resources(Option<Vec<CustomVocabularyItem>>)`](crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemOutput::resources): <p>A list of custom vocabulary items that were successfully created during the operation.</p>
     /// - On failure, responds with [`SdkError<BatchCreateCustomVocabularyItemError>`](crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemError)
-    pub fn batch_create_custom_vocabulary_item(&self) -> crate::operation::batch_create_custom_vocabulary_item::builders::BatchCreateCustomVocabularyItemFluentBuilder{
+    pub fn batch_create_custom_vocabulary_item(
+        &self,
+    ) -> crate::operation::batch_create_custom_vocabulary_item::builders::BatchCreateCustomVocabularyItemFluentBuilder {
         crate::operation::batch_create_custom_vocabulary_item::builders::BatchCreateCustomVocabularyItemFluentBuilder::new(self.handle.clone())
     }
 }

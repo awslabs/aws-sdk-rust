@@ -15,17 +15,14 @@ impl DisassociateMemberInput {
 }
 impl DisassociateMemberInput {
     /// Creates a new builder-style object to manufacture [`DisassociateMemberInput`](crate::operation::disassociate_member::DisassociateMemberInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_member::builders::DisassociateMemberInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_member::builders::DisassociateMemberInputBuilder {
         crate::operation::disassociate_member::builders::DisassociateMemberInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateMemberInput`](crate::operation::disassociate_member::DisassociateMemberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateMemberInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl DisassociateMemberInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateMemberInput`](crate::operation::disassociate_member::DisassociateMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_member::DisassociateMemberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_member::DisassociateMemberInput {
-                account_id: self.account_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disassociate_member::DisassociateMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::disassociate_member::DisassociateMemberInput { account_id: self.account_id })
     }
 }

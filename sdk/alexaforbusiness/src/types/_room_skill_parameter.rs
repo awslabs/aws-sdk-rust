@@ -30,27 +30,19 @@ impl RoomSkillParameter {
 
 /// A builder for [`RoomSkillParameter`](crate::types::RoomSkillParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoomSkillParameterBuilder {
     pub(crate) parameter_key: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_value: ::std::option::Option<::std::string::String>,
 }
 impl RoomSkillParameterBuilder {
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
-    pub fn parameter_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
-    pub fn set_parameter_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_key = input;
         self
     }
@@ -59,18 +51,12 @@ impl RoomSkillParameterBuilder {
         &self.parameter_key
     }
     /// <p>The parameter value of a room skill parameter.</p>
-    pub fn parameter_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter value of a room skill parameter.</p>
-    pub fn set_parameter_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_value = input;
         self
     }

@@ -33,16 +33,14 @@ impl ListOpenIdConnectProviderTagsInput {
 }
 impl ListOpenIdConnectProviderTagsInput {
     /// Creates a new builder-style object to manufacture [`ListOpenIdConnectProviderTagsInput`](crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsInput).
-    pub fn builder() -> crate::operation::list_open_id_connect_provider_tags::builders::ListOpenIdConnectProviderTagsInputBuilder{
+    pub fn builder() -> crate::operation::list_open_id_connect_provider_tags::builders::ListOpenIdConnectProviderTagsInputBuilder {
         crate::operation::list_open_id_connect_provider_tags::builders::ListOpenIdConnectProviderTagsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListOpenIdConnectProviderTagsInput`](crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOpenIdConnectProviderTagsInputBuilder {
     pub(crate) open_id_connect_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -51,27 +49,19 @@ pub struct ListOpenIdConnectProviderTagsInputBuilder {
 impl ListOpenIdConnectProviderTagsInputBuilder {
     /// <p>The ARN of the OpenID Connect (OIDC) identity provider whose tags you want to see.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn open_id_connect_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn open_id_connect_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_id_connect_provider_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the OpenID Connect (OIDC) identity provider whose tags you want to see.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_open_id_connect_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_open_id_connect_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.open_id_connect_provider_arn = input;
         self
     }
     /// <p>The ARN of the OpenID Connect (OIDC) identity provider whose tags you want to see.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn get_open_id_connect_provider_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_open_id_connect_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.open_id_connect_provider_arn
     }
     /// <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
@@ -112,15 +102,10 @@ impl ListOpenIdConnectProviderTagsInputBuilder {
         crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsInput {
-                open_id_connect_provider_arn: self.open_id_connect_provider_arn
-                ,
-                marker: self.marker
-                ,
-                max_items: self.max_items
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsInput {
+            open_id_connect_provider_arn: self.open_id_connect_provider_arn,
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

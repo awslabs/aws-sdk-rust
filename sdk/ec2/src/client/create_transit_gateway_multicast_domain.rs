@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`CreateTransitGatewayMulticastDomainOutput`](crate::operation::create_transit_gateway_multicast_domain::CreateTransitGatewayMulticastDomainOutput) with field(s):
     ///   - [`transit_gateway_multicast_domain(Option<TransitGatewayMulticastDomain>)`](crate::operation::create_transit_gateway_multicast_domain::CreateTransitGatewayMulticastDomainOutput::transit_gateway_multicast_domain): <p>Information about the transit gateway multicast domain.</p>
     /// - On failure, responds with [`SdkError<CreateTransitGatewayMulticastDomainError>`](crate::operation::create_transit_gateway_multicast_domain::CreateTransitGatewayMulticastDomainError)
-    pub fn create_transit_gateway_multicast_domain(&self) -> crate::operation::create_transit_gateway_multicast_domain::builders::CreateTransitGatewayMulticastDomainFluentBuilder{
-        crate::operation::create_transit_gateway_multicast_domain::builders::CreateTransitGatewayMulticastDomainFluentBuilder::new(self.handle.clone())
+    pub fn create_transit_gateway_multicast_domain(
+        &self,
+    ) -> crate::operation::create_transit_gateway_multicast_domain::builders::CreateTransitGatewayMulticastDomainFluentBuilder {
+        crate::operation::create_transit_gateway_multicast_domain::builders::CreateTransitGatewayMulticastDomainFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

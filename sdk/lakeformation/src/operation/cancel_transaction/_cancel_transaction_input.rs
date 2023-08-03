@@ -15,34 +15,25 @@ impl CancelTransactionInput {
 }
 impl CancelTransactionInput {
     /// Creates a new builder-style object to manufacture [`CancelTransactionInput`](crate::operation::cancel_transaction::CancelTransactionInput).
-    pub fn builder() -> crate::operation::cancel_transaction::builders::CancelTransactionInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_transaction::builders::CancelTransactionInputBuilder {
         crate::operation::cancel_transaction::builders::CancelTransactionInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelTransactionInput`](crate::operation::cancel_transaction::CancelTransactionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelTransactionInputBuilder {
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelTransactionInputBuilder {
     /// <p>The transaction to cancel.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transaction to cancel.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl CancelTransactionInputBuilder {
     /// Consumes the builder and constructs a [`CancelTransactionInput`](crate::operation::cancel_transaction::CancelTransactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_transaction::CancelTransactionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_transaction::CancelTransactionInput {
-                transaction_id: self.transaction_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_transaction::CancelTransactionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::cancel_transaction::CancelTransactionInput {
+            transaction_id: self.transaction_id,
+        })
     }
 }

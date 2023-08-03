@@ -26,7 +26,7 @@ impl ModifySecurityGroupRulesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifySecurityGroupRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_security_group_rules::builders::ModifySecurityGroupRulesInputBuilder,
+    inner: crate::operation::modify_security_group_rules::builders::ModifySecurityGroupRulesInputBuilder,
 }
 impl ModifySecurityGroupRulesFluentBuilder {
     /// Creates a new `ModifySecurityGroupRules`.
@@ -37,7 +37,7 @@ impl ModifySecurityGroupRulesFluentBuilder {
         }
     }
     /// Access the ModifySecurityGroupRules as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_security_group_rules::builders::ModifySecurityGroupRulesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_security_group_rules::builders::ModifySecurityGroupRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifySecurityGroupRulesFluentBuilder {
             crate::operation::modify_security_group_rules::ModifySecurityGroupRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_security_group_rules::ModifySecurityGroupRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_security_group_rules::ModifySecurityGroupRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifySecurityGroupRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifySecurityGroupRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_security_group_rules::ModifySecurityGroupRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_security_group_rules::ModifySecurityGroupRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_security_group_rules::ModifySecurityGroupRulesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifySecurityGroupRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_security_group_rules::ModifySecurityGroupRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_security_group_rules::ModifySecurityGroupRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_security_group_rules::ModifySecurityGroupRulesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ModifySecurityGroupRulesFluentBuilder {
             crate::operation::modify_security_group_rules::ModifySecurityGroupRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_security_group_rules::ModifySecurityGroupRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_security_group_rules::ModifySecurityGroupRulesError>,
     > {
         self.customize_middleware().await
     }
@@ -144,17 +133,12 @@ impl ModifySecurityGroupRulesFluentBuilder {
         self
     }
     /// <p>Information about the security group properties to update.</p>
-    pub fn set_security_group_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRuleUpdate>>,
-    ) -> Self {
+    pub fn set_security_group_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRuleUpdate>>) -> Self {
         self.inner = self.inner.set_security_group_rules(input);
         self
     }
     /// <p>Information about the security group properties to update.</p>
-    pub fn get_security_group_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRuleUpdate>> {
+    pub fn get_security_group_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRuleUpdate>> {
         self.inner.get_security_group_rules()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

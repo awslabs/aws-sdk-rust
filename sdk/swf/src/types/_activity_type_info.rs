@@ -51,9 +51,7 @@ impl ActivityTypeInfo {
 
 /// A builder for [`ActivityTypeInfo`](crate::types::ActivityTypeInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivityTypeInfoBuilder {
     pub(crate) activity_type: ::std::option::Option<crate::types::ActivityType>,
     pub(crate) status: ::std::option::Option<crate::types::RegistrationStatus>,
@@ -68,10 +66,7 @@ impl ActivityTypeInfoBuilder {
         self
     }
     /// <p>The <code>ActivityType</code> type structure representing the activity type.</p>
-    pub fn set_activity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivityType>,
-    ) -> Self {
+    pub fn set_activity_type(mut self, input: ::std::option::Option<crate::types::ActivityType>) -> Self {
         self.activity_type = input;
         self
     }
@@ -85,10 +80,7 @@ impl ActivityTypeInfoBuilder {
         self
     }
     /// <p>The current status of the activity type.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -116,10 +108,7 @@ impl ActivityTypeInfoBuilder {
         self
     }
     /// <p>The date and time this activity type was created through <code>RegisterActivityType</code>.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -133,10 +122,7 @@ impl ActivityTypeInfoBuilder {
         self
     }
     /// <p>If DEPRECATED, the date and time <code>DeprecateActivityType</code> was called.</p>
-    pub fn set_deprecation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deprecation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deprecation_date = input;
         self
     }

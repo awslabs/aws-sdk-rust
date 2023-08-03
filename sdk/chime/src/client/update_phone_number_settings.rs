@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`calling_name(impl ::std::convert::Into<String>)`](crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsFluentBuilder::calling_name) / [`set_calling_name(Option<String>)`](crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsFluentBuilder::set_calling_name): <p>The default outbound calling name for the account.</p>
     /// - On success, responds with [`UpdatePhoneNumberSettingsOutput`](crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsOutput)
     /// - On failure, responds with [`SdkError<UpdatePhoneNumberSettingsError>`](crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsError)
-    pub fn update_phone_number_settings(&self) -> crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsFluentBuilder{
+    pub fn update_phone_number_settings(&self) -> crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsFluentBuilder {
         crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsFluentBuilder::new(self.handle.clone())
     }
 }

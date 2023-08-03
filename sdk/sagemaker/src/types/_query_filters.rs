@@ -24,9 +24,7 @@ pub struct QueryFilters {
     pub modified_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.</p>
     #[doc(hidden)]
-    pub properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl QueryFilters {
     /// <p>Filter the lineage entities connected to the <code>StartArn</code> by type. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>, or <code>ModelDeployment</code>.</p>
@@ -54,11 +52,7 @@ impl QueryFilters {
         self.modified_after.as_ref()
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.</p>
-    pub fn properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.properties.as_ref()
     }
 }
@@ -71,9 +65,7 @@ impl QueryFilters {
 
 /// A builder for [`QueryFilters`](crate::types::QueryFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryFiltersBuilder {
     pub(crate) types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) lineage_types: ::std::option::Option<::std::vec::Vec<crate::types::LineageType>>,
@@ -81,9 +73,7 @@ pub struct QueryFiltersBuilder {
     pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_after: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl QueryFiltersBuilder {
     /// Appends an item to `types`.
@@ -98,10 +88,7 @@ impl QueryFiltersBuilder {
         self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code> by type. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>, or <code>ModelDeployment</code>.</p>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.types = input;
         self
     }
@@ -121,17 +108,12 @@ impl QueryFiltersBuilder {
         self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by the type of the lineage entity.</p>
-    pub fn set_lineage_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LineageType>>,
-    ) -> Self {
+    pub fn set_lineage_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LineageType>>) -> Self {
         self.lineage_types = input;
         self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by the type of the lineage entity.</p>
-    pub fn get_lineage_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LineageType>> {
+    pub fn get_lineage_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LineageType>> {
         &self.lineage_types
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by created date.</p>
@@ -140,10 +122,7 @@ impl QueryFiltersBuilder {
         self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by created date.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -157,10 +136,7 @@ impl QueryFiltersBuilder {
         self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the create date.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
@@ -174,10 +150,7 @@ impl QueryFiltersBuilder {
         self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) before the last modified date.</p>
-    pub fn set_modified_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_before = input;
         self
     }
@@ -191,10 +164,7 @@ impl QueryFiltersBuilder {
         self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the last modified date.</p>
-    pub fn set_modified_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_after = input;
         self
     }
@@ -207,32 +177,19 @@ impl QueryFiltersBuilder {
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.</p>
-    pub fn properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.properties = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.properties = input;
         self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.properties
     }
     /// Consumes the builder and constructs a [`QueryFilters`](crate::types::QueryFilters).

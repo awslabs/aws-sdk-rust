@@ -44,9 +44,7 @@ impl Parameter {
 
 /// A builder for [`Parameter`](crate::types::Parameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterBuilder {
     pub(crate) parameter_key: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_value: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct ParameterBuilder {
 }
 impl ParameterBuilder {
     /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, CloudFormation uses the default value that's specified in your template.</p>
-    pub fn parameter_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, CloudFormation uses the default value that's specified in your template.</p>
-    pub fn set_parameter_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_key = input;
         self
     }
@@ -75,18 +67,12 @@ impl ParameterBuilder {
         &self.parameter_key
     }
     /// <p>The input value associated with the parameter.</p>
-    pub fn parameter_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The input value associated with the parameter.</p>
-    pub fn set_parameter_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_value = input;
         self
     }
@@ -109,18 +95,12 @@ impl ParameterBuilder {
         &self.use_previous_value
     }
     /// <p>Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> SSM</a> parameter types in the template.</p>
-    pub fn resolved_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolved_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolved_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> SSM</a> parameter types in the template.</p>
-    pub fn set_resolved_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolved_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolved_value = input;
         self
     }

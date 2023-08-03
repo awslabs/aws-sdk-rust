@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutFindingsPublicationConfigurationOu
 }
 impl PutFindingsPublicationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutFindingsPublicationConfigurationOutput`](crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationOutput).
-    pub fn builder() -> crate::operation::put_findings_publication_configuration::builders::PutFindingsPublicationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::put_findings_publication_configuration::builders::PutFindingsPublicationConfigurationOutputBuilder {
         crate::operation::put_findings_publication_configuration::builders::PutFindingsPublicationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutFindingsPublicationConfigurationOutput`](crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutFindingsPublicationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl PutFindingsPublicationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutFindingsPublicationConfigurationOutput`](crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationOutput).
-    pub fn build(self) -> crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationOutput{
+    pub fn build(self) -> crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationOutput {
         crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationOutput {
             _request_id: self._request_id,
         }

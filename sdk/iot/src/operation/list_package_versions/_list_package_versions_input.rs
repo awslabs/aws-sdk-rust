@@ -36,18 +36,14 @@ impl ListPackageVersionsInput {
 }
 impl ListPackageVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListPackageVersionsInput`](crate::operation::list_package_versions::ListPackageVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_package_versions::builders::ListPackageVersionsInputBuilder {
-        crate::operation::list_package_versions::builders::ListPackageVersionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_package_versions::builders::ListPackageVersionsInputBuilder {
+        crate::operation::list_package_versions::builders::ListPackageVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPackageVersionsInput`](crate::operation::list_package_versions::ListPackageVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPackageVersionsInputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::PackageVersionStatus>,
@@ -75,10 +71,7 @@ impl ListPackageVersionsInputBuilder {
         self
     }
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -117,17 +110,13 @@ impl ListPackageVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPackageVersionsInput`](crate::operation::list_package_versions::ListPackageVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_package_versions::ListPackageVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_package_versions::ListPackageVersionsInput {
-                package_name: self.package_name,
-                status: self.status,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_package_versions::ListPackageVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_package_versions::ListPackageVersionsInput {
+            package_name: self.package_name,
+            status: self.status,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

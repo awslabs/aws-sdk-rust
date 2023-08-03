@@ -79,9 +79,7 @@ impl UpdateStackInstancesInput {
         self.parameter_overrides.as_deref()
     }
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
-    pub fn operation_preferences(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackSetOperationPreferences> {
+    pub fn operation_preferences(&self) -> ::std::option::Option<&crate::types::StackSetOperationPreferences> {
         self.operation_preferences.as_ref()
     }
     /// <p>The unique identifier for this stack set operation.</p>
@@ -102,42 +100,32 @@ impl UpdateStackInstancesInput {
 }
 impl UpdateStackInstancesInput {
     /// Creates a new builder-style object to manufacture [`UpdateStackInstancesInput`](crate::operation::update_stack_instances::UpdateStackInstancesInput).
-    pub fn builder(
-    ) -> crate::operation::update_stack_instances::builders::UpdateStackInstancesInputBuilder {
+    pub fn builder() -> crate::operation::update_stack_instances::builders::UpdateStackInstancesInputBuilder {
         crate::operation::update_stack_instances::builders::UpdateStackInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateStackInstancesInput`](crate::operation::update_stack_instances::UpdateStackInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStackInstancesInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) deployment_targets: ::std::option::Option<crate::types::DeploymentTargets>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) parameter_overrides: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    pub(crate) operation_preferences:
-        ::std::option::Option<crate::types::StackSetOperationPreferences>,
+    pub(crate) operation_preferences: ::std::option::Option<crate::types::StackSetOperationPreferences>,
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) call_as: ::std::option::Option<crate::types::CallAs>,
 }
 impl UpdateStackInstancesInputBuilder {
     /// <p>The name or unique ID of the stack set associated with the stack instances.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or unique ID of the stack set associated with the stack instances.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_set_name = input;
         self
     }
@@ -159,10 +147,7 @@ impl UpdateStackInstancesInputBuilder {
     }
     /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts for which you want to update parameter values for stack instances. The overridden parameter values will be applied to all stack instances in the specified accounts and Amazon Web Services Regions.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-    pub fn set_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.accounts = input;
         self
     }
@@ -179,18 +164,13 @@ impl UpdateStackInstancesInputBuilder {
     }
     /// <p>[Service-managed permissions] The Organizations accounts for which you want to update parameter values for stack instances. If your update targets OUs, the overridden parameter values only apply to the accounts that are currently in the target OUs and their child OUs. Accounts added to the target OUs and their child OUs in the future won't use the overridden values.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-    pub fn set_deployment_targets(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentTargets>,
-    ) -> Self {
+    pub fn set_deployment_targets(mut self, input: ::std::option::Option<crate::types::DeploymentTargets>) -> Self {
         self.deployment_targets = input;
         self
     }
     /// <p>[Service-managed permissions] The Organizations accounts for which you want to update parameter values for stack instances. If your update targets OUs, the overridden parameter values only apply to the accounts that are currently in the target OUs and their child OUs. Accounts added to the target OUs and their child OUs in the future won't use the overridden values.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-    pub fn get_deployment_targets(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentTargets> {
+    pub fn get_deployment_targets(&self) -> &::std::option::Option<crate::types::DeploymentTargets> {
         &self.deployment_targets
     }
     /// Appends an item to `regions`.
@@ -205,10 +185,7 @@ impl UpdateStackInstancesInputBuilder {
         self
     }
     /// <p>The names of one or more Amazon Web Services Regions in which you want to update parameter values for stack instances. The overridden parameter values will be applied to all stack instances in the specified accounts and Amazon Web Services Regions.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
@@ -246,10 +223,7 @@ impl UpdateStackInstancesInputBuilder {
     /// </ul>
     /// <p>During stack set updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
     /// <p>You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <code>UpdateStackSet</code> to update the stack set template. If you add a parameter to a template, before you can override the parameter value specified in the stack set you must first use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified in the stack set. Once a stack instance has been updated with the new parameter, you can then override the parameter value using <code>UpdateStackInstances</code>.</p>
-    pub fn set_parameter_overrides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameter_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.parameter_overrides = input;
         self
     }
@@ -263,31 +237,21 @@ impl UpdateStackInstancesInputBuilder {
     /// </ul>
     /// <p>During stack set updates, any parameter values overridden for a stack instance aren't updated, but retain their overridden value.</p>
     /// <p>You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter itself, use <code>UpdateStackSet</code> to update the stack set template. If you add a parameter to a template, before you can override the parameter value specified in the stack set you must first use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified in the stack set. Once a stack instance has been updated with the new parameter, you can then override the parameter value using <code>UpdateStackInstances</code>.</p>
-    pub fn get_parameter_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameter_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.parameter_overrides
     }
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
-    pub fn operation_preferences(
-        mut self,
-        input: crate::types::StackSetOperationPreferences,
-    ) -> Self {
+    pub fn operation_preferences(mut self, input: crate::types::StackSetOperationPreferences) -> Self {
         self.operation_preferences = ::std::option::Option::Some(input);
         self
     }
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
-    pub fn set_operation_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetOperationPreferences>,
-    ) -> Self {
+    pub fn set_operation_preferences(mut self, input: ::std::option::Option<crate::types::StackSetOperationPreferences>) -> Self {
         self.operation_preferences = input;
         self
     }
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
-    pub fn get_operation_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
+    pub fn get_operation_preferences(&self) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
         &self.operation_preferences
     }
     /// <p>The unique identifier for this stack set operation.</p>
@@ -342,21 +306,17 @@ impl UpdateStackInstancesInputBuilder {
     /// Consumes the builder and constructs a [`UpdateStackInstancesInput`](crate::operation::update_stack_instances::UpdateStackInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_stack_instances::UpdateStackInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_stack_instances::UpdateStackInstancesInput {
-                stack_set_name: self.stack_set_name,
-                accounts: self.accounts,
-                deployment_targets: self.deployment_targets,
-                regions: self.regions,
-                parameter_overrides: self.parameter_overrides,
-                operation_preferences: self.operation_preferences,
-                operation_id: self.operation_id,
-                call_as: self.call_as,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_stack_instances::UpdateStackInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_stack_instances::UpdateStackInstancesInput {
+            stack_set_name: self.stack_set_name,
+            accounts: self.accounts,
+            deployment_targets: self.deployment_targets,
+            regions: self.regions,
+            parameter_overrides: self.parameter_overrides,
+            operation_preferences: self.operation_preferences,
+            operation_id: self.operation_id,
+            call_as: self.call_as,
+        })
     }
 }

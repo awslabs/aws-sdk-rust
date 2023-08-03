@@ -37,9 +37,7 @@ impl ReservationPlanSettings {
 
 /// A builder for [`ReservationPlanSettings`](crate::types::ReservationPlanSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservationPlanSettingsBuilder {
     pub(crate) commitment: ::std::option::Option<crate::types::Commitment>,
     pub(crate) renewal_type: ::std::option::Option<crate::types::RenewalType>,
@@ -52,10 +50,7 @@ impl ReservationPlanSettingsBuilder {
         self
     }
     /// The length of the term of your reserved queue pricing plan commitment.
-    pub fn set_commitment(
-        mut self,
-        input: ::std::option::Option<crate::types::Commitment>,
-    ) -> Self {
+    pub fn set_commitment(mut self, input: ::std::option::Option<crate::types::Commitment>) -> Self {
         self.commitment = input;
         self
     }
@@ -69,10 +64,7 @@ impl ReservationPlanSettingsBuilder {
         self
     }
     /// Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term. When your term is auto renewed, you extend your commitment by 12 months from the auto renew date. You can cancel this commitment.
-    pub fn set_renewal_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RenewalType>,
-    ) -> Self {
+    pub fn set_renewal_type(mut self, input: ::std::option::Option<crate::types::RenewalType>) -> Self {
         self.renewal_type = input;
         self
     }

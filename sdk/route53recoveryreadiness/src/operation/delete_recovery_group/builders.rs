@@ -37,9 +37,7 @@ impl DeleteRecoveryGroupFluentBuilder {
         }
     }
     /// Access the DeleteRecoveryGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_recovery_group::builders::DeleteRecoveryGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_recovery_group::builders::DeleteRecoveryGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteRecoveryGroupFluentBuilder {
             crate::operation::delete_recovery_group::DeleteRecoveryGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_recovery_group::DeleteRecoveryGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_recovery_group::DeleteRecoveryGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteRecoveryGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteRecoveryGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_recovery_group::DeleteRecoveryGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_recovery_group::DeleteRecoveryGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_recovery_group::DeleteRecoveryGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteRecoveryGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_recovery_group::DeleteRecoveryGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_recovery_group::DeleteRecoveryGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_recovery_group::DeleteRecoveryGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteRecoveryGroupFluentBuilder {
             crate::operation::delete_recovery_group::DeleteRecoveryGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_recovery_group::DeleteRecoveryGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_recovery_group::DeleteRecoveryGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of a recovery group.</p>
-    pub fn recovery_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recovery_group_name(input.into());
         self
     }
     /// <p>The name of a recovery group.</p>
-    pub fn set_recovery_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recovery_group_name(input);
         self
     }

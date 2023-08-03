@@ -23,9 +23,7 @@ impl UpdateDomainMetadataInputBuilder {
 /// Fluent builder constructing a request to `UpdateDomainMetadata`.
 ///
 /// <p>Updates domain metadata, such as DisplayName.</p>
-#[deprecated(
-    note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-)]
+#[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDomainMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -40,9 +38,7 @@ impl UpdateDomainMetadataFluentBuilder {
         }
     }
     /// Access the UpdateDomainMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_domain_metadata::builders::UpdateDomainMetadataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_domain_metadata::builders::UpdateDomainMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl UpdateDomainMetadataFluentBuilder {
             crate::operation::update_domain_metadata::UpdateDomainMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_metadata::UpdateDomainMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_metadata::UpdateDomainMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl UpdateDomainMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl UpdateDomainMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_metadata::UpdateDomainMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_metadata::UpdateDomainMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_metadata::UpdateDomainMetadataError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl UpdateDomainMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_metadata::UpdateDomainMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_metadata::UpdateDomainMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_metadata::UpdateDomainMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl UpdateDomainMetadataFluentBuilder {
             crate::operation::update_domain_metadata::UpdateDomainMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_metadata::UpdateDomainMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_metadata::UpdateDomainMetadataError>,
     > {
         self.customize_middleware().await
     }

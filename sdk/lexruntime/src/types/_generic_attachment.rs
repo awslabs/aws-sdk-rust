@@ -51,9 +51,7 @@ impl GenericAttachment {
 
 /// A builder for [`GenericAttachment`](crate::types::GenericAttachment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenericAttachmentBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) sub_title: ::std::option::Option<::std::string::String>,
@@ -91,18 +89,12 @@ impl GenericAttachmentBuilder {
         &self.sub_title
     }
     /// <p>The URL of an attachment to the response card.</p>
-    pub fn attachment_link_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_link_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_link_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of an attachment to the response card.</p>
-    pub fn set_attachment_link_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_link_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_link_url = input;
         self
     }
@@ -136,10 +128,7 @@ impl GenericAttachmentBuilder {
         self
     }
     /// <p>The list of options to show to the user.</p>
-    pub fn set_buttons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Button>>,
-    ) -> Self {
+    pub fn set_buttons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Button>>) -> Self {
         self.buttons = input;
         self
     }

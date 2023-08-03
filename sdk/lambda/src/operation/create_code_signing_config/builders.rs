@@ -26,8 +26,7 @@ impl CreateCodeSigningConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCodeSigningConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_code_signing_config::builders::CreateCodeSigningConfigInputBuilder,
+    inner: crate::operation::create_code_signing_config::builders::CreateCodeSigningConfigInputBuilder,
 }
 impl CreateCodeSigningConfigFluentBuilder {
     /// Creates a new `CreateCodeSigningConfig`.
@@ -38,10 +37,7 @@ impl CreateCodeSigningConfigFluentBuilder {
         }
     }
     /// Access the CreateCodeSigningConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_code_signing_config::builders::CreateCodeSigningConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_code_signing_config::builders::CreateCodeSigningConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateCodeSigningConfigFluentBuilder {
             crate::operation::create_code_signing_config::CreateCodeSigningConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_code_signing_config::CreateCodeSigningConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_code_signing_config::CreateCodeSigningConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateCodeSigningConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateCodeSigningConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_code_signing_config::CreateCodeSigningConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_code_signing_config::CreateCodeSigningConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_code_signing_config::CreateCodeSigningConfigError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateCodeSigningConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_code_signing_config::CreateCodeSigningConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_code_signing_config::CreateCodeSigningConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_code_signing_config::CreateCodeSigningConfigError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl CreateCodeSigningConfigFluentBuilder {
             crate::operation::create_code_signing_config::CreateCodeSigningConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_code_signing_config::CreateCodeSigningConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_code_signing_config::CreateCodeSigningConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -144,17 +129,12 @@ impl CreateCodeSigningConfigFluentBuilder {
         self
     }
     /// <p>Signing profiles for this code signing configuration.</p>
-    pub fn set_allowed_publishers(
-        mut self,
-        input: ::std::option::Option<crate::types::AllowedPublishers>,
-    ) -> Self {
+    pub fn set_allowed_publishers(mut self, input: ::std::option::Option<crate::types::AllowedPublishers>) -> Self {
         self.inner = self.inner.set_allowed_publishers(input);
         self
     }
     /// <p>Signing profiles for this code signing configuration.</p>
-    pub fn get_allowed_publishers(
-        &self,
-    ) -> &::std::option::Option<crate::types::AllowedPublishers> {
+    pub fn get_allowed_publishers(&self) -> &::std::option::Option<crate::types::AllowedPublishers> {
         self.inner.get_allowed_publishers()
     }
     /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
@@ -163,17 +143,12 @@ impl CreateCodeSigningConfigFluentBuilder {
         self
     }
     /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
-    pub fn set_code_signing_policies(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeSigningPolicies>,
-    ) -> Self {
+    pub fn set_code_signing_policies(mut self, input: ::std::option::Option<crate::types::CodeSigningPolicies>) -> Self {
         self.inner = self.inner.set_code_signing_policies(input);
         self
     }
     /// <p>The code signing policies define the actions to take if the validation checks fail. </p>
-    pub fn get_code_signing_policies(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodeSigningPolicies> {
+    pub fn get_code_signing_policies(&self) -> &::std::option::Option<crate::types::CodeSigningPolicies> {
         self.inner.get_code_signing_policies()
     }
 }

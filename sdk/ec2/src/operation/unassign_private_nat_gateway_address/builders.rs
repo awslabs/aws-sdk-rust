@@ -5,16 +5,16 @@ pub use crate::operation::unassign_private_nat_gateway_address::_unassign_privat
 
 impl UnassignPrivateNatGatewayAddressInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.unassign_private_nat_gateway_address();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -30,7 +30,7 @@ impl UnassignPrivateNatGatewayAddressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UnassignPrivateNatGatewayAddressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::unassign_private_nat_gateway_address::builders::UnassignPrivateNatGatewayAddressInputBuilder,
+    inner: crate::operation::unassign_private_nat_gateway_address::builders::UnassignPrivateNatGatewayAddressInputBuilder,
 }
 impl UnassignPrivateNatGatewayAddressFluentBuilder {
     /// Creates a new `UnassignPrivateNatGatewayAddress`.
@@ -41,15 +41,20 @@ impl UnassignPrivateNatGatewayAddressFluentBuilder {
         }
     }
     /// Access the UnassignPrivateNatGatewayAddress as a reference.
-    pub fn as_input(&self) -> &crate::operation::unassign_private_nat_gateway_address::builders::UnassignPrivateNatGatewayAddressInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::unassign_private_nat_gateway_address::builders::UnassignPrivateNatGatewayAddressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddress, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddress,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -58,16 +63,17 @@ impl UnassignPrivateNatGatewayAddressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput, ::aws_smithy_http::result::SdkError<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError>,
+    > {
         let op = self
             .inner
             .build()
@@ -85,32 +91,35 @@ impl UnassignPrivateNatGatewayAddressFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput, ::aws_smithy_http::result::SdkError<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddress, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddress,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn nat_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nat_gateway_id(input.into());
         self
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn set_nat_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nat_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_nat_gateway_id(input);
         self
     }
@@ -123,25 +132,17 @@ impl UnassignPrivateNatGatewayAddressFluentBuilder {
     /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).
     ///
     /// <p>The private IPv4 addresses you want to unassign.</p>
-    pub fn private_ip_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.private_ip_addresses(input.into());
         self
     }
     /// <p>The private IPv4 addresses you want to unassign.</p>
-    pub fn set_private_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_private_ip_addresses(input);
         self
     }
     /// <p>The private IPv4 addresses you want to unassign.</p>
-    pub fn get_private_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_private_ip_addresses()
     }
     /// <p>The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.</p>

@@ -29,18 +29,14 @@ impl ListProjectPoliciesInput {
 }
 impl ListProjectPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListProjectPoliciesInput`](crate::operation::list_project_policies::ListProjectPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::list_project_policies::builders::ListProjectPoliciesInputBuilder {
-        crate::operation::list_project_policies::builders::ListProjectPoliciesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_project_policies::builders::ListProjectPoliciesInputBuilder {
+        crate::operation::list_project_policies::builders::ListProjectPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProjectPoliciesInput`](crate::operation::list_project_policies::ListProjectPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProjectPoliciesInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl ListProjectPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListProjectPoliciesInput`](crate::operation::list_project_policies::ListProjectPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_project_policies::ListProjectPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_project_policies::ListProjectPoliciesInput {
-                project_arn: self.project_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_project_policies::ListProjectPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_project_policies::ListProjectPoliciesInput {
+            project_arn: self.project_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`base_configuration_items(Option<Vec<BaseConfigurationItem>>)`](crate::operation::batch_get_resource_config::BatchGetResourceConfigOutput::base_configuration_items): <p>A list that contains the current configuration of one or more resources.</p>
     ///   - [`unprocessed_resource_keys(Option<Vec<ResourceKey>>)`](crate::operation::batch_get_resource_config::BatchGetResourceConfigOutput::unprocessed_resource_keys): <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
     /// - On failure, responds with [`SdkError<BatchGetResourceConfigError>`](crate::operation::batch_get_resource_config::BatchGetResourceConfigError)
-    pub fn batch_get_resource_config(
-        &self,
-    ) -> crate::operation::batch_get_resource_config::builders::BatchGetResourceConfigFluentBuilder
-    {
+    pub fn batch_get_resource_config(&self) -> crate::operation::batch_get_resource_config::builders::BatchGetResourceConfigFluentBuilder {
         crate::operation::batch_get_resource_config::builders::BatchGetResourceConfigFluentBuilder::new(self.handle.clone())
     }
 }

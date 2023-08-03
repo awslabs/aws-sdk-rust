@@ -26,7 +26,7 @@ impl UpdateDeletionProtectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDeletionProtectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionInputBuilder,
+    inner: crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionInputBuilder,
 }
 impl UpdateDeletionProtectionFluentBuilder {
     /// Creates a new `UpdateDeletionProtection`.
@@ -37,10 +37,7 @@ impl UpdateDeletionProtectionFluentBuilder {
         }
     }
     /// Access the UpdateDeletionProtection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateDeletionProtectionFluentBuilder {
             crate::operation::update_deletion_protection::UpdateDeletionProtection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deletion_protection::UpdateDeletionProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_deletion_protection::UpdateDeletionProtectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateDeletionProtectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateDeletionProtectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_deletion_protection::UpdateDeletionProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deletion_protection::UpdateDeletionProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_deletion_protection::UpdateDeletionProtectionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateDeletionProtectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_deletion_protection::UpdateDeletionProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deletion_protection::UpdateDeletionProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_deletion_protection::UpdateDeletionProtectionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateDeletionProtectionFluentBuilder {
             crate::operation::update_deletion_protection::UpdateDeletionProtection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deletion_protection::UpdateDeletionProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_deletion_protection::UpdateDeletionProtectionError>,
     > {
         self.customize_middleware().await
     }

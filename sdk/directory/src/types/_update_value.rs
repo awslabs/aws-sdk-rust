@@ -23,9 +23,7 @@ impl UpdateValue {
 
 /// A builder for [`UpdateValue`](crate::types::UpdateValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateValueBuilder {
     pub(crate) os_update_settings: ::std::option::Option<crate::types::OsUpdateSettings>,
 }
@@ -36,10 +34,7 @@ impl UpdateValueBuilder {
         self
     }
     /// <p> The OS update related settings. </p>
-    pub fn set_os_update_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::OsUpdateSettings>,
-    ) -> Self {
+    pub fn set_os_update_settings(mut self, input: ::std::option::Option<crate::types::OsUpdateSettings>) -> Self {
         self.os_update_settings = input;
         self
     }

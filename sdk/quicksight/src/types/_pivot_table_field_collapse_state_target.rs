@@ -30,13 +30,10 @@ impl PivotTableFieldCollapseStateTarget {
 
 /// A builder for [`PivotTableFieldCollapseStateTarget`](crate::types::PivotTableFieldCollapseStateTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PivotTableFieldCollapseStateTargetBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
-    pub(crate) field_data_path_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>>,
+    pub(crate) field_data_path_values: ::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>>,
 }
 impl PivotTableFieldCollapseStateTargetBuilder {
     /// <p>The field ID of the pivot table that the collapse state needs to be set to.</p>
@@ -65,17 +62,12 @@ impl PivotTableFieldCollapseStateTargetBuilder {
         self
     }
     /// <p>The data path of the pivot table's header. Used to set the collapse state.</p>
-    pub fn set_field_data_path_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>>,
-    ) -> Self {
+    pub fn set_field_data_path_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>>) -> Self {
         self.field_data_path_values = input;
         self
     }
     /// <p>The data path of the pivot table's header. Used to set the collapse state.</p>
-    pub fn get_field_data_path_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>> {
+    pub fn get_field_data_path_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>> {
         &self.field_data_path_values
     }
     /// Consumes the builder and constructs a [`PivotTableFieldCollapseStateTarget`](crate::types::PivotTableFieldCollapseStateTarget).

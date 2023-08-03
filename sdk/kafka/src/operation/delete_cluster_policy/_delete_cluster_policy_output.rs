@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteClusterPolicyOutput {
 }
 impl DeleteClusterPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteClusterPolicyOutput`](crate::operation::delete_cluster_policy::DeleteClusterPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_cluster_policy::builders::DeleteClusterPolicyOutputBuilder {
-        crate::operation::delete_cluster_policy::builders::DeleteClusterPolicyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_cluster_policy::builders::DeleteClusterPolicyOutputBuilder {
+        crate::operation::delete_cluster_policy::builders::DeleteClusterPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteClusterPolicyOutput`](crate::operation::delete_cluster_policy::DeleteClusterPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteClusterPolicyOutputBuilder {
     _request_id: Option<String>,
 }

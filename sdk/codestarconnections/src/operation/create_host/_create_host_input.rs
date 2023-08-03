@@ -50,9 +50,7 @@ impl CreateHostInput {
 
 /// A builder for [`CreateHostInput`](crate::operation::create_host::CreateHostInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHostInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) provider_type: ::std::option::Option<crate::types::ProviderType>,
@@ -81,10 +79,7 @@ impl CreateHostInputBuilder {
         self
     }
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
-    pub fn set_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProviderType>,
-    ) -> Self {
+    pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
         self.provider_type = input;
         self
     }
@@ -93,18 +88,12 @@ impl CreateHostInputBuilder {
         &self.provider_type
     }
     /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
-    pub fn provider_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
-    pub fn set_provider_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_endpoint = input;
         self
     }
@@ -118,10 +107,7 @@ impl CreateHostInputBuilder {
         self
     }
     /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfiguration>,
-    ) -> Self {
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
         self.vpc_configuration = input;
         self
     }
@@ -140,10 +126,7 @@ impl CreateHostInputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -152,12 +135,7 @@ impl CreateHostInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateHostInput`](crate::operation::create_host::CreateHostInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_host::CreateHostInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_host::CreateHostInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_host::CreateHostInput {
             name: self.name,
             provider_type: self.provider_type,

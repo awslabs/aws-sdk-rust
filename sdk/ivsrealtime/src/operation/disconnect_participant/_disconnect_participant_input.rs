@@ -29,17 +29,14 @@ impl DisconnectParticipantInput {
 }
 impl DisconnectParticipantInput {
     /// Creates a new builder-style object to manufacture [`DisconnectParticipantInput`](crate::operation::disconnect_participant::DisconnectParticipantInput).
-    pub fn builder(
-    ) -> crate::operation::disconnect_participant::builders::DisconnectParticipantInputBuilder {
+    pub fn builder() -> crate::operation::disconnect_participant::builders::DisconnectParticipantInputBuilder {
         crate::operation::disconnect_participant::builders::DisconnectParticipantInputBuilder::default()
     }
 }
 
 /// A builder for [`DisconnectParticipantInput`](crate::operation::disconnect_participant::DisconnectParticipantInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisconnectParticipantInputBuilder {
     pub(crate) stage_arn: ::std::option::Option<::std::string::String>,
     pub(crate) participant_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,12 @@ impl DisconnectParticipantInputBuilder {
         &self.stage_arn
     }
     /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
-    pub fn participant_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
-    pub fn set_participant_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.participant_id = input;
         self
     }
@@ -97,16 +88,12 @@ impl DisconnectParticipantInputBuilder {
     /// Consumes the builder and constructs a [`DisconnectParticipantInput`](crate::operation::disconnect_participant::DisconnectParticipantInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disconnect_participant::DisconnectParticipantInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disconnect_participant::DisconnectParticipantInput {
-                stage_arn: self.stage_arn,
-                participant_id: self.participant_id,
-                reason: self.reason,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disconnect_participant::DisconnectParticipantInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::disconnect_participant::DisconnectParticipantInput {
+            stage_arn: self.stage_arn,
+            participant_id: self.participant_id,
+            reason: self.reason,
+        })
     }
 }

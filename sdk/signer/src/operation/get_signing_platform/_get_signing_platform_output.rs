@@ -54,9 +54,7 @@ impl GetSigningPlatformOutput {
         self.category.as_ref()
     }
     /// <p>A list of configurations applied to the target platform at signing.</p>
-    pub fn signing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SigningConfiguration> {
+    pub fn signing_configuration(&self) -> ::std::option::Option<&crate::types::SigningConfiguration> {
         self.signing_configuration.as_ref()
     }
     /// <p>The format of the target platform's signing image.</p>
@@ -79,17 +77,14 @@ impl ::aws_http::request_id::RequestId for GetSigningPlatformOutput {
 }
 impl GetSigningPlatformOutput {
     /// Creates a new builder-style object to manufacture [`GetSigningPlatformOutput`](crate::operation::get_signing_platform::GetSigningPlatformOutput).
-    pub fn builder(
-    ) -> crate::operation::get_signing_platform::builders::GetSigningPlatformOutputBuilder {
+    pub fn builder() -> crate::operation::get_signing_platform::builders::GetSigningPlatformOutputBuilder {
         crate::operation::get_signing_platform::builders::GetSigningPlatformOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSigningPlatformOutput`](crate::operation::get_signing_platform::GetSigningPlatformOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSigningPlatformOutputBuilder {
     pub(crate) platform_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -179,17 +174,12 @@ impl GetSigningPlatformOutputBuilder {
         self
     }
     /// <p>A list of configurations applied to the target platform at signing.</p>
-    pub fn set_signing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningConfiguration>,
-    ) -> Self {
+    pub fn set_signing_configuration(mut self, input: ::std::option::Option<crate::types::SigningConfiguration>) -> Self {
         self.signing_configuration = input;
         self
     }
     /// <p>A list of configurations applied to the target platform at signing.</p>
-    pub fn get_signing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SigningConfiguration> {
+    pub fn get_signing_configuration(&self) -> &::std::option::Option<crate::types::SigningConfiguration> {
         &self.signing_configuration
     }
     /// <p>The format of the target platform's signing image.</p>
@@ -198,17 +188,12 @@ impl GetSigningPlatformOutputBuilder {
         self
     }
     /// <p>The format of the target platform's signing image.</p>
-    pub fn set_signing_image_format(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningImageFormat>,
-    ) -> Self {
+    pub fn set_signing_image_format(mut self, input: ::std::option::Option<crate::types::SigningImageFormat>) -> Self {
         self.signing_image_format = input;
         self
     }
     /// <p>The format of the target platform's signing image.</p>
-    pub fn get_signing_image_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::SigningImageFormat> {
+    pub fn get_signing_image_format(&self) -> &::std::option::Option<crate::types::SigningImageFormat> {
         &self.signing_image_format
     }
     /// <p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>

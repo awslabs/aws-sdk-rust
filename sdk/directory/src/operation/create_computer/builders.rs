@@ -10,10 +10,7 @@ impl CreateComputerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_computer::CreateComputerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_computer::CreateComputerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_computer::CreateComputerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_computer();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateComputerFluentBuilder {
         }
     }
     /// Access the CreateComputer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_computer::builders::CreateComputerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_computer::builders::CreateComputerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateComputerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl CreateComputerFluentBuilder {
         self.inner.get_directory_id()
     }
     /// <p>The name of the computer account.</p>
-    pub fn computer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn computer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.computer_name(input.into());
         self
     }
     /// <p>The name of the computer account.</p>
-    pub fn set_computer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_computer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_computer_name(input);
         self
     }
@@ -163,27 +149,17 @@ impl CreateComputerFluentBuilder {
         self.inner.get_password()
     }
     /// <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
-    pub fn organizational_unit_distinguished_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .organizational_unit_distinguished_name(input.into());
+    pub fn organizational_unit_distinguished_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.organizational_unit_distinguished_name(input.into());
         self
     }
     /// <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
-    pub fn set_organizational_unit_distinguished_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organizational_unit_distinguished_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organizational_unit_distinguished_name(input);
         self
     }
     /// <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
-    pub fn get_organizational_unit_distinguished_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_organizational_unit_distinguished_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_organizational_unit_distinguished_name()
     }
     /// Appends an item to `ComputerAttributes`.
@@ -196,17 +172,12 @@ impl CreateComputerFluentBuilder {
         self
     }
     /// <p>An array of <code>Attribute</code> objects that contain any LDAP attributes to apply to the computer account.</p>
-    pub fn set_computer_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_computer_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.inner = self.inner.set_computer_attributes(input);
         self
     }
     /// <p>An array of <code>Attribute</code> objects that contain any LDAP attributes to apply to the computer account.</p>
-    pub fn get_computer_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_computer_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         self.inner.get_computer_attributes()
     }
 }

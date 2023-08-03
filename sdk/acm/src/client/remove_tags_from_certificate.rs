@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::remove_tags_from_certificate::builders::RemoveTagsFromCertificateFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::remove_tags_from_certificate::builders::RemoveTagsFromCertificateFluentBuilder::set_tags): <p>The key-value pair that defines the tag to remove.</p>
     /// - On success, responds with [`RemoveTagsFromCertificateOutput`](crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateOutput)
     /// - On failure, responds with [`SdkError<RemoveTagsFromCertificateError>`](crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateError)
-    pub fn remove_tags_from_certificate(&self) -> crate::operation::remove_tags_from_certificate::builders::RemoveTagsFromCertificateFluentBuilder{
+    pub fn remove_tags_from_certificate(&self) -> crate::operation::remove_tags_from_certificate::builders::RemoveTagsFromCertificateFluentBuilder {
         crate::operation::remove_tags_from_certificate::builders::RemoveTagsFromCertificateFluentBuilder::new(self.handle.clone())
     }
 }

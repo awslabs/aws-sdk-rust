@@ -26,7 +26,7 @@ impl ListServicePipelineOutputsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServicePipelineOutputsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsInputBuilder,
+    inner: crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsInputBuilder,
 }
 impl ListServicePipelineOutputsFluentBuilder {
     /// Creates a new `ListServicePipelineOutputs`.
@@ -37,7 +37,7 @@ impl ListServicePipelineOutputsFluentBuilder {
         }
     }
     /// Access the ListServicePipelineOutputs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListServicePipelineOutputsFluentBuilder {
             crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListServicePipelineOutputsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListServicePipelineOutputsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListServicePipelineOutputsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListServicePipelineOutputsFluentBuilder {
             crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_service_pipeline_outputs::paginator::ListServicePipelineOutputsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_service_pipeline_outputs::paginator::ListServicePipelineOutputsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_service_pipeline_outputs::paginator::ListServicePipelineOutputsPaginator {
         crate::operation::list_service_pipeline_outputs::paginator::ListServicePipelineOutputsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the service whose pipeline's outputs you want.</p>
@@ -155,18 +144,12 @@ impl ListServicePipelineOutputsFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The ID of the deployment you want the outputs for.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// <p>The ID of the deployment you want the outputs for.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }

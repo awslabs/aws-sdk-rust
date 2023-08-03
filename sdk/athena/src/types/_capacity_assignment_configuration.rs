@@ -9,8 +9,7 @@ pub struct CapacityAssignmentConfiguration {
     pub capacity_reservation_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of assignments that make up the capacity assignment configuration.</p>
     #[doc(hidden)]
-    pub capacity_assignments:
-        ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>,
+    pub capacity_assignments: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>,
 }
 impl CapacityAssignmentConfiguration {
     /// <p>The name of the reservation that the capacity assignment configuration is for.</p>
@@ -18,9 +17,7 @@ impl CapacityAssignmentConfiguration {
         self.capacity_reservation_name.as_deref()
     }
     /// <p>The list of assignments that make up the capacity assignment configuration.</p>
-    pub fn capacity_assignments(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CapacityAssignment]> {
+    pub fn capacity_assignments(&self) -> ::std::option::Option<&[crate::types::CapacityAssignment]> {
         self.capacity_assignments.as_deref()
     }
 }
@@ -33,28 +30,19 @@ impl CapacityAssignmentConfiguration {
 
 /// A builder for [`CapacityAssignmentConfiguration`](crate::types::CapacityAssignmentConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacityAssignmentConfigurationBuilder {
     pub(crate) capacity_reservation_name: ::std::option::Option<::std::string::String>,
-    pub(crate) capacity_assignments:
-        ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>,
+    pub(crate) capacity_assignments: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>,
 }
 impl CapacityAssignmentConfigurationBuilder {
     /// <p>The name of the reservation that the capacity assignment configuration is for.</p>
-    pub fn capacity_reservation_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the reservation that the capacity assignment configuration is for.</p>
-    pub fn set_capacity_reservation_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_name = input;
         self
     }
@@ -74,17 +62,12 @@ impl CapacityAssignmentConfigurationBuilder {
         self
     }
     /// <p>The list of assignments that make up the capacity assignment configuration.</p>
-    pub fn set_capacity_assignments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>,
-    ) -> Self {
+    pub fn set_capacity_assignments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>) -> Self {
         self.capacity_assignments = input;
         self
     }
     /// <p>The list of assignments that make up the capacity assignment configuration.</p>
-    pub fn get_capacity_assignments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>> {
+    pub fn get_capacity_assignments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>> {
         &self.capacity_assignments
     }
     /// Consumes the builder and constructs a [`CapacityAssignmentConfiguration`](crate::types::CapacityAssignmentConfiguration).

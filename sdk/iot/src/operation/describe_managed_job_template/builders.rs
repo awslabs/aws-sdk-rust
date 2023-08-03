@@ -26,7 +26,7 @@ impl DescribeManagedJobTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeManagedJobTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_managed_job_template::builders::DescribeManagedJobTemplateInputBuilder,
+    inner: crate::operation::describe_managed_job_template::builders::DescribeManagedJobTemplateInputBuilder,
 }
 impl DescribeManagedJobTemplateFluentBuilder {
     /// Creates a new `DescribeManagedJobTemplate`.
@@ -37,7 +37,7 @@ impl DescribeManagedJobTemplateFluentBuilder {
         }
     }
     /// Access the DescribeManagedJobTemplate as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_managed_job_template::builders::DescribeManagedJobTemplateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_managed_job_template::builders::DescribeManagedJobTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeManagedJobTemplateFluentBuilder {
             crate::operation::describe_managed_job_template::DescribeManagedJobTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_managed_job_template::DescribeManagedJobTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_managed_job_template::DescribeManagedJobTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeManagedJobTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeManagedJobTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_managed_job_template::DescribeManagedJobTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_managed_job_template::DescribeManagedJobTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_managed_job_template::DescribeManagedJobTemplateError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeManagedJobTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_managed_job_template::DescribeManagedJobTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_managed_job_template::DescribeManagedJobTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_managed_job_template::DescribeManagedJobTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeManagedJobTemplateFluentBuilder {
             crate::operation::describe_managed_job_template::DescribeManagedJobTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_managed_job_template::DescribeManagedJobTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_managed_job_template::DescribeManagedJobTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique name of a managed job template, which is required.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The unique name of a managed job template, which is required.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -141,18 +124,12 @@ impl DescribeManagedJobTemplateFluentBuilder {
         self.inner.get_template_name()
     }
     /// <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
-    pub fn template_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_version(input.into());
         self
     }
     /// <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
-    pub fn set_template_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_version(input);
         self
     }

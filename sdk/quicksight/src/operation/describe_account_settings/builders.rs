@@ -26,8 +26,7 @@ impl DescribeAccountSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_account_settings::builders::DescribeAccountSettingsInputBuilder,
+    inner: crate::operation::describe_account_settings::builders::DescribeAccountSettingsInputBuilder,
 }
 impl DescribeAccountSettingsFluentBuilder {
     /// Creates a new `DescribeAccountSettings`.
@@ -38,10 +37,7 @@ impl DescribeAccountSettingsFluentBuilder {
         }
     }
     /// Access the DescribeAccountSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_account_settings::builders::DescribeAccountSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_account_settings::builders::DescribeAccountSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeAccountSettingsFluentBuilder {
             crate::operation::describe_account_settings::DescribeAccountSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_settings::DescribeAccountSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_settings::DescribeAccountSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeAccountSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeAccountSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_settings::DescribeAccountSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_settings::DescribeAccountSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_settings::DescribeAccountSettingsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeAccountSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_settings::DescribeAccountSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_settings::DescribeAccountSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_settings::DescribeAccountSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DescribeAccountSettingsFluentBuilder {
             crate::operation::describe_account_settings::DescribeAccountSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_settings::DescribeAccountSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_settings::DescribeAccountSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

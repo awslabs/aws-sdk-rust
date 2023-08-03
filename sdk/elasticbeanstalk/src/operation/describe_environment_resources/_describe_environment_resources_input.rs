@@ -27,16 +27,14 @@ impl DescribeEnvironmentResourcesInput {
 }
 impl DescribeEnvironmentResourcesInput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentResourcesInput`](crate::operation::describe_environment_resources::DescribeEnvironmentResourcesInput).
-    pub fn builder() -> crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesInputBuilder{
+    pub fn builder() -> crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesInputBuilder {
         crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEnvironmentResourcesInput`](crate::operation::describe_environment_resources::DescribeEnvironmentResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentResourcesInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -44,19 +42,13 @@ pub struct DescribeEnvironmentResourcesInputBuilder {
 impl DescribeEnvironmentResourcesInputBuilder {
     /// <p>The ID of the environment to retrieve AWS resource usage data.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the environment to retrieve AWS resource usage data.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -67,19 +59,13 @@ impl DescribeEnvironmentResourcesInputBuilder {
     }
     /// <p>The name of the environment to retrieve AWS resource usage data.</p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment to retrieve AWS resource usage data.</p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -95,11 +81,9 @@ impl DescribeEnvironmentResourcesInputBuilder {
         crate::operation::describe_environment_resources::DescribeEnvironmentResourcesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_environment_resources::DescribeEnvironmentResourcesInput {
-                environment_id: self.environment_id,
-                environment_name: self.environment_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_environment_resources::DescribeEnvironmentResourcesInput {
+            environment_id: self.environment_id,
+            environment_name: self.environment_name,
+        })
     }
 }

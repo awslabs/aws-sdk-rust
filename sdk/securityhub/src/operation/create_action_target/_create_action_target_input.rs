@@ -29,17 +29,14 @@ impl CreateActionTargetInput {
 }
 impl CreateActionTargetInput {
     /// Creates a new builder-style object to manufacture [`CreateActionTargetInput`](crate::operation::create_action_target::CreateActionTargetInput).
-    pub fn builder(
-    ) -> crate::operation::create_action_target::builders::CreateActionTargetInputBuilder {
+    pub fn builder() -> crate::operation::create_action_target::builders::CreateActionTargetInputBuilder {
         crate::operation::create_action_target::builders::CreateActionTargetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateActionTargetInput`](crate::operation::create_action_target::CreateActionTargetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateActionTargetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl CreateActionTargetInputBuilder {
     /// Consumes the builder and constructs a [`CreateActionTargetInput`](crate::operation::create_action_target::CreateActionTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_action_target::CreateActionTargetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_action_target::CreateActionTargetInput {
-                name: self.name,
-                description: self.description,
-                id: self.id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_action_target::CreateActionTargetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_action_target::CreateActionTargetInput {
+            name: self.name,
+            description: self.description,
+            id: self.id,
+        })
     }
 }

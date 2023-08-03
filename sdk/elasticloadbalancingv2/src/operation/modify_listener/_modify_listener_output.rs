@@ -28,9 +28,7 @@ impl ModifyListenerOutput {
 
 /// A builder for [`ModifyListenerOutput`](crate::operation::modify_listener::ModifyListenerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyListenerOutputBuilder {
     pub(crate) listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
     _request_id: Option<String>,
@@ -48,10 +46,7 @@ impl ModifyListenerOutputBuilder {
         self
     }
     /// <p>Information about the modified listener.</p>
-    pub fn set_listeners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
-    ) -> Self {
+    pub fn set_listeners(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>) -> Self {
         self.listeners = input;
         self
     }

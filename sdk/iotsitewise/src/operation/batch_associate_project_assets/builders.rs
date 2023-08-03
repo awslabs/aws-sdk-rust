@@ -26,7 +26,7 @@ impl BatchAssociateProjectAssetsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchAssociateProjectAssetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_associate_project_assets::builders::BatchAssociateProjectAssetsInputBuilder,
+    inner: crate::operation::batch_associate_project_assets::builders::BatchAssociateProjectAssetsInputBuilder,
 }
 impl BatchAssociateProjectAssetsFluentBuilder {
     /// Creates a new `BatchAssociateProjectAssets`.
@@ -37,7 +37,7 @@ impl BatchAssociateProjectAssetsFluentBuilder {
         }
     }
     /// Access the BatchAssociateProjectAssets as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_associate_project_assets::builders::BatchAssociateProjectAssetsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_associate_project_assets::builders::BatchAssociateProjectAssetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchAssociateProjectAssetsFluentBuilder {
             crate::operation::batch_associate_project_assets::BatchAssociateProjectAssets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchAssociateProjectAssetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchAssociateProjectAssetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchAssociateProjectAssetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchAssociateProjectAssetsFluentBuilder {
             crate::operation::batch_associate_project_assets::BatchAssociateProjectAssets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +133,7 @@ impl BatchAssociateProjectAssetsFluentBuilder {
         self
     }
     /// <p>The IDs of the assets to be associated to the project.</p>
-    pub fn set_asset_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_asset_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_asset_ids(input);
         self
     }

@@ -44,9 +44,7 @@ impl DataCatalogInputDefinition {
 
 /// A builder for [`DataCatalogInputDefinition`](crate::types::DataCatalogInputDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataCatalogInputDefinitionBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl DataCatalogInputDefinitionBuilder {
         &self.catalog_id
     }
     /// <p>The name of a database in the Data Catalog.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a database in the Data Catalog.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -108,10 +100,7 @@ impl DataCatalogInputDefinitionBuilder {
         self
     }
     /// <p>Represents an Amazon location where DataBrew can store intermediate results.</p>
-    pub fn set_temp_directory(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_temp_directory(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.temp_directory = input;
         self
     }

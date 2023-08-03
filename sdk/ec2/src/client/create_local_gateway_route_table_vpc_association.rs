@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`CreateLocalGatewayRouteTableVpcAssociationOutput`](crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociationOutput) with field(s):
     ///   - [`local_gateway_route_table_vpc_association(Option<LocalGatewayRouteTableVpcAssociation>)`](crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociationOutput::local_gateway_route_table_vpc_association): <p>Information about the association.</p>
     /// - On failure, responds with [`SdkError<CreateLocalGatewayRouteTableVpcAssociationError>`](crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociationError)
-    pub fn create_local_gateway_route_table_vpc_association(&self) -> crate::operation::create_local_gateway_route_table_vpc_association::builders::CreateLocalGatewayRouteTableVpcAssociationFluentBuilder{
-        crate::operation::create_local_gateway_route_table_vpc_association::builders::CreateLocalGatewayRouteTableVpcAssociationFluentBuilder::new(self.handle.clone())
+    pub fn create_local_gateway_route_table_vpc_association(
+        &self,
+    ) -> crate::operation::create_local_gateway_route_table_vpc_association::builders::CreateLocalGatewayRouteTableVpcAssociationFluentBuilder {
+        crate::operation::create_local_gateway_route_table_vpc_association::builders::CreateLocalGatewayRouteTableVpcAssociationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

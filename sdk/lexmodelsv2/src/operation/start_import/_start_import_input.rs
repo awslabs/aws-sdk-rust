@@ -22,9 +22,7 @@ impl StartImportInput {
         self.import_id.as_deref()
     }
     /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
-    pub fn resource_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImportResourceSpecification> {
+    pub fn resource_specification(&self) -> ::std::option::Option<&crate::types::ImportResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
@@ -58,8 +56,7 @@ impl StartImportInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct StartImportInputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_specification:
-        ::std::option::Option<crate::types::ImportResourceSpecification>,
+    pub(crate) resource_specification: ::std::option::Option<crate::types::ImportResourceSpecification>,
     pub(crate) merge_strategy: ::std::option::Option<crate::types::MergeStrategy>,
     pub(crate) file_password: ::std::option::Option<::std::string::String>,
 }
@@ -79,25 +76,17 @@ impl StartImportInputBuilder {
         &self.import_id
     }
     /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
-    pub fn resource_specification(
-        mut self,
-        input: crate::types::ImportResourceSpecification,
-    ) -> Self {
+    pub fn resource_specification(mut self, input: crate::types::ImportResourceSpecification) -> Self {
         self.resource_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
-    pub fn set_resource_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportResourceSpecification>,
-    ) -> Self {
+    pub fn set_resource_specification(mut self, input: ::std::option::Option<crate::types::ImportResourceSpecification>) -> Self {
         self.resource_specification = input;
         self
     }
     /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
-    pub fn get_resource_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImportResourceSpecification> {
+    pub fn get_resource_specification(&self) -> &::std::option::Option<crate::types::ImportResourceSpecification> {
         &self.resource_specification
     }
     /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
@@ -106,10 +95,7 @@ impl StartImportInputBuilder {
         self
     }
     /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
-    pub fn set_merge_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::MergeStrategy>,
-    ) -> Self {
+    pub fn set_merge_strategy(mut self, input: ::std::option::Option<crate::types::MergeStrategy>) -> Self {
         self.merge_strategy = input;
         self
     }
@@ -118,18 +104,12 @@ impl StartImportInputBuilder {
         &self.merge_strategy
     }
     /// <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
-    pub fn file_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
-    pub fn set_file_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_password = input;
         self
     }
@@ -138,12 +118,7 @@ impl StartImportInputBuilder {
         &self.file_password
     }
     /// Consumes the builder and constructs a [`StartImportInput`](crate::operation::start_import::StartImportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_import::StartImportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_import::StartImportInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_import::StartImportInput {
             import_id: self.import_id,
             resource_specification: self.resource_specification,

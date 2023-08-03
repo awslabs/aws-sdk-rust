@@ -9,10 +9,7 @@ pub fn ser_disassociate_identity_provider_config_input(
     if let Some(var_2) = &input.identity_provider_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("identityProviderConfig").start_object();
-        crate::protocol_serde::shape_identity_provider_config::ser_identity_provider_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_identity_provider_config::ser_identity_provider_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

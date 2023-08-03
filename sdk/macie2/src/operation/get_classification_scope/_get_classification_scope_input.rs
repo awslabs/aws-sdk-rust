@@ -15,18 +15,14 @@ impl GetClassificationScopeInput {
 }
 impl GetClassificationScopeInput {
     /// Creates a new builder-style object to manufacture [`GetClassificationScopeInput`](crate::operation::get_classification_scope::GetClassificationScopeInput).
-    pub fn builder(
-    ) -> crate::operation::get_classification_scope::builders::GetClassificationScopeInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_classification_scope::builders::GetClassificationScopeInputBuilder {
         crate::operation::get_classification_scope::builders::GetClassificationScopeInputBuilder::default()
     }
 }
 
 /// A builder for [`GetClassificationScopeInput`](crate::operation::get_classification_scope::GetClassificationScopeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClassificationScopeInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl GetClassificationScopeInputBuilder {
     /// Consumes the builder and constructs a [`GetClassificationScopeInput`](crate::operation::get_classification_scope::GetClassificationScopeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_classification_scope::GetClassificationScopeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_classification_scope::GetClassificationScopeInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::get_classification_scope::GetClassificationScopeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_classification_scope::GetClassificationScopeInput { id: self.id })
     }
 }

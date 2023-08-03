@@ -52,10 +52,7 @@ pub fn ser_create_campaign_input(
             {
                 #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_signal_information::ser_signal_information(
-                    &mut object_15,
-                    item_14,
-                )?;
+                crate::protocol_serde::shape_signal_information::ser_signal_information(&mut object_15, item_14)?;
                 object_15.finish();
             }
         }
@@ -64,10 +61,7 @@ pub fn ser_create_campaign_input(
     if let Some(var_16) = &input.collection_scheme {
         #[allow(unused_mut)]
         let mut object_17 = object.key("collectionScheme").start_object();
-        crate::protocol_serde::shape_collection_scheme::ser_collection_scheme(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_collection_scheme::ser_collection_scheme(&mut object_17, var_16)?;
         object_17.finish();
     }
     if let Some(var_18) = &input.data_extra_dimensions {
@@ -97,10 +91,7 @@ pub fn ser_create_campaign_input(
             {
                 #[allow(unused_mut)]
                 let mut object_28 = array_26.value().start_object();
-                crate::protocol_serde::shape_data_destination_config::ser_data_destination_config(
-                    &mut object_28,
-                    item_27,
-                )?;
+                crate::protocol_serde::shape_data_destination_config::ser_data_destination_config(&mut object_28, item_27)?;
                 object_28.finish();
             }
         }

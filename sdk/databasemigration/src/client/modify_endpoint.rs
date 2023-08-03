@@ -40,11 +40,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyEndpointOutput`](crate::operation::modify_endpoint::ModifyEndpointOutput) with field(s):
     ///   - [`endpoint(Option<Endpoint>)`](crate::operation::modify_endpoint::ModifyEndpointOutput::endpoint): <p>The modified endpoint.</p>
     /// - On failure, responds with [`SdkError<ModifyEndpointError>`](crate::operation::modify_endpoint::ModifyEndpointError)
-    pub fn modify_endpoint(
-        &self,
-    ) -> crate::operation::modify_endpoint::builders::ModifyEndpointFluentBuilder {
-        crate::operation::modify_endpoint::builders::ModifyEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_endpoint(&self) -> crate::operation::modify_endpoint::builders::ModifyEndpointFluentBuilder {
+        crate::operation::modify_endpoint::builders::ModifyEndpointFluentBuilder::new(self.handle.clone())
     }
 }

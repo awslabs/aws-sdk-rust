@@ -46,9 +46,7 @@ impl DeleteIndexOutput {
 
 /// A builder for [`DeleteIndexOutput`](crate::operation::delete_index::DeleteIndexOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIndexOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::IndexState>,
@@ -96,10 +94,7 @@ impl DeleteIndexOutputBuilder {
         self
     }
     /// <p>The date and time when you last updated this index.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }

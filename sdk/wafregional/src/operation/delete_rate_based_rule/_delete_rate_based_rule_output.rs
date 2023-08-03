@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteRateBasedRuleOutput {
 }
 impl DeleteRateBasedRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRateBasedRuleOutput`](crate::operation::delete_rate_based_rule::DeleteRateBasedRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_rate_based_rule::builders::DeleteRateBasedRuleOutputBuilder {
+    pub fn builder() -> crate::operation::delete_rate_based_rule::builders::DeleteRateBasedRuleOutputBuilder {
         crate::operation::delete_rate_based_rule::builders::DeleteRateBasedRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRateBasedRuleOutput`](crate::operation::delete_rate_based_rule::DeleteRateBasedRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRateBasedRuleOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

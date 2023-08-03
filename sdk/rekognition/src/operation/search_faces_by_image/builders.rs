@@ -10,10 +10,7 @@ impl SearchFacesByImageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_faces_by_image::SearchFacesByImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_faces_by_image::SearchFacesByImageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_faces_by_image::SearchFacesByImageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_faces_by_image();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl SearchFacesByImageFluentBuilder {
         }
     }
     /// Access the SearchFacesByImage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_faces_by_image::builders::SearchFacesByImageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_faces_by_image::builders::SearchFacesByImageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +57,7 @@ impl SearchFacesByImageFluentBuilder {
             crate::operation::search_faces_by_image::SearchFacesByImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_faces_by_image::SearchFacesByImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_faces_by_image::SearchFacesByImageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +67,7 @@ impl SearchFacesByImageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +76,7 @@ impl SearchFacesByImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_faces_by_image::SearchFacesByImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_faces_by_image::SearchFacesByImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_faces_by_image::SearchFacesByImageError>,
     > {
         let op = self
             .inner
@@ -111,9 +99,7 @@ impl SearchFacesByImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_faces_by_image::SearchFacesByImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_faces_by_image::SearchFacesByImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_faces_by_image::SearchFacesByImageError>,
     > {
         self.send_middleware().await
     }
@@ -127,25 +113,17 @@ impl SearchFacesByImageFluentBuilder {
             crate::operation::search_faces_by_image::SearchFacesByImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_faces_by_image::SearchFacesByImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_faces_by_image::SearchFacesByImageError>,
     > {
         self.customize_middleware().await
     }
     /// <p>ID of the collection to search.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_id(input.into());
         self
     }
     /// <p>ID of the collection to search.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_id(input);
         self
     }
@@ -206,10 +184,7 @@ impl SearchFacesByImageFluentBuilder {
     }
     /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
-    pub fn set_quality_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::QualityFilter>,
-    ) -> Self {
+    pub fn set_quality_filter(mut self, input: ::std::option::Option<crate::types::QualityFilter>) -> Self {
         self.inner = self.inner.set_quality_filter(input);
         self
     }

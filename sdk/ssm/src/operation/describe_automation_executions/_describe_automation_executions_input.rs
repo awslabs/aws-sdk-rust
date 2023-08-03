@@ -29,19 +29,16 @@ impl DescribeAutomationExecutionsInput {
 }
 impl DescribeAutomationExecutionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAutomationExecutionsInput`](crate::operation::describe_automation_executions::DescribeAutomationExecutionsInput).
-    pub fn builder() -> crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsInputBuilder {
         crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAutomationExecutionsInput`](crate::operation::describe_automation_executions::DescribeAutomationExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAutomationExecutionsInputBuilder {
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -58,17 +55,12 @@ impl DescribeAutomationExecutionsInputBuilder {
         self
     }
     /// <p>Filters used to limit the scope of executions that are requested.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Filters used to limit the scope of executions that are requested.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionFilter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -106,12 +98,10 @@ impl DescribeAutomationExecutionsInputBuilder {
         crate::operation::describe_automation_executions::DescribeAutomationExecutionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_automation_executions::DescribeAutomationExecutionsInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_automation_executions::DescribeAutomationExecutionsInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

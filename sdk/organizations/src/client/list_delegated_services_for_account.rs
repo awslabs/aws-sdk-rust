@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`delegated_services(Option<Vec<DelegatedService>>)`](crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput::delegated_services): <p>The services for which the account is a delegated administrator.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListDelegatedServicesForAccountError>`](crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountError)
-    pub fn list_delegated_services_for_account(&self) -> crate::operation::list_delegated_services_for_account::builders::ListDelegatedServicesForAccountFluentBuilder{
+    pub fn list_delegated_services_for_account(
+        &self,
+    ) -> crate::operation::list_delegated_services_for_account::builders::ListDelegatedServicesForAccountFluentBuilder {
         crate::operation::list_delegated_services_for_account::builders::ListDelegatedServicesForAccountFluentBuilder::new(self.handle.clone())
     }
 }

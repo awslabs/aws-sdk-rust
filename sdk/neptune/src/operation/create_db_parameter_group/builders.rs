@@ -29,8 +29,7 @@ impl CreateDbParameterGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDBParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupInputBuilder,
+    inner: crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupInputBuilder,
 }
 impl CreateDBParameterGroupFluentBuilder {
     /// Creates a new `CreateDBParameterGroup`.
@@ -41,10 +40,7 @@ impl CreateDBParameterGroupFluentBuilder {
         }
     }
     /// Access the CreateDBParameterGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +52,7 @@ impl CreateDBParameterGroupFluentBuilder {
             crate::operation::create_db_parameter_group::CreateDBParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_parameter_group::CreateDBParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_parameter_group::CreateDBParameterGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +62,7 @@ impl CreateDBParameterGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +71,7 @@ impl CreateDBParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_db_parameter_group::CreateDbParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_parameter_group::CreateDBParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_parameter_group::CreateDBParameterGroupError>,
     > {
         let op = self
             .inner
@@ -105,9 +94,7 @@ impl CreateDBParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_db_parameter_group::CreateDbParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_parameter_group::CreateDBParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_parameter_group::CreateDBParameterGroupError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +108,7 @@ impl CreateDBParameterGroupFluentBuilder {
             crate::operation::create_db_parameter_group::CreateDBParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_db_parameter_group::CreateDBParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_db_parameter_group::CreateDBParameterGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -136,10 +121,7 @@ impl CreateDBParameterGroupFluentBuilder {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
-    pub fn db_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_parameter_group_name(input.into());
         self
     }
@@ -152,10 +134,7 @@ impl CreateDBParameterGroupFluentBuilder {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
-    pub fn set_db_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_parameter_group_name(input);
         self
     }
@@ -172,18 +151,12 @@ impl CreateDBParameterGroupFluentBuilder {
         self.inner.get_db_parameter_group_name()
     }
     /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
-    pub fn db_parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_parameter_group_family(input.into());
         self
     }
     /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
-    pub fn set_db_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_parameter_group_family(input);
         self
     }
@@ -215,10 +188,7 @@ impl CreateDBParameterGroupFluentBuilder {
         self
     }
     /// <p>The tags to be assigned to the new DB parameter group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

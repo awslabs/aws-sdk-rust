@@ -15,33 +15,25 @@ impl DescribePortfolioShareStatusInput {
 }
 impl DescribePortfolioShareStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribePortfolioShareStatusInput`](crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusInput).
-    pub fn builder() -> crate::operation::describe_portfolio_share_status::builders::DescribePortfolioShareStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_portfolio_share_status::builders::DescribePortfolioShareStatusInputBuilder {
         crate::operation::describe_portfolio_share_status::builders::DescribePortfolioShareStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePortfolioShareStatusInput`](crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePortfolioShareStatusInputBuilder {
     pub(crate) portfolio_share_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribePortfolioShareStatusInputBuilder {
     /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
-    pub fn portfolio_share_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn portfolio_share_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_share_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
-    pub fn set_portfolio_share_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_portfolio_share_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portfolio_share_token = input;
         self
     }
@@ -56,10 +48,8 @@ impl DescribePortfolioShareStatusInputBuilder {
         crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusInput {
-                portfolio_share_token: self.portfolio_share_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusInput {
+            portfolio_share_token: self.portfolio_share_token,
+        })
     }
 }

@@ -7,9 +7,7 @@ pub fn ser_create_relational_database_snapshot_input(
         object.key("relationalDatabaseName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.relational_database_snapshot_name {
-        object
-            .key("relationalDatabaseSnapshotName")
-            .string(var_2.as_str());
+        object.key("relationalDatabaseSnapshotName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.tags {
         let mut array_4 = object.key("tags").start_array();

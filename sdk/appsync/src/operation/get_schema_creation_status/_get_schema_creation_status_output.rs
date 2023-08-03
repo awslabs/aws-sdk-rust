@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetSchemaCreationStatusOutput {
 }
 impl GetSchemaCreationStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetSchemaCreationStatusOutput`](crate::operation::get_schema_creation_status::GetSchemaCreationStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusOutputBuilder {
         crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSchemaCreationStatusOutput`](crate::operation::get_schema_creation_status::GetSchemaCreationStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSchemaCreationStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SchemaStatus>,
     pub(crate) details: ::std::option::Option<::std::string::String>,
@@ -84,9 +80,7 @@ impl GetSchemaCreationStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSchemaCreationStatusOutput`](crate::operation::get_schema_creation_status::GetSchemaCreationStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_schema_creation_status::GetSchemaCreationStatusOutput {
+    pub fn build(self) -> crate::operation::get_schema_creation_status::GetSchemaCreationStatusOutput {
         crate::operation::get_schema_creation_status::GetSchemaCreationStatusOutput {
             status: self.status,
             details: self.details,

@@ -105,17 +105,14 @@ impl ::aws_http::request_id::RequestId for DescribeEndpointOutput {
 }
 impl DescribeEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointOutput`](crate::operation::describe_endpoint::DescribeEndpointOutput).
-    pub fn builder() -> crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder {
         crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointOutput`](crate::operation::describe_endpoint::DescribeEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -181,10 +178,7 @@ impl DescribeEndpointOutputBuilder {
         self
     }
     /// <p>The routing configuration of the endpoint you asked for information about.</p>
-    pub fn set_routing_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingConfig>,
-    ) -> Self {
+    pub fn set_routing_config(mut self, input: ::std::option::Option<crate::types::RoutingConfig>) -> Self {
         self.routing_config = input;
         self
     }
@@ -198,17 +192,12 @@ impl DescribeEndpointOutputBuilder {
         self
     }
     /// <p>Whether replication is enabled or disabled for the endpoint you asked for information about.</p>
-    pub fn set_replication_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfig>,
-    ) -> Self {
+    pub fn set_replication_config(mut self, input: ::std::option::Option<crate::types::ReplicationConfig>) -> Self {
         self.replication_config = input;
         self
     }
     /// <p>Whether replication is enabled or disabled for the endpoint you asked for information about.</p>
-    pub fn get_replication_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfig> {
+    pub fn get_replication_config(&self) -> &::std::option::Option<crate::types::ReplicationConfig> {
         &self.replication_config
     }
     /// Appends an item to `event_buses`.
@@ -223,17 +212,12 @@ impl DescribeEndpointOutputBuilder {
         self
     }
     /// <p>The event buses being used by the endpoint you asked for information about.</p>
-    pub fn set_event_buses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>,
-    ) -> Self {
+    pub fn set_event_buses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>) -> Self {
         self.event_buses = input;
         self
     }
     /// <p>The event buses being used by the endpoint you asked for information about.</p>
-    pub fn get_event_buses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {
+    pub fn get_event_buses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {
         &self.event_buses
     }
     /// <p>The ARN of the role used by the endpoint you asked for information about.</p>
@@ -312,10 +296,7 @@ impl DescribeEndpointOutputBuilder {
         self
     }
     /// <p>The time the endpoint you asked for information about was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -329,10 +310,7 @@ impl DescribeEndpointOutputBuilder {
         self
     }
     /// <p>The last time the endpoint you asked for information about was modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

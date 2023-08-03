@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_cache_clusters::DescribeCacheClustersOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`cache_clusters(Option<Vec<CacheCluster>>)`](crate::operation::describe_cache_clusters::DescribeCacheClustersOutput::cache_clusters): <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
     /// - On failure, responds with [`SdkError<DescribeCacheClustersError>`](crate::operation::describe_cache_clusters::DescribeCacheClustersError)
-    pub fn describe_cache_clusters(
-        &self,
-    ) -> crate::operation::describe_cache_clusters::builders::DescribeCacheClustersFluentBuilder
-    {
-        crate::operation::describe_cache_clusters::builders::DescribeCacheClustersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_cache_clusters(&self) -> crate::operation::describe_cache_clusters::builders::DescribeCacheClustersFluentBuilder {
+        crate::operation::describe_cache_clusters::builders::DescribeCacheClustersFluentBuilder::new(self.handle.clone())
     }
 }

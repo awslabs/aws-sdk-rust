@@ -37,10 +37,7 @@ impl ListSegmentReferencesFluentBuilder {
         }
     }
     /// Access the ListSegmentReferences as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_segment_references::builders::ListSegmentReferencesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_segment_references::builders::ListSegmentReferencesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListSegmentReferencesFluentBuilder {
             crate::operation::list_segment_references::ListSegmentReferences,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_segment_references::ListSegmentReferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_segment_references::ListSegmentReferencesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListSegmentReferencesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListSegmentReferencesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_segment_references::ListSegmentReferencesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_segment_references::ListSegmentReferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_segment_references::ListSegmentReferencesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListSegmentReferencesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_segment_references::ListSegmentReferencesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_segment_references::ListSegmentReferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_segment_references::ListSegmentReferencesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListSegmentReferencesFluentBuilder {
             crate::operation::list_segment_references::ListSegmentReferences,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_segment_references::ListSegmentReferencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_segment_references::ListSegmentReferencesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_segment_references::paginator::ListSegmentReferencesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_segment_references::paginator::ListSegmentReferencesPaginator {
-        crate::operation::list_segment_references::paginator::ListSegmentReferencesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_segment_references::paginator::ListSegmentReferencesPaginator {
+        crate::operation::list_segment_references::paginator::ListSegmentReferencesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the segment that you want to view information for.</p>
     pub fn segment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -182,10 +163,7 @@ impl ListSegmentReferencesFluentBuilder {
         self
     }
     /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SegmentReferenceResourceType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SegmentReferenceResourceType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

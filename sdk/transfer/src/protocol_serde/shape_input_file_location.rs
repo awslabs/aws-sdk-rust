@@ -6,19 +6,13 @@ pub fn ser_input_file_location(
     if let Some(var_1) = &input.s3_file_location {
         #[allow(unused_mut)]
         let mut object_2 = object.key("S3FileLocation").start_object();
-        crate::protocol_serde::shape_s3_input_file_location::ser_s3_input_file_location(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_s3_input_file_location::ser_s3_input_file_location(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.efs_file_location {
         #[allow(unused_mut)]
         let mut object_4 = object.key("EfsFileLocation").start_object();
-        crate::protocol_serde::shape_efs_file_location::ser_efs_file_location(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_efs_file_location::ser_efs_file_location(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())
@@ -26,17 +20,9 @@ pub fn ser_input_file_location(
 
 pub(crate) fn de_input_file_location<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::InputFileLocation>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::InputFileLocation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -46,36 +32,28 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "S3FileLocation" => {
-                                builder = builder.set_s3_file_location(
-                                    crate::protocol_serde::shape_s3_input_file_location::de_s3_input_file_location(tokens)?
-                                );
-                            }
-                            "EfsFileLocation" => {
-                                builder = builder.set_efs_file_location(
-                                    crate::protocol_serde::shape_efs_file_location::de_efs_file_location(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "S3FileLocation" => {
+                            builder =
+                                builder.set_s3_file_location(crate::protocol_serde::shape_s3_input_file_location::de_s3_input_file_location(tokens)?);
                         }
-                    }
+                        "EfsFileLocation" => {
+                            builder = builder.set_efs_file_location(crate::protocol_serde::shape_efs_file_location::de_efs_file_location(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

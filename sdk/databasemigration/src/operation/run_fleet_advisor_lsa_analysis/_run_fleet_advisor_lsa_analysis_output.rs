@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for RunFleetAdvisorLsaAnalysisOutput {
 }
 impl RunFleetAdvisorLsaAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`RunFleetAdvisorLsaAnalysisOutput`](crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisOutput).
-    pub fn builder() -> crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisOutputBuilder{
+    pub fn builder() -> crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisOutputBuilder {
         crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisOutputBuilder::default()
     }
 }
 
 /// A builder for [`RunFleetAdvisorLsaAnalysisOutput`](crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RunFleetAdvisorLsaAnalysisOutputBuilder {
     pub(crate) lsa_analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct RunFleetAdvisorLsaAnalysisOutputBuilder {
 }
 impl RunFleetAdvisorLsaAnalysisOutputBuilder {
     /// <p>The ID of the LSA analysis run.</p>
-    pub fn lsa_analysis_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lsa_analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lsa_analysis_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the LSA analysis run.</p>
-    pub fn set_lsa_analysis_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lsa_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lsa_analysis_id = input;
         self
     }
@@ -88,9 +80,7 @@ impl RunFleetAdvisorLsaAnalysisOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RunFleetAdvisorLsaAnalysisOutput`](crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisOutput {
+    pub fn build(self) -> crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisOutput {
         crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisOutput {
             lsa_analysis_id: self.lsa_analysis_id,
             status: self.status,

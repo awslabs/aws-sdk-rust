@@ -5,8 +5,7 @@
 pub struct ListLineageGroupsOutput {
     /// <p>A list of lineage groups and their properties.</p>
     #[doc(hidden)]
-    pub lineage_group_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::LineageGroupSummary>>,
+    pub lineage_group_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LineageGroupSummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListLineageGroupsOutput {
 }
 impl ListLineageGroupsOutput {
     /// <p>A list of lineage groups and their properties.</p>
-    pub fn lineage_group_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LineageGroupSummary]> {
+    pub fn lineage_group_summaries(&self) -> ::std::option::Option<&[crate::types::LineageGroupSummary]> {
         self.lineage_group_summaries.as_deref()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListLineageGroupsOutput {
 }
 impl ListLineageGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListLineageGroupsOutput`](crate::operation::list_lineage_groups::ListLineageGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_lineage_groups::builders::ListLineageGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_lineage_groups::builders::ListLineageGroupsOutputBuilder {
         crate::operation::list_lineage_groups::builders::ListLineageGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLineageGroupsOutput`](crate::operation::list_lineage_groups::ListLineageGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLineageGroupsOutputBuilder {
-    pub(crate) lineage_group_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::LineageGroupSummary>>,
+    pub(crate) lineage_group_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LineageGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListLineageGroupsOutputBuilder {
         self
     }
     /// <p>A list of lineage groups and their properties.</p>
-    pub fn set_lineage_group_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LineageGroupSummary>>,
-    ) -> Self {
+    pub fn set_lineage_group_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LineageGroupSummary>>) -> Self {
         self.lineage_group_summaries = input;
         self
     }
     /// <p>A list of lineage groups and their properties.</p>
-    pub fn get_lineage_group_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LineageGroupSummary>> {
+    pub fn get_lineage_group_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LineageGroupSummary>> {
         &self.lineage_group_summaries
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>

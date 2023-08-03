@@ -29,9 +29,7 @@ impl StartDeploymentOutput {
 
 /// A builder for [`StartDeploymentOutput`](crate::operation::start_deployment::StartDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDeploymentOutputBuilder {
     pub(crate) job_summary: ::std::option::Option<crate::types::JobSummary>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl StartDeploymentOutputBuilder {
         self
     }
     /// <p> The summary for the job. </p>
-    pub fn set_job_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::JobSummary>,
-    ) -> Self {
+    pub fn set_job_summary(mut self, input: ::std::option::Option<crate::types::JobSummary>) -> Self {
         self.job_summary = input;
         self
     }

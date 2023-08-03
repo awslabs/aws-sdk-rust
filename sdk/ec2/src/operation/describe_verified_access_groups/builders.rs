@@ -26,7 +26,7 @@ impl DescribeVerifiedAccessGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVerifiedAccessGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsInputBuilder,
+    inner: crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsInputBuilder,
 }
 impl DescribeVerifiedAccessGroupsFluentBuilder {
     /// Creates a new `DescribeVerifiedAccessGroups`.
@@ -37,7 +37,7 @@ impl DescribeVerifiedAccessGroupsFluentBuilder {
         }
     }
     /// Access the DescribeVerifiedAccessGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeVerifiedAccessGroupsFluentBuilder {
             crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeVerifiedAccessGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeVerifiedAccessGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeVerifiedAccessGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeVerifiedAccessGroupsFluentBuilder {
             crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_verified_access_groups::paginator::DescribeVerifiedAccessGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_verified_access_groups::paginator::DescribeVerifiedAccessGroupsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_verified_access_groups::paginator::DescribeVerifiedAccessGroupsPaginator {
         crate::operation::describe_verified_access_groups::paginator::DescribeVerifiedAccessGroupsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `VerifiedAccessGroupIds`.
@@ -131,40 +120,26 @@ impl DescribeVerifiedAccessGroupsFluentBuilder {
     /// To override the contents of this collection use [`set_verified_access_group_ids`](Self::set_verified_access_group_ids).
     ///
     /// <p>The ID of the Verified Access groups.</p>
-    pub fn verified_access_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.verified_access_group_ids(input.into());
         self
     }
     /// <p>The ID of the Verified Access groups.</p>
-    pub fn set_verified_access_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_verified_access_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_verified_access_group_ids(input);
         self
     }
     /// <p>The ID of the Verified Access groups.</p>
-    pub fn get_verified_access_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_verified_access_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_verified_access_group_ids()
     }
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn verified_access_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.verified_access_instance_id(input.into());
         self
     }
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn set_verified_access_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_verified_access_instance_id(input);
         self
     }
@@ -210,10 +185,7 @@ impl DescribeVerifiedAccessGroupsFluentBuilder {
         self
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

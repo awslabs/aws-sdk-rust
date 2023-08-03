@@ -58,9 +58,7 @@ impl GridLayoutElement {
 
 /// A builder for [`GridLayoutElement`](crate::types::GridLayoutElement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GridLayoutElementBuilder {
     pub(crate) element_id: ::std::option::Option<::std::string::String>,
     pub(crate) element_type: ::std::option::Option<crate::types::LayoutElementType>,
@@ -90,10 +88,7 @@ impl GridLayoutElementBuilder {
         self
     }
     /// <p>The type of element.</p>
-    pub fn set_element_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LayoutElementType>,
-    ) -> Self {
+    pub fn set_element_type(mut self, input: ::std::option::Option<crate::types::LayoutElementType>) -> Self {
         self.element_type = input;
         self
     }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSmsChannelOutput`](crate::operation::delete_sms_channel::DeleteSmsChannelOutput) with field(s):
     ///   - [`sms_channel_response(Option<SmsChannelResponse>)`](crate::operation::delete_sms_channel::DeleteSmsChannelOutput::sms_channel_response): <p>Provides information about the status and settings of the SMS channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteSmsChannelError>`](crate::operation::delete_sms_channel::DeleteSmsChannelError)
-    pub fn delete_sms_channel(
-        &self,
-    ) -> crate::operation::delete_sms_channel::builders::DeleteSmsChannelFluentBuilder {
-        crate::operation::delete_sms_channel::builders::DeleteSmsChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_sms_channel(&self) -> crate::operation::delete_sms_channel::builders::DeleteSmsChannelFluentBuilder {
+        crate::operation::delete_sms_channel::builders::DeleteSmsChannelFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl GetAuthorizersInput {
 
 /// A builder for [`GetAuthorizersInput`](crate::operation::get_authorizers::GetAuthorizersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAuthorizersInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
@@ -91,10 +89,7 @@ impl GetAuthorizersInputBuilder {
     /// Consumes the builder and constructs a [`GetAuthorizersInput`](crate::operation::get_authorizers::GetAuthorizersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_authorizers::GetAuthorizersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_authorizers::GetAuthorizersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_authorizers::GetAuthorizersInput {
             rest_api_id: self.rest_api_id,
             position: self.position,

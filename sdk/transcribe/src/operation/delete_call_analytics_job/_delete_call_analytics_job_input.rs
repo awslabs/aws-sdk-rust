@@ -15,35 +15,25 @@ impl DeleteCallAnalyticsJobInput {
 }
 impl DeleteCallAnalyticsJobInput {
     /// Creates a new builder-style object to manufacture [`DeleteCallAnalyticsJobInput`](crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobInput).
-    pub fn builder(
-    ) -> crate::operation::delete_call_analytics_job::builders::DeleteCallAnalyticsJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_call_analytics_job::builders::DeleteCallAnalyticsJobInputBuilder {
         crate::operation::delete_call_analytics_job::builders::DeleteCallAnalyticsJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCallAnalyticsJobInput`](crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCallAnalyticsJobInputBuilder {
     pub(crate) call_analytics_job_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCallAnalyticsJobInputBuilder {
     /// <p>The name of the Call Analytics job you want to delete. Job names are case sensitive.</p>
-    pub fn call_analytics_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn call_analytics_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.call_analytics_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Call Analytics job you want to delete. Job names are case sensitive.</p>
-    pub fn set_call_analytics_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_call_analytics_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.call_analytics_job_name = input;
         self
     }
@@ -58,10 +48,8 @@ impl DeleteCallAnalyticsJobInputBuilder {
         crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobInput {
-                call_analytics_job_name: self.call_analytics_job_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobInput {
+            call_analytics_job_name: self.call_analytics_job_name,
+        })
     }
 }

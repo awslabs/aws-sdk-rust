@@ -26,7 +26,7 @@ impl StartCalculationExecutionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartCalculationExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_calculation_execution::builders::StartCalculationExecutionInputBuilder,
+    inner: crate::operation::start_calculation_execution::builders::StartCalculationExecutionInputBuilder,
 }
 impl StartCalculationExecutionFluentBuilder {
     /// Creates a new `StartCalculationExecution`.
@@ -37,7 +37,7 @@ impl StartCalculationExecutionFluentBuilder {
         }
     }
     /// Access the StartCalculationExecution as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_calculation_execution::builders::StartCalculationExecutionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_calculation_execution::builders::StartCalculationExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartCalculationExecutionFluentBuilder {
             crate::operation::start_calculation_execution::StartCalculationExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_calculation_execution::StartCalculationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_calculation_execution::StartCalculationExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartCalculationExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartCalculationExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_calculation_execution::StartCalculationExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_calculation_execution::StartCalculationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_calculation_execution::StartCalculationExecutionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartCalculationExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_calculation_execution::StartCalculationExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_calculation_execution::StartCalculationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_calculation_execution::StartCalculationExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl StartCalculationExecutionFluentBuilder {
             crate::operation::start_calculation_execution::StartCalculationExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_calculation_execution::StartCalculationExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_calculation_execution::StartCalculationExecutionError>,
     > {
         self.customize_middleware().await
     }
@@ -150,27 +139,19 @@ impl StartCalculationExecutionFluentBuilder {
     }
     /// <p>Contains configuration information for the calculation.</p>
     #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
-    pub fn calculation_configuration(
-        mut self,
-        input: crate::types::CalculationConfiguration,
-    ) -> Self {
+    pub fn calculation_configuration(mut self, input: crate::types::CalculationConfiguration) -> Self {
         self.inner = self.inner.calculation_configuration(input);
         self
     }
     /// <p>Contains configuration information for the calculation.</p>
     #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
-    pub fn set_calculation_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculationConfiguration>,
-    ) -> Self {
+    pub fn set_calculation_configuration(mut self, input: ::std::option::Option<crate::types::CalculationConfiguration>) -> Self {
         self.inner = self.inner.set_calculation_configuration(input);
         self
     }
     /// <p>Contains configuration information for the calculation.</p>
     #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
-    pub fn get_calculation_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CalculationConfiguration> {
+    pub fn get_calculation_configuration(&self) -> &::std::option::Option<crate::types::CalculationConfiguration> {
         self.inner.get_calculation_configuration()
     }
     /// <p>A string that contains the code of the calculation.</p>
@@ -190,20 +171,14 @@ impl StartCalculationExecutionFluentBuilder {
     /// <p>A unique case-sensitive string used to ensure the request to create the calculation is idempotent (executes only once). If another <code>StartCalculationExecutionRequest</code> is received, the same response is returned and another calculation is not created. If a parameter has changed, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique case-sensitive string used to ensure the request to create the calculation is idempotent (executes only once). If another <code>StartCalculationExecutionRequest</code> is received, the same response is returned and another calculation is not created. If a parameter has changed, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

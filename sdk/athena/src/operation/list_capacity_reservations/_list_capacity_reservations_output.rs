@@ -8,8 +8,7 @@ pub struct ListCapacityReservationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The capacity reservations for the current account.</p>
     #[doc(hidden)]
-    pub capacity_reservations:
-        ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>,
+    pub capacity_reservations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>,
     _request_id: Option<String>,
 }
 impl ListCapacityReservationsOutput {
@@ -18,9 +17,7 @@ impl ListCapacityReservationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The capacity reservations for the current account.</p>
-    pub fn capacity_reservations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CapacityReservation]> {
+    pub fn capacity_reservations(&self) -> ::std::option::Option<&[crate::types::CapacityReservation]> {
         self.capacity_reservations.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListCapacityReservationsOutput {
 }
 impl ListCapacityReservationsOutput {
     /// Creates a new builder-style object to manufacture [`ListCapacityReservationsOutput`](crate::operation::list_capacity_reservations::ListCapacityReservationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_capacity_reservations::builders::ListCapacityReservationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_capacity_reservations::builders::ListCapacityReservationsOutputBuilder {
         crate::operation::list_capacity_reservations::builders::ListCapacityReservationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCapacityReservationsOutput`](crate::operation::list_capacity_reservations::ListCapacityReservationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCapacityReservationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) capacity_reservations:
-        ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>,
+    pub(crate) capacity_reservations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>,
     _request_id: Option<String>,
 }
 impl ListCapacityReservationsOutputBuilder {
@@ -76,17 +68,12 @@ impl ListCapacityReservationsOutputBuilder {
         self
     }
     /// <p>The capacity reservations for the current account.</p>
-    pub fn set_capacity_reservations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>,
-    ) -> Self {
+    pub fn set_capacity_reservations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>) -> Self {
         self.capacity_reservations = input;
         self
     }
     /// <p>The capacity reservations for the current account.</p>
-    pub fn get_capacity_reservations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>> {
+    pub fn get_capacity_reservations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>> {
         &self.capacity_reservations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -99,9 +86,7 @@ impl ListCapacityReservationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCapacityReservationsOutput`](crate::operation::list_capacity_reservations::ListCapacityReservationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_capacity_reservations::ListCapacityReservationsOutput {
+    pub fn build(self) -> crate::operation::list_capacity_reservations::ListCapacityReservationsOutput {
         crate::operation::list_capacity_reservations::ListCapacityReservationsOutput {
             next_token: self.next_token,
             capacity_reservations: self.capacity_reservations,

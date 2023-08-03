@@ -12,10 +12,7 @@ pub fn ser_registered_user_dashboard_feature_configurations(
     if let Some(var_3) = &input.bookmarks {
         #[allow(unused_mut)]
         let mut object_4 = object.key("Bookmarks").start_object();
-        crate::protocol_serde::shape_bookmarks_configurations::ser_bookmarks_configurations(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_bookmarks_configurations::ser_bookmarks_configurations(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

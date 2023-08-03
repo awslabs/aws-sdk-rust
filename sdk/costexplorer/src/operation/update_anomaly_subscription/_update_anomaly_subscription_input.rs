@@ -81,16 +81,14 @@ impl UpdateAnomalySubscriptionInput {
 }
 impl UpdateAnomalySubscriptionInput {
     /// Creates a new builder-style object to manufacture [`UpdateAnomalySubscriptionInput`](crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionInput).
-    pub fn builder() -> crate::operation::update_anomaly_subscription::builders::UpdateAnomalySubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::update_anomaly_subscription::builders::UpdateAnomalySubscriptionInputBuilder {
         crate::operation::update_anomaly_subscription::builders::UpdateAnomalySubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAnomalySubscriptionInput`](crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAnomalySubscriptionInputBuilder {
     pub(crate) subscription_arn: ::std::option::Option<::std::string::String>,
     pub(crate) threshold: ::std::option::Option<f64>,
@@ -102,18 +100,12 @@ pub struct UpdateAnomalySubscriptionInputBuilder {
 }
 impl UpdateAnomalySubscriptionInputBuilder {
     /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
-    pub fn subscription_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
-    pub fn set_subscription_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_arn = input;
         self
     }
@@ -153,17 +145,12 @@ impl UpdateAnomalySubscriptionInputBuilder {
         self
     }
     /// <p>The update to the frequency value that subscribers receive notifications. </p>
-    pub fn set_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalySubscriptionFrequency>,
-    ) -> Self {
+    pub fn set_frequency(mut self, input: ::std::option::Option<crate::types::AnomalySubscriptionFrequency>) -> Self {
         self.frequency = input;
         self
     }
     /// <p>The update to the frequency value that subscribers receive notifications. </p>
-    pub fn get_frequency(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnomalySubscriptionFrequency> {
+    pub fn get_frequency(&self) -> &::std::option::Option<crate::types::AnomalySubscriptionFrequency> {
         &self.frequency
     }
     /// Appends an item to `monitor_arn_list`.
@@ -171,27 +158,19 @@ impl UpdateAnomalySubscriptionInputBuilder {
     /// To override the contents of this collection use [`set_monitor_arn_list`](Self::set_monitor_arn_list).
     ///
     /// <p>A list of cost anomaly monitor ARNs. </p>
-    pub fn monitor_arn_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitor_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.monitor_arn_list.unwrap_or_default();
         v.push(input.into());
         self.monitor_arn_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of cost anomaly monitor ARNs. </p>
-    pub fn set_monitor_arn_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_monitor_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.monitor_arn_list = input;
         self
     }
     /// <p>A list of cost anomaly monitor ARNs. </p>
-    pub fn get_monitor_arn_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_monitor_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.monitor_arn_list
     }
     /// Appends an item to `subscribers`.
@@ -206,32 +185,21 @@ impl UpdateAnomalySubscriptionInputBuilder {
         self
     }
     /// <p>The update to the subscriber list. </p>
-    pub fn set_subscribers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
-    ) -> Self {
+    pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>) -> Self {
         self.subscribers = input;
         self
     }
     /// <p>The update to the subscriber list. </p>
-    pub fn get_subscribers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
+    pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
         &self.subscribers
     }
     /// <p>The new name of the subscription. </p>
-    pub fn subscription_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new name of the subscription. </p>
-    pub fn set_subscription_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_name = input;
         self
     }
@@ -261,10 +229,7 @@ impl UpdateAnomalySubscriptionInputBuilder {
     /// <li> <p> <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
     /// <li> <p> <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> </p> </li>
     /// </ul>
-    pub fn set_threshold_expression(
-        mut self,
-        input: ::std::option::Option<crate::types::Expression>,
-    ) -> Self {
+    pub fn set_threshold_expression(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.threshold_expression = input;
         self
     }
@@ -287,16 +252,14 @@ impl UpdateAnomalySubscriptionInputBuilder {
         crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionInput {
-                subscription_arn: self.subscription_arn,
-                threshold: self.threshold,
-                frequency: self.frequency,
-                monitor_arn_list: self.monitor_arn_list,
-                subscribers: self.subscribers,
-                subscription_name: self.subscription_name,
-                threshold_expression: self.threshold_expression,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionInput {
+            subscription_arn: self.subscription_arn,
+            threshold: self.threshold,
+            frequency: self.frequency,
+            monitor_arn_list: self.monitor_arn_list,
+            subscribers: self.subscribers,
+            subscription_name: self.subscription_name,
+            threshold_expression: self.threshold_expression,
+        })
     }
 }

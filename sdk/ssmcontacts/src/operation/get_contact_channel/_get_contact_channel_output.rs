@@ -56,17 +56,14 @@ impl ::aws_http::request_id::RequestId for GetContactChannelOutput {
 }
 impl GetContactChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetContactChannelOutput`](crate::operation::get_contact_channel::GetContactChannelOutput).
-    pub fn builder(
-    ) -> crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder {
+    pub fn builder() -> crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder {
         crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContactChannelOutput`](crate::operation::get_contact_channel::GetContactChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContactChannelOutputBuilder {
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
     pub(crate) contact_channel_arn: ::std::option::Option<::std::string::String>,
@@ -92,18 +89,12 @@ impl GetContactChannelOutputBuilder {
         &self.contact_arn
     }
     /// <p>The ARN of the contact channel.</p>
-    pub fn contact_channel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_channel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the contact channel.</p>
-    pub fn set_contact_channel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_channel_arn = input;
         self
     }
@@ -145,17 +136,12 @@ impl GetContactChannelOutputBuilder {
         self
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
-    pub fn set_delivery_address(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactChannelAddress>,
-    ) -> Self {
+    pub fn set_delivery_address(mut self, input: ::std::option::Option<crate::types::ContactChannelAddress>) -> Self {
         self.delivery_address = input;
         self
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
-    pub fn get_delivery_address(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContactChannelAddress> {
+    pub fn get_delivery_address(&self) -> &::std::option::Option<crate::types::ContactChannelAddress> {
         &self.delivery_address
     }
     /// <p>A Boolean value indicating if the contact channel has been activated or not.</p>
@@ -164,10 +150,7 @@ impl GetContactChannelOutputBuilder {
         self
     }
     /// <p>A Boolean value indicating if the contact channel has been activated or not.</p>
-    pub fn set_activation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivationStatus>,
-    ) -> Self {
+    pub fn set_activation_status(mut self, input: ::std::option::Option<crate::types::ActivationStatus>) -> Self {
         self.activation_status = input;
         self
     }

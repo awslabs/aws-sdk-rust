@@ -10,10 +10,7 @@ impl GetWorkUnitResultsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_work_unit_results::GetWorkUnitResultsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_work_unit_results::GetWorkUnitResultsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_work_unit_results::GetWorkUnitResultsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_work_unit_results();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetWorkUnitResultsFluentBuilder {
         }
     }
     /// Access the GetWorkUnitResults as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_work_unit_results::builders::GetWorkUnitResultsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_work_unit_results::builders::GetWorkUnitResultsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetWorkUnitResultsFluentBuilder {
             crate::operation::get_work_unit_results::GetWorkUnitResults,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_work_unit_results::GetWorkUnitResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_work_unit_results::GetWorkUnitResultsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetWorkUnitResultsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetWorkUnitResultsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_work_unit_results::GetWorkUnitResultsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_work_unit_results::GetWorkUnitResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_work_unit_results::GetWorkUnitResultsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetWorkUnitResultsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_work_unit_results::GetWorkUnitResultsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_work_unit_results::GetWorkUnitResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_work_unit_results::GetWorkUnitResultsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetWorkUnitResultsFluentBuilder {
             crate::operation::get_work_unit_results::GetWorkUnitResults,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_work_unit_results::GetWorkUnitResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_work_unit_results::GetWorkUnitResultsError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl GetWorkUnitResultsFluentBuilder {
         self.inner.get_work_unit_id()
     }
     /// <p>A work token used to query the execution service. Token output from <code>GetWorkUnits</code>.</p>
-    pub fn work_unit_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn work_unit_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.work_unit_token(input.into());
         self
     }
     /// <p>A work token used to query the execution service. Token output from <code>GetWorkUnits</code>.</p>
-    pub fn set_work_unit_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_work_unit_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_work_unit_token(input);
         self
     }

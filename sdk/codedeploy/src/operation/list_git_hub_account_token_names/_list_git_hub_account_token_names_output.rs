@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for ListGitHubAccountTokenNamesOutput {
 }
 impl ListGitHubAccountTokenNamesOutput {
     /// Creates a new builder-style object to manufacture [`ListGitHubAccountTokenNamesOutput`](crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesOutput).
-    pub fn builder() -> crate::operation::list_git_hub_account_token_names::builders::ListGitHubAccountTokenNamesOutputBuilder{
+    pub fn builder() -> crate::operation::list_git_hub_account_token_names::builders::ListGitHubAccountTokenNamesOutputBuilder {
         crate::operation::list_git_hub_account_token_names::builders::ListGitHubAccountTokenNamesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListGitHubAccountTokenNamesOutput`](crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGitHubAccountTokenNamesOutputBuilder {
     pub(crate) token_name_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,27 +48,19 @@ impl ListGitHubAccountTokenNamesOutputBuilder {
     /// To override the contents of this collection use [`set_token_name_list`](Self::set_token_name_list).
     ///
     /// <p>A list of names of connections to GitHub accounts.</p>
-    pub fn token_name_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn token_name_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.token_name_list.unwrap_or_default();
         v.push(input.into());
         self.token_name_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of names of connections to GitHub accounts.</p>
-    pub fn set_token_name_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_token_name_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.token_name_list = input;
         self
     }
     /// <p>A list of names of connections to GitHub accounts.</p>
-    pub fn get_token_name_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_token_name_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.token_name_list
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next set of names in the list. </p>
@@ -97,9 +87,7 @@ impl ListGitHubAccountTokenNamesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListGitHubAccountTokenNamesOutput`](crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesOutput {
+    pub fn build(self) -> crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesOutput {
         crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesOutput {
             token_name_list: self.token_name_list,
             next_token: self.next_token,

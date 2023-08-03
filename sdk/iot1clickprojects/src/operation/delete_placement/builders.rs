@@ -10,10 +10,7 @@ impl DeletePlacementInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_placement::DeletePlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_placement::DeletePlacementError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_placement::DeletePlacementError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_placement();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeletePlacementFluentBuilder {
         }
     }
     /// Access the DeletePlacement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_placement::builders::DeletePlacementInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_placement::builders::DeletePlacementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DeletePlacementFluentBuilder {
             crate::operation::delete_placement::DeletePlacement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_placement::DeletePlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_placement::DeletePlacementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DeletePlacementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DeletePlacementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_placement::DeletePlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_placement::DeletePlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_placement::DeletePlacementError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DeletePlacementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_placement::DeletePlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_placement::DeletePlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_placement::DeletePlacementError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl DeletePlacementFluentBuilder {
             crate::operation::delete_placement::DeletePlacement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_placement::DeletePlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_placement::DeletePlacementError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the empty placement to delete.</p>
-    pub fn placement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn placement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.placement_name(input.into());
         self
     }
     /// <p>The name of the empty placement to delete.</p>
-    pub fn set_placement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_placement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_placement_name(input);
         self
     }

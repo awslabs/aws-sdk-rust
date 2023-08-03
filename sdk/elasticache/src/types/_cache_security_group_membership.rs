@@ -30,27 +30,19 @@ impl CacheSecurityGroupMembership {
 
 /// A builder for [`CacheSecurityGroupMembership`](crate::types::CacheSecurityGroupMembership).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CacheSecurityGroupMembershipBuilder {
     pub(crate) cache_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl CacheSecurityGroupMembershipBuilder {
     /// <p>The name of the cache security group.</p>
-    pub fn cache_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cache security group.</p>
-    pub fn set_cache_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_security_group_name = input;
         self
     }

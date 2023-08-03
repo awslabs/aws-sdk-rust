@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for RollbackApplicationOutput {
 }
 impl RollbackApplicationOutput {
     /// Creates a new builder-style object to manufacture [`RollbackApplicationOutput`](crate::operation::rollback_application::RollbackApplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::rollback_application::builders::RollbackApplicationOutputBuilder {
-        crate::operation::rollback_application::builders::RollbackApplicationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::rollback_application::builders::RollbackApplicationOutputBuilder {
+        crate::operation::rollback_application::builders::RollbackApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`RollbackApplicationOutput`](crate::operation::rollback_application::RollbackApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RollbackApplicationOutputBuilder {
     pub(crate) application_detail: ::std::option::Option<crate::types::ApplicationDetail>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl RollbackApplicationOutputBuilder {
         self
     }
     /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
-    pub fn set_application_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationDetail>,
-    ) -> Self {
+    pub fn set_application_detail(mut self, input: ::std::option::Option<crate::types::ApplicationDetail>) -> Self {
         self.application_detail = input;
         self
     }
     /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
-    pub fn get_application_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationDetail> {
+    pub fn get_application_detail(&self) -> &::std::option::Option<crate::types::ApplicationDetail> {
         &self.application_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

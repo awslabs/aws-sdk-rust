@@ -31,16 +31,14 @@ impl GetEnrollmentStatusesForOrganizationInput {
 }
 impl GetEnrollmentStatusesForOrganizationInput {
     /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusesForOrganizationInput`](crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationInput).
-    pub fn builder() -> crate::operation::get_enrollment_statuses_for_organization::builders::GetEnrollmentStatusesForOrganizationInputBuilder{
+    pub fn builder() -> crate::operation::get_enrollment_statuses_for_organization::builders::GetEnrollmentStatusesForOrganizationInputBuilder {
         crate::operation::get_enrollment_statuses_for_organization::builders::GetEnrollmentStatusesForOrganizationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEnrollmentStatusesForOrganizationInput`](crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEnrollmentStatusesForOrganizationInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::EnrollmentFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,17 +57,12 @@ impl GetEnrollmentStatusesForOrganizationInputBuilder {
         self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of account enrollment statuses.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnrollmentFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnrollmentFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of account enrollment statuses.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnrollmentFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnrollmentFilter>> {
         &self.filters
     }
     /// <p>The token to advance to the next page of account enrollment statuses.</p>
@@ -104,16 +97,18 @@ impl GetEnrollmentStatusesForOrganizationInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetEnrollmentStatusesForOrganizationInput`](crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationInput {
-                filters: self.filters
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                filters: self.filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

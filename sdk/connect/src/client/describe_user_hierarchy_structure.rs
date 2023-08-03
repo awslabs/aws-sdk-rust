@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeUserHierarchyStructureOutput`](crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureOutput) with field(s):
     ///   - [`hierarchy_structure(Option<HierarchyStructure>)`](crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureOutput::hierarchy_structure): <p>Information about the hierarchy structure.</p>
     /// - On failure, responds with [`SdkError<DescribeUserHierarchyStructureError>`](crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureError)
-    pub fn describe_user_hierarchy_structure(&self) -> crate::operation::describe_user_hierarchy_structure::builders::DescribeUserHierarchyStructureFluentBuilder{
+    pub fn describe_user_hierarchy_structure(
+        &self,
+    ) -> crate::operation::describe_user_hierarchy_structure::builders::DescribeUserHierarchyStructureFluentBuilder {
         crate::operation::describe_user_hierarchy_structure::builders::DescribeUserHierarchyStructureFluentBuilder::new(self.handle.clone())
     }
 }

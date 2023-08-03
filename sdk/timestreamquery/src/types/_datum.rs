@@ -9,8 +9,7 @@ pub struct Datum {
     pub scalar_value: ::std::option::Option<::std::string::String>,
     /// <p> Indicates if the data point is a timeseries data type. </p>
     #[doc(hidden)]
-    pub time_series_value:
-        ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPoint>>,
+    pub time_series_value: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPoint>>,
     /// <p> Indicates if the data point is an array. </p>
     #[doc(hidden)]
     pub array_value: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>,
@@ -52,13 +51,10 @@ impl Datum {
 
 /// A builder for [`Datum`](crate::types::Datum).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatumBuilder {
     pub(crate) scalar_value: ::std::option::Option<::std::string::String>,
-    pub(crate) time_series_value:
-        ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPoint>>,
+    pub(crate) time_series_value: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPoint>>,
     pub(crate) array_value: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>,
     pub(crate) row_value: ::std::option::Option<crate::types::Row>,
     pub(crate) null_value: ::std::option::Option<bool>,
@@ -90,17 +86,12 @@ impl DatumBuilder {
         self
     }
     /// <p> Indicates if the data point is a timeseries data type. </p>
-    pub fn set_time_series_value(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPoint>>,
-    ) -> Self {
+    pub fn set_time_series_value(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPoint>>) -> Self {
         self.time_series_value = input;
         self
     }
     /// <p> Indicates if the data point is a timeseries data type. </p>
-    pub fn get_time_series_value(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPoint>> {
+    pub fn get_time_series_value(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPoint>> {
         &self.time_series_value
     }
     /// Appends an item to `array_value`.
@@ -115,10 +106,7 @@ impl DatumBuilder {
         self
     }
     /// <p> Indicates if the data point is an array. </p>
-    pub fn set_array_value(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>,
-    ) -> Self {
+    pub fn set_array_value(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>) -> Self {
         self.array_value = input;
         self
     }

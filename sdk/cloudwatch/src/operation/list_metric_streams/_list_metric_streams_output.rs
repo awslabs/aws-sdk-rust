@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListMetricStreamsOutput {
 }
 impl ListMetricStreamsOutput {
     /// Creates a new builder-style object to manufacture [`ListMetricStreamsOutput`](crate::operation::list_metric_streams::ListMetricStreamsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_metric_streams::builders::ListMetricStreamsOutputBuilder {
+    pub fn builder() -> crate::operation::list_metric_streams::builders::ListMetricStreamsOutputBuilder {
         crate::operation::list_metric_streams::builders::ListMetricStreamsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMetricStreamsOutput`](crate::operation::list_metric_streams::ListMetricStreamsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMetricStreamsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamEntry>>,
@@ -71,17 +68,12 @@ impl ListMetricStreamsOutputBuilder {
         self
     }
     /// <p>The array of metric stream information.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>The array of metric stream information.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamEntry>> {
         &self.entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetSourceRepositoryCloneUrlsOutput {
 }
 impl GetSourceRepositoryCloneUrlsOutput {
     /// Creates a new builder-style object to manufacture [`GetSourceRepositoryCloneUrlsOutput`](crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput).
-    pub fn builder() -> crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsOutputBuilder{
+    pub fn builder() -> crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsOutputBuilder {
         crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSourceRepositoryCloneUrlsOutput`](crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSourceRepositoryCloneUrlsOutputBuilder {
     pub(crate) https: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,10 +58,7 @@ impl GetSourceRepositoryCloneUrlsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSourceRepositoryCloneUrlsOutput`](crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput
-    {
+    pub fn build(self) -> crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput {
         crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput {
             https: self.https,
             _request_id: self._request_id,

@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OriginRequestPolicyHeaderBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -68,14 +62,10 @@ impl ::std::convert::From<&str> for OriginRequestPolicyHeaderBehavior {
         match s {
             "allExcept" => OriginRequestPolicyHeaderBehavior::AllExcept,
             "allViewer" => OriginRequestPolicyHeaderBehavior::AllViewer,
-            "allViewerAndWhitelistCloudFront" => {
-                OriginRequestPolicyHeaderBehavior::AllViewerAndWhitelistCloudFront
-            }
+            "allViewerAndWhitelistCloudFront" => OriginRequestPolicyHeaderBehavior::AllViewerAndWhitelistCloudFront,
             "none" => OriginRequestPolicyHeaderBehavior::None,
             "whitelist" => OriginRequestPolicyHeaderBehavior::Whitelist,
-            other => OriginRequestPolicyHeaderBehavior::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => OriginRequestPolicyHeaderBehavior::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -92,9 +82,7 @@ impl OriginRequestPolicyHeaderBehavior {
         match self {
             OriginRequestPolicyHeaderBehavior::AllExcept => "allExcept",
             OriginRequestPolicyHeaderBehavior::AllViewer => "allViewer",
-            OriginRequestPolicyHeaderBehavior::AllViewerAndWhitelistCloudFront => {
-                "allViewerAndWhitelistCloudFront"
-            }
+            OriginRequestPolicyHeaderBehavior::AllViewerAndWhitelistCloudFront => "allViewerAndWhitelistCloudFront",
             OriginRequestPolicyHeaderBehavior::None => "none",
             OriginRequestPolicyHeaderBehavior::Whitelist => "whitelist",
             OriginRequestPolicyHeaderBehavior::Unknown(value) => value.as_str(),
@@ -102,13 +90,7 @@ impl OriginRequestPolicyHeaderBehavior {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "allExcept",
-            "allViewer",
-            "allViewerAndWhitelistCloudFront",
-            "none",
-            "whitelist",
-        ]
+        &["allExcept", "allViewer", "allViewerAndWhitelistCloudFront", "none", "whitelist"]
     }
 }
 impl ::std::convert::AsRef<str> for OriginRequestPolicyHeaderBehavior {

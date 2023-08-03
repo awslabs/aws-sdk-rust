@@ -5,16 +5,16 @@ pub use crate::operation::get_compliance_details_by_config_rule::_get_compliance
 
 impl GetComplianceDetailsByConfigRuleInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_compliance_details_by_config_rule();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl GetComplianceDetailsByConfigRuleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetComplianceDetailsByConfigRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_compliance_details_by_config_rule::builders::GetComplianceDetailsByConfigRuleInputBuilder,
+    inner: crate::operation::get_compliance_details_by_config_rule::builders::GetComplianceDetailsByConfigRuleInputBuilder,
 }
 impl GetComplianceDetailsByConfigRuleFluentBuilder {
     /// Creates a new `GetComplianceDetailsByConfigRule`.
@@ -37,15 +37,20 @@ impl GetComplianceDetailsByConfigRuleFluentBuilder {
         }
     }
     /// Access the GetComplianceDetailsByConfigRule as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_compliance_details_by_config_rule::builders::GetComplianceDetailsByConfigRuleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_compliance_details_by_config_rule::builders::GetComplianceDetailsByConfigRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRule, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRule,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl GetComplianceDetailsByConfigRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,38 +87,41 @@ impl GetComplianceDetailsByConfigRuleFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRule, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRule,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_compliance_details_by_config_rule::paginator::GetComplianceDetailsByConfigRulePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_compliance_details_by_config_rule::paginator::GetComplianceDetailsByConfigRulePaginator{
+    pub fn into_paginator(self) -> crate::operation::get_compliance_details_by_config_rule::paginator::GetComplianceDetailsByConfigRulePaginator {
         crate::operation::get_compliance_details_by_config_rule::paginator::GetComplianceDetailsByConfigRulePaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the Config rule for which you want compliance information.</p>
-    pub fn config_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.config_rule_name(input.into());
         self
     }
     /// <p>The name of the Config rule for which you want compliance information.</p>
-    pub fn set_config_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_config_rule_name(input);
         self
     }
@@ -132,18 +141,13 @@ impl GetComplianceDetailsByConfigRuleFluentBuilder {
     }
     /// <p>Filters the results by compliance.</p>
     /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
-    pub fn set_compliance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>,
-    ) -> Self {
+    pub fn set_compliance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>) -> Self {
         self.inner = self.inner.set_compliance_types(input);
         self
     }
     /// <p>Filters the results by compliance.</p>
     /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
-    pub fn get_compliance_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>> {
+    pub fn get_compliance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>> {
         self.inner.get_compliance_types()
     }
     /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>

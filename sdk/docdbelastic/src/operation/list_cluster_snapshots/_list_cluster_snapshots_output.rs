@@ -30,20 +30,16 @@ impl ::aws_http::request_id::RequestId for ListClusterSnapshotsOutput {
 }
 impl ListClusterSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`ListClusterSnapshotsOutput`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsOutputBuilder {
+    pub fn builder() -> crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsOutputBuilder {
         crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListClusterSnapshotsOutput`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClusterSnapshotsOutputBuilder {
-    pub(crate) snapshots:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterSnapshotInList>>,
+    pub(crate) snapshots: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSnapshotInList>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +56,12 @@ impl ListClusterSnapshotsOutputBuilder {
         self
     }
     /// <p>A list of Elastic DocumentDB snapshots for a specified cluster.</p>
-    pub fn set_snapshots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSnapshotInList>>,
-    ) -> Self {
+    pub fn set_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSnapshotInList>>) -> Self {
         self.snapshots = input;
         self
     }
     /// <p>A list of Elastic DocumentDB snapshots for a specified cluster.</p>
-    pub fn get_snapshots(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSnapshotInList>> {
+    pub fn get_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSnapshotInList>> {
         &self.snapshots
     }
     /// <p>The response will provide a nextToken if there is more data beyond the maxResults.</p>

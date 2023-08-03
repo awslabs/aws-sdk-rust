@@ -28,8 +28,7 @@ impl UpdateMaintenanceWindowInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMaintenanceWindowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowInputBuilder,
+    inner: crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowInputBuilder,
 }
 impl UpdateMaintenanceWindowFluentBuilder {
     /// Creates a new `UpdateMaintenanceWindow`.
@@ -40,10 +39,7 @@ impl UpdateMaintenanceWindowFluentBuilder {
         }
     }
     /// Access the UpdateMaintenanceWindow as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl UpdateMaintenanceWindowFluentBuilder {
             crate::operation::update_maintenance_window::UpdateMaintenanceWindow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_maintenance_window::UpdateMaintenanceWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_maintenance_window::UpdateMaintenanceWindowError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl UpdateMaintenanceWindowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl UpdateMaintenanceWindowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_maintenance_window::UpdateMaintenanceWindowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_maintenance_window::UpdateMaintenanceWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_maintenance_window::UpdateMaintenanceWindowError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl UpdateMaintenanceWindowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_maintenance_window::UpdateMaintenanceWindowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_maintenance_window::UpdateMaintenanceWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_maintenance_window::UpdateMaintenanceWindowError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl UpdateMaintenanceWindowFluentBuilder {
             crate::operation::update_maintenance_window::UpdateMaintenanceWindow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_maintenance_window::UpdateMaintenanceWindowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_maintenance_window::UpdateMaintenanceWindowError>,
     > {
         self.customize_middleware().await
     }
@@ -211,18 +196,12 @@ impl UpdateMaintenanceWindowFluentBuilder {
         self.inner.get_schedule()
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn schedule_timezone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule_timezone(input.into());
         self
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn set_schedule_timezone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule_timezone(input);
         self
     }

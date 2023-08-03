@@ -26,7 +26,7 @@ impl StartDetectorModelAnalysisInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDetectorModelAnalysisFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisInputBuilder,
+    inner: crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisInputBuilder,
 }
 impl StartDetectorModelAnalysisFluentBuilder {
     /// Creates a new `StartDetectorModelAnalysis`.
@@ -37,7 +37,7 @@ impl StartDetectorModelAnalysisFluentBuilder {
         }
     }
     /// Access the StartDetectorModelAnalysis as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartDetectorModelAnalysisFluentBuilder {
             crate::operation::start_detector_model_analysis::StartDetectorModelAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartDetectorModelAnalysisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartDetectorModelAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartDetectorModelAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl StartDetectorModelAnalysisFluentBuilder {
             crate::operation::start_detector_model_analysis::StartDetectorModelAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Information that defines how a detector operates.</p>
-    pub fn detector_model_definition(
-        mut self,
-        input: crate::types::DetectorModelDefinition,
-    ) -> Self {
+    pub fn detector_model_definition(mut self, input: crate::types::DetectorModelDefinition) -> Self {
         self.inner = self.inner.detector_model_definition(input);
         self
     }
     /// <p>Information that defines how a detector operates.</p>
-    pub fn set_detector_model_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectorModelDefinition>,
-    ) -> Self {
+    pub fn set_detector_model_definition(mut self, input: ::std::option::Option<crate::types::DetectorModelDefinition>) -> Self {
         self.inner = self.inner.set_detector_model_definition(input);
         self
     }
     /// <p>Information that defines how a detector operates.</p>
-    pub fn get_detector_model_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::DetectorModelDefinition> {
+    pub fn get_detector_model_definition(&self) -> &::std::option::Option<crate::types::DetectorModelDefinition> {
         self.inner.get_detector_model_definition()
     }
 }

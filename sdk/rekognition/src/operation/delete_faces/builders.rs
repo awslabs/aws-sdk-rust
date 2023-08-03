@@ -10,10 +10,7 @@ impl DeleteFacesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_faces::DeleteFacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_faces::DeleteFacesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_faces::DeleteFacesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_faces();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl DeleteFacesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_faces::DeleteFaces,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::delete_faces::DeleteFaces, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_faces::DeleteFacesError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl DeleteFacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,27 +96,18 @@ impl DeleteFacesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_faces::DeleteFaces,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::delete_faces::DeleteFaces, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_faces::DeleteFacesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Collection from which to remove the specific faces.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_id(input.into());
         self
     }
     /// <p>Collection from which to remove the specific faces.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_id(input);
         self
     }
@@ -143,10 +125,7 @@ impl DeleteFacesFluentBuilder {
         self
     }
     /// <p>An array of face IDs to delete.</p>
-    pub fn set_face_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_face_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_face_ids(input);
         self
     }

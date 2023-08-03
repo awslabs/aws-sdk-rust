@@ -26,7 +26,7 @@ impl CreateCapacityReservationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCapacityReservationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_capacity_reservation::builders::CreateCapacityReservationInputBuilder,
+    inner: crate::operation::create_capacity_reservation::builders::CreateCapacityReservationInputBuilder,
 }
 impl CreateCapacityReservationFluentBuilder {
     /// Creates a new `CreateCapacityReservation`.
@@ -37,7 +37,7 @@ impl CreateCapacityReservationFluentBuilder {
         }
     }
     /// Access the CreateCapacityReservation as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_capacity_reservation::builders::CreateCapacityReservationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_capacity_reservation::builders::CreateCapacityReservationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateCapacityReservationFluentBuilder {
             crate::operation::create_capacity_reservation::CreateCapacityReservation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_capacity_reservation::CreateCapacityReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_capacity_reservation::CreateCapacityReservationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateCapacityReservationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateCapacityReservationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_capacity_reservation::CreateCapacityReservationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_capacity_reservation::CreateCapacityReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_capacity_reservation::CreateCapacityReservationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateCapacityReservationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_capacity_reservation::CreateCapacityReservationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_capacity_reservation::CreateCapacityReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_capacity_reservation::CreateCapacityReservationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateCapacityReservationFluentBuilder {
             crate::operation::create_capacity_reservation::CreateCapacityReservation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_capacity_reservation::CreateCapacityReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_capacity_reservation::CreateCapacityReservationError>,
     > {
         self.customize_middleware().await
     }
@@ -158,10 +147,7 @@ impl CreateCapacityReservationFluentBuilder {
         self
     }
     /// <p>The tags for the capacity reservation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

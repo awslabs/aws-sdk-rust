@@ -56,9 +56,7 @@ impl ZonalStatisticsConfigInput {
 
 /// A builder for [`ZonalStatisticsConfigInput`](crate::types::ZonalStatisticsConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ZonalStatisticsConfigInputBuilder {
     pub(crate) zone_s3_path: ::std::option::Option<::std::string::String>,
     pub(crate) statistics: ::std::option::Option<::std::vec::Vec<crate::types::ZonalStatistics>>,
@@ -92,17 +90,12 @@ impl ZonalStatisticsConfigInputBuilder {
         self
     }
     /// <p>List of zonal statistics to compute.</p>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ZonalStatistics>>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ZonalStatistics>>) -> Self {
         self.statistics = input;
         self
     }
     /// <p>List of zonal statistics to compute.</p>
-    pub fn get_statistics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ZonalStatistics>> {
+    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ZonalStatistics>> {
         &self.statistics
     }
     /// Appends an item to `target_bands`.
@@ -117,17 +110,12 @@ impl ZonalStatisticsConfigInputBuilder {
         self
     }
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available input.</p>
-    pub fn set_target_bands(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_bands(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_bands = input;
         self
     }
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available input.</p>
-    pub fn get_target_bands(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_bands(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_bands
     }
     /// <p>The Amazon Resource Name (ARN) or an ID of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to decrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
@@ -137,10 +125,7 @@ impl ZonalStatisticsConfigInputBuilder {
     /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code> </p> </li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
-    pub fn zone_s3_path_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn zone_s3_path_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.zone_s3_path_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -151,10 +136,7 @@ impl ZonalStatisticsConfigInputBuilder {
     /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code> </p> </li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
-    pub fn set_zone_s3_path_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_zone_s3_path_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.zone_s3_path_kms_key_id = input;
         self
     }

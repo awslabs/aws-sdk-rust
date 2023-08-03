@@ -50,17 +50,14 @@ impl ListRecoveryPointsInput {
 }
 impl ListRecoveryPointsInput {
     /// Creates a new builder-style object to manufacture [`ListRecoveryPointsInput`](crate::operation::list_recovery_points::ListRecoveryPointsInput).
-    pub fn builder(
-    ) -> crate::operation::list_recovery_points::builders::ListRecoveryPointsInputBuilder {
+    pub fn builder() -> crate::operation::list_recovery_points::builders::ListRecoveryPointsInputBuilder {
         crate::operation::list_recovery_points::builders::ListRecoveryPointsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecoveryPointsInput`](crate::operation::list_recovery_points::ListRecoveryPointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecoveryPointsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -104,10 +101,7 @@ impl ListRecoveryPointsInputBuilder {
         self
     }
     /// <p>The time when the recovery point's creation was initiated.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -121,10 +115,7 @@ impl ListRecoveryPointsInputBuilder {
         self
     }
     /// <p>The time when creation of the recovery point finished.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -133,18 +124,12 @@ impl ListRecoveryPointsInputBuilder {
         &self.end_time
     }
     /// <p>The name of the namespace to list recovery points for.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the namespace to list recovery points for.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }
@@ -153,18 +138,12 @@ impl ListRecoveryPointsInputBuilder {
         &self.namespace_name
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace from which to list recovery points.</p>
-    pub fn namespace_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace from which to list recovery points.</p>
-    pub fn set_namespace_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_arn = input;
         self
     }
@@ -175,19 +154,14 @@ impl ListRecoveryPointsInputBuilder {
     /// Consumes the builder and constructs a [`ListRecoveryPointsInput`](crate::operation::list_recovery_points::ListRecoveryPointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_recovery_points::ListRecoveryPointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_recovery_points::ListRecoveryPointsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                namespace_name: self.namespace_name,
-                namespace_arn: self.namespace_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_recovery_points::ListRecoveryPointsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_recovery_points::ListRecoveryPointsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            namespace_name: self.namespace_name,
+            namespace_arn: self.namespace_arn,
+        })
     }
 }

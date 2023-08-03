@@ -37,10 +37,7 @@ impl UnassignIpv6AddressesFluentBuilder {
         }
     }
     /// Access the UnassignIpv6Addresses as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::unassign_ipv6_addresses::builders::UnassignIpv6AddressesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::unassign_ipv6_addresses::builders::UnassignIpv6AddressesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UnassignIpv6AddressesFluentBuilder {
             crate::operation::unassign_ipv6_addresses::UnassignIpv6Addresses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UnassignIpv6AddressesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UnassignIpv6AddressesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UnassignIpv6AddressesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UnassignIpv6AddressesFluentBuilder {
             crate::operation::unassign_ipv6_addresses::UnassignIpv6Addresses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesError>,
     > {
         self.customize_middleware().await
     }
@@ -128,25 +114,17 @@ impl UnassignIpv6AddressesFluentBuilder {
     /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
     ///
     /// <p>The IPv6 addresses to unassign from the network interface.</p>
-    pub fn ipv6_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipv6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipv6_addresses(input.into());
         self
     }
     /// <p>The IPv6 addresses to unassign from the network interface.</p>
-    pub fn set_ipv6_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ipv6_addresses(input);
         self
     }
     /// <p>The IPv6 addresses to unassign from the network interface.</p>
-    pub fn get_ipv6_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ipv6_addresses()
     }
     /// Appends an item to `Ipv6Prefixes`.
@@ -154,40 +132,26 @@ impl UnassignIpv6AddressesFluentBuilder {
     /// To override the contents of this collection use [`set_ipv6_prefixes`](Self::set_ipv6_prefixes).
     ///
     /// <p>The IPv6 prefixes to unassign from the network interface.</p>
-    pub fn ipv6_prefixes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipv6_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipv6_prefixes(input.into());
         self
     }
     /// <p>The IPv6 prefixes to unassign from the network interface.</p>
-    pub fn set_ipv6_prefixes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ipv6_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ipv6_prefixes(input);
         self
     }
     /// <p>The IPv6 prefixes to unassign from the network interface.</p>
-    pub fn get_ipv6_prefixes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ipv6_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ipv6_prefixes()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_interface_id(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }

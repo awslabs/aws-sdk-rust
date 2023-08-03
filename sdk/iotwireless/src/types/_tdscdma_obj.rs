@@ -79,9 +79,7 @@ impl TdscdmaObj {
 
 /// A builder for [`TdscdmaObj`](crate::types::TdscdmaObj).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TdscdmaObjBuilder {
     pub(crate) mcc: ::std::option::Option<i32>,
     pub(crate) mnc: ::std::option::Option<i32>,
@@ -156,10 +154,7 @@ impl TdscdmaObjBuilder {
         self
     }
     /// <p>TD-SCDMA local identification (local ID) information.</p>
-    pub fn set_tdscdma_local_id(
-        mut self,
-        input: ::std::option::Option<crate::types::TdscdmaLocalId>,
-    ) -> Self {
+    pub fn set_tdscdma_local_id(mut self, input: ::std::option::Option<crate::types::TdscdmaLocalId>) -> Self {
         self.tdscdma_local_id = input;
         self
     }
@@ -221,17 +216,12 @@ impl TdscdmaObjBuilder {
         self
     }
     /// <p>TD-SCDMA object for network measurement reports.</p>
-    pub fn set_tdscdma_nmr(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TdscdmaNmrObj>>,
-    ) -> Self {
+    pub fn set_tdscdma_nmr(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TdscdmaNmrObj>>) -> Self {
         self.tdscdma_nmr = input;
         self
     }
     /// <p>TD-SCDMA object for network measurement reports.</p>
-    pub fn get_tdscdma_nmr(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TdscdmaNmrObj>> {
+    pub fn get_tdscdma_nmr(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TdscdmaNmrObj>> {
         &self.tdscdma_nmr
     }
     /// Consumes the builder and constructs a [`TdscdmaObj`](crate::types::TdscdmaObj).

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`game_server_id(impl ::std::convert::Into<String>)`](crate::operation::deregister_game_server::builders::DeregisterGameServerFluentBuilder::game_server_id) / [`set_game_server_id(Option<String>)`](crate::operation::deregister_game_server::builders::DeregisterGameServerFluentBuilder::set_game_server_id): <p>A custom string that uniquely identifies the game server to deregister.</p>
     /// - On success, responds with [`DeregisterGameServerOutput`](crate::operation::deregister_game_server::DeregisterGameServerOutput)
     /// - On failure, responds with [`SdkError<DeregisterGameServerError>`](crate::operation::deregister_game_server::DeregisterGameServerError)
-    pub fn deregister_game_server(
-        &self,
-    ) -> crate::operation::deregister_game_server::builders::DeregisterGameServerFluentBuilder {
-        crate::operation::deregister_game_server::builders::DeregisterGameServerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deregister_game_server(&self) -> crate::operation::deregister_game_server::builders::DeregisterGameServerFluentBuilder {
+        crate::operation::deregister_game_server::builders::DeregisterGameServerFluentBuilder::new(self.handle.clone())
     }
 }

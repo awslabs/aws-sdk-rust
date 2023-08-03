@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetChannelsOutput`](crate::operation::get_channels::GetChannelsOutput) with field(s):
     ///   - [`channels_response(Option<ChannelsResponse>)`](crate::operation::get_channels::GetChannelsOutput::channels_response): <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
     /// - On failure, responds with [`SdkError<GetChannelsError>`](crate::operation::get_channels::GetChannelsError)
-    pub fn get_channels(
-        &self,
-    ) -> crate::operation::get_channels::builders::GetChannelsFluentBuilder {
+    pub fn get_channels(&self) -> crate::operation::get_channels::builders::GetChannelsFluentBuilder {
         crate::operation::get_channels::builders::GetChannelsFluentBuilder::new(self.handle.clone())
     }
 }

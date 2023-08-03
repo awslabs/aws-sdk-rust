@@ -19,9 +19,7 @@ impl super::Client {
     ///   - [`source_id(Option<String>)`](crate::operation::update_asset::UpdateAssetOutput::source_id): <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::update_asset::UpdateAssetOutput::updated_at): <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
     /// - On failure, responds with [`SdkError<UpdateAssetError>`](crate::operation::update_asset::UpdateAssetError)
-    pub fn update_asset(
-        &self,
-    ) -> crate::operation::update_asset::builders::UpdateAssetFluentBuilder {
+    pub fn update_asset(&self) -> crate::operation::update_asset::builders::UpdateAssetFluentBuilder {
         crate::operation::update_asset::builders::UpdateAssetFluentBuilder::new(self.handle.clone())
     }
 }

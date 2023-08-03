@@ -102,18 +102,14 @@ impl SendBulkTemplatedEmailInput {
 }
 impl SendBulkTemplatedEmailInput {
     /// Creates a new builder-style object to manufacture [`SendBulkTemplatedEmailInput`](crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailInput).
-    pub fn builder(
-    ) -> crate::operation::send_bulk_templated_email::builders::SendBulkTemplatedEmailInputBuilder
-    {
+    pub fn builder() -> crate::operation::send_bulk_templated_email::builders::SendBulkTemplatedEmailInputBuilder {
         crate::operation::send_bulk_templated_email::builders::SendBulkTemplatedEmailInputBuilder::default()
     }
 }
 
 /// A builder for [`SendBulkTemplatedEmailInput`](crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendBulkTemplatedEmailInputBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
@@ -125,8 +121,7 @@ pub struct SendBulkTemplatedEmailInputBuilder {
     pub(crate) template: ::std::option::Option<::std::string::String>,
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_template_data: ::std::option::Option<::std::string::String>,
-    pub(crate) destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::BulkEmailDestination>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::BulkEmailDestination>>,
 }
 impl SendBulkTemplatedEmailInputBuilder {
     /// <p>The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
@@ -177,27 +172,19 @@ impl SendBulkTemplatedEmailInputBuilder {
     /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
     ///
     /// <p>The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address will receive the reply.</p>
-    pub fn reply_to_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reply_to_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reply_to_addresses.unwrap_or_default();
         v.push(input.into());
         self.reply_to_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address will receive the reply.</p>
-    pub fn set_reply_to_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_reply_to_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.reply_to_addresses = input;
         self
     }
     /// <p>The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address will receive the reply.</p>
-    pub fn get_reply_to_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reply_to_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.reply_to_addresses
     }
     /// <p>The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP; this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. </p>
@@ -217,20 +204,14 @@ impl SendBulkTemplatedEmailInputBuilder {
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
     /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    pub fn return_path_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn return_path_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.return_path_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
     /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    pub fn set_return_path_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_return_path_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.return_path_arn = input;
         self
     }
@@ -241,18 +222,12 @@ impl SendBulkTemplatedEmailInputBuilder {
         &self.return_path_arn
     }
     /// <p>The name of the configuration set to use when you send an email using <code>SendBulkTemplatedEmail</code>.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set to use when you send an email using <code>SendBulkTemplatedEmail</code>.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -272,17 +247,12 @@ impl SendBulkTemplatedEmailInputBuilder {
         self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send to a destination using <code>SendBulkTemplatedEmail</code>.</p>
-    pub fn set_default_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
-    ) -> Self {
+    pub fn set_default_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>) -> Self {
         self.default_tags = input;
         self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send to a destination using <code>SendBulkTemplatedEmail</code>.</p>
-    pub fn get_default_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageTag>> {
+    pub fn get_default_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageTag>> {
         &self.default_tags
     }
     /// <p>The template to use when sending this email.</p>
@@ -315,19 +285,13 @@ impl SendBulkTemplatedEmailInputBuilder {
     }
     /// <p>A list of replacement values to apply to the template when replacement data is not specified in a Destination object. These values act as a default or fallback option when no other data is available.</p>
     /// <p>The template data is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
-    pub fn default_template_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_template_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_template_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A list of replacement values to apply to the template when replacement data is not specified in a Destination object. These values act as a default or fallback option when no other data is available.</p>
     /// <p>The template data is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
-    pub fn set_default_template_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_template_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_template_data = input;
         self
     }
@@ -348,17 +312,12 @@ impl SendBulkTemplatedEmailInputBuilder {
         self
     }
     /// <p>One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will receive the same version of the email. You can specify up to 50 <code>Destination</code> objects within a <code>Destinations</code> array.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BulkEmailDestination>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BulkEmailDestination>>) -> Self {
         self.destinations = input;
         self
     }
     /// <p>One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will receive the same version of the email. You can specify up to 50 <code>Destination</code> objects within a <code>Destinations</code> array.</p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BulkEmailDestination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BulkEmailDestination>> {
         &self.destinations
     }
     /// Consumes the builder and constructs a [`SendBulkTemplatedEmailInput`](crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailInput).
@@ -368,20 +327,18 @@ impl SendBulkTemplatedEmailInputBuilder {
         crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailInput {
-                source: self.source,
-                source_arn: self.source_arn,
-                reply_to_addresses: self.reply_to_addresses,
-                return_path: self.return_path,
-                return_path_arn: self.return_path_arn,
-                configuration_set_name: self.configuration_set_name,
-                default_tags: self.default_tags,
-                template: self.template,
-                template_arn: self.template_arn,
-                default_template_data: self.default_template_data,
-                destinations: self.destinations,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailInput {
+            source: self.source,
+            source_arn: self.source_arn,
+            reply_to_addresses: self.reply_to_addresses,
+            return_path: self.return_path,
+            return_path_arn: self.return_path_arn,
+            configuration_set_name: self.configuration_set_name,
+            default_tags: self.default_tags,
+            template: self.template,
+            template_arn: self.template_arn,
+            default_template_data: self.default_template_data,
+            destinations: self.destinations,
+        })
     }
 }

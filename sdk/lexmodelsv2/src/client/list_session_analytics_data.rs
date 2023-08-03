@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_session_analytics_data::ListSessionAnalyticsDataOutput::next_token): <p>If the response from the ListSessionAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>  <p>Use the returned token in the nextToken parameter of a ListSessionAnalyticsData request to return the next page of results. For a complete set of results, call the ListSessionAnalyticsData operation until the nextToken returned in the response is null.</p>
     ///   - [`sessions(Option<Vec<SessionSpecification>>)`](crate::operation::list_session_analytics_data::ListSessionAnalyticsDataOutput::sessions): <p>A list of objects, each of which contains information about a session with the bot.</p>
     /// - On failure, responds with [`SdkError<ListSessionAnalyticsDataError>`](crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError)
-    pub fn list_session_analytics_data(&self) -> crate::operation::list_session_analytics_data::builders::ListSessionAnalyticsDataFluentBuilder{
+    pub fn list_session_analytics_data(&self) -> crate::operation::list_session_analytics_data::builders::ListSessionAnalyticsDataFluentBuilder {
         crate::operation::list_session_analytics_data::builders::ListSessionAnalyticsDataFluentBuilder::new(self.handle.clone())
     }
 }

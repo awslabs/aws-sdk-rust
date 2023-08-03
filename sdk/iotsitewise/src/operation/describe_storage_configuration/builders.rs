@@ -26,7 +26,7 @@ impl DescribeStorageConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStorageConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationInputBuilder,
+    inner: crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationInputBuilder,
 }
 impl DescribeStorageConfigurationFluentBuilder {
     /// Creates a new `DescribeStorageConfiguration`.
@@ -37,7 +37,7 @@ impl DescribeStorageConfigurationFluentBuilder {
         }
     }
     /// Access the DescribeStorageConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeStorageConfigurationFluentBuilder {
             crate::operation::describe_storage_configuration::DescribeStorageConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_storage_configuration::DescribeStorageConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_configuration::DescribeStorageConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeStorageConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeStorageConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_storage_configuration::DescribeStorageConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_configuration::DescribeStorageConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeStorageConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_storage_configuration::DescribeStorageConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_configuration::DescribeStorageConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeStorageConfigurationFluentBuilder {
             crate::operation::describe_storage_configuration::DescribeStorageConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_storage_configuration::DescribeStorageConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_configuration::DescribeStorageConfigurationError>,
     > {
         self.customize_middleware().await
     }

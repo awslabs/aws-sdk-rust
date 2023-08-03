@@ -9,8 +9,7 @@ pub struct ListWorkloadSharesOutput {
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of workload share summaries.</p>
     #[doc(hidden)]
-    pub workload_share_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkloadShareSummary>>,
+    pub workload_share_summaries: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadShareSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -22,9 +21,7 @@ impl ListWorkloadSharesOutput {
         self.workload_id.as_deref()
     }
     /// <p>A list of workload share summaries.</p>
-    pub fn workload_share_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WorkloadShareSummary]> {
+    pub fn workload_share_summaries(&self) -> ::std::option::Option<&[crate::types::WorkloadShareSummary]> {
         self.workload_share_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -39,21 +36,17 @@ impl ::aws_http::request_id::RequestId for ListWorkloadSharesOutput {
 }
 impl ListWorkloadSharesOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkloadSharesOutput`](crate::operation::list_workload_shares::ListWorkloadSharesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_workload_shares::builders::ListWorkloadSharesOutputBuilder {
+    pub fn builder() -> crate::operation::list_workload_shares::builders::ListWorkloadSharesOutputBuilder {
         crate::operation::list_workload_shares::builders::ListWorkloadSharesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorkloadSharesOutput`](crate::operation::list_workload_shares::ListWorkloadSharesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkloadSharesOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
-    pub(crate) workload_share_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkloadShareSummary>>,
+    pub(crate) workload_share_summaries: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadShareSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -84,17 +77,12 @@ impl ListWorkloadSharesOutputBuilder {
         self
     }
     /// <p>A list of workload share summaries.</p>
-    pub fn set_workload_share_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadShareSummary>>,
-    ) -> Self {
+    pub fn set_workload_share_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadShareSummary>>) -> Self {
         self.workload_share_summaries = input;
         self
     }
     /// <p>A list of workload share summaries.</p>
-    pub fn get_workload_share_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkloadShareSummary>> {
+    pub fn get_workload_share_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkloadShareSummary>> {
         &self.workload_share_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>

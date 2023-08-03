@@ -16,22 +16,17 @@ pub struct ModifyVpcAttributeInput {
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
     #[doc(hidden)]
-    pub enable_network_address_usage_metrics:
-        ::std::option::Option<crate::types::AttributeBooleanValue>,
+    pub enable_network_address_usage_metrics: ::std::option::Option<crate::types::AttributeBooleanValue>,
 }
 impl ModifyVpcAttributeInput {
     /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
     /// <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute. You can only enable DNS hostnames if you've enabled DNS support.</p>
-    pub fn enable_dns_hostnames(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
+    pub fn enable_dns_hostnames(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.enable_dns_hostnames.as_ref()
     }
     /// <p>Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range "plus two" succeed. If disabled, the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP addresses is not enabled.</p>
     /// <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute.</p>
-    pub fn enable_dns_support(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
+    pub fn enable_dns_support(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.enable_dns_support.as_ref()
     }
     /// <p>The ID of the VPC.</p>
@@ -39,31 +34,25 @@ impl ModifyVpcAttributeInput {
         self.vpc_id.as_deref()
     }
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
-    pub fn enable_network_address_usage_metrics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
+    pub fn enable_network_address_usage_metrics(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.enable_network_address_usage_metrics.as_ref()
     }
 }
 impl ModifyVpcAttributeInput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcAttributeInput`](crate::operation::modify_vpc_attribute::ModifyVpcAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeInputBuilder {
+    pub fn builder() -> crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeInputBuilder {
         crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpcAttributeInput`](crate::operation::modify_vpc_attribute::ModifyVpcAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpcAttributeInputBuilder {
     pub(crate) enable_dns_hostnames: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) enable_dns_support: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) enable_network_address_usage_metrics:
-        ::std::option::Option<crate::types::AttributeBooleanValue>,
+    pub(crate) enable_network_address_usage_metrics: ::std::option::Option<crate::types::AttributeBooleanValue>,
 }
 impl ModifyVpcAttributeInputBuilder {
     /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
@@ -74,18 +63,13 @@ impl ModifyVpcAttributeInputBuilder {
     }
     /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
     /// <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute. You can only enable DNS hostnames if you've enabled DNS support.</p>
-    pub fn set_enable_dns_hostnames(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_enable_dns_hostnames(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.enable_dns_hostnames = input;
         self
     }
     /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
     /// <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute. You can only enable DNS hostnames if you've enabled DNS support.</p>
-    pub fn get_enable_dns_hostnames(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_enable_dns_hostnames(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.enable_dns_hostnames
     }
     /// <p>Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range "plus two" succeed. If disabled, the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP addresses is not enabled.</p>
@@ -96,18 +80,13 @@ impl ModifyVpcAttributeInputBuilder {
     }
     /// <p>Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range "plus two" succeed. If disabled, the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP addresses is not enabled.</p>
     /// <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute.</p>
-    pub fn set_enable_dns_support(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_enable_dns_support(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.enable_dns_support = input;
         self
     }
     /// <p>Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range "plus two" succeed. If disabled, the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP addresses is not enabled.</p>
     /// <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute.</p>
-    pub fn get_enable_dns_support(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_enable_dns_support(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.enable_dns_support
     }
     /// <p>The ID of the VPC.</p>
@@ -125,41 +104,28 @@ impl ModifyVpcAttributeInputBuilder {
         &self.vpc_id
     }
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
-    pub fn enable_network_address_usage_metrics(
-        mut self,
-        input: crate::types::AttributeBooleanValue,
-    ) -> Self {
+    pub fn enable_network_address_usage_metrics(mut self, input: crate::types::AttributeBooleanValue) -> Self {
         self.enable_network_address_usage_metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
-    pub fn set_enable_network_address_usage_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_enable_network_address_usage_metrics(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.enable_network_address_usage_metrics = input;
         self
     }
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
-    pub fn get_enable_network_address_usage_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_enable_network_address_usage_metrics(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.enable_network_address_usage_metrics
     }
     /// Consumes the builder and constructs a [`ModifyVpcAttributeInput`](crate::operation::modify_vpc_attribute::ModifyVpcAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_vpc_attribute::ModifyVpcAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_vpc_attribute::ModifyVpcAttributeInput {
-                enable_dns_hostnames: self.enable_dns_hostnames,
-                enable_dns_support: self.enable_dns_support,
-                vpc_id: self.vpc_id,
-                enable_network_address_usage_metrics: self.enable_network_address_usage_metrics,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_vpc_attribute::ModifyVpcAttributeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::modify_vpc_attribute::ModifyVpcAttributeInput {
+            enable_dns_hostnames: self.enable_dns_hostnames,
+            enable_dns_support: self.enable_dns_support,
+            vpc_id: self.vpc_id,
+            enable_network_address_usage_metrics: self.enable_network_address_usage_metrics,
+        })
     }
 }

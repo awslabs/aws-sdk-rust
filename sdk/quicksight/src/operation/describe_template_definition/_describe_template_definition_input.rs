@@ -36,16 +36,14 @@ impl DescribeTemplateDefinitionInput {
 }
 impl DescribeTemplateDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeTemplateDefinitionInput`](crate::operation::describe_template_definition::DescribeTemplateDefinitionInput).
-    pub fn builder() -> crate::operation::describe_template_definition::builders::DescribeTemplateDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::describe_template_definition::builders::DescribeTemplateDefinitionInputBuilder {
         crate::operation::describe_template_definition::builders::DescribeTemplateDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTemplateDefinitionInput`](crate::operation::describe_template_definition::DescribeTemplateDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTemplateDefinitionInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct DescribeTemplateDefinitionInputBuilder {
 }
 impl DescribeTemplateDefinitionInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the template. You must be using the Amazon Web Services account that the template is in.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the template. You must be using the Amazon Web Services account that the template is in.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -122,13 +114,11 @@ impl DescribeTemplateDefinitionInputBuilder {
         crate::operation::describe_template_definition::DescribeTemplateDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_template_definition::DescribeTemplateDefinitionInput {
-                aws_account_id: self.aws_account_id,
-                template_id: self.template_id,
-                version_number: self.version_number,
-                alias_name: self.alias_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_template_definition::DescribeTemplateDefinitionInput {
+            aws_account_id: self.aws_account_id,
+            template_id: self.template_id,
+            version_number: self.version_number,
+            alias_name: self.alias_name,
+        })
     }
 }

@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`effect(Option<MobileDeviceAccessRuleEffect>)`](crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectOutput::effect): <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the WorkMail organization for the simulated user parameters.</p>
     ///   - [`matched_rules(Option<Vec<MobileDeviceAccessMatchedRule>>)`](crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectOutput::matched_rules): <p>A list of the rules which matched the simulated user input and produced the effect.</p>
     /// - On failure, responds with [`SdkError<GetMobileDeviceAccessEffectError>`](crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError)
-    pub fn get_mobile_device_access_effect(&self) -> crate::operation::get_mobile_device_access_effect::builders::GetMobileDeviceAccessEffectFluentBuilder{
+    pub fn get_mobile_device_access_effect(
+        &self,
+    ) -> crate::operation::get_mobile_device_access_effect::builders::GetMobileDeviceAccessEffectFluentBuilder {
         crate::operation::get_mobile_device_access_effect::builders::GetMobileDeviceAccessEffectFluentBuilder::new(self.handle.clone())
     }
 }

@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ReservedInstanceState {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for ReservedInstanceState {
             "queued" => ReservedInstanceState::Queued,
             "queued-deleted" => ReservedInstanceState::QueuedDeleted,
             "retired" => ReservedInstanceState::Retired,
-            other => ReservedInstanceState::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ReservedInstanceState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl ReservedInstanceState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "active",
-            "payment-failed",
-            "payment-pending",
-            "queued",
-            "queued-deleted",
-            "retired",
-        ]
+        &["active", "payment-failed", "payment-pending", "queued", "queued-deleted", "retired"]
     }
 }
 impl ::std::convert::AsRef<str> for ReservedInstanceState {

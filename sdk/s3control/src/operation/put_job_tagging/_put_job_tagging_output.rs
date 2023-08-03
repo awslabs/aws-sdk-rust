@@ -19,9 +19,7 @@ impl PutJobTaggingOutput {
 
 /// A builder for [`PutJobTaggingOutput`](crate::operation::put_job_tagging::PutJobTaggingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutJobTaggingOutputBuilder {
     _request_id: Option<String>,
 }

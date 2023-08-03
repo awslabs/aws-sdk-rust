@@ -19,7 +19,9 @@ impl super::Client {
     ///   - [`attribute_details(Option<AttributeDetails>)`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput::attribute_details): <p>The mathematical expression and a list of attribute items specified in that expression.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<UpdateCalculatedAttributeDefinitionError>`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionError)
-    pub fn update_calculated_attribute_definition(&self) -> crate::operation::update_calculated_attribute_definition::builders::UpdateCalculatedAttributeDefinitionFluentBuilder{
+    pub fn update_calculated_attribute_definition(
+        &self,
+    ) -> crate::operation::update_calculated_attribute_definition::builders::UpdateCalculatedAttributeDefinitionFluentBuilder {
         crate::operation::update_calculated_attribute_definition::builders::UpdateCalculatedAttributeDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

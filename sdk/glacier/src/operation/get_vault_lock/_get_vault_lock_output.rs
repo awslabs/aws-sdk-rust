@@ -50,9 +50,7 @@ impl GetVaultLockOutput {
 
 /// A builder for [`GetVaultLockOutput`](crate::operation::get_vault_lock::GetVaultLockOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVaultLockOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<::std::string::String>,
@@ -90,18 +88,12 @@ impl GetVaultLockOutputBuilder {
         &self.state
     }
     /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
-    pub fn expiration_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expiration_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expiration_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
-    pub fn set_expiration_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expiration_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expiration_date = input;
         self
     }
@@ -110,18 +102,12 @@ impl GetVaultLockOutputBuilder {
         &self.expiration_date
     }
     /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
-    pub fn creation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date = input;
         self
     }

@@ -29,9 +29,7 @@ impl FailoverShardInput {
 
 /// A builder for [`FailoverShardInput`](crate::operation::failover_shard::FailoverShardInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailoverShardInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) shard_name: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl FailoverShardInputBuilder {
     /// Consumes the builder and constructs a [`FailoverShardInput`](crate::operation::failover_shard::FailoverShardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::failover_shard::FailoverShardInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::failover_shard::FailoverShardInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::failover_shard::FailoverShardInput {
             cluster_name: self.cluster_name,
             shard_name: self.shard_name,

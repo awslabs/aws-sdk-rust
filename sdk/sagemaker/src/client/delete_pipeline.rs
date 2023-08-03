@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeletePipelineOutput`](crate::operation::delete_pipeline::DeletePipelineOutput) with field(s):
     ///   - [`pipeline_arn(Option<String>)`](crate::operation::delete_pipeline::DeletePipelineOutput::pipeline_arn): <p>The Amazon Resource Name (ARN) of the pipeline to delete.</p>
     /// - On failure, responds with [`SdkError<DeletePipelineError>`](crate::operation::delete_pipeline::DeletePipelineError)
-    pub fn delete_pipeline(
-        &self,
-    ) -> crate::operation::delete_pipeline::builders::DeletePipelineFluentBuilder {
-        crate::operation::delete_pipeline::builders::DeletePipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_pipeline(&self) -> crate::operation::delete_pipeline::builders::DeletePipelineFluentBuilder {
+        crate::operation::delete_pipeline::builders::DeletePipelineFluentBuilder::new(self.handle.clone())
     }
 }

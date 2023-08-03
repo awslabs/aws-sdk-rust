@@ -39,10 +39,7 @@ pub struct StartMedicalStreamTranscriptionInput {
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
-    pub audio_stream: ::aws_smithy_http::event_stream::EventStreamSender<
-        crate::types::AudioStream,
-        crate::types::error::AudioStreamError,
-    >,
+    pub audio_stream: ::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>,
     /// <p>Enables channel identification in multi-channel audio.</p>
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
@@ -56,8 +53,7 @@ pub struct StartMedicalStreamTranscriptionInput {
     /// <p>Content identification is performed at the segment level; PHI is flagged upon complete transcription of an audio segment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
     #[doc(hidden)]
-    pub content_identification_type:
-        ::std::option::Option<crate::types::MedicalContentIdentificationType>,
+    pub content_identification_type: ::std::option::Option<crate::types::MedicalContentIdentificationType>,
 }
 impl StartMedicalStreamTranscriptionInput {
     /// <p>Specify the language code that represents the language spoken in your audio.</p> <important>
@@ -106,10 +102,7 @@ impl StartMedicalStreamTranscriptionInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
     pub fn audio_stream(
         &self,
-    ) -> &::aws_smithy_http::event_stream::EventStreamSender<
-        crate::types::AudioStream,
-        crate::types::error::AudioStreamError,
-    > {
+    ) -> &::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError> {
         &self.audio_stream
     }
     /// <p>Enables channel identification in multi-channel audio.</p>
@@ -126,15 +119,13 @@ impl StartMedicalStreamTranscriptionInput {
     /// <p>Labels all personal health information (PHI) identified in your transcript.</p>
     /// <p>Content identification is performed at the segment level; PHI is flagged upon complete transcription of an audio segment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
-    pub fn content_identification_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MedicalContentIdentificationType> {
+    pub fn content_identification_type(&self) -> ::std::option::Option<&crate::types::MedicalContentIdentificationType> {
         self.content_identification_type.as_ref()
     }
 }
 impl StartMedicalStreamTranscriptionInput {
     /// Creates a new builder-style object to manufacture [`StartMedicalStreamTranscriptionInput`](crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionInput).
-    pub fn builder() -> crate::operation::start_medical_stream_transcription::builders::StartMedicalStreamTranscriptionInputBuilder{
+    pub fn builder() -> crate::operation::start_medical_stream_transcription::builders::StartMedicalStreamTranscriptionInputBuilder {
         crate::operation::start_medical_stream_transcription::builders::StartMedicalStreamTranscriptionInputBuilder::default()
     }
 }
@@ -151,16 +142,11 @@ pub struct StartMedicalStreamTranscriptionInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
     pub(crate) show_speaker_label: ::std::option::Option<bool>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
-    pub(crate) audio_stream: ::std::option::Option<
-        ::aws_smithy_http::event_stream::EventStreamSender<
-            crate::types::AudioStream,
-            crate::types::error::AudioStreamError,
-        >,
-    >,
+    pub(crate) audio_stream:
+        ::std::option::Option<::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>>,
     pub(crate) enable_channel_identification: ::std::option::Option<bool>,
     pub(crate) number_of_channels: ::std::option::Option<i32>,
-    pub(crate) content_identification_type:
-        ::std::option::Option<crate::types::MedicalContentIdentificationType>,
+    pub(crate) content_identification_type: ::std::option::Option<crate::types::MedicalContentIdentificationType>,
 }
 impl StartMedicalStreamTranscriptionInputBuilder {
     /// <p>Specify the language code that represents the language spoken in your audio.</p> <important>
@@ -173,10 +159,7 @@ impl StartMedicalStreamTranscriptionInputBuilder {
     /// <p>Specify the language code that represents the language spoken in your audio.</p> <important>
     /// <p>Amazon Transcribe Medical only supports US English (<code>en-US</code>).</p>
     /// </important>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -218,10 +201,7 @@ impl StartMedicalStreamTranscriptionInputBuilder {
     /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
-    pub fn set_media_encoding(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaEncoding>,
-    ) -> Self {
+    pub fn set_media_encoding(mut self, input: ::std::option::Option<crate::types::MediaEncoding>) -> Self {
         self.media_encoding = input;
         self
     }
@@ -236,18 +216,12 @@ impl StartMedicalStreamTranscriptionInputBuilder {
         &self.media_encoding
     }
     /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
-    pub fn vocabulary_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
-    pub fn set_vocabulary_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_name = input;
         self
     }
@@ -321,10 +295,7 @@ impl StartMedicalStreamTranscriptionInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
     pub fn audio_stream(
         mut self,
-        input: ::aws_smithy_http::event_stream::EventStreamSender<
-            crate::types::AudioStream,
-            crate::types::error::AudioStreamError,
-        >,
+        input: ::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>,
     ) -> Self {
         self.audio_stream = ::std::option::Option::Some(input);
         self
@@ -334,10 +305,7 @@ impl StartMedicalStreamTranscriptionInputBuilder {
     pub fn set_audio_stream(
         mut self,
         input: ::std::option::Option<
-            ::aws_smithy_http::event_stream::EventStreamSender<
-                crate::types::AudioStream,
-                crate::types::error::AudioStreamError,
-            >,
+            ::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>,
         >,
     ) -> Self {
         self.audio_stream = input;
@@ -347,12 +315,8 @@ impl StartMedicalStreamTranscriptionInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
     pub fn get_audio_stream(
         &self,
-    ) -> &::std::option::Option<
-        ::aws_smithy_http::event_stream::EventStreamSender<
-            crate::types::AudioStream,
-            crate::types::error::AudioStreamError,
-        >,
-    > {
+    ) -> &::std::option::Option<::aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>>
+    {
         &self.audio_stream
     }
     /// <p>Enables channel identification in multi-channel audio.</p>
@@ -395,29 +359,21 @@ impl StartMedicalStreamTranscriptionInputBuilder {
     /// <p>Labels all personal health information (PHI) identified in your transcript.</p>
     /// <p>Content identification is performed at the segment level; PHI is flagged upon complete transcription of an audio segment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
-    pub fn content_identification_type(
-        mut self,
-        input: crate::types::MedicalContentIdentificationType,
-    ) -> Self {
+    pub fn content_identification_type(mut self, input: crate::types::MedicalContentIdentificationType) -> Self {
         self.content_identification_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Labels all personal health information (PHI) identified in your transcript.</p>
     /// <p>Content identification is performed at the segment level; PHI is flagged upon complete transcription of an audio segment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
-    pub fn set_content_identification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MedicalContentIdentificationType>,
-    ) -> Self {
+    pub fn set_content_identification_type(mut self, input: ::std::option::Option<crate::types::MedicalContentIdentificationType>) -> Self {
         self.content_identification_type = input;
         self
     }
     /// <p>Labels all personal health information (PHI) identified in your transcript.</p>
     /// <p>Content identification is performed at the segment level; PHI is flagged upon complete transcription of an audio segment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
-    pub fn get_content_identification_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::MedicalContentIdentificationType> {
+    pub fn get_content_identification_type(&self) -> &::std::option::Option<crate::types::MedicalContentIdentificationType> {
         &self.content_identification_type
     }
     /// Consumes the builder and constructs a [`StartMedicalStreamTranscriptionInput`](crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionInput).
@@ -429,36 +385,24 @@ impl StartMedicalStreamTranscriptionInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionInput {
-                language_code: self.language_code
-                ,
-                media_sample_rate_hertz: self.media_sample_rate_hertz
-                ,
-                media_encoding: self.media_encoding
-                ,
-                vocabulary_name: self.vocabulary_name
-                ,
-                specialty: self.specialty
-                ,
-                r#type: self.r#type
-                ,
-                show_speaker_label: self.show_speaker_label
-                    .unwrap_or_default()
-                ,
-                session_id: self.session_id
-                ,
-                audio_stream: self.audio_stream
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("audio_stream", "audio_stream was not specified but it is required when building StartMedicalStreamTranscriptionInput")
-                    )?
-                ,
-                enable_channel_identification: self.enable_channel_identification
-                    .unwrap_or_default()
-                ,
-                number_of_channels: self.number_of_channels
-                ,
-                content_identification_type: self.content_identification_type
-                ,
-            }
+                language_code: self.language_code,
+                media_sample_rate_hertz: self.media_sample_rate_hertz,
+                media_encoding: self.media_encoding,
+                vocabulary_name: self.vocabulary_name,
+                specialty: self.specialty,
+                r#type: self.r#type,
+                show_speaker_label: self.show_speaker_label.unwrap_or_default(),
+                session_id: self.session_id,
+                audio_stream: self.audio_stream.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "audio_stream",
+                        "audio_stream was not specified but it is required when building StartMedicalStreamTranscriptionInput",
+                    )
+                })?,
+                enable_channel_identification: self.enable_channel_identification.unwrap_or_default(),
+                number_of_channels: self.number_of_channels,
+                content_identification_type: self.content_identification_type,
+            },
         )
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DetectKeyPhrasesOutput`](crate::operation::detect_key_phrases::DetectKeyPhrasesOutput) with field(s):
     ///   - [`key_phrases(Option<Vec<KeyPhrase>>)`](crate::operation::detect_key_phrases::DetectKeyPhrasesOutput::key_phrases): <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
     /// - On failure, responds with [`SdkError<DetectKeyPhrasesError>`](crate::operation::detect_key_phrases::DetectKeyPhrasesError)
-    pub fn detect_key_phrases(
-        &self,
-    ) -> crate::operation::detect_key_phrases::builders::DetectKeyPhrasesFluentBuilder {
-        crate::operation::detect_key_phrases::builders::DetectKeyPhrasesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detect_key_phrases(&self) -> crate::operation::detect_key_phrases::builders::DetectKeyPhrasesFluentBuilder {
+        crate::operation::detect_key_phrases::builders::DetectKeyPhrasesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EndOfMeetingReminderType {
     #[allow(missing_docs)] // documentation missing in model
@@ -64,14 +58,10 @@ impl ::std::convert::From<&str> for EndOfMeetingReminderType {
     fn from(s: &str) -> Self {
         match s {
             "ANNOUNCEMENT_TIME_CHECK" => EndOfMeetingReminderType::AnnouncementTimeCheck,
-            "ANNOUNCEMENT_VARIABLE_TIME_LEFT" => {
-                EndOfMeetingReminderType::AnnouncementVariableTimeLeft
-            }
+            "ANNOUNCEMENT_VARIABLE_TIME_LEFT" => EndOfMeetingReminderType::AnnouncementVariableTimeLeft,
             "CHIME" => EndOfMeetingReminderType::Chime,
             "KNOCK" => EndOfMeetingReminderType::Knock,
-            other => EndOfMeetingReminderType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => EndOfMeetingReminderType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -87,9 +77,7 @@ impl EndOfMeetingReminderType {
     pub fn as_str(&self) -> &str {
         match self {
             EndOfMeetingReminderType::AnnouncementTimeCheck => "ANNOUNCEMENT_TIME_CHECK",
-            EndOfMeetingReminderType::AnnouncementVariableTimeLeft => {
-                "ANNOUNCEMENT_VARIABLE_TIME_LEFT"
-            }
+            EndOfMeetingReminderType::AnnouncementVariableTimeLeft => "ANNOUNCEMENT_VARIABLE_TIME_LEFT",
             EndOfMeetingReminderType::Chime => "CHIME",
             EndOfMeetingReminderType::Knock => "KNOCK",
             EndOfMeetingReminderType::Unknown(value) => value.as_str(),
@@ -97,12 +85,7 @@ impl EndOfMeetingReminderType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANNOUNCEMENT_TIME_CHECK",
-            "ANNOUNCEMENT_VARIABLE_TIME_LEFT",
-            "CHIME",
-            "KNOCK",
-        ]
+        &["ANNOUNCEMENT_TIME_CHECK", "ANNOUNCEMENT_VARIABLE_TIME_LEFT", "CHIME", "KNOCK"]
     }
 }
 impl ::std::convert::AsRef<str> for EndOfMeetingReminderType {

@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`SendPipelineExecutionStepSuccessOutput`](crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessOutput) with field(s):
     ///   - [`pipeline_execution_arn(Option<String>)`](crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessOutput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     /// - On failure, responds with [`SdkError<SendPipelineExecutionStepSuccessError>`](crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessError)
-    pub fn send_pipeline_execution_step_success(&self) -> crate::operation::send_pipeline_execution_step_success::builders::SendPipelineExecutionStepSuccessFluentBuilder{
+    pub fn send_pipeline_execution_step_success(
+        &self,
+    ) -> crate::operation::send_pipeline_execution_step_success::builders::SendPipelineExecutionStepSuccessFluentBuilder {
         crate::operation::send_pipeline_execution_step_success::builders::SendPipelineExecutionStepSuccessFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,19 +12,13 @@ pub fn ser_create_algorithm_input(
     if let Some(var_3) = &input.training_specification {
         #[allow(unused_mut)]
         let mut object_4 = object.key("TrainingSpecification").start_object();
-        crate::protocol_serde::shape_training_specification::ser_training_specification(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_training_specification::ser_training_specification(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.inference_specification {
         #[allow(unused_mut)]
         let mut object_6 = object.key("InferenceSpecification").start_object();
-        crate::protocol_serde::shape_inference_specification::ser_inference_specification(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_inference_specification::ser_inference_specification(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.validation_specification {

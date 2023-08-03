@@ -49,23 +49,19 @@ impl ::aws_http::request_id::RequestId for GetResourceMetricsOutput {
 }
 impl GetResourceMetricsOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceMetricsOutput`](crate::operation::get_resource_metrics::GetResourceMetricsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_metrics::builders::GetResourceMetricsOutputBuilder {
+    pub fn builder() -> crate::operation::get_resource_metrics::builders::GetResourceMetricsOutputBuilder {
         crate::operation::get_resource_metrics::builders::GetResourceMetricsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceMetricsOutput`](crate::operation::get_resource_metrics::GetResourceMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceMetricsOutputBuilder {
     pub(crate) aligned_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) aligned_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) metric_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricKeyDataPoints>>,
+    pub(crate) metric_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricKeyDataPoints>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -76,10 +72,7 @@ impl GetResourceMetricsOutputBuilder {
         self
     }
     /// <p>The start time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>.</p>
-    pub fn set_aligned_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_aligned_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.aligned_start_time = input;
         self
     }
@@ -93,10 +86,7 @@ impl GetResourceMetricsOutputBuilder {
         self
     }
     /// <p>The end time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>.</p>
-    pub fn set_aligned_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_aligned_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.aligned_end_time = input;
         self
     }
@@ -130,17 +120,12 @@ impl GetResourceMetricsOutputBuilder {
         self
     }
     /// <p>An array of metric results, where each array element contains all of the data points for a particular dimension.</p>
-    pub fn set_metric_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricKeyDataPoints>>,
-    ) -> Self {
+    pub fn set_metric_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricKeyDataPoints>>) -> Self {
         self.metric_list = input;
         self
     }
     /// <p>An array of metric results, where each array element contains all of the data points for a particular dimension.</p>
-    pub fn get_metric_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricKeyDataPoints>> {
+    pub fn get_metric_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricKeyDataPoints>> {
         &self.metric_list
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>

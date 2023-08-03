@@ -10,10 +10,7 @@ impl GetTemplateSummaryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_template_summary::GetTemplateSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_template_summary::GetTemplateSummaryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_template_summary::GetTemplateSummaryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_template_summary();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetTemplateSummaryFluentBuilder {
         }
     }
     /// Access the GetTemplateSummary as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_template_summary::builders::GetTemplateSummaryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_template_summary::builders::GetTemplateSummaryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl GetTemplateSummaryFluentBuilder {
             crate::operation::get_template_summary::GetTemplateSummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_template_summary::GetTemplateSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_template_summary::GetTemplateSummaryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl GetTemplateSummaryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl GetTemplateSummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_template_summary::GetTemplateSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_template_summary::GetTemplateSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_template_summary::GetTemplateSummaryError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl GetTemplateSummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_template_summary::GetTemplateSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_template_summary::GetTemplateSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_template_summary::GetTemplateSummaryError>,
     > {
         self.send_middleware().await
     }
@@ -118,27 +104,19 @@ impl GetTemplateSummaryFluentBuilder {
             crate::operation::get_template_summary::GetTemplateSummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_template_summary::GetTemplateSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_template_summary::GetTemplateSummaryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_body(input.into());
         self
     }
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_body(input);
         self
     }
@@ -183,19 +161,13 @@ impl GetTemplateSummaryFluentBuilder {
     }
     /// <p>The name or unique ID of the stack set from which the stack was created.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
     /// <p>The name or unique ID of the stack set from which the stack was created.</p>
     /// <p>Conditional: You must specify only one of the following parameters: <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
@@ -239,17 +211,12 @@ impl GetTemplateSummaryFluentBuilder {
         self
     }
     /// <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
-    pub fn set_template_summary_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateSummaryConfig>,
-    ) -> Self {
+    pub fn set_template_summary_config(mut self, input: ::std::option::Option<crate::types::TemplateSummaryConfig>) -> Self {
         self.inner = self.inner.set_template_summary_config(input);
         self
     }
     /// <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
-    pub fn get_template_summary_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemplateSummaryConfig> {
+    pub fn get_template_summary_config(&self) -> &::std::option::Option<crate::types::TemplateSummaryConfig> {
         self.inner.get_template_summary_config()
     }
 }

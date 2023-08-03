@@ -50,26 +50,21 @@ impl CreateTimelineEventInput {
 }
 impl CreateTimelineEventInput {
     /// Creates a new builder-style object to manufacture [`CreateTimelineEventInput`](crate::operation::create_timeline_event::CreateTimelineEventInput).
-    pub fn builder(
-    ) -> crate::operation::create_timeline_event::builders::CreateTimelineEventInputBuilder {
-        crate::operation::create_timeline_event::builders::CreateTimelineEventInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_timeline_event::builders::CreateTimelineEventInputBuilder {
+        crate::operation::create_timeline_event::builders::CreateTimelineEventInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTimelineEventInput`](crate::operation::create_timeline_event::CreateTimelineEventInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTimelineEventInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) incident_record_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) event_type: ::std::option::Option<::std::string::String>,
     pub(crate) event_data: ::std::option::Option<::std::string::String>,
-    pub(crate) event_references:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>,
+    pub(crate) event_references: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>,
 }
 impl CreateTimelineEventInputBuilder {
     /// <p>A token that ensures that a client calls the action only once with the specified details.</p>
@@ -87,18 +82,12 @@ impl CreateTimelineEventInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record that the action adds the incident to.</p>
-    pub fn incident_record_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_record_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record that the action adds the incident to.</p>
-    pub fn set_incident_record_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.incident_record_arn = input;
         self
     }
@@ -112,10 +101,7 @@ impl CreateTimelineEventInputBuilder {
         self
     }
     /// <p>The time that the event occurred.</p>
-    pub fn set_event_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_time = input;
         self
     }
@@ -163,35 +149,26 @@ impl CreateTimelineEventInputBuilder {
         self
     }
     /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with a resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use the table's ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p>
-    pub fn set_event_references(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>,
-    ) -> Self {
+    pub fn set_event_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>) -> Self {
         self.event_references = input;
         self
     }
     /// <p>Adds one or more references to the <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with a resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use the table's ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p>
-    pub fn get_event_references(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventReference>> {
+    pub fn get_event_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventReference>> {
         &self.event_references
     }
     /// Consumes the builder and constructs a [`CreateTimelineEventInput`](crate::operation::create_timeline_event::CreateTimelineEventInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_timeline_event::CreateTimelineEventInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_timeline_event::CreateTimelineEventInput {
-                client_token: self.client_token,
-                incident_record_arn: self.incident_record_arn,
-                event_time: self.event_time,
-                event_type: self.event_type,
-                event_data: self.event_data,
-                event_references: self.event_references,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_timeline_event::CreateTimelineEventInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_timeline_event::CreateTimelineEventInput {
+            client_token: self.client_token,
+            incident_record_arn: self.incident_record_arn,
+            event_time: self.event_time,
+            event_type: self.event_type,
+            event_data: self.event_data,
+            event_references: self.event_references,
+        })
     }
 }

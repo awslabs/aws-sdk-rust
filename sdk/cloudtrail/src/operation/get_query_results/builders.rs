@@ -10,10 +10,7 @@ impl GetQueryResultsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_query_results::GetQueryResultsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_query_results::GetQueryResultsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_query_results::GetQueryResultsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_query_results();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetQueryResultsFluentBuilder {
         }
     }
     /// Access the GetQueryResults as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_query_results::builders::GetQueryResultsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_query_results::builders::GetQueryResultsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetQueryResultsFluentBuilder {
             crate::operation::get_query_results::GetQueryResults,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_query_results::GetQueryResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_query_results::GetQueryResultsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetQueryResultsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetQueryResultsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_query_results::GetQueryResultsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_query_results::GetQueryResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_query_results::GetQueryResultsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetQueryResultsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_query_results::GetQueryResultsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_query_results::GetQueryResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_query_results::GetQueryResultsError>,
     > {
         self.send_middleware().await
     }
@@ -116,38 +102,25 @@ impl GetQueryResultsFluentBuilder {
             crate::operation::get_query_results::GetQueryResults,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_query_results::GetQueryResultsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_query_results::GetQueryResultsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_query_results::paginator::GetQueryResultsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_query_results::paginator::GetQueryResultsPaginator {
-        crate::operation::get_query_results::paginator::GetQueryResultsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_query_results::paginator::GetQueryResultsPaginator {
+        crate::operation::get_query_results::paginator::GetQueryResultsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
     #[deprecated(note = "EventDataStore is no longer required by GetQueryResultsRequest")]
-    pub fn event_data_store(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_data_store(input.into());
         self
     }
     /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
     #[deprecated(note = "EventDataStore is no longer required by GetQueryResultsRequest")]
-    pub fn set_event_data_store(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_data_store(input);
         self
     }

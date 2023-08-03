@@ -79,9 +79,7 @@ impl PanelConfiguration {
 
 /// A builder for [`PanelConfiguration`](crate::types::PanelConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PanelConfigurationBuilder {
     pub(crate) title: ::std::option::Option<crate::types::PanelTitleOptions>,
     pub(crate) border_visibility: ::std::option::Option<crate::types::Visibility>,
@@ -100,10 +98,7 @@ impl PanelConfigurationBuilder {
         self
     }
     /// <p>Configures the title display within each small multiples panel.</p>
-    pub fn set_title(
-        mut self,
-        input: ::std::option::Option<crate::types::PanelTitleOptions>,
-    ) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<crate::types::PanelTitleOptions>) -> Self {
         self.title = input;
         self
     }
@@ -117,10 +112,7 @@ impl PanelConfigurationBuilder {
         self
     }
     /// <p>Determines whether or not each panel displays a border.</p>
-    pub fn set_border_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_border_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.border_visibility = input;
         self
     }
@@ -129,18 +121,12 @@ impl PanelConfigurationBuilder {
         &self.border_visibility
     }
     /// <p>Sets the line thickness of panel borders.</p>
-    pub fn border_thickness(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn border_thickness(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.border_thickness = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Sets the line thickness of panel borders.</p>
-    pub fn set_border_thickness(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_border_thickness(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.border_thickness = input;
         self
     }
@@ -154,10 +140,7 @@ impl PanelConfigurationBuilder {
         self
     }
     /// <p>Sets the line style of panel borders.</p>
-    pub fn set_border_style(
-        mut self,
-        input: ::std::option::Option<crate::types::PanelBorderStyle>,
-    ) -> Self {
+    pub fn set_border_style(mut self, input: ::std::option::Option<crate::types::PanelBorderStyle>) -> Self {
         self.border_style = input;
         self
     }
@@ -185,10 +168,7 @@ impl PanelConfigurationBuilder {
         self
     }
     /// <p>Determines whether or not negative space between sibling panels is rendered.</p>
-    pub fn set_gutter_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_gutter_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.gutter_visibility = input;
         self
     }
@@ -197,18 +177,12 @@ impl PanelConfigurationBuilder {
         &self.gutter_visibility
     }
     /// <p>Sets the total amount of negative space to display between sibling panels.</p>
-    pub fn gutter_spacing(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gutter_spacing(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gutter_spacing = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Sets the total amount of negative space to display between sibling panels.</p>
-    pub fn set_gutter_spacing(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gutter_spacing(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gutter_spacing = input;
         self
     }
@@ -222,10 +196,7 @@ impl PanelConfigurationBuilder {
         self
     }
     /// <p>Determines whether or not a background for each small multiples panel is rendered.</p>
-    pub fn set_background_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_background_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.background_visibility = input;
         self
     }
@@ -234,18 +205,12 @@ impl PanelConfigurationBuilder {
         &self.background_visibility
     }
     /// <p>Sets the background color for each panel.</p>
-    pub fn background_color(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn background_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.background_color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Sets the background color for each panel.</p>
-    pub fn set_background_color(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_background_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.background_color = input;
         self
     }

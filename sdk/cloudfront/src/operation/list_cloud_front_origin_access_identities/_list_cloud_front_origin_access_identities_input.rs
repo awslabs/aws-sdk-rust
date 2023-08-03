@@ -23,16 +23,14 @@ impl ListCloudFrontOriginAccessIdentitiesInput {
 }
 impl ListCloudFrontOriginAccessIdentitiesInput {
     /// Creates a new builder-style object to manufacture [`ListCloudFrontOriginAccessIdentitiesInput`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesInput).
-    pub fn builder() -> crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesInputBuilder{
+    pub fn builder() -> crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesInputBuilder {
         crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCloudFrontOriginAccessIdentitiesInput`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCloudFrontOriginAccessIdentitiesInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -67,14 +65,17 @@ impl ListCloudFrontOriginAccessIdentitiesInputBuilder {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListCloudFrontOriginAccessIdentitiesInput`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesInput {
-                marker: self.marker
-                ,
-                max_items: self.max_items
-                ,
-            }
+                marker: self.marker,
+                max_items: self.max_items,
+            },
         )
     }
 }

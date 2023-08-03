@@ -8,8 +8,7 @@ pub struct PutApplicationPolicyInput {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of policy statements applied to the application.</p>
     #[doc(hidden)]
-    pub statements:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
+    pub statements: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
 }
 impl PutApplicationPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -23,36 +22,26 @@ impl PutApplicationPolicyInput {
 }
 impl PutApplicationPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutApplicationPolicyInput`](crate::operation::put_application_policy::PutApplicationPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_application_policy::builders::PutApplicationPolicyInputBuilder {
+    pub fn builder() -> crate::operation::put_application_policy::builders::PutApplicationPolicyInputBuilder {
         crate::operation::put_application_policy::builders::PutApplicationPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutApplicationPolicyInput`](crate::operation::put_application_policy::PutApplicationPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutApplicationPolicyInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
-    pub(crate) statements:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
+    pub(crate) statements: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
 }
 impl PutApplicationPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -72,31 +61,22 @@ impl PutApplicationPolicyInputBuilder {
         self
     }
     /// <p>An array of policy statements applied to the application.</p>
-    pub fn set_statements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
-    ) -> Self {
+    pub fn set_statements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>) -> Self {
         self.statements = input;
         self
     }
     /// <p>An array of policy statements applied to the application.</p>
-    pub fn get_statements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>> {
+    pub fn get_statements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>> {
         &self.statements
     }
     /// Consumes the builder and constructs a [`PutApplicationPolicyInput`](crate::operation::put_application_policy::PutApplicationPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_application_policy::PutApplicationPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_application_policy::PutApplicationPolicyInput {
-                application_id: self.application_id,
-                statements: self.statements,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_application_policy::PutApplicationPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_application_policy::PutApplicationPolicyInput {
+            application_id: self.application_id,
+            statements: self.statements,
+        })
     }
 }

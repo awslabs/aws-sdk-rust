@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdatePullRequestApprovalStateOutput 
 }
 impl UpdatePullRequestApprovalStateOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestApprovalStateOutput`](crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput).
-    pub fn builder() -> crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateOutputBuilder{
+    pub fn builder() -> crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateOutputBuilder {
         crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePullRequestApprovalStateOutput`](crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePullRequestApprovalStateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdatePullRequestApprovalStateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdatePullRequestApprovalStateOutput`](crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput
-    {
+    pub fn build(self) -> crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput {
         crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput {
             _request_id: self._request_id,
         }

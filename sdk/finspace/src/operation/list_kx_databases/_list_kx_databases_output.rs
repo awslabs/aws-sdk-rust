@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListKxDatabasesOutput {
 }
 impl ListKxDatabasesOutput {
     /// Creates a new builder-style object to manufacture [`ListKxDatabasesOutput`](crate::operation::list_kx_databases::ListKxDatabasesOutput).
-    pub fn builder() -> crate::operation::list_kx_databases::builders::ListKxDatabasesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_kx_databases::builders::ListKxDatabasesOutputBuilder {
         crate::operation::list_kx_databases::builders::ListKxDatabasesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListKxDatabasesOutput`](crate::operation::list_kx_databases::ListKxDatabasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKxDatabasesOutputBuilder {
-    pub(crate) kx_databases:
-        ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseListEntry>>,
+    pub(crate) kx_databases: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListKxDatabasesOutputBuilder {
         self
     }
     /// <p>A list of databases in the kdb environment.</p>
-    pub fn set_kx_databases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseListEntry>>,
-    ) -> Self {
+    pub fn set_kx_databases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseListEntry>>) -> Self {
         self.kx_databases = input;
         self
     }
     /// <p>A list of databases in the kdb environment.</p>
-    pub fn get_kx_databases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseListEntry>> {
+    pub fn get_kx_databases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseListEntry>> {
         &self.kx_databases
     }
     /// <p>A token that indicates where a results page should begin.</p>

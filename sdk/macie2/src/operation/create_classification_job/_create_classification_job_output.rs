@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateClassificationJobOutput {
 }
 impl CreateClassificationJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateClassificationJobOutput`](crate::operation::create_classification_job::CreateClassificationJobOutput).
-    pub fn builder(
-    ) -> crate::operation::create_classification_job::builders::CreateClassificationJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_classification_job::builders::CreateClassificationJobOutputBuilder {
         crate::operation::create_classification_job::builders::CreateClassificationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateClassificationJobOutput`](crate::operation::create_classification_job::CreateClassificationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClassificationJobOutputBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -84,9 +80,7 @@ impl CreateClassificationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateClassificationJobOutput`](crate::operation::create_classification_job::CreateClassificationJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_classification_job::CreateClassificationJobOutput {
+    pub fn build(self) -> crate::operation::create_classification_job::CreateClassificationJobOutput {
         crate::operation::create_classification_job::CreateClassificationJobOutput {
             job_arn: self.job_arn,
             job_id: self.job_id,

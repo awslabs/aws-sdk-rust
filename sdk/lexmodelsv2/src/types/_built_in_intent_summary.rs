@@ -30,27 +30,19 @@ impl BuiltInIntentSummary {
 
 /// A builder for [`BuiltInIntentSummary`](crate::types::BuiltInIntentSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuiltInIntentSummaryBuilder {
     pub(crate) intent_signature: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl BuiltInIntentSummaryBuilder {
     /// <p>The signature of the built-in intent. Use this to specify the parent intent of a derived intent.</p>
-    pub fn intent_signature(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn intent_signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_signature = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signature of the built-in intent. Use this to specify the parent intent of a derived intent.</p>
-    pub fn set_intent_signature(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_intent_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.intent_signature = input;
         self
     }

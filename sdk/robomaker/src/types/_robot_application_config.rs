@@ -15,8 +15,7 @@ pub struct RobotApplicationConfig {
     pub launch_config: ::std::option::Option<crate::types::LaunchConfig>,
     /// <p>The upload configurations for the robot application.</p>
     #[doc(hidden)]
-    pub upload_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::UploadConfiguration>>,
+    pub upload_configurations: ::std::option::Option<::std::vec::Vec<crate::types::UploadConfiguration>>,
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
     /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
@@ -52,9 +51,7 @@ impl RobotApplicationConfig {
         self.launch_config.as_ref()
     }
     /// <p>The upload configurations for the robot application.</p>
-    pub fn upload_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UploadConfiguration]> {
+    pub fn upload_configurations(&self) -> ::std::option::Option<&[crate::types::UploadConfiguration]> {
         self.upload_configurations.as_deref()
     }
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
@@ -90,15 +87,12 @@ impl RobotApplicationConfig {
 
 /// A builder for [`RobotApplicationConfig`](crate::types::RobotApplicationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RobotApplicationConfigBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) application_version: ::std::option::Option<::std::string::String>,
     pub(crate) launch_config: ::std::option::Option<crate::types::LaunchConfig>,
-    pub(crate) upload_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::UploadConfiguration>>,
+    pub(crate) upload_configurations: ::std::option::Option<::std::vec::Vec<crate::types::UploadConfiguration>>,
     pub(crate) use_default_upload_configurations: ::std::option::Option<bool>,
     pub(crate) tools: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
     pub(crate) use_default_tools: ::std::option::Option<bool>,
@@ -119,18 +113,12 @@ impl RobotApplicationConfigBuilder {
         &self.application
     }
     /// <p>The version of the robot application.</p>
-    pub fn application_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the robot application.</p>
-    pub fn set_application_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_version = input;
         self
     }
@@ -144,10 +132,7 @@ impl RobotApplicationConfigBuilder {
         self
     }
     /// <p>The launch configuration for the robot application.</p>
-    pub fn set_launch_config(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchConfig>,
-    ) -> Self {
+    pub fn set_launch_config(mut self, input: ::std::option::Option<crate::types::LaunchConfig>) -> Self {
         self.launch_config = input;
         self
     }
@@ -167,17 +152,12 @@ impl RobotApplicationConfigBuilder {
         self
     }
     /// <p>The upload configurations for the robot application.</p>
-    pub fn set_upload_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UploadConfiguration>>,
-    ) -> Self {
+    pub fn set_upload_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UploadConfiguration>>) -> Self {
         self.upload_configurations = input;
         self
     }
     /// <p>The upload configurations for the robot application.</p>
-    pub fn get_upload_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UploadConfiguration>> {
+    pub fn get_upload_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UploadConfiguration>> {
         &self.upload_configurations
     }
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
@@ -198,10 +178,7 @@ impl RobotApplicationConfigBuilder {
     #[deprecated(
         note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
     )]
-    pub fn set_use_default_upload_configurations(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_use_default_upload_configurations(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_default_upload_configurations = input;
         self
     }
@@ -227,10 +204,7 @@ impl RobotApplicationConfigBuilder {
         self
     }
     /// <p>Information about tools configured for the robot application.</p>
-    pub fn set_tools(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
-    ) -> Self {
+    pub fn set_tools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>) -> Self {
         self.tools = input;
         self
     }

@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DisassociateResolverEndpointIpAddress
 }
 impl DisassociateResolverEndpointIpAddressOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateResolverEndpointIpAddressOutput`](crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput).
-    pub fn builder() -> crate::operation::disassociate_resolver_endpoint_ip_address::builders::DisassociateResolverEndpointIpAddressOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_resolver_endpoint_ip_address::builders::DisassociateResolverEndpointIpAddressOutputBuilder {
         crate::operation::disassociate_resolver_endpoint_ip_address::builders::DisassociateResolverEndpointIpAddressOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateResolverEndpointIpAddressOutput`](crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateResolverEndpointIpAddressOutputBuilder {
     pub(crate) resolver_endpoint: ::std::option::Option<crate::types::ResolverEndpoint>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DisassociateResolverEndpointIpAddressOutputBuilder {
         self
     }
     /// <p>The response to an <code>DisassociateResolverEndpointIpAddress</code> request.</p>
-    pub fn set_resolver_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverEndpoint>,
-    ) -> Self {
+    pub fn set_resolver_endpoint(mut self, input: ::std::option::Option<crate::types::ResolverEndpoint>) -> Self {
         self.resolver_endpoint = input;
         self
     }
@@ -63,10 +58,9 @@ impl DisassociateResolverEndpointIpAddressOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateResolverEndpointIpAddressOutput`](crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput).
-    pub fn build(self) -> crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput{
+    pub fn build(self) -> crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput {
         crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput {
-            resolver_endpoint: self.resolver_endpoint
-            ,
+            resolver_endpoint: self.resolver_endpoint,
             _request_id: self._request_id,
         }
     }

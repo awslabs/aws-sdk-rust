@@ -35,9 +35,7 @@ impl ListIndexesOutput {
 
 /// A builder for [`ListIndexesOutput`](crate::operation::list_indexes::ListIndexesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIndexesOutputBuilder {
     pub(crate) indexes: ::std::option::Option<::std::vec::Vec<crate::types::Index>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListIndexesOutputBuilder {
         self
     }
     /// <p>A structure that contains the details and status of each index.</p>
-    pub fn set_indexes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Index>>,
-    ) -> Self {
+    pub fn set_indexes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Index>>) -> Self {
         self.indexes = input;
         self
     }

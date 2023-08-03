@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeStreamOutput`](crate::operation::describe_stream::DescribeStreamOutput) with field(s):
     ///   - [`stream_description(Option<StreamDescription>)`](crate::operation::describe_stream::DescribeStreamOutput::stream_description): <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array of shard objects that comprise the stream, and whether there are more shards available.</p>
     /// - On failure, responds with [`SdkError<DescribeStreamError>`](crate::operation::describe_stream::DescribeStreamError)
-    pub fn describe_stream(
-        &self,
-    ) -> crate::operation::describe_stream::builders::DescribeStreamFluentBuilder {
-        crate::operation::describe_stream::builders::DescribeStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_stream(&self) -> crate::operation::describe_stream::builders::DescribeStreamFluentBuilder {
+        crate::operation::describe_stream::builders::DescribeStreamFluentBuilder::new(self.handle.clone())
     }
 }

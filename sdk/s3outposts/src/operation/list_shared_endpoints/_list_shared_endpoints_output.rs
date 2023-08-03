@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListSharedEndpointsOutput {
 }
 impl ListSharedEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListSharedEndpointsOutput`](crate::operation::list_shared_endpoints::ListSharedEndpointsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_shared_endpoints::builders::ListSharedEndpointsOutputBuilder {
-        crate::operation::list_shared_endpoints::builders::ListSharedEndpointsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_shared_endpoints::builders::ListSharedEndpointsOutputBuilder {
+        crate::operation::list_shared_endpoints::builders::ListSharedEndpointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSharedEndpointsOutput`](crate::operation::list_shared_endpoints::ListSharedEndpointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSharedEndpointsOutputBuilder {
     pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListSharedEndpointsOutputBuilder {
         self
     }
     /// <p>The list of endpoints associated with the specified Outpost that have been shared by Amazon Web Services Resource Access Manager (RAM).</p>
-    pub fn set_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
-    ) -> Self {
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>) -> Self {
         self.endpoints = input;
         self
     }

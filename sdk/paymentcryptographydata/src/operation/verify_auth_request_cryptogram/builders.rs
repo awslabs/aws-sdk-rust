@@ -34,7 +34,7 @@ impl VerifyAuthRequestCryptogramInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct VerifyAuthRequestCryptogramFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::verify_auth_request_cryptogram::builders::VerifyAuthRequestCryptogramInputBuilder,
+    inner: crate::operation::verify_auth_request_cryptogram::builders::VerifyAuthRequestCryptogramInputBuilder,
 }
 impl VerifyAuthRequestCryptogramFluentBuilder {
     /// Creates a new `VerifyAuthRequestCryptogram`.
@@ -45,7 +45,7 @@ impl VerifyAuthRequestCryptogramFluentBuilder {
         }
     }
     /// Access the VerifyAuthRequestCryptogram as a reference.
-    pub fn as_input(&self) -> &crate::operation::verify_auth_request_cryptogram::builders::VerifyAuthRequestCryptogramInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::verify_auth_request_cryptogram::builders::VerifyAuthRequestCryptogramInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl VerifyAuthRequestCryptogramFluentBuilder {
             crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogram,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl VerifyAuthRequestCryptogramFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl VerifyAuthRequestCryptogramFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl VerifyAuthRequestCryptogramFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError>,
     > {
         self.send_middleware().await
     }
@@ -122,25 +113,17 @@ impl VerifyAuthRequestCryptogramFluentBuilder {
             crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogram,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>keyARN</code> of the major encryption key that Amazon Web Services Payment Cryptography uses for ARQC verification.</p>
-    pub fn key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_identifier(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the major encryption key that Amazon Web Services Payment Cryptography uses for ARQC verification.</p>
-    pub fn set_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_identifier(input);
         self
     }
@@ -149,18 +132,12 @@ impl VerifyAuthRequestCryptogramFluentBuilder {
         self.inner.get_key_identifier()
     }
     /// <p>The transaction data that Amazon Web Services Payment Cryptography uses for ARQC verification. The same transaction is used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
-    pub fn transaction_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transaction_data(input.into());
         self
     }
     /// <p>The transaction data that Amazon Web Services Payment Cryptography uses for ARQC verification. The same transaction is used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
-    pub fn set_transaction_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transaction_data(input);
         self
     }
@@ -169,18 +146,12 @@ impl VerifyAuthRequestCryptogramFluentBuilder {
         self.inner.get_transaction_data()
     }
     /// <p>The auth request cryptogram imported into Amazon Web Services Payment Cryptography for ARQC verification using a major encryption key and transaction data.</p>
-    pub fn auth_request_cryptogram(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auth_request_cryptogram(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auth_request_cryptogram(input.into());
         self
     }
     /// <p>The auth request cryptogram imported into Amazon Web Services Payment Cryptography for ARQC verification using a major encryption key and transaction data.</p>
-    pub fn set_auth_request_cryptogram(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auth_request_cryptogram(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auth_request_cryptogram(input);
         self
     }
@@ -189,47 +160,31 @@ impl VerifyAuthRequestCryptogramFluentBuilder {
         self.inner.get_auth_request_cryptogram()
     }
     /// <p>The method to use when deriving the major encryption key for ARQC verification within Amazon Web Services Payment Cryptography. The same key derivation mode was used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
-    pub fn major_key_derivation_mode(
-        mut self,
-        input: crate::types::MajorKeyDerivationMode,
-    ) -> Self {
+    pub fn major_key_derivation_mode(mut self, input: crate::types::MajorKeyDerivationMode) -> Self {
         self.inner = self.inner.major_key_derivation_mode(input);
         self
     }
     /// <p>The method to use when deriving the major encryption key for ARQC verification within Amazon Web Services Payment Cryptography. The same key derivation mode was used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
-    pub fn set_major_key_derivation_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::MajorKeyDerivationMode>,
-    ) -> Self {
+    pub fn set_major_key_derivation_mode(mut self, input: ::std::option::Option<crate::types::MajorKeyDerivationMode>) -> Self {
         self.inner = self.inner.set_major_key_derivation_mode(input);
         self
     }
     /// <p>The method to use when deriving the major encryption key for ARQC verification within Amazon Web Services Payment Cryptography. The same key derivation mode was used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
-    pub fn get_major_key_derivation_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::MajorKeyDerivationMode> {
+    pub fn get_major_key_derivation_mode(&self) -> &::std::option::Option<crate::types::MajorKeyDerivationMode> {
         self.inner.get_major_key_derivation_mode()
     }
     /// <p>The attributes and values to use for deriving a session key for ARQC verification within Amazon Web Services Payment Cryptography. The same attributes were used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
-    pub fn session_key_derivation_attributes(
-        mut self,
-        input: crate::types::SessionKeyDerivation,
-    ) -> Self {
+    pub fn session_key_derivation_attributes(mut self, input: crate::types::SessionKeyDerivation) -> Self {
         self.inner = self.inner.session_key_derivation_attributes(input);
         self
     }
     /// <p>The attributes and values to use for deriving a session key for ARQC verification within Amazon Web Services Payment Cryptography. The same attributes were used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
-    pub fn set_session_key_derivation_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionKeyDerivation>,
-    ) -> Self {
+    pub fn set_session_key_derivation_attributes(mut self, input: ::std::option::Option<crate::types::SessionKeyDerivation>) -> Self {
         self.inner = self.inner.set_session_key_derivation_attributes(input);
         self
     }
     /// <p>The attributes and values to use for deriving a session key for ARQC verification within Amazon Web Services Payment Cryptography. The same attributes were used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
-    pub fn get_session_key_derivation_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::SessionKeyDerivation> {
+    pub fn get_session_key_derivation_attributes(&self) -> &::std::option::Option<crate::types::SessionKeyDerivation> {
         self.inner.get_session_key_derivation_attributes()
     }
     /// <p>The attributes and values for auth request cryptogram verification. These parameters are required in case using ARPC Method 1 or Method 2 for ARQC verification.</p>
@@ -238,17 +193,12 @@ impl VerifyAuthRequestCryptogramFluentBuilder {
         self
     }
     /// <p>The attributes and values for auth request cryptogram verification. These parameters are required in case using ARPC Method 1 or Method 2 for ARQC verification.</p>
-    pub fn set_auth_response_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::CryptogramAuthResponse>,
-    ) -> Self {
+    pub fn set_auth_response_attributes(mut self, input: ::std::option::Option<crate::types::CryptogramAuthResponse>) -> Self {
         self.inner = self.inner.set_auth_response_attributes(input);
         self
     }
     /// <p>The attributes and values for auth request cryptogram verification. These parameters are required in case using ARPC Method 1 or Method 2 for ARQC verification.</p>
-    pub fn get_auth_response_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::CryptogramAuthResponse> {
+    pub fn get_auth_response_attributes(&self) -> &::std::option::Option<crate::types::CryptogramAuthResponse> {
         self.inner.get_auth_response_attributes()
     }
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteFolderContentsOutput {
 }
 impl DeleteFolderContentsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFolderContentsOutput`](crate::operation::delete_folder_contents::DeleteFolderContentsOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_folder_contents::builders::DeleteFolderContentsOutputBuilder {
+    pub fn builder() -> crate::operation::delete_folder_contents::builders::DeleteFolderContentsOutputBuilder {
         crate::operation::delete_folder_contents::builders::DeleteFolderContentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFolderContentsOutput`](crate::operation::delete_folder_contents::DeleteFolderContentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFolderContentsOutputBuilder {
     _request_id: Option<String>,
 }

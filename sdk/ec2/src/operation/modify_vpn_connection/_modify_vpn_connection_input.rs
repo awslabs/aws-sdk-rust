@@ -43,18 +43,14 @@ impl ModifyVpnConnectionInput {
 }
 impl ModifyVpnConnectionInput {
     /// Creates a new builder-style object to manufacture [`ModifyVpnConnectionInput`](crate::operation::modify_vpn_connection::ModifyVpnConnectionInput).
-    pub fn builder(
-    ) -> crate::operation::modify_vpn_connection::builders::ModifyVpnConnectionInputBuilder {
-        crate::operation::modify_vpn_connection::builders::ModifyVpnConnectionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::modify_vpn_connection::builders::ModifyVpnConnectionInputBuilder {
+        crate::operation::modify_vpn_connection::builders::ModifyVpnConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpnConnectionInput`](crate::operation::modify_vpn_connection::ModifyVpnConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpnConnectionInputBuilder {
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
@@ -64,18 +60,12 @@ pub struct ModifyVpnConnectionInputBuilder {
 }
 impl ModifyVpnConnectionInputBuilder {
     /// <p>The ID of the VPN connection.</p>
-    pub fn vpn_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPN connection.</p>
-    pub fn set_vpn_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_connection_id = input;
         self
     }
@@ -84,18 +74,12 @@ impl ModifyVpnConnectionInputBuilder {
         &self.vpn_connection_id
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_id = input;
         self
     }
@@ -104,18 +88,12 @@ impl ModifyVpnConnectionInputBuilder {
         &self.transit_gateway_id
     }
     /// <p>The ID of the customer gateway at your end of the VPN connection.</p>
-    pub fn customer_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the customer gateway at your end of the VPN connection.</p>
-    pub fn set_customer_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_gateway_id = input;
         self
     }
@@ -124,18 +102,12 @@ impl ModifyVpnConnectionInputBuilder {
         &self.customer_gateway_id
     }
     /// <p>The ID of the virtual private gateway at the Amazon Web Services side of the VPN connection.</p>
-    pub fn vpn_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual private gateway at the Amazon Web Services side of the VPN connection.</p>
-    pub fn set_vpn_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_gateway_id = input;
         self
     }
@@ -160,18 +132,14 @@ impl ModifyVpnConnectionInputBuilder {
     /// Consumes the builder and constructs a [`ModifyVpnConnectionInput`](crate::operation::modify_vpn_connection::ModifyVpnConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_vpn_connection::ModifyVpnConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_vpn_connection::ModifyVpnConnectionInput {
-                vpn_connection_id: self.vpn_connection_id,
-                transit_gateway_id: self.transit_gateway_id,
-                customer_gateway_id: self.customer_gateway_id,
-                vpn_gateway_id: self.vpn_gateway_id,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_vpn_connection::ModifyVpnConnectionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::modify_vpn_connection::ModifyVpnConnectionInput {
+            vpn_connection_id: self.vpn_connection_id,
+            transit_gateway_id: self.transit_gateway_id,
+            customer_gateway_id: self.customer_gateway_id,
+            vpn_gateway_id: self.vpn_gateway_id,
+            dry_run: self.dry_run,
+        })
     }
 }

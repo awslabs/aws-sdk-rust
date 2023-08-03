@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateRoutingProfileNameOutput {
 }
 impl UpdateRoutingProfileNameOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRoutingProfileNameOutput`](crate::operation::update_routing_profile_name::UpdateRoutingProfileNameOutput).
-    pub fn builder() -> crate::operation::update_routing_profile_name::builders::UpdateRoutingProfileNameOutputBuilder{
+    pub fn builder() -> crate::operation::update_routing_profile_name::builders::UpdateRoutingProfileNameOutputBuilder {
         crate::operation::update_routing_profile_name::builders::UpdateRoutingProfileNameOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRoutingProfileNameOutput`](crate::operation::update_routing_profile_name::UpdateRoutingProfileNameOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRoutingProfileNameOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateRoutingProfileNameOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateRoutingProfileNameOutput`](crate::operation::update_routing_profile_name::UpdateRoutingProfileNameOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_routing_profile_name::UpdateRoutingProfileNameOutput {
+    pub fn build(self) -> crate::operation::update_routing_profile_name::UpdateRoutingProfileNameOutput {
         crate::operation::update_routing_profile_name::UpdateRoutingProfileNameOutput {
             _request_id: self._request_id,
         }

@@ -37,9 +37,7 @@ impl DescribeCustomPluginFluentBuilder {
         }
     }
     /// Access the DescribeCustomPlugin as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_custom_plugin::builders::DescribeCustomPluginInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_custom_plugin::builders::DescribeCustomPluginInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeCustomPluginFluentBuilder {
             crate::operation::describe_custom_plugin::DescribeCustomPlugin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_custom_plugin::DescribeCustomPluginError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_plugin::DescribeCustomPluginError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeCustomPluginFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeCustomPluginFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_custom_plugin::DescribeCustomPluginOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_custom_plugin::DescribeCustomPluginError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_plugin::DescribeCustomPluginError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeCustomPluginFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_custom_plugin::DescribeCustomPluginOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_custom_plugin::DescribeCustomPluginError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_plugin::DescribeCustomPluginError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeCustomPluginFluentBuilder {
             crate::operation::describe_custom_plugin::DescribeCustomPlugin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_custom_plugin::DescribeCustomPluginError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_plugin::DescribeCustomPluginError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Returns information about a custom plugin.</p>
-    pub fn custom_plugin_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_plugin_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_plugin_arn(input.into());
         self
     }
     /// <p>Returns information about a custom plugin.</p>
-    pub fn set_custom_plugin_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_plugin_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_plugin_arn(input);
         self
     }

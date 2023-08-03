@@ -37,9 +37,7 @@ impl DnsServiceDiscovery {
 
 /// A builder for [`DnsServiceDiscovery`](crate::types::DnsServiceDiscovery).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DnsServiceDiscoveryBuilder {
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
     pub(crate) response_type: ::std::option::Option<crate::types::DnsResponseType>,
@@ -66,10 +64,7 @@ impl DnsServiceDiscoveryBuilder {
         self
     }
     /// <p>Specifies the DNS response type for the virtual node.</p>
-    pub fn set_response_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DnsResponseType>,
-    ) -> Self {
+    pub fn set_response_type(mut self, input: ::std::option::Option<crate::types::DnsResponseType>) -> Self {
         self.response_type = input;
         self
     }
@@ -83,10 +78,7 @@ impl DnsServiceDiscoveryBuilder {
         self
     }
     /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
-    pub fn set_ip_preference(
-        mut self,
-        input: ::std::option::Option<crate::types::IpPreference>,
-    ) -> Self {
+    pub fn set_ip_preference(mut self, input: ::std::option::Option<crate::types::IpPreference>) -> Self {
         self.ip_preference = input;
         self
     }

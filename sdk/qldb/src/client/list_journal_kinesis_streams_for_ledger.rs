@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`streams(Option<Vec<JournalKinesisStreamDescription>>)`](crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerOutput::streams): <p>The QLDB journal streams that are currently associated with the given ledger.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerOutput::next_token): <ul>   <li> <p>If <code>NextToken</code> is empty, the last page of results has been processed and there are no more results to be retrieved.</p> </li>   <li> <p>If <code>NextToken</code> is <i>not</i> empty, more results are available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalKinesisStreamsForLedger</code> call.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<ListJournalKinesisStreamsForLedgerError>`](crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerError)
-    pub fn list_journal_kinesis_streams_for_ledger(&self) -> crate::operation::list_journal_kinesis_streams_for_ledger::builders::ListJournalKinesisStreamsForLedgerFluentBuilder{
+    pub fn list_journal_kinesis_streams_for_ledger(
+        &self,
+    ) -> crate::operation::list_journal_kinesis_streams_for_ledger::builders::ListJournalKinesisStreamsForLedgerFluentBuilder {
         crate::operation::list_journal_kinesis_streams_for_ledger::builders::ListJournalKinesisStreamsForLedgerFluentBuilder::new(self.handle.clone())
     }
 }

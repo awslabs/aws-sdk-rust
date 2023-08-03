@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveFacetFromObjectOutput {
 }
 impl RemoveFacetFromObjectOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFacetFromObjectOutput`](crate::operation::remove_facet_from_object::RemoveFacetFromObjectOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectOutputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectOutputBuilder {
         crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveFacetFromObjectOutput`](crate::operation::remove_facet_from_object::RemoveFacetFromObjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveFacetFromObjectOutputBuilder {
     _request_id: Option<String>,
 }

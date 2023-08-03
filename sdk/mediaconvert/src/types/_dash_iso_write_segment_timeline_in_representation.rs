@@ -38,13 +38,7 @@
 /// When you enable Precise segment duration in manifests, your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DashIsoWriteSegmentTimelineInRepresentation {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for DashIsoWriteSegmentTimelineInRepresentation 
         match s {
             "DISABLED" => DashIsoWriteSegmentTimelineInRepresentation::Disabled,
             "ENABLED" => DashIsoWriteSegmentTimelineInRepresentation::Enabled,
-            other => DashIsoWriteSegmentTimelineInRepresentation::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => DashIsoWriteSegmentTimelineInRepresentation::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

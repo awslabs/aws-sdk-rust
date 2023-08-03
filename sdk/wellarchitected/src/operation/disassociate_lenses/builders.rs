@@ -10,10 +10,7 @@ impl DisassociateLensesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disassociate_lenses::DisassociateLensesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_lenses::DisassociateLensesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_lenses::DisassociateLensesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disassociate_lenses();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DisassociateLensesFluentBuilder {
         }
     }
     /// Access the DisassociateLenses as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_lenses::builders::DisassociateLensesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disassociate_lenses::builders::DisassociateLensesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DisassociateLensesFluentBuilder {
             crate::operation::disassociate_lenses::DisassociateLenses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_lenses::DisassociateLensesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_lenses::DisassociateLensesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DisassociateLensesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DisassociateLensesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_lenses::DisassociateLensesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_lenses::DisassociateLensesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_lenses::DisassociateLensesError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DisassociateLensesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_lenses::DisassociateLensesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_lenses::DisassociateLensesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_lenses::DisassociateLensesError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl DisassociateLensesFluentBuilder {
             crate::operation::disassociate_lenses::DisassociateLenses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_lenses::DisassociateLensesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_lenses::DisassociateLensesError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,13 @@ impl DisassociateLensesFluentBuilder {
     }
     /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
     /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
-    pub fn set_lens_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_lens_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_lens_aliases(input);
         self
     }
     /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
     /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
-    pub fn get_lens_aliases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lens_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_lens_aliases()
     }
 }

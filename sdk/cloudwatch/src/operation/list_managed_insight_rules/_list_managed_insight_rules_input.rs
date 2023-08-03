@@ -29,18 +29,14 @@ impl ListManagedInsightRulesInput {
 }
 impl ListManagedInsightRulesInput {
     /// Creates a new builder-style object to manufacture [`ListManagedInsightRulesInput`](crate::operation::list_managed_insight_rules::ListManagedInsightRulesInput).
-    pub fn builder(
-    ) -> crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesInputBuilder {
         crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListManagedInsightRulesInput`](crate::operation::list_managed_insight_rules::ListManagedInsightRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListManagedInsightRulesInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,12 +92,10 @@ impl ListManagedInsightRulesInputBuilder {
         crate::operation::list_managed_insight_rules::ListManagedInsightRulesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_managed_insight_rules::ListManagedInsightRulesInput {
-                resource_arn: self.resource_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_managed_insight_rules::ListManagedInsightRulesInput {
+            resource_arn: self.resource_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -37,9 +37,7 @@ impl Event {
 
 /// A builder for [`Event`](crate::types::Event).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventBuilder {
     pub(crate) event_name: ::std::option::Option<::std::string::String>,
     pub(crate) condition: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl EventBuilder {
         self
     }
     /// <p>The actions to be performed.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.actions = input;
         self
     }

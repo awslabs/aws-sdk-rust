@@ -19,10 +19,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_robot_application::CreateRobotApplicationOutput::tags): <p>The list of all tags added to the robot application.</p>
     ///   - [`environment(Option<Environment>)`](crate::operation::create_robot_application::CreateRobotApplicationOutput::environment): <p>An object that contains the Docker image URI used to a create your robot application.</p>
     /// - On failure, responds with [`SdkError<CreateRobotApplicationError>`](crate::operation::create_robot_application::CreateRobotApplicationError)
-    pub fn create_robot_application(
-        &self,
-    ) -> crate::operation::create_robot_application::builders::CreateRobotApplicationFluentBuilder
-    {
+    pub fn create_robot_application(&self) -> crate::operation::create_robot_application::builders::CreateRobotApplicationFluentBuilder {
         crate::operation::create_robot_application::builders::CreateRobotApplicationFluentBuilder::new(self.handle.clone())
     }
 }

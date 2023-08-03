@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`latest_revision(Option<ConfigurationRevision>)`](crate::operation::create_configuration::CreateConfigurationOutput::latest_revision): <p>The latest revision of the configuration.</p>
     ///   - [`name(Option<String>)`](crate::operation::create_configuration::CreateConfigurationOutput::name): <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
     /// - On failure, responds with [`SdkError<CreateConfigurationError>`](crate::operation::create_configuration::CreateConfigurationError)
-    pub fn create_configuration(
-        &self,
-    ) -> crate::operation::create_configuration::builders::CreateConfigurationFluentBuilder {
-        crate::operation::create_configuration::builders::CreateConfigurationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_configuration(&self) -> crate::operation::create_configuration::builders::CreateConfigurationFluentBuilder {
+        crate::operation::create_configuration::builders::CreateConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

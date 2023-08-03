@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DeleteExpressionOutput {
 }
 impl DeleteExpressionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteExpressionOutput`](crate::operation::delete_expression::DeleteExpressionOutput).
-    pub fn builder() -> crate::operation::delete_expression::builders::DeleteExpressionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_expression::builders::DeleteExpressionOutputBuilder {
         crate::operation::delete_expression::builders::DeleteExpressionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteExpressionOutput`](crate::operation::delete_expression::DeleteExpressionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteExpressionOutputBuilder {
     pub(crate) expression: ::std::option::Option<crate::types::ExpressionStatus>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl DeleteExpressionOutputBuilder {
         self
     }
     /// <p>The status of the expression being deleted.</p>
-    pub fn set_expression(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpressionStatus>,
-    ) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<crate::types::ExpressionStatus>) -> Self {
         self.expression = input;
         self
     }

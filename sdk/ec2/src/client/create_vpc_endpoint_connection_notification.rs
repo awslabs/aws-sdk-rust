@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`connection_notification(Option<ConnectionNotification>)`](crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationOutput::connection_notification): <p>Information about the notification.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationOutput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     /// - On failure, responds with [`SdkError<CreateVpcEndpointConnectionNotificationError>`](crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationError)
-    pub fn create_vpc_endpoint_connection_notification(&self) -> crate::operation::create_vpc_endpoint_connection_notification::builders::CreateVpcEndpointConnectionNotificationFluentBuilder{
-        crate::operation::create_vpc_endpoint_connection_notification::builders::CreateVpcEndpointConnectionNotificationFluentBuilder::new(self.handle.clone())
+    pub fn create_vpc_endpoint_connection_notification(
+        &self,
+    ) -> crate::operation::create_vpc_endpoint_connection_notification::builders::CreateVpcEndpointConnectionNotificationFluentBuilder {
+        crate::operation::create_vpc_endpoint_connection_notification::builders::CreateVpcEndpointConnectionNotificationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

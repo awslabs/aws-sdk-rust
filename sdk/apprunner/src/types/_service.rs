@@ -47,15 +47,13 @@ pub struct Service {
     pub health_check_configuration: ::std::option::Option<crate::types::HealthCheckConfiguration>,
     /// <p>Summary information for the App Runner automatic scaling configuration resource that's associated with this service.</p>
     #[doc(hidden)]
-    pub auto_scaling_configuration_summary:
-        ::std::option::Option<crate::types::AutoScalingConfigurationSummary>,
+    pub auto_scaling_configuration_summary: ::std::option::Option<crate::types::AutoScalingConfigurationSummary>,
     /// <p>Configuration settings related to network traffic of the web application that this service runs.</p>
     #[doc(hidden)]
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>The observability configuration of this service.</p>
     #[doc(hidden)]
-    pub observability_configuration:
-        ::std::option::Option<crate::types::ServiceObservabilityConfiguration>,
+    pub observability_configuration: ::std::option::Option<crate::types::ServiceObservabilityConfiguration>,
 }
 impl Service {
     /// <p>The customer-provided service name.</p>
@@ -95,45 +93,31 @@ impl Service {
         self.status.as_ref()
     }
     /// <p>The source deployed to the App Runner service. It can be a code or an image repository.</p>
-    pub fn source_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceConfiguration> {
+    pub fn source_configuration(&self) -> ::std::option::Option<&crate::types::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
     /// <p>The runtime configuration of instances (scaling units) of this service.</p>
-    pub fn instance_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceConfiguration> {
+    pub fn instance_configuration(&self) -> ::std::option::Option<&crate::types::InstanceConfiguration> {
         self.instance_configuration.as_ref()
     }
     /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be either a customer-provided encryption key or an Amazon Web Services managed key.</p>
-    pub fn encryption_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>The settings for the health check that App Runner performs to monitor the health of this service.</p>
-    pub fn health_check_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HealthCheckConfiguration> {
+    pub fn health_check_configuration(&self) -> ::std::option::Option<&crate::types::HealthCheckConfiguration> {
         self.health_check_configuration.as_ref()
     }
     /// <p>Summary information for the App Runner automatic scaling configuration resource that's associated with this service.</p>
-    pub fn auto_scaling_configuration_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoScalingConfigurationSummary> {
+    pub fn auto_scaling_configuration_summary(&self) -> ::std::option::Option<&crate::types::AutoScalingConfigurationSummary> {
         self.auto_scaling_configuration_summary.as_ref()
     }
     /// <p>Configuration settings related to network traffic of the web application that this service runs.</p>
-    pub fn network_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
+    pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
     /// <p>The observability configuration of this service.</p>
-    pub fn observability_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceObservabilityConfiguration> {
+    pub fn observability_configuration(&self) -> ::std::option::Option<&crate::types::ServiceObservabilityConfiguration> {
         self.observability_configuration.as_ref()
     }
 }
@@ -146,9 +130,7 @@ impl Service {
 
 /// A builder for [`Service`](crate::types::Service).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
@@ -160,15 +142,11 @@ pub struct ServiceBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ServiceStatus>,
     pub(crate) source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
     pub(crate) instance_configuration: ::std::option::Option<crate::types::InstanceConfiguration>,
-    pub(crate) encryption_configuration:
-        ::std::option::Option<crate::types::EncryptionConfiguration>,
-    pub(crate) health_check_configuration:
-        ::std::option::Option<crate::types::HealthCheckConfiguration>,
-    pub(crate) auto_scaling_configuration_summary:
-        ::std::option::Option<crate::types::AutoScalingConfigurationSummary>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) health_check_configuration: ::std::option::Option<crate::types::HealthCheckConfiguration>,
+    pub(crate) auto_scaling_configuration_summary: ::std::option::Option<crate::types::AutoScalingConfigurationSummary>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
-    pub(crate) observability_configuration:
-        ::std::option::Option<crate::types::ServiceObservabilityConfiguration>,
+    pub(crate) observability_configuration: ::std::option::Option<crate::types::ServiceObservabilityConfiguration>,
 }
 impl ServiceBuilder {
     /// <p>The customer-provided service name.</p>
@@ -233,10 +211,7 @@ impl ServiceBuilder {
         self
     }
     /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -250,10 +225,7 @@ impl ServiceBuilder {
         self
     }
     /// <p>The time when the App Runner service was last updated at. It's in the Unix time stamp format.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -267,10 +239,7 @@ impl ServiceBuilder {
         self
     }
     /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
-    pub fn set_deleted_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deleted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deleted_at = input;
         self
     }
@@ -310,17 +279,12 @@ impl ServiceBuilder {
         self
     }
     /// <p>The source deployed to the App Runner service. It can be a code or an image repository.</p>
-    pub fn set_source_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceConfiguration>,
-    ) -> Self {
+    pub fn set_source_configuration(mut self, input: ::std::option::Option<crate::types::SourceConfiguration>) -> Self {
         self.source_configuration = input;
         self
     }
     /// <p>The source deployed to the App Runner service. It can be a code or an image repository.</p>
-    pub fn get_source_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceConfiguration> {
+    pub fn get_source_configuration(&self) -> &::std::option::Option<crate::types::SourceConfiguration> {
         &self.source_configuration
     }
     /// <p>The runtime configuration of instances (scaling units) of this service.</p>
@@ -329,83 +293,54 @@ impl ServiceBuilder {
         self
     }
     /// <p>The runtime configuration of instances (scaling units) of this service.</p>
-    pub fn set_instance_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceConfiguration>,
-    ) -> Self {
+    pub fn set_instance_configuration(mut self, input: ::std::option::Option<crate::types::InstanceConfiguration>) -> Self {
         self.instance_configuration = input;
         self
     }
     /// <p>The runtime configuration of instances (scaling units) of this service.</p>
-    pub fn get_instance_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceConfiguration> {
+    pub fn get_instance_configuration(&self) -> &::std::option::Option<crate::types::InstanceConfiguration> {
         &self.instance_configuration
     }
     /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be either a customer-provided encryption key or an Amazon Web Services managed key.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be either a customer-provided encryption key or an Amazon Web Services managed key.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
     /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be either a customer-provided encryption key or an Amazon Web Services managed key.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
     /// <p>The settings for the health check that App Runner performs to monitor the health of this service.</p>
-    pub fn health_check_configuration(
-        mut self,
-        input: crate::types::HealthCheckConfiguration,
-    ) -> Self {
+    pub fn health_check_configuration(mut self, input: crate::types::HealthCheckConfiguration) -> Self {
         self.health_check_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the health check that App Runner performs to monitor the health of this service.</p>
-    pub fn set_health_check_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheckConfiguration>,
-    ) -> Self {
+    pub fn set_health_check_configuration(mut self, input: ::std::option::Option<crate::types::HealthCheckConfiguration>) -> Self {
         self.health_check_configuration = input;
         self
     }
     /// <p>The settings for the health check that App Runner performs to monitor the health of this service.</p>
-    pub fn get_health_check_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::HealthCheckConfiguration> {
+    pub fn get_health_check_configuration(&self) -> &::std::option::Option<crate::types::HealthCheckConfiguration> {
         &self.health_check_configuration
     }
     /// <p>Summary information for the App Runner automatic scaling configuration resource that's associated with this service.</p>
-    pub fn auto_scaling_configuration_summary(
-        mut self,
-        input: crate::types::AutoScalingConfigurationSummary,
-    ) -> Self {
+    pub fn auto_scaling_configuration_summary(mut self, input: crate::types::AutoScalingConfigurationSummary) -> Self {
         self.auto_scaling_configuration_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Summary information for the App Runner automatic scaling configuration resource that's associated with this service.</p>
-    pub fn set_auto_scaling_configuration_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingConfigurationSummary>,
-    ) -> Self {
+    pub fn set_auto_scaling_configuration_summary(mut self, input: ::std::option::Option<crate::types::AutoScalingConfigurationSummary>) -> Self {
         self.auto_scaling_configuration_summary = input;
         self
     }
     /// <p>Summary information for the App Runner automatic scaling configuration resource that's associated with this service.</p>
-    pub fn get_auto_scaling_configuration_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoScalingConfigurationSummary> {
+    pub fn get_auto_scaling_configuration_summary(&self) -> &::std::option::Option<crate::types::AutoScalingConfigurationSummary> {
         &self.auto_scaling_configuration_summary
     }
     /// <p>Configuration settings related to network traffic of the web application that this service runs.</p>
@@ -414,39 +349,26 @@ impl ServiceBuilder {
         self
     }
     /// <p>Configuration settings related to network traffic of the web application that this service runs.</p>
-    pub fn set_network_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkConfiguration>,
-    ) -> Self {
+    pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
         self.network_configuration = input;
         self
     }
     /// <p>Configuration settings related to network traffic of the web application that this service runs.</p>
-    pub fn get_network_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+    pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         &self.network_configuration
     }
     /// <p>The observability configuration of this service.</p>
-    pub fn observability_configuration(
-        mut self,
-        input: crate::types::ServiceObservabilityConfiguration,
-    ) -> Self {
+    pub fn observability_configuration(mut self, input: crate::types::ServiceObservabilityConfiguration) -> Self {
         self.observability_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The observability configuration of this service.</p>
-    pub fn set_observability_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceObservabilityConfiguration>,
-    ) -> Self {
+    pub fn set_observability_configuration(mut self, input: ::std::option::Option<crate::types::ServiceObservabilityConfiguration>) -> Self {
         self.observability_configuration = input;
         self
     }
     /// <p>The observability configuration of this service.</p>
-    pub fn get_observability_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceObservabilityConfiguration> {
+    pub fn get_observability_configuration(&self) -> &::std::option::Option<crate::types::ServiceObservabilityConfiguration> {
         &self.observability_configuration
     }
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).

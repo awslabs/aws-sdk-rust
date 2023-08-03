@@ -22,18 +22,14 @@ impl DescribeVcenterClientsInput {
 }
 impl DescribeVcenterClientsInput {
     /// Creates a new builder-style object to manufacture [`DescribeVcenterClientsInput`](crate::operation::describe_vcenter_clients::DescribeVcenterClientsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsInputBuilder {
         crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVcenterClientsInput`](crate::operation::describe_vcenter_clients::DescribeVcenterClientsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVcenterClientsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl DescribeVcenterClientsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVcenterClientsInput`](crate::operation::describe_vcenter_clients::DescribeVcenterClientsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_vcenter_clients::DescribeVcenterClientsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_vcenter_clients::DescribeVcenterClientsInput {
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_vcenter_clients::DescribeVcenterClientsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_vcenter_clients::DescribeVcenterClientsInput {
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }

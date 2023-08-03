@@ -22,35 +22,26 @@ impl ::aws_http::request_id::RequestId for UpdateVtlDeviceTypeOutput {
 }
 impl UpdateVtlDeviceTypeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVtlDeviceTypeOutput`](crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::update_vtl_device_type::builders::UpdateVtlDeviceTypeOutputBuilder {
+    pub fn builder() -> crate::operation::update_vtl_device_type::builders::UpdateVtlDeviceTypeOutputBuilder {
         crate::operation::update_vtl_device_type::builders::UpdateVtlDeviceTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVtlDeviceTypeOutput`](crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVtlDeviceTypeOutputBuilder {
     pub(crate) vtl_device_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateVtlDeviceTypeOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>
-    pub fn vtl_device_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vtl_device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vtl_device_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>
-    pub fn set_vtl_device_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vtl_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vtl_device_arn = input;
         self
     }

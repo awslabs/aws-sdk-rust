@@ -37,9 +37,7 @@ impl PutProjectEventsResultEntry {
 
 /// A builder for [`PutProjectEventsResultEntry`](crate::types::PutProjectEventsResultEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutProjectEventsResultEntryBuilder {
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl PutProjectEventsResultEntryBuilder {
         &self.error_code
     }
     /// <p>If the <code>PutProjectEvents</code> operation has an error, the error message is returned here.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the <code>PutProjectEvents</code> operation has an error, the error message is returned here.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

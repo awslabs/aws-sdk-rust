@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeRecommenderOutput`](crate::operation::describe_recommender::DescribeRecommenderOutput) with field(s):
     ///   - [`recommender(Option<Recommender>)`](crate::operation::describe_recommender::DescribeRecommenderOutput::recommender): <p>The properties of the recommender.</p>
     /// - On failure, responds with [`SdkError<DescribeRecommenderError>`](crate::operation::describe_recommender::DescribeRecommenderError)
-    pub fn describe_recommender(
-        &self,
-    ) -> crate::operation::describe_recommender::builders::DescribeRecommenderFluentBuilder {
-        crate::operation::describe_recommender::builders::DescribeRecommenderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_recommender(&self) -> crate::operation::describe_recommender::builders::DescribeRecommenderFluentBuilder {
+        crate::operation::describe_recommender::builders::DescribeRecommenderFluentBuilder::new(self.handle.clone())
     }
 }

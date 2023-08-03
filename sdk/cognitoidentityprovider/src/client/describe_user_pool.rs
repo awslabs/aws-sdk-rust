@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeUserPoolOutput`](crate::operation::describe_user_pool::DescribeUserPoolOutput) with field(s):
     ///   - [`user_pool(Option<UserPoolType>)`](crate::operation::describe_user_pool::DescribeUserPoolOutput::user_pool): <p>The container of metadata returned by the server to describe the pool.</p>
     /// - On failure, responds with [`SdkError<DescribeUserPoolError>`](crate::operation::describe_user_pool::DescribeUserPoolError)
-    pub fn describe_user_pool(
-        &self,
-    ) -> crate::operation::describe_user_pool::builders::DescribeUserPoolFluentBuilder {
-        crate::operation::describe_user_pool::builders::DescribeUserPoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_user_pool(&self) -> crate::operation::describe_user_pool::builders::DescribeUserPoolFluentBuilder {
+        crate::operation::describe_user_pool::builders::DescribeUserPoolFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl ActionSummary {
 
 /// A builder for [`ActionSummary`](crate::types::ActionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionSummaryBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::ActionType>,
 }
@@ -36,10 +34,7 @@ impl ActionSummaryBuilder {
         self
     }
     /// <p>The action type.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
         self.action_type = input;
         self
     }

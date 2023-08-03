@@ -5,8 +5,7 @@
 pub struct ListStageDeploymentsOutput {
     /// <p> A list of stage deployment summaries. You can use the deployment IDs in the <code>UpdateStageDeployment</code> and <code>GetStageDeployment</code> actions. </p>
     #[doc(hidden)]
-    pub stage_deployments:
-        ::std::option::Option<::std::vec::Vec<crate::types::StageDeploymentSummary>>,
+    pub stage_deployments: ::std::option::Option<::std::vec::Vec<crate::types::StageDeploymentSummary>>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
     #[doc(hidden)]
@@ -15,9 +14,7 @@ pub struct ListStageDeploymentsOutput {
 }
 impl ListStageDeploymentsOutput {
     /// <p> A list of stage deployment summaries. You can use the deployment IDs in the <code>UpdateStageDeployment</code> and <code>GetStageDeployment</code> actions. </p>
-    pub fn stage_deployments(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StageDeploymentSummary]> {
+    pub fn stage_deployments(&self) -> ::std::option::Option<&[crate::types::StageDeploymentSummary]> {
         self.stage_deployments.as_deref()
     }
     /// <p>The token that indicates the start of the next sequential page of results.</p>
@@ -33,20 +30,16 @@ impl ::aws_http::request_id::RequestId for ListStageDeploymentsOutput {
 }
 impl ListStageDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`ListStageDeploymentsOutput`](crate::operation::list_stage_deployments::ListStageDeploymentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_stage_deployments::builders::ListStageDeploymentsOutputBuilder {
+    pub fn builder() -> crate::operation::list_stage_deployments::builders::ListStageDeploymentsOutputBuilder {
         crate::operation::list_stage_deployments::builders::ListStageDeploymentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStageDeploymentsOutput`](crate::operation::list_stage_deployments::ListStageDeploymentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStageDeploymentsOutputBuilder {
-    pub(crate) stage_deployments:
-        ::std::option::Option<::std::vec::Vec<crate::types::StageDeploymentSummary>>,
+    pub(crate) stage_deployments: ::std::option::Option<::std::vec::Vec<crate::types::StageDeploymentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,17 +56,12 @@ impl ListStageDeploymentsOutputBuilder {
         self
     }
     /// <p> A list of stage deployment summaries. You can use the deployment IDs in the <code>UpdateStageDeployment</code> and <code>GetStageDeployment</code> actions. </p>
-    pub fn set_stage_deployments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StageDeploymentSummary>>,
-    ) -> Self {
+    pub fn set_stage_deployments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StageDeploymentSummary>>) -> Self {
         self.stage_deployments = input;
         self
     }
     /// <p> A list of stage deployment summaries. You can use the deployment IDs in the <code>UpdateStageDeployment</code> and <code>GetStageDeployment</code> actions. </p>
-    pub fn get_stage_deployments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StageDeploymentSummary>> {
+    pub fn get_stage_deployments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StageDeploymentSummary>> {
         &self.stage_deployments
     }
     /// <p>The token that indicates the start of the next sequential page of results.</p>

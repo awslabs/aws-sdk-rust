@@ -23,9 +23,7 @@ impl NetworkFabricConfiguration {
 
 /// A builder for [`NetworkFabricConfiguration`](crate::types::NetworkFabricConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkFabricConfigurationBuilder {
     pub(crate) edition: ::std::option::Option<crate::types::Edition>,
 }
@@ -46,8 +44,6 @@ impl NetworkFabricConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`NetworkFabricConfiguration`](crate::types::NetworkFabricConfiguration).
     pub fn build(self) -> crate::types::NetworkFabricConfiguration {
-        crate::types::NetworkFabricConfiguration {
-            edition: self.edition,
-        }
+        crate::types::NetworkFabricConfiguration { edition: self.edition }
     }
 }

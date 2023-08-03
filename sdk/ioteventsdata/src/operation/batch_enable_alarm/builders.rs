@@ -10,10 +10,7 @@ impl BatchEnableAlarmInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_enable_alarm::BatchEnableAlarmOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_enable_alarm::BatchEnableAlarmError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_enable_alarm::BatchEnableAlarmError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_enable_alarm();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchEnableAlarmFluentBuilder {
         }
     }
     /// Access the BatchEnableAlarm as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_enable_alarm::builders::BatchEnableAlarmInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_enable_alarm::builders::BatchEnableAlarmInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchEnableAlarmFluentBuilder {
             crate::operation::batch_enable_alarm::BatchEnableAlarm,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_enable_alarm::BatchEnableAlarmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_enable_alarm::BatchEnableAlarmError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchEnableAlarmFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchEnableAlarmFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_enable_alarm::BatchEnableAlarmOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_enable_alarm::BatchEnableAlarmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_enable_alarm::BatchEnableAlarmError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchEnableAlarmFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_enable_alarm::BatchEnableAlarmOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_enable_alarm::BatchEnableAlarmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_enable_alarm::BatchEnableAlarmError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchEnableAlarmFluentBuilder {
             crate::operation::batch_enable_alarm::BatchEnableAlarm,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_enable_alarm::BatchEnableAlarmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_enable_alarm::BatchEnableAlarmError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +116,12 @@ impl BatchEnableAlarmFluentBuilder {
         self
     }
     /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-    pub fn set_enable_action_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>>,
-    ) -> Self {
+    pub fn set_enable_action_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>>) -> Self {
         self.inner = self.inner.set_enable_action_requests(input);
         self
     }
     /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-    pub fn get_enable_action_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>> {
+    pub fn get_enable_action_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>> {
         self.inner.get_enable_action_requests()
     }
 }

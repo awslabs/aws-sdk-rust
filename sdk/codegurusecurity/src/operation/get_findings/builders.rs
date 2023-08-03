@@ -10,10 +10,7 @@ impl GetFindingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_findings::GetFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_findings::GetFindingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_findings::GetFindingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_findings();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetFindingsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_findings::GetFindings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_findings::GetFindings, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_findings::GetFindingsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetFindingsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_findings::GetFindings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_findings::GetFindings, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_findings::GetFindingsError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl GetFindingsFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_findings::paginator::GetFindingsPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::get_findings::paginator::GetFindingsPaginator {
-        crate::operation::get_findings::paginator::GetFindingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::get_findings::paginator::GetFindingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the scan you want to retrieve findings from.</p>
     pub fn scan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

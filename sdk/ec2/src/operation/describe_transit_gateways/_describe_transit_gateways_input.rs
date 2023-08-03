@@ -69,18 +69,14 @@ impl DescribeTransitGatewaysInput {
 }
 impl DescribeTransitGatewaysInput {
     /// Creates a new builder-style object to manufacture [`DescribeTransitGatewaysInput`](crate::operation::describe_transit_gateways::DescribeTransitGatewaysInput).
-    pub fn builder(
-    ) -> crate::operation::describe_transit_gateways::builders::DescribeTransitGatewaysInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_transit_gateways::builders::DescribeTransitGatewaysInputBuilder {
         crate::operation::describe_transit_gateways::builders::DescribeTransitGatewaysInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTransitGatewaysInput`](crate::operation::describe_transit_gateways::DescribeTransitGatewaysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTransitGatewaysInputBuilder {
     pub(crate) transit_gateway_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -94,27 +90,19 @@ impl DescribeTransitGatewaysInputBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_ids`](Self::set_transit_gateway_ids).
     ///
     /// <p>The IDs of the transit gateways.</p>
-    pub fn transit_gateway_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.transit_gateway_ids.unwrap_or_default();
         v.push(input.into());
         self.transit_gateway_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the transit gateways.</p>
-    pub fn set_transit_gateway_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_transit_gateway_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.transit_gateway_ids = input;
         self
     }
     /// <p>The IDs of the transit gateways.</p>
-    pub fn get_transit_gateway_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_transit_gateway_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.transit_gateway_ids
     }
     /// Appends an item to `filters`.
@@ -155,10 +143,7 @@ impl DescribeTransitGatewaysInputBuilder {
     /// <li> <p> <code>state</code> - The state of the transit gateway (<code>available</code> | <code>deleted</code> | <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p> </li>
     /// <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -228,14 +213,12 @@ impl DescribeTransitGatewaysInputBuilder {
         crate::operation::describe_transit_gateways::DescribeTransitGatewaysInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_transit_gateways::DescribeTransitGatewaysInput {
-                transit_gateway_ids: self.transit_gateway_ids,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_transit_gateways::DescribeTransitGatewaysInput {
+            transit_gateway_ids: self.transit_gateway_ids,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            dry_run: self.dry_run,
+        })
     }
 }

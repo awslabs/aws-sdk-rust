@@ -29,17 +29,14 @@ impl SetDesiredCapacityInput {
 }
 impl SetDesiredCapacityInput {
     /// Creates a new builder-style object to manufacture [`SetDesiredCapacityInput`](crate::operation::set_desired_capacity::SetDesiredCapacityInput).
-    pub fn builder(
-    ) -> crate::operation::set_desired_capacity::builders::SetDesiredCapacityInputBuilder {
+    pub fn builder() -> crate::operation::set_desired_capacity::builders::SetDesiredCapacityInputBuilder {
         crate::operation::set_desired_capacity::builders::SetDesiredCapacityInputBuilder::default()
     }
 }
 
 /// A builder for [`SetDesiredCapacityInput`](crate::operation::set_desired_capacity::SetDesiredCapacityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetDesiredCapacityInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) desired_capacity: ::std::option::Option<i32>,
@@ -47,18 +44,12 @@ pub struct SetDesiredCapacityInputBuilder {
 }
 impl SetDesiredCapacityInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -97,16 +88,11 @@ impl SetDesiredCapacityInputBuilder {
     /// Consumes the builder and constructs a [`SetDesiredCapacityInput`](crate::operation::set_desired_capacity::SetDesiredCapacityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_desired_capacity::SetDesiredCapacityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_desired_capacity::SetDesiredCapacityInput {
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                desired_capacity: self.desired_capacity,
-                honor_cooldown: self.honor_cooldown,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_desired_capacity::SetDesiredCapacityInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::set_desired_capacity::SetDesiredCapacityInput {
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            desired_capacity: self.desired_capacity,
+            honor_cooldown: self.honor_cooldown,
+        })
     }
 }

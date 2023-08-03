@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`workforces(Option<Vec<Workforce>>)`](crate::operation::list_workforces::ListWorkforcesOutput::workforces): <p>A list containing information about your workforce.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workforces::ListWorkforcesOutput::next_token): <p>A token to resume pagination.</p>
     /// - On failure, responds with [`SdkError<ListWorkforcesError>`](crate::operation::list_workforces::ListWorkforcesError)
-    pub fn list_workforces(
-        &self,
-    ) -> crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder {
-        crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_workforces(&self) -> crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder {
+        crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::new(self.handle.clone())
     }
 }

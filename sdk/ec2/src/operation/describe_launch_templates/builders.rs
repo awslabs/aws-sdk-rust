@@ -26,8 +26,7 @@ impl DescribeLaunchTemplatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLaunchTemplatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_launch_templates::builders::DescribeLaunchTemplatesInputBuilder,
+    inner: crate::operation::describe_launch_templates::builders::DescribeLaunchTemplatesInputBuilder,
 }
 impl DescribeLaunchTemplatesFluentBuilder {
     /// Creates a new `DescribeLaunchTemplates`.
@@ -38,10 +37,7 @@ impl DescribeLaunchTemplatesFluentBuilder {
         }
     }
     /// Access the DescribeLaunchTemplates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_launch_templates::builders::DescribeLaunchTemplatesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_launch_templates::builders::DescribeLaunchTemplatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeLaunchTemplatesFluentBuilder {
             crate::operation::describe_launch_templates::DescribeLaunchTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_launch_templates::DescribeLaunchTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_launch_templates::DescribeLaunchTemplatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeLaunchTemplatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeLaunchTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_launch_templates::DescribeLaunchTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_launch_templates::DescribeLaunchTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_launch_templates::DescribeLaunchTemplatesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeLaunchTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_launch_templates::DescribeLaunchTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_launch_templates::DescribeLaunchTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_launch_templates::DescribeLaunchTemplatesError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl DescribeLaunchTemplatesFluentBuilder {
             crate::operation::describe_launch_templates::DescribeLaunchTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_launch_templates::DescribeLaunchTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_launch_templates::DescribeLaunchTemplatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_launch_templates::paginator::DescribeLaunchTemplatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_launch_templates::paginator::DescribeLaunchTemplatesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_launch_templates::paginator::DescribeLaunchTemplatesPaginator {
         crate::operation::describe_launch_templates::paginator::DescribeLaunchTemplatesPaginator::new(self.handle, self.inner)
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -152,25 +134,17 @@ impl DescribeLaunchTemplatesFluentBuilder {
     /// To override the contents of this collection use [`set_launch_template_ids`](Self::set_launch_template_ids).
     ///
     /// <p>One or more launch template IDs.</p>
-    pub fn launch_template_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_template_ids(input.into());
         self
     }
     /// <p>One or more launch template IDs.</p>
-    pub fn set_launch_template_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_launch_template_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_launch_template_ids(input);
         self
     }
     /// <p>One or more launch template IDs.</p>
-    pub fn get_launch_template_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_launch_template_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_launch_template_ids()
     }
     /// Appends an item to `LaunchTemplateNames`.
@@ -178,25 +152,17 @@ impl DescribeLaunchTemplatesFluentBuilder {
     /// To override the contents of this collection use [`set_launch_template_names`](Self::set_launch_template_names).
     ///
     /// <p>One or more launch template names.</p>
-    pub fn launch_template_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_template_names(input.into());
         self
     }
     /// <p>One or more launch template names.</p>
-    pub fn set_launch_template_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_launch_template_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_launch_template_names(input);
         self
     }
     /// <p>One or more launch template names.</p>
-    pub fn get_launch_template_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_launch_template_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_launch_template_names()
     }
     /// Appends an item to `Filters`.
@@ -233,10 +199,7 @@ impl DescribeLaunchTemplatesFluentBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

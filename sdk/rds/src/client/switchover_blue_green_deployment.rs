@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`SwitchoverBlueGreenDeploymentOutput`](crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentOutput) with field(s):
     ///   - [`blue_green_deployment(Option<BlueGreenDeployment>)`](crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentOutput::blue_green_deployment): <p>Details about a blue/green deployment.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<SwitchoverBlueGreenDeploymentError>`](crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError)
-    pub fn switchover_blue_green_deployment(&self) -> crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentFluentBuilder{
+    pub fn switchover_blue_green_deployment(
+        &self,
+    ) -> crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentFluentBuilder {
         crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,8 +11,7 @@ pub struct ListGroupResourcesOutput {
     /// </important>
     #[deprecated(note = "This field is deprecated, use Resources instead.")]
     #[doc(hidden)]
-    pub resource_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
+    pub resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -30,9 +29,7 @@ impl ListGroupResourcesOutput {
     /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use Resources instead.")]
-    pub fn resource_identifiers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceIdentifier]> {
+    pub fn resource_identifiers(&self) -> ::std::option::Option<&[crate::types::ResourceIdentifier]> {
         self.resource_identifiers.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
@@ -51,22 +48,17 @@ impl ::aws_http::request_id::RequestId for ListGroupResourcesOutput {
 }
 impl ListGroupResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupResourcesOutput`](crate::operation::list_group_resources::ListGroupResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_group_resources::builders::ListGroupResourcesOutputBuilder {
+    pub fn builder() -> crate::operation::list_group_resources::builders::ListGroupResourcesOutputBuilder {
         crate::operation::list_group_resources::builders::ListGroupResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListGroupResourcesOutput`](crate::operation::list_group_resources::ListGroupResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupResourcesOutputBuilder {
-    pub(crate) resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListGroupResourcesItem>>,
-    pub(crate) resource_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::ListGroupResourcesItem>>,
+    pub(crate) resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) query_errors: ::std::option::Option<::std::vec::Vec<crate::types::QueryError>>,
     _request_id: Option<String>,
@@ -84,17 +76,12 @@ impl ListGroupResourcesOutputBuilder {
         self
     }
     /// <p>An array of resources from which you can determine each resource's identity, type, and group membership status.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListGroupResourcesItem>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListGroupResourcesItem>>) -> Self {
         self.resources = input;
         self
     }
     /// <p>An array of resources from which you can determine each resource's identity, type, and group membership status.</p>
-    pub fn get_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListGroupResourcesItem>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListGroupResourcesItem>> {
         &self.resources
     }
     /// Appends an item to `resource_identifiers`.
@@ -115,10 +102,7 @@ impl ListGroupResourcesOutputBuilder {
     /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use Resources instead.")]
-    pub fn set_resource_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
-    ) -> Self {
+    pub fn set_resource_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>) -> Self {
         self.resource_identifiers = input;
         self
     }
@@ -126,9 +110,7 @@ impl ListGroupResourcesOutputBuilder {
     /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
     /// </important>
     #[deprecated(note = "This field is deprecated, use Resources instead.")]
-    pub fn get_resource_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>> {
+    pub fn get_resource_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>> {
         &self.resource_identifiers
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
@@ -157,17 +139,12 @@ impl ListGroupResourcesOutputBuilder {
         self
     }
     /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
-    pub fn set_query_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QueryError>>,
-    ) -> Self {
+    pub fn set_query_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryError>>) -> Self {
         self.query_errors = input;
         self
     }
     /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
-    pub fn get_query_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryError>> {
+    pub fn get_query_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryError>> {
         &self.query_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

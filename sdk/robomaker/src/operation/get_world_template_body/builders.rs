@@ -37,10 +37,7 @@ impl GetWorldTemplateBodyFluentBuilder {
         }
     }
     /// Access the GetWorldTemplateBody as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_world_template_body::builders::GetWorldTemplateBodyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_world_template_body::builders::GetWorldTemplateBodyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetWorldTemplateBodyFluentBuilder {
             crate::operation::get_world_template_body::GetWorldTemplateBody,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_world_template_body::GetWorldTemplateBodyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_world_template_body::GetWorldTemplateBodyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetWorldTemplateBodyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetWorldTemplateBodyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_world_template_body::GetWorldTemplateBodyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_world_template_body::GetWorldTemplateBodyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_world_template_body::GetWorldTemplateBodyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetWorldTemplateBodyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_world_template_body::GetWorldTemplateBodyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_world_template_body::GetWorldTemplateBodyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_world_template_body::GetWorldTemplateBodyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetWorldTemplateBodyFluentBuilder {
             crate::operation::get_world_template_body::GetWorldTemplateBody,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_world_template_body::GetWorldTemplateBodyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_world_template_body::GetWorldTemplateBodyError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl GetWorldTemplateBodyFluentBuilder {
         self.inner.get_template()
     }
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
-    pub fn generation_job(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generation_job(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.generation_job(input.into());
         self
     }
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
-    pub fn set_generation_job(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generation_job(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_generation_job(input);
         self
     }

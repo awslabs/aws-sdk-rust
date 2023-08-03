@@ -15,16 +15,14 @@ impl DescribeSimulationJobBatchInput {
 }
 impl DescribeSimulationJobBatchInput {
     /// Creates a new builder-style object to manufacture [`DescribeSimulationJobBatchInput`](crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput).
-    pub fn builder() -> crate::operation::describe_simulation_job_batch::builders::DescribeSimulationJobBatchInputBuilder{
+    pub fn builder() -> crate::operation::describe_simulation_job_batch::builders::DescribeSimulationJobBatchInputBuilder {
         crate::operation::describe_simulation_job_batch::builders::DescribeSimulationJobBatchInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSimulationJobBatchInput`](crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSimulationJobBatchInputBuilder {
     pub(crate) batch: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DescribeSimulationJobBatchInputBuilder {
         crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput {
-                batch: self.batch,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput { batch: self.batch })
     }
 }

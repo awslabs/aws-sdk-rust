@@ -73,17 +73,14 @@ impl DescribeVolumeStatusInput {
 }
 impl DescribeVolumeStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeVolumeStatusInput`](crate::operation::describe_volume_status::DescribeVolumeStatusInput).
-    pub fn builder(
-    ) -> crate::operation::describe_volume_status::builders::DescribeVolumeStatusInputBuilder {
+    pub fn builder() -> crate::operation::describe_volume_status::builders::DescribeVolumeStatusInputBuilder {
         crate::operation::describe_volume_status::builders::DescribeVolumeStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVolumeStatusInput`](crate::operation::describe_volume_status::DescribeVolumeStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVolumeStatusInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -132,10 +129,7 @@ impl DescribeVolumeStatusInputBuilder {
     /// <li> <p> <code>volume-status.details-status</code> - The status of <code>volume-status.details-name</code> (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>normal</code> | <code>degraded</code> | <code>severely-degraded</code> | <code>stalled</code>).</p> </li>
     /// <li> <p> <code>volume-status.status</code> - The status of the volume (<code>ok</code> | <code>impaired</code> | <code>warning</code> | <code>insufficient-data</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -199,10 +193,7 @@ impl DescribeVolumeStatusInputBuilder {
     }
     /// <p>The IDs of the volumes.</p>
     /// <p>Default: Describes all your volumes.</p>
-    pub fn set_volume_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_volume_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.volume_ids = input;
         self
     }
@@ -228,18 +219,14 @@ impl DescribeVolumeStatusInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVolumeStatusInput`](crate::operation::describe_volume_status::DescribeVolumeStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_volume_status::DescribeVolumeStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_volume_status::DescribeVolumeStatusInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                volume_ids: self.volume_ids,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_volume_status::DescribeVolumeStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_volume_status::DescribeVolumeStatusInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            volume_ids: self.volume_ids,
+            dry_run: self.dry_run,
+        })
     }
 }

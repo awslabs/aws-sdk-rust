@@ -24,11 +24,7 @@ impl super::Client {
     /// - On success, responds with [`CreateInstanceOutput`](crate::operation::create_instance::CreateInstanceOutput) with field(s):
     ///   - [`instance_id(Option<String>)`](crate::operation::create_instance::CreateInstanceOutput::instance_id): <p>The instance ID.</p>
     /// - On failure, responds with [`SdkError<CreateInstanceError>`](crate::operation::create_instance::CreateInstanceError)
-    pub fn create_instance(
-        &self,
-    ) -> crate::operation::create_instance::builders::CreateInstanceFluentBuilder {
-        crate::operation::create_instance::builders::CreateInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_instance(&self) -> crate::operation::create_instance::builders::CreateInstanceFluentBuilder {
+        crate::operation::create_instance::builders::CreateInstanceFluentBuilder::new(self.handle.clone())
     }
 }

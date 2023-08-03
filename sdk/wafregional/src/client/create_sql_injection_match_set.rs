@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`sql_injection_match_set(Option<SqlInjectionMatchSet>)`](crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetOutput::sql_injection_match_set): <p>A <code>SqlInjectionMatchSet</code>.</p>
     ///   - [`change_token(Option<String>)`](crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<CreateSqlInjectionMatchSetError>`](crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError)
-    pub fn create_sql_injection_match_set(&self) -> crate::operation::create_sql_injection_match_set::builders::CreateSqlInjectionMatchSetFluentBuilder{
+    pub fn create_sql_injection_match_set(
+        &self,
+    ) -> crate::operation::create_sql_injection_match_set::builders::CreateSqlInjectionMatchSetFluentBuilder {
         crate::operation::create_sql_injection_match_set::builders::CreateSqlInjectionMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

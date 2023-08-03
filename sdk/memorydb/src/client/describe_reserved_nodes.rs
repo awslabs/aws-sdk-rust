@@ -15,12 +15,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_reserved_nodes::DescribeReservedNodesOutput::next_token): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
     ///   - [`reserved_nodes(Option<Vec<ReservedNode>>)`](crate::operation::describe_reserved_nodes::DescribeReservedNodesOutput::reserved_nodes): <p>Returns information about reserved nodes for this account, or about a specified reserved node.</p>
     /// - On failure, responds with [`SdkError<DescribeReservedNodesError>`](crate::operation::describe_reserved_nodes::DescribeReservedNodesError)
-    pub fn describe_reserved_nodes(
-        &self,
-    ) -> crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder
-    {
-        crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_reserved_nodes(&self) -> crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder {
+        crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder::new(self.handle.clone())
     }
 }

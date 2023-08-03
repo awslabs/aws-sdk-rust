@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateProfilingGroupOutput`](crate::operation::create_profiling_group::CreateProfilingGroupOutput) with field(s):
     ///   - [`profiling_group(Option<ProfilingGroupDescription>)`](crate::operation::create_profiling_group::CreateProfilingGroupOutput::profiling_group): <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the created profiling group. </p>
     /// - On failure, responds with [`SdkError<CreateProfilingGroupError>`](crate::operation::create_profiling_group::CreateProfilingGroupError)
-    pub fn create_profiling_group(
-        &self,
-    ) -> crate::operation::create_profiling_group::builders::CreateProfilingGroupFluentBuilder {
-        crate::operation::create_profiling_group::builders::CreateProfilingGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_profiling_group(&self) -> crate::operation::create_profiling_group::builders::CreateProfilingGroupFluentBuilder {
+        crate::operation::create_profiling_group::builders::CreateProfilingGroupFluentBuilder::new(self.handle.clone())
     }
 }

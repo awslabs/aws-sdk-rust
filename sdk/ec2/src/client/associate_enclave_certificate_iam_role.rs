@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`certificate_s3_object_key(Option<String>)`](crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleOutput::certificate_s3_object_key): <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
     ///   - [`encryption_kms_key_id(Option<String>)`](crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleOutput::encryption_kms_key_id): <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
     /// - On failure, responds with [`SdkError<AssociateEnclaveCertificateIamRoleError>`](crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleError)
-    pub fn associate_enclave_certificate_iam_role(&self) -> crate::operation::associate_enclave_certificate_iam_role::builders::AssociateEnclaveCertificateIamRoleFluentBuilder{
+    pub fn associate_enclave_certificate_iam_role(
+        &self,
+    ) -> crate::operation::associate_enclave_certificate_iam_role::builders::AssociateEnclaveCertificateIamRoleFluentBuilder {
         crate::operation::associate_enclave_certificate_iam_role::builders::AssociateEnclaveCertificateIamRoleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -18,10 +18,7 @@ pub fn ser_create_system_instance_input(
     if let Some(var_5) = &input.definition {
         #[allow(unused_mut)]
         let mut object_6 = object.key("definition").start_object();
-        crate::protocol_serde::shape_definition_document::ser_definition_document(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_definition_document::ser_definition_document(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.target {
@@ -36,10 +33,7 @@ pub fn ser_create_system_instance_input(
     if let Some(var_10) = &input.metrics_configuration {
         #[allow(unused_mut)]
         let mut object_11 = object.key("metricsConfiguration").start_object();
-        crate::protocol_serde::shape_metrics_configuration::ser_metrics_configuration(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_metrics_configuration::ser_metrics_configuration(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.flow_actions_role_arn {

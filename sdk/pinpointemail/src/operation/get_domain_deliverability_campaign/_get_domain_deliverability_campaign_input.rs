@@ -16,16 +16,14 @@ impl GetDomainDeliverabilityCampaignInput {
 }
 impl GetDomainDeliverabilityCampaignInput {
     /// Creates a new builder-style object to manufacture [`GetDomainDeliverabilityCampaignInput`](crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignInput).
-    pub fn builder() -> crate::operation::get_domain_deliverability_campaign::builders::GetDomainDeliverabilityCampaignInputBuilder{
+    pub fn builder() -> crate::operation::get_domain_deliverability_campaign::builders::GetDomainDeliverabilityCampaignInputBuilder {
         crate::operation::get_domain_deliverability_campaign::builders::GetDomainDeliverabilityCampaignInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDomainDeliverabilityCampaignInput`](crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDomainDeliverabilityCampaignInputBuilder {
     pub(crate) campaign_id: ::std::option::Option<::std::string::String>,
 }
@@ -53,9 +51,8 @@ impl GetDomainDeliverabilityCampaignInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignInput {
-                campaign_id: self.campaign_id
-                ,
-            }
+                campaign_id: self.campaign_id,
+            },
         )
     }
 }

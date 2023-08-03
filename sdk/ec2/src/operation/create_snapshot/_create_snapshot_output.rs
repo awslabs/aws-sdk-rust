@@ -141,9 +141,7 @@ impl CreateSnapshotOutput {
 
 /// A builder for [`CreateSnapshotOutput`](crate::operation::create_snapshot::CreateSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSnapshotOutputBuilder {
     pub(crate) data_encryption_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -166,18 +164,12 @@ pub struct CreateSnapshotOutputBuilder {
 }
 impl CreateSnapshotOutputBuilder {
     /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
-    pub fn data_encryption_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_encryption_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_encryption_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
-    pub fn set_data_encryption_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_encryption_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_encryption_key_id = input;
         self
     }
@@ -275,10 +267,7 @@ impl CreateSnapshotOutputBuilder {
         self
     }
     /// <p>The time stamp when the snapshot was initiated.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -301,18 +290,12 @@ impl CreateSnapshotOutputBuilder {
         &self.state
     }
     /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
-    pub fn state_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
-    pub fn set_state_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_message = input;
         self
     }
@@ -388,10 +371,7 @@ impl CreateSnapshotOutputBuilder {
         self
     }
     /// <p>Any tags assigned to the snapshot.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -405,10 +385,7 @@ impl CreateSnapshotOutputBuilder {
         self
     }
     /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
-    pub fn set_storage_tier(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageTier>,
-    ) -> Self {
+    pub fn set_storage_tier(mut self, input: ::std::option::Option<crate::types::StorageTier>) -> Self {
         self.storage_tier = input;
         self
     }
@@ -422,10 +399,7 @@ impl CreateSnapshotOutputBuilder {
         self
     }
     /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
-    pub fn set_restore_expiry_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_restore_expiry_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.restore_expiry_time = input;
         self
     }

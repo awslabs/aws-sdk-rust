@@ -22,16 +22,14 @@ impl CountPendingActivityTasksInput {
 }
 impl CountPendingActivityTasksInput {
     /// Creates a new builder-style object to manufacture [`CountPendingActivityTasksInput`](crate::operation::count_pending_activity_tasks::CountPendingActivityTasksInput).
-    pub fn builder() -> crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksInputBuilder{
+    pub fn builder() -> crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksInputBuilder {
         crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`CountPendingActivityTasksInput`](crate::operation::count_pending_activity_tasks::CountPendingActivityTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CountPendingActivityTasksInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) task_list: ::std::option::Option<crate::types::TaskList>,
@@ -72,11 +70,9 @@ impl CountPendingActivityTasksInputBuilder {
         crate::operation::count_pending_activity_tasks::CountPendingActivityTasksInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::count_pending_activity_tasks::CountPendingActivityTasksInput {
-                domain: self.domain,
-                task_list: self.task_list,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::count_pending_activity_tasks::CountPendingActivityTasksInput {
+            domain: self.domain,
+            task_list: self.task_list,
+        })
     }
 }

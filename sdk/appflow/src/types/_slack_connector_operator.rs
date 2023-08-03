@@ -55,13 +55,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SlackConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
@@ -127,9 +121,7 @@ impl ::std::convert::From<&str> for SlackConnectorOperator {
             "VALIDATE_NON_NULL" => SlackConnectorOperator::ValidateNonNull,
             "VALIDATE_NON_ZERO" => SlackConnectorOperator::ValidateNonZero,
             "VALIDATE_NUMERIC" => SlackConnectorOperator::ValidateNumeric,
-            other => SlackConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SlackConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Layout {
     #[allow(missing_docs)] // documentation missing in model
@@ -101,14 +95,7 @@ impl Layout {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BOTTOM_BANNER",
-            "CAROUSEL",
-            "MIDDLE_BANNER",
-            "MOBILE_FEED",
-            "OVERLAYS",
-            "TOP_BANNER",
-        ]
+        &["BOTTOM_BANNER", "CAROUSEL", "MIDDLE_BANNER", "MOBILE_FEED", "OVERLAYS", "TOP_BANNER"]
     }
 }
 impl ::std::convert::AsRef<str> for Layout {

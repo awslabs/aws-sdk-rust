@@ -30,9 +30,7 @@ impl RegistryScanningConfiguration {
 
 /// A builder for [`RegistryScanningConfiguration`](crate::types::RegistryScanningConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegistryScanningConfigurationBuilder {
     pub(crate) scan_type: ::std::option::Option<crate::types::ScanType>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>>,
@@ -64,17 +62,12 @@ impl RegistryScanningConfigurationBuilder {
         self
     }
     /// <p>The scanning rules associated with the registry.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>>) -> Self {
         self.rules = input;
         self
     }
     /// <p>The scanning rules associated with the registry.</p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`RegistryScanningConfiguration`](crate::types::RegistryScanningConfiguration).

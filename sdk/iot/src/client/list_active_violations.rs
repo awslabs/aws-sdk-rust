@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`active_violations(Option<Vec<ActiveViolation>>)`](crate::operation::list_active_violations::ListActiveViolationsOutput::active_violations): <p>The list of active violations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_active_violations::ListActiveViolationsOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListActiveViolationsError>`](crate::operation::list_active_violations::ListActiveViolationsError)
-    pub fn list_active_violations(
-        &self,
-    ) -> crate::operation::list_active_violations::builders::ListActiveViolationsFluentBuilder {
-        crate::operation::list_active_violations::builders::ListActiveViolationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_active_violations(&self) -> crate::operation::list_active_violations::builders::ListActiveViolationsFluentBuilder {
+        crate::operation::list_active_violations::builders::ListActiveViolationsFluentBuilder::new(self.handle.clone())
     }
 }

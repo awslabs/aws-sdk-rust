@@ -94,9 +94,7 @@ impl AssociatedPermission {
 
 /// A builder for [`AssociatedPermission`](crate::types::AssociatedPermission).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociatedPermissionBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_version: ::std::option::Option<::std::string::String>,
@@ -123,18 +121,12 @@ impl AssociatedPermissionBuilder {
         &self.arn
     }
     /// <p>The version of the permission currently associated with the resource share.</p>
-    pub fn permission_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the permission currently associated with the resource share.</p>
-    pub fn set_permission_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_version = input;
         self
     }
@@ -157,18 +149,12 @@ impl AssociatedPermissionBuilder {
         &self.default_version
     }
     /// <p>The resource type to which this permission applies.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type to which this permission applies.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -224,10 +210,7 @@ impl AssociatedPermissionBuilder {
     /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
     /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
     /// </ul>
-    pub fn set_feature_set(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionFeatureSet>,
-    ) -> Self {
+    pub fn set_feature_set(mut self, input: ::std::option::Option<crate::types::PermissionFeatureSet>) -> Self {
         self.feature_set = input;
         self
     }
@@ -246,10 +229,7 @@ impl AssociatedPermissionBuilder {
         self
     }
     /// <p>The date and time when the association between the permission and the resource share was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -258,18 +238,12 @@ impl AssociatedPermissionBuilder {
         &self.last_updated_time
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share associated with this permission.</p>
-    pub fn resource_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share associated with this permission.</p>
-    pub fn set_resource_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_share_arn = input;
         self
     }

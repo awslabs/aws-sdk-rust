@@ -410,18 +410,12 @@ impl PutParameterInputBuilder {
         &self.overwrite
     }
     /// <p>A regular expression used to validate the parameter value. For example, for String types with values restricted to numbers, you can specify the following: AllowedPattern=^\d+$ </p>
-    pub fn allowed_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A regular expression used to validate the parameter value. For example, for String types with values restricted to numbers, you can specify the following: AllowedPattern=^\d+$ </p>
-    pub fn set_allowed_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allowed_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allowed_pattern = input;
         self
     }
@@ -455,10 +449,7 @@ impl PutParameterInputBuilder {
     /// </ul> <note>
     /// <p>To add tags to an existing Systems Manager parameter, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -609,12 +600,7 @@ impl PutParameterInputBuilder {
         &self.data_type
     }
     /// Consumes the builder and constructs a [`PutParameterInput`](crate::operation::put_parameter::PutParameterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_parameter::PutParameterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_parameter::PutParameterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_parameter::PutParameterInput {
             name: self.name,
             description: self.description,

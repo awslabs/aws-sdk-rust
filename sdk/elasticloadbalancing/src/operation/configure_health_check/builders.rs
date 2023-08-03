@@ -38,9 +38,7 @@ impl ConfigureHealthCheckFluentBuilder {
         }
     }
     /// Access the ConfigureHealthCheck as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::configure_health_check::builders::ConfigureHealthCheckInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::configure_health_check::builders::ConfigureHealthCheckInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ConfigureHealthCheckFluentBuilder {
             crate::operation::configure_health_check::ConfigureHealthCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::configure_health_check::ConfigureHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::configure_health_check::ConfigureHealthCheckError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ConfigureHealthCheckFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ConfigureHealthCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::configure_health_check::ConfigureHealthCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::configure_health_check::ConfigureHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::configure_health_check::ConfigureHealthCheckError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ConfigureHealthCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::configure_health_check::ConfigureHealthCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::configure_health_check::ConfigureHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::configure_health_check::ConfigureHealthCheckError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl ConfigureHealthCheckFluentBuilder {
             crate::operation::configure_health_check::ConfigureHealthCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::configure_health_check::ConfigureHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::configure_health_check::ConfigureHealthCheckError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
@@ -149,10 +130,7 @@ impl ConfigureHealthCheckFluentBuilder {
         self
     }
     /// <p>The configuration information.</p>
-    pub fn set_health_check(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheck>,
-    ) -> Self {
+    pub fn set_health_check(mut self, input: ::std::option::Option<crate::types::HealthCheck>) -> Self {
         self.inner = self.inner.set_health_check(input);
         self
     }

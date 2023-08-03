@@ -37,9 +37,7 @@ impl MountPoint {
 
 /// A builder for [`MountPoint`](crate::types::MountPoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MountPointBuilder {
     pub(crate) container_path: ::std::option::Option<::std::string::String>,
     pub(crate) read_only: ::std::option::Option<bool>,
@@ -47,18 +45,12 @@ pub struct MountPointBuilder {
 }
 impl MountPointBuilder {
     /// <p>The path on the container where the host volume is mounted.</p>
-    pub fn container_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path on the container where the host volume is mounted.</p>
-    pub fn set_container_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_path = input;
         self
     }
@@ -81,18 +73,12 @@ impl MountPointBuilder {
         &self.read_only
     }
     /// <p>The name of the volume to mount.</p>
-    pub fn source_volume(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_volume(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_volume = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the volume to mount.</p>
-    pub fn set_source_volume(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_volume(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_volume = input;
         self
     }

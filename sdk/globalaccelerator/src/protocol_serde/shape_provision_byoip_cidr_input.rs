@@ -9,10 +9,7 @@ pub fn ser_provision_byoip_cidr_input(
     if let Some(var_2) = &input.cidr_authorization_context {
         #[allow(unused_mut)]
         let mut object_3 = object.key("CidrAuthorizationContext").start_object();
-        crate::protocol_serde::shape_cidr_authorization_context::ser_cidr_authorization_context(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_cidr_authorization_context::ser_cidr_authorization_context(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

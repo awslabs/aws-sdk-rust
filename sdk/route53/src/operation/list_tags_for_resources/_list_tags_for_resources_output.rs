@@ -22,21 +22,16 @@ impl ::aws_http::request_id::RequestId for ListTagsForResourcesOutput {
 }
 impl ListTagsForResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourcesOutput`](crate::operation::list_tags_for_resources::ListTagsForResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_for_resources::builders::ListTagsForResourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_tags_for_resources::builders::ListTagsForResourcesOutputBuilder {
         crate::operation::list_tags_for_resources::builders::ListTagsForResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTagsForResourcesOutput`](crate::operation::list_tags_for_resources::ListTagsForResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsForResourcesOutputBuilder {
-    pub(crate) resource_tag_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagSet>>,
+    pub(crate) resource_tag_sets: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagSet>>,
     _request_id: Option<String>,
 }
 impl ListTagsForResourcesOutputBuilder {
@@ -52,17 +47,12 @@ impl ListTagsForResourcesOutputBuilder {
         self
     }
     /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
-    pub fn set_resource_tag_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagSet>>,
-    ) -> Self {
+    pub fn set_resource_tag_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagSet>>) -> Self {
         self.resource_tag_sets = input;
         self
     }
     /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
-    pub fn get_resource_tag_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTagSet>> {
+    pub fn get_resource_tag_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTagSet>> {
         &self.resource_tag_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

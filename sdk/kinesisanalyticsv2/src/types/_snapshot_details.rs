@@ -31,9 +31,7 @@ impl SnapshotDetails {
         self.application_version_id
     }
     /// <p>The timestamp of the application snapshot.</p>
-    pub fn snapshot_creation_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn snapshot_creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.snapshot_creation_timestamp.as_ref()
     }
 }
@@ -46,9 +44,7 @@ impl SnapshotDetails {
 
 /// A builder for [`SnapshotDetails`](crate::types::SnapshotDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotDetailsBuilder {
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_status: ::std::option::Option<crate::types::SnapshotStatus>,
@@ -57,18 +53,12 @@ pub struct SnapshotDetailsBuilder {
 }
 impl SnapshotDetailsBuilder {
     /// <p>The identifier for the application snapshot.</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the application snapshot.</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_name = input;
         self
     }
@@ -82,10 +72,7 @@ impl SnapshotDetailsBuilder {
         self
     }
     /// <p>The status of the application snapshot.</p>
-    pub fn set_snapshot_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotStatus>,
-    ) -> Self {
+    pub fn set_snapshot_status(mut self, input: ::std::option::Option<crate::types::SnapshotStatus>) -> Self {
         self.snapshot_status = input;
         self
     }
@@ -113,17 +100,12 @@ impl SnapshotDetailsBuilder {
         self
     }
     /// <p>The timestamp of the application snapshot.</p>
-    pub fn set_snapshot_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_snapshot_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.snapshot_creation_timestamp = input;
         self
     }
     /// <p>The timestamp of the application snapshot.</p>
-    pub fn get_snapshot_creation_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_snapshot_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.snapshot_creation_timestamp
     }
     /// Consumes the builder and constructs a [`SnapshotDetails`](crate::types::SnapshotDetails).

@@ -51,9 +51,7 @@ pub struct JobRun {
     pub failure_reason: ::std::option::Option<crate::types::FailureReason>,
     /// <p>The assigned tags of the job run.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration of the retry policy that the job runs on.</p>
     #[doc(hidden)]
     pub retry_policy_configuration: ::std::option::Option<crate::types::RetryPolicyConfiguration>,
@@ -95,9 +93,7 @@ impl JobRun {
         self.release_label.as_deref()
     }
     /// <p>The configuration settings that are used to override default configuration.</p>
-    pub fn configuration_overrides(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConfigurationOverrides> {
+    pub fn configuration_overrides(&self) -> ::std::option::Option<&crate::types::ConfigurationOverrides> {
         self.configuration_overrides.as_ref()
     }
     /// <p>Parameters of job driver for the job run.</p>
@@ -125,23 +121,15 @@ impl JobRun {
         self.failure_reason.as_ref()
     }
     /// <p>The assigned tags of the job run.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The configuration of the retry policy that the job runs on.</p>
-    pub fn retry_policy_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RetryPolicyConfiguration> {
+    pub fn retry_policy_configuration(&self) -> ::std::option::Option<&crate::types::RetryPolicyConfiguration> {
         self.retry_policy_configuration.as_ref()
     }
     /// <p>The current status of the retry policy executed on the job.</p>
-    pub fn retry_policy_execution(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RetryPolicyExecution> {
+    pub fn retry_policy_execution(&self) -> ::std::option::Option<&crate::types::RetryPolicyExecution> {
         self.retry_policy_execution.as_ref()
     }
 }
@@ -154,9 +142,7 @@ impl JobRun {
 
 /// A builder for [`JobRun`](crate::types::JobRun).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobRunBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -173,11 +159,8 @@ pub struct JobRunBuilder {
     pub(crate) finished_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) state_details: ::std::option::Option<::std::string::String>,
     pub(crate) failure_reason: ::std::option::Option<crate::types::FailureReason>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) retry_policy_configuration:
-        ::std::option::Option<crate::types::RetryPolicyConfiguration>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) retry_policy_configuration: ::std::option::Option<crate::types::RetryPolicyConfiguration>,
     pub(crate) retry_policy_execution: ::std::option::Option<crate::types::RetryPolicyExecution>,
 }
 impl JobRunBuilder {
@@ -210,18 +193,12 @@ impl JobRunBuilder {
         &self.name
     }
     /// <p>The ID of the job run's virtual cluster.</p>
-    pub fn virtual_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the job run's virtual cluster.</p>
-    pub fn set_virtual_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_cluster_id = input;
         self
     }
@@ -272,18 +249,12 @@ impl JobRunBuilder {
         &self.client_token
     }
     /// <p>The execution role ARN of the job run.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The execution role ARN of the job run.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -292,18 +263,12 @@ impl JobRunBuilder {
         &self.execution_role_arn
     }
     /// <p>The release version of Amazon EMR.</p>
-    pub fn release_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The release version of Amazon EMR.</p>
-    pub fn set_release_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_label = input;
         self
     }
@@ -317,17 +282,12 @@ impl JobRunBuilder {
         self
     }
     /// <p>The configuration settings that are used to override default configuration.</p>
-    pub fn set_configuration_overrides(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationOverrides>,
-    ) -> Self {
+    pub fn set_configuration_overrides(mut self, input: ::std::option::Option<crate::types::ConfigurationOverrides>) -> Self {
         self.configuration_overrides = input;
         self
     }
     /// <p>The configuration settings that are used to override default configuration.</p>
-    pub fn get_configuration_overrides(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationOverrides> {
+    pub fn get_configuration_overrides(&self) -> &::std::option::Option<crate::types::ConfigurationOverrides> {
         &self.configuration_overrides
     }
     /// <p>Parameters of job driver for the job run.</p>
@@ -350,10 +310,7 @@ impl JobRunBuilder {
         self
     }
     /// <p>The date and time when the job run was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -381,10 +338,7 @@ impl JobRunBuilder {
         self
     }
     /// <p>The date and time when the job run has finished.</p>
-    pub fn set_finished_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_finished_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.finished_at = input;
         self
     }
@@ -393,18 +347,12 @@ impl JobRunBuilder {
         &self.finished_at
     }
     /// <p>Additional details of the job run state.</p>
-    pub fn state_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional details of the job run state.</p>
-    pub fn set_state_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_details = input;
         self
     }
@@ -418,10 +366,7 @@ impl JobRunBuilder {
         self
     }
     /// <p>The reasons why the job run has failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureReason>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<crate::types::FailureReason>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -434,54 +379,33 @@ impl JobRunBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The assigned tags of the job run.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The assigned tags of the job run.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The assigned tags of the job run.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The configuration of the retry policy that the job runs on.</p>
-    pub fn retry_policy_configuration(
-        mut self,
-        input: crate::types::RetryPolicyConfiguration,
-    ) -> Self {
+    pub fn retry_policy_configuration(mut self, input: crate::types::RetryPolicyConfiguration) -> Self {
         self.retry_policy_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of the retry policy that the job runs on.</p>
-    pub fn set_retry_policy_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RetryPolicyConfiguration>,
-    ) -> Self {
+    pub fn set_retry_policy_configuration(mut self, input: ::std::option::Option<crate::types::RetryPolicyConfiguration>) -> Self {
         self.retry_policy_configuration = input;
         self
     }
     /// <p>The configuration of the retry policy that the job runs on.</p>
-    pub fn get_retry_policy_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RetryPolicyConfiguration> {
+    pub fn get_retry_policy_configuration(&self) -> &::std::option::Option<crate::types::RetryPolicyConfiguration> {
         &self.retry_policy_configuration
     }
     /// <p>The current status of the retry policy executed on the job.</p>
@@ -490,17 +414,12 @@ impl JobRunBuilder {
         self
     }
     /// <p>The current status of the retry policy executed on the job.</p>
-    pub fn set_retry_policy_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::RetryPolicyExecution>,
-    ) -> Self {
+    pub fn set_retry_policy_execution(mut self, input: ::std::option::Option<crate::types::RetryPolicyExecution>) -> Self {
         self.retry_policy_execution = input;
         self
     }
     /// <p>The current status of the retry policy executed on the job.</p>
-    pub fn get_retry_policy_execution(
-        &self,
-    ) -> &::std::option::Option<crate::types::RetryPolicyExecution> {
+    pub fn get_retry_policy_execution(&self) -> &::std::option::Option<crate::types::RetryPolicyExecution> {
         &self.retry_policy_execution
     }
     /// Consumes the builder and constructs a [`JobRun`](crate::types::JobRun).

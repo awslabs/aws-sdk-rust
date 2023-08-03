@@ -26,7 +26,7 @@ impl DeleteGitHubAccountTokenInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteGitHubAccountTokenFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenInputBuilder,
+    inner: crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenInputBuilder,
 }
 impl DeleteGitHubAccountTokenFluentBuilder {
     /// Creates a new `DeleteGitHubAccountToken`.
@@ -37,7 +37,7 @@ impl DeleteGitHubAccountTokenFluentBuilder {
         }
     }
     /// Access the DeleteGitHubAccountToken as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteGitHubAccountTokenFluentBuilder {
             crate::operation::delete_git_hub_account_token::DeleteGitHubAccountToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteGitHubAccountTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteGitHubAccountTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteGitHubAccountTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteGitHubAccountTokenFluentBuilder {
             crate::operation::delete_git_hub_account_token::DeleteGitHubAccountToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenError>,
     > {
         self.customize_middleware().await
     }

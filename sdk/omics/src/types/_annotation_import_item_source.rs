@@ -23,9 +23,7 @@ impl AnnotationImportItemSource {
 
 /// A builder for [`AnnotationImportItemSource`](crate::types::AnnotationImportItemSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnnotationImportItemSourceBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl AnnotationImportItemSourceBuilder {
     }
     /// Consumes the builder and constructs a [`AnnotationImportItemSource`](crate::types::AnnotationImportItemSource).
     pub fn build(self) -> crate::types::AnnotationImportItemSource {
-        crate::types::AnnotationImportItemSource {
-            source: self.source,
-        }
+        crate::types::AnnotationImportItemSource { source: self.source }
     }
 }

@@ -55,23 +55,15 @@ impl ::std::fmt::Debug for UpdateChapCredentialsInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChapCredentialsInput");
         formatter.field("target_arn", &self.target_arn);
-        formatter.field(
-            "secret_to_authenticate_initiator",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("secret_to_authenticate_initiator", &"*** Sensitive Data Redacted ***");
         formatter.field("initiator_name", &self.initiator_name);
-        formatter.field(
-            "secret_to_authenticate_target",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("secret_to_authenticate_target", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 impl UpdateChapCredentialsInput {
     /// Creates a new builder-style object to manufacture [`UpdateChapCredentialsInput`](crate::operation::update_chap_credentials::UpdateChapCredentialsInput).
-    pub fn builder(
-    ) -> crate::operation::update_chap_credentials::builders::UpdateChapCredentialsInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_chap_credentials::builders::UpdateChapCredentialsInputBuilder {
         crate::operation::update_chap_credentials::builders::UpdateChapCredentialsInputBuilder::default()
     }
 }
@@ -103,44 +95,30 @@ impl UpdateChapCredentialsInputBuilder {
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
-    pub fn secret_to_authenticate_initiator(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_to_authenticate_initiator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_to_authenticate_initiator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
-    pub fn set_secret_to_authenticate_initiator(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_to_authenticate_initiator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_to_authenticate_initiator = input;
         self
     }
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
-    pub fn get_secret_to_authenticate_initiator(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_secret_to_authenticate_initiator(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_to_authenticate_initiator
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn initiator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initiator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initiator_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn set_initiator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initiator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initiator_name = input;
         self
     }
@@ -152,10 +130,7 @@ impl UpdateChapCredentialsInputBuilder {
     /// <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
-    pub fn secret_to_authenticate_target(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_to_authenticate_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_to_authenticate_target = ::std::option::Option::Some(input.into());
         self
     }
@@ -163,10 +138,7 @@ impl UpdateChapCredentialsInputBuilder {
     /// <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
-    pub fn set_secret_to_authenticate_target(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_to_authenticate_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_to_authenticate_target = input;
         self
     }
@@ -174,41 +146,29 @@ impl UpdateChapCredentialsInputBuilder {
     /// <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
-    pub fn get_secret_to_authenticate_target(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_secret_to_authenticate_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_to_authenticate_target
     }
     /// Consumes the builder and constructs a [`UpdateChapCredentialsInput`](crate::operation::update_chap_credentials::UpdateChapCredentialsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_chap_credentials::UpdateChapCredentialsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_chap_credentials::UpdateChapCredentialsInput {
-                target_arn: self.target_arn,
-                secret_to_authenticate_initiator: self.secret_to_authenticate_initiator,
-                initiator_name: self.initiator_name,
-                secret_to_authenticate_target: self.secret_to_authenticate_target,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_chap_credentials::UpdateChapCredentialsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_chap_credentials::UpdateChapCredentialsInput {
+            target_arn: self.target_arn,
+            secret_to_authenticate_initiator: self.secret_to_authenticate_initiator,
+            initiator_name: self.initiator_name,
+            secret_to_authenticate_target: self.secret_to_authenticate_target,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateChapCredentialsInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChapCredentialsInputBuilder");
         formatter.field("target_arn", &self.target_arn);
-        formatter.field(
-            "secret_to_authenticate_initiator",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("secret_to_authenticate_initiator", &"*** Sensitive Data Redacted ***");
         formatter.field("initiator_name", &self.initiator_name);
-        formatter.field(
-            "secret_to_authenticate_target",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("secret_to_authenticate_target", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

@@ -5,8 +5,7 @@
 pub struct ListPipelineExecutionStepsOutput {
     /// <p>A list of <code>PipeLineExecutionStep</code> objects. Each <code>PipeLineExecutionStep</code> consists of StepName, StartTime, EndTime, StepStatus, and Metadata. Metadata is an object with properties for each job that contains relevant information about the job created by the step.</p>
     #[doc(hidden)]
-    pub pipeline_execution_steps:
-        ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionStep>>,
+    pub pipeline_execution_steps: ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionStep>>,
     /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListPipelineExecutionStepsOutput {
 }
 impl ListPipelineExecutionStepsOutput {
     /// <p>A list of <code>PipeLineExecutionStep</code> objects. Each <code>PipeLineExecutionStep</code> consists of StepName, StartTime, EndTime, StepStatus, and Metadata. Metadata is an object with properties for each job that contains relevant information about the job created by the step.</p>
-    pub fn pipeline_execution_steps(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PipelineExecutionStep]> {
+    pub fn pipeline_execution_steps(&self) -> ::std::option::Option<&[crate::types::PipelineExecutionStep]> {
         self.pipeline_execution_steps.as_deref()
     }
     /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListPipelineExecutionStepsOutput {
 }
 impl ListPipelineExecutionStepsOutput {
     /// Creates a new builder-style object to manufacture [`ListPipelineExecutionStepsOutput`](crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsOutput).
-    pub fn builder() -> crate::operation::list_pipeline_execution_steps::builders::ListPipelineExecutionStepsOutputBuilder{
+    pub fn builder() -> crate::operation::list_pipeline_execution_steps::builders::ListPipelineExecutionStepsOutputBuilder {
         crate::operation::list_pipeline_execution_steps::builders::ListPipelineExecutionStepsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPipelineExecutionStepsOutput`](crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPipelineExecutionStepsOutputBuilder {
-    pub(crate) pipeline_execution_steps:
-        ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionStep>>,
+    pub(crate) pipeline_execution_steps: ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionStep>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListPipelineExecutionStepsOutputBuilder {
         self
     }
     /// <p>A list of <code>PipeLineExecutionStep</code> objects. Each <code>PipeLineExecutionStep</code> consists of StepName, StartTime, EndTime, StepStatus, and Metadata. Metadata is an object with properties for each job that contains relevant information about the job created by the step.</p>
-    pub fn set_pipeline_execution_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionStep>>,
-    ) -> Self {
+    pub fn set_pipeline_execution_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionStep>>) -> Self {
         self.pipeline_execution_steps = input;
         self
     }
     /// <p>A list of <code>PipeLineExecutionStep</code> objects. Each <code>PipeLineExecutionStep</code> consists of StepName, StartTime, EndTime, StepStatus, and Metadata. Metadata is an object with properties for each job that contains relevant information about the job created by the step.</p>
-    pub fn get_pipeline_execution_steps(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionStep>> {
+    pub fn get_pipeline_execution_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionStep>> {
         &self.pipeline_execution_steps
     }
     /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
@@ -97,9 +86,7 @@ impl ListPipelineExecutionStepsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPipelineExecutionStepsOutput`](crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsOutput {
+    pub fn build(self) -> crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsOutput {
         crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsOutput {
             pipeline_execution_steps: self.pipeline_execution_steps,
             next_token: self.next_token,

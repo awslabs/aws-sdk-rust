@@ -6,15 +6,12 @@ pub fn ser_ownership_controls_http_payload(
         Some(t) => t,
         None => return Ok(crate::protocol_serde::rest_xml_unset_payload()),
     };
-    Ok(
-        crate::protocol_serde::shape_put_bucket_ownership_controls_input::ser_ownership_controls_payload(payload)?
-    )
+    Ok(crate::protocol_serde::shape_put_bucket_ownership_controls_input::ser_ownership_controls_payload(payload)?)
 }
 
 pub fn ser_ownership_controls_payload(
     input: &crate::types::OwnershipControls,
-) -> std::result::Result<std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);

@@ -26,7 +26,9 @@ pub fn ser_request_launch_template_data(
         for item_9 in var_8 {
             #[allow(unused_mut)]
             let mut entry_11 = list_10.entry();
-            crate::protocol_serde::shape_launch_template_block_device_mapping_request::ser_launch_template_block_device_mapping_request(entry_11, item_9)?;
+            crate::protocol_serde::shape_launch_template_block_device_mapping_request::ser_launch_template_block_device_mapping_request(
+                entry_11, item_9,
+            )?;
         }
         list_10.finish();
     }
@@ -104,9 +106,7 @@ pub fn ser_request_launch_template_data(
         for item_42 in var_41 {
             #[allow(unused_mut)]
             let mut entry_44 = list_43.entry();
-            crate::protocol_serde::shape_elastic_gpu_specification::ser_elastic_gpu_specification(
-                entry_44, item_42,
-            )?;
+            crate::protocol_serde::shape_elastic_gpu_specification::ser_elastic_gpu_specification(entry_44, item_42)?;
         }
         list_43.finish();
     }
@@ -117,7 +117,9 @@ pub fn ser_request_launch_template_data(
         for item_47 in var_46 {
             #[allow(unused_mut)]
             let mut entry_49 = list_48.entry();
-            crate::protocol_serde::shape_launch_template_elastic_inference_accelerator::ser_launch_template_elastic_inference_accelerator(entry_49, item_47)?;
+            crate::protocol_serde::shape_launch_template_elastic_inference_accelerator::ser_launch_template_elastic_inference_accelerator(
+                entry_49, item_47,
+            )?;
         }
         list_48.finish();
     }
@@ -146,7 +148,9 @@ pub fn ser_request_launch_template_data(
     #[allow(unused_mut)]
     let mut scope_60 = writer.prefix("InstanceMarketOptions");
     if let Some(var_61) = &input.instance_market_options {
-        crate::protocol_serde::shape_launch_template_instance_market_options_request::ser_launch_template_instance_market_options_request(scope_60, var_61)?;
+        crate::protocol_serde::shape_launch_template_instance_market_options_request::ser_launch_template_instance_market_options_request(
+            scope_60, var_61,
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_62 = writer.prefix("CreditSpecification");
@@ -170,7 +174,9 @@ pub fn ser_request_launch_template_data(
         for item_70 in var_69 {
             #[allow(unused_mut)]
             let mut entry_72 = list_71.entry();
-            crate::protocol_serde::shape_launch_template_license_configuration_request::ser_launch_template_license_configuration_request(entry_72, item_70)?;
+            crate::protocol_serde::shape_launch_template_license_configuration_request::ser_launch_template_license_configuration_request(
+                entry_72, item_70,
+            )?;
         }
         list_71.finish();
     }
@@ -182,7 +188,9 @@ pub fn ser_request_launch_template_data(
     #[allow(unused_mut)]
     let mut scope_75 = writer.prefix("MetadataOptions");
     if let Some(var_76) = &input.metadata_options {
-        crate::protocol_serde::shape_launch_template_instance_metadata_options_request::ser_launch_template_instance_metadata_options_request(scope_75, var_76)?;
+        crate::protocol_serde::shape_launch_template_instance_metadata_options_request::ser_launch_template_instance_metadata_options_request(
+            scope_75, var_76,
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_77 = writer.prefix("EnclaveOptions");
@@ -197,12 +205,16 @@ pub fn ser_request_launch_template_data(
     #[allow(unused_mut)]
     let mut scope_81 = writer.prefix("PrivateDnsNameOptions");
     if let Some(var_82) = &input.private_dns_name_options {
-        crate::protocol_serde::shape_launch_template_private_dns_name_options_request::ser_launch_template_private_dns_name_options_request(scope_81, var_82)?;
+        crate::protocol_serde::shape_launch_template_private_dns_name_options_request::ser_launch_template_private_dns_name_options_request(
+            scope_81, var_82,
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_83 = writer.prefix("MaintenanceOptions");
     if let Some(var_84) = &input.maintenance_options {
-        crate::protocol_serde::shape_launch_template_instance_maintenance_options_request::ser_launch_template_instance_maintenance_options_request(scope_83, var_84)?;
+        crate::protocol_serde::shape_launch_template_instance_maintenance_options_request::ser_launch_template_instance_maintenance_options_request(
+            scope_83, var_84,
+        )?;
     }
     #[allow(unused_mut)]
     let mut scope_85 = writer.prefix("DisableApiStop");

@@ -22,9 +22,7 @@ impl RebootInstanceInput {
 
 /// A builder for [`RebootInstanceInput`](crate::operation::reboot_instance::RebootInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebootInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl RebootInstanceInputBuilder {
     /// Consumes the builder and constructs a [`RebootInstanceInput`](crate::operation::reboot_instance::RebootInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reboot_instance::RebootInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::reboot_instance::RebootInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::reboot_instance::RebootInstanceInput {
             instance_id: self.instance_id,
         })

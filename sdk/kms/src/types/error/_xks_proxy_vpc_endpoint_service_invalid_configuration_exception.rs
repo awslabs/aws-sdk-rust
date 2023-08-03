@@ -27,35 +27,27 @@ impl ::std::fmt::Display for XksProxyVpcEndpointServiceInvalidConfigurationExcep
     }
 }
 impl ::std::error::Error for XksProxyVpcEndpointServiceInvalidConfigurationException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::XksProxyVpcEndpointServiceInvalidConfigurationException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::XksProxyVpcEndpointServiceInvalidConfigurationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for XksProxyVpcEndpointServiceInvalidConfigurationException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for XksProxyVpcEndpointServiceInvalidConfigurationException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl XksProxyVpcEndpointServiceInvalidConfigurationException {
     /// Creates a new builder-style object to manufacture [`XksProxyVpcEndpointServiceInvalidConfigurationException`](crate::types::error::XksProxyVpcEndpointServiceInvalidConfigurationException).
-    pub fn builder(
-    ) -> crate::types::error::builders::XksProxyVpcEndpointServiceInvalidConfigurationExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::XksProxyVpcEndpointServiceInvalidConfigurationExceptionBuilder {
         crate::types::error::builders::XksProxyVpcEndpointServiceInvalidConfigurationExceptionBuilder::default()
     }
 }
 
 /// A builder for [`XksProxyVpcEndpointServiceInvalidConfigurationException`](crate::types::error::XksProxyVpcEndpointServiceInvalidConfigurationException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct XksProxyVpcEndpointServiceInvalidConfigurationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -82,17 +74,12 @@ impl XksProxyVpcEndpointServiceInvalidConfigurationExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }
     /// Consumes the builder and constructs a [`XksProxyVpcEndpointServiceInvalidConfigurationException`](crate::types::error::XksProxyVpcEndpointServiceInvalidConfigurationException).
-    pub fn build(
-        self,
-    ) -> crate::types::error::XksProxyVpcEndpointServiceInvalidConfigurationException {
+    pub fn build(self) -> crate::types::error::XksProxyVpcEndpointServiceInvalidConfigurationException {
         crate::types::error::XksProxyVpcEndpointServiceInvalidConfigurationException {
             message: self.message,
             meta: self.meta.unwrap_or_default(),

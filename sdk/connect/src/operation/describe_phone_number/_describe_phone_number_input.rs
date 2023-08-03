@@ -15,35 +15,25 @@ impl DescribePhoneNumberInput {
 }
 impl DescribePhoneNumberInput {
     /// Creates a new builder-style object to manufacture [`DescribePhoneNumberInput`](crate::operation::describe_phone_number::DescribePhoneNumberInput).
-    pub fn builder(
-    ) -> crate::operation::describe_phone_number::builders::DescribePhoneNumberInputBuilder {
-        crate::operation::describe_phone_number::builders::DescribePhoneNumberInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_phone_number::builders::DescribePhoneNumberInputBuilder {
+        crate::operation::describe_phone_number::builders::DescribePhoneNumberInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePhoneNumberInput`](crate::operation::describe_phone_number::DescribePhoneNumberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePhoneNumberInputBuilder {
     pub(crate) phone_number_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribePhoneNumberInputBuilder {
     /// <p>A unique identifier for the phone number.</p>
-    pub fn phone_number_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the phone number.</p>
-    pub fn set_phone_number_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl DescribePhoneNumberInputBuilder {
     /// Consumes the builder and constructs a [`DescribePhoneNumberInput`](crate::operation::describe_phone_number::DescribePhoneNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_phone_number::DescribePhoneNumberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_phone_number::DescribePhoneNumberInput {
-                phone_number_id: self.phone_number_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_phone_number::DescribePhoneNumberInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_phone_number::DescribePhoneNumberInput {
+            phone_number_id: self.phone_number_id,
+        })
     }
 }

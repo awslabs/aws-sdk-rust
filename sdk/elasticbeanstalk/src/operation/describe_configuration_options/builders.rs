@@ -26,7 +26,7 @@ impl DescribeConfigurationOptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConfigurationOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsInputBuilder,
+    inner: crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsInputBuilder,
 }
 impl DescribeConfigurationOptionsFluentBuilder {
     /// Creates a new `DescribeConfigurationOptions`.
@@ -37,7 +37,7 @@ impl DescribeConfigurationOptionsFluentBuilder {
         }
     }
     /// Access the DescribeConfigurationOptions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeConfigurationOptionsFluentBuilder {
             crate::operation::describe_configuration_options::DescribeConfigurationOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_options::DescribeConfigurationOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_options::DescribeConfigurationOptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeConfigurationOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeConfigurationOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_options::DescribeConfigurationOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_options::DescribeConfigurationOptionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeConfigurationOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_options::DescribeConfigurationOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_options::DescribeConfigurationOptionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeConfigurationOptionsFluentBuilder {
             crate::operation::describe_configuration_options::DescribeConfigurationOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_options::DescribeConfigurationOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_options::DescribeConfigurationOptionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration options associated with either the configuration template or environment.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration options associated with either the configuration template or environment.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -141,18 +124,12 @@ impl DescribeConfigurationOptionsFluentBuilder {
         self.inner.get_application_name()
     }
     /// <p>The name of the configuration template whose configuration options you want to describe.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the configuration template whose configuration options you want to describe.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -161,18 +138,12 @@ impl DescribeConfigurationOptionsFluentBuilder {
         self.inner.get_template_name()
     }
     /// <p>The name of the environment whose configuration options you want to describe.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of the environment whose configuration options you want to describe.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
@@ -181,18 +152,12 @@ impl DescribeConfigurationOptionsFluentBuilder {
         self.inner.get_environment_name()
     }
     /// <p>The name of the solution stack whose configuration options you want to describe.</p>
-    pub fn solution_stack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.solution_stack_name(input.into());
         self
     }
     /// <p>The name of the solution stack whose configuration options you want to describe.</p>
-    pub fn set_solution_stack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_solution_stack_name(input);
         self
     }
@@ -224,17 +189,12 @@ impl DescribeConfigurationOptionsFluentBuilder {
         self
     }
     /// <p>If specified, restricts the descriptions to only the specified options.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
     /// <p>If specified, restricts the descriptions to only the specified options.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
         self.inner.get_options()
     }
 }

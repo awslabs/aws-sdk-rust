@@ -48,18 +48,14 @@ impl DescribeJobDefinitionsInput {
 }
 impl DescribeJobDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeJobDefinitionsInput`](crate::operation::describe_job_definitions::DescribeJobDefinitionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_job_definitions::builders::DescribeJobDefinitionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_job_definitions::builders::DescribeJobDefinitionsInputBuilder {
         crate::operation::describe_job_definitions::builders::DescribeJobDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeJobDefinitionsInput`](crate::operation::describe_job_definitions::DescribeJobDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobDefinitionsInputBuilder {
     pub(crate) job_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -73,27 +69,19 @@ impl DescribeJobDefinitionsInputBuilder {
     /// To override the contents of this collection use [`set_job_definitions`](Self::set_job_definitions).
     ///
     /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
-    pub fn job_definitions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definitions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.job_definitions.unwrap_or_default();
         v.push(input.into());
         self.job_definitions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
-    pub fn set_job_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_job_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.job_definitions = input;
         self
     }
     /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
-    pub fn get_job_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_definitions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.job_definitions
     }
     /// <p>The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
@@ -111,18 +99,12 @@ impl DescribeJobDefinitionsInputBuilder {
         &self.max_results
     }
     /// <p>The name of the job definition to describe.</p>
-    pub fn job_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the job definition to describe.</p>
-    pub fn set_job_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_definition_name = input;
         self
     }
@@ -167,18 +149,14 @@ impl DescribeJobDefinitionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobDefinitionsInput`](crate::operation::describe_job_definitions::DescribeJobDefinitionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_job_definitions::DescribeJobDefinitionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_job_definitions::DescribeJobDefinitionsInput {
-                job_definitions: self.job_definitions,
-                max_results: self.max_results,
-                job_definition_name: self.job_definition_name,
-                status: self.status,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_job_definitions::DescribeJobDefinitionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_job_definitions::DescribeJobDefinitionsInput {
+            job_definitions: self.job_definitions,
+            max_results: self.max_results,
+            job_definition_name: self.job_definition_name,
+            status: self.status,
+            next_token: self.next_token,
+        })
     }
 }

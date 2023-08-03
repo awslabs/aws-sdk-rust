@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for UpdateOrgEc2DeepInspectionConfigurati
 }
 impl UpdateOrgEc2DeepInspectionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateOrgEc2DeepInspectionConfigurationOutput`](crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationOutput).
-    pub fn builder() -> crate::operation::update_org_ec2_deep_inspection_configuration::builders::UpdateOrgEc2DeepInspectionConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_org_ec2_deep_inspection_configuration::builders::UpdateOrgEc2DeepInspectionConfigurationOutputBuilder
+    {
         crate::operation::update_org_ec2_deep_inspection_configuration::builders::UpdateOrgEc2DeepInspectionConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateOrgEc2DeepInspectionConfigurationOutput`](crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateOrgEc2DeepInspectionConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl UpdateOrgEc2DeepInspectionConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateOrgEc2DeepInspectionConfigurationOutput`](crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationOutput).
-    pub fn build(self) -> crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationOutput{
+    pub fn build(self) -> crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationOutput {
         crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationOutput {
             _request_id: self._request_id,
         }

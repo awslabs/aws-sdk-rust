@@ -20,9 +20,7 @@ impl DeletePipelineOutput {
 
 /// A builder for [`DeletePipelineOutput`](crate::operation::delete_pipeline::DeletePipelineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePipelineOutputBuilder {
     _request_id: Option<String>,
 }

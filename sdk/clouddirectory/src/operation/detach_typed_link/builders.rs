@@ -10,10 +10,7 @@ impl DetachTypedLinkInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::detach_typed_link::DetachTypedLinkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_typed_link::DetachTypedLinkError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_typed_link::DetachTypedLinkError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.detach_typed_link();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DetachTypedLinkFluentBuilder {
         }
     }
     /// Access the DetachTypedLink as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detach_typed_link::builders::DetachTypedLinkInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::detach_typed_link::builders::DetachTypedLinkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DetachTypedLinkFluentBuilder {
             crate::operation::detach_typed_link::DetachTypedLink,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_typed_link::DetachTypedLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_typed_link::DetachTypedLinkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DetachTypedLinkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DetachTypedLinkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_typed_link::DetachTypedLinkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_typed_link::DetachTypedLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_typed_link::DetachTypedLinkError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DetachTypedLinkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_typed_link::DetachTypedLinkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_typed_link::DetachTypedLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_typed_link::DetachTypedLinkError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DetachTypedLinkFluentBuilder {
             crate::operation::detach_typed_link::DetachTypedLink,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_typed_link::DetachTypedLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_typed_link::DetachTypedLinkError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -148,17 +126,12 @@ impl DetachTypedLinkFluentBuilder {
         self
     }
     /// <p>Used to accept a typed link specifier as input.</p>
-    pub fn set_typed_link_specifier(
-        mut self,
-        input: ::std::option::Option<crate::types::TypedLinkSpecifier>,
-    ) -> Self {
+    pub fn set_typed_link_specifier(mut self, input: ::std::option::Option<crate::types::TypedLinkSpecifier>) -> Self {
         self.inner = self.inner.set_typed_link_specifier(input);
         self
     }
     /// <p>Used to accept a typed link specifier as input.</p>
-    pub fn get_typed_link_specifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
+    pub fn get_typed_link_specifier(&self) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
         self.inner.get_typed_link_specifier()
     }
 }

@@ -45,17 +45,14 @@ impl GetDomainSuggestionsInput {
 }
 impl GetDomainSuggestionsInput {
     /// Creates a new builder-style object to manufacture [`GetDomainSuggestionsInput`](crate::operation::get_domain_suggestions::GetDomainSuggestionsInput).
-    pub fn builder(
-    ) -> crate::operation::get_domain_suggestions::builders::GetDomainSuggestionsInputBuilder {
+    pub fn builder() -> crate::operation::get_domain_suggestions::builders::GetDomainSuggestionsInputBuilder {
         crate::operation::get_domain_suggestions::builders::GetDomainSuggestionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDomainSuggestionsInput`](crate::operation::get_domain_suggestions::GetDomainSuggestionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDomainSuggestionsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) suggestion_count: ::std::option::Option<i32>,
@@ -131,16 +128,12 @@ impl GetDomainSuggestionsInputBuilder {
     /// Consumes the builder and constructs a [`GetDomainSuggestionsInput`](crate::operation::get_domain_suggestions::GetDomainSuggestionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_domain_suggestions::GetDomainSuggestionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_domain_suggestions::GetDomainSuggestionsInput {
-                domain_name: self.domain_name,
-                suggestion_count: self.suggestion_count,
-                only_available: self.only_available,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_domain_suggestions::GetDomainSuggestionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_domain_suggestions::GetDomainSuggestionsInput {
+            domain_name: self.domain_name,
+            suggestion_count: self.suggestion_count,
+            only_available: self.only_available,
+        })
     }
 }

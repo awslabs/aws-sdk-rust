@@ -26,8 +26,7 @@ impl ListReferenceImportJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReferenceImportJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsInputBuilder,
+    inner: crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsInputBuilder,
 }
 impl ListReferenceImportJobsFluentBuilder {
     /// Creates a new `ListReferenceImportJobs`.
@@ -38,10 +37,7 @@ impl ListReferenceImportJobsFluentBuilder {
         }
     }
     /// Access the ListReferenceImportJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListReferenceImportJobsFluentBuilder {
             crate::operation::list_reference_import_jobs::ListReferenceImportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_reference_import_jobs::ListReferenceImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_reference_import_jobs::ListReferenceImportJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListReferenceImportJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListReferenceImportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_reference_import_jobs::ListReferenceImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_reference_import_jobs::ListReferenceImportJobsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListReferenceImportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_reference_import_jobs::ListReferenceImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_reference_import_jobs::ListReferenceImportJobsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListReferenceImportJobsFluentBuilder {
             crate::operation::list_reference_import_jobs::ListReferenceImportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_reference_import_jobs::ListReferenceImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_reference_import_jobs::ListReferenceImportJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_reference_import_jobs::paginator::ListReferenceImportJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_reference_import_jobs::paginator::ListReferenceImportJobsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_reference_import_jobs::paginator::ListReferenceImportJobsPaginator {
         crate::operation::list_reference_import_jobs::paginator::ListReferenceImportJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of jobs to return in one page of results.</p>
@@ -162,18 +144,12 @@ impl ListReferenceImportJobsFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The job's reference store ID.</p>
-    pub fn reference_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reference_store_id(input.into());
         self
     }
     /// <p>The job's reference store ID.</p>
-    pub fn set_reference_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reference_store_id(input);
         self
     }
@@ -187,10 +163,7 @@ impl ListReferenceImportJobsFluentBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportReferenceFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ImportReferenceFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

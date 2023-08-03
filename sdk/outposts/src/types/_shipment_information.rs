@@ -30,27 +30,19 @@ impl ShipmentInformation {
 
 /// A builder for [`ShipmentInformation`](crate::types::ShipmentInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ShipmentInformationBuilder {
     pub(crate) shipment_tracking_number: ::std::option::Option<::std::string::String>,
     pub(crate) shipment_carrier: ::std::option::Option<crate::types::ShipmentCarrier>,
 }
 impl ShipmentInformationBuilder {
     /// <p> The tracking number of the shipment. </p>
-    pub fn shipment_tracking_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shipment_tracking_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shipment_tracking_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The tracking number of the shipment. </p>
-    pub fn set_shipment_tracking_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shipment_tracking_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shipment_tracking_number = input;
         self
     }
@@ -64,10 +56,7 @@ impl ShipmentInformationBuilder {
         self
     }
     /// <p> The carrier of the shipment. </p>
-    pub fn set_shipment_carrier(
-        mut self,
-        input: ::std::option::Option<crate::types::ShipmentCarrier>,
-    ) -> Self {
+    pub fn set_shipment_carrier(mut self, input: ::std::option::Option<crate::types::ShipmentCarrier>) -> Self {
         self.shipment_carrier = input;
         self
     }

@@ -11,8 +11,7 @@ pub fn ser_restore_request_http_payload(
 
 pub fn ser_restore_request_payload(
     input: &crate::types::RestoreRequest,
-) -> std::result::Result<std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);

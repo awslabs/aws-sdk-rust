@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`encryption_key_arn(Option<String>)`](crate::operation::verify_pin_data::VerifyPinDataOutput::encryption_key_arn): <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin block generation.</p>
     ///   - [`encryption_key_check_value(Option<String>)`](crate::operation::verify_pin_data::VerifyPinDataOutput::encryption_key_check_value): <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
     /// - On failure, responds with [`SdkError<VerifyPinDataError>`](crate::operation::verify_pin_data::VerifyPinDataError)
-    pub fn verify_pin_data(
-        &self,
-    ) -> crate::operation::verify_pin_data::builders::VerifyPinDataFluentBuilder {
-        crate::operation::verify_pin_data::builders::VerifyPinDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn verify_pin_data(&self) -> crate::operation::verify_pin_data::builders::VerifyPinDataFluentBuilder {
+        crate::operation::verify_pin_data::builders::VerifyPinDataFluentBuilder::new(self.handle.clone())
     }
 }

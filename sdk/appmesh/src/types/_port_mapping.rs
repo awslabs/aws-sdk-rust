@@ -30,9 +30,7 @@ impl PortMapping {
 
 /// A builder for [`PortMapping`](crate::types::PortMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PortMappingBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) protocol: ::std::option::Option<crate::types::PortProtocol>,
@@ -58,10 +56,7 @@ impl PortMappingBuilder {
         self
     }
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::PortProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::PortProtocol>) -> Self {
         self.protocol = input;
         self
     }

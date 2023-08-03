@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`RebootRelationalDatabaseOutput`](crate::operation::reboot_relational_database::RebootRelationalDatabaseOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::reboot_relational_database::RebootRelationalDatabaseOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<RebootRelationalDatabaseError>`](crate::operation::reboot_relational_database::RebootRelationalDatabaseError)
-    pub fn reboot_relational_database(
-        &self,
-    ) -> crate::operation::reboot_relational_database::builders::RebootRelationalDatabaseFluentBuilder
-    {
+    pub fn reboot_relational_database(&self) -> crate::operation::reboot_relational_database::builders::RebootRelationalDatabaseFluentBuilder {
         crate::operation::reboot_relational_database::builders::RebootRelationalDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

@@ -32,16 +32,13 @@ impl ::std::fmt::Debug for CreateWorkerConfigurationInput {
         let mut formatter = f.debug_struct("CreateWorkerConfigurationInput");
         formatter.field("description", &self.description);
         formatter.field("name", &self.name);
-        formatter.field(
-            "properties_file_content",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("properties_file_content", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 impl CreateWorkerConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkerConfigurationInput`](crate::operation::create_worker_configuration::CreateWorkerConfigurationInput).
-    pub fn builder() -> crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationInputBuilder {
         crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationInputBuilder::default()
     }
 }
@@ -84,18 +81,12 @@ impl CreateWorkerConfigurationInputBuilder {
         &self.name
     }
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
-    pub fn properties_file_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn properties_file_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.properties_file_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
-    pub fn set_properties_file_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_properties_file_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.properties_file_content = input;
         self
     }
@@ -110,13 +101,11 @@ impl CreateWorkerConfigurationInputBuilder {
         crate::operation::create_worker_configuration::CreateWorkerConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_worker_configuration::CreateWorkerConfigurationInput {
-                description: self.description,
-                name: self.name,
-                properties_file_content: self.properties_file_content,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_worker_configuration::CreateWorkerConfigurationInput {
+            description: self.description,
+            name: self.name,
+            properties_file_content: self.properties_file_content,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateWorkerConfigurationInputBuilder {
@@ -124,10 +113,7 @@ impl ::std::fmt::Debug for CreateWorkerConfigurationInputBuilder {
         let mut formatter = f.debug_struct("CreateWorkerConfigurationInputBuilder");
         formatter.field("description", &self.description);
         formatter.field("name", &self.name);
-        formatter.field(
-            "properties_file_content",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("properties_file_content", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

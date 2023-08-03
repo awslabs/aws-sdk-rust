@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`ssl_certificate_id(impl ::std::convert::Into<String>)`](crate::operation::set_load_balancer_listener_ssl_certificate::builders::SetLoadBalancerListenerSSLCertificateFluentBuilder::ssl_certificate_id) / [`set_ssl_certificate_id(Option<String>)`](crate::operation::set_load_balancer_listener_ssl_certificate::builders::SetLoadBalancerListenerSSLCertificateFluentBuilder::set_ssl_certificate_id): <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
     /// - On success, responds with [`SetLoadBalancerListenerSslCertificateOutput`](crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateOutput)
     /// - On failure, responds with [`SdkError<SetLoadBalancerListenerSSLCertificateError>`](crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSSLCertificateError)
-    pub fn set_load_balancer_listener_ssl_certificate(&self) -> crate::operation::set_load_balancer_listener_ssl_certificate::builders::SetLoadBalancerListenerSSLCertificateFluentBuilder{
-        crate::operation::set_load_balancer_listener_ssl_certificate::builders::SetLoadBalancerListenerSSLCertificateFluentBuilder::new(self.handle.clone())
+    pub fn set_load_balancer_listener_ssl_certificate(
+        &self,
+    ) -> crate::operation::set_load_balancer_listener_ssl_certificate::builders::SetLoadBalancerListenerSSLCertificateFluentBuilder {
+        crate::operation::set_load_balancer_listener_ssl_certificate::builders::SetLoadBalancerListenerSSLCertificateFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -26,7 +26,7 @@ impl ListDevelopmentSchemaArnsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDevelopmentSchemaArnsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_development_schema_arns::builders::ListDevelopmentSchemaArnsInputBuilder,
+    inner: crate::operation::list_development_schema_arns::builders::ListDevelopmentSchemaArnsInputBuilder,
 }
 impl ListDevelopmentSchemaArnsFluentBuilder {
     /// Creates a new `ListDevelopmentSchemaArns`.
@@ -37,7 +37,7 @@ impl ListDevelopmentSchemaArnsFluentBuilder {
         }
     }
     /// Access the ListDevelopmentSchemaArns as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_development_schema_arns::builders::ListDevelopmentSchemaArnsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_development_schema_arns::builders::ListDevelopmentSchemaArnsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListDevelopmentSchemaArnsFluentBuilder {
             crate::operation::list_development_schema_arns::ListDevelopmentSchemaArns,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListDevelopmentSchemaArnsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListDevelopmentSchemaArnsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListDevelopmentSchemaArnsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListDevelopmentSchemaArnsFluentBuilder {
             crate::operation::list_development_schema_arns::ListDevelopmentSchemaArns,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_development_schema_arns::paginator::ListDevelopmentSchemaArnsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_development_schema_arns::paginator::ListDevelopmentSchemaArnsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_development_schema_arns::paginator::ListDevelopmentSchemaArnsPaginator {
         crate::operation::list_development_schema_arns::paginator::ListDevelopmentSchemaArnsPaginator::new(self.handle, self.inner)
     }
     /// <p>The pagination token.</p>

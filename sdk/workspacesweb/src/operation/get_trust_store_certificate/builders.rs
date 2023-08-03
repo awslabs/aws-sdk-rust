@@ -26,7 +26,7 @@ impl GetTrustStoreCertificateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTrustStoreCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateInputBuilder,
+    inner: crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateInputBuilder,
 }
 impl GetTrustStoreCertificateFluentBuilder {
     /// Creates a new `GetTrustStoreCertificate`.
@@ -37,7 +37,7 @@ impl GetTrustStoreCertificateFluentBuilder {
         }
     }
     /// Access the GetTrustStoreCertificate as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetTrustStoreCertificateFluentBuilder {
             crate::operation::get_trust_store_certificate::GetTrustStoreCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_trust_store_certificate::GetTrustStoreCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_trust_store_certificate::GetTrustStoreCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetTrustStoreCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetTrustStoreCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_trust_store_certificate::GetTrustStoreCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_trust_store_certificate::GetTrustStoreCertificateError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetTrustStoreCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_trust_store_certificate::GetTrustStoreCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_trust_store_certificate::GetTrustStoreCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetTrustStoreCertificateFluentBuilder {
             crate::operation::get_trust_store_certificate::GetTrustStoreCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_trust_store_certificate::GetTrustStoreCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_trust_store_certificate::GetTrustStoreCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the trust store certificate.</p>
-    pub fn trust_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trust_store_arn(input.into());
         self
     }
     /// <p>The ARN of the trust store certificate.</p>
-    pub fn set_trust_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trust_store_arn(input);
         self
     }

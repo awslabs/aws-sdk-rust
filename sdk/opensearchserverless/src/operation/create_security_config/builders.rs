@@ -37,9 +37,7 @@ impl CreateSecurityConfigFluentBuilder {
         }
     }
     /// Access the CreateSecurityConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_security_config::builders::CreateSecurityConfigInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_security_config::builders::CreateSecurityConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateSecurityConfigFluentBuilder {
             crate::operation::create_security_config::CreateSecurityConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_config::CreateSecurityConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_config::CreateSecurityConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateSecurityConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateSecurityConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_security_config::CreateSecurityConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_config::CreateSecurityConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_config::CreateSecurityConfigError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateSecurityConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_security_config::CreateSecurityConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_config::CreateSecurityConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_config::CreateSecurityConfigError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateSecurityConfigFluentBuilder {
             crate::operation::create_security_config::CreateSecurityConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_config::CreateSecurityConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_config::CreateSecurityConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl CreateSecurityConfigFluentBuilder {
         self
     }
     /// <p>The type of security configuration.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityConfigType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityConfigType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -173,10 +157,7 @@ impl CreateSecurityConfigFluentBuilder {
         self
     }
     /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
-    pub fn set_saml_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SamlConfigOptions>,
-    ) -> Self {
+    pub fn set_saml_options(mut self, input: ::std::option::Option<crate::types::SamlConfigOptions>) -> Self {
         self.inner = self.inner.set_saml_options(input);
         self
     }

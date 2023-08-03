@@ -17,11 +17,7 @@ impl super::Client {
     /// - On success, responds with [`AllocateHostsOutput`](crate::operation::allocate_hosts::AllocateHostsOutput) with field(s):
     ///   - [`host_ids(Option<Vec<String>>)`](crate::operation::allocate_hosts::AllocateHostsOutput::host_ids): <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
     /// - On failure, responds with [`SdkError<AllocateHostsError>`](crate::operation::allocate_hosts::AllocateHostsError)
-    pub fn allocate_hosts(
-        &self,
-    ) -> crate::operation::allocate_hosts::builders::AllocateHostsFluentBuilder {
-        crate::operation::allocate_hosts::builders::AllocateHostsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn allocate_hosts(&self) -> crate::operation::allocate_hosts::builders::AllocateHostsFluentBuilder {
+        crate::operation::allocate_hosts::builders::AllocateHostsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -128,9 +128,7 @@ impl FpgaImage {
 
 /// A builder for [`FpgaImage`](crate::types::FpgaImage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FpgaImageBuilder {
     pub(crate) fpga_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) fpga_image_global_id: ::std::option::Option<::std::string::String>,
@@ -151,18 +149,12 @@ pub struct FpgaImageBuilder {
 }
 impl FpgaImageBuilder {
     /// <p>The FPGA image identifier (AFI ID).</p>
-    pub fn fpga_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fpga_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The FPGA image identifier (AFI ID).</p>
-    pub fn set_fpga_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fpga_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fpga_image_id = input;
         self
     }
@@ -171,18 +163,12 @@ impl FpgaImageBuilder {
         &self.fpga_image_id
     }
     /// <p>The global FPGA image identifier (AGFI ID).</p>
-    pub fn fpga_image_global_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fpga_image_global_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fpga_image_global_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The global FPGA image identifier (AGFI ID).</p>
-    pub fn set_fpga_image_global_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fpga_image_global_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fpga_image_global_id = input;
         self
     }
@@ -219,18 +205,12 @@ impl FpgaImageBuilder {
         &self.description
     }
     /// <p>The version of the Amazon Web Services Shell that was used to create the bitstream.</p>
-    pub fn shell_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shell_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shell_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the Amazon Web Services Shell that was used to create the bitstream.</p>
-    pub fn set_shell_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shell_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shell_version = input;
         self
     }
@@ -272,10 +252,7 @@ impl FpgaImageBuilder {
         self
     }
     /// <p>The date and time the AFI was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -289,10 +266,7 @@ impl FpgaImageBuilder {
         self
     }
     /// <p>The time of the most recent update to the AFI.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -340,17 +314,12 @@ impl FpgaImageBuilder {
         self
     }
     /// <p>The product codes for the AFI.</p>
-    pub fn set_product_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
-    ) -> Self {
+    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>) -> Self {
         self.product_codes = input;
         self
     }
     /// <p>The product codes for the AFI.</p>
-    pub fn get_product_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
+    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
         &self.product_codes
     }
     /// Appends an item to `tags`.
@@ -365,10 +334,7 @@ impl FpgaImageBuilder {
         self
     }
     /// <p>Any tags assigned to the AFI.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -409,27 +375,19 @@ impl FpgaImageBuilder {
     /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
     ///
     /// <p>The instance types supported by the AFI.</p>
-    pub fn instance_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_types.unwrap_or_default();
         v.push(input.into());
         self.instance_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The instance types supported by the AFI.</p>
-    pub fn set_instance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_types = input;
         self
     }
     /// <p>The instance types supported by the AFI.</p>
-    pub fn get_instance_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_types
     }
     /// Consumes the builder and constructs a [`FpgaImage`](crate::types::FpgaImage).

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::delete_notification_subscription::builders::DeleteNotificationSubscriptionFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::delete_notification_subscription::builders::DeleteNotificationSubscriptionFluentBuilder::set_organization_id): <p>The ID of the organization.</p>
     /// - On success, responds with [`DeleteNotificationSubscriptionOutput`](crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionOutput)
     /// - On failure, responds with [`SdkError<DeleteNotificationSubscriptionError>`](crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError)
-    pub fn delete_notification_subscription(&self) -> crate::operation::delete_notification_subscription::builders::DeleteNotificationSubscriptionFluentBuilder{
+    pub fn delete_notification_subscription(
+        &self,
+    ) -> crate::operation::delete_notification_subscription::builders::DeleteNotificationSubscriptionFluentBuilder {
         crate::operation::delete_notification_subscription::builders::DeleteNotificationSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

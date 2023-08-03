@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`reason(impl ::std::convert::Into<String>)`](crate::operation::create_worker_block::builders::CreateWorkerBlockFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::create_worker_block::builders::CreateWorkerBlockFluentBuilder::set_reason): <p>A message explaining the reason for blocking the Worker. This parameter enables you to keep track of your Workers. The Worker does not see this message.</p>
     /// - On success, responds with [`CreateWorkerBlockOutput`](crate::operation::create_worker_block::CreateWorkerBlockOutput)
     /// - On failure, responds with [`SdkError<CreateWorkerBlockError>`](crate::operation::create_worker_block::CreateWorkerBlockError)
-    pub fn create_worker_block(
-        &self,
-    ) -> crate::operation::create_worker_block::builders::CreateWorkerBlockFluentBuilder {
-        crate::operation::create_worker_block::builders::CreateWorkerBlockFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_worker_block(&self) -> crate::operation::create_worker_block::builders::CreateWorkerBlockFluentBuilder {
+        crate::operation::create_worker_block::builders::CreateWorkerBlockFluentBuilder::new(self.handle.clone())
     }
 }

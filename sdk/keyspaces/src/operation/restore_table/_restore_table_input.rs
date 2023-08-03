@@ -35,8 +35,7 @@ pub struct RestoreTableInput {
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub encryption_specification_override:
-        ::std::option::Option<crate::types::EncryptionSpecification>,
+    pub encryption_specification_override: ::std::option::Option<crate::types::EncryptionSpecification>,
     /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
     /// <ul>
     /// <li> <p> <code>status=ENABLED</code> </p> </li>
@@ -79,9 +78,7 @@ impl RestoreTableInput {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn capacity_specification_override(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacitySpecification> {
+    pub fn capacity_specification_override(&self) -> ::std::option::Option<&crate::types::CapacitySpecification> {
         self.capacity_specification_override.as_ref()
     }
     /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>
@@ -91,9 +88,7 @@ impl RestoreTableInput {
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn encryption_specification_override(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionSpecification> {
+    pub fn encryption_specification_override(&self) -> ::std::option::Option<&crate::types::EncryptionSpecification> {
         self.encryption_specification_override.as_ref()
     }
     /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
@@ -103,9 +98,7 @@ impl RestoreTableInput {
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn point_in_time_recovery_override(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PointInTimeRecovery> {
+    pub fn point_in_time_recovery_override(&self) -> ::std::option::Option<&crate::types::PointInTimeRecovery> {
         self.point_in_time_recovery_override.as_ref()
     }
     /// <p>A list of key-value pair tags to be attached to the restored table. </p>
@@ -123,37 +116,26 @@ impl RestoreTableInput {
 
 /// A builder for [`RestoreTableInput`](crate::operation::restore_table::RestoreTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreTableInputBuilder {
     pub(crate) source_keyspace_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_table_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_keyspace_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_table_name: ::std::option::Option<::std::string::String>,
     pub(crate) restore_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) capacity_specification_override:
-        ::std::option::Option<crate::types::CapacitySpecification>,
-    pub(crate) encryption_specification_override:
-        ::std::option::Option<crate::types::EncryptionSpecification>,
-    pub(crate) point_in_time_recovery_override:
-        ::std::option::Option<crate::types::PointInTimeRecovery>,
+    pub(crate) capacity_specification_override: ::std::option::Option<crate::types::CapacitySpecification>,
+    pub(crate) encryption_specification_override: ::std::option::Option<crate::types::EncryptionSpecification>,
+    pub(crate) point_in_time_recovery_override: ::std::option::Option<crate::types::PointInTimeRecovery>,
     pub(crate) tags_override: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl RestoreTableInputBuilder {
     /// <p>The keyspace name of the source table.</p>
-    pub fn source_keyspace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_keyspace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The keyspace name of the source table.</p>
-    pub fn set_source_keyspace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_keyspace_name = input;
         self
     }
@@ -162,18 +144,12 @@ impl RestoreTableInputBuilder {
         &self.source_keyspace_name
     }
     /// <p>The name of the source table.</p>
-    pub fn source_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source table.</p>
-    pub fn set_source_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_table_name = input;
         self
     }
@@ -182,18 +158,12 @@ impl RestoreTableInputBuilder {
         &self.source_table_name
     }
     /// <p>The name of the target keyspace.</p>
-    pub fn target_keyspace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_keyspace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the target keyspace.</p>
-    pub fn set_target_keyspace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_keyspace_name = input;
         self
     }
@@ -202,18 +172,12 @@ impl RestoreTableInputBuilder {
         &self.target_keyspace_name
     }
     /// <p>The name of the target table.</p>
-    pub fn target_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the target table.</p>
-    pub fn set_target_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_table_name = input;
         self
     }
@@ -227,10 +191,7 @@ impl RestoreTableInputBuilder {
         self
     }
     /// <p>The restore timestamp in ISO 8601 format.</p>
-    pub fn set_restore_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_restore_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.restore_timestamp = input;
         self
     }
@@ -245,10 +206,7 @@ impl RestoreTableInputBuilder {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn capacity_specification_override(
-        mut self,
-        input: crate::types::CapacitySpecification,
-    ) -> Self {
+    pub fn capacity_specification_override(mut self, input: crate::types::CapacitySpecification) -> Self {
         self.capacity_specification_override = ::std::option::Option::Some(input);
         self
     }
@@ -259,10 +217,7 @@ impl RestoreTableInputBuilder {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn set_capacity_specification_override(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacitySpecification>,
-    ) -> Self {
+    pub fn set_capacity_specification_override(mut self, input: ::std::option::Option<crate::types::CapacitySpecification>) -> Self {
         self.capacity_specification_override = input;
         self
     }
@@ -273,9 +228,7 @@ impl RestoreTableInputBuilder {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn get_capacity_specification_override(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacitySpecification> {
+    pub fn get_capacity_specification_override(&self) -> &::std::option::Option<crate::types::CapacitySpecification> {
         &self.capacity_specification_override
     }
     /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>
@@ -285,10 +238,7 @@ impl RestoreTableInputBuilder {
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn encryption_specification_override(
-        mut self,
-        input: crate::types::EncryptionSpecification,
-    ) -> Self {
+    pub fn encryption_specification_override(mut self, input: crate::types::EncryptionSpecification) -> Self {
         self.encryption_specification_override = ::std::option::Option::Some(input);
         self
     }
@@ -299,10 +249,7 @@ impl RestoreTableInputBuilder {
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn set_encryption_specification_override(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionSpecification>,
-    ) -> Self {
+    pub fn set_encryption_specification_override(mut self, input: ::std::option::Option<crate::types::EncryptionSpecification>) -> Self {
         self.encryption_specification_override = input;
         self
     }
@@ -313,9 +260,7 @@ impl RestoreTableInputBuilder {
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn get_encryption_specification_override(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionSpecification> {
+    pub fn get_encryption_specification_override(&self) -> &::std::option::Option<crate::types::EncryptionSpecification> {
         &self.encryption_specification_override
     }
     /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
@@ -325,10 +270,7 @@ impl RestoreTableInputBuilder {
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn point_in_time_recovery_override(
-        mut self,
-        input: crate::types::PointInTimeRecovery,
-    ) -> Self {
+    pub fn point_in_time_recovery_override(mut self, input: crate::types::PointInTimeRecovery) -> Self {
         self.point_in_time_recovery_override = ::std::option::Option::Some(input);
         self
     }
@@ -339,10 +281,7 @@ impl RestoreTableInputBuilder {
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn set_point_in_time_recovery_override(
-        mut self,
-        input: ::std::option::Option<crate::types::PointInTimeRecovery>,
-    ) -> Self {
+    pub fn set_point_in_time_recovery_override(mut self, input: ::std::option::Option<crate::types::PointInTimeRecovery>) -> Self {
         self.point_in_time_recovery_override = input;
         self
     }
@@ -353,9 +292,7 @@ impl RestoreTableInputBuilder {
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn get_point_in_time_recovery_override(
-        &self,
-    ) -> &::std::option::Option<crate::types::PointInTimeRecovery> {
+    pub fn get_point_in_time_recovery_override(&self) -> &::std::option::Option<crate::types::PointInTimeRecovery> {
         &self.point_in_time_recovery_override
     }
     /// Appends an item to `tags_override`.
@@ -372,10 +309,7 @@ impl RestoreTableInputBuilder {
     }
     /// <p>A list of key-value pair tags to be attached to the restored table. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn set_tags_override(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags_override(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags_override = input;
         self
     }
@@ -385,12 +319,7 @@ impl RestoreTableInputBuilder {
         &self.tags_override
     }
     /// Consumes the builder and constructs a [`RestoreTableInput`](crate::operation::restore_table::RestoreTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_table::RestoreTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::restore_table::RestoreTableInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::restore_table::RestoreTableInput {
             source_keyspace_name: self.source_keyspace_name,
             source_table_name: self.source_table_name,

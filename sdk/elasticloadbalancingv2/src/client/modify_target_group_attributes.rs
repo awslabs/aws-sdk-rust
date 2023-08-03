@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`ModifyTargetGroupAttributesOutput`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesOutput) with field(s):
     ///   - [`attributes(Option<Vec<TargetGroupAttribute>>)`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesOutput::attributes): <p>Information about the attributes.</p>
     /// - On failure, responds with [`SdkError<ModifyTargetGroupAttributesError>`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesError)
-    pub fn modify_target_group_attributes(&self) -> crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesFluentBuilder{
+    pub fn modify_target_group_attributes(
+        &self,
+    ) -> crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesFluentBuilder {
         crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesFluentBuilder::new(self.handle.clone())
     }
 }

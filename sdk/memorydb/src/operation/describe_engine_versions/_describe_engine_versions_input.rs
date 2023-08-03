@@ -43,18 +43,14 @@ impl DescribeEngineVersionsInput {
 }
 impl DescribeEngineVersionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEngineVersionsInput`](crate::operation::describe_engine_versions::DescribeEngineVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_engine_versions::builders::DescribeEngineVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_engine_versions::builders::DescribeEngineVersionsInputBuilder {
         crate::operation::describe_engine_versions::builders::DescribeEngineVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEngineVersionsInput`](crate::operation::describe_engine_versions::DescribeEngineVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEngineVersionsInputBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_group_family: ::std::option::Option<::std::string::String>,
@@ -64,18 +60,12 @@ pub struct DescribeEngineVersionsInputBuilder {
 }
 impl DescribeEngineVersionsInputBuilder {
     /// <p>The Redis engine version</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Redis engine version</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -84,18 +74,12 @@ impl DescribeEngineVersionsInputBuilder {
         &self.engine_version
     }
     /// <p>The name of a specific parameter group family to return details for.</p>
-    pub fn parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a specific parameter group family to return details for.</p>
-    pub fn set_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_family = input;
         self
     }
@@ -148,18 +132,14 @@ impl DescribeEngineVersionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEngineVersionsInput`](crate::operation::describe_engine_versions::DescribeEngineVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_engine_versions::DescribeEngineVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_engine_versions::DescribeEngineVersionsInput {
-                engine_version: self.engine_version,
-                parameter_group_family: self.parameter_group_family,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                default_only: self.default_only,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_engine_versions::DescribeEngineVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_engine_versions::DescribeEngineVersionsInput {
+            engine_version: self.engine_version,
+            parameter_group_family: self.parameter_group_family,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            default_only: self.default_only,
+        })
     }
 }

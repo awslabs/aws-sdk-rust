@@ -44,9 +44,7 @@ impl InputDestination {
 
 /// A builder for [`InputDestination`](crate::types::InputDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputDestinationBuilder {
     pub(crate) ip: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<::std::string::String>,
@@ -102,10 +100,7 @@ impl InputDestinationBuilder {
         self
     }
     /// The properties for a VPC type input destination.
-    pub fn set_vpc(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDestinationVpc>,
-    ) -> Self {
+    pub fn set_vpc(mut self, input: ::std::option::Option<crate::types::InputDestinationVpc>) -> Self {
         self.vpc = input;
         self
     }

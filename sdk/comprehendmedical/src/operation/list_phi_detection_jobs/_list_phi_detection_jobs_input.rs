@@ -29,17 +29,14 @@ impl ListPhiDetectionJobsInput {
 }
 impl ListPhiDetectionJobsInput {
     /// Creates a new builder-style object to manufacture [`ListPhiDetectionJobsInput`](crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_phi_detection_jobs::builders::ListPhiDetectionJobsInputBuilder {
+    pub fn builder() -> crate::operation::list_phi_detection_jobs::builders::ListPhiDetectionJobsInputBuilder {
         crate::operation::list_phi_detection_jobs::builders::ListPhiDetectionJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPhiDetectionJobsInput`](crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPhiDetectionJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,17 +49,12 @@ impl ListPhiDetectionJobsInputBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>) -> Self {
         self.filter = input;
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter> {
         &self.filter
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -96,16 +88,12 @@ impl ListPhiDetectionJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListPhiDetectionJobsInput`](crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput {
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput {
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

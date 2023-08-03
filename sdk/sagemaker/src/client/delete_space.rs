@@ -7,9 +7,7 @@ impl super::Client {
     ///   - [`space_name(impl ::std::convert::Into<String>)`](crate::operation::delete_space::builders::DeleteSpaceFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::delete_space::builders::DeleteSpaceFluentBuilder::set_space_name): <p>The name of the space.</p>
     /// - On success, responds with [`DeleteSpaceOutput`](crate::operation::delete_space::DeleteSpaceOutput)
     /// - On failure, responds with [`SdkError<DeleteSpaceError>`](crate::operation::delete_space::DeleteSpaceError)
-    pub fn delete_space(
-        &self,
-    ) -> crate::operation::delete_space::builders::DeleteSpaceFluentBuilder {
+    pub fn delete_space(&self) -> crate::operation::delete_space::builders::DeleteSpaceFluentBuilder {
         crate::operation::delete_space::builders::DeleteSpaceFluentBuilder::new(self.handle.clone())
     }
 }

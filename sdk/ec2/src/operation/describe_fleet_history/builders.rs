@@ -39,9 +39,7 @@ impl DescribeFleetHistoryFluentBuilder {
         }
     }
     /// Access the DescribeFleetHistory as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_fleet_history::builders::DescribeFleetHistoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_history::builders::DescribeFleetHistoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DescribeFleetHistoryFluentBuilder {
             crate::operation::describe_fleet_history::DescribeFleetHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_history::DescribeFleetHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_history::DescribeFleetHistoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DescribeFleetHistoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DescribeFleetHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_history::DescribeFleetHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_history::DescribeFleetHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_history::DescribeFleetHistoryError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DescribeFleetHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_history::DescribeFleetHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_history::DescribeFleetHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_history::DescribeFleetHistoryError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl DescribeFleetHistoryFluentBuilder {
             crate::operation::describe_fleet_history::DescribeFleetHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_history::DescribeFleetHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_history::DescribeFleetHistoryError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +131,7 @@ impl DescribeFleetHistoryFluentBuilder {
         self
     }
     /// <p>The type of events to describe. By default, all events are described.</p>
-    pub fn set_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FleetEventType>,
-    ) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::FleetEventType>) -> Self {
         self.inner = self.inner.set_event_type(input);
         self
     }
@@ -203,10 +187,7 @@ impl DescribeFleetHistoryFluentBuilder {
         self
     }
     /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }

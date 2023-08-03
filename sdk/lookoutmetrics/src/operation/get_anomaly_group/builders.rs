@@ -10,10 +10,7 @@ impl GetAnomalyGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_anomaly_group::GetAnomalyGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_anomaly_group::GetAnomalyGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_anomaly_group::GetAnomalyGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_anomaly_group();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetAnomalyGroupFluentBuilder {
         }
     }
     /// Access the GetAnomalyGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_anomaly_group::builders::GetAnomalyGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_anomaly_group::builders::GetAnomalyGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetAnomalyGroupFluentBuilder {
             crate::operation::get_anomaly_group::GetAnomalyGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_anomaly_group::GetAnomalyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_anomaly_group::GetAnomalyGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetAnomalyGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetAnomalyGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_anomaly_group::GetAnomalyGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_anomaly_group::GetAnomalyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_anomaly_group::GetAnomalyGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetAnomalyGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_anomaly_group::GetAnomalyGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_anomaly_group::GetAnomalyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_anomaly_group::GetAnomalyGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetAnomalyGroupFluentBuilder {
             crate::operation::get_anomaly_group::GetAnomalyGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_anomaly_group::GetAnomalyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_anomaly_group::GetAnomalyGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.anomaly_group_id(input.into());
         self
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn set_anomaly_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_anomaly_group_id(input);
         self
     }
@@ -143,18 +121,12 @@ impl GetAnomalyGroupFluentBuilder {
         self.inner.get_anomaly_group_id()
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.anomaly_detector_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_anomaly_detector_arn(input);
         self
     }

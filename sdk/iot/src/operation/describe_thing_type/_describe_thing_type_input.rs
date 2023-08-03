@@ -16,34 +16,25 @@ impl DescribeThingTypeInput {
 }
 impl DescribeThingTypeInput {
     /// Creates a new builder-style object to manufacture [`DescribeThingTypeInput`](crate::operation::describe_thing_type::DescribeThingTypeInput).
-    pub fn builder(
-    ) -> crate::operation::describe_thing_type::builders::DescribeThingTypeInputBuilder {
+    pub fn builder() -> crate::operation::describe_thing_type::builders::DescribeThingTypeInputBuilder {
         crate::operation::describe_thing_type::builders::DescribeThingTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeThingTypeInput`](crate::operation::describe_thing_type::DescribeThingTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeThingTypeInputBuilder {
     pub(crate) thing_type_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeThingTypeInputBuilder {
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the thing type.</p>
-    pub fn set_thing_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_type_name = input;
         self
     }
@@ -54,14 +45,9 @@ impl DescribeThingTypeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeThingTypeInput`](crate::operation::describe_thing_type::DescribeThingTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_thing_type::DescribeThingTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_thing_type::DescribeThingTypeInput {
-                thing_type_name: self.thing_type_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_thing_type::DescribeThingTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_thing_type::DescribeThingTypeInput {
+            thing_type_name: self.thing_type_name,
+        })
     }
 }

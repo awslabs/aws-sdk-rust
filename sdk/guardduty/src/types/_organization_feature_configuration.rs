@@ -12,8 +12,7 @@ pub struct OrganizationFeatureConfiguration {
     pub auto_enable: ::std::option::Option<crate::types::OrgFeatureStatus>,
     /// <p>The additional information that will be configured for the organization.</p>
     #[doc(hidden)]
-    pub additional_configuration:
-        ::std::option::Option<::std::vec::Vec<crate::types::OrganizationAdditionalConfiguration>>,
+    pub additional_configuration: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationAdditionalConfiguration>>,
 }
 impl OrganizationFeatureConfiguration {
     /// <p>The name of the feature that will be configured for the organization.</p>
@@ -25,9 +24,7 @@ impl OrganizationFeatureConfiguration {
         self.auto_enable.as_ref()
     }
     /// <p>The additional information that will be configured for the organization.</p>
-    pub fn additional_configuration(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OrganizationAdditionalConfiguration]> {
+    pub fn additional_configuration(&self) -> ::std::option::Option<&[crate::types::OrganizationAdditionalConfiguration]> {
         self.additional_configuration.as_deref()
     }
 }
@@ -40,14 +37,11 @@ impl OrganizationFeatureConfiguration {
 
 /// A builder for [`OrganizationFeatureConfiguration`](crate::types::OrganizationFeatureConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationFeatureConfigurationBuilder {
     pub(crate) name: ::std::option::Option<crate::types::OrgFeature>,
     pub(crate) auto_enable: ::std::option::Option<crate::types::OrgFeatureStatus>,
-    pub(crate) additional_configuration:
-        ::std::option::Option<::std::vec::Vec<crate::types::OrganizationAdditionalConfiguration>>,
+    pub(crate) additional_configuration: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationAdditionalConfiguration>>,
 }
 impl OrganizationFeatureConfigurationBuilder {
     /// <p>The name of the feature that will be configured for the organization.</p>
@@ -70,10 +64,7 @@ impl OrganizationFeatureConfigurationBuilder {
         self
     }
     /// <p>The status of the feature that will be configured for the organization.</p>
-    pub fn set_auto_enable(
-        mut self,
-        input: ::std::option::Option<crate::types::OrgFeatureStatus>,
-    ) -> Self {
+    pub fn set_auto_enable(mut self, input: ::std::option::Option<crate::types::OrgFeatureStatus>) -> Self {
         self.auto_enable = input;
         self
     }
@@ -86,10 +77,7 @@ impl OrganizationFeatureConfigurationBuilder {
     /// To override the contents of this collection use [`set_additional_configuration`](Self::set_additional_configuration).
     ///
     /// <p>The additional information that will be configured for the organization.</p>
-    pub fn additional_configuration(
-        mut self,
-        input: crate::types::OrganizationAdditionalConfiguration,
-    ) -> Self {
+    pub fn additional_configuration(mut self, input: crate::types::OrganizationAdditionalConfiguration) -> Self {
         let mut v = self.additional_configuration.unwrap_or_default();
         v.push(input);
         self.additional_configuration = ::std::option::Option::Some(v);
@@ -98,18 +86,13 @@ impl OrganizationFeatureConfigurationBuilder {
     /// <p>The additional information that will be configured for the organization.</p>
     pub fn set_additional_configuration(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::OrganizationAdditionalConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationAdditionalConfiguration>>,
     ) -> Self {
         self.additional_configuration = input;
         self
     }
     /// <p>The additional information that will be configured for the organization.</p>
-    pub fn get_additional_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationAdditionalConfiguration>>
-    {
+    pub fn get_additional_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationAdditionalConfiguration>> {
         &self.additional_configuration
     }
     /// Consumes the builder and constructs a [`OrganizationFeatureConfiguration`](crate::types::OrganizationFeatureConfiguration).

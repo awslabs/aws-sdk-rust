@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`ip_routes_info(Option<Vec<IpRouteInfo>>)`](crate::operation::list_ip_routes::ListIpRoutesOutput::ip_routes_info): <p>A list of <code>IpRoute</code>s.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_ip_routes::ListIpRoutesOutput::next_token): <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>ListIpRoutes</code> to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<ListIpRoutesError>`](crate::operation::list_ip_routes::ListIpRoutesError)
-    pub fn list_ip_routes(
-        &self,
-    ) -> crate::operation::list_ip_routes::builders::ListIpRoutesFluentBuilder {
-        crate::operation::list_ip_routes::builders::ListIpRoutesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_ip_routes(&self) -> crate::operation::list_ip_routes::builders::ListIpRoutesFluentBuilder {
+        crate::operation::list_ip_routes::builders::ListIpRoutesFluentBuilder::new(self.handle.clone())
     }
 }

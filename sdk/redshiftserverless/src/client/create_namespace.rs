@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`CreateNamespaceOutput`](crate::operation::create_namespace::CreateNamespaceOutput) with field(s):
     ///   - [`namespace(Option<Namespace>)`](crate::operation::create_namespace::CreateNamespaceOutput::namespace): <p>The created namespace object.</p>
     /// - On failure, responds with [`SdkError<CreateNamespaceError>`](crate::operation::create_namespace::CreateNamespaceError)
-    pub fn create_namespace(
-        &self,
-    ) -> crate::operation::create_namespace::builders::CreateNamespaceFluentBuilder {
-        crate::operation::create_namespace::builders::CreateNamespaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_namespace(&self) -> crate::operation::create_namespace::builders::CreateNamespaceFluentBuilder {
+        crate::operation::create_namespace::builders::CreateNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

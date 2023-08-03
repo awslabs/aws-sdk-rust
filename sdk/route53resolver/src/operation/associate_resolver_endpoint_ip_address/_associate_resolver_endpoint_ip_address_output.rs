@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for AssociateResolverEndpointIpAddressOut
 }
 impl AssociateResolverEndpointIpAddressOutput {
     /// Creates a new builder-style object to manufacture [`AssociateResolverEndpointIpAddressOutput`](crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressOutput).
-    pub fn builder() -> crate::operation::associate_resolver_endpoint_ip_address::builders::AssociateResolverEndpointIpAddressOutputBuilder{
+    pub fn builder() -> crate::operation::associate_resolver_endpoint_ip_address::builders::AssociateResolverEndpointIpAddressOutputBuilder {
         crate::operation::associate_resolver_endpoint_ip_address::builders::AssociateResolverEndpointIpAddressOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateResolverEndpointIpAddressOutput`](crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateResolverEndpointIpAddressOutputBuilder {
     pub(crate) resolver_endpoint: ::std::option::Option<crate::types::ResolverEndpoint>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl AssociateResolverEndpointIpAddressOutputBuilder {
         self
     }
     /// <p>The response to an <code>AssociateResolverEndpointIpAddress</code> request.</p>
-    pub fn set_resolver_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverEndpoint>,
-    ) -> Self {
+    pub fn set_resolver_endpoint(mut self, input: ::std::option::Option<crate::types::ResolverEndpoint>) -> Self {
         self.resolver_endpoint = input;
         self
     }
@@ -63,10 +58,9 @@ impl AssociateResolverEndpointIpAddressOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateResolverEndpointIpAddressOutput`](crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressOutput).
-    pub fn build(self) -> crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressOutput{
+    pub fn build(self) -> crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressOutput {
         crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressOutput {
-            resolver_endpoint: self.resolver_endpoint
-            ,
+            resolver_endpoint: self.resolver_endpoint,
             _request_id: self._request_id,
         }
     }

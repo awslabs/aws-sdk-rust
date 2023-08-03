@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     /// - On failure, responds with [`SdkError<AcceptDomainTransferFromAnotherAwsAccountError>`](crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountError)
-    pub fn accept_domain_transfer_from_another_aws_account(&self) -> crate::operation::accept_domain_transfer_from_another_aws_account::builders::AcceptDomainTransferFromAnotherAwsAccountFluentBuilder{
-        crate::operation::accept_domain_transfer_from_another_aws_account::builders::AcceptDomainTransferFromAnotherAwsAccountFluentBuilder::new(self.handle.clone())
+    pub fn accept_domain_transfer_from_another_aws_account(
+        &self,
+    ) -> crate::operation::accept_domain_transfer_from_another_aws_account::builders::AcceptDomainTransferFromAnotherAwsAccountFluentBuilder {
+        crate::operation::accept_domain_transfer_from_another_aws_account::builders::AcceptDomainTransferFromAnotherAwsAccountFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

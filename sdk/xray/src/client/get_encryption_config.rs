@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetEncryptionConfigOutput`](crate::operation::get_encryption_config::GetEncryptionConfigOutput) with field(s):
     ///   - [`encryption_config(Option<EncryptionConfig>)`](crate::operation::get_encryption_config::GetEncryptionConfigOutput::encryption_config): <p>The encryption configuration document.</p>
     /// - On failure, responds with [`SdkError<GetEncryptionConfigError>`](crate::operation::get_encryption_config::GetEncryptionConfigError)
-    pub fn get_encryption_config(
-        &self,
-    ) -> crate::operation::get_encryption_config::builders::GetEncryptionConfigFluentBuilder {
-        crate::operation::get_encryption_config::builders::GetEncryptionConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_encryption_config(&self) -> crate::operation::get_encryption_config::builders::GetEncryptionConfigFluentBuilder {
+        crate::operation::get_encryption_config::builders::GetEncryptionConfigFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`profile_name(impl ::std::convert::Into<String>)`](crate::operation::cancel_signing_profile::builders::CancelSigningProfileFluentBuilder::profile_name) / [`set_profile_name(Option<String>)`](crate::operation::cancel_signing_profile::builders::CancelSigningProfileFluentBuilder::set_profile_name): <p>The name of the signing profile to be canceled.</p>
     /// - On success, responds with [`CancelSigningProfileOutput`](crate::operation::cancel_signing_profile::CancelSigningProfileOutput)
     /// - On failure, responds with [`SdkError<CancelSigningProfileError>`](crate::operation::cancel_signing_profile::CancelSigningProfileError)
-    pub fn cancel_signing_profile(
-        &self,
-    ) -> crate::operation::cancel_signing_profile::builders::CancelSigningProfileFluentBuilder {
-        crate::operation::cancel_signing_profile::builders::CancelSigningProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_signing_profile(&self) -> crate::operation::cancel_signing_profile::builders::CancelSigningProfileFluentBuilder {
+        crate::operation::cancel_signing_profile::builders::CancelSigningProfileFluentBuilder::new(self.handle.clone())
     }
 }

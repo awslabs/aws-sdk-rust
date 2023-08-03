@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListMetricAttributionMetricsOutput {
 }
 impl ListMetricAttributionMetricsOutput {
     /// Creates a new builder-style object to manufacture [`ListMetricAttributionMetricsOutput`](crate::operation::list_metric_attribution_metrics::ListMetricAttributionMetricsOutput).
-    pub fn builder() -> crate::operation::list_metric_attribution_metrics::builders::ListMetricAttributionMetricsOutputBuilder{
+    pub fn builder() -> crate::operation::list_metric_attribution_metrics::builders::ListMetricAttributionMetricsOutputBuilder {
         crate::operation::list_metric_attribution_metrics::builders::ListMetricAttributionMetricsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMetricAttributionMetricsOutput`](crate::operation::list_metric_attribution_metrics::ListMetricAttributionMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMetricAttributionMetricsOutputBuilder {
     pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListMetricAttributionMetricsOutputBuilder {
         self
     }
     /// <p>The metrics for the specified metric attribution.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>>) -> Self {
         self.metrics = input;
         self
     }
     /// <p>The metrics for the specified metric attribution.</p>
-    pub fn get_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>> {
         &self.metrics
     }
     /// <p>Specify the pagination token from a previous <code>ListMetricAttributionMetricsResponse</code> request to retrieve the next page of results.</p>
@@ -93,9 +86,7 @@ impl ListMetricAttributionMetricsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMetricAttributionMetricsOutput`](crate::operation::list_metric_attribution_metrics::ListMetricAttributionMetricsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_metric_attribution_metrics::ListMetricAttributionMetricsOutput {
+    pub fn build(self) -> crate::operation::list_metric_attribution_metrics::ListMetricAttributionMetricsOutput {
         crate::operation::list_metric_attribution_metrics::ListMetricAttributionMetricsOutput {
             metrics: self.metrics,
             next_token: self.next_token,

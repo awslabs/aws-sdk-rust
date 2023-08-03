@@ -36,9 +36,7 @@ impl ListHsmsOutput {
 
 /// A builder for [`ListHsmsOutput`](crate::operation::list_hsms::ListHsmsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHsmsOutputBuilder {
     pub(crate) hsm_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl ListHsmsOutputBuilder {
         self
     }
     /// <p>The list of ARNs that identify the HSMs.</p>
-    pub fn set_hsm_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_hsm_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.hsm_list = input;
         self
     }

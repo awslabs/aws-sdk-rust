@@ -26,7 +26,7 @@ impl GetCalculationExecutionStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCalculationExecutionStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusInputBuilder,
+    inner: crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusInputBuilder,
 }
 impl GetCalculationExecutionStatusFluentBuilder {
     /// Creates a new `GetCalculationExecutionStatus`.
@@ -37,7 +37,7 @@ impl GetCalculationExecutionStatusFluentBuilder {
         }
     }
     /// Access the GetCalculationExecutionStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetCalculationExecutionStatusFluentBuilder {
             crate::operation::get_calculation_execution_status::GetCalculationExecutionStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetCalculationExecutionStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetCalculationExecutionStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetCalculationExecutionStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetCalculationExecutionStatusFluentBuilder {
             crate::operation::get_calculation_execution_status::GetCalculationExecutionStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The calculation execution UUID.</p>
-    pub fn calculation_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.calculation_execution_id(input.into());
         self
     }
     /// <p>The calculation execution UUID.</p>
-    pub fn set_calculation_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_calculation_execution_id(input);
         self
     }

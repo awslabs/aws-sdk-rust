@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteEgressOnlyInternetGatewayOutput`](crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayOutput) with field(s):
     ///   - [`return_code(Option<bool>)`](crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayOutput::return_code): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<DeleteEgressOnlyInternetGatewayError>`](crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayError)
-    pub fn delete_egress_only_internet_gateway(&self) -> crate::operation::delete_egress_only_internet_gateway::builders::DeleteEgressOnlyInternetGatewayFluentBuilder{
+    pub fn delete_egress_only_internet_gateway(
+        &self,
+    ) -> crate::operation::delete_egress_only_internet_gateway::builders::DeleteEgressOnlyInternetGatewayFluentBuilder {
         crate::operation::delete_egress_only_internet_gateway::builders::DeleteEgressOnlyInternetGatewayFluentBuilder::new(self.handle.clone())
     }
 }

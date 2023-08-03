@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`link_associations(Option<Vec<LinkAssociation>>)`](crate::operation::get_link_associations::GetLinkAssociationsOutput::link_associations): <p>The link associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_link_associations::GetLinkAssociationsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetLinkAssociationsError>`](crate::operation::get_link_associations::GetLinkAssociationsError)
-    pub fn get_link_associations(
-        &self,
-    ) -> crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder {
-        crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_link_associations(&self) -> crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder {
+        crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for StopSolutionVersionCreationOutput {
 }
 impl StopSolutionVersionCreationOutput {
     /// Creates a new builder-style object to manufacture [`StopSolutionVersionCreationOutput`](crate::operation::stop_solution_version_creation::StopSolutionVersionCreationOutput).
-    pub fn builder() -> crate::operation::stop_solution_version_creation::builders::StopSolutionVersionCreationOutputBuilder{
+    pub fn builder() -> crate::operation::stop_solution_version_creation::builders::StopSolutionVersionCreationOutputBuilder {
         crate::operation::stop_solution_version_creation::builders::StopSolutionVersionCreationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopSolutionVersionCreationOutput`](crate::operation::stop_solution_version_creation::StopSolutionVersionCreationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopSolutionVersionCreationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl StopSolutionVersionCreationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopSolutionVersionCreationOutput`](crate::operation::stop_solution_version_creation::StopSolutionVersionCreationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_solution_version_creation::StopSolutionVersionCreationOutput {
+    pub fn build(self) -> crate::operation::stop_solution_version_creation::StopSolutionVersionCreationOutput {
         crate::operation::stop_solution_version_creation::StopSolutionVersionCreationOutput {
             _request_id: self._request_id,
         }

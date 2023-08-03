@@ -9,10 +9,7 @@ pub fn ser_modify_workspace_access_properties_input(
     if let Some(var_2) = &input.workspace_access_properties {
         #[allow(unused_mut)]
         let mut object_3 = object.key("WorkspaceAccessProperties").start_object();
-        crate::protocol_serde::shape_workspace_access_properties::ser_workspace_access_properties(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_workspace_access_properties::ser_workspace_access_properties(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

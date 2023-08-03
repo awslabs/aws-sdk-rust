@@ -23,9 +23,7 @@ impl BuildBatchFilter {
 
 /// A builder for [`BuildBatchFilter`](crate::types::BuildBatchFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuildBatchFilterBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StatusType>,
 }
@@ -46,8 +44,6 @@ impl BuildBatchFilterBuilder {
     }
     /// Consumes the builder and constructs a [`BuildBatchFilter`](crate::types::BuildBatchFilter).
     pub fn build(self) -> crate::types::BuildBatchFilter {
-        crate::types::BuildBatchFilter {
-            status: self.status,
-        }
+        crate::types::BuildBatchFilter { status: self.status }
     }
 }

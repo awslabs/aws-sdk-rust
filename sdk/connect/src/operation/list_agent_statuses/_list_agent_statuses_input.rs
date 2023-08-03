@@ -36,23 +36,19 @@ impl ListAgentStatusesInput {
 }
 impl ListAgentStatusesInput {
     /// Creates a new builder-style object to manufacture [`ListAgentStatusesInput`](crate::operation::list_agent_statuses::ListAgentStatusesInput).
-    pub fn builder(
-    ) -> crate::operation::list_agent_statuses::builders::ListAgentStatusesInputBuilder {
+    pub fn builder() -> crate::operation::list_agent_statuses::builders::ListAgentStatusesInputBuilder {
         crate::operation::list_agent_statuses::builders::ListAgentStatusesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAgentStatusesInput`](crate::operation::list_agent_statuses::ListAgentStatusesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAgentStatusesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) agent_status_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::AgentStatusType>>,
+    pub(crate) agent_status_types: ::std::option::Option<::std::vec::Vec<crate::types::AgentStatusType>>,
 }
 impl ListAgentStatusesInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -109,33 +105,23 @@ impl ListAgentStatusesInputBuilder {
         self
     }
     /// <p>Available agent status types.</p>
-    pub fn set_agent_status_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AgentStatusType>>,
-    ) -> Self {
+    pub fn set_agent_status_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentStatusType>>) -> Self {
         self.agent_status_types = input;
         self
     }
     /// <p>Available agent status types.</p>
-    pub fn get_agent_status_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentStatusType>> {
+    pub fn get_agent_status_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentStatusType>> {
         &self.agent_status_types
     }
     /// Consumes the builder and constructs a [`ListAgentStatusesInput`](crate::operation::list_agent_statuses::ListAgentStatusesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_agent_statuses::ListAgentStatusesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_agent_statuses::ListAgentStatusesInput {
-                instance_id: self.instance_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                agent_status_types: self.agent_status_types,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_agent_statuses::ListAgentStatusesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_agent_statuses::ListAgentStatusesInput {
+            instance_id: self.instance_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            agent_status_types: self.agent_status_types,
+        })
     }
 }

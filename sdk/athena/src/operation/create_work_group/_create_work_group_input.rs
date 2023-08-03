@@ -43,9 +43,7 @@ impl CreateWorkGroupInput {
 
 /// A builder for [`CreateWorkGroupInput`](crate::operation::create_work_group::CreateWorkGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::WorkGroupConfiguration>,
@@ -73,17 +71,12 @@ impl CreateWorkGroupInputBuilder {
         self
     }
     /// <p>Contains configuration information for creating an Athena SQL workgroup or Spark enabled Athena workgroup. Athena SQL workgroup configuration includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkGroupConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::WorkGroupConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>Contains configuration information for creating an Athena SQL workgroup or Spark enabled Athena workgroup. Athena SQL workgroup configuration includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkGroupConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::WorkGroupConfiguration> {
         &self.configuration
     }
     /// <p>The workgroup description.</p>
@@ -112,10 +105,7 @@ impl CreateWorkGroupInputBuilder {
         self
     }
     /// <p>A list of comma separated tags to add to the workgroup that is created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -126,10 +116,7 @@ impl CreateWorkGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkGroupInput`](crate::operation::create_work_group::CreateWorkGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_work_group::CreateWorkGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_work_group::CreateWorkGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_work_group::CreateWorkGroupInput {
             name: self.name,
             configuration: self.configuration,

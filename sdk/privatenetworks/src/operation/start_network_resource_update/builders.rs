@@ -32,7 +32,7 @@ impl StartNetworkResourceUpdateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartNetworkResourceUpdateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateInputBuilder,
+    inner: crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateInputBuilder,
 }
 impl StartNetworkResourceUpdateFluentBuilder {
     /// Creates a new `StartNetworkResourceUpdate`.
@@ -43,7 +43,7 @@ impl StartNetworkResourceUpdateFluentBuilder {
         }
     }
     /// Access the StartNetworkResourceUpdate as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl StartNetworkResourceUpdateFluentBuilder {
             crate::operation::start_network_resource_update::StartNetworkResourceUpdate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_network_resource_update::StartNetworkResourceUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_network_resource_update::StartNetworkResourceUpdateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl StartNetworkResourceUpdateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl StartNetworkResourceUpdateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_network_resource_update::StartNetworkResourceUpdateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_network_resource_update::StartNetworkResourceUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_network_resource_update::StartNetworkResourceUpdateError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl StartNetworkResourceUpdateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_network_resource_update::StartNetworkResourceUpdateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_network_resource_update::StartNetworkResourceUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_network_resource_update::StartNetworkResourceUpdateError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +111,17 @@ impl StartNetworkResourceUpdateFluentBuilder {
             crate::operation::start_network_resource_update::StartNetworkResourceUpdate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_network_resource_update::StartNetworkResourceUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_network_resource_update::StartNetworkResourceUpdateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn network_resource_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_resource_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn set_network_resource_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_resource_arn(input);
         self
     }
@@ -162,10 +145,7 @@ impl StartNetworkResourceUpdateFluentBuilder {
     /// <li> <p> <code>RETURN</code> - Submits a request to return a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
     /// <li> <p> <code>COMMITMENT</code> - Submits a request to change or renew the commitment period. If you choose this value, then you must set <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html#privatenetworks-StartNetworkResourceUpdate-request-commitmentConfiguration"> <code>commitmentConfiguration</code> </a>.</p> </li>
     /// </ul>
-    pub fn set_update_type(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateType>,
-    ) -> Self {
+    pub fn set_update_type(mut self, input: ::std::option::Option<crate::types::UpdateType>) -> Self {
         self.inner = self.inner.set_update_type(input);
         self
     }
@@ -184,10 +164,7 @@ impl StartNetworkResourceUpdateFluentBuilder {
         self
     }
     /// <p>The shipping address. If you don't provide a shipping address when replacing or returning a network resource, we use the address from the original order for the network resource.</p>
-    pub fn set_shipping_address(
-        mut self,
-        input: ::std::option::Option<crate::types::Address>,
-    ) -> Self {
+    pub fn set_shipping_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.inner = self.inner.set_shipping_address(input);
         self
     }
@@ -196,18 +173,12 @@ impl StartNetworkResourceUpdateFluentBuilder {
         self.inner.get_shipping_address()
     }
     /// <p>The reason for the return. Providing a reason for a return is optional.</p>
-    pub fn return_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn return_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.return_reason(input.into());
         self
     }
     /// <p>The reason for the return. Providing a reason for a return is optional.</p>
-    pub fn set_return_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_return_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_return_reason(input);
         self
     }
@@ -224,10 +195,7 @@ impl StartNetworkResourceUpdateFluentBuilder {
     /// <li> <p>Turn off a previously-enabled automatic renewal on a 1-year or 3-year commitment. You cannot use the automatic-renewal option for a 60-day commitment.</p> </li>
     /// </ul>
     /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
-    pub fn commitment_configuration(
-        mut self,
-        input: crate::types::CommitmentConfiguration,
-    ) -> Self {
+    pub fn commitment_configuration(mut self, input: crate::types::CommitmentConfiguration) -> Self {
         self.inner = self.inner.commitment_configuration(input);
         self
     }
@@ -240,10 +208,7 @@ impl StartNetworkResourceUpdateFluentBuilder {
     /// <li> <p>Turn off a previously-enabled automatic renewal on a 1-year or 3-year commitment. You cannot use the automatic-renewal option for a 60-day commitment.</p> </li>
     /// </ul>
     /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
-    pub fn set_commitment_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CommitmentConfiguration>,
-    ) -> Self {
+    pub fn set_commitment_configuration(mut self, input: ::std::option::Option<crate::types::CommitmentConfiguration>) -> Self {
         self.inner = self.inner.set_commitment_configuration(input);
         self
     }
@@ -256,9 +221,7 @@ impl StartNetworkResourceUpdateFluentBuilder {
     /// <li> <p>Turn off a previously-enabled automatic renewal on a 1-year or 3-year commitment. You cannot use the automatic-renewal option for a 60-day commitment.</p> </li>
     /// </ul>
     /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
-    pub fn get_commitment_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CommitmentConfiguration> {
+    pub fn get_commitment_configuration(&self) -> &::std::option::Option<crate::types::CommitmentConfiguration> {
         self.inner.get_commitment_configuration()
     }
 }

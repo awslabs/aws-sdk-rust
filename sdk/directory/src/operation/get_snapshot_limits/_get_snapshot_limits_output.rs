@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for GetSnapshotLimitsOutput {
 }
 impl GetSnapshotLimitsOutput {
     /// Creates a new builder-style object to manufacture [`GetSnapshotLimitsOutput`](crate::operation::get_snapshot_limits::GetSnapshotLimitsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsOutputBuilder {
+    pub fn builder() -> crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsOutputBuilder {
         crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSnapshotLimitsOutput`](crate::operation::get_snapshot_limits::GetSnapshotLimitsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSnapshotLimitsOutputBuilder {
     pub(crate) snapshot_limits: ::std::option::Option<crate::types::SnapshotLimits>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl GetSnapshotLimitsOutputBuilder {
         self
     }
     /// <p>A <code>SnapshotLimits</code> object that contains the manual snapshot limits for the specified directory.</p>
-    pub fn set_snapshot_limits(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotLimits>,
-    ) -> Self {
+    pub fn set_snapshot_limits(mut self, input: ::std::option::Option<crate::types::SnapshotLimits>) -> Self {
         self.snapshot_limits = input;
         self
     }

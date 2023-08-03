@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyOptionGroupOutput`](crate::operation::modify_option_group::ModifyOptionGroupOutput) with field(s):
     ///   - [`option_group(Option<OptionGroup>)`](crate::operation::modify_option_group::ModifyOptionGroupOutput::option_group): <p></p>
     /// - On failure, responds with [`SdkError<ModifyOptionGroupError>`](crate::operation::modify_option_group::ModifyOptionGroupError)
-    pub fn modify_option_group(
-        &self,
-    ) -> crate::operation::modify_option_group::builders::ModifyOptionGroupFluentBuilder {
-        crate::operation::modify_option_group::builders::ModifyOptionGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_option_group(&self) -> crate::operation::modify_option_group::builders::ModifyOptionGroupFluentBuilder {
+        crate::operation::modify_option_group::builders::ModifyOptionGroupFluentBuilder::new(self.handle.clone())
     }
 }

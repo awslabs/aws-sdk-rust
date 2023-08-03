@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetChannelScheduleOutput {
 }
 impl GetChannelScheduleOutput {
     /// Creates a new builder-style object to manufacture [`GetChannelScheduleOutput`](crate::operation::get_channel_schedule::GetChannelScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::get_channel_schedule::builders::GetChannelScheduleOutputBuilder {
+    pub fn builder() -> crate::operation::get_channel_schedule::builders::GetChannelScheduleOutputBuilder {
         crate::operation::get_channel_schedule::builders::GetChannelScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetChannelScheduleOutput`](crate::operation::get_channel_schedule::GetChannelScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChannelScheduleOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetChannelScheduleOutputBuilder {
         self
     }
     /// <p>A list of schedule entries for the channel.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleEntry>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleEntry>>) -> Self {
         self.items = input;
         self
     }
     /// <p>A list of schedule entries for the channel.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleEntry>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleEntry>> {
         &self.items
     }
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>

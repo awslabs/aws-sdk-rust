@@ -36,18 +36,14 @@ impl ListAccountIntegrationsInput {
 }
 impl ListAccountIntegrationsInput {
     /// Creates a new builder-style object to manufacture [`ListAccountIntegrationsInput`](crate::operation::list_account_integrations::ListAccountIntegrationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_account_integrations::builders::ListAccountIntegrationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_account_integrations::builders::ListAccountIntegrationsInputBuilder {
         crate::operation::list_account_integrations::builders::ListAccountIntegrationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountIntegrationsInput`](crate::operation::list_account_integrations::ListAccountIntegrationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountIntegrationsInputBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -118,13 +114,11 @@ impl ListAccountIntegrationsInputBuilder {
         crate::operation::list_account_integrations::ListAccountIntegrationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_account_integrations::ListAccountIntegrationsInput {
-                uri: self.uri,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                include_hidden: self.include_hidden,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_account_integrations::ListAccountIntegrationsInput {
+            uri: self.uri,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            include_hidden: self.include_hidden,
+        })
     }
 }

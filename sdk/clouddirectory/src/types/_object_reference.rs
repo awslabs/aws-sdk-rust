@@ -33,9 +33,7 @@ impl ObjectReference {
 
 /// A builder for [`ObjectReference`](crate::types::ObjectReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ObjectReferenceBuilder {
     pub(crate) selector: ::std::option::Option<::std::string::String>,
 }
@@ -71,8 +69,6 @@ impl ObjectReferenceBuilder {
     }
     /// Consumes the builder and constructs a [`ObjectReference`](crate::types::ObjectReference).
     pub fn build(self) -> crate::types::ObjectReference {
-        crate::types::ObjectReference {
-            selector: self.selector,
-        }
+        crate::types::ObjectReference { selector: self.selector }
     }
 }

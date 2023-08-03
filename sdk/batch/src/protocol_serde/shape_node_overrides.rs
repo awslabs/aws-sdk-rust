@@ -15,10 +15,7 @@ pub fn ser_node_overrides(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_node_property_override::ser_node_property_override(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_node_property_override::ser_node_property_override(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

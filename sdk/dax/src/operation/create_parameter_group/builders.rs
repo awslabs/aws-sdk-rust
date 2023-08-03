@@ -37,9 +37,7 @@ impl CreateParameterGroupFluentBuilder {
         }
     }
     /// Access the CreateParameterGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_parameter_group::builders::CreateParameterGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_parameter_group::builders::CreateParameterGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateParameterGroupFluentBuilder {
             crate::operation::create_parameter_group::CreateParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_parameter_group::CreateParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_parameter_group::CreateParameterGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateParameterGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_parameter_group::CreateParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_parameter_group::CreateParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_parameter_group::CreateParameterGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_parameter_group::CreateParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_parameter_group::CreateParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_parameter_group::CreateParameterGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl CreateParameterGroupFluentBuilder {
             crate::operation::create_parameter_group::CreateParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_parameter_group::CreateParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_parameter_group::CreateParameterGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameter_group_name(input.into());
         self
     }
     /// <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }

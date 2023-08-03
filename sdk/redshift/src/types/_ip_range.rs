@@ -37,9 +37,7 @@ impl IpRange {
 
 /// A builder for [`IpRange`](crate::types::IpRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpRangeBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) cidrip: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl IpRangeBuilder {
         self
     }
     /// <p>The list of tags for the IP range.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

@@ -43,17 +43,14 @@ impl ListObjectChildrenInput {
 }
 impl ListObjectChildrenInput {
     /// Creates a new builder-style object to manufacture [`ListObjectChildrenInput`](crate::operation::list_object_children::ListObjectChildrenInput).
-    pub fn builder(
-    ) -> crate::operation::list_object_children::builders::ListObjectChildrenInputBuilder {
+    pub fn builder() -> crate::operation::list_object_children::builders::ListObjectChildrenInputBuilder {
         crate::operation::list_object_children::builders::ListObjectChildrenInputBuilder::default()
     }
 }
 
 /// A builder for [`ListObjectChildrenInput`](crate::operation::list_object_children::ListObjectChildrenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListObjectChildrenInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
@@ -63,18 +60,12 @@ pub struct ListObjectChildrenInputBuilder {
 }
 impl ListObjectChildrenInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_arn = input;
         self
     }
@@ -88,10 +79,7 @@ impl ListObjectChildrenInputBuilder {
         self
     }
     /// <p>The reference that identifies the object for which child objects are being listed.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.object_reference = input;
         self
     }
@@ -133,10 +121,7 @@ impl ListObjectChildrenInputBuilder {
         self
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
+    pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
         self.consistency_level = input;
         self
     }
@@ -147,18 +132,13 @@ impl ListObjectChildrenInputBuilder {
     /// Consumes the builder and constructs a [`ListObjectChildrenInput`](crate::operation::list_object_children::ListObjectChildrenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_object_children::ListObjectChildrenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_object_children::ListObjectChildrenInput {
-                directory_arn: self.directory_arn,
-                object_reference: self.object_reference,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                consistency_level: self.consistency_level,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_object_children::ListObjectChildrenInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_object_children::ListObjectChildrenInput {
+            directory_arn: self.directory_arn,
+            object_reference: self.object_reference,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            consistency_level: self.consistency_level,
+        })
     }
 }

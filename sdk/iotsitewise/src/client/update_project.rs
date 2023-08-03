@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`UpdateProjectOutput`](crate::operation::update_project::UpdateProjectOutput)
     /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::operation::update_project::UpdateProjectError)
-    pub fn update_project(
-        &self,
-    ) -> crate::operation::update_project::builders::UpdateProjectFluentBuilder {
-        crate::operation::update_project::builders::UpdateProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_project(&self) -> crate::operation::update_project::builders::UpdateProjectFluentBuilder {
+        crate::operation::update_project::builders::UpdateProjectFluentBuilder::new(self.handle.clone())
     }
 }

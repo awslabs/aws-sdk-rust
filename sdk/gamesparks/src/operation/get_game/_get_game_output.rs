@@ -28,9 +28,7 @@ impl GetGameOutput {
 
 /// A builder for [`GetGameOutput`](crate::operation::get_game::GetGameOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGameOutputBuilder {
     pub(crate) game: ::std::option::Option<crate::types::GameDetails>,
     _request_id: Option<String>,

@@ -29,18 +29,14 @@ impl ListTextTranslationJobsInput {
 }
 impl ListTextTranslationJobsInput {
     /// Creates a new builder-style object to manufacture [`ListTextTranslationJobsInput`](crate::operation::list_text_translation_jobs::ListTextTranslationJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsInputBuilder {
         crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTextTranslationJobsInput`](crate::operation::list_text_translation_jobs::ListTextTranslationJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTextTranslationJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::TextTranslationJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -53,10 +49,7 @@ impl ListTextTranslationJobsInputBuilder {
         self
     }
     /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TextTranslationJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::TextTranslationJobFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -99,12 +92,10 @@ impl ListTextTranslationJobsInputBuilder {
         crate::operation::list_text_translation_jobs::ListTextTranslationJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_text_translation_jobs::ListTextTranslationJobsInput {
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_text_translation_jobs::ListTextTranslationJobsInput {
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

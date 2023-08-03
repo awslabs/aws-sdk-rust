@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum S3ModelDataType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for S3ModelDataType {
         match s {
             "S3Object" => S3ModelDataType::S3Object,
             "S3Prefix" => S3ModelDataType::S3Prefix,
-            other => {
-                S3ModelDataType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => S3ModelDataType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

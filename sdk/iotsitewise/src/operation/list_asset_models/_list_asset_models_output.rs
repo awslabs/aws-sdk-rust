@@ -5,8 +5,7 @@
 pub struct ListAssetModelsOutput {
     /// <p>A list that summarizes each asset model.</p>
     #[doc(hidden)]
-    pub asset_model_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetModelSummary>>,
+    pub asset_model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAssetModelsOutput {
 }
 impl ListAssetModelsOutput {
     /// <p>A list that summarizes each asset model.</p>
-    pub fn asset_model_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssetModelSummary]> {
+    pub fn asset_model_summaries(&self) -> ::std::option::Option<&[crate::types::AssetModelSummary]> {
         self.asset_model_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAssetModelsOutput {
 }
 impl ListAssetModelsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssetModelsOutput`](crate::operation::list_asset_models::ListAssetModelsOutput).
-    pub fn builder() -> crate::operation::list_asset_models::builders::ListAssetModelsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_asset_models::builders::ListAssetModelsOutputBuilder {
         crate::operation::list_asset_models::builders::ListAssetModelsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssetModelsOutput`](crate::operation::list_asset_models::ListAssetModelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssetModelsOutputBuilder {
-    pub(crate) asset_model_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetModelSummary>>,
+    pub(crate) asset_model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListAssetModelsOutputBuilder {
         self
     }
     /// <p>A list that summarizes each asset model.</p>
-    pub fn set_asset_model_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelSummary>>,
-    ) -> Self {
+    pub fn set_asset_model_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelSummary>>) -> Self {
         self.asset_model_summaries = input;
         self
     }
     /// <p>A list that summarizes each asset model.</p>
-    pub fn get_asset_model_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelSummary>> {
+    pub fn get_asset_model_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelSummary>> {
         &self.asset_model_summaries
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>

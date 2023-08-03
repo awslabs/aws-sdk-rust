@@ -65,9 +65,7 @@ impl UserIdentity {
 
 /// A builder for [`UserIdentity`](crate::types::UserIdentity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserIdentityBuilder {
     pub(crate) assumed_role: ::std::option::Option<crate::types::AssumedRole>,
     pub(crate) aws_account: ::std::option::Option<crate::types::AwsAccount>,
@@ -84,10 +82,7 @@ impl UserIdentityBuilder {
         self
     }
     /// <p>If the action was performed with temporary security credentials that were obtained using the AssumeRole operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.</p>
-    pub fn set_assumed_role(
-        mut self,
-        input: ::std::option::Option<crate::types::AssumedRole>,
-    ) -> Self {
+    pub fn set_assumed_role(mut self, input: ::std::option::Option<crate::types::AssumedRole>) -> Self {
         self.assumed_role = input;
         self
     }
@@ -101,10 +96,7 @@ impl UserIdentityBuilder {
         self
     }
     /// <p>If the action was performed using the credentials for another Amazon Web Services account, the details of that account.</p>
-    pub fn set_aws_account(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsAccount>,
-    ) -> Self {
+    pub fn set_aws_account(mut self, input: ::std::option::Option<crate::types::AwsAccount>) -> Self {
         self.aws_account = input;
         self
     }
@@ -118,10 +110,7 @@ impl UserIdentityBuilder {
         self
     }
     /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the name of the service.</p>
-    pub fn set_aws_service(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsService>,
-    ) -> Self {
+    pub fn set_aws_service(mut self, input: ::std::option::Option<crate::types::AwsService>) -> Self {
         self.aws_service = input;
         self
     }
@@ -135,10 +124,7 @@ impl UserIdentityBuilder {
         self
     }
     /// <p>If the action was performed with temporary security credentials that were obtained using the GetFederationToken operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.</p>
-    pub fn set_federated_user(
-        mut self,
-        input: ::std::option::Option<crate::types::FederatedUser>,
-    ) -> Self {
+    pub fn set_federated_user(mut self, input: ::std::option::Option<crate::types::FederatedUser>) -> Self {
         self.federated_user = input;
         self
     }
@@ -166,10 +152,7 @@ impl UserIdentityBuilder {
         self
     }
     /// <p>If the action was performed using the credentials for your Amazon Web Services account, the details of your account.</p>
-    pub fn set_root(
-        mut self,
-        input: ::std::option::Option<crate::types::UserIdentityRoot>,
-    ) -> Self {
+    pub fn set_root(mut self, input: ::std::option::Option<crate::types::UserIdentityRoot>) -> Self {
         self.root = input;
         self
     }
@@ -183,10 +166,7 @@ impl UserIdentityBuilder {
         self
     }
     /// <p>The type of entity that performed the action.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::UserIdentityType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::UserIdentityType>) -> Self {
         self.r#type = input;
         self
     }

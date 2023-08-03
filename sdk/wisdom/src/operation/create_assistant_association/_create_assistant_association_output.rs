@@ -10,9 +10,7 @@ pub struct CreateAssistantAssociationOutput {
 }
 impl CreateAssistantAssociationOutput {
     /// <p>The assistant association.</p>
-    pub fn assistant_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AssistantAssociationData> {
+    pub fn assistant_association(&self) -> ::std::option::Option<&crate::types::AssistantAssociationData> {
         self.assistant_association.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateAssistantAssociationOutput {
 }
 impl CreateAssistantAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssistantAssociationOutput`](crate::operation::create_assistant_association::CreateAssistantAssociationOutput).
-    pub fn builder() -> crate::operation::create_assistant_association::builders::CreateAssistantAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::create_assistant_association::builders::CreateAssistantAssociationOutputBuilder {
         crate::operation::create_assistant_association::builders::CreateAssistantAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAssistantAssociationOutput`](crate::operation::create_assistant_association::CreateAssistantAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAssistantAssociationOutputBuilder {
     pub(crate) assistant_association: ::std::option::Option<crate::types::AssistantAssociationData>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateAssistantAssociationOutputBuilder {
         self
     }
     /// <p>The assistant association.</p>
-    pub fn set_assistant_association(
-        mut self,
-        input: ::std::option::Option<crate::types::AssistantAssociationData>,
-    ) -> Self {
+    pub fn set_assistant_association(mut self, input: ::std::option::Option<crate::types::AssistantAssociationData>) -> Self {
         self.assistant_association = input;
         self
     }
     /// <p>The assistant association.</p>
-    pub fn get_assistant_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssistantAssociationData> {
+    pub fn get_assistant_association(&self) -> &::std::option::Option<crate::types::AssistantAssociationData> {
         &self.assistant_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl CreateAssistantAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAssistantAssociationOutput`](crate::operation::create_assistant_association::CreateAssistantAssociationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_assistant_association::CreateAssistantAssociationOutput {
+    pub fn build(self) -> crate::operation::create_assistant_association::CreateAssistantAssociationOutput {
         crate::operation::create_assistant_association::CreateAssistantAssociationOutput {
             assistant_association: self.assistant_association,
             _request_id: self._request_id,

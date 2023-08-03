@@ -22,18 +22,14 @@ impl DescribeManagedEndpointInput {
 }
 impl DescribeManagedEndpointInput {
     /// Creates a new builder-style object to manufacture [`DescribeManagedEndpointInput`](crate::operation::describe_managed_endpoint::DescribeManagedEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::describe_managed_endpoint::builders::DescribeManagedEndpointInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_managed_endpoint::builders::DescribeManagedEndpointInputBuilder {
         crate::operation::describe_managed_endpoint::builders::DescribeManagedEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeManagedEndpointInput`](crate::operation::describe_managed_endpoint::DescribeManagedEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeManagedEndpointInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_cluster_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DescribeManagedEndpointInputBuilder {
         &self.id
     }
     /// <p>The ID of the endpoint's virtual cluster.</p>
-    pub fn virtual_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the endpoint's virtual cluster.</p>
-    pub fn set_virtual_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_cluster_id = input;
         self
     }
@@ -80,11 +70,9 @@ impl DescribeManagedEndpointInputBuilder {
         crate::operation::describe_managed_endpoint::DescribeManagedEndpointInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_managed_endpoint::DescribeManagedEndpointInput {
-                id: self.id,
-                virtual_cluster_id: self.virtual_cluster_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_managed_endpoint::DescribeManagedEndpointInput {
+            id: self.id,
+            virtual_cluster_id: self.virtual_cluster_id,
+        })
     }
 }

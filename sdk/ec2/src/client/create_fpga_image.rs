@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`fpga_image_id(Option<String>)`](crate::operation::create_fpga_image::CreateFpgaImageOutput::fpga_image_id): <p>The FPGA image identifier (AFI ID).</p>
     ///   - [`fpga_image_global_id(Option<String>)`](crate::operation::create_fpga_image::CreateFpgaImageOutput::fpga_image_global_id): <p>The global FPGA image identifier (AGFI ID).</p>
     /// - On failure, responds with [`SdkError<CreateFpgaImageError>`](crate::operation::create_fpga_image::CreateFpgaImageError)
-    pub fn create_fpga_image(
-        &self,
-    ) -> crate::operation::create_fpga_image::builders::CreateFpgaImageFluentBuilder {
-        crate::operation::create_fpga_image::builders::CreateFpgaImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_fpga_image(&self) -> crate::operation::create_fpga_image::builders::CreateFpgaImageFluentBuilder {
+        crate::operation::create_fpga_image::builders::CreateFpgaImageFluentBuilder::new(self.handle.clone())
     }
 }

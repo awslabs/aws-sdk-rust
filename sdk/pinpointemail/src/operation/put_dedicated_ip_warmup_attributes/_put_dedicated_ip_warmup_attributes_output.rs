@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for PutDedicatedIpWarmupAttributesOutput 
 }
 impl PutDedicatedIpWarmupAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutDedicatedIpWarmupAttributesOutput`](crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesOutput).
-    pub fn builder() -> crate::operation::put_dedicated_ip_warmup_attributes::builders::PutDedicatedIpWarmupAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::put_dedicated_ip_warmup_attributes::builders::PutDedicatedIpWarmupAttributesOutputBuilder {
         crate::operation::put_dedicated_ip_warmup_attributes::builders::PutDedicatedIpWarmupAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutDedicatedIpWarmupAttributesOutput`](crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDedicatedIpWarmupAttributesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,10 +35,7 @@ impl PutDedicatedIpWarmupAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutDedicatedIpWarmupAttributesOutput`](crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesOutput
-    {
+    pub fn build(self) -> crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesOutput {
         crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesOutput {
             _request_id: self._request_id,
         }

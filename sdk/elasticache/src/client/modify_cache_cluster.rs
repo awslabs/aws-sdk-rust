@@ -27,11 +27,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyCacheClusterOutput`](crate::operation::modify_cache_cluster::ModifyCacheClusterOutput) with field(s):
     ///   - [`cache_cluster(Option<CacheCluster>)`](crate::operation::modify_cache_cluster::ModifyCacheClusterOutput::cache_cluster): <p>Contains all of the attributes of a specific cluster.</p>
     /// - On failure, responds with [`SdkError<ModifyCacheClusterError>`](crate::operation::modify_cache_cluster::ModifyCacheClusterError)
-    pub fn modify_cache_cluster(
-        &self,
-    ) -> crate::operation::modify_cache_cluster::builders::ModifyCacheClusterFluentBuilder {
-        crate::operation::modify_cache_cluster::builders::ModifyCacheClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_cache_cluster(&self) -> crate::operation::modify_cache_cluster::builders::ModifyCacheClusterFluentBuilder {
+        crate::operation::modify_cache_cluster::builders::ModifyCacheClusterFluentBuilder::new(self.handle.clone())
     }
 }

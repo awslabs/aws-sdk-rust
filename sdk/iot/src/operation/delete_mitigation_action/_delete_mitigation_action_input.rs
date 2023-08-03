@@ -15,18 +15,14 @@ impl DeleteMitigationActionInput {
 }
 impl DeleteMitigationActionInput {
     /// Creates a new builder-style object to manufacture [`DeleteMitigationActionInput`](crate::operation::delete_mitigation_action::DeleteMitigationActionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_mitigation_action::builders::DeleteMitigationActionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_mitigation_action::builders::DeleteMitigationActionInputBuilder {
         crate::operation::delete_mitigation_action::builders::DeleteMitigationActionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMitigationActionInput`](crate::operation::delete_mitigation_action::DeleteMitigationActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMitigationActionInputBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,10 @@ impl DeleteMitigationActionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMitigationActionInput`](crate::operation::delete_mitigation_action::DeleteMitigationActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_mitigation_action::DeleteMitigationActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_mitigation_action::DeleteMitigationActionInput {
-                action_name: self.action_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_mitigation_action::DeleteMitigationActionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_mitigation_action::DeleteMitigationActionInput {
+            action_name: self.action_name,
+        })
     }
 }

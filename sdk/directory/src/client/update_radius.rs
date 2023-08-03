@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`radius_settings(RadiusSettings)`](crate::operation::update_radius::builders::UpdateRadiusFluentBuilder::radius_settings) / [`set_radius_settings(Option<RadiusSettings>)`](crate::operation::update_radius::builders::UpdateRadiusFluentBuilder::set_radius_settings): <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     /// - On success, responds with [`UpdateRadiusOutput`](crate::operation::update_radius::UpdateRadiusOutput)
     /// - On failure, responds with [`SdkError<UpdateRadiusError>`](crate::operation::update_radius::UpdateRadiusError)
-    pub fn update_radius(
-        &self,
-    ) -> crate::operation::update_radius::builders::UpdateRadiusFluentBuilder {
-        crate::operation::update_radius::builders::UpdateRadiusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_radius(&self) -> crate::operation::update_radius::builders::UpdateRadiusFluentBuilder {
+        crate::operation::update_radius::builders::UpdateRadiusFluentBuilder::new(self.handle.clone())
     }
 }

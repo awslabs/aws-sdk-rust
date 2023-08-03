@@ -24,9 +24,7 @@ impl GetChannelMembershipPreferencesOutput {
         self.member.as_ref()
     }
     /// <p>The channel membership preferences for an <code>AppInstanceUser</code> .</p>
-    pub fn preferences(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChannelMembershipPreferences> {
+    pub fn preferences(&self) -> ::std::option::Option<&crate::types::ChannelMembershipPreferences> {
         self.preferences.as_ref()
     }
 }
@@ -37,16 +35,14 @@ impl ::aws_http::request_id::RequestId for GetChannelMembershipPreferencesOutput
 }
 impl GetChannelMembershipPreferencesOutput {
     /// Creates a new builder-style object to manufacture [`GetChannelMembershipPreferencesOutput`](crate::operation::get_channel_membership_preferences::GetChannelMembershipPreferencesOutput).
-    pub fn builder() -> crate::operation::get_channel_membership_preferences::builders::GetChannelMembershipPreferencesOutputBuilder{
+    pub fn builder() -> crate::operation::get_channel_membership_preferences::builders::GetChannelMembershipPreferencesOutputBuilder {
         crate::operation::get_channel_membership_preferences::builders::GetChannelMembershipPreferencesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetChannelMembershipPreferencesOutput`](crate::operation::get_channel_membership_preferences::GetChannelMembershipPreferencesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChannelMembershipPreferencesOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) member: ::std::option::Option<crate::types::Identity>,
@@ -88,17 +84,12 @@ impl GetChannelMembershipPreferencesOutputBuilder {
         self
     }
     /// <p>The channel membership preferences for an <code>AppInstanceUser</code> .</p>
-    pub fn set_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMembershipPreferences>,
-    ) -> Self {
+    pub fn set_preferences(mut self, input: ::std::option::Option<crate::types::ChannelMembershipPreferences>) -> Self {
         self.preferences = input;
         self
     }
     /// <p>The channel membership preferences for an <code>AppInstanceUser</code> .</p>
-    pub fn get_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChannelMembershipPreferences> {
+    pub fn get_preferences(&self) -> &::std::option::Option<crate::types::ChannelMembershipPreferences> {
         &self.preferences
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -111,17 +102,11 @@ impl GetChannelMembershipPreferencesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetChannelMembershipPreferencesOutput`](crate::operation::get_channel_membership_preferences::GetChannelMembershipPreferencesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_channel_membership_preferences::GetChannelMembershipPreferencesOutput
-    {
+    pub fn build(self) -> crate::operation::get_channel_membership_preferences::GetChannelMembershipPreferencesOutput {
         crate::operation::get_channel_membership_preferences::GetChannelMembershipPreferencesOutput {
-            channel_arn: self.channel_arn
-            ,
-            member: self.member
-            ,
-            preferences: self.preferences
-            ,
+            channel_arn: self.channel_arn,
+            member: self.member,
+            preferences: self.preferences,
             _request_id: self._request_id,
         }
     }

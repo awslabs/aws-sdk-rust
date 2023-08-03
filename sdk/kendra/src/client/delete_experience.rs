@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`index_id(impl ::std::convert::Into<String>)`](crate::operation::delete_experience::builders::DeleteExperienceFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::delete_experience::builders::DeleteExperienceFluentBuilder::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
     /// - On success, responds with [`DeleteExperienceOutput`](crate::operation::delete_experience::DeleteExperienceOutput)
     /// - On failure, responds with [`SdkError<DeleteExperienceError>`](crate::operation::delete_experience::DeleteExperienceError)
-    pub fn delete_experience(
-        &self,
-    ) -> crate::operation::delete_experience::builders::DeleteExperienceFluentBuilder {
-        crate::operation::delete_experience::builders::DeleteExperienceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_experience(&self) -> crate::operation::delete_experience::builders::DeleteExperienceFluentBuilder {
+        crate::operation::delete_experience::builders::DeleteExperienceFluentBuilder::new(self.handle.clone())
     }
 }

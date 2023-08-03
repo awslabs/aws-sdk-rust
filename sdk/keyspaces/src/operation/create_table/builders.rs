@@ -10,10 +10,7 @@ impl CreateTableInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_table::CreateTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_table::CreateTableError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_table::CreateTableError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_table();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl CreateTableFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_table::CreateTable,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_table::CreateTable, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_table::CreateTableError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl CreateTableFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,27 +97,18 @@ impl CreateTableFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_table::CreateTable,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_table::CreateTable, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_table::CreateTableError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the keyspace that the table is going to be created in.</p>
-    pub fn keyspace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.keyspace_name(input.into());
         self
     }
     /// <p>The name of the keyspace that the table is going to be created in.</p>
-    pub fn set_keyspace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_keyspace_name(input);
         self
     }
@@ -184,10 +166,7 @@ impl CreateTableFluentBuilder {
     /// <li> <p> <code>name</code> - The name of the column.</p> </li>
     /// <li> <p> <code>type</code> - An Amazon Keyspaces data type.</p> </li>
     /// </ul>
-    pub fn set_schema_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaDefinition>,
-    ) -> Self {
+    pub fn set_schema_definition(mut self, input: ::std::option::Option<crate::types::SchemaDefinition>) -> Self {
         self.inner = self.inner.set_schema_definition(input);
         self
     }
@@ -242,10 +221,7 @@ impl CreateTableFluentBuilder {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn set_capacity_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacitySpecification>,
-    ) -> Self {
+    pub fn set_capacity_specification(mut self, input: ::std::option::Option<crate::types::CapacitySpecification>) -> Self {
         self.inner = self.inner.set_capacity_specification(input);
         self
     }
@@ -256,9 +232,7 @@ impl CreateTableFluentBuilder {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn get_capacity_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacitySpecification> {
+    pub fn get_capacity_specification(&self) -> &::std::option::Option<crate::types::CapacitySpecification> {
         self.inner.get_capacity_specification()
     }
     /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p>
@@ -268,10 +242,7 @@ impl CreateTableFluentBuilder {
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn encryption_specification(
-        mut self,
-        input: crate::types::EncryptionSpecification,
-    ) -> Self {
+    pub fn encryption_specification(mut self, input: crate::types::EncryptionSpecification) -> Self {
         self.inner = self.inner.encryption_specification(input);
         self
     }
@@ -282,10 +253,7 @@ impl CreateTableFluentBuilder {
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn set_encryption_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionSpecification>,
-    ) -> Self {
+    pub fn set_encryption_specification(mut self, input: ::std::option::Option<crate::types::EncryptionSpecification>) -> Self {
         self.inner = self.inner.set_encryption_specification(input);
         self
     }
@@ -296,9 +264,7 @@ impl CreateTableFluentBuilder {
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn get_encryption_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionSpecification> {
+    pub fn get_encryption_specification(&self) -> &::std::option::Option<crate::types::EncryptionSpecification> {
         self.inner.get_encryption_specification()
     }
     /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p>
@@ -319,10 +285,7 @@ impl CreateTableFluentBuilder {
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn set_point_in_time_recovery(
-        mut self,
-        input: ::std::option::Option<crate::types::PointInTimeRecovery>,
-    ) -> Self {
+    pub fn set_point_in_time_recovery(mut self, input: ::std::option::Option<crate::types::PointInTimeRecovery>) -> Self {
         self.inner = self.inner.set_point_in_time_recovery(input);
         self
     }
@@ -333,9 +296,7 @@ impl CreateTableFluentBuilder {
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn get_point_in_time_recovery(
-        &self,
-    ) -> &::std::option::Option<crate::types::PointInTimeRecovery> {
+    pub fn get_point_in_time_recovery(&self) -> &::std::option::Option<crate::types::PointInTimeRecovery> {
         self.inner.get_point_in_time_recovery()
     }
     /// <p>Enables Time to Live custom settings for the table. The options are:</p>
@@ -399,10 +360,7 @@ impl CreateTableFluentBuilder {
     }
     /// <p>A list of key-value pair tags to be attached to the resource. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -425,10 +383,7 @@ impl CreateTableFluentBuilder {
     /// <li> <p> <code>status: "enabled"</code> </p> </li>
     /// </ul>
     /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
-    pub fn set_client_side_timestamps(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientSideTimestamps>,
-    ) -> Self {
+    pub fn set_client_side_timestamps(mut self, input: ::std::option::Option<crate::types::ClientSideTimestamps>) -> Self {
         self.inner = self.inner.set_client_side_timestamps(input);
         self
     }
@@ -437,9 +392,7 @@ impl CreateTableFluentBuilder {
     /// <li> <p> <code>status: "enabled"</code> </p> </li>
     /// </ul>
     /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
-    pub fn get_client_side_timestamps(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientSideTimestamps> {
+    pub fn get_client_side_timestamps(&self) -> &::std::option::Option<crate::types::ClientSideTimestamps> {
         self.inner.get_client_side_timestamps()
     }
 }

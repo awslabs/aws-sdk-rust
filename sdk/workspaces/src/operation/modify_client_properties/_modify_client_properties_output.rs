@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifyClientPropertiesOutput {
 }
 impl ModifyClientPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`ModifyClientPropertiesOutput`](crate::operation::modify_client_properties::ModifyClientPropertiesOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_client_properties::builders::ModifyClientPropertiesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_client_properties::builders::ModifyClientPropertiesOutputBuilder {
         crate::operation::modify_client_properties::builders::ModifyClientPropertiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyClientPropertiesOutput`](crate::operation::modify_client_properties::ModifyClientPropertiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyClientPropertiesOutputBuilder {
     _request_id: Option<String>,
 }

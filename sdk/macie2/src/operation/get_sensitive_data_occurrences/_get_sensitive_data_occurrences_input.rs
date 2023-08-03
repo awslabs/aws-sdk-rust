@@ -15,16 +15,14 @@ impl GetSensitiveDataOccurrencesInput {
 }
 impl GetSensitiveDataOccurrencesInput {
     /// Creates a new builder-style object to manufacture [`GetSensitiveDataOccurrencesInput`](crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesInput).
-    pub fn builder() -> crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesInputBuilder{
+    pub fn builder() -> crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesInputBuilder {
         crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSensitiveDataOccurrencesInput`](crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSensitiveDataOccurrencesInputBuilder {
     pub(crate) finding_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl GetSensitiveDataOccurrencesInputBuilder {
         crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesInput {
-                finding_id: self.finding_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesInput { finding_id: self.finding_id })
     }
 }

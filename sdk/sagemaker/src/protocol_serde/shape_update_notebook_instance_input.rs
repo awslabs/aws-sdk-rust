@@ -49,23 +49,17 @@ pub fn ser_update_notebook_instance_input(
         object.key("DisassociateAcceleratorTypes").boolean(*var_14);
     }
     if let Some(var_15) = &input.disassociate_default_code_repository {
-        object
-            .key("DisassociateDefaultCodeRepository")
-            .boolean(*var_15);
+        object.key("DisassociateDefaultCodeRepository").boolean(*var_15);
     }
     if let Some(var_16) = &input.disassociate_additional_code_repositories {
-        object
-            .key("DisassociateAdditionalCodeRepositories")
-            .boolean(*var_16);
+        object.key("DisassociateAdditionalCodeRepositories").boolean(*var_16);
     }
     if let Some(var_17) = &input.root_access {
         object.key("RootAccess").string(var_17.as_str());
     }
     if let Some(var_18) = &input.instance_metadata_service_configuration {
         #[allow(unused_mut)]
-        let mut object_19 = object
-            .key("InstanceMetadataServiceConfiguration")
-            .start_object();
+        let mut object_19 = object.key("InstanceMetadataServiceConfiguration").start_object();
         crate::protocol_serde::shape_instance_metadata_service_configuration::ser_instance_metadata_service_configuration(&mut object_19, var_18)?;
         object_19.finish();
     }

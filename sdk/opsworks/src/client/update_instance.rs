@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`agent_version(impl ::std::convert::Into<String>)`](crate::operation::update_instance::builders::UpdateInstanceFluentBuilder::agent_version) / [`set_agent_version(Option<String>)`](crate::operation::update_instance::builders::UpdateInstanceFluentBuilder::set_agent_version): <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>  <ul>   <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>   <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>  </ul>  <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>.</p>  <p>AgentVersion cannot be set to Chef 12.2.</p>
     /// - On success, responds with [`UpdateInstanceOutput`](crate::operation::update_instance::UpdateInstanceOutput)
     /// - On failure, responds with [`SdkError<UpdateInstanceError>`](crate::operation::update_instance::UpdateInstanceError)
-    pub fn update_instance(
-        &self,
-    ) -> crate::operation::update_instance::builders::UpdateInstanceFluentBuilder {
-        crate::operation::update_instance::builders::UpdateInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_instance(&self) -> crate::operation::update_instance::builders::UpdateInstanceFluentBuilder {
+        crate::operation::update_instance::builders::UpdateInstanceFluentBuilder::new(self.handle.clone())
     }
 }

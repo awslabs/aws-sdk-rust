@@ -58,18 +58,14 @@ impl GetDocumentationPartsInput {
 }
 impl GetDocumentationPartsInput {
     /// Creates a new builder-style object to manufacture [`GetDocumentationPartsInput`](crate::operation::get_documentation_parts::GetDocumentationPartsInput).
-    pub fn builder(
-    ) -> crate::operation::get_documentation_parts::builders::GetDocumentationPartsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_documentation_parts::builders::GetDocumentationPartsInputBuilder {
         crate::operation::get_documentation_parts::builders::GetDocumentationPartsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDocumentationPartsInput`](crate::operation::get_documentation_parts::GetDocumentationPartsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDocumentationPartsInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::DocumentationPartType>,
@@ -100,10 +96,7 @@ impl GetDocumentationPartsInputBuilder {
         self
     }
     /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentationPartType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DocumentationPartType>) -> Self {
         self.r#type = input;
         self
     }
@@ -173,10 +166,7 @@ impl GetDocumentationPartsInputBuilder {
         self
     }
     /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.</p>
-    pub fn set_location_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LocationStatusType>,
-    ) -> Self {
+    pub fn set_location_status(mut self, input: ::std::option::Option<crate::types::LocationStatusType>) -> Self {
         self.location_status = input;
         self
     }
@@ -187,20 +177,16 @@ impl GetDocumentationPartsInputBuilder {
     /// Consumes the builder and constructs a [`GetDocumentationPartsInput`](crate::operation::get_documentation_parts::GetDocumentationPartsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_documentation_parts::GetDocumentationPartsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_documentation_parts::GetDocumentationPartsInput {
-                rest_api_id: self.rest_api_id,
-                r#type: self.r#type,
-                name_query: self.name_query,
-                path: self.path,
-                position: self.position,
-                limit: self.limit,
-                location_status: self.location_status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_documentation_parts::GetDocumentationPartsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_documentation_parts::GetDocumentationPartsInput {
+            rest_api_id: self.rest_api_id,
+            r#type: self.r#type,
+            name_query: self.name_query,
+            path: self.path,
+            position: self.position,
+            limit: self.limit,
+            location_status: self.location_status,
+        })
     }
 }

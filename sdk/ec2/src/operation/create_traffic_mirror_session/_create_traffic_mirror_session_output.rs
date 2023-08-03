@@ -13,9 +13,7 @@ pub struct CreateTrafficMirrorSessionOutput {
 }
 impl CreateTrafficMirrorSessionOutput {
     /// <p>Information about the Traffic Mirror session.</p>
-    pub fn traffic_mirror_session(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TrafficMirrorSession> {
+    pub fn traffic_mirror_session(&self) -> ::std::option::Option<&crate::types::TrafficMirrorSession> {
         self.traffic_mirror_session.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
@@ -30,16 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateTrafficMirrorSessionOutput {
 }
 impl CreateTrafficMirrorSessionOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrafficMirrorSessionOutput`](crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionOutput).
-    pub fn builder() -> crate::operation::create_traffic_mirror_session::builders::CreateTrafficMirrorSessionOutputBuilder{
+    pub fn builder() -> crate::operation::create_traffic_mirror_session::builders::CreateTrafficMirrorSessionOutputBuilder {
         crate::operation::create_traffic_mirror_session::builders::CreateTrafficMirrorSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTrafficMirrorSessionOutput`](crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTrafficMirrorSessionOutputBuilder {
     pub(crate) traffic_mirror_session: ::std::option::Option<crate::types::TrafficMirrorSession>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -52,17 +48,12 @@ impl CreateTrafficMirrorSessionOutputBuilder {
         self
     }
     /// <p>Information about the Traffic Mirror session.</p>
-    pub fn set_traffic_mirror_session(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficMirrorSession>,
-    ) -> Self {
+    pub fn set_traffic_mirror_session(mut self, input: ::std::option::Option<crate::types::TrafficMirrorSession>) -> Self {
         self.traffic_mirror_session = input;
         self
     }
     /// <p>Information about the Traffic Mirror session.</p>
-    pub fn get_traffic_mirror_session(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrafficMirrorSession> {
+    pub fn get_traffic_mirror_session(&self) -> &::std::option::Option<crate::types::TrafficMirrorSession> {
         &self.traffic_mirror_session
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
@@ -89,9 +80,7 @@ impl CreateTrafficMirrorSessionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateTrafficMirrorSessionOutput`](crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionOutput {
+    pub fn build(self) -> crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionOutput {
         crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionOutput {
             traffic_mirror_session: self.traffic_mirror_session,
             client_token: self.client_token,

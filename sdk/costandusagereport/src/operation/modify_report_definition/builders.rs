@@ -37,10 +37,7 @@ impl ModifyReportDefinitionFluentBuilder {
         }
     }
     /// Access the ModifyReportDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_report_definition::builders::ModifyReportDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_report_definition::builders::ModifyReportDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ModifyReportDefinitionFluentBuilder {
             crate::operation::modify_report_definition::ModifyReportDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_report_definition::ModifyReportDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_report_definition::ModifyReportDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ModifyReportDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ModifyReportDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_report_definition::ModifyReportDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_report_definition::ModifyReportDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_report_definition::ModifyReportDefinitionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ModifyReportDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_report_definition::ModifyReportDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_report_definition::ModifyReportDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_report_definition::ModifyReportDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ModifyReportDefinitionFluentBuilder {
             crate::operation::modify_report_definition::ModifyReportDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_report_definition::ModifyReportDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_report_definition::ModifyReportDefinitionError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +129,7 @@ impl ModifyReportDefinitionFluentBuilder {
         self
     }
     /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
-    pub fn set_report_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportDefinition>,
-    ) -> Self {
+    pub fn set_report_definition(mut self, input: ::std::option::Option<crate::types::ReportDefinition>) -> Self {
         self.inner = self.inner.set_report_definition(input);
         self
     }

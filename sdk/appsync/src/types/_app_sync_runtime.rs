@@ -30,9 +30,7 @@ impl AppSyncRuntime {
 
 /// A builder for [`AppSyncRuntime`](crate::types::AppSyncRuntime).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppSyncRuntimeBuilder {
     pub(crate) name: ::std::option::Option<crate::types::RuntimeName>,
     pub(crate) runtime_version: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl AppSyncRuntimeBuilder {
         &self.name
     }
     /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
-    pub fn runtime_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn runtime_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
-    pub fn set_runtime_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_runtime_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime_version = input;
         self
     }

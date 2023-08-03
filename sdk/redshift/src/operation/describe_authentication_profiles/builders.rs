@@ -26,7 +26,7 @@ impl DescribeAuthenticationProfilesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAuthenticationProfilesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesInputBuilder,
+    inner: crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesInputBuilder,
 }
 impl DescribeAuthenticationProfilesFluentBuilder {
     /// Creates a new `DescribeAuthenticationProfiles`.
@@ -37,7 +37,7 @@ impl DescribeAuthenticationProfilesFluentBuilder {
         }
     }
     /// Access the DescribeAuthenticationProfiles as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeAuthenticationProfilesFluentBuilder {
             crate::operation::describe_authentication_profiles::DescribeAuthenticationProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeAuthenticationProfilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeAuthenticationProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeAuthenticationProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeAuthenticationProfilesFluentBuilder {
             crate::operation::describe_authentication_profiles::DescribeAuthenticationProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
-    pub fn authentication_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_profile_name(input.into());
         self
     }
     /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
-    pub fn set_authentication_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_profile_name(input);
         self
     }

@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateTransitGatewayPolicyTableOutput`](crate::operation::associate_transit_gateway_policy_table::AssociateTransitGatewayPolicyTableOutput) with field(s):
     ///   - [`association(Option<TransitGatewayPolicyTableAssociation>)`](crate::operation::associate_transit_gateway_policy_table::AssociateTransitGatewayPolicyTableOutput::association): <p>Describes the association of a transit gateway and a transit gateway policy table.</p>
     /// - On failure, responds with [`SdkError<AssociateTransitGatewayPolicyTableError>`](crate::operation::associate_transit_gateway_policy_table::AssociateTransitGatewayPolicyTableError)
-    pub fn associate_transit_gateway_policy_table(&self) -> crate::operation::associate_transit_gateway_policy_table::builders::AssociateTransitGatewayPolicyTableFluentBuilder{
+    pub fn associate_transit_gateway_policy_table(
+        &self,
+    ) -> crate::operation::associate_transit_gateway_policy_table::builders::AssociateTransitGatewayPolicyTableFluentBuilder {
         crate::operation::associate_transit_gateway_policy_table::builders::AssociateTransitGatewayPolicyTableFluentBuilder::new(self.handle.clone())
     }
 }

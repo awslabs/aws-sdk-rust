@@ -49,9 +49,7 @@ impl GetAuthPolicyOutput {
 
 /// A builder for [`GetAuthPolicyOutput`](crate::operation::get_auth_policy::GetAuthPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAuthPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::AuthPolicyState>,
@@ -80,10 +78,7 @@ impl GetAuthPolicyOutputBuilder {
         self
     }
     /// <p>The state of the auth policy. The auth policy is only active when the auth type is set to <code>AWS_IAM</code>. If you provide a policy, then authentication and authorization decisions are made based on this policy and the client's IAM policy. If the auth type is <code>NONE</code>, then any auth policy you provide will remain inactive. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthPolicyState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AuthPolicyState>) -> Self {
         self.state = input;
         self
     }
@@ -97,10 +92,7 @@ impl GetAuthPolicyOutputBuilder {
         self
     }
     /// <p>The date and time that the auth policy was created, specified in ISO-8601 format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -114,10 +106,7 @@ impl GetAuthPolicyOutputBuilder {
         self
     }
     /// <p>The date and time that the auth policy was last updated, specified in ISO-8601 format.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }

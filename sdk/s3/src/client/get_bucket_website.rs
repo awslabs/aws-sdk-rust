@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`error_document(Option<ErrorDocument>)`](crate::operation::get_bucket_website::GetBucketWebsiteOutput::error_document): <p>The object key name of the website error document to use for 4XX class errors.</p>
     ///   - [`routing_rules(Option<Vec<RoutingRule>>)`](crate::operation::get_bucket_website::GetBucketWebsiteOutput::routing_rules): <p>Rules that define when a redirect is applied and the redirect behavior.</p>
     /// - On failure, responds with [`SdkError<GetBucketWebsiteError>`](crate::operation::get_bucket_website::GetBucketWebsiteError)
-    pub fn get_bucket_website(
-        &self,
-    ) -> crate::operation::get_bucket_website::builders::GetBucketWebsiteFluentBuilder {
-        crate::operation::get_bucket_website::builders::GetBucketWebsiteFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_bucket_website(&self) -> crate::operation::get_bucket_website::builders::GetBucketWebsiteFluentBuilder {
+        crate::operation::get_bucket_website::builders::GetBucketWebsiteFluentBuilder::new(self.handle.clone())
     }
 }

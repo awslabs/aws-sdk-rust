@@ -15,18 +15,14 @@ impl UndeploySystemInstanceInput {
 }
 impl UndeploySystemInstanceInput {
     /// Creates a new builder-style object to manufacture [`UndeploySystemInstanceInput`](crate::operation::undeploy_system_instance::UndeploySystemInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::undeploy_system_instance::builders::UndeploySystemInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::undeploy_system_instance::builders::UndeploySystemInstanceInputBuilder {
         crate::operation::undeploy_system_instance::builders::UndeploySystemInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`UndeploySystemInstanceInput`](crate::operation::undeploy_system_instance::UndeploySystemInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UndeploySystemInstanceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl UndeploySystemInstanceInputBuilder {
     /// Consumes the builder and constructs a [`UndeploySystemInstanceInput`](crate::operation::undeploy_system_instance::UndeploySystemInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::undeploy_system_instance::UndeploySystemInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::undeploy_system_instance::UndeploySystemInstanceInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::undeploy_system_instance::UndeploySystemInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::undeploy_system_instance::UndeploySystemInstanceInput { id: self.id })
     }
 }

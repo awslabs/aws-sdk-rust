@@ -12,14 +12,10 @@ pub struct TestInvokeAuthorizerInput {
     pub authorizer_id: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
     #[doc(hidden)]
-    pub headers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
     #[doc(hidden)]
-    pub multi_value_headers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub multi_value_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
     #[doc(hidden)]
     pub path_with_query_string: ::std::option::Option<::std::string::String>,
@@ -28,14 +24,10 @@ pub struct TestInvokeAuthorizerInput {
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
     #[doc(hidden)]
-    pub stage_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub stage_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A key-value map of additional context variables.</p>
     #[doc(hidden)]
-    pub additional_context: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub additional_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TestInvokeAuthorizerInput {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -47,19 +39,13 @@ impl TestInvokeAuthorizerInput {
         self.authorizer_id.as_deref()
     }
     /// <p>A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
-    pub fn headers(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn headers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.headers.as_ref()
     }
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
     pub fn multi_value_headers(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.multi_value_headers.as_ref()
     }
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
@@ -71,52 +57,33 @@ impl TestInvokeAuthorizerInput {
         self.body.as_deref()
     }
     /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
-    pub fn stage_variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn stage_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.stage_variables.as_ref()
     }
     /// <p>A key-value map of additional context variables.</p>
-    pub fn additional_context(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn additional_context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_context.as_ref()
     }
 }
 impl TestInvokeAuthorizerInput {
     /// Creates a new builder-style object to manufacture [`TestInvokeAuthorizerInput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput).
-    pub fn builder(
-    ) -> crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerInputBuilder {
+    pub fn builder() -> crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerInputBuilder {
         crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerInputBuilder::default()
     }
 }
 
 /// A builder for [`TestInvokeAuthorizerInput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestInvokeAuthorizerInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) authorizer_id: ::std::option::Option<::std::string::String>,
-    pub(crate) headers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) multi_value_headers: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) multi_value_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) path_with_query_string: ::std::option::Option<::std::string::String>,
     pub(crate) body: ::std::option::Option<::std::string::String>,
-    pub(crate) stage_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) additional_context: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) stage_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) additional_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TestInvokeAuthorizerInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -134,18 +101,12 @@ impl TestInvokeAuthorizerInputBuilder {
         &self.rest_api_id
     }
     /// <p>Specifies a test invoke authorizer request's Authorizer ID.</p>
-    pub fn authorizer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a test invoke authorizer request's Authorizer ID.</p>
-    pub fn set_authorizer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorizer_id = input;
         self
     }
@@ -158,32 +119,19 @@ impl TestInvokeAuthorizerInputBuilder {
     /// To override the contents of this collection use [`set_headers`](Self::set_headers).
     ///
     /// <p>A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
-    pub fn headers(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn headers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.headers.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.headers = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
-    pub fn set_headers(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_headers(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.headers = input;
         self
     }
     /// <p>A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
-    pub fn get_headers(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.headers
     }
     /// Adds a key-value pair to `multi_value_headers`.
@@ -191,11 +139,7 @@ impl TestInvokeAuthorizerInputBuilder {
     /// To override the contents of this collection use [`set_multi_value_headers`](Self::set_multi_value_headers).
     ///
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
-    pub fn multi_value_headers(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn multi_value_headers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.multi_value_headers.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.multi_value_headers = ::std::option::Option::Some(hash_map);
@@ -204,12 +148,7 @@ impl TestInvokeAuthorizerInputBuilder {
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
     pub fn set_multi_value_headers(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.multi_value_headers = input;
         self
@@ -217,24 +156,16 @@ impl TestInvokeAuthorizerInputBuilder {
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
     pub fn get_multi_value_headers(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.multi_value_headers
     }
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
-    pub fn path_with_query_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn path_with_query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path_with_query_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
-    pub fn set_path_with_query_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_path_with_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path_with_query_string = input;
         self
     }
@@ -274,19 +205,13 @@ impl TestInvokeAuthorizerInputBuilder {
     /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
     pub fn set_stage_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.stage_variables = input;
         self
     }
     /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
-    pub fn get_stage_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_stage_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.stage_variables
     }
     /// Adds a key-value pair to `additional_context`.
@@ -307,39 +232,29 @@ impl TestInvokeAuthorizerInputBuilder {
     /// <p>A key-value map of additional context variables.</p>
     pub fn set_additional_context(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.additional_context = input;
         self
     }
     /// <p>A key-value map of additional context variables.</p>
-    pub fn get_additional_context(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_additional_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.additional_context
     }
     /// Consumes the builder and constructs a [`TestInvokeAuthorizerInput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput {
-                rest_api_id: self.rest_api_id,
-                authorizer_id: self.authorizer_id,
-                headers: self.headers,
-                multi_value_headers: self.multi_value_headers,
-                path_with_query_string: self.path_with_query_string,
-                body: self.body,
-                stage_variables: self.stage_variables,
-                additional_context: self.additional_context,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput {
+            rest_api_id: self.rest_api_id,
+            authorizer_id: self.authorizer_id,
+            headers: self.headers,
+            multi_value_headers: self.multi_value_headers,
+            path_with_query_string: self.path_with_query_string,
+            body: self.body,
+            stage_variables: self.stage_variables,
+            additional_context: self.additional_context,
+        })
     }
 }

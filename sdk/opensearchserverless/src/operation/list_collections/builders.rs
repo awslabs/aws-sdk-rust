@@ -10,10 +10,7 @@ impl ListCollectionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_collections::ListCollectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_collections::ListCollectionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_collections::ListCollectionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_collections();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ListCollectionsFluentBuilder {
         }
     }
     /// Access the ListCollections as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_collections::builders::ListCollectionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_collections::builders::ListCollectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl ListCollectionsFluentBuilder {
             crate::operation::list_collections::ListCollections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_collections::ListCollectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_collections::ListCollectionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl ListCollectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl ListCollectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_collections::ListCollectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_collections::ListCollectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_collections::ListCollectionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl ListCollectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_collections::ListCollectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_collections::ListCollectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_collections::ListCollectionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +104,15 @@ impl ListCollectionsFluentBuilder {
             crate::operation::list_collections::ListCollections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_collections::ListCollectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_collections::ListCollectionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_collections::paginator::ListCollectionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_collections::paginator::ListCollectionsPaginator {
-        crate::operation::list_collections::paginator::ListCollectionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_collections::paginator::ListCollectionsPaginator {
+        crate::operation::list_collections::paginator::ListCollectionsPaginator::new(self.handle, self.inner)
     }
     /// <p>List of filter names and values that you can use for requests.</p>
     pub fn collection_filters(mut self, input: crate::types::CollectionFilters) -> Self {
@@ -141,17 +120,12 @@ impl ListCollectionsFluentBuilder {
         self
     }
     /// <p>List of filter names and values that you can use for requests.</p>
-    pub fn set_collection_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::CollectionFilters>,
-    ) -> Self {
+    pub fn set_collection_filters(mut self, input: ::std::option::Option<crate::types::CollectionFilters>) -> Self {
         self.inner = self.inner.set_collection_filters(input);
         self
     }
     /// <p>List of filter names and values that you can use for requests.</p>
-    pub fn get_collection_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::CollectionFilters> {
+    pub fn get_collection_filters(&self) -> &::std::option::Option<crate::types::CollectionFilters> {
         self.inner.get_collection_filters()
     }
     /// <p>If your initial <code>ListCollections</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListCollections</code> operations, which returns results in the next page.</p>

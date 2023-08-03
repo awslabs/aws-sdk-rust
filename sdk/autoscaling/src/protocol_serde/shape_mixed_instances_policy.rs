@@ -12,9 +12,7 @@ pub fn ser_mixed_instances_policy(
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("InstancesDistribution");
     if let Some(var_4) = &input.instances_distribution {
-        crate::protocol_serde::shape_instances_distribution::ser_instances_distribution(
-            scope_3, var_4,
-        )?;
+        crate::protocol_serde::shape_instances_distribution::ser_instances_distribution(scope_3, var_4)?;
     }
     Ok(())
 }

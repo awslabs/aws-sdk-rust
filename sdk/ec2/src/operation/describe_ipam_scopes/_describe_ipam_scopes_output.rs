@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeIpamScopesOutput {
 }
 impl DescribeIpamScopesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIpamScopesOutput`](crate::operation::describe_ipam_scopes::DescribeIpamScopesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_ipam_scopes::builders::DescribeIpamScopesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_ipam_scopes::builders::DescribeIpamScopesOutputBuilder {
         crate::operation::describe_ipam_scopes::builders::DescribeIpamScopesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIpamScopesOutput`](crate::operation::describe_ipam_scopes::DescribeIpamScopesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpamScopesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) ipam_scopes: ::std::option::Option<::std::vec::Vec<crate::types::IpamScope>>,
@@ -71,17 +68,12 @@ impl DescribeIpamScopesOutputBuilder {
         self
     }
     /// <p>The scopes you want information on.</p>
-    pub fn set_ipam_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpamScope>>,
-    ) -> Self {
+    pub fn set_ipam_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamScope>>) -> Self {
         self.ipam_scopes = input;
         self
     }
     /// <p>The scopes you want information on.</p>
-    pub fn get_ipam_scopes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamScope>> {
+    pub fn get_ipam_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamScope>> {
         &self.ipam_scopes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

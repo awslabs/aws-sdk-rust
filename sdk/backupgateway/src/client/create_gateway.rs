@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateGatewayOutput`](crate::operation::create_gateway::CreateGatewayOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::create_gateway::CreateGatewayOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway you create.</p>
     /// - On failure, responds with [`SdkError<CreateGatewayError>`](crate::operation::create_gateway::CreateGatewayError)
-    pub fn create_gateway(
-        &self,
-    ) -> crate::operation::create_gateway::builders::CreateGatewayFluentBuilder {
-        crate::operation::create_gateway::builders::CreateGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_gateway(&self) -> crate::operation::create_gateway::builders::CreateGatewayFluentBuilder {
+        crate::operation::create_gateway::builders::CreateGatewayFluentBuilder::new(self.handle.clone())
     }
 }

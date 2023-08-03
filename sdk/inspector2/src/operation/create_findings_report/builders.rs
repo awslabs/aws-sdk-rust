@@ -37,9 +37,7 @@ impl CreateFindingsReportFluentBuilder {
         }
     }
     /// Access the CreateFindingsReport as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_findings_report::builders::CreateFindingsReportInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_findings_report::builders::CreateFindingsReportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateFindingsReportFluentBuilder {
             crate::operation::create_findings_report::CreateFindingsReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_findings_report::CreateFindingsReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_findings_report::CreateFindingsReportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateFindingsReportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateFindingsReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_findings_report::CreateFindingsReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_findings_report::CreateFindingsReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_findings_report::CreateFindingsReportError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateFindingsReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_findings_report::CreateFindingsReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_findings_report::CreateFindingsReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_findings_report::CreateFindingsReportError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateFindingsReportFluentBuilder {
             crate::operation::create_findings_report::CreateFindingsReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_findings_report::CreateFindingsReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_findings_report::CreateFindingsReportError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl CreateFindingsReportFluentBuilder {
         self
     }
     /// <p>The filter criteria to apply to the results of the finding report.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterCriteria>,
-    ) -> Self {
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::FilterCriteria>) -> Self {
         self.inner = self.inner.set_filter_criteria(input);
         self
     }
@@ -145,10 +129,7 @@ impl CreateFindingsReportFluentBuilder {
         self
     }
     /// <p>The format to generate the report in.</p>
-    pub fn set_report_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportFormat>,
-    ) -> Self {
+    pub fn set_report_format(mut self, input: ::std::option::Option<crate::types::ReportFormat>) -> Self {
         self.inner = self.inner.set_report_format(input);
         self
     }
@@ -162,10 +143,7 @@ impl CreateFindingsReportFluentBuilder {
         self
     }
     /// <p>The Amazon S3 export destination for the report.</p>
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::Destination>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.inner = self.inner.set_s3_destination(input);
         self
     }

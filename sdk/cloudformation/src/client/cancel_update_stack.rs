@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`client_request_token(impl ::std::convert::Into<String>)`](crate::operation::cancel_update_stack::builders::CancelUpdateStackFluentBuilder::client_request_token) / [`set_client_request_token(Option<String>)`](crate::operation::cancel_update_stack::builders::CancelUpdateStackFluentBuilder::set_client_request_token): <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to cancel an update on a stack with the same name. You might retry <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully received them.</p>
     /// - On success, responds with [`CancelUpdateStackOutput`](crate::operation::cancel_update_stack::CancelUpdateStackOutput)
     /// - On failure, responds with [`SdkError<CancelUpdateStackError>`](crate::operation::cancel_update_stack::CancelUpdateStackError)
-    pub fn cancel_update_stack(
-        &self,
-    ) -> crate::operation::cancel_update_stack::builders::CancelUpdateStackFluentBuilder {
-        crate::operation::cancel_update_stack::builders::CancelUpdateStackFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_update_stack(&self) -> crate::operation::cancel_update_stack::builders::CancelUpdateStackFluentBuilder {
+        crate::operation::cancel_update_stack::builders::CancelUpdateStackFluentBuilder::new(self.handle.clone())
     }
 }

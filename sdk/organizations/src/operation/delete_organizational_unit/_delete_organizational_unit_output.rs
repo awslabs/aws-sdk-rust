@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteOrganizationalUnitOutput {
 }
 impl DeleteOrganizationalUnitOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOrganizationalUnitOutput`](crate::operation::delete_organizational_unit::DeleteOrganizationalUnitOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_organizational_unit::builders::DeleteOrganizationalUnitOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_organizational_unit::builders::DeleteOrganizationalUnitOutputBuilder {
         crate::operation::delete_organizational_unit::builders::DeleteOrganizationalUnitOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOrganizationalUnitOutput`](crate::operation::delete_organizational_unit::DeleteOrganizationalUnitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOrganizationalUnitOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteOrganizationalUnitOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteOrganizationalUnitOutput`](crate::operation::delete_organizational_unit::DeleteOrganizationalUnitOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_organizational_unit::DeleteOrganizationalUnitOutput {
+    pub fn build(self) -> crate::operation::delete_organizational_unit::DeleteOrganizationalUnitOutput {
         crate::operation::delete_organizational_unit::DeleteOrganizationalUnitOutput {
             _request_id: self._request_id,
         }

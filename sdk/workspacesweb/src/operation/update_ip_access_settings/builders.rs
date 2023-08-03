@@ -26,8 +26,7 @@ impl UpdateIpAccessSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIpAccessSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_ip_access_settings::builders::UpdateIpAccessSettingsInputBuilder,
+    inner: crate::operation::update_ip_access_settings::builders::UpdateIpAccessSettingsInputBuilder,
 }
 impl UpdateIpAccessSettingsFluentBuilder {
     /// Creates a new `UpdateIpAccessSettings`.
@@ -38,10 +37,7 @@ impl UpdateIpAccessSettingsFluentBuilder {
         }
     }
     /// Access the UpdateIpAccessSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_ip_access_settings::builders::UpdateIpAccessSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_ip_access_settings::builders::UpdateIpAccessSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateIpAccessSettingsFluentBuilder {
             crate::operation::update_ip_access_settings::UpdateIpAccessSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateIpAccessSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateIpAccessSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateIpAccessSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl UpdateIpAccessSettingsFluentBuilder {
             crate::operation::update_ip_access_settings::UpdateIpAccessSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ip_access_settings::UpdateIpAccessSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the IP access settings.</p>
-    pub fn ip_access_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_access_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ip_access_settings_arn(input.into());
         self
     }
     /// <p>The ARN of the IP access settings.</p>
-    pub fn set_ip_access_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_access_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ip_access_settings_arn(input);
         self
     }
@@ -182,10 +161,7 @@ impl UpdateIpAccessSettingsFluentBuilder {
         self
     }
     /// <p>The updated IP rules of the IP access settings.</p>
-    pub fn set_ip_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>,
-    ) -> Self {
+    pub fn set_ip_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>) -> Self {
         self.inner = self.inner.set_ip_rules(input);
         self
     }

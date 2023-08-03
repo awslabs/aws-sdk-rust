@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`canary_runs(Option<Vec<CanaryRun>>)`](crate::operation::get_canary_runs::GetCanaryRunsOutput::canary_runs): <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_canary_runs::GetCanaryRunsOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<GetCanaryRunsError>`](crate::operation::get_canary_runs::GetCanaryRunsError)
-    pub fn get_canary_runs(
-        &self,
-    ) -> crate::operation::get_canary_runs::builders::GetCanaryRunsFluentBuilder {
-        crate::operation::get_canary_runs::builders::GetCanaryRunsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_canary_runs(&self) -> crate::operation::get_canary_runs::builders::GetCanaryRunsFluentBuilder {
+        crate::operation::get_canary_runs::builders::GetCanaryRunsFluentBuilder::new(self.handle.clone())
     }
 }

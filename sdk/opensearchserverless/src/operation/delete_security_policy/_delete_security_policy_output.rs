@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSecurityPolicyOutput {
 }
 impl DeleteSecurityPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSecurityPolicyOutput`](crate::operation::delete_security_policy::DeleteSecurityPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_security_policy::builders::DeleteSecurityPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::delete_security_policy::builders::DeleteSecurityPolicyOutputBuilder {
         crate::operation::delete_security_policy::builders::DeleteSecurityPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSecurityPolicyOutput`](crate::operation::delete_security_policy::DeleteSecurityPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSecurityPolicyOutputBuilder {
     _request_id: Option<String>,
 }

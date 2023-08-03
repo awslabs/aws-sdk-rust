@@ -111,9 +111,7 @@ impl ImportTask {
 
 /// A builder for [`ImportTask`](crate::types::ImportTask).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportTaskBuilder {
     pub(crate) import_task_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
@@ -131,18 +129,12 @@ pub struct ImportTaskBuilder {
 }
 impl ImportTaskBuilder {
     /// <p>The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an Amazon Web Services account.</p>
-    pub fn import_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn import_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for a specific import task. These IDs aren't globally unique, but they are unique within an Amazon Web Services account.</p>
-    pub fn set_import_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_import_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.import_task_id = input;
         self
     }
@@ -151,18 +143,12 @@ impl ImportTaskBuilder {
         &self.import_task_id
     }
     /// <p>A unique token used to prevent the same import request from occurring more than once. If you didn't provide a token, a token was automatically generated when the import task request was sent.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique token used to prevent the same import request from occurring more than once. If you didn't provide a token, a token was automatically generated when the import task request was sent.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -218,10 +204,7 @@ impl ImportTaskBuilder {
         self
     }
     /// <p>The time that the import task request was made, presented in the Unix time stamp format.</p>
-    pub fn set_import_request_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_import_request_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.import_request_time = input;
         self
     }
@@ -235,17 +218,12 @@ impl ImportTaskBuilder {
         self
     }
     /// <p>The time that the import task request finished, presented in the Unix time stamp format.</p>
-    pub fn set_import_completion_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_import_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.import_completion_time = input;
         self
     }
     /// <p>The time that the import task request finished, presented in the Unix time stamp format.</p>
-    pub fn get_import_completion_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_import_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.import_completion_time
     }
     /// <p>The time that the import task request was deleted, presented in the Unix time stamp format.</p>
@@ -254,10 +232,7 @@ impl ImportTaskBuilder {
         self
     }
     /// <p>The time that the import task request was deleted, presented in the Unix time stamp format.</p>
-    pub fn set_import_deleted_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_import_deleted_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.import_deleted_time = input;
         self
     }
@@ -324,29 +299,21 @@ impl ImportTaskBuilder {
     /// <p>A link to a compressed archive folder (in the ZIP format) that contains an error log and a file of failed records. You can use these two files to quickly identify records that failed, why they failed, and correct those records. Afterward, you can upload the corrected file to your Amazon S3 bucket and create another import task request.</p>
     /// <p>This field also includes authorization information so you can confirm the authenticity of the compressed archive before you download it.</p>
     /// <p>If some records failed to be imported we recommend that you correct the records in the failed entries file and then imports that failed entries file. This prevents you from having to correct and update the larger original file and attempt importing it again.</p>
-    pub fn errors_and_failed_entries_zip(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn errors_and_failed_entries_zip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.errors_and_failed_entries_zip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A link to a compressed archive folder (in the ZIP format) that contains an error log and a file of failed records. You can use these two files to quickly identify records that failed, why they failed, and correct those records. Afterward, you can upload the corrected file to your Amazon S3 bucket and create another import task request.</p>
     /// <p>This field also includes authorization information so you can confirm the authenticity of the compressed archive before you download it.</p>
     /// <p>If some records failed to be imported we recommend that you correct the records in the failed entries file and then imports that failed entries file. This prevents you from having to correct and update the larger original file and attempt importing it again.</p>
-    pub fn set_errors_and_failed_entries_zip(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_errors_and_failed_entries_zip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.errors_and_failed_entries_zip = input;
         self
     }
     /// <p>A link to a compressed archive folder (in the ZIP format) that contains an error log and a file of failed records. You can use these two files to quickly identify records that failed, why they failed, and correct those records. Afterward, you can upload the corrected file to your Amazon S3 bucket and create another import task request.</p>
     /// <p>This field also includes authorization information so you can confirm the authenticity of the compressed archive before you download it.</p>
     /// <p>If some records failed to be imported we recommend that you correct the records in the failed entries file and then imports that failed entries file. This prevents you from having to correct and update the larger original file and attempt importing it again.</p>
-    pub fn get_errors_and_failed_entries_zip(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_errors_and_failed_entries_zip(&self) -> &::std::option::Option<::std::string::String> {
         &self.errors_and_failed_entries_zip
     }
     /// Consumes the builder and constructs a [`ImportTask`](crate::types::ImportTask).

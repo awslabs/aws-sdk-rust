@@ -6,8 +6,7 @@
 pub struct TfiTrainingMetricsValue {
     /// <p> The model's performance metrics data points. </p>
     #[doc(hidden)]
-    pub metric_data_points:
-        ::std::option::Option<::std::vec::Vec<crate::types::TfiMetricDataPoint>>,
+    pub metric_data_points: ::std::option::Option<::std::vec::Vec<crate::types::TfiMetricDataPoint>>,
     /// <p> The model performance score. </p>
     #[doc(hidden)]
     pub model_performance: ::std::option::Option<crate::types::TfiModelPerformance>,
@@ -31,12 +30,9 @@ impl TfiTrainingMetricsValue {
 
 /// A builder for [`TfiTrainingMetricsValue`](crate::types::TfiTrainingMetricsValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TfiTrainingMetricsValueBuilder {
-    pub(crate) metric_data_points:
-        ::std::option::Option<::std::vec::Vec<crate::types::TfiMetricDataPoint>>,
+    pub(crate) metric_data_points: ::std::option::Option<::std::vec::Vec<crate::types::TfiMetricDataPoint>>,
     pub(crate) model_performance: ::std::option::Option<crate::types::TfiModelPerformance>,
 }
 impl TfiTrainingMetricsValueBuilder {
@@ -52,17 +48,12 @@ impl TfiTrainingMetricsValueBuilder {
         self
     }
     /// <p> The model's performance metrics data points. </p>
-    pub fn set_metric_data_points(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TfiMetricDataPoint>>,
-    ) -> Self {
+    pub fn set_metric_data_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TfiMetricDataPoint>>) -> Self {
         self.metric_data_points = input;
         self
     }
     /// <p> The model's performance metrics data points. </p>
-    pub fn get_metric_data_points(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TfiMetricDataPoint>> {
+    pub fn get_metric_data_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TfiMetricDataPoint>> {
         &self.metric_data_points
     }
     /// <p> The model performance score. </p>
@@ -71,17 +62,12 @@ impl TfiTrainingMetricsValueBuilder {
         self
     }
     /// <p> The model performance score. </p>
-    pub fn set_model_performance(
-        mut self,
-        input: ::std::option::Option<crate::types::TfiModelPerformance>,
-    ) -> Self {
+    pub fn set_model_performance(mut self, input: ::std::option::Option<crate::types::TfiModelPerformance>) -> Self {
         self.model_performance = input;
         self
     }
     /// <p> The model performance score. </p>
-    pub fn get_model_performance(
-        &self,
-    ) -> &::std::option::Option<crate::types::TfiModelPerformance> {
+    pub fn get_model_performance(&self) -> &::std::option::Option<crate::types::TfiModelPerformance> {
         &self.model_performance
     }
     /// Consumes the builder and constructs a [`TfiTrainingMetricsValue`](crate::types::TfiTrainingMetricsValue).

@@ -42,9 +42,7 @@ impl AwsBackupBackupVaultNotificationsDetails {
 
 /// A builder for [`AwsBackupBackupVaultNotificationsDetails`](crate::types::AwsBackupBackupVaultNotificationsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsBackupBackupVaultNotificationsDetailsBuilder {
     pub(crate) backup_vault_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
@@ -61,10 +59,7 @@ impl AwsBackupBackupVaultNotificationsDetailsBuilder {
     /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li>
     /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li>
     /// </ul>
-    pub fn backup_vault_events(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_events(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.backup_vault_events.unwrap_or_default();
         v.push(input.into());
         self.backup_vault_events = ::std::option::Option::Some(v);
@@ -77,10 +72,7 @@ impl AwsBackupBackupVaultNotificationsDetailsBuilder {
     /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li>
     /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li>
     /// </ul>
-    pub fn set_backup_vault_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_backup_vault_events(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.backup_vault_events = input;
         self
     }
@@ -91,24 +83,16 @@ impl AwsBackupBackupVaultNotificationsDetailsBuilder {
     /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li>
     /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li>
     /// </ul>
-    pub fn get_backup_vault_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_backup_vault_events(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.backup_vault_events
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic for a backup vault's events. </p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic for a backup vault's events. </p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }

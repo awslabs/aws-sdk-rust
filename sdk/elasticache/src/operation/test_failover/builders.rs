@@ -10,10 +10,7 @@ impl TestFailoverInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::test_failover::TestFailoverOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_failover::TestFailoverError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_failover::TestFailoverError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.test_failover();
         fluent_builder.inner = self;
@@ -80,10 +77,7 @@ impl TestFailoverFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::test_failover::TestFailover,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::test_failover::TestFailover, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::test_failover::TestFailoverError>,
     > {
         let handle = self.handle.clone();
@@ -94,10 +88,7 @@ impl TestFailoverFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -139,27 +130,18 @@ impl TestFailoverFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::test_failover::TestFailover,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::test_failover::TestFailover, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::test_failover::TestFailoverError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the replication group (console: cluster) whose automatic failover is being tested by this operation.</p>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_group_id(input.into());
         self
     }
     /// <p>The name of the replication group (console: cluster) whose automatic failover is being tested by this operation.</p>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_group_id(input);
         self
     }
@@ -168,18 +150,12 @@ impl TestFailoverFluentBuilder {
         self.inner.get_replication_group_id()
     }
     /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
-    pub fn node_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn node_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_group_id(input.into());
         self
     }
     /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
-    pub fn set_node_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_node_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_group_id(input);
         self
     }

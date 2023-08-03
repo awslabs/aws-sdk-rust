@@ -37,9 +37,7 @@ impl ListContainerRecipesFluentBuilder {
         }
     }
     /// Access the ListContainerRecipes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_container_recipes::builders::ListContainerRecipesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_container_recipes::builders::ListContainerRecipesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListContainerRecipesFluentBuilder {
             crate::operation::list_container_recipes::ListContainerRecipes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_container_recipes::ListContainerRecipesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_container_recipes::ListContainerRecipesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListContainerRecipesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListContainerRecipesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_container_recipes::ListContainerRecipesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_container_recipes::ListContainerRecipesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_container_recipes::ListContainerRecipesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListContainerRecipesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_container_recipes::ListContainerRecipesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_container_recipes::ListContainerRecipesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_container_recipes::ListContainerRecipesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListContainerRecipesFluentBuilder {
             crate::operation::list_container_recipes::ListContainerRecipes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_container_recipes::ListContainerRecipesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_container_recipes::ListContainerRecipesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_container_recipes::paginator::ListContainerRecipesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_container_recipes::paginator::ListContainerRecipesPaginator {
-        crate::operation::list_container_recipes::paginator::ListContainerRecipesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_container_recipes::paginator::ListContainerRecipesPaginator {
+        crate::operation::list_container_recipes::paginator::ListContainerRecipesPaginator::new(self.handle, self.inner)
     }
     /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
     pub fn owner(mut self, input: crate::types::Ownership) -> Self {
@@ -169,10 +151,7 @@ impl ListContainerRecipesFluentBuilder {
     /// <li> <p> <code>parentImage</code> </p> </li>
     /// <li> <p> <code>platform</code> </p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

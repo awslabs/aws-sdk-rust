@@ -37,18 +37,14 @@ impl ::aws_http::request_id::RequestId for CompleteMultipartUploadOutput {
 }
 impl CompleteMultipartUploadOutput {
     /// Creates a new builder-style object to manufacture [`CompleteMultipartUploadOutput`](crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput).
-    pub fn builder(
-    ) -> crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadOutputBuilder
-    {
+    pub fn builder() -> crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadOutputBuilder {
         crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadOutputBuilder::default()
     }
 }
 
 /// A builder for [`CompleteMultipartUploadOutput`](crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteMultipartUploadOutputBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
@@ -108,9 +104,7 @@ impl CompleteMultipartUploadOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CompleteMultipartUploadOutput`](crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput {
+    pub fn build(self) -> crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput {
         crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput {
             location: self.location,
             checksum: self.checksum,

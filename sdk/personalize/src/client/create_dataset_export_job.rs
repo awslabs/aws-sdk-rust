@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDatasetExportJobOutput`](crate::operation::create_dataset_export_job::CreateDatasetExportJobOutput) with field(s):
     ///   - [`dataset_export_job_arn(Option<String>)`](crate::operation::create_dataset_export_job::CreateDatasetExportJobOutput::dataset_export_job_arn): <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
     /// - On failure, responds with [`SdkError<CreateDatasetExportJobError>`](crate::operation::create_dataset_export_job::CreateDatasetExportJobError)
-    pub fn create_dataset_export_job(
-        &self,
-    ) -> crate::operation::create_dataset_export_job::builders::CreateDatasetExportJobFluentBuilder
-    {
+    pub fn create_dataset_export_job(&self) -> crate::operation::create_dataset_export_job::builders::CreateDatasetExportJobFluentBuilder {
         crate::operation::create_dataset_export_job::builders::CreateDatasetExportJobFluentBuilder::new(self.handle.clone())
     }
 }

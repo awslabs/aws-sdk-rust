@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StopPhiDetectionJobOutput`](crate::operation::stop_phi_detection_job::StopPhiDetectionJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::stop_phi_detection_job::StopPhiDetectionJobOutput::job_id): <p>The identifier of the PHI detection job that was stopped.</p>
     /// - On failure, responds with [`SdkError<StopPHIDetectionJobError>`](crate::operation::stop_phi_detection_job::StopPHIDetectionJobError)
-    pub fn stop_phi_detection_job(
-        &self,
-    ) -> crate::operation::stop_phi_detection_job::builders::StopPHIDetectionJobFluentBuilder {
-        crate::operation::stop_phi_detection_job::builders::StopPHIDetectionJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_phi_detection_job(&self) -> crate::operation::stop_phi_detection_job::builders::StopPHIDetectionJobFluentBuilder {
+        crate::operation::stop_phi_detection_job::builders::StopPHIDetectionJobFluentBuilder::new(self.handle.clone())
     }
 }

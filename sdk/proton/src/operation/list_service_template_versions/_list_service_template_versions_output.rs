@@ -8,8 +8,7 @@ pub struct ListServiceTemplateVersionsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of major or minor versions of a service template with detail data.</p>
     #[doc(hidden)]
-    pub template_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateVersionSummary>>,
+    pub template_versions: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateVersionSummary>>,
     _request_id: Option<String>,
 }
 impl ListServiceTemplateVersionsOutput {
@@ -18,9 +17,7 @@ impl ListServiceTemplateVersionsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of major or minor versions of a service template with detail data.</p>
-    pub fn template_versions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServiceTemplateVersionSummary]> {
+    pub fn template_versions(&self) -> ::std::option::Option<&[crate::types::ServiceTemplateVersionSummary]> {
         self.template_versions.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListServiceTemplateVersionsOutput {
 }
 impl ListServiceTemplateVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceTemplateVersionsOutput`](crate::operation::list_service_template_versions::ListServiceTemplateVersionsOutput).
-    pub fn builder() -> crate::operation::list_service_template_versions::builders::ListServiceTemplateVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_service_template_versions::builders::ListServiceTemplateVersionsOutputBuilder {
         crate::operation::list_service_template_versions::builders::ListServiceTemplateVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceTemplateVersionsOutput`](crate::operation::list_service_template_versions::ListServiceTemplateVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceTemplateVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) template_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateVersionSummary>>,
+    pub(crate) template_versions: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateVersionSummary>>,
     _request_id: Option<String>,
 }
 impl ListServiceTemplateVersionsOutputBuilder {
@@ -74,17 +68,12 @@ impl ListServiceTemplateVersionsOutputBuilder {
         self
     }
     /// <p>An array of major or minor versions of a service template with detail data.</p>
-    pub fn set_template_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateVersionSummary>>,
-    ) -> Self {
+    pub fn set_template_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateVersionSummary>>) -> Self {
         self.template_versions = input;
         self
     }
     /// <p>An array of major or minor versions of a service template with detail data.</p>
-    pub fn get_template_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateVersionSummary>> {
+    pub fn get_template_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateVersionSummary>> {
         &self.template_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl ListServiceTemplateVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServiceTemplateVersionsOutput`](crate::operation::list_service_template_versions::ListServiceTemplateVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_service_template_versions::ListServiceTemplateVersionsOutput {
+    pub fn build(self) -> crate::operation::list_service_template_versions::ListServiceTemplateVersionsOutput {
         crate::operation::list_service_template_versions::ListServiceTemplateVersionsOutput {
             next_token: self.next_token,
             template_versions: self.template_versions,

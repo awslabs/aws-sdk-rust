@@ -63,10 +63,7 @@ pub fn ser_confluence_configuration(
     if let Some(var_20) = &input.proxy_configuration {
         #[allow(unused_mut)]
         let mut object_21 = object.key("ProxyConfiguration").start_object();
-        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(
-            &mut object_21,
-            var_20,
-        )?;
+        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(&mut object_21, var_20)?;
         object_21.finish();
     }
     if let Some(var_22) = &input.authentication_type {
@@ -77,17 +74,9 @@ pub fn ser_confluence_configuration(
 
 pub(crate) fn de_confluence_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ConfluenceConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ConfluenceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -97,110 +86,90 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
-                        "ServerUrl" => {
-                            builder = builder.set_server_url(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "SecretArn" => {
-                            builder = builder.set_secret_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "Version" => {
-                            builder = builder.set_version(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::ConfluenceVersion::from(u.as_ref()))
-                                })
-                                .transpose()?,
-                            );
-                        }
-                        "SpaceConfiguration" => {
-                            builder = builder.set_space_configuration(
-                                    crate::protocol_serde::shape_confluence_space_configuration::de_confluence_space_configuration(tokens)?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "ServerUrl" => {
+                                builder = builder.set_server_url(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
-                        }
-                        "PageConfiguration" => {
-                            builder = builder.set_page_configuration(
-                                    crate::protocol_serde::shape_confluence_page_configuration::de_confluence_page_configuration(tokens)?
+                            }
+                            "SecretArn" => {
+                                builder = builder.set_secret_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
-                        }
-                        "BlogConfiguration" => {
-                            builder = builder.set_blog_configuration(
-                                    crate::protocol_serde::shape_confluence_blog_configuration::de_confluence_blog_configuration(tokens)?
+                            }
+                            "Version" => {
+                                builder = builder.set_version(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::ConfluenceVersion::from(u.as_ref())))
+                                        .transpose()?,
                                 );
-                        }
-                        "AttachmentConfiguration" => {
-                            builder = builder.set_attachment_configuration(
-                                    crate::protocol_serde::shape_confluence_attachment_configuration::de_confluence_attachment_configuration(tokens)?
+                            }
+                            "SpaceConfiguration" => {
+                                builder = builder.set_space_configuration(
+                                    crate::protocol_serde::shape_confluence_space_configuration::de_confluence_space_configuration(tokens)?,
                                 );
-                        }
-                        "VpcConfiguration" => {
-                            builder = builder.set_vpc_configuration(
-                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens)?
+                            }
+                            "PageConfiguration" => {
+                                builder = builder.set_page_configuration(
+                                    crate::protocol_serde::shape_confluence_page_configuration::de_confluence_page_configuration(tokens)?,
                                 );
-                        }
-                        "InclusionPatterns" => {
-                            builder = builder.set_inclusion_patterns(
+                            }
+                            "BlogConfiguration" => {
+                                builder = builder.set_blog_configuration(
+                                    crate::protocol_serde::shape_confluence_blog_configuration::de_confluence_blog_configuration(tokens)?,
+                                );
+                            }
+                            "AttachmentConfiguration" => {
+                                builder = builder.set_attachment_configuration(
+                                    crate::protocol_serde::shape_confluence_attachment_configuration::de_confluence_attachment_configuration(tokens)?,
+                                );
+                            }
+                            "VpcConfiguration" => {
+                                builder = builder.set_vpc_configuration(
+                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens)?,
+                                );
+                            }
+                            "InclusionPatterns" => {
+                                builder = builder.set_inclusion_patterns(
                                     crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
                                 );
-                        }
-                        "ExclusionPatterns" => {
-                            builder = builder.set_exclusion_patterns(
+                            }
+                            "ExclusionPatterns" => {
+                                builder = builder.set_exclusion_patterns(
                                     crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
                                 );
-                        }
-                        "ProxyConfiguration" => {
-                            builder = builder.set_proxy_configuration(
-                                    crate::protocol_serde::shape_proxy_configuration::de_proxy_configuration(tokens)?
+                            }
+                            "ProxyConfiguration" => {
+                                builder = builder
+                                    .set_proxy_configuration(crate::protocol_serde::shape_proxy_configuration::de_proxy_configuration(tokens)?);
+                            }
+                            "AuthenticationType" => {
+                                builder = builder.set_authentication_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::ConfluenceAuthenticationType::from(u.as_ref())))
+                                        .transpose()?,
                                 );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "AuthenticationType" => {
-                            builder = builder.set_authentication_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped().map(|u| {
-                                        crate::types::ConfluenceAuthenticationType::from(u.as_ref())
-                                    })
-                                })
-                                .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

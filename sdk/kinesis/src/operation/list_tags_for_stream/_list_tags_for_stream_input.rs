@@ -37,17 +37,14 @@ impl ListTagsForStreamInput {
 }
 impl ListTagsForStreamInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForStreamInput`](crate::operation::list_tags_for_stream::ListTagsForStreamInput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_for_stream::builders::ListTagsForStreamInputBuilder {
+    pub fn builder() -> crate::operation::list_tags_for_stream::builders::ListTagsForStreamInputBuilder {
         crate::operation::list_tags_for_stream::builders::ListTagsForStreamInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTagsForStreamInput`](crate::operation::list_tags_for_stream::ListTagsForStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsForStreamInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) exclusive_start_tag_key: ::std::option::Option<::std::string::String>,
@@ -70,18 +67,12 @@ impl ListTagsForStreamInputBuilder {
         &self.stream_name
     }
     /// <p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>. </p>
-    pub fn exclusive_start_tag_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclusive_start_tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exclusive_start_tag_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>. </p>
-    pub fn set_exclusive_start_tag_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exclusive_start_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exclusive_start_tag_key = input;
         self
     }
@@ -120,17 +111,12 @@ impl ListTagsForStreamInputBuilder {
     /// Consumes the builder and constructs a [`ListTagsForStreamInput`](crate::operation::list_tags_for_stream::ListTagsForStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_tags_for_stream::ListTagsForStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_tags_for_stream::ListTagsForStreamInput {
-                stream_name: self.stream_name,
-                exclusive_start_tag_key: self.exclusive_start_tag_key,
-                limit: self.limit,
-                stream_arn: self.stream_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_tags_for_stream::ListTagsForStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_tags_for_stream::ListTagsForStreamInput {
+            stream_name: self.stream_name,
+            exclusive_start_tag_key: self.exclusive_start_tag_key,
+            limit: self.limit,
+            stream_arn: self.stream_arn,
+        })
     }
 }

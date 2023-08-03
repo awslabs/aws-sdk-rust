@@ -21,10 +21,7 @@ pub fn ser_connect_directory_input(
     if let Some(var_6) = &input.connect_settings {
         #[allow(unused_mut)]
         let mut object_7 = object.key("ConnectSettings").start_object();
-        crate::protocol_serde::shape_directory_connect_settings::ser_directory_connect_settings(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_directory_connect_settings::ser_directory_connect_settings(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.tags {

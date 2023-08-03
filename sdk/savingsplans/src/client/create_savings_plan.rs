@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSavingsPlanOutput`](crate::operation::create_savings_plan::CreateSavingsPlanOutput) with field(s):
     ///   - [`savings_plan_id(Option<String>)`](crate::operation::create_savings_plan::CreateSavingsPlanOutput::savings_plan_id): <p>The ID of the Savings Plan.</p>
     /// - On failure, responds with [`SdkError<CreateSavingsPlanError>`](crate::operation::create_savings_plan::CreateSavingsPlanError)
-    pub fn create_savings_plan(
-        &self,
-    ) -> crate::operation::create_savings_plan::builders::CreateSavingsPlanFluentBuilder {
-        crate::operation::create_savings_plan::builders::CreateSavingsPlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_savings_plan(&self) -> crate::operation::create_savings_plan::builders::CreateSavingsPlanFluentBuilder {
+        crate::operation::create_savings_plan::builders::CreateSavingsPlanFluentBuilder::new(self.handle.clone())
     }
 }

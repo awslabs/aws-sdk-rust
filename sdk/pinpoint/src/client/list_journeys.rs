@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ListJourneysOutput`](crate::operation::list_journeys::ListJourneysOutput) with field(s):
     ///   - [`journeys_response(Option<JourneysResponse>)`](crate::operation::list_journeys::ListJourneysOutput::journeys_response): <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
     /// - On failure, responds with [`SdkError<ListJourneysError>`](crate::operation::list_journeys::ListJourneysError)
-    pub fn list_journeys(
-        &self,
-    ) -> crate::operation::list_journeys::builders::ListJourneysFluentBuilder {
-        crate::operation::list_journeys::builders::ListJourneysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_journeys(&self) -> crate::operation::list_journeys::builders::ListJourneysFluentBuilder {
+        crate::operation::list_journeys::builders::ListJourneysFluentBuilder::new(self.handle.clone())
     }
 }

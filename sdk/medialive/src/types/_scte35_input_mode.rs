@@ -38,13 +38,7 @@
 /// Whether the SCTE-35 input should be the active input or a fixed input.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Scte35InputMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Scte35InputMode {
         match s {
             "FIXED" => Scte35InputMode::Fixed,
             "FOLLOW_ACTIVE" => Scte35InputMode::FollowActive,
-            other => {
-                Scte35InputMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Scte35InputMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

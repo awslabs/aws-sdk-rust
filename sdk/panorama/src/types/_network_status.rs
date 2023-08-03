@@ -44,9 +44,7 @@ impl NetworkStatus {
 
 /// A builder for [`NetworkStatus`](crate::types::NetworkStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkStatusBuilder {
     pub(crate) ethernet0_status: ::std::option::Option<crate::types::EthernetStatus>,
     pub(crate) ethernet1_status: ::std::option::Option<crate::types::EthernetStatus>,
@@ -60,10 +58,7 @@ impl NetworkStatusBuilder {
         self
     }
     /// <p>The status of Ethernet port 0.</p>
-    pub fn set_ethernet0_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EthernetStatus>,
-    ) -> Self {
+    pub fn set_ethernet0_status(mut self, input: ::std::option::Option<crate::types::EthernetStatus>) -> Self {
         self.ethernet0_status = input;
         self
     }
@@ -77,10 +72,7 @@ impl NetworkStatusBuilder {
         self
     }
     /// <p>The status of Ethernet port 1.</p>
-    pub fn set_ethernet1_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EthernetStatus>,
-    ) -> Self {
+    pub fn set_ethernet1_status(mut self, input: ::std::option::Option<crate::types::EthernetStatus>) -> Self {
         self.ethernet1_status = input;
         self
     }
@@ -108,10 +100,7 @@ impl NetworkStatusBuilder {
         self
     }
     /// <p>When the network status changed.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`approval_state(ApprovalState)`](crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateFluentBuilder::approval_state) / [`set_approval_state(Option<ApprovalState>)`](crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateFluentBuilder::set_approval_state): <p>The approval state to associate with the user on the pull request.</p>
     /// - On success, responds with [`UpdatePullRequestApprovalStateOutput`](crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput)
     /// - On failure, responds with [`SdkError<UpdatePullRequestApprovalStateError>`](crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError)
-    pub fn update_pull_request_approval_state(&self) -> crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateFluentBuilder{
+    pub fn update_pull_request_approval_state(
+        &self,
+    ) -> crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateFluentBuilder {
         crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateFluentBuilder::new(self.handle.clone())
     }
 }

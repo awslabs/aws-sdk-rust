@@ -20,7 +20,9 @@ impl super::Client {
     ///   - [`date_updated(Option<DateTime>)`](crate::operation::update_configuration_template::UpdateConfigurationTemplateOutput::date_updated): <p>The date (in UTC time) when this configuration set was last modified.</p>
     ///   - [`option_settings(Option<Vec<ConfigurationOptionSetting>>)`](crate::operation::update_configuration_template::UpdateConfigurationTemplateOutput::option_settings): <p>A list of the configuration options and their values in this configuration set.</p>
     /// - On failure, responds with [`SdkError<UpdateConfigurationTemplateError>`](crate::operation::update_configuration_template::UpdateConfigurationTemplateError)
-    pub fn update_configuration_template(&self) -> crate::operation::update_configuration_template::builders::UpdateConfigurationTemplateFluentBuilder{
+    pub fn update_configuration_template(
+        &self,
+    ) -> crate::operation::update_configuration_template::builders::UpdateConfigurationTemplateFluentBuilder {
         crate::operation::update_configuration_template::builders::UpdateConfigurationTemplateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -17,16 +17,14 @@ impl GetCloudFormationStackRecordsInput {
 }
 impl GetCloudFormationStackRecordsInput {
     /// Creates a new builder-style object to manufacture [`GetCloudFormationStackRecordsInput`](crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsInput).
-    pub fn builder() -> crate::operation::get_cloud_formation_stack_records::builders::GetCloudFormationStackRecordsInputBuilder{
+    pub fn builder() -> crate::operation::get_cloud_formation_stack_records::builders::GetCloudFormationStackRecordsInputBuilder {
         crate::operation::get_cloud_formation_stack_records::builders::GetCloudFormationStackRecordsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCloudFormationStackRecordsInput`](crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCloudFormationStackRecordsInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }
@@ -55,11 +53,8 @@ impl GetCloudFormationStackRecordsInputBuilder {
         crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsInput {
-                page_token: self.page_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsInput {
+            page_token: self.page_token,
+        })
     }
 }

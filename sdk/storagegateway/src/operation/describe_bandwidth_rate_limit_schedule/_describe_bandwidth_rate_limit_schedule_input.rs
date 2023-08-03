@@ -15,16 +15,14 @@ impl DescribeBandwidthRateLimitScheduleInput {
 }
 impl DescribeBandwidthRateLimitScheduleInput {
     /// Creates a new builder-style object to manufacture [`DescribeBandwidthRateLimitScheduleInput`](crate::operation::describe_bandwidth_rate_limit_schedule::DescribeBandwidthRateLimitScheduleInput).
-    pub fn builder() -> crate::operation::describe_bandwidth_rate_limit_schedule::builders::DescribeBandwidthRateLimitScheduleInputBuilder{
+    pub fn builder() -> crate::operation::describe_bandwidth_rate_limit_schedule::builders::DescribeBandwidthRateLimitScheduleInputBuilder {
         crate::operation::describe_bandwidth_rate_limit_schedule::builders::DescribeBandwidthRateLimitScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBandwidthRateLimitScheduleInput`](crate::operation::describe_bandwidth_rate_limit_schedule::DescribeBandwidthRateLimitScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBandwidthRateLimitScheduleInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,16 @@ impl DescribeBandwidthRateLimitScheduleInputBuilder {
         &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`DescribeBandwidthRateLimitScheduleInput`](crate::operation::describe_bandwidth_rate_limit_schedule::DescribeBandwidthRateLimitScheduleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_bandwidth_rate_limit_schedule::DescribeBandwidthRateLimitScheduleInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_bandwidth_rate_limit_schedule::DescribeBandwidthRateLimitScheduleInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_bandwidth_rate_limit_schedule::DescribeBandwidthRateLimitScheduleInput {
-                gateway_arn: self.gateway_arn
-                ,
-            }
+                gateway_arn: self.gateway_arn,
+            },
         )
     }
 }

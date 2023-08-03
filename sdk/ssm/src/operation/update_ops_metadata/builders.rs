@@ -10,10 +10,7 @@ impl UpdateOpsMetadataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_ops_metadata::UpdateOpsMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ops_metadata::UpdateOpsMetadataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ops_metadata::UpdateOpsMetadataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_ops_metadata();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateOpsMetadataFluentBuilder {
         }
     }
     /// Access the UpdateOpsMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_ops_metadata::builders::UpdateOpsMetadataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_ops_metadata::builders::UpdateOpsMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateOpsMetadataFluentBuilder {
             crate::operation::update_ops_metadata::UpdateOpsMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ops_metadata::UpdateOpsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ops_metadata::UpdateOpsMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateOpsMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateOpsMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ops_metadata::UpdateOpsMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ops_metadata::UpdateOpsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ops_metadata::UpdateOpsMetadataError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateOpsMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ops_metadata::UpdateOpsMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ops_metadata::UpdateOpsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ops_metadata::UpdateOpsMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateOpsMetadataFluentBuilder {
             crate::operation::update_ops_metadata::UpdateOpsMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ops_metadata::UpdateOpsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ops_metadata::UpdateOpsMetadataError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
-    pub fn ops_metadata_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ops_metadata_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ops_metadata_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
-    pub fn set_ops_metadata_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ops_metadata_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ops_metadata_arn(input);
         self
     }
@@ -147,30 +125,20 @@ impl UpdateOpsMetadataFluentBuilder {
     /// To override the contents of this collection use [`set_metadata_to_update`](Self::set_metadata_to_update).
     ///
     /// <p>Metadata to add to an OpsMetadata object.</p>
-    pub fn metadata_to_update(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::MetadataValue,
-    ) -> Self {
+    pub fn metadata_to_update(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MetadataValue) -> Self {
         self.inner = self.inner.metadata_to_update(k.into(), v);
         self
     }
     /// <p>Metadata to add to an OpsMetadata object.</p>
     pub fn set_metadata_to_update(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
     ) -> Self {
         self.inner = self.inner.set_metadata_to_update(input);
         self
     }
     /// <p>Metadata to add to an OpsMetadata object.</p>
-    pub fn get_metadata_to_update(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-    > {
+    pub fn get_metadata_to_update(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
         self.inner.get_metadata_to_update()
     }
     /// Appends an item to `KeysToDelete`.
@@ -178,25 +146,17 @@ impl UpdateOpsMetadataFluentBuilder {
     /// To override the contents of this collection use [`set_keys_to_delete`](Self::set_keys_to_delete).
     ///
     /// <p>The metadata keys to delete from the OpsMetadata object. </p>
-    pub fn keys_to_delete(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keys_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.keys_to_delete(input.into());
         self
     }
     /// <p>The metadata keys to delete from the OpsMetadata object. </p>
-    pub fn set_keys_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_keys_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_keys_to_delete(input);
         self
     }
     /// <p>The metadata keys to delete from the OpsMetadata object. </p>
-    pub fn get_keys_to_delete(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_keys_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_keys_to_delete()
     }
 }

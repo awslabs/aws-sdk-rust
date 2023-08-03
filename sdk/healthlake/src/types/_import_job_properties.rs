@@ -86,9 +86,7 @@ impl ImportJobProperties {
 
 /// A builder for [`ImportJobProperties`](crate::types::ImportJobProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportJobPropertiesBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
@@ -150,10 +148,7 @@ impl ImportJobPropertiesBuilder {
         self
     }
     /// <p>The time that the Import job was submitted for processing.</p>
-    pub fn set_submit_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_submit_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.submit_time = input;
         self
     }
@@ -167,10 +162,7 @@ impl ImportJobPropertiesBuilder {
         self
     }
     /// <p>The time that the Import job was completed.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -198,10 +190,7 @@ impl ImportJobPropertiesBuilder {
         self
     }
     /// <p>The input data configuration that was supplied when the Import job was created.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }
@@ -215,32 +204,21 @@ impl ImportJobPropertiesBuilder {
         self
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
-    pub fn set_job_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_job_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.job_output_data_config = input;
         self
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
-    pub fn get_job_output_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OutputDataConfig> {
+    pub fn get_job_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
         &self.job_output_data_config
     }
     /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input data.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input data.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }

@@ -15,33 +15,25 @@ impl DeleteMonitoringSubscriptionInput {
 }
 impl DeleteMonitoringSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`DeleteMonitoringSubscriptionInput`](crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionInput).
-    pub fn builder() -> crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionInputBuilder {
         crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMonitoringSubscriptionInput`](crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMonitoringSubscriptionInputBuilder {
     pub(crate) distribution_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMonitoringSubscriptionInputBuilder {
     /// <p>The ID of the distribution that you are disabling metrics for.</p>
-    pub fn distribution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the distribution that you are disabling metrics for.</p>
-    pub fn set_distribution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl DeleteMonitoringSubscriptionInputBuilder {
         crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionInput {
-                distribution_id: self.distribution_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionInput {
+            distribution_id: self.distribution_id,
+        })
     }
 }

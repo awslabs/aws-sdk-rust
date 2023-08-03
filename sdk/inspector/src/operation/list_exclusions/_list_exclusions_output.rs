@@ -35,9 +35,7 @@ impl ListExclusionsOutput {
 
 /// A builder for [`ListExclusionsOutput`](crate::operation::list_exclusions::ListExclusionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExclusionsOutputBuilder {
     pub(crate) exclusion_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -49,27 +47,19 @@ impl ListExclusionsOutputBuilder {
     /// To override the contents of this collection use [`set_exclusion_arns`](Self::set_exclusion_arns).
     ///
     /// <p>A list of exclusions' ARNs returned by the action.</p>
-    pub fn exclusion_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclusion_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exclusion_arns.unwrap_or_default();
         v.push(input.into());
         self.exclusion_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of exclusions' ARNs returned by the action.</p>
-    pub fn set_exclusion_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_exclusion_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.exclusion_arns = input;
         self
     }
     /// <p>A list of exclusions' ARNs returned by the action.</p>
-    pub fn get_exclusion_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_exclusion_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.exclusion_arns
     }
     /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>

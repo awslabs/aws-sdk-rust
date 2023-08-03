@@ -7,23 +7,23 @@
 pub struct GetDeliverabilityDashboardOptionsInput {}
 impl GetDeliverabilityDashboardOptionsInput {
     /// Creates a new builder-style object to manufacture [`GetDeliverabilityDashboardOptionsInput`](crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsInput).
-    pub fn builder() -> crate::operation::get_deliverability_dashboard_options::builders::GetDeliverabilityDashboardOptionsInputBuilder{
+    pub fn builder() -> crate::operation::get_deliverability_dashboard_options::builders::GetDeliverabilityDashboardOptionsInputBuilder {
         crate::operation::get_deliverability_dashboard_options::builders::GetDeliverabilityDashboardOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeliverabilityDashboardOptionsInput`](crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeliverabilityDashboardOptionsInputBuilder {}
 impl GetDeliverabilityDashboardOptionsInputBuilder {
     /// Consumes the builder and constructs a [`GetDeliverabilityDashboardOptionsInput`](crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsInput, ::aws_smithy_http::operation::error::BuildError>{
-        ::std::result::Result::Ok(
-            crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsInput {})
     }
 }

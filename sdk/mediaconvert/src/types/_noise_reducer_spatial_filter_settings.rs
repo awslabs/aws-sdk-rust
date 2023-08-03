@@ -37,9 +37,7 @@ impl NoiseReducerSpatialFilterSettings {
 
 /// A builder for [`NoiseReducerSpatialFilterSettings`](crate::types::NoiseReducerSpatialFilterSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NoiseReducerSpatialFilterSettingsBuilder {
     pub(crate) post_filter_sharpen_strength: ::std::option::Option<i32>,
     pub(crate) speed: ::std::option::Option<i32>,

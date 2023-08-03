@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::describe_dimension::DescribeDimensionOutput::creation_date): <p>The date the dimension was created.</p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::describe_dimension::DescribeDimensionOutput::last_modified_date): <p>The date the dimension was last modified.</p>
     /// - On failure, responds with [`SdkError<DescribeDimensionError>`](crate::operation::describe_dimension::DescribeDimensionError)
-    pub fn describe_dimension(
-        &self,
-    ) -> crate::operation::describe_dimension::builders::DescribeDimensionFluentBuilder {
-        crate::operation::describe_dimension::builders::DescribeDimensionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_dimension(&self) -> crate::operation::describe_dimension::builders::DescribeDimensionFluentBuilder {
+        crate::operation::describe_dimension::builders::DescribeDimensionFluentBuilder::new(self.handle.clone())
     }
 }

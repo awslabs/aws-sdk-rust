@@ -10,10 +10,7 @@ impl ListWhatIfAnalysesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_what_if_analyses::ListWhatIfAnalysesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_what_if_analyses::ListWhatIfAnalysesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_what_if_analyses::ListWhatIfAnalysesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_what_if_analyses();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListWhatIfAnalysesFluentBuilder {
         }
     }
     /// Access the ListWhatIfAnalyses as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_what_if_analyses::builders::ListWhatIfAnalysesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_what_if_analyses::builders::ListWhatIfAnalysesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListWhatIfAnalysesFluentBuilder {
             crate::operation::list_what_if_analyses::ListWhatIfAnalyses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_what_if_analyses::ListWhatIfAnalysesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_what_if_analyses::ListWhatIfAnalysesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListWhatIfAnalysesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListWhatIfAnalysesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_what_if_analyses::ListWhatIfAnalysesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_what_if_analyses::ListWhatIfAnalysesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_what_if_analyses::ListWhatIfAnalysesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListWhatIfAnalysesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_what_if_analyses::ListWhatIfAnalysesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_what_if_analyses::ListWhatIfAnalysesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_what_if_analyses::ListWhatIfAnalysesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListWhatIfAnalysesFluentBuilder {
             crate::operation::list_what_if_analyses::ListWhatIfAnalyses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_what_if_analyses::ListWhatIfAnalysesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_what_if_analyses::ListWhatIfAnalysesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_what_if_analyses::paginator::ListWhatIfAnalysesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_what_if_analyses::paginator::ListWhatIfAnalysesPaginator {
-        crate::operation::list_what_if_analyses::paginator::ListWhatIfAnalysesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_what_if_analyses::paginator::ListWhatIfAnalysesPaginator {
+        crate::operation::list_what_if_analyses::paginator::ListWhatIfAnalysesPaginator::new(self.handle, self.inner)
     }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -193,10 +172,7 @@ impl ListWhatIfAnalysesFluentBuilder {
     /// <acct-id>
     /// :forecast/electricityWhatIf" } ]
     /// </acct-id></code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

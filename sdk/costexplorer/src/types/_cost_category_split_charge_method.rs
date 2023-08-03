@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CostCategorySplitChargeMethod {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for CostCategorySplitChargeMethod {
             "EVEN" => CostCategorySplitChargeMethod::Even,
             "FIXED" => CostCategorySplitChargeMethod::Fixed,
             "PROPORTIONAL" => CostCategorySplitChargeMethod::Proportional,
-            other => CostCategorySplitChargeMethod::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => CostCategorySplitChargeMethod::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

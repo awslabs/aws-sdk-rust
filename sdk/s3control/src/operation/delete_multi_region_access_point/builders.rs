@@ -35,7 +35,7 @@ impl DeleteMultiRegionAccessPointInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMultiRegionAccessPointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_multi_region_access_point::builders::DeleteMultiRegionAccessPointInputBuilder,
+    inner: crate::operation::delete_multi_region_access_point::builders::DeleteMultiRegionAccessPointInputBuilder,
 }
 impl DeleteMultiRegionAccessPointFluentBuilder {
     /// Creates a new `DeleteMultiRegionAccessPoint`.
@@ -46,7 +46,7 @@ impl DeleteMultiRegionAccessPointFluentBuilder {
         }
     }
     /// Access the DeleteMultiRegionAccessPoint as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_multi_region_access_point::builders::DeleteMultiRegionAccessPointInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_multi_region_access_point::builders::DeleteMultiRegionAccessPointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +58,7 @@ impl DeleteMultiRegionAccessPointFluentBuilder {
             crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +68,7 @@ impl DeleteMultiRegionAccessPointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +77,7 @@ impl DeleteMultiRegionAccessPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointError>,
     > {
         let op = self
             .inner
@@ -107,9 +100,7 @@ impl DeleteMultiRegionAccessPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +114,7 @@ impl DeleteMultiRegionAccessPointFluentBuilder {
             crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointError>,
     > {
         self.customize_middleware().await
     }
@@ -163,17 +152,12 @@ impl DeleteMultiRegionAccessPointFluentBuilder {
         self
     }
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<crate::types::DeleteMultiRegionAccessPointInput>,
-    ) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<crate::types::DeleteMultiRegionAccessPointInput>) -> Self {
         self.inner = self.inner.set_details(input);
         self
     }
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
-    pub fn get_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeleteMultiRegionAccessPointInput> {
+    pub fn get_details(&self) -> &::std::option::Option<crate::types::DeleteMultiRegionAccessPointInput> {
         self.inner.get_details()
     }
 }

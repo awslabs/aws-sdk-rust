@@ -78,17 +78,9 @@ pub fn ser_weekly_auto_scaling_schedule(
 
 pub(crate) fn de_weekly_auto_scaling_schedule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::WeeklyAutoScalingSchedule>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::WeeklyAutoScalingSchedule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -98,61 +90,56 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Monday" => {
-                                builder = builder.set_monday(
-                                    crate::protocol_serde::shape_daily_auto_scaling_schedule::de_daily_auto_scaling_schedule(tokens)?
-                                );
-                            }
-                            "Tuesday" => {
-                                builder = builder.set_tuesday(
-                                    crate::protocol_serde::shape_daily_auto_scaling_schedule::de_daily_auto_scaling_schedule(tokens)?
-                                );
-                            }
-                            "Wednesday" => {
-                                builder = builder.set_wednesday(
-                                    crate::protocol_serde::shape_daily_auto_scaling_schedule::de_daily_auto_scaling_schedule(tokens)?
-                                );
-                            }
-                            "Thursday" => {
-                                builder = builder.set_thursday(
-                                    crate::protocol_serde::shape_daily_auto_scaling_schedule::de_daily_auto_scaling_schedule(tokens)?
-                                );
-                            }
-                            "Friday" => {
-                                builder = builder.set_friday(
-                                    crate::protocol_serde::shape_daily_auto_scaling_schedule::de_daily_auto_scaling_schedule(tokens)?
-                                );
-                            }
-                            "Saturday" => {
-                                builder = builder.set_saturday(
-                                    crate::protocol_serde::shape_daily_auto_scaling_schedule::de_daily_auto_scaling_schedule(tokens)?
-                                );
-                            }
-                            "Sunday" => {
-                                builder = builder.set_sunday(
-                                    crate::protocol_serde::shape_daily_auto_scaling_schedule::de_daily_auto_scaling_schedule(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Monday" => {
+                            builder = builder.set_monday(crate::protocol_serde::shape_daily_auto_scaling_schedule::de_daily_auto_scaling_schedule(
+                                tokens,
+                            )?);
                         }
-                    }
+                        "Tuesday" => {
+                            builder = builder.set_tuesday(crate::protocol_serde::shape_daily_auto_scaling_schedule::de_daily_auto_scaling_schedule(
+                                tokens,
+                            )?);
+                        }
+                        "Wednesday" => {
+                            builder = builder.set_wednesday(
+                                crate::protocol_serde::shape_daily_auto_scaling_schedule::de_daily_auto_scaling_schedule(tokens)?,
+                            );
+                        }
+                        "Thursday" => {
+                            builder = builder.set_thursday(crate::protocol_serde::shape_daily_auto_scaling_schedule::de_daily_auto_scaling_schedule(
+                                tokens,
+                            )?);
+                        }
+                        "Friday" => {
+                            builder = builder.set_friday(crate::protocol_serde::shape_daily_auto_scaling_schedule::de_daily_auto_scaling_schedule(
+                                tokens,
+                            )?);
+                        }
+                        "Saturday" => {
+                            builder = builder.set_saturday(crate::protocol_serde::shape_daily_auto_scaling_schedule::de_daily_auto_scaling_schedule(
+                                tokens,
+                            )?);
+                        }
+                        "Sunday" => {
+                            builder = builder.set_sunday(crate::protocol_serde::shape_daily_auto_scaling_schedule::de_daily_auto_scaling_schedule(
+                                tokens,
+                            )?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

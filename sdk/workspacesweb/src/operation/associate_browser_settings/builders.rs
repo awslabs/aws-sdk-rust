@@ -26,7 +26,7 @@ impl AssociateBrowserSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateBrowserSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_browser_settings::builders::AssociateBrowserSettingsInputBuilder,
+    inner: crate::operation::associate_browser_settings::builders::AssociateBrowserSettingsInputBuilder,
 }
 impl AssociateBrowserSettingsFluentBuilder {
     /// Creates a new `AssociateBrowserSettings`.
@@ -37,10 +37,7 @@ impl AssociateBrowserSettingsFluentBuilder {
         }
     }
     /// Access the AssociateBrowserSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_browser_settings::builders::AssociateBrowserSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_browser_settings::builders::AssociateBrowserSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl AssociateBrowserSettingsFluentBuilder {
             crate::operation::associate_browser_settings::AssociateBrowserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_browser_settings::AssociateBrowserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_browser_settings::AssociateBrowserSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl AssociateBrowserSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl AssociateBrowserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_browser_settings::AssociateBrowserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_browser_settings::AssociateBrowserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_browser_settings::AssociateBrowserSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl AssociateBrowserSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_browser_settings::AssociateBrowserSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_browser_settings::AssociateBrowserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_browser_settings::AssociateBrowserSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl AssociateBrowserSettingsFluentBuilder {
             crate::operation::associate_browser_settings::AssociateBrowserSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_browser_settings::AssociateBrowserSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_browser_settings::AssociateBrowserSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl AssociateBrowserSettingsFluentBuilder {
         self.inner.get_portal_arn()
     }
     /// <p>The ARN of the browser settings.</p>
-    pub fn browser_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn browser_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.browser_settings_arn(input.into());
         self
     }
     /// <p>The ARN of the browser settings.</p>
-    pub fn set_browser_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_browser_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_browser_settings_arn(input);
         self
     }

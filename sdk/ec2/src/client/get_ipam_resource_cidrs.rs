@@ -18,12 +18,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`ipam_resource_cidrs(Option<Vec<IpamResourceCidr>>)`](crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsOutput::ipam_resource_cidrs): <p>The resource CIDRs.</p>
     /// - On failure, responds with [`SdkError<GetIpamResourceCidrsError>`](crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError)
-    pub fn get_ipam_resource_cidrs(
-        &self,
-    ) -> crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder
-    {
-        crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_ipam_resource_cidrs(&self) -> crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder {
+        crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder::new(self.handle.clone())
     }
 }

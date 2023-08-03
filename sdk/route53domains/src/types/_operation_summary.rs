@@ -88,9 +88,7 @@ impl OperationSummary {
 
 /// A builder for [`OperationSummary`](crate::types::OperationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OperationSummaryBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::OperationStatus>,
@@ -122,10 +120,7 @@ impl OperationSummaryBuilder {
         self
     }
     /// <p>The current status of the requested operation in the system.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OperationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -153,10 +148,7 @@ impl OperationSummaryBuilder {
         self
     }
     /// <p>The date when the request was submitted.</p>
-    pub fn set_submitted_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_submitted_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.submitted_date = input;
         self
     }
@@ -214,10 +206,7 @@ impl OperationSummaryBuilder {
     /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
     /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
     /// </ul>
-    pub fn set_status_flag(
-        mut self,
-        input: ::std::option::Option<crate::types::StatusFlag>,
-    ) -> Self {
+    pub fn set_status_flag(mut self, input: ::std::option::Option<crate::types::StatusFlag>) -> Self {
         self.status_flag = input;
         self
     }
@@ -239,10 +228,7 @@ impl OperationSummaryBuilder {
         self
     }
     /// <p> The date when the last change was made in Unix time format and Coordinated Universal Time (UTC). </p>
-    pub fn set_last_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date = input;
         self
     }

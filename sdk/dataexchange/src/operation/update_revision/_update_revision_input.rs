@@ -43,9 +43,7 @@ impl UpdateRevisionInput {
 
 /// A builder for [`UpdateRevisionInput`](crate::operation::update_revision::UpdateRevisionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRevisionInputBuilder {
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
@@ -112,10 +110,7 @@ impl UpdateRevisionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRevisionInput`](crate::operation::update_revision::UpdateRevisionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_revision::UpdateRevisionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_revision::UpdateRevisionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_revision::UpdateRevisionInput {
             comment: self.comment,
             data_set_id: self.data_set_id,

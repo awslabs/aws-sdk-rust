@@ -29,17 +29,14 @@ impl CreateInvitationsInput {
 }
 impl CreateInvitationsInput {
     /// Creates a new builder-style object to manufacture [`CreateInvitationsInput`](crate::operation::create_invitations::CreateInvitationsInput).
-    pub fn builder() -> crate::operation::create_invitations::builders::CreateInvitationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_invitations::builders::CreateInvitationsInputBuilder {
         crate::operation::create_invitations::builders::CreateInvitationsInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInvitationsInput`](crate::operation::create_invitations::CreateInvitationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInvitationsInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) disable_email_notification: ::std::option::Option<bool>,
@@ -58,17 +55,12 @@ impl CreateInvitationsInputBuilder {
         self
     }
     /// <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>
@@ -102,16 +94,11 @@ impl CreateInvitationsInputBuilder {
     /// Consumes the builder and constructs a [`CreateInvitationsInput`](crate::operation::create_invitations::CreateInvitationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_invitations::CreateInvitationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_invitations::CreateInvitationsInput {
-                account_ids: self.account_ids,
-                disable_email_notification: self.disable_email_notification,
-                message: self.message,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_invitations::CreateInvitationsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_invitations::CreateInvitationsInput {
+            account_ids: self.account_ids,
+            disable_email_notification: self.disable_email_notification,
+            message: self.message,
+        })
     }
 }

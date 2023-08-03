@@ -22,35 +22,26 @@ impl AssociateHealthCheckInput {
 }
 impl AssociateHealthCheckInput {
     /// Creates a new builder-style object to manufacture [`AssociateHealthCheckInput`](crate::operation::associate_health_check::AssociateHealthCheckInput).
-    pub fn builder(
-    ) -> crate::operation::associate_health_check::builders::AssociateHealthCheckInputBuilder {
+    pub fn builder() -> crate::operation::associate_health_check::builders::AssociateHealthCheckInputBuilder {
         crate::operation::associate_health_check::builders::AssociateHealthCheckInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateHealthCheckInput`](crate::operation::associate_health_check::AssociateHealthCheckInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateHealthCheckInputBuilder {
     pub(crate) protection_id: ::std::option::Option<::std::string::String>,
     pub(crate) health_check_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateHealthCheckInputBuilder {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
-    pub fn protection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
-    pub fn set_protection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protection_id = input;
         self
     }
@@ -59,18 +50,12 @@ impl AssociateHealthCheckInputBuilder {
         &self.protection_id
     }
     /// <p>The Amazon Resource Name (ARN) of the health check to associate with the protection.</p>
-    pub fn health_check_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the health check to associate with the protection.</p>
-    pub fn set_health_check_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_check_arn = input;
         self
     }
@@ -81,15 +66,11 @@ impl AssociateHealthCheckInputBuilder {
     /// Consumes the builder and constructs a [`AssociateHealthCheckInput`](crate::operation::associate_health_check::AssociateHealthCheckInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_health_check::AssociateHealthCheckInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_health_check::AssociateHealthCheckInput {
-                protection_id: self.protection_id,
-                health_check_arn: self.health_check_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_health_check::AssociateHealthCheckInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_health_check::AssociateHealthCheckInput {
+            protection_id: self.protection_id,
+            health_check_arn: self.health_check_arn,
+        })
     }
 }

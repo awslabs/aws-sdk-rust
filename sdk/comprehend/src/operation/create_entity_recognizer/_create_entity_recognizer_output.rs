@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateEntityRecognizerOutput {
 }
 impl CreateEntityRecognizerOutput {
     /// Creates a new builder-style object to manufacture [`CreateEntityRecognizerOutput`](crate::operation::create_entity_recognizer::CreateEntityRecognizerOutput).
-    pub fn builder(
-    ) -> crate::operation::create_entity_recognizer::builders::CreateEntityRecognizerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_entity_recognizer::builders::CreateEntityRecognizerOutputBuilder {
         crate::operation::create_entity_recognizer::builders::CreateEntityRecognizerOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEntityRecognizerOutput`](crate::operation::create_entity_recognizer::CreateEntityRecognizerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEntityRecognizerOutputBuilder {
     pub(crate) entity_recognizer_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateEntityRecognizerOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
-    pub fn entity_recognizer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_recognizer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_recognizer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
-    pub fn set_entity_recognizer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entity_recognizer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_recognizer_arn = input;
         self
     }

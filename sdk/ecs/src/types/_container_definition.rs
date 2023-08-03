@@ -215,9 +215,7 @@ pub struct ContainerDefinition {
     pub pseudo_terminal: ::std::option::Option<bool>,
     /// <p>A key/value map of labels to add to the container. This parameter maps to <code>Labels</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
     #[doc(hidden)]
-    pub docker_labels: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub docker_labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of <code>ulimits</code> to set in the container. If a <code>ulimit</code> value is specified in a task definition, it overrides the default values set by Docker. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming values are displayed in the <code>Ulimit</code> data type.</p>
     /// <p>Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code> resource limit sets a restriction on the number of open files that a container can use. The default <code>nofile</code> soft limit is <code>1024</code> and the default hard limit is <code>4096</code>.</p>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
@@ -244,8 +242,7 @@ pub struct ContainerDefinition {
     pub system_controls: ::std::option::Option<::std::vec::Vec<crate::types::SystemControl>>,
     /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
     #[doc(hidden)]
-    pub resource_requirements:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
+    pub resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
     /// <p>The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub firelens_configuration: ::std::option::Option<crate::types::FirelensConfiguration>,
@@ -284,9 +281,7 @@ impl ContainerDefinition {
         self.image.as_deref()
     }
     /// <p>The private repository authentication credentials to use.</p>
-    pub fn repository_credentials(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RepositoryCredentials> {
+    pub fn repository_credentials(&self) -> ::std::option::Option<&crate::types::RepositoryCredentials> {
         self.repository_credentials.as_ref()
     }
     /// <p>The number of <code>cpu</code> units reserved for the container. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
@@ -500,11 +495,7 @@ impl ContainerDefinition {
         self.pseudo_terminal
     }
     /// <p>A key/value map of labels to add to the container. This parameter maps to <code>Labels</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
-    pub fn docker_labels(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn docker_labels(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.docker_labels.as_ref()
     }
     /// <p>A list of <code>ulimits</code> to set in the container. If a <code>ulimit</code> value is specified in a task definition, it overrides the default values set by Docker. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming values are displayed in the <code>Ulimit</code> data type.</p>
@@ -536,15 +527,11 @@ impl ContainerDefinition {
         self.system_controls.as_deref()
     }
     /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
-    pub fn resource_requirements(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceRequirement]> {
+    pub fn resource_requirements(&self) -> ::std::option::Option<&[crate::types::ResourceRequirement]> {
         self.resource_requirements.as_deref()
     }
     /// <p>The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn firelens_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FirelensConfiguration> {
+    pub fn firelens_configuration(&self) -> ::std::option::Option<&crate::types::FirelensConfiguration> {
         self.firelens_configuration.as_ref()
     }
     /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>credspec</code>code&gt;) file that configures a container for Active Directory authentication. This parameter is only used with domainless authentication.</p>
@@ -563,9 +550,7 @@ impl ContainerDefinition {
 
 /// A builder for [`ContainerDefinition`](crate::types::ContainerDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerDefinitionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<::std::string::String>,
@@ -579,14 +564,12 @@ pub struct ContainerDefinitionBuilder {
     pub(crate) entry_point: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) environment: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
-    pub(crate) environment_files:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentFile>>,
+    pub(crate) environment_files: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentFile>>,
     pub(crate) mount_points: ::std::option::Option<::std::vec::Vec<crate::types::MountPoint>>,
     pub(crate) volumes_from: ::std::option::Option<::std::vec::Vec<crate::types::VolumeFrom>>,
     pub(crate) linux_parameters: ::std::option::Option<crate::types::LinuxParameters>,
     pub(crate) secrets: ::std::option::Option<::std::vec::Vec<crate::types::Secret>>,
-    pub(crate) depends_on:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContainerDependency>>,
+    pub(crate) depends_on: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDependency>>,
     pub(crate) start_timeout: ::std::option::Option<i32>,
     pub(crate) stop_timeout: ::std::option::Option<i32>,
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
@@ -598,19 +581,15 @@ pub struct ContainerDefinitionBuilder {
     pub(crate) dns_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dns_search_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) extra_hosts: ::std::option::Option<::std::vec::Vec<crate::types::HostEntry>>,
-    pub(crate) docker_security_options:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) docker_security_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) interactive: ::std::option::Option<bool>,
     pub(crate) pseudo_terminal: ::std::option::Option<bool>,
-    pub(crate) docker_labels: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) docker_labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) ulimits: ::std::option::Option<::std::vec::Vec<crate::types::Ulimit>>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
     pub(crate) health_check: ::std::option::Option<crate::types::HealthCheck>,
     pub(crate) system_controls: ::std::option::Option<::std::vec::Vec<crate::types::SystemControl>>,
-    pub(crate) resource_requirements:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
+    pub(crate) resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
     pub(crate) firelens_configuration: ::std::option::Option<crate::types::FirelensConfiguration>,
     pub(crate) credential_specs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -706,17 +685,12 @@ impl ContainerDefinitionBuilder {
         self
     }
     /// <p>The private repository authentication credentials to use.</p>
-    pub fn set_repository_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryCredentials>,
-    ) -> Self {
+    pub fn set_repository_credentials(mut self, input: ::std::option::Option<crate::types::RepositoryCredentials>) -> Self {
         self.repository_credentials = input;
         self
     }
     /// <p>The private repository authentication credentials to use.</p>
-    pub fn get_repository_credentials(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryCredentials> {
+    pub fn get_repository_credentials(&self) -> &::std::option::Option<crate::types::RepositoryCredentials> {
         &self.repository_credentials
     }
     /// <p>The number of <code>cpu</code> units reserved for the container. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
@@ -835,10 +809,7 @@ impl ContainerDefinitionBuilder {
     /// </note> <important>
     /// <p>Containers that are collocated on a single container instance may be able to communicate with each other without requiring links or host port mappings. Network isolation is achieved on the container instance using security groups and VPC settings.</p>
     /// </important>
-    pub fn set_links(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_links(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.links = input;
         self
     }
@@ -872,10 +843,7 @@ impl ContainerDefinitionBuilder {
     /// <p>This parameter maps to <code>PortBindings</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. If the network mode of a task definition is set to <code>none</code>, then you can't specify port mappings. If the network mode of a task definition is set to <code>host</code>, then host ports must either be undefined or they must match the container port in the port mapping.</p> <note>
     /// <p>After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <b>Network Bindings</b> section of a container description for a selected task in the Amazon ECS console. The assignments are also visible in the <code>networkBindings</code> section <code>DescribeTasks</code> responses.</p>
     /// </note>
-    pub fn set_port_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortMapping>>,
-    ) -> Self {
+    pub fn set_port_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortMapping>>) -> Self {
         self.port_mappings = input;
         self
     }
@@ -885,9 +853,7 @@ impl ContainerDefinitionBuilder {
     /// <p>This parameter maps to <code>PortBindings</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. If the network mode of a task definition is set to <code>none</code>, then you can't specify port mappings. If the network mode of a task definition is set to <code>host</code>, then host ports must either be undefined or they must match the container port in the port mapping.</p> <note>
     /// <p>After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <b>Network Bindings</b> section of a container description for a selected task in the Amazon ECS console. The assignments are also visible in the <code>networkBindings</code> section <code>DescribeTasks</code> responses.</p>
     /// </note>
-    pub fn get_port_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortMapping>> {
+    pub fn get_port_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortMapping>> {
         &self.port_mappings
     }
     /// <p>If the <code>essential</code> parameter of a container is marked as <code>true</code>, and that container fails or stops for any reason, all other containers that are part of the task are stopped. If the <code>essential</code> parameter of a container is marked as <code>false</code>, its failure doesn't affect the rest of the containers in a task. If this parameter is omitted, a container is assumed to be essential.</p>
@@ -925,10 +891,7 @@ impl ContainerDefinitionBuilder {
     /// <p>Early versions of the Amazon ECS container agent don't properly handle <code>entryPoint</code> parameters. If you have problems using <code>entryPoint</code>, update your container agent or enter your commands and arguments as <code>command</code> array items instead.</p>
     /// </important>
     /// <p>The entry point that's passed to the container. This parameter maps to <code>Entrypoint</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--entrypoint</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#entrypoint">https://docs.docker.com/engine/reference/builder/#entrypoint</a>.</p>
-    pub fn set_entry_point(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_entry_point(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.entry_point = input;
         self
     }
@@ -936,9 +899,7 @@ impl ContainerDefinitionBuilder {
     /// <p>Early versions of the Amazon ECS container agent don't properly handle <code>entryPoint</code> parameters. If you have problems using <code>entryPoint</code>, update your container agent or enter your commands and arguments as <code>command</code> array items instead.</p>
     /// </important>
     /// <p>The entry point that's passed to the container. This parameter maps to <code>Entrypoint</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--entrypoint</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#entrypoint">https://docs.docker.com/engine/reference/builder/#entrypoint</a>.</p>
-    pub fn get_entry_point(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entry_point(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.entry_point
     }
     /// Appends an item to `command`.
@@ -953,10 +914,7 @@ impl ContainerDefinitionBuilder {
         self
     }
     /// <p>The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>. If there are multiple arguments, each argument is a separated string in the array.</p>
-    pub fn set_command(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.command = input;
         self
     }
@@ -980,19 +938,14 @@ impl ContainerDefinitionBuilder {
     /// <p>The environment variables to pass to a container. This parameter maps to <code>Env</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <important>
     /// <p>We don't recommend that you use plaintext environment variables for sensitive information, such as credential data.</p>
     /// </important>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>) -> Self {
         self.environment = input;
         self
     }
     /// <p>The environment variables to pass to a container. This parameter maps to <code>Env</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <important>
     /// <p>We don't recommend that you use plaintext environment variables for sensitive information, such as credential data.</p>
     /// </important>
-    pub fn get_environment(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
         &self.environment
     }
     /// Appends an item to `environment_files`.
@@ -1011,19 +964,14 @@ impl ContainerDefinitionBuilder {
     /// <p>A list of files containing the environment variables to pass to a container. This parameter maps to the <code>--env-file</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
     /// <p>You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in an environment file contains an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated as comments and are ignored. For more information about the environment variable file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default environment variables in file</a>.</p>
     /// <p>If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they're processed from the top down. We recommend that you use unique variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_environment_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentFile>>,
-    ) -> Self {
+    pub fn set_environment_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentFile>>) -> Self {
         self.environment_files = input;
         self
     }
     /// <p>A list of files containing the environment variables to pass to a container. This parameter maps to the <code>--env-file</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
     /// <p>You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in an environment file contains an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated as comments and are ignored. For more information about the environment variable file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default environment variables in file</a>.</p>
     /// <p>If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they're processed from the top down. We recommend that you use unique variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn get_environment_files(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentFile>> {
+    pub fn get_environment_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentFile>> {
         &self.environment_files
     }
     /// Appends an item to `mount_points`.
@@ -1042,19 +990,14 @@ impl ContainerDefinitionBuilder {
     /// <p>The mount points for data volumes in your container.</p>
     /// <p>This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
     /// <p>Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows containers can't mount directories on a different drive, and mount point can't be across drives.</p>
-    pub fn set_mount_points(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MountPoint>>,
-    ) -> Self {
+    pub fn set_mount_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MountPoint>>) -> Self {
         self.mount_points = input;
         self
     }
     /// <p>The mount points for data volumes in your container.</p>
     /// <p>This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
     /// <p>Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows containers can't mount directories on a different drive, and mount point can't be across drives.</p>
-    pub fn get_mount_points(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MountPoint>> {
+    pub fn get_mount_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MountPoint>> {
         &self.mount_points
     }
     /// Appends an item to `volumes_from`.
@@ -1069,17 +1012,12 @@ impl ContainerDefinitionBuilder {
         self
     }
     /// <p>Data volumes to mount from another container. This parameter maps to <code>VolumesFrom</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--volumes-from</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
-    pub fn set_volumes_from(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeFrom>>,
-    ) -> Self {
+    pub fn set_volumes_from(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeFrom>>) -> Self {
         self.volumes_from = input;
         self
     }
     /// <p>Data volumes to mount from another container. This parameter maps to <code>VolumesFrom</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--volumes-from</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
-    pub fn get_volumes_from(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeFrom>> {
+    pub fn get_volumes_from(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeFrom>> {
         &self.volumes_from
     }
     /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel capabilities. For more information see <code>KernelCapabilities</code>.</p> <note>
@@ -1092,10 +1030,7 @@ impl ContainerDefinitionBuilder {
     /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel capabilities. For more information see <code>KernelCapabilities</code>.</p> <note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
-    pub fn set_linux_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::LinuxParameters>,
-    ) -> Self {
+    pub fn set_linux_parameters(mut self, input: ::std::option::Option<crate::types::LinuxParameters>) -> Self {
         self.linux_parameters = input;
         self
     }
@@ -1117,10 +1052,7 @@ impl ContainerDefinitionBuilder {
         self
     }
     /// <p>The secrets to pass to the container. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_secrets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Secret>>,
-    ) -> Self {
+    pub fn set_secrets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Secret>>) -> Self {
         self.secrets = input;
         self
     }
@@ -1152,10 +1084,7 @@ impl ContainerDefinitionBuilder {
     /// <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li>
     /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
-    pub fn set_depends_on(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDependency>>,
-    ) -> Self {
+    pub fn set_depends_on(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDependency>>) -> Self {
         self.depends_on = input;
         self
     }
@@ -1166,9 +1095,7 @@ impl ContainerDefinitionBuilder {
     /// <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li>
     /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
-    pub fn get_depends_on(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerDependency>> {
+    pub fn get_depends_on(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerDependency>> {
         &self.depends_on
     }
     /// <p>Time duration (in seconds) to wait before giving up on resolving dependencies for a container. For example, you specify two containers in a task definition with containerA having a dependency on containerB reaching a <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a <code>startTimeout</code> value is specified for containerB and it doesn't reach the desired status within that time then containerA gives up and not start. This results in the task transitioning to a <code>STOPPED</code> state.</p> <note>
@@ -1318,18 +1245,12 @@ impl ContainerDefinitionBuilder {
         &self.user
     }
     /// <p>The working directory to run commands inside the container in. This parameter maps to <code>WorkingDir</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--workdir</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
-    pub fn working_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn working_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.working_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The working directory to run commands inside the container in. This parameter maps to <code>WorkingDir</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--workdir</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
-    pub fn set_working_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_working_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.working_directory = input;
         self
     }
@@ -1413,19 +1334,14 @@ impl ContainerDefinitionBuilder {
     /// <p>A list of DNS servers that are presented to the container. This parameter maps to <code>Dns</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--dns</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
-    pub fn set_dns_servers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_servers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_servers = input;
         self
     }
     /// <p>A list of DNS servers that are presented to the container. This parameter maps to <code>Dns</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--dns</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
-    pub fn get_dns_servers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_servers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_servers
     }
     /// Appends an item to `dns_search_domains`.
@@ -1435,10 +1351,7 @@ impl ContainerDefinitionBuilder {
     /// <p>A list of DNS search domains that are presented to the container. This parameter maps to <code>DnsSearch</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--dns-search</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
-    pub fn dns_search_domains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dns_search_domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_search_domains.unwrap_or_default();
         v.push(input.into());
         self.dns_search_domains = ::std::option::Option::Some(v);
@@ -1447,19 +1360,14 @@ impl ContainerDefinitionBuilder {
     /// <p>A list of DNS search domains that are presented to the container. This parameter maps to <code>DnsSearch</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--dns-search</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
-    pub fn set_dns_search_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_search_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_search_domains = input;
         self
     }
     /// <p>A list of DNS search domains that are presented to the container. This parameter maps to <code>DnsSearch</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--dns-search</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
-    pub fn get_dns_search_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_search_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_search_domains
     }
     /// Appends an item to `extra_hosts`.
@@ -1478,19 +1386,14 @@ impl ContainerDefinitionBuilder {
     /// <p>A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. This parameter maps to <code>ExtraHosts</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--add-host</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
     /// <p>This parameter isn't supported for Windows containers or tasks that use the <code>awsvpc</code> network mode.</p>
     /// </note>
-    pub fn set_extra_hosts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HostEntry>>,
-    ) -> Self {
+    pub fn set_extra_hosts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HostEntry>>) -> Self {
         self.extra_hosts = input;
         self
     }
     /// <p>A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. This parameter maps to <code>ExtraHosts</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--add-host</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
     /// <p>This parameter isn't supported for Windows containers or tasks that use the <code>awsvpc</code> network mode.</p>
     /// </note>
-    pub fn get_extra_hosts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HostEntry>> {
+    pub fn get_extra_hosts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HostEntry>> {
         &self.extra_hosts
     }
     /// Appends an item to `docker_security_options`.
@@ -1505,10 +1408,7 @@ impl ContainerDefinitionBuilder {
     /// </note>
     /// <p>For more information about valid values, see <a href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker Run Security Configuration</a>. </p>
     /// <p>Valid values: "no-new-privileges" | "apparmor:PROFILE" | "label:value" | "credentialspec:CredentialSpecFilePath"</p>
-    pub fn docker_security_options(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn docker_security_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.docker_security_options.unwrap_or_default();
         v.push(input.into());
         self.docker_security_options = ::std::option::Option::Some(v);
@@ -1522,10 +1422,7 @@ impl ContainerDefinitionBuilder {
     /// </note>
     /// <p>For more information about valid values, see <a href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker Run Security Configuration</a>. </p>
     /// <p>Valid values: "no-new-privileges" | "apparmor:PROFILE" | "label:value" | "credentialspec:CredentialSpecFilePath"</p>
-    pub fn set_docker_security_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_docker_security_options(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.docker_security_options = input;
         self
     }
@@ -1537,9 +1434,7 @@ impl ContainerDefinitionBuilder {
     /// </note>
     /// <p>For more information about valid values, see <a href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker Run Security Configuration</a>. </p>
     /// <p>Valid values: "no-new-privileges" | "apparmor:PROFILE" | "label:value" | "credentialspec:CredentialSpecFilePath"</p>
-    pub fn get_docker_security_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_docker_security_options(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.docker_security_options
     }
     /// <p>When this parameter is <code>true</code>, you can deploy containerized applications that require <code>stdin</code> or a <code>tty</code> to be allocated. This parameter maps to <code>OpenStdin</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--interactive</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
@@ -1575,11 +1470,7 @@ impl ContainerDefinitionBuilder {
     /// To override the contents of this collection use [`set_docker_labels`](Self::set_docker_labels).
     ///
     /// <p>A key/value map of labels to add to the container. This parameter maps to <code>Labels</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
-    pub fn docker_labels(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn docker_labels(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.docker_labels.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.docker_labels = ::std::option::Option::Some(hash_map);
@@ -1588,19 +1479,13 @@ impl ContainerDefinitionBuilder {
     /// <p>A key/value map of labels to add to the container. This parameter maps to <code>Labels</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
     pub fn set_docker_labels(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.docker_labels = input;
         self
     }
     /// <p>A key/value map of labels to add to the container. This parameter maps to <code>Labels</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
-    pub fn get_docker_labels(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_docker_labels(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.docker_labels
     }
     /// Appends an item to `ulimits`.
@@ -1623,10 +1508,7 @@ impl ContainerDefinitionBuilder {
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
-    pub fn set_ulimits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ulimit>>,
-    ) -> Self {
+    pub fn set_ulimits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ulimit>>) -> Self {
         self.ulimits = input;
         self
     }
@@ -1656,10 +1538,7 @@ impl ContainerDefinitionBuilder {
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
     /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
-    pub fn set_log_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LogConfiguration>,
-    ) -> Self {
+    pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::LogConfiguration>) -> Self {
         self.log_configuration = input;
         self
     }
@@ -1679,10 +1558,7 @@ impl ContainerDefinitionBuilder {
         self
     }
     /// <p>The container health check command and associated configuration parameters for the container. This parameter maps to <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>HEALTHCHECK</code> parameter of <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
-    pub fn set_health_check(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheck>,
-    ) -> Self {
+    pub fn set_health_check(mut self, input: ::std::option::Option<crate::types::HealthCheck>) -> Self {
         self.health_check = input;
         self
     }
@@ -1706,19 +1582,14 @@ impl ContainerDefinitionBuilder {
     /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
     /// <p>We don't recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the <code>awsvpc</code> network mode, the container that's started last determines which <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well as the containers.</p>
     /// </note>
-    pub fn set_system_controls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SystemControl>>,
-    ) -> Self {
+    pub fn set_system_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SystemControl>>) -> Self {
         self.system_controls = input;
         self
     }
     /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
     /// <p>We don't recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the <code>awsvpc</code> network mode, the container that's started last determines which <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well as the containers.</p>
     /// </note>
-    pub fn get_system_controls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemControl>> {
+    pub fn get_system_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemControl>> {
         &self.system_controls
     }
     /// Appends an item to `resource_requirements`.
@@ -1733,17 +1604,12 @@ impl ContainerDefinitionBuilder {
         self
     }
     /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
-    pub fn set_resource_requirements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
-    ) -> Self {
+    pub fn set_resource_requirements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>) -> Self {
         self.resource_requirements = input;
         self
     }
     /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
-    pub fn get_resource_requirements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>> {
+    pub fn get_resource_requirements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>> {
         &self.resource_requirements
     }
     /// <p>The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -1752,17 +1618,12 @@ impl ContainerDefinitionBuilder {
         self
     }
     /// <p>The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_firelens_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FirelensConfiguration>,
-    ) -> Self {
+    pub fn set_firelens_configuration(mut self, input: ::std::option::Option<crate::types::FirelensConfiguration>) -> Self {
         self.firelens_configuration = input;
         self
     }
     /// <p>The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn get_firelens_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FirelensConfiguration> {
+    pub fn get_firelens_configuration(&self) -> &::std::option::Option<crate::types::FirelensConfiguration> {
         &self.firelens_configuration
     }
     /// Appends an item to `credential_specs`.
@@ -1772,10 +1633,7 @@ impl ContainerDefinitionBuilder {
     /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>credspec</code>code&gt;) file that configures a container for Active Directory authentication. This parameter is only used with domainless authentication.</p>
     /// <p>The format for each ARN is <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
     /// <p>The <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
-    pub fn credential_specs(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn credential_specs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.credential_specs.unwrap_or_default();
         v.push(input.into());
         self.credential_specs = ::std::option::Option::Some(v);
@@ -1784,19 +1642,14 @@ impl ContainerDefinitionBuilder {
     /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>credspec</code>code&gt;) file that configures a container for Active Directory authentication. This parameter is only used with domainless authentication.</p>
     /// <p>The format for each ARN is <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
     /// <p>The <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
-    pub fn set_credential_specs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_credential_specs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.credential_specs = input;
         self
     }
     /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>credspec</code>code&gt;) file that configures a container for Active Directory authentication. This parameter is only used with domainless authentication.</p>
     /// <p>The format for each ARN is <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
     /// <p>The <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
-    pub fn get_credential_specs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_credential_specs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.credential_specs
     }
     /// Consumes the builder and constructs a [`ContainerDefinition`](crate::types::ContainerDefinition).

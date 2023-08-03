@@ -10,10 +10,7 @@ impl ListContactsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_contacts::ListContactsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contacts::ListContactsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contacts::ListContactsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_contacts();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ListContactsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_contacts::ListContacts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_contacts::ListContacts, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_contacts::ListContactsError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ListContactsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl ListContactsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_contacts::ListContacts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_contacts::ListContacts, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_contacts::ListContactsError>,
     > {
         self.customize_middleware().await
@@ -116,13 +104,8 @@ impl ListContactsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_contacts::paginator::ListContactsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_contacts::paginator::ListContactsPaginator {
-        crate::operation::list_contacts::paginator::ListContactsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_contacts::paginator::ListContactsPaginator {
+        crate::operation::list_contacts::paginator::ListContactsPaginator::new(self.handle, self.inner)
     }
     /// <p>Maximum number of contacts returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -162,17 +145,12 @@ impl ListContactsFluentBuilder {
         self
     }
     /// <p>Status of a contact reservation.</p>
-    pub fn set_status_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContactStatus>>,
-    ) -> Self {
+    pub fn set_status_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactStatus>>) -> Self {
         self.inner = self.inner.set_status_list(input);
         self
     }
     /// <p>Status of a contact reservation.</p>
-    pub fn get_status_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactStatus>> {
+    pub fn get_status_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactStatus>> {
         self.inner.get_status_list()
     }
     /// <p>Start time of a contact in UTC.</p>
@@ -181,10 +159,7 @@ impl ListContactsFluentBuilder {
         self
     }
     /// <p>Start time of a contact in UTC.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -198,10 +173,7 @@ impl ListContactsFluentBuilder {
         self
     }
     /// <p>End time of a contact in UTC.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -210,18 +182,12 @@ impl ListContactsFluentBuilder {
         self.inner.get_end_time()
     }
     /// <p>Name of a ground station.</p>
-    pub fn ground_station(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ground_station(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ground_station(input.into());
         self
     }
     /// <p>Name of a ground station.</p>
-    pub fn set_ground_station(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ground_station(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ground_station(input);
         self
     }
@@ -230,18 +196,12 @@ impl ListContactsFluentBuilder {
         self.inner.get_ground_station()
     }
     /// <p>ARN of a satellite.</p>
-    pub fn satellite_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn satellite_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.satellite_arn(input.into());
         self
     }
     /// <p>ARN of a satellite.</p>
-    pub fn set_satellite_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_satellite_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_satellite_arn(input);
         self
     }
@@ -250,18 +210,12 @@ impl ListContactsFluentBuilder {
         self.inner.get_satellite_arn()
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn mission_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mission_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mission_profile_arn(input.into());
         self
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn set_mission_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mission_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mission_profile_arn(input);
         self
     }

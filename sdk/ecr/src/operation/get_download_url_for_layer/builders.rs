@@ -29,8 +29,7 @@ impl GetDownloadUrlForLayerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDownloadUrlForLayerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerInputBuilder,
+    inner: crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerInputBuilder,
 }
 impl GetDownloadUrlForLayerFluentBuilder {
     /// Creates a new `GetDownloadUrlForLayer`.
@@ -41,10 +40,7 @@ impl GetDownloadUrlForLayerFluentBuilder {
         }
     }
     /// Access the GetDownloadUrlForLayer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_download_url_for_layer::builders::GetDownloadUrlForLayerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +52,7 @@ impl GetDownloadUrlForLayerFluentBuilder {
             crate::operation::get_download_url_for_layer::GetDownloadUrlForLayer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +62,7 @@ impl GetDownloadUrlForLayerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +71,7 @@ impl GetDownloadUrlForLayerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerError>,
     > {
         let op = self
             .inner
@@ -105,9 +94,7 @@ impl GetDownloadUrlForLayerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +108,7 @@ impl GetDownloadUrlForLayerFluentBuilder {
             crate::operation::get_download_url_for_layer::GetDownloadUrlForLayer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerError>,
     > {
         self.customize_middleware().await
     }
@@ -142,18 +127,12 @@ impl GetDownloadUrlForLayerFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The name of the repository that is associated with the image layer to download.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository that is associated with the image layer to download.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }

@@ -15,18 +15,14 @@ impl GetHostnameSuggestionInput {
 }
 impl GetHostnameSuggestionInput {
     /// Creates a new builder-style object to manufacture [`GetHostnameSuggestionInput`](crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput).
-    pub fn builder(
-    ) -> crate::operation::get_hostname_suggestion::builders::GetHostnameSuggestionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_hostname_suggestion::builders::GetHostnameSuggestionInputBuilder {
         crate::operation::get_hostname_suggestion::builders::GetHostnameSuggestionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetHostnameSuggestionInput`](crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHostnameSuggestionInputBuilder {
     pub(crate) layer_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl GetHostnameSuggestionInputBuilder {
     /// Consumes the builder and constructs a [`GetHostnameSuggestionInput`](crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput {
-                layer_id: self.layer_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput { layer_id: self.layer_id })
     }
 }

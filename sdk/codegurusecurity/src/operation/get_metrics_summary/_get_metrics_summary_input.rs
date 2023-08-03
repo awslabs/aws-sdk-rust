@@ -15,17 +15,14 @@ impl GetMetricsSummaryInput {
 }
 impl GetMetricsSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetMetricsSummaryInput`](crate::operation::get_metrics_summary::GetMetricsSummaryInput).
-    pub fn builder(
-    ) -> crate::operation::get_metrics_summary::builders::GetMetricsSummaryInputBuilder {
+    pub fn builder() -> crate::operation::get_metrics_summary::builders::GetMetricsSummaryInputBuilder {
         crate::operation::get_metrics_summary::builders::GetMetricsSummaryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMetricsSummaryInput`](crate::operation::get_metrics_summary::GetMetricsSummaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMetricsSummaryInputBuilder {
     pub(crate) date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -47,12 +44,7 @@ impl GetMetricsSummaryInputBuilder {
     /// Consumes the builder and constructs a [`GetMetricsSummaryInput`](crate::operation::get_metrics_summary::GetMetricsSummaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_metrics_summary::GetMetricsSummaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_metrics_summary::GetMetricsSummaryInput { date: self.date },
-        )
+    ) -> ::std::result::Result<crate::operation::get_metrics_summary::GetMetricsSummaryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_metrics_summary::GetMetricsSummaryInput { date: self.date })
     }
 }

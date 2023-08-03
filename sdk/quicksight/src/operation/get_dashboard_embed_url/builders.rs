@@ -47,10 +47,7 @@ impl GetDashboardEmbedUrlFluentBuilder {
         }
     }
     /// Access the GetDashboardEmbedUrl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +59,7 @@ impl GetDashboardEmbedUrlFluentBuilder {
             crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +69,7 @@ impl GetDashboardEmbedUrlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +78,7 @@ impl GetDashboardEmbedUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError>,
     > {
         let op = self
             .inner
@@ -111,9 +101,7 @@ impl GetDashboardEmbedUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError>,
     > {
         self.send_middleware().await
     }
@@ -127,25 +115,17 @@ impl GetDashboardEmbedUrlFluentBuilder {
             crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -173,10 +153,7 @@ impl GetDashboardEmbedUrlFluentBuilder {
         self
     }
     /// <p>The authentication method that the user uses to sign in.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EmbeddingIdentityType>,
-    ) -> Self {
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::EmbeddingIdentityType>) -> Self {
         self.inner = self.inner.set_identity_type(input);
         self
     }
@@ -291,25 +268,17 @@ impl GetDashboardEmbedUrlFluentBuilder {
     /// To override the contents of this collection use [`set_additional_dashboard_ids`](Self::set_additional_dashboard_ids).
     ///
     /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
-    pub fn additional_dashboard_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_dashboard_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.additional_dashboard_ids(input.into());
         self
     }
     /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
-    pub fn set_additional_dashboard_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_additional_dashboard_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_additional_dashboard_ids(input);
         self
     }
     /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
-    pub fn get_additional_dashboard_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_dashboard_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_additional_dashboard_ids()
     }
 }

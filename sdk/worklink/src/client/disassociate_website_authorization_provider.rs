@@ -7,10 +7,12 @@ impl super::Client {
     ///   - [`authorization_provider_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_website_authorization_provider::builders::DisassociateWebsiteAuthorizationProviderFluentBuilder::authorization_provider_id) / [`set_authorization_provider_id(Option<String>)`](crate::operation::disassociate_website_authorization_provider::builders::DisassociateWebsiteAuthorizationProviderFluentBuilder::set_authorization_provider_id): <p>A unique identifier for the authorization provider.</p>
     /// - On success, responds with [`DisassociateWebsiteAuthorizationProviderOutput`](crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderOutput)
     /// - On failure, responds with [`SdkError<DisassociateWebsiteAuthorizationProviderError>`](crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn disassociate_website_authorization_provider(&self) -> crate::operation::disassociate_website_authorization_provider::builders::DisassociateWebsiteAuthorizationProviderFluentBuilder{
-        crate::operation::disassociate_website_authorization_provider::builders::DisassociateWebsiteAuthorizationProviderFluentBuilder::new(self.handle.clone())
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn disassociate_website_authorization_provider(
+        &self,
+    ) -> crate::operation::disassociate_website_authorization_provider::builders::DisassociateWebsiteAuthorizationProviderFluentBuilder {
+        crate::operation::disassociate_website_authorization_provider::builders::DisassociateWebsiteAuthorizationProviderFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

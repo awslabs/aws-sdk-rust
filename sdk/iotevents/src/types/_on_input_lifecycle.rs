@@ -30,13 +30,10 @@ impl OnInputLifecycle {
 
 /// A builder for [`OnInputLifecycle`](crate::types::OnInputLifecycle).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OnInputLifecycleBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
-    pub(crate) transition_events:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitionEvent>>,
+    pub(crate) transition_events: ::std::option::Option<::std::vec::Vec<crate::types::TransitionEvent>>,
 }
 impl OnInputLifecycleBuilder {
     /// Appends an item to `events`.
@@ -51,10 +48,7 @@ impl OnInputLifecycleBuilder {
         self
     }
     /// <p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
         self.events = input;
         self
     }
@@ -74,17 +68,12 @@ impl OnInputLifecycleBuilder {
         self
     }
     /// <p>Specifies the actions performed, and the next state entered, when a <code>condition</code> evaluates to TRUE.</p>
-    pub fn set_transition_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TransitionEvent>>,
-    ) -> Self {
+    pub fn set_transition_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransitionEvent>>) -> Self {
         self.transition_events = input;
         self
     }
     /// <p>Specifies the actions performed, and the next state entered, when a <code>condition</code> evaluates to TRUE.</p>
-    pub fn get_transition_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitionEvent>> {
+    pub fn get_transition_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitionEvent>> {
         &self.transition_events
     }
     /// Consumes the builder and constructs a [`OnInputLifecycle`](crate::types::OnInputLifecycle).

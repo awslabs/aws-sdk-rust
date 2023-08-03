@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`environments(Option<Vec<EnvironmentSummary>>)`](crate::operation::list_environments::ListEnvironmentsOutput::environments): <p>Returns a list of summary details for all the runtime environments in your account. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_environments::ListEnvironmentsOutput::next_token): <p>A pagination token that's returned when the response doesn't contain all the runtime environments.</p>
     /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::operation::list_environments::ListEnvironmentsError)
-    pub fn list_environments(
-        &self,
-    ) -> crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder {
-        crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_environments(&self) -> crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder {
+        crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::new(self.handle.clone())
     }
 }

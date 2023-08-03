@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`successful(Option<Vec<AuditEventResultEntry>>)`](crate::operation::put_audit_events::PutAuditEventsOutput::successful): <p>Lists events in the provided event payload that were successfully ingested into CloudTrail.</p>
     ///   - [`failed(Option<Vec<ResultErrorEntry>>)`](crate::operation::put_audit_events::PutAuditEventsOutput::failed): <p>Lists events in the provided event payload that could not be ingested into CloudTrail, and includes the error code and error message returned for events that could not be ingested.</p>
     /// - On failure, responds with [`SdkError<PutAuditEventsError>`](crate::operation::put_audit_events::PutAuditEventsError)
-    pub fn put_audit_events(
-        &self,
-    ) -> crate::operation::put_audit_events::builders::PutAuditEventsFluentBuilder {
-        crate::operation::put_audit_events::builders::PutAuditEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_audit_events(&self) -> crate::operation::put_audit_events::builders::PutAuditEventsFluentBuilder {
+        crate::operation::put_audit_events::builders::PutAuditEventsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -82,28 +82,19 @@ pub fn ser_send_command_input(
     if let Some(var_26) = &input.notification_config {
         #[allow(unused_mut)]
         let mut object_27 = object.key("NotificationConfig").start_object();
-        crate::protocol_serde::shape_notification_config::ser_notification_config(
-            &mut object_27,
-            var_26,
-        )?;
+        crate::protocol_serde::shape_notification_config::ser_notification_config(&mut object_27, var_26)?;
         object_27.finish();
     }
     if let Some(var_28) = &input.cloud_watch_output_config {
         #[allow(unused_mut)]
         let mut object_29 = object.key("CloudWatchOutputConfig").start_object();
-        crate::protocol_serde::shape_cloud_watch_output_config::ser_cloud_watch_output_config(
-            &mut object_29,
-            var_28,
-        )?;
+        crate::protocol_serde::shape_cloud_watch_output_config::ser_cloud_watch_output_config(&mut object_29, var_28)?;
         object_29.finish();
     }
     if let Some(var_30) = &input.alarm_configuration {
         #[allow(unused_mut)]
         let mut object_31 = object.key("AlarmConfiguration").start_object();
-        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(
-            &mut object_31,
-            var_30,
-        )?;
+        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_31, var_30)?;
         object_31.finish();
     }
     Ok(())

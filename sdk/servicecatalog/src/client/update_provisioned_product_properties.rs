@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`record_id(Option<String>)`](crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput::record_id): <p>The identifier of the record.</p>
     ///   - [`status(Option<RecordStatus>)`](crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput::status): <p>The status of the request.</p>
     /// - On failure, responds with [`SdkError<UpdateProvisionedProductPropertiesError>`](crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesError)
-    pub fn update_provisioned_product_properties(&self) -> crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesFluentBuilder{
+    pub fn update_provisioned_product_properties(
+        &self,
+    ) -> crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesFluentBuilder {
         crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesFluentBuilder::new(self.handle.clone())
     }
 }

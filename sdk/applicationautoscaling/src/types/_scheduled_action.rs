@@ -180,9 +180,7 @@ impl ScheduledAction {
         self.end_time.as_ref()
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
-    pub fn scalable_target_action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScalableTargetAction> {
+    pub fn scalable_target_action(&self) -> ::std::option::Option<&crate::types::ScalableTargetAction> {
         self.scalable_target_action.as_ref()
     }
     /// <p>The date and time that the scheduled action was created.</p>
@@ -199,9 +197,7 @@ impl ScheduledAction {
 
 /// A builder for [`ScheduledAction`](crate::types::ScheduledAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledActionBuilder {
     pub(crate) scheduled_action_name: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_action_arn: ::std::option::Option<::std::string::String>,
@@ -217,18 +213,12 @@ pub struct ScheduledActionBuilder {
 }
 impl ScheduledActionBuilder {
     /// <p>The name of the scheduled action.</p>
-    pub fn scheduled_action_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scheduled action.</p>
-    pub fn set_scheduled_action_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_action_name = input;
         self
     }
@@ -237,18 +227,12 @@ impl ScheduledActionBuilder {
         &self.scheduled_action_name
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
-    pub fn scheduled_action_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
-    pub fn set_scheduled_action_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_action_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_action_arn = input;
         self
     }
@@ -262,10 +246,7 @@ impl ScheduledActionBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.service_namespace = input;
         self
     }
@@ -454,10 +435,7 @@ impl ScheduledActionBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.scalable_dimension = input;
         self
     }
@@ -485,9 +463,7 @@ impl ScheduledActionBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         &self.scalable_dimension
     }
     /// <p>The date and time that the action is scheduled to begin, in UTC.</p>
@@ -496,10 +472,7 @@ impl ScheduledActionBuilder {
         self
     }
     /// <p>The date and time that the action is scheduled to begin, in UTC.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -513,10 +486,7 @@ impl ScheduledActionBuilder {
         self
     }
     /// <p>The date and time that the action is scheduled to end, in UTC.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -530,17 +500,12 @@ impl ScheduledActionBuilder {
         self
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
-    pub fn set_scalable_target_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableTargetAction>,
-    ) -> Self {
+    pub fn set_scalable_target_action(mut self, input: ::std::option::Option<crate::types::ScalableTargetAction>) -> Self {
         self.scalable_target_action = input;
         self
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
-    pub fn get_scalable_target_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableTargetAction> {
+    pub fn get_scalable_target_action(&self) -> &::std::option::Option<crate::types::ScalableTargetAction> {
         &self.scalable_target_action
     }
     /// <p>The date and time that the scheduled action was created.</p>
@@ -549,10 +514,7 @@ impl ScheduledActionBuilder {
         self
     }
     /// <p>The date and time that the scheduled action was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

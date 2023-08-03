@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateFlywheelOutput`](crate::operation::update_flywheel::UpdateFlywheelOutput) with field(s):
     ///   - [`flywheel_properties(Option<FlywheelProperties>)`](crate::operation::update_flywheel::UpdateFlywheelOutput::flywheel_properties): <p>The flywheel properties.</p>
     /// - On failure, responds with [`SdkError<UpdateFlywheelError>`](crate::operation::update_flywheel::UpdateFlywheelError)
-    pub fn update_flywheel(
-        &self,
-    ) -> crate::operation::update_flywheel::builders::UpdateFlywheelFluentBuilder {
-        crate::operation::update_flywheel::builders::UpdateFlywheelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_flywheel(&self) -> crate::operation::update_flywheel::builders::UpdateFlywheelFluentBuilder {
+        crate::operation::update_flywheel::builders::UpdateFlywheelFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateAllowListOutput {
 }
 impl UpdateAllowListOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAllowListOutput`](crate::operation::update_allow_list::UpdateAllowListOutput).
-    pub fn builder() -> crate::operation::update_allow_list::builders::UpdateAllowListOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_allow_list::builders::UpdateAllowListOutputBuilder {
         crate::operation::update_allow_list::builders::UpdateAllowListOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAllowListOutput`](crate::operation::update_allow_list::UpdateAllowListOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAllowListOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteVariantStoreOutput`](crate::operation::delete_variant_store::DeleteVariantStoreOutput) with field(s):
     ///   - [`status(Option<StoreStatus>)`](crate::operation::delete_variant_store::DeleteVariantStoreOutput::status): <p>The store's status.</p>
     /// - On failure, responds with [`SdkError<DeleteVariantStoreError>`](crate::operation::delete_variant_store::DeleteVariantStoreError)
-    pub fn delete_variant_store(
-        &self,
-    ) -> crate::operation::delete_variant_store::builders::DeleteVariantStoreFluentBuilder {
-        crate::operation::delete_variant_store::builders::DeleteVariantStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_variant_store(&self) -> crate::operation::delete_variant_store::builders::DeleteVariantStoreFluentBuilder {
+        crate::operation::delete_variant_store::builders::DeleteVariantStoreFluentBuilder::new(self.handle.clone())
     }
 }

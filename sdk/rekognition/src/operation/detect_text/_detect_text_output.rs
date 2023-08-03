@@ -35,9 +35,7 @@ impl DetectTextOutput {
 
 /// A builder for [`DetectTextOutput`](crate::operation::detect_text::DetectTextOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectTextOutputBuilder {
     pub(crate) text_detections: ::std::option::Option<::std::vec::Vec<crate::types::TextDetection>>,
     pub(crate) text_model_version: ::std::option::Option<::std::string::String>,
@@ -56,32 +54,21 @@ impl DetectTextOutputBuilder {
         self
     }
     /// <p>An array of text that was detected in the input image.</p>
-    pub fn set_text_detections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TextDetection>>,
-    ) -> Self {
+    pub fn set_text_detections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TextDetection>>) -> Self {
         self.text_detections = input;
         self
     }
     /// <p>An array of text that was detected in the input image.</p>
-    pub fn get_text_detections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TextDetection>> {
+    pub fn get_text_detections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextDetection>> {
         &self.text_detections
     }
     /// <p>The model version used to detect text.</p>
-    pub fn text_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn text_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The model version used to detect text.</p>
-    pub fn set_text_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_text_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text_model_version = input;
         self
     }

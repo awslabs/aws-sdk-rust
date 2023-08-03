@@ -23,24 +23,20 @@ impl DescribeInstanceStorageConfigInput {
         self.association_id.as_deref()
     }
     /// <p>A valid resource type.</p>
-    pub fn resource_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceStorageResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::InstanceStorageResourceType> {
         self.resource_type.as_ref()
     }
 }
 impl DescribeInstanceStorageConfigInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceStorageConfigInput`](crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigInput).
-    pub fn builder() -> crate::operation::describe_instance_storage_config::builders::DescribeInstanceStorageConfigInputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_storage_config::builders::DescribeInstanceStorageConfigInputBuilder {
         crate::operation::describe_instance_storage_config::builders::DescribeInstanceStorageConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceStorageConfigInput`](crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceStorageConfigInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl DescribeInstanceStorageConfigInputBuilder {
         &self.instance_id
     }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -87,17 +77,12 @@ impl DescribeInstanceStorageConfigInputBuilder {
         self
     }
     /// <p>A valid resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStorageResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::InstanceStorageResourceType>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>A valid resource type.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
         &self.resource_type
     }
     /// Consumes the builder and constructs a [`DescribeInstanceStorageConfigInput`](crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigInput).
@@ -107,15 +92,10 @@ impl DescribeInstanceStorageConfigInputBuilder {
         crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigInput {
-                instance_id: self.instance_id
-                ,
-                association_id: self.association_id
-                ,
-                resource_type: self.resource_type
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigInput {
+            instance_id: self.instance_id,
+            association_id: self.association_id,
+            resource_type: self.resource_type,
+        })
     }
 }

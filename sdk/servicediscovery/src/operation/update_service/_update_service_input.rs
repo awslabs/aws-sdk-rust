@@ -29,9 +29,7 @@ impl UpdateServiceInput {
 
 /// A builder for [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServiceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) service: ::std::option::Option<crate::types::ServiceChange>,
@@ -57,10 +55,7 @@ impl UpdateServiceInputBuilder {
         self
     }
     /// <p>A complex type that contains the new settings for the service.</p>
-    pub fn set_service(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceChange>,
-    ) -> Self {
+    pub fn set_service(mut self, input: ::std::option::Option<crate::types::ServiceChange>) -> Self {
         self.service = input;
         self
     }
@@ -71,10 +66,7 @@ impl UpdateServiceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service::UpdateServiceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_service::UpdateServiceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_service::UpdateServiceInput {
             id: self.id,
             service: self.service,

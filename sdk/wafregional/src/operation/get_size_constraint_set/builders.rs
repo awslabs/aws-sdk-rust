@@ -41,10 +41,7 @@ impl GetSizeConstraintSetFluentBuilder {
         }
     }
     /// Access the GetSizeConstraintSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_size_constraint_set::builders::GetSizeConstraintSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_size_constraint_set::builders::GetSizeConstraintSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl GetSizeConstraintSetFluentBuilder {
             crate::operation::get_size_constraint_set::GetSizeConstraintSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_size_constraint_set::GetSizeConstraintSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_size_constraint_set::GetSizeConstraintSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl GetSizeConstraintSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl GetSizeConstraintSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_size_constraint_set::GetSizeConstraintSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_size_constraint_set::GetSizeConstraintSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_size_constraint_set::GetSizeConstraintSetError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl GetSizeConstraintSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_size_constraint_set::GetSizeConstraintSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_size_constraint_set::GetSizeConstraintSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_size_constraint_set::GetSizeConstraintSetError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +109,17 @@ impl GetSizeConstraintSetFluentBuilder {
             crate::operation::get_size_constraint_set::GetSizeConstraintSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_size_constraint_set::GetSizeConstraintSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_size_constraint_set::GetSizeConstraintSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    pub fn size_constraint_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn size_constraint_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.size_constraint_set_id(input.into());
         self
     }
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    pub fn set_size_constraint_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_size_constraint_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_size_constraint_set_id(input);
         self
     }

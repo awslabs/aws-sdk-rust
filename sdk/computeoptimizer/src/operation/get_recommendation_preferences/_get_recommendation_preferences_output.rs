@@ -9,8 +9,7 @@ pub struct GetRecommendationPreferencesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe recommendation preferences.</p>
     #[doc(hidden)]
-    pub recommendation_preferences_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferencesDetail>>,
+    pub recommendation_preferences_details: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferencesDetail>>,
     _request_id: Option<String>,
 }
 impl GetRecommendationPreferencesOutput {
@@ -20,9 +19,7 @@ impl GetRecommendationPreferencesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that describe recommendation preferences.</p>
-    pub fn recommendation_preferences_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RecommendationPreferencesDetail]> {
+    pub fn recommendation_preferences_details(&self) -> ::std::option::Option<&[crate::types::RecommendationPreferencesDetail]> {
         self.recommendation_preferences_details.as_deref()
     }
 }
@@ -33,20 +30,17 @@ impl ::aws_http::request_id::RequestId for GetRecommendationPreferencesOutput {
 }
 impl GetRecommendationPreferencesOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationPreferencesOutput`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput).
-    pub fn builder() -> crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesOutputBuilder{
+    pub fn builder() -> crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesOutputBuilder {
         crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecommendationPreferencesOutput`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommendationPreferencesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) recommendation_preferences_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferencesDetail>>,
+    pub(crate) recommendation_preferences_details: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferencesDetail>>,
     _request_id: Option<String>,
 }
 impl GetRecommendationPreferencesOutputBuilder {
@@ -72,10 +66,7 @@ impl GetRecommendationPreferencesOutputBuilder {
     /// To override the contents of this collection use [`set_recommendation_preferences_details`](Self::set_recommendation_preferences_details).
     ///
     /// <p>An array of objects that describe recommendation preferences.</p>
-    pub fn recommendation_preferences_details(
-        mut self,
-        input: crate::types::RecommendationPreferencesDetail,
-    ) -> Self {
+    pub fn recommendation_preferences_details(mut self, input: crate::types::RecommendationPreferencesDetail) -> Self {
         let mut v = self.recommendation_preferences_details.unwrap_or_default();
         v.push(input);
         self.recommendation_preferences_details = ::std::option::Option::Some(v);
@@ -84,18 +75,13 @@ impl GetRecommendationPreferencesOutputBuilder {
     /// <p>An array of objects that describe recommendation preferences.</p>
     pub fn set_recommendation_preferences_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::RecommendationPreferencesDetail>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferencesDetail>>,
     ) -> Self {
         self.recommendation_preferences_details = input;
         self
     }
     /// <p>An array of objects that describe recommendation preferences.</p>
-    pub fn get_recommendation_preferences_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferencesDetail>>
-    {
+    pub fn get_recommendation_preferences_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferencesDetail>> {
         &self.recommendation_preferences_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -108,9 +94,7 @@ impl GetRecommendationPreferencesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRecommendationPreferencesOutput`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput {
+    pub fn build(self) -> crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput {
         crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput {
             next_token: self.next_token,
             recommendation_preferences_details: self.recommendation_preferences_details,

@@ -27,10 +27,7 @@ pub fn ser_create_flywheel_input(
     if let Some(var_8) = &input.data_security_config {
         #[allow(unused_mut)]
         let mut object_9 = object.key("DataSecurityConfig").start_object();
-        crate::protocol_serde::shape_data_security_config::ser_data_security_config(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_data_security_config::ser_data_security_config(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.client_request_token {

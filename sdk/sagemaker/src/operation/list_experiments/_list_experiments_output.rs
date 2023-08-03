@@ -5,8 +5,7 @@
 pub struct ListExperimentsOutput {
     /// <p>A list of the summaries of your experiments.</p>
     #[doc(hidden)]
-    pub experiment_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExperimentSummary>>,
+    pub experiment_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentSummary>>,
     /// <p>A token for getting the next set of experiments, if there are any.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListExperimentsOutput {
 }
 impl ListExperimentsOutput {
     /// <p>A list of the summaries of your experiments.</p>
-    pub fn experiment_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ExperimentSummary]> {
+    pub fn experiment_summaries(&self) -> ::std::option::Option<&[crate::types::ExperimentSummary]> {
         self.experiment_summaries.as_deref()
     }
     /// <p>A token for getting the next set of experiments, if there are any.</p>
@@ -38,12 +35,9 @@ impl ListExperimentsOutput {
 
 /// A builder for [`ListExperimentsOutput`](crate::operation::list_experiments::ListExperimentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExperimentsOutputBuilder {
-    pub(crate) experiment_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExperimentSummary>>,
+    pub(crate) experiment_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListExperimentsOutputBuilder {
         self
     }
     /// <p>A list of the summaries of your experiments.</p>
-    pub fn set_experiment_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentSummary>>,
-    ) -> Self {
+    pub fn set_experiment_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentSummary>>) -> Self {
         self.experiment_summaries = input;
         self
     }
     /// <p>A list of the summaries of your experiments.</p>
-    pub fn get_experiment_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentSummary>> {
+    pub fn get_experiment_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentSummary>> {
         &self.experiment_summaries
     }
     /// <p>A token for getting the next set of experiments, if there are any.</p>

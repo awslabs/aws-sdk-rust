@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`workflow_id(Option<String>)`](crate::operation::list_executions::ListExecutionsOutput::workflow_id): <p>A unique identifier for the workflow.</p>
     ///   - [`executions(Option<Vec<ListedExecution>>)`](crate::operation::list_executions::ListExecutionsOutput::executions): <p>Returns the details for each execution, in a <code>ListedExecution</code> array.</p>
     /// - On failure, responds with [`SdkError<ListExecutionsError>`](crate::operation::list_executions::ListExecutionsError)
-    pub fn list_executions(
-        &self,
-    ) -> crate::operation::list_executions::builders::ListExecutionsFluentBuilder {
-        crate::operation::list_executions::builders::ListExecutionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_executions(&self) -> crate::operation::list_executions::builders::ListExecutionsFluentBuilder {
+        crate::operation::list_executions::builders::ListExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

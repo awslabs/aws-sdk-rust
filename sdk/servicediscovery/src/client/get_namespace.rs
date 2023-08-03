@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetNamespaceOutput`](crate::operation::get_namespace::GetNamespaceOutput) with field(s):
     ///   - [`namespace(Option<Namespace>)`](crate::operation::get_namespace::GetNamespaceOutput::namespace): <p>A complex type that contains information about the specified namespace.</p>
     /// - On failure, responds with [`SdkError<GetNamespaceError>`](crate::operation::get_namespace::GetNamespaceError)
-    pub fn get_namespace(
-        &self,
-    ) -> crate::operation::get_namespace::builders::GetNamespaceFluentBuilder {
-        crate::operation::get_namespace::builders::GetNamespaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_namespace(&self) -> crate::operation::get_namespace::builders::GetNamespaceFluentBuilder {
+        crate::operation::get_namespace::builders::GetNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

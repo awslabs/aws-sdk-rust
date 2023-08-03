@@ -39,10 +39,7 @@ impl DescribeSourceRegionsFluentBuilder {
         }
     }
     /// Access the DescribeSourceRegions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_source_regions::builders::DescribeSourceRegionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_source_regions::builders::DescribeSourceRegionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DescribeSourceRegionsFluentBuilder {
             crate::operation::describe_source_regions::DescribeSourceRegions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_source_regions::DescribeSourceRegionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_source_regions::DescribeSourceRegionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DescribeSourceRegionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DescribeSourceRegionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_source_regions::DescribeSourceRegionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_source_regions::DescribeSourceRegionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_source_regions::DescribeSourceRegionsError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DescribeSourceRegionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_source_regions::DescribeSourceRegionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_source_regions::DescribeSourceRegionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_source_regions::DescribeSourceRegionsError>,
     > {
         self.send_middleware().await
     }
@@ -119,22 +107,15 @@ impl DescribeSourceRegionsFluentBuilder {
             crate::operation::describe_source_regions::DescribeSourceRegions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_source_regions::DescribeSourceRegionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_source_regions::DescribeSourceRegionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_source_regions::paginator::DescribeSourceRegionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_source_regions::paginator::DescribeSourceRegionsPaginator {
-        crate::operation::describe_source_regions::paginator::DescribeSourceRegionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_source_regions::paginator::DescribeSourceRegionsPaginator {
+        crate::operation::describe_source_regions::paginator::DescribeSourceRegionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
     /// <p>Constraints:</p>
@@ -206,10 +187,7 @@ impl DescribeSourceRegionsFluentBuilder {
         self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

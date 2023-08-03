@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`vpc(Vpc)`](crate::operation::delete_vpc_association_authorization::builders::DeleteVPCAssociationAuthorizationFluentBuilder::vpc) / [`set_vpc(Option<Vpc>)`](crate::operation::delete_vpc_association_authorization::builders::DeleteVPCAssociationAuthorizationFluentBuilder::set_vpc): <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone that was created with a different Amazon Web Services account, a complex type that includes the ID and region of the VPC.</p>
     /// - On success, responds with [`DeleteVpcAssociationAuthorizationOutput`](crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationOutput)
     /// - On failure, responds with [`SdkError<DeleteVPCAssociationAuthorizationError>`](crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError)
-    pub fn delete_vpc_association_authorization(&self) -> crate::operation::delete_vpc_association_authorization::builders::DeleteVPCAssociationAuthorizationFluentBuilder{
+    pub fn delete_vpc_association_authorization(
+        &self,
+    ) -> crate::operation::delete_vpc_association_authorization::builders::DeleteVPCAssociationAuthorizationFluentBuilder {
         crate::operation::delete_vpc_association_authorization::builders::DeleteVPCAssociationAuthorizationFluentBuilder::new(self.handle.clone())
     }
 }

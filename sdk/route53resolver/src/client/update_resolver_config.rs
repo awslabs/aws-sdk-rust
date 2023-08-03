@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateResolverConfigOutput`](crate::operation::update_resolver_config::UpdateResolverConfigOutput) with field(s):
     ///   - [`resolver_config(Option<ResolverConfig>)`](crate::operation::update_resolver_config::UpdateResolverConfigOutput::resolver_config): <p>An array that contains settings for the specified Resolver configuration.</p>
     /// - On failure, responds with [`SdkError<UpdateResolverConfigError>`](crate::operation::update_resolver_config::UpdateResolverConfigError)
-    pub fn update_resolver_config(
-        &self,
-    ) -> crate::operation::update_resolver_config::builders::UpdateResolverConfigFluentBuilder {
-        crate::operation::update_resolver_config::builders::UpdateResolverConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_resolver_config(&self) -> crate::operation::update_resolver_config::builders::UpdateResolverConfigFluentBuilder {
+        crate::operation::update_resolver_config::builders::UpdateResolverConfigFluentBuilder::new(self.handle.clone())
     }
 }

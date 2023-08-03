@@ -30,9 +30,7 @@ impl Hdr10Plus {
 
 /// A builder for [`Hdr10Plus`](crate::types::Hdr10Plus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Hdr10PlusBuilder {
     pub(crate) mastering_monitor_nits: ::std::option::Option<i32>,
     pub(crate) target_monitor_nits: ::std::option::Option<i32>,

@@ -100,9 +100,7 @@ impl InstanceAssociationStatusInfo {
 
 /// A builder for [`InstanceAssociationStatusInfo`](crate::types::InstanceAssociationStatusInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceAssociationStatusInfoBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -119,18 +117,12 @@ pub struct InstanceAssociationStatusInfoBuilder {
 }
 impl InstanceAssociationStatusInfoBuilder {
     /// <p>The association ID.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association ID.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -153,18 +145,12 @@ impl InstanceAssociationStatusInfoBuilder {
         &self.name
     }
     /// <p>The association document versions.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association document versions.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -173,18 +159,12 @@ impl InstanceAssociationStatusInfoBuilder {
         &self.document_version
     }
     /// <p>The version of the association applied to the managed node.</p>
-    pub fn association_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the association applied to the managed node.</p>
-    pub fn set_association_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_version = input;
         self
     }
@@ -212,10 +192,7 @@ impl InstanceAssociationStatusInfoBuilder {
         self
     }
     /// <p>The date the association ran. </p>
-    pub fn set_execution_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_execution_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.execution_date = input;
         self
     }
@@ -238,18 +215,12 @@ impl InstanceAssociationStatusInfoBuilder {
         &self.status
     }
     /// <p>Detailed status information about the association.</p>
-    pub fn detailed_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detailed_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detailed_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Detailed status information about the association.</p>
-    pub fn set_detailed_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detailed_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detailed_status = input;
         self
     }
@@ -258,18 +229,12 @@ impl InstanceAssociationStatusInfoBuilder {
         &self.detailed_status
     }
     /// <p>Summary information about association execution.</p>
-    pub fn execution_summary(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_summary = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Summary information about association execution.</p>
-    pub fn set_execution_summary(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_summary = input;
         self
     }
@@ -297,32 +262,21 @@ impl InstanceAssociationStatusInfoBuilder {
         self
     }
     /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
-    pub fn set_output_url(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAssociationOutputUrl>,
-    ) -> Self {
+    pub fn set_output_url(mut self, input: ::std::option::Option<crate::types::InstanceAssociationOutputUrl>) -> Self {
         self.output_url = input;
         self
     }
     /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
-    pub fn get_output_url(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceAssociationOutputUrl> {
+    pub fn get_output_url(&self) -> &::std::option::Option<crate::types::InstanceAssociationOutputUrl> {
         &self.output_url
     }
     /// <p>The name of the association applied to the managed node.</p>
-    pub fn association_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the association applied to the managed node.</p>
-    pub fn set_association_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_name = input;
         self
     }

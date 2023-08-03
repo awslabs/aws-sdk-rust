@@ -10,10 +10,7 @@ impl GetWorkingLocationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_working_location::GetWorkingLocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_working_location::GetWorkingLocationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_working_location::GetWorkingLocationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_working_location();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetWorkingLocationFluentBuilder {
         }
     }
     /// Access the GetWorkingLocation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_working_location::builders::GetWorkingLocationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_working_location::builders::GetWorkingLocationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetWorkingLocationFluentBuilder {
             crate::operation::get_working_location::GetWorkingLocation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_working_location::GetWorkingLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_working_location::GetWorkingLocationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetWorkingLocationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetWorkingLocationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_working_location::GetWorkingLocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_working_location::GetWorkingLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_working_location::GetWorkingLocationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetWorkingLocationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_working_location::GetWorkingLocationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_working_location::GetWorkingLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_working_location::GetWorkingLocationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetWorkingLocationFluentBuilder {
             crate::operation::get_working_location::GetWorkingLocation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_working_location::GetWorkingLocationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_working_location::GetWorkingLocationError>,
     > {
         self.customize_middleware().await
     }
@@ -136,10 +120,7 @@ impl GetWorkingLocationFluentBuilder {
     /// <li> <p> <code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
     /// <li> <p> <code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
     /// </ul>
-    pub fn set_location_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LocationType>,
-    ) -> Self {
+    pub fn set_location_type(mut self, input: ::std::option::Option<crate::types::LocationType>) -> Self {
         self.inner = self.inner.set_location_type(input);
         self
     }

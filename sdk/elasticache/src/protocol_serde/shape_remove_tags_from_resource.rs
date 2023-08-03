@@ -9,219 +9,224 @@ pub fn de_remove_tags_from_resource_http_error(
     crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    let error_code =
-        match generic.code() {
-            Some(code) => code,
-            None => return Err(
-                crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled(
-                    generic,
-                ),
-            ),
-        };
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled(
+                generic,
+            ))
+        }
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CacheClusterNotFound" => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::CacheClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::CacheClusterNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cache_cluster_not_found_fault::de_cache_cluster_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CacheClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cache_cluster_not_found_fault::de_cache_cluster_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "CacheParameterGroupNotFound" => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::CacheParameterGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "CacheParameterGroupNotFound" => {
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::CacheParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CacheParameterGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cache_parameter_group_not_found_fault::de_cache_parameter_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_cache_parameter_group_not_found_fault::de_cache_parameter_group_not_found_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "CacheSecurityGroupNotFound" => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::CacheSecurityGroupNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::CacheSecurityGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cache_security_group_not_found_fault::de_cache_security_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CacheSecurityGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cache_security_group_not_found_fault::de_cache_security_group_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "CacheSubnetGroupNotFoundFault" => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::CacheSubnetGroupNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::CacheSubnetGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cache_subnet_group_not_found_fault::de_cache_subnet_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CacheSubnetGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cache_subnet_group_not_found_fault::de_cache_subnet_group_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidARN" => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::InvalidArnFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidArnFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_arn_fault::de_invalid_arn_fault_xml_err(_response_body, output).map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidArnFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_arn_fault::de_invalid_arn_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "InvalidReplicationGroupState" => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::InvalidReplicationGroupStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidReplicationGroupState" => {
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::InvalidReplicationGroupStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidReplicationGroupStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_replication_group_state_fault::de_invalid_replication_group_state_fault_xml_err(_response_body, output).map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_replication_group_state_fault::de_invalid_replication_group_state_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "ReplicationGroupNotFoundFault" => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::ReplicationGroupNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ReplicationGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_replication_group_not_found_fault::de_replication_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ReplicationGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_replication_group_not_found_fault::de_replication_group_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ReservedCacheNodeNotFound" => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::ReservedCacheNodeNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ReservedCacheNodeNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_reserved_cache_node_not_found_fault::de_reserved_cache_node_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ReservedCacheNodeNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_reserved_cache_node_not_found_fault::de_reserved_cache_node_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "SnapshotNotFoundFault" => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::SnapshotNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::SnapshotNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_snapshot_not_found_fault::de_snapshot_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SnapshotNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_snapshot_not_found_fault::de_snapshot_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TagNotFound" => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::TagNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TagNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_tag_not_found_fault::de_tag_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TagNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_tag_not_found_fault::de_tag_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UserGroupNotFound" => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::UserGroupNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UserGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_user_group_not_found_fault::de_user_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UserGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_user_group_not_found_fault::de_user_group_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UserNotFound" => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::UserNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UserNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_user_not_found_fault::de_user_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UserNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_user_not_found_fault::de_user_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::generic(generic)
+        _ => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::generic(generic),
     })
 }
 
@@ -237,17 +242,9 @@ pub fn de_remove_tags_from_resource_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceOutputBuilder::default();
-        output =
-            crate::protocol_serde::shape_remove_tags_from_resource::de_remove_tags_from_resource(
-                _response_body,
-                output,
-            )
-            .map_err(
-                crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled,
-            )?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_remove_tags_from_resource::de_remove_tags_from_resource(_response_body, output)
+            .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -256,10 +253,7 @@ pub fn de_remove_tags_from_resource_http_response_with_props(
 pub fn de_remove_tags_from_resource(
     inp: &[u8],
     mut builder: crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceOutputBuilder,
-) -> Result<
-    crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

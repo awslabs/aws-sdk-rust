@@ -26,9 +26,7 @@ impl VpcInterfaceRequest {
         self.name.as_deref()
     }
     /// The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the networkInterfaceType.
-    pub fn network_interface_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkInterfaceType> {
+    pub fn network_interface_type(&self) -> ::std::option::Option<&crate::types::NetworkInterfaceType> {
         self.network_interface_type.as_ref()
     }
     /// Role Arn MediaConnect can assumes to create ENIs in customer's account
@@ -53,9 +51,7 @@ impl VpcInterfaceRequest {
 
 /// A builder for [`VpcInterfaceRequest`](crate::types::VpcInterfaceRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcInterfaceRequestBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) network_interface_type: ::std::option::Option<crate::types::NetworkInterfaceType>,
@@ -84,17 +80,12 @@ impl VpcInterfaceRequestBuilder {
         self
     }
     /// The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the networkInterfaceType.
-    pub fn set_network_interface_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInterfaceType>,
-    ) -> Self {
+    pub fn set_network_interface_type(mut self, input: ::std::option::Option<crate::types::NetworkInterfaceType>) -> Self {
         self.network_interface_type = input;
         self
     }
     /// The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the networkInterfaceType.
-    pub fn get_network_interface_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkInterfaceType> {
+    pub fn get_network_interface_type(&self) -> &::std::option::Option<crate::types::NetworkInterfaceType> {
         &self.network_interface_type
     }
     /// Role Arn MediaConnect can assumes to create ENIs in customer's account
@@ -116,27 +107,19 @@ impl VpcInterfaceRequestBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// Security Group IDs to be used on ENI.
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// Security Group IDs to be used on ENI.
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// Security Group IDs to be used on ENI.
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// Subnet must be in the AZ of the Flow

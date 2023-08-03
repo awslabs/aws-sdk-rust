@@ -10,10 +10,7 @@ impl CreateChangesetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_changeset::CreateChangesetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_changeset::CreateChangesetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_changeset::CreateChangesetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_changeset();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateChangesetFluentBuilder {
         }
     }
     /// Access the CreateChangeset as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_changeset::builders::CreateChangesetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_changeset::builders::CreateChangesetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateChangesetFluentBuilder {
             crate::operation::create_changeset::CreateChangeset,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_changeset::CreateChangesetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_changeset::CreateChangesetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateChangesetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateChangesetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_changeset::CreateChangesetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_changeset::CreateChangesetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_changeset::CreateChangesetError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateChangesetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_changeset::CreateChangesetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_changeset::CreateChangesetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_changeset::CreateChangesetError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateChangesetFluentBuilder {
             crate::operation::create_changeset::CreateChangeset,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_changeset::CreateChangesetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_changeset::CreateChangesetError>,
     > {
         self.customize_middleware().await
     }
@@ -166,10 +150,7 @@ impl CreateChangesetFluentBuilder {
     /// <li> <p> <code>APPEND</code> – Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
     /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
-    pub fn set_change_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeType>,
-    ) -> Self {
+    pub fn set_change_type(mut self, input: ::std::option::Option<crate::types::ChangeType>) -> Self {
         self.inner = self.inner.set_change_type(input);
         self
     }
@@ -191,11 +172,7 @@ impl CreateChangesetFluentBuilder {
     /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
     /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
     /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
-    pub fn source_params(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_params(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_params(k.into(), v.into());
         self
     }
@@ -206,9 +183,7 @@ impl CreateChangesetFluentBuilder {
     /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
     pub fn set_source_params(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_source_params(input);
         self
@@ -218,11 +193,7 @@ impl CreateChangesetFluentBuilder {
     /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
     /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
     /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a> section.</p>
-    pub fn get_source_params(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_source_params(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_source_params()
     }
     /// Adds a key-value pair to `formatParams`.
@@ -242,11 +213,7 @@ impl CreateChangesetFluentBuilder {
     /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
     /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
     /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
-    pub fn format_params(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn format_params(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.format_params(k.into(), v.into());
         self
     }
@@ -265,9 +232,7 @@ impl CreateChangesetFluentBuilder {
     /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
     pub fn set_format_params(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_format_params(input);
         self
@@ -285,11 +250,7 @@ impl CreateChangesetFluentBuilder {
     /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
     /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
     /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
-    pub fn get_format_params(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_format_params(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_format_params()
     }
 }

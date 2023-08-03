@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`r#type(Option<String>)`](crate::operation::update_schema::UpdateSchemaOutput::type): <p>The type of the schema.</p>
     ///   - [`version_created_date(Option<DateTime>)`](crate::operation::update_schema::UpdateSchemaOutput::version_created_date): <p>The date the schema version was created.</p>
     /// - On failure, responds with [`SdkError<UpdateSchemaError>`](crate::operation::update_schema::UpdateSchemaError)
-    pub fn update_schema(
-        &self,
-    ) -> crate::operation::update_schema::builders::UpdateSchemaFluentBuilder {
-        crate::operation::update_schema::builders::UpdateSchemaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_schema(&self) -> crate::operation::update_schema::builders::UpdateSchemaFluentBuilder {
+        crate::operation::update_schema::builders::UpdateSchemaFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListUserSettingsOutput {
 }
 impl ListUserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`ListUserSettingsOutput`](crate::operation::list_user_settings::ListUserSettingsOutput).
-    pub fn builder() -> crate::operation::list_user_settings::builders::ListUserSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_user_settings::builders::ListUserSettingsOutputBuilder {
         crate::operation::list_user_settings::builders::ListUserSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListUserSettingsOutput`](crate::operation::list_user_settings::ListUserSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserSettingsOutputBuilder {
-    pub(crate) user_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserSettingsSummary>>,
+    pub(crate) user_settings: ::std::option::Option<::std::vec::Vec<crate::types::UserSettingsSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListUserSettingsOutputBuilder {
         self
     }
     /// <p>The user settings.</p>
-    pub fn set_user_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserSettingsSummary>>,
-    ) -> Self {
+    pub fn set_user_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserSettingsSummary>>) -> Self {
         self.user_settings = input;
         self
     }
     /// <p>The user settings.</p>
-    pub fn get_user_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserSettingsSummary>> {
+    pub fn get_user_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserSettingsSummary>> {
         &self.user_settings
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. </p>

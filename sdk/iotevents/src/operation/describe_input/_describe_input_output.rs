@@ -28,9 +28,7 @@ impl DescribeInputOutput {
 
 /// A builder for [`DescribeInputOutput`](crate::operation::describe_input::DescribeInputOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInputOutputBuilder {
     pub(crate) input: ::std::option::Option<crate::types::Input>,
     _request_id: Option<String>,

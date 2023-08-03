@@ -15,18 +15,14 @@ impl GetResolverDnssecConfigInput {
 }
 impl GetResolverDnssecConfigInput {
     /// Creates a new builder-style object to manufacture [`GetResolverDnssecConfigInput`](crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigInputBuilder {
         crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResolverDnssecConfigInput`](crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResolverDnssecConfigInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,8 @@ impl GetResolverDnssecConfigInputBuilder {
         crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigInput {
-                resource_id: self.resource_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigInput {
+            resource_id: self.resource_id,
+        })
     }
 }

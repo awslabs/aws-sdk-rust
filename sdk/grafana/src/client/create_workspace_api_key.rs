@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`key(Option<String>)`](crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput::key): <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
     ///   - [`workspace_id(Option<String>)`](crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput::workspace_id): <p>The ID of the workspace that the key is valid for.</p>
     /// - On failure, responds with [`SdkError<CreateWorkspaceApiKeyError>`](crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyError)
-    pub fn create_workspace_api_key(
-        &self,
-    ) -> crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyFluentBuilder
-    {
+    pub fn create_workspace_api_key(&self) -> crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyFluentBuilder {
         crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyFluentBuilder::new(self.handle.clone())
     }
 }

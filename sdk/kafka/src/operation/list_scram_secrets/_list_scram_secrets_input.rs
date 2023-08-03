@@ -29,17 +29,14 @@ impl ListScramSecretsInput {
 }
 impl ListScramSecretsInput {
     /// Creates a new builder-style object to manufacture [`ListScramSecretsInput`](crate::operation::list_scram_secrets::ListScramSecretsInput).
-    pub fn builder() -> crate::operation::list_scram_secrets::builders::ListScramSecretsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_scram_secrets::builders::ListScramSecretsInputBuilder {
         crate::operation::list_scram_secrets::builders::ListScramSecretsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListScramSecretsInput`](crate::operation::list_scram_secrets::ListScramSecretsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListScramSecretsInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -91,16 +88,11 @@ impl ListScramSecretsInputBuilder {
     /// Consumes the builder and constructs a [`ListScramSecretsInput`](crate::operation::list_scram_secrets::ListScramSecretsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_scram_secrets::ListScramSecretsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_scram_secrets::ListScramSecretsInput {
-                cluster_arn: self.cluster_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_scram_secrets::ListScramSecretsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_scram_secrets::ListScramSecretsInput {
+            cluster_arn: self.cluster_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

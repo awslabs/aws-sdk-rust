@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCodeSigningConfigOutput`](crate::operation::create_code_signing_config::CreateCodeSigningConfigOutput) with field(s):
     ///   - [`code_signing_config(Option<CodeSigningConfig>)`](crate::operation::create_code_signing_config::CreateCodeSigningConfigOutput::code_signing_config): <p>The code signing configuration.</p>
     /// - On failure, responds with [`SdkError<CreateCodeSigningConfigError>`](crate::operation::create_code_signing_config::CreateCodeSigningConfigError)
-    pub fn create_code_signing_config(
-        &self,
-    ) -> crate::operation::create_code_signing_config::builders::CreateCodeSigningConfigFluentBuilder
-    {
+    pub fn create_code_signing_config(&self) -> crate::operation::create_code_signing_config::builders::CreateCodeSigningConfigFluentBuilder {
         crate::operation::create_code_signing_config::builders::CreateCodeSigningConfigFluentBuilder::new(self.handle.clone())
     }
 }

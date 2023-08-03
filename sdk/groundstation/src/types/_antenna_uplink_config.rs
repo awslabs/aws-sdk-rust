@@ -37,9 +37,7 @@ impl AntennaUplinkConfig {
 
 /// A builder for [`AntennaUplinkConfig`](crate::types::AntennaUplinkConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AntennaUplinkConfigBuilder {
     pub(crate) transmit_disabled: ::std::option::Option<bool>,
     pub(crate) spectrum_config: ::std::option::Option<crate::types::UplinkSpectrumConfig>,
@@ -66,17 +64,12 @@ impl AntennaUplinkConfigBuilder {
         self
     }
     /// <p>Information about the uplink spectral <code>Config</code>.</p>
-    pub fn set_spectrum_config(
-        mut self,
-        input: ::std::option::Option<crate::types::UplinkSpectrumConfig>,
-    ) -> Self {
+    pub fn set_spectrum_config(mut self, input: ::std::option::Option<crate::types::UplinkSpectrumConfig>) -> Self {
         self.spectrum_config = input;
         self
     }
     /// <p>Information about the uplink spectral <code>Config</code>.</p>
-    pub fn get_spectrum_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::UplinkSpectrumConfig> {
+    pub fn get_spectrum_config(&self) -> &::std::option::Option<crate::types::UplinkSpectrumConfig> {
         &self.spectrum_config
     }
     /// <p>EIRP of the target.</p>

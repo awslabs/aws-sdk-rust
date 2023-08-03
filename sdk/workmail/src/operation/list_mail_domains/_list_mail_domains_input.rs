@@ -36,9 +36,7 @@ impl ListMailDomainsInput {
 
 /// A builder for [`ListMailDomainsInput`](crate::operation::list_mail_domains::ListMailDomainsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMailDomainsInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +44,12 @@ pub struct ListMailDomainsInputBuilder {
 }
 impl ListMailDomainsInputBuilder {
     /// <p>The WorkMail organization for which to list domains.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The WorkMail organization for which to list domains.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -96,10 +88,7 @@ impl ListMailDomainsInputBuilder {
     /// Consumes the builder and constructs a [`ListMailDomainsInput`](crate::operation::list_mail_domains::ListMailDomainsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_mail_domains::ListMailDomainsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_mail_domains::ListMailDomainsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_mail_domains::ListMailDomainsInput {
             organization_id: self.organization_id,
             max_results: self.max_results,

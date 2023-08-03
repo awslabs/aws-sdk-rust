@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`fleet_metrics(Option<Vec<FleetMetricNameAndArn>>)`](crate::operation::list_fleet_metrics::ListFleetMetricsOutput::fleet_metrics): <p>The list of fleet metrics objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_fleet_metrics::ListFleetMetricsOutput::next_token): <p>The token for the next set of results. Will not be returned if the operation has returned all results.</p>
     /// - On failure, responds with [`SdkError<ListFleetMetricsError>`](crate::operation::list_fleet_metrics::ListFleetMetricsError)
-    pub fn list_fleet_metrics(
-        &self,
-    ) -> crate::operation::list_fleet_metrics::builders::ListFleetMetricsFluentBuilder {
-        crate::operation::list_fleet_metrics::builders::ListFleetMetricsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_fleet_metrics(&self) -> crate::operation::list_fleet_metrics::builders::ListFleetMetricsFluentBuilder {
+        crate::operation::list_fleet_metrics::builders::ListFleetMetricsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`policy(impl ::std::convert::Into<String>)`](crate::operation::put_backup_vault_access_policy::builders::PutBackupVaultAccessPolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_backup_vault_access_policy::builders::PutBackupVaultAccessPolicyFluentBuilder::set_policy): <p>The backup vault access policy document in JSON format.</p>
     /// - On success, responds with [`PutBackupVaultAccessPolicyOutput`](crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyOutput)
     /// - On failure, responds with [`SdkError<PutBackupVaultAccessPolicyError>`](crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyError)
-    pub fn put_backup_vault_access_policy(&self) -> crate::operation::put_backup_vault_access_policy::builders::PutBackupVaultAccessPolicyFluentBuilder{
+    pub fn put_backup_vault_access_policy(
+        &self,
+    ) -> crate::operation::put_backup_vault_access_policy::builders::PutBackupVaultAccessPolicyFluentBuilder {
         crate::operation::put_backup_vault_access_policy::builders::PutBackupVaultAccessPolicyFluentBuilder::new(self.handle.clone())
     }
 }

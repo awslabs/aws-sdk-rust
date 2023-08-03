@@ -7,15 +7,12 @@ pub struct AuthenticationConfiguration {
     /// <p>The list of configuration information that's required to connect to and crawl a website host using basic authentication credentials.</p>
     /// <p>The list includes the name and port number of the website host.</p>
     #[doc(hidden)]
-    pub basic_authentication:
-        ::std::option::Option<::std::vec::Vec<crate::types::BasicAuthenticationConfiguration>>,
+    pub basic_authentication: ::std::option::Option<::std::vec::Vec<crate::types::BasicAuthenticationConfiguration>>,
 }
 impl AuthenticationConfiguration {
     /// <p>The list of configuration information that's required to connect to and crawl a website host using basic authentication credentials.</p>
     /// <p>The list includes the name and port number of the website host.</p>
-    pub fn basic_authentication(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BasicAuthenticationConfiguration]> {
+    pub fn basic_authentication(&self) -> ::std::option::Option<&[crate::types::BasicAuthenticationConfiguration]> {
         self.basic_authentication.as_deref()
     }
 }
@@ -28,12 +25,9 @@ impl AuthenticationConfiguration {
 
 /// A builder for [`AuthenticationConfiguration`](crate::types::AuthenticationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthenticationConfigurationBuilder {
-    pub(crate) basic_authentication:
-        ::std::option::Option<::std::vec::Vec<crate::types::BasicAuthenticationConfiguration>>,
+    pub(crate) basic_authentication: ::std::option::Option<::std::vec::Vec<crate::types::BasicAuthenticationConfiguration>>,
 }
 impl AuthenticationConfigurationBuilder {
     /// Appends an item to `basic_authentication`.
@@ -42,10 +36,7 @@ impl AuthenticationConfigurationBuilder {
     ///
     /// <p>The list of configuration information that's required to connect to and crawl a website host using basic authentication credentials.</p>
     /// <p>The list includes the name and port number of the website host.</p>
-    pub fn basic_authentication(
-        mut self,
-        input: crate::types::BasicAuthenticationConfiguration,
-    ) -> Self {
+    pub fn basic_authentication(mut self, input: crate::types::BasicAuthenticationConfiguration) -> Self {
         let mut v = self.basic_authentication.unwrap_or_default();
         v.push(input);
         self.basic_authentication = ::std::option::Option::Some(v);
@@ -53,21 +44,13 @@ impl AuthenticationConfigurationBuilder {
     }
     /// <p>The list of configuration information that's required to connect to and crawl a website host using basic authentication credentials.</p>
     /// <p>The list includes the name and port number of the website host.</p>
-    pub fn set_basic_authentication(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BasicAuthenticationConfiguration>,
-        >,
-    ) -> Self {
+    pub fn set_basic_authentication(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BasicAuthenticationConfiguration>>) -> Self {
         self.basic_authentication = input;
         self
     }
     /// <p>The list of configuration information that's required to connect to and crawl a website host using basic authentication credentials.</p>
     /// <p>The list includes the name and port number of the website host.</p>
-    pub fn get_basic_authentication(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BasicAuthenticationConfiguration>>
-    {
+    pub fn get_basic_authentication(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BasicAuthenticationConfiguration>> {
         &self.basic_authentication
     }
     /// Consumes the builder and constructs a [`AuthenticationConfiguration`](crate::types::AuthenticationConfiguration).

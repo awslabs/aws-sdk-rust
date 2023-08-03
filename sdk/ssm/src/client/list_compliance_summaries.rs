@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`compliance_summary_items(Option<Vec<ComplianceSummaryItem>>)`](crate::operation::list_compliance_summaries::ListComplianceSummariesOutput::compliance_summary_items): <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_compliance_summaries::ListComplianceSummariesOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListComplianceSummariesError>`](crate::operation::list_compliance_summaries::ListComplianceSummariesError)
-    pub fn list_compliance_summaries(
-        &self,
-    ) -> crate::operation::list_compliance_summaries::builders::ListComplianceSummariesFluentBuilder
-    {
+    pub fn list_compliance_summaries(&self) -> crate::operation::list_compliance_summaries::builders::ListComplianceSummariesFluentBuilder {
         crate::operation::list_compliance_summaries::builders::ListComplianceSummariesFluentBuilder::new(self.handle.clone())
     }
 }

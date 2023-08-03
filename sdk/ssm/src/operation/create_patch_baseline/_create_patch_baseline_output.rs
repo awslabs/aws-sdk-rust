@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreatePatchBaselineOutput {
 }
 impl CreatePatchBaselineOutput {
     /// Creates a new builder-style object to manufacture [`CreatePatchBaselineOutput`](crate::operation::create_patch_baseline::CreatePatchBaselineOutput).
-    pub fn builder(
-    ) -> crate::operation::create_patch_baseline::builders::CreatePatchBaselineOutputBuilder {
-        crate::operation::create_patch_baseline::builders::CreatePatchBaselineOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_patch_baseline::builders::CreatePatchBaselineOutputBuilder {
+        crate::operation::create_patch_baseline::builders::CreatePatchBaselineOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePatchBaselineOutput`](crate::operation::create_patch_baseline::CreatePatchBaselineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePatchBaselineOutputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

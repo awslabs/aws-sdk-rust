@@ -22,17 +22,14 @@ impl DescribeFindingsInput {
 }
 impl DescribeFindingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeFindingsInput`](crate::operation::describe_findings::DescribeFindingsInput).
-    pub fn builder() -> crate::operation::describe_findings::builders::DescribeFindingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_findings::builders::DescribeFindingsInputBuilder {
         crate::operation::describe_findings::builders::DescribeFindingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFindingsInput`](crate::operation::describe_findings::DescribeFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFindingsInputBuilder {
     pub(crate) finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) locale: ::std::option::Option<crate::types::Locale>,
@@ -50,17 +47,12 @@ impl DescribeFindingsInputBuilder {
         self
     }
     /// <p>The ARN that specifies the finding that you want to describe.</p>
-    pub fn set_finding_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.finding_arns = input;
         self
     }
     /// <p>The ARN that specifies the finding that you want to describe.</p>
-    pub fn get_finding_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.finding_arns
     }
     /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
@@ -80,10 +72,7 @@ impl DescribeFindingsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFindingsInput`](crate::operation::describe_findings::DescribeFindingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_findings::DescribeFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_findings::DescribeFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_findings::DescribeFindingsInput {
             finding_arns: self.finding_arns,
             locale: self.locale,

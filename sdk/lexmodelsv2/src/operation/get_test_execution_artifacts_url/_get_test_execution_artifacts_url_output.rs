@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetTestExecutionArtifactsUrlOutput {
 }
 impl GetTestExecutionArtifactsUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetTestExecutionArtifactsUrlOutput`](crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlOutput).
-    pub fn builder() -> crate::operation::get_test_execution_artifacts_url::builders::GetTestExecutionArtifactsUrlOutputBuilder{
+    pub fn builder() -> crate::operation::get_test_execution_artifacts_url::builders::GetTestExecutionArtifactsUrlOutputBuilder {
         crate::operation::get_test_execution_artifacts_url::builders::GetTestExecutionArtifactsUrlOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTestExecutionArtifactsUrlOutput`](crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTestExecutionArtifactsUrlOutputBuilder {
     pub(crate) test_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) download_artifacts_url: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct GetTestExecutionArtifactsUrlOutputBuilder {
 }
 impl GetTestExecutionArtifactsUrlOutputBuilder {
     /// <p>The unique identifier of the completed test execution.</p>
-    pub fn test_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the completed test execution.</p>
-    pub fn set_test_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_execution_id = input;
         self
     }
@@ -65,18 +57,12 @@ impl GetTestExecutionArtifactsUrlOutputBuilder {
         &self.test_execution_id
     }
     /// <p>The pre-signed Amazon S3 URL to download completed test execution.</p>
-    pub fn download_artifacts_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn download_artifacts_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.download_artifacts_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pre-signed Amazon S3 URL to download completed test execution.</p>
-    pub fn set_download_artifacts_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_download_artifacts_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.download_artifacts_url = input;
         self
     }
@@ -94,10 +80,7 @@ impl GetTestExecutionArtifactsUrlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTestExecutionArtifactsUrlOutput`](crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlOutput
-    {
+    pub fn build(self) -> crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlOutput {
         crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlOutput {
             test_execution_id: self.test_execution_id,
             download_artifacts_url: self.download_artifacts_url,

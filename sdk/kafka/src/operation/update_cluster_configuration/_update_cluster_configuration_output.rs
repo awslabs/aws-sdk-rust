@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateClusterConfigurationOutput {
 }
 impl UpdateClusterConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterConfigurationOutput`](crate::operation::update_cluster_configuration::UpdateClusterConfigurationOutput).
-    pub fn builder() -> crate::operation::update_cluster_configuration::builders::UpdateClusterConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_cluster_configuration::builders::UpdateClusterConfigurationOutputBuilder {
         crate::operation::update_cluster_configuration::builders::UpdateClusterConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateClusterConfigurationOutput`](crate::operation::update_cluster_configuration::UpdateClusterConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClusterConfigurationOutputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_operation_arn: ::std::option::Option<::std::string::String>,
@@ -59,18 +57,12 @@ impl UpdateClusterConfigurationOutputBuilder {
         &self.cluster_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn cluster_operation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_operation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_operation_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn set_cluster_operation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_operation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_operation_arn = input;
         self
     }
@@ -88,9 +80,7 @@ impl UpdateClusterConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateClusterConfigurationOutput`](crate::operation::update_cluster_configuration::UpdateClusterConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_cluster_configuration::UpdateClusterConfigurationOutput {
+    pub fn build(self) -> crate::operation::update_cluster_configuration::UpdateClusterConfigurationOutput {
         crate::operation::update_cluster_configuration::UpdateClusterConfigurationOutput {
             cluster_arn: self.cluster_arn,
             cluster_operation_arn: self.cluster_operation_arn,

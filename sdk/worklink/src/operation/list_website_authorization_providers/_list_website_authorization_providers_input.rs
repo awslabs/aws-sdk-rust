@@ -29,16 +29,14 @@ impl ListWebsiteAuthorizationProvidersInput {
 }
 impl ListWebsiteAuthorizationProvidersInput {
     /// Creates a new builder-style object to manufacture [`ListWebsiteAuthorizationProvidersInput`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersInput).
-    pub fn builder() -> crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersInputBuilder{
+    pub fn builder() -> crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersInputBuilder {
         crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListWebsiteAuthorizationProvidersInput`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWebsiteAuthorizationProvidersInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -88,16 +86,18 @@ impl ListWebsiteAuthorizationProvidersInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListWebsiteAuthorizationProvidersInput`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersInput {
-                fleet_arn: self.fleet_arn
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                fleet_arn: self.fleet_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

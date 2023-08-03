@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`scanning_configurations(Option<Vec<RepositoryScanningConfiguration>>)`](crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationOutput::scanning_configurations): <p>The scanning configuration for the requested repositories.</p>
     ///   - [`failures(Option<Vec<RepositoryScanningConfigurationFailure>>)`](crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationOutput::failures): <p>Any failures associated with the call.</p>
     /// - On failure, responds with [`SdkError<BatchGetRepositoryScanningConfigurationError>`](crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationError)
-    pub fn batch_get_repository_scanning_configuration(&self) -> crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationFluentBuilder{
-        crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn batch_get_repository_scanning_configuration(
+        &self,
+    ) -> crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationFluentBuilder {
+        crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

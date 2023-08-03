@@ -29,7 +29,7 @@ impl CreateExplainabilityExportInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateExplainabilityExportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_explainability_export::builders::CreateExplainabilityExportInputBuilder,
+    inner: crate::operation::create_explainability_export::builders::CreateExplainabilityExportInputBuilder,
 }
 impl CreateExplainabilityExportFluentBuilder {
     /// Creates a new `CreateExplainabilityExport`.
@@ -40,7 +40,7 @@ impl CreateExplainabilityExportFluentBuilder {
         }
     }
     /// Access the CreateExplainabilityExport as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_explainability_export::builders::CreateExplainabilityExportInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_explainability_export::builders::CreateExplainabilityExportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl CreateExplainabilityExportFluentBuilder {
             crate::operation::create_explainability_export::CreateExplainabilityExport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_explainability_export::CreateExplainabilityExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_explainability_export::CreateExplainabilityExportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl CreateExplainabilityExportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl CreateExplainabilityExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_explainability_export::CreateExplainabilityExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_explainability_export::CreateExplainabilityExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_explainability_export::CreateExplainabilityExportError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl CreateExplainabilityExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_explainability_export::CreateExplainabilityExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_explainability_export::CreateExplainabilityExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_explainability_export::CreateExplainabilityExportError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +108,17 @@ impl CreateExplainabilityExportFluentBuilder {
             crate::operation::create_explainability_export::CreateExplainabilityExport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_explainability_export::CreateExplainabilityExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_explainability_export::CreateExplainabilityExportError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique name for the Explainability export.</p>
-    pub fn explainability_export_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explainability_export_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.explainability_export_name(input.into());
         self
     }
     /// <p>A unique name for the Explainability export.</p>
-    pub fn set_explainability_export_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_explainability_export_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_explainability_export_name(input);
         self
     }
@@ -144,18 +127,12 @@ impl CreateExplainabilityExportFluentBuilder {
         self.inner.get_explainability_export_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability to export.</p>
-    pub fn explainability_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explainability_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.explainability_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability to export.</p>
-    pub fn set_explainability_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_explainability_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_explainability_arn(input);
         self
     }
@@ -169,10 +146,7 @@ impl CreateExplainabilityExportFluentBuilder {
         self
     }
     /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::DataDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::DataDestination>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
     }
@@ -208,10 +182,7 @@ impl CreateExplainabilityExportFluentBuilder {
     /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
     /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

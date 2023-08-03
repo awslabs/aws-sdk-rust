@@ -15,8 +15,7 @@ pub struct Result {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The error in server analysis.</p>
     #[doc(hidden)]
-    pub antipattern_report_result_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AntipatternReportResult>>,
+    pub antipattern_report_result_list: ::std::option::Option<::std::vec::Vec<crate::types::AntipatternReportResult>>,
 }
 impl Result {
     /// <p>The error in server analysis.</p>
@@ -32,9 +31,7 @@ impl Result {
         self.status_message.as_deref()
     }
     /// <p>The error in server analysis.</p>
-    pub fn antipattern_report_result_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AntipatternReportResult]> {
+    pub fn antipattern_report_result_list(&self) -> ::std::option::Option<&[crate::types::AntipatternReportResult]> {
         self.antipattern_report_result_list.as_deref()
     }
 }
@@ -47,15 +44,12 @@ impl Result {
 
 /// A builder for [`Result`](crate::types::Result).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultBuilder {
     pub(crate) analysis_type: ::std::option::Option<crate::types::AnalysisType>,
     pub(crate) analysis_status: ::std::option::Option<crate::types::AnalysisStatusUnion>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
-    pub(crate) antipattern_report_result_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AntipatternReportResult>>,
+    pub(crate) antipattern_report_result_list: ::std::option::Option<::std::vec::Vec<crate::types::AntipatternReportResult>>,
 }
 impl ResultBuilder {
     /// <p>The error in server analysis.</p>
@@ -64,10 +58,7 @@ impl ResultBuilder {
         self
     }
     /// <p>The error in server analysis.</p>
-    pub fn set_analysis_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisType>,
-    ) -> Self {
+    pub fn set_analysis_type(mut self, input: ::std::option::Option<crate::types::AnalysisType>) -> Self {
         self.analysis_type = input;
         self
     }
@@ -81,10 +72,7 @@ impl ResultBuilder {
         self
     }
     /// <p>The error in server analysis.</p>
-    pub fn set_analysis_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisStatusUnion>,
-    ) -> Self {
+    pub fn set_analysis_status(mut self, input: ::std::option::Option<crate::types::AnalysisStatusUnion>) -> Self {
         self.analysis_status = input;
         self
     }
@@ -93,18 +81,12 @@ impl ResultBuilder {
         &self.analysis_status
     }
     /// <p>The error in server analysis.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error in server analysis.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -117,10 +99,7 @@ impl ResultBuilder {
     /// To override the contents of this collection use [`set_antipattern_report_result_list`](Self::set_antipattern_report_result_list).
     ///
     /// <p>The error in server analysis.</p>
-    pub fn antipattern_report_result_list(
-        mut self,
-        input: crate::types::AntipatternReportResult,
-    ) -> Self {
+    pub fn antipattern_report_result_list(mut self, input: crate::types::AntipatternReportResult) -> Self {
         let mut v = self.antipattern_report_result_list.unwrap_or_default();
         v.push(input);
         self.antipattern_report_result_list = ::std::option::Option::Some(v);
@@ -135,9 +114,7 @@ impl ResultBuilder {
         self
     }
     /// <p>The error in server analysis.</p>
-    pub fn get_antipattern_report_result_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AntipatternReportResult>> {
+    pub fn get_antipattern_report_result_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AntipatternReportResult>> {
         &self.antipattern_report_result_list
     }
     /// Consumes the builder and constructs a [`Result`](crate::types::Result).

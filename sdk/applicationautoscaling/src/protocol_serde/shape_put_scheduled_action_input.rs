@@ -34,10 +34,7 @@ pub fn ser_put_scheduled_action_input(
     if let Some(var_9) = &input.scalable_target_action {
         #[allow(unused_mut)]
         let mut object_10 = object.key("ScalableTargetAction").start_object();
-        crate::protocol_serde::shape_scalable_target_action::ser_scalable_target_action(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_scalable_target_action::ser_scalable_target_action(&mut object_10, var_9)?;
         object_10.finish();
     }
     Ok(())

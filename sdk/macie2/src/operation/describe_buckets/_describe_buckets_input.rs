@@ -5,12 +5,7 @@
 pub struct DescribeBucketsInput {
     /// <p>The criteria to use to filter the query results.</p>
     #[doc(hidden)]
-    pub criteria: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::BucketCriteriaAdditionalProperties,
-        >,
-    >,
+    pub criteria: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>>,
     /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -25,12 +20,7 @@ impl DescribeBucketsInput {
     /// <p>The criteria to use to filter the query results.</p>
     pub fn criteria(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::BucketCriteriaAdditionalProperties,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>> {
         self.criteria.as_ref()
     }
     /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
@@ -55,16 +45,9 @@ impl DescribeBucketsInput {
 
 /// A builder for [`DescribeBucketsInput`](crate::operation::describe_buckets::DescribeBucketsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBucketsInputBuilder {
-    pub(crate) criteria: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::BucketCriteriaAdditionalProperties,
-        >,
-    >,
+    pub(crate) criteria: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) sort_criteria: ::std::option::Option<crate::types::BucketSortCriteria>,
@@ -75,11 +58,7 @@ impl DescribeBucketsInputBuilder {
     /// To override the contents of this collection use [`set_criteria`](Self::set_criteria).
     ///
     /// <p>The criteria to use to filter the query results.</p>
-    pub fn criteria(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::BucketCriteriaAdditionalProperties,
-    ) -> Self {
+    pub fn criteria(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::BucketCriteriaAdditionalProperties) -> Self {
         let mut hash_map = self.criteria.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.criteria = ::std::option::Option::Some(hash_map);
@@ -88,12 +67,7 @@ impl DescribeBucketsInputBuilder {
     /// <p>The criteria to use to filter the query results.</p>
     pub fn set_criteria(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::BucketCriteriaAdditionalProperties,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>>,
     ) -> Self {
         self.criteria = input;
         self
@@ -101,12 +75,7 @@ impl DescribeBucketsInputBuilder {
     /// <p>The criteria to use to filter the query results.</p>
     pub fn get_criteria(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::BucketCriteriaAdditionalProperties,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>> {
         &self.criteria
     }
     /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
@@ -143,10 +112,7 @@ impl DescribeBucketsInputBuilder {
         self
     }
     /// <p>The criteria to use to sort the query results.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketSortCriteria>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<crate::types::BucketSortCriteria>) -> Self {
         self.sort_criteria = input;
         self
     }
@@ -157,10 +123,7 @@ impl DescribeBucketsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBucketsInput`](crate::operation::describe_buckets::DescribeBucketsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_buckets::DescribeBucketsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_buckets::DescribeBucketsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_buckets::DescribeBucketsInput {
             criteria: self.criteria,
             max_results: self.max_results,

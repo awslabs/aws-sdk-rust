@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteModelQualityJobDefinitionOutput
 }
 impl DeleteModelQualityJobDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteModelQualityJobDefinitionOutput`](crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionOutput).
-    pub fn builder() -> crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionOutputBuilder {
         crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteModelQualityJobDefinitionOutput`](crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteModelQualityJobDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteModelQualityJobDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteModelQualityJobDefinitionOutput`](crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionOutput
-    {
+    pub fn build(self) -> crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionOutput {
         crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionOutput {
             _request_id: self._request_id,
         }

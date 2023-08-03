@@ -117,17 +117,14 @@ impl SampledHttpRequest {
 
 /// A builder for [`SampledHttpRequest`](crate::types::SampledHttpRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SampledHttpRequestBuilder {
     pub(crate) request: ::std::option::Option<crate::types::HttpRequest>,
     pub(crate) weight: ::std::option::Option<i64>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) action: ::std::option::Option<::std::string::String>,
     pub(crate) rule_name_within_rule_group: ::std::option::Option<::std::string::String>,
-    pub(crate) request_headers_inserted:
-        ::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>>,
+    pub(crate) request_headers_inserted: ::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>>,
     pub(crate) response_code_sent: ::std::option::Option<i32>,
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<crate::types::Label>>,
     pub(crate) captcha_response: ::std::option::Option<crate::types::CaptchaResponse>,
@@ -169,10 +166,7 @@ impl SampledHttpRequestBuilder {
         self
     }
     /// <p>The time at which WAF received the request from your Amazon Web Services resource, in Unix time format (in seconds).</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
@@ -206,10 +200,7 @@ impl SampledHttpRequestBuilder {
     /// #
     /// <rule name></rule>
     /// </rule></code>. If the rule is not in a rule group, this field is absent. </p>
-    pub fn rule_name_within_rule_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_name_within_rule_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name_within_rule_group = ::std::option::Option::Some(input.into());
         self
     }
@@ -225,10 +216,7 @@ impl SampledHttpRequestBuilder {
     /// #
     /// <rule name></rule>
     /// </rule></code>. If the rule is not in a rule group, this field is absent. </p>
-    pub fn set_rule_name_within_rule_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_name_within_rule_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_name_within_rule_group = input;
         self
     }
@@ -259,17 +247,12 @@ impl SampledHttpRequestBuilder {
         self
     }
     /// <p>Custom request headers inserted by WAF into the request, according to the custom request configuration for the matching rule action.</p>
-    pub fn set_request_headers_inserted(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>>,
-    ) -> Self {
+    pub fn set_request_headers_inserted(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>>) -> Self {
         self.request_headers_inserted = input;
         self
     }
     /// <p>Custom request headers inserted by WAF into the request, according to the custom request configuration for the matching rule action.</p>
-    pub fn get_request_headers_inserted(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>> {
+    pub fn get_request_headers_inserted(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>> {
         &self.request_headers_inserted
     }
     /// <p>The response code that was sent for the request.</p>
@@ -300,10 +283,7 @@ impl SampledHttpRequestBuilder {
     }
     /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
     /// <p>For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Label>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Label>>) -> Self {
         self.labels = input;
         self
     }
@@ -318,10 +298,7 @@ impl SampledHttpRequestBuilder {
         self
     }
     /// <p>The <code>CAPTCHA</code> response for the request.</p>
-    pub fn set_captcha_response(
-        mut self,
-        input: ::std::option::Option<crate::types::CaptchaResponse>,
-    ) -> Self {
+    pub fn set_captcha_response(mut self, input: ::std::option::Option<crate::types::CaptchaResponse>) -> Self {
         self.captcha_response = input;
         self
     }
@@ -335,32 +312,21 @@ impl SampledHttpRequestBuilder {
         self
     }
     /// <p>The <code>Challenge</code> response for the request.</p>
-    pub fn set_challenge_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ChallengeResponse>,
-    ) -> Self {
+    pub fn set_challenge_response(mut self, input: ::std::option::Option<crate::types::ChallengeResponse>) -> Self {
         self.challenge_response = input;
         self
     }
     /// <p>The <code>Challenge</code> response for the request.</p>
-    pub fn get_challenge_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChallengeResponse> {
+    pub fn get_challenge_response(&self) -> &::std::option::Option<crate::types::ChallengeResponse> {
         &self.challenge_response
     }
     /// <p>Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that the rule group rule is configured for, and not the action that was applied to the request. The action that WAF applied is the <code>Action</code> value. </p>
-    pub fn overridden_action(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn overridden_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.overridden_action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that the rule group rule is configured for, and not the action that was applied to the request. The action that WAF applied is the <code>Action</code> value. </p>
-    pub fn set_overridden_action(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_overridden_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.overridden_action = input;
         self
     }

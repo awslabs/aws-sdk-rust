@@ -12,9 +12,7 @@ pub struct FeatureTransformation {
     pub feature_transformation_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides the default parameters for feature transformation.</p>
     #[doc(hidden)]
-    pub default_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub default_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The creation date and time (in Unix time) of the feature transformation.</p>
     #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -39,11 +37,7 @@ impl FeatureTransformation {
         self.feature_transformation_arn.as_deref()
     }
     /// <p>Provides the default parameters for feature transformation.</p>
-    pub fn default_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn default_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.default_parameters.as_ref()
     }
     /// <p>The creation date and time (in Unix time) of the feature transformation.</p>
@@ -72,15 +66,11 @@ impl FeatureTransformation {
 
 /// A builder for [`FeatureTransformation`](crate::types::FeatureTransformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FeatureTransformationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) feature_transformation_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) default_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) default_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -101,18 +91,12 @@ impl FeatureTransformationBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the FeatureTransformation object.</p>
-    pub fn feature_transformation_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_transformation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_transformation_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the FeatureTransformation object.</p>
-    pub fn set_feature_transformation_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_transformation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_transformation_arn = input;
         self
     }
@@ -138,19 +122,13 @@ impl FeatureTransformationBuilder {
     /// <p>Provides the default parameters for feature transformation.</p>
     pub fn set_default_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.default_parameters = input;
         self
     }
     /// <p>Provides the default parameters for feature transformation.</p>
-    pub fn get_default_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_default_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.default_parameters
     }
     /// <p>The creation date and time (in Unix time) of the feature transformation.</p>
@@ -159,10 +137,7 @@ impl FeatureTransformationBuilder {
         self
     }
     /// <p>The creation date and time (in Unix time) of the feature transformation.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -176,17 +151,12 @@ impl FeatureTransformationBuilder {
         self
     }
     /// <p>The last update date and time (in Unix time) of the feature transformation.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The last update date and time (in Unix time) of the feature transformation.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// <p>The status of the feature transformation.</p>

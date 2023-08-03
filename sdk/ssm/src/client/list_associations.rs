@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`associations(Option<Vec<Association>>)`](crate::operation::list_associations::ListAssociationsOutput::associations): <p>The associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_associations::ListAssociationsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<ListAssociationsError>`](crate::operation::list_associations::ListAssociationsError)
-    pub fn list_associations(
-        &self,
-    ) -> crate::operation::list_associations::builders::ListAssociationsFluentBuilder {
-        crate::operation::list_associations::builders::ListAssociationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_associations(&self) -> crate::operation::list_associations::builders::ListAssociationsFluentBuilder {
+        crate::operation::list_associations::builders::ListAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

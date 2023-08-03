@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteRegistryPolicyOutput {
 }
 impl DeleteRegistryPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRegistryPolicyOutput`](crate::operation::delete_registry_policy::DeleteRegistryPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_registry_policy::builders::DeleteRegistryPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::delete_registry_policy::builders::DeleteRegistryPolicyOutputBuilder {
         crate::operation::delete_registry_policy::builders::DeleteRegistryPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRegistryPolicyOutput`](crate::operation::delete_registry_policy::DeleteRegistryPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRegistryPolicyOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_text: ::std::option::Option<::std::string::String>,

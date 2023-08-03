@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`collaboration_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_collaboration::builders::DeleteCollaborationFluentBuilder::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::operation::delete_collaboration::builders::DeleteCollaborationFluentBuilder::set_collaboration_identifier): <p>The identifier for the collaboration.</p>
     /// - On success, responds with [`DeleteCollaborationOutput`](crate::operation::delete_collaboration::DeleteCollaborationOutput)
     /// - On failure, responds with [`SdkError<DeleteCollaborationError>`](crate::operation::delete_collaboration::DeleteCollaborationError)
-    pub fn delete_collaboration(
-        &self,
-    ) -> crate::operation::delete_collaboration::builders::DeleteCollaborationFluentBuilder {
-        crate::operation::delete_collaboration::builders::DeleteCollaborationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_collaboration(&self) -> crate::operation::delete_collaboration::builders::DeleteCollaborationFluentBuilder {
+        crate::operation::delete_collaboration::builders::DeleteCollaborationFluentBuilder::new(self.handle.clone())
     }
 }

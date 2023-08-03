@@ -8,25 +8,19 @@ pub fn ser_media_insights_pipeline_configuration_element(
     }
     if let Some(var_2) = &input.amazon_transcribe_call_analytics_processor_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object
-            .key("AmazonTranscribeCallAnalyticsProcessorConfiguration")
-            .start_object();
+        let mut object_3 = object.key("AmazonTranscribeCallAnalyticsProcessorConfiguration").start_object();
         crate::protocol_serde::shape_amazon_transcribe_call_analytics_processor_configuration::ser_amazon_transcribe_call_analytics_processor_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.amazon_transcribe_processor_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object
-            .key("AmazonTranscribeProcessorConfiguration")
-            .start_object();
+        let mut object_5 = object.key("AmazonTranscribeProcessorConfiguration").start_object();
         crate::protocol_serde::shape_amazon_transcribe_processor_configuration::ser_amazon_transcribe_processor_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.kinesis_data_stream_sink_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object
-            .key("KinesisDataStreamSinkConfiguration")
-            .start_object();
+        let mut object_7 = object.key("KinesisDataStreamSinkConfiguration").start_object();
         crate::protocol_serde::shape_kinesis_data_stream_sink_configuration::ser_kinesis_data_stream_sink_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
@@ -38,9 +32,7 @@ pub fn ser_media_insights_pipeline_configuration_element(
     }
     if let Some(var_10) = &input.voice_analytics_processor_configuration {
         #[allow(unused_mut)]
-        let mut object_11 = object
-            .key("VoiceAnalyticsProcessorConfiguration")
-            .start_object();
+        let mut object_11 = object.key("VoiceAnalyticsProcessorConfiguration").start_object();
         crate::protocol_serde::shape_voice_analytics_processor_configuration::ser_voice_analytics_processor_configuration(&mut object_11, var_10)?;
         object_11.finish();
     }
@@ -67,24 +59,15 @@ pub fn ser_media_insights_pipeline_configuration_element(
 
 pub(crate) fn de_media_insights_pipeline_configuration_element<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::MediaInsightsPipelineConfigurationElement>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::MediaInsightsPipelineConfigurationElement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::MediaInsightsPipelineConfigurationElementBuilder::default();
+            let mut builder = crate::types::builders::MediaInsightsPipelineConfigurationElementBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -92,11 +75,12 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Type" => {
                                 builder = builder.set_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
-                                        s.to_unescaped().map(|u|
-                                            crate::types::MediaInsightsPipelineConfigurationElementType::from(u.as_ref())
-                                        )
-                                    ).transpose()?
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| {
+                                            s.to_unescaped()
+                                                .map(|u| crate::types::MediaInsightsPipelineConfigurationElementType::from(u.as_ref()))
+                                        })
+                                        .transpose()?,
                                 );
                             }
                             "AmazonTranscribeCallAnalyticsProcessorConfiguration" => {
@@ -111,52 +95,53 @@ where
                             }
                             "KinesisDataStreamSinkConfiguration" => {
                                 builder = builder.set_kinesis_data_stream_sink_configuration(
-                                    crate::protocol_serde::shape_kinesis_data_stream_sink_configuration::de_kinesis_data_stream_sink_configuration(tokens)?
+                                    crate::protocol_serde::shape_kinesis_data_stream_sink_configuration::de_kinesis_data_stream_sink_configuration(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "S3RecordingSinkConfiguration" => {
                                 builder = builder.set_s3_recording_sink_configuration(
-                                    crate::protocol_serde::shape_s3_recording_sink_configuration::de_s3_recording_sink_configuration(tokens)?
+                                    crate::protocol_serde::shape_s3_recording_sink_configuration::de_s3_recording_sink_configuration(tokens)?,
                                 );
                             }
                             "VoiceAnalyticsProcessorConfiguration" => {
                                 builder = builder.set_voice_analytics_processor_configuration(
-                                    crate::protocol_serde::shape_voice_analytics_processor_configuration::de_voice_analytics_processor_configuration(tokens)?
+                                    crate::protocol_serde::shape_voice_analytics_processor_configuration::de_voice_analytics_processor_configuration(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "LambdaFunctionSinkConfiguration" => {
                                 builder = builder.set_lambda_function_sink_configuration(
-                                    crate::protocol_serde::shape_lambda_function_sink_configuration::de_lambda_function_sink_configuration(tokens)?
+                                    crate::protocol_serde::shape_lambda_function_sink_configuration::de_lambda_function_sink_configuration(tokens)?,
                                 );
                             }
                             "SqsQueueSinkConfiguration" => {
                                 builder = builder.set_sqs_queue_sink_configuration(
-                                    crate::protocol_serde::shape_sqs_queue_sink_configuration::de_sqs_queue_sink_configuration(tokens)?
+                                    crate::protocol_serde::shape_sqs_queue_sink_configuration::de_sqs_queue_sink_configuration(tokens)?,
                                 );
                             }
                             "SnsTopicSinkConfiguration" => {
                                 builder = builder.set_sns_topic_sink_configuration(
-                                    crate::protocol_serde::shape_sns_topic_sink_configuration::de_sns_topic_sink_configuration(tokens)?
+                                    crate::protocol_serde::shape_sns_topic_sink_configuration::de_sns_topic_sink_configuration(tokens)?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -29,8 +29,7 @@ impl GetRepositorySyncStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRepositorySyncStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusInputBuilder,
+    inner: crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusInputBuilder,
 }
 impl GetRepositorySyncStatusFluentBuilder {
     /// Creates a new `GetRepositorySyncStatus`.
@@ -41,10 +40,7 @@ impl GetRepositorySyncStatusFluentBuilder {
         }
     }
     /// Access the GetRepositorySyncStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +52,7 @@ impl GetRepositorySyncStatusFluentBuilder {
             crate::operation::get_repository_sync_status::GetRepositorySyncStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_repository_sync_status::GetRepositorySyncStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_repository_sync_status::GetRepositorySyncStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +62,7 @@ impl GetRepositorySyncStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +71,7 @@ impl GetRepositorySyncStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_repository_sync_status::GetRepositorySyncStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_repository_sync_status::GetRepositorySyncStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_repository_sync_status::GetRepositorySyncStatusError>,
     > {
         let op = self
             .inner
@@ -105,9 +94,7 @@ impl GetRepositorySyncStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_repository_sync_status::GetRepositorySyncStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_repository_sync_status::GetRepositorySyncStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_repository_sync_status::GetRepositorySyncStatusError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +108,17 @@ impl GetRepositorySyncStatusFluentBuilder {
             crate::operation::get_repository_sync_status::GetRepositorySyncStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_repository_sync_status::GetRepositorySyncStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_repository_sync_status::GetRepositorySyncStatusError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The repository name.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The repository name.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -153,17 +132,12 @@ impl GetRepositorySyncStatusFluentBuilder {
         self
     }
     /// <p>The repository provider.</p>
-    pub fn set_repository_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
+    pub fn set_repository_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
         self.inner = self.inner.set_repository_provider(input);
         self
     }
     /// <p>The repository provider.</p>
-    pub fn get_repository_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+    pub fn get_repository_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
         self.inner.get_repository_provider()
     }
     /// <p>The repository branch.</p>

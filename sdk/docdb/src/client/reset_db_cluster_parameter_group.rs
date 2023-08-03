@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`ResetDbClusterParameterGroupOutput`](crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupOutput) with field(s):
     ///   - [`db_cluster_parameter_group_name(Option<String>)`](crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupOutput::db_cluster_parameter_group_name): <p>The name of a cluster parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul> <note>   <p>This value is stored as a lowercase string.</p>  </note>
     /// - On failure, responds with [`SdkError<ResetDBClusterParameterGroupError>`](crate::operation::reset_db_cluster_parameter_group::ResetDBClusterParameterGroupError)
-    pub fn reset_db_cluster_parameter_group(&self) -> crate::operation::reset_db_cluster_parameter_group::builders::ResetDBClusterParameterGroupFluentBuilder{
+    pub fn reset_db_cluster_parameter_group(
+        &self,
+    ) -> crate::operation::reset_db_cluster_parameter_group::builders::ResetDBClusterParameterGroupFluentBuilder {
         crate::operation::reset_db_cluster_parameter_group::builders::ResetDBClusterParameterGroupFluentBuilder::new(self.handle.clone())
     }
 }

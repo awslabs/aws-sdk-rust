@@ -26,7 +26,7 @@ impl AssociateServiceRoleToAccountInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateServiceRoleToAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_service_role_to_account::builders::AssociateServiceRoleToAccountInputBuilder,
+    inner: crate::operation::associate_service_role_to_account::builders::AssociateServiceRoleToAccountInputBuilder,
 }
 impl AssociateServiceRoleToAccountFluentBuilder {
     /// Creates a new `AssociateServiceRoleToAccount`.
@@ -37,7 +37,7 @@ impl AssociateServiceRoleToAccountFluentBuilder {
         }
     }
     /// Access the AssociateServiceRoleToAccount as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_service_role_to_account::builders::AssociateServiceRoleToAccountInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_service_role_to_account::builders::AssociateServiceRoleToAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AssociateServiceRoleToAccountFluentBuilder {
             crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AssociateServiceRoleToAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AssociateServiceRoleToAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AssociateServiceRoleToAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl AssociateServiceRoleToAccountFluentBuilder {
             crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountError>,
     > {
         self.customize_middleware().await
     }

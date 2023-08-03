@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetBrowserSettingsOutput`](crate::operation::get_browser_settings::GetBrowserSettingsOutput) with field(s):
     ///   - [`browser_settings(Option<BrowserSettings>)`](crate::operation::get_browser_settings::GetBrowserSettingsOutput::browser_settings): <p>The browser settings.</p>
     /// - On failure, responds with [`SdkError<GetBrowserSettingsError>`](crate::operation::get_browser_settings::GetBrowserSettingsError)
-    pub fn get_browser_settings(
-        &self,
-    ) -> crate::operation::get_browser_settings::builders::GetBrowserSettingsFluentBuilder {
-        crate::operation::get_browser_settings::builders::GetBrowserSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_browser_settings(&self) -> crate::operation::get_browser_settings::builders::GetBrowserSettingsFluentBuilder {
+        crate::operation::get_browser_settings::builders::GetBrowserSettingsFluentBuilder::new(self.handle.clone())
     }
 }

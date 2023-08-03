@@ -27,9 +27,7 @@ pub struct RoutingProfile {
     pub default_outbound_queue_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The number of associated queues in routing profile.</p>
     #[doc(hidden)]
     pub number_of_associated_queues: ::std::option::Option<i64>,
@@ -67,11 +65,7 @@ impl RoutingProfile {
         self.default_outbound_queue_id.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The number of associated queues in routing profile.</p>
@@ -92,21 +86,16 @@ impl RoutingProfile {
 
 /// A builder for [`RoutingProfile`](crate::types::RoutingProfile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoutingProfileBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) routing_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) routing_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) media_concurrencies:
-        ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>,
+    pub(crate) media_concurrencies: ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>,
     pub(crate) default_outbound_queue_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) number_of_associated_queues: ::std::option::Option<i64>,
     pub(crate) number_of_associated_users: ::std::option::Option<i64>,
 }
@@ -140,18 +129,12 @@ impl RoutingProfileBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-    pub fn routing_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-    pub fn set_routing_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_profile_arn = input;
         self
     }
@@ -160,18 +143,12 @@ impl RoutingProfileBuilder {
         &self.routing_profile_arn
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn set_routing_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_profile_id = input;
         self
     }
@@ -205,32 +182,21 @@ impl RoutingProfileBuilder {
         self
     }
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    pub fn set_media_concurrencies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>,
-    ) -> Self {
+    pub fn set_media_concurrencies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>) -> Self {
         self.media_concurrencies = input;
         self
     }
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    pub fn get_media_concurrencies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>> {
+    pub fn get_media_concurrencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>> {
         &self.media_concurrencies
     }
     /// <p>The identifier of the default outbound queue for this routing profile.</p>
-    pub fn default_outbound_queue_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_outbound_queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_outbound_queue_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the default outbound queue for this routing profile.</p>
-    pub fn set_default_outbound_queue_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_outbound_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_outbound_queue_id = input;
         self
     }
@@ -243,32 +209,19 @@ impl RoutingProfileBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The number of associated queues in routing profile.</p>

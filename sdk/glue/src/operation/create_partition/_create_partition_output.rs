@@ -19,9 +19,7 @@ impl CreatePartitionOutput {
 
 /// A builder for [`CreatePartitionOutput`](crate::operation::create_partition::CreatePartitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePartitionOutputBuilder {
     _request_id: Option<String>,
 }

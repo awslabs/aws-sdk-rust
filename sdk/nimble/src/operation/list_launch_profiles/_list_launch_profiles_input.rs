@@ -43,17 +43,14 @@ impl ListLaunchProfilesInput {
 }
 impl ListLaunchProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListLaunchProfilesInput`](crate::operation::list_launch_profiles::ListLaunchProfilesInput).
-    pub fn builder(
-    ) -> crate::operation::list_launch_profiles::builders::ListLaunchProfilesInputBuilder {
+    pub fn builder() -> crate::operation::list_launch_profiles::builders::ListLaunchProfilesInputBuilder {
         crate::operation::list_launch_profiles::builders::ListLaunchProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLaunchProfilesInput`](crate::operation::list_launch_profiles::ListLaunchProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLaunchProfilesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -116,17 +113,12 @@ impl ListLaunchProfilesInputBuilder {
         self
     }
     /// <p>Filter this request to launch profiles in any of the given states.</p>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileState>>) -> Self {
         self.states = input;
         self
     }
     /// <p>Filter this request to launch profiles in any of the given states.</p>
-    pub fn get_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileState>> {
         &self.states
     }
     /// <p>The studio ID. </p>
@@ -146,18 +138,13 @@ impl ListLaunchProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListLaunchProfilesInput`](crate::operation::list_launch_profiles::ListLaunchProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_launch_profiles::ListLaunchProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_launch_profiles::ListLaunchProfilesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                principal_id: self.principal_id,
-                states: self.states,
-                studio_id: self.studio_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_launch_profiles::ListLaunchProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_launch_profiles::ListLaunchProfilesInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            principal_id: self.principal_id,
+            states: self.states,
+            studio_id: self.studio_id,
+        })
     }
 }

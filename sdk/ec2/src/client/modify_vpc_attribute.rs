@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`enable_network_address_usage_metrics(AttributeBooleanValue)`](crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeFluentBuilder::enable_network_address_usage_metrics) / [`set_enable_network_address_usage_metrics(Option<AttributeBooleanValue>)`](crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeFluentBuilder::set_enable_network_address_usage_metrics): <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
     /// - On success, responds with [`ModifyVpcAttributeOutput`](crate::operation::modify_vpc_attribute::ModifyVpcAttributeOutput)
     /// - On failure, responds with [`SdkError<ModifyVpcAttributeError>`](crate::operation::modify_vpc_attribute::ModifyVpcAttributeError)
-    pub fn modify_vpc_attribute(
-        &self,
-    ) -> crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeFluentBuilder {
-        crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_vpc_attribute(&self) -> crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeFluentBuilder {
+        crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeFluentBuilder::new(self.handle.clone())
     }
 }

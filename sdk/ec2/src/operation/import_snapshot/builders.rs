@@ -10,10 +10,7 @@ impl ImportSnapshotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::import_snapshot::ImportSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_snapshot::ImportSnapshotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_snapshot::ImportSnapshotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.import_snapshot();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ImportSnapshotFluentBuilder {
         }
     }
     /// Access the ImportSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_snapshot::builders::ImportSnapshotInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::import_snapshot::builders::ImportSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl ImportSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -121,10 +113,7 @@ impl ImportSnapshotFluentBuilder {
         self
     }
     /// <p>The client-specific data.</p>
-    pub fn set_client_data(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientData>,
-    ) -> Self {
+    pub fn set_client_data(mut self, input: ::std::option::Option<crate::types::ClientData>) -> Self {
         self.inner = self.inner.set_client_data(input);
         self
     }
@@ -166,17 +155,12 @@ impl ImportSnapshotFluentBuilder {
         self
     }
     /// <p>Information about the disk container.</p>
-    pub fn set_disk_container(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotDiskContainer>,
-    ) -> Self {
+    pub fn set_disk_container(mut self, input: ::std::option::Option<crate::types::SnapshotDiskContainer>) -> Self {
         self.inner = self.inner.set_disk_container(input);
         self
     }
     /// <p>Information about the disk container.</p>
-    pub fn get_disk_container(
-        &self,
-    ) -> &::std::option::Option<crate::types::SnapshotDiskContainer> {
+    pub fn get_disk_container(&self) -> &::std::option::Option<crate::types::SnapshotDiskContainer> {
         self.inner.get_disk_container()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -275,17 +259,12 @@ impl ImportSnapshotFluentBuilder {
         self
     }
     /// <p>The tags to apply to the import snapshot task during creation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the import snapshot task during creation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
 }

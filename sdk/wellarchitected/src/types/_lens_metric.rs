@@ -24,9 +24,7 @@ impl LensMetric {
         self.pillars.as_deref()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn risk_counts(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn risk_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
         self.risk_counts.as_ref()
     }
 }
@@ -39,14 +37,11 @@ impl LensMetric {
 
 /// A builder for [`LensMetric`](crate::types::LensMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LensMetricBuilder {
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
     pub(crate) pillars: ::std::option::Option<::std::vec::Vec<crate::types::PillarMetric>>,
-    pub(crate) risk_counts:
-        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub(crate) risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl LensMetricBuilder {
     /// <p>The lens ARN.</p>
@@ -75,17 +70,12 @@ impl LensMetricBuilder {
         self
     }
     /// <p>The metrics for the pillars in a lens.</p>
-    pub fn set_pillars(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PillarMetric>>,
-    ) -> Self {
+    pub fn set_pillars(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PillarMetric>>) -> Self {
         self.pillars = input;
         self
     }
     /// <p>The metrics for the pillars in a lens.</p>
-    pub fn get_pillars(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PillarMetric>> {
+    pub fn get_pillars(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PillarMetric>> {
         &self.pillars
     }
     /// Adds a key-value pair to `risk_counts`.
@@ -100,17 +90,12 @@ impl LensMetricBuilder {
         self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn set_risk_counts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
-    ) -> Self {
+    pub fn set_risk_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>) -> Self {
         self.risk_counts = input;
         self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn get_risk_counts(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn get_risk_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
         &self.risk_counts
     }
     /// Consumes the builder and constructs a [`LensMetric`](crate::types::LensMetric).

@@ -29,9 +29,7 @@ impl GetVpcLinksInput {
 
 /// A builder for [`GetVpcLinksInput`](crate::operation::get_vpc_links::GetVpcLinksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVpcLinksInputBuilder {
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetVpcLinksInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetVpcLinksInput`](crate::operation::get_vpc_links::GetVpcLinksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_vpc_links::GetVpcLinksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_vpc_links::GetVpcLinksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_vpc_links::GetVpcLinksInput {
             max_results: self.max_results,
             next_token: self.next_token,

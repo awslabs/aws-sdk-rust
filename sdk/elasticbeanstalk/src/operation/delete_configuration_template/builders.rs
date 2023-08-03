@@ -28,7 +28,7 @@ impl DeleteConfigurationTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConfigurationTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateInputBuilder,
+    inner: crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateInputBuilder,
 }
 impl DeleteConfigurationTemplateFluentBuilder {
     /// Creates a new `DeleteConfigurationTemplate`.
@@ -39,7 +39,7 @@ impl DeleteConfigurationTemplateFluentBuilder {
         }
     }
     /// Access the DeleteConfigurationTemplate as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DeleteConfigurationTemplateFluentBuilder {
             crate::operation::delete_configuration_template::DeleteConfigurationTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_configuration_template::DeleteConfigurationTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_template::DeleteConfigurationTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DeleteConfigurationTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DeleteConfigurationTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_configuration_template::DeleteConfigurationTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_configuration_template::DeleteConfigurationTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_template::DeleteConfigurationTemplateError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DeleteConfigurationTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_configuration_template::DeleteConfigurationTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_configuration_template::DeleteConfigurationTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_template::DeleteConfigurationTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl DeleteConfigurationTemplateFluentBuilder {
             crate::operation::delete_configuration_template::DeleteConfigurationTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_configuration_template::DeleteConfigurationTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_template::DeleteConfigurationTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the application to delete the configuration template from.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of the application to delete the configuration template from.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -143,18 +126,12 @@ impl DeleteConfigurationTemplateFluentBuilder {
         self.inner.get_application_name()
     }
     /// <p>The name of the configuration template to delete.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the configuration template to delete.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }

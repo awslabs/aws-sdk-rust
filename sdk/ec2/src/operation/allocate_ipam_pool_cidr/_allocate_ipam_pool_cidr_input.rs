@@ -84,17 +84,14 @@ impl AllocateIpamPoolCidrInput {
 }
 impl AllocateIpamPoolCidrInput {
     /// Creates a new builder-style object to manufacture [`AllocateIpamPoolCidrInput`](crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrInput).
-    pub fn builder(
-    ) -> crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrInputBuilder {
+    pub fn builder() -> crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrInputBuilder {
         crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrInputBuilder::default()
     }
 }
 
 /// A builder for [`AllocateIpamPoolCidrInput`](crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllocateIpamPoolCidrInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_pool_id: ::std::option::Option<::std::string::String>,
@@ -239,47 +236,35 @@ impl AllocateIpamPoolCidrInputBuilder {
     /// To override the contents of this collection use [`set_disallowed_cidrs`](Self::set_disallowed_cidrs).
     ///
     /// <p>Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using netmask length for allocation.</p>
-    pub fn disallowed_cidrs(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disallowed_cidrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.disallowed_cidrs.unwrap_or_default();
         v.push(input.into());
         self.disallowed_cidrs = ::std::option::Option::Some(v);
         self
     }
     /// <p>Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using netmask length for allocation.</p>
-    pub fn set_disallowed_cidrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_disallowed_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.disallowed_cidrs = input;
         self
     }
     /// <p>Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using netmask length for allocation.</p>
-    pub fn get_disallowed_cidrs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_disallowed_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.disallowed_cidrs
     }
     /// Consumes the builder and constructs a [`AllocateIpamPoolCidrInput`](crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrInput {
-                dry_run: self.dry_run,
-                ipam_pool_id: self.ipam_pool_id,
-                cidr: self.cidr,
-                netmask_length: self.netmask_length,
-                client_token: self.client_token,
-                description: self.description,
-                preview_next_cidr: self.preview_next_cidr,
-                disallowed_cidrs: self.disallowed_cidrs,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrInput {
+            dry_run: self.dry_run,
+            ipam_pool_id: self.ipam_pool_id,
+            cidr: self.cidr,
+            netmask_length: self.netmask_length,
+            client_token: self.client_token,
+            description: self.description,
+            preview_next_cidr: self.preview_next_cidr,
+            disallowed_cidrs: self.disallowed_cidrs,
+        })
     }
 }

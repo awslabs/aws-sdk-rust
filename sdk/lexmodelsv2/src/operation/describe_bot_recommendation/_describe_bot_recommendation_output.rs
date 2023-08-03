@@ -52,9 +52,7 @@ impl DescribeBotRecommendationOutput {
         self.locale_id.as_deref()
     }
     /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    pub fn bot_recommendation_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BotRecommendationStatus> {
+    pub fn bot_recommendation_status(&self) -> ::std::option::Option<&crate::types::BotRecommendationStatus> {
         self.bot_recommendation_status.as_ref()
     }
     /// <p>The identifier of the bot recommendation being described.</p>
@@ -74,9 +72,7 @@ impl DescribeBotRecommendationOutput {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn transcript_source_setting(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TranscriptSourceSetting> {
+    pub fn transcript_source_setting(&self) -> ::std::option::Option<&crate::types::TranscriptSourceSetting> {
         self.transcript_source_setting.as_ref()
     }
     /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
@@ -84,9 +80,7 @@ impl DescribeBotRecommendationOutput {
         self.encryption_setting.as_ref()
     }
     /// <p>The object representing the URL of the bot definition, the URL of the associated transcript and a statistical summary of the bot recommendation results.</p>
-    pub fn bot_recommendation_results(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BotRecommendationResults> {
+    pub fn bot_recommendation_results(&self) -> ::std::option::Option<&crate::types::BotRecommendationResults> {
         self.bot_recommendation_results.as_ref()
     }
 }
@@ -97,31 +91,26 @@ impl ::aws_http::request_id::RequestId for DescribeBotRecommendationOutput {
 }
 impl DescribeBotRecommendationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBotRecommendationOutput`](crate::operation::describe_bot_recommendation::DescribeBotRecommendationOutput).
-    pub fn builder() -> crate::operation::describe_bot_recommendation::builders::DescribeBotRecommendationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_bot_recommendation::builders::DescribeBotRecommendationOutputBuilder {
         crate::operation::describe_bot_recommendation::builders::DescribeBotRecommendationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBotRecommendationOutput`](crate::operation::describe_bot_recommendation::DescribeBotRecommendationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBotRecommendationOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
-    pub(crate) bot_recommendation_status:
-        ::std::option::Option<crate::types::BotRecommendationStatus>,
+    pub(crate) bot_recommendation_status: ::std::option::Option<crate::types::BotRecommendationStatus>,
     pub(crate) bot_recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) transcript_source_setting:
-        ::std::option::Option<crate::types::TranscriptSourceSetting>,
+    pub(crate) transcript_source_setting: ::std::option::Option<crate::types::TranscriptSourceSetting>,
     pub(crate) encryption_setting: ::std::option::Option<crate::types::EncryptionSetting>,
-    pub(crate) bot_recommendation_results:
-        ::std::option::Option<crate::types::BotRecommendationResults>,
+    pub(crate) bot_recommendation_results: ::std::option::Option<crate::types::BotRecommendationResults>,
     _request_id: Option<String>,
 }
 impl DescribeBotRecommendationOutputBuilder {
@@ -168,40 +157,26 @@ impl DescribeBotRecommendationOutputBuilder {
         &self.locale_id
     }
     /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    pub fn bot_recommendation_status(
-        mut self,
-        input: crate::types::BotRecommendationStatus,
-    ) -> Self {
+    pub fn bot_recommendation_status(mut self, input: crate::types::BotRecommendationStatus) -> Self {
         self.bot_recommendation_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    pub fn set_bot_recommendation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BotRecommendationStatus>,
-    ) -> Self {
+    pub fn set_bot_recommendation_status(mut self, input: ::std::option::Option<crate::types::BotRecommendationStatus>) -> Self {
         self.bot_recommendation_status = input;
         self
     }
     /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    pub fn get_bot_recommendation_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::BotRecommendationStatus> {
+    pub fn get_bot_recommendation_status(&self) -> &::std::option::Option<crate::types::BotRecommendationStatus> {
         &self.bot_recommendation_status
     }
     /// <p>The identifier of the bot recommendation being described.</p>
-    pub fn bot_recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the bot recommendation being described.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_recommendation_id = input;
         self
     }
@@ -214,27 +189,19 @@ impl DescribeBotRecommendationOutputBuilder {
     /// To override the contents of this collection use [`set_failure_reasons`](Self::set_failure_reasons).
     ///
     /// <p>If botRecommendationStatus is Failed, Amazon Lex explains why.</p>
-    pub fn failure_reasons(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
         v.push(input.into());
         self.failure_reasons = ::std::option::Option::Some(v);
         self
     }
     /// <p>If botRecommendationStatus is Failed, Amazon Lex explains why.</p>
-    pub fn set_failure_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.failure_reasons = input;
         self
     }
     /// <p>If botRecommendationStatus is Failed, Amazon Lex explains why.</p>
-    pub fn get_failure_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_reasons
     }
     /// <p>The date and time that the bot recommendation was created.</p>
@@ -243,10 +210,7 @@ impl DescribeBotRecommendationOutputBuilder {
         self
     }
     /// <p>The date and time that the bot recommendation was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -260,39 +224,26 @@ impl DescribeBotRecommendationOutputBuilder {
         self
     }
     /// <p>The date and time that the bot recommendation was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time that the bot recommendation was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn transcript_source_setting(
-        mut self,
-        input: crate::types::TranscriptSourceSetting,
-    ) -> Self {
+    pub fn transcript_source_setting(mut self, input: crate::types::TranscriptSourceSetting) -> Self {
         self.transcript_source_setting = ::std::option::Option::Some(input);
         self
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn set_transcript_source_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscriptSourceSetting>,
-    ) -> Self {
+    pub fn set_transcript_source_setting(mut self, input: ::std::option::Option<crate::types::TranscriptSourceSetting>) -> Self {
         self.transcript_source_setting = input;
         self
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn get_transcript_source_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranscriptSourceSetting> {
+    pub fn get_transcript_source_setting(&self) -> &::std::option::Option<crate::types::TranscriptSourceSetting> {
         &self.transcript_source_setting
     }
     /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
@@ -301,39 +252,26 @@ impl DescribeBotRecommendationOutputBuilder {
         self
     }
     /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn set_encryption_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionSetting>,
-    ) -> Self {
+    pub fn set_encryption_setting(mut self, input: ::std::option::Option<crate::types::EncryptionSetting>) -> Self {
         self.encryption_setting = input;
         self
     }
     /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn get_encryption_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionSetting> {
+    pub fn get_encryption_setting(&self) -> &::std::option::Option<crate::types::EncryptionSetting> {
         &self.encryption_setting
     }
     /// <p>The object representing the URL of the bot definition, the URL of the associated transcript and a statistical summary of the bot recommendation results.</p>
-    pub fn bot_recommendation_results(
-        mut self,
-        input: crate::types::BotRecommendationResults,
-    ) -> Self {
+    pub fn bot_recommendation_results(mut self, input: crate::types::BotRecommendationResults) -> Self {
         self.bot_recommendation_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>The object representing the URL of the bot definition, the URL of the associated transcript and a statistical summary of the bot recommendation results.</p>
-    pub fn set_bot_recommendation_results(
-        mut self,
-        input: ::std::option::Option<crate::types::BotRecommendationResults>,
-    ) -> Self {
+    pub fn set_bot_recommendation_results(mut self, input: ::std::option::Option<crate::types::BotRecommendationResults>) -> Self {
         self.bot_recommendation_results = input;
         self
     }
     /// <p>The object representing the URL of the bot definition, the URL of the associated transcript and a statistical summary of the bot recommendation results.</p>
-    pub fn get_bot_recommendation_results(
-        &self,
-    ) -> &::std::option::Option<crate::types::BotRecommendationResults> {
+    pub fn get_bot_recommendation_results(&self) -> &::std::option::Option<crate::types::BotRecommendationResults> {
         &self.bot_recommendation_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -346,9 +284,7 @@ impl DescribeBotRecommendationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeBotRecommendationOutput`](crate::operation::describe_bot_recommendation::DescribeBotRecommendationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_bot_recommendation::DescribeBotRecommendationOutput {
+    pub fn build(self) -> crate::operation::describe_bot_recommendation::DescribeBotRecommendationOutput {
         crate::operation::describe_bot_recommendation::DescribeBotRecommendationOutput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

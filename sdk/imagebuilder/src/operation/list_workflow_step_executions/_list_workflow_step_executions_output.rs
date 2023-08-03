@@ -63,16 +63,14 @@ impl ::aws_http::request_id::RequestId for ListWorkflowStepExecutionsOutput {
 }
 impl ListWorkflowStepExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkflowStepExecutionsOutput`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput).
-    pub fn builder() -> crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsOutputBuilder {
         crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorkflowStepExecutionsOutput`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkflowStepExecutionsOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepMetadata>>,
@@ -110,32 +108,21 @@ impl ListWorkflowStepExecutionsOutputBuilder {
         self
     }
     /// <p>Contains an array of runtime details that represents each step in this runtime instance of the workflow.</p>
-    pub fn set_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepMetadata>>,
-    ) -> Self {
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepMetadata>>) -> Self {
         self.steps = input;
         self
     }
     /// <p>Contains an array of runtime details that represents each step in this runtime instance of the workflow.</p>
-    pub fn get_steps(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepMetadata>> {
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepMetadata>> {
         &self.steps
     }
     /// <p>The build version ARN for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
-    pub fn workflow_build_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The build version ARN for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
-    pub fn set_workflow_build_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_build_version_arn = input;
         self
     }
@@ -144,18 +131,12 @@ impl ListWorkflowStepExecutionsOutputBuilder {
         &self.workflow_build_version_arn
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
-    pub fn workflow_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
-    pub fn set_workflow_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_execution_id = input;
         self
     }
@@ -164,18 +145,12 @@ impl ListWorkflowStepExecutionsOutputBuilder {
         &self.workflow_execution_id
     }
     /// <p>The image build version resource ARN that's associated with the specified runtime instance of the workflow.</p>
-    pub fn image_build_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The image build version resource ARN that's associated with the specified runtime instance of the workflow.</p>
-    pub fn set_image_build_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
@@ -221,9 +196,7 @@ impl ListWorkflowStepExecutionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWorkflowStepExecutionsOutput`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput {
+    pub fn build(self) -> crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput {
         crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput {
             request_id: self.request_id,
             steps: self.steps,

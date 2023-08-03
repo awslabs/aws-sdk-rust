@@ -29,18 +29,14 @@ impl DescribeEvaluationFormInput {
 }
 impl DescribeEvaluationFormInput {
     /// Creates a new builder-style object to manufacture [`DescribeEvaluationFormInput`](crate::operation::describe_evaluation_form::DescribeEvaluationFormInput).
-    pub fn builder(
-    ) -> crate::operation::describe_evaluation_form::builders::DescribeEvaluationFormInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_evaluation_form::builders::DescribeEvaluationFormInputBuilder {
         crate::operation::describe_evaluation_form::builders::DescribeEvaluationFormInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEvaluationFormInput`](crate::operation::describe_evaluation_form::DescribeEvaluationFormInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEvaluationFormInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_form_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl DescribeEvaluationFormInputBuilder {
         &self.instance_id
     }
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_form_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn set_evaluation_form_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_form_id = input;
         self
     }
@@ -98,16 +88,12 @@ impl DescribeEvaluationFormInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEvaluationFormInput`](crate::operation::describe_evaluation_form::DescribeEvaluationFormInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_evaluation_form::DescribeEvaluationFormInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_evaluation_form::DescribeEvaluationFormInput {
-                instance_id: self.instance_id,
-                evaluation_form_id: self.evaluation_form_id,
-                evaluation_form_version: self.evaluation_form_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_evaluation_form::DescribeEvaluationFormInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_evaluation_form::DescribeEvaluationFormInput {
+            instance_id: self.instance_id,
+            evaluation_form_id: self.evaluation_form_id,
+            evaluation_form_version: self.evaluation_form_version,
+        })
     }
 }

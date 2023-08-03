@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`at_time(Option<String>)`](crate::operation::get_calendar_state::GetCalendarStateOutput::at_time): <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified in your command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.</p>
     ///   - [`next_transition_time(Option<String>)`](crate::operation::get_calendar_state::GetCalendarStateOutput::next_transition_time): <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that the calendar state will change. If the current calendar state is <code>OPEN</code>, <code>NextTransitionTime</code> indicates when the calendar state changes to <code>CLOSED</code>, and vice-versa.</p>
     /// - On failure, responds with [`SdkError<GetCalendarStateError>`](crate::operation::get_calendar_state::GetCalendarStateError)
-    pub fn get_calendar_state(
-        &self,
-    ) -> crate::operation::get_calendar_state::builders::GetCalendarStateFluentBuilder {
-        crate::operation::get_calendar_state::builders::GetCalendarStateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_calendar_state(&self) -> crate::operation::get_calendar_state::builders::GetCalendarStateFluentBuilder {
+        crate::operation::get_calendar_state::builders::GetCalendarStateFluentBuilder::new(self.handle.clone())
     }
 }

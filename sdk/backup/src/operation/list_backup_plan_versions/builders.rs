@@ -26,8 +26,7 @@ impl ListBackupPlanVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBackupPlanVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_backup_plan_versions::builders::ListBackupPlanVersionsInputBuilder,
+    inner: crate::operation::list_backup_plan_versions::builders::ListBackupPlanVersionsInputBuilder,
 }
 impl ListBackupPlanVersionsFluentBuilder {
     /// Creates a new `ListBackupPlanVersions`.
@@ -38,10 +37,7 @@ impl ListBackupPlanVersionsFluentBuilder {
         }
     }
     /// Access the ListBackupPlanVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_backup_plan_versions::builders::ListBackupPlanVersionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_backup_plan_versions::builders::ListBackupPlanVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListBackupPlanVersionsFluentBuilder {
             crate::operation::list_backup_plan_versions::ListBackupPlanVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backup_plan_versions::ListBackupPlanVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backup_plan_versions::ListBackupPlanVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListBackupPlanVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListBackupPlanVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_backup_plan_versions::ListBackupPlanVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backup_plan_versions::ListBackupPlanVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backup_plan_versions::ListBackupPlanVersionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListBackupPlanVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_backup_plan_versions::ListBackupPlanVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backup_plan_versions::ListBackupPlanVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backup_plan_versions::ListBackupPlanVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,37 +105,23 @@ impl ListBackupPlanVersionsFluentBuilder {
             crate::operation::list_backup_plan_versions::ListBackupPlanVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backup_plan_versions::ListBackupPlanVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backup_plan_versions::ListBackupPlanVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_backup_plan_versions::paginator::ListBackupPlanVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_backup_plan_versions::paginator::ListBackupPlanVersionsPaginator
-    {
-        crate::operation::list_backup_plan_versions::paginator::ListBackupPlanVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_backup_plan_versions::paginator::ListBackupPlanVersionsPaginator {
+        crate::operation::list_backup_plan_versions::paginator::ListBackupPlanVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_plan_id(input.into());
         self
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn set_backup_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_plan_id(input);
         self
     }

@@ -37,9 +37,7 @@ impl CreateEndpointAccessFluentBuilder {
         }
     }
     /// Access the CreateEndpointAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_endpoint_access::builders::CreateEndpointAccessInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_endpoint_access::builders::CreateEndpointAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateEndpointAccessFluentBuilder {
             crate::operation::create_endpoint_access::CreateEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_endpoint_access::CreateEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_endpoint_access::CreateEndpointAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateEndpointAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_endpoint_access::CreateEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_endpoint_access::CreateEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_endpoint_access::CreateEndpointAccessError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_endpoint_access::CreateEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_endpoint_access::CreateEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_endpoint_access::CreateEndpointAccessError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl CreateEndpointAccessFluentBuilder {
             crate::operation::create_endpoint_access::CreateEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_endpoint_access::CreateEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_endpoint_access::CreateEndpointAccessError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The cluster identifier of the cluster to access.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The cluster identifier of the cluster to access.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -143,18 +124,12 @@ impl CreateEndpointAccessFluentBuilder {
         self.inner.get_cluster_identifier()
     }
     /// <p>The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.</p>
-    pub fn resource_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_owner(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.</p>
-    pub fn set_resource_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_owner(input);
         self
     }
@@ -164,19 +139,13 @@ impl CreateEndpointAccessFluentBuilder {
     }
     /// <p>The Redshift-managed VPC endpoint name.</p>
     /// <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
         self
     }
     /// <p>The Redshift-managed VPC endpoint name.</p>
     /// <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }
@@ -186,18 +155,12 @@ impl CreateEndpointAccessFluentBuilder {
         self.inner.get_endpoint_name()
     }
     /// <p>The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.</p>
-    pub fn subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_group_name(input.into());
         self
     }
     /// <p>The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.</p>
-    pub fn set_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_group_name(input);
         self
     }
@@ -210,25 +173,17 @@ impl CreateEndpointAccessFluentBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
     /// <p>The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_security_group_ids(input.into());
         self
     }
     /// <p>The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
     /// <p>The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
 }

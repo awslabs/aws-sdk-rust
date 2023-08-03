@@ -22,9 +22,7 @@ impl super::Client {
     ///   - [`attachments_content(Option<Vec<AttachmentContent>>)`](crate::operation::get_document::GetDocumentOutput::attachments_content): <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
     ///   - [`review_status(Option<ReviewStatus>)`](crate::operation::get_document::GetDocumentOutput::review_status): <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>  <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>  <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
     /// - On failure, responds with [`SdkError<GetDocumentError>`](crate::operation::get_document::GetDocumentError)
-    pub fn get_document(
-        &self,
-    ) -> crate::operation::get_document::builders::GetDocumentFluentBuilder {
+    pub fn get_document(&self) -> crate::operation::get_document::builders::GetDocumentFluentBuilder {
         crate::operation::get_document::builders::GetDocumentFluentBuilder::new(self.handle.clone())
     }
 }

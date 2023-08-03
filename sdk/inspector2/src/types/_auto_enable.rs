@@ -44,9 +44,7 @@ impl AutoEnable {
 
 /// A builder for [`AutoEnable`](crate::types::AutoEnable).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoEnableBuilder {
     pub(crate) ec2: ::std::option::Option<bool>,
     pub(crate) ecr: ::std::option::Option<bool>,

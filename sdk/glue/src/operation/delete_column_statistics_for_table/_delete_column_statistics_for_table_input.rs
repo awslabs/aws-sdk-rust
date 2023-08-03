@@ -36,16 +36,14 @@ impl DeleteColumnStatisticsForTableInput {
 }
 impl DeleteColumnStatisticsForTableInput {
     /// Creates a new builder-style object to manufacture [`DeleteColumnStatisticsForTableInput`](crate::operation::delete_column_statistics_for_table::DeleteColumnStatisticsForTableInput).
-    pub fn builder() -> crate::operation::delete_column_statistics_for_table::builders::DeleteColumnStatisticsForTableInputBuilder{
+    pub fn builder() -> crate::operation::delete_column_statistics_for_table::builders::DeleteColumnStatisticsForTableInputBuilder {
         crate::operation::delete_column_statistics_for_table::builders::DeleteColumnStatisticsForTableInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteColumnStatisticsForTableInput`](crate::operation::delete_column_statistics_for_table::DeleteColumnStatisticsForTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteColumnStatisticsForTableInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl DeleteColumnStatisticsForTableInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -124,15 +116,11 @@ impl DeleteColumnStatisticsForTableInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_column_statistics_for_table::DeleteColumnStatisticsForTableInput {
-                catalog_id: self.catalog_id
-                ,
-                database_name: self.database_name
-                ,
-                table_name: self.table_name
-                ,
-                column_name: self.column_name
-                ,
-            }
+                catalog_id: self.catalog_id,
+                database_name: self.database_name,
+                table_name: self.table_name,
+                column_name: self.column_name,
+            },
         )
     }
 }

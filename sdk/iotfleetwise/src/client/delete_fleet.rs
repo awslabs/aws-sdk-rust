@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::delete_fleet::DeleteFleetOutput::id): <p>The ID of the deleted fleet.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_fleet::DeleteFleetOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted fleet.</p>
     /// - On failure, responds with [`SdkError<DeleteFleetError>`](crate::operation::delete_fleet::DeleteFleetError)
-    pub fn delete_fleet(
-        &self,
-    ) -> crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder {
+    pub fn delete_fleet(&self) -> crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder {
         crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::new(self.handle.clone())
     }
 }

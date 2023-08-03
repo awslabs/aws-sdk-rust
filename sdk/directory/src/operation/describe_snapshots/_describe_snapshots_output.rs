@@ -31,17 +31,14 @@ impl ::aws_http::request_id::RequestId for DescribeSnapshotsOutput {
 }
 impl DescribeSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotsOutput`](crate::operation::describe_snapshots::DescribeSnapshotsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_snapshots::builders::DescribeSnapshotsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_snapshots::builders::DescribeSnapshotsOutputBuilder {
         crate::operation::describe_snapshots::builders::DescribeSnapshotsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSnapshotsOutput`](crate::operation::describe_snapshots::DescribeSnapshotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnapshotsOutputBuilder {
     pub(crate) snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -62,10 +59,7 @@ impl DescribeSnapshotsOutputBuilder {
     }
     /// <p>The list of <code>Snapshot</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
-    pub fn set_snapshots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
-    ) -> Self {
+    pub fn set_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>) -> Self {
         self.snapshots = input;
         self
     }

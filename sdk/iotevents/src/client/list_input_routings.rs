@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`routed_resources(Option<Vec<RoutedResource>>)`](crate::operation::list_input_routings::ListInputRoutingsOutput::routed_resources): <p> Summary information about the routed resources. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_input_routings::ListInputRoutingsOutput::next_token): <p> The token that you can use to return the next set of results, or <code>null</code> if there are no more results. </p>
     /// - On failure, responds with [`SdkError<ListInputRoutingsError>`](crate::operation::list_input_routings::ListInputRoutingsError)
-    pub fn list_input_routings(
-        &self,
-    ) -> crate::operation::list_input_routings::builders::ListInputRoutingsFluentBuilder {
-        crate::operation::list_input_routings::builders::ListInputRoutingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_input_routings(&self) -> crate::operation::list_input_routings::builders::ListInputRoutingsFluentBuilder {
+        crate::operation::list_input_routings::builders::ListInputRoutingsFluentBuilder::new(self.handle.clone())
     }
 }

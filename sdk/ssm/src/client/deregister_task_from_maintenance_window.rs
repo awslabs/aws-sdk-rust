@@ -9,7 +9,11 @@ impl super::Client {
     ///   - [`window_id(Option<String>)`](crate::operation::deregister_task_from_maintenance_window::DeregisterTaskFromMaintenanceWindowOutput::window_id): <p>The ID of the maintenance window the task was removed from.</p>
     ///   - [`window_task_id(Option<String>)`](crate::operation::deregister_task_from_maintenance_window::DeregisterTaskFromMaintenanceWindowOutput::window_task_id): <p>The ID of the task removed from the maintenance window.</p>
     /// - On failure, responds with [`SdkError<DeregisterTaskFromMaintenanceWindowError>`](crate::operation::deregister_task_from_maintenance_window::DeregisterTaskFromMaintenanceWindowError)
-    pub fn deregister_task_from_maintenance_window(&self) -> crate::operation::deregister_task_from_maintenance_window::builders::DeregisterTaskFromMaintenanceWindowFluentBuilder{
-        crate::operation::deregister_task_from_maintenance_window::builders::DeregisterTaskFromMaintenanceWindowFluentBuilder::new(self.handle.clone())
+    pub fn deregister_task_from_maintenance_window(
+        &self,
+    ) -> crate::operation::deregister_task_from_maintenance_window::builders::DeregisterTaskFromMaintenanceWindowFluentBuilder {
+        crate::operation::deregister_task_from_maintenance_window::builders::DeregisterTaskFromMaintenanceWindowFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

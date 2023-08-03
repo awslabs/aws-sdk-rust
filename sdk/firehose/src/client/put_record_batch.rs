@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`encrypted(Option<bool>)`](crate::operation::put_record_batch::PutRecordBatchOutput::encrypted): <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
     ///   - [`request_responses(Option<Vec<PutRecordBatchResponseEntry>>)`](crate::operation::put_record_batch::PutRecordBatchOutput::request_responses): <p>The results array. For each record, the index of the response element is the same as the index used in the request array.</p>
     /// - On failure, responds with [`SdkError<PutRecordBatchError>`](crate::operation::put_record_batch::PutRecordBatchError)
-    pub fn put_record_batch(
-        &self,
-    ) -> crate::operation::put_record_batch::builders::PutRecordBatchFluentBuilder {
-        crate::operation::put_record_batch::builders::PutRecordBatchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_record_batch(&self) -> crate::operation::put_record_batch::builders::PutRecordBatchFluentBuilder {
+        crate::operation::put_record_batch::builders::PutRecordBatchFluentBuilder::new(self.handle.clone())
     }
 }

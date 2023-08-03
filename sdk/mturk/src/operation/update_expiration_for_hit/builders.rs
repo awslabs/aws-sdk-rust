@@ -26,8 +26,7 @@ impl UpdateExpirationForHitInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateExpirationForHITFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHitInputBuilder,
+    inner: crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHitInputBuilder,
 }
 impl UpdateExpirationForHITFluentBuilder {
     /// Creates a new `UpdateExpirationForHIT`.
@@ -38,10 +37,7 @@ impl UpdateExpirationForHITFluentBuilder {
         }
     }
     /// Access the UpdateExpirationForHIT as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHitInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateExpirationForHITFluentBuilder {
             crate::operation::update_expiration_for_hit::UpdateExpirationForHIT,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_expiration_for_hit::UpdateExpirationForHITError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_expiration_for_hit::UpdateExpirationForHITError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateExpirationForHITFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateExpirationForHITFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_expiration_for_hit::UpdateExpirationForHitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_expiration_for_hit::UpdateExpirationForHITError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_expiration_for_hit::UpdateExpirationForHITError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateExpirationForHITFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_expiration_for_hit::UpdateExpirationForHitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_expiration_for_hit::UpdateExpirationForHITError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_expiration_for_hit::UpdateExpirationForHITError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl UpdateExpirationForHITFluentBuilder {
             crate::operation::update_expiration_for_hit::UpdateExpirationForHIT,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_expiration_for_hit::UpdateExpirationForHITError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_expiration_for_hit::UpdateExpirationForHITError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +129,7 @@ impl UpdateExpirationForHITFluentBuilder {
         self
     }
     /// <p> The date and time at which you want the HIT to expire </p>
-    pub fn set_expire_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expire_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_expire_at(input);
         self
     }

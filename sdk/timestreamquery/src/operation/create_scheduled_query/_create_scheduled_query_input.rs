@@ -51,21 +51,15 @@ impl CreateScheduledQueryInput {
         self.query_string.as_deref()
     }
     /// <p>The schedule configuration for the query.</p>
-    pub fn schedule_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
+    pub fn schedule_configuration(&self) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
         self.schedule_configuration.as_ref()
     }
     /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it. </p>
-    pub fn notification_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
     /// <p>Configuration used for writing the result of a query.</p>
-    pub fn target_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetConfiguration> {
+    pub fn target_configuration(&self) -> ::std::option::Option<&crate::types::TargetConfiguration> {
         self.target_configuration.as_ref()
     }
     /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request. </p>
@@ -90,9 +84,7 @@ impl CreateScheduledQueryInput {
         self.kms_key_id.as_deref()
     }
     /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results. </p>
-    pub fn error_report_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ErrorReportConfiguration> {
+    pub fn error_report_configuration(&self) -> ::std::option::Option<&crate::types::ErrorReportConfiguration> {
         self.error_report_configuration.as_ref()
     }
 }
@@ -102,29 +94,19 @@ impl ::std::fmt::Debug for CreateScheduledQueryInput {
         formatter.field("name", &self.name);
         formatter.field("query_string", &"*** Sensitive Data Redacted ***");
         formatter.field("schedule_configuration", &self.schedule_configuration);
-        formatter.field(
-            "notification_configuration",
-            &self.notification_configuration,
-        );
+        formatter.field("notification_configuration", &self.notification_configuration);
         formatter.field("target_configuration", &self.target_configuration);
         formatter.field("client_token", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "scheduled_query_execution_role_arn",
-            &self.scheduled_query_execution_role_arn,
-        );
+        formatter.field("scheduled_query_execution_role_arn", &self.scheduled_query_execution_role_arn);
         formatter.field("tags", &self.tags);
         formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field(
-            "error_report_configuration",
-            &self.error_report_configuration,
-        );
+        formatter.field("error_report_configuration", &self.error_report_configuration);
         formatter.finish()
     }
 }
 impl CreateScheduledQueryInput {
     /// Creates a new builder-style object to manufacture [`CreateScheduledQueryInput`](crate::operation::create_scheduled_query::CreateScheduledQueryInput).
-    pub fn builder(
-    ) -> crate::operation::create_scheduled_query::builders::CreateScheduledQueryInputBuilder {
+    pub fn builder() -> crate::operation::create_scheduled_query::builders::CreateScheduledQueryInputBuilder {
         crate::operation::create_scheduled_query::builders::CreateScheduledQueryInputBuilder::default()
     }
 }
@@ -136,15 +118,13 @@ pub struct CreateScheduledQueryInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_configuration: ::std::option::Option<crate::types::ScheduleConfiguration>,
-    pub(crate) notification_configuration:
-        ::std::option::Option<crate::types::NotificationConfiguration>,
+    pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     pub(crate) target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_query_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) error_report_configuration:
-        ::std::option::Option<crate::types::ErrorReportConfiguration>,
+    pub(crate) error_report_configuration: ::std::option::Option<crate::types::ErrorReportConfiguration>,
 }
 impl CreateScheduledQueryInputBuilder {
     /// <p>Name of the scheduled query.</p>
@@ -184,39 +164,26 @@ impl CreateScheduledQueryInputBuilder {
         self
     }
     /// <p>The schedule configuration for the query.</p>
-    pub fn set_schedule_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleConfiguration>,
-    ) -> Self {
+    pub fn set_schedule_configuration(mut self, input: ::std::option::Option<crate::types::ScheduleConfiguration>) -> Self {
         self.schedule_configuration = input;
         self
     }
     /// <p>The schedule configuration for the query.</p>
-    pub fn get_schedule_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
+    pub fn get_schedule_configuration(&self) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
         &self.schedule_configuration
     }
     /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it. </p>
-    pub fn notification_configuration(
-        mut self,
-        input: crate::types::NotificationConfiguration,
-    ) -> Self {
+    pub fn notification_configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.notification_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it. </p>
-    pub fn set_notification_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationConfiguration>,
-    ) -> Self {
+    pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
         self.notification_configuration = input;
         self
     }
     /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it. </p>
-    pub fn get_notification_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+    pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         &self.notification_configuration
     }
     /// <p>Configuration used for writing the result of a query.</p>
@@ -225,17 +192,12 @@ impl CreateScheduledQueryInputBuilder {
         self
     }
     /// <p>Configuration used for writing the result of a query.</p>
-    pub fn set_target_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetConfiguration>,
-    ) -> Self {
+    pub fn set_target_configuration(mut self, input: ::std::option::Option<crate::types::TargetConfiguration>) -> Self {
         self.target_configuration = input;
         self
     }
     /// <p>Configuration used for writing the result of a query.</p>
-    pub fn get_target_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetConfiguration> {
+    pub fn get_target_configuration(&self) -> &::std::option::Option<crate::types::TargetConfiguration> {
         &self.target_configuration
     }
     /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request. </p>
@@ -265,25 +227,17 @@ impl CreateScheduledQueryInputBuilder {
         &self.client_token
     }
     /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query. </p>
-    pub fn scheduled_query_execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_query_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_query_execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query. </p>
-    pub fn set_scheduled_query_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_query_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_query_execution_role_arn = input;
         self
     }
     /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query. </p>
-    pub fn get_scheduled_query_execution_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_scheduled_query_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduled_query_execution_role_arn
     }
     /// Appends an item to `tags`.
@@ -298,10 +252,7 @@ impl CreateScheduledQueryInputBuilder {
         self
     }
     /// <p>A list of key-value pairs to label the scheduled query.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -327,48 +278,36 @@ impl CreateScheduledQueryInputBuilder {
         &self.kms_key_id
     }
     /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results. </p>
-    pub fn error_report_configuration(
-        mut self,
-        input: crate::types::ErrorReportConfiguration,
-    ) -> Self {
+    pub fn error_report_configuration(mut self, input: crate::types::ErrorReportConfiguration) -> Self {
         self.error_report_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results. </p>
-    pub fn set_error_report_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorReportConfiguration>,
-    ) -> Self {
+    pub fn set_error_report_configuration(mut self, input: ::std::option::Option<crate::types::ErrorReportConfiguration>) -> Self {
         self.error_report_configuration = input;
         self
     }
     /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results. </p>
-    pub fn get_error_report_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ErrorReportConfiguration> {
+    pub fn get_error_report_configuration(&self) -> &::std::option::Option<crate::types::ErrorReportConfiguration> {
         &self.error_report_configuration
     }
     /// Consumes the builder and constructs a [`CreateScheduledQueryInput`](crate::operation::create_scheduled_query::CreateScheduledQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_scheduled_query::CreateScheduledQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_scheduled_query::CreateScheduledQueryInput {
-                name: self.name,
-                query_string: self.query_string,
-                schedule_configuration: self.schedule_configuration,
-                notification_configuration: self.notification_configuration,
-                target_configuration: self.target_configuration,
-                client_token: self.client_token,
-                scheduled_query_execution_role_arn: self.scheduled_query_execution_role_arn,
-                tags: self.tags,
-                kms_key_id: self.kms_key_id,
-                error_report_configuration: self.error_report_configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_scheduled_query::CreateScheduledQueryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_scheduled_query::CreateScheduledQueryInput {
+            name: self.name,
+            query_string: self.query_string,
+            schedule_configuration: self.schedule_configuration,
+            notification_configuration: self.notification_configuration,
+            target_configuration: self.target_configuration,
+            client_token: self.client_token,
+            scheduled_query_execution_role_arn: self.scheduled_query_execution_role_arn,
+            tags: self.tags,
+            kms_key_id: self.kms_key_id,
+            error_report_configuration: self.error_report_configuration,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateScheduledQueryInputBuilder {
@@ -377,22 +316,13 @@ impl ::std::fmt::Debug for CreateScheduledQueryInputBuilder {
         formatter.field("name", &self.name);
         formatter.field("query_string", &"*** Sensitive Data Redacted ***");
         formatter.field("schedule_configuration", &self.schedule_configuration);
-        formatter.field(
-            "notification_configuration",
-            &self.notification_configuration,
-        );
+        formatter.field("notification_configuration", &self.notification_configuration);
         formatter.field("target_configuration", &self.target_configuration);
         formatter.field("client_token", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "scheduled_query_execution_role_arn",
-            &self.scheduled_query_execution_role_arn,
-        );
+        formatter.field("scheduled_query_execution_role_arn", &self.scheduled_query_execution_role_arn);
         formatter.field("tags", &self.tags);
         formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field(
-            "error_report_configuration",
-            &self.error_report_configuration,
-        );
+        formatter.field("error_report_configuration", &self.error_report_configuration);
         formatter.finish()
     }
 }

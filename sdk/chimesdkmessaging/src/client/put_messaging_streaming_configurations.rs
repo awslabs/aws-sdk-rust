@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`PutMessagingStreamingConfigurationsOutput`](crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsOutput) with field(s):
     ///   - [`streaming_configurations(Option<Vec<StreamingConfiguration>>)`](crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsOutput::streaming_configurations): <p>The requested streaming configurations.</p>
     /// - On failure, responds with [`SdkError<PutMessagingStreamingConfigurationsError>`](crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError)
-    pub fn put_messaging_streaming_configurations(&self) -> crate::operation::put_messaging_streaming_configurations::builders::PutMessagingStreamingConfigurationsFluentBuilder{
+    pub fn put_messaging_streaming_configurations(
+        &self,
+    ) -> crate::operation::put_messaging_streaming_configurations::builders::PutMessagingStreamingConfigurationsFluentBuilder {
         crate::operation::put_messaging_streaming_configurations::builders::PutMessagingStreamingConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

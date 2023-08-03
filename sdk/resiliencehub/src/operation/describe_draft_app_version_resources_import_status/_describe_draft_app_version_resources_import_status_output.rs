@@ -49,16 +49,16 @@ impl ::aws_http::request_id::RequestId for DescribeDraftAppVersionResourcesImpor
 }
 impl DescribeDraftAppVersionResourcesImportStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDraftAppVersionResourcesImportStatusOutput`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput).
-    pub fn builder() -> crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusOutputBuilder
+    {
         crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDraftAppVersionResourcesImportStatusOutput`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDraftAppVersionResourcesImportStatusOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -102,10 +102,7 @@ impl DescribeDraftAppVersionResourcesImportStatusOutputBuilder {
         self
     }
     /// <p>The status of the action.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceImportStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceImportStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -119,10 +116,7 @@ impl DescribeDraftAppVersionResourcesImportStatusOutputBuilder {
         self
     }
     /// <p>The timestamp for when the status last changed.</p>
-    pub fn set_status_change_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_status_change_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.status_change_time = input;
         self
     }
@@ -131,18 +125,12 @@ impl DescribeDraftAppVersionResourcesImportStatusOutputBuilder {
         &self.status_change_time
     }
     /// <p>The returned error message for the request.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The returned error message for the request.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -160,18 +148,13 @@ impl DescribeDraftAppVersionResourcesImportStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDraftAppVersionResourcesImportStatusOutput`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput).
-    pub fn build(self) -> crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput{
+    pub fn build(self) -> crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput {
         crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput {
-            app_arn: self.app_arn
-            ,
-            app_version: self.app_version
-            ,
-            status: self.status
-            ,
-            status_change_time: self.status_change_time
-            ,
-            error_message: self.error_message
-            ,
+            app_arn: self.app_arn,
+            app_version: self.app_version,
+            status: self.status,
+            status_change_time: self.status_change_time,
+            error_message: self.error_message,
             _request_id: self._request_id,
         }
     }

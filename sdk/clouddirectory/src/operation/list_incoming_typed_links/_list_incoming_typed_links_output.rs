@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListIncomingTypedLinksOutput {
 }
 impl ListIncomingTypedLinksOutput {
     /// Creates a new builder-style object to manufacture [`ListIncomingTypedLinksOutput`](crate::operation::list_incoming_typed_links::ListIncomingTypedLinksOutput).
-    pub fn builder(
-    ) -> crate::operation::list_incoming_typed_links::builders::ListIncomingTypedLinksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_incoming_typed_links::builders::ListIncomingTypedLinksOutputBuilder {
         crate::operation::list_incoming_typed_links::builders::ListIncomingTypedLinksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIncomingTypedLinksOutput`](crate::operation::list_incoming_typed_links::ListIncomingTypedLinksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIncomingTypedLinksOutputBuilder {
-    pub(crate) link_specifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>>,
+    pub(crate) link_specifiers: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListIncomingTypedLinksOutputBuilder {
         self
     }
     /// <p>Returns one or more typed link specifiers as output.</p>
-    pub fn set_link_specifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>>,
-    ) -> Self {
+    pub fn set_link_specifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>>) -> Self {
         self.link_specifiers = input;
         self
     }
     /// <p>Returns one or more typed link specifiers as output.</p>
-    pub fn get_link_specifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>> {
+    pub fn get_link_specifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>> {
         &self.link_specifiers
     }
     /// <p>The pagination token.</p>
@@ -96,9 +86,7 @@ impl ListIncomingTypedLinksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListIncomingTypedLinksOutput`](crate::operation::list_incoming_typed_links::ListIncomingTypedLinksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_incoming_typed_links::ListIncomingTypedLinksOutput {
+    pub fn build(self) -> crate::operation::list_incoming_typed_links::ListIncomingTypedLinksOutput {
         crate::operation::list_incoming_typed_links::ListIncomingTypedLinksOutput {
             link_specifiers: self.link_specifiers,
             next_token: self.next_token,

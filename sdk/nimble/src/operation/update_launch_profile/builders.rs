@@ -37,9 +37,7 @@ impl UpdateLaunchProfileFluentBuilder {
         }
     }
     /// Access the UpdateLaunchProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_launch_profile::builders::UpdateLaunchProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_launch_profile::builders::UpdateLaunchProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateLaunchProfileFluentBuilder {
             crate::operation::update_launch_profile::UpdateLaunchProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_launch_profile::UpdateLaunchProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_launch_profile::UpdateLaunchProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateLaunchProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateLaunchProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_launch_profile::UpdateLaunchProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_launch_profile::UpdateLaunchProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_launch_profile::UpdateLaunchProfileError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateLaunchProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_launch_profile::UpdateLaunchProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_launch_profile::UpdateLaunchProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_launch_profile::UpdateLaunchProfileError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateLaunchProfileFluentBuilder {
             crate::operation::update_launch_profile::UpdateLaunchProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_launch_profile::UpdateLaunchProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_launch_profile::UpdateLaunchProfileError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +138,12 @@ impl UpdateLaunchProfileFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_profile_id(input.into());
         self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn set_launch_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_profile_id(input);
         self
     }
@@ -175,25 +156,17 @@ impl UpdateLaunchProfileFluentBuilder {
     /// To override the contents of this collection use [`set_launch_profile_protocol_versions`](Self::set_launch_profile_protocol_versions).
     ///
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    pub fn launch_profile_protocol_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_profile_protocol_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_profile_protocol_versions(input.into());
         self
     }
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    pub fn set_launch_profile_protocol_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_launch_profile_protocol_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_launch_profile_protocol_versions(input);
         self
     }
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    pub fn get_launch_profile_protocol_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_launch_profile_protocol_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_launch_profile_protocol_versions()
     }
     /// <p>The name for the launch profile.</p>
@@ -216,17 +189,12 @@ impl UpdateLaunchProfileFluentBuilder {
         self
     }
     /// <p>A configuration for a streaming session.</p>
-    pub fn set_stream_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamConfigurationCreate>,
-    ) -> Self {
+    pub fn set_stream_configuration(mut self, input: ::std::option::Option<crate::types::StreamConfigurationCreate>) -> Self {
         self.inner = self.inner.set_stream_configuration(input);
         self
     }
     /// <p>A configuration for a streaming session.</p>
-    pub fn get_stream_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamConfigurationCreate> {
+    pub fn get_stream_configuration(&self) -> &::std::option::Option<crate::types::StreamConfigurationCreate> {
         self.inner.get_stream_configuration()
     }
     /// Appends an item to `studioComponentIds`.
@@ -234,25 +202,17 @@ impl UpdateLaunchProfileFluentBuilder {
     /// To override the contents of this collection use [`set_studio_component_ids`](Self::set_studio_component_ids).
     ///
     /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
-    pub fn studio_component_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn studio_component_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_component_ids(input.into());
         self
     }
     /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
-    pub fn set_studio_component_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_studio_component_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_studio_component_ids(input);
         self
     }
     /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
-    pub fn get_studio_component_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_studio_component_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_studio_component_ids()
     }
     /// <p>The studio ID. </p>

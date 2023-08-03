@@ -8,9 +8,7 @@ pub fn ser_start_asset_bundle_export_job_input(
     }
     if let Some(var_2) = &input.cloud_formation_override_property_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object
-            .key("CloudFormationOverridePropertyConfiguration")
-            .start_object();
+        let mut object_3 = object.key("CloudFormationOverridePropertyConfiguration").start_object();
         crate::protocol_serde::shape_asset_bundle_cloud_formation_override_property_configuration::ser_asset_bundle_cloud_formation_override_property_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }

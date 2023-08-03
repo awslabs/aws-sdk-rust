@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`metric_names(Option<Vec<String>>)`](crate::operation::list_custom_metrics::ListCustomMetricsOutput::metric_names): <p> The name of the custom metric. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_metrics::ListCustomMetricsOutput::next_token): <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     /// - On failure, responds with [`SdkError<ListCustomMetricsError>`](crate::operation::list_custom_metrics::ListCustomMetricsError)
-    pub fn list_custom_metrics(
-        &self,
-    ) -> crate::operation::list_custom_metrics::builders::ListCustomMetricsFluentBuilder {
-        crate::operation::list_custom_metrics::builders::ListCustomMetricsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_custom_metrics(&self) -> crate::operation::list_custom_metrics::builders::ListCustomMetricsFluentBuilder {
+        crate::operation::list_custom_metrics::builders::ListCustomMetricsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -39,9 +39,7 @@ impl UpdateChannelMessageFluentBuilder {
         }
     }
     /// Access the UpdateChannelMessage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_channel_message::builders::UpdateChannelMessageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_channel_message::builders::UpdateChannelMessageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl UpdateChannelMessageFluentBuilder {
             crate::operation::update_channel_message::UpdateChannelMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_channel_message::UpdateChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel_message::UpdateChannelMessageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl UpdateChannelMessageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl UpdateChannelMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_channel_message::UpdateChannelMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_channel_message::UpdateChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel_message::UpdateChannelMessageError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl UpdateChannelMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_channel_message::UpdateChannelMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_channel_message::UpdateChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel_message::UpdateChannelMessageError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl UpdateChannelMessageFluentBuilder {
             crate::operation::update_channel_message::UpdateChannelMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_channel_message::UpdateChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel_message::UpdateChannelMessageError>,
     > {
         self.customize_middleware().await
     }
@@ -197,20 +184,14 @@ impl UpdateChannelMessageFluentBuilder {
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when updating messages in a SubChannel that the user belongs to.</p>
     /// </note>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sub_channel_id(input.into());
         self
     }
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when updating messages in a SubChannel that the user belongs to.</p>
     /// </note>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sub_channel_id(input);
         self
     }

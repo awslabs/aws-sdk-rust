@@ -17,9 +17,7 @@ pub struct CreateWorldExportJobInput {
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateWorldExportJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -39,50 +37,35 @@ impl CreateWorldExportJobInput {
         self.iam_role.as_deref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateWorldExportJobInput {
     /// Creates a new builder-style object to manufacture [`CreateWorldExportJobInput`](crate::operation::create_world_export_job::CreateWorldExportJobInput).
-    pub fn builder(
-    ) -> crate::operation::create_world_export_job::builders::CreateWorldExportJobInputBuilder {
+    pub fn builder() -> crate::operation::create_world_export_job::builders::CreateWorldExportJobInputBuilder {
         crate::operation::create_world_export_job::builders::CreateWorldExportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWorldExportJobInput`](crate::operation::create_world_export_job::CreateWorldExportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorldExportJobInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) worlds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) output_location: ::std::option::Option<crate::types::OutputLocation>,
     pub(crate) iam_role: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateWorldExportJobInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -102,10 +85,7 @@ impl CreateWorldExportJobInputBuilder {
         self
     }
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
-    pub fn set_worlds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_worlds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.worlds = input;
         self
     }
@@ -119,10 +99,7 @@ impl CreateWorldExportJobInputBuilder {
         self
     }
     /// <p>The output location.</p>
-    pub fn set_output_location(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputLocation>,
-    ) -> Self {
+    pub fn set_output_location(mut self, input: ::std::option::Option<crate::types::OutputLocation>) -> Self {
         self.output_location = input;
         self
     }
@@ -149,49 +126,32 @@ impl CreateWorldExportJobInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateWorldExportJobInput`](crate::operation::create_world_export_job::CreateWorldExportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_world_export_job::CreateWorldExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_world_export_job::CreateWorldExportJobInput {
-                client_request_token: self.client_request_token,
-                worlds: self.worlds,
-                output_location: self.output_location,
-                iam_role: self.iam_role,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_world_export_job::CreateWorldExportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_world_export_job::CreateWorldExportJobInput {
+            client_request_token: self.client_request_token,
+            worlds: self.worlds,
+            output_location: self.output_location,
+            iam_role: self.iam_role,
+            tags: self.tags,
+        })
     }
 }

@@ -4,9 +4,7 @@ pub fn ser_put_deliverability_dashboard_option_input(
     input: &crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     {
-        object
-            .key("DashboardEnabled")
-            .boolean(input.dashboard_enabled);
+        object.key("DashboardEnabled").boolean(input.dashboard_enabled);
     }
     if let Some(var_1) = &input.subscribed_domains {
         let mut array_2 = object.key("SubscribedDomains").start_array();

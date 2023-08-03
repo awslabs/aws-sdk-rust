@@ -10,10 +10,7 @@ impl RevokeTokenInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::revoke_token::RevokeTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_token::RevokeTokenError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_token::RevokeTokenError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.revoke_token();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl RevokeTokenFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::revoke_token::RevokeToken,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::revoke_token::RevokeToken, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::revoke_token::RevokeTokenError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl RevokeTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl RevokeTokenFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::revoke_token::RevokeToken,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::revoke_token::RevokeToken, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::revoke_token::RevokeTokenError>,
     > {
         self.customize_middleware().await
@@ -141,18 +129,12 @@ impl RevokeTokenFluentBuilder {
         self.inner.get_client_id()
     }
     /// <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
-    pub fn client_secret(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_secret(input.into());
         self
     }
     /// <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
-    pub fn set_client_secret(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_secret(input);
         self
     }

@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::deregister_application::builders::DeregisterApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::deregister_application::builders::DeregisterApplicationFluentBuilder::set_application_id): <p>The ID of the application.</p>
     /// - On success, responds with [`DeregisterApplicationOutput`](crate::operation::deregister_application::DeregisterApplicationOutput)
     /// - On failure, responds with [`SdkError<DeregisterApplicationError>`](crate::operation::deregister_application::DeregisterApplicationError)
-    pub fn deregister_application(
-        &self,
-    ) -> crate::operation::deregister_application::builders::DeregisterApplicationFluentBuilder
-    {
-        crate::operation::deregister_application::builders::DeregisterApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deregister_application(&self) -> crate::operation::deregister_application::builders::DeregisterApplicationFluentBuilder {
+        crate::operation::deregister_application::builders::DeregisterApplicationFluentBuilder::new(self.handle.clone())
     }
 }

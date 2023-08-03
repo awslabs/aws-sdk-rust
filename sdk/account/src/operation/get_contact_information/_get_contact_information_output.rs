@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetContactInformationOutput {
 }
 impl GetContactInformationOutput {
     /// Creates a new builder-style object to manufacture [`GetContactInformationOutput`](crate::operation::get_contact_information::GetContactInformationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_contact_information::builders::GetContactInformationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_contact_information::builders::GetContactInformationOutputBuilder {
         crate::operation::get_contact_information::builders::GetContactInformationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContactInformationOutput`](crate::operation::get_contact_information::GetContactInformationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContactInformationOutputBuilder {
     pub(crate) contact_information: ::std::option::Option<crate::types::ContactInformation>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetContactInformationOutputBuilder {
         self
     }
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
-    pub fn set_contact_information(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactInformation>,
-    ) -> Self {
+    pub fn set_contact_information(mut self, input: ::std::option::Option<crate::types::ContactInformation>) -> Self {
         self.contact_information = input;
         self
     }
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
-    pub fn get_contact_information(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContactInformation> {
+    pub fn get_contact_information(&self) -> &::std::option::Option<crate::types::ContactInformation> {
         &self.contact_information
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

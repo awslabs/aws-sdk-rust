@@ -37,9 +37,7 @@ impl SecurityGroupReference {
 
 /// A builder for [`SecurityGroupReference`](crate::types::SecurityGroupReference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityGroupReferenceBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) referencing_vpc_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl SecurityGroupReferenceBuilder {
         &self.group_id
     }
     /// <p>The ID of the VPC with the referencing security group.</p>
-    pub fn referencing_vpc_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn referencing_vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.referencing_vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC with the referencing security group.</p>
-    pub fn set_referencing_vpc_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_referencing_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.referencing_vpc_id = input;
         self
     }
@@ -81,18 +73,12 @@ impl SecurityGroupReferenceBuilder {
         &self.referencing_vpc_id
     }
     /// <p>The ID of the VPC peering connection.</p>
-    pub fn vpc_peering_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_peering_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_peering_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC peering connection.</p>
-    pub fn set_vpc_peering_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_peering_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_peering_connection_id = input;
         self
     }

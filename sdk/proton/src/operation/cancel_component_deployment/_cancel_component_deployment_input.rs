@@ -15,33 +15,25 @@ impl CancelComponentDeploymentInput {
 }
 impl CancelComponentDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CancelComponentDeploymentInput`](crate::operation::cancel_component_deployment::CancelComponentDeploymentInput).
-    pub fn builder() -> crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentInputBuilder{
+    pub fn builder() -> crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentInputBuilder {
         crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelComponentDeploymentInput`](crate::operation::cancel_component_deployment::CancelComponentDeploymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelComponentDeploymentInputBuilder {
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
 }
 impl CancelComponentDeploymentInputBuilder {
     /// <p>The name of the component with the deployment to cancel.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component with the deployment to cancel.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }
@@ -56,10 +48,8 @@ impl CancelComponentDeploymentInputBuilder {
         crate::operation::cancel_component_deployment::CancelComponentDeploymentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_component_deployment::CancelComponentDeploymentInput {
-                component_name: self.component_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::cancel_component_deployment::CancelComponentDeploymentInput {
+            component_name: self.component_name,
+        })
     }
 }

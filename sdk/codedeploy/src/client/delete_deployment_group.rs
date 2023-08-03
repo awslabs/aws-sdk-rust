@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDeploymentGroupOutput`](crate::operation::delete_deployment_group::DeleteDeploymentGroupOutput) with field(s):
     ///   - [`hooks_not_cleaned_up(Option<Vec<AutoScalingGroup>>)`](crate::operation::delete_deployment_group::DeleteDeploymentGroupOutput::hooks_not_cleaned_up): <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
     /// - On failure, responds with [`SdkError<DeleteDeploymentGroupError>`](crate::operation::delete_deployment_group::DeleteDeploymentGroupError)
-    pub fn delete_deployment_group(
-        &self,
-    ) -> crate::operation::delete_deployment_group::builders::DeleteDeploymentGroupFluentBuilder
-    {
-        crate::operation::delete_deployment_group::builders::DeleteDeploymentGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_deployment_group(&self) -> crate::operation::delete_deployment_group::builders::DeleteDeploymentGroupFluentBuilder {
+        crate::operation::delete_deployment_group::builders::DeleteDeploymentGroupFluentBuilder::new(self.handle.clone())
     }
 }

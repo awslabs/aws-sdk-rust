@@ -37,9 +37,7 @@ impl ListNotebookMetadataFluentBuilder {
         }
     }
     /// Access the ListNotebookMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_notebook_metadata::builders::ListNotebookMetadataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_notebook_metadata::builders::ListNotebookMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListNotebookMetadataFluentBuilder {
             crate::operation::list_notebook_metadata::ListNotebookMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notebook_metadata::ListNotebookMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_metadata::ListNotebookMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListNotebookMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListNotebookMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_notebook_metadata::ListNotebookMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notebook_metadata::ListNotebookMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_metadata::ListNotebookMetadataError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListNotebookMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_notebook_metadata::ListNotebookMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notebook_metadata::ListNotebookMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_metadata::ListNotebookMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ListNotebookMetadataFluentBuilder {
             crate::operation::list_notebook_metadata::ListNotebookMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_notebook_metadata::ListNotebookMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_metadata::ListNotebookMetadataError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl ListNotebookMetadataFluentBuilder {
         self
     }
     /// <p>Search filter string.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterDefinition>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::FilterDefinition>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

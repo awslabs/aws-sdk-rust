@@ -10,10 +10,7 @@ impl ListStackSetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_stack_sets::ListStackSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_sets::ListStackSetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_sets::ListStackSetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_stack_sets();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl ListStackSetsFluentBuilder {
         }
     }
     /// Access the ListStackSets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_stack_sets::builders::ListStackSetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_stack_sets::builders::ListStackSetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -66,10 +61,7 @@ impl ListStackSetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -122,13 +114,8 @@ impl ListStackSetsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_stack_sets::paginator::ListStackSetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_stack_sets::paginator::ListStackSetsPaginator {
-        crate::operation::list_stack_sets::paginator::ListStackSetsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_stack_sets::paginator::ListStackSetsPaginator {
+        crate::operation::list_stack_sets::paginator::ListStackSetsPaginator::new(self.handle, self.inner)
     }
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListStackSets</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,10 +151,7 @@ impl ListStackSetsFluentBuilder {
         self
     }
     /// <p>The status of the stack sets that you want to get summary information about.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StackSetStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

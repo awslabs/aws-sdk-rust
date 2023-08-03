@@ -10,10 +10,7 @@ impl ListTapesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_tapes::ListTapesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tapes::ListTapesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tapes::ListTapesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_tapes();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ListTapesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_tapes::ListTapes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_tapes::ListTapes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_tapes::ListTapesError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ListTapesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl ListTapesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_tapes::ListTapes,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_tapes::ListTapes, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_tapes::ListTapesError>,
     > {
         self.customize_middleware().await
@@ -129,10 +117,7 @@ impl ListTapesFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS.</p>
-    pub fn set_tape_ar_ns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tape_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tape_ar_ns(input);
         self
     }

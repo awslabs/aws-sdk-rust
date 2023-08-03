@@ -27,9 +27,7 @@ pub struct UpdateBranchInput {
     pub enable_auto_build: ::std::option::Option<bool>,
     /// <p> The environment variables for the branch. </p>
     #[doc(hidden)]
-    pub environment_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     #[doc(hidden)]
     pub basic_auth_credentials: ::std::option::Option<::std::string::String>,
@@ -89,11 +87,7 @@ impl UpdateBranchInput {
         self.enable_auto_build
     }
     /// <p> The environment variables for the branch. </p>
-    pub fn environment_variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
     /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
@@ -151,14 +145,8 @@ impl ::std::fmt::Debug for UpdateBranchInput {
         formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("ttl", &self.ttl);
         formatter.field("display_name", &self.display_name);
-        formatter.field(
-            "enable_pull_request_preview",
-            &self.enable_pull_request_preview,
-        );
-        formatter.field(
-            "pull_request_environment_name",
-            &self.pull_request_environment_name,
-        );
+        formatter.field("enable_pull_request_preview", &self.enable_pull_request_preview);
+        formatter.field("pull_request_environment_name", &self.pull_request_environment_name);
         formatter.field("backend_environment_arn", &self.backend_environment_arn);
         formatter.finish()
     }
@@ -181,9 +169,7 @@ pub struct UpdateBranchInputBuilder {
     pub(crate) stage: ::std::option::Option<crate::types::Stage>,
     pub(crate) enable_notification: ::std::option::Option<bool>,
     pub(crate) enable_auto_build: ::std::option::Option<bool>,
-    pub(crate) environment_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) basic_auth_credentials: ::std::option::Option<::std::string::String>,
     pub(crate) enable_basic_auth: ::std::option::Option<bool>,
     pub(crate) enable_performance_mode: ::std::option::Option<bool>,
@@ -311,34 +297,22 @@ impl UpdateBranchInputBuilder {
     /// <p> The environment variables for the branch. </p>
     pub fn set_environment_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.environment_variables = input;
         self
     }
     /// <p> The environment variables for the branch. </p>
-    pub fn get_environment_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
     /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn basic_auth_credentials(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn basic_auth_credentials(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.basic_auth_credentials = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn set_basic_auth_credentials(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_basic_auth_credentials(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.basic_auth_credentials = input;
         self
     }
@@ -434,40 +408,26 @@ impl UpdateBranchInputBuilder {
         &self.enable_pull_request_preview
     }
     /// <p> The Amplify environment name for the pull request. </p>
-    pub fn pull_request_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amplify environment name for the pull request. </p>
-    pub fn set_pull_request_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_environment_name = input;
         self
     }
     /// <p> The Amplify environment name for the pull request. </p>
-    pub fn get_pull_request_environment_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_pull_request_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.pull_request_environment_name
     }
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-    pub fn backend_environment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-    pub fn set_backend_environment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_environment_arn = input;
         self
     }
@@ -476,12 +436,7 @@ impl UpdateBranchInputBuilder {
         &self.backend_environment_arn
     }
     /// Consumes the builder and constructs a [`UpdateBranchInput`](crate::operation::update_branch::UpdateBranchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_branch::UpdateBranchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_branch::UpdateBranchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_branch::UpdateBranchInput {
             app_id: self.app_id,
             branch_name: self.branch_name,
@@ -520,14 +475,8 @@ impl ::std::fmt::Debug for UpdateBranchInputBuilder {
         formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("ttl", &self.ttl);
         formatter.field("display_name", &self.display_name);
-        formatter.field(
-            "enable_pull_request_preview",
-            &self.enable_pull_request_preview,
-        );
-        formatter.field(
-            "pull_request_environment_name",
-            &self.pull_request_environment_name,
-        );
+        formatter.field("enable_pull_request_preview", &self.enable_pull_request_preview);
+        formatter.field("pull_request_environment_name", &self.pull_request_environment_name);
         formatter.field("backend_environment_arn", &self.backend_environment_arn);
         formatter.finish()
     }

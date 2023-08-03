@@ -63,9 +63,7 @@ impl DescribeHostsInput {
 
 /// A builder for [`DescribeHostsInput`](crate::operation::describe_hosts::DescribeHostsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHostsInputBuilder {
     pub(crate) filter: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -103,10 +101,7 @@ impl DescribeHostsInputBuilder {
     /// <li> <p> <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> | <code>released-permanent-failure</code>).</p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filter = input;
         self
     }
@@ -135,10 +130,7 @@ impl DescribeHostsInputBuilder {
         self
     }
     /// <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</p>
-    pub fn set_host_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_host_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.host_ids = input;
         self
     }
@@ -180,10 +172,7 @@ impl DescribeHostsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeHostsInput`](crate::operation::describe_hosts::DescribeHostsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_hosts::DescribeHostsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_hosts::DescribeHostsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_hosts::DescribeHostsInput {
             filter: self.filter,
             host_ids: self.host_ids,

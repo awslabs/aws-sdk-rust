@@ -7,10 +7,7 @@ pub fn ser_s3_access_control_policy(
     let mut scope = writer.finish();
     if let Some(var_1) = &input.access_control_list {
         let inner_writer = scope.start_el("AccessControlList");
-        crate::protocol_serde::shape_s3_access_control_list::ser_s3_access_control_list(
-            var_1,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_s3_access_control_list::ser_s3_access_control_list(var_1, inner_writer)?
     }
     if let Some(var_2) = &input.canned_access_control_list {
         let mut inner_writer = scope.start_el("CannedAccessControlList").finish();

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateMulticastGroupOutput {
 }
 impl UpdateMulticastGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMulticastGroupOutput`](crate::operation::update_multicast_group::UpdateMulticastGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_multicast_group::builders::UpdateMulticastGroupOutputBuilder {
+    pub fn builder() -> crate::operation::update_multicast_group::builders::UpdateMulticastGroupOutputBuilder {
         crate::operation::update_multicast_group::builders::UpdateMulticastGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMulticastGroupOutput`](crate::operation::update_multicast_group::UpdateMulticastGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMulticastGroupOutputBuilder {
     _request_id: Option<String>,
 }

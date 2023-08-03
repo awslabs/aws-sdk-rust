@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DataSetFilterAttribute {
     #[allow(missing_docs)] // documentation missing in model
@@ -72,14 +66,10 @@ impl ::std::convert::From<&str> for DataSetFilterAttribute {
             "DATASET_NAME" => DataSetFilterAttribute::DatasetName,
             "DIRECT_QUICKSIGHT_OWNER" => DataSetFilterAttribute::DirectQuicksightOwner,
             "DIRECT_QUICKSIGHT_SOLE_OWNER" => DataSetFilterAttribute::DirectQuicksightSoleOwner,
-            "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" => {
-                DataSetFilterAttribute::DirectQuicksightViewerOrOwner
-            }
+            "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" => DataSetFilterAttribute::DirectQuicksightViewerOrOwner,
             "QUICKSIGHT_OWNER" => DataSetFilterAttribute::QuicksightOwner,
             "QUICKSIGHT_VIEWER_OR_OWNER" => DataSetFilterAttribute::QuicksightViewerOrOwner,
-            other => DataSetFilterAttribute::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DataSetFilterAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -97,9 +87,7 @@ impl DataSetFilterAttribute {
             DataSetFilterAttribute::DatasetName => "DATASET_NAME",
             DataSetFilterAttribute::DirectQuicksightOwner => "DIRECT_QUICKSIGHT_OWNER",
             DataSetFilterAttribute::DirectQuicksightSoleOwner => "DIRECT_QUICKSIGHT_SOLE_OWNER",
-            DataSetFilterAttribute::DirectQuicksightViewerOrOwner => {
-                "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"
-            }
+            DataSetFilterAttribute::DirectQuicksightViewerOrOwner => "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER",
             DataSetFilterAttribute::QuicksightOwner => "QUICKSIGHT_OWNER",
             DataSetFilterAttribute::QuicksightViewerOrOwner => "QUICKSIGHT_VIEWER_OR_OWNER",
             DataSetFilterAttribute::Unknown(value) => value.as_str(),

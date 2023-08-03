@@ -31,9 +31,7 @@ impl RuleActionOverride {
 
 /// A builder for [`RuleActionOverride`](crate::types::RuleActionOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleActionOverrideBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) action_to_use: ::std::option::Option<crate::types::RuleAction>,
@@ -59,10 +57,7 @@ impl RuleActionOverrideBuilder {
         self
     }
     /// <p>The override action to use, in place of the configured action of the rule in the rule group. </p>
-    pub fn set_action_to_use(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleAction>,
-    ) -> Self {
+    pub fn set_action_to_use(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
         self.action_to_use = input;
         self
     }

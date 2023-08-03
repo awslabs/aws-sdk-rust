@@ -18,8 +18,7 @@ pub struct AttackSummary {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of attacks for a specified time period.</p>
     #[doc(hidden)]
-    pub attack_vectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttackVectorDescription>>,
+    pub attack_vectors: ::std::option::Option<::std::vec::Vec<crate::types::AttackVectorDescription>>,
 }
 impl AttackSummary {
     /// <p>The unique identifier (ID) of the attack.</p>
@@ -39,9 +38,7 @@ impl AttackSummary {
         self.end_time.as_ref()
     }
     /// <p>The list of attacks for a specified time period.</p>
-    pub fn attack_vectors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AttackVectorDescription]> {
+    pub fn attack_vectors(&self) -> ::std::option::Option<&[crate::types::AttackVectorDescription]> {
         self.attack_vectors.as_deref()
     }
 }
@@ -54,16 +51,13 @@ impl AttackSummary {
 
 /// A builder for [`AttackSummary`](crate::types::AttackSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttackSummaryBuilder {
     pub(crate) attack_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) attack_vectors:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttackVectorDescription>>,
+    pub(crate) attack_vectors: ::std::option::Option<::std::vec::Vec<crate::types::AttackVectorDescription>>,
 }
 impl AttackSummaryBuilder {
     /// <p>The unique identifier (ID) of the attack.</p>
@@ -100,10 +94,7 @@ impl AttackSummaryBuilder {
         self
     }
     /// <p>The start time of the attack, in Unix time in seconds. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -117,10 +108,7 @@ impl AttackSummaryBuilder {
         self
     }
     /// <p>The end time of the attack, in Unix time in seconds. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -140,17 +128,12 @@ impl AttackSummaryBuilder {
         self
     }
     /// <p>The list of attacks for a specified time period.</p>
-    pub fn set_attack_vectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttackVectorDescription>>,
-    ) -> Self {
+    pub fn set_attack_vectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttackVectorDescription>>) -> Self {
         self.attack_vectors = input;
         self
     }
     /// <p>The list of attacks for a specified time period.</p>
-    pub fn get_attack_vectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttackVectorDescription>> {
+    pub fn get_attack_vectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttackVectorDescription>> {
         &self.attack_vectors
     }
     /// Consumes the builder and constructs a [`AttackSummary`](crate::types::AttackSummary).

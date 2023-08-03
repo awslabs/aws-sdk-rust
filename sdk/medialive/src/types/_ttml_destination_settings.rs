@@ -10,9 +10,7 @@ pub struct TtmlDestinationSettings {
 }
 impl TtmlDestinationSettings {
     /// This field is not currently supported and will not affect the output styling. Leave the default value.
-    pub fn style_control(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TtmlDestinationStyleControl> {
+    pub fn style_control(&self) -> ::std::option::Option<&crate::types::TtmlDestinationStyleControl> {
         self.style_control.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl TtmlDestinationSettings {
 
 /// A builder for [`TtmlDestinationSettings`](crate::types::TtmlDestinationSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TtmlDestinationSettingsBuilder {
     pub(crate) style_control: ::std::option::Option<crate::types::TtmlDestinationStyleControl>,
 }
@@ -38,17 +34,12 @@ impl TtmlDestinationSettingsBuilder {
         self
     }
     /// This field is not currently supported and will not affect the output styling. Leave the default value.
-    pub fn set_style_control(
-        mut self,
-        input: ::std::option::Option<crate::types::TtmlDestinationStyleControl>,
-    ) -> Self {
+    pub fn set_style_control(mut self, input: ::std::option::Option<crate::types::TtmlDestinationStyleControl>) -> Self {
         self.style_control = input;
         self
     }
     /// This field is not currently supported and will not affect the output styling. Leave the default value.
-    pub fn get_style_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::TtmlDestinationStyleControl> {
+    pub fn get_style_control(&self) -> &::std::option::Option<crate::types::TtmlDestinationStyleControl> {
         &self.style_control
     }
     /// Consumes the builder and constructs a [`TtmlDestinationSettings`](crate::types::TtmlDestinationSettings).

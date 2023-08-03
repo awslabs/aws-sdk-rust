@@ -15,35 +15,25 @@ impl DisableAwsServiceAccessInput {
 }
 impl DisableAwsServiceAccessInput {
     /// Creates a new builder-style object to manufacture [`DisableAwsServiceAccessInput`](crate::operation::disable_aws_service_access::DisableAwsServiceAccessInput).
-    pub fn builder(
-    ) -> crate::operation::disable_aws_service_access::builders::DisableAwsServiceAccessInputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_aws_service_access::builders::DisableAwsServiceAccessInputBuilder {
         crate::operation::disable_aws_service_access::builders::DisableAwsServiceAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableAwsServiceAccessInput`](crate::operation::disable_aws_service_access::DisableAwsServiceAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableAwsServiceAccessInputBuilder {
     pub(crate) service_principal: ::std::option::Option<::std::string::String>,
 }
 impl DisableAwsServiceAccessInputBuilder {
     /// <p>The service principal name of the Amazon Web Services service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-    pub fn service_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_principal = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service principal name of the Amazon Web Services service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-    pub fn set_service_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_principal = input;
         self
     }
@@ -58,10 +48,8 @@ impl DisableAwsServiceAccessInputBuilder {
         crate::operation::disable_aws_service_access::DisableAwsServiceAccessInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disable_aws_service_access::DisableAwsServiceAccessInput {
-                service_principal: self.service_principal,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disable_aws_service_access::DisableAwsServiceAccessInput {
+            service_principal: self.service_principal,
+        })
     }
 }

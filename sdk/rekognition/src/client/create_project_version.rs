@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateProjectVersionOutput`](crate::operation::create_project_version::CreateProjectVersionOutput) with field(s):
     ///   - [`project_version_arn(Option<String>)`](crate::operation::create_project_version::CreateProjectVersionOutput::project_version_arn): <p>The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current status of the training operation.</p>
     /// - On failure, responds with [`SdkError<CreateProjectVersionError>`](crate::operation::create_project_version::CreateProjectVersionError)
-    pub fn create_project_version(
-        &self,
-    ) -> crate::operation::create_project_version::builders::CreateProjectVersionFluentBuilder {
-        crate::operation::create_project_version::builders::CreateProjectVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_project_version(&self) -> crate::operation::create_project_version::builders::CreateProjectVersionFluentBuilder {
+        crate::operation::create_project_version::builders::CreateProjectVersionFluentBuilder::new(self.handle.clone())
     }
 }

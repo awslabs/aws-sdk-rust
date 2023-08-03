@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`resources(Option<Vec<CoverageResource>>)`](crate::operation::list_coverage::ListCoverageOutput::resources): <p>A list of resources and their attributes providing cluster details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_coverage::ListCoverageOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     /// - On failure, responds with [`SdkError<ListCoverageError>`](crate::operation::list_coverage::ListCoverageError)
-    pub fn list_coverage(
-        &self,
-    ) -> crate::operation::list_coverage::builders::ListCoverageFluentBuilder {
-        crate::operation::list_coverage::builders::ListCoverageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_coverage(&self) -> crate::operation::list_coverage::builders::ListCoverageFluentBuilder {
+        crate::operation::list_coverage::builders::ListCoverageFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,18 +23,14 @@ impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
 }
 impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::types::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetailsBuilder {
         crate::types::builders::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::types::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetailsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,

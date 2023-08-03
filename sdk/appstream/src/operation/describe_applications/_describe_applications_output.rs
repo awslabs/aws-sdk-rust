@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeApplicationsOutput {
 }
 impl DescribeApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationsOutput`](crate::operation::describe_applications::DescribeApplicationsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_applications::builders::DescribeApplicationsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_applications::builders::DescribeApplicationsOutputBuilder {
         crate::operation::describe_applications::builders::DescribeApplicationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicationsOutput`](crate::operation::describe_applications::DescribeApplicationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationsOutputBuilder {
     pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeApplicationsOutputBuilder {
         self
     }
     /// <p>The applications in the list.</p>
-    pub fn set_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
-    ) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
         self.applications = input;
         self
     }
     /// <p>The applications in the list.</p>
-    pub fn get_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
         &self.applications
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>

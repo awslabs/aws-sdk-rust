@@ -38,13 +38,7 @@
 /// <p>The event for a log message, if the log message is tied to a wireless gateway.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WirelessGatewayEvent {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for WirelessGatewayEvent {
         match s {
             "CUPS_Request" => WirelessGatewayEvent::CupsRequest,
             "Certificate" => WirelessGatewayEvent::Certificate,
-            other => WirelessGatewayEvent::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WirelessGatewayEvent::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

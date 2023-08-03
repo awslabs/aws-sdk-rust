@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`metric_dimensions(Option<Vec<MetricDimensionGroups>>)`](crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsOutput::metric_dimensions): <p>The dimension information returned for requested metric types.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsOutput::next_token): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
     /// - On failure, responds with [`SdkError<ListAvailableResourceDimensionsError>`](crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError)
-    pub fn list_available_resource_dimensions(&self) -> crate::operation::list_available_resource_dimensions::builders::ListAvailableResourceDimensionsFluentBuilder{
+    pub fn list_available_resource_dimensions(
+        &self,
+    ) -> crate::operation::list_available_resource_dimensions::builders::ListAvailableResourceDimensionsFluentBuilder {
         crate::operation::list_available_resource_dimensions::builders::ListAvailableResourceDimensionsFluentBuilder::new(self.handle.clone())
     }
 }

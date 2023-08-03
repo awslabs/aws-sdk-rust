@@ -88,9 +88,7 @@ impl UpdateTableInput {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn capacity_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacitySpecification> {
+    pub fn capacity_specification(&self) -> ::std::option::Option<&crate::types::CapacitySpecification> {
         self.capacity_specification.as_ref()
     }
     /// <p>Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):</p>
@@ -100,9 +98,7 @@ impl UpdateTableInput {
     /// </ul>
     /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn encryption_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionSpecification> {
+    pub fn encryption_specification(&self) -> ::std::option::Option<&crate::types::EncryptionSpecification> {
         self.encryption_specification.as_ref()
     }
     /// <p>Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:</p>
@@ -112,9 +108,7 @@ impl UpdateTableInput {
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn point_in_time_recovery(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PointInTimeRecovery> {
+    pub fn point_in_time_recovery(&self) -> ::std::option::Option<&crate::types::PointInTimeRecovery> {
         self.point_in_time_recovery.as_ref()
     }
     /// <p>Modifies Time to Live custom settings for the table. The options are:</p>
@@ -137,9 +131,7 @@ impl UpdateTableInput {
     /// <li> <p> <code>status: "enabled"</code> </p> </li>
     /// </ul>
     /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
-    pub fn client_side_timestamps(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClientSideTimestamps> {
+    pub fn client_side_timestamps(&self) -> ::std::option::Option<&crate::types::ClientSideTimestamps> {
         self.client_side_timestamps.as_ref()
     }
 }
@@ -152,16 +144,13 @@ impl UpdateTableInput {
 
 /// A builder for [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTableInputBuilder {
     pub(crate) keyspace_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) add_columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>>,
     pub(crate) capacity_specification: ::std::option::Option<crate::types::CapacitySpecification>,
-    pub(crate) encryption_specification:
-        ::std::option::Option<crate::types::EncryptionSpecification>,
+    pub(crate) encryption_specification: ::std::option::Option<crate::types::EncryptionSpecification>,
     pub(crate) point_in_time_recovery: ::std::option::Option<crate::types::PointInTimeRecovery>,
     pub(crate) ttl: ::std::option::Option<crate::types::TimeToLive>,
     pub(crate) default_time_to_live: ::std::option::Option<i32>,
@@ -169,18 +158,12 @@ pub struct UpdateTableInputBuilder {
 }
 impl UpdateTableInputBuilder {
     /// <p>The name of the keyspace the specified table is stored in.</p>
-    pub fn keyspace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the keyspace the specified table is stored in.</p>
-    pub fn set_keyspace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.keyspace_name = input;
         self
     }
@@ -222,10 +205,7 @@ impl UpdateTableInputBuilder {
     /// <li> <p> <code>name</code> - The name of the column.</p> </li>
     /// <li> <p> <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li>
     /// </ul>
-    pub fn set_add_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>>,
-    ) -> Self {
+    pub fn set_add_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>>) -> Self {
         self.add_columns = input;
         self
     }
@@ -234,9 +214,7 @@ impl UpdateTableInputBuilder {
     /// <li> <p> <code>name</code> - The name of the column.</p> </li>
     /// <li> <p> <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li>
     /// </ul>
-    pub fn get_add_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>> {
+    pub fn get_add_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>> {
         &self.add_columns
     }
     /// <p>Modifies the read/write throughput capacity mode for the table. The options are:</p>
@@ -257,10 +235,7 @@ impl UpdateTableInputBuilder {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn set_capacity_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacitySpecification>,
-    ) -> Self {
+    pub fn set_capacity_specification(mut self, input: ::std::option::Option<crate::types::CapacitySpecification>) -> Self {
         self.capacity_specification = input;
         self
     }
@@ -271,9 +246,7 @@ impl UpdateTableInputBuilder {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn get_capacity_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacitySpecification> {
+    pub fn get_capacity_specification(&self) -> &::std::option::Option<crate::types::CapacitySpecification> {
         &self.capacity_specification
     }
     /// <p>Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):</p>
@@ -283,10 +256,7 @@ impl UpdateTableInputBuilder {
     /// </ul>
     /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn encryption_specification(
-        mut self,
-        input: crate::types::EncryptionSpecification,
-    ) -> Self {
+    pub fn encryption_specification(mut self, input: crate::types::EncryptionSpecification) -> Self {
         self.encryption_specification = ::std::option::Option::Some(input);
         self
     }
@@ -297,10 +267,7 @@ impl UpdateTableInputBuilder {
     /// </ul>
     /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn set_encryption_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionSpecification>,
-    ) -> Self {
+    pub fn set_encryption_specification(mut self, input: ::std::option::Option<crate::types::EncryptionSpecification>) -> Self {
         self.encryption_specification = input;
         self
     }
@@ -311,9 +278,7 @@ impl UpdateTableInputBuilder {
     /// </ul>
     /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn get_encryption_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionSpecification> {
+    pub fn get_encryption_specification(&self) -> &::std::option::Option<crate::types::EncryptionSpecification> {
         &self.encryption_specification
     }
     /// <p>Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:</p>
@@ -334,10 +299,7 @@ impl UpdateTableInputBuilder {
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn set_point_in_time_recovery(
-        mut self,
-        input: ::std::option::Option<crate::types::PointInTimeRecovery>,
-    ) -> Self {
+    pub fn set_point_in_time_recovery(mut self, input: ::std::option::Option<crate::types::PointInTimeRecovery>) -> Self {
         self.point_in_time_recovery = input;
         self
     }
@@ -348,9 +310,7 @@ impl UpdateTableInputBuilder {
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn get_point_in_time_recovery(
-        &self,
-    ) -> &::std::option::Option<crate::types::PointInTimeRecovery> {
+    pub fn get_point_in_time_recovery(&self) -> &::std::option::Option<crate::types::PointInTimeRecovery> {
         &self.point_in_time_recovery
     }
     /// <p>Modifies Time to Live custom settings for the table. The options are:</p>
@@ -416,10 +376,7 @@ impl UpdateTableInputBuilder {
     /// <li> <p> <code>status: "enabled"</code> </p> </li>
     /// </ul>
     /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
-    pub fn set_client_side_timestamps(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientSideTimestamps>,
-    ) -> Self {
+    pub fn set_client_side_timestamps(mut self, input: ::std::option::Option<crate::types::ClientSideTimestamps>) -> Self {
         self.client_side_timestamps = input;
         self
     }
@@ -428,18 +385,11 @@ impl UpdateTableInputBuilder {
     /// <li> <p> <code>status: "enabled"</code> </p> </li>
     /// </ul>
     /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
-    pub fn get_client_side_timestamps(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientSideTimestamps> {
+    pub fn get_client_side_timestamps(&self) -> &::std::option::Option<crate::types::ClientSideTimestamps> {
         &self.client_side_timestamps
     }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_table::UpdateTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_table::UpdateTableInput {
             keyspace_name: self.keyspace_name,
             table_name: self.table_name,

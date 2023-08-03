@@ -23,18 +23,14 @@ impl ::aws_http::request_id::RequestId for FailoverGlobalClusterOutput {
 }
 impl FailoverGlobalClusterOutput {
     /// Creates a new builder-style object to manufacture [`FailoverGlobalClusterOutput`](crate::operation::failover_global_cluster::FailoverGlobalClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::failover_global_cluster::builders::FailoverGlobalClusterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::failover_global_cluster::builders::FailoverGlobalClusterOutputBuilder {
         crate::operation::failover_global_cluster::builders::FailoverGlobalClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`FailoverGlobalClusterOutput`](crate::operation::failover_global_cluster::FailoverGlobalClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailoverGlobalClusterOutputBuilder {
     pub(crate) global_cluster: ::std::option::Option<crate::types::GlobalCluster>,
     _request_id: Option<String>,
@@ -48,10 +44,7 @@ impl FailoverGlobalClusterOutputBuilder {
     }
     /// <p>Contains the details of an Amazon Neptune global database.</p>
     /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
-    pub fn set_global_cluster(
-        mut self,
-        input: ::std::option::Option<crate::types::GlobalCluster>,
-    ) -> Self {
+    pub fn set_global_cluster(mut self, input: ::std::option::Option<crate::types::GlobalCluster>) -> Self {
         self.global_cluster = input;
         self
     }

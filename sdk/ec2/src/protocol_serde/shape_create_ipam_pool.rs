@@ -4,17 +4,10 @@ pub fn de_create_ipam_pool_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_ipam_pool::CreateIpamPoolOutput,
-    crate::operation::create_ipam_pool::CreateIpamPoolError,
-> {
+) -> std::result::Result<crate::operation::create_ipam_pool::CreateIpamPoolOutput, crate::operation::create_ipam_pool::CreateIpamPoolError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::create_ipam_pool::CreateIpamPoolError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_ipam_pool::CreateIpamPoolError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::create_ipam_pool::CreateIpamPoolError::generic(generic))
@@ -25,22 +18,13 @@ pub fn de_create_ipam_pool_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_ipam_pool::CreateIpamPoolOutput,
-    crate::operation::create_ipam_pool::CreateIpamPoolError,
-> {
+) -> std::result::Result<crate::operation::create_ipam_pool::CreateIpamPoolOutput, crate::operation::create_ipam_pool::CreateIpamPoolError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::create_ipam_pool::builders::CreateIpamPoolOutputBuilder::default();
-        output = crate::protocol_serde::shape_create_ipam_pool::de_create_ipam_pool(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::create_ipam_pool::CreateIpamPoolError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::create_ipam_pool::builders::CreateIpamPoolOutputBuilder::default();
+        output = crate::protocol_serde::shape_create_ipam_pool::de_create_ipam_pool(_response_body, output)
+            .map_err(crate::operation::create_ipam_pool::CreateIpamPoolError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -49,10 +33,7 @@ pub fn de_create_ipam_pool_http_response_with_props(
 pub fn de_create_ipam_pool(
     inp: &[u8],
     mut builder: crate::operation::create_ipam_pool::builders::CreateIpamPoolOutputBuilder,
-) -> Result<
-    crate::operation::create_ipam_pool::builders::CreateIpamPoolOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::create_ipam_pool::builders::CreateIpamPoolOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

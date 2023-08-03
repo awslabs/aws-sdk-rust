@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`FinalizeDeviceClaimOutput`](crate::operation::finalize_device_claim::FinalizeDeviceClaimOutput) with field(s):
     ///   - [`state(Option<String>)`](crate::operation::finalize_device_claim::FinalizeDeviceClaimOutput::state): <p>The device's final claim state.</p>
     /// - On failure, responds with [`SdkError<FinalizeDeviceClaimError>`](crate::operation::finalize_device_claim::FinalizeDeviceClaimError)
-    pub fn finalize_device_claim(
-        &self,
-    ) -> crate::operation::finalize_device_claim::builders::FinalizeDeviceClaimFluentBuilder {
-        crate::operation::finalize_device_claim::builders::FinalizeDeviceClaimFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn finalize_device_claim(&self) -> crate::operation::finalize_device_claim::builders::FinalizeDeviceClaimFluentBuilder {
+        crate::operation::finalize_device_claim::builders::FinalizeDeviceClaimFluentBuilder::new(self.handle.clone())
     }
 }

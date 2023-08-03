@@ -5,15 +5,12 @@
 pub struct BatchPutPropertyValuesOutput {
     /// <p>Entries that caused errors in the batch put operation.</p>
     #[doc(hidden)]
-    pub error_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyErrorEntry>>,
+    pub error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyErrorEntry>>,
     _request_id: Option<String>,
 }
 impl BatchPutPropertyValuesOutput {
     /// <p>Entries that caused errors in the batch put operation.</p>
-    pub fn error_entries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchPutPropertyErrorEntry]> {
+    pub fn error_entries(&self) -> ::std::option::Option<&[crate::types::BatchPutPropertyErrorEntry]> {
         self.error_entries.as_deref()
     }
 }
@@ -24,21 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchPutPropertyValuesOutput {
 }
 impl BatchPutPropertyValuesOutput {
     /// Creates a new builder-style object to manufacture [`BatchPutPropertyValuesOutput`](crate::operation::batch_put_property_values::BatchPutPropertyValuesOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesOutputBuilder {
         crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchPutPropertyValuesOutput`](crate::operation::batch_put_property_values::BatchPutPropertyValuesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutPropertyValuesOutputBuilder {
-    pub(crate) error_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyErrorEntry>>,
+    pub(crate) error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyErrorEntry>>,
     _request_id: Option<String>,
 }
 impl BatchPutPropertyValuesOutputBuilder {
@@ -54,17 +46,12 @@ impl BatchPutPropertyValuesOutputBuilder {
         self
     }
     /// <p>Entries that caused errors in the batch put operation.</p>
-    pub fn set_error_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyErrorEntry>>,
-    ) -> Self {
+    pub fn set_error_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyErrorEntry>>) -> Self {
         self.error_entries = input;
         self
     }
     /// <p>Entries that caused errors in the batch put operation.</p>
-    pub fn get_error_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyErrorEntry>> {
+    pub fn get_error_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyErrorEntry>> {
         &self.error_entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -77,9 +64,7 @@ impl BatchPutPropertyValuesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchPutPropertyValuesOutput`](crate::operation::batch_put_property_values::BatchPutPropertyValuesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_put_property_values::BatchPutPropertyValuesOutput {
+    pub fn build(self) -> crate::operation::batch_put_property_values::BatchPutPropertyValuesOutput {
         crate::operation::batch_put_property_values::BatchPutPropertyValuesOutput {
             error_entries: self.error_entries,
             _request_id: self._request_id,

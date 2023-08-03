@@ -10,10 +10,7 @@ impl PutGatewayResponseInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_gateway_response::PutGatewayResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_gateway_response::PutGatewayResponseError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_gateway_response::PutGatewayResponseError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_gateway_response();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutGatewayResponseFluentBuilder {
         }
     }
     /// Access the PutGatewayResponse as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_gateway_response::builders::PutGatewayResponseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_gateway_response::builders::PutGatewayResponseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutGatewayResponseFluentBuilder {
             crate::operation::put_gateway_response::PutGatewayResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_gateway_response::PutGatewayResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_gateway_response::PutGatewayResponseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutGatewayResponseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutGatewayResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_gateway_response::PutGatewayResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_gateway_response::PutGatewayResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_gateway_response::PutGatewayResponseError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutGatewayResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_gateway_response::PutGatewayResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_gateway_response::PutGatewayResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_gateway_response::PutGatewayResponseError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl PutGatewayResponseFluentBuilder {
             crate::operation::put_gateway_response::PutGatewayResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_gateway_response::PutGatewayResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_gateway_response::PutGatewayResponseError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl PutGatewayResponseFluentBuilder {
         self
     }
     /// <p>The response type of the associated GatewayResponse</p>
-    pub fn set_response_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayResponseType>,
-    ) -> Self {
+    pub fn set_response_type(mut self, input: ::std::option::Option<crate::types::GatewayResponseType>) -> Self {
         self.inner = self.inner.set_response_type(input);
         self
     }
@@ -183,19 +164,13 @@ impl PutGatewayResponseFluentBuilder {
     /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
     pub fn set_response_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_response_parameters(input);
         self
     }
     /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
-    pub fn get_response_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_response_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_response_parameters()
     }
     /// Adds a key-value pair to `responseTemplates`.
@@ -214,19 +189,13 @@ impl PutGatewayResponseFluentBuilder {
     /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
     pub fn set_response_templates(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_response_templates(input);
         self
     }
     /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
-    pub fn get_response_templates(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_response_templates(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_response_templates()
     }
 }

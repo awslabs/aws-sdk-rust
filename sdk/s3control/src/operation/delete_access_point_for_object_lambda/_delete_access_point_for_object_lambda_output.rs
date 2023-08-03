@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAccessPointForObjectLambdaOutpu
 }
 impl DeleteAccessPointForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointForObjectLambdaOutput`](crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaOutput).
-    pub fn builder() -> crate::operation::delete_access_point_for_object_lambda::builders::DeleteAccessPointForObjectLambdaOutputBuilder{
+    pub fn builder() -> crate::operation::delete_access_point_for_object_lambda::builders::DeleteAccessPointForObjectLambdaOutputBuilder {
         crate::operation::delete_access_point_for_object_lambda::builders::DeleteAccessPointForObjectLambdaOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessPointForObjectLambdaOutput`](crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessPointForObjectLambdaOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteAccessPointForObjectLambdaOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAccessPointForObjectLambdaOutput`](crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaOutput).
-    pub fn build(self) -> crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaOutput{
+    pub fn build(self) -> crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaOutput {
         crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaOutput {
             _request_id: self._request_id,
         }

@@ -22,9 +22,7 @@ impl DisableProfileInput {
 
 /// A builder for [`DisableProfileInput`](crate::operation::disable_profile::DisableProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableProfileInputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DisableProfileInputBuilder {
     /// Consumes the builder and constructs a [`DisableProfileInput`](crate::operation::disable_profile::DisableProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_profile::DisableProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disable_profile::DisableProfileInput {
-            profile_id: self.profile_id,
-        })
+    ) -> ::std::result::Result<crate::operation::disable_profile::DisableProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::disable_profile::DisableProfileInput { profile_id: self.profile_id })
     }
 }

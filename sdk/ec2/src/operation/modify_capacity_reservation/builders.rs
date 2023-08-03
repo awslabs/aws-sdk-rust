@@ -26,7 +26,7 @@ impl ModifyCapacityReservationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyCapacityReservationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_capacity_reservation::builders::ModifyCapacityReservationInputBuilder,
+    inner: crate::operation::modify_capacity_reservation::builders::ModifyCapacityReservationInputBuilder,
 }
 impl ModifyCapacityReservationFluentBuilder {
     /// Creates a new `ModifyCapacityReservation`.
@@ -37,7 +37,7 @@ impl ModifyCapacityReservationFluentBuilder {
         }
     }
     /// Access the ModifyCapacityReservation as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_capacity_reservation::builders::ModifyCapacityReservationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_capacity_reservation::builders::ModifyCapacityReservationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifyCapacityReservationFluentBuilder {
             crate::operation::modify_capacity_reservation::ModifyCapacityReservation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_capacity_reservation::ModifyCapacityReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_capacity_reservation::ModifyCapacityReservationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifyCapacityReservationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifyCapacityReservationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_capacity_reservation::ModifyCapacityReservationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_capacity_reservation::ModifyCapacityReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_capacity_reservation::ModifyCapacityReservationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifyCapacityReservationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_capacity_reservation::ModifyCapacityReservationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_capacity_reservation::ModifyCapacityReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_capacity_reservation::ModifyCapacityReservationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ModifyCapacityReservationFluentBuilder {
             crate::operation::modify_capacity_reservation::ModifyCapacityReservation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_capacity_reservation::ModifyCapacityReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_capacity_reservation::ModifyCapacityReservationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn capacity_reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.capacity_reservation_id(input.into());
         self
     }
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn set_capacity_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_capacity_reservation_id(input);
         self
     }
@@ -164,10 +147,7 @@ impl ModifyCapacityReservationFluentBuilder {
     /// <p>The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
     /// <p>The Capacity Reservation is cancelled within an hour from the specified time. For example, if you specify 5/31/2019, 13:30:55, the Capacity Reservation is guaranteed to end between 13:30:55 and 14:30:55 on 5/31/2019.</p>
     /// <p>You must provide an <code>EndDate</code> value if <code>EndDateType</code> is <code>limited</code>. Omit <code>EndDate</code> if <code>EndDateType</code> is <code>unlimited</code>.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_date(input);
         self
     }
@@ -191,10 +171,7 @@ impl ModifyCapacityReservationFluentBuilder {
     /// <li> <p> <code>unlimited</code> - The Capacity Reservation remains active until you explicitly cancel it. Do not provide an <code>EndDate</code> value if <code>EndDateType</code> is <code>unlimited</code>.</p> </li>
     /// <li> <p> <code>limited</code> - The Capacity Reservation expires automatically at a specified date and time. You must provide an <code>EndDate</code> value if <code>EndDateType</code> is <code>limited</code>.</p> </li>
     /// </ul>
-    pub fn set_end_date_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EndDateType>,
-    ) -> Self {
+    pub fn set_end_date_type(mut self, input: ::std::option::Option<crate::types::EndDateType>) -> Self {
         self.inner = self.inner.set_end_date_type(input);
         self
     }
@@ -235,18 +212,12 @@ impl ModifyCapacityReservationFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>Reserved for future use.</p>
-    pub fn additional_info(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.additional_info(input.into());
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_additional_info(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_additional_info(input);
         self
     }

@@ -26,7 +26,7 @@ impl DeleteVerifiedAccessGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVerifiedAccessGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_verified_access_group::builders::DeleteVerifiedAccessGroupInputBuilder,
+    inner: crate::operation::delete_verified_access_group::builders::DeleteVerifiedAccessGroupInputBuilder,
 }
 impl DeleteVerifiedAccessGroupFluentBuilder {
     /// Creates a new `DeleteVerifiedAccessGroup`.
@@ -37,7 +37,7 @@ impl DeleteVerifiedAccessGroupFluentBuilder {
         }
     }
     /// Access the DeleteVerifiedAccessGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_verified_access_group::builders::DeleteVerifiedAccessGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_verified_access_group::builders::DeleteVerifiedAccessGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteVerifiedAccessGroupFluentBuilder {
             crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteVerifiedAccessGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteVerifiedAccessGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteVerifiedAccessGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteVerifiedAccessGroupFluentBuilder {
             crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Verified Access group.</p>
-    pub fn verified_access_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.verified_access_group_id(input.into());
         self
     }
     /// <p>The ID of the Verified Access group.</p>
-    pub fn set_verified_access_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_verified_access_group_id(input);
         self
     }

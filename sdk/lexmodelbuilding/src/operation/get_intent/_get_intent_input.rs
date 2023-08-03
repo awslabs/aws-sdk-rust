@@ -29,9 +29,7 @@ impl GetIntentInput {
 
 /// A builder for [`GetIntentInput`](crate::operation::get_intent::GetIntentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIntentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetIntentInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`GetIntentInput`](crate::operation::get_intent::GetIntentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_intent::GetIntentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_intent::GetIntentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_intent::GetIntentInput {
             name: self.name,
             version: self.version,

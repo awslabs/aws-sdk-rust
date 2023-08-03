@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`phone_number(impl ::std::convert::Into<String>)`](crate::operation::delete_sms_sandbox_phone_number::builders::DeleteSMSSandboxPhoneNumberFluentBuilder::phone_number) / [`set_phone_number(Option<String>)`](crate::operation::delete_sms_sandbox_phone_number::builders::DeleteSMSSandboxPhoneNumberFluentBuilder::set_phone_number): <p>The destination phone number to delete.</p>
     /// - On success, responds with [`DeleteSmsSandboxPhoneNumberOutput`](crate::operation::delete_sms_sandbox_phone_number::DeleteSmsSandboxPhoneNumberOutput)
     /// - On failure, responds with [`SdkError<DeleteSMSSandboxPhoneNumberError>`](crate::operation::delete_sms_sandbox_phone_number::DeleteSMSSandboxPhoneNumberError)
-    pub fn delete_sms_sandbox_phone_number(&self) -> crate::operation::delete_sms_sandbox_phone_number::builders::DeleteSMSSandboxPhoneNumberFluentBuilder{
+    pub fn delete_sms_sandbox_phone_number(
+        &self,
+    ) -> crate::operation::delete_sms_sandbox_phone_number::builders::DeleteSMSSandboxPhoneNumberFluentBuilder {
         crate::operation::delete_sms_sandbox_phone_number::builders::DeleteSMSSandboxPhoneNumberFluentBuilder::new(self.handle.clone())
     }
 }

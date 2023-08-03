@@ -5,8 +5,7 @@
 pub struct BatchCreateRumMetricDefinitionsOutput {
     /// <p>An array of error objects, if the operation caused any errors.</p>
     #[doc(hidden)]
-    pub errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateRumMetricDefinitionsError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateRumMetricDefinitionsError>>,
     /// <p>An array of structures that define the extended metrics.</p>
     #[doc(hidden)]
     pub metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
@@ -14,9 +13,7 @@ pub struct BatchCreateRumMetricDefinitionsOutput {
 }
 impl BatchCreateRumMetricDefinitionsOutput {
     /// <p>An array of error objects, if the operation caused any errors.</p>
-    pub fn errors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchCreateRumMetricDefinitionsError]> {
+    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchCreateRumMetricDefinitionsError]> {
         self.errors.as_deref()
     }
     /// <p>An array of structures that define the extended metrics.</p>
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchCreateRumMetricDefinitionsOutput
 }
 impl BatchCreateRumMetricDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`BatchCreateRumMetricDefinitionsOutput`](crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsOutput).
-    pub fn builder() -> crate::operation::batch_create_rum_metric_definitions::builders::BatchCreateRumMetricDefinitionsOutputBuilder{
+    pub fn builder() -> crate::operation::batch_create_rum_metric_definitions::builders::BatchCreateRumMetricDefinitionsOutputBuilder {
         crate::operation::batch_create_rum_metric_definitions::builders::BatchCreateRumMetricDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchCreateRumMetricDefinitionsOutput`](crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateRumMetricDefinitionsOutputBuilder {
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateRumMetricDefinitionsError>>,
-    pub(crate) metric_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateRumMetricDefinitionsError>>,
+    pub(crate) metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
     _request_id: Option<String>,
 }
 impl BatchCreateRumMetricDefinitionsOutputBuilder {
@@ -61,20 +54,12 @@ impl BatchCreateRumMetricDefinitionsOutputBuilder {
         self
     }
     /// <p>An array of error objects, if the operation caused any errors.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchCreateRumMetricDefinitionsError>,
-        >,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateRumMetricDefinitionsError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>An array of error objects, if the operation caused any errors.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchCreateRumMetricDefinitionsError>>
-    {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchCreateRumMetricDefinitionsError>> {
         &self.errors
     }
     /// Appends an item to `metric_definitions`.
@@ -89,17 +74,12 @@ impl BatchCreateRumMetricDefinitionsOutputBuilder {
         self
     }
     /// <p>An array of structures that define the extended metrics.</p>
-    pub fn set_metric_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
-    ) -> Self {
+    pub fn set_metric_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>) -> Self {
         self.metric_definitions = input;
         self
     }
     /// <p>An array of structures that define the extended metrics.</p>
-    pub fn get_metric_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>> {
+    pub fn get_metric_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>> {
         &self.metric_definitions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -112,15 +92,10 @@ impl BatchCreateRumMetricDefinitionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchCreateRumMetricDefinitionsOutput`](crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsOutput
-    {
+    pub fn build(self) -> crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsOutput {
         crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsOutput {
-            errors: self.errors
-            ,
-            metric_definitions: self.metric_definitions
-            ,
+            errors: self.errors,
+            metric_definitions: self.metric_definitions,
             _request_id: self._request_id,
         }
     }

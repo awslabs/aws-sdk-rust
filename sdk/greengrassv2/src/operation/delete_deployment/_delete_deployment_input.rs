@@ -15,34 +15,25 @@ impl DeleteDeploymentInput {
 }
 impl DeleteDeploymentInput {
     /// Creates a new builder-style object to manufacture [`DeleteDeploymentInput`](crate::operation::delete_deployment::DeleteDeploymentInput).
-    pub fn builder() -> crate::operation::delete_deployment::builders::DeleteDeploymentInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_deployment::builders::DeleteDeploymentInputBuilder {
         crate::operation::delete_deployment::builders::DeleteDeploymentInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDeploymentInput`](crate::operation::delete_deployment::DeleteDeploymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDeploymentInputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDeploymentInputBuilder {
     /// <p>The ID of the deployment.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the deployment.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -53,10 +44,7 @@ impl DeleteDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDeploymentInput`](crate::operation::delete_deployment::DeleteDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_deployment::DeleteDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_deployment::DeleteDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_deployment::DeleteDeploymentInput {
             deployment_id: self.deployment_id,
         })

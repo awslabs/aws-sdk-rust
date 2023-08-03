@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`version_id(Option<i32>)`](crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionOutput::version_id): <p>The version of the provisioning template.</p>
     ///   - [`is_default_version(bool)`](crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionOutput::is_default_version): <p>True if the provisioning template version is the default version, otherwise false.</p>
     /// - On failure, responds with [`SdkError<CreateProvisioningTemplateVersionError>`](crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionError)
-    pub fn create_provisioning_template_version(&self) -> crate::operation::create_provisioning_template_version::builders::CreateProvisioningTemplateVersionFluentBuilder{
+    pub fn create_provisioning_template_version(
+        &self,
+    ) -> crate::operation::create_provisioning_template_version::builders::CreateProvisioningTemplateVersionFluentBuilder {
         crate::operation::create_provisioning_template_version::builders::CreateProvisioningTemplateVersionFluentBuilder::new(self.handle.clone())
     }
 }

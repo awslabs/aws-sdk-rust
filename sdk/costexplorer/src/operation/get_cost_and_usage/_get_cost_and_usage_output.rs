@@ -14,8 +14,7 @@ pub struct GetCostAndUsageOutput {
     pub results_by_time: ::std::option::Option<::std::vec::Vec<crate::types::ResultByTime>>,
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
     #[doc(hidden)]
-    pub dimension_value_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
+    pub dimension_value_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
     _request_id: Option<String>,
 }
 impl GetCostAndUsageOutput {
@@ -32,9 +31,7 @@ impl GetCostAndUsageOutput {
         self.results_by_time.as_deref()
     }
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
-    pub fn dimension_value_attributes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DimensionValuesWithAttributes]> {
+    pub fn dimension_value_attributes(&self) -> ::std::option::Option<&[crate::types::DimensionValuesWithAttributes]> {
         self.dimension_value_attributes.as_deref()
     }
 }
@@ -45,40 +42,29 @@ impl ::aws_http::request_id::RequestId for GetCostAndUsageOutput {
 }
 impl GetCostAndUsageOutput {
     /// Creates a new builder-style object to manufacture [`GetCostAndUsageOutput`](crate::operation::get_cost_and_usage::GetCostAndUsageOutput).
-    pub fn builder() -> crate::operation::get_cost_and_usage::builders::GetCostAndUsageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_cost_and_usage::builders::GetCostAndUsageOutputBuilder {
         crate::operation::get_cost_and_usage::builders::GetCostAndUsageOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCostAndUsageOutput`](crate::operation::get_cost_and_usage::GetCostAndUsageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCostAndUsageOutputBuilder {
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
-    pub(crate) group_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
+    pub(crate) group_definitions: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
     pub(crate) results_by_time: ::std::option::Option<::std::vec::Vec<crate::types::ResultByTime>>,
-    pub(crate) dimension_value_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
+    pub(crate) dimension_value_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
     _request_id: Option<String>,
 }
 impl GetCostAndUsageOutputBuilder {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -98,17 +84,12 @@ impl GetCostAndUsageOutputBuilder {
         self
     }
     /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
-    pub fn set_group_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
-    ) -> Self {
+    pub fn set_group_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>) -> Self {
         self.group_definitions = input;
         self
     }
     /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
-    pub fn get_group_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
+    pub fn get_group_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
         &self.group_definitions
     }
     /// Appends an item to `results_by_time`.
@@ -123,17 +104,12 @@ impl GetCostAndUsageOutputBuilder {
         self
     }
     /// <p>The time period that's covered by the results in the response.</p>
-    pub fn set_results_by_time(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResultByTime>>,
-    ) -> Self {
+    pub fn set_results_by_time(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResultByTime>>) -> Self {
         self.results_by_time = input;
         self
     }
     /// <p>The time period that's covered by the results in the response.</p>
-    pub fn get_results_by_time(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultByTime>> {
+    pub fn get_results_by_time(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultByTime>> {
         &self.results_by_time
     }
     /// Appends an item to `dimension_value_attributes`.
@@ -141,10 +117,7 @@ impl GetCostAndUsageOutputBuilder {
     /// To override the contents of this collection use [`set_dimension_value_attributes`](Self::set_dimension_value_attributes).
     ///
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
-    pub fn dimension_value_attributes(
-        mut self,
-        input: crate::types::DimensionValuesWithAttributes,
-    ) -> Self {
+    pub fn dimension_value_attributes(mut self, input: crate::types::DimensionValuesWithAttributes) -> Self {
         let mut v = self.dimension_value_attributes.unwrap_or_default();
         v.push(input);
         self.dimension_value_attributes = ::std::option::Option::Some(v);
@@ -159,9 +132,7 @@ impl GetCostAndUsageOutputBuilder {
         self
     }
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
-    pub fn get_dimension_value_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>> {
+    pub fn get_dimension_value_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>> {
         &self.dimension_value_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -28,9 +28,7 @@ impl GetWorkflowOutput {
 
 /// A builder for [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowOutputBuilder {
     pub(crate) workflow: ::std::option::Option<crate::types::Workflow>,
     _request_id: Option<String>,

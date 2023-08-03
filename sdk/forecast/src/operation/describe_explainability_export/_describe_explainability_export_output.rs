@@ -103,16 +103,14 @@ impl ::aws_http::request_id::RequestId for DescribeExplainabilityExportOutput {
 }
 impl DescribeExplainabilityExportOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExplainabilityExportOutput`](crate::operation::describe_explainability_export::DescribeExplainabilityExportOutput).
-    pub fn builder() -> crate::operation::describe_explainability_export::builders::DescribeExplainabilityExportOutputBuilder{
+    pub fn builder() -> crate::operation::describe_explainability_export::builders::DescribeExplainabilityExportOutputBuilder {
         crate::operation::describe_explainability_export::builders::DescribeExplainabilityExportOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExplainabilityExportOutput`](crate::operation::describe_explainability_export::DescribeExplainabilityExportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExplainabilityExportOutputBuilder {
     pub(crate) explainability_export_arn: ::std::option::Option<::std::string::String>,
     pub(crate) explainability_export_name: ::std::option::Option<::std::string::String>,
@@ -127,18 +125,12 @@ pub struct DescribeExplainabilityExportOutputBuilder {
 }
 impl DescribeExplainabilityExportOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
-    pub fn explainability_export_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explainability_export_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explainability_export_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
-    pub fn set_explainability_export_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_explainability_export_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.explainability_export_arn = input;
         self
     }
@@ -147,18 +139,12 @@ impl DescribeExplainabilityExportOutputBuilder {
         &self.explainability_export_arn
     }
     /// <p>The name of the Explainability export.</p>
-    pub fn explainability_export_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explainability_export_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explainability_export_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Explainability export.</p>
-    pub fn set_explainability_export_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_explainability_export_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.explainability_export_name = input;
         self
     }
@@ -167,18 +153,12 @@ impl DescribeExplainabilityExportOutputBuilder {
         &self.explainability_export_name
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
-    pub fn explainability_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explainability_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explainability_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
-    pub fn set_explainability_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_explainability_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.explainability_arn = input;
         self
     }
@@ -192,10 +172,7 @@ impl DescribeExplainabilityExportOutputBuilder {
         self
     }
     /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::DataDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::DataDestination>) -> Self {
         self.destination = input;
         self
     }
@@ -255,10 +232,7 @@ impl DescribeExplainabilityExportOutputBuilder {
         self
     }
     /// <p>When the Explainability export was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -286,10 +260,7 @@ impl DescribeExplainabilityExportOutputBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
@@ -301,9 +272,7 @@ impl DescribeExplainabilityExportOutputBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     /// <p>The format of the exported data, CSV or PARQUET.</p>
@@ -330,9 +299,7 @@ impl DescribeExplainabilityExportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeExplainabilityExportOutput`](crate::operation::describe_explainability_export::DescribeExplainabilityExportOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_explainability_export::DescribeExplainabilityExportOutput {
+    pub fn build(self) -> crate::operation::describe_explainability_export::DescribeExplainabilityExportOutput {
         crate::operation::describe_explainability_export::DescribeExplainabilityExportOutput {
             explainability_export_arn: self.explainability_export_arn,
             explainability_export_name: self.explainability_export_name,

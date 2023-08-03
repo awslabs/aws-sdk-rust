@@ -93,9 +93,7 @@ impl SendOtpMessageRequestParameters {
 
 /// A builder for [`SendOtpMessageRequestParameters`](crate::types::SendOtpMessageRequestParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendOtpMessageRequestParametersBuilder {
     pub(crate) allowed_attempts: ::std::option::Option<i32>,
     pub(crate) brand_name: ::std::option::Option<::std::string::String>,
@@ -167,18 +165,12 @@ impl SendOtpMessageRequestParametersBuilder {
         &self.code_length
     }
     /// <p>The destination identity to send OTP to.</p>
-    pub fn destination_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination identity to send OTP to.</p>
-    pub fn set_destination_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_identity = input;
         self
     }
@@ -215,18 +207,12 @@ impl SendOtpMessageRequestParametersBuilder {
         &self.language
     }
     /// <p>The origination identity used to send OTP from.</p>
-    pub fn origination_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The origination identity used to send OTP from.</p>
-    pub fn set_origination_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origination_identity = input;
         self
     }

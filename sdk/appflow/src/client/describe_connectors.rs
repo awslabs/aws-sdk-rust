@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`connectors(Option<Vec<ConnectorDetail>>)`](crate::operation::describe_connectors::DescribeConnectorsOutput::connectors): <p>Information about the connectors supported in Amazon AppFlow.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_connectors::DescribeConnectorsOutput::next_token): <p> The pagination token for the next page of data. </p>
     /// - On failure, responds with [`SdkError<DescribeConnectorsError>`](crate::operation::describe_connectors::DescribeConnectorsError)
-    pub fn describe_connectors(
-        &self,
-    ) -> crate::operation::describe_connectors::builders::DescribeConnectorsFluentBuilder {
-        crate::operation::describe_connectors::builders::DescribeConnectorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_connectors(&self) -> crate::operation::describe_connectors::builders::DescribeConnectorsFluentBuilder {
+        crate::operation::describe_connectors::builders::DescribeConnectorsFluentBuilder::new(self.handle.clone())
     }
 }

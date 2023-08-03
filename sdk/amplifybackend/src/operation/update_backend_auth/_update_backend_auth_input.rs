@@ -27,9 +27,7 @@ impl UpdateBackendAuthInput {
         self.backend_environment_name.as_deref()
     }
     /// <p>The resource configuration for this request object.</p>
-    pub fn resource_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateBackendAuthResourceConfig> {
+    pub fn resource_config(&self) -> ::std::option::Option<&crate::types::UpdateBackendAuthResourceConfig> {
         self.resource_config.as_ref()
     }
     /// <p>The name of this resource.</p>
@@ -39,22 +37,18 @@ impl UpdateBackendAuthInput {
 }
 impl UpdateBackendAuthInput {
     /// Creates a new builder-style object to manufacture [`UpdateBackendAuthInput`](crate::operation::update_backend_auth::UpdateBackendAuthInput).
-    pub fn builder(
-    ) -> crate::operation::update_backend_auth::builders::UpdateBackendAuthInputBuilder {
+    pub fn builder() -> crate::operation::update_backend_auth::builders::UpdateBackendAuthInputBuilder {
         crate::operation::update_backend_auth::builders::UpdateBackendAuthInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBackendAuthInput`](crate::operation::update_backend_auth::UpdateBackendAuthInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBackendAuthInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_config:
-        ::std::option::Option<crate::types::UpdateBackendAuthResourceConfig>,
+    pub(crate) resource_config: ::std::option::Option<crate::types::UpdateBackendAuthResourceConfig>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBackendAuthInputBuilder {
@@ -73,18 +67,12 @@ impl UpdateBackendAuthInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_environment_name = input;
         self
     }
@@ -98,32 +86,21 @@ impl UpdateBackendAuthInputBuilder {
         self
     }
     /// <p>The resource configuration for this request object.</p>
-    pub fn set_resource_config(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateBackendAuthResourceConfig>,
-    ) -> Self {
+    pub fn set_resource_config(mut self, input: ::std::option::Option<crate::types::UpdateBackendAuthResourceConfig>) -> Self {
         self.resource_config = input;
         self
     }
     /// <p>The resource configuration for this request object.</p>
-    pub fn get_resource_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateBackendAuthResourceConfig> {
+    pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::UpdateBackendAuthResourceConfig> {
         &self.resource_config
     }
     /// <p>The name of this resource.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of this resource.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -134,17 +111,12 @@ impl UpdateBackendAuthInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBackendAuthInput`](crate::operation::update_backend_auth::UpdateBackendAuthInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_backend_auth::UpdateBackendAuthInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_backend_auth::UpdateBackendAuthInput {
-                app_id: self.app_id,
-                backend_environment_name: self.backend_environment_name,
-                resource_config: self.resource_config,
-                resource_name: self.resource_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_backend_auth::UpdateBackendAuthInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_backend_auth::UpdateBackendAuthInput {
+            app_id: self.app_id,
+            backend_environment_name: self.backend_environment_name,
+            resource_config: self.resource_config,
+            resource_name: self.resource_name,
+        })
     }
 }

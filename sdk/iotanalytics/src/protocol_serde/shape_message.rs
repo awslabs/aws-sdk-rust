@@ -7,9 +7,7 @@ pub fn ser_message(
         object.key("messageId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.payload {
-        object
-            .key("payload")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_2));
+        object.key("payload").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
     }
     Ok(())
 }

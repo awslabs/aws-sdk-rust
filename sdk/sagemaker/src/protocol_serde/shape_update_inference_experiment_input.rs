@@ -21,10 +21,7 @@ pub fn ser_update_inference_experiment_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_model_variant_config::ser_model_variant_config(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_model_variant_config::ser_model_variant_config(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -39,10 +36,7 @@ pub fn ser_update_inference_experiment_input(
     if let Some(var_11) = &input.shadow_mode_config {
         #[allow(unused_mut)]
         let mut object_12 = object.key("ShadowModeConfig").start_object();
-        crate::protocol_serde::shape_shadow_mode_config::ser_shadow_mode_config(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_shadow_mode_config::ser_shadow_mode_config(&mut object_12, var_11)?;
         object_12.finish();
     }
     Ok(())

@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeRecommendationFeedbackOutput`](crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackOutput) with field(s):
     ///   - [`recommendation_feedback(Option<RecommendationFeedback>)`](crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackOutput::recommendation_feedback): <p>The recommendation feedback given by the user.</p>
     /// - On failure, responds with [`SdkError<DescribeRecommendationFeedbackError>`](crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackError)
-    pub fn describe_recommendation_feedback(&self) -> crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackFluentBuilder{
+    pub fn describe_recommendation_feedback(
+        &self,
+    ) -> crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackFluentBuilder {
         crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackFluentBuilder::new(self.handle.clone())
     }
 }

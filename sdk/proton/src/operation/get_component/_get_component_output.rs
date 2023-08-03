@@ -28,9 +28,7 @@ impl GetComponentOutput {
 
 /// A builder for [`GetComponentOutput`](crate::operation::get_component::GetComponentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComponentOutputBuilder {
     pub(crate) component: ::std::option::Option<crate::types::Component>,
     _request_id: Option<String>,

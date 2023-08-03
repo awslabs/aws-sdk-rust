@@ -8,12 +8,8 @@ pub struct GetSensitiveDataOccurrencesOutput {
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>A map that specifies 1-100 types of sensitive data reported by the finding and, for each type, 1-10 occurrences of sensitive data.</p>
     #[doc(hidden)]
-    pub sensitive_data_occurrences: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::DetectedDataDetails>,
-        >,
-    >,
+    pub sensitive_data_occurrences:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DetectedDataDetails>>>,
     /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>
     /// <ul>
     /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
@@ -32,12 +28,7 @@ impl GetSensitiveDataOccurrencesOutput {
     /// <p>A map that specifies 1-100 types of sensitive data reported by the finding and, for each type, 1-10 occurrences of sensitive data.</p>
     pub fn sensitive_data_occurrences(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::DetectedDataDetails>,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DetectedDataDetails>>> {
         self.sensitive_data_occurrences.as_ref()
     }
     /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>
@@ -57,24 +48,18 @@ impl ::aws_http::request_id::RequestId for GetSensitiveDataOccurrencesOutput {
 }
 impl GetSensitiveDataOccurrencesOutput {
     /// Creates a new builder-style object to manufacture [`GetSensitiveDataOccurrencesOutput`](crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesOutput).
-    pub fn builder() -> crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesOutputBuilder{
+    pub fn builder() -> crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesOutputBuilder {
         crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSensitiveDataOccurrencesOutput`](crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSensitiveDataOccurrencesOutputBuilder {
     pub(crate) error: ::std::option::Option<::std::string::String>,
-    pub(crate) sensitive_data_occurrences: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::DetectedDataDetails>,
-        >,
-    >,
+    pub(crate) sensitive_data_occurrences:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DetectedDataDetails>>>,
     pub(crate) status: ::std::option::Option<crate::types::RevealRequestStatus>,
     _request_id: Option<String>,
 }
@@ -111,12 +96,7 @@ impl GetSensitiveDataOccurrencesOutputBuilder {
     /// <p>A map that specifies 1-100 types of sensitive data reported by the finding and, for each type, 1-10 occurrences of sensitive data.</p>
     pub fn set_sensitive_data_occurrences(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<crate::types::DetectedDataDetails>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DetectedDataDetails>>>,
     ) -> Self {
         self.sensitive_data_occurrences = input;
         self
@@ -124,12 +104,7 @@ impl GetSensitiveDataOccurrencesOutputBuilder {
     /// <p>A map that specifies 1-100 types of sensitive data reported by the finding and, for each type, 1-10 occurrences of sensitive data.</p>
     pub fn get_sensitive_data_occurrences(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::DetectedDataDetails>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DetectedDataDetails>>> {
         &self.sensitive_data_occurrences
     }
     /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>
@@ -148,10 +123,7 @@ impl GetSensitiveDataOccurrencesOutputBuilder {
     /// <li><p>PROCESSING - Macie is processing the request.</p></li>
     /// <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RevealRequestStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RevealRequestStatus>) -> Self {
         self.status = input;
         self
     }
@@ -174,9 +146,7 @@ impl GetSensitiveDataOccurrencesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSensitiveDataOccurrencesOutput`](crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesOutput {
+    pub fn build(self) -> crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesOutput {
         crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesOutput {
             error: self.error,
             sensitive_data_occurrences: self.sensitive_data_occurrences,

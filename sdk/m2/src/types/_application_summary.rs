@@ -86,15 +86,11 @@ impl ApplicationSummary {
         self.last_start_time.as_ref()
     }
     /// <p>Indicates the status of the latest version of the application.</p>
-    pub fn version_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationVersionLifecycle> {
+    pub fn version_status(&self) -> ::std::option::Option<&crate::types::ApplicationVersionLifecycle> {
         self.version_status.as_ref()
     }
     /// <p>Indicates either an ongoing deployment or if the application has ever deployed successfully.</p>
-    pub fn deployment_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationDeploymentLifecycle> {
+    pub fn deployment_status(&self) -> ::std::option::Option<&crate::types::ApplicationDeploymentLifecycle> {
         self.deployment_status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
@@ -111,9 +107,7 @@ impl ApplicationSummary {
 
 /// A builder for [`ApplicationSummary`](crate::types::ApplicationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -126,8 +120,7 @@ pub struct ApplicationSummaryBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) last_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) version_status: ::std::option::Option<crate::types::ApplicationVersionLifecycle>,
-    pub(crate) deployment_status:
-        ::std::option::Option<crate::types::ApplicationDeploymentLifecycle>,
+    pub(crate) deployment_status: ::std::option::Option<crate::types::ApplicationDeploymentLifecycle>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationSummaryBuilder {
@@ -160,18 +153,12 @@ impl ApplicationSummaryBuilder {
         &self.description
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -180,18 +167,12 @@ impl ApplicationSummaryBuilder {
         &self.application_id
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -219,10 +200,7 @@ impl ApplicationSummaryBuilder {
         self
     }
     /// <p>The status of the application.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationLifecycle>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationLifecycle>) -> Self {
         self.status = input;
         self
     }
@@ -236,10 +214,7 @@ impl ApplicationSummaryBuilder {
         self
     }
     /// <p>The type of the target platform for this application.</p>
-    pub fn set_engine_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineType>,
-    ) -> Self {
+    pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
         self.engine_type = input;
         self
     }
@@ -253,10 +228,7 @@ impl ApplicationSummaryBuilder {
         self
     }
     /// <p>The timestamp when the application was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -265,18 +237,12 @@ impl ApplicationSummaryBuilder {
         &self.creation_time
     }
     /// <p>The unique identifier of the runtime environment that hosts this application.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the runtime environment that hosts this application.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -290,10 +256,7 @@ impl ApplicationSummaryBuilder {
         self
     }
     /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
-    pub fn set_last_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_start_time = input;
         self
     }
@@ -307,39 +270,26 @@ impl ApplicationSummaryBuilder {
         self
     }
     /// <p>Indicates the status of the latest version of the application.</p>
-    pub fn set_version_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationVersionLifecycle>,
-    ) -> Self {
+    pub fn set_version_status(mut self, input: ::std::option::Option<crate::types::ApplicationVersionLifecycle>) -> Self {
         self.version_status = input;
         self
     }
     /// <p>Indicates the status of the latest version of the application.</p>
-    pub fn get_version_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationVersionLifecycle> {
+    pub fn get_version_status(&self) -> &::std::option::Option<crate::types::ApplicationVersionLifecycle> {
         &self.version_status
     }
     /// <p>Indicates either an ongoing deployment or if the application has ever deployed successfully.</p>
-    pub fn deployment_status(
-        mut self,
-        input: crate::types::ApplicationDeploymentLifecycle,
-    ) -> Self {
+    pub fn deployment_status(mut self, input: crate::types::ApplicationDeploymentLifecycle) -> Self {
         self.deployment_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates either an ongoing deployment or if the application has ever deployed successfully.</p>
-    pub fn set_deployment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationDeploymentLifecycle>,
-    ) -> Self {
+    pub fn set_deployment_status(mut self, input: ::std::option::Option<crate::types::ApplicationDeploymentLifecycle>) -> Self {
         self.deployment_status = input;
         self
     }
     /// <p>Indicates either an ongoing deployment or if the application has ever deployed successfully.</p>
-    pub fn get_deployment_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationDeploymentLifecycle> {
+    pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::ApplicationDeploymentLifecycle> {
         &self.deployment_status
     }
     /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>

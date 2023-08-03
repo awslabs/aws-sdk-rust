@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateLaunchTemplateOutput {
 }
 impl CreateLaunchTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateLaunchTemplateOutput`](crate::operation::create_launch_template::CreateLaunchTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::create_launch_template::builders::CreateLaunchTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::create_launch_template::builders::CreateLaunchTemplateOutputBuilder {
         crate::operation::create_launch_template::builders::CreateLaunchTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLaunchTemplateOutput`](crate::operation::create_launch_template::CreateLaunchTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLaunchTemplateOutputBuilder {
     pub(crate) launch_template: ::std::option::Option<crate::types::LaunchTemplate>,
     pub(crate) warning: ::std::option::Option<crate::types::ValidationWarning>,
@@ -51,10 +48,7 @@ impl CreateLaunchTemplateOutputBuilder {
         self
     }
     /// <p>Information about the launch template.</p>
-    pub fn set_launch_template(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplate>,
-    ) -> Self {
+    pub fn set_launch_template(mut self, input: ::std::option::Option<crate::types::LaunchTemplate>) -> Self {
         self.launch_template = input;
         self
     }
@@ -68,10 +62,7 @@ impl CreateLaunchTemplateOutputBuilder {
         self
     }
     /// <p>If the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
-    pub fn set_warning(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidationWarning>,
-    ) -> Self {
+    pub fn set_warning(mut self, input: ::std::option::Option<crate::types::ValidationWarning>) -> Self {
         self.warning = input;
         self
     }

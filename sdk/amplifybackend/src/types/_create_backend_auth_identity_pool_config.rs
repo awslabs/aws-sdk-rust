@@ -30,27 +30,19 @@ impl CreateBackendAuthIdentityPoolConfig {
 
 /// A builder for [`CreateBackendAuthIdentityPoolConfig`](crate::types::CreateBackendAuthIdentityPoolConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBackendAuthIdentityPoolConfigBuilder {
     pub(crate) identity_pool_name: ::std::option::Option<::std::string::String>,
     pub(crate) unauthenticated_login: ::std::option::Option<bool>,
 }
 impl CreateBackendAuthIdentityPoolConfigBuilder {
     /// <p>Name of the Amazon Cognito identity pool used for authorization.</p>
-    pub fn identity_pool_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the Amazon Cognito identity pool used for authorization.</p>
-    pub fn set_identity_pool_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_name = input;
         self
     }

@@ -17,9 +17,7 @@ impl BotAliasLocaleSettings {
         self.enabled
     }
     /// <p>Specifies the Lambda function that should be used in the locale.</p>
-    pub fn code_hook_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CodeHookSpecification> {
+    pub fn code_hook_specification(&self) -> ::std::option::Option<&crate::types::CodeHookSpecification> {
         self.code_hook_specification.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl BotAliasLocaleSettings {
 
 /// A builder for [`BotAliasLocaleSettings`](crate::types::BotAliasLocaleSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BotAliasLocaleSettingsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) code_hook_specification: ::std::option::Option<crate::types::CodeHookSpecification>,
@@ -60,17 +56,12 @@ impl BotAliasLocaleSettingsBuilder {
         self
     }
     /// <p>Specifies the Lambda function that should be used in the locale.</p>
-    pub fn set_code_hook_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeHookSpecification>,
-    ) -> Self {
+    pub fn set_code_hook_specification(mut self, input: ::std::option::Option<crate::types::CodeHookSpecification>) -> Self {
         self.code_hook_specification = input;
         self
     }
     /// <p>Specifies the Lambda function that should be used in the locale.</p>
-    pub fn get_code_hook_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodeHookSpecification> {
+    pub fn get_code_hook_specification(&self) -> &::std::option::Option<crate::types::CodeHookSpecification> {
         &self.code_hook_specification
     }
     /// Consumes the builder and constructs a [`BotAliasLocaleSettings`](crate::types::BotAliasLocaleSettings).

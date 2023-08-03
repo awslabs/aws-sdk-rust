@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteStorageLensConfigurationOutput 
 }
 impl DeleteStorageLensConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationOutput`](crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_storage_lens_configuration::builders::DeleteStorageLensConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_storage_lens_configuration::builders::DeleteStorageLensConfigurationOutputBuilder {
         crate::operation::delete_storage_lens_configuration::builders::DeleteStorageLensConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStorageLensConfigurationOutput`](crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStorageLensConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteStorageLensConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteStorageLensConfigurationOutput`](crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationOutput {
         crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationOutput {
             _request_id: self._request_id,
         }

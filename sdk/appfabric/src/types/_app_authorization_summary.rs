@@ -72,9 +72,7 @@ impl AppAuthorizationSummary {
 
 /// A builder for [`AppAuthorizationSummary`](crate::types::AppAuthorizationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppAuthorizationSummaryBuilder {
     pub(crate) app_authorization_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_bundle_arn: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ pub struct AppAuthorizationSummaryBuilder {
 }
 impl AppAuthorizationSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the app authorization.</p>
-    pub fn app_authorization_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_authorization_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_authorization_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the app authorization.</p>
-    pub fn set_app_authorization_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_authorization_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_authorization_arn = input;
         self
     }
@@ -105,18 +97,12 @@ impl AppAuthorizationSummaryBuilder {
         &self.app_authorization_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the app bundle for the app authorization.</p>
-    pub fn app_bundle_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the app bundle for the app authorization.</p>
-    pub fn set_app_bundle_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_bundle_arn = input;
         self
     }
@@ -172,10 +158,7 @@ impl AppAuthorizationSummaryBuilder {
     /// <li> <p> <code>ConnectionValidationFailed</code>: The app authorization received a validation exception when trying to connect to the application. If the app authorization is in this state, you should verify the configured credentials and try to connect the app authorization again.</p> </li>
     /// <li> <p> <code>TokenAutoRotationFailed</code>: AppFabric failed to refresh the access token. If the app authorization is in this state, you should try to reconnect the app authorization.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AppAuthorizationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AppAuthorizationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -196,10 +179,7 @@ impl AppAuthorizationSummaryBuilder {
         self
     }
     /// <p>Timestamp for when the app authorization was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

@@ -30,9 +30,7 @@ impl SessionCommand {
 
 /// A builder for [`SessionCommand`](crate::types::SessionCommand).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SessionCommandBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) python_version: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl SessionCommandBuilder {
         &self.name
     }
     /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
-    pub fn python_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn python_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.python_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
-    pub fn set_python_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_python_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.python_version = input;
         self
     }

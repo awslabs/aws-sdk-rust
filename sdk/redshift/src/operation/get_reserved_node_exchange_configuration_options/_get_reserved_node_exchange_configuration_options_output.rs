@@ -8,8 +8,7 @@ pub struct GetReservedNodeExchangeConfigurationOptionsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node. Details include the node type, the price, the node count, and the offering type.</p>
     #[doc(hidden)]
-    pub reserved_node_configuration_option_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeConfigurationOption>>,
+    pub reserved_node_configuration_option_list: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeConfigurationOption>>,
     _request_id: Option<String>,
 }
 impl GetReservedNodeExchangeConfigurationOptionsOutput {
@@ -18,9 +17,7 @@ impl GetReservedNodeExchangeConfigurationOptionsOutput {
         self.marker.as_deref()
     }
     /// <p>the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node. Details include the node type, the price, the node count, and the offering type.</p>
-    pub fn reserved_node_configuration_option_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReservedNodeConfigurationOption]> {
+    pub fn reserved_node_configuration_option_list(&self) -> ::std::option::Option<&[crate::types::ReservedNodeConfigurationOption]> {
         self.reserved_node_configuration_option_list.as_deref()
     }
 }
@@ -31,20 +28,18 @@ impl ::aws_http::request_id::RequestId for GetReservedNodeExchangeConfigurationO
 }
 impl GetReservedNodeExchangeConfigurationOptionsOutput {
     /// Creates a new builder-style object to manufacture [`GetReservedNodeExchangeConfigurationOptionsOutput`](crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsOutput).
-    pub fn builder() -> crate::operation::get_reserved_node_exchange_configuration_options::builders::GetReservedNodeExchangeConfigurationOptionsOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::get_reserved_node_exchange_configuration_options::builders::GetReservedNodeExchangeConfigurationOptionsOutputBuilder {
         crate::operation::get_reserved_node_exchange_configuration_options::builders::GetReservedNodeExchangeConfigurationOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetReservedNodeExchangeConfigurationOptionsOutput`](crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReservedNodeExchangeConfigurationOptionsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_node_configuration_option_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeConfigurationOption>>,
+    pub(crate) reserved_node_configuration_option_list: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeConfigurationOption>>,
     _request_id: Option<String>,
 }
 impl GetReservedNodeExchangeConfigurationOptionsOutputBuilder {
@@ -67,13 +62,8 @@ impl GetReservedNodeExchangeConfigurationOptionsOutputBuilder {
     /// To override the contents of this collection use [`set_reserved_node_configuration_option_list`](Self::set_reserved_node_configuration_option_list).
     ///
     /// <p>the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node. Details include the node type, the price, the node count, and the offering type.</p>
-    pub fn reserved_node_configuration_option_list(
-        mut self,
-        input: crate::types::ReservedNodeConfigurationOption,
-    ) -> Self {
-        let mut v = self
-            .reserved_node_configuration_option_list
-            .unwrap_or_default();
+    pub fn reserved_node_configuration_option_list(mut self, input: crate::types::ReservedNodeConfigurationOption) -> Self {
+        let mut v = self.reserved_node_configuration_option_list.unwrap_or_default();
         v.push(input);
         self.reserved_node_configuration_option_list = ::std::option::Option::Some(v);
         self
@@ -81,9 +71,7 @@ impl GetReservedNodeExchangeConfigurationOptionsOutputBuilder {
     /// <p>the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node. Details include the node type, the price, the node count, and the offering type.</p>
     pub fn set_reserved_node_configuration_option_list(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ReservedNodeConfigurationOption>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeConfigurationOption>>,
     ) -> Self {
         self.reserved_node_configuration_option_list = input;
         self
@@ -91,8 +79,7 @@ impl GetReservedNodeExchangeConfigurationOptionsOutputBuilder {
     /// <p>the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node. Details include the node type, the price, the node count, and the offering type.</p>
     pub fn get_reserved_node_configuration_option_list(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeConfigurationOption>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeConfigurationOption>> {
         &self.reserved_node_configuration_option_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -105,12 +92,10 @@ impl GetReservedNodeExchangeConfigurationOptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetReservedNodeExchangeConfigurationOptionsOutput`](crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsOutput).
-    pub fn build(self) -> crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsOutput{
+    pub fn build(self) -> crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsOutput {
         crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsOutput {
-            marker: self.marker
-            ,
-            reserved_node_configuration_option_list: self.reserved_node_configuration_option_list
-            ,
+            marker: self.marker,
+            reserved_node_configuration_option_list: self.reserved_node_configuration_option_list,
             _request_id: self._request_id,
         }
     }

@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListMediaPipelinesOutput {
 }
 impl ListMediaPipelinesOutput {
     /// Creates a new builder-style object to manufacture [`ListMediaPipelinesOutput`](crate::operation::list_media_pipelines::ListMediaPipelinesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_media_pipelines::builders::ListMediaPipelinesOutputBuilder {
+    pub fn builder() -> crate::operation::list_media_pipelines::builders::ListMediaPipelinesOutputBuilder {
         crate::operation::list_media_pipelines::builders::ListMediaPipelinesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMediaPipelinesOutput`](crate::operation::list_media_pipelines::ListMediaPipelinesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMediaPipelinesOutputBuilder {
-    pub(crate) media_pipelines:
-        ::std::option::Option<::std::vec::Vec<crate::types::MediaPipelineSummary>>,
+    pub(crate) media_pipelines: ::std::option::Option<::std::vec::Vec<crate::types::MediaPipelineSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListMediaPipelinesOutputBuilder {
         self
     }
     /// <p>The media pipeline objects in the list.</p>
-    pub fn set_media_pipelines(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaPipelineSummary>>,
-    ) -> Self {
+    pub fn set_media_pipelines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaPipelineSummary>>) -> Self {
         self.media_pipelines = input;
         self
     }
     /// <p>The media pipeline objects in the list.</p>
-    pub fn get_media_pipelines(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaPipelineSummary>> {
+    pub fn get_media_pipelines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaPipelineSummary>> {
         &self.media_pipelines
     }
     /// <p>The token used to retrieve the next page of results. </p>

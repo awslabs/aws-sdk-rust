@@ -22,9 +22,7 @@ impl BatchPutMessageInput {
 
 /// A builder for [`BatchPutMessageInput`](crate::operation::batch_put_message::BatchPutMessageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutMessageInputBuilder {
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
 }
@@ -41,10 +39,7 @@ impl BatchPutMessageInputBuilder {
         self
     }
     /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
-    pub fn set_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
-    ) -> Self {
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
         self.messages = input;
         self
     }
@@ -55,12 +50,7 @@ impl BatchPutMessageInputBuilder {
     /// Consumes the builder and constructs a [`BatchPutMessageInput`](crate::operation::batch_put_message::BatchPutMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_put_message::BatchPutMessageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_put_message::BatchPutMessageInput {
-            messages: self.messages,
-        })
+    ) -> ::std::result::Result<crate::operation::batch_put_message::BatchPutMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_put_message::BatchPutMessageInput { messages: self.messages })
     }
 }

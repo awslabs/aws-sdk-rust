@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`creates(Option<BatchScheduleActionCreateResult>)`](crate::operation::batch_update_schedule::BatchUpdateScheduleOutput::creates): Schedule actions created in the schedule.
     ///   - [`deletes(Option<BatchScheduleActionDeleteResult>)`](crate::operation::batch_update_schedule::BatchUpdateScheduleOutput::deletes): Schedule actions deleted from the schedule.
     /// - On failure, responds with [`SdkError<BatchUpdateScheduleError>`](crate::operation::batch_update_schedule::BatchUpdateScheduleError)
-    pub fn batch_update_schedule(
-        &self,
-    ) -> crate::operation::batch_update_schedule::builders::BatchUpdateScheduleFluentBuilder {
-        crate::operation::batch_update_schedule::builders::BatchUpdateScheduleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_update_schedule(&self) -> crate::operation::batch_update_schedule::builders::BatchUpdateScheduleFluentBuilder {
+        crate::operation::batch_update_schedule::builders::BatchUpdateScheduleFluentBuilder::new(self.handle.clone())
     }
 }

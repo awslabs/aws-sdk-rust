@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`event_buses(Option<Vec<EventBus>>)`](crate::operation::list_event_buses::ListEventBusesOutput::event_buses): <p>This list of event buses.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_buses::ListEventBusesOutput::next_token): <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListEventBusesError>`](crate::operation::list_event_buses::ListEventBusesError)
-    pub fn list_event_buses(
-        &self,
-    ) -> crate::operation::list_event_buses::builders::ListEventBusesFluentBuilder {
-        crate::operation::list_event_buses::builders::ListEventBusesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_event_buses(&self) -> crate::operation::list_event_buses::builders::ListEventBusesFluentBuilder {
+        crate::operation::list_event_buses::builders::ListEventBusesFluentBuilder::new(self.handle.clone())
     }
 }

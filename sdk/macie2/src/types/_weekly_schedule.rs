@@ -23,9 +23,7 @@ impl WeeklySchedule {
 
 /// A builder for [`WeeklySchedule`](crate::types::WeeklySchedule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WeeklyScheduleBuilder {
     pub(crate) day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
 }
@@ -36,10 +34,7 @@ impl WeeklyScheduleBuilder {
         self
     }
     /// <p>The day of the week when Amazon Macie runs the job.</p>
-    pub fn set_day_of_week(
-        mut self,
-        input: ::std::option::Option<crate::types::DayOfWeek>,
-    ) -> Self {
+    pub fn set_day_of_week(mut self, input: ::std::option::Option<crate::types::DayOfWeek>) -> Self {
         self.day_of_week = input;
         self
     }

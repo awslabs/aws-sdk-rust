@@ -30,9 +30,7 @@ impl ApprovalResult {
 
 /// A builder for [`ApprovalResult`](crate::types::ApprovalResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApprovalResultBuilder {
     pub(crate) summary: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ApprovalStatus>,
@@ -58,10 +56,7 @@ impl ApprovalResultBuilder {
         self
     }
     /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApprovalStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApprovalStatus>) -> Self {
         self.status = input;
         self
     }

@@ -82,9 +82,7 @@ impl EcsTaskSet {
 
 /// A builder for [`EcsTaskSet`](crate::types::EcsTaskSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcsTaskSetBuilder {
     pub(crate) identifer: ::std::option::Option<::std::string::String>,
     pub(crate) desired_count: ::std::option::Option<i64>,
@@ -201,10 +199,7 @@ impl EcsTaskSetBuilder {
         self
     }
     /// <p> The target group associated with the task set. The target group is used by CodeDeploy to manage traffic to a task set. </p>
-    pub fn set_target_group(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupInfo>,
-    ) -> Self {
+    pub fn set_target_group(mut self, input: ::std::option::Option<crate::types::TargetGroupInfo>) -> Self {
         self.target_group = input;
         self
     }
@@ -218,10 +213,7 @@ impl EcsTaskSetBuilder {
         self
     }
     /// <p> A label that identifies whether the ECS task set is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
-    pub fn set_task_set_label(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetLabel>,
-    ) -> Self {
+    pub fn set_task_set_label(mut self, input: ::std::option::Option<crate::types::TargetLabel>) -> Self {
         self.task_set_label = input;
         self
     }

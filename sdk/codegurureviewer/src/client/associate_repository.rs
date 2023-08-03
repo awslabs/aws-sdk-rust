@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`repository_association(Option<RepositoryAssociation>)`](crate::operation::associate_repository::AssociateRepositoryOutput::repository_association): <p>Information about the repository association.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::associate_repository::AssociateRepositoryOutput::tags): <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>  <ul>   <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>   <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<AssociateRepositoryError>`](crate::operation::associate_repository::AssociateRepositoryError)
-    pub fn associate_repository(
-        &self,
-    ) -> crate::operation::associate_repository::builders::AssociateRepositoryFluentBuilder {
-        crate::operation::associate_repository::builders::AssociateRepositoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_repository(&self) -> crate::operation::associate_repository::builders::AssociateRepositoryFluentBuilder {
+        crate::operation::associate_repository::builders::AssociateRepositoryFluentBuilder::new(self.handle.clone())
     }
 }

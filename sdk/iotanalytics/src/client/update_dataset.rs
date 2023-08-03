@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`late_data_rules(Vec<LateDataRule>)`](crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder::late_data_rules) / [`set_late_data_rules(Option<Vec<LateDataRule>>)`](crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder::set_late_data_rules): <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
     /// - On success, responds with [`UpdateDatasetOutput`](crate::operation::update_dataset::UpdateDatasetOutput)
     /// - On failure, responds with [`SdkError<UpdateDatasetError>`](crate::operation::update_dataset::UpdateDatasetError)
-    pub fn update_dataset(
-        &self,
-    ) -> crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder {
-        crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_dataset(&self) -> crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder {
+        crate::operation::update_dataset::builders::UpdateDatasetFluentBuilder::new(self.handle.clone())
     }
 }

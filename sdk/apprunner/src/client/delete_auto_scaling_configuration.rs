@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteAutoScalingConfigurationOutput`](crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationOutput) with field(s):
     ///   - [`auto_scaling_configuration(Option<AutoScalingConfiguration>)`](crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationOutput::auto_scaling_configuration): <p>A description of the App Runner auto scaling configuration that this request just deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteAutoScalingConfigurationError>`](crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationError)
-    pub fn delete_auto_scaling_configuration(&self) -> crate::operation::delete_auto_scaling_configuration::builders::DeleteAutoScalingConfigurationFluentBuilder{
+    pub fn delete_auto_scaling_configuration(
+        &self,
+    ) -> crate::operation::delete_auto_scaling_configuration::builders::DeleteAutoScalingConfigurationFluentBuilder {
         crate::operation::delete_auto_scaling_configuration::builders::DeleteAutoScalingConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

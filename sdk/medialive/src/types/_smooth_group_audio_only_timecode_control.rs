@@ -38,13 +38,7 @@
 /// Smooth Group Audio Only Timecode Control
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SmoothGroupAudioOnlyTimecodeControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for SmoothGroupAudioOnlyTimecodeControl {
         match s {
             "PASSTHROUGH" => SmoothGroupAudioOnlyTimecodeControl::Passthrough,
             "USE_CONFIGURED_CLOCK" => SmoothGroupAudioOnlyTimecodeControl::UseConfiguredClock,
-            other => SmoothGroupAudioOnlyTimecodeControl::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => SmoothGroupAudioOnlyTimecodeControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

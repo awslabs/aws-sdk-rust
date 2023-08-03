@@ -43,9 +43,7 @@ impl GetCaseInput {
 
 /// A builder for [`GetCaseInput`](crate::operation::get_case::GetCaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCaseInputBuilder {
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
@@ -93,17 +91,12 @@ impl GetCaseInputBuilder {
         self
     }
     /// <p>A list of unique field identifiers. </p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>) -> Self {
         self.fields = input;
         self
     }
     /// <p>A list of unique field identifiers. </p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
         &self.fields
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -121,12 +114,7 @@ impl GetCaseInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetCaseInput`](crate::operation::get_case::GetCaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_case::GetCaseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_case::GetCaseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_case::GetCaseInput {
             case_id: self.case_id,
             domain_id: self.domain_id,

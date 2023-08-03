@@ -38,27 +38,19 @@ impl AssetPropertyTimestamp {
 
 /// A builder for [`AssetPropertyTimestamp`](crate::types::AssetPropertyTimestamp).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetPropertyTimestampBuilder {
     pub(crate) time_in_seconds: ::std::option::Option<::std::string::String>,
     pub(crate) offset_in_nanos: ::std::option::Option<::std::string::String>,
 }
 impl AssetPropertyTimestampBuilder {
     /// <p>The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.</p>
-    pub fn time_in_seconds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn time_in_seconds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_in_seconds = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.</p>
-    pub fn set_time_in_seconds(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_time_in_seconds(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_in_seconds = input;
         self
     }
@@ -67,18 +59,12 @@ impl AssetPropertyTimestampBuilder {
         &self.time_in_seconds
     }
     /// <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999.</p>
-    pub fn offset_in_nanos(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offset_in_nanos(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offset_in_nanos = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999.</p>
-    pub fn set_offset_in_nanos(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_offset_in_nanos(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offset_in_nanos = input;
         self
     }

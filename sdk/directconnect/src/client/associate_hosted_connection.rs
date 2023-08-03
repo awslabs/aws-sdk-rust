@@ -29,7 +29,7 @@ impl super::Client {
     ///   - [`encryption_mode(Option<String>)`](crate::operation::associate_hosted_connection::AssociateHostedConnectionOutput::encryption_mode): <p>The MAC Security (MACsec) connection encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::operation::associate_hosted_connection::AssociateHostedConnectionOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     /// - On failure, responds with [`SdkError<AssociateHostedConnectionError>`](crate::operation::associate_hosted_connection::AssociateHostedConnectionError)
-    pub fn associate_hosted_connection(&self) -> crate::operation::associate_hosted_connection::builders::AssociateHostedConnectionFluentBuilder{
+    pub fn associate_hosted_connection(&self) -> crate::operation::associate_hosted_connection::builders::AssociateHostedConnectionFluentBuilder {
         crate::operation::associate_hosted_connection::builders::AssociateHostedConnectionFluentBuilder::new(self.handle.clone())
     }
 }

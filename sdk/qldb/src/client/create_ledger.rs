@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`deletion_protection(Option<bool>)`](crate::operation::create_ledger::CreateLedgerOutput::deletion_protection): <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>  <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
     ///   - [`kms_key_arn(Option<String>)`](crate::operation::create_ledger::CreateLedgerOutput::kms_key_arn): <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     /// - On failure, responds with [`SdkError<CreateLedgerError>`](crate::operation::create_ledger::CreateLedgerError)
-    pub fn create_ledger(
-        &self,
-    ) -> crate::operation::create_ledger::builders::CreateLedgerFluentBuilder {
-        crate::operation::create_ledger::builders::CreateLedgerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_ledger(&self) -> crate::operation::create_ledger::builders::CreateLedgerFluentBuilder {
+        crate::operation::create_ledger::builders::CreateLedgerFluentBuilder::new(self.handle.clone())
     }
 }

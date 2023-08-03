@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`field_level_encryption_config(Option<FieldLevelEncryptionConfig>)`](crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigOutput::field_level_encryption_config): <p>Return the field-level encryption configuration information.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigOutput::e_tag): <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On failure, responds with [`SdkError<GetFieldLevelEncryptionConfigError>`](crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError)
-    pub fn get_field_level_encryption_config(&self) -> crate::operation::get_field_level_encryption_config::builders::GetFieldLevelEncryptionConfigFluentBuilder{
+    pub fn get_field_level_encryption_config(
+        &self,
+    ) -> crate::operation::get_field_level_encryption_config::builders::GetFieldLevelEncryptionConfigFluentBuilder {
         crate::operation::get_field_level_encryption_config::builders::GetFieldLevelEncryptionConfigFluentBuilder::new(self.handle.clone())
     }
 }

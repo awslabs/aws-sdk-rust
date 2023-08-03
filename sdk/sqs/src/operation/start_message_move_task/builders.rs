@@ -43,10 +43,7 @@ impl StartMessageMoveTaskFluentBuilder {
         }
     }
     /// Access the StartMessageMoveTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_message_move_task::builders::StartMessageMoveTaskInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_message_move_task::builders::StartMessageMoveTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +55,7 @@ impl StartMessageMoveTaskFluentBuilder {
             crate::operation::start_message_move_task::StartMessageMoveTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_message_move_task::StartMessageMoveTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_message_move_task::StartMessageMoveTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +65,7 @@ impl StartMessageMoveTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +74,7 @@ impl StartMessageMoveTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_message_move_task::StartMessageMoveTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_message_move_task::StartMessageMoveTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_message_move_task::StartMessageMoveTaskError>,
     > {
         let op = self
             .inner
@@ -107,9 +97,7 @@ impl StartMessageMoveTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_message_move_task::StartMessageMoveTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_message_move_task::StartMessageMoveTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_message_move_task::StartMessageMoveTaskError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +111,7 @@ impl StartMessageMoveTaskFluentBuilder {
             crate::operation::start_message_move_task::StartMessageMoveTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_message_move_task::StartMessageMoveTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_message_move_task::StartMessageMoveTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -144,18 +130,12 @@ impl StartMessageMoveTaskFluentBuilder {
         self.inner.get_source_arn()
     }
     /// <p>The ARN of the queue that receives the moved messages. You can use this field to specify the destination queue where you would like to redrive messages. If this field is left blank, the messages will be redriven back to their respective original source queues.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_arn(input.into());
         self
     }
     /// <p>The ARN of the queue that receives the moved messages. You can use this field to specify the destination queue where you would like to redrive messages. If this field is left blank, the messages will be redriven back to their respective original source queues.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_arn(input);
         self
     }
@@ -169,10 +149,7 @@ impl StartMessageMoveTaskFluentBuilder {
         self
     }
     /// <p>The number of messages to be moved per second (the message movement rate). You can use this field to define a fixed message movement rate. The maximum value for messages per second is 500. If this field is left blank, the system will optimize the rate based on the queue message backlog size, which may vary throughout the duration of the message movement task.</p>
-    pub fn set_max_number_of_messages_per_second(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_max_number_of_messages_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_number_of_messages_per_second(input);
         self
     }

@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ResponseItem>>)`](crate::operation::search_resources::SearchResourcesOutput::items): <p>List of Documents, Folders, Comments, and Document Versions matching the query.</p>
     ///   - [`marker(Option<String>)`](crate::operation::search_resources::SearchResourcesOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     /// - On failure, responds with [`SdkError<SearchResourcesError>`](crate::operation::search_resources::SearchResourcesError)
-    pub fn search_resources(
-        &self,
-    ) -> crate::operation::search_resources::builders::SearchResourcesFluentBuilder {
-        crate::operation::search_resources::builders::SearchResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_resources(&self) -> crate::operation::search_resources::builders::SearchResourcesFluentBuilder {
+        crate::operation::search_resources::builders::SearchResourcesFluentBuilder::new(self.handle.clone())
     }
 }

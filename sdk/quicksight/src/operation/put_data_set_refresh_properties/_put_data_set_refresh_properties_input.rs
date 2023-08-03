@@ -23,44 +23,33 @@ impl PutDataSetRefreshPropertiesInput {
         self.data_set_id.as_deref()
     }
     /// <p>The dataset refresh properties.</p>
-    pub fn data_set_refresh_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataSetRefreshProperties> {
+    pub fn data_set_refresh_properties(&self) -> ::std::option::Option<&crate::types::DataSetRefreshProperties> {
         self.data_set_refresh_properties.as_ref()
     }
 }
 impl PutDataSetRefreshPropertiesInput {
     /// Creates a new builder-style object to manufacture [`PutDataSetRefreshPropertiesInput`](crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesInput).
-    pub fn builder() -> crate::operation::put_data_set_refresh_properties::builders::PutDataSetRefreshPropertiesInputBuilder{
+    pub fn builder() -> crate::operation::put_data_set_refresh_properties::builders::PutDataSetRefreshPropertiesInputBuilder {
         crate::operation::put_data_set_refresh_properties::builders::PutDataSetRefreshPropertiesInputBuilder::default()
     }
 }
 
 /// A builder for [`PutDataSetRefreshPropertiesInput`](crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDataSetRefreshPropertiesInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
-    pub(crate) data_set_refresh_properties:
-        ::std::option::Option<crate::types::DataSetRefreshProperties>,
+    pub(crate) data_set_refresh_properties: ::std::option::Option<crate::types::DataSetRefreshProperties>,
 }
 impl PutDataSetRefreshPropertiesInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -83,25 +72,17 @@ impl PutDataSetRefreshPropertiesInputBuilder {
         &self.data_set_id
     }
     /// <p>The dataset refresh properties.</p>
-    pub fn data_set_refresh_properties(
-        mut self,
-        input: crate::types::DataSetRefreshProperties,
-    ) -> Self {
+    pub fn data_set_refresh_properties(mut self, input: crate::types::DataSetRefreshProperties) -> Self {
         self.data_set_refresh_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The dataset refresh properties.</p>
-    pub fn set_data_set_refresh_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSetRefreshProperties>,
-    ) -> Self {
+    pub fn set_data_set_refresh_properties(mut self, input: ::std::option::Option<crate::types::DataSetRefreshProperties>) -> Self {
         self.data_set_refresh_properties = input;
         self
     }
     /// <p>The dataset refresh properties.</p>
-    pub fn get_data_set_refresh_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSetRefreshProperties> {
+    pub fn get_data_set_refresh_properties(&self) -> &::std::option::Option<crate::types::DataSetRefreshProperties> {
         &self.data_set_refresh_properties
     }
     /// Consumes the builder and constructs a [`PutDataSetRefreshPropertiesInput`](crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesInput).
@@ -111,12 +92,10 @@ impl PutDataSetRefreshPropertiesInputBuilder {
         crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesInput {
-                aws_account_id: self.aws_account_id,
-                data_set_id: self.data_set_id,
-                data_set_refresh_properties: self.data_set_refresh_properties,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesInput {
+            aws_account_id: self.aws_account_id,
+            data_set_id: self.data_set_id,
+            data_set_refresh_properties: self.data_set_refresh_properties,
+        })
     }
 }

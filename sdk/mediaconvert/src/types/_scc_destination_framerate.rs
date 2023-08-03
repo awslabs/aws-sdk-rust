@@ -41,13 +41,7 @@
 /// Set Framerate to make sure that the captions and the video are synchronized in the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97 dropframe only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SccDestinationFramerate {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for SccDestinationFramerate {
             "FRAMERATE_25" => SccDestinationFramerate::Framerate25,
             "FRAMERATE_29_97_DROPFRAME" => SccDestinationFramerate::Framerate2997Dropframe,
             "FRAMERATE_29_97_NON_DROPFRAME" => SccDestinationFramerate::Framerate2997NonDropframe,
-            other => SccDestinationFramerate::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SccDestinationFramerate::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

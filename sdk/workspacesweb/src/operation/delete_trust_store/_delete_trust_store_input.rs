@@ -15,34 +15,25 @@ impl DeleteTrustStoreInput {
 }
 impl DeleteTrustStoreInput {
     /// Creates a new builder-style object to manufacture [`DeleteTrustStoreInput`](crate::operation::delete_trust_store::DeleteTrustStoreInput).
-    pub fn builder() -> crate::operation::delete_trust_store::builders::DeleteTrustStoreInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_trust_store::builders::DeleteTrustStoreInputBuilder {
         crate::operation::delete_trust_store::builders::DeleteTrustStoreInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTrustStoreInput`](crate::operation::delete_trust_store::DeleteTrustStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrustStoreInputBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTrustStoreInputBuilder {
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn set_trust_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_store_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteTrustStoreInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTrustStoreInput`](crate::operation::delete_trust_store::DeleteTrustStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_trust_store::DeleteTrustStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_trust_store::DeleteTrustStoreInput {
-                trust_store_arn: self.trust_store_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_trust_store::DeleteTrustStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_trust_store::DeleteTrustStoreInput {
+            trust_store_arn: self.trust_store_arn,
+        })
     }
 }

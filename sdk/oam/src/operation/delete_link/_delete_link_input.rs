@@ -22,9 +22,7 @@ impl DeleteLinkInput {
 
 /// A builder for [`DeleteLinkInput`](crate::operation::delete_link::DeleteLinkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLinkInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteLinkInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`DeleteLinkInput`](crate::operation::delete_link::DeleteLinkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_link::DeleteLinkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_link::DeleteLinkInput {
-            identifier: self.identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_link::DeleteLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_link::DeleteLinkInput { identifier: self.identifier })
     }
 }

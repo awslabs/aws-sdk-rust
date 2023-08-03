@@ -6,14 +6,11 @@
 pub struct CertificateOptions {
     /// <p>You can opt out of certificate transparency logging by specifying the <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
     #[doc(hidden)]
-    pub certificate_transparency_logging_preference:
-        ::std::option::Option<crate::types::CertificateTransparencyLoggingPreference>,
+    pub certificate_transparency_logging_preference: ::std::option::Option<crate::types::CertificateTransparencyLoggingPreference>,
 }
 impl CertificateOptions {
     /// <p>You can opt out of certificate transparency logging by specifying the <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
-    pub fn certificate_transparency_logging_preference(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CertificateTransparencyLoggingPreference> {
+    pub fn certificate_transparency_logging_preference(&self) -> ::std::option::Option<&crate::types::CertificateTransparencyLoggingPreference> {
         self.certificate_transparency_logging_preference.as_ref()
     }
 }
@@ -26,19 +23,13 @@ impl CertificateOptions {
 
 /// A builder for [`CertificateOptions`](crate::types::CertificateOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateOptionsBuilder {
-    pub(crate) certificate_transparency_logging_preference:
-        ::std::option::Option<crate::types::CertificateTransparencyLoggingPreference>,
+    pub(crate) certificate_transparency_logging_preference: ::std::option::Option<crate::types::CertificateTransparencyLoggingPreference>,
 }
 impl CertificateOptionsBuilder {
     /// <p>You can opt out of certificate transparency logging by specifying the <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
-    pub fn certificate_transparency_logging_preference(
-        mut self,
-        input: crate::types::CertificateTransparencyLoggingPreference,
-    ) -> Self {
+    pub fn certificate_transparency_logging_preference(mut self, input: crate::types::CertificateTransparencyLoggingPreference) -> Self {
         self.certificate_transparency_logging_preference = ::std::option::Option::Some(input);
         self
     }
@@ -51,16 +42,13 @@ impl CertificateOptionsBuilder {
         self
     }
     /// <p>You can opt out of certificate transparency logging by specifying the <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
-    pub fn get_certificate_transparency_logging_preference(
-        &self,
-    ) -> &::std::option::Option<crate::types::CertificateTransparencyLoggingPreference> {
+    pub fn get_certificate_transparency_logging_preference(&self) -> &::std::option::Option<crate::types::CertificateTransparencyLoggingPreference> {
         &self.certificate_transparency_logging_preference
     }
     /// Consumes the builder and constructs a [`CertificateOptions`](crate::types::CertificateOptions).
     pub fn build(self) -> crate::types::CertificateOptions {
         crate::types::CertificateOptions {
-            certificate_transparency_logging_preference: self
-                .certificate_transparency_logging_preference,
+            certificate_transparency_logging_preference: self.certificate_transparency_logging_preference,
         }
     }
 }

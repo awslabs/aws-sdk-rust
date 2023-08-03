@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StartImportOutput`](crate::operation::start_import::StartImportOutput) with field(s):
     ///   - [`import_task(Option<ImportTask>)`](crate::operation::start_import::StartImportOutput::import_task): <p>Start import response import task.</p>
     /// - On failure, responds with [`SdkError<StartImportError>`](crate::operation::start_import::StartImportError)
-    pub fn start_import(
-        &self,
-    ) -> crate::operation::start_import::builders::StartImportFluentBuilder {
+    pub fn start_import(&self) -> crate::operation::start_import::builders::StartImportFluentBuilder {
         crate::operation::start_import::builders::StartImportFluentBuilder::new(self.handle.clone())
     }
 }

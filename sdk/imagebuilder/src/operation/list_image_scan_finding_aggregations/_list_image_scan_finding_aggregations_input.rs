@@ -22,16 +22,14 @@ impl ListImageScanFindingAggregationsInput {
 }
 impl ListImageScanFindingAggregationsInput {
     /// Creates a new builder-style object to manufacture [`ListImageScanFindingAggregationsInput`](crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsInput).
-    pub fn builder() -> crate::operation::list_image_scan_finding_aggregations::builders::ListImageScanFindingAggregationsInputBuilder{
+    pub fn builder() -> crate::operation::list_image_scan_finding_aggregations::builders::ListImageScanFindingAggregationsInputBuilder {
         crate::operation::list_image_scan_finding_aggregations::builders::ListImageScanFindingAggregationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListImageScanFindingAggregationsInput`](crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImageScanFindingAggregationsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::Filter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl ListImageScanFindingAggregationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListImageScanFindingAggregationsInput`](crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsInput {
-                filter: self.filter
-                ,
-                next_token: self.next_token
-                ,
-            }
+                filter: self.filter,
+                next_token: self.next_token,
+            },
         )
     }
 }

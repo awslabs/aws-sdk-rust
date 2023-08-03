@@ -38,13 +38,7 @@
 /// Choose the type of motion graphic asset that you are providing for your overlay. You can choose either a .mov file or a series of .png files.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MotionImageInsertionMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for MotionImageInsertionMode {
         match s {
             "MOV" => MotionImageInsertionMode::Mov,
             "PNG" => MotionImageInsertionMode::Png,
-            other => MotionImageInsertionMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MotionImageInsertionMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`ModifyAvailabilityZoneGroupOutput`](crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupOutput::return): <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
     /// - On failure, responds with [`SdkError<ModifyAvailabilityZoneGroupError>`](crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupError)
-    pub fn modify_availability_zone_group(&self) -> crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupFluentBuilder{
+    pub fn modify_availability_zone_group(
+        &self,
+    ) -> crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupFluentBuilder {
         crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupFluentBuilder::new(self.handle.clone())
     }
 }

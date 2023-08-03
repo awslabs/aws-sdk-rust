@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_vocabularies::ListVocabulariesOutput::next_token): <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     ///   - [`vocabularies(Option<Vec<VocabularyInfo>>)`](crate::operation::list_vocabularies::ListVocabulariesOutput::vocabularies): <p>Provides information about the custom vocabularies that match the criteria specified in your request.</p>
     /// - On failure, responds with [`SdkError<ListVocabulariesError>`](crate::operation::list_vocabularies::ListVocabulariesError)
-    pub fn list_vocabularies(
-        &self,
-    ) -> crate::operation::list_vocabularies::builders::ListVocabulariesFluentBuilder {
-        crate::operation::list_vocabularies::builders::ListVocabulariesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_vocabularies(&self) -> crate::operation::list_vocabularies::builders::ListVocabulariesFluentBuilder {
+        crate::operation::list_vocabularies::builders::ListVocabulariesFluentBuilder::new(self.handle.clone())
     }
 }

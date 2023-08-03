@@ -5,8 +5,7 @@
 pub struct ListIngestionDestinationsOutput {
     /// <p>Contains a list of ingestion destination summaries.</p>
     #[doc(hidden)]
-    pub ingestion_destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::IngestionDestinationSummary>>,
+    pub ingestion_destinations: ::std::option::Option<::std::vec::Vec<crate::types::IngestionDestinationSummary>>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListIngestionDestinationsOutput {
 }
 impl ListIngestionDestinationsOutput {
     /// <p>Contains a list of ingestion destination summaries.</p>
-    pub fn ingestion_destinations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IngestionDestinationSummary]> {
+    pub fn ingestion_destinations(&self) -> ::std::option::Option<&[crate::types::IngestionDestinationSummary]> {
         self.ingestion_destinations.as_deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListIngestionDestinationsOutput {
 }
 impl ListIngestionDestinationsOutput {
     /// Creates a new builder-style object to manufacture [`ListIngestionDestinationsOutput`](crate::operation::list_ingestion_destinations::ListIngestionDestinationsOutput).
-    pub fn builder() -> crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsOutputBuilder {
         crate::operation::list_ingestion_destinations::builders::ListIngestionDestinationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIngestionDestinationsOutput`](crate::operation::list_ingestion_destinations::ListIngestionDestinationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIngestionDestinationsOutputBuilder {
-    pub(crate) ingestion_destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::IngestionDestinationSummary>>,
+    pub(crate) ingestion_destinations: ::std::option::Option<::std::vec::Vec<crate::types::IngestionDestinationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl ListIngestionDestinationsOutputBuilder {
     /// To override the contents of this collection use [`set_ingestion_destinations`](Self::set_ingestion_destinations).
     ///
     /// <p>Contains a list of ingestion destination summaries.</p>
-    pub fn ingestion_destinations(
-        mut self,
-        input: crate::types::IngestionDestinationSummary,
-    ) -> Self {
+    pub fn ingestion_destinations(mut self, input: crate::types::IngestionDestinationSummary) -> Self {
         let mut v = self.ingestion_destinations.unwrap_or_default();
         v.push(input);
         self.ingestion_destinations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains a list of ingestion destination summaries.</p>
-    pub fn set_ingestion_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IngestionDestinationSummary>>,
-    ) -> Self {
+    pub fn set_ingestion_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IngestionDestinationSummary>>) -> Self {
         self.ingestion_destinations = input;
         self
     }
     /// <p>Contains a list of ingestion destination summaries.</p>
-    pub fn get_ingestion_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IngestionDestinationSummary>> {
+    pub fn get_ingestion_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IngestionDestinationSummary>> {
         &self.ingestion_destinations
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
@@ -100,9 +86,7 @@ impl ListIngestionDestinationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListIngestionDestinationsOutput`](crate::operation::list_ingestion_destinations::ListIngestionDestinationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_ingestion_destinations::ListIngestionDestinationsOutput {
+    pub fn build(self) -> crate::operation::list_ingestion_destinations::ListIngestionDestinationsOutput {
         crate::operation::list_ingestion_destinations::ListIngestionDestinationsOutput {
             ingestion_destinations: self.ingestion_destinations,
             next_token: self.next_token,

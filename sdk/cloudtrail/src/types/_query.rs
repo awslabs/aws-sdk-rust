@@ -37,9 +37,7 @@ impl Query {
 
 /// A builder for [`Query`](crate::types::Query).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_status: ::std::option::Option<crate::types::QueryStatus>,
@@ -66,10 +64,7 @@ impl QueryBuilder {
         self
     }
     /// <p>The status of the query. This can be <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
-    pub fn set_query_status(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryStatus>,
-    ) -> Self {
+    pub fn set_query_status(mut self, input: ::std::option::Option<crate::types::QueryStatus>) -> Self {
         self.query_status = input;
         self
     }
@@ -83,10 +78,7 @@ impl QueryBuilder {
         self
     }
     /// <p>The creation time of a query.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

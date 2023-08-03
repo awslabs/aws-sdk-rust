@@ -29,18 +29,14 @@ impl ModifyVolumeAttributeInput {
 }
 impl ModifyVolumeAttributeInput {
     /// Creates a new builder-style object to manufacture [`ModifyVolumeAttributeInput`](crate::operation::modify_volume_attribute::ModifyVolumeAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::modify_volume_attribute::builders::ModifyVolumeAttributeInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_volume_attribute::builders::ModifyVolumeAttributeInputBuilder {
         crate::operation::modify_volume_attribute::builders::ModifyVolumeAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVolumeAttributeInput`](crate::operation::modify_volume_attribute::ModifyVolumeAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVolumeAttributeInputBuilder {
     pub(crate) auto_enable_io: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
@@ -53,17 +49,12 @@ impl ModifyVolumeAttributeInputBuilder {
         self
     }
     /// <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
-    pub fn set_auto_enable_io(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_auto_enable_io(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.auto_enable_io = input;
         self
     }
     /// <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
-    pub fn get_auto_enable_io(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_auto_enable_io(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.auto_enable_io
     }
     /// <p>The ID of the volume.</p>
@@ -97,16 +88,12 @@ impl ModifyVolumeAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ModifyVolumeAttributeInput`](crate::operation::modify_volume_attribute::ModifyVolumeAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_volume_attribute::ModifyVolumeAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_volume_attribute::ModifyVolumeAttributeInput {
-                auto_enable_io: self.auto_enable_io,
-                volume_id: self.volume_id,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_volume_attribute::ModifyVolumeAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::modify_volume_attribute::ModifyVolumeAttributeInput {
+            auto_enable_io: self.auto_enable_io,
+            volume_id: self.volume_id,
+            dry_run: self.dry_run,
+        })
     }
 }

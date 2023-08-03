@@ -44,9 +44,7 @@ impl RecoveryPointCreator {
 
 /// A builder for [`RecoveryPointCreator`](crate::types::RecoveryPointCreator).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecoveryPointCreatorBuilder {
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) backup_plan_arn: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct RecoveryPointCreatorBuilder {
 }
 impl RecoveryPointCreatorBuilder {
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn set_backup_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_id = input;
         self
     }
@@ -75,18 +67,12 @@ impl RecoveryPointCreatorBuilder {
         &self.backup_plan_id
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
-    pub fn backup_plan_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
-    pub fn set_backup_plan_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_arn = input;
         self
     }
@@ -95,18 +81,12 @@ impl RecoveryPointCreatorBuilder {
         &self.backup_plan_arn
     }
     /// <p>Version IDs are unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be edited.</p>
-    pub fn backup_plan_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Version IDs are unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be edited.</p>
-    pub fn set_backup_plan_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_version = input;
         self
     }
@@ -115,18 +95,12 @@ impl RecoveryPointCreatorBuilder {
         &self.backup_plan_version
     }
     /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources.</p>
-    pub fn backup_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources.</p>
-    pub fn set_backup_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_rule_id = input;
         self
     }

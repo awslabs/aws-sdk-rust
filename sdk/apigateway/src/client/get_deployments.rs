@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<Deployment>>)`](crate::operation::get_deployments::GetDeploymentsOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_deployments::GetDeploymentsOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<GetDeploymentsError>`](crate::operation::get_deployments::GetDeploymentsError)
-    pub fn get_deployments(
-        &self,
-    ) -> crate::operation::get_deployments::builders::GetDeploymentsFluentBuilder {
-        crate::operation::get_deployments::builders::GetDeploymentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_deployments(&self) -> crate::operation::get_deployments::builders::GetDeploymentsFluentBuilder {
+        crate::operation::get_deployments::builders::GetDeploymentsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl ShutdownEventConfiguration {
 
 /// A builder for [`ShutdownEventConfiguration`](crate::types::ShutdownEventConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ShutdownEventConfigurationBuilder {
     pub(crate) execution_timeout: ::std::option::Option<i32>,
     pub(crate) delay_until_elb_connections_drained: ::std::option::Option<bool>,
@@ -58,10 +56,7 @@ impl ShutdownEventConfigurationBuilder {
         self
     }
     /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
-    pub fn set_delay_until_elb_connections_drained(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_delay_until_elb_connections_drained(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delay_until_elb_connections_drained = input;
         self
     }

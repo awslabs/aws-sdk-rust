@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ResetAddressAttributeOutput`](crate::operation::reset_address_attribute::ResetAddressAttributeOutput) with field(s):
     ///   - [`address(Option<AddressAttribute>)`](crate::operation::reset_address_attribute::ResetAddressAttributeOutput::address): <p>Information about the IP address.</p>
     /// - On failure, responds with [`SdkError<ResetAddressAttributeError>`](crate::operation::reset_address_attribute::ResetAddressAttributeError)
-    pub fn reset_address_attribute(
-        &self,
-    ) -> crate::operation::reset_address_attribute::builders::ResetAddressAttributeFluentBuilder
-    {
-        crate::operation::reset_address_attribute::builders::ResetAddressAttributeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reset_address_attribute(&self) -> crate::operation::reset_address_attribute::builders::ResetAddressAttributeFluentBuilder {
+        crate::operation::reset_address_attribute::builders::ResetAddressAttributeFluentBuilder::new(self.handle.clone())
     }
 }

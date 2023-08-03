@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`open_table_format_input(OpenTableFormatInput)`](crate::operation::create_table::builders::CreateTableFluentBuilder::open_table_format_input) / [`set_open_table_format_input(Option<OpenTableFormatInput>)`](crate::operation::create_table::builders::CreateTableFluentBuilder::set_open_table_format_input): <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.</p>
     /// - On success, responds with [`CreateTableOutput`](crate::operation::create_table::CreateTableOutput)
     /// - On failure, responds with [`SdkError<CreateTableError>`](crate::operation::create_table::CreateTableError)
-    pub fn create_table(
-        &self,
-    ) -> crate::operation::create_table::builders::CreateTableFluentBuilder {
+    pub fn create_table(&self) -> crate::operation::create_table::builders::CreateTableFluentBuilder {
         crate::operation::create_table::builders::CreateTableFluentBuilder::new(self.handle.clone())
     }
 }

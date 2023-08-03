@@ -29,18 +29,14 @@ impl ListThreatIntelSetsInput {
 }
 impl ListThreatIntelSetsInput {
     /// Creates a new builder-style object to manufacture [`ListThreatIntelSetsInput`](crate::operation::list_threat_intel_sets::ListThreatIntelSetsInput).
-    pub fn builder(
-    ) -> crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsInputBuilder {
-        crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsInputBuilder {
+        crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListThreatIntelSetsInput`](crate::operation::list_threat_intel_sets::ListThreatIntelSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThreatIntelSetsInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,16 +88,12 @@ impl ListThreatIntelSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListThreatIntelSetsInput`](crate::operation::list_threat_intel_sets::ListThreatIntelSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_threat_intel_sets::ListThreatIntelSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_threat_intel_sets::ListThreatIntelSetsInput {
-                detector_id: self.detector_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_threat_intel_sets::ListThreatIntelSetsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_threat_intel_sets::ListThreatIntelSetsInput {
+            detector_id: self.detector_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

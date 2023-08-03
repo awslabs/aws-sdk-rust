@@ -29,18 +29,14 @@ impl ListRoutingControlsInput {
 }
 impl ListRoutingControlsInput {
     /// Creates a new builder-style object to manufacture [`ListRoutingControlsInput`](crate::operation::list_routing_controls::ListRoutingControlsInput).
-    pub fn builder(
-    ) -> crate::operation::list_routing_controls::builders::ListRoutingControlsInputBuilder {
-        crate::operation::list_routing_controls::builders::ListRoutingControlsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_routing_controls::builders::ListRoutingControlsInputBuilder {
+        crate::operation::list_routing_controls::builders::ListRoutingControlsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRoutingControlsInput`](crate::operation::list_routing_controls::ListRoutingControlsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoutingControlsInputBuilder {
     pub(crate) control_panel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct ListRoutingControlsInputBuilder {
 }
 impl ListRoutingControlsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
-    pub fn control_panel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_panel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
-    pub fn set_control_panel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_panel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_panel_arn = input;
         self
     }
@@ -98,16 +88,12 @@ impl ListRoutingControlsInputBuilder {
     /// Consumes the builder and constructs a [`ListRoutingControlsInput`](crate::operation::list_routing_controls::ListRoutingControlsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_routing_controls::ListRoutingControlsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_routing_controls::ListRoutingControlsInput {
-                control_panel_arn: self.control_panel_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_routing_controls::ListRoutingControlsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_routing_controls::ListRoutingControlsInput {
+            control_panel_arn: self.control_panel_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

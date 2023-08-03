@@ -30,9 +30,7 @@ impl ReadinessCheckSummary {
 
 /// A builder for [`ReadinessCheckSummary`](crate::types::ReadinessCheckSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReadinessCheckSummaryBuilder {
     pub(crate) readiness: ::std::option::Option<crate::types::Readiness>,
     pub(crate) readiness_check_name: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl ReadinessCheckSummaryBuilder {
         &self.readiness
     }
     /// <p>The name of a readiness check.</p>
-    pub fn readiness_check_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn readiness_check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.readiness_check_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a readiness check.</p>
-    pub fn set_readiness_check_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_readiness_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.readiness_check_name = input;
         self
     }

@@ -6,10 +6,7 @@ pub fn ser_update_backend_api_input(
     if let Some(var_1) = &input.resource_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("resourceConfig").start_object();
-        crate::protocol_serde::shape_backend_api_resource_config::ser_backend_api_resource_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_backend_api_resource_config::ser_backend_api_resource_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.resource_name {

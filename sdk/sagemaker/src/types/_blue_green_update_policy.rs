@@ -16,9 +16,7 @@ pub struct BlueGreenUpdatePolicy {
 }
 impl BlueGreenUpdatePolicy {
     /// <p>Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an endpoint deployment.</p>
-    pub fn traffic_routing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TrafficRoutingConfig> {
+    pub fn traffic_routing_configuration(&self) -> ::std::option::Option<&crate::types::TrafficRoutingConfig> {
         self.traffic_routing_configuration.as_ref()
     }
     /// <p>Additional waiting time in seconds after the completion of an endpoint deployment before terminating the old endpoint fleet. Default is 0.</p>
@@ -39,36 +37,25 @@ impl BlueGreenUpdatePolicy {
 
 /// A builder for [`BlueGreenUpdatePolicy`](crate::types::BlueGreenUpdatePolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BlueGreenUpdatePolicyBuilder {
-    pub(crate) traffic_routing_configuration:
-        ::std::option::Option<crate::types::TrafficRoutingConfig>,
+    pub(crate) traffic_routing_configuration: ::std::option::Option<crate::types::TrafficRoutingConfig>,
     pub(crate) termination_wait_in_seconds: ::std::option::Option<i32>,
     pub(crate) maximum_execution_timeout_in_seconds: ::std::option::Option<i32>,
 }
 impl BlueGreenUpdatePolicyBuilder {
     /// <p>Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an endpoint deployment.</p>
-    pub fn traffic_routing_configuration(
-        mut self,
-        input: crate::types::TrafficRoutingConfig,
-    ) -> Self {
+    pub fn traffic_routing_configuration(mut self, input: crate::types::TrafficRoutingConfig) -> Self {
         self.traffic_routing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an endpoint deployment.</p>
-    pub fn set_traffic_routing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficRoutingConfig>,
-    ) -> Self {
+    pub fn set_traffic_routing_configuration(mut self, input: ::std::option::Option<crate::types::TrafficRoutingConfig>) -> Self {
         self.traffic_routing_configuration = input;
         self
     }
     /// <p>Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an endpoint deployment.</p>
-    pub fn get_traffic_routing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrafficRoutingConfig> {
+    pub fn get_traffic_routing_configuration(&self) -> &::std::option::Option<crate::types::TrafficRoutingConfig> {
         &self.traffic_routing_configuration
     }
     /// <p>Additional waiting time in seconds after the completion of an endpoint deployment before terminating the old endpoint fleet. Default is 0.</p>
@@ -91,10 +78,7 @@ impl BlueGreenUpdatePolicyBuilder {
         self
     }
     /// <p>Maximum execution timeout for the deployment. Note that the timeout value should be larger than the total waiting time specified in <code>TerminationWaitInSeconds</code> and <code>WaitIntervalInSeconds</code>.</p>
-    pub fn set_maximum_execution_timeout_in_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_maximum_execution_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_execution_timeout_in_seconds = input;
         self
     }

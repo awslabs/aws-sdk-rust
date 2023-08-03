@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for GetAttributeValuesOutput {
 }
 impl GetAttributeValuesOutput {
     /// Creates a new builder-style object to manufacture [`GetAttributeValuesOutput`](crate::operation::get_attribute_values::GetAttributeValuesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_attribute_values::builders::GetAttributeValuesOutputBuilder {
+    pub fn builder() -> crate::operation::get_attribute_values::builders::GetAttributeValuesOutputBuilder {
         crate::operation::get_attribute_values::builders::GetAttributeValuesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAttributeValuesOutput`](crate::operation::get_attribute_values::GetAttributeValuesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAttributeValuesOutputBuilder {
-    pub(crate) attribute_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
+    pub(crate) attribute_values: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl GetAttributeValuesOutputBuilder {
         self
     }
     /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>
-    pub fn set_attribute_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
-    ) -> Self {
+    pub fn set_attribute_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>) -> Self {
         self.attribute_values = input;
         self
     }
     /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>
-    pub fn get_attribute_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>> {
+    pub fn get_attribute_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>> {
         &self.attribute_values
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>

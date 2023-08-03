@@ -22,9 +22,7 @@ impl RebootBrokerInput {
 
 /// A builder for [`RebootBrokerInput`](crate::operation::reboot_broker::RebootBrokerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebootBrokerInputBuilder {
     pub(crate) broker_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl RebootBrokerInputBuilder {
         &self.broker_id
     }
     /// Consumes the builder and constructs a [`RebootBrokerInput`](crate::operation::reboot_broker::RebootBrokerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reboot_broker::RebootBrokerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::reboot_broker::RebootBrokerInput {
-            broker_id: self.broker_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reboot_broker::RebootBrokerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::reboot_broker::RebootBrokerInput { broker_id: self.broker_id })
     }
 }

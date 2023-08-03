@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetAnomalyGroupOutput {
 }
 impl GetAnomalyGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetAnomalyGroupOutput`](crate::operation::get_anomaly_group::GetAnomalyGroupOutput).
-    pub fn builder() -> crate::operation::get_anomaly_group::builders::GetAnomalyGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_anomaly_group::builders::GetAnomalyGroupOutputBuilder {
         crate::operation::get_anomaly_group::builders::GetAnomalyGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAnomalyGroupOutput`](crate::operation::get_anomaly_group::GetAnomalyGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAnomalyGroupOutputBuilder {
     pub(crate) anomaly_group: ::std::option::Option<crate::types::AnomalyGroup>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetAnomalyGroupOutputBuilder {
         self
     }
     /// <p>Details about the anomaly group.</p>
-    pub fn set_anomaly_group(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyGroup>,
-    ) -> Self {
+    pub fn set_anomaly_group(mut self, input: ::std::option::Option<crate::types::AnomalyGroup>) -> Self {
         self.anomaly_group = input;
         self
     }

@@ -3,10 +3,7 @@
 pub fn de_db_instance_role_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::DbInstanceRoleAlreadyExistsFaultBuilder,
-) -> Result<
-    crate::types::error::builders::DbInstanceRoleAlreadyExistsFaultBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::DbInstanceRoleAlreadyExistsFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

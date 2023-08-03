@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`api_version(impl ::std::convert::Into<String>)`](crate::operation::reset_connector_metadata_cache::builders::ResetConnectorMetadataCacheFluentBuilder::api_version) / [`set_api_version(Option<String>)`](crate::operation::reset_connector_metadata_cache::builders::ResetConnectorMetadataCacheFluentBuilder::set_api_version): <p>The API version that you specified in the connector profile that you’re resetting cached metadata for. You must use this parameter only if the connector supports multiple API versions or if the connector type is CustomConnector.</p>  <p>To look up how many versions a connector supports, use the DescribeConnectors action. In the response, find the value that Amazon AppFlow returns for the connectorVersion parameter.</p>  <p>To look up the connector type, use the DescribeConnectorProfiles action. In the response, find the value that Amazon AppFlow returns for the connectorType parameter.</p>  <p>To look up the API version that you specified in a connector profile, use the DescribeConnectorProfiles action.</p>
     /// - On success, responds with [`ResetConnectorMetadataCacheOutput`](crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput)
     /// - On failure, responds with [`SdkError<ResetConnectorMetadataCacheError>`](crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError)
-    pub fn reset_connector_metadata_cache(&self) -> crate::operation::reset_connector_metadata_cache::builders::ResetConnectorMetadataCacheFluentBuilder{
+    pub fn reset_connector_metadata_cache(
+        &self,
+    ) -> crate::operation::reset_connector_metadata_cache::builders::ResetConnectorMetadataCacheFluentBuilder {
         crate::operation::reset_connector_metadata_cache::builders::ResetConnectorMetadataCacheFluentBuilder::new(self.handle.clone())
     }
 }

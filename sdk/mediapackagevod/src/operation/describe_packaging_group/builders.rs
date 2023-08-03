@@ -37,10 +37,7 @@ impl DescribePackagingGroupFluentBuilder {
         }
     }
     /// Access the DescribePackagingGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_packaging_group::builders::DescribePackagingGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_packaging_group::builders::DescribePackagingGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribePackagingGroupFluentBuilder {
             crate::operation::describe_packaging_group::DescribePackagingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_packaging_group::DescribePackagingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_packaging_group::DescribePackagingGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribePackagingGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribePackagingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_packaging_group::DescribePackagingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_packaging_group::DescribePackagingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_packaging_group::DescribePackagingGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribePackagingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_packaging_group::DescribePackagingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_packaging_group::DescribePackagingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_packaging_group::DescribePackagingGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribePackagingGroupFluentBuilder {
             crate::operation::describe_packaging_group::DescribePackagingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_packaging_group::DescribePackagingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_packaging_group::DescribePackagingGroupError>,
     > {
         self.customize_middleware().await
     }

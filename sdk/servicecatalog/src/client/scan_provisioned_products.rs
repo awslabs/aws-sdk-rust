@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`provisioned_products(Option<Vec<ProvisionedProductDetail>>)`](crate::operation::scan_provisioned_products::ScanProvisionedProductsOutput::provisioned_products): <p>Information about the provisioned products.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::scan_provisioned_products::ScanProvisionedProductsOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ScanProvisionedProductsError>`](crate::operation::scan_provisioned_products::ScanProvisionedProductsError)
-    pub fn scan_provisioned_products(
-        &self,
-    ) -> crate::operation::scan_provisioned_products::builders::ScanProvisionedProductsFluentBuilder
-    {
+    pub fn scan_provisioned_products(&self) -> crate::operation::scan_provisioned_products::builders::ScanProvisionedProductsFluentBuilder {
         crate::operation::scan_provisioned_products::builders::ScanProvisionedProductsFluentBuilder::new(self.handle.clone())
     }
 }

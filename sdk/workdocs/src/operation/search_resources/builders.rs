@@ -10,10 +10,7 @@ impl SearchResourcesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_resources::SearchResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_resources::SearchResourcesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_resources::SearchResourcesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_resources();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SearchResourcesFluentBuilder {
         }
     }
     /// Access the SearchResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_resources::builders::SearchResourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_resources::builders::SearchResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SearchResourcesFluentBuilder {
             crate::operation::search_resources::SearchResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_resources::SearchResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_resources::SearchResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SearchResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SearchResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_resources::SearchResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_resources::SearchResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_resources::SearchResourcesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SearchResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_resources::SearchResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_resources::SearchResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_resources::SearchResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl SearchResourcesFluentBuilder {
             crate::operation::search_resources::SearchResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_resources::SearchResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_resources::SearchResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_resources::paginator::SearchResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_resources::paginator::SearchResourcesPaginator {
-        crate::operation::search_resources::paginator::SearchResourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_resources::paginator::SearchResourcesPaginator {
+        crate::operation::search_resources::paginator::SearchResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
@@ -177,32 +150,21 @@ impl SearchResourcesFluentBuilder {
         self
     }
     /// <p>Filter based on the text field type. A Folder has only a name and no content. A Comment has only content and no name. A Document or Document Version has a name and content</p>
-    pub fn set_query_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchQueryScopeType>>,
-    ) -> Self {
+    pub fn set_query_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchQueryScopeType>>) -> Self {
         self.inner = self.inner.set_query_scopes(input);
         self
     }
     /// <p>Filter based on the text field type. A Folder has only a name and no content. A Comment has only content and no name. A Document or Document Version has a name and content</p>
-    pub fn get_query_scopes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchQueryScopeType>> {
+    pub fn get_query_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchQueryScopeType>> {
         self.inner.get_query_scopes()
     }
     /// <p>Filters based on the resource owner OrgId. This is a mandatory parameter when using Admin SigV4 credentials.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>Filters based on the resource owner OrgId. This is a mandatory parameter when using Admin SigV4 credentials.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }
@@ -215,10 +177,7 @@ impl SearchResourcesFluentBuilder {
     /// To override the contents of this collection use [`set_additional_response_fields`](Self::set_additional_response_fields).
     ///
     /// <p>A list of attributes to include in the response. Used to request fields that are not normally returned in a standard response.</p>
-    pub fn additional_response_fields(
-        mut self,
-        input: crate::types::AdditionalResponseFieldType,
-    ) -> Self {
+    pub fn additional_response_fields(mut self, input: crate::types::AdditionalResponseFieldType) -> Self {
         self.inner = self.inner.additional_response_fields(input);
         self
     }
@@ -231,9 +190,7 @@ impl SearchResourcesFluentBuilder {
         self
     }
     /// <p>A list of attributes to include in the response. Used to request fields that are not normally returned in a standard response.</p>
-    pub fn get_additional_response_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalResponseFieldType>> {
+    pub fn get_additional_response_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalResponseFieldType>> {
         self.inner.get_additional_response_fields()
     }
     /// <p>Filters results based on entity metadata.</p>
@@ -260,17 +217,12 @@ impl SearchResourcesFluentBuilder {
         self
     }
     /// <p>Order by results in one or more categories.</p>
-    pub fn set_order_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchSortResult>>,
-    ) -> Self {
+    pub fn set_order_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchSortResult>>) -> Self {
         self.inner = self.inner.set_order_by(input);
         self
     }
     /// <p>Order by results in one or more categories.</p>
-    pub fn get_order_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchSortResult>> {
+    pub fn get_order_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchSortResult>> {
         self.inner.get_order_by()
     }
     /// <p>Max results count per page.</p>

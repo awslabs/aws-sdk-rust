@@ -16,33 +16,25 @@ impl GetSubscriptionAttributesInput {
 }
 impl GetSubscriptionAttributesInput {
     /// Creates a new builder-style object to manufacture [`GetSubscriptionAttributesInput`](crate::operation::get_subscription_attributes::GetSubscriptionAttributesInput).
-    pub fn builder() -> crate::operation::get_subscription_attributes::builders::GetSubscriptionAttributesInputBuilder{
+    pub fn builder() -> crate::operation::get_subscription_attributes::builders::GetSubscriptionAttributesInputBuilder {
         crate::operation::get_subscription_attributes::builders::GetSubscriptionAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSubscriptionAttributesInput`](crate::operation::get_subscription_attributes::GetSubscriptionAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSubscriptionAttributesInputBuilder {
     pub(crate) subscription_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetSubscriptionAttributesInputBuilder {
     /// <p>The ARN of the subscription whose properties you want to get.</p>
-    pub fn subscription_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the subscription whose properties you want to get.</p>
-    pub fn set_subscription_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_arn = input;
         self
     }
@@ -57,10 +49,8 @@ impl GetSubscriptionAttributesInputBuilder {
         crate::operation::get_subscription_attributes::GetSubscriptionAttributesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_subscription_attributes::GetSubscriptionAttributesInput {
-                subscription_arn: self.subscription_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_subscription_attributes::GetSubscriptionAttributesInput {
+            subscription_arn: self.subscription_arn,
+        })
     }
 }

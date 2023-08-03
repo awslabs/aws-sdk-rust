@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteWorldTemplateOutput {
 }
 impl DeleteWorldTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorldTemplateOutput`](crate::operation::delete_world_template::DeleteWorldTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_world_template::builders::DeleteWorldTemplateOutputBuilder {
-        crate::operation::delete_world_template::builders::DeleteWorldTemplateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_world_template::builders::DeleteWorldTemplateOutputBuilder {
+        crate::operation::delete_world_template::builders::DeleteWorldTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWorldTemplateOutput`](crate::operation::delete_world_template::DeleteWorldTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorldTemplateOutputBuilder {
     _request_id: Option<String>,
 }

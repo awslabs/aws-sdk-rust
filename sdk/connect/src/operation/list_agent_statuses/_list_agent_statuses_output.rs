@@ -8,8 +8,7 @@ pub struct ListAgentStatusesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A summary of agent statuses.</p>
     #[doc(hidden)]
-    pub agent_status_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AgentStatusSummary>>,
+    pub agent_status_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AgentStatusSummary>>,
     _request_id: Option<String>,
 }
 impl ListAgentStatusesOutput {
@@ -18,9 +17,7 @@ impl ListAgentStatusesOutput {
         self.next_token.as_deref()
     }
     /// <p>A summary of agent statuses.</p>
-    pub fn agent_status_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AgentStatusSummary]> {
+    pub fn agent_status_summary_list(&self) -> ::std::option::Option<&[crate::types::AgentStatusSummary]> {
         self.agent_status_summary_list.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListAgentStatusesOutput {
 }
 impl ListAgentStatusesOutput {
     /// Creates a new builder-style object to manufacture [`ListAgentStatusesOutput`](crate::operation::list_agent_statuses::ListAgentStatusesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_agent_statuses::builders::ListAgentStatusesOutputBuilder {
+    pub fn builder() -> crate::operation::list_agent_statuses::builders::ListAgentStatusesOutputBuilder {
         crate::operation::list_agent_statuses::builders::ListAgentStatusesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAgentStatusesOutput`](crate::operation::list_agent_statuses::ListAgentStatusesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAgentStatusesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) agent_status_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AgentStatusSummary>>,
+    pub(crate) agent_status_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AgentStatusSummary>>,
     _request_id: Option<String>,
 }
 impl ListAgentStatusesOutputBuilder {
@@ -75,17 +68,12 @@ impl ListAgentStatusesOutputBuilder {
         self
     }
     /// <p>A summary of agent statuses.</p>
-    pub fn set_agent_status_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AgentStatusSummary>>,
-    ) -> Self {
+    pub fn set_agent_status_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentStatusSummary>>) -> Self {
         self.agent_status_summary_list = input;
         self
     }
     /// <p>A summary of agent statuses.</p>
-    pub fn get_agent_status_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentStatusSummary>> {
+    pub fn get_agent_status_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentStatusSummary>> {
         &self.agent_status_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

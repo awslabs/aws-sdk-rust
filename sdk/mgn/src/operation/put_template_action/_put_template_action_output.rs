@@ -29,20 +29,14 @@ pub struct PutTemplateActionOutput {
     pub must_succeed_for_cutover: ::std::option::Option<bool>,
     /// <p>Template post migration custom action parameters.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-        >,
-    >,
+    pub parameters:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>>,
     /// <p>Operating system eligible for this template post migration custom action.</p>
     #[doc(hidden)]
     pub operating_system: ::std::option::Option<::std::string::String>,
     /// <p>Template post migration custom action external parameters.</p>
     #[doc(hidden)]
-    pub external_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-    >,
+    pub external_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>>,
     /// <p>Template post migration custom action description.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
@@ -87,12 +81,7 @@ impl PutTemplateActionOutput {
     /// <p>Template post migration custom action parameters.</p>
     pub fn parameters(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>> {
         self.parameters.as_ref()
     }
     /// <p>Operating system eligible for this template post migration custom action.</p>
@@ -102,9 +91,7 @@ impl PutTemplateActionOutput {
     /// <p>Template post migration custom action external parameters.</p>
     pub fn external_parameters(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>> {
         self.external_parameters.as_ref()
     }
     /// <p>Template post migration custom action description.</p>
@@ -123,17 +110,14 @@ impl ::aws_http::request_id::RequestId for PutTemplateActionOutput {
 }
 impl PutTemplateActionOutput {
     /// Creates a new builder-style object to manufacture [`PutTemplateActionOutput`](crate::operation::put_template_action::PutTemplateActionOutput).
-    pub fn builder(
-    ) -> crate::operation::put_template_action::builders::PutTemplateActionOutputBuilder {
+    pub fn builder() -> crate::operation::put_template_action::builders::PutTemplateActionOutputBuilder {
         crate::operation::put_template_action::builders::PutTemplateActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutTemplateActionOutput`](crate::operation::put_template_action::PutTemplateActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutTemplateActionOutputBuilder {
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
@@ -143,16 +127,10 @@ pub struct PutTemplateActionOutputBuilder {
     pub(crate) active: ::std::option::Option<bool>,
     pub(crate) timeout_seconds: ::std::option::Option<i32>,
     pub(crate) must_succeed_for_cutover: ::std::option::Option<bool>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-        >,
-    >,
+    pub(crate) parameters:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>>,
     pub(crate) operating_system: ::std::option::Option<::std::string::String>,
-    pub(crate) external_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-    >,
+    pub(crate) external_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) category: ::std::option::Option<crate::types::ActionCategory>,
     _request_id: Option<String>,
@@ -187,18 +165,12 @@ impl PutTemplateActionOutputBuilder {
         &self.action_name
     }
     /// <p>Template post migration custom action document identifier.</p>
-    pub fn document_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Template post migration custom action document identifier.</p>
-    pub fn set_document_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_identifier = input;
         self
     }
@@ -221,18 +193,12 @@ impl PutTemplateActionOutputBuilder {
         &self.order
     }
     /// <p>Template post migration custom action document version.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Template post migration custom action document version.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -300,12 +266,7 @@ impl PutTemplateActionOutputBuilder {
     /// <p>Template post migration custom action parameters.</p>
     pub fn set_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>>,
     ) -> Self {
         self.parameters = input;
         self
@@ -313,27 +274,16 @@ impl PutTemplateActionOutputBuilder {
     /// <p>Template post migration custom action parameters.</p>
     pub fn get_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>> {
         &self.parameters
     }
     /// <p>Operating system eligible for this template post migration custom action.</p>
-    pub fn operating_system(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operating_system(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operating_system = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Operating system eligible for this template post migration custom action.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operating_system = input;
         self
     }
@@ -346,11 +296,7 @@ impl PutTemplateActionOutputBuilder {
     /// To override the contents of this collection use [`set_external_parameters`](Self::set_external_parameters).
     ///
     /// <p>Template post migration custom action external parameters.</p>
-    pub fn external_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::SsmExternalParameter,
-    ) -> Self {
+    pub fn external_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SsmExternalParameter) -> Self {
         let mut hash_map = self.external_parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.external_parameters = ::std::option::Option::Some(hash_map);
@@ -359,9 +305,7 @@ impl PutTemplateActionOutputBuilder {
     /// <p>Template post migration custom action external parameters.</p>
     pub fn set_external_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>>,
     ) -> Self {
         self.external_parameters = input;
         self
@@ -369,9 +313,7 @@ impl PutTemplateActionOutputBuilder {
     /// <p>Template post migration custom action external parameters.</p>
     pub fn get_external_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>> {
         &self.external_parameters
     }
     /// <p>Template post migration custom action description.</p>
@@ -394,10 +336,7 @@ impl PutTemplateActionOutputBuilder {
         self
     }
     /// <p>Template post migration custom action category.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.category = input;
         self
     }

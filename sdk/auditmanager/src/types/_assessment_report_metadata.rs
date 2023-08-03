@@ -72,9 +72,7 @@ impl AssessmentReportMetadata {
 
 /// A builder for [`AssessmentReportMetadata`](crate::types::AssessmentReportMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssessmentReportMetadataBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -129,18 +127,12 @@ impl AssessmentReportMetadataBuilder {
         &self.description
     }
     /// <p> The unique identifier for the associated assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the associated assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
@@ -149,18 +141,12 @@ impl AssessmentReportMetadataBuilder {
         &self.assessment_id
     }
     /// <p>The name of the associated assessment. </p>
-    pub fn assessment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the associated assessment. </p>
-    pub fn set_assessment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_name = input;
         self
     }
@@ -188,10 +174,7 @@ impl AssessmentReportMetadataBuilder {
         self
     }
     /// <p> The current status of the assessment report. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentReportStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AssessmentReportStatus>) -> Self {
         self.status = input;
         self
     }
@@ -205,10 +188,7 @@ impl AssessmentReportMetadataBuilder {
         self
     }
     /// <p> Specifies when the assessment report was created. </p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

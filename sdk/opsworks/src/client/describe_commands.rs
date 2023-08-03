@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeCommandsOutput`](crate::operation::describe_commands::DescribeCommandsOutput) with field(s):
     ///   - [`commands(Option<Vec<Command>>)`](crate::operation::describe_commands::DescribeCommandsOutput::commands): <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
     /// - On failure, responds with [`SdkError<DescribeCommandsError>`](crate::operation::describe_commands::DescribeCommandsError)
-    pub fn describe_commands(
-        &self,
-    ) -> crate::operation::describe_commands::builders::DescribeCommandsFluentBuilder {
-        crate::operation::describe_commands::builders::DescribeCommandsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_commands(&self) -> crate::operation::describe_commands::builders::DescribeCommandsFluentBuilder {
+        crate::operation::describe_commands::builders::DescribeCommandsFluentBuilder::new(self.handle.clone())
     }
 }

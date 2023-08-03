@@ -22,16 +22,14 @@ impl DeregisterIdentityProviderInput {
 }
 impl DeregisterIdentityProviderInput {
     /// Creates a new builder-style object to manufacture [`DeregisterIdentityProviderInput`](crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput).
-    pub fn builder() -> crate::operation::deregister_identity_provider::builders::DeregisterIdentityProviderInputBuilder{
+    pub fn builder() -> crate::operation::deregister_identity_provider::builders::DeregisterIdentityProviderInputBuilder {
         crate::operation::deregister_identity_provider::builders::DeregisterIdentityProviderInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterIdentityProviderInput`](crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterIdentityProviderInputBuilder {
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     pub(crate) product: ::std::option::Option<::std::string::String>,
@@ -43,10 +41,7 @@ impl DeregisterIdentityProviderInputBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.identity_provider = input;
         self
     }
@@ -75,11 +70,9 @@ impl DeregisterIdentityProviderInputBuilder {
         crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput {
-                identity_provider: self.identity_provider,
-                product: self.product,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput {
+            identity_provider: self.identity_provider,
+            product: self.product,
+        })
     }
 }

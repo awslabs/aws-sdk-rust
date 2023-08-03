@@ -40,18 +40,14 @@ impl ListExtensionVersionsInput {
 }
 impl ListExtensionVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListExtensionVersionsInput`](crate::operation::list_extension_versions::ListExtensionVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_extension_versions::builders::ListExtensionVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_extension_versions::builders::ListExtensionVersionsInputBuilder {
         crate::operation::list_extension_versions::builders::ListExtensionVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListExtensionVersionsInput`](crate::operation::list_extension_versions::ListExtensionVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExtensionVersionsInputBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -124,17 +120,13 @@ impl ListExtensionVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListExtensionVersionsInput`](crate::operation::list_extension_versions::ListExtensionVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_extension_versions::ListExtensionVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_extension_versions::ListExtensionVersionsInput {
-                namespace: self.namespace,
-                name: self.name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_extension_versions::ListExtensionVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_extension_versions::ListExtensionVersionsInput {
+            namespace: self.namespace,
+            name: self.name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -30,9 +30,7 @@ impl PerObjectStatus {
 
 /// A builder for [`PerObjectStatus`](crate::types::PerObjectStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PerObjectStatusBuilder {
     pub(crate) sync_status: ::std::option::Option<crate::types::PerObjectSyncStatus>,
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl PerObjectStatusBuilder {
         self
     }
     /// <p>Indicates whether this object is in sync with the version indicated in the update token.</p>
-    pub fn set_sync_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PerObjectSyncStatus>,
-    ) -> Self {
+    pub fn set_sync_status(mut self, input: ::std::option::Option<crate::types::PerObjectSyncStatus>) -> Self {
         self.sync_status = input;
         self
     }

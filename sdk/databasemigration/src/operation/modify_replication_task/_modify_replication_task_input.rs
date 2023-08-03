@@ -102,18 +102,14 @@ impl ModifyReplicationTaskInput {
 }
 impl ModifyReplicationTaskInput {
     /// Creates a new builder-style object to manufacture [`ModifyReplicationTaskInput`](crate::operation::modify_replication_task::ModifyReplicationTaskInput).
-    pub fn builder(
-    ) -> crate::operation::modify_replication_task::builders::ModifyReplicationTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_replication_task::builders::ModifyReplicationTaskInputBuilder {
         crate::operation::modify_replication_task::builders::ModifyReplicationTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyReplicationTaskInput`](crate::operation::modify_replication_task::ModifyReplicationTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyReplicationTaskInputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) replication_task_identifier: ::std::option::Option<::std::string::String>,
@@ -127,18 +123,12 @@ pub struct ModifyReplicationTaskInputBuilder {
 }
 impl ModifyReplicationTaskInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    pub fn replication_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    pub fn set_replication_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_task_arn = input;
         self
     }
@@ -153,10 +143,7 @@ impl ModifyReplicationTaskInputBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn replication_task_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -167,10 +154,7 @@ impl ModifyReplicationTaskInputBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn set_replication_task_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_task_identifier = input;
         self
     }
@@ -190,10 +174,7 @@ impl ModifyReplicationTaskInputBuilder {
         self
     }
     /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
-    pub fn set_migration_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationTypeValue>,
-    ) -> Self {
+    pub fn set_migration_type(mut self, input: ::std::option::Option<crate::types::MigrationTypeValue>) -> Self {
         self.migration_type = input;
         self
     }
@@ -202,18 +183,12 @@ impl ModifyReplicationTaskInputBuilder {
         &self.migration_type
     }
     /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as the parameter value. </p>
-    pub fn table_mappings(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn table_mappings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_mappings = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as the parameter value. </p>
-    pub fn set_table_mappings(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_table_mappings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_mappings = input;
         self
     }
@@ -222,18 +197,12 @@ impl ModifyReplicationTaskInputBuilder {
         &self.table_mappings
     }
     /// <p>JSON file that contains settings for the task, such as task metadata settings.</p>
-    pub fn replication_task_settings(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_settings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_settings = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>JSON file that contains settings for the task, such as task metadata settings.</p>
-    pub fn set_replication_task_settings(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_settings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_task_settings = input;
         self
     }
@@ -249,10 +218,7 @@ impl ModifyReplicationTaskInputBuilder {
     }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-    pub fn set_cdc_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_cdc_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.cdc_start_time = input;
         self
     }
@@ -268,10 +234,7 @@ impl ModifyReplicationTaskInputBuilder {
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
-    pub fn cdc_start_position(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cdc_start_position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cdc_start_position = ::std::option::Option::Some(input.into());
         self
     }
@@ -282,10 +245,7 @@ impl ModifyReplicationTaskInputBuilder {
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
-    pub fn set_cdc_start_position(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cdc_start_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cdc_start_position = input;
         self
     }
@@ -302,20 +262,14 @@ impl ModifyReplicationTaskInputBuilder {
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
-    pub fn cdc_stop_position(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cdc_stop_position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cdc_stop_position = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
-    pub fn set_cdc_stop_position(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cdc_stop_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cdc_stop_position = input;
         self
     }
@@ -342,22 +296,18 @@ impl ModifyReplicationTaskInputBuilder {
     /// Consumes the builder and constructs a [`ModifyReplicationTaskInput`](crate::operation::modify_replication_task::ModifyReplicationTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_replication_task::ModifyReplicationTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_replication_task::ModifyReplicationTaskInput {
-                replication_task_arn: self.replication_task_arn,
-                replication_task_identifier: self.replication_task_identifier,
-                migration_type: self.migration_type,
-                table_mappings: self.table_mappings,
-                replication_task_settings: self.replication_task_settings,
-                cdc_start_time: self.cdc_start_time,
-                cdc_start_position: self.cdc_start_position,
-                cdc_stop_position: self.cdc_stop_position,
-                task_data: self.task_data,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_replication_task::ModifyReplicationTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::modify_replication_task::ModifyReplicationTaskInput {
+            replication_task_arn: self.replication_task_arn,
+            replication_task_identifier: self.replication_task_identifier,
+            migration_type: self.migration_type,
+            table_mappings: self.table_mappings,
+            replication_task_settings: self.replication_task_settings,
+            cdc_start_time: self.cdc_start_time,
+            cdc_start_position: self.cdc_start_position,
+            cdc_stop_position: self.cdc_stop_position,
+            task_data: self.task_data,
+        })
     }
 }

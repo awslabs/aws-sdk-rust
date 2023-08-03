@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateEventIntegrationOutput {
 }
 impl UpdateEventIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEventIntegrationOutput`](crate::operation::update_event_integration::UpdateEventIntegrationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_event_integration::builders::UpdateEventIntegrationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_event_integration::builders::UpdateEventIntegrationOutputBuilder {
         crate::operation::update_event_integration::builders::UpdateEventIntegrationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEventIntegrationOutput`](crate::operation::update_event_integration::UpdateEventIntegrationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEventIntegrationOutputBuilder {
     _request_id: Option<String>,
 }

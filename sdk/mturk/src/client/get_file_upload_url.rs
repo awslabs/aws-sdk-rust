@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetFileUploadUrlOutput`](crate::operation::get_file_upload_url::GetFileUploadUrlOutput) with field(s):
     ///   - [`file_upload_url(Option<String>)`](crate::operation::get_file_upload_url::GetFileUploadUrlOutput::file_upload_url): <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
     /// - On failure, responds with [`SdkError<GetFileUploadURLError>`](crate::operation::get_file_upload_url::GetFileUploadURLError)
-    pub fn get_file_upload_url(
-        &self,
-    ) -> crate::operation::get_file_upload_url::builders::GetFileUploadURLFluentBuilder {
-        crate::operation::get_file_upload_url::builders::GetFileUploadURLFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_file_upload_url(&self) -> crate::operation::get_file_upload_url::builders::GetFileUploadURLFluentBuilder {
+        crate::operation::get_file_upload_url::builders::GetFileUploadURLFluentBuilder::new(self.handle.clone())
     }
 }

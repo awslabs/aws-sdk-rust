@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeEventDetailsOutput {
 }
 impl DescribeEventDetailsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventDetailsOutput`](crate::operation::describe_event_details::DescribeEventDetailsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_event_details::builders::DescribeEventDetailsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_event_details::builders::DescribeEventDetailsOutputBuilder {
         crate::operation::describe_event_details::builders::DescribeEventDetailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventDetailsOutput`](crate::operation::describe_event_details::DescribeEventDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventDetailsOutputBuilder {
     pub(crate) successful_set: ::std::option::Option<::std::vec::Vec<crate::types::EventDetails>>,
-    pub(crate) failed_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventDetailsErrorItem>>,
+    pub(crate) failed_set: ::std::option::Option<::std::vec::Vec<crate::types::EventDetailsErrorItem>>,
     _request_id: Option<String>,
 }
 impl DescribeEventDetailsOutputBuilder {
@@ -58,17 +54,12 @@ impl DescribeEventDetailsOutputBuilder {
         self
     }
     /// <p>Information about the events that could be retrieved.</p>
-    pub fn set_successful_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventDetails>>,
-    ) -> Self {
+    pub fn set_successful_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventDetails>>) -> Self {
         self.successful_set = input;
         self
     }
     /// <p>Information about the events that could be retrieved.</p>
-    pub fn get_successful_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDetails>> {
+    pub fn get_successful_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDetails>> {
         &self.successful_set
     }
     /// Appends an item to `failed_set`.
@@ -83,17 +74,12 @@ impl DescribeEventDetailsOutputBuilder {
         self
     }
     /// <p>Error messages for any events that could not be retrieved.</p>
-    pub fn set_failed_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventDetailsErrorItem>>,
-    ) -> Self {
+    pub fn set_failed_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventDetailsErrorItem>>) -> Self {
         self.failed_set = input;
         self
     }
     /// <p>Error messages for any events that could not be retrieved.</p>
-    pub fn get_failed_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDetailsErrorItem>> {
+    pub fn get_failed_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDetailsErrorItem>> {
         &self.failed_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

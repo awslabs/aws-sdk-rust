@@ -77,8 +77,7 @@ pub struct FleetAttributes {
     /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
     /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
     #[doc(hidden)]
-    pub resource_creation_limit_policy:
-        ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
+    pub resource_creation_limit_policy: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
     /// <p>Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view aggregated metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time.</p>
     #[doc(hidden)]
     pub metric_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -179,9 +178,7 @@ impl FleetAttributes {
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
     /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn new_game_session_protection_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProtectionPolicy> {
+    pub fn new_game_session_protection_policy(&self) -> ::std::option::Option<&crate::types::ProtectionPolicy> {
         self.new_game_session_protection_policy.as_ref()
     }
     /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet.</p>
@@ -190,9 +187,7 @@ impl FleetAttributes {
     }
     /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
     /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
-    pub fn resource_creation_limit_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceCreationLimitPolicy> {
+    pub fn resource_creation_limit_policy(&self) -> ::std::option::Option<&crate::types::ResourceCreationLimitPolicy> {
         self.resource_creation_limit_policy.as_ref()
     }
     /// <p>Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view aggregated metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time.</p>
@@ -208,9 +203,7 @@ impl FleetAttributes {
         self.instance_role_arn.as_deref()
     }
     /// <p>Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. </p>
-    pub fn certificate_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CertificateConfiguration> {
+    pub fn certificate_configuration(&self) -> ::std::option::Option<&crate::types::CertificateConfiguration> {
         self.certificate_configuration.as_ref()
     }
     /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.</p>
@@ -218,9 +211,7 @@ impl FleetAttributes {
         self.compute_type.as_ref()
     }
     /// <p>Amazon GameLift Anywhere configuration options for your Anywhere fleets.</p>
-    pub fn anywhere_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnywhereConfiguration> {
+    pub fn anywhere_configuration(&self) -> ::std::option::Option<&crate::types::AnywhereConfiguration> {
         self.anywhere_configuration.as_ref()
     }
 }
@@ -233,9 +224,7 @@ impl FleetAttributes {
 
 /// A builder for [`FleetAttributes`](crate::types::FleetAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FleetAttributesBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
@@ -253,16 +242,13 @@ pub struct FleetAttributesBuilder {
     pub(crate) server_launch_path: ::std::option::Option<::std::string::String>,
     pub(crate) server_launch_parameters: ::std::option::Option<::std::string::String>,
     pub(crate) log_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) new_game_session_protection_policy:
-        ::std::option::Option<crate::types::ProtectionPolicy>,
+    pub(crate) new_game_session_protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
     pub(crate) operating_system: ::std::option::Option<crate::types::OperatingSystem>,
-    pub(crate) resource_creation_limit_policy:
-        ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
+    pub(crate) resource_creation_limit_policy: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
     pub(crate) metric_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) stopped_actions: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>,
     pub(crate) instance_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) certificate_configuration:
-        ::std::option::Option<crate::types::CertificateConfiguration>,
+    pub(crate) certificate_configuration: ::std::option::Option<crate::types::CertificateConfiguration>,
     pub(crate) compute_type: ::std::option::Option<crate::types::ComputeType>,
     pub(crate) anywhere_configuration: ::std::option::Option<crate::types::AnywhereConfiguration>,
 }
@@ -324,10 +310,7 @@ impl FleetAttributesBuilder {
         self
     }
     /// <p>The Amazon EC2 instance type that determines the computing resources of each instance in the fleet. Instance type defines the CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::Ec2InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
@@ -369,10 +352,7 @@ impl FleetAttributesBuilder {
         self
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -386,10 +366,7 @@ impl FleetAttributesBuilder {
         self
     }
     /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn set_termination_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_termination_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.termination_time = input;
         self
     }
@@ -492,18 +469,12 @@ impl FleetAttributesBuilder {
         &self.script_arn
     }
     /// <p> <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid.</p>
-    pub fn server_launch_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_launch_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_launch_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid.</p>
-    pub fn set_server_launch_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_launch_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_launch_path = input;
         self
     }
@@ -512,18 +483,12 @@ impl FleetAttributesBuilder {
         &self.server_launch_path
     }
     /// <p> <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration . Requests that use this parameter instead continue to be valid.</p>
-    pub fn server_launch_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_launch_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_launch_parameters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime configuration . Requests that use this parameter instead continue to be valid.</p>
-    pub fn set_server_launch_parameters(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_launch_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_launch_parameters = input;
         self
     }
@@ -543,10 +508,7 @@ impl FleetAttributesBuilder {
         self
     }
     /// <p> <b>This parameter is no longer used.</b> Game session log paths are now defined using the Amazon GameLift server API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
-    pub fn set_log_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_log_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_paths = input;
         self
     }
@@ -559,10 +521,7 @@ impl FleetAttributesBuilder {
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
     /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn new_game_session_protection_policy(
-        mut self,
-        input: crate::types::ProtectionPolicy,
-    ) -> Self {
+    pub fn new_game_session_protection_policy(mut self, input: crate::types::ProtectionPolicy) -> Self {
         self.new_game_session_protection_policy = ::std::option::Option::Some(input);
         self
     }
@@ -571,10 +530,7 @@ impl FleetAttributesBuilder {
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
     /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn set_new_game_session_protection_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectionPolicy>,
-    ) -> Self {
+    pub fn set_new_game_session_protection_policy(mut self, input: ::std::option::Option<crate::types::ProtectionPolicy>) -> Self {
         self.new_game_session_protection_policy = input;
         self
     }
@@ -583,9 +539,7 @@ impl FleetAttributesBuilder {
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
     /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn get_new_game_session_protection_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProtectionPolicy> {
+    pub fn get_new_game_session_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
         &self.new_game_session_protection_policy
     }
     /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet.</p>
@@ -594,10 +548,7 @@ impl FleetAttributesBuilder {
         self
     }
     /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
@@ -607,27 +558,19 @@ impl FleetAttributesBuilder {
     }
     /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
     /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
-    pub fn resource_creation_limit_policy(
-        mut self,
-        input: crate::types::ResourceCreationLimitPolicy,
-    ) -> Self {
+    pub fn resource_creation_limit_policy(mut self, input: crate::types::ResourceCreationLimitPolicy) -> Self {
         self.resource_creation_limit_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
     /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
-    pub fn set_resource_creation_limit_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
-    ) -> Self {
+    pub fn set_resource_creation_limit_policy(mut self, input: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>) -> Self {
         self.resource_creation_limit_policy = input;
         self
     }
     /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
     /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
-    pub fn get_resource_creation_limit_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceCreationLimitPolicy> {
+    pub fn get_resource_creation_limit_policy(&self) -> &::std::option::Option<crate::types::ResourceCreationLimitPolicy> {
         &self.resource_creation_limit_policy
     }
     /// Appends an item to `metric_groups`.
@@ -635,27 +578,19 @@ impl FleetAttributesBuilder {
     /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
     ///
     /// <p>Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view aggregated metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time.</p>
-    pub fn metric_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.metric_groups.unwrap_or_default();
         v.push(input.into());
         self.metric_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view aggregated metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time.</p>
-    pub fn set_metric_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metric_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metric_groups = input;
         self
     }
     /// <p>Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view aggregated metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time.</p>
-    pub fn get_metric_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metric_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.metric_groups
     }
     /// Appends an item to `stopped_actions`.
@@ -670,32 +605,21 @@ impl FleetAttributesBuilder {
         self
     }
     /// <p>A list of fleet activity that has been suspended using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a> . This includes fleet auto-scaling.</p>
-    pub fn set_stopped_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>,
-    ) -> Self {
+    pub fn set_stopped_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>) -> Self {
         self.stopped_actions = input;
         self
     }
     /// <p>A list of fleet activity that has been suspended using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a> . This includes fleet auto-scaling.</p>
-    pub fn get_stopped_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAction>> {
+    pub fn get_stopped_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAction>> {
         &self.stopped_actions
     }
     /// <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>.</p>
-    pub fn instance_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>.</p>
-    pub fn set_instance_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_role_arn = input;
         self
     }
@@ -704,25 +628,17 @@ impl FleetAttributesBuilder {
         &self.instance_role_arn
     }
     /// <p>Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. </p>
-    pub fn certificate_configuration(
-        mut self,
-        input: crate::types::CertificateConfiguration,
-    ) -> Self {
+    pub fn certificate_configuration(mut self, input: crate::types::CertificateConfiguration) -> Self {
         self.certificate_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. </p>
-    pub fn set_certificate_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateConfiguration>,
-    ) -> Self {
+    pub fn set_certificate_configuration(mut self, input: ::std::option::Option<crate::types::CertificateConfiguration>) -> Self {
         self.certificate_configuration = input;
         self
     }
     /// <p>Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. </p>
-    pub fn get_certificate_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CertificateConfiguration> {
+    pub fn get_certificate_configuration(&self) -> &::std::option::Option<crate::types::CertificateConfiguration> {
         &self.certificate_configuration
     }
     /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.</p>
@@ -731,10 +647,7 @@ impl FleetAttributesBuilder {
         self
     }
     /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.</p>
-    pub fn set_compute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeType>,
-    ) -> Self {
+    pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
         self.compute_type = input;
         self
     }
@@ -748,17 +661,12 @@ impl FleetAttributesBuilder {
         self
     }
     /// <p>Amazon GameLift Anywhere configuration options for your Anywhere fleets.</p>
-    pub fn set_anywhere_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AnywhereConfiguration>,
-    ) -> Self {
+    pub fn set_anywhere_configuration(mut self, input: ::std::option::Option<crate::types::AnywhereConfiguration>) -> Self {
         self.anywhere_configuration = input;
         self
     }
     /// <p>Amazon GameLift Anywhere configuration options for your Anywhere fleets.</p>
-    pub fn get_anywhere_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnywhereConfiguration> {
+    pub fn get_anywhere_configuration(&self) -> &::std::option::Option<crate::types::AnywhereConfiguration> {
         &self.anywhere_configuration
     }
     /// Consumes the builder and constructs a [`FleetAttributes`](crate::types::FleetAttributes).

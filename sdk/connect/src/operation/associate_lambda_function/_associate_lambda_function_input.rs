@@ -22,18 +22,14 @@ impl AssociateLambdaFunctionInput {
 }
 impl AssociateLambdaFunctionInput {
     /// Creates a new builder-style object to manufacture [`AssociateLambdaFunctionInput`](crate::operation::associate_lambda_function::AssociateLambdaFunctionInput).
-    pub fn builder(
-    ) -> crate::operation::associate_lambda_function::builders::AssociateLambdaFunctionInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_lambda_function::builders::AssociateLambdaFunctionInputBuilder {
         crate::operation::associate_lambda_function::builders::AssociateLambdaFunctionInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateLambdaFunctionInput`](crate::operation::associate_lambda_function::AssociateLambdaFunctionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateLambdaFunctionInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl AssociateLambdaFunctionInputBuilder {
         crate::operation::associate_lambda_function::AssociateLambdaFunctionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_lambda_function::AssociateLambdaFunctionInput {
-                instance_id: self.instance_id,
-                function_arn: self.function_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_lambda_function::AssociateLambdaFunctionInput {
+            instance_id: self.instance_id,
+            function_arn: self.function_arn,
+        })
     }
 }

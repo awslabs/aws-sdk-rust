@@ -6,14 +6,11 @@
 pub struct SnapshotJobResult {
     /// <p> A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
     #[doc(hidden)]
-    pub anonymous_users:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserSnapshotJobResult>>,
+    pub anonymous_users: ::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserSnapshotJobResult>>,
 }
 impl SnapshotJobResult {
     /// <p> A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn anonymous_users(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AnonymousUserSnapshotJobResult]> {
+    pub fn anonymous_users(&self) -> ::std::option::Option<&[crate::types::AnonymousUserSnapshotJobResult]> {
         self.anonymous_users.as_deref()
     }
 }
@@ -26,12 +23,9 @@ impl SnapshotJobResult {
 
 /// A builder for [`SnapshotJobResult`](crate::types::SnapshotJobResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotJobResultBuilder {
-    pub(crate) anonymous_users:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserSnapshotJobResult>>,
+    pub(crate) anonymous_users: ::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserSnapshotJobResult>>,
 }
 impl SnapshotJobResultBuilder {
     /// Appends an item to `anonymous_users`.
@@ -46,17 +40,12 @@ impl SnapshotJobResultBuilder {
         self
     }
     /// <p> A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn set_anonymous_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserSnapshotJobResult>>,
-    ) -> Self {
+    pub fn set_anonymous_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserSnapshotJobResult>>) -> Self {
         self.anonymous_users = input;
         self
     }
     /// <p> A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn get_anonymous_users(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserSnapshotJobResult>> {
+    pub fn get_anonymous_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserSnapshotJobResult>> {
         &self.anonymous_users
     }
     /// Consumes the builder and constructs a [`SnapshotJobResult`](crate::types::SnapshotJobResult).

@@ -43,16 +43,14 @@ impl ListCustomVocabularyItemsInput {
 }
 impl ListCustomVocabularyItemsInput {
     /// Creates a new builder-style object to manufacture [`ListCustomVocabularyItemsInput`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsInput).
-    pub fn builder() -> crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsInputBuilder{
+    pub fn builder() -> crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsInputBuilder {
         crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomVocabularyItemsInput`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomVocabularyItemsInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -138,14 +136,12 @@ impl ListCustomVocabularyItemsInputBuilder {
         crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsInput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsInput {
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

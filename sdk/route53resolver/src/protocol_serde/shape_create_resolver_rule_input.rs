@@ -21,10 +21,7 @@ pub fn ser_create_resolver_rule_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_target_address::ser_target_address(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_target_address::ser_target_address(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }

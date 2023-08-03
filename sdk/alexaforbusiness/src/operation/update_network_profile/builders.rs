@@ -38,9 +38,7 @@ impl UpdateNetworkProfileFluentBuilder {
         }
     }
     /// Access the UpdateNetworkProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_network_profile::builders::UpdateNetworkProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_network_profile::builders::UpdateNetworkProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl UpdateNetworkProfileFluentBuilder {
             crate::operation::update_network_profile::UpdateNetworkProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_network_profile::UpdateNetworkProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_network_profile::UpdateNetworkProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl UpdateNetworkProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl UpdateNetworkProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_network_profile::UpdateNetworkProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_network_profile::UpdateNetworkProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_network_profile::UpdateNetworkProfileError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl UpdateNetworkProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_network_profile::UpdateNetworkProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_network_profile::UpdateNetworkProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_network_profile::UpdateNetworkProfileError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl UpdateNetworkProfileFluentBuilder {
             crate::operation::update_network_profile::UpdateNetworkProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_network_profile::UpdateNetworkProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_network_profile::UpdateNetworkProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_profile_arn(input.into());
         self
     }
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn set_network_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_profile_arn(input);
         self
     }
@@ -144,18 +125,12 @@ impl UpdateNetworkProfileFluentBuilder {
         self.inner.get_network_profile_arn()
     }
     /// <p>The name of the network profile associated with a device.</p>
-    pub fn network_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_profile_name(input.into());
         self
     }
     /// <p>The name of the network profile associated with a device.</p>
-    pub fn set_network_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_profile_name(input);
         self
     }
@@ -178,18 +153,12 @@ impl UpdateNetworkProfileFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The current password of the Wi-Fi network.</p>
-    pub fn current_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_password(input.into());
         self
     }
     /// <p>The current password of the Wi-Fi network.</p>
-    pub fn set_current_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_password(input);
         self
     }
@@ -198,18 +167,12 @@ impl UpdateNetworkProfileFluentBuilder {
         self.inner.get_current_password()
     }
     /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
-    pub fn next_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_password(input.into());
         self
     }
     /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
-    pub fn set_next_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_password(input);
         self
     }
@@ -218,18 +181,12 @@ impl UpdateNetworkProfileFluentBuilder {
         self.inner.get_next_password()
     }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_authority_arn(input.into());
         self
     }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_authority_arn(input);
         self
     }
@@ -242,25 +199,17 @@ impl UpdateNetworkProfileFluentBuilder {
     /// To override the contents of this collection use [`set_trust_anchors`](Self::set_trust_anchors).
     ///
     /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
-    pub fn trust_anchors(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_anchors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trust_anchors(input.into());
         self
     }
     /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
-    pub fn set_trust_anchors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_trust_anchors(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_trust_anchors(input);
         self
     }
     /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
-    pub fn get_trust_anchors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_trust_anchors(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_trust_anchors()
     }
 }

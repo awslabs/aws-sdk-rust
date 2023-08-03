@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`status_message(Option<String>)`](crate::operation::get_variant_store::GetVariantStoreOutput::status_message): <p>The store's status message.</p>
     ///   - [`store_size_bytes(Option<i64>)`](crate::operation::get_variant_store::GetVariantStoreOutput::store_size_bytes): <p>The store's size in bytes.</p>
     /// - On failure, responds with [`SdkError<GetVariantStoreError>`](crate::operation::get_variant_store::GetVariantStoreError)
-    pub fn get_variant_store(
-        &self,
-    ) -> crate::operation::get_variant_store::builders::GetVariantStoreFluentBuilder {
-        crate::operation::get_variant_store::builders::GetVariantStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_variant_store(&self) -> crate::operation::get_variant_store::builders::GetVariantStoreFluentBuilder {
+        crate::operation::get_variant_store::builders::GetVariantStoreFluentBuilder::new(self.handle.clone())
     }
 }

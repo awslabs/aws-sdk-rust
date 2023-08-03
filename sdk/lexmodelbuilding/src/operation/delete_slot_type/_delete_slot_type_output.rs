@@ -19,9 +19,7 @@ impl DeleteSlotTypeOutput {
 
 /// A builder for [`DeleteSlotTypeOutput`](crate::operation::delete_slot_type::DeleteSlotTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSlotTypeOutputBuilder {
     _request_id: Option<String>,
 }

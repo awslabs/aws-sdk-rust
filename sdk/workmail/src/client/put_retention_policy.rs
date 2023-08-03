@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`folder_configurations(Vec<FolderConfiguration>)`](crate::operation::put_retention_policy::builders::PutRetentionPolicyFluentBuilder::folder_configurations) / [`set_folder_configurations(Option<Vec<FolderConfiguration>>)`](crate::operation::put_retention_policy::builders::PutRetentionPolicyFluentBuilder::set_folder_configurations): <p>The retention policy folder configurations.</p>
     /// - On success, responds with [`PutRetentionPolicyOutput`](crate::operation::put_retention_policy::PutRetentionPolicyOutput)
     /// - On failure, responds with [`SdkError<PutRetentionPolicyError>`](crate::operation::put_retention_policy::PutRetentionPolicyError)
-    pub fn put_retention_policy(
-        &self,
-    ) -> crate::operation::put_retention_policy::builders::PutRetentionPolicyFluentBuilder {
-        crate::operation::put_retention_policy::builders::PutRetentionPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_retention_policy(&self) -> crate::operation::put_retention_policy::builders::PutRetentionPolicyFluentBuilder {
+        crate::operation::put_retention_policy::builders::PutRetentionPolicyFluentBuilder::new(self.handle.clone())
     }
 }

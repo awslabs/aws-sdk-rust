@@ -35,30 +35,24 @@ impl ListResourceTypesInput {
     /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
-    pub fn resource_region_scope(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceRegionScopeFilter> {
+    pub fn resource_region_scope(&self) -> ::std::option::Option<&crate::types::ResourceRegionScopeFilter> {
         self.resource_region_scope.as_ref()
     }
 }
 impl ListResourceTypesInput {
     /// Creates a new builder-style object to manufacture [`ListResourceTypesInput`](crate::operation::list_resource_types::ListResourceTypesInput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_types::builders::ListResourceTypesInputBuilder {
+    pub fn builder() -> crate::operation::list_resource_types::builders::ListResourceTypesInputBuilder {
         crate::operation::list_resource_types::builders::ListResourceTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceTypesInput`](crate::operation::list_resource_types::ListResourceTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceTypesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) resource_region_scope:
-        ::std::option::Option<crate::types::ResourceRegionScopeFilter>,
+    pub(crate) resource_region_scope: ::std::option::Option<crate::types::ResourceRegionScopeFilter>,
 }
 impl ListResourceTypesInputBuilder {
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -107,10 +101,7 @@ impl ListResourceTypesInputBuilder {
     /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
-    pub fn set_resource_region_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceRegionScopeFilter>,
-    ) -> Self {
+    pub fn set_resource_region_scope(mut self, input: ::std::option::Option<crate::types::ResourceRegionScopeFilter>) -> Self {
         self.resource_region_scope = input;
         self
     }
@@ -121,24 +112,17 @@ impl ListResourceTypesInputBuilder {
     /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
-    pub fn get_resource_region_scope(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceRegionScopeFilter> {
+    pub fn get_resource_region_scope(&self) -> &::std::option::Option<crate::types::ResourceRegionScopeFilter> {
         &self.resource_region_scope
     }
     /// Consumes the builder and constructs a [`ListResourceTypesInput`](crate::operation::list_resource_types::ListResourceTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resource_types::ListResourceTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_resource_types::ListResourceTypesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                resource_region_scope: self.resource_region_scope,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_resource_types::ListResourceTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_resource_types::ListResourceTypesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            resource_region_scope: self.resource_region_scope,
+        })
     }
 }

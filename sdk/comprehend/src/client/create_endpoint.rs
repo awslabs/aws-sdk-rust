@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`endpoint_arn(Option<String>)`](crate::operation::create_endpoint::CreateEndpointOutput::endpoint_arn): <p>The Amazon Resource Number (ARN) of the endpoint being created.</p>
     ///   - [`model_arn(Option<String>)`](crate::operation::create_endpoint::CreateEndpointOutput::model_arn): <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
     /// - On failure, responds with [`SdkError<CreateEndpointError>`](crate::operation::create_endpoint::CreateEndpointError)
-    pub fn create_endpoint(
-        &self,
-    ) -> crate::operation::create_endpoint::builders::CreateEndpointFluentBuilder {
-        crate::operation::create_endpoint::builders::CreateEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_endpoint(&self) -> crate::operation::create_endpoint::builders::CreateEndpointFluentBuilder {
+        crate::operation::create_endpoint::builders::CreateEndpointFluentBuilder::new(self.handle.clone())
     }
 }

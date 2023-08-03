@@ -27,7 +27,7 @@ impl StartDashboardSnapshotJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDashboardSnapshotJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_dashboard_snapshot_job::builders::StartDashboardSnapshotJobInputBuilder,
+    inner: crate::operation::start_dashboard_snapshot_job::builders::StartDashboardSnapshotJobInputBuilder,
 }
 impl StartDashboardSnapshotJobFluentBuilder {
     /// Creates a new `StartDashboardSnapshotJob`.
@@ -38,7 +38,7 @@ impl StartDashboardSnapshotJobFluentBuilder {
         }
     }
     /// Access the StartDashboardSnapshotJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_dashboard_snapshot_job::builders::StartDashboardSnapshotJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_dashboard_snapshot_job::builders::StartDashboardSnapshotJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl StartDashboardSnapshotJobFluentBuilder {
             crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl StartDashboardSnapshotJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl StartDashboardSnapshotJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl StartDashboardSnapshotJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl StartDashboardSnapshotJobFluentBuilder {
             crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -156,18 +139,12 @@ impl StartDashboardSnapshotJobFluentBuilder {
         self.inner.get_dashboard_id()
     }
     /// <p>An ID for the dashboard snapshot job. This ID is unique to the dashboard while the job is running. This ID can be used to poll the status of a job with a <code>DescribeDashboardSnapshotJob</code> while the job runs. You can reuse this ID for another job 24 hours after the current job is completed.</p>
-    pub fn snapshot_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_job_id(input.into());
         self
     }
     /// <p>An ID for the dashboard snapshot job. This ID is unique to the dashboard while the job is running. This ID can be used to poll the status of a job with a <code>DescribeDashboardSnapshotJob</code> while the job runs. You can reuse this ID for another job 24 hours after the current job is completed.</p>
-    pub fn set_snapshot_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_job_id(input);
         self
     }
@@ -181,17 +158,12 @@ impl StartDashboardSnapshotJobFluentBuilder {
         self
     }
     /// <p> A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
-    pub fn set_user_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotUserConfiguration>,
-    ) -> Self {
+    pub fn set_user_configuration(mut self, input: ::std::option::Option<crate::types::SnapshotUserConfiguration>) -> Self {
         self.inner = self.inner.set_user_configuration(input);
         self
     }
     /// <p> A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
-    pub fn get_user_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SnapshotUserConfiguration> {
+    pub fn get_user_configuration(&self) -> &::std::option::Option<crate::types::SnapshotUserConfiguration> {
         self.inner.get_user_configuration()
     }
     /// <p>A structure that describes the configuration of the dashboard snapshot.</p>
@@ -200,17 +172,12 @@ impl StartDashboardSnapshotJobFluentBuilder {
         self
     }
     /// <p>A structure that describes the configuration of the dashboard snapshot.</p>
-    pub fn set_snapshot_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotConfiguration>,
-    ) -> Self {
+    pub fn set_snapshot_configuration(mut self, input: ::std::option::Option<crate::types::SnapshotConfiguration>) -> Self {
         self.inner = self.inner.set_snapshot_configuration(input);
         self
     }
     /// <p>A structure that describes the configuration of the dashboard snapshot.</p>
-    pub fn get_snapshot_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SnapshotConfiguration> {
+    pub fn get_snapshot_configuration(&self) -> &::std::option::Option<crate::types::SnapshotConfiguration> {
         self.inner.get_snapshot_configuration()
     }
 }

@@ -10,10 +10,7 @@ impl DescribeExecutionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_execution::DescribeExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_execution::DescribeExecutionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_execution::DescribeExecutionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_execution();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl DescribeExecutionFluentBuilder {
         }
     }
     /// Access the DescribeExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_execution::builders::DescribeExecutionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_execution::builders::DescribeExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl DescribeExecutionFluentBuilder {
             crate::operation::describe_execution::DescribeExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_execution::DescribeExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_execution::DescribeExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl DescribeExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl DescribeExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_execution::DescribeExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_execution::DescribeExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_execution::DescribeExecutionError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl DescribeExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_execution::DescribeExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_execution::DescribeExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_execution::DescribeExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +106,17 @@ impl DescribeExecutionFluentBuilder {
             crate::operation::describe_execution::DescribeExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_execution::DescribeExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_execution::DescribeExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
-    pub fn execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
-    pub fn set_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_arn(input);
         self
     }

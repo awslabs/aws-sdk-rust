@@ -15,49 +15,43 @@ impl DeleteLaunchConfigurationTemplateInput {
 }
 impl DeleteLaunchConfigurationTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchConfigurationTemplateInput`](crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput).
-    pub fn builder() -> crate::operation::delete_launch_configuration_template::builders::DeleteLaunchConfigurationTemplateInputBuilder{
+    pub fn builder() -> crate::operation::delete_launch_configuration_template::builders::DeleteLaunchConfigurationTemplateInputBuilder {
         crate::operation::delete_launch_configuration_template::builders::DeleteLaunchConfigurationTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLaunchConfigurationTemplateInput`](crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLaunchConfigurationTemplateInputBuilder {
     pub(crate) launch_configuration_template_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLaunchConfigurationTemplateInputBuilder {
     /// <p>The ID of the Launch Configuration Template to be deleted.</p>
-    pub fn launch_configuration_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Launch Configuration Template to be deleted.</p>
-    pub fn set_launch_configuration_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_configuration_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_configuration_template_id = input;
         self
     }
     /// <p>The ID of the Launch Configuration Template to be deleted.</p>
-    pub fn get_launch_configuration_template_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_launch_configuration_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.launch_configuration_template_id
     }
     /// Consumes the builder and constructs a [`DeleteLaunchConfigurationTemplateInput`](crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput {
-                launch_configuration_template_id: self.launch_configuration_template_id
-                ,
-            }
+                launch_configuration_template_id: self.launch_configuration_template_id,
+            },
         )
     }
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAccessPolicyOutput {
 }
 impl DeleteAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPolicyOutput`](crate::operation::delete_access_policy::DeleteAccessPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_access_policy::builders::DeleteAccessPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::delete_access_policy::builders::DeleteAccessPolicyOutputBuilder {
         crate::operation::delete_access_policy::builders::DeleteAccessPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessPolicyOutput`](crate::operation::delete_access_policy::DeleteAccessPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessPolicyOutputBuilder {
     _request_id: Option<String>,
 }

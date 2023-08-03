@@ -73,16 +73,14 @@ impl StartPiiEntitiesDetectionJobInput {
 }
 impl StartPiiEntitiesDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StartPiiEntitiesDetectionJobInput`](crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobInput).
-    pub fn builder() -> crate::operation::start_pii_entities_detection_job::builders::StartPiiEntitiesDetectionJobInputBuilder{
+    pub fn builder() -> crate::operation::start_pii_entities_detection_job::builders::StartPiiEntitiesDetectionJobInputBuilder {
         crate::operation::start_pii_entities_detection_job::builders::StartPiiEntitiesDetectionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartPiiEntitiesDetectionJobInput`](crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartPiiEntitiesDetectionJobInputBuilder {
     pub(crate) input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
@@ -101,10 +99,7 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
         self
     }
     /// <p>The input properties for a PII entities detection job.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }
@@ -118,10 +113,7 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
         self
     }
     /// <p>Provides conﬁguration parameters for the output of PII entity detection jobs.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
@@ -135,10 +127,7 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
         self
     }
     /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::PiiEntitiesDetectionMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::PiiEntitiesDetectionMode>) -> Self {
         self.mode = input;
         self
     }
@@ -154,10 +143,7 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
     }
     /// <p>Provides configuration parameters for PII entity redaction.</p>
     /// <p>This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code> definition that includes the <code>PiiEntityTypes</code> parameter.</p>
-    pub fn set_redaction_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RedactionConfig>,
-    ) -> Self {
+    pub fn set_redaction_config(mut self, input: ::std::option::Option<crate::types::RedactionConfig>) -> Self {
         self.redaction_config = input;
         self
     }
@@ -167,18 +153,12 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
         &self.redaction_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -206,10 +186,7 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
         self
     }
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -218,18 +195,12 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
         &self.language_code
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -249,10 +220,7 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
         self
     }
     /// <p>Tags to associate with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -267,18 +235,16 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
         crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobInput {
-                input_data_config: self.input_data_config,
-                output_data_config: self.output_data_config,
-                mode: self.mode,
-                redaction_config: self.redaction_config,
-                data_access_role_arn: self.data_access_role_arn,
-                job_name: self.job_name,
-                language_code: self.language_code,
-                client_request_token: self.client_request_token,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobInput {
+            input_data_config: self.input_data_config,
+            output_data_config: self.output_data_config,
+            mode: self.mode,
+            redaction_config: self.redaction_config,
+            data_access_role_arn: self.data_access_role_arn,
+            job_name: self.job_name,
+            language_code: self.language_code,
+            client_request_token: self.client_request_token,
+            tags: self.tags,
+        })
     }
 }

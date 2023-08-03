@@ -36,9 +36,7 @@ impl UpdateChannelInput {
 
 /// A builder for [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateChannelInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_storage: ::std::option::Option<crate::types::ChannelStorage>,
@@ -65,10 +63,7 @@ impl UpdateChannelInputBuilder {
         self
     }
     /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
-    pub fn set_channel_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelStorage>,
-    ) -> Self {
+    pub fn set_channel_storage(mut self, input: ::std::option::Option<crate::types::ChannelStorage>) -> Self {
         self.channel_storage = input;
         self
     }
@@ -82,10 +77,7 @@ impl UpdateChannelInputBuilder {
         self
     }
     /// <p>How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
-    pub fn set_retention_period(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPeriod>,
-    ) -> Self {
+    pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
         self.retention_period = input;
         self
     }
@@ -96,10 +88,7 @@ impl UpdateChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_channel::UpdateChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_channel::UpdateChannelInput {
             channel_name: self.channel_name,
             channel_storage: self.channel_storage,

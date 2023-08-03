@@ -110,9 +110,7 @@ impl CreateApiCacheInput {
 
 /// A builder for [`CreateApiCacheInput`](crate::operation::create_api_cache::CreateApiCacheInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateApiCacheInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) ttl: ::std::option::Option<i64>,
@@ -195,10 +193,7 @@ impl CreateApiCacheInputBuilder {
     /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
     /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
-    pub fn set_api_caching_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::ApiCachingBehavior>,
-    ) -> Self {
+    pub fn set_api_caching_behavior(mut self, input: ::std::option::Option<crate::types::ApiCachingBehavior>) -> Self {
         self.api_caching_behavior = input;
         self
     }
@@ -207,9 +202,7 @@ impl CreateApiCacheInputBuilder {
     /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
     /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
-    pub fn get_api_caching_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApiCachingBehavior> {
+    pub fn get_api_caching_behavior(&self) -> &::std::option::Option<crate::types::ApiCachingBehavior> {
         &self.api_caching_behavior
     }
     /// <p>The cache instance type. Valid values are </p>
@@ -292,10 +285,7 @@ impl CreateApiCacheInputBuilder {
     /// Consumes the builder and constructs a [`CreateApiCacheInput`](crate::operation::create_api_cache::CreateApiCacheInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_api_cache::CreateApiCacheInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_api_cache::CreateApiCacheInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_api_cache::CreateApiCacheInput {
             api_id: self.api_id,
             ttl: self.ttl,

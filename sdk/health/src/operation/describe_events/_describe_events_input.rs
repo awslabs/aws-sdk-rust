@@ -43,9 +43,7 @@ impl DescribeEventsInput {
 
 /// A builder for [`DescribeEventsInput`](crate::operation::describe_events::DescribeEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::EventFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -112,10 +110,7 @@ impl DescribeEventsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEventsInput`](crate::operation::describe_events::DescribeEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_events::DescribeEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_events::DescribeEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_events::DescribeEventsInput {
             filter: self.filter,
             next_token: self.next_token,

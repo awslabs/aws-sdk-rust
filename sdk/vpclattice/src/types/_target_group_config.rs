@@ -33,9 +33,7 @@ impl TargetGroupConfig {
         self.protocol.as_ref()
     }
     /// <p>The protocol version. Default value is <code>HTTP1</code>.</p>
-    pub fn protocol_version(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetGroupProtocolVersion> {
+    pub fn protocol_version(&self) -> ::std::option::Option<&crate::types::TargetGroupProtocolVersion> {
         self.protocol_version.as_ref()
     }
     /// <p>The type of IP address used for the target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
@@ -60,9 +58,7 @@ impl TargetGroupConfig {
 
 /// A builder for [`TargetGroupConfig`](crate::types::TargetGroupConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetGroupConfigBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) protocol: ::std::option::Option<crate::types::TargetGroupProtocol>,
@@ -92,10 +88,7 @@ impl TargetGroupConfigBuilder {
         self
     }
     /// <p>The protocol to use for routing traffic to the targets. Default is the protocol of a target group.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::TargetGroupProtocol>) -> Self {
         self.protocol = input;
         self
     }
@@ -109,17 +102,12 @@ impl TargetGroupConfigBuilder {
         self
     }
     /// <p>The protocol version. Default value is <code>HTTP1</code>.</p>
-    pub fn set_protocol_version(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupProtocolVersion>,
-    ) -> Self {
+    pub fn set_protocol_version(mut self, input: ::std::option::Option<crate::types::TargetGroupProtocolVersion>) -> Self {
         self.protocol_version = input;
         self
     }
     /// <p>The protocol version. Default value is <code>HTTP1</code>.</p>
-    pub fn get_protocol_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetGroupProtocolVersion> {
+    pub fn get_protocol_version(&self) -> &::std::option::Option<crate::types::TargetGroupProtocolVersion> {
         &self.protocol_version
     }
     /// <p>The type of IP address used for the target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
@@ -128,10 +116,7 @@ impl TargetGroupConfigBuilder {
         self
     }
     /// <p>The type of IP address used for the target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
@@ -140,18 +125,12 @@ impl TargetGroupConfigBuilder {
         &self.ip_address_type
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC.</p>
-    pub fn set_vpc_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_identifier = input;
         self
     }
@@ -165,10 +144,7 @@ impl TargetGroupConfigBuilder {
         self
     }
     /// <p>The health check configuration.</p>
-    pub fn set_health_check(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheckConfig>,
-    ) -> Self {
+    pub fn set_health_check(mut self, input: ::std::option::Option<crate::types::HealthCheckConfig>) -> Self {
         self.health_check = input;
         self
     }

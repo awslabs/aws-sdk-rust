@@ -41,13 +41,7 @@
 /// Video Selector Color Space
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum VideoSelectorColorSpace {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for VideoSelectorColorSpace {
             "HLG_2020" => VideoSelectorColorSpace::Hlg2020,
             "REC_601" => VideoSelectorColorSpace::Rec601,
             "REC_709" => VideoSelectorColorSpace::Rec709,
-            other => VideoSelectorColorSpace::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => VideoSelectorColorSpace::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

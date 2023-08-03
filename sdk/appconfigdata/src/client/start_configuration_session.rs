@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StartConfigurationSessionOutput`](crate::operation::start_configuration_session::StartConfigurationSessionOutput) with field(s):
     ///   - [`initial_configuration_token(Option<String>)`](crate::operation::start_configuration_session::StartConfigurationSessionOutput::initial_configuration_token): <p>Token encapsulating state about the configuration session. Provide this token to the <code>GetLatestConfiguration</code> API to retrieve configuration data.</p> <important>   <p>This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You <i>must</i> use the new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>) in each subsequent call to <code>GetLatestConfiguration</code>.</p>   <p>The <code>InitialConfigurationToken</code> and <code>NextPollConfigurationToken</code> should only be used once. To support long poll use cases, the tokens are valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>  </important>
     /// - On failure, responds with [`SdkError<StartConfigurationSessionError>`](crate::operation::start_configuration_session::StartConfigurationSessionError)
-    pub fn start_configuration_session(&self) -> crate::operation::start_configuration_session::builders::StartConfigurationSessionFluentBuilder{
+    pub fn start_configuration_session(&self) -> crate::operation::start_configuration_session::builders::StartConfigurationSessionFluentBuilder {
         crate::operation::start_configuration_session::builders::StartConfigurationSessionFluentBuilder::new(self.handle.clone())
     }
 }

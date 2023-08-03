@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`repositories(Option<Vec<RepositoryNameIdPair>>)`](crate::operation::list_repositories::ListRepositoriesOutput::repositories): <p>Lists the repositories called by the list repositories operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_repositories::ListRepositoriesOutput::next_token): <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
     /// - On failure, responds with [`SdkError<ListRepositoriesError>`](crate::operation::list_repositories::ListRepositoriesError)
-    pub fn list_repositories(
-        &self,
-    ) -> crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder {
-        crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_repositories(&self) -> crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder {
+        crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::new(self.handle.clone())
     }
 }

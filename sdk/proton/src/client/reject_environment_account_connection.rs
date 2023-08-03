@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`RejectEnvironmentAccountConnectionOutput`](crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionOutput) with field(s):
     ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment connection account detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<RejectEnvironmentAccountConnectionError>`](crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionError)
-    pub fn reject_environment_account_connection(&self) -> crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionFluentBuilder{
+    pub fn reject_environment_account_connection(
+        &self,
+    ) -> crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionFluentBuilder {
         crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionFluentBuilder::new(self.handle.clone())
     }
 }

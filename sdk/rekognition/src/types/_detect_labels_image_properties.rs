@@ -44,9 +44,7 @@ impl DetectLabelsImageProperties {
 
 /// A builder for [`DetectLabelsImageProperties`](crate::types::DetectLabelsImageProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectLabelsImagePropertiesBuilder {
     pub(crate) quality: ::std::option::Option<crate::types::DetectLabelsImageQuality>,
     pub(crate) dominant_colors: ::std::option::Option<::std::vec::Vec<crate::types::DominantColor>>,
@@ -60,10 +58,7 @@ impl DetectLabelsImagePropertiesBuilder {
         self
     }
     /// <p>Information about the quality of the image foreground as defined by brightness, sharpness, and contrast. The higher the value the greater the brightness, sharpness, and contrast respectively.</p>
-    pub fn set_quality(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectLabelsImageQuality>,
-    ) -> Self {
+    pub fn set_quality(mut self, input: ::std::option::Option<crate::types::DetectLabelsImageQuality>) -> Self {
         self.quality = input;
         self
     }
@@ -83,17 +78,12 @@ impl DetectLabelsImagePropertiesBuilder {
         self
     }
     /// <p>Information about the dominant colors found in an image, described with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
-    pub fn set_dominant_colors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DominantColor>>,
-    ) -> Self {
+    pub fn set_dominant_colors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DominantColor>>) -> Self {
         self.dominant_colors = input;
         self
     }
     /// <p>Information about the dominant colors found in an image, described with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
-    pub fn get_dominant_colors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DominantColor>> {
+    pub fn get_dominant_colors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DominantColor>> {
         &self.dominant_colors
     }
     /// <p>Information about the properties of an image’s foreground, including the foreground’s quality and dominant colors, including the quality and dominant colors of the image.</p>
@@ -102,17 +92,12 @@ impl DetectLabelsImagePropertiesBuilder {
         self
     }
     /// <p>Information about the properties of an image’s foreground, including the foreground’s quality and dominant colors, including the quality and dominant colors of the image.</p>
-    pub fn set_foreground(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectLabelsImageForeground>,
-    ) -> Self {
+    pub fn set_foreground(mut self, input: ::std::option::Option<crate::types::DetectLabelsImageForeground>) -> Self {
         self.foreground = input;
         self
     }
     /// <p>Information about the properties of an image’s foreground, including the foreground’s quality and dominant colors, including the quality and dominant colors of the image.</p>
-    pub fn get_foreground(
-        &self,
-    ) -> &::std::option::Option<crate::types::DetectLabelsImageForeground> {
+    pub fn get_foreground(&self) -> &::std::option::Option<crate::types::DetectLabelsImageForeground> {
         &self.foreground
     }
     /// <p>Information about the properties of an image’s background, including the background’s quality and dominant colors, including the quality and dominant colors of the image.</p>
@@ -121,17 +106,12 @@ impl DetectLabelsImagePropertiesBuilder {
         self
     }
     /// <p>Information about the properties of an image’s background, including the background’s quality and dominant colors, including the quality and dominant colors of the image.</p>
-    pub fn set_background(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectLabelsImageBackground>,
-    ) -> Self {
+    pub fn set_background(mut self, input: ::std::option::Option<crate::types::DetectLabelsImageBackground>) -> Self {
         self.background = input;
         self
     }
     /// <p>Information about the properties of an image’s background, including the background’s quality and dominant colors, including the quality and dominant colors of the image.</p>
-    pub fn get_background(
-        &self,
-    ) -> &::std::option::Option<crate::types::DetectLabelsImageBackground> {
+    pub fn get_background(&self) -> &::std::option::Option<crate::types::DetectLabelsImageBackground> {
         &self.background
     }
     /// Consumes the builder and constructs a [`DetectLabelsImageProperties`](crate::types::DetectLabelsImageProperties).

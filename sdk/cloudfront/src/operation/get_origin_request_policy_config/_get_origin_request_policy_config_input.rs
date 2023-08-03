@@ -15,16 +15,14 @@ impl GetOriginRequestPolicyConfigInput {
 }
 impl GetOriginRequestPolicyConfigInput {
     /// Creates a new builder-style object to manufacture [`GetOriginRequestPolicyConfigInput`](crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigInput).
-    pub fn builder() -> crate::operation::get_origin_request_policy_config::builders::GetOriginRequestPolicyConfigInputBuilder{
+    pub fn builder() -> crate::operation::get_origin_request_policy_config::builders::GetOriginRequestPolicyConfigInputBuilder {
         crate::operation::get_origin_request_policy_config::builders::GetOriginRequestPolicyConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`GetOriginRequestPolicyConfigInput`](crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOriginRequestPolicyConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl GetOriginRequestPolicyConfigInputBuilder {
         crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigInput {
-                id: self.id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigInput { id: self.id })
     }
 }

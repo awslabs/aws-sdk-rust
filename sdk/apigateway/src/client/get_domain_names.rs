@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<DomainName>>)`](crate::operation::get_domain_names::GetDomainNamesOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_domain_names::GetDomainNamesOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<GetDomainNamesError>`](crate::operation::get_domain_names::GetDomainNamesError)
-    pub fn get_domain_names(
-        &self,
-    ) -> crate::operation::get_domain_names::builders::GetDomainNamesFluentBuilder {
-        crate::operation::get_domain_names::builders::GetDomainNamesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_domain_names(&self) -> crate::operation::get_domain_names::builders::GetDomainNamesFluentBuilder {
+        crate::operation::get_domain_names::builders::GetDomainNamesFluentBuilder::new(self.handle.clone())
     }
 }

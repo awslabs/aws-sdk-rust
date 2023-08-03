@@ -43,17 +43,14 @@ impl DescribeTargetGroupsInput {
 }
 impl DescribeTargetGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeTargetGroupsInput`](crate::operation::describe_target_groups::DescribeTargetGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_target_groups::builders::DescribeTargetGroupsInputBuilder {
+    pub fn builder() -> crate::operation::describe_target_groups::builders::DescribeTargetGroupsInputBuilder {
         crate::operation::describe_target_groups::builders::DescribeTargetGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTargetGroupsInput`](crate::operation::describe_target_groups::DescribeTargetGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTargetGroupsInputBuilder {
     pub(crate) load_balancer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,18 +60,12 @@ pub struct DescribeTargetGroupsInputBuilder {
 }
 impl DescribeTargetGroupsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_arn = input;
         self
     }
@@ -87,27 +78,19 @@ impl DescribeTargetGroupsInputBuilder {
     /// To override the contents of this collection use [`set_target_group_arns`](Self::set_target_group_arns).
     ///
     /// <p>The Amazon Resource Names (ARN) of the target groups.</p>
-    pub fn target_group_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_group_arns.unwrap_or_default();
         v.push(input.into());
         self.target_group_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups.</p>
-    pub fn set_target_group_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_group_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups.</p>
-    pub fn get_target_group_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_group_arns
     }
     /// Appends an item to `names`.
@@ -122,10 +105,7 @@ impl DescribeTargetGroupsInputBuilder {
         self
     }
     /// <p>The names of the target groups.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -164,18 +144,14 @@ impl DescribeTargetGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTargetGroupsInput`](crate::operation::describe_target_groups::DescribeTargetGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_target_groups::DescribeTargetGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_target_groups::DescribeTargetGroupsInput {
-                load_balancer_arn: self.load_balancer_arn,
-                target_group_arns: self.target_group_arns,
-                names: self.names,
-                marker: self.marker,
-                page_size: self.page_size,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_target_groups::DescribeTargetGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_target_groups::DescribeTargetGroupsInput {
+            load_balancer_arn: self.load_balancer_arn,
+            target_group_arns: self.target_group_arns,
+            names: self.names,
+            marker: self.marker,
+            page_size: self.page_size,
+        })
     }
 }

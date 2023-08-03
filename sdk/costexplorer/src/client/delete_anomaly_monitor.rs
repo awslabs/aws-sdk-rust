@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`monitor_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_anomaly_monitor::builders::DeleteAnomalyMonitorFluentBuilder::monitor_arn) / [`set_monitor_arn(Option<String>)`](crate::operation::delete_anomaly_monitor::builders::DeleteAnomalyMonitorFluentBuilder::set_monitor_arn): <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
     /// - On success, responds with [`DeleteAnomalyMonitorOutput`](crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorOutput)
     /// - On failure, responds with [`SdkError<DeleteAnomalyMonitorError>`](crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorError)
-    pub fn delete_anomaly_monitor(
-        &self,
-    ) -> crate::operation::delete_anomaly_monitor::builders::DeleteAnomalyMonitorFluentBuilder {
-        crate::operation::delete_anomaly_monitor::builders::DeleteAnomalyMonitorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_anomaly_monitor(&self) -> crate::operation::delete_anomaly_monitor::builders::DeleteAnomalyMonitorFluentBuilder {
+        crate::operation::delete_anomaly_monitor::builders::DeleteAnomalyMonitorFluentBuilder::new(self.handle.clone())
     }
 }

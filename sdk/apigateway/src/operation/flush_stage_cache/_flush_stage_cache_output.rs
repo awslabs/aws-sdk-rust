@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for FlushStageCacheOutput {
 }
 impl FlushStageCacheOutput {
     /// Creates a new builder-style object to manufacture [`FlushStageCacheOutput`](crate::operation::flush_stage_cache::FlushStageCacheOutput).
-    pub fn builder() -> crate::operation::flush_stage_cache::builders::FlushStageCacheOutputBuilder
-    {
+    pub fn builder() -> crate::operation::flush_stage_cache::builders::FlushStageCacheOutputBuilder {
         crate::operation::flush_stage_cache::builders::FlushStageCacheOutputBuilder::default()
     }
 }
 
 /// A builder for [`FlushStageCacheOutput`](crate::operation::flush_stage_cache::FlushStageCacheOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlushStageCacheOutputBuilder {
     _request_id: Option<String>,
 }

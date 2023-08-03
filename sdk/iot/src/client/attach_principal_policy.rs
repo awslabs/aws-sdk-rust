@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AttachPrincipalPolicyOutput`](crate::operation::attach_principal_policy::AttachPrincipalPolicyOutput)
     /// - On failure, responds with [`SdkError<AttachPrincipalPolicyError>`](crate::operation::attach_principal_policy::AttachPrincipalPolicyError)
     #[deprecated]
-    pub fn attach_principal_policy(
-        &self,
-    ) -> crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyFluentBuilder
-    {
-        crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn attach_principal_policy(&self) -> crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyFluentBuilder {
+        crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for StartInstanceRefreshOutput {
 }
 impl StartInstanceRefreshOutput {
     /// Creates a new builder-style object to manufacture [`StartInstanceRefreshOutput`](crate::operation::start_instance_refresh::StartInstanceRefreshOutput).
-    pub fn builder(
-    ) -> crate::operation::start_instance_refresh::builders::StartInstanceRefreshOutputBuilder {
+    pub fn builder() -> crate::operation::start_instance_refresh::builders::StartInstanceRefreshOutputBuilder {
         crate::operation::start_instance_refresh::builders::StartInstanceRefreshOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartInstanceRefreshOutput`](crate::operation::start_instance_refresh::StartInstanceRefreshOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartInstanceRefreshOutputBuilder {
     pub(crate) instance_refresh_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartInstanceRefreshOutputBuilder {
     /// <p>A unique ID for tracking the progress of the instance refresh.</p>
-    pub fn instance_refresh_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_refresh_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_refresh_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique ID for tracking the progress of the instance refresh.</p>
-    pub fn set_instance_refresh_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_refresh_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_refresh_id = input;
         self
     }

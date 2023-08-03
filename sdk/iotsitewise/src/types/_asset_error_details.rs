@@ -37,9 +37,7 @@ impl AssetErrorDetails {
 
 /// A builder for [`AssetErrorDetails`](crate::types::AssetErrorDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetErrorDetailsBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<crate::types::AssetErrorCode>,

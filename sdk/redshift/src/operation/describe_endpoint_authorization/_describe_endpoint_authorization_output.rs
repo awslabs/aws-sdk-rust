@@ -5,8 +5,7 @@
 pub struct DescribeEndpointAuthorizationOutput {
     /// <p>The authorizations to an endpoint.</p>
     #[doc(hidden)]
-    pub endpoint_authorization_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EndpointAuthorization>>,
+    pub endpoint_authorization_list: ::std::option::Option<::std::vec::Vec<crate::types::EndpointAuthorization>>,
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeEndpointAuthorizationOutput {
 }
 impl DescribeEndpointAuthorizationOutput {
     /// <p>The authorizations to an endpoint.</p>
-    pub fn endpoint_authorization_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EndpointAuthorization]> {
+    pub fn endpoint_authorization_list(&self) -> ::std::option::Option<&[crate::types::EndpointAuthorization]> {
         self.endpoint_authorization_list.as_deref()
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeEndpointAuthorizationOutput {
 }
 impl DescribeEndpointAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointAuthorizationOutput`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationOutput).
-    pub fn builder() -> crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationOutputBuilder {
         crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointAuthorizationOutput`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointAuthorizationOutputBuilder {
-    pub(crate) endpoint_authorization_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EndpointAuthorization>>,
+    pub(crate) endpoint_authorization_list: ::std::option::Option<::std::vec::Vec<crate::types::EndpointAuthorization>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl DescribeEndpointAuthorizationOutputBuilder {
     /// To override the contents of this collection use [`set_endpoint_authorization_list`](Self::set_endpoint_authorization_list).
     ///
     /// <p>The authorizations to an endpoint.</p>
-    pub fn endpoint_authorization_list(
-        mut self,
-        input: crate::types::EndpointAuthorization,
-    ) -> Self {
+    pub fn endpoint_authorization_list(mut self, input: crate::types::EndpointAuthorization) -> Self {
         let mut v = self.endpoint_authorization_list.unwrap_or_default();
         v.push(input);
         self.endpoint_authorization_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The authorizations to an endpoint.</p>
-    pub fn set_endpoint_authorization_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointAuthorization>>,
-    ) -> Self {
+    pub fn set_endpoint_authorization_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointAuthorization>>) -> Self {
         self.endpoint_authorization_list = input;
         self
     }
     /// <p>The authorizations to an endpoint.</p>
-    pub fn get_endpoint_authorization_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointAuthorization>> {
+    pub fn get_endpoint_authorization_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointAuthorization>> {
         &self.endpoint_authorization_list
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
@@ -100,10 +86,7 @@ impl DescribeEndpointAuthorizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEndpointAuthorizationOutput`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationOutput
-    {
+    pub fn build(self) -> crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationOutput {
         crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationOutput {
             endpoint_authorization_list: self.endpoint_authorization_list,
             marker: self.marker,

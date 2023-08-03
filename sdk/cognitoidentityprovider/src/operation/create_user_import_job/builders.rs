@@ -37,9 +37,7 @@ impl CreateUserImportJobFluentBuilder {
         }
     }
     /// Access the CreateUserImportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_user_import_job::builders::CreateUserImportJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_user_import_job::builders::CreateUserImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateUserImportJobFluentBuilder {
             crate::operation::create_user_import_job::CreateUserImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_import_job::CreateUserImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_import_job::CreateUserImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateUserImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateUserImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_user_import_job::CreateUserImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_import_job::CreateUserImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_import_job::CreateUserImportJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateUserImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_user_import_job::CreateUserImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_import_job::CreateUserImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_import_job::CreateUserImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateUserImportJobFluentBuilder {
             crate::operation::create_user_import_job::CreateUserImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_import_job::CreateUserImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_import_job::CreateUserImportJobError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +138,12 @@ impl CreateUserImportJobFluentBuilder {
         self.inner.get_user_pool_id()
     }
     /// <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.</p>
-    pub fn cloud_watch_logs_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_logs_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cloud_watch_logs_role_arn(input.into());
         self
     }
     /// <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.</p>
-    pub fn set_cloud_watch_logs_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cloud_watch_logs_role_arn(input);
         self
     }

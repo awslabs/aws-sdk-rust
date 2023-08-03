@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateVpcEndpointOutput {
 }
 impl UpdateVpcEndpointOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVpcEndpointOutput`](crate::operation::update_vpc_endpoint::UpdateVpcEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointOutputBuilder {
         crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVpcEndpointOutput`](crate::operation::update_vpc_endpoint::UpdateVpcEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVpcEndpointOutputBuilder {
     pub(crate) vpc_endpoint: ::std::option::Option<crate::types::VpcEndpoint>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateVpcEndpointOutputBuilder {
         self
     }
     /// <p>The endpoint to be updated.</p>
-    pub fn set_vpc_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcEndpoint>,
-    ) -> Self {
+    pub fn set_vpc_endpoint(mut self, input: ::std::option::Option<crate::types::VpcEndpoint>) -> Self {
         self.vpc_endpoint = input;
         self
     }

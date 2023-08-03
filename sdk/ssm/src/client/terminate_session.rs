@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`TerminateSessionOutput`](crate::operation::terminate_session::TerminateSessionOutput) with field(s):
     ///   - [`session_id(Option<String>)`](crate::operation::terminate_session::TerminateSessionOutput::session_id): <p>The ID of the session that has been terminated.</p>
     /// - On failure, responds with [`SdkError<TerminateSessionError>`](crate::operation::terminate_session::TerminateSessionError)
-    pub fn terminate_session(
-        &self,
-    ) -> crate::operation::terminate_session::builders::TerminateSessionFluentBuilder {
-        crate::operation::terminate_session::builders::TerminateSessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn terminate_session(&self) -> crate::operation::terminate_session::builders::TerminateSessionFluentBuilder {
+        crate::operation::terminate_session::builders::TerminateSessionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdatePrimaryEmailAddressOutput {
 }
 impl UpdatePrimaryEmailAddressOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePrimaryEmailAddressOutput`](crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressOutput).
-    pub fn builder() -> crate::operation::update_primary_email_address::builders::UpdatePrimaryEmailAddressOutputBuilder{
+    pub fn builder() -> crate::operation::update_primary_email_address::builders::UpdatePrimaryEmailAddressOutputBuilder {
         crate::operation::update_primary_email_address::builders::UpdatePrimaryEmailAddressOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePrimaryEmailAddressOutput`](crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePrimaryEmailAddressOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdatePrimaryEmailAddressOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdatePrimaryEmailAddressOutput`](crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressOutput {
+    pub fn build(self) -> crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressOutput {
         crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressOutput {
             _request_id: self._request_id,
         }

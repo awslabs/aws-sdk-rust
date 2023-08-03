@@ -30,17 +30,14 @@ impl ::aws_http::request_id::RequestId for CreateAccessPolicyOutput {
 }
 impl CreateAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPolicyOutput`](crate::operation::create_access_policy::CreateAccessPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::create_access_policy::builders::CreateAccessPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::create_access_policy::builders::CreateAccessPolicyOutputBuilder {
         crate::operation::create_access_policy::builders::CreateAccessPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessPolicyOutput`](crate::operation::create_access_policy::CreateAccessPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessPolicyOutputBuilder {
     pub(crate) access_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) access_policy_arn: ::std::option::Option<::std::string::String>,
@@ -48,18 +45,12 @@ pub struct CreateAccessPolicyOutputBuilder {
 }
 impl CreateAccessPolicyOutputBuilder {
     /// <p>The ID of the access policy.</p>
-    pub fn access_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the access policy.</p>
-    pub fn set_access_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_policy_id = input;
         self
     }
@@ -69,19 +60,13 @@ impl CreateAccessPolicyOutputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
-    pub fn access_policy_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
-    pub fn set_access_policy_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_policy_arn = input;
         self
     }

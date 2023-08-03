@@ -31,9 +31,7 @@ impl DetectTextInput {
 
 /// A builder for [`DetectTextInput`](crate::operation::detect_text::DetectTextInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectTextInputBuilder {
     pub(crate) image: ::std::option::Option<crate::types::Image>,
     pub(crate) filters: ::std::option::Option<crate::types::DetectTextFilters>,
@@ -62,10 +60,7 @@ impl DetectTextInputBuilder {
         self
     }
     /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectTextFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::DetectTextFilters>) -> Self {
         self.filters = input;
         self
     }
@@ -74,12 +69,7 @@ impl DetectTextInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`DetectTextInput`](crate::operation::detect_text::DetectTextInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_text::DetectTextInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_text::DetectTextInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_text::DetectTextInput {
             image: self.image,
             filters: self.filters,

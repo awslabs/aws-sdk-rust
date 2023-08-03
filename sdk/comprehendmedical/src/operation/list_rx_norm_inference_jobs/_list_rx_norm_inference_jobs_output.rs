@@ -5,8 +5,7 @@
 pub struct ListRxNormInferenceJobsOutput {
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     #[doc(hidden)]
-    pub comprehend_medical_async_job_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>,
+    pub comprehend_medical_async_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListRxNormInferenceJobsOutput {
 }
 impl ListRxNormInferenceJobsOutput {
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
-    pub fn comprehend_medical_async_job_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ComprehendMedicalAsyncJobProperties]> {
+    pub fn comprehend_medical_async_job_properties_list(&self) -> ::std::option::Option<&[crate::types::ComprehendMedicalAsyncJobProperties]> {
         self.comprehend_medical_async_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -31,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListRxNormInferenceJobsOutput {
 }
 impl ListRxNormInferenceJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListRxNormInferenceJobsOutput`](crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_rx_norm_inference_jobs::builders::ListRxNormInferenceJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_rx_norm_inference_jobs::builders::ListRxNormInferenceJobsOutputBuilder {
         crate::operation::list_rx_norm_inference_jobs::builders::ListRxNormInferenceJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRxNormInferenceJobsOutput`](crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRxNormInferenceJobsOutputBuilder {
     pub(crate) comprehend_medical_async_job_properties_list:
         ::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>,
@@ -55,13 +48,8 @@ impl ListRxNormInferenceJobsOutputBuilder {
     /// To override the contents of this collection use [`set_comprehend_medical_async_job_properties_list`](Self::set_comprehend_medical_async_job_properties_list).
     ///
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
-    pub fn comprehend_medical_async_job_properties_list(
-        mut self,
-        input: crate::types::ComprehendMedicalAsyncJobProperties,
-    ) -> Self {
-        let mut v = self
-            .comprehend_medical_async_job_properties_list
-            .unwrap_or_default();
+    pub fn comprehend_medical_async_job_properties_list(mut self, input: crate::types::ComprehendMedicalAsyncJobProperties) -> Self {
+        let mut v = self.comprehend_medical_async_job_properties_list.unwrap_or_default();
         v.push(input);
         self.comprehend_medical_async_job_properties_list = ::std::option::Option::Some(v);
         self
@@ -69,9 +57,7 @@ impl ListRxNormInferenceJobsOutputBuilder {
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub fn set_comprehend_medical_async_job_properties_list(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>,
     ) -> Self {
         self.comprehend_medical_async_job_properties_list = input;
         self
@@ -79,8 +65,7 @@ impl ListRxNormInferenceJobsOutputBuilder {
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub fn get_comprehend_medical_async_job_properties_list(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>> {
         &self.comprehend_medical_async_job_properties_list
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -107,12 +92,9 @@ impl ListRxNormInferenceJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRxNormInferenceJobsOutput`](crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsOutput {
+    pub fn build(self) -> crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsOutput {
         crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsOutput {
-            comprehend_medical_async_job_properties_list: self
-                .comprehend_medical_async_job_properties_list,
+            comprehend_medical_async_job_properties_list: self.comprehend_medical_async_job_properties_list,
             next_token: self.next_token,
             _request_id: self._request_id,
         }

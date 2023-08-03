@@ -30,9 +30,7 @@ impl AutoMlConfig {
 
 /// A builder for [`AutoMlConfig`](crate::types::AutoMlConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoMlConfigBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) recipe_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,17 +62,12 @@ impl AutoMlConfigBuilder {
         self
     }
     /// <p>The list of candidate recipes.</p>
-    pub fn set_recipe_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_recipe_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.recipe_list = input;
         self
     }
     /// <p>The list of candidate recipes.</p>
-    pub fn get_recipe_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recipe_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.recipe_list
     }
     /// Consumes the builder and constructs a [`AutoMlConfig`](crate::types::AutoMlConfig).

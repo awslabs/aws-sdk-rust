@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteTemplateSyncConfigOutput`](crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigOutput) with field(s):
     ///   - [`template_sync_config(Option<TemplateSyncConfig>)`](crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigOutput::template_sync_config): <p>The template sync configuration detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<DeleteTemplateSyncConfigError>`](crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigError)
-    pub fn delete_template_sync_config(&self) -> crate::operation::delete_template_sync_config::builders::DeleteTemplateSyncConfigFluentBuilder{
+    pub fn delete_template_sync_config(&self) -> crate::operation::delete_template_sync_config::builders::DeleteTemplateSyncConfigFluentBuilder {
         crate::operation::delete_template_sync_config::builders::DeleteTemplateSyncConfigFluentBuilder::new(self.handle.clone())
     }
 }

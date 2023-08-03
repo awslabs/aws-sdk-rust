@@ -23,26 +23,18 @@ impl VirtualNodeServiceProvider {
 
 /// A builder for [`VirtualNodeServiceProvider`](crate::types::VirtualNodeServiceProvider).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualNodeServiceProviderBuilder {
     pub(crate) virtual_node_name: ::std::option::Option<::std::string::String>,
 }
 impl VirtualNodeServiceProviderBuilder {
     /// <p>The name of the virtual node that is acting as a service provider.</p>
-    pub fn virtual_node_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_node_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual node that is acting as a service provider.</p>
-    pub fn set_virtual_node_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_node_name = input;
         self
     }

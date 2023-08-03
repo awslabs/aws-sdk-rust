@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`schedule_id(Option<String>)`](crate::operation::update_refresh_schedule::UpdateRefreshScheduleOutput::schedule_id): <p>The ID of the refresh schedule.</p>
     ///   - [`arn(Option<String>)`](crate::operation::update_refresh_schedule::UpdateRefreshScheduleOutput::arn): <p>The Amazon Resource Name (ARN) for the refresh schedule.</p>
     /// - On failure, responds with [`SdkError<UpdateRefreshScheduleError>`](crate::operation::update_refresh_schedule::UpdateRefreshScheduleError)
-    pub fn update_refresh_schedule(
-        &self,
-    ) -> crate::operation::update_refresh_schedule::builders::UpdateRefreshScheduleFluentBuilder
-    {
-        crate::operation::update_refresh_schedule::builders::UpdateRefreshScheduleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_refresh_schedule(&self) -> crate::operation::update_refresh_schedule::builders::UpdateRefreshScheduleFluentBuilder {
+        crate::operation::update_refresh_schedule::builders::UpdateRefreshScheduleFluentBuilder::new(self.handle.clone())
     }
 }

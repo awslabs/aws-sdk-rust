@@ -5,16 +5,16 @@ pub use crate::operation::create_hosted_configuration_version::_create_hosted_co
 
 impl CreateHostedConfigurationVersionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_hosted_configuration_version();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl CreateHostedConfigurationVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateHostedConfigurationVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionInputBuilder,
+    inner: crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionInputBuilder,
 }
 impl CreateHostedConfigurationVersionFluentBuilder {
     /// Creates a new `CreateHostedConfigurationVersion`.
@@ -37,15 +37,20 @@ impl CreateHostedConfigurationVersionFluentBuilder {
         }
     }
     /// Access the CreateHostedConfigurationVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersion,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl CreateHostedConfigurationVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl CreateHostedConfigurationVersionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersion,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -115,18 +124,12 @@ impl CreateHostedConfigurationVersionFluentBuilder {
         self.inner.get_application_id()
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_profile_id(input.into());
         self
     }
     /// <p>The configuration profile ID.</p>
-    pub fn set_configuration_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_profile_id(input);
         self
     }
@@ -191,18 +194,12 @@ impl CreateHostedConfigurationVersionFluentBuilder {
         self.inner.get_latest_version_number()
     }
     /// <p>An optional, user-defined label for the AppConfig hosted configuration version. This value must contain at least one non-numeric character. For example, "v2.2.0".</p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_label(input.into());
         self
     }
     /// <p>An optional, user-defined label for the AppConfig hosted configuration version. This value must contain at least one non-numeric character. For example, "v2.2.0".</p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_label(input);
         self
     }

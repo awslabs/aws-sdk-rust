@@ -3,10 +3,7 @@
 pub fn de_vpc_association_not_found_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::VpcAssociationNotFoundBuilder,
-) -> Result<
-    crate::types::error::builders::VpcAssociationNotFoundBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::VpcAssociationNotFoundBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

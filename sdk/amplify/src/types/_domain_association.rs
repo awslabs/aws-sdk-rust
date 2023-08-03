@@ -15,8 +15,7 @@ pub struct DomainAssociation {
     pub enable_auto_sub_domain: ::std::option::Option<bool>,
     /// <p> Sets branch patterns for automatic subdomain creation. </p>
     #[doc(hidden)]
-    pub auto_sub_domain_creation_patterns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub auto_sub_domain_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
     #[doc(hidden)]
     pub auto_sub_domain_iam_role: ::std::option::Option<::std::string::String>,
@@ -47,9 +46,7 @@ impl DomainAssociation {
         self.enable_auto_sub_domain
     }
     /// <p> Sets branch patterns for automatic subdomain creation. </p>
-    pub fn auto_sub_domain_creation_patterns(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn auto_sub_domain_creation_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.auto_sub_domain_creation_patterns.as_deref()
     }
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
@@ -82,15 +79,12 @@ impl DomainAssociation {
 
 /// A builder for [`DomainAssociation`](crate::types::DomainAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainAssociationBuilder {
     pub(crate) domain_association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) enable_auto_sub_domain: ::std::option::Option<bool>,
-    pub(crate) auto_sub_domain_creation_patterns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) auto_sub_domain_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) auto_sub_domain_iam_role: ::std::option::Option<::std::string::String>,
     pub(crate) domain_status: ::std::option::Option<crate::types::DomainStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
@@ -99,18 +93,12 @@ pub struct DomainAssociationBuilder {
 }
 impl DomainAssociationBuilder {
     /// <p> The Amazon Resource Name (ARN) for the domain association. </p>
-    pub fn domain_association_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_association_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) for the domain association. </p>
-    pub fn set_domain_association_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_association_arn = input;
         self
     }
@@ -151,42 +139,28 @@ impl DomainAssociationBuilder {
     /// To override the contents of this collection use [`set_auto_sub_domain_creation_patterns`](Self::set_auto_sub_domain_creation_patterns).
     ///
     /// <p> Sets branch patterns for automatic subdomain creation. </p>
-    pub fn auto_sub_domain_creation_patterns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_sub_domain_creation_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.auto_sub_domain_creation_patterns.unwrap_or_default();
         v.push(input.into());
         self.auto_sub_domain_creation_patterns = ::std::option::Option::Some(v);
         self
     }
     /// <p> Sets branch patterns for automatic subdomain creation. </p>
-    pub fn set_auto_sub_domain_creation_patterns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_auto_sub_domain_creation_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.auto_sub_domain_creation_patterns = input;
         self
     }
     /// <p> Sets branch patterns for automatic subdomain creation. </p>
-    pub fn get_auto_sub_domain_creation_patterns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_auto_sub_domain_creation_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.auto_sub_domain_creation_patterns
     }
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
-    pub fn auto_sub_domain_iam_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_sub_domain_iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_sub_domain_iam_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
-    pub fn set_auto_sub_domain_iam_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_sub_domain_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_sub_domain_iam_role = input;
         self
     }
@@ -200,10 +174,7 @@ impl DomainAssociationBuilder {
         self
     }
     /// <p> The current status of the domain association. </p>
-    pub fn set_domain_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainStatus>,
-    ) -> Self {
+    pub fn set_domain_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
         self.domain_status = input;
         self
     }
@@ -212,18 +183,12 @@ impl DomainAssociationBuilder {
         &self.domain_status
     }
     /// <p> The reason for the current status of the domain association. </p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The reason for the current status of the domain association. </p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -232,25 +197,17 @@ impl DomainAssociationBuilder {
         &self.status_reason
     }
     /// <p> The DNS record for certificate verification. </p>
-    pub fn certificate_verification_dns_record(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_verification_dns_record(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_verification_dns_record = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The DNS record for certificate verification. </p>
-    pub fn set_certificate_verification_dns_record(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_verification_dns_record(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_verification_dns_record = input;
         self
     }
     /// <p> The DNS record for certificate verification. </p>
-    pub fn get_certificate_verification_dns_record(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_certificate_verification_dns_record(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_verification_dns_record
     }
     /// Appends an item to `sub_domains`.
@@ -265,17 +222,12 @@ impl DomainAssociationBuilder {
         self
     }
     /// <p> The subdomains for the domain association. </p>
-    pub fn set_sub_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubDomain>>,
-    ) -> Self {
+    pub fn set_sub_domains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubDomain>>) -> Self {
         self.sub_domains = input;
         self
     }
     /// <p> The subdomains for the domain association. </p>
-    pub fn get_sub_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubDomain>> {
+    pub fn get_sub_domains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubDomain>> {
         &self.sub_domains
     }
     /// Consumes the builder and constructs a [`DomainAssociation`](crate::types::DomainAssociation).

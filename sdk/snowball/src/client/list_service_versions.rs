@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`dependent_services(Option<Vec<DependentService>>)`](crate::operation::list_service_versions::ListServiceVersionsOutput::dependent_services): <p>A list of names and versions of dependant services of the service for which the system provided supported versions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_versions::ListServiceVersionsOutput::next_token): <p>Because HTTP requests are stateless, this is the starting point of the next list of returned <code>ListServiceVersionsResult</code> results.</p>
     /// - On failure, responds with [`SdkError<ListServiceVersionsError>`](crate::operation::list_service_versions::ListServiceVersionsError)
-    pub fn list_service_versions(
-        &self,
-    ) -> crate::operation::list_service_versions::builders::ListServiceVersionsFluentBuilder {
-        crate::operation::list_service_versions::builders::ListServiceVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_service_versions(&self) -> crate::operation::list_service_versions::builders::ListServiceVersionsFluentBuilder {
+        crate::operation::list_service_versions::builders::ListServiceVersionsFluentBuilder::new(self.handle.clone())
     }
 }

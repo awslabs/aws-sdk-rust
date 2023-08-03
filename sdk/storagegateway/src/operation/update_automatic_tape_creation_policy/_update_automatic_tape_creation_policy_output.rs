@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateAutomaticTapeCreationPolicyOutp
 }
 impl UpdateAutomaticTapeCreationPolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAutomaticTapeCreationPolicyOutput`](crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyOutput).
-    pub fn builder() -> crate::operation::update_automatic_tape_creation_policy::builders::UpdateAutomaticTapeCreationPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::update_automatic_tape_creation_policy::builders::UpdateAutomaticTapeCreationPolicyOutputBuilder {
         crate::operation::update_automatic_tape_creation_policy::builders::UpdateAutomaticTapeCreationPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAutomaticTapeCreationPolicyOutput`](crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAutomaticTapeCreationPolicyOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl UpdateAutomaticTapeCreationPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateAutomaticTapeCreationPolicyOutput`](crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyOutput).
-    pub fn build(self) -> crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyOutput{
+    pub fn build(self) -> crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyOutput {
         crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyOutput {
-            gateway_arn: self.gateway_arn
-            ,
+            gateway_arn: self.gateway_arn,
             _request_id: self._request_id,
         }
     }

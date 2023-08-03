@@ -23,9 +23,7 @@ impl ElasticGpuSpecification {
 
 /// A builder for [`ElasticGpuSpecification`](crate::types::ElasticGpuSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElasticGpuSpecificationBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ElasticGpuSpecificationBuilder {
     }
     /// Consumes the builder and constructs a [`ElasticGpuSpecification`](crate::types::ElasticGpuSpecification).
     pub fn build(self) -> crate::types::ElasticGpuSpecification {
-        crate::types::ElasticGpuSpecification {
-            r#type: self.r#type,
-        }
+        crate::types::ElasticGpuSpecification { r#type: self.r#type }
     }
 }

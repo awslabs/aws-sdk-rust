@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`target_shard_count(Option<i32>)`](crate::operation::update_shard_count::UpdateShardCountOutput::target_shard_count): <p>The updated number of shards.</p>
     ///   - [`stream_arn(Option<String>)`](crate::operation::update_shard_count::UpdateShardCountOutput::stream_arn): <p>The ARN of the stream.</p>
     /// - On failure, responds with [`SdkError<UpdateShardCountError>`](crate::operation::update_shard_count::UpdateShardCountError)
-    pub fn update_shard_count(
-        &self,
-    ) -> crate::operation::update_shard_count::builders::UpdateShardCountFluentBuilder {
-        crate::operation::update_shard_count::builders::UpdateShardCountFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_shard_count(&self) -> crate::operation::update_shard_count::builders::UpdateShardCountFluentBuilder {
+        crate::operation::update_shard_count::builders::UpdateShardCountFluentBuilder::new(self.handle.clone())
     }
 }

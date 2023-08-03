@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetRepositoryCatalogDataOutput`](crate::operation::get_repository_catalog_data::GetRepositoryCatalogDataOutput) with field(s):
     ///   - [`catalog_data(Option<RepositoryCatalogData>)`](crate::operation::get_repository_catalog_data::GetRepositoryCatalogDataOutput::catalog_data): <p>The catalog metadata for the repository.</p>
     /// - On failure, responds with [`SdkError<GetRepositoryCatalogDataError>`](crate::operation::get_repository_catalog_data::GetRepositoryCatalogDataError)
-    pub fn get_repository_catalog_data(&self) -> crate::operation::get_repository_catalog_data::builders::GetRepositoryCatalogDataFluentBuilder{
+    pub fn get_repository_catalog_data(&self) -> crate::operation::get_repository_catalog_data::builders::GetRepositoryCatalogDataFluentBuilder {
         crate::operation::get_repository_catalog_data::builders::GetRepositoryCatalogDataFluentBuilder::new(self.handle.clone())
     }
 }

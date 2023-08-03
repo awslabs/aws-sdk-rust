@@ -16,10 +16,7 @@ pub fn ser_create_ota_update_input(
     if let Some(var_5) = &input.aws_job_abort_config {
         #[allow(unused_mut)]
         let mut object_6 = object.key("awsJobAbortConfig").start_object();
-        crate::protocol_serde::shape_aws_job_abort_config::ser_aws_job_abort_config(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_aws_job_abort_config::ser_aws_job_abort_config(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.aws_job_executions_rollout_config {
@@ -37,10 +34,7 @@ pub fn ser_create_ota_update_input(
     if let Some(var_11) = &input.aws_job_timeout_config {
         #[allow(unused_mut)]
         let mut object_12 = object.key("awsJobTimeoutConfig").start_object();
-        crate::protocol_serde::shape_aws_job_timeout_config::ser_aws_job_timeout_config(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_aws_job_timeout_config::ser_aws_job_timeout_config(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.description {
@@ -52,10 +46,7 @@ pub fn ser_create_ota_update_input(
             {
                 #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_ota_update_file::ser_ota_update_file(
-                    &mut object_17,
-                    item_16,
-                )?;
+                crate::protocol_serde::shape_ota_update_file::ser_ota_update_file(&mut object_17, item_16)?;
                 object_17.finish();
             }
         }

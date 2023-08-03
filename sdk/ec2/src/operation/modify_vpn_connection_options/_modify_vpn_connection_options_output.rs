@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyVpnConnectionOptionsOutput {
 }
 impl ModifyVpnConnectionOptionsOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVpnConnectionOptionsOutput`](crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsOutput).
-    pub fn builder() -> crate::operation::modify_vpn_connection_options::builders::ModifyVpnConnectionOptionsOutputBuilder{
+    pub fn builder() -> crate::operation::modify_vpn_connection_options::builders::ModifyVpnConnectionOptionsOutputBuilder {
         crate::operation::modify_vpn_connection_options::builders::ModifyVpnConnectionOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpnConnectionOptionsOutput`](crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpnConnectionOptionsOutputBuilder {
     pub(crate) vpn_connection: ::std::option::Option<crate::types::VpnConnection>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl ModifyVpnConnectionOptionsOutputBuilder {
         self
     }
     /// <p>Information about the VPN connection.</p>
-    pub fn set_vpn_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::VpnConnection>,
-    ) -> Self {
+    pub fn set_vpn_connection(mut self, input: ::std::option::Option<crate::types::VpnConnection>) -> Self {
         self.vpn_connection = input;
         self
     }
@@ -63,9 +58,7 @@ impl ModifyVpnConnectionOptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyVpnConnectionOptionsOutput`](crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsOutput {
+    pub fn build(self) -> crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsOutput {
         crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsOutput {
             vpn_connection: self.vpn_connection,
             _request_id: self._request_id,

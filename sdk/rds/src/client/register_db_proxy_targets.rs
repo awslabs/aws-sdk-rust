@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterDbProxyTargetsOutput`](crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput) with field(s):
     ///   - [`db_proxy_targets(Option<Vec<DbProxyTarget>>)`](crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput::db_proxy_targets): <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
     /// - On failure, responds with [`SdkError<RegisterDBProxyTargetsError>`](crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError)
-    pub fn register_db_proxy_targets(
-        &self,
-    ) -> crate::operation::register_db_proxy_targets::builders::RegisterDBProxyTargetsFluentBuilder
-    {
+    pub fn register_db_proxy_targets(&self) -> crate::operation::register_db_proxy_targets::builders::RegisterDBProxyTargetsFluentBuilder {
         crate::operation::register_db_proxy_targets::builders::RegisterDBProxyTargetsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<VcenterClient>>)`](crate::operation::describe_vcenter_clients::DescribeVcenterClientsOutput::items): <p>List of items returned by DescribeVcenterClients.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_vcenter_clients::DescribeVcenterClientsOutput::next_token): <p>Next pagination token returned from DescribeVcenterClients.</p>
     /// - On failure, responds with [`SdkError<DescribeVcenterClientsError>`](crate::operation::describe_vcenter_clients::DescribeVcenterClientsError)
-    pub fn describe_vcenter_clients(
-        &self,
-    ) -> crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsFluentBuilder
-    {
+    pub fn describe_vcenter_clients(&self) -> crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsFluentBuilder {
         crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsFluentBuilder::new(self.handle.clone())
     }
 }

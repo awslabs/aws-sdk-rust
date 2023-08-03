@@ -5,8 +5,7 @@
 pub struct ListGeneratedCodeJobsOutput {
     /// <p>The list of generated code jobs.</p>
     #[doc(hidden)]
-    pub generated_code_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::GeneratedCodeJobDetails>>,
+    pub generated_code_jobs: ::std::option::Option<::std::vec::Vec<crate::types::GeneratedCodeJobDetails>>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
     #[doc(hidden)]
@@ -15,9 +14,7 @@ pub struct ListGeneratedCodeJobsOutput {
 }
 impl ListGeneratedCodeJobsOutput {
     /// <p>The list of generated code jobs.</p>
-    pub fn generated_code_jobs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::GeneratedCodeJobDetails]> {
+    pub fn generated_code_jobs(&self) -> ::std::option::Option<&[crate::types::GeneratedCodeJobDetails]> {
         self.generated_code_jobs.as_deref()
     }
     /// <p>The token that indicates the start of the next sequential page of results.</p>
@@ -33,21 +30,16 @@ impl ::aws_http::request_id::RequestId for ListGeneratedCodeJobsOutput {
 }
 impl ListGeneratedCodeJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListGeneratedCodeJobsOutput`](crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_generated_code_jobs::builders::ListGeneratedCodeJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_generated_code_jobs::builders::ListGeneratedCodeJobsOutputBuilder {
         crate::operation::list_generated_code_jobs::builders::ListGeneratedCodeJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListGeneratedCodeJobsOutput`](crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGeneratedCodeJobsOutputBuilder {
-    pub(crate) generated_code_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::GeneratedCodeJobDetails>>,
+    pub(crate) generated_code_jobs: ::std::option::Option<::std::vec::Vec<crate::types::GeneratedCodeJobDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -64,17 +56,12 @@ impl ListGeneratedCodeJobsOutputBuilder {
         self
     }
     /// <p>The list of generated code jobs.</p>
-    pub fn set_generated_code_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GeneratedCodeJobDetails>>,
-    ) -> Self {
+    pub fn set_generated_code_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GeneratedCodeJobDetails>>) -> Self {
         self.generated_code_jobs = input;
         self
     }
     /// <p>The list of generated code jobs.</p>
-    pub fn get_generated_code_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GeneratedCodeJobDetails>> {
+    pub fn get_generated_code_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GeneratedCodeJobDetails>> {
         &self.generated_code_jobs
     }
     /// <p>The token that indicates the start of the next sequential page of results.</p>

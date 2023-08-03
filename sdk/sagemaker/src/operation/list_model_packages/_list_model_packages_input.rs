@@ -57,9 +57,7 @@ impl ListModelPackagesInput {
         self.name_contains.as_deref()
     }
     /// <p>A filter that returns only the model packages with the specified approval status.</p>
-    pub fn model_approval_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelApprovalStatus> {
+    pub fn model_approval_status(&self) -> ::std::option::Option<&crate::types::ModelApprovalStatus> {
         self.model_approval_status.as_ref()
     }
     /// <p>A filter that returns only model versions that belong to the specified model group.</p>
@@ -90,17 +88,14 @@ impl ListModelPackagesInput {
 }
 impl ListModelPackagesInput {
     /// Creates a new builder-style object to manufacture [`ListModelPackagesInput`](crate::operation::list_model_packages::ListModelPackagesInput).
-    pub fn builder(
-    ) -> crate::operation::list_model_packages::builders::ListModelPackagesInputBuilder {
+    pub fn builder() -> crate::operation::list_model_packages::builders::ListModelPackagesInputBuilder {
         crate::operation::list_model_packages::builders::ListModelPackagesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListModelPackagesInput`](crate::operation::list_model_packages::ListModelPackagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelPackagesInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -120,10 +115,7 @@ impl ListModelPackagesInputBuilder {
         self
     }
     /// <p>A filter that returns only model packages created after the specified time (timestamp).</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -137,10 +129,7 @@ impl ListModelPackagesInputBuilder {
         self
     }
     /// <p>A filter that returns only model packages created before the specified time (timestamp).</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -163,18 +152,12 @@ impl ListModelPackagesInputBuilder {
         &self.max_results
     }
     /// <p>A string in the model package name. This filter returns only model packages whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string in the model package name. This filter returns only model packages whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -188,32 +171,21 @@ impl ListModelPackagesInputBuilder {
         self
     }
     /// <p>A filter that returns only the model packages with the specified approval status.</p>
-    pub fn set_model_approval_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelApprovalStatus>,
-    ) -> Self {
+    pub fn set_model_approval_status(mut self, input: ::std::option::Option<crate::types::ModelApprovalStatus>) -> Self {
         self.model_approval_status = input;
         self
     }
     /// <p>A filter that returns only the model packages with the specified approval status.</p>
-    pub fn get_model_approval_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
+    pub fn get_model_approval_status(&self) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
         &self.model_approval_status
     }
     /// <p>A filter that returns only model versions that belong to the specified model group.</p>
-    pub fn model_package_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter that returns only model versions that belong to the specified model group.</p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_name = input;
         self
     }
@@ -237,10 +209,7 @@ impl ListModelPackagesInputBuilder {
     /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
     /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
     /// </ul>
-    pub fn set_model_package_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackageType>,
-    ) -> Self {
+    pub fn set_model_package_type(mut self, input: ::std::option::Option<crate::types::ModelPackageType>) -> Self {
         self.model_package_type = input;
         self
     }
@@ -273,10 +242,7 @@ impl ListModelPackagesInputBuilder {
         self
     }
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackageSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ModelPackageSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -301,23 +267,18 @@ impl ListModelPackagesInputBuilder {
     /// Consumes the builder and constructs a [`ListModelPackagesInput`](crate::operation::list_model_packages::ListModelPackagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_model_packages::ListModelPackagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_model_packages::ListModelPackagesInput {
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                max_results: self.max_results,
-                name_contains: self.name_contains,
-                model_approval_status: self.model_approval_status,
-                model_package_group_name: self.model_package_group_name,
-                model_package_type: self.model_package_type,
-                next_token: self.next_token,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_model_packages::ListModelPackagesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_model_packages::ListModelPackagesInput {
+            creation_time_after: self.creation_time_after,
+            creation_time_before: self.creation_time_before,
+            max_results: self.max_results,
+            name_contains: self.name_contains,
+            model_approval_status: self.model_approval_status,
+            model_package_group_name: self.model_package_group_name,
+            model_package_type: self.model_package_type,
+            next_token: self.next_token,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+        })
     }
 }

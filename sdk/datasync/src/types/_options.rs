@@ -108,8 +108,7 @@ pub struct Options {
     /// </ul>
     /// <p> <code>NONE</code>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration. </p>
     #[doc(hidden)]
-    pub security_descriptor_copy_flags:
-        ::std::option::Option<crate::types::SmbSecurityDescriptorCopyFlags>,
+    pub security_descriptor_copy_flags: ::std::option::Option<crate::types::SmbSecurityDescriptorCopyFlags>,
     /// <p>Specifies whether object tags are preserved when transferring between object storage systems. If you want your DataSync task to ignore object tags, specify the <code>NONE</code> value.</p>
     /// <p>Default Value: <code>PRESERVE</code> </p>
     #[doc(hidden)]
@@ -175,9 +174,7 @@ impl Options {
     /// <p> <code>REMOVE</code>: Delete destination files that aren’t present in the source.</p> <note>
     /// <p>If you set this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code> to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your destination location and doesn't know what to delete.</p>
     /// </note>
-    pub fn preserve_deleted_files(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PreserveDeletedFiles> {
+    pub fn preserve_deleted_files(&self) -> ::std::option::Option<&crate::types::PreserveDeletedFiles> {
         self.preserve_deleted_files.as_ref()
     }
     /// <p>Specifies whether DataSync should preserve the metadata of block and character devices in the source location and recreate the files with that device name and metadata on the destination. DataSync copies only the name and metadata of such devices.</p> <note>
@@ -233,9 +230,7 @@ impl Options {
     /// <li> <p>SACLs, which are used by administrators to log attempts to access a secured object.</p> <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p> </li>
     /// </ul>
     /// <p> <code>NONE</code>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration. </p>
-    pub fn security_descriptor_copy_flags(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SmbSecurityDescriptorCopyFlags> {
+    pub fn security_descriptor_copy_flags(&self) -> ::std::option::Option<&crate::types::SmbSecurityDescriptorCopyFlags> {
         self.security_descriptor_copy_flags.as_ref()
     }
     /// <p>Specifies whether object tags are preserved when transferring between object storage systems. If you want your DataSync task to ignore object tags, specify the <code>NONE</code> value.</p>
@@ -253,9 +248,7 @@ impl Options {
 
 /// A builder for [`Options`](crate::types::Options).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OptionsBuilder {
     pub(crate) verify_mode: ::std::option::Option<crate::types::VerifyMode>,
     pub(crate) overwrite_mode: ::std::option::Option<crate::types::OverwriteMode>,
@@ -270,8 +263,7 @@ pub struct OptionsBuilder {
     pub(crate) task_queueing: ::std::option::Option<crate::types::TaskQueueing>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,
     pub(crate) transfer_mode: ::std::option::Option<crate::types::TransferMode>,
-    pub(crate) security_descriptor_copy_flags:
-        ::std::option::Option<crate::types::SmbSecurityDescriptorCopyFlags>,
+    pub(crate) security_descriptor_copy_flags: ::std::option::Option<crate::types::SmbSecurityDescriptorCopyFlags>,
     pub(crate) object_tags: ::std::option::Option<crate::types::ObjectTags>,
 }
 impl OptionsBuilder {
@@ -293,10 +285,7 @@ impl OptionsBuilder {
     /// <p> <code>POINT_IN_TIME_CONSISTENT</code>: At the end of the transfer, DataSync scans the entire source and destination to verify that both locations are fully synchronized.</p>
     /// <p>You can't use this option when transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage class considerations with Amazon S3 locations</a>.</p>
     /// <p> <code>NONE</code>: DataSync doesn't run additional verification at the end of the transfer. All data transmissions are still integrity-checked with checksum verification during the transfer.</p>
-    pub fn set_verify_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifyMode>,
-    ) -> Self {
+    pub fn set_verify_mode(mut self, input: ::std::option::Option<crate::types::VerifyMode>) -> Self {
         self.verify_mode = input;
         self
     }
@@ -318,10 +307,7 @@ impl OptionsBuilder {
     }
     /// <p>Specifies whether data at the destination location should be overwritten or preserved. If set to <code>NEVER</code>, a destination file for example will not be replaced by a source file (even if the destination file differs from the source file). If you modify files in the destination and you sync the files, you can use this value to protect against overwriting those changes. </p>
     /// <p>Some storage classes have specific behaviors that can affect your Amazon S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
-    pub fn set_overwrite_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::OverwriteMode>,
-    ) -> Self {
+    pub fn set_overwrite_mode(mut self, input: ::std::option::Option<crate::types::OverwriteMode>) -> Self {
         self.overwrite_mode = input;
         self
     }
@@ -468,10 +454,7 @@ impl OptionsBuilder {
     /// <p> <code>REMOVE</code>: Delete destination files that aren’t present in the source.</p> <note>
     /// <p>If you set this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code> to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your destination location and doesn't know what to delete.</p>
     /// </note>
-    pub fn set_preserve_deleted_files(
-        mut self,
-        input: ::std::option::Option<crate::types::PreserveDeletedFiles>,
-    ) -> Self {
+    pub fn set_preserve_deleted_files(mut self, input: ::std::option::Option<crate::types::PreserveDeletedFiles>) -> Self {
         self.preserve_deleted_files = input;
         self
     }
@@ -481,9 +464,7 @@ impl OptionsBuilder {
     /// <p> <code>REMOVE</code>: Delete destination files that aren’t present in the source.</p> <note>
     /// <p>If you set this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code> to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your destination location and doesn't know what to delete.</p>
     /// </note>
-    pub fn get_preserve_deleted_files(
-        &self,
-    ) -> &::std::option::Option<crate::types::PreserveDeletedFiles> {
+    pub fn get_preserve_deleted_files(&self) -> &::std::option::Option<crate::types::PreserveDeletedFiles> {
         &self.preserve_deleted_files
     }
     /// <p>Specifies whether DataSync should preserve the metadata of block and character devices in the source location and recreate the files with that device name and metadata on the destination. DataSync copies only the name and metadata of such devices.</p> <note>
@@ -502,10 +483,7 @@ impl OptionsBuilder {
     /// <p>Default value: <code>NONE</code> </p>
     /// <p> <code>NONE</code>: Ignore special devices (recommended). </p>
     /// <p> <code>PRESERVE</code>: Preserve character and block device metadata. This option currently isn't supported for Amazon EFS. </p>
-    pub fn set_preserve_devices(
-        mut self,
-        input: ::std::option::Option<crate::types::PreserveDevices>,
-    ) -> Self {
+    pub fn set_preserve_devices(mut self, input: ::std::option::Option<crate::types::PreserveDevices>) -> Self {
         self.preserve_devices = input;
         self
     }
@@ -536,10 +514,7 @@ impl OptionsBuilder {
     /// <p> <code>NONE</code>: Ignore permissions. </p> <note>
     /// <p>DataSync can preserve extant permissions of a source location.</p>
     /// </note>
-    pub fn set_posix_permissions(
-        mut self,
-        input: ::std::option::Option<crate::types::PosixPermissions>,
-    ) -> Self {
+    pub fn set_posix_permissions(mut self, input: ::std::option::Option<crate::types::PosixPermissions>) -> Self {
         self.posix_permissions = input;
         self
     }
@@ -573,10 +548,7 @@ impl OptionsBuilder {
         self
     }
     /// <p>Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running multiple tasks</a>. This is <code>ENABLED</code> by default.</p>
-    pub fn set_task_queueing(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskQueueing>,
-    ) -> Self {
+    pub fn set_task_queueing(mut self, input: ::std::option::Option<crate::types::TaskQueueing>) -> Self {
         self.task_queueing = input;
         self
     }
@@ -611,10 +583,7 @@ impl OptionsBuilder {
     /// <p>Determines whether DataSync transfers only the data and metadata that differ between the source and the destination location or transfers all the content from the source (without comparing what's in the destination).</p>
     /// <p> <code>CHANGED</code>: DataSync copies only data or metadata that is new or different content from the source location to the destination location.</p>
     /// <p> <code>ALL</code>: DataSync copies all source location content to the destination (without comparing what's in the destination).</p>
-    pub fn set_transfer_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::TransferMode>,
-    ) -> Self {
+    pub fn set_transfer_mode(mut self, input: ::std::option::Option<crate::types::TransferMode>) -> Self {
         self.transfer_mode = input;
         self
     }
@@ -639,10 +608,7 @@ impl OptionsBuilder {
     /// <li> <p>SACLs, which are used by administrators to log attempts to access a secured object.</p> <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p> </li>
     /// </ul>
     /// <p> <code>NONE</code>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration. </p>
-    pub fn security_descriptor_copy_flags(
-        mut self,
-        input: crate::types::SmbSecurityDescriptorCopyFlags,
-    ) -> Self {
+    pub fn security_descriptor_copy_flags(mut self, input: crate::types::SmbSecurityDescriptorCopyFlags) -> Self {
         self.security_descriptor_copy_flags = ::std::option::Option::Some(input);
         self
     }
@@ -661,10 +627,7 @@ impl OptionsBuilder {
     /// <li> <p>SACLs, which are used by administrators to log attempts to access a secured object.</p> <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p> </li>
     /// </ul>
     /// <p> <code>NONE</code>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration. </p>
-    pub fn set_security_descriptor_copy_flags(
-        mut self,
-        input: ::std::option::Option<crate::types::SmbSecurityDescriptorCopyFlags>,
-    ) -> Self {
+    pub fn set_security_descriptor_copy_flags(mut self, input: ::std::option::Option<crate::types::SmbSecurityDescriptorCopyFlags>) -> Self {
         self.security_descriptor_copy_flags = input;
         self
     }
@@ -683,9 +646,7 @@ impl OptionsBuilder {
     /// <li> <p>SACLs, which are used by administrators to log attempts to access a secured object.</p> <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB location. For information about choosing a user that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p> </li>
     /// </ul>
     /// <p> <code>NONE</code>: None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration. </p>
-    pub fn get_security_descriptor_copy_flags(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmbSecurityDescriptorCopyFlags> {
+    pub fn get_security_descriptor_copy_flags(&self) -> &::std::option::Option<crate::types::SmbSecurityDescriptorCopyFlags> {
         &self.security_descriptor_copy_flags
     }
     /// <p>Specifies whether object tags are preserved when transferring between object storage systems. If you want your DataSync task to ignore object tags, specify the <code>NONE</code> value.</p>
@@ -696,10 +657,7 @@ impl OptionsBuilder {
     }
     /// <p>Specifies whether object tags are preserved when transferring between object storage systems. If you want your DataSync task to ignore object tags, specify the <code>NONE</code> value.</p>
     /// <p>Default Value: <code>PRESERVE</code> </p>
-    pub fn set_object_tags(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectTags>,
-    ) -> Self {
+    pub fn set_object_tags(mut self, input: ::std::option::Option<crate::types::ObjectTags>) -> Self {
         self.object_tags = input;
         self
     }

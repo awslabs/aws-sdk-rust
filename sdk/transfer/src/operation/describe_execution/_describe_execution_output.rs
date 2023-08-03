@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeExecutionOutput {
 }
 impl DescribeExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExecutionOutput`](crate::operation::describe_execution::DescribeExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder {
         crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExecutionOutput`](crate::operation::describe_execution::DescribeExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExecutionOutputBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) execution: ::std::option::Option<crate::types::DescribedExecution>,
@@ -65,10 +62,7 @@ impl DescribeExecutionOutputBuilder {
         self
     }
     /// <p>The structure that contains the details of the workflow' execution.</p>
-    pub fn set_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribedExecution>,
-    ) -> Self {
+    pub fn set_execution(mut self, input: ::std::option::Option<crate::types::DescribedExecution>) -> Self {
         self.execution = input;
         self
     }

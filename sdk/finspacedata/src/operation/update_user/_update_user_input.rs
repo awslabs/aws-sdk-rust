@@ -199,18 +199,12 @@ impl UpdateUserInputBuilder {
         &self.api_access
     }
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
-    pub fn api_access_principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_access_principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_access_principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
-    pub fn set_api_access_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_access_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_access_principal_arn = input;
         self
     }
@@ -233,12 +227,7 @@ impl UpdateUserInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_user::UpdateUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_user::UpdateUserInput {
             user_id: self.user_id,
             r#type: self.r#type,

@@ -37,9 +37,7 @@ impl ListStagesOutput {
 
 /// A builder for [`ListStagesOutput`](crate::operation::list_stages::ListStagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStagesOutputBuilder {
     pub(crate) stages: ::std::option::Option<::std::vec::Vec<crate::types::StageSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +56,12 @@ impl ListStagesOutputBuilder {
         self
     }
     /// <p> A list of stage summaries. You can use the stage names in the <code>UpdateStage</code> and <code>GetStage</code> actions. </p>
-    pub fn set_stages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StageSummary>>,
-    ) -> Self {
+    pub fn set_stages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StageSummary>>) -> Self {
         self.stages = input;
         self
     }
     /// <p> A list of stage summaries. You can use the stage names in the <code>UpdateStage</code> and <code>GetStage</code> actions. </p>
-    pub fn get_stages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StageSummary>> {
+    pub fn get_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StageSummary>> {
         &self.stages
     }
     /// <p>The token that indicates the start of the next sequential page of results.</p>

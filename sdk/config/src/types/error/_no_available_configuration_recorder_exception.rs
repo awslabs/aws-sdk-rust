@@ -27,34 +27,27 @@ impl ::std::fmt::Display for NoAvailableConfigurationRecorderException {
     }
 }
 impl ::std::error::Error for NoAvailableConfigurationRecorderException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::NoAvailableConfigurationRecorderException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::NoAvailableConfigurationRecorderException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for NoAvailableConfigurationRecorderException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for NoAvailableConfigurationRecorderException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl NoAvailableConfigurationRecorderException {
     /// Creates a new builder-style object to manufacture [`NoAvailableConfigurationRecorderException`](crate::types::error::NoAvailableConfigurationRecorderException).
-    pub fn builder(
-    ) -> crate::types::error::builders::NoAvailableConfigurationRecorderExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::NoAvailableConfigurationRecorderExceptionBuilder {
         crate::types::error::builders::NoAvailableConfigurationRecorderExceptionBuilder::default()
     }
 }
 
 /// A builder for [`NoAvailableConfigurationRecorderException`](crate::types::error::NoAvailableConfigurationRecorderException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NoAvailableConfigurationRecorderExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl NoAvailableConfigurationRecorderExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

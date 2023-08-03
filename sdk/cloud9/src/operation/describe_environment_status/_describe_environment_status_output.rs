@@ -46,16 +46,14 @@ impl ::aws_http::request_id::RequestId for DescribeEnvironmentStatusOutput {
 }
 impl DescribeEnvironmentStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentStatusOutput`](crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput).
-    pub fn builder() -> crate::operation::describe_environment_status::builders::DescribeEnvironmentStatusOutputBuilder{
+    pub fn builder() -> crate::operation::describe_environment_status::builders::DescribeEnvironmentStatusOutputBuilder {
         crate::operation::describe_environment_status::builders::DescribeEnvironmentStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEnvironmentStatusOutput`](crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::EnvironmentStatus>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl DescribeEnvironmentStatusOutputBuilder {
     /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li>
     /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -130,9 +125,7 @@ impl DescribeEnvironmentStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEnvironmentStatusOutput`](crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput {
+    pub fn build(self) -> crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput {
         crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput {
             status: self.status,
             message: self.message,

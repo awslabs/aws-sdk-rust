@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`cluster_id(impl ::std::convert::Into<String>)`](crate::operation::remove_managed_scaling_policy::builders::RemoveManagedScalingPolicyFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::remove_managed_scaling_policy::builders::RemoveManagedScalingPolicyFluentBuilder::set_cluster_id): <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
     /// - On success, responds with [`RemoveManagedScalingPolicyOutput`](crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyOutput)
     /// - On failure, responds with [`SdkError<RemoveManagedScalingPolicyError>`](crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyError)
-    pub fn remove_managed_scaling_policy(&self) -> crate::operation::remove_managed_scaling_policy::builders::RemoveManagedScalingPolicyFluentBuilder{
+    pub fn remove_managed_scaling_policy(
+        &self,
+    ) -> crate::operation::remove_managed_scaling_policy::builders::RemoveManagedScalingPolicyFluentBuilder {
         crate::operation::remove_managed_scaling_policy::builders::RemoveManagedScalingPolicyFluentBuilder::new(self.handle.clone())
     }
 }

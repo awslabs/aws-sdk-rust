@@ -90,9 +90,7 @@ impl OrcSerDe {
 
 /// A builder for [`OrcSerDe`](crate::types::OrcSerDe).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrcSerDeBuilder {
     pub(crate) stripe_size_bytes: ::std::option::Option<i32>,
     pub(crate) block_size_bytes: ::std::option::Option<i32>,
@@ -188,10 +186,7 @@ impl OrcSerDeBuilder {
         self
     }
     /// <p>The compression code to use over data blocks. The default is <code>SNAPPY</code>.</p>
-    pub fn set_compression(
-        mut self,
-        input: ::std::option::Option<crate::types::OrcCompression>,
-    ) -> Self {
+    pub fn set_compression(mut self, input: ::std::option::Option<crate::types::OrcCompression>) -> Self {
         self.compression = input;
         self
     }
@@ -204,27 +199,19 @@ impl OrcSerDeBuilder {
     /// To override the contents of this collection use [`set_bloom_filter_columns`](Self::set_bloom_filter_columns).
     ///
     /// <p>The column names for which you want Kinesis Data Firehose to create bloom filters. The default is <code>null</code>.</p>
-    pub fn bloom_filter_columns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bloom_filter_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bloom_filter_columns.unwrap_or_default();
         v.push(input.into());
         self.bloom_filter_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The column names for which you want Kinesis Data Firehose to create bloom filters. The default is <code>null</code>.</p>
-    pub fn set_bloom_filter_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_bloom_filter_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.bloom_filter_columns = input;
         self
     }
     /// <p>The column names for which you want Kinesis Data Firehose to create bloom filters. The default is <code>null</code>.</p>
-    pub fn get_bloom_filter_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bloom_filter_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.bloom_filter_columns
     }
     /// <p>The Bloom filter false positive probability (FPP). The lower the FPP, the bigger the Bloom filter. The default value is 0.05, the minimum is 0, and the maximum is 1.</p>
@@ -233,10 +220,7 @@ impl OrcSerDeBuilder {
         self
     }
     /// <p>The Bloom filter false positive probability (FPP). The lower the FPP, the bigger the Bloom filter. The default value is 0.05, the minimum is 0, and the maximum is 1.</p>
-    pub fn set_bloom_filter_false_positive_probability(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_bloom_filter_false_positive_probability(mut self, input: ::std::option::Option<f64>) -> Self {
         self.bloom_filter_false_positive_probability = input;
         self
     }
@@ -264,10 +248,7 @@ impl OrcSerDeBuilder {
         self
     }
     /// <p>The version of the file to write. The possible values are <code>V0_11</code> and <code>V0_12</code>. The default is <code>V0_12</code>.</p>
-    pub fn set_format_version(
-        mut self,
-        input: ::std::option::Option<crate::types::OrcFormatVersion>,
-    ) -> Self {
+    pub fn set_format_version(mut self, input: ::std::option::Option<crate::types::OrcFormatVersion>) -> Self {
         self.format_version = input;
         self
     }

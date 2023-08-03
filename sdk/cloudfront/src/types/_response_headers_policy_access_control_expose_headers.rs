@@ -24,17 +24,14 @@ impl ResponseHeadersPolicyAccessControlExposeHeaders {
 }
 impl ResponseHeadersPolicyAccessControlExposeHeaders {
     /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAccessControlExposeHeaders`](crate::types::ResponseHeadersPolicyAccessControlExposeHeaders).
-    pub fn builder(
-    ) -> crate::types::builders::ResponseHeadersPolicyAccessControlExposeHeadersBuilder {
+    pub fn builder() -> crate::types::builders::ResponseHeadersPolicyAccessControlExposeHeadersBuilder {
         crate::types::builders::ResponseHeadersPolicyAccessControlExposeHeadersBuilder::default()
     }
 }
 
 /// A builder for [`ResponseHeadersPolicyAccessControlExposeHeaders`](crate::types::ResponseHeadersPolicyAccessControlExposeHeaders).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlExposeHeadersBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -66,10 +63,7 @@ impl ResponseHeadersPolicyAccessControlExposeHeadersBuilder {
         self
     }
     /// <p>The list of HTTP headers. You can specify <code>*</code> to expose all headers.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.items = input;
         self
     }

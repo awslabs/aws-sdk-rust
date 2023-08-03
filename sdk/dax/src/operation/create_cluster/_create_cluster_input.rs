@@ -73,8 +73,7 @@ pub struct CreateClusterInput {
     /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub cluster_endpoint_encryption_type:
-        ::std::option::Option<crate::types::ClusterEndpointEncryptionType>,
+    pub cluster_endpoint_encryption_type: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>,
 }
 impl CreateClusterInput {
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
@@ -159,9 +158,7 @@ impl CreateClusterInput {
     /// <li> <p> <code>NONE</code> for no encryption</p> </li>
     /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
-    pub fn cluster_endpoint_encryption_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClusterEndpointEncryptionType> {
+    pub fn cluster_endpoint_encryption_type(&self) -> ::std::option::Option<&crate::types::ClusterEndpointEncryptionType> {
         self.cluster_endpoint_encryption_type.as_ref()
     }
 }
@@ -174,9 +171,7 @@ impl CreateClusterInput {
 
 /// A builder for [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClusterInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<::std::string::String>,
@@ -191,8 +186,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) sse_specification: ::std::option::Option<crate::types::SseSpecification>,
-    pub(crate) cluster_endpoint_encryption_type:
-        ::std::option::Option<crate::types::ClusterEndpointEncryptionType>,
+    pub(crate) cluster_endpoint_encryption_type: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>,
 }
 impl CreateClusterInputBuilder {
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
@@ -280,46 +274,32 @@ impl CreateClusterInputBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
         self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
     /// <p>The name of the subnet group to be used for the replication group.</p> <important>
     /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
     /// </important>
-    pub fn subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the subnet group to be used for the replication group.</p> <important>
     /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
     /// </important>
-    pub fn set_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_group_name = input;
         self
     }
@@ -335,10 +315,7 @@ impl CreateClusterInputBuilder {
     ///
     /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>
     /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
@@ -346,18 +323,13 @@ impl CreateClusterInputBuilder {
     }
     /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>
     /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>
     /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
@@ -373,10 +345,7 @@ impl CreateClusterInputBuilder {
     /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
     /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
     /// </note>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -393,10 +362,7 @@ impl CreateClusterInputBuilder {
     /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
     /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
     /// </note>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
@@ -413,28 +379,20 @@ impl CreateClusterInputBuilder {
     /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
     /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
     /// </note>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
     /// </note>
-    pub fn notification_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
     /// </note>
-    pub fn set_notification_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_topic_arn = input;
         self
     }
@@ -459,18 +417,12 @@ impl CreateClusterInputBuilder {
         &self.iam_role_arn
     }
     /// <p>The parameter group to be associated with the DAX cluster.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter group to be associated with the DAX cluster.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_name = input;
         self
     }
@@ -490,10 +442,7 @@ impl CreateClusterInputBuilder {
         self
     }
     /// <p>A set of tags to associate with the DAX cluster. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -507,10 +456,7 @@ impl CreateClusterInputBuilder {
         self
     }
     /// <p>Represents the settings used to enable server-side encryption on the cluster.</p>
-    pub fn set_sse_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::SseSpecification>,
-    ) -> Self {
+    pub fn set_sse_specification(mut self, input: ::std::option::Option<crate::types::SseSpecification>) -> Self {
         self.sse_specification = input;
         self
     }
@@ -523,10 +469,7 @@ impl CreateClusterInputBuilder {
     /// <li> <p> <code>NONE</code> for no encryption</p> </li>
     /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
-    pub fn cluster_endpoint_encryption_type(
-        mut self,
-        input: crate::types::ClusterEndpointEncryptionType,
-    ) -> Self {
+    pub fn cluster_endpoint_encryption_type(mut self, input: crate::types::ClusterEndpointEncryptionType) -> Self {
         self.cluster_endpoint_encryption_type = ::std::option::Option::Some(input);
         self
     }
@@ -535,10 +478,7 @@ impl CreateClusterInputBuilder {
     /// <li> <p> <code>NONE</code> for no encryption</p> </li>
     /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
-    pub fn set_cluster_endpoint_encryption_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>,
-    ) -> Self {
+    pub fn set_cluster_endpoint_encryption_type(mut self, input: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>) -> Self {
         self.cluster_endpoint_encryption_type = input;
         self
     }
@@ -547,18 +487,13 @@ impl CreateClusterInputBuilder {
     /// <li> <p> <code>NONE</code> for no encryption</p> </li>
     /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
-    pub fn get_cluster_endpoint_encryption_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClusterEndpointEncryptionType> {
+    pub fn get_cluster_endpoint_encryption_type(&self) -> &::std::option::Option<crate::types::ClusterEndpointEncryptionType> {
         &self.cluster_endpoint_encryption_type
     }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cluster::CreateClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_cluster::CreateClusterInput {
             cluster_name: self.cluster_name,
             node_type: self.node_type,

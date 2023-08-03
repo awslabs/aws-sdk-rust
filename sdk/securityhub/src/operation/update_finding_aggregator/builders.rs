@@ -27,8 +27,7 @@ impl UpdateFindingAggregatorInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFindingAggregatorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_finding_aggregator::builders::UpdateFindingAggregatorInputBuilder,
+    inner: crate::operation::update_finding_aggregator::builders::UpdateFindingAggregatorInputBuilder,
 }
 impl UpdateFindingAggregatorFluentBuilder {
     /// Creates a new `UpdateFindingAggregator`.
@@ -39,10 +38,7 @@ impl UpdateFindingAggregatorFluentBuilder {
         }
     }
     /// Access the UpdateFindingAggregator as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_finding_aggregator::builders::UpdateFindingAggregatorInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_finding_aggregator::builders::UpdateFindingAggregatorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl UpdateFindingAggregatorFluentBuilder {
             crate::operation::update_finding_aggregator::UpdateFindingAggregator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_finding_aggregator::UpdateFindingAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_finding_aggregator::UpdateFindingAggregatorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl UpdateFindingAggregatorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl UpdateFindingAggregatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_finding_aggregator::UpdateFindingAggregatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_finding_aggregator::UpdateFindingAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_finding_aggregator::UpdateFindingAggregatorError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl UpdateFindingAggregatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_finding_aggregator::UpdateFindingAggregatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_finding_aggregator::UpdateFindingAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_finding_aggregator::UpdateFindingAggregatorError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +106,17 @@ impl UpdateFindingAggregatorFluentBuilder {
             crate::operation::update_finding_aggregator::UpdateFindingAggregator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_finding_aggregator::UpdateFindingAggregatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_finding_aggregator::UpdateFindingAggregatorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-    pub fn finding_aggregator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn finding_aggregator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.finding_aggregator_arn(input.into());
         self
     }
     /// <p>The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-    pub fn set_finding_aggregator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_finding_aggregator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_finding_aggregator_arn(input);
         self
     }
@@ -153,10 +132,7 @@ impl UpdateFindingAggregatorFluentBuilder {
     /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
     /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
     /// </ul>
-    pub fn region_linking_mode(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn region_linking_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.region_linking_mode(input.into());
         self
     }
@@ -168,10 +144,7 @@ impl UpdateFindingAggregatorFluentBuilder {
     /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
     /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
     /// </ul>
-    pub fn set_region_linking_mode(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_region_linking_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_region_linking_mode(input);
         self
     }
@@ -198,10 +171,7 @@ impl UpdateFindingAggregatorFluentBuilder {
     }
     /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
     /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_regions(input);
         self
     }

@@ -5,8 +5,7 @@
 pub struct ListIamPolicyAssignmentsForUserOutput {
     /// <p>The active assignments for this user.</p>
     #[doc(hidden)]
-    pub active_assignments:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActiveIamPolicyAssignment>>,
+    pub active_assignments: ::std::option::Option<::std::vec::Vec<crate::types::ActiveIamPolicyAssignment>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -20,9 +19,7 @@ pub struct ListIamPolicyAssignmentsForUserOutput {
 }
 impl ListIamPolicyAssignmentsForUserOutput {
     /// <p>The active assignments for this user.</p>
-    pub fn active_assignments(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ActiveIamPolicyAssignment]> {
+    pub fn active_assignments(&self) -> ::std::option::Option<&[crate::types::ActiveIamPolicyAssignment]> {
         self.active_assignments.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -45,19 +42,16 @@ impl ::aws_http::request_id::RequestId for ListIamPolicyAssignmentsForUserOutput
 }
 impl ListIamPolicyAssignmentsForUserOutput {
     /// Creates a new builder-style object to manufacture [`ListIamPolicyAssignmentsForUserOutput`](crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserOutput).
-    pub fn builder() -> crate::operation::list_iam_policy_assignments_for_user::builders::ListIamPolicyAssignmentsForUserOutputBuilder{
+    pub fn builder() -> crate::operation::list_iam_policy_assignments_for_user::builders::ListIamPolicyAssignmentsForUserOutputBuilder {
         crate::operation::list_iam_policy_assignments_for_user::builders::ListIamPolicyAssignmentsForUserOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIamPolicyAssignmentsForUserOutput`](crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIamPolicyAssignmentsForUserOutputBuilder {
-    pub(crate) active_assignments:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActiveIamPolicyAssignment>>,
+    pub(crate) active_assignments: ::std::option::Option<::std::vec::Vec<crate::types::ActiveIamPolicyAssignment>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -76,17 +70,12 @@ impl ListIamPolicyAssignmentsForUserOutputBuilder {
         self
     }
     /// <p>The active assignments for this user.</p>
-    pub fn set_active_assignments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveIamPolicyAssignment>>,
-    ) -> Self {
+    pub fn set_active_assignments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveIamPolicyAssignment>>) -> Self {
         self.active_assignments = input;
         self
     }
     /// <p>The active assignments for this user.</p>
-    pub fn get_active_assignments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveIamPolicyAssignment>> {
+    pub fn get_active_assignments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveIamPolicyAssignment>> {
         &self.active_assignments
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -141,20 +130,12 @@ impl ListIamPolicyAssignmentsForUserOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListIamPolicyAssignmentsForUserOutput`](crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserOutput
-    {
+    pub fn build(self) -> crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserOutput {
         crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserOutput {
-            active_assignments: self.active_assignments
-            ,
-            request_id: self.request_id
-            ,
-            next_token: self.next_token
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
+            active_assignments: self.active_assignments,
+            request_id: self.request_id,
+            next_token: self.next_token,
+            status: self.status.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

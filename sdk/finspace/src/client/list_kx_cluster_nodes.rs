@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`nodes(Option<Vec<KxNode>>)`](crate::operation::list_kx_cluster_nodes::ListKxClusterNodesOutput::nodes): <p>A list of nodes associated with the cluster.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_kx_cluster_nodes::ListKxClusterNodesOutput::next_token): <p>A token that indicates where a results page should begin.</p>
     /// - On failure, responds with [`SdkError<ListKxClusterNodesError>`](crate::operation::list_kx_cluster_nodes::ListKxClusterNodesError)
-    pub fn list_kx_cluster_nodes(
-        &self,
-    ) -> crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesFluentBuilder {
-        crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_kx_cluster_nodes(&self) -> crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesFluentBuilder {
+        crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesFluentBuilder::new(self.handle.clone())
     }
 }

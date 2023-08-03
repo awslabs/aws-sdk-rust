@@ -38,9 +38,7 @@ impl DescribeAuditFindingFluentBuilder {
         }
     }
     /// Access the DescribeAuditFinding as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_audit_finding::builders::DescribeAuditFindingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_audit_finding::builders::DescribeAuditFindingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DescribeAuditFindingFluentBuilder {
             crate::operation::describe_audit_finding::DescribeAuditFinding,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_audit_finding::DescribeAuditFindingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_audit_finding::DescribeAuditFindingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DescribeAuditFindingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DescribeAuditFindingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_audit_finding::DescribeAuditFindingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_audit_finding::DescribeAuditFindingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_audit_finding::DescribeAuditFindingError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DescribeAuditFindingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_audit_finding::DescribeAuditFindingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_audit_finding::DescribeAuditFindingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_audit_finding::DescribeAuditFindingError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl DescribeAuditFindingFluentBuilder {
             crate::operation::describe_audit_finding::DescribeAuditFinding,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_audit_finding::DescribeAuditFindingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_audit_finding::DescribeAuditFindingError>,
     > {
         self.customize_middleware().await
     }

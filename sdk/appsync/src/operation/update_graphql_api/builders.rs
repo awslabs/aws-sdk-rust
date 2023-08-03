@@ -10,10 +10,7 @@ impl UpdateGraphqlApiInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_graphql_api::UpdateGraphqlApiOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_graphql_api::UpdateGraphqlApiError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_graphql_api::UpdateGraphqlApiError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_graphql_api();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateGraphqlApiFluentBuilder {
         }
     }
     /// Access the UpdateGraphqlApi as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_graphql_api::builders::UpdateGraphqlApiInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_graphql_api::builders::UpdateGraphqlApiInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateGraphqlApiFluentBuilder {
             crate::operation::update_graphql_api::UpdateGraphqlApi,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_graphql_api::UpdateGraphqlApiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_graphql_api::UpdateGraphqlApiError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateGraphqlApiFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateGraphqlApiFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_graphql_api::UpdateGraphqlApiOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_graphql_api::UpdateGraphqlApiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_graphql_api::UpdateGraphqlApiError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateGraphqlApiFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_graphql_api::UpdateGraphqlApiOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_graphql_api::UpdateGraphqlApiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_graphql_api::UpdateGraphqlApiError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateGraphqlApiFluentBuilder {
             crate::operation::update_graphql_api::UpdateGraphqlApi,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_graphql_api::UpdateGraphqlApiError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_graphql_api::UpdateGraphqlApiError>,
     > {
         self.customize_middleware().await
     }
@@ -170,17 +154,12 @@ impl UpdateGraphqlApiFluentBuilder {
         self
     }
     /// <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
-    pub fn set_authentication_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationType>,
-    ) -> Self {
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
         self.inner = self.inner.set_authentication_type(input);
         self
     }
     /// <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
-    pub fn get_authentication_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
         self.inner.get_authentication_type()
     }
     /// <p>The new Amazon Cognito user pool configuration for the <code>~GraphqlApi</code> object.</p>
@@ -189,10 +168,7 @@ impl UpdateGraphqlApiFluentBuilder {
         self
     }
     /// <p>The new Amazon Cognito user pool configuration for the <code>~GraphqlApi</code> object.</p>
-    pub fn set_user_pool_config(
-        mut self,
-        input: ::std::option::Option<crate::types::UserPoolConfig>,
-    ) -> Self {
+    pub fn set_user_pool_config(mut self, input: ::std::option::Option<crate::types::UserPoolConfig>) -> Self {
         self.inner = self.inner.set_user_pool_config(input);
         self
     }
@@ -206,17 +182,12 @@ impl UpdateGraphqlApiFluentBuilder {
         self
     }
     /// <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
-    pub fn set_open_id_connect_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenIdConnectConfig>,
-    ) -> Self {
+    pub fn set_open_id_connect_config(mut self, input: ::std::option::Option<crate::types::OpenIdConnectConfig>) -> Self {
         self.inner = self.inner.set_open_id_connect_config(input);
         self
     }
     /// <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
-    pub fn get_open_id_connect_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OpenIdConnectConfig> {
+    pub fn get_open_id_connect_config(&self) -> &::std::option::Option<crate::types::OpenIdConnectConfig> {
         self.inner.get_open_id_connect_config()
     }
     /// Appends an item to `additionalAuthenticationProviders`.
@@ -224,28 +195,20 @@ impl UpdateGraphqlApiFluentBuilder {
     /// To override the contents of this collection use [`set_additional_authentication_providers`](Self::set_additional_authentication_providers).
     ///
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
-    pub fn additional_authentication_providers(
-        mut self,
-        input: crate::types::AdditionalAuthenticationProvider,
-    ) -> Self {
+    pub fn additional_authentication_providers(mut self, input: crate::types::AdditionalAuthenticationProvider) -> Self {
         self.inner = self.inner.additional_authentication_providers(input);
         self
     }
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
     pub fn set_additional_authentication_providers(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AdditionalAuthenticationProvider>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
     ) -> Self {
         self.inner = self.inner.set_additional_authentication_providers(input);
         self
     }
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
-    pub fn get_additional_authentication_providers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>
-    {
+    pub fn get_additional_authentication_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalAuthenticationProvider>> {
         self.inner.get_additional_authentication_providers()
     }
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
@@ -268,56 +231,37 @@ impl UpdateGraphqlApiFluentBuilder {
         self
     }
     /// <p>Configuration for Lambda function authorization.</p>
-    pub fn set_lambda_authorizer_config(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaAuthorizerConfig>,
-    ) -> Self {
+    pub fn set_lambda_authorizer_config(mut self, input: ::std::option::Option<crate::types::LambdaAuthorizerConfig>) -> Self {
         self.inner = self.inner.set_lambda_authorizer_config(input);
         self
     }
     /// <p>Configuration for Lambda function authorization.</p>
-    pub fn get_lambda_authorizer_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::LambdaAuthorizerConfig> {
+    pub fn get_lambda_authorizer_config(&self) -> &::std::option::Option<crate::types::LambdaAuthorizerConfig> {
         self.inner.get_lambda_authorizer_config()
     }
     /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
-    pub fn merged_api_execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn merged_api_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.merged_api_execution_role_arn(input.into());
         self
     }
     /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
-    pub fn set_merged_api_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_merged_api_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_merged_api_execution_role_arn(input);
         self
     }
     /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
-    pub fn get_merged_api_execution_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_merged_api_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_merged_api_execution_role_arn()
     }
     /// <p>The owner contact information for an API resource.</p>
     /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
-    pub fn owner_contact(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_contact(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner_contact(input.into());
         self
     }
     /// <p>The owner contact information for an API resource.</p>
     /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
-    pub fn set_owner_contact(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_contact(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owner_contact(input);
         self
     }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeApplicationStateOutput {
 }
 impl DescribeApplicationStateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationStateOutput`](crate::operation::describe_application_state::DescribeApplicationStateOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_application_state::builders::DescribeApplicationStateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_application_state::builders::DescribeApplicationStateOutputBuilder {
         crate::operation::describe_application_state::builders::DescribeApplicationStateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicationStateOutput`](crate::operation::describe_application_state::DescribeApplicationStateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationStateOutputBuilder {
     pub(crate) application_status: ::std::option::Option<crate::types::ApplicationStatus>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -52,17 +48,12 @@ impl DescribeApplicationStateOutputBuilder {
         self
     }
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
-    pub fn set_application_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationStatus>,
-    ) -> Self {
+    pub fn set_application_status(mut self, input: ::std::option::Option<crate::types::ApplicationStatus>) -> Self {
         self.application_status = input;
         self
     }
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
-    pub fn get_application_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationStatus> {
+    pub fn get_application_status(&self) -> &::std::option::Option<crate::types::ApplicationStatus> {
         &self.application_status
     }
     /// <p>The timestamp when the application status was last updated.</p>
@@ -71,10 +62,7 @@ impl DescribeApplicationStateOutputBuilder {
         self
     }
     /// <p>The timestamp when the application status was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -92,9 +80,7 @@ impl DescribeApplicationStateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeApplicationStateOutput`](crate::operation::describe_application_state::DescribeApplicationStateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_application_state::DescribeApplicationStateOutput {
+    pub fn build(self) -> crate::operation::describe_application_state::DescribeApplicationStateOutput {
         crate::operation::describe_application_state::DescribeApplicationStateOutput {
             application_status: self.application_status,
             last_updated_time: self.last_updated_time,

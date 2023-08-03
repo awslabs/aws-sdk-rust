@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyIpamResourceCidrOutput {
 }
 impl ModifyIpamResourceCidrOutput {
     /// Creates a new builder-style object to manufacture [`ModifyIpamResourceCidrOutput`](crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrOutputBuilder {
         crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyIpamResourceCidrOutput`](crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyIpamResourceCidrOutputBuilder {
     pub(crate) ipam_resource_cidr: ::std::option::Option<crate::types::IpamResourceCidr>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl ModifyIpamResourceCidrOutputBuilder {
         self
     }
     /// <p>The CIDR of the resource.</p>
-    pub fn set_ipam_resource_cidr(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamResourceCidr>,
-    ) -> Self {
+    pub fn set_ipam_resource_cidr(mut self, input: ::std::option::Option<crate::types::IpamResourceCidr>) -> Self {
         self.ipam_resource_cidr = input;
         self
     }
@@ -65,9 +58,7 @@ impl ModifyIpamResourceCidrOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyIpamResourceCidrOutput`](crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput {
+    pub fn build(self) -> crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput {
         crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput {
             ipam_resource_cidr: self.ipam_resource_cidr,
             _request_id: self._request_id,

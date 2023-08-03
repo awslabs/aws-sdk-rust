@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`public_key(Option<PublicKey>)`](crate::operation::update_public_key::UpdatePublicKeyOutput::public_key): <p>The public key.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::update_public_key::UpdatePublicKeyOutput::e_tag): <p>The identifier of the current version of the public key.</p>
     /// - On failure, responds with [`SdkError<UpdatePublicKeyError>`](crate::operation::update_public_key::UpdatePublicKeyError)
-    pub fn update_public_key(
-        &self,
-    ) -> crate::operation::update_public_key::builders::UpdatePublicKeyFluentBuilder {
-        crate::operation::update_public_key::builders::UpdatePublicKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_public_key(&self) -> crate::operation::update_public_key::builders::UpdatePublicKeyFluentBuilder {
+        crate::operation::update_public_key::builders::UpdatePublicKeyFluentBuilder::new(self.handle.clone())
     }
 }

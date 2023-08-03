@@ -15,18 +15,14 @@ impl DeleteMaintenanceWindowInput {
 }
 impl DeleteMaintenanceWindowInput {
     /// Creates a new builder-style object to manufacture [`DeleteMaintenanceWindowInput`](crate::operation::delete_maintenance_window::DeleteMaintenanceWindowInput).
-    pub fn builder(
-    ) -> crate::operation::delete_maintenance_window::builders::DeleteMaintenanceWindowInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_maintenance_window::builders::DeleteMaintenanceWindowInputBuilder {
         crate::operation::delete_maintenance_window::builders::DeleteMaintenanceWindowInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMaintenanceWindowInput`](crate::operation::delete_maintenance_window::DeleteMaintenanceWindowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMaintenanceWindowInputBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl DeleteMaintenanceWindowInputBuilder {
         crate::operation::delete_maintenance_window::DeleteMaintenanceWindowInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_maintenance_window::DeleteMaintenanceWindowInput {
-                window_id: self.window_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_maintenance_window::DeleteMaintenanceWindowInput { window_id: self.window_id })
     }
 }

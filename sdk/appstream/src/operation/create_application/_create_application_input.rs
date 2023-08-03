@@ -35,9 +35,7 @@ pub struct CreateApplicationInput {
     pub app_block_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the application.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateApplicationInput {
     /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
@@ -81,27 +79,20 @@ impl CreateApplicationInput {
         self.app_block_arn.as_deref()
     }
     /// <p>The tags assigned to the application.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    pub fn builder() -> crate::operation::create_application::builders::CreateApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_application::builders::CreateApplicationInputBuilder {
         crate::operation::create_application::builders::CreateApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateApplicationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -113,9 +104,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) platforms: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>,
     pub(crate) instance_families: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) app_block_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateApplicationInputBuilder {
     /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
@@ -166,10 +155,7 @@ impl CreateApplicationInputBuilder {
         self
     }
     /// <p>The location in S3 of the application icon.</p>
-    pub fn set_icon_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_icon_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.icon_s3_location = input;
         self
     }
@@ -192,18 +178,12 @@ impl CreateApplicationInputBuilder {
         &self.launch_path
     }
     /// <p>The working directory of the application.</p>
-    pub fn working_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn working_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.working_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The working directory of the application.</p>
-    pub fn set_working_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_working_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.working_directory = input;
         self
     }
@@ -212,18 +192,12 @@ impl CreateApplicationInputBuilder {
         &self.working_directory
     }
     /// <p>The launch parameters of the application.</p>
-    pub fn launch_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_parameters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The launch parameters of the application.</p>
-    pub fn set_launch_parameters(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_parameters = input;
         self
     }
@@ -243,17 +217,12 @@ impl CreateApplicationInputBuilder {
         self
     }
     /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
-    pub fn set_platforms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>,
-    ) -> Self {
+    pub fn set_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>) -> Self {
         self.platforms = input;
         self
     }
     /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
-    pub fn get_platforms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformType>> {
+    pub fn get_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformType>> {
         &self.platforms
     }
     /// Appends an item to `instance_families`.
@@ -261,42 +230,28 @@ impl CreateApplicationInputBuilder {
     /// To override the contents of this collection use [`set_instance_families`](Self::set_instance_families).
     ///
     /// <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
-    pub fn instance_families(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_families(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_families.unwrap_or_default();
         v.push(input.into());
         self.instance_families = ::std::option::Option::Some(v);
         self
     }
     /// <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
-    pub fn set_instance_families(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_families(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_families = input;
         self
     }
     /// <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
-    pub fn get_instance_families(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_families(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_families
     }
     /// <p>The app block ARN to which the application should be associated</p>
-    pub fn app_block_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_block_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_block_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The app block ARN to which the application should be associated</p>
-    pub fn set_app_block_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_block_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_block_arn = input;
         self
     }
@@ -309,55 +264,37 @@ impl CreateApplicationInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the application.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the application.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags assigned to the application.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_application::CreateApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_application::CreateApplicationInput {
-                name: self.name,
-                display_name: self.display_name,
-                description: self.description,
-                icon_s3_location: self.icon_s3_location,
-                launch_path: self.launch_path,
-                working_directory: self.working_directory,
-                launch_parameters: self.launch_parameters,
-                platforms: self.platforms,
-                instance_families: self.instance_families,
-                app_block_arn: self.app_block_arn,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
+            name: self.name,
+            display_name: self.display_name,
+            description: self.description,
+            icon_s3_location: self.icon_s3_location,
+            launch_path: self.launch_path,
+            working_directory: self.working_directory,
+            launch_parameters: self.launch_parameters,
+            platforms: self.platforms,
+            instance_families: self.instance_families,
+            app_block_arn: self.app_block_arn,
+            tags: self.tags,
+        })
     }
 }

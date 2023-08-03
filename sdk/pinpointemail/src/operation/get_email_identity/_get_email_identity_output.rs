@@ -61,17 +61,14 @@ impl ::aws_http::request_id::RequestId for GetEmailIdentityOutput {
 }
 impl GetEmailIdentityOutput {
     /// Creates a new builder-style object to manufacture [`GetEmailIdentityOutput`](crate::operation::get_email_identity::GetEmailIdentityOutput).
-    pub fn builder() -> crate::operation::get_email_identity::builders::GetEmailIdentityOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_email_identity::builders::GetEmailIdentityOutputBuilder {
         crate::operation::get_email_identity::builders::GetEmailIdentityOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEmailIdentityOutput`](crate::operation::get_email_identity::GetEmailIdentityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEmailIdentityOutputBuilder {
     pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
     pub(crate) feedback_forwarding_status: ::std::option::Option<bool>,
@@ -88,10 +85,7 @@ impl GetEmailIdentityOutputBuilder {
         self
     }
     /// <p>The email identity type.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityType>,
-    ) -> Self {
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.identity_type = input;
         self
     }
@@ -139,10 +133,7 @@ impl GetEmailIdentityOutputBuilder {
         self
     }
     /// <p>An object that contains information about the DKIM attributes for the identity. This object includes the tokens that you use to create the CNAME records that are required to complete the DKIM verification process.</p>
-    pub fn set_dkim_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::DkimAttributes>,
-    ) -> Self {
+    pub fn set_dkim_attributes(mut self, input: ::std::option::Option<crate::types::DkimAttributes>) -> Self {
         self.dkim_attributes = input;
         self
     }
@@ -156,17 +147,12 @@ impl GetEmailIdentityOutputBuilder {
         self
     }
     /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
-    pub fn set_mail_from_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::MailFromAttributes>,
-    ) -> Self {
+    pub fn set_mail_from_attributes(mut self, input: ::std::option::Option<crate::types::MailFromAttributes>) -> Self {
         self.mail_from_attributes = input;
         self
     }
     /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
-    pub fn get_mail_from_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::MailFromAttributes> {
+    pub fn get_mail_from_attributes(&self) -> &::std::option::Option<crate::types::MailFromAttributes> {
         &self.mail_from_attributes
     }
     /// Appends an item to `tags`.
@@ -181,10 +167,7 @@ impl GetEmailIdentityOutputBuilder {
         self
     }
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`lsa_analysis_id(Option<String>)`](crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisOutput::lsa_analysis_id): <p>The ID of the LSA analysis run.</p>
     ///   - [`status(Option<String>)`](crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisOutput::status): <p>The status of the LSA analysis, for example <code>COMPLETED</code>.</p>
     /// - On failure, responds with [`SdkError<RunFleetAdvisorLsaAnalysisError>`](crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisError)
-    pub fn run_fleet_advisor_lsa_analysis(&self) -> crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisFluentBuilder{
+    pub fn run_fleet_advisor_lsa_analysis(
+        &self,
+    ) -> crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisFluentBuilder {
         crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

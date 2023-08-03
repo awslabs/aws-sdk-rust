@@ -22,35 +22,26 @@ impl DescribeProtectionInput {
 }
 impl DescribeProtectionInput {
     /// Creates a new builder-style object to manufacture [`DescribeProtectionInput`](crate::operation::describe_protection::DescribeProtectionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_protection::builders::DescribeProtectionInputBuilder {
+    pub fn builder() -> crate::operation::describe_protection::builders::DescribeProtectionInputBuilder {
         crate::operation::describe_protection::builders::DescribeProtectionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProtectionInput`](crate::operation::describe_protection::DescribeProtectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProtectionInputBuilder {
     pub(crate) protection_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeProtectionInputBuilder {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
-    pub fn protection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
-    pub fn set_protection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protection_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl DescribeProtectionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeProtectionInput`](crate::operation::describe_protection::DescribeProtectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_protection::DescribeProtectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_protection::DescribeProtectionInput {
-                protection_id: self.protection_id,
-                resource_arn: self.resource_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_protection::DescribeProtectionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_protection::DescribeProtectionInput {
+            protection_id: self.protection_id,
+            resource_arn: self.resource_arn,
+        })
     }
 }

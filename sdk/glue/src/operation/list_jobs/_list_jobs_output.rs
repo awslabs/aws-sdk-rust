@@ -35,9 +35,7 @@ impl ListJobsOutput {
 
 /// A builder for [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobsOutputBuilder {
     pub(crate) job_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListJobsOutputBuilder {
         self
     }
     /// <p>The names of all jobs in the account, or the jobs with the specified tags.</p>
-    pub fn set_job_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_job_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.job_names = input;
         self
     }

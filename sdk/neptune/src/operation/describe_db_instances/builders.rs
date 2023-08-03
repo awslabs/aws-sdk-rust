@@ -39,9 +39,7 @@ impl DescribeDBInstancesFluentBuilder {
         }
     }
     /// Access the DescribeDBInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_db_instances::builders::DescribeDbInstancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_db_instances::builders::DescribeDbInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DescribeDBInstancesFluentBuilder {
             crate::operation::describe_db_instances::DescribeDBInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_instances::DescribeDBInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_instances::DescribeDBInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DescribeDBInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DescribeDBInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_instances::DescribeDbInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_instances::DescribeDBInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_instances::DescribeDBInstancesError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DescribeDBInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_instances::DescribeDbInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_instances::DescribeDBInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_instances::DescribeDBInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -118,32 +107,22 @@ impl DescribeDBInstancesFluentBuilder {
             crate::operation::describe_db_instances::DescribeDBInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_instances::DescribeDBInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_instances::DescribeDBInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_db_instances::paginator::DescribeDbInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_db_instances::paginator::DescribeDbInstancesPaginator {
-        crate::operation::describe_db_instances::paginator::DescribeDbInstancesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_db_instances::paginator::DescribeDbInstancesPaginator {
+        crate::operation::describe_db_instances::paginator::DescribeDbInstancesPaginator::new(self.handle, self.inner)
     }
     /// <p>The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
     }
@@ -152,10 +131,7 @@ impl DescribeDBInstancesFluentBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }
@@ -189,10 +165,7 @@ impl DescribeDBInstancesFluentBuilder {
     /// <li> <p> <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB instances created by that engine.</p> </li>
     /// </ul>
     /// <p>For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are returned, you could use the following command:</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

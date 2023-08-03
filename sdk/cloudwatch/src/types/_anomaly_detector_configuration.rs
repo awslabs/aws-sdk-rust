@@ -32,9 +32,7 @@ impl AnomalyDetectorConfiguration {
 
 /// A builder for [`AnomalyDetectorConfiguration`](crate::types::AnomalyDetectorConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyDetectorConfigurationBuilder {
     pub(crate) excluded_time_ranges: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     pub(crate) metric_timezone: ::std::option::Option<::std::string::String>,
@@ -52,34 +50,23 @@ impl AnomalyDetectorConfigurationBuilder {
         self
     }
     /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use this to make sure that events that could cause unusual values for the metric, such as deployments, aren't used when CloudWatch creates the model.</p>
-    pub fn set_excluded_time_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
-    ) -> Self {
+    pub fn set_excluded_time_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Range>>) -> Self {
         self.excluded_time_ranges = input;
         self
     }
     /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use this to make sure that events that could cause unusual values for the metric, such as deployments, aren't used when CloudWatch creates the model.</p>
-    pub fn get_excluded_time_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Range>> {
+    pub fn get_excluded_time_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Range>> {
         &self.excluded_time_ranges
     }
     /// <p>The time zone to use for the metric. This is useful to enable the model to automatically account for daylight savings time changes if the metric is sensitive to such time changes.</p>
     /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information, see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
-    pub fn metric_timezone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time zone to use for the metric. This is useful to enable the model to automatically account for daylight savings time changes if the metric is sensitive to such time changes.</p>
     /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information, see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
-    pub fn set_metric_timezone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_timezone = input;
         self
     }

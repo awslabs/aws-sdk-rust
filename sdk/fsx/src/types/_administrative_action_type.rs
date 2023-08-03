@@ -116,13 +116,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AdministrativeActionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -148,18 +142,14 @@ impl ::std::convert::From<&str> for AdministrativeActionType {
     fn from(s: &str) -> Self {
         match s {
             "FILE_SYSTEM_ALIAS_ASSOCIATION" => AdministrativeActionType::FileSystemAliasAssociation,
-            "FILE_SYSTEM_ALIAS_DISASSOCIATION" => {
-                AdministrativeActionType::FileSystemAliasDisassociation
-            }
+            "FILE_SYSTEM_ALIAS_DISASSOCIATION" => AdministrativeActionType::FileSystemAliasDisassociation,
             "FILE_SYSTEM_UPDATE" => AdministrativeActionType::FileSystemUpdate,
             "RELEASE_NFS_V3_LOCKS" => AdministrativeActionType::ReleaseNfsV3Locks,
             "SNAPSHOT_UPDATE" => AdministrativeActionType::SnapshotUpdate,
             "STORAGE_OPTIMIZATION" => AdministrativeActionType::StorageOptimization,
             "VOLUME_RESTORE" => AdministrativeActionType::VolumeRestore,
             "VOLUME_UPDATE" => AdministrativeActionType::VolumeUpdate,
-            other => AdministrativeActionType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AdministrativeActionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -175,9 +165,7 @@ impl AdministrativeActionType {
     pub fn as_str(&self) -> &str {
         match self {
             AdministrativeActionType::FileSystemAliasAssociation => "FILE_SYSTEM_ALIAS_ASSOCIATION",
-            AdministrativeActionType::FileSystemAliasDisassociation => {
-                "FILE_SYSTEM_ALIAS_DISASSOCIATION"
-            }
+            AdministrativeActionType::FileSystemAliasDisassociation => "FILE_SYSTEM_ALIAS_DISASSOCIATION",
             AdministrativeActionType::FileSystemUpdate => "FILE_SYSTEM_UPDATE",
             AdministrativeActionType::ReleaseNfsV3Locks => "RELEASE_NFS_V3_LOCKS",
             AdministrativeActionType::SnapshotUpdate => "SNAPSHOT_UPDATE",

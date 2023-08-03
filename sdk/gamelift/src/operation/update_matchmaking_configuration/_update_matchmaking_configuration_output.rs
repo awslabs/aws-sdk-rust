@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateMatchmakingConfigurationOutput 
 }
 impl UpdateMatchmakingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMatchmakingConfigurationOutput`](crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput).
-    pub fn builder() -> crate::operation::update_matchmaking_configuration::builders::UpdateMatchmakingConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_matchmaking_configuration::builders::UpdateMatchmakingConfigurationOutputBuilder {
         crate::operation::update_matchmaking_configuration::builders::UpdateMatchmakingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMatchmakingConfigurationOutput`](crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMatchmakingConfigurationOutputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::MatchmakingConfiguration>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl UpdateMatchmakingConfigurationOutputBuilder {
         self
     }
     /// <p>The updated matchmaking configuration.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MatchmakingConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::MatchmakingConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>The updated matchmaking configuration.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MatchmakingConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::MatchmakingConfiguration> {
         &self.configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,10 +58,7 @@ impl UpdateMatchmakingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateMatchmakingConfigurationOutput`](crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput {
         crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput {
             configuration: self.configuration,
             _request_id: self._request_id,

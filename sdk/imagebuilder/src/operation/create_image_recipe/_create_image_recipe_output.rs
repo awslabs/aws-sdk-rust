@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateImageRecipeOutput {
 }
 impl CreateImageRecipeOutput {
     /// Creates a new builder-style object to manufacture [`CreateImageRecipeOutput`](crate::operation::create_image_recipe::CreateImageRecipeOutput).
-    pub fn builder(
-    ) -> crate::operation::create_image_recipe::builders::CreateImageRecipeOutputBuilder {
+    pub fn builder() -> crate::operation::create_image_recipe::builders::CreateImageRecipeOutputBuilder {
         crate::operation::create_image_recipe::builders::CreateImageRecipeOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateImageRecipeOutput`](crate::operation::create_image_recipe::CreateImageRecipeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateImageRecipeOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -82,18 +79,12 @@ impl CreateImageRecipeOutputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that was created by this request.</p>
-    pub fn image_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that was created by this request.</p>
-    pub fn set_image_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_recipe_arn = input;
         self
     }

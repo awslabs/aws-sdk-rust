@@ -10,9 +10,7 @@ pub fn ser_delete_organization_input(
         object.key("OrganizationId").string(var_2.as_str());
     }
     {
-        object
-            .key("DeleteDirectory")
-            .boolean(input.delete_directory);
+        object.key("DeleteDirectory").boolean(input.delete_directory);
     }
     Ok(())
 }

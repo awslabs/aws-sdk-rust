@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for PutDedicatedIpInPoolOutput {
 }
 impl PutDedicatedIpInPoolOutput {
     /// Creates a new builder-style object to manufacture [`PutDedicatedIpInPoolOutput`](crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolOutput).
-    pub fn builder(
-    ) -> crate::operation::put_dedicated_ip_in_pool::builders::PutDedicatedIpInPoolOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_dedicated_ip_in_pool::builders::PutDedicatedIpInPoolOutputBuilder {
         crate::operation::put_dedicated_ip_in_pool::builders::PutDedicatedIpInPoolOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutDedicatedIpInPoolOutput`](crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDedicatedIpInPoolOutputBuilder {
     _request_id: Option<String>,
 }

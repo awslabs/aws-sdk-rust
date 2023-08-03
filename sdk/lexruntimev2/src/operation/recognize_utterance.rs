@@ -27,142 +27,93 @@ impl RecognizeUtteranceInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::recognize_utterance::RecognizeUtteranceInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.bot_id;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("bot_id", "cannot be empty or unset"))?;
+                let bot_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
+                if bot_id.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "bot_id",
                         "cannot be empty or unset",
-                    )
-                })?;
-                let bot_id = ::aws_smithy_http::label::fmt_string(
-                    input_1,
-                    ::aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bot_id.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bot_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
                 let input_2 = &_input.bot_alias_id;
-                let input_2 = input_2.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let input_2 = input_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("bot_alias_id", "cannot be empty or unset"))?;
+                let bot_alias_id = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
+                if bot_alias_id.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "bot_alias_id",
                         "cannot be empty or unset",
-                    )
-                })?;
-                let bot_alias_id = ::aws_smithy_http::label::fmt_string(
-                    input_2,
-                    ::aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if bot_alias_id.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "bot_alias_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
                 let input_3 = &_input.locale_id;
-                let input_3 = input_3.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let input_3 = input_3
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("locale_id", "cannot be empty or unset"))?;
+                let locale_id = ::aws_smithy_http::label::fmt_string(input_3, ::aws_smithy_http::label::EncodingStrategy::Default);
+                if locale_id.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "locale_id",
                         "cannot be empty or unset",
-                    )
-                })?;
-                let locale_id = ::aws_smithy_http::label::fmt_string(
-                    input_3,
-                    ::aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if locale_id.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "locale_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
                 let input_4 = &_input.session_id;
-                let input_4 = input_4.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let input_4 = input_4
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("session_id", "cannot be empty or unset"))?;
+                let session_id = ::aws_smithy_http::label::fmt_string(input_4, ::aws_smithy_http::label::EncodingStrategy::Default);
+                if session_id.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "session_id",
                         "cannot be empty or unset",
-                    )
-                })?;
-                let session_id = ::aws_smithy_http::label::fmt_string(
-                    input_4,
-                    ::aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if session_id.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "session_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
-                ::std::write!(output, "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/utterance", botId = bot_id, botAliasId = bot_alias_id, localeId = locale_id, sessionId = session_id).expect("formatting should succeed");
+                ::std::write!(
+                    output,
+                    "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/utterance",
+                    botId = bot_id,
+                    botAliasId = bot_alias_id,
+                    localeId = locale_id,
+                    sessionId = session_id
+                )
+                .expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::recognize_utterance::RecognizeUtteranceInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_recognize_utterance::ser_recognize_utterance_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
-            builder = ::aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                ::http::header::CONTENT_TYPE,
-                "application/octet-stream",
-            );
+            builder = ::aws_smithy_http::header::set_request_header_if_absent(builder, ::http::header::CONTENT_TYPE, "application/octet-stream");
             builder
         };
         let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = ::aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_recognize_utterance_input::ser_input_stream_http_payload(
-                self.input_stream,
-            )?
-            .into_inner(),
+            crate::protocol_serde::shape_recognize_utterance_input::ser_input_stream_http_payload(self.input_stream)?.into_inner(),
         );
         if let ::std::option::Option::Some(content_length) = body.content_length() {
-            request = ::aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                ::http::header::CONTENT_LENGTH,
-                content_length,
-            );
+            request = ::aws_smithy_http::header::set_request_header_if_absent(request, ::http::header::CONTENT_LENGTH, content_length);
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -170,49 +121,30 @@ impl RecognizeUtteranceInput {
         if let ::std::option::Option::Some(params) = params {
             request.properties_mut().insert(params);
         }
-        request
-            .properties_mut()
-            .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
+        request.properties_mut().insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
         let mut signing_config = ::aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
-        request
-            .properties_mut()
-            .insert(::aws_sig_auth::signer::SignableBody::UnsignedPayload);
+        request.properties_mut().insert(::aws_sig_auth::signer::SignableBody::UnsignedPayload);
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::recognize_utterance::RecognizeUtterance::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "RecognizeUtterance",
-            "lexruntimev2",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::recognize_utterance::RecognizeUtterance::new())
+            .with_metadata(::aws_smithy_http::operation::Metadata::new("RecognizeUtterance", "lexruntimev2"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -233,20 +165,15 @@ impl ::aws_smithy_http::response::ParseHttpResponse for RecognizeUtterance {
         crate::operation::recognize_utterance::RecognizeUtteranceOutput,
         crate::operation::recognize_utterance::RecognizeUtteranceError,
     >;
-    fn parse_unloaded(
-        &self,
-        response: &mut ::aws_smithy_http::operation::Response,
-    ) -> ::std::option::Option<Self::Output> {
+    fn parse_unloaded(&self, response: &mut ::aws_smithy_http::operation::Response) -> ::std::option::Option<Self::Output> {
         ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
         // This is an error, defer to the non-streaming parser
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return ::std::option::Option::None;
         }
-        ::std::option::Option::Some(
-            crate::protocol_serde::shape_recognize_utterance::de_recognize_utterance_op_response(
-                response,
-            ),
-        )
+        ::std::option::Option::Some(crate::protocol_serde::shape_recognize_utterance::de_recognize_utterance_op_response(
+            response,
+        ))
     }
     fn parse_loaded(&self, response: &::http::Response<::bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
@@ -290,9 +217,7 @@ pub enum RecognizeUtteranceError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for RecognizeUtteranceError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -320,39 +245,19 @@ impl ::std::fmt::Display for RecognizeUtteranceError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RecognizeUtteranceError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::AccessDeniedException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ResourceNotFoundException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ThrottlingException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::BadGatewayException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ValidationException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::DependencyFailedException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InternalServerException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ConflictException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::BadGatewayException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DependencyFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::recognize_utterance::RecognizeUtteranceError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::recognize_utterance::RecognizeUtteranceError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -368,27 +273,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for RecognizeUtteranceError {
 impl RecognizeUtteranceError {
     /// Creates the `RecognizeUtteranceError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `RecognizeUtteranceError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,

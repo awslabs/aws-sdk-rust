@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ModifyVpcEndpointServicePermissionsOu
 }
 impl ModifyVpcEndpointServicePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcEndpointServicePermissionsOutput`](crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput).
-    pub fn builder() -> crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsOutputBuilder {
         crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpcEndpointServicePermissionsOutput`](crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointServicePermissionsOutputBuilder {
-    pub(crate) added_principals:
-        ::std::option::Option<::std::vec::Vec<crate::types::AddedPrincipal>>,
+    pub(crate) added_principals: ::std::option::Option<::std::vec::Vec<crate::types::AddedPrincipal>>,
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ModifyVpcEndpointServicePermissionsOutputBuilder {
         self
     }
     /// <p>Information about the added principals.</p>
-    pub fn set_added_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddedPrincipal>>,
-    ) -> Self {
+    pub fn set_added_principals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddedPrincipal>>) -> Self {
         self.added_principals = input;
         self
     }
     /// <p>Information about the added principals.</p>
-    pub fn get_added_principals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddedPrincipal>> {
+    pub fn get_added_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddedPrincipal>> {
         &self.added_principals
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
@@ -94,12 +86,10 @@ impl ModifyVpcEndpointServicePermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyVpcEndpointServicePermissionsOutput`](crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput).
-    pub fn build(self) -> crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput{
+    pub fn build(self) -> crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput {
         crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput {
-            added_principals: self.added_principals
-            ,
-            return_value: self.return_value
-            ,
+            added_principals: self.added_principals,
+            return_value: self.return_value,
             _request_id: self._request_id,
         }
     }

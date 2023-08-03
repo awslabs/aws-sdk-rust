@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DefineSuggesterOutput`](crate::operation::define_suggester::DefineSuggesterOutput) with field(s):
     ///   - [`suggester(Option<SuggesterStatus>)`](crate::operation::define_suggester::DefineSuggesterOutput::suggester): <p>The value of a <code>Suggester</code> and its current status.</p>
     /// - On failure, responds with [`SdkError<DefineSuggesterError>`](crate::operation::define_suggester::DefineSuggesterError)
-    pub fn define_suggester(
-        &self,
-    ) -> crate::operation::define_suggester::builders::DefineSuggesterFluentBuilder {
-        crate::operation::define_suggester::builders::DefineSuggesterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn define_suggester(&self) -> crate::operation::define_suggester::builders::DefineSuggesterFluentBuilder {
+        crate::operation::define_suggester::builders::DefineSuggesterFluentBuilder::new(self.handle.clone())
     }
 }

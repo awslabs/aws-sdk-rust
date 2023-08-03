@@ -38,9 +38,7 @@ impl ::std::fmt::Debug for ExecuteScheduledQueryInput {
 }
 impl ExecuteScheduledQueryInput {
     /// Creates a new builder-style object to manufacture [`ExecuteScheduledQueryInput`](crate::operation::execute_scheduled_query::ExecuteScheduledQueryInput).
-    pub fn builder(
-    ) -> crate::operation::execute_scheduled_query::builders::ExecuteScheduledQueryInputBuilder
-    {
+    pub fn builder() -> crate::operation::execute_scheduled_query::builders::ExecuteScheduledQueryInputBuilder {
         crate::operation::execute_scheduled_query::builders::ExecuteScheduledQueryInputBuilder::default()
     }
 }
@@ -55,18 +53,12 @@ pub struct ExecuteScheduledQueryInputBuilder {
 }
 impl ExecuteScheduledQueryInputBuilder {
     /// <p>ARN of the scheduled query.</p>
-    pub fn scheduled_query_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_query_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_query_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the scheduled query.</p>
-    pub fn set_scheduled_query_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_query_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_query_arn = input;
         self
     }
@@ -80,10 +72,7 @@ impl ExecuteScheduledQueryInputBuilder {
         self
     }
     /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp. </p>
-    pub fn set_invocation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_invocation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.invocation_time = input;
         self
     }
@@ -108,17 +97,13 @@ impl ExecuteScheduledQueryInputBuilder {
     /// Consumes the builder and constructs a [`ExecuteScheduledQueryInput`](crate::operation::execute_scheduled_query::ExecuteScheduledQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::execute_scheduled_query::ExecuteScheduledQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::execute_scheduled_query::ExecuteScheduledQueryInput {
-                scheduled_query_arn: self.scheduled_query_arn,
-                invocation_time: self.invocation_time,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::execute_scheduled_query::ExecuteScheduledQueryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::execute_scheduled_query::ExecuteScheduledQueryInput {
+            scheduled_query_arn: self.scheduled_query_arn,
+            invocation_time: self.invocation_time,
+            client_token: self.client_token,
+        })
     }
 }
 impl ::std::fmt::Debug for ExecuteScheduledQueryInputBuilder {

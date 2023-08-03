@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`blue_green_deployments(Option<Vec<BlueGreenDeployment>>)`](crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsOutput::blue_green_deployments): <p>A list of blue/green deployments in the current account and Amazon Web Services Region.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsOutput::marker): <p>A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.</p>
     /// - On failure, responds with [`SdkError<DescribeBlueGreenDeploymentsError>`](crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsError)
-    pub fn describe_blue_green_deployments(&self) -> crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsFluentBuilder{
+    pub fn describe_blue_green_deployments(
+        &self,
+    ) -> crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsFluentBuilder {
         crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsFluentBuilder::new(self.handle.clone())
     }
 }

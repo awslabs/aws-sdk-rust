@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`parameters(Option<Vec<RelationalDatabaseParameter>>)`](crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersOutput::parameters): <p>An object describing the result of your get relational database parameters request.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetRelationalDatabaseParameters</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetRelationalDatabaseParametersError>`](crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersError)
-    pub fn get_relational_database_parameters(&self) -> crate::operation::get_relational_database_parameters::builders::GetRelationalDatabaseParametersFluentBuilder{
+    pub fn get_relational_database_parameters(
+        &self,
+    ) -> crate::operation::get_relational_database_parameters::builders::GetRelationalDatabaseParametersFluentBuilder {
         crate::operation::get_relational_database_parameters::builders::GetRelationalDatabaseParametersFluentBuilder::new(self.handle.clone())
     }
 }

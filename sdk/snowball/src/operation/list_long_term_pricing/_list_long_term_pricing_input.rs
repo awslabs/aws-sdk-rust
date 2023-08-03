@@ -22,18 +22,14 @@ impl ListLongTermPricingInput {
 }
 impl ListLongTermPricingInput {
     /// Creates a new builder-style object to manufacture [`ListLongTermPricingInput`](crate::operation::list_long_term_pricing::ListLongTermPricingInput).
-    pub fn builder(
-    ) -> crate::operation::list_long_term_pricing::builders::ListLongTermPricingInputBuilder {
-        crate::operation::list_long_term_pricing::builders::ListLongTermPricingInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_long_term_pricing::builders::ListLongTermPricingInputBuilder {
+        crate::operation::list_long_term_pricing::builders::ListLongTermPricingInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLongTermPricingInput`](crate::operation::list_long_term_pricing::ListLongTermPricingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLongTermPricingInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl ListLongTermPricingInputBuilder {
     /// Consumes the builder and constructs a [`ListLongTermPricingInput`](crate::operation::list_long_term_pricing::ListLongTermPricingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_long_term_pricing::ListLongTermPricingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_long_term_pricing::ListLongTermPricingInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_long_term_pricing::ListLongTermPricingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_long_term_pricing::ListLongTermPricingInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

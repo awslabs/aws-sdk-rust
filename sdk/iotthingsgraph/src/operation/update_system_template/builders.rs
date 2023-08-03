@@ -38,9 +38,7 @@ impl UpdateSystemTemplateFluentBuilder {
         }
     }
     /// Access the UpdateSystemTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_system_template::builders::UpdateSystemTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_system_template::builders::UpdateSystemTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl UpdateSystemTemplateFluentBuilder {
             crate::operation::update_system_template::UpdateSystemTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_system_template::UpdateSystemTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_system_template::UpdateSystemTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl UpdateSystemTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl UpdateSystemTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_system_template::UpdateSystemTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_system_template::UpdateSystemTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_system_template::UpdateSystemTemplateError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl UpdateSystemTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_system_template::UpdateSystemTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_system_template::UpdateSystemTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_system_template::UpdateSystemTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl UpdateSystemTemplateFluentBuilder {
             crate::operation::update_system_template::UpdateSystemTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_system_template::UpdateSystemTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_system_template::UpdateSystemTemplateError>,
     > {
         self.customize_middleware().await
     }
@@ -149,10 +136,7 @@ impl UpdateSystemTemplateFluentBuilder {
         self
     }
     /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DefinitionDocument>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }

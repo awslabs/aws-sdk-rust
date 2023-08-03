@@ -26,9 +26,7 @@ impl PutBucketAnalyticsConfigurationInput {
         self.id.as_deref()
     }
     /// <p>The configuration and any analyses for the analytics filter.</p>
-    pub fn analytics_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnalyticsConfiguration> {
+    pub fn analytics_configuration(&self) -> ::std::option::Option<&crate::types::AnalyticsConfiguration> {
         self.analytics_configuration.as_ref()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
@@ -38,16 +36,14 @@ impl PutBucketAnalyticsConfigurationInput {
 }
 impl PutBucketAnalyticsConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutBucketAnalyticsConfigurationInput`](crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationInput).
-    pub fn builder() -> crate::operation::put_bucket_analytics_configuration::builders::PutBucketAnalyticsConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_bucket_analytics_configuration::builders::PutBucketAnalyticsConfigurationInputBuilder {
         crate::operation::put_bucket_analytics_configuration::builders::PutBucketAnalyticsConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutBucketAnalyticsConfigurationInput`](crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBucketAnalyticsConfigurationInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -89,32 +85,21 @@ impl PutBucketAnalyticsConfigurationInputBuilder {
         self
     }
     /// <p>The configuration and any analyses for the analytics filter.</p>
-    pub fn set_analytics_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsConfiguration>,
-    ) -> Self {
+    pub fn set_analytics_configuration(mut self, input: ::std::option::Option<crate::types::AnalyticsConfiguration>) -> Self {
         self.analytics_configuration = input;
         self
     }
     /// <p>The configuration and any analyses for the analytics filter.</p>
-    pub fn get_analytics_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnalyticsConfiguration> {
+    pub fn get_analytics_configuration(&self) -> &::std::option::Option<crate::types::AnalyticsConfiguration> {
         &self.analytics_configuration
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
@@ -131,15 +116,11 @@ impl PutBucketAnalyticsConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationInput {
-                bucket: self.bucket
-                ,
-                id: self.id
-                ,
-                analytics_configuration: self.analytics_configuration
-                ,
-                expected_bucket_owner: self.expected_bucket_owner
-                ,
-            }
+                bucket: self.bucket,
+                id: self.id,
+                analytics_configuration: self.analytics_configuration,
+                expected_bucket_owner: self.expected_bucket_owner,
+            },
         )
     }
 }

@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`single_sign_on_user_value(Option<String>)`](crate::operation::describe_user_profile::DescribeUserProfileOutput::single_sign_on_user_value): <p>The IAM Identity Center user value.</p>
     ///   - [`user_settings(Option<UserSettings>)`](crate::operation::describe_user_profile::DescribeUserProfileOutput::user_settings): <p>A collection of settings.</p>
     /// - On failure, responds with [`SdkError<DescribeUserProfileError>`](crate::operation::describe_user_profile::DescribeUserProfileError)
-    pub fn describe_user_profile(
-        &self,
-    ) -> crate::operation::describe_user_profile::builders::DescribeUserProfileFluentBuilder {
-        crate::operation::describe_user_profile::builders::DescribeUserProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_user_profile(&self) -> crate::operation::describe_user_profile::builders::DescribeUserProfileFluentBuilder {
+        crate::operation::describe_user_profile::builders::DescribeUserProfileFluentBuilder::new(self.handle.clone())
     }
 }

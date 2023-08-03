@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetContentSummaryOutput {
 }
 impl GetContentSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetContentSummaryOutput`](crate::operation::get_content_summary::GetContentSummaryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_content_summary::builders::GetContentSummaryOutputBuilder {
+    pub fn builder() -> crate::operation::get_content_summary::builders::GetContentSummaryOutputBuilder {
         crate::operation::get_content_summary::builders::GetContentSummaryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContentSummaryOutput`](crate::operation::get_content_summary::GetContentSummaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContentSummaryOutputBuilder {
     pub(crate) content_summary: ::std::option::Option<crate::types::ContentSummary>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetContentSummaryOutputBuilder {
         self
     }
     /// <p>The content summary.</p>
-    pub fn set_content_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentSummary>,
-    ) -> Self {
+    pub fn set_content_summary(mut self, input: ::std::option::Option<crate::types::ContentSummary>) -> Self {
         self.content_summary = input;
         self
     }

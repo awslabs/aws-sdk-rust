@@ -36,9 +36,7 @@ impl S3Config {
         self.data_format.as_ref()
     }
     /// <p>By default, stored data is compressed as a .gzip file. Compressed files have a reduced file size, which can optimize the cost of data storage.</p>
-    pub fn storage_compression_format(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StorageCompressionFormat> {
+    pub fn storage_compression_format(&self) -> ::std::option::Option<&crate::types::StorageCompressionFormat> {
         self.storage_compression_format.as_ref()
     }
     /// <p>(Optional) Enter an S3 bucket prefix. The prefix is the string of characters after the bucket name and before the object name. You can use the prefix to organize data stored in Amazon S3 buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
@@ -56,14 +54,11 @@ impl S3Config {
 
 /// A builder for [`S3Config`](crate::types::S3Config).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ConfigBuilder {
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_format: ::std::option::Option<crate::types::DataFormat>,
-    pub(crate) storage_compression_format:
-        ::std::option::Option<crate::types::StorageCompressionFormat>,
+    pub(crate) storage_compression_format: ::std::option::Option<crate::types::StorageCompressionFormat>,
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3ConfigBuilder {
@@ -95,10 +90,7 @@ impl S3ConfigBuilder {
     /// <li> <p>Parquet - Store data in a columnar storage file format. Parquet is optimal for fast data retrieval and can reduce costs. This option is selected by default.</p> </li>
     /// <li> <p>JSON - Store data in a standard text-based JSON file format.</p> </li>
     /// </ul>
-    pub fn set_data_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DataFormat>,
-    ) -> Self {
+    pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::DataFormat>) -> Self {
         self.data_format = input;
         self
     }
@@ -111,25 +103,17 @@ impl S3ConfigBuilder {
         &self.data_format
     }
     /// <p>By default, stored data is compressed as a .gzip file. Compressed files have a reduced file size, which can optimize the cost of data storage.</p>
-    pub fn storage_compression_format(
-        mut self,
-        input: crate::types::StorageCompressionFormat,
-    ) -> Self {
+    pub fn storage_compression_format(mut self, input: crate::types::StorageCompressionFormat) -> Self {
         self.storage_compression_format = ::std::option::Option::Some(input);
         self
     }
     /// <p>By default, stored data is compressed as a .gzip file. Compressed files have a reduced file size, which can optimize the cost of data storage.</p>
-    pub fn set_storage_compression_format(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageCompressionFormat>,
-    ) -> Self {
+    pub fn set_storage_compression_format(mut self, input: ::std::option::Option<crate::types::StorageCompressionFormat>) -> Self {
         self.storage_compression_format = input;
         self
     }
     /// <p>By default, stored data is compressed as a .gzip file. Compressed files have a reduced file size, which can optimize the cost of data storage.</p>
-    pub fn get_storage_compression_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::StorageCompressionFormat> {
+    pub fn get_storage_compression_format(&self) -> &::std::option::Option<crate::types::StorageCompressionFormat> {
         &self.storage_compression_format
     }
     /// <p>(Optional) Enter an S3 bucket prefix. The prefix is the string of characters after the bucket name and before the object name. You can use the prefix to organize data stored in Amazon S3 buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>

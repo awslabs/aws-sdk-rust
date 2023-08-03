@@ -23,17 +23,14 @@ impl UpdatePackagingGroupInput {
 }
 impl UpdatePackagingGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdatePackagingGroupInput`](crate::operation::update_packaging_group::UpdatePackagingGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_packaging_group::builders::UpdatePackagingGroupInputBuilder {
+    pub fn builder() -> crate::operation::update_packaging_group::builders::UpdatePackagingGroupInputBuilder {
         crate::operation::update_packaging_group::builders::UpdatePackagingGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePackagingGroupInput`](crate::operation::update_packaging_group::UpdatePackagingGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePackagingGroupInputBuilder {
     pub(crate) authorization: ::std::option::Option<crate::types::Authorization>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -45,10 +42,7 @@ impl UpdatePackagingGroupInputBuilder {
         self
     }
     /// CDN Authorization credentials
-    pub fn set_authorization(
-        mut self,
-        input: ::std::option::Option<crate::types::Authorization>,
-    ) -> Self {
+    pub fn set_authorization(mut self, input: ::std::option::Option<crate::types::Authorization>) -> Self {
         self.authorization = input;
         self
     }
@@ -73,15 +67,11 @@ impl UpdatePackagingGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePackagingGroupInput`](crate::operation::update_packaging_group::UpdatePackagingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_packaging_group::UpdatePackagingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_packaging_group::UpdatePackagingGroupInput {
-                authorization: self.authorization,
-                id: self.id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_packaging_group::UpdatePackagingGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_packaging_group::UpdatePackagingGroupInput {
+            authorization: self.authorization,
+            id: self.id,
+        })
     }
 }

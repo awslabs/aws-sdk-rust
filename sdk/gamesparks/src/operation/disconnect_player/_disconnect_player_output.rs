@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DisconnectPlayerOutput {
 }
 impl DisconnectPlayerOutput {
     /// Creates a new builder-style object to manufacture [`DisconnectPlayerOutput`](crate::operation::disconnect_player::DisconnectPlayerOutput).
-    pub fn builder() -> crate::operation::disconnect_player::builders::DisconnectPlayerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disconnect_player::builders::DisconnectPlayerOutputBuilder {
         crate::operation::disconnect_player::builders::DisconnectPlayerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisconnectPlayerOutput`](crate::operation::disconnect_player::DisconnectPlayerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisconnectPlayerOutputBuilder {
     pub(crate) disconnect_successes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) disconnect_failures: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -50,27 +47,19 @@ impl DisconnectPlayerOutputBuilder {
     /// To override the contents of this collection use [`set_disconnect_successes`](Self::set_disconnect_successes).
     ///
     /// <p>The list of the connection ids that were disconnected.</p>
-    pub fn disconnect_successes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disconnect_successes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.disconnect_successes.unwrap_or_default();
         v.push(input.into());
         self.disconnect_successes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of the connection ids that were disconnected.</p>
-    pub fn set_disconnect_successes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_disconnect_successes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.disconnect_successes = input;
         self
     }
     /// <p>The list of the connection ids that were disconnected.</p>
-    pub fn get_disconnect_successes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_disconnect_successes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.disconnect_successes
     }
     /// Appends an item to `disconnect_failures`.
@@ -78,27 +67,19 @@ impl DisconnectPlayerOutputBuilder {
     /// To override the contents of this collection use [`set_disconnect_failures`](Self::set_disconnect_failures).
     ///
     /// <p>The list of the connection ids that could not be disconnected.</p>
-    pub fn disconnect_failures(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disconnect_failures(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.disconnect_failures.unwrap_or_default();
         v.push(input.into());
         self.disconnect_failures = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of the connection ids that could not be disconnected.</p>
-    pub fn set_disconnect_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_disconnect_failures(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.disconnect_failures = input;
         self
     }
     /// <p>The list of the connection ids that could not be disconnected.</p>
-    pub fn get_disconnect_failures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_disconnect_failures(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.disconnect_failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -65,9 +65,7 @@ impl AddMediaStreamRequest {
 
 /// A builder for [`AddMediaStreamRequest`](crate::types::AddMediaStreamRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddMediaStreamRequestBuilder {
     pub(crate) attributes: ::std::option::Option<crate::types::MediaStreamAttributesRequest>,
     pub(crate) clock_rate: ::std::option::Option<i32>,
@@ -84,17 +82,12 @@ impl AddMediaStreamRequestBuilder {
         self
     }
     /// The attributes that you want to assign to the new media stream.
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaStreamAttributesRequest>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::MediaStreamAttributesRequest>) -> Self {
         self.attributes = input;
         self
     }
     /// The attributes that you want to assign to the new media stream.
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::MediaStreamAttributesRequest> {
+    pub fn get_attributes(&self) -> &::std::option::Option<crate::types::MediaStreamAttributesRequest> {
         &self.attributes
     }
     /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
@@ -140,18 +133,12 @@ impl AddMediaStreamRequestBuilder {
         &self.media_stream_id
     }
     /// A name that helps you distinguish one media stream from another.
-    pub fn media_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// A name that helps you distinguish one media stream from another.
-    pub fn set_media_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_stream_name = input;
         self
     }
@@ -165,10 +152,7 @@ impl AddMediaStreamRequestBuilder {
         self
     }
     /// The type of media stream.
-    pub fn set_media_stream_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaStreamType>,
-    ) -> Self {
+    pub fn set_media_stream_type(mut self, input: ::std::option::Option<crate::types::MediaStreamType>) -> Self {
         self.media_stream_type = input;
         self
     }

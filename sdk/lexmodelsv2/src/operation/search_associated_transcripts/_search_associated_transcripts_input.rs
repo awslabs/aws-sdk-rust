@@ -64,24 +64,21 @@ impl SearchAssociatedTranscriptsInput {
 }
 impl SearchAssociatedTranscriptsInput {
     /// Creates a new builder-style object to manufacture [`SearchAssociatedTranscriptsInput`](crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsInput).
-    pub fn builder() -> crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsInputBuilder{
+    pub fn builder() -> crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsInputBuilder {
         crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchAssociatedTranscriptsInput`](crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchAssociatedTranscriptsInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) search_order: ::std::option::Option<crate::types::SearchOrder>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscriptFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscriptFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_index: ::std::option::Option<i32>,
 }
@@ -129,18 +126,12 @@ impl SearchAssociatedTranscriptsInputBuilder {
         &self.locale_id
     }
     /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
-    pub fn bot_recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_recommendation_id = input;
         self
     }
@@ -154,10 +145,7 @@ impl SearchAssociatedTranscriptsInputBuilder {
         self
     }
     /// <p>How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.</p>
-    pub fn set_search_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchOrder>,
-    ) -> Self {
+    pub fn set_search_order(mut self, input: ::std::option::Option<crate::types::SearchOrder>) -> Self {
         self.search_order = input;
         self
     }
@@ -177,17 +165,12 @@ impl SearchAssociatedTranscriptsInputBuilder {
         self
     }
     /// <p>A list of filter objects.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscriptFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscriptFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A list of filter objects.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscriptFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscriptFilter>> {
         &self.filters
     }
     /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
@@ -225,17 +208,15 @@ impl SearchAssociatedTranscriptsInputBuilder {
         crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsInput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                bot_recommendation_id: self.bot_recommendation_id,
-                search_order: self.search_order,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_index: self.next_index,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsInput {
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
+            bot_recommendation_id: self.bot_recommendation_id,
+            search_order: self.search_order,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_index: self.next_index,
+        })
     }
 }

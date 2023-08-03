@@ -57,17 +57,14 @@ impl GetTraceSummariesInput {
 }
 impl GetTraceSummariesInput {
     /// Creates a new builder-style object to manufacture [`GetTraceSummariesInput`](crate::operation::get_trace_summaries::GetTraceSummariesInput).
-    pub fn builder(
-    ) -> crate::operation::get_trace_summaries::builders::GetTraceSummariesInputBuilder {
+    pub fn builder() -> crate::operation::get_trace_summaries::builders::GetTraceSummariesInputBuilder {
         crate::operation::get_trace_summaries::builders::GetTraceSummariesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTraceSummariesInput`](crate::operation::get_trace_summaries::GetTraceSummariesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTraceSummariesInputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -84,10 +81,7 @@ impl GetTraceSummariesInputBuilder {
         self
     }
     /// <p>The start of the time frame for which to retrieve traces.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -101,10 +95,7 @@ impl GetTraceSummariesInputBuilder {
         self
     }
     /// <p>The end of the time frame for which to retrieve traces.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -118,10 +109,7 @@ impl GetTraceSummariesInputBuilder {
         self
     }
     /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
-    pub fn set_time_range_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeRangeType>,
-    ) -> Self {
+    pub fn set_time_range_type(mut self, input: ::std::option::Option<crate::types::TimeRangeType>) -> Self {
         self.time_range_type = input;
         self
     }
@@ -149,10 +137,7 @@ impl GetTraceSummariesInputBuilder {
         self
     }
     /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
-    pub fn set_sampling_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::SamplingStrategy>,
-    ) -> Self {
+    pub fn set_sampling_strategy(mut self, input: ::std::option::Option<crate::types::SamplingStrategy>) -> Self {
         self.sampling_strategy = input;
         self
     }
@@ -161,18 +146,12 @@ impl GetTraceSummariesInputBuilder {
         &self.sampling_strategy
     }
     /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
-    pub fn filter_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
-    pub fn set_filter_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_expression = input;
         self
     }
@@ -197,20 +176,15 @@ impl GetTraceSummariesInputBuilder {
     /// Consumes the builder and constructs a [`GetTraceSummariesInput`](crate::operation::get_trace_summaries::GetTraceSummariesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_trace_summaries::GetTraceSummariesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_trace_summaries::GetTraceSummariesInput {
-                start_time: self.start_time,
-                end_time: self.end_time,
-                time_range_type: self.time_range_type,
-                sampling: self.sampling,
-                sampling_strategy: self.sampling_strategy,
-                filter_expression: self.filter_expression,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_trace_summaries::GetTraceSummariesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_trace_summaries::GetTraceSummariesInput {
+            start_time: self.start_time,
+            end_time: self.end_time,
+            time_range_type: self.time_range_type,
+            sampling: self.sampling,
+            sampling_strategy: self.sampling_strategy,
+            filter_expression: self.filter_expression,
+            next_token: self.next_token,
+        })
     }
 }

@@ -15,18 +15,14 @@ impl CreateWebLoginTokenInput {
 }
 impl CreateWebLoginTokenInput {
     /// Creates a new builder-style object to manufacture [`CreateWebLoginTokenInput`](crate::operation::create_web_login_token::CreateWebLoginTokenInput).
-    pub fn builder(
-    ) -> crate::operation::create_web_login_token::builders::CreateWebLoginTokenInputBuilder {
-        crate::operation::create_web_login_token::builders::CreateWebLoginTokenInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_web_login_token::builders::CreateWebLoginTokenInputBuilder {
+        crate::operation::create_web_login_token::builders::CreateWebLoginTokenInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWebLoginTokenInput`](crate::operation::create_web_login_token::CreateWebLoginTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWebLoginTokenInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl CreateWebLoginTokenInputBuilder {
     /// Consumes the builder and constructs a [`CreateWebLoginTokenInput`](crate::operation::create_web_login_token::CreateWebLoginTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_web_login_token::CreateWebLoginTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_web_login_token::CreateWebLoginTokenInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::create_web_login_token::CreateWebLoginTokenInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_web_login_token::CreateWebLoginTokenInput { name: self.name })
     }
 }

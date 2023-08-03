@@ -65,14 +65,10 @@ impl RouteTable {
 
 /// A builder for [`RouteTable`](crate::types::RouteTable).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RouteTableBuilder {
-    pub(crate) associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::RouteTableAssociation>>,
-    pub(crate) propagating_vgws:
-        ::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgw>>,
+    pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::RouteTableAssociation>>,
+    pub(crate) propagating_vgws: ::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgw>>,
     pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -92,17 +88,12 @@ impl RouteTableBuilder {
         self
     }
     /// <p>The associations between the route table and one or more subnets or a gateway.</p>
-    pub fn set_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RouteTableAssociation>>,
-    ) -> Self {
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteTableAssociation>>) -> Self {
         self.associations = input;
         self
     }
     /// <p>The associations between the route table and one or more subnets or a gateway.</p>
-    pub fn get_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteTableAssociation>> {
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteTableAssociation>> {
         &self.associations
     }
     /// Appends an item to `propagating_vgws`.
@@ -117,32 +108,21 @@ impl RouteTableBuilder {
         self
     }
     /// <p>Any virtual private gateway (VGW) propagating routes.</p>
-    pub fn set_propagating_vgws(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgw>>,
-    ) -> Self {
+    pub fn set_propagating_vgws(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgw>>) -> Self {
         self.propagating_vgws = input;
         self
     }
     /// <p>Any virtual private gateway (VGW) propagating routes.</p>
-    pub fn get_propagating_vgws(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgw>> {
+    pub fn get_propagating_vgws(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgw>> {
         &self.propagating_vgws
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the route table.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_table_id = input;
         self
     }
@@ -162,10 +142,7 @@ impl RouteTableBuilder {
         self
     }
     /// <p>The routes in the route table.</p>
-    pub fn set_routes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
-    ) -> Self {
+    pub fn set_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Route>>) -> Self {
         self.routes = input;
         self
     }
@@ -185,10 +162,7 @@ impl RouteTableBuilder {
         self
     }
     /// <p>Any tags assigned to the route table.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

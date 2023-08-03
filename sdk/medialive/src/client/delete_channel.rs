@@ -24,11 +24,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::delete_channel::DeleteChannelOutput::tags): A collection of key-value pairs.
     ///   - [`vpc(Option<VpcOutputSettingsDescription>)`](crate::operation::delete_channel::DeleteChannelOutput::vpc): Settings for VPC output
     /// - On failure, responds with [`SdkError<DeleteChannelError>`](crate::operation::delete_channel::DeleteChannelError)
-    pub fn delete_channel(
-        &self,
-    ) -> crate::operation::delete_channel::builders::DeleteChannelFluentBuilder {
-        crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_channel(&self) -> crate::operation::delete_channel::builders::DeleteChannelFluentBuilder {
+        crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::new(self.handle.clone())
     }
 }

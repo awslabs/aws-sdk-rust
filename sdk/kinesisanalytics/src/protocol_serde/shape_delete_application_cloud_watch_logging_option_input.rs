@@ -13,9 +13,7 @@ pub fn ser_delete_application_cloud_watch_logging_option_input(
         );
     }
     if let Some(var_3) = &input.cloud_watch_logging_option_id {
-        object
-            .key("CloudWatchLoggingOptionId")
-            .string(var_3.as_str());
+        object.key("CloudWatchLoggingOptionId").string(var_3.as_str());
     }
     Ok(())
 }

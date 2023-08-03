@@ -26,7 +26,7 @@ impl PutRecommendationFeedbackInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRecommendationFeedbackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_recommendation_feedback::builders::PutRecommendationFeedbackInputBuilder,
+    inner: crate::operation::put_recommendation_feedback::builders::PutRecommendationFeedbackInputBuilder,
 }
 impl PutRecommendationFeedbackFluentBuilder {
     /// Creates a new `PutRecommendationFeedback`.
@@ -37,7 +37,7 @@ impl PutRecommendationFeedbackFluentBuilder {
         }
     }
     /// Access the PutRecommendationFeedback as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_recommendation_feedback::builders::PutRecommendationFeedbackInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_recommendation_feedback::builders::PutRecommendationFeedbackInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PutRecommendationFeedbackFluentBuilder {
             crate::operation::put_recommendation_feedback::PutRecommendationFeedback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_recommendation_feedback::PutRecommendationFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_recommendation_feedback::PutRecommendationFeedbackError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PutRecommendationFeedbackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PutRecommendationFeedbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_recommendation_feedback::PutRecommendationFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_recommendation_feedback::PutRecommendationFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_recommendation_feedback::PutRecommendationFeedbackError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PutRecommendationFeedbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_recommendation_feedback::PutRecommendationFeedbackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_recommendation_feedback::PutRecommendationFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_recommendation_feedback::PutRecommendationFeedbackError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl PutRecommendationFeedbackFluentBuilder {
             crate::operation::put_recommendation_feedback::PutRecommendationFeedback,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_recommendation_feedback::PutRecommendationFeedbackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_recommendation_feedback::PutRecommendationFeedbackError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_review_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code_review_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn set_code_review_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_review_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code_review_arn(input);
         self
     }
@@ -141,18 +124,12 @@ impl PutRecommendationFeedbackFluentBuilder {
         self.inner.get_code_review_arn()
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recommendation_id(input.into());
         self
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recommendation_id(input);
         self
     }
@@ -170,10 +147,7 @@ impl PutRecommendationFeedbackFluentBuilder {
         self
     }
     /// <p>List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.</p>
-    pub fn set_reactions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Reaction>>,
-    ) -> Self {
+    pub fn set_reactions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Reaction>>) -> Self {
         self.inner = self.inner.set_reactions(input);
         self
     }

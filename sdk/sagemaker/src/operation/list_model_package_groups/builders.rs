@@ -26,8 +26,7 @@ impl ListModelPackageGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListModelPackageGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_model_package_groups::builders::ListModelPackageGroupsInputBuilder,
+    inner: crate::operation::list_model_package_groups::builders::ListModelPackageGroupsInputBuilder,
 }
 impl ListModelPackageGroupsFluentBuilder {
     /// Creates a new `ListModelPackageGroups`.
@@ -38,10 +37,7 @@ impl ListModelPackageGroupsFluentBuilder {
         }
     }
     /// Access the ListModelPackageGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_model_package_groups::builders::ListModelPackageGroupsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_model_package_groups::builders::ListModelPackageGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListModelPackageGroupsFluentBuilder {
             crate::operation::list_model_package_groups::ListModelPackageGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_package_groups::ListModelPackageGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_package_groups::ListModelPackageGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListModelPackageGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListModelPackageGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_model_package_groups::ListModelPackageGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_package_groups::ListModelPackageGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_package_groups::ListModelPackageGroupsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListModelPackageGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_model_package_groups::ListModelPackageGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_package_groups::ListModelPackageGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_package_groups::ListModelPackageGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -118,23 +105,15 @@ impl ListModelPackageGroupsFluentBuilder {
             crate::operation::list_model_package_groups::ListModelPackageGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_package_groups::ListModelPackageGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_package_groups::ListModelPackageGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_model_package_groups::paginator::ListModelPackageGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_model_package_groups::paginator::ListModelPackageGroupsPaginator
-    {
-        crate::operation::list_model_package_groups::paginator::ListModelPackageGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_model_package_groups::paginator::ListModelPackageGroupsPaginator {
+        crate::operation::list_model_package_groups::paginator::ListModelPackageGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>A filter that returns only model groups created after the specified time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -142,10 +121,7 @@ impl ListModelPackageGroupsFluentBuilder {
         self
     }
     /// <p>A filter that returns only model groups created after the specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -159,10 +135,7 @@ impl ListModelPackageGroupsFluentBuilder {
         self
     }
     /// <p>A filter that returns only model groups created before the specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -185,18 +158,12 @@ impl ListModelPackageGroupsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>A string in the model group name. This filter returns only model groups whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>A string in the model group name. This filter returns only model groups whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -224,10 +191,7 @@ impl ListModelPackageGroupsFluentBuilder {
         self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackageGroupSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ModelPackageGroupSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

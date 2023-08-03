@@ -35,9 +35,7 @@ impl ExportFormsOutput {
 
 /// A builder for [`ExportFormsOutput`](crate::operation::export_forms::ExportFormsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportFormsOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::Form>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ExportFormsOutputBuilder {
         self
     }
     /// <p>Represents the configuration of the exported forms.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Form>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Form>>) -> Self {
         self.entities = input;
         self
     }

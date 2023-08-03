@@ -13,18 +13,13 @@ pub fn ser_data_destination_config(
         crate::types::DataDestinationConfig::TimestreamConfig(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_28.key("timestreamConfig").start_object();
-            crate::protocol_serde::shape_timestream_config::ser_timestream_config(
-                &mut object_2,
-                inner,
-            )?;
+            crate::protocol_serde::shape_timestream_config::ser_timestream_config(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::DataDestinationConfig::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "DataDestinationConfig",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "DataDestinationConfig",
+            ))
         }
     }
     Ok(())
@@ -32,17 +27,9 @@ pub fn ser_data_destination_config(
 
 pub(crate) fn de_data_destination_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::DataDestinationConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::DataDestinationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -52,47 +39,39 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "s3Config" => {
-                                Some(crate::types::DataDestinationConfig::S3Config(
-                                    crate::protocol_serde::shape_s3_config::de_s3_config(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3Config' cannot be null"))?
-                                ))
-                            }
-                            "timestreamConfig" => {
-                                Some(crate::types::DataDestinationConfig::TimestreamConfig(
-                                    crate::protocol_serde::shape_timestream_config::de_timestream_config(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'timestreamConfig' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::DataDestinationConfig::Unknown)
-                                                                    }
-                        };
+                        "s3Config" => Some(crate::types::DataDestinationConfig::S3Config(
+                            crate::protocol_serde::shape_s3_config::de_s3_config(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3Config' cannot be null")
+                            })?,
+                        )),
+                        "timestreamConfig" => Some(crate::types::DataDestinationConfig::TimestreamConfig(
+                            crate::protocol_serde::shape_timestream_config::de_timestream_config(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'timestreamConfig' cannot be null")
+                            })?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::DataDestinationConfig::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

@@ -30,9 +30,7 @@ impl InstanceRefreshWarmPoolProgress {
 
 /// A builder for [`InstanceRefreshWarmPoolProgress`](crate::types::InstanceRefreshWarmPoolProgress).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceRefreshWarmPoolProgressBuilder {
     pub(crate) percentage_complete: ::std::option::Option<i32>,
     pub(crate) instances_to_update: ::std::option::Option<i32>,

@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::create_component_type::CreateComponentTypeOutput::creation_date_time): <p>The date and time when the entity was created.</p>
     ///   - [`state(Option<State>)`](crate::operation::create_component_type::CreateComponentTypeOutput::state): <p>The current state of the component type.</p>
     /// - On failure, responds with [`SdkError<CreateComponentTypeError>`](crate::operation::create_component_type::CreateComponentTypeError)
-    pub fn create_component_type(
-        &self,
-    ) -> crate::operation::create_component_type::builders::CreateComponentTypeFluentBuilder {
-        crate::operation::create_component_type::builders::CreateComponentTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_component_type(&self) -> crate::operation::create_component_type::builders::CreateComponentTypeFluentBuilder {
+        crate::operation::create_component_type::builders::CreateComponentTypeFluentBuilder::new(self.handle.clone())
     }
 }

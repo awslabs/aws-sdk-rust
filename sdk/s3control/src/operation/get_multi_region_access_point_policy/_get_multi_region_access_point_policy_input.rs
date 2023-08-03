@@ -22,16 +22,14 @@ impl GetMultiRegionAccessPointPolicyInput {
 }
 impl GetMultiRegionAccessPointPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyInput`](crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyInput).
-    pub fn builder() -> crate::operation::get_multi_region_access_point_policy::builders::GetMultiRegionAccessPointPolicyInputBuilder{
+    pub fn builder() -> crate::operation::get_multi_region_access_point_policy::builders::GetMultiRegionAccessPointPolicyInputBuilder {
         crate::operation::get_multi_region_access_point_policy::builders::GetMultiRegionAccessPointPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMultiRegionAccessPointPolicyInput`](crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointPolicyInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl GetMultiRegionAccessPointPolicyInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetMultiRegionAccessPointPolicyInput`](crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyInput {
-                account_id: self.account_id
-                ,
-                name: self.name
-                ,
-            }
+                account_id: self.account_id,
+                name: self.name,
+            },
         )
     }
 }

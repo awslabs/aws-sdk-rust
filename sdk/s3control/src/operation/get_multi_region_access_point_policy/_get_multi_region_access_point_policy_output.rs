@@ -10,9 +10,7 @@ pub struct GetMultiRegionAccessPointPolicyOutput {
 }
 impl GetMultiRegionAccessPointPolicyOutput {
     /// <p>The policy associated with the specified Multi-Region Access Point.</p>
-    pub fn policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MultiRegionAccessPointPolicyDocument> {
+    pub fn policy(&self) -> ::std::option::Option<&crate::types::MultiRegionAccessPointPolicyDocument> {
         self.policy.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetMultiRegionAccessPointPolicyOutput
 }
 impl GetMultiRegionAccessPointPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyOutput`](crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyOutput).
-    pub fn builder() -> crate::operation::get_multi_region_access_point_policy::builders::GetMultiRegionAccessPointPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::get_multi_region_access_point_policy::builders::GetMultiRegionAccessPointPolicyOutputBuilder {
         crate::operation::get_multi_region_access_point_policy::builders::GetMultiRegionAccessPointPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMultiRegionAccessPointPolicyOutput`](crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<crate::types::MultiRegionAccessPointPolicyDocument>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetMultiRegionAccessPointPolicyOutputBuilder {
         self
     }
     /// <p>The policy associated with the specified Multi-Region Access Point.</p>
-    pub fn set_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiRegionAccessPointPolicyDocument>,
-    ) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<crate::types::MultiRegionAccessPointPolicyDocument>) -> Self {
         self.policy = input;
         self
     }
     /// <p>The policy associated with the specified Multi-Region Access Point.</p>
-    pub fn get_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiRegionAccessPointPolicyDocument> {
+    pub fn get_policy(&self) -> &::std::option::Option<crate::types::MultiRegionAccessPointPolicyDocument> {
         &self.policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,13 +58,9 @@ impl GetMultiRegionAccessPointPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMultiRegionAccessPointPolicyOutput`](crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyOutput
-    {
+    pub fn build(self) -> crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyOutput {
         crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyOutput {
-            policy: self.policy
-            ,
+            policy: self.policy,
             _request_id: self._request_id,
         }
     }

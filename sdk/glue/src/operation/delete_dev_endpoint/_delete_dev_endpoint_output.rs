@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDevEndpointOutput {
 }
 impl DeleteDevEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDevEndpointOutput`](crate::operation::delete_dev_endpoint::DeleteDevEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointOutputBuilder {
         crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDevEndpointOutput`](crate::operation::delete_dev_endpoint::DeleteDevEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDevEndpointOutputBuilder {
     _request_id: Option<String>,
 }

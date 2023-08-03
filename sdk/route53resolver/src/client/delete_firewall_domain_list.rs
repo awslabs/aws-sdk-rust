@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteFirewallDomainListOutput`](crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListOutput) with field(s):
     ///   - [`firewall_domain_list(Option<FirewallDomainList>)`](crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListOutput::firewall_domain_list): <p>The domain list that you just deleted. </p>
     /// - On failure, responds with [`SdkError<DeleteFirewallDomainListError>`](crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError)
-    pub fn delete_firewall_domain_list(&self) -> crate::operation::delete_firewall_domain_list::builders::DeleteFirewallDomainListFluentBuilder{
+    pub fn delete_firewall_domain_list(&self) -> crate::operation::delete_firewall_domain_list::builders::DeleteFirewallDomainListFluentBuilder {
         crate::operation::delete_firewall_domain_list::builders::DeleteFirewallDomainListFluentBuilder::new(self.handle.clone())
     }
 }

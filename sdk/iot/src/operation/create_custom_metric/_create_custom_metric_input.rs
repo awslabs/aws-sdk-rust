@@ -47,17 +47,14 @@ impl CreateCustomMetricInput {
 }
 impl CreateCustomMetricInput {
     /// Creates a new builder-style object to manufacture [`CreateCustomMetricInput`](crate::operation::create_custom_metric::CreateCustomMetricInput).
-    pub fn builder(
-    ) -> crate::operation::create_custom_metric::builders::CreateCustomMetricInputBuilder {
+    pub fn builder() -> crate::operation::create_custom_metric::builders::CreateCustomMetricInputBuilder {
         crate::operation::create_custom_metric::builders::CreateCustomMetricInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCustomMetricInput`](crate::operation::create_custom_metric::CreateCustomMetricInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCustomMetricInputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -104,10 +101,7 @@ impl CreateCustomMetricInputBuilder {
     /// <p> The type of the custom metric. </p> <important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but when you submit the metrics value in the DeviceMetrics report, you must pass it as an array with a single value.</p>
     /// </important>
-    pub fn set_metric_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomMetricType>,
-    ) -> Self {
+    pub fn set_metric_type(mut self, input: ::std::option::Option<crate::types::CustomMetricType>) -> Self {
         self.metric_type = input;
         self
     }
@@ -129,10 +123,7 @@ impl CreateCustomMetricInputBuilder {
         self
     }
     /// <p> Metadata that can be used to manage the custom metric. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -141,18 +132,12 @@ impl CreateCustomMetricInputBuilder {
         &self.tags
     }
     /// <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -163,18 +148,13 @@ impl CreateCustomMetricInputBuilder {
     /// Consumes the builder and constructs a [`CreateCustomMetricInput`](crate::operation::create_custom_metric::CreateCustomMetricInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_custom_metric::CreateCustomMetricInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_custom_metric::CreateCustomMetricInput {
-                metric_name: self.metric_name,
-                display_name: self.display_name,
-                metric_type: self.metric_type,
-                tags: self.tags,
-                client_request_token: self.client_request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_custom_metric::CreateCustomMetricInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_custom_metric::CreateCustomMetricInput {
+            metric_name: self.metric_name,
+            display_name: self.display_name,
+            metric_type: self.metric_type,
+            tags: self.tags,
+            client_request_token: self.client_request_token,
+        })
     }
 }

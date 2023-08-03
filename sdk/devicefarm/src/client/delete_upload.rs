@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_upload::builders::DeleteUploadFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_upload::builders::DeleteUploadFluentBuilder::set_arn): <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete.</p>
     /// - On success, responds with [`DeleteUploadOutput`](crate::operation::delete_upload::DeleteUploadOutput)
     /// - On failure, responds with [`SdkError<DeleteUploadError>`](crate::operation::delete_upload::DeleteUploadError)
-    pub fn delete_upload(
-        &self,
-    ) -> crate::operation::delete_upload::builders::DeleteUploadFluentBuilder {
-        crate::operation::delete_upload::builders::DeleteUploadFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_upload(&self) -> crate::operation::delete_upload::builders::DeleteUploadFluentBuilder {
+        crate::operation::delete_upload::builders::DeleteUploadFluentBuilder::new(self.handle.clone())
     }
 }

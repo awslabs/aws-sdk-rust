@@ -37,9 +37,7 @@ impl ExecutionDetails {
 
 /// A builder for [`ExecutionDetails`](crate::types::ExecutionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecutionDetailsBuilder {
     pub(crate) summary: ::std::option::Option<::std::string::String>,
     pub(crate) external_execution_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl ExecutionDetailsBuilder {
         &self.summary
     }
     /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as CodeDeploy.</p>
-    pub fn external_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as CodeDeploy.</p>
-    pub fn set_external_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_execution_id = input;
         self
     }

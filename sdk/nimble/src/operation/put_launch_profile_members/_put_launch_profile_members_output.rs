@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutLaunchProfileMembersOutput {
 }
 impl PutLaunchProfileMembersOutput {
     /// Creates a new builder-style object to manufacture [`PutLaunchProfileMembersOutput`](crate::operation::put_launch_profile_members::PutLaunchProfileMembersOutput).
-    pub fn builder(
-    ) -> crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersOutputBuilder {
         crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutLaunchProfileMembersOutput`](crate::operation::put_launch_profile_members::PutLaunchProfileMembersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutLaunchProfileMembersOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl PutLaunchProfileMembersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutLaunchProfileMembersOutput`](crate::operation::put_launch_profile_members::PutLaunchProfileMembersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_launch_profile_members::PutLaunchProfileMembersOutput {
+    pub fn build(self) -> crate::operation::put_launch_profile_members::PutLaunchProfileMembersOutput {
         crate::operation::put_launch_profile_members::PutLaunchProfileMembersOutput {
             _request_id: self._request_id,
         }

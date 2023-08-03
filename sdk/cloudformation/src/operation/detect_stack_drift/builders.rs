@@ -10,10 +10,7 @@ impl DetectStackDriftInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::detect_stack_drift::DetectStackDriftOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_stack_drift::DetectStackDriftError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_stack_drift::DetectStackDriftError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.detect_stack_drift();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl DetectStackDriftFluentBuilder {
         }
     }
     /// Access the DetectStackDrift as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detect_stack_drift::builders::DetectStackDriftInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::detect_stack_drift::builders::DetectStackDriftInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl DetectStackDriftFluentBuilder {
             crate::operation::detect_stack_drift::DetectStackDrift,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_stack_drift::DetectStackDriftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_stack_drift::DetectStackDriftError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl DetectStackDriftFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl DetectStackDriftFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_stack_drift::DetectStackDriftOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_stack_drift::DetectStackDriftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_stack_drift::DetectStackDriftError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl DetectStackDriftFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_stack_drift::DetectStackDriftOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_stack_drift::DetectStackDriftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_stack_drift::DetectStackDriftError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl DetectStackDriftFluentBuilder {
             crate::operation::detect_stack_drift::DetectStackDrift,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_stack_drift::DetectStackDriftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_stack_drift::DetectStackDriftError>,
     > {
         self.customize_middleware().await
     }
@@ -145,25 +129,17 @@ impl DetectStackDriftFluentBuilder {
     /// To override the contents of this collection use [`set_logical_resource_ids`](Self::set_logical_resource_ids).
     ///
     /// <p>The logical names of any resources you want to use as filters.</p>
-    pub fn logical_resource_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logical_resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logical_resource_ids(input.into());
         self
     }
     /// <p>The logical names of any resources you want to use as filters.</p>
-    pub fn set_logical_resource_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_logical_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_logical_resource_ids(input);
         self
     }
     /// <p>The logical names of any resources you want to use as filters.</p>
-    pub fn get_logical_resource_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_logical_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_logical_resource_ids()
     }
 }

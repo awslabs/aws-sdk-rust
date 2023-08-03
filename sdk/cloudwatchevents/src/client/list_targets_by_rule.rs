@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`targets(Option<Vec<Target>>)`](crate::operation::list_targets_by_rule::ListTargetsByRuleOutput::targets): <p>The targets assigned to the rule.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_targets_by_rule::ListTargetsByRuleOutput::next_token): <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
     /// - On failure, responds with [`SdkError<ListTargetsByRuleError>`](crate::operation::list_targets_by_rule::ListTargetsByRuleError)
-    pub fn list_targets_by_rule(
-        &self,
-    ) -> crate::operation::list_targets_by_rule::builders::ListTargetsByRuleFluentBuilder {
-        crate::operation::list_targets_by_rule::builders::ListTargetsByRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_targets_by_rule(&self) -> crate::operation::list_targets_by_rule::builders::ListTargetsByRuleFluentBuilder {
+        crate::operation::list_targets_by_rule::builders::ListTargetsByRuleFluentBuilder::new(self.handle.clone())
     }
 }

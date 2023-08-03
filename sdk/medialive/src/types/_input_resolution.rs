@@ -39,13 +39,7 @@
 /// Input resolution based on lines of vertical resolution in the input; SD is less than 720 lines, HD is 720 to 1080 lines, UHD is greater than 1080 lines
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InputResolution {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for InputResolution {
             "HD" => InputResolution::Hd,
             "SD" => InputResolution::Sd,
             "UHD" => InputResolution::Uhd,
-            other => {
-                InputResolution::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => InputResolution::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

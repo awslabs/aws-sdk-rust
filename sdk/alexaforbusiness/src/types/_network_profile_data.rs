@@ -65,9 +65,7 @@ impl NetworkProfileData {
 
 /// A builder for [`NetworkProfileData`](crate::types::NetworkProfileData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkProfileDataBuilder {
     pub(crate) network_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_profile_name: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct NetworkProfileDataBuilder {
 }
 impl NetworkProfileDataBuilder {
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn set_network_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_profile_arn = input;
         self
     }
@@ -99,18 +91,12 @@ impl NetworkProfileDataBuilder {
         &self.network_profile_arn
     }
     /// <p>The name of the network profile associated with a device.</p>
-    pub fn network_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the network profile associated with a device.</p>
-    pub fn set_network_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_profile_name = input;
         self
     }
@@ -152,10 +138,7 @@ impl NetworkProfileDataBuilder {
         self
     }
     /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
-    pub fn set_security_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkSecurityType>,
-    ) -> Self {
+    pub fn set_security_type(mut self, input: ::std::option::Option<crate::types::NetworkSecurityType>) -> Self {
         self.security_type = input;
         self
     }
@@ -169,10 +152,7 @@ impl NetworkProfileDataBuilder {
         self
     }
     /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
-    pub fn set_eap_method(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkEapMethod>,
-    ) -> Self {
+    pub fn set_eap_method(mut self, input: ::std::option::Option<crate::types::NetworkEapMethod>) -> Self {
         self.eap_method = input;
         self
     }
@@ -181,18 +161,12 @@ impl NetworkProfileDataBuilder {
         &self.eap_method
     }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_arn = input;
         self
     }

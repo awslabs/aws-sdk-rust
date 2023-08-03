@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`BatchSnoozeAlarmOutput`](crate::operation::batch_snooze_alarm::BatchSnoozeAlarmOutput) with field(s):
     ///   - [`error_entries(Option<Vec<BatchAlarmActionErrorEntry>>)`](crate::operation::batch_snooze_alarm::BatchSnoozeAlarmOutput::error_entries): <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     /// - On failure, responds with [`SdkError<BatchSnoozeAlarmError>`](crate::operation::batch_snooze_alarm::BatchSnoozeAlarmError)
-    pub fn batch_snooze_alarm(
-        &self,
-    ) -> crate::operation::batch_snooze_alarm::builders::BatchSnoozeAlarmFluentBuilder {
-        crate::operation::batch_snooze_alarm::builders::BatchSnoozeAlarmFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_snooze_alarm(&self) -> crate::operation::batch_snooze_alarm::builders::BatchSnoozeAlarmFluentBuilder {
+        crate::operation::batch_snooze_alarm::builders::BatchSnoozeAlarmFluentBuilder::new(self.handle.clone())
     }
 }

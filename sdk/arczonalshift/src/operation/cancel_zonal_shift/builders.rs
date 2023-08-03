@@ -10,10 +10,7 @@ impl CancelZonalShiftInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_zonal_shift::CancelZonalShiftOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_zonal_shift::CancelZonalShiftError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_zonal_shift::CancelZonalShiftError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_zonal_shift();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CancelZonalShiftFluentBuilder {
         }
     }
     /// Access the CancelZonalShift as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_zonal_shift::builders::CancelZonalShiftInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_zonal_shift::builders::CancelZonalShiftInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CancelZonalShiftFluentBuilder {
             crate::operation::cancel_zonal_shift::CancelZonalShift,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_zonal_shift::CancelZonalShiftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_zonal_shift::CancelZonalShiftError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CancelZonalShiftFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CancelZonalShiftFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_zonal_shift::CancelZonalShiftOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_zonal_shift::CancelZonalShiftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_zonal_shift::CancelZonalShiftError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CancelZonalShiftFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_zonal_shift::CancelZonalShiftOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_zonal_shift::CancelZonalShiftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_zonal_shift::CancelZonalShiftError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CancelZonalShiftFluentBuilder {
             crate::operation::cancel_zonal_shift::CancelZonalShift,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_zonal_shift::CancelZonalShiftError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_zonal_shift::CancelZonalShiftError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The internally-generated identifier of a zonal shift.</p>
-    pub fn zonal_shift_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn zonal_shift_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.zonal_shift_id(input.into());
         self
     }
     /// <p>The internally-generated identifier of a zonal shift.</p>
-    pub fn set_zonal_shift_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_zonal_shift_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_zonal_shift_id(input);
         self
     }

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`PutModelPackageGroupPolicyOutput`](crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyOutput) with field(s):
     ///   - [`model_package_group_arn(Option<String>)`](crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyOutput::model_package_group_arn): <p>The Amazon Resource Name (ARN) of the model package group.</p>
     /// - On failure, responds with [`SdkError<PutModelPackageGroupPolicyError>`](crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyError)
-    pub fn put_model_package_group_policy(&self) -> crate::operation::put_model_package_group_policy::builders::PutModelPackageGroupPolicyFluentBuilder{
+    pub fn put_model_package_group_policy(
+        &self,
+    ) -> crate::operation::put_model_package_group_policy::builders::PutModelPackageGroupPolicyFluentBuilder {
         crate::operation::put_model_package_group_policy::builders::PutModelPackageGroupPolicyFluentBuilder::new(self.handle.clone())
     }
 }

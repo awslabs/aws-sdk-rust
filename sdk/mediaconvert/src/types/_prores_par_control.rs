@@ -38,13 +38,7 @@
 /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR, choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ProresParControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for ProresParControl {
         match s {
             "INITIALIZE_FROM_SOURCE" => ProresParControl::InitializeFromSource,
             "SPECIFIED" => ProresParControl::Specified,
-            other => {
-                ProresParControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ProresParControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

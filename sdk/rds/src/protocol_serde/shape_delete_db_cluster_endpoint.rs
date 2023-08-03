@@ -9,76 +9,79 @@ pub fn de_delete_db_cluster_endpoint_http_error(
     crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(
-            crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::unhandled(
+        None => {
+            return Err(crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::unhandled(
                 generic,
-            ),
-        ),
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterEndpointNotFoundFault" => crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::DbClusterEndpointNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DBClusterEndpointNotFoundFault" => {
+            crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::DbClusterEndpointNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbClusterEndpointNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_cluster_endpoint_not_found_fault::de_db_cluster_endpoint_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_endpoint_not_found_fault::de_db_cluster_endpoint_not_found_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidDBClusterEndpointStateFault" => crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::InvalidDbClusterEndpointStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidDBClusterEndpointStateFault" => {
+            crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::InvalidDbClusterEndpointStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDbClusterEndpointStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_db_cluster_endpoint_state_fault::de_invalid_db_cluster_endpoint_state_fault_xml_err(_response_body, output).map_err(crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_invalid_db_cluster_endpoint_state_fault::de_invalid_db_cluster_endpoint_state_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InvalidDBClusterStateFault" => crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::InvalidDbClusterStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(_response_body, output).map_err(crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::generic(generic)
+        _ => crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::generic(generic),
     })
 }
 
@@ -94,10 +97,9 @@ pub fn de_delete_db_cluster_endpoint_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_db_cluster_endpoint::builders::DeleteDbClusterEndpointOutputBuilder::default();
-        output = crate::protocol_serde::shape_delete_db_cluster_endpoint::de_delete_db_cluster_endpoint(_response_body, output).map_err(crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_delete_db_cluster_endpoint::de_delete_db_cluster_endpoint(_response_body, output)
+            .map_err(crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -106,10 +108,7 @@ pub fn de_delete_db_cluster_endpoint_http_response_with_props(
 pub fn de_delete_db_cluster_endpoint(
     inp: &[u8],
     mut builder: crate::operation::delete_db_cluster_endpoint::builders::DeleteDbClusterEndpointOutputBuilder,
-) -> Result<
-    crate::operation::delete_db_cluster_endpoint::builders::DeleteDbClusterEndpointOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::delete_db_cluster_endpoint::builders::DeleteDbClusterEndpointOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

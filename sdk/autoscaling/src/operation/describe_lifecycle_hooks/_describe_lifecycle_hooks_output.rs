@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeLifecycleHooksOutput {
 }
 impl DescribeLifecycleHooksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLifecycleHooksOutput`](crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_lifecycle_hooks::builders::DescribeLifecycleHooksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_lifecycle_hooks::builders::DescribeLifecycleHooksOutputBuilder {
         crate::operation::describe_lifecycle_hooks::builders::DescribeLifecycleHooksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLifecycleHooksOutput`](crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLifecycleHooksOutputBuilder {
     pub(crate) lifecycle_hooks: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleHook>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl DescribeLifecycleHooksOutputBuilder {
         self
     }
     /// <p>The lifecycle hooks for the specified group.</p>
-    pub fn set_lifecycle_hooks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleHook>>,
-    ) -> Self {
+    pub fn set_lifecycle_hooks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleHook>>) -> Self {
         self.lifecycle_hooks = input;
         self
     }
     /// <p>The lifecycle hooks for the specified group.</p>
-    pub fn get_lifecycle_hooks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleHook>> {
+    pub fn get_lifecycle_hooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleHook>> {
         &self.lifecycle_hooks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

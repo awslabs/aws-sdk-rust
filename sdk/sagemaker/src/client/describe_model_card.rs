@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_model_card::DescribeModelCardOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`model_card_processing_status(Option<ModelCardProcessingStatus>)`](crate::operation::describe_model_card::DescribeModelCardOutput::model_card_processing_status): <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>  <ul>   <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li>   <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li>   <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li>   <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li>   <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>   <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DescribeModelCardError>`](crate::operation::describe_model_card::DescribeModelCardError)
-    pub fn describe_model_card(
-        &self,
-    ) -> crate::operation::describe_model_card::builders::DescribeModelCardFluentBuilder {
-        crate::operation::describe_model_card::builders::DescribeModelCardFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_model_card(&self) -> crate::operation::describe_model_card::builders::DescribeModelCardFluentBuilder {
+        crate::operation::describe_model_card::builders::DescribeModelCardFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ pub struct ComplianceItem {
     pub execution_summary: ::std::option::Option<crate::types::ComplianceExecutionSummary>,
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
     #[doc(hidden)]
-    pub details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ComplianceItem {
     /// <p>The compliance type. For example, Association (for a State Manager association), Patch, or Custom:<code>string</code> are all valid compliance types.</p>
@@ -64,17 +62,11 @@ impl ComplianceItem {
         self.severity.as_ref()
     }
     /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p>
-    pub fn execution_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ComplianceExecutionSummary> {
+    pub fn execution_summary(&self) -> ::std::option::Option<&crate::types::ComplianceExecutionSummary> {
         self.execution_summary.as_ref()
     }
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
-    pub fn details(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.details.as_ref()
     }
 }
@@ -87,9 +79,7 @@ impl ComplianceItem {
 
 /// A builder for [`ComplianceItem`](crate::types::ComplianceItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComplianceItemBuilder {
     pub(crate) compliance_type: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
@@ -99,24 +89,16 @@ pub struct ComplianceItemBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ComplianceStatus>,
     pub(crate) severity: ::std::option::Option<crate::types::ComplianceSeverity>,
     pub(crate) execution_summary: ::std::option::Option<crate::types::ComplianceExecutionSummary>,
-    pub(crate) details: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ComplianceItemBuilder {
     /// <p>The compliance type. For example, Association (for a State Manager association), Patch, or Custom:<code>string</code> are all valid compliance types.</p>
-    pub fn compliance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compliance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compliance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The compliance type. For example, Association (for a State Manager association), Patch, or Custom:<code>string</code> are all valid compliance types.</p>
-    pub fn set_compliance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_compliance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compliance_type = input;
         self
     }
@@ -125,18 +107,12 @@ impl ComplianceItemBuilder {
         &self.compliance_type
     }
     /// <p>The type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -192,10 +168,7 @@ impl ComplianceItemBuilder {
         self
     }
     /// <p>The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows patches that aren't applicable).</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -209,10 +182,7 @@ impl ComplianceItemBuilder {
         self
     }
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
-    pub fn set_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceSeverity>,
-    ) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::ComplianceSeverity>) -> Self {
         self.severity = input;
         self
     }
@@ -226,17 +196,12 @@ impl ComplianceItemBuilder {
         self
     }
     /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p>
-    pub fn set_execution_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceExecutionSummary>,
-    ) -> Self {
+    pub fn set_execution_summary(mut self, input: ::std::option::Option<crate::types::ComplianceExecutionSummary>) -> Self {
         self.execution_summary = input;
         self
     }
     /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p>
-    pub fn get_execution_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComplianceExecutionSummary> {
+    pub fn get_execution_summary(&self) -> &::std::option::Option<crate::types::ComplianceExecutionSummary> {
         &self.execution_summary
     }
     /// Adds a key-value pair to `details`.
@@ -244,32 +209,19 @@ impl ComplianceItemBuilder {
     /// To override the contents of this collection use [`set_details`](Self::set_details).
     ///
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
-    pub fn details(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn details(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.details.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.details = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.details = input;
         self
     }
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
-    pub fn get_details(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.details
     }
     /// Consumes the builder and constructs a [`ComplianceItem`](crate::types::ComplianceItem).

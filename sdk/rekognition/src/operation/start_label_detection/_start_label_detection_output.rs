@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartLabelDetectionOutput {
 }
 impl StartLabelDetectionOutput {
     /// Creates a new builder-style object to manufacture [`StartLabelDetectionOutput`](crate::operation::start_label_detection::StartLabelDetectionOutput).
-    pub fn builder(
-    ) -> crate::operation::start_label_detection::builders::StartLabelDetectionOutputBuilder {
-        crate::operation::start_label_detection::builders::StartLabelDetectionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_label_detection::builders::StartLabelDetectionOutputBuilder {
+        crate::operation::start_label_detection::builders::StartLabelDetectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartLabelDetectionOutput`](crate::operation::start_label_detection::StartLabelDetectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartLabelDetectionOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

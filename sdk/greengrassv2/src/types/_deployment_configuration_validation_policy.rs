@@ -25,9 +25,7 @@ impl DeploymentConfigurationValidationPolicy {
 
 /// A builder for [`DeploymentConfigurationValidationPolicy`](crate::types::DeploymentConfigurationValidationPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentConfigurationValidationPolicyBuilder {
     pub(crate) timeout_in_seconds: ::std::option::Option<i32>,
 }

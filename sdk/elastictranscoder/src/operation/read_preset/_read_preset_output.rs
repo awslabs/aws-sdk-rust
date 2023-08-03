@@ -29,9 +29,7 @@ impl ReadPresetOutput {
 
 /// A builder for [`ReadPresetOutput`](crate::operation::read_preset::ReadPresetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReadPresetOutputBuilder {
     pub(crate) preset: ::std::option::Option<crate::types::Preset>,
     _request_id: Option<String>,

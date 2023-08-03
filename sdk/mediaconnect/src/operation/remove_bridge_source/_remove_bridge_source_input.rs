@@ -22,17 +22,14 @@ impl RemoveBridgeSourceInput {
 }
 impl RemoveBridgeSourceInput {
     /// Creates a new builder-style object to manufacture [`RemoveBridgeSourceInput`](crate::operation::remove_bridge_source::RemoveBridgeSourceInput).
-    pub fn builder(
-    ) -> crate::operation::remove_bridge_source::builders::RemoveBridgeSourceInputBuilder {
+    pub fn builder() -> crate::operation::remove_bridge_source::builders::RemoveBridgeSourceInputBuilder {
         crate::operation::remove_bridge_source::builders::RemoveBridgeSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveBridgeSourceInput`](crate::operation::remove_bridge_source::RemoveBridgeSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveBridgeSourceInputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_name: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl RemoveBridgeSourceInputBuilder {
     /// Consumes the builder and constructs a [`RemoveBridgeSourceInput`](crate::operation::remove_bridge_source::RemoveBridgeSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_bridge_source::RemoveBridgeSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_bridge_source::RemoveBridgeSourceInput {
-                bridge_arn: self.bridge_arn,
-                source_name: self.source_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::remove_bridge_source::RemoveBridgeSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::remove_bridge_source::RemoveBridgeSourceInput {
+            bridge_arn: self.bridge_arn,
+            source_name: self.source_name,
+        })
     }
 }

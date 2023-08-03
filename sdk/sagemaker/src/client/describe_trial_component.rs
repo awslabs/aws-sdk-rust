@@ -24,10 +24,7 @@ impl super::Client {
     ///   - [`lineage_group_arn(Option<String>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::lineage_group_arn): <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     ///   - [`sources(Option<Vec<TrialComponentSource>>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::sources): <p>A list of ARNs and, if applicable, job types for multiple sources of an experiment run.</p>
     /// - On failure, responds with [`SdkError<DescribeTrialComponentError>`](crate::operation::describe_trial_component::DescribeTrialComponentError)
-    pub fn describe_trial_component(
-        &self,
-    ) -> crate::operation::describe_trial_component::builders::DescribeTrialComponentFluentBuilder
-    {
+    pub fn describe_trial_component(&self) -> crate::operation::describe_trial_component::builders::DescribeTrialComponentFluentBuilder {
         crate::operation::describe_trial_component::builders::DescribeTrialComponentFluentBuilder::new(self.handle.clone())
     }
 }

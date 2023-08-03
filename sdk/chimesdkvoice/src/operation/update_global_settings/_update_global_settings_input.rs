@@ -15,17 +15,14 @@ impl UpdateGlobalSettingsInput {
 }
 impl UpdateGlobalSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
+    pub fn builder() -> crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
         crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGlobalSettingsInputBuilder {
     pub(crate) voice_connector: ::std::option::Option<crate::types::VoiceConnectorSettings>,
 }
@@ -36,30 +33,21 @@ impl UpdateGlobalSettingsInputBuilder {
         self
     }
     /// <p>The Voice Connector settings.</p>
-    pub fn set_voice_connector(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceConnectorSettings>,
-    ) -> Self {
+    pub fn set_voice_connector(mut self, input: ::std::option::Option<crate::types::VoiceConnectorSettings>) -> Self {
         self.voice_connector = input;
         self
     }
     /// <p>The Voice Connector settings.</p>
-    pub fn get_voice_connector(
-        &self,
-    ) -> &::std::option::Option<crate::types::VoiceConnectorSettings> {
+    pub fn get_voice_connector(&self) -> &::std::option::Option<crate::types::VoiceConnectorSettings> {
         &self.voice_connector
     }
     /// Consumes the builder and constructs a [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_global_settings::UpdateGlobalSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_global_settings::UpdateGlobalSettingsInput {
-                voice_connector: self.voice_connector,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_global_settings::UpdateGlobalSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_global_settings::UpdateGlobalSettingsInput {
+            voice_connector: self.voice_connector,
+        })
     }
 }

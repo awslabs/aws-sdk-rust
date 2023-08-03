@@ -12,8 +12,7 @@ pub struct PagerDutyConfiguration {
     pub secret_id: ::std::option::Option<::std::string::String>,
     /// <p>Details about the PagerDuty service associated with the configuration.</p>
     #[doc(hidden)]
-    pub pager_duty_incident_configuration:
-        ::std::option::Option<crate::types::PagerDutyIncidentConfiguration>,
+    pub pager_duty_incident_configuration: ::std::option::Option<crate::types::PagerDutyIncidentConfiguration>,
 }
 impl PagerDutyConfiguration {
     /// <p>The name of the PagerDuty configuration.</p>
@@ -25,9 +24,7 @@ impl PagerDutyConfiguration {
         self.secret_id.as_deref()
     }
     /// <p>Details about the PagerDuty service associated with the configuration.</p>
-    pub fn pager_duty_incident_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PagerDutyIncidentConfiguration> {
+    pub fn pager_duty_incident_configuration(&self) -> ::std::option::Option<&crate::types::PagerDutyIncidentConfiguration> {
         self.pager_duty_incident_configuration.as_ref()
     }
 }
@@ -40,14 +37,11 @@ impl PagerDutyConfiguration {
 
 /// A builder for [`PagerDutyConfiguration`](crate::types::PagerDutyConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PagerDutyConfigurationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
-    pub(crate) pager_duty_incident_configuration:
-        ::std::option::Option<crate::types::PagerDutyIncidentConfiguration>,
+    pub(crate) pager_duty_incident_configuration: ::std::option::Option<crate::types::PagerDutyIncidentConfiguration>,
 }
 impl PagerDutyConfigurationBuilder {
     /// <p>The name of the PagerDuty configuration.</p>
@@ -79,25 +73,17 @@ impl PagerDutyConfigurationBuilder {
         &self.secret_id
     }
     /// <p>Details about the PagerDuty service associated with the configuration.</p>
-    pub fn pager_duty_incident_configuration(
-        mut self,
-        input: crate::types::PagerDutyIncidentConfiguration,
-    ) -> Self {
+    pub fn pager_duty_incident_configuration(mut self, input: crate::types::PagerDutyIncidentConfiguration) -> Self {
         self.pager_duty_incident_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the PagerDuty service associated with the configuration.</p>
-    pub fn set_pager_duty_incident_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::PagerDutyIncidentConfiguration>,
-    ) -> Self {
+    pub fn set_pager_duty_incident_configuration(mut self, input: ::std::option::Option<crate::types::PagerDutyIncidentConfiguration>) -> Self {
         self.pager_duty_incident_configuration = input;
         self
     }
     /// <p>Details about the PagerDuty service associated with the configuration.</p>
-    pub fn get_pager_duty_incident_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::PagerDutyIncidentConfiguration> {
+    pub fn get_pager_duty_incident_configuration(&self) -> &::std::option::Option<crate::types::PagerDutyIncidentConfiguration> {
         &self.pager_duty_incident_configuration
     }
     /// Consumes the builder and constructs a [`PagerDutyConfiguration`](crate::types::PagerDutyConfiguration).

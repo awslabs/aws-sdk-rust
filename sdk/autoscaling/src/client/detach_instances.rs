@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DetachInstancesOutput`](crate::operation::detach_instances::DetachInstancesOutput) with field(s):
     ///   - [`activities(Option<Vec<Activity>>)`](crate::operation::detach_instances::DetachInstancesOutput::activities): <p>The activities related to detaching the instances from the Auto Scaling group.</p>
     /// - On failure, responds with [`SdkError<DetachInstancesError>`](crate::operation::detach_instances::DetachInstancesError)
-    pub fn detach_instances(
-        &self,
-    ) -> crate::operation::detach_instances::builders::DetachInstancesFluentBuilder {
-        crate::operation::detach_instances::builders::DetachInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detach_instances(&self) -> crate::operation::detach_instances::builders::DetachInstancesFluentBuilder {
+        crate::operation::detach_instances::builders::DetachInstancesFluentBuilder::new(self.handle.clone())
     }
 }

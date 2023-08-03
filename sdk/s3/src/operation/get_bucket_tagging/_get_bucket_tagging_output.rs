@@ -27,17 +27,14 @@ impl ::aws_http::request_id::RequestId for GetBucketTaggingOutput {
 }
 impl GetBucketTaggingOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketTaggingOutput`](crate::operation::get_bucket_tagging::GetBucketTaggingOutput).
-    pub fn builder() -> crate::operation::get_bucket_tagging::builders::GetBucketTaggingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_bucket_tagging::builders::GetBucketTaggingOutputBuilder {
         crate::operation::get_bucket_tagging::builders::GetBucketTaggingOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketTaggingOutput`](crate::operation::get_bucket_tagging::GetBucketTaggingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketTaggingOutputBuilder {
     pub(crate) tag_set: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _extended_request_id: Option<String>,
@@ -56,10 +53,7 @@ impl GetBucketTaggingOutputBuilder {
         self
     }
     /// <p>Contains the tag set.</p>
-    pub fn set_tag_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tag_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tag_set = input;
         self
     }
@@ -72,10 +66,7 @@ impl GetBucketTaggingOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }

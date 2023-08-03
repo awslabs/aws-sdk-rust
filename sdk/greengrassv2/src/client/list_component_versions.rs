@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`component_versions(Option<Vec<ComponentVersionListItem>>)`](crate::operation::list_component_versions::ListComponentVersionsOutput::component_versions): <p>A list of versions that exist for the component.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_component_versions::ListComponentVersionsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListComponentVersionsError>`](crate::operation::list_component_versions::ListComponentVersionsError)
-    pub fn list_component_versions(
-        &self,
-    ) -> crate::operation::list_component_versions::builders::ListComponentVersionsFluentBuilder
-    {
-        crate::operation::list_component_versions::builders::ListComponentVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_component_versions(&self) -> crate::operation::list_component_versions::builders::ListComponentVersionsFluentBuilder {
+        crate::operation::list_component_versions::builders::ListComponentVersionsFluentBuilder::new(self.handle.clone())
     }
 }

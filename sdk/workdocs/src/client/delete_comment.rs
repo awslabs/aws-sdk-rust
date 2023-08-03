@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`comment_id(impl ::std::convert::Into<String>)`](crate::operation::delete_comment::builders::DeleteCommentFluentBuilder::comment_id) / [`set_comment_id(Option<String>)`](crate::operation::delete_comment::builders::DeleteCommentFluentBuilder::set_comment_id): <p>The ID of the comment.</p>
     /// - On success, responds with [`DeleteCommentOutput`](crate::operation::delete_comment::DeleteCommentOutput)
     /// - On failure, responds with [`SdkError<DeleteCommentError>`](crate::operation::delete_comment::DeleteCommentError)
-    pub fn delete_comment(
-        &self,
-    ) -> crate::operation::delete_comment::builders::DeleteCommentFluentBuilder {
-        crate::operation::delete_comment::builders::DeleteCommentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_comment(&self) -> crate::operation::delete_comment::builders::DeleteCommentFluentBuilder {
+        crate::operation::delete_comment::builders::DeleteCommentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -35,9 +35,7 @@ impl BatchGetJobsOutput {
 
 /// A builder for [`BatchGetJobsOutput`](crate::operation::batch_get_jobs::BatchGetJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetJobsOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::Job>>,
     pub(crate) jobs_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -56,10 +54,7 @@ impl BatchGetJobsOutputBuilder {
         self
     }
     /// <p>A list of job definitions.</p>
-    pub fn set_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Job>>,
-    ) -> Self {
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Job>>) -> Self {
         self.jobs = input;
         self
     }
@@ -72,27 +67,19 @@ impl BatchGetJobsOutputBuilder {
     /// To override the contents of this collection use [`set_jobs_not_found`](Self::set_jobs_not_found).
     ///
     /// <p>A list of names of jobs not found.</p>
-    pub fn jobs_not_found(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn jobs_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.jobs_not_found.unwrap_or_default();
         v.push(input.into());
         self.jobs_not_found = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of names of jobs not found.</p>
-    pub fn set_jobs_not_found(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_jobs_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.jobs_not_found = input;
         self
     }
     /// <p>A list of names of jobs not found.</p>
-    pub fn get_jobs_not_found(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_jobs_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.jobs_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`dashboard_summaries(Option<Vec<DashboardSummary>>)`](crate::operation::list_dashboards::ListDashboardsOutput::dashboard_summaries): <p>A list that summarizes each dashboard in the project.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dashboards::ListDashboardsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListDashboardsError>`](crate::operation::list_dashboards::ListDashboardsError)
-    pub fn list_dashboards(
-        &self,
-    ) -> crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder {
-        crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_dashboards(&self) -> crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder {
+        crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder::new(self.handle.clone())
     }
 }

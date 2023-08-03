@@ -30,9 +30,7 @@ impl LambdaFunctionScheduledEventDetails {
         self.input.as_deref()
     }
     /// <p>Contains details about input for an execution history event.</p>
-    pub fn input_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
+    pub fn input_details(&self) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
         self.input_details.as_ref()
     }
     /// <p>The maximum allowed duration of the Lambda function.</p>
@@ -107,17 +105,12 @@ impl LambdaFunctionScheduledEventDetailsBuilder {
         self
     }
     /// <p>Contains details about input for an execution history event.</p>
-    pub fn set_input_details(
-        mut self,
-        input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
-    ) -> Self {
+    pub fn set_input_details(mut self, input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>) -> Self {
         self.input_details = input;
         self
     }
     /// <p>Contains details about input for an execution history event.</p>
-    pub fn get_input_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
+    pub fn get_input_details(&self) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
         &self.input_details
     }
     /// <p>The maximum allowed duration of the Lambda function.</p>
@@ -140,10 +133,7 @@ impl LambdaFunctionScheduledEventDetailsBuilder {
         self
     }
     /// <p>The credentials that Step Functions uses for the task.</p>
-    pub fn set_task_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskCredentials>,
-    ) -> Self {
+    pub fn set_task_credentials(mut self, input: ::std::option::Option<crate::types::TaskCredentials>) -> Self {
         self.task_credentials = input;
         self
     }

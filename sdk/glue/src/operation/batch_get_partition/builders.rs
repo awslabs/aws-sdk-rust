@@ -10,10 +10,7 @@ impl BatchGetPartitionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_partition::BatchGetPartitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_partition::BatchGetPartitionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_partition::BatchGetPartitionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_partition();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchGetPartitionFluentBuilder {
         }
     }
     /// Access the BatchGetPartition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_partition::builders::BatchGetPartitionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_partition::builders::BatchGetPartitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchGetPartitionFluentBuilder {
             crate::operation::batch_get_partition::BatchGetPartition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_partition::BatchGetPartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_partition::BatchGetPartitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchGetPartitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchGetPartitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_partition::BatchGetPartitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_partition::BatchGetPartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_partition::BatchGetPartitionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchGetPartitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_partition::BatchGetPartitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_partition::BatchGetPartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_partition::BatchGetPartitionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchGetPartitionFluentBuilder {
             crate::operation::batch_get_partition::BatchGetPartition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_partition::BatchGetPartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_partition::BatchGetPartitionError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl BatchGetPartitionFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -180,17 +158,12 @@ impl BatchGetPartitionFluentBuilder {
         self
     }
     /// <p>A list of partition values identifying the partitions to retrieve.</p>
-    pub fn set_partitions_to_get(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
-    ) -> Self {
+    pub fn set_partitions_to_get(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>) -> Self {
         self.inner = self.inner.set_partitions_to_get(input);
         self
     }
     /// <p>A list of partition values identifying the partitions to retrieve.</p>
-    pub fn get_partitions_to_get(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>> {
+    pub fn get_partitions_to_get(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>> {
         self.inner.get_partitions_to_get()
     }
 }

@@ -22,9 +22,7 @@ impl DeleteContactInput {
 
 /// A builder for [`DeleteContactInput`](crate::operation::delete_contact::DeleteContactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteContactInputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteContactInputBuilder {
     /// Consumes the builder and constructs a [`DeleteContactInput`](crate::operation::delete_contact::DeleteContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_contact::DeleteContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_contact::DeleteContactInput {
-            contact_id: self.contact_id,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_contact::DeleteContactInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_contact::DeleteContactInput { contact_id: self.contact_id })
     }
 }

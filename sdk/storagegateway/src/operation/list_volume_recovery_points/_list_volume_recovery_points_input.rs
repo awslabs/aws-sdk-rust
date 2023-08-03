@@ -15,18 +15,14 @@ impl ListVolumeRecoveryPointsInput {
 }
 impl ListVolumeRecoveryPointsInput {
     /// Creates a new builder-style object to manufacture [`ListVolumeRecoveryPointsInput`](crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsInput).
-    pub fn builder(
-    ) -> crate::operation::list_volume_recovery_points::builders::ListVolumeRecoveryPointsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_volume_recovery_points::builders::ListVolumeRecoveryPointsInputBuilder {
         crate::operation::list_volume_recovery_points::builders::ListVolumeRecoveryPointsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVolumeRecoveryPointsInput`](crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVolumeRecoveryPointsInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,8 @@ impl ListVolumeRecoveryPointsInputBuilder {
         crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsInput {
-                gateway_arn: self.gateway_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsInput {
+            gateway_arn: self.gateway_arn,
+        })
     }
 }

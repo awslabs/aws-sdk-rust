@@ -28,7 +28,7 @@ impl PutFunctionEventInvokeConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutFunctionEventInvokeConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_function_event_invoke_config::builders::PutFunctionEventInvokeConfigInputBuilder,
+    inner: crate::operation::put_function_event_invoke_config::builders::PutFunctionEventInvokeConfigInputBuilder,
 }
 impl PutFunctionEventInvokeConfigFluentBuilder {
     /// Creates a new `PutFunctionEventInvokeConfig`.
@@ -39,7 +39,7 @@ impl PutFunctionEventInvokeConfigFluentBuilder {
         }
     }
     /// Access the PutFunctionEventInvokeConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_function_event_invoke_config::builders::PutFunctionEventInvokeConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_function_event_invoke_config::builders::PutFunctionEventInvokeConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl PutFunctionEventInvokeConfigFluentBuilder {
             crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl PutFunctionEventInvokeConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl PutFunctionEventInvokeConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl PutFunctionEventInvokeConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl PutFunctionEventInvokeConfigFluentBuilder {
             crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +119,7 @@ impl PutFunctionEventInvokeConfigFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -145,10 +131,7 @@ impl PutFunctionEventInvokeConfigFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }
@@ -225,10 +208,7 @@ impl PutFunctionEventInvokeConfigFluentBuilder {
     /// <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>
     /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
-    pub fn set_destination_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationConfig>,
-    ) -> Self {
+    pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::DestinationConfig>) -> Self {
         self.inner = self.inner.set_destination_config(input);
         self
     }
@@ -240,9 +220,7 @@ impl PutFunctionEventInvokeConfigFluentBuilder {
     /// <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>
     /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
-    pub fn get_destination_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationConfig> {
+    pub fn get_destination_config(&self) -> &::std::option::Option<crate::types::DestinationConfig> {
         self.inner.get_destination_config()
     }
 }

@@ -43,9 +43,7 @@ impl ExportProjectOutput {
 
 /// A builder for [`ExportProjectOutput`](crate::operation::export_project::ExportProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportProjectOutputBuilder {
     pub(crate) download_url: ::std::option::Option<::std::string::String>,
     pub(crate) share_url: ::std::option::Option<::std::string::String>,

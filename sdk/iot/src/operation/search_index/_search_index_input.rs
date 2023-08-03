@@ -50,9 +50,7 @@ impl SearchIndexInput {
 
 /// A builder for [`SearchIndexInput`](crate::operation::search_index::SearchIndexInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchIndexInputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
@@ -118,18 +116,12 @@ impl SearchIndexInputBuilder {
         &self.max_results
     }
     /// <p>The query version.</p>
-    pub fn query_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query version.</p>
-    pub fn set_query_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_version = input;
         self
     }
@@ -138,12 +130,7 @@ impl SearchIndexInputBuilder {
         &self.query_version
     }
     /// Consumes the builder and constructs a [`SearchIndexInput`](crate::operation::search_index::SearchIndexInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_index::SearchIndexInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_index::SearchIndexInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_index::SearchIndexInput {
             index_name: self.index_name,
             query_string: self.query_string,

@@ -5,16 +5,14 @@
 pub struct DescribeServiceIntegrationInput {}
 impl DescribeServiceIntegrationInput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceIntegrationInput`](crate::operation::describe_service_integration::DescribeServiceIntegrationInput).
-    pub fn builder() -> crate::operation::describe_service_integration::builders::DescribeServiceIntegrationInputBuilder{
+    pub fn builder() -> crate::operation::describe_service_integration::builders::DescribeServiceIntegrationInputBuilder {
         crate::operation::describe_service_integration::builders::DescribeServiceIntegrationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeServiceIntegrationInput`](crate::operation::describe_service_integration::DescribeServiceIntegrationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServiceIntegrationInputBuilder {}
 impl DescribeServiceIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeServiceIntegrationInput`](crate::operation::describe_service_integration::DescribeServiceIntegrationInput).
@@ -24,8 +22,6 @@ impl DescribeServiceIntegrationInputBuilder {
         crate::operation::describe_service_integration::DescribeServiceIntegrationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_service_integration::DescribeServiceIntegrationInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::describe_service_integration::DescribeServiceIntegrationInput {})
     }
 }

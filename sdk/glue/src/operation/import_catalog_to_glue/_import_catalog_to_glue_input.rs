@@ -15,18 +15,14 @@ impl ImportCatalogToGlueInput {
 }
 impl ImportCatalogToGlueInput {
     /// Creates a new builder-style object to manufacture [`ImportCatalogToGlueInput`](crate::operation::import_catalog_to_glue::ImportCatalogToGlueInput).
-    pub fn builder(
-    ) -> crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueInputBuilder {
-        crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueInputBuilder {
+        crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueInputBuilder::default()
     }
 }
 
 /// A builder for [`ImportCatalogToGlueInput`](crate::operation::import_catalog_to_glue::ImportCatalogToGlueInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportCatalogToGlueInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl ImportCatalogToGlueInputBuilder {
     /// Consumes the builder and constructs a [`ImportCatalogToGlueInput`](crate::operation::import_catalog_to_glue::ImportCatalogToGlueInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_catalog_to_glue::ImportCatalogToGlueInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::import_catalog_to_glue::ImportCatalogToGlueInput {
-                catalog_id: self.catalog_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::import_catalog_to_glue::ImportCatalogToGlueInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::import_catalog_to_glue::ImportCatalogToGlueInput { catalog_id: self.catalog_id })
     }
 }

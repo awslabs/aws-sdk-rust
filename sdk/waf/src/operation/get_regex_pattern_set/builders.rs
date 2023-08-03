@@ -10,10 +10,7 @@ impl GetRegexPatternSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_regex_pattern_set::GetRegexPatternSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_regex_pattern_set::GetRegexPatternSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_regex_pattern_set::GetRegexPatternSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_regex_pattern_set();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl GetRegexPatternSetFluentBuilder {
         }
     }
     /// Access the GetRegexPatternSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl GetRegexPatternSetFluentBuilder {
             crate::operation::get_regex_pattern_set::GetRegexPatternSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_regex_pattern_set::GetRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_regex_pattern_set::GetRegexPatternSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl GetRegexPatternSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl GetRegexPatternSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_regex_pattern_set::GetRegexPatternSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_regex_pattern_set::GetRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_regex_pattern_set::GetRegexPatternSetError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl GetRegexPatternSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_regex_pattern_set::GetRegexPatternSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_regex_pattern_set::GetRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_regex_pattern_set::GetRegexPatternSetError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +106,17 @@ impl GetRegexPatternSetFluentBuilder {
             crate::operation::get_regex_pattern_set::GetRegexPatternSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_regex_pattern_set::GetRegexPatternSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_regex_pattern_set::GetRegexPatternSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub fn regex_pattern_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn regex_pattern_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.regex_pattern_set_id(input.into());
         self
     }
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub fn set_regex_pattern_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_regex_pattern_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_regex_pattern_set_id(input);
         self
     }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`vpcs(Option<Vec<Vpc>>)`](crate::operation::describe_vpcs::DescribeVpcsOutput::vpcs): <p>Information about one or more VPCs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_vpcs::DescribeVpcsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcsError>`](crate::operation::describe_vpcs::DescribeVpcsError)
-    pub fn describe_vpcs(
-        &self,
-    ) -> crate::operation::describe_vpcs::builders::DescribeVpcsFluentBuilder {
-        crate::operation::describe_vpcs::builders::DescribeVpcsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_vpcs(&self) -> crate::operation::describe_vpcs::builders::DescribeVpcsFluentBuilder {
+        crate::operation::describe_vpcs::builders::DescribeVpcsFluentBuilder::new(self.handle.clone())
     }
 }

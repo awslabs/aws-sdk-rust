@@ -39,9 +39,7 @@ impl SearchedFaceDetails {
 
 /// A builder for [`SearchedFaceDetails`](crate::types::SearchedFaceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchedFaceDetailsBuilder {
     pub(crate) face_detail: ::std::option::Option<crate::types::FaceDetail>,
 }
@@ -68,10 +66,7 @@ impl SearchedFaceDetailsBuilder {
     /// <li> <p>GetFaceSearch</p> </li>
     /// </ul>
     /// <p>The Amazon Rekognition Image <code>DetectFaces</code> and <code>IndexFaces</code> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p>
-    pub fn set_face_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::FaceDetail>,
-    ) -> Self {
+    pub fn set_face_detail(mut self, input: ::std::option::Option<crate::types::FaceDetail>) -> Self {
         self.face_detail = input;
         self
     }

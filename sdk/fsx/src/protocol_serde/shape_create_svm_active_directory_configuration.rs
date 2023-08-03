@@ -8,10 +8,11 @@ pub fn ser_create_svm_active_directory_configuration(
     }
     if let Some(var_2) = &input.self_managed_active_directory_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object
-            .key("SelfManagedActiveDirectoryConfiguration")
-            .start_object();
-        crate::protocol_serde::shape_self_managed_active_directory_configuration::ser_self_managed_active_directory_configuration(&mut object_3, var_2)?;
+        let mut object_3 = object.key("SelfManagedActiveDirectoryConfiguration").start_object();
+        crate::protocol_serde::shape_self_managed_active_directory_configuration::ser_self_managed_active_directory_configuration(
+            &mut object_3,
+            var_2,
+        )?;
         object_3.finish();
     }
     Ok(())

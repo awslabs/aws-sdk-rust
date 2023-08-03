@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`endpoint_url(Option<String>)`](crate::operation::update_endpoint::UpdateEndpointOutput::endpoint_url): <p>The URL of the endpoint you updated in this request.</p>
     ///   - [`state(Option<EndpointState>)`](crate::operation::update_endpoint::UpdateEndpointOutput::state): <p>The state of the endpoint you updated in this request.</p>
     /// - On failure, responds with [`SdkError<UpdateEndpointError>`](crate::operation::update_endpoint::UpdateEndpointError)
-    pub fn update_endpoint(
-        &self,
-    ) -> crate::operation::update_endpoint::builders::UpdateEndpointFluentBuilder {
-        crate::operation::update_endpoint::builders::UpdateEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_endpoint(&self) -> crate::operation::update_endpoint::builders::UpdateEndpointFluentBuilder {
+        crate::operation::update_endpoint::builders::UpdateEndpointFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`resource_config(Option<CreateBackendAuthResourceConfig>)`](crate::operation::get_backend_auth::GetBackendAuthOutput::resource_config): <p>The resource configuration for authorization requests to the backend of your Amplify project.</p>
     ///   - [`resource_name(Option<String>)`](crate::operation::get_backend_auth::GetBackendAuthOutput::resource_name): <p>The name of this resource.</p>
     /// - On failure, responds with [`SdkError<GetBackendAuthError>`](crate::operation::get_backend_auth::GetBackendAuthError)
-    pub fn get_backend_auth(
-        &self,
-    ) -> crate::operation::get_backend_auth::builders::GetBackendAuthFluentBuilder {
-        crate::operation::get_backend_auth::builders::GetBackendAuthFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_backend_auth(&self) -> crate::operation::get_backend_auth::builders::GetBackendAuthFluentBuilder {
+        crate::operation::get_backend_auth::builders::GetBackendAuthFluentBuilder::new(self.handle.clone())
     }
 }

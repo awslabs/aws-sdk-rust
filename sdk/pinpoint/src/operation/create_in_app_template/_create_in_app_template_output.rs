@@ -5,15 +5,12 @@
 pub struct CreateInAppTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
     #[doc(hidden)]
-    pub template_create_message_body:
-        ::std::option::Option<crate::types::TemplateCreateMessageBody>,
+    pub template_create_message_body: ::std::option::Option<crate::types::TemplateCreateMessageBody>,
     _request_id: Option<String>,
 }
 impl CreateInAppTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn template_create_message_body(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TemplateCreateMessageBody> {
+    pub fn template_create_message_body(&self) -> ::std::option::Option<&crate::types::TemplateCreateMessageBody> {
         self.template_create_message_body.as_ref()
     }
 }
@@ -24,43 +21,31 @@ impl ::aws_http::request_id::RequestId for CreateInAppTemplateOutput {
 }
 impl CreateInAppTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateInAppTemplateOutput`](crate::operation::create_in_app_template::CreateInAppTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::create_in_app_template::builders::CreateInAppTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::create_in_app_template::builders::CreateInAppTemplateOutputBuilder {
         crate::operation::create_in_app_template::builders::CreateInAppTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInAppTemplateOutput`](crate::operation::create_in_app_template::CreateInAppTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInAppTemplateOutputBuilder {
-    pub(crate) template_create_message_body:
-        ::std::option::Option<crate::types::TemplateCreateMessageBody>,
+    pub(crate) template_create_message_body: ::std::option::Option<crate::types::TemplateCreateMessageBody>,
     _request_id: Option<String>,
 }
 impl CreateInAppTemplateOutputBuilder {
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn template_create_message_body(
-        mut self,
-        input: crate::types::TemplateCreateMessageBody,
-    ) -> Self {
+    pub fn template_create_message_body(mut self, input: crate::types::TemplateCreateMessageBody) -> Self {
         self.template_create_message_body = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn set_template_create_message_body(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateCreateMessageBody>,
-    ) -> Self {
+    pub fn set_template_create_message_body(mut self, input: ::std::option::Option<crate::types::TemplateCreateMessageBody>) -> Self {
         self.template_create_message_body = input;
         self
     }
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn get_template_create_message_body(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemplateCreateMessageBody> {
+    pub fn get_template_create_message_body(&self) -> &::std::option::Option<crate::types::TemplateCreateMessageBody> {
         &self.template_create_message_body
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

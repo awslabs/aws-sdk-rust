@@ -62,17 +62,14 @@ impl DescribeSnapshotsInput {
 }
 impl DescribeSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
-    pub fn builder() -> crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder {
         crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnapshotsInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) cache_cluster_id: ::std::option::Option<::std::string::String>,
@@ -84,18 +81,12 @@ pub struct DescribeSnapshotsInputBuilder {
 }
 impl DescribeSnapshotsInputBuilder {
     /// <p>A user-supplied replication group identifier. If this parameter is specified, only snapshots associated with that specific replication group are described.</p>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied replication group identifier. If this parameter is specified, only snapshots associated with that specific replication group are described.</p>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_group_id = input;
         self
     }
@@ -104,18 +95,12 @@ impl DescribeSnapshotsInputBuilder {
         &self.replication_group_id
     }
     /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
-    pub fn cache_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
-    pub fn set_cache_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_cluster_id = input;
         self
     }
@@ -124,18 +109,12 @@ impl DescribeSnapshotsInputBuilder {
         &self.cache_cluster_id
     }
     /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this snapshot are described.</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this snapshot are described.</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_name = input;
         self
     }
@@ -144,18 +123,12 @@ impl DescribeSnapshotsInputBuilder {
         &self.snapshot_name
     }
     /// <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache. If set to <code>user</code> the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
-    pub fn snapshot_source(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache. If set to <code>user</code> the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
-    pub fn set_snapshot_source(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_source = input;
         self
     }
@@ -214,20 +187,15 @@ impl DescribeSnapshotsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_snapshots::DescribeSnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_snapshots::DescribeSnapshotsInput {
-                replication_group_id: self.replication_group_id,
-                cache_cluster_id: self.cache_cluster_id,
-                snapshot_name: self.snapshot_name,
-                snapshot_source: self.snapshot_source,
-                marker: self.marker,
-                max_records: self.max_records,
-                show_node_group_config: self.show_node_group_config,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_snapshots::DescribeSnapshotsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_snapshots::DescribeSnapshotsInput {
+            replication_group_id: self.replication_group_id,
+            cache_cluster_id: self.cache_cluster_id,
+            snapshot_name: self.snapshot_name,
+            snapshot_source: self.snapshot_source,
+            marker: self.marker,
+            max_records: self.max_records,
+            show_node_group_config: self.show_node_group_config,
+        })
     }
 }

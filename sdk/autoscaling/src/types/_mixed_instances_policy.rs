@@ -18,9 +18,7 @@ impl MixedInstancesPolicy {
         self.launch_template.as_ref()
     }
     /// <p>The instances distribution.</p>
-    pub fn instances_distribution(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstancesDistribution> {
+    pub fn instances_distribution(&self) -> ::std::option::Option<&crate::types::InstancesDistribution> {
         self.instances_distribution.as_ref()
     }
 }
@@ -33,9 +31,7 @@ impl MixedInstancesPolicy {
 
 /// A builder for [`MixedInstancesPolicy`](crate::types::MixedInstancesPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MixedInstancesPolicyBuilder {
     pub(crate) launch_template: ::std::option::Option<crate::types::LaunchTemplate>,
     pub(crate) instances_distribution: ::std::option::Option<crate::types::InstancesDistribution>,
@@ -47,10 +43,7 @@ impl MixedInstancesPolicyBuilder {
         self
     }
     /// <p>One or more launch templates and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
-    pub fn set_launch_template(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplate>,
-    ) -> Self {
+    pub fn set_launch_template(mut self, input: ::std::option::Option<crate::types::LaunchTemplate>) -> Self {
         self.launch_template = input;
         self
     }
@@ -64,17 +57,12 @@ impl MixedInstancesPolicyBuilder {
         self
     }
     /// <p>The instances distribution.</p>
-    pub fn set_instances_distribution(
-        mut self,
-        input: ::std::option::Option<crate::types::InstancesDistribution>,
-    ) -> Self {
+    pub fn set_instances_distribution(mut self, input: ::std::option::Option<crate::types::InstancesDistribution>) -> Self {
         self.instances_distribution = input;
         self
     }
     /// <p>The instances distribution.</p>
-    pub fn get_instances_distribution(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstancesDistribution> {
+    pub fn get_instances_distribution(&self) -> &::std::option::Option<crate::types::InstancesDistribution> {
         &self.instances_distribution
     }
     /// Consumes the builder and constructs a [`MixedInstancesPolicy`](crate::types::MixedInstancesPolicy).

@@ -37,10 +37,7 @@ impl DescribeCodeRepositoryFluentBuilder {
         }
     }
     /// Access the DescribeCodeRepository as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_code_repository::builders::DescribeCodeRepositoryInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_code_repository::builders::DescribeCodeRepositoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeCodeRepositoryFluentBuilder {
             crate::operation::describe_code_repository::DescribeCodeRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_code_repository::DescribeCodeRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_code_repository::DescribeCodeRepositoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeCodeRepositoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeCodeRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_code_repository::DescribeCodeRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_code_repository::DescribeCodeRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_code_repository::DescribeCodeRepositoryError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeCodeRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_code_repository::DescribeCodeRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_code_repository::DescribeCodeRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_code_repository::DescribeCodeRepositoryError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeCodeRepositoryFluentBuilder {
             crate::operation::describe_code_repository::DescribeCodeRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_code_repository::DescribeCodeRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_code_repository::DescribeCodeRepositoryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Git repository to describe.</p>
-    pub fn code_repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code_repository_name(input.into());
         self
     }
     /// <p>The name of the Git repository to describe.</p>
-    pub fn set_code_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code_repository_name(input);
         self
     }

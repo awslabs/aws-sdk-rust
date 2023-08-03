@@ -10,10 +10,7 @@ impl ConnectDirectoryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::connect_directory::ConnectDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::connect_directory::ConnectDirectoryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::connect_directory::ConnectDirectoryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.connect_directory();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ConnectDirectoryFluentBuilder {
         }
     }
     /// Access the ConnectDirectory as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::connect_directory::builders::ConnectDirectoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::connect_directory::builders::ConnectDirectoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ConnectDirectoryFluentBuilder {
             crate::operation::connect_directory::ConnectDirectory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::connect_directory::ConnectDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::connect_directory::ConnectDirectoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ConnectDirectoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ConnectDirectoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::connect_directory::ConnectDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::connect_directory::ConnectDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::connect_directory::ConnectDirectoryError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ConnectDirectoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::connect_directory::ConnectDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::connect_directory::ConnectDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::connect_directory::ConnectDirectoryError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl ConnectDirectoryFluentBuilder {
             crate::operation::connect_directory::ConnectDirectory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::connect_directory::ConnectDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::connect_directory::ConnectDirectoryError>,
     > {
         self.customize_middleware().await
     }
@@ -199,17 +183,12 @@ impl ConnectDirectoryFluentBuilder {
         self
     }
     /// <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
-    pub fn set_connect_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryConnectSettings>,
-    ) -> Self {
+    pub fn set_connect_settings(mut self, input: ::std::option::Option<crate::types::DirectoryConnectSettings>) -> Self {
         self.inner = self.inner.set_connect_settings(input);
         self
     }
     /// <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
-    pub fn get_connect_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::DirectoryConnectSettings> {
+    pub fn get_connect_settings(&self) -> &::std::option::Option<crate::types::DirectoryConnectSettings> {
         self.inner.get_connect_settings()
     }
     /// Appends an item to `Tags`.
@@ -222,10 +201,7 @@ impl ConnectDirectoryFluentBuilder {
         self
     }
     /// <p>The tags to be assigned to AD Connector.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

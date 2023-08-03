@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteInferenceSchedulerOutput {
 }
 impl DeleteInferenceSchedulerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInferenceSchedulerOutput`](crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerOutputBuilder {
         crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInferenceSchedulerOutput`](crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInferenceSchedulerOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteInferenceSchedulerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteInferenceSchedulerOutput`](crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerOutput {
+    pub fn build(self) -> crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerOutput {
         crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerOutput {
             _request_id: self._request_id,
         }

@@ -37,10 +37,7 @@ impl ListPipelineExecutionsFluentBuilder {
         }
     }
     /// Access the ListPipelineExecutions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListPipelineExecutionsFluentBuilder {
             crate::operation::list_pipeline_executions::ListPipelineExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pipeline_executions::ListPipelineExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pipeline_executions::ListPipelineExecutionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListPipelineExecutionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListPipelineExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pipeline_executions::ListPipelineExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pipeline_executions::ListPipelineExecutionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListPipelineExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pipeline_executions::ListPipelineExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pipeline_executions::ListPipelineExecutionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,37 +105,23 @@ impl ListPipelineExecutionsFluentBuilder {
             crate::operation::list_pipeline_executions::ListPipelineExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pipeline_executions::ListPipelineExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pipeline_executions::ListPipelineExecutionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_pipeline_executions::paginator::ListPipelineExecutionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_pipeline_executions::paginator::ListPipelineExecutionsPaginator
-    {
-        crate::operation::list_pipeline_executions::paginator::ListPipelineExecutionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_pipeline_executions::paginator::ListPipelineExecutionsPaginator {
+        crate::operation::list_pipeline_executions::paginator::ListPipelineExecutionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the pipeline for which you want to get execution summary information.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
     /// <p>The name of the pipeline for which you want to get execution summary information.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }

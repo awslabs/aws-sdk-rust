@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteImpersonationRoleOutput {
 }
 impl DeleteImpersonationRoleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteImpersonationRoleOutput`](crate::operation::delete_impersonation_role::DeleteImpersonationRoleOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_impersonation_role::builders::DeleteImpersonationRoleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_impersonation_role::builders::DeleteImpersonationRoleOutputBuilder {
         crate::operation::delete_impersonation_role::builders::DeleteImpersonationRoleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteImpersonationRoleOutput`](crate::operation::delete_impersonation_role::DeleteImpersonationRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteImpersonationRoleOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteImpersonationRoleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteImpersonationRoleOutput`](crate::operation::delete_impersonation_role::DeleteImpersonationRoleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_impersonation_role::DeleteImpersonationRoleOutput {
+    pub fn build(self) -> crate::operation::delete_impersonation_role::DeleteImpersonationRoleOutput {
         crate::operation::delete_impersonation_role::DeleteImpersonationRoleOutput {
             _request_id: self._request_id,
         }

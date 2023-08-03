@@ -10,10 +10,7 @@ impl GetRandomPasswordInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_random_password::GetRandomPasswordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_random_password::GetRandomPasswordError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_random_password::GetRandomPasswordError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_random_password();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetRandomPasswordFluentBuilder {
         }
     }
     /// Access the GetRandomPassword as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_random_password::builders::GetRandomPasswordInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_random_password::builders::GetRandomPasswordInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl GetRandomPasswordFluentBuilder {
             crate::operation::get_random_password::GetRandomPassword,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_random_password::GetRandomPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_random_password::GetRandomPasswordError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl GetRandomPasswordFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl GetRandomPasswordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_random_password::GetRandomPasswordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_random_password::GetRandomPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_random_password::GetRandomPasswordError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl GetRandomPasswordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_random_password::GetRandomPasswordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_random_password::GetRandomPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_random_password::GetRandomPasswordError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl GetRandomPasswordFluentBuilder {
             crate::operation::get_random_password::GetRandomPassword,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_random_password::GetRandomPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_random_password::GetRandomPasswordError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +123,12 @@ impl GetRandomPasswordFluentBuilder {
         self.inner.get_password_length()
     }
     /// <p>A string of the characters that you don't want in the password.</p>
-    pub fn exclude_characters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclude_characters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.exclude_characters(input.into());
         self
     }
     /// <p>A string of the characters that you don't want in the password.</p>
-    pub fn set_exclude_characters(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exclude_characters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_exclude_characters(input);
         self
     }

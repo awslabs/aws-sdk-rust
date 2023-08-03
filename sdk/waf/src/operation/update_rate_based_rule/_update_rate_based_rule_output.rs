@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateRateBasedRuleOutput {
 }
 impl UpdateRateBasedRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRateBasedRuleOutput`](crate::operation::update_rate_based_rule::UpdateRateBasedRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::update_rate_based_rule::builders::UpdateRateBasedRuleOutputBuilder {
+    pub fn builder() -> crate::operation::update_rate_based_rule::builders::UpdateRateBasedRuleOutputBuilder {
         crate::operation::update_rate_based_rule::builders::UpdateRateBasedRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRateBasedRuleOutput`](crate::operation::update_rate_based_rule::UpdateRateBasedRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRateBasedRuleOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

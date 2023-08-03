@@ -10,10 +10,7 @@ impl UpdateGroupQueryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_group_query::UpdateGroupQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_group_query::UpdateGroupQueryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_group_query::UpdateGroupQueryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_group_query();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl UpdateGroupQueryFluentBuilder {
         }
     }
     /// Access the UpdateGroupQuery as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_group_query::builders::UpdateGroupQueryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_group_query::builders::UpdateGroupQueryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl UpdateGroupQueryFluentBuilder {
             crate::operation::update_group_query::UpdateGroupQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_group_query::UpdateGroupQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_group_query::UpdateGroupQueryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl UpdateGroupQueryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl UpdateGroupQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_group_query::UpdateGroupQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_group_query::UpdateGroupQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_group_query::UpdateGroupQueryError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl UpdateGroupQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_group_query::UpdateGroupQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_group_query::UpdateGroupQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_group_query::UpdateGroupQueryError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +107,7 @@ impl UpdateGroupQueryFluentBuilder {
             crate::operation::update_group_query::UpdateGroupQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_group_query::UpdateGroupQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_group_query::UpdateGroupQueryError>,
     > {
         self.customize_middleware().await
     }
@@ -168,10 +152,7 @@ impl UpdateGroupQueryFluentBuilder {
     /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
-    pub fn set_resource_query(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceQuery>,
-    ) -> Self {
+    pub fn set_resource_query(mut self, input: ::std::option::Option<crate::types::ResourceQuery>) -> Self {
         self.inner = self.inner.set_resource_query(input);
         self
     }

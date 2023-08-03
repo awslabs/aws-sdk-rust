@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`interface_association(Option<TrunkInterfaceAssociation>)`](crate::operation::associate_trunk_interface::AssociateTrunkInterfaceOutput::interface_association): <p>Information about the association between the trunk network interface and branch network interface.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::associate_trunk_interface::AssociateTrunkInterfaceOutput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
     /// - On failure, responds with [`SdkError<AssociateTrunkInterfaceError>`](crate::operation::associate_trunk_interface::AssociateTrunkInterfaceError)
-    pub fn associate_trunk_interface(
-        &self,
-    ) -> crate::operation::associate_trunk_interface::builders::AssociateTrunkInterfaceFluentBuilder
-    {
+    pub fn associate_trunk_interface(&self) -> crate::operation::associate_trunk_interface::builders::AssociateTrunkInterfaceFluentBuilder {
         crate::operation::associate_trunk_interface::builders::AssociateTrunkInterfaceFluentBuilder::new(self.handle.clone())
     }
 }

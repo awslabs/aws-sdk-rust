@@ -6,8 +6,7 @@
 pub struct DataSourceConfiguration {
     /// <p>Configuration of an S3 location for a file which contains data to load.</p>
     #[doc(hidden)]
-    pub data_source_s3_configuration:
-        ::std::option::Option<crate::types::DataSourceS3Configuration>,
+    pub data_source_s3_configuration: ::std::option::Option<crate::types::DataSourceS3Configuration>,
     /// <p>A delimited data format where the column separator can be a comma and the record separator is a newline character.</p>
     #[doc(hidden)]
     pub csv_configuration: ::std::option::Option<crate::types::CsvConfiguration>,
@@ -17,9 +16,7 @@ pub struct DataSourceConfiguration {
 }
 impl DataSourceConfiguration {
     /// <p>Configuration of an S3 location for a file which contains data to load.</p>
-    pub fn data_source_s3_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataSourceS3Configuration> {
+    pub fn data_source_s3_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceS3Configuration> {
         self.data_source_s3_configuration.as_ref()
     }
     /// <p>A delimited data format where the column separator can be a comma and the record separator is a newline character.</p>
@@ -40,36 +37,25 @@ impl DataSourceConfiguration {
 
 /// A builder for [`DataSourceConfiguration`](crate::types::DataSourceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSourceConfigurationBuilder {
-    pub(crate) data_source_s3_configuration:
-        ::std::option::Option<crate::types::DataSourceS3Configuration>,
+    pub(crate) data_source_s3_configuration: ::std::option::Option<crate::types::DataSourceS3Configuration>,
     pub(crate) csv_configuration: ::std::option::Option<crate::types::CsvConfiguration>,
     pub(crate) data_format: ::std::option::Option<crate::types::BatchLoadDataFormat>,
 }
 impl DataSourceConfigurationBuilder {
     /// <p>Configuration of an S3 location for a file which contains data to load.</p>
-    pub fn data_source_s3_configuration(
-        mut self,
-        input: crate::types::DataSourceS3Configuration,
-    ) -> Self {
+    pub fn data_source_s3_configuration(mut self, input: crate::types::DataSourceS3Configuration) -> Self {
         self.data_source_s3_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration of an S3 location for a file which contains data to load.</p>
-    pub fn set_data_source_s3_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceS3Configuration>,
-    ) -> Self {
+    pub fn set_data_source_s3_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceS3Configuration>) -> Self {
         self.data_source_s3_configuration = input;
         self
     }
     /// <p>Configuration of an S3 location for a file which contains data to load.</p>
-    pub fn get_data_source_s3_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceS3Configuration> {
+    pub fn get_data_source_s3_configuration(&self) -> &::std::option::Option<crate::types::DataSourceS3Configuration> {
         &self.data_source_s3_configuration
     }
     /// <p>A delimited data format where the column separator can be a comma and the record separator is a newline character.</p>
@@ -78,10 +64,7 @@ impl DataSourceConfigurationBuilder {
         self
     }
     /// <p>A delimited data format where the column separator can be a comma and the record separator is a newline character.</p>
-    pub fn set_csv_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CsvConfiguration>,
-    ) -> Self {
+    pub fn set_csv_configuration(mut self, input: ::std::option::Option<crate::types::CsvConfiguration>) -> Self {
         self.csv_configuration = input;
         self
     }
@@ -95,10 +78,7 @@ impl DataSourceConfigurationBuilder {
         self
     }
     /// <p>This is currently CSV.</p>
-    pub fn set_data_format(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchLoadDataFormat>,
-    ) -> Self {
+    pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::BatchLoadDataFormat>) -> Self {
         self.data_format = input;
         self
     }

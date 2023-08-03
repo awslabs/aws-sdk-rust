@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`token_id(impl ::std::convert::Into<String>)`](crate::operation::delete_token::builders::DeleteTokenFluentBuilder::token_id) / [`set_token_id(Option<String>)`](crate::operation::delete_token::builders::DeleteTokenFluentBuilder::set_token_id): <p>Token ID.</p>
     /// - On success, responds with [`DeleteTokenOutput`](crate::operation::delete_token::DeleteTokenOutput)
     /// - On failure, responds with [`SdkError<DeleteTokenError>`](crate::operation::delete_token::DeleteTokenError)
-    pub fn delete_token(
-        &self,
-    ) -> crate::operation::delete_token::builders::DeleteTokenFluentBuilder {
+    pub fn delete_token(&self) -> crate::operation::delete_token::builders::DeleteTokenFluentBuilder {
         crate::operation::delete_token::builders::DeleteTokenFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeReservedInstancesOutput`](crate::operation::describe_reserved_instances::DescribeReservedInstancesOutput) with field(s):
     ///   - [`reserved_instances(Option<Vec<ReservedInstances>>)`](crate::operation::describe_reserved_instances::DescribeReservedInstancesOutput::reserved_instances): <p>A list of Reserved Instances.</p>
     /// - On failure, responds with [`SdkError<DescribeReservedInstancesError>`](crate::operation::describe_reserved_instances::DescribeReservedInstancesError)
-    pub fn describe_reserved_instances(&self) -> crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesFluentBuilder{
+    pub fn describe_reserved_instances(&self) -> crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesFluentBuilder {
         crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesFluentBuilder::new(self.handle.clone())
     }
 }

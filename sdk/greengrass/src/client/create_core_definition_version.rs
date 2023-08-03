@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::create_core_definition_version::CreateCoreDefinitionVersionOutput::id): The ID of the parent definition that the version is associated with.
     ///   - [`version(Option<String>)`](crate::operation::create_core_definition_version::CreateCoreDefinitionVersionOutput::version): The ID of the version.
     /// - On failure, responds with [`SdkError<CreateCoreDefinitionVersionError>`](crate::operation::create_core_definition_version::CreateCoreDefinitionVersionError)
-    pub fn create_core_definition_version(&self) -> crate::operation::create_core_definition_version::builders::CreateCoreDefinitionVersionFluentBuilder{
+    pub fn create_core_definition_version(
+        &self,
+    ) -> crate::operation::create_core_definition_version::builders::CreateCoreDefinitionVersionFluentBuilder {
         crate::operation::create_core_definition_version::builders::CreateCoreDefinitionVersionFluentBuilder::new(self.handle.clone())
     }
 }

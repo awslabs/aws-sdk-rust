@@ -30,27 +30,19 @@ impl ErrorDetail {
 
 /// A builder for [`ErrorDetail`](crate::types::ErrorDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ErrorDetailBuilder {
     pub(crate) detailed_error_code: ::std::option::Option<::std::string::String>,
     pub(crate) detailed_error_message: ::std::option::Option<::std::string::String>,
 }
 impl ErrorDetailBuilder {
     /// A detailed error code.
-    pub fn detailed_error_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detailed_error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detailed_error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// A detailed error code.
-    pub fn set_detailed_error_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detailed_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detailed_error_code = input;
         self
     }
@@ -59,18 +51,12 @@ impl ErrorDetailBuilder {
         &self.detailed_error_code
     }
     /// A detailed error message.
-    pub fn detailed_error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detailed_error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detailed_error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// A detailed error message.
-    pub fn set_detailed_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detailed_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detailed_error_message = input;
         self
     }

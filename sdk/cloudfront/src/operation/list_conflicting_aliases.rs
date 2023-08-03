@@ -27,71 +27,45 @@ impl ListConflictingAliasesInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::list_conflicting_aliases::ListConflictingAliasesInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
-                ::std::write!(output, "/2020-05-31/conflicting-alias")
-                    .expect("formatting should succeed");
+                ::std::write!(output, "/2020-05-31/conflicting-alias").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             fn uri_query(
                 _input: &crate::operation::list_conflicting_aliases::ListConflictingAliasesInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_1 = &_input.distribution_id;
-                let inner_1 = inner_1.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let inner_1 = inner_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("distribution_id", "cannot be empty or unset"))?;
+                if inner_1.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "distribution_id",
                         "cannot be empty or unset",
-                    )
-                })?;
-                if inner_1.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "distribution_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
-                query.push_kv(
-                    "DistributionId",
-                    &::aws_smithy_http::query::fmt_string(&inner_1),
-                );
+                query.push_kv("DistributionId", &::aws_smithy_http::query::fmt_string(&inner_1));
                 let inner_2 = &_input.alias;
-                let inner_2 = inner_2.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let inner_2 = inner_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("alias", "cannot be empty or unset"))?;
+                if inner_2.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "alias",
                         "cannot be empty or unset",
-                    )
-                })?;
-                if inner_2.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "alias",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
                 query.push_kv("Alias", &::aws_smithy_http::query::fmt_string(&inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.marker {
@@ -101,10 +75,7 @@ impl ListConflictingAliasesInput {
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.max_items {
                     if *inner_4 != 0 {
-                        query.push_kv(
-                            "MaxItems",
-                            ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
-                        );
+                        query.push_kv("MaxItems", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -113,10 +84,7 @@ impl ListConflictingAliasesInput {
             fn update_http_builder(
                 input: &crate::operation::list_conflicting_aliases::ListConflictingAliasesInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -138,10 +106,8 @@ impl ListConflictingAliasesInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -150,29 +116,16 @@ impl ListConflictingAliasesInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::list_conflicting_aliases::ListConflictingAliases::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "ListConflictingAliases",
-            "cloudfront",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::list_conflicting_aliases::ListConflictingAliases::new())
+            .with_metadata(::aws_smithy_http::operation::Metadata::new("ListConflictingAliases", "cloudfront"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -226,9 +179,7 @@ pub enum ListConflictingAliasesError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for ListConflictingAliasesError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -250,21 +201,13 @@ impl ::std::fmt::Display for ListConflictingAliasesError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListConflictingAliasesError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::InvalidArgument(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::NoSuchDistribution(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::InvalidArgument(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NoSuchDistribution(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::list_conflicting_aliases::ListConflictingAliasesError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::list_conflicting_aliases::ListConflictingAliasesError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -280,27 +223,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ListConflictingAliasesError
 impl ListConflictingAliasesError {
     /// Creates the `ListConflictingAliasesError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `ListConflictingAliasesError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,

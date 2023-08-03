@@ -16,9 +16,7 @@ pub struct DescribeIdentityProviderConfigurationOutput {
 }
 impl DescribeIdentityProviderConfigurationOutput {
     /// <p>The type of identity provider.</p>
-    pub fn identity_provider_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IdentityProviderType> {
+    pub fn identity_provider_type(&self) -> ::std::option::Option<&crate::types::IdentityProviderType> {
         self.identity_provider_type.as_ref()
     }
     /// <p>The SAML metadata document uploaded to the user’s identity provider.</p>
@@ -37,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeIdentityProviderConfiguration
 }
 impl DescribeIdentityProviderConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIdentityProviderConfigurationOutput`](crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_identity_provider_configuration::builders::DescribeIdentityProviderConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_identity_provider_configuration::builders::DescribeIdentityProviderConfigurationOutputBuilder {
         crate::operation::describe_identity_provider_configuration::builders::DescribeIdentityProviderConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIdentityProviderConfigurationOutput`](crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIdentityProviderConfigurationOutputBuilder {
     pub(crate) identity_provider_type: ::std::option::Option<crate::types::IdentityProviderType>,
     pub(crate) service_provider_saml_metadata: ::std::option::Option<::std::string::String>,
@@ -60,61 +56,40 @@ impl DescribeIdentityProviderConfigurationOutputBuilder {
         self
     }
     /// <p>The type of identity provider.</p>
-    pub fn set_identity_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderType>,
-    ) -> Self {
+    pub fn set_identity_provider_type(mut self, input: ::std::option::Option<crate::types::IdentityProviderType>) -> Self {
         self.identity_provider_type = input;
         self
     }
     /// <p>The type of identity provider.</p>
-    pub fn get_identity_provider_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::IdentityProviderType> {
+    pub fn get_identity_provider_type(&self) -> &::std::option::Option<crate::types::IdentityProviderType> {
         &self.identity_provider_type
     }
     /// <p>The SAML metadata document uploaded to the user’s identity provider.</p>
-    pub fn service_provider_saml_metadata(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_provider_saml_metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_provider_saml_metadata = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SAML metadata document uploaded to the user’s identity provider.</p>
-    pub fn set_service_provider_saml_metadata(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_provider_saml_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_provider_saml_metadata = input;
         self
     }
     /// <p>The SAML metadata document uploaded to the user’s identity provider.</p>
-    pub fn get_service_provider_saml_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_service_provider_saml_metadata(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_provider_saml_metadata
     }
     /// <p>The SAML metadata document provided by the user’s identity provider.</p>
-    pub fn identity_provider_saml_metadata(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_provider_saml_metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_provider_saml_metadata = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SAML metadata document provided by the user’s identity provider.</p>
-    pub fn set_identity_provider_saml_metadata(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_provider_saml_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_provider_saml_metadata = input;
         self
     }
     /// <p>The SAML metadata document provided by the user’s identity provider.</p>
-    pub fn get_identity_provider_saml_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_identity_provider_saml_metadata(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_provider_saml_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -127,14 +102,11 @@ impl DescribeIdentityProviderConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeIdentityProviderConfigurationOutput`](crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationOutput{
+    pub fn build(self) -> crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationOutput {
         crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationOutput {
-            identity_provider_type: self.identity_provider_type
-            ,
-            service_provider_saml_metadata: self.service_provider_saml_metadata
-            ,
-            identity_provider_saml_metadata: self.identity_provider_saml_metadata
-            ,
+            identity_provider_type: self.identity_provider_type,
+            service_provider_saml_metadata: self.service_provider_saml_metadata,
+            identity_provider_saml_metadata: self.identity_provider_saml_metadata,
             _request_id: self._request_id,
         }
     }

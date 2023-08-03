@@ -65,9 +65,7 @@ impl LifeCycle {
 
 /// A builder for [`LifeCycle`](crate::types::LifeCycle).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifeCycleBuilder {
     pub(crate) added_to_service_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) first_byte_date_time: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct LifeCycleBuilder {
 }
 impl LifeCycleBuilder {
     /// <p>Lifecycle added to service data and time.</p>
-    pub fn added_to_service_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn added_to_service_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.added_to_service_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Lifecycle added to service data and time.</p>
-    pub fn set_added_to_service_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_added_to_service_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.added_to_service_date_time = input;
         self
     }
@@ -99,18 +91,12 @@ impl LifeCycleBuilder {
         &self.added_to_service_date_time
     }
     /// <p>Lifecycle replication initiation date and time.</p>
-    pub fn first_byte_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn first_byte_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_byte_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Lifecycle replication initiation date and time.</p>
-    pub fn set_first_byte_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_first_byte_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_byte_date_time = input;
         self
     }
@@ -119,47 +105,31 @@ impl LifeCycleBuilder {
         &self.first_byte_date_time
     }
     /// <p>Lifecycle elapsed time and duration.</p>
-    pub fn elapsed_replication_duration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn elapsed_replication_duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elapsed_replication_duration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Lifecycle elapsed time and duration.</p>
-    pub fn set_elapsed_replication_duration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_elapsed_replication_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.elapsed_replication_duration = input;
         self
     }
     /// <p>Lifecycle elapsed time and duration.</p>
-    pub fn get_elapsed_replication_duration(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_elapsed_replication_duration(&self) -> &::std::option::Option<::std::string::String> {
         &self.elapsed_replication_duration
     }
     /// <p>Lifecycle last seen date and time.</p>
-    pub fn last_seen_by_service_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_seen_by_service_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_seen_by_service_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Lifecycle last seen date and time.</p>
-    pub fn set_last_seen_by_service_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_seen_by_service_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_seen_by_service_date_time = input;
         self
     }
     /// <p>Lifecycle last seen date and time.</p>
-    pub fn get_last_seen_by_service_date_time(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_last_seen_by_service_date_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_seen_by_service_date_time
     }
     /// <p>Lifecycle last Test.</p>
@@ -168,10 +138,7 @@ impl LifeCycleBuilder {
         self
     }
     /// <p>Lifecycle last Test.</p>
-    pub fn set_last_test(
-        mut self,
-        input: ::std::option::Option<crate::types::LifeCycleLastTest>,
-    ) -> Self {
+    pub fn set_last_test(mut self, input: ::std::option::Option<crate::types::LifeCycleLastTest>) -> Self {
         self.last_test = input;
         self
     }
@@ -185,10 +152,7 @@ impl LifeCycleBuilder {
         self
     }
     /// <p>Lifecycle last Cutover.</p>
-    pub fn set_last_cutover(
-        mut self,
-        input: ::std::option::Option<crate::types::LifeCycleLastCutover>,
-    ) -> Self {
+    pub fn set_last_cutover(mut self, input: ::std::option::Option<crate::types::LifeCycleLastCutover>) -> Self {
         self.last_cutover = input;
         self
     }

@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ListStreamingDistributionsOutput`](crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput) with field(s):
     ///   - [`streaming_distribution_list(Option<StreamingDistributionList>)`](crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput::streaming_distribution_list): <p>The <code>StreamingDistributionList</code> type.</p>
     /// - On failure, responds with [`SdkError<ListStreamingDistributionsError>`](crate::operation::list_streaming_distributions::ListStreamingDistributionsError)
-    pub fn list_streaming_distributions(&self) -> crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsFluentBuilder{
+    pub fn list_streaming_distributions(&self) -> crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsFluentBuilder {
         crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsFluentBuilder::new(self.handle.clone())
     }
 }

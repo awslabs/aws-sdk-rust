@@ -66,9 +66,7 @@ impl BandwidthRateLimitInterval {
 
 /// A builder for [`BandwidthRateLimitInterval`](crate::types::BandwidthRateLimitInterval).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BandwidthRateLimitIntervalBuilder {
     pub(crate) average_upload_rate_limit_in_bits_per_sec: ::std::option::Option<i64>,
     pub(crate) start_hour_of_day: ::std::option::Option<i32>,
@@ -88,10 +86,7 @@ impl BandwidthRateLimitIntervalBuilder {
     /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
     /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
     /// </note>
-    pub fn set_average_upload_rate_limit_in_bits_per_sec(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_average_upload_rate_limit_in_bits_per_sec(mut self, input: ::std::option::Option<i64>) -> Self {
         self.average_upload_rate_limit_in_bits_per_sec = input;
         self
     }
@@ -186,8 +181,7 @@ impl BandwidthRateLimitIntervalBuilder {
     /// Consumes the builder and constructs a [`BandwidthRateLimitInterval`](crate::types::BandwidthRateLimitInterval).
     pub fn build(self) -> crate::types::BandwidthRateLimitInterval {
         crate::types::BandwidthRateLimitInterval {
-            average_upload_rate_limit_in_bits_per_sec: self
-                .average_upload_rate_limit_in_bits_per_sec,
+            average_upload_rate_limit_in_bits_per_sec: self.average_upload_rate_limit_in_bits_per_sec,
             start_hour_of_day: self.start_hour_of_day,
             end_hour_of_day: self.end_hour_of_day,
             start_minute_of_hour: self.start_minute_of_hour,

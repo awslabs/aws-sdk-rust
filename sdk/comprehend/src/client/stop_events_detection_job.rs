@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::stop_events_detection_job::StopEventsDetectionJobOutput::job_id): <p>The identifier of the events detection job to stop.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::stop_events_detection_job::StopEventsDetectionJobOutput::job_status): <p>The status of the events detection job.</p>
     /// - On failure, responds with [`SdkError<StopEventsDetectionJobError>`](crate::operation::stop_events_detection_job::StopEventsDetectionJobError)
-    pub fn stop_events_detection_job(
-        &self,
-    ) -> crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobFluentBuilder
-    {
+    pub fn stop_events_detection_job(&self) -> crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobFluentBuilder {
         crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobFluentBuilder::new(self.handle.clone())
     }
 }

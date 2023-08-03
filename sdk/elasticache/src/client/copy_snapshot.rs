@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CopySnapshotOutput`](crate::operation::copy_snapshot::CopySnapshotOutput) with field(s):
     ///   - [`snapshot(Option<Snapshot>)`](crate::operation::copy_snapshot::CopySnapshotOutput::snapshot): <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
     /// - On failure, responds with [`SdkError<CopySnapshotError>`](crate::operation::copy_snapshot::CopySnapshotError)
-    pub fn copy_snapshot(
-        &self,
-    ) -> crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder {
-        crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn copy_snapshot(&self) -> crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder {
+        crate::operation::copy_snapshot::builders::CopySnapshotFluentBuilder::new(self.handle.clone())
     }
 }

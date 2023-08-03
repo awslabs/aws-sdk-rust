@@ -15,17 +15,14 @@ impl DeleteBatchImportJobInput {
 }
 impl DeleteBatchImportJobInput {
     /// Creates a new builder-style object to manufacture [`DeleteBatchImportJobInput`](crate::operation::delete_batch_import_job::DeleteBatchImportJobInput).
-    pub fn builder(
-    ) -> crate::operation::delete_batch_import_job::builders::DeleteBatchImportJobInputBuilder {
+    pub fn builder() -> crate::operation::delete_batch_import_job::builders::DeleteBatchImportJobInputBuilder {
         crate::operation::delete_batch_import_job::builders::DeleteBatchImportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBatchImportJobInput`](crate::operation::delete_batch_import_job::DeleteBatchImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBatchImportJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,8 @@ impl DeleteBatchImportJobInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBatchImportJobInput`](crate::operation::delete_batch_import_job::DeleteBatchImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_batch_import_job::DeleteBatchImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_batch_import_job::DeleteBatchImportJobInput {
-                job_id: self.job_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_batch_import_job::DeleteBatchImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_batch_import_job::DeleteBatchImportJobInput { job_id: self.job_id })
     }
 }

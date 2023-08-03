@@ -53,16 +53,14 @@ impl DescribeFleetAdvisorSchemasInput {
 }
 impl DescribeFleetAdvisorSchemasInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorSchemasInput`](crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasInput).
-    pub fn builder() -> crate::operation::describe_fleet_advisor_schemas::builders::DescribeFleetAdvisorSchemasInputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_advisor_schemas::builders::DescribeFleetAdvisorSchemasInputBuilder {
         crate::operation::describe_fleet_advisor_schemas::builders::DescribeFleetAdvisorSchemasInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetAdvisorSchemasInput`](crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetAdvisorSchemasInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -105,10 +103,7 @@ impl DescribeFleetAdvisorSchemasInputBuilder {
     /// <li> <p> <code>server-ip-address</code> – The IP address of the schema database's server.</p> </li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -163,12 +158,10 @@ impl DescribeFleetAdvisorSchemasInputBuilder {
         crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasInput {
-                filters: self.filters,
-                max_records: self.max_records,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasInput {
+            filters: self.filters,
+            max_records: self.max_records,
+            next_token: self.next_token,
+        })
     }
 }

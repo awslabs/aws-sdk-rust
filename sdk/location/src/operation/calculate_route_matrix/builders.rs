@@ -48,9 +48,7 @@ impl CalculateRouteMatrixFluentBuilder {
         }
     }
     /// Access the CalculateRouteMatrix as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::calculate_route_matrix::builders::CalculateRouteMatrixInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::calculate_route_matrix::builders::CalculateRouteMatrixInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +60,7 @@ impl CalculateRouteMatrixFluentBuilder {
             crate::operation::calculate_route_matrix::CalculateRouteMatrix,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::calculate_route_matrix::CalculateRouteMatrixError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::calculate_route_matrix::CalculateRouteMatrixError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +70,7 @@ impl CalculateRouteMatrixFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +79,7 @@ impl CalculateRouteMatrixFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::calculate_route_matrix::CalculateRouteMatrixOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::calculate_route_matrix::CalculateRouteMatrixError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::calculate_route_matrix::CalculateRouteMatrixError>,
     > {
         let op = self
             .inner
@@ -111,9 +102,7 @@ impl CalculateRouteMatrixFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::calculate_route_matrix::CalculateRouteMatrixOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::calculate_route_matrix::CalculateRouteMatrixError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::calculate_route_matrix::CalculateRouteMatrixError>,
     > {
         self.send_middleware().await
     }
@@ -127,25 +116,17 @@ impl CalculateRouteMatrixFluentBuilder {
             crate::operation::calculate_route_matrix::CalculateRouteMatrix,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::calculate_route_matrix::CalculateRouteMatrixError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::calculate_route_matrix::CalculateRouteMatrixError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
-    pub fn calculator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.calculator_name(input.into());
         self
     }
     /// <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
-    pub fn set_calculator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_calculator_name(input);
         self
     }
@@ -173,10 +154,7 @@ impl CalculateRouteMatrixFluentBuilder {
     /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub fn set_departure_positions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
-    ) -> Self {
+    pub fn set_departure_positions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>) -> Self {
         self.inner = self.inner.set_departure_positions(input);
         self
     }
@@ -186,9 +164,7 @@ impl CalculateRouteMatrixFluentBuilder {
     /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub fn get_departure_positions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
+    pub fn get_departure_positions(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
         self.inner.get_departure_positions()
     }
     /// Appends an item to `DestinationPositions`.
@@ -211,10 +187,7 @@ impl CalculateRouteMatrixFluentBuilder {
     /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub fn set_destination_positions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
-    ) -> Self {
+    pub fn set_destination_positions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>) -> Self {
         self.inner = self.inner.set_destination_positions(input);
         self
     }
@@ -224,9 +197,7 @@ impl CalculateRouteMatrixFluentBuilder {
     /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub fn get_destination_positions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
+    pub fn get_destination_positions(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
         self.inner.get_destination_positions()
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
@@ -255,10 +226,7 @@ impl CalculateRouteMatrixFluentBuilder {
     /// <p>For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     /// <p>Default Value: <code>Car</code> </p>
-    pub fn set_travel_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::TravelMode>,
-    ) -> Self {
+    pub fn set_travel_mode(mut self, input: ::std::option::Option<crate::types::TravelMode>) -> Self {
         self.inner = self.inner.set_travel_mode(input);
         self
     }
@@ -292,10 +260,7 @@ impl CalculateRouteMatrixFluentBuilder {
     /// <ul>
     /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
-    pub fn set_departure_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_departure_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_departure_time(input);
         self
     }
@@ -336,10 +301,7 @@ impl CalculateRouteMatrixFluentBuilder {
     }
     /// <p>Set the unit system to specify the distance.</p>
     /// <p>Default Value: <code>Kilometers</code> </p>
-    pub fn set_distance_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::DistanceUnit>,
-    ) -> Self {
+    pub fn set_distance_unit(mut self, input: ::std::option::Option<crate::types::DistanceUnit>) -> Self {
         self.inner = self.inner.set_distance_unit(input);
         self
     }
@@ -356,43 +318,30 @@ impl CalculateRouteMatrixFluentBuilder {
     }
     /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
-    pub fn set_car_mode_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculateRouteCarModeOptions>,
-    ) -> Self {
+    pub fn set_car_mode_options(mut self, input: ::std::option::Option<crate::types::CalculateRouteCarModeOptions>) -> Self {
         self.inner = self.inner.set_car_mode_options(input);
         self
     }
     /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
-    pub fn get_car_mode_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CalculateRouteCarModeOptions> {
+    pub fn get_car_mode_options(&self) -> &::std::option::Option<crate::types::CalculateRouteCarModeOptions> {
         self.inner.get_car_mode_options()
     }
     /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
-    pub fn truck_mode_options(
-        mut self,
-        input: crate::types::CalculateRouteTruckModeOptions,
-    ) -> Self {
+    pub fn truck_mode_options(mut self, input: crate::types::CalculateRouteTruckModeOptions) -> Self {
         self.inner = self.inner.truck_mode_options(input);
         self
     }
     /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
-    pub fn set_truck_mode_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculateRouteTruckModeOptions>,
-    ) -> Self {
+    pub fn set_truck_mode_options(mut self, input: ::std::option::Option<crate::types::CalculateRouteTruckModeOptions>) -> Self {
         self.inner = self.inner.set_truck_mode_options(input);
         self
     }
     /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
-    pub fn get_truck_mode_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CalculateRouteTruckModeOptions> {
+    pub fn get_truck_mode_options(&self) -> &::std::option::Option<crate::types::CalculateRouteTruckModeOptions> {
         self.inner.get_truck_mode_options()
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>

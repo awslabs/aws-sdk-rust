@@ -10,10 +10,7 @@ impl StartImageScanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_image_scan::StartImageScanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_image_scan::StartImageScanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_image_scan::StartImageScanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_image_scan();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartImageScanFluentBuilder {
         }
     }
     /// Access the StartImageScan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_image_scan::builders::StartImageScanInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_image_scan::builders::StartImageScanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartImageScanFluentBuilder {
             crate::operation::start_image_scan::StartImageScan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_image_scan::StartImageScanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_image_scan::StartImageScanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartImageScanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartImageScanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_image_scan::StartImageScanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_image_scan::StartImageScanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_image_scan::StartImageScanError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartImageScanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_image_scan::StartImageScanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_image_scan::StartImageScanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_image_scan::StartImageScanError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl StartImageScanFluentBuilder {
             crate::operation::start_image_scan::StartImageScan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_image_scan::StartImageScanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_image_scan::StartImageScanError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl StartImageScanFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The name of the repository that contains the images to scan.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository that contains the images to scan.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -162,10 +140,7 @@ impl StartImageScanFluentBuilder {
         self
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    pub fn set_image_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageIdentifier>,
-    ) -> Self {
+    pub fn set_image_id(mut self, input: ::std::option::Option<crate::types::ImageIdentifier>) -> Self {
         self.inner = self.inner.set_image_id(input);
         self
     }

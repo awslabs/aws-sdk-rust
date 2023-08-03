@@ -14,9 +14,7 @@ pub struct UpdateAuthorizerInput {
     pub token_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The public keys used to verify the token signature.</p>
     #[doc(hidden)]
-    pub token_signing_public_keys: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub token_signing_public_keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the update authorizer request.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AuthorizerStatus>,
@@ -38,11 +36,7 @@ impl UpdateAuthorizerInput {
         self.token_key_name.as_deref()
     }
     /// <p>The public keys used to verify the token signature.</p>
-    pub fn token_signing_public_keys(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn token_signing_public_keys(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.token_signing_public_keys.as_ref()
     }
     /// <p>The status of the update authorizer request.</p>
@@ -56,41 +50,30 @@ impl UpdateAuthorizerInput {
 }
 impl UpdateAuthorizerInput {
     /// Creates a new builder-style object to manufacture [`UpdateAuthorizerInput`](crate::operation::update_authorizer::UpdateAuthorizerInput).
-    pub fn builder() -> crate::operation::update_authorizer::builders::UpdateAuthorizerInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_authorizer::builders::UpdateAuthorizerInputBuilder {
         crate::operation::update_authorizer::builders::UpdateAuthorizerInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAuthorizerInput`](crate::operation::update_authorizer::UpdateAuthorizerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAuthorizerInputBuilder {
     pub(crate) authorizer_name: ::std::option::Option<::std::string::String>,
     pub(crate) authorizer_function_arn: ::std::option::Option<::std::string::String>,
     pub(crate) token_key_name: ::std::option::Option<::std::string::String>,
-    pub(crate) token_signing_public_keys: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) token_signing_public_keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::AuthorizerStatus>,
     pub(crate) enable_caching_for_http: ::std::option::Option<bool>,
 }
 impl UpdateAuthorizerInputBuilder {
     /// <p>The authorizer name.</p>
-    pub fn authorizer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorizer name.</p>
-    pub fn set_authorizer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorizer_name = input;
         self
     }
@@ -99,18 +82,12 @@ impl UpdateAuthorizerInputBuilder {
         &self.authorizer_name
     }
     /// <p>The ARN of the authorizer's Lambda function.</p>
-    pub fn authorizer_function_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_function_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the authorizer's Lambda function.</p>
-    pub fn set_authorizer_function_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorizer_function_arn = input;
         self
     }
@@ -119,18 +96,12 @@ impl UpdateAuthorizerInputBuilder {
         &self.authorizer_function_arn
     }
     /// <p>The key used to extract the token from the HTTP headers. </p>
-    pub fn token_key_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn token_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_key_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key used to extract the token from the HTTP headers. </p>
-    pub fn set_token_key_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_token_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_key_name = input;
         self
     }
@@ -156,19 +127,13 @@ impl UpdateAuthorizerInputBuilder {
     /// <p>The public keys used to verify the token signature.</p>
     pub fn set_token_signing_public_keys(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.token_signing_public_keys = input;
         self
     }
     /// <p>The public keys used to verify the token signature.</p>
-    pub fn get_token_signing_public_keys(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_token_signing_public_keys(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.token_signing_public_keys
     }
     /// <p>The status of the update authorizer request.</p>
@@ -177,10 +142,7 @@ impl UpdateAuthorizerInputBuilder {
         self
     }
     /// <p>The status of the update authorizer request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizerStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AuthorizerStatus>) -> Self {
         self.status = input;
         self
     }
@@ -205,10 +167,7 @@ impl UpdateAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAuthorizerInput`](crate::operation::update_authorizer::UpdateAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_authorizer::UpdateAuthorizerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_authorizer::UpdateAuthorizerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_authorizer::UpdateAuthorizerInput {
             authorizer_name: self.authorizer_name,
             authorizer_function_arn: self.authorizer_function_arn,

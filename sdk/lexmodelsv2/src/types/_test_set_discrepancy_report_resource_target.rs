@@ -6,14 +6,11 @@
 pub struct TestSetDiscrepancyReportResourceTarget {
     /// <p>Contains information about the bot alias used as the resource for the test set discrepancy report.</p>
     #[doc(hidden)]
-    pub bot_alias_target:
-        ::std::option::Option<crate::types::TestSetDiscrepancyReportBotAliasTarget>,
+    pub bot_alias_target: ::std::option::Option<crate::types::TestSetDiscrepancyReportBotAliasTarget>,
 }
 impl TestSetDiscrepancyReportResourceTarget {
     /// <p>Contains information about the bot alias used as the resource for the test set discrepancy report.</p>
-    pub fn bot_alias_target(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TestSetDiscrepancyReportBotAliasTarget> {
+    pub fn bot_alias_target(&self) -> ::std::option::Option<&crate::types::TestSetDiscrepancyReportBotAliasTarget> {
         self.bot_alias_target.as_ref()
     }
 }
@@ -26,34 +23,23 @@ impl TestSetDiscrepancyReportResourceTarget {
 
 /// A builder for [`TestSetDiscrepancyReportResourceTarget`](crate::types::TestSetDiscrepancyReportResourceTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestSetDiscrepancyReportResourceTargetBuilder {
-    pub(crate) bot_alias_target:
-        ::std::option::Option<crate::types::TestSetDiscrepancyReportBotAliasTarget>,
+    pub(crate) bot_alias_target: ::std::option::Option<crate::types::TestSetDiscrepancyReportBotAliasTarget>,
 }
 impl TestSetDiscrepancyReportResourceTargetBuilder {
     /// <p>Contains information about the bot alias used as the resource for the test set discrepancy report.</p>
-    pub fn bot_alias_target(
-        mut self,
-        input: crate::types::TestSetDiscrepancyReportBotAliasTarget,
-    ) -> Self {
+    pub fn bot_alias_target(mut self, input: crate::types::TestSetDiscrepancyReportBotAliasTarget) -> Self {
         self.bot_alias_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the bot alias used as the resource for the test set discrepancy report.</p>
-    pub fn set_bot_alias_target(
-        mut self,
-        input: ::std::option::Option<crate::types::TestSetDiscrepancyReportBotAliasTarget>,
-    ) -> Self {
+    pub fn set_bot_alias_target(mut self, input: ::std::option::Option<crate::types::TestSetDiscrepancyReportBotAliasTarget>) -> Self {
         self.bot_alias_target = input;
         self
     }
     /// <p>Contains information about the bot alias used as the resource for the test set discrepancy report.</p>
-    pub fn get_bot_alias_target(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestSetDiscrepancyReportBotAliasTarget> {
+    pub fn get_bot_alias_target(&self) -> &::std::option::Option<crate::types::TestSetDiscrepancyReportBotAliasTarget> {
         &self.bot_alias_target
     }
     /// Consumes the builder and constructs a [`TestSetDiscrepancyReportResourceTarget`](crate::types::TestSetDiscrepancyReportResourceTarget).

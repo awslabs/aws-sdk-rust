@@ -10,10 +10,7 @@ impl BatchGetRecordInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_record::BatchGetRecordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_record::BatchGetRecordError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_record::BatchGetRecordError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_record();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchGetRecordFluentBuilder {
         }
     }
     /// Access the BatchGetRecord as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_record::builders::BatchGetRecordInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_record::builders::BatchGetRecordInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchGetRecordFluentBuilder {
             crate::operation::batch_get_record::BatchGetRecord,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_record::BatchGetRecordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_record::BatchGetRecordError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchGetRecordFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchGetRecordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_record::BatchGetRecordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_record::BatchGetRecordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_record::BatchGetRecordError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchGetRecordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_record::BatchGetRecordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_record::BatchGetRecordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_record::BatchGetRecordError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchGetRecordFluentBuilder {
             crate::operation::batch_get_record::BatchGetRecord,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_record::BatchGetRecordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_record::BatchGetRecordError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +116,12 @@ impl BatchGetRecordFluentBuilder {
         self
     }
     /// <p>A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values as strings.</p>
-    pub fn set_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
-    ) -> Self {
+    pub fn set_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>>) -> Self {
         self.inner = self.inner.set_identifiers(input);
         self
     }
     /// <p>A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values as strings.</p>
-    pub fn get_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>> {
+    pub fn get_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>> {
         self.inner.get_identifiers()
     }
     /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>BatchGetRecord</code> will return null.</p>
@@ -151,17 +130,12 @@ impl BatchGetRecordFluentBuilder {
         self
     }
     /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>BatchGetRecord</code> will return null.</p>
-    pub fn set_expiration_time_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpirationTimeResponse>,
-    ) -> Self {
+    pub fn set_expiration_time_response(mut self, input: ::std::option::Option<crate::types::ExpirationTimeResponse>) -> Self {
         self.inner = self.inner.set_expiration_time_response(input);
         self
     }
     /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>BatchGetRecord</code> will return null.</p>
-    pub fn get_expiration_time_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExpirationTimeResponse> {
+    pub fn get_expiration_time_response(&self) -> &::std::option::Option<crate::types::ExpirationTimeResponse> {
         self.inner.get_expiration_time_response()
     }
 }

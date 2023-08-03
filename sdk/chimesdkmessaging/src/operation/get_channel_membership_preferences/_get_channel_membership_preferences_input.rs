@@ -29,16 +29,14 @@ impl GetChannelMembershipPreferencesInput {
 }
 impl GetChannelMembershipPreferencesInput {
     /// Creates a new builder-style object to manufacture [`GetChannelMembershipPreferencesInput`](crate::operation::get_channel_membership_preferences::GetChannelMembershipPreferencesInput).
-    pub fn builder() -> crate::operation::get_channel_membership_preferences::builders::GetChannelMembershipPreferencesInputBuilder{
+    pub fn builder() -> crate::operation::get_channel_membership_preferences::builders::GetChannelMembershipPreferencesInputBuilder {
         crate::operation::get_channel_membership_preferences::builders::GetChannelMembershipPreferencesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetChannelMembershipPreferencesInput`](crate::operation::get_channel_membership_preferences::GetChannelMembershipPreferencesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChannelMembershipPreferencesInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) member_arn: ::std::option::Option<::std::string::String>,
@@ -96,13 +94,10 @@ impl GetChannelMembershipPreferencesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_channel_membership_preferences::GetChannelMembershipPreferencesInput {
-                channel_arn: self.channel_arn
-                ,
-                member_arn: self.member_arn
-                ,
-                chime_bearer: self.chime_bearer
-                ,
-            }
+                channel_arn: self.channel_arn,
+                member_arn: self.member_arn,
+                chime_bearer: self.chime_bearer,
+            },
         )
     }
 }

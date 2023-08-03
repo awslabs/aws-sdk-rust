@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`products(Option<Vec<Product>>)`](crate::operation::describe_products::DescribeProductsOutput::products): <p>A list of products, including details for each product.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_products::DescribeProductsOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
     /// - On failure, responds with [`SdkError<DescribeProductsError>`](crate::operation::describe_products::DescribeProductsError)
-    pub fn describe_products(
-        &self,
-    ) -> crate::operation::describe_products::builders::DescribeProductsFluentBuilder {
-        crate::operation::describe_products::builders::DescribeProductsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_products(&self) -> crate::operation::describe_products::builders::DescribeProductsFluentBuilder {
+        crate::operation::describe_products::builders::DescribeProductsFluentBuilder::new(self.handle.clone())
     }
 }

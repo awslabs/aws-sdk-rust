@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeHostReservationOfferingsOutpu
 }
 impl DescribeHostReservationOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHostReservationOfferingsOutput`](crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput).
-    pub fn builder() -> crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsOutputBuilder {
         crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHostReservationOfferingsOutput`](crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHostReservationOfferingsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) offering_set: ::std::option::Option<::std::vec::Vec<crate::types::HostOffering>>,
@@ -70,17 +68,12 @@ impl DescribeHostReservationOfferingsOutputBuilder {
         self
     }
     /// <p>Information about the offerings.</p>
-    pub fn set_offering_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HostOffering>>,
-    ) -> Self {
+    pub fn set_offering_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HostOffering>>) -> Self {
         self.offering_set = input;
         self
     }
     /// <p>Information about the offerings.</p>
-    pub fn get_offering_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HostOffering>> {
+    pub fn get_offering_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HostOffering>> {
         &self.offering_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,15 +86,10 @@ impl DescribeHostReservationOfferingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeHostReservationOfferingsOutput`](crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput {
         crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput {
-            next_token: self.next_token
-            ,
-            offering_set: self.offering_set
-            ,
+            next_token: self.next_token,
+            offering_set: self.offering_set,
             _request_id: self._request_id,
         }
     }

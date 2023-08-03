@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCustomDataIdentifierOutput {
 }
 impl DeleteCustomDataIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomDataIdentifierOutput`](crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierOutput).
-    pub fn builder() -> crate::operation::delete_custom_data_identifier::builders::DeleteCustomDataIdentifierOutputBuilder{
+    pub fn builder() -> crate::operation::delete_custom_data_identifier::builders::DeleteCustomDataIdentifierOutputBuilder {
         crate::operation::delete_custom_data_identifier::builders::DeleteCustomDataIdentifierOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomDataIdentifierOutput`](crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomDataIdentifierOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteCustomDataIdentifierOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteCustomDataIdentifierOutput`](crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierOutput {
+    pub fn build(self) -> crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierOutput {
         crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierOutput {
             _request_id: self._request_id,
         }

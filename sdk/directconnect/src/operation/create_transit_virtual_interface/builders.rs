@@ -29,7 +29,7 @@ impl CreateTransitVirtualInterfaceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTransitVirtualInterfaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_transit_virtual_interface::builders::CreateTransitVirtualInterfaceInputBuilder,
+    inner: crate::operation::create_transit_virtual_interface::builders::CreateTransitVirtualInterfaceInputBuilder,
 }
 impl CreateTransitVirtualInterfaceFluentBuilder {
     /// Creates a new `CreateTransitVirtualInterface`.
@@ -40,7 +40,7 @@ impl CreateTransitVirtualInterfaceFluentBuilder {
         }
     }
     /// Access the CreateTransitVirtualInterface as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_transit_virtual_interface::builders::CreateTransitVirtualInterfaceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_transit_virtual_interface::builders::CreateTransitVirtualInterfaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl CreateTransitVirtualInterfaceFluentBuilder {
             crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl CreateTransitVirtualInterfaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl CreateTransitVirtualInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl CreateTransitVirtualInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +108,17 @@ impl CreateTransitVirtualInterfaceFluentBuilder {
             crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }
@@ -144,25 +127,17 @@ impl CreateTransitVirtualInterfaceFluentBuilder {
         self.inner.get_connection_id()
     }
     /// <p>Information about the transit virtual interface.</p>
-    pub fn new_transit_virtual_interface(
-        mut self,
-        input: crate::types::NewTransitVirtualInterface,
-    ) -> Self {
+    pub fn new_transit_virtual_interface(mut self, input: crate::types::NewTransitVirtualInterface) -> Self {
         self.inner = self.inner.new_transit_virtual_interface(input);
         self
     }
     /// <p>Information about the transit virtual interface.</p>
-    pub fn set_new_transit_virtual_interface(
-        mut self,
-        input: ::std::option::Option<crate::types::NewTransitVirtualInterface>,
-    ) -> Self {
+    pub fn set_new_transit_virtual_interface(mut self, input: ::std::option::Option<crate::types::NewTransitVirtualInterface>) -> Self {
         self.inner = self.inner.set_new_transit_virtual_interface(input);
         self
     }
     /// <p>Information about the transit virtual interface.</p>
-    pub fn get_new_transit_virtual_interface(
-        &self,
-    ) -> &::std::option::Option<crate::types::NewTransitVirtualInterface> {
+    pub fn get_new_transit_virtual_interface(&self) -> &::std::option::Option<crate::types::NewTransitVirtualInterface> {
         self.inner.get_new_transit_virtual_interface()
     }
 }

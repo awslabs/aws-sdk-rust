@@ -40,9 +40,7 @@ impl DeploymentAlarms {
 
 /// A builder for [`DeploymentAlarms`](crate::types::DeploymentAlarms).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentAlarmsBuilder {
     pub(crate) alarm_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) enable: ::std::option::Option<bool>,
@@ -61,17 +59,12 @@ impl DeploymentAlarmsBuilder {
         self
     }
     /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-    pub fn set_alarm_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_alarm_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.alarm_names = input;
         self
     }
     /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-    pub fn get_alarm_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alarm_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.alarm_names
     }
     /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>

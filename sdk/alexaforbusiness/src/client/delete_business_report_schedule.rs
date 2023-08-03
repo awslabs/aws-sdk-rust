@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteBusinessReportScheduleOutput`](crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleOutput)
     /// - On failure, responds with [`SdkError<DeleteBusinessReportScheduleError>`](crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn delete_business_report_schedule(&self) -> crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleFluentBuilder{
+    pub fn delete_business_report_schedule(
+        &self,
+    ) -> crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleFluentBuilder {
         crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`canaries(Option<Vec<Canary>>)`](crate::operation::describe_canaries::DescribeCanariesOutput::canaries): <p>Returns an array. Each item in the array contains the full information about one canary.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_canaries::DescribeCanariesOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<DescribeCanariesError>`](crate::operation::describe_canaries::DescribeCanariesError)
-    pub fn describe_canaries(
-        &self,
-    ) -> crate::operation::describe_canaries::builders::DescribeCanariesFluentBuilder {
-        crate::operation::describe_canaries::builders::DescribeCanariesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_canaries(&self) -> crate::operation::describe_canaries::builders::DescribeCanariesFluentBuilder {
+        crate::operation::describe_canaries::builders::DescribeCanariesFluentBuilder::new(self.handle.clone())
     }
 }

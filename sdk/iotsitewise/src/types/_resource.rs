@@ -30,9 +30,7 @@ impl Resource {
 
 /// A builder for [`Resource`](crate::types::Resource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceBuilder {
     pub(crate) portal: ::std::option::Option<crate::types::PortalResource>,
     pub(crate) project: ::std::option::Option<crate::types::ProjectResource>,
@@ -44,10 +42,7 @@ impl ResourceBuilder {
         self
     }
     /// <p>A portal resource.</p>
-    pub fn set_portal(
-        mut self,
-        input: ::std::option::Option<crate::types::PortalResource>,
-    ) -> Self {
+    pub fn set_portal(mut self, input: ::std::option::Option<crate::types::PortalResource>) -> Self {
         self.portal = input;
         self
     }
@@ -61,10 +56,7 @@ impl ResourceBuilder {
         self
     }
     /// <p>A project resource.</p>
-    pub fn set_project(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectResource>,
-    ) -> Self {
+    pub fn set_project(mut self, input: ::std::option::Option<crate::types::ProjectResource>) -> Self {
         self.project = input;
         self
     }

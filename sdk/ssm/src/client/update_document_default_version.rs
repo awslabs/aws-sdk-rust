@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateDocumentDefaultVersionOutput`](crate::operation::update_document_default_version::UpdateDocumentDefaultVersionOutput) with field(s):
     ///   - [`description(Option<DocumentDefaultVersionDescription>)`](crate::operation::update_document_default_version::UpdateDocumentDefaultVersionOutput::description): <p>The description of a custom document that you want to set as the default version.</p>
     /// - On failure, responds with [`SdkError<UpdateDocumentDefaultVersionError>`](crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError)
-    pub fn update_document_default_version(&self) -> crate::operation::update_document_default_version::builders::UpdateDocumentDefaultVersionFluentBuilder{
+    pub fn update_document_default_version(
+        &self,
+    ) -> crate::operation::update_document_default_version::builders::UpdateDocumentDefaultVersionFluentBuilder {
         crate::operation::update_document_default_version::builders::UpdateDocumentDefaultVersionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl SetDimension {
 
 /// A builder for [`SetDimension`](crate::types::SetDimension).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetDimensionBuilder {
     pub(crate) dimension_type: ::std::option::Option<crate::types::DimensionType>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl SetDimensionBuilder {
         self
     }
     /// <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are included in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.</p>
-    pub fn set_dimension_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DimensionType>,
-    ) -> Self {
+    pub fn set_dimension_type(mut self, input: ::std::option::Option<crate::types::DimensionType>) -> Self {
         self.dimension_type = input;
         self
     }
@@ -67,10 +62,7 @@ impl SetDimensionBuilder {
         self
     }
     /// <p>The criteria values to use for the segment dimension. Depending on the value of the DimensionType property, endpoints are included or excluded from the segment if their values match the criteria values.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

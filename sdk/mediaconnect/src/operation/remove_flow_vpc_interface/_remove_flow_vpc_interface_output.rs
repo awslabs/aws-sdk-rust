@@ -8,8 +8,7 @@ pub struct RemoveFlowVpcInterfaceOutput {
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
     #[doc(hidden)]
-    pub non_deleted_network_interface_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub non_deleted_network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// The name of the VPC interface that was removed.
     #[doc(hidden)]
     pub vpc_interface_name: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl RemoveFlowVpcInterfaceOutput {
         self.flow_arn.as_deref()
     }
     /// IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
-    pub fn non_deleted_network_interface_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn non_deleted_network_interface_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.non_deleted_network_interface_ids.as_deref()
     }
     /// The name of the VPC interface that was removed.
@@ -38,22 +35,17 @@ impl ::aws_http::request_id::RequestId for RemoveFlowVpcInterfaceOutput {
 }
 impl RemoveFlowVpcInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFlowVpcInterfaceOutput`](crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceOutputBuilder {
         crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveFlowVpcInterfaceOutput`](crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveFlowVpcInterfaceOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) non_deleted_network_interface_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) non_deleted_network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) vpc_interface_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -77,42 +69,28 @@ impl RemoveFlowVpcInterfaceOutputBuilder {
     /// To override the contents of this collection use [`set_non_deleted_network_interface_ids`](Self::set_non_deleted_network_interface_ids).
     ///
     /// IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
-    pub fn non_deleted_network_interface_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn non_deleted_network_interface_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.non_deleted_network_interface_ids.unwrap_or_default();
         v.push(input.into());
         self.non_deleted_network_interface_ids = ::std::option::Option::Some(v);
         self
     }
     /// IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
-    pub fn set_non_deleted_network_interface_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_non_deleted_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.non_deleted_network_interface_ids = input;
         self
     }
     /// IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
-    pub fn get_non_deleted_network_interface_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_non_deleted_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.non_deleted_network_interface_ids
     }
     /// The name of the VPC interface that was removed.
-    pub fn vpc_interface_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_interface_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_interface_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the VPC interface that was removed.
-    pub fn set_vpc_interface_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_interface_name = input;
         self
     }
@@ -130,9 +108,7 @@ impl RemoveFlowVpcInterfaceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveFlowVpcInterfaceOutput`](crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceOutput {
+    pub fn build(self) -> crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceOutput {
         crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceOutput {
             flow_arn: self.flow_arn,
             non_deleted_network_interface_ids: self.non_deleted_network_interface_ids,

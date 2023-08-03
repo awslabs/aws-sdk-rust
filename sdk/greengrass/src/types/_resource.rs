@@ -24,9 +24,7 @@ impl Resource {
         self.name.as_deref()
     }
     /// A container of data for all resource types.
-    pub fn resource_data_container(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceDataContainer> {
+    pub fn resource_data_container(&self) -> ::std::option::Option<&crate::types::ResourceDataContainer> {
         self.resource_data_container.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl Resource {
 
 /// A builder for [`Resource`](crate::types::Resource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -82,17 +78,12 @@ impl ResourceBuilder {
         self
     }
     /// A container of data for all resource types.
-    pub fn set_resource_data_container(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDataContainer>,
-    ) -> Self {
+    pub fn set_resource_data_container(mut self, input: ::std::option::Option<crate::types::ResourceDataContainer>) -> Self {
         self.resource_data_container = input;
         self
     }
     /// A container of data for all resource types.
-    pub fn get_resource_data_container(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceDataContainer> {
+    pub fn get_resource_data_container(&self) -> &::std::option::Option<crate::types::ResourceDataContainer> {
         &self.resource_data_container
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).

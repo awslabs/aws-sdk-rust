@@ -16,8 +16,7 @@ pub struct AutoScalingGroupProvider {
     /// <p>When managed termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling group that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each instance in the Auto Scaling group must have instance protection from scale-in actions on as well. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance Protection</a> in the <i>Auto Scaling User Guide</i>.</p>
     /// <p>When managed termination protection is off, your Amazon EC2 instances aren't protected from termination when the Auto Scaling group scales in.</p>
     #[doc(hidden)]
-    pub managed_termination_protection:
-        ::std::option::Option<crate::types::ManagedTerminationProtection>,
+    pub managed_termination_protection: ::std::option::Option<crate::types::ManagedTerminationProtection>,
 }
 impl AutoScalingGroupProvider {
     /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
@@ -33,9 +32,7 @@ impl AutoScalingGroupProvider {
     /// </important>
     /// <p>When managed termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling group that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each instance in the Auto Scaling group must have instance protection from scale-in actions on as well. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance Protection</a> in the <i>Auto Scaling User Guide</i>.</p>
     /// <p>When managed termination protection is off, your Amazon EC2 instances aren't protected from termination when the Auto Scaling group scales in.</p>
-    pub fn managed_termination_protection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ManagedTerminationProtection> {
+    pub fn managed_termination_protection(&self) -> ::std::option::Option<&crate::types::ManagedTerminationProtection> {
         self.managed_termination_protection.as_ref()
     }
 }
@@ -48,29 +45,20 @@ impl AutoScalingGroupProvider {
 
 /// A builder for [`AutoScalingGroupProvider`](crate::types::AutoScalingGroupProvider).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoScalingGroupProviderBuilder {
     pub(crate) auto_scaling_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) managed_scaling: ::std::option::Option<crate::types::ManagedScaling>,
-    pub(crate) managed_termination_protection:
-        ::std::option::Option<crate::types::ManagedTerminationProtection>,
+    pub(crate) managed_termination_protection: ::std::option::Option<crate::types::ManagedTerminationProtection>,
 }
 impl AutoScalingGroupProviderBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
-    pub fn auto_scaling_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_arn = input;
         self
     }
@@ -84,10 +72,7 @@ impl AutoScalingGroupProviderBuilder {
         self
     }
     /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
-    pub fn set_managed_scaling(
-        mut self,
-        input: ::std::option::Option<crate::types::ManagedScaling>,
-    ) -> Self {
+    pub fn set_managed_scaling(mut self, input: ::std::option::Option<crate::types::ManagedScaling>) -> Self {
         self.managed_scaling = input;
         self
     }
@@ -100,10 +85,7 @@ impl AutoScalingGroupProviderBuilder {
     /// </important>
     /// <p>When managed termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling group that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each instance in the Auto Scaling group must have instance protection from scale-in actions on as well. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance Protection</a> in the <i>Auto Scaling User Guide</i>.</p>
     /// <p>When managed termination protection is off, your Amazon EC2 instances aren't protected from termination when the Auto Scaling group scales in.</p>
-    pub fn managed_termination_protection(
-        mut self,
-        input: crate::types::ManagedTerminationProtection,
-    ) -> Self {
+    pub fn managed_termination_protection(mut self, input: crate::types::ManagedTerminationProtection) -> Self {
         self.managed_termination_protection = ::std::option::Option::Some(input);
         self
     }
@@ -112,10 +94,7 @@ impl AutoScalingGroupProviderBuilder {
     /// </important>
     /// <p>When managed termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling group that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each instance in the Auto Scaling group must have instance protection from scale-in actions on as well. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance Protection</a> in the <i>Auto Scaling User Guide</i>.</p>
     /// <p>When managed termination protection is off, your Amazon EC2 instances aren't protected from termination when the Auto Scaling group scales in.</p>
-    pub fn set_managed_termination_protection(
-        mut self,
-        input: ::std::option::Option<crate::types::ManagedTerminationProtection>,
-    ) -> Self {
+    pub fn set_managed_termination_protection(mut self, input: ::std::option::Option<crate::types::ManagedTerminationProtection>) -> Self {
         self.managed_termination_protection = input;
         self
     }
@@ -124,9 +103,7 @@ impl AutoScalingGroupProviderBuilder {
     /// </important>
     /// <p>When managed termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling group that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each instance in the Auto Scaling group must have instance protection from scale-in actions on as well. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance Protection</a> in the <i>Auto Scaling User Guide</i>.</p>
     /// <p>When managed termination protection is off, your Amazon EC2 instances aren't protected from termination when the Auto Scaling group scales in.</p>
-    pub fn get_managed_termination_protection(
-        &self,
-    ) -> &::std::option::Option<crate::types::ManagedTerminationProtection> {
+    pub fn get_managed_termination_protection(&self) -> &::std::option::Option<crate::types::ManagedTerminationProtection> {
         &self.managed_termination_protection
     }
     /// Consumes the builder and constructs a [`AutoScalingGroupProvider`](crate::types::AutoScalingGroupProvider).

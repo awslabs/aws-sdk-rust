@@ -46,13 +46,10 @@ impl ResourceRequestStatusFilter {
 
 /// A builder for [`ResourceRequestStatusFilter`](crate::types::ResourceRequestStatusFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceRequestStatusFilterBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
-    pub(crate) operation_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,
+    pub(crate) operation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,
 }
 impl ResourceRequestStatusFilterBuilder {
     /// Appends an item to `operations`.
@@ -67,17 +64,12 @@ impl ResourceRequestStatusFilterBuilder {
         self
     }
     /// <p>The operation types to include in the filter.</p>
-    pub fn set_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
-    ) -> Self {
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>) -> Self {
         self.operations = input;
         self
     }
     /// <p>The operation types to include in the filter.</p>
-    pub fn get_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
         &self.operations
     }
     /// Appends an item to `operation_statuses`.
@@ -108,10 +100,7 @@ impl ResourceRequestStatusFilterBuilder {
     /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li>
     /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li>
     /// </ul>
-    pub fn set_operation_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,
-    ) -> Self {
+    pub fn set_operation_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>) -> Self {
         self.operation_statuses = input;
         self
     }
@@ -124,9 +113,7 @@ impl ResourceRequestStatusFilterBuilder {
     /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li>
     /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li>
     /// </ul>
-    pub fn get_operation_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>> {
+    pub fn get_operation_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>> {
         &self.operation_statuses
     }
     /// Consumes the builder and constructs a [`ResourceRequestStatusFilter`](crate::types::ResourceRequestStatusFilter).

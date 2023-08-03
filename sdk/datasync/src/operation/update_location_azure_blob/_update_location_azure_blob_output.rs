@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateLocationAzureBlobOutput {
 }
 impl UpdateLocationAzureBlobOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLocationAzureBlobOutput`](crate::operation::update_location_azure_blob::UpdateLocationAzureBlobOutput).
-    pub fn builder(
-    ) -> crate::operation::update_location_azure_blob::builders::UpdateLocationAzureBlobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_location_azure_blob::builders::UpdateLocationAzureBlobOutputBuilder {
         crate::operation::update_location_azure_blob::builders::UpdateLocationAzureBlobOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLocationAzureBlobOutput`](crate::operation::update_location_azure_blob::UpdateLocationAzureBlobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLocationAzureBlobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateLocationAzureBlobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateLocationAzureBlobOutput`](crate::operation::update_location_azure_blob::UpdateLocationAzureBlobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_location_azure_blob::UpdateLocationAzureBlobOutput {
+    pub fn build(self) -> crate::operation::update_location_azure_blob::UpdateLocationAzureBlobOutput {
         crate::operation::update_location_azure_blob::UpdateLocationAzureBlobOutput {
             _request_id: self._request_id,
         }

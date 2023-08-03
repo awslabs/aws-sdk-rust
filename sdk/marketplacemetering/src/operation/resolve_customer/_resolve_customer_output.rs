@@ -43,9 +43,7 @@ impl ResolveCustomerOutput {
 
 /// A builder for [`ResolveCustomerOutput`](crate::operation::resolve_customer::ResolveCustomerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolveCustomerOutputBuilder {
     pub(crate) customer_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) product_code: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct ResolveCustomerOutputBuilder {
 }
 impl ResolveCustomerOutputBuilder {
     /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application. Calls to <code>BatchMeterUsage</code> require <code>CustomerIdentifiers</code> for each <code>UsageRecord</code>.</p>
-    pub fn customer_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application. Calls to <code>BatchMeterUsage</code> require <code>CustomerIdentifiers</code> for each <code>UsageRecord</code>.</p>
-    pub fn set_customer_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_identifier = input;
         self
     }
@@ -88,18 +80,12 @@ impl ResolveCustomerOutputBuilder {
         &self.product_code
     }
     /// <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
-    pub fn customer_aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
-    pub fn set_customer_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_aws_account_id = input;
         self
     }

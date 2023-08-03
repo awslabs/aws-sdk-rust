@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAppInstanceBotOutput`](crate::operation::update_app_instance_bot::UpdateAppInstanceBotOutput) with field(s):
     ///   - [`app_instance_bot_arn(Option<String>)`](crate::operation::update_app_instance_bot::UpdateAppInstanceBotOutput::app_instance_bot_arn): <p>The ARN of the <code>AppInstanceBot</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateAppInstanceBotError>`](crate::operation::update_app_instance_bot::UpdateAppInstanceBotError)
-    pub fn update_app_instance_bot(
-        &self,
-    ) -> crate::operation::update_app_instance_bot::builders::UpdateAppInstanceBotFluentBuilder
-    {
-        crate::operation::update_app_instance_bot::builders::UpdateAppInstanceBotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_app_instance_bot(&self) -> crate::operation::update_app_instance_bot::builders::UpdateAppInstanceBotFluentBuilder {
+        crate::operation::update_app_instance_bot::builders::UpdateAppInstanceBotFluentBuilder::new(self.handle.clone())
     }
 }

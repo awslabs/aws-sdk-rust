@@ -51,9 +51,7 @@ impl RoomMembership {
 
 /// A builder for [`RoomMembership`](crate::types::RoomMembership).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoomMembershipBuilder {
     pub(crate) room_id: ::std::option::Option<::std::string::String>,
     pub(crate) member: ::std::option::Option<crate::types::Member>,
@@ -96,10 +94,7 @@ impl RoomMembershipBuilder {
         self
     }
     /// <p>The membership role.</p>
-    pub fn set_role(
-        mut self,
-        input: ::std::option::Option<crate::types::RoomMembershipRole>,
-    ) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<crate::types::RoomMembershipRole>) -> Self {
         self.role = input;
         self
     }
@@ -127,10 +122,7 @@ impl RoomMembershipBuilder {
         self
     }
     /// <p>The room membership update timestamp, in ISO 8601 format.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_timestamp = input;
         self
     }

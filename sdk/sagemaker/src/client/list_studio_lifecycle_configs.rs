@@ -18,7 +18,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsOutput::next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     ///   - [`studio_lifecycle_configs(Option<Vec<StudioLifecycleConfigDetails>>)`](crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsOutput::studio_lifecycle_configs): <p>A list of Lifecycle Configurations and their properties.</p>
     /// - On failure, responds with [`SdkError<ListStudioLifecycleConfigsError>`](crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsError)
-    pub fn list_studio_lifecycle_configs(&self) -> crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder{
+    pub fn list_studio_lifecycle_configs(
+        &self,
+    ) -> crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder {
         crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsFluentBuilder::new(self.handle.clone())
     }
 }

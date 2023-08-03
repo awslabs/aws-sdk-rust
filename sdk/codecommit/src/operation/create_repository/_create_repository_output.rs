@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateRepositoryOutput {
 }
 impl CreateRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`CreateRepositoryOutput`](crate::operation::create_repository::CreateRepositoryOutput).
-    pub fn builder() -> crate::operation::create_repository::builders::CreateRepositoryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_repository::builders::CreateRepositoryOutputBuilder {
         crate::operation::create_repository::builders::CreateRepositoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRepositoryOutput`](crate::operation::create_repository::CreateRepositoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRepositoryOutputBuilder {
     pub(crate) repository_metadata: ::std::option::Option<crate::types::RepositoryMetadata>,
     _request_id: Option<String>,
@@ -44,17 +41,12 @@ impl CreateRepositoryOutputBuilder {
         self
     }
     /// <p>Information about the newly created repository.</p>
-    pub fn set_repository_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryMetadata>,
-    ) -> Self {
+    pub fn set_repository_metadata(mut self, input: ::std::option::Option<crate::types::RepositoryMetadata>) -> Self {
         self.repository_metadata = input;
         self
     }
     /// <p>Information about the newly created repository.</p>
-    pub fn get_repository_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryMetadata> {
+    pub fn get_repository_metadata(&self) -> &::std::option::Option<crate::types::RepositoryMetadata> {
         &self.repository_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

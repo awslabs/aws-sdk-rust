@@ -9,12 +9,8 @@ pub fn de_disable_address_transfer_http_error(
     crate::operation::disable_address_transfer::DisableAddressTransferError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::disable_address_transfer::DisableAddressTransferError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::disable_address_transfer::DisableAddressTransferError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::disable_address_transfer::DisableAddressTransferError::generic(generic))
@@ -32,17 +28,9 @@ pub fn de_disable_address_transfer_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::disable_address_transfer::builders::DisableAddressTransferOutputBuilder::default();
-        output =
-            crate::protocol_serde::shape_disable_address_transfer::de_disable_address_transfer(
-                _response_body,
-                output,
-            )
-            .map_err(
-                crate::operation::disable_address_transfer::DisableAddressTransferError::unhandled,
-            )?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_disable_address_transfer::de_disable_address_transfer(_response_body, output)
+            .map_err(crate::operation::disable_address_transfer::DisableAddressTransferError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -51,10 +39,7 @@ pub fn de_disable_address_transfer_http_response_with_props(
 pub fn de_disable_address_transfer(
     inp: &[u8],
     mut builder: crate::operation::disable_address_transfer::builders::DisableAddressTransferOutputBuilder,
-) -> Result<
-    crate::operation::disable_address_transfer::builders::DisableAddressTransferOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::disable_address_transfer::builders::DisableAddressTransferOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

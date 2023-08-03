@@ -29,16 +29,14 @@ impl DescribeBudgetNotificationsForAccountInput {
 }
 impl DescribeBudgetNotificationsForAccountInput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetNotificationsForAccountInput`](crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountInput).
-    pub fn builder() -> crate::operation::describe_budget_notifications_for_account::builders::DescribeBudgetNotificationsForAccountInputBuilder{
+    pub fn builder() -> crate::operation::describe_budget_notifications_for_account::builders::DescribeBudgetNotificationsForAccountInputBuilder {
         crate::operation::describe_budget_notifications_for_account::builders::DescribeBudgetNotificationsForAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBudgetNotificationsForAccountInput`](crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBudgetNotificationsForAccountInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -88,16 +86,18 @@ impl DescribeBudgetNotificationsForAccountInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeBudgetNotificationsForAccountInput`](crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountInput {
-                account_id: self.account_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                account_id: self.account_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

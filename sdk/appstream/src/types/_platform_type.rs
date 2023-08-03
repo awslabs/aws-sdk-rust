@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PlatformType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for PlatformType {
             "WINDOWS" => PlatformType::Windows,
             "WINDOWS_SERVER_2016" => PlatformType::WindowsServer2016,
             "WINDOWS_SERVER_2019" => PlatformType::WindowsServer2019,
-            other => {
-                PlatformType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => PlatformType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl PlatformType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AMAZON_LINUX2",
-            "WINDOWS",
-            "WINDOWS_SERVER_2016",
-            "WINDOWS_SERVER_2019",
-        ]
+        &["AMAZON_LINUX2", "WINDOWS", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019"]
     }
 }
 impl ::std::convert::AsRef<str> for PlatformType {

@@ -30,9 +30,7 @@ impl Policy {
 
 /// A builder for [`Policy`](crate::types::Policy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyBuilder {
     pub(crate) policy_summary: ::std::option::Option<crate::types::PolicySummary>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl PolicyBuilder {
         self
     }
     /// <p>A structure that contains additional details about the policy.</p>
-    pub fn set_policy_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicySummary>,
-    ) -> Self {
+    pub fn set_policy_summary(mut self, input: ::std::option::Option<crate::types::PolicySummary>) -> Self {
         self.policy_summary = input;
         self
     }

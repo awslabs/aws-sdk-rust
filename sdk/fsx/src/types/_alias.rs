@@ -58,9 +58,7 @@ impl Alias {
 
 /// A builder for [`Alias`](crate::types::Alias).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AliasBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::AliasLifecycle>,
@@ -121,10 +119,7 @@ impl AliasBuilder {
     /// <li> <p>DELETING - Amazon FSx is disassociating the DNS alias from the file system and deleting it.</p> </li>
     /// <li> <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from the file system.</p> </li>
     /// </ul>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::AliasLifecycle>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::AliasLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }

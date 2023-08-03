@@ -15,17 +15,14 @@ impl DescribeWorkflowInput {
 }
 impl DescribeWorkflowInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkflowInput`](crate::operation::describe_workflow::DescribeWorkflowInput).
-    pub fn builder() -> crate::operation::describe_workflow::builders::DescribeWorkflowInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_workflow::builders::DescribeWorkflowInputBuilder {
         crate::operation::describe_workflow::builders::DescribeWorkflowInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkflowInput`](crate::operation::describe_workflow::DescribeWorkflowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkflowInputBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +44,7 @@ impl DescribeWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWorkflowInput`](crate::operation::describe_workflow::DescribeWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_workflow::DescribeWorkflowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_workflow::DescribeWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_workflow::DescribeWorkflowInput {
             workflow_id: self.workflow_id,
         })

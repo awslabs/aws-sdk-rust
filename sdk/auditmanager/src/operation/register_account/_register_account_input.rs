@@ -29,9 +29,7 @@ impl RegisterAccountInput {
 
 /// A builder for [`RegisterAccountInput`](crate::operation::register_account::RegisterAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterAccountInputBuilder {
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
     pub(crate) delegated_admin_account: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl RegisterAccountInputBuilder {
         &self.kms_key
     }
     /// <p> The delegated administrator account for Audit Manager. </p>
-    pub fn delegated_admin_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delegated_admin_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delegated_admin_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The delegated administrator account for Audit Manager. </p>
-    pub fn set_delegated_admin_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delegated_admin_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delegated_admin_account = input;
         self
     }
@@ -74,10 +66,7 @@ impl RegisterAccountInputBuilder {
     /// Consumes the builder and constructs a [`RegisterAccountInput`](crate::operation::register_account::RegisterAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_account::RegisterAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::register_account::RegisterAccountInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_account::RegisterAccountInput {
             kms_key: self.kms_key,
             delegated_admin_account: self.delegated_admin_account,

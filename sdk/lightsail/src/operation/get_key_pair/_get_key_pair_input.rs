@@ -22,26 +22,18 @@ impl GetKeyPairInput {
 
 /// A builder for [`GetKeyPairInput`](crate::operation::get_key_pair::GetKeyPairInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKeyPairInputBuilder {
     pub(crate) key_pair_name: ::std::option::Option<::std::string::String>,
 }
 impl GetKeyPairInputBuilder {
     /// <p>The name of the key pair for which you are requesting information.</p>
-    pub fn key_pair_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_pair_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_pair_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the key pair for which you are requesting information.</p>
-    pub fn set_key_pair_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_pair_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_pair_name = input;
         self
     }
@@ -50,12 +42,7 @@ impl GetKeyPairInputBuilder {
         &self.key_pair_name
     }
     /// Consumes the builder and constructs a [`GetKeyPairInput`](crate::operation::get_key_pair::GetKeyPairInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_key_pair::GetKeyPairInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_key_pair::GetKeyPairInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_key_pair::GetKeyPairInput {
             key_pair_name: self.key_pair_name,
         })

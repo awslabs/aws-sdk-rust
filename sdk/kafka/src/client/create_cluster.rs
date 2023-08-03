@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`cluster_name(Option<String>)`](crate::operation::create_cluster::CreateClusterOutput::cluster_name): <p>The name of the MSK cluster.</p>
     ///   - [`state(Option<ClusterState>)`](crate::operation::create_cluster::CreateClusterOutput::state): <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
     /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::operation::create_cluster::CreateClusterError)
-    pub fn create_cluster(
-        &self,
-    ) -> crate::operation::create_cluster::builders::CreateClusterFluentBuilder {
-        crate::operation::create_cluster::builders::CreateClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_cluster(&self) -> crate::operation::create_cluster::builders::CreateClusterFluentBuilder {
+        crate::operation::create_cluster::builders::CreateClusterFluentBuilder::new(self.handle.clone())
     }
 }

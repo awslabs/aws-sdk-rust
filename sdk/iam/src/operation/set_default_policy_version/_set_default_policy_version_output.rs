@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for SetDefaultPolicyVersionOutput {
 }
 impl SetDefaultPolicyVersionOutput {
     /// Creates a new builder-style object to manufacture [`SetDefaultPolicyVersionOutput`](crate::operation::set_default_policy_version::SetDefaultPolicyVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionOutputBuilder {
         crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetDefaultPolicyVersionOutput`](crate::operation::set_default_policy_version::SetDefaultPolicyVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetDefaultPolicyVersionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl SetDefaultPolicyVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SetDefaultPolicyVersionOutput`](crate::operation::set_default_policy_version::SetDefaultPolicyVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::set_default_policy_version::SetDefaultPolicyVersionOutput {
+    pub fn build(self) -> crate::operation::set_default_policy_version::SetDefaultPolicyVersionOutput {
         crate::operation::set_default_policy_version::SetDefaultPolicyVersionOutput {
             _request_id: self._request_id,
         }

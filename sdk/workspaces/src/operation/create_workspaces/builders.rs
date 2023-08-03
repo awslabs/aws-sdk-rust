@@ -10,10 +10,7 @@ impl CreateWorkspacesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_workspaces::CreateWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspaces::CreateWorkspacesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workspaces::CreateWorkspacesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_workspaces();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateWorkspacesFluentBuilder {
         }
     }
     /// Access the CreateWorkspaces as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_workspaces::builders::CreateWorkspacesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_workspaces::builders::CreateWorkspacesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl CreateWorkspacesFluentBuilder {
             crate::operation::create_workspaces::CreateWorkspaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspaces::CreateWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workspaces::CreateWorkspacesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl CreateWorkspacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl CreateWorkspacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workspaces::CreateWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspaces::CreateWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workspaces::CreateWorkspacesError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl CreateWorkspacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workspaces::CreateWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspaces::CreateWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workspaces::CreateWorkspacesError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl CreateWorkspacesFluentBuilder {
             crate::operation::create_workspaces::CreateWorkspaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspaces::CreateWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workspaces::CreateWorkspacesError>,
     > {
         self.customize_middleware().await
     }
@@ -135,17 +119,12 @@ impl CreateWorkspacesFluentBuilder {
         self
     }
     /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
-    pub fn set_workspaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceRequest>>,
-    ) -> Self {
+    pub fn set_workspaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceRequest>>) -> Self {
         self.inner = self.inner.set_workspaces(input);
         self
     }
     /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
-    pub fn get_workspaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceRequest>> {
+    pub fn get_workspaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceRequest>> {
         self.inner.get_workspaces()
     }
 }

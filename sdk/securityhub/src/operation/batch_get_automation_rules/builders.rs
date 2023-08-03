@@ -26,8 +26,7 @@ impl BatchGetAutomationRulesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetAutomationRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::batch_get_automation_rules::builders::BatchGetAutomationRulesInputBuilder,
+    inner: crate::operation::batch_get_automation_rules::builders::BatchGetAutomationRulesInputBuilder,
 }
 impl BatchGetAutomationRulesFluentBuilder {
     /// Creates a new `BatchGetAutomationRules`.
@@ -38,10 +37,7 @@ impl BatchGetAutomationRulesFluentBuilder {
         }
     }
     /// Access the BatchGetAutomationRules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_automation_rules::builders::BatchGetAutomationRulesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_get_automation_rules::builders::BatchGetAutomationRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl BatchGetAutomationRulesFluentBuilder {
             crate::operation::batch_get_automation_rules::BatchGetAutomationRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl BatchGetAutomationRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl BatchGetAutomationRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_automation_rules::BatchGetAutomationRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl BatchGetAutomationRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_automation_rules::BatchGetAutomationRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl BatchGetAutomationRulesFluentBuilder {
             crate::operation::batch_get_automation_rules::BatchGetAutomationRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError>,
     > {
         self.customize_middleware().await
     }
@@ -129,25 +114,17 @@ impl BatchGetAutomationRulesFluentBuilder {
     /// To override the contents of this collection use [`set_automation_rules_arns`](Self::set_automation_rules_arns).
     ///
     /// <p> A list of rule ARNs to get details for. </p>
-    pub fn automation_rules_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn automation_rules_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.automation_rules_arns(input.into());
         self
     }
     /// <p> A list of rule ARNs to get details for. </p>
-    pub fn set_automation_rules_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_automation_rules_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_automation_rules_arns(input);
         self
     }
     /// <p> A list of rule ARNs to get details for. </p>
-    pub fn get_automation_rules_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_automation_rules_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_automation_rules_arns()
     }
 }

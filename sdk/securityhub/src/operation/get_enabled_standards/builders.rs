@@ -37,9 +37,7 @@ impl GetEnabledStandardsFluentBuilder {
         }
     }
     /// Access the GetEnabledStandards as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_enabled_standards::builders::GetEnabledStandardsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_enabled_standards::builders::GetEnabledStandardsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetEnabledStandardsFluentBuilder {
             crate::operation::get_enabled_standards::GetEnabledStandards,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_enabled_standards::GetEnabledStandardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_enabled_standards::GetEnabledStandardsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetEnabledStandardsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetEnabledStandardsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_enabled_standards::GetEnabledStandardsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_enabled_standards::GetEnabledStandardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_enabled_standards::GetEnabledStandardsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetEnabledStandardsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_enabled_standards::GetEnabledStandardsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_enabled_standards::GetEnabledStandardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_enabled_standards::GetEnabledStandardsError>,
     > {
         self.send_middleware().await
     }
@@ -116,47 +105,32 @@ impl GetEnabledStandardsFluentBuilder {
             crate::operation::get_enabled_standards::GetEnabledStandards,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_enabled_standards::GetEnabledStandardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_enabled_standards::GetEnabledStandardsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_enabled_standards::paginator::GetEnabledStandardsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_enabled_standards::paginator::GetEnabledStandardsPaginator {
-        crate::operation::get_enabled_standards::paginator::GetEnabledStandardsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_enabled_standards::paginator::GetEnabledStandardsPaginator {
+        crate::operation::get_enabled_standards::paginator::GetEnabledStandardsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `StandardsSubscriptionArns`.
     ///
     /// To override the contents of this collection use [`set_standards_subscription_arns`](Self::set_standards_subscription_arns).
     ///
     /// <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
-    pub fn standards_subscription_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standards_subscription_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.standards_subscription_arns(input.into());
         self
     }
     /// <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
-    pub fn set_standards_subscription_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_standards_subscription_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_standards_subscription_arns(input);
         self
     }
     /// <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
-    pub fn get_standards_subscription_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_standards_subscription_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_standards_subscription_arns()
     }
     /// <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>

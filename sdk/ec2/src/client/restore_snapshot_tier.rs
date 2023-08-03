@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`restore_duration(Option<i32>)`](crate::operation::restore_snapshot_tier::RestoreSnapshotTierOutput::restore_duration): <p>For temporary restores only. The number of days for which the archived snapshot is temporarily restored.</p>
     ///   - [`is_permanent_restore(Option<bool>)`](crate::operation::restore_snapshot_tier::RestoreSnapshotTierOutput::is_permanent_restore): <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent restore. <code>false</code> indicates a temporary restore.</p>
     /// - On failure, responds with [`SdkError<RestoreSnapshotTierError>`](crate::operation::restore_snapshot_tier::RestoreSnapshotTierError)
-    pub fn restore_snapshot_tier(
-        &self,
-    ) -> crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierFluentBuilder {
-        crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn restore_snapshot_tier(&self) -> crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierFluentBuilder {
+        crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierFluentBuilder::new(self.handle.clone())
     }
 }

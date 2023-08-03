@@ -23,34 +23,26 @@ impl ModifyMountTargetSecurityGroupsInput {
 }
 impl ModifyMountTargetSecurityGroupsInput {
     /// Creates a new builder-style object to manufacture [`ModifyMountTargetSecurityGroupsInput`](crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsInput).
-    pub fn builder() -> crate::operation::modify_mount_target_security_groups::builders::ModifyMountTargetSecurityGroupsInputBuilder{
+    pub fn builder() -> crate::operation::modify_mount_target_security_groups::builders::ModifyMountTargetSecurityGroupsInputBuilder {
         crate::operation::modify_mount_target_security_groups::builders::ModifyMountTargetSecurityGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyMountTargetSecurityGroupsInput`](crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyMountTargetSecurityGroupsInputBuilder {
     pub(crate) mount_target_id: ::std::option::Option<::std::string::String>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyMountTargetSecurityGroupsInputBuilder {
     /// <p>The ID of the mount target whose security groups you want to modify.</p>
-    pub fn mount_target_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mount_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_target_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the mount target whose security groups you want to modify.</p>
-    pub fn set_mount_target_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mount_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mount_target_id = input;
         self
     }
@@ -63,27 +55,19 @@ impl ModifyMountTargetSecurityGroupsInputBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>An array of up to five VPC security group IDs.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of up to five VPC security group IDs.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>An array of up to five VPC security group IDs.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     /// Consumes the builder and constructs a [`ModifyMountTargetSecurityGroupsInput`](crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsInput).
@@ -95,11 +79,9 @@ impl ModifyMountTargetSecurityGroupsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsInput {
-                mount_target_id: self.mount_target_id
-                ,
-                security_groups: self.security_groups
-                ,
-            }
+                mount_target_id: self.mount_target_id,
+                security_groups: self.security_groups,
+            },
         )
     }
 }

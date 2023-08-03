@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`instance_summary(Option<InstanceSummary>)`](crate::operation::get_deployment_instance::GetDeploymentInstanceOutput::instance_summary): <p> Information about the instance. </p>
     /// - On failure, responds with [`SdkError<GetDeploymentInstanceError>`](crate::operation::get_deployment_instance::GetDeploymentInstanceError)
     #[deprecated(note = "This operation is deprecated, use GetDeploymentTarget instead.")]
-    pub fn get_deployment_instance(
-        &self,
-    ) -> crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder
-    {
-        crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_deployment_instance(&self) -> crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder {
+        crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::new(self.handle.clone())
     }
 }

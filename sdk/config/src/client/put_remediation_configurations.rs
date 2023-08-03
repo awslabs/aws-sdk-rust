@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`PutRemediationConfigurationsOutput`](crate::operation::put_remediation_configurations::PutRemediationConfigurationsOutput) with field(s):
     ///   - [`failed_batches(Option<Vec<FailedRemediationBatch>>)`](crate::operation::put_remediation_configurations::PutRemediationConfigurationsOutput::failed_batches): <p>Returns a list of failed remediation batch objects.</p>
     /// - On failure, responds with [`SdkError<PutRemediationConfigurationsError>`](crate::operation::put_remediation_configurations::PutRemediationConfigurationsError)
-    pub fn put_remediation_configurations(&self) -> crate::operation::put_remediation_configurations::builders::PutRemediationConfigurationsFluentBuilder{
+    pub fn put_remediation_configurations(
+        &self,
+    ) -> crate::operation::put_remediation_configurations::builders::PutRemediationConfigurationsFluentBuilder {
         crate::operation::put_remediation_configurations::builders::PutRemediationConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

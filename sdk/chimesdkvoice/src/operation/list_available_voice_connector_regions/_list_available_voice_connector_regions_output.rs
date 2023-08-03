@@ -5,15 +5,12 @@
 pub struct ListAvailableVoiceConnectorRegionsOutput {
     /// <p>The list of AWS Regions.</p>
     #[doc(hidden)]
-    pub voice_connector_regions:
-        ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorAwsRegion>>,
+    pub voice_connector_regions: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorAwsRegion>>,
     _request_id: Option<String>,
 }
 impl ListAvailableVoiceConnectorRegionsOutput {
     /// <p>The list of AWS Regions.</p>
-    pub fn voice_connector_regions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VoiceConnectorAwsRegion]> {
+    pub fn voice_connector_regions(&self) -> ::std::option::Option<&[crate::types::VoiceConnectorAwsRegion]> {
         self.voice_connector_regions.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for ListAvailableVoiceConnectorRegionsOut
 }
 impl ListAvailableVoiceConnectorRegionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAvailableVoiceConnectorRegionsOutput`](crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsOutput).
-    pub fn builder() -> crate::operation::list_available_voice_connector_regions::builders::ListAvailableVoiceConnectorRegionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_available_voice_connector_regions::builders::ListAvailableVoiceConnectorRegionsOutputBuilder {
         crate::operation::list_available_voice_connector_regions::builders::ListAvailableVoiceConnectorRegionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAvailableVoiceConnectorRegionsOutput`](crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAvailableVoiceConnectorRegionsOutputBuilder {
-    pub(crate) voice_connector_regions:
-        ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorAwsRegion>>,
+    pub(crate) voice_connector_regions: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorAwsRegion>>,
     _request_id: Option<String>,
 }
 impl ListAvailableVoiceConnectorRegionsOutputBuilder {
@@ -52,17 +46,12 @@ impl ListAvailableVoiceConnectorRegionsOutputBuilder {
         self
     }
     /// <p>The list of AWS Regions.</p>
-    pub fn set_voice_connector_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorAwsRegion>>,
-    ) -> Self {
+    pub fn set_voice_connector_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorAwsRegion>>) -> Self {
         self.voice_connector_regions = input;
         self
     }
     /// <p>The list of AWS Regions.</p>
-    pub fn get_voice_connector_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorAwsRegion>> {
+    pub fn get_voice_connector_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorAwsRegion>> {
         &self.voice_connector_regions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -75,10 +64,9 @@ impl ListAvailableVoiceConnectorRegionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAvailableVoiceConnectorRegionsOutput`](crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsOutput).
-    pub fn build(self) -> crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsOutput{
+    pub fn build(self) -> crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsOutput {
         crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsOutput {
-            voice_connector_regions: self.voice_connector_regions
-            ,
+            voice_connector_regions: self.voice_connector_regions,
             _request_id: self._request_id,
         }
     }

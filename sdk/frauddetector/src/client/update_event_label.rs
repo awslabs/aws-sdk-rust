@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`label_timestamp(impl ::std::convert::Into<String>)`](crate::operation::update_event_label::builders::UpdateEventLabelFluentBuilder::label_timestamp) / [`set_label_timestamp(Option<String>)`](crate::operation::update_event_label::builders::UpdateEventLabelFluentBuilder::set_label_timestamp): <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
     /// - On success, responds with [`UpdateEventLabelOutput`](crate::operation::update_event_label::UpdateEventLabelOutput)
     /// - On failure, responds with [`SdkError<UpdateEventLabelError>`](crate::operation::update_event_label::UpdateEventLabelError)
-    pub fn update_event_label(
-        &self,
-    ) -> crate::operation::update_event_label::builders::UpdateEventLabelFluentBuilder {
-        crate::operation::update_event_label::builders::UpdateEventLabelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_event_label(&self) -> crate::operation::update_event_label::builders::UpdateEventLabelFluentBuilder {
+        crate::operation::update_event_label::builders::UpdateEventLabelFluentBuilder::new(self.handle.clone())
     }
 }

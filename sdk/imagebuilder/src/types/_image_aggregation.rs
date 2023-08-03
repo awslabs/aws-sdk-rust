@@ -30,27 +30,19 @@ impl ImageAggregation {
 
 /// A builder for [`ImageAggregation`](crate::types::ImageAggregation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageAggregationBuilder {
     pub(crate) image_build_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
 impl ImageAggregationBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the image for this aggregation.</p>
-    pub fn image_build_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the image for this aggregation.</p>
-    pub fn set_image_build_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
@@ -64,10 +56,7 @@ impl ImageAggregationBuilder {
         self
     }
     /// <p>Counts by severity level for medium severity and higher level findings, plus a total for all of the findings for the specified image.</p>
-    pub fn set_severity_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityCounts>,
-    ) -> Self {
+    pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
         self.severity_counts = input;
         self
     }

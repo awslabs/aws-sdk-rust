@@ -49,9 +49,7 @@ impl ListIngestionsOutput {
 
 /// A builder for [`ListIngestionsOutput`](crate::operation::list_ingestions::ListIngestionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIngestionsOutputBuilder {
     pub(crate) ingestions: ::std::option::Option<::std::vec::Vec<crate::types::Ingestion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -72,17 +70,12 @@ impl ListIngestionsOutputBuilder {
         self
     }
     /// <p>A list of the ingestions.</p>
-    pub fn set_ingestions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ingestion>>,
-    ) -> Self {
+    pub fn set_ingestions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ingestion>>) -> Self {
         self.ingestions = input;
         self
     }
     /// <p>A list of the ingestions.</p>
-    pub fn get_ingestions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ingestion>> {
+    pub fn get_ingestions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ingestion>> {
         &self.ingestions
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

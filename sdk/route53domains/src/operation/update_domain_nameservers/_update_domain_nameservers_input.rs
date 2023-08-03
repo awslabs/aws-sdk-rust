@@ -42,9 +42,7 @@ impl ::std::fmt::Debug for UpdateDomainNameserversInput {
 }
 impl UpdateDomainNameserversInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainNameserversInput`](crate::operation::update_domain_nameservers::UpdateDomainNameserversInput).
-    pub fn builder(
-    ) -> crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversInputBuilder {
         crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversInputBuilder::default()
     }
 }
@@ -101,17 +99,12 @@ impl UpdateDomainNameserversInputBuilder {
         self
     }
     /// <p>A list of new name servers for the domain.</p>
-    pub fn set_nameservers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>,
-    ) -> Self {
+    pub fn set_nameservers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>) -> Self {
         self.nameservers = input;
         self
     }
     /// <p>A list of new name servers for the domain.</p>
-    pub fn get_nameservers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Nameserver>> {
+    pub fn get_nameservers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Nameserver>> {
         &self.nameservers
     }
     /// Consumes the builder and constructs a [`UpdateDomainNameserversInput`](crate::operation::update_domain_nameservers::UpdateDomainNameserversInput).
@@ -121,13 +114,11 @@ impl UpdateDomainNameserversInputBuilder {
         crate::operation::update_domain_nameservers::UpdateDomainNameserversInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_domain_nameservers::UpdateDomainNameserversInput {
-                domain_name: self.domain_name,
-                fi_auth_key: self.fi_auth_key,
-                nameservers: self.nameservers,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_domain_nameservers::UpdateDomainNameserversInput {
+            domain_name: self.domain_name,
+            fi_auth_key: self.fi_auth_key,
+            nameservers: self.nameservers,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateDomainNameserversInputBuilder {

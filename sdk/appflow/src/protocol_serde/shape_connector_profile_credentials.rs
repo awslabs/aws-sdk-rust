@@ -24,7 +24,10 @@ pub fn ser_connector_profile_credentials(
     if let Some(var_7) = &input.google_analytics {
         #[allow(unused_mut)]
         let mut object_8 = object.key("GoogleAnalytics").start_object();
-        crate::protocol_serde::shape_google_analytics_connector_profile_credentials::ser_google_analytics_connector_profile_credentials(&mut object_8, var_7)?;
+        crate::protocol_serde::shape_google_analytics_connector_profile_credentials::ser_google_analytics_connector_profile_credentials(
+            &mut object_8,
+            var_7,
+        )?;
         object_8.finish();
     }
     if let Some(var_9) = &input.honeycode {
@@ -36,7 +39,10 @@ pub fn ser_connector_profile_credentials(
     if let Some(var_11) = &input.infor_nexus {
         #[allow(unused_mut)]
         let mut object_12 = object.key("InforNexus").start_object();
-        crate::protocol_serde::shape_infor_nexus_connector_profile_credentials::ser_infor_nexus_connector_profile_credentials(&mut object_12, var_11)?;
+        crate::protocol_serde::shape_infor_nexus_connector_profile_credentials::ser_infor_nexus_connector_profile_credentials(
+            &mut object_12,
+            var_11,
+        )?;
         object_12.finish();
     }
     if let Some(var_13) = &input.marketo {
@@ -60,7 +66,10 @@ pub fn ser_connector_profile_credentials(
     if let Some(var_19) = &input.service_now {
         #[allow(unused_mut)]
         let mut object_20 = object.key("ServiceNow").start_object();
-        crate::protocol_serde::shape_service_now_connector_profile_credentials::ser_service_now_connector_profile_credentials(&mut object_20, var_19)?;
+        crate::protocol_serde::shape_service_now_connector_profile_credentials::ser_service_now_connector_profile_credentials(
+            &mut object_20,
+            var_19,
+        )?;
         object_20.finish();
     }
     if let Some(var_21) = &input.singular {

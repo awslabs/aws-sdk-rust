@@ -27,11 +27,7 @@ impl super::Client {
     ///   - [`started_at(Option<DateTime>)`](crate::operation::get_data_source::GetDataSourceOutput::started_at): <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code> is in the <code>PENDING</code> state.</p>
     ///   - [`data_source_schema(Option<String>)`](crate::operation::get_data_source::GetDataSourceOutput::data_source_schema): <p>The schema used by all of the data files of this <code>DataSource</code>.</p>  <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
     /// - On failure, responds with [`SdkError<GetDataSourceError>`](crate::operation::get_data_source::GetDataSourceError)
-    pub fn get_data_source(
-        &self,
-    ) -> crate::operation::get_data_source::builders::GetDataSourceFluentBuilder {
-        crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_data_source(&self) -> crate::operation::get_data_source::builders::GetDataSourceFluentBuilder {
+        crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::new(self.handle.clone())
     }
 }

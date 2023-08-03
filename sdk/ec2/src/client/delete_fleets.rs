@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`successful_fleet_deletions(Option<Vec<DeleteFleetSuccessItem>>)`](crate::operation::delete_fleets::DeleteFleetsOutput::successful_fleet_deletions): <p>Information about the EC2 Fleets that are successfully deleted.</p>
     ///   - [`unsuccessful_fleet_deletions(Option<Vec<DeleteFleetErrorItem>>)`](crate::operation::delete_fleets::DeleteFleetsOutput::unsuccessful_fleet_deletions): <p>Information about the EC2 Fleets that are not successfully deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteFleetsError>`](crate::operation::delete_fleets::DeleteFleetsError)
-    pub fn delete_fleets(
-        &self,
-    ) -> crate::operation::delete_fleets::builders::DeleteFleetsFluentBuilder {
-        crate::operation::delete_fleets::builders::DeleteFleetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_fleets(&self) -> crate::operation::delete_fleets::builders::DeleteFleetsFluentBuilder {
+        crate::operation::delete_fleets::builders::DeleteFleetsFluentBuilder::new(self.handle.clone())
     }
 }

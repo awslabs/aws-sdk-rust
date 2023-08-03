@@ -20,15 +20,11 @@ impl CustomArtifactConfigurationDescription {
         self.artifact_type.as_ref()
     }
     /// <p>For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
-    pub fn s3_content_location_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3ContentLocation> {
+    pub fn s3_content_location_description(&self) -> ::std::option::Option<&crate::types::S3ContentLocation> {
         self.s3_content_location_description.as_ref()
     }
     /// <p>The parameters that are required to specify a Maven dependency.</p>
-    pub fn maven_reference_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MavenReference> {
+    pub fn maven_reference_description(&self) -> ::std::option::Option<&crate::types::MavenReference> {
         self.maven_reference_description.as_ref()
     }
 }
@@ -41,13 +37,10 @@ impl CustomArtifactConfigurationDescription {
 
 /// A builder for [`CustomArtifactConfigurationDescription`](crate::types::CustomArtifactConfigurationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomArtifactConfigurationDescriptionBuilder {
     pub(crate) artifact_type: ::std::option::Option<crate::types::ArtifactType>,
-    pub(crate) s3_content_location_description:
-        ::std::option::Option<crate::types::S3ContentLocation>,
+    pub(crate) s3_content_location_description: ::std::option::Option<crate::types::S3ContentLocation>,
     pub(crate) maven_reference_description: ::std::option::Option<crate::types::MavenReference>,
 }
 impl CustomArtifactConfigurationDescriptionBuilder {
@@ -57,10 +50,7 @@ impl CustomArtifactConfigurationDescriptionBuilder {
         self
     }
     /// <p> <code>UDF</code> stands for user-defined functions. This type of artifact must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.</p>
-    pub fn set_artifact_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactType>,
-    ) -> Self {
+    pub fn set_artifact_type(mut self, input: ::std::option::Option<crate::types::ArtifactType>) -> Self {
         self.artifact_type = input;
         self
     }
@@ -69,25 +59,17 @@ impl CustomArtifactConfigurationDescriptionBuilder {
         &self.artifact_type
     }
     /// <p>For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
-    pub fn s3_content_location_description(
-        mut self,
-        input: crate::types::S3ContentLocation,
-    ) -> Self {
+    pub fn s3_content_location_description(mut self, input: crate::types::S3ContentLocation) -> Self {
         self.s3_content_location_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
-    pub fn set_s3_content_location_description(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ContentLocation>,
-    ) -> Self {
+    pub fn set_s3_content_location_description(mut self, input: ::std::option::Option<crate::types::S3ContentLocation>) -> Self {
         self.s3_content_location_description = input;
         self
     }
     /// <p>For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
-    pub fn get_s3_content_location_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3ContentLocation> {
+    pub fn get_s3_content_location_description(&self) -> &::std::option::Option<crate::types::S3ContentLocation> {
         &self.s3_content_location_description
     }
     /// <p>The parameters that are required to specify a Maven dependency.</p>
@@ -96,17 +78,12 @@ impl CustomArtifactConfigurationDescriptionBuilder {
         self
     }
     /// <p>The parameters that are required to specify a Maven dependency.</p>
-    pub fn set_maven_reference_description(
-        mut self,
-        input: ::std::option::Option<crate::types::MavenReference>,
-    ) -> Self {
+    pub fn set_maven_reference_description(mut self, input: ::std::option::Option<crate::types::MavenReference>) -> Self {
         self.maven_reference_description = input;
         self
     }
     /// <p>The parameters that are required to specify a Maven dependency.</p>
-    pub fn get_maven_reference_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::MavenReference> {
+    pub fn get_maven_reference_description(&self) -> &::std::option::Option<crate::types::MavenReference> {
         &self.maven_reference_description
     }
     /// Consumes the builder and constructs a [`CustomArtifactConfigurationDescription`](crate::types::CustomArtifactConfigurationDescription).

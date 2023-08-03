@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`cache_security_groups(Option<Vec<CacheSecurityGroup>>)`](crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsOutput::cache_security_groups): <p>A list of cache security groups. Each element in the list contains detailed information about one group.</p>
     /// - On failure, responds with [`SdkError<DescribeCacheSecurityGroupsError>`](crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError)
-    pub fn describe_cache_security_groups(&self) -> crate::operation::describe_cache_security_groups::builders::DescribeCacheSecurityGroupsFluentBuilder{
+    pub fn describe_cache_security_groups(
+        &self,
+    ) -> crate::operation::describe_cache_security_groups::builders::DescribeCacheSecurityGroupsFluentBuilder {
         crate::operation::describe_cache_security_groups::builders::DescribeCacheSecurityGroupsFluentBuilder::new(self.handle.clone())
     }
 }

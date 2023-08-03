@@ -10,17 +10,12 @@ pub fn ser_classify_document_input(
         object.key("EndpointArn").string(var_2.as_str());
     }
     if let Some(var_3) = &input.bytes {
-        object
-            .key("Bytes")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_3));
+        object.key("Bytes").string_unchecked(&::aws_smithy_types::base64::encode(var_3));
     }
     if let Some(var_4) = &input.document_reader_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("DocumentReaderConfig").start_object();
-        crate::protocol_serde::shape_document_reader_config::ser_document_reader_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_document_reader_config::ser_document_reader_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

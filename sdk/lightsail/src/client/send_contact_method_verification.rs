@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`SendContactMethodVerificationOutput`](crate::operation::send_contact_method_verification::SendContactMethodVerificationOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::send_contact_method_verification::SendContactMethodVerificationOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<SendContactMethodVerificationError>`](crate::operation::send_contact_method_verification::SendContactMethodVerificationError)
-    pub fn send_contact_method_verification(&self) -> crate::operation::send_contact_method_verification::builders::SendContactMethodVerificationFluentBuilder{
+    pub fn send_contact_method_verification(
+        &self,
+    ) -> crate::operation::send_contact_method_verification::builders::SendContactMethodVerificationFluentBuilder {
         crate::operation::send_contact_method_verification::builders::SendContactMethodVerificationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl StartContentUploadInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_content_upload::StartContentUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_content_upload::StartContentUploadError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_content_upload::StartContentUploadError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_content_upload();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartContentUploadFluentBuilder {
         }
     }
     /// Access the StartContentUpload as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_content_upload::builders::StartContentUploadInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_content_upload::builders::StartContentUploadInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartContentUploadFluentBuilder {
             crate::operation::start_content_upload::StartContentUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_content_upload::StartContentUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_content_upload::StartContentUploadError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartContentUploadFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartContentUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_content_upload::StartContentUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_content_upload::StartContentUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_content_upload::StartContentUploadError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartContentUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_content_upload::StartContentUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_content_upload::StartContentUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_content_upload::StartContentUploadError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl StartContentUploadFluentBuilder {
             crate::operation::start_content_upload::StartContentUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_content_upload::StartContentUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_content_upload::StartContentUploadError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
         self
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn set_knowledge_base_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }

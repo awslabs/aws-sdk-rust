@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetAppMonitorDataOutput {
 }
 impl GetAppMonitorDataOutput {
     /// Creates a new builder-style object to manufacture [`GetAppMonitorDataOutput`](crate::operation::get_app_monitor_data::GetAppMonitorDataOutput).
-    pub fn builder(
-    ) -> crate::operation::get_app_monitor_data::builders::GetAppMonitorDataOutputBuilder {
+    pub fn builder() -> crate::operation::get_app_monitor_data::builders::GetAppMonitorDataOutputBuilder {
         crate::operation::get_app_monitor_data::builders::GetAppMonitorDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAppMonitorDataOutput`](crate::operation::get_app_monitor_data::GetAppMonitorDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppMonitorDataOutputBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl GetAppMonitorDataOutputBuilder {
         self
     }
     /// <p>The events that RUM collected that match your request.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.events = input;
         self
     }

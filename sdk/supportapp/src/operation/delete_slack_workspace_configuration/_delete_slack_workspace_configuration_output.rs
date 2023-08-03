@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSlackWorkspaceConfigurationOutp
 }
 impl DeleteSlackWorkspaceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSlackWorkspaceConfigurationOutput`](crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationOutputBuilder {
         crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSlackWorkspaceConfigurationOutput`](crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSlackWorkspaceConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteSlackWorkspaceConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteSlackWorkspaceConfigurationOutput`](crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationOutput).
-    pub fn build(self) -> crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationOutput{
+    pub fn build(self) -> crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationOutput {
         crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationOutput {
             _request_id: self._request_id,
         }

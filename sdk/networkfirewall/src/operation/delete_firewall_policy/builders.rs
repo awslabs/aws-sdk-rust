@@ -37,9 +37,7 @@ impl DeleteFirewallPolicyFluentBuilder {
         }
     }
     /// Access the DeleteFirewallPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_firewall_policy::builders::DeleteFirewallPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_firewall_policy::builders::DeleteFirewallPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteFirewallPolicyFluentBuilder {
             crate::operation::delete_firewall_policy::DeleteFirewallPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_firewall_policy::DeleteFirewallPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_policy::DeleteFirewallPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteFirewallPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteFirewallPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_firewall_policy::DeleteFirewallPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_firewall_policy::DeleteFirewallPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_policy::DeleteFirewallPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteFirewallPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_firewall_policy::DeleteFirewallPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_firewall_policy::DeleteFirewallPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_policy::DeleteFirewallPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +105,19 @@ impl DeleteFirewallPolicyFluentBuilder {
             crate::operation::delete_firewall_policy::DeleteFirewallPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_firewall_policy::DeleteFirewallPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_policy::DeleteFirewallPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_policy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_policy_name(input.into());
         self
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_policy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_policy_name(input);
         self
     }
@@ -147,19 +128,13 @@ impl DeleteFirewallPolicyFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_policy_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_policy_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_policy_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_policy_arn(input);
         self
     }

@@ -8,10 +8,11 @@ pub fn ser_start_delivery_stream_encryption_input(
     }
     if let Some(var_2) = &input.delivery_stream_encryption_configuration_input {
         #[allow(unused_mut)]
-        let mut object_3 = object
-            .key("DeliveryStreamEncryptionConfigurationInput")
-            .start_object();
-        crate::protocol_serde::shape_delivery_stream_encryption_configuration_input::ser_delivery_stream_encryption_configuration_input(&mut object_3, var_2)?;
+        let mut object_3 = object.key("DeliveryStreamEncryptionConfigurationInput").start_object();
+        crate::protocol_serde::shape_delivery_stream_encryption_configuration_input::ser_delivery_stream_encryption_configuration_input(
+            &mut object_3,
+            var_2,
+        )?;
         object_3.finish();
     }
     Ok(())

@@ -30,9 +30,7 @@ impl RetryCriteria {
 
 /// A builder for [`RetryCriteria`](crate::types::RetryCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetryCriteriaBuilder {
     pub(crate) failure_type: ::std::option::Option<crate::types::RetryableFailureType>,
     pub(crate) number_of_retries: ::std::option::Option<i32>,
@@ -44,10 +42,7 @@ impl RetryCriteriaBuilder {
         self
     }
     /// <p>The type of job execution failures that can initiate a job retry.</p>
-    pub fn set_failure_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RetryableFailureType>,
-    ) -> Self {
+    pub fn set_failure_type(mut self, input: ::std::option::Option<crate::types::RetryableFailureType>) -> Self {
         self.failure_type = input;
         self
     }

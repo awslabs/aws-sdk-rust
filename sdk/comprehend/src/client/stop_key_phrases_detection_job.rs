@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobOutput::job_id): <p>The identifier of the key phrases detection job to stop.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobOutput::job_status): <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopKeyPhrasesDetectionJob</code> operation.</p>
     /// - On failure, responds with [`SdkError<StopKeyPhrasesDetectionJobError>`](crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobError)
-    pub fn stop_key_phrases_detection_job(&self) -> crate::operation::stop_key_phrases_detection_job::builders::StopKeyPhrasesDetectionJobFluentBuilder{
+    pub fn stop_key_phrases_detection_job(
+        &self,
+    ) -> crate::operation::stop_key_phrases_detection_job::builders::StopKeyPhrasesDetectionJobFluentBuilder {
         crate::operation::stop_key_phrases_detection_job::builders::StopKeyPhrasesDetectionJobFluentBuilder::new(self.handle.clone())
     }
 }

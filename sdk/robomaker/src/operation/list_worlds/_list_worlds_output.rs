@@ -35,9 +35,7 @@ impl ListWorldsOutput {
 
 /// A builder for [`ListWorldsOutput`](crate::operation::list_worlds::ListWorldsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorldsOutputBuilder {
     pub(crate) world_summaries: ::std::option::Option<::std::vec::Vec<crate::types::WorldSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListWorldsOutputBuilder {
         self
     }
     /// <p>Summary information for worlds.</p>
-    pub fn set_world_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorldSummary>>,
-    ) -> Self {
+    pub fn set_world_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorldSummary>>) -> Self {
         self.world_summaries = input;
         self
     }
     /// <p>Summary information for worlds.</p>
-    pub fn get_world_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorldSummary>> {
+    pub fn get_world_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorldSummary>> {
         &self.world_summaries
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>

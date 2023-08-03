@@ -34,34 +34,27 @@ impl ::std::fmt::Display for InsufficientCloudWatchLogsResourcePolicy {
     }
 }
 impl ::std::error::Error for InsufficientCloudWatchLogsResourcePolicy {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InsufficientCloudWatchLogsResourcePolicy
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InsufficientCloudWatchLogsResourcePolicy {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InsufficientCloudWatchLogsResourcePolicy
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InsufficientCloudWatchLogsResourcePolicy {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InsufficientCloudWatchLogsResourcePolicy {
     /// Creates a new builder-style object to manufacture [`InsufficientCloudWatchLogsResourcePolicy`](crate::types::error::InsufficientCloudWatchLogsResourcePolicy).
-    pub fn builder(
-    ) -> crate::types::error::builders::InsufficientCloudWatchLogsResourcePolicyBuilder {
+    pub fn builder() -> crate::types::error::builders::InsufficientCloudWatchLogsResourcePolicyBuilder {
         crate::types::error::builders::InsufficientCloudWatchLogsResourcePolicyBuilder::default()
     }
 }
 
 /// A builder for [`InsufficientCloudWatchLogsResourcePolicy`](crate::types::error::InsufficientCloudWatchLogsResourcePolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InsufficientCloudWatchLogsResourcePolicyBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -88,10 +81,7 @@ impl InsufficientCloudWatchLogsResourcePolicyBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

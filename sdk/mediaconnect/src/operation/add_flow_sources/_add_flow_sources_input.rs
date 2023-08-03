@@ -30,9 +30,7 @@ impl AddFlowSourcesInput {
 
 /// A builder for [`AddFlowSourcesInput`](crate::operation::add_flow_sources::AddFlowSourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddFlowSourcesInputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>>,
@@ -64,26 +62,18 @@ impl AddFlowSourcesInputBuilder {
         self
     }
     /// A list of sources that you want to add.
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>>) -> Self {
         self.sources = input;
         self
     }
     /// A list of sources that you want to add.
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>> {
         &self.sources
     }
     /// Consumes the builder and constructs a [`AddFlowSourcesInput`](crate::operation::add_flow_sources::AddFlowSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_flow_sources::AddFlowSourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::add_flow_sources::AddFlowSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_flow_sources::AddFlowSourcesInput {
             flow_arn: self.flow_arn,
             sources: self.sources,

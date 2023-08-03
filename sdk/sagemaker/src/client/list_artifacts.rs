@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`artifact_summaries(Option<Vec<ArtifactSummary>>)`](crate::operation::list_artifacts::ListArtifactsOutput::artifact_summaries): <p>A list of artifacts and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_artifacts::ListArtifactsOutput::next_token): <p>A token for getting the next set of artifacts, if there are any.</p>
     /// - On failure, responds with [`SdkError<ListArtifactsError>`](crate::operation::list_artifacts::ListArtifactsError)
-    pub fn list_artifacts(
-        &self,
-    ) -> crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder {
-        crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_artifacts(&self) -> crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder {
+        crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::new(self.handle.clone())
     }
 }

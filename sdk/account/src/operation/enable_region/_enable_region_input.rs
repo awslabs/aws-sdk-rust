@@ -35,9 +35,7 @@ impl EnableRegionInput {
 
 /// A builder for [`EnableRegionInput`](crate::operation::enable_region::EnableRegionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableRegionInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
@@ -81,12 +79,7 @@ impl EnableRegionInputBuilder {
         &self.region_name
     }
     /// Consumes the builder and constructs a [`EnableRegionInput`](crate::operation::enable_region::EnableRegionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_region::EnableRegionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_region::EnableRegionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_region::EnableRegionInput {
             account_id: self.account_id,
             region_name: self.region_name,

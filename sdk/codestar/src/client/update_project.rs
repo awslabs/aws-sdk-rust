@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_description): <p>The description of the project, if any.</p>
     /// - On success, responds with [`UpdateProjectOutput`](crate::operation::update_project::UpdateProjectOutput)
     /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::operation::update_project::UpdateProjectError)
-    pub fn update_project(
-        &self,
-    ) -> crate::operation::update_project::builders::UpdateProjectFluentBuilder {
-        crate::operation::update_project::builders::UpdateProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_project(&self) -> crate::operation::update_project::builders::UpdateProjectFluentBuilder {
+        crate::operation::update_project::builders::UpdateProjectFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,14 +37,11 @@ impl InsightResults {
 
 /// A builder for [`InsightResults`](crate::types::InsightResults).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InsightResultsBuilder {
     pub(crate) insight_arn: ::std::option::Option<::std::string::String>,
     pub(crate) group_by_attribute: ::std::option::Option<::std::string::String>,
-    pub(crate) result_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::InsightResultValue>>,
+    pub(crate) result_values: ::std::option::Option<::std::vec::Vec<crate::types::InsightResultValue>>,
 }
 impl InsightResultsBuilder {
     /// <p>The ARN of the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
@@ -62,18 +59,12 @@ impl InsightResultsBuilder {
         &self.insight_arn
     }
     /// <p>The attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
-    pub fn group_by_attribute(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_by_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_by_attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
-    pub fn set_group_by_attribute(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_by_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_by_attribute = input;
         self
     }
@@ -93,17 +84,12 @@ impl InsightResultsBuilder {
         self
     }
     /// <p>The list of insight result values returned by the <code>GetInsightResults</code> operation.</p>
-    pub fn set_result_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InsightResultValue>>,
-    ) -> Self {
+    pub fn set_result_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightResultValue>>) -> Self {
         self.result_values = input;
         self
     }
     /// <p>The list of insight result values returned by the <code>GetInsightResults</code> operation.</p>
-    pub fn get_result_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightResultValue>> {
+    pub fn get_result_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightResultValue>> {
         &self.result_values
     }
     /// Consumes the builder and constructs a [`InsightResults`](crate::types::InsightResults).

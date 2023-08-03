@@ -8,8 +8,7 @@ pub struct ListReferenceStoresOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of reference stores.</p>
     #[doc(hidden)]
-    pub reference_stores:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReferenceStoreDetail>>,
+    pub reference_stores: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceStoreDetail>>,
     _request_id: Option<String>,
 }
 impl ListReferenceStoresOutput {
@@ -29,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListReferenceStoresOutput {
 }
 impl ListReferenceStoresOutput {
     /// Creates a new builder-style object to manufacture [`ListReferenceStoresOutput`](crate::operation::list_reference_stores::ListReferenceStoresOutput).
-    pub fn builder(
-    ) -> crate::operation::list_reference_stores::builders::ListReferenceStoresOutputBuilder {
-        crate::operation::list_reference_stores::builders::ListReferenceStoresOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_reference_stores::builders::ListReferenceStoresOutputBuilder {
+        crate::operation::list_reference_stores::builders::ListReferenceStoresOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReferenceStoresOutput`](crate::operation::list_reference_stores::ListReferenceStoresOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReferenceStoresOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) reference_stores:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReferenceStoreDetail>>,
+    pub(crate) reference_stores: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceStoreDetail>>,
     _request_id: Option<String>,
 }
 impl ListReferenceStoresOutputBuilder {
@@ -74,17 +68,12 @@ impl ListReferenceStoresOutputBuilder {
         self
     }
     /// <p>A list of reference stores.</p>
-    pub fn set_reference_stores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceStoreDetail>>,
-    ) -> Self {
+    pub fn set_reference_stores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceStoreDetail>>) -> Self {
         self.reference_stores = input;
         self
     }
     /// <p>A list of reference stores.</p>
-    pub fn get_reference_stores(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceStoreDetail>> {
+    pub fn get_reference_stores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceStoreDetail>> {
         &self.reference_stores
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

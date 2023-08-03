@@ -23,8 +23,7 @@ pub struct CreateSoftwareUpdateJobInput {
     pub update_targets_architecture: ::std::option::Option<crate::types::UpdateTargetsArchitecture>,
     /// The operating system of the cores which are the targets of an update.
     #[doc(hidden)]
-    pub update_targets_operating_system:
-        ::std::option::Option<crate::types::UpdateTargetsOperatingSystem>,
+    pub update_targets_operating_system: ::std::option::Option<crate::types::UpdateTargetsOperatingSystem>,
 }
 impl CreateSoftwareUpdateJobInput {
     /// A client token used to correlate requests and responses.
@@ -40,9 +39,7 @@ impl CreateSoftwareUpdateJobInput {
         self.software_to_update.as_ref()
     }
     /// The minimum level of log statements that should be logged by the OTA Agent during an update.
-    pub fn update_agent_log_level(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateAgentLogLevel> {
+    pub fn update_agent_log_level(&self) -> ::std::option::Option<&crate::types::UpdateAgentLogLevel> {
         self.update_agent_log_level.as_ref()
     }
     /// The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to.
@@ -50,57 +47,41 @@ impl CreateSoftwareUpdateJobInput {
         self.update_targets.as_deref()
     }
     /// The architecture of the cores which are the targets of an update.
-    pub fn update_targets_architecture(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateTargetsArchitecture> {
+    pub fn update_targets_architecture(&self) -> ::std::option::Option<&crate::types::UpdateTargetsArchitecture> {
         self.update_targets_architecture.as_ref()
     }
     /// The operating system of the cores which are the targets of an update.
-    pub fn update_targets_operating_system(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateTargetsOperatingSystem> {
+    pub fn update_targets_operating_system(&self) -> ::std::option::Option<&crate::types::UpdateTargetsOperatingSystem> {
         self.update_targets_operating_system.as_ref()
     }
 }
 impl CreateSoftwareUpdateJobInput {
     /// Creates a new builder-style object to manufacture [`CreateSoftwareUpdateJobInput`](crate::operation::create_software_update_job::CreateSoftwareUpdateJobInput).
-    pub fn builder(
-    ) -> crate::operation::create_software_update_job::builders::CreateSoftwareUpdateJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_software_update_job::builders::CreateSoftwareUpdateJobInputBuilder {
         crate::operation::create_software_update_job::builders::CreateSoftwareUpdateJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSoftwareUpdateJobInput`](crate::operation::create_software_update_job::CreateSoftwareUpdateJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSoftwareUpdateJobInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) s3_url_signer_role: ::std::option::Option<::std::string::String>,
     pub(crate) software_to_update: ::std::option::Option<crate::types::SoftwareToUpdate>,
     pub(crate) update_agent_log_level: ::std::option::Option<crate::types::UpdateAgentLogLevel>,
     pub(crate) update_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) update_targets_architecture:
-        ::std::option::Option<crate::types::UpdateTargetsArchitecture>,
-    pub(crate) update_targets_operating_system:
-        ::std::option::Option<crate::types::UpdateTargetsOperatingSystem>,
+    pub(crate) update_targets_architecture: ::std::option::Option<crate::types::UpdateTargetsArchitecture>,
+    pub(crate) update_targets_operating_system: ::std::option::Option<crate::types::UpdateTargetsOperatingSystem>,
 }
 impl CreateSoftwareUpdateJobInputBuilder {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amzn_client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amzn_client_token = input;
         self
     }
@@ -109,18 +90,12 @@ impl CreateSoftwareUpdateJobInputBuilder {
         &self.amzn_client_token
     }
     /// The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
-    pub fn s3_url_signer_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_url_signer_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_url_signer_role = ::std::option::Option::Some(input.into());
         self
     }
     /// The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
-    pub fn set_s3_url_signer_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_url_signer_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_url_signer_role = input;
         self
     }
@@ -134,10 +109,7 @@ impl CreateSoftwareUpdateJobInputBuilder {
         self
     }
     /// The piece of software on the Greengrass core that will be updated.
-    pub fn set_software_to_update(
-        mut self,
-        input: ::std::option::Option<crate::types::SoftwareToUpdate>,
-    ) -> Self {
+    pub fn set_software_to_update(mut self, input: ::std::option::Option<crate::types::SoftwareToUpdate>) -> Self {
         self.software_to_update = input;
         self
     }
@@ -151,17 +123,12 @@ impl CreateSoftwareUpdateJobInputBuilder {
         self
     }
     /// The minimum level of log statements that should be logged by the OTA Agent during an update.
-    pub fn set_update_agent_log_level(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateAgentLogLevel>,
-    ) -> Self {
+    pub fn set_update_agent_log_level(mut self, input: ::std::option::Option<crate::types::UpdateAgentLogLevel>) -> Self {
         self.update_agent_log_level = input;
         self
     }
     /// The minimum level of log statements that should be logged by the OTA Agent during an update.
-    pub fn get_update_agent_log_level(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateAgentLogLevel> {
+    pub fn get_update_agent_log_level(&self) -> &::std::option::Option<crate::types::UpdateAgentLogLevel> {
         &self.update_agent_log_level
     }
     /// Appends an item to `update_targets`.
@@ -169,71 +136,47 @@ impl CreateSoftwareUpdateJobInputBuilder {
     /// To override the contents of this collection use [`set_update_targets`](Self::set_update_targets).
     ///
     /// The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to.
-    pub fn update_targets(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn update_targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.update_targets.unwrap_or_default();
         v.push(input.into());
         self.update_targets = ::std::option::Option::Some(v);
         self
     }
     /// The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to.
-    pub fn set_update_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_update_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.update_targets = input;
         self
     }
     /// The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to.
-    pub fn get_update_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_update_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.update_targets
     }
     /// The architecture of the cores which are the targets of an update.
-    pub fn update_targets_architecture(
-        mut self,
-        input: crate::types::UpdateTargetsArchitecture,
-    ) -> Self {
+    pub fn update_targets_architecture(mut self, input: crate::types::UpdateTargetsArchitecture) -> Self {
         self.update_targets_architecture = ::std::option::Option::Some(input);
         self
     }
     /// The architecture of the cores which are the targets of an update.
-    pub fn set_update_targets_architecture(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateTargetsArchitecture>,
-    ) -> Self {
+    pub fn set_update_targets_architecture(mut self, input: ::std::option::Option<crate::types::UpdateTargetsArchitecture>) -> Self {
         self.update_targets_architecture = input;
         self
     }
     /// The architecture of the cores which are the targets of an update.
-    pub fn get_update_targets_architecture(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateTargetsArchitecture> {
+    pub fn get_update_targets_architecture(&self) -> &::std::option::Option<crate::types::UpdateTargetsArchitecture> {
         &self.update_targets_architecture
     }
     /// The operating system of the cores which are the targets of an update.
-    pub fn update_targets_operating_system(
-        mut self,
-        input: crate::types::UpdateTargetsOperatingSystem,
-    ) -> Self {
+    pub fn update_targets_operating_system(mut self, input: crate::types::UpdateTargetsOperatingSystem) -> Self {
         self.update_targets_operating_system = ::std::option::Option::Some(input);
         self
     }
     /// The operating system of the cores which are the targets of an update.
-    pub fn set_update_targets_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateTargetsOperatingSystem>,
-    ) -> Self {
+    pub fn set_update_targets_operating_system(mut self, input: ::std::option::Option<crate::types::UpdateTargetsOperatingSystem>) -> Self {
         self.update_targets_operating_system = input;
         self
     }
     /// The operating system of the cores which are the targets of an update.
-    pub fn get_update_targets_operating_system(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateTargetsOperatingSystem> {
+    pub fn get_update_targets_operating_system(&self) -> &::std::option::Option<crate::types::UpdateTargetsOperatingSystem> {
         &self.update_targets_operating_system
     }
     /// Consumes the builder and constructs a [`CreateSoftwareUpdateJobInput`](crate::operation::create_software_update_job::CreateSoftwareUpdateJobInput).
@@ -243,16 +186,14 @@ impl CreateSoftwareUpdateJobInputBuilder {
         crate::operation::create_software_update_job::CreateSoftwareUpdateJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_software_update_job::CreateSoftwareUpdateJobInput {
-                amzn_client_token: self.amzn_client_token,
-                s3_url_signer_role: self.s3_url_signer_role,
-                software_to_update: self.software_to_update,
-                update_agent_log_level: self.update_agent_log_level,
-                update_targets: self.update_targets,
-                update_targets_architecture: self.update_targets_architecture,
-                update_targets_operating_system: self.update_targets_operating_system,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_software_update_job::CreateSoftwareUpdateJobInput {
+            amzn_client_token: self.amzn_client_token,
+            s3_url_signer_role: self.s3_url_signer_role,
+            software_to_update: self.software_to_update,
+            update_agent_log_level: self.update_agent_log_level,
+            update_targets: self.update_targets,
+            update_targets_architecture: self.update_targets_architecture,
+            update_targets_operating_system: self.update_targets_operating_system,
+        })
     }
 }

@@ -33,10 +33,7 @@ impl ::std::fmt::Debug for SessionKeyEmv2000 {
         let mut formatter = f.debug_struct("SessionKeyEmv2000");
         formatter.field("primary_account_number", &"*** Sensitive Data Redacted ***");
         formatter.field("pan_sequence_number", &self.pan_sequence_number);
-        formatter.field(
-            "application_transaction_counter",
-            &self.application_transaction_counter,
-        );
+        formatter.field("application_transaction_counter", &self.application_transaction_counter);
         formatter.finish()
     }
 }
@@ -57,18 +54,12 @@ pub struct SessionKeyEmv2000Builder {
 }
 impl SessionKeyEmv2000Builder {
     /// <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
-    pub fn primary_account_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_account_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
-    pub fn set_primary_account_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_account_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_account_number = input;
         self
     }
@@ -77,18 +68,12 @@ impl SessionKeyEmv2000Builder {
         &self.primary_account_number
     }
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
-    pub fn pan_sequence_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pan_sequence_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pan_sequence_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
-    pub fn set_pan_sequence_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pan_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pan_sequence_number = input;
         self
     }
@@ -97,25 +82,17 @@ impl SessionKeyEmv2000Builder {
         &self.pan_sequence_number
     }
     /// <p>The transaction counter that is provided by the terminal during transaction processing.</p>
-    pub fn application_transaction_counter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_transaction_counter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_transaction_counter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transaction counter that is provided by the terminal during transaction processing.</p>
-    pub fn set_application_transaction_counter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_transaction_counter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_transaction_counter = input;
         self
     }
     /// <p>The transaction counter that is provided by the terminal during transaction processing.</p>
-    pub fn get_application_transaction_counter(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_application_transaction_counter(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_transaction_counter
     }
     /// Consumes the builder and constructs a [`SessionKeyEmv2000`](crate::types::SessionKeyEmv2000).
@@ -132,10 +109,7 @@ impl ::std::fmt::Debug for SessionKeyEmv2000Builder {
         let mut formatter = f.debug_struct("SessionKeyEmv2000Builder");
         formatter.field("primary_account_number", &"*** Sensitive Data Redacted ***");
         formatter.field("pan_sequence_number", &self.pan_sequence_number);
-        formatter.field(
-            "application_transaction_counter",
-            &self.application_transaction_counter,
-        );
+        formatter.field("application_transaction_counter", &self.application_transaction_counter);
         formatter.finish()
     }
 }

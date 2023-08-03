@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RegenerateSecurityTokenOutput`](crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput) with field(s):
     ///   - [`bot(Option<Bot>)`](crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput::bot): <p>A resource that allows Enterprise account administrators to configure an interface that receives events from Amazon Chime.</p>
     /// - On failure, responds with [`SdkError<RegenerateSecurityTokenError>`](crate::operation::regenerate_security_token::RegenerateSecurityTokenError)
-    pub fn regenerate_security_token(
-        &self,
-    ) -> crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenFluentBuilder
-    {
+    pub fn regenerate_security_token(&self) -> crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenFluentBuilder {
         crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenFluentBuilder::new(self.handle.clone())
     }
 }

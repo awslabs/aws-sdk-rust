@@ -23,11 +23,7 @@ impl super::Client {
     ///   - [`availability_zone_ids(Option<Vec<String>>)`](crate::operation::get_kx_environment::GetKxEnvironmentOutput::availability_zone_ids): <p>The identifier of the availability zones where subnets for the environment are created.</p>
     ///   - [`certificate_authority_arn(Option<String>)`](crate::operation::get_kx_environment::GetKxEnvironmentOutput::certificate_authority_arn): <p>The Amazon Resource Name (ARN) of the certificate authority of the kdb environment.</p>
     /// - On failure, responds with [`SdkError<GetKxEnvironmentError>`](crate::operation::get_kx_environment::GetKxEnvironmentError)
-    pub fn get_kx_environment(
-        &self,
-    ) -> crate::operation::get_kx_environment::builders::GetKxEnvironmentFluentBuilder {
-        crate::operation::get_kx_environment::builders::GetKxEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_kx_environment(&self) -> crate::operation::get_kx_environment::builders::GetKxEnvironmentFluentBuilder {
+        crate::operation::get_kx_environment::builders::GetKxEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl UpdateScalingPlanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_scaling_plan::UpdateScalingPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scaling_plan::UpdateScalingPlanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scaling_plan::UpdateScalingPlanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_scaling_plan();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateScalingPlanFluentBuilder {
         }
     }
     /// Access the UpdateScalingPlan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_scaling_plan::builders::UpdateScalingPlanInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_scaling_plan::builders::UpdateScalingPlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdateScalingPlanFluentBuilder {
             crate::operation::update_scaling_plan::UpdateScalingPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scaling_plan::UpdateScalingPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scaling_plan::UpdateScalingPlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdateScalingPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdateScalingPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_scaling_plan::UpdateScalingPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scaling_plan::UpdateScalingPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scaling_plan::UpdateScalingPlanError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdateScalingPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_scaling_plan::UpdateScalingPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scaling_plan::UpdateScalingPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scaling_plan::UpdateScalingPlanError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl UpdateScalingPlanFluentBuilder {
             crate::operation::update_scaling_plan::UpdateScalingPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scaling_plan::UpdateScalingPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scaling_plan::UpdateScalingPlanError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the scaling plan.</p>
-    pub fn scaling_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scaling_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scaling_plan_name(input.into());
         self
     }
     /// <p>The name of the scaling plan.</p>
-    pub fn set_scaling_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scaling_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scaling_plan_name(input);
         self
     }
@@ -165,18 +143,13 @@ impl UpdateScalingPlanFluentBuilder {
     }
     /// <p>A CloudFormation stack or set of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    pub fn set_application_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationSource>,
-    ) -> Self {
+    pub fn set_application_source(mut self, input: ::std::option::Option<crate::types::ApplicationSource>) -> Self {
         self.inner = self.inner.set_application_source(input);
         self
     }
     /// <p>A CloudFormation stack or set of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    pub fn get_application_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationSource> {
+    pub fn get_application_source(&self) -> &::std::option::Option<crate::types::ApplicationSource> {
         self.inner.get_application_source()
     }
     /// Appends an item to `ScalingInstructions`.
@@ -191,18 +164,13 @@ impl UpdateScalingPlanFluentBuilder {
     }
     /// <p>The scaling instructions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    pub fn set_scaling_instructions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>>,
-    ) -> Self {
+    pub fn set_scaling_instructions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>>) -> Self {
         self.inner = self.inner.set_scaling_instructions(input);
         self
     }
     /// <p>The scaling instructions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    pub fn get_scaling_instructions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>> {
+    pub fn get_scaling_instructions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>> {
         self.inner.get_scaling_instructions()
     }
 }

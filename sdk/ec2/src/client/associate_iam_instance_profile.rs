@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateIamInstanceProfileOutput`](crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileOutput) with field(s):
     ///   - [`iam_instance_profile_association(Option<IamInstanceProfileAssociation>)`](crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileOutput::iam_instance_profile_association): <p>Information about the IAM instance profile association.</p>
     /// - On failure, responds with [`SdkError<AssociateIamInstanceProfileError>`](crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileError)
-    pub fn associate_iam_instance_profile(&self) -> crate::operation::associate_iam_instance_profile::builders::AssociateIamInstanceProfileFluentBuilder{
+    pub fn associate_iam_instance_profile(
+        &self,
+    ) -> crate::operation::associate_iam_instance_profile::builders::AssociateIamInstanceProfileFluentBuilder {
         crate::operation::associate_iam_instance_profile::builders::AssociateIamInstanceProfileFluentBuilder::new(self.handle.clone())
     }
 }

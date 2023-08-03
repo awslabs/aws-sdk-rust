@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`app_bundle_summary_list(Option<Vec<AppBundleSummary>>)`](crate::operation::list_app_bundles::ListAppBundlesOutput::app_bundle_summary_list): <p>Contains a list of app bundle summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_bundles::ListAppBundlesOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
     /// - On failure, responds with [`SdkError<ListAppBundlesError>`](crate::operation::list_app_bundles::ListAppBundlesError)
-    pub fn list_app_bundles(
-        &self,
-    ) -> crate::operation::list_app_bundles::builders::ListAppBundlesFluentBuilder {
-        crate::operation::list_app_bundles::builders::ListAppBundlesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_app_bundles(&self) -> crate::operation::list_app_bundles::builders::ListAppBundlesFluentBuilder {
+        crate::operation::list_app_bundles::builders::ListAppBundlesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateStreamProcessorOutput {
 }
 impl CreateStreamProcessorOutput {
     /// Creates a new builder-style object to manufacture [`CreateStreamProcessorOutput`](crate::operation::create_stream_processor::CreateStreamProcessorOutput).
-    pub fn builder(
-    ) -> crate::operation::create_stream_processor::builders::CreateStreamProcessorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_stream_processor::builders::CreateStreamProcessorOutputBuilder {
         crate::operation::create_stream_processor::builders::CreateStreamProcessorOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStreamProcessorOutput`](crate::operation::create_stream_processor::CreateStreamProcessorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStreamProcessorOutputBuilder {
     pub(crate) stream_processor_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateStreamProcessorOutputBuilder {
     /// <p>Amazon Resource Number for the newly created stream processor.</p>
-    pub fn stream_processor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stream_processor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_processor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Number for the newly created stream processor.</p>
-    pub fn set_stream_processor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stream_processor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_processor_arn = input;
         self
     }

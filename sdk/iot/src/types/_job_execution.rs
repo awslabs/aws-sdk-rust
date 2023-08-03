@@ -52,9 +52,7 @@ impl JobExecution {
         self.force_canceled
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
-    pub fn status_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::JobExecutionStatusDetails> {
+    pub fn status_details(&self) -> ::std::option::Option<&crate::types::JobExecutionStatusDetails> {
         self.status_details.as_ref()
     }
     /// <p>The ARN of the thing on which the job execution is running.</p>
@@ -95,9 +93,7 @@ impl JobExecution {
 
 /// A builder for [`JobExecution`](crate::types::JobExecution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobExecutionBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::JobExecutionStatus>,
@@ -132,10 +128,7 @@ impl JobExecutionBuilder {
         self
     }
     /// <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, CANCELED, or REJECTED).</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -163,17 +156,12 @@ impl JobExecutionBuilder {
         self
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
-    pub fn set_status_details(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionStatusDetails>,
-    ) -> Self {
+    pub fn set_status_details(mut self, input: ::std::option::Option<crate::types::JobExecutionStatusDetails>) -> Self {
         self.status_details = input;
         self
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
-    pub fn get_status_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::JobExecutionStatusDetails> {
+    pub fn get_status_details(&self) -> &::std::option::Option<crate::types::JobExecutionStatusDetails> {
         &self.status_details
     }
     /// <p>The ARN of the thing on which the job execution is running.</p>
@@ -196,10 +184,7 @@ impl JobExecutionBuilder {
         self
     }
     /// <p>The time, in seconds since the epoch, when the job execution was queued.</p>
-    pub fn set_queued_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_queued_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.queued_at = input;
         self
     }
@@ -213,10 +198,7 @@ impl JobExecutionBuilder {
         self
     }
     /// <p>The time, in seconds since the epoch, when the job execution started.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
@@ -230,10 +212,7 @@ impl JobExecutionBuilder {
         self
     }
     /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -275,10 +254,7 @@ impl JobExecutionBuilder {
         self
     }
     /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The actual job execution timeout can occur up to 60 seconds later than the estimated duration. This value will not be included if the job execution has reached a terminal status.</p>
-    pub fn set_approximate_seconds_before_timed_out(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_approximate_seconds_before_timed_out(mut self, input: ::std::option::Option<i64>) -> Self {
         self.approximate_seconds_before_timed_out = input;
         self
     }

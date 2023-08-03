@@ -41,13 +41,7 @@
 /// Codec, 'MPEG2', 'AVC', 'HEVC', or 'AUDIO'
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ReservationCodec {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ReservationCodec {
             "HEVC" => ReservationCodec::Hevc,
             "LINK" => ReservationCodec::Link,
             "MPEG2" => ReservationCodec::Mpeg2,
-            other => {
-                ReservationCodec::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ReservationCodec::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

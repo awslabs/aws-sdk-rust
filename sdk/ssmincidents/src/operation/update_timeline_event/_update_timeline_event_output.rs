@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateTimelineEventOutput {
 }
 impl UpdateTimelineEventOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTimelineEventOutput`](crate::operation::update_timeline_event::UpdateTimelineEventOutput).
-    pub fn builder(
-    ) -> crate::operation::update_timeline_event::builders::UpdateTimelineEventOutputBuilder {
-        crate::operation::update_timeline_event::builders::UpdateTimelineEventOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_timeline_event::builders::UpdateTimelineEventOutputBuilder {
+        crate::operation::update_timeline_event::builders::UpdateTimelineEventOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTimelineEventOutput`](crate::operation::update_timeline_event::UpdateTimelineEventOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTimelineEventOutputBuilder {
     _request_id: Option<String>,
 }

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`ReleaseFileSystemNfsV3LocksOutput`](crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksOutput) with field(s):
     ///   - [`file_system(Option<FileSystem>)`](crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksOutput::file_system): <p>A description of a specific Amazon FSx file system.</p>
     /// - On failure, responds with [`SdkError<ReleaseFileSystemNfsV3LocksError>`](crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksError)
-    pub fn release_file_system_nfs_v3_locks(&self) -> crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksFluentBuilder{
+    pub fn release_file_system_nfs_v3_locks(
+        &self,
+    ) -> crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksFluentBuilder {
         crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksFluentBuilder::new(self.handle.clone())
     }
 }

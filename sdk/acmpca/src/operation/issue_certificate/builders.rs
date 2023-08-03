@@ -10,10 +10,7 @@ impl IssueCertificateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::issue_certificate::IssueCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::issue_certificate::IssueCertificateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::issue_certificate::IssueCertificateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.issue_certificate();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl IssueCertificateFluentBuilder {
         }
     }
     /// Access the IssueCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::issue_certificate::builders::IssueCertificateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::issue_certificate::builders::IssueCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl IssueCertificateFluentBuilder {
             crate::operation::issue_certificate::IssueCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::issue_certificate::IssueCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::issue_certificate::IssueCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl IssueCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl IssueCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::issue_certificate::IssueCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::issue_certificate::IssueCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::issue_certificate::IssueCertificateError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl IssueCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::issue_certificate::IssueCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::issue_certificate::IssueCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::issue_certificate::IssueCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl IssueCertificateFluentBuilder {
             crate::operation::issue_certificate::IssueCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::issue_certificate::IssueCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::issue_certificate::IssueCertificateError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl IssueCertificateFluentBuilder {
     }
     /// <p>Specifies X.509 certificate information to be included in the issued certificate. An <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored. For more information about using these templates, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html">Understanding Certificate Templates</a>.</p>
     /// <p>If conflicting or duplicate certificate information is supplied during certificate issuance, Amazon Web Services Private CA applies <a href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations">order of operation rules</a> to determine what information is used.</p>
-    pub fn set_api_passthrough(
-        mut self,
-        input: ::std::option::Option<crate::types::ApiPassthrough>,
-    ) -> Self {
+    pub fn set_api_passthrough(mut self, input: ::std::option::Option<crate::types::ApiPassthrough>) -> Self {
         self.inner = self.inner.set_api_passthrough(input);
         self
     }
@@ -146,19 +127,13 @@ impl IssueCertificateFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_authority_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_authority_arn(input);
         self
     }
@@ -205,10 +180,7 @@ impl IssueCertificateFluentBuilder {
     /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p> <note>
     /// <p>The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.</p>
     /// </note>
-    pub fn set_signing_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningAlgorithm>,
-    ) -> Self {
+    pub fn set_signing_algorithm(mut self, input: ::std::option::Option<crate::types::SigningAlgorithm>) -> Self {
         self.inner = self.inner.set_signing_algorithm(input);
         self
     }
@@ -274,10 +246,7 @@ impl IssueCertificateFluentBuilder {
     /// <p>By default, when issuing a certificate, Amazon Web Services Private CA sets the "Not Before" date to the issuance time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value. </p>
     /// <p>Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.</p>
     /// <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
-    pub fn set_validity_not_before(
-        mut self,
-        input: ::std::option::Option<crate::types::Validity>,
-    ) -> Self {
+    pub fn set_validity_not_before(mut self, input: ::std::option::Option<crate::types::Validity>) -> Self {
         self.inner = self.inner.set_validity_not_before(input);
         self
     }
@@ -289,18 +258,12 @@ impl IssueCertificateFluentBuilder {
         self.inner.get_validity_not_before()
     }
     /// <p>Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, Amazon Web Services Private CA recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, Amazon Web Services Private CA recognizes that you are requesting multiple certificates.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, Amazon Web Services Private CA recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, Amazon Web Services Private CA recognizes that you are requesting multiple certificates.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }

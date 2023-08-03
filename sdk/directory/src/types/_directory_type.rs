@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DirectoryType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for DirectoryType {
             "MicrosoftAD" => DirectoryType::MicrosoftAd,
             "SharedMicrosoftAD" => DirectoryType::SharedMicrosoftAd,
             "SimpleAD" => DirectoryType::SimpleAd,
-            other => {
-                DirectoryType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DirectoryType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl DirectoryType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADConnector",
-            "MicrosoftAD",
-            "SharedMicrosoftAD",
-            "SimpleAD",
-        ]
+        &["ADConnector", "MicrosoftAD", "SharedMicrosoftAD", "SimpleAD"]
     }
 }
 impl ::std::convert::AsRef<str> for DirectoryType {

@@ -4,9 +4,7 @@ pub fn ser_create_stage_input(
     input: &crate::operation::create_stage::CreateStageInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if input.cache_cluster_enabled {
-        object
-            .key("cacheClusterEnabled")
-            .boolean(input.cache_cluster_enabled);
+        object.key("cacheClusterEnabled").boolean(input.cache_cluster_enabled);
     }
     if let Some(var_1) = &input.cache_cluster_size {
         object.key("cacheClusterSize").string(var_1.as_str());

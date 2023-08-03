@@ -30,9 +30,7 @@ impl NetworkFrameworkAttributes {
 
 /// A builder for [`NetworkFrameworkAttributes`](crate::types::NetworkFrameworkAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkFrameworkAttributesBuilder {
     pub(crate) fabric: ::std::option::Option<crate::types::NetworkFabricAttributes>,
     pub(crate) ethereum: ::std::option::Option<crate::types::NetworkEthereumAttributes>,
@@ -44,10 +42,7 @@ impl NetworkFrameworkAttributesBuilder {
         self
     }
     /// <p>Attributes of Hyperledger Fabric for a Managed Blockchain network that uses Hyperledger Fabric.</p>
-    pub fn set_fabric(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkFabricAttributes>,
-    ) -> Self {
+    pub fn set_fabric(mut self, input: ::std::option::Option<crate::types::NetworkFabricAttributes>) -> Self {
         self.fabric = input;
         self
     }
@@ -61,10 +56,7 @@ impl NetworkFrameworkAttributesBuilder {
         self
     }
     /// <p>Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network. </p>
-    pub fn set_ethereum(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkEthereumAttributes>,
-    ) -> Self {
+    pub fn set_ethereum(mut self, input: ::std::option::Option<crate::types::NetworkEthereumAttributes>) -> Self {
         self.ethereum = input;
         self
     }

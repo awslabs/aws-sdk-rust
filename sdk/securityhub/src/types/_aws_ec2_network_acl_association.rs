@@ -37,9 +37,7 @@ impl AwsEc2NetworkAclAssociation {
 
 /// A builder for [`AwsEc2NetworkAclAssociation`](crate::types::AwsEc2NetworkAclAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkAclAssociationBuilder {
     pub(crate) network_acl_association_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_acl_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct AwsEc2NetworkAclAssociationBuilder {
 }
 impl AwsEc2NetworkAclAssociationBuilder {
     /// <p>The identifier of the association between the network ACL and the subnet.</p>
-    pub fn network_acl_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_acl_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_acl_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the association between the network ACL and the subnet.</p>
-    pub fn set_network_acl_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_acl_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_acl_association_id = input;
         self
     }
@@ -67,18 +59,12 @@ impl AwsEc2NetworkAclAssociationBuilder {
         &self.network_acl_association_id
     }
     /// <p>The identifier of the network ACL.</p>
-    pub fn network_acl_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_acl_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the network ACL.</p>
-    pub fn set_network_acl_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_acl_id = input;
         self
     }

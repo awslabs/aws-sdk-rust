@@ -77,9 +77,7 @@ impl CreateJobOutput {
 
 /// A builder for [`CreateJobOutput`](crate::operation::create_job::CreateJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -112,10 +110,7 @@ impl CreateJobOutputBuilder {
         self
     }
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -129,10 +124,7 @@ impl CreateJobOutputBuilder {
         self
     }
     /// <p>Details about the job.</p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseDetails>,
-    ) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<crate::types::ResponseDetails>) -> Self {
         self.details = input;
         self
     }
@@ -152,10 +144,7 @@ impl CreateJobOutputBuilder {
         self
     }
     /// <p>The errors associated with jobs.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobError>>) -> Self {
         self.errors = input;
         self
     }
@@ -211,10 +200,7 @@ impl CreateJobOutputBuilder {
         self
     }
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

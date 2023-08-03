@@ -30,9 +30,7 @@ impl DataSourceErrorInfo {
 
 /// A builder for [`DataSourceErrorInfo`](crate::types::DataSourceErrorInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSourceErrorInfoBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DataSourceErrorInfoType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl DataSourceErrorInfoBuilder {
         self
     }
     /// <p>Error type.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceErrorInfoType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataSourceErrorInfoType>) -> Self {
         self.r#type = input;
         self
     }

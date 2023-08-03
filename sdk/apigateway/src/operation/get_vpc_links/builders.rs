@@ -10,10 +10,7 @@ impl GetVpcLinksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_vpc_links::GetVpcLinksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_vpc_links::GetVpcLinksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_vpc_links::GetVpcLinksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_vpc_links();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetVpcLinksFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_vpc_links::GetVpcLinks,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_vpc_links::GetVpcLinks, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_vpc_links::GetVpcLinksError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetVpcLinksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetVpcLinksFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_vpc_links::GetVpcLinks,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_vpc_links::GetVpcLinks, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_vpc_links::GetVpcLinksError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl GetVpcLinksFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_vpc_links::paginator::GetVpcLinksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_vpc_links::paginator::GetVpcLinksPaginator {
-        crate::operation::get_vpc_links::paginator::GetVpcLinksPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_vpc_links::paginator::GetVpcLinksPaginator {
+        crate::operation::get_vpc_links::paginator::GetVpcLinksPaginator::new(self.handle, self.inner)
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

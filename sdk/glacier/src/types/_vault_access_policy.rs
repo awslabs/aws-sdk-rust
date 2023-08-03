@@ -23,9 +23,7 @@ impl VaultAccessPolicy {
 
 /// A builder for [`VaultAccessPolicy`](crate::types::VaultAccessPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VaultAccessPolicyBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl VaultAccessPolicyBuilder {
     }
     /// Consumes the builder and constructs a [`VaultAccessPolicy`](crate::types::VaultAccessPolicy).
     pub fn build(self) -> crate::types::VaultAccessPolicy {
-        crate::types::VaultAccessPolicy {
-            policy: self.policy,
-        }
+        crate::types::VaultAccessPolicy { policy: self.policy }
     }
 }

@@ -30,8 +30,7 @@ impl GetLoggingConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLoggingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_logging_configuration::builders::GetLoggingConfigurationInputBuilder,
+    inner: crate::operation::get_logging_configuration::builders::GetLoggingConfigurationInputBuilder,
 }
 impl GetLoggingConfigurationFluentBuilder {
     /// Creates a new `GetLoggingConfiguration`.
@@ -42,10 +41,7 @@ impl GetLoggingConfigurationFluentBuilder {
         }
     }
     /// Access the GetLoggingConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_logging_configuration::builders::GetLoggingConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_logging_configuration::builders::GetLoggingConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl GetLoggingConfigurationFluentBuilder {
             crate::operation::get_logging_configuration::GetLoggingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_logging_configuration::GetLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_logging_configuration::GetLoggingConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl GetLoggingConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl GetLoggingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_logging_configuration::GetLoggingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_logging_configuration::GetLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_logging_configuration::GetLoggingConfigurationError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl GetLoggingConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_logging_configuration::GetLoggingConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_logging_configuration::GetLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_logging_configuration::GetLoggingConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +109,7 @@ impl GetLoggingConfigurationFluentBuilder {
             crate::operation::get_logging_configuration::GetLoggingConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_logging_configuration::GetLoggingConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_logging_configuration::GetLoggingConfigurationError>,
     > {
         self.customize_middleware().await
     }

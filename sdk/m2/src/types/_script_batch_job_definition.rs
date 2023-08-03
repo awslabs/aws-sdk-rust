@@ -23,9 +23,7 @@ impl ScriptBatchJobDefinition {
 
 /// A builder for [`ScriptBatchJobDefinition`](crate::types::ScriptBatchJobDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScriptBatchJobDefinitionBuilder {
     pub(crate) script_name: ::std::option::Option<::std::string::String>,
 }

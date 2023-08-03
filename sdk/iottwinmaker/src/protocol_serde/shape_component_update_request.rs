@@ -19,10 +19,7 @@ pub fn ser_component_update_request(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = object_5.key(key_6.as_str()).start_object();
-                crate::protocol_serde::shape_property_request::ser_property_request(
-                    &mut object_8,
-                    value_7,
-                )?;
+                crate::protocol_serde::shape_property_request::ser_property_request(&mut object_8, value_7)?;
                 object_8.finish();
             }
         }

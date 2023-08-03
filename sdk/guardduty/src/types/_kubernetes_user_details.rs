@@ -44,9 +44,7 @@ impl KubernetesUserDetails {
 
 /// A builder for [`KubernetesUserDetails`](crate::types::KubernetesUserDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KubernetesUserDetailsBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) uid: ::std::option::Option<::std::string::String>,
@@ -94,10 +92,7 @@ impl KubernetesUserDetailsBuilder {
         self
     }
     /// <p>The groups that include the user who called the Kubernetes API.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.groups = input;
         self
     }
@@ -117,17 +112,12 @@ impl KubernetesUserDetailsBuilder {
         self
     }
     /// <p>Entity that assumes the IAM role when Kubernetes RBAC permissions are assigned to that role.</p>
-    pub fn set_session_name(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_session_name(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.session_name = input;
         self
     }
     /// <p>Entity that assumes the IAM role when Kubernetes RBAC permissions are assigned to that role.</p>
-    pub fn get_session_name(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_session_name(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.session_name
     }
     /// Consumes the builder and constructs a [`KubernetesUserDetails`](crate::types::KubernetesUserDetails).

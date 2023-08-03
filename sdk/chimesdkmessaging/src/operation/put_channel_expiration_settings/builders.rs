@@ -32,7 +32,7 @@ impl PutChannelExpirationSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutChannelExpirationSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_channel_expiration_settings::builders::PutChannelExpirationSettingsInputBuilder,
+    inner: crate::operation::put_channel_expiration_settings::builders::PutChannelExpirationSettingsInputBuilder,
 }
 impl PutChannelExpirationSettingsFluentBuilder {
     /// Creates a new `PutChannelExpirationSettings`.
@@ -43,7 +43,7 @@ impl PutChannelExpirationSettingsFluentBuilder {
         }
     }
     /// Access the PutChannelExpirationSettings as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_channel_expiration_settings::builders::PutChannelExpirationSettingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_channel_expiration_settings::builders::PutChannelExpirationSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl PutChannelExpirationSettingsFluentBuilder {
             crate::operation::put_channel_expiration_settings::PutChannelExpirationSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl PutChannelExpirationSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl PutChannelExpirationSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl PutChannelExpirationSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +111,7 @@ impl PutChannelExpirationSettingsFluentBuilder {
             crate::operation::put_channel_expiration_settings::PutChannelExpirationSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -160,17 +149,12 @@ impl PutChannelExpirationSettingsFluentBuilder {
         self
     }
     /// <p>Settings that control the interval after which a channel is deleted.</p>
-    pub fn set_expiration_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpirationSettings>,
-    ) -> Self {
+    pub fn set_expiration_settings(mut self, input: ::std::option::Option<crate::types::ExpirationSettings>) -> Self {
         self.inner = self.inner.set_expiration_settings(input);
         self
     }
     /// <p>Settings that control the interval after which a channel is deleted.</p>
-    pub fn get_expiration_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExpirationSettings> {
+    pub fn get_expiration_settings(&self) -> &::std::option::Option<crate::types::ExpirationSettings> {
         self.inner.get_expiration_settings()
     }
 }

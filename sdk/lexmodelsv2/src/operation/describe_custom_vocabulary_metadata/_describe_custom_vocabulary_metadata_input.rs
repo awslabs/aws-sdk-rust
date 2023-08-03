@@ -29,16 +29,14 @@ impl DescribeCustomVocabularyMetadataInput {
 }
 impl DescribeCustomVocabularyMetadataInput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomVocabularyMetadataInput`](crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataInput).
-    pub fn builder() -> crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataInputBuilder{
+    pub fn builder() -> crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataInputBuilder {
         crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCustomVocabularyMetadataInput`](crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCustomVocabularyMetadataInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -88,16 +86,18 @@ impl DescribeCustomVocabularyMetadataInputBuilder {
         &self.locale_id
     }
     /// Consumes the builder and constructs a [`DescribeCustomVocabularyMetadataInput`](crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataInput {
-                bot_id: self.bot_id
-                ,
-                bot_version: self.bot_version
-                ,
-                locale_id: self.locale_id
-                ,
-            }
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+            },
         )
     }
 }

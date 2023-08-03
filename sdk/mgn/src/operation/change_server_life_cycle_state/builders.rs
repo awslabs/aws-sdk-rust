@@ -26,7 +26,7 @@ impl ChangeServerLifeCycleStateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ChangeServerLifeCycleStateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateInputBuilder,
+    inner: crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateInputBuilder,
 }
 impl ChangeServerLifeCycleStateFluentBuilder {
     /// Creates a new `ChangeServerLifeCycleState`.
@@ -37,7 +37,7 @@ impl ChangeServerLifeCycleStateFluentBuilder {
         }
     }
     /// Access the ChangeServerLifeCycleState as a reference.
-    pub fn as_input(&self) -> &crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ChangeServerLifeCycleStateFluentBuilder {
             crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ChangeServerLifeCycleStateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ChangeServerLifeCycleStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ChangeServerLifeCycleStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ChangeServerLifeCycleStateFluentBuilder {
             crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());
         self
     }
     /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_server_id(input);
         self
     }
@@ -141,25 +124,17 @@ impl ChangeServerLifeCycleStateFluentBuilder {
         self.inner.get_source_server_id()
     }
     /// <p>The request to change the source server migration lifecycle state.</p>
-    pub fn life_cycle(
-        mut self,
-        input: crate::types::ChangeServerLifeCycleStateSourceServerLifecycle,
-    ) -> Self {
+    pub fn life_cycle(mut self, input: crate::types::ChangeServerLifeCycleStateSourceServerLifecycle) -> Self {
         self.inner = self.inner.life_cycle(input);
         self
     }
     /// <p>The request to change the source server migration lifecycle state.</p>
-    pub fn set_life_cycle(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle>,
-    ) -> Self {
+    pub fn set_life_cycle(mut self, input: ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle>) -> Self {
         self.inner = self.inner.set_life_cycle(input);
         self
     }
     /// <p>The request to change the source server migration lifecycle state.</p>
-    pub fn get_life_cycle(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle> {
+    pub fn get_life_cycle(&self) -> &::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle> {
         self.inner.get_life_cycle()
     }
     /// <p>The request to change the source server migration account ID.</p>

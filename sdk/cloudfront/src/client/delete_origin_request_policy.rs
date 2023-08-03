@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`if_match(impl ::std::convert::Into<String>)`](crate::operation::delete_origin_request_policy::builders::DeleteOriginRequestPolicyFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::delete_origin_request_policy::builders::DeleteOriginRequestPolicyFluentBuilder::set_if_match): <p>The version of the origin request policy that you are deleting. The version is the origin request policy's <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
     /// - On success, responds with [`DeleteOriginRequestPolicyOutput`](crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteOriginRequestPolicyError>`](crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError)
-    pub fn delete_origin_request_policy(&self) -> crate::operation::delete_origin_request_policy::builders::DeleteOriginRequestPolicyFluentBuilder{
+    pub fn delete_origin_request_policy(&self) -> crate::operation::delete_origin_request_policy::builders::DeleteOriginRequestPolicyFluentBuilder {
         crate::operation::delete_origin_request_policy::builders::DeleteOriginRequestPolicyFluentBuilder::new(self.handle.clone())
     }
 }

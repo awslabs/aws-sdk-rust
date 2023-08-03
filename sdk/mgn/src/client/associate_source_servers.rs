@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::associate_source_servers::builders::AssociateSourceServersFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::associate_source_servers::builders::AssociateSourceServersFluentBuilder::set_account_id): <p>Account ID.</p>
     /// - On success, responds with [`AssociateSourceServersOutput`](crate::operation::associate_source_servers::AssociateSourceServersOutput)
     /// - On failure, responds with [`SdkError<AssociateSourceServersError>`](crate::operation::associate_source_servers::AssociateSourceServersError)
-    pub fn associate_source_servers(
-        &self,
-    ) -> crate::operation::associate_source_servers::builders::AssociateSourceServersFluentBuilder
-    {
+    pub fn associate_source_servers(&self) -> crate::operation::associate_source_servers::builders::AssociateSourceServersFluentBuilder {
         crate::operation::associate_source_servers::builders::AssociateSourceServersFluentBuilder::new(self.handle.clone())
     }
 }

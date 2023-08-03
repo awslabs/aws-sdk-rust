@@ -28,12 +28,10 @@ pub struct AnomalyDetector {
     pub state_value: ::std::option::Option<crate::types::AnomalyDetectorStateValue>,
     /// <p>The CloudWatch metric and statistic for this anomaly detector.</p>
     #[doc(hidden)]
-    pub single_metric_anomaly_detector:
-        ::std::option::Option<crate::types::SingleMetricAnomalyDetector>,
+    pub single_metric_anomaly_detector: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>,
     /// <p>The CloudWatch metric math expression for this anomaly detector.</p>
     #[doc(hidden)]
-    pub metric_math_anomaly_detector:
-        ::std::option::Option<crate::types::MetricMathAnomalyDetector>,
+    pub metric_math_anomaly_detector: ::std::option::Option<crate::types::MetricMathAnomalyDetector>,
 }
 impl AnomalyDetector {
     /// <p>The namespace of the metric associated with the anomaly detection model.</p>
@@ -57,9 +55,7 @@ impl AnomalyDetector {
         self.stat.as_deref()
     }
     /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model, and the time zone to use for the metric.</p>
-    pub fn configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnomalyDetectorConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::AnomalyDetectorConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
@@ -67,15 +63,11 @@ impl AnomalyDetector {
         self.state_value.as_ref()
     }
     /// <p>The CloudWatch metric and statistic for this anomaly detector.</p>
-    pub fn single_metric_anomaly_detector(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SingleMetricAnomalyDetector> {
+    pub fn single_metric_anomaly_detector(&self) -> ::std::option::Option<&crate::types::SingleMetricAnomalyDetector> {
         self.single_metric_anomaly_detector.as_ref()
     }
     /// <p>The CloudWatch metric math expression for this anomaly detector.</p>
-    pub fn metric_math_anomaly_detector(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MetricMathAnomalyDetector> {
+    pub fn metric_math_anomaly_detector(&self) -> ::std::option::Option<&crate::types::MetricMathAnomalyDetector> {
         self.metric_math_anomaly_detector.as_ref()
     }
 }
@@ -88,9 +80,7 @@ impl AnomalyDetector {
 
 /// A builder for [`AnomalyDetector`](crate::types::AnomalyDetector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyDetectorBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
@@ -98,10 +88,8 @@ pub struct AnomalyDetectorBuilder {
     pub(crate) stat: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::AnomalyDetectorConfiguration>,
     pub(crate) state_value: ::std::option::Option<crate::types::AnomalyDetectorStateValue>,
-    pub(crate) single_metric_anomaly_detector:
-        ::std::option::Option<crate::types::SingleMetricAnomalyDetector>,
-    pub(crate) metric_math_anomaly_detector:
-        ::std::option::Option<crate::types::MetricMathAnomalyDetector>,
+    pub(crate) single_metric_anomaly_detector: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>,
+    pub(crate) metric_math_anomaly_detector: ::std::option::Option<crate::types::MetricMathAnomalyDetector>,
 }
 impl AnomalyDetectorBuilder {
     /// <p>The namespace of the metric associated with the anomaly detection model.</p>
@@ -152,18 +140,13 @@ impl AnomalyDetectorBuilder {
     }
     /// <p>The metric dimensions associated with the anomaly detection model.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.Dimensions property.")]
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The metric dimensions associated with the anomaly detection model.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.Dimensions property.")]
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
         &self.dimensions
     }
     /// <p>The statistic associated with the anomaly detection model.</p>
@@ -189,17 +172,12 @@ impl AnomalyDetectorBuilder {
         self
     }
     /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model, and the time zone to use for the metric.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyDetectorConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AnomalyDetectorConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model, and the time zone to use for the metric.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnomalyDetectorConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AnomalyDetectorConfiguration> {
         &self.configuration
     }
     /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
@@ -208,61 +186,40 @@ impl AnomalyDetectorBuilder {
         self
     }
     /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
-    pub fn set_state_value(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyDetectorStateValue>,
-    ) -> Self {
+    pub fn set_state_value(mut self, input: ::std::option::Option<crate::types::AnomalyDetectorStateValue>) -> Self {
         self.state_value = input;
         self
     }
     /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
-    pub fn get_state_value(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnomalyDetectorStateValue> {
+    pub fn get_state_value(&self) -> &::std::option::Option<crate::types::AnomalyDetectorStateValue> {
         &self.state_value
     }
     /// <p>The CloudWatch metric and statistic for this anomaly detector.</p>
-    pub fn single_metric_anomaly_detector(
-        mut self,
-        input: crate::types::SingleMetricAnomalyDetector,
-    ) -> Self {
+    pub fn single_metric_anomaly_detector(mut self, input: crate::types::SingleMetricAnomalyDetector) -> Self {
         self.single_metric_anomaly_detector = ::std::option::Option::Some(input);
         self
     }
     /// <p>The CloudWatch metric and statistic for this anomaly detector.</p>
-    pub fn set_single_metric_anomaly_detector(
-        mut self,
-        input: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>,
-    ) -> Self {
+    pub fn set_single_metric_anomaly_detector(mut self, input: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>) -> Self {
         self.single_metric_anomaly_detector = input;
         self
     }
     /// <p>The CloudWatch metric and statistic for this anomaly detector.</p>
-    pub fn get_single_metric_anomaly_detector(
-        &self,
-    ) -> &::std::option::Option<crate::types::SingleMetricAnomalyDetector> {
+    pub fn get_single_metric_anomaly_detector(&self) -> &::std::option::Option<crate::types::SingleMetricAnomalyDetector> {
         &self.single_metric_anomaly_detector
     }
     /// <p>The CloudWatch metric math expression for this anomaly detector.</p>
-    pub fn metric_math_anomaly_detector(
-        mut self,
-        input: crate::types::MetricMathAnomalyDetector,
-    ) -> Self {
+    pub fn metric_math_anomaly_detector(mut self, input: crate::types::MetricMathAnomalyDetector) -> Self {
         self.metric_math_anomaly_detector = ::std::option::Option::Some(input);
         self
     }
     /// <p>The CloudWatch metric math expression for this anomaly detector.</p>
-    pub fn set_metric_math_anomaly_detector(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricMathAnomalyDetector>,
-    ) -> Self {
+    pub fn set_metric_math_anomaly_detector(mut self, input: ::std::option::Option<crate::types::MetricMathAnomalyDetector>) -> Self {
         self.metric_math_anomaly_detector = input;
         self
     }
     /// <p>The CloudWatch metric math expression for this anomaly detector.</p>
-    pub fn get_metric_math_anomaly_detector(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetricMathAnomalyDetector> {
+    pub fn get_metric_math_anomaly_detector(&self) -> &::std::option::Option<crate::types::MetricMathAnomalyDetector> {
         &self.metric_math_anomaly_detector
     }
     /// Consumes the builder and constructs a [`AnomalyDetector`](crate::types::AnomalyDetector).

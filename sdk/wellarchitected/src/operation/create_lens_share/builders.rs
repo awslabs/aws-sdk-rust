@@ -10,10 +10,7 @@ impl CreateLensShareInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_lens_share::CreateLensShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_lens_share::CreateLensShareError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_lens_share::CreateLensShareError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_lens_share();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl CreateLensShareFluentBuilder {
         }
     }
     /// Access the CreateLensShare as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_lens_share::builders::CreateLensShareInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_lens_share::builders::CreateLensShareInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl CreateLensShareFluentBuilder {
             crate::operation::create_lens_share::CreateLensShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_lens_share::CreateLensShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_lens_share::CreateLensShareError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl CreateLensShareFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl CreateLensShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_lens_share::CreateLensShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_lens_share::CreateLensShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_lens_share::CreateLensShareError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl CreateLensShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_lens_share::CreateLensShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_lens_share::CreateLensShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_lens_share::CreateLensShareError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl CreateLensShareFluentBuilder {
             crate::operation::create_lens_share::CreateLensShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_lens_share::CreateLensShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_lens_share::CreateLensShareError>,
     > {
         self.customize_middleware().await
     }
@@ -170,10 +154,7 @@ impl CreateLensShareFluentBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
@@ -181,10 +162,7 @@ impl CreateLensShareFluentBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

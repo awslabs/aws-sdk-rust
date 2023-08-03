@@ -31,8 +31,7 @@ impl SetIdentityDkimEnabledInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetIdentityDkimEnabledFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledInputBuilder,
+    inner: crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledInputBuilder,
 }
 impl SetIdentityDkimEnabledFluentBuilder {
     /// Creates a new `SetIdentityDkimEnabled`.
@@ -43,10 +42,7 @@ impl SetIdentityDkimEnabledFluentBuilder {
         }
     }
     /// Access the SetIdentityDkimEnabled as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +54,7 @@ impl SetIdentityDkimEnabledFluentBuilder {
             crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabled,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +64,7 @@ impl SetIdentityDkimEnabledFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +73,7 @@ impl SetIdentityDkimEnabledFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError>,
     > {
         let op = self
             .inner
@@ -107,9 +96,7 @@ impl SetIdentityDkimEnabledFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +110,7 @@ impl SetIdentityDkimEnabledFluentBuilder {
             crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabled,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError>,
     > {
         self.customize_middleware().await
     }

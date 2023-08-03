@@ -65,9 +65,7 @@ impl Output {
 
 /// A builder for [`Output`](crate::types::Output).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputBuilder {
     pub(crate) compression_format: ::std::option::Option<crate::types::CompressionFormat>,
     pub(crate) format: ::std::option::Option<crate::types::OutputFormat>,
@@ -84,17 +82,12 @@ impl OutputBuilder {
         self
     }
     /// <p>The compression algorithm used to compress the output text of the job.</p>
-    pub fn set_compression_format(
-        mut self,
-        input: ::std::option::Option<crate::types::CompressionFormat>,
-    ) -> Self {
+    pub fn set_compression_format(mut self, input: ::std::option::Option<crate::types::CompressionFormat>) -> Self {
         self.compression_format = input;
         self
     }
     /// <p>The compression algorithm used to compress the output text of the job.</p>
-    pub fn get_compression_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::CompressionFormat> {
+    pub fn get_compression_format(&self) -> &::std::option::Option<crate::types::CompressionFormat> {
         &self.compression_format
     }
     /// <p>The data format of the output of the job.</p>
@@ -116,27 +109,19 @@ impl OutputBuilder {
     /// To override the contents of this collection use [`set_partition_columns`](Self::set_partition_columns).
     ///
     /// <p>The names of one or more partition columns for the output of the job.</p>
-    pub fn partition_columns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.partition_columns.unwrap_or_default();
         v.push(input.into());
         self.partition_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of one or more partition columns for the output of the job.</p>
-    pub fn set_partition_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_partition_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.partition_columns = input;
         self
     }
     /// <p>The names of one or more partition columns for the output of the job.</p>
-    pub fn get_partition_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.partition_columns
     }
     /// <p>The location in Amazon S3 where the job writes its output.</p>
@@ -173,10 +158,7 @@ impl OutputBuilder {
         self
     }
     /// <p>Represents options that define how DataBrew formats job output files.</p>
-    pub fn set_format_options(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputFormatOptions>,
-    ) -> Self {
+    pub fn set_format_options(mut self, input: ::std::option::Option<crate::types::OutputFormatOptions>) -> Self {
         self.format_options = input;
         self
     }

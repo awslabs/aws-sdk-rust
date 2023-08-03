@@ -30,9 +30,7 @@ impl BasicLayout {
 
 /// A builder for [`BasicLayout`](crate::types::BasicLayout).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BasicLayoutBuilder {
     pub(crate) top_panel: ::std::option::Option<crate::types::LayoutSections>,
     pub(crate) more_info: ::std::option::Option<crate::types::LayoutSections>,
@@ -44,10 +42,7 @@ impl BasicLayoutBuilder {
         self
     }
     /// <p>This represents sections in a panel of the page layout.</p>
-    pub fn set_top_panel(
-        mut self,
-        input: ::std::option::Option<crate::types::LayoutSections>,
-    ) -> Self {
+    pub fn set_top_panel(mut self, input: ::std::option::Option<crate::types::LayoutSections>) -> Self {
         self.top_panel = input;
         self
     }
@@ -61,10 +56,7 @@ impl BasicLayoutBuilder {
         self
     }
     /// <p>This represents sections in a tab of the page layout.</p>
-    pub fn set_more_info(
-        mut self,
-        input: ::std::option::Option<crate::types::LayoutSections>,
-    ) -> Self {
+    pub fn set_more_info(mut self, input: ::std::option::Option<crate::types::LayoutSections>) -> Self {
         self.more_info = input;
         self
     }

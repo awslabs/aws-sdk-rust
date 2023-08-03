@@ -10,10 +10,7 @@ impl DescribeStacksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_stacks::DescribeStacksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stacks::DescribeStacksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stacks::DescribeStacksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_stacks();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeStacksFluentBuilder {
         }
     }
     /// Access the DescribeStacks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_stacks::builders::DescribeStacksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_stacks::builders::DescribeStacksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl DescribeStacksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -125,10 +117,7 @@ impl DescribeStacksFluentBuilder {
         self
     }
     /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
-    pub fn set_stack_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_stack_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_stack_ids(input);
         self
     }

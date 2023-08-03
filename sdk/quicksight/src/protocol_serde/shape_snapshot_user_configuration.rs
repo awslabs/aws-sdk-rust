@@ -9,10 +9,7 @@ pub fn ser_snapshot_user_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_snapshot_anonymous_user::ser_snapshot_anonymous_user(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_snapshot_anonymous_user::ser_snapshot_anonymous_user(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

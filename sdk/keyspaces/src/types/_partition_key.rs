@@ -23,9 +23,7 @@ impl PartitionKey {
 
 /// A builder for [`PartitionKey`](crate::types::PartitionKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PartitionKeyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

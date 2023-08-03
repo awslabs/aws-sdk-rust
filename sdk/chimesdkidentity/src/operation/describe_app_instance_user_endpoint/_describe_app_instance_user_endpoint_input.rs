@@ -22,34 +22,26 @@ impl DescribeAppInstanceUserEndpointInput {
 }
 impl DescribeAppInstanceUserEndpointInput {
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceUserEndpointInput`](crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointInput).
-    pub fn builder() -> crate::operation::describe_app_instance_user_endpoint::builders::DescribeAppInstanceUserEndpointInputBuilder{
+    pub fn builder() -> crate::operation::describe_app_instance_user_endpoint::builders::DescribeAppInstanceUserEndpointInputBuilder {
         crate::operation::describe_app_instance_user_endpoint::builders::DescribeAppInstanceUserEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAppInstanceUserEndpointInput`](crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppInstanceUserEndpointInputBuilder {
     pub(crate) app_instance_user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAppInstanceUserEndpointInputBuilder {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_user_arn = input;
         self
     }
@@ -80,11 +72,9 @@ impl DescribeAppInstanceUserEndpointInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointInput {
-                app_instance_user_arn: self.app_instance_user_arn
-                ,
-                endpoint_id: self.endpoint_id
-                ,
-            }
+                app_instance_user_arn: self.app_instance_user_arn,
+                endpoint_id: self.endpoint_id,
+            },
         )
     }
 }

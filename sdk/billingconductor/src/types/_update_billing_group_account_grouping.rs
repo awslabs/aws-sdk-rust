@@ -23,9 +23,7 @@ impl UpdateBillingGroupAccountGrouping {
 
 /// A builder for [`UpdateBillingGroupAccountGrouping`](crate::types::UpdateBillingGroupAccountGrouping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBillingGroupAccountGroupingBuilder {
     pub(crate) auto_associate: ::std::option::Option<bool>,
 }

@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`vpc_security_groups(Option<Vec<VpcSecurityGroupMembership>>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::vpc_security_groups): <p>The security groups associated with the endpoint.</p>
     ///   - [`vpc_endpoint(Option<VpcEndpoint>)`](crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput::vpc_endpoint): <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
     /// - On failure, responds with [`SdkError<DeleteEndpointAccessError>`](crate::operation::delete_endpoint_access::DeleteEndpointAccessError)
-    pub fn delete_endpoint_access(
-        &self,
-    ) -> crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder {
-        crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_endpoint_access(&self) -> crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder {
+        crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessFluentBuilder::new(self.handle.clone())
     }
 }

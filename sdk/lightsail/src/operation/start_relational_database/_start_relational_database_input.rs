@@ -15,35 +15,25 @@ impl StartRelationalDatabaseInput {
 }
 impl StartRelationalDatabaseInput {
     /// Creates a new builder-style object to manufacture [`StartRelationalDatabaseInput`](crate::operation::start_relational_database::StartRelationalDatabaseInput).
-    pub fn builder(
-    ) -> crate::operation::start_relational_database::builders::StartRelationalDatabaseInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_relational_database::builders::StartRelationalDatabaseInputBuilder {
         crate::operation::start_relational_database::builders::StartRelationalDatabaseInputBuilder::default()
     }
 }
 
 /// A builder for [`StartRelationalDatabaseInput`](crate::operation::start_relational_database::StartRelationalDatabaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartRelationalDatabaseInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
 }
 impl StartRelationalDatabaseInputBuilder {
     /// <p>The name of your database to start.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of your database to start.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_name = input;
         self
     }
@@ -58,10 +48,8 @@ impl StartRelationalDatabaseInputBuilder {
         crate::operation::start_relational_database::StartRelationalDatabaseInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_relational_database::StartRelationalDatabaseInput {
-                relational_database_name: self.relational_database_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_relational_database::StartRelationalDatabaseInput {
+            relational_database_name: self.relational_database_name,
+        })
     }
 }

@@ -9,37 +9,25 @@ pub fn ser_update_nodegroup_config_input(
     if let Some(var_2) = &input.labels {
         #[allow(unused_mut)]
         let mut object_3 = object.key("labels").start_object();
-        crate::protocol_serde::shape_update_labels_payload::ser_update_labels_payload(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_update_labels_payload::ser_update_labels_payload(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.scaling_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("scalingConfig").start_object();
-        crate::protocol_serde::shape_nodegroup_scaling_config::ser_nodegroup_scaling_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_nodegroup_scaling_config::ser_nodegroup_scaling_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.taints {
         #[allow(unused_mut)]
         let mut object_7 = object.key("taints").start_object();
-        crate::protocol_serde::shape_update_taints_payload::ser_update_taints_payload(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_update_taints_payload::ser_update_taints_payload(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.update_config {
         #[allow(unused_mut)]
         let mut object_9 = object.key("updateConfig").start_object();
-        crate::protocol_serde::shape_nodegroup_update_config::ser_nodegroup_update_config(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_nodegroup_update_config::ser_nodegroup_update_config(&mut object_9, var_8)?;
         object_9.finish();
     }
     Ok(())

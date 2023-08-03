@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MaximumSupportedWeightLbs {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for MaximumSupportedWeightLbs {
             "MAX_1800_LBS" => MaximumSupportedWeightLbs::Max1800Lbs,
             "MAX_2000_LBS" => MaximumSupportedWeightLbs::Max2000Lbs,
             "NO_LIMIT" => MaximumSupportedWeightLbs::NoLimit,
-            other => MaximumSupportedWeightLbs::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MaximumSupportedWeightLbs::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl MaximumSupportedWeightLbs {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "MAX_1400_LBS",
-            "MAX_1600_LBS",
-            "MAX_1800_LBS",
-            "MAX_2000_LBS",
-            "NO_LIMIT",
-        ]
+        &["MAX_1400_LBS", "MAX_1600_LBS", "MAX_1800_LBS", "MAX_2000_LBS", "NO_LIMIT"]
     }
 }
 impl ::std::convert::AsRef<str> for MaximumSupportedWeightLbs {

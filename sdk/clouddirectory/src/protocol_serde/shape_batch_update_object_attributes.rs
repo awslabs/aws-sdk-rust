@@ -15,10 +15,7 @@ pub fn ser_batch_update_object_attributes(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_object_attribute_update::ser_object_attribute_update(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_object_attribute_update::ser_object_attribute_update(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

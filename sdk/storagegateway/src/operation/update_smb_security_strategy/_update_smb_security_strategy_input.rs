@@ -22,24 +22,20 @@ impl UpdateSmbSecurityStrategyInput {
     /// <p>ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Supported only in S3 File Gateway.</p>
     /// <p>MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p>
     /// <p>MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
-    pub fn smb_security_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SmbSecurityStrategy> {
+    pub fn smb_security_strategy(&self) -> ::std::option::Option<&crate::types::SmbSecurityStrategy> {
         self.smb_security_strategy.as_ref()
     }
 }
 impl UpdateSmbSecurityStrategyInput {
     /// Creates a new builder-style object to manufacture [`UpdateSmbSecurityStrategyInput`](crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyInput).
-    pub fn builder() -> crate::operation::update_smb_security_strategy::builders::UpdateSmbSecurityStrategyInputBuilder{
+    pub fn builder() -> crate::operation::update_smb_security_strategy::builders::UpdateSmbSecurityStrategyInputBuilder {
         crate::operation::update_smb_security_strategy::builders::UpdateSmbSecurityStrategyInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSmbSecurityStrategyInput`](crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSmbSecurityStrategyInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) smb_security_strategy: ::std::option::Option<crate::types::SmbSecurityStrategy>,
@@ -71,10 +67,7 @@ impl UpdateSmbSecurityStrategyInputBuilder {
     /// <p>ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Supported only in S3 File Gateway.</p>
     /// <p>MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p>
     /// <p>MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
-    pub fn set_smb_security_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::SmbSecurityStrategy>,
-    ) -> Self {
+    pub fn set_smb_security_strategy(mut self, input: ::std::option::Option<crate::types::SmbSecurityStrategy>) -> Self {
         self.smb_security_strategy = input;
         self
     }
@@ -82,9 +75,7 @@ impl UpdateSmbSecurityStrategyInputBuilder {
     /// <p>ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Supported only in S3 File Gateway.</p>
     /// <p>MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p>
     /// <p>MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
-    pub fn get_smb_security_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmbSecurityStrategy> {
+    pub fn get_smb_security_strategy(&self) -> &::std::option::Option<crate::types::SmbSecurityStrategy> {
         &self.smb_security_strategy
     }
     /// Consumes the builder and constructs a [`UpdateSmbSecurityStrategyInput`](crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyInput).
@@ -94,11 +85,9 @@ impl UpdateSmbSecurityStrategyInputBuilder {
         crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyInput {
-                gateway_arn: self.gateway_arn,
-                smb_security_strategy: self.smb_security_strategy,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyInput {
+            gateway_arn: self.gateway_arn,
+            smb_security_strategy: self.smb_security_strategy,
+        })
     }
 }

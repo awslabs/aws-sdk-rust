@@ -23,9 +23,7 @@ impl ParametricS3MonitoringConfiguration {
 
 /// A builder for [`ParametricS3MonitoringConfiguration`](crate::types::ParametricS3MonitoringConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParametricS3MonitoringConfigurationBuilder {
     pub(crate) log_uri: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ParametricS3MonitoringConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`ParametricS3MonitoringConfiguration`](crate::types::ParametricS3MonitoringConfiguration).
     pub fn build(self) -> crate::types::ParametricS3MonitoringConfiguration {
-        crate::types::ParametricS3MonitoringConfiguration {
-            log_uri: self.log_uri,
-        }
+        crate::types::ParametricS3MonitoringConfiguration { log_uri: self.log_uri }
     }
 }

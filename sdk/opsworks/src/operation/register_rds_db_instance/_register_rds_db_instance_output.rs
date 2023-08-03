@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for RegisterRdsDbInstanceOutput {
 }
 impl RegisterRdsDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`RegisterRdsDbInstanceOutput`](crate::operation::register_rds_db_instance::RegisterRdsDbInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::register_rds_db_instance::builders::RegisterRdsDbInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::register_rds_db_instance::builders::RegisterRdsDbInstanceOutputBuilder {
         crate::operation::register_rds_db_instance::builders::RegisterRdsDbInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterRdsDbInstanceOutput`](crate::operation::register_rds_db_instance::RegisterRdsDbInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterRdsDbInstanceOutputBuilder {
     _request_id: Option<String>,
 }

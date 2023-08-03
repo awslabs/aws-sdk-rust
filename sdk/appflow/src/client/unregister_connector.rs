@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`force_delete(bool)`](crate::operation::unregister_connector::builders::UnregisterConnectorFluentBuilder::force_delete) / [`set_force_delete(Option<bool>)`](crate::operation::unregister_connector::builders::UnregisterConnectorFluentBuilder::set_force_delete): <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
     /// - On success, responds with [`UnregisterConnectorOutput`](crate::operation::unregister_connector::UnregisterConnectorOutput)
     /// - On failure, responds with [`SdkError<UnregisterConnectorError>`](crate::operation::unregister_connector::UnregisterConnectorError)
-    pub fn unregister_connector(
-        &self,
-    ) -> crate::operation::unregister_connector::builders::UnregisterConnectorFluentBuilder {
-        crate::operation::unregister_connector::builders::UnregisterConnectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn unregister_connector(&self) -> crate::operation::unregister_connector::builders::UnregisterConnectorFluentBuilder {
+        crate::operation::unregister_connector::builders::UnregisterConnectorFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeTargetGroupAttributesOutput`](crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesOutput) with field(s):
     ///   - [`attributes(Option<Vec<TargetGroupAttribute>>)`](crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesOutput::attributes): <p>Information about the target group attributes</p>
     /// - On failure, responds with [`SdkError<DescribeTargetGroupAttributesError>`](crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesError)
-    pub fn describe_target_group_attributes(&self) -> crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesFluentBuilder{
+    pub fn describe_target_group_attributes(
+        &self,
+    ) -> crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesFluentBuilder {
         crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesFluentBuilder::new(self.handle.clone())
     }
 }

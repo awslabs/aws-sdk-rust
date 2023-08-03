@@ -31,18 +31,14 @@ impl AssociateCustomDomainInput {
 }
 impl AssociateCustomDomainInput {
     /// Creates a new builder-style object to manufacture [`AssociateCustomDomainInput`](crate::operation::associate_custom_domain::AssociateCustomDomainInput).
-    pub fn builder(
-    ) -> crate::operation::associate_custom_domain::builders::AssociateCustomDomainInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_custom_domain::builders::AssociateCustomDomainInputBuilder {
         crate::operation::associate_custom_domain::builders::AssociateCustomDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateCustomDomainInput`](crate::operation::associate_custom_domain::AssociateCustomDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateCustomDomainInputBuilder {
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -97,16 +93,12 @@ impl AssociateCustomDomainInputBuilder {
     /// Consumes the builder and constructs a [`AssociateCustomDomainInput`](crate::operation::associate_custom_domain::AssociateCustomDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_custom_domain::AssociateCustomDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_custom_domain::AssociateCustomDomainInput {
-                service_arn: self.service_arn,
-                domain_name: self.domain_name,
-                enable_www_subdomain: self.enable_www_subdomain,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_custom_domain::AssociateCustomDomainInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_custom_domain::AssociateCustomDomainInput {
+            service_arn: self.service_arn,
+            domain_name: self.domain_name,
+            enable_www_subdomain: self.enable_www_subdomain,
+        })
     }
 }

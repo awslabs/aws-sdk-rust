@@ -29,9 +29,7 @@ impl DeleteRevisionInput {
 
 /// A builder for [`DeleteRevisionInput`](crate::operation::delete_revision::DeleteRevisionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRevisionInputBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DeleteRevisionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRevisionInput`](crate::operation::delete_revision::DeleteRevisionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_revision::DeleteRevisionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_revision::DeleteRevisionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_revision::DeleteRevisionInput {
             data_set_id: self.data_set_id,
             revision_id: self.revision_id,

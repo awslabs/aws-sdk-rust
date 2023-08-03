@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListEnabledProductsForImportOutput {
 }
 impl ListEnabledProductsForImportOutput {
     /// Creates a new builder-style object to manufacture [`ListEnabledProductsForImportOutput`](crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput).
-    pub fn builder() -> crate::operation::list_enabled_products_for_import::builders::ListEnabledProductsForImportOutputBuilder{
+    pub fn builder() -> crate::operation::list_enabled_products_for_import::builders::ListEnabledProductsForImportOutputBuilder {
         crate::operation::list_enabled_products_for_import::builders::ListEnabledProductsForImportOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEnabledProductsForImportOutput`](crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnabledProductsForImportOutputBuilder {
     pub(crate) product_subscriptions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -49,27 +47,19 @@ impl ListEnabledProductsForImportOutputBuilder {
     /// To override the contents of this collection use [`set_product_subscriptions`](Self::set_product_subscriptions).
     ///
     /// <p>The list of ARNs for the resources that represent your subscriptions to products. </p>
-    pub fn product_subscriptions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_subscriptions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.product_subscriptions.unwrap_or_default();
         v.push(input.into());
         self.product_subscriptions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of ARNs for the resources that represent your subscriptions to products. </p>
-    pub fn set_product_subscriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_product_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.product_subscriptions = input;
         self
     }
     /// <p>The list of ARNs for the resources that represent your subscriptions to products. </p>
-    pub fn get_product_subscriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_product_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.product_subscriptions
     }
     /// <p>The pagination token to use to request the next page of results.</p>
@@ -96,10 +86,7 @@ impl ListEnabledProductsForImportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEnabledProductsForImportOutput`](crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput
-    {
+    pub fn build(self) -> crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput {
         crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput {
             product_subscriptions: self.product_subscriptions,
             next_token: self.next_token,

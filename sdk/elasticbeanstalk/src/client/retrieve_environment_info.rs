@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`RetrieveEnvironmentInfoOutput`](crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoOutput) with field(s):
     ///   - [`environment_info(Option<Vec<EnvironmentInfoDescription>>)`](crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoOutput::environment_info): <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
     /// - On failure, responds with [`SdkError<RetrieveEnvironmentInfoError>`](crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoError)
-    pub fn retrieve_environment_info(
-        &self,
-    ) -> crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoFluentBuilder
-    {
+    pub fn retrieve_environment_info(&self) -> crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoFluentBuilder {
         crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoFluentBuilder::new(self.handle.clone())
     }
 }

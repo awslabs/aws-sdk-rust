@@ -26,7 +26,7 @@ impl UpdateServiceAccessPoliciesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServiceAccessPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_service_access_policies::builders::UpdateServiceAccessPoliciesInputBuilder,
+    inner: crate::operation::update_service_access_policies::builders::UpdateServiceAccessPoliciesInputBuilder,
 }
 impl UpdateServiceAccessPoliciesFluentBuilder {
     /// Creates a new `UpdateServiceAccessPolicies`.
@@ -37,7 +37,7 @@ impl UpdateServiceAccessPoliciesFluentBuilder {
         }
     }
     /// Access the UpdateServiceAccessPolicies as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_service_access_policies::builders::UpdateServiceAccessPoliciesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_service_access_policies::builders::UpdateServiceAccessPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateServiceAccessPoliciesFluentBuilder {
             crate::operation::update_service_access_policies::UpdateServiceAccessPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateServiceAccessPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateServiceAccessPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateServiceAccessPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateServiceAccessPoliciesFluentBuilder {
             crate::operation::update_service_access_policies::UpdateServiceAccessPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl UpdateServiceAccessPoliciesFluentBuilder {
         self.inner.get_domain_name()
     }
     /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
-    pub fn access_policies(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_policies(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_policies(input.into());
         self
     }
     /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
-    pub fn set_access_policies(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_policies(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_policies(input);
         self
     }

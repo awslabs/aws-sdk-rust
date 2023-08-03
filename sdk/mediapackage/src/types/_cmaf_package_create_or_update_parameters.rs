@@ -9,8 +9,7 @@ pub struct CmafPackageCreateOrUpdateParameters {
     pub encryption: ::std::option::Option<crate::types::CmafEncryption>,
     /// A list of HLS manifest configurations
     #[doc(hidden)]
-    pub hls_manifests:
-        ::std::option::Option<::std::vec::Vec<crate::types::HlsManifestCreateOrUpdateParameters>>,
+    pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifestCreateOrUpdateParameters>>,
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
     #[doc(hidden)]
     pub segment_duration_seconds: ::std::option::Option<i32>,
@@ -27,9 +26,7 @@ impl CmafPackageCreateOrUpdateParameters {
         self.encryption.as_ref()
     }
     /// A list of HLS manifest configurations
-    pub fn hls_manifests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HlsManifestCreateOrUpdateParameters]> {
+    pub fn hls_manifests(&self) -> ::std::option::Option<&[crate::types::HlsManifestCreateOrUpdateParameters]> {
         self.hls_manifests.as_deref()
     }
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
@@ -54,13 +51,10 @@ impl CmafPackageCreateOrUpdateParameters {
 
 /// A builder for [`CmafPackageCreateOrUpdateParameters`](crate::types::CmafPackageCreateOrUpdateParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CmafPackageCreateOrUpdateParametersBuilder {
     pub(crate) encryption: ::std::option::Option<crate::types::CmafEncryption>,
-    pub(crate) hls_manifests:
-        ::std::option::Option<::std::vec::Vec<crate::types::HlsManifestCreateOrUpdateParameters>>,
+    pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifestCreateOrUpdateParameters>>,
     pub(crate) segment_duration_seconds: ::std::option::Option<i32>,
     pub(crate) segment_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) stream_selection: ::std::option::Option<crate::types::StreamSelection>,
@@ -72,10 +66,7 @@ impl CmafPackageCreateOrUpdateParametersBuilder {
         self
     }
     /// A Common Media Application Format (CMAF) encryption configuration.
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::CmafEncryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::CmafEncryption>) -> Self {
         self.encryption = input;
         self
     }
@@ -88,30 +79,19 @@ impl CmafPackageCreateOrUpdateParametersBuilder {
     /// To override the contents of this collection use [`set_hls_manifests`](Self::set_hls_manifests).
     ///
     /// A list of HLS manifest configurations
-    pub fn hls_manifests(
-        mut self,
-        input: crate::types::HlsManifestCreateOrUpdateParameters,
-    ) -> Self {
+    pub fn hls_manifests(mut self, input: crate::types::HlsManifestCreateOrUpdateParameters) -> Self {
         let mut v = self.hls_manifests.unwrap_or_default();
         v.push(input);
         self.hls_manifests = ::std::option::Option::Some(v);
         self
     }
     /// A list of HLS manifest configurations
-    pub fn set_hls_manifests(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::HlsManifestCreateOrUpdateParameters>,
-        >,
-    ) -> Self {
+    pub fn set_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifestCreateOrUpdateParameters>>) -> Self {
         self.hls_manifests = input;
         self
     }
     /// A list of HLS manifest configurations
-    pub fn get_hls_manifests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsManifestCreateOrUpdateParameters>>
-    {
+    pub fn get_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsManifestCreateOrUpdateParameters>> {
         &self.hls_manifests
     }
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
@@ -129,18 +109,12 @@ impl CmafPackageCreateOrUpdateParametersBuilder {
         &self.segment_duration_seconds
     }
     /// An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.
-    pub fn segment_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn segment_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.
-    pub fn set_segment_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_segment_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.segment_prefix = input;
         self
     }
@@ -154,10 +128,7 @@ impl CmafPackageCreateOrUpdateParametersBuilder {
         self
     }
     /// A StreamSelection configuration.
-    pub fn set_stream_selection(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamSelection>,
-    ) -> Self {
+    pub fn set_stream_selection(mut self, input: ::std::option::Option<crate::types::StreamSelection>) -> Self {
         self.stream_selection = input;
         self
     }

@@ -10,10 +10,7 @@ impl ListBackupJobsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_backup_jobs::ListBackupJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backup_jobs::ListBackupJobsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backup_jobs::ListBackupJobsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_backup_jobs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListBackupJobsFluentBuilder {
         }
     }
     /// Access the ListBackupJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_backup_jobs::builders::ListBackupJobsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_backup_jobs::builders::ListBackupJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListBackupJobsFluentBuilder {
             crate::operation::list_backup_jobs::ListBackupJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backup_jobs::ListBackupJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backup_jobs::ListBackupJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListBackupJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListBackupJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_backup_jobs::ListBackupJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backup_jobs::ListBackupJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backup_jobs::ListBackupJobsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListBackupJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_backup_jobs::ListBackupJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backup_jobs::ListBackupJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backup_jobs::ListBackupJobsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListBackupJobsFluentBuilder {
             crate::operation::list_backup_jobs::ListBackupJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_backup_jobs::ListBackupJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_backup_jobs::ListBackupJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_backup_jobs::paginator::ListBackupJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_backup_jobs::paginator::ListBackupJobsPaginator {
-        crate::operation::list_backup_jobs::paginator::ListBackupJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_backup_jobs::paginator::ListBackupJobsPaginator {
+        crate::operation::list_backup_jobs::paginator::ListBackupJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,18 +141,12 @@ impl ListBackupJobsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
-    pub fn by_resource_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_resource_arn(input.into());
         self
     }
     /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
-    pub fn set_by_resource_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_resource_arn(input);
         self
     }
@@ -187,10 +160,7 @@ impl ListBackupJobsFluentBuilder {
         self
     }
     /// <p>Returns only backup jobs that are in the specified state.</p>
-    pub fn set_by_state(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupJobState>,
-    ) -> Self {
+    pub fn set_by_state(mut self, input: ::std::option::Option<crate::types::BackupJobState>) -> Self {
         self.inner = self.inner.set_by_state(input);
         self
     }
@@ -199,18 +169,12 @@ impl ListBackupJobsFluentBuilder {
         self.inner.get_by_state()
     }
     /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn by_backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_backup_vault_name(input.into());
         self
     }
     /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_by_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_backup_vault_name(input);
         self
     }
@@ -224,10 +188,7 @@ impl ListBackupJobsFluentBuilder {
         self
     }
     /// <p>Returns only backup jobs that were created before the specified date.</p>
-    pub fn set_by_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_by_created_before(input);
         self
     }
@@ -241,10 +202,7 @@ impl ListBackupJobsFluentBuilder {
         self
     }
     /// <p>Returns only backup jobs that were created after the specified date.</p>
-    pub fn set_by_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_by_created_after(input);
         self
     }
@@ -267,10 +225,7 @@ impl ListBackupJobsFluentBuilder {
     /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
     /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
-    pub fn by_resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_resource_type(input.into());
         self
     }
@@ -289,10 +244,7 @@ impl ListBackupJobsFluentBuilder {
     /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
     /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
-    pub fn set_by_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_resource_type(input);
         self
     }
@@ -316,19 +268,13 @@ impl ListBackupJobsFluentBuilder {
     }
     /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
     /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
-    pub fn by_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_account_id(input.into());
         self
     }
     /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
     /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
-    pub fn set_by_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_account_id(input);
         self
     }
@@ -343,10 +289,7 @@ impl ListBackupJobsFluentBuilder {
         self
     }
     /// <p>Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn set_by_complete_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_complete_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_by_complete_after(input);
         self
     }
@@ -360,10 +303,7 @@ impl ListBackupJobsFluentBuilder {
         self
     }
     /// <p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn set_by_complete_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_by_complete_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_by_complete_before(input);
         self
     }
@@ -372,18 +312,12 @@ impl ListBackupJobsFluentBuilder {
         self.inner.get_by_complete_before()
     }
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
-    pub fn by_parent_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn by_parent_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_parent_job_id(input.into());
         self
     }
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
-    pub fn set_by_parent_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_by_parent_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_parent_job_id(input);
         self
     }

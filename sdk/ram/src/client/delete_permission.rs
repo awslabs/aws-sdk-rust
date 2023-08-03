@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`client_token(Option<String>)`](crate::operation::delete_permission::DeletePermissionOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     ///   - [`permission_status(Option<PermissionStatus>)`](crate::operation::delete_permission::DeletePermissionOutput::permission_status): <p>This operation is performed asynchronously, and this response parameter indicates the current status.</p>
     /// - On failure, responds with [`SdkError<DeletePermissionError>`](crate::operation::delete_permission::DeletePermissionError)
-    pub fn delete_permission(
-        &self,
-    ) -> crate::operation::delete_permission::builders::DeletePermissionFluentBuilder {
-        crate::operation::delete_permission::builders::DeletePermissionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_permission(&self) -> crate::operation::delete_permission::builders::DeletePermissionFluentBuilder {
+        crate::operation::delete_permission::builders::DeletePermissionFluentBuilder::new(self.handle.clone())
     }
 }

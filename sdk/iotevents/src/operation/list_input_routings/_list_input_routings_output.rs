@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListInputRoutingsOutput {
 }
 impl ListInputRoutingsOutput {
     /// Creates a new builder-style object to manufacture [`ListInputRoutingsOutput`](crate::operation::list_input_routings::ListInputRoutingsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_input_routings::builders::ListInputRoutingsOutputBuilder {
+    pub fn builder() -> crate::operation::list_input_routings::builders::ListInputRoutingsOutputBuilder {
         crate::operation::list_input_routings::builders::ListInputRoutingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInputRoutingsOutput`](crate::operation::list_input_routings::ListInputRoutingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInputRoutingsOutputBuilder {
-    pub(crate) routed_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::RoutedResource>>,
+    pub(crate) routed_resources: ::std::option::Option<::std::vec::Vec<crate::types::RoutedResource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListInputRoutingsOutputBuilder {
         self
     }
     /// <p> Summary information about the routed resources. </p>
-    pub fn set_routed_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutedResource>>,
-    ) -> Self {
+    pub fn set_routed_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutedResource>>) -> Self {
         self.routed_resources = input;
         self
     }
     /// <p> Summary information about the routed resources. </p>
-    pub fn get_routed_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutedResource>> {
+    pub fn get_routed_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutedResource>> {
         &self.routed_resources
     }
     /// <p> The token that you can use to return the next set of results, or <code>null</code> if there are no more results. </p>

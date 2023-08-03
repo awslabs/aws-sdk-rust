@@ -10,10 +10,7 @@ impl CreateLayerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_layer::CreateLayerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_layer::CreateLayerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_layer::CreateLayerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_layer();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl CreateLayerFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_layer::CreateLayer,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_layer::CreateLayer, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_layer::CreateLayerError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl CreateLayerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +98,7 @@ impl CreateLayerFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_layer::CreateLayer,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_layer::CreateLayer, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_layer::CreateLayerError>,
     > {
         self.customize_middleware().await
@@ -180,11 +168,7 @@ impl CreateLayerFluentBuilder {
     ///
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
     /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
-    pub fn attributes(
-        mut self,
-        k: crate::types::LayerAttributesKeys,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: crate::types::LayerAttributesKeys, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k, v.into());
         self
     }
@@ -192,57 +176,37 @@ impl CreateLayerFluentBuilder {
     /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
     pub fn set_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
     /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>> {
         self.inner.get_attributes()
     }
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
-    pub fn cloud_watch_logs_configuration(
-        mut self,
-        input: crate::types::CloudWatchLogsConfiguration,
-    ) -> Self {
+    pub fn cloud_watch_logs_configuration(mut self, input: crate::types::CloudWatchLogsConfiguration) -> Self {
         self.inner = self.inner.cloud_watch_logs_configuration(input);
         self
     }
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
-    pub fn set_cloud_watch_logs_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs_configuration(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>) -> Self {
         self.inner = self.inner.set_cloud_watch_logs_configuration(input);
         self
     }
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
-    pub fn get_cloud_watch_logs_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLogsConfiguration> {
+    pub fn get_cloud_watch_logs_configuration(&self) -> &::std::option::Option<crate::types::CloudWatchLogsConfiguration> {
         self.inner.get_cloud_watch_logs_configuration()
     }
     /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn custom_instance_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_instance_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_instance_profile_arn(input.into());
         self
     }
     /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn set_custom_instance_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_instance_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_instance_profile_arn(input);
         self
     }
@@ -269,25 +233,17 @@ impl CreateLayerFluentBuilder {
     /// To override the contents of this collection use [`set_custom_security_group_ids`](Self::set_custom_security_group_ids).
     ///
     /// <p>An array containing the layer custom security group IDs.</p>
-    pub fn custom_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_security_group_ids(input.into());
         self
     }
     /// <p>An array containing the layer custom security group IDs.</p>
-    pub fn set_custom_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_custom_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_custom_security_group_ids(input);
         self
     }
     /// <p>An array containing the layer custom security group IDs.</p>
-    pub fn get_custom_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_custom_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_custom_security_group_ids()
     }
     /// Appends an item to `Packages`.
@@ -300,10 +256,7 @@ impl CreateLayerFluentBuilder {
         self
     }
     /// <p>An array of <code>Package</code> objects that describes the layer packages.</p>
-    pub fn set_packages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_packages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_packages(input);
         self
     }
@@ -321,17 +274,12 @@ impl CreateLayerFluentBuilder {
         self
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    pub fn set_volume_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>,
-    ) -> Self {
+    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>) -> Self {
         self.inner = self.inner.set_volume_configurations(input);
         self
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    pub fn get_volume_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>> {
+    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>> {
         self.inner.get_volume_configurations()
     }
     /// <p>Whether to disable auto healing for the layer.</p>
@@ -382,10 +330,7 @@ impl CreateLayerFluentBuilder {
         self
     }
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.</p>
-    pub fn set_custom_recipes(
-        mut self,
-        input: ::std::option::Option<crate::types::Recipes>,
-    ) -> Self {
+    pub fn set_custom_recipes(mut self, input: ::std::option::Option<crate::types::Recipes>) -> Self {
         self.inner = self.inner.set_custom_recipes(input);
         self
     }
@@ -428,25 +373,17 @@ impl CreateLayerFluentBuilder {
         self.inner.get_use_ebs_optimized_instances()
     }
     /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
-    pub fn lifecycle_event_configuration(
-        mut self,
-        input: crate::types::LifecycleEventConfiguration,
-    ) -> Self {
+    pub fn lifecycle_event_configuration(mut self, input: crate::types::LifecycleEventConfiguration) -> Self {
         self.inner = self.inner.lifecycle_event_configuration(input);
         self
     }
     /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
-    pub fn set_lifecycle_event_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecycleEventConfiguration>,
-    ) -> Self {
+    pub fn set_lifecycle_event_configuration(mut self, input: ::std::option::Option<crate::types::LifecycleEventConfiguration>) -> Self {
         self.inner = self.inner.set_lifecycle_event_configuration(input);
         self
     }
     /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
-    pub fn get_lifecycle_event_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LifecycleEventConfiguration> {
+    pub fn get_lifecycle_event_configuration(&self) -> &::std::option::Option<crate::types::LifecycleEventConfiguration> {
         self.inner.get_lifecycle_event_configuration()
     }
 }

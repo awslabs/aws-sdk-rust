@@ -16,18 +16,14 @@ impl CreateConfigurationSetInput {
 }
 impl CreateConfigurationSetInput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
-    pub fn builder(
-    ) -> crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder {
         crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConfigurationSetInputBuilder {
     pub(crate) configuration_set: ::std::option::Option<crate::types::ConfigurationSet>,
 }
@@ -38,10 +34,7 @@ impl CreateConfigurationSetInputBuilder {
         self
     }
     /// <p>A data structure that contains the name of the configuration set.</p>
-    pub fn set_configuration_set(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationSet>,
-    ) -> Self {
+    pub fn set_configuration_set(mut self, input: ::std::option::Option<crate::types::ConfigurationSet>) -> Self {
         self.configuration_set = input;
         self
     }
@@ -52,14 +45,10 @@ impl CreateConfigurationSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_configuration_set::CreateConfigurationSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_configuration_set::CreateConfigurationSetInput {
-                configuration_set: self.configuration_set,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_configuration_set::CreateConfigurationSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_configuration_set::CreateConfigurationSetInput {
+            configuration_set: self.configuration_set,
+        })
     }
 }

@@ -51,9 +51,7 @@ impl SimulationAppMetadata {
 
 /// A builder for [`SimulationAppMetadata`](crate::types::SimulationAppMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SimulationAppMetadataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) simulation: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl SimulationAppMetadataBuilder {
         self
     }
     /// <p>The current status of the app.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationAppStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SimulationAppStatus>) -> Self {
         self.status = input;
         self
     }
@@ -127,17 +122,12 @@ impl SimulationAppMetadataBuilder {
         self
     }
     /// <p>The desired status of the app.</p>
-    pub fn set_target_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationAppTargetStatus>,
-    ) -> Self {
+    pub fn set_target_status(mut self, input: ::std::option::Option<crate::types::SimulationAppTargetStatus>) -> Self {
         self.target_status = input;
         self
     }
     /// <p>The desired status of the app.</p>
-    pub fn get_target_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::SimulationAppTargetStatus> {
+    pub fn get_target_status(&self) -> &::std::option::Option<crate::types::SimulationAppTargetStatus> {
         &self.target_status
     }
     /// Consumes the builder and constructs a [`SimulationAppMetadata`](crate::types::SimulationAppMetadata).

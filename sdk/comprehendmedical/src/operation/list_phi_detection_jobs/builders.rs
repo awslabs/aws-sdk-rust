@@ -37,10 +37,7 @@ impl ListPHIDetectionJobsFluentBuilder {
         }
     }
     /// Access the ListPHIDetectionJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_phi_detection_jobs::builders::ListPhiDetectionJobsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_phi_detection_jobs::builders::ListPhiDetectionJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListPHIDetectionJobsFluentBuilder {
             crate::operation::list_phi_detection_jobs::ListPHIDetectionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListPHIDetectionJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListPHIDetectionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListPHIDetectionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ListPHIDetectionJobsFluentBuilder {
             crate::operation::list_phi_detection_jobs::ListPHIDetectionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError>,
     > {
         self.customize_middleware().await
     }
@@ -129,17 +115,12 @@ impl ListPHIDetectionJobsFluentBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter> {
         self.inner.get_filter()
     }
     /// <p>Identifies the next page of results to return.</p>

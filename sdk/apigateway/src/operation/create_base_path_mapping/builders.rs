@@ -37,10 +37,7 @@ impl CreateBasePathMappingFluentBuilder {
         }
     }
     /// Access the CreateBasePathMapping as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_base_path_mapping::builders::CreateBasePathMappingInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_base_path_mapping::builders::CreateBasePathMappingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateBasePathMappingFluentBuilder {
             crate::operation::create_base_path_mapping::CreateBasePathMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_base_path_mapping::CreateBasePathMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_base_path_mapping::CreateBasePathMappingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateBasePathMappingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateBasePathMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_base_path_mapping::CreateBasePathMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_base_path_mapping::CreateBasePathMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_base_path_mapping::CreateBasePathMappingError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateBasePathMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_base_path_mapping::CreateBasePathMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_base_path_mapping::CreateBasePathMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_base_path_mapping::CreateBasePathMappingError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateBasePathMappingFluentBuilder {
             crate::operation::create_base_path_mapping::CreateBasePathMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_base_path_mapping::CreateBasePathMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_base_path_mapping::CreateBasePathMappingError>,
     > {
         self.customize_middleware().await
     }

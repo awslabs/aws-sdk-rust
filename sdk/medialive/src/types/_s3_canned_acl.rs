@@ -40,13 +40,7 @@
 /// S3 Canned Acl
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum S3CannedAcl {
     #[allow(missing_docs)] // documentation missing in model
@@ -91,12 +85,7 @@ impl S3CannedAcl {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUTHENTICATED_READ",
-            "BUCKET_OWNER_FULL_CONTROL",
-            "BUCKET_OWNER_READ",
-            "PUBLIC_READ",
-        ]
+        &["AUTHENTICATED_READ", "BUCKET_OWNER_FULL_CONTROL", "BUCKET_OWNER_READ", "PUBLIC_READ"]
     }
 }
 impl ::std::convert::AsRef<str> for S3CannedAcl {

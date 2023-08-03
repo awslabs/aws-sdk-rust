@@ -15,9 +15,7 @@ impl super::Client {
     ///   - [`queue_arn(Option<String>)`](crate::operation::create_queue::CreateQueueOutput::queue_arn): <p>The Amazon Resource Name (ARN) of the queue.</p>
     ///   - [`queue_id(Option<String>)`](crate::operation::create_queue::CreateQueueOutput::queue_id): <p>The identifier for the queue.</p>
     /// - On failure, responds with [`SdkError<CreateQueueError>`](crate::operation::create_queue::CreateQueueError)
-    pub fn create_queue(
-        &self,
-    ) -> crate::operation::create_queue::builders::CreateQueueFluentBuilder {
+    pub fn create_queue(&self) -> crate::operation::create_queue::builders::CreateQueueFluentBuilder {
         crate::operation::create_queue::builders::CreateQueueFluentBuilder::new(self.handle.clone())
     }
 }

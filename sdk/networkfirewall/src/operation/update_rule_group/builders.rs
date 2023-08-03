@@ -10,10 +10,7 @@ impl UpdateRuleGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_rule_group::UpdateRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_group::UpdateRuleGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_rule_group();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateRuleGroupFluentBuilder {
         }
     }
     /// Access the UpdateRuleGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_rule_group::builders::UpdateRuleGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_rule_group::builders::UpdateRuleGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdateRuleGroupFluentBuilder {
             crate::operation::update_rule_group::UpdateRuleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_group::UpdateRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdateRuleGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdateRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rule_group::UpdateRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_group::UpdateRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdateRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rule_group::UpdateRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_group::UpdateRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl UpdateRuleGroupFluentBuilder {
             crate::operation::update_rule_group::UpdateRuleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_rule_group::UpdateRuleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -142,19 +126,13 @@ impl UpdateRuleGroupFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_rule_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_group_arn(input);
         self
     }
@@ -165,19 +143,13 @@ impl UpdateRuleGroupFluentBuilder {
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_group_name(input.into());
         self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_rule_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_group_name(input);
         self
     }
@@ -284,25 +256,17 @@ impl UpdateRuleGroupFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.inner = self.inner.encryption_configuration(input);
         self
     }
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.inner = self.inner.set_encryption_configuration(input);
         self
     }
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         self.inner.get_encryption_configuration()
     }
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
@@ -311,10 +275,7 @@ impl UpdateRuleGroupFluentBuilder {
         self
     }
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
-    pub fn set_source_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceMetadata>,
-    ) -> Self {
+    pub fn set_source_metadata(mut self, input: ::std::option::Option<crate::types::SourceMetadata>) -> Self {
         self.inner = self.inner.set_source_metadata(input);
         self
     }

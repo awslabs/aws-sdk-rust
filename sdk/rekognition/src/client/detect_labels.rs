@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`label_model_version(Option<String>)`](crate::operation::detect_labels::DetectLabelsOutput::label_model_version): <p>Version number of the label detection model that was used to detect labels.</p>
     ///   - [`image_properties(Option<DetectLabelsImageProperties>)`](crate::operation::detect_labels::DetectLabelsOutput::image_properties): <p>Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant colors.</p>
     /// - On failure, responds with [`SdkError<DetectLabelsError>`](crate::operation::detect_labels::DetectLabelsError)
-    pub fn detect_labels(
-        &self,
-    ) -> crate::operation::detect_labels::builders::DetectLabelsFluentBuilder {
-        crate::operation::detect_labels::builders::DetectLabelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detect_labels(&self) -> crate::operation::detect_labels::builders::DetectLabelsFluentBuilder {
+        crate::operation::detect_labels::builders::DetectLabelsFluentBuilder::new(self.handle.clone())
     }
 }

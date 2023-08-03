@@ -30,16 +30,14 @@ impl DescribeEnvironmentManagedActionsInput {
 }
 impl DescribeEnvironmentManagedActionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentManagedActionsInput`](crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsInput).
-    pub fn builder() -> crate::operation::describe_environment_managed_actions::builders::DescribeEnvironmentManagedActionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_environment_managed_actions::builders::DescribeEnvironmentManagedActionsInputBuilder {
         crate::operation::describe_environment_managed_actions::builders::DescribeEnvironmentManagedActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEnvironmentManagedActionsInput`](crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentManagedActionsInputBuilder {
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct DescribeEnvironmentManagedActionsInputBuilder {
 }
 impl DescribeEnvironmentManagedActionsInputBuilder {
     /// <p>The name of the target environment.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the target environment.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -67,18 +59,12 @@ impl DescribeEnvironmentManagedActionsInputBuilder {
         &self.environment_name
     }
     /// <p>The environment ID of the target environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The environment ID of the target environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -101,16 +87,18 @@ impl DescribeEnvironmentManagedActionsInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`DescribeEnvironmentManagedActionsInput`](crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsInput {
-                environment_name: self.environment_name
-                ,
-                environment_id: self.environment_id
-                ,
-                status: self.status
-                ,
-            }
+                environment_name: self.environment_name,
+                environment_id: self.environment_id,
+                status: self.status,
+            },
         )
     }
 }

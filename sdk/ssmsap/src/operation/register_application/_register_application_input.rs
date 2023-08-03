@@ -20,9 +20,7 @@ pub struct RegisterApplicationInput {
     pub sid: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be attached to the SAP application.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The credentials of the SAP application.</p>
     #[doc(hidden)]
     pub credentials: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
@@ -49,11 +47,7 @@ impl RegisterApplicationInput {
         self.sid.as_deref()
     }
     /// <p>The tags to be attached to the SAP application.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The credentials of the SAP application.</p>
@@ -63,43 +57,31 @@ impl RegisterApplicationInput {
 }
 impl RegisterApplicationInput {
     /// Creates a new builder-style object to manufacture [`RegisterApplicationInput`](crate::operation::register_application::RegisterApplicationInput).
-    pub fn builder(
-    ) -> crate::operation::register_application::builders::RegisterApplicationInputBuilder {
+    pub fn builder() -> crate::operation::register_application::builders::RegisterApplicationInputBuilder {
         crate::operation::register_application::builders::RegisterApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterApplicationInput`](crate::operation::register_application::RegisterApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterApplicationInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_type: ::std::option::Option<crate::types::ApplicationType>,
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) sap_instance_number: ::std::option::Option<::std::string::String>,
     pub(crate) sid: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) credentials:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) credentials: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
 }
 impl RegisterApplicationInputBuilder {
     /// <p>The ID of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -113,10 +95,7 @@ impl RegisterApplicationInputBuilder {
         self
     }
     /// <p>The type of the application.</p>
-    pub fn set_application_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationType>,
-    ) -> Self {
+    pub fn set_application_type(mut self, input: ::std::option::Option<crate::types::ApplicationType>) -> Self {
         self.application_type = input;
         self
     }
@@ -136,10 +115,7 @@ impl RegisterApplicationInputBuilder {
         self
     }
     /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instances = input;
         self
     }
@@ -148,18 +124,12 @@ impl RegisterApplicationInputBuilder {
         &self.instances
     }
     /// <p>The SAP instance number of the application.</p>
-    pub fn sap_instance_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sap_instance_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sap_instance_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SAP instance number of the application.</p>
-    pub fn set_sap_instance_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sap_instance_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sap_instance_number = input;
         self
     }
@@ -186,32 +156,19 @@ impl RegisterApplicationInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to be attached to the SAP application.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags to be attached to the SAP application.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags to be attached to the SAP application.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `credentials`.
@@ -226,36 +183,27 @@ impl RegisterApplicationInputBuilder {
         self
     }
     /// <p>The credentials of the SAP application.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>) -> Self {
         self.credentials = input;
         self
     }
     /// <p>The credentials of the SAP application.</p>
-    pub fn get_credentials(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
+    pub fn get_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
         &self.credentials
     }
     /// Consumes the builder and constructs a [`RegisterApplicationInput`](crate::operation::register_application::RegisterApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_application::RegisterApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::register_application::RegisterApplicationInput {
-                application_id: self.application_id,
-                application_type: self.application_type,
-                instances: self.instances,
-                sap_instance_number: self.sap_instance_number,
-                sid: self.sid,
-                tags: self.tags,
-                credentials: self.credentials,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::register_application::RegisterApplicationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::register_application::RegisterApplicationInput {
+            application_id: self.application_id,
+            application_type: self.application_type,
+            instances: self.instances,
+            sap_instance_number: self.sap_instance_number,
+            sid: self.sid,
+            tags: self.tags,
+            credentials: self.credentials,
+        })
     }
 }

@@ -60,17 +60,14 @@ impl AwsIamInstanceProfile {
 
 /// A builder for [`AwsIamInstanceProfile`](crate::types::AwsIamInstanceProfile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsIamInstanceProfileBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) create_date: ::std::option::Option<::std::string::String>,
     pub(crate) instance_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
-    pub(crate) roles:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfileRole>>,
+    pub(crate) roles: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfileRole>>,
 }
 impl AwsIamInstanceProfileBuilder {
     /// <p>The ARN of the instance profile.</p>
@@ -105,18 +102,12 @@ impl AwsIamInstanceProfileBuilder {
         &self.create_date
     }
     /// <p>The identifier of the instance profile.</p>
-    pub fn instance_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the instance profile.</p>
-    pub fn set_instance_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_profile_id = input;
         self
     }
@@ -125,18 +116,12 @@ impl AwsIamInstanceProfileBuilder {
         &self.instance_profile_id
     }
     /// <p>The name of the instance profile.</p>
-    pub fn instance_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the instance profile.</p>
-    pub fn set_instance_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_profile_name = input;
         self
     }
@@ -170,17 +155,12 @@ impl AwsIamInstanceProfileBuilder {
         self
     }
     /// <p>The roles associated with the instance profile.</p>
-    pub fn set_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfileRole>>,
-    ) -> Self {
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfileRole>>) -> Self {
         self.roles = input;
         self
     }
     /// <p>The roles associated with the instance profile.</p>
-    pub fn get_roles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfileRole>> {
+    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfileRole>> {
         &self.roles
     }
     /// Consumes the builder and constructs a [`AwsIamInstanceProfile`](crate::types::AwsIamInstanceProfile).

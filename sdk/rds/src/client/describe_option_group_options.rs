@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`option_group_options(Option<Vec<OptionGroupOption>>)`](crate::operation::describe_option_group_options::DescribeOptionGroupOptionsOutput::option_group_options): <p>List of available option group options.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_option_group_options::DescribeOptionGroupOptionsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeOptionGroupOptionsError>`](crate::operation::describe_option_group_options::DescribeOptionGroupOptionsError)
-    pub fn describe_option_group_options(&self) -> crate::operation::describe_option_group_options::builders::DescribeOptionGroupOptionsFluentBuilder{
+    pub fn describe_option_group_options(
+        &self,
+    ) -> crate::operation::describe_option_group_options::builders::DescribeOptionGroupOptionsFluentBuilder {
         crate::operation::describe_option_group_options::builders::DescribeOptionGroupOptionsFluentBuilder::new(self.handle.clone())
     }
 }

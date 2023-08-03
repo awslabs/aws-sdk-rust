@@ -30,9 +30,7 @@ impl CacheBehaviors {
 
 /// A builder for [`CacheBehaviors`](crate::types::CacheBehaviors).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CacheBehaviorsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehavior>>,
@@ -64,17 +62,12 @@ impl CacheBehaviorsBuilder {
         self
     }
     /// <p>Optional: A complex type that contains cache behaviors for this distribution. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehavior>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehavior>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Optional: A complex type that contains cache behaviors for this distribution. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheBehavior>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheBehavior>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`CacheBehaviors`](crate::types::CacheBehaviors).

@@ -26,7 +26,7 @@ impl DescribeFastSnapshotRestoresInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFastSnapshotRestoresFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresInputBuilder,
+    inner: crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresInputBuilder,
 }
 impl DescribeFastSnapshotRestoresFluentBuilder {
     /// Creates a new `DescribeFastSnapshotRestores`.
@@ -37,7 +37,7 @@ impl DescribeFastSnapshotRestoresFluentBuilder {
         }
     }
     /// Access the DescribeFastSnapshotRestores as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeFastSnapshotRestoresFluentBuilder {
             crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeFastSnapshotRestoresFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeFastSnapshotRestoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeFastSnapshotRestoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeFastSnapshotRestoresFluentBuilder {
             crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_fast_snapshot_restores::paginator::DescribeFastSnapshotRestoresPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_fast_snapshot_restores::paginator::DescribeFastSnapshotRestoresPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_fast_snapshot_restores::paginator::DescribeFastSnapshotRestoresPaginator {
         crate::operation::describe_fast_snapshot_restores::paginator::DescribeFastSnapshotRestoresPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
@@ -148,10 +137,7 @@ impl DescribeFastSnapshotRestoresFluentBuilder {
     /// <li> <p> <code>snapshot-id</code>: The ID of the snapshot.</p> </li>
     /// <li> <p> <code>state</code>: The state of fast snapshot restores for the snapshot (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> | <code>disabled</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

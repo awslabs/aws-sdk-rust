@@ -49,9 +49,7 @@ impl CreateRegexMatchSetFluentBuilder {
         }
     }
     /// Access the CreateRegexMatchSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_regex_match_set::builders::CreateRegexMatchSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_regex_match_set::builders::CreateRegexMatchSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +61,7 @@ impl CreateRegexMatchSetFluentBuilder {
             crate::operation::create_regex_match_set::CreateRegexMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_regex_match_set::CreateRegexMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_regex_match_set::CreateRegexMatchSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +71,7 @@ impl CreateRegexMatchSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +80,7 @@ impl CreateRegexMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_regex_match_set::CreateRegexMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_regex_match_set::CreateRegexMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_regex_match_set::CreateRegexMatchSetError>,
     > {
         let op = self
             .inner
@@ -112,9 +103,7 @@ impl CreateRegexMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_regex_match_set::CreateRegexMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_regex_match_set::CreateRegexMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_regex_match_set::CreateRegexMatchSetError>,
     > {
         self.send_middleware().await
     }
@@ -128,9 +117,7 @@ impl CreateRegexMatchSetFluentBuilder {
             crate::operation::create_regex_match_set::CreateRegexMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_regex_match_set::CreateRegexMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_regex_match_set::CreateRegexMatchSetError>,
     > {
         self.customize_middleware().await
     }

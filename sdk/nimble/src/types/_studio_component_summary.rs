@@ -113,10 +113,7 @@ impl StudioComponentSummaryBuilder {
         self
     }
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -167,18 +164,12 @@ impl StudioComponentSummaryBuilder {
         &self.name
     }
     /// <p>The unique identifier for a studio component resource.</p>
-    pub fn studio_component_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn studio_component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_component_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for a studio component resource.</p>
-    pub fn set_studio_component_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_studio_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_component_id = input;
         self
     }
@@ -192,10 +183,7 @@ impl StudioComponentSummaryBuilder {
         self
     }
     /// <p>The specific subtype of a studio component.</p>
-    pub fn set_subtype(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioComponentSubtype>,
-    ) -> Self {
+    pub fn set_subtype(mut self, input: ::std::option::Option<crate::types::StudioComponentSubtype>) -> Self {
         self.subtype = input;
         self
     }
@@ -209,10 +197,7 @@ impl StudioComponentSummaryBuilder {
         self
     }
     /// <p>The type of the studio component.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioComponentType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::StudioComponentType>) -> Self {
         self.r#type = input;
         self
     }
@@ -226,10 +211,7 @@ impl StudioComponentSummaryBuilder {
         self
     }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

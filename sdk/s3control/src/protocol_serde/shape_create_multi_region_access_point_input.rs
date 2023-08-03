@@ -46,8 +46,7 @@ pub fn ser_create_multi_region_access_point_input(
 
 pub fn de_create_multi_region_access_point_input(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::CreateMultiRegionAccessPointInput, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::CreateMultiRegionAccessPointInput, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::CreateMultiRegionAccessPointInput::builder();
     while let Some(mut tag) = decoder.next_tag() {

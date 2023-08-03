@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::operation::list_shared_endpoints::ListSharedEndpointsOutput::endpoints): <p>The list of endpoints associated with the specified Outpost that have been shared by Amazon Web Services Resource Access Manager (RAM).</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_shared_endpoints::ListSharedEndpointsOutput::next_token): <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
     /// - On failure, responds with [`SdkError<ListSharedEndpointsError>`](crate::operation::list_shared_endpoints::ListSharedEndpointsError)
-    pub fn list_shared_endpoints(
-        &self,
-    ) -> crate::operation::list_shared_endpoints::builders::ListSharedEndpointsFluentBuilder {
-        crate::operation::list_shared_endpoints::builders::ListSharedEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_shared_endpoints(&self) -> crate::operation::list_shared_endpoints::builders::ListSharedEndpointsFluentBuilder {
+        crate::operation::list_shared_endpoints::builders::ListSharedEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`added_principals(Option<Vec<AddedPrincipal>>)`](crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput::added_principals): <p>Information about the added principals.</p>
     ///   - [`return_value(Option<bool>)`](crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput::return_value): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<ModifyVpcEndpointServicePermissionsError>`](crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsError)
-    pub fn modify_vpc_endpoint_service_permissions(&self) -> crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsFluentBuilder{
-        crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsFluentBuilder::new(self.handle.clone())
+    pub fn modify_vpc_endpoint_service_permissions(
+        &self,
+    ) -> crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsFluentBuilder {
+        crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -10,10 +10,7 @@ impl DeleteDeviceFleetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_device_fleet::DeleteDeviceFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_device_fleet::DeleteDeviceFleetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_device_fleet::DeleteDeviceFleetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_device_fleet();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteDeviceFleetFluentBuilder {
         }
     }
     /// Access the DeleteDeviceFleet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_device_fleet::builders::DeleteDeviceFleetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_device_fleet::builders::DeleteDeviceFleetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteDeviceFleetFluentBuilder {
             crate::operation::delete_device_fleet::DeleteDeviceFleet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_device_fleet::DeleteDeviceFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_device_fleet::DeleteDeviceFleetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteDeviceFleetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteDeviceFleetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_device_fleet::DeleteDeviceFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_device_fleet::DeleteDeviceFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_device_fleet::DeleteDeviceFleetError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteDeviceFleetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_device_fleet::DeleteDeviceFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_device_fleet::DeleteDeviceFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_device_fleet::DeleteDeviceFleetError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteDeviceFleetFluentBuilder {
             crate::operation::delete_device_fleet::DeleteDeviceFleet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_device_fleet::DeleteDeviceFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_device_fleet::DeleteDeviceFleetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the fleet to delete.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_fleet_name(input.into());
         self
     }
     /// <p>The name of the fleet to delete.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_fleet_name(input);
         self
     }

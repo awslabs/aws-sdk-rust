@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`activate(bool)`](crate::operation::update_ip_set::builders::UpdateIPSetFluentBuilder::activate) / [`set_activate(Option<bool>)`](crate::operation::update_ip_set::builders::UpdateIPSetFluentBuilder::set_activate): <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
     /// - On success, responds with [`UpdateIpSetOutput`](crate::operation::update_ip_set::UpdateIpSetOutput)
     /// - On failure, responds with [`SdkError<UpdateIPSetError>`](crate::operation::update_ip_set::UpdateIPSetError)
-    pub fn update_ip_set(
-        &self,
-    ) -> crate::operation::update_ip_set::builders::UpdateIPSetFluentBuilder {
-        crate::operation::update_ip_set::builders::UpdateIPSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_ip_set(&self) -> crate::operation::update_ip_set::builders::UpdateIPSetFluentBuilder {
+        crate::operation::update_ip_set::builders::UpdateIPSetFluentBuilder::new(self.handle.clone())
     }
 }

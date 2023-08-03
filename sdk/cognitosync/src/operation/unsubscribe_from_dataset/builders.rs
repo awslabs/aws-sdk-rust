@@ -62,10 +62,7 @@ impl UnsubscribeFromDatasetFluentBuilder {
         }
     }
     /// Access the UnsubscribeFromDataset as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::unsubscribe_from_dataset::builders::UnsubscribeFromDatasetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::unsubscribe_from_dataset::builders::UnsubscribeFromDatasetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +74,7 @@ impl UnsubscribeFromDatasetFluentBuilder {
             crate::operation::unsubscribe_from_dataset::UnsubscribeFromDataset,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -89,10 +84,7 @@ impl UnsubscribeFromDatasetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -101,9 +93,7 @@ impl UnsubscribeFromDatasetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError>,
     > {
         let op = self
             .inner
@@ -126,9 +116,7 @@ impl UnsubscribeFromDatasetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError>,
     > {
         self.send_middleware().await
     }
@@ -142,25 +130,17 @@ impl UnsubscribeFromDatasetFluentBuilder {
             crate::operation::unsubscribe_from_dataset::UnsubscribeFromDataset,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
         self
     }
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }

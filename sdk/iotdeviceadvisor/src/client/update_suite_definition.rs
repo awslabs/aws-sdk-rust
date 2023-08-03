@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::update_suite_definition::UpdateSuiteDefinitionOutput::created_at): <p>Timestamp of when the test suite was created.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::update_suite_definition::UpdateSuiteDefinitionOutput::last_updated_at): <p>Timestamp of when the test suite was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateSuiteDefinitionError>`](crate::operation::update_suite_definition::UpdateSuiteDefinitionError)
-    pub fn update_suite_definition(
-        &self,
-    ) -> crate::operation::update_suite_definition::builders::UpdateSuiteDefinitionFluentBuilder
-    {
-        crate::operation::update_suite_definition::builders::UpdateSuiteDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_suite_definition(&self) -> crate::operation::update_suite_definition::builders::UpdateSuiteDefinitionFluentBuilder {
+        crate::operation::update_suite_definition::builders::UpdateSuiteDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

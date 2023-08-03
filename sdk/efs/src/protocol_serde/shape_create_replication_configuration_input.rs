@@ -9,10 +9,7 @@ pub fn ser_create_replication_configuration_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_destination_to_create::ser_destination_to_create(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_destination_to_create::ser_destination_to_create(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

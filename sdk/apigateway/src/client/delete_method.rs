@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`http_method(impl ::std::convert::Into<String>)`](crate::operation::delete_method::builders::DeleteMethodFluentBuilder::http_method) / [`set_http_method(Option<String>)`](crate::operation::delete_method::builders::DeleteMethodFluentBuilder::set_http_method): <p>The HTTP verb of the Method resource.</p>
     /// - On success, responds with [`DeleteMethodOutput`](crate::operation::delete_method::DeleteMethodOutput)
     /// - On failure, responds with [`SdkError<DeleteMethodError>`](crate::operation::delete_method::DeleteMethodError)
-    pub fn delete_method(
-        &self,
-    ) -> crate::operation::delete_method::builders::DeleteMethodFluentBuilder {
-        crate::operation::delete_method::builders::DeleteMethodFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_method(&self) -> crate::operation::delete_method::builders::DeleteMethodFluentBuilder {
+        crate::operation::delete_method::builders::DeleteMethodFluentBuilder::new(self.handle.clone())
     }
 }

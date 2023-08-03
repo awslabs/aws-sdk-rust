@@ -26,7 +26,7 @@ impl CreateSipMediaApplicationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSipMediaApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder,
+    inner: crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder,
 }
 impl CreateSipMediaApplicationFluentBuilder {
     /// Creates a new `CreateSipMediaApplication`.
@@ -37,7 +37,7 @@ impl CreateSipMediaApplicationFluentBuilder {
         }
     }
     /// Access the CreateSipMediaApplication as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateSipMediaApplicationFluentBuilder {
             crate::operation::create_sip_media_application::CreateSipMediaApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sip_media_application::CreateSipMediaApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sip_media_application::CreateSipMediaApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateSipMediaApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateSipMediaApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sip_media_application::CreateSipMediaApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sip_media_application::CreateSipMediaApplicationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateSipMediaApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sip_media_application::CreateSipMediaApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sip_media_application::CreateSipMediaApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateSipMediaApplicationFluentBuilder {
             crate::operation::create_sip_media_application::CreateSipMediaApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sip_media_application::CreateSipMediaApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sip_media_application::CreateSipMediaApplicationError>,
     > {
         self.customize_middleware().await
     }
@@ -158,17 +147,12 @@ impl CreateSipMediaApplicationFluentBuilder {
         self
     }
     /// <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
-    pub fn set_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
-    ) -> Self {
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>) -> Self {
         self.inner = self.inner.set_endpoints(input);
         self
     }
     /// <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
-    pub fn get_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>> {
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>> {
         self.inner.get_endpoints()
     }
     /// Appends an item to `Tags`.
@@ -181,10 +165,7 @@ impl CreateSipMediaApplicationFluentBuilder {
         self
     }
     /// <p>The tags assigned to the SIP media application.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -5,8 +5,7 @@
 pub struct ListTrainingJobsForHyperParameterTuningJobOutput {
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> objects that describe the training jobs that the <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.</p>
     #[doc(hidden)]
-    pub training_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobSummary>>,
+    pub training_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobSummary>>,
     /// <p>If the result of this <code>ListTrainingJobsForHyperParameterTuningJob</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListTrainingJobsForHyperParameterTuningJobOutput {
 }
 impl ListTrainingJobsForHyperParameterTuningJobOutput {
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> objects that describe the training jobs that the <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.</p>
-    pub fn training_job_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HyperParameterTrainingJobSummary]> {
+    pub fn training_job_summaries(&self) -> ::std::option::Option<&[crate::types::HyperParameterTrainingJobSummary]> {
         self.training_job_summaries.as_deref()
     }
     /// <p>If the result of this <code>ListTrainingJobsForHyperParameterTuningJob</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
@@ -31,19 +28,17 @@ impl ::aws_http::request_id::RequestId for ListTrainingJobsForHyperParameterTuni
 }
 impl ListTrainingJobsForHyperParameterTuningJobOutput {
     /// Creates a new builder-style object to manufacture [`ListTrainingJobsForHyperParameterTuningJobOutput`](crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobOutput).
-    pub fn builder() -> crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::builders::ListTrainingJobsForHyperParameterTuningJobOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::builders::ListTrainingJobsForHyperParameterTuningJobOutputBuilder {
         crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::builders::ListTrainingJobsForHyperParameterTuningJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTrainingJobsForHyperParameterTuningJobOutput`](crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrainingJobsForHyperParameterTuningJobOutputBuilder {
-    pub(crate) training_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobSummary>>,
+    pub(crate) training_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +48,7 @@ impl ListTrainingJobsForHyperParameterTuningJobOutputBuilder {
     /// To override the contents of this collection use [`set_training_job_summaries`](Self::set_training_job_summaries).
     ///
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> objects that describe the training jobs that the <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.</p>
-    pub fn training_job_summaries(
-        mut self,
-        input: crate::types::HyperParameterTrainingJobSummary,
-    ) -> Self {
+    pub fn training_job_summaries(mut self, input: crate::types::HyperParameterTrainingJobSummary) -> Self {
         let mut v = self.training_job_summaries.unwrap_or_default();
         v.push(input);
         self.training_job_summaries = ::std::option::Option::Some(v);
@@ -65,18 +57,13 @@ impl ListTrainingJobsForHyperParameterTuningJobOutputBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> objects that describe the training jobs that the <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.</p>
     pub fn set_training_job_summaries(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::HyperParameterTrainingJobSummary>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobSummary>>,
     ) -> Self {
         self.training_job_summaries = input;
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> objects that describe the training jobs that the <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.</p>
-    pub fn get_training_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobSummary>>
-    {
+    pub fn get_training_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobSummary>> {
         &self.training_job_summaries
     }
     /// <p>If the result of this <code>ListTrainingJobsForHyperParameterTuningJob</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
@@ -103,12 +90,10 @@ impl ListTrainingJobsForHyperParameterTuningJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTrainingJobsForHyperParameterTuningJobOutput`](crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobOutput).
-    pub fn build(self) -> crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobOutput{
+    pub fn build(self) -> crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobOutput {
         crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobOutput {
-            training_job_summaries: self.training_job_summaries
-            ,
-            next_token: self.next_token
-            ,
+            training_job_summaries: self.training_job_summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

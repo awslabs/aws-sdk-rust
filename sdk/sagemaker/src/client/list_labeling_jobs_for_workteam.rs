@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`labeling_job_summary_list(Option<Vec<LabelingJobForWorkteamSummary>>)`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamOutput::labeling_job_summary_list): <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListLabelingJobsForWorkteamError>`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamError)
-    pub fn list_labeling_jobs_for_workteam(&self) -> crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder{
+    pub fn list_labeling_jobs_for_workteam(
+        &self,
+    ) -> crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder {
         crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,17 +37,14 @@ impl CreateSubscriberInput {
 }
 impl CreateSubscriberInput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriberInput`](crate::operation::create_subscriber::CreateSubscriberInput).
-    pub fn builder() -> crate::operation::create_subscriber::builders::CreateSubscriberInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_subscriber::builders::CreateSubscriberInputBuilder {
         crate::operation::create_subscriber::builders::CreateSubscriberInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSubscriberInput`](crate::operation::create_subscriber::CreateSubscriberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSubscriberInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
@@ -89,10 +86,7 @@ impl CreateSubscriberInputBuilder {
         self
     }
     /// <p>The notification that you want to create a subscriber for.</p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::Notification>,
-    ) -> Self {
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
         self.notification = input;
         self
     }
@@ -106,10 +100,7 @@ impl CreateSubscriberInputBuilder {
         self
     }
     /// <p>The subscriber that you want to associate with a budget notification.</p>
-    pub fn set_subscriber(
-        mut self,
-        input: ::std::option::Option<crate::types::Subscriber>,
-    ) -> Self {
+    pub fn set_subscriber(mut self, input: ::std::option::Option<crate::types::Subscriber>) -> Self {
         self.subscriber = input;
         self
     }
@@ -120,10 +111,7 @@ impl CreateSubscriberInputBuilder {
     /// Consumes the builder and constructs a [`CreateSubscriberInput`](crate::operation::create_subscriber::CreateSubscriberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_subscriber::CreateSubscriberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_subscriber::CreateSubscriberInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_subscriber::CreateSubscriberInput {
             account_id: self.account_id,
             budget_name: self.budget_name,

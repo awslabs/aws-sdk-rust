@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAccountPermissionsOutput {
 }
 impl ListAccountPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountPermissionsOutput`](crate::operation::list_account_permissions::ListAccountPermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_account_permissions::builders::ListAccountPermissionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_account_permissions::builders::ListAccountPermissionsOutputBuilder {
         crate::operation::list_account_permissions::builders::ListAccountPermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountPermissionsOutput`](crate::operation::list_account_permissions::ListAccountPermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountPermissionsOutputBuilder {
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListAccountPermissionsOutputBuilder {
         self
     }
     /// <p>Contains details on the permissions an account has to configure Amazon Inspector.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>Contains details on the permissions an account has to configure Amazon Inspector.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         &self.permissions
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>

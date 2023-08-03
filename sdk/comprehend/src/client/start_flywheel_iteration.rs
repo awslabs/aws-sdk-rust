@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`flywheel_arn(Option<String>)`](crate::operation::start_flywheel_iteration::StartFlywheelIterationOutput::flywheel_arn): <p></p>
     ///   - [`flywheel_iteration_id(Option<String>)`](crate::operation::start_flywheel_iteration::StartFlywheelIterationOutput::flywheel_iteration_id): <p></p>
     /// - On failure, responds with [`SdkError<StartFlywheelIterationError>`](crate::operation::start_flywheel_iteration::StartFlywheelIterationError)
-    pub fn start_flywheel_iteration(
-        &self,
-    ) -> crate::operation::start_flywheel_iteration::builders::StartFlywheelIterationFluentBuilder
-    {
+    pub fn start_flywheel_iteration(&self) -> crate::operation::start_flywheel_iteration::builders::StartFlywheelIterationFluentBuilder {
         crate::operation::start_flywheel_iteration::builders::StartFlywheelIterationFluentBuilder::new(self.handle.clone())
     }
 }

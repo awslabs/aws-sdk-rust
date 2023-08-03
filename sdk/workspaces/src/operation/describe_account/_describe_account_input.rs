@@ -12,18 +12,13 @@ impl DescribeAccountInput {
 
 /// A builder for [`DescribeAccountInput`](crate::operation::describe_account::DescribeAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountInputBuilder {}
 impl DescribeAccountInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAccountInput`](crate::operation::describe_account::DescribeAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_account::DescribeAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_account::DescribeAccountInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_account::DescribeAccountInput {})
     }
 }

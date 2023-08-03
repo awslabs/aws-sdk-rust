@@ -38,7 +38,7 @@ impl DecodeAuthorizationMessageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DecodeAuthorizationMessageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageInputBuilder,
+    inner: crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageInputBuilder,
 }
 impl DecodeAuthorizationMessageFluentBuilder {
     /// Creates a new `DecodeAuthorizationMessage`.
@@ -49,7 +49,7 @@ impl DecodeAuthorizationMessageFluentBuilder {
         }
     }
     /// Access the DecodeAuthorizationMessage as a reference.
-    pub fn as_input(&self) -> &crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +61,7 @@ impl DecodeAuthorizationMessageFluentBuilder {
             crate::operation::decode_authorization_message::DecodeAuthorizationMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decode_authorization_message::DecodeAuthorizationMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decode_authorization_message::DecodeAuthorizationMessageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +71,7 @@ impl DecodeAuthorizationMessageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +80,7 @@ impl DecodeAuthorizationMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decode_authorization_message::DecodeAuthorizationMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decode_authorization_message::DecodeAuthorizationMessageError>,
     > {
         let op = self
             .inner
@@ -110,9 +103,7 @@ impl DecodeAuthorizationMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decode_authorization_message::DecodeAuthorizationMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decode_authorization_message::DecodeAuthorizationMessageError>,
     > {
         self.send_middleware().await
     }
@@ -126,25 +117,17 @@ impl DecodeAuthorizationMessageFluentBuilder {
             crate::operation::decode_authorization_message::DecodeAuthorizationMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::decode_authorization_message::DecodeAuthorizationMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::decode_authorization_message::DecodeAuthorizationMessageError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The encoded message that was returned with the response.</p>
-    pub fn encoded_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encoded_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.encoded_message(input.into());
         self
     }
     /// <p>The encoded message that was returned with the response.</p>
-    pub fn set_encoded_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encoded_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_encoded_message(input);
         self
     }

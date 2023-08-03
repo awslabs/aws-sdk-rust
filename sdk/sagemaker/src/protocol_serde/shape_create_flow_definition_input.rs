@@ -9,10 +9,7 @@ pub fn ser_create_flow_definition_input(
     if let Some(var_2) = &input.human_loop_request_source {
         #[allow(unused_mut)]
         let mut object_3 = object.key("HumanLoopRequestSource").start_object();
-        crate::protocol_serde::shape_human_loop_request_source::ser_human_loop_request_source(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_human_loop_request_source::ser_human_loop_request_source(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.human_loop_activation_config {
@@ -24,10 +21,7 @@ pub fn ser_create_flow_definition_input(
     if let Some(var_6) = &input.human_loop_config {
         #[allow(unused_mut)]
         let mut object_7 = object.key("HumanLoopConfig").start_object();
-        crate::protocol_serde::shape_human_loop_config::ser_human_loop_config(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_human_loop_config::ser_human_loop_config(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.output_config {

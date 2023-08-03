@@ -10,10 +10,7 @@ impl DescribeVpcsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_vpcs::DescribeVpcsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpcs::DescribeVpcsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpcs::DescribeVpcsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_vpcs();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl DescribeVpcsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_vpcs::DescribeVpcs,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::describe_vpcs::DescribeVpcs, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_vpcs::DescribeVpcsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl DescribeVpcsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl DescribeVpcsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_vpcs::DescribeVpcs,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::describe_vpcs::DescribeVpcs, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_vpcs::DescribeVpcsError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl DescribeVpcsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_vpcs::paginator::DescribeVpcsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_vpcs::paginator::DescribeVpcsPaginator {
-        crate::operation::describe_vpcs::paginator::DescribeVpcsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_vpcs::paginator::DescribeVpcsPaginator {
+        crate::operation::describe_vpcs::paginator::DescribeVpcsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -179,10 +162,7 @@ impl DescribeVpcsFluentBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -225,10 +205,7 @@ impl DescribeVpcsFluentBuilder {
     }
     /// <p>The IDs of the VPCs.</p>
     /// <p>Default: Describes all your VPCs.</p>
-    pub fn set_vpc_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_ids(input);
         self
     }

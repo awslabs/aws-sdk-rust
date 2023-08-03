@@ -29,20 +29,16 @@ impl ::aws_http::request_id::RequestId for ListRepositoriesOutput {
 }
 impl ListRepositoriesOutput {
     /// Creates a new builder-style object to manufacture [`ListRepositoriesOutput`](crate::operation::list_repositories::ListRepositoriesOutput).
-    pub fn builder() -> crate::operation::list_repositories::builders::ListRepositoriesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_repositories::builders::ListRepositoriesOutputBuilder {
         crate::operation::list_repositories::builders::ListRepositoriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRepositoriesOutput`](crate::operation::list_repositories::ListRepositoriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRepositoriesOutputBuilder {
-    pub(crate) repositories:
-        ::std::option::Option<::std::vec::Vec<crate::types::RepositoryNameIdPair>>,
+    pub(crate) repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryNameIdPair>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +55,12 @@ impl ListRepositoriesOutputBuilder {
         self
     }
     /// <p>Lists the repositories called by the list repositories operation.</p>
-    pub fn set_repositories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryNameIdPair>>,
-    ) -> Self {
+    pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryNameIdPair>>) -> Self {
         self.repositories = input;
         self
     }
     /// <p>Lists the repositories called by the list repositories operation.</p>
-    pub fn get_repositories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryNameIdPair>> {
+    pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryNameIdPair>> {
         &self.repositories
     }
     /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>

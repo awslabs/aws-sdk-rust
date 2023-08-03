@@ -85,9 +85,7 @@ pub struct AdditionalDataset {
     /// <li> <p>"VE" - VENEZUELA</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub configuration: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl AdditionalDataset {
     /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and <code>"weather"</code>.</p>
@@ -169,9 +167,7 @@ impl AdditionalDataset {
     /// </ul>
     pub fn configuration(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.configuration.as_ref()
     }
 }
@@ -184,14 +180,10 @@ impl AdditionalDataset {
 
 /// A builder for [`AdditionalDataset`](crate::types::AdditionalDataset).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdditionalDatasetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) configuration: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl AdditionalDatasetBuilder {
     /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and <code>"weather"</code>.</p>
@@ -285,11 +277,7 @@ impl AdditionalDatasetBuilder {
     /// <li> <p>"UY" - URUGUAY</p> </li>
     /// <li> <p>"VE" - VENEZUELA</p> </li>
     /// </ul>
-    pub fn configuration(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn configuration(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.configuration.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.configuration = ::std::option::Option::Some(hash_map);
@@ -370,12 +358,7 @@ impl AdditionalDatasetBuilder {
     /// </ul>
     pub fn set_configuration(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.configuration = input;
         self
@@ -455,9 +438,7 @@ impl AdditionalDatasetBuilder {
     /// </ul>
     pub fn get_configuration(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`AdditionalDataset`](crate::types::AdditionalDataset).

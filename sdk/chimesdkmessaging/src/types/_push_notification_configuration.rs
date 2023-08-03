@@ -87,10 +87,7 @@ impl PushNotificationConfigurationBuilder {
         self
     }
     /// <p>Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>: Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PushNotificationType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::PushNotificationType>) -> Self {
         self.r#type = input;
         self
     }

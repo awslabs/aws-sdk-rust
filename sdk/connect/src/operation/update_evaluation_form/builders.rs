@@ -38,9 +38,7 @@ impl UpdateEvaluationFormFluentBuilder {
         }
     }
     /// Access the UpdateEvaluationForm as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_evaluation_form::builders::UpdateEvaluationFormInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_evaluation_form::builders::UpdateEvaluationFormInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl UpdateEvaluationFormFluentBuilder {
             crate::operation::update_evaluation_form::UpdateEvaluationForm,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_evaluation_form::UpdateEvaluationFormError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_evaluation_form::UpdateEvaluationFormError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl UpdateEvaluationFormFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl UpdateEvaluationFormFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_evaluation_form::UpdateEvaluationFormOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_evaluation_form::UpdateEvaluationFormError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_evaluation_form::UpdateEvaluationFormError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl UpdateEvaluationFormFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_evaluation_form::UpdateEvaluationFormOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_evaluation_form::UpdateEvaluationFormError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_evaluation_form::UpdateEvaluationFormError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl UpdateEvaluationFormFluentBuilder {
             crate::operation::update_evaluation_form::UpdateEvaluationForm,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_evaluation_form::UpdateEvaluationFormError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_evaluation_form::UpdateEvaluationFormError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +125,12 @@ impl UpdateEvaluationFormFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evaluation_form_id(input.into());
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn set_evaluation_form_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evaluation_form_id(input);
         self
     }
@@ -223,17 +204,12 @@ impl UpdateEvaluationFormFluentBuilder {
         self
     }
     /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>) -> Self {
         self.inner = self.inner.set_items(input);
         self
     }
     /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>> {
         self.inner.get_items()
     }
     /// <p>A scoring strategy of the evaluation form.</p>
@@ -242,17 +218,12 @@ impl UpdateEvaluationFormFluentBuilder {
         self
     }
     /// <p>A scoring strategy of the evaluation form.</p>
-    pub fn set_scoring_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
-    ) -> Self {
+    pub fn set_scoring_strategy(mut self, input: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>) -> Self {
         self.inner = self.inner.set_scoring_strategy(input);
         self
     }
     /// <p>A scoring strategy of the evaluation form.</p>
-    pub fn get_scoring_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvaluationFormScoringStrategy> {
+    pub fn get_scoring_strategy(&self) -> &::std::option::Option<crate::types::EvaluationFormScoringStrategy> {
         self.inner.get_scoring_strategy()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>

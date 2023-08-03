@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AnalyticsCommonFilterName {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for AnalyticsCommonFilterName {
             "Channel" => AnalyticsCommonFilterName::Channel,
             "LocaleId" => AnalyticsCommonFilterName::LocaleId,
             "Modality" => AnalyticsCommonFilterName::Modality,
-            other => AnalyticsCommonFilterName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AnalyticsCommonFilterName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl AnalyticsCommonFilterName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BotAliasId",
-            "BotVersion",
-            "Channel",
-            "LocaleId",
-            "Modality",
-        ]
+        &["BotAliasId", "BotVersion", "Channel", "LocaleId", "Modality"]
     }
 }
 impl ::std::convert::AsRef<str> for AnalyticsCommonFilterName {

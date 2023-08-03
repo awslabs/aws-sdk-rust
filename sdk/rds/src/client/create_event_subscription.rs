@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEventSubscriptionOutput`](crate::operation::create_event_subscription::CreateEventSubscriptionOutput) with field(s):
     ///   - [`event_subscription(Option<EventSubscription>)`](crate::operation::create_event_subscription::CreateEventSubscriptionOutput::event_subscription): <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     /// - On failure, responds with [`SdkError<CreateEventSubscriptionError>`](crate::operation::create_event_subscription::CreateEventSubscriptionError)
-    pub fn create_event_subscription(
-        &self,
-    ) -> crate::operation::create_event_subscription::builders::CreateEventSubscriptionFluentBuilder
-    {
+    pub fn create_event_subscription(&self) -> crate::operation::create_event_subscription::builders::CreateEventSubscriptionFluentBuilder {
         crate::operation::create_event_subscription::builders::CreateEventSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,16 +5,16 @@ pub use crate::operation::update_distribution_configuration::_update_distributio
 
 impl UpdateDistributionConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_distribution_configuration::UpdateDistributionConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_distribution_configuration::UpdateDistributionConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_distribution_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateDistributionConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDistributionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationInputBuilder,
+    inner: crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationInputBuilder,
 }
 impl UpdateDistributionConfigurationFluentBuilder {
     /// Creates a new `UpdateDistributionConfiguration`.
@@ -37,15 +37,20 @@ impl UpdateDistributionConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateDistributionConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_distribution_configuration::UpdateDistributionConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_distribution_configuration::UpdateDistributionConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl UpdateDistributionConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_distribution_configuration::UpdateDistributionConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_distribution_configuration::UpdateDistributionConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,39 +87,40 @@ impl UpdateDistributionConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_distribution_configuration::UpdateDistributionConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_distribution_configuration::UpdateDistributionConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_distribution_configuration::UpdateDistributionConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_distribution_configuration::UpdateDistributionConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_distribution_configuration::UpdateDistributionConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
-    pub fn distribution_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distribution_configuration_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
-    pub fn set_distribution_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distribution_configuration_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
-    pub fn get_distribution_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_distribution_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_distribution_configuration_arn()
     }
     /// <p>The description of the distribution configuration.</p>
@@ -140,17 +147,12 @@ impl UpdateDistributionConfigurationFluentBuilder {
         self
     }
     /// <p>The distributions of the distribution configuration.</p>
-    pub fn set_distributions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
-    ) -> Self {
+    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>) -> Self {
         self.inner = self.inner.set_distributions(input);
         self
     }
     /// <p>The distributions of the distribution configuration.</p>
-    pub fn get_distributions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
+    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
         self.inner.get_distributions()
     }
     /// <p>The idempotency token of the distribution configuration.</p>

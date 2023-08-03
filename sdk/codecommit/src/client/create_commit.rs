@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`files_updated(Option<Vec<FileMetadata>>)`](crate::operation::create_commit::CreateCommitOutput::files_updated): <p>The files updated as part of the commited file changes.</p>
     ///   - [`files_deleted(Option<Vec<FileMetadata>>)`](crate::operation::create_commit::CreateCommitOutput::files_deleted): <p>The files deleted as part of the committed file changes.</p>
     /// - On failure, responds with [`SdkError<CreateCommitError>`](crate::operation::create_commit::CreateCommitError)
-    pub fn create_commit(
-        &self,
-    ) -> crate::operation::create_commit::builders::CreateCommitFluentBuilder {
-        crate::operation::create_commit::builders::CreateCommitFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_commit(&self) -> crate::operation::create_commit::builders::CreateCommitFluentBuilder {
+        crate::operation::create_commit::builders::CreateCommitFluentBuilder::new(self.handle.clone())
     }
 }

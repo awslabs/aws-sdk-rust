@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`users(Option<Vec<UserType>>)`](crate::operation::list_users_in_group::ListUsersInGroupOutput::users): <p>The users returned in the request to list users.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_users_in_group::ListUsersInGroupOutput::next_token): <p>An identifier that you can use in a later request to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListUsersInGroupError>`](crate::operation::list_users_in_group::ListUsersInGroupError)
-    pub fn list_users_in_group(
-        &self,
-    ) -> crate::operation::list_users_in_group::builders::ListUsersInGroupFluentBuilder {
-        crate::operation::list_users_in_group::builders::ListUsersInGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_users_in_group(&self) -> crate::operation::list_users_in_group::builders::ListUsersInGroupFluentBuilder {
+        crate::operation::list_users_in_group::builders::ListUsersInGroupFluentBuilder::new(self.handle.clone())
     }
 }

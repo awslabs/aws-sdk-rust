@@ -37,9 +37,7 @@ impl Change {
 
 /// A builder for [`Change`](crate::types::Change).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ChangeType>,
     pub(crate) hook_invocation_count: ::std::option::Option<i32>,
@@ -80,10 +78,7 @@ impl ChangeBuilder {
         self
     }
     /// <p>A <code>ResourceChange</code> structure that describes the resource and action that CloudFormation will perform.</p>
-    pub fn set_resource_change(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceChange>,
-    ) -> Self {
+    pub fn set_resource_change(mut self, input: ::std::option::Option<crate::types::ResourceChange>) -> Self {
         self.resource_change = input;
         self
     }

@@ -22,35 +22,26 @@ impl DescribeModelCardInput {
 }
 impl DescribeModelCardInput {
     /// Creates a new builder-style object to manufacture [`DescribeModelCardInput`](crate::operation::describe_model_card::DescribeModelCardInput).
-    pub fn builder(
-    ) -> crate::operation::describe_model_card::builders::DescribeModelCardInputBuilder {
+    pub fn builder() -> crate::operation::describe_model_card::builders::DescribeModelCardInputBuilder {
         crate::operation::describe_model_card::builders::DescribeModelCardInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeModelCardInput`](crate::operation::describe_model_card::DescribeModelCardInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeModelCardInputBuilder {
     pub(crate) model_card_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_card_version: ::std::option::Option<i32>,
 }
 impl DescribeModelCardInputBuilder {
     /// <p>The name of the model card to describe.</p>
-    pub fn model_card_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model card to describe.</p>
-    pub fn set_model_card_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_name = input;
         self
     }
@@ -75,15 +66,10 @@ impl DescribeModelCardInputBuilder {
     /// Consumes the builder and constructs a [`DescribeModelCardInput`](crate::operation::describe_model_card::DescribeModelCardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_model_card::DescribeModelCardInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_model_card::DescribeModelCardInput {
-                model_card_name: self.model_card_name,
-                model_card_version: self.model_card_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_model_card::DescribeModelCardInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_model_card::DescribeModelCardInput {
+            model_card_name: self.model_card_name,
+            model_card_version: self.model_card_version,
+        })
     }
 }

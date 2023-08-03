@@ -37,10 +37,7 @@ impl ListMailboxPermissionsFluentBuilder {
         }
     }
     /// Access the ListMailboxPermissions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_mailbox_permissions::builders::ListMailboxPermissionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_mailbox_permissions::builders::ListMailboxPermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListMailboxPermissionsFluentBuilder {
             crate::operation::list_mailbox_permissions::ListMailboxPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mailbox_permissions::ListMailboxPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mailbox_permissions::ListMailboxPermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListMailboxPermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListMailboxPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_mailbox_permissions::ListMailboxPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mailbox_permissions::ListMailboxPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mailbox_permissions::ListMailboxPermissionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListMailboxPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_mailbox_permissions::ListMailboxPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mailbox_permissions::ListMailboxPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mailbox_permissions::ListMailboxPermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,37 +105,23 @@ impl ListMailboxPermissionsFluentBuilder {
             crate::operation::list_mailbox_permissions::ListMailboxPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mailbox_permissions::ListMailboxPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mailbox_permissions::ListMailboxPermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_mailbox_permissions::paginator::ListMailboxPermissionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_mailbox_permissions::paginator::ListMailboxPermissionsPaginator
-    {
-        crate::operation::list_mailbox_permissions::paginator::ListMailboxPermissionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_mailbox_permissions::paginator::ListMailboxPermissionsPaginator {
+        crate::operation::list_mailbox_permissions::paginator::ListMailboxPermissionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

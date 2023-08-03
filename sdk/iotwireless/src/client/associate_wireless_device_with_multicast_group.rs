@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`wireless_device_id(impl ::std::convert::Into<String>)`](crate::operation::associate_wireless_device_with_multicast_group::builders::AssociateWirelessDeviceWithMulticastGroupFluentBuilder::wireless_device_id) / [`set_wireless_device_id(Option<String>)`](crate::operation::associate_wireless_device_with_multicast_group::builders::AssociateWirelessDeviceWithMulticastGroupFluentBuilder::set_wireless_device_id): <p>The ID of the wireless device.</p>
     /// - On success, responds with [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupOutput)
     /// - On failure, responds with [`SdkError<AssociateWirelessDeviceWithMulticastGroupError>`](crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupError)
-    pub fn associate_wireless_device_with_multicast_group(&self) -> crate::operation::associate_wireless_device_with_multicast_group::builders::AssociateWirelessDeviceWithMulticastGroupFluentBuilder{
-        crate::operation::associate_wireless_device_with_multicast_group::builders::AssociateWirelessDeviceWithMulticastGroupFluentBuilder::new(self.handle.clone())
+    pub fn associate_wireless_device_with_multicast_group(
+        &self,
+    ) -> crate::operation::associate_wireless_device_with_multicast_group::builders::AssociateWirelessDeviceWithMulticastGroupFluentBuilder {
+        crate::operation::associate_wireless_device_with_multicast_group::builders::AssociateWirelessDeviceWithMulticastGroupFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -23,9 +23,7 @@ impl MapRunStartedEventDetails {
 
 /// A builder for [`MapRunStartedEventDetails`](crate::types::MapRunStartedEventDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MapRunStartedEventDetailsBuilder {
     pub(crate) map_run_arn: ::std::option::Option<::std::string::String>,
 }

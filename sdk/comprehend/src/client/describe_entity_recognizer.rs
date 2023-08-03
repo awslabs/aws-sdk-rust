@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeEntityRecognizerOutput`](crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput) with field(s):
     ///   - [`entity_recognizer_properties(Option<EntityRecognizerProperties>)`](crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput::entity_recognizer_properties): <p>Describes information associated with an entity recognizer.</p>
     /// - On failure, responds with [`SdkError<DescribeEntityRecognizerError>`](crate::operation::describe_entity_recognizer::DescribeEntityRecognizerError)
-    pub fn describe_entity_recognizer(
-        &self,
-    ) -> crate::operation::describe_entity_recognizer::builders::DescribeEntityRecognizerFluentBuilder
-    {
+    pub fn describe_entity_recognizer(&self) -> crate::operation::describe_entity_recognizer::builders::DescribeEntityRecognizerFluentBuilder {
         crate::operation::describe_entity_recognizer::builders::DescribeEntityRecognizerFluentBuilder::new(self.handle.clone())
     }
 }

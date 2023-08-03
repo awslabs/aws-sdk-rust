@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`max_eirp(f32)`](crate::operation::update_wireless_gateway::builders::UpdateWirelessGatewayFluentBuilder::max_eirp) / [`set_max_eirp(Option<f32>)`](crate::operation::update_wireless_gateway::builders::UpdateWirelessGatewayFluentBuilder::set_max_eirp): <p>The MaxEIRP value.</p>
     /// - On success, responds with [`UpdateWirelessGatewayOutput`](crate::operation::update_wireless_gateway::UpdateWirelessGatewayOutput)
     /// - On failure, responds with [`SdkError<UpdateWirelessGatewayError>`](crate::operation::update_wireless_gateway::UpdateWirelessGatewayError)
-    pub fn update_wireless_gateway(
-        &self,
-    ) -> crate::operation::update_wireless_gateway::builders::UpdateWirelessGatewayFluentBuilder
-    {
-        crate::operation::update_wireless_gateway::builders::UpdateWirelessGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_wireless_gateway(&self) -> crate::operation::update_wireless_gateway::builders::UpdateWirelessGatewayFluentBuilder {
+        crate::operation::update_wireless_gateway::builders::UpdateWirelessGatewayFluentBuilder::new(self.handle.clone())
     }
 }

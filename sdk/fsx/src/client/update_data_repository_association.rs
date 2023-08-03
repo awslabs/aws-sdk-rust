@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateDataRepositoryAssociationOutput`](crate::operation::update_data_repository_association::UpdateDataRepositoryAssociationOutput) with field(s):
     ///   - [`association(Option<DataRepositoryAssociation>)`](crate::operation::update_data_repository_association::UpdateDataRepositoryAssociationOutput::association): <p>The response object returned after the data repository association is updated.</p>
     /// - On failure, responds with [`SdkError<UpdateDataRepositoryAssociationError>`](crate::operation::update_data_repository_association::UpdateDataRepositoryAssociationError)
-    pub fn update_data_repository_association(&self) -> crate::operation::update_data_repository_association::builders::UpdateDataRepositoryAssociationFluentBuilder{
+    pub fn update_data_repository_association(
+        &self,
+    ) -> crate::operation::update_data_repository_association::builders::UpdateDataRepositoryAssociationFluentBuilder {
         crate::operation::update_data_repository_association::builders::UpdateDataRepositoryAssociationFluentBuilder::new(self.handle.clone())
     }
 }

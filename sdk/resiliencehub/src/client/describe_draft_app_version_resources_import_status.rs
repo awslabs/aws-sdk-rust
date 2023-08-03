@@ -11,7 +11,12 @@ impl super::Client {
     ///   - [`status_change_time(Option<DateTime>)`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput::status_change_time): <p>The timestamp for when the status last changed.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput::error_message): <p>The returned error message for the request.</p>
     /// - On failure, responds with [`SdkError<DescribeDraftAppVersionResourcesImportStatusError>`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusError)
-    pub fn describe_draft_app_version_resources_import_status(&self) -> crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusFluentBuilder{
-        crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusFluentBuilder::new(self.handle.clone())
+    pub fn describe_draft_app_version_resources_import_status(
+        &self,
+    ) -> crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusFluentBuilder
+    {
+        crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

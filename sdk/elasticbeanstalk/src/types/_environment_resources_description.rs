@@ -23,9 +23,7 @@ impl EnvironmentResourcesDescription {
 
 /// A builder for [`EnvironmentResourcesDescription`](crate::types::EnvironmentResourcesDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentResourcesDescriptionBuilder {
     pub(crate) load_balancer: ::std::option::Option<crate::types::LoadBalancerDescription>,
 }
@@ -36,17 +34,12 @@ impl EnvironmentResourcesDescriptionBuilder {
         self
     }
     /// <p>Describes the LoadBalancer.</p>
-    pub fn set_load_balancer(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancerDescription>,
-    ) -> Self {
+    pub fn set_load_balancer(mut self, input: ::std::option::Option<crate::types::LoadBalancerDescription>) -> Self {
         self.load_balancer = input;
         self
     }
     /// <p>Describes the LoadBalancer.</p>
-    pub fn get_load_balancer(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoadBalancerDescription> {
+    pub fn get_load_balancer(&self) -> &::std::option::Option<crate::types::LoadBalancerDescription> {
         &self.load_balancer
     }
     /// Consumes the builder and constructs a [`EnvironmentResourcesDescription`](crate::types::EnvironmentResourcesDescription).

@@ -51,9 +51,7 @@ impl DocumentClassifierOutputDataConfig {
 
 /// A builder for [`DocumentClassifierOutputDataConfig`](crate::types::DocumentClassifierOutputDataConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentClassifierOutputDataConfigBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
@@ -110,18 +108,12 @@ impl DocumentClassifierOutputDataConfigBuilder {
         &self.kms_key_id
     }
     /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
-    pub fn flywheel_stats_s3_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flywheel_stats_s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flywheel_stats_s3_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
-    pub fn set_flywheel_stats_s3_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flywheel_stats_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flywheel_stats_s3_prefix = input;
         self
     }

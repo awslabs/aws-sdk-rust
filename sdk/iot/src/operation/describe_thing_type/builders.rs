@@ -10,10 +10,7 @@ impl DescribeThingTypeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_thing_type::DescribeThingTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_thing_type::DescribeThingTypeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_thing_type::DescribeThingTypeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_thing_type();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeThingTypeFluentBuilder {
         }
     }
     /// Access the DescribeThingType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_thing_type::builders::DescribeThingTypeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_thing_type::builders::DescribeThingTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeThingTypeFluentBuilder {
             crate::operation::describe_thing_type::DescribeThingType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_thing_type::DescribeThingTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_thing_type::DescribeThingTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeThingTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeThingTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_thing_type::DescribeThingTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_thing_type::DescribeThingTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_thing_type::DescribeThingTypeError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeThingTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_thing_type::DescribeThingTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_thing_type::DescribeThingTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_thing_type::DescribeThingTypeError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl DescribeThingTypeFluentBuilder {
             crate::operation::describe_thing_type::DescribeThingType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_thing_type::DescribeThingTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_thing_type::DescribeThingTypeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_type_name(input.into());
         self
     }
     /// <p>The name of the thing type.</p>
-    pub fn set_thing_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_type_name(input);
         self
     }

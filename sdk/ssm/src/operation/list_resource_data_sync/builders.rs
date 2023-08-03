@@ -38,10 +38,7 @@ impl ListResourceDataSyncFluentBuilder {
         }
     }
     /// Access the ListResourceDataSync as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_resource_data_sync::builders::ListResourceDataSyncInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_resource_data_sync::builders::ListResourceDataSyncInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ListResourceDataSyncFluentBuilder {
             crate::operation::list_resource_data_sync::ListResourceDataSync,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_data_sync::ListResourceDataSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_data_sync::ListResourceDataSyncError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ListResourceDataSyncFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ListResourceDataSyncFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_data_sync::ListResourceDataSyncOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_data_sync::ListResourceDataSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_data_sync::ListResourceDataSyncError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ListResourceDataSyncFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_data_sync::ListResourceDataSyncOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_data_sync::ListResourceDataSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_data_sync::ListResourceDataSyncError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +106,15 @@ impl ListResourceDataSyncFluentBuilder {
             crate::operation::list_resource_data_sync::ListResourceDataSync,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_data_sync::ListResourceDataSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_data_sync::ListResourceDataSyncError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resource_data_sync::paginator::ListResourceDataSyncPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_resource_data_sync::paginator::ListResourceDataSyncPaginator {
-        crate::operation::list_resource_data_sync::paginator::ListResourceDataSyncPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_resource_data_sync::paginator::ListResourceDataSyncPaginator {
+        crate::operation::list_resource_data_sync::paginator::ListResourceDataSyncPaginator::new(self.handle, self.inner)
     }
     /// <p>View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource data syncs from Organizations or from multiple Amazon Web Services Regions.</p>
     pub fn sync_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

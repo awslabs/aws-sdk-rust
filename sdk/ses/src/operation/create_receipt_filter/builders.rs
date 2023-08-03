@@ -39,9 +39,7 @@ impl CreateReceiptFilterFluentBuilder {
         }
     }
     /// Access the CreateReceiptFilter as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_receipt_filter::builders::CreateReceiptFilterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_receipt_filter::builders::CreateReceiptFilterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl CreateReceiptFilterFluentBuilder {
             crate::operation::create_receipt_filter::CreateReceiptFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_receipt_filter::CreateReceiptFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_receipt_filter::CreateReceiptFilterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl CreateReceiptFilterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl CreateReceiptFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_receipt_filter::CreateReceiptFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_receipt_filter::CreateReceiptFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_receipt_filter::CreateReceiptFilterError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl CreateReceiptFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_receipt_filter::CreateReceiptFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_receipt_filter::CreateReceiptFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_receipt_filter::CreateReceiptFilterError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl CreateReceiptFilterFluentBuilder {
             crate::operation::create_receipt_filter::CreateReceiptFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_receipt_filter::CreateReceiptFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_receipt_filter::CreateReceiptFilterError>,
     > {
         self.customize_middleware().await
     }

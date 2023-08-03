@@ -28,9 +28,7 @@ impl GetEndpointOutput {
 
 /// A builder for [`GetEndpointOutput`](crate::operation::get_endpoint::GetEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEndpointOutputBuilder {
     pub(crate) endpoint_response: ::std::option::Option<crate::types::EndpointResponse>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetEndpointOutputBuilder {
         self
     }
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
-    pub fn set_endpoint_response(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointResponse>,
-    ) -> Self {
+    pub fn set_endpoint_response(mut self, input: ::std::option::Option<crate::types::EndpointResponse>) -> Self {
         self.endpoint_response = input;
         self
     }

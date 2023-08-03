@@ -2,8 +2,7 @@
 pub fn ser_head_bucket_headers(
     input: &crate::operation::head_bucket::HeadBucketInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.expected_bucket_owner {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_head_bucket_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
@@ -28,28 +24,16 @@ pub fn de_head_bucket_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::head_bucket::HeadBucketOutput,
-    crate::operation::head_bucket::HeadBucketError,
-> {
+) -> std::result::Result<crate::operation::head_bucket::HeadBucketOutput, crate::operation::head_bucket::HeadBucketError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::head_bucket::HeadBucketError::unhandled)?;
-    generic_builder =
-        crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::head_bucket::HeadBucketError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::head_bucket::HeadBucketError::unhandled(
-                generic,
-            ))
-        }
+        None => return Err(crate::operation::head_bucket::HeadBucketError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
@@ -59,11 +43,8 @@ pub fn de_head_bucket_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::NotFoundBuilder::default();
-                output = crate::protocol_serde::shape_not_found::de_not_found_xml_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::head_bucket::HeadBucketError::unhandled)?;
+                output = crate::protocol_serde::shape_not_found::de_not_found_xml_err(_response_body, output)
+                    .map_err(crate::operation::head_bucket::HeadBucketError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -81,21 +62,12 @@ pub fn de_head_bucket_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::head_bucket::HeadBucketOutput,
-    crate::operation::head_bucket::HeadBucketError,
-> {
+) -> std::result::Result<crate::operation::head_bucket::HeadBucketOutput, crate::operation::head_bucket::HeadBucketError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::head_bucket::builders::HeadBucketOutputBuilder::default();
-        output._set_extended_request_id(
-            crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers)
-                .map(str::to_string),
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::head_bucket::builders::HeadBucketOutputBuilder::default();
+        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

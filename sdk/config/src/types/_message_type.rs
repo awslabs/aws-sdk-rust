@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MessageType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,15 +57,9 @@ pub enum MessageType {
 impl ::std::convert::From<&str> for MessageType {
     fn from(s: &str) -> Self {
         match s {
-            "ConfigurationItemChangeNotification" => {
-                MessageType::ConfigurationItemChangeNotification
-            }
-            "ConfigurationSnapshotDeliveryCompleted" => {
-                MessageType::ConfigurationSnapshotDeliveryCompleted
-            }
-            "OversizedConfigurationItemChangeNotification" => {
-                MessageType::OversizedConfigurationItemChangeNotification
-            }
+            "ConfigurationItemChangeNotification" => MessageType::ConfigurationItemChangeNotification,
+            "ConfigurationSnapshotDeliveryCompleted" => MessageType::ConfigurationSnapshotDeliveryCompleted,
+            "OversizedConfigurationItemChangeNotification" => MessageType::OversizedConfigurationItemChangeNotification,
             "ScheduledNotification" => MessageType::ScheduledNotification,
             other => MessageType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -88,15 +76,9 @@ impl MessageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            MessageType::ConfigurationItemChangeNotification => {
-                "ConfigurationItemChangeNotification"
-            }
-            MessageType::ConfigurationSnapshotDeliveryCompleted => {
-                "ConfigurationSnapshotDeliveryCompleted"
-            }
-            MessageType::OversizedConfigurationItemChangeNotification => {
-                "OversizedConfigurationItemChangeNotification"
-            }
+            MessageType::ConfigurationItemChangeNotification => "ConfigurationItemChangeNotification",
+            MessageType::ConfigurationSnapshotDeliveryCompleted => "ConfigurationSnapshotDeliveryCompleted",
+            MessageType::OversizedConfigurationItemChangeNotification => "OversizedConfigurationItemChangeNotification",
             MessageType::ScheduledNotification => "ScheduledNotification",
             MessageType::Unknown(value) => value.as_str(),
         }

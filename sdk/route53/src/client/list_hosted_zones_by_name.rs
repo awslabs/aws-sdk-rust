@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`next_hosted_zone_id(Option<String>)`](crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameOutput::next_hosted_zone_id): <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextHostedZoneId</code> identifies the first hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>  <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
     ///   - [`max_items(Option<i32>)`](crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameOutput::max_items): <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZonesByName</code> that produced the current response.</p>
     /// - On failure, responds with [`SdkError<ListHostedZonesByNameError>`](crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameError)
-    pub fn list_hosted_zones_by_name(
-        &self,
-    ) -> crate::operation::list_hosted_zones_by_name::builders::ListHostedZonesByNameFluentBuilder
-    {
+    pub fn list_hosted_zones_by_name(&self) -> crate::operation::list_hosted_zones_by_name::builders::ListHostedZonesByNameFluentBuilder {
         crate::operation::list_hosted_zones_by_name::builders::ListHostedZonesByNameFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,18 +16,14 @@ impl DescribeWorkingStorageInput {
 }
 impl DescribeWorkingStorageInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkingStorageInput`](crate::operation::describe_working_storage::DescribeWorkingStorageInput).
-    pub fn builder(
-    ) -> crate::operation::describe_working_storage::builders::DescribeWorkingStorageInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_working_storage::builders::DescribeWorkingStorageInputBuilder {
         crate::operation::describe_working_storage::builders::DescribeWorkingStorageInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkingStorageInput`](crate::operation::describe_working_storage::DescribeWorkingStorageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkingStorageInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }
@@ -49,14 +45,10 @@ impl DescribeWorkingStorageInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWorkingStorageInput`](crate::operation::describe_working_storage::DescribeWorkingStorageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_working_storage::DescribeWorkingStorageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_working_storage::DescribeWorkingStorageInput {
-                gateway_arn: self.gateway_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_working_storage::DescribeWorkingStorageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_working_storage::DescribeWorkingStorageInput {
+            gateway_arn: self.gateway_arn,
+        })
     }
 }

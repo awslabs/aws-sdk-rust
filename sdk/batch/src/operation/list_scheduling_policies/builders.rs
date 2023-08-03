@@ -37,10 +37,7 @@ impl ListSchedulingPoliciesFluentBuilder {
         }
     }
     /// Access the ListSchedulingPolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_scheduling_policies::builders::ListSchedulingPoliciesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_scheduling_policies::builders::ListSchedulingPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListSchedulingPoliciesFluentBuilder {
             crate::operation::list_scheduling_policies::ListSchedulingPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduling_policies::ListSchedulingPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scheduling_policies::ListSchedulingPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListSchedulingPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListSchedulingPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_scheduling_policies::ListSchedulingPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduling_policies::ListSchedulingPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scheduling_policies::ListSchedulingPoliciesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListSchedulingPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_scheduling_policies::ListSchedulingPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduling_policies::ListSchedulingPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scheduling_policies::ListSchedulingPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl ListSchedulingPoliciesFluentBuilder {
             crate::operation::list_scheduling_policies::ListSchedulingPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduling_policies::ListSchedulingPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scheduling_policies::ListSchedulingPoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_scheduling_policies::paginator::ListSchedulingPoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_scheduling_policies::paginator::ListSchedulingPoliciesPaginator
-    {
-        crate::operation::list_scheduling_policies::paginator::ListSchedulingPoliciesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_scheduling_policies::paginator::ListSchedulingPoliciesPaginator {
+        crate::operation::list_scheduling_policies::paginator::ListSchedulingPoliciesPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(mut self, input: i32) -> Self {

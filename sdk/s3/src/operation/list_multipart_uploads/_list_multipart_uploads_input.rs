@@ -81,17 +81,14 @@ impl ListMultipartUploadsInput {
 }
 impl ListMultipartUploadsInput {
     /// Creates a new builder-style object to manufacture [`ListMultipartUploadsInput`](crate::operation::list_multipart_uploads::ListMultipartUploadsInput).
-    pub fn builder(
-    ) -> crate::operation::list_multipart_uploads::builders::ListMultipartUploadsInputBuilder {
+    pub fn builder() -> crate::operation::list_multipart_uploads::builders::ListMultipartUploadsInputBuilder {
         crate::operation::list_multipart_uploads::builders::ListMultipartUploadsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMultipartUploadsInput`](crate::operation::list_multipart_uploads::ListMultipartUploadsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMultipartUploadsInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) delimiter: ::std::option::Option<::std::string::String>,
@@ -147,10 +144,7 @@ impl ListMultipartUploadsInputBuilder {
         self
     }
     /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key can contain any Unicode character; however, the XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
-    pub fn set_encoding_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncodingType>,
-    ) -> Self {
+    pub fn set_encoding_type(mut self, input: ::std::option::Option<crate::types::EncodingType>) -> Self {
         self.encoding_type = input;
         self
     }
@@ -207,18 +201,12 @@ impl ListMultipartUploadsInputBuilder {
         &self.prefix
     }
     /// <p>Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored. Otherwise, any multipart uploads for a key equal to the key-marker might be included in the list only if they have an upload ID lexicographically greater than the specified <code>upload-id-marker</code>.</p>
-    pub fn upload_id_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn upload_id_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored. Otherwise, any multipart uploads for a key equal to the key-marker might be included in the list only if they have an upload ID lexicographically greater than the specified <code>upload-id-marker</code>.</p>
-    pub fn set_upload_id_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_upload_id_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id_marker = input;
         self
     }
@@ -227,18 +215,12 @@ impl ListMultipartUploadsInputBuilder {
         &self.upload_id_marker
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
@@ -252,10 +234,7 @@ impl ListMultipartUploadsInputBuilder {
         self
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_request_payer(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestPayer>,
-    ) -> Self {
+    pub fn set_request_payer(mut self, input: ::std::option::Option<crate::types::RequestPayer>) -> Self {
         self.request_payer = input;
         self
     }
@@ -266,22 +245,18 @@ impl ListMultipartUploadsInputBuilder {
     /// Consumes the builder and constructs a [`ListMultipartUploadsInput`](crate::operation::list_multipart_uploads::ListMultipartUploadsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_multipart_uploads::ListMultipartUploadsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_multipart_uploads::ListMultipartUploadsInput {
-                bucket: self.bucket,
-                delimiter: self.delimiter,
-                encoding_type: self.encoding_type,
-                key_marker: self.key_marker,
-                max_uploads: self.max_uploads,
-                prefix: self.prefix,
-                upload_id_marker: self.upload_id_marker,
-                expected_bucket_owner: self.expected_bucket_owner,
-                request_payer: self.request_payer,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_multipart_uploads::ListMultipartUploadsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_multipart_uploads::ListMultipartUploadsInput {
+            bucket: self.bucket,
+            delimiter: self.delimiter,
+            encoding_type: self.encoding_type,
+            key_marker: self.key_marker,
+            max_uploads: self.max_uploads,
+            prefix: self.prefix,
+            upload_id_marker: self.upload_id_marker,
+            expected_bucket_owner: self.expected_bucket_owner,
+            request_payer: self.request_payer,
+        })
     }
 }

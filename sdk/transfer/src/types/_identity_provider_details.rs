@@ -50,9 +50,7 @@ impl IdentityProviderDetails {
     /// <li> <p> <code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the default value.</p> </li>
     /// <li> <p> <code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect. The server checks the key first, and then if the key is valid, the system prompts for a password. If the private key provided does not match the public key that is stored, authentication fails.</p> </li>
     /// </ul>
-    pub fn sftp_authentication_methods(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SftpAuthenticationMethods> {
+    pub fn sftp_authentication_methods(&self) -> ::std::option::Option<&crate::types::SftpAuthenticationMethods> {
         self.sftp_authentication_methods.as_ref()
     }
 }
@@ -65,16 +63,13 @@ impl IdentityProviderDetails {
 
 /// A builder for [`IdentityProviderDetails`](crate::types::IdentityProviderDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdentityProviderDetailsBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) invocation_role: ::std::option::Option<::std::string::String>,
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) function: ::std::option::Option<::std::string::String>,
-    pub(crate) sftp_authentication_methods:
-        ::std::option::Option<crate::types::SftpAuthenticationMethods>,
+    pub(crate) sftp_authentication_methods: ::std::option::Option<crate::types::SftpAuthenticationMethods>,
 }
 impl IdentityProviderDetailsBuilder {
     /// <p>Provides the location of the service endpoint used to authenticate users.</p>
@@ -92,18 +87,12 @@ impl IdentityProviderDetailsBuilder {
         &self.url
     }
     /// <p>This parameter is only applicable if your <code>IdentityProviderType</code> is <code>API_GATEWAY</code>. Provides the type of <code>InvocationRole</code> used to authenticate the user account.</p>
-    pub fn invocation_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invocation_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invocation_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This parameter is only applicable if your <code>IdentityProviderType</code> is <code>API_GATEWAY</code>. Provides the type of <code>InvocationRole</code> used to authenticate the user account.</p>
-    pub fn set_invocation_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invocation_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invocation_role = input;
         self
     }
@@ -146,10 +135,7 @@ impl IdentityProviderDetailsBuilder {
     /// <li> <p> <code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the default value.</p> </li>
     /// <li> <p> <code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect. The server checks the key first, and then if the key is valid, the system prompts for a password. If the private key provided does not match the public key that is stored, authentication fails.</p> </li>
     /// </ul>
-    pub fn sftp_authentication_methods(
-        mut self,
-        input: crate::types::SftpAuthenticationMethods,
-    ) -> Self {
+    pub fn sftp_authentication_methods(mut self, input: crate::types::SftpAuthenticationMethods) -> Self {
         self.sftp_authentication_methods = ::std::option::Option::Some(input);
         self
     }
@@ -160,10 +146,7 @@ impl IdentityProviderDetailsBuilder {
     /// <li> <p> <code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the default value.</p> </li>
     /// <li> <p> <code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect. The server checks the key first, and then if the key is valid, the system prompts for a password. If the private key provided does not match the public key that is stored, authentication fails.</p> </li>
     /// </ul>
-    pub fn set_sftp_authentication_methods(
-        mut self,
-        input: ::std::option::Option<crate::types::SftpAuthenticationMethods>,
-    ) -> Self {
+    pub fn set_sftp_authentication_methods(mut self, input: ::std::option::Option<crate::types::SftpAuthenticationMethods>) -> Self {
         self.sftp_authentication_methods = input;
         self
     }
@@ -174,9 +157,7 @@ impl IdentityProviderDetailsBuilder {
     /// <li> <p> <code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the default value.</p> </li>
     /// <li> <p> <code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect. The server checks the key first, and then if the key is valid, the system prompts for a password. If the private key provided does not match the public key that is stored, authentication fails.</p> </li>
     /// </ul>
-    pub fn get_sftp_authentication_methods(
-        &self,
-    ) -> &::std::option::Option<crate::types::SftpAuthenticationMethods> {
+    pub fn get_sftp_authentication_methods(&self) -> &::std::option::Option<crate::types::SftpAuthenticationMethods> {
         &self.sftp_authentication_methods
     }
     /// Consumes the builder and constructs a [`IdentityProviderDetails`](crate::types::IdentityProviderDetails).

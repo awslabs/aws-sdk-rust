@@ -10,10 +10,7 @@ impl PutScalingPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_scaling_policy::PutScalingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scaling_policy::PutScalingPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scaling_policy::PutScalingPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_scaling_policy();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl PutScalingPolicyFluentBuilder {
         }
     }
     /// Access the PutScalingPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_scaling_policy::builders::PutScalingPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_scaling_policy::builders::PutScalingPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl PutScalingPolicyFluentBuilder {
             crate::operation::put_scaling_policy::PutScalingPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scaling_policy::PutScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scaling_policy::PutScalingPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl PutScalingPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl PutScalingPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_scaling_policy::PutScalingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scaling_policy::PutScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scaling_policy::PutScalingPolicyError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl PutScalingPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_scaling_policy::PutScalingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scaling_policy::PutScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scaling_policy::PutScalingPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +105,17 @@ impl PutScalingPolicyFluentBuilder {
             crate::operation::put_scaling_policy::PutScalingPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_scaling_policy::PutScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_scaling_policy::PutScalingPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -193,19 +171,13 @@ impl PutScalingPolicyFluentBuilder {
     }
     /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
     /// <p>Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn adjustment_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn adjustment_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.adjustment_type(input.into());
         self
     }
     /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
     /// <p>Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn set_adjustment_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_adjustment_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_adjustment_type(input);
         self
     }
@@ -290,19 +262,13 @@ impl PutScalingPolicyFluentBuilder {
     }
     /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p>
     /// <p>Valid only if the policy type is <code>StepScaling</code>.</p>
-    pub fn metric_aggregation_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_aggregation_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_aggregation_type(input.into());
         self
     }
     /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p>
     /// <p>Valid only if the policy type is <code>StepScaling</code>.</p>
-    pub fn set_metric_aggregation_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_aggregation_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_aggregation_type(input);
         self
     }
@@ -323,18 +289,13 @@ impl PutScalingPolicyFluentBuilder {
     }
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
     /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.) </p>
-    pub fn set_step_adjustments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>,
-    ) -> Self {
+    pub fn set_step_adjustments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>) -> Self {
         self.inner = self.inner.set_step_adjustments(input);
         self
     }
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
     /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.) </p>
-    pub fn get_step_adjustments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>> {
+    pub fn get_step_adjustments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>> {
         self.inner.get_step_adjustments()
     }
     /// <p> <i>Not needed if the default instance warmup is defined for the group.</i> </p>
@@ -374,10 +335,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the <code>ResourceLabel</code> property with the <code>PredefinedMetricSpecification</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     /// <p>Required if the policy type is <code>TargetTrackingScaling</code>.</p>
-    pub fn target_tracking_configuration(
-        mut self,
-        input: crate::types::TargetTrackingConfiguration,
-    ) -> Self {
+    pub fn target_tracking_configuration(mut self, input: crate::types::TargetTrackingConfiguration) -> Self {
         self.inner = self.inner.target_tracking_configuration(input);
         self
     }
@@ -392,10 +350,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the <code>ResourceLabel</code> property with the <code>PredefinedMetricSpecification</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     /// <p>Required if the policy type is <code>TargetTrackingScaling</code>.</p>
-    pub fn set_target_tracking_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetTrackingConfiguration>,
-    ) -> Self {
+    pub fn set_target_tracking_configuration(mut self, input: ::std::option::Option<crate::types::TargetTrackingConfiguration>) -> Self {
         self.inner = self.inner.set_target_tracking_configuration(input);
         self
     }
@@ -410,9 +365,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the <code>ResourceLabel</code> property with the <code>PredefinedMetricSpecification</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     /// <p>Required if the policy type is <code>TargetTrackingScaling</code>.</p>
-    pub fn get_target_tracking_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetTrackingConfiguration> {
+    pub fn get_target_tracking_configuration(&self) -> &::std::option::Option<crate::types::TargetTrackingConfiguration> {
         self.inner.get_target_tracking_configuration()
     }
     /// <p>Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -433,10 +386,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>Predefined metrics include CPU utilization, network in/out, and the Application Load Balancer request count.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     /// <p>Required if the policy type is <code>PredictiveScaling</code>.</p>
-    pub fn predictive_scaling_configuration(
-        mut self,
-        input: crate::types::PredictiveScalingConfiguration,
-    ) -> Self {
+    pub fn predictive_scaling_configuration(mut self, input: crate::types::PredictiveScalingConfiguration) -> Self {
         self.inner = self.inner.predictive_scaling_configuration(input);
         self
     }
@@ -444,10 +394,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>Predefined metrics include CPU utilization, network in/out, and the Application Load Balancer request count.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     /// <p>Required if the policy type is <code>PredictiveScaling</code>.</p>
-    pub fn set_predictive_scaling_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::PredictiveScalingConfiguration>,
-    ) -> Self {
+    pub fn set_predictive_scaling_configuration(mut self, input: ::std::option::Option<crate::types::PredictiveScalingConfiguration>) -> Self {
         self.inner = self.inner.set_predictive_scaling_configuration(input);
         self
     }
@@ -455,9 +402,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>Predefined metrics include CPU utilization, network in/out, and the Application Load Balancer request count.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     /// <p>Required if the policy type is <code>PredictiveScaling</code>.</p>
-    pub fn get_predictive_scaling_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::PredictiveScalingConfiguration> {
+    pub fn get_predictive_scaling_configuration(&self) -> &::std::option::Option<crate::types::PredictiveScalingConfiguration> {
         self.inner.get_predictive_scaling_configuration()
     }
 }

@@ -36,16 +36,14 @@ impl ListDetectMitigationActionsTasksInput {
 }
 impl ListDetectMitigationActionsTasksInput {
     /// Creates a new builder-style object to manufacture [`ListDetectMitigationActionsTasksInput`](crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksInput).
-    pub fn builder() -> crate::operation::list_detect_mitigation_actions_tasks::builders::ListDetectMitigationActionsTasksInputBuilder{
+    pub fn builder() -> crate::operation::list_detect_mitigation_actions_tasks::builders::ListDetectMitigationActionsTasksInputBuilder {
         crate::operation::list_detect_mitigation_actions_tasks::builders::ListDetectMitigationActionsTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDetectMitigationActionsTasksInput`](crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDetectMitigationActionsTasksInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -87,10 +85,7 @@ impl ListDetectMitigationActionsTasksInputBuilder {
         self
     }
     /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -104,10 +99,7 @@ impl ListDetectMitigationActionsTasksInputBuilder {
         self
     }
     /// <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -116,18 +108,19 @@ impl ListDetectMitigationActionsTasksInputBuilder {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`ListDetectMitigationActionsTasksInput`](crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                start_time: self.start_time
-                ,
-                end_time: self.end_time
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+                start_time: self.start_time,
+                end_time: self.end_time,
+            },
         )
     }
 }

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`cookie_name(impl ::std::convert::Into<String>)`](crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyFluentBuilder::cookie_name) / [`set_cookie_name(Option<String>)`](crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyFluentBuilder::set_cookie_name): <p>The name of the application cookie used for stickiness.</p>
     /// - On success, responds with [`CreateAppCookieStickinessPolicyOutput`](crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyOutput)
     /// - On failure, responds with [`SdkError<CreateAppCookieStickinessPolicyError>`](crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError)
-    pub fn create_app_cookie_stickiness_policy(&self) -> crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyFluentBuilder{
+    pub fn create_app_cookie_stickiness_policy(
+        &self,
+    ) -> crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyFluentBuilder {
         crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyFluentBuilder::new(self.handle.clone())
     }
 }

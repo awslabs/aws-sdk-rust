@@ -50,9 +50,7 @@ impl DeleteRecordInput {
 
 /// A builder for [`DeleteRecordInput`](crate::operation::delete_record::DeleteRecordInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRecordInputBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) record_identifier_value_as_string: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct DeleteRecordInputBuilder {
 }
 impl DeleteRecordInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from. </p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from. </p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_name = input;
         self
     }
@@ -82,25 +74,17 @@ impl DeleteRecordInputBuilder {
         &self.feature_group_name
     }
     /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
-    pub fn record_identifier_value_as_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record_identifier_value_as_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_identifier_value_as_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
-    pub fn set_record_identifier_value_as_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_record_identifier_value_as_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_identifier_value_as_string = input;
         self
     }
     /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
-    pub fn get_record_identifier_value_as_string(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_record_identifier_value_as_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_identifier_value_as_string
     }
     /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
@@ -129,17 +113,12 @@ impl DeleteRecordInputBuilder {
         self
     }
     /// <p>A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the <code>FeatureGroup</code>.</p>
-    pub fn set_target_stores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetStore>>,
-    ) -> Self {
+    pub fn set_target_stores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetStore>>) -> Self {
         self.target_stores = input;
         self
     }
     /// <p>A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the <code>FeatureGroup</code>.</p>
-    pub fn get_target_stores(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetStore>> {
+    pub fn get_target_stores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetStore>> {
         &self.target_stores
     }
     /// <p>The name of the deletion mode for deleting the record. By default, the deletion mode is set to <code>SoftDelete</code>.</p>
@@ -148,10 +127,7 @@ impl DeleteRecordInputBuilder {
         self
     }
     /// <p>The name of the deletion mode for deleting the record. By default, the deletion mode is set to <code>SoftDelete</code>.</p>
-    pub fn set_deletion_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DeletionMode>,
-    ) -> Self {
+    pub fn set_deletion_mode(mut self, input: ::std::option::Option<crate::types::DeletionMode>) -> Self {
         self.deletion_mode = input;
         self
     }
@@ -160,12 +136,7 @@ impl DeleteRecordInputBuilder {
         &self.deletion_mode
     }
     /// Consumes the builder and constructs a [`DeleteRecordInput`](crate::operation::delete_record::DeleteRecordInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_record::DeleteRecordInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_record::DeleteRecordInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_record::DeleteRecordInput {
             feature_group_name: self.feature_group_name,
             record_identifier_value_as_string: self.record_identifier_value_as_string,

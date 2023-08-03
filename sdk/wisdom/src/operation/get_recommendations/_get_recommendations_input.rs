@@ -36,17 +36,14 @@ impl GetRecommendationsInput {
 }
 impl GetRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
-    pub fn builder(
-    ) -> crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder {
+    pub fn builder() -> crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder {
         crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommendationsInputBuilder {
     pub(crate) assistant_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
@@ -113,17 +110,12 @@ impl GetRecommendationsInputBuilder {
     /// Consumes the builder and constructs a [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_recommendations::GetRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_recommendations::GetRecommendationsInput {
-                assistant_id: self.assistant_id,
-                session_id: self.session_id,
-                max_results: self.max_results,
-                wait_time_seconds: self.wait_time_seconds.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_recommendations::GetRecommendationsInput {
+            assistant_id: self.assistant_id,
+            session_id: self.session_id,
+            max_results: self.max_results,
+            wait_time_seconds: self.wait_time_seconds.unwrap_or_default(),
+        })
     }
 }

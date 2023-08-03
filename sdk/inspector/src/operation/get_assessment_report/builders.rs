@@ -37,9 +37,7 @@ impl GetAssessmentReportFluentBuilder {
         }
     }
     /// Access the GetAssessmentReport as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_assessment_report::builders::GetAssessmentReportInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_assessment_report::builders::GetAssessmentReportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetAssessmentReportFluentBuilder {
             crate::operation::get_assessment_report::GetAssessmentReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_assessment_report::GetAssessmentReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_assessment_report::GetAssessmentReportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetAssessmentReportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetAssessmentReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_assessment_report::GetAssessmentReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_assessment_report::GetAssessmentReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_assessment_report::GetAssessmentReportError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetAssessmentReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_assessment_report::GetAssessmentReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_assessment_report::GetAssessmentReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_assessment_report::GetAssessmentReportError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetAssessmentReportFluentBuilder {
             crate::operation::get_assessment_report::GetAssessmentReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_assessment_report::GetAssessmentReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_assessment_report::GetAssessmentReportError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
-    pub fn assessment_run_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_run_arn(input.into());
         self
     }
     /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
-    pub fn set_assessment_run_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_run_arn(input);
         self
     }
@@ -148,10 +129,7 @@ impl GetAssessmentReportFluentBuilder {
         self
     }
     /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
-    pub fn set_report_file_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportFileFormat>,
-    ) -> Self {
+    pub fn set_report_file_format(mut self, input: ::std::option::Option<crate::types::ReportFileFormat>) -> Self {
         self.inner = self.inner.set_report_file_format(input);
         self
     }
@@ -165,10 +143,7 @@ impl GetAssessmentReportFluentBuilder {
         self
     }
     /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
-    pub fn set_report_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportType>,
-    ) -> Self {
+    pub fn set_report_type(mut self, input: ::std::option::Option<crate::types::ReportType>) -> Self {
         self.inner = self.inner.set_report_type(input);
         self
     }

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`determining_policies(Option<Vec<DeterminingPolicyItem>>)`](crate::operation::is_authorized::IsAuthorizedOutput::determining_policies): <p>The list of determining policies used to make the authorization decision. For example, if there are two matching policies, where one is a forbid and the other is a permit, then the forbid policy will be the determining policy. In the case of multiple matching permit policies then there would be multiple determining policies. In the case that no policies match, and hence the response is DENY, there would be no determining policies.</p>
     ///   - [`errors(Option<Vec<EvaluationErrorItem>>)`](crate::operation::is_authorized::IsAuthorizedOutput::errors): <p>Errors that occurred while making an authorization decision, for example, a policy references an Entity or entity Attribute that does not exist in the slice.</p>
     /// - On failure, responds with [`SdkError<IsAuthorizedError>`](crate::operation::is_authorized::IsAuthorizedError)
-    pub fn is_authorized(
-        &self,
-    ) -> crate::operation::is_authorized::builders::IsAuthorizedFluentBuilder {
-        crate::operation::is_authorized::builders::IsAuthorizedFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn is_authorized(&self) -> crate::operation::is_authorized::builders::IsAuthorizedFluentBuilder {
+        crate::operation::is_authorized::builders::IsAuthorizedFluentBuilder::new(self.handle.clone())
     }
 }

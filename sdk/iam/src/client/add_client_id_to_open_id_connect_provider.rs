@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`client_id(impl ::std::convert::Into<String>)`](crate::operation::add_client_id_to_open_id_connect_provider::builders::AddClientIDToOpenIDConnectProviderFluentBuilder::client_id) / [`set_client_id(Option<String>)`](crate::operation::add_client_id_to_open_id_connect_provider::builders::AddClientIDToOpenIDConnectProviderFluentBuilder::set_client_id): <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider resource.</p>
     /// - On success, responds with [`AddClientIdToOpenIdConnectProviderOutput`](crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderOutput)
     /// - On failure, responds with [`SdkError<AddClientIDToOpenIDConnectProviderError>`](crate::operation::add_client_id_to_open_id_connect_provider::AddClientIDToOpenIDConnectProviderError)
-    pub fn add_client_id_to_open_id_connect_provider(&self) -> crate::operation::add_client_id_to_open_id_connect_provider::builders::AddClientIDToOpenIDConnectProviderFluentBuilder{
-        crate::operation::add_client_id_to_open_id_connect_provider::builders::AddClientIDToOpenIDConnectProviderFluentBuilder::new(self.handle.clone())
+    pub fn add_client_id_to_open_id_connect_provider(
+        &self,
+    ) -> crate::operation::add_client_id_to_open_id_connect_provider::builders::AddClientIDToOpenIDConnectProviderFluentBuilder {
+        crate::operation::add_client_id_to_open_id_connect_provider::builders::AddClientIDToOpenIDConnectProviderFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

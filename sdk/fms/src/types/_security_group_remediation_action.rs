@@ -19,9 +19,7 @@ pub struct SecurityGroupRemediationAction {
 }
 impl SecurityGroupRemediationAction {
     /// <p>The remediation action that will be performed.</p>
-    pub fn remediation_action_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RemediationActionType> {
+    pub fn remediation_action_type(&self) -> ::std::option::Option<&crate::types::RemediationActionType> {
         self.remediation_action_type.as_ref()
     }
     /// <p>Brief description of the action that will be performed.</p>
@@ -29,9 +27,7 @@ impl SecurityGroupRemediationAction {
         self.description.as_deref()
     }
     /// <p>The final state of the rule specified in the <code>ViolationTarget</code> after it is remediated.</p>
-    pub fn remediation_result(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SecurityGroupRuleDescription> {
+    pub fn remediation_result(&self) -> ::std::option::Option<&crate::types::SecurityGroupRuleDescription> {
         self.remediation_result.as_ref()
     }
     /// <p>Indicates if the current action is the default action.</p>
@@ -48,14 +44,11 @@ impl SecurityGroupRemediationAction {
 
 /// A builder for [`SecurityGroupRemediationAction`](crate::types::SecurityGroupRemediationAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityGroupRemediationActionBuilder {
     pub(crate) remediation_action_type: ::std::option::Option<crate::types::RemediationActionType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) remediation_result:
-        ::std::option::Option<crate::types::SecurityGroupRuleDescription>,
+    pub(crate) remediation_result: ::std::option::Option<crate::types::SecurityGroupRuleDescription>,
     pub(crate) is_default_action: ::std::option::Option<bool>,
 }
 impl SecurityGroupRemediationActionBuilder {
@@ -65,17 +58,12 @@ impl SecurityGroupRemediationActionBuilder {
         self
     }
     /// <p>The remediation action that will be performed.</p>
-    pub fn set_remediation_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RemediationActionType>,
-    ) -> Self {
+    pub fn set_remediation_action_type(mut self, input: ::std::option::Option<crate::types::RemediationActionType>) -> Self {
         self.remediation_action_type = input;
         self
     }
     /// <p>The remediation action that will be performed.</p>
-    pub fn get_remediation_action_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::RemediationActionType> {
+    pub fn get_remediation_action_type(&self) -> &::std::option::Option<crate::types::RemediationActionType> {
         &self.remediation_action_type
     }
     /// <p>Brief description of the action that will be performed.</p>
@@ -98,17 +86,12 @@ impl SecurityGroupRemediationActionBuilder {
         self
     }
     /// <p>The final state of the rule specified in the <code>ViolationTarget</code> after it is remediated.</p>
-    pub fn set_remediation_result(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityGroupRuleDescription>,
-    ) -> Self {
+    pub fn set_remediation_result(mut self, input: ::std::option::Option<crate::types::SecurityGroupRuleDescription>) -> Self {
         self.remediation_result = input;
         self
     }
     /// <p>The final state of the rule specified in the <code>ViolationTarget</code> after it is remediated.</p>
-    pub fn get_remediation_result(
-        &self,
-    ) -> &::std::option::Option<crate::types::SecurityGroupRuleDescription> {
+    pub fn get_remediation_result(&self) -> &::std::option::Option<crate::types::SecurityGroupRuleDescription> {
         &self.remediation_result
     }
     /// <p>Indicates if the current action is the default action.</p>

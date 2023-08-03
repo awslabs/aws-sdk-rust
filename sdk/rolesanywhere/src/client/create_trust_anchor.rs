@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTrustAnchorOutput`](crate::operation::create_trust_anchor::CreateTrustAnchorOutput) with field(s):
     ///   - [`trust_anchor(Option<TrustAnchorDetail>)`](crate::operation::create_trust_anchor::CreateTrustAnchorOutput::trust_anchor): <p>The state of the trust anchor after a read or write operation. </p>
     /// - On failure, responds with [`SdkError<CreateTrustAnchorError>`](crate::operation::create_trust_anchor::CreateTrustAnchorError)
-    pub fn create_trust_anchor(
-        &self,
-    ) -> crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder {
-        crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_trust_anchor(&self) -> crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder {
+        crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder::new(self.handle.clone())
     }
 }

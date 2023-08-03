@@ -33,10 +33,7 @@ pub fn ser_create_server_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_engine_attribute::ser_engine_attribute(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_engine_attribute::ser_engine_attribute(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -61,9 +58,7 @@ pub fn ser_create_server_input(
         object.key("KeyPair").string(var_17.as_str());
     }
     if let Some(var_18) = &input.preferred_maintenance_window {
-        object
-            .key("PreferredMaintenanceWindow")
-            .string(var_18.as_str());
+        object.key("PreferredMaintenanceWindow").string(var_18.as_str());
     }
     if let Some(var_19) = &input.preferred_backup_window {
         object.key("PreferredBackupWindow").string(var_19.as_str());

@@ -22,9 +22,7 @@ impl IpSetReferenceStatement {
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    pub fn ip_set_forwarded_ip_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IpSetForwardedIpConfig> {
+    pub fn ip_set_forwarded_ip_config(&self) -> ::std::option::Option<&crate::types::IpSetForwardedIpConfig> {
         self.ip_set_forwarded_ip_config.as_ref()
     }
 }
@@ -37,13 +35,10 @@ impl IpSetReferenceStatement {
 
 /// A builder for [`IpSetReferenceStatement`](crate::types::IpSetReferenceStatement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpSetReferenceStatementBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) ip_set_forwarded_ip_config:
-        ::std::option::Option<crate::types::IpSetForwardedIpConfig>,
+    pub(crate) ip_set_forwarded_ip_config: ::std::option::Option<crate::types::IpSetForwardedIpConfig>,
 }
 impl IpSetReferenceStatementBuilder {
     /// <p>The Amazon Resource Name (ARN) of the <code>IPSet</code> that this statement references.</p>
@@ -63,29 +58,21 @@ impl IpSetReferenceStatementBuilder {
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    pub fn ip_set_forwarded_ip_config(
-        mut self,
-        input: crate::types::IpSetForwardedIpConfig,
-    ) -> Self {
+    pub fn ip_set_forwarded_ip_config(mut self, input: crate::types::IpSetForwardedIpConfig) -> Self {
         self.ip_set_forwarded_ip_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    pub fn set_ip_set_forwarded_ip_config(
-        mut self,
-        input: ::std::option::Option<crate::types::IpSetForwardedIpConfig>,
-    ) -> Self {
+    pub fn set_ip_set_forwarded_ip_config(mut self, input: ::std::option::Option<crate::types::IpSetForwardedIpConfig>) -> Self {
         self.ip_set_forwarded_ip_config = input;
         self
     }
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    pub fn get_ip_set_forwarded_ip_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::IpSetForwardedIpConfig> {
+    pub fn get_ip_set_forwarded_ip_config(&self) -> &::std::option::Option<crate::types::IpSetForwardedIpConfig> {
         &self.ip_set_forwarded_ip_config
     }
     /// Consumes the builder and constructs a [`IpSetReferenceStatement`](crate::types::IpSetReferenceStatement).

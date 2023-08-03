@@ -19,9 +19,7 @@ impl SignalResourceOutput {
 
 /// A builder for [`SignalResourceOutput`](crate::operation::signal_resource::SignalResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignalResourceOutputBuilder {
     _request_id: Option<String>,
 }

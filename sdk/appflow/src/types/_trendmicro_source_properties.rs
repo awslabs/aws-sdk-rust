@@ -23,9 +23,7 @@ impl TrendmicroSourceProperties {
 
 /// A builder for [`TrendmicroSourceProperties`](crate::types::TrendmicroSourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrendmicroSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl TrendmicroSourcePropertiesBuilder {
     }
     /// Consumes the builder and constructs a [`TrendmicroSourceProperties`](crate::types::TrendmicroSourceProperties).
     pub fn build(self) -> crate::types::TrendmicroSourceProperties {
-        crate::types::TrendmicroSourceProperties {
-            object: self.object,
-        }
+        crate::types::TrendmicroSourceProperties { object: self.object }
     }
 }

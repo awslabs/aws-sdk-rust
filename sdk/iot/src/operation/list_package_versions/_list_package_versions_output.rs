@@ -5,8 +5,7 @@
 pub struct ListPackageVersionsOutput {
     /// <p>Lists the package versions associated to the package.</p>
     #[doc(hidden)]
-    pub package_version_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionSummary>>,
+    pub package_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionSummary>>,
     /// <p>The token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListPackageVersionsOutput {
 }
 impl ListPackageVersionsOutput {
     /// <p>Lists the package versions associated to the package.</p>
-    pub fn package_version_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PackageVersionSummary]> {
+    pub fn package_version_summaries(&self) -> ::std::option::Option<&[crate::types::PackageVersionSummary]> {
         self.package_version_summaries.as_deref()
     }
     /// <p>The token for the next set of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListPackageVersionsOutput {
 }
 impl ListPackageVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListPackageVersionsOutput`](crate::operation::list_package_versions::ListPackageVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_package_versions::builders::ListPackageVersionsOutputBuilder {
-        crate::operation::list_package_versions::builders::ListPackageVersionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_package_versions::builders::ListPackageVersionsOutputBuilder {
+        crate::operation::list_package_versions::builders::ListPackageVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPackageVersionsOutput`](crate::operation::list_package_versions::ListPackageVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPackageVersionsOutputBuilder {
-    pub(crate) package_version_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionSummary>>,
+    pub(crate) package_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListPackageVersionsOutputBuilder {
         self
     }
     /// <p>Lists the package versions associated to the package.</p>
-    pub fn set_package_version_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionSummary>>,
-    ) -> Self {
+    pub fn set_package_version_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionSummary>>) -> Self {
         self.package_version_summaries = input;
         self
     }
     /// <p>Lists the package versions associated to the package.</p>
-    pub fn get_package_version_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageVersionSummary>> {
+    pub fn get_package_version_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageVersionSummary>> {
         &self.package_version_summaries
     }
     /// <p>The token for the next set of results.</p>

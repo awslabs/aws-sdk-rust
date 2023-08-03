@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StorageVirtualMachineLifecycle {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for StorageVirtualMachineLifecycle {
             "FAILED" => StorageVirtualMachineLifecycle::Failed,
             "MISCONFIGURED" => StorageVirtualMachineLifecycle::Misconfigured,
             "PENDING" => StorageVirtualMachineLifecycle::Pending,
-            other => StorageVirtualMachineLifecycle::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => StorageVirtualMachineLifecycle::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl StorageVirtualMachineLifecycle {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATED",
-            "CREATING",
-            "DELETING",
-            "FAILED",
-            "MISCONFIGURED",
-            "PENDING",
-        ]
+        &["CREATED", "CREATING", "DELETING", "FAILED", "MISCONFIGURED", "PENDING"]
     }
 }
 impl ::std::convert::AsRef<str> for StorageVirtualMachineLifecycle {

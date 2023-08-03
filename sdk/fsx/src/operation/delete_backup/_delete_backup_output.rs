@@ -36,9 +36,7 @@ impl DeleteBackupOutput {
 
 /// A builder for [`DeleteBackupOutput`](crate::operation::delete_backup::DeleteBackupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBackupOutputBuilder {
     pub(crate) backup_id: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::BackupLifecycle>,
@@ -65,10 +63,7 @@ impl DeleteBackupOutputBuilder {
         self
     }
     /// <p>The lifecycle status of the backup. If the <code>DeleteBackup</code> operation is successful, the status is <code>DELETED</code>.</p>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupLifecycle>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::BackupLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AuthorizeIpRulesOutput {
 }
 impl AuthorizeIpRulesOutput {
     /// Creates a new builder-style object to manufacture [`AuthorizeIpRulesOutput`](crate::operation::authorize_ip_rules::AuthorizeIpRulesOutput).
-    pub fn builder() -> crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesOutputBuilder {
         crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`AuthorizeIpRulesOutput`](crate::operation::authorize_ip_rules::AuthorizeIpRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizeIpRulesOutputBuilder {
     _request_id: Option<String>,
 }

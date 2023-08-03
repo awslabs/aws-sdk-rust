@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`CancelServiceSoftwareUpdateOutput`](crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateOutput) with field(s):
     ///   - [`service_software_options(Option<ServiceSoftwareOptions>)`](crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateOutput::service_software_options): <p>Container for the state of your domain relative to the latest service software.</p>
     /// - On failure, responds with [`SdkError<CancelServiceSoftwareUpdateError>`](crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError)
-    pub fn cancel_service_software_update(&self) -> crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateFluentBuilder{
+    pub fn cancel_service_software_update(
+        &self,
+    ) -> crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateFluentBuilder {
         crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,200 +9,211 @@ pub fn de_create_blue_green_deployment_http_error(
     crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => {
+            return Err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled(
+                generic,
+            ))
+        }
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BlueGreenDeploymentAlreadyExistsFault" => crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::BlueGreenDeploymentAlreadyExistsFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "BlueGreenDeploymentAlreadyExistsFault" => {
+            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::BlueGreenDeploymentAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::BlueGreenDeploymentAlreadyExistsFaultBuilder::default();
                     output = crate::protocol_serde::shape_blue_green_deployment_already_exists_fault::de_blue_green_deployment_already_exists_fault_xml_err(_response_body, output).map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "DBClusterNotFoundFault" => crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::DbClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "DBClusterParameterGroupNotFound" => crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::DbClusterParameterGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DBClusterParameterGroupNotFound" => {
+            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::DbClusterParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbClusterParameterGroupNotFoundFaultBuilder::default();
                     output = crate::protocol_serde::shape_db_cluster_parameter_group_not_found_fault::de_db_cluster_parameter_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "DBClusterQuotaExceededFault" => crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::DbClusterQuotaExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBClusterQuotaExceededFault" => {
+            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::DbClusterQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbClusterQuotaExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_cluster_quota_exceeded_fault::de_db_cluster_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_quota_exceeded_fault::de_db_cluster_quota_exceeded_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "DBInstanceNotFound" => crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::DbInstanceNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbInstanceNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbInstanceNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "DBParameterGroupNotFound" => crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::DbParameterGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DBParameterGroupNotFound" => {
+            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::DbParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbParameterGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_parameter_group_not_found_fault::de_db_parameter_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_parameter_group_not_found_fault::de_db_parameter_group_not_found_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InstanceQuotaExceeded" => crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::InstanceQuotaExceededFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InstanceQuotaExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_instance_quota_exceeded_fault::de_instance_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InstanceQuotaExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_instance_quota_exceeded_fault::de_instance_quota_exceeded_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidDBClusterStateFault" => crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::InvalidDbClusterStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(_response_body, output).map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidDBInstanceState" => crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::InvalidDbInstanceStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidDbInstanceStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(_response_body, output).map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbInstanceStateFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "SourceClusterNotSupportedFault" => crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::SourceClusterNotSupportedFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "SourceClusterNotSupportedFault" => {
+            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::SourceClusterNotSupportedFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SourceClusterNotSupportedFaultBuilder::default();
-                    output = crate::protocol_serde::shape_source_cluster_not_supported_fault::de_source_cluster_not_supported_fault_xml_err(_response_body, output).map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_source_cluster_not_supported_fault::de_source_cluster_not_supported_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "SourceDatabaseNotSupportedFault" => crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::SourceDatabaseNotSupportedFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "SourceDatabaseNotSupportedFault" => {
+            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::SourceDatabaseNotSupportedFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::SourceDatabaseNotSupportedFaultBuilder::default();
-                    output = crate::protocol_serde::shape_source_database_not_supported_fault::de_source_database_not_supported_fault_xml_err(_response_body, output).map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_source_database_not_supported_fault::de_source_database_not_supported_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::generic(generic),
     })
 }
 
@@ -218,16 +229,19 @@ pub fn de_create_blue_green_deployment_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentOutputBuilder::default();
-        output = crate::protocol_serde::shape_create_blue_green_deployment::de_create_blue_green_deployment(_response_body, output).map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_create_blue_green_deployment::de_create_blue_green_deployment(_response_body, output)
+            .map_err(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_create_blue_green_deployment(inp: &[u8], mut builder: crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentOutputBuilder) -> Result<crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_create_blue_green_deployment(
+    inp: &[u8],
+    mut builder: crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentOutputBuilder,
+) -> Result<crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

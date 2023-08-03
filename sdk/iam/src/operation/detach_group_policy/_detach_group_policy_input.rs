@@ -26,17 +26,14 @@ impl DetachGroupPolicyInput {
 }
 impl DetachGroupPolicyInput {
     /// Creates a new builder-style object to manufacture [`DetachGroupPolicyInput`](crate::operation::detach_group_policy::DetachGroupPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::detach_group_policy::builders::DetachGroupPolicyInputBuilder {
+    pub fn builder() -> crate::operation::detach_group_policy::builders::DetachGroupPolicyInputBuilder {
         crate::operation::detach_group_policy::builders::DetachGroupPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DetachGroupPolicyInput`](crate::operation::detach_group_policy::DetachGroupPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachGroupPolicyInputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
@@ -79,15 +76,10 @@ impl DetachGroupPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DetachGroupPolicyInput`](crate::operation::detach_group_policy::DetachGroupPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detach_group_policy::DetachGroupPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::detach_group_policy::DetachGroupPolicyInput {
-                group_name: self.group_name,
-                policy_arn: self.policy_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::detach_group_policy::DetachGroupPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::detach_group_policy::DetachGroupPolicyInput {
+            group_name: self.group_name,
+            policy_arn: self.policy_arn,
+        })
     }
 }

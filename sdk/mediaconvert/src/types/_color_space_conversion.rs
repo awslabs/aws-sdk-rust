@@ -49,13 +49,7 @@
 /// * P3D65 (HDR): Display P3, PQ, BT.709
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ColorSpaceConversion {
     #[allow(missing_docs)] // documentation missing in model
@@ -88,9 +82,7 @@ impl ::std::convert::From<&str> for ColorSpaceConversion {
             "FORCE_P3D65_SDR" => ColorSpaceConversion::ForceP3D65Sdr,
             "FORCE_P3DCI" => ColorSpaceConversion::ForceP3Dci,
             "NONE" => ColorSpaceConversion::None,
-            other => ColorSpaceConversion::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ColorSpaceConversion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

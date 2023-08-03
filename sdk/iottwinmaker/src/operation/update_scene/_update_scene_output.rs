@@ -28,9 +28,7 @@ impl UpdateSceneOutput {
 
 /// A builder for [`UpdateSceneOutput`](crate::operation::update_scene::UpdateSceneOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSceneOutputBuilder {
     pub(crate) update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl UpdateSceneOutputBuilder {
         self
     }
     /// <p>The date and time when the scene was last updated.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date_time = input;
         self
     }

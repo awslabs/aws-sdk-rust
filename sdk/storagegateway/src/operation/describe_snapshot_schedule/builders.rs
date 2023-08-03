@@ -26,7 +26,7 @@ impl DescribeSnapshotScheduleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSnapshotScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_snapshot_schedule::builders::DescribeSnapshotScheduleInputBuilder,
+    inner: crate::operation::describe_snapshot_schedule::builders::DescribeSnapshotScheduleInputBuilder,
 }
 impl DescribeSnapshotScheduleFluentBuilder {
     /// Creates a new `DescribeSnapshotSchedule`.
@@ -37,10 +37,7 @@ impl DescribeSnapshotScheduleFluentBuilder {
         }
     }
     /// Access the DescribeSnapshotSchedule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_snapshot_schedule::builders::DescribeSnapshotScheduleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_snapshot_schedule::builders::DescribeSnapshotScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeSnapshotScheduleFluentBuilder {
             crate::operation::describe_snapshot_schedule::DescribeSnapshotSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeSnapshotScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeSnapshotScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeSnapshotScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeSnapshotScheduleFluentBuilder {
             crate::operation::describe_snapshot_schedule::DescribeSnapshotSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleError>,
     > {
         self.customize_middleware().await
     }

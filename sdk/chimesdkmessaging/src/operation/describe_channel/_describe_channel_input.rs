@@ -29,9 +29,7 @@ impl DescribeChannelInput {
 
 /// A builder for [`DescribeChannelInput`](crate::operation::describe_channel::DescribeChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeChannelInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) chime_bearer: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DescribeChannelInputBuilder {
     /// Consumes the builder and constructs a [`DescribeChannelInput`](crate::operation::describe_channel::DescribeChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_channel::DescribeChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_channel::DescribeChannelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_channel::DescribeChannelInput {
             channel_arn: self.channel_arn,
             chime_bearer: self.chime_bearer,

@@ -10,10 +10,7 @@ impl CreateFlowInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_flow::CreateFlowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_flow::CreateFlowError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flow::CreateFlowError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_flow();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateFlowFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_flow::CreateFlow,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_flow::CreateFlow, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_flow::CreateFlowError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateFlowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateFlowFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_flow::CreateFlow,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_flow::CreateFlow, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_flow::CreateFlowError>,
     > {
         self.customize_middleware().await
@@ -160,10 +148,7 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
-    pub fn set_trigger_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TriggerConfig>,
-    ) -> Self {
+    pub fn set_trigger_config(mut self, input: ::std::option::Option<crate::types::TriggerConfig>) -> Self {
         self.inner = self.inner.set_trigger_config(input);
         self
     }
@@ -177,10 +162,7 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
-    pub fn set_source_flow_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceFlowConfig>,
-    ) -> Self {
+    pub fn set_source_flow_config(mut self, input: ::std::option::Option<crate::types::SourceFlowConfig>) -> Self {
         self.inner = self.inner.set_source_flow_config(input);
         self
     }
@@ -193,25 +175,17 @@ impl CreateFlowFluentBuilder {
     /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
     ///
     /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
-    pub fn destination_flow_config_list(
-        mut self,
-        input: crate::types::DestinationFlowConfig,
-    ) -> Self {
+    pub fn destination_flow_config_list(mut self, input: crate::types::DestinationFlowConfig) -> Self {
         self.inner = self.inner.destination_flow_config_list(input);
         self
     }
     /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
-    pub fn set_destination_flow_config_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
-    ) -> Self {
+    pub fn set_destination_flow_config_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>) -> Self {
         self.inner = self.inner.set_destination_flow_config_list(input);
         self
     }
     /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
-    pub fn get_destination_flow_config_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>> {
+    pub fn get_destination_flow_config_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>> {
         self.inner.get_destination_flow_config_list()
     }
     /// Appends an item to `tasks`.
@@ -224,10 +198,7 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>) -> Self {
         self.inner = self.inner.set_tasks(input);
         self
     }
@@ -240,30 +211,17 @@ impl CreateFlowFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
@@ -272,17 +230,12 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-    pub fn set_metadata_catalog_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MetadataCatalogConfig>,
-    ) -> Self {
+    pub fn set_metadata_catalog_config(mut self, input: ::std::option::Option<crate::types::MetadataCatalogConfig>) -> Self {
         self.inner = self.inner.set_metadata_catalog_config(input);
         self
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-    pub fn get_metadata_catalog_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetadataCatalogConfig> {
+    pub fn get_metadata_catalog_config(&self) -> &::std::option::Option<crate::types::MetadataCatalogConfig> {
         self.inner.get_metadata_catalog_config()
     }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>CreateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>

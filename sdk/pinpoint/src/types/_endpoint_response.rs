@@ -12,9 +12,7 @@ pub struct EndpointResponse {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The channel that's used when sending messages or push notifications to the endpoint.</p>
     #[doc(hidden)]
     pub channel_type: ::std::option::Option<crate::types::ChannelType>,
@@ -63,11 +61,7 @@ impl EndpointResponse {
         self.application_id.as_deref()
     }
     /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.attributes.as_ref()
     }
     /// <p>The channel that's used when sending messages or push notifications to the endpoint.</p>
@@ -104,9 +98,7 @@ impl EndpointResponse {
         self.location.as_ref()
     }
     /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
-    pub fn metrics(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
+    pub fn metrics(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
         self.metrics.as_ref()
     }
     /// <p>Specifies whether the user who's associated with the endpoint has opted out of receiving messages and push notifications from you. Possible values are: ALL, the user has opted out and doesn't want to receive any messages or push notifications; and, NONE, the user hasn't opted out and wants to receive all messages and push notifications.</p>
@@ -131,15 +123,11 @@ impl EndpointResponse {
 
 /// A builder for [`EndpointResponse`](crate::types::EndpointResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointResponseBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) channel_type: ::std::option::Option<crate::types::ChannelType>,
     pub(crate) cohort_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::std::string::String>,
@@ -148,8 +136,7 @@ pub struct EndpointResponseBuilder {
     pub(crate) endpoint_status: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<crate::types::EndpointLocation>,
-    pub(crate) metrics:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    pub(crate) metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
     pub(crate) opt_out: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) user: ::std::option::Option<crate::types::EndpointUser>,
@@ -170,18 +157,12 @@ impl EndpointResponseBuilder {
         &self.address
     }
     /// <p>The unique identifier for the application that's associated with the endpoint.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application that's associated with the endpoint.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -194,11 +175,7 @@ impl EndpointResponseBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.attributes = ::std::option::Option::Some(hash_map);
@@ -207,12 +184,7 @@ impl EndpointResponseBuilder {
     /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments.</p>
     pub fn set_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.attributes = input;
         self
@@ -220,9 +192,7 @@ impl EndpointResponseBuilder {
     /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments.</p>
     pub fn get_attributes(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.attributes
     }
     /// <p>The channel that's used when sending messages or push notifications to the endpoint.</p>
@@ -231,10 +201,7 @@ impl EndpointResponseBuilder {
         self
     }
     /// <p>The channel that's used when sending messages or push notifications to the endpoint.</p>
-    pub fn set_channel_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelType>,
-    ) -> Self {
+    pub fn set_channel_type(mut self, input: ::std::option::Option<crate::types::ChannelType>) -> Self {
         self.channel_type = input;
         self
     }
@@ -257,18 +224,12 @@ impl EndpointResponseBuilder {
         &self.cohort_id
     }
     /// <p>The date and time, in ISO 8601 format, when the endpoint was created.</p>
-    pub fn creation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time, in ISO 8601 format, when the endpoint was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date = input;
         self
     }
@@ -282,10 +243,7 @@ impl EndpointResponseBuilder {
         self
     }
     /// <p>The demographic information for the endpoint, such as the time zone and platform.</p>
-    pub fn set_demographic(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointDemographic>,
-    ) -> Self {
+    pub fn set_demographic(mut self, input: ::std::option::Option<crate::types::EndpointDemographic>) -> Self {
         self.demographic = input;
         self
     }
@@ -294,18 +252,12 @@ impl EndpointResponseBuilder {
         &self.demographic
     }
     /// <p>The date and time, in ISO 8601 format, when the endpoint was last updated.</p>
-    pub fn effective_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn effective_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.effective_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time, in ISO 8601 format, when the endpoint was last updated.</p>
-    pub fn set_effective_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_effective_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.effective_date = input;
         self
     }
@@ -315,19 +267,13 @@ impl EndpointResponseBuilder {
     }
     /// <p>Specifies whether messages or push notifications are sent to the endpoint. Possible values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p>
     /// <p>Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the same address specified by the Address property.</p>
-    pub fn endpoint_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies whether messages or push notifications are sent to the endpoint. Possible values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p>
     /// <p>Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the same address specified by the Address property.</p>
-    pub fn set_endpoint_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_status = input;
         self
     }
@@ -356,10 +302,7 @@ impl EndpointResponseBuilder {
         self
     }
     /// <p>The geographic information for the endpoint.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::EndpointLocation>) -> Self {
         self.location = input;
         self
     }
@@ -379,17 +322,12 @@ impl EndpointResponseBuilder {
         self
     }
     /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>) -> Self {
         self.metrics = input;
         self
     }
     /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
-    pub fn get_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
         &self.metrics
     }
     /// <p>Specifies whether the user who's associated with the endpoint has opted out of receiving messages and push notifications from you. Possible values are: ALL, the user has opted out and doesn't want to receive any messages or push notifications; and, NONE, the user hasn't opted out and wants to receive all messages and push notifications.</p>

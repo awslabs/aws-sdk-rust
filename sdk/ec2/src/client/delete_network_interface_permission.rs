@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteNetworkInterfacePermissionOutput`](crate::operation::delete_network_interface_permission::DeleteNetworkInterfacePermissionOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::delete_network_interface_permission::DeleteNetworkInterfacePermissionOutput::return): <p>Returns <code>true</code> if the request succeeds, otherwise returns an error.</p>
     /// - On failure, responds with [`SdkError<DeleteNetworkInterfacePermissionError>`](crate::operation::delete_network_interface_permission::DeleteNetworkInterfacePermissionError)
-    pub fn delete_network_interface_permission(&self) -> crate::operation::delete_network_interface_permission::builders::DeleteNetworkInterfacePermissionFluentBuilder{
+    pub fn delete_network_interface_permission(
+        &self,
+    ) -> crate::operation::delete_network_interface_permission::builders::DeleteNetworkInterfacePermissionFluentBuilder {
         crate::operation::delete_network_interface_permission::builders::DeleteNetworkInterfacePermissionFluentBuilder::new(self.handle.clone())
     }
 }

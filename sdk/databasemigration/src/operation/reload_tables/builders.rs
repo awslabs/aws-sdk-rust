@@ -10,10 +10,7 @@ impl ReloadTablesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::reload_tables::ReloadTablesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reload_tables::ReloadTablesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reload_tables::ReloadTablesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.reload_tables();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ReloadTablesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::reload_tables::ReloadTables,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::reload_tables::ReloadTables, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::reload_tables::ReloadTablesError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ReloadTablesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,27 +96,18 @@ impl ReloadTablesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::reload_tables::ReloadTables,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::reload_tables::ReloadTables, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::reload_tables::ReloadTablesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
-    pub fn replication_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_task_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
-    pub fn set_replication_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_task_arn(input);
         self
     }
@@ -143,17 +125,12 @@ impl ReloadTablesFluentBuilder {
         self
     }
     /// <p>The name and schema of the table to be reloaded. </p>
-    pub fn set_tables_to_reload(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableToReload>>,
-    ) -> Self {
+    pub fn set_tables_to_reload(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableToReload>>) -> Self {
         self.inner = self.inner.set_tables_to_reload(input);
         self
     }
     /// <p>The name and schema of the table to be reloaded. </p>
-    pub fn get_tables_to_reload(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableToReload>> {
+    pub fn get_tables_to_reload(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableToReload>> {
         self.inner.get_tables_to_reload()
     }
     /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p>
@@ -166,10 +143,7 @@ impl ReloadTablesFluentBuilder {
     /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p>
     /// <p>Valid values: data-reload, validate-only</p>
     /// <p>Default value is data-reload.</p>
-    pub fn set_reload_option(
-        mut self,
-        input: ::std::option::Option<crate::types::ReloadOptionValue>,
-    ) -> Self {
+    pub fn set_reload_option(mut self, input: ::std::option::Option<crate::types::ReloadOptionValue>) -> Self {
         self.inner = self.inner.set_reload_option(input);
         self
     }

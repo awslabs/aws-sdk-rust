@@ -23,16 +23,14 @@ impl DeleteStreamingDistributionInput {
 }
 impl DeleteStreamingDistributionInput {
     /// Creates a new builder-style object to manufacture [`DeleteStreamingDistributionInput`](crate::operation::delete_streaming_distribution::DeleteStreamingDistributionInput).
-    pub fn builder() -> crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionInputBuilder{
+    pub fn builder() -> crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionInputBuilder {
         crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStreamingDistributionInput`](crate::operation::delete_streaming_distribution::DeleteStreamingDistributionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStreamingDistributionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
@@ -73,11 +71,9 @@ impl DeleteStreamingDistributionInputBuilder {
         crate::operation::delete_streaming_distribution::DeleteStreamingDistributionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_streaming_distribution::DeleteStreamingDistributionInput {
-                id: self.id,
-                if_match: self.if_match,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_streaming_distribution::DeleteStreamingDistributionInput {
+            id: self.id,
+            if_match: self.if_match,
+        })
     }
 }

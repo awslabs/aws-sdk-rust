@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`stack_id(Option<String>)`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput::stack_id): <p>The stack identifier (stack ID).</p>
     ///   - [`stack_name(Option<String>)`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput::stack_name): <p>The stack name.</p>
     /// - On failure, responds with [`SdkError<DescribeChangeSetHooksError>`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError)
-    pub fn describe_change_set_hooks(
-        &self,
-    ) -> crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHooksFluentBuilder
-    {
+    pub fn describe_change_set_hooks(&self) -> crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHooksFluentBuilder {
         crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHooksFluentBuilder::new(self.handle.clone())
     }
 }

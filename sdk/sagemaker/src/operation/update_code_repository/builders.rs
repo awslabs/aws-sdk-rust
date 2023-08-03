@@ -37,9 +37,7 @@ impl UpdateCodeRepositoryFluentBuilder {
         }
     }
     /// Access the UpdateCodeRepository as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_code_repository::builders::UpdateCodeRepositoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_code_repository::builders::UpdateCodeRepositoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateCodeRepositoryFluentBuilder {
             crate::operation::update_code_repository::UpdateCodeRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_code_repository::UpdateCodeRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_code_repository::UpdateCodeRepositoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateCodeRepositoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateCodeRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_code_repository::UpdateCodeRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_code_repository::UpdateCodeRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_code_repository::UpdateCodeRepositoryError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateCodeRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_code_repository::UpdateCodeRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_code_repository::UpdateCodeRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_code_repository::UpdateCodeRepositoryError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateCodeRepositoryFluentBuilder {
             crate::operation::update_code_repository::UpdateCodeRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_code_repository::UpdateCodeRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_code_repository::UpdateCodeRepositoryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Git repository to update.</p>
-    pub fn code_repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code_repository_name(input.into());
         self
     }
     /// <p>The name of the Git repository to update.</p>
-    pub fn set_code_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code_repository_name(input);
         self
     }
@@ -150,10 +131,7 @@ impl UpdateCodeRepositoryFluentBuilder {
     }
     /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
     /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
-    pub fn set_git_config(
-        mut self,
-        input: ::std::option::Option<crate::types::GitConfigForUpdate>,
-    ) -> Self {
+    pub fn set_git_config(mut self, input: ::std::option::Option<crate::types::GitConfigForUpdate>) -> Self {
         self.inner = self.inner.set_git_config(input);
         self
     }

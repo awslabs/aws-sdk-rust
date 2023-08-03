@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for SearchTablesByLfTagsOutput {
 }
 impl SearchTablesByLfTagsOutput {
     /// Creates a new builder-style object to manufacture [`SearchTablesByLfTagsOutput`](crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsOutput).
-    pub fn builder(
-    ) -> crate::operation::search_tables_by_lf_tags::builders::SearchTablesByLfTagsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::search_tables_by_lf_tags::builders::SearchTablesByLfTagsOutputBuilder {
         crate::operation::search_tables_by_lf_tags::builders::SearchTablesByLfTagsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchTablesByLfTagsOutput`](crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchTablesByLfTagsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) table_list: ::std::option::Option<::std::vec::Vec<crate::types::TaggedTable>>,
@@ -72,17 +68,12 @@ impl SearchTablesByLfTagsOutputBuilder {
         self
     }
     /// <p>A list of tables that meet the LF-tag conditions.</p>
-    pub fn set_table_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaggedTable>>,
-    ) -> Self {
+    pub fn set_table_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaggedTable>>) -> Self {
         self.table_list = input;
         self
     }
     /// <p>A list of tables that meet the LF-tag conditions.</p>
-    pub fn get_table_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaggedTable>> {
+    pub fn get_table_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaggedTable>> {
         &self.table_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

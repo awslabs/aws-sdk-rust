@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`DisassociateTransitGatewayMulticastDomainOutput`](crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainOutput) with field(s):
     ///   - [`associations(Option<TransitGatewayMulticastDomainAssociations>)`](crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainOutput::associations): <p>Information about the association.</p>
     /// - On failure, responds with [`SdkError<DisassociateTransitGatewayMulticastDomainError>`](crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainError)
-    pub fn disassociate_transit_gateway_multicast_domain(&self) -> crate::operation::disassociate_transit_gateway_multicast_domain::builders::DisassociateTransitGatewayMulticastDomainFluentBuilder{
-        crate::operation::disassociate_transit_gateway_multicast_domain::builders::DisassociateTransitGatewayMulticastDomainFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_transit_gateway_multicast_domain(
+        &self,
+    ) -> crate::operation::disassociate_transit_gateway_multicast_domain::builders::DisassociateTransitGatewayMulticastDomainFluentBuilder {
+        crate::operation::disassociate_transit_gateway_multicast_domain::builders::DisassociateTransitGatewayMulticastDomainFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

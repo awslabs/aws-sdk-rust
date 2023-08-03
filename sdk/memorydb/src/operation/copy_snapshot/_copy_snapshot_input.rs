@@ -50,9 +50,7 @@ impl CopySnapshotInput {
 
 /// A builder for [`CopySnapshotInput`](crate::operation::copy_snapshot::CopySnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopySnapshotInputBuilder {
     pub(crate) source_snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_snapshot_name: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct CopySnapshotInputBuilder {
 }
 impl CopySnapshotInputBuilder {
     /// <p>The name of an existing snapshot from which to make a copy.</p>
-    pub fn source_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an existing snapshot from which to make a copy.</p>
-    pub fn set_source_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_snapshot_name = input;
         self
     }
@@ -82,18 +74,12 @@ impl CopySnapshotInputBuilder {
         &self.source_snapshot_name
     }
     /// <p>A name for the snapshot copy. MemoryDB does not permit overwriting a snapshot, therefore this name must be unique within its context - MemoryDB or an Amazon S3 bucket if exporting.</p>
-    pub fn target_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for the snapshot copy. MemoryDB does not permit overwriting a snapshot, therefore this name must be unique within its context - MemoryDB or an Amazon S3 bucket if exporting.</p>
-    pub fn set_target_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_snapshot_name = input;
         self
     }
@@ -102,18 +88,12 @@ impl CopySnapshotInputBuilder {
         &self.target_snapshot_name
     }
     /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access. When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
-    pub fn target_bucket(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access. When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
-    pub fn set_target_bucket(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_bucket = input;
         self
     }
@@ -147,10 +127,7 @@ impl CopySnapshotInputBuilder {
         self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -159,12 +136,7 @@ impl CopySnapshotInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CopySnapshotInput`](crate::operation::copy_snapshot::CopySnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::copy_snapshot::CopySnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_snapshot::CopySnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_snapshot::CopySnapshotInput {
             source_snapshot_name: self.source_snapshot_name,
             target_snapshot_name: self.target_snapshot_name,

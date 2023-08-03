@@ -43,18 +43,14 @@ impl UpdatePermissionSetInput {
 }
 impl UpdatePermissionSetInput {
     /// Creates a new builder-style object to manufacture [`UpdatePermissionSetInput`](crate::operation::update_permission_set::UpdatePermissionSetInput).
-    pub fn builder(
-    ) -> crate::operation::update_permission_set::builders::UpdatePermissionSetInputBuilder {
-        crate::operation::update_permission_set::builders::UpdatePermissionSetInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_permission_set::builders::UpdatePermissionSetInputBuilder {
+        crate::operation::update_permission_set::builders::UpdatePermissionSetInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePermissionSetInput`](crate::operation::update_permission_set::UpdatePermissionSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePermissionSetInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_set_arn: ::std::option::Option<::std::string::String>,
@@ -78,18 +74,12 @@ impl UpdatePermissionSetInputBuilder {
         &self.instance_arn
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_set_arn = input;
         self
     }
@@ -112,18 +102,12 @@ impl UpdatePermissionSetInputBuilder {
         &self.description
     }
     /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
-    pub fn session_duration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_duration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
-    pub fn set_session_duration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_duration = input;
         self
     }
@@ -148,18 +132,14 @@ impl UpdatePermissionSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePermissionSetInput`](crate::operation::update_permission_set::UpdatePermissionSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_permission_set::UpdatePermissionSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_permission_set::UpdatePermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-                description: self.description,
-                session_duration: self.session_duration,
-                relay_state: self.relay_state,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_permission_set::UpdatePermissionSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_permission_set::UpdatePermissionSetInput {
+            instance_arn: self.instance_arn,
+            permission_set_arn: self.permission_set_arn,
+            description: self.description,
+            session_duration: self.session_duration,
+            relay_state: self.relay_state,
+        })
     }
 }

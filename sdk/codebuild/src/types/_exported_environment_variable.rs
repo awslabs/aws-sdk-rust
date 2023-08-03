@@ -33,9 +33,7 @@ impl ExportedEnvironmentVariable {
 
 /// A builder for [`ExportedEnvironmentVariable`](crate::types::ExportedEnvironmentVariable).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportedEnvironmentVariableBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

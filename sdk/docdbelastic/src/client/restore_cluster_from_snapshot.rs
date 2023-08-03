@@ -12,7 +12,9 @@ impl super::Client {
     /// - On success, responds with [`RestoreClusterFromSnapshotOutput`](crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotOutput::cluster): <p>Returns information about a the restored Elastic DocumentDB cluster.</p>
     /// - On failure, responds with [`SdkError<RestoreClusterFromSnapshotError>`](crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotError)
-    pub fn restore_cluster_from_snapshot(&self) -> crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotFluentBuilder{
+    pub fn restore_cluster_from_snapshot(
+        &self,
+    ) -> crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotFluentBuilder {
         crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

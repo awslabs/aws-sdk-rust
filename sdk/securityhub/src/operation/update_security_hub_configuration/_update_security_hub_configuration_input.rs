@@ -22,28 +22,23 @@ impl UpdateSecurityHubConfigurationInput {
     /// <p>Updates whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
     /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
     /// <p>For accounts that are part of an organization, this value can only be updated in the administrator account.</p>
-    pub fn control_finding_generator(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ControlFindingGenerator> {
+    pub fn control_finding_generator(&self) -> ::std::option::Option<&crate::types::ControlFindingGenerator> {
         self.control_finding_generator.as_ref()
     }
 }
 impl UpdateSecurityHubConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateSecurityHubConfigurationInput`](crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationInput).
-    pub fn builder() -> crate::operation::update_security_hub_configuration::builders::UpdateSecurityHubConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_security_hub_configuration::builders::UpdateSecurityHubConfigurationInputBuilder {
         crate::operation::update_security_hub_configuration::builders::UpdateSecurityHubConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSecurityHubConfigurationInput`](crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSecurityHubConfigurationInputBuilder {
     pub(crate) auto_enable_controls: ::std::option::Option<bool>,
-    pub(crate) control_finding_generator:
-        ::std::option::Option<crate::types::ControlFindingGenerator>,
+    pub(crate) control_finding_generator: ::std::option::Option<crate::types::ControlFindingGenerator>,
 }
 impl UpdateSecurityHubConfigurationInputBuilder {
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
@@ -66,29 +61,21 @@ impl UpdateSecurityHubConfigurationInputBuilder {
     /// <p>Updates whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
     /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
     /// <p>For accounts that are part of an organization, this value can only be updated in the administrator account.</p>
-    pub fn control_finding_generator(
-        mut self,
-        input: crate::types::ControlFindingGenerator,
-    ) -> Self {
+    pub fn control_finding_generator(mut self, input: crate::types::ControlFindingGenerator) -> Self {
         self.control_finding_generator = ::std::option::Option::Some(input);
         self
     }
     /// <p>Updates whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
     /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
     /// <p>For accounts that are part of an organization, this value can only be updated in the administrator account.</p>
-    pub fn set_control_finding_generator(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlFindingGenerator>,
-    ) -> Self {
+    pub fn set_control_finding_generator(mut self, input: ::std::option::Option<crate::types::ControlFindingGenerator>) -> Self {
         self.control_finding_generator = input;
         self
     }
     /// <p>Updates whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
     /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
     /// <p>For accounts that are part of an organization, this value can only be updated in the administrator account.</p>
-    pub fn get_control_finding_generator(
-        &self,
-    ) -> &::std::option::Option<crate::types::ControlFindingGenerator> {
+    pub fn get_control_finding_generator(&self) -> &::std::option::Option<crate::types::ControlFindingGenerator> {
         &self.control_finding_generator
     }
     /// Consumes the builder and constructs a [`UpdateSecurityHubConfigurationInput`](crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationInput).
@@ -98,13 +85,9 @@ impl UpdateSecurityHubConfigurationInputBuilder {
         crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationInput {
-                auto_enable_controls: self.auto_enable_controls
-                ,
-                control_finding_generator: self.control_finding_generator
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationInput {
+            auto_enable_controls: self.auto_enable_controls,
+            control_finding_generator: self.control_finding_generator,
+        })
     }
 }

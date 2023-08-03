@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`assessment_arn(Option<String>)`](crate::operation::delete_app_assessment::DeleteAppAssessmentOutput::assessment_arn): <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     ///   - [`assessment_status(Option<AssessmentStatus>)`](crate::operation::delete_app_assessment::DeleteAppAssessmentOutput::assessment_status): <p>The current status of the assessment for the resiliency policy.</p>
     /// - On failure, responds with [`SdkError<DeleteAppAssessmentError>`](crate::operation::delete_app_assessment::DeleteAppAssessmentError)
-    pub fn delete_app_assessment(
-        &self,
-    ) -> crate::operation::delete_app_assessment::builders::DeleteAppAssessmentFluentBuilder {
-        crate::operation::delete_app_assessment::builders::DeleteAppAssessmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_app_assessment(&self) -> crate::operation::delete_app_assessment::builders::DeleteAppAssessmentFluentBuilder {
+        crate::operation::delete_app_assessment::builders::DeleteAppAssessmentFluentBuilder::new(self.handle.clone())
     }
 }

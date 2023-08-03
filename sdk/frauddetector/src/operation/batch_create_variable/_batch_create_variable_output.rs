@@ -21,21 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchCreateVariableOutput {
 }
 impl BatchCreateVariableOutput {
     /// Creates a new builder-style object to manufacture [`BatchCreateVariableOutput`](crate::operation::batch_create_variable::BatchCreateVariableOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_create_variable::builders::BatchCreateVariableOutputBuilder {
-        crate::operation::batch_create_variable::builders::BatchCreateVariableOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_create_variable::builders::BatchCreateVariableOutputBuilder {
+        crate::operation::batch_create_variable::builders::BatchCreateVariableOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchCreateVariableOutput`](crate::operation::batch_create_variable::BatchCreateVariableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateVariableOutputBuilder {
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateVariableError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateVariableError>>,
     _request_id: Option<String>,
 }
 impl BatchCreateVariableOutputBuilder {
@@ -51,17 +46,12 @@ impl BatchCreateVariableOutputBuilder {
         self
     }
     /// <p>Provides the errors for the <code>BatchCreateVariable</code> request.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateVariableError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateVariableError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Provides the errors for the <code>BatchCreateVariable</code> request.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchCreateVariableError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchCreateVariableError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

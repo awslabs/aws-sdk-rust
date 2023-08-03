@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListCatalogItemsOutput {
 }
 impl ListCatalogItemsOutput {
     /// Creates a new builder-style object to manufacture [`ListCatalogItemsOutput`](crate::operation::list_catalog_items::ListCatalogItemsOutput).
-    pub fn builder() -> crate::operation::list_catalog_items::builders::ListCatalogItemsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_catalog_items::builders::ListCatalogItemsOutputBuilder {
         crate::operation::list_catalog_items::builders::ListCatalogItemsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCatalogItemsOutput`](crate::operation::list_catalog_items::ListCatalogItemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCatalogItemsOutputBuilder {
     pub(crate) catalog_items: ::std::option::Option<::std::vec::Vec<crate::types::CatalogItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListCatalogItemsOutputBuilder {
         self
     }
     /// <p>Information about the catalog items.</p>
-    pub fn set_catalog_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CatalogItem>>,
-    ) -> Self {
+    pub fn set_catalog_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CatalogItem>>) -> Self {
         self.catalog_items = input;
         self
     }
     /// <p>Information about the catalog items.</p>
-    pub fn get_catalog_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CatalogItem>> {
+    pub fn get_catalog_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CatalogItem>> {
         &self.catalog_items
     }
     /// <p>The pagination token.</p>

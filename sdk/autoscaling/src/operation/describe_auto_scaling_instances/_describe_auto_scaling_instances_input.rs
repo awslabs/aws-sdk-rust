@@ -31,16 +31,14 @@ impl DescribeAutoScalingInstancesInput {
 }
 impl DescribeAutoScalingInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoScalingInstancesInput`](crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesInput).
-    pub fn builder() -> crate::operation::describe_auto_scaling_instances::builders::DescribeAutoScalingInstancesInputBuilder{
+    pub fn builder() -> crate::operation::describe_auto_scaling_instances::builders::DescribeAutoScalingInstancesInputBuilder {
         crate::operation::describe_auto_scaling_instances::builders::DescribeAutoScalingInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAutoScalingInstancesInput`](crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAutoScalingInstancesInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -61,18 +59,13 @@ impl DescribeAutoScalingInstancesInputBuilder {
     }
     /// <p>The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>50</code>.</p>
@@ -110,12 +103,10 @@ impl DescribeAutoScalingInstancesInputBuilder {
         crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesInput {
-                instance_ids: self.instance_ids,
-                max_records: self.max_records,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesInput {
+            instance_ids: self.instance_ids,
+            max_records: self.max_records,
+            next_token: self.next_token,
+        })
     }
 }

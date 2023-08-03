@@ -15,35 +15,25 @@ impl DescribeBatchSegmentJobInput {
 }
 impl DescribeBatchSegmentJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeBatchSegmentJobInput`](crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobInputBuilder {
         crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBatchSegmentJobInput`](crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBatchSegmentJobInputBuilder {
     pub(crate) batch_segment_job_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBatchSegmentJobInputBuilder {
     /// <p>The ARN of the batch segment job to describe.</p>
-    pub fn batch_segment_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_segment_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_segment_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the batch segment job to describe.</p>
-    pub fn set_batch_segment_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_segment_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.batch_segment_job_arn = input;
         self
     }
@@ -58,10 +48,8 @@ impl DescribeBatchSegmentJobInputBuilder {
         crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobInput {
-                batch_segment_job_arn: self.batch_segment_job_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobInput {
+            batch_segment_job_arn: self.batch_segment_job_arn,
+        })
     }
 }

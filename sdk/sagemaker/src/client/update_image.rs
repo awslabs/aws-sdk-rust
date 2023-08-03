@@ -11,9 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateImageOutput`](crate::operation::update_image::UpdateImageOutput) with field(s):
     ///   - [`image_arn(Option<String>)`](crate::operation::update_image::UpdateImageOutput::image_arn): <p>The ARN of the image.</p>
     /// - On failure, responds with [`SdkError<UpdateImageError>`](crate::operation::update_image::UpdateImageError)
-    pub fn update_image(
-        &self,
-    ) -> crate::operation::update_image::builders::UpdateImageFluentBuilder {
+    pub fn update_image(&self) -> crate::operation::update_image::builders::UpdateImageFluentBuilder {
         crate::operation::update_image::builders::UpdateImageFluentBuilder::new(self.handle.clone())
     }
 }

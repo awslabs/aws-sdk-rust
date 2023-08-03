@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateLoginProfileOutput {
 }
 impl UpdateLoginProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLoginProfileOutput`](crate::operation::update_login_profile::UpdateLoginProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::update_login_profile::builders::UpdateLoginProfileOutputBuilder {
+    pub fn builder() -> crate::operation::update_login_profile::builders::UpdateLoginProfileOutputBuilder {
         crate::operation::update_login_profile::builders::UpdateLoginProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLoginProfileOutput`](crate::operation::update_login_profile::UpdateLoginProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLoginProfileOutputBuilder {
     _request_id: Option<String>,
 }

@@ -57,9 +57,7 @@ impl StartReplayInput {
 
 /// A builder for [`StartReplayInput`](crate::operation::start_replay::StartReplayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartReplayInputBuilder {
     pub(crate) replay_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -98,18 +96,12 @@ impl StartReplayInputBuilder {
         &self.description
     }
     /// <p>The ARN of the archive to replay events from.</p>
-    pub fn event_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the archive to replay events from.</p>
-    pub fn set_event_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_source_arn = input;
         self
     }
@@ -123,10 +115,7 @@ impl StartReplayInputBuilder {
         self
     }
     /// <p>A time stamp for the time to start replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
-    pub fn set_event_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_start_time = input;
         self
     }
@@ -140,10 +129,7 @@ impl StartReplayInputBuilder {
         self
     }
     /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
-    pub fn set_event_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_end_time = input;
         self
     }
@@ -157,10 +143,7 @@ impl StartReplayInputBuilder {
         self
     }
     /// <p>A <code>ReplayDestination</code> object that includes details about the destination for the replay.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplayDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::ReplayDestination>) -> Self {
         self.destination = input;
         self
     }
@@ -169,12 +152,7 @@ impl StartReplayInputBuilder {
         &self.destination
     }
     /// Consumes the builder and constructs a [`StartReplayInput`](crate::operation::start_replay::StartReplayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_replay::StartReplayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_replay::StartReplayInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_replay::StartReplayInput {
             replay_name: self.replay_name,
             description: self.description,

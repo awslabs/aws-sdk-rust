@@ -22,18 +22,14 @@ impl InitiateLayerUploadInput {
 }
 impl InitiateLayerUploadInput {
     /// Creates a new builder-style object to manufacture [`InitiateLayerUploadInput`](crate::operation::initiate_layer_upload::InitiateLayerUploadInput).
-    pub fn builder(
-    ) -> crate::operation::initiate_layer_upload::builders::InitiateLayerUploadInputBuilder {
-        crate::operation::initiate_layer_upload::builders::InitiateLayerUploadInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::initiate_layer_upload::builders::InitiateLayerUploadInputBuilder {
+        crate::operation::initiate_layer_upload::builders::InitiateLayerUploadInputBuilder::default()
     }
 }
 
 /// A builder for [`InitiateLayerUploadInput`](crate::operation::initiate_layer_upload::InitiateLayerUploadInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InitiateLayerUploadInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl InitiateLayerUploadInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository that you want to upload layers to.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository that you want to upload layers to.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -76,15 +66,11 @@ impl InitiateLayerUploadInputBuilder {
     /// Consumes the builder and constructs a [`InitiateLayerUploadInput`](crate::operation::initiate_layer_upload::InitiateLayerUploadInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::initiate_layer_upload::InitiateLayerUploadInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::initiate_layer_upload::InitiateLayerUploadInput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::initiate_layer_upload::InitiateLayerUploadInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::initiate_layer_upload::InitiateLayerUploadInput {
+            registry_id: self.registry_id,
+            repository_name: self.repository_name,
+        })
     }
 }

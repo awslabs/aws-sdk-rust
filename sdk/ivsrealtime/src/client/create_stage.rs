@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`stage(Option<Stage>)`](crate::operation::create_stage::CreateStageOutput::stage): <p>The stage that was created.</p>
     ///   - [`participant_tokens(Option<Vec<ParticipantToken>>)`](crate::operation::create_stage::CreateStageOutput::participant_tokens): <p>Participant tokens attached to the stage. These correspond to the <code>participants</code> in the request.</p>
     /// - On failure, responds with [`SdkError<CreateStageError>`](crate::operation::create_stage::CreateStageError)
-    pub fn create_stage(
-        &self,
-    ) -> crate::operation::create_stage::builders::CreateStageFluentBuilder {
+    pub fn create_stage(&self) -> crate::operation::create_stage::builders::CreateStageFluentBuilder {
         crate::operation::create_stage::builders::CreateStageFluentBuilder::new(self.handle.clone())
     }
 }

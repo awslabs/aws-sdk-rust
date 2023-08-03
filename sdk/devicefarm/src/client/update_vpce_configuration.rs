@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateVpceConfigurationOutput`](crate::operation::update_vpce_configuration::UpdateVpceConfigurationOutput) with field(s):
     ///   - [`vpce_configuration(Option<VpceConfiguration>)`](crate::operation::update_vpce_configuration::UpdateVpceConfigurationOutput::vpce_configuration): <p>An object that contains information about your VPC endpoint configuration.</p>
     /// - On failure, responds with [`SdkError<UpdateVPCEConfigurationError>`](crate::operation::update_vpce_configuration::UpdateVPCEConfigurationError)
-    pub fn update_vpce_configuration(
-        &self,
-    ) -> crate::operation::update_vpce_configuration::builders::UpdateVPCEConfigurationFluentBuilder
-    {
+    pub fn update_vpce_configuration(&self) -> crate::operation::update_vpce_configuration::builders::UpdateVPCEConfigurationFluentBuilder {
         crate::operation::update_vpce_configuration::builders::UpdateVPCEConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -44,18 +44,14 @@ impl AssociateTargetsWithJobInput {
 }
 impl AssociateTargetsWithJobInput {
     /// Creates a new builder-style object to manufacture [`AssociateTargetsWithJobInput`](crate::operation::associate_targets_with_job::AssociateTargetsWithJobInput).
-    pub fn builder(
-    ) -> crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobInputBuilder {
         crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTargetsWithJobInput`](crate::operation::associate_targets_with_job::AssociateTargetsWithJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTargetsWithJobInputBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -75,10 +71,7 @@ impl AssociateTargetsWithJobInputBuilder {
         self
     }
     /// <p>A list of thing group ARNs that define the targets of the job.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.targets = input;
         self
     }
@@ -147,13 +140,11 @@ impl AssociateTargetsWithJobInputBuilder {
         crate::operation::associate_targets_with_job::AssociateTargetsWithJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_targets_with_job::AssociateTargetsWithJobInput {
-                targets: self.targets,
-                job_id: self.job_id,
-                comment: self.comment,
-                namespace_id: self.namespace_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_targets_with_job::AssociateTargetsWithJobInput {
+            targets: self.targets,
+            job_id: self.job_id,
+            comment: self.comment,
+            namespace_id: self.namespace_id,
+        })
     }
 }

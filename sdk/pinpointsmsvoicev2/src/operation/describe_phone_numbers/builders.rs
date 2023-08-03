@@ -39,9 +39,7 @@ impl DescribePhoneNumbersFluentBuilder {
         }
     }
     /// Access the DescribePhoneNumbers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DescribePhoneNumbersFluentBuilder {
             crate::operation::describe_phone_numbers::DescribePhoneNumbers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_phone_numbers::DescribePhoneNumbersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_phone_numbers::DescribePhoneNumbersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DescribePhoneNumbersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DescribePhoneNumbersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_phone_numbers::DescribePhoneNumbersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_phone_numbers::DescribePhoneNumbersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_phone_numbers::DescribePhoneNumbersError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DescribePhoneNumbersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_phone_numbers::DescribePhoneNumbersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_phone_numbers::DescribePhoneNumbersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_phone_numbers::DescribePhoneNumbersError>,
     > {
         self.send_middleware().await
     }
@@ -118,47 +107,32 @@ impl DescribePhoneNumbersFluentBuilder {
             crate::operation::describe_phone_numbers::DescribePhoneNumbers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_phone_numbers::DescribePhoneNumbersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_phone_numbers::DescribePhoneNumbersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_phone_numbers::paginator::DescribePhoneNumbersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_phone_numbers::paginator::DescribePhoneNumbersPaginator {
-        crate::operation::describe_phone_numbers::paginator::DescribePhoneNumbersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_phone_numbers::paginator::DescribePhoneNumbersPaginator {
+        crate::operation::describe_phone_numbers::paginator::DescribePhoneNumbersPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `PhoneNumberIds`.
     ///
     /// To override the contents of this collection use [`set_phone_number_ids`](Self::set_phone_number_ids).
     ///
     /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
-    pub fn phone_number_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.phone_number_ids(input.into());
         self
     }
     /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
-    pub fn set_phone_number_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_phone_number_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_phone_number_ids(input);
         self
     }
     /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
-    pub fn get_phone_number_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_phone_number_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_phone_number_ids()
     }
     /// Appends an item to `Filters`.
@@ -171,17 +145,12 @@ impl DescribePhoneNumbersFluentBuilder {
         self
     }
     /// <p>An array of PhoneNumberFilter objects to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>An array of PhoneNumberFilter objects to filter the results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberFilter>> {
         self.inner.get_filters()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>

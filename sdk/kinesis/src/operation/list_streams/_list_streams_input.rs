@@ -37,9 +37,7 @@ impl ListStreamsInput {
 
 /// A builder for [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamsInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) exclusive_start_stream_name: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl ListStreamsInputBuilder {
         &self.limit
     }
     /// <p>The name of the stream to start the list with.</p>
-    pub fn exclusive_start_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclusive_start_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exclusive_start_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the stream to start the list with.</p>
-    pub fn set_exclusive_start_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exclusive_start_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exclusive_start_stream_name = input;
         self
     }
@@ -95,12 +87,7 @@ impl ListStreamsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_streams::ListStreamsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_streams::ListStreamsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_streams::ListStreamsInput {
             limit: self.limit,
             exclusive_start_stream_name: self.exclusive_start_stream_name,

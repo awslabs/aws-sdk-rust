@@ -28,27 +28,19 @@ impl CreateEventBusOutput {
 
 /// A builder for [`CreateEventBusOutput`](crate::operation::create_event_bus::CreateEventBusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEventBusOutputBuilder {
     pub(crate) event_bus_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateEventBusOutputBuilder {
     /// <p>The ARN of the new event bus.</p>
-    pub fn event_bus_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_bus_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_bus_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the new event bus.</p>
-    pub fn set_event_bus_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_bus_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_bus_arn = input;
         self
     }

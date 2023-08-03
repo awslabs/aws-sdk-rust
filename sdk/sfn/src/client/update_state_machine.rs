@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`revision_id(Option<String>)`](crate::operation::update_state_machine::UpdateStateMachineOutput::revision_id): <p>The revision identifier for the updated state machine.</p>
     ///   - [`state_machine_version_arn(Option<String>)`](crate::operation::update_state_machine::UpdateStateMachineOutput::state_machine_version_arn): <p>The Amazon Resource Name (ARN) of the published state machine version.</p>  <p>If the <code>publish</code> parameter isn't set to <code>true</code>, this field returns null.</p>
     /// - On failure, responds with [`SdkError<UpdateStateMachineError>`](crate::operation::update_state_machine::UpdateStateMachineError)
-    pub fn update_state_machine(
-        &self,
-    ) -> crate::operation::update_state_machine::builders::UpdateStateMachineFluentBuilder {
-        crate::operation::update_state_machine::builders::UpdateStateMachineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_state_machine(&self) -> crate::operation::update_state_machine::builders::UpdateStateMachineFluentBuilder {
+        crate::operation::update_state_machine::builders::UpdateStateMachineFluentBuilder::new(self.handle.clone())
     }
 }

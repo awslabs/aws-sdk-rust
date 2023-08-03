@@ -60,18 +60,14 @@ impl CreateProtectionGroupInput {
 }
 impl CreateProtectionGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateProtectionGroupInput`](crate::operation::create_protection_group::CreateProtectionGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_protection_group::builders::CreateProtectionGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_protection_group::builders::CreateProtectionGroupInputBuilder {
         crate::operation::create_protection_group::builders::CreateProtectionGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateProtectionGroupInput`](crate::operation::create_protection_group::CreateProtectionGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProtectionGroupInputBuilder {
     pub(crate) protection_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) aggregation: ::std::option::Option<crate::types::ProtectionGroupAggregation>,
@@ -82,18 +78,12 @@ pub struct CreateProtectionGroupInputBuilder {
 }
 impl CreateProtectionGroupInputBuilder {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn protection_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protection_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protection_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn set_protection_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protection_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protection_group_id = input;
         self
     }
@@ -117,10 +107,7 @@ impl CreateProtectionGroupInputBuilder {
     /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
     /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p> </li>
     /// </ul>
-    pub fn set_aggregation(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectionGroupAggregation>,
-    ) -> Self {
+    pub fn set_aggregation(mut self, input: ::std::option::Option<crate::types::ProtectionGroupAggregation>) -> Self {
         self.aggregation = input;
         self
     }
@@ -130,9 +117,7 @@ impl CreateProtectionGroupInputBuilder {
     /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
     /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p> </li>
     /// </ul>
-    pub fn get_aggregation(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProtectionGroupAggregation> {
+    pub fn get_aggregation(&self) -> &::std::option::Option<crate::types::ProtectionGroupAggregation> {
         &self.aggregation
     }
     /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type. </p>
@@ -141,10 +126,7 @@ impl CreateProtectionGroupInputBuilder {
         self
     }
     /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type. </p>
-    pub fn set_pattern(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectionGroupPattern>,
-    ) -> Self {
+    pub fn set_pattern(mut self, input: ::std::option::Option<crate::types::ProtectionGroupPattern>) -> Self {
         self.pattern = input;
         self
     }
@@ -158,10 +140,7 @@ impl CreateProtectionGroupInputBuilder {
         self
     }
     /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. Newly protected resources of this type are automatically added to the group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ProtectedResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -181,10 +160,7 @@ impl CreateProtectionGroupInputBuilder {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.members = input;
         self
     }
@@ -204,10 +180,7 @@ impl CreateProtectionGroupInputBuilder {
         self
     }
     /// <p>One or more tag key-value pairs for the protection group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -218,19 +191,15 @@ impl CreateProtectionGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateProtectionGroupInput`](crate::operation::create_protection_group::CreateProtectionGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_protection_group::CreateProtectionGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_protection_group::CreateProtectionGroupInput {
-                protection_group_id: self.protection_group_id,
-                aggregation: self.aggregation,
-                pattern: self.pattern,
-                resource_type: self.resource_type,
-                members: self.members,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_protection_group::CreateProtectionGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_protection_group::CreateProtectionGroupInput {
+            protection_group_id: self.protection_group_id,
+            aggregation: self.aggregation,
+            pattern: self.pattern,
+            resource_type: self.resource_type,
+            members: self.members,
+            tags: self.tags,
+        })
     }
 }

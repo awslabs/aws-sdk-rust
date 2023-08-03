@@ -9,10 +9,7 @@ pub fn ser_export_assets_to_s3_request_details(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_asset_destination_entry::ser_asset_destination_entry(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_asset_destination_entry::ser_asset_destination_entry(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

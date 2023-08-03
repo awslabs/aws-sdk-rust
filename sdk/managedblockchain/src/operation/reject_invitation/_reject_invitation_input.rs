@@ -15,34 +15,25 @@ impl RejectInvitationInput {
 }
 impl RejectInvitationInput {
     /// Creates a new builder-style object to manufacture [`RejectInvitationInput`](crate::operation::reject_invitation::RejectInvitationInput).
-    pub fn builder() -> crate::operation::reject_invitation::builders::RejectInvitationInputBuilder
-    {
+    pub fn builder() -> crate::operation::reject_invitation::builders::RejectInvitationInputBuilder {
         crate::operation::reject_invitation::builders::RejectInvitationInputBuilder::default()
     }
 }
 
 /// A builder for [`RejectInvitationInput`](crate::operation::reject_invitation::RejectInvitationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectInvitationInputBuilder {
     pub(crate) invitation_id: ::std::option::Option<::std::string::String>,
 }
 impl RejectInvitationInputBuilder {
     /// <p>The unique identifier of the invitation to reject.</p>
-    pub fn invitation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invitation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the invitation to reject.</p>
-    pub fn set_invitation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invitation_id = input;
         self
     }
@@ -53,10 +44,7 @@ impl RejectInvitationInputBuilder {
     /// Consumes the builder and constructs a [`RejectInvitationInput`](crate::operation::reject_invitation::RejectInvitationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reject_invitation::RejectInvitationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::reject_invitation::RejectInvitationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::reject_invitation::RejectInvitationInput {
             invitation_id: self.invitation_id,
         })

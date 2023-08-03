@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_bucket_intelligent_tiering_configuration::builders::DeleteBucketIntelligentTieringConfigurationFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_bucket_intelligent_tiering_configuration::builders::DeleteBucketIntelligentTieringConfigurationFluentBuilder::set_id): <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
     /// - On success, responds with [`DeleteBucketIntelligentTieringConfigurationOutput`](crate::operation::delete_bucket_intelligent_tiering_configuration::DeleteBucketIntelligentTieringConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteBucketIntelligentTieringConfigurationError>`](crate::operation::delete_bucket_intelligent_tiering_configuration::DeleteBucketIntelligentTieringConfigurationError)
-    pub fn delete_bucket_intelligent_tiering_configuration(&self) -> crate::operation::delete_bucket_intelligent_tiering_configuration::builders::DeleteBucketIntelligentTieringConfigurationFluentBuilder{
-        crate::operation::delete_bucket_intelligent_tiering_configuration::builders::DeleteBucketIntelligentTieringConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn delete_bucket_intelligent_tiering_configuration(
+        &self,
+    ) -> crate::operation::delete_bucket_intelligent_tiering_configuration::builders::DeleteBucketIntelligentTieringConfigurationFluentBuilder {
+        crate::operation::delete_bucket_intelligent_tiering_configuration::builders::DeleteBucketIntelligentTieringConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

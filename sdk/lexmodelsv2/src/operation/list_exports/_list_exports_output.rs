@@ -56,14 +56,11 @@ impl ListExportsOutput {
 
 /// A builder for [`ListExportsOutput`](crate::operation::list_exports::ListExportsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExportsOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
-    pub(crate) export_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExportSummary>>,
+    pub(crate) export_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ExportSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -109,17 +106,12 @@ impl ListExportsOutputBuilder {
         self
     }
     /// <p>Summary information for the exports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more exports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn set_export_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportSummary>>,
-    ) -> Self {
+    pub fn set_export_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportSummary>>) -> Self {
         self.export_summaries = input;
         self
     }
     /// <p>Summary information for the exports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more exports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn get_export_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportSummary>> {
+    pub fn get_export_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportSummary>> {
         &self.export_summaries
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListExports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListExports</code> operation request to get the next page of results.</p>

@@ -10,10 +10,7 @@ impl DescribeWorkspacesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_workspaces::DescribeWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspaces::DescribeWorkspacesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspaces::DescribeWorkspacesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_workspaces();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeWorkspacesFluentBuilder {
         }
     }
     /// Access the DescribeWorkspaces as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_workspaces::builders::DescribeWorkspacesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_workspaces::builders::DescribeWorkspacesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeWorkspacesFluentBuilder {
             crate::operation::describe_workspaces::DescribeWorkspaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspaces::DescribeWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspaces::DescribeWorkspacesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeWorkspacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeWorkspacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspaces::DescribeWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspaces::DescribeWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspaces::DescribeWorkspacesError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeWorkspacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspaces::DescribeWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspaces::DescribeWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspaces::DescribeWorkspacesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl DescribeWorkspacesFluentBuilder {
             crate::operation::describe_workspaces::DescribeWorkspaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_workspaces::DescribeWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_workspaces::DescribeWorkspacesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_workspaces::paginator::DescribeWorkspacesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_workspaces::paginator::DescribeWorkspacesPaginator {
-        crate::operation::describe_workspaces::paginator::DescribeWorkspacesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_workspaces::paginator::DescribeWorkspacesPaginator {
+        crate::operation::describe_workspaces::paginator::DescribeWorkspacesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `WorkspaceIds`.
     ///
@@ -140,27 +119,19 @@ impl DescribeWorkspacesFluentBuilder {
     ///
     /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
     /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
-    pub fn workspace_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workspace_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_ids(input.into());
         self
     }
     /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
     /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
-    pub fn set_workspace_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_workspace_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_workspace_ids(input);
         self
     }
     /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
     /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
-    pub fn get_workspace_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_workspace_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_workspace_ids()
     }
     /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`folder_id(Option<String>)`](crate::operation::delete_folder::DeleteFolderOutput::folder_id): <p>The ID of the folder.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::delete_folder::DeleteFolderOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<DeleteFolderError>`](crate::operation::delete_folder::DeleteFolderError)
-    pub fn delete_folder(
-        &self,
-    ) -> crate::operation::delete_folder::builders::DeleteFolderFluentBuilder {
-        crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_folder(&self) -> crate::operation::delete_folder::builders::DeleteFolderFluentBuilder {
+        crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`cause(impl ::std::convert::Into<String>)`](crate::operation::send_task_failure::builders::SendTaskFailureFluentBuilder::cause) / [`set_cause(Option<String>)`](crate::operation::send_task_failure::builders::SendTaskFailureFluentBuilder::set_cause): <p>A more detailed explanation of the cause of the failure.</p>
     /// - On success, responds with [`SendTaskFailureOutput`](crate::operation::send_task_failure::SendTaskFailureOutput)
     /// - On failure, responds with [`SdkError<SendTaskFailureError>`](crate::operation::send_task_failure::SendTaskFailureError)
-    pub fn send_task_failure(
-        &self,
-    ) -> crate::operation::send_task_failure::builders::SendTaskFailureFluentBuilder {
-        crate::operation::send_task_failure::builders::SendTaskFailureFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn send_task_failure(&self) -> crate::operation::send_task_failure::builders::SendTaskFailureFluentBuilder {
+        crate::operation::send_task_failure::builders::SendTaskFailureFluentBuilder::new(self.handle.clone())
     }
 }

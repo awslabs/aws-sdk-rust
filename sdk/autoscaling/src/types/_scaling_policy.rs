@@ -52,15 +52,13 @@ pub struct ScalingPolicy {
     pub alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
     /// <p>A target tracking scaling policy.</p>
     #[doc(hidden)]
-    pub target_tracking_configuration:
-        ::std::option::Option<crate::types::TargetTrackingConfiguration>,
+    pub target_tracking_configuration: ::std::option::Option<crate::types::TargetTrackingConfiguration>,
     /// <p>Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).</p>
     #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>A predictive scaling policy.</p>
     #[doc(hidden)]
-    pub predictive_scaling_configuration:
-        ::std::option::Option<crate::types::PredictiveScalingConfiguration>,
+    pub predictive_scaling_configuration: ::std::option::Option<crate::types::PredictiveScalingConfiguration>,
 }
 impl ScalingPolicy {
     /// <p>The name of the Auto Scaling group.</p>
@@ -123,9 +121,7 @@ impl ScalingPolicy {
         self.alarms.as_deref()
     }
     /// <p>A target tracking scaling policy.</p>
-    pub fn target_tracking_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetTrackingConfiguration> {
+    pub fn target_tracking_configuration(&self) -> ::std::option::Option<&crate::types::TargetTrackingConfiguration> {
         self.target_tracking_configuration.as_ref()
     }
     /// <p>Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).</p>
@@ -133,9 +129,7 @@ impl ScalingPolicy {
         self.enabled
     }
     /// <p>A predictive scaling policy.</p>
-    pub fn predictive_scaling_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PredictiveScalingConfiguration> {
+    pub fn predictive_scaling_configuration(&self) -> ::std::option::Option<&crate::types::PredictiveScalingConfiguration> {
         self.predictive_scaling_configuration.as_ref()
     }
 }
@@ -148,9 +142,7 @@ impl ScalingPolicy {
 
 /// A builder for [`ScalingPolicy`](crate::types::ScalingPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScalingPolicyBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
@@ -161,31 +153,22 @@ pub struct ScalingPolicyBuilder {
     pub(crate) min_adjustment_magnitude: ::std::option::Option<i32>,
     pub(crate) scaling_adjustment: ::std::option::Option<i32>,
     pub(crate) cooldown: ::std::option::Option<i32>,
-    pub(crate) step_adjustments:
-        ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>,
+    pub(crate) step_adjustments: ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>,
     pub(crate) metric_aggregation_type: ::std::option::Option<::std::string::String>,
     pub(crate) estimated_instance_warmup: ::std::option::Option<i32>,
     pub(crate) alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
-    pub(crate) target_tracking_configuration:
-        ::std::option::Option<crate::types::TargetTrackingConfiguration>,
+    pub(crate) target_tracking_configuration: ::std::option::Option<crate::types::TargetTrackingConfiguration>,
     pub(crate) enabled: ::std::option::Option<bool>,
-    pub(crate) predictive_scaling_configuration:
-        ::std::option::Option<crate::types::PredictiveScalingConfiguration>,
+    pub(crate) predictive_scaling_configuration: ::std::option::Option<crate::types::PredictiveScalingConfiguration>,
 }
 impl ScalingPolicyBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -257,18 +240,12 @@ impl ScalingPolicyBuilder {
         &self.policy_type
     }
     /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    pub fn adjustment_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn adjustment_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.adjustment_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    pub fn set_adjustment_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_adjustment_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.adjustment_type = input;
         self
     }
@@ -344,32 +321,21 @@ impl ScalingPolicyBuilder {
         self
     }
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
-    pub fn set_step_adjustments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>,
-    ) -> Self {
+    pub fn set_step_adjustments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>) -> Self {
         self.step_adjustments = input;
         self
     }
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
-    pub fn get_step_adjustments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>> {
+    pub fn get_step_adjustments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>> {
         &self.step_adjustments
     }
     /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
-    pub fn metric_aggregation_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_aggregation_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_aggregation_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
-    pub fn set_metric_aggregation_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_aggregation_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_aggregation_type = input;
         self
     }
@@ -403,10 +369,7 @@ impl ScalingPolicyBuilder {
         self
     }
     /// <p>The CloudWatch alarms related to the policy.</p>
-    pub fn set_alarms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
-    ) -> Self {
+    pub fn set_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>) -> Self {
         self.alarms = input;
         self
     }
@@ -415,25 +378,17 @@ impl ScalingPolicyBuilder {
         &self.alarms
     }
     /// <p>A target tracking scaling policy.</p>
-    pub fn target_tracking_configuration(
-        mut self,
-        input: crate::types::TargetTrackingConfiguration,
-    ) -> Self {
+    pub fn target_tracking_configuration(mut self, input: crate::types::TargetTrackingConfiguration) -> Self {
         self.target_tracking_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A target tracking scaling policy.</p>
-    pub fn set_target_tracking_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetTrackingConfiguration>,
-    ) -> Self {
+    pub fn set_target_tracking_configuration(mut self, input: ::std::option::Option<crate::types::TargetTrackingConfiguration>) -> Self {
         self.target_tracking_configuration = input;
         self
     }
     /// <p>A target tracking scaling policy.</p>
-    pub fn get_target_tracking_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetTrackingConfiguration> {
+    pub fn get_target_tracking_configuration(&self) -> &::std::option::Option<crate::types::TargetTrackingConfiguration> {
         &self.target_tracking_configuration
     }
     /// <p>Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).</p>
@@ -451,25 +406,17 @@ impl ScalingPolicyBuilder {
         &self.enabled
     }
     /// <p>A predictive scaling policy.</p>
-    pub fn predictive_scaling_configuration(
-        mut self,
-        input: crate::types::PredictiveScalingConfiguration,
-    ) -> Self {
+    pub fn predictive_scaling_configuration(mut self, input: crate::types::PredictiveScalingConfiguration) -> Self {
         self.predictive_scaling_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A predictive scaling policy.</p>
-    pub fn set_predictive_scaling_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::PredictiveScalingConfiguration>,
-    ) -> Self {
+    pub fn set_predictive_scaling_configuration(mut self, input: ::std::option::Option<crate::types::PredictiveScalingConfiguration>) -> Self {
         self.predictive_scaling_configuration = input;
         self
     }
     /// <p>A predictive scaling policy.</p>
-    pub fn get_predictive_scaling_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::PredictiveScalingConfiguration> {
+    pub fn get_predictive_scaling_configuration(&self) -> &::std::option::Option<crate::types::PredictiveScalingConfiguration> {
         &self.predictive_scaling_configuration
     }
     /// Consumes the builder and constructs a [`ScalingPolicy`](crate::types::ScalingPolicy).

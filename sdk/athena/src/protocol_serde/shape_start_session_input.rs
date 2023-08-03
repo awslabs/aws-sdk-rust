@@ -12,10 +12,7 @@ pub fn ser_start_session_input(
     if let Some(var_3) = &input.engine_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("EngineConfiguration").start_object();
-        crate::protocol_serde::shape_engine_configuration::ser_engine_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_engine_configuration::ser_engine_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.notebook_version {

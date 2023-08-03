@@ -32,9 +32,7 @@ impl Ipv6Range {
 
 /// A builder for [`Ipv6Range`](crate::types::Ipv6Range).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ipv6RangeBuilder {
     pub(crate) cidr_ipv6: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

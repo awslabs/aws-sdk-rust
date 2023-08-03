@@ -50,17 +50,13 @@ impl ::std::fmt::Display for UnsupportedAvailabilityZoneException {
     }
 }
 impl ::std::error::Error for UnsupportedAvailabilityZoneException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::UnsupportedAvailabilityZoneException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::UnsupportedAvailabilityZoneException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for UnsupportedAvailabilityZoneException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedAvailabilityZoneException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -74,9 +70,7 @@ impl UnsupportedAvailabilityZoneException {
 
 /// A builder for [`UnsupportedAvailabilityZoneException`](crate::types::error::UnsupportedAvailabilityZoneException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnsupportedAvailabilityZoneExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
@@ -114,18 +108,12 @@ impl UnsupportedAvailabilityZoneExceptionBuilder {
         &self.cluster_name
     }
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
-    pub fn nodegroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nodegroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nodegroup_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
-    pub fn set_nodegroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nodegroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nodegroup_name = input;
         self
     }
@@ -145,17 +133,12 @@ impl UnsupportedAvailabilityZoneExceptionBuilder {
         self
     }
     /// <p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>
-    pub fn set_valid_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_valid_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.valid_zones = input;
         self
     }
     /// <p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>
-    pub fn get_valid_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_valid_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.valid_zones
     }
     /// Sets error metadata
@@ -165,10 +148,7 @@ impl UnsupportedAvailabilityZoneExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

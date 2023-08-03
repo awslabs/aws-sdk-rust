@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StopProjectVersionOutput {
 }
 impl StopProjectVersionOutput {
     /// Creates a new builder-style object to manufacture [`StopProjectVersionOutput`](crate::operation::stop_project_version::StopProjectVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_project_version::builders::StopProjectVersionOutputBuilder {
+    pub fn builder() -> crate::operation::stop_project_version::builders::StopProjectVersionOutputBuilder {
         crate::operation::stop_project_version::builders::StopProjectVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopProjectVersionOutput`](crate::operation::stop_project_version::StopProjectVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopProjectVersionOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ProjectVersionStatus>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl StopProjectVersionOutputBuilder {
         self
     }
     /// <p>The current status of the stop operation. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProjectVersionStatus>) -> Self {
         self.status = input;
         self
     }

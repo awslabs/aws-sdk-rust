@@ -10,10 +10,7 @@ impl CreateDestinationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_destination::CreateDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_destination::CreateDestinationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_destination::CreateDestinationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_destination();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateDestinationFluentBuilder {
         }
     }
     /// Access the CreateDestination as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_destination::builders::CreateDestinationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_destination::builders::CreateDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateDestinationFluentBuilder {
             crate::operation::create_destination::CreateDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_destination::CreateDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_destination::CreateDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_destination::CreateDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_destination::CreateDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_destination::CreateDestinationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_destination::CreateDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_destination::CreateDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_destination::CreateDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateDestinationFluentBuilder {
             crate::operation::create_destination::CreateDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_destination::CreateDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_destination::CreateDestinationError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl CreateDestinationFluentBuilder {
         self
     }
     /// <p>The type of value in <code>Expression</code>.</p>
-    pub fn set_expression_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpressionType>,
-    ) -> Self {
+    pub fn set_expression_type(mut self, input: ::std::option::Option<crate::types::ExpressionType>) -> Self {
         self.inner = self.inner.set_expression_type(input);
         self
     }
@@ -205,10 +186,7 @@ impl CreateDestinationFluentBuilder {
         self
     }
     /// <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -217,18 +195,12 @@ impl CreateDestinationFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

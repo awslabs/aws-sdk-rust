@@ -22,26 +22,18 @@ impl GetKeyInput {
 
 /// A builder for [`GetKeyInput`](crate::operation::get_key::GetKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKeyInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetKeyInputBuilder {
     /// <p>The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key.</p>
-    pub fn key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key.</p>
-    pub fn set_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_identifier = input;
         self
     }
@@ -50,12 +42,7 @@ impl GetKeyInputBuilder {
         &self.key_identifier
     }
     /// Consumes the builder and constructs a [`GetKeyInput`](crate::operation::get_key::GetKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_key::GetKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_key::GetKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_key::GetKeyInput {
             key_identifier: self.key_identifier,
         })

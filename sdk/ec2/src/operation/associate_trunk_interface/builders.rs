@@ -30,8 +30,7 @@ impl AssociateTrunkInterfaceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateTrunkInterfaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::associate_trunk_interface::builders::AssociateTrunkInterfaceInputBuilder,
+    inner: crate::operation::associate_trunk_interface::builders::AssociateTrunkInterfaceInputBuilder,
 }
 impl AssociateTrunkInterfaceFluentBuilder {
     /// Creates a new `AssociateTrunkInterface`.
@@ -42,10 +41,7 @@ impl AssociateTrunkInterfaceFluentBuilder {
         }
     }
     /// Access the AssociateTrunkInterface as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_trunk_interface::builders::AssociateTrunkInterfaceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_trunk_interface::builders::AssociateTrunkInterfaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl AssociateTrunkInterfaceFluentBuilder {
             crate::operation::associate_trunk_interface::AssociateTrunkInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_trunk_interface::AssociateTrunkInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_trunk_interface::AssociateTrunkInterfaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl AssociateTrunkInterfaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl AssociateTrunkInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_trunk_interface::AssociateTrunkInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_trunk_interface::AssociateTrunkInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_trunk_interface::AssociateTrunkInterfaceError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl AssociateTrunkInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_trunk_interface::AssociateTrunkInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_trunk_interface::AssociateTrunkInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_trunk_interface::AssociateTrunkInterfaceError>,
     > {
         self.send_middleware().await
     }
@@ -122,25 +109,17 @@ impl AssociateTrunkInterfaceFluentBuilder {
             crate::operation::associate_trunk_interface::AssociateTrunkInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_trunk_interface::AssociateTrunkInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_trunk_interface::AssociateTrunkInterfaceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the branch network interface.</p>
-    pub fn branch_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn branch_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch_interface_id(input.into());
         self
     }
     /// <p>The ID of the branch network interface.</p>
-    pub fn set_branch_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_branch_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_branch_interface_id(input);
         self
     }
@@ -149,18 +128,12 @@ impl AssociateTrunkInterfaceFluentBuilder {
         self.inner.get_branch_interface_id()
     }
     /// <p>The ID of the trunk network interface.</p>
-    pub fn trunk_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trunk_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trunk_interface_id(input.into());
         self
     }
     /// <p>The ID of the trunk network interface.</p>
-    pub fn set_trunk_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trunk_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trunk_interface_id(input);
         self
     }

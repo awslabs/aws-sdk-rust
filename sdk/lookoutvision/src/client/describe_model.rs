@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeModelOutput`](crate::operation::describe_model::DescribeModelOutput) with field(s):
     ///   - [`model_description(Option<ModelDescription>)`](crate::operation::describe_model::DescribeModelOutput::model_description): <p>Contains the description of the model.</p>
     /// - On failure, responds with [`SdkError<DescribeModelError>`](crate::operation::describe_model::DescribeModelError)
-    pub fn describe_model(
-        &self,
-    ) -> crate::operation::describe_model::builders::DescribeModelFluentBuilder {
-        crate::operation::describe_model::builders::DescribeModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_model(&self) -> crate::operation::describe_model::builders::DescribeModelFluentBuilder {
+        crate::operation::describe_model::builders::DescribeModelFluentBuilder::new(self.handle.clone())
     }
 }

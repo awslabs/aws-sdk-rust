@@ -22,14 +22,10 @@ pub fn ser_eac3_atmos_settings(
         object.key("downmixControl").string(var_5.as_str());
     }
     if let Some(var_6) = &input.dynamic_range_compression_line {
-        object
-            .key("dynamicRangeCompressionLine")
-            .string(var_6.as_str());
+        object.key("dynamicRangeCompressionLine").string(var_6.as_str());
     }
     if let Some(var_7) = &input.dynamic_range_compression_rf {
-        object
-            .key("dynamicRangeCompressionRf")
-            .string(var_7.as_str());
+        object.key("dynamicRangeCompressionRf").string(var_7.as_str());
     }
     if let Some(var_8) = &input.dynamic_range_control {
         object.key("dynamicRangeControl").string(var_8.as_str());
@@ -84,17 +80,9 @@ pub fn ser_eac3_atmos_settings(
 
 pub(crate) fn de_eac3_atmos_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::Eac3AtmosSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::Eac3AtmosSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -104,217 +92,138 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "bitrate" => {
-                                builder = builder.set_bitrate(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "bitrate" => {
+                            builder = builder.set_bitrate(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "bitstreamMode" => {
-                                builder = builder.set_bitstream_mode(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::Eac3AtmosBitstreamMode::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "codingMode" => {
-                                builder = builder.set_coding_mode(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::Eac3AtmosCodingMode::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "dialogueIntelligence" => {
-                                builder = builder.set_dialogue_intelligence(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::Eac3AtmosDialogueIntelligence::from(
-                                                u.as_ref(),
-                                            )
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "downmixControl" => {
-                                builder = builder.set_downmix_control(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::Eac3AtmosDownmixControl::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "dynamicRangeCompressionLine" => {
-                                builder = builder.set_dynamic_range_compression_line(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
-                                        s.to_unescaped().map(|u|
-                                            crate::types::Eac3AtmosDynamicRangeCompressionLine::from(u.as_ref())
-                                        )
-                                    ).transpose()?
-                                );
-                            }
-                            "dynamicRangeCompressionRf" => {
-                                builder = builder.set_dynamic_range_compression_rf(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::Eac3AtmosDynamicRangeCompressionRf::from(
-                                                u.as_ref(),
-                                            )
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "dynamicRangeControl" => {
-                                builder = builder.set_dynamic_range_control(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::Eac3AtmosDynamicRangeControl::from(
-                                                u.as_ref(),
-                                            )
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "loRoCenterMixLevel" => {
-                                builder = builder.set_lo_ro_center_mix_level(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|v| v.to_f64_lossy()),
-                                );
-                            }
-                            "loRoSurroundMixLevel" => {
-                                builder = builder.set_lo_ro_surround_mix_level(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|v| v.to_f64_lossy()),
-                                );
-                            }
-                            "ltRtCenterMixLevel" => {
-                                builder = builder.set_lt_rt_center_mix_level(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|v| v.to_f64_lossy()),
-                                );
-                            }
-                            "ltRtSurroundMixLevel" => {
-                                builder = builder.set_lt_rt_surround_mix_level(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|v| v.to_f64_lossy()),
-                                );
-                            }
-                            "meteringMode" => {
-                                builder = builder.set_metering_mode(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::Eac3AtmosMeteringMode::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "sampleRate" => {
-                                builder = builder.set_sample_rate(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "speechThreshold" => {
-                                builder = builder.set_speech_threshold(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "stereoDownmix" => {
-                                builder = builder.set_stereo_downmix(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::Eac3AtmosStereoDownmix::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "surroundExMode" => {
-                                builder = builder.set_surround_ex_mode(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::Eac3AtmosSurroundExMode::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "bitstreamMode" => {
+                            builder = builder.set_bitstream_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Eac3AtmosBitstreamMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "codingMode" => {
+                            builder = builder.set_coding_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Eac3AtmosCodingMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "dialogueIntelligence" => {
+                            builder = builder.set_dialogue_intelligence(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Eac3AtmosDialogueIntelligence::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "downmixControl" => {
+                            builder = builder.set_downmix_control(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Eac3AtmosDownmixControl::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "dynamicRangeCompressionLine" => {
+                            builder = builder.set_dynamic_range_compression_line(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::Eac3AtmosDynamicRangeCompressionLine::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
+                        "dynamicRangeCompressionRf" => {
+                            builder = builder.set_dynamic_range_compression_rf(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::Eac3AtmosDynamicRangeCompressionRf::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
+                        "dynamicRangeControl" => {
+                            builder = builder.set_dynamic_range_control(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Eac3AtmosDynamicRangeControl::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "loRoCenterMixLevel" => {
+                            builder = builder.set_lo_ro_center_mix_level(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "loRoSurroundMixLevel" => {
+                            builder = builder.set_lo_ro_surround_mix_level(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "ltRtCenterMixLevel" => {
+                            builder = builder.set_lt_rt_center_mix_level(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "ltRtSurroundMixLevel" => {
+                            builder = builder.set_lt_rt_surround_mix_level(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "meteringMode" => {
+                            builder = builder.set_metering_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Eac3AtmosMeteringMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "sampleRate" => {
+                            builder = builder.set_sample_rate(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "speechThreshold" => {
+                            builder = builder.set_speech_threshold(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "stereoDownmix" => {
+                            builder = builder.set_stereo_downmix(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Eac3AtmosStereoDownmix::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "surroundExMode" => {
+                            builder = builder.set_surround_ex_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Eac3AtmosSurroundExMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

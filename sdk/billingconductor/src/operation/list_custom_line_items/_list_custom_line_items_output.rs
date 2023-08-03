@@ -5,8 +5,7 @@
 pub struct ListCustomLineItemsOutput {
     /// <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
     #[doc(hidden)]
-    pub custom_line_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomLineItemListElement>>,
+    pub custom_line_items: ::std::option::Option<::std::vec::Vec<crate::types::CustomLineItemListElement>>,
     /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListCustomLineItemsOutput {
 }
 impl ListCustomLineItemsOutput {
     /// <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
-    pub fn custom_line_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CustomLineItemListElement]> {
+    pub fn custom_line_items(&self) -> ::std::option::Option<&[crate::types::CustomLineItemListElement]> {
         self.custom_line_items.as_deref()
     }
     /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCustomLineItemsOutput {
 }
 impl ListCustomLineItemsOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomLineItemsOutput`](crate::operation::list_custom_line_items::ListCustomLineItemsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_custom_line_items::builders::ListCustomLineItemsOutputBuilder {
+    pub fn builder() -> crate::operation::list_custom_line_items::builders::ListCustomLineItemsOutputBuilder {
         crate::operation::list_custom_line_items::builders::ListCustomLineItemsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomLineItemsOutput`](crate::operation::list_custom_line_items::ListCustomLineItemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomLineItemsOutputBuilder {
-    pub(crate) custom_line_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomLineItemListElement>>,
+    pub(crate) custom_line_items: ::std::option::Option<::std::vec::Vec<crate::types::CustomLineItemListElement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListCustomLineItemsOutputBuilder {
         self
     }
     /// <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
-    pub fn set_custom_line_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomLineItemListElement>>,
-    ) -> Self {
+    pub fn set_custom_line_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomLineItemListElement>>) -> Self {
         self.custom_line_items = input;
         self
     }
     /// <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
-    pub fn get_custom_line_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomLineItemListElement>> {
+    pub fn get_custom_line_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomLineItemListElement>> {
         &self.custom_line_items
     }
     /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>

@@ -10,10 +10,7 @@ impl CreateImageBuilderInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_image_builder::CreateImageBuilderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_builder::CreateImageBuilderError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image_builder::CreateImageBuilderError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_image_builder();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateImageBuilderFluentBuilder {
         }
     }
     /// Access the CreateImageBuilder as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_image_builder::builders::CreateImageBuilderInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_image_builder::builders::CreateImageBuilderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateImageBuilderFluentBuilder {
             crate::operation::create_image_builder::CreateImageBuilder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_builder::CreateImageBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image_builder::CreateImageBuilderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateImageBuilderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateImageBuilderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_image_builder::CreateImageBuilderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_builder::CreateImageBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image_builder::CreateImageBuilderError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateImageBuilderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_image_builder::CreateImageBuilderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_builder::CreateImageBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image_builder::CreateImageBuilderError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateImageBuilderFluentBuilder {
             crate::operation::create_image_builder::CreateImageBuilder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_builder::CreateImageBuilderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image_builder::CreateImageBuilderError>,
     > {
         self.customize_middleware().await
     }
@@ -201,10 +185,7 @@ impl CreateImageBuilderFluentBuilder {
     /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
     /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_type(input.into());
         self
     }
@@ -244,10 +225,7 @@ impl CreateImageBuilderFluentBuilder {
     /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
     /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
@@ -355,10 +333,7 @@ impl CreateImageBuilderFluentBuilder {
         self
     }
     /// <p>Enables or disables default internet access for the image builder.</p>
-    pub fn set_enable_default_internet_access(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_default_internet_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_default_internet_access(input);
         self
     }
@@ -372,10 +347,7 @@ impl CreateImageBuilderFluentBuilder {
         self
     }
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
-    pub fn set_domain_join_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainJoinInfo>,
-    ) -> Self {
+    pub fn set_domain_join_info(mut self, input: ::std::option::Option<crate::types::DomainJoinInfo>) -> Self {
         self.inner = self.inner.set_domain_join_info(input);
         self
     }
@@ -384,18 +356,12 @@ impl CreateImageBuilderFluentBuilder {
         self.inner.get_domain_join_info()
     }
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
-    pub fn appstream_agent_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn appstream_agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.appstream_agent_version(input.into());
         self
     }
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
-    pub fn set_appstream_agent_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_appstream_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_appstream_agent_version(input);
         self
     }
@@ -412,11 +378,7 @@ impl CreateImageBuilderFluentBuilder {
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
@@ -425,12 +387,7 @@ impl CreateImageBuilderFluentBuilder {
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -439,11 +396,7 @@ impl CreateImageBuilderFluentBuilder {
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// Appends an item to `AccessEndpoints`.
@@ -456,17 +409,12 @@ impl CreateImageBuilderFluentBuilder {
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    pub fn set_access_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
-    ) -> Self {
+    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>) -> Self {
         self.inner = self.inner.set_access_endpoints(input);
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    pub fn get_access_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
         self.inner.get_access_endpoints()
     }
 }

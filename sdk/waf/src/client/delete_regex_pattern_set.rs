@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteRegexPatternSetOutput`](crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteRegexPatternSetError>`](crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError)
-    pub fn delete_regex_pattern_set(
-        &self,
-    ) -> crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetFluentBuilder
-    {
+    pub fn delete_regex_pattern_set(&self) -> crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetFluentBuilder {
         crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetFluentBuilder::new(self.handle.clone())
     }
 }

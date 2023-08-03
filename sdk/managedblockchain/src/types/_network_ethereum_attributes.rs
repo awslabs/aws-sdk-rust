@@ -33,9 +33,7 @@ impl NetworkEthereumAttributes {
 
 /// A builder for [`NetworkEthereumAttributes`](crate::types::NetworkEthereumAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkEthereumAttributesBuilder {
     pub(crate) chain_id: ::std::option::Option<::std::string::String>,
 }
@@ -71,8 +69,6 @@ impl NetworkEthereumAttributesBuilder {
     }
     /// Consumes the builder and constructs a [`NetworkEthereumAttributes`](crate::types::NetworkEthereumAttributes).
     pub fn build(self) -> crate::types::NetworkEthereumAttributes {
-        crate::types::NetworkEthereumAttributes {
-            chain_id: self.chain_id,
-        }
+        crate::types::NetworkEthereumAttributes { chain_id: self.chain_id }
     }
 }

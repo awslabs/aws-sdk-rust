@@ -30,27 +30,19 @@ impl MemberFabricAttributes {
 
 /// A builder for [`MemberFabricAttributes`](crate::types::MemberFabricAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberFabricAttributesBuilder {
     pub(crate) admin_username: ::std::option::Option<::std::string::String>,
     pub(crate) ca_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl MemberFabricAttributesBuilder {
     /// <p>The user name for the initial administrator user for the member.</p>
-    pub fn admin_username(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name for the initial administrator user for the member.</p>
-    pub fn set_admin_username(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_username = input;
         self
     }

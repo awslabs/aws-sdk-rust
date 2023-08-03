@@ -9,44 +9,33 @@ pub fn de_describe_db_snapshots_http_error(
     crate::operation::describe_db_snapshots::DescribeDBSnapshotsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::describe_db_snapshots::DescribeDBSnapshotsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::describe_db_snapshots::DescribeDBSnapshotsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::describe_db_snapshots::DescribeDBSnapshotsError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::describe_db_snapshots::DescribeDBSnapshotsError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DBSnapshotNotFound" => crate::operation::describe_db_snapshots::DescribeDBSnapshotsError::DbSnapshotNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbSnapshotNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_snapshot_not_found_fault::de_db_snapshot_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::describe_db_snapshots::DescribeDBSnapshotsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbSnapshotNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_snapshot_not_found_fault::de_db_snapshot_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::describe_db_snapshots::DescribeDBSnapshotsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::describe_db_snapshots::DescribeDBSnapshotsError::generic(generic)
+        _ => crate::operation::describe_db_snapshots::DescribeDBSnapshotsError::generic(generic),
     })
 }
 
@@ -62,14 +51,9 @@ pub fn de_describe_db_snapshots_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsOutputBuilder::default();
-        output = crate::protocol_serde::shape_describe_db_snapshots::de_describe_db_snapshots(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::describe_db_snapshots::DescribeDBSnapshotsError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_describe_db_snapshots::de_describe_db_snapshots(_response_body, output)
+            .map_err(crate::operation::describe_db_snapshots::DescribeDBSnapshotsError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -78,10 +62,7 @@ pub fn de_describe_db_snapshots_http_response_with_props(
 pub fn de_describe_db_snapshots(
     inp: &[u8],
     mut builder: crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsOutputBuilder,
-) -> Result<
-    crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -131,9 +112,7 @@ pub fn de_describe_db_snapshots(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected DescribeDBSnapshotsResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected DescribeDBSnapshotsResult tag"));
     };
     Ok(builder)
 }

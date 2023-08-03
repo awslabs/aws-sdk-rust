@@ -33,17 +33,14 @@ impl PutAccountSettingInput {
 }
 impl PutAccountSettingInput {
     /// Creates a new builder-style object to manufacture [`PutAccountSettingInput`](crate::operation::put_account_setting::PutAccountSettingInput).
-    pub fn builder(
-    ) -> crate::operation::put_account_setting::builders::PutAccountSettingInputBuilder {
+    pub fn builder() -> crate::operation::put_account_setting::builders::PutAccountSettingInputBuilder {
         crate::operation::put_account_setting::builders::PutAccountSettingInputBuilder::default()
     }
 }
 
 /// A builder for [`PutAccountSettingInput`](crate::operation::put_account_setting::PutAccountSettingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccountSettingInputBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SettingName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -81,20 +78,14 @@ impl PutAccountSettingInputBuilder {
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_arn = input;
         self
     }
@@ -107,16 +98,11 @@ impl PutAccountSettingInputBuilder {
     /// Consumes the builder and constructs a [`PutAccountSettingInput`](crate::operation::put_account_setting::PutAccountSettingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_account_setting::PutAccountSettingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_account_setting::PutAccountSettingInput {
-                name: self.name,
-                value: self.value,
-                principal_arn: self.principal_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_account_setting::PutAccountSettingInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_account_setting::PutAccountSettingInput {
+            name: self.name,
+            value: self.value,
+            principal_arn: self.principal_arn,
+        })
     }
 }

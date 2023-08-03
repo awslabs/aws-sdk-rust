@@ -37,9 +37,7 @@ impl UpdateCertificateAuthorityInput {
     /// <li> <p>In a CRL or OCSP configuration, the value of a CNAME parameter must not include a protocol prefix such as "http://" or "https://".</p> </li>
     /// </ul>
     /// </note>
-    pub fn revocation_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RevocationConfiguration> {
+    pub fn revocation_configuration(&self) -> ::std::option::Option<&crate::types::RevocationConfiguration> {
         self.revocation_configuration.as_ref()
     }
     /// <p>Status of your private CA.</p>
@@ -49,38 +47,29 @@ impl UpdateCertificateAuthorityInput {
 }
 impl UpdateCertificateAuthorityInput {
     /// Creates a new builder-style object to manufacture [`UpdateCertificateAuthorityInput`](crate::operation::update_certificate_authority::UpdateCertificateAuthorityInput).
-    pub fn builder() -> crate::operation::update_certificate_authority::builders::UpdateCertificateAuthorityInputBuilder{
+    pub fn builder() -> crate::operation::update_certificate_authority::builders::UpdateCertificateAuthorityInputBuilder {
         crate::operation::update_certificate_authority::builders::UpdateCertificateAuthorityInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCertificateAuthorityInput`](crate::operation::update_certificate_authority::UpdateCertificateAuthorityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCertificateAuthorityInputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) revocation_configuration:
-        ::std::option::Option<crate::types::RevocationConfiguration>,
+    pub(crate) revocation_configuration: ::std::option::Option<crate::types::RevocationConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::CertificateAuthorityStatus>,
 }
 impl UpdateCertificateAuthorityInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_arn = input;
         self
     }
@@ -98,10 +87,7 @@ impl UpdateCertificateAuthorityInputBuilder {
     /// <li> <p>In a CRL or OCSP configuration, the value of a CNAME parameter must not include a protocol prefix such as "http://" or "https://".</p> </li>
     /// </ul>
     /// </note>
-    pub fn revocation_configuration(
-        mut self,
-        input: crate::types::RevocationConfiguration,
-    ) -> Self {
+    pub fn revocation_configuration(mut self, input: crate::types::RevocationConfiguration) -> Self {
         self.revocation_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -114,10 +100,7 @@ impl UpdateCertificateAuthorityInputBuilder {
     /// <li> <p>In a CRL or OCSP configuration, the value of a CNAME parameter must not include a protocol prefix such as "http://" or "https://".</p> </li>
     /// </ul>
     /// </note>
-    pub fn set_revocation_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RevocationConfiguration>,
-    ) -> Self {
+    pub fn set_revocation_configuration(mut self, input: ::std::option::Option<crate::types::RevocationConfiguration>) -> Self {
         self.revocation_configuration = input;
         self
     }
@@ -130,9 +113,7 @@ impl UpdateCertificateAuthorityInputBuilder {
     /// <li> <p>In a CRL or OCSP configuration, the value of a CNAME parameter must not include a protocol prefix such as "http://" or "https://".</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_revocation_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RevocationConfiguration> {
+    pub fn get_revocation_configuration(&self) -> &::std::option::Option<crate::types::RevocationConfiguration> {
         &self.revocation_configuration
     }
     /// <p>Status of your private CA.</p>
@@ -141,10 +122,7 @@ impl UpdateCertificateAuthorityInputBuilder {
         self
     }
     /// <p>Status of your private CA.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateAuthorityStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateAuthorityStatus>) -> Self {
         self.status = input;
         self
     }
@@ -159,12 +137,10 @@ impl UpdateCertificateAuthorityInputBuilder {
         crate::operation::update_certificate_authority::UpdateCertificateAuthorityInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_certificate_authority::UpdateCertificateAuthorityInput {
-                certificate_authority_arn: self.certificate_authority_arn,
-                revocation_configuration: self.revocation_configuration,
-                status: self.status,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_certificate_authority::UpdateCertificateAuthorityInput {
+            certificate_authority_arn: self.certificate_authority_arn,
+            revocation_configuration: self.revocation_configuration,
+            status: self.status,
+        })
     }
 }

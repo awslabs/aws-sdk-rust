@@ -36,16 +36,14 @@ impl DescribeReplicationSubnetGroupsInput {
 }
 impl DescribeReplicationSubnetGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationSubnetGroupsInput`](crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsInput).
-    pub fn builder() -> crate::operation::describe_replication_subnet_groups::builders::DescribeReplicationSubnetGroupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_subnet_groups::builders::DescribeReplicationSubnetGroupsInputBuilder {
         crate::operation::describe_replication_subnet_groups::builders::DescribeReplicationSubnetGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationSubnetGroupsInput`](crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationSubnetGroupsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -66,10 +64,7 @@ impl DescribeReplicationSubnetGroupsInputBuilder {
     }
     /// <p>Filters applied to replication subnet groups.</p>
     /// <p>Valid filter names: replication-subnet-group-id</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -121,13 +116,10 @@ impl DescribeReplicationSubnetGroupsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsInput {
-                filters: self.filters
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                filters: self.filters,
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }

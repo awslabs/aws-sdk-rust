@@ -35,9 +35,7 @@ impl DescribeAnomalyOutput {
 
 /// A builder for [`DescribeAnomalyOutput`](crate::operation::describe_anomaly::DescribeAnomalyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAnomalyOutputBuilder {
     pub(crate) proactive_anomaly: ::std::option::Option<crate::types::ProactiveAnomaly>,
     pub(crate) reactive_anomaly: ::std::option::Option<crate::types::ReactiveAnomaly>,
@@ -50,10 +48,7 @@ impl DescribeAnomalyOutputBuilder {
         self
     }
     /// <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
-    pub fn set_proactive_anomaly(
-        mut self,
-        input: ::std::option::Option<crate::types::ProactiveAnomaly>,
-    ) -> Self {
+    pub fn set_proactive_anomaly(mut self, input: ::std::option::Option<crate::types::ProactiveAnomaly>) -> Self {
         self.proactive_anomaly = input;
         self
     }
@@ -67,10 +62,7 @@ impl DescribeAnomalyOutputBuilder {
         self
     }
     /// <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>
-    pub fn set_reactive_anomaly(
-        mut self,
-        input: ::std::option::Option<crate::types::ReactiveAnomaly>,
-    ) -> Self {
+    pub fn set_reactive_anomaly(mut self, input: ::std::option::Option<crate::types::ReactiveAnomaly>) -> Self {
         self.reactive_anomaly = input;
         self
     }

@@ -12,18 +12,13 @@ impl GetHomeRegionInput {
 
 /// A builder for [`GetHomeRegionInput`](crate::operation::get_home_region::GetHomeRegionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHomeRegionInputBuilder {}
 impl GetHomeRegionInputBuilder {
     /// Consumes the builder and constructs a [`GetHomeRegionInput`](crate::operation::get_home_region::GetHomeRegionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_home_region::GetHomeRegionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_home_region::GetHomeRegionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_home_region::GetHomeRegionInput {})
     }
 }

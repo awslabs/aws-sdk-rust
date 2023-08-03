@@ -10,10 +10,7 @@ impl SubscribeToDatasetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::subscribe_to_dataset::SubscribeToDatasetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::subscribe_to_dataset::SubscribeToDatasetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::subscribe_to_dataset::SubscribeToDatasetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.subscribe_to_dataset();
         fluent_builder.inner = self;
@@ -62,9 +59,7 @@ impl SubscribeToDatasetFluentBuilder {
         }
     }
     /// Access the SubscribeToDataset as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::subscribe_to_dataset::builders::SubscribeToDatasetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::subscribe_to_dataset::builders::SubscribeToDatasetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl SubscribeToDatasetFluentBuilder {
             crate::operation::subscribe_to_dataset::SubscribeToDataset,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::subscribe_to_dataset::SubscribeToDatasetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::subscribe_to_dataset::SubscribeToDatasetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -88,10 +81,7 @@ impl SubscribeToDatasetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -100,9 +90,7 @@ impl SubscribeToDatasetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::subscribe_to_dataset::SubscribeToDatasetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::subscribe_to_dataset::SubscribeToDatasetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::subscribe_to_dataset::SubscribeToDatasetError>,
     > {
         let op = self
             .inner
@@ -125,9 +113,7 @@ impl SubscribeToDatasetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::subscribe_to_dataset::SubscribeToDatasetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::subscribe_to_dataset::SubscribeToDatasetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::subscribe_to_dataset::SubscribeToDatasetError>,
     > {
         self.send_middleware().await
     }
@@ -141,25 +127,17 @@ impl SubscribeToDatasetFluentBuilder {
             crate::operation::subscribe_to_dataset::SubscribeToDataset,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::subscribe_to_dataset::SubscribeToDatasetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::subscribe_to_dataset::SubscribeToDatasetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
         self
     }
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }

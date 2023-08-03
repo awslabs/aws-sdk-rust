@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEulaAcceptancesOutput {
 }
 impl ListEulaAcceptancesOutput {
     /// Creates a new builder-style object to manufacture [`ListEulaAcceptancesOutput`](crate::operation::list_eula_acceptances::ListEulaAcceptancesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesOutputBuilder {
-        crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesOutputBuilder {
+        crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEulaAcceptancesOutput`](crate::operation::list_eula_acceptances::ListEulaAcceptancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEulaAcceptancesOutputBuilder {
-    pub(crate) eula_acceptances:
-        ::std::option::Option<::std::vec::Vec<crate::types::EulaAcceptance>>,
+    pub(crate) eula_acceptances: ::std::option::Option<::std::vec::Vec<crate::types::EulaAcceptance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListEulaAcceptancesOutputBuilder {
         self
     }
     /// <p>A collection of EULA acceptances.</p>
-    pub fn set_eula_acceptances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EulaAcceptance>>,
-    ) -> Self {
+    pub fn set_eula_acceptances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EulaAcceptance>>) -> Self {
         self.eula_acceptances = input;
         self
     }
     /// <p>A collection of EULA acceptances.</p>
-    pub fn get_eula_acceptances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EulaAcceptance>> {
+    pub fn get_eula_acceptances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EulaAcceptance>> {
         &self.eula_acceptances
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

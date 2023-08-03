@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_service_network::CreateServiceNetworkOutput::arn): <p>The Amazon Resource Name (ARN) of the service network.</p>
     ///   - [`auth_type(Option<AuthType>)`](crate::operation::create_service_network::CreateServiceNetworkOutput::auth_type): <p>The type of IAM policy.</p>
     /// - On failure, responds with [`SdkError<CreateServiceNetworkError>`](crate::operation::create_service_network::CreateServiceNetworkError)
-    pub fn create_service_network(
-        &self,
-    ) -> crate::operation::create_service_network::builders::CreateServiceNetworkFluentBuilder {
-        crate::operation::create_service_network::builders::CreateServiceNetworkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_service_network(&self) -> crate::operation::create_service_network::builders::CreateServiceNetworkFluentBuilder {
+        crate::operation::create_service_network::builders::CreateServiceNetworkFluentBuilder::new(self.handle.clone())
     }
 }

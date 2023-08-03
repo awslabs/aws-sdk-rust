@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`connections(Option<Vec<ClientVpnConnection>>)`](crate::operation::describe_client_vpn_connections::DescribeClientVpnConnectionsOutput::connections): <p>Information about the active and terminated client connections.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_client_vpn_connections::DescribeClientVpnConnectionsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeClientVpnConnectionsError>`](crate::operation::describe_client_vpn_connections::DescribeClientVpnConnectionsError)
-    pub fn describe_client_vpn_connections(&self) -> crate::operation::describe_client_vpn_connections::builders::DescribeClientVpnConnectionsFluentBuilder{
+    pub fn describe_client_vpn_connections(
+        &self,
+    ) -> crate::operation::describe_client_vpn_connections::builders::DescribeClientVpnConnectionsFluentBuilder {
         crate::operation::describe_client_vpn_connections::builders::DescribeClientVpnConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

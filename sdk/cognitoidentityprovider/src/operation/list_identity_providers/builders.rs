@@ -37,10 +37,7 @@ impl ListIdentityProvidersFluentBuilder {
         }
     }
     /// Access the ListIdentityProviders as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_identity_providers::builders::ListIdentityProvidersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_identity_providers::builders::ListIdentityProvidersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListIdentityProvidersFluentBuilder {
             crate::operation::list_identity_providers::ListIdentityProviders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_providers::ListIdentityProvidersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_providers::ListIdentityProvidersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListIdentityProvidersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListIdentityProvidersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_identity_providers::ListIdentityProvidersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_providers::ListIdentityProvidersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_providers::ListIdentityProvidersError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListIdentityProvidersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_identity_providers::ListIdentityProvidersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_providers::ListIdentityProvidersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_providers::ListIdentityProvidersError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListIdentityProvidersFluentBuilder {
             crate::operation::list_identity_providers::ListIdentityProviders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_providers::ListIdentityProvidersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_providers::ListIdentityProvidersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_identity_providers::paginator::ListIdentityProvidersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_identity_providers::paginator::ListIdentityProvidersPaginator {
-        crate::operation::list_identity_providers::paginator::ListIdentityProvidersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_identity_providers::paginator::ListIdentityProvidersPaginator {
+        crate::operation::list_identity_providers::paginator::ListIdentityProvidersPaginator::new(self.handle, self.inner)
     }
     /// <p>The user pool ID.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

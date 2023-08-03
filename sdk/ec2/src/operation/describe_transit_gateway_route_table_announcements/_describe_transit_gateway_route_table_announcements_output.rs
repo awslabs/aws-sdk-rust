@@ -5,8 +5,7 @@
 pub struct DescribeTransitGatewayRouteTableAnnouncementsOutput {
     /// <p>Describes the transit gateway route table announcement.</p>
     #[doc(hidden)]
-    pub transit_gateway_route_table_announcements:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAnnouncement>>,
+    pub transit_gateway_route_table_announcements: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAnnouncement>>,
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeTransitGatewayRouteTableAnnouncementsOutput {
 }
 impl DescribeTransitGatewayRouteTableAnnouncementsOutput {
     /// <p>Describes the transit gateway route table announcement.</p>
-    pub fn transit_gateway_route_table_announcements(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TransitGatewayRouteTableAnnouncement]> {
+    pub fn transit_gateway_route_table_announcements(&self) -> ::std::option::Option<&[crate::types::TransitGatewayRouteTableAnnouncement]> {
         self.transit_gateway_route_table_announcements.as_deref()
     }
     /// <p>The token for the next page of results.</p>
@@ -31,19 +28,18 @@ impl ::aws_http::request_id::RequestId for DescribeTransitGatewayRouteTableAnnou
 }
 impl DescribeTransitGatewayRouteTableAnnouncementsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTransitGatewayRouteTableAnnouncementsOutput`](crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsOutput).
-    pub fn builder() -> crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsOutputBuilder
+    {
         crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTransitGatewayRouteTableAnnouncementsOutput`](crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTransitGatewayRouteTableAnnouncementsOutputBuilder {
-    pub(crate) transit_gateway_route_table_announcements:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAnnouncement>>,
+    pub(crate) transit_gateway_route_table_announcements: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAnnouncement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,13 +49,8 @@ impl DescribeTransitGatewayRouteTableAnnouncementsOutputBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_route_table_announcements`](Self::set_transit_gateway_route_table_announcements).
     ///
     /// <p>Describes the transit gateway route table announcement.</p>
-    pub fn transit_gateway_route_table_announcements(
-        mut self,
-        input: crate::types::TransitGatewayRouteTableAnnouncement,
-    ) -> Self {
-        let mut v = self
-            .transit_gateway_route_table_announcements
-            .unwrap_or_default();
+    pub fn transit_gateway_route_table_announcements(mut self, input: crate::types::TransitGatewayRouteTableAnnouncement) -> Self {
+        let mut v = self.transit_gateway_route_table_announcements.unwrap_or_default();
         v.push(input);
         self.transit_gateway_route_table_announcements = ::std::option::Option::Some(v);
         self
@@ -67,9 +58,7 @@ impl DescribeTransitGatewayRouteTableAnnouncementsOutputBuilder {
     /// <p>Describes the transit gateway route table announcement.</p>
     pub fn set_transit_gateway_route_table_announcements(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::TransitGatewayRouteTableAnnouncement>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAnnouncement>>,
     ) -> Self {
         self.transit_gateway_route_table_announcements = input;
         self
@@ -77,8 +66,7 @@ impl DescribeTransitGatewayRouteTableAnnouncementsOutputBuilder {
     /// <p>Describes the transit gateway route table announcement.</p>
     pub fn get_transit_gateway_route_table_announcements(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAnnouncement>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAnnouncement>> {
         &self.transit_gateway_route_table_announcements
     }
     /// <p>The token for the next page of results.</p>
@@ -105,12 +93,10 @@ impl DescribeTransitGatewayRouteTableAnnouncementsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTransitGatewayRouteTableAnnouncementsOutput`](crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsOutput).
-    pub fn build(self) -> crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsOutput{
+    pub fn build(self) -> crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsOutput {
         crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsOutput {
-            transit_gateway_route_table_announcements: self.transit_gateway_route_table_announcements
-            ,
-            next_token: self.next_token
-            ,
+            transit_gateway_route_table_announcements: self.transit_gateway_route_table_announcements,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

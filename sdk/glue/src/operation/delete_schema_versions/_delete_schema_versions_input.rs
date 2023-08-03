@@ -30,17 +30,14 @@ impl DeleteSchemaVersionsInput {
 }
 impl DeleteSchemaVersionsInput {
     /// Creates a new builder-style object to manufacture [`DeleteSchemaVersionsInput`](crate::operation::delete_schema_versions::DeleteSchemaVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::delete_schema_versions::builders::DeleteSchemaVersionsInputBuilder {
+    pub fn builder() -> crate::operation::delete_schema_versions::builders::DeleteSchemaVersionsInputBuilder {
         crate::operation::delete_schema_versions::builders::DeleteSchemaVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSchemaVersionsInput`](crate::operation::delete_schema_versions::DeleteSchemaVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSchemaVersionsInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
     pub(crate) versions: ::std::option::Option<::std::string::String>,
@@ -89,15 +86,11 @@ impl DeleteSchemaVersionsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSchemaVersionsInput`](crate::operation::delete_schema_versions::DeleteSchemaVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_schema_versions::DeleteSchemaVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_schema_versions::DeleteSchemaVersionsInput {
-                schema_id: self.schema_id,
-                versions: self.versions,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_schema_versions::DeleteSchemaVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_schema_versions::DeleteSchemaVersionsInput {
+            schema_id: self.schema_id,
+            versions: self.versions,
+        })
     }
 }

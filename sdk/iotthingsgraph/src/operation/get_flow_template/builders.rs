@@ -10,10 +10,7 @@ impl GetFlowTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_flow_template::GetFlowTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_flow_template::GetFlowTemplateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_flow_template::GetFlowTemplateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_flow_template();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetFlowTemplateFluentBuilder {
         }
     }
     /// Access the GetFlowTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_flow_template::builders::GetFlowTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_flow_template::builders::GetFlowTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl GetFlowTemplateFluentBuilder {
             crate::operation::get_flow_template::GetFlowTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_flow_template::GetFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_flow_template::GetFlowTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl GetFlowTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl GetFlowTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_flow_template::GetFlowTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_flow_template::GetFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_flow_template::GetFlowTemplateError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl GetFlowTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_flow_template::GetFlowTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_flow_template::GetFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_flow_template::GetFlowTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl GetFlowTemplateFluentBuilder {
             crate::operation::get_flow_template::GetFlowTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_flow_template::GetFlowTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_flow_template::GetFlowTemplateError>,
     > {
         self.customize_middleware().await
     }

@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`StartServiceSoftwareUpdateOutput`](crate::operation::start_service_software_update::StartServiceSoftwareUpdateOutput) with field(s):
     ///   - [`service_software_options(Option<ServiceSoftwareOptions>)`](crate::operation::start_service_software_update::StartServiceSoftwareUpdateOutput::service_software_options): <p>The current status of the OpenSearch Service software update.</p>
     /// - On failure, responds with [`SdkError<StartServiceSoftwareUpdateError>`](crate::operation::start_service_software_update::StartServiceSoftwareUpdateError)
-    pub fn start_service_software_update(&self) -> crate::operation::start_service_software_update::builders::StartServiceSoftwareUpdateFluentBuilder{
+    pub fn start_service_software_update(
+        &self,
+    ) -> crate::operation::start_service_software_update::builders::StartServiceSoftwareUpdateFluentBuilder {
         crate::operation::start_service_software_update::builders::StartServiceSoftwareUpdateFluentBuilder::new(self.handle.clone())
     }
 }

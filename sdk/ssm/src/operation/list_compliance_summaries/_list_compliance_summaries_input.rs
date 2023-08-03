@@ -29,21 +29,16 @@ impl ListComplianceSummariesInput {
 }
 impl ListComplianceSummariesInput {
     /// Creates a new builder-style object to manufacture [`ListComplianceSummariesInput`](crate::operation::list_compliance_summaries::ListComplianceSummariesInput).
-    pub fn builder(
-    ) -> crate::operation::list_compliance_summaries::builders::ListComplianceSummariesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_compliance_summaries::builders::ListComplianceSummariesInputBuilder {
         crate::operation::list_compliance_summaries::builders::ListComplianceSummariesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListComplianceSummariesInput`](crate::operation::list_compliance_summaries::ListComplianceSummariesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComplianceSummariesInputBuilder {
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -60,17 +55,12 @@ impl ListComplianceSummariesInputBuilder {
         self
     }
     /// <p>One or more compliance or inventory filters. Use a filter to return a more specific list of results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>One or more compliance or inventory filters. Use a filter to return a more specific list of results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>> {
         &self.filters
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
@@ -108,12 +98,10 @@ impl ListComplianceSummariesInputBuilder {
         crate::operation::list_compliance_summaries::ListComplianceSummariesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_compliance_summaries::ListComplianceSummariesInput {
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_compliance_summaries::ListComplianceSummariesInput {
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -37,9 +37,7 @@ impl VpcEndpointError {
 
 /// A builder for [`VpcEndpointError`](crate::types::VpcEndpointError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcEndpointErrorBuilder {
     pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::VpcEndpointErrorCode>,
@@ -47,18 +45,12 @@ pub struct VpcEndpointErrorBuilder {
 }
 impl VpcEndpointErrorBuilder {
     /// <p>The unique identifier of the endpoint. </p>
-    pub fn vpc_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the endpoint. </p>
-    pub fn set_vpc_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_endpoint_id = input;
         self
     }
@@ -72,10 +64,7 @@ impl VpcEndpointErrorBuilder {
         self
     }
     /// <p>The code associated with the error.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcEndpointErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::VpcEndpointErrorCode>) -> Self {
         self.error_code = input;
         self
     }
@@ -84,18 +73,12 @@ impl VpcEndpointErrorBuilder {
         &self.error_code
     }
     /// <p>A message describing the error.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message describing the error.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

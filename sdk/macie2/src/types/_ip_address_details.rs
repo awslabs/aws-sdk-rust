@@ -51,9 +51,7 @@ impl IpAddressDetails {
 
 /// A builder for [`IpAddressDetails`](crate::types::IpAddressDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpAddressDetailsBuilder {
     pub(crate) ip_address_v4: ::std::option::Option<::std::string::String>,
     pub(crate) ip_city: ::std::option::Option<crate::types::IpCity>,
@@ -63,18 +61,12 @@ pub struct IpAddressDetailsBuilder {
 }
 impl IpAddressDetailsBuilder {
     /// <p>The Internet Protocol version 4 (IPv4) address of the device.</p>
-    pub fn ip_address_v4(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_address_v4(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address_v4 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Internet Protocol version 4 (IPv4) address of the device.</p>
-    pub fn set_ip_address_v4(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ip_address_v4(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address_v4 = input;
         self
     }
@@ -116,10 +108,7 @@ impl IpAddressDetailsBuilder {
         self
     }
     /// <p>The geographic coordinates of the location that the IP address originated from.</p>
-    pub fn set_ip_geo_location(
-        mut self,
-        input: ::std::option::Option<crate::types::IpGeoLocation>,
-    ) -> Self {
+    pub fn set_ip_geo_location(mut self, input: ::std::option::Option<crate::types::IpGeoLocation>) -> Self {
         self.ip_geo_location = input;
         self
     }

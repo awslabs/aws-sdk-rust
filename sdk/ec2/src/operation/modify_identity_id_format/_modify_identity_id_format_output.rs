@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifyIdentityIdFormatOutput {
 }
 impl ModifyIdentityIdFormatOutput {
     /// Creates a new builder-style object to manufacture [`ModifyIdentityIdFormatOutput`](crate::operation::modify_identity_id_format::ModifyIdentityIdFormatOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_identity_id_format::builders::ModifyIdentityIdFormatOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_identity_id_format::builders::ModifyIdentityIdFormatOutputBuilder {
         crate::operation::modify_identity_id_format::builders::ModifyIdentityIdFormatOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyIdentityIdFormatOutput`](crate::operation::modify_identity_id_format::ModifyIdentityIdFormatOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyIdentityIdFormatOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl ModifyIdentityIdFormatOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyIdentityIdFormatOutput`](crate::operation::modify_identity_id_format::ModifyIdentityIdFormatOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_identity_id_format::ModifyIdentityIdFormatOutput {
+    pub fn build(self) -> crate::operation::modify_identity_id_format::ModifyIdentityIdFormatOutput {
         crate::operation::modify_identity_id_format::ModifyIdentityIdFormatOutput {
             _request_id: self._request_id,
         }

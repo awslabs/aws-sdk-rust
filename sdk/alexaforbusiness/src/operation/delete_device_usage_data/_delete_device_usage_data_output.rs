@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDeviceUsageDataOutput {
 }
 impl DeleteDeviceUsageDataOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDeviceUsageDataOutput`](crate::operation::delete_device_usage_data::DeleteDeviceUsageDataOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataOutputBuilder {
         crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDeviceUsageDataOutput`](crate::operation::delete_device_usage_data::DeleteDeviceUsageDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDeviceUsageDataOutputBuilder {
     _request_id: Option<String>,
 }

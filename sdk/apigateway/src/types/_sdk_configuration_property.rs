@@ -51,9 +51,7 @@ impl SdkConfigurationProperty {
 
 /// A builder for [`SdkConfigurationProperty`](crate::types::SdkConfigurationProperty).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SdkConfigurationPropertyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) friendly_name: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl SdkConfigurationPropertyBuilder {
         &self.name
     }
     /// <p>The user-friendly name of an SdkType configuration property.</p>
-    pub fn friendly_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn friendly_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.friendly_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-friendly name of an SdkType configuration property.</p>
-    pub fn set_friendly_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_friendly_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.friendly_name = input;
         self
     }
@@ -125,18 +117,12 @@ impl SdkConfigurationPropertyBuilder {
         &self.required
     }
     /// <p>The default value of an SdkType configuration property.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value of an SdkType configuration property.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }

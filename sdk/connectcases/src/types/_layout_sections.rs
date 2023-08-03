@@ -23,9 +23,7 @@ impl LayoutSections {
 
 /// A builder for [`LayoutSections`](crate::types::LayoutSections).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LayoutSectionsBuilder {
     pub(crate) sections: ::std::option::Option<::std::vec::Vec<crate::types::Section>>,
 }
@@ -42,10 +40,7 @@ impl LayoutSectionsBuilder {
         self
     }
     /// <p>Ordered list containing different kinds of sections that can be added.</p>
-    pub fn set_sections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Section>>,
-    ) -> Self {
+    pub fn set_sections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Section>>) -> Self {
         self.sections = input;
         self
     }
@@ -55,8 +50,6 @@ impl LayoutSectionsBuilder {
     }
     /// Consumes the builder and constructs a [`LayoutSections`](crate::types::LayoutSections).
     pub fn build(self) -> crate::types::LayoutSections {
-        crate::types::LayoutSections {
-            sections: self.sections,
-        }
+        crate::types::LayoutSections { sections: self.sections }
     }
 }

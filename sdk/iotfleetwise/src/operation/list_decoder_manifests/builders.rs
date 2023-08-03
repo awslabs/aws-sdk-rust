@@ -39,9 +39,7 @@ impl ListDecoderManifestsFluentBuilder {
         }
     }
     /// Access the ListDecoderManifests as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_decoder_manifests::builders::ListDecoderManifestsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_decoder_manifests::builders::ListDecoderManifestsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl ListDecoderManifestsFluentBuilder {
             crate::operation::list_decoder_manifests::ListDecoderManifests,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_decoder_manifests::ListDecoderManifestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_decoder_manifests::ListDecoderManifestsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl ListDecoderManifestsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl ListDecoderManifestsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_decoder_manifests::ListDecoderManifestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_decoder_manifests::ListDecoderManifestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_decoder_manifests::ListDecoderManifestsError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl ListDecoderManifestsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_decoder_manifests::ListDecoderManifestsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_decoder_manifests::ListDecoderManifestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_decoder_manifests::ListDecoderManifestsError>,
     > {
         self.send_middleware().await
     }
@@ -118,36 +107,23 @@ impl ListDecoderManifestsFluentBuilder {
             crate::operation::list_decoder_manifests::ListDecoderManifests,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_decoder_manifests::ListDecoderManifestsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_decoder_manifests::ListDecoderManifestsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_decoder_manifests::paginator::ListDecoderManifestsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_decoder_manifests::paginator::ListDecoderManifestsPaginator {
-        crate::operation::list_decoder_manifests::paginator::ListDecoderManifestsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_decoder_manifests::paginator::ListDecoderManifestsPaginator {
+        crate::operation::list_decoder_manifests::paginator::ListDecoderManifestsPaginator::new(self.handle, self.inner)
     }
     /// <p> The Amazon Resource Name (ARN) of a vehicle model (model manifest) associated with the decoder manifest. </p>
-    pub fn model_manifest_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_manifest_arn(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of a vehicle model (model manifest) associated with the decoder manifest. </p>
-    pub fn set_model_manifest_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_manifest_arn(input);
         self
     }

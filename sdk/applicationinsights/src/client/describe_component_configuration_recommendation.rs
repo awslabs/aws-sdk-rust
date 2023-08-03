@@ -9,7 +9,11 @@ impl super::Client {
     /// - On success, responds with [`DescribeComponentConfigurationRecommendationOutput`](crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationOutput) with field(s):
     ///   - [`component_configuration(Option<String>)`](crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationOutput::component_configuration): <p>The recommended configuration settings of the component. The value is the escaped JSON of the configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeComponentConfigurationRecommendationError>`](crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationError)
-    pub fn describe_component_configuration_recommendation(&self) -> crate::operation::describe_component_configuration_recommendation::builders::DescribeComponentConfigurationRecommendationFluentBuilder{
-        crate::operation::describe_component_configuration_recommendation::builders::DescribeComponentConfigurationRecommendationFluentBuilder::new(self.handle.clone())
+    pub fn describe_component_configuration_recommendation(
+        &self,
+    ) -> crate::operation::describe_component_configuration_recommendation::builders::DescribeComponentConfigurationRecommendationFluentBuilder {
+        crate::operation::describe_component_configuration_recommendation::builders::DescribeComponentConfigurationRecommendationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

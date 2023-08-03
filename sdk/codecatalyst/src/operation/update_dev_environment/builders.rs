@@ -37,9 +37,7 @@ impl UpdateDevEnvironmentFluentBuilder {
         }
     }
     /// Access the UpdateDevEnvironment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_dev_environment::builders::UpdateDevEnvironmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_dev_environment::builders::UpdateDevEnvironmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateDevEnvironmentFluentBuilder {
             crate::operation::update_dev_environment::UpdateDevEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dev_environment::UpdateDevEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dev_environment::UpdateDevEnvironmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateDevEnvironmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateDevEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_dev_environment::UpdateDevEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dev_environment::UpdateDevEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dev_environment::UpdateDevEnvironmentError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateDevEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_dev_environment::UpdateDevEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dev_environment::UpdateDevEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dev_environment::UpdateDevEnvironmentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateDevEnvironmentFluentBuilder {
             crate::operation::update_dev_environment::UpdateDevEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dev_environment::UpdateDevEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dev_environment::UpdateDevEnvironmentError>,
     > {
         self.customize_middleware().await
     }
@@ -188,17 +175,12 @@ impl UpdateDevEnvironmentFluentBuilder {
         self
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
-    pub fn set_ides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
-    ) -> Self {
+    pub fn set_ides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>) -> Self {
         self.inner = self.inner.set_ides(input);
         self
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
-    pub fn get_ides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
+    pub fn get_ides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
         self.inner.get_ides()
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p> <note>
@@ -211,10 +193,7 @@ impl UpdateDevEnvironmentFluentBuilder {
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p> <note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }

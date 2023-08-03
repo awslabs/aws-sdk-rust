@@ -37,9 +37,7 @@ impl DeleteRouteResponseFluentBuilder {
         }
     }
     /// Access the DeleteRouteResponse as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_route_response::builders::DeleteRouteResponseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_route_response::builders::DeleteRouteResponseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteRouteResponseFluentBuilder {
             crate::operation::delete_route_response::DeleteRouteResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_response::DeleteRouteResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_response::DeleteRouteResponseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteRouteResponseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteRouteResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_route_response::DeleteRouteResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_response::DeleteRouteResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_response::DeleteRouteResponseError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteRouteResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_route_response::DeleteRouteResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_response::DeleteRouteResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_response::DeleteRouteResponseError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteRouteResponseFluentBuilder {
             crate::operation::delete_route_response::DeleteRouteResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_route_response::DeleteRouteResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_route_response::DeleteRouteResponseError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +138,12 @@ impl DeleteRouteResponseFluentBuilder {
         self.inner.get_route_id()
     }
     /// <p>The route response ID.</p>
-    pub fn route_response_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_response_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_response_id(input.into());
         self
     }
     /// <p>The route response ID.</p>
-    pub fn set_route_response_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_response_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_response_id(input);
         self
     }

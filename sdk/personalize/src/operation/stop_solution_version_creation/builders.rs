@@ -32,7 +32,7 @@ impl StopSolutionVersionCreationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopSolutionVersionCreationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::stop_solution_version_creation::builders::StopSolutionVersionCreationInputBuilder,
+    inner: crate::operation::stop_solution_version_creation::builders::StopSolutionVersionCreationInputBuilder,
 }
 impl StopSolutionVersionCreationFluentBuilder {
     /// Creates a new `StopSolutionVersionCreation`.
@@ -43,7 +43,7 @@ impl StopSolutionVersionCreationFluentBuilder {
         }
     }
     /// Access the StopSolutionVersionCreation as a reference.
-    pub fn as_input(&self) -> &crate::operation::stop_solution_version_creation::builders::StopSolutionVersionCreationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::stop_solution_version_creation::builders::StopSolutionVersionCreationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl StopSolutionVersionCreationFluentBuilder {
             crate::operation::stop_solution_version_creation::StopSolutionVersionCreation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_solution_version_creation::StopSolutionVersionCreationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_solution_version_creation::StopSolutionVersionCreationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl StopSolutionVersionCreationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl StopSolutionVersionCreationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_solution_version_creation::StopSolutionVersionCreationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_solution_version_creation::StopSolutionVersionCreationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_solution_version_creation::StopSolutionVersionCreationError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl StopSolutionVersionCreationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_solution_version_creation::StopSolutionVersionCreationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_solution_version_creation::StopSolutionVersionCreationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_solution_version_creation::StopSolutionVersionCreationError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +111,17 @@ impl StopSolutionVersionCreationFluentBuilder {
             crate::operation::stop_solution_version_creation::StopSolutionVersionCreation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_solution_version_creation::StopSolutionVersionCreationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_solution_version_creation::StopSolutionVersionCreationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version you want to stop creating.</p>
-    pub fn solution_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.solution_version_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version you want to stop creating.</p>
-    pub fn set_solution_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_solution_version_arn(input);
         self
     }

@@ -79,9 +79,7 @@ impl Record {
 
 /// A builder for [`Record`](crate::types::Record).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordBuilder {
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     pub(crate) measure_name: ::std::option::Option<::std::string::String>,
@@ -105,17 +103,12 @@ impl RecordBuilder {
         self
     }
     /// <p>Contains the list of dimensions for time-series data points.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>Contains the list of dimensions for time-series data points.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
         &self.dimensions
     }
     /// <p>Measure represents the data attribute of the time series. For example, the CPU utilization of an EC2 instance or the RPM of a wind turbine are measures. </p>
@@ -133,18 +126,12 @@ impl RecordBuilder {
         &self.measure_name
     }
     /// <p> Contains the measure value for the time-series data point. </p>
-    pub fn measure_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn measure_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.measure_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Contains the measure value for the time-series data point. </p>
-    pub fn set_measure_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_measure_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.measure_value = input;
         self
     }
@@ -158,10 +145,7 @@ impl RecordBuilder {
         self
     }
     /// <p> Contains the data type of the measure value for the time-series data point. Default type is <code>DOUBLE</code>. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data types</a>.</p>
-    pub fn set_measure_value_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MeasureValueType>,
-    ) -> Self {
+    pub fn set_measure_value_type(mut self, input: ::std::option::Option<crate::types::MeasureValueType>) -> Self {
         self.measure_value_type = input;
         self
     }
@@ -231,18 +215,13 @@ impl RecordBuilder {
     }
     /// <p> Contains the list of MeasureValue for time-series data points. </p>
     /// <p> This is only allowed for type <code>MULTI</code>. For scalar values, use <code>MeasureValue</code> attribute of the record directly. </p>
-    pub fn set_measure_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureValue>>,
-    ) -> Self {
+    pub fn set_measure_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureValue>>) -> Self {
         self.measure_values = input;
         self
     }
     /// <p> Contains the list of MeasureValue for time-series data points. </p>
     /// <p> This is only allowed for type <code>MULTI</code>. For scalar values, use <code>MeasureValue</code> attribute of the record directly. </p>
-    pub fn get_measure_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureValue>> {
+    pub fn get_measure_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureValue>> {
         &self.measure_values
     }
     /// Consumes the builder and constructs a [`Record`](crate::types::Record).

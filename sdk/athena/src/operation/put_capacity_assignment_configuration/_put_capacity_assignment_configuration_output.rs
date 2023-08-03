@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutCapacityAssignmentConfigurationOut
 }
 impl PutCapacityAssignmentConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutCapacityAssignmentConfigurationOutput`](crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationOutput).
-    pub fn builder() -> crate::operation::put_capacity_assignment_configuration::builders::PutCapacityAssignmentConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::put_capacity_assignment_configuration::builders::PutCapacityAssignmentConfigurationOutputBuilder {
         crate::operation::put_capacity_assignment_configuration::builders::PutCapacityAssignmentConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutCapacityAssignmentConfigurationOutput`](crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutCapacityAssignmentConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl PutCapacityAssignmentConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutCapacityAssignmentConfigurationOutput`](crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationOutput).
-    pub fn build(self) -> crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationOutput{
+    pub fn build(self) -> crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationOutput {
         crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationOutput {
             _request_id: self._request_id,
         }

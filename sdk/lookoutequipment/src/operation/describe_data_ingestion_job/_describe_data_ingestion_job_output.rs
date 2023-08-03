@@ -11,8 +11,7 @@ pub struct DescribeDataIngestionJobOutput {
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
     #[doc(hidden)]
-    pub ingestion_input_configuration:
-        ::std::option::Option<crate::types::IngestionInputConfiguration>,
+    pub ingestion_input_configuration: ::std::option::Option<crate::types::IngestionInputConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source being ingested. </p>
     #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -55,9 +54,7 @@ impl DescribeDataIngestionJobOutput {
         self.dataset_arn.as_deref()
     }
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-    pub fn ingestion_input_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IngestionInputConfiguration> {
+    pub fn ingestion_input_configuration(&self) -> ::std::option::Option<&crate::types::IngestionInputConfiguration> {
         self.ingestion_input_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source being ingested. </p>
@@ -81,9 +78,7 @@ impl DescribeDataIngestionJobOutput {
         self.data_quality_summary.as_ref()
     }
     /// <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
-    pub fn ingested_files_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IngestedFilesSummary> {
+    pub fn ingested_files_summary(&self) -> ::std::option::Option<&crate::types::IngestedFilesSummary> {
         self.ingested_files_summary.as_ref()
     }
     /// <p> Provides details about status of the ingestion job that is currently in progress. </p>
@@ -110,21 +105,18 @@ impl ::aws_http::request_id::RequestId for DescribeDataIngestionJobOutput {
 }
 impl DescribeDataIngestionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataIngestionJobOutput`](crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput).
-    pub fn builder() -> crate::operation::describe_data_ingestion_job::builders::DescribeDataIngestionJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_data_ingestion_job::builders::DescribeDataIngestionJobOutputBuilder {
         crate::operation::describe_data_ingestion_job::builders::DescribeDataIngestionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataIngestionJobOutput`](crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataIngestionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) ingestion_input_configuration:
-        ::std::option::Option<crate::types::IngestionInputConfiguration>,
+    pub(crate) ingestion_input_configuration: ::std::option::Option<crate::types::IngestionInputConfiguration>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::IngestionJobStatus>,
@@ -167,25 +159,17 @@ impl DescribeDataIngestionJobOutputBuilder {
         &self.dataset_arn
     }
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-    pub fn ingestion_input_configuration(
-        mut self,
-        input: crate::types::IngestionInputConfiguration,
-    ) -> Self {
+    pub fn ingestion_input_configuration(mut self, input: crate::types::IngestionInputConfiguration) -> Self {
         self.ingestion_input_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-    pub fn set_ingestion_input_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionInputConfiguration>,
-    ) -> Self {
+    pub fn set_ingestion_input_configuration(mut self, input: ::std::option::Option<crate::types::IngestionInputConfiguration>) -> Self {
         self.ingestion_input_configuration = input;
         self
     }
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-    pub fn get_ingestion_input_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::IngestionInputConfiguration> {
+    pub fn get_ingestion_input_configuration(&self) -> &::std::option::Option<crate::types::IngestionInputConfiguration> {
         &self.ingestion_input_configuration
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source being ingested. </p>
@@ -208,10 +192,7 @@ impl DescribeDataIngestionJobOutputBuilder {
         self
     }
     /// <p>The time at which the data ingestion job was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -225,10 +206,7 @@ impl DescribeDataIngestionJobOutputBuilder {
         self
     }
     /// <p>Indicates the status of the <code>DataIngestionJob</code> operation. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::IngestionJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -237,18 +215,12 @@ impl DescribeDataIngestionJobOutputBuilder {
         &self.status
     }
     /// <p>Specifies the reason for failure when a data ingestion job has failed. </p>
-    pub fn failed_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failed_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failed_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the reason for failure when a data ingestion job has failed. </p>
-    pub fn set_failed_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failed_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failed_reason = input;
         self
     }
@@ -262,17 +234,12 @@ impl DescribeDataIngestionJobOutputBuilder {
         self
     }
     /// <p> Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
-    pub fn set_data_quality_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::DataQualitySummary>,
-    ) -> Self {
+    pub fn set_data_quality_summary(mut self, input: ::std::option::Option<crate::types::DataQualitySummary>) -> Self {
         self.data_quality_summary = input;
         self
     }
     /// <p> Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
-    pub fn get_data_quality_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataQualitySummary> {
+    pub fn get_data_quality_summary(&self) -> &::std::option::Option<crate::types::DataQualitySummary> {
         &self.data_quality_summary
     }
     /// <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
@@ -281,32 +248,21 @@ impl DescribeDataIngestionJobOutputBuilder {
         self
     }
     /// <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
-    pub fn set_ingested_files_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestedFilesSummary>,
-    ) -> Self {
+    pub fn set_ingested_files_summary(mut self, input: ::std::option::Option<crate::types::IngestedFilesSummary>) -> Self {
         self.ingested_files_summary = input;
         self
     }
     /// <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
-    pub fn get_ingested_files_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::IngestedFilesSummary> {
+    pub fn get_ingested_files_summary(&self) -> &::std::option::Option<crate::types::IngestedFilesSummary> {
         &self.ingested_files_summary
     }
     /// <p> Provides details about status of the ingestion job that is currently in progress. </p>
-    pub fn status_detail(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_detail = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Provides details about status of the ingestion job that is currently in progress. </p>
-    pub fn set_status_detail(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_detail = input;
         self
     }
@@ -334,10 +290,7 @@ impl DescribeDataIngestionJobOutputBuilder {
         self
     }
     /// <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
-    pub fn set_data_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.data_start_time = input;
         self
     }
@@ -351,10 +304,7 @@ impl DescribeDataIngestionJobOutputBuilder {
         self
     }
     /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
-    pub fn set_data_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.data_end_time = input;
         self
     }
@@ -372,9 +322,7 @@ impl DescribeDataIngestionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDataIngestionJobOutput`](crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput {
+    pub fn build(self) -> crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput {
         crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput {
             job_id: self.job_id,
             dataset_arn: self.dataset_arn,

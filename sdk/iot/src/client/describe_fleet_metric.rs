@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`version(i64)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::version): <p>The version of the fleet metric.</p>
     ///   - [`metric_arn(Option<String>)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::metric_arn): <p>The ARN of the fleet metric to describe.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetMetricError>`](crate::operation::describe_fleet_metric::DescribeFleetMetricError)
-    pub fn describe_fleet_metric(
-        &self,
-    ) -> crate::operation::describe_fleet_metric::builders::DescribeFleetMetricFluentBuilder {
-        crate::operation::describe_fleet_metric::builders::DescribeFleetMetricFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_fleet_metric(&self) -> crate::operation::describe_fleet_metric::builders::DescribeFleetMetricFluentBuilder {
+        crate::operation::describe_fleet_metric::builders::DescribeFleetMetricFluentBuilder::new(self.handle.clone())
     }
 }

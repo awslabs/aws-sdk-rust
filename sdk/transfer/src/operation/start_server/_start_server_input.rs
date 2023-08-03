@@ -22,9 +22,7 @@ impl StartServerInput {
 
 /// A builder for [`StartServerInput`](crate::operation::start_server::StartServerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartServerInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl StartServerInputBuilder {
         &self.server_id
     }
     /// Consumes the builder and constructs a [`StartServerInput`](crate::operation::start_server::StartServerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_server::StartServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_server::StartServerInput {
-            server_id: self.server_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_server::StartServerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_server::StartServerInput { server_id: self.server_id })
     }
 }

@@ -27,34 +27,27 @@ impl ::std::fmt::Display for AutomationDefinitionNotFoundException {
     }
 }
 impl ::std::error::Error for AutomationDefinitionNotFoundException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::AutomationDefinitionNotFoundException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::AutomationDefinitionNotFoundException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for AutomationDefinitionNotFoundException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AutomationDefinitionNotFoundException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl AutomationDefinitionNotFoundException {
     /// Creates a new builder-style object to manufacture [`AutomationDefinitionNotFoundException`](crate::types::error::AutomationDefinitionNotFoundException).
-    pub fn builder() -> crate::types::error::builders::AutomationDefinitionNotFoundExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::AutomationDefinitionNotFoundExceptionBuilder {
         crate::types::error::builders::AutomationDefinitionNotFoundExceptionBuilder::default()
     }
 }
 
 /// A builder for [`AutomationDefinitionNotFoundException`](crate::types::error::AutomationDefinitionNotFoundException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutomationDefinitionNotFoundExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl AutomationDefinitionNotFoundExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

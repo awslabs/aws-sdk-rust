@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`container_recipe_summary_list(Option<Vec<ContainerRecipeSummary>>)`](crate::operation::list_container_recipes::ListContainerRecipesOutput::container_recipe_summary_list): <p>The list of container recipes returned for the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_container_recipes::ListContainerRecipesOutput::next_token): <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     /// - On failure, responds with [`SdkError<ListContainerRecipesError>`](crate::operation::list_container_recipes::ListContainerRecipesError)
-    pub fn list_container_recipes(
-        &self,
-    ) -> crate::operation::list_container_recipes::builders::ListContainerRecipesFluentBuilder {
-        crate::operation::list_container_recipes::builders::ListContainerRecipesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_container_recipes(&self) -> crate::operation::list_container_recipes::builders::ListContainerRecipesFluentBuilder {
+        crate::operation::list_container_recipes::builders::ListContainerRecipesFluentBuilder::new(self.handle.clone())
     }
 }

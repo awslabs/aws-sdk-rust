@@ -10,10 +10,7 @@ impl UpdateConnectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_connection::UpdateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connection::UpdateConnectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection::UpdateConnectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_connection();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl UpdateConnectionFluentBuilder {
         }
     }
     /// Access the UpdateConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_connection::builders::UpdateConnectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_connection::builders::UpdateConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl UpdateConnectionFluentBuilder {
             crate::operation::update_connection::UpdateConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connection::UpdateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection::UpdateConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl UpdateConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl UpdateConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connection::UpdateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connection::UpdateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection::UpdateConnectionError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl UpdateConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connection::UpdateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connection::UpdateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection::UpdateConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -121,27 +107,19 @@ impl UpdateConnectionFluentBuilder {
             crate::operation::update_connection::UpdateConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connection::UpdateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection::UpdateConnectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the dedicated connection.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the dedicated connection.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }
@@ -151,18 +129,12 @@ impl UpdateConnectionFluentBuilder {
         self.inner.get_connection_id()
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_name(input.into());
         self
     }
     /// <p>The name of the connection.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_name(input);
         self
     }
@@ -172,19 +144,13 @@ impl UpdateConnectionFluentBuilder {
     }
     /// <p>The connection MAC Security (MACsec) encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.encryption_mode(input.into());
         self
     }
     /// <p>The connection MAC Security (MACsec) encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn set_encryption_mode(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_encryption_mode(input);
         self
     }

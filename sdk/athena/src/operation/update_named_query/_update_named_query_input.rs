@@ -36,17 +36,14 @@ impl UpdateNamedQueryInput {
 }
 impl UpdateNamedQueryInput {
     /// Creates a new builder-style object to manufacture [`UpdateNamedQueryInput`](crate::operation::update_named_query::UpdateNamedQueryInput).
-    pub fn builder() -> crate::operation::update_named_query::builders::UpdateNamedQueryInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_named_query::builders::UpdateNamedQueryInputBuilder {
         crate::operation::update_named_query::builders::UpdateNamedQueryInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNamedQueryInput`](crate::operation::update_named_query::UpdateNamedQueryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNamedQueryInputBuilder {
     pub(crate) named_query_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct UpdateNamedQueryInputBuilder {
 }
 impl UpdateNamedQueryInputBuilder {
     /// <p>The unique identifier (UUID) of the query.</p>
-    pub fn named_query_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn named_query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.named_query_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier (UUID) of the query.</p>
-    pub fn set_named_query_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_named_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.named_query_id = input;
         self
     }
@@ -119,17 +110,12 @@ impl UpdateNamedQueryInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNamedQueryInput`](crate::operation::update_named_query::UpdateNamedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_named_query::UpdateNamedQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_named_query::UpdateNamedQueryInput {
-                named_query_id: self.named_query_id,
-                name: self.name,
-                description: self.description,
-                query_string: self.query_string,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_named_query::UpdateNamedQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_named_query::UpdateNamedQueryInput {
+            named_query_id: self.named_query_id,
+            name: self.name,
+            description: self.description,
+            query_string: self.query_string,
+        })
     }
 }

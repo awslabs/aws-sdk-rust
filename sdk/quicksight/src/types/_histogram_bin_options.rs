@@ -44,9 +44,7 @@ impl HistogramBinOptions {
 
 /// A builder for [`HistogramBinOptions`](crate::types::HistogramBinOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HistogramBinOptionsBuilder {
     pub(crate) selected_bin_type: ::std::option::Option<crate::types::HistogramBinType>,
     pub(crate) bin_count: ::std::option::Option<crate::types::BinCountOptions>,
@@ -60,10 +58,7 @@ impl HistogramBinOptionsBuilder {
         self
     }
     /// <p>The options that determine the selected bin type.</p>
-    pub fn set_selected_bin_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HistogramBinType>,
-    ) -> Self {
+    pub fn set_selected_bin_type(mut self, input: ::std::option::Option<crate::types::HistogramBinType>) -> Self {
         self.selected_bin_type = input;
         self
     }
@@ -77,10 +72,7 @@ impl HistogramBinOptionsBuilder {
         self
     }
     /// <p>The options that determine the bin count of a histogram.</p>
-    pub fn set_bin_count(
-        mut self,
-        input: ::std::option::Option<crate::types::BinCountOptions>,
-    ) -> Self {
+    pub fn set_bin_count(mut self, input: ::std::option::Option<crate::types::BinCountOptions>) -> Self {
         self.bin_count = input;
         self
     }
@@ -94,10 +86,7 @@ impl HistogramBinOptionsBuilder {
         self
     }
     /// <p>The options that determine the bin width of a histogram.</p>
-    pub fn set_bin_width(
-        mut self,
-        input: ::std::option::Option<crate::types::BinWidthOptions>,
-    ) -> Self {
+    pub fn set_bin_width(mut self, input: ::std::option::Option<crate::types::BinWidthOptions>) -> Self {
         self.bin_width = input;
         self
     }

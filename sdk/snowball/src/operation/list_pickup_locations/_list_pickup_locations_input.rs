@@ -22,18 +22,14 @@ impl ListPickupLocationsInput {
 }
 impl ListPickupLocationsInput {
     /// Creates a new builder-style object to manufacture [`ListPickupLocationsInput`](crate::operation::list_pickup_locations::ListPickupLocationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_pickup_locations::builders::ListPickupLocationsInputBuilder {
-        crate::operation::list_pickup_locations::builders::ListPickupLocationsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_pickup_locations::builders::ListPickupLocationsInputBuilder {
+        crate::operation::list_pickup_locations::builders::ListPickupLocationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPickupLocationsInput`](crate::operation::list_pickup_locations::ListPickupLocationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPickupLocationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl ListPickupLocationsInputBuilder {
     /// Consumes the builder and constructs a [`ListPickupLocationsInput`](crate::operation::list_pickup_locations::ListPickupLocationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_pickup_locations::ListPickupLocationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_pickup_locations::ListPickupLocationsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_pickup_locations::ListPickupLocationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_pickup_locations::ListPickupLocationsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -26,7 +26,7 @@ impl DeleteAlertManagerDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAlertManagerDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionInputBuilder,
+    inner: crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionInputBuilder,
 }
 impl DeleteAlertManagerDefinitionFluentBuilder {
     /// Creates a new `DeleteAlertManagerDefinition`.
@@ -37,7 +37,7 @@ impl DeleteAlertManagerDefinitionFluentBuilder {
         }
     }
     /// Access the DeleteAlertManagerDefinition as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteAlertManagerDefinitionFluentBuilder {
             crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteAlertManagerDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteAlertManagerDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteAlertManagerDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteAlertManagerDefinitionFluentBuilder {
             crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionError>,
     > {
         self.customize_middleware().await
     }

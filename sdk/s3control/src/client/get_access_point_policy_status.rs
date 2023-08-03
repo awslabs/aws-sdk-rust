@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetAccessPointPolicyStatusOutput`](crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusOutput) with field(s):
     ///   - [`policy_status(Option<PolicyStatus>)`](crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusOutput::policy_status): <p>Indicates the current policy status of the specified access point.</p>
     /// - On failure, responds with [`SdkError<GetAccessPointPolicyStatusError>`](crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusError)
-    pub fn get_access_point_policy_status(&self) -> crate::operation::get_access_point_policy_status::builders::GetAccessPointPolicyStatusFluentBuilder{
+    pub fn get_access_point_policy_status(
+        &self,
+    ) -> crate::operation::get_access_point_policy_status::builders::GetAccessPointPolicyStatusFluentBuilder {
         crate::operation::get_access_point_policy_status::builders::GetAccessPointPolicyStatusFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListJobTemplatesOutput {
 }
 impl ListJobTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListJobTemplatesOutput`](crate::operation::list_job_templates::ListJobTemplatesOutput).
-    pub fn builder() -> crate::operation::list_job_templates::builders::ListJobTemplatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_job_templates::builders::ListJobTemplatesOutputBuilder {
         crate::operation::list_job_templates::builders::ListJobTemplatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListJobTemplatesOutput`](crate::operation::list_job_templates::ListJobTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobTemplatesOutputBuilder {
     pub(crate) job_templates: ::std::option::Option<::std::vec::Vec<crate::types::JobTemplate>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListJobTemplatesOutputBuilder {
         self
     }
     /// List of Job templates.
-    pub fn set_job_templates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobTemplate>>,
-    ) -> Self {
+    pub fn set_job_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobTemplate>>) -> Self {
         self.job_templates = input;
         self
     }
     /// List of Job templates.
-    pub fn get_job_templates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobTemplate>> {
+    pub fn get_job_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobTemplate>> {
         &self.job_templates
     }
     /// Use this string to request the next batch of job templates.

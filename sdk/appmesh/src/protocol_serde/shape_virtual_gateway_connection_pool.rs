@@ -23,11 +23,9 @@ pub fn ser_virtual_gateway_connection_pool(
             object_3.finish();
         }
         crate::types::VirtualGatewayConnectionPool::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "VirtualGatewayConnectionPool",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "VirtualGatewayConnectionPool",
+            ))
         }
     }
     Ok(())
@@ -35,17 +33,9 @@ pub fn ser_virtual_gateway_connection_pool(
 
 pub(crate) fn de_virtual_gateway_connection_pool<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::VirtualGatewayConnectionPool>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::VirtualGatewayConnectionPool>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -55,53 +45,41 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "http" => {
-                                Some(crate::types::VirtualGatewayConnectionPool::Http(
-                                    crate::protocol_serde::shape_virtual_gateway_http_connection_pool::de_virtual_gateway_http_connection_pool(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http' cannot be null"))?
-                                ))
-                            }
-                            "http2" => {
-                                Some(crate::types::VirtualGatewayConnectionPool::Http2(
-                                    crate::protocol_serde::shape_virtual_gateway_http2_connection_pool::de_virtual_gateway_http2_connection_pool(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http2' cannot be null"))?
-                                ))
-                            }
-                            "grpc" => {
-                                Some(crate::types::VirtualGatewayConnectionPool::Grpc(
-                                    crate::protocol_serde::shape_virtual_gateway_grpc_connection_pool::de_virtual_gateway_grpc_connection_pool(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'grpc' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::VirtualGatewayConnectionPool::Unknown)
-                                                                    }
-                        };
+                        "http" => Some(crate::types::VirtualGatewayConnectionPool::Http(
+                            crate::protocol_serde::shape_virtual_gateway_http_connection_pool::de_virtual_gateway_http_connection_pool(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http' cannot be null"))?,
+                        )),
+                        "http2" => Some(crate::types::VirtualGatewayConnectionPool::Http2(
+                            crate::protocol_serde::shape_virtual_gateway_http2_connection_pool::de_virtual_gateway_http2_connection_pool(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http2' cannot be null"))?,
+                        )),
+                        "grpc" => Some(crate::types::VirtualGatewayConnectionPool::Grpc(
+                            crate::protocol_serde::shape_virtual_gateway_grpc_connection_pool::de_virtual_gateway_grpc_connection_pool(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'grpc' cannot be null"))?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::VirtualGatewayConnectionPool::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

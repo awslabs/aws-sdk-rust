@@ -15,17 +15,14 @@ impl DescribeAuditTaskInput {
 }
 impl DescribeAuditTaskInput {
     /// Creates a new builder-style object to manufacture [`DescribeAuditTaskInput`](crate::operation::describe_audit_task::DescribeAuditTaskInput).
-    pub fn builder(
-    ) -> crate::operation::describe_audit_task::builders::DescribeAuditTaskInputBuilder {
+    pub fn builder() -> crate::operation::describe_audit_task::builders::DescribeAuditTaskInputBuilder {
         crate::operation::describe_audit_task::builders::DescribeAuditTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAuditTaskInput`](crate::operation::describe_audit_task::DescribeAuditTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAuditTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl DescribeAuditTaskInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAuditTaskInput`](crate::operation::describe_audit_task::DescribeAuditTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_audit_task::DescribeAuditTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_audit_task::DescribeAuditTaskInput {
-                task_id: self.task_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_audit_task::DescribeAuditTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_audit_task::DescribeAuditTaskInput { task_id: self.task_id })
     }
 }

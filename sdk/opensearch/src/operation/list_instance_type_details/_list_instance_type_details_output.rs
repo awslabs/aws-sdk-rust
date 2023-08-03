@@ -5,8 +5,7 @@
 pub struct ListInstanceTypeDetailsOutput {
     /// <p>Lists all supported instance types and features for the given OpenSearch or Elasticsearch version.</p>
     #[doc(hidden)]
-    pub instance_type_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeDetails>>,
+    pub instance_type_details: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeDetails>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListInstanceTypeDetailsOutput {
 }
 impl ListInstanceTypeDetailsOutput {
     /// <p>Lists all supported instance types and features for the given OpenSearch or Elasticsearch version.</p>
-    pub fn instance_type_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceTypeDetails]> {
+    pub fn instance_type_details(&self) -> ::std::option::Option<&[crate::types::InstanceTypeDetails]> {
         self.instance_type_details.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListInstanceTypeDetailsOutput {
 }
 impl ListInstanceTypeDetailsOutput {
     /// Creates a new builder-style object to manufacture [`ListInstanceTypeDetailsOutput`](crate::operation::list_instance_type_details::ListInstanceTypeDetailsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsOutputBuilder {
         crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInstanceTypeDetailsOutput`](crate::operation::list_instance_type_details::ListInstanceTypeDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstanceTypeDetailsOutputBuilder {
-    pub(crate) instance_type_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeDetails>>,
+    pub(crate) instance_type_details: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListInstanceTypeDetailsOutputBuilder {
         self
     }
     /// <p>Lists all supported instance types and features for the given OpenSearch or Elasticsearch version.</p>
-    pub fn set_instance_type_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeDetails>>,
-    ) -> Self {
+    pub fn set_instance_type_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeDetails>>) -> Self {
         self.instance_type_details = input;
         self
     }
     /// <p>Lists all supported instance types and features for the given OpenSearch or Elasticsearch version.</p>
-    pub fn get_instance_type_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeDetails>> {
+    pub fn get_instance_type_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeDetails>> {
         &self.instance_type_details
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
@@ -99,9 +86,7 @@ impl ListInstanceTypeDetailsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListInstanceTypeDetailsOutput`](crate::operation::list_instance_type_details::ListInstanceTypeDetailsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_instance_type_details::ListInstanceTypeDetailsOutput {
+    pub fn build(self) -> crate::operation::list_instance_type_details::ListInstanceTypeDetailsOutput {
         crate::operation::list_instance_type_details::ListInstanceTypeDetailsOutput {
             instance_type_details: self.instance_type_details,
             next_token: self.next_token,

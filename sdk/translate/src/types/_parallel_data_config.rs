@@ -30,9 +30,7 @@ impl ParallelDataConfig {
 
 /// A builder for [`ParallelDataConfig`](crate::types::ParallelDataConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParallelDataConfigBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::ParallelDataFormat>,
@@ -58,10 +56,7 @@ impl ParallelDataConfigBuilder {
         self
     }
     /// <p>The format of the parallel data input file.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ParallelDataFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::ParallelDataFormat>) -> Self {
         self.format = input;
         self
     }

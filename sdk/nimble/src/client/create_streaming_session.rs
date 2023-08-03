@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateStreamingSessionOutput`](crate::operation::create_streaming_session::CreateStreamingSessionOutput) with field(s):
     ///   - [`session(Option<StreamingSession>)`](crate::operation::create_streaming_session::CreateStreamingSessionOutput::session): <p>The session.</p>
     /// - On failure, responds with [`SdkError<CreateStreamingSessionError>`](crate::operation::create_streaming_session::CreateStreamingSessionError)
-    pub fn create_streaming_session(
-        &self,
-    ) -> crate::operation::create_streaming_session::builders::CreateStreamingSessionFluentBuilder
-    {
+    pub fn create_streaming_session(&self) -> crate::operation::create_streaming_session::builders::CreateStreamingSessionFluentBuilder {
         crate::operation::create_streaming_session::builders::CreateStreamingSessionFluentBuilder::new(self.handle.clone())
     }
 }

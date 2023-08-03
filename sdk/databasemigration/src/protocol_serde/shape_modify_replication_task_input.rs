@@ -7,9 +7,7 @@ pub fn ser_modify_replication_task_input(
         object.key("ReplicationTaskArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.replication_task_identifier {
-        object
-            .key("ReplicationTaskIdentifier")
-            .string(var_2.as_str());
+        object.key("ReplicationTaskIdentifier").string(var_2.as_str());
     }
     if let Some(var_3) = &input.migration_type {
         object.key("MigrationType").string(var_3.as_str());

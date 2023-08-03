@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceAttributeType {
     #[allow(missing_docs)] // documentation missing in model
@@ -91,9 +85,7 @@ impl ::std::convert::From<&str> for ResourceAttributeType {
             "VM_MANAGER_ID" => ResourceAttributeType::VmManagerId,
             "VM_NAME" => ResourceAttributeType::VmName,
             "VM_PATH" => ResourceAttributeType::VmPath,
-            other => ResourceAttributeType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResourceAttributeType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

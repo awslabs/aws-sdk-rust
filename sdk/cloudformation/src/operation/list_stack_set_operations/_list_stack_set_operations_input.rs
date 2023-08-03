@@ -46,18 +46,14 @@ impl ListStackSetOperationsInput {
 }
 impl ListStackSetOperationsInput {
     /// Creates a new builder-style object to manufacture [`ListStackSetOperationsInput`](crate::operation::list_stack_set_operations::ListStackSetOperationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_stack_set_operations::builders::ListStackSetOperationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_stack_set_operations::builders::ListStackSetOperationsInputBuilder {
         crate::operation::list_stack_set_operations::builders::ListStackSetOperationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStackSetOperationsInput`](crate::operation::list_stack_set_operations::ListStackSetOperationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStackSetOperationsInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -66,18 +62,12 @@ pub struct ListStackSetOperationsInputBuilder {
 }
 impl ListStackSetOperationsInputBuilder {
     /// <p>The name or unique ID of the stack set that you want to get operation summaries for.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or unique ID of the stack set that you want to get operation summaries for.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_set_name = input;
         self
     }
@@ -149,13 +139,11 @@ impl ListStackSetOperationsInputBuilder {
         crate::operation::list_stack_set_operations::ListStackSetOperationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_stack_set_operations::ListStackSetOperationsInput {
-                stack_set_name: self.stack_set_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                call_as: self.call_as,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_stack_set_operations::ListStackSetOperationsInput {
+            stack_set_name: self.stack_set_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            call_as: self.call_as,
+        })
     }
 }

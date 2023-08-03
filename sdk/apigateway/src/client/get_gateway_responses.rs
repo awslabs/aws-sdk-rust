@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<GatewayResponse>>)`](crate::operation::get_gateway_responses::GetGatewayResponsesOutput::items): <p>Returns the entire collection, because of no pagination support.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_gateway_responses::GetGatewayResponsesOutput::position): <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
     /// - On failure, responds with [`SdkError<GetGatewayResponsesError>`](crate::operation::get_gateway_responses::GetGatewayResponsesError)
-    pub fn get_gateway_responses(
-        &self,
-    ) -> crate::operation::get_gateway_responses::builders::GetGatewayResponsesFluentBuilder {
-        crate::operation::get_gateway_responses::builders::GetGatewayResponsesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_gateway_responses(&self) -> crate::operation::get_gateway_responses::builders::GetGatewayResponsesFluentBuilder {
+        crate::operation::get_gateway_responses::builders::GetGatewayResponsesFluentBuilder::new(self.handle.clone())
     }
 }

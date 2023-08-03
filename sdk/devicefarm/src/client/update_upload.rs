@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateUploadOutput`](crate::operation::update_upload::UpdateUploadOutput) with field(s):
     ///   - [`upload(Option<Upload>)`](crate::operation::update_upload::UpdateUploadOutput::upload): <p>A test spec uploaded to Device Farm.</p>
     /// - On failure, responds with [`SdkError<UpdateUploadError>`](crate::operation::update_upload::UpdateUploadError)
-    pub fn update_upload(
-        &self,
-    ) -> crate::operation::update_upload::builders::UpdateUploadFluentBuilder {
-        crate::operation::update_upload::builders::UpdateUploadFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_upload(&self) -> crate::operation::update_upload::builders::UpdateUploadFluentBuilder {
+        crate::operation::update_upload::builders::UpdateUploadFluentBuilder::new(self.handle.clone())
     }
 }

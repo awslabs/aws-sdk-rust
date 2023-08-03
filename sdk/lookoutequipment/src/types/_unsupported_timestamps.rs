@@ -23,9 +23,7 @@ impl UnsupportedTimestamps {
 
 /// A builder for [`UnsupportedTimestamps`](crate::types::UnsupportedTimestamps).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnsupportedTimestampsBuilder {
     pub(crate) total_number_of_unsupported_timestamps: ::std::option::Option<i32>,
 }
@@ -36,10 +34,7 @@ impl UnsupportedTimestampsBuilder {
         self
     }
     /// <p> Indicates the total number of unsupported timestamps across the ingested data. </p>
-    pub fn set_total_number_of_unsupported_timestamps(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_total_number_of_unsupported_timestamps(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_number_of_unsupported_timestamps = input;
         self
     }

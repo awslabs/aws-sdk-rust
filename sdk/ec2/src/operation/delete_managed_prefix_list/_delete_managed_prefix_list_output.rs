@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteManagedPrefixListOutput {
 }
 impl DeleteManagedPrefixListOutput {
     /// Creates a new builder-style object to manufacture [`DeleteManagedPrefixListOutput`](crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListOutputBuilder {
         crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteManagedPrefixListOutput`](crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteManagedPrefixListOutputBuilder {
     pub(crate) prefix_list: ::std::option::Option<crate::types::ManagedPrefixList>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteManagedPrefixListOutputBuilder {
         self
     }
     /// <p>Information about the prefix list.</p>
-    pub fn set_prefix_list(
-        mut self,
-        input: ::std::option::Option<crate::types::ManagedPrefixList>,
-    ) -> Self {
+    pub fn set_prefix_list(mut self, input: ::std::option::Option<crate::types::ManagedPrefixList>) -> Self {
         self.prefix_list = input;
         self
     }
@@ -65,9 +58,7 @@ impl DeleteManagedPrefixListOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteManagedPrefixListOutput`](crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListOutput {
+    pub fn build(self) -> crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListOutput {
         crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListOutput {
             prefix_list: self.prefix_list,
             _request_id: self._request_id,

@@ -29,17 +29,14 @@ impl ListEngineVersionsInput {
 }
 impl ListEngineVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListEngineVersionsInput`](crate::operation::list_engine_versions::ListEngineVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_engine_versions::builders::ListEngineVersionsInputBuilder {
+    pub fn builder() -> crate::operation::list_engine_versions::builders::ListEngineVersionsInputBuilder {
         crate::operation::list_engine_versions::builders::ListEngineVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEngineVersionsInput`](crate::operation::list_engine_versions::ListEngineVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEngineVersionsInputBuilder {
     pub(crate) engine_type: ::std::option::Option<crate::types::EngineType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,10 +49,7 @@ impl ListEngineVersionsInputBuilder {
         self
     }
     /// <p>The type of target platform.</p>
-    pub fn set_engine_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineType>,
-    ) -> Self {
+    pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
         self.engine_type = input;
         self
     }
@@ -94,16 +88,11 @@ impl ListEngineVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListEngineVersionsInput`](crate::operation::list_engine_versions::ListEngineVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_engine_versions::ListEngineVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_engine_versions::ListEngineVersionsInput {
-                engine_type: self.engine_type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_engine_versions::ListEngineVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_engine_versions::ListEngineVersionsInput {
+            engine_type: self.engine_type,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

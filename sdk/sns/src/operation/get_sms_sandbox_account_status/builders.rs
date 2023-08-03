@@ -27,7 +27,7 @@ impl GetSmsSandboxAccountStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSMSSandboxAccountStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_sms_sandbox_account_status::builders::GetSmsSandboxAccountStatusInputBuilder,
+    inner: crate::operation::get_sms_sandbox_account_status::builders::GetSmsSandboxAccountStatusInputBuilder,
 }
 impl GetSMSSandboxAccountStatusFluentBuilder {
     /// Creates a new `GetSMSSandboxAccountStatus`.
@@ -38,7 +38,7 @@ impl GetSMSSandboxAccountStatusFluentBuilder {
         }
     }
     /// Access the GetSMSSandboxAccountStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_sms_sandbox_account_status::builders::GetSmsSandboxAccountStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_sms_sandbox_account_status::builders::GetSmsSandboxAccountStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetSMSSandboxAccountStatusFluentBuilder {
             crate::operation::get_sms_sandbox_account_status::GetSMSSandboxAccountStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sms_sandbox_account_status::GetSMSSandboxAccountStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sms_sandbox_account_status::GetSMSSandboxAccountStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetSMSSandboxAccountStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetSMSSandboxAccountStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sms_sandbox_account_status::GetSMSSandboxAccountStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sms_sandbox_account_status::GetSMSSandboxAccountStatusError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetSMSSandboxAccountStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sms_sandbox_account_status::GetSMSSandboxAccountStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sms_sandbox_account_status::GetSMSSandboxAccountStatusError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetSMSSandboxAccountStatusFluentBuilder {
             crate::operation::get_sms_sandbox_account_status::GetSMSSandboxAccountStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sms_sandbox_account_status::GetSMSSandboxAccountStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sms_sandbox_account_status::GetSMSSandboxAccountStatusError>,
     > {
         self.customize_middleware().await
     }

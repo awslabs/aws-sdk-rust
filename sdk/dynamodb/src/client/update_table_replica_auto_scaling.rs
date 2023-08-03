@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateTableReplicaAutoScalingOutput`](crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingOutput) with field(s):
     ///   - [`table_auto_scaling_description(Option<TableAutoScalingDescription>)`](crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingOutput::table_auto_scaling_description): <p>Returns information about the auto scaling settings of a table with replicas.</p>
     /// - On failure, responds with [`SdkError<UpdateTableReplicaAutoScalingError>`](crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingError)
-    pub fn update_table_replica_auto_scaling(&self) -> crate::operation::update_table_replica_auto_scaling::builders::UpdateTableReplicaAutoScalingFluentBuilder{
+    pub fn update_table_replica_auto_scaling(
+        &self,
+    ) -> crate::operation::update_table_replica_auto_scaling::builders::UpdateTableReplicaAutoScalingFluentBuilder {
         crate::operation::update_table_replica_auto_scaling::builders::UpdateTableReplicaAutoScalingFluentBuilder::new(self.handle.clone())
     }
 }

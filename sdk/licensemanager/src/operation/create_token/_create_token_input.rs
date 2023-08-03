@@ -50,9 +50,7 @@ impl CreateTokenInput {
 
 /// A builder for [`CreateTokenInput`](crate::operation::create_token::CreateTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTokenInputBuilder {
     pub(crate) license_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -87,10 +85,7 @@ impl CreateTokenInputBuilder {
         self
     }
     /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
-    pub fn set_role_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_role_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.role_arns = input;
         self
     }
@@ -117,27 +112,19 @@ impl CreateTokenInputBuilder {
     /// To override the contents of this collection use [`set_token_properties`](Self::set_token_properties).
     ///
     /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
-    pub fn token_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn token_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.token_properties.unwrap_or_default();
         v.push(input.into());
         self.token_properties = ::std::option::Option::Some(v);
         self
     }
     /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
-    pub fn set_token_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_token_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.token_properties = input;
         self
     }
     /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
-    pub fn get_token_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_token_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.token_properties
     }
     /// <p>Idempotency token, valid for 10 minutes.</p>
@@ -155,12 +142,7 @@ impl CreateTokenInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateTokenInput`](crate::operation::create_token::CreateTokenInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_token::CreateTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_token::CreateTokenInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_token::CreateTokenInput {
             license_arn: self.license_arn,
             role_arns: self.role_arns,

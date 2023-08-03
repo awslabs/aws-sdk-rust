@@ -43,9 +43,7 @@ impl RotationRulesType {
 
 /// A builder for [`RotationRulesType`](crate::types::RotationRulesType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RotationRulesTypeBuilder {
     pub(crate) automatically_after_days: ::std::option::Option<i64>,
     pub(crate) duration: ::std::option::Option<::std::string::String>,
@@ -86,20 +84,14 @@ impl RotationRulesTypeBuilder {
     /// <p>A <code>cron()</code> or <code>rate()</code> expression that defines the schedule for rotating your secret. Secrets Manager rotation schedules use UTC time zone. Secrets Manager rotates your secret any time during a rotation window.</p>
     /// <p>Secrets Manager <code>rate()</code> expressions represent the interval in hours or days that you want to rotate your secret, for example <code>rate(12 hours)</code> or <code>rate(10 days)</code>. You can rotate a secret as often as every four hours. If you use a <code>rate()</code> expression, the rotation window starts at midnight. For a rate in hours, the default rotation window closes after one hour. For a rate in days, the default rotation window closes at the end of the day. You can set the <code>Duration</code> to change the rotation window. The rotation window must not extend into the next UTC day or into the next rotation window.</p>
     /// <p>You can use a <code>cron()</code> expression to create a rotation schedule that is more detailed than a rotation interval. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a> in the <i>Secrets Manager Users Guide</i>. For a cron expression that represents a schedule in hours, the default rotation window closes after one hour. For a cron expression that represents a schedule in days, the default rotation window closes at the end of the day. You can set the <code>Duration</code> to change the rotation window. The rotation window must not extend into the next UTC day or into the next rotation window.</p>
-    pub fn schedule_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A <code>cron()</code> or <code>rate()</code> expression that defines the schedule for rotating your secret. Secrets Manager rotation schedules use UTC time zone. Secrets Manager rotates your secret any time during a rotation window.</p>
     /// <p>Secrets Manager <code>rate()</code> expressions represent the interval in hours or days that you want to rotate your secret, for example <code>rate(12 hours)</code> or <code>rate(10 days)</code>. You can rotate a secret as often as every four hours. If you use a <code>rate()</code> expression, the rotation window starts at midnight. For a rate in hours, the default rotation window closes after one hour. For a rate in days, the default rotation window closes at the end of the day. You can set the <code>Duration</code> to change the rotation window. The rotation window must not extend into the next UTC day or into the next rotation window.</p>
     /// <p>You can use a <code>cron()</code> expression to create a rotation schedule that is more detailed than a rotation interval. For more information, including examples, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_schedule.html">Schedule expressions in Secrets Manager rotation</a> in the <i>Secrets Manager Users Guide</i>. For a cron expression that represents a schedule in hours, the default rotation window closes after one hour. For a cron expression that represents a schedule in days, the default rotation window closes at the end of the day. You can set the <code>Duration</code> to change the rotation window. The rotation window must not extend into the next UTC day or into the next rotation window.</p>
-    pub fn set_schedule_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression = input;
         self
     }

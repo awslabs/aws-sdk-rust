@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for EnableHostedZoneDnssecOutput {
 }
 impl EnableHostedZoneDnssecOutput {
     /// Creates a new builder-style object to manufacture [`EnableHostedZoneDnssecOutput`](crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDnssecOutput).
-    pub fn builder(
-    ) -> crate::operation::enable_hosted_zone_dnssec::builders::EnableHostedZoneDnssecOutputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_hosted_zone_dnssec::builders::EnableHostedZoneDnssecOutputBuilder {
         crate::operation::enable_hosted_zone_dnssec::builders::EnableHostedZoneDnssecOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableHostedZoneDnssecOutput`](crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDnssecOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableHostedZoneDnssecOutputBuilder {
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl EnableHostedZoneDnssecOutputBuilder {
         self
     }
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
-    pub fn set_change_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeInfo>,
-    ) -> Self {
+    pub fn set_change_info(mut self, input: ::std::option::Option<crate::types::ChangeInfo>) -> Self {
         self.change_info = input;
         self
     }
@@ -65,9 +58,7 @@ impl EnableHostedZoneDnssecOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableHostedZoneDnssecOutput`](crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDnssecOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDnssecOutput {
+    pub fn build(self) -> crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDnssecOutput {
         crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDnssecOutput {
             change_info: self.change_info,
             _request_id: self._request_id,

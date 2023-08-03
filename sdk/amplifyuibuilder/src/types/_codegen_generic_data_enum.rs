@@ -23,9 +23,7 @@ impl CodegenGenericDataEnum {
 
 /// A builder for [`CodegenGenericDataEnum`](crate::types::CodegenGenericDataEnum).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodegenGenericDataEnumBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl CodegenGenericDataEnumBuilder {
         self
     }
     /// <p>The list of enum values in the generic data schema.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -55,8 +50,6 @@ impl CodegenGenericDataEnumBuilder {
     }
     /// Consumes the builder and constructs a [`CodegenGenericDataEnum`](crate::types::CodegenGenericDataEnum).
     pub fn build(self) -> crate::types::CodegenGenericDataEnum {
-        crate::types::CodegenGenericDataEnum {
-            values: self.values,
-        }
+        crate::types::CodegenGenericDataEnum { values: self.values }
     }
 }

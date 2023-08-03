@@ -23,9 +23,7 @@ impl OnDemandResizingSpecification {
 
 /// A builder for [`OnDemandResizingSpecification`](crate::types::OnDemandResizingSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OnDemandResizingSpecificationBuilder {
     pub(crate) timeout_duration_minutes: ::std::option::Option<i32>,
 }

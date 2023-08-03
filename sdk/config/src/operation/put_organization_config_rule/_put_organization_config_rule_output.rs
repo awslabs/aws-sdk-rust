@@ -21,41 +21,31 @@ impl ::aws_http::request_id::RequestId for PutOrganizationConfigRuleOutput {
 }
 impl PutOrganizationConfigRuleOutput {
     /// Creates a new builder-style object to manufacture [`PutOrganizationConfigRuleOutput`](crate::operation::put_organization_config_rule::PutOrganizationConfigRuleOutput).
-    pub fn builder() -> crate::operation::put_organization_config_rule::builders::PutOrganizationConfigRuleOutputBuilder{
+    pub fn builder() -> crate::operation::put_organization_config_rule::builders::PutOrganizationConfigRuleOutputBuilder {
         crate::operation::put_organization_config_rule::builders::PutOrganizationConfigRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutOrganizationConfigRuleOutput`](crate::operation::put_organization_config_rule::PutOrganizationConfigRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutOrganizationConfigRuleOutputBuilder {
     pub(crate) organization_config_rule_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PutOrganizationConfigRuleOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an organization Config rule.</p>
-    pub fn organization_config_rule_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_config_rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_config_rule_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an organization Config rule.</p>
-    pub fn set_organization_config_rule_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_config_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_config_rule_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an organization Config rule.</p>
-    pub fn get_organization_config_rule_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_organization_config_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_config_rule_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,9 +58,7 @@ impl PutOrganizationConfigRuleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutOrganizationConfigRuleOutput`](crate::operation::put_organization_config_rule::PutOrganizationConfigRuleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_organization_config_rule::PutOrganizationConfigRuleOutput {
+    pub fn build(self) -> crate::operation::put_organization_config_rule::PutOrganizationConfigRuleOutput {
         crate::operation::put_organization_config_rule::PutOrganizationConfigRuleOutput {
             organization_config_rule_arn: self.organization_config_rule_arn,
             _request_id: self._request_id,

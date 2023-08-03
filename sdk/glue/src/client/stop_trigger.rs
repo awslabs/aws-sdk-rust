@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StopTriggerOutput`](crate::operation::stop_trigger::StopTriggerOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::stop_trigger::StopTriggerOutput::name): <p>The name of the trigger that was stopped.</p>
     /// - On failure, responds with [`SdkError<StopTriggerError>`](crate::operation::stop_trigger::StopTriggerError)
-    pub fn stop_trigger(
-        &self,
-    ) -> crate::operation::stop_trigger::builders::StopTriggerFluentBuilder {
+    pub fn stop_trigger(&self) -> crate::operation::stop_trigger::builders::StopTriggerFluentBuilder {
         crate::operation::stop_trigger::builders::StopTriggerFluentBuilder::new(self.handle.clone())
     }
 }

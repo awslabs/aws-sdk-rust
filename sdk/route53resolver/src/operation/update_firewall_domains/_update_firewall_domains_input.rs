@@ -55,18 +55,14 @@ impl UpdateFirewallDomainsInput {
 }
 impl UpdateFirewallDomainsInput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallDomainsInput`](crate::operation::update_firewall_domains::UpdateFirewallDomainsInput).
-    pub fn builder(
-    ) -> crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsInputBuilder {
         crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFirewallDomainsInput`](crate::operation::update_firewall_domains::UpdateFirewallDomainsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFirewallDomainsInputBuilder {
     pub(crate) firewall_domain_list_id: ::std::option::Option<::std::string::String>,
     pub(crate) operation: ::std::option::Option<crate::types::FirewallDomainUpdateOperation>,
@@ -74,18 +70,12 @@ pub struct UpdateFirewallDomainsInputBuilder {
 }
 impl UpdateFirewallDomainsInputBuilder {
     /// <p>The ID of the domain list whose domains you want to update. </p>
-    pub fn firewall_domain_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_domain_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the domain list whose domains you want to update. </p>
-    pub fn set_firewall_domain_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_domain_list_id = input;
         self
     }
@@ -109,10 +99,7 @@ impl UpdateFirewallDomainsInputBuilder {
     /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li>
     /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li>
     /// </ul>
-    pub fn set_operation(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallDomainUpdateOperation>,
-    ) -> Self {
+    pub fn set_operation(mut self, input: ::std::option::Option<crate::types::FirewallDomainUpdateOperation>) -> Self {
         self.operation = input;
         self
     }
@@ -122,9 +109,7 @@ impl UpdateFirewallDomainsInputBuilder {
     /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li>
     /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li>
     /// </ul>
-    pub fn get_operation(
-        &self,
-    ) -> &::std::option::Option<crate::types::FirewallDomainUpdateOperation> {
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::FirewallDomainUpdateOperation> {
         &self.operation
     }
     /// Appends an item to `domains`.
@@ -155,10 +140,7 @@ impl UpdateFirewallDomainsInputBuilder {
     /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li>
     /// <li> <p>It must be from 1-255 characters in length. </p> </li>
     /// </ul>
-    pub fn set_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.domains = input;
         self
     }
@@ -177,16 +159,12 @@ impl UpdateFirewallDomainsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFirewallDomainsInput`](crate::operation::update_firewall_domains::UpdateFirewallDomainsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_firewall_domains::UpdateFirewallDomainsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_firewall_domains::UpdateFirewallDomainsInput {
-                firewall_domain_list_id: self.firewall_domain_list_id,
-                operation: self.operation,
-                domains: self.domains,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_firewall_domains::UpdateFirewallDomainsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_firewall_domains::UpdateFirewallDomainsInput {
+            firewall_domain_list_id: self.firewall_domain_list_id,
+            operation: self.operation,
+            domains: self.domains,
+        })
     }
 }

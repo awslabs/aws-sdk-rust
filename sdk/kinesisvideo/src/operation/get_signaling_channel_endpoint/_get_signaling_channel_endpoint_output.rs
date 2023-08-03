@@ -5,15 +5,12 @@
 pub struct GetSignalingChannelEndpointOutput {
     /// <p>A list of endpoints for the specified signaling channel.</p>
     #[doc(hidden)]
-    pub resource_endpoint_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceEndpointListItem>>,
+    pub resource_endpoint_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceEndpointListItem>>,
     _request_id: Option<String>,
 }
 impl GetSignalingChannelEndpointOutput {
     /// <p>A list of endpoints for the specified signaling channel.</p>
-    pub fn resource_endpoint_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceEndpointListItem]> {
+    pub fn resource_endpoint_list(&self) -> ::std::option::Option<&[crate::types::ResourceEndpointListItem]> {
         self.resource_endpoint_list.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for GetSignalingChannelEndpointOutput {
 }
 impl GetSignalingChannelEndpointOutput {
     /// Creates a new builder-style object to manufacture [`GetSignalingChannelEndpointOutput`](crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput).
-    pub fn builder() -> crate::operation::get_signaling_channel_endpoint::builders::GetSignalingChannelEndpointOutputBuilder{
+    pub fn builder() -> crate::operation::get_signaling_channel_endpoint::builders::GetSignalingChannelEndpointOutputBuilder {
         crate::operation::get_signaling_channel_endpoint::builders::GetSignalingChannelEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSignalingChannelEndpointOutput`](crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSignalingChannelEndpointOutputBuilder {
-    pub(crate) resource_endpoint_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceEndpointListItem>>,
+    pub(crate) resource_endpoint_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceEndpointListItem>>,
     _request_id: Option<String>,
 }
 impl GetSignalingChannelEndpointOutputBuilder {
@@ -52,17 +46,12 @@ impl GetSignalingChannelEndpointOutputBuilder {
         self
     }
     /// <p>A list of endpoints for the specified signaling channel.</p>
-    pub fn set_resource_endpoint_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceEndpointListItem>>,
-    ) -> Self {
+    pub fn set_resource_endpoint_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceEndpointListItem>>) -> Self {
         self.resource_endpoint_list = input;
         self
     }
     /// <p>A list of endpoints for the specified signaling channel.</p>
-    pub fn get_resource_endpoint_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceEndpointListItem>> {
+    pub fn get_resource_endpoint_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceEndpointListItem>> {
         &self.resource_endpoint_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -75,9 +64,7 @@ impl GetSignalingChannelEndpointOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSignalingChannelEndpointOutput`](crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput {
+    pub fn build(self) -> crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput {
         crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput {
             resource_endpoint_list: self.resource_endpoint_list,
             _request_id: self._request_id,

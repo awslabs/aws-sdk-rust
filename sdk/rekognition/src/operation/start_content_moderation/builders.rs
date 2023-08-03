@@ -40,10 +40,7 @@ impl StartContentModerationFluentBuilder {
         }
     }
     /// Access the StartContentModeration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_content_moderation::builders::StartContentModerationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_content_moderation::builders::StartContentModerationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl StartContentModerationFluentBuilder {
             crate::operation::start_content_moderation::StartContentModeration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_content_moderation::StartContentModerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_content_moderation::StartContentModerationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl StartContentModerationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl StartContentModerationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_content_moderation::StartContentModerationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_content_moderation::StartContentModerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_content_moderation::StartContentModerationError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl StartContentModerationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_content_moderation::StartContentModerationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_content_moderation::StartContentModerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_content_moderation::StartContentModerationError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl StartContentModerationFluentBuilder {
             crate::operation::start_content_moderation::StartContentModeration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_content_moderation::StartContentModerationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_content_moderation::StartContentModerationError>,
     > {
         self.customize_middleware().await
     }
@@ -155,18 +141,12 @@ impl StartContentModerationFluentBuilder {
         self.inner.get_min_confidence()
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartContentModeration</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartContentModeration</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -180,17 +160,12 @@ impl StartContentModerationFluentBuilder {
         self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
-    pub fn set_notification_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationChannel>,
-    ) -> Self {
+    pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.inner = self.inner.set_notification_channel(input);
         self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
-    pub fn get_notification_channel(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+    pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
         self.inner.get_notification_channel()
     }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>

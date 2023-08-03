@@ -15,16 +15,14 @@ impl BatchDescribeSimulationJobInput {
 }
 impl BatchDescribeSimulationJobInput {
     /// Creates a new builder-style object to manufacture [`BatchDescribeSimulationJobInput`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobInput).
-    pub fn builder() -> crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobInputBuilder{
+    pub fn builder() -> crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobInputBuilder {
         crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDescribeSimulationJobInput`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDescribeSimulationJobInputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,10 +39,7 @@ impl BatchDescribeSimulationJobInputBuilder {
         self
     }
     /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-    pub fn set_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.jobs = input;
         self
     }
@@ -59,10 +54,6 @@ impl BatchDescribeSimulationJobInputBuilder {
         crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobInput {
-                jobs: self.jobs,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobInput { jobs: self.jobs })
     }
 }

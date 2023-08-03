@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyAquaConfigurationOutput`](crate::operation::modify_aqua_configuration::ModifyAquaConfigurationOutput) with field(s):
     ///   - [`aqua_configuration(Option<AquaConfiguration>)`](crate::operation::modify_aqua_configuration::ModifyAquaConfigurationOutput::aqua_configuration): <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>
     /// - On failure, responds with [`SdkError<ModifyAquaConfigurationError>`](crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError)
-    pub fn modify_aqua_configuration(
-        &self,
-    ) -> crate::operation::modify_aqua_configuration::builders::ModifyAquaConfigurationFluentBuilder
-    {
+    pub fn modify_aqua_configuration(&self) -> crate::operation::modify_aqua_configuration::builders::ModifyAquaConfigurationFluentBuilder {
         crate::operation::modify_aqua_configuration::builders::ModifyAquaConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

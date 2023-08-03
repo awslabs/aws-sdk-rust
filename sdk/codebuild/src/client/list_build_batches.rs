@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`ids(Option<Vec<String>>)`](crate::operation::list_build_batches::ListBuildBatchesOutput::ids): <p>An array of strings that contains the batch build identifiers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_build_batches::ListBuildBatchesOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>ListBuildBatches</code> to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<ListBuildBatchesError>`](crate::operation::list_build_batches::ListBuildBatchesError)
-    pub fn list_build_batches(
-        &self,
-    ) -> crate::operation::list_build_batches::builders::ListBuildBatchesFluentBuilder {
-        crate::operation::list_build_batches::builders::ListBuildBatchesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_build_batches(&self) -> crate::operation::list_build_batches::builders::ListBuildBatchesFluentBuilder {
+        crate::operation::list_build_batches::builders::ListBuildBatchesFluentBuilder::new(self.handle.clone())
     }
 }

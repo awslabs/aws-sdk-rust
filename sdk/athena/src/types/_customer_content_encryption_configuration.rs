@@ -23,9 +23,7 @@ impl CustomerContentEncryptionConfiguration {
 
 /// A builder for [`CustomerContentEncryptionConfiguration`](crate::types::CustomerContentEncryptionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomerContentEncryptionConfigurationBuilder {
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl CustomerContentEncryptionConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`CustomerContentEncryptionConfiguration`](crate::types::CustomerContentEncryptionConfiguration).
     pub fn build(self) -> crate::types::CustomerContentEncryptionConfiguration {
-        crate::types::CustomerContentEncryptionConfiguration {
-            kms_key: self.kms_key,
-        }
+        crate::types::CustomerContentEncryptionConfiguration { kms_key: self.kms_key }
     }
 }

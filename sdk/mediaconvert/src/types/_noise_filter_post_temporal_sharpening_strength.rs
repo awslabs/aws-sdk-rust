@@ -39,13 +39,7 @@
 /// Use Post temporal sharpening strength to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low, Medium, or High to indicate the amount of sharpening.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NoiseFilterPostTemporalSharpeningStrength {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for NoiseFilterPostTemporalSharpeningStrength {
             "HIGH" => NoiseFilterPostTemporalSharpeningStrength::High,
             "LOW" => NoiseFilterPostTemporalSharpeningStrength::Low,
             "MEDIUM" => NoiseFilterPostTemporalSharpeningStrength::Medium,
-            other => NoiseFilterPostTemporalSharpeningStrength::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => NoiseFilterPostTemporalSharpeningStrength::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

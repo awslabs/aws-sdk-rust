@@ -37,10 +37,7 @@ impl ListPackageImportJobsFluentBuilder {
         }
     }
     /// Access the ListPackageImportJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_package_import_jobs::builders::ListPackageImportJobsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_package_import_jobs::builders::ListPackageImportJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListPackageImportJobsFluentBuilder {
             crate::operation::list_package_import_jobs::ListPackageImportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_package_import_jobs::ListPackageImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_package_import_jobs::ListPackageImportJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListPackageImportJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListPackageImportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_package_import_jobs::ListPackageImportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_package_import_jobs::ListPackageImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_package_import_jobs::ListPackageImportJobsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListPackageImportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_package_import_jobs::ListPackageImportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_package_import_jobs::ListPackageImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_package_import_jobs::ListPackageImportJobsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListPackageImportJobsFluentBuilder {
             crate::operation::list_package_import_jobs::ListPackageImportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_package_import_jobs::ListPackageImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_package_import_jobs::ListPackageImportJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_package_import_jobs::paginator::ListPackageImportJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_package_import_jobs::paginator::ListPackageImportJobsPaginator {
-        crate::operation::list_package_import_jobs::paginator::ListPackageImportJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_package_import_jobs::paginator::ListPackageImportJobsPaginator {
+        crate::operation::list_package_import_jobs::paginator::ListPackageImportJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetModelTemplateOutput`](crate::operation::get_model_template::GetModelTemplateOutput) with field(s):
     ///   - [`value(Option<String>)`](crate::operation::get_model_template::GetModelTemplateOutput::value): <p>The Apache Velocity Template Language (VTL) template content used for the template resource.</p>
     /// - On failure, responds with [`SdkError<GetModelTemplateError>`](crate::operation::get_model_template::GetModelTemplateError)
-    pub fn get_model_template(
-        &self,
-    ) -> crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder {
-        crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_model_template(&self) -> crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder {
+        crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::new(self.handle.clone())
     }
 }

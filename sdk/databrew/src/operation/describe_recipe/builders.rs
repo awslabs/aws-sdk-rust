@@ -10,10 +10,7 @@ impl DescribeRecipeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_recipe::DescribeRecipeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recipe::DescribeRecipeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recipe::DescribeRecipeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_recipe();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeRecipeFluentBuilder {
         }
     }
     /// Access the DescribeRecipe as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_recipe::builders::DescribeRecipeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_recipe::builders::DescribeRecipeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DescribeRecipeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl DescribeRecipeFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
-    pub fn recipe_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recipe_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recipe_version(input.into());
         self
     }
     /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
-    pub fn set_recipe_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recipe_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recipe_version(input);
         self
     }

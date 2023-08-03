@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PutEventStreamOutput`](crate::operation::put_event_stream::PutEventStreamOutput) with field(s):
     ///   - [`event_stream(Option<EventStream>)`](crate::operation::put_event_stream::PutEventStreamOutput::event_stream): <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
     /// - On failure, responds with [`SdkError<PutEventStreamError>`](crate::operation::put_event_stream::PutEventStreamError)
-    pub fn put_event_stream(
-        &self,
-    ) -> crate::operation::put_event_stream::builders::PutEventStreamFluentBuilder {
-        crate::operation::put_event_stream::builders::PutEventStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_event_stream(&self) -> crate::operation::put_event_stream::builders::PutEventStreamFluentBuilder {
+        crate::operation::put_event_stream::builders::PutEventStreamFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_worker_fleet::builders::DeleteWorkerFleetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_worker_fleet::builders::DeleteWorkerFleetFluentBuilder::set_id): Full ARN of the worker fleet.
     /// - On success, responds with [`DeleteWorkerFleetOutput`](crate::operation::delete_worker_fleet::DeleteWorkerFleetOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkerFleetError>`](crate::operation::delete_worker_fleet::DeleteWorkerFleetError)
-    pub fn delete_worker_fleet(
-        &self,
-    ) -> crate::operation::delete_worker_fleet::builders::DeleteWorkerFleetFluentBuilder {
-        crate::operation::delete_worker_fleet::builders::DeleteWorkerFleetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_worker_fleet(&self) -> crate::operation::delete_worker_fleet::builders::DeleteWorkerFleetFluentBuilder {
+        crate::operation::delete_worker_fleet::builders::DeleteWorkerFleetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -38,9 +38,7 @@ impl UpdateDomainContactFluentBuilder {
         }
     }
     /// Access the UpdateDomainContact as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_domain_contact::builders::UpdateDomainContactInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_domain_contact::builders::UpdateDomainContactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl UpdateDomainContactFluentBuilder {
             crate::operation::update_domain_contact::UpdateDomainContact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_contact::UpdateDomainContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_contact::UpdateDomainContactError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl UpdateDomainContactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl UpdateDomainContactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_contact::UpdateDomainContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_contact::UpdateDomainContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_contact::UpdateDomainContactError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl UpdateDomainContactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_contact::UpdateDomainContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_contact::UpdateDomainContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_contact::UpdateDomainContactError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl UpdateDomainContactFluentBuilder {
             crate::operation::update_domain_contact::UpdateDomainContact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_contact::UpdateDomainContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_contact::UpdateDomainContactError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +130,7 @@ impl UpdateDomainContactFluentBuilder {
         self
     }
     /// <p>Provides detailed contact information.</p>
-    pub fn set_admin_contact(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactDetail>,
-    ) -> Self {
+    pub fn set_admin_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
         self.inner = self.inner.set_admin_contact(input);
         self
     }
@@ -160,10 +144,7 @@ impl UpdateDomainContactFluentBuilder {
         self
     }
     /// <p>Provides detailed contact information.</p>
-    pub fn set_registrant_contact(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactDetail>,
-    ) -> Self {
+    pub fn set_registrant_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
         self.inner = self.inner.set_registrant_contact(input);
         self
     }
@@ -177,10 +158,7 @@ impl UpdateDomainContactFluentBuilder {
         self
     }
     /// <p>Provides detailed contact information.</p>
-    pub fn set_tech_contact(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactDetail>,
-    ) -> Self {
+    pub fn set_tech_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
         self.inner = self.inner.set_tech_contact(input);
         self
     }

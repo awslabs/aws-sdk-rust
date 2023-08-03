@@ -10,10 +10,7 @@ impl UpdateConnectorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_connector::UpdateConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector::UpdateConnectorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector::UpdateConnectorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_connector();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateConnectorFluentBuilder {
         }
     }
     /// Access the UpdateConnector as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_connector::builders::UpdateConnectorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_connector::builders::UpdateConnectorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateConnectorFluentBuilder {
             crate::operation::update_connector::UpdateConnector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector::UpdateConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector::UpdateConnectorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateConnectorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateConnectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connector::UpdateConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector::UpdateConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector::UpdateConnectorError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateConnectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connector::UpdateConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector::UpdateConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector::UpdateConnectorError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateConnectorFluentBuilder {
             crate::operation::update_connector::UpdateConnector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector::UpdateConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector::UpdateConnectorError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl UpdateConnectorFluentBuilder {
         self
     }
     /// <p>The target capacity.</p>
-    pub fn set_capacity(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityUpdate>,
-    ) -> Self {
+    pub fn set_capacity(mut self, input: ::std::option::Option<crate::types::CapacityUpdate>) -> Self {
         self.inner = self.inner.set_capacity(input);
         self
     }
@@ -140,18 +121,12 @@ impl UpdateConnectorFluentBuilder {
         self.inner.get_capacity()
     }
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
-    pub fn connector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
-    pub fn set_connector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_arn(input);
         self
     }
@@ -160,18 +135,12 @@ impl UpdateConnectorFluentBuilder {
         self.inner.get_connector_arn()
     }
     /// <p>The current version of the connector that you want to update.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_version(input.into());
         self
     }
     /// <p>The current version of the connector that you want to update.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
     }

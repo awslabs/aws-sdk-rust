@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`state(Option<IndexState>)`](crate::operation::create_index::CreateIndexOutput::state): <p>Indicates the current state of the index. You can check for changes to the state for asynchronous operations by calling the <code>GetIndex</code> operation.</p> <note>   <p>The state can remain in the <code>CREATING</code> or <code>UPDATING</code> state for several hours as Resource Explorer discovers the information about your resources and populates the index.</p>  </note>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::create_index::CreateIndexOutput::created_at): <p>The date and timestamp when the index was created.</p>
     /// - On failure, responds with [`SdkError<CreateIndexError>`](crate::operation::create_index::CreateIndexError)
-    pub fn create_index(
-        &self,
-    ) -> crate::operation::create_index::builders::CreateIndexFluentBuilder {
+    pub fn create_index(&self) -> crate::operation::create_index::builders::CreateIndexFluentBuilder {
         crate::operation::create_index::builders::CreateIndexFluentBuilder::new(self.handle.clone())
     }
 }

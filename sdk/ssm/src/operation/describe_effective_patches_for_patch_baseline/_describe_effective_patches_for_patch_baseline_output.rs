@@ -28,19 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeEffectivePatchesForPatchBasel
 }
 impl DescribeEffectivePatchesForPatchBaselineOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEffectivePatchesForPatchBaselineOutput`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput).
-    pub fn builder() -> crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineOutputBuilder {
         crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEffectivePatchesForPatchBaselineOutput`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEffectivePatchesForPatchBaselineOutputBuilder {
-    pub(crate) effective_patches:
-        ::std::option::Option<::std::vec::Vec<crate::types::EffectivePatch>>,
+    pub(crate) effective_patches: ::std::option::Option<::std::vec::Vec<crate::types::EffectivePatch>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +55,12 @@ impl DescribeEffectivePatchesForPatchBaselineOutputBuilder {
         self
     }
     /// <p>An array of patches and patch status.</p>
-    pub fn set_effective_patches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EffectivePatch>>,
-    ) -> Self {
+    pub fn set_effective_patches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EffectivePatch>>) -> Self {
         self.effective_patches = input;
         self
     }
     /// <p>An array of patches and patch status.</p>
-    pub fn get_effective_patches(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EffectivePatch>> {
+    pub fn get_effective_patches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EffectivePatch>> {
         &self.effective_patches
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -94,12 +87,10 @@ impl DescribeEffectivePatchesForPatchBaselineOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEffectivePatchesForPatchBaselineOutput`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput).
-    pub fn build(self) -> crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput{
+    pub fn build(self) -> crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput {
         crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput {
-            effective_patches: self.effective_patches
-            ,
-            next_token: self.next_token
-            ,
+            effective_patches: self.effective_patches,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

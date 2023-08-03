@@ -28,9 +28,7 @@ impl StopExperimentOutput {
 
 /// A builder for [`StopExperimentOutput`](crate::operation::stop_experiment::StopExperimentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopExperimentOutputBuilder {
     pub(crate) experiment: ::std::option::Option<crate::types::Experiment>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl StopExperimentOutputBuilder {
         self
     }
     /// <p>Information about the experiment.</p>
-    pub fn set_experiment(
-        mut self,
-        input: ::std::option::Option<crate::types::Experiment>,
-    ) -> Self {
+    pub fn set_experiment(mut self, input: ::std::option::Option<crate::types::Experiment>) -> Self {
         self.experiment = input;
         self
     }

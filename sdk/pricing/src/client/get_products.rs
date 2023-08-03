@@ -14,9 +14,7 @@ impl super::Client {
     ///   - [`price_list(Option<Vec<String>>)`](crate::operation::get_products::GetProductsOutput::price_list): <p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_products::GetProductsOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<GetProductsError>`](crate::operation::get_products::GetProductsError)
-    pub fn get_products(
-        &self,
-    ) -> crate::operation::get_products::builders::GetProductsFluentBuilder {
+    pub fn get_products(&self) -> crate::operation::get_products::builders::GetProductsFluentBuilder {
         crate::operation::get_products::builders::GetProductsFluentBuilder::new(self.handle.clone())
     }
 }

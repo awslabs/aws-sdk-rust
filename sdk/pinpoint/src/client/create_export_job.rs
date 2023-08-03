@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateExportJobOutput`](crate::operation::create_export_job::CreateExportJobOutput) with field(s):
     ///   - [`export_job_response(Option<ExportJobResponse>)`](crate::operation::create_export_job::CreateExportJobOutput::export_job_response): <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
     /// - On failure, responds with [`SdkError<CreateExportJobError>`](crate::operation::create_export_job::CreateExportJobError)
-    pub fn create_export_job(
-        &self,
-    ) -> crate::operation::create_export_job::builders::CreateExportJobFluentBuilder {
-        crate::operation::create_export_job::builders::CreateExportJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_export_job(&self) -> crate::operation::create_export_job::builders::CreateExportJobFluentBuilder {
+        crate::operation::create_export_job::builders::CreateExportJobFluentBuilder::new(self.handle.clone())
     }
 }

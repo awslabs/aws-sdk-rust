@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetDataCellsFilterOutput`](crate::operation::get_data_cells_filter::GetDataCellsFilterOutput) with field(s):
     ///   - [`data_cells_filter(Option<DataCellsFilter>)`](crate::operation::get_data_cells_filter::GetDataCellsFilterOutput::data_cells_filter): <p>A structure that describes certain columns on certain rows.</p>
     /// - On failure, responds with [`SdkError<GetDataCellsFilterError>`](crate::operation::get_data_cells_filter::GetDataCellsFilterError)
-    pub fn get_data_cells_filter(
-        &self,
-    ) -> crate::operation::get_data_cells_filter::builders::GetDataCellsFilterFluentBuilder {
-        crate::operation::get_data_cells_filter::builders::GetDataCellsFilterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_data_cells_filter(&self) -> crate::operation::get_data_cells_filter::builders::GetDataCellsFilterFluentBuilder {
+        crate::operation::get_data_cells_filter::builders::GetDataCellsFilterFluentBuilder::new(self.handle.clone())
     }
 }

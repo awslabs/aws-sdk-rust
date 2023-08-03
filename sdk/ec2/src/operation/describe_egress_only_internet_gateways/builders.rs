@@ -5,16 +5,16 @@ pub use crate::operation::describe_egress_only_internet_gateways::_describe_egre
 
 impl DescribeEgressOnlyInternetGatewaysInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_egress_only_internet_gateways();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeEgressOnlyInternetGatewaysInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEgressOnlyInternetGatewaysFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_egress_only_internet_gateways::builders::DescribeEgressOnlyInternetGatewaysInputBuilder,
+    inner: crate::operation::describe_egress_only_internet_gateways::builders::DescribeEgressOnlyInternetGatewaysInputBuilder,
 }
 impl DescribeEgressOnlyInternetGatewaysFluentBuilder {
     /// Creates a new `DescribeEgressOnlyInternetGateways`.
@@ -37,15 +37,20 @@ impl DescribeEgressOnlyInternetGatewaysFluentBuilder {
         }
     }
     /// Access the DescribeEgressOnlyInternetGateways as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_egress_only_internet_gateways::builders::DescribeEgressOnlyInternetGatewaysInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_egress_only_internet_gateways::builders::DescribeEgressOnlyInternetGatewaysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGateways, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGateways,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeEgressOnlyInternetGatewaysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,23 +87,32 @@ impl DescribeEgressOnlyInternetGatewaysFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGateways, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGateways,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_egress_only_internet_gateways::paginator::DescribeEgressOnlyInternetGatewaysPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_egress_only_internet_gateways::paginator::DescribeEgressOnlyInternetGatewaysPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_egress_only_internet_gateways::paginator::DescribeEgressOnlyInternetGatewaysPaginator {
         crate::operation::describe_egress_only_internet_gateways::paginator::DescribeEgressOnlyInternetGatewaysPaginator::new(self.handle, self.inner)
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -119,25 +134,17 @@ impl DescribeEgressOnlyInternetGatewaysFluentBuilder {
     /// To override the contents of this collection use [`set_egress_only_internet_gateway_ids`](Self::set_egress_only_internet_gateway_ids).
     ///
     /// <p>The IDs of the egress-only internet gateways.</p>
-    pub fn egress_only_internet_gateway_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn egress_only_internet_gateway_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.egress_only_internet_gateway_ids(input.into());
         self
     }
     /// <p>The IDs of the egress-only internet gateways.</p>
-    pub fn set_egress_only_internet_gateway_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_egress_only_internet_gateway_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_egress_only_internet_gateway_ids(input);
         self
     }
     /// <p>The IDs of the egress-only internet gateways.</p>
-    pub fn get_egress_only_internet_gateway_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_egress_only_internet_gateway_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_egress_only_internet_gateway_ids()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -198,10 +205,7 @@ impl DescribeEgressOnlyInternetGatewaysFluentBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

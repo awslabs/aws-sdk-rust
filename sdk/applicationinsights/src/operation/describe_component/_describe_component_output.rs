@@ -13,9 +13,7 @@ pub struct DescribeComponentOutput {
 }
 impl DescribeComponentOutput {
     /// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
-    pub fn application_component(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationComponent> {
+    pub fn application_component(&self) -> ::std::option::Option<&crate::types::ApplicationComponent> {
         self.application_component.as_ref()
     }
     /// <p>The list of resource ARNs that belong to the component.</p>
@@ -30,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeComponentOutput {
 }
 impl DescribeComponentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeComponentOutput`](crate::operation::describe_component::DescribeComponentOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_component::builders::DescribeComponentOutputBuilder {
+    pub fn builder() -> crate::operation::describe_component::builders::DescribeComponentOutputBuilder {
         crate::operation::describe_component::builders::DescribeComponentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeComponentOutput`](crate::operation::describe_component::DescribeComponentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeComponentOutputBuilder {
     pub(crate) application_component: ::std::option::Option<crate::types::ApplicationComponent>,
     pub(crate) resource_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -53,17 +48,12 @@ impl DescribeComponentOutputBuilder {
         self
     }
     /// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
-    pub fn set_application_component(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationComponent>,
-    ) -> Self {
+    pub fn set_application_component(mut self, input: ::std::option::Option<crate::types::ApplicationComponent>) -> Self {
         self.application_component = input;
         self
     }
     /// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
-    pub fn get_application_component(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationComponent> {
+    pub fn get_application_component(&self) -> &::std::option::Option<crate::types::ApplicationComponent> {
         &self.application_component
     }
     /// Appends an item to `resource_list`.
@@ -71,27 +61,19 @@ impl DescribeComponentOutputBuilder {
     /// To override the contents of this collection use [`set_resource_list`](Self::set_resource_list).
     ///
     /// <p>The list of resource ARNs that belong to the component.</p>
-    pub fn resource_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_list.unwrap_or_default();
         v.push(input.into());
         self.resource_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of resource ARNs that belong to the component.</p>
-    pub fn set_resource_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_list = input;
         self
     }
     /// <p>The list of resource ARNs that belong to the component.</p>
-    pub fn get_resource_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

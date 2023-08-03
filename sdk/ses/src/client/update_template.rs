@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`template(Template)`](crate::operation::update_template::builders::UpdateTemplateFluentBuilder::template) / [`set_template(Option<Template>)`](crate::operation::update_template::builders::UpdateTemplateFluentBuilder::set_template): <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
     /// - On success, responds with [`UpdateTemplateOutput`](crate::operation::update_template::UpdateTemplateOutput)
     /// - On failure, responds with [`SdkError<UpdateTemplateError>`](crate::operation::update_template::UpdateTemplateError)
-    pub fn update_template(
-        &self,
-    ) -> crate::operation::update_template::builders::UpdateTemplateFluentBuilder {
-        crate::operation::update_template::builders::UpdateTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_template(&self) -> crate::operation::update_template::builders::UpdateTemplateFluentBuilder {
+        crate::operation::update_template::builders::UpdateTemplateFluentBuilder::new(self.handle.clone())
     }
 }

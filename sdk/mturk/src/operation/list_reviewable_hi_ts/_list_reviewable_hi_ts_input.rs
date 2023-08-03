@@ -36,17 +36,14 @@ impl ListReviewableHiTsInput {
 }
 impl ListReviewableHiTsInput {
     /// Creates a new builder-style object to manufacture [`ListReviewableHiTsInput`](crate::operation::list_reviewable_hi_ts::ListReviewableHiTsInput).
-    pub fn builder(
-    ) -> crate::operation::list_reviewable_hi_ts::builders::ListReviewableHiTsInputBuilder {
+    pub fn builder() -> crate::operation::list_reviewable_hi_ts::builders::ListReviewableHiTsInputBuilder {
         crate::operation::list_reviewable_hi_ts::builders::ListReviewableHiTsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReviewableHiTsInput`](crate::operation::list_reviewable_hi_ts::ListReviewableHiTsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReviewableHiTsInputBuilder {
     pub(crate) hit_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ReviewableHitStatus>,
@@ -74,10 +71,7 @@ impl ListReviewableHiTsInputBuilder {
         self
     }
     /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReviewableHitStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReviewableHitStatus>) -> Self {
         self.status = input;
         self
     }
@@ -116,17 +110,13 @@ impl ListReviewableHiTsInputBuilder {
     /// Consumes the builder and constructs a [`ListReviewableHiTsInput`](crate::operation::list_reviewable_hi_ts::ListReviewableHiTsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_reviewable_hi_ts::ListReviewableHiTsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_reviewable_hi_ts::ListReviewableHiTsInput {
-                hit_type_id: self.hit_type_id,
-                status: self.status,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_reviewable_hi_ts::ListReviewableHiTsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_reviewable_hi_ts::ListReviewableHiTsInput {
+            hit_type_id: self.hit_type_id,
+            status: self.status,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

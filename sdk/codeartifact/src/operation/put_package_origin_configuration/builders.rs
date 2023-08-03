@@ -28,7 +28,7 @@ impl PutPackageOriginConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutPackageOriginConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_package_origin_configuration::builders::PutPackageOriginConfigurationInputBuilder,
+    inner: crate::operation::put_package_origin_configuration::builders::PutPackageOriginConfigurationInputBuilder,
 }
 impl PutPackageOriginConfigurationFluentBuilder {
     /// Creates a new `PutPackageOriginConfiguration`.
@@ -39,7 +39,7 @@ impl PutPackageOriginConfigurationFluentBuilder {
         }
     }
     /// Access the PutPackageOriginConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_package_origin_configuration::builders::PutPackageOriginConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_package_origin_configuration::builders::PutPackageOriginConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl PutPackageOriginConfigurationFluentBuilder {
             crate::operation::put_package_origin_configuration::PutPackageOriginConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl PutPackageOriginConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl PutPackageOriginConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl PutPackageOriginConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl PutPackageOriginConfigurationFluentBuilder {
             crate::operation::put_package_origin_configuration::PutPackageOriginConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -232,18 +221,13 @@ impl PutPackageOriginConfigurationFluentBuilder {
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
     /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
-    pub fn set_restrictions(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageOriginRestrictions>,
-    ) -> Self {
+    pub fn set_restrictions(mut self, input: ::std::option::Option<crate::types::PackageOriginRestrictions>) -> Self {
         self.inner = self.inner.set_restrictions(input);
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the <code>upstream</code> and <code>publish</code> package origin restrictions. The <code>upstream</code> restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The <code>publish</code> restriction determines if new package versions can be published directly to the repository.</p>
     /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
-    pub fn get_restrictions(
-        &self,
-    ) -> &::std::option::Option<crate::types::PackageOriginRestrictions> {
+    pub fn get_restrictions(&self) -> &::std::option::Option<crate::types::PackageOriginRestrictions> {
         self.inner.get_restrictions()
     }
 }

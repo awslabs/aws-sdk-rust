@@ -48,15 +48,11 @@ impl CatalogKafkaSource {
         self.database.as_deref()
     }
     /// <p>Specifies the streaming options.</p>
-    pub fn streaming_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KafkaStreamingSourceOptions> {
+    pub fn streaming_options(&self) -> ::std::option::Option<&crate::types::KafkaStreamingSourceOptions> {
         self.streaming_options.as_ref()
     }
     /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
-    pub fn data_preview_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamingDataPreviewOptions> {
+    pub fn data_preview_options(&self) -> ::std::option::Option<&crate::types::StreamingDataPreviewOptions> {
         self.data_preview_options.as_ref()
     }
 }
@@ -69,9 +65,7 @@ impl CatalogKafkaSource {
 
 /// A builder for [`CatalogKafkaSource`](crate::types::CatalogKafkaSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CatalogKafkaSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) window_size: ::std::option::Option<i32>,
@@ -79,8 +73,7 @@ pub struct CatalogKafkaSourceBuilder {
     pub(crate) table: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) streaming_options: ::std::option::Option<crate::types::KafkaStreamingSourceOptions>,
-    pub(crate) data_preview_options:
-        ::std::option::Option<crate::types::StreamingDataPreviewOptions>,
+    pub(crate) data_preview_options: ::std::option::Option<crate::types::StreamingDataPreviewOptions>,
 }
 impl CatalogKafkaSourceBuilder {
     /// <p>The name of the data store.</p>
@@ -159,39 +152,26 @@ impl CatalogKafkaSourceBuilder {
         self
     }
     /// <p>Specifies the streaming options.</p>
-    pub fn set_streaming_options(
-        mut self,
-        input: ::std::option::Option<crate::types::KafkaStreamingSourceOptions>,
-    ) -> Self {
+    pub fn set_streaming_options(mut self, input: ::std::option::Option<crate::types::KafkaStreamingSourceOptions>) -> Self {
         self.streaming_options = input;
         self
     }
     /// <p>Specifies the streaming options.</p>
-    pub fn get_streaming_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::KafkaStreamingSourceOptions> {
+    pub fn get_streaming_options(&self) -> &::std::option::Option<crate::types::KafkaStreamingSourceOptions> {
         &self.streaming_options
     }
     /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
-    pub fn data_preview_options(
-        mut self,
-        input: crate::types::StreamingDataPreviewOptions,
-    ) -> Self {
+    pub fn data_preview_options(mut self, input: crate::types::StreamingDataPreviewOptions) -> Self {
         self.data_preview_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
-    pub fn set_data_preview_options(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingDataPreviewOptions>,
-    ) -> Self {
+    pub fn set_data_preview_options(mut self, input: ::std::option::Option<crate::types::StreamingDataPreviewOptions>) -> Self {
         self.data_preview_options = input;
         self
     }
     /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
-    pub fn get_data_preview_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamingDataPreviewOptions> {
+    pub fn get_data_preview_options(&self) -> &::std::option::Option<crate::types::StreamingDataPreviewOptions> {
         &self.data_preview_options
     }
     /// Consumes the builder and constructs a [`CatalogKafkaSource`](crate::types::CatalogKafkaSource).

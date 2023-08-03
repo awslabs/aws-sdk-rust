@@ -10,10 +10,7 @@ impl ListConfigurationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_configurations::ListConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_configurations::ListConfigurationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configurations::ListConfigurationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_configurations();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListConfigurationsFluentBuilder {
         }
     }
     /// Access the ListConfigurations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_configurations::builders::ListConfigurationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_configurations::builders::ListConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListConfigurationsFluentBuilder {
             crate::operation::list_configurations::ListConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_configurations::ListConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configurations::ListConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_configurations::ListConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_configurations::ListConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configurations::ListConfigurationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_configurations::ListConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_configurations::ListConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configurations::ListConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListConfigurationsFluentBuilder {
             crate::operation::list_configurations::ListConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_configurations::ListConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configurations::ListConfigurationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_configurations::paginator::ListConfigurationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_configurations::paginator::ListConfigurationsPaginator {
-        crate::operation::list_configurations::paginator::ListConfigurationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_configurations::paginator::ListConfigurationsPaginator {
+        crate::operation::list_configurations::paginator::ListConfigurationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub fn max_results(mut self, input: i32) -> Self {

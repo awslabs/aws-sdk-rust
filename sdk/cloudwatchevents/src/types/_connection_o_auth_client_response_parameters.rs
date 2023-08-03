@@ -23,9 +23,7 @@ impl ConnectionOAuthClientResponseParameters {
 
 /// A builder for [`ConnectionOAuthClientResponseParameters`](crate::types::ConnectionOAuthClientResponseParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionOAuthClientResponseParametersBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ConnectionOAuthClientResponseParametersBuilder {
     }
     /// Consumes the builder and constructs a [`ConnectionOAuthClientResponseParameters`](crate::types::ConnectionOAuthClientResponseParameters).
     pub fn build(self) -> crate::types::ConnectionOAuthClientResponseParameters {
-        crate::types::ConnectionOAuthClientResponseParameters {
-            client_id: self.client_id,
-        }
+        crate::types::ConnectionOAuthClientResponseParameters { client_id: self.client_id }
     }
 }

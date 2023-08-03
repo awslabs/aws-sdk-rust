@@ -7,9 +7,7 @@ pub fn ser_sign_input(
         object.key("KeyId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.message {
-        object
-            .key("Message")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_2));
+        object.key("Message").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
     }
     if let Some(var_3) = &input.message_type {
         object.key("MessageType").string(var_3.as_str());

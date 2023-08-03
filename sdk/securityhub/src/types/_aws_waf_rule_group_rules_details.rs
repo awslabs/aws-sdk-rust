@@ -19,9 +19,7 @@ pub struct AwsWafRuleGroupRulesDetails {
 }
 impl AwsWafRuleGroupRulesDetails {
     /// <p>Provides information about what action WAF should take on a web request when it matches the criteria defined in the rule. </p>
-    pub fn action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsWafRuleGroupRulesActionDetails> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::AwsWafRuleGroupRulesActionDetails> {
         self.action.as_ref()
     }
     /// <p>If you define more than one rule in a web ACL, WAF evaluates each request against the rules in order based on the value of <code>Priority</code>.</p>
@@ -46,9 +44,7 @@ impl AwsWafRuleGroupRulesDetails {
 
 /// A builder for [`AwsWafRuleGroupRulesDetails`](crate::types::AwsWafRuleGroupRulesDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafRuleGroupRulesDetailsBuilder {
     pub(crate) action: ::std::option::Option<crate::types::AwsWafRuleGroupRulesActionDetails>,
     pub(crate) priority: ::std::option::Option<i32>,
@@ -62,17 +58,12 @@ impl AwsWafRuleGroupRulesDetailsBuilder {
         self
     }
     /// <p>Provides information about what action WAF should take on a web request when it matches the criteria defined in the rule. </p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsWafRuleGroupRulesActionDetails>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::AwsWafRuleGroupRulesActionDetails>) -> Self {
         self.action = input;
         self
     }
     /// <p>Provides information about what action WAF should take on a web request when it matches the criteria defined in the rule. </p>
-    pub fn get_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsWafRuleGroupRulesActionDetails> {
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::AwsWafRuleGroupRulesActionDetails> {
         &self.action
     }
     /// <p>If you define more than one rule in a web ACL, WAF evaluates each request against the rules in order based on the value of <code>Priority</code>.</p>

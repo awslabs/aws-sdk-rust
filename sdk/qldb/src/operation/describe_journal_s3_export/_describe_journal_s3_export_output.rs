@@ -10,9 +10,7 @@ pub struct DescribeJournalS3ExportOutput {
 }
 impl DescribeJournalS3ExportOutput {
     /// <p>Information about the journal export job returned by a <code>DescribeJournalS3Export</code> request.</p>
-    pub fn export_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::JournalS3ExportDescription> {
+    pub fn export_description(&self) -> ::std::option::Option<&crate::types::JournalS3ExportDescription> {
         self.export_description.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeJournalS3ExportOutput {
 }
 impl DescribeJournalS3ExportOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJournalS3ExportOutput`](crate::operation::describe_journal_s3_export::DescribeJournalS3ExportOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportOutputBuilder {
         crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeJournalS3ExportOutput`](crate::operation::describe_journal_s3_export::DescribeJournalS3ExportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJournalS3ExportOutputBuilder {
     pub(crate) export_description: ::std::option::Option<crate::types::JournalS3ExportDescription>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl DescribeJournalS3ExportOutputBuilder {
         self
     }
     /// <p>Information about the journal export job returned by a <code>DescribeJournalS3Export</code> request.</p>
-    pub fn set_export_description(
-        mut self,
-        input: ::std::option::Option<crate::types::JournalS3ExportDescription>,
-    ) -> Self {
+    pub fn set_export_description(mut self, input: ::std::option::Option<crate::types::JournalS3ExportDescription>) -> Self {
         self.export_description = input;
         self
     }
     /// <p>Information about the journal export job returned by a <code>DescribeJournalS3Export</code> request.</p>
-    pub fn get_export_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::JournalS3ExportDescription> {
+    pub fn get_export_description(&self) -> &::std::option::Option<crate::types::JournalS3ExportDescription> {
         &self.export_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -69,9 +58,7 @@ impl DescribeJournalS3ExportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeJournalS3ExportOutput`](crate::operation::describe_journal_s3_export::DescribeJournalS3ExportOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_journal_s3_export::DescribeJournalS3ExportOutput {
+    pub fn build(self) -> crate::operation::describe_journal_s3_export::DescribeJournalS3ExportOutput {
         crate::operation::describe_journal_s3_export::DescribeJournalS3ExportOutput {
             export_description: self.export_description,
             _request_id: self._request_id,

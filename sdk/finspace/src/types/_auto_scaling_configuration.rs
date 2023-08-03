@@ -58,9 +58,7 @@ impl AutoScalingConfiguration {
 
 /// A builder for [`AutoScalingConfiguration`](crate::types::AutoScalingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoScalingConfigurationBuilder {
     pub(crate) min_node_count: ::std::option::Option<i32>,
     pub(crate) max_node_count: ::std::option::Option<i32>,
@@ -104,17 +102,12 @@ impl AutoScalingConfigurationBuilder {
         self
     }
     /// <p> The metric your cluster will track in order to scale in and out. For example, <code>CPU_UTILIZATION_PERCENTAGE</code> is the average CPU usage across all the nodes in a cluster.</p>
-    pub fn set_auto_scaling_metric(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingMetric>,
-    ) -> Self {
+    pub fn set_auto_scaling_metric(mut self, input: ::std::option::Option<crate::types::AutoScalingMetric>) -> Self {
         self.auto_scaling_metric = input;
         self
     }
     /// <p> The metric your cluster will track in order to scale in and out. For example, <code>CPU_UTILIZATION_PERCENTAGE</code> is the average CPU usage across all the nodes in a cluster.</p>
-    pub fn get_auto_scaling_metric(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoScalingMetric> {
+    pub fn get_auto_scaling_metric(&self) -> &::std::option::Option<crate::types::AutoScalingMetric> {
         &self.auto_scaling_metric
     }
     /// <p>The desired value of the chosen <code>autoScalingMetric</code>. When the metric drops below this value, the cluster will scale in. When the metric goes above this value, the cluster will scale out. You can set the target value between 1 and 100 percent.</p>

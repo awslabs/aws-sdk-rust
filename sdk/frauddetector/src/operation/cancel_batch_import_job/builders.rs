@@ -37,10 +37,7 @@ impl CancelBatchImportJobFluentBuilder {
         }
     }
     /// Access the CancelBatchImportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_batch_import_job::builders::CancelBatchImportJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::cancel_batch_import_job::builders::CancelBatchImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CancelBatchImportJobFluentBuilder {
             crate::operation::cancel_batch_import_job::CancelBatchImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_batch_import_job::CancelBatchImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_batch_import_job::CancelBatchImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CancelBatchImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CancelBatchImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_batch_import_job::CancelBatchImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_batch_import_job::CancelBatchImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_batch_import_job::CancelBatchImportJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CancelBatchImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_batch_import_job::CancelBatchImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_batch_import_job::CancelBatchImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_batch_import_job::CancelBatchImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CancelBatchImportJobFluentBuilder {
             crate::operation::cancel_batch_import_job::CancelBatchImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_batch_import_job::CancelBatchImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_batch_import_job::CancelBatchImportJobError>,
     > {
         self.customize_middleware().await
     }

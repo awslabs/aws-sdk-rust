@@ -30,17 +30,14 @@ impl ::aws_http::request_id::RequestId for DescribeLogGroupsOutput {
 }
 impl DescribeLogGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLogGroupsOutput`](crate::operation::describe_log_groups::DescribeLogGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_log_groups::builders::DescribeLogGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_log_groups::builders::DescribeLogGroupsOutputBuilder {
         crate::operation::describe_log_groups::builders::DescribeLogGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLogGroupsOutput`](crate::operation::describe_log_groups::DescribeLogGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLogGroupsOutputBuilder {
     pub(crate) log_groups: ::std::option::Option<::std::vec::Vec<crate::types::LogGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,13 @@ impl DescribeLogGroupsOutputBuilder {
     }
     /// <p>The log groups.</p>
     /// <p>If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do not expire.</p>
-    pub fn set_log_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogGroup>>,
-    ) -> Self {
+    pub fn set_log_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogGroup>>) -> Self {
         self.log_groups = input;
         self
     }
     /// <p>The log groups.</p>
     /// <p>If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do not expire.</p>
-    pub fn get_log_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogGroup>> {
+    pub fn get_log_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogGroup>> {
         &self.log_groups
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>

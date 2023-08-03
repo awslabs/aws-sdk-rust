@@ -94,18 +94,14 @@ impl ListApplicationRevisionsInput {
 }
 impl ListApplicationRevisionsInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationRevisionsInput`](crate::operation::list_application_revisions::ListApplicationRevisionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_application_revisions::builders::ListApplicationRevisionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_application_revisions::builders::ListApplicationRevisionsInputBuilder {
         crate::operation::list_application_revisions::builders::ListApplicationRevisionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationRevisionsInput`](crate::operation::list_application_revisions::ListApplicationRevisionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationRevisionsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::ApplicationRevisionSortBy>,
@@ -117,18 +113,12 @@ pub struct ListApplicationRevisionsInputBuilder {
 }
 impl ListApplicationRevisionsInputBuilder {
     /// <p> The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account. </p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account. </p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -154,10 +144,7 @@ impl ListApplicationRevisionsInputBuilder {
     /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
     /// </ul>
     /// <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationRevisionSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ApplicationRevisionSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -221,18 +208,12 @@ impl ListApplicationRevisionsInputBuilder {
         &self.s3_bucket
     }
     /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
-    pub fn s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
-    pub fn set_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key_prefix = input;
         self
     }
@@ -256,10 +237,7 @@ impl ListApplicationRevisionsInputBuilder {
     /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li>
     /// <li> <p> <code>ignore</code>: List all revisions.</p> </li>
     /// </ul>
-    pub fn set_deployed(
-        mut self,
-        input: ::std::option::Option<crate::types::ListStateFilterAction>,
-    ) -> Self {
+    pub fn set_deployed(mut self, input: ::std::option::Option<crate::types::ListStateFilterAction>) -> Self {
         self.deployed = input;
         self
     }
@@ -293,16 +271,14 @@ impl ListApplicationRevisionsInputBuilder {
         crate::operation::list_application_revisions::ListApplicationRevisionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_application_revisions::ListApplicationRevisionsInput {
-                application_name: self.application_name,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-                s3_bucket: self.s3_bucket,
-                s3_key_prefix: self.s3_key_prefix,
-                deployed: self.deployed,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_application_revisions::ListApplicationRevisionsInput {
+            application_name: self.application_name,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+            s3_bucket: self.s3_bucket,
+            s3_key_prefix: self.s3_key_prefix,
+            deployed: self.deployed,
+            next_token: self.next_token,
+        })
     }
 }

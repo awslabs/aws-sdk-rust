@@ -38,9 +38,7 @@ impl ListFirewallDomainsFluentBuilder {
         }
     }
     /// Access the ListFirewallDomains as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_firewall_domains::builders::ListFirewallDomainsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_firewall_domains::builders::ListFirewallDomainsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ListFirewallDomainsFluentBuilder {
             crate::operation::list_firewall_domains::ListFirewallDomains,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_domains::ListFirewallDomainsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_domains::ListFirewallDomainsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ListFirewallDomainsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ListFirewallDomainsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_firewall_domains::ListFirewallDomainsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_domains::ListFirewallDomainsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_domains::ListFirewallDomainsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ListFirewallDomainsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_firewall_domains::ListFirewallDomainsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_domains::ListFirewallDomainsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_domains::ListFirewallDomainsError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +106,23 @@ impl ListFirewallDomainsFluentBuilder {
             crate::operation::list_firewall_domains::ListFirewallDomains,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_domains::ListFirewallDomainsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_domains::ListFirewallDomainsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_firewall_domains::paginator::ListFirewallDomainsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_firewall_domains::paginator::ListFirewallDomainsPaginator {
-        crate::operation::list_firewall_domains::paginator::ListFirewallDomainsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_firewall_domains::paginator::ListFirewallDomainsPaginator {
+        crate::operation::list_firewall_domains::paginator::ListFirewallDomainsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the domain list whose domains you want to retrieve. </p>
-    pub fn firewall_domain_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_domain_list_id(input.into());
         self
     }
     /// <p>The ID of the domain list whose domains you want to retrieve. </p>
-    pub fn set_firewall_domain_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_domain_list_id(input);
         self
     }

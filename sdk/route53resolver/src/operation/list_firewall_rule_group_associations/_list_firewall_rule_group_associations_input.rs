@@ -38,9 +38,7 @@ impl ListFirewallRuleGroupAssociationsInput {
         self.priority
     }
     /// <p>The association <code>Status</code> setting that you want DNS Firewall to filter on for the list. If you don't specify this, then DNS Firewall returns all associations, regardless of status.</p>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FirewallRuleGroupAssociationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::FirewallRuleGroupAssociationStatus> {
         self.status.as_ref()
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
@@ -56,16 +54,14 @@ impl ListFirewallRuleGroupAssociationsInput {
 }
 impl ListFirewallRuleGroupAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListFirewallRuleGroupAssociationsInput`](crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsInput).
-    pub fn builder() -> crate::operation::list_firewall_rule_group_associations::builders::ListFirewallRuleGroupAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::list_firewall_rule_group_associations::builders::ListFirewallRuleGroupAssociationsInputBuilder {
         crate::operation::list_firewall_rule_group_associations::builders::ListFirewallRuleGroupAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFirewallRuleGroupAssociationsInput`](crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFirewallRuleGroupAssociationsInputBuilder {
     pub(crate) firewall_rule_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -76,18 +72,12 @@ pub struct ListFirewallRuleGroupAssociationsInputBuilder {
 }
 impl ListFirewallRuleGroupAssociationsInputBuilder {
     /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations for. Leave this blank to retrieve associations for any rule group. </p>
-    pub fn firewall_rule_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations for. Leave this blank to retrieve associations for any rule group. </p>
-    pub fn set_firewall_rule_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_rule_group_id = input;
         self
     }
@@ -129,17 +119,12 @@ impl ListFirewallRuleGroupAssociationsInputBuilder {
         self
     }
     /// <p>The association <code>Status</code> setting that you want DNS Firewall to filter on for the list. If you don't specify this, then DNS Firewall returns all associations, regardless of status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallRuleGroupAssociationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::FirewallRuleGroupAssociationStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The association <code>Status</code> setting that you want DNS Firewall to filter on for the list. If you don't specify this, then DNS Firewall returns all associations, regardless of status.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::FirewallRuleGroupAssociationStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FirewallRuleGroupAssociationStatus> {
         &self.status
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
@@ -177,22 +162,21 @@ impl ListFirewallRuleGroupAssociationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFirewallRuleGroupAssociationsInput`](crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsInput {
-                firewall_rule_group_id: self.firewall_rule_group_id
-                ,
-                vpc_id: self.vpc_id
-                ,
-                priority: self.priority
-                ,
-                status: self.status
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                firewall_rule_group_id: self.firewall_rule_group_id,
+                vpc_id: self.vpc_id,
+                priority: self.priority,
+                status: self.status,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

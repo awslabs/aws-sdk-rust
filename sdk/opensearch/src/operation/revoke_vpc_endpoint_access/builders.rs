@@ -26,8 +26,7 @@ impl RevokeVpcEndpointAccessInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokeVpcEndpointAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessInputBuilder,
+    inner: crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessInputBuilder,
 }
 impl RevokeVpcEndpointAccessFluentBuilder {
     /// Creates a new `RevokeVpcEndpointAccess`.
@@ -38,10 +37,7 @@ impl RevokeVpcEndpointAccessFluentBuilder {
         }
     }
     /// Access the RevokeVpcEndpointAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl RevokeVpcEndpointAccessFluentBuilder {
             crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl RevokeVpcEndpointAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl RevokeVpcEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl RevokeVpcEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl RevokeVpcEndpointAccessFluentBuilder {
             crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError>,
     > {
         self.customize_middleware().await
     }

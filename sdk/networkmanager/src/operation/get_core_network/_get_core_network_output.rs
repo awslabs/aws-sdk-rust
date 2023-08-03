@@ -28,9 +28,7 @@ impl GetCoreNetworkOutput {
 
 /// A builder for [`GetCoreNetworkOutput`](crate::operation::get_core_network::GetCoreNetworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCoreNetworkOutputBuilder {
     pub(crate) core_network: ::std::option::Option<crate::types::CoreNetwork>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetCoreNetworkOutputBuilder {
         self
     }
     /// <p>Details about a core network.</p>
-    pub fn set_core_network(
-        mut self,
-        input: ::std::option::Option<crate::types::CoreNetwork>,
-    ) -> Self {
+    pub fn set_core_network(mut self, input: ::std::option::Option<crate::types::CoreNetwork>) -> Self {
         self.core_network = input;
         self
     }

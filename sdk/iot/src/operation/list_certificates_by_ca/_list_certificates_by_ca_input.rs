@@ -37,17 +37,14 @@ impl ListCertificatesByCaInput {
 }
 impl ListCertificatesByCaInput {
     /// Creates a new builder-style object to manufacture [`ListCertificatesByCaInput`](crate::operation::list_certificates_by_ca::ListCertificatesByCaInput).
-    pub fn builder(
-    ) -> crate::operation::list_certificates_by_ca::builders::ListCertificatesByCaInputBuilder {
+    pub fn builder() -> crate::operation::list_certificates_by_ca::builders::ListCertificatesByCaInputBuilder {
         crate::operation::list_certificates_by_ca::builders::ListCertificatesByCaInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCertificatesByCaInput`](crate::operation::list_certificates_by_ca::ListCertificatesByCaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCertificatesByCaInputBuilder {
     pub(crate) ca_certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,
@@ -56,18 +53,12 @@ pub struct ListCertificatesByCaInputBuilder {
 }
 impl ListCertificatesByCaInputBuilder {
     /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
-    pub fn ca_certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ca_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ca_certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
-    pub fn set_ca_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ca_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ca_certificate_id = input;
         self
     }
@@ -120,17 +111,13 @@ impl ListCertificatesByCaInputBuilder {
     /// Consumes the builder and constructs a [`ListCertificatesByCaInput`](crate::operation::list_certificates_by_ca::ListCertificatesByCaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_certificates_by_ca::ListCertificatesByCaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_certificates_by_ca::ListCertificatesByCaInput {
-                ca_certificate_id: self.ca_certificate_id,
-                page_size: self.page_size,
-                marker: self.marker,
-                ascending_order: self.ascending_order,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_certificates_by_ca::ListCertificatesByCaInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_certificates_by_ca::ListCertificatesByCaInput {
+            ca_certificate_id: self.ca_certificate_id,
+            page_size: self.page_size,
+            marker: self.marker,
+            ascending_order: self.ascending_order,
+        })
     }
 }

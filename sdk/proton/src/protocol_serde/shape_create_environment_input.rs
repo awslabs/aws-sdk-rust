@@ -25,9 +25,7 @@ pub fn ser_create_environment_input(
         object.key("protonServiceRoleArn").string(var_7.as_str());
     }
     if let Some(var_8) = &input.environment_account_connection_id {
-        object
-            .key("environmentAccountConnectionId")
-            .string(var_8.as_str());
+        object.key("environmentAccountConnectionId").string(var_8.as_str());
     }
     if let Some(var_9) = &input.tags {
         let mut array_10 = object.key("tags").start_array();
@@ -44,10 +42,7 @@ pub fn ser_create_environment_input(
     if let Some(var_13) = &input.provisioning_repository {
         #[allow(unused_mut)]
         let mut object_14 = object.key("provisioningRepository").start_object();
-        crate::protocol_serde::shape_repository_branch_input::ser_repository_branch_input(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_repository_branch_input::ser_repository_branch_input(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.component_role_arn {

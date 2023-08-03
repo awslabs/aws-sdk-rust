@@ -10,10 +10,7 @@ impl StopFleetActionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_fleet_actions::StopFleetActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_fleet_actions::StopFleetActionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_fleet_actions::StopFleetActionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.stop_fleet_actions();
         fluent_builder.inner = self;
@@ -46,9 +43,7 @@ impl StopFleetActionsFluentBuilder {
         }
     }
     /// Access the StopFleetActions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_fleet_actions::builders::StopFleetActionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_fleet_actions::builders::StopFleetActionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +55,7 @@ impl StopFleetActionsFluentBuilder {
             crate::operation::stop_fleet_actions::StopFleetActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_fleet_actions::StopFleetActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_fleet_actions::StopFleetActionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +65,7 @@ impl StopFleetActionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +74,7 @@ impl StopFleetActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_fleet_actions::StopFleetActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_fleet_actions::StopFleetActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_fleet_actions::StopFleetActionsError>,
     > {
         let op = self
             .inner
@@ -109,9 +97,7 @@ impl StopFleetActionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_fleet_actions::StopFleetActionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_fleet_actions::StopFleetActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_fleet_actions::StopFleetActionsError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +111,7 @@ impl StopFleetActionsFluentBuilder {
             crate::operation::stop_fleet_actions::StopFleetActions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_fleet_actions::StopFleetActionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_fleet_actions::StopFleetActionsError>,
     > {
         self.customize_middleware().await
     }
@@ -155,17 +139,12 @@ impl StopFleetActionsFluentBuilder {
         self
     }
     /// <p>List of actions to suspend on the fleet. </p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
     /// <p>List of actions to suspend on the fleet. </p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAction>> {
         self.inner.get_actions()
     }
     /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>

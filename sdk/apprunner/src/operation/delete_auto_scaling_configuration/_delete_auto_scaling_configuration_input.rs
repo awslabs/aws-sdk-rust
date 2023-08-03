@@ -17,43 +17,33 @@ impl DeleteAutoScalingConfigurationInput {
 }
 impl DeleteAutoScalingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteAutoScalingConfigurationInput`](crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationInput).
-    pub fn builder() -> crate::operation::delete_auto_scaling_configuration::builders::DeleteAutoScalingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_auto_scaling_configuration::builders::DeleteAutoScalingConfigurationInputBuilder {
         crate::operation::delete_auto_scaling_configuration::builders::DeleteAutoScalingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAutoScalingConfigurationInput`](crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAutoScalingConfigurationInputBuilder {
     pub(crate) auto_scaling_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAutoScalingConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
-    pub fn auto_scaling_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
-    pub fn set_auto_scaling_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_configuration_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
-    pub fn get_auto_scaling_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_auto_scaling_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_scaling_configuration_arn
     }
     /// Consumes the builder and constructs a [`DeleteAutoScalingConfigurationInput`](crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationInput).
@@ -63,11 +53,8 @@ impl DeleteAutoScalingConfigurationInputBuilder {
         crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationInput {
-                auto_scaling_configuration_arn: self.auto_scaling_configuration_arn
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationInput {
+            auto_scaling_configuration_arn: self.auto_scaling_configuration_arn,
+        })
     }
 }

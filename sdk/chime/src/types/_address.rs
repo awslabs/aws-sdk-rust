@@ -131,18 +131,12 @@ impl AddressBuilder {
         &self.street_name
     }
     /// <p>The address suffix, such as the <code>N</code> in <code>8th Avenue N</code>.</p>
-    pub fn street_suffix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn street_suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.street_suffix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The address suffix, such as the <code>N</code> in <code>8th Avenue N</code>.</p>
-    pub fn set_street_suffix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_street_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.street_suffix = input;
         self
     }
@@ -151,18 +145,12 @@ impl AddressBuilder {
         &self.street_suffix
     }
     /// <p>An address suffix location, such as the <code>S. Unit A</code> in <code>Central Park S. Unit A</code>.</p>
-    pub fn post_directional(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn post_directional(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.post_directional = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An address suffix location, such as the <code>S. Unit A</code> in <code>Central Park S. Unit A</code>.</p>
-    pub fn set_post_directional(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_post_directional(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.post_directional = input;
         self
     }
@@ -171,18 +159,12 @@ impl AddressBuilder {
         &self.post_directional
     }
     /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code>.</p>
-    pub fn pre_directional(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pre_directional(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_directional = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code>.</p>
-    pub fn set_pre_directional(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pre_directional(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pre_directional = input;
         self
     }
@@ -191,18 +173,12 @@ impl AddressBuilder {
         &self.pre_directional
     }
     /// <p>The numeric portion of an address.</p>
-    pub fn street_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn street_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.street_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The numeric portion of an address.</p>
-    pub fn set_street_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_street_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.street_number = input;
         self
     }
@@ -253,18 +229,12 @@ impl AddressBuilder {
         &self.postal_code
     }
     /// <p>The Zip + 4 or postal code + 4 of an address.</p>
-    pub fn postal_code_plus4(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn postal_code_plus4(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.postal_code_plus4 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Zip + 4 or postal code + 4 of an address.</p>
-    pub fn set_postal_code_plus4(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_postal_code_plus4(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.postal_code_plus4 = input;
         self
     }

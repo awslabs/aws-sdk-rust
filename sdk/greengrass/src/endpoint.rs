@@ -16,8 +16,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://greengrass.ap-northeast-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.ap-northeast-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -38,8 +37,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://greengrass.ap-northeast-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.ap-northeast-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -60,8 +58,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://greengrass.ap-south-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.ap-south-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -82,8 +79,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://greengrass.ap-southeast-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.ap-southeast-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -104,8 +100,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://greengrass.ap-southeast-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.ap-southeast-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -126,8 +121,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://greengrass.ca-central-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.ca-central-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -148,8 +142,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://greengrass.eu-central-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.eu-central-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -170,8 +163,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://greengrass.eu-west-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.eu-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -192,8 +184,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://greengrass.eu-west-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.eu-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -214,8 +205,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://greengrass.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -236,8 +226,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://greengrass.us-east-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.us-east-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -258,8 +247,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://greengrass.us-west-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.us-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -280,8 +268,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://greengrass-fips.us-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass-fips.us-east-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -302,8 +289,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://greengrass-fips.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass-fips.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -324,8 +310,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://greengrass.us-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.us-east-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -346,8 +331,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://greengrass.cn-north-1.amazonaws.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.cn-north-1.amazonaws.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -389,8 +373,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://greengrass-fips.cn-north-1.amazonaws.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass-fips.cn-north-1.amazonaws.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -411,9 +394,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://greengrass.cn-north-1.api.amazonwebservices.com.cn",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.cn-north-1.api.amazonwebservices.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -434,9 +415,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://greengrass-ats.iot.us-gov-east-1.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass-ats.iot.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -444,16 +423,10 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "greengrass".to_string().into());
-                        out.insert(
-                            "signingRegion".to_string(),
-                            "us-gov-east-1".to_string().into(),
-                        );
+                        out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
                         out
                     })]
                 )
@@ -473,9 +446,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://greengrass-ats.iot.us-gov-west-1.amazonaws.com",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass-ats.iot.us-gov-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -483,16 +454,10 @@ mod test {
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<
-                            String,
-                            ::aws_smithy_types::Document,
-                        >::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "greengrass".to_string().into());
-                        out.insert(
-                            "signingRegion".to_string(),
-                            "us-gov-west-1".to_string().into(),
-                        );
+                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
                         out
                     })]
                 )
@@ -512,8 +477,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://greengrass.us-gov-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -534,8 +498,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://greengrass.us-gov-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -556,8 +519,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://greengrass.us-gov-west-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.us-gov-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -578,8 +540,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://greengrass.us-gov-west-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.us-gov-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -600,8 +561,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://greengrass-fips.us-gov-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass-fips.us-gov-east-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -622,8 +582,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://greengrass.us-gov-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.us-gov-east-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -663,8 +622,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://greengrass-fips.us-iso-east-1.c2s.ic.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass-fips.us-iso-east-1.c2s.ic.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -686,10 +644,7 @@ mod test {
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [For region us-iso-east-1 with FIPS disabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "DualStack is enabled but this partition does not support DualStack"
-        )
+        assert_eq!(format!("{}", error), "DualStack is enabled but this partition does not support DualStack")
     }
 
     /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
@@ -704,8 +659,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint =
-            endpoint.expect("Expected valid endpoint: https://greengrass.us-iso-east-1.c2s.ic.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.us-iso-east-1.c2s.ic.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -745,9 +699,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect(
-            "Expected valid endpoint: https://greengrass-fips.us-isob-east-1.sc2s.sgov.gov",
-        );
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass-fips.us-isob-east-1.sc2s.sgov.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -769,10 +721,7 @@ mod test {
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: DualStack is enabled but this partition does not support DualStack [For region us-isob-east-1 with FIPS disabled and DualStack enabled]");
-        assert_eq!(
-            format!("{}", error),
-            "DualStack is enabled but this partition does not support DualStack"
-        )
+        assert_eq!(format!("{}", error), "DualStack is enabled but this partition does not support DualStack")
     }
 
     /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
@@ -787,8 +736,7 @@ mod test {
             .expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint
-            .expect("Expected valid endpoint: https://greengrass.us-isob-east-1.sc2s.sgov.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://greengrass.us-isob-east-1.sc2s.sgov.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -813,9 +761,7 @@ mod test {
         let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
         assert_eq!(
             endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://example.com")
-                .build()
+            ::aws_smithy_types::endpoint::Endpoint::builder().url("https://example.com").build()
         );
     }
 
@@ -834,9 +780,7 @@ mod test {
         let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
         assert_eq!(
             endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://example.com")
-                .build()
+            ::aws_smithy_types::endpoint::Endpoint::builder().url("https://example.com").build()
         );
     }
 
@@ -854,10 +798,7 @@ mod test {
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [For custom endpoint with fips enabled and dualstack disabled]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid Configuration: FIPS and custom endpoint are not supported"
-        )
+        assert_eq!(format!("{}", error), "Invalid Configuration: FIPS and custom endpoint are not supported")
     }
 
     /// For custom endpoint with fips disabled and dualstack enabled
@@ -884,17 +825,11 @@ mod test {
     #[test]
     fn test_40() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::endpoint::Params::builder()
-            .build()
-            .expect("invalid params");
+        let params = crate::endpoint::Params::builder().build().expect("invalid params");
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint
-            .expect_err("expected error: Invalid Configuration: Missing Region [Missing region]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid Configuration: Missing Region"
-        )
+        let error = endpoint.expect_err("expected error: Invalid Configuration: Missing Region [Missing region]");
+        assert_eq!(format!("{}", error), "Invalid Configuration: Missing Region")
     }
 }
 
@@ -950,19 +885,13 @@ impl DefaultResolver {
 impl ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params> for DefaultResolver {
     fn resolve_endpoint(&self, params: &Params) -> ::aws_smithy_http::endpoint::Result {
         let mut diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
-        crate::endpoint::internals::resolve_endpoint(
-            params,
-            &mut diagnostic_collector,
-            &self.partition_resolver,
-        )
-        .map_err(|err| err.with_source(diagnostic_collector.take_last_error()))
+        crate::endpoint::internals::resolve_endpoint(params, &mut diagnostic_collector, &self.partition_resolver)
+            .map_err(|err| err.with_source(diagnostic_collector.take_last_error()))
     }
 }
 
 /// Builder for [`Params`]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParamsBuilder {
     region: ::std::option::Option<::std::string::String>,
     use_dual_stack: ::std::option::Option<bool>,
@@ -971,9 +900,7 @@ pub struct ParamsBuilder {
 }
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::endpoint::Params, crate::endpoint::InvalidParams> {
+    pub fn build(self) -> ::std::result::Result<crate::endpoint::Params, crate::endpoint::InvalidParams> {
         Ok(
             #[allow(clippy::unnecessary_lazy_evaluations)]
             crate::endpoint::Params {
@@ -1065,9 +992,7 @@ pub struct InvalidParams {
 impl InvalidParams {
     #[allow(dead_code)]
     fn missing(field: &'static str) -> Self {
-        Self {
-            field: field.into(),
-        }
+        Self { field: field.into() }
     }
 }
 

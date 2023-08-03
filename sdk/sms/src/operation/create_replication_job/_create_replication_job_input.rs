@@ -92,17 +92,14 @@ impl CreateReplicationJobInput {
 }
 impl CreateReplicationJobInput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationJobInput`](crate::operation::create_replication_job::CreateReplicationJobInput).
-    pub fn builder(
-    ) -> crate::operation::create_replication_job::builders::CreateReplicationJobInputBuilder {
+    pub fn builder() -> crate::operation::create_replication_job::builders::CreateReplicationJobInputBuilder {
         crate::operation::create_replication_job::builders::CreateReplicationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReplicationJobInput`](crate::operation::create_replication_job::CreateReplicationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReplicationJobInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) seed_replication_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -136,17 +133,12 @@ impl CreateReplicationJobInputBuilder {
         self
     }
     /// <p>The seed replication time.</p>
-    pub fn set_seed_replication_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_seed_replication_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.seed_replication_time = input;
         self
     }
     /// <p>The seed replication time.</p>
-    pub fn get_seed_replication_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_seed_replication_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.seed_replication_time
     }
     /// <p>The time between consecutive replication runs, in hours.</p>
@@ -183,10 +175,7 @@ impl CreateReplicationJobInputBuilder {
         self
     }
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
-    pub fn set_license_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LicenseType>,
-    ) -> Self {
+    pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::LicenseType>) -> Self {
         self.license_type = input;
         self
     }
@@ -288,23 +277,19 @@ impl CreateReplicationJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateReplicationJobInput`](crate::operation::create_replication_job::CreateReplicationJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_replication_job::CreateReplicationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_replication_job::CreateReplicationJobInput {
-                server_id: self.server_id,
-                seed_replication_time: self.seed_replication_time,
-                frequency: self.frequency,
-                run_once: self.run_once,
-                license_type: self.license_type,
-                role_name: self.role_name,
-                description: self.description,
-                number_of_recent_amis_to_keep: self.number_of_recent_amis_to_keep,
-                encrypted: self.encrypted,
-                kms_key_id: self.kms_key_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_replication_job::CreateReplicationJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_replication_job::CreateReplicationJobInput {
+            server_id: self.server_id,
+            seed_replication_time: self.seed_replication_time,
+            frequency: self.frequency,
+            run_once: self.run_once,
+            license_type: self.license_type,
+            role_name: self.role_name,
+            description: self.description,
+            number_of_recent_amis_to_keep: self.number_of_recent_amis_to_keep,
+            encrypted: self.encrypted,
+            kms_key_id: self.kms_key_id,
+        })
     }
 }

@@ -6,8 +6,7 @@
 pub struct SpekeKeyProvider {
     /// <p>Configure one or more content encryption keys for your endpoints that use SPEKE Version 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use.</p>
     #[doc(hidden)]
-    pub encryption_contract_configuration:
-        ::std::option::Option<crate::types::EncryptionContractConfiguration>,
+    pub encryption_contract_configuration: ::std::option::Option<crate::types::EncryptionContractConfiguration>,
     /// <p>The unique identifier for the content. The service sends this to the key server to identify the current endpoint. How unique you make this depends on how fine-grained you want access controls to be. The service does not permit you to use the same ID for two simultaneous encryption processes. The resource ID is also known as the content ID.</p>
     /// <p>The following example shows a resource ID: <code>MovieNight20171126093045</code> </p>
     #[doc(hidden)]
@@ -26,9 +25,7 @@ pub struct SpekeKeyProvider {
 }
 impl SpekeKeyProvider {
     /// <p>Configure one or more content encryption keys for your endpoints that use SPEKE Version 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use.</p>
-    pub fn encryption_contract_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionContractConfiguration> {
+    pub fn encryption_contract_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionContractConfiguration> {
         self.encryption_contract_configuration.as_ref()
     }
     /// <p>The unique identifier for the content. The service sends this to the key server to identify the current endpoint. How unique you make this depends on how fine-grained you want access controls to be. The service does not permit you to use the same ID for two simultaneous encryption processes. The resource ID is also known as the content ID.</p>
@@ -60,12 +57,9 @@ impl SpekeKeyProvider {
 
 /// A builder for [`SpekeKeyProvider`](crate::types::SpekeKeyProvider).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpekeKeyProviderBuilder {
-    pub(crate) encryption_contract_configuration:
-        ::std::option::Option<crate::types::EncryptionContractConfiguration>,
+    pub(crate) encryption_contract_configuration: ::std::option::Option<crate::types::EncryptionContractConfiguration>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) drm_systems: ::std::option::Option<::std::vec::Vec<crate::types::DrmSystem>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -73,25 +67,17 @@ pub struct SpekeKeyProviderBuilder {
 }
 impl SpekeKeyProviderBuilder {
     /// <p>Configure one or more content encryption keys for your endpoints that use SPEKE Version 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use.</p>
-    pub fn encryption_contract_configuration(
-        mut self,
-        input: crate::types::EncryptionContractConfiguration,
-    ) -> Self {
+    pub fn encryption_contract_configuration(mut self, input: crate::types::EncryptionContractConfiguration) -> Self {
         self.encryption_contract_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configure one or more content encryption keys for your endpoints that use SPEKE Version 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use.</p>
-    pub fn set_encryption_contract_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionContractConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_contract_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionContractConfiguration>) -> Self {
         self.encryption_contract_configuration = input;
         self
     }
     /// <p>Configure one or more content encryption keys for your endpoints that use SPEKE Version 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use.</p>
-    pub fn get_encryption_contract_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionContractConfiguration> {
+    pub fn get_encryption_contract_configuration(&self) -> &::std::option::Option<crate::types::EncryptionContractConfiguration> {
         &self.encryption_contract_configuration
     }
     /// <p>The unique identifier for the content. The service sends this to the key server to identify the current endpoint. How unique you make this depends on how fine-grained you want access controls to be. The service does not permit you to use the same ID for two simultaneous encryption processes. The resource ID is also known as the content ID.</p>
@@ -123,17 +109,12 @@ impl SpekeKeyProviderBuilder {
         self
     }
     /// <p>The DRM solution provider you're using to protect your content during distribution.</p>
-    pub fn set_drm_systems(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DrmSystem>>,
-    ) -> Self {
+    pub fn set_drm_systems(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DrmSystem>>) -> Self {
         self.drm_systems = input;
         self
     }
     /// <p>The DRM solution provider you're using to protect your content during distribution.</p>
-    pub fn get_drm_systems(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DrmSystem>> {
+    pub fn get_drm_systems(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DrmSystem>> {
         &self.drm_systems
     }
     /// <p>The ARN for the IAM role granted by the key provider that provides access to the key provider API. This role must have a trust policy that allows MediaPackage to assume the role, and it must have a sufficient permissions policy to allow access to the specific key retrieval URL. Get this from your DRM solution provider.</p>

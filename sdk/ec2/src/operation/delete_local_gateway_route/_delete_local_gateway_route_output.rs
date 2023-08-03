@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteLocalGatewayRouteOutput {
 }
 impl DeleteLocalGatewayRouteOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLocalGatewayRouteOutput`](crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_local_gateway_route::builders::DeleteLocalGatewayRouteOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_local_gateway_route::builders::DeleteLocalGatewayRouteOutputBuilder {
         crate::operation::delete_local_gateway_route::builders::DeleteLocalGatewayRouteOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLocalGatewayRouteOutput`](crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLocalGatewayRouteOutputBuilder {
     pub(crate) route: ::std::option::Option<crate::types::LocalGatewayRoute>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteLocalGatewayRouteOutputBuilder {
         self
     }
     /// <p>Information about the route.</p>
-    pub fn set_route(
-        mut self,
-        input: ::std::option::Option<crate::types::LocalGatewayRoute>,
-    ) -> Self {
+    pub fn set_route(mut self, input: ::std::option::Option<crate::types::LocalGatewayRoute>) -> Self {
         self.route = input;
         self
     }
@@ -65,9 +58,7 @@ impl DeleteLocalGatewayRouteOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteLocalGatewayRouteOutput`](crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteOutput {
+    pub fn build(self) -> crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteOutput {
         crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteOutput {
             route: self.route,
             _request_id: self._request_id,

@@ -29,9 +29,7 @@ impl GetPromptFileInput {
 
 /// A builder for [`GetPromptFileInput`](crate::operation::get_prompt_file::GetPromptFileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPromptFileInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) prompt_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl GetPromptFileInputBuilder {
     /// Consumes the builder and constructs a [`GetPromptFileInput`](crate::operation::get_prompt_file::GetPromptFileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_prompt_file::GetPromptFileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_prompt_file::GetPromptFileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_prompt_file::GetPromptFileInput {
             instance_id: self.instance_id,
             prompt_id: self.prompt_id,

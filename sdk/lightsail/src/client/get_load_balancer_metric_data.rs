@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`metric_name(Option<LoadBalancerMetricName>)`](crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataOutput::metric_name): <p>The name of the metric returned.</p>
     ///   - [`metric_data(Option<Vec<MetricDatapoint>>)`](crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataOutput::metric_data): <p>An array of objects that describe the metric data returned.</p>
     /// - On failure, responds with [`SdkError<GetLoadBalancerMetricDataError>`](crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataError)
-    pub fn get_load_balancer_metric_data(&self) -> crate::operation::get_load_balancer_metric_data::builders::GetLoadBalancerMetricDataFluentBuilder{
+    pub fn get_load_balancer_metric_data(&self) -> crate::operation::get_load_balancer_metric_data::builders::GetLoadBalancerMetricDataFluentBuilder {
         crate::operation::get_load_balancer_metric_data::builders::GetLoadBalancerMetricDataFluentBuilder::new(self.handle.clone())
     }
 }

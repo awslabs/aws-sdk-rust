@@ -19,9 +19,7 @@ impl SetPermissionOutput {
 
 /// A builder for [`SetPermissionOutput`](crate::operation::set_permission::SetPermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetPermissionOutputBuilder {
     _request_id: Option<String>,
 }

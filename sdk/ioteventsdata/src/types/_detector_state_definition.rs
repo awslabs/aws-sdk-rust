@@ -37,9 +37,7 @@ impl DetectorStateDefinition {
 
 /// A builder for [`DetectorStateDefinition`](crate::types::DetectorStateDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectorStateDefinitionBuilder {
     pub(crate) state_name: ::std::option::Option<::std::string::String>,
     pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::VariableDefinition>>,
@@ -72,17 +70,12 @@ impl DetectorStateDefinitionBuilder {
         self
     }
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
-    pub fn set_variables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VariableDefinition>>,
-    ) -> Self {
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VariableDefinition>>) -> Self {
         self.variables = input;
         self
     }
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
-    pub fn get_variables(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VariableDefinition>> {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VariableDefinition>> {
         &self.variables
     }
     /// Appends an item to `timers`.
@@ -97,17 +90,12 @@ impl DetectorStateDefinitionBuilder {
         self
     }
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
-    pub fn set_timers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TimerDefinition>>,
-    ) -> Self {
+    pub fn set_timers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TimerDefinition>>) -> Self {
         self.timers = input;
         self
     }
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
-    pub fn get_timers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimerDefinition>> {
+    pub fn get_timers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimerDefinition>> {
         &self.timers
     }
     /// Consumes the builder and constructs a [`DetectorStateDefinition`](crate::types::DetectorStateDefinition).

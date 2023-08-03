@@ -5,8 +5,7 @@
 pub struct GetContinuousDeploymentPolicyConfigOutput {
     /// <p>Contains the configuration for a continuous deployment policy.</p>
     #[doc(hidden)]
-    pub continuous_deployment_policy_config:
-        ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
+    pub continuous_deployment_policy_config: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
     /// <p>The version identifier for the current version of the continuous deployment policy.</p>
     #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetContinuousDeploymentPolicyConfigOutput {
 }
 impl GetContinuousDeploymentPolicyConfigOutput {
     /// <p>Contains the configuration for a continuous deployment policy.</p>
-    pub fn continuous_deployment_policy_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContinuousDeploymentPolicyConfig> {
+    pub fn continuous_deployment_policy_config(&self) -> ::std::option::Option<&crate::types::ContinuousDeploymentPolicyConfig> {
         self.continuous_deployment_policy_config.as_ref()
     }
     /// <p>The version identifier for the current version of the continuous deployment policy.</p>
@@ -31,43 +28,32 @@ impl ::aws_http::request_id::RequestId for GetContinuousDeploymentPolicyConfigOu
 }
 impl GetContinuousDeploymentPolicyConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetContinuousDeploymentPolicyConfigOutput`](crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigOutput).
-    pub fn builder() -> crate::operation::get_continuous_deployment_policy_config::builders::GetContinuousDeploymentPolicyConfigOutputBuilder{
+    pub fn builder() -> crate::operation::get_continuous_deployment_policy_config::builders::GetContinuousDeploymentPolicyConfigOutputBuilder {
         crate::operation::get_continuous_deployment_policy_config::builders::GetContinuousDeploymentPolicyConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContinuousDeploymentPolicyConfigOutput`](crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContinuousDeploymentPolicyConfigOutputBuilder {
-    pub(crate) continuous_deployment_policy_config:
-        ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
+    pub(crate) continuous_deployment_policy_config: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetContinuousDeploymentPolicyConfigOutputBuilder {
     /// <p>Contains the configuration for a continuous deployment policy.</p>
-    pub fn continuous_deployment_policy_config(
-        mut self,
-        input: crate::types::ContinuousDeploymentPolicyConfig,
-    ) -> Self {
+    pub fn continuous_deployment_policy_config(mut self, input: crate::types::ContinuousDeploymentPolicyConfig) -> Self {
         self.continuous_deployment_policy_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the configuration for a continuous deployment policy.</p>
-    pub fn set_continuous_deployment_policy_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
-    ) -> Self {
+    pub fn set_continuous_deployment_policy_config(mut self, input: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>) -> Self {
         self.continuous_deployment_policy_config = input;
         self
     }
     /// <p>Contains the configuration for a continuous deployment policy.</p>
-    pub fn get_continuous_deployment_policy_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig> {
+    pub fn get_continuous_deployment_policy_config(&self) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig> {
         &self.continuous_deployment_policy_config
     }
     /// <p>The version identifier for the current version of the continuous deployment policy.</p>
@@ -94,12 +80,10 @@ impl GetContinuousDeploymentPolicyConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetContinuousDeploymentPolicyConfigOutput`](crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigOutput).
-    pub fn build(self) -> crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigOutput{
+    pub fn build(self) -> crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigOutput {
         crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigOutput {
-            continuous_deployment_policy_config: self.continuous_deployment_policy_config
-            ,
-            e_tag: self.e_tag
-            ,
+            continuous_deployment_policy_config: self.continuous_deployment_policy_config,
+            e_tag: self.e_tag,
             _request_id: self._request_id,
         }
     }

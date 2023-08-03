@@ -10,10 +10,7 @@ impl UpdateLocationSmbInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_location_smb::UpdateLocationSmbOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_smb::UpdateLocationSmbError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_smb::UpdateLocationSmbError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_location_smb();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateLocationSmbFluentBuilder {
         }
     }
     /// Access the UpdateLocationSmb as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_location_smb::builders::UpdateLocationSmbInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_location_smb::builders::UpdateLocationSmbInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateLocationSmbFluentBuilder {
             crate::operation::update_location_smb::UpdateLocationSmb,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_smb::UpdateLocationSmbError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_smb::UpdateLocationSmbError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateLocationSmbFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateLocationSmbFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_location_smb::UpdateLocationSmbOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_smb::UpdateLocationSmbError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_smb::UpdateLocationSmbError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateLocationSmbFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_location_smb::UpdateLocationSmbOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_smb::UpdateLocationSmbError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_smb::UpdateLocationSmbError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateLocationSmbFluentBuilder {
             crate::operation::update_location_smb::UpdateLocationSmb,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_smb::UpdateLocationSmbError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_smb::UpdateLocationSmbError>,
     > {
         self.customize_middleware().await
     }
@@ -226,10 +210,7 @@ impl UpdateLocationSmbFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_agent_arns(input);
         self
     }
@@ -243,10 +224,7 @@ impl UpdateLocationSmbFluentBuilder {
         self
     }
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
-    pub fn set_mount_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SmbMountOptions>,
-    ) -> Self {
+    pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::SmbMountOptions>) -> Self {
         self.inner = self.inner.set_mount_options(input);
         self
     }

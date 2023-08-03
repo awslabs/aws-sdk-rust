@@ -10,10 +10,7 @@ impl UpdateLiveSourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_live_source::UpdateLiveSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_live_source::UpdateLiveSourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_live_source::UpdateLiveSourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_live_source();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateLiveSourceFluentBuilder {
         }
     }
     /// Access the UpdateLiveSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_live_source::builders::UpdateLiveSourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_live_source::builders::UpdateLiveSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateLiveSourceFluentBuilder {
             crate::operation::update_live_source::UpdateLiveSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_live_source::UpdateLiveSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_live_source::UpdateLiveSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateLiveSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateLiveSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_live_source::UpdateLiveSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_live_source::UpdateLiveSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_live_source::UpdateLiveSourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateLiveSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_live_source::UpdateLiveSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_live_source::UpdateLiveSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_live_source::UpdateLiveSourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateLiveSourceFluentBuilder {
             crate::operation::update_live_source::UpdateLiveSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_live_source::UpdateLiveSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_live_source::UpdateLiveSourceError>,
     > {
         self.customize_middleware().await
     }
@@ -127,40 +111,26 @@ impl UpdateLiveSourceFluentBuilder {
     /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
     ///
     /// <p>A list of HTTP package configurations for the live source on this account.</p>
-    pub fn http_package_configurations(
-        mut self,
-        input: crate::types::HttpPackageConfiguration,
-    ) -> Self {
+    pub fn http_package_configurations(mut self, input: crate::types::HttpPackageConfiguration) -> Self {
         self.inner = self.inner.http_package_configurations(input);
         self
     }
     /// <p>A list of HTTP package configurations for the live source on this account.</p>
-    pub fn set_http_package_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
-    ) -> Self {
+    pub fn set_http_package_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>) -> Self {
         self.inner = self.inner.set_http_package_configurations(input);
         self
     }
     /// <p>A list of HTTP package configurations for the live source on this account.</p>
-    pub fn get_http_package_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>> {
+    pub fn get_http_package_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>> {
         self.inner.get_http_package_configurations()
     }
     /// <p>The name of the live source.</p>
-    pub fn live_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn live_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.live_source_name(input.into());
         self
     }
     /// <p>The name of the live source.</p>
-    pub fn set_live_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_live_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_live_source_name(input);
         self
     }
@@ -169,18 +139,12 @@ impl UpdateLiveSourceFluentBuilder {
         self.inner.get_live_source_name()
     }
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_location_name(input.into());
         self
     }
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_location_name(input);
         self
     }

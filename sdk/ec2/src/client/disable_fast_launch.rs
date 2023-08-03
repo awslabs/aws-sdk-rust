@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`state_transition_reason(Option<String>)`](crate::operation::disable_fast_launch::DisableFastLaunchOutput::state_transition_reason): <p>The reason that the state changed for faster launching for the Windows AMI.</p>
     ///   - [`state_transition_time(Option<DateTime>)`](crate::operation::disable_fast_launch::DisableFastLaunchOutput::state_transition_time): <p>The time that the state changed for faster launching for the Windows AMI.</p>
     /// - On failure, responds with [`SdkError<DisableFastLaunchError>`](crate::operation::disable_fast_launch::DisableFastLaunchError)
-    pub fn disable_fast_launch(
-        &self,
-    ) -> crate::operation::disable_fast_launch::builders::DisableFastLaunchFluentBuilder {
-        crate::operation::disable_fast_launch::builders::DisableFastLaunchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disable_fast_launch(&self) -> crate::operation::disable_fast_launch::builders::DisableFastLaunchFluentBuilder {
+        crate::operation::disable_fast_launch::builders::DisableFastLaunchFluentBuilder::new(self.handle.clone())
     }
 }

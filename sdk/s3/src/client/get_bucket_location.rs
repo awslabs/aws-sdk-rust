@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetBucketLocationOutput`](crate::operation::get_bucket_location::GetBucketLocationOutput) with field(s):
     ///   - [`location_constraint(Option<BucketLocationConstraint>)`](crate::operation::get_bucket_location::GetBucketLocationOutput::location_constraint): <p>Specifies the Region where the bucket resides. For a list of all the Amazon S3 supported location constraints by Region, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>. Buckets in Region <code>us-east-1</code> have a LocationConstraint of <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<GetBucketLocationError>`](crate::operation::get_bucket_location::GetBucketLocationError)
-    pub fn get_bucket_location(
-        &self,
-    ) -> crate::operation::get_bucket_location::builders::GetBucketLocationFluentBuilder {
-        crate::operation::get_bucket_location::builders::GetBucketLocationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_bucket_location(&self) -> crate::operation::get_bucket_location::builders::GetBucketLocationFluentBuilder {
+        crate::operation::get_bucket_location::builders::GetBucketLocationFluentBuilder::new(self.handle.clone())
     }
 }

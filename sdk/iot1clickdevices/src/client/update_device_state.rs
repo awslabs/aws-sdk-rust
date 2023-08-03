@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`enabled(bool)`](crate::operation::update_device_state::builders::UpdateDeviceStateFluentBuilder::enabled) / [`set_enabled(Option<bool>)`](crate::operation::update_device_state::builders::UpdateDeviceStateFluentBuilder::set_enabled): <p>If true, the device is enabled. If false, the device is disabled.</p>
     /// - On success, responds with [`UpdateDeviceStateOutput`](crate::operation::update_device_state::UpdateDeviceStateOutput)
     /// - On failure, responds with [`SdkError<UpdateDeviceStateError>`](crate::operation::update_device_state::UpdateDeviceStateError)
-    pub fn update_device_state(
-        &self,
-    ) -> crate::operation::update_device_state::builders::UpdateDeviceStateFluentBuilder {
-        crate::operation::update_device_state::builders::UpdateDeviceStateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_device_state(&self) -> crate::operation::update_device_state::builders::UpdateDeviceStateFluentBuilder {
+        crate::operation::update_device_state::builders::UpdateDeviceStateFluentBuilder::new(self.handle.clone())
     }
 }

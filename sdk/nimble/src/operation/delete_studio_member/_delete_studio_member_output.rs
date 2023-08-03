@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteStudioMemberOutput {
 }
 impl DeleteStudioMemberOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStudioMemberOutput`](crate::operation::delete_studio_member::DeleteStudioMemberOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_studio_member::builders::DeleteStudioMemberOutputBuilder {
+    pub fn builder() -> crate::operation::delete_studio_member::builders::DeleteStudioMemberOutputBuilder {
         crate::operation::delete_studio_member::builders::DeleteStudioMemberOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStudioMemberOutput`](crate::operation::delete_studio_member::DeleteStudioMemberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStudioMemberOutputBuilder {
     _request_id: Option<String>,
 }

@@ -19,9 +19,7 @@ impl DeleteEventBusOutput {
 
 /// A builder for [`DeleteEventBusOutput`](crate::operation::delete_event_bus::DeleteEventBusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEventBusOutputBuilder {
     _request_id: Option<String>,
 }

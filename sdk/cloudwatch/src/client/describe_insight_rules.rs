@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_insight_rules::DescribeInsightRulesOutput::next_token): <p>If this parameter is present, it is a token that marks the start of the next batch of returned results. </p>
     ///   - [`insight_rules(Option<Vec<InsightRule>>)`](crate::operation::describe_insight_rules::DescribeInsightRulesOutput::insight_rules): <p>The rules returned by the operation.</p>
     /// - On failure, responds with [`SdkError<DescribeInsightRulesError>`](crate::operation::describe_insight_rules::DescribeInsightRulesError)
-    pub fn describe_insight_rules(
-        &self,
-    ) -> crate::operation::describe_insight_rules::builders::DescribeInsightRulesFluentBuilder {
-        crate::operation::describe_insight_rules::builders::DescribeInsightRulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_insight_rules(&self) -> crate::operation::describe_insight_rules::builders::DescribeInsightRulesFluentBuilder {
+        crate::operation::describe_insight_rules::builders::DescribeInsightRulesFluentBuilder::new(self.handle.clone())
     }
 }

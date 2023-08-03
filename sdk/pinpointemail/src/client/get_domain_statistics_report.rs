@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`overall_volume(Option<OverallVolume>)`](crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput::overall_volume): <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
     ///   - [`daily_volumes(Option<Vec<DailyVolume>>)`](crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput::daily_volumes): <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
     /// - On failure, responds with [`SdkError<GetDomainStatisticsReportError>`](crate::operation::get_domain_statistics_report::GetDomainStatisticsReportError)
-    pub fn get_domain_statistics_report(&self) -> crate::operation::get_domain_statistics_report::builders::GetDomainStatisticsReportFluentBuilder{
+    pub fn get_domain_statistics_report(&self) -> crate::operation::get_domain_statistics_report::builders::GetDomainStatisticsReportFluentBuilder {
         crate::operation::get_domain_statistics_report::builders::GetDomainStatisticsReportFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     ///   - [`cluster_subnet_groups(Option<Vec<ClusterSubnetGroup>>)`](crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsOutput::cluster_subnet_groups): <p>A list of <code>ClusterSubnetGroup</code> instances. </p>
     /// - On failure, responds with [`SdkError<DescribeClusterSubnetGroupsError>`](crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError)
-    pub fn describe_cluster_subnet_groups(&self) -> crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsFluentBuilder{
+    pub fn describe_cluster_subnet_groups(
+        &self,
+    ) -> crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsFluentBuilder {
         crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsFluentBuilder::new(self.handle.clone())
     }
 }

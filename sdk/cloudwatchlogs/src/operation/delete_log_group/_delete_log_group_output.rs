@@ -19,9 +19,7 @@ impl DeleteLogGroupOutput {
 
 /// A builder for [`DeleteLogGroupOutput`](crate::operation::delete_log_group::DeleteLogGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLogGroupOutputBuilder {
     _request_id: Option<String>,
 }

@@ -17,36 +17,27 @@ impl DescribeModelPackageInput {
 }
 impl DescribeModelPackageInput {
     /// Creates a new builder-style object to manufacture [`DescribeModelPackageInput`](crate::operation::describe_model_package::DescribeModelPackageInput).
-    pub fn builder(
-    ) -> crate::operation::describe_model_package::builders::DescribeModelPackageInputBuilder {
+    pub fn builder() -> crate::operation::describe_model_package::builders::DescribeModelPackageInputBuilder {
         crate::operation::describe_model_package::builders::DescribeModelPackageInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeModelPackageInput`](crate::operation::describe_model_package::DescribeModelPackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeModelPackageInputBuilder {
     pub(crate) model_package_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeModelPackageInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-    pub fn model_package_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-    pub fn set_model_package_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_name = input;
         self
     }
@@ -58,14 +49,10 @@ impl DescribeModelPackageInputBuilder {
     /// Consumes the builder and constructs a [`DescribeModelPackageInput`](crate::operation::describe_model_package::DescribeModelPackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_model_package::DescribeModelPackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_model_package::DescribeModelPackageInput {
-                model_package_name: self.model_package_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_model_package::DescribeModelPackageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_model_package::DescribeModelPackageInput {
+            model_package_name: self.model_package_name,
+        })
     }
 }

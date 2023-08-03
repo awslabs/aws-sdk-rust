@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`instances_with_security_non_compliant_patches(Option<i32>)`](crate::operation::describe_patch_group_state::DescribePatchGroupStateOutput::instances_with_security_non_compliant_patches): <p>The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     ///   - [`instances_with_other_non_compliant_patches(Option<i32>)`](crate::operation::describe_patch_group_state::DescribePatchGroupStateOutput::instances_with_other_non_compliant_patches): <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     /// - On failure, responds with [`SdkError<DescribePatchGroupStateError>`](crate::operation::describe_patch_group_state::DescribePatchGroupStateError)
-    pub fn describe_patch_group_state(
-        &self,
-    ) -> crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateFluentBuilder
-    {
+    pub fn describe_patch_group_state(&self) -> crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateFluentBuilder {
         crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateFluentBuilder::new(self.handle.clone())
     }
 }

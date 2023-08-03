@@ -41,9 +41,7 @@ impl DomainPrice {
         self.renewal_price.as_ref()
     }
     /// <p>The price for changing domain ownership.</p>
-    pub fn change_ownership_price(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PriceWithCurrency> {
+    pub fn change_ownership_price(&self) -> ::std::option::Option<&crate::types::PriceWithCurrency> {
         self.change_ownership_price.as_ref()
     }
     /// <p>The price for restoring the domain with Route&nbsp;53.</p>
@@ -60,9 +58,7 @@ impl DomainPrice {
 
 /// A builder for [`DomainPrice`](crate::types::DomainPrice).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainPriceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) registration_price: ::std::option::Option<crate::types::PriceWithCurrency>,
@@ -92,17 +88,12 @@ impl DomainPriceBuilder {
         self
     }
     /// <p>The price for domain registration with Route&nbsp;53.</p>
-    pub fn set_registration_price(
-        mut self,
-        input: ::std::option::Option<crate::types::PriceWithCurrency>,
-    ) -> Self {
+    pub fn set_registration_price(mut self, input: ::std::option::Option<crate::types::PriceWithCurrency>) -> Self {
         self.registration_price = input;
         self
     }
     /// <p>The price for domain registration with Route&nbsp;53.</p>
-    pub fn get_registration_price(
-        &self,
-    ) -> &::std::option::Option<crate::types::PriceWithCurrency> {
+    pub fn get_registration_price(&self) -> &::std::option::Option<crate::types::PriceWithCurrency> {
         &self.registration_price
     }
     /// <p>The price for transferring the domain registration to Route&nbsp;53.</p>
@@ -111,10 +102,7 @@ impl DomainPriceBuilder {
         self
     }
     /// <p>The price for transferring the domain registration to Route&nbsp;53.</p>
-    pub fn set_transfer_price(
-        mut self,
-        input: ::std::option::Option<crate::types::PriceWithCurrency>,
-    ) -> Self {
+    pub fn set_transfer_price(mut self, input: ::std::option::Option<crate::types::PriceWithCurrency>) -> Self {
         self.transfer_price = input;
         self
     }
@@ -128,10 +116,7 @@ impl DomainPriceBuilder {
         self
     }
     /// <p>The price for renewing domain registration with Route&nbsp;53.</p>
-    pub fn set_renewal_price(
-        mut self,
-        input: ::std::option::Option<crate::types::PriceWithCurrency>,
-    ) -> Self {
+    pub fn set_renewal_price(mut self, input: ::std::option::Option<crate::types::PriceWithCurrency>) -> Self {
         self.renewal_price = input;
         self
     }
@@ -145,17 +130,12 @@ impl DomainPriceBuilder {
         self
     }
     /// <p>The price for changing domain ownership.</p>
-    pub fn set_change_ownership_price(
-        mut self,
-        input: ::std::option::Option<crate::types::PriceWithCurrency>,
-    ) -> Self {
+    pub fn set_change_ownership_price(mut self, input: ::std::option::Option<crate::types::PriceWithCurrency>) -> Self {
         self.change_ownership_price = input;
         self
     }
     /// <p>The price for changing domain ownership.</p>
-    pub fn get_change_ownership_price(
-        &self,
-    ) -> &::std::option::Option<crate::types::PriceWithCurrency> {
+    pub fn get_change_ownership_price(&self) -> &::std::option::Option<crate::types::PriceWithCurrency> {
         &self.change_ownership_price
     }
     /// <p>The price for restoring the domain with Route&nbsp;53.</p>
@@ -164,10 +144,7 @@ impl DomainPriceBuilder {
         self
     }
     /// <p>The price for restoring the domain with Route&nbsp;53.</p>
-    pub fn set_restoration_price(
-        mut self,
-        input: ::std::option::Option<crate::types::PriceWithCurrency>,
-    ) -> Self {
+    pub fn set_restoration_price(mut self, input: ::std::option::Option<crate::types::PriceWithCurrency>) -> Self {
         self.restoration_price = input;
         self
     }

@@ -15,10 +15,7 @@ pub fn ser_origin_group(
     }
     if let Some(var_3) = &input.members {
         let inner_writer = scope.start_el("Members");
-        crate::protocol_serde::shape_origin_group_members::ser_origin_group_members(
-            var_3,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_origin_group_members::ser_origin_group_members(var_3, inner_writer)?
     }
     scope.finish();
     Ok(())

@@ -46,9 +46,7 @@ impl DescribeTrustsInput {
 
 /// A builder for [`DescribeTrustsInput`](crate::operation::describe_trusts::DescribeTrustsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrustsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) trust_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -84,10 +82,7 @@ impl DescribeTrustsInputBuilder {
     }
     /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn set_trust_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_trust_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.trust_ids = input;
         self
     }
@@ -127,10 +122,7 @@ impl DescribeTrustsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTrustsInput`](crate::operation::describe_trusts::DescribeTrustsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_trusts::DescribeTrustsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_trusts::DescribeTrustsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_trusts::DescribeTrustsInput {
             directory_id: self.directory_id,
             trust_ids: self.trust_ids,

@@ -79,9 +79,7 @@ impl ManagedProductDescriptor {
 
 /// A builder for [`ManagedProductDescriptor`](crate::types::ManagedProductDescriptor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedProductDescriptorBuilder {
     pub(crate) vendor_name: ::std::option::Option<::std::string::String>,
     pub(crate) managed_rule_set_name: ::std::option::Option<::std::string::String>,
@@ -109,18 +107,12 @@ impl ManagedProductDescriptorBuilder {
         &self.vendor_name
     }
     /// <p>The name of the managed rule group. For example, <code>AWSManagedRulesAnonymousIpList</code> or <code>AWSManagedRulesATPRuleSet</code>.</p>
-    pub fn managed_rule_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn managed_rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_rule_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the managed rule group. For example, <code>AWSManagedRulesAnonymousIpList</code> or <code>AWSManagedRulesATPRuleSet</code>.</p>
-    pub fn set_managed_rule_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_managed_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.managed_rule_set_name = input;
         self
     }
@@ -157,18 +149,12 @@ impl ManagedProductDescriptorBuilder {
         &self.product_link
     }
     /// <p>The display name for the managed rule group. For example, <code>Anonymous IP list</code> or <code>Account takeover prevention</code>.</p>
-    pub fn product_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name for the managed rule group. For example, <code>Anonymous IP list</code> or <code>Account takeover prevention</code>.</p>
-    pub fn set_product_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_product_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_title = input;
         self
     }
@@ -177,18 +163,12 @@ impl ManagedProductDescriptorBuilder {
         &self.product_title
     }
     /// <p>A short description of the managed rule group.</p>
-    pub fn product_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short description of the managed rule group.</p>
-    pub fn set_product_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_product_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_description = input;
         self
     }
@@ -197,18 +177,12 @@ impl ManagedProductDescriptorBuilder {
         &self.product_description
     }
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }

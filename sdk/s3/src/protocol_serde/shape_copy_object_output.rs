@@ -2,9 +2,7 @@
 pub(crate) fn de_bucket_key_enabled_header(
     header_map: &::http::HeaderMap,
 ) -> std::result::Result<::std::option::Option<bool>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-bucket-key-enabled")
-        .iter();
+    let headers = header_map.get_all("x-amz-server-side-encryption-bucket-key-enabled").iter();
     let var_1 = ::aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
     if var_1.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
@@ -19,10 +17,7 @@ pub(crate) fn de_bucket_key_enabled_header(
 
 pub(crate) fn de_copy_object_result_payload(
     body: &[u8],
-) -> std::result::Result<
-    ::std::option::Option<crate::types::CopyObjectResult>,
-    crate::operation::copy_object::CopyObjectError,
-> {
+) -> std::result::Result<::std::option::Option<crate::types::CopyObjectResult>, crate::operation::copy_object::CopyObjectError> {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_copy_object_output::de_copy_object_result(body)
@@ -33,105 +28,68 @@ pub(crate) fn de_copy_object_result_payload(
 
 pub(crate) fn de_copy_source_version_id_header(
     header_map: &::http::HeaderMap,
-) -> std::result::Result<
-    ::std::option::Option<::std::string::String>,
-    ::aws_smithy_http::header::ParseError,
-> {
+) -> std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-copy-source-version-id").iter();
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
 pub(crate) fn de_expiration_header(
     header_map: &::http::HeaderMap,
-) -> std::result::Result<
-    ::std::option::Option<::std::string::String>,
-    ::aws_smithy_http::header::ParseError,
-> {
+) -> std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-expiration").iter();
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
 pub(crate) fn de_request_charged_header(
     header_map: &::http::HeaderMap,
-) -> std::result::Result<
-    ::std::option::Option<crate::types::RequestCharged>,
-    ::aws_smithy_http::header::ParseError,
-> {
+) -> std::result::Result<::std::option::Option<crate::types::RequestCharged>, ::aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-request-charged").iter();
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
 pub(crate) fn de_sse_customer_algorithm_header(
     header_map: &::http::HeaderMap,
-) -> std::result::Result<
-    ::std::option::Option<::std::string::String>,
-    ::aws_smithy_http::header::ParseError,
-> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-customer-algorithm")
-        .iter();
+) -> std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-server-side-encryption-customer-algorithm").iter();
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
 pub(crate) fn de_sse_customer_key_md5_header(
     header_map: &::http::HeaderMap,
-) -> std::result::Result<
-    ::std::option::Option<::std::string::String>,
-    ::aws_smithy_http::header::ParseError,
-> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-customer-key-MD5")
-        .iter();
+) -> std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-server-side-encryption-customer-key-MD5").iter();
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
 pub(crate) fn de_ssekms_encryption_context_header(
     header_map: &::http::HeaderMap,
-) -> std::result::Result<
-    ::std::option::Option<::std::string::String>,
-    ::aws_smithy_http::header::ParseError,
-> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-context")
-        .iter();
+) -> std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-server-side-encryption-context").iter();
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
 pub(crate) fn de_ssekms_key_id_header(
     header_map: &::http::HeaderMap,
-) -> std::result::Result<
-    ::std::option::Option<::std::string::String>,
-    ::aws_smithy_http::header::ParseError,
-> {
-    let headers = header_map
-        .get_all("x-amz-server-side-encryption-aws-kms-key-id")
-        .iter();
+) -> std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amz-server-side-encryption-aws-kms-key-id").iter();
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
 pub(crate) fn de_server_side_encryption_header(
     header_map: &::http::HeaderMap,
-) -> std::result::Result<
-    ::std::option::Option<crate::types::ServerSideEncryption>,
-    ::aws_smithy_http::header::ParseError,
-> {
+) -> std::result::Result<::std::option::Option<crate::types::ServerSideEncryption>, ::aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-server-side-encryption").iter();
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
 pub(crate) fn de_version_id_header(
     header_map: &::http::HeaderMap,
-) -> std::result::Result<
-    ::std::option::Option<::std::string::String>,
-    ::aws_smithy_http::header::ParseError,
-> {
+) -> std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-version-id").iter();
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_copy_object_result(
-    inp: &[u8],
-) -> Result<crate::types::CopyObjectResult, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_copy_object_result(inp: &[u8]) -> Result<crate::types::CopyObjectResult, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

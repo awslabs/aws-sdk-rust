@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::put_detector::builders::PutDetectorFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::put_detector::builders::PutDetectorFluentBuilder::set_tags): <p>A collection of key and value pairs.</p>
     /// - On success, responds with [`PutDetectorOutput`](crate::operation::put_detector::PutDetectorOutput)
     /// - On failure, responds with [`SdkError<PutDetectorError>`](crate::operation::put_detector::PutDetectorError)
-    pub fn put_detector(
-        &self,
-    ) -> crate::operation::put_detector::builders::PutDetectorFluentBuilder {
+    pub fn put_detector(&self) -> crate::operation::put_detector::builders::PutDetectorFluentBuilder {
         crate::operation::put_detector::builders::PutDetectorFluentBuilder::new(self.handle.clone())
     }
 }

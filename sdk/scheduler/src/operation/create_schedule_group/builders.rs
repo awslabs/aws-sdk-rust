@@ -37,9 +37,7 @@ impl CreateScheduleGroupFluentBuilder {
         }
     }
     /// Access the CreateScheduleGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_schedule_group::builders::CreateScheduleGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_schedule_group::builders::CreateScheduleGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateScheduleGroupFluentBuilder {
             crate::operation::create_schedule_group::CreateScheduleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_schedule_group::CreateScheduleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_schedule_group::CreateScheduleGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateScheduleGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateScheduleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_schedule_group::CreateScheduleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_schedule_group::CreateScheduleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_schedule_group::CreateScheduleGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateScheduleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_schedule_group::CreateScheduleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_schedule_group::CreateScheduleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_schedule_group::CreateScheduleGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateScheduleGroupFluentBuilder {
             crate::operation::create_schedule_group::CreateScheduleGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_schedule_group::CreateScheduleGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_schedule_group::CreateScheduleGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -146,10 +133,7 @@ impl CreateScheduleGroupFluentBuilder {
         self
     }
     /// <p>The list of tags to associate with the schedule group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

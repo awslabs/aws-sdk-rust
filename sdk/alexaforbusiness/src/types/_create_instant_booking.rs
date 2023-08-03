@@ -30,9 +30,7 @@ impl CreateInstantBooking {
 
 /// A builder for [`CreateInstantBooking`](crate::types::CreateInstantBooking).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInstantBookingBuilder {
     pub(crate) duration_in_minutes: ::std::option::Option<i32>,
     pub(crate) enabled: ::std::option::Option<bool>,

@@ -37,9 +37,7 @@ impl DeleteSourceNetworkFluentBuilder {
         }
     }
     /// Access the DeleteSourceNetwork as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_source_network::builders::DeleteSourceNetworkInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_source_network::builders::DeleteSourceNetworkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteSourceNetworkFluentBuilder {
             crate::operation::delete_source_network::DeleteSourceNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_source_network::DeleteSourceNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_source_network::DeleteSourceNetworkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteSourceNetworkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteSourceNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_source_network::DeleteSourceNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_source_network::DeleteSourceNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_source_network::DeleteSourceNetworkError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteSourceNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_source_network::DeleteSourceNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_source_network::DeleteSourceNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_source_network::DeleteSourceNetworkError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteSourceNetworkFluentBuilder {
             crate::operation::delete_source_network::DeleteSourceNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_source_network::DeleteSourceNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_source_network::DeleteSourceNetworkError>,
     > {
         self.customize_middleware().await
     }
     /// <p>ID of the Source Network to delete.</p>
-    pub fn source_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_network_id(input.into());
         self
     }
     /// <p>ID of the Source Network to delete.</p>
-    pub fn set_source_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_network_id(input);
         self
     }

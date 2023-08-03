@@ -37,9 +37,7 @@ impl ActivateReadSetSourceItem {
 
 /// A builder for [`ActivateReadSetSourceItem`](crate::types::ActivateReadSetSourceItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivateReadSetSourceItemBuilder {
     pub(crate) read_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ReadSetActivationJobItemStatus>,
@@ -66,32 +64,21 @@ impl ActivateReadSetSourceItemBuilder {
         self
     }
     /// <p>The source's status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReadSetActivationJobItemStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReadSetActivationJobItemStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The source's status.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReadSetActivationJobItemStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReadSetActivationJobItemStatus> {
         &self.status
     }
     /// <p>The source's status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source's status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

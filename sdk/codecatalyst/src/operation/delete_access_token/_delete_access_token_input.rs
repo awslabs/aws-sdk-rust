@@ -15,17 +15,14 @@ impl DeleteAccessTokenInput {
 }
 impl DeleteAccessTokenInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessTokenInput`](crate::operation::delete_access_token::DeleteAccessTokenInput).
-    pub fn builder(
-    ) -> crate::operation::delete_access_token::builders::DeleteAccessTokenInputBuilder {
+    pub fn builder() -> crate::operation::delete_access_token::builders::DeleteAccessTokenInputBuilder {
         crate::operation::delete_access_token::builders::DeleteAccessTokenInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessTokenInput`](crate::operation::delete_access_token::DeleteAccessTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessTokenInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl DeleteAccessTokenInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccessTokenInput`](crate::operation::delete_access_token::DeleteAccessTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_access_token::DeleteAccessTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_access_token::DeleteAccessTokenInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_access_token::DeleteAccessTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_access_token::DeleteAccessTokenInput { id: self.id })
     }
 }

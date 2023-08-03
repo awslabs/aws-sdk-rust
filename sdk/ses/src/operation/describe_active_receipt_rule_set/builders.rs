@@ -28,7 +28,7 @@ impl DescribeActiveReceiptRuleSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeActiveReceiptRuleSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_active_receipt_rule_set::builders::DescribeActiveReceiptRuleSetInputBuilder,
+    inner: crate::operation::describe_active_receipt_rule_set::builders::DescribeActiveReceiptRuleSetInputBuilder,
 }
 impl DescribeActiveReceiptRuleSetFluentBuilder {
     /// Creates a new `DescribeActiveReceiptRuleSet`.
@@ -39,7 +39,7 @@ impl DescribeActiveReceiptRuleSetFluentBuilder {
         }
     }
     /// Access the DescribeActiveReceiptRuleSet as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_active_receipt_rule_set::builders::DescribeActiveReceiptRuleSetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_active_receipt_rule_set::builders::DescribeActiveReceiptRuleSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeActiveReceiptRuleSetFluentBuilder {
             crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeActiveReceiptRuleSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeActiveReceiptRuleSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeActiveReceiptRuleSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl DescribeActiveReceiptRuleSetFluentBuilder {
             crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetError>,
     > {
         self.customize_middleware().await
     }

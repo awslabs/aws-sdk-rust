@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`flow_definition_arn(Option<String>)`](crate::operation::describe_human_loop::DescribeHumanLoopOutput::flow_definition_arn): <p>The Amazon Resource Name (ARN) of the flow definition.</p>
     ///   - [`human_loop_output(Option<HumanLoopOutput>)`](crate::operation::describe_human_loop::DescribeHumanLoopOutput::human_loop_output): <p>An object that contains information about the output of the human loop.</p>
     /// - On failure, responds with [`SdkError<DescribeHumanLoopError>`](crate::operation::describe_human_loop::DescribeHumanLoopError)
-    pub fn describe_human_loop(
-        &self,
-    ) -> crate::operation::describe_human_loop::builders::DescribeHumanLoopFluentBuilder {
-        crate::operation::describe_human_loop::builders::DescribeHumanLoopFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_human_loop(&self) -> crate::operation::describe_human_loop::builders::DescribeHumanLoopFluentBuilder {
+        crate::operation::describe_human_loop::builders::DescribeHumanLoopFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl CancelCommandInput {
 
 /// A builder for [`CancelCommandInput`](crate::operation::cancel_command::CancelCommandInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelCommandInputBuilder {
     pub(crate) command_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,26 +62,18 @@ impl CancelCommandInputBuilder {
         self
     }
     /// <p>(Optional) A list of managed node IDs on which you want to cancel the command. If not provided, the command is canceled on every node on which it was requested.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>(Optional) A list of managed node IDs on which you want to cancel the command. If not provided, the command is canceled on every node on which it was requested.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// Consumes the builder and constructs a [`CancelCommandInput`](crate::operation::cancel_command::CancelCommandInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_command::CancelCommandInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::cancel_command::CancelCommandInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_command::CancelCommandInput {
             command_id: self.command_id,
             instance_ids: self.instance_ids,

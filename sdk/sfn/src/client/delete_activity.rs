@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`activity_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_activity::builders::DeleteActivityFluentBuilder::activity_arn) / [`set_activity_arn(Option<String>)`](crate::operation::delete_activity::builders::DeleteActivityFluentBuilder::set_activity_arn): <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
     /// - On success, responds with [`DeleteActivityOutput`](crate::operation::delete_activity::DeleteActivityOutput)
     /// - On failure, responds with [`SdkError<DeleteActivityError>`](crate::operation::delete_activity::DeleteActivityError)
-    pub fn delete_activity(
-        &self,
-    ) -> crate::operation::delete_activity::builders::DeleteActivityFluentBuilder {
-        crate::operation::delete_activity::builders::DeleteActivityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_activity(&self) -> crate::operation::delete_activity::builders::DeleteActivityFluentBuilder {
+        crate::operation::delete_activity::builders::DeleteActivityFluentBuilder::new(self.handle.clone())
     }
 }

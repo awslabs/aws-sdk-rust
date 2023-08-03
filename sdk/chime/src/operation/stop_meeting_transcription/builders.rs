@@ -26,13 +26,11 @@ impl StopMeetingTranscriptionInputBuilder {
 /// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_StopMeetingTranscription.html">StopMeetingTranscription</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
-#[deprecated(
-    note = "Replaced by StopMeetingTranscription in the Amazon Chime SDK Meetings Namespace"
-)]
+#[deprecated(note = "Replaced by StopMeetingTranscription in the Amazon Chime SDK Meetings Namespace")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopMeetingTranscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::stop_meeting_transcription::builders::StopMeetingTranscriptionInputBuilder,
+    inner: crate::operation::stop_meeting_transcription::builders::StopMeetingTranscriptionInputBuilder,
 }
 impl StopMeetingTranscriptionFluentBuilder {
     /// Creates a new `StopMeetingTranscription`.
@@ -43,10 +41,7 @@ impl StopMeetingTranscriptionFluentBuilder {
         }
     }
     /// Access the StopMeetingTranscription as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_meeting_transcription::builders::StopMeetingTranscriptionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::stop_meeting_transcription::builders::StopMeetingTranscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl StopMeetingTranscriptionFluentBuilder {
             crate::operation::stop_meeting_transcription::StopMeetingTranscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_meeting_transcription::StopMeetingTranscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_meeting_transcription::StopMeetingTranscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl StopMeetingTranscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl StopMeetingTranscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_meeting_transcription::StopMeetingTranscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_meeting_transcription::StopMeetingTranscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_meeting_transcription::StopMeetingTranscriptionError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl StopMeetingTranscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_meeting_transcription::StopMeetingTranscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_meeting_transcription::StopMeetingTranscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_meeting_transcription::StopMeetingTranscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl StopMeetingTranscriptionFluentBuilder {
             crate::operation::stop_meeting_transcription::StopMeetingTranscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_meeting_transcription::StopMeetingTranscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_meeting_transcription::StopMeetingTranscriptionError>,
     > {
         self.customize_middleware().await
     }

@@ -6,9 +6,7 @@
 pub struct ImageConfiguration {
     /// <p>Environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
     #[doc(hidden)]
-    pub runtime_environment_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub runtime_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An optional command that App Runner runs to start the application in the source image. If specified, this command overrides the Docker image’s default start command.</p>
     #[doc(hidden)]
     pub start_command: ::std::option::Option<::std::string::String>,
@@ -23,17 +21,11 @@ pub struct ImageConfiguration {
     /// </ul>
     /// </note>
     #[doc(hidden)]
-    pub runtime_environment_secrets: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub runtime_environment_secrets: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ImageConfiguration {
     /// <p>Environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
-    pub fn runtime_environment_variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn runtime_environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.runtime_environment_variables.as_ref()
     }
     /// <p>An optional command that App Runner runs to start the application in the source image. If specified, this command overrides the Docker image’s default start command.</p>
@@ -51,27 +43,17 @@ impl ImageConfiguration {
     /// <li> <p> Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported. </p> </li>
     /// </ul>
     /// </note>
-    pub fn runtime_environment_secrets(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn runtime_environment_secrets(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.runtime_environment_secrets.as_ref()
     }
 }
 impl ::std::fmt::Debug for ImageConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ImageConfiguration");
-        formatter.field(
-            "runtime_environment_variables",
-            &self.runtime_environment_variables,
-        );
+        formatter.field("runtime_environment_variables", &self.runtime_environment_variables);
         formatter.field("start_command", &"*** Sensitive Data Redacted ***");
         formatter.field("port", &self.port);
-        formatter.field(
-            "runtime_environment_secrets",
-            &self.runtime_environment_secrets,
-        );
+        formatter.field("runtime_environment_secrets", &self.runtime_environment_secrets);
         formatter.finish()
     }
 }
@@ -86,14 +68,10 @@ impl ImageConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ImageConfigurationBuilder {
-    pub(crate) runtime_environment_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) runtime_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) start_command: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<::std::string::String>,
-    pub(crate) runtime_environment_secrets: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) runtime_environment_secrets: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ImageConfigurationBuilder {
     /// Adds a key-value pair to `runtime_environment_variables`.
@@ -114,9 +92,7 @@ impl ImageConfigurationBuilder {
     /// <p>Environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
     pub fn set_runtime_environment_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.runtime_environment_variables = input;
         self
@@ -124,24 +100,16 @@ impl ImageConfigurationBuilder {
     /// <p>Environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
     pub fn get_runtime_environment_variables(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.runtime_environment_variables
     }
     /// <p>An optional command that App Runner runs to start the application in the source image. If specified, this command overrides the Docker image’s default start command.</p>
-    pub fn start_command(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_command = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional command that App Runner runs to start the application in the source image. If specified, this command overrides the Docker image’s default start command.</p>
-    pub fn set_start_command(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_command(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_command = input;
         self
     }
@@ -194,9 +162,7 @@ impl ImageConfigurationBuilder {
     /// </note>
     pub fn set_runtime_environment_secrets(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.runtime_environment_secrets = input;
         self
@@ -209,9 +175,7 @@ impl ImageConfigurationBuilder {
     /// </note>
     pub fn get_runtime_environment_secrets(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.runtime_environment_secrets
     }
     /// Consumes the builder and constructs a [`ImageConfiguration`](crate::types::ImageConfiguration).
@@ -227,16 +191,10 @@ impl ImageConfigurationBuilder {
 impl ::std::fmt::Debug for ImageConfigurationBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ImageConfigurationBuilder");
-        formatter.field(
-            "runtime_environment_variables",
-            &self.runtime_environment_variables,
-        );
+        formatter.field("runtime_environment_variables", &self.runtime_environment_variables);
         formatter.field("start_command", &"*** Sensitive Data Redacted ***");
         formatter.field("port", &self.port);
-        formatter.field(
-            "runtime_environment_secrets",
-            &self.runtime_environment_secrets,
-        );
+        formatter.field("runtime_environment_secrets", &self.runtime_environment_secrets);
         formatter.finish()
     }
 }

@@ -57,9 +57,7 @@ impl ListWorkflowsInput {
 
 /// A builder for [`ListWorkflowsInput`](crate::operation::list_workflows::ListWorkflowsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkflowsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -112,25 +110,17 @@ impl ListWorkflowsInputBuilder {
         &self.template_id
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn ads_application_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ads_application_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ads_application_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn set_ads_application_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ads_application_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ads_application_configuration_name = input;
         self
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn get_ads_application_configuration_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_ads_application_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.ads_application_configuration_name
     }
     /// <p>The status of the migration workflow.</p>
@@ -139,10 +129,7 @@ impl ListWorkflowsInputBuilder {
         self
     }
     /// <p>The status of the migration workflow.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationWorkflowStatusEnum>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MigrationWorkflowStatusEnum>) -> Self {
         self.status = input;
         self
     }
@@ -167,10 +154,7 @@ impl ListWorkflowsInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkflowsInput`](crate::operation::list_workflows::ListWorkflowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_workflows::ListWorkflowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workflows::ListWorkflowsInput {
             max_results: self.max_results.unwrap_or_default(),
             next_token: self.next_token,

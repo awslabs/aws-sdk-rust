@@ -36,16 +36,14 @@ impl ListMedicalTranscriptionJobsInput {
 }
 impl ListMedicalTranscriptionJobsInput {
     /// Creates a new builder-style object to manufacture [`ListMedicalTranscriptionJobsInput`](crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsInput).
-    pub fn builder() -> crate::operation::list_medical_transcription_jobs::builders::ListMedicalTranscriptionJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_medical_transcription_jobs::builders::ListMedicalTranscriptionJobsInputBuilder {
         crate::operation::list_medical_transcription_jobs::builders::ListMedicalTranscriptionJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMedicalTranscriptionJobsInput`](crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMedicalTranscriptionJobsInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::TranscriptionJobStatus>,
     pub(crate) job_name_contains: ::std::option::Option<::std::string::String>,
@@ -59,10 +57,7 @@ impl ListMedicalTranscriptionJobsInputBuilder {
         self
     }
     /// <p>Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all medical transcription jobs are returned.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscriptionJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TranscriptionJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -71,18 +66,12 @@ impl ListMedicalTranscriptionJobsInputBuilder {
         &self.status
     }
     /// <p>Returns only the medical transcription jobs that contain the specified string. The search is not case sensitive.</p>
-    pub fn job_name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns only the medical transcription jobs that contain the specified string. The search is not case sensitive.</p>
-    pub fn set_job_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name_contains = input;
         self
     }
@@ -125,13 +114,11 @@ impl ListMedicalTranscriptionJobsInputBuilder {
         crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsInput {
-                status: self.status,
-                job_name_contains: self.job_name_contains,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsInput {
+            status: self.status,
+            job_name_contains: self.job_name_contains,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

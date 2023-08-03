@@ -25,17 +25,14 @@ impl DeleteIdentityPolicyInput {
 }
 impl DeleteIdentityPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteIdentityPolicyInput`](crate::operation::delete_identity_policy::DeleteIdentityPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_identity_policy::builders::DeleteIdentityPolicyInputBuilder {
+    pub fn builder() -> crate::operation::delete_identity_policy::builders::DeleteIdentityPolicyInputBuilder {
         crate::operation::delete_identity_policy::builders::DeleteIdentityPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIdentityPolicyInput`](crate::operation::delete_identity_policy::DeleteIdentityPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIdentityPolicyInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
@@ -75,15 +72,11 @@ impl DeleteIdentityPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIdentityPolicyInput`](crate::operation::delete_identity_policy::DeleteIdentityPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_identity_policy::DeleteIdentityPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_identity_policy::DeleteIdentityPolicyInput {
-                identity: self.identity,
-                policy_name: self.policy_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_identity_policy::DeleteIdentityPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_identity_policy::DeleteIdentityPolicyInput {
+            identity: self.identity,
+            policy_name: self.policy_name,
+        })
     }
 }

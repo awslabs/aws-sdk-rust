@@ -23,9 +23,7 @@ impl AlternateSoftwareMetadata {
 
 /// A builder for [`AlternateSoftwareMetadata`](crate::types::AlternateSoftwareMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlternateSoftwareMetadataBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl AlternateSoftwareMetadataBuilder {
     }
     /// Consumes the builder and constructs a [`AlternateSoftwareMetadata`](crate::types::AlternateSoftwareMetadata).
     pub fn build(self) -> crate::types::AlternateSoftwareMetadata {
-        crate::types::AlternateSoftwareMetadata {
-            version: self.version,
-        }
+        crate::types::AlternateSoftwareMetadata { version: self.version }
     }
 }

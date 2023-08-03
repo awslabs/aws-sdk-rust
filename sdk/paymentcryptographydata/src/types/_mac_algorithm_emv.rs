@@ -18,14 +18,11 @@ pub struct MacAlgorithmEmv {
     pub session_key_derivation_mode: ::std::option::Option<crate::types::SessionKeyDerivationMode>,
     /// <p>Parameters that are required to generate session key for EMV generation and verification.</p>
     #[doc(hidden)]
-    pub session_key_derivation_value:
-        ::std::option::Option<crate::types::SessionKeyDerivationValue>,
+    pub session_key_derivation_value: ::std::option::Option<crate::types::SessionKeyDerivationValue>,
 }
 impl MacAlgorithmEmv {
     /// <p>The method to use when deriving the master key for EMV MAC generation or verification.</p>
-    pub fn major_key_derivation_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MajorKeyDerivationMode> {
+    pub fn major_key_derivation_mode(&self) -> ::std::option::Option<&crate::types::MajorKeyDerivationMode> {
         self.major_key_derivation_mode.as_ref()
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
@@ -37,15 +34,11 @@ impl MacAlgorithmEmv {
         self.pan_sequence_number.as_deref()
     }
     /// <p>The method of deriving a session key for EMV MAC generation or verification.</p>
-    pub fn session_key_derivation_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SessionKeyDerivationMode> {
+    pub fn session_key_derivation_mode(&self) -> ::std::option::Option<&crate::types::SessionKeyDerivationMode> {
         self.session_key_derivation_mode.as_ref()
     }
     /// <p>Parameters that are required to generate session key for EMV generation and verification.</p>
-    pub fn session_key_derivation_value(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SessionKeyDerivationValue> {
+    pub fn session_key_derivation_value(&self) -> ::std::option::Option<&crate::types::SessionKeyDerivationValue> {
         self.session_key_derivation_value.as_ref()
     }
 }
@@ -55,14 +48,8 @@ impl ::std::fmt::Debug for MacAlgorithmEmv {
         formatter.field("major_key_derivation_mode", &self.major_key_derivation_mode);
         formatter.field("primary_account_number", &"*** Sensitive Data Redacted ***");
         formatter.field("pan_sequence_number", &self.pan_sequence_number);
-        formatter.field(
-            "session_key_derivation_mode",
-            &self.session_key_derivation_mode,
-        );
-        formatter.field(
-            "session_key_derivation_value",
-            &self.session_key_derivation_value,
-        );
+        formatter.field("session_key_derivation_mode", &self.session_key_derivation_mode);
+        formatter.field("session_key_derivation_value", &self.session_key_derivation_value);
         formatter.finish()
     }
 }
@@ -77,51 +64,34 @@ impl MacAlgorithmEmv {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct MacAlgorithmEmvBuilder {
-    pub(crate) major_key_derivation_mode:
-        ::std::option::Option<crate::types::MajorKeyDerivationMode>,
+    pub(crate) major_key_derivation_mode: ::std::option::Option<crate::types::MajorKeyDerivationMode>,
     pub(crate) primary_account_number: ::std::option::Option<::std::string::String>,
     pub(crate) pan_sequence_number: ::std::option::Option<::std::string::String>,
-    pub(crate) session_key_derivation_mode:
-        ::std::option::Option<crate::types::SessionKeyDerivationMode>,
-    pub(crate) session_key_derivation_value:
-        ::std::option::Option<crate::types::SessionKeyDerivationValue>,
+    pub(crate) session_key_derivation_mode: ::std::option::Option<crate::types::SessionKeyDerivationMode>,
+    pub(crate) session_key_derivation_value: ::std::option::Option<crate::types::SessionKeyDerivationValue>,
 }
 impl MacAlgorithmEmvBuilder {
     /// <p>The method to use when deriving the master key for EMV MAC generation or verification.</p>
-    pub fn major_key_derivation_mode(
-        mut self,
-        input: crate::types::MajorKeyDerivationMode,
-    ) -> Self {
+    pub fn major_key_derivation_mode(mut self, input: crate::types::MajorKeyDerivationMode) -> Self {
         self.major_key_derivation_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The method to use when deriving the master key for EMV MAC generation or verification.</p>
-    pub fn set_major_key_derivation_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::MajorKeyDerivationMode>,
-    ) -> Self {
+    pub fn set_major_key_derivation_mode(mut self, input: ::std::option::Option<crate::types::MajorKeyDerivationMode>) -> Self {
         self.major_key_derivation_mode = input;
         self
     }
     /// <p>The method to use when deriving the master key for EMV MAC generation or verification.</p>
-    pub fn get_major_key_derivation_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::MajorKeyDerivationMode> {
+    pub fn get_major_key_derivation_mode(&self) -> &::std::option::Option<crate::types::MajorKeyDerivationMode> {
         &self.major_key_derivation_mode
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
-    pub fn primary_account_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_account_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
-    pub fn set_primary_account_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_account_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_account_number = input;
         self
     }
@@ -130,18 +100,12 @@ impl MacAlgorithmEmvBuilder {
         &self.primary_account_number
     }
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
-    pub fn pan_sequence_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pan_sequence_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pan_sequence_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
-    pub fn set_pan_sequence_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pan_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pan_sequence_number = input;
         self
     }
@@ -150,47 +114,31 @@ impl MacAlgorithmEmvBuilder {
         &self.pan_sequence_number
     }
     /// <p>The method of deriving a session key for EMV MAC generation or verification.</p>
-    pub fn session_key_derivation_mode(
-        mut self,
-        input: crate::types::SessionKeyDerivationMode,
-    ) -> Self {
+    pub fn session_key_derivation_mode(mut self, input: crate::types::SessionKeyDerivationMode) -> Self {
         self.session_key_derivation_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The method of deriving a session key for EMV MAC generation or verification.</p>
-    pub fn set_session_key_derivation_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionKeyDerivationMode>,
-    ) -> Self {
+    pub fn set_session_key_derivation_mode(mut self, input: ::std::option::Option<crate::types::SessionKeyDerivationMode>) -> Self {
         self.session_key_derivation_mode = input;
         self
     }
     /// <p>The method of deriving a session key for EMV MAC generation or verification.</p>
-    pub fn get_session_key_derivation_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::SessionKeyDerivationMode> {
+    pub fn get_session_key_derivation_mode(&self) -> &::std::option::Option<crate::types::SessionKeyDerivationMode> {
         &self.session_key_derivation_mode
     }
     /// <p>Parameters that are required to generate session key for EMV generation and verification.</p>
-    pub fn session_key_derivation_value(
-        mut self,
-        input: crate::types::SessionKeyDerivationValue,
-    ) -> Self {
+    pub fn session_key_derivation_value(mut self, input: crate::types::SessionKeyDerivationValue) -> Self {
         self.session_key_derivation_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>Parameters that are required to generate session key for EMV generation and verification.</p>
-    pub fn set_session_key_derivation_value(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionKeyDerivationValue>,
-    ) -> Self {
+    pub fn set_session_key_derivation_value(mut self, input: ::std::option::Option<crate::types::SessionKeyDerivationValue>) -> Self {
         self.session_key_derivation_value = input;
         self
     }
     /// <p>Parameters that are required to generate session key for EMV generation and verification.</p>
-    pub fn get_session_key_derivation_value(
-        &self,
-    ) -> &::std::option::Option<crate::types::SessionKeyDerivationValue> {
+    pub fn get_session_key_derivation_value(&self) -> &::std::option::Option<crate::types::SessionKeyDerivationValue> {
         &self.session_key_derivation_value
     }
     /// Consumes the builder and constructs a [`MacAlgorithmEmv`](crate::types::MacAlgorithmEmv).
@@ -210,14 +158,8 @@ impl ::std::fmt::Debug for MacAlgorithmEmvBuilder {
         formatter.field("major_key_derivation_mode", &self.major_key_derivation_mode);
         formatter.field("primary_account_number", &"*** Sensitive Data Redacted ***");
         formatter.field("pan_sequence_number", &self.pan_sequence_number);
-        formatter.field(
-            "session_key_derivation_mode",
-            &self.session_key_derivation_mode,
-        );
-        formatter.field(
-            "session_key_derivation_value",
-            &self.session_key_derivation_value,
-        );
+        formatter.field("session_key_derivation_mode", &self.session_key_derivation_mode);
+        formatter.field("session_key_derivation_value", &self.session_key_derivation_value);
         formatter.finish()
     }
 }

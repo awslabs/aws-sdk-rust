@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`service_principal(impl ::std::convert::Into<String>)`](crate::operation::deregister_delegated_administrator::builders::DeregisterDelegatedAdministratorFluentBuilder::service_principal) / [`set_service_principal(Option<String>)`](crate::operation::deregister_delegated_administrator::builders::DeregisterDelegatedAdministratorFluentBuilder::set_service_principal): <p>The service principal name of an Amazon Web Services service for which the account is a delegated administrator.</p>  <p>Delegated administrator privileges are revoked for only the specified Amazon Web Services service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
     /// - On success, responds with [`DeregisterDelegatedAdministratorOutput`](crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorOutput)
     /// - On failure, responds with [`SdkError<DeregisterDelegatedAdministratorError>`](crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorError)
-    pub fn deregister_delegated_administrator(&self) -> crate::operation::deregister_delegated_administrator::builders::DeregisterDelegatedAdministratorFluentBuilder{
+    pub fn deregister_delegated_administrator(
+        &self,
+    ) -> crate::operation::deregister_delegated_administrator::builders::DeregisterDelegatedAdministratorFluentBuilder {
         crate::operation::deregister_delegated_administrator::builders::DeregisterDelegatedAdministratorFluentBuilder::new(self.handle.clone())
     }
 }

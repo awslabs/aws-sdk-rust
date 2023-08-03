@@ -30,8 +30,7 @@ impl ::std::fmt::Debug for StartUserAccessTasksInput {
 }
 impl StartUserAccessTasksInput {
     /// Creates a new builder-style object to manufacture [`StartUserAccessTasksInput`](crate::operation::start_user_access_tasks::StartUserAccessTasksInput).
-    pub fn builder(
-    ) -> crate::operation::start_user_access_tasks::builders::StartUserAccessTasksInputBuilder {
+    pub fn builder() -> crate::operation::start_user_access_tasks::builders::StartUserAccessTasksInputBuilder {
         crate::operation::start_user_access_tasks::builders::StartUserAccessTasksInputBuilder::default()
     }
 }
@@ -45,18 +44,12 @@ pub struct StartUserAccessTasksInputBuilder {
 }
 impl StartUserAccessTasksInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_bundle_identifier = input;
         self
     }
@@ -81,16 +74,12 @@ impl StartUserAccessTasksInputBuilder {
     /// Consumes the builder and constructs a [`StartUserAccessTasksInput`](crate::operation::start_user_access_tasks::StartUserAccessTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_user_access_tasks::StartUserAccessTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_user_access_tasks::StartUserAccessTasksInput {
-                app_bundle_identifier: self.app_bundle_identifier,
-                email: self.email,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_user_access_tasks::StartUserAccessTasksInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_user_access_tasks::StartUserAccessTasksInput {
+            app_bundle_identifier: self.app_bundle_identifier,
+            email: self.email,
+        })
     }
 }
 impl ::std::fmt::Debug for StartUserAccessTasksInputBuilder {

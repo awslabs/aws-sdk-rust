@@ -4,34 +4,24 @@ pub fn ser_cmaf_encryption_settings(
     input: &crate::types::CmafEncryptionSettings,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.constant_initialization_vector {
-        object
-            .key("constantInitializationVector")
-            .string(var_1.as_str());
+        object.key("constantInitializationVector").string(var_1.as_str());
     }
     if let Some(var_2) = &input.encryption_method {
         object.key("encryptionMethod").string(var_2.as_str());
     }
     if let Some(var_3) = &input.initialization_vector_in_manifest {
-        object
-            .key("initializationVectorInManifest")
-            .string(var_3.as_str());
+        object.key("initializationVectorInManifest").string(var_3.as_str());
     }
     if let Some(var_4) = &input.speke_key_provider {
         #[allow(unused_mut)]
         let mut object_5 = object.key("spekeKeyProvider").start_object();
-        crate::protocol_serde::shape_speke_key_provider_cmaf::ser_speke_key_provider_cmaf(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_speke_key_provider_cmaf::ser_speke_key_provider_cmaf(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.static_key_provider {
         #[allow(unused_mut)]
         let mut object_7 = object.key("staticKeyProvider").start_object();
-        crate::protocol_serde::shape_static_key_provider::ser_static_key_provider(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_static_key_provider::ser_static_key_provider(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.r#type {
@@ -42,17 +32,9 @@ pub fn ser_cmaf_encryption_settings(
 
 pub(crate) fn de_cmaf_encryption_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::CmafEncryptionSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::CmafEncryptionSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -62,86 +44,60 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "constantInitializationVector" => {
-                                builder = builder.set_constant_initialization_vector(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "constantInitializationVector" => {
+                            builder = builder.set_constant_initialization_vector(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "encryptionMethod" => {
-                                builder = builder.set_encryption_method(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::CmafEncryptionType::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "initializationVectorInManifest" => {
-                                builder = builder.set_initialization_vector_in_manifest(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::CmafInitializationVectorInManifest::from(
-                                                u.as_ref(),
-                                            )
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "spekeKeyProvider" => {
-                                builder = builder.set_speke_key_provider(
-                                    crate::protocol_serde::shape_speke_key_provider_cmaf::de_speke_key_provider_cmaf(tokens)?
-                                );
-                            }
-                            "staticKeyProvider" => {
-                                builder = builder.set_static_key_provider(
-                                    crate::protocol_serde::shape_static_key_provider::de_static_key_provider(tokens)?
-                                );
-                            }
-                            "type" => {
-                                builder = builder.set_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::CmafKeyProviderType::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "encryptionMethod" => {
+                            builder = builder.set_encryption_method(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafEncryptionType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "initializationVectorInManifest" => {
+                            builder = builder.set_initialization_vector_in_manifest(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::CmafInitializationVectorInManifest::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
+                        "spekeKeyProvider" => {
+                            builder = builder
+                                .set_speke_key_provider(crate::protocol_serde::shape_speke_key_provider_cmaf::de_speke_key_provider_cmaf(tokens)?);
+                        }
+                        "staticKeyProvider" => {
+                            builder =
+                                builder.set_static_key_provider(crate::protocol_serde::shape_static_key_provider::de_static_key_provider(tokens)?);
+                        }
+                        "type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafKeyProviderType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

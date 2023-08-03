@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeclineInvitationsOutput {
 }
 impl DeclineInvitationsOutput {
     /// Creates a new builder-style object to manufacture [`DeclineInvitationsOutput`](crate::operation::decline_invitations::DeclineInvitationsOutput).
-    pub fn builder(
-    ) -> crate::operation::decline_invitations::builders::DeclineInvitationsOutputBuilder {
+    pub fn builder() -> crate::operation::decline_invitations::builders::DeclineInvitationsOutputBuilder {
         crate::operation::decline_invitations::builders::DeclineInvitationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeclineInvitationsOutput`](crate::operation::decline_invitations::DeclineInvitationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeclineInvitationsOutputBuilder {
     pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::Result>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl DeclineInvitationsOutputBuilder {
         self
     }
     /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
-    pub fn set_unprocessed_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Result>>,
-    ) -> Self {
+    pub fn set_unprocessed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Result>>) -> Self {
         self.unprocessed_accounts = input;
         self
     }
     /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
-    pub fn get_unprocessed_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Result>> {
+    pub fn get_unprocessed_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Result>> {
         &self.unprocessed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

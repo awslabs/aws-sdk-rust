@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`readiness(Option<Readiness>)`](crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput::readiness): <p>The readiness at rule level.</p>
     ///   - [`resources(Option<Vec<ResourceResult>>)`](crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput::resources): <p>Summary of the readiness of resources.</p>
     /// - On failure, responds with [`SdkError<GetReadinessCheckStatusError>`](crate::operation::get_readiness_check_status::GetReadinessCheckStatusError)
-    pub fn get_readiness_check_status(
-        &self,
-    ) -> crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusFluentBuilder
-    {
+    pub fn get_readiness_check_status(&self) -> crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusFluentBuilder {
         crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusFluentBuilder::new(self.handle.clone())
     }
 }

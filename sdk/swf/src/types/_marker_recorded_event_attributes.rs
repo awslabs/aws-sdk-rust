@@ -37,9 +37,7 @@ impl MarkerRecordedEventAttributes {
 
 /// A builder for [`MarkerRecordedEventAttributes`](crate::types::MarkerRecordedEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MarkerRecordedEventAttributesBuilder {
     pub(crate) marker_name: ::std::option::Option<::std::string::String>,
     pub(crate) details: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl MarkerRecordedEventAttributesBuilder {
         self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RecordMarker</code> decision that requested this marker. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    pub fn set_decision_task_completed_event_id(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.decision_task_completed_event_id = input;
         self
     }
@@ -96,9 +91,7 @@ impl MarkerRecordedEventAttributesBuilder {
         crate::types::MarkerRecordedEventAttributes {
             marker_name: self.marker_name,
             details: self.details,
-            decision_task_completed_event_id: self
-                .decision_task_completed_event_id
-                .unwrap_or_default(),
+            decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
         }
     }
 }

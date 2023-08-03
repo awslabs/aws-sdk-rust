@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeContinuousBackupsOutput`](crate::operation::describe_continuous_backups::DescribeContinuousBackupsOutput) with field(s):
     ///   - [`continuous_backups_description(Option<ContinuousBackupsDescription>)`](crate::operation::describe_continuous_backups::DescribeContinuousBackupsOutput::continuous_backups_description): <p>Represents the continuous backups and point in time recovery settings on the table.</p>
     /// - On failure, responds with [`SdkError<DescribeContinuousBackupsError>`](crate::operation::describe_continuous_backups::DescribeContinuousBackupsError)
-    pub fn describe_continuous_backups(&self) -> crate::operation::describe_continuous_backups::builders::DescribeContinuousBackupsFluentBuilder{
+    pub fn describe_continuous_backups(&self) -> crate::operation::describe_continuous_backups::builders::DescribeContinuousBackupsFluentBuilder {
         crate::operation::describe_continuous_backups::builders::DescribeContinuousBackupsFluentBuilder::new(self.handle.clone())
     }
 }

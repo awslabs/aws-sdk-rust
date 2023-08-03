@@ -43,17 +43,14 @@ impl CreateRecommenderInput {
 }
 impl CreateRecommenderInput {
     /// Creates a new builder-style object to manufacture [`CreateRecommenderInput`](crate::operation::create_recommender::CreateRecommenderInput).
-    pub fn builder() -> crate::operation::create_recommender::builders::CreateRecommenderInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_recommender::builders::CreateRecommenderInputBuilder {
         crate::operation::create_recommender::builders::CreateRecommenderInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRecommenderInput`](crate::operation::create_recommender::CreateRecommenderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRecommenderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
@@ -77,18 +74,12 @@ impl CreateRecommenderInputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_group_arn = input;
         self
     }
@@ -116,17 +107,12 @@ impl CreateRecommenderInputBuilder {
         self
     }
     /// <p>The configuration details of the recommender.</p>
-    pub fn set_recommender_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommenderConfig>,
-    ) -> Self {
+    pub fn set_recommender_config(mut self, input: ::std::option::Option<crate::types::RecommenderConfig>) -> Self {
         self.recommender_config = input;
         self
     }
     /// <p>The configuration details of the recommender.</p>
-    pub fn get_recommender_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommenderConfig> {
+    pub fn get_recommender_config(&self) -> &::std::option::Option<crate::types::RecommenderConfig> {
         &self.recommender_config
     }
     /// Appends an item to `tags`.
@@ -141,10 +127,7 @@ impl CreateRecommenderInputBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the recommender.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -155,18 +138,13 @@ impl CreateRecommenderInputBuilder {
     /// Consumes the builder and constructs a [`CreateRecommenderInput`](crate::operation::create_recommender::CreateRecommenderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_recommender::CreateRecommenderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_recommender::CreateRecommenderInput {
-                name: self.name,
-                dataset_group_arn: self.dataset_group_arn,
-                recipe_arn: self.recipe_arn,
-                recommender_config: self.recommender_config,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_recommender::CreateRecommenderInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_recommender::CreateRecommenderInput {
+            name: self.name,
+            dataset_group_arn: self.dataset_group_arn,
+            recipe_arn: self.recipe_arn,
+            recommender_config: self.recommender_config,
+            tags: self.tags,
+        })
     }
 }

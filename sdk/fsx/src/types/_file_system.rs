@@ -74,8 +74,7 @@ pub struct FileSystem {
     pub lustre_configuration: ::std::option::Option<crate::types::LustreFileSystemConfiguration>,
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system that you have initiated using the <code>UpdateFileSystem</code> operation.</p>
     #[doc(hidden)]
-    pub administrative_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
+    pub administrative_actions: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
     /// <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
     #[doc(hidden)]
     pub ontap_configuration: ::std::option::Option<crate::types::OntapFileSystemConfiguration>,
@@ -117,9 +116,7 @@ impl FileSystem {
         self.lifecycle.as_ref()
     }
     /// <p>A structure providing details of any failures that occurred.</p>
-    pub fn failure_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FileSystemFailureDetails> {
+    pub fn failure_details(&self) -> ::std::option::Option<&crate::types::FileSystemFailureDetails> {
         self.failure_details.as_ref()
     }
     /// <p>The storage capacity of the file system in gibibytes (GiB).</p>
@@ -167,27 +164,19 @@ impl FileSystem {
         self.tags.as_deref()
     }
     /// <p>The configuration for this Amazon FSx for Windows File Server file system.</p>
-    pub fn windows_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WindowsFileSystemConfiguration> {
+    pub fn windows_configuration(&self) -> ::std::option::Option<&crate::types::WindowsFileSystemConfiguration> {
         self.windows_configuration.as_ref()
     }
     /// <p>The configuration for the Amazon FSx for Lustre file system.</p>
-    pub fn lustre_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LustreFileSystemConfiguration> {
+    pub fn lustre_configuration(&self) -> ::std::option::Option<&crate::types::LustreFileSystemConfiguration> {
         self.lustre_configuration.as_ref()
     }
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system that you have initiated using the <code>UpdateFileSystem</code> operation.</p>
-    pub fn administrative_actions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AdministrativeAction]> {
+    pub fn administrative_actions(&self) -> ::std::option::Option<&[crate::types::AdministrativeAction]> {
         self.administrative_actions.as_deref()
     }
     /// <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
-    pub fn ontap_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OntapFileSystemConfiguration> {
+    pub fn ontap_configuration(&self) -> ::std::option::Option<&crate::types::OntapFileSystemConfiguration> {
         self.ontap_configuration.as_ref()
     }
     /// <p>The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.</p>
@@ -195,9 +184,7 @@ impl FileSystem {
         self.file_system_type_version.as_deref()
     }
     /// <p>The configuration for this Amazon FSx for OpenZFS file system.</p>
-    pub fn open_zfs_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OpenZfsFileSystemConfiguration> {
+    pub fn open_zfs_configuration(&self) -> ::std::option::Option<&crate::types::OpenZfsFileSystemConfiguration> {
         self.open_zfs_configuration.as_ref()
     }
 }
@@ -210,9 +197,7 @@ impl FileSystem {
 
 /// A builder for [`FileSystem`](crate::types::FileSystem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileSystemBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -229,17 +214,12 @@ pub struct FileSystemBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) windows_configuration:
-        ::std::option::Option<crate::types::WindowsFileSystemConfiguration>,
-    pub(crate) lustre_configuration:
-        ::std::option::Option<crate::types::LustreFileSystemConfiguration>,
-    pub(crate) administrative_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
-    pub(crate) ontap_configuration:
-        ::std::option::Option<crate::types::OntapFileSystemConfiguration>,
+    pub(crate) windows_configuration: ::std::option::Option<crate::types::WindowsFileSystemConfiguration>,
+    pub(crate) lustre_configuration: ::std::option::Option<crate::types::LustreFileSystemConfiguration>,
+    pub(crate) administrative_actions: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
+    pub(crate) ontap_configuration: ::std::option::Option<crate::types::OntapFileSystemConfiguration>,
     pub(crate) file_system_type_version: ::std::option::Option<::std::string::String>,
-    pub(crate) open_zfs_configuration:
-        ::std::option::Option<crate::types::OpenZfsFileSystemConfiguration>,
+    pub(crate) open_zfs_configuration: ::std::option::Option<crate::types::OpenZfsFileSystemConfiguration>,
 }
 impl FileSystemBuilder {
     /// <p>The Amazon Web Services account that created the file system. If the file system was created by a user in IAM Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.</p>
@@ -262,10 +242,7 @@ impl FileSystemBuilder {
         self
     }
     /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -274,18 +251,12 @@ impl FileSystemBuilder {
         &self.creation_time
     }
     /// <p>The system-generated, unique 17-digit ID of the file system.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated, unique 17-digit ID of the file system.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -299,10 +270,7 @@ impl FileSystemBuilder {
         self
     }
     /// <p>The type of Amazon FSx file system, which can be <code>LUSTRE</code>, <code>WINDOWS</code>, <code>ONTAP</code>, or <code>OPENZFS</code>.</p>
-    pub fn set_file_system_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FileSystemType>,
-    ) -> Self {
+    pub fn set_file_system_type(mut self, input: ::std::option::Option<crate::types::FileSystemType>) -> Self {
         self.file_system_type = input;
         self
     }
@@ -334,10 +302,7 @@ impl FileSystemBuilder {
     /// <li> <p> <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only) The file system is currently unavailable due to a change in your Active Directory configuration.</p> </li>
     /// <li> <p> <code>UPDATING</code> - The file system is undergoing a customer-initiated update.</p> </li>
     /// </ul>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::FileSystemLifecycle>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::FileSystemLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }
@@ -360,17 +325,12 @@ impl FileSystemBuilder {
         self
     }
     /// <p>A structure providing details of any failures that occurred.</p>
-    pub fn set_failure_details(
-        mut self,
-        input: ::std::option::Option<crate::types::FileSystemFailureDetails>,
-    ) -> Self {
+    pub fn set_failure_details(mut self, input: ::std::option::Option<crate::types::FileSystemFailureDetails>) -> Self {
         self.failure_details = input;
         self
     }
     /// <p>A structure providing details of any failures that occurred.</p>
-    pub fn get_failure_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::FileSystemFailureDetails> {
+    pub fn get_failure_details(&self) -> &::std::option::Option<crate::types::FileSystemFailureDetails> {
         &self.failure_details
     }
     /// <p>The storage capacity of the file system in gibibytes (GiB).</p>
@@ -393,10 +353,7 @@ impl FileSystemBuilder {
         self
     }
     /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage. </p>
-    pub fn set_storage_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageType>,
-    ) -> Self {
+    pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
         self.storage_type = input;
         self
     }
@@ -432,10 +389,7 @@ impl FileSystemBuilder {
     }
     /// <p>Specifies the IDs of the subnets that the file system is accessible from. For the Amazon FSx Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment type, there are two subnet IDs, one for the preferred file server and one for the standby file server. The preferred file server subnet identified in the <code>PreferredSubnetID</code> property. All other file systems have only one subnet ID.</p>
     /// <p>For FSx for Lustre file systems, and Single-AZ Windows file systems, this is the ID of the subnet that contains the file system's endpoint. For <code>MULTI_AZ_1</code> Windows and ONTAP file systems, the file system endpoint is available in the <code>PreferredSubnetID</code>.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -450,10 +404,7 @@ impl FileSystemBuilder {
     ///
     /// <p>The IDs of the elastic network interfaces from which a specific file system is accessible. The elastic network interface is automatically created in the same virtual private cloud (VPC) that the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p>
     /// <p>For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an Amazon FSx for Lustre file system, you can have more than one.</p>
-    pub fn network_interface_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_interface_ids.unwrap_or_default();
         v.push(input.into());
         self.network_interface_ids = ::std::option::Option::Some(v);
@@ -461,18 +412,13 @@ impl FileSystemBuilder {
     }
     /// <p>The IDs of the elastic network interfaces from which a specific file system is accessible. The elastic network interface is automatically created in the same virtual private cloud (VPC) that the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p>
     /// <p>For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an Amazon FSx for Lustre file system, you can have more than one.</p>
-    pub fn set_network_interface_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.network_interface_ids = input;
         self
     }
     /// <p>The IDs of the elastic network interfaces from which a specific file system is accessible. The elastic network interface is automatically created in the same virtual private cloud (VPC) that the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p>
     /// <p>For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an Amazon FSx for Lustre file system, you can have more than one.</p>
-    pub fn get_network_interface_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.network_interface_ids
     }
     /// <p>The Domain Name System (DNS) name for the file system.</p>
@@ -547,10 +493,7 @@ impl FileSystemBuilder {
         self
     }
     /// <p>The tags to associate with the file system. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -559,47 +502,31 @@ impl FileSystemBuilder {
         &self.tags
     }
     /// <p>The configuration for this Amazon FSx for Windows File Server file system.</p>
-    pub fn windows_configuration(
-        mut self,
-        input: crate::types::WindowsFileSystemConfiguration,
-    ) -> Self {
+    pub fn windows_configuration(mut self, input: crate::types::WindowsFileSystemConfiguration) -> Self {
         self.windows_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for this Amazon FSx for Windows File Server file system.</p>
-    pub fn set_windows_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::WindowsFileSystemConfiguration>,
-    ) -> Self {
+    pub fn set_windows_configuration(mut self, input: ::std::option::Option<crate::types::WindowsFileSystemConfiguration>) -> Self {
         self.windows_configuration = input;
         self
     }
     /// <p>The configuration for this Amazon FSx for Windows File Server file system.</p>
-    pub fn get_windows_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::WindowsFileSystemConfiguration> {
+    pub fn get_windows_configuration(&self) -> &::std::option::Option<crate::types::WindowsFileSystemConfiguration> {
         &self.windows_configuration
     }
     /// <p>The configuration for the Amazon FSx for Lustre file system.</p>
-    pub fn lustre_configuration(
-        mut self,
-        input: crate::types::LustreFileSystemConfiguration,
-    ) -> Self {
+    pub fn lustre_configuration(mut self, input: crate::types::LustreFileSystemConfiguration) -> Self {
         self.lustre_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the Amazon FSx for Lustre file system.</p>
-    pub fn set_lustre_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LustreFileSystemConfiguration>,
-    ) -> Self {
+    pub fn set_lustre_configuration(mut self, input: ::std::option::Option<crate::types::LustreFileSystemConfiguration>) -> Self {
         self.lustre_configuration = input;
         self
     }
     /// <p>The configuration for the Amazon FSx for Lustre file system.</p>
-    pub fn get_lustre_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LustreFileSystemConfiguration> {
+    pub fn get_lustre_configuration(&self) -> &::std::option::Option<crate::types::LustreFileSystemConfiguration> {
         &self.lustre_configuration
     }
     /// Appends an item to `administrative_actions`.
@@ -614,54 +541,35 @@ impl FileSystemBuilder {
         self
     }
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system that you have initiated using the <code>UpdateFileSystem</code> operation.</p>
-    pub fn set_administrative_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
-    ) -> Self {
+    pub fn set_administrative_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>) -> Self {
         self.administrative_actions = input;
         self
     }
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system that you have initiated using the <code>UpdateFileSystem</code> operation.</p>
-    pub fn get_administrative_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>> {
+    pub fn get_administrative_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>> {
         &self.administrative_actions
     }
     /// <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
-    pub fn ontap_configuration(
-        mut self,
-        input: crate::types::OntapFileSystemConfiguration,
-    ) -> Self {
+    pub fn ontap_configuration(mut self, input: crate::types::OntapFileSystemConfiguration) -> Self {
         self.ontap_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
-    pub fn set_ontap_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::OntapFileSystemConfiguration>,
-    ) -> Self {
+    pub fn set_ontap_configuration(mut self, input: ::std::option::Option<crate::types::OntapFileSystemConfiguration>) -> Self {
         self.ontap_configuration = input;
         self
     }
     /// <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
-    pub fn get_ontap_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::OntapFileSystemConfiguration> {
+    pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::OntapFileSystemConfiguration> {
         &self.ontap_configuration
     }
     /// <p>The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.</p>
-    pub fn file_system_type_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_type_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_type_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.</p>
-    pub fn set_file_system_type_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_type_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_type_version = input;
         self
     }
@@ -670,25 +578,17 @@ impl FileSystemBuilder {
         &self.file_system_type_version
     }
     /// <p>The configuration for this Amazon FSx for OpenZFS file system.</p>
-    pub fn open_zfs_configuration(
-        mut self,
-        input: crate::types::OpenZfsFileSystemConfiguration,
-    ) -> Self {
+    pub fn open_zfs_configuration(mut self, input: crate::types::OpenZfsFileSystemConfiguration) -> Self {
         self.open_zfs_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for this Amazon FSx for OpenZFS file system.</p>
-    pub fn set_open_zfs_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenZfsFileSystemConfiguration>,
-    ) -> Self {
+    pub fn set_open_zfs_configuration(mut self, input: ::std::option::Option<crate::types::OpenZfsFileSystemConfiguration>) -> Self {
         self.open_zfs_configuration = input;
         self
     }
     /// <p>The configuration for this Amazon FSx for OpenZFS file system.</p>
-    pub fn get_open_zfs_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::OpenZfsFileSystemConfiguration> {
+    pub fn get_open_zfs_configuration(&self) -> &::std::option::Option<crate::types::OpenZfsFileSystemConfiguration> {
         &self.open_zfs_configuration
     }
     /// Consumes the builder and constructs a [`FileSystem`](crate::types::FileSystem).

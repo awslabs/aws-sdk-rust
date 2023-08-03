@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetNamedQueryOutput`](crate::operation::get_named_query::GetNamedQueryOutput) with field(s):
     ///   - [`named_query(Option<NamedQuery>)`](crate::operation::get_named_query::GetNamedQueryOutput::named_query): <p>Information about the query.</p>
     /// - On failure, responds with [`SdkError<GetNamedQueryError>`](crate::operation::get_named_query::GetNamedQueryError)
-    pub fn get_named_query(
-        &self,
-    ) -> crate::operation::get_named_query::builders::GetNamedQueryFluentBuilder {
-        crate::operation::get_named_query::builders::GetNamedQueryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_named_query(&self) -> crate::operation::get_named_query::builders::GetNamedQueryFluentBuilder {
+        crate::operation::get_named_query::builders::GetNamedQueryFluentBuilder::new(self.handle.clone())
     }
 }

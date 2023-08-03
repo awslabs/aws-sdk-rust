@@ -38,9 +38,7 @@ impl AssetRelationshipSummary {
 
 /// A builder for [`AssetRelationshipSummary`](crate::types::AssetRelationshipSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetRelationshipSummaryBuilder {
     pub(crate) hierarchy_info: ::std::option::Option<crate::types::AssetHierarchyInfo>,
     pub(crate) relationship_type: ::std::option::Option<crate::types::AssetRelationshipType>,
@@ -54,10 +52,7 @@ impl AssetRelationshipSummaryBuilder {
     }
     /// <p>The assets that are related through an asset hierarchy.</p>
     /// <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
-    pub fn set_hierarchy_info(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetHierarchyInfo>,
-    ) -> Self {
+    pub fn set_hierarchy_info(mut self, input: ::std::option::Option<crate::types::AssetHierarchyInfo>) -> Self {
         self.hierarchy_info = input;
         self
     }
@@ -78,10 +73,7 @@ impl AssetRelationshipSummaryBuilder {
     /// <ul>
     /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
     /// </ul>
-    pub fn set_relationship_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetRelationshipType>,
-    ) -> Self {
+    pub fn set_relationship_type(mut self, input: ::std::option::Option<crate::types::AssetRelationshipType>) -> Self {
         self.relationship_type = input;
         self
     }
@@ -89,9 +81,7 @@ impl AssetRelationshipSummaryBuilder {
     /// <ul>
     /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
     /// </ul>
-    pub fn get_relationship_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssetRelationshipType> {
+    pub fn get_relationship_type(&self) -> &::std::option::Option<crate::types::AssetRelationshipType> {
         &self.relationship_type
     }
     /// Consumes the builder and constructs a [`AssetRelationshipSummary`](crate::types::AssetRelationshipSummary).

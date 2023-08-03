@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateHoursOfOperationOutput {
 }
 impl UpdateHoursOfOperationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateHoursOfOperationOutput`](crate::operation::update_hours_of_operation::UpdateHoursOfOperationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationOutputBuilder {
         crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateHoursOfOperationOutput`](crate::operation::update_hours_of_operation::UpdateHoursOfOperationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateHoursOfOperationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateHoursOfOperationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateHoursOfOperationOutput`](crate::operation::update_hours_of_operation::UpdateHoursOfOperationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_hours_of_operation::UpdateHoursOfOperationOutput {
+    pub fn build(self) -> crate::operation::update_hours_of_operation::UpdateHoursOfOperationOutput {
         crate::operation::update_hours_of_operation::UpdateHoursOfOperationOutput {
             _request_id: self._request_id,
         }

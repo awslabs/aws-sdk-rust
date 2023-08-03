@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateModelPackageGroupOutput {
 }
 impl CreateModelPackageGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateModelPackageGroupOutput`](crate::operation::create_model_package_group::CreateModelPackageGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_model_package_group::builders::CreateModelPackageGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_model_package_group::builders::CreateModelPackageGroupOutputBuilder {
         crate::operation::create_model_package_group::builders::CreateModelPackageGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateModelPackageGroupOutput`](crate::operation::create_model_package_group::CreateModelPackageGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateModelPackageGroupOutputBuilder {
     pub(crate) model_package_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateModelPackageGroupOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
-    pub fn model_package_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
-    pub fn set_model_package_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_arn = input;
         self
     }
@@ -68,9 +58,7 @@ impl CreateModelPackageGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateModelPackageGroupOutput`](crate::operation::create_model_package_group::CreateModelPackageGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_model_package_group::CreateModelPackageGroupOutput {
+    pub fn build(self) -> crate::operation::create_model_package_group::CreateModelPackageGroupOutput {
         crate::operation::create_model_package_group::CreateModelPackageGroupOutput {
             model_package_group_arn: self.model_package_group_arn,
             _request_id: self._request_id,

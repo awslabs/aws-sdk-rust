@@ -35,9 +35,7 @@ impl BatchGetSchemaOutput {
 
 /// A builder for [`BatchGetSchemaOutput`](crate::operation::batch_get_schema::BatchGetSchemaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetSchemaOutputBuilder {
     pub(crate) schemas: ::std::option::Option<::std::vec::Vec<crate::types::Schema>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetSchemaError>>,
@@ -56,10 +54,7 @@ impl BatchGetSchemaOutputBuilder {
         self
     }
     /// <p>The retrieved list of schemas.</p>
-    pub fn set_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Schema>>,
-    ) -> Self {
+    pub fn set_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Schema>>) -> Self {
         self.schemas = input;
         self
     }
@@ -79,17 +74,12 @@ impl BatchGetSchemaOutputBuilder {
         self
     }
     /// <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetSchemaError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetSchemaError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetSchemaError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetSchemaError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

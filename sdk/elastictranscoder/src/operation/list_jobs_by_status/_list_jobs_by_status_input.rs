@@ -30,17 +30,14 @@ impl ListJobsByStatusInput {
 }
 impl ListJobsByStatusInput {
     /// Creates a new builder-style object to manufacture [`ListJobsByStatusInput`](crate::operation::list_jobs_by_status::ListJobsByStatusInput).
-    pub fn builder() -> crate::operation::list_jobs_by_status::builders::ListJobsByStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_jobs_by_status::builders::ListJobsByStatusInputBuilder {
         crate::operation::list_jobs_by_status::builders::ListJobsByStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`ListJobsByStatusInput`](crate::operation::list_jobs_by_status::ListJobsByStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobsByStatusInputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) ascending: ::std::option::Option<::std::string::String>,
@@ -92,16 +89,11 @@ impl ListJobsByStatusInputBuilder {
     /// Consumes the builder and constructs a [`ListJobsByStatusInput`](crate::operation::list_jobs_by_status::ListJobsByStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_jobs_by_status::ListJobsByStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_jobs_by_status::ListJobsByStatusInput {
-                status: self.status,
-                ascending: self.ascending,
-                page_token: self.page_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_jobs_by_status::ListJobsByStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_jobs_by_status::ListJobsByStatusInput {
+            status: self.status,
+            ascending: self.ascending,
+            page_token: self.page_token,
+        })
     }
 }

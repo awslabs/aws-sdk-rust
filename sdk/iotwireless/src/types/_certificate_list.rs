@@ -30,9 +30,7 @@ impl CertificateList {
 
 /// A builder for [`CertificateList`](crate::types::CertificateList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateListBuilder {
     pub(crate) signing_alg: ::std::option::Option<crate::types::SigningAlg>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl CertificateListBuilder {
         self
     }
     /// <p>The certificate chain algorithm provided by sidewalk.</p>
-    pub fn set_signing_alg(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningAlg>,
-    ) -> Self {
+    pub fn set_signing_alg(mut self, input: ::std::option::Option<crate::types::SigningAlg>) -> Self {
         self.signing_alg = input;
         self
     }

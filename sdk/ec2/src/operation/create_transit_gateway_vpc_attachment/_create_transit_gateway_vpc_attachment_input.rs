@@ -14,8 +14,7 @@ pub struct CreateTransitGatewayVpcAttachmentInput {
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The VPC attachment options.</p>
     #[doc(hidden)]
-    pub options:
-        ::std::option::Option<crate::types::CreateTransitGatewayVpcAttachmentRequestOptions>,
+    pub options: ::std::option::Option<crate::types::CreateTransitGatewayVpcAttachmentRequestOptions>,
     /// <p>The tags to apply to the VPC attachment.</p>
     #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
@@ -37,9 +36,7 @@ impl CreateTransitGatewayVpcAttachmentInput {
         self.subnet_ids.as_deref()
     }
     /// <p>The VPC attachment options.</p>
-    pub fn options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateTransitGatewayVpcAttachmentRequestOptions> {
+    pub fn options(&self) -> ::std::option::Option<&crate::types::CreateTransitGatewayVpcAttachmentRequestOptions> {
         self.options.as_ref()
     }
     /// <p>The tags to apply to the VPC attachment.</p>
@@ -53,40 +50,30 @@ impl CreateTransitGatewayVpcAttachmentInput {
 }
 impl CreateTransitGatewayVpcAttachmentInput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayVpcAttachmentInput`](crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentInput).
-    pub fn builder() -> crate::operation::create_transit_gateway_vpc_attachment::builders::CreateTransitGatewayVpcAttachmentInputBuilder{
+    pub fn builder() -> crate::operation::create_transit_gateway_vpc_attachment::builders::CreateTransitGatewayVpcAttachmentInputBuilder {
         crate::operation::create_transit_gateway_vpc_attachment::builders::CreateTransitGatewayVpcAttachmentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTransitGatewayVpcAttachmentInput`](crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayVpcAttachmentInputBuilder {
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) options:
-        ::std::option::Option<crate::types::CreateTransitGatewayVpcAttachmentRequestOptions>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) options: ::std::option::Option<crate::types::CreateTransitGatewayVpcAttachmentRequestOptions>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateTransitGatewayVpcAttachmentInputBuilder {
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_id = input;
         self
     }
@@ -120,10 +107,7 @@ impl CreateTransitGatewayVpcAttachmentInputBuilder {
         self
     }
     /// <p>The IDs of one or more subnets. You can specify only one subnet per Availability Zone. You must specify at least one subnet, but we recommend that you specify two subnets for better availability. The transit gateway uses one IP address from each specified subnet.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -132,25 +116,17 @@ impl CreateTransitGatewayVpcAttachmentInputBuilder {
         &self.subnet_ids
     }
     /// <p>The VPC attachment options.</p>
-    pub fn options(
-        mut self,
-        input: crate::types::CreateTransitGatewayVpcAttachmentRequestOptions,
-    ) -> Self {
+    pub fn options(mut self, input: crate::types::CreateTransitGatewayVpcAttachmentRequestOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The VPC attachment options.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateTransitGatewayVpcAttachmentRequestOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::CreateTransitGatewayVpcAttachmentRequestOptions>) -> Self {
         self.options = input;
         self
     }
     /// <p>The VPC attachment options.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateTransitGatewayVpcAttachmentRequestOptions> {
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::CreateTransitGatewayVpcAttachmentRequestOptions> {
         &self.options
     }
     /// Appends an item to `tag_specifications`.
@@ -165,17 +141,12 @@ impl CreateTransitGatewayVpcAttachmentInputBuilder {
         self
     }
     /// <p>The tags to apply to the VPC attachment.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the VPC attachment.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -193,22 +164,21 @@ impl CreateTransitGatewayVpcAttachmentInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayVpcAttachmentInput`](crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_transit_gateway_vpc_attachment::CreateTransitGatewayVpcAttachmentInput {
-                transit_gateway_id: self.transit_gateway_id
-                ,
-                vpc_id: self.vpc_id
-                ,
-                subnet_ids: self.subnet_ids
-                ,
-                options: self.options
-                ,
-                tag_specifications: self.tag_specifications
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                transit_gateway_id: self.transit_gateway_id,
+                vpc_id: self.vpc_id,
+                subnet_ids: self.subnet_ids,
+                options: self.options,
+                tag_specifications: self.tag_specifications,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

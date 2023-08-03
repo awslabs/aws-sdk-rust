@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for AddInstanceFleetOutput {
 }
 impl AddInstanceFleetOutput {
     /// Creates a new builder-style object to manufacture [`AddInstanceFleetOutput`](crate::operation::add_instance_fleet::AddInstanceFleetOutput).
-    pub fn builder() -> crate::operation::add_instance_fleet::builders::AddInstanceFleetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::add_instance_fleet::builders::AddInstanceFleetOutputBuilder {
         crate::operation::add_instance_fleet::builders::AddInstanceFleetOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddInstanceFleetOutput`](crate::operation::add_instance_fleet::AddInstanceFleetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddInstanceFleetOutputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_fleet_id: ::std::option::Option<::std::string::String>,
@@ -68,18 +65,12 @@ impl AddInstanceFleetOutputBuilder {
         &self.cluster_id
     }
     /// <p>The unique identifier of the instance fleet.</p>
-    pub fn instance_fleet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_fleet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the instance fleet.</p>
-    pub fn set_instance_fleet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_fleet_id = input;
         self
     }

@@ -15,9 +15,7 @@ pub struct SourceNetwork {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags associated with the Source Network.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Status of Source Network Replication. Possible values: (a) STOPPED - Source Network is not replicating. (b) IN_PROGRESS - Source Network is being replicated. (c) PROTECTED - Source Network was replicated successfully and is being synchronized for changes. (d) ERROR - Source Network replication has failed</p>
     #[doc(hidden)]
     pub replication_status: ::std::option::Option<crate::types::ReplicationStatus>,
@@ -54,11 +52,7 @@ impl SourceNetwork {
         self.arn.as_deref()
     }
     /// <p>A list of tags associated with the Source Network.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Status of Source Network Replication. Possible values: (a) STOPPED - Source Network is not replicating. (b) IN_PROGRESS - Source Network is being replicated. (c) PROTECTED - Source Network was replicated successfully and is being synchronized for changes. (d) ERROR - Source Network replication has failed</p>
@@ -98,10 +92,7 @@ impl ::std::fmt::Debug for SourceNetwork {
         formatter.field("arn", &self.arn);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("replication_status", &self.replication_status);
-        formatter.field(
-            "replication_status_details",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("replication_status_details", &"*** Sensitive Data Redacted ***");
         formatter.field("cfn_stack_name", &"*** Sensitive Data Redacted ***");
         formatter.field("source_region", &self.source_region);
         formatter.field("source_account_id", &self.source_account_id);
@@ -124,9 +115,7 @@ pub struct SourceNetworkBuilder {
     pub(crate) source_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) replication_status: ::std::option::Option<crate::types::ReplicationStatus>,
     pub(crate) replication_status_details: ::std::option::Option<::std::string::String>,
     pub(crate) cfn_stack_name: ::std::option::Option<::std::string::String>,
@@ -137,18 +126,12 @@ pub struct SourceNetworkBuilder {
 }
 impl SourceNetworkBuilder {
     /// <p>Source Network ID.</p>
-    pub fn source_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Source Network ID.</p>
-    pub fn set_source_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_network_id = input;
         self
     }
@@ -157,18 +140,12 @@ impl SourceNetworkBuilder {
         &self.source_network_id
     }
     /// <p>VPC ID protected by the Source Network.</p>
-    pub fn source_vpc_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>VPC ID protected by the Source Network.</p>
-    pub fn set_source_vpc_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_vpc_id = input;
         self
     }
@@ -195,32 +172,19 @@ impl SourceNetworkBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags associated with the Source Network.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of tags associated with the Source Network.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A list of tags associated with the Source Network.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Status of Source Network Replication. Possible values: (a) STOPPED - Source Network is not replicating. (b) IN_PROGRESS - Source Network is being replicated. (c) PROTECTED - Source Network was replicated successfully and is being synchronized for changes. (d) ERROR - Source Network replication has failed</p>
@@ -229,32 +193,21 @@ impl SourceNetworkBuilder {
         self
     }
     /// <p>Status of Source Network Replication. Possible values: (a) STOPPED - Source Network is not replicating. (b) IN_PROGRESS - Source Network is being replicated. (c) PROTECTED - Source Network was replicated successfully and is being synchronized for changes. (d) ERROR - Source Network replication has failed</p>
-    pub fn set_replication_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationStatus>,
-    ) -> Self {
+    pub fn set_replication_status(mut self, input: ::std::option::Option<crate::types::ReplicationStatus>) -> Self {
         self.replication_status = input;
         self
     }
     /// <p>Status of Source Network Replication. Possible values: (a) STOPPED - Source Network is not replicating. (b) IN_PROGRESS - Source Network is being replicated. (c) PROTECTED - Source Network was replicated successfully and is being synchronized for changes. (d) ERROR - Source Network replication has failed</p>
-    pub fn get_replication_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationStatus> {
+    pub fn get_replication_status(&self) -> &::std::option::Option<crate::types::ReplicationStatus> {
         &self.replication_status
     }
     /// <p>Error details in case Source Network replication status is ERROR.</p>
-    pub fn replication_status_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_status_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Error details in case Source Network replication status is ERROR.</p>
-    pub fn set_replication_status_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_status_details = input;
         self
     }
@@ -263,18 +216,12 @@ impl SourceNetworkBuilder {
         &self.replication_status_details
     }
     /// <p>CloudFormation stack name that was deployed for recovering the Source Network.</p>
-    pub fn cfn_stack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cfn_stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cfn_stack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>CloudFormation stack name that was deployed for recovering the Source Network.</p>
-    pub fn set_cfn_stack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cfn_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cfn_stack_name = input;
         self
     }
@@ -283,18 +230,12 @@ impl SourceNetworkBuilder {
         &self.cfn_stack_name
     }
     /// <p>Region containing the VPC protected by the Source Network.</p>
-    pub fn source_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Region containing the VPC protected by the Source Network.</p>
-    pub fn set_source_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_region = input;
         self
     }
@@ -303,18 +244,12 @@ impl SourceNetworkBuilder {
         &self.source_region
     }
     /// <p>Account ID containing the VPC protected by the Source Network.</p>
-    pub fn source_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Account ID containing the VPC protected by the Source Network.</p>
-    pub fn set_source_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_account_id = input;
         self
     }
@@ -328,10 +263,7 @@ impl SourceNetworkBuilder {
         self
     }
     /// <p>An object containing information regarding the last recovery of the Source Network.</p>
-    pub fn set_last_recovery(
-        mut self,
-        input: ::std::option::Option<crate::types::RecoveryLifeCycle>,
-    ) -> Self {
+    pub fn set_last_recovery(mut self, input: ::std::option::Option<crate::types::RecoveryLifeCycle>) -> Self {
         self.last_recovery = input;
         self
     }
@@ -340,18 +272,12 @@ impl SourceNetworkBuilder {
         &self.last_recovery
     }
     /// <p>ID of the recovered VPC following Source Network recovery.</p>
-    pub fn launched_vpc_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launched_vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launched_vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the recovered VPC following Source Network recovery.</p>
-    pub fn set_launched_vpc_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launched_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launched_vpc_id = input;
         self
     }
@@ -384,10 +310,7 @@ impl ::std::fmt::Debug for SourceNetworkBuilder {
         formatter.field("arn", &self.arn);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("replication_status", &self.replication_status);
-        formatter.field(
-            "replication_status_details",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("replication_status_details", &"*** Sensitive Data Redacted ***");
         formatter.field("cfn_stack_name", &"*** Sensitive Data Redacted ***");
         formatter.field("source_region", &self.source_region);
         formatter.field("source_account_id", &self.source_account_id);

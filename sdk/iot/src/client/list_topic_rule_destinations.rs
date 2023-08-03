@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`destination_summaries(Option<Vec<TopicRuleDestinationSummary>>)`](crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsOutput::destination_summaries): <p>Information about a topic rule destination.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListTopicRuleDestinationsError>`](crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsError)
-    pub fn list_topic_rule_destinations(&self) -> crate::operation::list_topic_rule_destinations::builders::ListTopicRuleDestinationsFluentBuilder{
+    pub fn list_topic_rule_destinations(&self) -> crate::operation::list_topic_rule_destinations::builders::ListTopicRuleDestinationsFluentBuilder {
         crate::operation::list_topic_rule_destinations::builders::ListTopicRuleDestinationsFluentBuilder::new(self.handle.clone())
     }
 }

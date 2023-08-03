@@ -50,9 +50,7 @@ impl UpdateImageInput {
 
 /// A builder for [`UpdateImageInput`](crate::operation::update_image::UpdateImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateImageInputBuilder {
     pub(crate) delete_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -66,27 +64,19 @@ impl UpdateImageInputBuilder {
     /// To override the contents of this collection use [`set_delete_properties`](Self::set_delete_properties).
     ///
     /// <p>A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code> properties can be deleted.</p>
-    pub fn delete_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delete_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.delete_properties.unwrap_or_default();
         v.push(input.into());
         self.delete_properties = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code> properties can be deleted.</p>
-    pub fn set_delete_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_delete_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.delete_properties = input;
         self
     }
     /// <p>A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code> properties can be deleted.</p>
-    pub fn get_delete_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_delete_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.delete_properties
     }
     /// <p>The new description for the image.</p>
@@ -146,12 +136,7 @@ impl UpdateImageInputBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateImageInput`](crate::operation::update_image::UpdateImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_image::UpdateImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_image::UpdateImageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_image::UpdateImageInput {
             delete_properties: self.delete_properties,
             description: self.description,

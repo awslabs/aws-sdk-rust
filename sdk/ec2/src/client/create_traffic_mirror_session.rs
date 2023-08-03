@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`traffic_mirror_session(Option<TrafficMirrorSession>)`](crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionOutput::traffic_mirror_session): <p>Information about the Traffic Mirror session.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionOutput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     /// - On failure, responds with [`SdkError<CreateTrafficMirrorSessionError>`](crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionError)
-    pub fn create_traffic_mirror_session(&self) -> crate::operation::create_traffic_mirror_session::builders::CreateTrafficMirrorSessionFluentBuilder{
+    pub fn create_traffic_mirror_session(
+        &self,
+    ) -> crate::operation::create_traffic_mirror_session::builders::CreateTrafficMirrorSessionFluentBuilder {
         crate::operation::create_traffic_mirror_session::builders::CreateTrafficMirrorSessionFluentBuilder::new(self.handle.clone())
     }
 }

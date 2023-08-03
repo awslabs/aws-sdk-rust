@@ -5,16 +5,16 @@ pub use crate::operation::list_policies_granting_service_access::_list_policies_
 
 impl ListPoliciesGrantingServiceAccessInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_policies_granting_service_access();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -36,7 +36,7 @@ impl ListPoliciesGrantingServiceAccessInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPoliciesGrantingServiceAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessInputBuilder,
+    inner: crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessInputBuilder,
 }
 impl ListPoliciesGrantingServiceAccessFluentBuilder {
     /// Creates a new `ListPoliciesGrantingServiceAccess`.
@@ -47,15 +47,20 @@ impl ListPoliciesGrantingServiceAccessFluentBuilder {
         }
     }
     /// Access the ListPoliciesGrantingServiceAccess as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccess, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccess,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -64,16 +69,17 @@ impl ListPoliciesGrantingServiceAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessError>,
+    > {
         let op = self
             .inner
             .build()
@@ -91,17 +97,26 @@ impl ListPoliciesGrantingServiceAccessFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccess, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccess,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
@@ -138,27 +153,19 @@ impl ListPoliciesGrantingServiceAccessFluentBuilder {
     ///
     /// <p>The service namespace for the Amazon Web Services services whose policies you want to list.</p>
     /// <p>To learn the service namespace for a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>IAM User Guide</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services service namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
-    pub fn service_namespaces(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_namespaces(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_namespaces(input.into());
         self
     }
     /// <p>The service namespace for the Amazon Web Services services whose policies you want to list.</p>
     /// <p>To learn the service namespace for a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>IAM User Guide</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services service namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_service_namespaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_service_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_service_namespaces(input);
         self
     }
     /// <p>The service namespace for the Amazon Web Services services whose policies you want to list.</p>
     /// <p>To learn the service namespace for a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>IAM User Guide</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services service namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
-    pub fn get_service_namespaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_service_namespaces()
     }
 }

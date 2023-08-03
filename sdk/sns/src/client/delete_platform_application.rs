@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`platform_application_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_platform_application::builders::DeletePlatformApplicationFluentBuilder::platform_application_arn) / [`set_platform_application_arn(Option<String>)`](crate::operation::delete_platform_application::builders::DeletePlatformApplicationFluentBuilder::set_platform_application_arn): <p>PlatformApplicationArn of platform application object to delete.</p>
     /// - On success, responds with [`DeletePlatformApplicationOutput`](crate::operation::delete_platform_application::DeletePlatformApplicationOutput)
     /// - On failure, responds with [`SdkError<DeletePlatformApplicationError>`](crate::operation::delete_platform_application::DeletePlatformApplicationError)
-    pub fn delete_platform_application(&self) -> crate::operation::delete_platform_application::builders::DeletePlatformApplicationFluentBuilder{
+    pub fn delete_platform_application(&self) -> crate::operation::delete_platform_application::builders::DeletePlatformApplicationFluentBuilder {
         crate::operation::delete_platform_application::builders::DeletePlatformApplicationFluentBuilder::new(self.handle.clone())
     }
 }

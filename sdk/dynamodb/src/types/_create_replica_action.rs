@@ -23,9 +23,7 @@ impl CreateReplicaAction {
 
 /// A builder for [`CreateReplicaAction`](crate::types::CreateReplicaAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReplicaActionBuilder {
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
 }

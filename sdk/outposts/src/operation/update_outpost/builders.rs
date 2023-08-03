@@ -10,10 +10,7 @@ impl UpdateOutpostInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_outpost::UpdateOutpostOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_outpost::UpdateOutpostError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_outpost::UpdateOutpostError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_outpost();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateOutpostFluentBuilder {
         }
     }
     /// Access the UpdateOutpost as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_outpost::builders::UpdateOutpostInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_outpost::builders::UpdateOutpostInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateOutpostFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -162,17 +154,12 @@ impl UpdateOutpostFluentBuilder {
         self
     }
     /// <p> The type of hardware for this Outpost. </p>
-    pub fn set_supported_hardware_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SupportedHardwareType>,
-    ) -> Self {
+    pub fn set_supported_hardware_type(mut self, input: ::std::option::Option<crate::types::SupportedHardwareType>) -> Self {
         self.inner = self.inner.set_supported_hardware_type(input);
         self
     }
     /// <p> The type of hardware for this Outpost. </p>
-    pub fn get_supported_hardware_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::SupportedHardwareType> {
+    pub fn get_supported_hardware_type(&self) -> &::std::option::Option<crate::types::SupportedHardwareType> {
         self.inner.get_supported_hardware_type()
     }
 }

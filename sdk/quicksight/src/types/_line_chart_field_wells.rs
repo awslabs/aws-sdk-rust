@@ -6,14 +6,11 @@
 pub struct LineChartFieldWells {
     /// <p>The field well configuration of a line chart.</p>
     #[doc(hidden)]
-    pub line_chart_aggregated_field_wells:
-        ::std::option::Option<crate::types::LineChartAggregatedFieldWells>,
+    pub line_chart_aggregated_field_wells: ::std::option::Option<crate::types::LineChartAggregatedFieldWells>,
 }
 impl LineChartFieldWells {
     /// <p>The field well configuration of a line chart.</p>
-    pub fn line_chart_aggregated_field_wells(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LineChartAggregatedFieldWells> {
+    pub fn line_chart_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::LineChartAggregatedFieldWells> {
         self.line_chart_aggregated_field_wells.as_ref()
     }
 }
@@ -26,34 +23,23 @@ impl LineChartFieldWells {
 
 /// A builder for [`LineChartFieldWells`](crate::types::LineChartFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LineChartFieldWellsBuilder {
-    pub(crate) line_chart_aggregated_field_wells:
-        ::std::option::Option<crate::types::LineChartAggregatedFieldWells>,
+    pub(crate) line_chart_aggregated_field_wells: ::std::option::Option<crate::types::LineChartAggregatedFieldWells>,
 }
 impl LineChartFieldWellsBuilder {
     /// <p>The field well configuration of a line chart.</p>
-    pub fn line_chart_aggregated_field_wells(
-        mut self,
-        input: crate::types::LineChartAggregatedFieldWells,
-    ) -> Self {
+    pub fn line_chart_aggregated_field_wells(mut self, input: crate::types::LineChartAggregatedFieldWells) -> Self {
         self.line_chart_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field well configuration of a line chart.</p>
-    pub fn set_line_chart_aggregated_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::LineChartAggregatedFieldWells>,
-    ) -> Self {
+    pub fn set_line_chart_aggregated_field_wells(mut self, input: ::std::option::Option<crate::types::LineChartAggregatedFieldWells>) -> Self {
         self.line_chart_aggregated_field_wells = input;
         self
     }
     /// <p>The field well configuration of a line chart.</p>
-    pub fn get_line_chart_aggregated_field_wells(
-        &self,
-    ) -> &::std::option::Option<crate::types::LineChartAggregatedFieldWells> {
+    pub fn get_line_chart_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::LineChartAggregatedFieldWells> {
         &self.line_chart_aggregated_field_wells
     }
     /// Consumes the builder and constructs a [`LineChartFieldWells`](crate::types::LineChartFieldWells).

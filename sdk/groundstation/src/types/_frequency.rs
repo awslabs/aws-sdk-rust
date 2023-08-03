@@ -30,9 +30,7 @@ impl Frequency {
 
 /// A builder for [`Frequency`](crate::types::Frequency).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FrequencyBuilder {
     pub(crate) value: ::std::option::Option<f64>,
     pub(crate) units: ::std::option::Option<crate::types::FrequencyUnits>,

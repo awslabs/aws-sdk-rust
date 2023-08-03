@@ -21,10 +21,7 @@ pub fn ser_start_label_detection_input(
     if let Some(var_5) = &input.notification_channel {
         #[allow(unused_mut)]
         let mut object_6 = object.key("NotificationChannel").start_object();
-        crate::protocol_serde::shape_notification_channel::ser_notification_channel(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_notification_channel::ser_notification_channel(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.job_tag {
@@ -42,10 +39,7 @@ pub fn ser_start_label_detection_input(
     if let Some(var_11) = &input.settings {
         #[allow(unused_mut)]
         let mut object_12 = object.key("Settings").start_object();
-        crate::protocol_serde::shape_label_detection_settings::ser_label_detection_settings(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_label_detection_settings::ser_label_detection_settings(&mut object_12, var_11)?;
         object_12.finish();
     }
     Ok(())

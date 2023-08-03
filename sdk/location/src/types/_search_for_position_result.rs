@@ -45,9 +45,7 @@ impl SearchForPositionResult {
 
 /// A builder for [`SearchForPositionResult`](crate::types::SearchForPositionResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchForPositionResultBuilder {
     pub(crate) place: ::std::option::Option<crate::types::Place>,
     pub(crate) distance: ::std::option::Option<f64>,

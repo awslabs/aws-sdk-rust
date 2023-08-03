@@ -10,10 +10,7 @@ impl UpdateCertificateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_certificate::UpdateCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate::UpdateCertificateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate::UpdateCertificateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_certificate();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateCertificateFluentBuilder {
         }
     }
     /// Access the UpdateCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_certificate::builders::UpdateCertificateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_certificate::builders::UpdateCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateCertificateFluentBuilder {
             crate::operation::update_certificate::UpdateCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate::UpdateCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate::UpdateCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_certificate::UpdateCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate::UpdateCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate::UpdateCertificateError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_certificate::UpdateCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate::UpdateCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate::UpdateCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateCertificateFluentBuilder {
             crate::operation::update_certificate::UpdateCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate::UpdateCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate::UpdateCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the certificate object that you are updating.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_id(input.into());
         self
     }
     /// <p>The identifier of the certificate object that you are updating.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_id(input);
         self
     }
@@ -148,10 +126,7 @@ impl UpdateCertificateFluentBuilder {
         self
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
-    pub fn set_active_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_active_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_active_date(input);
         self
     }
@@ -165,10 +140,7 @@ impl UpdateCertificateFluentBuilder {
         self
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
-    pub fn set_inactive_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_inactive_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_inactive_date(input);
         self
     }

@@ -30,9 +30,7 @@ impl ConnectedHomeSettingsForUpdate {
 
 /// A builder for [`ConnectedHomeSettingsForUpdate`](crate::types::ConnectedHomeSettingsForUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectedHomeSettingsForUpdateBuilder {
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) min_confidence: ::std::option::Option<f32>,
@@ -50,10 +48,7 @@ impl ConnectedHomeSettingsForUpdateBuilder {
         self
     }
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.labels = input;
         self
     }

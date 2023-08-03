@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSequenceStoreOutput {
 }
 impl DeleteSequenceStoreOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSequenceStoreOutput`](crate::operation::delete_sequence_store::DeleteSequenceStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_sequence_store::builders::DeleteSequenceStoreOutputBuilder {
-        crate::operation::delete_sequence_store::builders::DeleteSequenceStoreOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_sequence_store::builders::DeleteSequenceStoreOutputBuilder {
+        crate::operation::delete_sequence_store::builders::DeleteSequenceStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSequenceStoreOutput`](crate::operation::delete_sequence_store::DeleteSequenceStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSequenceStoreOutputBuilder {
     _request_id: Option<String>,
 }

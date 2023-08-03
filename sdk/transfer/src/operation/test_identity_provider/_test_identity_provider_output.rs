@@ -46,17 +46,14 @@ impl ::aws_http::request_id::RequestId for TestIdentityProviderOutput {
 }
 impl TestIdentityProviderOutput {
     /// Creates a new builder-style object to manufacture [`TestIdentityProviderOutput`](crate::operation::test_identity_provider::TestIdentityProviderOutput).
-    pub fn builder(
-    ) -> crate::operation::test_identity_provider::builders::TestIdentityProviderOutputBuilder {
+    pub fn builder() -> crate::operation::test_identity_provider::builders::TestIdentityProviderOutputBuilder {
         crate::operation::test_identity_provider::builders::TestIdentityProviderOutputBuilder::default()
     }
 }
 
 /// A builder for [`TestIdentityProviderOutput`](crate::operation::test_identity_provider::TestIdentityProviderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestIdentityProviderOutputBuilder {
     pub(crate) response: ::std::option::Option<::std::string::String>,
     pub(crate) status_code: ::std::option::Option<i32>,

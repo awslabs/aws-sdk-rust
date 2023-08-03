@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`created_date(Option<DateTime>)`](crate::operation::create_deployment::CreateDeploymentOutput::created_date): <p>The date and time that the deployment resource was created.</p>
     ///   - [`api_summary(Option<HashMap<String, HashMap<String, MethodSnapshot>>>)`](crate::operation::create_deployment::CreateDeploymentOutput::api_summary): <p>A summary of the RestApi at the date and time that the deployment resource was created.</p>
     /// - On failure, responds with [`SdkError<CreateDeploymentError>`](crate::operation::create_deployment::CreateDeploymentError)
-    pub fn create_deployment(
-        &self,
-    ) -> crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder {
-        crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_deployment(&self) -> crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder {
+        crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

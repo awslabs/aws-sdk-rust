@@ -26,8 +26,7 @@ impl ListVersionsByFunctionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListVersionsByFunctionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_versions_by_function::builders::ListVersionsByFunctionInputBuilder,
+    inner: crate::operation::list_versions_by_function::builders::ListVersionsByFunctionInputBuilder,
 }
 impl ListVersionsByFunctionFluentBuilder {
     /// Creates a new `ListVersionsByFunction`.
@@ -38,10 +37,7 @@ impl ListVersionsByFunctionFluentBuilder {
         }
     }
     /// Access the ListVersionsByFunction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_versions_by_function::builders::ListVersionsByFunctionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_versions_by_function::builders::ListVersionsByFunctionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListVersionsByFunctionFluentBuilder {
             crate::operation::list_versions_by_function::ListVersionsByFunction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_versions_by_function::ListVersionsByFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_versions_by_function::ListVersionsByFunctionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListVersionsByFunctionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListVersionsByFunctionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_versions_by_function::ListVersionsByFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_versions_by_function::ListVersionsByFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_versions_by_function::ListVersionsByFunctionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListVersionsByFunctionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_versions_by_function::ListVersionsByFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_versions_by_function::ListVersionsByFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_versions_by_function::ListVersionsByFunctionError>,
     > {
         self.send_middleware().await
     }
@@ -118,23 +105,15 @@ impl ListVersionsByFunctionFluentBuilder {
             crate::operation::list_versions_by_function::ListVersionsByFunction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_versions_by_function::ListVersionsByFunctionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_versions_by_function::ListVersionsByFunctionError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_versions_by_function::paginator::ListVersionsByFunctionPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_versions_by_function::paginator::ListVersionsByFunctionPaginator
-    {
-        crate::operation::list_versions_by_function::paginator::ListVersionsByFunctionPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_versions_by_function::paginator::ListVersionsByFunctionPaginator {
+        crate::operation::list_versions_by_function::paginator::ListVersionsByFunctionPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -144,10 +123,7 @@ impl ListVersionsByFunctionFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -159,10 +135,7 @@ impl ListVersionsByFunctionFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }

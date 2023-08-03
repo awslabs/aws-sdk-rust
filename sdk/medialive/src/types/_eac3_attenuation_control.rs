@@ -38,13 +38,7 @@
 /// Eac3 Attenuation Control
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Eac3AttenuationControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Eac3AttenuationControl {
         match s {
             "ATTENUATE_3_DB" => Eac3AttenuationControl::Attenuate3Db,
             "NONE" => Eac3AttenuationControl::None,
-            other => Eac3AttenuationControl::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Eac3AttenuationControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

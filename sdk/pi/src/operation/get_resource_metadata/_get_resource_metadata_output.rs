@@ -8,9 +8,7 @@ pub struct GetResourceMetadataOutput {
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
     #[doc(hidden)]
-    pub features: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FeatureMetadata>,
-    >,
+    pub features: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FeatureMetadata>>,
     _request_id: Option<String>,
 }
 impl GetResourceMetadataOutput {
@@ -19,11 +17,7 @@ impl GetResourceMetadataOutput {
         self.identifier.as_deref()
     }
     /// <p>The metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
-    pub fn features(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::FeatureMetadata>,
-    > {
+    pub fn features(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FeatureMetadata>> {
         self.features.as_ref()
     }
 }
@@ -34,23 +28,17 @@ impl ::aws_http::request_id::RequestId for GetResourceMetadataOutput {
 }
 impl GetResourceMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceMetadataOutput`](crate::operation::get_resource_metadata::GetResourceMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_metadata::builders::GetResourceMetadataOutputBuilder {
-        crate::operation::get_resource_metadata::builders::GetResourceMetadataOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_resource_metadata::builders::GetResourceMetadataOutputBuilder {
+        crate::operation::get_resource_metadata::builders::GetResourceMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceMetadataOutput`](crate::operation::get_resource_metadata::GetResourceMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceMetadataOutputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) features: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FeatureMetadata>,
-    >,
+    pub(crate) features: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FeatureMetadata>>,
     _request_id: Option<String>,
 }
 impl GetResourceMetadataOutputBuilder {
@@ -73,11 +61,7 @@ impl GetResourceMetadataOutputBuilder {
     /// To override the contents of this collection use [`set_features`](Self::set_features).
     ///
     /// <p>The metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
-    pub fn features(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::FeatureMetadata,
-    ) -> Self {
+    pub fn features(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FeatureMetadata) -> Self {
         let mut hash_map = self.features.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.features = ::std::option::Option::Some(hash_map);
@@ -86,19 +70,13 @@ impl GetResourceMetadataOutputBuilder {
     /// <p>The metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
     pub fn set_features(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::FeatureMetadata>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FeatureMetadata>>,
     ) -> Self {
         self.features = input;
         self
     }
     /// <p>The metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
-    pub fn get_features(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FeatureMetadata>,
-    > {
+    pub fn get_features(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FeatureMetadata>> {
         &self.features
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

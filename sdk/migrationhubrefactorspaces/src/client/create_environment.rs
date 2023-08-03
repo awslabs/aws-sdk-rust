@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::create_environment::CreateEnvironmentOutput::last_updated_time): <p>A timestamp that indicates when the environment was last updated.</p>
     ///   - [`created_time(Option<DateTime>)`](crate::operation::create_environment::CreateEnvironmentOutput::created_time): <p>A timestamp that indicates when the environment is created.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::operation::create_environment::CreateEnvironmentError)
-    pub fn create_environment(
-        &self,
-    ) -> crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder {
-        crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_environment(&self) -> crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder {
+        crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

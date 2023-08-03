@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`error_message(Option<String>)`](crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsOutput::error_message): <p>Information about errors that might have occurred during the API call.</p>
     ///   - [`revisions(Option<Vec<RevisionInfo>>)`](crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsOutput::revisions): <p>Additional information about the revisions, including the type and location.</p>
     /// - On failure, responds with [`SdkError<BatchGetApplicationRevisionsError>`](crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsError)
-    pub fn batch_get_application_revisions(&self) -> crate::operation::batch_get_application_revisions::builders::BatchGetApplicationRevisionsFluentBuilder{
+    pub fn batch_get_application_revisions(
+        &self,
+    ) -> crate::operation::batch_get_application_revisions::builders::BatchGetApplicationRevisionsFluentBuilder {
         crate::operation::batch_get_application_revisions::builders::BatchGetApplicationRevisionsFluentBuilder::new(self.handle.clone())
     }
 }

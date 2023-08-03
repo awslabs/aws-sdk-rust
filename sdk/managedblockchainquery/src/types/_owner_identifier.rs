@@ -23,9 +23,7 @@ impl OwnerIdentifier {
 
 /// A builder for [`OwnerIdentifier`](crate::types::OwnerIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OwnerIdentifierBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl OwnerIdentifierBuilder {
     }
     /// Consumes the builder and constructs a [`OwnerIdentifier`](crate::types::OwnerIdentifier).
     pub fn build(self) -> crate::types::OwnerIdentifier {
-        crate::types::OwnerIdentifier {
-            address: self.address,
-        }
+        crate::types::OwnerIdentifier { address: self.address }
     }
 }

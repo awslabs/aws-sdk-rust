@@ -38,9 +38,7 @@ impl DescribeCustomMetricFluentBuilder {
         }
     }
     /// Access the DescribeCustomMetric as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_custom_metric::builders::DescribeCustomMetricInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_custom_metric::builders::DescribeCustomMetricInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DescribeCustomMetricFluentBuilder {
             crate::operation::describe_custom_metric::DescribeCustomMetric,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_custom_metric::DescribeCustomMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_metric::DescribeCustomMetricError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DescribeCustomMetricFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DescribeCustomMetricFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_custom_metric::DescribeCustomMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_custom_metric::DescribeCustomMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_metric::DescribeCustomMetricError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DescribeCustomMetricFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_custom_metric::DescribeCustomMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_custom_metric::DescribeCustomMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_metric::DescribeCustomMetricError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl DescribeCustomMetricFluentBuilder {
             crate::operation::describe_custom_metric::DescribeCustomMetric,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_custom_metric::DescribeCustomMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_metric::DescribeCustomMetricError>,
     > {
         self.customize_middleware().await
     }

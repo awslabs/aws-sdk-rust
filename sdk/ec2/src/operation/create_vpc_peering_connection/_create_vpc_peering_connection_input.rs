@@ -54,24 +54,21 @@ impl CreateVpcPeeringConnectionInput {
 }
 impl CreateVpcPeeringConnectionInput {
     /// Creates a new builder-style object to manufacture [`CreateVpcPeeringConnectionInput`](crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionInput).
-    pub fn builder() -> crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionInputBuilder{
+    pub fn builder() -> crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionInputBuilder {
         crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpcPeeringConnectionInput`](crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcPeeringConnectionInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) peer_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) peer_vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) peer_region: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateVpcPeeringConnectionInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -90,19 +87,13 @@ impl CreateVpcPeeringConnectionInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
     /// <p>Default: Your Amazon Web Services account ID</p>
-    pub fn peer_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn peer_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
     /// <p>Default: Your Amazon Web Services account ID</p>
-    pub fn set_peer_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_peer_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peer_owner_id = input;
         self
     }
@@ -168,17 +159,12 @@ impl CreateVpcPeeringConnectionInputBuilder {
         self
     }
     /// <p>The tags to assign to the peering connection.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to assign to the peering connection.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateVpcPeeringConnectionInput`](crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionInput).
@@ -188,15 +174,13 @@ impl CreateVpcPeeringConnectionInputBuilder {
         crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionInput {
-                dry_run: self.dry_run,
-                peer_owner_id: self.peer_owner_id,
-                peer_vpc_id: self.peer_vpc_id,
-                vpc_id: self.vpc_id,
-                peer_region: self.peer_region,
-                tag_specifications: self.tag_specifications,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionInput {
+            dry_run: self.dry_run,
+            peer_owner_id: self.peer_owner_id,
+            peer_vpc_id: self.peer_vpc_id,
+            vpc_id: self.vpc_id,
+            peer_region: self.peer_region,
+            tag_specifications: self.tag_specifications,
+        })
     }
 }

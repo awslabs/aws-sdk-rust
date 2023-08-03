@@ -37,9 +37,7 @@ impl TargetGroupPairInfo {
 
 /// A builder for [`TargetGroupPairInfo`](crate::types::TargetGroupPairInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetGroupPairInfoBuilder {
     pub(crate) target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupInfo>>,
     pub(crate) prod_traffic_route: ::std::option::Option<crate::types::TrafficRoute>,
@@ -58,17 +56,12 @@ impl TargetGroupPairInfoBuilder {
         self
     }
     /// <p> One pair of target groups. One is associated with the original task set. The second is associated with the task set that serves traffic after the deployment is complete. </p>
-    pub fn set_target_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupInfo>>,
-    ) -> Self {
+    pub fn set_target_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupInfo>>) -> Self {
         self.target_groups = input;
         self
     }
     /// <p> One pair of target groups. One is associated with the original task set. The second is associated with the task set that serves traffic after the deployment is complete. </p>
-    pub fn get_target_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupInfo>> {
+    pub fn get_target_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupInfo>> {
         &self.target_groups
     }
     /// <p> The path used by a load balancer to route production traffic when an Amazon ECS deployment is complete. </p>
@@ -77,10 +70,7 @@ impl TargetGroupPairInfoBuilder {
         self
     }
     /// <p> The path used by a load balancer to route production traffic when an Amazon ECS deployment is complete. </p>
-    pub fn set_prod_traffic_route(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficRoute>,
-    ) -> Self {
+    pub fn set_prod_traffic_route(mut self, input: ::std::option::Option<crate::types::TrafficRoute>) -> Self {
         self.prod_traffic_route = input;
         self
     }
@@ -94,10 +84,7 @@ impl TargetGroupPairInfoBuilder {
         self
     }
     /// <p> An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can occur while test traffic is served during a deployment. </p>
-    pub fn set_test_traffic_route(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficRoute>,
-    ) -> Self {
+    pub fn set_test_traffic_route(mut self, input: ::std::option::Option<crate::types::TrafficRoute>) -> Self {
         self.test_traffic_route = input;
         self
     }

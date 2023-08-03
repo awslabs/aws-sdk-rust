@@ -36,9 +36,7 @@ impl UpdateInputInput {
 
 /// A builder for [`UpdateInputInput`](crate::operation::update_input::UpdateInputInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInputInputBuilder {
     pub(crate) input_name: ::std::option::Option<::std::string::String>,
     pub(crate) input_description: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl UpdateInputInputBuilder {
         &self.input_name
     }
     /// <p>A brief description of the input.</p>
-    pub fn input_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A brief description of the input.</p>
-    pub fn set_input_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_description = input;
         self
     }
@@ -85,10 +77,7 @@ impl UpdateInputInputBuilder {
         self
     }
     /// <p>The definition of the input.</p>
-    pub fn set_input_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDefinition>,
-    ) -> Self {
+    pub fn set_input_definition(mut self, input: ::std::option::Option<crate::types::InputDefinition>) -> Self {
         self.input_definition = input;
         self
     }
@@ -97,12 +86,7 @@ impl UpdateInputInputBuilder {
         &self.input_definition
     }
     /// Consumes the builder and constructs a [`UpdateInputInput`](crate::operation::update_input::UpdateInputInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_input::UpdateInputInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_input::UpdateInputInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_input::UpdateInputInput {
             input_name: self.input_name,
             input_description: self.input_description,

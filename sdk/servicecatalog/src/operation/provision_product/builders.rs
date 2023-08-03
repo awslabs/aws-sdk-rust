@@ -10,10 +10,7 @@ impl ProvisionProductInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::provision_product::ProvisionProductOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_product::ProvisionProductError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_product::ProvisionProductError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.provision_product();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl ProvisionProductFluentBuilder {
         }
     }
     /// Access the ProvisionProduct as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::provision_product::builders::ProvisionProductInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::provision_product::builders::ProvisionProductInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl ProvisionProductFluentBuilder {
             crate::operation::provision_product::ProvisionProduct,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_product::ProvisionProductError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_product::ProvisionProductError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl ProvisionProductFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl ProvisionProductFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::provision_product::ProvisionProductOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_product::ProvisionProductError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_product::ProvisionProductError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl ProvisionProductFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::provision_product::ProvisionProductOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_product::ProvisionProductError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_product::ProvisionProductError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl ProvisionProductFluentBuilder {
             crate::operation::provision_product::ProvisionProduct,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_product::ProvisionProductError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_product::ProvisionProductError>,
     > {
         self.customize_middleware().await
     }
@@ -131,10 +115,7 @@ impl ProvisionProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -143,10 +124,7 @@ impl ProvisionProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -187,18 +165,12 @@ impl ProvisionProductFluentBuilder {
         self.inner.get_product_name()
     }
     /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn provisioning_artifact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provisioning_artifact_id(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn set_provisioning_artifact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provisioning_artifact_id(input);
         self
     }
@@ -207,18 +179,12 @@ impl ProvisionProductFluentBuilder {
         self.inner.get_provisioning_artifact_id()
     }
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn provisioning_artifact_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provisioning_artifact_name(input.into());
         self
     }
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn set_provisioning_artifact_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provisioning_artifact_name(input);
         self
     }
@@ -255,18 +221,12 @@ impl ProvisionProductFluentBuilder {
         self.inner.get_path_name()
     }
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
-    pub fn provisioned_product_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provisioned_product_name(input.into());
         self
     }
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
-    pub fn set_provisioned_product_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provisioned_product_name(input);
         self
     }
@@ -284,39 +244,26 @@ impl ProvisionProductFluentBuilder {
         self
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn set_provisioning_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>,
-    ) -> Self {
+    pub fn set_provisioning_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>) -> Self {
         self.inner = self.inner.set_provisioning_parameters(input);
         self
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn get_provisioning_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>> {
+    pub fn get_provisioning_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>> {
         self.inner.get_provisioning_parameters()
     }
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
-    pub fn provisioning_preferences(
-        mut self,
-        input: crate::types::ProvisioningPreferences,
-    ) -> Self {
+    pub fn provisioning_preferences(mut self, input: crate::types::ProvisioningPreferences) -> Self {
         self.inner = self.inner.provisioning_preferences(input);
         self
     }
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
-    pub fn set_provisioning_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisioningPreferences>,
-    ) -> Self {
+    pub fn set_provisioning_preferences(mut self, input: ::std::option::Option<crate::types::ProvisioningPreferences>) -> Self {
         self.inner = self.inner.set_provisioning_preferences(input);
         self
     }
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
-    pub fn get_provisioning_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisioningPreferences> {
+    pub fn get_provisioning_preferences(&self) -> &::std::option::Option<crate::types::ProvisioningPreferences> {
         self.inner.get_provisioning_preferences()
     }
     /// Appends an item to `Tags`.
@@ -329,10 +276,7 @@ impl ProvisionProductFluentBuilder {
         self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -345,40 +289,26 @@ impl ProvisionProductFluentBuilder {
     /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
     ///
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn notification_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_arns(input.into());
         self
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn set_notification_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_notification_arns(input);
         self
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn get_notification_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_notification_arns()
     }
     /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
-    pub fn provision_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provision_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provision_token(input.into());
         self
     }
     /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
-    pub fn set_provision_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provision_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provision_token(input);
         self
     }

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`hierarchical_access_control_list(Vec<HierarchicalPrincipal>)`](crate::operation::update_access_control_configuration::builders::UpdateAccessControlConfigurationFluentBuilder::hierarchical_access_control_list) / [`set_hierarchical_access_control_list(Option<Vec<HierarchicalPrincipal>>)`](crate::operation::update_access_control_configuration::builders::UpdateAccessControlConfigurationFluentBuilder::set_hierarchical_access_control_list): <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
     /// - On success, responds with [`UpdateAccessControlConfigurationOutput`](crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateAccessControlConfigurationError>`](crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationError)
-    pub fn update_access_control_configuration(&self) -> crate::operation::update_access_control_configuration::builders::UpdateAccessControlConfigurationFluentBuilder{
+    pub fn update_access_control_configuration(
+        &self,
+    ) -> crate::operation::update_access_control_configuration::builders::UpdateAccessControlConfigurationFluentBuilder {
         crate::operation::update_access_control_configuration::builders::UpdateAccessControlConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

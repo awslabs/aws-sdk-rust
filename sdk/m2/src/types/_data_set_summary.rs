@@ -58,9 +58,7 @@ impl DataSetSummary {
 
 /// A builder for [`DataSetSummary`](crate::types::DataSetSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSetSummaryBuilder {
     pub(crate) data_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_org: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct DataSetSummaryBuilder {
 }
 impl DataSetSummaryBuilder {
     /// <p>The name of the data set.</p>
-    pub fn data_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the data set.</p>
-    pub fn set_data_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_name = input;
         self
     }
@@ -124,10 +116,7 @@ impl DataSetSummaryBuilder {
         self
     }
     /// <p>The timestamp when the data set was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -141,10 +130,7 @@ impl DataSetSummaryBuilder {
         self
     }
     /// <p>The last time the data set was updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -158,10 +144,7 @@ impl DataSetSummaryBuilder {
         self
     }
     /// <p>The last time the data set was referenced.</p>
-    pub fn set_last_referenced_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_referenced_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_referenced_time = input;
         self
     }

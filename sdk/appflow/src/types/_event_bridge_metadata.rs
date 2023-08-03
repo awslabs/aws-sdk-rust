@@ -13,9 +13,7 @@ impl EventBridgeMetadata {
 
 /// A builder for [`EventBridgeMetadata`](crate::types::EventBridgeMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventBridgeMetadataBuilder {}
 impl EventBridgeMetadataBuilder {
     /// Consumes the builder and constructs a [`EventBridgeMetadata`](crate::types::EventBridgeMetadata).

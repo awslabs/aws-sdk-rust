@@ -42,13 +42,7 @@
 /// Dvb Sub Ocr Language
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DvbSubOcrLanguage {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for DvbSubOcrLanguage {
             "NLD" => DvbSubOcrLanguage::Nld,
             "POR" => DvbSubOcrLanguage::Por,
             "SPA" => DvbSubOcrLanguage::Spa,
-            other => {
-                DvbSubOcrLanguage::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DvbSubOcrLanguage::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

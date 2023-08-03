@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for BatchUpdateAttendeeCapabilitiesExcept
 }
 impl BatchUpdateAttendeeCapabilitiesExceptOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptOutput).
-    pub fn builder() -> crate::operation::batch_update_attendee_capabilities_except::builders::BatchUpdateAttendeeCapabilitiesExceptOutputBuilder{
+    pub fn builder() -> crate::operation::batch_update_attendee_capabilities_except::builders::BatchUpdateAttendeeCapabilitiesExceptOutputBuilder {
         crate::operation::batch_update_attendee_capabilities_except::builders::BatchUpdateAttendeeCapabilitiesExceptOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateAttendeeCapabilitiesExceptOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl BatchUpdateAttendeeCapabilitiesExceptOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptOutput).
-    pub fn build(self) -> crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptOutput{
+    pub fn build(self) -> crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptOutput {
         crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptOutput {
             _request_id: self._request_id,
         }

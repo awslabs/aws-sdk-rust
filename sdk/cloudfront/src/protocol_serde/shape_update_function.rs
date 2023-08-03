@@ -2,8 +2,7 @@
 pub fn ser_update_function_headers(
     input: &crate::operation::update_function::UpdateFunctionInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.if_match {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_update_function_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "if_match",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("If-Match", header_value);
@@ -25,8 +21,7 @@ pub fn ser_update_function_headers(
 
 pub fn ser_update_function_op_input(
     input: &crate::operation::update_function::UpdateFunctionInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -34,9 +29,7 @@ pub fn ser_update_function_op_input(
         let mut root = writer
             .start_el("UpdateFunctionRequest")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None);
-        crate::protocol_serde::shape_update_function_input::ser_update_function_input_input(
-            input, root,
-        )?
+        crate::protocol_serde::shape_update_function_input::ser_update_function_input_input(input, root)?
     }
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }
@@ -46,137 +39,109 @@ pub fn de_update_function_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::update_function::UpdateFunctionOutput,
-    crate::operation::update_function::UpdateFunctionError,
-> {
+) -> std::result::Result<crate::operation::update_function::UpdateFunctionOutput, crate::operation::update_function::UpdateFunctionError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::update_function::UpdateFunctionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::update_function::UpdateFunctionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::update_function::UpdateFunctionError::unhandled(generic))
-        }
+        None => return Err(crate::operation::update_function::UpdateFunctionError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "FunctionSizeLimitExceeded" => {
-            crate::operation::update_function::UpdateFunctionError::FunctionSizeLimitExceeded({
+        "FunctionSizeLimitExceeded" => crate::operation::update_function::UpdateFunctionError::FunctionSizeLimitExceeded({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::FunctionSizeLimitExceededBuilder::default();
-                    output = crate::protocol_serde::shape_function_size_limit_exceeded::de_function_size_limit_exceeded_xml_err(_response_body, output).map_err(crate::operation::update_function::UpdateFunctionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidArgument" => {
-            crate::operation::update_function::UpdateFunctionError::InvalidArgument({
+                let mut output = crate::types::error::builders::FunctionSizeLimitExceededBuilder::default();
+                output = crate::protocol_serde::shape_function_size_limit_exceeded::de_function_size_limit_exceeded_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_function::UpdateFunctionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArgument" => crate::operation::update_function::UpdateFunctionError::InvalidArgument({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidArgumentBuilder::default();
-                    output =
-                        crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
-                            _response_body,
-                            output,
-                        )
-                        .map_err(
-                            crate::operation::update_function::UpdateFunctionError::unhandled,
-                        )?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidIfMatchVersion" => {
-            crate::operation::update_function::UpdateFunctionError::InvalidIfMatchVersion({
+                let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
+                output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_function::UpdateFunctionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidIfMatchVersion" => crate::operation::update_function::UpdateFunctionError::InvalidIfMatchVersion({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidIfMatchVersionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_if_match_version::de_invalid_if_match_version_xml_err(_response_body, output).map_err(crate::operation::update_function::UpdateFunctionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "NoSuchFunctionExists" => {
-            crate::operation::update_function::UpdateFunctionError::NoSuchFunctionExists({
+                let mut output = crate::types::error::builders::InvalidIfMatchVersionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_if_match_version::de_invalid_if_match_version_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_function::UpdateFunctionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NoSuchFunctionExists" => crate::operation::update_function::UpdateFunctionError::NoSuchFunctionExists({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::NoSuchFunctionExistsBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_function_exists::de_no_such_function_exists_xml_err(_response_body, output).map_err(crate::operation::update_function::UpdateFunctionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "PreconditionFailed" => {
-            crate::operation::update_function::UpdateFunctionError::PreconditionFailed({
+                let mut output = crate::types::error::builders::NoSuchFunctionExistsBuilder::default();
+                output = crate::protocol_serde::shape_no_such_function_exists::de_no_such_function_exists_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_function::UpdateFunctionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "PreconditionFailed" => crate::operation::update_function::UpdateFunctionError::PreconditionFailed({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::PreconditionFailedBuilder::default();
-                    output = crate::protocol_serde::shape_precondition_failed::de_precondition_failed_xml_err(_response_body, output).map_err(crate::operation::update_function::UpdateFunctionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "UnsupportedOperation" => {
-            crate::operation::update_function::UpdateFunctionError::UnsupportedOperation({
+                let mut output = crate::types::error::builders::PreconditionFailedBuilder::default();
+                output = crate::protocol_serde::shape_precondition_failed::de_precondition_failed_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_function::UpdateFunctionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnsupportedOperation" => crate::operation::update_function::UpdateFunctionError::UnsupportedOperation({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::UnsupportedOperationBuilder::default();
-                    output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(_response_body, output).map_err(crate::operation::update_function::UpdateFunctionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::UnsupportedOperationBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_function::UpdateFunctionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::update_function::UpdateFunctionError::generic(generic),
     })
 }
@@ -186,30 +151,18 @@ pub fn de_update_function_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::update_function::UpdateFunctionOutput,
-    crate::operation::update_function::UpdateFunctionError,
-> {
+) -> std::result::Result<crate::operation::update_function::UpdateFunctionOutput, crate::operation::update_function::UpdateFunctionError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::update_function::builders::UpdateFunctionOutputBuilder::default();
+        let mut output = crate::operation::update_function::builders::UpdateFunctionOutputBuilder::default();
         output = output.set_e_tag(
             crate::protocol_serde::shape_update_function_output::de_e_tag_header(_response_headers)
-                .map_err(|_| {
-                    crate::operation::update_function::UpdateFunctionError::unhandled(
-                        "Failed to parse ETag from header `ETtag",
-                    )
-                })?,
+                .map_err(|_| crate::operation::update_function::UpdateFunctionError::unhandled("Failed to parse ETag from header `ETtag"))?,
         );
-        output = output.set_function_summary(
-            crate::protocol_serde::shape_update_function_output::de_function_summary_payload(
-                _response_body,
-            )?,
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = output.set_function_summary(crate::protocol_serde::shape_update_function_output::de_function_summary_payload(
+            _response_body,
+        )?);
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

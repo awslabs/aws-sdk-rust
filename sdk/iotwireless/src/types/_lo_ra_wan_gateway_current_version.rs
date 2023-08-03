@@ -23,9 +23,7 @@ impl LoRaWanGatewayCurrentVersion {
 
 /// A builder for [`LoRaWanGatewayCurrentVersion`](crate::types::LoRaWanGatewayCurrentVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoRaWanGatewayCurrentVersionBuilder {
     pub(crate) current_version: ::std::option::Option<crate::types::LoRaWanGatewayVersion>,
 }
@@ -36,17 +34,12 @@ impl LoRaWanGatewayCurrentVersionBuilder {
         self
     }
     /// <p>The version of the gateways that should receive the update.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanGatewayVersion>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<crate::types::LoRaWanGatewayVersion>) -> Self {
         self.current_version = input;
         self
     }
     /// <p>The version of the gateways that should receive the update.</p>
-    pub fn get_current_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoRaWanGatewayVersion> {
+    pub fn get_current_version(&self) -> &::std::option::Option<crate::types::LoRaWanGatewayVersion> {
         &self.current_version
     }
     /// Consumes the builder and constructs a [`LoRaWanGatewayCurrentVersion`](crate::types::LoRaWanGatewayCurrentVersion).

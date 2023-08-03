@@ -28,9 +28,7 @@ pub struct HealthCheckCustomConfig {
     /// </important>
     /// <p>The number of 30-second intervals that you want Cloud Map to wait after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service instance.</p>
     /// <p>Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value before 30 seconds has passed doesn't accelerate the change. Cloud Map still waits <code>30</code> seconds after the first request to make the change.</p>
-    #[deprecated(
-        note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1."
-    )]
+    #[deprecated(note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1.")]
     #[doc(hidden)]
     pub failure_threshold: ::std::option::Option<i32>,
 }
@@ -40,9 +38,7 @@ impl HealthCheckCustomConfig {
     /// </important>
     /// <p>The number of 30-second intervals that you want Cloud Map to wait after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service instance.</p>
     /// <p>Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value before 30 seconds has passed doesn't accelerate the change. Cloud Map still waits <code>30</code> seconds after the first request to make the change.</p>
-    #[deprecated(
-        note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1."
-    )]
+    #[deprecated(note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1.")]
     pub fn failure_threshold(&self) -> ::std::option::Option<i32> {
         self.failure_threshold
     }
@@ -56,9 +52,7 @@ impl HealthCheckCustomConfig {
 
 /// A builder for [`HealthCheckCustomConfig`](crate::types::HealthCheckCustomConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HealthCheckCustomConfigBuilder {
     pub(crate) failure_threshold: ::std::option::Option<i32>,
 }
@@ -68,9 +62,7 @@ impl HealthCheckCustomConfigBuilder {
     /// </important>
     /// <p>The number of 30-second intervals that you want Cloud Map to wait after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service instance.</p>
     /// <p>Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value before 30 seconds has passed doesn't accelerate the change. Cloud Map still waits <code>30</code> seconds after the first request to make the change.</p>
-    #[deprecated(
-        note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1."
-    )]
+    #[deprecated(note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1.")]
     pub fn failure_threshold(mut self, input: i32) -> Self {
         self.failure_threshold = ::std::option::Option::Some(input);
         self
@@ -80,9 +72,7 @@ impl HealthCheckCustomConfigBuilder {
     /// </important>
     /// <p>The number of 30-second intervals that you want Cloud Map to wait after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service instance.</p>
     /// <p>Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value before 30 seconds has passed doesn't accelerate the change. Cloud Map still waits <code>30</code> seconds after the first request to make the change.</p>
-    #[deprecated(
-        note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1."
-    )]
+    #[deprecated(note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1.")]
     pub fn set_failure_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failure_threshold = input;
         self
@@ -92,9 +82,7 @@ impl HealthCheckCustomConfigBuilder {
     /// </important>
     /// <p>The number of 30-second intervals that you want Cloud Map to wait after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service instance.</p>
     /// <p>Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value before 30 seconds has passed doesn't accelerate the change. Cloud Map still waits <code>30</code> seconds after the first request to make the change.</p>
-    #[deprecated(
-        note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1."
-    )]
+    #[deprecated(note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1.")]
     pub fn get_failure_threshold(&self) -> &::std::option::Option<i32> {
         &self.failure_threshold
     }

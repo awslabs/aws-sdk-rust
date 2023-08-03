@@ -43,9 +43,7 @@ impl GetKeyPolicyInput {
 
 /// A builder for [`GetKeyPolicyInput`](crate::operation::get_key_policy::GetKeyPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKeyPolicyInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
@@ -103,10 +101,7 @@ impl GetKeyPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetKeyPolicyInput`](crate::operation::get_key_policy::GetKeyPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_key_policy::GetKeyPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_key_policy::GetKeyPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_key_policy::GetKeyPolicyInput {
             key_id: self.key_id,
             policy_name: self.policy_name,

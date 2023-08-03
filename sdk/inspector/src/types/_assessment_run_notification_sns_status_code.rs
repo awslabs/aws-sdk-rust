@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AssessmentRunNotificationSnsStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for AssessmentRunNotificationSnsStatusCode {
             "INTERNAL_ERROR" => AssessmentRunNotificationSnsStatusCode::InternalError,
             "SUCCESS" => AssessmentRunNotificationSnsStatusCode::Success,
             "TOPIC_DOES_NOT_EXIST" => AssessmentRunNotificationSnsStatusCode::TopicDoesNotExist,
-            other => AssessmentRunNotificationSnsStatusCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => AssessmentRunNotificationSnsStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl AssessmentRunNotificationSnsStatusCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED",
-            "INTERNAL_ERROR",
-            "SUCCESS",
-            "TOPIC_DOES_NOT_EXIST",
-        ]
+        &["ACCESS_DENIED", "INTERNAL_ERROR", "SUCCESS", "TOPIC_DOES_NOT_EXIST"]
     }
 }
 impl ::std::convert::AsRef<str> for AssessmentRunNotificationSnsStatusCode {

@@ -5,15 +5,12 @@
 pub struct DescribeIdentityProviderConfigOutput {
     /// <p>The object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
     #[doc(hidden)]
-    pub identity_provider_config:
-        ::std::option::Option<crate::types::IdentityProviderConfigResponse>,
+    pub identity_provider_config: ::std::option::Option<crate::types::IdentityProviderConfigResponse>,
     _request_id: Option<String>,
 }
 impl DescribeIdentityProviderConfigOutput {
     /// <p>The object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
-    pub fn identity_provider_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IdentityProviderConfigResponse> {
+    pub fn identity_provider_config(&self) -> ::std::option::Option<&crate::types::IdentityProviderConfigResponse> {
         self.identity_provider_config.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeIdentityProviderConfigOutput 
 }
 impl DescribeIdentityProviderConfigOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIdentityProviderConfigOutput`](crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigOutput).
-    pub fn builder() -> crate::operation::describe_identity_provider_config::builders::DescribeIdentityProviderConfigOutputBuilder{
+    pub fn builder() -> crate::operation::describe_identity_provider_config::builders::DescribeIdentityProviderConfigOutputBuilder {
         crate::operation::describe_identity_provider_config::builders::DescribeIdentityProviderConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIdentityProviderConfigOutput`](crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIdentityProviderConfigOutputBuilder {
-    pub(crate) identity_provider_config:
-        ::std::option::Option<crate::types::IdentityProviderConfigResponse>,
+    pub(crate) identity_provider_config: ::std::option::Option<crate::types::IdentityProviderConfigResponse>,
     _request_id: Option<String>,
 }
 impl DescribeIdentityProviderConfigOutputBuilder {
     /// <p>The object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
-    pub fn identity_provider_config(
-        mut self,
-        input: crate::types::IdentityProviderConfigResponse,
-    ) -> Self {
+    pub fn identity_provider_config(mut self, input: crate::types::IdentityProviderConfigResponse) -> Self {
         self.identity_provider_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
-    pub fn set_identity_provider_config(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderConfigResponse>,
-    ) -> Self {
+    pub fn set_identity_provider_config(mut self, input: ::std::option::Option<crate::types::IdentityProviderConfigResponse>) -> Self {
         self.identity_provider_config = input;
         self
     }
     /// <p>The object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
-    pub fn get_identity_provider_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::IdentityProviderConfigResponse> {
+    pub fn get_identity_provider_config(&self) -> &::std::option::Option<crate::types::IdentityProviderConfigResponse> {
         &self.identity_provider_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +58,7 @@ impl DescribeIdentityProviderConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeIdentityProviderConfigOutput`](crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigOutput
-    {
+    pub fn build(self) -> crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigOutput {
         crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigOutput {
             identity_provider_config: self.identity_provider_config,
             _request_id: self._request_id,

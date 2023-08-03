@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePlayerSessionsOutput`](crate::operation::create_player_sessions::CreatePlayerSessionsOutput) with field(s):
     ///   - [`player_sessions(Option<Vec<PlayerSession>>)`](crate::operation::create_player_sessions::CreatePlayerSessionsOutput::player_sessions): <p>A collection of player session objects created for the added players.</p>
     /// - On failure, responds with [`SdkError<CreatePlayerSessionsError>`](crate::operation::create_player_sessions::CreatePlayerSessionsError)
-    pub fn create_player_sessions(
-        &self,
-    ) -> crate::operation::create_player_sessions::builders::CreatePlayerSessionsFluentBuilder {
-        crate::operation::create_player_sessions::builders::CreatePlayerSessionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_player_sessions(&self) -> crate::operation::create_player_sessions::builders::CreatePlayerSessionsFluentBuilder {
+        crate::operation::create_player_sessions::builders::CreatePlayerSessionsFluentBuilder::new(self.handle.clone())
     }
 }

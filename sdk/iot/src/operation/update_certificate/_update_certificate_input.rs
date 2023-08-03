@@ -27,35 +27,26 @@ impl UpdateCertificateInput {
 }
 impl UpdateCertificateInput {
     /// Creates a new builder-style object to manufacture [`UpdateCertificateInput`](crate::operation::update_certificate::UpdateCertificateInput).
-    pub fn builder() -> crate::operation::update_certificate::builders::UpdateCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_certificate::builders::UpdateCertificateInputBuilder {
         crate::operation::update_certificate::builders::UpdateCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCertificateInput`](crate::operation::update_certificate::UpdateCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCertificateInputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) new_status: ::std::option::Option<crate::types::CertificateStatus>,
 }
 impl UpdateCertificateInputBuilder {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -73,10 +64,7 @@ impl UpdateCertificateInputBuilder {
     /// <p>The new status.</p>
     /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
     /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
-    pub fn set_new_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateStatus>,
-    ) -> Self {
+    pub fn set_new_status(mut self, input: ::std::option::Option<crate::types::CertificateStatus>) -> Self {
         self.new_status = input;
         self
     }
@@ -89,15 +77,10 @@ impl UpdateCertificateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCertificateInput`](crate::operation::update_certificate::UpdateCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_certificate::UpdateCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_certificate::UpdateCertificateInput {
-                certificate_id: self.certificate_id,
-                new_status: self.new_status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_certificate::UpdateCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_certificate::UpdateCertificateInput {
+            certificate_id: self.certificate_id,
+            new_status: self.new_status,
+        })
     }
 }

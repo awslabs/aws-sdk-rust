@@ -35,9 +35,7 @@ impl ListFiltersOutput {
 
 /// A builder for [`ListFiltersOutput`](crate::operation::list_filters::ListFiltersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFiltersOutputBuilder {
     pub(crate) filter_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListFiltersOutputBuilder {
         self
     }
     /// <p>A list of filter names.</p>
-    pub fn set_filter_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_filter_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.filter_names = input;
         self
     }
     /// <p>A list of filter names.</p>
-    pub fn get_filter_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_names
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>

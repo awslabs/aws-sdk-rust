@@ -64,17 +64,14 @@ impl ListAuditFindingsInput {
 }
 impl ListAuditFindingsInput {
     /// Creates a new builder-style object to manufacture [`ListAuditFindingsInput`](crate::operation::list_audit_findings::ListAuditFindingsInput).
-    pub fn builder(
-    ) -> crate::operation::list_audit_findings::builders::ListAuditFindingsInputBuilder {
+    pub fn builder() -> crate::operation::list_audit_findings::builders::ListAuditFindingsInputBuilder {
         crate::operation::list_audit_findings::builders::ListAuditFindingsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAuditFindingsInput`](crate::operation::list_audit_findings::ListAuditFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAuditFindingsInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) check_name: ::std::option::Option<::std::string::String>,
@@ -120,17 +117,12 @@ impl ListAuditFindingsInputBuilder {
         self
     }
     /// <p>Information identifying the noncompliant resource.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIdentifier>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
         self.resource_identifier = input;
         self
     }
     /// <p>Information identifying the noncompliant resource.</p>
-    pub fn get_resource_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         &self.resource_identifier
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
@@ -167,10 +159,7 @@ impl ListAuditFindingsInputBuilder {
         self
     }
     /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -184,10 +173,7 @@ impl ListAuditFindingsInputBuilder {
         self
     }
     /// <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -212,21 +198,16 @@ impl ListAuditFindingsInputBuilder {
     /// Consumes the builder and constructs a [`ListAuditFindingsInput`](crate::operation::list_audit_findings::ListAuditFindingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_audit_findings::ListAuditFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_audit_findings::ListAuditFindingsInput {
-                task_id: self.task_id,
-                check_name: self.check_name,
-                resource_identifier: self.resource_identifier,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                list_suppressed_findings: self.list_suppressed_findings,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_audit_findings::ListAuditFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_audit_findings::ListAuditFindingsInput {
+            task_id: self.task_id,
+            check_name: self.check_name,
+            resource_identifier: self.resource_identifier,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            list_suppressed_findings: self.list_suppressed_findings,
+        })
     }
 }

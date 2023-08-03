@@ -17,10 +17,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEntityRecognizerOutput`](crate::operation::create_entity_recognizer::CreateEntityRecognizerOutput) with field(s):
     ///   - [`entity_recognizer_arn(Option<String>)`](crate::operation::create_entity_recognizer::CreateEntityRecognizerOutput::entity_recognizer_arn): <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     /// - On failure, responds with [`SdkError<CreateEntityRecognizerError>`](crate::operation::create_entity_recognizer::CreateEntityRecognizerError)
-    pub fn create_entity_recognizer(
-        &self,
-    ) -> crate::operation::create_entity_recognizer::builders::CreateEntityRecognizerFluentBuilder
-    {
+    pub fn create_entity_recognizer(&self) -> crate::operation::create_entity_recognizer::builders::CreateEntityRecognizerFluentBuilder {
         crate::operation::create_entity_recognizer::builders::CreateEntityRecognizerFluentBuilder::new(self.handle.clone())
     }
 }

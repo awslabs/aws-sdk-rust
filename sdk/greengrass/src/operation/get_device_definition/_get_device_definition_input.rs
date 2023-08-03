@@ -15,35 +15,25 @@ impl GetDeviceDefinitionInput {
 }
 impl GetDeviceDefinitionInput {
     /// Creates a new builder-style object to manufacture [`GetDeviceDefinitionInput`](crate::operation::get_device_definition::GetDeviceDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::get_device_definition::builders::GetDeviceDefinitionInputBuilder {
-        crate::operation::get_device_definition::builders::GetDeviceDefinitionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_device_definition::builders::GetDeviceDefinitionInputBuilder {
+        crate::operation::get_device_definition::builders::GetDeviceDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeviceDefinitionInput`](crate::operation::get_device_definition::GetDeviceDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeviceDefinitionInputBuilder {
     pub(crate) device_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDeviceDefinitionInputBuilder {
     /// The ID of the device definition.
-    pub fn device_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the device definition.
-    pub fn set_device_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_definition_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetDeviceDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`GetDeviceDefinitionInput`](crate::operation::get_device_definition::GetDeviceDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_device_definition::GetDeviceDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_device_definition::GetDeviceDefinitionInput {
-                device_definition_id: self.device_definition_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_device_definition::GetDeviceDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_device_definition::GetDeviceDefinitionInput {
+            device_definition_id: self.device_definition_id,
+        })
     }
 }

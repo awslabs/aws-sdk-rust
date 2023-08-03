@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PublishRecipeOutput`](crate::operation::publish_recipe::PublishRecipeOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::publish_recipe::PublishRecipeOutput::name): <p>The name of the recipe that you published.</p>
     /// - On failure, responds with [`SdkError<PublishRecipeError>`](crate::operation::publish_recipe::PublishRecipeError)
-    pub fn publish_recipe(
-        &self,
-    ) -> crate::operation::publish_recipe::builders::PublishRecipeFluentBuilder {
-        crate::operation::publish_recipe::builders::PublishRecipeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn publish_recipe(&self) -> crate::operation::publish_recipe::builders::PublishRecipeFluentBuilder {
+        crate::operation::publish_recipe::builders::PublishRecipeFluentBuilder::new(self.handle.clone())
     }
 }

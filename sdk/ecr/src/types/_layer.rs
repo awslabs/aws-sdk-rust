@@ -44,9 +44,7 @@ impl Layer {
 
 /// A builder for [`Layer`](crate::types::Layer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LayerBuilder {
     pub(crate) layer_digest: ::std::option::Option<::std::string::String>,
     pub(crate) layer_availability: ::std::option::Option<crate::types::LayerAvailability>,
@@ -74,17 +72,12 @@ impl LayerBuilder {
         self
     }
     /// <p>The availability status of the image layer.</p>
-    pub fn set_layer_availability(
-        mut self,
-        input: ::std::option::Option<crate::types::LayerAvailability>,
-    ) -> Self {
+    pub fn set_layer_availability(mut self, input: ::std::option::Option<crate::types::LayerAvailability>) -> Self {
         self.layer_availability = input;
         self
     }
     /// <p>The availability status of the image layer.</p>
-    pub fn get_layer_availability(
-        &self,
-    ) -> &::std::option::Option<crate::types::LayerAvailability> {
+    pub fn get_layer_availability(&self) -> &::std::option::Option<crate::types::LayerAvailability> {
         &self.layer_availability
     }
     /// <p>The size, in bytes, of the image layer.</p>

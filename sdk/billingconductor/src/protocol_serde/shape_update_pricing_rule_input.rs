@@ -21,10 +21,7 @@ pub fn ser_update_pricing_rule_input(
     if let Some(var_5) = &input.tiering {
         #[allow(unused_mut)]
         let mut object_6 = object.key("Tiering").start_object();
-        crate::protocol_serde::shape_update_tiering_input::ser_update_tiering_input(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_update_tiering_input::ser_update_tiering_input(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.r#type {

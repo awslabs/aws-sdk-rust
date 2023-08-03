@@ -5,15 +5,12 @@
 pub struct BatchEnableStandardsOutput {
     /// <p>The details of the standards subscriptions that were enabled.</p>
     #[doc(hidden)]
-    pub standards_subscriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>>,
+    pub standards_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>>,
     _request_id: Option<String>,
 }
 impl BatchEnableStandardsOutput {
     /// <p>The details of the standards subscriptions that were enabled.</p>
-    pub fn standards_subscriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StandardsSubscription]> {
+    pub fn standards_subscriptions(&self) -> ::std::option::Option<&[crate::types::StandardsSubscription]> {
         self.standards_subscriptions.as_deref()
     }
 }
@@ -24,20 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchEnableStandardsOutput {
 }
 impl BatchEnableStandardsOutput {
     /// Creates a new builder-style object to manufacture [`BatchEnableStandardsOutput`](crate::operation::batch_enable_standards::BatchEnableStandardsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_enable_standards::builders::BatchEnableStandardsOutputBuilder {
+    pub fn builder() -> crate::operation::batch_enable_standards::builders::BatchEnableStandardsOutputBuilder {
         crate::operation::batch_enable_standards::builders::BatchEnableStandardsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchEnableStandardsOutput`](crate::operation::batch_enable_standards::BatchEnableStandardsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchEnableStandardsOutputBuilder {
-    pub(crate) standards_subscriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>>,
+    pub(crate) standards_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>>,
     _request_id: Option<String>,
 }
 impl BatchEnableStandardsOutputBuilder {
@@ -53,17 +46,12 @@ impl BatchEnableStandardsOutputBuilder {
         self
     }
     /// <p>The details of the standards subscriptions that were enabled.</p>
-    pub fn set_standards_subscriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>>,
-    ) -> Self {
+    pub fn set_standards_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>>) -> Self {
         self.standards_subscriptions = input;
         self
     }
     /// <p>The details of the standards subscriptions that were enabled.</p>
-    pub fn get_standards_subscriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>> {
+    pub fn get_standards_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>> {
         &self.standards_subscriptions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

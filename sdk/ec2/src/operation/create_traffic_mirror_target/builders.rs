@@ -29,7 +29,7 @@ impl CreateTrafficMirrorTargetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTrafficMirrorTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_traffic_mirror_target::builders::CreateTrafficMirrorTargetInputBuilder,
+    inner: crate::operation::create_traffic_mirror_target::builders::CreateTrafficMirrorTargetInputBuilder,
 }
 impl CreateTrafficMirrorTargetFluentBuilder {
     /// Creates a new `CreateTrafficMirrorTarget`.
@@ -40,7 +40,7 @@ impl CreateTrafficMirrorTargetFluentBuilder {
         }
     }
     /// Access the CreateTrafficMirrorTarget as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_traffic_mirror_target::builders::CreateTrafficMirrorTargetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_traffic_mirror_target::builders::CreateTrafficMirrorTargetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl CreateTrafficMirrorTargetFluentBuilder {
             crate::operation::create_traffic_mirror_target::CreateTrafficMirrorTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_traffic_mirror_target::CreateTrafficMirrorTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_traffic_mirror_target::CreateTrafficMirrorTargetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl CreateTrafficMirrorTargetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl CreateTrafficMirrorTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_traffic_mirror_target::CreateTrafficMirrorTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_traffic_mirror_target::CreateTrafficMirrorTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_traffic_mirror_target::CreateTrafficMirrorTargetError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl CreateTrafficMirrorTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_traffic_mirror_target::CreateTrafficMirrorTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_traffic_mirror_target::CreateTrafficMirrorTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_traffic_mirror_target::CreateTrafficMirrorTargetError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +108,17 @@ impl CreateTrafficMirrorTargetFluentBuilder {
             crate::operation::create_traffic_mirror_target::CreateTrafficMirrorTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_traffic_mirror_target::CreateTrafficMirrorTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_traffic_mirror_target::CreateTrafficMirrorTargetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The network interface ID that is associated with the target.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_interface_id(input.into());
         self
     }
     /// <p>The network interface ID that is associated with the target.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
@@ -144,18 +127,12 @@ impl CreateTrafficMirrorTargetFluentBuilder {
         self.inner.get_network_interface_id()
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the target.</p>
-    pub fn network_load_balancer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_load_balancer_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the target.</p>
-    pub fn set_network_load_balancer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_load_balancer_arn(input);
         self
     }
@@ -187,17 +164,12 @@ impl CreateTrafficMirrorTargetFluentBuilder {
         self
     }
     /// <p>The tags to assign to the Traffic Mirror target.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to assign to the Traffic Mirror target.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -229,25 +201,17 @@ impl CreateTrafficMirrorTargetFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The ID of the Gateway Load Balancer endpoint.</p>
-    pub fn gateway_load_balancer_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_load_balancer_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_load_balancer_endpoint_id(input.into());
         self
     }
     /// <p>The ID of the Gateway Load Balancer endpoint.</p>
-    pub fn set_gateway_load_balancer_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_load_balancer_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_load_balancer_endpoint_id(input);
         self
     }
     /// <p>The ID of the Gateway Load Balancer endpoint.</p>
-    pub fn get_gateway_load_balancer_endpoint_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_gateway_load_balancer_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_load_balancer_endpoint_id()
     }
 }

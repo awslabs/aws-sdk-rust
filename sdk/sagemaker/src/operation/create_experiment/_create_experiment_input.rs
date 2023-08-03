@@ -36,17 +36,14 @@ impl CreateExperimentInput {
 }
 impl CreateExperimentInput {
     /// Creates a new builder-style object to manufacture [`CreateExperimentInput`](crate::operation::create_experiment::CreateExperimentInput).
-    pub fn builder() -> crate::operation::create_experiment::builders::CreateExperimentInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_experiment::builders::CreateExperimentInputBuilder {
         crate::operation::create_experiment::builders::CreateExperimentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateExperimentInput`](crate::operation::create_experiment::CreateExperimentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateExperimentInputBuilder {
     pub(crate) experiment_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct CreateExperimentInputBuilder {
 }
 impl CreateExperimentInputBuilder {
     /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
-    pub fn experiment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
-    pub fn set_experiment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment_name = input;
         self
     }
@@ -114,10 +105,7 @@ impl CreateExperimentInputBuilder {
         self
     }
     /// <p>A list of tags to associate with the experiment. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -128,10 +116,7 @@ impl CreateExperimentInputBuilder {
     /// Consumes the builder and constructs a [`CreateExperimentInput`](crate::operation::create_experiment::CreateExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_experiment::CreateExperimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_experiment::CreateExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_experiment::CreateExperimentInput {
             experiment_name: self.experiment_name,
             display_name: self.display_name,

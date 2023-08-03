@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`return_value(Option<bool>)`](crate::operation::delete_resource_share::DeleteResourceShareOutput::return_value): <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::delete_resource_share::DeleteResourceShareOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     /// - On failure, responds with [`SdkError<DeleteResourceShareError>`](crate::operation::delete_resource_share::DeleteResourceShareError)
-    pub fn delete_resource_share(
-        &self,
-    ) -> crate::operation::delete_resource_share::builders::DeleteResourceShareFluentBuilder {
-        crate::operation::delete_resource_share::builders::DeleteResourceShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_resource_share(&self) -> crate::operation::delete_resource_share::builders::DeleteResourceShareFluentBuilder {
+        crate::operation::delete_resource_share::builders::DeleteResourceShareFluentBuilder::new(self.handle.clone())
     }
 }

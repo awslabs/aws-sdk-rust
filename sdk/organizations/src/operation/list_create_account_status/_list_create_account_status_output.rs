@@ -5,8 +5,7 @@
 pub struct ListCreateAccountStatusOutput {
     /// <p>A list of objects with details about the requests. Certain elements, such as the accountId number, are present in the output only after the account has been successfully created.</p>
     #[doc(hidden)]
-    pub create_account_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::CreateAccountStatus>>,
+    pub create_account_statuses: ::std::option::Option<::std::vec::Vec<crate::types::CreateAccountStatus>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListCreateAccountStatusOutput {
 }
 impl ListCreateAccountStatusOutput {
     /// <p>A list of objects with details about the requests. Certain elements, such as the accountId number, are present in the output only after the account has been successfully created.</p>
-    pub fn create_account_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CreateAccountStatus]> {
+    pub fn create_account_statuses(&self) -> ::std::option::Option<&[crate::types::CreateAccountStatus]> {
         self.create_account_statuses.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCreateAccountStatusOutput {
 }
 impl ListCreateAccountStatusOutput {
     /// Creates a new builder-style object to manufacture [`ListCreateAccountStatusOutput`](crate::operation::list_create_account_status::ListCreateAccountStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::list_create_account_status::builders::ListCreateAccountStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_create_account_status::builders::ListCreateAccountStatusOutputBuilder {
         crate::operation::list_create_account_status::builders::ListCreateAccountStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCreateAccountStatusOutput`](crate::operation::list_create_account_status::ListCreateAccountStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCreateAccountStatusOutputBuilder {
-    pub(crate) create_account_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::CreateAccountStatus>>,
+    pub(crate) create_account_statuses: ::std::option::Option<::std::vec::Vec<crate::types::CreateAccountStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListCreateAccountStatusOutputBuilder {
         self
     }
     /// <p>A list of objects with details about the requests. Certain elements, such as the accountId number, are present in the output only after the account has been successfully created.</p>
-    pub fn set_create_account_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAccountStatus>>,
-    ) -> Self {
+    pub fn set_create_account_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAccountStatus>>) -> Self {
         self.create_account_statuses = input;
         self
     }
     /// <p>A list of objects with details about the requests. Certain elements, such as the accountId number, are present in the output only after the account has been successfully created.</p>
-    pub fn get_create_account_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAccountStatus>> {
+    pub fn get_create_account_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAccountStatus>> {
         &self.create_account_statuses
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
@@ -99,9 +86,7 @@ impl ListCreateAccountStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCreateAccountStatusOutput`](crate::operation::list_create_account_status::ListCreateAccountStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_create_account_status::ListCreateAccountStatusOutput {
+    pub fn build(self) -> crate::operation::list_create_account_status::ListCreateAccountStatusOutput {
         crate::operation::list_create_account_status::ListCreateAccountStatusOutput {
             create_account_statuses: self.create_account_statuses,
             next_token: self.next_token,

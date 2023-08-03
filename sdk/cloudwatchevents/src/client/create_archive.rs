@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`state_reason(Option<String>)`](crate::operation::create_archive::CreateArchiveOutput::state_reason): <p>The reason that the archive is in the state.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::create_archive::CreateArchiveOutput::creation_time): <p>The time at which the archive was created.</p>
     /// - On failure, responds with [`SdkError<CreateArchiveError>`](crate::operation::create_archive::CreateArchiveError)
-    pub fn create_archive(
-        &self,
-    ) -> crate::operation::create_archive::builders::CreateArchiveFluentBuilder {
-        crate::operation::create_archive::builders::CreateArchiveFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_archive(&self) -> crate::operation::create_archive::builders::CreateArchiveFluentBuilder {
+        crate::operation::create_archive::builders::CreateArchiveFluentBuilder::new(self.handle.clone())
     }
 }

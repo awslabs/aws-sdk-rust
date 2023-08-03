@@ -34,9 +34,7 @@ impl AvailMatchingCriteria {
 
 /// A builder for [`AvailMatchingCriteria`](crate::types::AvailMatchingCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AvailMatchingCriteriaBuilder {
     pub(crate) dynamic_variable: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<crate::types::Operator>,
@@ -44,19 +42,13 @@ pub struct AvailMatchingCriteriaBuilder {
 impl AvailMatchingCriteriaBuilder {
     /// <p>The dynamic variable(s) that MediaTailor should use as avail matching criteria. MediaTailor only places the prefetched ads into the avail if the avail matches the criteria defined by the dynamic variable. For information about dynamic variables, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">Using dynamic ad variables</a> in the <i>MediaTailor User Guide</i>.</p>
     /// <p>You can include up to 100 dynamic variables.</p>
-    pub fn dynamic_variable(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dynamic_variable(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dynamic_variable = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The dynamic variable(s) that MediaTailor should use as avail matching criteria. MediaTailor only places the prefetched ads into the avail if the avail matches the criteria defined by the dynamic variable. For information about dynamic variables, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">Using dynamic ad variables</a> in the <i>MediaTailor User Guide</i>.</p>
     /// <p>You can include up to 100 dynamic variables.</p>
-    pub fn set_dynamic_variable(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dynamic_variable(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dynamic_variable = input;
         self
     }

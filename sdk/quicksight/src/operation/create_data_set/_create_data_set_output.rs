@@ -63,9 +63,7 @@ impl CreateDataSetOutput {
 
 /// A builder for [`CreateDataSetOutput`](crate::operation::create_data_set::CreateDataSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataSetOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
@@ -105,18 +103,12 @@ impl CreateDataSetOutputBuilder {
         &self.data_set_id
     }
     /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
-    pub fn ingestion_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingestion_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
-    pub fn set_ingestion_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ingestion_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ingestion_arn = input;
         self
     }

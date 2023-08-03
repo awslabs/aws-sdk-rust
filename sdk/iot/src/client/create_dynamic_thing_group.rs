@@ -17,10 +17,7 @@ impl super::Client {
     ///   - [`query_string(Option<String>)`](crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupOutput::query_string): <p>The dynamic thing group search query string.</p>
     ///   - [`query_version(Option<String>)`](crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupOutput::query_version): <p>The dynamic thing group query version.</p>
     /// - On failure, responds with [`SdkError<CreateDynamicThingGroupError>`](crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupError)
-    pub fn create_dynamic_thing_group(
-        &self,
-    ) -> crate::operation::create_dynamic_thing_group::builders::CreateDynamicThingGroupFluentBuilder
-    {
+    pub fn create_dynamic_thing_group(&self) -> crate::operation::create_dynamic_thing_group::builders::CreateDynamicThingGroupFluentBuilder {
         crate::operation::create_dynamic_thing_group::builders::CreateDynamicThingGroupFluentBuilder::new(self.handle.clone())
     }
 }

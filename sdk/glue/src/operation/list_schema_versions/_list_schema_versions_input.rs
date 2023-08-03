@@ -37,17 +37,14 @@ impl ListSchemaVersionsInput {
 }
 impl ListSchemaVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListSchemaVersionsInput`](crate::operation::list_schema_versions::ListSchemaVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_schema_versions::builders::ListSchemaVersionsInputBuilder {
+    pub fn builder() -> crate::operation::list_schema_versions::builders::ListSchemaVersionsInputBuilder {
         crate::operation::list_schema_versions::builders::ListSchemaVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSchemaVersionsInput`](crate::operation::list_schema_versions::ListSchemaVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchemaVersionsInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -111,16 +108,11 @@ impl ListSchemaVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListSchemaVersionsInput`](crate::operation::list_schema_versions::ListSchemaVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_schema_versions::ListSchemaVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_schema_versions::ListSchemaVersionsInput {
-                schema_id: self.schema_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_schema_versions::ListSchemaVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_schema_versions::ListSchemaVersionsInput {
+            schema_id: self.schema_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

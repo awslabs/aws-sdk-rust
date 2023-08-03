@@ -37,10 +37,7 @@ impl UpdateWirelessGatewayFluentBuilder {
         }
     }
     /// Access the UpdateWirelessGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_wireless_gateway::builders::UpdateWirelessGatewayInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_wireless_gateway::builders::UpdateWirelessGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateWirelessGatewayFluentBuilder {
             crate::operation::update_wireless_gateway::UpdateWirelessGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_wireless_gateway::UpdateWirelessGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_wireless_gateway::UpdateWirelessGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateWirelessGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateWirelessGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_wireless_gateway::UpdateWirelessGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_wireless_gateway::UpdateWirelessGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_wireless_gateway::UpdateWirelessGatewayError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateWirelessGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_wireless_gateway::UpdateWirelessGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_wireless_gateway::UpdateWirelessGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_wireless_gateway::UpdateWirelessGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateWirelessGatewayFluentBuilder {
             crate::operation::update_wireless_gateway::UpdateWirelessGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_wireless_gateway::UpdateWirelessGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_wireless_gateway::UpdateWirelessGatewayError>,
     > {
         self.customize_middleware().await
     }
@@ -175,17 +161,12 @@ impl UpdateWirelessGatewayFluentBuilder {
         self
     }
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-    pub fn set_join_eui_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
+    pub fn set_join_eui_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
         self.inner = self.inner.set_join_eui_filters(input);
         self
     }
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-    pub fn get_join_eui_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_join_eui_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
         self.inner.get_join_eui_filters()
     }
     /// Appends an item to `NetIdFilters`.
@@ -193,25 +174,17 @@ impl UpdateWirelessGatewayFluentBuilder {
     /// To override the contents of this collection use [`set_net_id_filters`](Self::set_net_id_filters).
     ///
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-    pub fn net_id_filters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn net_id_filters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.net_id_filters(input.into());
         self
     }
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-    pub fn set_net_id_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_net_id_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_net_id_filters(input);
         self
     }
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-    pub fn get_net_id_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_net_id_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_net_id_filters()
     }
     /// <p>The MaxEIRP value.</p>

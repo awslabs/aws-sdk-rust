@@ -32,9 +32,7 @@ impl AddPrefixListEntry {
 
 /// A builder for [`AddPrefixListEntry`](crate::types::AddPrefixListEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddPrefixListEntryBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

@@ -36,9 +36,7 @@ impl ListSipRulesInput {
 
 /// A builder for [`ListSipRulesInput`](crate::operation::list_sip_rules::ListSipRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSipRulesInputBuilder {
     pub(crate) sip_media_application_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +44,12 @@ pub struct ListSipRulesInputBuilder {
 }
 impl ListSipRulesInputBuilder {
     /// <p>The SIP media application ID.</p>
-    pub fn sip_media_application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sip_media_application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sip_media_application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SIP media application ID.</p>
-    pub fn set_sip_media_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sip_media_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sip_media_application_id = input;
         self
     }
@@ -96,10 +88,7 @@ impl ListSipRulesInputBuilder {
     /// Consumes the builder and constructs a [`ListSipRulesInput`](crate::operation::list_sip_rules::ListSipRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_sip_rules::ListSipRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_sip_rules::ListSipRulesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_sip_rules::ListSipRulesInput {
             sip_media_application_id: self.sip_media_application_id,
             max_results: self.max_results,

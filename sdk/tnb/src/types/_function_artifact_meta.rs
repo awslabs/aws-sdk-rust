@@ -24,9 +24,7 @@ impl FunctionArtifactMeta {
 
 /// A builder for [`FunctionArtifactMeta`](crate::types::FunctionArtifactMeta).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunctionArtifactMetaBuilder {
     pub(crate) overrides: ::std::option::Option<::std::vec::Vec<crate::types::ToscaOverride>>,
 }
@@ -43,23 +41,16 @@ impl FunctionArtifactMetaBuilder {
         self
     }
     /// <p>Lists of function package overrides.</p>
-    pub fn set_overrides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ToscaOverride>>,
-    ) -> Self {
+    pub fn set_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ToscaOverride>>) -> Self {
         self.overrides = input;
         self
     }
     /// <p>Lists of function package overrides.</p>
-    pub fn get_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ToscaOverride>> {
+    pub fn get_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ToscaOverride>> {
         &self.overrides
     }
     /// Consumes the builder and constructs a [`FunctionArtifactMeta`](crate::types::FunctionArtifactMeta).
     pub fn build(self) -> crate::types::FunctionArtifactMeta {
-        crate::types::FunctionArtifactMeta {
-            overrides: self.overrides,
-        }
+        crate::types::FunctionArtifactMeta { overrides: self.overrides }
     }
 }

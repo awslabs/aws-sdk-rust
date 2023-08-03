@@ -22,9 +22,7 @@ impl UnlockRuleInput {
 
 /// A builder for [`UnlockRuleInput`](crate::operation::unlock_rule::UnlockRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnlockRuleInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl UnlockRuleInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`UnlockRuleInput`](crate::operation::unlock_rule::UnlockRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::unlock_rule::UnlockRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::unlock_rule::UnlockRuleInput {
-            identifier: self.identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::unlock_rule::UnlockRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::unlock_rule::UnlockRuleInput { identifier: self.identifier })
     }
 }

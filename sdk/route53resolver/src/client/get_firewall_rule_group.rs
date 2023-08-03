@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetFirewallRuleGroupOutput`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupOutput) with field(s):
     ///   - [`firewall_rule_group(Option<FirewallRuleGroup>)`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupOutput::firewall_rule_group): <p>A collection of rules used to filter DNS network traffic. </p>
     /// - On failure, responds with [`SdkError<GetFirewallRuleGroupError>`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupError)
-    pub fn get_firewall_rule_group(
-        &self,
-    ) -> crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupFluentBuilder
-    {
-        crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_firewall_rule_group(&self) -> crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupFluentBuilder {
+        crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupFluentBuilder::new(self.handle.clone())
     }
 }

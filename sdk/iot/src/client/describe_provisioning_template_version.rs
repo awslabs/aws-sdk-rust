@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`template_body(Option<String>)`](crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionOutput::template_body): <p>The JSON formatted contents of the provisioning template version.</p>
     ///   - [`is_default_version(bool)`](crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionOutput::is_default_version): <p>True if the provisioning template version is the default version.</p>
     /// - On failure, responds with [`SdkError<DescribeProvisioningTemplateVersionError>`](crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionError)
-    pub fn describe_provisioning_template_version(&self) -> crate::operation::describe_provisioning_template_version::builders::DescribeProvisioningTemplateVersionFluentBuilder{
+    pub fn describe_provisioning_template_version(
+        &self,
+    ) -> crate::operation::describe_provisioning_template_version::builders::DescribeProvisioningTemplateVersionFluentBuilder {
         crate::operation::describe_provisioning_template_version::builders::DescribeProvisioningTemplateVersionFluentBuilder::new(self.handle.clone())
     }
 }

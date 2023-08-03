@@ -23,9 +23,7 @@ impl StageContext {
 
 /// A builder for [`StageContext`](crate::types::StageContext).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StageContextBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

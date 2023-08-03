@@ -22,36 +22,26 @@ impl ::aws_http::request_id::RequestId for PutRepositoryTriggersOutput {
 }
 impl PutRepositoryTriggersOutput {
     /// Creates a new builder-style object to manufacture [`PutRepositoryTriggersOutput`](crate::operation::put_repository_triggers::PutRepositoryTriggersOutput).
-    pub fn builder(
-    ) -> crate::operation::put_repository_triggers::builders::PutRepositoryTriggersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_repository_triggers::builders::PutRepositoryTriggersOutputBuilder {
         crate::operation::put_repository_triggers::builders::PutRepositoryTriggersOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutRepositoryTriggersOutput`](crate::operation::put_repository_triggers::PutRepositoryTriggersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRepositoryTriggersOutputBuilder {
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PutRepositoryTriggersOutputBuilder {
     /// <p>The system-generated unique ID for the create or update operation.</p>
-    pub fn configuration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated unique ID for the create or update operation.</p>
-    pub fn set_configuration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_id = input;
         self
     }

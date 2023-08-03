@@ -5,8 +5,7 @@
 pub struct ListAvailabilityConfigurationsOutput {
     /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.</p>
     #[doc(hidden)]
-    pub availability_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityConfiguration>>,
+    pub availability_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityConfiguration>>,
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no further results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAvailabilityConfigurationsOutput {
 }
 impl ListAvailabilityConfigurationsOutput {
     /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.</p>
-    pub fn availability_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AvailabilityConfiguration]> {
+    pub fn availability_configurations(&self) -> ::std::option::Option<&[crate::types::AvailabilityConfiguration]> {
         self.availability_configurations.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no further results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAvailabilityConfigurationsOutput 
 }
 impl ListAvailabilityConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAvailabilityConfigurationsOutput`](crate::operation::list_availability_configurations::ListAvailabilityConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsOutputBuilder {
         crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAvailabilityConfigurationsOutput`](crate::operation::list_availability_configurations::ListAvailabilityConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAvailabilityConfigurationsOutputBuilder {
-    pub(crate) availability_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityConfiguration>>,
+    pub(crate) availability_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl ListAvailabilityConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_availability_configurations`](Self::set_availability_configurations).
     ///
     /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.</p>
-    pub fn availability_configurations(
-        mut self,
-        input: crate::types::AvailabilityConfiguration,
-    ) -> Self {
+    pub fn availability_configurations(mut self, input: crate::types::AvailabilityConfiguration) -> Self {
         let mut v = self.availability_configurations.unwrap_or_default();
         v.push(input);
         self.availability_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.</p>
-    pub fn set_availability_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityConfiguration>>,
-    ) -> Self {
+    pub fn set_availability_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityConfiguration>>) -> Self {
         self.availability_configurations = input;
         self
     }
     /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.</p>
-    pub fn get_availability_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityConfiguration>> {
+    pub fn get_availability_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityConfiguration>> {
         &self.availability_configurations
     }
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no further results to return.</p>
@@ -100,10 +86,7 @@ impl ListAvailabilityConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAvailabilityConfigurationsOutput`](crate::operation::list_availability_configurations::ListAvailabilityConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_availability_configurations::ListAvailabilityConfigurationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_availability_configurations::ListAvailabilityConfigurationsOutput {
         crate::operation::list_availability_configurations::ListAvailabilityConfigurationsOutput {
             availability_configurations: self.availability_configurations,
             next_token: self.next_token,

@@ -30,9 +30,7 @@ impl AxisLabelReferenceOptions {
 
 /// A builder for [`AxisLabelReferenceOptions`](crate::types::AxisLabelReferenceOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AxisLabelReferenceOptionsBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
@@ -58,10 +56,7 @@ impl AxisLabelReferenceOptionsBuilder {
         self
     }
     /// <p>The column that the axis label is targeted to.</p>
-    pub fn set_column(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
+    pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
         self.column = input;
         self
     }

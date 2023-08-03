@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVirtualMfaDeviceOutput {
 }
 impl DeleteVirtualMfaDeviceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualMfaDeviceOutput`](crate::operation::delete_virtual_mfa_device::DeleteVirtualMfaDeviceOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_virtual_mfa_device::builders::DeleteVirtualMfaDeviceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_virtual_mfa_device::builders::DeleteVirtualMfaDeviceOutputBuilder {
         crate::operation::delete_virtual_mfa_device::builders::DeleteVirtualMfaDeviceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVirtualMfaDeviceOutput`](crate::operation::delete_virtual_mfa_device::DeleteVirtualMfaDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVirtualMfaDeviceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteVirtualMfaDeviceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVirtualMfaDeviceOutput`](crate::operation::delete_virtual_mfa_device::DeleteVirtualMfaDeviceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_virtual_mfa_device::DeleteVirtualMfaDeviceOutput {
+    pub fn build(self) -> crate::operation::delete_virtual_mfa_device::DeleteVirtualMfaDeviceOutput {
         crate::operation::delete_virtual_mfa_device::DeleteVirtualMfaDeviceOutput {
             _request_id: self._request_id,
         }

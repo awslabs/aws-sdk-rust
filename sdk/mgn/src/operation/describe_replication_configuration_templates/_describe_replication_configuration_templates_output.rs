@@ -5,8 +5,7 @@
 pub struct DescribeReplicationConfigurationTemplatesOutput {
     /// <p>Request to describe Replication Configuration template by items.</p>
     #[doc(hidden)]
-    pub items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationTemplate>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationTemplate>>,
     /// <p>Request to describe Replication Configuration template by next token.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeReplicationConfigurationTemplatesOutput {
 }
 impl DescribeReplicationConfigurationTemplatesOutput {
     /// <p>Request to describe Replication Configuration template by items.</p>
-    pub fn items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReplicationConfigurationTemplate]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::ReplicationConfigurationTemplate]> {
         self.items.as_deref()
     }
     /// <p>Request to describe Replication Configuration template by next token.</p>
@@ -31,19 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeReplicationConfigurationTempl
 }
 impl DescribeReplicationConfigurationTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationConfigurationTemplatesOutput`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesOutput).
-    pub fn builder() -> crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesOutputBuilder {
         crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationConfigurationTemplatesOutput`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationConfigurationTemplatesOutputBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationTemplate>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationTemplate>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,20 +55,12 @@ impl DescribeReplicationConfigurationTemplatesOutputBuilder {
         self
     }
     /// <p>Request to describe Replication Configuration template by items.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ReplicationConfigurationTemplate>,
-        >,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationTemplate>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Request to describe Replication Configuration template by items.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationTemplate>>
-    {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationTemplate>> {
         &self.items
     }
     /// <p>Request to describe Replication Configuration template by next token.</p>
@@ -100,12 +87,10 @@ impl DescribeReplicationConfigurationTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReplicationConfigurationTemplatesOutput`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesOutput).
-    pub fn build(self) -> crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesOutput{
+    pub fn build(self) -> crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesOutput {
         crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesOutput {
-            items: self.items
-            ,
-            next_token: self.next_token
-            ,
+            items: self.items,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

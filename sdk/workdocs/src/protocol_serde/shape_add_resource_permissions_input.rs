@@ -6,10 +6,7 @@ pub fn ser_add_resource_permissions_input(
     if let Some(var_1) = &input.notification_options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("NotificationOptions").start_object();
-        crate::protocol_serde::shape_notification_options::ser_notification_options(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_notification_options::ser_notification_options(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.principals {
@@ -18,10 +15,7 @@ pub fn ser_add_resource_permissions_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_share_principal::ser_share_principal(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_share_principal::ser_share_principal(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

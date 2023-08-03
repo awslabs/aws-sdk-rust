@@ -14,8 +14,7 @@ pub struct StartReadSetImportJobInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The job's source files.</p>
     #[doc(hidden)]
-    pub sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::StartReadSetImportJobSourceItem>>,
+    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::StartReadSetImportJobSourceItem>>,
 }
 impl StartReadSetImportJobInput {
     /// <p>The read set's sequence store ID.</p>
@@ -31,47 +30,34 @@ impl StartReadSetImportJobInput {
         self.client_token.as_deref()
     }
     /// <p>The job's source files.</p>
-    pub fn sources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StartReadSetImportJobSourceItem]> {
+    pub fn sources(&self) -> ::std::option::Option<&[crate::types::StartReadSetImportJobSourceItem]> {
         self.sources.as_deref()
     }
 }
 impl StartReadSetImportJobInput {
     /// Creates a new builder-style object to manufacture [`StartReadSetImportJobInput`](crate::operation::start_read_set_import_job::StartReadSetImportJobInput).
-    pub fn builder(
-    ) -> crate::operation::start_read_set_import_job::builders::StartReadSetImportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_read_set_import_job::builders::StartReadSetImportJobInputBuilder {
         crate::operation::start_read_set_import_job::builders::StartReadSetImportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartReadSetImportJobInput`](crate::operation::start_read_set_import_job::StartReadSetImportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartReadSetImportJobInputBuilder {
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::StartReadSetImportJobSourceItem>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::StartReadSetImportJobSourceItem>>,
 }
 impl StartReadSetImportJobInputBuilder {
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_store_id = input;
         self
     }
@@ -119,36 +105,24 @@ impl StartReadSetImportJobInputBuilder {
         self
     }
     /// <p>The job's source files.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::StartReadSetImportJobSourceItem>,
-        >,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StartReadSetImportJobSourceItem>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>The job's source files.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StartReadSetImportJobSourceItem>>
-    {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StartReadSetImportJobSourceItem>> {
         &self.sources
     }
     /// Consumes the builder and constructs a [`StartReadSetImportJobInput`](crate::operation::start_read_set_import_job::StartReadSetImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_read_set_import_job::StartReadSetImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_read_set_import_job::StartReadSetImportJobInput {
-                sequence_store_id: self.sequence_store_id,
-                role_arn: self.role_arn,
-                client_token: self.client_token,
-                sources: self.sources,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_read_set_import_job::StartReadSetImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_read_set_import_job::StartReadSetImportJobInput {
+            sequence_store_id: self.sequence_store_id,
+            role_arn: self.role_arn,
+            client_token: self.client_token,
+            sources: self.sources,
+        })
     }
 }

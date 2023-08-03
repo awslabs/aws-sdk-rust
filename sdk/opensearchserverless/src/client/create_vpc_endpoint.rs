@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateVpcEndpointOutput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput) with field(s):
     ///   - [`create_vpc_endpoint_detail(Option<CreateVpcEndpointDetail>)`](crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput::create_vpc_endpoint_detail): <p>Details about the created interface VPC endpoint.</p>
     /// - On failure, responds with [`SdkError<CreateVpcEndpointError>`](crate::operation::create_vpc_endpoint::CreateVpcEndpointError)
-    pub fn create_vpc_endpoint(
-        &self,
-    ) -> crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointFluentBuilder {
-        crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_vpc_endpoint(&self) -> crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointFluentBuilder {
+        crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointFluentBuilder::new(self.handle.clone())
     }
 }

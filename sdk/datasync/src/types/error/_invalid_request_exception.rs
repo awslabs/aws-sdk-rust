@@ -63,9 +63,7 @@ impl InvalidRequestException {
 
 /// A builder for [`InvalidRequestException`](crate::types::error::InvalidRequestException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidRequestExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
@@ -102,18 +100,12 @@ impl InvalidRequestExceptionBuilder {
         &self.error_code
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn datasync_error_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn datasync_error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datasync_error_code = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_datasync_error_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_datasync_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datasync_error_code = input;
         self
     }
@@ -128,10 +120,7 @@ impl InvalidRequestExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RequestCancelWorkflowExecutionOutput 
 }
 impl RequestCancelWorkflowExecutionOutput {
     /// Creates a new builder-style object to manufacture [`RequestCancelWorkflowExecutionOutput`](crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionOutput).
-    pub fn builder() -> crate::operation::request_cancel_workflow_execution::builders::RequestCancelWorkflowExecutionOutputBuilder{
+    pub fn builder() -> crate::operation::request_cancel_workflow_execution::builders::RequestCancelWorkflowExecutionOutputBuilder {
         crate::operation::request_cancel_workflow_execution::builders::RequestCancelWorkflowExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`RequestCancelWorkflowExecutionOutput`](crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequestCancelWorkflowExecutionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl RequestCancelWorkflowExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RequestCancelWorkflowExecutionOutput`](crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionOutput
-    {
+    pub fn build(self) -> crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionOutput {
         crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionOutput {
             _request_id: self._request_id,
         }

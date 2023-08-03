@@ -39,15 +39,11 @@ impl ReservationResourceSpecification {
         self.codec.as_ref()
     }
     /// Maximum bitrate, e.g. 'MAX_20_MBPS'
-    pub fn maximum_bitrate(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReservationMaximumBitrate> {
+    pub fn maximum_bitrate(&self) -> ::std::option::Option<&crate::types::ReservationMaximumBitrate> {
         self.maximum_bitrate.as_ref()
     }
     /// Maximum framerate, e.g. 'MAX_30_FPS' (Outputs only)
-    pub fn maximum_framerate(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReservationMaximumFramerate> {
+    pub fn maximum_framerate(&self) -> ::std::option::Option<&crate::types::ReservationMaximumFramerate> {
         self.maximum_framerate.as_ref()
     }
     /// Resolution, e.g. 'HD'
@@ -59,9 +55,7 @@ impl ReservationResourceSpecification {
         self.resource_type.as_ref()
     }
     /// Special feature, e.g. 'AUDIO_NORMALIZATION' (Channels only)
-    pub fn special_feature(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReservationSpecialFeature> {
+    pub fn special_feature(&self) -> ::std::option::Option<&crate::types::ReservationSpecialFeature> {
         self.special_feature.as_ref()
     }
     /// Video quality, e.g. 'STANDARD' (Outputs only)
@@ -78,9 +72,7 @@ impl ReservationResourceSpecification {
 
 /// A builder for [`ReservationResourceSpecification`](crate::types::ReservationResourceSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservationResourceSpecificationBuilder {
     pub(crate) channel_class: ::std::option::Option<crate::types::ChannelClass>,
     pub(crate) codec: ::std::option::Option<crate::types::ReservationCodec>,
@@ -98,10 +90,7 @@ impl ReservationResourceSpecificationBuilder {
         self
     }
     /// Channel class, e.g. 'STANDARD'
-    pub fn set_channel_class(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelClass>,
-    ) -> Self {
+    pub fn set_channel_class(mut self, input: ::std::option::Option<crate::types::ChannelClass>) -> Self {
         self.channel_class = input;
         self
     }
@@ -115,10 +104,7 @@ impl ReservationResourceSpecificationBuilder {
         self
     }
     /// Codec, e.g. 'AVC'
-    pub fn set_codec(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationCodec>,
-    ) -> Self {
+    pub fn set_codec(mut self, input: ::std::option::Option<crate::types::ReservationCodec>) -> Self {
         self.codec = input;
         self
     }
@@ -132,17 +118,12 @@ impl ReservationResourceSpecificationBuilder {
         self
     }
     /// Maximum bitrate, e.g. 'MAX_20_MBPS'
-    pub fn set_maximum_bitrate(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationMaximumBitrate>,
-    ) -> Self {
+    pub fn set_maximum_bitrate(mut self, input: ::std::option::Option<crate::types::ReservationMaximumBitrate>) -> Self {
         self.maximum_bitrate = input;
         self
     }
     /// Maximum bitrate, e.g. 'MAX_20_MBPS'
-    pub fn get_maximum_bitrate(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservationMaximumBitrate> {
+    pub fn get_maximum_bitrate(&self) -> &::std::option::Option<crate::types::ReservationMaximumBitrate> {
         &self.maximum_bitrate
     }
     /// Maximum framerate, e.g. 'MAX_30_FPS' (Outputs only)
@@ -151,17 +132,12 @@ impl ReservationResourceSpecificationBuilder {
         self
     }
     /// Maximum framerate, e.g. 'MAX_30_FPS' (Outputs only)
-    pub fn set_maximum_framerate(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationMaximumFramerate>,
-    ) -> Self {
+    pub fn set_maximum_framerate(mut self, input: ::std::option::Option<crate::types::ReservationMaximumFramerate>) -> Self {
         self.maximum_framerate = input;
         self
     }
     /// Maximum framerate, e.g. 'MAX_30_FPS' (Outputs only)
-    pub fn get_maximum_framerate(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservationMaximumFramerate> {
+    pub fn get_maximum_framerate(&self) -> &::std::option::Option<crate::types::ReservationMaximumFramerate> {
         &self.maximum_framerate
     }
     /// Resolution, e.g. 'HD'
@@ -170,10 +146,7 @@ impl ReservationResourceSpecificationBuilder {
         self
     }
     /// Resolution, e.g. 'HD'
-    pub fn set_resolution(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationResolution>,
-    ) -> Self {
+    pub fn set_resolution(mut self, input: ::std::option::Option<crate::types::ReservationResolution>) -> Self {
         self.resolution = input;
         self
     }
@@ -187,17 +160,12 @@ impl ReservationResourceSpecificationBuilder {
         self
     }
     /// Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ReservationResourceType>) -> Self {
         self.resource_type = input;
         self
     }
     /// Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservationResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ReservationResourceType> {
         &self.resource_type
     }
     /// Special feature, e.g. 'AUDIO_NORMALIZATION' (Channels only)
@@ -206,17 +174,12 @@ impl ReservationResourceSpecificationBuilder {
         self
     }
     /// Special feature, e.g. 'AUDIO_NORMALIZATION' (Channels only)
-    pub fn set_special_feature(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationSpecialFeature>,
-    ) -> Self {
+    pub fn set_special_feature(mut self, input: ::std::option::Option<crate::types::ReservationSpecialFeature>) -> Self {
         self.special_feature = input;
         self
     }
     /// Special feature, e.g. 'AUDIO_NORMALIZATION' (Channels only)
-    pub fn get_special_feature(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservationSpecialFeature> {
+    pub fn get_special_feature(&self) -> &::std::option::Option<crate::types::ReservationSpecialFeature> {
         &self.special_feature
     }
     /// Video quality, e.g. 'STANDARD' (Outputs only)
@@ -225,17 +188,12 @@ impl ReservationResourceSpecificationBuilder {
         self
     }
     /// Video quality, e.g. 'STANDARD' (Outputs only)
-    pub fn set_video_quality(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationVideoQuality>,
-    ) -> Self {
+    pub fn set_video_quality(mut self, input: ::std::option::Option<crate::types::ReservationVideoQuality>) -> Self {
         self.video_quality = input;
         self
     }
     /// Video quality, e.g. 'STANDARD' (Outputs only)
-    pub fn get_video_quality(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservationVideoQuality> {
+    pub fn get_video_quality(&self) -> &::std::option::Option<crate::types::ReservationVideoQuality> {
         &self.video_quality
     }
     /// Consumes the builder and constructs a [`ReservationResourceSpecification`](crate::types::ReservationResourceSpecification).

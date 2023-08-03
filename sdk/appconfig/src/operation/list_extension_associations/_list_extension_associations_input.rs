@@ -43,16 +43,14 @@ impl ListExtensionAssociationsInput {
 }
 impl ListExtensionAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListExtensionAssociationsInput`](crate::operation::list_extension_associations::ListExtensionAssociationsInput).
-    pub fn builder() -> crate::operation::list_extension_associations::builders::ListExtensionAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::list_extension_associations::builders::ListExtensionAssociationsInputBuilder {
         crate::operation::list_extension_associations::builders::ListExtensionAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListExtensionAssociationsInput`](crate::operation::list_extension_associations::ListExtensionAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExtensionAssociationsInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) extension_identifier: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct ListExtensionAssociationsInputBuilder {
 }
 impl ListExtensionAssociationsInputBuilder {
     /// <p>The ARN of an application, configuration profile, or environment.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of an application, configuration profile, or environment.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
@@ -82,18 +74,12 @@ impl ListExtensionAssociationsInputBuilder {
         &self.resource_identifier
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn extension_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extension_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extension_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn set_extension_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extension_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extension_identifier = input;
         self
     }
@@ -150,14 +136,12 @@ impl ListExtensionAssociationsInputBuilder {
         crate::operation::list_extension_associations::ListExtensionAssociationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_extension_associations::ListExtensionAssociationsInput {
-                resource_identifier: self.resource_identifier,
-                extension_identifier: self.extension_identifier,
-                extension_version_number: self.extension_version_number,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_extension_associations::ListExtensionAssociationsInput {
+            resource_identifier: self.resource_identifier,
+            extension_identifier: self.extension_identifier,
+            extension_version_number: self.extension_version_number,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -32,16 +32,15 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
 }
 impl SetIdentityHeadersInNotificationsEnabledInput {
     /// Creates a new builder-style object to manufacture [`SetIdentityHeadersInNotificationsEnabledInput`](crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledInput).
-    pub fn builder() -> crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledInputBuilder{
+    pub fn builder() -> crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledInputBuilder
+    {
         crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledInputBuilder::default()
     }
 }
 
 /// A builder for [`SetIdentityHeadersInNotificationsEnabledInput`](crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetIdentityHeadersInNotificationsEnabledInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
     pub(crate) notification_type: ::std::option::Option<crate::types::NotificationType>,
@@ -68,10 +67,7 @@ impl SetIdentityHeadersInNotificationsEnabledInputBuilder {
         self
     }
     /// <p>The notification type for which to enable or disable headers in notifications. </p>
-    pub fn set_notification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationType>,
-    ) -> Self {
+    pub fn set_notification_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
         self.notification_type = input;
         self
     }
@@ -97,17 +93,18 @@ impl SetIdentityHeadersInNotificationsEnabledInputBuilder {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`SetIdentityHeadersInNotificationsEnabledInput`](crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledInput {
-                identity: self.identity
-                ,
-                notification_type: self.notification_type
-                ,
-                enabled: self.enabled
-                    .unwrap_or_default()
-                ,
-            }
+                identity: self.identity,
+                notification_type: self.notification_type,
+                enabled: self.enabled.unwrap_or_default(),
+            },
         )
     }
 }

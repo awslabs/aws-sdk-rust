@@ -29,9 +29,7 @@ impl GetUserDetailsInput {
 
 /// A builder for [`GetUserDetailsInput`](crate::operation::get_user_details::GetUserDetailsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUserDetailsInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl GetUserDetailsInputBuilder {
     /// Consumes the builder and constructs a [`GetUserDetailsInput`](crate::operation::get_user_details::GetUserDetailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_user_details::GetUserDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_user_details::GetUserDetailsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_user_details::GetUserDetailsInput {
             id: self.id,
             user_name: self.user_name,

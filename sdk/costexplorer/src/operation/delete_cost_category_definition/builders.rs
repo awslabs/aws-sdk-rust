@@ -26,7 +26,7 @@ impl DeleteCostCategoryDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCostCategoryDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionInputBuilder,
+    inner: crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionInputBuilder,
 }
 impl DeleteCostCategoryDefinitionFluentBuilder {
     /// Creates a new `DeleteCostCategoryDefinition`.
@@ -37,7 +37,7 @@ impl DeleteCostCategoryDefinitionFluentBuilder {
         }
     }
     /// Access the DeleteCostCategoryDefinition as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteCostCategoryDefinitionFluentBuilder {
             crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteCostCategoryDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteCostCategoryDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteCostCategoryDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteCostCategoryDefinitionFluentBuilder {
             crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn cost_category_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cost_category_arn(input.into());
         self
     }
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn set_cost_category_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cost_category_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cost_category_arn(input);
         self
     }

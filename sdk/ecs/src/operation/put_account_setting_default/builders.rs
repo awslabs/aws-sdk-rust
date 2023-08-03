@@ -26,7 +26,7 @@ impl PutAccountSettingDefaultInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAccountSettingDefaultFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultInputBuilder,
+    inner: crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultInputBuilder,
 }
 impl PutAccountSettingDefaultFluentBuilder {
     /// Creates a new `PutAccountSettingDefault`.
@@ -37,7 +37,7 @@ impl PutAccountSettingDefaultFluentBuilder {
         }
     }
     /// Access the PutAccountSettingDefault as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PutAccountSettingDefaultFluentBuilder {
             crate::operation::put_account_setting_default::PutAccountSettingDefault,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_setting_default::PutAccountSettingDefaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_setting_default::PutAccountSettingDefaultError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PutAccountSettingDefaultFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PutAccountSettingDefaultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_setting_default::PutAccountSettingDefaultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_setting_default::PutAccountSettingDefaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_setting_default::PutAccountSettingDefaultError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PutAccountSettingDefaultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_account_setting_default::PutAccountSettingDefaultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_setting_default::PutAccountSettingDefaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_setting_default::PutAccountSettingDefaultError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl PutAccountSettingDefaultFluentBuilder {
             crate::operation::put_account_setting_default::PutAccountSettingDefault,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_account_setting_default::PutAccountSettingDefaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_account_setting_default::PutAccountSettingDefaultError>,
     > {
         self.customize_middleware().await
     }

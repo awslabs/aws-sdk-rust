@@ -26,7 +26,7 @@ impl CreateSecurityConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSecurityConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_security_configuration::builders::CreateSecurityConfigurationInputBuilder,
+    inner: crate::operation::create_security_configuration::builders::CreateSecurityConfigurationInputBuilder,
 }
 impl CreateSecurityConfigurationFluentBuilder {
     /// Creates a new `CreateSecurityConfiguration`.
@@ -37,7 +37,7 @@ impl CreateSecurityConfigurationFluentBuilder {
         }
     }
     /// Access the CreateSecurityConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_security_configuration::builders::CreateSecurityConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_security_configuration::builders::CreateSecurityConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateSecurityConfigurationFluentBuilder {
             crate::operation::create_security_configuration::CreateSecurityConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_configuration::CreateSecurityConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_configuration::CreateSecurityConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateSecurityConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateSecurityConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_security_configuration::CreateSecurityConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_configuration::CreateSecurityConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_configuration::CreateSecurityConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateSecurityConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_security_configuration::CreateSecurityConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_configuration::CreateSecurityConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_configuration::CreateSecurityConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateSecurityConfigurationFluentBuilder {
             crate::operation::create_security_configuration::CreateSecurityConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_configuration::CreateSecurityConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_configuration::CreateSecurityConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl CreateSecurityConfigurationFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    pub fn security_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_configuration(input.into());
         self
     }
     /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    pub fn set_security_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_configuration(input);
         self
     }

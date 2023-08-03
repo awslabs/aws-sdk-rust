@@ -29,17 +29,14 @@ impl ListStudioMembersInput {
 }
 impl ListStudioMembersInput {
     /// Creates a new builder-style object to manufacture [`ListStudioMembersInput`](crate::operation::list_studio_members::ListStudioMembersInput).
-    pub fn builder(
-    ) -> crate::operation::list_studio_members::builders::ListStudioMembersInputBuilder {
+    pub fn builder() -> crate::operation::list_studio_members::builders::ListStudioMembersInputBuilder {
         crate::operation::list_studio_members::builders::ListStudioMembersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStudioMembersInput`](crate::operation::list_studio_members::ListStudioMembersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStudioMembersInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl ListStudioMembersInputBuilder {
     /// Consumes the builder and constructs a [`ListStudioMembersInput`](crate::operation::list_studio_members::ListStudioMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_studio_members::ListStudioMembersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_studio_members::ListStudioMembersInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                studio_id: self.studio_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_studio_members::ListStudioMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_studio_members::ListStudioMembersInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            studio_id: self.studio_id,
+        })
     }
 }

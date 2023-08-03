@@ -10,10 +10,7 @@ impl GetRetainedMessageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_retained_message::GetRetainedMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_retained_message::GetRetainedMessageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_retained_message::GetRetainedMessageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_retained_message();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl GetRetainedMessageFluentBuilder {
         }
     }
     /// Access the GetRetainedMessage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_retained_message::builders::GetRetainedMessageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_retained_message::builders::GetRetainedMessageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl GetRetainedMessageFluentBuilder {
             crate::operation::get_retained_message::GetRetainedMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_retained_message::GetRetainedMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_retained_message::GetRetainedMessageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl GetRetainedMessageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl GetRetainedMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_retained_message::GetRetainedMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_retained_message::GetRetainedMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_retained_message::GetRetainedMessageError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl GetRetainedMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_retained_message::GetRetainedMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_retained_message::GetRetainedMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_retained_message::GetRetainedMessageError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl GetRetainedMessageFluentBuilder {
             crate::operation::get_retained_message::GetRetainedMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_retained_message::GetRetainedMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_retained_message::GetRetainedMessageError>,
     > {
         self.customize_middleware().await
     }

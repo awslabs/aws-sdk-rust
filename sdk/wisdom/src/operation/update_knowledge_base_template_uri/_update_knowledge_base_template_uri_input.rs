@@ -22,34 +22,26 @@ impl UpdateKnowledgeBaseTemplateUriInput {
 }
 impl UpdateKnowledgeBaseTemplateUriInput {
     /// Creates a new builder-style object to manufacture [`UpdateKnowledgeBaseTemplateUriInput`](crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriInput).
-    pub fn builder() -> crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriInputBuilder{
+    pub fn builder() -> crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriInputBuilder {
         crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateKnowledgeBaseTemplateUriInput`](crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateKnowledgeBaseTemplateUriInputBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_uri: ::std::option::Option<::std::string::String>,
 }
 impl UpdateKnowledgeBaseTemplateUriInputBuilder {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn set_knowledge_base_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
@@ -80,11 +72,9 @@ impl UpdateKnowledgeBaseTemplateUriInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriInput {
-                knowledge_base_id: self.knowledge_base_id
-                ,
-                template_uri: self.template_uri
-                ,
-            }
+                knowledge_base_id: self.knowledge_base_id,
+                template_uri: self.template_uri,
+            },
         )
     }
 }

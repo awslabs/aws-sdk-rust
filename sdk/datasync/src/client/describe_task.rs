@@ -22,11 +22,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_task::DescribeTaskOutput::creation_time): <p>The time that the task was created.</p>
     ///   - [`includes(Option<Vec<FilterRule>>)`](crate::operation::describe_task::DescribeTaskOutput::includes): <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     /// - On failure, responds with [`SdkError<DescribeTaskError>`](crate::operation::describe_task::DescribeTaskError)
-    pub fn describe_task(
-        &self,
-    ) -> crate::operation::describe_task::builders::DescribeTaskFluentBuilder {
-        crate::operation::describe_task::builders::DescribeTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_task(&self) -> crate::operation::describe_task::builders::DescribeTaskFluentBuilder {
+        crate::operation::describe_task::builders::DescribeTaskFluentBuilder::new(self.handle.clone())
     }
 }

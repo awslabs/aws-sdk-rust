@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`members(Option<Vec<LaunchProfileMembership>>)`](crate::operation::list_launch_profile_members::ListLaunchProfileMembersOutput::members): <p>A list of members.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_launch_profile_members::ListLaunchProfileMembersOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListLaunchProfileMembersError>`](crate::operation::list_launch_profile_members::ListLaunchProfileMembersError)
-    pub fn list_launch_profile_members(&self) -> crate::operation::list_launch_profile_members::builders::ListLaunchProfileMembersFluentBuilder{
+    pub fn list_launch_profile_members(&self) -> crate::operation::list_launch_profile_members::builders::ListLaunchProfileMembersFluentBuilder {
         crate::operation::list_launch_profile_members::builders::ListLaunchProfileMembersFluentBuilder::new(self.handle.clone())
     }
 }

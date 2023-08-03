@@ -26,7 +26,7 @@ impl DescribeTrafficMirrorTargetsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTrafficMirrorTargetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_traffic_mirror_targets::builders::DescribeTrafficMirrorTargetsInputBuilder,
+    inner: crate::operation::describe_traffic_mirror_targets::builders::DescribeTrafficMirrorTargetsInputBuilder,
 }
 impl DescribeTrafficMirrorTargetsFluentBuilder {
     /// Creates a new `DescribeTrafficMirrorTargets`.
@@ -37,7 +37,7 @@ impl DescribeTrafficMirrorTargetsFluentBuilder {
         }
     }
     /// Access the DescribeTrafficMirrorTargets as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_traffic_mirror_targets::builders::DescribeTrafficMirrorTargetsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_traffic_mirror_targets::builders::DescribeTrafficMirrorTargetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeTrafficMirrorTargetsFluentBuilder {
             crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeTrafficMirrorTargetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeTrafficMirrorTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeTrafficMirrorTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeTrafficMirrorTargetsFluentBuilder {
             crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_traffic_mirror_targets::paginator::DescribeTrafficMirrorTargetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_traffic_mirror_targets::paginator::DescribeTrafficMirrorTargetsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_traffic_mirror_targets::paginator::DescribeTrafficMirrorTargetsPaginator {
         crate::operation::describe_traffic_mirror_targets::paginator::DescribeTrafficMirrorTargetsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `TrafficMirrorTargetIds`.
@@ -131,25 +120,17 @@ impl DescribeTrafficMirrorTargetsFluentBuilder {
     /// To override the contents of this collection use [`set_traffic_mirror_target_ids`](Self::set_traffic_mirror_target_ids).
     ///
     /// <p>The ID of the Traffic Mirror targets.</p>
-    pub fn traffic_mirror_target_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_target_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.traffic_mirror_target_ids(input.into());
         self
     }
     /// <p>The ID of the Traffic Mirror targets.</p>
-    pub fn set_traffic_mirror_target_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_traffic_mirror_target_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_traffic_mirror_target_ids(input);
         self
     }
     /// <p>The ID of the Traffic Mirror targets.</p>
-    pub fn get_traffic_mirror_target_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_traffic_mirror_target_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_traffic_mirror_target_ids()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -190,10 +171,7 @@ impl DescribeTrafficMirrorTargetsFluentBuilder {
     /// <li> <p> <code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p> </li>
     /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

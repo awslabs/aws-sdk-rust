@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListStudioComponentsOutput {
 }
 impl ListStudioComponentsOutput {
     /// Creates a new builder-style object to manufacture [`ListStudioComponentsOutput`](crate::operation::list_studio_components::ListStudioComponentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_studio_components::builders::ListStudioComponentsOutputBuilder {
+    pub fn builder() -> crate::operation::list_studio_components::builders::ListStudioComponentsOutputBuilder {
         crate::operation::list_studio_components::builders::ListStudioComponentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStudioComponentsOutput`](crate::operation::list_studio_components::ListStudioComponentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStudioComponentsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) studio_components:
-        ::std::option::Option<::std::vec::Vec<crate::types::StudioComponent>>,
+    pub(crate) studio_components: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponent>>,
     _request_id: Option<String>,
 }
 impl ListStudioComponentsOutputBuilder {
@@ -72,17 +68,12 @@ impl ListStudioComponentsOutputBuilder {
         self
     }
     /// <p>A collection of studio components.</p>
-    pub fn set_studio_components(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponent>>,
-    ) -> Self {
+    pub fn set_studio_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponent>>) -> Self {
         self.studio_components = input;
         self
     }
     /// <p>A collection of studio components.</p>
-    pub fn get_studio_components(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponent>> {
+    pub fn get_studio_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponent>> {
         &self.studio_components
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

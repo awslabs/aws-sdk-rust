@@ -20,9 +20,7 @@ impl UpdateParticipantRoleConfigChannelInfo {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`Chat`](crate::types::UpdateParticipantRoleConfigChannelInfo::Chat), extracting the inner [`ChatParticipantRoleConfig`](crate::types::ChatParticipantRoleConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_chat(
-        &self,
-    ) -> ::std::result::Result<&crate::types::ChatParticipantRoleConfig, &Self> {
+    pub fn as_chat(&self) -> ::std::result::Result<&crate::types::ChatParticipantRoleConfig, &Self> {
         if let UpdateParticipantRoleConfigChannelInfo::Chat(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

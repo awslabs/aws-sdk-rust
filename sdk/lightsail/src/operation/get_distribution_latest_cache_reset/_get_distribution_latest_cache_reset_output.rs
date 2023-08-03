@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetDistributionLatestCacheResetOutput
 }
 impl GetDistributionLatestCacheResetOutput {
     /// Creates a new builder-style object to manufacture [`GetDistributionLatestCacheResetOutput`](crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput).
-    pub fn builder() -> crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetOutputBuilder{
+    pub fn builder() -> crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetOutputBuilder {
         crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDistributionLatestCacheResetOutput`](crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDistributionLatestCacheResetOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -64,10 +62,7 @@ impl GetDistributionLatestCacheResetOutputBuilder {
         self
     }
     /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -85,15 +80,10 @@ impl GetDistributionLatestCacheResetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDistributionLatestCacheResetOutput`](crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput
-    {
+    pub fn build(self) -> crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput {
         crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput {
-            status: self.status
-            ,
-            create_time: self.create_time
-            ,
+            status: self.status,
+            create_time: self.create_time,
             _request_id: self._request_id,
         }
     }

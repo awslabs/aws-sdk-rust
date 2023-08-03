@@ -12,10 +12,7 @@ pub fn ser_model_metrics(
     if let Some(var_3) = &input.model_data_quality {
         #[allow(unused_mut)]
         let mut object_4 = object.key("ModelDataQuality").start_object();
-        crate::protocol_serde::shape_model_data_quality::ser_model_data_quality(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_model_data_quality::ser_model_data_quality(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.bias {
@@ -35,17 +32,9 @@ pub fn ser_model_metrics(
 
 pub(crate) fn de_model_metrics<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ModelMetrics>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ModelMetrics>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -55,49 +44,33 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "ModelQuality" => {
-                                builder = builder.set_model_quality(
-                                    crate::protocol_serde::shape_model_quality::de_model_quality(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "ModelDataQuality" => {
-                                builder = builder.set_model_data_quality(
-                                    crate::protocol_serde::shape_model_data_quality::de_model_data_quality(tokens)?
-                                );
-                            }
-                            "Bias" => {
-                                builder = builder
-                                    .set_bias(crate::protocol_serde::shape_bias::de_bias(tokens)?);
-                            }
-                            "Explainability" => {
-                                builder = builder.set_explainability(
-                                    crate::protocol_serde::shape_explainability::de_explainability(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "ModelQuality" => {
+                            builder = builder.set_model_quality(crate::protocol_serde::shape_model_quality::de_model_quality(tokens)?);
                         }
-                    }
+                        "ModelDataQuality" => {
+                            builder = builder.set_model_data_quality(crate::protocol_serde::shape_model_data_quality::de_model_data_quality(tokens)?);
+                        }
+                        "Bias" => {
+                            builder = builder.set_bias(crate::protocol_serde::shape_bias::de_bias(tokens)?);
+                        }
+                        "Explainability" => {
+                            builder = builder.set_explainability(crate::protocol_serde::shape_explainability::de_explainability(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

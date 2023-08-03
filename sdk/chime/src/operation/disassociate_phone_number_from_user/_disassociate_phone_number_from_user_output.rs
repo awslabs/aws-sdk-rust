@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociatePhoneNumberFromUserOutput
 }
 impl DisassociatePhoneNumberFromUserOutput {
     /// Creates a new builder-style object to manufacture [`DisassociatePhoneNumberFromUserOutput`](crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserOutput).
-    pub fn builder() -> crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserOutputBuilder {
         crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociatePhoneNumberFromUserOutput`](crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociatePhoneNumberFromUserOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DisassociatePhoneNumberFromUserOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociatePhoneNumberFromUserOutput`](crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserOutput
-    {
+    pub fn build(self) -> crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserOutput {
         crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserOutput {
             _request_id: self._request_id,
         }

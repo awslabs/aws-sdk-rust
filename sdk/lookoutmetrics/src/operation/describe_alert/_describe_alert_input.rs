@@ -22,9 +22,7 @@ impl DescribeAlertInput {
 
 /// A builder for [`DescribeAlertInput`](crate::operation::describe_alert::DescribeAlertInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAlertInputBuilder {
     pub(crate) alert_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeAlertInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAlertInput`](crate::operation::describe_alert::DescribeAlertInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_alert::DescribeAlertInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_alert::DescribeAlertInput {
-            alert_arn: self.alert_arn,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_alert::DescribeAlertInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_alert::DescribeAlertInput { alert_arn: self.alert_arn })
     }
 }

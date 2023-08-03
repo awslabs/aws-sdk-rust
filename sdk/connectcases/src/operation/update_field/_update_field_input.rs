@@ -43,9 +43,7 @@ impl UpdateFieldInput {
 
 /// A builder for [`UpdateFieldInput`](crate::operation::update_field::UpdateFieldInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFieldInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
@@ -110,12 +108,7 @@ impl UpdateFieldInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateFieldInput`](crate::operation::update_field::UpdateFieldInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_field::UpdateFieldInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_field::UpdateFieldInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_field::UpdateFieldInput {
             domain_id: self.domain_id,
             field_id: self.field_id,

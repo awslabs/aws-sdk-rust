@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DetectorFeatureResult {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,9 +81,7 @@ impl ::std::convert::From<&str> for DetectorFeatureResult {
             "LAMBDA_NETWORK_LOGS" => DetectorFeatureResult::LambdaNetworkLogs,
             "RDS_LOGIN_EVENTS" => DetectorFeatureResult::RdsLoginEvents,
             "S3_DATA_EVENTS" => DetectorFeatureResult::S3DataEvents,
-            other => DetectorFeatureResult::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DetectorFeatureResult::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

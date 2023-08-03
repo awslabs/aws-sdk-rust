@@ -20,8 +20,7 @@ pub struct ListDevicesInput {
     pub name_filter: ::std::option::Option<::std::string::String>,
     /// <p>Filter based on a device's status.</p>
     #[doc(hidden)]
-    pub device_aggregated_status_filter:
-        ::std::option::Option<crate::types::DeviceAggregatedStatus>,
+    pub device_aggregated_status_filter: ::std::option::Option<crate::types::DeviceAggregatedStatus>,
 }
 impl ListDevicesInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -45,9 +44,7 @@ impl ListDevicesInput {
         self.name_filter.as_deref()
     }
     /// <p>Filter based on a device's status.</p>
-    pub fn device_aggregated_status_filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeviceAggregatedStatus> {
+    pub fn device_aggregated_status_filter(&self) -> ::std::option::Option<&crate::types::DeviceAggregatedStatus> {
         self.device_aggregated_status_filter.as_ref()
     }
 }
@@ -60,17 +57,14 @@ impl ListDevicesInput {
 
 /// A builder for [`ListDevicesInput`](crate::operation::list_devices::ListDevicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDevicesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) sort_by: ::std::option::Option<crate::types::ListDevicesSortBy>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) name_filter: ::std::option::Option<::std::string::String>,
-    pub(crate) device_aggregated_status_filter:
-        ::std::option::Option<crate::types::DeviceAggregatedStatus>,
+    pub(crate) device_aggregated_status_filter: ::std::option::Option<crate::types::DeviceAggregatedStatus>,
 }
 impl ListDevicesInputBuilder {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -107,10 +101,7 @@ impl ListDevicesInputBuilder {
         self
     }
     /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListDevicesSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListDevicesSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -147,34 +138,21 @@ impl ListDevicesInputBuilder {
         &self.name_filter
     }
     /// <p>Filter based on a device's status.</p>
-    pub fn device_aggregated_status_filter(
-        mut self,
-        input: crate::types::DeviceAggregatedStatus,
-    ) -> Self {
+    pub fn device_aggregated_status_filter(mut self, input: crate::types::DeviceAggregatedStatus) -> Self {
         self.device_aggregated_status_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filter based on a device's status.</p>
-    pub fn set_device_aggregated_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceAggregatedStatus>,
-    ) -> Self {
+    pub fn set_device_aggregated_status_filter(mut self, input: ::std::option::Option<crate::types::DeviceAggregatedStatus>) -> Self {
         self.device_aggregated_status_filter = input;
         self
     }
     /// <p>Filter based on a device's status.</p>
-    pub fn get_device_aggregated_status_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeviceAggregatedStatus> {
+    pub fn get_device_aggregated_status_filter(&self) -> &::std::option::Option<crate::types::DeviceAggregatedStatus> {
         &self.device_aggregated_status_filter
     }
     /// Consumes the builder and constructs a [`ListDevicesInput`](crate::operation::list_devices::ListDevicesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_devices::ListDevicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_devices::ListDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_devices::ListDevicesInput {
             next_token: self.next_token,
             max_results: self.max_results.unwrap_or_default(),

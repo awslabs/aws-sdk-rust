@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`capabilities_reason(Option<String>)`](crate::operation::validate_template::ValidateTemplateOutput::capabilities_reason): <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
     ///   - [`declared_transforms(Option<Vec<String>>)`](crate::operation::validate_template::ValidateTemplateOutput::declared_transforms): <p>A list of the transforms that are declared in the template.</p>
     /// - On failure, responds with [`SdkError<ValidateTemplateError>`](crate::operation::validate_template::ValidateTemplateError)
-    pub fn validate_template(
-        &self,
-    ) -> crate::operation::validate_template::builders::ValidateTemplateFluentBuilder {
-        crate::operation::validate_template::builders::ValidateTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn validate_template(&self) -> crate::operation::validate_template::builders::ValidateTemplateFluentBuilder {
+        crate::operation::validate_template::builders::ValidateTemplateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`custom_key_store_id(impl ::std::convert::Into<String>)`](crate::operation::disconnect_custom_key_store::builders::DisconnectCustomKeyStoreFluentBuilder::custom_key_store_id) / [`set_custom_key_store_id(Option<String>)`](crate::operation::disconnect_custom_key_store::builders::DisconnectCustomKeyStoreFluentBuilder::set_custom_key_store_id): <p>Enter the ID of the custom key store you want to disconnect. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// - On success, responds with [`DisconnectCustomKeyStoreOutput`](crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreOutput)
     /// - On failure, responds with [`SdkError<DisconnectCustomKeyStoreError>`](crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreError)
-    pub fn disconnect_custom_key_store(&self) -> crate::operation::disconnect_custom_key_store::builders::DisconnectCustomKeyStoreFluentBuilder{
+    pub fn disconnect_custom_key_store(&self) -> crate::operation::disconnect_custom_key_store::builders::DisconnectCustomKeyStoreFluentBuilder {
         crate::operation::disconnect_custom_key_store::builders::DisconnectCustomKeyStoreFluentBuilder::new(self.handle.clone())
     }
 }

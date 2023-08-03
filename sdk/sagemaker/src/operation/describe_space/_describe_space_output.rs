@@ -84,9 +84,7 @@ impl DescribeSpaceOutput {
 
 /// A builder for [`DescribeSpaceOutput`](crate::operation::describe_space::DescribeSpaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpaceOutputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) space_arn: ::std::option::Option<::std::string::String>,
@@ -143,18 +141,12 @@ impl DescribeSpaceOutputBuilder {
         &self.space_name
     }
     /// <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
-    pub fn home_efs_file_system_uid(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn home_efs_file_system_uid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_efs_file_system_uid = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
-    pub fn set_home_efs_file_system_uid(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_home_efs_file_system_uid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_efs_file_system_uid = input;
         self
     }
@@ -182,10 +174,7 @@ impl DescribeSpaceOutputBuilder {
         self
     }
     /// <p>The last modified time.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -199,10 +188,7 @@ impl DescribeSpaceOutputBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -211,18 +197,12 @@ impl DescribeSpaceOutputBuilder {
         &self.creation_time
     }
     /// <p>The failure reason.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The failure reason.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -236,10 +216,7 @@ impl DescribeSpaceOutputBuilder {
         self
     }
     /// <p>A collection of space settings.</p>
-    pub fn set_space_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::SpaceSettings>,
-    ) -> Self {
+    pub fn set_space_settings(mut self, input: ::std::option::Option<crate::types::SpaceSettings>) -> Self {
         self.space_settings = input;
         self
     }

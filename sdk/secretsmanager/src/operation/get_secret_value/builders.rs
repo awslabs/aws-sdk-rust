@@ -10,10 +10,7 @@ impl GetSecretValueInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_secret_value::GetSecretValueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_secret_value::GetSecretValueError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_secret_value::GetSecretValueError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_secret_value();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl GetSecretValueFluentBuilder {
         }
     }
     /// Access the GetSecretValue as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_secret_value::builders::GetSecretValueInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_secret_value::builders::GetSecretValueInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl GetSecretValueFluentBuilder {
             crate::operation::get_secret_value::GetSecretValue,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_secret_value::GetSecretValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_secret_value::GetSecretValueError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl GetSecretValueFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl GetSecretValueFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_secret_value::GetSecretValueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_secret_value::GetSecretValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_secret_value::GetSecretValueError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl GetSecretValueFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_secret_value::GetSecretValueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_secret_value::GetSecretValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_secret_value::GetSecretValueError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl GetSecretValueFluentBuilder {
             crate::operation::get_secret_value::GetSecretValue,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_secret_value::GetSecretValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_secret_value::GetSecretValueError>,
     > {
         self.customize_middleware().await
     }
@@ -162,19 +146,13 @@ impl GetSecretValueFluentBuilder {
     }
     /// <p>The staging label of the version of the secret to retrieve. </p>
     /// <p>Secrets Manager uses staging labels to keep track of different versions during the rotation process. If you include both this parameter and <code>VersionId</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, Secrets Manager returns the <code>AWSCURRENT</code> version.</p>
-    pub fn version_stage(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_stage(input.into());
         self
     }
     /// <p>The staging label of the version of the secret to retrieve. </p>
     /// <p>Secrets Manager uses staging labels to keep track of different versions during the rotation process. If you include both this parameter and <code>VersionId</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, Secrets Manager returns the <code>AWSCURRENT</code> version.</p>
-    pub fn set_version_stage(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_stage(input);
         self
     }

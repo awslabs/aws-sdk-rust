@@ -38,8 +38,7 @@ pub struct CreateChannelInput {
     pub moderator_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million users, excluding moderators.</p>
     #[doc(hidden)]
-    pub elastic_channel_configuration:
-        ::std::option::Option<crate::types::ElasticChannelConfiguration>,
+    pub elastic_channel_configuration: ::std::option::Option<crate::types::ElasticChannelConfiguration>,
     /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
     #[doc(hidden)]
     pub expiration_settings: ::std::option::Option<crate::types::ExpirationSettings>,
@@ -90,9 +89,7 @@ impl CreateChannelInput {
         self.moderator_arns.as_deref()
     }
     /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million users, excluding moderators.</p>
-    pub fn elastic_channel_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ElasticChannelConfiguration> {
+    pub fn elastic_channel_configuration(&self) -> ::std::option::Option<&crate::types::ElasticChannelConfiguration> {
         self.elastic_channel_configuration.as_ref()
     }
     /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
@@ -114,10 +111,7 @@ impl ::std::fmt::Debug for CreateChannelInput {
         formatter.field("channel_id", &"*** Sensitive Data Redacted ***");
         formatter.field("member_arns", &self.member_arns);
         formatter.field("moderator_arns", &self.moderator_arns);
-        formatter.field(
-            "elastic_channel_configuration",
-            &self.elastic_channel_configuration,
-        );
+        formatter.field("elastic_channel_configuration", &self.elastic_channel_configuration);
         formatter.field("expiration_settings", &self.expiration_settings);
         formatter.finish()
     }
@@ -144,24 +138,17 @@ pub struct CreateChannelInputBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) moderator_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) elastic_channel_configuration:
-        ::std::option::Option<crate::types::ElasticChannelConfiguration>,
+    pub(crate) elastic_channel_configuration: ::std::option::Option<crate::types::ElasticChannelConfiguration>,
     pub(crate) expiration_settings: ::std::option::Option<crate::types::ExpirationSettings>,
 }
 impl CreateChannelInputBuilder {
     /// <p>The ARN of the channel request.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the channel request.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_arn = input;
         self
     }
@@ -203,10 +190,7 @@ impl CreateChannelInputBuilder {
         self
     }
     /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
-    pub fn set_privacy(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelPrivacy>,
-    ) -> Self {
+    pub fn set_privacy(mut self, input: ::std::option::Option<crate::types::ChannelPrivacy>) -> Self {
         self.privacy = input;
         self
     }
@@ -229,18 +213,12 @@ impl CreateChannelInputBuilder {
         &self.metadata
     }
     /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -260,10 +238,7 @@ impl CreateChannelInputBuilder {
         self
     }
     /// <p>The tags for the creation request.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -311,17 +286,12 @@ impl CreateChannelInputBuilder {
         self
     }
     /// <p>The ARNs of the channel members in the request.</p>
-    pub fn set_member_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_member_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.member_arns = input;
         self
     }
     /// <p>The ARNs of the channel members in the request.</p>
-    pub fn get_member_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_member_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.member_arns
     }
     /// Appends an item to `moderator_arns`.
@@ -329,49 +299,33 @@ impl CreateChannelInputBuilder {
     /// To override the contents of this collection use [`set_moderator_arns`](Self::set_moderator_arns).
     ///
     /// <p>The ARNs of the channel moderators in the request.</p>
-    pub fn moderator_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn moderator_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.moderator_arns.unwrap_or_default();
         v.push(input.into());
         self.moderator_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ARNs of the channel moderators in the request.</p>
-    pub fn set_moderator_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_moderator_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.moderator_arns = input;
         self
     }
     /// <p>The ARNs of the channel moderators in the request.</p>
-    pub fn get_moderator_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_moderator_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.moderator_arns
     }
     /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million users, excluding moderators.</p>
-    pub fn elastic_channel_configuration(
-        mut self,
-        input: crate::types::ElasticChannelConfiguration,
-    ) -> Self {
+    pub fn elastic_channel_configuration(mut self, input: crate::types::ElasticChannelConfiguration) -> Self {
         self.elastic_channel_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million users, excluding moderators.</p>
-    pub fn set_elastic_channel_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ElasticChannelConfiguration>,
-    ) -> Self {
+    pub fn set_elastic_channel_configuration(mut self, input: ::std::option::Option<crate::types::ElasticChannelConfiguration>) -> Self {
         self.elastic_channel_configuration = input;
         self
     }
     /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million users, excluding moderators.</p>
-    pub fn get_elastic_channel_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ElasticChannelConfiguration> {
+    pub fn get_elastic_channel_configuration(&self) -> &::std::option::Option<crate::types::ElasticChannelConfiguration> {
         &self.elastic_channel_configuration
     }
     /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
@@ -380,26 +334,18 @@ impl CreateChannelInputBuilder {
         self
     }
     /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
-    pub fn set_expiration_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpirationSettings>,
-    ) -> Self {
+    pub fn set_expiration_settings(mut self, input: ::std::option::Option<crate::types::ExpirationSettings>) -> Self {
         self.expiration_settings = input;
         self
     }
     /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
-    pub fn get_expiration_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExpirationSettings> {
+    pub fn get_expiration_settings(&self) -> &::std::option::Option<crate::types::ExpirationSettings> {
         &self.expiration_settings
     }
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_channel::CreateChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_channel::CreateChannelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_channel::CreateChannelInput {
             app_instance_arn: self.app_instance_arn,
             name: self.name,
@@ -431,10 +377,7 @@ impl ::std::fmt::Debug for CreateChannelInputBuilder {
         formatter.field("channel_id", &"*** Sensitive Data Redacted ***");
         formatter.field("member_arns", &self.member_arns);
         formatter.field("moderator_arns", &self.moderator_arns);
-        formatter.field(
-            "elastic_channel_configuration",
-            &self.elastic_channel_configuration,
-        );
+        formatter.field("elastic_channel_configuration", &self.elastic_channel_configuration);
         formatter.field("expiration_settings", &self.expiration_settings);
         formatter.finish()
     }

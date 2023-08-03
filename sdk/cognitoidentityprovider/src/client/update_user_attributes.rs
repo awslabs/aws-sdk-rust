@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateUserAttributesOutput`](crate::operation::update_user_attributes::UpdateUserAttributesOutput) with field(s):
     ///   - [`code_delivery_details_list(Option<Vec<CodeDeliveryDetailsType>>)`](crate::operation::update_user_attributes::UpdateUserAttributesOutput::code_delivery_details_list): <p>The code delivery details list from the server for the request to update user attributes.</p>
     /// - On failure, responds with [`SdkError<UpdateUserAttributesError>`](crate::operation::update_user_attributes::UpdateUserAttributesError)
-    pub fn update_user_attributes(
-        &self,
-    ) -> crate::operation::update_user_attributes::builders::UpdateUserAttributesFluentBuilder {
-        crate::operation::update_user_attributes::builders::UpdateUserAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_user_attributes(&self) -> crate::operation::update_user_attributes::builders::UpdateUserAttributesFluentBuilder {
+        crate::operation::update_user_attributes::builders::UpdateUserAttributesFluentBuilder::new(self.handle.clone())
     }
 }

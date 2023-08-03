@@ -15,34 +15,25 @@ impl CancelZonalShiftInput {
 }
 impl CancelZonalShiftInput {
     /// Creates a new builder-style object to manufacture [`CancelZonalShiftInput`](crate::operation::cancel_zonal_shift::CancelZonalShiftInput).
-    pub fn builder() -> crate::operation::cancel_zonal_shift::builders::CancelZonalShiftInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_zonal_shift::builders::CancelZonalShiftInputBuilder {
         crate::operation::cancel_zonal_shift::builders::CancelZonalShiftInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelZonalShiftInput`](crate::operation::cancel_zonal_shift::CancelZonalShiftInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelZonalShiftInputBuilder {
     pub(crate) zonal_shift_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelZonalShiftInputBuilder {
     /// <p>The internally-generated identifier of a zonal shift.</p>
-    pub fn zonal_shift_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn zonal_shift_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.zonal_shift_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The internally-generated identifier of a zonal shift.</p>
-    pub fn set_zonal_shift_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_zonal_shift_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.zonal_shift_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl CancelZonalShiftInputBuilder {
     /// Consumes the builder and constructs a [`CancelZonalShiftInput`](crate::operation::cancel_zonal_shift::CancelZonalShiftInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_zonal_shift::CancelZonalShiftInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_zonal_shift::CancelZonalShiftInput {
-                zonal_shift_id: self.zonal_shift_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_zonal_shift::CancelZonalShiftInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::cancel_zonal_shift::CancelZonalShiftInput {
+            zonal_shift_id: self.zonal_shift_id,
+        })
     }
 }

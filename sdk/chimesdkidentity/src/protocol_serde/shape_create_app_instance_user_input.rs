@@ -15,10 +15,7 @@ pub fn ser_create_app_instance_user_input(
     if let Some(var_4) = &input.expiration_settings {
         #[allow(unused_mut)]
         let mut object_5 = object.key("ExpirationSettings").start_object();
-        crate::protocol_serde::shape_expiration_settings::ser_expiration_settings(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_expiration_settings::ser_expiration_settings(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.metadata {

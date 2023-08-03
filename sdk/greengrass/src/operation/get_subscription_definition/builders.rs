@@ -26,7 +26,7 @@ impl GetSubscriptionDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSubscriptionDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionInputBuilder,
+    inner: crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionInputBuilder,
 }
 impl GetSubscriptionDefinitionFluentBuilder {
     /// Creates a new `GetSubscriptionDefinition`.
@@ -37,7 +37,7 @@ impl GetSubscriptionDefinitionFluentBuilder {
         }
     }
     /// Access the GetSubscriptionDefinition as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetSubscriptionDefinitionFluentBuilder {
             crate::operation::get_subscription_definition::GetSubscriptionDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_subscription_definition::GetSubscriptionDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_subscription_definition::GetSubscriptionDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetSubscriptionDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetSubscriptionDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_subscription_definition::GetSubscriptionDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_subscription_definition::GetSubscriptionDefinitionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetSubscriptionDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_subscription_definition::GetSubscriptionDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_subscription_definition::GetSubscriptionDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetSubscriptionDefinitionFluentBuilder {
             crate::operation::get_subscription_definition::GetSubscriptionDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_subscription_definition::GetSubscriptionDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_subscription_definition::GetSubscriptionDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the subscription definition.
-    pub fn subscription_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscription_definition_id(input.into());
         self
     }
     /// The ID of the subscription definition.
-    pub fn set_subscription_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_definition_id(input);
         self
     }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteConnectInstanceConfigOutput {
 }
 impl DeleteConnectInstanceConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectInstanceConfigOutput`](crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigOutput).
-    pub fn builder() -> crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigOutputBuilder{
+    pub fn builder() -> crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigOutputBuilder {
         crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConnectInstanceConfigOutput`](crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConnectInstanceConfigOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteConnectInstanceConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteConnectInstanceConfigOutput`](crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigOutput {
+    pub fn build(self) -> crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigOutput {
         crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigOutput {
             _request_id: self._request_id,
         }

@@ -50,18 +50,14 @@ impl ListAnomaliesForInsightInput {
 }
 impl ListAnomaliesForInsightInput {
     /// Creates a new builder-style object to manufacture [`ListAnomaliesForInsightInput`](crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightInput).
-    pub fn builder(
-    ) -> crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightInputBuilder {
         crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAnomaliesForInsightInput`](crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnomaliesForInsightInputBuilder {
     pub(crate) insight_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time_range: ::std::option::Option<crate::types::StartTimeRange>,
@@ -91,10 +87,7 @@ impl ListAnomaliesForInsightInputBuilder {
         self
     }
     /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
-    pub fn set_start_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::StartTimeRange>,
-    ) -> Self {
+    pub fn set_start_time_range(mut self, input: ::std::option::Option<crate::types::StartTimeRange>) -> Self {
         self.start_time_range = input;
         self
     }
@@ -150,17 +143,12 @@ impl ListAnomaliesForInsightInputBuilder {
         self
     }
     /// <p> Specifies one or more service names that are used to list anomalies. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListAnomaliesForInsightFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListAnomaliesForInsightFilters>) -> Self {
         self.filters = input;
         self
     }
     /// <p> Specifies one or more service names that are used to list anomalies. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListAnomaliesForInsightFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListAnomaliesForInsightFilters> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListAnomaliesForInsightInput`](crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightInput).
@@ -170,15 +158,13 @@ impl ListAnomaliesForInsightInputBuilder {
         crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightInput {
-                insight_id: self.insight_id,
-                start_time_range: self.start_time_range,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                account_id: self.account_id,
-                filters: self.filters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightInput {
+            insight_id: self.insight_id,
+            start_time_range: self.start_time_range,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            account_id: self.account_id,
+            filters: self.filters,
+        })
     }
 }

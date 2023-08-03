@@ -5,16 +5,16 @@ pub use crate::operation::modify_current_db_cluster_capacity::_modify_current_db
 
 impl ModifyCurrentDbClusterCapacityInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacityError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.modify_current_db_cluster_capacity();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -33,7 +33,7 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyCurrentDBClusterCapacityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_current_db_cluster_capacity::builders::ModifyCurrentDbClusterCapacityInputBuilder,
+    inner: crate::operation::modify_current_db_cluster_capacity::builders::ModifyCurrentDbClusterCapacityInputBuilder,
 }
 impl ModifyCurrentDBClusterCapacityFluentBuilder {
     /// Creates a new `ModifyCurrentDBClusterCapacity`.
@@ -44,15 +44,20 @@ impl ModifyCurrentDBClusterCapacityFluentBuilder {
         }
     }
     /// Access the ModifyCurrentDBClusterCapacity as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_current_db_cluster_capacity::builders::ModifyCurrentDbClusterCapacityInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_current_db_cluster_capacity::builders::ModifyCurrentDbClusterCapacityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacity, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacityError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacity,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacityError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -61,16 +66,17 @@ impl ModifyCurrentDBClusterCapacityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacityError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacityError>,
+    > {
         let op = self
             .inner
             .build()
@@ -88,17 +94,26 @@ impl ModifyCurrentDBClusterCapacityFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacityError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacityError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacity, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacityError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacity,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacityError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -106,10 +121,7 @@ impl ModifyCurrentDBClusterCapacityFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DB cluster.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
@@ -118,10 +130,7 @@ impl ModifyCurrentDBClusterCapacityFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DB cluster.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
@@ -185,20 +194,14 @@ impl ModifyCurrentDBClusterCapacityFluentBuilder {
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
     /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
-    pub fn timeout_action(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timeout_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.timeout_action(input.into());
         self
     }
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
     /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
-    pub fn set_timeout_action(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_timeout_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_timeout_action(input);
         self
     }

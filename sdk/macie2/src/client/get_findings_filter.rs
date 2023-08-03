@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`position(Option<i32>)`](crate::operation::get_findings_filter::GetFindingsFilterOutput::position): <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_findings_filter::GetFindingsFilterOutput::tags): <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
     /// - On failure, responds with [`SdkError<GetFindingsFilterError>`](crate::operation::get_findings_filter::GetFindingsFilterError)
-    pub fn get_findings_filter(
-        &self,
-    ) -> crate::operation::get_findings_filter::builders::GetFindingsFilterFluentBuilder {
-        crate::operation::get_findings_filter::builders::GetFindingsFilterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_findings_filter(&self) -> crate::operation::get_findings_filter::builders::GetFindingsFilterFluentBuilder {
+        crate::operation::get_findings_filter::builders::GetFindingsFilterFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,16 +15,14 @@ impl GetSamplingStatisticSummariesInput {
 }
 impl GetSamplingStatisticSummariesInput {
     /// Creates a new builder-style object to manufacture [`GetSamplingStatisticSummariesInput`](crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesInput).
-    pub fn builder() -> crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesInputBuilder{
+    pub fn builder() -> crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesInputBuilder {
         crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSamplingStatisticSummariesInput`](crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSamplingStatisticSummariesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,8 @@ impl GetSamplingStatisticSummariesInputBuilder {
         crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesInput {
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesInput {
+            next_token: self.next_token,
+        })
     }
 }

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeJournalKinesisStreamOutput`](crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamOutput) with field(s):
     ///   - [`stream(Option<JournalKinesisStreamDescription>)`](crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamOutput::stream): <p>Information about the QLDB journal stream returned by a <code>DescribeJournalS3Export</code> request.</p>
     /// - On failure, responds with [`SdkError<DescribeJournalKinesisStreamError>`](crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamError)
-    pub fn describe_journal_kinesis_stream(&self) -> crate::operation::describe_journal_kinesis_stream::builders::DescribeJournalKinesisStreamFluentBuilder{
+    pub fn describe_journal_kinesis_stream(
+        &self,
+    ) -> crate::operation::describe_journal_kinesis_stream::builders::DescribeJournalKinesisStreamFluentBuilder {
         crate::operation::describe_journal_kinesis_stream::builders::DescribeJournalKinesisStreamFluentBuilder::new(self.handle.clone())
     }
 }

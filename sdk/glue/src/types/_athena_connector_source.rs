@@ -65,9 +65,7 @@ impl AthenaConnectorSource {
 
 /// A builder for [`AthenaConnectorSource`](crate::types::AthenaConnectorSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AthenaConnectorSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
@@ -93,18 +91,12 @@ impl AthenaConnectorSourceBuilder {
         &self.name
     }
     /// <p>The name of the connection that is associated with the connector.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connection that is associated with the connector.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_name = input;
         self
     }
@@ -113,18 +105,12 @@ impl AthenaConnectorSourceBuilder {
         &self.connection_name
     }
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
-    pub fn connector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
-    pub fn set_connector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_name = input;
         self
     }
@@ -133,18 +119,12 @@ impl AthenaConnectorSourceBuilder {
         &self.connector_name
     }
     /// <p>The type of connection, such as marketplace.athena or custom.athena, designating a connection to an Amazon Athena data store.</p>
-    pub fn connection_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of connection, such as marketplace.athena or custom.athena, designating a connection to an Amazon Athena data store.</p>
-    pub fn set_connection_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_type = input;
         self
     }
@@ -153,18 +133,12 @@ impl AthenaConnectorSourceBuilder {
         &self.connection_type
     }
     /// <p>The name of the table in the data source.</p>
-    pub fn connection_table(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_table = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the table in the data source.</p>
-    pub fn set_connection_table(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_table = input;
         self
     }
@@ -198,17 +172,12 @@ impl AthenaConnectorSourceBuilder {
         self
     }
     /// <p>Specifies the data schema for the custom Athena source.</p>
-    pub fn set_output_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
-    ) -> Self {
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
         self.output_schemas = input;
         self
     }
     /// <p>Specifies the data schema for the custom Athena source.</p>
-    pub fn get_output_schemas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`AthenaConnectorSource`](crate::types::AthenaConnectorSource).

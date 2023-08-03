@@ -35,12 +35,9 @@ impl ListSchemasOutput {
 
 /// A builder for [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchemasOutputBuilder {
-    pub(crate) schema_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SchemaSummary>>,
+    pub(crate) schema_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SchemaSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListSchemasOutputBuilder {
         self
     }
     /// <p>The retrieved list of schemas.</p>
-    pub fn set_schema_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaSummary>>,
-    ) -> Self {
+    pub fn set_schema_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaSummary>>) -> Self {
         self.schema_summaries = input;
         self
     }
     /// <p>The retrieved list of schemas.</p>
-    pub fn get_schema_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaSummary>> {
+    pub fn get_schema_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaSummary>> {
         &self.schema_summaries
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>

@@ -26,7 +26,7 @@ impl DisassociateMemberFromGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateMemberFromGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupInputBuilder,
+    inner: crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupInputBuilder,
 }
 impl DisassociateMemberFromGroupFluentBuilder {
     /// Creates a new `DisassociateMemberFromGroup`.
@@ -37,7 +37,7 @@ impl DisassociateMemberFromGroupFluentBuilder {
         }
     }
     /// Access the DisassociateMemberFromGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisassociateMemberFromGroupFluentBuilder {
             crate::operation::disassociate_member_from_group::DisassociateMemberFromGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisassociateMemberFromGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisassociateMemberFromGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisassociateMemberFromGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DisassociateMemberFromGroupFluentBuilder {
             crate::operation::disassociate_member_from_group::DisassociateMemberFromGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier for the organization under which the group exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The identifier for the organization under which the group exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

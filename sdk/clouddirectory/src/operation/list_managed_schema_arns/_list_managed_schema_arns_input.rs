@@ -29,18 +29,14 @@ impl ListManagedSchemaArnsInput {
 }
 impl ListManagedSchemaArnsInput {
     /// Creates a new builder-style object to manufacture [`ListManagedSchemaArnsInput`](crate::operation::list_managed_schema_arns::ListManagedSchemaArnsInput).
-    pub fn builder(
-    ) -> crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsInputBuilder {
         crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListManagedSchemaArnsInput`](crate::operation::list_managed_schema_arns::ListManagedSchemaArnsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListManagedSchemaArnsInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl ListManagedSchemaArnsInputBuilder {
     /// Consumes the builder and constructs a [`ListManagedSchemaArnsInput`](crate::operation::list_managed_schema_arns::ListManagedSchemaArnsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_managed_schema_arns::ListManagedSchemaArnsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_managed_schema_arns::ListManagedSchemaArnsInput {
-                schema_arn: self.schema_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_managed_schema_arns::ListManagedSchemaArnsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_managed_schema_arns::ListManagedSchemaArnsInput {
+            schema_arn: self.schema_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

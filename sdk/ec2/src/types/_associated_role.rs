@@ -44,9 +44,7 @@ impl AssociatedRole {
 
 /// A builder for [`AssociatedRole`](crate::types::AssociatedRole).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociatedRoleBuilder {
     pub(crate) associated_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_s3_bucket_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct AssociatedRoleBuilder {
 }
 impl AssociatedRoleBuilder {
     /// <p>The ARN of the associated IAM role.</p>
-    pub fn associated_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the associated IAM role.</p>
-    pub fn set_associated_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_associated_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_role_arn = input;
         self
     }
@@ -75,18 +67,12 @@ impl AssociatedRoleBuilder {
         &self.associated_role_arn
     }
     /// <p>The name of the Amazon S3 bucket in which the Amazon S3 object is stored.</p>
-    pub fn certificate_s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon S3 bucket in which the Amazon S3 object is stored.</p>
-    pub fn set_certificate_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_s3_bucket_name = input;
         self
     }
@@ -95,18 +81,12 @@ impl AssociatedRoleBuilder {
         &self.certificate_s3_bucket_name
     }
     /// <p>The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>. </p>
-    pub fn certificate_s3_object_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_s3_object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_s3_object_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>. </p>
-    pub fn set_certificate_s3_object_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_s3_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_s3_object_key = input;
         self
     }
@@ -115,18 +95,12 @@ impl AssociatedRoleBuilder {
         &self.certificate_s3_object_key
     }
     /// <p>The ID of the KMS customer master key (CMK) used to encrypt the private key.</p>
-    pub fn encryption_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the KMS customer master key (CMK) used to encrypt the private key.</p>
-    pub fn set_encryption_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_kms_key_id = input;
         self
     }

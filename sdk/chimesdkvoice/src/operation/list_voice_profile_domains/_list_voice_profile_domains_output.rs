@@ -5,8 +5,7 @@
 pub struct ListVoiceProfileDomainsOutput {
     /// <p>The list of voice profile domains.</p>
     #[doc(hidden)]
-    pub voice_profile_domains:
-        ::std::option::Option<::std::vec::Vec<crate::types::VoiceProfileDomainSummary>>,
+    pub voice_profile_domains: ::std::option::Option<::std::vec::Vec<crate::types::VoiceProfileDomainSummary>>,
     /// <p>The token used to return the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListVoiceProfileDomainsOutput {
 }
 impl ListVoiceProfileDomainsOutput {
     /// <p>The list of voice profile domains.</p>
-    pub fn voice_profile_domains(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VoiceProfileDomainSummary]> {
+    pub fn voice_profile_domains(&self) -> ::std::option::Option<&[crate::types::VoiceProfileDomainSummary]> {
         self.voice_profile_domains.as_deref()
     }
     /// <p>The token used to return the next page of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListVoiceProfileDomainsOutput {
 }
 impl ListVoiceProfileDomainsOutput {
     /// Creates a new builder-style object to manufacture [`ListVoiceProfileDomainsOutput`](crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsOutputBuilder {
         crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVoiceProfileDomainsOutput`](crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVoiceProfileDomainsOutputBuilder {
-    pub(crate) voice_profile_domains:
-        ::std::option::Option<::std::vec::Vec<crate::types::VoiceProfileDomainSummary>>,
+    pub(crate) voice_profile_domains: ::std::option::Option<::std::vec::Vec<crate::types::VoiceProfileDomainSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListVoiceProfileDomainsOutputBuilder {
         self
     }
     /// <p>The list of voice profile domains.</p>
-    pub fn set_voice_profile_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceProfileDomainSummary>>,
-    ) -> Self {
+    pub fn set_voice_profile_domains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceProfileDomainSummary>>) -> Self {
         self.voice_profile_domains = input;
         self
     }
     /// <p>The list of voice profile domains.</p>
-    pub fn get_voice_profile_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceProfileDomainSummary>> {
+    pub fn get_voice_profile_domains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceProfileDomainSummary>> {
         &self.voice_profile_domains
     }
     /// <p>The token used to return the next page of results.</p>
@@ -99,9 +86,7 @@ impl ListVoiceProfileDomainsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListVoiceProfileDomainsOutput`](crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput {
+    pub fn build(self) -> crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput {
         crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput {
             voice_profile_domains: self.voice_profile_domains,
             next_token: self.next_token,

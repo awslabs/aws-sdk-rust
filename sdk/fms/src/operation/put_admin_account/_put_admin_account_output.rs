@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutAdminAccountOutput {
 }
 impl PutAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`PutAdminAccountOutput`](crate::operation::put_admin_account::PutAdminAccountOutput).
-    pub fn builder() -> crate::operation::put_admin_account::builders::PutAdminAccountOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_admin_account::builders::PutAdminAccountOutputBuilder {
         crate::operation::put_admin_account::builders::PutAdminAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutAdminAccountOutput`](crate::operation::put_admin_account::PutAdminAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAdminAccountOutputBuilder {
     _request_id: Option<String>,
 }

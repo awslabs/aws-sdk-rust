@@ -22,35 +22,26 @@ impl GetPriceListFileUrlInput {
 }
 impl GetPriceListFileUrlInput {
     /// Creates a new builder-style object to manufacture [`GetPriceListFileUrlInput`](crate::operation::get_price_list_file_url::GetPriceListFileUrlInput).
-    pub fn builder(
-    ) -> crate::operation::get_price_list_file_url::builders::GetPriceListFileUrlInputBuilder {
+    pub fn builder() -> crate::operation::get_price_list_file_url::builders::GetPriceListFileUrlInputBuilder {
         crate::operation::get_price_list_file_url::builders::GetPriceListFileUrlInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPriceListFileUrlInput`](crate::operation::get_price_list_file_url::GetPriceListFileUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPriceListFileUrlInputBuilder {
     pub(crate) price_list_arn: ::std::option::Option<::std::string::String>,
     pub(crate) file_format: ::std::option::Option<::std::string::String>,
 }
 impl GetPriceListFileUrlInputBuilder {
     /// <p>The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceLists</code> </a> response. </p>
-    pub fn price_list_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn price_list_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.price_list_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceLists</code> </a> response. </p>
-    pub fn set_price_list_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_price_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.price_list_arn = input;
         self
     }
@@ -75,15 +66,11 @@ impl GetPriceListFileUrlInputBuilder {
     /// Consumes the builder and constructs a [`GetPriceListFileUrlInput`](crate::operation::get_price_list_file_url::GetPriceListFileUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_price_list_file_url::GetPriceListFileUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_price_list_file_url::GetPriceListFileUrlInput {
-                price_list_arn: self.price_list_arn,
-                file_format: self.file_format,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_price_list_file_url::GetPriceListFileUrlInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_price_list_file_url::GetPriceListFileUrlInput {
+            price_list_arn: self.price_list_arn,
+            file_format: self.file_format,
+        })
     }
 }

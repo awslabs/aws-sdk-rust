@@ -30,9 +30,7 @@ impl SearchSortResult {
 
 /// A builder for [`SearchSortResult`](crate::types::SearchSortResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchSortResultBuilder {
     pub(crate) field: ::std::option::Option<crate::types::OrderByFieldType>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,
@@ -44,10 +42,7 @@ impl SearchSortResultBuilder {
         self
     }
     /// <p>Sort search results based on this field name.</p>
-    pub fn set_field(
-        mut self,
-        input: ::std::option::Option<crate::types::OrderByFieldType>,
-    ) -> Self {
+    pub fn set_field(mut self, input: ::std::option::Option<crate::types::OrderByFieldType>) -> Self {
         self.field = input;
         self
     }

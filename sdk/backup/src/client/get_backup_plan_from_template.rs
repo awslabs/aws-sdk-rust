@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetBackupPlanFromTemplateOutput`](crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateOutput) with field(s):
     ///   - [`backup_plan_document(Option<BackupPlan>)`](crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateOutput::backup_plan_document): <p>Returns the body of a backup plan based on the target template, including the name, rules, and backup vault of the plan.</p>
     /// - On failure, responds with [`SdkError<GetBackupPlanFromTemplateError>`](crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateError)
-    pub fn get_backup_plan_from_template(&self) -> crate::operation::get_backup_plan_from_template::builders::GetBackupPlanFromTemplateFluentBuilder{
+    pub fn get_backup_plan_from_template(&self) -> crate::operation::get_backup_plan_from_template::builders::GetBackupPlanFromTemplateFluentBuilder {
         crate::operation::get_backup_plan_from_template::builders::GetBackupPlanFromTemplateFluentBuilder::new(self.handle.clone())
     }
 }

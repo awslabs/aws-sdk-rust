@@ -35,8 +35,7 @@ pub struct GetTemplateStepOutput {
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::StepOutput>>,
     /// <p>The custom script to run tests on source or target environments.</p>
     #[doc(hidden)]
-    pub step_automation_configuration:
-        ::std::option::Option<crate::types::StepAutomationConfiguration>,
+    pub step_automation_configuration: ::std::option::Option<crate::types::StepAutomationConfiguration>,
     _request_id: Option<String>,
 }
 impl GetTemplateStepOutput {
@@ -81,9 +80,7 @@ impl GetTemplateStepOutput {
         self.outputs.as_deref()
     }
     /// <p>The custom script to run tests on source or target environments.</p>
-    pub fn step_automation_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StepAutomationConfiguration> {
+    pub fn step_automation_configuration(&self) -> ::std::option::Option<&crate::types::StepAutomationConfiguration> {
         self.step_automation_configuration.as_ref()
     }
 }
@@ -94,17 +91,14 @@ impl ::aws_http::request_id::RequestId for GetTemplateStepOutput {
 }
 impl GetTemplateStepOutput {
     /// Creates a new builder-style object to manufacture [`GetTemplateStepOutput`](crate::operation::get_template_step::GetTemplateStepOutput).
-    pub fn builder() -> crate::operation::get_template_step::builders::GetTemplateStepOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_template_step::builders::GetTemplateStepOutputBuilder {
         crate::operation::get_template_step::builders::GetTemplateStepOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTemplateStepOutput`](crate::operation::get_template_step::GetTemplateStepOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTemplateStepOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) step_group_id: ::std::option::Option<::std::string::String>,
@@ -116,8 +110,7 @@ pub struct GetTemplateStepOutputBuilder {
     pub(crate) previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::StepOutput>>,
-    pub(crate) step_automation_configuration:
-        ::std::option::Option<crate::types::StepAutomationConfiguration>,
+    pub(crate) step_automation_configuration: ::std::option::Option<crate::types::StepAutomationConfiguration>,
     _request_id: Option<String>,
 }
 impl GetTemplateStepOutputBuilder {
@@ -136,18 +129,12 @@ impl GetTemplateStepOutputBuilder {
         &self.id
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the step group.</p>
-    pub fn set_step_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_group_id = input;
         self
     }
@@ -203,10 +190,7 @@ impl GetTemplateStepOutputBuilder {
         self
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub fn set_step_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StepActionType>,
-    ) -> Self {
+    pub fn set_step_action_type(mut self, input: ::std::option::Option<crate::types::StepActionType>) -> Self {
         self.step_action_type = input;
         self
     }
@@ -215,18 +199,12 @@ impl GetTemplateStepOutputBuilder {
         &self.step_action_type
     }
     /// <p>The time at which the step was created.</p>
-    pub fn creation_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time at which the step was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_time = input;
         self
     }
@@ -246,10 +224,7 @@ impl GetTemplateStepOutputBuilder {
         self
     }
     /// <p>The previous step.</p>
-    pub fn set_previous(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.previous = input;
         self
     }
@@ -269,10 +244,7 @@ impl GetTemplateStepOutputBuilder {
         self
     }
     /// <p>The next step.</p>
-    pub fn set_next(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.next = input;
         self
     }
@@ -292,10 +264,7 @@ impl GetTemplateStepOutputBuilder {
         self
     }
     /// <p>The outputs of the step.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StepOutput>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StepOutput>>) -> Self {
         self.outputs = input;
         self
     }
@@ -304,25 +273,17 @@ impl GetTemplateStepOutputBuilder {
         &self.outputs
     }
     /// <p>The custom script to run tests on source or target environments.</p>
-    pub fn step_automation_configuration(
-        mut self,
-        input: crate::types::StepAutomationConfiguration,
-    ) -> Self {
+    pub fn step_automation_configuration(mut self, input: crate::types::StepAutomationConfiguration) -> Self {
         self.step_automation_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The custom script to run tests on source or target environments.</p>
-    pub fn set_step_automation_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::StepAutomationConfiguration>,
-    ) -> Self {
+    pub fn set_step_automation_configuration(mut self, input: ::std::option::Option<crate::types::StepAutomationConfiguration>) -> Self {
         self.step_automation_configuration = input;
         self
     }
     /// <p>The custom script to run tests on source or target environments.</p>
-    pub fn get_step_automation_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::StepAutomationConfiguration> {
+    pub fn get_step_automation_configuration(&self) -> &::std::option::Option<crate::types::StepAutomationConfiguration> {
         &self.step_automation_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

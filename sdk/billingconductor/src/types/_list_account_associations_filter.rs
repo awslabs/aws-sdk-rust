@@ -44,9 +44,7 @@ impl ListAccountAssociationsFilter {
 
 /// A builder for [`ListAccountAssociationsFilter`](crate::types::ListAccountAssociationsFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountAssociationsFilterBuilder {
     pub(crate) association: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -99,17 +97,12 @@ impl ListAccountAssociationsFilterBuilder {
         self
     }
     /// <p> The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range. </p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p> The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range. </p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`ListAccountAssociationsFilter`](crate::types::ListAccountAssociationsFilter).

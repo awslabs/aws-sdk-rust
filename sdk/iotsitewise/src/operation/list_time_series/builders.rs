@@ -10,10 +10,7 @@ impl ListTimeSeriesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_time_series::ListTimeSeriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_time_series::ListTimeSeriesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_time_series::ListTimeSeriesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_time_series();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListTimeSeriesFluentBuilder {
         }
     }
     /// Access the ListTimeSeries as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_time_series::builders::ListTimeSeriesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_time_series::builders::ListTimeSeriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListTimeSeriesFluentBuilder {
             crate::operation::list_time_series::ListTimeSeries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_time_series::ListTimeSeriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_time_series::ListTimeSeriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListTimeSeriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListTimeSeriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_time_series::ListTimeSeriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_time_series::ListTimeSeriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_time_series::ListTimeSeriesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListTimeSeriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_time_series::ListTimeSeriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_time_series::ListTimeSeriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_time_series::ListTimeSeriesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListTimeSeriesFluentBuilder {
             crate::operation::list_time_series::ListTimeSeries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_time_series::ListTimeSeriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_time_series::ListTimeSeriesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_time_series::paginator::ListTimeSeriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_time_series::paginator::ListTimeSeriesPaginator {
-        crate::operation::list_time_series::paginator::ListTimeSeriesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_time_series::paginator::ListTimeSeriesPaginator {
+        crate::operation::list_time_series::paginator::ListTimeSeriesPaginator::new(self.handle, self.inner)
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -203,10 +182,7 @@ impl ListTimeSeriesFluentBuilder {
     /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
     /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
     /// </ul>
-    pub fn set_time_series_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ListTimeSeriesType>,
-    ) -> Self {
+    pub fn set_time_series_type(mut self, input: ::std::option::Option<crate::types::ListTimeSeriesType>) -> Self {
         self.inner = self.inner.set_time_series_type(input);
         self
     }

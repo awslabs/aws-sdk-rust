@@ -30,9 +30,7 @@ impl ResultRow {
 
 /// A builder for [`ResultRow`](crate::types::ResultRow).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultRowBuilder {
     pub(crate) grouped_bys: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>,
@@ -50,17 +48,12 @@ impl ResultRowBuilder {
         self
     }
     /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
-    pub fn set_grouped_bys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>,
-    ) -> Self {
+    pub fn set_grouped_bys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>) -> Self {
         self.grouped_bys = input;
         self
     }
     /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
-    pub fn get_grouped_bys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>> {
+    pub fn get_grouped_bys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>> {
         &self.grouped_bys
     }
     /// Appends an item to `values`.
@@ -75,17 +68,12 @@ impl ResultRowBuilder {
         self
     }
     /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>) -> Self {
         self.values = input;
         self
     }
     /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
-    pub fn get_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`ResultRow`](crate::types::ResultRow).

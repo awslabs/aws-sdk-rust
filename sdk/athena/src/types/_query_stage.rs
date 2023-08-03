@@ -79,9 +79,7 @@ impl QueryStage {
 
 /// A builder for [`QueryStage`](crate::types::QueryStage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryStageBuilder {
     pub(crate) stage_id: ::std::option::Option<i64>,
     pub(crate) state: ::std::option::Option<::std::string::String>,
@@ -198,10 +196,7 @@ impl QueryStageBuilder {
         self
     }
     /// <p>Stage plan information such as name, identifier, sub plans, and source stages.</p>
-    pub fn set_query_stage_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryStagePlanNode>,
-    ) -> Self {
+    pub fn set_query_stage_plan(mut self, input: ::std::option::Option<crate::types::QueryStagePlanNode>) -> Self {
         self.query_stage_plan = input;
         self
     }
@@ -221,17 +216,12 @@ impl QueryStageBuilder {
         self
     }
     /// <p>List of sub query stages that form this stage execution plan.</p>
-    pub fn set_sub_stages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QueryStage>>,
-    ) -> Self {
+    pub fn set_sub_stages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryStage>>) -> Self {
         self.sub_stages = input;
         self
     }
     /// <p>List of sub query stages that form this stage execution plan.</p>
-    pub fn get_sub_stages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryStage>> {
+    pub fn get_sub_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryStage>> {
         &self.sub_stages
     }
     /// Consumes the builder and constructs a [`QueryStage`](crate::types::QueryStage).

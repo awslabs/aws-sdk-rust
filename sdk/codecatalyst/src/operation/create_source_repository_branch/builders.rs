@@ -28,7 +28,7 @@ impl CreateSourceRepositoryBranchInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSourceRepositoryBranchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_source_repository_branch::builders::CreateSourceRepositoryBranchInputBuilder,
+    inner: crate::operation::create_source_repository_branch::builders::CreateSourceRepositoryBranchInputBuilder,
 }
 impl CreateSourceRepositoryBranchFluentBuilder {
     /// Creates a new `CreateSourceRepositoryBranch`.
@@ -39,7 +39,7 @@ impl CreateSourceRepositoryBranchFluentBuilder {
         }
     }
     /// Access the CreateSourceRepositoryBranch as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_source_repository_branch::builders::CreateSourceRepositoryBranchInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_source_repository_branch::builders::CreateSourceRepositoryBranchInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl CreateSourceRepositoryBranchFluentBuilder {
             crate::operation::create_source_repository_branch::CreateSourceRepositoryBranch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl CreateSourceRepositoryBranchFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl CreateSourceRepositoryBranchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl CreateSourceRepositoryBranchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl CreateSourceRepositoryBranchFluentBuilder {
             crate::operation::create_source_repository_branch::CreateSourceRepositoryBranch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +140,12 @@ impl CreateSourceRepositoryBranchFluentBuilder {
         self.inner.get_project_name()
     }
     /// <p>The name of the repository where you want to create a branch.</p>
-    pub fn source_repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_repository_name(input.into());
         self
     }
     /// <p>The name of the repository where you want to create a branch.</p>
-    pub fn set_source_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_repository_name(input);
         self
     }
@@ -185,18 +168,12 @@ impl CreateSourceRepositoryBranchFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The commit ID in an existing branch from which you want to create the new branch.</p>
-    pub fn head_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn head_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.head_commit_id(input.into());
         self
     }
     /// <p>The commit ID in an existing branch from which you want to create the new branch.</p>
-    pub fn set_head_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_head_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_head_commit_id(input);
         self
     }

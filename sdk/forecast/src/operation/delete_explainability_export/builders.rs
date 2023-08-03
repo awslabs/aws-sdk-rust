@@ -26,7 +26,7 @@ impl DeleteExplainabilityExportInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteExplainabilityExportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_explainability_export::builders::DeleteExplainabilityExportInputBuilder,
+    inner: crate::operation::delete_explainability_export::builders::DeleteExplainabilityExportInputBuilder,
 }
 impl DeleteExplainabilityExportFluentBuilder {
     /// Creates a new `DeleteExplainabilityExport`.
@@ -37,7 +37,7 @@ impl DeleteExplainabilityExportFluentBuilder {
         }
     }
     /// Access the DeleteExplainabilityExport as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_explainability_export::builders::DeleteExplainabilityExportInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_explainability_export::builders::DeleteExplainabilityExportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteExplainabilityExportFluentBuilder {
             crate::operation::delete_explainability_export::DeleteExplainabilityExport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_explainability_export::DeleteExplainabilityExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_explainability_export::DeleteExplainabilityExportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteExplainabilityExportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteExplainabilityExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_explainability_export::DeleteExplainabilityExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_explainability_export::DeleteExplainabilityExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_explainability_export::DeleteExplainabilityExportError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteExplainabilityExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_explainability_export::DeleteExplainabilityExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_explainability_export::DeleteExplainabilityExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_explainability_export::DeleteExplainabilityExportError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteExplainabilityExportFluentBuilder {
             crate::operation::delete_explainability_export::DeleteExplainabilityExport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_explainability_export::DeleteExplainabilityExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_explainability_export::DeleteExplainabilityExportError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
-    pub fn explainability_export_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explainability_export_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.explainability_export_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
-    pub fn set_explainability_export_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_explainability_export_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_explainability_export_arn(input);
         self
     }

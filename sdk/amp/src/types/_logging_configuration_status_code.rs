@@ -42,13 +42,7 @@
 /// State of a logging configuration.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LoggingConfigurationStatusCode {
     /// Logging configuration has been created/updated. Update/Deletion is disallowed until logging configuration is ACTIVE and workspace status is ACTIVE.
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for LoggingConfigurationStatusCode {
             "DELETING" => LoggingConfigurationStatusCode::Deleting,
             "UPDATE_FAILED" => LoggingConfigurationStatusCode::UpdateFailed,
             "UPDATING" => LoggingConfigurationStatusCode::Updating,
-            other => LoggingConfigurationStatusCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => LoggingConfigurationStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl LoggingConfigurationStatusCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "CREATING",
-            "CREATION_FAILED",
-            "DELETING",
-            "UPDATE_FAILED",
-            "UPDATING",
-        ]
+        &["ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for LoggingConfigurationStatusCode {

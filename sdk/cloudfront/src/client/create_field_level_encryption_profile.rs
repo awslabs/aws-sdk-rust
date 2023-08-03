@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileOutput::location): <p>The fully qualified URI of the new profile resource just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileOutput::e_tag): <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On failure, responds with [`SdkError<CreateFieldLevelEncryptionProfileError>`](crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileError)
-    pub fn create_field_level_encryption_profile(&self) -> crate::operation::create_field_level_encryption_profile::builders::CreateFieldLevelEncryptionProfileFluentBuilder{
+    pub fn create_field_level_encryption_profile(
+        &self,
+    ) -> crate::operation::create_field_level_encryption_profile::builders::CreateFieldLevelEncryptionProfileFluentBuilder {
         crate::operation::create_field_level_encryption_profile::builders::CreateFieldLevelEncryptionProfileFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for InitiateVaultLockOutput {
 }
 impl InitiateVaultLockOutput {
     /// Creates a new builder-style object to manufacture [`InitiateVaultLockOutput`](crate::operation::initiate_vault_lock::InitiateVaultLockOutput).
-    pub fn builder(
-    ) -> crate::operation::initiate_vault_lock::builders::InitiateVaultLockOutputBuilder {
+    pub fn builder() -> crate::operation::initiate_vault_lock::builders::InitiateVaultLockOutputBuilder {
         crate::operation::initiate_vault_lock::builders::InitiateVaultLockOutputBuilder::default()
     }
 }
 
 /// A builder for [`InitiateVaultLockOutput`](crate::operation::initiate_vault_lock::InitiateVaultLockOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InitiateVaultLockOutputBuilder {
     pub(crate) lock_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -15,33 +15,25 @@ impl DeleteBackupVaultLockConfigurationInput {
 }
 impl DeleteBackupVaultLockConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteBackupVaultLockConfigurationInput`](crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationInput).
-    pub fn builder() -> crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationInputBuilder {
         crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBackupVaultLockConfigurationInput`](crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBackupVaultLockConfigurationInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBackupVaultLockConfigurationInputBuilder {
     /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_name = input;
         self
     }
@@ -50,12 +42,16 @@ impl DeleteBackupVaultLockConfigurationInputBuilder {
         &self.backup_vault_name
     }
     /// Consumes the builder and constructs a [`DeleteBackupVaultLockConfigurationInput`](crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationInput {
-                backup_vault_name: self.backup_vault_name
-                ,
-            }
+                backup_vault_name: self.backup_vault_name,
+            },
         )
     }
 }

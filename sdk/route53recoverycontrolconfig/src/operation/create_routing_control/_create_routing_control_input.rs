@@ -37,17 +37,14 @@ impl CreateRoutingControlInput {
 }
 impl CreateRoutingControlInput {
     /// Creates a new builder-style object to manufacture [`CreateRoutingControlInput`](crate::operation::create_routing_control::CreateRoutingControlInput).
-    pub fn builder(
-    ) -> crate::operation::create_routing_control::builders::CreateRoutingControlInputBuilder {
+    pub fn builder() -> crate::operation::create_routing_control::builders::CreateRoutingControlInputBuilder {
         crate::operation::create_routing_control::builders::CreateRoutingControlInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRoutingControlInput`](crate::operation::create_routing_control::CreateRoutingControlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRoutingControlInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
@@ -84,18 +81,12 @@ impl CreateRoutingControlInputBuilder {
         &self.cluster_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
-    pub fn control_panel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_panel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
-    pub fn set_control_panel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_panel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_panel_arn = input;
         self
     }
@@ -104,18 +95,12 @@ impl CreateRoutingControlInputBuilder {
         &self.control_panel_arn
     }
     /// <p>The name of the routing control.</p>
-    pub fn routing_control_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_control_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the routing control.</p>
-    pub fn set_routing_control_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_control_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_control_name = input;
         self
     }
@@ -126,17 +111,13 @@ impl CreateRoutingControlInputBuilder {
     /// Consumes the builder and constructs a [`CreateRoutingControlInput`](crate::operation::create_routing_control::CreateRoutingControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_routing_control::CreateRoutingControlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_routing_control::CreateRoutingControlInput {
-                client_token: self.client_token,
-                cluster_arn: self.cluster_arn,
-                control_panel_arn: self.control_panel_arn,
-                routing_control_name: self.routing_control_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_routing_control::CreateRoutingControlInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_routing_control::CreateRoutingControlInput {
+            client_token: self.client_token,
+            cluster_arn: self.cluster_arn,
+            control_panel_arn: self.control_panel_arn,
+            routing_control_name: self.routing_control_name,
+        })
     }
 }

@@ -36,20 +36,17 @@ impl CreateVerifiedAccessInstanceInput {
 }
 impl CreateVerifiedAccessInstanceInput {
     /// Creates a new builder-style object to manufacture [`CreateVerifiedAccessInstanceInput`](crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceInput).
-    pub fn builder() -> crate::operation::create_verified_access_instance::builders::CreateVerifiedAccessInstanceInputBuilder{
+    pub fn builder() -> crate::operation::create_verified_access_instance::builders::CreateVerifiedAccessInstanceInputBuilder {
         crate::operation::create_verified_access_instance::builders::CreateVerifiedAccessInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVerifiedAccessInstanceInput`](crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVerifiedAccessInstanceInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
@@ -80,17 +77,12 @@ impl CreateVerifiedAccessInstanceInputBuilder {
         self
     }
     /// <p>The tags to assign to the Verified Access instance.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to assign to the Verified Access instance.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
@@ -128,13 +120,11 @@ impl CreateVerifiedAccessInstanceInputBuilder {
         crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceInput {
-                description: self.description,
-                tag_specifications: self.tag_specifications,
-                client_token: self.client_token,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceInput {
+            description: self.description,
+            tag_specifications: self.tag_specifications,
+            client_token: self.client_token,
+            dry_run: self.dry_run,
+        })
     }
 }

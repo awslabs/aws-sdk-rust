@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`datasets(Option<Vec<DatasetSummary>>)`](crate::operation::list_datasets::ListDatasetsOutput::datasets): <p>An array of objects that summarize each dataset's properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_datasets::ListDatasetsOutput::next_token): <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::operation::list_datasets::ListDatasetsError)
-    pub fn list_datasets(
-        &self,
-    ) -> crate::operation::list_datasets::builders::ListDatasetsFluentBuilder {
-        crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_datasets(&self) -> crate::operation::list_datasets::builders::ListDatasetsFluentBuilder {
+        crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl ListReferencesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_references::ListReferencesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_references::ListReferencesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_references::ListReferencesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_references();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListReferencesFluentBuilder {
         }
     }
     /// Access the ListReferences as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_references::builders::ListReferencesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_references::builders::ListReferencesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListReferencesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,27 +109,16 @@ impl ListReferencesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_references::paginator::ListReferencesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_references::paginator::ListReferencesPaginator {
-        crate::operation::list_references::paginator::ListReferencesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_references::paginator::ListReferencesPaginator {
+        crate::operation::list_references::paginator::ListReferencesPaginator::new(self.handle, self.inner)
     }
     /// <p>The references' reference store ID.</p>
-    pub fn reference_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reference_store_id(input.into());
         self
     }
     /// <p>The references' reference store ID.</p>
-    pub fn set_reference_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reference_store_id(input);
         self
     }
@@ -179,10 +160,7 @@ impl ListReferencesFluentBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ReferenceFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

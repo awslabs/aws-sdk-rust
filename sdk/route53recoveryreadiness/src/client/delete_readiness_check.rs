@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`readiness_check_name(impl ::std::convert::Into<String>)`](crate::operation::delete_readiness_check::builders::DeleteReadinessCheckFluentBuilder::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::operation::delete_readiness_check::builders::DeleteReadinessCheckFluentBuilder::set_readiness_check_name): <p>Name of a readiness check.</p>
     /// - On success, responds with [`DeleteReadinessCheckOutput`](crate::operation::delete_readiness_check::DeleteReadinessCheckOutput)
     /// - On failure, responds with [`SdkError<DeleteReadinessCheckError>`](crate::operation::delete_readiness_check::DeleteReadinessCheckError)
-    pub fn delete_readiness_check(
-        &self,
-    ) -> crate::operation::delete_readiness_check::builders::DeleteReadinessCheckFluentBuilder {
-        crate::operation::delete_readiness_check::builders::DeleteReadinessCheckFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_readiness_check(&self) -> crate::operation::delete_readiness_check::builders::DeleteReadinessCheckFluentBuilder {
+        crate::operation::delete_readiness_check::builders::DeleteReadinessCheckFluentBuilder::new(self.handle.clone())
     }
 }

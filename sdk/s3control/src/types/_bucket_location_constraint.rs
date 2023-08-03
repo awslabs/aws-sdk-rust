@@ -47,13 +47,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BucketLocationConstraint {
     #[allow(missing_docs)] // documentation missing in model
@@ -95,9 +89,7 @@ impl ::std::convert::From<&str> for BucketLocationConstraint {
             "sa-east-1" => BucketLocationConstraint::SaEast1,
             "us-west-1" => BucketLocationConstraint::UsWest1,
             "us-west-2" => BucketLocationConstraint::UsWest2,
-            other => BucketLocationConstraint::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BucketLocationConstraint::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

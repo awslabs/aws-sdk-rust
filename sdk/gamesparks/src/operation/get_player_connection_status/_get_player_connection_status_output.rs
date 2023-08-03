@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetPlayerConnectionStatusOutput {
 }
 impl GetPlayerConnectionStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetPlayerConnectionStatusOutput`](crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput).
-    pub fn builder() -> crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusOutputBuilder{
+    pub fn builder() -> crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusOutputBuilder {
         crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPlayerConnectionStatusOutput`](crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPlayerConnectionStatusOutputBuilder {
     pub(crate) connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl GetPlayerConnectionStatusOutputBuilder {
         self
     }
     /// <p>The list of connection ids, one for each connection in use by the player.</p>
-    pub fn set_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
-    ) -> Self {
+    pub fn set_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>) -> Self {
         self.connections = input;
         self
     }
     /// <p>The list of connection ids, one for each connection in use by the player.</p>
-    pub fn get_connections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Connection>> {
+    pub fn get_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Connection>> {
         &self.connections
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,9 +64,7 @@ impl GetPlayerConnectionStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPlayerConnectionStatusOutput`](crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput {
+    pub fn build(self) -> crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput {
         crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput {
             connections: self.connections,
             _request_id: self._request_id,

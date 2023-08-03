@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`client_request_token(Option<String>)`](crate::operation::create_project::CreateProjectOutput::client_request_token): <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
     ///   - [`project_template_id(Option<String>)`](crate::operation::create_project::CreateProjectOutput::project_template_id): <p>Reserved for future use.</p>
     /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::operation::create_project::CreateProjectError)
-    pub fn create_project(
-        &self,
-    ) -> crate::operation::create_project::builders::CreateProjectFluentBuilder {
-        crate::operation::create_project::builders::CreateProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_project(&self) -> crate::operation::create_project::builders::CreateProjectFluentBuilder {
+        crate::operation::create_project::builders::CreateProjectFluentBuilder::new(self.handle.clone())
     }
 }

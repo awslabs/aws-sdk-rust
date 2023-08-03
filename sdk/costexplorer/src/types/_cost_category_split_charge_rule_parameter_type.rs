@@ -37,13 +37,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CostCategorySplitChargeRuleParameterType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,12 +48,8 @@ pub enum CostCategorySplitChargeRuleParameterType {
 impl ::std::convert::From<&str> for CostCategorySplitChargeRuleParameterType {
     fn from(s: &str) -> Self {
         match s {
-            "ALLOCATION_PERCENTAGES" => {
-                CostCategorySplitChargeRuleParameterType::AllocationPercentages
-            }
-            other => CostCategorySplitChargeRuleParameterType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "ALLOCATION_PERCENTAGES" => CostCategorySplitChargeRuleParameterType::AllocationPercentages,
+            other => CostCategorySplitChargeRuleParameterType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -74,9 +64,7 @@ impl CostCategorySplitChargeRuleParameterType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            CostCategorySplitChargeRuleParameterType::AllocationPercentages => {
-                "ALLOCATION_PERCENTAGES"
-            }
+            CostCategorySplitChargeRuleParameterType::AllocationPercentages => "ALLOCATION_PERCENTAGES",
             CostCategorySplitChargeRuleParameterType::Unknown(value) => value.as_str(),
         }
     }

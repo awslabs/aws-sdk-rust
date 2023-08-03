@@ -12,8 +12,7 @@ pub struct PublicIpv4Pool {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The address ranges.</p>
     #[doc(hidden)]
-    pub pool_address_ranges:
-        ::std::option::Option<::std::vec::Vec<crate::types::PublicIpv4PoolRange>>,
+    pub pool_address_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PublicIpv4PoolRange>>,
     /// <p>The total number of addresses.</p>
     #[doc(hidden)]
     pub total_address_count: ::std::option::Option<i32>,
@@ -37,9 +36,7 @@ impl PublicIpv4Pool {
         self.description.as_deref()
     }
     /// <p>The address ranges.</p>
-    pub fn pool_address_ranges(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PublicIpv4PoolRange]> {
+    pub fn pool_address_ranges(&self) -> ::std::option::Option<&[crate::types::PublicIpv4PoolRange]> {
         self.pool_address_ranges.as_deref()
     }
     /// <p>The total number of addresses.</p>
@@ -68,14 +65,11 @@ impl PublicIpv4Pool {
 
 /// A builder for [`PublicIpv4Pool`](crate::types::PublicIpv4Pool).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublicIpv4PoolBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) pool_address_ranges:
-        ::std::option::Option<::std::vec::Vec<crate::types::PublicIpv4PoolRange>>,
+    pub(crate) pool_address_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PublicIpv4PoolRange>>,
     pub(crate) total_address_count: ::std::option::Option<i32>,
     pub(crate) total_available_address_count: ::std::option::Option<i32>,
     pub(crate) network_border_group: ::std::option::Option<::std::string::String>,
@@ -122,17 +116,12 @@ impl PublicIpv4PoolBuilder {
         self
     }
     /// <p>The address ranges.</p>
-    pub fn set_pool_address_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PublicIpv4PoolRange>>,
-    ) -> Self {
+    pub fn set_pool_address_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PublicIpv4PoolRange>>) -> Self {
         self.pool_address_ranges = input;
         self
     }
     /// <p>The address ranges.</p>
-    pub fn get_pool_address_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PublicIpv4PoolRange>> {
+    pub fn get_pool_address_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PublicIpv4PoolRange>> {
         &self.pool_address_ranges
     }
     /// <p>The total number of addresses.</p>
@@ -164,18 +153,12 @@ impl PublicIpv4PoolBuilder {
         &self.total_available_address_count
     }
     /// <p>The name of the location from which the address pool is advertised. A network border group is a unique set of Availability Zones or Local Zones from where Amazon Web Services advertises public IP addresses.</p>
-    pub fn network_border_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_border_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_border_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the location from which the address pool is advertised. A network border group is a unique set of Availability Zones or Local Zones from where Amazon Web Services advertises public IP addresses.</p>
-    pub fn set_network_border_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_border_group = input;
         self
     }
@@ -195,10 +178,7 @@ impl PublicIpv4PoolBuilder {
         self
     }
     /// <p>Any tags for the address pool.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

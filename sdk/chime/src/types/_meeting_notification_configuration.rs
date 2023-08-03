@@ -45,18 +45,12 @@ pub struct MeetingNotificationConfigurationBuilder {
 }
 impl MeetingNotificationConfigurationBuilder {
     /// <p>The SNS topic ARN.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SNS topic ARN.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
@@ -65,18 +59,12 @@ impl MeetingNotificationConfigurationBuilder {
         &self.sns_topic_arn
     }
     /// <p>The SQS queue ARN.</p>
-    pub fn sqs_queue_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sqs_queue_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sqs_queue_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SQS queue ARN.</p>
-    pub fn set_sqs_queue_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sqs_queue_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sqs_queue_arn = input;
         self
     }

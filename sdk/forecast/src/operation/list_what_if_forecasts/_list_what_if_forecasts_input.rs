@@ -51,18 +51,14 @@ impl ListWhatIfForecastsInput {
 }
 impl ListWhatIfForecastsInput {
     /// Creates a new builder-style object to manufacture [`ListWhatIfForecastsInput`](crate::operation::list_what_if_forecasts::ListWhatIfForecastsInput).
-    pub fn builder(
-    ) -> crate::operation::list_what_if_forecasts::builders::ListWhatIfForecastsInputBuilder {
-        crate::operation::list_what_if_forecasts::builders::ListWhatIfForecastsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_what_if_forecasts::builders::ListWhatIfForecastsInputBuilder {
+        crate::operation::list_what_if_forecasts::builders::ListWhatIfForecastsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListWhatIfForecastsInput`](crate::operation::list_what_if_forecasts::ListWhatIfForecastsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWhatIfForecastsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -131,10 +127,7 @@ impl ListWhatIfForecastsInputBuilder {
     /// <acct-id>
     /// :forecast/electricityWhatIfForecast" } ]
     /// </acct-id></code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -156,16 +149,12 @@ impl ListWhatIfForecastsInputBuilder {
     /// Consumes the builder and constructs a [`ListWhatIfForecastsInput`](crate::operation::list_what_if_forecasts::ListWhatIfForecastsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_what_if_forecasts::ListWhatIfForecastsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_what_if_forecasts::ListWhatIfForecastsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_what_if_forecasts::ListWhatIfForecastsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_what_if_forecasts::ListWhatIfForecastsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+        })
     }
 }

@@ -3,12 +3,7 @@ pub(crate) fn de_list_of_long<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<::std::vec::Vec<i64>>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -21,11 +16,9 @@ where
                         break;
                     }
                     _ => {
-                        let value = ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                            tokens.next(),
-                        )?
-                        .map(i64::try_from)
-                        .transpose()?;
+                        let value = ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?;
                         if let Some(value) = value {
                             items.push(value);
                         }
@@ -34,10 +27,8 @@ where
             }
             Ok(Some(items))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start array or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start array or null",
+        )),
     }
 }

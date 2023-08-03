@@ -37,10 +37,7 @@ impl GetTableRestoreStatusFluentBuilder {
         }
     }
     /// Access the GetTableRestoreStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_table_restore_status::builders::GetTableRestoreStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_table_restore_status::builders::GetTableRestoreStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetTableRestoreStatusFluentBuilder {
             crate::operation::get_table_restore_status::GetTableRestoreStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_table_restore_status::GetTableRestoreStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_table_restore_status::GetTableRestoreStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetTableRestoreStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetTableRestoreStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_table_restore_status::GetTableRestoreStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_table_restore_status::GetTableRestoreStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_table_restore_status::GetTableRestoreStatusError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetTableRestoreStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_table_restore_status::GetTableRestoreStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_table_restore_status::GetTableRestoreStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_table_restore_status::GetTableRestoreStatusError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetTableRestoreStatusFluentBuilder {
             crate::operation::get_table_restore_status::GetTableRestoreStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_table_restore_status::GetTableRestoreStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_table_restore_status::GetTableRestoreStatusError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
-    pub fn table_restore_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn table_restore_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_restore_request_id(input.into());
         self
     }
     /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
-    pub fn set_table_restore_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_table_restore_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_restore_request_id(input);
         self
     }

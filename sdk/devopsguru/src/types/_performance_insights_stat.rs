@@ -30,9 +30,7 @@ impl PerformanceInsightsStat {
 
 /// A builder for [`PerformanceInsightsStat`](crate::types::PerformanceInsightsStat).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PerformanceInsightsStatBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<f64>,

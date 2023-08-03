@@ -21,41 +21,31 @@ impl ::aws_http::request_id::RequestId for CreateHyperParameterTuningJobOutput {
 }
 impl CreateHyperParameterTuningJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateHyperParameterTuningJobOutput`](crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput).
-    pub fn builder() -> crate::operation::create_hyper_parameter_tuning_job::builders::CreateHyperParameterTuningJobOutputBuilder{
+    pub fn builder() -> crate::operation::create_hyper_parameter_tuning_job::builders::CreateHyperParameterTuningJobOutputBuilder {
         crate::operation::create_hyper_parameter_tuning_job::builders::CreateHyperParameterTuningJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateHyperParameterTuningJobOutput`](crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHyperParameterTuningJobOutputBuilder {
     pub(crate) hyper_parameter_tuning_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateHyperParameterTuningJobOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to a hyperparameter tuning job when you create it.</p>
-    pub fn hyper_parameter_tuning_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hyper_parameter_tuning_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to a hyperparameter tuning job when you create it.</p>
-    pub fn set_hyper_parameter_tuning_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hyper_parameter_tuning_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to a hyperparameter tuning job when you create it.</p>
-    pub fn get_hyper_parameter_tuning_job_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_hyper_parameter_tuning_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.hyper_parameter_tuning_job_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,10 +58,7 @@ impl CreateHyperParameterTuningJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateHyperParameterTuningJobOutput`](crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput
-    {
+    pub fn build(self) -> crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput {
         crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput {
             hyper_parameter_tuning_job_arn: self.hyper_parameter_tuning_job_arn,
             _request_id: self._request_id,

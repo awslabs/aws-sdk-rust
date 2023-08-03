@@ -35,9 +35,7 @@ impl DescribeInsightOutput {
 
 /// A builder for [`DescribeInsightOutput`](crate::operation::describe_insight::DescribeInsightOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInsightOutputBuilder {
     pub(crate) proactive_insight: ::std::option::Option<crate::types::ProactiveInsight>,
     pub(crate) reactive_insight: ::std::option::Option<crate::types::ReactiveInsight>,
@@ -50,10 +48,7 @@ impl DescribeInsightOutputBuilder {
         self
     }
     /// <p> A <code>ProactiveInsight</code> object that represents the requested insight. </p>
-    pub fn set_proactive_insight(
-        mut self,
-        input: ::std::option::Option<crate::types::ProactiveInsight>,
-    ) -> Self {
+    pub fn set_proactive_insight(mut self, input: ::std::option::Option<crate::types::ProactiveInsight>) -> Self {
         self.proactive_insight = input;
         self
     }
@@ -67,10 +62,7 @@ impl DescribeInsightOutputBuilder {
         self
     }
     /// <p> A <code>ReactiveInsight</code> object that represents the requested insight. </p>
-    pub fn set_reactive_insight(
-        mut self,
-        input: ::std::option::Option<crate::types::ReactiveInsight>,
-    ) -> Self {
+    pub fn set_reactive_insight(mut self, input: ::std::option::Option<crate::types::ReactiveInsight>) -> Self {
         self.reactive_insight = input;
         self
     }

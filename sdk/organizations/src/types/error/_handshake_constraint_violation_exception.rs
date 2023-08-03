@@ -29,9 +29,7 @@ pub struct HandshakeConstraintViolationException {
 }
 impl HandshakeConstraintViolationException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn reason(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HandshakeConstraintViolationExceptionReason> {
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::HandshakeConstraintViolationExceptionReason> {
         self.reason.as_ref()
     }
 }
@@ -53,38 +51,30 @@ impl ::std::fmt::Display for HandshakeConstraintViolationException {
     }
 }
 impl ::std::error::Error for HandshakeConstraintViolationException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::HandshakeConstraintViolationException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::HandshakeConstraintViolationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for HandshakeConstraintViolationException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for HandshakeConstraintViolationException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl HandshakeConstraintViolationException {
     /// Creates a new builder-style object to manufacture [`HandshakeConstraintViolationException`](crate::types::error::HandshakeConstraintViolationException).
-    pub fn builder() -> crate::types::error::builders::HandshakeConstraintViolationExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::HandshakeConstraintViolationExceptionBuilder {
         crate::types::error::builders::HandshakeConstraintViolationExceptionBuilder::default()
     }
 }
 
 /// A builder for [`HandshakeConstraintViolationException`](crate::types::error::HandshakeConstraintViolationException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HandshakeConstraintViolationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) reason:
-        ::std::option::Option<crate::types::HandshakeConstraintViolationExceptionReason>,
+    pub(crate) reason: ::std::option::Option<crate::types::HandshakeConstraintViolationExceptionReason>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl HandshakeConstraintViolationExceptionBuilder {
@@ -103,25 +93,17 @@ impl HandshakeConstraintViolationExceptionBuilder {
         &self.message
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn reason(
-        mut self,
-        input: crate::types::HandshakeConstraintViolationExceptionReason,
-    ) -> Self {
+    pub fn reason(mut self, input: crate::types::HandshakeConstraintViolationExceptionReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::HandshakeConstraintViolationExceptionReason>,
-    ) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::HandshakeConstraintViolationExceptionReason>) -> Self {
         self.reason = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_reason(
-        &self,
-    ) -> &::std::option::Option<crate::types::HandshakeConstraintViolationExceptionReason> {
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::HandshakeConstraintViolationExceptionReason> {
         &self.reason
     }
     /// Sets error metadata
@@ -131,10 +113,7 @@ impl HandshakeConstraintViolationExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

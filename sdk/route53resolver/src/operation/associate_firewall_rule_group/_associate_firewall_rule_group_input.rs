@@ -51,9 +51,7 @@ impl AssociateFirewallRuleGroupInput {
         self.name.as_deref()
     }
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. When you create the association, the default setting is <code>DISABLED</code>. </p>
-    pub fn mutation_protection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MutationProtectionStatus> {
+    pub fn mutation_protection(&self) -> ::std::option::Option<&crate::types::MutationProtectionStatus> {
         self.mutation_protection.as_ref()
     }
     /// <p>A list of the tag keys and values that you want to associate with the rule group association. </p>
@@ -63,16 +61,14 @@ impl AssociateFirewallRuleGroupInput {
 }
 impl AssociateFirewallRuleGroupInput {
     /// Creates a new builder-style object to manufacture [`AssociateFirewallRuleGroupInput`](crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupInput).
-    pub fn builder() -> crate::operation::associate_firewall_rule_group::builders::AssociateFirewallRuleGroupInputBuilder{
+    pub fn builder() -> crate::operation::associate_firewall_rule_group::builders::AssociateFirewallRuleGroupInputBuilder {
         crate::operation::associate_firewall_rule_group::builders::AssociateFirewallRuleGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateFirewallRuleGroupInput`](crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateFirewallRuleGroupInputBuilder {
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_rule_group_id: ::std::option::Option<::std::string::String>,
@@ -84,18 +80,12 @@ pub struct AssociateFirewallRuleGroupInputBuilder {
 }
 impl AssociateFirewallRuleGroupInputBuilder {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
@@ -104,18 +94,12 @@ impl AssociateFirewallRuleGroupInputBuilder {
         &self.creator_request_id
     }
     /// <p>The unique identifier of the firewall rule group. </p>
-    pub fn firewall_rule_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the firewall rule group. </p>
-    pub fn set_firewall_rule_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_rule_group_id = input;
         self
     }
@@ -177,17 +161,12 @@ impl AssociateFirewallRuleGroupInputBuilder {
         self
     }
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. When you create the association, the default setting is <code>DISABLED</code>. </p>
-    pub fn set_mutation_protection(
-        mut self,
-        input: ::std::option::Option<crate::types::MutationProtectionStatus>,
-    ) -> Self {
+    pub fn set_mutation_protection(mut self, input: ::std::option::Option<crate::types::MutationProtectionStatus>) -> Self {
         self.mutation_protection = input;
         self
     }
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. When you create the association, the default setting is <code>DISABLED</code>. </p>
-    pub fn get_mutation_protection(
-        &self,
-    ) -> &::std::option::Option<crate::types::MutationProtectionStatus> {
+    pub fn get_mutation_protection(&self) -> &::std::option::Option<crate::types::MutationProtectionStatus> {
         &self.mutation_protection
     }
     /// Appends an item to `tags`.
@@ -202,10 +181,7 @@ impl AssociateFirewallRuleGroupInputBuilder {
         self
     }
     /// <p>A list of the tag keys and values that you want to associate with the rule group association. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -220,16 +196,14 @@ impl AssociateFirewallRuleGroupInputBuilder {
         crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupInput {
-                creator_request_id: self.creator_request_id,
-                firewall_rule_group_id: self.firewall_rule_group_id,
-                vpc_id: self.vpc_id,
-                priority: self.priority,
-                name: self.name,
-                mutation_protection: self.mutation_protection,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupInput {
+            creator_request_id: self.creator_request_id,
+            firewall_rule_group_id: self.firewall_rule_group_id,
+            vpc_id: self.vpc_id,
+            priority: self.priority,
+            name: self.name,
+            mutation_protection: self.mutation_protection,
+            tags: self.tags,
+        })
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateRoutingControlStatesOutput {
 }
 impl UpdateRoutingControlStatesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStatesOutput`](crate::operation::update_routing_control_states::UpdateRoutingControlStatesOutput).
-    pub fn builder() -> crate::operation::update_routing_control_states::builders::UpdateRoutingControlStatesOutputBuilder{
+    pub fn builder() -> crate::operation::update_routing_control_states::builders::UpdateRoutingControlStatesOutputBuilder {
         crate::operation::update_routing_control_states::builders::UpdateRoutingControlStatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRoutingControlStatesOutput`](crate::operation::update_routing_control_states::UpdateRoutingControlStatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRoutingControlStatesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateRoutingControlStatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateRoutingControlStatesOutput`](crate::operation::update_routing_control_states::UpdateRoutingControlStatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_routing_control_states::UpdateRoutingControlStatesOutput {
+    pub fn build(self) -> crate::operation::update_routing_control_states::UpdateRoutingControlStatesOutput {
         crate::operation::update_routing_control_states::UpdateRoutingControlStatesOutput {
             _request_id: self._request_id,
         }

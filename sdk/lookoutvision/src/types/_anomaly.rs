@@ -30,9 +30,7 @@ impl Anomaly {
 
 /// A builder for [`Anomaly`](crate::types::Anomaly).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) pixel_anomaly: ::std::option::Option<crate::types::PixelAnomaly>,
@@ -58,10 +56,7 @@ impl AnomalyBuilder {
         self
     }
     /// <p>Information about the pixel mask that covers an anomaly type.</p>
-    pub fn set_pixel_anomaly(
-        mut self,
-        input: ::std::option::Option<crate::types::PixelAnomaly>,
-    ) -> Self {
+    pub fn set_pixel_anomaly(mut self, input: ::std::option::Option<crate::types::PixelAnomaly>) -> Self {
         self.pixel_anomaly = input;
         self
     }

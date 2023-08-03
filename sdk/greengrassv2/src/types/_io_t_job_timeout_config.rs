@@ -25,9 +25,7 @@ impl IoTJobTimeoutConfig {
 
 /// A builder for [`IoTJobTimeoutConfig`](crate::types::IoTJobTimeoutConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IoTJobTimeoutConfigBuilder {
     pub(crate) in_progress_timeout_in_minutes: ::std::option::Option<i64>,
 }

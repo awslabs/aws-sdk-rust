@@ -30,9 +30,7 @@ impl Bumper {
 
 /// A builder for [`Bumper`](crate::types::Bumper).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BumperBuilder {
     pub(crate) end_url: ::std::option::Option<::std::string::String>,
     pub(crate) start_url: ::std::option::Option<::std::string::String>,

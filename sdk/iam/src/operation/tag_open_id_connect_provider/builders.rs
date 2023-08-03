@@ -36,7 +36,7 @@ impl TagOpenIdConnectProviderInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagOpenIDConnectProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::tag_open_id_connect_provider::builders::TagOpenIdConnectProviderInputBuilder,
+    inner: crate::operation::tag_open_id_connect_provider::builders::TagOpenIdConnectProviderInputBuilder,
 }
 impl TagOpenIDConnectProviderFluentBuilder {
     /// Creates a new `TagOpenIDConnectProvider`.
@@ -47,7 +47,7 @@ impl TagOpenIDConnectProviderFluentBuilder {
         }
     }
     /// Access the TagOpenIDConnectProvider as a reference.
-    pub fn as_input(&self) -> &crate::operation::tag_open_id_connect_provider::builders::TagOpenIdConnectProviderInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::tag_open_id_connect_provider::builders::TagOpenIdConnectProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +59,7 @@ impl TagOpenIDConnectProviderFluentBuilder {
             crate::operation::tag_open_id_connect_provider::TagOpenIDConnectProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_open_id_connect_provider::TagOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_open_id_connect_provider::TagOpenIDConnectProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +69,7 @@ impl TagOpenIDConnectProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +78,7 @@ impl TagOpenIDConnectProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::tag_open_id_connect_provider::TagOpenIdConnectProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_open_id_connect_provider::TagOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_open_id_connect_provider::TagOpenIDConnectProviderError>,
     > {
         let op = self
             .inner
@@ -108,9 +101,7 @@ impl TagOpenIDConnectProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::tag_open_id_connect_provider::TagOpenIdConnectProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_open_id_connect_provider::TagOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_open_id_connect_provider::TagOpenIDConnectProviderError>,
     > {
         self.send_middleware().await
     }
@@ -124,35 +115,25 @@ impl TagOpenIDConnectProviderFluentBuilder {
             crate::operation::tag_open_id_connect_provider::TagOpenIDConnectProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_open_id_connect_provider::TagOpenIDConnectProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_open_id_connect_provider::TagOpenIDConnectProviderError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the OIDC identity provider in IAM to which you want to add tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn open_id_connect_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn open_id_connect_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.open_id_connect_provider_arn(input.into());
         self
     }
     /// <p>The ARN of the OIDC identity provider in IAM to which you want to add tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_open_id_connect_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_open_id_connect_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_open_id_connect_provider_arn(input);
         self
     }
     /// <p>The ARN of the OIDC identity provider in IAM to which you want to add tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn get_open_id_connect_provider_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_open_id_connect_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_open_id_connect_provider_arn()
     }
     /// Appends an item to `Tags`.
@@ -165,10 +146,7 @@ impl TagOpenIDConnectProviderFluentBuilder {
         self
     }
     /// <p>The list of tags that you want to attach to the OIDC identity provider in IAM. Each tag consists of a key name and an associated value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

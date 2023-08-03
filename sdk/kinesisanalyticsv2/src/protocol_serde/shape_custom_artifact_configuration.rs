@@ -9,10 +9,7 @@ pub fn ser_custom_artifact_configuration(
     if let Some(var_2) = &input.s3_content_location {
         #[allow(unused_mut)]
         let mut object_3 = object.key("S3ContentLocation").start_object();
-        crate::protocol_serde::shape_s3_content_location::ser_s3_content_location(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_s3_content_location::ser_s3_content_location(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.maven_reference {

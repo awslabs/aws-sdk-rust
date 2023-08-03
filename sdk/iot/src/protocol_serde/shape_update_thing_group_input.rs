@@ -12,10 +12,7 @@ pub fn ser_update_thing_group_input(
     if let Some(var_2) = &input.thing_group_properties {
         #[allow(unused_mut)]
         let mut object_3 = object.key("thingGroupProperties").start_object();
-        crate::protocol_serde::shape_thing_group_properties::ser_thing_group_properties(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_thing_group_properties::ser_thing_group_properties(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

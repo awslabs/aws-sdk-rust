@@ -30,9 +30,7 @@ impl WeeklySetting {
 
 /// A builder for [`WeeklySetting`](crate::types::WeeklySetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WeeklySettingBuilder {
     pub(crate) day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
     pub(crate) hand_off_time: ::std::option::Option<crate::types::HandOffTime>,
@@ -44,10 +42,7 @@ impl WeeklySettingBuilder {
         self
     }
     /// <p>The day of the week when weekly recurring on-call shift rotations begins.</p>
-    pub fn set_day_of_week(
-        mut self,
-        input: ::std::option::Option<crate::types::DayOfWeek>,
-    ) -> Self {
+    pub fn set_day_of_week(mut self, input: ::std::option::Option<crate::types::DayOfWeek>) -> Self {
         self.day_of_week = input;
         self
     }
@@ -61,10 +56,7 @@ impl WeeklySettingBuilder {
         self
     }
     /// <p>The time of day when a weekly recurring on-call shift rotation begins.</p>
-    pub fn set_hand_off_time(
-        mut self,
-        input: ::std::option::Option<crate::types::HandOffTime>,
-    ) -> Self {
+    pub fn set_hand_off_time(mut self, input: ::std::option::Option<crate::types::HandOffTime>) -> Self {
         self.hand_off_time = input;
         self
     }

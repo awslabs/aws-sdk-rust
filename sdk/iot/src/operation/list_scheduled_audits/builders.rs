@@ -38,9 +38,7 @@ impl ListScheduledAuditsFluentBuilder {
         }
     }
     /// Access the ListScheduledAudits as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_scheduled_audits::builders::ListScheduledAuditsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_scheduled_audits::builders::ListScheduledAuditsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ListScheduledAuditsFluentBuilder {
             crate::operation::list_scheduled_audits::ListScheduledAudits,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduled_audits::ListScheduledAuditsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scheduled_audits::ListScheduledAuditsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ListScheduledAuditsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ListScheduledAuditsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_scheduled_audits::ListScheduledAuditsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduled_audits::ListScheduledAuditsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scheduled_audits::ListScheduledAuditsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ListScheduledAuditsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_scheduled_audits::ListScheduledAuditsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduled_audits::ListScheduledAuditsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scheduled_audits::ListScheduledAuditsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl ListScheduledAuditsFluentBuilder {
             crate::operation::list_scheduled_audits::ListScheduledAudits,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_scheduled_audits::ListScheduledAuditsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_scheduled_audits::ListScheduledAuditsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_scheduled_audits::paginator::ListScheduledAuditsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_scheduled_audits::paginator::ListScheduledAuditsPaginator {
-        crate::operation::list_scheduled_audits::paginator::ListScheduledAuditsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_scheduled_audits::paginator::ListScheduledAuditsPaginator {
+        crate::operation::list_scheduled_audits::paginator::ListScheduledAuditsPaginator::new(self.handle, self.inner)
     }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

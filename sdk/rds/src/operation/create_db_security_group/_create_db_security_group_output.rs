@@ -23,18 +23,14 @@ impl ::aws_http::request_id::RequestId for CreateDbSecurityGroupOutput {
 }
 impl CreateDbSecurityGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbSecurityGroupOutput`](crate::operation::create_db_security_group::CreateDbSecurityGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_db_security_group::builders::CreateDbSecurityGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_db_security_group::builders::CreateDbSecurityGroupOutputBuilder {
         crate::operation::create_db_security_group::builders::CreateDbSecurityGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDbSecurityGroupOutput`](crate::operation::create_db_security_group::CreateDbSecurityGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDbSecurityGroupOutputBuilder {
     pub(crate) db_security_group: ::std::option::Option<crate::types::DbSecurityGroup>,
     _request_id: Option<String>,
@@ -48,10 +44,7 @@ impl CreateDbSecurityGroupOutputBuilder {
     }
     /// <p>Contains the details for an Amazon RDS DB security group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
-    pub fn set_db_security_group(
-        mut self,
-        input: ::std::option::Option<crate::types::DbSecurityGroup>,
-    ) -> Self {
+    pub fn set_db_security_group(mut self, input: ::std::option::Option<crate::types::DbSecurityGroup>) -> Self {
         self.db_security_group = input;
         self
     }

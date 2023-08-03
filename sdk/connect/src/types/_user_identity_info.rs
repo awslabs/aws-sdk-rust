@@ -53,9 +53,7 @@ impl UserIdentityInfo {
 
 /// A builder for [`UserIdentityInfo`](crate::types::UserIdentityInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserIdentityInfoBuilder {
     pub(crate) first_name: ::std::option::Option<::std::string::String>,
     pub(crate) last_name: ::std::option::Option<::std::string::String>,
@@ -108,19 +106,13 @@ impl UserIdentityInfoBuilder {
     }
     /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
     /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
-    pub fn secondary_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secondary_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secondary_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
     /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
-    pub fn set_secondary_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secondary_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secondary_email = input;
         self
     }

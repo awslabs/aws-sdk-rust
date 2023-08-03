@@ -4,174 +4,162 @@ pub fn de_start_campaign_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::start_campaign::StartCampaignOutput,
-    crate::operation::start_campaign::StartCampaignError,
-> {
+) -> std::result::Result<crate::operation::start_campaign::StartCampaignOutput, crate::operation::start_campaign::StartCampaignError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::start_campaign::StartCampaignError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::start_campaign::StartCampaignError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::start_campaign::StartCampaignError::unhandled(generic))
-        }
+        None => return Err(crate::operation::start_campaign::StartCampaignError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::operation::start_campaign::StartCampaignError::AccessDeniedException({
+        "AccessDeniedException" => crate::operation::start_campaign::StartCampaignError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::start_campaign::StartCampaignError::unhandled)?;
-                    output = output.set_x_amz_error_type(
-                        crate::protocol_serde::shape_access_denied_exception::de_x_amz_error_type_header(_response_headers)
-                                                .map_err(|_|crate::operation::start_campaign::StartCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
-                    );
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ConflictException" => {
-            crate::operation::start_campaign::StartCampaignError::ConflictException({
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_campaign::StartCampaignError::unhandled)?;
+                output = output.set_x_amz_error_type(
+                    crate::protocol_serde::shape_access_denied_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::start_campaign::StartCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType")
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ConflictException" => crate::operation::start_campaign::StartCampaignError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ConflictExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::start_campaign::StartCampaignError::unhandled)?;
-                    output = output.set_x_amz_error_type(
-                        crate::protocol_serde::shape_conflict_exception::de_x_amz_error_type_header(_response_headers)
-                                                .map_err(|_|crate::operation::start_campaign::StartCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
-                    );
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalServerException" => {
-            crate::operation::start_campaign::StartCampaignError::InternalServerException({
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_campaign::StartCampaignError::unhandled)?;
+                output = output.set_x_amz_error_type(
+                    crate::protocol_serde::shape_conflict_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::start_campaign::StartCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType")
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::start_campaign::StartCampaignError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalServerExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::start_campaign::StartCampaignError::unhandled)?;
-                    output = output.set_x_amz_error_type(
-                        crate::protocol_serde::shape_internal_server_exception::de_x_amz_error_type_header(_response_headers)
-                                                .map_err(|_|crate::operation::start_campaign::StartCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
-                    );
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidCampaignStateException" => {
-            crate::operation::start_campaign::StartCampaignError::InvalidCampaignStateException({
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_campaign::StartCampaignError::unhandled)?;
+                output = output.set_x_amz_error_type(
+                    crate::protocol_serde::shape_internal_server_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::start_campaign::StartCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType")
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidCampaignStateException" => crate::operation::start_campaign::StartCampaignError::InvalidCampaignStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidCampaignStateExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_campaign_state_exception::de_invalid_campaign_state_exception_json_err(_response_body, output).map_err(crate::operation::start_campaign::StartCampaignError::unhandled)?;
-                    output = output.set_x_amz_error_type(
-                        crate::protocol_serde::shape_invalid_campaign_state_exception::de_x_amz_error_type_header(_response_headers)
-                                                .map_err(|_|crate::operation::start_campaign::StartCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
-                    );
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::operation::start_campaign::StartCampaignError::ResourceNotFoundException({
+                let mut output = crate::types::error::builders::InvalidCampaignStateExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_campaign_state_exception::de_invalid_campaign_state_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::start_campaign::StartCampaignError::unhandled)?;
+                output = output.set_x_amz_error_type(
+                    crate::protocol_serde::shape_invalid_campaign_state_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::start_campaign::StartCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType")
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::start_campaign::StartCampaignError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::start_campaign::StartCampaignError::unhandled)?;
-                    output = output.set_x_amz_error_type(
-                        crate::protocol_serde::shape_resource_not_found_exception::de_x_amz_error_type_header(_response_headers)
-                                                .map_err(|_|crate::operation::start_campaign::StartCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
-                    );
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::operation::start_campaign::StartCampaignError::ThrottlingException({
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_campaign::StartCampaignError::unhandled)?;
+                output = output.set_x_amz_error_type(
+                    crate::protocol_serde::shape_resource_not_found_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::start_campaign::StartCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType")
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::start_campaign::StartCampaignError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::start_campaign::StartCampaignError::unhandled)?;
-                    output = output.set_x_amz_error_type(
-                        crate::protocol_serde::shape_throttling_exception::de_x_amz_error_type_header(_response_headers)
-                                                .map_err(|_|crate::operation::start_campaign::StartCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
-                    );
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::operation::start_campaign::StartCampaignError::ValidationException({
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_campaign::StartCampaignError::unhandled)?;
+                output = output.set_x_amz_error_type(
+                    crate::protocol_serde::shape_throttling_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::start_campaign::StartCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType")
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => crate::operation::start_campaign::StartCampaignError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::start_campaign::StartCampaignError::unhandled)?;
-                    output = output.set_x_amz_error_type(
-                        crate::protocol_serde::shape_validation_exception::de_x_amz_error_type_header(_response_headers)
-                                                .map_err(|_|crate::operation::start_campaign::StartCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
-                    );
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_campaign::StartCampaignError::unhandled)?;
+                output = output.set_x_amz_error_type(
+                    crate::protocol_serde::shape_validation_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::start_campaign::StartCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType")
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::start_campaign::StartCampaignError::generic(generic),
     })
 }
@@ -181,17 +169,11 @@ pub fn de_start_campaign_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::start_campaign::StartCampaignOutput,
-    crate::operation::start_campaign::StartCampaignError,
-> {
+) -> std::result::Result<crate::operation::start_campaign::StartCampaignOutput, crate::operation::start_campaign::StartCampaignError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::start_campaign::builders::StartCampaignOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::start_campaign::builders::StartCampaignOutputBuilder::default();
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

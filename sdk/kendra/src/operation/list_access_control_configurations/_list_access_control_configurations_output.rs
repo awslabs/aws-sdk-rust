@@ -8,8 +8,7 @@ pub struct ListAccessControlConfigurationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The details of your access control configurations.</p>
     #[doc(hidden)]
-    pub access_control_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessControlConfigurationSummary>>,
+    pub access_control_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlConfigurationSummary>>,
     _request_id: Option<String>,
 }
 impl ListAccessControlConfigurationsOutput {
@@ -18,9 +17,7 @@ impl ListAccessControlConfigurationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The details of your access control configurations.</p>
-    pub fn access_control_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AccessControlConfigurationSummary]> {
+    pub fn access_control_configurations(&self) -> ::std::option::Option<&[crate::types::AccessControlConfigurationSummary]> {
         self.access_control_configurations.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListAccessControlConfigurationsOutput
 }
 impl ListAccessControlConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessControlConfigurationsOutput`](crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_access_control_configurations::builders::ListAccessControlConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_access_control_configurations::builders::ListAccessControlConfigurationsOutputBuilder {
         crate::operation::list_access_control_configurations::builders::ListAccessControlConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccessControlConfigurationsOutput`](crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessControlConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) access_control_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessControlConfigurationSummary>>,
+    pub(crate) access_control_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlConfigurationSummary>>,
     _request_id: Option<String>,
 }
 impl ListAccessControlConfigurationsOutputBuilder {
@@ -67,10 +61,7 @@ impl ListAccessControlConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_access_control_configurations`](Self::set_access_control_configurations).
     ///
     /// <p>The details of your access control configurations.</p>
-    pub fn access_control_configurations(
-        mut self,
-        input: crate::types::AccessControlConfigurationSummary,
-    ) -> Self {
+    pub fn access_control_configurations(mut self, input: crate::types::AccessControlConfigurationSummary) -> Self {
         let mut v = self.access_control_configurations.unwrap_or_default();
         v.push(input);
         self.access_control_configurations = ::std::option::Option::Some(v);
@@ -79,18 +70,13 @@ impl ListAccessControlConfigurationsOutputBuilder {
     /// <p>The details of your access control configurations.</p>
     pub fn set_access_control_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AccessControlConfigurationSummary>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlConfigurationSummary>>,
     ) -> Self {
         self.access_control_configurations = input;
         self
     }
     /// <p>The details of your access control configurations.</p>
-    pub fn get_access_control_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessControlConfigurationSummary>>
-    {
+    pub fn get_access_control_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessControlConfigurationSummary>> {
         &self.access_control_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -103,15 +89,10 @@ impl ListAccessControlConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAccessControlConfigurationsOutput`](crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput {
         crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput {
-            next_token: self.next_token
-            ,
-            access_control_configurations: self.access_control_configurations
-            ,
+            next_token: self.next_token,
+            access_control_configurations: self.access_control_configurations,
             _request_id: self._request_id,
         }
     }

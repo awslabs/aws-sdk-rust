@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_pipeline::DescribePipelineOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     ///   - [`parallelism_configuration(Option<ParallelismConfiguration>)`](crate::operation::describe_pipeline::DescribePipelineOutput::parallelism_configuration): <p>Lists the parallelism configuration applied to the pipeline.</p>
     /// - On failure, responds with [`SdkError<DescribePipelineError>`](crate::operation::describe_pipeline::DescribePipelineError)
-    pub fn describe_pipeline(
-        &self,
-    ) -> crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder {
-        crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_pipeline(&self) -> crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder {
+        crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder::new(self.handle.clone())
     }
 }

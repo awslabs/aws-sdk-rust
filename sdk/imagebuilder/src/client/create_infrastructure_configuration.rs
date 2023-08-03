@@ -22,7 +22,9 @@ impl super::Client {
     ///   - [`client_token(Option<String>)`](crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationOutput::client_token): <p>The idempotency token used to make this request idempotent.</p>
     ///   - [`infrastructure_configuration_arn(Option<String>)`](crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationOutput::infrastructure_configuration_arn): <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by this request.</p>
     /// - On failure, responds with [`SdkError<CreateInfrastructureConfigurationError>`](crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError)
-    pub fn create_infrastructure_configuration(&self) -> crate::operation::create_infrastructure_configuration::builders::CreateInfrastructureConfigurationFluentBuilder{
+    pub fn create_infrastructure_configuration(
+        &self,
+    ) -> crate::operation::create_infrastructure_configuration::builders::CreateInfrastructureConfigurationFluentBuilder {
         crate::operation::create_infrastructure_configuration::builders::CreateInfrastructureConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`devices(Vec<Device>)`](crate::operation::update_devices::builders::UpdateDevicesFluentBuilder::devices) / [`set_devices(Option<Vec<Device>>)`](crate::operation::update_devices::builders::UpdateDevicesFluentBuilder::set_devices): <p>List of devices to register with Edge Manager agent.</p>
     /// - On success, responds with [`UpdateDevicesOutput`](crate::operation::update_devices::UpdateDevicesOutput)
     /// - On failure, responds with [`SdkError<UpdateDevicesError>`](crate::operation::update_devices::UpdateDevicesError)
-    pub fn update_devices(
-        &self,
-    ) -> crate::operation::update_devices::builders::UpdateDevicesFluentBuilder {
-        crate::operation::update_devices::builders::UpdateDevicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_devices(&self) -> crate::operation::update_devices::builders::UpdateDevicesFluentBuilder {
+        crate::operation::update_devices::builders::UpdateDevicesFluentBuilder::new(self.handle.clone())
     }
 }

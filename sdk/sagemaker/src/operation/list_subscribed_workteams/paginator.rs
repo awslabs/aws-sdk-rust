@@ -2,8 +2,7 @@
 /// Paginator for [`ListSubscribedWorkteams`](crate::operation::list_subscribed_workteams::ListSubscribedWorkteams)
 pub struct ListSubscribedWorkteamsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
-    builder:
-        crate::operation::list_subscribed_workteams::builders::ListSubscribedWorkteamsInputBuilder,
+    builder: crate::operation::list_subscribed_workteams::builders::ListSubscribedWorkteamsInputBuilder,
     stop_on_duplicate_token: bool,
 }
 
@@ -32,10 +31,7 @@ impl ListSubscribedWorkteamsPaginator {
     ///
     /// This paginator automatically flattens results using `subscribed_workteams`. Queries to the underlying service
     /// are dispatched lazily.
-    pub fn items(
-        self,
-    ) -> crate::operation::list_subscribed_workteams::paginator::ListSubscribedWorkteamsPaginatorItems
-    {
+    pub fn items(self) -> crate::operation::list_subscribed_workteams::paginator::ListSubscribedWorkteamsPaginatorItems {
         crate::operation::list_subscribed_workteams::paginator::ListSubscribedWorkteamsPaginatorItems(self)
     }
 
@@ -59,9 +55,7 @@ impl ListSubscribedWorkteamsPaginator {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsOutput,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsError>,
         >,
     > + ::std::marker::Unpin {
         // Move individual fields out of self for the borrow checker
@@ -71,10 +65,7 @@ impl ListSubscribedWorkteamsPaginator {
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder
-                    .build()
-                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                {
+                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
                     ::std::result::Result::Ok(input) => input,
                     ::std::result::Result::Err(e) => {
                         let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -99,15 +90,9 @@ impl ListSubscribedWorkteamsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         ::std::result::Result::Ok(ref resp) => {
-                            let new_token =
-                                crate::lens::reflens_list_subscribed_workteams_output_next_token(
-                                    resp,
-                                );
+                            let new_token = crate::lens::reflens_list_subscribed_workteams_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty
-                                && new_token == input.next_token.as_ref()
-                                && self.stop_on_duplicate_token
-                            {
+                            if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                 true
                             } else {
                                 input.next_token = new_token.cloned();
@@ -145,9 +130,7 @@ impl ListSubscribedWorkteamsPaginatorItems {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::types::SubscribedWorkteam,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsError>,
         >,
     > + ::std::marker::Unpin {
         ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {

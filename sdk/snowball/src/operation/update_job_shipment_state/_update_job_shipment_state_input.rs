@@ -26,18 +26,14 @@ impl UpdateJobShipmentStateInput {
 }
 impl UpdateJobShipmentStateInput {
     /// Creates a new builder-style object to manufacture [`UpdateJobShipmentStateInput`](crate::operation::update_job_shipment_state::UpdateJobShipmentStateInput).
-    pub fn builder(
-    ) -> crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateInputBuilder {
         crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateJobShipmentStateInput`](crate::operation::update_job_shipment_state::UpdateJobShipmentStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateJobShipmentStateInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) shipment_state: ::std::option::Option<crate::types::ShipmentState>,
@@ -67,10 +63,7 @@ impl UpdateJobShipmentStateInputBuilder {
     /// <p>The state of a device when it is being shipped. </p>
     /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
     /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
-    pub fn set_shipment_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ShipmentState>,
-    ) -> Self {
+    pub fn set_shipment_state(mut self, input: ::std::option::Option<crate::types::ShipmentState>) -> Self {
         self.shipment_state = input;
         self
     }
@@ -87,11 +80,9 @@ impl UpdateJobShipmentStateInputBuilder {
         crate::operation::update_job_shipment_state::UpdateJobShipmentStateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_job_shipment_state::UpdateJobShipmentStateInput {
-                job_id: self.job_id,
-                shipment_state: self.shipment_state,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_job_shipment_state::UpdateJobShipmentStateInput {
+            job_id: self.job_id,
+            shipment_state: self.shipment_state,
+        })
     }
 }

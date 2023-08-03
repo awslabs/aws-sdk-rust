@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePipelineOutput`](crate::operation::create_pipeline::CreatePipelineOutput) with field(s):
     ///   - [`pipeline_arn(Option<String>)`](crate::operation::create_pipeline::CreatePipelineOutput::pipeline_arn): <p>The Amazon Resource Name (ARN) of the created pipeline.</p>
     /// - On failure, responds with [`SdkError<CreatePipelineError>`](crate::operation::create_pipeline::CreatePipelineError)
-    pub fn create_pipeline(
-        &self,
-    ) -> crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder {
-        crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_pipeline(&self) -> crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder {
+        crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::new(self.handle.clone())
     }
 }

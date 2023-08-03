@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeQuickConnectOutput`](crate::operation::describe_quick_connect::DescribeQuickConnectOutput) with field(s):
     ///   - [`quick_connect(Option<QuickConnect>)`](crate::operation::describe_quick_connect::DescribeQuickConnectOutput::quick_connect): <p>Information about the quick connect.</p>
     /// - On failure, responds with [`SdkError<DescribeQuickConnectError>`](crate::operation::describe_quick_connect::DescribeQuickConnectError)
-    pub fn describe_quick_connect(
-        &self,
-    ) -> crate::operation::describe_quick_connect::builders::DescribeQuickConnectFluentBuilder {
-        crate::operation::describe_quick_connect::builders::DescribeQuickConnectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_quick_connect(&self) -> crate::operation::describe_quick_connect::builders::DescribeQuickConnectFluentBuilder {
+        crate::operation::describe_quick_connect::builders::DescribeQuickConnectFluentBuilder::new(self.handle.clone())
     }
 }

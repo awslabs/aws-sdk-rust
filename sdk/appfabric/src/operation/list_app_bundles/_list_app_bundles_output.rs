@@ -5,8 +5,7 @@
 pub struct ListAppBundlesOutput {
     /// <p>Contains a list of app bundle summaries.</p>
     #[doc(hidden)]
-    pub app_bundle_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppBundleSummary>>,
+    pub app_bundle_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AppBundleSummary>>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAppBundlesOutput {
 }
 impl ListAppBundlesOutput {
     /// <p>Contains a list of app bundle summaries.</p>
-    pub fn app_bundle_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AppBundleSummary]> {
+    pub fn app_bundle_summary_list(&self) -> ::std::option::Option<&[crate::types::AppBundleSummary]> {
         self.app_bundle_summary_list.as_deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
@@ -38,12 +35,9 @@ impl ListAppBundlesOutput {
 
 /// A builder for [`ListAppBundlesOutput`](crate::operation::list_app_bundles::ListAppBundlesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppBundlesOutputBuilder {
-    pub(crate) app_bundle_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppBundleSummary>>,
+    pub(crate) app_bundle_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AppBundleSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListAppBundlesOutputBuilder {
         self
     }
     /// <p>Contains a list of app bundle summaries.</p>
-    pub fn set_app_bundle_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppBundleSummary>>,
-    ) -> Self {
+    pub fn set_app_bundle_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppBundleSummary>>) -> Self {
         self.app_bundle_summary_list = input;
         self
     }
     /// <p>Contains a list of app bundle summaries.</p>
-    pub fn get_app_bundle_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppBundleSummary>> {
+    pub fn get_app_bundle_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppBundleSummary>> {
         &self.app_bundle_summary_list
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>

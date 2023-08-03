@@ -40,15 +40,11 @@ pub struct AwsSecurityFindingFilters {
     #[doc(hidden)]
     pub updated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>The native severity as defined by the security findings provider's solution that generated the finding.</p>
-    #[deprecated(
-        note = "This filter is deprecated. Instead, use FindingProviderSeverityOriginal."
-    )]
+    #[deprecated(note = "This filter is deprecated. Instead, use FindingProviderSeverityOriginal.")]
     #[doc(hidden)]
     pub severity_product: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     /// <p>The normalized severity of a finding.</p>
-    #[deprecated(
-        note = "This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel."
-    )]
+    #[deprecated(note = "This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel.")]
     #[doc(hidden)]
     pub severity_normalized: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     /// <p>The label of a finding's severity.</p>
@@ -127,12 +123,10 @@ pub struct AwsSecurityFindingFilters {
     pub network_destination_ip_v6: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
     /// <p>The destination port of network-related information about a finding.</p>
     #[doc(hidden)]
-    pub network_destination_port:
-        ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
+    pub network_destination_port: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     /// <p>The destination domain of network-related information about a finding.</p>
     #[doc(hidden)]
-    pub network_destination_domain:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub network_destination_domain: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The name of the process.</p>
     #[doc(hidden)]
     pub process_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -155,28 +149,22 @@ pub struct AwsSecurityFindingFilters {
     pub process_terminated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>The type of a threat intelligence indicator.</p>
     #[doc(hidden)]
-    pub threat_intel_indicator_type:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub threat_intel_indicator_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The value of a threat intelligence indicator.</p>
     #[doc(hidden)]
-    pub threat_intel_indicator_value:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub threat_intel_indicator_value: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The category of a threat intelligence indicator.</p>
     #[doc(hidden)]
-    pub threat_intel_indicator_category:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub threat_intel_indicator_category: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>A timestamp that identifies the last observation of a threat intelligence indicator.</p>
     #[doc(hidden)]
-    pub threat_intel_indicator_last_observed_at:
-        ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub threat_intel_indicator_last_observed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>The source of the threat intelligence.</p>
     #[doc(hidden)]
-    pub threat_intel_indicator_source:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub threat_intel_indicator_source: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The URL for more details from the source of the threat intelligence.</p>
     #[doc(hidden)]
-    pub threat_intel_indicator_source_url:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub threat_intel_indicator_source_url: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Specifies the type of the resource that details are provided for.</p>
     #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -194,87 +182,66 @@ pub struct AwsSecurityFindingFilters {
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
     /// <p>The instance type of the instance.</p>
     #[doc(hidden)]
-    pub resource_aws_ec2_instance_type:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_aws_ec2_instance_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The Amazon Machine Image (AMI) ID of the instance.</p>
     #[doc(hidden)]
-    pub resource_aws_ec2_instance_image_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_aws_ec2_instance_image_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The IPv4 addresses associated with the instance.</p>
     #[doc(hidden)]
-    pub resource_aws_ec2_instance_ip_v4_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub resource_aws_ec2_instance_ip_v4_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
     /// <p>The IPv6 addresses associated with the instance.</p>
     #[doc(hidden)]
-    pub resource_aws_ec2_instance_ip_v6_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub resource_aws_ec2_instance_ip_v6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
     /// <p>The key name associated with the instance.</p>
     #[doc(hidden)]
-    pub resource_aws_ec2_instance_key_name:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_aws_ec2_instance_key_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The IAM profile ARN of the instance.</p>
     #[doc(hidden)]
-    pub resource_aws_ec2_instance_iam_instance_profile_arn:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_aws_ec2_instance_iam_instance_profile_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The identifier of the VPC that the instance was launched in.</p>
     #[doc(hidden)]
-    pub resource_aws_ec2_instance_vpc_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_aws_ec2_instance_vpc_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The identifier of the subnet that the instance was launched in.</p>
     #[doc(hidden)]
-    pub resource_aws_ec2_instance_subnet_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_aws_ec2_instance_subnet_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The date and time the instance was launched.</p>
     #[doc(hidden)]
-    pub resource_aws_ec2_instance_launched_at:
-        ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub resource_aws_ec2_instance_launched_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>The canonical user ID of the owner of the S3 bucket.</p>
     #[doc(hidden)]
-    pub resource_aws_s3_bucket_owner_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_aws_s3_bucket_owner_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The display name of the owner of the S3 bucket.</p>
     #[doc(hidden)]
-    pub resource_aws_s3_bucket_owner_name:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_aws_s3_bucket_owner_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The user associated with the IAM access key related to a finding.</p>
-    #[deprecated(
-        note = "This filter is deprecated. Instead, use ResourceAwsIamAccessKeyPrincipalName."
-    )]
+    #[deprecated(note = "This filter is deprecated. Instead, use ResourceAwsIamAccessKeyPrincipalName.")]
     #[doc(hidden)]
-    pub resource_aws_iam_access_key_user_name:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_aws_iam_access_key_user_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The name of the principal that is associated with an IAM access key.</p>
     #[doc(hidden)]
-    pub resource_aws_iam_access_key_principal_name:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_aws_iam_access_key_principal_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The status of the IAM access key related to a finding.</p>
     #[doc(hidden)]
-    pub resource_aws_iam_access_key_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_aws_iam_access_key_status: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The creation date/time of the IAM access key related to a finding.</p>
     #[doc(hidden)]
-    pub resource_aws_iam_access_key_created_at:
-        ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub resource_aws_iam_access_key_created_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>The name of an IAM user.</p>
     #[doc(hidden)]
-    pub resource_aws_iam_user_user_name:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_aws_iam_user_user_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The name of the container related to a finding.</p>
     #[doc(hidden)]
     pub resource_container_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The identifier of the image related to a finding.</p>
     #[doc(hidden)]
-    pub resource_container_image_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_container_image_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The name of the image related to a finding.</p>
     #[doc(hidden)]
-    pub resource_container_image_name:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_container_image_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>A timestamp that identifies when the container was started.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
-    pub resource_container_launched_at:
-        ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub resource_container_launched_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>The details of a resource that doesn't have a specific subfield for the resource type defined.</p>
     #[doc(hidden)]
     pub resource_details_other: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
@@ -314,8 +281,7 @@ pub struct AwsSecurityFindingFilters {
     pub record_state: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The ARN of the solution that generated a related finding.</p>
     #[doc(hidden)]
-    pub related_findings_product_arn:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub related_findings_product_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The solution-generated identifier for a related finding.</p>
     #[doc(hidden)]
     pub related_findings_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -335,45 +301,36 @@ pub struct AwsSecurityFindingFilters {
     /// <p>The finding provider value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
     #[doc(hidden)]
-    pub finding_provider_fields_confidence:
-        ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
+    pub finding_provider_fields_confidence: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     /// <p>The finding provider value for the level of importance assigned to the resources associated with the findings.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
     #[doc(hidden)]
-    pub finding_provider_fields_criticality:
-        ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
+    pub finding_provider_fields_criticality: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     /// <p>The finding identifier of a related finding that is identified by the finding provider.</p>
     #[doc(hidden)]
-    pub finding_provider_fields_related_findings_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub finding_provider_fields_related_findings_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The ARN of the solution that generated a related finding that is identified by the finding provider.</p>
     #[doc(hidden)]
-    pub finding_provider_fields_related_findings_product_arn:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub finding_provider_fields_related_findings_product_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The finding provider value for the severity label.</p>
     #[doc(hidden)]
-    pub finding_provider_fields_severity_label:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub finding_provider_fields_severity_label: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The finding provider's original value for the severity.</p>
     #[doc(hidden)]
-    pub finding_provider_fields_severity_original:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub finding_provider_fields_severity_original: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>One or more finding types that the finding provider assigned to the finding. Uses the format of <code>namespace/category/classifier</code> that classify a finding.</p>
     /// <p>Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
     #[doc(hidden)]
-    pub finding_provider_fields_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub finding_provider_fields_types: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Indicates whether or not sample findings are included in the filter results.</p>
     #[doc(hidden)]
     pub sample: ::std::option::Option<::std::vec::Vec<crate::types::BooleanFilter>>,
     /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
     #[doc(hidden)]
-    pub compliance_security_control_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub compliance_security_control_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
     #[doc(hidden)]
-    pub compliance_associated_standards_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub compliance_associated_standards_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
 }
 impl AwsSecurityFindingFilters {
     /// <p>The ARN generated by Security Hub that uniquely identifies a third-party company (security findings provider) after this provider's product (solution that generates findings) is registered with Security Hub.</p>
@@ -426,9 +383,7 @@ impl AwsSecurityFindingFilters {
         self.severity_product.as_deref()
     }
     /// <p>The normalized severity of a finding.</p>
-    #[deprecated(
-        note = "This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel."
-    )]
+    #[deprecated(note = "This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel.")]
     pub fn severity_normalized(&self) -> ::std::option::Option<&[crate::types::NumberFilter]> {
         self.severity_normalized.as_deref()
     }
@@ -535,9 +490,7 @@ impl AwsSecurityFindingFilters {
         self.network_destination_port.as_deref()
     }
     /// <p>The destination domain of network-related information about a finding.</p>
-    pub fn network_destination_domain(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn network_destination_domain(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.network_destination_domain.as_deref()
     }
     /// <p>The name of the process.</p>
@@ -567,39 +520,27 @@ impl AwsSecurityFindingFilters {
         self.process_terminated_at.as_deref()
     }
     /// <p>The type of a threat intelligence indicator.</p>
-    pub fn threat_intel_indicator_type(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn threat_intel_indicator_type(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.threat_intel_indicator_type.as_deref()
     }
     /// <p>The value of a threat intelligence indicator.</p>
-    pub fn threat_intel_indicator_value(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn threat_intel_indicator_value(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.threat_intel_indicator_value.as_deref()
     }
     /// <p>The category of a threat intelligence indicator.</p>
-    pub fn threat_intel_indicator_category(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn threat_intel_indicator_category(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.threat_intel_indicator_category.as_deref()
     }
     /// <p>A timestamp that identifies the last observation of a threat intelligence indicator.</p>
-    pub fn threat_intel_indicator_last_observed_at(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DateFilter]> {
+    pub fn threat_intel_indicator_last_observed_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
         self.threat_intel_indicator_last_observed_at.as_deref()
     }
     /// <p>The source of the threat intelligence.</p>
-    pub fn threat_intel_indicator_source(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn threat_intel_indicator_source(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.threat_intel_indicator_source.as_deref()
     }
     /// <p>The URL for more details from the source of the threat intelligence.</p>
-    pub fn threat_intel_indicator_source_url(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn threat_intel_indicator_source_url(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.threat_intel_indicator_source_url.as_deref()
     }
     /// <p>Specifies the type of the resource that details are provided for.</p>
@@ -623,103 +564,68 @@ impl AwsSecurityFindingFilters {
         self.resource_tags.as_deref()
     }
     /// <p>The instance type of the instance.</p>
-    pub fn resource_aws_ec2_instance_type(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn resource_aws_ec2_instance_type(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.resource_aws_ec2_instance_type.as_deref()
     }
     /// <p>The Amazon Machine Image (AMI) ID of the instance.</p>
-    pub fn resource_aws_ec2_instance_image_id(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn resource_aws_ec2_instance_image_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.resource_aws_ec2_instance_image_id.as_deref()
     }
     /// <p>The IPv4 addresses associated with the instance.</p>
-    pub fn resource_aws_ec2_instance_ip_v4_addresses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IpFilter]> {
+    pub fn resource_aws_ec2_instance_ip_v4_addresses(&self) -> ::std::option::Option<&[crate::types::IpFilter]> {
         self.resource_aws_ec2_instance_ip_v4_addresses.as_deref()
     }
     /// <p>The IPv6 addresses associated with the instance.</p>
-    pub fn resource_aws_ec2_instance_ip_v6_addresses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IpFilter]> {
+    pub fn resource_aws_ec2_instance_ip_v6_addresses(&self) -> ::std::option::Option<&[crate::types::IpFilter]> {
         self.resource_aws_ec2_instance_ip_v6_addresses.as_deref()
     }
     /// <p>The key name associated with the instance.</p>
-    pub fn resource_aws_ec2_instance_key_name(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn resource_aws_ec2_instance_key_name(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.resource_aws_ec2_instance_key_name.as_deref()
     }
     /// <p>The IAM profile ARN of the instance.</p>
-    pub fn resource_aws_ec2_instance_iam_instance_profile_arn(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.resource_aws_ec2_instance_iam_instance_profile_arn
-            .as_deref()
+    pub fn resource_aws_ec2_instance_iam_instance_profile_arn(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
+        self.resource_aws_ec2_instance_iam_instance_profile_arn.as_deref()
     }
     /// <p>The identifier of the VPC that the instance was launched in.</p>
-    pub fn resource_aws_ec2_instance_vpc_id(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn resource_aws_ec2_instance_vpc_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.resource_aws_ec2_instance_vpc_id.as_deref()
     }
     /// <p>The identifier of the subnet that the instance was launched in.</p>
-    pub fn resource_aws_ec2_instance_subnet_id(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn resource_aws_ec2_instance_subnet_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.resource_aws_ec2_instance_subnet_id.as_deref()
     }
     /// <p>The date and time the instance was launched.</p>
-    pub fn resource_aws_ec2_instance_launched_at(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DateFilter]> {
+    pub fn resource_aws_ec2_instance_launched_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
         self.resource_aws_ec2_instance_launched_at.as_deref()
     }
     /// <p>The canonical user ID of the owner of the S3 bucket.</p>
-    pub fn resource_aws_s3_bucket_owner_id(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn resource_aws_s3_bucket_owner_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.resource_aws_s3_bucket_owner_id.as_deref()
     }
     /// <p>The display name of the owner of the S3 bucket.</p>
-    pub fn resource_aws_s3_bucket_owner_name(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn resource_aws_s3_bucket_owner_name(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.resource_aws_s3_bucket_owner_name.as_deref()
     }
     /// <p>The user associated with the IAM access key related to a finding.</p>
-    #[deprecated(
-        note = "This filter is deprecated. Instead, use ResourceAwsIamAccessKeyPrincipalName."
-    )]
-    pub fn resource_aws_iam_access_key_user_name(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    #[deprecated(note = "This filter is deprecated. Instead, use ResourceAwsIamAccessKeyPrincipalName.")]
+    pub fn resource_aws_iam_access_key_user_name(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.resource_aws_iam_access_key_user_name.as_deref()
     }
     /// <p>The name of the principal that is associated with an IAM access key.</p>
-    pub fn resource_aws_iam_access_key_principal_name(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn resource_aws_iam_access_key_principal_name(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.resource_aws_iam_access_key_principal_name.as_deref()
     }
     /// <p>The status of the IAM access key related to a finding.</p>
-    pub fn resource_aws_iam_access_key_status(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn resource_aws_iam_access_key_status(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.resource_aws_iam_access_key_status.as_deref()
     }
     /// <p>The creation date/time of the IAM access key related to a finding.</p>
-    pub fn resource_aws_iam_access_key_created_at(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DateFilter]> {
+    pub fn resource_aws_iam_access_key_created_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
         self.resource_aws_iam_access_key_created_at.as_deref()
     }
     /// <p>The name of an IAM user.</p>
-    pub fn resource_aws_iam_user_user_name(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn resource_aws_iam_user_user_name(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.resource_aws_iam_user_user_name.as_deref()
     }
     /// <p>The name of the container related to a finding.</p>
@@ -727,22 +633,16 @@ impl AwsSecurityFindingFilters {
         self.resource_container_name.as_deref()
     }
     /// <p>The identifier of the image related to a finding.</p>
-    pub fn resource_container_image_id(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn resource_container_image_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.resource_container_image_id.as_deref()
     }
     /// <p>The name of the image related to a finding.</p>
-    pub fn resource_container_image_name(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn resource_container_image_name(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.resource_container_image_name.as_deref()
     }
     /// <p>A timestamp that identifies when the container was started.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    pub fn resource_container_launched_at(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DateFilter]> {
+    pub fn resource_container_launched_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
         self.resource_container_launched_at.as_deref()
     }
     /// <p>The details of a resource that doesn't have a specific subfield for the resource type defined.</p>
@@ -789,9 +689,7 @@ impl AwsSecurityFindingFilters {
         self.record_state.as_deref()
     }
     /// <p>The ARN of the solution that generated a related finding.</p>
-    pub fn related_findings_product_arn(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn related_findings_product_arn(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.related_findings_product_arn.as_deref()
     }
     /// <p>The solution-generated identifier for a related finding.</p>
@@ -817,48 +715,33 @@ impl AwsSecurityFindingFilters {
     }
     /// <p>The finding provider value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
-    pub fn finding_provider_fields_confidence(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NumberFilter]> {
+    pub fn finding_provider_fields_confidence(&self) -> ::std::option::Option<&[crate::types::NumberFilter]> {
         self.finding_provider_fields_confidence.as_deref()
     }
     /// <p>The finding provider value for the level of importance assigned to the resources associated with the findings.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
-    pub fn finding_provider_fields_criticality(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NumberFilter]> {
+    pub fn finding_provider_fields_criticality(&self) -> ::std::option::Option<&[crate::types::NumberFilter]> {
         self.finding_provider_fields_criticality.as_deref()
     }
     /// <p>The finding identifier of a related finding that is identified by the finding provider.</p>
-    pub fn finding_provider_fields_related_findings_id(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn finding_provider_fields_related_findings_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.finding_provider_fields_related_findings_id.as_deref()
     }
     /// <p>The ARN of the solution that generated a related finding that is identified by the finding provider.</p>
-    pub fn finding_provider_fields_related_findings_product_arn(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.finding_provider_fields_related_findings_product_arn
-            .as_deref()
+    pub fn finding_provider_fields_related_findings_product_arn(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
+        self.finding_provider_fields_related_findings_product_arn.as_deref()
     }
     /// <p>The finding provider value for the severity label.</p>
-    pub fn finding_provider_fields_severity_label(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn finding_provider_fields_severity_label(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.finding_provider_fields_severity_label.as_deref()
     }
     /// <p>The finding provider's original value for the severity.</p>
-    pub fn finding_provider_fields_severity_original(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn finding_provider_fields_severity_original(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.finding_provider_fields_severity_original.as_deref()
     }
     /// <p>One or more finding types that the finding provider assigned to the finding. Uses the format of <code>namespace/category/classifier</code> that classify a finding.</p>
     /// <p>Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
-    pub fn finding_provider_fields_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn finding_provider_fields_types(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.finding_provider_fields_types.as_deref()
     }
     /// <p>Indicates whether or not sample findings are included in the filter results.</p>
@@ -866,15 +749,11 @@ impl AwsSecurityFindingFilters {
         self.sample.as_deref()
     }
     /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
-    pub fn compliance_security_control_id(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn compliance_security_control_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.compliance_security_control_id.as_deref()
     }
     /// <p> The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
-    pub fn compliance_associated_standards_id(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StringFilter]> {
+    pub fn compliance_associated_standards_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.compliance_associated_standards_id.as_deref()
     }
 }
@@ -887,9 +766,7 @@ impl AwsSecurityFindingFilters {
 
 /// A builder for [`AwsSecurityFindingFilters`](crate::types::AwsSecurityFindingFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsSecurityFindingFiltersBuilder {
     pub(crate) product_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) aws_account_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -902,15 +779,13 @@ pub struct AwsSecurityFindingFiltersBuilder {
     pub(crate) created_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     pub(crate) updated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     pub(crate) severity_product: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    pub(crate) severity_normalized:
-        ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
+    pub(crate) severity_normalized: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     pub(crate) severity_label: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) confidence: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     pub(crate) criticality: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     pub(crate) title: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) description: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) recommendation_text:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) recommendation_text: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) source_url: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) product_fields: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
     pub(crate) product_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -920,128 +795,76 @@ pub struct AwsSecurityFindingFiltersBuilder {
     pub(crate) malware_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) malware_path: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) malware_state: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) network_direction:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) network_direction: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) network_protocol: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) network_source_ip_v4: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
     pub(crate) network_source_ip_v6: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
-    pub(crate) network_source_port:
-        ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    pub(crate) network_source_domain:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) network_source_mac:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) network_destination_ip_v4:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
-    pub(crate) network_destination_ip_v6:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
-    pub(crate) network_destination_port:
-        ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    pub(crate) network_destination_domain:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) network_source_port: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
+    pub(crate) network_source_domain: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) network_source_mac: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) network_destination_ip_v4: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub(crate) network_destination_ip_v6: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub(crate) network_destination_port: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
+    pub(crate) network_destination_domain: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) process_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) process_path: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) process_pid: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    pub(crate) process_parent_pid:
-        ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    pub(crate) process_launched_at:
-        ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    pub(crate) process_terminated_at:
-        ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    pub(crate) threat_intel_indicator_type:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) threat_intel_indicator_value:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) threat_intel_indicator_category:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) threat_intel_indicator_last_observed_at:
-        ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    pub(crate) threat_intel_indicator_source:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) threat_intel_indicator_source_url:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) process_parent_pid: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
+    pub(crate) process_launched_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub(crate) process_terminated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub(crate) threat_intel_indicator_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) threat_intel_indicator_value: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) threat_intel_indicator_category: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) threat_intel_indicator_last_observed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub(crate) threat_intel_indicator_source: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) threat_intel_indicator_source_url: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) resource_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) resource_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_partition:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_partition: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) resource_region: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
-    pub(crate) resource_aws_ec2_instance_type:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_aws_ec2_instance_image_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_aws_ec2_instance_ip_v4_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
-    pub(crate) resource_aws_ec2_instance_ip_v6_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
-    pub(crate) resource_aws_ec2_instance_key_name:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_aws_ec2_instance_iam_instance_profile_arn:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_aws_ec2_instance_vpc_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_aws_ec2_instance_subnet_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_aws_ec2_instance_launched_at:
-        ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    pub(crate) resource_aws_s3_bucket_owner_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_aws_s3_bucket_owner_name:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_aws_iam_access_key_user_name:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_aws_iam_access_key_principal_name:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_aws_iam_access_key_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_aws_iam_access_key_created_at:
-        ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    pub(crate) resource_aws_iam_user_user_name:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_container_name:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_container_image_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_container_image_name:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_container_launched_at:
-        ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    pub(crate) resource_details_other:
-        ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
-    pub(crate) compliance_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) verification_state:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_aws_ec2_instance_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_aws_ec2_instance_image_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_aws_ec2_instance_ip_v4_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub(crate) resource_aws_ec2_instance_ip_v6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub(crate) resource_aws_ec2_instance_key_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_aws_ec2_instance_iam_instance_profile_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_aws_ec2_instance_vpc_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_aws_ec2_instance_subnet_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_aws_ec2_instance_launched_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub(crate) resource_aws_s3_bucket_owner_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_aws_s3_bucket_owner_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_aws_iam_access_key_user_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_aws_iam_access_key_principal_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_aws_iam_access_key_status: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_aws_iam_access_key_created_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub(crate) resource_aws_iam_user_user_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_container_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_container_image_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_container_image_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_container_launched_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
+    pub(crate) resource_details_other: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
+    pub(crate) compliance_status: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) verification_state: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) workflow_state: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) workflow_status: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) record_state: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) related_findings_product_arn:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) related_findings_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) related_findings_product_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) related_findings_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) note_text: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) note_updated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     pub(crate) note_updated_by: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) keyword: ::std::option::Option<::std::vec::Vec<crate::types::KeywordFilter>>,
-    pub(crate) finding_provider_fields_confidence:
-        ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    pub(crate) finding_provider_fields_criticality:
-        ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    pub(crate) finding_provider_fields_related_findings_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) finding_provider_fields_related_findings_product_arn:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) finding_provider_fields_severity_label:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) finding_provider_fields_severity_original:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) finding_provider_fields_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) finding_provider_fields_confidence: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
+    pub(crate) finding_provider_fields_criticality: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
+    pub(crate) finding_provider_fields_related_findings_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) finding_provider_fields_related_findings_product_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) finding_provider_fields_severity_label: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) finding_provider_fields_severity_original: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) finding_provider_fields_types: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) sample: ::std::option::Option<::std::vec::Vec<crate::types::BooleanFilter>>,
-    pub(crate) compliance_security_control_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) compliance_associated_standards_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) compliance_security_control_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) compliance_associated_standards_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
 }
 impl AwsSecurityFindingFiltersBuilder {
     /// Appends an item to `product_arn`.
@@ -1056,17 +879,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The ARN generated by Security Hub that uniquely identifies a third-party company (security findings provider) after this provider's product (solution that generates findings) is registered with Security Hub.</p>
-    pub fn set_product_arn(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_product_arn(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.product_arn = input;
         self
     }
     /// <p>The ARN generated by Security Hub that uniquely identifies a third-party company (security findings provider) after this provider's product (solution that generates findings) is registered with Security Hub.</p>
-    pub fn get_product_arn(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_product_arn(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.product_arn
     }
     /// Appends an item to `aws_account_id`.
@@ -1081,17 +899,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The Amazon Web Services account ID that a finding is generated in.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.aws_account_id = input;
         self
     }
     /// <p>The Amazon Web Services account ID that a finding is generated in.</p>
-    pub fn get_aws_account_id(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.aws_account_id
     }
     /// Appends an item to `id`.
@@ -1106,10 +919,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The security findings provider-specific identifier for a finding.</p>
-    pub fn set_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.id = input;
         self
     }
@@ -1129,17 +939,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc.</p>
-    pub fn set_generator_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_generator_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.generator_id = input;
         self
     }
     /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc.</p>
-    pub fn get_generator_id(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_generator_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.generator_id
     }
     /// Appends an item to `region`.
@@ -1154,17 +959,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The Region from which the finding was generated.</p>
-    pub fn set_region(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.region = input;
         self
     }
     /// <p>The Region from which the finding was generated.</p>
-    pub fn get_region(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_region(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.region
     }
     /// Appends an item to `r#type`.
@@ -1179,10 +979,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>A finding type in the format of <code>namespace/category/classifier</code> that classifies a finding.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.r#type = input;
         self
     }
@@ -1204,18 +1001,13 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider first observed the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    pub fn set_first_observed_at(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    ) -> Self {
+    pub fn set_first_observed_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.first_observed_at = input;
         self
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider first observed the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    pub fn get_first_observed_at(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+    pub fn get_first_observed_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.first_observed_at
     }
     /// Appends an item to `last_observed_at`.
@@ -1232,18 +1024,13 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider most recently observed the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    pub fn set_last_observed_at(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    ) -> Self {
+    pub fn set_last_observed_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.last_observed_at = input;
         self
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider most recently observed the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    pub fn get_last_observed_at(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+    pub fn get_last_observed_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.last_observed_at
     }
     /// Appends an item to `created_at`.
@@ -1260,18 +1047,13 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider captured the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.created_at = input;
         self
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider captured the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    pub fn get_created_at(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+    pub fn get_created_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.created_at
     }
     /// Appends an item to `updated_at`.
@@ -1288,18 +1070,13 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding record. </p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.updated_at = input;
         self
     }
     /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding record. </p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    pub fn get_updated_at(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+    pub fn get_updated_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.updated_at
     }
     /// Appends an item to `severity_product`.
@@ -1316,18 +1093,13 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>The native severity as defined by the security findings provider's solution that generated the finding.</p>
     #[deprecated(note = "This filter is deprecated. Instead, use FindingProviderSeverityOriginal.")]
-    pub fn set_severity_product(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    ) -> Self {
+    pub fn set_severity_product(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
         self.severity_product = input;
         self
     }
     /// <p>The native severity as defined by the security findings provider's solution that generated the finding.</p>
     #[deprecated(note = "This filter is deprecated. Instead, use FindingProviderSeverityOriginal.")]
-    pub fn get_severity_product(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+    pub fn get_severity_product(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
         &self.severity_product
     }
     /// Appends an item to `severity_normalized`.
@@ -1335,9 +1107,7 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_severity_normalized`](Self::set_severity_normalized).
     ///
     /// <p>The normalized severity of a finding.</p>
-    #[deprecated(
-        note = "This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel."
-    )]
+    #[deprecated(note = "This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel.")]
     pub fn severity_normalized(mut self, input: crate::types::NumberFilter) -> Self {
         let mut v = self.severity_normalized.unwrap_or_default();
         v.push(input);
@@ -1345,23 +1115,14 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The normalized severity of a finding.</p>
-    #[deprecated(
-        note = "This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel."
-    )]
-    pub fn set_severity_normalized(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    ) -> Self {
+    #[deprecated(note = "This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel.")]
+    pub fn set_severity_normalized(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
         self.severity_normalized = input;
         self
     }
     /// <p>The normalized severity of a finding.</p>
-    #[deprecated(
-        note = "This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel."
-    )]
-    pub fn get_severity_normalized(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+    #[deprecated(note = "This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel.")]
+    pub fn get_severity_normalized(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
         &self.severity_normalized
     }
     /// Appends an item to `severity_label`.
@@ -1376,17 +1137,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The label of a finding's severity.</p>
-    pub fn set_severity_label(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_severity_label(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.severity_label = input;
         self
     }
     /// <p>The label of a finding's severity.</p>
-    pub fn get_severity_label(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_severity_label(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.severity_label
     }
     /// Appends an item to `confidence`.
@@ -1403,18 +1159,13 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
-    pub fn set_confidence(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    ) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
         self.confidence = input;
         self
     }
     /// <p>A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
-    pub fn get_confidence(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+    pub fn get_confidence(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
         &self.confidence
     }
     /// Appends an item to `criticality`.
@@ -1431,18 +1182,13 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>The level of importance assigned to the resources associated with the finding.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.</p>
-    pub fn set_criticality(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    ) -> Self {
+    pub fn set_criticality(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
         self.criticality = input;
         self
     }
     /// <p>The level of importance assigned to the resources associated with the finding.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.</p>
-    pub fn get_criticality(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+    pub fn get_criticality(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
         &self.criticality
     }
     /// Appends an item to `title`.
@@ -1457,10 +1203,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>A finding's title.</p>
-    pub fn set_title(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.title = input;
         self
     }
@@ -1480,17 +1223,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>A finding's description.</p>
-    pub fn set_description(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.description = input;
         self
     }
     /// <p>A finding's description.</p>
-    pub fn get_description(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_description(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.description
     }
     /// Appends an item to `recommendation_text`.
@@ -1505,17 +1243,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The recommendation of what to do about the issue described in a finding.</p>
-    pub fn set_recommendation_text(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_recommendation_text(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.recommendation_text = input;
         self
     }
     /// <p>The recommendation of what to do about the issue described in a finding.</p>
-    pub fn get_recommendation_text(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_recommendation_text(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.recommendation_text
     }
     /// Appends an item to `source_url`.
@@ -1530,17 +1263,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>A URL that links to a page about the current finding in the security findings provider's solution.</p>
-    pub fn set_source_url(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_source_url(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.source_url = input;
         self
     }
     /// <p>A URL that links to a page about the current finding in the security findings provider's solution.</p>
-    pub fn get_source_url(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_source_url(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.source_url
     }
     /// Appends an item to `product_fields`.
@@ -1555,17 +1283,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>A data type where security findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
-    pub fn set_product_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
-    ) -> Self {
+    pub fn set_product_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>) -> Self {
         self.product_fields = input;
         self
     }
     /// <p>A data type where security findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
-    pub fn get_product_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
+    pub fn get_product_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
         &self.product_fields
     }
     /// Appends an item to `product_name`.
@@ -1580,17 +1303,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The name of the solution (product) that generates findings.</p>
-    pub fn set_product_name(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_product_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.product_name = input;
         self
     }
     /// <p>The name of the solution (product) that generates findings.</p>
-    pub fn get_product_name(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_product_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.product_name
     }
     /// Appends an item to `company_name`.
@@ -1605,17 +1323,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The name of the findings provider (company) that owns the solution (product) that generates findings.</p>
-    pub fn set_company_name(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_company_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.company_name = input;
         self
     }
     /// <p>The name of the findings provider (company) that owns the solution (product) that generates findings.</p>
-    pub fn get_company_name(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_company_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.company_name
     }
     /// Appends an item to `user_defined_fields`.
@@ -1630,17 +1343,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. </p>
-    pub fn set_user_defined_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
-    ) -> Self {
+    pub fn set_user_defined_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>) -> Self {
         self.user_defined_fields = input;
         self
     }
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. </p>
-    pub fn get_user_defined_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
+    pub fn get_user_defined_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
         &self.user_defined_fields
     }
     /// Appends an item to `malware_name`.
@@ -1655,17 +1363,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The name of the malware that was observed.</p>
-    pub fn set_malware_name(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_malware_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.malware_name = input;
         self
     }
     /// <p>The name of the malware that was observed.</p>
-    pub fn get_malware_name(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_malware_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.malware_name
     }
     /// Appends an item to `malware_type`.
@@ -1680,17 +1383,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The type of the malware that was observed.</p>
-    pub fn set_malware_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_malware_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.malware_type = input;
         self
     }
     /// <p>The type of the malware that was observed.</p>
-    pub fn get_malware_type(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_malware_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.malware_type
     }
     /// Appends an item to `malware_path`.
@@ -1705,17 +1403,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The filesystem path of the malware that was observed.</p>
-    pub fn set_malware_path(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_malware_path(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.malware_path = input;
         self
     }
     /// <p>The filesystem path of the malware that was observed.</p>
-    pub fn get_malware_path(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_malware_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.malware_path
     }
     /// Appends an item to `malware_state`.
@@ -1730,17 +1423,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The state of the malware that was observed.</p>
-    pub fn set_malware_state(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_malware_state(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.malware_state = input;
         self
     }
     /// <p>The state of the malware that was observed.</p>
-    pub fn get_malware_state(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_malware_state(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.malware_state
     }
     /// Appends an item to `network_direction`.
@@ -1755,17 +1443,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>Indicates the direction of network traffic associated with a finding.</p>
-    pub fn set_network_direction(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_network_direction(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.network_direction = input;
         self
     }
     /// <p>Indicates the direction of network traffic associated with a finding.</p>
-    pub fn get_network_direction(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_network_direction(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.network_direction
     }
     /// Appends an item to `network_protocol`.
@@ -1780,17 +1463,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The protocol of network-related information about a finding.</p>
-    pub fn set_network_protocol(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_network_protocol(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.network_protocol = input;
         self
     }
     /// <p>The protocol of network-related information about a finding.</p>
-    pub fn get_network_protocol(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_network_protocol(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.network_protocol
     }
     /// Appends an item to `network_source_ip_v4`.
@@ -1805,17 +1483,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The source IPv4 address of network-related information about a finding.</p>
-    pub fn set_network_source_ip_v4(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
-    ) -> Self {
+    pub fn set_network_source_ip_v4(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
         self.network_source_ip_v4 = input;
         self
     }
     /// <p>The source IPv4 address of network-related information about a finding.</p>
-    pub fn get_network_source_ip_v4(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
+    pub fn get_network_source_ip_v4(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
         &self.network_source_ip_v4
     }
     /// Appends an item to `network_source_ip_v6`.
@@ -1830,17 +1503,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The source IPv6 address of network-related information about a finding.</p>
-    pub fn set_network_source_ip_v6(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
-    ) -> Self {
+    pub fn set_network_source_ip_v6(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
         self.network_source_ip_v6 = input;
         self
     }
     /// <p>The source IPv6 address of network-related information about a finding.</p>
-    pub fn get_network_source_ip_v6(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
+    pub fn get_network_source_ip_v6(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
         &self.network_source_ip_v6
     }
     /// Appends an item to `network_source_port`.
@@ -1855,17 +1523,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The source port of network-related information about a finding.</p>
-    pub fn set_network_source_port(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    ) -> Self {
+    pub fn set_network_source_port(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
         self.network_source_port = input;
         self
     }
     /// <p>The source port of network-related information about a finding.</p>
-    pub fn get_network_source_port(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+    pub fn get_network_source_port(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
         &self.network_source_port
     }
     /// Appends an item to `network_source_domain`.
@@ -1880,17 +1543,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The source domain of network-related information about a finding.</p>
-    pub fn set_network_source_domain(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_network_source_domain(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.network_source_domain = input;
         self
     }
     /// <p>The source domain of network-related information about a finding.</p>
-    pub fn get_network_source_domain(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_network_source_domain(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.network_source_domain
     }
     /// Appends an item to `network_source_mac`.
@@ -1905,17 +1563,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The source media access control (MAC) address of network-related information about a finding.</p>
-    pub fn set_network_source_mac(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_network_source_mac(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.network_source_mac = input;
         self
     }
     /// <p>The source media access control (MAC) address of network-related information about a finding.</p>
-    pub fn get_network_source_mac(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_network_source_mac(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.network_source_mac
     }
     /// Appends an item to `network_destination_ip_v4`.
@@ -1930,17 +1583,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The destination IPv4 address of network-related information about a finding.</p>
-    pub fn set_network_destination_ip_v4(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
-    ) -> Self {
+    pub fn set_network_destination_ip_v4(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
         self.network_destination_ip_v4 = input;
         self
     }
     /// <p>The destination IPv4 address of network-related information about a finding.</p>
-    pub fn get_network_destination_ip_v4(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
+    pub fn get_network_destination_ip_v4(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
         &self.network_destination_ip_v4
     }
     /// Appends an item to `network_destination_ip_v6`.
@@ -1955,17 +1603,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The destination IPv6 address of network-related information about a finding.</p>
-    pub fn set_network_destination_ip_v6(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
-    ) -> Self {
+    pub fn set_network_destination_ip_v6(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
         self.network_destination_ip_v6 = input;
         self
     }
     /// <p>The destination IPv6 address of network-related information about a finding.</p>
-    pub fn get_network_destination_ip_v6(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
+    pub fn get_network_destination_ip_v6(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
         &self.network_destination_ip_v6
     }
     /// Appends an item to `network_destination_port`.
@@ -1980,17 +1623,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The destination port of network-related information about a finding.</p>
-    pub fn set_network_destination_port(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    ) -> Self {
+    pub fn set_network_destination_port(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
         self.network_destination_port = input;
         self
     }
     /// <p>The destination port of network-related information about a finding.</p>
-    pub fn get_network_destination_port(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+    pub fn get_network_destination_port(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
         &self.network_destination_port
     }
     /// Appends an item to `network_destination_domain`.
@@ -2005,17 +1643,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The destination domain of network-related information about a finding.</p>
-    pub fn set_network_destination_domain(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_network_destination_domain(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.network_destination_domain = input;
         self
     }
     /// <p>The destination domain of network-related information about a finding.</p>
-    pub fn get_network_destination_domain(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_network_destination_domain(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.network_destination_domain
     }
     /// Appends an item to `process_name`.
@@ -2030,17 +1663,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The name of the process.</p>
-    pub fn set_process_name(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_process_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.process_name = input;
         self
     }
     /// <p>The name of the process.</p>
-    pub fn get_process_name(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_process_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.process_name
     }
     /// Appends an item to `process_path`.
@@ -2055,17 +1683,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The path to the process executable.</p>
-    pub fn set_process_path(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_process_path(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.process_path = input;
         self
     }
     /// <p>The path to the process executable.</p>
-    pub fn get_process_path(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_process_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.process_path
     }
     /// Appends an item to `process_pid`.
@@ -2080,17 +1703,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The process ID.</p>
-    pub fn set_process_pid(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    ) -> Self {
+    pub fn set_process_pid(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
         self.process_pid = input;
         self
     }
     /// <p>The process ID.</p>
-    pub fn get_process_pid(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+    pub fn get_process_pid(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
         &self.process_pid
     }
     /// Appends an item to `process_parent_pid`.
@@ -2105,17 +1723,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The parent process ID. This field accepts positive integers between <code>O</code> and <code>2147483647</code>.</p>
-    pub fn set_process_parent_pid(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    ) -> Self {
+    pub fn set_process_parent_pid(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
         self.process_parent_pid = input;
         self
     }
     /// <p>The parent process ID. This field accepts positive integers between <code>O</code> and <code>2147483647</code>.</p>
-    pub fn get_process_parent_pid(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+    pub fn get_process_parent_pid(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
         &self.process_parent_pid
     }
     /// Appends an item to `process_launched_at`.
@@ -2132,18 +1745,13 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>A timestamp that identifies when the process was launched.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    pub fn set_process_launched_at(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    ) -> Self {
+    pub fn set_process_launched_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.process_launched_at = input;
         self
     }
     /// <p>A timestamp that identifies when the process was launched.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    pub fn get_process_launched_at(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+    pub fn get_process_launched_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.process_launched_at
     }
     /// Appends an item to `process_terminated_at`.
@@ -2160,18 +1768,13 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>A timestamp that identifies when the process was terminated.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    pub fn set_process_terminated_at(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    ) -> Self {
+    pub fn set_process_terminated_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.process_terminated_at = input;
         self
     }
     /// <p>A timestamp that identifies when the process was terminated.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    pub fn get_process_terminated_at(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+    pub fn get_process_terminated_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.process_terminated_at
     }
     /// Appends an item to `threat_intel_indicator_type`.
@@ -2186,17 +1789,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The type of a threat intelligence indicator.</p>
-    pub fn set_threat_intel_indicator_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_threat_intel_indicator_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.threat_intel_indicator_type = input;
         self
     }
     /// <p>The type of a threat intelligence indicator.</p>
-    pub fn get_threat_intel_indicator_type(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_threat_intel_indicator_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.threat_intel_indicator_type
     }
     /// Appends an item to `threat_intel_indicator_value`.
@@ -2211,17 +1809,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The value of a threat intelligence indicator.</p>
-    pub fn set_threat_intel_indicator_value(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_threat_intel_indicator_value(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.threat_intel_indicator_value = input;
         self
     }
     /// <p>The value of a threat intelligence indicator.</p>
-    pub fn get_threat_intel_indicator_value(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_threat_intel_indicator_value(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.threat_intel_indicator_value
     }
     /// Appends an item to `threat_intel_indicator_category`.
@@ -2236,17 +1829,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The category of a threat intelligence indicator.</p>
-    pub fn set_threat_intel_indicator_category(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_threat_intel_indicator_category(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.threat_intel_indicator_category = input;
         self
     }
     /// <p>The category of a threat intelligence indicator.</p>
-    pub fn get_threat_intel_indicator_category(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_threat_intel_indicator_category(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.threat_intel_indicator_category
     }
     /// Appends an item to `threat_intel_indicator_last_observed_at`.
@@ -2254,29 +1842,19 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_threat_intel_indicator_last_observed_at`](Self::set_threat_intel_indicator_last_observed_at).
     ///
     /// <p>A timestamp that identifies the last observation of a threat intelligence indicator.</p>
-    pub fn threat_intel_indicator_last_observed_at(
-        mut self,
-        input: crate::types::DateFilter,
-    ) -> Self {
-        let mut v = self
-            .threat_intel_indicator_last_observed_at
-            .unwrap_or_default();
+    pub fn threat_intel_indicator_last_observed_at(mut self, input: crate::types::DateFilter) -> Self {
+        let mut v = self.threat_intel_indicator_last_observed_at.unwrap_or_default();
         v.push(input);
         self.threat_intel_indicator_last_observed_at = ::std::option::Option::Some(v);
         self
     }
     /// <p>A timestamp that identifies the last observation of a threat intelligence indicator.</p>
-    pub fn set_threat_intel_indicator_last_observed_at(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    ) -> Self {
+    pub fn set_threat_intel_indicator_last_observed_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.threat_intel_indicator_last_observed_at = input;
         self
     }
     /// <p>A timestamp that identifies the last observation of a threat intelligence indicator.</p>
-    pub fn get_threat_intel_indicator_last_observed_at(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+    pub fn get_threat_intel_indicator_last_observed_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.threat_intel_indicator_last_observed_at
     }
     /// Appends an item to `threat_intel_indicator_source`.
@@ -2291,17 +1869,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The source of the threat intelligence.</p>
-    pub fn set_threat_intel_indicator_source(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_threat_intel_indicator_source(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.threat_intel_indicator_source = input;
         self
     }
     /// <p>The source of the threat intelligence.</p>
-    pub fn get_threat_intel_indicator_source(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_threat_intel_indicator_source(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.threat_intel_indicator_source
     }
     /// Appends an item to `threat_intel_indicator_source_url`.
@@ -2316,17 +1889,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The URL for more details from the source of the threat intelligence.</p>
-    pub fn set_threat_intel_indicator_source_url(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_threat_intel_indicator_source_url(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.threat_intel_indicator_source_url = input;
         self
     }
     /// <p>The URL for more details from the source of the threat intelligence.</p>
-    pub fn get_threat_intel_indicator_source_url(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_threat_intel_indicator_source_url(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.threat_intel_indicator_source_url
     }
     /// Appends an item to `resource_type`.
@@ -2341,17 +1909,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>Specifies the type of the resource that details are provided for.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>Specifies the type of the resource that details are provided for.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_type
     }
     /// Appends an item to `resource_id`.
@@ -2366,17 +1929,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The canonical identifier for the given resource type.</p>
-    pub fn set_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_id = input;
         self
     }
     /// <p>The canonical identifier for the given resource type.</p>
-    pub fn get_resource_id(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_id
     }
     /// Appends an item to `resource_partition`.
@@ -2391,17 +1949,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The canonical Amazon Web Services partition name that the Region is assigned to.</p>
-    pub fn set_resource_partition(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_resource_partition(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_partition = input;
         self
     }
     /// <p>The canonical Amazon Web Services partition name that the Region is assigned to.</p>
-    pub fn get_resource_partition(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_partition(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_partition
     }
     /// Appends an item to `resource_region`.
@@ -2416,17 +1969,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
-    pub fn set_resource_region(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_resource_region(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_region = input;
         self
     }
     /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
-    pub fn get_resource_region(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_region(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_region
     }
     /// Appends an item to `resource_tags`.
@@ -2441,17 +1989,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed.</p>
-    pub fn set_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
-    ) -> Self {
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>) -> Self {
         self.resource_tags = input;
         self
     }
     /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed.</p>
-    pub fn get_resource_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
         &self.resource_tags
     }
     /// Appends an item to `resource_aws_ec2_instance_type`.
@@ -2466,17 +2009,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The instance type of the instance.</p>
-    pub fn set_resource_aws_ec2_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_resource_aws_ec2_instance_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_aws_ec2_instance_type = input;
         self
     }
     /// <p>The instance type of the instance.</p>
-    pub fn get_resource_aws_ec2_instance_type(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_aws_ec2_instance_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_aws_ec2_instance_type
     }
     /// Appends an item to `resource_aws_ec2_instance_image_id`.
@@ -2491,17 +2029,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The Amazon Machine Image (AMI) ID of the instance.</p>
-    pub fn set_resource_aws_ec2_instance_image_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_resource_aws_ec2_instance_image_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_aws_ec2_instance_image_id = input;
         self
     }
     /// <p>The Amazon Machine Image (AMI) ID of the instance.</p>
-    pub fn get_resource_aws_ec2_instance_image_id(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_aws_ec2_instance_image_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_aws_ec2_instance_image_id
     }
     /// Appends an item to `resource_aws_ec2_instance_ip_v4_addresses`.
@@ -2509,29 +2042,19 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_resource_aws_ec2_instance_ip_v4_addresses`](Self::set_resource_aws_ec2_instance_ip_v4_addresses).
     ///
     /// <p>The IPv4 addresses associated with the instance.</p>
-    pub fn resource_aws_ec2_instance_ip_v4_addresses(
-        mut self,
-        input: crate::types::IpFilter,
-    ) -> Self {
-        let mut v = self
-            .resource_aws_ec2_instance_ip_v4_addresses
-            .unwrap_or_default();
+    pub fn resource_aws_ec2_instance_ip_v4_addresses(mut self, input: crate::types::IpFilter) -> Self {
+        let mut v = self.resource_aws_ec2_instance_ip_v4_addresses.unwrap_or_default();
         v.push(input);
         self.resource_aws_ec2_instance_ip_v4_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IPv4 addresses associated with the instance.</p>
-    pub fn set_resource_aws_ec2_instance_ip_v4_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
-    ) -> Self {
+    pub fn set_resource_aws_ec2_instance_ip_v4_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
         self.resource_aws_ec2_instance_ip_v4_addresses = input;
         self
     }
     /// <p>The IPv4 addresses associated with the instance.</p>
-    pub fn get_resource_aws_ec2_instance_ip_v4_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
+    pub fn get_resource_aws_ec2_instance_ip_v4_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
         &self.resource_aws_ec2_instance_ip_v4_addresses
     }
     /// Appends an item to `resource_aws_ec2_instance_ip_v6_addresses`.
@@ -2539,29 +2062,19 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_resource_aws_ec2_instance_ip_v6_addresses`](Self::set_resource_aws_ec2_instance_ip_v6_addresses).
     ///
     /// <p>The IPv6 addresses associated with the instance.</p>
-    pub fn resource_aws_ec2_instance_ip_v6_addresses(
-        mut self,
-        input: crate::types::IpFilter,
-    ) -> Self {
-        let mut v = self
-            .resource_aws_ec2_instance_ip_v6_addresses
-            .unwrap_or_default();
+    pub fn resource_aws_ec2_instance_ip_v6_addresses(mut self, input: crate::types::IpFilter) -> Self {
+        let mut v = self.resource_aws_ec2_instance_ip_v6_addresses.unwrap_or_default();
         v.push(input);
         self.resource_aws_ec2_instance_ip_v6_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IPv6 addresses associated with the instance.</p>
-    pub fn set_resource_aws_ec2_instance_ip_v6_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
-    ) -> Self {
+    pub fn set_resource_aws_ec2_instance_ip_v6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
         self.resource_aws_ec2_instance_ip_v6_addresses = input;
         self
     }
     /// <p>The IPv6 addresses associated with the instance.</p>
-    pub fn get_resource_aws_ec2_instance_ip_v6_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
+    pub fn get_resource_aws_ec2_instance_ip_v6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
         &self.resource_aws_ec2_instance_ip_v6_addresses
     }
     /// Appends an item to `resource_aws_ec2_instance_key_name`.
@@ -2576,17 +2089,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The key name associated with the instance.</p>
-    pub fn set_resource_aws_ec2_instance_key_name(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_resource_aws_ec2_instance_key_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_aws_ec2_instance_key_name = input;
         self
     }
     /// <p>The key name associated with the instance.</p>
-    pub fn get_resource_aws_ec2_instance_key_name(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_aws_ec2_instance_key_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_aws_ec2_instance_key_name
     }
     /// Appends an item to `resource_aws_ec2_instance_iam_instance_profile_arn`.
@@ -2594,13 +2102,8 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_resource_aws_ec2_instance_iam_instance_profile_arn`](Self::set_resource_aws_ec2_instance_iam_instance_profile_arn).
     ///
     /// <p>The IAM profile ARN of the instance.</p>
-    pub fn resource_aws_ec2_instance_iam_instance_profile_arn(
-        mut self,
-        input: crate::types::StringFilter,
-    ) -> Self {
-        let mut v = self
-            .resource_aws_ec2_instance_iam_instance_profile_arn
-            .unwrap_or_default();
+    pub fn resource_aws_ec2_instance_iam_instance_profile_arn(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.resource_aws_ec2_instance_iam_instance_profile_arn.unwrap_or_default();
         v.push(input);
         self.resource_aws_ec2_instance_iam_instance_profile_arn = ::std::option::Option::Some(v);
         self
@@ -2614,9 +2117,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The IAM profile ARN of the instance.</p>
-    pub fn get_resource_aws_ec2_instance_iam_instance_profile_arn(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_aws_ec2_instance_iam_instance_profile_arn(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_aws_ec2_instance_iam_instance_profile_arn
     }
     /// Appends an item to `resource_aws_ec2_instance_vpc_id`.
@@ -2631,17 +2132,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The identifier of the VPC that the instance was launched in.</p>
-    pub fn set_resource_aws_ec2_instance_vpc_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_resource_aws_ec2_instance_vpc_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_aws_ec2_instance_vpc_id = input;
         self
     }
     /// <p>The identifier of the VPC that the instance was launched in.</p>
-    pub fn get_resource_aws_ec2_instance_vpc_id(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_aws_ec2_instance_vpc_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_aws_ec2_instance_vpc_id
     }
     /// Appends an item to `resource_aws_ec2_instance_subnet_id`.
@@ -2649,27 +2145,19 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_resource_aws_ec2_instance_subnet_id`](Self::set_resource_aws_ec2_instance_subnet_id).
     ///
     /// <p>The identifier of the subnet that the instance was launched in.</p>
-    pub fn resource_aws_ec2_instance_subnet_id(
-        mut self,
-        input: crate::types::StringFilter,
-    ) -> Self {
+    pub fn resource_aws_ec2_instance_subnet_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.resource_aws_ec2_instance_subnet_id.unwrap_or_default();
         v.push(input);
         self.resource_aws_ec2_instance_subnet_id = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifier of the subnet that the instance was launched in.</p>
-    pub fn set_resource_aws_ec2_instance_subnet_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_resource_aws_ec2_instance_subnet_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_aws_ec2_instance_subnet_id = input;
         self
     }
     /// <p>The identifier of the subnet that the instance was launched in.</p>
-    pub fn get_resource_aws_ec2_instance_subnet_id(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_aws_ec2_instance_subnet_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_aws_ec2_instance_subnet_id
     }
     /// Appends an item to `resource_aws_ec2_instance_launched_at`.
@@ -2677,29 +2165,19 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_resource_aws_ec2_instance_launched_at`](Self::set_resource_aws_ec2_instance_launched_at).
     ///
     /// <p>The date and time the instance was launched.</p>
-    pub fn resource_aws_ec2_instance_launched_at(
-        mut self,
-        input: crate::types::DateFilter,
-    ) -> Self {
-        let mut v = self
-            .resource_aws_ec2_instance_launched_at
-            .unwrap_or_default();
+    pub fn resource_aws_ec2_instance_launched_at(mut self, input: crate::types::DateFilter) -> Self {
+        let mut v = self.resource_aws_ec2_instance_launched_at.unwrap_or_default();
         v.push(input);
         self.resource_aws_ec2_instance_launched_at = ::std::option::Option::Some(v);
         self
     }
     /// <p>The date and time the instance was launched.</p>
-    pub fn set_resource_aws_ec2_instance_launched_at(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    ) -> Self {
+    pub fn set_resource_aws_ec2_instance_launched_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.resource_aws_ec2_instance_launched_at = input;
         self
     }
     /// <p>The date and time the instance was launched.</p>
-    pub fn get_resource_aws_ec2_instance_launched_at(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+    pub fn get_resource_aws_ec2_instance_launched_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.resource_aws_ec2_instance_launched_at
     }
     /// Appends an item to `resource_aws_s3_bucket_owner_id`.
@@ -2714,17 +2192,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The canonical user ID of the owner of the S3 bucket.</p>
-    pub fn set_resource_aws_s3_bucket_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_resource_aws_s3_bucket_owner_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_aws_s3_bucket_owner_id = input;
         self
     }
     /// <p>The canonical user ID of the owner of the S3 bucket.</p>
-    pub fn get_resource_aws_s3_bucket_owner_id(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_aws_s3_bucket_owner_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_aws_s3_bucket_owner_id
     }
     /// Appends an item to `resource_aws_s3_bucket_owner_name`.
@@ -2739,17 +2212,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The display name of the owner of the S3 bucket.</p>
-    pub fn set_resource_aws_s3_bucket_owner_name(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_resource_aws_s3_bucket_owner_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_aws_s3_bucket_owner_name = input;
         self
     }
     /// <p>The display name of the owner of the S3 bucket.</p>
-    pub fn get_resource_aws_s3_bucket_owner_name(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_aws_s3_bucket_owner_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_aws_s3_bucket_owner_name
     }
     /// Appends an item to `resource_aws_iam_access_key_user_name`.
@@ -2757,38 +2225,22 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_resource_aws_iam_access_key_user_name`](Self::set_resource_aws_iam_access_key_user_name).
     ///
     /// <p>The user associated with the IAM access key related to a finding.</p>
-    #[deprecated(
-        note = "This filter is deprecated. Instead, use ResourceAwsIamAccessKeyPrincipalName."
-    )]
-    pub fn resource_aws_iam_access_key_user_name(
-        mut self,
-        input: crate::types::StringFilter,
-    ) -> Self {
-        let mut v = self
-            .resource_aws_iam_access_key_user_name
-            .unwrap_or_default();
+    #[deprecated(note = "This filter is deprecated. Instead, use ResourceAwsIamAccessKeyPrincipalName.")]
+    pub fn resource_aws_iam_access_key_user_name(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.resource_aws_iam_access_key_user_name.unwrap_or_default();
         v.push(input);
         self.resource_aws_iam_access_key_user_name = ::std::option::Option::Some(v);
         self
     }
     /// <p>The user associated with the IAM access key related to a finding.</p>
-    #[deprecated(
-        note = "This filter is deprecated. Instead, use ResourceAwsIamAccessKeyPrincipalName."
-    )]
-    pub fn set_resource_aws_iam_access_key_user_name(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    #[deprecated(note = "This filter is deprecated. Instead, use ResourceAwsIamAccessKeyPrincipalName.")]
+    pub fn set_resource_aws_iam_access_key_user_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_aws_iam_access_key_user_name = input;
         self
     }
     /// <p>The user associated with the IAM access key related to a finding.</p>
-    #[deprecated(
-        note = "This filter is deprecated. Instead, use ResourceAwsIamAccessKeyPrincipalName."
-    )]
-    pub fn get_resource_aws_iam_access_key_user_name(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    #[deprecated(note = "This filter is deprecated. Instead, use ResourceAwsIamAccessKeyPrincipalName.")]
+    pub fn get_resource_aws_iam_access_key_user_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_aws_iam_access_key_user_name
     }
     /// Appends an item to `resource_aws_iam_access_key_principal_name`.
@@ -2796,13 +2248,8 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_resource_aws_iam_access_key_principal_name`](Self::set_resource_aws_iam_access_key_principal_name).
     ///
     /// <p>The name of the principal that is associated with an IAM access key.</p>
-    pub fn resource_aws_iam_access_key_principal_name(
-        mut self,
-        input: crate::types::StringFilter,
-    ) -> Self {
-        let mut v = self
-            .resource_aws_iam_access_key_principal_name
-            .unwrap_or_default();
+    pub fn resource_aws_iam_access_key_principal_name(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.resource_aws_iam_access_key_principal_name.unwrap_or_default();
         v.push(input);
         self.resource_aws_iam_access_key_principal_name = ::std::option::Option::Some(v);
         self
@@ -2816,9 +2263,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The name of the principal that is associated with an IAM access key.</p>
-    pub fn get_resource_aws_iam_access_key_principal_name(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_aws_iam_access_key_principal_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_aws_iam_access_key_principal_name
     }
     /// Appends an item to `resource_aws_iam_access_key_status`.
@@ -2833,17 +2278,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The status of the IAM access key related to a finding.</p>
-    pub fn set_resource_aws_iam_access_key_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_resource_aws_iam_access_key_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_aws_iam_access_key_status = input;
         self
     }
     /// <p>The status of the IAM access key related to a finding.</p>
-    pub fn get_resource_aws_iam_access_key_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_aws_iam_access_key_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_aws_iam_access_key_status
     }
     /// Appends an item to `resource_aws_iam_access_key_created_at`.
@@ -2851,29 +2291,19 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_resource_aws_iam_access_key_created_at`](Self::set_resource_aws_iam_access_key_created_at).
     ///
     /// <p>The creation date/time of the IAM access key related to a finding.</p>
-    pub fn resource_aws_iam_access_key_created_at(
-        mut self,
-        input: crate::types::DateFilter,
-    ) -> Self {
-        let mut v = self
-            .resource_aws_iam_access_key_created_at
-            .unwrap_or_default();
+    pub fn resource_aws_iam_access_key_created_at(mut self, input: crate::types::DateFilter) -> Self {
+        let mut v = self.resource_aws_iam_access_key_created_at.unwrap_or_default();
         v.push(input);
         self.resource_aws_iam_access_key_created_at = ::std::option::Option::Some(v);
         self
     }
     /// <p>The creation date/time of the IAM access key related to a finding.</p>
-    pub fn set_resource_aws_iam_access_key_created_at(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    ) -> Self {
+    pub fn set_resource_aws_iam_access_key_created_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.resource_aws_iam_access_key_created_at = input;
         self
     }
     /// <p>The creation date/time of the IAM access key related to a finding.</p>
-    pub fn get_resource_aws_iam_access_key_created_at(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+    pub fn get_resource_aws_iam_access_key_created_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.resource_aws_iam_access_key_created_at
     }
     /// Appends an item to `resource_aws_iam_user_user_name`.
@@ -2888,17 +2318,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The name of an IAM user.</p>
-    pub fn set_resource_aws_iam_user_user_name(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_resource_aws_iam_user_user_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_aws_iam_user_user_name = input;
         self
     }
     /// <p>The name of an IAM user.</p>
-    pub fn get_resource_aws_iam_user_user_name(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_aws_iam_user_user_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_aws_iam_user_user_name
     }
     /// Appends an item to `resource_container_name`.
@@ -2913,17 +2338,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The name of the container related to a finding.</p>
-    pub fn set_resource_container_name(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_resource_container_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_container_name = input;
         self
     }
     /// <p>The name of the container related to a finding.</p>
-    pub fn get_resource_container_name(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_container_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_container_name
     }
     /// Appends an item to `resource_container_image_id`.
@@ -2938,17 +2358,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The identifier of the image related to a finding.</p>
-    pub fn set_resource_container_image_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_resource_container_image_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_container_image_id = input;
         self
     }
     /// <p>The identifier of the image related to a finding.</p>
-    pub fn get_resource_container_image_id(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_container_image_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_container_image_id
     }
     /// Appends an item to `resource_container_image_name`.
@@ -2963,17 +2378,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The name of the image related to a finding.</p>
-    pub fn set_resource_container_image_name(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_resource_container_image_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_container_image_name = input;
         self
     }
     /// <p>The name of the image related to a finding.</p>
-    pub fn get_resource_container_image_name(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_container_image_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_container_image_name
     }
     /// Appends an item to `resource_container_launched_at`.
@@ -2990,18 +2400,13 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>A timestamp that identifies when the container was started.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    pub fn set_resource_container_launched_at(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    ) -> Self {
+    pub fn set_resource_container_launched_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.resource_container_launched_at = input;
         self
     }
     /// <p>A timestamp that identifies when the container was started.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    pub fn get_resource_container_launched_at(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+    pub fn get_resource_container_launched_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.resource_container_launched_at
     }
     /// Appends an item to `resource_details_other`.
@@ -3016,17 +2421,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The details of a resource that doesn't have a specific subfield for the resource type defined.</p>
-    pub fn set_resource_details_other(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
-    ) -> Self {
+    pub fn set_resource_details_other(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>) -> Self {
         self.resource_details_other = input;
         self
     }
     /// <p>The details of a resource that doesn't have a specific subfield for the resource type defined.</p>
-    pub fn get_resource_details_other(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
+    pub fn get_resource_details_other(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
         &self.resource_details_other
     }
     /// Appends an item to `compliance_status`.
@@ -3041,17 +2441,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>Exclusive to findings that are generated as the result of a check run against a specific rule in a supported standard, such as CIS Amazon Web Services Foundations. Contains security standard-related finding details.</p>
-    pub fn set_compliance_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_compliance_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.compliance_status = input;
         self
     }
     /// <p>Exclusive to findings that are generated as the result of a check run against a specific rule in a supported standard, such as CIS Amazon Web Services Foundations. Contains security standard-related finding details.</p>
-    pub fn get_compliance_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_compliance_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.compliance_status
     }
     /// Appends an item to `verification_state`.
@@ -3066,17 +2461,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The veracity of a finding.</p>
-    pub fn set_verification_state(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_verification_state(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.verification_state = input;
         self
     }
     /// <p>The veracity of a finding.</p>
-    pub fn get_verification_state(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_verification_state(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.verification_state
     }
     /// Appends an item to `workflow_state`.
@@ -3093,18 +2483,13 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>The workflow state of a finding.</p>
     /// <p>Note that this field is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
-    pub fn set_workflow_state(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_workflow_state(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.workflow_state = input;
         self
     }
     /// <p>The workflow state of a finding.</p>
     /// <p>Note that this field is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
-    pub fn get_workflow_state(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_workflow_state(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.workflow_state
     }
     /// Appends an item to `workflow_status`.
@@ -3155,10 +2540,7 @@ impl AwsSecurityFindingFiltersBuilder {
     /// <li> <p> <code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p> </li>
     /// </ul> <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p> <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p> </li>
     /// </ul>
-    pub fn set_workflow_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_workflow_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.workflow_status = input;
         self
     }
@@ -3181,9 +2563,7 @@ impl AwsSecurityFindingFiltersBuilder {
     /// <li> <p> <code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p> </li>
     /// </ul> <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p> <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p> </li>
     /// </ul>
-    pub fn get_workflow_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_workflow_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.workflow_status
     }
     /// Appends an item to `record_state`.
@@ -3198,17 +2578,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The updated record state for the finding.</p>
-    pub fn set_record_state(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_record_state(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.record_state = input;
         self
     }
     /// <p>The updated record state for the finding.</p>
-    pub fn get_record_state(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_record_state(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.record_state
     }
     /// Appends an item to `related_findings_product_arn`.
@@ -3223,17 +2598,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The ARN of the solution that generated a related finding.</p>
-    pub fn set_related_findings_product_arn(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_related_findings_product_arn(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.related_findings_product_arn = input;
         self
     }
     /// <p>The ARN of the solution that generated a related finding.</p>
-    pub fn get_related_findings_product_arn(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_related_findings_product_arn(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.related_findings_product_arn
     }
     /// Appends an item to `related_findings_id`.
@@ -3248,17 +2618,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The solution-generated identifier for a related finding.</p>
-    pub fn set_related_findings_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_related_findings_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.related_findings_id = input;
         self
     }
     /// <p>The solution-generated identifier for a related finding.</p>
-    pub fn get_related_findings_id(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_related_findings_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.related_findings_id
     }
     /// Appends an item to `note_text`.
@@ -3273,17 +2638,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The text of a note.</p>
-    pub fn set_note_text(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_note_text(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.note_text = input;
         self
     }
     /// <p>The text of a note.</p>
-    pub fn get_note_text(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_note_text(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.note_text
     }
     /// Appends an item to `note_updated_at`.
@@ -3298,17 +2658,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The timestamp of when the note was updated.</p>
-    pub fn set_note_updated_at(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    ) -> Self {
+    pub fn set_note_updated_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.note_updated_at = input;
         self
     }
     /// <p>The timestamp of when the note was updated.</p>
-    pub fn get_note_updated_at(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+    pub fn get_note_updated_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.note_updated_at
     }
     /// Appends an item to `note_updated_by`.
@@ -3323,17 +2678,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The principal that created a note.</p>
-    pub fn set_note_updated_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_note_updated_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.note_updated_by = input;
         self
     }
     /// <p>The principal that created a note.</p>
-    pub fn get_note_updated_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_note_updated_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.note_updated_by
     }
     /// Appends an item to `keyword`.
@@ -3350,18 +2700,13 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>A keyword for a finding.</p>
     #[deprecated(note = "The Keyword property is deprecated.")]
-    pub fn set_keyword(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeywordFilter>>,
-    ) -> Self {
+    pub fn set_keyword(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeywordFilter>>) -> Self {
         self.keyword = input;
         self
     }
     /// <p>A keyword for a finding.</p>
     #[deprecated(note = "The Keyword property is deprecated.")]
-    pub fn get_keyword(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeywordFilter>> {
+    pub fn get_keyword(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeywordFilter>> {
         &self.keyword
     }
     /// Appends an item to `finding_provider_fields_confidence`.
@@ -3378,18 +2723,13 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>The finding provider value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
-    pub fn set_finding_provider_fields_confidence(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    ) -> Self {
+    pub fn set_finding_provider_fields_confidence(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
         self.finding_provider_fields_confidence = input;
         self
     }
     /// <p>The finding provider value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
-    pub fn get_finding_provider_fields_confidence(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+    pub fn get_finding_provider_fields_confidence(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
         &self.finding_provider_fields_confidence
     }
     /// Appends an item to `finding_provider_fields_criticality`.
@@ -3398,10 +2738,7 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// <p>The finding provider value for the level of importance assigned to the resources associated with the findings.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
-    pub fn finding_provider_fields_criticality(
-        mut self,
-        input: crate::types::NumberFilter,
-    ) -> Self {
+    pub fn finding_provider_fields_criticality(mut self, input: crate::types::NumberFilter) -> Self {
         let mut v = self.finding_provider_fields_criticality.unwrap_or_default();
         v.push(input);
         self.finding_provider_fields_criticality = ::std::option::Option::Some(v);
@@ -3409,18 +2746,13 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>The finding provider value for the level of importance assigned to the resources associated with the findings.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
-    pub fn set_finding_provider_fields_criticality(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    ) -> Self {
+    pub fn set_finding_provider_fields_criticality(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
         self.finding_provider_fields_criticality = input;
         self
     }
     /// <p>The finding provider value for the level of importance assigned to the resources associated with the findings.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
-    pub fn get_finding_provider_fields_criticality(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+    pub fn get_finding_provider_fields_criticality(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
         &self.finding_provider_fields_criticality
     }
     /// Appends an item to `finding_provider_fields_related_findings_id`.
@@ -3428,13 +2760,8 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_finding_provider_fields_related_findings_id`](Self::set_finding_provider_fields_related_findings_id).
     ///
     /// <p>The finding identifier of a related finding that is identified by the finding provider.</p>
-    pub fn finding_provider_fields_related_findings_id(
-        mut self,
-        input: crate::types::StringFilter,
-    ) -> Self {
-        let mut v = self
-            .finding_provider_fields_related_findings_id
-            .unwrap_or_default();
+    pub fn finding_provider_fields_related_findings_id(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.finding_provider_fields_related_findings_id.unwrap_or_default();
         v.push(input);
         self.finding_provider_fields_related_findings_id = ::std::option::Option::Some(v);
         self
@@ -3448,9 +2775,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The finding identifier of a related finding that is identified by the finding provider.</p>
-    pub fn get_finding_provider_fields_related_findings_id(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_finding_provider_fields_related_findings_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.finding_provider_fields_related_findings_id
     }
     /// Appends an item to `finding_provider_fields_related_findings_product_arn`.
@@ -3458,13 +2783,8 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_finding_provider_fields_related_findings_product_arn`](Self::set_finding_provider_fields_related_findings_product_arn).
     ///
     /// <p>The ARN of the solution that generated a related finding that is identified by the finding provider.</p>
-    pub fn finding_provider_fields_related_findings_product_arn(
-        mut self,
-        input: crate::types::StringFilter,
-    ) -> Self {
-        let mut v = self
-            .finding_provider_fields_related_findings_product_arn
-            .unwrap_or_default();
+    pub fn finding_provider_fields_related_findings_product_arn(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.finding_provider_fields_related_findings_product_arn.unwrap_or_default();
         v.push(input);
         self.finding_provider_fields_related_findings_product_arn = ::std::option::Option::Some(v);
         self
@@ -3478,9 +2798,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The ARN of the solution that generated a related finding that is identified by the finding provider.</p>
-    pub fn get_finding_provider_fields_related_findings_product_arn(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_finding_provider_fields_related_findings_product_arn(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.finding_provider_fields_related_findings_product_arn
     }
     /// Appends an item to `finding_provider_fields_severity_label`.
@@ -3488,29 +2806,19 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_finding_provider_fields_severity_label`](Self::set_finding_provider_fields_severity_label).
     ///
     /// <p>The finding provider value for the severity label.</p>
-    pub fn finding_provider_fields_severity_label(
-        mut self,
-        input: crate::types::StringFilter,
-    ) -> Self {
-        let mut v = self
-            .finding_provider_fields_severity_label
-            .unwrap_or_default();
+    pub fn finding_provider_fields_severity_label(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.finding_provider_fields_severity_label.unwrap_or_default();
         v.push(input);
         self.finding_provider_fields_severity_label = ::std::option::Option::Some(v);
         self
     }
     /// <p>The finding provider value for the severity label.</p>
-    pub fn set_finding_provider_fields_severity_label(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_finding_provider_fields_severity_label(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.finding_provider_fields_severity_label = input;
         self
     }
     /// <p>The finding provider value for the severity label.</p>
-    pub fn get_finding_provider_fields_severity_label(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_finding_provider_fields_severity_label(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.finding_provider_fields_severity_label
     }
     /// Appends an item to `finding_provider_fields_severity_original`.
@@ -3518,13 +2826,8 @@ impl AwsSecurityFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_finding_provider_fields_severity_original`](Self::set_finding_provider_fields_severity_original).
     ///
     /// <p>The finding provider's original value for the severity.</p>
-    pub fn finding_provider_fields_severity_original(
-        mut self,
-        input: crate::types::StringFilter,
-    ) -> Self {
-        let mut v = self
-            .finding_provider_fields_severity_original
-            .unwrap_or_default();
+    pub fn finding_provider_fields_severity_original(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.finding_provider_fields_severity_original.unwrap_or_default();
         v.push(input);
         self.finding_provider_fields_severity_original = ::std::option::Option::Some(v);
         self
@@ -3538,9 +2841,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>The finding provider's original value for the severity.</p>
-    pub fn get_finding_provider_fields_severity_original(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_finding_provider_fields_severity_original(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.finding_provider_fields_severity_original
     }
     /// Appends an item to `finding_provider_fields_types`.
@@ -3557,18 +2858,13 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>One or more finding types that the finding provider assigned to the finding. Uses the format of <code>namespace/category/classifier</code> that classify a finding.</p>
     /// <p>Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
-    pub fn set_finding_provider_fields_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_finding_provider_fields_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.finding_provider_fields_types = input;
         self
     }
     /// <p>One or more finding types that the finding provider assigned to the finding. Uses the format of <code>namespace/category/classifier</code> that classify a finding.</p>
     /// <p>Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
-    pub fn get_finding_provider_fields_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_finding_provider_fields_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.finding_provider_fields_types
     }
     /// Appends an item to `sample`.
@@ -3583,17 +2879,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p>Indicates whether or not sample findings are included in the filter results.</p>
-    pub fn set_sample(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BooleanFilter>>,
-    ) -> Self {
+    pub fn set_sample(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BooleanFilter>>) -> Self {
         self.sample = input;
         self
     }
     /// <p>Indicates whether or not sample findings are included in the filter results.</p>
-    pub fn get_sample(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BooleanFilter>> {
+    pub fn get_sample(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BooleanFilter>> {
         &self.sample
     }
     /// Appends an item to `compliance_security_control_id`.
@@ -3608,17 +2899,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
-    pub fn set_compliance_security_control_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_compliance_security_control_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.compliance_security_control_id = input;
         self
     }
     /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
-    pub fn get_compliance_security_control_id(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_compliance_security_control_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.compliance_security_control_id
     }
     /// Appends an item to `compliance_associated_standards_id`.
@@ -3633,17 +2919,12 @@ impl AwsSecurityFindingFiltersBuilder {
         self
     }
     /// <p> The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
-    pub fn set_compliance_associated_standards_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_compliance_associated_standards_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.compliance_associated_standards_id = input;
         self
     }
     /// <p> The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
-    pub fn get_compliance_associated_standards_id(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_compliance_associated_standards_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.compliance_associated_standards_id
     }
     /// Consumes the builder and constructs a [`AwsSecurityFindingFilters`](crate::types::AwsSecurityFindingFilters).
@@ -3706,21 +2987,17 @@ impl AwsSecurityFindingFiltersBuilder {
             resource_tags: self.resource_tags,
             resource_aws_ec2_instance_type: self.resource_aws_ec2_instance_type,
             resource_aws_ec2_instance_image_id: self.resource_aws_ec2_instance_image_id,
-            resource_aws_ec2_instance_ip_v4_addresses: self
-                .resource_aws_ec2_instance_ip_v4_addresses,
-            resource_aws_ec2_instance_ip_v6_addresses: self
-                .resource_aws_ec2_instance_ip_v6_addresses,
+            resource_aws_ec2_instance_ip_v4_addresses: self.resource_aws_ec2_instance_ip_v4_addresses,
+            resource_aws_ec2_instance_ip_v6_addresses: self.resource_aws_ec2_instance_ip_v6_addresses,
             resource_aws_ec2_instance_key_name: self.resource_aws_ec2_instance_key_name,
-            resource_aws_ec2_instance_iam_instance_profile_arn: self
-                .resource_aws_ec2_instance_iam_instance_profile_arn,
+            resource_aws_ec2_instance_iam_instance_profile_arn: self.resource_aws_ec2_instance_iam_instance_profile_arn,
             resource_aws_ec2_instance_vpc_id: self.resource_aws_ec2_instance_vpc_id,
             resource_aws_ec2_instance_subnet_id: self.resource_aws_ec2_instance_subnet_id,
             resource_aws_ec2_instance_launched_at: self.resource_aws_ec2_instance_launched_at,
             resource_aws_s3_bucket_owner_id: self.resource_aws_s3_bucket_owner_id,
             resource_aws_s3_bucket_owner_name: self.resource_aws_s3_bucket_owner_name,
             resource_aws_iam_access_key_user_name: self.resource_aws_iam_access_key_user_name,
-            resource_aws_iam_access_key_principal_name: self
-                .resource_aws_iam_access_key_principal_name,
+            resource_aws_iam_access_key_principal_name: self.resource_aws_iam_access_key_principal_name,
             resource_aws_iam_access_key_status: self.resource_aws_iam_access_key_status,
             resource_aws_iam_access_key_created_at: self.resource_aws_iam_access_key_created_at,
             resource_aws_iam_user_user_name: self.resource_aws_iam_user_user_name,
@@ -3742,13 +3019,10 @@ impl AwsSecurityFindingFiltersBuilder {
             keyword: self.keyword,
             finding_provider_fields_confidence: self.finding_provider_fields_confidence,
             finding_provider_fields_criticality: self.finding_provider_fields_criticality,
-            finding_provider_fields_related_findings_id: self
-                .finding_provider_fields_related_findings_id,
-            finding_provider_fields_related_findings_product_arn: self
-                .finding_provider_fields_related_findings_product_arn,
+            finding_provider_fields_related_findings_id: self.finding_provider_fields_related_findings_id,
+            finding_provider_fields_related_findings_product_arn: self.finding_provider_fields_related_findings_product_arn,
             finding_provider_fields_severity_label: self.finding_provider_fields_severity_label,
-            finding_provider_fields_severity_original: self
-                .finding_provider_fields_severity_original,
+            finding_provider_fields_severity_original: self.finding_provider_fields_severity_original,
             finding_provider_fields_types: self.finding_provider_fields_types,
             sample: self.sample,
             compliance_security_control_id: self.compliance_security_control_id,

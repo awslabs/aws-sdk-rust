@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`mark_latest(bool)`](crate::operation::register_package_version::builders::RegisterPackageVersionFluentBuilder::mark_latest) / [`set_mark_latest(bool)`](crate::operation::register_package_version::builders::RegisterPackageVersionFluentBuilder::set_mark_latest): <p>Whether to mark the new version as the latest version.</p>
     /// - On success, responds with [`RegisterPackageVersionOutput`](crate::operation::register_package_version::RegisterPackageVersionOutput)
     /// - On failure, responds with [`SdkError<RegisterPackageVersionError>`](crate::operation::register_package_version::RegisterPackageVersionError)
-    pub fn register_package_version(
-        &self,
-    ) -> crate::operation::register_package_version::builders::RegisterPackageVersionFluentBuilder
-    {
+    pub fn register_package_version(&self) -> crate::operation::register_package_version::builders::RegisterPackageVersionFluentBuilder {
         crate::operation::register_package_version::builders::RegisterPackageVersionFluentBuilder::new(self.handle.clone())
     }
 }

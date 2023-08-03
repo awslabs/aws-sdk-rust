@@ -6,14 +6,11 @@
 pub struct AwsJobAbortConfig {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
     #[doc(hidden)]
-    pub abort_criteria_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsJobAbortCriteria>>,
+    pub abort_criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsJobAbortCriteria>>,
 }
 impl AwsJobAbortConfig {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
-    pub fn abort_criteria_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsJobAbortCriteria]> {
+    pub fn abort_criteria_list(&self) -> ::std::option::Option<&[crate::types::AwsJobAbortCriteria]> {
         self.abort_criteria_list.as_deref()
     }
 }
@@ -26,12 +23,9 @@ impl AwsJobAbortConfig {
 
 /// A builder for [`AwsJobAbortConfig`](crate::types::AwsJobAbortConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsJobAbortConfigBuilder {
-    pub(crate) abort_criteria_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsJobAbortCriteria>>,
+    pub(crate) abort_criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsJobAbortCriteria>>,
 }
 impl AwsJobAbortConfigBuilder {
     /// Appends an item to `abort_criteria_list`.
@@ -46,17 +40,12 @@ impl AwsJobAbortConfigBuilder {
         self
     }
     /// <p>The list of criteria that determine when and how to abort the job.</p>
-    pub fn set_abort_criteria_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsJobAbortCriteria>>,
-    ) -> Self {
+    pub fn set_abort_criteria_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsJobAbortCriteria>>) -> Self {
         self.abort_criteria_list = input;
         self
     }
     /// <p>The list of criteria that determine when and how to abort the job.</p>
-    pub fn get_abort_criteria_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsJobAbortCriteria>> {
+    pub fn get_abort_criteria_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsJobAbortCriteria>> {
         &self.abort_criteria_list
     }
     /// Consumes the builder and constructs a [`AwsJobAbortConfig`](crate::types::AwsJobAbortConfig).

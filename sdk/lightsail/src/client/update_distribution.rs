@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDistributionOutput`](crate::operation::update_distribution::UpdateDistributionOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::operation::update_distribution::UpdateDistributionOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<UpdateDistributionError>`](crate::operation::update_distribution::UpdateDistributionError)
-    pub fn update_distribution(
-        &self,
-    ) -> crate::operation::update_distribution::builders::UpdateDistributionFluentBuilder {
-        crate::operation::update_distribution::builders::UpdateDistributionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_distribution(&self) -> crate::operation::update_distribution::builders::UpdateDistributionFluentBuilder {
+        crate::operation::update_distribution::builders::UpdateDistributionFluentBuilder::new(self.handle.clone())
     }
 }

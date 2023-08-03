@@ -26,7 +26,7 @@ impl DescribeSnapshotSchedulesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSnapshotSchedulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesInputBuilder,
+    inner: crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesInputBuilder,
 }
 impl DescribeSnapshotSchedulesFluentBuilder {
     /// Creates a new `DescribeSnapshotSchedules`.
@@ -37,7 +37,7 @@ impl DescribeSnapshotSchedulesFluentBuilder {
         }
     }
     /// Access the DescribeSnapshotSchedules as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeSnapshotSchedulesFluentBuilder {
             crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeSnapshotSchedulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeSnapshotSchedulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeSnapshotSchedulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesError>,
     > {
         self.send_middleware().await
     }
@@ -114,34 +105,23 @@ impl DescribeSnapshotSchedulesFluentBuilder {
             crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_snapshot_schedules::paginator::DescribeSnapshotSchedulesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_snapshot_schedules::paginator::DescribeSnapshotSchedulesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_snapshot_schedules::paginator::DescribeSnapshotSchedulesPaginator {
         crate::operation::describe_snapshot_schedules::paginator::DescribeSnapshotSchedulesPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier for the cluster whose snapshot schedules you want to view.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The unique identifier for the cluster whose snapshot schedules you want to view.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -150,18 +130,12 @@ impl DescribeSnapshotSchedulesFluentBuilder {
         self.inner.get_cluster_identifier()
     }
     /// <p>A unique identifier for a snapshot schedule.</p>
-    pub fn schedule_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule_identifier(input.into());
         self
     }
     /// <p>A unique identifier for a snapshot schedule.</p>
-    pub fn set_schedule_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule_identifier(input);
         self
     }
@@ -179,10 +153,7 @@ impl DescribeSnapshotSchedulesFluentBuilder {
         self
     }
     /// <p>The key value for a snapshot schedule tag.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
@@ -200,10 +171,7 @@ impl DescribeSnapshotSchedulesFluentBuilder {
         self
     }
     /// <p>The value corresponding to the key of the snapshot schedule tag.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_values(input);
         self
     }

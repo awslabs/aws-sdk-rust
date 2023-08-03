@@ -22,34 +22,26 @@ impl DeleteApplicationFromEnvironmentInput {
 }
 impl DeleteApplicationFromEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationFromEnvironmentInput`](crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentInput).
-    pub fn builder() -> crate::operation::delete_application_from_environment::builders::DeleteApplicationFromEnvironmentInputBuilder{
+    pub fn builder() -> crate::operation::delete_application_from_environment::builders::DeleteApplicationFromEnvironmentInputBuilder {
         crate::operation::delete_application_from_environment::builders::DeleteApplicationFromEnvironmentInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationFromEnvironmentInput`](crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationFromEnvironmentInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApplicationFromEnvironmentInputBuilder {
     /// <p>The unique identifier of the application you want to delete.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the application you want to delete.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -58,18 +50,12 @@ impl DeleteApplicationFromEnvironmentInputBuilder {
         &self.application_id
     }
     /// <p>The unique identifier of the runtime environment where the application was previously deployed.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the runtime environment where the application was previously deployed.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -78,14 +64,17 @@ impl DeleteApplicationFromEnvironmentInputBuilder {
         &self.environment_id
     }
     /// Consumes the builder and constructs a [`DeleteApplicationFromEnvironmentInput`](crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentInput {
-                application_id: self.application_id
-                ,
-                environment_id: self.environment_id
-                ,
-            }
+                application_id: self.application_id,
+                environment_id: self.environment_id,
+            },
         )
     }
 }

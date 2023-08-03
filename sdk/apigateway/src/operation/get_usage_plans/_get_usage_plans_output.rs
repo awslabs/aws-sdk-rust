@@ -36,9 +36,7 @@ impl GetUsagePlansOutput {
 
 /// A builder for [`GetUsagePlansOutput`](crate::operation::get_usage_plans::GetUsagePlansOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUsagePlansOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::UsagePlan>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl GetUsagePlansOutputBuilder {
         self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UsagePlan>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsagePlan>>) -> Self {
         self.items = input;
         self
     }

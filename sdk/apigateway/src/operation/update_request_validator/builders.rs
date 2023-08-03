@@ -37,10 +37,7 @@ impl UpdateRequestValidatorFluentBuilder {
         }
     }
     /// Access the UpdateRequestValidator as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_request_validator::builders::UpdateRequestValidatorInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_request_validator::builders::UpdateRequestValidatorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateRequestValidatorFluentBuilder {
             crate::operation::update_request_validator::UpdateRequestValidator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_request_validator::UpdateRequestValidatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_request_validator::UpdateRequestValidatorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateRequestValidatorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateRequestValidatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_request_validator::UpdateRequestValidatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_request_validator::UpdateRequestValidatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_request_validator::UpdateRequestValidatorError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateRequestValidatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_request_validator::UpdateRequestValidatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_request_validator::UpdateRequestValidatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_request_validator::UpdateRequestValidatorError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateRequestValidatorFluentBuilder {
             crate::operation::update_request_validator::UpdateRequestValidator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_request_validator::UpdateRequestValidatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_request_validator::UpdateRequestValidatorError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl UpdateRequestValidatorFluentBuilder {
         self.inner.get_rest_api_id()
     }
     /// <p>The identifier of RequestValidator to be updated.</p>
-    pub fn request_validator_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_validator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_validator_id(input.into());
         self
     }
     /// <p>The identifier of RequestValidator to be updated.</p>
-    pub fn set_request_validator_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_validator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_validator_id(input);
         self
     }
@@ -167,17 +147,12 @@ impl UpdateRequestValidatorFluentBuilder {
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
-    ) -> Self {
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
         self.inner = self.inner.set_patch_operations(input);
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn get_patch_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
         self.inner.get_patch_operations()
     }
 }

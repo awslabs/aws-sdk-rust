@@ -23,8 +23,7 @@ pub fn ser_continuous_deployment_policy_config(
 
 pub fn de_continuous_deployment_policy_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ContinuousDeploymentPolicyConfig, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::ContinuousDeploymentPolicyConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ContinuousDeploymentPolicyConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -36,9 +36,7 @@ impl ListInputsOutput {
 
 /// A builder for [`ListInputsOutput`](crate::operation::list_inputs::ListInputsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInputsOutputBuilder {
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<crate::types::Input>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl ListInputsOutputBuilder {
         self
     }
     /// Placeholder documentation for __listOfInput
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Input>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Input>>) -> Self {
         self.inputs = input;
         self
     }

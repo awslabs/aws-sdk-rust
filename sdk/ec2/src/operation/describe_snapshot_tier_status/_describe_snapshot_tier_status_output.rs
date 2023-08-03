@@ -5,8 +5,7 @@
 pub struct DescribeSnapshotTierStatusOutput {
     /// <p>Information about the snapshot's storage tier.</p>
     #[doc(hidden)]
-    pub snapshot_tier_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::SnapshotTierStatus>>,
+    pub snapshot_tier_statuses: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotTierStatus>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeSnapshotTierStatusOutput {
 }
 impl DescribeSnapshotTierStatusOutput {
     /// <p>Information about the snapshot's storage tier.</p>
-    pub fn snapshot_tier_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SnapshotTierStatus]> {
+    pub fn snapshot_tier_statuses(&self) -> ::std::option::Option<&[crate::types::SnapshotTierStatus]> {
         self.snapshot_tier_statuses.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeSnapshotTierStatusOutput {
 }
 impl DescribeSnapshotTierStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotTierStatusOutput`](crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput).
-    pub fn builder() -> crate::operation::describe_snapshot_tier_status::builders::DescribeSnapshotTierStatusOutputBuilder{
+    pub fn builder() -> crate::operation::describe_snapshot_tier_status::builders::DescribeSnapshotTierStatusOutputBuilder {
         crate::operation::describe_snapshot_tier_status::builders::DescribeSnapshotTierStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSnapshotTierStatusOutput`](crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnapshotTierStatusOutputBuilder {
-    pub(crate) snapshot_tier_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::SnapshotTierStatus>>,
+    pub(crate) snapshot_tier_statuses: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotTierStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeSnapshotTierStatusOutputBuilder {
         self
     }
     /// <p>Information about the snapshot's storage tier.</p>
-    pub fn set_snapshot_tier_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotTierStatus>>,
-    ) -> Self {
+    pub fn set_snapshot_tier_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotTierStatus>>) -> Self {
         self.snapshot_tier_statuses = input;
         self
     }
     /// <p>Information about the snapshot's storage tier.</p>
-    pub fn get_snapshot_tier_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotTierStatus>> {
+    pub fn get_snapshot_tier_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotTierStatus>> {
         &self.snapshot_tier_statuses
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -97,9 +86,7 @@ impl DescribeSnapshotTierStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSnapshotTierStatusOutput`](crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput {
+    pub fn build(self) -> crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput {
         crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput {
             snapshot_tier_statuses: self.snapshot_tier_statuses,
             next_token: self.next_token,

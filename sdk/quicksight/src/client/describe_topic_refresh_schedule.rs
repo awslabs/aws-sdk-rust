@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<DescribeTopicRefreshScheduleError>`](crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError)
-    pub fn describe_topic_refresh_schedule(&self) -> crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleFluentBuilder{
+    pub fn describe_topic_refresh_schedule(
+        &self,
+    ) -> crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleFluentBuilder {
         crate::operation::describe_topic_refresh_schedule::builders::DescribeTopicRefreshScheduleFluentBuilder::new(self.handle.clone())
     }
 }

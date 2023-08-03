@@ -53,9 +53,7 @@ impl OriginationRoute {
 
 /// A builder for [`OriginationRoute`](crate::types::OriginationRoute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginationRouteBuilder {
     pub(crate) host: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
@@ -98,10 +96,7 @@ impl OriginationRouteBuilder {
         self
     }
     /// <p>The protocol to use for the origination route. Encryption-enabled Amazon Chime Voice Connectors use TCP protocol by default.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginationRouteProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::OriginationRouteProtocol>) -> Self {
         self.protocol = input;
         self
     }

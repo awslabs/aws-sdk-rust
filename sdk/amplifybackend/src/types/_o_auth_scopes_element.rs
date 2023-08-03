@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OAuthScopesElement {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for OAuthScopesElement {
             "OPENID" => OAuthScopesElement::Openid,
             "PHONE" => OAuthScopesElement::Phone,
             "PROFILE" => OAuthScopesElement::Profile,
-            other => OAuthScopesElement::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => OAuthScopesElement::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl OAuthScopesElement {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS_COGNITO_SIGNIN_USER_ADMIN",
-            "EMAIL",
-            "OPENID",
-            "PHONE",
-            "PROFILE",
-        ]
+        &["AWS_COGNITO_SIGNIN_USER_ADMIN", "EMAIL", "OPENID", "PHONE", "PROFILE"]
     }
 }
 impl ::std::convert::AsRef<str> for OAuthScopesElement {

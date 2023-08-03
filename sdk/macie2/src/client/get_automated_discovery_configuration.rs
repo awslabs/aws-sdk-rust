@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`sensitivity_inspection_template_id(Option<String>)`](crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationOutput::sensitivity_inspection_template_id): <p>The unique identifier for the sensitivity inspection template that's used when performing automated sensitive data discovery for the account. The template specifies which allow lists, custom data identifiers, and managed data identifiers to use when analyzing data.</p>
     ///   - [`status(Option<AutomatedDiscoveryStatus>)`](crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationOutput::status): <p>The current status of the automated sensitive data discovery configuration for the account. Possible values are: ENABLED, use the specified settings to perform automated sensitive data discovery activities for the account; and, DISABLED, don't perform automated sensitive data discovery activities for the account.</p>
     /// - On failure, responds with [`SdkError<GetAutomatedDiscoveryConfigurationError>`](crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationError)
-    pub fn get_automated_discovery_configuration(&self) -> crate::operation::get_automated_discovery_configuration::builders::GetAutomatedDiscoveryConfigurationFluentBuilder{
+    pub fn get_automated_discovery_configuration(
+        &self,
+    ) -> crate::operation::get_automated_discovery_configuration::builders::GetAutomatedDiscoveryConfigurationFluentBuilder {
         crate::operation::get_automated_discovery_configuration::builders::GetAutomatedDiscoveryConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

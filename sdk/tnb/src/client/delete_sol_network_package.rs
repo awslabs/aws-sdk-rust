@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`nsd_info_id(impl ::std::convert::Into<String>)`](crate::operation::delete_sol_network_package::builders::DeleteSolNetworkPackageFluentBuilder::nsd_info_id) / [`set_nsd_info_id(Option<String>)`](crate::operation::delete_sol_network_package::builders::DeleteSolNetworkPackageFluentBuilder::set_nsd_info_id): <p>ID of the network service descriptor in the network package.</p>
     /// - On success, responds with [`DeleteSolNetworkPackageOutput`](crate::operation::delete_sol_network_package::DeleteSolNetworkPackageOutput)
     /// - On failure, responds with [`SdkError<DeleteSolNetworkPackageError>`](crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError)
-    pub fn delete_sol_network_package(
-        &self,
-    ) -> crate::operation::delete_sol_network_package::builders::DeleteSolNetworkPackageFluentBuilder
-    {
+    pub fn delete_sol_network_package(&self) -> crate::operation::delete_sol_network_package::builders::DeleteSolNetworkPackageFluentBuilder {
         crate::operation::delete_sol_network_package::builders::DeleteSolNetworkPackageFluentBuilder::new(self.handle.clone())
     }
 }

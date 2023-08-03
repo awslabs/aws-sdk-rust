@@ -106,9 +106,7 @@ impl PerformanceInsightsMetricDimensionGroup {
 
 /// A builder for [`PerformanceInsightsMetricDimensionGroup`](crate::types::PerformanceInsightsMetricDimensionGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PerformanceInsightsMetricDimensionGroupBuilder {
     pub(crate) group: ::std::option::Option<::std::string::String>,
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -214,10 +212,7 @@ impl PerformanceInsightsMetricDimensionGroupBuilder {
     /// <li> <p> <code>db.wait_event.type</code> - The type of event for which the backend is waiting (all engines)</p> </li>
     /// <li> <p> <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all engines)</p> </li>
     /// </ul>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dimensions = input;
         self
     }

@@ -72,9 +72,7 @@ impl CrlDetail {
 
 /// A builder for [`CrlDetail`](crate::types::CrlDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CrlDetailBuilder {
     pub(crate) crl_id: ::std::option::Option<::std::string::String>,
     pub(crate) crl_arn: ::std::option::Option<::std::string::String>,
@@ -157,18 +155,12 @@ impl CrlDetailBuilder {
         &self.crl_data
     }
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for. </p>
-    pub fn trust_anchor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_anchor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_anchor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for. </p>
-    pub fn set_trust_anchor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_anchor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_anchor_arn = input;
         self
     }
@@ -182,10 +174,7 @@ impl CrlDetailBuilder {
         self
     }
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -199,10 +188,7 @@ impl CrlDetailBuilder {
         self
     }
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was last updated. </p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

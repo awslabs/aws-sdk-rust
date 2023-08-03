@@ -22,16 +22,14 @@ impl UpdateNumberOfDomainControllersInput {
 }
 impl UpdateNumberOfDomainControllersInput {
     /// Creates a new builder-style object to manufacture [`UpdateNumberOfDomainControllersInput`](crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersInput).
-    pub fn builder() -> crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersInputBuilder{
+    pub fn builder() -> crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersInputBuilder {
         crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateNumberOfDomainControllersInput`](crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateNumberOfDomainControllersInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) desired_number: ::std::option::Option<i32>,
@@ -74,11 +72,9 @@ impl UpdateNumberOfDomainControllersInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersInput {
-                directory_id: self.directory_id
-                ,
-                desired_number: self.desired_number
-                ,
-            }
+                directory_id: self.directory_id,
+                desired_number: self.desired_number,
+            },
         )
     }
 }

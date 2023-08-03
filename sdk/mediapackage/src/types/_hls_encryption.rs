@@ -51,9 +51,7 @@ impl HlsEncryption {
 
 /// A builder for [`HlsEncryption`](crate::types::HlsEncryption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsEncryptionBuilder {
     pub(crate) constant_initialization_vector: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_method: ::std::option::Option<crate::types::EncryptionMethod>,
@@ -63,25 +61,17 @@ pub struct HlsEncryptionBuilder {
 }
 impl HlsEncryptionBuilder {
     /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
-    pub fn constant_initialization_vector(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn constant_initialization_vector(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.constant_initialization_vector = ::std::option::Option::Some(input.into());
         self
     }
     /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
-    pub fn set_constant_initialization_vector(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_constant_initialization_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.constant_initialization_vector = input;
         self
     }
     /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
-    pub fn get_constant_initialization_vector(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_constant_initialization_vector(&self) -> &::std::option::Option<::std::string::String> {
         &self.constant_initialization_vector
     }
     /// The encryption method to use.
@@ -90,10 +80,7 @@ impl HlsEncryptionBuilder {
         self
     }
     /// The encryption method to use.
-    pub fn set_encryption_method(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionMethod>,
-    ) -> Self {
+    pub fn set_encryption_method(mut self, input: ::std::option::Option<crate::types::EncryptionMethod>) -> Self {
         self.encryption_method = input;
         self
     }
@@ -135,10 +122,7 @@ impl HlsEncryptionBuilder {
         self
     }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    pub fn set_speke_key_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::SpekeKeyProvider>,
-    ) -> Self {
+    pub fn set_speke_key_provider(mut self, input: ::std::option::Option<crate::types::SpekeKeyProvider>) -> Self {
         self.speke_key_provider = input;
         self
     }

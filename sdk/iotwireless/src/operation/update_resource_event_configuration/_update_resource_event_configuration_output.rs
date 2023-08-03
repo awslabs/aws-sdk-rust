@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateResourceEventConfigurationOutpu
 }
 impl UpdateResourceEventConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceEventConfigurationOutput`](crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationOutput).
-    pub fn builder() -> crate::operation::update_resource_event_configuration::builders::UpdateResourceEventConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_resource_event_configuration::builders::UpdateResourceEventConfigurationOutputBuilder {
         crate::operation::update_resource_event_configuration::builders::UpdateResourceEventConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResourceEventConfigurationOutput`](crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourceEventConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateResourceEventConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateResourceEventConfigurationOutput`](crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationOutput {
         crate::operation::update_resource_event_configuration::UpdateResourceEventConfigurationOutput {
             _request_id: self._request_id,
         }

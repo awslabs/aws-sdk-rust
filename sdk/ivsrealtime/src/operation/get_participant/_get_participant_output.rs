@@ -28,9 +28,7 @@ impl GetParticipantOutput {
 
 /// A builder for [`GetParticipantOutput`](crate::operation::get_participant::GetParticipantOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetParticipantOutputBuilder {
     pub(crate) participant: ::std::option::Option<crate::types::Participant>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetParticipantOutputBuilder {
         self
     }
     /// <p>The participant that is returned.</p>
-    pub fn set_participant(
-        mut self,
-        input: ::std::option::Option<crate::types::Participant>,
-    ) -> Self {
+    pub fn set_participant(mut self, input: ::std::option::Option<crate::types::Participant>) -> Self {
         self.participant = input;
         self
     }

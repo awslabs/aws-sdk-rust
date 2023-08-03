@@ -26,7 +26,7 @@ impl DisassociateSourceServersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateSourceServersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_source_servers::builders::DisassociateSourceServersInputBuilder,
+    inner: crate::operation::disassociate_source_servers::builders::DisassociateSourceServersInputBuilder,
 }
 impl DisassociateSourceServersFluentBuilder {
     /// Creates a new `DisassociateSourceServers`.
@@ -37,7 +37,7 @@ impl DisassociateSourceServersFluentBuilder {
         }
     }
     /// Access the DisassociateSourceServers as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_source_servers::builders::DisassociateSourceServersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_source_servers::builders::DisassociateSourceServersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisassociateSourceServersFluentBuilder {
             crate::operation::disassociate_source_servers::DisassociateSourceServers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_source_servers::DisassociateSourceServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_source_servers::DisassociateSourceServersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisassociateSourceServersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisassociateSourceServersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_source_servers::DisassociateSourceServersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_source_servers::DisassociateSourceServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_source_servers::DisassociateSourceServersError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisassociateSourceServersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_source_servers::DisassociateSourceServersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_source_servers::DisassociateSourceServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_source_servers::DisassociateSourceServersError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DisassociateSourceServersFluentBuilder {
             crate::operation::disassociate_source_servers::DisassociateSourceServers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_source_servers::DisassociateSourceServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_source_servers::DisassociateSourceServersError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>Application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -145,25 +128,17 @@ impl DisassociateSourceServersFluentBuilder {
     /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
     ///
     /// <p>Source server IDs list.</p>
-    pub fn source_server_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_i_ds(input.into());
         self
     }
     /// <p>Source server IDs list.</p>
-    pub fn set_source_server_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_server_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_source_server_i_ds(input);
         self
     }
     /// <p>Source server IDs list.</p>
-    pub fn get_source_server_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_server_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_source_server_i_ds()
     }
     /// <p>Account ID.</p>

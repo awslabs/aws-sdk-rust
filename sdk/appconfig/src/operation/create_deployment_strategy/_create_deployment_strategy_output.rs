@@ -70,18 +70,14 @@ impl ::aws_http::request_id::RequestId for CreateDeploymentStrategyOutput {
 }
 impl CreateDeploymentStrategyOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentStrategyOutput`](crate::operation::create_deployment_strategy::CreateDeploymentStrategyOutput).
-    pub fn builder(
-    ) -> crate::operation::create_deployment_strategy::builders::CreateDeploymentStrategyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_deployment_strategy::builders::CreateDeploymentStrategyOutputBuilder {
         crate::operation::create_deployment_strategy::builders::CreateDeploymentStrategyOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDeploymentStrategyOutput`](crate::operation::create_deployment_strategy::CreateDeploymentStrategyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDeploymentStrategyOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -156,10 +152,7 @@ impl CreateDeploymentStrategyOutputBuilder {
         self
     }
     /// <p>The algorithm used to define how percentage grew over time.</p>
-    pub fn set_growth_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GrowthType>,
-    ) -> Self {
+    pub fn set_growth_type(mut self, input: ::std::option::Option<crate::types::GrowthType>) -> Self {
         self.growth_type = input;
         self
     }
@@ -201,10 +194,7 @@ impl CreateDeploymentStrategyOutputBuilder {
         self
     }
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
-    pub fn set_replicate_to(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicateTo>,
-    ) -> Self {
+    pub fn set_replicate_to(mut self, input: ::std::option::Option<crate::types::ReplicateTo>) -> Self {
         self.replicate_to = input;
         self
     }
@@ -222,9 +212,7 @@ impl CreateDeploymentStrategyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDeploymentStrategyOutput`](crate::operation::create_deployment_strategy::CreateDeploymentStrategyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_deployment_strategy::CreateDeploymentStrategyOutput {
+    pub fn build(self) -> crate::operation::create_deployment_strategy::CreateDeploymentStrategyOutput {
         crate::operation::create_deployment_strategy::CreateDeploymentStrategyOutput {
             id: self.id,
             name: self.name,

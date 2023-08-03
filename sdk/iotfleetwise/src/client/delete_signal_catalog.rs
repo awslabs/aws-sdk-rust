@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::delete_signal_catalog::DeleteSignalCatalogOutput::name): <p>The name of the deleted signal catalog.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_signal_catalog::DeleteSignalCatalogOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted signal catalog.</p>
     /// - On failure, responds with [`SdkError<DeleteSignalCatalogError>`](crate::operation::delete_signal_catalog::DeleteSignalCatalogError)
-    pub fn delete_signal_catalog(
-        &self,
-    ) -> crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogFluentBuilder {
-        crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_signal_catalog(&self) -> crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogFluentBuilder {
+        crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogFluentBuilder::new(self.handle.clone())
     }
 }

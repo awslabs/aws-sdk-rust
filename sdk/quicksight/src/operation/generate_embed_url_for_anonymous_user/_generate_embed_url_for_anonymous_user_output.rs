@@ -53,7 +53,7 @@ impl ::aws_http::request_id::RequestId for GenerateEmbedUrlForAnonymousUserOutpu
 }
 impl GenerateEmbedUrlForAnonymousUserOutput {
     /// Creates a new builder-style object to manufacture [`GenerateEmbedUrlForAnonymousUserOutput`](crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput).
-    pub fn builder() -> crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserOutputBuilder{
+    pub fn builder() -> crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserOutputBuilder {
         crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserOutputBuilder::default()
     }
 }
@@ -112,18 +112,12 @@ impl GenerateEmbedUrlForAnonymousUserOutputBuilder {
         &self.request_id
     }
     /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
-    pub fn anonymous_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anonymous_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anonymous_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
-    pub fn set_anonymous_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anonymous_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anonymous_user_arn = input;
         self
     }
@@ -141,17 +135,12 @@ impl GenerateEmbedUrlForAnonymousUserOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GenerateEmbedUrlForAnonymousUserOutput`](crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput).
-    pub fn build(self) -> crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput{
+    pub fn build(self) -> crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput {
         crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput {
-            embed_url: self.embed_url
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
-            request_id: self.request_id
-            ,
-            anonymous_user_arn: self.anonymous_user_arn
-            ,
+            embed_url: self.embed_url,
+            status: self.status.unwrap_or_default(),
+            request_id: self.request_id,
+            anonymous_user_arn: self.anonymous_user_arn,
             _request_id: self._request_id,
         }
     }

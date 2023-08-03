@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribePrefixListsOutput {
 }
 impl DescribePrefixListsOutput {
     /// Creates a new builder-style object to manufacture [`DescribePrefixListsOutput`](crate::operation::describe_prefix_lists::DescribePrefixListsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_prefix_lists::builders::DescribePrefixListsOutputBuilder {
-        crate::operation::describe_prefix_lists::builders::DescribePrefixListsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_prefix_lists::builders::DescribePrefixListsOutputBuilder {
+        crate::operation::describe_prefix_lists::builders::DescribePrefixListsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePrefixListsOutput`](crate::operation::describe_prefix_lists::DescribePrefixListsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePrefixListsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) prefix_lists: ::std::option::Option<::std::vec::Vec<crate::types::PrefixList>>,
@@ -72,17 +68,12 @@ impl DescribePrefixListsOutputBuilder {
         self
     }
     /// <p>All available prefix lists.</p>
-    pub fn set_prefix_lists(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PrefixList>>,
-    ) -> Self {
+    pub fn set_prefix_lists(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrefixList>>) -> Self {
         self.prefix_lists = input;
         self
     }
     /// <p>All available prefix lists.</p>
-    pub fn get_prefix_lists(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrefixList>> {
+    pub fn get_prefix_lists(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrefixList>> {
         &self.prefix_lists
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

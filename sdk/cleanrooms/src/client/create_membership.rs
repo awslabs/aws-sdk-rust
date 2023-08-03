@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMembershipOutput`](crate::operation::create_membership::CreateMembershipOutput) with field(s):
     ///   - [`membership(Option<Membership>)`](crate::operation::create_membership::CreateMembershipOutput::membership): <p>The membership that was created.</p>
     /// - On failure, responds with [`SdkError<CreateMembershipError>`](crate::operation::create_membership::CreateMembershipError)
-    pub fn create_membership(
-        &self,
-    ) -> crate::operation::create_membership::builders::CreateMembershipFluentBuilder {
-        crate::operation::create_membership::builders::CreateMembershipFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_membership(&self) -> crate::operation::create_membership::builders::CreateMembershipFluentBuilder {
+        crate::operation::create_membership::builders::CreateMembershipFluentBuilder::new(self.handle.clone())
     }
 }

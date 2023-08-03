@@ -14,9 +14,7 @@ pub struct CreateKxEnvironmentInput {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs to label the kdb environment. You can add up to 50 tags to your kdb environment.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -35,11 +33,7 @@ impl CreateKxEnvironmentInput {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of key-value pairs to label the kdb environment. You can add up to 50 tags to your kdb environment.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -49,25 +43,19 @@ impl CreateKxEnvironmentInput {
 }
 impl CreateKxEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`CreateKxEnvironmentInput`](crate::operation::create_kx_environment::CreateKxEnvironmentInput).
-    pub fn builder(
-    ) -> crate::operation::create_kx_environment::builders::CreateKxEnvironmentInputBuilder {
-        crate::operation::create_kx_environment::builders::CreateKxEnvironmentInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_kx_environment::builders::CreateKxEnvironmentInputBuilder {
+        crate::operation::create_kx_environment::builders::CreateKxEnvironmentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateKxEnvironmentInput`](crate::operation::create_kx_environment::CreateKxEnvironmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateKxEnvironmentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateKxEnvironmentInputBuilder {
@@ -118,32 +106,19 @@ impl CreateKxEnvironmentInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key-value pairs to label the kdb environment. You can add up to 50 tags to your kdb environment.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of key-value pairs to label the kdb environment. You can add up to 50 tags to your kdb environment.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A list of key-value pairs to label the kdb environment. You can add up to 50 tags to your kdb environment.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -163,18 +138,14 @@ impl CreateKxEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`CreateKxEnvironmentInput`](crate::operation::create_kx_environment::CreateKxEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_kx_environment::CreateKxEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_kx_environment::CreateKxEnvironmentInput {
-                name: self.name,
-                description: self.description,
-                kms_key_id: self.kms_key_id,
-                tags: self.tags,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_kx_environment::CreateKxEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_kx_environment::CreateKxEnvironmentInput {
+            name: self.name,
+            description: self.description,
+            kms_key_id: self.kms_key_id,
+            tags: self.tags,
+            client_token: self.client_token,
+        })
     }
 }

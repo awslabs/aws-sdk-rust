@@ -64,17 +64,14 @@ impl GetSessionEmbedUrlInput {
 }
 impl GetSessionEmbedUrlInput {
     /// Creates a new builder-style object to manufacture [`GetSessionEmbedUrlInput`](crate::operation::get_session_embed_url::GetSessionEmbedUrlInput).
-    pub fn builder(
-    ) -> crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlInputBuilder {
+    pub fn builder() -> crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlInputBuilder {
         crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSessionEmbedUrlInput`](crate::operation::get_session_embed_url::GetSessionEmbedUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSessionEmbedUrlInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) entry_point: ::std::option::Option<::std::string::String>,
@@ -83,18 +80,12 @@ pub struct GetSessionEmbedUrlInputBuilder {
 }
 impl GetSessionEmbedUrlInputBuilder {
     /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -189,17 +180,13 @@ impl GetSessionEmbedUrlInputBuilder {
     /// Consumes the builder and constructs a [`GetSessionEmbedUrlInput`](crate::operation::get_session_embed_url::GetSessionEmbedUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_session_embed_url::GetSessionEmbedUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_session_embed_url::GetSessionEmbedUrlInput {
-                aws_account_id: self.aws_account_id,
-                entry_point: self.entry_point,
-                session_lifetime_in_minutes: self.session_lifetime_in_minutes,
-                user_arn: self.user_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_session_embed_url::GetSessionEmbedUrlInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_session_embed_url::GetSessionEmbedUrlInput {
+            aws_account_id: self.aws_account_id,
+            entry_point: self.entry_point,
+            session_lifetime_in_minutes: self.session_lifetime_in_minutes,
+            user_arn: self.user_arn,
+        })
     }
 }

@@ -15,10 +15,7 @@ pub fn ser_create_language_model_input(
     if let Some(var_4) = &input.input_data_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("InputDataConfig").start_object();
-        crate::protocol_serde::shape_input_data_config::ser_input_data_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_input_data_config::ser_input_data_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.tags {

@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`GetRevocationStatusOutput`](crate::operation::get_revocation_status::GetRevocationStatusOutput) with field(s):
     ///   - [`revoked_entities(Option<Vec<String>>)`](crate::operation::get_revocation_status::GetRevocationStatusOutput::revoked_entities): <p>A list of revoked entities (including one or more of the signing profile ARN, signing job ID, and certificate hash) supplied as input to the API.</p>
     /// - On failure, responds with [`SdkError<GetRevocationStatusError>`](crate::operation::get_revocation_status::GetRevocationStatusError)
-    pub fn get_revocation_status(
-        &self,
-    ) -> crate::operation::get_revocation_status::builders::GetRevocationStatusFluentBuilder {
-        crate::operation::get_revocation_status::builders::GetRevocationStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_revocation_status(&self) -> crate::operation::get_revocation_status::builders::GetRevocationStatusFluentBuilder {
+        crate::operation::get_revocation_status::builders::GetRevocationStatusFluentBuilder::new(self.handle.clone())
     }
 }

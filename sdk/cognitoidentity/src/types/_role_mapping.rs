@@ -23,16 +23,12 @@ impl RoleMapping {
     }
     /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p>
     /// <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
-    pub fn ambiguous_role_resolution(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AmbiguousRoleResolutionType> {
+    pub fn ambiguous_role_resolution(&self) -> ::std::option::Option<&crate::types::AmbiguousRoleResolutionType> {
         self.ambiguous_role_resolution.as_ref()
     }
     /// <p>The rules to be used for mapping users to roles.</p>
     /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>
-    pub fn rules_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RulesConfigurationType> {
+    pub fn rules_configuration(&self) -> ::std::option::Option<&crate::types::RulesConfigurationType> {
         self.rules_configuration.as_ref()
     }
 }
@@ -45,13 +41,10 @@ impl RoleMapping {
 
 /// A builder for [`RoleMapping`](crate::types::RoleMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoleMappingBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RoleMappingType>,
-    pub(crate) ambiguous_role_resolution:
-        ::std::option::Option<crate::types::AmbiguousRoleResolutionType>,
+    pub(crate) ambiguous_role_resolution: ::std::option::Option<crate::types::AmbiguousRoleResolutionType>,
     pub(crate) rules_configuration: ::std::option::Option<crate::types::RulesConfigurationType>,
 }
 impl RoleMappingBuilder {
@@ -71,27 +64,19 @@ impl RoleMappingBuilder {
     }
     /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p>
     /// <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
-    pub fn ambiguous_role_resolution(
-        mut self,
-        input: crate::types::AmbiguousRoleResolutionType,
-    ) -> Self {
+    pub fn ambiguous_role_resolution(mut self, input: crate::types::AmbiguousRoleResolutionType) -> Self {
         self.ambiguous_role_resolution = ::std::option::Option::Some(input);
         self
     }
     /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p>
     /// <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
-    pub fn set_ambiguous_role_resolution(
-        mut self,
-        input: ::std::option::Option<crate::types::AmbiguousRoleResolutionType>,
-    ) -> Self {
+    pub fn set_ambiguous_role_resolution(mut self, input: ::std::option::Option<crate::types::AmbiguousRoleResolutionType>) -> Self {
         self.ambiguous_role_resolution = input;
         self
     }
     /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p>
     /// <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
-    pub fn get_ambiguous_role_resolution(
-        &self,
-    ) -> &::std::option::Option<crate::types::AmbiguousRoleResolutionType> {
+    pub fn get_ambiguous_role_resolution(&self) -> &::std::option::Option<crate::types::AmbiguousRoleResolutionType> {
         &self.ambiguous_role_resolution
     }
     /// <p>The rules to be used for mapping users to roles.</p>
@@ -102,18 +87,13 @@ impl RoleMappingBuilder {
     }
     /// <p>The rules to be used for mapping users to roles.</p>
     /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>
-    pub fn set_rules_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RulesConfigurationType>,
-    ) -> Self {
+    pub fn set_rules_configuration(mut self, input: ::std::option::Option<crate::types::RulesConfigurationType>) -> Self {
         self.rules_configuration = input;
         self
     }
     /// <p>The rules to be used for mapping users to roles.</p>
     /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>
-    pub fn get_rules_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RulesConfigurationType> {
+    pub fn get_rules_configuration(&self) -> &::std::option::Option<crate::types::RulesConfigurationType> {
         &self.rules_configuration
     }
     /// Consumes the builder and constructs a [`RoleMapping`](crate::types::RoleMapping).

@@ -35,9 +35,7 @@ impl ListAuditTasksOutput {
 
 /// A builder for [`ListAuditTasksOutput`](crate::operation::list_audit_tasks::ListAuditTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAuditTasksOutputBuilder {
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::AuditTaskMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListAuditTasksOutputBuilder {
         self
     }
     /// <p>The audits that were performed during the specified time period.</p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuditTaskMetadata>>,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuditTaskMetadata>>) -> Self {
         self.tasks = input;
         self
     }
     /// <p>The audits that were performed during the specified time period.</p>
-    pub fn get_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditTaskMetadata>> {
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditTaskMetadata>> {
         &self.tasks
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>

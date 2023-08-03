@@ -37,9 +37,7 @@ impl CreateGlobalNetworkFluentBuilder {
         }
     }
     /// Access the CreateGlobalNetwork as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_global_network::builders::CreateGlobalNetworkInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_global_network::builders::CreateGlobalNetworkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateGlobalNetworkFluentBuilder {
             crate::operation::create_global_network::CreateGlobalNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_global_network::CreateGlobalNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_global_network::CreateGlobalNetworkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateGlobalNetworkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateGlobalNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_global_network::CreateGlobalNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_global_network::CreateGlobalNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_global_network::CreateGlobalNetworkError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateGlobalNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_global_network::CreateGlobalNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_global_network::CreateGlobalNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_global_network::CreateGlobalNetworkError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateGlobalNetworkFluentBuilder {
             crate::operation::create_global_network::CreateGlobalNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_global_network::CreateGlobalNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_global_network::CreateGlobalNetworkError>,
     > {
         self.customize_middleware().await
     }
@@ -149,10 +136,7 @@ impl CreateGlobalNetworkFluentBuilder {
         self
     }
     /// <p>The tags to apply to the resource during creation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

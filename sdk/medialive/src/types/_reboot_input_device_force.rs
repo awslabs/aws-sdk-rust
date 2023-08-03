@@ -38,13 +38,7 @@
 /// Whether or not to force reboot the input device.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RebootInputDeviceForce {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for RebootInputDeviceForce {
         match s {
             "NO" => RebootInputDeviceForce::No,
             "YES" => RebootInputDeviceForce::Yes,
-            other => RebootInputDeviceForce::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RebootInputDeviceForce::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

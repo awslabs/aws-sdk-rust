@@ -37,9 +37,7 @@ impl ObjectLevelStatistics {
 
 /// A builder for [`ObjectLevelStatistics`](crate::types::ObjectLevelStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ObjectLevelStatisticsBuilder {
     pub(crate) file_type: ::std::option::Option<i64>,
     pub(crate) storage_class: ::std::option::Option<i64>,

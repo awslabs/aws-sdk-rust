@@ -100,9 +100,7 @@ impl DatasetImportJobSummary {
 
 /// A builder for [`DatasetImportJobSummary`](crate::types::DatasetImportJobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetImportJobSummaryBuilder {
     pub(crate) dataset_import_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_import_job_name: ::std::option::Option<::std::string::String>,
@@ -115,18 +113,12 @@ pub struct DatasetImportJobSummaryBuilder {
 }
 impl DatasetImportJobSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-    pub fn dataset_import_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_import_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_import_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-    pub fn set_dataset_import_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_import_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_import_job_arn = input;
         self
     }
@@ -135,18 +127,12 @@ impl DatasetImportJobSummaryBuilder {
         &self.dataset_import_job_arn
     }
     /// <p>The name of the dataset import job.</p>
-    pub fn dataset_import_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_import_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_import_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dataset import job.</p>
-    pub fn set_dataset_import_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_import_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_import_job_name = input;
         self
     }
@@ -162,10 +148,7 @@ impl DatasetImportJobSummaryBuilder {
     }
     /// <p>The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
     }
@@ -226,10 +209,7 @@ impl DatasetImportJobSummaryBuilder {
         self
     }
     /// <p>When the dataset import job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -257,10 +237,7 @@ impl DatasetImportJobSummaryBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
@@ -272,9 +249,7 @@ impl DatasetImportJobSummaryBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     /// <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
@@ -283,10 +258,7 @@ impl DatasetImportJobSummaryBuilder {
         self
     }
     /// <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
-    pub fn set_import_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportMode>,
-    ) -> Self {
+    pub fn set_import_mode(mut self, input: ::std::option::Option<crate::types::ImportMode>) -> Self {
         self.import_mode = input;
         self
     }

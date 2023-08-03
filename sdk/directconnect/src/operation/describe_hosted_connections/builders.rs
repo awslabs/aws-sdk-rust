@@ -28,7 +28,7 @@ impl DescribeHostedConnectionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeHostedConnectionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsInputBuilder,
+    inner: crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsInputBuilder,
 }
 impl DescribeHostedConnectionsFluentBuilder {
     /// Creates a new `DescribeHostedConnections`.
@@ -39,7 +39,7 @@ impl DescribeHostedConnectionsFluentBuilder {
         }
     }
     /// Access the DescribeHostedConnections as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeHostedConnectionsFluentBuilder {
             crate::operation::describe_hosted_connections::DescribeHostedConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_hosted_connections::DescribeHostedConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_hosted_connections::DescribeHostedConnectionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeHostedConnectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeHostedConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_hosted_connections::DescribeHostedConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_hosted_connections::DescribeHostedConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_hosted_connections::DescribeHostedConnectionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeHostedConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_hosted_connections::DescribeHostedConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_hosted_connections::DescribeHostedConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_hosted_connections::DescribeHostedConnectionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl DescribeHostedConnectionsFluentBuilder {
             crate::operation::describe_hosted_connections::DescribeHostedConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_hosted_connections::DescribeHostedConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_hosted_connections::DescribeHostedConnectionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the interconnect or LAG.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the interconnect or LAG.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }

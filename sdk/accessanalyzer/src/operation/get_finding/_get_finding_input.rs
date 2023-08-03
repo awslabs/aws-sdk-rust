@@ -30,9 +30,7 @@ impl GetFindingInput {
 
 /// A builder for [`GetFindingInput`](crate::operation::get_finding::GetFindingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingInputBuilder {
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -67,12 +65,7 @@ impl GetFindingInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetFindingInput`](crate::operation::get_finding::GetFindingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_finding::GetFindingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_finding::GetFindingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_finding::GetFindingInput {
             analyzer_arn: self.analyzer_arn,
             id: self.id,

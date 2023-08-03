@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`application(Option<Application>)`](crate::operation::get_application::GetApplicationOutput::application): <p>Returns all of the metadata of an application registered with AWS Systems Manager for SAP.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>The tags of a registered application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
-    pub fn get_application(
-        &self,
-    ) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
-        crate::operation::get_application::builders::GetApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
+        crate::operation::get_application::builders::GetApplicationFluentBuilder::new(self.handle.clone())
     }
 }

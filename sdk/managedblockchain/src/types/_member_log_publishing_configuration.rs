@@ -10,9 +10,7 @@ pub struct MemberLogPublishingConfiguration {
 }
 impl MemberLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
-    pub fn fabric(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MemberFabricLogPublishingConfiguration> {
+    pub fn fabric(&self) -> ::std::option::Option<&crate::types::MemberFabricLogPublishingConfiguration> {
         self.fabric.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl MemberLogPublishingConfiguration {
 
 /// A builder for [`MemberLogPublishingConfiguration`](crate::types::MemberLogPublishingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberLogPublishingConfigurationBuilder {
     pub(crate) fabric: ::std::option::Option<crate::types::MemberFabricLogPublishingConfiguration>,
 }
@@ -38,23 +34,16 @@ impl MemberLogPublishingConfigurationBuilder {
         self
     }
     /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
-    pub fn set_fabric(
-        mut self,
-        input: ::std::option::Option<crate::types::MemberFabricLogPublishingConfiguration>,
-    ) -> Self {
+    pub fn set_fabric(mut self, input: ::std::option::Option<crate::types::MemberFabricLogPublishingConfiguration>) -> Self {
         self.fabric = input;
         self
     }
     /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
-    pub fn get_fabric(
-        &self,
-    ) -> &::std::option::Option<crate::types::MemberFabricLogPublishingConfiguration> {
+    pub fn get_fabric(&self) -> &::std::option::Option<crate::types::MemberFabricLogPublishingConfiguration> {
         &self.fabric
     }
     /// Consumes the builder and constructs a [`MemberLogPublishingConfiguration`](crate::types::MemberLogPublishingConfiguration).
     pub fn build(self) -> crate::types::MemberLogPublishingConfiguration {
-        crate::types::MemberLogPublishingConfiguration {
-            fabric: self.fabric,
-        }
+        crate::types::MemberLogPublishingConfiguration { fabric: self.fabric }
     }
 }

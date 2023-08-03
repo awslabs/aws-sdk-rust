@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetBucketPolicyOutput {
 }
 impl GetBucketPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketPolicyOutput`](crate::operation::get_bucket_policy::GetBucketPolicyOutput).
-    pub fn builder() -> crate::operation::get_bucket_policy::builders::GetBucketPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_bucket_policy::builders::GetBucketPolicyOutputBuilder {
         crate::operation::get_bucket_policy::builders::GetBucketPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketPolicyOutput`](crate::operation::get_bucket_policy::GetBucketPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

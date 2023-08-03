@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`total_count(Option<i32>)`](crate::operation::search_profiles::SearchProfilesOutput::total_count): <p>The total number of room profiles returned.</p>
     /// - On failure, responds with [`SdkError<SearchProfilesError>`](crate::operation::search_profiles::SearchProfilesError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn search_profiles(
-        &self,
-    ) -> crate::operation::search_profiles::builders::SearchProfilesFluentBuilder {
-        crate::operation::search_profiles::builders::SearchProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_profiles(&self) -> crate::operation::search_profiles::builders::SearchProfilesFluentBuilder {
+        crate::operation::search_profiles::builders::SearchProfilesFluentBuilder::new(self.handle.clone())
     }
 }

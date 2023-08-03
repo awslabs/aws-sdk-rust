@@ -64,9 +64,7 @@ impl CreateThesaurusInput {
 
 /// A builder for [`CreateThesaurusInput`](crate::operation::create_thesaurus::CreateThesaurusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateThesaurusInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -145,10 +143,7 @@ impl CreateThesaurusInputBuilder {
         self
     }
     /// <p>A list of key-value pairs that identify or categorize the thesaurus. You can also use tags to help control access to the thesaurus. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -162,10 +157,7 @@ impl CreateThesaurusInputBuilder {
         self
     }
     /// <p>The path to the thesaurus file in S3.</p>
-    pub fn set_source_s3_path(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Path>,
-    ) -> Self {
+    pub fn set_source_s3_path(mut self, input: ::std::option::Option<crate::types::S3Path>) -> Self {
         self.source_s3_path = input;
         self
     }
@@ -190,10 +182,7 @@ impl CreateThesaurusInputBuilder {
     /// Consumes the builder and constructs a [`CreateThesaurusInput`](crate::operation::create_thesaurus::CreateThesaurusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_thesaurus::CreateThesaurusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_thesaurus::CreateThesaurusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_thesaurus::CreateThesaurusInput {
             index_id: self.index_id,
             name: self.name,

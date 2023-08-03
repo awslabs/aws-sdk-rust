@@ -28,9 +28,7 @@ impl GetJobOutput {
 
 /// A builder for [`GetJobOutput`](crate::operation::get_job::GetJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,

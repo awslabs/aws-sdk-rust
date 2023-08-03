@@ -15,17 +15,14 @@ impl SendTaskHeartbeatInput {
 }
 impl SendTaskHeartbeatInput {
     /// Creates a new builder-style object to manufacture [`SendTaskHeartbeatInput`](crate::operation::send_task_heartbeat::SendTaskHeartbeatInput).
-    pub fn builder(
-    ) -> crate::operation::send_task_heartbeat::builders::SendTaskHeartbeatInputBuilder {
+    pub fn builder() -> crate::operation::send_task_heartbeat::builders::SendTaskHeartbeatInputBuilder {
         crate::operation::send_task_heartbeat::builders::SendTaskHeartbeatInputBuilder::default()
     }
 }
 
 /// A builder for [`SendTaskHeartbeatInput`](crate::operation::send_task_heartbeat::SendTaskHeartbeatInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendTaskHeartbeatInputBuilder {
     pub(crate) task_token: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl SendTaskHeartbeatInputBuilder {
     /// Consumes the builder and constructs a [`SendTaskHeartbeatInput`](crate::operation::send_task_heartbeat::SendTaskHeartbeatInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::send_task_heartbeat::SendTaskHeartbeatInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::send_task_heartbeat::SendTaskHeartbeatInput {
-                task_token: self.task_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::send_task_heartbeat::SendTaskHeartbeatInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::send_task_heartbeat::SendTaskHeartbeatInput { task_token: self.task_token })
     }
 }

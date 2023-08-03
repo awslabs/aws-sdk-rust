@@ -23,9 +23,7 @@ impl AppValidationOutput {
 
 /// A builder for [`AppValidationOutput`](crate::types::AppValidationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppValidationOutputBuilder {
     pub(crate) ssm_output: ::std::option::Option<crate::types::SsmOutput>,
 }
@@ -46,8 +44,6 @@ impl AppValidationOutputBuilder {
     }
     /// Consumes the builder and constructs a [`AppValidationOutput`](crate::types::AppValidationOutput).
     pub fn build(self) -> crate::types::AppValidationOutput {
-        crate::types::AppValidationOutput {
-            ssm_output: self.ssm_output,
-        }
+        crate::types::AppValidationOutput { ssm_output: self.ssm_output }
     }
 }

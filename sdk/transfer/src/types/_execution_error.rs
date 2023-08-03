@@ -54,9 +54,7 @@ impl ExecutionError {
 
 /// A builder for [`ExecutionError`](crate::types::ExecutionError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecutionErrorBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ExecutionErrorType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -92,10 +90,7 @@ impl ExecutionErrorBuilder {
     /// </note> </li>
     /// <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one workflow per second.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionErrorType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ExecutionErrorType>) -> Self {
         self.r#type = input;
         self
     }

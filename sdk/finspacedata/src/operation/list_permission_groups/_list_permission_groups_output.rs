@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListPermissionGroupsOutput {
 }
 impl ListPermissionGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListPermissionGroupsOutput`](crate::operation::list_permission_groups::ListPermissionGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_permission_groups::builders::ListPermissionGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_permission_groups::builders::ListPermissionGroupsOutputBuilder {
         crate::operation::list_permission_groups::builders::ListPermissionGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPermissionGroupsOutput`](crate::operation::list_permission_groups::ListPermissionGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionGroupsOutputBuilder {
-    pub(crate) permission_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::PermissionGroup>>,
+    pub(crate) permission_groups: ::std::option::Option<::std::vec::Vec<crate::types::PermissionGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListPermissionGroupsOutputBuilder {
         self
     }
     /// <p>A list of all the permission groups.</p>
-    pub fn set_permission_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionGroup>>,
-    ) -> Self {
+    pub fn set_permission_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionGroup>>) -> Self {
         self.permission_groups = input;
         self
     }
     /// <p>A list of all the permission groups.</p>
-    pub fn get_permission_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionGroup>> {
+    pub fn get_permission_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionGroup>> {
         &self.permission_groups
     }
     /// <p>A token that indicates where a results page should begin.</p>

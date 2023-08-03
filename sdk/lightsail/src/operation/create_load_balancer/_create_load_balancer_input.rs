@@ -23,8 +23,7 @@ pub struct CreateLoadBalancerInput {
     pub certificate_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
     #[doc(hidden)]
-    pub certificate_alternative_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub certificate_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     #[doc(hidden)]
@@ -88,43 +87,33 @@ impl CreateLoadBalancerInput {
 }
 impl CreateLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerInput`](crate::operation::create_load_balancer::CreateLoadBalancerInput).
-    pub fn builder(
-    ) -> crate::operation::create_load_balancer::builders::CreateLoadBalancerInputBuilder {
+    pub fn builder() -> crate::operation::create_load_balancer::builders::CreateLoadBalancerInputBuilder {
         crate::operation::create_load_balancer::builders::CreateLoadBalancerInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLoadBalancerInput`](crate::operation::create_load_balancer::CreateLoadBalancerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_port: ::std::option::Option<i32>,
     pub(crate) health_check_path: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_domain_name: ::std::option::Option<::std::string::String>,
-    pub(crate) certificate_alternative_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) certificate_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) tls_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateLoadBalancerInputBuilder {
     /// <p>The name of your load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of your load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
@@ -148,19 +137,13 @@ impl CreateLoadBalancerInputBuilder {
     }
     /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
     /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
-    pub fn health_check_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
     /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
-    pub fn set_health_check_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_check_path = input;
         self
     }
@@ -171,19 +154,13 @@ impl CreateLoadBalancerInputBuilder {
     }
     /// <p>The name of the SSL/TLS certificate.</p>
     /// <p>If you specify <code>certificateName</code>, then <code>certificateDomainName</code> is required (and vice-versa).</p>
-    pub fn certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SSL/TLS certificate.</p>
     /// <p>If you specify <code>certificateName</code>, then <code>certificateDomainName</code> is required (and vice-versa).</p>
-    pub fn set_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_name = input;
         self
     }
@@ -194,19 +171,13 @@ impl CreateLoadBalancerInputBuilder {
     }
     /// <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>
     /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
-    pub fn certificate_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>
     /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
-    pub fn set_certificate_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_domain_name = input;
         self
     }
@@ -220,27 +191,19 @@ impl CreateLoadBalancerInputBuilder {
     /// To override the contents of this collection use [`set_certificate_alternative_names`](Self::set_certificate_alternative_names).
     ///
     /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
-    pub fn certificate_alternative_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_alternative_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.certificate_alternative_names.unwrap_or_default();
         v.push(input.into());
         self.certificate_alternative_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
-    pub fn set_certificate_alternative_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_certificate_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.certificate_alternative_names = input;
         self
     }
     /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
-    pub fn get_certificate_alternative_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificate_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.certificate_alternative_names
     }
     /// Appends an item to `tags`.
@@ -257,10 +220,7 @@ impl CreateLoadBalancerInputBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -279,10 +239,7 @@ impl CreateLoadBalancerInputBuilder {
     /// <p>The IP address type for the load balancer.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
@@ -295,20 +252,14 @@ impl CreateLoadBalancerInputBuilder {
     /// <p>The name of the TLS policy to apply to the load balancer.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p>
     /// <p>For more information about load balancer TLS policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring TLS security policies on your Amazon Lightsail load balancers</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    pub fn tls_policy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tls_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tls_policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the TLS policy to apply to the load balancer.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p>
     /// <p>For more information about load balancer TLS policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring TLS security policies on your Amazon Lightsail load balancers</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    pub fn set_tls_policy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tls_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tls_policy_name = input;
         self
     }
@@ -321,22 +272,17 @@ impl CreateLoadBalancerInputBuilder {
     /// Consumes the builder and constructs a [`CreateLoadBalancerInput`](crate::operation::create_load_balancer::CreateLoadBalancerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_load_balancer::CreateLoadBalancerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_load_balancer::CreateLoadBalancerInput {
-                load_balancer_name: self.load_balancer_name,
-                instance_port: self.instance_port,
-                health_check_path: self.health_check_path,
-                certificate_name: self.certificate_name,
-                certificate_domain_name: self.certificate_domain_name,
-                certificate_alternative_names: self.certificate_alternative_names,
-                tags: self.tags,
-                ip_address_type: self.ip_address_type,
-                tls_policy_name: self.tls_policy_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_load_balancer::CreateLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_load_balancer::CreateLoadBalancerInput {
+            load_balancer_name: self.load_balancer_name,
+            instance_port: self.instance_port,
+            health_check_path: self.health_check_path,
+            certificate_name: self.certificate_name,
+            certificate_domain_name: self.certificate_domain_name,
+            certificate_alternative_names: self.certificate_alternative_names,
+            tags: self.tags,
+            ip_address_type: self.ip_address_type,
+            tls_policy_name: self.tls_policy_name,
+        })
     }
 }

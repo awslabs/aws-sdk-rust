@@ -37,9 +37,7 @@ impl ObjectLambdaAccessPoint {
 
 /// A builder for [`ObjectLambdaAccessPoint`](crate::types::ObjectLambdaAccessPoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ObjectLambdaAccessPointBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) object_lambda_access_point_arn: ::std::option::Option<::std::string::String>,
@@ -61,25 +59,17 @@ impl ObjectLambdaAccessPointBuilder {
         &self.name
     }
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
-    pub fn object_lambda_access_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_lambda_access_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_lambda_access_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
-    pub fn set_object_lambda_access_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_lambda_access_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_lambda_access_point_arn = input;
         self
     }
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
-    pub fn get_object_lambda_access_point_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_object_lambda_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.object_lambda_access_point_arn
     }
     /// <p>The alias of the Object Lambda Access Point.</p>
@@ -88,10 +78,7 @@ impl ObjectLambdaAccessPointBuilder {
         self
     }
     /// <p>The alias of the Object Lambda Access Point.</p>
-    pub fn set_alias(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectLambdaAccessPointAlias>,
-    ) -> Self {
+    pub fn set_alias(mut self, input: ::std::option::Option<crate::types::ObjectLambdaAccessPointAlias>) -> Self {
         self.alias = input;
         self
     }

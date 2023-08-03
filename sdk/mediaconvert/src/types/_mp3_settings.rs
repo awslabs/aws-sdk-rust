@@ -51,9 +51,7 @@ impl Mp3Settings {
 
 /// A builder for [`Mp3Settings`](crate::types::Mp3Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Mp3SettingsBuilder {
     pub(crate) bitrate: ::std::option::Option<i32>,
     pub(crate) channels: ::std::option::Option<i32>,
@@ -96,17 +94,12 @@ impl Mp3SettingsBuilder {
         self
     }
     /// Specify whether the service encodes this MP3 audio output with a constant bitrate (CBR) or a variable bitrate (VBR).
-    pub fn set_rate_control_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Mp3RateControlMode>,
-    ) -> Self {
+    pub fn set_rate_control_mode(mut self, input: ::std::option::Option<crate::types::Mp3RateControlMode>) -> Self {
         self.rate_control_mode = input;
         self
     }
     /// Specify whether the service encodes this MP3 audio output with a constant bitrate (CBR) or a variable bitrate (VBR).
-    pub fn get_rate_control_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::Mp3RateControlMode> {
+    pub fn get_rate_control_mode(&self) -> &::std::option::Option<crate::types::Mp3RateControlMode> {
         &self.rate_control_mode
     }
     /// Sample rate in hz.

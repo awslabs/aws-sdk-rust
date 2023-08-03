@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`CreateDirectConnectGatewayAssociationOutput`](crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationOutput) with field(s):
     ///   - [`direct_connect_gateway_association(Option<DirectConnectGatewayAssociation>)`](crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationOutput::direct_connect_gateway_association): <p>The association to be created.</p>
     /// - On failure, responds with [`SdkError<CreateDirectConnectGatewayAssociationError>`](crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationError)
-    pub fn create_direct_connect_gateway_association(&self) -> crate::operation::create_direct_connect_gateway_association::builders::CreateDirectConnectGatewayAssociationFluentBuilder{
-        crate::operation::create_direct_connect_gateway_association::builders::CreateDirectConnectGatewayAssociationFluentBuilder::new(self.handle.clone())
+    pub fn create_direct_connect_gateway_association(
+        &self,
+    ) -> crate::operation::create_direct_connect_gateway_association::builders::CreateDirectConnectGatewayAssociationFluentBuilder {
+        crate::operation::create_direct_connect_gateway_association::builders::CreateDirectConnectGatewayAssociationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

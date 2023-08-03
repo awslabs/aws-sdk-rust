@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`inline_policy(impl ::std::convert::Into<String>)`](crate::operation::put_inline_policy_to_permission_set::builders::PutInlinePolicyToPermissionSetFluentBuilder::inline_policy) / [`set_inline_policy(Option<String>)`](crate::operation::put_inline_policy_to_permission_set::builders::PutInlinePolicyToPermissionSetFluentBuilder::set_inline_policy): <p>The inline policy to attach to a <code>PermissionSet</code>.</p>
     /// - On success, responds with [`PutInlinePolicyToPermissionSetOutput`](crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetOutput)
     /// - On failure, responds with [`SdkError<PutInlinePolicyToPermissionSetError>`](crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetError)
-    pub fn put_inline_policy_to_permission_set(&self) -> crate::operation::put_inline_policy_to_permission_set::builders::PutInlinePolicyToPermissionSetFluentBuilder{
+    pub fn put_inline_policy_to_permission_set(
+        &self,
+    ) -> crate::operation::put_inline_policy_to_permission_set::builders::PutInlinePolicyToPermissionSetFluentBuilder {
         crate::operation::put_inline_policy_to_permission_set::builders::PutInlinePolicyToPermissionSetFluentBuilder::new(self.handle.clone())
     }
 }

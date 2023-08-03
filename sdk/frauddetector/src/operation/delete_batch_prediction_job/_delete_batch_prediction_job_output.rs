@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteBatchPredictionJobOutput {
 }
 impl DeleteBatchPredictionJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBatchPredictionJobOutput`](crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobOutput).
-    pub fn builder() -> crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobOutputBuilder{
+    pub fn builder() -> crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobOutputBuilder {
         crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBatchPredictionJobOutput`](crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBatchPredictionJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteBatchPredictionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteBatchPredictionJobOutput`](crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobOutput {
+    pub fn build(self) -> crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobOutput {
         crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobOutput {
             _request_id: self._request_id,
         }

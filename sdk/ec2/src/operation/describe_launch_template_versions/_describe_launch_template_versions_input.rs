@@ -128,16 +128,14 @@ impl DescribeLaunchTemplateVersionsInput {
 }
 impl DescribeLaunchTemplateVersionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLaunchTemplateVersionsInput`](crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsInput).
-    pub fn builder() -> crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsInputBuilder {
         crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLaunchTemplateVersionsInput`](crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLaunchTemplateVersionsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) launch_template_id: ::std::option::Option<::std::string::String>,
@@ -168,20 +166,14 @@ impl DescribeLaunchTemplateVersionsInputBuilder {
     /// <p>The ID of the launch template.</p>
     /// <p>To describe one or more versions of a specified launch template, you must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
     /// <p>To describe all the latest or default launch template versions in your account, you must omit this parameter.</p>
-    pub fn launch_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the launch template.</p>
     /// <p>To describe one or more versions of a specified launch template, you must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
     /// <p>To describe all the latest or default launch template versions in your account, you must omit this parameter.</p>
-    pub fn set_launch_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_template_id = input;
         self
     }
@@ -194,20 +186,14 @@ impl DescribeLaunchTemplateVersionsInputBuilder {
     /// <p>The name of the launch template.</p>
     /// <p>To describe one or more versions of a specified launch template, you must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
     /// <p>To describe all the latest or default launch template versions in your account, you must omit this parameter.</p>
-    pub fn launch_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the launch template.</p>
     /// <p>To describe one or more versions of a specified launch template, you must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
     /// <p>To describe all the latest or default launch template versions in your account, you must omit this parameter.</p>
-    pub fn set_launch_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_template_name = input;
         self
     }
@@ -233,10 +219,7 @@ impl DescribeLaunchTemplateVersionsInputBuilder {
     /// <p>One or more versions of the launch template. Valid values depend on whether you are describing a specified launch template (by ID or name) or all launch templates in your account.</p>
     /// <p>To describe one or more versions of a specified launch template, valid values are <code>$Latest</code>, <code>$Default</code>, and numbers.</p>
     /// <p>To describe all launch templates in your account that are defined as the latest version, the valid value is <code>$Latest</code>. To describe all launch templates in your account that are defined as the default version, the valid value is <code>$Default</code>. You can specify <code>$Latest</code> and <code>$Default</code> in the same request. You cannot specify numbers.</p>
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.versions = input;
         self
     }
@@ -346,10 +329,7 @@ impl DescribeLaunchTemplateVersionsInputBuilder {
     /// <li> <p> <code>network-card-index</code> - The index of the network card.</p> </li>
     /// <li> <p> <code>ram-disk-id</code> - The RAM disk ID.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -403,29 +383,17 @@ impl DescribeLaunchTemplateVersionsInputBuilder {
         crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsInput {
-                dry_run: self.dry_run
-                ,
-                launch_template_id: self.launch_template_id
-                ,
-                launch_template_name: self.launch_template_name
-                ,
-                versions: self.versions
-                ,
-                min_version: self.min_version
-                ,
-                max_version: self.max_version
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                filters: self.filters
-                ,
-                resolve_alias: self.resolve_alias
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsInput {
+            dry_run: self.dry_run,
+            launch_template_id: self.launch_template_id,
+            launch_template_name: self.launch_template_name,
+            versions: self.versions,
+            min_version: self.min_version,
+            max_version: self.max_version,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+            resolve_alias: self.resolve_alias,
+        })
     }
 }

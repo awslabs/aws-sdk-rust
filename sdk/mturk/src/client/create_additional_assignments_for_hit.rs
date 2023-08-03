@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`unique_request_token(impl ::std::convert::Into<String>)`](crate::operation::create_additional_assignments_for_hit::builders::CreateAdditionalAssignmentsForHITFluentBuilder::unique_request_token) / [`set_unique_request_token(Option<String>)`](crate::operation::create_additional_assignments_for_hit::builders::CreateAdditionalAssignmentsForHITFluentBuilder::set_unique_request_token): <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
     /// - On success, responds with [`CreateAdditionalAssignmentsForHitOutput`](crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput)
     /// - On failure, responds with [`SdkError<CreateAdditionalAssignmentsForHITError>`](crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHITError)
-    pub fn create_additional_assignments_for_hit(&self) -> crate::operation::create_additional_assignments_for_hit::builders::CreateAdditionalAssignmentsForHITFluentBuilder{
+    pub fn create_additional_assignments_for_hit(
+        &self,
+    ) -> crate::operation::create_additional_assignments_for_hit::builders::CreateAdditionalAssignmentsForHITFluentBuilder {
         crate::operation::create_additional_assignments_for_hit::builders::CreateAdditionalAssignmentsForHITFluentBuilder::new(self.handle.clone())
     }
 }

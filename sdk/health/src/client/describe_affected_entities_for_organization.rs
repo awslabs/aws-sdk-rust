@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`failed_set(Option<Vec<OrganizationAffectedEntitiesErrorItem>>)`](crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationOutput::failed_set): <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>, <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationOutput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     /// - On failure, responds with [`SdkError<DescribeAffectedEntitiesForOrganizationError>`](crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationError)
-    pub fn describe_affected_entities_for_organization(&self) -> crate::operation::describe_affected_entities_for_organization::builders::DescribeAffectedEntitiesForOrganizationFluentBuilder{
-        crate::operation::describe_affected_entities_for_organization::builders::DescribeAffectedEntitiesForOrganizationFluentBuilder::new(self.handle.clone())
+    pub fn describe_affected_entities_for_organization(
+        &self,
+    ) -> crate::operation::describe_affected_entities_for_organization::builders::DescribeAffectedEntitiesForOrganizationFluentBuilder {
+        crate::operation::describe_affected_entities_for_organization::builders::DescribeAffectedEntitiesForOrganizationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

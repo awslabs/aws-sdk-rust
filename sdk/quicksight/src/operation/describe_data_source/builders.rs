@@ -10,10 +10,7 @@ impl DescribeDataSourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_data_source::DescribeDataSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_source::DescribeDataSourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_source::DescribeDataSourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_data_source();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeDataSourceFluentBuilder {
         }
     }
     /// Access the DescribeDataSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_data_source::builders::DescribeDataSourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_data_source::builders::DescribeDataSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeDataSourceFluentBuilder {
             crate::operation::describe_data_source::DescribeDataSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_source::DescribeDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_source::DescribeDataSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeDataSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeDataSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_source::DescribeDataSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_source::DescribeDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_source::DescribeDataSourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeDataSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_source::DescribeDataSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_source::DescribeDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_source::DescribeDataSourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DescribeDataSourceFluentBuilder {
             crate::operation::describe_data_source::DescribeDataSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_source::DescribeDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_source::DescribeDataSourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -143,18 +121,12 @@ impl DescribeDataSourceFluentBuilder {
         self.inner.get_aws_account_id()
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for RejectInvitationOutput {
 }
 impl RejectInvitationOutput {
     /// Creates a new builder-style object to manufacture [`RejectInvitationOutput`](crate::operation::reject_invitation::RejectInvitationOutput).
-    pub fn builder() -> crate::operation::reject_invitation::builders::RejectInvitationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reject_invitation::builders::RejectInvitationOutputBuilder {
         crate::operation::reject_invitation::builders::RejectInvitationOutputBuilder::default()
     }
 }
 
 /// A builder for [`RejectInvitationOutput`](crate::operation::reject_invitation::RejectInvitationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectInvitationOutputBuilder {
     _request_id: Option<String>,
 }

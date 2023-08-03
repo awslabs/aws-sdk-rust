@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`statements(Option<Vec<Statement>>)`](crate::operation::list_statements::ListStatementsOutput::statements): <p>Returns the list of statements.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_statements::ListStatementsOutput::next_token): <p>A continuation token, if not all statements have yet been returned.</p>
     /// - On failure, responds with [`SdkError<ListStatementsError>`](crate::operation::list_statements::ListStatementsError)
-    pub fn list_statements(
-        &self,
-    ) -> crate::operation::list_statements::builders::ListStatementsFluentBuilder {
-        crate::operation::list_statements::builders::ListStatementsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_statements(&self) -> crate::operation::list_statements::builders::ListStatementsFluentBuilder {
+        crate::operation::list_statements::builders::ListStatementsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,9 +28,7 @@ impl DeleteViewOutput {
 
 /// A builder for [`DeleteViewOutput`](crate::operation::delete_view::DeleteViewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteViewOutputBuilder {
     pub(crate) view_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

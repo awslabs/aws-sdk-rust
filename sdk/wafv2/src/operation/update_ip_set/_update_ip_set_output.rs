@@ -28,27 +28,19 @@ impl UpdateIpSetOutput {
 
 /// A builder for [`UpdateIpSetOutput`](crate::operation::update_ip_set::UpdateIpSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIpSetOutputBuilder {
     pub(crate) next_lock_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateIpSetOutputBuilder {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
-    pub fn next_lock_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_lock_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_lock_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
-    pub fn set_next_lock_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_lock_token = input;
         self
     }

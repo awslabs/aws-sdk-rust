@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`detector_model_version_summaries(Option<Vec<DetectorModelVersionSummary>>)`](crate::operation::list_detector_model_versions::ListDetectorModelVersionsOutput::detector_model_version_summaries): <p>Summary information about the detector model versions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_detector_model_versions::ListDetectorModelVersionsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListDetectorModelVersionsError>`](crate::operation::list_detector_model_versions::ListDetectorModelVersionsError)
-    pub fn list_detector_model_versions(&self) -> crate::operation::list_detector_model_versions::builders::ListDetectorModelVersionsFluentBuilder{
+    pub fn list_detector_model_versions(&self) -> crate::operation::list_detector_model_versions::builders::ListDetectorModelVersionsFluentBuilder {
         crate::operation::list_detector_model_versions::builders::ListDetectorModelVersionsFluentBuilder::new(self.handle.clone())
     }
 }

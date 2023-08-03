@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`member_datasources(Option<Vec<MembershipDatasources>>)`](crate::operation::batch_get_graph_member_datasources::BatchGetGraphMemberDatasourcesOutput::member_datasources): <p>Details on the status of data source packages for members of the behavior graph.</p>
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::operation::batch_get_graph_member_datasources::BatchGetGraphMemberDatasourcesOutput::unprocessed_accounts): <p>Accounts that data source package information could not be retrieved for.</p>
     /// - On failure, responds with [`SdkError<BatchGetGraphMemberDatasourcesError>`](crate::operation::batch_get_graph_member_datasources::BatchGetGraphMemberDatasourcesError)
-    pub fn batch_get_graph_member_datasources(&self) -> crate::operation::batch_get_graph_member_datasources::builders::BatchGetGraphMemberDatasourcesFluentBuilder{
+    pub fn batch_get_graph_member_datasources(
+        &self,
+    ) -> crate::operation::batch_get_graph_member_datasources::builders::BatchGetGraphMemberDatasourcesFluentBuilder {
         crate::operation::batch_get_graph_member_datasources::builders::BatchGetGraphMemberDatasourcesFluentBuilder::new(self.handle.clone())
     }
 }

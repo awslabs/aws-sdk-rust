@@ -30,11 +30,7 @@ impl super::Client {
     ///   - [`pending_data_replication_metadata(Option<DataReplicationMetadataOutput>)`](crate::operation::update_broker::UpdateBrokerOutput::pending_data_replication_metadata): <p>The pending replication details of the data replication-enabled broker. Only returned if pendingDataReplicationMode is set to CRDR.</p>
     ///   - [`pending_data_replication_mode(Option<DataReplicationMode>)`](crate::operation::update_broker::UpdateBrokerOutput::pending_data_replication_mode): <p>Describes whether this broker will be a part of a data replication pair after reboot.</p>
     /// - On failure, responds with [`SdkError<UpdateBrokerError>`](crate::operation::update_broker::UpdateBrokerError)
-    pub fn update_broker(
-        &self,
-    ) -> crate::operation::update_broker::builders::UpdateBrokerFluentBuilder {
-        crate::operation::update_broker::builders::UpdateBrokerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_broker(&self) -> crate::operation::update_broker::builders::UpdateBrokerFluentBuilder {
+        crate::operation::update_broker::builders::UpdateBrokerFluentBuilder::new(self.handle.clone())
     }
 }

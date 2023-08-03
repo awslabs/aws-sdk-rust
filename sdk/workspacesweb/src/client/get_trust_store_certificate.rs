@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`trust_store_arn(Option<String>)`](crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput::trust_store_arn): <p>The ARN of the trust store certificate.</p>
     ///   - [`certificate(Option<Certificate>)`](crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput::certificate): <p>The certificate of the trust store certificate.</p>
     /// - On failure, responds with [`SdkError<GetTrustStoreCertificateError>`](crate::operation::get_trust_store_certificate::GetTrustStoreCertificateError)
-    pub fn get_trust_store_certificate(&self) -> crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateFluentBuilder{
+    pub fn get_trust_store_certificate(&self) -> crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateFluentBuilder {
         crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -44,9 +44,7 @@ impl SymbolicLink {
 
 /// A builder for [`SymbolicLink`](crate::types::SymbolicLink).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SymbolicLinkBuilder {
     pub(crate) blob_id: ::std::option::Option<::std::string::String>,
     pub(crate) absolute_path: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl SymbolicLinkBuilder {
         &self.blob_id
     }
     /// <p>The fully qualified path to the folder that contains the symbolic link.</p>
-    pub fn absolute_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn absolute_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.absolute_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified path to the folder that contains the symbolic link.</p>
-    pub fn set_absolute_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_absolute_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.absolute_path = input;
         self
     }
@@ -89,18 +81,12 @@ impl SymbolicLinkBuilder {
         &self.absolute_path
     }
     /// <p>The relative path of the symbolic link from the folder where the query originated.</p>
-    pub fn relative_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relative_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relative_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The relative path of the symbolic link from the folder where the query originated.</p>
-    pub fn set_relative_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relative_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relative_path = input;
         self
     }
@@ -114,10 +100,7 @@ impl SymbolicLinkBuilder {
         self
     }
     /// <p>The file mode permissions of the blob that cotains information about the symbolic link.</p>
-    pub fn set_file_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::FileModeTypeEnum>,
-    ) -> Self {
+    pub fn set_file_mode(mut self, input: ::std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
         self.file_mode = input;
         self
     }

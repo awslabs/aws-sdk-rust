@@ -30,9 +30,7 @@ impl MembershipItem {
 
 /// A builder for [`MembershipItem`](crate::types::MembershipItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MembershipItemBuilder {
     pub(crate) member_id: ::std::option::Option<::std::string::String>,
     pub(crate) role: ::std::option::Option<crate::types::RoomMembershipRole>,
@@ -58,10 +56,7 @@ impl MembershipItemBuilder {
         self
     }
     /// <p>The member role.</p>
-    pub fn set_role(
-        mut self,
-        input: ::std::option::Option<crate::types::RoomMembershipRole>,
-    ) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<crate::types::RoomMembershipRole>) -> Self {
         self.role = input;
         self
     }

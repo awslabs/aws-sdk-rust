@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`errors(Option<Vec<BatchGetRecordError>>)`](crate::operation::batch_get_record::BatchGetRecordOutput::errors): <p>A list of errors that have occurred when retrieving a batch of Records.</p>
     ///   - [`unprocessed_identifiers(Option<Vec<BatchGetRecordIdentifier>>)`](crate::operation::batch_get_record::BatchGetRecordOutput::unprocessed_identifiers): <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name.</p>
     /// - On failure, responds with [`SdkError<BatchGetRecordError>`](crate::operation::batch_get_record::BatchGetRecordError)
-    pub fn batch_get_record(
-        &self,
-    ) -> crate::operation::batch_get_record::builders::BatchGetRecordFluentBuilder {
-        crate::operation::batch_get_record::builders::BatchGetRecordFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_record(&self) -> crate::operation::batch_get_record::builders::BatchGetRecordFluentBuilder {
+        crate::operation::batch_get_record::builders::BatchGetRecordFluentBuilder::new(self.handle.clone())
     }
 }

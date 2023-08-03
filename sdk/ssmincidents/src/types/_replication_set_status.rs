@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ReplicationSetStatus {
     /// All operations have completed successfully and the replication set is ready to use
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ReplicationSetStatus {
             "DELETING" => ReplicationSetStatus::Deleting,
             "FAILED" => ReplicationSetStatus::Failed,
             "UPDATING" => ReplicationSetStatus::Updating,
-            other => ReplicationSetStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ReplicationSetStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

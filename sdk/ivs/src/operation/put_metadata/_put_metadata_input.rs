@@ -72,12 +72,7 @@ impl PutMetadataInputBuilder {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`PutMetadataInput`](crate::operation::put_metadata::PutMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_metadata::PutMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_metadata::PutMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_metadata::PutMetadataInput {
             channel_arn: self.channel_arn,
             metadata: self.metadata,

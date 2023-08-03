@@ -18,7 +18,9 @@ impl super::Client {
     ///   - [`commit_id(Option<String>)`](crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput::commit_id): <p>The full commit ID of the commit that contains your merge results.</p>
     ///   - [`tree_id(Option<String>)`](crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput::tree_id): <p>The full SHA-1 pointer of the tree information for the commit that contains the merge results.</p>
     /// - On failure, responds with [`SdkError<CreateUnreferencedMergeCommitError>`](crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError)
-    pub fn create_unreferenced_merge_commit(&self) -> crate::operation::create_unreferenced_merge_commit::builders::CreateUnreferencedMergeCommitFluentBuilder{
+    pub fn create_unreferenced_merge_commit(
+        &self,
+    ) -> crate::operation::create_unreferenced_merge_commit::builders::CreateUnreferencedMergeCommitFluentBuilder {
         crate::operation::create_unreferenced_merge_commit::builders::CreateUnreferencedMergeCommitFluentBuilder::new(self.handle.clone())
     }
 }

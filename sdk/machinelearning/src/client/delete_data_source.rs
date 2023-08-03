@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDataSourceOutput`](crate::operation::delete_data_source::DeleteDataSourceOutput) with field(s):
     ///   - [`data_source_id(Option<String>)`](crate::operation::delete_data_source::DeleteDataSourceOutput::data_source_id): <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
     /// - On failure, responds with [`SdkError<DeleteDataSourceError>`](crate::operation::delete_data_source::DeleteDataSourceError)
-    pub fn delete_data_source(
-        &self,
-    ) -> crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder {
-        crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_data_source(&self) -> crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder {
+        crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -18,10 +18,7 @@ pub fn ser_update_robot_application_input(
     if let Some(var_5) = &input.robot_software_suite {
         #[allow(unused_mut)]
         let mut object_6 = object.key("robotSoftwareSuite").start_object();
-        crate::protocol_serde::shape_robot_software_suite::ser_robot_software_suite(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_robot_software_suite::ser_robot_software_suite(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.sources {
@@ -30,10 +27,7 @@ pub fn ser_update_robot_application_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_source_config::ser_source_config(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_source_config::ser_source_config(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }

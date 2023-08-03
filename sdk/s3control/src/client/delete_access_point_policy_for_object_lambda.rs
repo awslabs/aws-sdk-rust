@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_access_point_policy_for_object_lambda::builders::DeleteAccessPointPolicyForObjectLambdaFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_access_point_policy_for_object_lambda::builders::DeleteAccessPointPolicyForObjectLambdaFluentBuilder::set_name): <p>The name of the Object Lambda Access Point you want to delete the policy for.</p>
     /// - On success, responds with [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaOutput)
     /// - On failure, responds with [`SdkError<DeleteAccessPointPolicyForObjectLambdaError>`](crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaError)
-    pub fn delete_access_point_policy_for_object_lambda(&self) -> crate::operation::delete_access_point_policy_for_object_lambda::builders::DeleteAccessPointPolicyForObjectLambdaFluentBuilder{
-        crate::operation::delete_access_point_policy_for_object_lambda::builders::DeleteAccessPointPolicyForObjectLambdaFluentBuilder::new(self.handle.clone())
+    pub fn delete_access_point_policy_for_object_lambda(
+        &self,
+    ) -> crate::operation::delete_access_point_policy_for_object_lambda::builders::DeleteAccessPointPolicyForObjectLambdaFluentBuilder {
+        crate::operation::delete_access_point_policy_for_object_lambda::builders::DeleteAccessPointPolicyForObjectLambdaFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

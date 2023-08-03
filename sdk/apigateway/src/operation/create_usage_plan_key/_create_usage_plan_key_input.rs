@@ -30,17 +30,14 @@ impl CreateUsagePlanKeyInput {
 }
 impl CreateUsagePlanKeyInput {
     /// Creates a new builder-style object to manufacture [`CreateUsagePlanKeyInput`](crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput).
-    pub fn builder(
-    ) -> crate::operation::create_usage_plan_key::builders::CreateUsagePlanKeyInputBuilder {
+    pub fn builder() -> crate::operation::create_usage_plan_key::builders::CreateUsagePlanKeyInputBuilder {
         crate::operation::create_usage_plan_key::builders::CreateUsagePlanKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUsagePlanKeyInput`](crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUsagePlanKeyInputBuilder {
     pub(crate) usage_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
@@ -48,18 +45,12 @@ pub struct CreateUsagePlanKeyInputBuilder {
 }
 impl CreateUsagePlanKeyInputBuilder {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.</p>
-    pub fn usage_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.</p>
-    pub fn set_usage_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.usage_plan_id = input;
         self
     }
@@ -98,16 +89,12 @@ impl CreateUsagePlanKeyInputBuilder {
     /// Consumes the builder and constructs a [`CreateUsagePlanKeyInput`](crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput {
-                usage_plan_id: self.usage_plan_id,
-                key_id: self.key_id,
-                key_type: self.key_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput {
+            usage_plan_id: self.usage_plan_id,
+            key_id: self.key_id,
+            key_type: self.key_type,
+        })
     }
 }

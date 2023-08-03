@@ -10,10 +10,7 @@ impl DeleteDatastoreInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_datastore::DeleteDatastoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_datastore::DeleteDatastoreError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_datastore::DeleteDatastoreError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_datastore();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteDatastoreFluentBuilder {
         }
     }
     /// Access the DeleteDatastore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_datastore::builders::DeleteDatastoreInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_datastore::builders::DeleteDatastoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteDatastoreFluentBuilder {
             crate::operation::delete_datastore::DeleteDatastore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_datastore::DeleteDatastoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_datastore::DeleteDatastoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteDatastoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteDatastoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_datastore::DeleteDatastoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_datastore::DeleteDatastoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_datastore::DeleteDatastoreError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteDatastoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_datastore::DeleteDatastoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_datastore::DeleteDatastoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_datastore::DeleteDatastoreError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteDatastoreFluentBuilder {
             crate::operation::delete_datastore::DeleteDatastore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_datastore::DeleteDatastoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_datastore::DeleteDatastoreError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the data store to delete.</p>
-    pub fn datastore_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn datastore_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.datastore_name(input.into());
         self
     }
     /// <p>The name of the data store to delete.</p>
-    pub fn set_datastore_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_datastore_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_datastore_name(input);
         self
     }

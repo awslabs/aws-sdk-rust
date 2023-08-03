@@ -10,10 +10,7 @@ impl GetChunkInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_chunk::GetChunkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_chunk::GetChunkError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_chunk::GetChunkError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_chunk();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetChunkFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_chunk::GetChunk,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_chunk::GetChunk, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_chunk::GetChunkError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetChunkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl GetChunkFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_chunk::GetChunk,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_chunk::GetChunk, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_chunk::GetChunkError>,
     > {
         self.customize_middleware().await
     }
     /// Storage job id
-    pub fn storage_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_job_id(input.into());
         self
     }
     /// Storage job id
-    pub fn set_storage_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_job_id(input);
         self
     }

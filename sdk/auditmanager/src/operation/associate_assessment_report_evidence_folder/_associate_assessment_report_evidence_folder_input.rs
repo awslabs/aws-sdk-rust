@@ -22,34 +22,26 @@ impl AssociateAssessmentReportEvidenceFolderInput {
 }
 impl AssociateAssessmentReportEvidenceFolderInput {
     /// Creates a new builder-style object to manufacture [`AssociateAssessmentReportEvidenceFolderInput`](crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderInput).
-    pub fn builder() -> crate::operation::associate_assessment_report_evidence_folder::builders::AssociateAssessmentReportEvidenceFolderInputBuilder{
+    pub fn builder() -> crate::operation::associate_assessment_report_evidence_folder::builders::AssociateAssessmentReportEvidenceFolderInputBuilder {
         crate::operation::associate_assessment_report_evidence_folder::builders::AssociateAssessmentReportEvidenceFolderInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateAssessmentReportEvidenceFolderInput`](crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateAssessmentReportEvidenceFolderInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) evidence_folder_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateAssessmentReportEvidenceFolderInputBuilder {
     /// <p> The identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
@@ -58,18 +50,12 @@ impl AssociateAssessmentReportEvidenceFolderInputBuilder {
         &self.assessment_id
     }
     /// <p> The identifier for the folder that the evidence is stored in. </p>
-    pub fn evidence_folder_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evidence_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evidence_folder_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the folder that the evidence is stored in. </p>
-    pub fn set_evidence_folder_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evidence_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evidence_folder_id = input;
         self
     }
@@ -78,14 +64,17 @@ impl AssociateAssessmentReportEvidenceFolderInputBuilder {
         &self.evidence_folder_id
     }
     /// Consumes the builder and constructs a [`AssociateAssessmentReportEvidenceFolderInput`](crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderInput {
-                assessment_id: self.assessment_id
-                ,
-                evidence_folder_id: self.evidence_folder_id
-                ,
-            }
+                assessment_id: self.assessment_id,
+                evidence_folder_id: self.evidence_folder_id,
+            },
         )
     }
 }

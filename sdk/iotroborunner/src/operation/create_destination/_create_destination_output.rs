@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for CreateDestinationOutput {
 }
 impl CreateDestinationOutput {
     /// Creates a new builder-style object to manufacture [`CreateDestinationOutput`](crate::operation::create_destination::CreateDestinationOutput).
-    pub fn builder(
-    ) -> crate::operation::create_destination::builders::CreateDestinationOutputBuilder {
+    pub fn builder() -> crate::operation::create_destination::builders::CreateDestinationOutputBuilder {
         crate::operation::create_destination::builders::CreateDestinationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDestinationOutput`](crate::operation::create_destination::CreateDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDestinationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -103,10 +100,7 @@ impl CreateDestinationOutputBuilder {
         self
     }
     /// Timestamp at which the resource was created.
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -120,10 +114,7 @@ impl CreateDestinationOutputBuilder {
         self
     }
     /// Timestamp at which the resource was last updated.
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -137,10 +128,7 @@ impl CreateDestinationOutputBuilder {
         self
     }
     /// State of the destination.
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::DestinationState>) -> Self {
         self.state = input;
         self
     }

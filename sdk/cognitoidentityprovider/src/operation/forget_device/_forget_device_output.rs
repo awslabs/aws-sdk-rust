@@ -19,9 +19,7 @@ impl ForgetDeviceOutput {
 
 /// A builder for [`ForgetDeviceOutput`](crate::operation::forget_device::ForgetDeviceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ForgetDeviceOutputBuilder {
     _request_id: Option<String>,
 }

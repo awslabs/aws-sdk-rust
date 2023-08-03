@@ -26,7 +26,7 @@ impl PutMobileDeviceAccessOverrideInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutMobileDeviceAccessOverrideFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideInputBuilder,
+    inner: crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideInputBuilder,
 }
 impl PutMobileDeviceAccessOverrideFluentBuilder {
     /// Creates a new `PutMobileDeviceAccessOverride`.
@@ -37,7 +37,7 @@ impl PutMobileDeviceAccessOverrideFluentBuilder {
         }
     }
     /// Access the PutMobileDeviceAccessOverride as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PutMobileDeviceAccessOverrideFluentBuilder {
             crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverride,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PutMobileDeviceAccessOverrideFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PutMobileDeviceAccessOverrideFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PutMobileDeviceAccessOverrideFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl PutMobileDeviceAccessOverrideFluentBuilder {
             crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverride,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Identifies the WorkMail organization for which you create the override.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>Identifies the WorkMail organization for which you create the override.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }
@@ -189,10 +172,7 @@ impl PutMobileDeviceAccessOverrideFluentBuilder {
         self
     }
     /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
-    pub fn set_effect(
-        mut self,
-        input: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>,
-    ) -> Self {
+    pub fn set_effect(mut self, input: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>) -> Self {
         self.inner = self.inner.set_effect(input);
         self
     }

@@ -26,9 +26,7 @@ impl CreateExportOutput {
         self.export_id.as_deref()
     }
     /// <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
-    pub fn resource_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExportResourceSpecification> {
+    pub fn resource_specification(&self) -> ::std::option::Option<&crate::types::ExportResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// <p>The file format used for the bot or bot locale definition files.</p>
@@ -58,13 +56,10 @@ impl CreateExportOutput {
 
 /// A builder for [`CreateExportOutput`](crate::operation::create_export::CreateExportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateExportOutputBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_specification:
-        ::std::option::Option<crate::types::ExportResourceSpecification>,
+    pub(crate) resource_specification: ::std::option::Option<crate::types::ExportResourceSpecification>,
     pub(crate) file_format: ::std::option::Option<crate::types::ImportExportFileFormat>,
     pub(crate) export_status: ::std::option::Option<crate::types::ExportStatus>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -86,25 +81,17 @@ impl CreateExportOutputBuilder {
         &self.export_id
     }
     /// <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
-    pub fn resource_specification(
-        mut self,
-        input: crate::types::ExportResourceSpecification,
-    ) -> Self {
+    pub fn resource_specification(mut self, input: crate::types::ExportResourceSpecification) -> Self {
         self.resource_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
-    pub fn set_resource_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportResourceSpecification>,
-    ) -> Self {
+    pub fn set_resource_specification(mut self, input: ::std::option::Option<crate::types::ExportResourceSpecification>) -> Self {
         self.resource_specification = input;
         self
     }
     /// <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
-    pub fn get_resource_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExportResourceSpecification> {
+    pub fn get_resource_specification(&self) -> &::std::option::Option<crate::types::ExportResourceSpecification> {
         &self.resource_specification
     }
     /// <p>The file format used for the bot or bot locale definition files.</p>
@@ -113,10 +100,7 @@ impl CreateExportOutputBuilder {
         self
     }
     /// <p>The file format used for the bot or bot locale definition files.</p>
-    pub fn set_file_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportExportFileFormat>,
-    ) -> Self {
+    pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::ImportExportFileFormat>) -> Self {
         self.file_format = input;
         self
     }
@@ -130,10 +114,7 @@ impl CreateExportOutputBuilder {
         self
     }
     /// <p>The status of the export. When the status is <code>Completed</code>, you can use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a> operation to get the pre-signed S3 URL link to your exported bot or bot locale.</p>
-    pub fn set_export_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportStatus>,
-    ) -> Self {
+    pub fn set_export_status(mut self, input: ::std::option::Option<crate::types::ExportStatus>) -> Self {
         self.export_status = input;
         self
     }
@@ -147,10 +128,7 @@ impl CreateExportOutputBuilder {
         self
     }
     /// <p>The date and time that the request to export a bot was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }

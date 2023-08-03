@@ -139,9 +139,7 @@ impl CommandInvocation {
         self.notification_config.as_ref()
     }
     /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command output.</p>
-    pub fn cloud_watch_output_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchOutputConfig> {
+    pub fn cloud_watch_output_config(&self) -> ::std::option::Option<&crate::types::CloudWatchOutputConfig> {
         self.cloud_watch_output_config.as_ref()
     }
 }
@@ -154,9 +152,7 @@ impl CommandInvocation {
 
 /// A builder for [`CommandInvocation`](crate::types::CommandInvocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommandInvocationBuilder {
     pub(crate) command_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -173,8 +169,7 @@ pub struct CommandInvocationBuilder {
     pub(crate) command_plugins: ::std::option::Option<::std::vec::Vec<crate::types::CommandPlugin>>,
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
     pub(crate) notification_config: ::std::option::Option<crate::types::NotificationConfig>,
-    pub(crate) cloud_watch_output_config:
-        ::std::option::Option<crate::types::CloudWatchOutputConfig>,
+    pub(crate) cloud_watch_output_config: ::std::option::Option<crate::types::CloudWatchOutputConfig>,
 }
 impl CommandInvocationBuilder {
     /// <p>The command against which this invocation was requested.</p>
@@ -206,18 +201,12 @@ impl CommandInvocationBuilder {
         &self.instance_id
     }
     /// <p>The fully qualified host name of the managed node.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified host name of the managed node.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -240,18 +229,12 @@ impl CommandInvocationBuilder {
         &self.comment
     }
     /// <p>The document name that was requested for execution.</p>
-    pub fn document_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The document name that was requested for execution.</p>
-    pub fn set_document_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_name = input;
         self
     }
@@ -260,18 +243,12 @@ impl CommandInvocationBuilder {
         &self.document_name
     }
     /// <p>The Systems Manager document (SSM document) version.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Systems Manager document (SSM document) version.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -285,10 +262,7 @@ impl CommandInvocationBuilder {
         self
     }
     /// <p>The time and date the request was sent to this managed node.</p>
-    pub fn set_requested_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_requested_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.requested_date_time = input;
         self
     }
@@ -302,10 +276,7 @@ impl CommandInvocationBuilder {
         self
     }
     /// <p>Whether or not the invocation succeeded, failed, or is pending.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CommandInvocationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CommandInvocationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -326,10 +297,7 @@ impl CommandInvocationBuilder {
     /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// <li> <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p> </li>
     /// </ul>
-    pub fn status_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_details = ::std::option::Option::Some(input.into());
         self
     }
@@ -346,10 +314,7 @@ impl CommandInvocationBuilder {
     /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// <li> <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p> </li>
     /// </ul>
-    pub fn set_status_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_details = input;
         self
     }
@@ -384,18 +349,12 @@ impl CommandInvocationBuilder {
         &self.trace_output
     }
     /// <p>The URL to the plugin's StdOut file in Amazon Simple Storage Service (Amazon S3), if the S3 bucket was defined for the parent command. For an invocation, <code>StandardOutputUrl</code> is populated if there is just one plugin defined for the command, and the S3 bucket was defined for the command.</p>
-    pub fn standard_output_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standard_output_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standard_output_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to the plugin's StdOut file in Amazon Simple Storage Service (Amazon S3), if the S3 bucket was defined for the parent command. For an invocation, <code>StandardOutputUrl</code> is populated if there is just one plugin defined for the command, and the S3 bucket was defined for the command.</p>
-    pub fn set_standard_output_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_standard_output_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standard_output_url = input;
         self
     }
@@ -404,18 +363,12 @@ impl CommandInvocationBuilder {
         &self.standard_output_url
     }
     /// <p>The URL to the plugin's StdErr file in Amazon Simple Storage Service (Amazon S3), if the S3 bucket was defined for the parent command. For an invocation, <code>StandardErrorUrl</code> is populated if there is just one plugin defined for the command, and the S3 bucket was defined for the command.</p>
-    pub fn standard_error_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standard_error_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standard_error_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to the plugin's StdErr file in Amazon Simple Storage Service (Amazon S3), if the S3 bucket was defined for the parent command. For an invocation, <code>StandardErrorUrl</code> is populated if there is just one plugin defined for the command, and the S3 bucket was defined for the command.</p>
-    pub fn set_standard_error_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_standard_error_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standard_error_url = input;
         self
     }
@@ -435,17 +388,12 @@ impl CommandInvocationBuilder {
         self
     }
     /// <p>Plugins processed by the command.</p>
-    pub fn set_command_plugins(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CommandPlugin>>,
-    ) -> Self {
+    pub fn set_command_plugins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommandPlugin>>) -> Self {
         self.command_plugins = input;
         self
     }
     /// <p>Plugins processed by the command.</p>
-    pub fn get_command_plugins(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandPlugin>> {
+    pub fn get_command_plugins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandPlugin>> {
         &self.command_plugins
     }
     /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes on a per managed node basis.</p>
@@ -468,39 +416,26 @@ impl CommandInvocationBuilder {
         self
     }
     /// <p>Configurations for sending notifications about command status changes on a per managed node basis.</p>
-    pub fn set_notification_config(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationConfig>,
-    ) -> Self {
+    pub fn set_notification_config(mut self, input: ::std::option::Option<crate::types::NotificationConfig>) -> Self {
         self.notification_config = input;
         self
     }
     /// <p>Configurations for sending notifications about command status changes on a per managed node basis.</p>
-    pub fn get_notification_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationConfig> {
+    pub fn get_notification_config(&self) -> &::std::option::Option<crate::types::NotificationConfig> {
         &self.notification_config
     }
     /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command output.</p>
-    pub fn cloud_watch_output_config(
-        mut self,
-        input: crate::types::CloudWatchOutputConfig,
-    ) -> Self {
+    pub fn cloud_watch_output_config(mut self, input: crate::types::CloudWatchOutputConfig) -> Self {
         self.cloud_watch_output_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command output.</p>
-    pub fn set_cloud_watch_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchOutputConfig>,
-    ) -> Self {
+    pub fn set_cloud_watch_output_config(mut self, input: ::std::option::Option<crate::types::CloudWatchOutputConfig>) -> Self {
         self.cloud_watch_output_config = input;
         self
     }
     /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command output.</p>
-    pub fn get_cloud_watch_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchOutputConfig> {
+    pub fn get_cloud_watch_output_config(&self) -> &::std::option::Option<crate::types::CloudWatchOutputConfig> {
         &self.cloud_watch_output_config
     }
     /// Consumes the builder and constructs a [`CommandInvocation`](crate::types::CommandInvocation).

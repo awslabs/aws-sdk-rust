@@ -10,10 +10,7 @@ impl DetectEntitiesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::detect_entities::DetectEntitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_entities::DetectEntitiesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_entities::DetectEntitiesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.detect_entities();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl DetectEntitiesFluentBuilder {
         }
     }
     /// Access the DetectEntities as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detect_entities::builders::DetectEntitiesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::detect_entities::builders::DetectEntitiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,10 +60,7 @@ impl DetectEntitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -140,10 +132,7 @@ impl DetectEntitiesFluentBuilder {
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
     /// <p>All input documents must be in the same language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
@@ -207,17 +196,12 @@ impl DetectEntitiesFluentBuilder {
         self
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
-    pub fn set_document_reader_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentReaderConfig>,
-    ) -> Self {
+    pub fn set_document_reader_config(mut self, input: ::std::option::Option<crate::types::DocumentReaderConfig>) -> Self {
         self.inner = self.inner.set_document_reader_config(input);
         self
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
-    pub fn get_document_reader_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentReaderConfig> {
+    pub fn get_document_reader_config(&self) -> &::std::option::Option<crate::types::DocumentReaderConfig> {
         self.inner.get_document_reader_config()
     }
 }

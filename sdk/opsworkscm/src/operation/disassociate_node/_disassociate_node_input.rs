@@ -37,22 +37,18 @@ impl DisassociateNodeInput {
 }
 impl DisassociateNodeInput {
     /// Creates a new builder-style object to manufacture [`DisassociateNodeInput`](crate::operation::disassociate_node::DisassociateNodeInput).
-    pub fn builder() -> crate::operation::disassociate_node::builders::DisassociateNodeInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_node::builders::DisassociateNodeInputBuilder {
         crate::operation::disassociate_node::builders::DisassociateNodeInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateNodeInput`](crate::operation::disassociate_node::DisassociateNodeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateNodeInputBuilder {
     pub(crate) server_name: ::std::option::Option<::std::string::String>,
     pub(crate) node_name: ::std::option::Option<::std::string::String>,
-    pub(crate) engine_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
+    pub(crate) engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
 }
 impl DisassociateNodeInputBuilder {
     /// <p>The name of the server from which to disassociate the node. </p>
@@ -103,10 +99,7 @@ impl DisassociateNodeInputBuilder {
     /// <ul>
     /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>
     /// </ul>
-    pub fn set_engine_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
-    ) -> Self {
+    pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
         self.engine_attributes = input;
         self
     }
@@ -115,18 +108,13 @@ impl DisassociateNodeInputBuilder {
     /// <ul>
     /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist. </p> </li>
     /// </ul>
-    pub fn get_engine_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
+    pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
         &self.engine_attributes
     }
     /// Consumes the builder and constructs a [`DisassociateNodeInput`](crate::operation::disassociate_node::DisassociateNodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_node::DisassociateNodeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::disassociate_node::DisassociateNodeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_node::DisassociateNodeInput {
             server_name: self.server_name,
             node_name: self.node_name,

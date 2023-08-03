@@ -61,9 +61,7 @@ impl ModifyHostsInput {
 
 /// A builder for [`ModifyHostsInput`](crate::operation::modify_hosts::ModifyHostsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyHostsInputBuilder {
     pub(crate) auto_placement: ::std::option::Option<crate::types::AutoPlacement>,
     pub(crate) host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -79,10 +77,7 @@ impl ModifyHostsInputBuilder {
         self
     }
     /// <p>Specify whether to enable or disable auto-placement.</p>
-    pub fn set_auto_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoPlacement>,
-    ) -> Self {
+    pub fn set_auto_placement(mut self, input: ::std::option::Option<crate::types::AutoPlacement>) -> Self {
         self.auto_placement = input;
         self
     }
@@ -102,10 +97,7 @@ impl ModifyHostsInputBuilder {
         self
     }
     /// <p>The IDs of the Dedicated Hosts to modify.</p>
-    pub fn set_host_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_host_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.host_ids = input;
         self
     }
@@ -119,10 +111,7 @@ impl ModifyHostsInputBuilder {
         self
     }
     /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_host_recovery(
-        mut self,
-        input: ::std::option::Option<crate::types::HostRecovery>,
-    ) -> Self {
+    pub fn set_host_recovery(mut self, input: ::std::option::Option<crate::types::HostRecovery>) -> Self {
         self.host_recovery = input;
         self
     }
@@ -132,19 +121,13 @@ impl ModifyHostsInputBuilder {
     }
     /// <p>Specifies the instance type to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated Host to support only a specific instance type.</p>
     /// <p>If you want to modify a Dedicated Host to support multiple instance types in its current instance family, omit this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and <b>InstanceFamily</b> in the same request.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the instance type to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated Host to support only a specific instance type.</p>
     /// <p>If you want to modify a Dedicated Host to support multiple instance types in its current instance family, omit this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and <b>InstanceFamily</b> in the same request.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -155,19 +138,13 @@ impl ModifyHostsInputBuilder {
     }
     /// <p>Specifies the instance family to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated Host to support multiple instance types within its current instance family.</p>
     /// <p>If you want to modify a Dedicated Host to support a specific instance type only, omit this parameter and specify <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same request.</p>
-    pub fn instance_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the instance family to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated Host to support multiple instance types within its current instance family.</p>
     /// <p>If you want to modify a Dedicated Host to support a specific instance type only, omit this parameter and specify <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same request.</p>
-    pub fn set_instance_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_family = input;
         self
     }
@@ -182,10 +159,7 @@ impl ModifyHostsInputBuilder {
         self
     }
     /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_host_maintenance(
-        mut self,
-        input: ::std::option::Option<crate::types::HostMaintenance>,
-    ) -> Self {
+    pub fn set_host_maintenance(mut self, input: ::std::option::Option<crate::types::HostMaintenance>) -> Self {
         self.host_maintenance = input;
         self
     }
@@ -194,12 +168,7 @@ impl ModifyHostsInputBuilder {
         &self.host_maintenance
     }
     /// Consumes the builder and constructs a [`ModifyHostsInput`](crate::operation::modify_hosts::ModifyHostsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_hosts::ModifyHostsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_hosts::ModifyHostsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_hosts::ModifyHostsInput {
             auto_placement: self.auto_placement,
             host_ids: self.host_ids,

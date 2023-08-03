@@ -22,36 +22,26 @@ impl DescribeIdentityIdFormatInput {
 }
 impl DescribeIdentityIdFormatInput {
     /// Creates a new builder-style object to manufacture [`DescribeIdentityIdFormatInput`](crate::operation::describe_identity_id_format::DescribeIdentityIdFormatInput).
-    pub fn builder(
-    ) -> crate::operation::describe_identity_id_format::builders::DescribeIdentityIdFormatInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_identity_id_format::builders::DescribeIdentityIdFormatInputBuilder {
         crate::operation::describe_identity_id_format::builders::DescribeIdentityIdFormatInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIdentityIdFormatInput`](crate::operation::describe_identity_id_format::DescribeIdentityIdFormatInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIdentityIdFormatInputBuilder {
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,
 }
 impl DescribeIdentityIdFormatInputBuilder {
     /// <p>The ARN of the principal, which can be an IAM role, IAM user, or the root user.</p>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the principal, which can be an IAM role, IAM user, or the root user.</p>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_arn = input;
         self
     }
@@ -80,11 +70,9 @@ impl DescribeIdentityIdFormatInputBuilder {
         crate::operation::describe_identity_id_format::DescribeIdentityIdFormatInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_identity_id_format::DescribeIdentityIdFormatInput {
-                principal_arn: self.principal_arn,
-                resource: self.resource,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_identity_id_format::DescribeIdentityIdFormatInput {
+            principal_arn: self.principal_arn,
+            resource: self.resource,
+        })
     }
 }

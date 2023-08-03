@@ -93,9 +93,7 @@ impl Queue {
 
 /// A builder for [`Queue`](crate::types::Queue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueueBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -130,10 +128,7 @@ impl QueueBuilder {
         self
     }
     /// The timestamp in epoch seconds for when you created the queue.
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -161,10 +156,7 @@ impl QueueBuilder {
         self
     }
     /// The timestamp in epoch seconds for when you most recently updated the queue.
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }
@@ -192,10 +184,7 @@ impl QueueBuilder {
         self
     }
     /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment.
-    pub fn set_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.pricing_plan = input;
         self
     }
@@ -223,10 +212,7 @@ impl QueueBuilder {
         self
     }
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
-    pub fn set_reservation_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationPlan>,
-    ) -> Self {
+    pub fn set_reservation_plan(mut self, input: ::std::option::Option<crate::types::ReservationPlan>) -> Self {
         self.reservation_plan = input;
         self
     }

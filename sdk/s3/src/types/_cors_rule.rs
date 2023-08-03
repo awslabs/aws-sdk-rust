@@ -58,9 +58,7 @@ impl CorsRule {
 
 /// A builder for [`CorsRule`](crate::types::CorsRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CorsRuleBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -89,27 +87,19 @@ impl CorsRuleBuilder {
     /// To override the contents of this collection use [`set_allowed_headers`](Self::set_allowed_headers).
     ///
     /// <p>Headers that are specified in the <code>Access-Control-Request-Headers</code> header. These headers are allowed in a preflight OPTIONS request. In response to any preflight OPTIONS request, Amazon S3 returns any requested headers that are allowed.</p>
-    pub fn allowed_headers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_headers.unwrap_or_default();
         v.push(input.into());
         self.allowed_headers = ::std::option::Option::Some(v);
         self
     }
     /// <p>Headers that are specified in the <code>Access-Control-Request-Headers</code> header. These headers are allowed in a preflight OPTIONS request. In response to any preflight OPTIONS request, Amazon S3 returns any requested headers that are allowed.</p>
-    pub fn set_allowed_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allowed_headers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_headers = input;
         self
     }
     /// <p>Headers that are specified in the <code>Access-Control-Request-Headers</code> header. These headers are allowed in a preflight OPTIONS request. In response to any preflight OPTIONS request, Amazon S3 returns any requested headers that are allowed.</p>
-    pub fn get_allowed_headers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_headers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_headers
     }
     /// Appends an item to `allowed_methods`.
@@ -117,27 +107,19 @@ impl CorsRuleBuilder {
     /// To override the contents of this collection use [`set_allowed_methods`](Self::set_allowed_methods).
     ///
     /// <p>An HTTP method that you allow the origin to execute. Valid values are <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and <code>DELETE</code>.</p>
-    pub fn allowed_methods(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_methods(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_methods.unwrap_or_default();
         v.push(input.into());
         self.allowed_methods = ::std::option::Option::Some(v);
         self
     }
     /// <p>An HTTP method that you allow the origin to execute. Valid values are <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and <code>DELETE</code>.</p>
-    pub fn set_allowed_methods(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allowed_methods(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_methods = input;
         self
     }
     /// <p>An HTTP method that you allow the origin to execute. Valid values are <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and <code>DELETE</code>.</p>
-    pub fn get_allowed_methods(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_methods(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_methods
     }
     /// Appends an item to `allowed_origins`.
@@ -145,27 +127,19 @@ impl CorsRuleBuilder {
     /// To override the contents of this collection use [`set_allowed_origins`](Self::set_allowed_origins).
     ///
     /// <p>One or more origins you want customers to be able to access the bucket from.</p>
-    pub fn allowed_origins(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_origins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_origins.unwrap_or_default();
         v.push(input.into());
         self.allowed_origins = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more origins you want customers to be able to access the bucket from.</p>
-    pub fn set_allowed_origins(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allowed_origins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_origins = input;
         self
     }
     /// <p>One or more origins you want customers to be able to access the bucket from.</p>
-    pub fn get_allowed_origins(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_origins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_origins
     }
     /// Appends an item to `expose_headers`.
@@ -173,27 +147,19 @@ impl CorsRuleBuilder {
     /// To override the contents of this collection use [`set_expose_headers`](Self::set_expose_headers).
     ///
     /// <p>One or more headers in the response that you want customers to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
-    pub fn expose_headers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expose_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.expose_headers.unwrap_or_default();
         v.push(input.into());
         self.expose_headers = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more headers in the response that you want customers to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
-    pub fn set_expose_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_expose_headers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.expose_headers = input;
         self
     }
     /// <p>One or more headers in the response that you want customers to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
-    pub fn get_expose_headers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_expose_headers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.expose_headers
     }
     /// <p>The time in seconds that your browser is to cache the preflight response for the specified resource.</p>

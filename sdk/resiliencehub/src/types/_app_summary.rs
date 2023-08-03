@@ -47,9 +47,7 @@ impl AppSummary {
         self.creation_time.as_ref()
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn compliance_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppComplianceStatusType> {
+    pub fn compliance_status(&self) -> ::std::option::Option<&crate::types::AppComplianceStatusType> {
         self.compliance_status.as_ref()
     }
     /// <p>The current resiliency score for the application.</p>
@@ -57,9 +55,7 @@ impl AppSummary {
         self.resiliency_score
     }
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-    pub fn assessment_schedule(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppAssessmentScheduleType> {
+    pub fn assessment_schedule(&self) -> ::std::option::Option<&crate::types::AppAssessmentScheduleType> {
         self.assessment_schedule.as_ref()
     }
     /// <p>The status of the application.</p>
@@ -76,9 +72,7 @@ impl AppSummary {
 
 /// A builder for [`AppSummary`](crate::types::AppSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppSummaryBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -138,10 +132,7 @@ impl AppSummaryBuilder {
         self
     }
     /// <p>The timestamp for when the app was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -155,17 +146,12 @@ impl AppSummaryBuilder {
         self
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn set_compliance_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AppComplianceStatusType>,
-    ) -> Self {
+    pub fn set_compliance_status(mut self, input: ::std::option::Option<crate::types::AppComplianceStatusType>) -> Self {
         self.compliance_status = input;
         self
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn get_compliance_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppComplianceStatusType> {
+    pub fn get_compliance_status(&self) -> &::std::option::Option<crate::types::AppComplianceStatusType> {
         &self.compliance_status
     }
     /// <p>The current resiliency score for the application.</p>
@@ -188,17 +174,12 @@ impl AppSummaryBuilder {
         self
     }
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-    pub fn set_assessment_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::AppAssessmentScheduleType>,
-    ) -> Self {
+    pub fn set_assessment_schedule(mut self, input: ::std::option::Option<crate::types::AppAssessmentScheduleType>) -> Self {
         self.assessment_schedule = input;
         self
     }
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-    pub fn get_assessment_schedule(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppAssessmentScheduleType> {
+    pub fn get_assessment_schedule(&self) -> &::std::option::Option<crate::types::AppAssessmentScheduleType> {
         &self.assessment_schedule
     }
     /// <p>The status of the application.</p>

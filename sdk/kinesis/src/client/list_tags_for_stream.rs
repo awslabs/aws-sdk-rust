@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::list_tags_for_stream::ListTagsForStreamOutput::tags): <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
     ///   - [`has_more_tags(Option<bool>)`](crate::operation::list_tags_for_stream::ListTagsForStreamOutput::has_more_tags): <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
     /// - On failure, responds with [`SdkError<ListTagsForStreamError>`](crate::operation::list_tags_for_stream::ListTagsForStreamError)
-    pub fn list_tags_for_stream(
-        &self,
-    ) -> crate::operation::list_tags_for_stream::builders::ListTagsForStreamFluentBuilder {
-        crate::operation::list_tags_for_stream::builders::ListTagsForStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_tags_for_stream(&self) -> crate::operation::list_tags_for_stream::builders::ListTagsForStreamFluentBuilder {
+        crate::operation::list_tags_for_stream::builders::ListTagsForStreamFluentBuilder::new(self.handle.clone())
     }
 }

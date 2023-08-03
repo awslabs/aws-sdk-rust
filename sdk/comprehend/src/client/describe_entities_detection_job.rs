@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeEntitiesDetectionJobOutput`](crate::operation::describe_entities_detection_job::DescribeEntitiesDetectionJobOutput) with field(s):
     ///   - [`entities_detection_job_properties(Option<EntitiesDetectionJobProperties>)`](crate::operation::describe_entities_detection_job::DescribeEntitiesDetectionJobOutput::entities_detection_job_properties): <p>An object that contains the properties associated with an entities detection job.</p>
     /// - On failure, responds with [`SdkError<DescribeEntitiesDetectionJobError>`](crate::operation::describe_entities_detection_job::DescribeEntitiesDetectionJobError)
-    pub fn describe_entities_detection_job(&self) -> crate::operation::describe_entities_detection_job::builders::DescribeEntitiesDetectionJobFluentBuilder{
+    pub fn describe_entities_detection_job(
+        &self,
+    ) -> crate::operation::describe_entities_detection_job::builders::DescribeEntitiesDetectionJobFluentBuilder {
         crate::operation::describe_entities_detection_job::builders::DescribeEntitiesDetectionJobFluentBuilder::new(self.handle.clone())
     }
 }

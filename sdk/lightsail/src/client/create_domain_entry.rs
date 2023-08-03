@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDomainEntryOutput`](crate::operation::create_domain_entry::CreateDomainEntryOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::operation::create_domain_entry::CreateDomainEntryOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CreateDomainEntryError>`](crate::operation::create_domain_entry::CreateDomainEntryError)
-    pub fn create_domain_entry(
-        &self,
-    ) -> crate::operation::create_domain_entry::builders::CreateDomainEntryFluentBuilder {
-        crate::operation::create_domain_entry::builders::CreateDomainEntryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_domain_entry(&self) -> crate::operation::create_domain_entry::builders::CreateDomainEntryFluentBuilder {
+        crate::operation::create_domain_entry::builders::CreateDomainEntryFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifyDocumentPermissionOutput {
 }
 impl ModifyDocumentPermissionOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDocumentPermissionOutput`](crate::operation::modify_document_permission::ModifyDocumentPermissionOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_document_permission::builders::ModifyDocumentPermissionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_document_permission::builders::ModifyDocumentPermissionOutputBuilder {
         crate::operation::modify_document_permission::builders::ModifyDocumentPermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyDocumentPermissionOutput`](crate::operation::modify_document_permission::ModifyDocumentPermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyDocumentPermissionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl ModifyDocumentPermissionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyDocumentPermissionOutput`](crate::operation::modify_document_permission::ModifyDocumentPermissionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_document_permission::ModifyDocumentPermissionOutput {
+    pub fn build(self) -> crate::operation::modify_document_permission::ModifyDocumentPermissionOutput {
         crate::operation::modify_document_permission::ModifyDocumentPermissionOutput {
             _request_id: self._request_id,
         }

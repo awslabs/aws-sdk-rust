@@ -9,7 +9,11 @@ impl super::Client {
     /// - On success, responds with [`DeleteTransitGatewayPrefixListReferenceOutput`](crate::operation::delete_transit_gateway_prefix_list_reference::DeleteTransitGatewayPrefixListReferenceOutput) with field(s):
     ///   - [`transit_gateway_prefix_list_reference(Option<TransitGatewayPrefixListReference>)`](crate::operation::delete_transit_gateway_prefix_list_reference::DeleteTransitGatewayPrefixListReferenceOutput::transit_gateway_prefix_list_reference): <p>Information about the deleted prefix list reference.</p>
     /// - On failure, responds with [`SdkError<DeleteTransitGatewayPrefixListReferenceError>`](crate::operation::delete_transit_gateway_prefix_list_reference::DeleteTransitGatewayPrefixListReferenceError)
-    pub fn delete_transit_gateway_prefix_list_reference(&self) -> crate::operation::delete_transit_gateway_prefix_list_reference::builders::DeleteTransitGatewayPrefixListReferenceFluentBuilder{
-        crate::operation::delete_transit_gateway_prefix_list_reference::builders::DeleteTransitGatewayPrefixListReferenceFluentBuilder::new(self.handle.clone())
+    pub fn delete_transit_gateway_prefix_list_reference(
+        &self,
+    ) -> crate::operation::delete_transit_gateway_prefix_list_reference::builders::DeleteTransitGatewayPrefixListReferenceFluentBuilder {
+        crate::operation::delete_transit_gateway_prefix_list_reference::builders::DeleteTransitGatewayPrefixListReferenceFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

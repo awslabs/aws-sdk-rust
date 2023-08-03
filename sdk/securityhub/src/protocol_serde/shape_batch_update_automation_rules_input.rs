@@ -4,9 +4,7 @@ pub fn ser_batch_update_automation_rules_input(
     input: &crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.update_automation_rules_request_items {
-        let mut array_2 = object
-            .key("UpdateAutomationRulesRequestItems")
-            .start_array();
+        let mut array_2 = object.key("UpdateAutomationRulesRequestItems").start_array();
         for item_3 in var_1 {
             {
                 #[allow(unused_mut)]

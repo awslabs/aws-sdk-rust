@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateInsightOutput`](crate::operation::create_insight::CreateInsightOutput) with field(s):
     ///   - [`insight_arn(Option<String>)`](crate::operation::create_insight::CreateInsightOutput::insight_arn): <p>The ARN of the insight created.</p>
     /// - On failure, responds with [`SdkError<CreateInsightError>`](crate::operation::create_insight::CreateInsightError)
-    pub fn create_insight(
-        &self,
-    ) -> crate::operation::create_insight::builders::CreateInsightFluentBuilder {
-        crate::operation::create_insight::builders::CreateInsightFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_insight(&self) -> crate::operation::create_insight::builders::CreateInsightFluentBuilder {
+        crate::operation::create_insight::builders::CreateInsightFluentBuilder::new(self.handle.clone())
     }
 }

@@ -45,9 +45,7 @@ impl DescribeModelPackageGroupOutput {
         self.created_by.as_ref()
     }
     /// <p>The status of the model group.</p>
-    pub fn model_package_group_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelPackageGroupStatus> {
+    pub fn model_package_group_status(&self) -> ::std::option::Option<&crate::types::ModelPackageGroupStatus> {
         self.model_package_group_status.as_ref()
     }
 }
@@ -58,40 +56,31 @@ impl ::aws_http::request_id::RequestId for DescribeModelPackageGroupOutput {
 }
 impl DescribeModelPackageGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeModelPackageGroupOutput`](crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput).
-    pub fn builder() -> crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupOutputBuilder{
+    pub fn builder() -> crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupOutputBuilder {
         crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeModelPackageGroupOutput`](crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeModelPackageGroupOutputBuilder {
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_group_description: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
-    pub(crate) model_package_group_status:
-        ::std::option::Option<crate::types::ModelPackageGroupStatus>,
+    pub(crate) model_package_group_status: ::std::option::Option<crate::types::ModelPackageGroupStatus>,
     _request_id: Option<String>,
 }
 impl DescribeModelPackageGroupOutputBuilder {
     /// <p>The name of the model group.</p>
-    pub fn model_package_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model group.</p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_name = input;
         self
     }
@@ -100,18 +89,12 @@ impl DescribeModelPackageGroupOutputBuilder {
         &self.model_package_group_name
     }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
-    pub fn model_package_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
-    pub fn set_model_package_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_arn = input;
         self
     }
@@ -120,25 +103,17 @@ impl DescribeModelPackageGroupOutputBuilder {
         &self.model_package_group_arn
     }
     /// <p>A description of the model group.</p>
-    pub fn model_package_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the model group.</p>
-    pub fn set_model_package_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_description = input;
         self
     }
     /// <p>A description of the model group.</p>
-    pub fn get_model_package_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_model_package_group_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_package_group_description
     }
     /// <p>The time that the model group was created.</p>
@@ -147,10 +122,7 @@ impl DescribeModelPackageGroupOutputBuilder {
         self
     }
     /// <p>The time that the model group was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -164,10 +136,7 @@ impl DescribeModelPackageGroupOutputBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
@@ -176,25 +145,17 @@ impl DescribeModelPackageGroupOutputBuilder {
         &self.created_by
     }
     /// <p>The status of the model group.</p>
-    pub fn model_package_group_status(
-        mut self,
-        input: crate::types::ModelPackageGroupStatus,
-    ) -> Self {
+    pub fn model_package_group_status(mut self, input: crate::types::ModelPackageGroupStatus) -> Self {
         self.model_package_group_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the model group.</p>
-    pub fn set_model_package_group_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackageGroupStatus>,
-    ) -> Self {
+    pub fn set_model_package_group_status(mut self, input: ::std::option::Option<crate::types::ModelPackageGroupStatus>) -> Self {
         self.model_package_group_status = input;
         self
     }
     /// <p>The status of the model group.</p>
-    pub fn get_model_package_group_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelPackageGroupStatus> {
+    pub fn get_model_package_group_status(&self) -> &::std::option::Option<crate::types::ModelPackageGroupStatus> {
         &self.model_package_group_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -207,9 +168,7 @@ impl DescribeModelPackageGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeModelPackageGroupOutput`](crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput {
+    pub fn build(self) -> crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput {
         crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput {
             model_package_group_name: self.model_package_group_name,
             model_package_group_arn: self.model_package_group_arn,

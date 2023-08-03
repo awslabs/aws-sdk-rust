@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeVpnGatewaysOutput`](crate::operation::describe_vpn_gateways::DescribeVpnGatewaysOutput) with field(s):
     ///   - [`vpn_gateways(Option<Vec<VpnGateway>>)`](crate::operation::describe_vpn_gateways::DescribeVpnGatewaysOutput::vpn_gateways): <p>Information about one or more virtual private gateways.</p>
     /// - On failure, responds with [`SdkError<DescribeVpnGatewaysError>`](crate::operation::describe_vpn_gateways::DescribeVpnGatewaysError)
-    pub fn describe_vpn_gateways(
-        &self,
-    ) -> crate::operation::describe_vpn_gateways::builders::DescribeVpnGatewaysFluentBuilder {
-        crate::operation::describe_vpn_gateways::builders::DescribeVpnGatewaysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_vpn_gateways(&self) -> crate::operation::describe_vpn_gateways::builders::DescribeVpnGatewaysFluentBuilder {
+        crate::operation::describe_vpn_gateways::builders::DescribeVpnGatewaysFluentBuilder::new(self.handle.clone())
     }
 }

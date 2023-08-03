@@ -10,10 +10,7 @@ impl ModifyHapgInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_hapg::ModifyHapgOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_hapg::ModifyHapgError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_hapg::ModifyHapgError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_hapg();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl ModifyHapgFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_hapg::ModifyHapg,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::modify_hapg::ModifyHapg, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::modify_hapg::ModifyHapgError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl ModifyHapgFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl ModifyHapgFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_hapg::ModifyHapg,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::modify_hapg::ModifyHapg, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::modify_hapg::ModifyHapgError>,
     > {
         self.customize_middleware().await
@@ -147,25 +135,17 @@ impl ModifyHapgFluentBuilder {
     /// To override the contents of this collection use [`set_partition_serial_list`](Self::set_partition_serial_list).
     ///
     /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
-    pub fn partition_serial_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_serial_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.partition_serial_list(input.into());
         self
     }
     /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
-    pub fn set_partition_serial_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_partition_serial_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_partition_serial_list(input);
         self
     }
     /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
-    pub fn get_partition_serial_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_serial_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_partition_serial_list()
     }
 }

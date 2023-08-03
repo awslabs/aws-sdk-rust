@@ -29,27 +29,19 @@ impl DeleteVodSourceInput {
 
 /// A builder for [`DeleteVodSourceInput`](crate::operation::delete_vod_source::DeleteVodSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVodSourceInputBuilder {
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
     pub(crate) vod_source_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVodSourceInputBuilder {
     /// <p>The name of the source location associated with this VOD Source.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source location associated with this VOD Source.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_location_name = input;
         self
     }
@@ -58,18 +50,12 @@ impl DeleteVodSourceInputBuilder {
         &self.source_location_name
     }
     /// <p>The name of the VOD source.</p>
-    pub fn vod_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vod_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vod_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the VOD source.</p>
-    pub fn set_vod_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vod_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vod_source_name = input;
         self
     }
@@ -80,10 +66,7 @@ impl DeleteVodSourceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVodSourceInput`](crate::operation::delete_vod_source::DeleteVodSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_vod_source::DeleteVodSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_vod_source::DeleteVodSourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_vod_source::DeleteVodSourceInput {
             source_location_name: self.source_location_name,
             vod_source_name: self.vod_source_name,

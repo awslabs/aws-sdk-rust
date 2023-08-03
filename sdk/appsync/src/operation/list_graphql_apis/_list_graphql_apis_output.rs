@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListGraphqlApisOutput {
 }
 impl ListGraphqlApisOutput {
     /// Creates a new builder-style object to manufacture [`ListGraphqlApisOutput`](crate::operation::list_graphql_apis::ListGraphqlApisOutput).
-    pub fn builder() -> crate::operation::list_graphql_apis::builders::ListGraphqlApisOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_graphql_apis::builders::ListGraphqlApisOutputBuilder {
         crate::operation::list_graphql_apis::builders::ListGraphqlApisOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListGraphqlApisOutput`](crate::operation::list_graphql_apis::ListGraphqlApisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGraphqlApisOutputBuilder {
     pub(crate) graphql_apis: ::std::option::Option<::std::vec::Vec<crate::types::GraphqlApi>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListGraphqlApisOutputBuilder {
         self
     }
     /// <p>The <code>GraphqlApi</code> objects.</p>
-    pub fn set_graphql_apis(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GraphqlApi>>,
-    ) -> Self {
+    pub fn set_graphql_apis(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GraphqlApi>>) -> Self {
         self.graphql_apis = input;
         self
     }
     /// <p>The <code>GraphqlApi</code> objects.</p>
-    pub fn get_graphql_apis(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GraphqlApi>> {
+    pub fn get_graphql_apis(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GraphqlApi>> {
         &self.graphql_apis
     }
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>

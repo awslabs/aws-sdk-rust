@@ -37,9 +37,7 @@ impl DisassociateAccountsFluentBuilder {
         }
     }
     /// Access the DisassociateAccounts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_accounts::builders::DisassociateAccountsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disassociate_accounts::builders::DisassociateAccountsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DisassociateAccountsFluentBuilder {
             crate::operation::disassociate_accounts::DisassociateAccounts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_accounts::DisassociateAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_accounts::DisassociateAccountsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DisassociateAccountsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DisassociateAccountsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_accounts::DisassociateAccountsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_accounts::DisassociateAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_accounts::DisassociateAccountsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DisassociateAccountsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_accounts::DisassociateAccountsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_accounts::DisassociateAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_accounts::DisassociateAccountsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DisassociateAccountsFluentBuilder {
             crate::operation::disassociate_accounts::DisassociateAccounts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_accounts::DisassociateAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_accounts::DisassociateAccountsError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +133,12 @@ impl DisassociateAccountsFluentBuilder {
         self
     }
     /// <p>The array of account IDs to disassociate. </p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The array of account IDs to disassociate. </p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
 }

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<Profile>>)`](crate::operation::search_profiles::SearchProfilesOutput::items): <p>The list of Profiles matching the search criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_profiles::SearchProfilesOutput::next_token): <p>The pagination token from the previous SearchProfiles API call.</p>
     /// - On failure, responds with [`SdkError<SearchProfilesError>`](crate::operation::search_profiles::SearchProfilesError)
-    pub fn search_profiles(
-        &self,
-    ) -> crate::operation::search_profiles::builders::SearchProfilesFluentBuilder {
-        crate::operation::search_profiles::builders::SearchProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_profiles(&self) -> crate::operation::search_profiles::builders::SearchProfilesFluentBuilder {
+        crate::operation::search_profiles::builders::SearchProfilesFluentBuilder::new(self.handle.clone())
     }
 }

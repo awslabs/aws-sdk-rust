@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`RetryStageExecutionOutput`](crate::operation::retry_stage_execution::RetryStageExecutionOutput) with field(s):
     ///   - [`pipeline_execution_id(Option<String>)`](crate::operation::retry_stage_execution::RetryStageExecutionOutput::pipeline_execution_id): <p>The ID of the current workflow execution in the failed stage.</p>
     /// - On failure, responds with [`SdkError<RetryStageExecutionError>`](crate::operation::retry_stage_execution::RetryStageExecutionError)
-    pub fn retry_stage_execution(
-        &self,
-    ) -> crate::operation::retry_stage_execution::builders::RetryStageExecutionFluentBuilder {
-        crate::operation::retry_stage_execution::builders::RetryStageExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn retry_stage_execution(&self) -> crate::operation::retry_stage_execution::builders::RetryStageExecutionFluentBuilder {
+        crate::operation::retry_stage_execution::builders::RetryStageExecutionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,10 +12,7 @@ pub fn ser_inventory_group(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_inventory_filter::ser_inventory_filter(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_inventory_filter::ser_inventory_filter(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

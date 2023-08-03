@@ -10,8 +10,7 @@ pub struct DescribeSnapshotCopyGrantsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
     #[doc(hidden)]
-    pub snapshot_copy_grants:
-        ::std::option::Option<::std::vec::Vec<crate::types::SnapshotCopyGrant>>,
+    pub snapshot_copy_grants: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotCopyGrant>>,
     _request_id: Option<String>,
 }
 impl DescribeSnapshotCopyGrantsOutput {
@@ -21,9 +20,7 @@ impl DescribeSnapshotCopyGrantsOutput {
         self.marker.as_deref()
     }
     /// <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
-    pub fn snapshot_copy_grants(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SnapshotCopyGrant]> {
+    pub fn snapshot_copy_grants(&self) -> ::std::option::Option<&[crate::types::SnapshotCopyGrant]> {
         self.snapshot_copy_grants.as_deref()
     }
 }
@@ -34,20 +31,17 @@ impl ::aws_http::request_id::RequestId for DescribeSnapshotCopyGrantsOutput {
 }
 impl DescribeSnapshotCopyGrantsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotCopyGrantsOutput`](crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsOutput).
-    pub fn builder() -> crate::operation::describe_snapshot_copy_grants::builders::DescribeSnapshotCopyGrantsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_snapshot_copy_grants::builders::DescribeSnapshotCopyGrantsOutputBuilder {
         crate::operation::describe_snapshot_copy_grants::builders::DescribeSnapshotCopyGrantsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSnapshotCopyGrantsOutput`](crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnapshotCopyGrantsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) snapshot_copy_grants:
-        ::std::option::Option<::std::vec::Vec<crate::types::SnapshotCopyGrant>>,
+    pub(crate) snapshot_copy_grants: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotCopyGrant>>,
     _request_id: Option<String>,
 }
 impl DescribeSnapshotCopyGrantsOutputBuilder {
@@ -80,17 +74,12 @@ impl DescribeSnapshotCopyGrantsOutputBuilder {
         self
     }
     /// <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
-    pub fn set_snapshot_copy_grants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotCopyGrant>>,
-    ) -> Self {
+    pub fn set_snapshot_copy_grants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotCopyGrant>>) -> Self {
         self.snapshot_copy_grants = input;
         self
     }
     /// <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
-    pub fn get_snapshot_copy_grants(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotCopyGrant>> {
+    pub fn get_snapshot_copy_grants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotCopyGrant>> {
         &self.snapshot_copy_grants
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -103,9 +92,7 @@ impl DescribeSnapshotCopyGrantsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSnapshotCopyGrantsOutput`](crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsOutput {
+    pub fn build(self) -> crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsOutput {
         crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsOutput {
             marker: self.marker,
             snapshot_copy_grants: self.snapshot_copy_grants,

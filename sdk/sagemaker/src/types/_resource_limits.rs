@@ -37,9 +37,7 @@ impl ResourceLimits {
 
 /// A builder for [`ResourceLimits`](crate::types::ResourceLimits).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceLimitsBuilder {
     pub(crate) max_number_of_training_jobs: ::std::option::Option<i32>,
     pub(crate) max_parallel_training_jobs: ::std::option::Option<i32>,

@@ -84,8 +84,7 @@ pub struct ImageBuilder {
     pub domain_join_info: ::std::option::Option<crate::types::DomainJoinInfo>,
     /// <p>Describes the network details of the fleet or image builder instance.</p>
     #[doc(hidden)]
-    pub network_access_configuration:
-        ::std::option::Option<crate::types::NetworkAccessConfiguration>,
+    pub network_access_configuration: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
     /// <p>The image builder errors.</p>
     #[doc(hidden)]
     pub image_builder_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
@@ -174,9 +173,7 @@ impl ImageBuilder {
         self.state.as_ref()
     }
     /// <p>The reason why the last state change occurred.</p>
-    pub fn state_change_reason(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImageBuilderStateChangeReason> {
+    pub fn state_change_reason(&self) -> ::std::option::Option<&crate::types::ImageBuilderStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>The time stamp when the image builder was created.</p>
@@ -192,9 +189,7 @@ impl ImageBuilder {
         self.domain_join_info.as_ref()
     }
     /// <p>Describes the network details of the fleet or image builder instance.</p>
-    pub fn network_access_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkAccessConfiguration> {
+    pub fn network_access_configuration(&self) -> ::std::option::Option<&crate::types::NetworkAccessConfiguration> {
         self.network_access_configuration.as_ref()
     }
     /// <p>The image builder errors.</p>
@@ -219,9 +214,7 @@ impl ImageBuilder {
 
 /// A builder for [`ImageBuilder`](crate::types::ImageBuilder).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageBuilderBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -233,18 +226,14 @@ pub struct ImageBuilderBuilder {
     pub(crate) platform: ::std::option::Option<crate::types::PlatformType>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ImageBuilderState>,
-    pub(crate) state_change_reason:
-        ::std::option::Option<crate::types::ImageBuilderStateChangeReason>,
+    pub(crate) state_change_reason: ::std::option::Option<crate::types::ImageBuilderStateChangeReason>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) enable_default_internet_access: ::std::option::Option<bool>,
     pub(crate) domain_join_info: ::std::option::Option<crate::types::DomainJoinInfo>,
-    pub(crate) network_access_configuration:
-        ::std::option::Option<crate::types::NetworkAccessConfiguration>,
-    pub(crate) image_builder_errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
+    pub(crate) network_access_configuration: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
+    pub(crate) image_builder_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
     pub(crate) appstream_agent_version: ::std::option::Option<::std::string::String>,
-    pub(crate) access_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
 }
 impl ImageBuilderBuilder {
     /// <p>The name of the image builder.</p>
@@ -367,10 +356,7 @@ impl ImageBuilderBuilder {
     /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
     /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -410,10 +396,7 @@ impl ImageBuilderBuilder {
     /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
     /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -462,10 +445,7 @@ impl ImageBuilderBuilder {
         self
     }
     /// <p>The operating system platform of the image builder.</p>
-    pub fn set_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::PlatformType>,
-    ) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformType>) -> Self {
         self.platform = input;
         self
     }
@@ -496,10 +476,7 @@ impl ImageBuilderBuilder {
         self
     }
     /// <p>The state of the image builder.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageBuilderState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ImageBuilderState>) -> Self {
         self.state = input;
         self
     }
@@ -508,25 +485,17 @@ impl ImageBuilderBuilder {
         &self.state
     }
     /// <p>The reason why the last state change occurred.</p>
-    pub fn state_change_reason(
-        mut self,
-        input: crate::types::ImageBuilderStateChangeReason,
-    ) -> Self {
+    pub fn state_change_reason(mut self, input: crate::types::ImageBuilderStateChangeReason) -> Self {
         self.state_change_reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reason why the last state change occurred.</p>
-    pub fn set_state_change_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageBuilderStateChangeReason>,
-    ) -> Self {
+    pub fn set_state_change_reason(mut self, input: ::std::option::Option<crate::types::ImageBuilderStateChangeReason>) -> Self {
         self.state_change_reason = input;
         self
     }
     /// <p>The reason why the last state change occurred.</p>
-    pub fn get_state_change_reason(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageBuilderStateChangeReason> {
+    pub fn get_state_change_reason(&self) -> &::std::option::Option<crate::types::ImageBuilderStateChangeReason> {
         &self.state_change_reason
     }
     /// <p>The time stamp when the image builder was created.</p>
@@ -535,10 +504,7 @@ impl ImageBuilderBuilder {
         self
     }
     /// <p>The time stamp when the image builder was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -552,10 +518,7 @@ impl ImageBuilderBuilder {
         self
     }
     /// <p>Enables or disables default internet access for the image builder.</p>
-    pub fn set_enable_default_internet_access(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_default_internet_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_default_internet_access = input;
         self
     }
@@ -569,10 +532,7 @@ impl ImageBuilderBuilder {
         self
     }
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
-    pub fn set_domain_join_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainJoinInfo>,
-    ) -> Self {
+    pub fn set_domain_join_info(mut self, input: ::std::option::Option<crate::types::DomainJoinInfo>) -> Self {
         self.domain_join_info = input;
         self
     }
@@ -581,25 +541,17 @@ impl ImageBuilderBuilder {
         &self.domain_join_info
     }
     /// <p>Describes the network details of the fleet or image builder instance.</p>
-    pub fn network_access_configuration(
-        mut self,
-        input: crate::types::NetworkAccessConfiguration,
-    ) -> Self {
+    pub fn network_access_configuration(mut self, input: crate::types::NetworkAccessConfiguration) -> Self {
         self.network_access_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the network details of the fleet or image builder instance.</p>
-    pub fn set_network_access_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
-    ) -> Self {
+    pub fn set_network_access_configuration(mut self, input: ::std::option::Option<crate::types::NetworkAccessConfiguration>) -> Self {
         self.network_access_configuration = input;
         self
     }
     /// <p>Describes the network details of the fleet or image builder instance.</p>
-    pub fn get_network_access_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkAccessConfiguration> {
+    pub fn get_network_access_configuration(&self) -> &::std::option::Option<crate::types::NetworkAccessConfiguration> {
         &self.network_access_configuration
     }
     /// Appends an item to `image_builder_errors`.
@@ -614,32 +566,21 @@ impl ImageBuilderBuilder {
         self
     }
     /// <p>The image builder errors.</p>
-    pub fn set_image_builder_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
-    ) -> Self {
+    pub fn set_image_builder_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>) -> Self {
         self.image_builder_errors = input;
         self
     }
     /// <p>The image builder errors.</p>
-    pub fn get_image_builder_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceError>> {
+    pub fn get_image_builder_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceError>> {
         &self.image_builder_errors
     }
     /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder. </p>
-    pub fn appstream_agent_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn appstream_agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.appstream_agent_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder. </p>
-    pub fn set_appstream_agent_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_appstream_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.appstream_agent_version = input;
         self
     }
@@ -659,17 +600,12 @@ impl ImageBuilderBuilder {
         self
     }
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    pub fn set_access_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
-    ) -> Self {
+    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>) -> Self {
         self.access_endpoints = input;
         self
     }
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    pub fn get_access_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
         &self.access_endpoints
     }
     /// Consumes the builder and constructs a [`ImageBuilder`](crate::types::ImageBuilder).

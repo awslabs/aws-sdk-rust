@@ -31,9 +31,7 @@ impl AttributeValue {
         self.sl.as_deref()
     }
     /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
-    pub fn sdm(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
+    pub fn sdm(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
         self.sdm.as_ref()
     }
 }
@@ -46,9 +44,7 @@ impl AttributeValue {
 
 /// A builder for [`AttributeValue`](crate::types::AttributeValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttributeValueBuilder {
     pub(crate) s: ::std::option::Option<::std::string::String>,
     pub(crate) n: ::std::option::Option<f64>,
@@ -96,10 +92,7 @@ impl AttributeValueBuilder {
         self
     }
     /// <p>For a list of up to 100 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
-    pub fn set_sl(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sl(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sl = input;
         self
     }
@@ -119,17 +112,12 @@ impl AttributeValueBuilder {
         self
     }
     /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
-    pub fn set_sdm(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
-    ) -> Self {
+    pub fn set_sdm(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>) -> Self {
         self.sdm = input;
         self
     }
     /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
-    pub fn get_sdm(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
+    pub fn get_sdm(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
         &self.sdm
     }
     /// Consumes the builder and constructs a [`AttributeValue`](crate::types::AttributeValue).

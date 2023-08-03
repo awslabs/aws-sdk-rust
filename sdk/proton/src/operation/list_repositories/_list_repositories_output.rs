@@ -28,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListRepositoriesOutput {
 }
 impl ListRepositoriesOutput {
     /// Creates a new builder-style object to manufacture [`ListRepositoriesOutput`](crate::operation::list_repositories::ListRepositoriesOutput).
-    pub fn builder() -> crate::operation::list_repositories::builders::ListRepositoriesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_repositories::builders::ListRepositoriesOutputBuilder {
         crate::operation::list_repositories::builders::ListRepositoriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRepositoriesOutput`](crate::operation::list_repositories::ListRepositoriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRepositoriesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) repositories:
-        ::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>>,
+    pub(crate) repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>>,
     _request_id: Option<String>,
 }
 impl ListRepositoriesOutputBuilder {
@@ -72,17 +68,12 @@ impl ListRepositoriesOutputBuilder {
         self
     }
     /// <p>An array of repository links.</p>
-    pub fn set_repositories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>>,
-    ) -> Self {
+    pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>>) -> Self {
         self.repositories = input;
         self
     }
     /// <p>An array of repository links.</p>
-    pub fn get_repositories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>> {
+    pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>> {
         &self.repositories
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -22,9 +22,7 @@ impl StartChannelInput {
 
 /// A builder for [`StartChannelInput`](crate::operation::start_channel::StartChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartChannelInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl StartChannelInputBuilder {
         &self.channel_name
     }
     /// Consumes the builder and constructs a [`StartChannelInput`](crate::operation::start_channel::StartChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_channel::StartChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_channel::StartChannelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_channel::StartChannelInput {
             channel_name: self.channel_name,
         })

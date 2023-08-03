@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`outposts(Option<Vec<Outpost>>)`](crate::operation::list_outposts::ListOutpostsOutput::outposts): <p>Information about the Outposts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_outposts::ListOutpostsOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListOutpostsError>`](crate::operation::list_outposts::ListOutpostsError)
-    pub fn list_outposts(
-        &self,
-    ) -> crate::operation::list_outposts::builders::ListOutpostsFluentBuilder {
-        crate::operation::list_outposts::builders::ListOutpostsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_outposts(&self) -> crate::operation::list_outposts::builders::ListOutpostsFluentBuilder {
+        crate::operation::list_outposts::builders::ListOutpostsFluentBuilder::new(self.handle.clone())
     }
 }

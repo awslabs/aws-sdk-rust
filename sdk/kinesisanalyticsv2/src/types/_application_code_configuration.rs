@@ -30,9 +30,7 @@ impl ApplicationCodeConfiguration {
 
 /// A builder for [`ApplicationCodeConfiguration`](crate::types::ApplicationCodeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationCodeConfigurationBuilder {
     pub(crate) code_content: ::std::option::Option<crate::types::CodeContent>,
     pub(crate) code_content_type: ::std::option::Option<crate::types::CodeContentType>,
@@ -44,10 +42,7 @@ impl ApplicationCodeConfigurationBuilder {
         self
     }
     /// <p>The location and type of the application code.</p>
-    pub fn set_code_content(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeContent>,
-    ) -> Self {
+    pub fn set_code_content(mut self, input: ::std::option::Option<crate::types::CodeContent>) -> Self {
         self.code_content = input;
         self
     }
@@ -61,10 +56,7 @@ impl ApplicationCodeConfigurationBuilder {
         self
     }
     /// <p>Specifies whether the code content is in text or zip format.</p>
-    pub fn set_code_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeContentType>,
-    ) -> Self {
+    pub fn set_code_content_type(mut self, input: ::std::option::Option<crate::types::CodeContentType>) -> Self {
         self.code_content_type = input;
         self
     }

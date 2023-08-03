@@ -28,7 +28,7 @@ impl DescribeGameSessionPlacementInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeGameSessionPlacementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_game_session_placement::builders::DescribeGameSessionPlacementInputBuilder,
+    inner: crate::operation::describe_game_session_placement::builders::DescribeGameSessionPlacementInputBuilder,
 }
 impl DescribeGameSessionPlacementFluentBuilder {
     /// Creates a new `DescribeGameSessionPlacement`.
@@ -39,7 +39,7 @@ impl DescribeGameSessionPlacementFluentBuilder {
         }
     }
     /// Access the DescribeGameSessionPlacement as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_game_session_placement::builders::DescribeGameSessionPlacementInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_game_session_placement::builders::DescribeGameSessionPlacementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeGameSessionPlacementFluentBuilder {
             crate::operation::describe_game_session_placement::DescribeGameSessionPlacement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeGameSessionPlacementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeGameSessionPlacementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_game_session_placement::DescribeGameSessionPlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeGameSessionPlacementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_game_session_placement::DescribeGameSessionPlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl DescribeGameSessionPlacementFluentBuilder {
             crate::operation::describe_game_session_placement::DescribeGameSessionPlacement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError>,
     > {
         self.customize_middleware().await
     }

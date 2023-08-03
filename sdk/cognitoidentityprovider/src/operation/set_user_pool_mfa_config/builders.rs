@@ -40,10 +40,7 @@ impl SetUserPoolMfaConfigFluentBuilder {
         }
     }
     /// Access the SetUserPoolMfaConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl SetUserPoolMfaConfigFluentBuilder {
             crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl SetUserPoolMfaConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl SetUserPoolMfaConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl SetUserPoolMfaConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl SetUserPoolMfaConfigFluentBuilder {
             crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -146,39 +132,26 @@ impl SetUserPoolMfaConfigFluentBuilder {
         self
     }
     /// <p>The SMS text message MFA configuration.</p>
-    pub fn set_sms_mfa_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SmsMfaConfigType>,
-    ) -> Self {
+    pub fn set_sms_mfa_configuration(mut self, input: ::std::option::Option<crate::types::SmsMfaConfigType>) -> Self {
         self.inner = self.inner.set_sms_mfa_configuration(input);
         self
     }
     /// <p>The SMS text message MFA configuration.</p>
-    pub fn get_sms_mfa_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmsMfaConfigType> {
+    pub fn get_sms_mfa_configuration(&self) -> &::std::option::Option<crate::types::SmsMfaConfigType> {
         self.inner.get_sms_mfa_configuration()
     }
     /// <p>The software token MFA configuration.</p>
-    pub fn software_token_mfa_configuration(
-        mut self,
-        input: crate::types::SoftwareTokenMfaConfigType,
-    ) -> Self {
+    pub fn software_token_mfa_configuration(mut self, input: crate::types::SoftwareTokenMfaConfigType) -> Self {
         self.inner = self.inner.software_token_mfa_configuration(input);
         self
     }
     /// <p>The software token MFA configuration.</p>
-    pub fn set_software_token_mfa_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
-    ) -> Self {
+    pub fn set_software_token_mfa_configuration(mut self, input: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>) -> Self {
         self.inner = self.inner.set_software_token_mfa_configuration(input);
         self
     }
     /// <p>The software token MFA configuration.</p>
-    pub fn get_software_token_mfa_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SoftwareTokenMfaConfigType> {
+    pub fn get_software_token_mfa_configuration(&self) -> &::std::option::Option<crate::types::SoftwareTokenMfaConfigType> {
         self.inner.get_software_token_mfa_configuration()
     }
     /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
@@ -197,10 +170,7 @@ impl SetUserPoolMfaConfigFluentBuilder {
     /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
     /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>
     /// </ul>
-    pub fn set_mfa_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UserPoolMfaType>,
-    ) -> Self {
+    pub fn set_mfa_configuration(mut self, input: ::std::option::Option<crate::types::UserPoolMfaType>) -> Self {
         self.inner = self.inner.set_mfa_configuration(input);
         self
     }

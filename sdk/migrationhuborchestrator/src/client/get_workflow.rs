@@ -26,9 +26,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_workflow::GetWorkflowOutput::tags): <p>The tags added to the migration workflow.</p>
     ///   - [`workflow_bucket(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::workflow_bucket): <p>The Amazon S3 bucket where the migration logs are stored.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowError>`](crate::operation::get_workflow::GetWorkflowError)
-    pub fn get_workflow(
-        &self,
-    ) -> crate::operation::get_workflow::builders::GetWorkflowFluentBuilder {
+    pub fn get_workflow(&self) -> crate::operation::get_workflow::builders::GetWorkflowFluentBuilder {
         crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

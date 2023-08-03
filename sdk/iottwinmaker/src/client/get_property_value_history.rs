@@ -22,10 +22,7 @@ impl super::Client {
     ///   - [`property_values(Option<Vec<PropertyValueHistory>>)`](crate::operation::get_property_value_history::GetPropertyValueHistoryOutput::property_values): <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_property_value_history::GetPropertyValueHistoryOutput::next_token): <p>The string that specifies the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetPropertyValueHistoryError>`](crate::operation::get_property_value_history::GetPropertyValueHistoryError)
-    pub fn get_property_value_history(
-        &self,
-    ) -> crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder
-    {
+    pub fn get_property_value_history(&self) -> crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder {
         crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder::new(self.handle.clone())
     }
 }

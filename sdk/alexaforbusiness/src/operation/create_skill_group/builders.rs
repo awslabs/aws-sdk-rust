@@ -10,10 +10,7 @@ impl CreateSkillGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_skill_group::CreateSkillGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_skill_group::CreateSkillGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_skill_group::CreateSkillGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_skill_group();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateSkillGroupFluentBuilder {
         }
     }
     /// Access the CreateSkillGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_skill_group::builders::CreateSkillGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_skill_group::builders::CreateSkillGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateSkillGroupFluentBuilder {
             crate::operation::create_skill_group::CreateSkillGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_skill_group::CreateSkillGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_skill_group::CreateSkillGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateSkillGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateSkillGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_skill_group::CreateSkillGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_skill_group::CreateSkillGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_skill_group::CreateSkillGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateSkillGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_skill_group::CreateSkillGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_skill_group::CreateSkillGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_skill_group::CreateSkillGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl CreateSkillGroupFluentBuilder {
             crate::operation::create_skill_group::CreateSkillGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_skill_group::CreateSkillGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_skill_group::CreateSkillGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name for the skill group.</p>
-    pub fn skill_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skill_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.skill_group_name(input.into());
         self
     }
     /// <p>The name for the skill group.</p>
-    pub fn set_skill_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_skill_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_skill_group_name(input);
         self
     }
@@ -158,18 +136,12 @@ impl CreateSkillGroupFluentBuilder {
         self.inner.get_description()
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -187,10 +159,7 @@ impl CreateSkillGroupFluentBuilder {
         self
     }
     /// <p>The tags for the skill group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

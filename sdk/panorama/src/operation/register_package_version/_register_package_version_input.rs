@@ -43,18 +43,14 @@ impl RegisterPackageVersionInput {
 }
 impl RegisterPackageVersionInput {
     /// Creates a new builder-style object to manufacture [`RegisterPackageVersionInput`](crate::operation::register_package_version::RegisterPackageVersionInput).
-    pub fn builder(
-    ) -> crate::operation::register_package_version::builders::RegisterPackageVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::register_package_version::builders::RegisterPackageVersionInputBuilder {
         crate::operation::register_package_version::builders::RegisterPackageVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterPackageVersionInput`](crate::operation::register_package_version::RegisterPackageVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterPackageVersionInputBuilder {
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
@@ -64,18 +60,12 @@ pub struct RegisterPackageVersionInputBuilder {
 }
 impl RegisterPackageVersionInputBuilder {
     /// <p>An owner account.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An owner account.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -98,18 +88,12 @@ impl RegisterPackageVersionInputBuilder {
         &self.package_id
     }
     /// <p>A package version.</p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A package version.</p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_version = input;
         self
     }
@@ -118,18 +102,12 @@ impl RegisterPackageVersionInputBuilder {
         &self.package_version
     }
     /// <p>A patch version.</p>
-    pub fn patch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A patch version.</p>
-    pub fn set_patch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.patch_version = input;
         self
     }
@@ -154,18 +132,14 @@ impl RegisterPackageVersionInputBuilder {
     /// Consumes the builder and constructs a [`RegisterPackageVersionInput`](crate::operation::register_package_version::RegisterPackageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_package_version::RegisterPackageVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::register_package_version::RegisterPackageVersionInput {
-                owner_account: self.owner_account,
-                package_id: self.package_id,
-                package_version: self.package_version,
-                patch_version: self.patch_version,
-                mark_latest: self.mark_latest.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::register_package_version::RegisterPackageVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::register_package_version::RegisterPackageVersionInput {
+            owner_account: self.owner_account,
+            package_id: self.package_id,
+            package_version: self.package_version,
+            patch_version: self.patch_version,
+            mark_latest: self.mark_latest.unwrap_or_default(),
+        })
     }
 }

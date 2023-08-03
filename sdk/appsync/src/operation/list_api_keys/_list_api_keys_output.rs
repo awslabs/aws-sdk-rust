@@ -35,9 +35,7 @@ impl ListApiKeysOutput {
 
 /// A builder for [`ListApiKeysOutput`](crate::operation::list_api_keys::ListApiKeysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApiKeysOutputBuilder {
     pub(crate) api_keys: ::std::option::Option<::std::vec::Vec<crate::types::ApiKey>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListApiKeysOutputBuilder {
         self
     }
     /// <p>The <code>ApiKey</code> objects.</p>
-    pub fn set_api_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApiKey>>,
-    ) -> Self {
+    pub fn set_api_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApiKey>>) -> Self {
         self.api_keys = input;
         self
     }

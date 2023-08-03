@@ -23,9 +23,7 @@ impl ColorsConfiguration {
 
 /// A builder for [`ColorsConfiguration`](crate::types::ColorsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColorsConfigurationBuilder {
     pub(crate) custom_colors: ::std::option::Option<::std::vec::Vec<crate::types::CustomColor>>,
 }
@@ -42,17 +40,12 @@ impl ColorsConfigurationBuilder {
         self
     }
     /// <p>A list of up to 50 custom colors.</p>
-    pub fn set_custom_colors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomColor>>,
-    ) -> Self {
+    pub fn set_custom_colors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomColor>>) -> Self {
         self.custom_colors = input;
         self
     }
     /// <p>A list of up to 50 custom colors.</p>
-    pub fn get_custom_colors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomColor>> {
+    pub fn get_custom_colors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomColor>> {
         &self.custom_colors
     }
     /// Consumes the builder and constructs a [`ColorsConfiguration`](crate::types::ColorsConfiguration).

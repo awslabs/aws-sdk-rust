@@ -14,9 +14,7 @@ pub struct AttributeGroupDetails {
     /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
     /// </important>
     /// <p> The name of the attribute group. </p>
-    #[deprecated(
-        note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
-    )]
+    #[deprecated(note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication.")]
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The service principal that created the attribute group.</p>
@@ -36,9 +34,7 @@ impl AttributeGroupDetails {
     /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
     /// </important>
     /// <p> The name of the attribute group. </p>
-    #[deprecated(
-        note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
-    )]
+    #[deprecated(note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication.")]
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -56,9 +52,7 @@ impl AttributeGroupDetails {
 
 /// A builder for [`AttributeGroupDetails`](crate::types::AttributeGroupDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttributeGroupDetailsBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -98,9 +92,7 @@ impl AttributeGroupDetailsBuilder {
     /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
     /// </important>
     /// <p> The name of the attribute group. </p>
-    #[deprecated(
-        note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
-    )]
+    #[deprecated(note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication.")]
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -109,9 +101,7 @@ impl AttributeGroupDetailsBuilder {
     /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
     /// </important>
     /// <p> The name of the attribute group. </p>
-    #[deprecated(
-        note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
-    )]
+    #[deprecated(note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication.")]
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
@@ -120,9 +110,7 @@ impl AttributeGroupDetailsBuilder {
     /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
     /// </important>
     /// <p> The name of the attribute group. </p>
-    #[deprecated(
-        note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
-    )]
+    #[deprecated(note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication.")]
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

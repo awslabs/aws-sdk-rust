@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`successfully_deleted_launch_template_versions(Option<Vec<DeleteLaunchTemplateVersionsResponseSuccessItem>>)`](crate::operation::delete_launch_template_versions::DeleteLaunchTemplateVersionsOutput::successfully_deleted_launch_template_versions): <p>Information about the launch template versions that were successfully deleted.</p>
     ///   - [`unsuccessfully_deleted_launch_template_versions(Option<Vec<DeleteLaunchTemplateVersionsResponseErrorItem>>)`](crate::operation::delete_launch_template_versions::DeleteLaunchTemplateVersionsOutput::unsuccessfully_deleted_launch_template_versions): <p>Information about the launch template versions that could not be deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteLaunchTemplateVersionsError>`](crate::operation::delete_launch_template_versions::DeleteLaunchTemplateVersionsError)
-    pub fn delete_launch_template_versions(&self) -> crate::operation::delete_launch_template_versions::builders::DeleteLaunchTemplateVersionsFluentBuilder{
+    pub fn delete_launch_template_versions(
+        &self,
+    ) -> crate::operation::delete_launch_template_versions::builders::DeleteLaunchTemplateVersionsFluentBuilder {
         crate::operation::delete_launch_template_versions::builders::DeleteLaunchTemplateVersionsFluentBuilder::new(self.handle.clone())
     }
 }

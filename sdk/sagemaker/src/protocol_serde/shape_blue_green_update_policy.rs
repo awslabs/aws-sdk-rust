@@ -6,10 +6,7 @@ pub fn ser_blue_green_update_policy(
     if let Some(var_1) = &input.traffic_routing_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("TrafficRoutingConfiguration").start_object();
-        crate::protocol_serde::shape_traffic_routing_config::ser_traffic_routing_config(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_traffic_routing_config::ser_traffic_routing_config(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.termination_wait_in_seconds {
@@ -29,17 +26,9 @@ pub fn ser_blue_green_update_policy(
 
 pub(crate) fn de_blue_green_update_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::BlueGreenUpdatePolicy>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::BlueGreenUpdatePolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -49,49 +38,40 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "TrafficRoutingConfiguration" => {
-                                builder = builder.set_traffic_routing_configuration(
-                                    crate::protocol_serde::shape_traffic_routing_config::de_traffic_routing_config(tokens)?
-                                );
-                            }
-                            "TerminationWaitInSeconds" => {
-                                builder = builder.set_termination_wait_in_seconds(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "MaximumExecutionTimeoutInSeconds" => {
-                                builder = builder.set_maximum_execution_timeout_in_seconds(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "TrafficRoutingConfiguration" => {
+                            builder = builder.set_traffic_routing_configuration(
+                                crate::protocol_serde::shape_traffic_routing_config::de_traffic_routing_config(tokens)?,
+                            );
                         }
-                    }
+                        "TerminationWaitInSeconds" => {
+                            builder = builder.set_termination_wait_in_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "MaximumExecutionTimeoutInSeconds" => {
+                            builder = builder.set_maximum_execution_timeout_in_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

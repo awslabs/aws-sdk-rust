@@ -20,9 +20,7 @@ impl Subnet {
         self.subnet_identifier.as_deref()
     }
     /// <p>Specifies the Availability Zone for the subnet.</p>
-    pub fn subnet_availability_zone(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AvailabilityZone> {
+    pub fn subnet_availability_zone(&self) -> ::std::option::Option<&crate::types::AvailabilityZone> {
         self.subnet_availability_zone.as_ref()
     }
     /// <p>Specifies the status of the subnet.</p>
@@ -39,9 +37,7 @@ impl Subnet {
 
 /// A builder for [`Subnet`](crate::types::Subnet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubnetBuilder {
     pub(crate) subnet_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_availability_zone: ::std::option::Option<crate::types::AvailabilityZone>,
@@ -49,18 +45,12 @@ pub struct SubnetBuilder {
 }
 impl SubnetBuilder {
     /// <p>Specifies the identifier of the subnet.</p>
-    pub fn subnet_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the identifier of the subnet.</p>
-    pub fn set_subnet_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_identifier = input;
         self
     }
@@ -74,32 +64,21 @@ impl SubnetBuilder {
         self
     }
     /// <p>Specifies the Availability Zone for the subnet.</p>
-    pub fn set_subnet_availability_zone(
-        mut self,
-        input: ::std::option::Option<crate::types::AvailabilityZone>,
-    ) -> Self {
+    pub fn set_subnet_availability_zone(mut self, input: ::std::option::Option<crate::types::AvailabilityZone>) -> Self {
         self.subnet_availability_zone = input;
         self
     }
     /// <p>Specifies the Availability Zone for the subnet.</p>
-    pub fn get_subnet_availability_zone(
-        &self,
-    ) -> &::std::option::Option<crate::types::AvailabilityZone> {
+    pub fn get_subnet_availability_zone(&self) -> &::std::option::Option<crate::types::AvailabilityZone> {
         &self.subnet_availability_zone
     }
     /// <p>Specifies the status of the subnet.</p>
-    pub fn subnet_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the status of the subnet.</p>
-    pub fn set_subnet_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_status = input;
         self
     }

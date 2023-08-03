@@ -35,21 +35,17 @@ impl ::aws_http::request_id::RequestId for GetCoipPoolUsageOutput {
 }
 impl GetCoipPoolUsageOutput {
     /// Creates a new builder-style object to manufacture [`GetCoipPoolUsageOutput`](crate::operation::get_coip_pool_usage::GetCoipPoolUsageOutput).
-    pub fn builder(
-    ) -> crate::operation::get_coip_pool_usage::builders::GetCoipPoolUsageOutputBuilder {
+    pub fn builder() -> crate::operation::get_coip_pool_usage::builders::GetCoipPoolUsageOutputBuilder {
         crate::operation::get_coip_pool_usage::builders::GetCoipPoolUsageOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCoipPoolUsageOutput`](crate::operation::get_coip_pool_usage::GetCoipPoolUsageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCoipPoolUsageOutputBuilder {
     pub(crate) coip_pool_id: ::std::option::Option<::std::string::String>,
-    pub(crate) coip_address_usages:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoipAddressUsage>>,
+    pub(crate) coip_address_usages: ::std::option::Option<::std::vec::Vec<crate::types::CoipAddressUsage>>,
     pub(crate) local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -80,39 +76,26 @@ impl GetCoipPoolUsageOutputBuilder {
         self
     }
     /// <p>Information about the address usage.</p>
-    pub fn set_coip_address_usages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoipAddressUsage>>,
-    ) -> Self {
+    pub fn set_coip_address_usages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoipAddressUsage>>) -> Self {
         self.coip_address_usages = input;
         self
     }
     /// <p>Information about the address usage.</p>
-    pub fn get_coip_address_usages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoipAddressUsage>> {
+    pub fn get_coip_address_usages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoipAddressUsage>> {
         &self.coip_address_usages
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn local_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = input;
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn get_local_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_route_table_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

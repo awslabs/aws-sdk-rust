@@ -7,24 +7,19 @@ pub fn ser_public_access_block_configuration(
     let mut scope = writer.finish();
     if input.block_public_acls {
         let mut inner_writer = scope.start_el("BlockPublicAcls").finish();
-        inner_writer
-            .data(::aws_smithy_types::primitive::Encoder::from(input.block_public_acls).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.block_public_acls).encode());
     }
     if input.ignore_public_acls {
         let mut inner_writer = scope.start_el("IgnorePublicAcls").finish();
-        inner_writer
-            .data(::aws_smithy_types::primitive::Encoder::from(input.ignore_public_acls).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.ignore_public_acls).encode());
     }
     if input.block_public_policy {
         let mut inner_writer = scope.start_el("BlockPublicPolicy").finish();
-        inner_writer
-            .data(::aws_smithy_types::primitive::Encoder::from(input.block_public_policy).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.block_public_policy).encode());
     }
     if input.restrict_public_buckets {
         let mut inner_writer = scope.start_el("RestrictPublicBuckets").finish();
-        inner_writer.data(
-            ::aws_smithy_types::primitive::Encoder::from(input.restrict_public_buckets).encode(),
-        );
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.restrict_public_buckets).encode());
     }
     scope.finish();
     Ok(())
@@ -32,8 +27,7 @@ pub fn ser_public_access_block_configuration(
 
 pub fn de_public_access_block_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::PublicAccessBlockConfiguration, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::PublicAccessBlockConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::PublicAccessBlockConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {

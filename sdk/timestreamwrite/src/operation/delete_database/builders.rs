@@ -10,10 +10,7 @@ impl DeleteDatabaseInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_database::DeleteDatabaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_database::DeleteDatabaseError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_database::DeleteDatabaseError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_database();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl DeleteDatabaseFluentBuilder {
         }
     }
     /// Access the DeleteDatabase as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_database::builders::DeleteDatabaseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_database::builders::DeleteDatabaseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,10 +60,7 @@ impl DeleteDatabaseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -119,18 +111,12 @@ impl DeleteDatabaseFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the Timestream database to be deleted.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the Timestream database to be deleted.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }

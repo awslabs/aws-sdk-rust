@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsOutput::versions): Information about a version.
     /// - On failure, responds with [`SdkError<ListSubscriptionDefinitionVersionsError>`](crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsError)
-    pub fn list_subscription_definition_versions(&self) -> crate::operation::list_subscription_definition_versions::builders::ListSubscriptionDefinitionVersionsFluentBuilder{
+    pub fn list_subscription_definition_versions(
+        &self,
+    ) -> crate::operation::list_subscription_definition_versions::builders::ListSubscriptionDefinitionVersionsFluentBuilder {
         crate::operation::list_subscription_definition_versions::builders::ListSubscriptionDefinitionVersionsFluentBuilder::new(self.handle.clone())
     }
 }

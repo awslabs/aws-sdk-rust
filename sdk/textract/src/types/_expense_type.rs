@@ -30,9 +30,7 @@ impl ExpenseType {
 
 /// A builder for [`ExpenseType`](crate::types::ExpenseType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExpenseTypeBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) confidence: ::std::option::Option<f32>,

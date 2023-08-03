@@ -66,9 +66,7 @@ impl UpdateListInput {
 
 /// A builder for [`UpdateListInput`](crate::operation::update_list::UpdateListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateListInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) elements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -105,10 +103,7 @@ impl UpdateListInputBuilder {
     }
     /// <p> One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use. </p>
     /// <p>If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code> and provide an empty list (0 elements).</p>
-    pub fn set_elements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_elements(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.elements = input;
         self
     }
@@ -147,10 +142,7 @@ impl UpdateListInputBuilder {
     /// <li> <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p> </li>
     /// <li> <p>Use <code>REMOVE</code> if you are removing elements from the list.</p> </li>
     /// </ul>
-    pub fn set_update_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ListUpdateMode>,
-    ) -> Self {
+    pub fn set_update_mode(mut self, input: ::std::option::Option<crate::types::ListUpdateMode>) -> Self {
         self.update_mode = input;
         self
     }
@@ -166,20 +158,14 @@ impl UpdateListInputBuilder {
     /// <p> The variable type you want to assign to the list. </p> <note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
-    pub fn variable_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn variable_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variable_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The variable type you want to assign to the list. </p> <note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
-    pub fn set_variable_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_variable_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.variable_type = input;
         self
     }
@@ -190,12 +176,7 @@ impl UpdateListInputBuilder {
         &self.variable_type
     }
     /// Consumes the builder and constructs a [`UpdateListInput`](crate::operation::update_list::UpdateListInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_list::UpdateListInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_list::UpdateListInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_list::UpdateListInput {
             name: self.name,
             elements: self.elements,

@@ -91,9 +91,7 @@ impl DescribeMapRunOutput {
 
 /// A builder for [`DescribeMapRunOutput`](crate::operation::describe_map_run::DescribeMapRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMapRunOutputBuilder {
     pub(crate) map_run_arn: ::std::option::Option<::std::string::String>,
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
@@ -123,18 +121,12 @@ impl DescribeMapRunOutputBuilder {
         &self.map_run_arn
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the execution in which the Map Run was started.</p>
-    pub fn execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the execution in which the Map Run was started.</p>
-    pub fn set_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_arn = input;
         self
     }
@@ -162,10 +154,7 @@ impl DescribeMapRunOutputBuilder {
         self
     }
     /// <p>The date when the Map Run was started.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
@@ -179,10 +168,7 @@ impl DescribeMapRunOutputBuilder {
         self
     }
     /// <p>The date when the Map Run was stopped.</p>
-    pub fn set_stop_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stop_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stop_date = input;
         self
     }
@@ -238,10 +224,7 @@ impl DescribeMapRunOutputBuilder {
         self
     }
     /// <p>A JSON object that contains information about the total number of items, and the item count for each processing status, such as <code>pending</code> and <code>failed</code>.</p>
-    pub fn set_item_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::MapRunItemCounts>,
-    ) -> Self {
+    pub fn set_item_counts(mut self, input: ::std::option::Option<crate::types::MapRunItemCounts>) -> Self {
         self.item_counts = input;
         self
     }
@@ -255,17 +238,12 @@ impl DescribeMapRunOutputBuilder {
         self
     }
     /// <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
-    pub fn set_execution_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::MapRunExecutionCounts>,
-    ) -> Self {
+    pub fn set_execution_counts(mut self, input: ::std::option::Option<crate::types::MapRunExecutionCounts>) -> Self {
         self.execution_counts = input;
         self
     }
     /// <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
-    pub fn get_execution_counts(
-        &self,
-    ) -> &::std::option::Option<crate::types::MapRunExecutionCounts> {
+    pub fn get_execution_counts(&self) -> &::std::option::Option<crate::types::MapRunExecutionCounts> {
         &self.execution_counts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

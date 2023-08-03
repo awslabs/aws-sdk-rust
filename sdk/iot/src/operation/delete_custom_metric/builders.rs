@@ -10,10 +10,7 @@ impl DeleteCustomMetricInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_metric::DeleteCustomMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_metric::DeleteCustomMetricError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_metric::DeleteCustomMetricError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_custom_metric();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DeleteCustomMetricFluentBuilder {
         }
     }
     /// Access the DeleteCustomMetric as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_custom_metric::builders::DeleteCustomMetricInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_custom_metric::builders::DeleteCustomMetricInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DeleteCustomMetricFluentBuilder {
             crate::operation::delete_custom_metric::DeleteCustomMetric,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_metric::DeleteCustomMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_metric::DeleteCustomMetricError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DeleteCustomMetricFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DeleteCustomMetricFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_metric::DeleteCustomMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_metric::DeleteCustomMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_metric::DeleteCustomMetricError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DeleteCustomMetricFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_metric::DeleteCustomMetricOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_metric::DeleteCustomMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_metric::DeleteCustomMetricError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl DeleteCustomMetricFluentBuilder {
             crate::operation::delete_custom_metric::DeleteCustomMetric,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_metric::DeleteCustomMetricError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_metric::DeleteCustomMetricError>,
     > {
         self.customize_middleware().await
     }

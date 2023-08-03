@@ -37,9 +37,7 @@ impl ActiveTrustedKeyGroups {
 
 /// A builder for [`ActiveTrustedKeyGroups`](crate::types::ActiveTrustedKeyGroups).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActiveTrustedKeyGroupsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) quantity: ::std::option::Option<i32>,
@@ -86,10 +84,7 @@ impl ActiveTrustedKeyGroupsBuilder {
         self
     }
     /// <p>A list of key groups, including the identifiers of the public keys in each key group that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KgKeyPairIds>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KgKeyPairIds>>) -> Self {
         self.items = input;
         self
     }

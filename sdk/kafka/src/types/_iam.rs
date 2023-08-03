@@ -23,9 +23,7 @@ impl Iam {
 
 /// A builder for [`Iam`](crate::types::Iam).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IamBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl IamBuilder {
     }
     /// Consumes the builder and constructs a [`Iam`](crate::types::Iam).
     pub fn build(self) -> crate::types::Iam {
-        crate::types::Iam {
-            enabled: self.enabled,
-        }
+        crate::types::Iam { enabled: self.enabled }
     }
 }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`security_policy_summaries(Option<Vec<SecurityPolicySummary>>)`](crate::operation::list_security_policies::ListSecurityPoliciesOutput::security_policy_summaries): <p>Details about the security policies in your account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_security_policies::ListSecurityPoliciesOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<ListSecurityPoliciesError>`](crate::operation::list_security_policies::ListSecurityPoliciesError)
-    pub fn list_security_policies(
-        &self,
-    ) -> crate::operation::list_security_policies::builders::ListSecurityPoliciesFluentBuilder {
-        crate::operation::list_security_policies::builders::ListSecurityPoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_security_policies(&self) -> crate::operation::list_security_policies::builders::ListSecurityPoliciesFluentBuilder {
+        crate::operation::list_security_policies::builders::ListSecurityPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

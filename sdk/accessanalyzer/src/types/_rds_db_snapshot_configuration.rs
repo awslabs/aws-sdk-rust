@@ -6,12 +6,7 @@
 pub struct RdsDbSnapshotConfiguration {
     /// <p>The names and values of manual DB snapshot attributes. Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot. The only valid value for <code>attributeName</code> for the attribute map is restore.</p>
     #[doc(hidden)]
-    pub attributes: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::RdsDbSnapshotAttributeValue,
-        >,
-    >,
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RdsDbSnapshotAttributeValue>>,
     /// <p>The KMS key identifier for an encrypted Amazon RDS DB snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <ul>
     /// <li> <p>If the configuration is for an existing Amazon RDS DB snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
@@ -24,12 +19,7 @@ impl RdsDbSnapshotConfiguration {
     /// <p>The names and values of manual DB snapshot attributes. Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot. The only valid value for <code>attributeName</code> for the attribute map is restore.</p>
     pub fn attributes(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::RdsDbSnapshotAttributeValue,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::RdsDbSnapshotAttributeValue>> {
         self.attributes.as_ref()
     }
     /// <p>The KMS key identifier for an encrypted Amazon RDS DB snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -50,16 +40,9 @@ impl RdsDbSnapshotConfiguration {
 
 /// A builder for [`RdsDbSnapshotConfiguration`](crate::types::RdsDbSnapshotConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RdsDbSnapshotConfigurationBuilder {
-    pub(crate) attributes: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::RdsDbSnapshotAttributeValue,
-        >,
-    >,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RdsDbSnapshotAttributeValue>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl RdsDbSnapshotConfigurationBuilder {
@@ -68,11 +51,7 @@ impl RdsDbSnapshotConfigurationBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>The names and values of manual DB snapshot attributes. Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot. The only valid value for <code>attributeName</code> for the attribute map is restore.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::RdsDbSnapshotAttributeValue,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::RdsDbSnapshotAttributeValue) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.attributes = ::std::option::Option::Some(hash_map);
@@ -81,12 +60,7 @@ impl RdsDbSnapshotConfigurationBuilder {
     /// <p>The names and values of manual DB snapshot attributes. Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot. The only valid value for <code>attributeName</code> for the attribute map is restore.</p>
     pub fn set_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::RdsDbSnapshotAttributeValue,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RdsDbSnapshotAttributeValue>>,
     ) -> Self {
         self.attributes = input;
         self
@@ -94,12 +68,7 @@ impl RdsDbSnapshotConfigurationBuilder {
     /// <p>The names and values of manual DB snapshot attributes. Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot. The only valid value for <code>attributeName</code> for the attribute map is restore.</p>
     pub fn get_attributes(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::RdsDbSnapshotAttributeValue,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RdsDbSnapshotAttributeValue>> {
         &self.attributes
     }
     /// <p>The KMS key identifier for an encrypted Amazon RDS DB snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>

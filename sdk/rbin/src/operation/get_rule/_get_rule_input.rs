@@ -22,9 +22,7 @@ impl GetRuleInput {
 
 /// A builder for [`GetRuleInput`](crate::operation::get_rule::GetRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRuleInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetRuleInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetRuleInput`](crate::operation::get_rule::GetRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_rule::GetRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_rule::GetRuleInput {
-            identifier: self.identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_rule::GetRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_rule::GetRuleInput { identifier: self.identifier })
     }
 }

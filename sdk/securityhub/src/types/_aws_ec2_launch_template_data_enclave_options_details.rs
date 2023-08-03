@@ -16,17 +16,14 @@ impl AwsEc2LaunchTemplateDataEnclaveOptionsDetails {
 }
 impl AwsEc2LaunchTemplateDataEnclaveOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataEnclaveOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails).
-    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataEnclaveOptionsDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataEnclaveOptionsDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataEnclaveOptionsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataEnclaveOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataEnclaveOptionsDetailsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

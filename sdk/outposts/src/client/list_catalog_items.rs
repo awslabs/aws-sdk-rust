@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`catalog_items(Option<Vec<CatalogItem>>)`](crate::operation::list_catalog_items::ListCatalogItemsOutput::catalog_items): <p>Information about the catalog items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_catalog_items::ListCatalogItemsOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListCatalogItemsError>`](crate::operation::list_catalog_items::ListCatalogItemsError)
-    pub fn list_catalog_items(
-        &self,
-    ) -> crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder {
-        crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_catalog_items(&self) -> crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder {
+        crate::operation::list_catalog_items::builders::ListCatalogItemsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -45,16 +45,14 @@ impl ::aws_http::request_id::RequestId for GetSupportedResourceTypesOutput {
 }
 impl GetSupportedResourceTypesOutput {
     /// Creates a new builder-style object to manufacture [`GetSupportedResourceTypesOutput`](crate::operation::get_supported_resource_types::GetSupportedResourceTypesOutput).
-    pub fn builder() -> crate::operation::get_supported_resource_types::builders::GetSupportedResourceTypesOutputBuilder{
+    pub fn builder() -> crate::operation::get_supported_resource_types::builders::GetSupportedResourceTypesOutputBuilder {
         crate::operation::get_supported_resource_types::builders::GetSupportedResourceTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSupportedResourceTypesOutput`](crate::operation::get_supported_resource_types::GetSupportedResourceTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSupportedResourceTypesOutputBuilder {
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -77,10 +75,7 @@ impl GetSupportedResourceTypesOutputBuilder {
     /// <li> <p> <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
     /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// </ul>
-    pub fn resource_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
         v.push(input.into());
         self.resource_types = ::std::option::Option::Some(v);
@@ -99,10 +94,7 @@ impl GetSupportedResourceTypesOutputBuilder {
     /// <li> <p> <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
     /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// </ul>
-    pub fn set_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_types = input;
         self
     }
@@ -119,9 +111,7 @@ impl GetSupportedResourceTypesOutputBuilder {
     /// <li> <p> <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
     /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
     /// </ul>
-    pub fn get_resource_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_types
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -134,9 +124,7 @@ impl GetSupportedResourceTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSupportedResourceTypesOutput`](crate::operation::get_supported_resource_types::GetSupportedResourceTypesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_supported_resource_types::GetSupportedResourceTypesOutput {
+    pub fn build(self) -> crate::operation::get_supported_resource_types::GetSupportedResourceTypesOutput {
         crate::operation::get_supported_resource_types::GetSupportedResourceTypesOutput {
             resource_types: self.resource_types,
             _request_id: self._request_id,

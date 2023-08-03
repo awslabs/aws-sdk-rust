@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for RecordActivityTaskHeartbeatOutput {
 }
 impl RecordActivityTaskHeartbeatOutput {
     /// Creates a new builder-style object to manufacture [`RecordActivityTaskHeartbeatOutput`](crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatOutput).
-    pub fn builder() -> crate::operation::record_activity_task_heartbeat::builders::RecordActivityTaskHeartbeatOutputBuilder{
+    pub fn builder() -> crate::operation::record_activity_task_heartbeat::builders::RecordActivityTaskHeartbeatOutputBuilder {
         crate::operation::record_activity_task_heartbeat::builders::RecordActivityTaskHeartbeatOutputBuilder::default()
     }
 }
 
 /// A builder for [`RecordActivityTaskHeartbeatOutput`](crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordActivityTaskHeartbeatOutputBuilder {
     pub(crate) cancel_requested: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -61,9 +59,7 @@ impl RecordActivityTaskHeartbeatOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RecordActivityTaskHeartbeatOutput`](crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatOutput {
+    pub fn build(self) -> crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatOutput {
         crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatOutput {
             cancel_requested: self.cancel_requested.unwrap_or_default(),
             _request_id: self._request_id,

@@ -36,9 +36,7 @@ impl DeleteSessionInput {
 
 /// A builder for [`DeleteSessionInput`](crate::operation::delete_session::DeleteSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSessionInputBuilder {
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl DeleteSessionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSessionInput`](crate::operation::delete_session::DeleteSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_session::DeleteSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_session::DeleteSessionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_session::DeleteSessionInput {
             bot_name: self.bot_name,
             bot_alias: self.bot_alias,

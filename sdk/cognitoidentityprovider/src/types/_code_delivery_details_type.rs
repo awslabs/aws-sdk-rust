@@ -37,9 +37,7 @@ impl CodeDeliveryDetailsType {
 
 /// A builder for [`CodeDeliveryDetailsType`](crate::types::CodeDeliveryDetailsType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeDeliveryDetailsTypeBuilder {
     pub(crate) destination: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_medium: ::std::option::Option<crate::types::DeliveryMediumType>,
@@ -66,10 +64,7 @@ impl CodeDeliveryDetailsTypeBuilder {
         self
     }
     /// <p>The method that Amazon Cognito used to send the code.</p>
-    pub fn set_delivery_medium(
-        mut self,
-        input: ::std::option::Option<crate::types::DeliveryMediumType>,
-    ) -> Self {
+    pub fn set_delivery_medium(mut self, input: ::std::option::Option<crate::types::DeliveryMediumType>) -> Self {
         self.delivery_medium = input;
         self
     }
@@ -78,18 +73,12 @@ impl CodeDeliveryDetailsTypeBuilder {
         &self.delivery_medium
     }
     /// <p>The name of the attribute that Amazon Cognito verifies with the code.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the attribute that Amazon Cognito verifies with the code.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_name = input;
         self
     }

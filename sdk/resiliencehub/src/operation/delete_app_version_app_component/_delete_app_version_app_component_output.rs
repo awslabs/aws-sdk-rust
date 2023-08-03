@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DeleteAppVersionAppComponentOutput {
 }
 impl DeleteAppVersionAppComponentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppVersionAppComponentOutput`](crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentOutput).
-    pub fn builder() -> crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentOutputBuilder{
+    pub fn builder() -> crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentOutputBuilder {
         crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppVersionAppComponentOutput`](crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppVersionAppComponentOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl DeleteAppVersionAppComponentOutputBuilder {
         self
     }
     /// <p>The list of Application Components that belong to this resource.</p>
-    pub fn set_app_component(
-        mut self,
-        input: ::std::option::Option<crate::types::AppComponent>,
-    ) -> Self {
+    pub fn set_app_component(mut self, input: ::std::option::Option<crate::types::AppComponent>) -> Self {
         self.app_component = input;
         self
     }
@@ -107,10 +102,7 @@ impl DeleteAppVersionAppComponentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAppVersionAppComponentOutput`](crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentOutput
-    {
+    pub fn build(self) -> crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentOutput {
         crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentOutput {
             app_arn: self.app_arn,
             app_version: self.app_version,

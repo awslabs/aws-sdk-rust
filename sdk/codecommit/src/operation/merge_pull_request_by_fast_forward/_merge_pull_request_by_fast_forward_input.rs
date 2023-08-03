@@ -29,16 +29,14 @@ impl MergePullRequestByFastForwardInput {
 }
 impl MergePullRequestByFastForwardInput {
     /// Creates a new builder-style object to manufacture [`MergePullRequestByFastForwardInput`](crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardInput).
-    pub fn builder() -> crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardInputBuilder{
+    pub fn builder() -> crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardInputBuilder {
         crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardInputBuilder::default()
     }
 }
 
 /// A builder for [`MergePullRequestByFastForwardInput`](crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MergePullRequestByFastForwardInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct MergePullRequestByFastForwardInputBuilder {
 }
 impl MergePullRequestByFastForwardInputBuilder {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
@@ -66,18 +58,12 @@ impl MergePullRequestByFastForwardInputBuilder {
         &self.pull_request_id
     }
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -86,18 +72,12 @@ impl MergePullRequestByFastForwardInputBuilder {
         &self.repository_name
     }
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
-    pub fn source_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
-    pub fn set_source_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_commit_id = input;
         self
     }
@@ -112,15 +92,10 @@ impl MergePullRequestByFastForwardInputBuilder {
         crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardInput {
-                pull_request_id: self.pull_request_id
-                ,
-                repository_name: self.repository_name
-                ,
-                source_commit_id: self.source_commit_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardInput {
+            pull_request_id: self.pull_request_id,
+            repository_name: self.repository_name,
+            source_commit_id: self.source_commit_id,
+        })
     }
 }

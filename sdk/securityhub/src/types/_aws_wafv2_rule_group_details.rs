@@ -59,9 +59,7 @@ impl AwsWafv2RuleGroupDetails {
         self.scope.as_deref()
     }
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn visibility_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsWafv2VisibilityConfigDetails> {
+    pub fn visibility_config(&self) -> ::std::option::Option<&crate::types::AwsWafv2VisibilityConfigDetails> {
         self.visibility_config.as_ref()
     }
 }
@@ -74,9 +72,7 @@ impl AwsWafv2RuleGroupDetails {
 
 /// A builder for [`AwsWafv2RuleGroupDetails`](crate::types::AwsWafv2RuleGroupDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafv2RuleGroupDetailsBuilder {
     pub(crate) capacity: ::std::option::Option<i64>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -85,8 +81,7 @@ pub struct AwsWafv2RuleGroupDetailsBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2RulesDetails>>,
     pub(crate) scope: ::std::option::Option<::std::string::String>,
-    pub(crate) visibility_config:
-        ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
+    pub(crate) visibility_config: ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
 }
 impl AwsWafv2RuleGroupDetailsBuilder {
     /// <p> The web ACL capacity units (WCUs) required for this rule group. </p>
@@ -171,17 +166,12 @@ impl AwsWafv2RuleGroupDetailsBuilder {
         self
     }
     /// <p> The Rule statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2RulesDetails>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2RulesDetails>>) -> Self {
         self.rules = input;
         self
     }
     /// <p> The Rule statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2RulesDetails>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2RulesDetails>> {
         &self.rules
     }
     /// <p> Specifies whether the rule group is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
@@ -199,25 +189,17 @@ impl AwsWafv2RuleGroupDetailsBuilder {
         &self.scope
     }
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn visibility_config(
-        mut self,
-        input: crate::types::AwsWafv2VisibilityConfigDetails,
-    ) -> Self {
+    pub fn visibility_config(mut self, input: crate::types::AwsWafv2VisibilityConfigDetails) -> Self {
         self.visibility_config = ::std::option::Option::Some(input);
         self
     }
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn set_visibility_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
-    ) -> Self {
+    pub fn set_visibility_config(mut self, input: ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>) -> Self {
         self.visibility_config = input;
         self
     }
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn get_visibility_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails> {
+    pub fn get_visibility_config(&self) -> &::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails> {
         &self.visibility_config
     }
     /// Consumes the builder and constructs a [`AwsWafv2RuleGroupDetails`](crate::types::AwsWafv2RuleGroupDetails).

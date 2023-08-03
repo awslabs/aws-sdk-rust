@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteEnvironmentMembershipOutput {
 }
 impl DeleteEnvironmentMembershipOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentMembershipOutput`](crate::operation::delete_environment_membership::DeleteEnvironmentMembershipOutput).
-    pub fn builder() -> crate::operation::delete_environment_membership::builders::DeleteEnvironmentMembershipOutputBuilder{
+    pub fn builder() -> crate::operation::delete_environment_membership::builders::DeleteEnvironmentMembershipOutputBuilder {
         crate::operation::delete_environment_membership::builders::DeleteEnvironmentMembershipOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEnvironmentMembershipOutput`](crate::operation::delete_environment_membership::DeleteEnvironmentMembershipOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentMembershipOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteEnvironmentMembershipOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteEnvironmentMembershipOutput`](crate::operation::delete_environment_membership::DeleteEnvironmentMembershipOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_environment_membership::DeleteEnvironmentMembershipOutput {
+    pub fn build(self) -> crate::operation::delete_environment_membership::DeleteEnvironmentMembershipOutput {
         crate::operation::delete_environment_membership::DeleteEnvironmentMembershipOutput {
             _request_id: self._request_id,
         }

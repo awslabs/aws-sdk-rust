@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateCustomRoutingListenerOutput {
 }
 impl UpdateCustomRoutingListenerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingListenerOutput`](crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerOutput).
-    pub fn builder() -> crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerOutputBuilder{
+    pub fn builder() -> crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerOutputBuilder {
         crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCustomRoutingListenerOutput`](crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCustomRoutingListenerOutputBuilder {
     pub(crate) listener: ::std::option::Option<crate::types::CustomRoutingListener>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl UpdateCustomRoutingListenerOutputBuilder {
         self
     }
     /// <p>Information for the updated listener for a custom routing accelerator.</p>
-    pub fn set_listener(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomRoutingListener>,
-    ) -> Self {
+    pub fn set_listener(mut self, input: ::std::option::Option<crate::types::CustomRoutingListener>) -> Self {
         self.listener = input;
         self
     }
@@ -63,9 +58,7 @@ impl UpdateCustomRoutingListenerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateCustomRoutingListenerOutput`](crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerOutput {
+    pub fn build(self) -> crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerOutput {
         crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerOutput {
             listener: self.listener,
             _request_id: self._request_id,

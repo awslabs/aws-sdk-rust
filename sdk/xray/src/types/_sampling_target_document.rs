@@ -51,9 +51,7 @@ impl SamplingTargetDocument {
 
 /// A builder for [`SamplingTargetDocument`](crate::types::SamplingTargetDocument).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SamplingTargetDocumentBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) fixed_rate: ::std::option::Option<f64>,
@@ -110,10 +108,7 @@ impl SamplingTargetDocumentBuilder {
         self
     }
     /// <p>When the reservoir quota expires.</p>
-    pub fn set_reservoir_quota_ttl(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_reservoir_quota_ttl(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.reservoir_quota_ttl = input;
         self
     }

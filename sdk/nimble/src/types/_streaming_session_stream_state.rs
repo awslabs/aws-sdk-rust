@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StreamingSessionStreamState {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for StreamingSessionStreamState {
             "DELETE_FAILED" => StreamingSessionStreamState::DeleteFailed,
             "DELETE_IN_PROGRESS" => StreamingSessionStreamState::DeleteInProgress,
             "READY" => StreamingSessionStreamState::Ready,
-            other => StreamingSessionStreamState::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => StreamingSessionStreamState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

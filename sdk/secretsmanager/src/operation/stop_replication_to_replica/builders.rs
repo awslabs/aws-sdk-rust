@@ -29,7 +29,7 @@ impl StopReplicationToReplicaInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopReplicationToReplicaFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::stop_replication_to_replica::builders::StopReplicationToReplicaInputBuilder,
+    inner: crate::operation::stop_replication_to_replica::builders::StopReplicationToReplicaInputBuilder,
 }
 impl StopReplicationToReplicaFluentBuilder {
     /// Creates a new `StopReplicationToReplica`.
@@ -40,7 +40,7 @@ impl StopReplicationToReplicaFluentBuilder {
         }
     }
     /// Access the StopReplicationToReplica as a reference.
-    pub fn as_input(&self) -> &crate::operation::stop_replication_to_replica::builders::StopReplicationToReplicaInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::stop_replication_to_replica::builders::StopReplicationToReplicaInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl StopReplicationToReplicaFluentBuilder {
             crate::operation::stop_replication_to_replica::StopReplicationToReplica,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_replication_to_replica::StopReplicationToReplicaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_replication_to_replica::StopReplicationToReplicaError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl StopReplicationToReplicaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl StopReplicationToReplicaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_replication_to_replica::StopReplicationToReplicaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_replication_to_replica::StopReplicationToReplicaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_replication_to_replica::StopReplicationToReplicaError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl StopReplicationToReplicaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_replication_to_replica::StopReplicationToReplicaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_replication_to_replica::StopReplicationToReplicaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_replication_to_replica::StopReplicationToReplicaError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl StopReplicationToReplicaFluentBuilder {
             crate::operation::stop_replication_to_replica::StopReplicationToReplica,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_replication_to_replica::StopReplicationToReplicaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_replication_to_replica::StopReplicationToReplicaError>,
     > {
         self.customize_middleware().await
     }

@@ -50,18 +50,14 @@ impl ListConfigurationHistoryInput {
 }
 impl ListConfigurationHistoryInput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationHistoryInput`](crate::operation::list_configuration_history::ListConfigurationHistoryInput).
-    pub fn builder(
-    ) -> crate::operation::list_configuration_history::builders::ListConfigurationHistoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_configuration_history::builders::ListConfigurationHistoryInputBuilder {
         crate::operation::list_configuration_history::builders::ListConfigurationHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`ListConfigurationHistoryInput`](crate::operation::list_configuration_history::ListConfigurationHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfigurationHistoryInputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -72,18 +68,12 @@ pub struct ListConfigurationHistoryInputBuilder {
 }
 impl ListConfigurationHistoryInputBuilder {
     /// <p>Resource group to which the application belongs. </p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Resource group to which the application belongs. </p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }
@@ -97,10 +87,7 @@ impl ListConfigurationHistoryInputBuilder {
         self
     }
     /// <p>The start time of the event. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -114,10 +101,7 @@ impl ListConfigurationHistoryInputBuilder {
         self
     }
     /// <p>The end time of the event.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -131,17 +115,12 @@ impl ListConfigurationHistoryInputBuilder {
         self
     }
     /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
-    pub fn set_event_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationEventStatus>,
-    ) -> Self {
+    pub fn set_event_status(mut self, input: ::std::option::Option<crate::types::ConfigurationEventStatus>) -> Self {
         self.event_status = input;
         self
     }
     /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
-    pub fn get_event_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationEventStatus> {
+    pub fn get_event_status(&self) -> &::std::option::Option<crate::types::ConfigurationEventStatus> {
         &self.event_status
     }
     /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results. </p>
@@ -179,15 +158,13 @@ impl ListConfigurationHistoryInputBuilder {
         crate::operation::list_configuration_history::ListConfigurationHistoryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_configuration_history::ListConfigurationHistoryInput {
-                resource_group_name: self.resource_group_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                event_status: self.event_status,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_configuration_history::ListConfigurationHistoryInput {
+            resource_group_name: self.resource_group_name,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            event_status: self.event_status,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

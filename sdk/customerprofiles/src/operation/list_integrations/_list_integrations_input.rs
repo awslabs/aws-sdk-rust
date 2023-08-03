@@ -36,17 +36,14 @@ impl ListIntegrationsInput {
 }
 impl ListIntegrationsInput {
     /// Creates a new builder-style object to manufacture [`ListIntegrationsInput`](crate::operation::list_integrations::ListIntegrationsInput).
-    pub fn builder() -> crate::operation::list_integrations::builders::ListIntegrationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_integrations::builders::ListIntegrationsInputBuilder {
         crate::operation::list_integrations::builders::ListIntegrationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListIntegrationsInput`](crate::operation::list_integrations::ListIntegrationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIntegrationsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -113,10 +110,7 @@ impl ListIntegrationsInputBuilder {
     /// Consumes the builder and constructs a [`ListIntegrationsInput`](crate::operation::list_integrations::ListIntegrationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_integrations::ListIntegrationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_integrations::ListIntegrationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_integrations::ListIntegrationsInput {
             domain_name: self.domain_name,
             next_token: self.next_token,

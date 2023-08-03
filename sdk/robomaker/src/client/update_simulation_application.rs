@@ -22,7 +22,9 @@ impl super::Client {
     ///   - [`revision_id(Option<String>)`](crate::operation::update_simulation_application::UpdateSimulationApplicationOutput::revision_id): <p>The revision id of the simulation application.</p>
     ///   - [`environment(Option<Environment>)`](crate::operation::update_simulation_application::UpdateSimulationApplicationOutput::environment): <p>The object that contains the Docker image URI used for your simulation application.</p>
     /// - On failure, responds with [`SdkError<UpdateSimulationApplicationError>`](crate::operation::update_simulation_application::UpdateSimulationApplicationError)
-    pub fn update_simulation_application(&self) -> crate::operation::update_simulation_application::builders::UpdateSimulationApplicationFluentBuilder{
+    pub fn update_simulation_application(
+        &self,
+    ) -> crate::operation::update_simulation_application::builders::UpdateSimulationApplicationFluentBuilder {
         crate::operation::update_simulation_application::builders::UpdateSimulationApplicationFluentBuilder::new(self.handle.clone())
     }
 }

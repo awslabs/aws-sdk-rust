@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribePhoneNumbersOutput {
 }
 impl DescribePhoneNumbersOutput {
     /// Creates a new builder-style object to manufacture [`DescribePhoneNumbersOutput`](crate::operation::describe_phone_numbers::DescribePhoneNumbersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersOutputBuilder {
+    pub fn builder() -> crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersOutputBuilder {
         crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePhoneNumbersOutput`](crate::operation::describe_phone_numbers::DescribePhoneNumbersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePhoneNumbersOutputBuilder {
-    pub(crate) phone_numbers:
-        ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberInformation>>,
+    pub(crate) phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl DescribePhoneNumbersOutputBuilder {
         self
     }
     /// <p>An array of PhoneNumberInformation objects that contain the details for the requested phone numbers.</p>
-    pub fn set_phone_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberInformation>>,
-    ) -> Self {
+    pub fn set_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberInformation>>) -> Self {
         self.phone_numbers = input;
         self
     }
     /// <p>An array of PhoneNumberInformation objects that contain the details for the requested phone numbers.</p>
-    pub fn get_phone_numbers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberInformation>> {
+    pub fn get_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberInformation>> {
         &self.phone_numbers
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>

@@ -10,10 +10,7 @@ impl GetTerminologyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_terminology::GetTerminologyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_terminology::GetTerminologyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_terminology::GetTerminologyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_terminology();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetTerminologyFluentBuilder {
         }
     }
     /// Access the GetTerminology as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_terminology::builders::GetTerminologyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_terminology::builders::GetTerminologyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetTerminologyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -138,19 +130,14 @@ impl GetTerminologyFluentBuilder {
     /// <p>The data format of the custom terminology being retrieved.</p>
     /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
     /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
-    pub fn set_terminology_data_format(
-        mut self,
-        input: ::std::option::Option<crate::types::TerminologyDataFormat>,
-    ) -> Self {
+    pub fn set_terminology_data_format(mut self, input: ::std::option::Option<crate::types::TerminologyDataFormat>) -> Self {
         self.inner = self.inner.set_terminology_data_format(input);
         self
     }
     /// <p>The data format of the custom terminology being retrieved.</p>
     /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
     /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
-    pub fn get_terminology_data_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::TerminologyDataFormat> {
+    pub fn get_terminology_data_format(&self) -> &::std::option::Option<crate::types::TerminologyDataFormat> {
         self.inner.get_terminology_data_format()
     }
 }

@@ -42,13 +42,7 @@
 /// _Note: `DatabaseStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DatabaseStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for DatabaseStatus {
             "STOPPED" => DatabaseStatus::Stopped,
             "UNKNOWN" => DatabaseStatus::UnknownValue,
             "WARNING" => DatabaseStatus::Warning,
-            other => {
-                DatabaseStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DatabaseStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,9 +95,7 @@ impl DatabaseStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ERROR", "RUNNING", "STARTING", "STOPPED", "UNKNOWN", "WARNING",
-        ]
+        &["ERROR", "RUNNING", "STARTING", "STOPPED", "UNKNOWN", "WARNING"]
     }
 }
 impl ::std::convert::AsRef<str> for DatabaseStatus {

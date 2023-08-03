@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`evaluation_results(Option<Vec<EvaluationResult>>)`](crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput::evaluation_results): <p>Indicates whether the specified Amazon Web Services resource complies each Config rule.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<GetComplianceDetailsByResourceError>`](crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError)
-    pub fn get_compliance_details_by_resource(&self) -> crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder{
+    pub fn get_compliance_details_by_resource(
+        &self,
+    ) -> crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder {
         crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder::new(self.handle.clone())
     }
 }

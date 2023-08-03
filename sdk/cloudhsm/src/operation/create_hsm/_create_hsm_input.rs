@@ -82,9 +82,7 @@ impl CreateHsmInput {
 
 /// A builder for [`CreateHsmInput`](crate::operation::create_hsm::CreateHsmInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHsmInputBuilder {
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) ssh_key: ::std::option::Option<::std::string::String>,
@@ -183,10 +181,7 @@ impl CreateHsmInputBuilder {
     /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
     /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
     /// </ul>
-    pub fn set_subscription_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SubscriptionType>,
-    ) -> Self {
+    pub fn set_subscription_type(mut self, input: ::std::option::Option<crate::types::SubscriptionType>) -> Self {
         self.subscription_type = input;
         self
     }
@@ -227,12 +222,7 @@ impl CreateHsmInputBuilder {
         &self.syslog_ip
     }
     /// Consumes the builder and constructs a [`CreateHsmInput`](crate::operation::create_hsm::CreateHsmInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_hsm::CreateHsmInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_hsm::CreateHsmInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_hsm::CreateHsmInput {
             subnet_id: self.subnet_id,
             ssh_key: self.ssh_key,

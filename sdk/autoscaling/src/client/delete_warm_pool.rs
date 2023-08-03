@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`force_delete(bool)`](crate::operation::delete_warm_pool::builders::DeleteWarmPoolFluentBuilder::force_delete) / [`set_force_delete(Option<bool>)`](crate::operation::delete_warm_pool::builders::DeleteWarmPoolFluentBuilder::set_force_delete): <p>Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions associated with the warm pool instances.</p>
     /// - On success, responds with [`DeleteWarmPoolOutput`](crate::operation::delete_warm_pool::DeleteWarmPoolOutput)
     /// - On failure, responds with [`SdkError<DeleteWarmPoolError>`](crate::operation::delete_warm_pool::DeleteWarmPoolError)
-    pub fn delete_warm_pool(
-        &self,
-    ) -> crate::operation::delete_warm_pool::builders::DeleteWarmPoolFluentBuilder {
-        crate::operation::delete_warm_pool::builders::DeleteWarmPoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_warm_pool(&self) -> crate::operation::delete_warm_pool::builders::DeleteWarmPoolFluentBuilder {
+        crate::operation::delete_warm_pool::builders::DeleteWarmPoolFluentBuilder::new(self.handle.clone())
     }
 }

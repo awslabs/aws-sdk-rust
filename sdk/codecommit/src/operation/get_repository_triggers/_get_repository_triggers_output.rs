@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for GetRepositoryTriggersOutput {
 }
 impl GetRepositoryTriggersOutput {
     /// Creates a new builder-style object to manufacture [`GetRepositoryTriggersOutput`](crate::operation::get_repository_triggers::GetRepositoryTriggersOutput).
-    pub fn builder(
-    ) -> crate::operation::get_repository_triggers::builders::GetRepositoryTriggersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_repository_triggers::builders::GetRepositoryTriggersOutputBuilder {
         crate::operation::get_repository_triggers::builders::GetRepositoryTriggersOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRepositoryTriggersOutput`](crate::operation::get_repository_triggers::GetRepositoryTriggersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRepositoryTriggersOutputBuilder {
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>>,
@@ -48,18 +44,12 @@ pub struct GetRepositoryTriggersOutputBuilder {
 }
 impl GetRepositoryTriggersOutputBuilder {
     /// <p>The system-generated unique ID for the trigger.</p>
-    pub fn configuration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated unique ID for the trigger.</p>
-    pub fn set_configuration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_id = input;
         self
     }
@@ -79,17 +69,12 @@ impl GetRepositoryTriggersOutputBuilder {
         self
     }
     /// <p>The JSON block of configuration information for each trigger.</p>
-    pub fn set_triggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>>,
-    ) -> Self {
+    pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>>) -> Self {
         self.triggers = input;
         self
     }
     /// <p>The JSON block of configuration information for each trigger.</p>
-    pub fn get_triggers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>> {
+    pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>> {
         &self.triggers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

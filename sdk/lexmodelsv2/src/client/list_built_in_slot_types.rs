@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>LIstBuiltInSlotTypes</code> operation request to get the next page of results.</p>
     ///   - [`locale_id(Option<String>)`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesOutput::locale_id): <p>The language and locale of the slot types in the list.</p>
     /// - On failure, responds with [`SdkError<ListBuiltInSlotTypesError>`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesError)
-    pub fn list_built_in_slot_types(
-        &self,
-    ) -> crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesFluentBuilder
-    {
-        crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_built_in_slot_types(&self) -> crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesFluentBuilder {
+        crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesFluentBuilder::new(self.handle.clone())
     }
 }

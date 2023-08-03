@@ -38,7 +38,7 @@ impl DeleteStreamingDistributionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteStreamingDistributionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionInputBuilder,
+    inner: crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionInputBuilder,
 }
 impl DeleteStreamingDistributionFluentBuilder {
     /// Creates a new `DeleteStreamingDistribution`.
@@ -49,7 +49,7 @@ impl DeleteStreamingDistributionFluentBuilder {
         }
     }
     /// Access the DeleteStreamingDistribution as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_streaming_distribution::builders::DeleteStreamingDistributionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +61,7 @@ impl DeleteStreamingDistributionFluentBuilder {
             crate::operation::delete_streaming_distribution::DeleteStreamingDistribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +71,7 @@ impl DeleteStreamingDistributionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +80,7 @@ impl DeleteStreamingDistributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_streaming_distribution::DeleteStreamingDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError>,
     > {
         let op = self
             .inner
@@ -110,9 +103,7 @@ impl DeleteStreamingDistributionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_streaming_distribution::DeleteStreamingDistributionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +117,7 @@ impl DeleteStreamingDistributionFluentBuilder {
             crate::operation::delete_streaming_distribution::DeleteStreamingDistribution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError>,
     > {
         self.customize_middleware().await
     }

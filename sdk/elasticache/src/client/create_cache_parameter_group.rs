@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCacheParameterGroupOutput`](crate::operation::create_cache_parameter_group::CreateCacheParameterGroupOutput) with field(s):
     ///   - [`cache_parameter_group(Option<CacheParameterGroup>)`](crate::operation::create_cache_parameter_group::CreateCacheParameterGroupOutput::cache_parameter_group): <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
     /// - On failure, responds with [`SdkError<CreateCacheParameterGroupError>`](crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError)
-    pub fn create_cache_parameter_group(&self) -> crate::operation::create_cache_parameter_group::builders::CreateCacheParameterGroupFluentBuilder{
+    pub fn create_cache_parameter_group(&self) -> crate::operation::create_cache_parameter_group::builders::CreateCacheParameterGroupFluentBuilder {
         crate::operation::create_cache_parameter_group::builders::CreateCacheParameterGroupFluentBuilder::new(self.handle.clone())
     }
 }

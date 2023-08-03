@@ -40,10 +40,7 @@ impl DeleteInstanceProfileFluentBuilder {
         }
     }
     /// Access the DeleteInstanceProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_instance_profile::builders::DeleteInstanceProfileInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_instance_profile::builders::DeleteInstanceProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl DeleteInstanceProfileFluentBuilder {
             crate::operation::delete_instance_profile::DeleteInstanceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_instance_profile::DeleteInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_instance_profile::DeleteInstanceProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl DeleteInstanceProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl DeleteInstanceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_instance_profile::DeleteInstanceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_instance_profile::DeleteInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_instance_profile::DeleteInstanceProfileError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl DeleteInstanceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_instance_profile::DeleteInstanceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_instance_profile::DeleteInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_instance_profile::DeleteInstanceProfileError>,
     > {
         self.send_middleware().await
     }
@@ -120,27 +108,19 @@ impl DeleteInstanceProfileFluentBuilder {
             crate::operation::delete_instance_profile::DeleteInstanceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_instance_profile::DeleteInstanceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_instance_profile::DeleteInstanceProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the instance profile to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn instance_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_profile_name(input.into());
         self
     }
     /// <p>The name of the instance profile to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_instance_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_profile_name(input);
         self
     }

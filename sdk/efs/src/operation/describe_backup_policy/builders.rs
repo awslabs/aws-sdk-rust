@@ -37,9 +37,7 @@ impl DescribeBackupPolicyFluentBuilder {
         }
     }
     /// Access the DescribeBackupPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_backup_policy::builders::DescribeBackupPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_backup_policy::builders::DescribeBackupPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeBackupPolicyFluentBuilder {
             crate::operation::describe_backup_policy::DescribeBackupPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backup_policy::DescribeBackupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backup_policy::DescribeBackupPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeBackupPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeBackupPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_backup_policy::DescribeBackupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backup_policy::DescribeBackupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backup_policy::DescribeBackupPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeBackupPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_backup_policy::DescribeBackupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backup_policy::DescribeBackupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backup_policy::DescribeBackupPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeBackupPolicyFluentBuilder {
             crate::operation::describe_backup_policy::DescribeBackupPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backup_policy::DescribeBackupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backup_policy::DescribeBackupPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }

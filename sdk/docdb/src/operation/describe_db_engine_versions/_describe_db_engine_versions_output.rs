@@ -29,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeDbEngineVersionsOutput {
 }
 impl DescribeDbEngineVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbEngineVersionsOutput`](crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput).
-    pub fn builder() -> crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsOutputBuilder {
         crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbEngineVersionsOutput`](crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbEngineVersionsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) db_engine_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbEngineVersion>>,
+    pub(crate) db_engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::DbEngineVersion>>,
     _request_id: Option<String>,
 }
 impl DescribeDbEngineVersionsOutputBuilder {
@@ -72,17 +69,12 @@ impl DescribeDbEngineVersionsOutputBuilder {
         self
     }
     /// <p>Detailed information about one or more engine versions.</p>
-    pub fn set_db_engine_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DbEngineVersion>>,
-    ) -> Self {
+    pub fn set_db_engine_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbEngineVersion>>) -> Self {
         self.db_engine_versions = input;
         self
     }
     /// <p>Detailed information about one or more engine versions.</p>
-    pub fn get_db_engine_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbEngineVersion>> {
+    pub fn get_db_engine_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbEngineVersion>> {
         &self.db_engine_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -95,9 +87,7 @@ impl DescribeDbEngineVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDbEngineVersionsOutput`](crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput {
+    pub fn build(self) -> crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput {
         crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput {
             marker: self.marker,
             db_engine_versions: self.db_engine_versions,

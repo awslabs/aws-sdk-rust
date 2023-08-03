@@ -30,9 +30,7 @@ impl ListVersionsInput {
 
 /// A builder for [`ListVersionsInput`](crate::operation::list_versions::ListVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVersionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -67,12 +65,7 @@ impl ListVersionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListVersionsInput`](crate::operation::list_versions::ListVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_versions::ListVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_versions::ListVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_versions::ListVersionsInput {
             max_results: self.max_results,
             next_token: self.next_token,

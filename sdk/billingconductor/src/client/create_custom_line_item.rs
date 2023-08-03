@@ -13,12 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCustomLineItemOutput`](crate::operation::create_custom_line_item::CreateCustomLineItemOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_custom_line_item::CreateCustomLineItemOutput::arn): <p> The Amazon Resource Name (ARN) of the created custom line item. </p>
     /// - On failure, responds with [`SdkError<CreateCustomLineItemError>`](crate::operation::create_custom_line_item::CreateCustomLineItemError)
-    pub fn create_custom_line_item(
-        &self,
-    ) -> crate::operation::create_custom_line_item::builders::CreateCustomLineItemFluentBuilder
-    {
-        crate::operation::create_custom_line_item::builders::CreateCustomLineItemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_custom_line_item(&self) -> crate::operation::create_custom_line_item::builders::CreateCustomLineItemFluentBuilder {
+        crate::operation::create_custom_line_item::builders::CreateCustomLineItemFluentBuilder::new(self.handle.clone())
     }
 }

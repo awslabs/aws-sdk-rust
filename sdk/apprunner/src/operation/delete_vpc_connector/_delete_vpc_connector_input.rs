@@ -17,36 +17,27 @@ impl DeleteVpcConnectorInput {
 }
 impl DeleteVpcConnectorInput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcConnectorInput`](crate::operation::delete_vpc_connector::DeleteVpcConnectorInput).
-    pub fn builder(
-    ) -> crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorInputBuilder {
+    pub fn builder() -> crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorInputBuilder {
         crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpcConnectorInput`](crate::operation::delete_vpc_connector::DeleteVpcConnectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpcConnectorInputBuilder {
     pub(crate) vpc_connector_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVpcConnectorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to delete.</p>
     /// <p>The ARN must be a full VPC connector ARN.</p>
-    pub fn vpc_connector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to delete.</p>
     /// <p>The ARN must be a full VPC connector ARN.</p>
-    pub fn set_vpc_connector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_connector_arn = input;
         self
     }
@@ -58,14 +49,9 @@ impl DeleteVpcConnectorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVpcConnectorInput`](crate::operation::delete_vpc_connector::DeleteVpcConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_vpc_connector::DeleteVpcConnectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_vpc_connector::DeleteVpcConnectorInput {
-                vpc_connector_arn: self.vpc_connector_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_vpc_connector::DeleteVpcConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_vpc_connector::DeleteVpcConnectorInput {
+            vpc_connector_arn: self.vpc_connector_arn,
+        })
     }
 }

@@ -67,9 +67,7 @@ impl CriterionAdditionalProperties {
 
 /// A builder for [`CriterionAdditionalProperties`](crate::types::CriterionAdditionalProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CriterionAdditionalPropertiesBuilder {
     pub(crate) eq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) eq_exact_match: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -92,10 +90,7 @@ impl CriterionAdditionalPropertiesBuilder {
         self
     }
     /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR logic to join the values.</p>
-    pub fn set_eq(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_eq(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.eq = input;
         self
     }
@@ -109,10 +104,7 @@ impl CriterionAdditionalPropertiesBuilder {
     ///
     /// <p>The value for the property exclusively matches (equals an exact match for) all the specified values. If you specify multiple values, Amazon Macie uses AND logic to join the values.</p>
     /// <p>You can use this operator with the following properties: customDataIdentifiers.detections.arn, customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key, resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key, resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.</p>
-    pub fn eq_exact_match(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn eq_exact_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.eq_exact_match.unwrap_or_default();
         v.push(input.into());
         self.eq_exact_match = ::std::option::Option::Some(v);
@@ -120,18 +112,13 @@ impl CriterionAdditionalPropertiesBuilder {
     }
     /// <p>The value for the property exclusively matches (equals an exact match for) all the specified values. If you specify multiple values, Amazon Macie uses AND logic to join the values.</p>
     /// <p>You can use this operator with the following properties: customDataIdentifiers.detections.arn, customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key, resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key, resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.</p>
-    pub fn set_eq_exact_match(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_eq_exact_match(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.eq_exact_match = input;
         self
     }
     /// <p>The value for the property exclusively matches (equals an exact match for) all the specified values. If you specify multiple values, Amazon Macie uses AND logic to join the values.</p>
     /// <p>You can use this operator with the following properties: customDataIdentifiers.detections.arn, customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key, resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key, resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.</p>
-    pub fn get_eq_exact_match(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_eq_exact_match(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.eq_exact_match
     }
     /// <p>The value for the property is greater than the specified value.</p>
@@ -202,10 +189,7 @@ impl CriterionAdditionalPropertiesBuilder {
         self
     }
     /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Macie uses OR logic to join the values.</p>
-    pub fn set_neq(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_neq(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.neq = input;
         self
     }

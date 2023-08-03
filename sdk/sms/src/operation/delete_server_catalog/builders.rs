@@ -37,9 +37,7 @@ impl DeleteServerCatalogFluentBuilder {
         }
     }
     /// Access the DeleteServerCatalog as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_server_catalog::builders::DeleteServerCatalogInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_server_catalog::builders::DeleteServerCatalogInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteServerCatalogFluentBuilder {
             crate::operation::delete_server_catalog::DeleteServerCatalog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_server_catalog::DeleteServerCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_server_catalog::DeleteServerCatalogError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteServerCatalogFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteServerCatalogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_server_catalog::DeleteServerCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_server_catalog::DeleteServerCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_server_catalog::DeleteServerCatalogError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteServerCatalogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_server_catalog::DeleteServerCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_server_catalog::DeleteServerCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_server_catalog::DeleteServerCatalogError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteServerCatalogFluentBuilder {
             crate::operation::delete_server_catalog::DeleteServerCatalog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_server_catalog::DeleteServerCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_server_catalog::DeleteServerCatalogError>,
     > {
         self.customize_middleware().await
     }

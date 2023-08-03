@@ -57,17 +57,14 @@ impl CreateDestinationInput {
 }
 impl CreateDestinationInput {
     /// Creates a new builder-style object to manufacture [`CreateDestinationInput`](crate::operation::create_destination::CreateDestinationInput).
-    pub fn builder() -> crate::operation::create_destination::builders::CreateDestinationInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_destination::builders::CreateDestinationInputBuilder {
         crate::operation::create_destination::builders::CreateDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDestinationInput`](crate::operation::create_destination::CreateDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDestinationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) expression_type: ::std::option::Option<crate::types::ExpressionType>,
@@ -98,10 +95,7 @@ impl CreateDestinationInputBuilder {
         self
     }
     /// <p>The type of value in <code>Expression</code>.</p>
-    pub fn set_expression_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpressionType>,
-    ) -> Self {
+    pub fn set_expression_type(mut self, input: ::std::option::Option<crate::types::ExpressionType>) -> Self {
         self.expression_type = input;
         self
     }
@@ -163,10 +157,7 @@ impl CreateDestinationInputBuilder {
         self
     }
     /// <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -175,18 +166,12 @@ impl CreateDestinationInputBuilder {
         &self.tags
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -197,20 +182,15 @@ impl CreateDestinationInputBuilder {
     /// Consumes the builder and constructs a [`CreateDestinationInput`](crate::operation::create_destination::CreateDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_destination::CreateDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_destination::CreateDestinationInput {
-                name: self.name,
-                expression_type: self.expression_type,
-                expression: self.expression,
-                description: self.description,
-                role_arn: self.role_arn,
-                tags: self.tags,
-                client_request_token: self.client_request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_destination::CreateDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_destination::CreateDestinationInput {
+            name: self.name,
+            expression_type: self.expression_type,
+            expression: self.expression,
+            description: self.description,
+            role_arn: self.role_arn,
+            tags: self.tags,
+            client_request_token: self.client_request_token,
+        })
     }
 }

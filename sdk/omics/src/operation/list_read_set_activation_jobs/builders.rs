@@ -26,7 +26,7 @@ impl ListReadSetActivationJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReadSetActivationJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsInputBuilder,
+    inner: crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsInputBuilder,
 }
 impl ListReadSetActivationJobsFluentBuilder {
     /// Creates a new `ListReadSetActivationJobs`.
@@ -37,7 +37,7 @@ impl ListReadSetActivationJobsFluentBuilder {
         }
     }
     /// Access the ListReadSetActivationJobs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListReadSetActivationJobsFluentBuilder {
             crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListReadSetActivationJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListReadSetActivationJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListReadSetActivationJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListReadSetActivationJobsFluentBuilder {
             crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_read_set_activation_jobs::paginator::ListReadSetActivationJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_read_set_activation_jobs::paginator::ListReadSetActivationJobsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_read_set_activation_jobs::paginator::ListReadSetActivationJobsPaginator {
         crate::operation::list_read_set_activation_jobs::paginator::ListReadSetActivationJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
@@ -180,10 +163,7 @@ impl ListReadSetActivationJobsFluentBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivateReadSetFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ActivateReadSetFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

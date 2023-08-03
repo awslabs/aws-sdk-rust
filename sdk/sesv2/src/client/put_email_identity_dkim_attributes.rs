@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`signing_enabled(bool)`](crate::operation::put_email_identity_dkim_attributes::builders::PutEmailIdentityDkimAttributesFluentBuilder::signing_enabled) / [`set_signing_enabled(Option<bool>)`](crate::operation::put_email_identity_dkim_attributes::builders::PutEmailIdentityDkimAttributesFluentBuilder::set_signing_enabled): <p>Sets the DKIM signing configuration for the identity.</p>  <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
     /// - On success, responds with [`PutEmailIdentityDkimAttributesOutput`](crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesOutput)
     /// - On failure, responds with [`SdkError<PutEmailIdentityDkimAttributesError>`](crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesError)
-    pub fn put_email_identity_dkim_attributes(&self) -> crate::operation::put_email_identity_dkim_attributes::builders::PutEmailIdentityDkimAttributesFluentBuilder{
+    pub fn put_email_identity_dkim_attributes(
+        &self,
+    ) -> crate::operation::put_email_identity_dkim_attributes::builders::PutEmailIdentityDkimAttributesFluentBuilder {
         crate::operation::put_email_identity_dkim_attributes::builders::PutEmailIdentityDkimAttributesFluentBuilder::new(self.handle.clone())
     }
 }

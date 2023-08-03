@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for ListDataSourcesOutput {
 }
 impl ListDataSourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListDataSourcesOutput`](crate::operation::list_data_sources::ListDataSourcesOutput).
-    pub fn builder() -> crate::operation::list_data_sources::builders::ListDataSourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_data_sources::builders::ListDataSourcesOutputBuilder {
         crate::operation::list_data_sources::builders::ListDataSourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataSourcesOutput`](crate::operation::list_data_sources::ListDataSourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataSourcesOutputBuilder {
     pub(crate) data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -73,17 +70,12 @@ impl ListDataSourcesOutputBuilder {
         self
     }
     /// <p>A list of data sources.</p>
-    pub fn set_data_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
-    ) -> Self {
+    pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>) -> Self {
         self.data_sources = input;
         self
     }
     /// <p>A list of data sources.</p>
-    pub fn get_data_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
         &self.data_sources
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

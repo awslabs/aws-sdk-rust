@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`tags(HashMap<String, String>)`](crate::operation::add_tags_to_vault::builders::AddTagsToVaultFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::add_tags_to_vault::builders::AddTagsToVaultFluentBuilder::set_tags): <p>The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string.</p>
     /// - On success, responds with [`AddTagsToVaultOutput`](crate::operation::add_tags_to_vault::AddTagsToVaultOutput)
     /// - On failure, responds with [`SdkError<AddTagsToVaultError>`](crate::operation::add_tags_to_vault::AddTagsToVaultError)
-    pub fn add_tags_to_vault(
-        &self,
-    ) -> crate::operation::add_tags_to_vault::builders::AddTagsToVaultFluentBuilder {
-        crate::operation::add_tags_to_vault::builders::AddTagsToVaultFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_tags_to_vault(&self) -> crate::operation::add_tags_to_vault::builders::AddTagsToVaultFluentBuilder {
+        crate::operation::add_tags_to_vault::builders::AddTagsToVaultFluentBuilder::new(self.handle.clone())
     }
 }

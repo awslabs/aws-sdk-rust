@@ -30,9 +30,7 @@ impl ContentTypeProfiles {
 
 /// A builder for [`ContentTypeProfiles`](crate::types::ContentTypeProfiles).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContentTypeProfilesBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ContentTypeProfile>>,
@@ -64,17 +62,12 @@ impl ContentTypeProfilesBuilder {
         self
     }
     /// <p>Items in a field-level encryption content type-profile mapping.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContentTypeProfile>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContentTypeProfile>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Items in a field-level encryption content type-profile mapping.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentTypeProfile>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentTypeProfile>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`ContentTypeProfiles`](crate::types::ContentTypeProfiles).

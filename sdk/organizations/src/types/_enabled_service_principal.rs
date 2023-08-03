@@ -30,27 +30,19 @@ impl EnabledServicePrincipal {
 
 /// A builder for [`EnabledServicePrincipal`](crate::types::EnabledServicePrincipal).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnabledServicePrincipalBuilder {
     pub(crate) service_principal: ::std::option::Option<::std::string::String>,
     pub(crate) date_enabled: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EnabledServicePrincipalBuilder {
     /// <p>The name of the service principal. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
-    pub fn service_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_principal = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service principal. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
-    pub fn set_service_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_principal = input;
         self
     }
@@ -64,10 +56,7 @@ impl EnabledServicePrincipalBuilder {
         self
     }
     /// <p>The date that the service principal was enabled for integration with Organizations.</p>
-    pub fn set_date_enabled(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_enabled(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_enabled = input;
         self
     }

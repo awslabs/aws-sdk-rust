@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`framework_metadata_list(Option<Vec<AssessmentFrameworkMetadata>>)`](crate::operation::list_assessment_frameworks::ListAssessmentFrameworksOutput::framework_metadata_list): <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API returns for each framework.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_assessment_frameworks::ListAssessmentFrameworksOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListAssessmentFrameworksError>`](crate::operation::list_assessment_frameworks::ListAssessmentFrameworksError)
-    pub fn list_assessment_frameworks(
-        &self,
-    ) -> crate::operation::list_assessment_frameworks::builders::ListAssessmentFrameworksFluentBuilder
-    {
+    pub fn list_assessment_frameworks(&self) -> crate::operation::list_assessment_frameworks::builders::ListAssessmentFrameworksFluentBuilder {
         crate::operation::list_assessment_frameworks::builders::ListAssessmentFrameworksFluentBuilder::new(self.handle.clone())
     }
 }

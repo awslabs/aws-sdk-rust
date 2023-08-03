@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`failure_message(Option<String>)`](crate::operation::get_target_group::GetTargetGroupOutput::failure_message): <p>The failure message.</p>
     ///   - [`failure_code(Option<String>)`](crate::operation::get_target_group::GetTargetGroupOutput::failure_code): <p>The failure code.</p>
     /// - On failure, responds with [`SdkError<GetTargetGroupError>`](crate::operation::get_target_group::GetTargetGroupError)
-    pub fn get_target_group(
-        &self,
-    ) -> crate::operation::get_target_group::builders::GetTargetGroupFluentBuilder {
-        crate::operation::get_target_group::builders::GetTargetGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_target_group(&self) -> crate::operation::get_target_group::builders::GetTargetGroupFluentBuilder {
+        crate::operation::get_target_group::builders::GetTargetGroupFluentBuilder::new(self.handle.clone())
     }
 }

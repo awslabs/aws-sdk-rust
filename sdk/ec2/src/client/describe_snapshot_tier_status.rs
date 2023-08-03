@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`snapshot_tier_statuses(Option<Vec<SnapshotTierStatus>>)`](crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput::snapshot_tier_statuses): <p>Information about the snapshot's storage tier.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeSnapshotTierStatusError>`](crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusError)
-    pub fn describe_snapshot_tier_status(&self) -> crate::operation::describe_snapshot_tier_status::builders::DescribeSnapshotTierStatusFluentBuilder{
+    pub fn describe_snapshot_tier_status(
+        &self,
+    ) -> crate::operation::describe_snapshot_tier_status::builders::DescribeSnapshotTierStatusFluentBuilder {
         crate::operation::describe_snapshot_tier_status::builders::DescribeSnapshotTierStatusFluentBuilder::new(self.handle.clone())
     }
 }

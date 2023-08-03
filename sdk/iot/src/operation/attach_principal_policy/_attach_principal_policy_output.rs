@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AttachPrincipalPolicyOutput {
 }
 impl AttachPrincipalPolicyOutput {
     /// Creates a new builder-style object to manufacture [`AttachPrincipalPolicyOutput`](crate::operation::attach_principal_policy::AttachPrincipalPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyOutputBuilder {
         crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachPrincipalPolicyOutput`](crate::operation::attach_principal_policy::AttachPrincipalPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachPrincipalPolicyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`evidence(Option<Vec<Evidence>>)`](crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderOutput::evidence): <p> The list of evidence that the <code>GetEvidenceByEvidenceFolder</code> API returned. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<GetEvidenceByEvidenceFolderError>`](crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError)
-    pub fn get_evidence_by_evidence_folder(&self) -> crate::operation::get_evidence_by_evidence_folder::builders::GetEvidenceByEvidenceFolderFluentBuilder{
+    pub fn get_evidence_by_evidence_folder(
+        &self,
+    ) -> crate::operation::get_evidence_by_evidence_folder::builders::GetEvidenceByEvidenceFolderFluentBuilder {
         crate::operation::get_evidence_by_evidence_folder::builders::GetEvidenceByEvidenceFolderFluentBuilder::new(self.handle.clone())
     }
 }

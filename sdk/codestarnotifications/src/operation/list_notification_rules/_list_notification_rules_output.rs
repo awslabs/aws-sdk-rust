@@ -8,8 +8,7 @@ pub struct ListNotificationRulesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
     #[doc(hidden)]
-    pub notification_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationRuleSummary>>,
+    pub notification_rules: ::std::option::Option<::std::vec::Vec<crate::types::NotificationRuleSummary>>,
     _request_id: Option<String>,
 }
 impl ListNotificationRulesOutput {
@@ -18,9 +17,7 @@ impl ListNotificationRulesOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
-    pub fn notification_rules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NotificationRuleSummary]> {
+    pub fn notification_rules(&self) -> ::std::option::Option<&[crate::types::NotificationRuleSummary]> {
         self.notification_rules.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListNotificationRulesOutput {
 }
 impl ListNotificationRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListNotificationRulesOutput`](crate::operation::list_notification_rules::ListNotificationRulesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_notification_rules::builders::ListNotificationRulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_notification_rules::builders::ListNotificationRulesOutputBuilder {
         crate::operation::list_notification_rules::builders::ListNotificationRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListNotificationRulesOutput`](crate::operation::list_notification_rules::ListNotificationRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNotificationRulesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) notification_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationRuleSummary>>,
+    pub(crate) notification_rules: ::std::option::Option<::std::vec::Vec<crate::types::NotificationRuleSummary>>,
     _request_id: Option<String>,
 }
 impl ListNotificationRulesOutputBuilder {
@@ -76,17 +68,12 @@ impl ListNotificationRulesOutputBuilder {
         self
     }
     /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
-    pub fn set_notification_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationRuleSummary>>,
-    ) -> Self {
+    pub fn set_notification_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationRuleSummary>>) -> Self {
         self.notification_rules = input;
         self
     }
     /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
-    pub fn get_notification_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationRuleSummary>> {
+    pub fn get_notification_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationRuleSummary>> {
         &self.notification_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -27,9 +27,7 @@ impl ComparisonConfiguration {
         self.comparison_method.as_ref()
     }
     /// <p>The format of the comparison.</p>
-    pub fn comparison_format(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ComparisonFormatConfiguration> {
+    pub fn comparison_format(&self) -> ::std::option::Option<&crate::types::ComparisonFormatConfiguration> {
         self.comparison_format.as_ref()
     }
 }
@@ -42,13 +40,10 @@ impl ComparisonConfiguration {
 
 /// A builder for [`ComparisonConfiguration`](crate::types::ComparisonConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComparisonConfigurationBuilder {
     pub(crate) comparison_method: ::std::option::Option<crate::types::ComparisonMethod>,
-    pub(crate) comparison_format:
-        ::std::option::Option<crate::types::ComparisonFormatConfiguration>,
+    pub(crate) comparison_format: ::std::option::Option<crate::types::ComparisonFormatConfiguration>,
 }
 impl ComparisonConfigurationBuilder {
     /// <p>The method of the comparison. Choose from the following options:</p>
@@ -67,10 +62,7 @@ impl ComparisonConfigurationBuilder {
     /// <li> <p> <code>PERCENT_DIFFERENCE</code> </p> </li>
     /// <li> <p> <code>PERCENT</code> </p> </li>
     /// </ul>
-    pub fn set_comparison_method(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonMethod>,
-    ) -> Self {
+    pub fn set_comparison_method(mut self, input: ::std::option::Option<crate::types::ComparisonMethod>) -> Self {
         self.comparison_method = input;
         self
     }
@@ -89,17 +81,12 @@ impl ComparisonConfigurationBuilder {
         self
     }
     /// <p>The format of the comparison.</p>
-    pub fn set_comparison_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonFormatConfiguration>,
-    ) -> Self {
+    pub fn set_comparison_format(mut self, input: ::std::option::Option<crate::types::ComparisonFormatConfiguration>) -> Self {
         self.comparison_format = input;
         self
     }
     /// <p>The format of the comparison.</p>
-    pub fn get_comparison_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComparisonFormatConfiguration> {
+    pub fn get_comparison_format(&self) -> &::std::option::Option<crate::types::ComparisonFormatConfiguration> {
         &self.comparison_format
     }
     /// Consumes the builder and constructs a [`ComparisonConfiguration`](crate::types::ComparisonConfiguration).

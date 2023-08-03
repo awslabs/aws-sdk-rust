@@ -18,9 +18,7 @@ pub struct ChannelMessageCallback {
     pub push_notification: ::std::option::Option<crate::types::PushNotificationConfiguration>,
     /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub message_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
-    >,
+    pub message_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
     /// <p>The ID of the SubChannel.</p>
     #[doc(hidden)]
     pub sub_channel_id: ::std::option::Option<::std::string::String>,
@@ -42,17 +40,13 @@ impl ChannelMessageCallback {
         self.metadata.as_deref()
     }
     /// <p>The push notification configuration of the message.</p>
-    pub fn push_notification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PushNotificationConfiguration> {
+    pub fn push_notification(&self) -> ::std::option::Option<&crate::types::PushNotificationConfiguration> {
         self.push_notification.as_ref()
     }
     /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn message_attributes(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>> {
         self.message_attributes.as_ref()
     }
     /// <p>The ID of the SubChannel.</p>
@@ -91,11 +85,8 @@ pub struct ChannelMessageCallbackBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::string::String>,
-    pub(crate) push_notification:
-        ::std::option::Option<crate::types::PushNotificationConfiguration>,
-    pub(crate) message_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
-    >,
+    pub(crate) push_notification: ::std::option::Option<crate::types::PushNotificationConfiguration>,
+    pub(crate) message_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
     pub(crate) sub_channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
 }
@@ -148,17 +139,12 @@ impl ChannelMessageCallbackBuilder {
         self
     }
     /// <p>The push notification configuration of the message.</p>
-    pub fn set_push_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::PushNotificationConfiguration>,
-    ) -> Self {
+    pub fn set_push_notification(mut self, input: ::std::option::Option<crate::types::PushNotificationConfiguration>) -> Self {
         self.push_notification = input;
         self
     }
     /// <p>The push notification configuration of the message.</p>
-    pub fn get_push_notification(
-        &self,
-    ) -> &::std::option::Option<crate::types::PushNotificationConfiguration> {
+    pub fn get_push_notification(&self) -> &::std::option::Option<crate::types::PushNotificationConfiguration> {
         &self.push_notification
     }
     /// Adds a key-value pair to `message_attributes`.
@@ -166,11 +152,7 @@ impl ChannelMessageCallbackBuilder {
     /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
     ///
     /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
-    pub fn message_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::MessageAttributeValue,
-    ) -> Self {
+    pub fn message_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MessageAttributeValue) -> Self {
         let mut hash_map = self.message_attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.message_attributes = ::std::option::Option::Some(hash_map);
@@ -179,9 +161,7 @@ impl ChannelMessageCallbackBuilder {
     /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn set_message_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
     ) -> Self {
         self.message_attributes = input;
         self
@@ -189,24 +169,16 @@ impl ChannelMessageCallbackBuilder {
     /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
     pub fn get_message_attributes(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>> {
         &self.message_attributes
     }
     /// <p>The ID of the SubChannel.</p>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SubChannel.</p>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_channel_id = input;
         self
     }

@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeletableSamlProperty {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,13 +51,9 @@ pub enum DeletableSamlProperty {
 impl ::std::convert::From<&str> for DeletableSamlProperty {
     fn from(s: &str) -> Self {
         match s {
-            "SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME" => {
-                DeletableSamlProperty::SamlPropertiesRelayStateParameterName
-            }
+            "SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME" => DeletableSamlProperty::SamlPropertiesRelayStateParameterName,
             "SAML_PROPERTIES_USER_ACCESS_URL" => DeletableSamlProperty::SamlPropertiesUserAccessUrl,
-            other => DeletableSamlProperty::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DeletableSamlProperty::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -78,19 +68,14 @@ impl DeletableSamlProperty {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            DeletableSamlProperty::SamlPropertiesRelayStateParameterName => {
-                "SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME"
-            }
+            DeletableSamlProperty::SamlPropertiesRelayStateParameterName => "SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME",
             DeletableSamlProperty::SamlPropertiesUserAccessUrl => "SAML_PROPERTIES_USER_ACCESS_URL",
             DeletableSamlProperty::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME",
-            "SAML_PROPERTIES_USER_ACCESS_URL",
-        ]
+        &["SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME", "SAML_PROPERTIES_USER_ACCESS_URL"]
     }
 }
 impl ::std::convert::AsRef<str> for DeletableSamlProperty {

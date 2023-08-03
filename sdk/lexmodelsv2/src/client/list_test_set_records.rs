@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`test_set_records(Option<Vec<TestSetTurnRecord>>)`](crate::operation::list_test_set_records::ListTestSetRecordsOutput::test_set_records): <p>The list of records from the test set.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_test_set_records::ListTestSetRecordsOutput::next_token): <p>A token that indicates whether there are more records to return in a response to the ListTestSetRecords operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListTestSetRecords operation request to get the next page of records.</p>
     /// - On failure, responds with [`SdkError<ListTestSetRecordsError>`](crate::operation::list_test_set_records::ListTestSetRecordsError)
-    pub fn list_test_set_records(
-        &self,
-    ) -> crate::operation::list_test_set_records::builders::ListTestSetRecordsFluentBuilder {
-        crate::operation::list_test_set_records::builders::ListTestSetRecordsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_test_set_records(&self) -> crate::operation::list_test_set_records::builders::ListTestSetRecordsFluentBuilder {
+        crate::operation::list_test_set_records::builders::ListTestSetRecordsFluentBuilder::new(self.handle.clone())
     }
 }

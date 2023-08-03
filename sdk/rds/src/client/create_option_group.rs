@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateOptionGroupOutput`](crate::operation::create_option_group::CreateOptionGroupOutput) with field(s):
     ///   - [`option_group(Option<OptionGroup>)`](crate::operation::create_option_group::CreateOptionGroupOutput::option_group): <p></p>
     /// - On failure, responds with [`SdkError<CreateOptionGroupError>`](crate::operation::create_option_group::CreateOptionGroupError)
-    pub fn create_option_group(
-        &self,
-    ) -> crate::operation::create_option_group::builders::CreateOptionGroupFluentBuilder {
-        crate::operation::create_option_group::builders::CreateOptionGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_option_group(&self) -> crate::operation::create_option_group::builders::CreateOptionGroupFluentBuilder {
+        crate::operation::create_option_group::builders::CreateOptionGroupFluentBuilder::new(self.handle.clone())
     }
 }

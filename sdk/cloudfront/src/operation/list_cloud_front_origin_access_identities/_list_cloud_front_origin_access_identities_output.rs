@@ -6,15 +6,12 @@
 pub struct ListCloudFrontOriginAccessIdentitiesOutput {
     /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
     #[doc(hidden)]
-    pub cloud_front_origin_access_identity_list:
-        ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityList>,
+    pub cloud_front_origin_access_identity_list: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityList>,
     _request_id: Option<String>,
 }
 impl ListCloudFrontOriginAccessIdentitiesOutput {
     /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
-    pub fn cloud_front_origin_access_identity_list(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudFrontOriginAccessIdentityList> {
+    pub fn cloud_front_origin_access_identity_list(&self) -> ::std::option::Option<&crate::types::CloudFrontOriginAccessIdentityList> {
         self.cloud_front_origin_access_identity_list.as_ref()
     }
 }
@@ -25,27 +22,21 @@ impl ::aws_http::request_id::RequestId for ListCloudFrontOriginAccessIdentitiesO
 }
 impl ListCloudFrontOriginAccessIdentitiesOutput {
     /// Creates a new builder-style object to manufacture [`ListCloudFrontOriginAccessIdentitiesOutput`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput).
-    pub fn builder() -> crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesOutputBuilder{
+    pub fn builder() -> crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesOutputBuilder {
         crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCloudFrontOriginAccessIdentitiesOutput`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCloudFrontOriginAccessIdentitiesOutputBuilder {
-    pub(crate) cloud_front_origin_access_identity_list:
-        ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityList>,
+    pub(crate) cloud_front_origin_access_identity_list: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityList>,
     _request_id: Option<String>,
 }
 impl ListCloudFrontOriginAccessIdentitiesOutputBuilder {
     /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
-    pub fn cloud_front_origin_access_identity_list(
-        mut self,
-        input: crate::types::CloudFrontOriginAccessIdentityList,
-    ) -> Self {
+    pub fn cloud_front_origin_access_identity_list(mut self, input: crate::types::CloudFrontOriginAccessIdentityList) -> Self {
         self.cloud_front_origin_access_identity_list = ::std::option::Option::Some(input);
         self
     }
@@ -58,9 +49,7 @@ impl ListCloudFrontOriginAccessIdentitiesOutputBuilder {
         self
     }
     /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
-    pub fn get_cloud_front_origin_access_identity_list(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudFrontOriginAccessIdentityList> {
+    pub fn get_cloud_front_origin_access_identity_list(&self) -> &::std::option::Option<crate::types::CloudFrontOriginAccessIdentityList> {
         &self.cloud_front_origin_access_identity_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -73,10 +62,9 @@ impl ListCloudFrontOriginAccessIdentitiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCloudFrontOriginAccessIdentitiesOutput`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput).
-    pub fn build(self) -> crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput{
+    pub fn build(self) -> crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput {
         crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput {
-            cloud_front_origin_access_identity_list: self.cloud_front_origin_access_identity_list
-            ,
+            cloud_front_origin_access_identity_list: self.cloud_front_origin_access_identity_list,
             _request_id: self._request_id,
         }
     }

@@ -10,10 +10,7 @@ impl UpdateMacieSessionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_macie_session::UpdateMacieSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_macie_session::UpdateMacieSessionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_macie_session::UpdateMacieSessionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_macie_session();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateMacieSessionFluentBuilder {
         }
     }
     /// Access the UpdateMacieSession as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_macie_session::builders::UpdateMacieSessionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_macie_session::builders::UpdateMacieSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateMacieSessionFluentBuilder {
             crate::operation::update_macie_session::UpdateMacieSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_macie_session::UpdateMacieSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_macie_session::UpdateMacieSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateMacieSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateMacieSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_macie_session::UpdateMacieSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_macie_session::UpdateMacieSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_macie_session::UpdateMacieSessionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateMacieSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_macie_session::UpdateMacieSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_macie_session::UpdateMacieSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_macie_session::UpdateMacieSessionError>,
     > {
         self.send_middleware().await
     }
@@ -116,32 +102,22 @@ impl UpdateMacieSessionFluentBuilder {
             crate::operation::update_macie_session::UpdateMacieSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_macie_session::UpdateMacieSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_macie_session::UpdateMacieSessionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
-    pub fn finding_publishing_frequency(
-        mut self,
-        input: crate::types::FindingPublishingFrequency,
-    ) -> Self {
+    pub fn finding_publishing_frequency(mut self, input: crate::types::FindingPublishingFrequency) -> Self {
         self.inner = self.inner.finding_publishing_frequency(input);
         self
     }
     /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
-    pub fn set_finding_publishing_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingPublishingFrequency>,
-    ) -> Self {
+    pub fn set_finding_publishing_frequency(mut self, input: ::std::option::Option<crate::types::FindingPublishingFrequency>) -> Self {
         self.inner = self.inner.set_finding_publishing_frequency(input);
         self
     }
     /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
-    pub fn get_finding_publishing_frequency(
-        &self,
-    ) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
+    pub fn get_finding_publishing_frequency(&self) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
         self.inner.get_finding_publishing_frequency()
     }
     /// <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>

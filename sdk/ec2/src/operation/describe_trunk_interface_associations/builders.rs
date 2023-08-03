@@ -5,16 +5,16 @@ pub use crate::operation::describe_trunk_interface_associations::_describe_trunk
 
 impl DescribeTrunkInterfaceAssociationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_trunk_interface_associations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl DescribeTrunkInterfaceAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTrunkInterfaceAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_trunk_interface_associations::builders::DescribeTrunkInterfaceAssociationsInputBuilder,
+    inner: crate::operation::describe_trunk_interface_associations::builders::DescribeTrunkInterfaceAssociationsInputBuilder,
 }
 impl DescribeTrunkInterfaceAssociationsFluentBuilder {
     /// Creates a new `DescribeTrunkInterfaceAssociations`.
@@ -40,15 +40,20 @@ impl DescribeTrunkInterfaceAssociationsFluentBuilder {
         }
     }
     /// Access the DescribeTrunkInterfaceAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_trunk_interface_associations::builders::DescribeTrunkInterfaceAssociationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_trunk_interface_associations::builders::DescribeTrunkInterfaceAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +62,17 @@ impl DescribeTrunkInterfaceAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,23 +90,32 @@ impl DescribeTrunkInterfaceAssociationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_trunk_interface_associations::paginator::DescribeTrunkInterfaceAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_trunk_interface_associations::paginator::DescribeTrunkInterfaceAssociationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_trunk_interface_associations::paginator::DescribeTrunkInterfaceAssociationsPaginator {
         crate::operation::describe_trunk_interface_associations::paginator::DescribeTrunkInterfaceAssociationsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `AssociationIds`.
@@ -108,25 +123,17 @@ impl DescribeTrunkInterfaceAssociationsFluentBuilder {
     /// To override the contents of this collection use [`set_association_ids`](Self::set_association_ids).
     ///
     /// <p>The IDs of the associations.</p>
-    pub fn association_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_ids(input.into());
         self
     }
     /// <p>The IDs of the associations.</p>
-    pub fn set_association_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_association_ids(input);
         self
     }
     /// <p>The IDs of the associations.</p>
-    pub fn get_association_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_association_ids()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -161,10 +168,7 @@ impl DescribeTrunkInterfaceAssociationsFluentBuilder {
     /// <li> <p> <code>gre-key</code> - The ID of a trunk interface association.</p> </li>
     /// <li> <p> <code>interface-protocol</code> - The interface protocol. Valid values are <code>VLAN</code> and <code>GRE</code>.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

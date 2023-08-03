@@ -10,10 +10,7 @@ impl ListSessionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_sessions::ListSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sessions::ListSessionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sessions::ListSessionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_sessions();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListSessionsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_sessions::ListSessions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_sessions::ListSessions, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_sessions::ListSessionsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListSessionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListSessionsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_sessions::ListSessions,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_sessions::ListSessions, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_sessions::ListSessionsError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl ListSessionsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_sessions::paginator::ListSessionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_sessions::paginator::ListSessionsPaginator {
-        crate::operation::list_sessions::paginator::ListSessionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_sessions::paginator::ListSessionsPaginator {
+        crate::operation::list_sessions::paginator::ListSessionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The workgroup to which the session belongs.</p>
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,10 +142,7 @@ impl ListSessionsFluentBuilder {
     /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
     /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
     /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
-    pub fn set_state_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionState>,
-    ) -> Self {
+    pub fn set_state_filter(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
         self.inner = self.inner.set_state_filter(input);
         self
     }

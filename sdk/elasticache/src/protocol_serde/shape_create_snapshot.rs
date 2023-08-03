@@ -4,189 +4,189 @@ pub fn de_create_snapshot_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_snapshot::CreateSnapshotOutput,
-    crate::operation::create_snapshot::CreateSnapshotError,
-> {
+) -> std::result::Result<crate::operation::create_snapshot::CreateSnapshotOutput, crate::operation::create_snapshot::CreateSnapshotError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::create_snapshot::CreateSnapshotError::unhandled(generic))
-        }
+        None => return Err(crate::operation::create_snapshot::CreateSnapshotError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CacheClusterNotFound" => crate::operation::create_snapshot::CreateSnapshotError::CacheClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::CacheClusterNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cache_cluster_not_found_fault::de_cache_cluster_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CacheClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cache_cluster_not_found_fault::de_cache_cluster_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidCacheClusterState" => crate::operation::create_snapshot::CreateSnapshotError::InvalidCacheClusterStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidCacheClusterStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_cache_cluster_state_fault::de_invalid_cache_cluster_state_fault_xml_err(_response_body, output).map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidCacheClusterStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_cache_cluster_state_fault::de_invalid_cache_cluster_state_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidParameterCombination" => crate::operation::create_snapshot::CreateSnapshotError::InvalidParameterCombinationException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(_response_body, output).map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidParameterValue" => crate::operation::create_snapshot::CreateSnapshotError::InvalidParameterValueException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(_response_body, output).map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidReplicationGroupState" => crate::operation::create_snapshot::CreateSnapshotError::InvalidReplicationGroupStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidReplicationGroupStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_replication_group_state_fault::de_invalid_replication_group_state_fault_xml_err(_response_body, output).map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidReplicationGroupStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_replication_group_state_fault::de_invalid_replication_group_state_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ReplicationGroupNotFoundFault" => crate::operation::create_snapshot::CreateSnapshotError::ReplicationGroupNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ReplicationGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_replication_group_not_found_fault::de_replication_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ReplicationGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_replication_group_not_found_fault::de_replication_group_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "SnapshotAlreadyExistsFault" => crate::operation::create_snapshot::CreateSnapshotError::SnapshotAlreadyExistsFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::SnapshotAlreadyExistsFaultBuilder::default();
-                    output = crate::protocol_serde::shape_snapshot_already_exists_fault::de_snapshot_already_exists_fault_xml_err(_response_body, output).map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SnapshotAlreadyExistsFaultBuilder::default();
+                output = crate::protocol_serde::shape_snapshot_already_exists_fault::de_snapshot_already_exists_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "SnapshotFeatureNotSupportedFault" => crate::operation::create_snapshot::CreateSnapshotError::SnapshotFeatureNotSupportedFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::SnapshotFeatureNotSupportedFaultBuilder::default();
-                    output = crate::protocol_serde::shape_snapshot_feature_not_supported_fault::de_snapshot_feature_not_supported_fault_xml_err(_response_body, output).map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SnapshotFeatureNotSupportedFaultBuilder::default();
+                output = crate::protocol_serde::shape_snapshot_feature_not_supported_fault::de_snapshot_feature_not_supported_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "SnapshotQuotaExceededFault" => crate::operation::create_snapshot::CreateSnapshotError::SnapshotQuotaExceededFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::SnapshotQuotaExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_snapshot_quota_exceeded_fault::de_snapshot_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SnapshotQuotaExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_snapshot_quota_exceeded_fault::de_snapshot_quota_exceeded_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TagQuotaPerResourceExceeded" => crate::operation::create_snapshot::CreateSnapshotError::TagQuotaPerResourceExceeded({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TagQuotaPerResourceExceededBuilder::default();
-                    output = crate::protocol_serde::shape_tag_quota_per_resource_exceeded::de_tag_quota_per_resource_exceeded_xml_err(_response_body, output).map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TagQuotaPerResourceExceededBuilder::default();
+                output =
+                    crate::protocol_serde::shape_tag_quota_per_resource_exceeded::de_tag_quota_per_resource_exceeded_xml_err(_response_body, output)
+                        .map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::create_snapshot::CreateSnapshotError::generic(generic)
+        _ => crate::operation::create_snapshot::CreateSnapshotError::generic(generic),
     })
 }
 
@@ -195,22 +195,13 @@ pub fn de_create_snapshot_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::create_snapshot::CreateSnapshotOutput,
-    crate::operation::create_snapshot::CreateSnapshotError,
-> {
+) -> std::result::Result<crate::operation::create_snapshot::CreateSnapshotOutput, crate::operation::create_snapshot::CreateSnapshotError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::create_snapshot::builders::CreateSnapshotOutputBuilder::default();
-        output = crate::protocol_serde::shape_create_snapshot::de_create_snapshot(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::create_snapshot::builders::CreateSnapshotOutputBuilder::default();
+        output = crate::protocol_serde::shape_create_snapshot::de_create_snapshot(_response_body, output)
+            .map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -219,10 +210,7 @@ pub fn de_create_snapshot_http_response_with_props(
 pub fn de_create_snapshot(
     inp: &[u8],
     mut builder: crate::operation::create_snapshot::builders::CreateSnapshotOutputBuilder,
-) -> Result<
-    crate::operation::create_snapshot::builders::CreateSnapshotOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::create_snapshot::builders::CreateSnapshotOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -259,9 +247,7 @@ pub fn de_create_snapshot(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected CreateSnapshotResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected CreateSnapshotResult tag"));
     };
     Ok(builder)
 }

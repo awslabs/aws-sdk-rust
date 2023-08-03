@@ -26,7 +26,7 @@ impl DescribeResiliencyPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeResiliencyPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyInputBuilder,
+    inner: crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyInputBuilder,
 }
 impl DescribeResiliencyPolicyFluentBuilder {
     /// Creates a new `DescribeResiliencyPolicy`.
@@ -37,10 +37,7 @@ impl DescribeResiliencyPolicyFluentBuilder {
         }
     }
     /// Access the DescribeResiliencyPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeResiliencyPolicyFluentBuilder {
             crate::operation::describe_resiliency_policy::DescribeResiliencyPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeResiliencyPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeResiliencyPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeResiliencyPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeResiliencyPolicyFluentBuilder {
             crate::operation::describe_resiliency_policy::DescribeResiliencyPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyError>,
     > {
         self.customize_middleware().await
     }

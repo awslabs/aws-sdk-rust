@@ -15,10 +15,7 @@ pub fn ser_list_inventory_entries_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_inventory_filter::ser_inventory_filter(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_inventory_filter::ser_inventory_filter(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

@@ -29,27 +29,19 @@ impl GetSuiteRunInput {
 
 /// A builder for [`GetSuiteRunInput`](crate::operation::get_suite_run::GetSuiteRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSuiteRunInputBuilder {
     pub(crate) suite_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) suite_run_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSuiteRunInputBuilder {
     /// <p>Suite definition ID for the test suite run.</p>
-    pub fn suite_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Suite definition ID for the test suite run.</p>
-    pub fn set_suite_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_id = input;
         self
     }
@@ -72,12 +64,7 @@ impl GetSuiteRunInputBuilder {
         &self.suite_run_id
     }
     /// Consumes the builder and constructs a [`GetSuiteRunInput`](crate::operation::get_suite_run::GetSuiteRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_suite_run::GetSuiteRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_suite_run::GetSuiteRunInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_suite_run::GetSuiteRunInput {
             suite_definition_id: self.suite_definition_id,
             suite_run_id: self.suite_run_id,

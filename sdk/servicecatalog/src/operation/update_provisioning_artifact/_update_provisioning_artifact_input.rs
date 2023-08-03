@@ -71,16 +71,14 @@ impl UpdateProvisioningArtifactInput {
 }
 impl UpdateProvisioningArtifactInput {
     /// Creates a new builder-style object to manufacture [`UpdateProvisioningArtifactInput`](crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactInput).
-    pub fn builder() -> crate::operation::update_provisioning_artifact::builders::UpdateProvisioningArtifactInputBuilder{
+    pub fn builder() -> crate::operation::update_provisioning_artifact::builders::UpdateProvisioningArtifactInputBuilder {
         crate::operation::update_provisioning_artifact::builders::UpdateProvisioningArtifactInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateProvisioningArtifactInput`](crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProvisioningArtifactInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
@@ -96,10 +94,7 @@ impl UpdateProvisioningArtifactInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -108,10 +103,7 @@ impl UpdateProvisioningArtifactInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -138,18 +130,12 @@ impl UpdateProvisioningArtifactInputBuilder {
         &self.product_id
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn set_provisioning_artifact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioning_artifact_id = input;
         self
     }
@@ -212,19 +198,14 @@ impl UpdateProvisioningArtifactInputBuilder {
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
     /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
-    pub fn set_guidance(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>,
-    ) -> Self {
+    pub fn set_guidance(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>) -> Self {
         self.guidance = input;
         self
     }
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
     /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
-    pub fn get_guidance(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisioningArtifactGuidance> {
+    pub fn get_guidance(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactGuidance> {
         &self.guidance
     }
     /// Consumes the builder and constructs a [`UpdateProvisioningArtifactInput`](crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactInput).
@@ -234,16 +215,14 @@ impl UpdateProvisioningArtifactInputBuilder {
         crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactInput {
-                accept_language: self.accept_language,
-                product_id: self.product_id,
-                provisioning_artifact_id: self.provisioning_artifact_id,
-                name: self.name,
-                description: self.description,
-                active: self.active,
-                guidance: self.guidance,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactInput {
+            accept_language: self.accept_language,
+            product_id: self.product_id,
+            provisioning_artifact_id: self.provisioning_artifact_id,
+            name: self.name,
+            description: self.description,
+            active: self.active,
+            guidance: self.guidance,
+        })
     }
 }

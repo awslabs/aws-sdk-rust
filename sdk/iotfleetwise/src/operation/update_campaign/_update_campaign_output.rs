@@ -54,9 +54,7 @@ impl UpdateCampaignOutput {
 
 /// A builder for [`UpdateCampaignOutput`](crate::operation::update_campaign::UpdateCampaignOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCampaignOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl UpdateCampaignOutputBuilder {
     /// <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li>
     /// <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CampaignStatus>) -> Self {
         self.status = input;
         self
     }

@@ -12,19 +12,13 @@ pub fn ser_set_load_based_auto_scaling_input(
     if let Some(var_3) = &input.up_scaling {
         #[allow(unused_mut)]
         let mut object_4 = object.key("UpScaling").start_object();
-        crate::protocol_serde::shape_auto_scaling_thresholds::ser_auto_scaling_thresholds(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_auto_scaling_thresholds::ser_auto_scaling_thresholds(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.down_scaling {
         #[allow(unused_mut)]
         let mut object_6 = object.key("DownScaling").start_object();
-        crate::protocol_serde::shape_auto_scaling_thresholds::ser_auto_scaling_thresholds(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_auto_scaling_thresholds::ser_auto_scaling_thresholds(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

@@ -18,9 +18,7 @@ impl super::Client {
     ///   - [`refresh_token(Option<String>)`](crate::operation::create_token::CreateTokenOutput::refresh_token): <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>  <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
     ///   - [`id_token(Option<String>)`](crate::operation::create_token::CreateTokenOutput::id_token): <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>  <p>The identifier of the user that associated with the access token, if present.</p>
     /// - On failure, responds with [`SdkError<CreateTokenError>`](crate::operation::create_token::CreateTokenError)
-    pub fn create_token(
-        &self,
-    ) -> crate::operation::create_token::builders::CreateTokenFluentBuilder {
+    pub fn create_token(&self) -> crate::operation::create_token::builders::CreateTokenFluentBuilder {
         crate::operation::create_token::builders::CreateTokenFluentBuilder::new(self.handle.clone())
     }
 }

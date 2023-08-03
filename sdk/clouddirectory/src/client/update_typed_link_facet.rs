@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`identity_attribute_order(Vec<String>)`](crate::operation::update_typed_link_facet::builders::UpdateTypedLinkFacetFluentBuilder::identity_attribute_order) / [`set_identity_attribute_order(Option<Vec<String>>)`](crate::operation::update_typed_link_facet::builders::UpdateTypedLinkFacetFluentBuilder::set_identity_attribute_order): <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     /// - On success, responds with [`UpdateTypedLinkFacetOutput`](crate::operation::update_typed_link_facet::UpdateTypedLinkFacetOutput)
     /// - On failure, responds with [`SdkError<UpdateTypedLinkFacetError>`](crate::operation::update_typed_link_facet::UpdateTypedLinkFacetError)
-    pub fn update_typed_link_facet(
-        &self,
-    ) -> crate::operation::update_typed_link_facet::builders::UpdateTypedLinkFacetFluentBuilder
-    {
-        crate::operation::update_typed_link_facet::builders::UpdateTypedLinkFacetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_typed_link_facet(&self) -> crate::operation::update_typed_link_facet::builders::UpdateTypedLinkFacetFluentBuilder {
+        crate::operation::update_typed_link_facet::builders::UpdateTypedLinkFacetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`locations(Option<Vec<LocationListEntry>>)`](crate::operation::list_locations::ListLocationsOutput::locations): <p>An array that contains a list of locations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_locations::ListLocationsOutput::next_token): <p>An opaque string that indicates the position at which to begin returning the next list of locations.</p>
     /// - On failure, responds with [`SdkError<ListLocationsError>`](crate::operation::list_locations::ListLocationsError)
-    pub fn list_locations(
-        &self,
-    ) -> crate::operation::list_locations::builders::ListLocationsFluentBuilder {
-        crate::operation::list_locations::builders::ListLocationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_locations(&self) -> crate::operation::list_locations::builders::ListLocationsFluentBuilder {
+        crate::operation::list_locations::builders::ListLocationsFluentBuilder::new(self.handle.clone())
     }
 }

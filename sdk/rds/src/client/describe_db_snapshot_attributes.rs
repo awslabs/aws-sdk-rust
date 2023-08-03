@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeDbSnapshotAttributesOutput`](crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesOutput) with field(s):
     ///   - [`db_snapshot_attributes_result(Option<DbSnapshotAttributesResult>)`](crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesOutput::db_snapshot_attributes_result): <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>  <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
     /// - On failure, responds with [`SdkError<DescribeDBSnapshotAttributesError>`](crate::operation::describe_db_snapshot_attributes::DescribeDBSnapshotAttributesError)
-    pub fn describe_db_snapshot_attributes(&self) -> crate::operation::describe_db_snapshot_attributes::builders::DescribeDBSnapshotAttributesFluentBuilder{
+    pub fn describe_db_snapshot_attributes(
+        &self,
+    ) -> crate::operation::describe_db_snapshot_attributes::builders::DescribeDBSnapshotAttributesFluentBuilder {
         crate::operation::describe_db_snapshot_attributes::builders::DescribeDBSnapshotAttributesFluentBuilder::new(self.handle.clone())
     }
 }

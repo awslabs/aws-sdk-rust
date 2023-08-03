@@ -24,19 +24,13 @@ pub fn ser_create_service_input(
     if let Some(var_7) = &input.health_check_config {
         #[allow(unused_mut)]
         let mut object_8 = object.key("HealthCheckConfig").start_object();
-        crate::protocol_serde::shape_health_check_config::ser_health_check_config(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_health_check_config::ser_health_check_config(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.health_check_custom_config {
         #[allow(unused_mut)]
         let mut object_10 = object.key("HealthCheckCustomConfig").start_object();
-        crate::protocol_serde::shape_health_check_custom_config::ser_health_check_custom_config(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_health_check_custom_config::ser_health_check_custom_config(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.tags {

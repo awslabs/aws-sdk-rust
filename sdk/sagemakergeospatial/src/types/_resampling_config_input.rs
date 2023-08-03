@@ -16,9 +16,7 @@ pub struct ResamplingConfigInput {
 }
 impl ResamplingConfigInput {
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of resampling operation.</p>
-    pub fn output_resolution(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OutputResolutionResamplingInput> {
+    pub fn output_resolution(&self) -> ::std::option::Option<&crate::types::OutputResolutionResamplingInput> {
         self.output_resolution.as_ref()
     }
     /// <p>The name of the algorithm used for resampling.</p>
@@ -39,36 +37,25 @@ impl ResamplingConfigInput {
 
 /// A builder for [`ResamplingConfigInput`](crate::types::ResamplingConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResamplingConfigInputBuilder {
-    pub(crate) output_resolution:
-        ::std::option::Option<crate::types::OutputResolutionResamplingInput>,
+    pub(crate) output_resolution: ::std::option::Option<crate::types::OutputResolutionResamplingInput>,
     pub(crate) algorithm_name: ::std::option::Option<crate::types::AlgorithmNameResampling>,
     pub(crate) target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ResamplingConfigInputBuilder {
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of resampling operation.</p>
-    pub fn output_resolution(
-        mut self,
-        input: crate::types::OutputResolutionResamplingInput,
-    ) -> Self {
+    pub fn output_resolution(mut self, input: crate::types::OutputResolutionResamplingInput) -> Self {
         self.output_resolution = ::std::option::Option::Some(input);
         self
     }
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of resampling operation.</p>
-    pub fn set_output_resolution(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputResolutionResamplingInput>,
-    ) -> Self {
+    pub fn set_output_resolution(mut self, input: ::std::option::Option<crate::types::OutputResolutionResamplingInput>) -> Self {
         self.output_resolution = input;
         self
     }
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of resampling operation.</p>
-    pub fn get_output_resolution(
-        &self,
-    ) -> &::std::option::Option<crate::types::OutputResolutionResamplingInput> {
+    pub fn get_output_resolution(&self) -> &::std::option::Option<crate::types::OutputResolutionResamplingInput> {
         &self.output_resolution
     }
     /// <p>The name of the algorithm used for resampling.</p>
@@ -77,17 +64,12 @@ impl ResamplingConfigInputBuilder {
         self
     }
     /// <p>The name of the algorithm used for resampling.</p>
-    pub fn set_algorithm_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AlgorithmNameResampling>,
-    ) -> Self {
+    pub fn set_algorithm_name(mut self, input: ::std::option::Option<crate::types::AlgorithmNameResampling>) -> Self {
         self.algorithm_name = input;
         self
     }
     /// <p>The name of the algorithm used for resampling.</p>
-    pub fn get_algorithm_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlgorithmNameResampling> {
+    pub fn get_algorithm_name(&self) -> &::std::option::Option<crate::types::AlgorithmNameResampling> {
         &self.algorithm_name
     }
     /// Appends an item to `target_bands`.
@@ -102,17 +84,12 @@ impl ResamplingConfigInputBuilder {
         self
     }
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available in the input.</p>
-    pub fn set_target_bands(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_bands(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_bands = input;
         self
     }
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available in the input.</p>
-    pub fn get_target_bands(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_bands(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_bands
     }
     /// Consumes the builder and constructs a [`ResamplingConfigInput`](crate::types::ResamplingConfigInput).

@@ -65,9 +65,7 @@ impl JwtTokenTypeConfiguration {
 
 /// A builder for [`JwtTokenTypeConfiguration`](crate::types::JwtTokenTypeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JwtTokenTypeConfigurationBuilder {
     pub(crate) key_location: ::std::option::Option<crate::types::KeyLocation>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
@@ -84,10 +82,7 @@ impl JwtTokenTypeConfigurationBuilder {
         self
     }
     /// <p>The location of the key.</p>
-    pub fn set_key_location(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyLocation>,
-    ) -> Self {
+    pub fn set_key_location(mut self, input: ::std::option::Option<crate::types::KeyLocation>) -> Self {
         self.key_location = input;
         self
     }
@@ -110,18 +105,12 @@ impl JwtTokenTypeConfigurationBuilder {
         &self.url
     }
     /// <p>The Amazon Resource Name (arn) of the secret.</p>
-    pub fn secret_manager_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_manager_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_manager_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (arn) of the secret.</p>
-    pub fn set_secret_manager_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_manager_arn = input;
         self
     }
@@ -130,18 +119,12 @@ impl JwtTokenTypeConfigurationBuilder {
         &self.secret_manager_arn
     }
     /// <p>The user name attribute field.</p>
-    pub fn user_name_attribute_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_name_attribute_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name_attribute_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name attribute field.</p>
-    pub fn set_user_name_attribute_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_name_attribute_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name_attribute_field = input;
         self
     }
@@ -150,18 +133,12 @@ impl JwtTokenTypeConfigurationBuilder {
         &self.user_name_attribute_field
     }
     /// <p>The group attribute field.</p>
-    pub fn group_attribute_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_attribute_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_attribute_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The group attribute field.</p>
-    pub fn set_group_attribute_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_attribute_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_attribute_field = input;
         self
     }

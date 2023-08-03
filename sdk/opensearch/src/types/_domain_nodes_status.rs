@@ -43,9 +43,7 @@ impl DomainNodesStatus {
         self.availability_zone.as_deref()
     }
     /// <p>The instance type information of the node.</p>
-    pub fn instance_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OpenSearchPartitionInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::OpenSearchPartitionInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>Indicates if the node is active or in standby.</p>
@@ -74,9 +72,7 @@ impl DomainNodesStatus {
 
 /// A builder for [`DomainNodesStatus`](crate::types::DomainNodesStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainNodesStatusBuilder {
     pub(crate) node_id: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<crate::types::NodeType>,
@@ -117,18 +113,12 @@ impl DomainNodesStatusBuilder {
         &self.node_type
     }
     /// <p>The Availability Zone of the node.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone of the node.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -142,17 +132,12 @@ impl DomainNodesStatusBuilder {
         self
     }
     /// <p>The instance type information of the node.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The instance type information of the node.</p>
-    pub fn get_instance_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
         &self.instance_type
     }
     /// <p>Indicates if the node is active or in standby.</p>
@@ -161,10 +146,7 @@ impl DomainNodesStatusBuilder {
         self
     }
     /// <p>Indicates if the node is active or in standby.</p>
-    pub fn set_node_status(
-        mut self,
-        input: ::std::option::Option<crate::types::NodeStatus>,
-    ) -> Self {
+    pub fn set_node_status(mut self, input: ::std::option::Option<crate::types::NodeStatus>) -> Self {
         self.node_status = input;
         self
     }
@@ -192,10 +174,7 @@ impl DomainNodesStatusBuilder {
         self
     }
     /// <p>If the nodes has EBS storage, indicates if the volume type is GP2 or GP3. Only applicable for data nodes. </p>
-    pub fn set_storage_volume_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeType>,
-    ) -> Self {
+    pub fn set_storage_volume_type(mut self, input: ::std::option::Option<crate::types::VolumeType>) -> Self {
         self.storage_volume_type = input;
         self
     }

@@ -10,10 +10,7 @@ impl DeleteAllowListInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_allow_list::DeleteAllowListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_allow_list::DeleteAllowListError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_allow_list::DeleteAllowListError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_allow_list();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteAllowListFluentBuilder {
         }
     }
     /// Access the DeleteAllowList as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_allow_list::builders::DeleteAllowListInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_allow_list::builders::DeleteAllowListInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteAllowListFluentBuilder {
             crate::operation::delete_allow_list::DeleteAllowList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_allow_list::DeleteAllowListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_allow_list::DeleteAllowListError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteAllowListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteAllowListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_allow_list::DeleteAllowListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_allow_list::DeleteAllowListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_allow_list::DeleteAllowListError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteAllowListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_allow_list::DeleteAllowListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_allow_list::DeleteAllowListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_allow_list::DeleteAllowListError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteAllowListFluentBuilder {
             crate::operation::delete_allow_list::DeleteAllowList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_allow_list::DeleteAllowListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_allow_list::DeleteAllowListError>,
     > {
         self.customize_middleware().await
     }
@@ -138,19 +122,13 @@ impl DeleteAllowListFluentBuilder {
     }
     /// <p>Specifies whether to force deletion of the allow list, even if active classification jobs are configured to use the list.</p>
     /// <p>When you try to delete an allow list, Amazon Macie checks for classification jobs that use the list and have a status other than COMPLETE or CANCELLED. By default, Macie rejects your request if any jobs meet these criteria. To skip these checks and delete the list, set this value to true. To delete the list only if no active jobs are configured to use it, set this value to false.</p>
-    pub fn ignore_job_checks(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ignore_job_checks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ignore_job_checks(input.into());
         self
     }
     /// <p>Specifies whether to force deletion of the allow list, even if active classification jobs are configured to use the list.</p>
     /// <p>When you try to delete an allow list, Amazon Macie checks for classification jobs that use the list and have a status other than COMPLETE or CANCELLED. By default, Macie rejects your request if any jobs meet these criteria. To skip these checks and delete the list, set this value to true. To delete the list only if no active jobs are configured to use it, set this value to false.</p>
-    pub fn set_ignore_job_checks(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ignore_job_checks(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ignore_job_checks(input);
         self
     }

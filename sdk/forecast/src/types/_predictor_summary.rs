@@ -65,9 +65,7 @@ impl PredictorSummary {
         self.is_auto_predictor
     }
     /// <p>A summary of the reference predictor used if the predictor was retrained or upgraded.</p>
-    pub fn reference_predictor_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReferencePredictorSummary> {
+    pub fn reference_predictor_summary(&self) -> ::std::option::Option<&crate::types::ReferencePredictorSummary> {
         self.reference_predictor_summary.as_ref()
     }
     /// <p>The status of the predictor. States include:</p>
@@ -111,16 +109,13 @@ impl PredictorSummary {
 
 /// A builder for [`PredictorSummary`](crate::types::PredictorSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictorSummaryBuilder {
     pub(crate) predictor_arn: ::std::option::Option<::std::string::String>,
     pub(crate) predictor_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) is_auto_predictor: ::std::option::Option<bool>,
-    pub(crate) reference_predictor_summary:
-        ::std::option::Option<crate::types::ReferencePredictorSummary>,
+    pub(crate) reference_predictor_summary: ::std::option::Option<crate::types::ReferencePredictorSummary>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -128,18 +123,12 @@ pub struct PredictorSummaryBuilder {
 }
 impl PredictorSummaryBuilder {
     /// <p>The ARN of the predictor.</p>
-    pub fn predictor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the predictor.</p>
-    pub fn set_predictor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.predictor_arn = input;
         self
     }
@@ -148,18 +137,12 @@ impl PredictorSummaryBuilder {
         &self.predictor_arn
     }
     /// <p>The name of the predictor.</p>
-    pub fn predictor_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the predictor.</p>
-    pub fn set_predictor_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.predictor_name = input;
         self
     }
@@ -168,18 +151,12 @@ impl PredictorSummaryBuilder {
         &self.predictor_name
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the data used to train the predictor.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the data used to train the predictor.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_group_arn = input;
         self
     }
@@ -202,25 +179,17 @@ impl PredictorSummaryBuilder {
         &self.is_auto_predictor
     }
     /// <p>A summary of the reference predictor used if the predictor was retrained or upgraded.</p>
-    pub fn reference_predictor_summary(
-        mut self,
-        input: crate::types::ReferencePredictorSummary,
-    ) -> Self {
+    pub fn reference_predictor_summary(mut self, input: crate::types::ReferencePredictorSummary) -> Self {
         self.reference_predictor_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>A summary of the reference predictor used if the predictor was retrained or upgraded.</p>
-    pub fn set_reference_predictor_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferencePredictorSummary>,
-    ) -> Self {
+    pub fn set_reference_predictor_summary(mut self, input: ::std::option::Option<crate::types::ReferencePredictorSummary>) -> Self {
         self.reference_predictor_summary = input;
         self
     }
     /// <p>A summary of the reference predictor used if the predictor was retrained or upgraded.</p>
-    pub fn get_reference_predictor_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReferencePredictorSummary> {
+    pub fn get_reference_predictor_summary(&self) -> &::std::option::Option<crate::types::ReferencePredictorSummary> {
         &self.reference_predictor_summary
     }
     /// <p>The status of the predictor. States include:</p>
@@ -281,10 +250,7 @@ impl PredictorSummaryBuilder {
         self
     }
     /// <p>When the model training task was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -312,10 +278,7 @@ impl PredictorSummaryBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
@@ -327,9 +290,7 @@ impl PredictorSummaryBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     /// Consumes the builder and constructs a [`PredictorSummary`](crate::types::PredictorSummary).

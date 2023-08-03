@@ -23,9 +23,7 @@ impl DeleteTrailInput {
 
 /// A builder for [`DeleteTrailInput`](crate::operation::delete_trail::DeleteTrailInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrailInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -45,14 +43,7 @@ impl DeleteTrailInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteTrailInput`](crate::operation::delete_trail::DeleteTrailInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_trail::DeleteTrailInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_trail::DeleteTrailInput {
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_trail::DeleteTrailInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_trail::DeleteTrailInput { name: self.name })
     }
 }

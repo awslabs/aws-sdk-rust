@@ -29,9 +29,7 @@ impl AssociateFleetInput {
 
 /// A builder for [`AssociateFleetInput`](crate::operation::associate_fleet::AssociateFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateFleetInputBuilder {
     pub(crate) fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl AssociateFleetInputBuilder {
     /// Consumes the builder and constructs a [`AssociateFleetInput`](crate::operation::associate_fleet::AssociateFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_fleet::AssociateFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::associate_fleet::AssociateFleetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_fleet::AssociateFleetInput {
             fleet_name: self.fleet_name,
             stack_name: self.stack_name,

@@ -13,8 +13,7 @@ pub struct DescribeConfigurationAggregatorSourcesStatusInput {
     /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub update_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>>,
+    pub update_status: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -33,9 +32,7 @@ impl DescribeConfigurationAggregatorSourcesStatusInput {
     /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
     /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
-    pub fn update_status(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AggregatedSourceStatusType]> {
+    pub fn update_status(&self) -> ::std::option::Option<&[crate::types::AggregatedSourceStatusType]> {
         self.update_status.as_deref()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -49,44 +46,34 @@ impl DescribeConfigurationAggregatorSourcesStatusInput {
 }
 impl DescribeConfigurationAggregatorSourcesStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationAggregatorSourcesStatusInput`](crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusInput).
-    pub fn builder() -> crate::operation::describe_configuration_aggregator_sources_status::builders::DescribeConfigurationAggregatorSourcesStatusInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_configuration_aggregator_sources_status::builders::DescribeConfigurationAggregatorSourcesStatusInputBuilder {
         crate::operation::describe_configuration_aggregator_sources_status::builders::DescribeConfigurationAggregatorSourcesStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationAggregatorSourcesStatusInput`](crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationAggregatorSourcesStatusInputBuilder {
     pub(crate) configuration_aggregator_name: ::std::option::Option<::std::string::String>,
-    pub(crate) update_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>>,
+    pub(crate) update_status: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
 }
 impl DescribeConfigurationAggregatorSourcesStatusInputBuilder {
     /// <p>The name of the configuration aggregator.</p>
-    pub fn configuration_aggregator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_aggregator_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn set_configuration_aggregator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_aggregator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_aggregator_name = input;
         self
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn get_configuration_aggregator_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_configuration_aggregator_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_aggregator_name
     }
     /// Appends an item to `update_status`.
@@ -111,10 +98,7 @@ impl DescribeConfigurationAggregatorSourcesStatusInputBuilder {
     /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
     /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
-    pub fn set_update_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>>,
-    ) -> Self {
+    pub fn set_update_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>>) -> Self {
         self.update_status = input;
         self
     }
@@ -124,9 +108,7 @@ impl DescribeConfigurationAggregatorSourcesStatusInputBuilder {
     /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
     /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
-    pub fn get_update_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>> {
+    pub fn get_update_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>> {
         &self.update_status
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -158,18 +140,19 @@ impl DescribeConfigurationAggregatorSourcesStatusInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationAggregatorSourcesStatusInput`](crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusInput {
-                configuration_aggregator_name: self.configuration_aggregator_name
-                ,
-                update_status: self.update_status
-                ,
-                next_token: self.next_token
-                ,
-                limit: self.limit
-                ,
-            }
+                configuration_aggregator_name: self.configuration_aggregator_name,
+                update_status: self.update_status,
+                next_token: self.next_token,
+                limit: self.limit,
+            },
         )
     }
 }

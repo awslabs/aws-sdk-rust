@@ -26,7 +26,7 @@ impl DeletePlaybackConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePlaybackConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationInputBuilder,
+    inner: crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationInputBuilder,
 }
 impl DeletePlaybackConfigurationFluentBuilder {
     /// Creates a new `DeletePlaybackConfiguration`.
@@ -37,7 +37,7 @@ impl DeletePlaybackConfigurationFluentBuilder {
         }
     }
     /// Access the DeletePlaybackConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeletePlaybackConfigurationFluentBuilder {
             crate::operation::delete_playback_configuration::DeletePlaybackConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_playback_configuration::DeletePlaybackConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_playback_configuration::DeletePlaybackConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeletePlaybackConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeletePlaybackConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_playback_configuration::DeletePlaybackConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_playback_configuration::DeletePlaybackConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_playback_configuration::DeletePlaybackConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeletePlaybackConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_playback_configuration::DeletePlaybackConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_playback_configuration::DeletePlaybackConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_playback_configuration::DeletePlaybackConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeletePlaybackConfigurationFluentBuilder {
             crate::operation::delete_playback_configuration::DeletePlaybackConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_playback_configuration::DeletePlaybackConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_playback_configuration::DeletePlaybackConfigurationError>,
     > {
         self.customize_middleware().await
     }

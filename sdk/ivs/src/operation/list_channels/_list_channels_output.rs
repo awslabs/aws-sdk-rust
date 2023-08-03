@@ -35,9 +35,7 @@ impl ListChannelsOutput {
 
 /// A builder for [`ListChannelsOutput`](crate::operation::list_channels::ListChannelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChannelsOutputBuilder {
     pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListChannelsOutputBuilder {
         self
     }
     /// <p>List of the matching channels.</p>
-    pub fn set_channels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>>,
-    ) -> Self {
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>>) -> Self {
         self.channels = input;
         self
     }
     /// <p>List of the matching channels.</p>
-    pub fn get_channels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>> {
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>> {
         &self.channels
     }
     /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>

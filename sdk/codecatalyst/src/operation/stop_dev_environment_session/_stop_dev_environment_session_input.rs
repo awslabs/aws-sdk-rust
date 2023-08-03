@@ -36,16 +36,14 @@ impl StopDevEnvironmentSessionInput {
 }
 impl StopDevEnvironmentSessionInput {
     /// Creates a new builder-style object to manufacture [`StopDevEnvironmentSessionInput`](crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput).
-    pub fn builder() -> crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionInputBuilder{
+    pub fn builder() -> crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionInputBuilder {
         crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`StopDevEnvironmentSessionInput`](crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDevEnvironmentSessionInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -116,13 +114,11 @@ impl StopDevEnvironmentSessionInputBuilder {
         crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                id: self.id,
-                session_id: self.session_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput {
+            space_name: self.space_name,
+            project_name: self.project_name,
+            id: self.id,
+            session_id: self.session_id,
+        })
     }
 }

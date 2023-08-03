@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CancelQuantumTaskOutput {
 }
 impl CancelQuantumTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelQuantumTaskOutput`](crate::operation::cancel_quantum_task::CancelQuantumTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_quantum_task::builders::CancelQuantumTaskOutputBuilder {
+    pub fn builder() -> crate::operation::cancel_quantum_task::builders::CancelQuantumTaskOutputBuilder {
         crate::operation::cancel_quantum_task::builders::CancelQuantumTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelQuantumTaskOutput`](crate::operation::cancel_quantum_task::CancelQuantumTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelQuantumTaskOutputBuilder {
     pub(crate) quantum_task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cancellation_status: ::std::option::Option<crate::types::CancellationStatus>,
@@ -46,18 +43,12 @@ pub struct CancelQuantumTaskOutputBuilder {
 }
 impl CancelQuantumTaskOutputBuilder {
     /// <p>The ARN of the task.</p>
-    pub fn quantum_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantum_task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the task.</p>
-    pub fn set_quantum_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_quantum_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quantum_task_arn = input;
         self
     }
@@ -71,17 +62,12 @@ impl CancelQuantumTaskOutputBuilder {
         self
     }
     /// <p>The status of the cancellation request.</p>
-    pub fn set_cancellation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CancellationStatus>,
-    ) -> Self {
+    pub fn set_cancellation_status(mut self, input: ::std::option::Option<crate::types::CancellationStatus>) -> Self {
         self.cancellation_status = input;
         self
     }
     /// <p>The status of the cancellation request.</p>
-    pub fn get_cancellation_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::CancellationStatus> {
+    pub fn get_cancellation_status(&self) -> &::std::option::Option<crate::types::CancellationStatus> {
         &self.cancellation_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

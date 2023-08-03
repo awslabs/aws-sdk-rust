@@ -9,10 +9,7 @@ pub fn ser_describe_agent_versions_input(
     if let Some(var_2) = &input.configuration_manager {
         #[allow(unused_mut)]
         let mut object_3 = object.key("ConfigurationManager").start_object();
-        crate::protocol_serde::shape_stack_configuration_manager::ser_stack_configuration_manager(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_stack_configuration_manager::ser_stack_configuration_manager(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

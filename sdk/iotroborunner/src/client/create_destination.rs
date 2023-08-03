@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::create_destination::CreateDestinationOutput::updated_at): Timestamp at which the resource was last updated.
     ///   - [`state(Option<DestinationState>)`](crate::operation::create_destination::CreateDestinationOutput::state): State of the destination.
     /// - On failure, responds with [`SdkError<CreateDestinationError>`](crate::operation::create_destination::CreateDestinationError)
-    pub fn create_destination(
-        &self,
-    ) -> crate::operation::create_destination::builders::CreateDestinationFluentBuilder {
-        crate::operation::create_destination::builders::CreateDestinationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_destination(&self) -> crate::operation::create_destination::builders::CreateDestinationFluentBuilder {
+        crate::operation::create_destination::builders::CreateDestinationFluentBuilder::new(self.handle.clone())
     }
 }

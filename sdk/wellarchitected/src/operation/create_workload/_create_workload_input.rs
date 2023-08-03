@@ -82,9 +82,7 @@ pub struct CreateWorkloadInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be associated with the workload.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
     #[doc(hidden)]
     pub discovery_config: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>,
@@ -187,17 +185,11 @@ impl CreateWorkloadInput {
         self.client_request_token.as_deref()
     }
     /// <p>The tags to be associated with the workload.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
-    pub fn discovery_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkloadDiscoveryConfig> {
+    pub fn discovery_config(&self) -> ::std::option::Option<&crate::types::WorkloadDiscoveryConfig> {
         self.discovery_config.as_ref()
     }
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
@@ -218,9 +210,7 @@ impl CreateWorkloadInput {
 
 /// A builder for [`CreateWorkloadInput`](crate::operation::create_workload::CreateWorkloadInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkloadInputBuilder {
     pub(crate) workload_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -236,9 +226,7 @@ pub struct CreateWorkloadInputBuilder {
     pub(crate) lenses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) notes: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) discovery_config: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>,
     pub(crate) applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) profile_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -246,19 +234,13 @@ pub struct CreateWorkloadInputBuilder {
 impl CreateWorkloadInputBuilder {
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn workload_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workload_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn set_workload_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_name = input;
         self
     }
@@ -287,10 +269,7 @@ impl CreateWorkloadInputBuilder {
         self
     }
     /// <p>The environment for the workload.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkloadEnvironment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::WorkloadEnvironment>) -> Self {
         self.environment = input;
         self
     }
@@ -310,17 +289,12 @@ impl CreateWorkloadInputBuilder {
         self
     }
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Appends an item to `aws_regions`.
@@ -335,17 +309,12 @@ impl CreateWorkloadInputBuilder {
         self
     }
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    pub fn set_aws_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.aws_regions = input;
         self
     }
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    pub fn get_aws_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.aws_regions
     }
     /// Appends an item to `non_aws_regions`.
@@ -353,27 +322,19 @@ impl CreateWorkloadInputBuilder {
     /// To override the contents of this collection use [`set_non_aws_regions`](Self::set_non_aws_regions).
     ///
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn non_aws_regions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn non_aws_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.non_aws_regions.unwrap_or_default();
         v.push(input.into());
         self.non_aws_regions = ::std::option::Option::Some(v);
         self
     }
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn set_non_aws_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_non_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.non_aws_regions = input;
         self
     }
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn get_non_aws_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_non_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.non_aws_regions
     }
     /// Appends an item to `pillar_priorities`.
@@ -381,42 +342,28 @@ impl CreateWorkloadInputBuilder {
     /// To override the contents of this collection use [`set_pillar_priorities`](Self::set_pillar_priorities).
     ///
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_priorities(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pillar_priorities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pillar_priorities.unwrap_or_default();
         v.push(input.into());
         self.pillar_priorities = ::std::option::Option::Some(v);
         self
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn set_pillar_priorities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pillar_priorities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pillar_priorities = input;
         self
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn get_pillar_priorities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pillar_priorities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.pillar_priorities
     }
     /// <p>The URL of the architectural design for the workload.</p>
-    pub fn architectural_design(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn architectural_design(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.architectural_design = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the architectural design for the workload.</p>
-    pub fn set_architectural_design(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_architectural_design(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.architectural_design = input;
         self
     }
@@ -469,10 +416,7 @@ impl CreateWorkloadInputBuilder {
     /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
     /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
-    pub fn industry_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn industry_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.industry_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -507,10 +451,7 @@ impl CreateWorkloadInputBuilder {
     /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
     /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
-    pub fn set_industry_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_industry_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.industry_type = input;
         self
     }
@@ -574,10 +515,7 @@ impl CreateWorkloadInputBuilder {
         self
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn set_lenses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_lenses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.lenses = input;
         self
     }
@@ -603,10 +541,7 @@ impl CreateWorkloadInputBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
@@ -614,10 +549,7 @@ impl CreateWorkloadInputBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -633,32 +565,19 @@ impl CreateWorkloadInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to be associated with the workload.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags to be associated with the workload.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags to be associated with the workload.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
@@ -667,17 +586,12 @@ impl CreateWorkloadInputBuilder {
         self
     }
     /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
-    pub fn set_discovery_config(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>,
-    ) -> Self {
+    pub fn set_discovery_config(mut self, input: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>) -> Self {
         self.discovery_config = input;
         self
     }
     /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
-    pub fn get_discovery_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkloadDiscoveryConfig> {
+    pub fn get_discovery_config(&self) -> &::std::option::Option<crate::types::WorkloadDiscoveryConfig> {
         &self.discovery_config
     }
     /// Appends an item to `applications`.
@@ -692,17 +606,12 @@ impl CreateWorkloadInputBuilder {
         self
     }
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
-    pub fn set_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.applications = input;
         self
     }
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
-    pub fn get_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.applications
     }
     /// Appends an item to `profile_arns`.
@@ -717,26 +626,18 @@ impl CreateWorkloadInputBuilder {
         self
     }
     /// <p>The list of profile ARNs associated with the workload.</p>
-    pub fn set_profile_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_profile_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.profile_arns = input;
         self
     }
     /// <p>The list of profile ARNs associated with the workload.</p>
-    pub fn get_profile_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_profile_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.profile_arns
     }
     /// Consumes the builder and constructs a [`CreateWorkloadInput`](crate::operation::create_workload::CreateWorkloadInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_workload::CreateWorkloadInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_workload::CreateWorkloadInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workload::CreateWorkloadInput {
             workload_name: self.workload_name,
             description: self.description,

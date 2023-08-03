@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LambdaFunctionRecommendationFindingReasonCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -65,15 +59,9 @@ impl ::std::convert::From<&str> for LambdaFunctionRecommendationFindingReasonCod
         match s {
             "Inconclusive" => LambdaFunctionRecommendationFindingReasonCode::Inconclusive,
             "InsufficientData" => LambdaFunctionRecommendationFindingReasonCode::InsufficientData,
-            "MemoryOverprovisioned" => {
-                LambdaFunctionRecommendationFindingReasonCode::MemoryOverProvisioned
-            }
-            "MemoryUnderprovisioned" => {
-                LambdaFunctionRecommendationFindingReasonCode::MemoryUnderProvisioned
-            }
-            other => LambdaFunctionRecommendationFindingReasonCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "MemoryOverprovisioned" => LambdaFunctionRecommendationFindingReasonCode::MemoryOverProvisioned,
+            "MemoryUnderprovisioned" => LambdaFunctionRecommendationFindingReasonCode::MemoryUnderProvisioned,
+            other => LambdaFunctionRecommendationFindingReasonCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -90,23 +78,14 @@ impl LambdaFunctionRecommendationFindingReasonCode {
         match self {
             LambdaFunctionRecommendationFindingReasonCode::Inconclusive => "Inconclusive",
             LambdaFunctionRecommendationFindingReasonCode::InsufficientData => "InsufficientData",
-            LambdaFunctionRecommendationFindingReasonCode::MemoryOverProvisioned => {
-                "MemoryOverprovisioned"
-            }
-            LambdaFunctionRecommendationFindingReasonCode::MemoryUnderProvisioned => {
-                "MemoryUnderprovisioned"
-            }
+            LambdaFunctionRecommendationFindingReasonCode::MemoryOverProvisioned => "MemoryOverprovisioned",
+            LambdaFunctionRecommendationFindingReasonCode::MemoryUnderProvisioned => "MemoryUnderprovisioned",
             LambdaFunctionRecommendationFindingReasonCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Inconclusive",
-            "InsufficientData",
-            "MemoryOverprovisioned",
-            "MemoryUnderprovisioned",
-        ]
+        &["Inconclusive", "InsufficientData", "MemoryOverprovisioned", "MemoryUnderprovisioned"]
     }
 }
 impl ::std::convert::AsRef<str> for LambdaFunctionRecommendationFindingReasonCode {

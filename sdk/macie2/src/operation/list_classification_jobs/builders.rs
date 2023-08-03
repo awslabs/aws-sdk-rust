@@ -37,10 +37,7 @@ impl ListClassificationJobsFluentBuilder {
         }
     }
     /// Access the ListClassificationJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_classification_jobs::builders::ListClassificationJobsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_classification_jobs::builders::ListClassificationJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListClassificationJobsFluentBuilder {
             crate::operation::list_classification_jobs::ListClassificationJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_classification_jobs::ListClassificationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_classification_jobs::ListClassificationJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListClassificationJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListClassificationJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_classification_jobs::ListClassificationJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_classification_jobs::ListClassificationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_classification_jobs::ListClassificationJobsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListClassificationJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_classification_jobs::ListClassificationJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_classification_jobs::ListClassificationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_classification_jobs::ListClassificationJobsError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl ListClassificationJobsFluentBuilder {
             crate::operation::list_classification_jobs::ListClassificationJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_classification_jobs::ListClassificationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_classification_jobs::ListClassificationJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_classification_jobs::paginator::ListClassificationJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_classification_jobs::paginator::ListClassificationJobsPaginator
-    {
-        crate::operation::list_classification_jobs::paginator::ListClassificationJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_classification_jobs::paginator::ListClassificationJobsPaginator {
+        crate::operation::list_classification_jobs::paginator::ListClassificationJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The criteria to use to filter the results.</p>
     pub fn filter_criteria(mut self, input: crate::types::ListJobsFilterCriteria) -> Self {
@@ -141,17 +121,12 @@ impl ListClassificationJobsFluentBuilder {
         self
     }
     /// <p>The criteria to use to filter the results.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::ListJobsFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::ListJobsFilterCriteria>) -> Self {
         self.inner = self.inner.set_filter_criteria(input);
         self
     }
     /// <p>The criteria to use to filter the results.</p>
-    pub fn get_filter_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListJobsFilterCriteria> {
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::ListJobsFilterCriteria> {
         self.inner.get_filter_criteria()
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
@@ -188,10 +163,7 @@ impl ListClassificationJobsFluentBuilder {
         self
     }
     /// <p>The criteria to use to sort the results.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::ListJobsSortCriteria>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<crate::types::ListJobsSortCriteria>) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }

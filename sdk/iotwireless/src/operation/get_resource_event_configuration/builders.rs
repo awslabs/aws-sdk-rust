@@ -26,7 +26,7 @@ impl GetResourceEventConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourceEventConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_resource_event_configuration::builders::GetResourceEventConfigurationInputBuilder,
+    inner: crate::operation::get_resource_event_configuration::builders::GetResourceEventConfigurationInputBuilder,
 }
 impl GetResourceEventConfigurationFluentBuilder {
     /// Creates a new `GetResourceEventConfiguration`.
@@ -37,7 +37,7 @@ impl GetResourceEventConfigurationFluentBuilder {
         }
     }
     /// Access the GetResourceEventConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_resource_event_configuration::builders::GetResourceEventConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_resource_event_configuration::builders::GetResourceEventConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetResourceEventConfigurationFluentBuilder {
             crate::operation::get_resource_event_configuration::GetResourceEventConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_event_configuration::GetResourceEventConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_event_configuration::GetResourceEventConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetResourceEventConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetResourceEventConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_event_configuration::GetResourceEventConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_event_configuration::GetResourceEventConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_event_configuration::GetResourceEventConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetResourceEventConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_event_configuration::GetResourceEventConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_event_configuration::GetResourceEventConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_event_configuration::GetResourceEventConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetResourceEventConfigurationFluentBuilder {
             crate::operation::get_resource_event_configuration::GetResourceEventConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_event_configuration::GetResourceEventConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_event_configuration::GetResourceEventConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -140,10 +129,7 @@ impl GetResourceEventConfigurationFluentBuilder {
         self
     }
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
-    pub fn set_identifier_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentifierType>,
-    ) -> Self {
+    pub fn set_identifier_type(mut self, input: ::std::option::Option<crate::types::IdentifierType>) -> Self {
         self.inner = self.inner.set_identifier_type(input);
         self
     }
@@ -157,17 +143,12 @@ impl GetResourceEventConfigurationFluentBuilder {
         self
     }
     /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.</p>
-    pub fn set_partner_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EventNotificationPartnerType>,
-    ) -> Self {
+    pub fn set_partner_type(mut self, input: ::std::option::Option<crate::types::EventNotificationPartnerType>) -> Self {
         self.inner = self.inner.set_partner_type(input);
         self
     }
     /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.</p>
-    pub fn get_partner_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventNotificationPartnerType> {
+    pub fn get_partner_type(&self) -> &::std::option::Option<crate::types::EventNotificationPartnerType> {
         self.inner.get_partner_type()
     }
 }

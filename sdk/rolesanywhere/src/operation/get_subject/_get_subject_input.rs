@@ -22,9 +22,7 @@ impl GetSubjectInput {
 
 /// A builder for [`GetSubjectInput`](crate::operation::get_subject::GetSubjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSubjectInputBuilder {
     pub(crate) subject_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetSubjectInputBuilder {
         &self.subject_id
     }
     /// Consumes the builder and constructs a [`GetSubjectInput`](crate::operation::get_subject::GetSubjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_subject::GetSubjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_subject::GetSubjectInput {
-            subject_id: self.subject_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_subject::GetSubjectInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_subject::GetSubjectInput { subject_id: self.subject_id })
     }
 }

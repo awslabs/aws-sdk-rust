@@ -30,9 +30,7 @@ impl UserIdentity {
 
 /// A builder for [`UserIdentity`](crate::types::UserIdentity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserIdentityBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::UserIdentityType>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl UserIdentityBuilder {
         self
     }
     /// <p>The identity type of the requester that calls the API operation.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::UserIdentityType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::UserIdentityType>) -> Self {
         self.r#type = input;
         self
     }

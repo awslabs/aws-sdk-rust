@@ -9,8 +9,7 @@ pub struct ModifyCacheParameterGroupInput {
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
     #[doc(hidden)]
-    pub parameter_name_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
+    pub parameter_name_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
 }
 impl ModifyCacheParameterGroupInput {
     /// <p>The name of the cache parameter group to modify.</p>
@@ -18,43 +17,32 @@ impl ModifyCacheParameterGroupInput {
         self.cache_parameter_group_name.as_deref()
     }
     /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
-    pub fn parameter_name_values(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ParameterNameValue]> {
+    pub fn parameter_name_values(&self) -> ::std::option::Option<&[crate::types::ParameterNameValue]> {
         self.parameter_name_values.as_deref()
     }
 }
 impl ModifyCacheParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`ModifyCacheParameterGroupInput`](crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupInput).
-    pub fn builder() -> crate::operation::modify_cache_parameter_group::builders::ModifyCacheParameterGroupInputBuilder{
+    pub fn builder() -> crate::operation::modify_cache_parameter_group::builders::ModifyCacheParameterGroupInputBuilder {
         crate::operation::modify_cache_parameter_group::builders::ModifyCacheParameterGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyCacheParameterGroupInput`](crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyCacheParameterGroupInputBuilder {
     pub(crate) cache_parameter_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) parameter_name_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
+    pub(crate) parameter_name_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
 }
 impl ModifyCacheParameterGroupInputBuilder {
     /// <p>The name of the cache parameter group to modify.</p>
-    pub fn cache_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cache parameter group to modify.</p>
-    pub fn set_cache_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_parameter_group_name = input;
         self
     }
@@ -74,17 +62,12 @@ impl ModifyCacheParameterGroupInputBuilder {
         self
     }
     /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
-    pub fn set_parameter_name_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
-    ) -> Self {
+    pub fn set_parameter_name_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>) -> Self {
         self.parameter_name_values = input;
         self
     }
     /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
-    pub fn get_parameter_name_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>> {
+    pub fn get_parameter_name_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>> {
         &self.parameter_name_values
     }
     /// Consumes the builder and constructs a [`ModifyCacheParameterGroupInput`](crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupInput).
@@ -94,11 +77,9 @@ impl ModifyCacheParameterGroupInputBuilder {
         crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupInput {
-                cache_parameter_group_name: self.cache_parameter_group_name,
-                parameter_name_values: self.parameter_name_values,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupInput {
+            cache_parameter_group_name: self.cache_parameter_group_name,
+            parameter_name_values: self.parameter_name_values,
+        })
     }
 }

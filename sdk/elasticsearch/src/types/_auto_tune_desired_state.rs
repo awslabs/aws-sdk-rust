@@ -38,13 +38,7 @@
 /// <p>Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AutoTuneDesiredState {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for AutoTuneDesiredState {
         match s {
             "DISABLED" => AutoTuneDesiredState::Disabled,
             "ENABLED" => AutoTuneDesiredState::Enabled,
-            other => AutoTuneDesiredState::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AutoTuneDesiredState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

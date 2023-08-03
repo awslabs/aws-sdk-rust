@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for CreateFhirDatastoreOutput {
 }
 impl CreateFhirDatastoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateFhirDatastoreOutput`](crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput).
-    pub fn builder(
-    ) -> crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreOutputBuilder {
-        crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreOutputBuilder {
+        crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFhirDatastoreOutput`](crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFhirDatastoreOutputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) datastore_arn: ::std::option::Option<::std::string::String>,
@@ -77,18 +73,12 @@ impl CreateFhirDatastoreOutputBuilder {
         &self.datastore_id
     }
     /// <p>The data store ARN is generated during the creation of the data store and can be found in the output from the initial data store creation call.</p>
-    pub fn datastore_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn datastore_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data store ARN is generated during the creation of the data store and can be found in the output from the initial data store creation call.</p>
-    pub fn set_datastore_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_datastore_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_arn = input;
         self
     }
@@ -102,10 +92,7 @@ impl CreateFhirDatastoreOutputBuilder {
         self
     }
     /// <p>The status of the FHIR data store.</p>
-    pub fn set_datastore_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DatastoreStatus>,
-    ) -> Self {
+    pub fn set_datastore_status(mut self, input: ::std::option::Option<crate::types::DatastoreStatus>) -> Self {
         self.datastore_status = input;
         self
     }
@@ -114,18 +101,12 @@ impl CreateFhirDatastoreOutputBuilder {
         &self.datastore_status
     }
     /// <p>The AWS endpoint for the created data store.</p>
-    pub fn datastore_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn datastore_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS endpoint for the created data store.</p>
-    pub fn set_datastore_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_datastore_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_endpoint = input;
         self
     }

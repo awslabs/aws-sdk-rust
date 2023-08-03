@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StopCalculationExecutionOutput`](crate::operation::stop_calculation_execution::StopCalculationExecutionOutput) with field(s):
     ///   - [`state(Option<CalculationExecutionState>)`](crate::operation::stop_calculation_execution::StopCalculationExecutionOutput::state): <p> <code>CREATING</code> - The calculation is in the process of being created.</p>  <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>  <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>  <p> <code>RUNNING</code> - The calculation is running.</p>  <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>  <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>  <p> <code>COMPLETED</code> - The calculation has completed without error.</p>  <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
     /// - On failure, responds with [`SdkError<StopCalculationExecutionError>`](crate::operation::stop_calculation_execution::StopCalculationExecutionError)
-    pub fn stop_calculation_execution(
-        &self,
-    ) -> crate::operation::stop_calculation_execution::builders::StopCalculationExecutionFluentBuilder
-    {
+    pub fn stop_calculation_execution(&self) -> crate::operation::stop_calculation_execution::builders::StopCalculationExecutionFluentBuilder {
         crate::operation::stop_calculation_execution::builders::StopCalculationExecutionFluentBuilder::new(self.handle.clone())
     }
 }

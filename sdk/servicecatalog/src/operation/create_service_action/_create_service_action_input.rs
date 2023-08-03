@@ -40,12 +40,7 @@ pub struct CreateServiceActionInput {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub definition: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ServiceActionDefinitionKey,
-            ::std::string::String,
-        >,
-    >,
+    pub definition: ::std::option::Option<::std::collections::HashMap<crate::types::ServiceActionDefinitionKey, ::std::string::String>>,
     /// <p>The self-service action description.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
@@ -66,9 +61,7 @@ impl CreateServiceActionInput {
         self.name.as_deref()
     }
     /// <p>The service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
-    pub fn definition_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceActionDefinitionType> {
+    pub fn definition_type(&self) -> ::std::option::Option<&crate::types::ServiceActionDefinitionType> {
         self.definition_type.as_ref()
     }
     /// <p>The self-service action definition. Can be one of the following:</p>
@@ -101,14 +94,7 @@ impl CreateServiceActionInput {
     /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
     /// </dd>
     /// </dl>
-    pub fn definition(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::ServiceActionDefinitionKey,
-            ::std::string::String,
-        >,
-    > {
+    pub fn definition(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ServiceActionDefinitionKey, ::std::string::String>> {
         self.definition.as_ref()
     }
     /// <p>The self-service action description.</p>
@@ -130,27 +116,18 @@ impl CreateServiceActionInput {
 }
 impl CreateServiceActionInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceActionInput`](crate::operation::create_service_action::CreateServiceActionInput).
-    pub fn builder(
-    ) -> crate::operation::create_service_action::builders::CreateServiceActionInputBuilder {
-        crate::operation::create_service_action::builders::CreateServiceActionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_service_action::builders::CreateServiceActionInputBuilder {
+        crate::operation::create_service_action::builders::CreateServiceActionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateServiceActionInput`](crate::operation::create_service_action::CreateServiceActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateServiceActionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) definition_type: ::std::option::Option<crate::types::ServiceActionDefinitionType>,
-    pub(crate) definition: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ServiceActionDefinitionKey,
-            ::std::string::String,
-        >,
-    >,
+    pub(crate) definition: ::std::option::Option<::std::collections::HashMap<crate::types::ServiceActionDefinitionKey, ::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
@@ -176,17 +153,12 @@ impl CreateServiceActionInputBuilder {
         self
     }
     /// <p>The service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
-    pub fn set_definition_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceActionDefinitionType>,
-    ) -> Self {
+    pub fn set_definition_type(mut self, input: ::std::option::Option<crate::types::ServiceActionDefinitionType>) -> Self {
         self.definition_type = input;
         self
     }
     /// <p>The service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
-    pub fn get_definition_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceActionDefinitionType> {
+    pub fn get_definition_type(&self) -> &::std::option::Option<crate::types::ServiceActionDefinitionType> {
         &self.definition_type
     }
     /// Adds a key-value pair to `definition`.
@@ -223,11 +195,7 @@ impl CreateServiceActionInputBuilder {
     /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
     /// </dd>
     /// </dl>
-    pub fn definition(
-        mut self,
-        k: crate::types::ServiceActionDefinitionKey,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn definition(mut self, k: crate::types::ServiceActionDefinitionKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.definition.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.definition = ::std::option::Option::Some(hash_map);
@@ -265,12 +233,7 @@ impl CreateServiceActionInputBuilder {
     /// </dl>
     pub fn set_definition(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::ServiceActionDefinitionKey,
-                ::std::string::String,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ServiceActionDefinitionKey, ::std::string::String>>,
     ) -> Self {
         self.definition = input;
         self
@@ -307,12 +270,7 @@ impl CreateServiceActionInputBuilder {
     /// </dl>
     pub fn get_definition(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ServiceActionDefinitionKey,
-            ::std::string::String,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ServiceActionDefinitionKey, ::std::string::String>> {
         &self.definition
     }
     /// <p>The self-service action description.</p>
@@ -334,10 +292,7 @@ impl CreateServiceActionInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -346,10 +301,7 @@ impl CreateServiceActionInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -362,18 +314,12 @@ impl CreateServiceActionInputBuilder {
         &self.accept_language
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }
@@ -384,19 +330,15 @@ impl CreateServiceActionInputBuilder {
     /// Consumes the builder and constructs a [`CreateServiceActionInput`](crate::operation::create_service_action::CreateServiceActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_service_action::CreateServiceActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_service_action::CreateServiceActionInput {
-                name: self.name,
-                definition_type: self.definition_type,
-                definition: self.definition,
-                description: self.description,
-                accept_language: self.accept_language,
-                idempotency_token: self.idempotency_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_service_action::CreateServiceActionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_service_action::CreateServiceActionInput {
+            name: self.name,
+            definition_type: self.definition_type,
+            definition: self.definition,
+            description: self.description,
+            accept_language: self.accept_language,
+            idempotency_token: self.idempotency_token,
+        })
     }
 }

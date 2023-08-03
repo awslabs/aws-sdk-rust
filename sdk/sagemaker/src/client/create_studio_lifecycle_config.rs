@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`CreateStudioLifecycleConfigOutput`](crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigOutput) with field(s):
     ///   - [`studio_lifecycle_config_arn(Option<String>)`](crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigOutput::studio_lifecycle_config_arn): <p>The ARN of your created Lifecycle Configuration.</p>
     /// - On failure, responds with [`SdkError<CreateStudioLifecycleConfigError>`](crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigError)
-    pub fn create_studio_lifecycle_config(&self) -> crate::operation::create_studio_lifecycle_config::builders::CreateStudioLifecycleConfigFluentBuilder{
+    pub fn create_studio_lifecycle_config(
+        &self,
+    ) -> crate::operation::create_studio_lifecycle_config::builders::CreateStudioLifecycleConfigFluentBuilder {
         crate::operation::create_studio_lifecycle_config::builders::CreateStudioLifecycleConfigFluentBuilder::new(self.handle.clone())
     }
 }

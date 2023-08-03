@@ -19,16 +19,14 @@ impl GetDistributionLatestCacheResetInput {
 }
 impl GetDistributionLatestCacheResetInput {
     /// Creates a new builder-style object to manufacture [`GetDistributionLatestCacheResetInput`](crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetInput).
-    pub fn builder() -> crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetInputBuilder{
+    pub fn builder() -> crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetInputBuilder {
         crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDistributionLatestCacheResetInput`](crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDistributionLatestCacheResetInputBuilder {
     pub(crate) distribution_name: ::std::option::Option<::std::string::String>,
 }
@@ -36,20 +34,14 @@ impl GetDistributionLatestCacheResetInputBuilder {
     /// <p>The name of the distribution for which to return the timestamp of the last cache reset.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     /// <p>When omitted, the response includes the latest cache reset timestamp of all your distributions.</p>
-    pub fn distribution_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the distribution for which to return the timestamp of the last cache reset.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     /// <p>When omitted, the response includes the latest cache reset timestamp of all your distributions.</p>
-    pub fn set_distribution_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_name = input;
         self
     }
@@ -68,9 +60,8 @@ impl GetDistributionLatestCacheResetInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetInput {
-                distribution_name: self.distribution_name
-                ,
-            }
+                distribution_name: self.distribution_name,
+            },
         )
     }
 }

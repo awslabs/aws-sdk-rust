@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetTimelineEventOutput {
 }
 impl GetTimelineEventOutput {
     /// Creates a new builder-style object to manufacture [`GetTimelineEventOutput`](crate::operation::get_timeline_event::GetTimelineEventOutput).
-    pub fn builder() -> crate::operation::get_timeline_event::builders::GetTimelineEventOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_timeline_event::builders::GetTimelineEventOutputBuilder {
         crate::operation::get_timeline_event::builders::GetTimelineEventOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTimelineEventOutput`](crate::operation::get_timeline_event::GetTimelineEventOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTimelineEventOutputBuilder {
     pub(crate) event: ::std::option::Option<crate::types::TimelineEvent>,
     _request_id: Option<String>,

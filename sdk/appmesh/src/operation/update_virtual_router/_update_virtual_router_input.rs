@@ -43,18 +43,14 @@ impl UpdateVirtualRouterInput {
 }
 impl UpdateVirtualRouterInput {
     /// Creates a new builder-style object to manufacture [`UpdateVirtualRouterInput`](crate::operation::update_virtual_router::UpdateVirtualRouterInput).
-    pub fn builder(
-    ) -> crate::operation::update_virtual_router::builders::UpdateVirtualRouterInputBuilder {
-        crate::operation::update_virtual_router::builders::UpdateVirtualRouterInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_virtual_router::builders::UpdateVirtualRouterInputBuilder {
+        crate::operation::update_virtual_router::builders::UpdateVirtualRouterInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVirtualRouterInput`](crate::operation::update_virtual_router::UpdateVirtualRouterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVirtualRouterInputBuilder {
     pub(crate) virtual_router_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
@@ -64,18 +60,12 @@ pub struct UpdateVirtualRouterInputBuilder {
 }
 impl UpdateVirtualRouterInputBuilder {
     /// <p>The name of the virtual router to update.</p>
-    pub fn virtual_router_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_router_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual router to update.</p>
-    pub fn set_virtual_router_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_router_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_router_name = input;
         self
     }
@@ -103,10 +93,7 @@ impl UpdateVirtualRouterInputBuilder {
         self
     }
     /// <p>The new virtual router specification to apply. This overwrites the existing data.</p>
-    pub fn set_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualRouterSpec>,
-    ) -> Self {
+    pub fn set_spec(mut self, input: ::std::option::Option<crate::types::VirtualRouterSpec>) -> Self {
         self.spec = input;
         self
     }
@@ -145,18 +132,14 @@ impl UpdateVirtualRouterInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVirtualRouterInput`](crate::operation::update_virtual_router::UpdateVirtualRouterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_virtual_router::UpdateVirtualRouterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_virtual_router::UpdateVirtualRouterInput {
-                virtual_router_name: self.virtual_router_name,
-                mesh_name: self.mesh_name,
-                spec: self.spec,
-                client_token: self.client_token,
-                mesh_owner: self.mesh_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_virtual_router::UpdateVirtualRouterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_virtual_router::UpdateVirtualRouterInput {
+            virtual_router_name: self.virtual_router_name,
+            mesh_name: self.mesh_name,
+            spec: self.spec,
+            client_token: self.client_token,
+            mesh_owner: self.mesh_owner,
+        })
     }
 }

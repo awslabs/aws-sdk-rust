@@ -10,10 +10,7 @@ impl ListSamplesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_samples::ListSamplesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_samples::ListSamplesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_samples::ListSamplesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_samples();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListSamplesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_samples::ListSamples,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_samples::ListSamples, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_samples::ListSamplesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListSamplesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListSamplesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_samples::ListSamples,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_samples::ListSamples, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_samples::ListSamplesError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl ListSamplesFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_samples::paginator::ListSamplesPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_samples::paginator::ListSamplesPaginator {
-        crate::operation::list_samples::paginator::ListSamplesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_samples::paginator::ListSamplesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the job used to list samples.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

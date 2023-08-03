@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteStreamProcessorOutput {
 }
 impl DeleteStreamProcessorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStreamProcessorOutput`](crate::operation::delete_stream_processor::DeleteStreamProcessorOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_stream_processor::builders::DeleteStreamProcessorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_stream_processor::builders::DeleteStreamProcessorOutputBuilder {
         crate::operation::delete_stream_processor::builders::DeleteStreamProcessorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStreamProcessorOutput`](crate::operation::delete_stream_processor::DeleteStreamProcessorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStreamProcessorOutputBuilder {
     _request_id: Option<String>,
 }

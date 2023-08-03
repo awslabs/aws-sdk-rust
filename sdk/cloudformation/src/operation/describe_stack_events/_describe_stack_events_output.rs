@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeStackEventsOutput {
 }
 impl DescribeStackEventsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackEventsOutput`](crate::operation::describe_stack_events::DescribeStackEventsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_stack_events::builders::DescribeStackEventsOutputBuilder {
-        crate::operation::describe_stack_events::builders::DescribeStackEventsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_stack_events::builders::DescribeStackEventsOutputBuilder {
+        crate::operation::describe_stack_events::builders::DescribeStackEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStackEventsOutput`](crate::operation::describe_stack_events::DescribeStackEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackEventsOutputBuilder {
     pub(crate) stack_events: ::std::option::Option<::std::vec::Vec<crate::types::StackEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,17 +55,12 @@ impl DescribeStackEventsOutputBuilder {
         self
     }
     /// <p>A list of <code>StackEvents</code> structures.</p>
-    pub fn set_stack_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StackEvent>>,
-    ) -> Self {
+    pub fn set_stack_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackEvent>>) -> Self {
         self.stack_events = input;
         self
     }
     /// <p>A list of <code>StackEvents</code> structures.</p>
-    pub fn get_stack_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackEvent>> {
+    pub fn get_stack_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackEvent>> {
         &self.stack_events
     }
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events. If no additional page exists, this value is null.</p>

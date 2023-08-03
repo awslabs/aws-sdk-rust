@@ -46,9 +46,7 @@ impl RuleBasedMatchingRequest {
         self.max_allowed_rule_level_for_matching
     }
     /// <p>Configures information about the <code>AttributeTypesSelector</code> where the rule-based identity resolution uses to match profiles.</p>
-    pub fn attribute_types_selector(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AttributeTypesSelector> {
+    pub fn attribute_types_selector(&self) -> ::std::option::Option<&crate::types::AttributeTypesSelector> {
         self.attribute_types_selector.as_ref()
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
@@ -71,16 +69,13 @@ impl RuleBasedMatchingRequest {
 
 /// A builder for [`RuleBasedMatchingRequest`](crate::types::RuleBasedMatchingRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleBasedMatchingRequestBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) matching_rules: ::std::option::Option<::std::vec::Vec<crate::types::MatchingRule>>,
     pub(crate) max_allowed_rule_level_for_merging: ::std::option::Option<i32>,
     pub(crate) max_allowed_rule_level_for_matching: ::std::option::Option<i32>,
-    pub(crate) attribute_types_selector:
-        ::std::option::Option<crate::types::AttributeTypesSelector>,
+    pub(crate) attribute_types_selector: ::std::option::Option<crate::types::AttributeTypesSelector>,
     pub(crate) conflict_resolution: ::std::option::Option<crate::types::ConflictResolution>,
     pub(crate) exporting_config: ::std::option::Option<crate::types::ExportingConfig>,
 }
@@ -111,17 +106,12 @@ impl RuleBasedMatchingRequestBuilder {
         self
     }
     /// <p>Configures how the rule-based matching process should match profiles. You can have up to 15 <code>MatchingRule</code> in the <code>MatchingRules</code>.</p>
-    pub fn set_matching_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MatchingRule>>,
-    ) -> Self {
+    pub fn set_matching_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchingRule>>) -> Self {
         self.matching_rules = input;
         self
     }
     /// <p>Configures how the rule-based matching process should match profiles. You can have up to 15 <code>MatchingRule</code> in the <code>MatchingRules</code>.</p>
-    pub fn get_matching_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchingRule>> {
+    pub fn get_matching_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchingRule>> {
         &self.matching_rules
     }
     /// <p> <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a> </p>
@@ -130,10 +120,7 @@ impl RuleBasedMatchingRequestBuilder {
         self
     }
     /// <p> <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a> </p>
-    pub fn set_max_allowed_rule_level_for_merging(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_max_allowed_rule_level_for_merging(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_allowed_rule_level_for_merging = input;
         self
     }
@@ -147,10 +134,7 @@ impl RuleBasedMatchingRequestBuilder {
         self
     }
     /// <p>Indicates the maximum allowed rule level.</p>
-    pub fn set_max_allowed_rule_level_for_matching(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_max_allowed_rule_level_for_matching(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_allowed_rule_level_for_matching = input;
         self
     }
@@ -164,17 +148,12 @@ impl RuleBasedMatchingRequestBuilder {
         self
     }
     /// <p>Configures information about the <code>AttributeTypesSelector</code> where the rule-based identity resolution uses to match profiles.</p>
-    pub fn set_attribute_types_selector(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeTypesSelector>,
-    ) -> Self {
+    pub fn set_attribute_types_selector(mut self, input: ::std::option::Option<crate::types::AttributeTypesSelector>) -> Self {
         self.attribute_types_selector = input;
         self
     }
     /// <p>Configures information about the <code>AttributeTypesSelector</code> where the rule-based identity resolution uses to match profiles.</p>
-    pub fn get_attribute_types_selector(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeTypesSelector> {
+    pub fn get_attribute_types_selector(&self) -> &::std::option::Option<crate::types::AttributeTypesSelector> {
         &self.attribute_types_selector
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
@@ -183,17 +162,12 @@ impl RuleBasedMatchingRequestBuilder {
         self
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
-    pub fn set_conflict_resolution(
-        mut self,
-        input: ::std::option::Option<crate::types::ConflictResolution>,
-    ) -> Self {
+    pub fn set_conflict_resolution(mut self, input: ::std::option::Option<crate::types::ConflictResolution>) -> Self {
         self.conflict_resolution = input;
         self
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
-    pub fn get_conflict_resolution(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConflictResolution> {
+    pub fn get_conflict_resolution(&self) -> &::std::option::Option<crate::types::ConflictResolution> {
         &self.conflict_resolution
     }
     /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files. </p> <note>
@@ -206,10 +180,7 @@ impl RuleBasedMatchingRequestBuilder {
     /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files. </p> <note>
     /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>. </p>
     /// </note>
-    pub fn set_exporting_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportingConfig>,
-    ) -> Self {
+    pub fn set_exporting_config(mut self, input: ::std::option::Option<crate::types::ExportingConfig>) -> Self {
         self.exporting_config = input;
         self
     }

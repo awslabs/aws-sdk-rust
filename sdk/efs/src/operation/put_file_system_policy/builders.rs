@@ -40,9 +40,7 @@ impl PutFileSystemPolicyFluentBuilder {
         }
     }
     /// Access the PutFileSystemPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_file_system_policy::builders::PutFileSystemPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_file_system_policy::builders::PutFileSystemPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl PutFileSystemPolicyFluentBuilder {
             crate::operation::put_file_system_policy::PutFileSystemPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_file_system_policy::PutFileSystemPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_file_system_policy::PutFileSystemPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl PutFileSystemPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl PutFileSystemPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_file_system_policy::PutFileSystemPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_file_system_policy::PutFileSystemPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_file_system_policy::PutFileSystemPolicyError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl PutFileSystemPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_file_system_policy::PutFileSystemPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_file_system_policy::PutFileSystemPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_file_system_policy::PutFileSystemPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +108,17 @@ impl PutFileSystemPolicyFluentBuilder {
             crate::operation::put_file_system_policy::PutFileSystemPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_file_system_policy::PutFileSystemPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_file_system_policy::PutFileSystemPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the EFS file system that you want to create or update the <code>FileSystemPolicy</code> for.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>The ID of the EFS file system that you want to create or update the <code>FileSystemPolicy</code> for.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
@@ -165,10 +146,7 @@ impl PutFileSystemPolicyFluentBuilder {
         self
     }
     /// <p>(Optional) A boolean that specifies whether or not to bypass the <code>FileSystemPolicy</code> lockout safety check. The lockout safety check determines whether the policy in the request will lock out, or prevent, the IAM principal that is making the request from making future <code>PutFileSystemPolicy</code> requests on this file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the IAM principal that is making the request from making subsequent <code>PutFileSystemPolicy</code> requests on this file system. The default value is <code>False</code>. </p>
-    pub fn set_bypass_policy_lockout_safety_check(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_bypass_policy_lockout_safety_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_bypass_policy_lockout_safety_check(input);
         self
     }

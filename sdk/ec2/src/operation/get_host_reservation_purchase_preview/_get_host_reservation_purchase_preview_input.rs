@@ -22,16 +22,14 @@ impl GetHostReservationPurchasePreviewInput {
 }
 impl GetHostReservationPurchasePreviewInput {
     /// Creates a new builder-style object to manufacture [`GetHostReservationPurchasePreviewInput`](crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewInput).
-    pub fn builder() -> crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewInputBuilder{
+    pub fn builder() -> crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewInputBuilder {
         crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewInputBuilder::default()
     }
 }
 
 /// A builder for [`GetHostReservationPurchasePreviewInput`](crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHostReservationPurchasePreviewInputBuilder {
     pub(crate) host_id_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) offering_id: ::std::option::Option<::std::string::String>,
@@ -49,17 +47,12 @@ impl GetHostReservationPurchasePreviewInputBuilder {
         self
     }
     /// <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
-    pub fn set_host_id_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_host_id_set(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.host_id_set = input;
         self
     }
     /// <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
-    pub fn get_host_id_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_host_id_set(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.host_id_set
     }
     /// <p>The offering ID of the reservation.</p>
@@ -77,14 +70,17 @@ impl GetHostReservationPurchasePreviewInputBuilder {
         &self.offering_id
     }
     /// Consumes the builder and constructs a [`GetHostReservationPurchasePreviewInput`](crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewInput {
-                host_id_set: self.host_id_set
-                ,
-                offering_id: self.offering_id
-                ,
-            }
+                host_id_set: self.host_id_set,
+                offering_id: self.offering_id,
+            },
         )
     }
 }

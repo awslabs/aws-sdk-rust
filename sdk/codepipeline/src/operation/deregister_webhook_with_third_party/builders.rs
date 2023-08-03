@@ -5,16 +5,16 @@ pub use crate::operation::deregister_webhook_with_third_party::_deregister_webho
 
 impl DeregisterWebhookWithThirdPartyInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.deregister_webhook_with_third_party();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DeregisterWebhookWithThirdPartyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterWebhookWithThirdPartyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyInputBuilder,
+    inner: crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyInputBuilder,
 }
 impl DeregisterWebhookWithThirdPartyFluentBuilder {
     /// Creates a new `DeregisterWebhookWithThirdParty`.
@@ -37,15 +37,20 @@ impl DeregisterWebhookWithThirdPartyFluentBuilder {
         }
     }
     /// Access the DeregisterWebhookWithThirdParty as a reference.
-    pub fn as_input(&self) -> &crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdParty, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdParty,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DeregisterWebhookWithThirdPartyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl DeregisterWebhookWithThirdPartyFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdParty, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdParty,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the webhook you want to deregister.</p>

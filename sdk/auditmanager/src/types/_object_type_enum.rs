@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ObjectTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ObjectTypeEnum {
             "CONTROL" => ObjectTypeEnum::Control,
             "CONTROL_SET" => ObjectTypeEnum::ControlSet,
             "DELEGATION" => ObjectTypeEnum::Delegation,
-            other => {
-                ObjectTypeEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ObjectTypeEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl ObjectTypeEnum {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASSESSMENT",
-            "ASSESSMENT_REPORT",
-            "CONTROL",
-            "CONTROL_SET",
-            "DELEGATION",
-        ]
+        &["ASSESSMENT", "ASSESSMENT_REPORT", "CONTROL", "CONTROL_SET", "DELEGATION"]
     }
 }
 impl ::std::convert::AsRef<str> for ObjectTypeEnum {

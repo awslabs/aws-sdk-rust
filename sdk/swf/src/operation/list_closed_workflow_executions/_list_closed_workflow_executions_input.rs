@@ -67,9 +67,7 @@ impl ListClosedWorkflowExecutionsInput {
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn execution_filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkflowExecutionFilter> {
+    pub fn execution_filter(&self) -> ::std::option::Option<&crate::types::WorkflowExecutionFilter> {
         self.execution_filter.as_ref()
     }
     /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
@@ -106,16 +104,14 @@ impl ListClosedWorkflowExecutionsInput {
 }
 impl ListClosedWorkflowExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListClosedWorkflowExecutionsInput`](crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsInput).
-    pub fn builder() -> crate::operation::list_closed_workflow_executions::builders::ListClosedWorkflowExecutionsInputBuilder{
+    pub fn builder() -> crate::operation::list_closed_workflow_executions::builders::ListClosedWorkflowExecutionsInputBuilder {
         crate::operation::list_closed_workflow_executions::builders::ListClosedWorkflowExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListClosedWorkflowExecutionsInput`](crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClosedWorkflowExecutionsInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) start_time_filter: ::std::option::Option<crate::types::ExecutionTimeFilter>,
@@ -153,19 +149,14 @@ impl ListClosedWorkflowExecutionsInputBuilder {
     /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
     /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
-    pub fn set_start_time_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionTimeFilter>,
-    ) -> Self {
+    pub fn set_start_time_filter(mut self, input: ::std::option::Option<crate::types::ExecutionTimeFilter>) -> Self {
         self.start_time_filter = input;
         self
     }
     /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
     /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
-    pub fn get_start_time_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
+    pub fn get_start_time_filter(&self) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
         &self.start_time_filter
     }
     /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
@@ -178,19 +169,14 @@ impl ListClosedWorkflowExecutionsInputBuilder {
     /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
     /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
-    pub fn set_close_time_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionTimeFilter>,
-    ) -> Self {
+    pub fn set_close_time_filter(mut self, input: ::std::option::Option<crate::types::ExecutionTimeFilter>) -> Self {
         self.close_time_filter = input;
         self
     }
     /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
     /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
-    pub fn get_close_time_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
+    pub fn get_close_time_filter(&self) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
         &self.close_time_filter
     }
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
@@ -203,19 +189,14 @@ impl ListClosedWorkflowExecutionsInputBuilder {
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_execution_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecutionFilter>,
-    ) -> Self {
+    pub fn set_execution_filter(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionFilter>) -> Self {
         self.execution_filter = input;
         self
     }
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn get_execution_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {
+    pub fn get_execution_filter(&self) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {
         &self.execution_filter
     }
     /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
@@ -228,19 +209,14 @@ impl ListClosedWorkflowExecutionsInputBuilder {
     /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_close_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::CloseStatusFilter>,
-    ) -> Self {
+    pub fn set_close_status_filter(mut self, input: ::std::option::Option<crate::types::CloseStatusFilter>) -> Self {
         self.close_status_filter = input;
         self
     }
     /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn get_close_status_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloseStatusFilter> {
+    pub fn get_close_status_filter(&self) -> &::std::option::Option<crate::types::CloseStatusFilter> {
         &self.close_status_filter
     }
     /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
@@ -253,10 +229,7 @@ impl ListClosedWorkflowExecutionsInputBuilder {
     /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_type_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowTypeFilter>,
-    ) -> Self {
+    pub fn set_type_filter(mut self, input: ::std::option::Option<crate::types::WorkflowTypeFilter>) -> Self {
         self.type_filter = input;
         self
     }
@@ -288,19 +261,13 @@ impl ListClosedWorkflowExecutionsInputBuilder {
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -344,19 +311,17 @@ impl ListClosedWorkflowExecutionsInputBuilder {
         crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsInput {
-                domain: self.domain,
-                start_time_filter: self.start_time_filter,
-                close_time_filter: self.close_time_filter,
-                execution_filter: self.execution_filter,
-                close_status_filter: self.close_status_filter,
-                type_filter: self.type_filter,
-                tag_filter: self.tag_filter,
-                next_page_token: self.next_page_token,
-                maximum_page_size: self.maximum_page_size,
-                reverse_order: self.reverse_order,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsInput {
+            domain: self.domain,
+            start_time_filter: self.start_time_filter,
+            close_time_filter: self.close_time_filter,
+            execution_filter: self.execution_filter,
+            close_status_filter: self.close_status_filter,
+            type_filter: self.type_filter,
+            tag_filter: self.tag_filter,
+            next_page_token: self.next_page_token,
+            maximum_page_size: self.maximum_page_size,
+            reverse_order: self.reverse_order,
+        })
     }
 }

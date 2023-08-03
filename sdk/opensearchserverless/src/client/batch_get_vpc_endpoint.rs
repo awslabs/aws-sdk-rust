@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`vpc_endpoint_details(Option<Vec<VpcEndpointDetail>>)`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointOutput::vpc_endpoint_details): <p>Details about the specified VPC endpoint.</p>
     ///   - [`vpc_endpoint_error_details(Option<Vec<VpcEndpointErrorDetail>>)`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointOutput::vpc_endpoint_error_details): <p>Error information for a failed request.</p>
     /// - On failure, responds with [`SdkError<BatchGetVpcEndpointError>`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointError)
-    pub fn batch_get_vpc_endpoint(
-        &self,
-    ) -> crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointFluentBuilder {
-        crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_vpc_endpoint(&self) -> crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointFluentBuilder {
+        crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointFluentBuilder::new(self.handle.clone())
     }
 }

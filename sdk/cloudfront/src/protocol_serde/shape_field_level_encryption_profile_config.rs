@@ -19,10 +19,7 @@ pub fn ser_field_level_encryption_profile_config(
     }
     if let Some(var_4) = &input.encryption_entities {
         let inner_writer = scope.start_el("EncryptionEntities");
-        crate::protocol_serde::shape_encryption_entities::ser_encryption_entities(
-            var_4,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_encryption_entities::ser_encryption_entities(var_4, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -30,8 +27,7 @@ pub fn ser_field_level_encryption_profile_config(
 
 pub fn de_field_level_encryption_profile_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::FieldLevelEncryptionProfileConfig, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::FieldLevelEncryptionProfileConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::FieldLevelEncryptionProfileConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -54,9 +54,7 @@ impl TestWindowSummary {
 
 /// A builder for [`TestWindowSummary`](crate::types::TestWindowSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestWindowSummaryBuilder {
     pub(crate) test_window_start: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) test_window_end: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -70,10 +68,7 @@ impl TestWindowSummaryBuilder {
         self
     }
     /// <p>The time at which the test began.</p>
-    pub fn set_test_window_start(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_test_window_start(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.test_window_start = input;
         self
     }
@@ -87,10 +82,7 @@ impl TestWindowSummaryBuilder {
         self
     }
     /// <p>The time at which the test ended.</p>
-    pub fn set_test_window_end(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_test_window_end(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.test_window_end = input;
         self
     }

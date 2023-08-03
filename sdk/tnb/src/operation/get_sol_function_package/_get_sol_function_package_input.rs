@@ -15,18 +15,14 @@ impl GetSolFunctionPackageInput {
 }
 impl GetSolFunctionPackageInput {
     /// Creates a new builder-style object to manufacture [`GetSolFunctionPackageInput`](crate::operation::get_sol_function_package::GetSolFunctionPackageInput).
-    pub fn builder(
-    ) -> crate::operation::get_sol_function_package::builders::GetSolFunctionPackageInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_sol_function_package::builders::GetSolFunctionPackageInputBuilder {
         crate::operation::get_sol_function_package::builders::GetSolFunctionPackageInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSolFunctionPackageInput`](crate::operation::get_sol_function_package::GetSolFunctionPackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolFunctionPackageInputBuilder {
     pub(crate) vnf_pkg_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl GetSolFunctionPackageInputBuilder {
     /// Consumes the builder and constructs a [`GetSolFunctionPackageInput`](crate::operation::get_sol_function_package::GetSolFunctionPackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sol_function_package::GetSolFunctionPackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_sol_function_package::GetSolFunctionPackageInput {
-                vnf_pkg_id: self.vnf_pkg_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_sol_function_package::GetSolFunctionPackageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_sol_function_package::GetSolFunctionPackageInput { vnf_pkg_id: self.vnf_pkg_id })
     }
 }

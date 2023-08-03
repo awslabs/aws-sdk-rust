@@ -38,9 +38,7 @@ impl DescribeModelPackageFluentBuilder {
         }
     }
     /// Access the DescribeModelPackage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_model_package::builders::DescribeModelPackageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_model_package::builders::DescribeModelPackageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DescribeModelPackageFluentBuilder {
             crate::operation::describe_model_package::DescribeModelPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_package::DescribeModelPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_package::DescribeModelPackageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DescribeModelPackageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DescribeModelPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_model_package::DescribeModelPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_package::DescribeModelPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_package::DescribeModelPackageError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DescribeModelPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_model_package::DescribeModelPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_package::DescribeModelPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_package::DescribeModelPackageError>,
     > {
         self.send_middleware().await
     }
@@ -117,27 +106,19 @@ impl DescribeModelPackageFluentBuilder {
             crate::operation::describe_model_package::DescribeModelPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_package::DescribeModelPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_package::DescribeModelPackageError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-    pub fn model_package_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_package_name(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-    pub fn set_model_package_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_package_name(input);
         self
     }

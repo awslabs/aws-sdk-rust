@@ -29,18 +29,14 @@ impl UpdateUserIdentityInfoInput {
 }
 impl UpdateUserIdentityInfoInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserIdentityInfoInput`](crate::operation::update_user_identity_info::UpdateUserIdentityInfoInput).
-    pub fn builder(
-    ) -> crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoInputBuilder {
         crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserIdentityInfoInput`](crate::operation::update_user_identity_info::UpdateUserIdentityInfoInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserIdentityInfoInputBuilder {
     pub(crate) identity_info: ::std::option::Option<crate::types::UserIdentityInfo>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -53,10 +49,7 @@ impl UpdateUserIdentityInfoInputBuilder {
         self
     }
     /// <p>The identity information for the user.</p>
-    pub fn set_identity_info(
-        mut self,
-        input: ::std::option::Option<crate::types::UserIdentityInfo>,
-    ) -> Self {
+    pub fn set_identity_info(mut self, input: ::std::option::Option<crate::types::UserIdentityInfo>) -> Self {
         self.identity_info = input;
         self
     }
@@ -99,12 +92,10 @@ impl UpdateUserIdentityInfoInputBuilder {
         crate::operation::update_user_identity_info::UpdateUserIdentityInfoInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_user_identity_info::UpdateUserIdentityInfoInput {
-                identity_info: self.identity_info,
-                user_id: self.user_id,
-                instance_id: self.instance_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_user_identity_info::UpdateUserIdentityInfoInput {
+            identity_info: self.identity_info,
+            user_id: self.user_id,
+            instance_id: self.instance_id,
+        })
     }
 }

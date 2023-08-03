@@ -17,11 +17,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEnvironmentEc2Output`](crate::operation::create_environment_ec2::CreateEnvironmentEc2Output) with field(s):
     ///   - [`environment_id(Option<String>)`](crate::operation::create_environment_ec2::CreateEnvironmentEc2Output::environment_id): <p>The ID of the environment that was created.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentEC2Error>`](crate::operation::create_environment_ec2::CreateEnvironmentEC2Error)
-    pub fn create_environment_ec2(
-        &self,
-    ) -> crate::operation::create_environment_ec2::builders::CreateEnvironmentEC2FluentBuilder {
-        crate::operation::create_environment_ec2::builders::CreateEnvironmentEC2FluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_environment_ec2(&self) -> crate::operation::create_environment_ec2::builders::CreateEnvironmentEC2FluentBuilder {
+        crate::operation::create_environment_ec2::builders::CreateEnvironmentEC2FluentBuilder::new(self.handle.clone())
     }
 }

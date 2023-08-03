@@ -5,16 +5,16 @@ pub use crate::operation::get_multi_region_access_point_routes::_get_multi_regio
 
 impl GetMultiRegionAccessPointRoutesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_multi_region_access_point_routes();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -36,7 +36,7 @@ impl GetMultiRegionAccessPointRoutesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointRoutesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_multi_region_access_point_routes::builders::GetMultiRegionAccessPointRoutesInputBuilder,
+    inner: crate::operation::get_multi_region_access_point_routes::builders::GetMultiRegionAccessPointRoutesInputBuilder,
 }
 impl GetMultiRegionAccessPointRoutesFluentBuilder {
     /// Creates a new `GetMultiRegionAccessPointRoutes`.
@@ -47,15 +47,20 @@ impl GetMultiRegionAccessPointRoutesFluentBuilder {
         }
     }
     /// Access the GetMultiRegionAccessPointRoutes as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_multi_region_access_point_routes::builders::GetMultiRegionAccessPointRoutesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_multi_region_access_point_routes::builders::GetMultiRegionAccessPointRoutesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -64,16 +69,17 @@ impl GetMultiRegionAccessPointRoutesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -91,17 +97,26 @@ impl GetMultiRegionAccessPointRoutesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>

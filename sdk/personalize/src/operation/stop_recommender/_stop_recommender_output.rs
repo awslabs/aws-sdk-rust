@@ -28,27 +28,19 @@ impl StopRecommenderOutput {
 
 /// A builder for [`StopRecommenderOutput`](crate::operation::stop_recommender::StopRecommenderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopRecommenderOutputBuilder {
     pub(crate) recommender_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StopRecommenderOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the recommender you stopped.</p>
-    pub fn recommender_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommender_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommender_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender you stopped.</p>
-    pub fn set_recommender_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommender_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommender_arn = input;
         self
     }

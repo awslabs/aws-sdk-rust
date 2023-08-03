@@ -22,35 +22,26 @@ impl GetDataSetDetailsInput {
 }
 impl GetDataSetDetailsInput {
     /// Creates a new builder-style object to manufacture [`GetDataSetDetailsInput`](crate::operation::get_data_set_details::GetDataSetDetailsInput).
-    pub fn builder(
-    ) -> crate::operation::get_data_set_details::builders::GetDataSetDetailsInputBuilder {
+    pub fn builder() -> crate::operation::get_data_set_details::builders::GetDataSetDetailsInputBuilder {
         crate::operation::get_data_set_details::builders::GetDataSetDetailsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataSetDetailsInput`](crate::operation::get_data_set_details::GetDataSetDetailsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataSetDetailsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDataSetDetailsInputBuilder {
     /// <p>The unique identifier of the application that this data set is associated with.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the application that this data set is associated with.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -59,18 +50,12 @@ impl GetDataSetDetailsInputBuilder {
         &self.application_id
     }
     /// <p>The name of the data set.</p>
-    pub fn data_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the data set.</p>
-    pub fn set_data_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_name = input;
         self
     }
@@ -81,15 +66,10 @@ impl GetDataSetDetailsInputBuilder {
     /// Consumes the builder and constructs a [`GetDataSetDetailsInput`](crate::operation::get_data_set_details::GetDataSetDetailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_data_set_details::GetDataSetDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_data_set_details::GetDataSetDetailsInput {
-                application_id: self.application_id,
-                data_set_name: self.data_set_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_data_set_details::GetDataSetDetailsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_data_set_details::GetDataSetDetailsInput {
+            application_id: self.application_id,
+            data_set_name: self.data_set_name,
+        })
     }
 }

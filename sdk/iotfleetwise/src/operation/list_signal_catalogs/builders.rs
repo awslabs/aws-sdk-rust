@@ -10,10 +10,7 @@ impl ListSignalCatalogsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_signal_catalogs::ListSignalCatalogsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signal_catalogs::ListSignalCatalogsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signal_catalogs::ListSignalCatalogsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_signal_catalogs();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl ListSignalCatalogsFluentBuilder {
         }
     }
     /// Access the ListSignalCatalogs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_signal_catalogs::builders::ListSignalCatalogsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_signal_catalogs::builders::ListSignalCatalogsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl ListSignalCatalogsFluentBuilder {
             crate::operation::list_signal_catalogs::ListSignalCatalogs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signal_catalogs::ListSignalCatalogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signal_catalogs::ListSignalCatalogsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl ListSignalCatalogsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl ListSignalCatalogsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_signal_catalogs::ListSignalCatalogsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signal_catalogs::ListSignalCatalogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signal_catalogs::ListSignalCatalogsError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl ListSignalCatalogsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_signal_catalogs::ListSignalCatalogsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signal_catalogs::ListSignalCatalogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signal_catalogs::ListSignalCatalogsError>,
     > {
         self.send_middleware().await
     }
@@ -119,22 +105,15 @@ impl ListSignalCatalogsFluentBuilder {
             crate::operation::list_signal_catalogs::ListSignalCatalogs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signal_catalogs::ListSignalCatalogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signal_catalogs::ListSignalCatalogsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_signal_catalogs::paginator::ListSignalCatalogsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_signal_catalogs::paginator::ListSignalCatalogsPaginator {
-        crate::operation::list_signal_catalogs::paginator::ListSignalCatalogsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_signal_catalogs::paginator::ListSignalCatalogsPaginator {
+        crate::operation::list_signal_catalogs::paginator::ListSignalCatalogsPaginator::new(self.handle, self.inner)
     }
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>

@@ -32,9 +32,7 @@ impl InstanceFleetStateChangeReason {
 
 /// A builder for [`InstanceFleetStateChangeReason`](crate::types::InstanceFleetStateChangeReason).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceFleetStateChangeReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::InstanceFleetStateChangeReasonCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -46,17 +44,12 @@ impl InstanceFleetStateChangeReasonBuilder {
         self
     }
     /// <p>A code corresponding to the reason the state change occurred.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceFleetStateChangeReasonCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::InstanceFleetStateChangeReasonCode>) -> Self {
         self.code = input;
         self
     }
     /// <p>A code corresponding to the reason the state change occurred.</p>
-    pub fn get_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceFleetStateChangeReasonCode> {
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::InstanceFleetStateChangeReasonCode> {
         &self.code
     }
     /// <p>An explanatory message.</p>

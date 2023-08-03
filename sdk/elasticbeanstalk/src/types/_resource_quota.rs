@@ -23,9 +23,7 @@ impl ResourceQuota {
 
 /// A builder for [`ResourceQuota`](crate::types::ResourceQuota).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceQuotaBuilder {
     pub(crate) maximum: ::std::option::Option<i32>,
 }
@@ -46,8 +44,6 @@ impl ResourceQuotaBuilder {
     }
     /// Consumes the builder and constructs a [`ResourceQuota`](crate::types::ResourceQuota).
     pub fn build(self) -> crate::types::ResourceQuota {
-        crate::types::ResourceQuota {
-            maximum: self.maximum,
-        }
+        crate::types::ResourceQuota { maximum: self.maximum }
     }
 }

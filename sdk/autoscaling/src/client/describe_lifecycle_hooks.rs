@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeLifecycleHooksOutput`](crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksOutput) with field(s):
     ///   - [`lifecycle_hooks(Option<Vec<LifecycleHook>>)`](crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksOutput::lifecycle_hooks): <p>The lifecycle hooks for the specified group.</p>
     /// - On failure, responds with [`SdkError<DescribeLifecycleHooksError>`](crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksError)
-    pub fn describe_lifecycle_hooks(
-        &self,
-    ) -> crate::operation::describe_lifecycle_hooks::builders::DescribeLifecycleHooksFluentBuilder
-    {
+    pub fn describe_lifecycle_hooks(&self) -> crate::operation::describe_lifecycle_hooks::builders::DescribeLifecycleHooksFluentBuilder {
         crate::operation::describe_lifecycle_hooks::builders::DescribeLifecycleHooksFluentBuilder::new(self.handle.clone())
     }
 }

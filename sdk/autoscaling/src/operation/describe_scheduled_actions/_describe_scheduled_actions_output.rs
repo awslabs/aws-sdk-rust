@@ -5,8 +5,7 @@
 pub struct DescribeScheduledActionsOutput {
     /// <p>The scheduled actions.</p>
     #[doc(hidden)]
-    pub scheduled_update_group_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledUpdateGroupAction>>,
+    pub scheduled_update_group_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledUpdateGroupAction>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeScheduledActionsOutput {
 }
 impl DescribeScheduledActionsOutput {
     /// <p>The scheduled actions.</p>
-    pub fn scheduled_update_group_actions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ScheduledUpdateGroupAction]> {
+    pub fn scheduled_update_group_actions(&self) -> ::std::option::Option<&[crate::types::ScheduledUpdateGroupAction]> {
         self.scheduled_update_group_actions.as_deref()
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeScheduledActionsOutput {
 }
 impl DescribeScheduledActionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduledActionsOutput`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsOutputBuilder {
         crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScheduledActionsOutput`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScheduledActionsOutputBuilder {
-    pub(crate) scheduled_update_group_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledUpdateGroupAction>>,
+    pub(crate) scheduled_update_group_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledUpdateGroupAction>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl DescribeScheduledActionsOutputBuilder {
     /// To override the contents of this collection use [`set_scheduled_update_group_actions`](Self::set_scheduled_update_group_actions).
     ///
     /// <p>The scheduled actions.</p>
-    pub fn scheduled_update_group_actions(
-        mut self,
-        input: crate::types::ScheduledUpdateGroupAction,
-    ) -> Self {
+    pub fn scheduled_update_group_actions(mut self, input: crate::types::ScheduledUpdateGroupAction) -> Self {
         let mut v = self.scheduled_update_group_actions.unwrap_or_default();
         v.push(input);
         self.scheduled_update_group_actions = ::std::option::Option::Some(v);
@@ -73,9 +62,7 @@ impl DescribeScheduledActionsOutputBuilder {
         self
     }
     /// <p>The scheduled actions.</p>
-    pub fn get_scheduled_update_group_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledUpdateGroupAction>> {
+    pub fn get_scheduled_update_group_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledUpdateGroupAction>> {
         &self.scheduled_update_group_actions
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
@@ -102,9 +89,7 @@ impl DescribeScheduledActionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeScheduledActionsOutput`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput {
+    pub fn build(self) -> crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput {
         crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput {
             scheduled_update_group_actions: self.scheduled_update_group_actions,
             next_token: self.next_token,

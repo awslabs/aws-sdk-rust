@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TrafficMirrorTargetType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,14 +54,10 @@ pub enum TrafficMirrorTargetType {
 impl ::std::convert::From<&str> for TrafficMirrorTargetType {
     fn from(s: &str) -> Self {
         match s {
-            "gateway-load-balancer-endpoint" => {
-                TrafficMirrorTargetType::GatewayLoadBalancerEndpoint
-            }
+            "gateway-load-balancer-endpoint" => TrafficMirrorTargetType::GatewayLoadBalancerEndpoint,
             "network-interface" => TrafficMirrorTargetType::NetworkInterface,
             "network-load-balancer" => TrafficMirrorTargetType::NetworkLoadBalancer,
-            other => TrafficMirrorTargetType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => TrafficMirrorTargetType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -82,9 +72,7 @@ impl TrafficMirrorTargetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            TrafficMirrorTargetType::GatewayLoadBalancerEndpoint => {
-                "gateway-load-balancer-endpoint"
-            }
+            TrafficMirrorTargetType::GatewayLoadBalancerEndpoint => "gateway-load-balancer-endpoint",
             TrafficMirrorTargetType::NetworkInterface => "network-interface",
             TrafficMirrorTargetType::NetworkLoadBalancer => "network-load-balancer",
             TrafficMirrorTargetType::Unknown(value) => value.as_str(),
@@ -92,11 +80,7 @@ impl TrafficMirrorTargetType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "gateway-load-balancer-endpoint",
-            "network-interface",
-            "network-load-balancer",
-        ]
+        &["gateway-load-balancer-endpoint", "network-interface", "network-load-balancer"]
     }
 }
 impl ::std::convert::AsRef<str> for TrafficMirrorTargetType {

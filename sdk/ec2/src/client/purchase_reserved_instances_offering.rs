@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`PurchaseReservedInstancesOfferingOutput`](crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingOutput) with field(s):
     ///   - [`reserved_instances_id(Option<String>)`](crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingOutput::reserved_instances_id): <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<PurchaseReservedInstancesOfferingError>`](crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingError)
-    pub fn purchase_reserved_instances_offering(&self) -> crate::operation::purchase_reserved_instances_offering::builders::PurchaseReservedInstancesOfferingFluentBuilder{
+    pub fn purchase_reserved_instances_offering(
+        &self,
+    ) -> crate::operation::purchase_reserved_instances_offering::builders::PurchaseReservedInstancesOfferingFluentBuilder {
         crate::operation::purchase_reserved_instances_offering::builders::PurchaseReservedInstancesOfferingFluentBuilder::new(self.handle.clone())
     }
 }

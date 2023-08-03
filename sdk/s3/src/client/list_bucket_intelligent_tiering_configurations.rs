@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`next_continuation_token(Option<String>)`](crate::operation::list_bucket_intelligent_tiering_configurations::ListBucketIntelligentTieringConfigurationsOutput::next_continuation_token): <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
     ///   - [`intelligent_tiering_configuration_list(Option<Vec<IntelligentTieringConfiguration>>)`](crate::operation::list_bucket_intelligent_tiering_configurations::ListBucketIntelligentTieringConfigurationsOutput::intelligent_tiering_configuration_list): <p>The list of S3 Intelligent-Tiering configurations for a bucket.</p>
     /// - On failure, responds with [`SdkError<ListBucketIntelligentTieringConfigurationsError>`](crate::operation::list_bucket_intelligent_tiering_configurations::ListBucketIntelligentTieringConfigurationsError)
-    pub fn list_bucket_intelligent_tiering_configurations(&self) -> crate::operation::list_bucket_intelligent_tiering_configurations::builders::ListBucketIntelligentTieringConfigurationsFluentBuilder{
-        crate::operation::list_bucket_intelligent_tiering_configurations::builders::ListBucketIntelligentTieringConfigurationsFluentBuilder::new(self.handle.clone())
+    pub fn list_bucket_intelligent_tiering_configurations(
+        &self,
+    ) -> crate::operation::list_bucket_intelligent_tiering_configurations::builders::ListBucketIntelligentTieringConfigurationsFluentBuilder {
+        crate::operation::list_bucket_intelligent_tiering_configurations::builders::ListBucketIntelligentTieringConfigurationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

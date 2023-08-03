@@ -23,9 +23,7 @@ impl FpgaDeviceMemoryInfo {
 
 /// A builder for [`FpgaDeviceMemoryInfo`](crate::types::FpgaDeviceMemoryInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FpgaDeviceMemoryInfoBuilder {
     pub(crate) size_in_mi_b: ::std::option::Option<i32>,
 }

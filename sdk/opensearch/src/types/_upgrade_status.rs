@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UpgradeStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for UpgradeStatus {
             "IN_PROGRESS" => UpgradeStatus::InProgress,
             "SUCCEEDED" => UpgradeStatus::Succeeded,
             "SUCCEEDED_WITH_ISSUES" => UpgradeStatus::SucceededWithIssues,
-            other => {
-                UpgradeStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => UpgradeStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl UpgradeStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED",
-            "IN_PROGRESS",
-            "SUCCEEDED",
-            "SUCCEEDED_WITH_ISSUES",
-        ]
+        &["FAILED", "IN_PROGRESS", "SUCCEEDED", "SUCCEEDED_WITH_ISSUES"]
     }
 }
 impl ::std::convert::AsRef<str> for UpgradeStatus {

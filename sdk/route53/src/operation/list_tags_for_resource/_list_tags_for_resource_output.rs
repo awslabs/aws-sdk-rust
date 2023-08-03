@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
+    pub fn builder() -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
         crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsForResourceOutputBuilder {
     pub(crate) resource_tag_set: ::std::option::Option<crate::types::ResourceTagSet>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl ListTagsForResourceOutputBuilder {
         self
     }
     /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
-    pub fn set_resource_tag_set(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceTagSet>,
-    ) -> Self {
+    pub fn set_resource_tag_set(mut self, input: ::std::option::Option<crate::types::ResourceTagSet>) -> Self {
         self.resource_tag_set = input;
         self
     }

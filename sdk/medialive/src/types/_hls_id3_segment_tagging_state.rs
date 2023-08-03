@@ -38,13 +38,7 @@
 /// State of HLS ID3 Segment Tagging
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HlsId3SegmentTaggingState {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for HlsId3SegmentTaggingState {
         match s {
             "DISABLED" => HlsId3SegmentTaggingState::Disabled,
             "ENABLED" => HlsId3SegmentTaggingState::Enabled,
-            other => HlsId3SegmentTaggingState::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => HlsId3SegmentTaggingState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

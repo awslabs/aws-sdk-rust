@@ -49,9 +49,7 @@ impl PutCodeBindingOutput {
 
 /// A builder for [`PutCodeBindingOutput`](crate::operation::put_code_binding::PutCodeBindingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutCodeBindingOutputBuilder {
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -66,10 +64,7 @@ impl PutCodeBindingOutputBuilder {
         self
     }
     /// <p>The time and date that the code binding was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -83,10 +78,7 @@ impl PutCodeBindingOutputBuilder {
         self
     }
     /// <p>The date and time that code bindings were modified.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }
@@ -95,18 +87,12 @@ impl PutCodeBindingOutputBuilder {
         &self.last_modified
     }
     /// <p>The version number of the schema.</p>
-    pub fn schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the schema.</p>
-    pub fn set_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version = input;
         self
     }
@@ -120,10 +106,7 @@ impl PutCodeBindingOutputBuilder {
         self
     }
     /// <p>The current status of code binding generation.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeGenerationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CodeGenerationStatus>) -> Self {
         self.status = input;
         self
     }

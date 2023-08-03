@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`resource_arn(Option<String>)`](crate::operation::put_resource_policy::PutResourcePolicyOutput::resource_arn): <p> The Amazon Resource Name (ARN) of the CloudTrail channel attached to the resource-based policy. </p>
     ///   - [`resource_policy(Option<String>)`](crate::operation::put_resource_policy::PutResourcePolicyOutput::resource_policy): <p> The JSON-formatted string of the Amazon Web Services resource-based policy attached to the CloudTrail channel. </p>
     /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::operation::put_resource_policy::PutResourcePolicyError)
-    pub fn put_resource_policy(
-        &self,
-    ) -> crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder {
-        crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_resource_policy(&self) -> crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder {
+        crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder::new(self.handle.clone())
     }
 }

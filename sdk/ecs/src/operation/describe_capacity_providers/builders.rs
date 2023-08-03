@@ -26,7 +26,7 @@ impl DescribeCapacityProvidersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCapacityProvidersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_capacity_providers::builders::DescribeCapacityProvidersInputBuilder,
+    inner: crate::operation::describe_capacity_providers::builders::DescribeCapacityProvidersInputBuilder,
 }
 impl DescribeCapacityProvidersFluentBuilder {
     /// Creates a new `DescribeCapacityProviders`.
@@ -37,7 +37,7 @@ impl DescribeCapacityProvidersFluentBuilder {
         }
     }
     /// Access the DescribeCapacityProviders as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_capacity_providers::builders::DescribeCapacityProvidersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_capacity_providers::builders::DescribeCapacityProvidersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeCapacityProvidersFluentBuilder {
             crate::operation::describe_capacity_providers::DescribeCapacityProviders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_capacity_providers::DescribeCapacityProvidersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_capacity_providers::DescribeCapacityProvidersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeCapacityProvidersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeCapacityProvidersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_capacity_providers::DescribeCapacityProvidersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_capacity_providers::DescribeCapacityProvidersError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeCapacityProvidersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_capacity_providers::DescribeCapacityProvidersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_capacity_providers::DescribeCapacityProvidersError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeCapacityProvidersFluentBuilder {
             crate::operation::describe_capacity_providers::DescribeCapacityProviders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_capacity_providers::DescribeCapacityProvidersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_capacity_providers::DescribeCapacityProvidersError>,
     > {
         self.customize_middleware().await
     }
@@ -125,25 +114,17 @@ impl DescribeCapacityProvidersFluentBuilder {
     /// To override the contents of this collection use [`set_capacity_providers`](Self::set_capacity_providers).
     ///
     /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
-    pub fn capacity_providers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_providers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.capacity_providers(input.into());
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
-    pub fn set_capacity_providers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_capacity_providers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_capacity_providers(input);
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
-    pub fn get_capacity_providers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capacity_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_capacity_providers()
     }
     /// Appends an item to `include`.
@@ -156,17 +137,12 @@ impl DescribeCapacityProvidersFluentBuilder {
         self
     }
     /// <p>Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn set_include(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>>,
-    ) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>>) -> Self {
         self.inner = self.inner.set_include(input);
         self
     }
     /// <p>Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn get_include(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>> {
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>> {
         self.inner.get_include()
     }
     /// <p>The maximum number of account setting results returned by <code>DescribeCapacityProviders</code> in paginated output. When this parameter is used, <code>DescribeCapacityProviders</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeCapacityProviders</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter is not used, then <code>DescribeCapacityProviders</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>

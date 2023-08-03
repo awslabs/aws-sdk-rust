@@ -51,9 +51,7 @@ impl AssessmentTarget {
 
 /// A builder for [`AssessmentTarget`](crate::types::AssessmentTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssessmentTargetBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -91,18 +89,12 @@ impl AssessmentTargetBuilder {
         &self.name
     }
     /// <p>The ARN that specifies the resource group that is associated with the assessment target.</p>
-    pub fn resource_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN that specifies the resource group that is associated with the assessment target.</p>
-    pub fn set_resource_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_arn = input;
         self
     }
@@ -116,10 +108,7 @@ impl AssessmentTargetBuilder {
         self
     }
     /// <p>The time at which the assessment target is created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -133,10 +122,7 @@ impl AssessmentTargetBuilder {
         self
     }
     /// <p>The time at which <code>UpdateAssessmentTarget</code> is called.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

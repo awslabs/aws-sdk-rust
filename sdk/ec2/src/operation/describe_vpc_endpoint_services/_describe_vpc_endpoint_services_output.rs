@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeVpcEndpointServicesOutput {
 }
 impl DescribeVpcEndpointServicesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointServicesOutput`](crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesOutput).
-    pub fn builder() -> crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesOutputBuilder {
         crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcEndpointServicesOutput`](crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointServicesOutputBuilder {
     pub(crate) service_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) service_details: ::std::option::Option<::std::vec::Vec<crate::types::ServiceDetail>>,
@@ -57,27 +55,19 @@ impl DescribeVpcEndpointServicesOutputBuilder {
     /// To override the contents of this collection use [`set_service_names`](Self::set_service_names).
     ///
     /// <p>The supported services.</p>
-    pub fn service_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.service_names.unwrap_or_default();
         v.push(input.into());
         self.service_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The supported services.</p>
-    pub fn set_service_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_service_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.service_names = input;
         self
     }
     /// <p>The supported services.</p>
-    pub fn get_service_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.service_names
     }
     /// Appends an item to `service_details`.
@@ -92,17 +82,12 @@ impl DescribeVpcEndpointServicesOutputBuilder {
         self
     }
     /// <p>Information about the service.</p>
-    pub fn set_service_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceDetail>>,
-    ) -> Self {
+    pub fn set_service_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceDetail>>) -> Self {
         self.service_details = input;
         self
     }
     /// <p>Information about the service.</p>
-    pub fn get_service_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceDetail>> {
+    pub fn get_service_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceDetail>> {
         &self.service_details
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -129,9 +114,7 @@ impl DescribeVpcEndpointServicesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointServicesOutput`](crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesOutput {
+    pub fn build(self) -> crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesOutput {
         crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesOutput {
             service_names: self.service_names,
             service_details: self.service_details,

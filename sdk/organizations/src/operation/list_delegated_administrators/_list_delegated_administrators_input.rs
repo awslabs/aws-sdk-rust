@@ -31,16 +31,14 @@ impl ListDelegatedAdministratorsInput {
 }
 impl ListDelegatedAdministratorsInput {
     /// Creates a new builder-style object to manufacture [`ListDelegatedAdministratorsInput`](crate::operation::list_delegated_administrators::ListDelegatedAdministratorsInput).
-    pub fn builder() -> crate::operation::list_delegated_administrators::builders::ListDelegatedAdministratorsInputBuilder{
+    pub fn builder() -> crate::operation::list_delegated_administrators::builders::ListDelegatedAdministratorsInputBuilder {
         crate::operation::list_delegated_administrators::builders::ListDelegatedAdministratorsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDelegatedAdministratorsInput`](crate::operation::list_delegated_administrators::ListDelegatedAdministratorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDelegatedAdministratorsInputBuilder {
     pub(crate) service_principal: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -49,19 +47,13 @@ pub struct ListDelegatedAdministratorsInputBuilder {
 impl ListDelegatedAdministratorsInputBuilder {
     /// <p>Specifies a service principal name. If specified, then the operation lists the delegated administrators only for the specified service.</p>
     /// <p>If you don't specify a service principal, the operation lists all delegated administrators for all services in your organization.</p>
-    pub fn service_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_principal = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a service principal name. If specified, then the operation lists the delegated administrators only for the specified service.</p>
     /// <p>If you don't specify a service principal, the operation lists all delegated administrators for all services in your organization.</p>
-    pub fn set_service_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_principal = input;
         self
     }
@@ -105,12 +97,10 @@ impl ListDelegatedAdministratorsInputBuilder {
         crate::operation::list_delegated_administrators::ListDelegatedAdministratorsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_delegated_administrators::ListDelegatedAdministratorsInput {
-                service_principal: self.service_principal,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_delegated_administrators::ListDelegatedAdministratorsInput {
+            service_principal: self.service_principal,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

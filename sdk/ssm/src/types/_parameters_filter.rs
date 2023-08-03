@@ -30,9 +30,7 @@ impl ParametersFilter {
 
 /// A builder for [`ParametersFilter`](crate::types::ParametersFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParametersFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::ParametersFilterKey>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl ParametersFilterBuilder {
         self
     }
     /// <p>The name of the filter.</p>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::ParametersFilterKey>,
-    ) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::ParametersFilterKey>) -> Self {
         self.key = input;
         self
     }
@@ -67,10 +62,7 @@ impl ParametersFilterBuilder {
         self
     }
     /// <p>The filter values.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

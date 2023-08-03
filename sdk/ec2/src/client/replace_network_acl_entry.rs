@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`rule_number(i32)`](crate::operation::replace_network_acl_entry::builders::ReplaceNetworkAclEntryFluentBuilder::rule_number) / [`set_rule_number(Option<i32>)`](crate::operation::replace_network_acl_entry::builders::ReplaceNetworkAclEntryFluentBuilder::set_rule_number): <p>The rule number of the entry to replace.</p>
     /// - On success, responds with [`ReplaceNetworkAclEntryOutput`](crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryOutput)
     /// - On failure, responds with [`SdkError<ReplaceNetworkAclEntryError>`](crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryError)
-    pub fn replace_network_acl_entry(
-        &self,
-    ) -> crate::operation::replace_network_acl_entry::builders::ReplaceNetworkAclEntryFluentBuilder
-    {
+    pub fn replace_network_acl_entry(&self) -> crate::operation::replace_network_acl_entry::builders::ReplaceNetworkAclEntryFluentBuilder {
         crate::operation::replace_network_acl_entry::builders::ReplaceNetworkAclEntryFluentBuilder::new(self.handle.clone())
     }
 }

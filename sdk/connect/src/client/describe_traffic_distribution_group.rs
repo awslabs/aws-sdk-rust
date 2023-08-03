@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeTrafficDistributionGroupOutput`](crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupOutput) with field(s):
     ///   - [`traffic_distribution_group(Option<TrafficDistributionGroup>)`](crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupOutput::traffic_distribution_group): <p>Information about the traffic distribution group.</p>
     /// - On failure, responds with [`SdkError<DescribeTrafficDistributionGroupError>`](crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupError)
-    pub fn describe_traffic_distribution_group(&self) -> crate::operation::describe_traffic_distribution_group::builders::DescribeTrafficDistributionGroupFluentBuilder{
+    pub fn describe_traffic_distribution_group(
+        &self,
+    ) -> crate::operation::describe_traffic_distribution_group::builders::DescribeTrafficDistributionGroupFluentBuilder {
         crate::operation::describe_traffic_distribution_group::builders::DescribeTrafficDistributionGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`ListServiceSpecificCredentialsOutput`](crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput) with field(s):
     ///   - [`service_specific_credentials(Option<Vec<ServiceSpecificCredentialMetadata>>)`](crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput::service_specific_credentials): <p>A list of structures that each contain details about a service-specific credential.</p>
     /// - On failure, responds with [`SdkError<ListServiceSpecificCredentialsError>`](crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsError)
-    pub fn list_service_specific_credentials(&self) -> crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsFluentBuilder{
+    pub fn list_service_specific_credentials(
+        &self,
+    ) -> crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsFluentBuilder {
         crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsFluentBuilder::new(self.handle.clone())
     }
 }

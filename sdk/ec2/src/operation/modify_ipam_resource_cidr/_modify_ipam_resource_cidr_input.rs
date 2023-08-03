@@ -57,18 +57,14 @@ impl ModifyIpamResourceCidrInput {
 }
 impl ModifyIpamResourceCidrInput {
     /// Creates a new builder-style object to manufacture [`ModifyIpamResourceCidrInput`](crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrInput).
-    pub fn builder(
-    ) -> crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrInputBuilder {
         crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyIpamResourceCidrInput`](crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyIpamResourceCidrInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -108,18 +104,12 @@ impl ModifyIpamResourceCidrInputBuilder {
         &self.resource_id
     }
     /// <p>The CIDR of the resource you want to modify.</p>
-    pub fn resource_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CIDR of the resource you want to modify.</p>
-    pub fn set_resource_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_cidr = input;
         self
     }
@@ -128,18 +118,12 @@ impl ModifyIpamResourceCidrInputBuilder {
         &self.resource_cidr
     }
     /// <p>The Amazon Web Services Region of the resource you want to modify.</p>
-    pub fn resource_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region of the resource you want to modify.</p>
-    pub fn set_resource_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_region = input;
         self
     }
@@ -148,18 +132,12 @@ impl ModifyIpamResourceCidrInputBuilder {
         &self.resource_region
     }
     /// <p>The ID of the current scope that the resource CIDR is in.</p>
-    pub fn current_ipam_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_ipam_scope_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the current scope that the resource CIDR is in.</p>
-    pub fn set_current_ipam_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_ipam_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_ipam_scope_id = input;
         self
     }
@@ -168,18 +146,12 @@ impl ModifyIpamResourceCidrInputBuilder {
         &self.current_ipam_scope_id
     }
     /// <p>The ID of the scope you want to transfer the resource CIDR to.</p>
-    pub fn destination_ipam_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_ipam_scope_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the scope you want to transfer the resource CIDR to.</p>
-    pub fn set_destination_ipam_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_ipam_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_ipam_scope_id = input;
         self
     }
@@ -208,16 +180,14 @@ impl ModifyIpamResourceCidrInputBuilder {
         crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrInput {
-                dry_run: self.dry_run,
-                resource_id: self.resource_id,
-                resource_cidr: self.resource_cidr,
-                resource_region: self.resource_region,
-                current_ipam_scope_id: self.current_ipam_scope_id,
-                destination_ipam_scope_id: self.destination_ipam_scope_id,
-                monitored: self.monitored,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrInput {
+            dry_run: self.dry_run,
+            resource_id: self.resource_id,
+            resource_cidr: self.resource_cidr,
+            resource_region: self.resource_region,
+            current_ipam_scope_id: self.current_ipam_scope_id,
+            destination_ipam_scope_id: self.destination_ipam_scope_id,
+            monitored: self.monitored,
+        })
     }
 }

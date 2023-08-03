@@ -37,10 +37,7 @@ impl ListProtectedResourcesFluentBuilder {
         }
     }
     /// Access the ListProtectedResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_protected_resources::builders::ListProtectedResourcesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_protected_resources::builders::ListProtectedResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListProtectedResourcesFluentBuilder {
             crate::operation::list_protected_resources::ListProtectedResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_protected_resources::ListProtectedResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_protected_resources::ListProtectedResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListProtectedResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListProtectedResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_protected_resources::ListProtectedResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_protected_resources::ListProtectedResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_protected_resources::ListProtectedResourcesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListProtectedResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_protected_resources::ListProtectedResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_protected_resources::ListProtectedResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_protected_resources::ListProtectedResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl ListProtectedResourcesFluentBuilder {
             crate::operation::list_protected_resources::ListProtectedResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_protected_resources::ListProtectedResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_protected_resources::ListProtectedResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_protected_resources::paginator::ListProtectedResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_protected_resources::paginator::ListProtectedResourcesPaginator
-    {
-        crate::operation::list_protected_resources::paginator::ListProtectedResourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_protected_resources::paginator::ListProtectedResourcesPaginator {
+        crate::operation::list_protected_resources::paginator::ListProtectedResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

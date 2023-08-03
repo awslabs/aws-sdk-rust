@@ -43,17 +43,14 @@ impl DescribeIpamPoolsInput {
 }
 impl DescribeIpamPoolsInput {
     /// Creates a new builder-style object to manufacture [`DescribeIpamPoolsInput`](crate::operation::describe_ipam_pools::DescribeIpamPoolsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsInputBuilder {
+    pub fn builder() -> crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsInputBuilder {
         crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIpamPoolsInput`](crate::operation::describe_ipam_pools::DescribeIpamPoolsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpamPoolsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -88,10 +85,7 @@ impl DescribeIpamPoolsInputBuilder {
         self
     }
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -132,44 +126,31 @@ impl DescribeIpamPoolsInputBuilder {
     /// To override the contents of this collection use [`set_ipam_pool_ids`](Self::set_ipam_pool_ids).
     ///
     /// <p>The IDs of the IPAM pools you would like information on.</p>
-    pub fn ipam_pool_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_pool_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ipam_pool_ids.unwrap_or_default();
         v.push(input.into());
         self.ipam_pool_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the IPAM pools you would like information on.</p>
-    pub fn set_ipam_pool_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ipam_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ipam_pool_ids = input;
         self
     }
     /// <p>The IDs of the IPAM pools you would like information on.</p>
-    pub fn get_ipam_pool_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ipam_pool_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ipam_pool_ids
     }
     /// Consumes the builder and constructs a [`DescribeIpamPoolsInput`](crate::operation::describe_ipam_pools::DescribeIpamPoolsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ipam_pools::DescribeIpamPoolsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_ipam_pools::DescribeIpamPoolsInput {
-                dry_run: self.dry_run,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                ipam_pool_ids: self.ipam_pool_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_ipam_pools::DescribeIpamPoolsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_ipam_pools::DescribeIpamPoolsInput {
+            dry_run: self.dry_run,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            ipam_pool_ids: self.ipam_pool_ids,
+        })
     }
 }

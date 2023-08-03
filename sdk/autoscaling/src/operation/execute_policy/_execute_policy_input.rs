@@ -58,9 +58,7 @@ impl ExecutePolicyInput {
 
 /// A builder for [`ExecutePolicyInput`](crate::operation::execute_policy::ExecutePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecutePolicyInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ pub struct ExecutePolicyInputBuilder {
 }
 impl ExecutePolicyInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -160,10 +152,7 @@ impl ExecutePolicyInputBuilder {
     /// Consumes the builder and constructs a [`ExecutePolicyInput`](crate::operation::execute_policy::ExecutePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::execute_policy::ExecutePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::execute_policy::ExecutePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_policy::ExecutePolicyInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             policy_name: self.policy_name,

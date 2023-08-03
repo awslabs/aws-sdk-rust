@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`overridden(bool)`](crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput::overridden): <p>A Boolean value that indicates whether a pull request has had its rules set aside (TRUE) or whether all approval rules still apply (FALSE).</p>
     ///   - [`overrider(Option<String>)`](crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput::overrider): <p>The Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>
     /// - On failure, responds with [`SdkError<GetPullRequestOverrideStateError>`](crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError)
-    pub fn get_pull_request_override_state(&self) -> crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateFluentBuilder{
+    pub fn get_pull_request_override_state(
+        &self,
+    ) -> crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateFluentBuilder {
         crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateFluentBuilder::new(self.handle.clone())
     }
 }

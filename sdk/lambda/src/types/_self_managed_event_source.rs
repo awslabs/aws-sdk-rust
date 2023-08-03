@@ -6,23 +6,13 @@
 pub struct SelfManagedEventSource {
     /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
     #[doc(hidden)]
-    pub endpoints: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::EndPointType,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    >,
+    pub endpoints: ::std::option::Option<::std::collections::HashMap<crate::types::EndPointType, ::std::vec::Vec<::std::string::String>>>,
 }
 impl SelfManagedEventSource {
     /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
     pub fn endpoints(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::EndPointType,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::EndPointType, ::std::vec::Vec<::std::string::String>>> {
         self.endpoints.as_ref()
     }
 }
@@ -35,16 +25,9 @@ impl SelfManagedEventSource {
 
 /// A builder for [`SelfManagedEventSource`](crate::types::SelfManagedEventSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelfManagedEventSourceBuilder {
-    pub(crate) endpoints: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::EndPointType,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    >,
+    pub(crate) endpoints: ::std::option::Option<::std::collections::HashMap<crate::types::EndPointType, ::std::vec::Vec<::std::string::String>>>,
 }
 impl SelfManagedEventSourceBuilder {
     /// Adds a key-value pair to `endpoints`.
@@ -52,11 +35,7 @@ impl SelfManagedEventSourceBuilder {
     /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
     ///
     /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
-    pub fn endpoints(
-        mut self,
-        k: crate::types::EndPointType,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn endpoints(mut self, k: crate::types::EndPointType, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.endpoints.unwrap_or_default();
         hash_map.insert(k, v);
         self.endpoints = ::std::option::Option::Some(hash_map);
@@ -65,12 +44,7 @@ impl SelfManagedEventSourceBuilder {
     /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
     pub fn set_endpoints(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::EndPointType,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::EndPointType, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.endpoints = input;
         self
@@ -78,18 +52,11 @@ impl SelfManagedEventSourceBuilder {
     /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
     pub fn get_endpoints(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::EndPointType,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::EndPointType, ::std::vec::Vec<::std::string::String>>> {
         &self.endpoints
     }
     /// Consumes the builder and constructs a [`SelfManagedEventSource`](crate::types::SelfManagedEventSource).
     pub fn build(self) -> crate::types::SelfManagedEventSource {
-        crate::types::SelfManagedEventSource {
-            endpoints: self.endpoints,
-        }
+        crate::types::SelfManagedEventSource { endpoints: self.endpoints }
     }
 }

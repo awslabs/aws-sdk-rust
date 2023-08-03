@@ -15,49 +15,43 @@ impl DeleteReplicationConfigurationTemplateInput {
 }
 impl DeleteReplicationConfigurationTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationConfigurationTemplateInput`](crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput).
-    pub fn builder() -> crate::operation::delete_replication_configuration_template::builders::DeleteReplicationConfigurationTemplateInputBuilder{
+    pub fn builder() -> crate::operation::delete_replication_configuration_template::builders::DeleteReplicationConfigurationTemplateInputBuilder {
         crate::operation::delete_replication_configuration_template::builders::DeleteReplicationConfigurationTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReplicationConfigurationTemplateInput`](crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReplicationConfigurationTemplateInputBuilder {
     pub(crate) replication_configuration_template_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReplicationConfigurationTemplateInputBuilder {
     /// <p>The ID of the Replication Configuration Template to be deleted.</p>
-    pub fn replication_configuration_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_configuration_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Replication Configuration Template to be deleted.</p>
-    pub fn set_replication_configuration_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_configuration_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_configuration_template_id = input;
         self
     }
     /// <p>The ID of the Replication Configuration Template to be deleted.</p>
-    pub fn get_replication_configuration_template_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_replication_configuration_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_configuration_template_id
     }
     /// Consumes the builder and constructs a [`DeleteReplicationConfigurationTemplateInput`](crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput {
-                replication_configuration_template_id: self.replication_configuration_template_id
-                ,
-            }
+                replication_configuration_template_id: self.replication_configuration_template_id,
+            },
         )
     }
 }

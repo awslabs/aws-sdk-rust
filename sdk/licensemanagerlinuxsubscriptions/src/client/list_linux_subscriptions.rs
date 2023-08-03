@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`subscriptions(Option<Vec<Subscription>>)`](crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsOutput::subscriptions): <p>An array that contains subscription objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsOutput::next_token): <p>Token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListLinuxSubscriptionsError>`](crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError)
-    pub fn list_linux_subscriptions(
-        &self,
-    ) -> crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsFluentBuilder
-    {
+    pub fn list_linux_subscriptions(&self) -> crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsFluentBuilder {
         crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsFluentBuilder::new(self.handle.clone())
     }
 }

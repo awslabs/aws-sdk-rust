@@ -37,9 +37,7 @@ impl CaptchaResponse {
 
 /// A builder for [`CaptchaResponse`](crate::types::CaptchaResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CaptchaResponseBuilder {
     pub(crate) response_code: ::std::option::Option<i32>,
     pub(crate) solve_timestamp: ::std::option::Option<i64>,
@@ -80,10 +78,7 @@ impl CaptchaResponseBuilder {
         self
     }
     /// <p>The reason for failure, populated when the evaluation of the token fails.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureReason>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<crate::types::FailureReason>) -> Self {
         self.failure_reason = input;
         self
     }

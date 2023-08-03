@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`job_template_arn(Option<String>)`](crate::operation::create_job_template::CreateJobTemplateOutput::job_template_arn): <p>The ARN of the job template.</p>
     ///   - [`job_template_id(Option<String>)`](crate::operation::create_job_template::CreateJobTemplateOutput::job_template_id): <p>The unique identifier of the job template.</p>
     /// - On failure, responds with [`SdkError<CreateJobTemplateError>`](crate::operation::create_job_template::CreateJobTemplateError)
-    pub fn create_job_template(
-        &self,
-    ) -> crate::operation::create_job_template::builders::CreateJobTemplateFluentBuilder {
-        crate::operation::create_job_template::builders::CreateJobTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_job_template(&self) -> crate::operation::create_job_template::builders::CreateJobTemplateFluentBuilder {
+        crate::operation::create_job_template::builders::CreateJobTemplateFluentBuilder::new(self.handle.clone())
     }
 }

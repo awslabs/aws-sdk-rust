@@ -37,9 +37,7 @@ impl GetTelemetryMetadataFluentBuilder {
         }
     }
     /// Access the GetTelemetryMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetTelemetryMetadataFluentBuilder {
             crate::operation::get_telemetry_metadata::GetTelemetryMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_telemetry_metadata::GetTelemetryMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_telemetry_metadata::GetTelemetryMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetTelemetryMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetTelemetryMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_telemetry_metadata::GetTelemetryMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_telemetry_metadata::GetTelemetryMetadataError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetTelemetryMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_telemetry_metadata::GetTelemetryMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_telemetry_metadata::GetTelemetryMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetTelemetryMetadataFluentBuilder {
             crate::operation::get_telemetry_metadata::GetTelemetryMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_telemetry_metadata::GetTelemetryMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_telemetry_metadata::GetTelemetryMetadataError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
-    pub fn assessment_run_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_run_arn(input.into());
         self
     }
     /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
-    pub fn set_assessment_run_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_run_arn(input);
         self
     }

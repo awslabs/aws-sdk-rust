@@ -9,10 +9,7 @@ pub fn ser_batch_create_index(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_attribute_key::ser_attribute_key(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_attribute_key::ser_attribute_key(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

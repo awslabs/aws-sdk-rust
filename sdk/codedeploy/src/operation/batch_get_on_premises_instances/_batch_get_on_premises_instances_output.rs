@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for BatchGetOnPremisesInstancesOutput {
 }
 impl BatchGetOnPremisesInstancesOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetOnPremisesInstancesOutput`](crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesOutput).
-    pub fn builder() -> crate::operation::batch_get_on_premises_instances::builders::BatchGetOnPremisesInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::batch_get_on_premises_instances::builders::BatchGetOnPremisesInstancesOutputBuilder {
         crate::operation::batch_get_on_premises_instances::builders::BatchGetOnPremisesInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetOnPremisesInstancesOutput`](crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetOnPremisesInstancesOutputBuilder {
     pub(crate) instance_infos: ::std::option::Option<::std::vec::Vec<crate::types::InstanceInfo>>,
     _request_id: Option<String>,
@@ -49,17 +47,12 @@ impl BatchGetOnPremisesInstancesOutputBuilder {
         self
     }
     /// <p>Information about the on-premises instances.</p>
-    pub fn set_instance_infos(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceInfo>>,
-    ) -> Self {
+    pub fn set_instance_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceInfo>>) -> Self {
         self.instance_infos = input;
         self
     }
     /// <p>Information about the on-premises instances.</p>
-    pub fn get_instance_infos(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceInfo>> {
+    pub fn get_instance_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceInfo>> {
         &self.instance_infos
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +65,7 @@ impl BatchGetOnPremisesInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetOnPremisesInstancesOutput`](crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesOutput {
+    pub fn build(self) -> crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesOutput {
         crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesOutput {
             instance_infos: self.instance_infos,
             _request_id: self._request_id,

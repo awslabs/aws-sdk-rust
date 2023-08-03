@@ -40,9 +40,7 @@ impl GetTranscriptionJobFluentBuilder {
         }
     }
     /// Access the GetTranscriptionJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_transcription_job::builders::GetTranscriptionJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_transcription_job::builders::GetTranscriptionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl GetTranscriptionJobFluentBuilder {
             crate::operation::get_transcription_job::GetTranscriptionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_transcription_job::GetTranscriptionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_transcription_job::GetTranscriptionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl GetTranscriptionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl GetTranscriptionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_transcription_job::GetTranscriptionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_transcription_job::GetTranscriptionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_transcription_job::GetTranscriptionJobError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl GetTranscriptionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_transcription_job::GetTranscriptionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_transcription_job::GetTranscriptionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_transcription_job::GetTranscriptionJobError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +108,17 @@ impl GetTranscriptionJobFluentBuilder {
             crate::operation::get_transcription_job::GetTranscriptionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_transcription_job::GetTranscriptionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_transcription_job::GetTranscriptionJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the transcription job you want information about. Job names are case sensitive.</p>
-    pub fn transcription_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transcription_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transcription_job_name(input.into());
         self
     }
     /// <p>The name of the transcription job you want information about. Job names are case sensitive.</p>
-    pub fn set_transcription_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transcription_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transcription_job_name(input);
         self
     }

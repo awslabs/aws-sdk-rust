@@ -37,9 +37,7 @@ impl RemoveTagsFromVaultFluentBuilder {
         }
     }
     /// Access the RemoveTagsFromVault as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl RemoveTagsFromVaultFluentBuilder {
             crate::operation::remove_tags_from_vault::RemoveTagsFromVault,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl RemoveTagsFromVaultFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl RemoveTagsFromVaultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_tags_from_vault::RemoveTagsFromVaultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl RemoveTagsFromVaultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_tags_from_vault::RemoveTagsFromVaultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl RemoveTagsFromVaultFluentBuilder {
             crate::operation::remove_tags_from_vault::RemoveTagsFromVault,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError>,
     > {
         self.customize_middleware().await
     }
@@ -160,10 +147,7 @@ impl RemoveTagsFromVaultFluentBuilder {
         self
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }

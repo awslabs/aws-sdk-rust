@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`TestRenderTemplateOutput`](crate::operation::test_render_template::TestRenderTemplateOutput) with field(s):
     ///   - [`rendered_template(Option<String>)`](crate::operation::test_render_template::TestRenderTemplateOutput::rendered_template): <p>The complete MIME message rendered by applying the data in the TemplateData parameter to the template specified in the TemplateName parameter.</p>
     /// - On failure, responds with [`SdkError<TestRenderTemplateError>`](crate::operation::test_render_template::TestRenderTemplateError)
-    pub fn test_render_template(
-        &self,
-    ) -> crate::operation::test_render_template::builders::TestRenderTemplateFluentBuilder {
-        crate::operation::test_render_template::builders::TestRenderTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn test_render_template(&self) -> crate::operation::test_render_template::builders::TestRenderTemplateFluentBuilder {
+        crate::operation::test_render_template::builders::TestRenderTemplateFluentBuilder::new(self.handle.clone())
     }
 }

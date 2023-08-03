@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for AcceptReservedInstancesExchangeQuoteO
 }
 impl AcceptReservedInstancesExchangeQuoteOutput {
     /// Creates a new builder-style object to manufacture [`AcceptReservedInstancesExchangeQuoteOutput`](crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteOutput).
-    pub fn builder() -> crate::operation::accept_reserved_instances_exchange_quote::builders::AcceptReservedInstancesExchangeQuoteOutputBuilder{
+    pub fn builder() -> crate::operation::accept_reserved_instances_exchange_quote::builders::AcceptReservedInstancesExchangeQuoteOutputBuilder {
         crate::operation::accept_reserved_instances_exchange_quote::builders::AcceptReservedInstancesExchangeQuoteOutputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptReservedInstancesExchangeQuoteOutput`](crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptReservedInstancesExchangeQuoteOutputBuilder {
     pub(crate) exchange_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -61,10 +59,9 @@ impl AcceptReservedInstancesExchangeQuoteOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AcceptReservedInstancesExchangeQuoteOutput`](crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteOutput).
-    pub fn build(self) -> crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteOutput{
+    pub fn build(self) -> crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteOutput {
         crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteOutput {
-            exchange_id: self.exchange_id
-            ,
+            exchange_id: self.exchange_id,
             _request_id: self._request_id,
         }
     }

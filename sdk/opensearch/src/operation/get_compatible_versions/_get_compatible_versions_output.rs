@@ -6,15 +6,12 @@
 pub struct GetCompatibleVersionsOutput {
     /// <p>A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
     #[doc(hidden)]
-    pub compatible_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>>,
+    pub compatible_versions: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>>,
     _request_id: Option<String>,
 }
 impl GetCompatibleVersionsOutput {
     /// <p>A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
-    pub fn compatible_versions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CompatibleVersionsMap]> {
+    pub fn compatible_versions(&self) -> ::std::option::Option<&[crate::types::CompatibleVersionsMap]> {
         self.compatible_versions.as_deref()
     }
 }
@@ -25,21 +22,16 @@ impl ::aws_http::request_id::RequestId for GetCompatibleVersionsOutput {
 }
 impl GetCompatibleVersionsOutput {
     /// Creates a new builder-style object to manufacture [`GetCompatibleVersionsOutput`](crate::operation::get_compatible_versions::GetCompatibleVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_compatible_versions::builders::GetCompatibleVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_compatible_versions::builders::GetCompatibleVersionsOutputBuilder {
         crate::operation::get_compatible_versions::builders::GetCompatibleVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCompatibleVersionsOutput`](crate::operation::get_compatible_versions::GetCompatibleVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCompatibleVersionsOutputBuilder {
-    pub(crate) compatible_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>>,
+    pub(crate) compatible_versions: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>>,
     _request_id: Option<String>,
 }
 impl GetCompatibleVersionsOutputBuilder {
@@ -55,17 +47,12 @@ impl GetCompatibleVersionsOutputBuilder {
         self
     }
     /// <p>A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
-    pub fn set_compatible_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>>,
-    ) -> Self {
+    pub fn set_compatible_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>>) -> Self {
         self.compatible_versions = input;
         self
     }
     /// <p>A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
-    pub fn get_compatible_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>> {
+    pub fn get_compatible_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>> {
         &self.compatible_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

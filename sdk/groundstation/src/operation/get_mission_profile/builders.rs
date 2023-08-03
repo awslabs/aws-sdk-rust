@@ -10,10 +10,7 @@ impl GetMissionProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_mission_profile::GetMissionProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mission_profile::GetMissionProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mission_profile::GetMissionProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_mission_profile();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetMissionProfileFluentBuilder {
         }
     }
     /// Access the GetMissionProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_mission_profile::builders::GetMissionProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_mission_profile::builders::GetMissionProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetMissionProfileFluentBuilder {
             crate::operation::get_mission_profile::GetMissionProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mission_profile::GetMissionProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mission_profile::GetMissionProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetMissionProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetMissionProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_mission_profile::GetMissionProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mission_profile::GetMissionProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mission_profile::GetMissionProfileError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetMissionProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_mission_profile::GetMissionProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mission_profile::GetMissionProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mission_profile::GetMissionProfileError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetMissionProfileFluentBuilder {
             crate::operation::get_mission_profile::GetMissionProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mission_profile::GetMissionProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mission_profile::GetMissionProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mission_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mission_profile_id(input.into());
         self
     }
     /// <p>UUID of a mission profile.</p>
-    pub fn set_mission_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mission_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mission_profile_id(input);
         self
     }

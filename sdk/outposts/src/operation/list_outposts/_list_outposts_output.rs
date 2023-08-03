@@ -35,9 +35,7 @@ impl ListOutpostsOutput {
 
 /// A builder for [`ListOutpostsOutput`](crate::operation::list_outposts::ListOutpostsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOutpostsOutputBuilder {
     pub(crate) outposts: ::std::option::Option<::std::vec::Vec<crate::types::Outpost>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListOutpostsOutputBuilder {
         self
     }
     /// <p>Information about the Outposts.</p>
-    pub fn set_outposts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Outpost>>,
-    ) -> Self {
+    pub fn set_outposts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Outpost>>) -> Self {
         self.outposts = input;
         self
     }

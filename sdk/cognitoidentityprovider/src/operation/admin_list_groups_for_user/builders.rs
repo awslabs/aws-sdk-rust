@@ -27,8 +27,7 @@ impl AdminListGroupsForUserInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AdminListGroupsForUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserInputBuilder,
+    inner: crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserInputBuilder,
 }
 impl AdminListGroupsForUserFluentBuilder {
     /// Creates a new `AdminListGroupsForUser`.
@@ -39,10 +38,7 @@ impl AdminListGroupsForUserFluentBuilder {
         }
     }
     /// Access the AdminListGroupsForUser as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl AdminListGroupsForUserFluentBuilder {
             crate::operation::admin_list_groups_for_user::AdminListGroupsForUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl AdminListGroupsForUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl AdminListGroupsForUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_list_groups_for_user::AdminListGroupsForUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl AdminListGroupsForUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_list_groups_for_user::AdminListGroupsForUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError>,
     > {
         self.send_middleware().await
     }
@@ -119,19 +106,14 @@ impl AdminListGroupsForUserFluentBuilder {
             crate::operation::admin_list_groups_for_user::AdminListGroupsForUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::admin_list_groups_for_user::paginator::AdminListGroupsForUserPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::admin_list_groups_for_user::paginator::AdminListGroupsForUserPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::admin_list_groups_for_user::paginator::AdminListGroupsForUserPaginator {
         crate::operation::admin_list_groups_for_user::paginator::AdminListGroupsForUserPaginator::new(self.handle, self.inner)
     }
     /// <p>The username for the user.</p>

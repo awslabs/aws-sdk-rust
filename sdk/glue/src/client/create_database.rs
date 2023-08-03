@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`tags(HashMap<String, String>)`](crate::operation::create_database::builders::CreateDatabaseFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_database::builders::CreateDatabaseFluentBuilder::set_tags): <p>The tags you assign to the database.</p>
     /// - On success, responds with [`CreateDatabaseOutput`](crate::operation::create_database::CreateDatabaseOutput)
     /// - On failure, responds with [`SdkError<CreateDatabaseError>`](crate::operation::create_database::CreateDatabaseError)
-    pub fn create_database(
-        &self,
-    ) -> crate::operation::create_database::builders::CreateDatabaseFluentBuilder {
-        crate::operation::create_database::builders::CreateDatabaseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_database(&self) -> crate::operation::create_database::builders::CreateDatabaseFluentBuilder {
+        crate::operation::create_database::builders::CreateDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

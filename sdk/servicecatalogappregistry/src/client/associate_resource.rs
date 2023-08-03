@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`application_arn(Option<String>)`](crate::operation::associate_resource::AssociateResourceOutput::application_arn): <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
     ///   - [`resource_arn(Option<String>)`](crate::operation::associate_resource::AssociateResourceOutput::resource_arn): <p>The Amazon resource name (ARN) that specifies the resource.</p>
     /// - On failure, responds with [`SdkError<AssociateResourceError>`](crate::operation::associate_resource::AssociateResourceError)
-    pub fn associate_resource(
-        &self,
-    ) -> crate::operation::associate_resource::builders::AssociateResourceFluentBuilder {
-        crate::operation::associate_resource::builders::AssociateResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_resource(&self) -> crate::operation::associate_resource::builders::AssociateResourceFluentBuilder {
+        crate::operation::associate_resource::builders::AssociateResourceFluentBuilder::new(self.handle.clone())
     }
 }

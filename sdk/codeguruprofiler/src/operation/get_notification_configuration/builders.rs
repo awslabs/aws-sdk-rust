@@ -26,7 +26,7 @@ impl GetNotificationConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetNotificationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_notification_configuration::builders::GetNotificationConfigurationInputBuilder,
+    inner: crate::operation::get_notification_configuration::builders::GetNotificationConfigurationInputBuilder,
 }
 impl GetNotificationConfigurationFluentBuilder {
     /// Creates a new `GetNotificationConfiguration`.
@@ -37,7 +37,7 @@ impl GetNotificationConfigurationFluentBuilder {
         }
     }
     /// Access the GetNotificationConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_notification_configuration::builders::GetNotificationConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_notification_configuration::builders::GetNotificationConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetNotificationConfigurationFluentBuilder {
             crate::operation::get_notification_configuration::GetNotificationConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_notification_configuration::GetNotificationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_notification_configuration::GetNotificationConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetNotificationConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetNotificationConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_notification_configuration::GetNotificationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_notification_configuration::GetNotificationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_notification_configuration::GetNotificationConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetNotificationConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_notification_configuration::GetNotificationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_notification_configuration::GetNotificationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_notification_configuration::GetNotificationConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetNotificationConfigurationFluentBuilder {
             crate::operation::get_notification_configuration::GetNotificationConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_notification_configuration::GetNotificationConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_notification_configuration::GetNotificationConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the profiling group we want to get the notification configuration for.</p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
     /// <p>The name of the profiling group we want to get the notification configuration for.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }

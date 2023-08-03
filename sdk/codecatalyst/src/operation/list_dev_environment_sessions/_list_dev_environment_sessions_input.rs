@@ -43,16 +43,14 @@ impl ListDevEnvironmentSessionsInput {
 }
 impl ListDevEnvironmentSessionsInput {
     /// Creates a new builder-style object to manufacture [`ListDevEnvironmentSessionsInput`](crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsInput).
-    pub fn builder() -> crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsInputBuilder{
+    pub fn builder() -> crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsInputBuilder {
         crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDevEnvironmentSessionsInput`](crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDevEnvironmentSessionsInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -90,18 +88,12 @@ impl ListDevEnvironmentSessionsInputBuilder {
         &self.project_name
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
-    pub fn dev_environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dev_environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dev_environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
-    pub fn set_dev_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dev_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dev_environment_id = input;
         self
     }
@@ -144,14 +136,12 @@ impl ListDevEnvironmentSessionsInputBuilder {
         crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                dev_environment_id: self.dev_environment_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsInput {
+            space_name: self.space_name,
+            project_name: self.project_name,
+            dev_environment_id: self.dev_environment_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

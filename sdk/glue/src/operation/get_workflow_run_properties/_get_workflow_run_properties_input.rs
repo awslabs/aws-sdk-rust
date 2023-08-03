@@ -22,18 +22,14 @@ impl GetWorkflowRunPropertiesInput {
 }
 impl GetWorkflowRunPropertiesInput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowRunPropertiesInput`](crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput).
-    pub fn builder(
-    ) -> crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesInputBuilder {
         crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWorkflowRunPropertiesInput`](crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowRunPropertiesInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl GetWorkflowRunPropertiesInputBuilder {
         crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput {
-                name: self.name,
-                run_id: self.run_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput {
+            name: self.name,
+            run_id: self.run_id,
+        })
     }
 }

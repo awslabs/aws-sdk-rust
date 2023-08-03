@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`game_server_groups(Option<Vec<GameServerGroup>>)`](crate::operation::list_game_server_groups::ListGameServerGroupsOutput::game_server_groups): <p>The game server groups' game server groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_game_server_groups::ListGameServerGroupsOutput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListGameServerGroupsError>`](crate::operation::list_game_server_groups::ListGameServerGroupsError)
-    pub fn list_game_server_groups(
-        &self,
-    ) -> crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder
-    {
-        crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_game_server_groups(&self) -> crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder {
+        crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder::new(self.handle.clone())
     }
 }

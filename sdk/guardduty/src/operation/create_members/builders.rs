@@ -10,10 +10,7 @@ impl CreateMembersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_members::CreateMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_members::CreateMembersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_members::CreateMembersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_members();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateMembersFluentBuilder {
         }
     }
     /// Access the CreateMembers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_members::builders::CreateMembersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_members::builders::CreateMembersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl CreateMembersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -141,17 +133,12 @@ impl CreateMembersFluentBuilder {
         self
     }
     /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
-    pub fn set_account_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>>,
-    ) -> Self {
+    pub fn set_account_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>>) -> Self {
         self.inner = self.inner.set_account_details(input);
         self
     }
     /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
-    pub fn get_account_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>> {
+    pub fn get_account_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>> {
         self.inner.get_account_details()
     }
 }

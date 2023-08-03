@@ -100,9 +100,7 @@ impl Instance {
 
 /// A builder for [`Instance`](crate::types::Instance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_instance_id: ::std::option::Option<::std::string::String>,
@@ -133,18 +131,12 @@ impl InstanceBuilder {
         &self.id
     }
     /// <p>The unique identifier of the instance in Amazon EC2.</p>
-    pub fn ec2_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the instance in Amazon EC2.</p>
-    pub fn set_ec2_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_instance_id = input;
         self
     }
@@ -153,18 +145,12 @@ impl InstanceBuilder {
         &self.ec2_instance_id
     }
     /// <p>The public DNS name of the instance.</p>
-    pub fn public_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public DNS name of the instance.</p>
-    pub fn set_public_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_dns_name = input;
         self
     }
@@ -173,18 +159,12 @@ impl InstanceBuilder {
         &self.public_dns_name
     }
     /// <p>The public IP address of the instance.</p>
-    pub fn public_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public IP address of the instance.</p>
-    pub fn set_public_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip_address = input;
         self
     }
@@ -193,18 +173,12 @@ impl InstanceBuilder {
         &self.public_ip_address
     }
     /// <p>The private DNS name of the instance.</p>
-    pub fn private_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private DNS name of the instance.</p>
-    pub fn set_private_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_dns_name = input;
         self
     }
@@ -213,18 +187,12 @@ impl InstanceBuilder {
         &self.private_dns_name
     }
     /// <p>The private IP address of the instance.</p>
-    pub fn private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private IP address of the instance.</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ip_address = input;
         self
     }
@@ -238,10 +206,7 @@ impl InstanceBuilder {
         self
     }
     /// <p>The current status of the instance.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::InstanceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -250,18 +215,12 @@ impl InstanceBuilder {
         &self.status
     }
     /// <p>The identifier of the instance group to which this instance belongs.</p>
-    pub fn instance_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the instance group to which this instance belongs.</p>
-    pub fn set_instance_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_group_id = input;
         self
     }
@@ -270,18 +229,12 @@ impl InstanceBuilder {
         &self.instance_group_id
     }
     /// <p>The unique identifier of the instance fleet to which an Amazon EC2 instance belongs.</p>
-    pub fn instance_fleet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_fleet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the instance fleet to which an Amazon EC2 instance belongs.</p>
-    pub fn set_instance_fleet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_fleet_id = input;
         self
     }
@@ -304,18 +257,12 @@ impl InstanceBuilder {
         &self.market
     }
     /// <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -335,17 +282,12 @@ impl InstanceBuilder {
         self
     }
     /// <p>The list of Amazon EBS volumes that are attached to this instance.</p>
-    pub fn set_ebs_volumes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EbsVolume>>,
-    ) -> Self {
+    pub fn set_ebs_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EbsVolume>>) -> Self {
         self.ebs_volumes = input;
         self
     }
     /// <p>The list of Amazon EBS volumes that are attached to this instance.</p>
-    pub fn get_ebs_volumes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EbsVolume>> {
+    pub fn get_ebs_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EbsVolume>> {
         &self.ebs_volumes
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).

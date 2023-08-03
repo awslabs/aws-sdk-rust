@@ -4,9 +4,7 @@ pub fn ser_start_configuration_recorder_input(
     input: &crate::operation::start_configuration_recorder::StartConfigurationRecorderInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.configuration_recorder_name {
-        object
-            .key("ConfigurationRecorderName")
-            .string(var_1.as_str());
+        object.key("ConfigurationRecorderName").string(var_1.as_str());
     }
     Ok(())
 }

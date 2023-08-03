@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`associations(Option<Vec<DataRepositoryAssociation>>)`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput::associations): <p>An array of one or more data repository association descriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     /// - On failure, responds with [`SdkError<DescribeDataRepositoryAssociationsError>`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsError)
-    pub fn describe_data_repository_associations(&self) -> crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsFluentBuilder{
+    pub fn describe_data_repository_associations(
+        &self,
+    ) -> crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsFluentBuilder {
         crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

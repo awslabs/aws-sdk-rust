@@ -63,9 +63,7 @@ impl GetMatchingJobOutput {
 
 /// A builder for [`GetMatchingJobOutput`](crate::operation::get_matching_job::GetMatchingJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMatchingJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::JobStatus>,
@@ -110,10 +108,7 @@ impl GetMatchingJobOutputBuilder {
         self
     }
     /// <p>The time at which the job was started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -127,10 +122,7 @@ impl GetMatchingJobOutputBuilder {
         self
     }
     /// <p>The time at which the job has finished.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -158,10 +150,7 @@ impl GetMatchingJobOutputBuilder {
         self
     }
     /// <p>An object containing an error message, if there was an error.</p>
-    pub fn set_error_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorDetails>,
-    ) -> Self {
+    pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
         self.error_details = input;
         self
     }

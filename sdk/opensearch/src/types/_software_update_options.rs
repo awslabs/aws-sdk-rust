@@ -23,9 +23,7 @@ impl SoftwareUpdateOptions {
 
 /// A builder for [`SoftwareUpdateOptions`](crate::types::SoftwareUpdateOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SoftwareUpdateOptionsBuilder {
     pub(crate) auto_software_update_enabled: ::std::option::Option<bool>,
 }

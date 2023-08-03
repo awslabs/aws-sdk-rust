@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetBucketBundlesOutput`](crate::operation::get_bucket_bundles::GetBucketBundlesOutput) with field(s):
     ///   - [`bundles(Option<Vec<BucketBundle>>)`](crate::operation::get_bucket_bundles::GetBucketBundlesOutput::bundles): <p>An object that describes bucket bundles.</p>
     /// - On failure, responds with [`SdkError<GetBucketBundlesError>`](crate::operation::get_bucket_bundles::GetBucketBundlesError)
-    pub fn get_bucket_bundles(
-        &self,
-    ) -> crate::operation::get_bucket_bundles::builders::GetBucketBundlesFluentBuilder {
-        crate::operation::get_bucket_bundles::builders::GetBucketBundlesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_bucket_bundles(&self) -> crate::operation::get_bucket_bundles::builders::GetBucketBundlesFluentBuilder {
+        crate::operation::get_bucket_bundles::builders::GetBucketBundlesFluentBuilder::new(self.handle.clone())
     }
 }

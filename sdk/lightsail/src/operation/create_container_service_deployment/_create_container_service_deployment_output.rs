@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateContainerServiceDeploymentOutpu
 }
 impl CreateContainerServiceDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`CreateContainerServiceDeploymentOutput`](crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput).
-    pub fn builder() -> crate::operation::create_container_service_deployment::builders::CreateContainerServiceDeploymentOutputBuilder{
+    pub fn builder() -> crate::operation::create_container_service_deployment::builders::CreateContainerServiceDeploymentOutputBuilder {
         crate::operation::create_container_service_deployment::builders::CreateContainerServiceDeploymentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateContainerServiceDeploymentOutput`](crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateContainerServiceDeploymentOutputBuilder {
     pub(crate) container_service: ::std::option::Option<crate::types::ContainerService>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreateContainerServiceDeploymentOutputBuilder {
         self
     }
     /// <p>An object that describes a container service.</p>
-    pub fn set_container_service(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerService>,
-    ) -> Self {
+    pub fn set_container_service(mut self, input: ::std::option::Option<crate::types::ContainerService>) -> Self {
         self.container_service = input;
         self
     }
@@ -63,13 +58,9 @@ impl CreateContainerServiceDeploymentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateContainerServiceDeploymentOutput`](crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput
-    {
+    pub fn build(self) -> crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput {
         crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput {
-            container_service: self.container_service
-            ,
+            container_service: self.container_service,
             _request_id: self._request_id,
         }
     }

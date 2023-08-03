@@ -10,10 +10,7 @@ impl GetTrustAnchorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_trust_anchor::GetTrustAnchorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_trust_anchor::GetTrustAnchorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_trust_anchor::GetTrustAnchorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_trust_anchor();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetTrustAnchorFluentBuilder {
         }
     }
     /// Access the GetTrustAnchor as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_trust_anchor::builders::GetTrustAnchorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_trust_anchor::builders::GetTrustAnchorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl GetTrustAnchorFluentBuilder {
             crate::operation::get_trust_anchor::GetTrustAnchor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_trust_anchor::GetTrustAnchorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_trust_anchor::GetTrustAnchorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl GetTrustAnchorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl GetTrustAnchorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_trust_anchor::GetTrustAnchorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_trust_anchor::GetTrustAnchorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_trust_anchor::GetTrustAnchorError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl GetTrustAnchorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_trust_anchor::GetTrustAnchorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_trust_anchor::GetTrustAnchorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_trust_anchor::GetTrustAnchorError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl GetTrustAnchorFluentBuilder {
             crate::operation::get_trust_anchor::GetTrustAnchor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_trust_anchor::GetTrustAnchorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_trust_anchor::GetTrustAnchorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn trust_anchor_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_anchor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trust_anchor_id(input.into());
         self
     }
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn set_trust_anchor_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_anchor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trust_anchor_id(input);
         self
     }

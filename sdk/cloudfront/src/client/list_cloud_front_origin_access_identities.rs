@@ -9,7 +9,11 @@ impl super::Client {
     /// - On success, responds with [`ListCloudFrontOriginAccessIdentitiesOutput`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput) with field(s):
     ///   - [`cloud_front_origin_access_identity_list(Option<CloudFrontOriginAccessIdentityList>)`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput::cloud_front_origin_access_identity_list): <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
     /// - On failure, responds with [`SdkError<ListCloudFrontOriginAccessIdentitiesError>`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesError)
-    pub fn list_cloud_front_origin_access_identities(&self) -> crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesFluentBuilder{
-        crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesFluentBuilder::new(self.handle.clone())
+    pub fn list_cloud_front_origin_access_identities(
+        &self,
+    ) -> crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesFluentBuilder {
+        crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

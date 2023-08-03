@@ -15,17 +15,14 @@ impl DescribeResourceInput {
 }
 impl DescribeResourceInput {
     /// Creates a new builder-style object to manufacture [`DescribeResourceInput`](crate::operation::describe_resource::DescribeResourceInput).
-    pub fn builder() -> crate::operation::describe_resource::builders::DescribeResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_resource::builders::DescribeResourceInputBuilder {
         crate::operation::describe_resource::builders::DescribeResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeResourceInput`](crate::operation::describe_resource::DescribeResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +44,7 @@ impl DescribeResourceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeResourceInput`](crate::operation::describe_resource::DescribeResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_resource::DescribeResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_resource::DescribeResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_resource::DescribeResourceInput {
             resource_arn: self.resource_arn,
         })

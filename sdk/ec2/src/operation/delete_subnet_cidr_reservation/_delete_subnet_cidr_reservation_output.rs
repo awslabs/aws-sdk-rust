@@ -10,9 +10,7 @@ pub struct DeleteSubnetCidrReservationOutput {
 }
 impl DeleteSubnetCidrReservationOutput {
     /// <p>Information about the deleted subnet CIDR reservation.</p>
-    pub fn deleted_subnet_cidr_reservation(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SubnetCidrReservation> {
+    pub fn deleted_subnet_cidr_reservation(&self) -> ::std::option::Option<&crate::types::SubnetCidrReservation> {
         self.deleted_subnet_cidr_reservation.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DeleteSubnetCidrReservationOutput {
 }
 impl DeleteSubnetCidrReservationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSubnetCidrReservationOutput`](crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationOutput).
-    pub fn builder() -> crate::operation::delete_subnet_cidr_reservation::builders::DeleteSubnetCidrReservationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_subnet_cidr_reservation::builders::DeleteSubnetCidrReservationOutputBuilder {
         crate::operation::delete_subnet_cidr_reservation::builders::DeleteSubnetCidrReservationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSubnetCidrReservationOutput`](crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSubnetCidrReservationOutputBuilder {
-    pub(crate) deleted_subnet_cidr_reservation:
-        ::std::option::Option<crate::types::SubnetCidrReservation>,
+    pub(crate) deleted_subnet_cidr_reservation: ::std::option::Option<crate::types::SubnetCidrReservation>,
     _request_id: Option<String>,
 }
 impl DeleteSubnetCidrReservationOutputBuilder {
     /// <p>Information about the deleted subnet CIDR reservation.</p>
-    pub fn deleted_subnet_cidr_reservation(
-        mut self,
-        input: crate::types::SubnetCidrReservation,
-    ) -> Self {
+    pub fn deleted_subnet_cidr_reservation(mut self, input: crate::types::SubnetCidrReservation) -> Self {
         self.deleted_subnet_cidr_reservation = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the deleted subnet CIDR reservation.</p>
-    pub fn set_deleted_subnet_cidr_reservation(
-        mut self,
-        input: ::std::option::Option<crate::types::SubnetCidrReservation>,
-    ) -> Self {
+    pub fn set_deleted_subnet_cidr_reservation(mut self, input: ::std::option::Option<crate::types::SubnetCidrReservation>) -> Self {
         self.deleted_subnet_cidr_reservation = input;
         self
     }
     /// <p>Information about the deleted subnet CIDR reservation.</p>
-    pub fn get_deleted_subnet_cidr_reservation(
-        &self,
-    ) -> &::std::option::Option<crate::types::SubnetCidrReservation> {
+    pub fn get_deleted_subnet_cidr_reservation(&self) -> &::std::option::Option<crate::types::SubnetCidrReservation> {
         &self.deleted_subnet_cidr_reservation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,9 +58,7 @@ impl DeleteSubnetCidrReservationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteSubnetCidrReservationOutput`](crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationOutput {
+    pub fn build(self) -> crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationOutput {
         crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationOutput {
             deleted_subnet_cidr_reservation: self.deleted_subnet_cidr_reservation,
             _request_id: self._request_id,

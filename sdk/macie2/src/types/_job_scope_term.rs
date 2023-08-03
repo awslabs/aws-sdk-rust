@@ -30,9 +30,7 @@ impl JobScopeTerm {
 
 /// A builder for [`JobScopeTerm`](crate::types::JobScopeTerm).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobScopeTermBuilder {
     pub(crate) simple_scope_term: ::std::option::Option<crate::types::SimpleScopeTerm>,
     pub(crate) tag_scope_term: ::std::option::Option<crate::types::TagScopeTerm>,
@@ -44,10 +42,7 @@ impl JobScopeTermBuilder {
         self
     }
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding objects from the job.</p>
-    pub fn set_simple_scope_term(
-        mut self,
-        input: ::std::option::Option<crate::types::SimpleScopeTerm>,
-    ) -> Self {
+    pub fn set_simple_scope_term(mut self, input: ::std::option::Option<crate::types::SimpleScopeTerm>) -> Self {
         self.simple_scope_term = input;
         self
     }
@@ -61,10 +56,7 @@ impl JobScopeTermBuilder {
         self
     }
     /// <p>A tag-based condition that defines the operator and tag keys or tag key and value pairs for including or excluding objects from the job.</p>
-    pub fn set_tag_scope_term(
-        mut self,
-        input: ::std::option::Option<crate::types::TagScopeTerm>,
-    ) -> Self {
+    pub fn set_tag_scope_term(mut self, input: ::std::option::Option<crate::types::TagScopeTerm>) -> Self {
         self.tag_scope_term = input;
         self
     }

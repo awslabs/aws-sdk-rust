@@ -42,14 +42,11 @@ impl CustomResponse {
 
 /// A builder for [`CustomResponse`](crate::types::CustomResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomResponseBuilder {
     pub(crate) response_code: ::std::option::Option<i32>,
     pub(crate) custom_response_body_key: ::std::option::Option<::std::string::String>,
-    pub(crate) response_headers:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>>,
+    pub(crate) response_headers: ::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>>,
 }
 impl CustomResponseBuilder {
     /// <p>The HTTP status code to return to the client. </p>
@@ -70,18 +67,12 @@ impl CustomResponseBuilder {
         &self.response_code
     }
     /// <p>References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. To do this, you first define the response body key and value in the <code>CustomResponseBodies</code> setting for the <code>WebACL</code> or <code>RuleGroup</code> where you want to use it. Then, in the rule action or web ACL default action <code>BlockAction</code> setting, you reference the response body using this key. </p>
-    pub fn custom_response_body_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_response_body_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_response_body_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. To do this, you first define the response body key and value in the <code>CustomResponseBodies</code> setting for the <code>WebACL</code> or <code>RuleGroup</code> where you want to use it. Then, in the rule action or web ACL default action <code>BlockAction</code> setting, you reference the response body using this key. </p>
-    pub fn set_custom_response_body_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_response_body_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_response_body_key = input;
         self
     }
@@ -103,18 +94,13 @@ impl CustomResponseBuilder {
     }
     /// <p>The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn set_response_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>>,
-    ) -> Self {
+    pub fn set_response_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>>) -> Self {
         self.response_headers = input;
         self
     }
     /// <p>The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn get_response_headers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>> {
+    pub fn get_response_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>> {
         &self.response_headers
     }
     /// Consumes the builder and constructs a [`CustomResponse`](crate::types::CustomResponse).

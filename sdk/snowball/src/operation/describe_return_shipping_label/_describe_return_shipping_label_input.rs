@@ -15,16 +15,14 @@ impl DescribeReturnShippingLabelInput {
 }
 impl DescribeReturnShippingLabelInput {
     /// Creates a new builder-style object to manufacture [`DescribeReturnShippingLabelInput`](crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelInput).
-    pub fn builder() -> crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelInputBuilder{
+    pub fn builder() -> crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelInputBuilder {
         crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReturnShippingLabelInput`](crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReturnShippingLabelInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DescribeReturnShippingLabelInputBuilder {
         crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelInput {
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelInput { job_id: self.job_id })
     }
 }

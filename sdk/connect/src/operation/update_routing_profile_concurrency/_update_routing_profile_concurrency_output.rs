@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateRoutingProfileConcurrencyOutput
 }
 impl UpdateRoutingProfileConcurrencyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRoutingProfileConcurrencyOutput`](crate::operation::update_routing_profile_concurrency::UpdateRoutingProfileConcurrencyOutput).
-    pub fn builder() -> crate::operation::update_routing_profile_concurrency::builders::UpdateRoutingProfileConcurrencyOutputBuilder{
+    pub fn builder() -> crate::operation::update_routing_profile_concurrency::builders::UpdateRoutingProfileConcurrencyOutputBuilder {
         crate::operation::update_routing_profile_concurrency::builders::UpdateRoutingProfileConcurrencyOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRoutingProfileConcurrencyOutput`](crate::operation::update_routing_profile_concurrency::UpdateRoutingProfileConcurrencyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRoutingProfileConcurrencyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateRoutingProfileConcurrencyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateRoutingProfileConcurrencyOutput`](crate::operation::update_routing_profile_concurrency::UpdateRoutingProfileConcurrencyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_routing_profile_concurrency::UpdateRoutingProfileConcurrencyOutput
-    {
+    pub fn build(self) -> crate::operation::update_routing_profile_concurrency::UpdateRoutingProfileConcurrencyOutput {
         crate::operation::update_routing_profile_concurrency::UpdateRoutingProfileConcurrencyOutput {
             _request_id: self._request_id,
         }

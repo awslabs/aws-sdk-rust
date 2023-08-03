@@ -45,17 +45,14 @@ impl CreateAccessPointInput {
 }
 impl CreateAccessPointInput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPointInput`](crate::operation::create_access_point::CreateAccessPointInput).
-    pub fn builder(
-    ) -> crate::operation::create_access_point::builders::CreateAccessPointInputBuilder {
+    pub fn builder() -> crate::operation::create_access_point::builders::CreateAccessPointInputBuilder {
         crate::operation::create_access_point::builders::CreateAccessPointInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccessPointInput`](crate::operation::create_access_point::CreateAccessPointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessPointInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -90,10 +87,7 @@ impl CreateAccessPointInputBuilder {
         self
     }
     /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -102,18 +96,12 @@ impl CreateAccessPointInputBuilder {
         &self.tags
     }
     /// <p>The ID of the EFS file system that the access point provides access to.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the EFS file system that the access point provides access to.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -143,10 +131,7 @@ impl CreateAccessPointInputBuilder {
     }
     /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you must provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
     /// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
-    pub fn set_root_directory(
-        mut self,
-        input: ::std::option::Option<crate::types::RootDirectory>,
-    ) -> Self {
+    pub fn set_root_directory(mut self, input: ::std::option::Option<crate::types::RootDirectory>) -> Self {
         self.root_directory = input;
         self
     }
@@ -158,18 +143,13 @@ impl CreateAccessPointInputBuilder {
     /// Consumes the builder and constructs a [`CreateAccessPointInput`](crate::operation::create_access_point::CreateAccessPointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_access_point::CreateAccessPointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_access_point::CreateAccessPointInput {
-                client_token: self.client_token,
-                tags: self.tags,
-                file_system_id: self.file_system_id,
-                posix_user: self.posix_user,
-                root_directory: self.root_directory,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_access_point::CreateAccessPointInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_access_point::CreateAccessPointInput {
+            client_token: self.client_token,
+            tags: self.tags,
+            file_system_id: self.file_system_id,
+            posix_user: self.posix_user,
+            root_directory: self.root_directory,
+        })
     }
 }

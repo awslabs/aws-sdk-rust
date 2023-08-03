@@ -10,10 +10,7 @@ impl CreateEnvironmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_environment::CreateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_environment();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateEnvironmentFluentBuilder {
         }
     }
     /// Access the CreateEnvironment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_environment::builders::CreateEnvironmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_environment::builders::CreateEnvironmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateEnvironmentFluentBuilder {
             crate::operation::create_environment::CreateEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateEnvironmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_environment::CreateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_environment::CreateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateEnvironmentFluentBuilder {
             crate::operation::create_environment::CreateEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>,
     > {
         self.customize_middleware().await
     }
@@ -157,17 +141,12 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>The network fabric type of the environment.</p>
-    pub fn set_network_fabric_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkFabricType>,
-    ) -> Self {
+    pub fn set_network_fabric_type(mut self, input: ::std::option::Option<crate::types::NetworkFabricType>) -> Self {
         self.inner = self.inner.set_network_fabric_type(input);
         self
     }
     /// <p>The network fabric type of the environment.</p>
-    pub fn get_network_fabric_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkFabricType> {
+    pub fn get_network_fabric_type(&self) -> &::std::option::Option<crate::types::NetworkFabricType> {
         self.inner.get_network_fabric_type()
     }
     /// Adds a key-value pair to `Tags`.
@@ -175,30 +154,17 @@ impl CreateEnvironmentFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>

@@ -61,17 +61,14 @@ impl CreateDeploymentInput {
 }
 impl CreateDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
-    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
         crate::operation::create_deployment::builders::CreateDeploymentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDeploymentInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
@@ -122,17 +119,12 @@ impl CreateDeploymentInputBuilder {
         self
     }
     /// <p>The instance IDs for the deployment targets.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>The instance IDs for the deployment targets.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// Appends an item to `layer_ids`.
@@ -147,10 +139,7 @@ impl CreateDeploymentInputBuilder {
         self
     }
     /// <p>The layer IDs for the deployment targets.</p>
-    pub fn set_layer_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_layer_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.layer_ids = input;
         self
     }
@@ -164,10 +153,7 @@ impl CreateDeploymentInputBuilder {
         self
     }
     /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
-    pub fn set_command(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentCommand>,
-    ) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<crate::types::DeploymentCommand>) -> Self {
         self.command = input;
         self
     }
@@ -212,10 +198,7 @@ impl CreateDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_deployment::CreateDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_deployment::CreateDeploymentInput {
             stack_id: self.stack_id,
             app_id: self.app_id,

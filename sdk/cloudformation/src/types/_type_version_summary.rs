@@ -76,9 +76,7 @@ impl TypeVersionSummary {
 
 /// A builder for [`TypeVersionSummary`](crate::types::TypeVersionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TypeVersionSummaryBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RegistryType>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
@@ -169,10 +167,7 @@ impl TypeVersionSummaryBuilder {
         self
     }
     /// <p>When the version was registered.</p>
-    pub fn set_time_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_time_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.time_created = input;
         self
     }
@@ -196,19 +191,13 @@ impl TypeVersionSummaryBuilder {
     }
     /// <p>For public extensions that have been activated for this account and Region, the version of the public extension to be used for CloudFormation operations in this account and Region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
     /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn public_version_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_version_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_version_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For public extensions that have been activated for this account and Region, the version of the public extension to be used for CloudFormation operations in this account and Region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
     /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn set_public_version_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_version_number = input;
         self
     }

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`scale_up_node_types(Option<Vec<String>>)`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesOutput::scale_up_node_types): <p>A list node types which you can use to scale up your cluster.</p>
     ///   - [`scale_down_node_types(Option<Vec<String>>)`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesOutput::scale_down_node_types): <p>A list node types which you can use to scale down your cluster.</p>
     /// - On failure, responds with [`SdkError<ListAllowedNodeTypeUpdatesError>`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesError)
-    pub fn list_allowed_node_type_updates(&self) -> crate::operation::list_allowed_node_type_updates::builders::ListAllowedNodeTypeUpdatesFluentBuilder{
+    pub fn list_allowed_node_type_updates(
+        &self,
+    ) -> crate::operation::list_allowed_node_type_updates::builders::ListAllowedNodeTypeUpdatesFluentBuilder {
         crate::operation::list_allowed_node_type_updates::builders::ListAllowedNodeTypeUpdatesFluentBuilder::new(self.handle.clone())
     }
 }

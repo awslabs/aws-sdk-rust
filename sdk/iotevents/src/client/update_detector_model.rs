@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDetectorModelOutput`](crate::operation::update_detector_model::UpdateDetectorModelOutput) with field(s):
     ///   - [`detector_model_configuration(Option<DetectorModelConfiguration>)`](crate::operation::update_detector_model::UpdateDetectorModelOutput::detector_model_configuration): <p>Information about how the detector model is configured.</p>
     /// - On failure, responds with [`SdkError<UpdateDetectorModelError>`](crate::operation::update_detector_model::UpdateDetectorModelError)
-    pub fn update_detector_model(
-        &self,
-    ) -> crate::operation::update_detector_model::builders::UpdateDetectorModelFluentBuilder {
-        crate::operation::update_detector_model::builders::UpdateDetectorModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_detector_model(&self) -> crate::operation::update_detector_model::builders::UpdateDetectorModelFluentBuilder {
+        crate::operation::update_detector_model::builders::UpdateDetectorModelFluentBuilder::new(self.handle.clone())
     }
 }

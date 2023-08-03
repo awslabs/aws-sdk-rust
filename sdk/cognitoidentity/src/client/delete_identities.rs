@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteIdentitiesOutput`](crate::operation::delete_identities::DeleteIdentitiesOutput) with field(s):
     ///   - [`unprocessed_identity_ids(Option<Vec<UnprocessedIdentityId>>)`](crate::operation::delete_identities::DeleteIdentitiesOutput::unprocessed_identity_ids): <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
     /// - On failure, responds with [`SdkError<DeleteIdentitiesError>`](crate::operation::delete_identities::DeleteIdentitiesError)
-    pub fn delete_identities(
-        &self,
-    ) -> crate::operation::delete_identities::builders::DeleteIdentitiesFluentBuilder {
-        crate::operation::delete_identities::builders::DeleteIdentitiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_identities(&self) -> crate::operation::delete_identities::builders::DeleteIdentitiesFluentBuilder {
+        crate::operation::delete_identities::builders::DeleteIdentitiesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,10 +37,7 @@ impl DescribeActionTargetsFluentBuilder {
         }
     }
     /// Access the DescribeActionTargets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_action_targets::builders::DescribeActionTargetsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_action_targets::builders::DescribeActionTargetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeActionTargetsFluentBuilder {
             crate::operation::describe_action_targets::DescribeActionTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_action_targets::DescribeActionTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_action_targets::DescribeActionTargetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeActionTargetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeActionTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_action_targets::DescribeActionTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_action_targets::DescribeActionTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_action_targets::DescribeActionTargetsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeActionTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_action_targets::DescribeActionTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_action_targets::DescribeActionTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_action_targets::DescribeActionTargetsError>,
     > {
         self.send_middleware().await
     }
@@ -117,47 +105,32 @@ impl DescribeActionTargetsFluentBuilder {
             crate::operation::describe_action_targets::DescribeActionTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_action_targets::DescribeActionTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_action_targets::DescribeActionTargetsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_action_targets::paginator::DescribeActionTargetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_action_targets::paginator::DescribeActionTargetsPaginator {
-        crate::operation::describe_action_targets::paginator::DescribeActionTargetsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_action_targets::paginator::DescribeActionTargetsPaginator {
+        crate::operation::describe_action_targets::paginator::DescribeActionTargetsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `ActionTargetArns`.
     ///
     /// To override the contents of this collection use [`set_action_target_arns`](Self::set_action_target_arns).
     ///
     /// <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
-    pub fn action_target_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn action_target_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_target_arns(input.into());
         self
     }
     /// <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
-    pub fn set_action_target_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_action_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_action_target_arns(input);
         self
     }
     /// <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
-    pub fn get_action_target_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_action_target_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_action_target_arns()
     }
     /// <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>

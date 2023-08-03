@@ -44,9 +44,7 @@ impl TitleAggregationResponse {
 
 /// A builder for [`TitleAggregationResponse`](crate::types::TitleAggregationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TitleAggregationResponseBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) vulnerability_id: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl TitleAggregationResponseBuilder {
         &self.title
     }
     /// <p>The vulnerability ID of the finding.</p>
-    pub fn vulnerability_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vulnerability_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vulnerability_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The vulnerability ID of the finding.</p>
-    pub fn set_vulnerability_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vulnerability_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vulnerability_id = input;
         self
     }
@@ -108,10 +100,7 @@ impl TitleAggregationResponseBuilder {
         self
     }
     /// <p>An object that represent the count of matched findings per severity.</p>
-    pub fn set_severity_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityCounts>,
-    ) -> Self {
+    pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
         self.severity_counts = input;
         self
     }

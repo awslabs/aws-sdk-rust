@@ -30,13 +30,10 @@ impl SuggestionTextWithHighlights {
 
 /// A builder for [`SuggestionTextWithHighlights`](crate::types::SuggestionTextWithHighlights).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuggestionTextWithHighlightsBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
-    pub(crate) highlights:
-        ::std::option::Option<::std::vec::Vec<crate::types::SuggestionHighlight>>,
+    pub(crate) highlights: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionHighlight>>,
 }
 impl SuggestionTextWithHighlightsBuilder {
     /// <p>The query suggestion text to display to the user.</p>
@@ -65,17 +62,12 @@ impl SuggestionTextWithHighlightsBuilder {
         self
     }
     /// <p>The beginning and end of the query suggestion text that should be highlighted.</p>
-    pub fn set_highlights(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionHighlight>>,
-    ) -> Self {
+    pub fn set_highlights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionHighlight>>) -> Self {
         self.highlights = input;
         self
     }
     /// <p>The beginning and end of the query suggestion text that should be highlighted.</p>
-    pub fn get_highlights(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestionHighlight>> {
+    pub fn get_highlights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestionHighlight>> {
         &self.highlights
     }
     /// Consumes the builder and constructs a [`SuggestionTextWithHighlights`](crate::types::SuggestionTextWithHighlights).

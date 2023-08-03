@@ -15,8 +15,7 @@ pub struct DetectorFeatureConfigurationResult {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Additional configuration for a resource.</p>
     #[doc(hidden)]
-    pub additional_configuration:
-        ::std::option::Option<::std::vec::Vec<crate::types::DetectorAdditionalConfigurationResult>>,
+    pub additional_configuration: ::std::option::Option<::std::vec::Vec<crate::types::DetectorAdditionalConfigurationResult>>,
 }
 impl DetectorFeatureConfigurationResult {
     /// <p>Indicates the name of the feature that can be enabled for the detector.</p>
@@ -32,9 +31,7 @@ impl DetectorFeatureConfigurationResult {
         self.updated_at.as_ref()
     }
     /// <p>Additional configuration for a resource.</p>
-    pub fn additional_configuration(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DetectorAdditionalConfigurationResult]> {
+    pub fn additional_configuration(&self) -> ::std::option::Option<&[crate::types::DetectorAdditionalConfigurationResult]> {
         self.additional_configuration.as_deref()
     }
 }
@@ -47,15 +44,12 @@ impl DetectorFeatureConfigurationResult {
 
 /// A builder for [`DetectorFeatureConfigurationResult`](crate::types::DetectorFeatureConfigurationResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectorFeatureConfigurationResultBuilder {
     pub(crate) name: ::std::option::Option<crate::types::DetectorFeatureResult>,
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) additional_configuration:
-        ::std::option::Option<::std::vec::Vec<crate::types::DetectorAdditionalConfigurationResult>>,
+    pub(crate) additional_configuration: ::std::option::Option<::std::vec::Vec<crate::types::DetectorAdditionalConfigurationResult>>,
 }
 impl DetectorFeatureConfigurationResultBuilder {
     /// <p>Indicates the name of the feature that can be enabled for the detector.</p>
@@ -64,10 +58,7 @@ impl DetectorFeatureConfigurationResultBuilder {
         self
     }
     /// <p>Indicates the name of the feature that can be enabled for the detector.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectorFeatureResult>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::DetectorFeatureResult>) -> Self {
         self.name = input;
         self
     }
@@ -95,10 +86,7 @@ impl DetectorFeatureConfigurationResultBuilder {
         self
     }
     /// <p>The timestamp at which the feature object was updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -111,10 +99,7 @@ impl DetectorFeatureConfigurationResultBuilder {
     /// To override the contents of this collection use [`set_additional_configuration`](Self::set_additional_configuration).
     ///
     /// <p>Additional configuration for a resource.</p>
-    pub fn additional_configuration(
-        mut self,
-        input: crate::types::DetectorAdditionalConfigurationResult,
-    ) -> Self {
+    pub fn additional_configuration(mut self, input: crate::types::DetectorAdditionalConfigurationResult) -> Self {
         let mut v = self.additional_configuration.unwrap_or_default();
         v.push(input);
         self.additional_configuration = ::std::option::Option::Some(v);
@@ -123,18 +108,13 @@ impl DetectorFeatureConfigurationResultBuilder {
     /// <p>Additional configuration for a resource.</p>
     pub fn set_additional_configuration(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::DetectorAdditionalConfigurationResult>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DetectorAdditionalConfigurationResult>>,
     ) -> Self {
         self.additional_configuration = input;
         self
     }
     /// <p>Additional configuration for a resource.</p>
-    pub fn get_additional_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorAdditionalConfigurationResult>>
-    {
+    pub fn get_additional_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorAdditionalConfigurationResult>> {
         &self.additional_configuration
     }
     /// Consumes the builder and constructs a [`DetectorFeatureConfigurationResult`](crate::types::DetectorFeatureConfigurationResult).

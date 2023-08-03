@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`schema_arns(Option<Vec<String>>)`](crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput::schema_arns): <p>The ARNs of schemas that are applied to the directory.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListAppliedSchemaArnsError>`](crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsError)
-    pub fn list_applied_schema_arns(
-        &self,
-    ) -> crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsFluentBuilder
-    {
+    pub fn list_applied_schema_arns(&self) -> crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsFluentBuilder {
         crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`fleet_id(Option<String>)`](crate::operation::update_fleet_attributes::UpdateFleetAttributesOutput::fleet_id): <p>A unique identifier for the fleet that was updated.</p>
     ///   - [`fleet_arn(Option<String>)`](crate::operation::update_fleet_attributes::UpdateFleetAttributesOutput::fleet_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>.</p>
     /// - On failure, responds with [`SdkError<UpdateFleetAttributesError>`](crate::operation::update_fleet_attributes::UpdateFleetAttributesError)
-    pub fn update_fleet_attributes(
-        &self,
-    ) -> crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesFluentBuilder
-    {
-        crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_fleet_attributes(&self) -> crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesFluentBuilder {
+        crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesFluentBuilder::new(self.handle.clone())
     }
 }

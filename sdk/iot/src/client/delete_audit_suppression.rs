@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`resource_identifier(ResourceIdentifier)`](crate::operation::delete_audit_suppression::builders::DeleteAuditSuppressionFluentBuilder::resource_identifier) / [`set_resource_identifier(Option<ResourceIdentifier>)`](crate::operation::delete_audit_suppression::builders::DeleteAuditSuppressionFluentBuilder::set_resource_identifier): <p>Information that identifies the noncompliant resource.</p>
     /// - On success, responds with [`DeleteAuditSuppressionOutput`](crate::operation::delete_audit_suppression::DeleteAuditSuppressionOutput)
     /// - On failure, responds with [`SdkError<DeleteAuditSuppressionError>`](crate::operation::delete_audit_suppression::DeleteAuditSuppressionError)
-    pub fn delete_audit_suppression(
-        &self,
-    ) -> crate::operation::delete_audit_suppression::builders::DeleteAuditSuppressionFluentBuilder
-    {
+    pub fn delete_audit_suppression(&self) -> crate::operation::delete_audit_suppression::builders::DeleteAuditSuppressionFluentBuilder {
         crate::operation::delete_audit_suppression::builders::DeleteAuditSuppressionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`scaling_policies(Option<Vec<ScalingPolicy>>)`](crate::operation::describe_scaling_policies::DescribeScalingPoliciesOutput::scaling_policies): <p>A collection of objects containing the scaling policies matching the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_scaling_policies::DescribeScalingPoliciesOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     /// - On failure, responds with [`SdkError<DescribeScalingPoliciesError>`](crate::operation::describe_scaling_policies::DescribeScalingPoliciesError)
-    pub fn describe_scaling_policies(
-        &self,
-    ) -> crate::operation::describe_scaling_policies::builders::DescribeScalingPoliciesFluentBuilder
-    {
+    pub fn describe_scaling_policies(&self) -> crate::operation::describe_scaling_policies::builders::DescribeScalingPoliciesFluentBuilder {
         crate::operation::describe_scaling_policies::builders::DescribeScalingPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

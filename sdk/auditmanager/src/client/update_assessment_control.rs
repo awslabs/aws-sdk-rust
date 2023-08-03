@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAssessmentControlOutput`](crate::operation::update_assessment_control::UpdateAssessmentControlOutput) with field(s):
     ///   - [`control(Option<AssessmentControl>)`](crate::operation::update_assessment_control::UpdateAssessmentControlOutput::control): <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned. </p>
     /// - On failure, responds with [`SdkError<UpdateAssessmentControlError>`](crate::operation::update_assessment_control::UpdateAssessmentControlError)
-    pub fn update_assessment_control(
-        &self,
-    ) -> crate::operation::update_assessment_control::builders::UpdateAssessmentControlFluentBuilder
-    {
+    pub fn update_assessment_control(&self) -> crate::operation::update_assessment_control::builders::UpdateAssessmentControlFluentBuilder {
         crate::operation::update_assessment_control::builders::UpdateAssessmentControlFluentBuilder::new(self.handle.clone())
     }
 }

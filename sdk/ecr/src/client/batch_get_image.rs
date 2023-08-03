@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`images(Option<Vec<Image>>)`](crate::operation::batch_get_image::BatchGetImageOutput::images): <p>A list of image objects corresponding to the image references in the request.</p>
     ///   - [`failures(Option<Vec<ImageFailure>>)`](crate::operation::batch_get_image::BatchGetImageOutput::failures): <p>Any failures associated with the call.</p>
     /// - On failure, responds with [`SdkError<BatchGetImageError>`](crate::operation::batch_get_image::BatchGetImageError)
-    pub fn batch_get_image(
-        &self,
-    ) -> crate::operation::batch_get_image::builders::BatchGetImageFluentBuilder {
-        crate::operation::batch_get_image::builders::BatchGetImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_image(&self) -> crate::operation::batch_get_image::builders::BatchGetImageFluentBuilder {
+        crate::operation::batch_get_image::builders::BatchGetImageFluentBuilder::new(self.handle.clone())
     }
 }

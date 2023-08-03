@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for CreateLoadBalancerPolicyOutput {
 }
 impl CreateLoadBalancerPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerPolicyOutput`](crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyOutput).
-    pub fn builder() -> crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyOutputBuilder {
         crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLoadBalancerPolicyOutput`](crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerPolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,9 +35,7 @@ impl CreateLoadBalancerPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateLoadBalancerPolicyOutput`](crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyOutput {
+    pub fn build(self) -> crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyOutput {
         crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyOutput {
             _request_id: self._request_id,
         }

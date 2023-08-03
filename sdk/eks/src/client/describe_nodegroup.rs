@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeNodegroupOutput`](crate::operation::describe_nodegroup::DescribeNodegroupOutput) with field(s):
     ///   - [`nodegroup(Option<Nodegroup>)`](crate::operation::describe_nodegroup::DescribeNodegroupOutput::nodegroup): <p>The full description of your node group.</p>
     /// - On failure, responds with [`SdkError<DescribeNodegroupError>`](crate::operation::describe_nodegroup::DescribeNodegroupError)
-    pub fn describe_nodegroup(
-        &self,
-    ) -> crate::operation::describe_nodegroup::builders::DescribeNodegroupFluentBuilder {
-        crate::operation::describe_nodegroup::builders::DescribeNodegroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_nodegroup(&self) -> crate::operation::describe_nodegroup::builders::DescribeNodegroupFluentBuilder {
+        crate::operation::describe_nodegroup::builders::DescribeNodegroupFluentBuilder::new(self.handle.clone())
     }
 }

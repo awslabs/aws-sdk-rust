@@ -42,18 +42,14 @@ impl DeletePrincipalMappingInput {
 }
 impl DeletePrincipalMappingInput {
     /// Creates a new builder-style object to manufacture [`DeletePrincipalMappingInput`](crate::operation::delete_principal_mapping::DeletePrincipalMappingInput).
-    pub fn builder(
-    ) -> crate::operation::delete_principal_mapping::builders::DeletePrincipalMappingInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_principal_mapping::builders::DeletePrincipalMappingInputBuilder {
         crate::operation::delete_principal_mapping::builders::DeletePrincipalMappingInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePrincipalMappingInput`](crate::operation::delete_principal_mapping::DeletePrincipalMappingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePrincipalMappingInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
@@ -77,19 +73,13 @@ impl DeletePrincipalMappingInputBuilder {
     }
     /// <p>The identifier of the data source you want to delete a group from.</p>
     /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the data source you want to delete a group from.</p>
     /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
@@ -135,17 +125,13 @@ impl DeletePrincipalMappingInputBuilder {
     /// Consumes the builder and constructs a [`DeletePrincipalMappingInput`](crate::operation::delete_principal_mapping::DeletePrincipalMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_principal_mapping::DeletePrincipalMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_principal_mapping::DeletePrincipalMappingInput {
-                index_id: self.index_id,
-                data_source_id: self.data_source_id,
-                group_id: self.group_id,
-                ordering_id: self.ordering_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_principal_mapping::DeletePrincipalMappingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_principal_mapping::DeletePrincipalMappingInput {
+            index_id: self.index_id,
+            data_source_id: self.data_source_id,
+            group_id: self.group_id,
+            ordering_id: self.ordering_id,
+        })
     }
 }

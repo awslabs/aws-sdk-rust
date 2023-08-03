@@ -16,8 +16,7 @@ pub struct PillarDifference {
     pub difference_status: ::std::option::Option<crate::types::DifferenceStatus>,
     /// <p>List of question differences.</p>
     #[doc(hidden)]
-    pub question_differences:
-        ::std::option::Option<::std::vec::Vec<crate::types::QuestionDifference>>,
+    pub question_differences: ::std::option::Option<::std::vec::Vec<crate::types::QuestionDifference>>,
 }
 impl PillarDifference {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
@@ -34,9 +33,7 @@ impl PillarDifference {
         self.difference_status.as_ref()
     }
     /// <p>List of question differences.</p>
-    pub fn question_differences(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::QuestionDifference]> {
+    pub fn question_differences(&self) -> ::std::option::Option<&[crate::types::QuestionDifference]> {
         self.question_differences.as_deref()
     }
 }
@@ -49,15 +46,12 @@ impl PillarDifference {
 
 /// A builder for [`PillarDifference`](crate::types::PillarDifference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PillarDifferenceBuilder {
     pub(crate) pillar_id: ::std::option::Option<::std::string::String>,
     pub(crate) pillar_name: ::std::option::Option<::std::string::String>,
     pub(crate) difference_status: ::std::option::Option<crate::types::DifferenceStatus>,
-    pub(crate) question_differences:
-        ::std::option::Option<::std::vec::Vec<crate::types::QuestionDifference>>,
+    pub(crate) question_differences: ::std::option::Option<::std::vec::Vec<crate::types::QuestionDifference>>,
 }
 impl PillarDifferenceBuilder {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
@@ -97,10 +91,7 @@ impl PillarDifferenceBuilder {
         self
     }
     /// <p>Indicates the type of change to the pillar.</p>
-    pub fn set_difference_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DifferenceStatus>,
-    ) -> Self {
+    pub fn set_difference_status(mut self, input: ::std::option::Option<crate::types::DifferenceStatus>) -> Self {
         self.difference_status = input;
         self
     }
@@ -120,17 +111,12 @@ impl PillarDifferenceBuilder {
         self
     }
     /// <p>List of question differences.</p>
-    pub fn set_question_differences(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QuestionDifference>>,
-    ) -> Self {
+    pub fn set_question_differences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QuestionDifference>>) -> Self {
         self.question_differences = input;
         self
     }
     /// <p>List of question differences.</p>
-    pub fn get_question_differences(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QuestionDifference>> {
+    pub fn get_question_differences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuestionDifference>> {
         &self.question_differences
     }
     /// Consumes the builder and constructs a [`PillarDifference`](crate::types::PillarDifference).

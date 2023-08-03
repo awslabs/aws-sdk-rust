@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TemplateVersionStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for TemplateVersionStatus {
             "PUBLISHED" => TemplateVersionStatus::Published,
             "REGISTRATION_FAILED" => TemplateVersionStatus::RegistrationFailed,
             "REGISTRATION_IN_PROGRESS" => TemplateVersionStatus::RegistrationInProgress,
-            other => TemplateVersionStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => TemplateVersionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl TemplateVersionStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DRAFT",
-            "PUBLISHED",
-            "REGISTRATION_FAILED",
-            "REGISTRATION_IN_PROGRESS",
-        ]
+        &["DRAFT", "PUBLISHED", "REGISTRATION_FAILED", "REGISTRATION_IN_PROGRESS"]
     }
 }
 impl ::std::convert::AsRef<str> for TemplateVersionStatus {

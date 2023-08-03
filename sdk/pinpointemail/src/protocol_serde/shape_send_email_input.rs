@@ -31,9 +31,7 @@ pub fn ser_send_email_input(
         array_7.finish();
     }
     if let Some(var_10) = &input.feedback_forwarding_email_address {
-        object
-            .key("FeedbackForwardingEmailAddress")
-            .string(var_10.as_str());
+        object.key("FeedbackForwardingEmailAddress").string(var_10.as_str());
     }
     if let Some(var_11) = &input.from_email_address {
         object.key("FromEmailAddress").string(var_11.as_str());

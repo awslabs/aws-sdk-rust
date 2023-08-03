@@ -5,8 +5,7 @@
 pub struct DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInput {
     /// <p>The IDs of the associations.</p>
     #[doc(hidden)]
-    pub local_gateway_route_table_virtual_interface_group_association_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub local_gateway_route_table_virtual_interface_group_association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li> <p> <code>local-gateway-id</code> - The ID of a local gateway.</p> </li>
@@ -31,11 +30,8 @@ pub struct DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInput 
 }
 impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInput {
     /// <p>The IDs of the associations.</p>
-    pub fn local_gateway_route_table_virtual_interface_group_association_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
-        self.local_gateway_route_table_virtual_interface_group_association_ids
-            .as_deref()
+    pub fn local_gateway_route_table_virtual_interface_group_association_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.local_gateway_route_table_virtual_interface_group_association_ids.as_deref()
     }
     /// <p>One or more filters.</p>
     /// <ul>
@@ -72,12 +68,9 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInput {
 
 /// A builder for [`DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInput`](crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInputBuilder {
-    pub(crate) local_gateway_route_table_virtual_interface_group_association_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) local_gateway_route_table_virtual_interface_group_association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -93,12 +86,9 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInputBuilder
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        let mut v = self
-            .local_gateway_route_table_virtual_interface_group_association_ids
-            .unwrap_or_default();
+        let mut v = self.local_gateway_route_table_virtual_interface_group_association_ids.unwrap_or_default();
         v.push(input.into());
-        self.local_gateway_route_table_virtual_interface_group_association_ids =
-            ::std::option::Option::Some(v);
+        self.local_gateway_route_table_virtual_interface_group_association_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the associations.</p>
@@ -145,10 +135,7 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInputBuilder
     /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface group association.</p> </li>
     /// <li> <p> <code>state</code> - The state of the association.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }

@@ -32,7 +32,7 @@ impl ImportAsProvisionedProductInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportAsProvisionedProductFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::import_as_provisioned_product::builders::ImportAsProvisionedProductInputBuilder,
+    inner: crate::operation::import_as_provisioned_product::builders::ImportAsProvisionedProductInputBuilder,
 }
 impl ImportAsProvisionedProductFluentBuilder {
     /// Creates a new `ImportAsProvisionedProduct`.
@@ -43,7 +43,7 @@ impl ImportAsProvisionedProductFluentBuilder {
         }
     }
     /// Access the ImportAsProvisionedProduct as a reference.
-    pub fn as_input(&self) -> &crate::operation::import_as_provisioned_product::builders::ImportAsProvisionedProductInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::import_as_provisioned_product::builders::ImportAsProvisionedProductInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl ImportAsProvisionedProductFluentBuilder {
             crate::operation::import_as_provisioned_product::ImportAsProvisionedProduct,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl ImportAsProvisionedProductFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl ImportAsProvisionedProductFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_as_provisioned_product::ImportAsProvisionedProductOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl ImportAsProvisionedProductFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_as_provisioned_product::ImportAsProvisionedProductOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +111,7 @@ impl ImportAsProvisionedProductFluentBuilder {
             crate::operation::import_as_provisioned_product::ImportAsProvisionedProduct,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError>,
     > {
         self.customize_middleware().await
     }
@@ -131,10 +120,7 @@ impl ImportAsProvisionedProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -143,10 +129,7 @@ impl ImportAsProvisionedProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -173,18 +156,12 @@ impl ImportAsProvisionedProductFluentBuilder {
         self.inner.get_product_id()
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provisioning_artifact_id(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn set_provisioning_artifact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provisioning_artifact_id(input);
         self
     }
@@ -193,18 +170,12 @@ impl ImportAsProvisionedProductFluentBuilder {
         self.inner.get_provisioning_artifact_id()
     }
     /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
-    pub fn provisioned_product_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provisioned_product_name(input.into());
         self
     }
     /// <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
-    pub fn set_provisioned_product_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provisioned_product_name(input);
         self
     }
@@ -227,18 +198,12 @@ impl ImportAsProvisionedProductFluentBuilder {
         self.inner.get_physical_id()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }

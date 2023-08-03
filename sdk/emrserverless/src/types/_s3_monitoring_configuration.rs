@@ -30,9 +30,7 @@ impl S3MonitoringConfiguration {
 
 /// A builder for [`S3MonitoringConfiguration`](crate::types::S3MonitoringConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3MonitoringConfigurationBuilder {
     pub(crate) log_uri: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl S3MonitoringConfigurationBuilder {
         &self.log_uri
     }
     /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
-    pub fn encryption_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
-    pub fn set_encryption_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key_arn = input;
         self
     }

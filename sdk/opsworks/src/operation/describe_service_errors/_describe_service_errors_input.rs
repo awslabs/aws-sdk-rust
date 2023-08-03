@@ -29,18 +29,14 @@ impl DescribeServiceErrorsInput {
 }
 impl DescribeServiceErrorsInput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceErrorsInput`](crate::operation::describe_service_errors::DescribeServiceErrorsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_service_errors::builders::DescribeServiceErrorsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_service_errors::builders::DescribeServiceErrorsInputBuilder {
         crate::operation::describe_service_errors::builders::DescribeServiceErrorsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeServiceErrorsInput`](crate::operation::describe_service_errors::DescribeServiceErrorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServiceErrorsInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -80,42 +76,30 @@ impl DescribeServiceErrorsInputBuilder {
     /// To override the contents of this collection use [`set_service_error_ids`](Self::set_service_error_ids).
     ///
     /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
-    pub fn service_error_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_error_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.service_error_ids.unwrap_or_default();
         v.push(input.into());
         self.service_error_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
-    pub fn set_service_error_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_service_error_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.service_error_ids = input;
         self
     }
     /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
-    pub fn get_service_error_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_error_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.service_error_ids
     }
     /// Consumes the builder and constructs a [`DescribeServiceErrorsInput`](crate::operation::describe_service_errors::DescribeServiceErrorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_service_errors::DescribeServiceErrorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_service_errors::DescribeServiceErrorsInput {
-                stack_id: self.stack_id,
-                instance_id: self.instance_id,
-                service_error_ids: self.service_error_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_service_errors::DescribeServiceErrorsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_service_errors::DescribeServiceErrorsInput {
+            stack_id: self.stack_id,
+            instance_id: self.instance_id,
+            service_error_ids: self.service_error_ids,
+        })
     }
 }

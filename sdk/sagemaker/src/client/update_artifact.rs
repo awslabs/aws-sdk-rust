@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateArtifactOutput`](crate::operation::update_artifact::UpdateArtifactOutput) with field(s):
     ///   - [`artifact_arn(Option<String>)`](crate::operation::update_artifact::UpdateArtifactOutput::artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact.</p>
     /// - On failure, responds with [`SdkError<UpdateArtifactError>`](crate::operation::update_artifact::UpdateArtifactError)
-    pub fn update_artifact(
-        &self,
-    ) -> crate::operation::update_artifact::builders::UpdateArtifactFluentBuilder {
-        crate::operation::update_artifact::builders::UpdateArtifactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_artifact(&self) -> crate::operation::update_artifact::builders::UpdateArtifactFluentBuilder {
+        crate::operation::update_artifact::builders::UpdateArtifactFluentBuilder::new(self.handle.clone())
     }
 }

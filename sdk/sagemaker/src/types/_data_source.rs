@@ -17,9 +17,7 @@ impl DataSource {
         self.s3_data_source.as_ref()
     }
     /// <p>The file system that is associated with a channel.</p>
-    pub fn file_system_data_source(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FileSystemDataSource> {
+    pub fn file_system_data_source(&self) -> ::std::option::Option<&crate::types::FileSystemDataSource> {
         self.file_system_data_source.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl DataSource {
 
 /// A builder for [`DataSource`](crate::types::DataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSourceBuilder {
     pub(crate) s3_data_source: ::std::option::Option<crate::types::S3DataSource>,
     pub(crate) file_system_data_source: ::std::option::Option<crate::types::FileSystemDataSource>,
@@ -46,10 +42,7 @@ impl DataSourceBuilder {
         self
     }
     /// <p>The S3 location of the data source that is associated with a channel.</p>
-    pub fn set_s3_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DataSource>,
-    ) -> Self {
+    pub fn set_s3_data_source(mut self, input: ::std::option::Option<crate::types::S3DataSource>) -> Self {
         self.s3_data_source = input;
         self
     }
@@ -63,17 +56,12 @@ impl DataSourceBuilder {
         self
     }
     /// <p>The file system that is associated with a channel.</p>
-    pub fn set_file_system_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::FileSystemDataSource>,
-    ) -> Self {
+    pub fn set_file_system_data_source(mut self, input: ::std::option::Option<crate::types::FileSystemDataSource>) -> Self {
         self.file_system_data_source = input;
         self
     }
     /// <p>The file system that is associated with a channel.</p>
-    pub fn get_file_system_data_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::FileSystemDataSource> {
+    pub fn get_file_system_data_source(&self) -> &::std::option::Option<crate::types::FileSystemDataSource> {
         &self.file_system_data_source
     }
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).

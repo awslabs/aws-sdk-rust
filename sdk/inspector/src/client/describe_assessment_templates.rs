@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`assessment_templates(Option<Vec<AssessmentTemplate>>)`](crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesOutput::assessment_templates): <p>Information about the assessment templates.</p>
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesOutput::failed_items): <p>Assessment template details that cannot be described. An error code is provided for each failed item.</p>
     /// - On failure, responds with [`SdkError<DescribeAssessmentTemplatesError>`](crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesError)
-    pub fn describe_assessment_templates(&self) -> crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesFluentBuilder{
+    pub fn describe_assessment_templates(
+        &self,
+    ) -> crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesFluentBuilder {
         crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,9 +5,7 @@
 pub struct ListAccountAssignmentCreationStatusOutput {
     /// <p>The status object for the account assignment creation operation.</p>
     #[doc(hidden)]
-    pub account_assignments_creation_status: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>,
-    >,
+    pub account_assignments_creation_status: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +13,7 @@ pub struct ListAccountAssignmentCreationStatusOutput {
 }
 impl ListAccountAssignmentCreationStatusOutput {
     /// <p>The status object for the account assignment creation operation.</p>
-    pub fn account_assignments_creation_status(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AccountAssignmentOperationStatusMetadata]> {
+    pub fn account_assignments_creation_status(&self) -> ::std::option::Option<&[crate::types::AccountAssignmentOperationStatusMetadata]> {
         self.account_assignments_creation_status.as_deref()
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -32,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAccountAssignmentCreationStatusOu
 }
 impl ListAccountAssignmentCreationStatusOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountAssignmentCreationStatusOutput`](crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput).
-    pub fn builder() -> crate::operation::list_account_assignment_creation_status::builders::ListAccountAssignmentCreationStatusOutputBuilder{
+    pub fn builder() -> crate::operation::list_account_assignment_creation_status::builders::ListAccountAssignmentCreationStatusOutputBuilder {
         crate::operation::list_account_assignment_creation_status::builders::ListAccountAssignmentCreationStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountAssignmentCreationStatusOutput`](crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountAssignmentCreationStatusOutputBuilder {
-    pub(crate) account_assignments_creation_status: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>,
-    >,
+    pub(crate) account_assignments_creation_status: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl ListAccountAssignmentCreationStatusOutputBuilder {
     /// To override the contents of this collection use [`set_account_assignments_creation_status`](Self::set_account_assignments_creation_status).
     ///
     /// <p>The status object for the account assignment creation operation.</p>
-    pub fn account_assignments_creation_status(
-        mut self,
-        input: crate::types::AccountAssignmentOperationStatusMetadata,
-    ) -> Self {
+    pub fn account_assignments_creation_status(mut self, input: crate::types::AccountAssignmentOperationStatusMetadata) -> Self {
         let mut v = self.account_assignments_creation_status.unwrap_or_default();
         v.push(input);
         self.account_assignments_creation_status = ::std::option::Option::Some(v);
@@ -67,9 +56,7 @@ impl ListAccountAssignmentCreationStatusOutputBuilder {
     /// <p>The status object for the account assignment creation operation.</p>
     pub fn set_account_assignments_creation_status(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>>,
     ) -> Self {
         self.account_assignments_creation_status = input;
         self
@@ -77,9 +64,7 @@ impl ListAccountAssignmentCreationStatusOutputBuilder {
     /// <p>The status object for the account assignment creation operation.</p>
     pub fn get_account_assignments_creation_status(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>> {
         &self.account_assignments_creation_status
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -106,12 +91,10 @@ impl ListAccountAssignmentCreationStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAccountAssignmentCreationStatusOutput`](crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput).
-    pub fn build(self) -> crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput{
+    pub fn build(self) -> crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput {
         crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput {
-            account_assignments_creation_status: self.account_assignments_creation_status
-            ,
-            next_token: self.next_token
-            ,
+            account_assignments_creation_status: self.account_assignments_creation_status,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

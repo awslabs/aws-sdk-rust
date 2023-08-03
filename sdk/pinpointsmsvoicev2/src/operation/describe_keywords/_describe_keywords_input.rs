@@ -43,17 +43,14 @@ impl DescribeKeywordsInput {
 }
 impl DescribeKeywordsInput {
     /// Creates a new builder-style object to manufacture [`DescribeKeywordsInput`](crate::operation::describe_keywords::DescribeKeywordsInput).
-    pub fn builder() -> crate::operation::describe_keywords::builders::DescribeKeywordsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_keywords::builders::DescribeKeywordsInputBuilder {
         crate::operation::describe_keywords::builders::DescribeKeywordsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeKeywordsInput`](crate::operation::describe_keywords::DescribeKeywordsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeKeywordsInputBuilder {
     pub(crate) origination_identity: ::std::option::Option<::std::string::String>,
     pub(crate) keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,18 +60,12 @@ pub struct DescribeKeywordsInputBuilder {
 }
 impl DescribeKeywordsInputBuilder {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn set_origination_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origination_identity = input;
         self
     }
@@ -94,10 +85,7 @@ impl DescribeKeywordsInputBuilder {
         self
     }
     /// <p>An array of keywords to search for.</p>
-    pub fn set_keywords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.keywords = input;
         self
     }
@@ -117,17 +105,12 @@ impl DescribeKeywordsInputBuilder {
         self
     }
     /// <p>An array of keyword filters to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeywordFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeywordFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>An array of keyword filters to filter the results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeywordFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeywordFilter>> {
         &self.filters
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -161,10 +144,7 @@ impl DescribeKeywordsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeKeywordsInput`](crate::operation::describe_keywords::DescribeKeywordsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_keywords::DescribeKeywordsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_keywords::DescribeKeywordsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_keywords::DescribeKeywordsInput {
             origination_identity: self.origination_identity,
             keywords: self.keywords,

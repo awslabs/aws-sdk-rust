@@ -20,8 +20,7 @@ pub struct CreateInferenceRecommendationsJobInput {
     pub job_description: ::std::option::Option<::std::string::String>,
     /// <p>A set of conditions for stopping a recommendation job. If any of the conditions are met, the job is automatically stopped.</p>
     #[doc(hidden)]
-    pub stopping_conditions:
-        ::std::option::Option<crate::types::RecommendationJobStoppingConditions>,
+    pub stopping_conditions: ::std::option::Option<crate::types::RecommendationJobStoppingConditions>,
     /// <p>Provides information about the output artifacts and the KMS key to use for Amazon S3 server-side encryption.</p>
     #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::RecommendationJobOutputConfig>,
@@ -43,9 +42,7 @@ impl CreateInferenceRecommendationsJobInput {
         self.role_arn.as_deref()
     }
     /// <p>Provides information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations.</p>
-    pub fn input_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationJobInputConfig> {
+    pub fn input_config(&self) -> ::std::option::Option<&crate::types::RecommendationJobInputConfig> {
         self.input_config.as_ref()
     }
     /// <p>Description of the recommendation job.</p>
@@ -53,15 +50,11 @@ impl CreateInferenceRecommendationsJobInput {
         self.job_description.as_deref()
     }
     /// <p>A set of conditions for stopping a recommendation job. If any of the conditions are met, the job is automatically stopped.</p>
-    pub fn stopping_conditions(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationJobStoppingConditions> {
+    pub fn stopping_conditions(&self) -> ::std::option::Option<&crate::types::RecommendationJobStoppingConditions> {
         self.stopping_conditions.as_ref()
     }
     /// <p>Provides information about the output artifacts and the KMS key to use for Amazon S3 server-side encryption.</p>
-    pub fn output_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationJobOutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<&crate::types::RecommendationJobOutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>The metadata that you apply to Amazon Web Services resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the Amazon Web Services General Reference.</p>
@@ -71,24 +64,21 @@ impl CreateInferenceRecommendationsJobInput {
 }
 impl CreateInferenceRecommendationsJobInput {
     /// Creates a new builder-style object to manufacture [`CreateInferenceRecommendationsJobInput`](crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobInput).
-    pub fn builder() -> crate::operation::create_inference_recommendations_job::builders::CreateInferenceRecommendationsJobInputBuilder{
+    pub fn builder() -> crate::operation::create_inference_recommendations_job::builders::CreateInferenceRecommendationsJobInputBuilder {
         crate::operation::create_inference_recommendations_job::builders::CreateInferenceRecommendationsJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInferenceRecommendationsJobInput`](crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInferenceRecommendationsJobInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_type: ::std::option::Option<crate::types::RecommendationJobType>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) input_config: ::std::option::Option<crate::types::RecommendationJobInputConfig>,
     pub(crate) job_description: ::std::option::Option<::std::string::String>,
-    pub(crate) stopping_conditions:
-        ::std::option::Option<crate::types::RecommendationJobStoppingConditions>,
+    pub(crate) stopping_conditions: ::std::option::Option<crate::types::RecommendationJobStoppingConditions>,
     pub(crate) output_config: ::std::option::Option<crate::types::RecommendationJobOutputConfig>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -113,10 +103,7 @@ impl CreateInferenceRecommendationsJobInputBuilder {
         self
     }
     /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance recommendation and <code>Advanced</code> to initiate a load test. If left unspecified, Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
-    pub fn set_job_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationJobType>,
-    ) -> Self {
+    pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::RecommendationJobType>) -> Self {
         self.job_type = input;
         self
     }
@@ -144,32 +131,21 @@ impl CreateInferenceRecommendationsJobInputBuilder {
         self
     }
     /// <p>Provides information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations.</p>
-    pub fn set_input_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationJobInputConfig>,
-    ) -> Self {
+    pub fn set_input_config(mut self, input: ::std::option::Option<crate::types::RecommendationJobInputConfig>) -> Self {
         self.input_config = input;
         self
     }
     /// <p>Provides information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations.</p>
-    pub fn get_input_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationJobInputConfig> {
+    pub fn get_input_config(&self) -> &::std::option::Option<crate::types::RecommendationJobInputConfig> {
         &self.input_config
     }
     /// <p>Description of the recommendation job.</p>
-    pub fn job_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Description of the recommendation job.</p>
-    pub fn set_job_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_description = input;
         self
     }
@@ -178,25 +154,17 @@ impl CreateInferenceRecommendationsJobInputBuilder {
         &self.job_description
     }
     /// <p>A set of conditions for stopping a recommendation job. If any of the conditions are met, the job is automatically stopped.</p>
-    pub fn stopping_conditions(
-        mut self,
-        input: crate::types::RecommendationJobStoppingConditions,
-    ) -> Self {
+    pub fn stopping_conditions(mut self, input: crate::types::RecommendationJobStoppingConditions) -> Self {
         self.stopping_conditions = ::std::option::Option::Some(input);
         self
     }
     /// <p>A set of conditions for stopping a recommendation job. If any of the conditions are met, the job is automatically stopped.</p>
-    pub fn set_stopping_conditions(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationJobStoppingConditions>,
-    ) -> Self {
+    pub fn set_stopping_conditions(mut self, input: ::std::option::Option<crate::types::RecommendationJobStoppingConditions>) -> Self {
         self.stopping_conditions = input;
         self
     }
     /// <p>A set of conditions for stopping a recommendation job. If any of the conditions are met, the job is automatically stopped.</p>
-    pub fn get_stopping_conditions(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationJobStoppingConditions> {
+    pub fn get_stopping_conditions(&self) -> &::std::option::Option<crate::types::RecommendationJobStoppingConditions> {
         &self.stopping_conditions
     }
     /// <p>Provides information about the output artifacts and the KMS key to use for Amazon S3 server-side encryption.</p>
@@ -205,17 +173,12 @@ impl CreateInferenceRecommendationsJobInputBuilder {
         self
     }
     /// <p>Provides information about the output artifacts and the KMS key to use for Amazon S3 server-side encryption.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationJobOutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::RecommendationJobOutputConfig>) -> Self {
         self.output_config = input;
         self
     }
     /// <p>Provides information about the output artifacts and the KMS key to use for Amazon S3 server-side encryption.</p>
-    pub fn get_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationJobOutputConfig> {
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::RecommendationJobOutputConfig> {
         &self.output_config
     }
     /// Appends an item to `tags`.
@@ -230,10 +193,7 @@ impl CreateInferenceRecommendationsJobInputBuilder {
         self
     }
     /// <p>The metadata that you apply to Amazon Web Services resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the Amazon Web Services General Reference.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -242,26 +202,23 @@ impl CreateInferenceRecommendationsJobInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateInferenceRecommendationsJobInput`](crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobInput {
-                job_name: self.job_name
-                ,
-                job_type: self.job_type
-                ,
-                role_arn: self.role_arn
-                ,
-                input_config: self.input_config
-                ,
-                job_description: self.job_description
-                ,
-                stopping_conditions: self.stopping_conditions
-                ,
-                output_config: self.output_config
-                ,
-                tags: self.tags
-                ,
-            }
+                job_name: self.job_name,
+                job_type: self.job_type,
+                role_arn: self.role_arn,
+                input_config: self.input_config,
+                job_description: self.job_description,
+                stopping_conditions: self.stopping_conditions,
+                output_config: self.output_config,
+                tags: self.tags,
+            },
         )
     }
 }

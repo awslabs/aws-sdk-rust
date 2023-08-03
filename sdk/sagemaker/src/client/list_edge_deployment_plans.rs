@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`edge_deployment_plan_summaries(Option<Vec<EdgeDeploymentPlanSummary>>)`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansOutput::edge_deployment_plan_summaries): <p>List of summaries of edge deployment plans.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansOutput::next_token): <p>The token to use when calling the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListEdgeDeploymentPlansError>`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansError)
-    pub fn list_edge_deployment_plans(
-        &self,
-    ) -> crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder
-    {
+    pub fn list_edge_deployment_plans(&self) -> crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder {
         crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder::new(self.handle.clone())
     }
 }

@@ -217,9 +217,7 @@ impl PutBotInput {
 
 /// A builder for [`PutBotInput`](crate::operation::put_bot::PutBotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBotInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -279,10 +277,7 @@ impl PutBotInputBuilder {
         self
     }
     /// <p>An array of <code>Intent</code> objects. Each intent represents a command that a user can express. For example, a pizza ordering bot might support an OrderPizza intent. For more information, see <code>how-it-works</code>.</p>
-    pub fn set_intents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Intent>>,
-    ) -> Self {
+    pub fn set_intents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Intent>>) -> Self {
         self.intents = input;
         self
     }
@@ -370,10 +365,7 @@ impl PutBotInputBuilder {
     /// <li> <p>IntentB</p> </li>
     /// <li> <p>IntentC</p> </li>
     /// </ul>
-    pub fn set_nlu_intent_confidence_threshold(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_nlu_intent_confidence_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.nlu_intent_confidence_threshold = input;
         self
     }
@@ -418,10 +410,7 @@ impl PutBotInputBuilder {
     /// <li> <p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p> </li>
     /// <li> <p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p> </li>
     /// </ul>
-    pub fn set_clarification_prompt(
-        mut self,
-        input: ::std::option::Option<crate::types::Prompt>,
-    ) -> Self {
+    pub fn set_clarification_prompt(mut self, input: ::std::option::Option<crate::types::Prompt>) -> Self {
         self.clarification_prompt = input;
         self
     }
@@ -449,10 +438,7 @@ impl PutBotInputBuilder {
     /// <p>For example, in a pizza ordering bot, Amazon Lex might ask a user "What type of crust would you like?" If the user's response is not one of the expected responses (for example, "thin crust, "deep dish," etc.), Amazon Lex tries to elicit a correct response a few more times. </p>
     /// <p>For example, in a pizza ordering application, <code>OrderPizza</code> might be one of the intents. This intent might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code> field when you create the <code>CrustType</code> slot.</p>
     /// <p>If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback intent is used instead. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
-    pub fn set_abort_statement(
-        mut self,
-        input: ::std::option::Option<crate::types::Statement>,
-    ) -> Self {
+    pub fn set_abort_statement(mut self, input: ::std::option::Option<crate::types::Statement>) -> Self {
         self.abort_statement = input;
         self
     }
@@ -531,10 +517,7 @@ impl PutBotInputBuilder {
     }
     /// <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it. </p>
     /// <p>If you don't specify this value, the default value is <code>BUILD</code>.</p>
-    pub fn set_process_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessBehavior>,
-    ) -> Self {
+    pub fn set_process_behavior(mut self, input: ::std::option::Option<crate::types::ProcessBehavior>) -> Self {
         self.process_behavior = input;
         self
     }
@@ -617,10 +600,7 @@ impl PutBotInputBuilder {
         self
     }
     /// <p>A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -629,12 +609,7 @@ impl PutBotInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutBotInput`](crate::operation::put_bot::PutBotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_bot::PutBotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_bot::PutBotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_bot::PutBotInput {
             name: self.name,
             description: self.description,

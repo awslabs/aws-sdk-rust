@@ -10,10 +10,7 @@ impl GetBatchPredictionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_batch_prediction::GetBatchPredictionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_batch_prediction::GetBatchPredictionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_batch_prediction::GetBatchPredictionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_batch_prediction();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetBatchPredictionFluentBuilder {
         }
     }
     /// Access the GetBatchPrediction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_batch_prediction::builders::GetBatchPredictionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_batch_prediction::builders::GetBatchPredictionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetBatchPredictionFluentBuilder {
             crate::operation::get_batch_prediction::GetBatchPrediction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_batch_prediction::GetBatchPredictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_batch_prediction::GetBatchPredictionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetBatchPredictionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetBatchPredictionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_batch_prediction::GetBatchPredictionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_batch_prediction::GetBatchPredictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_batch_prediction::GetBatchPredictionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetBatchPredictionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_batch_prediction::GetBatchPredictionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_batch_prediction::GetBatchPredictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_batch_prediction::GetBatchPredictionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetBatchPredictionFluentBuilder {
             crate::operation::get_batch_prediction::GetBatchPrediction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_batch_prediction::GetBatchPredictionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_batch_prediction::GetBatchPredictionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
-    pub fn batch_prediction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_prediction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.batch_prediction_id(input.into());
         self
     }
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
-    pub fn set_batch_prediction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_prediction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_batch_prediction_id(input);
         self
     }

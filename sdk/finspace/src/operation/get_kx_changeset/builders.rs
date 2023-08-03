@@ -10,10 +10,7 @@ impl GetKxChangesetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_kx_changeset::GetKxChangesetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_changeset::GetKxChangesetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_kx_changeset::GetKxChangesetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_kx_changeset();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetKxChangesetFluentBuilder {
         }
     }
     /// Access the GetKxChangeset as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_kx_changeset::builders::GetKxChangesetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_kx_changeset::builders::GetKxChangesetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetKxChangesetFluentBuilder {
             crate::operation::get_kx_changeset::GetKxChangeset,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_changeset::GetKxChangesetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_kx_changeset::GetKxChangesetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetKxChangesetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetKxChangesetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_kx_changeset::GetKxChangesetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_changeset::GetKxChangesetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_kx_changeset::GetKxChangesetError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetKxChangesetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_kx_changeset::GetKxChangesetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_changeset::GetKxChangesetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_kx_changeset::GetKxChangesetError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetKxChangesetFluentBuilder {
             crate::operation::get_kx_changeset::GetKxChangeset,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_kx_changeset::GetKxChangesetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_kx_changeset::GetKxChangesetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -143,18 +121,12 @@ impl GetKxChangesetFluentBuilder {
         self.inner.get_environment_id()
     }
     /// <p>The name of the kdb database.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the kdb database.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }

@@ -31,11 +31,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::update_patch_baseline::UpdatePatchBaselineOutput::description): <p>A description of the patch baseline.</p>
     ///   - [`sources(Option<Vec<PatchSource>>)`](crate::operation::update_patch_baseline::UpdatePatchBaselineOutput::sources): <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
     /// - On failure, responds with [`SdkError<UpdatePatchBaselineError>`](crate::operation::update_patch_baseline::UpdatePatchBaselineError)
-    pub fn update_patch_baseline(
-        &self,
-    ) -> crate::operation::update_patch_baseline::builders::UpdatePatchBaselineFluentBuilder {
-        crate::operation::update_patch_baseline::builders::UpdatePatchBaselineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_patch_baseline(&self) -> crate::operation::update_patch_baseline::builders::UpdatePatchBaselineFluentBuilder {
+        crate::operation::update_patch_baseline::builders::UpdatePatchBaselineFluentBuilder::new(self.handle.clone())
     }
 }

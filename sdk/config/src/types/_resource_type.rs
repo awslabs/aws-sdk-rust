@@ -354,13 +354,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -1053,9 +1047,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::CodeDeploy::Application" => ResourceType::CodeDeployApplication,
             "AWS::CodeDeploy::DeploymentConfig" => ResourceType::CodeDeployDeploymentConfig,
             "AWS::CodeDeploy::DeploymentGroup" => ResourceType::CodeDeployDeploymentGroup,
-            "AWS::CodeGuruReviewer::RepositoryAssociation" => {
-                ResourceType::CodeGuruReviewerRepositoryAssociation
-            }
+            "AWS::CodeGuruReviewer::RepositoryAssociation" => ResourceType::CodeGuruReviewerRepositoryAssociation,
             "AWS::CodePipeline::Pipeline" => ResourceType::Pipeline,
             "AWS::Config::ConformancePackCompliance" => ResourceType::ConformancePackCompliance,
             "AWS::Config::ResourceCompliance" => ResourceType::ResourceCompliance,
@@ -1091,9 +1083,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::EC2::LaunchTemplate" => ResourceType::LaunchTemplate,
             "AWS::EC2::NatGateway" => ResourceType::NatGateway,
             "AWS::EC2::NetworkAcl" => ResourceType::NetworkAcl,
-            "AWS::EC2::NetworkInsightsAccessScopeAnalysis" => {
-                ResourceType::NetworkInsightsAccessScopeAnalysis
-            }
+            "AWS::EC2::NetworkInsightsAccessScopeAnalysis" => ResourceType::NetworkInsightsAccessScopeAnalysis,
             "AWS::EC2::NetworkInsightsPath" => ResourceType::Ec2NetworkInsightsPath,
             "AWS::EC2::NetworkInterface" => ResourceType::NetworkInterface,
             "AWS::EC2::PrefixList" => ResourceType::Ec2PrefixList,
@@ -1177,13 +1167,9 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::IVS::PlaybackKeyPair" => ResourceType::IvsPlaybackKeyPair,
             "AWS::IVS::RecordingConfiguration" => ResourceType::IvsRecordingConfiguration,
             "AWS::ImageBuilder::ContainerRecipe" => ResourceType::ImageBuilderContainerRecipe,
-            "AWS::ImageBuilder::DistributionConfiguration" => {
-                ResourceType::ImageBuilderDistributionConfiguration
-            }
+            "AWS::ImageBuilder::DistributionConfiguration" => ResourceType::ImageBuilderDistributionConfiguration,
             "AWS::ImageBuilder::ImagePipeline" => ResourceType::ImageBuilderImagePipeline,
-            "AWS::ImageBuilder::InfrastructureConfiguration" => {
-                ResourceType::ImageBuilderInfrastructureConfiguration
-            }
+            "AWS::ImageBuilder::InfrastructureConfiguration" => ResourceType::ImageBuilderInfrastructureConfiguration,
             "AWS::IoT::AccountAuditConfiguration" => ResourceType::IoTAccountAuditConfiguration,
             "AWS::IoT::Authorizer" => ResourceType::IoTAuthorizer,
             "AWS::IoT::CustomMetric" => ResourceType::IoTCustomMetric,
@@ -1226,9 +1212,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::LookoutMetrics::Alert" => ResourceType::LookoutMetricsAlert,
             "AWS::LookoutVision::Project" => ResourceType::LookoutVisionProject,
             "AWS::MSK::Cluster" => ResourceType::MskCluster,
-            "AWS::MediaPackage::PackagingConfiguration" => {
-                ResourceType::MediaPackagePackagingConfiguration
-            }
+            "AWS::MediaPackage::PackagingConfiguration" => ResourceType::MediaPackagePackagingConfiguration,
             "AWS::MediaPackage::PackagingGroup" => ResourceType::MediaPackagePackagingGroup,
             "AWS::NetworkFirewall::Firewall" => ResourceType::NetworkFirewallFirewall,
             "AWS::NetworkFirewall::FirewallPolicy" => ResourceType::NetworkFirewallFirewallPolicy,
@@ -1237,9 +1221,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::NetworkManager::GlobalNetwork" => ResourceType::NetworkManagerGlobalNetwork,
             "AWS::NetworkManager::Link" => ResourceType::NetworkManagerLink,
             "AWS::NetworkManager::Site" => ResourceType::NetworkManagerSite,
-            "AWS::NetworkManager::TransitGatewayRegistration" => {
-                ResourceType::NetworkManagerTransitGatewayRegistration
-            }
+            "AWS::NetworkManager::TransitGatewayRegistration" => ResourceType::NetworkManagerTransitGatewayRegistration,
             "AWS::OpenSearch::Domain" => ResourceType::OpenSearchDomain,
             "AWS::Panorama::Package" => ResourceType::PanoramaPackage,
             "AWS::Pinpoint::App" => ResourceType::PinpointApp,
@@ -1266,44 +1248,22 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::Redshift::ScheduledAction" => ResourceType::RedshiftScheduledAction,
             "AWS::ResilienceHub::ResiliencyPolicy" => ResourceType::ResilienceHubResiliencyPolicy,
             "AWS::RoboMaker::RobotApplication" => ResourceType::RoboMakerRobotApplication,
-            "AWS::RoboMaker::RobotApplicationVersion" => {
-                ResourceType::RoboMakerRobotApplicationVersion
-            }
+            "AWS::RoboMaker::RobotApplicationVersion" => ResourceType::RoboMakerRobotApplicationVersion,
             "AWS::RoboMaker::SimulationApplication" => ResourceType::RoboMakerSimulationApplication,
             "AWS::Route53::HostedZone" => ResourceType::Route53HostedZone,
             "AWS::Route53RecoveryControl::Cluster" => ResourceType::Route53RecoveryControlCluster,
-            "AWS::Route53RecoveryControl::ControlPanel" => {
-                ResourceType::Route53RecoveryControlControlPanel
-            }
-            "AWS::Route53RecoveryControl::RoutingControl" => {
-                ResourceType::Route53RecoveryControlRoutingControl
-            }
-            "AWS::Route53RecoveryControl::SafetyRule" => {
-                ResourceType::Route53RecoveryControlSafetyRule
-            }
+            "AWS::Route53RecoveryControl::ControlPanel" => ResourceType::Route53RecoveryControlControlPanel,
+            "AWS::Route53RecoveryControl::RoutingControl" => ResourceType::Route53RecoveryControlRoutingControl,
+            "AWS::Route53RecoveryControl::SafetyRule" => ResourceType::Route53RecoveryControlSafetyRule,
             "AWS::Route53RecoveryReadiness::Cell" => ResourceType::Route53RecoveryReadinessCell,
-            "AWS::Route53RecoveryReadiness::ReadinessCheck" => {
-                ResourceType::Route53RecoveryReadinessReadinessCheck
-            }
-            "AWS::Route53RecoveryReadiness::RecoveryGroup" => {
-                ResourceType::Route53RecoveryReadinessRecoveryGroup
-            }
-            "AWS::Route53RecoveryReadiness::ResourceSet" => {
-                ResourceType::Route53RecoveryReadinessResourceSet
-            }
-            "AWS::Route53Resolver::FirewallDomainList" => {
-                ResourceType::Route53ResolverFirewallDomainList
-            }
-            "AWS::Route53Resolver::FirewallRuleGroupAssociation" => {
-                ResourceType::Route53ResolverFirewallRuleGroupAssociation
-            }
-            "AWS::Route53Resolver::ResolverEndpoint" => {
-                ResourceType::Route53ResolverResolverEndpoint
-            }
+            "AWS::Route53RecoveryReadiness::ReadinessCheck" => ResourceType::Route53RecoveryReadinessReadinessCheck,
+            "AWS::Route53RecoveryReadiness::RecoveryGroup" => ResourceType::Route53RecoveryReadinessRecoveryGroup,
+            "AWS::Route53RecoveryReadiness::ResourceSet" => ResourceType::Route53RecoveryReadinessResourceSet,
+            "AWS::Route53Resolver::FirewallDomainList" => ResourceType::Route53ResolverFirewallDomainList,
+            "AWS::Route53Resolver::FirewallRuleGroupAssociation" => ResourceType::Route53ResolverFirewallRuleGroupAssociation,
+            "AWS::Route53Resolver::ResolverEndpoint" => ResourceType::Route53ResolverResolverEndpoint,
             "AWS::Route53Resolver::ResolverRule" => ResourceType::Route53ResolverResolverRule,
-            "AWS::Route53Resolver::ResolverRuleAssociation" => {
-                ResourceType::Route53ResolverResolverRuleAssociation
-            }
+            "AWS::Route53Resolver::ResolverRuleAssociation" => ResourceType::Route53ResolverResolverRuleAssociation,
             "AWS::S3::AccountPublicAccessBlock" => ResourceType::AccountPublicAccessBlock,
             "AWS::S3::Bucket" => ResourceType::Bucket,
             "AWS::S3::MultiRegionAccessPoint" => ResourceType::S3MultiRegionAccessPoint,
@@ -1324,20 +1284,14 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::SageMaker::Domain" => ResourceType::SageMakerDomain,
             "AWS::SageMaker::Image" => ResourceType::SageMakerImage,
             "AWS::SageMaker::Model" => ResourceType::SageMakerModel,
-            "AWS::SageMaker::NotebookInstanceLifecycleConfig" => {
-                ResourceType::SageMakerNotebookInstanceLifecycleConfig
-            }
+            "AWS::SageMaker::NotebookInstanceLifecycleConfig" => ResourceType::SageMakerNotebookInstanceLifecycleConfig,
             "AWS::SageMaker::Workteam" => ResourceType::SageMakerWorkteam,
             "AWS::SecretsManager::Secret" => ResourceType::Secret,
             "AWS::ServiceCatalog::CloudFormationProduct" => ResourceType::CloudFormationProduct,
-            "AWS::ServiceCatalog::CloudFormationProvisionedProduct" => {
-                ResourceType::CloudFormationProvisionedProduct
-            }
+            "AWS::ServiceCatalog::CloudFormationProvisionedProduct" => ResourceType::CloudFormationProvisionedProduct,
             "AWS::ServiceCatalog::Portfolio" => ResourceType::Portfolio,
             "AWS::ServiceDiscovery::HttpNamespace" => ResourceType::ServiceDiscoveryHttpNamespace,
-            "AWS::ServiceDiscovery::PublicDnsNamespace" => {
-                ResourceType::ServiceDiscoveryPublicDnsNamespace
-            }
+            "AWS::ServiceDiscovery::PublicDnsNamespace" => ResourceType::ServiceDiscoveryPublicDnsNamespace,
             "AWS::ServiceDiscovery::Service" => ResourceType::ServiceDiscoveryService,
             "AWS::Shield::Protection" => ResourceType::Protection,
             "AWS::ShieldRegional::Protection" => ResourceType::RegionalProtection,
@@ -1363,9 +1317,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::WorkSpaces::ConnectionAlias" => ResourceType::WorkSpacesConnectionAlias,
             "AWS::WorkSpaces::Workspace" => ResourceType::WorkSpacesWorkspace,
             "AWS::XRay::EncryptionConfig" => ResourceType::EncryptionConfig,
-            other => {
-                ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -1428,9 +1380,7 @@ impl ResourceType {
             ResourceType::CodeDeployApplication => "AWS::CodeDeploy::Application",
             ResourceType::CodeDeployDeploymentConfig => "AWS::CodeDeploy::DeploymentConfig",
             ResourceType::CodeDeployDeploymentGroup => "AWS::CodeDeploy::DeploymentGroup",
-            ResourceType::CodeGuruReviewerRepositoryAssociation => {
-                "AWS::CodeGuruReviewer::RepositoryAssociation"
-            }
+            ResourceType::CodeGuruReviewerRepositoryAssociation => "AWS::CodeGuruReviewer::RepositoryAssociation",
             ResourceType::Pipeline => "AWS::CodePipeline::Pipeline",
             ResourceType::ConformancePackCompliance => "AWS::Config::ConformancePackCompliance",
             ResourceType::ResourceCompliance => "AWS::Config::ResourceCompliance",
@@ -1466,9 +1416,7 @@ impl ResourceType {
             ResourceType::LaunchTemplate => "AWS::EC2::LaunchTemplate",
             ResourceType::NatGateway => "AWS::EC2::NatGateway",
             ResourceType::NetworkAcl => "AWS::EC2::NetworkAcl",
-            ResourceType::NetworkInsightsAccessScopeAnalysis => {
-                "AWS::EC2::NetworkInsightsAccessScopeAnalysis"
-            }
+            ResourceType::NetworkInsightsAccessScopeAnalysis => "AWS::EC2::NetworkInsightsAccessScopeAnalysis",
             ResourceType::Ec2NetworkInsightsPath => "AWS::EC2::NetworkInsightsPath",
             ResourceType::NetworkInterface => "AWS::EC2::NetworkInterface",
             ResourceType::Ec2PrefixList => "AWS::EC2::PrefixList",
@@ -1552,13 +1500,9 @@ impl ResourceType {
             ResourceType::IvsPlaybackKeyPair => "AWS::IVS::PlaybackKeyPair",
             ResourceType::IvsRecordingConfiguration => "AWS::IVS::RecordingConfiguration",
             ResourceType::ImageBuilderContainerRecipe => "AWS::ImageBuilder::ContainerRecipe",
-            ResourceType::ImageBuilderDistributionConfiguration => {
-                "AWS::ImageBuilder::DistributionConfiguration"
-            }
+            ResourceType::ImageBuilderDistributionConfiguration => "AWS::ImageBuilder::DistributionConfiguration",
             ResourceType::ImageBuilderImagePipeline => "AWS::ImageBuilder::ImagePipeline",
-            ResourceType::ImageBuilderInfrastructureConfiguration => {
-                "AWS::ImageBuilder::InfrastructureConfiguration"
-            }
+            ResourceType::ImageBuilderInfrastructureConfiguration => "AWS::ImageBuilder::InfrastructureConfiguration",
             ResourceType::IoTAccountAuditConfiguration => "AWS::IoT::AccountAuditConfiguration",
             ResourceType::IoTAuthorizer => "AWS::IoT::Authorizer",
             ResourceType::IoTCustomMetric => "AWS::IoT::CustomMetric",
@@ -1601,9 +1545,7 @@ impl ResourceType {
             ResourceType::LookoutMetricsAlert => "AWS::LookoutMetrics::Alert",
             ResourceType::LookoutVisionProject => "AWS::LookoutVision::Project",
             ResourceType::MskCluster => "AWS::MSK::Cluster",
-            ResourceType::MediaPackagePackagingConfiguration => {
-                "AWS::MediaPackage::PackagingConfiguration"
-            }
+            ResourceType::MediaPackagePackagingConfiguration => "AWS::MediaPackage::PackagingConfiguration",
             ResourceType::MediaPackagePackagingGroup => "AWS::MediaPackage::PackagingGroup",
             ResourceType::NetworkFirewallFirewall => "AWS::NetworkFirewall::Firewall",
             ResourceType::NetworkFirewallFirewallPolicy => "AWS::NetworkFirewall::FirewallPolicy",
@@ -1612,9 +1554,7 @@ impl ResourceType {
             ResourceType::NetworkManagerGlobalNetwork => "AWS::NetworkManager::GlobalNetwork",
             ResourceType::NetworkManagerLink => "AWS::NetworkManager::Link",
             ResourceType::NetworkManagerSite => "AWS::NetworkManager::Site",
-            ResourceType::NetworkManagerTransitGatewayRegistration => {
-                "AWS::NetworkManager::TransitGatewayRegistration"
-            }
+            ResourceType::NetworkManagerTransitGatewayRegistration => "AWS::NetworkManager::TransitGatewayRegistration",
             ResourceType::OpenSearchDomain => "AWS::OpenSearch::Domain",
             ResourceType::PanoramaPackage => "AWS::Panorama::Package",
             ResourceType::PinpointApp => "AWS::Pinpoint::App",
@@ -1641,44 +1581,22 @@ impl ResourceType {
             ResourceType::RedshiftScheduledAction => "AWS::Redshift::ScheduledAction",
             ResourceType::ResilienceHubResiliencyPolicy => "AWS::ResilienceHub::ResiliencyPolicy",
             ResourceType::RoboMakerRobotApplication => "AWS::RoboMaker::RobotApplication",
-            ResourceType::RoboMakerRobotApplicationVersion => {
-                "AWS::RoboMaker::RobotApplicationVersion"
-            }
+            ResourceType::RoboMakerRobotApplicationVersion => "AWS::RoboMaker::RobotApplicationVersion",
             ResourceType::RoboMakerSimulationApplication => "AWS::RoboMaker::SimulationApplication",
             ResourceType::Route53HostedZone => "AWS::Route53::HostedZone",
             ResourceType::Route53RecoveryControlCluster => "AWS::Route53RecoveryControl::Cluster",
-            ResourceType::Route53RecoveryControlControlPanel => {
-                "AWS::Route53RecoveryControl::ControlPanel"
-            }
-            ResourceType::Route53RecoveryControlRoutingControl => {
-                "AWS::Route53RecoveryControl::RoutingControl"
-            }
-            ResourceType::Route53RecoveryControlSafetyRule => {
-                "AWS::Route53RecoveryControl::SafetyRule"
-            }
+            ResourceType::Route53RecoveryControlControlPanel => "AWS::Route53RecoveryControl::ControlPanel",
+            ResourceType::Route53RecoveryControlRoutingControl => "AWS::Route53RecoveryControl::RoutingControl",
+            ResourceType::Route53RecoveryControlSafetyRule => "AWS::Route53RecoveryControl::SafetyRule",
             ResourceType::Route53RecoveryReadinessCell => "AWS::Route53RecoveryReadiness::Cell",
-            ResourceType::Route53RecoveryReadinessReadinessCheck => {
-                "AWS::Route53RecoveryReadiness::ReadinessCheck"
-            }
-            ResourceType::Route53RecoveryReadinessRecoveryGroup => {
-                "AWS::Route53RecoveryReadiness::RecoveryGroup"
-            }
-            ResourceType::Route53RecoveryReadinessResourceSet => {
-                "AWS::Route53RecoveryReadiness::ResourceSet"
-            }
-            ResourceType::Route53ResolverFirewallDomainList => {
-                "AWS::Route53Resolver::FirewallDomainList"
-            }
-            ResourceType::Route53ResolverFirewallRuleGroupAssociation => {
-                "AWS::Route53Resolver::FirewallRuleGroupAssociation"
-            }
-            ResourceType::Route53ResolverResolverEndpoint => {
-                "AWS::Route53Resolver::ResolverEndpoint"
-            }
+            ResourceType::Route53RecoveryReadinessReadinessCheck => "AWS::Route53RecoveryReadiness::ReadinessCheck",
+            ResourceType::Route53RecoveryReadinessRecoveryGroup => "AWS::Route53RecoveryReadiness::RecoveryGroup",
+            ResourceType::Route53RecoveryReadinessResourceSet => "AWS::Route53RecoveryReadiness::ResourceSet",
+            ResourceType::Route53ResolverFirewallDomainList => "AWS::Route53Resolver::FirewallDomainList",
+            ResourceType::Route53ResolverFirewallRuleGroupAssociation => "AWS::Route53Resolver::FirewallRuleGroupAssociation",
+            ResourceType::Route53ResolverResolverEndpoint => "AWS::Route53Resolver::ResolverEndpoint",
             ResourceType::Route53ResolverResolverRule => "AWS::Route53Resolver::ResolverRule",
-            ResourceType::Route53ResolverResolverRuleAssociation => {
-                "AWS::Route53Resolver::ResolverRuleAssociation"
-            }
+            ResourceType::Route53ResolverResolverRuleAssociation => "AWS::Route53Resolver::ResolverRuleAssociation",
             ResourceType::AccountPublicAccessBlock => "AWS::S3::AccountPublicAccessBlock",
             ResourceType::Bucket => "AWS::S3::Bucket",
             ResourceType::S3MultiRegionAccessPoint => "AWS::S3::MultiRegionAccessPoint",
@@ -1699,20 +1617,14 @@ impl ResourceType {
             ResourceType::SageMakerDomain => "AWS::SageMaker::Domain",
             ResourceType::SageMakerImage => "AWS::SageMaker::Image",
             ResourceType::SageMakerModel => "AWS::SageMaker::Model",
-            ResourceType::SageMakerNotebookInstanceLifecycleConfig => {
-                "AWS::SageMaker::NotebookInstanceLifecycleConfig"
-            }
+            ResourceType::SageMakerNotebookInstanceLifecycleConfig => "AWS::SageMaker::NotebookInstanceLifecycleConfig",
             ResourceType::SageMakerWorkteam => "AWS::SageMaker::Workteam",
             ResourceType::Secret => "AWS::SecretsManager::Secret",
             ResourceType::CloudFormationProduct => "AWS::ServiceCatalog::CloudFormationProduct",
-            ResourceType::CloudFormationProvisionedProduct => {
-                "AWS::ServiceCatalog::CloudFormationProvisionedProduct"
-            }
+            ResourceType::CloudFormationProvisionedProduct => "AWS::ServiceCatalog::CloudFormationProvisionedProduct",
             ResourceType::Portfolio => "AWS::ServiceCatalog::Portfolio",
             ResourceType::ServiceDiscoveryHttpNamespace => "AWS::ServiceDiscovery::HttpNamespace",
-            ResourceType::ServiceDiscoveryPublicDnsNamespace => {
-                "AWS::ServiceDiscovery::PublicDnsNamespace"
-            }
+            ResourceType::ServiceDiscoveryPublicDnsNamespace => "AWS::ServiceDiscovery::PublicDnsNamespace",
             ResourceType::ServiceDiscoveryService => "AWS::ServiceDiscovery::Service",
             ResourceType::Protection => "AWS::Shield::Protection",
             ResourceType::RegionalProtection => "AWS::ShieldRegional::Protection",

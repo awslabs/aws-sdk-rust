@@ -36,16 +36,14 @@ impl DescribeMappedResourceConfigurationInput {
 }
 impl DescribeMappedResourceConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeMappedResourceConfigurationInput`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationInput).
-    pub fn builder() -> crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationInputBuilder {
         crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMappedResourceConfigurationInput`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMappedResourceConfigurationInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -110,18 +108,19 @@ impl DescribeMappedResourceConfigurationInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeMappedResourceConfigurationInput`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationInput {
-                stream_name: self.stream_name
-                ,
-                stream_arn: self.stream_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                stream_name: self.stream_name,
+                stream_arn: self.stream_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

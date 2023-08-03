@@ -37,9 +37,7 @@ impl CodeErrorLocation {
 
 /// A builder for [`CodeErrorLocation`](crate::types::CodeErrorLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeErrorLocationBuilder {
     pub(crate) line: ::std::option::Option<i32>,
     pub(crate) column: ::std::option::Option<i32>,

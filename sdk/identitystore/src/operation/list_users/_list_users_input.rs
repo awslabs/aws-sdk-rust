@@ -13,9 +13,7 @@ pub struct ListUsersInput {
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests. </p>
-    #[deprecated(
-        note = "Using filters with ListUsers API is deprecated, please use GetGroupId API instead."
-    )]
+    #[deprecated(note = "Using filters with ListUsers API is deprecated, please use GetGroupId API instead.")]
     #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
@@ -33,9 +31,7 @@ impl ListUsersInput {
         self.next_token.as_deref()
     }
     /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests. </p>
-    #[deprecated(
-        note = "Using filters with ListUsers API is deprecated, please use GetGroupId API instead."
-    )]
+    #[deprecated(note = "Using filters with ListUsers API is deprecated, please use GetGroupId API instead.")]
     pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
@@ -49,9 +45,7 @@ impl ListUsersInput {
 
 /// A builder for [`ListUsersInput`](crate::operation::list_users::ListUsersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUsersInputBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -60,18 +54,12 @@ pub struct ListUsersInputBuilder {
 }
 impl ListUsersInputBuilder {
     /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_store_id = input;
         self
     }
@@ -112,9 +100,7 @@ impl ListUsersInputBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests. </p>
-    #[deprecated(
-        note = "Using filters with ListUsers API is deprecated, please use GetGroupId API instead."
-    )]
+    #[deprecated(note = "Using filters with ListUsers API is deprecated, please use GetGroupId API instead.")]
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
@@ -122,30 +108,18 @@ impl ListUsersInputBuilder {
         self
     }
     /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests. </p>
-    #[deprecated(
-        note = "Using filters with ListUsers API is deprecated, please use GetGroupId API instead."
-    )]
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    #[deprecated(note = "Using filters with ListUsers API is deprecated, please use GetGroupId API instead.")]
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests. </p>
-    #[deprecated(
-        note = "Using filters with ListUsers API is deprecated, please use GetGroupId API instead."
-    )]
+    #[deprecated(note = "Using filters with ListUsers API is deprecated, please use GetGroupId API instead.")]
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListUsersInput`](crate::operation::list_users::ListUsersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_users::ListUsersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_users::ListUsersInput {
             identity_store_id: self.identity_store_id,
             max_results: self.max_results,

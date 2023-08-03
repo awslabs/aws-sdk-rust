@@ -5,16 +5,16 @@ pub use crate::operation::list_available_managed_rule_groups::_list_available_ma
 
 impl ListAvailableManagedRuleGroupsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_available_managed_rule_groups();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListAvailableManagedRuleGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAvailableManagedRuleGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsInputBuilder,
+    inner: crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsInputBuilder,
 }
 impl ListAvailableManagedRuleGroupsFluentBuilder {
     /// Creates a new `ListAvailableManagedRuleGroups`.
@@ -37,15 +37,20 @@ impl ListAvailableManagedRuleGroupsFluentBuilder {
         }
     }
     /// Access the ListAvailableManagedRuleGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroups, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroups,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListAvailableManagedRuleGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl ListAvailableManagedRuleGroupsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroups, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroups,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>

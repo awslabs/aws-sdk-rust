@@ -13,9 +13,7 @@ pub struct TrialComponentStatus {
 }
 impl TrialComponentStatus {
     /// <p>The status of the trial component.</p>
-    pub fn primary_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TrialComponentPrimaryStatus> {
+    pub fn primary_status(&self) -> ::std::option::Option<&crate::types::TrialComponentPrimaryStatus> {
         self.primary_status.as_ref()
     }
     /// <p>If the component failed, a message describing why.</p>
@@ -32,9 +30,7 @@ impl TrialComponentStatus {
 
 /// A builder for [`TrialComponentStatus`](crate::types::TrialComponentStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrialComponentStatusBuilder {
     pub(crate) primary_status: ::std::option::Option<crate::types::TrialComponentPrimaryStatus>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -46,17 +42,12 @@ impl TrialComponentStatusBuilder {
         self
     }
     /// <p>The status of the trial component.</p>
-    pub fn set_primary_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TrialComponentPrimaryStatus>,
-    ) -> Self {
+    pub fn set_primary_status(mut self, input: ::std::option::Option<crate::types::TrialComponentPrimaryStatus>) -> Self {
         self.primary_status = input;
         self
     }
     /// <p>The status of the trial component.</p>
-    pub fn get_primary_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrialComponentPrimaryStatus> {
+    pub fn get_primary_status(&self) -> &::std::option::Option<crate::types::TrialComponentPrimaryStatus> {
         &self.primary_status
     }
     /// <p>If the component failed, a message describing why.</p>

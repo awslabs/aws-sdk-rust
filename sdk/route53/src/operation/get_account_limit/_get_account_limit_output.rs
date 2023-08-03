@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for GetAccountLimitOutput {
 }
 impl GetAccountLimitOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountLimitOutput`](crate::operation::get_account_limit::GetAccountLimitOutput).
-    pub fn builder() -> crate::operation::get_account_limit::builders::GetAccountLimitOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_account_limit::builders::GetAccountLimitOutputBuilder {
         crate::operation::get_account_limit::builders::GetAccountLimitOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccountLimitOutput`](crate::operation::get_account_limit::GetAccountLimitOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccountLimitOutputBuilder {
     pub(crate) limit: ::std::option::Option<crate::types::AccountLimit>,
     pub(crate) count: ::std::option::Option<i64>,

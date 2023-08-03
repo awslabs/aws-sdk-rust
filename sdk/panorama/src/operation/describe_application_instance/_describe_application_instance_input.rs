@@ -15,33 +15,25 @@ impl DescribeApplicationInstanceInput {
 }
 impl DescribeApplicationInstanceInput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationInstanceInput`](crate::operation::describe_application_instance::DescribeApplicationInstanceInput).
-    pub fn builder() -> crate::operation::describe_application_instance::builders::DescribeApplicationInstanceInputBuilder{
+    pub fn builder() -> crate::operation::describe_application_instance::builders::DescribeApplicationInstanceInputBuilder {
         crate::operation::describe_application_instance::builders::DescribeApplicationInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicationInstanceInput`](crate::operation::describe_application_instance::DescribeApplicationInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationInstanceInputBuilder {
     pub(crate) application_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeApplicationInstanceInputBuilder {
     /// <p>The application instance's ID.</p>
-    pub fn application_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application instance's ID.</p>
-    pub fn set_application_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_instance_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl DescribeApplicationInstanceInputBuilder {
         crate::operation::describe_application_instance::DescribeApplicationInstanceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_application_instance::DescribeApplicationInstanceInput {
-                application_instance_id: self.application_instance_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_application_instance::DescribeApplicationInstanceInput {
+            application_instance_id: self.application_instance_id,
+        })
     }
 }

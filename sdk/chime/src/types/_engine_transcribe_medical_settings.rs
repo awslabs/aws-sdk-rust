@@ -22,14 +22,11 @@ pub struct EngineTranscribeMedicalSettings {
     /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
     #[doc(hidden)]
-    pub content_identification_type:
-        ::std::option::Option<crate::types::TranscribeMedicalContentIdentificationType>,
+    pub content_identification_type: ::std::option::Option<crate::types::TranscribeMedicalContentIdentificationType>,
 }
 impl EngineTranscribeMedicalSettings {
     /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
-    pub fn language_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TranscribeMedicalLanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<&crate::types::TranscribeMedicalLanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>The specialty specified for the Amazon Transcribe Medical engine.</p>
@@ -50,9 +47,7 @@ impl EngineTranscribeMedicalSettings {
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
-    pub fn content_identification_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TranscribeMedicalContentIdentificationType> {
+    pub fn content_identification_type(&self) -> ::std::option::Option<&crate::types::TranscribeMedicalContentIdentificationType> {
         self.content_identification_type.as_ref()
     }
 }
@@ -65,17 +60,14 @@ impl EngineTranscribeMedicalSettings {
 
 /// A builder for [`EngineTranscribeMedicalSettings`](crate::types::EngineTranscribeMedicalSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EngineTranscribeMedicalSettingsBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::TranscribeMedicalLanguageCode>,
     pub(crate) specialty: ::std::option::Option<crate::types::TranscribeMedicalSpecialty>,
     pub(crate) r#type: ::std::option::Option<crate::types::TranscribeMedicalType>,
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<crate::types::TranscribeMedicalRegion>,
-    pub(crate) content_identification_type:
-        ::std::option::Option<crate::types::TranscribeMedicalContentIdentificationType>,
+    pub(crate) content_identification_type: ::std::option::Option<crate::types::TranscribeMedicalContentIdentificationType>,
 }
 impl EngineTranscribeMedicalSettingsBuilder {
     /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
@@ -84,17 +76,12 @@ impl EngineTranscribeMedicalSettingsBuilder {
         self
     }
     /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscribeMedicalLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::TranscribeMedicalLanguageCode>) -> Self {
         self.language_code = input;
         self
     }
     /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
-    pub fn get_language_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranscribeMedicalLanguageCode> {
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::TranscribeMedicalLanguageCode> {
         &self.language_code
     }
     /// <p>The specialty specified for the Amazon Transcribe Medical engine.</p>
@@ -103,17 +90,12 @@ impl EngineTranscribeMedicalSettingsBuilder {
         self
     }
     /// <p>The specialty specified for the Amazon Transcribe Medical engine.</p>
-    pub fn set_specialty(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscribeMedicalSpecialty>,
-    ) -> Self {
+    pub fn set_specialty(mut self, input: ::std::option::Option<crate::types::TranscribeMedicalSpecialty>) -> Self {
         self.specialty = input;
         self
     }
     /// <p>The specialty specified for the Amazon Transcribe Medical engine.</p>
-    pub fn get_specialty(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranscribeMedicalSpecialty> {
+    pub fn get_specialty(&self) -> &::std::option::Option<crate::types::TranscribeMedicalSpecialty> {
         &self.specialty
     }
     /// <p>The type of transcription.</p>
@@ -122,10 +104,7 @@ impl EngineTranscribeMedicalSettingsBuilder {
         self
     }
     /// <p>The type of transcription.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscribeMedicalType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TranscribeMedicalType>) -> Self {
         self.r#type = input;
         self
     }
@@ -134,18 +113,12 @@ impl EngineTranscribeMedicalSettingsBuilder {
         &self.r#type
     }
     /// <p>The name of the vocabulary passed to Amazon Transcribe Medical.</p>
-    pub fn vocabulary_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the vocabulary passed to Amazon Transcribe Medical.</p>
-    pub fn set_vocabulary_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_name = input;
         self
     }
@@ -159,10 +132,7 @@ impl EngineTranscribeMedicalSettingsBuilder {
         self
     }
     /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
-    pub fn set_region(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscribeMedicalRegion>,
-    ) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<crate::types::TranscribeMedicalRegion>) -> Self {
         self.region = input;
         self
     }
@@ -172,27 +142,19 @@ impl EngineTranscribeMedicalSettingsBuilder {
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
-    pub fn content_identification_type(
-        mut self,
-        input: crate::types::TranscribeMedicalContentIdentificationType,
-    ) -> Self {
+    pub fn content_identification_type(mut self, input: crate::types::TranscribeMedicalContentIdentificationType) -> Self {
         self.content_identification_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
-    pub fn set_content_identification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscribeMedicalContentIdentificationType>,
-    ) -> Self {
+    pub fn set_content_identification_type(mut self, input: ::std::option::Option<crate::types::TranscribeMedicalContentIdentificationType>) -> Self {
         self.content_identification_type = input;
         self
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
-    pub fn get_content_identification_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranscribeMedicalContentIdentificationType> {
+    pub fn get_content_identification_type(&self) -> &::std::option::Option<crate::types::TranscribeMedicalContentIdentificationType> {
         &self.content_identification_type
     }
     /// Consumes the builder and constructs a [`EngineTranscribeMedicalSettings`](crate::types::EngineTranscribeMedicalSettings).

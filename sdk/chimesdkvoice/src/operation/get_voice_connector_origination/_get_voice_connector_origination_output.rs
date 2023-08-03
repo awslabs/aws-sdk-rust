@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetVoiceConnectorOriginationOutput {
 }
 impl GetVoiceConnectorOriginationOutput {
     /// Creates a new builder-style object to manufacture [`GetVoiceConnectorOriginationOutput`](crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationOutput).
-    pub fn builder() -> crate::operation::get_voice_connector_origination::builders::GetVoiceConnectorOriginationOutputBuilder{
+    pub fn builder() -> crate::operation::get_voice_connector_origination::builders::GetVoiceConnectorOriginationOutputBuilder {
         crate::operation::get_voice_connector_origination::builders::GetVoiceConnectorOriginationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVoiceConnectorOriginationOutput`](crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVoiceConnectorOriginationOutputBuilder {
     pub(crate) origination: ::std::option::Option<crate::types::Origination>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetVoiceConnectorOriginationOutputBuilder {
         self
     }
     /// <p>The origination setting details.</p>
-    pub fn set_origination(
-        mut self,
-        input: ::std::option::Option<crate::types::Origination>,
-    ) -> Self {
+    pub fn set_origination(mut self, input: ::std::option::Option<crate::types::Origination>) -> Self {
         self.origination = input;
         self
     }
@@ -63,9 +58,7 @@ impl GetVoiceConnectorOriginationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetVoiceConnectorOriginationOutput`](crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationOutput {
+    pub fn build(self) -> crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationOutput {
         crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationOutput {
             origination: self.origination,
             _request_id: self._request_id,

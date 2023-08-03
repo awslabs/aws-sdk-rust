@@ -9,33 +9,33 @@ pub fn de_list_function_definition_versions_http_error(
     crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BadRequestException" => crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsError::generic(generic)
+        _ => crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsError::generic(generic),
     })
 }
 
@@ -51,58 +51,52 @@ pub fn de_list_function_definition_versions_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_function_definition_versions::builders::ListFunctionDefinitionVersionsOutputBuilder::default();
-        output = crate::protocol_serde::shape_list_function_definition_versions::de_list_function_definition_versions(_response_body, output).map_err(crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_list_function_definition_versions::de_list_function_definition_versions(_response_body, output)
+            .map_err(crate::operation::list_function_definition_versions::ListFunctionDefinitionVersionsError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
-pub(crate) fn de_list_function_definition_versions(value: &[u8], mut builder: crate::operation::list_function_definition_versions::builders::ListFunctionDefinitionVersionsOutputBuilder) -> Result<crate::operation::list_function_definition_versions::builders::ListFunctionDefinitionVersionsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+pub(crate) fn de_list_function_definition_versions(
+    value: &[u8],
+    mut builder: crate::operation::list_function_definition_versions::builders::ListFunctionDefinitionVersionsOutputBuilder,
+) -> Result<
+    crate::operation::list_function_definition_versions::builders::ListFunctionDefinitionVersionsOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "NextToken" => {
-                        builder = builder.set_next_token(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "NextToken" => {
+                    builder = builder.set_next_token(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
-                        );
-                    }
-                    "Versions" => {
-                        builder = builder.set_versions(
-                            crate::protocol_serde::shape___list_of_version_information::de___list_of_version_information(tokens)?
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    );
                 }
-            }
+                "Versions" => {
+                    builder =
+                        builder.set_versions(crate::protocol_serde::shape___list_of_version_information::de___list_of_version_information(tokens)?);
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

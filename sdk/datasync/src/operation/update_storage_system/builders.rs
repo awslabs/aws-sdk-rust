@@ -37,9 +37,7 @@ impl UpdateStorageSystemFluentBuilder {
         }
     }
     /// Access the UpdateStorageSystem as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_storage_system::builders::UpdateStorageSystemInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_storage_system::builders::UpdateStorageSystemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateStorageSystemFluentBuilder {
             crate::operation::update_storage_system::UpdateStorageSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_storage_system::UpdateStorageSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_storage_system::UpdateStorageSystemError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateStorageSystemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateStorageSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_storage_system::UpdateStorageSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_storage_system::UpdateStorageSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_storage_system::UpdateStorageSystemError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateStorageSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_storage_system::UpdateStorageSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_storage_system::UpdateStorageSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_storage_system::UpdateStorageSystemError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateStorageSystemFluentBuilder {
             crate::operation::update_storage_system::UpdateStorageSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_storage_system::UpdateStorageSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_storage_system::UpdateStorageSystemError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the ARN of the on-premises storage system that you want reconfigure.</p>
-    pub fn storage_system_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_system_arn(input.into());
         self
     }
     /// <p>Specifies the ARN of the on-premises storage system that you want reconfigure.</p>
-    pub fn set_storage_system_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_system_arn(input);
         self
     }
@@ -143,25 +124,17 @@ impl UpdateStorageSystemFluentBuilder {
         self.inner.get_storage_system_arn()
     }
     /// <p>Specifies the server name and network port required to connect with your on-premises storage system's management interface.</p>
-    pub fn server_configuration(
-        mut self,
-        input: crate::types::DiscoveryServerConfiguration,
-    ) -> Self {
+    pub fn server_configuration(mut self, input: crate::types::DiscoveryServerConfiguration) -> Self {
         self.inner = self.inner.server_configuration(input);
         self
     }
     /// <p>Specifies the server name and network port required to connect with your on-premises storage system's management interface.</p>
-    pub fn set_server_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveryServerConfiguration>,
-    ) -> Self {
+    pub fn set_server_configuration(mut self, input: ::std::option::Option<crate::types::DiscoveryServerConfiguration>) -> Self {
         self.inner = self.inner.set_server_configuration(input);
         self
     }
     /// <p>Specifies the server name and network port required to connect with your on-premises storage system's management interface.</p>
-    pub fn get_server_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DiscoveryServerConfiguration> {
+    pub fn get_server_configuration(&self) -> &::std::option::Option<crate::types::DiscoveryServerConfiguration> {
         self.inner.get_server_configuration()
     }
     /// Appends an item to `AgentArns`.
@@ -174,10 +147,7 @@ impl UpdateStorageSystemFluentBuilder {
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads your on-premises storage system. You can only specify one ARN.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_agent_arns(input);
         self
     }
@@ -200,18 +170,12 @@ impl UpdateStorageSystemFluentBuilder {
         self.inner.get_name()
     }
     /// <p>Specifies the ARN of the Amazon CloudWatch log group for monitoring and logging discovery job events.</p>
-    pub fn cloud_watch_log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cloud_watch_log_group_arn(input.into());
         self
     }
     /// <p>Specifies the ARN of the Amazon CloudWatch log group for monitoring and logging discovery job events.</p>
-    pub fn set_cloud_watch_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cloud_watch_log_group_arn(input);
         self
     }
@@ -225,10 +189,7 @@ impl UpdateStorageSystemFluentBuilder {
         self
     }
     /// <p>Specifies the user name and password for accessing your on-premises storage system's management interface.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::Credentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::Credentials>) -> Self {
         self.inner = self.inner.set_credentials(input);
         self
     }

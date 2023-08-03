@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`failures(Option<Vec<Failure>>)`](crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput::failures): <p>Any failures associated with the call.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeCapacityProviders</code> request. When the results of a <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeCapacityProvidersError>`](crate::operation::describe_capacity_providers::DescribeCapacityProvidersError)
-    pub fn describe_capacity_providers(&self) -> crate::operation::describe_capacity_providers::builders::DescribeCapacityProvidersFluentBuilder{
+    pub fn describe_capacity_providers(&self) -> crate::operation::describe_capacity_providers::builders::DescribeCapacityProvidersFluentBuilder {
         crate::operation::describe_capacity_providers::builders::DescribeCapacityProvidersFluentBuilder::new(self.handle.clone())
     }
 }

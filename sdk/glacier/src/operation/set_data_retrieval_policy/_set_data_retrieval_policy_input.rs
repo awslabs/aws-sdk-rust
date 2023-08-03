@@ -23,18 +23,14 @@ impl SetDataRetrievalPolicyInput {
 }
 impl SetDataRetrievalPolicyInput {
     /// Creates a new builder-style object to manufacture [`SetDataRetrievalPolicyInput`](crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::set_data_retrieval_policy::builders::SetDataRetrievalPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::set_data_retrieval_policy::builders::SetDataRetrievalPolicyInputBuilder {
         crate::operation::set_data_retrieval_policy::builders::SetDataRetrievalPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`SetDataRetrievalPolicyInput`](crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetDataRetrievalPolicyInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<crate::types::DataRetrievalPolicy>,
@@ -60,10 +56,7 @@ impl SetDataRetrievalPolicyInputBuilder {
         self
     }
     /// <p>The data retrieval policy in JSON format.</p>
-    pub fn set_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::DataRetrievalPolicy>,
-    ) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<crate::types::DataRetrievalPolicy>) -> Self {
         self.policy = input;
         self
     }
@@ -78,11 +71,9 @@ impl SetDataRetrievalPolicyInputBuilder {
         crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyInput {
-                account_id: self.account_id,
-                policy: self.policy,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyInput {
+            account_id: self.account_id,
+            policy: self.policy,
+        })
     }
 }

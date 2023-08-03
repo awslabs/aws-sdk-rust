@@ -5,8 +5,7 @@
 pub struct SearchVocabulariesOutput {
     /// <p>The list of the available custom vocabularies.</p>
     #[doc(hidden)]
-    pub vocabulary_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::VocabularySummary>>,
+    pub vocabulary_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::VocabularySummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct SearchVocabulariesOutput {
 }
 impl SearchVocabulariesOutput {
     /// <p>The list of the available custom vocabularies.</p>
-    pub fn vocabulary_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VocabularySummary]> {
+    pub fn vocabulary_summary_list(&self) -> ::std::option::Option<&[crate::types::VocabularySummary]> {
         self.vocabulary_summary_list.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for SearchVocabulariesOutput {
 }
 impl SearchVocabulariesOutput {
     /// Creates a new builder-style object to manufacture [`SearchVocabulariesOutput`](crate::operation::search_vocabularies::SearchVocabulariesOutput).
-    pub fn builder(
-    ) -> crate::operation::search_vocabularies::builders::SearchVocabulariesOutputBuilder {
+    pub fn builder() -> crate::operation::search_vocabularies::builders::SearchVocabulariesOutputBuilder {
         crate::operation::search_vocabularies::builders::SearchVocabulariesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchVocabulariesOutput`](crate::operation::search_vocabularies::SearchVocabulariesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchVocabulariesOutputBuilder {
-    pub(crate) vocabulary_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::VocabularySummary>>,
+    pub(crate) vocabulary_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::VocabularySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl SearchVocabulariesOutputBuilder {
         self
     }
     /// <p>The list of the available custom vocabularies.</p>
-    pub fn set_vocabulary_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VocabularySummary>>,
-    ) -> Self {
+    pub fn set_vocabulary_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VocabularySummary>>) -> Self {
         self.vocabulary_summary_list = input;
         self
     }
     /// <p>The list of the available custom vocabularies.</p>
-    pub fn get_vocabulary_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VocabularySummary>> {
+    pub fn get_vocabulary_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VocabularySummary>> {
         &self.vocabulary_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

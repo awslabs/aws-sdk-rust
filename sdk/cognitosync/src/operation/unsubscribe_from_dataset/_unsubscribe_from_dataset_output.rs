@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for UnsubscribeFromDatasetOutput {
 }
 impl UnsubscribeFromDatasetOutput {
     /// Creates a new builder-style object to manufacture [`UnsubscribeFromDatasetOutput`](crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetOutput).
-    pub fn builder(
-    ) -> crate::operation::unsubscribe_from_dataset::builders::UnsubscribeFromDatasetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::unsubscribe_from_dataset::builders::UnsubscribeFromDatasetOutputBuilder {
         crate::operation::unsubscribe_from_dataset::builders::UnsubscribeFromDatasetOutputBuilder::default()
     }
 }
 
 /// A builder for [`UnsubscribeFromDatasetOutput`](crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnsubscribeFromDatasetOutputBuilder {
     _request_id: Option<String>,
 }

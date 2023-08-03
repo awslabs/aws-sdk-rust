@@ -22,18 +22,14 @@ impl ListStagingAccountsInput {
 }
 impl ListStagingAccountsInput {
     /// Creates a new builder-style object to manufacture [`ListStagingAccountsInput`](crate::operation::list_staging_accounts::ListStagingAccountsInput).
-    pub fn builder(
-    ) -> crate::operation::list_staging_accounts::builders::ListStagingAccountsInputBuilder {
-        crate::operation::list_staging_accounts::builders::ListStagingAccountsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_staging_accounts::builders::ListStagingAccountsInputBuilder {
+        crate::operation::list_staging_accounts::builders::ListStagingAccountsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStagingAccountsInput`](crate::operation::list_staging_accounts::ListStagingAccountsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStagingAccountsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl ListStagingAccountsInputBuilder {
     /// Consumes the builder and constructs a [`ListStagingAccountsInput`](crate::operation::list_staging_accounts::ListStagingAccountsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_staging_accounts::ListStagingAccountsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_staging_accounts::ListStagingAccountsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_staging_accounts::ListStagingAccountsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_staging_accounts::ListStagingAccountsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

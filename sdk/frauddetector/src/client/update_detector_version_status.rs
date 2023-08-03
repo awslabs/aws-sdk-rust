@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`status(DetectorVersionStatus)`](crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusFluentBuilder::status) / [`set_status(Option<DetectorVersionStatus>)`](crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusFluentBuilder::set_status): <p>The new status.</p>  <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
     /// - On success, responds with [`UpdateDetectorVersionStatusOutput`](crate::operation::update_detector_version_status::UpdateDetectorVersionStatusOutput)
     /// - On failure, responds with [`SdkError<UpdateDetectorVersionStatusError>`](crate::operation::update_detector_version_status::UpdateDetectorVersionStatusError)
-    pub fn update_detector_version_status(&self) -> crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusFluentBuilder{
+    pub fn update_detector_version_status(
+        &self,
+    ) -> crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusFluentBuilder {
         crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusFluentBuilder::new(self.handle.clone())
     }
 }

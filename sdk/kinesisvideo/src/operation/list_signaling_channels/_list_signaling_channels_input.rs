@@ -23,26 +23,20 @@ impl ListSignalingChannelsInput {
         self.next_token.as_deref()
     }
     /// <p>Optional: Returns only the channels that satisfy a specific condition.</p>
-    pub fn channel_name_condition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChannelNameCondition> {
+    pub fn channel_name_condition(&self) -> ::std::option::Option<&crate::types::ChannelNameCondition> {
         self.channel_name_condition.as_ref()
     }
 }
 impl ListSignalingChannelsInput {
     /// Creates a new builder-style object to manufacture [`ListSignalingChannelsInput`](crate::operation::list_signaling_channels::ListSignalingChannelsInput).
-    pub fn builder(
-    ) -> crate::operation::list_signaling_channels::builders::ListSignalingChannelsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_signaling_channels::builders::ListSignalingChannelsInputBuilder {
         crate::operation::list_signaling_channels::builders::ListSignalingChannelsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSignalingChannelsInput`](crate::operation::list_signaling_channels::ListSignalingChannelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSignalingChannelsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -83,32 +77,23 @@ impl ListSignalingChannelsInputBuilder {
         self
     }
     /// <p>Optional: Returns only the channels that satisfy a specific condition.</p>
-    pub fn set_channel_name_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelNameCondition>,
-    ) -> Self {
+    pub fn set_channel_name_condition(mut self, input: ::std::option::Option<crate::types::ChannelNameCondition>) -> Self {
         self.channel_name_condition = input;
         self
     }
     /// <p>Optional: Returns only the channels that satisfy a specific condition.</p>
-    pub fn get_channel_name_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChannelNameCondition> {
+    pub fn get_channel_name_condition(&self) -> &::std::option::Option<crate::types::ChannelNameCondition> {
         &self.channel_name_condition
     }
     /// Consumes the builder and constructs a [`ListSignalingChannelsInput`](crate::operation::list_signaling_channels::ListSignalingChannelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_signaling_channels::ListSignalingChannelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_signaling_channels::ListSignalingChannelsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                channel_name_condition: self.channel_name_condition,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_signaling_channels::ListSignalingChannelsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_signaling_channels::ListSignalingChannelsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            channel_name_condition: self.channel_name_condition,
+        })
     }
 }

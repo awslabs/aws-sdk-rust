@@ -60,16 +60,14 @@ impl DescribeClientVpnTargetNetworksInput {
 }
 impl DescribeClientVpnTargetNetworksInput {
     /// Creates a new builder-style object to manufacture [`DescribeClientVpnTargetNetworksInput`](crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksInput).
-    pub fn builder() -> crate::operation::describe_client_vpn_target_networks::builders::DescribeClientVpnTargetNetworksInputBuilder{
+    pub fn builder() -> crate::operation::describe_client_vpn_target_networks::builders::DescribeClientVpnTargetNetworksInputBuilder {
         crate::operation::describe_client_vpn_target_networks::builders::DescribeClientVpnTargetNetworksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClientVpnTargetNetworksInput`](crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClientVpnTargetNetworksInputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -80,18 +78,12 @@ pub struct DescribeClientVpnTargetNetworksInputBuilder {
 }
 impl DescribeClientVpnTargetNetworksInputBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = input;
         self
     }
@@ -104,27 +96,19 @@ impl DescribeClientVpnTargetNetworksInputBuilder {
     /// To override the contents of this collection use [`set_association_ids`](Self::set_association_ids).
     ///
     /// <p>The IDs of the target network associations.</p>
-    pub fn association_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.association_ids.unwrap_or_default();
         v.push(input.into());
         self.association_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the target network associations.</p>
-    pub fn set_association_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.association_ids = input;
         self
     }
     /// <p>The IDs of the target network associations.</p>
-    pub fn get_association_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.association_ids
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the nextToken value.</p>
@@ -177,10 +161,7 @@ impl DescribeClientVpnTargetNetworksInputBuilder {
     /// <li> <p> <code>target-network-id</code> - The ID of the subnet specified as the target network.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the target network is located.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -216,19 +197,13 @@ impl DescribeClientVpnTargetNetworksInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksInput {
-                client_vpn_endpoint_id: self.client_vpn_endpoint_id
-                ,
-                association_ids: self.association_ids
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                filters: self.filters
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                client_vpn_endpoint_id: self.client_vpn_endpoint_id,
+                association_ids: self.association_ids,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                filters: self.filters,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

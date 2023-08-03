@@ -26,8 +26,7 @@ impl ListInstanceProfileTagsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInstanceProfileTagsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_instance_profile_tags::builders::ListInstanceProfileTagsInputBuilder,
+    inner: crate::operation::list_instance_profile_tags::builders::ListInstanceProfileTagsInputBuilder,
 }
 impl ListInstanceProfileTagsFluentBuilder {
     /// Creates a new `ListInstanceProfileTags`.
@@ -38,10 +37,7 @@ impl ListInstanceProfileTagsFluentBuilder {
         }
     }
     /// Access the ListInstanceProfileTags as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_instance_profile_tags::builders::ListInstanceProfileTagsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_instance_profile_tags::builders::ListInstanceProfileTagsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListInstanceProfileTagsFluentBuilder {
             crate::operation::list_instance_profile_tags::ListInstanceProfileTags,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_profile_tags::ListInstanceProfileTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_profile_tags::ListInstanceProfileTagsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListInstanceProfileTagsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListInstanceProfileTagsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_profile_tags::ListInstanceProfileTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_profile_tags::ListInstanceProfileTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_profile_tags::ListInstanceProfileTagsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListInstanceProfileTagsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_profile_tags::ListInstanceProfileTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_profile_tags::ListInstanceProfileTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_profile_tags::ListInstanceProfileTagsError>,
     > {
         self.send_middleware().await
     }
@@ -118,36 +105,25 @@ impl ListInstanceProfileTagsFluentBuilder {
             crate::operation::list_instance_profile_tags::ListInstanceProfileTags,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_profile_tags::ListInstanceProfileTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_profile_tags::ListInstanceProfileTagsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_instance_profile_tags::paginator::ListInstanceProfileTagsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_instance_profile_tags::paginator::ListInstanceProfileTagsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_instance_profile_tags::paginator::ListInstanceProfileTagsPaginator {
         crate::operation::list_instance_profile_tags::paginator::ListInstanceProfileTagsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the IAM instance profile whose tags you want to see.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn instance_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_profile_name(input.into());
         self
     }
     /// <p>The name of the IAM instance profile whose tags you want to see.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_instance_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_profile_name(input);
         self
     }

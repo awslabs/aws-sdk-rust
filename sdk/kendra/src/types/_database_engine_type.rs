@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DatabaseEngineType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for DatabaseEngineType {
             "RDS_AURORA_POSTGRESQL" => DatabaseEngineType::RdsAuroraPostgresql,
             "RDS_MYSQL" => DatabaseEngineType::RdsMysql,
             "RDS_POSTGRESQL" => DatabaseEngineType::RdsPostgresql,
-            other => DatabaseEngineType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DatabaseEngineType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl DatabaseEngineType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "RDS_AURORA_MYSQL",
-            "RDS_AURORA_POSTGRESQL",
-            "RDS_MYSQL",
-            "RDS_POSTGRESQL",
-        ]
+        &["RDS_AURORA_MYSQL", "RDS_AURORA_POSTGRESQL", "RDS_MYSQL", "RDS_POSTGRESQL"]
     }
 }
 impl ::std::convert::AsRef<str> for DatabaseEngineType {

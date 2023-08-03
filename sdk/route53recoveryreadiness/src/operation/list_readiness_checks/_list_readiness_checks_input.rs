@@ -22,18 +22,14 @@ impl ListReadinessChecksInput {
 }
 impl ListReadinessChecksInput {
     /// Creates a new builder-style object to manufacture [`ListReadinessChecksInput`](crate::operation::list_readiness_checks::ListReadinessChecksInput).
-    pub fn builder(
-    ) -> crate::operation::list_readiness_checks::builders::ListReadinessChecksInputBuilder {
-        crate::operation::list_readiness_checks::builders::ListReadinessChecksInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_readiness_checks::builders::ListReadinessChecksInputBuilder {
+        crate::operation::list_readiness_checks::builders::ListReadinessChecksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReadinessChecksInput`](crate::operation::list_readiness_checks::ListReadinessChecksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReadinessChecksInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl ListReadinessChecksInputBuilder {
     /// Consumes the builder and constructs a [`ListReadinessChecksInput`](crate::operation::list_readiness_checks::ListReadinessChecksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_readiness_checks::ListReadinessChecksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_readiness_checks::ListReadinessChecksInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_readiness_checks::ListReadinessChecksInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_readiness_checks::ListReadinessChecksInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

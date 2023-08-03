@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDomainsOutput`](crate::operation::describe_domains::DescribeDomainsOutput) with field(s):
     ///   - [`domain_status_list(Option<Vec<DomainStatus>>)`](crate::operation::describe_domains::DescribeDomainsOutput::domain_status_list): <p>A list that contains the status of each requested domain.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainsError>`](crate::operation::describe_domains::DescribeDomainsError)
-    pub fn describe_domains(
-        &self,
-    ) -> crate::operation::describe_domains::builders::DescribeDomainsFluentBuilder {
-        crate::operation::describe_domains::builders::DescribeDomainsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_domains(&self) -> crate::operation::describe_domains::builders::DescribeDomainsFluentBuilder {
+        crate::operation::describe_domains::builders::DescribeDomainsFluentBuilder::new(self.handle.clone())
     }
 }

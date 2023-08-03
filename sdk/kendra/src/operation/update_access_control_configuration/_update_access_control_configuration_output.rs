@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateAccessControlConfigurationOutpu
 }
 impl UpdateAccessControlConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccessControlConfigurationOutput`](crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput).
-    pub fn builder() -> crate::operation::update_access_control_configuration::builders::UpdateAccessControlConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_access_control_configuration::builders::UpdateAccessControlConfigurationOutputBuilder {
         crate::operation::update_access_control_configuration::builders::UpdateAccessControlConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccessControlConfigurationOutput`](crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccessControlConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateAccessControlConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateAccessControlConfigurationOutput`](crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput {
         crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput {
             _request_id: self._request_id,
         }

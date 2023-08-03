@@ -37,10 +37,7 @@ impl DeleteResiliencyPolicyFluentBuilder {
         }
     }
     /// Access the DeleteResiliencyPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_resiliency_policy::builders::DeleteResiliencyPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_resiliency_policy::builders::DeleteResiliencyPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteResiliencyPolicyFluentBuilder {
             crate::operation::delete_resiliency_policy::DeleteResiliencyPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteResiliencyPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteResiliencyPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteResiliencyPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteResiliencyPolicyFluentBuilder {
             crate::operation::delete_resiliency_policy::DeleteResiliencyPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyError>,
     > {
         self.customize_middleware().await
     }

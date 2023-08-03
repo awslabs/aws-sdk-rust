@@ -17,11 +17,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateGraphqlApiOutput`](crate::operation::update_graphql_api::UpdateGraphqlApiOutput) with field(s):
     ///   - [`graphql_api(Option<GraphqlApi>)`](crate::operation::update_graphql_api::UpdateGraphqlApiOutput::graphql_api): <p>The updated <code>GraphqlApi</code> object.</p>
     /// - On failure, responds with [`SdkError<UpdateGraphqlApiError>`](crate::operation::update_graphql_api::UpdateGraphqlApiError)
-    pub fn update_graphql_api(
-        &self,
-    ) -> crate::operation::update_graphql_api::builders::UpdateGraphqlApiFluentBuilder {
-        crate::operation::update_graphql_api::builders::UpdateGraphqlApiFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_graphql_api(&self) -> crate::operation::update_graphql_api::builders::UpdateGraphqlApiFluentBuilder {
+        crate::operation::update_graphql_api::builders::UpdateGraphqlApiFluentBuilder::new(self.handle.clone())
     }
 }

@@ -19,10 +19,7 @@ impl super::Client {
     ///   - [`transcript_source_setting(Option<TranscriptSourceSetting>)`](crate::operation::update_bot_recommendation::UpdateBotRecommendationOutput::transcript_source_setting): <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
     ///   - [`encryption_setting(Option<EncryptionSetting>)`](crate::operation::update_bot_recommendation::UpdateBotRecommendationOutput::encryption_setting): <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
     /// - On failure, responds with [`SdkError<UpdateBotRecommendationError>`](crate::operation::update_bot_recommendation::UpdateBotRecommendationError)
-    pub fn update_bot_recommendation(
-        &self,
-    ) -> crate::operation::update_bot_recommendation::builders::UpdateBotRecommendationFluentBuilder
-    {
+    pub fn update_bot_recommendation(&self) -> crate::operation::update_bot_recommendation::builders::UpdateBotRecommendationFluentBuilder {
         crate::operation::update_bot_recommendation::builders::UpdateBotRecommendationFluentBuilder::new(self.handle.clone())
     }
 }

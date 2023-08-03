@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetRawMessageContentOutput`](crate::operation::get_raw_message_content::GetRawMessageContentOutput) with field(s):
     ///   - [`message_content(ByteStream)`](crate::operation::get_raw_message_content::GetRawMessageContentOutput::message_content): <p>The raw content of the email message, in MIME format.</p>
     /// - On failure, responds with [`SdkError<GetRawMessageContentError>`](crate::operation::get_raw_message_content::GetRawMessageContentError)
-    pub fn get_raw_message_content(
-        &self,
-    ) -> crate::operation::get_raw_message_content::builders::GetRawMessageContentFluentBuilder
-    {
-        crate::operation::get_raw_message_content::builders::GetRawMessageContentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_raw_message_content(&self) -> crate::operation::get_raw_message_content::builders::GetRawMessageContentFluentBuilder {
+        crate::operation::get_raw_message_content::builders::GetRawMessageContentFluentBuilder::new(self.handle.clone())
     }
 }

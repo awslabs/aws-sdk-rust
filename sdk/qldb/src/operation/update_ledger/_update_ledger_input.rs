@@ -68,9 +68,7 @@ impl UpdateLedgerInput {
 
 /// A builder for [`UpdateLedgerInput`](crate::operation::update_ledger::UpdateLedgerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLedgerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
@@ -168,12 +166,7 @@ impl UpdateLedgerInputBuilder {
         &self.kms_key
     }
     /// Consumes the builder and constructs a [`UpdateLedgerInput`](crate::operation::update_ledger::UpdateLedgerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_ledger::UpdateLedgerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_ledger::UpdateLedgerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ledger::UpdateLedgerInput {
             name: self.name,
             deletion_protection: self.deletion_protection,

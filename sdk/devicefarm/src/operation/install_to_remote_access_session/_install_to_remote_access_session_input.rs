@@ -23,34 +23,26 @@ impl InstallToRemoteAccessSessionInput {
 }
 impl InstallToRemoteAccessSessionInput {
     /// Creates a new builder-style object to manufacture [`InstallToRemoteAccessSessionInput`](crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionInput).
-    pub fn builder() -> crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionInputBuilder{
+    pub fn builder() -> crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionInputBuilder {
         crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`InstallToRemoteAccessSessionInput`](crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstallToRemoteAccessSessionInputBuilder {
     pub(crate) remote_access_session_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
 }
 impl InstallToRemoteAccessSessionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
-    pub fn remote_access_session_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_access_session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_access_session_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
-    pub fn set_remote_access_session_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_access_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remote_access_session_arn = input;
         self
     }
@@ -79,11 +71,9 @@ impl InstallToRemoteAccessSessionInputBuilder {
         crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionInput {
-                remote_access_session_arn: self.remote_access_session_arn,
-                app_arn: self.app_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionInput {
+            remote_access_session_arn: self.remote_access_session_arn,
+            app_arn: self.app_arn,
+        })
     }
 }

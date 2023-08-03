@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`PutEventsConfigurationOutput`](crate::operation::put_events_configuration::PutEventsConfigurationOutput) with field(s):
     ///   - [`events_configuration(Option<EventsConfiguration>)`](crate::operation::put_events_configuration::PutEventsConfigurationOutput::events_configuration): <p>The configuration that allows a bot to receive outgoing events. Can be an HTTPS endpoint or an AWS Lambda function ARN.</p>
     /// - On failure, responds with [`SdkError<PutEventsConfigurationError>`](crate::operation::put_events_configuration::PutEventsConfigurationError)
-    pub fn put_events_configuration(
-        &self,
-    ) -> crate::operation::put_events_configuration::builders::PutEventsConfigurationFluentBuilder
-    {
+    pub fn put_events_configuration(&self) -> crate::operation::put_events_configuration::builders::PutEventsConfigurationFluentBuilder {
         crate::operation::put_events_configuration::builders::PutEventsConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

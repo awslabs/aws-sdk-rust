@@ -30,9 +30,7 @@ impl Duration {
 
 /// A builder for [`Duration`](crate::types::Duration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DurationBuilder {
     pub(crate) value: ::std::option::Option<i64>,
     pub(crate) unit: ::std::option::Option<crate::types::TimeUnit>,

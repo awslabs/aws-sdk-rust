@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListSigningPlatformsOutput {
 }
 impl ListSigningPlatformsOutput {
     /// Creates a new builder-style object to manufacture [`ListSigningPlatformsOutput`](crate::operation::list_signing_platforms::ListSigningPlatformsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_signing_platforms::builders::ListSigningPlatformsOutputBuilder {
+    pub fn builder() -> crate::operation::list_signing_platforms::builders::ListSigningPlatformsOutputBuilder {
         crate::operation::list_signing_platforms::builders::ListSigningPlatformsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSigningPlatformsOutput`](crate::operation::list_signing_platforms::ListSigningPlatformsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSigningPlatformsOutputBuilder {
     pub(crate) platforms: ::std::option::Option<::std::vec::Vec<crate::types::SigningPlatform>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListSigningPlatformsOutputBuilder {
         self
     }
     /// <p>A list of all platforms that match the request parameters.</p>
-    pub fn set_platforms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SigningPlatform>>,
-    ) -> Self {
+    pub fn set_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SigningPlatform>>) -> Self {
         self.platforms = input;
         self
     }
     /// <p>A list of all platforms that match the request parameters.</p>
-    pub fn get_platforms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningPlatform>> {
+    pub fn get_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningPlatform>> {
         &self.platforms
     }
     /// <p>Value for specifying the next set of paginated results to return.</p>

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetPartitionOutput`](crate::operation::get_partition::GetPartitionOutput) with field(s):
     ///   - [`partition(Option<Partition>)`](crate::operation::get_partition::GetPartitionOutput::partition): <p>The requested information, in the form of a <code>Partition</code> object.</p>
     /// - On failure, responds with [`SdkError<GetPartitionError>`](crate::operation::get_partition::GetPartitionError)
-    pub fn get_partition(
-        &self,
-    ) -> crate::operation::get_partition::builders::GetPartitionFluentBuilder {
-        crate::operation::get_partition::builders::GetPartitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_partition(&self) -> crate::operation::get_partition::builders::GetPartitionFluentBuilder {
+        crate::operation::get_partition::builders::GetPartitionFluentBuilder::new(self.handle.clone())
     }
 }

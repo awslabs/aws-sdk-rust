@@ -7,9 +7,7 @@ pub fn ser_update_site_rack_physical_properties_input(
         object.key("FiberOpticCableType").string(var_1.as_str());
     }
     if let Some(var_2) = &input.maximum_supported_weight_lbs {
-        object
-            .key("MaximumSupportedWeightLbs")
-            .string(var_2.as_str());
+        object.key("MaximumSupportedWeightLbs").string(var_2.as_str());
     }
     if let Some(var_3) = &input.optical_standard {
         object.key("OpticalStandard").string(var_3.as_str());

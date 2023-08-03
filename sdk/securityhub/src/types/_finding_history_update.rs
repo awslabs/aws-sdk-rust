@@ -37,9 +37,7 @@ impl FindingHistoryUpdate {
 
 /// A builder for [`FindingHistoryUpdate`](crate::types::FindingHistoryUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindingHistoryUpdateBuilder {
     pub(crate) updated_field: ::std::option::Option<::std::string::String>,
     pub(crate) old_value: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct FindingHistoryUpdateBuilder {
 }
 impl FindingHistoryUpdateBuilder {
     /// <p> The ASFF field that changed during the finding change event. </p>
-    pub fn updated_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn updated_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ASFF field that changed during the finding change event. </p>
-    pub fn set_updated_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_updated_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_field = input;
         self
     }

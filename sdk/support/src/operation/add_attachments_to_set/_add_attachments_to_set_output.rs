@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for AddAttachmentsToSetOutput {
 }
 impl AddAttachmentsToSetOutput {
     /// Creates a new builder-style object to manufacture [`AddAttachmentsToSetOutput`](crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput).
-    pub fn builder(
-    ) -> crate::operation::add_attachments_to_set::builders::AddAttachmentsToSetOutputBuilder {
+    pub fn builder() -> crate::operation::add_attachments_to_set::builders::AddAttachmentsToSetOutputBuilder {
         crate::operation::add_attachments_to_set::builders::AddAttachmentsToSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddAttachmentsToSetOutput`](crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddAttachmentsToSetOutputBuilder {
     pub(crate) attachment_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) expiry_time: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct AddAttachmentsToSetOutputBuilder {
 }
 impl AddAttachmentsToSetOutputBuilder {
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.</p>
-    pub fn attachment_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.</p>
-    pub fn set_attachment_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_set_id = input;
         self
     }

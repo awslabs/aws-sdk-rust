@@ -15,17 +15,14 @@ impl AdvertiseByoipCidrInput {
 }
 impl AdvertiseByoipCidrInput {
     /// Creates a new builder-style object to manufacture [`AdvertiseByoipCidrInput`](crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput).
-    pub fn builder(
-    ) -> crate::operation::advertise_byoip_cidr::builders::AdvertiseByoipCidrInputBuilder {
+    pub fn builder() -> crate::operation::advertise_byoip_cidr::builders::AdvertiseByoipCidrInputBuilder {
         crate::operation::advertise_byoip_cidr::builders::AdvertiseByoipCidrInputBuilder::default()
     }
 }
 
 /// A builder for [`AdvertiseByoipCidrInput`](crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdvertiseByoipCidrInputBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl AdvertiseByoipCidrInputBuilder {
     /// Consumes the builder and constructs a [`AdvertiseByoipCidrInput`](crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput { cidr: self.cidr },
-        )
+    ) -> ::std::result::Result<crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput { cidr: self.cidr })
     }
 }

@@ -4,9 +4,7 @@ pub fn ser_create_direct_connect_gateway_input(
     input: &crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.direct_connect_gateway_name {
-        object
-            .key("directConnectGatewayName")
-            .string(var_1.as_str());
+        object.key("directConnectGatewayName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.amazon_side_asn {
         object.key("amazonSideAsn").number(

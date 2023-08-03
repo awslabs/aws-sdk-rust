@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`events(Option<Vec<TransactionEvent>>)`](crate::operation::list_transaction_events::ListTransactionEventsOutput::events): <p>An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction events.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_transaction_events::ListTransactionEventsOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListTransactionEventsError>`](crate::operation::list_transaction_events::ListTransactionEventsError)
-    pub fn list_transaction_events(
-        &self,
-    ) -> crate::operation::list_transaction_events::builders::ListTransactionEventsFluentBuilder
-    {
-        crate::operation::list_transaction_events::builders::ListTransactionEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_transaction_events(&self) -> crate::operation::list_transaction_events::builders::ListTransactionEventsFluentBuilder {
+        crate::operation::list_transaction_events::builders::ListTransactionEventsFluentBuilder::new(self.handle.clone())
     }
 }

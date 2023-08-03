@@ -23,9 +23,7 @@ impl UpdateDeviceCertificateParams {
 
 /// A builder for [`UpdateDeviceCertificateParams`](crate::types::UpdateDeviceCertificateParams).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDeviceCertificateParamsBuilder {
     pub(crate) action: ::std::option::Option<crate::types::DeviceCertificateUpdateAction>,
 }
@@ -36,23 +34,16 @@ impl UpdateDeviceCertificateParamsBuilder {
         self
     }
     /// <p>The action that you want to apply to the device certificate. The only supported value is <code>DEACTIVATE</code>.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceCertificateUpdateAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::DeviceCertificateUpdateAction>) -> Self {
         self.action = input;
         self
     }
     /// <p>The action that you want to apply to the device certificate. The only supported value is <code>DEACTIVATE</code>.</p>
-    pub fn get_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeviceCertificateUpdateAction> {
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::DeviceCertificateUpdateAction> {
         &self.action
     }
     /// Consumes the builder and constructs a [`UpdateDeviceCertificateParams`](crate::types::UpdateDeviceCertificateParams).
     pub fn build(self) -> crate::types::UpdateDeviceCertificateParams {
-        crate::types::UpdateDeviceCertificateParams {
-            action: self.action,
-        }
+        crate::types::UpdateDeviceCertificateParams { action: self.action }
     }
 }

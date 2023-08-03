@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`PutVoiceConnectorLoggingConfigurationOutput`](crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationOutput) with field(s):
     ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationOutput::logging_configuration): <p>The updated logging configuration.</p>
     /// - On failure, responds with [`SdkError<PutVoiceConnectorLoggingConfigurationError>`](crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationError)
-    pub fn put_voice_connector_logging_configuration(&self) -> crate::operation::put_voice_connector_logging_configuration::builders::PutVoiceConnectorLoggingConfigurationFluentBuilder{
-        crate::operation::put_voice_connector_logging_configuration::builders::PutVoiceConnectorLoggingConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn put_voice_connector_logging_configuration(
+        &self,
+    ) -> crate::operation::put_voice_connector_logging_configuration::builders::PutVoiceConnectorLoggingConfigurationFluentBuilder {
+        crate::operation::put_voice_connector_logging_configuration::builders::PutVoiceConnectorLoggingConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

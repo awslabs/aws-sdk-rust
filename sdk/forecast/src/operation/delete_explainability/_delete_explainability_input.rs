@@ -15,35 +15,25 @@ impl DeleteExplainabilityInput {
 }
 impl DeleteExplainabilityInput {
     /// Creates a new builder-style object to manufacture [`DeleteExplainabilityInput`](crate::operation::delete_explainability::DeleteExplainabilityInput).
-    pub fn builder(
-    ) -> crate::operation::delete_explainability::builders::DeleteExplainabilityInputBuilder {
-        crate::operation::delete_explainability::builders::DeleteExplainabilityInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_explainability::builders::DeleteExplainabilityInputBuilder {
+        crate::operation::delete_explainability::builders::DeleteExplainabilityInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteExplainabilityInput`](crate::operation::delete_explainability::DeleteExplainabilityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteExplainabilityInputBuilder {
     pub(crate) explainability_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteExplainabilityInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
-    pub fn explainability_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explainability_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explainability_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
-    pub fn set_explainability_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_explainability_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.explainability_arn = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteExplainabilityInputBuilder {
     /// Consumes the builder and constructs a [`DeleteExplainabilityInput`](crate::operation::delete_explainability::DeleteExplainabilityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_explainability::DeleteExplainabilityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_explainability::DeleteExplainabilityInput {
-                explainability_arn: self.explainability_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_explainability::DeleteExplainabilityInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_explainability::DeleteExplainabilityInput {
+            explainability_arn: self.explainability_arn,
+        })
     }
 }

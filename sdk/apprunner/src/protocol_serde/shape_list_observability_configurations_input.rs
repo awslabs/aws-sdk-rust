@@ -4,9 +4,7 @@ pub fn ser_list_observability_configurations_input(
     input: &crate::operation::list_observability_configurations::ListObservabilityConfigurationsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.observability_configuration_name {
-        object
-            .key("ObservabilityConfigurationName")
-            .string(var_1.as_str());
+        object.key("ObservabilityConfigurationName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.latest_only {
         object.key("LatestOnly").boolean(*var_2);

@@ -30,9 +30,7 @@ impl HlsPlaylistSettings {
 
 /// A builder for [`HlsPlaylistSettings`](crate::types::HlsPlaylistSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsPlaylistSettingsBuilder {
     pub(crate) manifest_window_seconds: ::std::option::Option<i32>,
     pub(crate) ad_markup_type: ::std::option::Option<::std::vec::Vec<crate::types::AdMarkupType>>,
@@ -64,17 +62,12 @@ impl HlsPlaylistSettingsBuilder {
         self
     }
     /// <p>Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).</p>
-    pub fn set_ad_markup_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdMarkupType>>,
-    ) -> Self {
+    pub fn set_ad_markup_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdMarkupType>>) -> Self {
         self.ad_markup_type = input;
         self
     }
     /// <p>Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).</p>
-    pub fn get_ad_markup_type(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdMarkupType>> {
+    pub fn get_ad_markup_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdMarkupType>> {
         &self.ad_markup_type
     }
     /// Consumes the builder and constructs a [`HlsPlaylistSettings`](crate::types::HlsPlaylistSettings).

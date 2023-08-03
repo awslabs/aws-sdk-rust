@@ -22,17 +22,14 @@ impl UpdateAdmChannelInput {
 }
 impl UpdateAdmChannelInput {
     /// Creates a new builder-style object to manufacture [`UpdateAdmChannelInput`](crate::operation::update_adm_channel::UpdateAdmChannelInput).
-    pub fn builder() -> crate::operation::update_adm_channel::builders::UpdateAdmChannelInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_adm_channel::builders::UpdateAdmChannelInputBuilder {
         crate::operation::update_adm_channel::builders::UpdateAdmChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAdmChannelInput`](crate::operation::update_adm_channel::UpdateAdmChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAdmChannelInputBuilder {
     pub(crate) adm_channel_request: ::std::option::Option<crate::types::AdmChannelRequest>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
@@ -44,32 +41,21 @@ impl UpdateAdmChannelInputBuilder {
         self
     }
     /// <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-    pub fn set_adm_channel_request(
-        mut self,
-        input: ::std::option::Option<crate::types::AdmChannelRequest>,
-    ) -> Self {
+    pub fn set_adm_channel_request(mut self, input: ::std::option::Option<crate::types::AdmChannelRequest>) -> Self {
         self.adm_channel_request = input;
         self
     }
     /// <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-    pub fn get_adm_channel_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::AdmChannelRequest> {
+    pub fn get_adm_channel_request(&self) -> &::std::option::Option<crate::types::AdmChannelRequest> {
         &self.adm_channel_request
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -80,15 +66,10 @@ impl UpdateAdmChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAdmChannelInput`](crate::operation::update_adm_channel::UpdateAdmChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_adm_channel::UpdateAdmChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_adm_channel::UpdateAdmChannelInput {
-                adm_channel_request: self.adm_channel_request,
-                application_id: self.application_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_adm_channel::UpdateAdmChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_adm_channel::UpdateAdmChannelInput {
+            adm_channel_request: self.adm_channel_request,
+            application_id: self.application_id,
+        })
     }
 }

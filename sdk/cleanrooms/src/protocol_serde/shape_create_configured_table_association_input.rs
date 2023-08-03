@@ -4,9 +4,7 @@ pub fn ser_create_configured_table_association_input(
     input: &crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.configured_table_identifier {
-        object
-            .key("configuredTableIdentifier")
-            .string(var_1.as_str());
+        object.key("configuredTableIdentifier").string(var_1.as_str());
     }
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());

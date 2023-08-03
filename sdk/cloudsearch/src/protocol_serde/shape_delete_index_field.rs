@@ -4,122 +4,94 @@ pub fn de_delete_index_field_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::delete_index_field::DeleteIndexFieldOutput,
-    crate::operation::delete_index_field::DeleteIndexFieldError,
-> {
+) -> std::result::Result<crate::operation::delete_index_field::DeleteIndexFieldOutput, crate::operation::delete_index_field::DeleteIndexFieldError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::delete_index_field::DeleteIndexFieldError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_index_field::DeleteIndexFieldError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::delete_index_field::DeleteIndexFieldError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::delete_index_field::DeleteIndexFieldError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BaseException" => {
-            crate::operation::delete_index_field::DeleteIndexFieldError::BaseException({
+        "BaseException" => crate::operation::delete_index_field::DeleteIndexFieldError::BaseException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
-                    output =
-                        crate::protocol_serde::shape_base_exception::de_base_exception_xml_err(
-                            _response_body,
-                            output,
-                        )
-                        .map_err(
-                            crate::operation::delete_index_field::DeleteIndexFieldError::unhandled,
-                        )?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalException" => {
-            crate::operation::delete_index_field::DeleteIndexFieldError::InternalException({
+                let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
+                output = crate::protocol_serde::shape_base_exception::de_base_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_index_field::DeleteIndexFieldError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalException" => crate::operation::delete_index_field::DeleteIndexFieldError::InternalException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_xml_err(_response_body, output).map_err(crate::operation::delete_index_field::DeleteIndexFieldError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidType" => {
-            crate::operation::delete_index_field::DeleteIndexFieldError::InvalidTypeException({
+                let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_index_field::DeleteIndexFieldError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidType" => crate::operation::delete_index_field::DeleteIndexFieldError::InvalidTypeException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidTypeExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_type_exception::de_invalid_type_exception_xml_err(_response_body, output).map_err(crate::operation::delete_index_field::DeleteIndexFieldError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFound" => {
-            crate::operation::delete_index_field::DeleteIndexFieldError::ResourceNotFoundException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                        output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(_response_body, output).map_err(crate::operation::delete_index_field::DeleteIndexFieldError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "ValidationException" => {
-            crate::operation::delete_index_field::DeleteIndexFieldError::ValidationException({
+                let mut output = crate::types::error::builders::InvalidTypeExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_type_exception::de_invalid_type_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_index_field::DeleteIndexFieldError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFound" => crate::operation::delete_index_field::DeleteIndexFieldError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_xml_err(_response_body, output).map_err(crate::operation::delete_index_field::DeleteIndexFieldError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_index_field::DeleteIndexFieldError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => crate::operation::delete_index_field::DeleteIndexFieldError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_index_field::DeleteIndexFieldError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::delete_index_field::DeleteIndexFieldError::generic(generic),
     })
 }
@@ -129,23 +101,13 @@ pub fn de_delete_index_field_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::delete_index_field::DeleteIndexFieldOutput,
-    crate::operation::delete_index_field::DeleteIndexFieldError,
-> {
+) -> std::result::Result<crate::operation::delete_index_field::DeleteIndexFieldOutput, crate::operation::delete_index_field::DeleteIndexFieldError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::delete_index_field::builders::DeleteIndexFieldOutputBuilder::default(
-            );
-        output = crate::protocol_serde::shape_delete_index_field::de_delete_index_field(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::delete_index_field::DeleteIndexFieldError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::delete_index_field::builders::DeleteIndexFieldOutputBuilder::default();
+        output = crate::protocol_serde::shape_delete_index_field::de_delete_index_field(_response_body, output)
+            .map_err(crate::operation::delete_index_field::DeleteIndexFieldError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -154,10 +116,7 @@ pub fn de_delete_index_field_http_response_with_props(
 pub fn de_delete_index_field(
     inp: &[u8],
     mut builder: crate::operation::delete_index_field::builders::DeleteIndexFieldOutputBuilder,
-) -> Result<
-    crate::operation::delete_index_field::builders::DeleteIndexFieldOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::delete_index_field::builders::DeleteIndexFieldOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -194,9 +153,7 @@ pub fn de_delete_index_field(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected DeleteIndexFieldResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected DeleteIndexFieldResult tag"));
     };
     Ok(builder)
 }

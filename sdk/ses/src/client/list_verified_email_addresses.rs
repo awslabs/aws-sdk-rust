@@ -6,7 +6,9 @@ impl super::Client {
     /// - On success, responds with [`ListVerifiedEmailAddressesOutput`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesOutput) with field(s):
     ///   - [`verified_email_addresses(Option<Vec<String>>)`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesOutput::verified_email_addresses): <p>A list of email addresses that have been verified.</p>
     /// - On failure, responds with [`SdkError<ListVerifiedEmailAddressesError>`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesError)
-    pub fn list_verified_email_addresses(&self) -> crate::operation::list_verified_email_addresses::builders::ListVerifiedEmailAddressesFluentBuilder{
+    pub fn list_verified_email_addresses(
+        &self,
+    ) -> crate::operation::list_verified_email_addresses::builders::ListVerifiedEmailAddressesFluentBuilder {
         crate::operation::list_verified_email_addresses::builders::ListVerifiedEmailAddressesFluentBuilder::new(self.handle.clone())
     }
 }

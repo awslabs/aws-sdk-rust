@@ -15,10 +15,7 @@ pub fn ser_recipe_step(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_condition_expression::ser_condition_expression(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_condition_expression::ser_condition_expression(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -31,12 +28,7 @@ pub(crate) fn de_recipe_step<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::RecipeStep>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -46,38 +38,29 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Action" => {
-                                builder = builder.set_action(
-                                    crate::protocol_serde::shape_recipe_action::de_recipe_action(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "ConditionExpressions" => {
-                                builder = builder.set_condition_expressions(
-                                    crate::protocol_serde::shape_condition_expression_list::de_condition_expression_list(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Action" => {
+                            builder = builder.set_action(crate::protocol_serde::shape_recipe_action::de_recipe_action(tokens)?);
                         }
-                    }
+                        "ConditionExpressions" => {
+                            builder = builder.set_condition_expressions(
+                                crate::protocol_serde::shape_condition_expression_list::de_condition_expression_list(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

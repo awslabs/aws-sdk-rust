@@ -35,20 +35,16 @@ pub struct CreateImageRecipeInput {
     pub parent_image: ::std::option::Option<::std::string::String>,
     /// <p>The block device mappings of the image recipe.</p>
     #[doc(hidden)]
-    pub block_device_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
     /// <p>The tags of the image recipe.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The working directory used during build and test workflows.</p>
     #[doc(hidden)]
     pub working_directory: ::std::option::Option<::std::string::String>,
     /// <p>Specify additional settings and launch scripts for your build instances.</p>
     #[doc(hidden)]
-    pub additional_instance_configuration:
-        ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
+    pub additional_instance_configuration: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
     /// <p>The idempotency token used to make this request idempotent.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -90,17 +86,11 @@ impl CreateImageRecipeInput {
         self.parent_image.as_deref()
     }
     /// <p>The block device mappings of the image recipe.</p>
-    pub fn block_device_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceBlockDeviceMapping]> {
+    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::InstanceBlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
     /// <p>The tags of the image recipe.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The working directory used during build and test workflows.</p>
@@ -108,9 +98,7 @@ impl CreateImageRecipeInput {
         self.working_directory.as_deref()
     }
     /// <p>Specify additional settings and launch scripts for your build instances.</p>
-    pub fn additional_instance_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AdditionalInstanceConfiguration> {
+    pub fn additional_instance_configuration(&self) -> ::std::option::Option<&crate::types::AdditionalInstanceConfiguration> {
         self.additional_instance_configuration.as_ref()
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
@@ -120,32 +108,24 @@ impl CreateImageRecipeInput {
 }
 impl CreateImageRecipeInput {
     /// Creates a new builder-style object to manufacture [`CreateImageRecipeInput`](crate::operation::create_image_recipe::CreateImageRecipeInput).
-    pub fn builder(
-    ) -> crate::operation::create_image_recipe::builders::CreateImageRecipeInputBuilder {
+    pub fn builder() -> crate::operation::create_image_recipe::builders::CreateImageRecipeInputBuilder {
         crate::operation::create_image_recipe::builders::CreateImageRecipeInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateImageRecipeInput`](crate::operation::create_image_recipe::CreateImageRecipeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateImageRecipeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) semantic_version: ::std::option::Option<::std::string::String>,
-    pub(crate) components:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
+    pub(crate) components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
     pub(crate) parent_image: ::std::option::Option<::std::string::String>,
-    pub(crate) block_device_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) working_directory: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_instance_configuration:
-        ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
+    pub(crate) additional_instance_configuration: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateImageRecipeInputBuilder {
@@ -193,10 +173,7 @@ impl CreateImageRecipeInputBuilder {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
-    pub fn semantic_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
     }
@@ -216,10 +193,7 @@ impl CreateImageRecipeInputBuilder {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
-    pub fn set_semantic_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.semantic_version = input;
         self
     }
@@ -254,17 +228,12 @@ impl CreateImageRecipeInputBuilder {
         self
     }
     /// <p>The components included in the image recipe.</p>
-    pub fn set_components(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
-    ) -> Self {
+    pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>) -> Self {
         self.components = input;
         self
     }
     /// <p>The components included in the image recipe.</p>
-    pub fn get_components(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
+    pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
         &self.components
     }
     /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
@@ -286,27 +255,19 @@ impl CreateImageRecipeInputBuilder {
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
     ///
     /// <p>The block device mappings of the image recipe.</p>
-    pub fn block_device_mappings(
-        mut self,
-        input: crate::types::InstanceBlockDeviceMapping,
-    ) -> Self {
+    pub fn block_device_mappings(mut self, input: crate::types::InstanceBlockDeviceMapping) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
         v.push(input);
         self.block_device_mappings = ::std::option::Option::Some(v);
         self
     }
     /// <p>The block device mappings of the image recipe.</p>
-    pub fn set_block_device_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
-    ) -> Self {
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>) -> Self {
         self.block_device_mappings = input;
         self
     }
     /// <p>The block device mappings of the image recipe.</p>
-    pub fn get_block_device_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>> {
         &self.block_device_mappings
     }
     /// Adds a key-value pair to `tags`.
@@ -314,47 +275,28 @@ impl CreateImageRecipeInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the image recipe.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags of the image recipe.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags of the image recipe.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The working directory used during build and test workflows.</p>
-    pub fn working_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn working_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.working_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The working directory used during build and test workflows.</p>
-    pub fn set_working_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_working_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.working_directory = input;
         self
     }
@@ -363,25 +305,17 @@ impl CreateImageRecipeInputBuilder {
         &self.working_directory
     }
     /// <p>Specify additional settings and launch scripts for your build instances.</p>
-    pub fn additional_instance_configuration(
-        mut self,
-        input: crate::types::AdditionalInstanceConfiguration,
-    ) -> Self {
+    pub fn additional_instance_configuration(mut self, input: crate::types::AdditionalInstanceConfiguration) -> Self {
         self.additional_instance_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify additional settings and launch scripts for your build instances.</p>
-    pub fn set_additional_instance_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
-    ) -> Self {
+    pub fn set_additional_instance_configuration(mut self, input: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>) -> Self {
         self.additional_instance_configuration = input;
         self
     }
     /// <p>Specify additional settings and launch scripts for your build instances.</p>
-    pub fn get_additional_instance_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AdditionalInstanceConfiguration> {
+    pub fn get_additional_instance_configuration(&self) -> &::std::option::Option<crate::types::AdditionalInstanceConfiguration> {
         &self.additional_instance_configuration
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
@@ -401,23 +335,18 @@ impl CreateImageRecipeInputBuilder {
     /// Consumes the builder and constructs a [`CreateImageRecipeInput`](crate::operation::create_image_recipe::CreateImageRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_image_recipe::CreateImageRecipeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_image_recipe::CreateImageRecipeInput {
-                name: self.name,
-                description: self.description,
-                semantic_version: self.semantic_version,
-                components: self.components,
-                parent_image: self.parent_image,
-                block_device_mappings: self.block_device_mappings,
-                tags: self.tags,
-                working_directory: self.working_directory,
-                additional_instance_configuration: self.additional_instance_configuration,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_image_recipe::CreateImageRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_image_recipe::CreateImageRecipeInput {
+            name: self.name,
+            description: self.description,
+            semantic_version: self.semantic_version,
+            components: self.components,
+            parent_image: self.parent_image,
+            block_device_mappings: self.block_device_mappings,
+            tags: self.tags,
+            working_directory: self.working_directory,
+            additional_instance_configuration: self.additional_instance_configuration,
+            client_token: self.client_token,
+        })
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetLogRecordOutput`](crate::operation::get_log_record::GetLogRecordOutput) with field(s):
     ///   - [`log_record(Option<HashMap<String, String>>)`](crate::operation::get_log_record::GetLogRecordOutput::log_record): <p>The requested log event, as a JSON string.</p>
     /// - On failure, responds with [`SdkError<GetLogRecordError>`](crate::operation::get_log_record::GetLogRecordError)
-    pub fn get_log_record(
-        &self,
-    ) -> crate::operation::get_log_record::builders::GetLogRecordFluentBuilder {
-        crate::operation::get_log_record::builders::GetLogRecordFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_log_record(&self) -> crate::operation::get_log_record::builders::GetLogRecordFluentBuilder {
+        crate::operation::get_log_record::builders::GetLogRecordFluentBuilder::new(self.handle.clone())
     }
 }

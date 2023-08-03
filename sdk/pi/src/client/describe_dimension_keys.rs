@@ -23,12 +23,7 @@ impl super::Client {
     ///   - [`keys(Option<Vec<DimensionKeyDescription>>)`](crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput::keys): <p>The dimension keys that were requested.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput::next_token): <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
     /// - On failure, responds with [`SdkError<DescribeDimensionKeysError>`](crate::operation::describe_dimension_keys::DescribeDimensionKeysError)
-    pub fn describe_dimension_keys(
-        &self,
-    ) -> crate::operation::describe_dimension_keys::builders::DescribeDimensionKeysFluentBuilder
-    {
-        crate::operation::describe_dimension_keys::builders::DescribeDimensionKeysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_dimension_keys(&self) -> crate::operation::describe_dimension_keys::builders::DescribeDimensionKeysFluentBuilder {
+        crate::operation::describe_dimension_keys::builders::DescribeDimensionKeysFluentBuilder::new(self.handle.clone())
     }
 }

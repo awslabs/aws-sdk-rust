@@ -2,8 +2,7 @@
 pub fn ser_delete_field_level_encryption_profile_headers(
     input: &crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.if_match {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_delete_field_level_encryption_profile_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "if_match",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("If-Match", header_value);
@@ -24,110 +20,132 @@ pub fn ser_delete_field_level_encryption_profile_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_field_level_encryption_profile_http_error(_response_status: u16, _response_headers: &::http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileOutput, crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError>{
+pub fn de_delete_field_level_encryption_profile_http_error(
+    _response_status: u16,
+    _response_headers: &::http::header::HeaderMap,
+    _response_body: &[u8],
+) -> std::result::Result<
+    crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileOutput,
+    crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError,
+> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::AccessDenied({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output).map_err(crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
+                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "FieldLevelEncryptionProfileInUse" => crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::FieldLevelEncryptionProfileInUse({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "FieldLevelEncryptionProfileInUse" => {
+            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::FieldLevelEncryptionProfileInUse({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::FieldLevelEncryptionProfileInUseBuilder::default();
-                    output = crate::protocol_serde::shape_field_level_encryption_profile_in_use::de_field_level_encryption_profile_in_use_xml_err(_response_body, output).map_err(crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_field_level_encryption_profile_in_use::de_field_level_encryption_profile_in_use_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidIfMatchVersion" => crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::InvalidIfMatchVersion({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidIfMatchVersion" => {
+            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::InvalidIfMatchVersion({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidIfMatchVersionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_if_match_version::de_invalid_if_match_version_xml_err(_response_body, output).map_err(crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_if_match_version::de_invalid_if_match_version_xml_err(_response_body, output)
+                        .map_err(crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "NoSuchFieldLevelEncryptionProfile" => crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::NoSuchFieldLevelEncryptionProfile({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "NoSuchFieldLevelEncryptionProfile" => {
+            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::NoSuchFieldLevelEncryptionProfile({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::NoSuchFieldLevelEncryptionProfileBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_field_level_encryption_profile::de_no_such_field_level_encryption_profile_xml_err(_response_body, output).map_err(crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_field_level_encryption_profile::de_no_such_field_level_encryption_profile_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "PreconditionFailed" => crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::PreconditionFailed({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "PreconditionFailed" => {
+            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::PreconditionFailed({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::PreconditionFailedBuilder::default();
-                    output = crate::protocol_serde::shape_precondition_failed::de_precondition_failed_xml_err(_response_body, output).map_err(crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_precondition_failed::de_precondition_failed_xml_err(_response_body, output)
+                        .map_err(crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_field_level_encryption_profile_http_response_with_props(_response_status: u16, _response_headers: &::http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileOutput, crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError>{
+pub fn de_delete_field_level_encryption_profile_http_response_with_props(
+    _response_status: u16,
+    _response_headers: &::http::header::HeaderMap,
+    _response_body: &[u8],
+) -> std::result::Result<
+    crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileOutput,
+    crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_field_level_encryption_profile::builders::DeleteFieldLevelEncryptionProfileOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

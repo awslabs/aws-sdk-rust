@@ -29,17 +29,14 @@ impl UpdateBrokerCountInput {
 }
 impl UpdateBrokerCountInput {
     /// Creates a new builder-style object to manufacture [`UpdateBrokerCountInput`](crate::operation::update_broker_count::UpdateBrokerCountInput).
-    pub fn builder(
-    ) -> crate::operation::update_broker_count::builders::UpdateBrokerCountInputBuilder {
+    pub fn builder() -> crate::operation::update_broker_count::builders::UpdateBrokerCountInputBuilder {
         crate::operation::update_broker_count::builders::UpdateBrokerCountInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBrokerCountInput`](crate::operation::update_broker_count::UpdateBrokerCountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBrokerCountInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,12 @@ impl UpdateBrokerCountInputBuilder {
         &self.cluster_arn
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_version = input;
         self
     }
@@ -97,16 +88,11 @@ impl UpdateBrokerCountInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBrokerCountInput`](crate::operation::update_broker_count::UpdateBrokerCountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_broker_count::UpdateBrokerCountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_broker_count::UpdateBrokerCountInput {
-                cluster_arn: self.cluster_arn,
-                current_version: self.current_version,
-                target_number_of_broker_nodes: self.target_number_of_broker_nodes,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_broker_count::UpdateBrokerCountInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_broker_count::UpdateBrokerCountInput {
+            cluster_arn: self.cluster_arn,
+            current_version: self.current_version,
+            target_number_of_broker_nodes: self.target_number_of_broker_nodes,
+        })
     }
 }

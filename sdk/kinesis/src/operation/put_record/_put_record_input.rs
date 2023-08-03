@@ -58,9 +58,7 @@ impl PutRecordInput {
 
 /// A builder for [`PutRecordInput`](crate::operation::put_record::PutRecordInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRecordInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) data: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -99,18 +97,12 @@ impl PutRecordInputBuilder {
         &self.data
     }
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
-    pub fn partition_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partition_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
-    pub fn set_partition_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_partition_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partition_key = input;
         self
     }
@@ -119,18 +111,12 @@ impl PutRecordInputBuilder {
         &self.partition_key
     }
     /// <p>The hash value used to explicitly determine the shard the data record is assigned to by overriding the partition key hash.</p>
-    pub fn explicit_hash_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explicit_hash_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explicit_hash_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hash value used to explicitly determine the shard the data record is assigned to by overriding the partition key hash.</p>
-    pub fn set_explicit_hash_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_explicit_hash_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.explicit_hash_key = input;
         self
     }
@@ -139,25 +125,17 @@ impl PutRecordInputBuilder {
         &self.explicit_hash_key
     }
     /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records are coarsely ordered based on arrival time.</p>
-    pub fn sequence_number_for_ordering(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_number_for_ordering(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_number_for_ordering = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records are coarsely ordered based on arrival time.</p>
-    pub fn set_sequence_number_for_ordering(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_number_for_ordering(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_number_for_ordering = input;
         self
     }
     /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records are coarsely ordered based on arrival time.</p>
-    pub fn get_sequence_number_for_ordering(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_sequence_number_for_ordering(&self) -> &::std::option::Option<::std::string::String> {
         &self.sequence_number_for_ordering
     }
     /// <p>The ARN of the stream.</p>
@@ -175,12 +153,7 @@ impl PutRecordInputBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`PutRecordInput`](crate::operation::put_record::PutRecordInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_record::PutRecordInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_record::PutRecordInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_record::PutRecordInput {
             stream_name: self.stream_name,
             data: self.data,

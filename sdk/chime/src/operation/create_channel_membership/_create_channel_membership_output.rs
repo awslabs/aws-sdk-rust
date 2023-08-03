@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateChannelMembershipOutput {
 }
 impl CreateChannelMembershipOutput {
     /// Creates a new builder-style object to manufacture [`CreateChannelMembershipOutput`](crate::operation::create_channel_membership::CreateChannelMembershipOutput).
-    pub fn builder(
-    ) -> crate::operation::create_channel_membership::builders::CreateChannelMembershipOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_channel_membership::builders::CreateChannelMembershipOutputBuilder {
         crate::operation::create_channel_membership::builders::CreateChannelMembershipOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateChannelMembershipOutput`](crate::operation::create_channel_membership::CreateChannelMembershipOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateChannelMembershipOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) member: ::std::option::Option<crate::types::Identity>,
@@ -84,9 +80,7 @@ impl CreateChannelMembershipOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateChannelMembershipOutput`](crate::operation::create_channel_membership::CreateChannelMembershipOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_channel_membership::CreateChannelMembershipOutput {
+    pub fn build(self) -> crate::operation::create_channel_membership::CreateChannelMembershipOutput {
         crate::operation::create_channel_membership::CreateChannelMembershipOutput {
             channel_arn: self.channel_arn,
             member: self.member,

@@ -6,8 +6,7 @@
 pub struct ListInputDeviceTransfersOutput {
     /// The list of devices that you are transferring or are being transferred to you.
     #[doc(hidden)]
-    pub input_device_transfers:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransferringInputDeviceSummary>>,
+    pub input_device_transfers: ::std::option::Option<::std::vec::Vec<crate::types::TransferringInputDeviceSummary>>,
     /// A token to get additional list results.
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct ListInputDeviceTransfersOutput {
 }
 impl ListInputDeviceTransfersOutput {
     /// The list of devices that you are transferring or are being transferred to you.
-    pub fn input_device_transfers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TransferringInputDeviceSummary]> {
+    pub fn input_device_transfers(&self) -> ::std::option::Option<&[crate::types::TransferringInputDeviceSummary]> {
         self.input_device_transfers.as_deref()
     }
     /// A token to get additional list results.
@@ -32,19 +29,16 @@ impl ::aws_http::request_id::RequestId for ListInputDeviceTransfersOutput {
 }
 impl ListInputDeviceTransfersOutput {
     /// Creates a new builder-style object to manufacture [`ListInputDeviceTransfersOutput`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput).
-    pub fn builder() -> crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersOutputBuilder{
+    pub fn builder() -> crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersOutputBuilder {
         crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInputDeviceTransfersOutput`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInputDeviceTransfersOutputBuilder {
-    pub(crate) input_device_transfers:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransferringInputDeviceSummary>>,
+    pub(crate) input_device_transfers: ::std::option::Option<::std::vec::Vec<crate::types::TransferringInputDeviceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,27 +48,19 @@ impl ListInputDeviceTransfersOutputBuilder {
     /// To override the contents of this collection use [`set_input_device_transfers`](Self::set_input_device_transfers).
     ///
     /// The list of devices that you are transferring or are being transferred to you.
-    pub fn input_device_transfers(
-        mut self,
-        input: crate::types::TransferringInputDeviceSummary,
-    ) -> Self {
+    pub fn input_device_transfers(mut self, input: crate::types::TransferringInputDeviceSummary) -> Self {
         let mut v = self.input_device_transfers.unwrap_or_default();
         v.push(input);
         self.input_device_transfers = ::std::option::Option::Some(v);
         self
     }
     /// The list of devices that you are transferring or are being transferred to you.
-    pub fn set_input_device_transfers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TransferringInputDeviceSummary>>,
-    ) -> Self {
+    pub fn set_input_device_transfers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransferringInputDeviceSummary>>) -> Self {
         self.input_device_transfers = input;
         self
     }
     /// The list of devices that you are transferring or are being transferred to you.
-    pub fn get_input_device_transfers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransferringInputDeviceSummary>> {
+    pub fn get_input_device_transfers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransferringInputDeviceSummary>> {
         &self.input_device_transfers
     }
     /// A token to get additional list results.
@@ -101,9 +87,7 @@ impl ListInputDeviceTransfersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListInputDeviceTransfersOutput`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput {
+    pub fn build(self) -> crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput {
         crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput {
             input_device_transfers: self.input_device_transfers,
             next_token: self.next_token,

@@ -36,16 +36,14 @@ impl DisassociateCreatedArtifactInput {
 }
 impl DisassociateCreatedArtifactInput {
     /// Creates a new builder-style object to manufacture [`DisassociateCreatedArtifactInput`](crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactInput).
-    pub fn builder() -> crate::operation::disassociate_created_artifact::builders::DisassociateCreatedArtifactInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_created_artifact::builders::DisassociateCreatedArtifactInputBuilder {
         crate::operation::disassociate_created_artifact::builders::DisassociateCreatedArtifactInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateCreatedArtifactInput`](crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateCreatedArtifactInputBuilder {
     pub(crate) progress_update_stream: ::std::option::Option<::std::string::String>,
     pub(crate) migration_task_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct DisassociateCreatedArtifactInputBuilder {
 }
 impl DisassociateCreatedArtifactInputBuilder {
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream. </p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress_update_stream = input;
         self
     }
@@ -74,18 +66,12 @@ impl DisassociateCreatedArtifactInputBuilder {
         &self.progress_update_stream
     }
     /// <p>Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.migration_task_name = input;
         self
     }
@@ -94,18 +80,12 @@ impl DisassociateCreatedArtifactInputBuilder {
         &self.migration_task_name
     }
     /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
-    pub fn created_artifact_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn created_artifact_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_artifact_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
-    pub fn set_created_artifact_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_created_artifact_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_artifact_name = input;
         self
     }
@@ -134,13 +114,11 @@ impl DisassociateCreatedArtifactInputBuilder {
         crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactInput {
-                progress_update_stream: self.progress_update_stream,
-                migration_task_name: self.migration_task_name,
-                created_artifact_name: self.created_artifact_name,
-                dry_run: self.dry_run.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactInput {
+            progress_update_stream: self.progress_update_stream,
+            migration_task_name: self.migration_task_name,
+            created_artifact_name: self.created_artifact_name,
+            dry_run: self.dry_run.unwrap_or_default(),
+        })
     }
 }

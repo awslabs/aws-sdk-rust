@@ -29,18 +29,14 @@ impl GetSlotTypeVersionsInput {
 }
 impl GetSlotTypeVersionsInput {
     /// Creates a new builder-style object to manufacture [`GetSlotTypeVersionsInput`](crate::operation::get_slot_type_versions::GetSlotTypeVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsInputBuilder {
-        crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsInputBuilder {
+        crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSlotTypeVersionsInput`](crate::operation::get_slot_type_versions::GetSlotTypeVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSlotTypeVersionsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl GetSlotTypeVersionsInputBuilder {
     /// Consumes the builder and constructs a [`GetSlotTypeVersionsInput`](crate::operation::get_slot_type_versions::GetSlotTypeVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_slot_type_versions::GetSlotTypeVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_slot_type_versions::GetSlotTypeVersionsInput {
-                name: self.name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_slot_type_versions::GetSlotTypeVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_slot_type_versions::GetSlotTypeVersionsInput {
+            name: self.name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

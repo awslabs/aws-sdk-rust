@@ -18,8 +18,7 @@ pub struct ViolationDetail {
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>List of violations for the requested resource.</p>
     #[doc(hidden)]
-    pub resource_violations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceViolation>>,
+    pub resource_violations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceViolation>>,
     /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
     #[doc(hidden)]
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -66,16 +65,13 @@ impl ViolationDetail {
 
 /// A builder for [`ViolationDetail`](crate::types::ViolationDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ViolationDetailBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_account: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_violations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceViolation>>,
+    pub(crate) resource_violations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceViolation>>,
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) resource_description: ::std::option::Option<::std::string::String>,
 }
@@ -95,18 +91,12 @@ impl ViolationDetailBuilder {
         &self.policy_id
     }
     /// <p>The Amazon Web Services account that the violation details were requested for.</p>
-    pub fn member_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account that the violation details were requested for.</p>
-    pub fn set_member_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_account = input;
         self
     }
@@ -129,18 +119,12 @@ impl ViolationDetailBuilder {
         &self.resource_id
     }
     /// <p>The resource type that the violation details were requested for.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type that the violation details were requested for.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -160,17 +144,12 @@ impl ViolationDetailBuilder {
         self
     }
     /// <p>List of violations for the requested resource.</p>
-    pub fn set_resource_violations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceViolation>>,
-    ) -> Self {
+    pub fn set_resource_violations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceViolation>>) -> Self {
         self.resource_violations = input;
         self
     }
     /// <p>List of violations for the requested resource.</p>
-    pub fn get_resource_violations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceViolation>> {
+    pub fn get_resource_violations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceViolation>> {
         &self.resource_violations
     }
     /// Appends an item to `resource_tags`.
@@ -185,10 +164,7 @@ impl ViolationDetailBuilder {
         self
     }
     /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
-    pub fn set_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.resource_tags = input;
         self
     }
@@ -197,18 +173,12 @@ impl ViolationDetailBuilder {
         &self.resource_tags
     }
     /// <p>Brief description for the requested resource.</p>
-    pub fn resource_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Brief description for the requested resource.</p>
-    pub fn set_resource_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_description = input;
         self
     }

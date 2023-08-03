@@ -29,9 +29,7 @@ impl GetRepositoryInput {
 
 /// A builder for [`GetRepositoryInput`](crate::operation::get_repository::GetRepositoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRepositoryInputBuilder {
     pub(crate) provider: ::std::option::Option<crate::types::RepositoryProvider>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -43,10 +41,7 @@ impl GetRepositoryInputBuilder {
         self
     }
     /// <p>The repository provider.</p>
-    pub fn set_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
         self.provider = input;
         self
     }
@@ -71,10 +66,7 @@ impl GetRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`GetRepositoryInput`](crate::operation::get_repository::GetRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_repository::GetRepositoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_repository::GetRepositoryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_repository::GetRepositoryInput {
             provider: self.provider,
             name: self.name,

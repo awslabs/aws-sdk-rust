@@ -43,9 +43,7 @@ impl ResolverConfig {
     /// <li> <p> <b>DISABLING:</b> Autodefined rules for reverse DNS lookups are being disabled but are not complete.</p> </li>
     /// <li> <p> <b>DISABLED:</b> Autodefined rules for reverse DNS lookups are disabled.</p> </li>
     /// </ul>
-    pub fn autodefined_reverse(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResolverAutodefinedReverseStatus> {
+    pub fn autodefined_reverse(&self) -> ::std::option::Option<&crate::types::ResolverAutodefinedReverseStatus> {
         self.autodefined_reverse.as_ref()
     }
 }
@@ -58,15 +56,12 @@ impl ResolverConfig {
 
 /// A builder for [`ResolverConfig`](crate::types::ResolverConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolverConfigBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
-    pub(crate) autodefined_reverse:
-        ::std::option::Option<crate::types::ResolverAutodefinedReverseStatus>,
+    pub(crate) autodefined_reverse: ::std::option::Option<crate::types::ResolverAutodefinedReverseStatus>,
 }
 impl ResolverConfigBuilder {
     /// <p>ID for the Resolver configuration.</p>
@@ -118,10 +113,7 @@ impl ResolverConfigBuilder {
     /// <li> <p> <b>DISABLING:</b> Autodefined rules for reverse DNS lookups are being disabled but are not complete.</p> </li>
     /// <li> <p> <b>DISABLED:</b> Autodefined rules for reverse DNS lookups are disabled.</p> </li>
     /// </ul>
-    pub fn autodefined_reverse(
-        mut self,
-        input: crate::types::ResolverAutodefinedReverseStatus,
-    ) -> Self {
+    pub fn autodefined_reverse(mut self, input: crate::types::ResolverAutodefinedReverseStatus) -> Self {
         self.autodefined_reverse = ::std::option::Option::Some(input);
         self
     }
@@ -132,10 +124,7 @@ impl ResolverConfigBuilder {
     /// <li> <p> <b>DISABLING:</b> Autodefined rules for reverse DNS lookups are being disabled but are not complete.</p> </li>
     /// <li> <p> <b>DISABLED:</b> Autodefined rules for reverse DNS lookups are disabled.</p> </li>
     /// </ul>
-    pub fn set_autodefined_reverse(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverAutodefinedReverseStatus>,
-    ) -> Self {
+    pub fn set_autodefined_reverse(mut self, input: ::std::option::Option<crate::types::ResolverAutodefinedReverseStatus>) -> Self {
         self.autodefined_reverse = input;
         self
     }
@@ -146,9 +135,7 @@ impl ResolverConfigBuilder {
     /// <li> <p> <b>DISABLING:</b> Autodefined rules for reverse DNS lookups are being disabled but are not complete.</p> </li>
     /// <li> <p> <b>DISABLED:</b> Autodefined rules for reverse DNS lookups are disabled.</p> </li>
     /// </ul>
-    pub fn get_autodefined_reverse(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResolverAutodefinedReverseStatus> {
+    pub fn get_autodefined_reverse(&self) -> &::std::option::Option<crate::types::ResolverAutodefinedReverseStatus> {
         &self.autodefined_reverse
     }
     /// Consumes the builder and constructs a [`ResolverConfig`](crate::types::ResolverConfig).

@@ -43,9 +43,7 @@ impl CreateIngestionInput {
 
 /// A builder for [`CreateIngestionInput`](crate::operation::create_ingestion::CreateIngestionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateIngestionInputBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_id: ::std::option::Option<::std::string::String>,
@@ -82,18 +80,12 @@ impl CreateIngestionInputBuilder {
         &self.ingestion_id
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -107,10 +99,7 @@ impl CreateIngestionInputBuilder {
         self
     }
     /// <p>The type of ingestion that you want to create.</p>
-    pub fn set_ingestion_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionType>,
-    ) -> Self {
+    pub fn set_ingestion_type(mut self, input: ::std::option::Option<crate::types::IngestionType>) -> Self {
         self.ingestion_type = input;
         self
     }
@@ -121,10 +110,7 @@ impl CreateIngestionInputBuilder {
     /// Consumes the builder and constructs a [`CreateIngestionInput`](crate::operation::create_ingestion::CreateIngestionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_ingestion::CreateIngestionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_ingestion::CreateIngestionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ingestion::CreateIngestionInput {
             data_set_id: self.data_set_id,
             ingestion_id: self.ingestion_id,

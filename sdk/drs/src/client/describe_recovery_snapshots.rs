@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<RecoverySnapshot>>)`](crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsOutput::items): <p>An array of Recovery Snapshots.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsOutput::next_token): <p>The token of the next Recovery Snapshot to retrieve.</p>
     /// - On failure, responds with [`SdkError<DescribeRecoverySnapshotsError>`](crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsError)
-    pub fn describe_recovery_snapshots(&self) -> crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder{
+    pub fn describe_recovery_snapshots(&self) -> crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder {
         crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

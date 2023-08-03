@@ -37,9 +37,7 @@ impl GetMatchingWorkflowFluentBuilder {
         }
     }
     /// Access the GetMatchingWorkflow as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_matching_workflow::builders::GetMatchingWorkflowInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_matching_workflow::builders::GetMatchingWorkflowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetMatchingWorkflowFluentBuilder {
             crate::operation::get_matching_workflow::GetMatchingWorkflow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_matching_workflow::GetMatchingWorkflowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_matching_workflow::GetMatchingWorkflowError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetMatchingWorkflowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetMatchingWorkflowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_matching_workflow::GetMatchingWorkflowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_matching_workflow::GetMatchingWorkflowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_matching_workflow::GetMatchingWorkflowError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetMatchingWorkflowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_matching_workflow::GetMatchingWorkflowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_matching_workflow::GetMatchingWorkflowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_matching_workflow::GetMatchingWorkflowError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetMatchingWorkflowFluentBuilder {
             crate::operation::get_matching_workflow::GetMatchingWorkflow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_matching_workflow::GetMatchingWorkflowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_matching_workflow::GetMatchingWorkflowError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_name(input.into());
         self
     }
     /// <p>The name of the workflow.</p>
-    pub fn set_workflow_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_name(input);
         self
     }

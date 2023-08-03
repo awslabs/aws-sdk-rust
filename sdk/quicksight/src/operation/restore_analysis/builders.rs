@@ -10,10 +10,7 @@ impl RestoreAnalysisInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::restore_analysis::RestoreAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_analysis::RestoreAnalysisError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_analysis::RestoreAnalysisError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.restore_analysis();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RestoreAnalysisFluentBuilder {
         }
     }
     /// Access the RestoreAnalysis as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::restore_analysis::builders::RestoreAnalysisInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::restore_analysis::builders::RestoreAnalysisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl RestoreAnalysisFluentBuilder {
             crate::operation::restore_analysis::RestoreAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_analysis::RestoreAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_analysis::RestoreAnalysisError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl RestoreAnalysisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl RestoreAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_analysis::RestoreAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_analysis::RestoreAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_analysis::RestoreAnalysisError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl RestoreAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_analysis::RestoreAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_analysis::RestoreAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_analysis::RestoreAnalysisError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl RestoreAnalysisFluentBuilder {
             crate::operation::restore_analysis::RestoreAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_analysis::RestoreAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_analysis::RestoreAnalysisError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

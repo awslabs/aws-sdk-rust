@@ -54,9 +54,7 @@ impl NotificationSpecification {
 
 /// A builder for [`NotificationSpecification`](crate::types::NotificationSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationSpecificationBuilder {
     pub(crate) destination: ::std::option::Option<::std::string::String>,
     pub(crate) transport: ::std::option::Option<crate::types::NotificationTransport>,
@@ -99,10 +97,7 @@ impl NotificationSpecificationBuilder {
         self
     }
     /// <p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>
-    pub fn set_transport(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationTransport>,
-    ) -> Self {
+    pub fn set_transport(mut self, input: ::std::option::Option<crate::types::NotificationTransport>) -> Self {
         self.transport = input;
         self
     }
@@ -136,17 +131,12 @@ impl NotificationSpecificationBuilder {
         self
     }
     /// <p> The list of events that should cause notifications to be sent. Valid Values: AssignmentAccepted | AssignmentAbandoned | AssignmentReturned | AssignmentSubmitted | AssignmentRejected | AssignmentApproved | HITCreated | HITExtended | HITDisposed | HITReviewable | HITExpired | Ping. The Ping event is only valid for the SendTestEventNotification operation. </p>
-    pub fn set_event_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
-    ) -> Self {
+    pub fn set_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>) -> Self {
         self.event_types = input;
         self
     }
     /// <p> The list of events that should cause notifications to be sent. Valid Values: AssignmentAccepted | AssignmentAbandoned | AssignmentReturned | AssignmentSubmitted | AssignmentRejected | AssignmentApproved | HITCreated | HITExtended | HITDisposed | HITReviewable | HITExpired | Ping. The Ping event is only valid for the SendTestEventNotification operation. </p>
-    pub fn get_event_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
+    pub fn get_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
         &self.event_types
     }
     /// Consumes the builder and constructs a [`NotificationSpecification`](crate::types::NotificationSpecification).

@@ -10,10 +10,7 @@ impl StartImportInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_import::StartImportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_import::StartImportError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import::StartImportError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_import();
         fluent_builder.inner = self;
@@ -49,10 +46,7 @@ impl StartImportFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_import::StartImport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_import::StartImport, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_import::StartImportError>,
     > {
         let handle = self.handle.clone();
@@ -63,10 +57,7 @@ impl StartImportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -108,10 +99,7 @@ impl StartImportFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_import::StartImport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_import::StartImport, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_import::StartImportError>,
     > {
         self.customize_middleware().await
@@ -126,17 +114,12 @@ impl StartImportFluentBuilder {
         self
     }
     /// <p> The ARN of the destination event data store. Use this parameter for a new import. </p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_destinations(input);
         self
     }
     /// <p> The ARN of the destination event data store. Use this parameter for a new import. </p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_destinations()
     }
     /// <p> The source S3 bucket for the import. Use this parameter for a new import. </p>
@@ -145,10 +128,7 @@ impl StartImportFluentBuilder {
         self
     }
     /// <p> The source S3 bucket for the import. Use this parameter for a new import. </p>
-    pub fn set_import_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportSource>,
-    ) -> Self {
+    pub fn set_import_source(mut self, input: ::std::option::Option<crate::types::ImportSource>) -> Self {
         self.inner = self.inner.set_import_source(input);
         self
     }
@@ -162,10 +142,7 @@ impl StartImportFluentBuilder {
         self
     }
     /// <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events. </p>
-    pub fn set_start_event_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_event_time(input);
         self
     }
@@ -179,10 +156,7 @@ impl StartImportFluentBuilder {
         self
     }
     /// <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events. </p>
-    pub fn set_end_event_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_event_time(input);
         self
     }

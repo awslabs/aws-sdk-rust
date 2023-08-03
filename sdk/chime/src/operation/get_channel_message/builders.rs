@@ -10,10 +10,7 @@ impl GetChannelMessageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_channel_message::GetChannelMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_message::GetChannelMessageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_channel_message::GetChannelMessageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_channel_message();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl GetChannelMessageFluentBuilder {
         }
     }
     /// Access the GetChannelMessage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_channel_message::builders::GetChannelMessageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_channel_message::builders::GetChannelMessageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl GetChannelMessageFluentBuilder {
             crate::operation::get_channel_message::GetChannelMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_message::GetChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_channel_message::GetChannelMessageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl GetChannelMessageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl GetChannelMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_channel_message::GetChannelMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_message::GetChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_channel_message::GetChannelMessageError>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl GetChannelMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_channel_message::GetChannelMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_message::GetChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_channel_message::GetChannelMessageError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +108,7 @@ impl GetChannelMessageFluentBuilder {
             crate::operation::get_channel_message::GetChannelMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_message::GetChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_channel_message::GetChannelMessageError>,
     > {
         self.customize_middleware().await
     }

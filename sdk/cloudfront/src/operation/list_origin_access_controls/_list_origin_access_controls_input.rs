@@ -22,18 +22,14 @@ impl ListOriginAccessControlsInput {
 }
 impl ListOriginAccessControlsInput {
     /// Creates a new builder-style object to manufacture [`ListOriginAccessControlsInput`](crate::operation::list_origin_access_controls::ListOriginAccessControlsInput).
-    pub fn builder(
-    ) -> crate::operation::list_origin_access_controls::builders::ListOriginAccessControlsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_origin_access_controls::builders::ListOriginAccessControlsInputBuilder {
         crate::operation::list_origin_access_controls::builders::ListOriginAccessControlsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListOriginAccessControlsInput`](crate::operation::list_origin_access_controls::ListOriginAccessControlsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOriginAccessControlsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -74,11 +70,9 @@ impl ListOriginAccessControlsInputBuilder {
         crate::operation::list_origin_access_controls::ListOriginAccessControlsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_origin_access_controls::ListOriginAccessControlsInput {
-                marker: self.marker,
-                max_items: self.max_items,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_origin_access_controls::ListOriginAccessControlsInput {
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

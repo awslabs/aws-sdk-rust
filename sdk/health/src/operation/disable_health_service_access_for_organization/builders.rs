@@ -5,16 +5,16 @@ pub use crate::operation::disable_health_service_access_for_organization::_disab
 
 impl DisableHealthServiceAccessForOrganizationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.disable_health_service_access_for_organization();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl DisableHealthServiceAccessForOrganizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableHealthServiceAccessForOrganizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disable_health_service_access_for_organization::builders::DisableHealthServiceAccessForOrganizationInputBuilder,
+    inner: crate::operation::disable_health_service_access_for_organization::builders::DisableHealthServiceAccessForOrganizationInputBuilder,
 }
 impl DisableHealthServiceAccessForOrganizationFluentBuilder {
     /// Creates a new `DisableHealthServiceAccessForOrganization`.
@@ -40,15 +40,24 @@ impl DisableHealthServiceAccessForOrganizationFluentBuilder {
         }
     }
     /// Access the DisableHealthServiceAccessForOrganization as a reference.
-    pub fn as_input(&self) -> &crate::operation::disable_health_service_access_for_organization::builders::DisableHealthServiceAccessForOrganizationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disable_health_service_access_for_organization::builders::DisableHealthServiceAccessForOrganizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganization, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganization,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +66,19 @@ impl DisableHealthServiceAccessForOrganizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -84,17 +96,30 @@ impl DisableHealthServiceAccessForOrganizationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganization, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganization,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError,
+        >,
+    > {
         self.customize_middleware().await
     }
 }

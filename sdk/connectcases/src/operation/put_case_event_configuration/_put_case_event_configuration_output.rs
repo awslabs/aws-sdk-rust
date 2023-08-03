@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutCaseEventConfigurationOutput {
 }
 impl PutCaseEventConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutCaseEventConfigurationOutput`](crate::operation::put_case_event_configuration::PutCaseEventConfigurationOutput).
-    pub fn builder() -> crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationOutputBuilder {
         crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutCaseEventConfigurationOutput`](crate::operation::put_case_event_configuration::PutCaseEventConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutCaseEventConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl PutCaseEventConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutCaseEventConfigurationOutput`](crate::operation::put_case_event_configuration::PutCaseEventConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_case_event_configuration::PutCaseEventConfigurationOutput {
+    pub fn build(self) -> crate::operation::put_case_event_configuration::PutCaseEventConfigurationOutput {
         crate::operation::put_case_event_configuration::PutCaseEventConfigurationOutput {
             _request_id: self._request_id,
         }

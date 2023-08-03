@@ -41,8 +41,7 @@ pub struct DescribeAutoMlJobOutput {
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Returns a list of reasons for partial failures within an AutoML job.</p>
     #[doc(hidden)]
-    pub partial_failure_reasons:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>>,
+    pub partial_failure_reasons: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>>,
     /// <p>The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
     #[doc(hidden)]
     pub best_candidate: ::std::option::Option<crate::types::AutoMlCandidate>,
@@ -83,9 +82,7 @@ impl DescribeAutoMlJobOutput {
         self.input_data_config.as_deref()
     }
     /// <p>Returns the job's output data config.</p>
-    pub fn output_data_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoMlOutputDataConfig> {
+    pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::AutoMlOutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
@@ -93,9 +90,7 @@ impl DescribeAutoMlJobOutput {
         self.role_arn.as_deref()
     }
     /// <p>Returns the job's objective.</p>
-    pub fn auto_ml_job_objective(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoMlJobObjective> {
+    pub fn auto_ml_job_objective(&self) -> ::std::option::Option<&crate::types::AutoMlJobObjective> {
         self.auto_ml_job_objective.as_ref()
     }
     /// <p>Returns the job's problem type.</p>
@@ -123,9 +118,7 @@ impl DescribeAutoMlJobOutput {
         self.failure_reason.as_deref()
     }
     /// <p>Returns a list of reasons for partial failures within an AutoML job.</p>
-    pub fn partial_failure_reasons(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AutoMlPartialFailureReason]> {
+    pub fn partial_failure_reasons(&self) -> ::std::option::Option<&[crate::types::AutoMlPartialFailureReason]> {
         self.partial_failure_reasons.as_deref()
     }
     /// <p>The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
@@ -137,9 +130,7 @@ impl DescribeAutoMlJobOutput {
         self.auto_ml_job_status.as_ref()
     }
     /// <p>Returns the secondary status of the AutoML job.</p>
-    pub fn auto_ml_job_secondary_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoMlJobSecondaryStatus> {
+    pub fn auto_ml_job_secondary_status(&self) -> ::std::option::Option<&crate::types::AutoMlJobSecondaryStatus> {
         self.auto_ml_job_secondary_status.as_ref()
     }
     /// <p>Indicates whether the output for an AutoML job generates candidate definitions only.</p>
@@ -147,9 +138,7 @@ impl DescribeAutoMlJobOutput {
         self.generate_candidate_definitions_only
     }
     /// <p>Returns information on the job's artifacts found in <code>AutoMLJobArtifacts</code>.</p>
-    pub fn auto_ml_job_artifacts(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoMlJobArtifacts> {
+    pub fn auto_ml_job_artifacts(&self) -> ::std::option::Option<&crate::types::AutoMlJobArtifacts> {
         self.auto_ml_job_artifacts.as_ref()
     }
     /// <p>Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you do not provide these values, they are inferred.</p>
@@ -172,22 +161,18 @@ impl ::aws_http::request_id::RequestId for DescribeAutoMlJobOutput {
 }
 impl DescribeAutoMlJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoMlJobOutput`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_auto_ml_job::builders::DescribeAutoMlJobOutputBuilder {
+    pub fn builder() -> crate::operation::describe_auto_ml_job::builders::DescribeAutoMlJobOutputBuilder {
         crate::operation::describe_auto_ml_job::builders::DescribeAutoMlJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAutoMlJobOutput`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAutoMlJobOutputBuilder {
     pub(crate) auto_ml_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_ml_job_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) input_data_config:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoMlChannel>>,
+    pub(crate) input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlChannel>>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::AutoMlOutputDataConfig>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) auto_ml_job_objective: ::std::option::Option<crate::types::AutoMlJobObjective>,
@@ -197,12 +182,10 @@ pub struct DescribeAutoMlJobOutputBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) partial_failure_reasons:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>>,
+    pub(crate) partial_failure_reasons: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>>,
     pub(crate) best_candidate: ::std::option::Option<crate::types::AutoMlCandidate>,
     pub(crate) auto_ml_job_status: ::std::option::Option<crate::types::AutoMlJobStatus>,
-    pub(crate) auto_ml_job_secondary_status:
-        ::std::option::Option<crate::types::AutoMlJobSecondaryStatus>,
+    pub(crate) auto_ml_job_secondary_status: ::std::option::Option<crate::types::AutoMlJobSecondaryStatus>,
     pub(crate) generate_candidate_definitions_only: ::std::option::Option<bool>,
     pub(crate) auto_ml_job_artifacts: ::std::option::Option<crate::types::AutoMlJobArtifacts>,
     pub(crate) resolved_attributes: ::std::option::Option<crate::types::ResolvedAttributes>,
@@ -212,18 +195,12 @@ pub struct DescribeAutoMlJobOutputBuilder {
 }
 impl DescribeAutoMlJobOutputBuilder {
     /// <p>Returns the name of the AutoML job.</p>
-    pub fn auto_ml_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_ml_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_ml_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the name of the AutoML job.</p>
-    pub fn set_auto_ml_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_ml_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_ml_job_name = input;
         self
     }
@@ -232,18 +209,12 @@ impl DescribeAutoMlJobOutputBuilder {
         &self.auto_ml_job_name
     }
     /// <p>Returns the ARN of the AutoML job.</p>
-    pub fn auto_ml_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_ml_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_ml_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the ARN of the AutoML job.</p>
-    pub fn set_auto_ml_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_ml_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_ml_job_arn = input;
         self
     }
@@ -263,17 +234,12 @@ impl DescribeAutoMlJobOutputBuilder {
         self
     }
     /// <p>Returns the input data configuration for the AutoML job.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlChannel>>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlChannel>>) -> Self {
         self.input_data_config = input;
         self
     }
     /// <p>Returns the input data configuration for the AutoML job.</p>
-    pub fn get_input_data_config(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlChannel>> {
+    pub fn get_input_data_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlChannel>> {
         &self.input_data_config
     }
     /// <p>Returns the job's output data config.</p>
@@ -282,17 +248,12 @@ impl DescribeAutoMlJobOutputBuilder {
         self
     }
     /// <p>Returns the job's output data config.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlOutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::AutoMlOutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
     /// <p>Returns the job's output data config.</p>
-    pub fn get_output_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoMlOutputDataConfig> {
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::AutoMlOutputDataConfig> {
         &self.output_data_config
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
@@ -315,17 +276,12 @@ impl DescribeAutoMlJobOutputBuilder {
         self
     }
     /// <p>Returns the job's objective.</p>
-    pub fn set_auto_ml_job_objective(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlJobObjective>,
-    ) -> Self {
+    pub fn set_auto_ml_job_objective(mut self, input: ::std::option::Option<crate::types::AutoMlJobObjective>) -> Self {
         self.auto_ml_job_objective = input;
         self
     }
     /// <p>Returns the job's objective.</p>
-    pub fn get_auto_ml_job_objective(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoMlJobObjective> {
+    pub fn get_auto_ml_job_objective(&self) -> &::std::option::Option<crate::types::AutoMlJobObjective> {
         &self.auto_ml_job_objective
     }
     /// <p>Returns the job's problem type.</p>
@@ -334,10 +290,7 @@ impl DescribeAutoMlJobOutputBuilder {
         self
     }
     /// <p>Returns the job's problem type.</p>
-    pub fn set_problem_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProblemType>,
-    ) -> Self {
+    pub fn set_problem_type(mut self, input: ::std::option::Option<crate::types::ProblemType>) -> Self {
         self.problem_type = input;
         self
     }
@@ -351,10 +304,7 @@ impl DescribeAutoMlJobOutputBuilder {
         self
     }
     /// <p>Returns the configuration for the AutoML job.</p>
-    pub fn set_auto_ml_job_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlJobConfig>,
-    ) -> Self {
+    pub fn set_auto_ml_job_config(mut self, input: ::std::option::Option<crate::types::AutoMlJobConfig>) -> Self {
         self.auto_ml_job_config = input;
         self
     }
@@ -368,10 +318,7 @@ impl DescribeAutoMlJobOutputBuilder {
         self
     }
     /// <p>Returns the creation time of the AutoML job.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -385,10 +332,7 @@ impl DescribeAutoMlJobOutputBuilder {
         self
     }
     /// <p>Returns the end time of the AutoML job.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -402,10 +346,7 @@ impl DescribeAutoMlJobOutputBuilder {
         self
     }
     /// <p>Returns the job's last modified time.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -414,18 +355,12 @@ impl DescribeAutoMlJobOutputBuilder {
         &self.last_modified_time
     }
     /// <p>Returns the failure reason for an AutoML job, when applicable.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the failure reason for an AutoML job, when applicable.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -438,27 +373,19 @@ impl DescribeAutoMlJobOutputBuilder {
     /// To override the contents of this collection use [`set_partial_failure_reasons`](Self::set_partial_failure_reasons).
     ///
     /// <p>Returns a list of reasons for partial failures within an AutoML job.</p>
-    pub fn partial_failure_reasons(
-        mut self,
-        input: crate::types::AutoMlPartialFailureReason,
-    ) -> Self {
+    pub fn partial_failure_reasons(mut self, input: crate::types::AutoMlPartialFailureReason) -> Self {
         let mut v = self.partial_failure_reasons.unwrap_or_default();
         v.push(input);
         self.partial_failure_reasons = ::std::option::Option::Some(v);
         self
     }
     /// <p>Returns a list of reasons for partial failures within an AutoML job.</p>
-    pub fn set_partial_failure_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>>,
-    ) -> Self {
+    pub fn set_partial_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>>) -> Self {
         self.partial_failure_reasons = input;
         self
     }
     /// <p>Returns a list of reasons for partial failures within an AutoML job.</p>
-    pub fn get_partial_failure_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>> {
+    pub fn get_partial_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>> {
         &self.partial_failure_reasons
     }
     /// <p>The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
@@ -467,10 +394,7 @@ impl DescribeAutoMlJobOutputBuilder {
         self
     }
     /// <p>The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
-    pub fn set_best_candidate(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlCandidate>,
-    ) -> Self {
+    pub fn set_best_candidate(mut self, input: ::std::option::Option<crate::types::AutoMlCandidate>) -> Self {
         self.best_candidate = input;
         self
     }
@@ -484,10 +408,7 @@ impl DescribeAutoMlJobOutputBuilder {
         self
     }
     /// <p>Returns the status of the AutoML job.</p>
-    pub fn set_auto_ml_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlJobStatus>,
-    ) -> Self {
+    pub fn set_auto_ml_job_status(mut self, input: ::std::option::Option<crate::types::AutoMlJobStatus>) -> Self {
         self.auto_ml_job_status = input;
         self
     }
@@ -496,25 +417,17 @@ impl DescribeAutoMlJobOutputBuilder {
         &self.auto_ml_job_status
     }
     /// <p>Returns the secondary status of the AutoML job.</p>
-    pub fn auto_ml_job_secondary_status(
-        mut self,
-        input: crate::types::AutoMlJobSecondaryStatus,
-    ) -> Self {
+    pub fn auto_ml_job_secondary_status(mut self, input: crate::types::AutoMlJobSecondaryStatus) -> Self {
         self.auto_ml_job_secondary_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns the secondary status of the AutoML job.</p>
-    pub fn set_auto_ml_job_secondary_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlJobSecondaryStatus>,
-    ) -> Self {
+    pub fn set_auto_ml_job_secondary_status(mut self, input: ::std::option::Option<crate::types::AutoMlJobSecondaryStatus>) -> Self {
         self.auto_ml_job_secondary_status = input;
         self
     }
     /// <p>Returns the secondary status of the AutoML job.</p>
-    pub fn get_auto_ml_job_secondary_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoMlJobSecondaryStatus> {
+    pub fn get_auto_ml_job_secondary_status(&self) -> &::std::option::Option<crate::types::AutoMlJobSecondaryStatus> {
         &self.auto_ml_job_secondary_status
     }
     /// <p>Indicates whether the output for an AutoML job generates candidate definitions only.</p>
@@ -523,10 +436,7 @@ impl DescribeAutoMlJobOutputBuilder {
         self
     }
     /// <p>Indicates whether the output for an AutoML job generates candidate definitions only.</p>
-    pub fn set_generate_candidate_definitions_only(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_generate_candidate_definitions_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.generate_candidate_definitions_only = input;
         self
     }
@@ -540,17 +450,12 @@ impl DescribeAutoMlJobOutputBuilder {
         self
     }
     /// <p>Returns information on the job's artifacts found in <code>AutoMLJobArtifacts</code>.</p>
-    pub fn set_auto_ml_job_artifacts(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlJobArtifacts>,
-    ) -> Self {
+    pub fn set_auto_ml_job_artifacts(mut self, input: ::std::option::Option<crate::types::AutoMlJobArtifacts>) -> Self {
         self.auto_ml_job_artifacts = input;
         self
     }
     /// <p>Returns information on the job's artifacts found in <code>AutoMLJobArtifacts</code>.</p>
-    pub fn get_auto_ml_job_artifacts(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoMlJobArtifacts> {
+    pub fn get_auto_ml_job_artifacts(&self) -> &::std::option::Option<crate::types::AutoMlJobArtifacts> {
         &self.auto_ml_job_artifacts
     }
     /// <p>Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you do not provide these values, they are inferred.</p>
@@ -559,17 +464,12 @@ impl DescribeAutoMlJobOutputBuilder {
         self
     }
     /// <p>Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you do not provide these values, they are inferred.</p>
-    pub fn set_resolved_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolvedAttributes>,
-    ) -> Self {
+    pub fn set_resolved_attributes(mut self, input: ::std::option::Option<crate::types::ResolvedAttributes>) -> Self {
         self.resolved_attributes = input;
         self
     }
     /// <p>Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you do not provide these values, they are inferred.</p>
-    pub fn get_resolved_attributes(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResolvedAttributes> {
+    pub fn get_resolved_attributes(&self) -> &::std::option::Option<crate::types::ResolvedAttributes> {
         &self.resolved_attributes
     }
     /// <p>Indicates whether the model was deployed automatically to an endpoint and the name of that endpoint if deployed automatically.</p>
@@ -578,17 +478,12 @@ impl DescribeAutoMlJobOutputBuilder {
         self
     }
     /// <p>Indicates whether the model was deployed automatically to an endpoint and the name of that endpoint if deployed automatically.</p>
-    pub fn set_model_deploy_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelDeployConfig>,
-    ) -> Self {
+    pub fn set_model_deploy_config(mut self, input: ::std::option::Option<crate::types::ModelDeployConfig>) -> Self {
         self.model_deploy_config = input;
         self
     }
     /// <p>Indicates whether the model was deployed automatically to an endpoint and the name of that endpoint if deployed automatically.</p>
-    pub fn get_model_deploy_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelDeployConfig> {
+    pub fn get_model_deploy_config(&self) -> &::std::option::Option<crate::types::ModelDeployConfig> {
         &self.model_deploy_config
     }
     /// <p>Provides information about endpoint for the model deployment.</p>
@@ -597,17 +492,12 @@ impl DescribeAutoMlJobOutputBuilder {
         self
     }
     /// <p>Provides information about endpoint for the model deployment.</p>
-    pub fn set_model_deploy_result(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelDeployResult>,
-    ) -> Self {
+    pub fn set_model_deploy_result(mut self, input: ::std::option::Option<crate::types::ModelDeployResult>) -> Self {
         self.model_deploy_result = input;
         self
     }
     /// <p>Provides information about endpoint for the model deployment.</p>
-    pub fn get_model_deploy_result(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelDeployResult> {
+    pub fn get_model_deploy_result(&self) -> &::std::option::Option<crate::types::ModelDeployResult> {
         &self.model_deploy_result
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -638,9 +528,7 @@ impl DescribeAutoMlJobOutputBuilder {
             best_candidate: self.best_candidate,
             auto_ml_job_status: self.auto_ml_job_status,
             auto_ml_job_secondary_status: self.auto_ml_job_secondary_status,
-            generate_candidate_definitions_only: self
-                .generate_candidate_definitions_only
-                .unwrap_or_default(),
+            generate_candidate_definitions_only: self.generate_candidate_definitions_only.unwrap_or_default(),
             auto_ml_job_artifacts: self.auto_ml_job_artifacts,
             resolved_attributes: self.resolved_attributes,
             model_deploy_config: self.model_deploy_config,

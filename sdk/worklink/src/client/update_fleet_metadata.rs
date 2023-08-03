@@ -8,14 +8,8 @@ impl super::Client {
     ///   - [`optimize_for_end_user_location(bool)`](crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataFluentBuilder::optimize_for_end_user_location) / [`set_optimize_for_end_user_location(Option<bool>)`](crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataFluentBuilder::set_optimize_for_end_user_location): <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     /// - On success, responds with [`UpdateFleetMetadataOutput`](crate::operation::update_fleet_metadata::UpdateFleetMetadataOutput)
     /// - On failure, responds with [`SdkError<UpdateFleetMetadataError>`](crate::operation::update_fleet_metadata::UpdateFleetMetadataError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn update_fleet_metadata(
-        &self,
-    ) -> crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataFluentBuilder {
-        crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn update_fleet_metadata(&self) -> crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataFluentBuilder {
+        crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataFluentBuilder::new(self.handle.clone())
     }
 }

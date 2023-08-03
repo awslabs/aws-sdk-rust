@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::get_signing_profile::GetSigningProfileOutput::arn): <p>The Amazon Resource Name (ARN) for the signing profile.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_signing_profile::GetSigningProfileOutput::tags): <p>A list of tags associated with the signing profile.</p>
     /// - On failure, responds with [`SdkError<GetSigningProfileError>`](crate::operation::get_signing_profile::GetSigningProfileError)
-    pub fn get_signing_profile(
-        &self,
-    ) -> crate::operation::get_signing_profile::builders::GetSigningProfileFluentBuilder {
-        crate::operation::get_signing_profile::builders::GetSigningProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_signing_profile(&self) -> crate::operation::get_signing_profile::builders::GetSigningProfileFluentBuilder {
+        crate::operation::get_signing_profile::builders::GetSigningProfileFluentBuilder::new(self.handle.clone())
     }
 }

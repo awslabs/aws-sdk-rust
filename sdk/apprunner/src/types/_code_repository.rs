@@ -41,9 +41,7 @@ impl CodeRepository {
 
 /// A builder for [`CodeRepository`](crate::types::CodeRepository).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeRepositoryBuilder {
     pub(crate) repository_url: ::std::option::Option<::std::string::String>,
     pub(crate) source_code_version: ::std::option::Option<crate::types::SourceCodeVersion>,
@@ -51,18 +49,12 @@ pub struct CodeRepositoryBuilder {
 }
 impl CodeRepositoryBuilder {
     /// <p>The location of the repository that contains the source code.</p>
-    pub fn repository_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the repository that contains the source code.</p>
-    pub fn set_repository_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_url = input;
         self
     }
@@ -76,17 +68,12 @@ impl CodeRepositoryBuilder {
         self
     }
     /// <p>The version that should be used within the source code repository.</p>
-    pub fn set_source_code_version(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceCodeVersion>,
-    ) -> Self {
+    pub fn set_source_code_version(mut self, input: ::std::option::Option<crate::types::SourceCodeVersion>) -> Self {
         self.source_code_version = input;
         self
     }
     /// <p>The version that should be used within the source code repository.</p>
-    pub fn get_source_code_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceCodeVersion> {
+    pub fn get_source_code_version(&self) -> &::std::option::Option<crate::types::SourceCodeVersion> {
         &self.source_code_version
     }
     /// <p>Configuration for building and running the service from a source code repository.</p> <note>
@@ -99,19 +86,14 @@ impl CodeRepositoryBuilder {
     /// <p>Configuration for building and running the service from a source code repository.</p> <note>
     /// <p> <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
     /// </note>
-    pub fn set_code_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CodeConfiguration>,
-    ) -> Self {
+    pub fn set_code_configuration(mut self, input: ::std::option::Option<crate::types::CodeConfiguration>) -> Self {
         self.code_configuration = input;
         self
     }
     /// <p>Configuration for building and running the service from a source code repository.</p> <note>
     /// <p> <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
     /// </note>
-    pub fn get_code_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodeConfiguration> {
+    pub fn get_code_configuration(&self) -> &::std::option::Option<crate::types::CodeConfiguration> {
         &self.code_configuration
     }
     /// Consumes the builder and constructs a [`CodeRepository`](crate::types::CodeRepository).

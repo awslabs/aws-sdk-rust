@@ -22,21 +22,16 @@ impl CreateInternetGatewayInput {
 }
 impl CreateInternetGatewayInput {
     /// Creates a new builder-style object to manufacture [`CreateInternetGatewayInput`](crate::operation::create_internet_gateway::CreateInternetGatewayInput).
-    pub fn builder(
-    ) -> crate::operation::create_internet_gateway::builders::CreateInternetGatewayInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_internet_gateway::builders::CreateInternetGatewayInputBuilder {
         crate::operation::create_internet_gateway::builders::CreateInternetGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInternetGatewayInput`](crate::operation::create_internet_gateway::CreateInternetGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInternetGatewayInputBuilder {
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateInternetGatewayInputBuilder {
@@ -52,17 +47,12 @@ impl CreateInternetGatewayInputBuilder {
         self
     }
     /// <p>The tags to assign to the internet gateway.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to assign to the internet gateway.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -82,15 +72,11 @@ impl CreateInternetGatewayInputBuilder {
     /// Consumes the builder and constructs a [`CreateInternetGatewayInput`](crate::operation::create_internet_gateway::CreateInternetGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_internet_gateway::CreateInternetGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_internet_gateway::CreateInternetGatewayInput {
-                tag_specifications: self.tag_specifications,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_internet_gateway::CreateInternetGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_internet_gateway::CreateInternetGatewayInput {
+            tag_specifications: self.tag_specifications,
+            dry_run: self.dry_run,
+        })
     }
 }

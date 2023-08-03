@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`game_servers(Option<Vec<GameServer>>)`](crate::operation::list_game_servers::ListGameServersOutput::game_servers): <p>A collection of game server objects that match the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_game_servers::ListGameServersOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     /// - On failure, responds with [`SdkError<ListGameServersError>`](crate::operation::list_game_servers::ListGameServersError)
-    pub fn list_game_servers(
-        &self,
-    ) -> crate::operation::list_game_servers::builders::ListGameServersFluentBuilder {
-        crate::operation::list_game_servers::builders::ListGameServersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_game_servers(&self) -> crate::operation::list_game_servers::builders::ListGameServersFluentBuilder {
+        crate::operation::list_game_servers::builders::ListGameServersFluentBuilder::new(self.handle.clone())
     }
 }

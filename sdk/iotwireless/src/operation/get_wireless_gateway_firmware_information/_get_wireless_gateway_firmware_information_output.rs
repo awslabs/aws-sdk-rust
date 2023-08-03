@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetWirelessGatewayFirmwareInformation
 }
 impl GetWirelessGatewayFirmwareInformationOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayFirmwareInformationOutput`](crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationOutput).
-    pub fn builder() -> crate::operation::get_wireless_gateway_firmware_information::builders::GetWirelessGatewayFirmwareInformationOutputBuilder{
+    pub fn builder() -> crate::operation::get_wireless_gateway_firmware_information::builders::GetWirelessGatewayFirmwareInformationOutputBuilder {
         crate::operation::get_wireless_gateway_firmware_information::builders::GetWirelessGatewayFirmwareInformationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetWirelessGatewayFirmwareInformationOutput`](crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayFirmwareInformationOutputBuilder {
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanGatewayCurrentVersion>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl GetWirelessGatewayFirmwareInformationOutputBuilder {
         self
     }
     /// <p>Information about the wireless gateway's firmware.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanGatewayCurrentVersion>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanGatewayCurrentVersion>) -> Self {
         self.lo_ra_wan = input;
         self
     }
     /// <p>Information about the wireless gateway's firmware.</p>
-    pub fn get_lo_ra_wan(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoRaWanGatewayCurrentVersion> {
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanGatewayCurrentVersion> {
         &self.lo_ra_wan
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,10 +58,9 @@ impl GetWirelessGatewayFirmwareInformationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetWirelessGatewayFirmwareInformationOutput`](crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationOutput).
-    pub fn build(self) -> crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationOutput{
+    pub fn build(self) -> crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationOutput {
         crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationOutput {
-            lo_ra_wan: self.lo_ra_wan
-            ,
+            lo_ra_wan: self.lo_ra_wan,
             _request_id: self._request_id,
         }
     }

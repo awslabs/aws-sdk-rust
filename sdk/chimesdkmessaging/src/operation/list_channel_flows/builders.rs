@@ -10,10 +10,7 @@ impl ListChannelFlowsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_channel_flows::ListChannelFlowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_flows::ListChannelFlowsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_flows::ListChannelFlowsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_channel_flows();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListChannelFlowsFluentBuilder {
         }
     }
     /// Access the ListChannelFlows as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_channel_flows::builders::ListChannelFlowsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_channel_flows::builders::ListChannelFlowsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListChannelFlowsFluentBuilder {
             crate::operation::list_channel_flows::ListChannelFlows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_flows::ListChannelFlowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_flows::ListChannelFlowsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListChannelFlowsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListChannelFlowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_channel_flows::ListChannelFlowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_flows::ListChannelFlowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_flows::ListChannelFlowsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListChannelFlowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_channel_flows::ListChannelFlowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_flows::ListChannelFlowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_flows::ListChannelFlowsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListChannelFlowsFluentBuilder {
             crate::operation::list_channel_flows::ListChannelFlows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_channel_flows::ListChannelFlowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_channel_flows::ListChannelFlowsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_channel_flows::paginator::ListChannelFlowsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_channel_flows::paginator::ListChannelFlowsPaginator {
-        crate::operation::list_channel_flows::paginator::ListChannelFlowsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_channel_flows::paginator::ListChannelFlowsPaginator {
+        crate::operation::list_channel_flows::paginator::ListChannelFlowsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the app instance.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_arn(input.into());
         self
     }
     /// <p>The ARN of the app instance.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }

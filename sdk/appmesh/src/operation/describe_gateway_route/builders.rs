@@ -37,9 +37,7 @@ impl DescribeGatewayRouteFluentBuilder {
         }
     }
     /// Access the DescribeGatewayRoute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_gateway_route::builders::DescribeGatewayRouteInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_gateway_route::builders::DescribeGatewayRouteInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeGatewayRouteFluentBuilder {
             crate::operation::describe_gateway_route::DescribeGatewayRoute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_gateway_route::DescribeGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_route::DescribeGatewayRouteError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeGatewayRouteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeGatewayRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_gateway_route::DescribeGatewayRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_gateway_route::DescribeGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_route::DescribeGatewayRouteError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeGatewayRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_gateway_route::DescribeGatewayRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_gateway_route::DescribeGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_route::DescribeGatewayRouteError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeGatewayRouteFluentBuilder {
             crate::operation::describe_gateway_route::DescribeGatewayRoute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_gateway_route::DescribeGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_route::DescribeGatewayRouteError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the gateway route to describe.</p>
-    pub fn gateway_route_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_route_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_route_name(input.into());
         self
     }
     /// <p>The name of the gateway route to describe.</p>
-    pub fn set_gateway_route_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_route_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_route_name(input);
         self
     }
@@ -157,18 +138,12 @@ impl DescribeGatewayRouteFluentBuilder {
         self.inner.get_mesh_name()
     }
     /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
-    pub fn virtual_gateway_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_gateway_name(input.into());
         self
     }
     /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
-    pub fn set_virtual_gateway_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_gateway_name(input);
         self
     }

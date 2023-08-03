@@ -43,9 +43,7 @@ impl StartQueryInput {
 
 /// A builder for [`StartQueryInput`](crate::operation::start_query::StartQueryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartQueryInputBuilder {
     pub(crate) query_statement: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_s3_uri: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct StartQueryInputBuilder {
 }
 impl StartQueryInputBuilder {
     /// <p>The SQL code of your query.</p>
-    pub fn query_statement(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_statement = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SQL code of your query.</p>
-    pub fn set_query_statement(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_statement = input;
         self
     }
@@ -74,18 +66,12 @@ impl StartQueryInputBuilder {
         &self.query_statement
     }
     /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
-    pub fn delivery_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
-    pub fn set_delivery_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_s3_uri = input;
         self
     }
@@ -112,36 +98,23 @@ impl StartQueryInputBuilder {
     /// To override the contents of this collection use [`set_query_parameters`](Self::set_query_parameters).
     ///
     /// <p> The query parameters for the specified <code>QueryAlias</code>. </p>
-    pub fn query_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.query_parameters.unwrap_or_default();
         v.push(input.into());
         self.query_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p> The query parameters for the specified <code>QueryAlias</code>. </p>
-    pub fn set_query_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_query_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.query_parameters = input;
         self
     }
     /// <p> The query parameters for the specified <code>QueryAlias</code>. </p>
-    pub fn get_query_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_query_parameters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.query_parameters
     }
     /// Consumes the builder and constructs a [`StartQueryInput`](crate::operation::start_query::StartQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_query::StartQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_query::StartQueryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_query::StartQueryInput {
             query_statement: self.query_statement,
             delivery_s3_uri: self.delivery_s3_uri,

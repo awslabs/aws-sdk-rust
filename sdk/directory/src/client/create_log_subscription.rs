@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`log_group_name(impl ::std::convert::Into<String>)`](crate::operation::create_log_subscription::builders::CreateLogSubscriptionFluentBuilder::log_group_name) / [`set_log_group_name(Option<String>)`](crate::operation::create_log_subscription::builders::CreateLogSubscriptionFluentBuilder::set_log_group_name): <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>
     /// - On success, responds with [`CreateLogSubscriptionOutput`](crate::operation::create_log_subscription::CreateLogSubscriptionOutput)
     /// - On failure, responds with [`SdkError<CreateLogSubscriptionError>`](crate::operation::create_log_subscription::CreateLogSubscriptionError)
-    pub fn create_log_subscription(
-        &self,
-    ) -> crate::operation::create_log_subscription::builders::CreateLogSubscriptionFluentBuilder
-    {
-        crate::operation::create_log_subscription::builders::CreateLogSubscriptionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_log_subscription(&self) -> crate::operation::create_log_subscription::builders::CreateLogSubscriptionFluentBuilder {
+        crate::operation::create_log_subscription::builders::CreateLogSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

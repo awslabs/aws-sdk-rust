@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRoutingControlOutput`](crate::operation::create_routing_control::CreateRoutingControlOutput) with field(s):
     ///   - [`routing_control(Option<RoutingControl>)`](crate::operation::create_routing_control::CreateRoutingControlOutput::routing_control): <p>The routing control that is created.</p>
     /// - On failure, responds with [`SdkError<CreateRoutingControlError>`](crate::operation::create_routing_control::CreateRoutingControlError)
-    pub fn create_routing_control(
-        &self,
-    ) -> crate::operation::create_routing_control::builders::CreateRoutingControlFluentBuilder {
-        crate::operation::create_routing_control::builders::CreateRoutingControlFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_routing_control(&self) -> crate::operation::create_routing_control::builders::CreateRoutingControlFluentBuilder {
+        crate::operation::create_routing_control::builders::CreateRoutingControlFluentBuilder::new(self.handle.clone())
     }
 }

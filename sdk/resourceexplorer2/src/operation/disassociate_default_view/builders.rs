@@ -27,8 +27,7 @@ impl DisassociateDefaultViewInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateDefaultViewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::disassociate_default_view::builders::DisassociateDefaultViewInputBuilder,
+    inner: crate::operation::disassociate_default_view::builders::DisassociateDefaultViewInputBuilder,
 }
 impl DisassociateDefaultViewFluentBuilder {
     /// Creates a new `DisassociateDefaultView`.
@@ -39,10 +38,7 @@ impl DisassociateDefaultViewFluentBuilder {
         }
     }
     /// Access the DisassociateDefaultView as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_default_view::builders::DisassociateDefaultViewInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disassociate_default_view::builders::DisassociateDefaultViewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DisassociateDefaultViewFluentBuilder {
             crate::operation::disassociate_default_view::DisassociateDefaultView,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_default_view::DisassociateDefaultViewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_default_view::DisassociateDefaultViewError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DisassociateDefaultViewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DisassociateDefaultViewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_default_view::DisassociateDefaultViewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_default_view::DisassociateDefaultViewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_default_view::DisassociateDefaultViewError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DisassociateDefaultViewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_default_view::DisassociateDefaultViewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_default_view::DisassociateDefaultViewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_default_view::DisassociateDefaultViewError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl DisassociateDefaultViewFluentBuilder {
             crate::operation::disassociate_default_view::DisassociateDefaultView,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_default_view::DisassociateDefaultViewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_default_view::DisassociateDefaultViewError>,
     > {
         self.customize_middleware().await
     }

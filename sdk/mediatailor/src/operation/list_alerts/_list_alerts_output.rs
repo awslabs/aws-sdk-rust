@@ -35,9 +35,7 @@ impl ListAlertsOutput {
 
 /// A builder for [`ListAlertsOutput`](crate::operation::list_alerts::ListAlertsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAlertsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Alert>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListAlertsOutputBuilder {
         self
     }
     /// <p>A list of alerts that are associated with this resource.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Alert>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Alert>>) -> Self {
         self.items = input;
         self
     }

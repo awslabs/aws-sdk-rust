@@ -40,10 +40,7 @@ impl StartAttachmentUploadFluentBuilder {
         }
     }
     /// Access the StartAttachmentUpload as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_attachment_upload::builders::StartAttachmentUploadInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_attachment_upload::builders::StartAttachmentUploadInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl StartAttachmentUploadFluentBuilder {
             crate::operation::start_attachment_upload::StartAttachmentUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_attachment_upload::StartAttachmentUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_attachment_upload::StartAttachmentUploadError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl StartAttachmentUploadFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl StartAttachmentUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_attachment_upload::StartAttachmentUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_attachment_upload::StartAttachmentUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_attachment_upload::StartAttachmentUploadError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl StartAttachmentUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_attachment_upload::StartAttachmentUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_attachment_upload::StartAttachmentUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_attachment_upload::StartAttachmentUploadError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl StartAttachmentUploadFluentBuilder {
             crate::operation::start_attachment_upload::StartAttachmentUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_attachment_upload::StartAttachmentUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_attachment_upload::StartAttachmentUploadError>,
     > {
         self.customize_middleware().await
     }
@@ -155,18 +141,12 @@ impl StartAttachmentUploadFluentBuilder {
         self.inner.get_attachment_size_in_bytes()
     }
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
-    pub fn attachment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attachment_name(input.into());
         self
     }
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
-    pub fn set_attachment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attachment_name(input);
         self
     }
@@ -189,18 +169,12 @@ impl StartAttachmentUploadFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn connection_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_token(input.into());
         self
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn set_connection_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_token(input);
         self
     }

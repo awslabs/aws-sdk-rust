@@ -29,16 +29,14 @@ impl PutNotificationConfigurationInput {
 }
 impl PutNotificationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutNotificationConfigurationInput`](crate::operation::put_notification_configuration::PutNotificationConfigurationInput).
-    pub fn builder() -> crate::operation::put_notification_configuration::builders::PutNotificationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_notification_configuration::builders::PutNotificationConfigurationInputBuilder {
         crate::operation::put_notification_configuration::builders::PutNotificationConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutNotificationConfigurationInput`](crate::operation::put_notification_configuration::PutNotificationConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutNotificationConfigurationInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct PutNotificationConfigurationInputBuilder {
 }
 impl PutNotificationConfigurationInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -84,27 +76,19 @@ impl PutNotificationConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_notification_types`](Self::set_notification_types).
     ///
     /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
-    pub fn notification_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.notification_types.unwrap_or_default();
         v.push(input.into());
         self.notification_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
-    pub fn set_notification_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_notification_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.notification_types = input;
         self
     }
     /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
-    pub fn get_notification_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_notification_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.notification_types
     }
     /// Consumes the builder and constructs a [`PutNotificationConfigurationInput`](crate::operation::put_notification_configuration::PutNotificationConfigurationInput).
@@ -114,12 +98,10 @@ impl PutNotificationConfigurationInputBuilder {
         crate::operation::put_notification_configuration::PutNotificationConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_notification_configuration::PutNotificationConfigurationInput {
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                topic_arn: self.topic_arn,
-                notification_types: self.notification_types,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_notification_configuration::PutNotificationConfigurationInput {
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            topic_arn: self.topic_arn,
+            notification_types: self.notification_types,
+        })
     }
 }

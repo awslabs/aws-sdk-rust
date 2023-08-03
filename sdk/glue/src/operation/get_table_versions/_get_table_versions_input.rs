@@ -43,17 +43,14 @@ impl GetTableVersionsInput {
 }
 impl GetTableVersionsInput {
     /// Creates a new builder-style object to manufacture [`GetTableVersionsInput`](crate::operation::get_table_versions::GetTableVersionsInput).
-    pub fn builder() -> crate::operation::get_table_versions::builders::GetTableVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_table_versions::builders::GetTableVersionsInputBuilder {
         crate::operation::get_table_versions::builders::GetTableVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTableVersionsInput`](crate::operation::get_table_versions::GetTableVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTableVersionsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -77,18 +74,12 @@ impl GetTableVersionsInputBuilder {
         &self.catalog_id
     }
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -141,18 +132,13 @@ impl GetTableVersionsInputBuilder {
     /// Consumes the builder and constructs a [`GetTableVersionsInput`](crate::operation::get_table_versions::GetTableVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_table_versions::GetTableVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_table_versions::GetTableVersionsInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_table_versions::GetTableVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_table_versions::GetTableVersionsInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            table_name: self.table_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

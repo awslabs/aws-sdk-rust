@@ -29,11 +29,7 @@ impl super::Client {
     ///   - [`no_of_srv_failed(Option<i32>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::no_of_srv_failed): <p>The number of servers that have failed to migrate.</p>
     ///   - [`total_no_of_srv(Option<i32>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::total_no_of_srv): <p>The total number of servers that have been migrated.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowStepError>`](crate::operation::get_workflow_step::GetWorkflowStepError)
-    pub fn get_workflow_step(
-        &self,
-    ) -> crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder {
-        crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_workflow_step(&self) -> crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder {
+        crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::new(self.handle.clone())
     }
 }

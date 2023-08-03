@@ -19,9 +19,7 @@ impl UntagLogGroupOutput {
 
 /// A builder for [`UntagLogGroupOutput`](crate::operation::untag_log_group::UntagLogGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagLogGroupOutputBuilder {
     _request_id: Option<String>,
 }

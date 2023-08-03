@@ -39,9 +39,7 @@ pub enum AggregationRequest {
 impl AggregationRequest {
     /// Tries to convert the enum instance into [`AccountAggregation`](crate::types::AggregationRequest::AccountAggregation), extracting the inner [`AccountAggregation`](crate::types::AccountAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_account_aggregation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AccountAggregation, &Self> {
+    pub fn as_account_aggregation(&self) -> ::std::result::Result<&crate::types::AccountAggregation, &Self> {
         if let AggregationRequest::AccountAggregation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -54,9 +52,7 @@ impl AggregationRequest {
     }
     /// Tries to convert the enum instance into [`AmiAggregation`](crate::types::AggregationRequest::AmiAggregation), extracting the inner [`AmiAggregation`](crate::types::AmiAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_ami_aggregation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AmiAggregation, &Self> {
+    pub fn as_ami_aggregation(&self) -> ::std::result::Result<&crate::types::AmiAggregation, &Self> {
         if let AggregationRequest::AmiAggregation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -69,9 +65,7 @@ impl AggregationRequest {
     }
     /// Tries to convert the enum instance into [`AwsEcrContainerAggregation`](crate::types::AggregationRequest::AwsEcrContainerAggregation), extracting the inner [`AwsEcrContainerAggregation`](crate::types::AwsEcrContainerAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_aws_ecr_container_aggregation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AwsEcrContainerAggregation, &Self> {
+    pub fn as_aws_ecr_container_aggregation(&self) -> ::std::result::Result<&crate::types::AwsEcrContainerAggregation, &Self> {
         if let AggregationRequest::AwsEcrContainerAggregation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -84,9 +78,7 @@ impl AggregationRequest {
     }
     /// Tries to convert the enum instance into [`Ec2InstanceAggregation`](crate::types::AggregationRequest::Ec2InstanceAggregation), extracting the inner [`Ec2InstanceAggregation`](crate::types::Ec2InstanceAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_ec2_instance_aggregation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::Ec2InstanceAggregation, &Self> {
+    pub fn as_ec2_instance_aggregation(&self) -> ::std::result::Result<&crate::types::Ec2InstanceAggregation, &Self> {
         if let AggregationRequest::Ec2InstanceAggregation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -99,9 +91,7 @@ impl AggregationRequest {
     }
     /// Tries to convert the enum instance into [`FindingTypeAggregation`](crate::types::AggregationRequest::FindingTypeAggregation), extracting the inner [`FindingTypeAggregation`](crate::types::FindingTypeAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_finding_type_aggregation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::FindingTypeAggregation, &Self> {
+    pub fn as_finding_type_aggregation(&self) -> ::std::result::Result<&crate::types::FindingTypeAggregation, &Self> {
         if let AggregationRequest::FindingTypeAggregation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -114,9 +104,7 @@ impl AggregationRequest {
     }
     /// Tries to convert the enum instance into [`ImageLayerAggregation`](crate::types::AggregationRequest::ImageLayerAggregation), extracting the inner [`ImageLayerAggregation`](crate::types::ImageLayerAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_image_layer_aggregation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::ImageLayerAggregation, &Self> {
+    pub fn as_image_layer_aggregation(&self) -> ::std::result::Result<&crate::types::ImageLayerAggregation, &Self> {
         if let AggregationRequest::ImageLayerAggregation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -129,9 +117,7 @@ impl AggregationRequest {
     }
     /// Tries to convert the enum instance into [`LambdaFunctionAggregation`](crate::types::AggregationRequest::LambdaFunctionAggregation), extracting the inner [`LambdaFunctionAggregation`](crate::types::LambdaFunctionAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_lambda_function_aggregation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::LambdaFunctionAggregation, &Self> {
+    pub fn as_lambda_function_aggregation(&self) -> ::std::result::Result<&crate::types::LambdaFunctionAggregation, &Self> {
         if let AggregationRequest::LambdaFunctionAggregation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -144,9 +130,7 @@ impl AggregationRequest {
     }
     /// Tries to convert the enum instance into [`LambdaLayerAggregation`](crate::types::AggregationRequest::LambdaLayerAggregation), extracting the inner [`LambdaLayerAggregation`](crate::types::LambdaLayerAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_lambda_layer_aggregation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::LambdaLayerAggregation, &Self> {
+    pub fn as_lambda_layer_aggregation(&self) -> ::std::result::Result<&crate::types::LambdaLayerAggregation, &Self> {
         if let AggregationRequest::LambdaLayerAggregation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -159,9 +143,7 @@ impl AggregationRequest {
     }
     /// Tries to convert the enum instance into [`PackageAggregation`](crate::types::AggregationRequest::PackageAggregation), extracting the inner [`PackageAggregation`](crate::types::PackageAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_package_aggregation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::PackageAggregation, &Self> {
+    pub fn as_package_aggregation(&self) -> ::std::result::Result<&crate::types::PackageAggregation, &Self> {
         if let AggregationRequest::PackageAggregation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -174,9 +156,7 @@ impl AggregationRequest {
     }
     /// Tries to convert the enum instance into [`RepositoryAggregation`](crate::types::AggregationRequest::RepositoryAggregation), extracting the inner [`RepositoryAggregation`](crate::types::RepositoryAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_repository_aggregation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::RepositoryAggregation, &Self> {
+    pub fn as_repository_aggregation(&self) -> ::std::result::Result<&crate::types::RepositoryAggregation, &Self> {
         if let AggregationRequest::RepositoryAggregation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -189,9 +169,7 @@ impl AggregationRequest {
     }
     /// Tries to convert the enum instance into [`TitleAggregation`](crate::types::AggregationRequest::TitleAggregation), extracting the inner [`TitleAggregation`](crate::types::TitleAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_title_aggregation(
-        &self,
-    ) -> ::std::result::Result<&crate::types::TitleAggregation, &Self> {
+    pub fn as_title_aggregation(&self) -> ::std::result::Result<&crate::types::TitleAggregation, &Self> {
         if let AggregationRequest::TitleAggregation(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

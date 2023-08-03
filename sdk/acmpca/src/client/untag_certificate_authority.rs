@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::untag_certificate_authority::builders::UntagCertificateAuthorityFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::untag_certificate_authority::builders::UntagCertificateAuthorityFluentBuilder::set_tags): <p>List of tags to be removed from the CA.</p>
     /// - On success, responds with [`UntagCertificateAuthorityOutput`](crate::operation::untag_certificate_authority::UntagCertificateAuthorityOutput)
     /// - On failure, responds with [`SdkError<UntagCertificateAuthorityError>`](crate::operation::untag_certificate_authority::UntagCertificateAuthorityError)
-    pub fn untag_certificate_authority(&self) -> crate::operation::untag_certificate_authority::builders::UntagCertificateAuthorityFluentBuilder{
+    pub fn untag_certificate_authority(&self) -> crate::operation::untag_certificate_authority::builders::UntagCertificateAuthorityFluentBuilder {
         crate::operation::untag_certificate_authority::builders::UntagCertificateAuthorityFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateScalingParametersOutput`](crate::operation::update_scaling_parameters::UpdateScalingParametersOutput) with field(s):
     ///   - [`scaling_parameters(Option<ScalingParametersStatus>)`](crate::operation::update_scaling_parameters::UpdateScalingParametersOutput::scaling_parameters): <p>The status and configuration of a search domain's scaling parameters. </p>
     /// - On failure, responds with [`SdkError<UpdateScalingParametersError>`](crate::operation::update_scaling_parameters::UpdateScalingParametersError)
-    pub fn update_scaling_parameters(
-        &self,
-    ) -> crate::operation::update_scaling_parameters::builders::UpdateScalingParametersFluentBuilder
-    {
+    pub fn update_scaling_parameters(&self) -> crate::operation::update_scaling_parameters::builders::UpdateScalingParametersFluentBuilder {
         crate::operation::update_scaling_parameters::builders::UpdateScalingParametersFluentBuilder::new(self.handle.clone())
     }
 }

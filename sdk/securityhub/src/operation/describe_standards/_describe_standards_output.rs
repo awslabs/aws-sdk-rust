@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeStandardsOutput {
 }
 impl DescribeStandardsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStandardsOutput`](crate::operation::describe_standards::DescribeStandardsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_standards::builders::DescribeStandardsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_standards::builders::DescribeStandardsOutputBuilder {
         crate::operation::describe_standards::builders::DescribeStandardsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStandardsOutput`](crate::operation::describe_standards::DescribeStandardsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStandardsOutputBuilder {
     pub(crate) standards: ::std::option::Option<::std::vec::Vec<crate::types::Standard>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl DescribeStandardsOutputBuilder {
         self
     }
     /// <p>A list of available standards.</p>
-    pub fn set_standards(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Standard>>,
-    ) -> Self {
+    pub fn set_standards(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Standard>>) -> Self {
         self.standards = input;
         self
     }

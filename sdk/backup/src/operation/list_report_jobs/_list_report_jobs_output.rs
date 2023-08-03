@@ -35,9 +35,7 @@ impl ListReportJobsOutput {
 
 /// A builder for [`ListReportJobsOutput`](crate::operation::list_report_jobs::ListReportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReportJobsOutputBuilder {
     pub(crate) report_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ReportJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListReportJobsOutputBuilder {
         self
     }
     /// <p>Details about your report jobs in JSON format.</p>
-    pub fn set_report_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReportJob>>,
-    ) -> Self {
+    pub fn set_report_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportJob>>) -> Self {
         self.report_jobs = input;
         self
     }
     /// <p>Details about your report jobs in JSON format.</p>
-    pub fn get_report_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportJob>> {
+    pub fn get_report_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportJob>> {
         &self.report_jobs
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>

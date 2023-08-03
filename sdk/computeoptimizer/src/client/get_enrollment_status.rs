@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`last_updated_timestamp(Option<DateTime>)`](crate::operation::get_enrollment_status::GetEnrollmentStatusOutput::last_updated_timestamp): <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
     ///   - [`number_of_member_accounts_opted_in(Option<i32>)`](crate::operation::get_enrollment_status::GetEnrollmentStatusOutput::number_of_member_accounts_opted_in): <p>The count of organization member accounts that are opted in to the service, if your account is an organization management account.</p>
     /// - On failure, responds with [`SdkError<GetEnrollmentStatusError>`](crate::operation::get_enrollment_status::GetEnrollmentStatusError)
-    pub fn get_enrollment_status(
-        &self,
-    ) -> crate::operation::get_enrollment_status::builders::GetEnrollmentStatusFluentBuilder {
-        crate::operation::get_enrollment_status::builders::GetEnrollmentStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_enrollment_status(&self) -> crate::operation::get_enrollment_status::builders::GetEnrollmentStatusFluentBuilder {
+        crate::operation::get_enrollment_status::builders::GetEnrollmentStatusFluentBuilder::new(self.handle.clone())
     }
 }

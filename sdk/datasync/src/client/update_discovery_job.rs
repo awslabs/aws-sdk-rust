@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`collection_duration_minutes(i32)`](crate::operation::update_discovery_job::builders::UpdateDiscoveryJobFluentBuilder::collection_duration_minutes) / [`set_collection_duration_minutes(Option<i32>)`](crate::operation::update_discovery_job::builders::UpdateDiscoveryJobFluentBuilder::set_collection_duration_minutes): <p>Specifies in minutes how long that you want the discovery job to run. (You can't set this parameter to less than the number of minutes that the job has already run for.)</p>
     /// - On success, responds with [`UpdateDiscoveryJobOutput`](crate::operation::update_discovery_job::UpdateDiscoveryJobOutput)
     /// - On failure, responds with [`SdkError<UpdateDiscoveryJobError>`](crate::operation::update_discovery_job::UpdateDiscoveryJobError)
-    pub fn update_discovery_job(
-        &self,
-    ) -> crate::operation::update_discovery_job::builders::UpdateDiscoveryJobFluentBuilder {
-        crate::operation::update_discovery_job::builders::UpdateDiscoveryJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_discovery_job(&self) -> crate::operation::update_discovery_job::builders::UpdateDiscoveryJobFluentBuilder {
+        crate::operation::update_discovery_job::builders::UpdateDiscoveryJobFluentBuilder::new(self.handle.clone())
     }
 }

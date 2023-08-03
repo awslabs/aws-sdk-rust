@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`refreshed_at(Option<DateTime>)`](crate::operation::describe_instances_health::DescribeInstancesHealthOutput::refreshed_at): <p>The date and time that the health information was retrieved.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instances_health::DescribeInstancesHealthOutput::next_token): <p>Pagination token for the next page of results, if available.</p>
     /// - On failure, responds with [`SdkError<DescribeInstancesHealthError>`](crate::operation::describe_instances_health::DescribeInstancesHealthError)
-    pub fn describe_instances_health(
-        &self,
-    ) -> crate::operation::describe_instances_health::builders::DescribeInstancesHealthFluentBuilder
-    {
+    pub fn describe_instances_health(&self) -> crate::operation::describe_instances_health::builders::DescribeInstancesHealthFluentBuilder {
         crate::operation::describe_instances_health::builders::DescribeInstancesHealthFluentBuilder::new(self.handle.clone())
     }
 }

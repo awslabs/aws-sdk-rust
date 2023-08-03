@@ -31,17 +31,14 @@ impl ListTargetsForPolicyInput {
 }
 impl ListTargetsForPolicyInput {
     /// Creates a new builder-style object to manufacture [`ListTargetsForPolicyInput`](crate::operation::list_targets_for_policy::ListTargetsForPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyInputBuilder {
+    pub fn builder() -> crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyInputBuilder {
         crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTargetsForPolicyInput`](crate::operation::list_targets_for_policy::ListTargetsForPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetsForPolicyInputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,16 +93,12 @@ impl ListTargetsForPolicyInputBuilder {
     /// Consumes the builder and constructs a [`ListTargetsForPolicyInput`](crate::operation::list_targets_for_policy::ListTargetsForPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_targets_for_policy::ListTargetsForPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_targets_for_policy::ListTargetsForPolicyInput {
-                policy_id: self.policy_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_targets_for_policy::ListTargetsForPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_targets_for_policy::ListTargetsForPolicyInput {
+            policy_id: self.policy_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

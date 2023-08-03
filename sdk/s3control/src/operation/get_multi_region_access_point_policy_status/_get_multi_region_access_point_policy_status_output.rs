@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetMultiRegionAccessPointPolicyStatus
 }
 impl GetMultiRegionAccessPointPolicyStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusOutput).
-    pub fn builder() -> crate::operation::get_multi_region_access_point_policy_status::builders::GetMultiRegionAccessPointPolicyStatusOutputBuilder{
+    pub fn builder() -> crate::operation::get_multi_region_access_point_policy_status::builders::GetMultiRegionAccessPointPolicyStatusOutputBuilder {
         crate::operation::get_multi_region_access_point_policy_status::builders::GetMultiRegionAccessPointPolicyStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointPolicyStatusOutputBuilder {
     pub(crate) established: ::std::option::Option<crate::types::PolicyStatus>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetMultiRegionAccessPointPolicyStatusOutputBuilder {
         self
     }
     /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
-    pub fn set_established(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyStatus>,
-    ) -> Self {
+    pub fn set_established(mut self, input: ::std::option::Option<crate::types::PolicyStatus>) -> Self {
         self.established = input;
         self
     }
@@ -63,10 +58,9 @@ impl GetMultiRegionAccessPointPolicyStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusOutput).
-    pub fn build(self) -> crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusOutput{
+    pub fn build(self) -> crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusOutput {
         crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusOutput {
-            established: self.established
-            ,
+            established: self.established,
             _request_id: self._request_id,
         }
     }

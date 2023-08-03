@@ -6,10 +6,7 @@ pub fn ser_create_analysis_input(
     if let Some(var_1) = &input.definition {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Definition").start_object();
-        crate::protocol_serde::shape_analysis_definition::ser_analysis_definition(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_analysis_definition::ser_analysis_definition(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.name {
@@ -27,10 +24,7 @@ pub fn ser_create_analysis_input(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_resource_permission::ser_resource_permission(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }
@@ -39,10 +33,7 @@ pub fn ser_create_analysis_input(
     if let Some(var_10) = &input.source_entity {
         #[allow(unused_mut)]
         let mut object_11 = object.key("SourceEntity").start_object();
-        crate::protocol_serde::shape_analysis_source_entity::ser_analysis_source_entity(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_analysis_source_entity::ser_analysis_source_entity(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.tags {

@@ -51,9 +51,7 @@ impl FraudsterRegistrationJob {
         self.job_id.as_deref()
     }
     /// <p>The current status of the fraudster registration job.</p>
-    pub fn job_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FraudsterRegistrationJobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<&crate::types::FraudsterRegistrationJobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The identifier of the domain that contains the fraudster registration job.</p>
@@ -170,17 +168,12 @@ impl FraudsterRegistrationJobBuilder {
         self
     }
     /// <p>The current status of the fraudster registration job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FraudsterRegistrationJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::FraudsterRegistrationJobStatus>) -> Self {
         self.job_status = input;
         self
     }
     /// <p>The current status of the fraudster registration job.</p>
-    pub fn get_job_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::FraudsterRegistrationJobStatus> {
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::FraudsterRegistrationJobStatus> {
         &self.job_status
     }
     /// <p>The identifier of the domain that contains the fraudster registration job.</p>
@@ -198,18 +191,12 @@ impl FraudsterRegistrationJobBuilder {
         &self.domain_id
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -223,17 +210,12 @@ impl FraudsterRegistrationJobBuilder {
         self
     }
     /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
-    pub fn set_registration_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationConfig>,
-    ) -> Self {
+    pub fn set_registration_config(mut self, input: ::std::option::Option<crate::types::RegistrationConfig>) -> Self {
         self.registration_config = input;
         self
     }
     /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
-    pub fn get_registration_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistrationConfig> {
+    pub fn get_registration_config(&self) -> &::std::option::Option<crate::types::RegistrationConfig> {
         &self.registration_config
     }
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration job requests.</p>
@@ -242,10 +224,7 @@ impl FraudsterRegistrationJobBuilder {
         self
     }
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration job requests.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }
@@ -259,10 +238,7 @@ impl FraudsterRegistrationJobBuilder {
         self
     }
     /// <p>The output data config containing the S3 location where you want Voice ID to write your job output file; you must also include a KMS key ID in order to encrypt the file.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
@@ -276,10 +252,7 @@ impl FraudsterRegistrationJobBuilder {
         self
     }
     /// <p>A timestamp of when the fraudster registration job was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -293,10 +266,7 @@ impl FraudsterRegistrationJobBuilder {
         self
     }
     /// <p>A timestamp of when the fraudster registration job ended.</p>
-    pub fn set_ended_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ended_at = input;
         self
     }
@@ -310,10 +280,7 @@ impl FraudsterRegistrationJobBuilder {
         self
     }
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
-    pub fn set_failure_details(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureDetails>,
-    ) -> Self {
+    pub fn set_failure_details(mut self, input: ::std::option::Option<crate::types::FailureDetails>) -> Self {
         self.failure_details = input;
         self
     }
@@ -327,10 +294,7 @@ impl FraudsterRegistrationJobBuilder {
         self
     }
     /// <p>Shows the completed percentage of registration requests listed in the input file.</p>
-    pub fn set_job_progress(
-        mut self,
-        input: ::std::option::Option<crate::types::JobProgress>,
-    ) -> Self {
+    pub fn set_job_progress(mut self, input: ::std::option::Option<crate::types::JobProgress>) -> Self {
         self.job_progress = input;
         self
     }

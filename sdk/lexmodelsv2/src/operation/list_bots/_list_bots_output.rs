@@ -35,9 +35,7 @@ impl ListBotsOutput {
 
 /// A builder for [`ListBotsOutput`](crate::operation::list_bots::ListBotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBotsOutputBuilder {
     pub(crate) bot_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListBotsOutputBuilder {
         self
     }
     /// <p>Summary information for the bots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more bots available, the <code>nextToken</code> field contains a token to the next page of results.</p>
-    pub fn set_bot_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotSummary>>,
-    ) -> Self {
+    pub fn set_bot_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotSummary>>) -> Self {
         self.bot_summaries = input;
         self
     }
     /// <p>Summary information for the bots that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more bots available, the <code>nextToken</code> field contains a token to the next page of results.</p>
-    pub fn get_bot_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotSummary>> {
+    pub fn get_bot_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotSummary>> {
         &self.bot_summaries
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBots</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBots</code> operation request to get the next page of results.</p>

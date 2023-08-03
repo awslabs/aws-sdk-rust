@@ -35,9 +35,7 @@ impl CreateUseCaseOutput {
 
 /// A builder for [`CreateUseCaseOutput`](crate::operation::create_use_case::CreateUseCaseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUseCaseOutputBuilder {
     pub(crate) use_case_id: ::std::option::Option<::std::string::String>,
     pub(crate) use_case_arn: ::std::option::Option<::std::string::String>,

@@ -30,9 +30,7 @@ pub fn ser_update_integration_response_input(
         object_8.finish();
     }
     if let Some(var_11) = &input.template_selection_expression {
-        object
-            .key("templateSelectionExpression")
-            .string(var_11.as_str());
+        object.key("templateSelectionExpression").string(var_11.as_str());
     }
     Ok(())
 }

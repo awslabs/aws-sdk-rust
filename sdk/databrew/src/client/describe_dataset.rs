@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_dataset::DescribeDatasetOutput::tags): <p>Metadata tags associated with this dataset.</p>
     ///   - [`resource_arn(Option<String>)`](crate::operation::describe_dataset::DescribeDatasetOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the dataset.</p>
     /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::operation::describe_dataset::DescribeDatasetError)
-    pub fn describe_dataset(
-        &self,
-    ) -> crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder {
-        crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_dataset(&self) -> crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder {
+        crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::new(self.handle.clone())
     }
 }

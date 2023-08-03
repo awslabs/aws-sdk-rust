@@ -10,10 +10,7 @@ impl DeleteIpamPoolInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_ipam_pool::DeleteIpamPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ipam_pool::DeleteIpamPoolError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ipam_pool::DeleteIpamPoolError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_ipam_pool();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DeleteIpamPoolFluentBuilder {
         }
     }
     /// Access the DeleteIpamPool as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_ipam_pool::builders::DeleteIpamPoolInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_ipam_pool::builders::DeleteIpamPoolInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DeleteIpamPoolFluentBuilder {
             crate::operation::delete_ipam_pool::DeleteIpamPool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ipam_pool::DeleteIpamPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ipam_pool::DeleteIpamPoolError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DeleteIpamPoolFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DeleteIpamPoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_ipam_pool::DeleteIpamPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ipam_pool::DeleteIpamPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ipam_pool::DeleteIpamPoolError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DeleteIpamPoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_ipam_pool::DeleteIpamPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ipam_pool::DeleteIpamPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ipam_pool::DeleteIpamPoolError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl DeleteIpamPoolFluentBuilder {
             crate::operation::delete_ipam_pool::DeleteIpamPool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ipam_pool::DeleteIpamPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ipam_pool::DeleteIpamPoolError>,
     > {
         self.customize_middleware().await
     }

@@ -23,9 +23,7 @@ impl DeleteSnapshotInput {
 
 /// A builder for [`DeleteSnapshotInput`](crate::operation::delete_snapshot::DeleteSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSnapshotInputBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +45,7 @@ impl DeleteSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSnapshotInput`](crate::operation::delete_snapshot::DeleteSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_snapshot::DeleteSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_snapshot::DeleteSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_snapshot::DeleteSnapshotInput {
             snapshot_id: self.snapshot_id,
         })

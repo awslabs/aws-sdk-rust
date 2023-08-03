@@ -22,9 +22,7 @@ pub fn ser_describe_organization_resource_collection_health_input(
         object.key("NextToken").string(var_5.as_str());
     }
     if let Some(var_6) = &input.organization_resource_collection_type {
-        object
-            .key("OrganizationResourceCollectionType")
-            .string(var_6.as_str());
+        object.key("OrganizationResourceCollectionType").string(var_6.as_str());
     }
     if let Some(var_7) = &input.organizational_unit_ids {
         let mut array_8 = object.key("OrganizationalUnitIds").start_array();

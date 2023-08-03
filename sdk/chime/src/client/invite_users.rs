@@ -9,9 +9,7 @@ impl super::Client {
     /// - On success, responds with [`InviteUsersOutput`](crate::operation::invite_users::InviteUsersOutput) with field(s):
     ///   - [`invites(Option<Vec<Invite>>)`](crate::operation::invite_users::InviteUsersOutput::invites): <p>The email invitation details.</p>
     /// - On failure, responds with [`SdkError<InviteUsersError>`](crate::operation::invite_users::InviteUsersError)
-    pub fn invite_users(
-        &self,
-    ) -> crate::operation::invite_users::builders::InviteUsersFluentBuilder {
+    pub fn invite_users(&self) -> crate::operation::invite_users::builders::InviteUsersFluentBuilder {
         crate::operation::invite_users::builders::InviteUsersFluentBuilder::new(self.handle.clone())
     }
 }

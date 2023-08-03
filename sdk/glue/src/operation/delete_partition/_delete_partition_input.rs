@@ -43,9 +43,7 @@ impl DeletePartitionInput {
 
 /// A builder for [`DeletePartitionInput`](crate::operation::delete_partition::DeletePartitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePartitionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl DeletePartitionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database in which the table in question resides.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the catalog database in which the table in question resides.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -106,36 +98,25 @@ impl DeletePartitionInputBuilder {
     /// To override the contents of this collection use [`set_partition_values`](Self::set_partition_values).
     ///
     /// <p>The values that define the partition.</p>
-    pub fn partition_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.partition_values.unwrap_or_default();
         v.push(input.into());
         self.partition_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The values that define the partition.</p>
-    pub fn set_partition_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_partition_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.partition_values = input;
         self
     }
     /// <p>The values that define the partition.</p>
-    pub fn get_partition_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.partition_values
     }
     /// Consumes the builder and constructs a [`DeletePartitionInput`](crate::operation::delete_partition::DeletePartitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_partition::DeletePartitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_partition::DeletePartitionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_partition::DeletePartitionInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

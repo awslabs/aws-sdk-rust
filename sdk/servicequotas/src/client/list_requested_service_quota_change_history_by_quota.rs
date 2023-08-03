@@ -13,7 +13,10 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     ///   - [`requested_quotas(Option<Vec<RequestedServiceQuotaChange>>)`](crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaOutput::requested_quotas): <p>Information about the quota increase requests.</p>
     /// - On failure, responds with [`SdkError<ListRequestedServiceQuotaChangeHistoryByQuotaError>`](crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaError)
-    pub fn list_requested_service_quota_change_history_by_quota(&self) -> crate::operation::list_requested_service_quota_change_history_by_quota::builders::ListRequestedServiceQuotaChangeHistoryByQuotaFluentBuilder{
+    pub fn list_requested_service_quota_change_history_by_quota(
+        &self,
+    ) -> crate::operation::list_requested_service_quota_change_history_by_quota::builders::ListRequestedServiceQuotaChangeHistoryByQuotaFluentBuilder
+    {
         crate::operation::list_requested_service_quota_change_history_by_quota::builders::ListRequestedServiceQuotaChangeHistoryByQuotaFluentBuilder::new(self.handle.clone())
     }
 }

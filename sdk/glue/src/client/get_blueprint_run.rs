@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetBlueprintRunOutput`](crate::operation::get_blueprint_run::GetBlueprintRunOutput) with field(s):
     ///   - [`blueprint_run(Option<BlueprintRun>)`](crate::operation::get_blueprint_run::GetBlueprintRunOutput::blueprint_run): <p>Returns a <code>BlueprintRun</code> object.</p>
     /// - On failure, responds with [`SdkError<GetBlueprintRunError>`](crate::operation::get_blueprint_run::GetBlueprintRunError)
-    pub fn get_blueprint_run(
-        &self,
-    ) -> crate::operation::get_blueprint_run::builders::GetBlueprintRunFluentBuilder {
-        crate::operation::get_blueprint_run::builders::GetBlueprintRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_blueprint_run(&self) -> crate::operation::get_blueprint_run::builders::GetBlueprintRunFluentBuilder {
+        crate::operation::get_blueprint_run::builders::GetBlueprintRunFluentBuilder::new(self.handle.clone())
     }
 }

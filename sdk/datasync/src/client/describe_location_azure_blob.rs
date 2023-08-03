@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`agent_arns(Option<Vec<String>>)`](crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobOutput::agent_arns): <p>The ARNs of the DataSync agents that can connect with your Azure Blob Storage container.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobOutput::creation_time): <p>The time that your Azure Blob Storage transfer location was created.</p>
     /// - On failure, responds with [`SdkError<DescribeLocationAzureBlobError>`](crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobError)
-    pub fn describe_location_azure_blob(&self) -> crate::operation::describe_location_azure_blob::builders::DescribeLocationAzureBlobFluentBuilder{
+    pub fn describe_location_azure_blob(&self) -> crate::operation::describe_location_azure_blob::builders::DescribeLocationAzureBlobFluentBuilder {
         crate::operation::describe_location_azure_blob::builders::DescribeLocationAzureBlobFluentBuilder::new(self.handle.clone())
     }
 }

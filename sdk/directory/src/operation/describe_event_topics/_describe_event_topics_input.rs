@@ -25,18 +25,14 @@ impl DescribeEventTopicsInput {
 }
 impl DescribeEventTopicsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventTopicsInput`](crate::operation::describe_event_topics::DescribeEventTopicsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_event_topics::builders::DescribeEventTopicsInputBuilder {
-        crate::operation::describe_event_topics::builders::DescribeEventTopicsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_event_topics::builders::DescribeEventTopicsInputBuilder {
+        crate::operation::describe_event_topics::builders::DescribeEventTopicsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventTopicsInput`](crate::operation::describe_event_topics::DescribeEventTopicsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventTopicsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -70,32 +66,23 @@ impl DescribeEventTopicsInputBuilder {
     }
     /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn set_topic_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_topic_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.topic_names = input;
         self
     }
     /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn get_topic_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_topic_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.topic_names
     }
     /// Consumes the builder and constructs a [`DescribeEventTopicsInput`](crate::operation::describe_event_topics::DescribeEventTopicsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_event_topics::DescribeEventTopicsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_event_topics::DescribeEventTopicsInput {
-                directory_id: self.directory_id,
-                topic_names: self.topic_names,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_event_topics::DescribeEventTopicsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_event_topics::DescribeEventTopicsInput {
+            directory_id: self.directory_id,
+            topic_names: self.topic_names,
+        })
     }
 }

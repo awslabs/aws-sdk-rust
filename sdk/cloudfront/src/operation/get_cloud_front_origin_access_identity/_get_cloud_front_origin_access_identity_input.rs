@@ -16,16 +16,14 @@ impl GetCloudFrontOriginAccessIdentityInput {
 }
 impl GetCloudFrontOriginAccessIdentityInput {
     /// Creates a new builder-style object to manufacture [`GetCloudFrontOriginAccessIdentityInput`](crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityInput).
-    pub fn builder() -> crate::operation::get_cloud_front_origin_access_identity::builders::GetCloudFrontOriginAccessIdentityInputBuilder{
+    pub fn builder() -> crate::operation::get_cloud_front_origin_access_identity::builders::GetCloudFrontOriginAccessIdentityInputBuilder {
         crate::operation::get_cloud_front_origin_access_identity::builders::GetCloudFrontOriginAccessIdentityInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCloudFrontOriginAccessIdentityInput`](crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCloudFrontOriginAccessIdentityInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -45,12 +43,12 @@ impl GetCloudFrontOriginAccessIdentityInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetCloudFrontOriginAccessIdentityInput`](crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityInput, ::aws_smithy_http::operation::error::BuildError>{
-        ::std::result::Result::Ok(
-            crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityInput { id: self.id })
     }
 }

@@ -9,7 +9,10 @@ pub fn ser_batch_update_member_ec2_deep_inspection_status_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_member_account_ec2_deep_inspection_status::ser_member_account_ec2_deep_inspection_status(&mut object_4, item_3)?;
+                crate::protocol_serde::shape_member_account_ec2_deep_inspection_status::ser_member_account_ec2_deep_inspection_status(
+                    &mut object_4,
+                    item_3,
+                )?;
                 object_4.finish();
             }
         }

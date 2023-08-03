@@ -23,9 +23,7 @@ pub struct ConfigureAgentInput {
     /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub metadata: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>,
-    >,
+    pub metadata: ::std::option::Option<::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>>,
 }
 impl ConfigureAgentInput {
     /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
@@ -48,11 +46,7 @@ impl ConfigureAgentInput {
     /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>
     /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
     /// </ul>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>,
-    > {
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>> {
         self.metadata.as_ref()
     }
 }
@@ -65,30 +59,20 @@ impl ConfigureAgentInput {
 
 /// A builder for [`ConfigureAgentInput`](crate::operation::configure_agent::ConfigureAgentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigureAgentInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>,
-    >,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>>,
 }
 impl ConfigureAgentInputBuilder {
     /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profiling_group_name = input;
         self
     }
@@ -97,18 +81,12 @@ impl ConfigureAgentInputBuilder {
         &self.profiling_group_name
     }
     /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
-    pub fn fleet_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fleet_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
-    pub fn set_fleet_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fleet_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_instance_id = input;
         self
     }
@@ -132,11 +110,7 @@ impl ConfigureAgentInputBuilder {
     /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>
     /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
     /// </ul>
-    pub fn metadata(
-        mut self,
-        k: crate::types::MetadataField,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata(mut self, k: crate::types::MetadataField, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.metadata = ::std::option::Option::Some(hash_map);
@@ -156,9 +130,7 @@ impl ConfigureAgentInputBuilder {
     /// </ul>
     pub fn set_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>>,
     ) -> Self {
         self.metadata = input;
         self
@@ -175,20 +147,13 @@ impl ConfigureAgentInputBuilder {
     /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>
     /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
     /// </ul>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>,
-    > {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>> {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`ConfigureAgentInput`](crate::operation::configure_agent::ConfigureAgentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::configure_agent::ConfigureAgentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::configure_agent::ConfigureAgentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::configure_agent::ConfigureAgentInput {
             profiling_group_name: self.profiling_group_name,
             fleet_instance_id: self.fleet_instance_id,

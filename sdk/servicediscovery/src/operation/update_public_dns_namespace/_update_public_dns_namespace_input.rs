@@ -29,18 +29,14 @@ impl UpdatePublicDnsNamespaceInput {
 }
 impl UpdatePublicDnsNamespaceInput {
     /// Creates a new builder-style object to manufacture [`UpdatePublicDnsNamespaceInput`](crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceInput).
-    pub fn builder(
-    ) -> crate::operation::update_public_dns_namespace::builders::UpdatePublicDnsNamespaceInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_public_dns_namespace::builders::UpdatePublicDnsNamespaceInputBuilder {
         crate::operation::update_public_dns_namespace::builders::UpdatePublicDnsNamespaceInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePublicDnsNamespaceInput`](crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePublicDnsNamespaceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) updater_request_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl UpdatePublicDnsNamespaceInputBuilder {
         &self.id
     }
     /// <p>A unique string that identifies the request and that allows failed <code>UpdatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn updater_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn updater_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updater_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>UpdatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn set_updater_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_updater_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updater_request_id = input;
         self
     }
@@ -87,10 +77,7 @@ impl UpdatePublicDnsNamespaceInputBuilder {
         self
     }
     /// <p>Updated properties for the public DNS namespace.</p>
-    pub fn set_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicDnsNamespaceChange>,
-    ) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<crate::types::PublicDnsNamespaceChange>) -> Self {
         self.namespace = input;
         self
     }
@@ -105,12 +92,10 @@ impl UpdatePublicDnsNamespaceInputBuilder {
         crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceInput {
-                id: self.id,
-                updater_request_id: self.updater_request_id,
-                namespace: self.namespace,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceInput {
+            id: self.id,
+            updater_request_id: self.updater_request_id,
+            namespace: self.namespace,
+        })
     }
 }

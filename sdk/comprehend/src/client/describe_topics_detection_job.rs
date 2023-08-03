@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeTopicsDetectionJobOutput`](crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobOutput) with field(s):
     ///   - [`topics_detection_job_properties(Option<TopicsDetectionJobProperties>)`](crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobOutput::topics_detection_job_properties): <p>The list of properties for the requested job.</p>
     /// - On failure, responds with [`SdkError<DescribeTopicsDetectionJobError>`](crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobError)
-    pub fn describe_topics_detection_job(&self) -> crate::operation::describe_topics_detection_job::builders::DescribeTopicsDetectionJobFluentBuilder{
+    pub fn describe_topics_detection_job(
+        &self,
+    ) -> crate::operation::describe_topics_detection_job::builders::DescribeTopicsDetectionJobFluentBuilder {
         crate::operation::describe_topics_detection_job::builders::DescribeTopicsDetectionJobFluentBuilder::new(self.handle.clone())
     }
 }

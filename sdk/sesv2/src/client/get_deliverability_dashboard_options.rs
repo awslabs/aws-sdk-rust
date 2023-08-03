@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`active_subscribed_domains(Option<Vec<DomainDeliverabilityTrackingOption>>)`](crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsOutput::active_subscribed_domains): <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that isn’t scheduled to expire at the end of the current calendar month.</p>
     ///   - [`pending_expiration_subscribed_domains(Option<Vec<DomainDeliverabilityTrackingOption>>)`](crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsOutput::pending_expiration_subscribed_domains): <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that's scheduled to expire at the end of the current calendar month.</p>
     /// - On failure, responds with [`SdkError<GetDeliverabilityDashboardOptionsError>`](crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsError)
-    pub fn get_deliverability_dashboard_options(&self) -> crate::operation::get_deliverability_dashboard_options::builders::GetDeliverabilityDashboardOptionsFluentBuilder{
+    pub fn get_deliverability_dashboard_options(
+        &self,
+    ) -> crate::operation::get_deliverability_dashboard_options::builders::GetDeliverabilityDashboardOptionsFluentBuilder {
         crate::operation::get_deliverability_dashboard_options::builders::GetDeliverabilityDashboardOptionsFluentBuilder::new(self.handle.clone())
     }
 }

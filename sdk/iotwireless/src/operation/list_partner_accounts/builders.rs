@@ -37,9 +37,7 @@ impl ListPartnerAccountsFluentBuilder {
         }
     }
     /// Access the ListPartnerAccounts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_partner_accounts::builders::ListPartnerAccountsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_partner_accounts::builders::ListPartnerAccountsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListPartnerAccountsFluentBuilder {
             crate::operation::list_partner_accounts::ListPartnerAccounts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_partner_accounts::ListPartnerAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_partner_accounts::ListPartnerAccountsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListPartnerAccountsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListPartnerAccountsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_partner_accounts::ListPartnerAccountsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_partner_accounts::ListPartnerAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_partner_accounts::ListPartnerAccountsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListPartnerAccountsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_partner_accounts::ListPartnerAccountsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_partner_accounts::ListPartnerAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_partner_accounts::ListPartnerAccountsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl ListPartnerAccountsFluentBuilder {
             crate::operation::list_partner_accounts::ListPartnerAccounts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_partner_accounts::ListPartnerAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_partner_accounts::ListPartnerAccountsError>,
     > {
         self.customize_middleware().await
     }

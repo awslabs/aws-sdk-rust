@@ -15,35 +15,25 @@ impl EnableAwsServiceAccessInput {
 }
 impl EnableAwsServiceAccessInput {
     /// Creates a new builder-style object to manufacture [`EnableAwsServiceAccessInput`](crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput).
-    pub fn builder(
-    ) -> crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessInputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessInputBuilder {
         crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableAwsServiceAccessInput`](crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableAwsServiceAccessInputBuilder {
     pub(crate) service_principal: ::std::option::Option<::std::string::String>,
 }
 impl EnableAwsServiceAccessInputBuilder {
     /// <p>The service principal name of the Amazon Web Services service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-    pub fn service_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_principal = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service principal name of the Amazon Web Services service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-    pub fn set_service_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_principal = input;
         self
     }
@@ -58,10 +48,8 @@ impl EnableAwsServiceAccessInputBuilder {
         crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput {
-                service_principal: self.service_principal,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput {
+            service_principal: self.service_principal,
+        })
     }
 }

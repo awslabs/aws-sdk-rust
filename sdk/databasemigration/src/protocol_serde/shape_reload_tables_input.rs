@@ -12,10 +12,7 @@ pub fn ser_reload_tables_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_table_to_reload::ser_table_to_reload(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_table_to_reload::ser_table_to_reload(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

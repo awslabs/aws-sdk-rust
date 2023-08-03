@@ -15,8 +15,7 @@ pub struct UnsuccessfulFaceAssociation {
     pub confidence: ::std::option::Option<f32>,
     /// <p> The reason why the association was unsuccessful. </p>
     #[doc(hidden)]
-    pub reasons:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociationReason>>,
+    pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociationReason>>,
 }
 impl UnsuccessfulFaceAssociation {
     /// <p>A unique identifier assigned to the face. </p>
@@ -32,9 +31,7 @@ impl UnsuccessfulFaceAssociation {
         self.confidence
     }
     /// <p> The reason why the association was unsuccessful. </p>
-    pub fn reasons(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnsuccessfulFaceAssociationReason]> {
+    pub fn reasons(&self) -> ::std::option::Option<&[crate::types::UnsuccessfulFaceAssociationReason]> {
         self.reasons.as_deref()
     }
 }
@@ -47,15 +44,12 @@ impl UnsuccessfulFaceAssociation {
 
 /// A builder for [`UnsuccessfulFaceAssociation`](crate::types::UnsuccessfulFaceAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnsuccessfulFaceAssociationBuilder {
     pub(crate) face_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) confidence: ::std::option::Option<f32>,
-    pub(crate) reasons:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociationReason>>,
+    pub(crate) reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociationReason>>,
 }
 impl UnsuccessfulFaceAssociationBuilder {
     /// <p>A unique identifier assigned to the face. </p>
@@ -112,20 +106,12 @@ impl UnsuccessfulFaceAssociationBuilder {
         self
     }
     /// <p> The reason why the association was unsuccessful. </p>
-    pub fn set_reasons(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::UnsuccessfulFaceAssociationReason>,
-        >,
-    ) -> Self {
+    pub fn set_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociationReason>>) -> Self {
         self.reasons = input;
         self
     }
     /// <p> The reason why the association was unsuccessful. </p>
-    pub fn get_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociationReason>>
-    {
+    pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociationReason>> {
         &self.reasons
     }
     /// Consumes the builder and constructs a [`UnsuccessfulFaceAssociation`](crate::types::UnsuccessfulFaceAssociation).

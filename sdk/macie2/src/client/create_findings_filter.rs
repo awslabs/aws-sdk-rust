@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_findings_filter::CreateFindingsFilterOutput::arn): <p>The Amazon Resource Name (ARN) of the filter that was created.</p>
     ///   - [`id(Option<String>)`](crate::operation::create_findings_filter::CreateFindingsFilterOutput::id): <p>The unique identifier for the filter that was created.</p>
     /// - On failure, responds with [`SdkError<CreateFindingsFilterError>`](crate::operation::create_findings_filter::CreateFindingsFilterError)
-    pub fn create_findings_filter(
-        &self,
-    ) -> crate::operation::create_findings_filter::builders::CreateFindingsFilterFluentBuilder {
-        crate::operation::create_findings_filter::builders::CreateFindingsFilterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_findings_filter(&self) -> crate::operation::create_findings_filter::builders::CreateFindingsFilterFluentBuilder {
+        crate::operation::create_findings_filter::builders::CreateFindingsFilterFluentBuilder::new(self.handle.clone())
     }
 }

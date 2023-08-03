@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`GetPercentilesOutput`](crate::operation::get_percentiles::GetPercentilesOutput) with field(s):
     ///   - [`percentiles(Option<Vec<PercentPair>>)`](crate::operation::get_percentiles::GetPercentilesOutput::percentiles): <p>The percentile values of the aggregated fields.</p>
     /// - On failure, responds with [`SdkError<GetPercentilesError>`](crate::operation::get_percentiles::GetPercentilesError)
-    pub fn get_percentiles(
-        &self,
-    ) -> crate::operation::get_percentiles::builders::GetPercentilesFluentBuilder {
-        crate::operation::get_percentiles::builders::GetPercentilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_percentiles(&self) -> crate::operation::get_percentiles::builders::GetPercentilesFluentBuilder {
+        crate::operation::get_percentiles::builders::GetPercentilesFluentBuilder::new(self.handle.clone())
     }
 }

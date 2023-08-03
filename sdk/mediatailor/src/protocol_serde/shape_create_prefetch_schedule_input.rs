@@ -6,19 +6,13 @@ pub fn ser_create_prefetch_schedule_input(
     if let Some(var_1) = &input.consumption {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Consumption").start_object();
-        crate::protocol_serde::shape_prefetch_consumption::ser_prefetch_consumption(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_prefetch_consumption::ser_prefetch_consumption(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.retrieval {
         #[allow(unused_mut)]
         let mut object_4 = object.key("Retrieval").start_object();
-        crate::protocol_serde::shape_prefetch_retrieval::ser_prefetch_retrieval(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_prefetch_retrieval::ser_prefetch_retrieval(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.stream_id {

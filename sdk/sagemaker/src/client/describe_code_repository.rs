@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_code_repository::DescribeCodeRepositoryOutput::last_modified_time): <p>The date and time that the repository was last changed.</p>
     ///   - [`git_config(Option<GitConfig>)`](crate::operation::describe_code_repository::DescribeCodeRepositoryOutput::git_config): <p>Configuration details about the repository, including the URL where the repository is located, the default branch, and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p>
     /// - On failure, responds with [`SdkError<DescribeCodeRepositoryError>`](crate::operation::describe_code_repository::DescribeCodeRepositoryError)
-    pub fn describe_code_repository(
-        &self,
-    ) -> crate::operation::describe_code_repository::builders::DescribeCodeRepositoryFluentBuilder
-    {
+    pub fn describe_code_repository(&self) -> crate::operation::describe_code_repository::builders::DescribeCodeRepositoryFluentBuilder {
         crate::operation::describe_code_repository::builders::DescribeCodeRepositoryFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,8 +12,7 @@ pub struct ResponseCard {
     pub content_type: ::std::option::Option<crate::types::ContentType>,
     /// <p>An array of attachment objects representing options.</p>
     #[doc(hidden)]
-    pub generic_attachments:
-        ::std::option::Option<::std::vec::Vec<crate::types::GenericAttachment>>,
+    pub generic_attachments: ::std::option::Option<::std::vec::Vec<crate::types::GenericAttachment>>,
 }
 impl ResponseCard {
     /// <p>The version of the response card format.</p>
@@ -38,14 +37,11 @@ impl ResponseCard {
 
 /// A builder for [`ResponseCard`](crate::types::ResponseCard).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseCardBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<crate::types::ContentType>,
-    pub(crate) generic_attachments:
-        ::std::option::Option<::std::vec::Vec<crate::types::GenericAttachment>>,
+    pub(crate) generic_attachments: ::std::option::Option<::std::vec::Vec<crate::types::GenericAttachment>>,
 }
 impl ResponseCardBuilder {
     /// <p>The version of the response card format.</p>
@@ -68,10 +64,7 @@ impl ResponseCardBuilder {
         self
     }
     /// <p>The content type of the response.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::ContentType>) -> Self {
         self.content_type = input;
         self
     }
@@ -91,17 +84,12 @@ impl ResponseCardBuilder {
         self
     }
     /// <p>An array of attachment objects representing options.</p>
-    pub fn set_generic_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GenericAttachment>>,
-    ) -> Self {
+    pub fn set_generic_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GenericAttachment>>) -> Self {
         self.generic_attachments = input;
         self
     }
     /// <p>An array of attachment objects representing options.</p>
-    pub fn get_generic_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GenericAttachment>> {
+    pub fn get_generic_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GenericAttachment>> {
         &self.generic_attachments
     }
     /// Consumes the builder and constructs a [`ResponseCard`](crate::types::ResponseCard).

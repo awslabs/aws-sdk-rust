@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteFileCacheOutput {
 }
 impl DeleteFileCacheOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFileCacheOutput`](crate::operation::delete_file_cache::DeleteFileCacheOutput).
-    pub fn builder() -> crate::operation::delete_file_cache::builders::DeleteFileCacheOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_file_cache::builders::DeleteFileCacheOutputBuilder {
         crate::operation::delete_file_cache::builders::DeleteFileCacheOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFileCacheOutput`](crate::operation::delete_file_cache::DeleteFileCacheOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFileCacheOutputBuilder {
     pub(crate) file_cache_id: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::FileCacheLifecycle>,
@@ -46,18 +43,12 @@ pub struct DeleteFileCacheOutputBuilder {
 }
 impl DeleteFileCacheOutputBuilder {
     /// <p>The ID of the cache that's being deleted.</p>
-    pub fn file_cache_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_cache_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_cache_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the cache that's being deleted.</p>
-    pub fn set_file_cache_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_cache_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_cache_id = input;
         self
     }
@@ -71,10 +62,7 @@ impl DeleteFileCacheOutputBuilder {
         self
     }
     /// <p>The cache lifecycle for the deletion request. If the <code>DeleteFileCache</code> operation is successful, this status is <code>DELETING</code>.</p>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::FileCacheLifecycle>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::FileCacheLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }

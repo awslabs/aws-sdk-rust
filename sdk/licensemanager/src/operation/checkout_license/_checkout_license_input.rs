@@ -64,9 +64,7 @@ impl CheckoutLicenseInput {
 
 /// A builder for [`CheckoutLicenseInput`](crate::operation::checkout_license::CheckoutLicenseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CheckoutLicenseInputBuilder {
     pub(crate) product_sku: ::std::option::Option<::std::string::String>,
     pub(crate) checkout_type: ::std::option::Option<crate::types::CheckoutType>,
@@ -97,10 +95,7 @@ impl CheckoutLicenseInputBuilder {
         self
     }
     /// <p>Checkout type.</p>
-    pub fn set_checkout_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CheckoutType>,
-    ) -> Self {
+    pub fn set_checkout_type(mut self, input: ::std::option::Option<crate::types::CheckoutType>) -> Self {
         self.checkout_type = input;
         self
     }
@@ -109,18 +104,12 @@ impl CheckoutLicenseInputBuilder {
         &self.checkout_type
     }
     /// <p>Key fingerprint identifying the license.</p>
-    pub fn key_fingerprint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_fingerprint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Key fingerprint identifying the license.</p>
-    pub fn set_key_fingerprint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_fingerprint = input;
         self
     }
@@ -140,17 +129,12 @@ impl CheckoutLicenseInputBuilder {
         self
     }
     /// <p>License entitlements.</p>
-    pub fn set_entitlements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
-    ) -> Self {
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>) -> Self {
         self.entitlements = input;
         self
     }
     /// <p>License entitlements.</p>
-    pub fn get_entitlements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
         &self.entitlements
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -198,10 +182,7 @@ impl CheckoutLicenseInputBuilder {
     /// Consumes the builder and constructs a [`CheckoutLicenseInput`](crate::operation::checkout_license::CheckoutLicenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::checkout_license::CheckoutLicenseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::checkout_license::CheckoutLicenseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::checkout_license::CheckoutLicenseInput {
             product_sku: self.product_sku,
             checkout_type: self.checkout_type,

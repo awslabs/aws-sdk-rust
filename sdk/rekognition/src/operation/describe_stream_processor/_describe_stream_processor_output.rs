@@ -37,8 +37,7 @@ pub struct DescribeStreamProcessorOutput {
     /// <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p>
     /// <p>Amazon Rekognition also publishes an an end-of-session notification with a summary when the stream processing session is complete.</p>
     #[doc(hidden)]
-    pub notification_channel:
-        ::std::option::Option<crate::types::StreamProcessorNotificationChannel>,
+    pub notification_channel: ::std::option::Option<crate::types::StreamProcessorNotificationChannel>,
     /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors. </p>
     #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -47,8 +46,7 @@ pub struct DescribeStreamProcessorOutput {
     pub regions_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>,
     /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     #[doc(hidden)]
-    pub data_sharing_preference:
-        ::std::option::Option<crate::types::StreamProcessorDataSharingPreference>,
+    pub data_sharing_preference: ::std::option::Option<crate::types::StreamProcessorDataSharingPreference>,
     _request_id: Option<String>,
 }
 impl DescribeStreamProcessorOutput {
@@ -95,9 +93,7 @@ impl DescribeStreamProcessorOutput {
     /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the object detection results and completion status of a video analysis operation.</p>
     /// <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p>
     /// <p>Amazon Rekognition also publishes an an end-of-session notification with a summary when the stream processing session is complete.</p>
-    pub fn notification_channel(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamProcessorNotificationChannel> {
+    pub fn notification_channel(&self) -> ::std::option::Option<&crate::types::StreamProcessorNotificationChannel> {
         self.notification_channel.as_ref()
     }
     /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors. </p>
@@ -109,9 +105,7 @@ impl DescribeStreamProcessorOutput {
         self.regions_of_interest.as_deref()
     }
     /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
-    pub fn data_sharing_preference(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamProcessorDataSharingPreference> {
+    pub fn data_sharing_preference(&self) -> ::std::option::Option<&crate::types::StreamProcessorDataSharingPreference> {
         self.data_sharing_preference.as_ref()
     }
 }
@@ -122,18 +116,14 @@ impl ::aws_http::request_id::RequestId for DescribeStreamProcessorOutput {
 }
 impl DescribeStreamProcessorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStreamProcessorOutput`](crate::operation::describe_stream_processor::DescribeStreamProcessorOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_stream_processor::builders::DescribeStreamProcessorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_stream_processor::builders::DescribeStreamProcessorOutputBuilder {
         crate::operation::describe_stream_processor::builders::DescribeStreamProcessorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStreamProcessorOutput`](crate::operation::describe_stream_processor::DescribeStreamProcessorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStreamProcessorOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_processor_arn: ::std::option::Option<::std::string::String>,
@@ -145,13 +135,10 @@ pub struct DescribeStreamProcessorOutputBuilder {
     pub(crate) output: ::std::option::Option<crate::types::StreamProcessorOutput>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) settings: ::std::option::Option<crate::types::StreamProcessorSettings>,
-    pub(crate) notification_channel:
-        ::std::option::Option<crate::types::StreamProcessorNotificationChannel>,
+    pub(crate) notification_channel: ::std::option::Option<crate::types::StreamProcessorNotificationChannel>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) regions_of_interest:
-        ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>,
-    pub(crate) data_sharing_preference:
-        ::std::option::Option<crate::types::StreamProcessorDataSharingPreference>,
+    pub(crate) regions_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>,
+    pub(crate) data_sharing_preference: ::std::option::Option<crate::types::StreamProcessorDataSharingPreference>,
     _request_id: Option<String>,
 }
 impl DescribeStreamProcessorOutputBuilder {
@@ -170,18 +157,12 @@ impl DescribeStreamProcessorOutputBuilder {
         &self.name
     }
     /// <p>ARN of the stream processor.</p>
-    pub fn stream_processor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stream_processor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_processor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the stream processor.</p>
-    pub fn set_stream_processor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stream_processor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_processor_arn = input;
         self
     }
@@ -195,10 +176,7 @@ impl DescribeStreamProcessorOutputBuilder {
         self
     }
     /// <p>Current status of the stream processor.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamProcessorStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StreamProcessorStatus>) -> Self {
         self.status = input;
         self
     }
@@ -207,18 +185,12 @@ impl DescribeStreamProcessorOutputBuilder {
         &self.status
     }
     /// <p>Detailed status message about the stream processor.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Detailed status message about the stream processor.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -232,10 +204,7 @@ impl DescribeStreamProcessorOutputBuilder {
         self
     }
     /// <p>Date and time the stream processor was created</p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -249,17 +218,12 @@ impl DescribeStreamProcessorOutputBuilder {
         self
     }
     /// <p>The time, in Unix format, the stream processor was last updated. For example, when the stream processor moves from a running state to a failed state, or when the user starts or stops the stream processor.</p>
-    pub fn set_last_update_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_timestamp = input;
         self
     }
     /// <p>The time, in Unix format, the stream processor was last updated. For example, when the stream processor moves from a running state to a failed state, or when the user starts or stops the stream processor.</p>
-    pub fn get_last_update_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_update_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_update_timestamp
     }
     /// <p>Kinesis video stream that provides the source streaming video.</p>
@@ -268,10 +232,7 @@ impl DescribeStreamProcessorOutputBuilder {
         self
     }
     /// <p>Kinesis video stream that provides the source streaming video.</p>
-    pub fn set_input(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamProcessorInput>,
-    ) -> Self {
+    pub fn set_input(mut self, input: ::std::option::Option<crate::types::StreamProcessorInput>) -> Self {
         self.input = input;
         self
     }
@@ -285,10 +246,7 @@ impl DescribeStreamProcessorOutputBuilder {
         self
     }
     /// <p>Kinesis data stream to which Amazon Rekognition Video puts the analysis results.</p>
-    pub fn set_output(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamProcessorOutput>,
-    ) -> Self {
+    pub fn set_output(mut self, input: ::std::option::Option<crate::types::StreamProcessorOutput>) -> Self {
         self.output = input;
         self
     }
@@ -316,10 +274,7 @@ impl DescribeStreamProcessorOutputBuilder {
         self
     }
     /// <p>Input parameters used in a streaming video analyzed by a stream processor. You can use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamProcessorSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::StreamProcessorSettings>) -> Self {
         self.settings = input;
         self
     }
@@ -330,29 +285,21 @@ impl DescribeStreamProcessorOutputBuilder {
     /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the object detection results and completion status of a video analysis operation.</p>
     /// <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p>
     /// <p>Amazon Rekognition also publishes an an end-of-session notification with a summary when the stream processing session is complete.</p>
-    pub fn notification_channel(
-        mut self,
-        input: crate::types::StreamProcessorNotificationChannel,
-    ) -> Self {
+    pub fn notification_channel(mut self, input: crate::types::StreamProcessorNotificationChannel) -> Self {
         self.notification_channel = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the object detection results and completion status of a video analysis operation.</p>
     /// <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p>
     /// <p>Amazon Rekognition also publishes an an end-of-session notification with a summary when the stream processing session is complete.</p>
-    pub fn set_notification_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamProcessorNotificationChannel>,
-    ) -> Self {
+    pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::StreamProcessorNotificationChannel>) -> Self {
         self.notification_channel = input;
         self
     }
     /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the object detection results and completion status of a video analysis operation.</p>
     /// <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p>
     /// <p>Amazon Rekognition also publishes an an end-of-session notification with a summary when the stream processing session is complete.</p>
-    pub fn get_notification_channel(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamProcessorNotificationChannel> {
+    pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::StreamProcessorNotificationChannel> {
         &self.notification_channel
     }
     /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors. </p>
@@ -381,39 +328,26 @@ impl DescribeStreamProcessorOutputBuilder {
         self
     }
     /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
-    pub fn set_regions_of_interest(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>,
-    ) -> Self {
+    pub fn set_regions_of_interest(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>) -> Self {
         self.regions_of_interest = input;
         self
     }
     /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
-    pub fn get_regions_of_interest(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>> {
+    pub fn get_regions_of_interest(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>> {
         &self.regions_of_interest
     }
     /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
-    pub fn data_sharing_preference(
-        mut self,
-        input: crate::types::StreamProcessorDataSharingPreference,
-    ) -> Self {
+    pub fn data_sharing_preference(mut self, input: crate::types::StreamProcessorDataSharingPreference) -> Self {
         self.data_sharing_preference = ::std::option::Option::Some(input);
         self
     }
     /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
-    pub fn set_data_sharing_preference(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamProcessorDataSharingPreference>,
-    ) -> Self {
+    pub fn set_data_sharing_preference(mut self, input: ::std::option::Option<crate::types::StreamProcessorDataSharingPreference>) -> Self {
         self.data_sharing_preference = input;
         self
     }
     /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
-    pub fn get_data_sharing_preference(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamProcessorDataSharingPreference> {
+    pub fn get_data_sharing_preference(&self) -> &::std::option::Option<crate::types::StreamProcessorDataSharingPreference> {
         &self.data_sharing_preference
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -426,9 +360,7 @@ impl DescribeStreamProcessorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeStreamProcessorOutput`](crate::operation::describe_stream_processor::DescribeStreamProcessorOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_stream_processor::DescribeStreamProcessorOutput {
+    pub fn build(self) -> crate::operation::describe_stream_processor::DescribeStreamProcessorOutput {
         crate::operation::describe_stream_processor::DescribeStreamProcessorOutput {
             name: self.name,
             stream_processor_arn: self.stream_processor_arn,

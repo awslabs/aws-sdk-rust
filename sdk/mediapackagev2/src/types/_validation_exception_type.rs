@@ -70,13 +70,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -155,22 +149,14 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
         match s {
             "CENC_IV_INCOMPATIBLE" => ValidationExceptionType::CencIvIncompatible,
             "CONTAINER_TYPE_IMMUTABLE" => ValidationExceptionType::ContainerTypeImmutable,
-            "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE" => {
-                ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible
-            }
+            "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE" => ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible,
             "ENCRYPTION_CONTRACT_SHARED" => ValidationExceptionType::EncryptionContractShared,
-            "ENCRYPTION_CONTRACT_UNENCRYPTED" => {
-                ValidationExceptionType::EncryptionContractUnencrypted
-            }
+            "ENCRYPTION_CONTRACT_UNENCRYPTED" => ValidationExceptionType::EncryptionContractUnencrypted,
             "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE" => {
                 ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible
             }
-            "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH" => {
-                ValidationExceptionType::EncryptionMethodContainerTypeMismatch
-            }
-            "INVALID_PAGINATION_MAX_RESULTS" => {
-                ValidationExceptionType::InvalidPaginationMaxResults
-            }
+            "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH" => ValidationExceptionType::EncryptionMethodContainerTypeMismatch,
+            "INVALID_PAGINATION_MAX_RESULTS" => ValidationExceptionType::InvalidPaginationMaxResults,
             "INVALID_PAGINATION_TOKEN" => ValidationExceptionType::InvalidPaginationToken,
             "INVALID_POLICY" => ValidationExceptionType::InvalidPolicy,
             "INVALID_ROLE_ARN" => ValidationExceptionType::InvalidRoleArn,
@@ -197,9 +183,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "URL_SCHEME" => ValidationExceptionType::UrlScheme,
             "URL_UNKNOWN_HOST" => ValidationExceptionType::UrlUnknownHost,
             "URL_USER_INFO" => ValidationExceptionType::UrlUserInfo,
-            other => ValidationExceptionType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -216,22 +200,14 @@ impl ValidationExceptionType {
         match self {
             ValidationExceptionType::CencIvIncompatible => "CENC_IV_INCOMPATIBLE",
             ValidationExceptionType::ContainerTypeImmutable => "CONTAINER_TYPE_IMMUTABLE",
-            ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible => {
-                "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE"
-            }
+            ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible => "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE",
             ValidationExceptionType::EncryptionContractShared => "ENCRYPTION_CONTRACT_SHARED",
-            ValidationExceptionType::EncryptionContractUnencrypted => {
-                "ENCRYPTION_CONTRACT_UNENCRYPTED"
-            }
+            ValidationExceptionType::EncryptionContractUnencrypted => "ENCRYPTION_CONTRACT_UNENCRYPTED",
             ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible => {
                 "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE"
             }
-            ValidationExceptionType::EncryptionMethodContainerTypeMismatch => {
-                "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH"
-            }
-            ValidationExceptionType::InvalidPaginationMaxResults => {
-                "INVALID_PAGINATION_MAX_RESULTS"
-            }
+            ValidationExceptionType::EncryptionMethodContainerTypeMismatch => "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH",
+            ValidationExceptionType::InvalidPaginationMaxResults => "INVALID_PAGINATION_MAX_RESULTS",
             ValidationExceptionType::InvalidPaginationToken => "INVALID_PAGINATION_TOKEN",
             ValidationExceptionType::InvalidPolicy => "INVALID_POLICY",
             ValidationExceptionType::InvalidRoleArn => "INVALID_ROLE_ARN",

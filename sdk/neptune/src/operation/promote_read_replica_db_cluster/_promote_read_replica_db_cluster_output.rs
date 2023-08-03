@@ -23,16 +23,14 @@ impl ::aws_http::request_id::RequestId for PromoteReadReplicaDbClusterOutput {
 }
 impl PromoteReadReplicaDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`PromoteReadReplicaDbClusterOutput`](crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput).
-    pub fn builder() -> crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDbClusterOutputBuilder{
+    pub fn builder() -> crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDbClusterOutputBuilder {
         crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDbClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`PromoteReadReplicaDbClusterOutput`](crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PromoteReadReplicaDbClusterOutputBuilder {
     pub(crate) db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,
@@ -65,9 +63,7 @@ impl PromoteReadReplicaDbClusterOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PromoteReadReplicaDbClusterOutput`](crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput {
+    pub fn build(self) -> crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput {
         crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput {
             db_cluster: self.db_cluster,
             _request_id: self._request_id,

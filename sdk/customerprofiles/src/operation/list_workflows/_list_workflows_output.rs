@@ -35,9 +35,7 @@ impl ListWorkflowsOutput {
 
 /// A builder for [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkflowsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListWorkflowsItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListWorkflowsOutputBuilder {
         self
     }
     /// <p>List containing workflow details.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListWorkflowsItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListWorkflowsItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>List containing workflow details.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListWorkflowsItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListWorkflowsItem>> {
         &self.items
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

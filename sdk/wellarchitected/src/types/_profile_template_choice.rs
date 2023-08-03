@@ -37,9 +37,7 @@ impl ProfileTemplateChoice {
 
 /// A builder for [`ProfileTemplateChoice`](crate::types::ProfileTemplateChoice).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProfileTemplateChoiceBuilder {
     pub(crate) choice_id: ::std::option::Option<::std::string::String>,
     pub(crate) choice_title: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl ProfileTemplateChoiceBuilder {
         &self.choice_title
     }
     /// <p>The description of a choice.</p>
-    pub fn choice_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn choice_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.choice_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of a choice.</p>
-    pub fn set_choice_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_choice_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.choice_description = input;
         self
     }

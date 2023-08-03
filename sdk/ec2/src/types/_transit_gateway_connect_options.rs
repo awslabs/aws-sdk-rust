@@ -23,9 +23,7 @@ impl TransitGatewayConnectOptions {
 
 /// A builder for [`TransitGatewayConnectOptions`](crate::types::TransitGatewayConnectOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayConnectOptionsBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::ProtocolValue>,
 }
@@ -36,10 +34,7 @@ impl TransitGatewayConnectOptionsBuilder {
         self
     }
     /// <p>The tunnel protocol.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolValue>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolValue>) -> Self {
         self.protocol = input;
         self
     }
@@ -49,8 +44,6 @@ impl TransitGatewayConnectOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`TransitGatewayConnectOptions`](crate::types::TransitGatewayConnectOptions).
     pub fn build(self) -> crate::types::TransitGatewayConnectOptions {
-        crate::types::TransitGatewayConnectOptions {
-            protocol: self.protocol,
-        }
+        crate::types::TransitGatewayConnectOptions { protocol: self.protocol }
     }
 }

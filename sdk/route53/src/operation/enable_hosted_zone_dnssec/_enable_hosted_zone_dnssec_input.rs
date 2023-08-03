@@ -15,35 +15,25 @@ impl EnableHostedZoneDnssecInput {
 }
 impl EnableHostedZoneDnssecInput {
     /// Creates a new builder-style object to manufacture [`EnableHostedZoneDnssecInput`](crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDnssecInput).
-    pub fn builder(
-    ) -> crate::operation::enable_hosted_zone_dnssec::builders::EnableHostedZoneDnssecInputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_hosted_zone_dnssec::builders::EnableHostedZoneDnssecInputBuilder {
         crate::operation::enable_hosted_zone_dnssec::builders::EnableHostedZoneDnssecInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableHostedZoneDnssecInput`](crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDnssecInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableHostedZoneDnssecInputBuilder {
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl EnableHostedZoneDnssecInputBuilder {
     /// <p>A unique string used to identify a hosted zone.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string used to identify a hosted zone.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_id = input;
         self
     }
@@ -58,10 +48,8 @@ impl EnableHostedZoneDnssecInputBuilder {
         crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDnssecInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDnssecInput {
-                hosted_zone_id: self.hosted_zone_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDnssecInput {
+            hosted_zone_id: self.hosted_zone_id,
+        })
     }
 }

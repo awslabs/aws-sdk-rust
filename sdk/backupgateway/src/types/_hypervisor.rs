@@ -52,9 +52,7 @@ impl Hypervisor {
 
 /// A builder for [`Hypervisor`](crate::types::Hypervisor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HypervisorBuilder {
     pub(crate) host: ::std::option::Option<::std::string::String>,
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
@@ -78,18 +76,12 @@ impl HypervisorBuilder {
         &self.host
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn set_hypervisor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hypervisor_arn = input;
         self
     }
@@ -131,10 +123,7 @@ impl HypervisorBuilder {
         self
     }
     /// <p>The state of the hypervisor.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::HypervisorState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::HypervisorState>) -> Self {
         self.state = input;
         self
     }

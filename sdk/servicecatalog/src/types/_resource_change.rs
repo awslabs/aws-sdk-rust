@@ -65,9 +65,7 @@ impl ResourceChange {
 
 /// A builder for [`ResourceChange`](crate::types::ResourceChange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceChangeBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) logical_resource_id: ::std::option::Option<::std::string::String>,
@@ -93,18 +91,12 @@ impl ResourceChangeBuilder {
         &self.action
     }
     /// <p>The ID of the resource, as defined in the CloudFormation template.</p>
-    pub fn logical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the resource, as defined in the CloudFormation template.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logical_resource_id = input;
         self
     }
@@ -113,18 +105,12 @@ impl ResourceChangeBuilder {
         &self.logical_resource_id
     }
     /// <p>The ID of the resource, if it was already created.</p>
-    pub fn physical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn physical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.physical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the resource, if it was already created.</p>
-    pub fn set_physical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_physical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.physical_resource_id = input;
         self
     }
@@ -133,18 +119,12 @@ impl ResourceChangeBuilder {
         &self.physical_resource_id
     }
     /// <p>The type of resource.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -158,10 +138,7 @@ impl ResourceChangeBuilder {
         self
     }
     /// <p>If the change type is <code>Modify</code>, indicates whether the existing resource is deleted and replaced with a new one.</p>
-    pub fn set_replacement(
-        mut self,
-        input: ::std::option::Option<crate::types::Replacement>,
-    ) -> Self {
+    pub fn set_replacement(mut self, input: ::std::option::Option<crate::types::Replacement>) -> Self {
         self.replacement = input;
         self
     }
@@ -181,17 +158,12 @@ impl ResourceChangeBuilder {
         self
     }
     /// <p>The change scope.</p>
-    pub fn set_scope(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>,
-    ) -> Self {
+    pub fn set_scope(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>) -> Self {
         self.scope = input;
         self
     }
     /// <p>The change scope.</p>
-    pub fn get_scope(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>> {
+    pub fn get_scope(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>> {
         &self.scope
     }
     /// Appends an item to `details`.
@@ -206,17 +178,12 @@ impl ResourceChangeBuilder {
         self
     }
     /// <p>Information about the resource changes.</p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceChangeDetail>>,
-    ) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceChangeDetail>>) -> Self {
         self.details = input;
         self
     }
     /// <p>Information about the resource changes.</p>
-    pub fn get_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceChangeDetail>> {
+    pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceChangeDetail>> {
         &self.details
     }
     /// Consumes the builder and constructs a [`ResourceChange`](crate::types::ResourceChange).

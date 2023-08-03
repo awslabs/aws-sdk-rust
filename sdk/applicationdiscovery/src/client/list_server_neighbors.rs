@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_server_neighbors::ListServerNeighborsOutput::next_token): <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     ///   - [`known_dependency_count(i64)`](crate::operation::list_server_neighbors::ListServerNeighborsOutput::known_dependency_count): <p>Count of distinct servers that are one hop away from the given server.</p>
     /// - On failure, responds with [`SdkError<ListServerNeighborsError>`](crate::operation::list_server_neighbors::ListServerNeighborsError)
-    pub fn list_server_neighbors(
-        &self,
-    ) -> crate::operation::list_server_neighbors::builders::ListServerNeighborsFluentBuilder {
-        crate::operation::list_server_neighbors::builders::ListServerNeighborsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_server_neighbors(&self) -> crate::operation::list_server_neighbors::builders::ListServerNeighborsFluentBuilder {
+        crate::operation::list_server_neighbors::builders::ListServerNeighborsFluentBuilder::new(self.handle.clone())
     }
 }

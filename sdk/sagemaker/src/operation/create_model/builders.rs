@@ -10,10 +10,7 @@ impl CreateModelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_model::CreateModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_model::CreateModelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_model();
         fluent_builder.inner = self;
@@ -50,10 +47,7 @@ impl CreateModelFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_model::CreateModel,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_model::CreateModel, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError>,
     > {
         let handle = self.handle.clone();
@@ -64,10 +58,7 @@ impl CreateModelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -109,10 +100,7 @@ impl CreateModelFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_model::CreateModel,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_model::CreateModel, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError>,
     > {
         self.customize_middleware().await
@@ -137,17 +125,12 @@ impl CreateModelFluentBuilder {
         self
     }
     /// <p>The location of the primary docker image containing inference code, associated artifacts, and custom environment map that the inference code uses when the model is deployed for predictions. </p>
-    pub fn set_primary_container(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerDefinition>,
-    ) -> Self {
+    pub fn set_primary_container(mut self, input: ::std::option::Option<crate::types::ContainerDefinition>) -> Self {
         self.inner = self.inner.set_primary_container(input);
         self
     }
     /// <p>The location of the primary docker image containing inference code, associated artifacts, and custom environment map that the inference code uses when the model is deployed for predictions. </p>
-    pub fn get_primary_container(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerDefinition> {
+    pub fn get_primary_container(&self) -> &::std::option::Option<crate::types::ContainerDefinition> {
         self.inner.get_primary_container()
     }
     /// Appends an item to `Containers`.
@@ -160,58 +143,39 @@ impl CreateModelFluentBuilder {
         self
     }
     /// <p>Specifies the containers in the inference pipeline.</p>
-    pub fn set_containers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>,
-    ) -> Self {
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>) -> Self {
         self.inner = self.inner.set_containers(input);
         self
     }
     /// <p>Specifies the containers in the inference pipeline.</p>
-    pub fn get_containers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>> {
         self.inner.get_containers()
     }
     /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
-    pub fn inference_execution_config(
-        mut self,
-        input: crate::types::InferenceExecutionConfig,
-    ) -> Self {
+    pub fn inference_execution_config(mut self, input: crate::types::InferenceExecutionConfig) -> Self {
         self.inner = self.inner.inference_execution_config(input);
         self
     }
     /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
-    pub fn set_inference_execution_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceExecutionConfig>,
-    ) -> Self {
+    pub fn set_inference_execution_config(mut self, input: ::std::option::Option<crate::types::InferenceExecutionConfig>) -> Self {
         self.inner = self.inner.set_inference_execution_config(input);
         self
     }
     /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
-    pub fn get_inference_execution_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceExecutionConfig> {
+    pub fn get_inference_execution_config(&self) -> &::std::option::Option<crate::types::InferenceExecutionConfig> {
         self.inner.get_inference_execution_config()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
     /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
     /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     /// </note>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
@@ -231,10 +195,7 @@ impl CreateModelFluentBuilder {
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

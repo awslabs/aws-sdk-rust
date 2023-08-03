@@ -23,17 +23,14 @@ impl ListXssMatchSetsInput {
 }
 impl ListXssMatchSetsInput {
     /// Creates a new builder-style object to manufacture [`ListXssMatchSetsInput`](crate::operation::list_xss_match_sets::ListXssMatchSetsInput).
-    pub fn builder() -> crate::operation::list_xss_match_sets::builders::ListXssMatchSetsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_xss_match_sets::builders::ListXssMatchSetsInputBuilder {
         crate::operation::list_xss_match_sets::builders::ListXssMatchSetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListXssMatchSetsInput`](crate::operation::list_xss_match_sets::ListXssMatchSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListXssMatchSetsInputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -70,15 +67,10 @@ impl ListXssMatchSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListXssMatchSetsInput`](crate::operation::list_xss_match_sets::ListXssMatchSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_xss_match_sets::ListXssMatchSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_xss_match_sets::ListXssMatchSetsInput {
-                next_marker: self.next_marker,
-                limit: self.limit.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_xss_match_sets::ListXssMatchSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_xss_match_sets::ListXssMatchSetsInput {
+            next_marker: self.next_marker,
+            limit: self.limit.unwrap_or_default(),
+        })
     }
 }

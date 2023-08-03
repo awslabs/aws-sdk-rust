@@ -11,11 +11,7 @@ pub fn ser_object_lock_retention(
     }
     if let Some(var_2) = &input.retain_until_date {
         let mut inner_writer = scope.start_el("RetainUntilDate").finish();
-        inner_writer.data(
-            var_2
-                .fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?
-                .as_ref(),
-        );
+        inner_writer.data(var_2.fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref());
     }
     scope.finish();
     Ok(())

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`registry_arn(Option<String>)`](crate::operation::delete_registry::DeleteRegistryOutput::registry_arn): <p>The Amazon Resource Name (ARN) of the registry being deleted.</p>
     ///   - [`status(Option<RegistryStatus>)`](crate::operation::delete_registry::DeleteRegistryOutput::status): <p>The status of the registry. A successful operation will return the <code>Deleting</code> status.</p>
     /// - On failure, responds with [`SdkError<DeleteRegistryError>`](crate::operation::delete_registry::DeleteRegistryError)
-    pub fn delete_registry(
-        &self,
-    ) -> crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder {
-        crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_registry(&self) -> crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder {
+        crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder::new(self.handle.clone())
     }
 }

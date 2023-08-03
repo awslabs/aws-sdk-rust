@@ -44,9 +44,7 @@ impl ForecastResult {
 
 /// A builder for [`ForecastResult`](crate::types::ForecastResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ForecastResultBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) mean_value: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl ForecastResultBuilder {
         self
     }
     /// <p>The period of time that the forecast covers.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.time_period = input;
         self
     }
@@ -86,47 +81,31 @@ impl ForecastResultBuilder {
         &self.mean_value
     }
     /// <p>The lower limit for the prediction interval. </p>
-    pub fn prediction_interval_lower_bound(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prediction_interval_lower_bound(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prediction_interval_lower_bound = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The lower limit for the prediction interval. </p>
-    pub fn set_prediction_interval_lower_bound(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prediction_interval_lower_bound(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prediction_interval_lower_bound = input;
         self
     }
     /// <p>The lower limit for the prediction interval. </p>
-    pub fn get_prediction_interval_lower_bound(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_prediction_interval_lower_bound(&self) -> &::std::option::Option<::std::string::String> {
         &self.prediction_interval_lower_bound
     }
     /// <p>The upper limit for the prediction interval. </p>
-    pub fn prediction_interval_upper_bound(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prediction_interval_upper_bound(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prediction_interval_upper_bound = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upper limit for the prediction interval. </p>
-    pub fn set_prediction_interval_upper_bound(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prediction_interval_upper_bound(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prediction_interval_upper_bound = input;
         self
     }
     /// <p>The upper limit for the prediction interval. </p>
-    pub fn get_prediction_interval_upper_bound(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_prediction_interval_upper_bound(&self) -> &::std::option::Option<::std::string::String> {
         &self.prediction_interval_upper_bound
     }
     /// Consumes the builder and constructs a [`ForecastResult`](crate::types::ForecastResult).

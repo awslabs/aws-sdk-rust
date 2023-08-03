@@ -46,9 +46,7 @@ impl DescribeTrailsInput {
 
 /// A builder for [`DescribeTrailsInput`](crate::operation::describe_trails::DescribeTrailsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrailsInputBuilder {
     pub(crate) trail_name_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) include_shadow_trails: ::std::option::Option<bool>,
@@ -67,10 +65,7 @@ impl DescribeTrailsInputBuilder {
     /// </ul> <note>
     /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current Region and current account. To return information about a trail in another Region, you must specify its trail ARN.</p>
     /// </note>
-    pub fn trail_name_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trail_name_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.trail_name_list.unwrap_or_default();
         v.push(input.into());
         self.trail_name_list = ::std::option::Option::Some(v);
@@ -85,10 +80,7 @@ impl DescribeTrailsInputBuilder {
     /// </ul> <note>
     /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current Region and current account. To return information about a trail in another Region, you must specify its trail ARN.</p>
     /// </note>
-    pub fn set_trail_name_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_trail_name_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.trail_name_list = input;
         self
     }
@@ -101,9 +93,7 @@ impl DescribeTrailsInputBuilder {
     /// </ul> <note>
     /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current Region and current account. To return information about a trail in another Region, you must specify its trail ARN.</p>
     /// </note>
-    pub fn get_trail_name_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_trail_name_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.trail_name_list
     }
     /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a Region of a trail that was created in a different Region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and Region replication trails will not be returned. The default is true.</p>
@@ -123,10 +113,7 @@ impl DescribeTrailsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTrailsInput`](crate::operation::describe_trails::DescribeTrailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_trails::DescribeTrailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_trails::DescribeTrailsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_trails::DescribeTrailsInput {
             trail_name_list: self.trail_name_list,
             include_shadow_trails: self.include_shadow_trails,

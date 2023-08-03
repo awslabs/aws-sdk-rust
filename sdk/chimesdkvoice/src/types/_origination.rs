@@ -32,9 +32,7 @@ impl Origination {
 
 /// A builder for [`Origination`](crate::types::Origination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginationBuilder {
     pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::OriginationRoute>>,
     pub(crate) disabled: ::std::option::Option<bool>,
@@ -52,17 +50,12 @@ impl OriginationBuilder {
         self
     }
     /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1. Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
-    pub fn set_routes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OriginationRoute>>,
-    ) -> Self {
+    pub fn set_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OriginationRoute>>) -> Self {
         self.routes = input;
         self
     }
     /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1. Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
-    pub fn get_routes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginationRoute>> {
+    pub fn get_routes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginationRoute>> {
         &self.routes
     }
     /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime SDK Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>

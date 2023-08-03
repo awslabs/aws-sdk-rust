@@ -30,9 +30,7 @@ impl UpdateProgramTransition {
 
 /// A builder for [`UpdateProgramTransition`](crate::types::UpdateProgramTransition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProgramTransitionBuilder {
     pub(crate) scheduled_start_time_millis: ::std::option::Option<i64>,
     pub(crate) duration_millis: ::std::option::Option<i64>,

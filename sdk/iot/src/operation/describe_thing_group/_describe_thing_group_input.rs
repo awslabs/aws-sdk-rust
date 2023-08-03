@@ -15,34 +15,25 @@ impl DescribeThingGroupInput {
 }
 impl DescribeThingGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeThingGroupInput`](crate::operation::describe_thing_group::DescribeThingGroupInput).
-    pub fn builder(
-    ) -> crate::operation::describe_thing_group::builders::DescribeThingGroupInputBuilder {
+    pub fn builder() -> crate::operation::describe_thing_group::builders::DescribeThingGroupInputBuilder {
         crate::operation::describe_thing_group::builders::DescribeThingGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeThingGroupInput`](crate::operation::describe_thing_group::DescribeThingGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeThingGroupInputBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeThingGroupInputBuilder {
     /// <p>The name of the thing group.</p>
-    pub fn thing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the thing group.</p>
-    pub fn set_thing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_group_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DescribeThingGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeThingGroupInput`](crate::operation::describe_thing_group::DescribeThingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_thing_group::DescribeThingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_thing_group::DescribeThingGroupInput {
-                thing_group_name: self.thing_group_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_thing_group::DescribeThingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_thing_group::DescribeThingGroupInput {
+            thing_group_name: self.thing_group_name,
+        })
     }
 }

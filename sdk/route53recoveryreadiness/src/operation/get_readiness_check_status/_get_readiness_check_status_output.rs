@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for GetReadinessCheckStatusOutput {
 }
 impl GetReadinessCheckStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetReadinessCheckStatusOutput`](crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusOutputBuilder {
         crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetReadinessCheckStatusOutput`](crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReadinessCheckStatusOutputBuilder {
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,10 +70,7 @@ impl GetReadinessCheckStatusOutputBuilder {
         self
     }
     /// <p>Top level messages for readiness check status</p>
-    pub fn set_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
-    ) -> Self {
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
         self.messages = input;
         self
     }
@@ -125,17 +118,12 @@ impl GetReadinessCheckStatusOutputBuilder {
         self
     }
     /// <p>Summary of the readiness of resources.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceResult>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceResult>>) -> Self {
         self.resources = input;
         self
     }
     /// <p>Summary of the readiness of resources.</p>
-    pub fn get_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceResult>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceResult>> {
         &self.resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -148,9 +136,7 @@ impl GetReadinessCheckStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetReadinessCheckStatusOutput`](crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput {
+    pub fn build(self) -> crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput {
         crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput {
             messages: self.messages,
             next_token: self.next_token,

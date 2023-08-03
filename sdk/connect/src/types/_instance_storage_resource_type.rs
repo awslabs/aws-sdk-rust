@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InstanceStorageResourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -88,14 +82,10 @@ impl ::std::convert::From<&str> for InstanceStorageResourceType {
             "CONTACT_EVALUATIONS" => InstanceStorageResourceType::ContactEvaluations,
             "CONTACT_TRACE_RECORDS" => InstanceStorageResourceType::ContactTraceRecords,
             "MEDIA_STREAMS" => InstanceStorageResourceType::MediaStreams,
-            "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS" => {
-                InstanceStorageResourceType::RealTimeContactAnalysisSegments
-            }
+            "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS" => InstanceStorageResourceType::RealTimeContactAnalysisSegments,
             "SCHEDULED_REPORTS" => InstanceStorageResourceType::ScheduledReports,
             "SCREEN_RECORDINGS" => InstanceStorageResourceType::ScreenRecordings,
-            other => InstanceStorageResourceType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InstanceStorageResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -117,9 +107,7 @@ impl InstanceStorageResourceType {
             InstanceStorageResourceType::ContactEvaluations => "CONTACT_EVALUATIONS",
             InstanceStorageResourceType::ContactTraceRecords => "CONTACT_TRACE_RECORDS",
             InstanceStorageResourceType::MediaStreams => "MEDIA_STREAMS",
-            InstanceStorageResourceType::RealTimeContactAnalysisSegments => {
-                "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS"
-            }
+            InstanceStorageResourceType::RealTimeContactAnalysisSegments => "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS",
             InstanceStorageResourceType::ScheduledReports => "SCHEDULED_REPORTS",
             InstanceStorageResourceType::ScreenRecordings => "SCREEN_RECORDINGS",
             InstanceStorageResourceType::Unknown(value) => value.as_str(),

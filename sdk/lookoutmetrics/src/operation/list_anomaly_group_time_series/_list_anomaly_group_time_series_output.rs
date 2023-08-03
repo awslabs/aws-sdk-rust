@@ -49,16 +49,14 @@ impl ::aws_http::request_id::RequestId for ListAnomalyGroupTimeSeriesOutput {
 }
 impl ListAnomalyGroupTimeSeriesOutput {
     /// Creates a new builder-style object to manufacture [`ListAnomalyGroupTimeSeriesOutput`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput).
-    pub fn builder() -> crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesOutputBuilder{
+    pub fn builder() -> crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesOutputBuilder {
         crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAnomalyGroupTimeSeriesOutput`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnomalyGroupTimeSeriesOutputBuilder {
     pub(crate) anomaly_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ pub struct ListAnomalyGroupTimeSeriesOutputBuilder {
 }
 impl ListAnomalyGroupTimeSeriesOutputBuilder {
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn set_anomaly_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_group_id = input;
         self
     }
@@ -107,27 +99,19 @@ impl ListAnomalyGroupTimeSeriesOutputBuilder {
     /// To override the contents of this collection use [`set_timestamp_list`](Self::set_timestamp_list).
     ///
     /// <p>Timestamps for the anomalous metrics.</p>
-    pub fn timestamp_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timestamp_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.timestamp_list.unwrap_or_default();
         v.push(input.into());
         self.timestamp_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Timestamps for the anomalous metrics.</p>
-    pub fn set_timestamp_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_timestamp_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.timestamp_list = input;
         self
     }
     /// <p>Timestamps for the anomalous metrics.</p>
-    pub fn get_timestamp_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_timestamp_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.timestamp_list
     }
     /// <p>The pagination token that's included if more results are available.</p>
@@ -156,17 +140,12 @@ impl ListAnomalyGroupTimeSeriesOutputBuilder {
         self
     }
     /// <p>A list of anomalous metrics.</p>
-    pub fn set_time_series_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeries>>,
-    ) -> Self {
+    pub fn set_time_series_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeries>>) -> Self {
         self.time_series_list = input;
         self
     }
     /// <p>A list of anomalous metrics.</p>
-    pub fn get_time_series_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeries>> {
+    pub fn get_time_series_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeries>> {
         &self.time_series_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -179,9 +158,7 @@ impl ListAnomalyGroupTimeSeriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAnomalyGroupTimeSeriesOutput`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput {
+    pub fn build(self) -> crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput {
         crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput {
             anomaly_group_id: self.anomaly_group_id,
             metric_name: self.metric_name,

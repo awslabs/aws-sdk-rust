@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`stream_arn(impl ::std::convert::Into<String>)`](crate::operation::merge_shards::builders::MergeShardsFluentBuilder::stream_arn) / [`set_stream_arn(Option<String>)`](crate::operation::merge_shards::builders::MergeShardsFluentBuilder::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`MergeShardsOutput`](crate::operation::merge_shards::MergeShardsOutput)
     /// - On failure, responds with [`SdkError<MergeShardsError>`](crate::operation::merge_shards::MergeShardsError)
-    pub fn merge_shards(
-        &self,
-    ) -> crate::operation::merge_shards::builders::MergeShardsFluentBuilder {
+    pub fn merge_shards(&self) -> crate::operation::merge_shards::builders::MergeShardsFluentBuilder {
         crate::operation::merge_shards::builders::MergeShardsFluentBuilder::new(self.handle.clone())
     }
 }

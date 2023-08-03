@@ -50,40 +50,30 @@ impl ::aws_http::request_id::RequestId for GetRecommendationsOutput {
 }
 impl GetRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationsOutput`](crate::operation::get_recommendations::GetRecommendationsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder {
+    pub fn builder() -> crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder {
         crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecommendationsOutput`](crate::operation::get_recommendations::GetRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommendationsOutputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) profile_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) profile_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
+    pub(crate) recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     pub(crate) anomalies: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>,
     _request_id: Option<String>,
 }
 impl GetRecommendationsOutputBuilder {
     /// <p>The name of the profiling group the analysis data is about.</p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the profiling group the analysis data is about.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profiling_group_name = input;
         self
     }
@@ -97,10 +87,7 @@ impl GetRecommendationsOutputBuilder {
         self
     }
     /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_profile_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_profile_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.profile_start_time = input;
         self
     }
@@ -114,10 +101,7 @@ impl GetRecommendationsOutputBuilder {
         self
     }
     /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_profile_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_profile_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.profile_end_time = input;
         self
     }
@@ -137,17 +121,12 @@ impl GetRecommendationsOutputBuilder {
         self
     }
     /// <p>The list of recommendations that the analysis found for this profile.</p>
-    pub fn set_recommendations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
-    ) -> Self {
+    pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>) -> Self {
         self.recommendations = input;
         self
     }
     /// <p>The list of recommendations that the analysis found for this profile.</p>
-    pub fn get_recommendations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
+    pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
         &self.recommendations
     }
     /// Appends an item to `anomalies`.
@@ -162,10 +141,7 @@ impl GetRecommendationsOutputBuilder {
         self
     }
     /// <p> The list of anomalies that the analysis has found for this profile. </p>
-    pub fn set_anomalies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>,
-    ) -> Self {
+    pub fn set_anomalies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>) -> Self {
         self.anomalies = input;
         self
     }

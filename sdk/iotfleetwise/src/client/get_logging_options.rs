@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetLoggingOptionsOutput`](crate::operation::get_logging_options::GetLoggingOptionsOutput) with field(s):
     ///   - [`cloud_watch_log_delivery(Option<CloudWatchLogDeliveryOptions>)`](crate::operation::get_logging_options::GetLoggingOptionsOutput::cloud_watch_log_delivery): <p>Returns information about log delivery to Amazon CloudWatch Logs.</p>
     /// - On failure, responds with [`SdkError<GetLoggingOptionsError>`](crate::operation::get_logging_options::GetLoggingOptionsError)
-    pub fn get_logging_options(
-        &self,
-    ) -> crate::operation::get_logging_options::builders::GetLoggingOptionsFluentBuilder {
-        crate::operation::get_logging_options::builders::GetLoggingOptionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_logging_options(&self) -> crate::operation::get_logging_options::builders::GetLoggingOptionsFluentBuilder {
+        crate::operation::get_logging_options::builders::GetLoggingOptionsFluentBuilder::new(self.handle.clone())
     }
 }

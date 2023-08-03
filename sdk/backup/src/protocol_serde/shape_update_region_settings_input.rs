@@ -5,9 +5,7 @@ pub fn ser_update_region_settings_input(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.resource_type_management_preference {
         #[allow(unused_mut)]
-        let mut object_2 = object
-            .key("ResourceTypeManagementPreference")
-            .start_object();
+        let mut object_2 = object.key("ResourceTypeManagementPreference").start_object();
         for (key_3, value_4) in var_1 {
             {
                 object_2.key(key_3.as_str()).boolean(*value_4);

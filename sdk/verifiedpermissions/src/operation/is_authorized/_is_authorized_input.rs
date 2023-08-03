@@ -61,9 +61,7 @@ impl IsAuthorizedInput {
 
 /// A builder for [`IsAuthorizedInput`](crate::operation::is_authorized::IsAuthorizedInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IsAuthorizedInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<crate::types::EntityIdentifier>,
@@ -74,18 +72,12 @@ pub struct IsAuthorizedInputBuilder {
 }
 impl IsAuthorizedInputBuilder {
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -99,10 +91,7 @@ impl IsAuthorizedInputBuilder {
         self
     }
     /// <p>Specifies the principal for which the authorization decision is to be made.</p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityIdentifier>,
-    ) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
         self.principal = input;
         self
     }
@@ -116,10 +105,7 @@ impl IsAuthorizedInputBuilder {
         self
     }
     /// <p>Specifies the requested action to be authorized. For example, is the principal authorized to perform this action on the resource?</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionIdentifier>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::ActionIdentifier>) -> Self {
         self.action = input;
         self
     }
@@ -133,10 +119,7 @@ impl IsAuthorizedInputBuilder {
         self
     }
     /// <p>Specifies the resource for which the authorization decision is to be made.</p>
-    pub fn set_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityIdentifier>,
-    ) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
         self.resource = input;
         self
     }
@@ -150,10 +133,7 @@ impl IsAuthorizedInputBuilder {
         self
     }
     /// <p>Specifies additional context that can be used to make more granular authorization decisions.</p>
-    pub fn set_context(
-        mut self,
-        input: ::std::option::Option<crate::types::ContextDefinition>,
-    ) -> Self {
+    pub fn set_context(mut self, input: ::std::option::Option<crate::types::ContextDefinition>) -> Self {
         self.context = input;
         self
     }
@@ -171,10 +151,7 @@ impl IsAuthorizedInputBuilder {
     /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
     /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
     /// </note>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<crate::types::EntitiesDefinition>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<crate::types::EntitiesDefinition>) -> Self {
         self.entities = input;
         self
     }
@@ -185,12 +162,7 @@ impl IsAuthorizedInputBuilder {
         &self.entities
     }
     /// Consumes the builder and constructs a [`IsAuthorizedInput`](crate::operation::is_authorized::IsAuthorizedInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::is_authorized::IsAuthorizedInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::is_authorized::IsAuthorizedInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::is_authorized::IsAuthorizedInput {
             policy_store_id: self.policy_store_id,
             principal: self.principal,

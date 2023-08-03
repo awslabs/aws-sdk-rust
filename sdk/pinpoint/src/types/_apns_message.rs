@@ -40,9 +40,7 @@ pub struct ApnsMessage {
     pub collapse_id: ::std::option::Option<::std::string::String>,
     /// <p>The JSON payload to use for a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
     #[doc(hidden)]
-    pub data: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub data: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The URL of an image or video to display in the push notification.</p>
     #[doc(hidden)]
     pub media_url: ::std::option::Option<::std::string::String>,
@@ -72,9 +70,7 @@ pub struct ApnsMessage {
     pub sound: ::std::option::Option<::std::string::String>,
     /// <p>The default message variables to use in the notification message. You can override these default variables with individual address variables.</p>
     #[doc(hidden)]
-    pub substitutions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The key that represents your app-specific identifier for grouping notifications. If you provide a Notification Content app extension, you can use this value to group your notifications together.</p>
     #[doc(hidden)]
     pub thread_id: ::std::option::Option<::std::string::String>,
@@ -131,11 +127,7 @@ impl ApnsMessage {
         self.collapse_id.as_deref()
     }
     /// <p>The JSON payload to use for a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn data(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn data(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.data.as_ref()
     }
     /// <p>The URL of an image or video to display in the push notification.</p>
@@ -174,9 +166,7 @@ impl ApnsMessage {
     /// <p>The default message variables to use in the notification message. You can override these default variables with individual address variables.</p>
     pub fn substitutions(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.substitutions.as_ref()
     }
     /// <p>The key that represents your app-specific identifier for grouping notifications. If you provide a Notification Content app extension, you can use this value to group your notifications together.</p>
@@ -206,9 +196,7 @@ impl ApnsMessage {
 
 /// A builder for [`ApnsMessage`](crate::types::ApnsMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApnsMessageBuilder {
     pub(crate) apns_push_type: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<crate::types::Action>,
@@ -216,18 +204,14 @@ pub struct ApnsMessageBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) collapse_id: ::std::option::Option<::std::string::String>,
-    pub(crate) data: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) data: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) media_url: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_authentication_method: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<::std::string::String>,
     pub(crate) raw_content: ::std::option::Option<::std::string::String>,
     pub(crate) silent_push: ::std::option::Option<bool>,
     pub(crate) sound: ::std::option::Option<::std::string::String>,
-    pub(crate) substitutions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) thread_id: ::std::option::Option<::std::string::String>,
     pub(crate) time_to_live: ::std::option::Option<i32>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
@@ -245,10 +229,7 @@ impl ApnsMessageBuilder {
     /// </ul>
     /// <p>Amazon Pinpoint specifies this value in the apns-push-type request header when it sends the notification message to APNs. If you don't specify a value for this property, Amazon Pinpoint sets the value to alert or background automatically, based on the value that you specify for the SilentPush or RawContent property of the message.</p>
     /// <p>For more information about the apns-push-type request header, see <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns">Sending Notification Requests to APNs</a> on the Apple Developer website.</p>
-    pub fn apns_push_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn apns_push_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.apns_push_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -263,10 +244,7 @@ impl ApnsMessageBuilder {
     /// </ul>
     /// <p>Amazon Pinpoint specifies this value in the apns-push-type request header when it sends the notification message to APNs. If you don't specify a value for this property, Amazon Pinpoint sets the value to alert or background automatically, based on the value that you specify for the SilentPush or RawContent property of the message.</p>
     /// <p>For more information about the apns-push-type request header, see <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns">Sending Notification Requests to APNs</a> on the Apple Developer website.</p>
-    pub fn set_apns_push_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_apns_push_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.apns_push_type = input;
         self
     }
@@ -377,32 +355,19 @@ impl ApnsMessageBuilder {
     /// To override the contents of this collection use [`set_data`](Self::set_data).
     ///
     /// <p>The JSON payload to use for a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn data(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.data.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.data = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The JSON payload to use for a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.data = input;
         self
     }
     /// <p>The JSON payload to use for a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn get_data(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_data(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.data
     }
     /// <p>The URL of an image or video to display in the push notification.</p>
@@ -420,25 +385,17 @@ impl ApnsMessageBuilder {
         &self.media_url
     }
     /// <p>The authentication method that you want Amazon Pinpoint to use when authenticating with APNs, CERTIFICATE or TOKEN.</p>
-    pub fn preferred_authentication_method(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_authentication_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_authentication_method = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authentication method that you want Amazon Pinpoint to use when authenticating with APNs, CERTIFICATE or TOKEN.</p>
-    pub fn set_preferred_authentication_method(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_authentication_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_authentication_method = input;
         self
     }
     /// <p>The authentication method that you want Amazon Pinpoint to use when authenticating with APNs, CERTIFICATE or TOKEN.</p>
-    pub fn get_preferred_authentication_method(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_authentication_method(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_authentication_method
     }
     /// <p>para&gt;5 - Low priority, the notification might be delayed, delivered as part of a group, or throttled.</p>/listitem&gt;
@@ -529,11 +486,7 @@ impl ApnsMessageBuilder {
     /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
     ///
     /// <p>The default message variables to use in the notification message. You can override these default variables with individual address variables.</p>
-    pub fn substitutions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn substitutions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.substitutions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.substitutions = ::std::option::Option::Some(hash_map);
@@ -542,12 +495,7 @@ impl ApnsMessageBuilder {
     /// <p>The default message variables to use in the notification message. You can override these default variables with individual address variables.</p>
     pub fn set_substitutions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.substitutions = input;
         self
@@ -555,9 +503,7 @@ impl ApnsMessageBuilder {
     /// <p>The default message variables to use in the notification message. You can override these default variables with individual address variables.</p>
     pub fn get_substitutions(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.substitutions
     }
     /// <p>The key that represents your app-specific identifier for grouping notifications. If you provide a Notification Content app extension, you can use this value to group your notifications together.</p>

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AddTagsToOnPremisesInstancesOutput {
 }
 impl AddTagsToOnPremisesInstancesOutput {
     /// Creates a new builder-style object to manufacture [`AddTagsToOnPremisesInstancesOutput`](crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesOutput).
-    pub fn builder() -> crate::operation::add_tags_to_on_premises_instances::builders::AddTagsToOnPremisesInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::add_tags_to_on_premises_instances::builders::AddTagsToOnPremisesInstancesOutputBuilder {
         crate::operation::add_tags_to_on_premises_instances::builders::AddTagsToOnPremisesInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddTagsToOnPremisesInstancesOutput`](crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddTagsToOnPremisesInstancesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl AddTagsToOnPremisesInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddTagsToOnPremisesInstancesOutput`](crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesOutput
-    {
+    pub fn build(self) -> crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesOutput {
         crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesOutput {
             _request_id: self._request_id,
         }

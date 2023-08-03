@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`resource_arn(Option<String>)`](crate::operation::describe_recipe::DescribeRecipeOutput::resource_arn): <p>The ARN of the recipe.</p>
     ///   - [`recipe_version(Option<String>)`](crate::operation::describe_recipe::DescribeRecipeOutput::recipe_version): <p>The recipe version identifier.</p>
     /// - On failure, responds with [`SdkError<DescribeRecipeError>`](crate::operation::describe_recipe::DescribeRecipeError)
-    pub fn describe_recipe(
-        &self,
-    ) -> crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder {
-        crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_recipe(&self) -> crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder {
+        crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::new(self.handle.clone())
     }
 }

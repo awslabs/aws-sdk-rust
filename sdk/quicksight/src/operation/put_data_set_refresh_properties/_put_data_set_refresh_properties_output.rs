@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for PutDataSetRefreshPropertiesOutput {
 }
 impl PutDataSetRefreshPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`PutDataSetRefreshPropertiesOutput`](crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesOutput).
-    pub fn builder() -> crate::operation::put_data_set_refresh_properties::builders::PutDataSetRefreshPropertiesOutputBuilder{
+    pub fn builder() -> crate::operation::put_data_set_refresh_properties::builders::PutDataSetRefreshPropertiesOutputBuilder {
         crate::operation::put_data_set_refresh_properties::builders::PutDataSetRefreshPropertiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutDataSetRefreshPropertiesOutput`](crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDataSetRefreshPropertiesOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -82,9 +80,7 @@ impl PutDataSetRefreshPropertiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutDataSetRefreshPropertiesOutput`](crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesOutput {
+    pub fn build(self) -> crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesOutput {
         crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesOutput {
             request_id: self.request_id,
             status: self.status.unwrap_or_default(),

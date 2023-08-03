@@ -29,7 +29,7 @@ impl GetResourceConfigHistoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourceConfigHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryInputBuilder,
+    inner: crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryInputBuilder,
 }
 impl GetResourceConfigHistoryFluentBuilder {
     /// Creates a new `GetResourceConfigHistory`.
@@ -40,7 +40,7 @@ impl GetResourceConfigHistoryFluentBuilder {
         }
     }
     /// Access the GetResourceConfigHistory as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl GetResourceConfigHistoryFluentBuilder {
             crate::operation::get_resource_config_history::GetResourceConfigHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_config_history::GetResourceConfigHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_config_history::GetResourceConfigHistoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl GetResourceConfigHistoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl GetResourceConfigHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_config_history::GetResourceConfigHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_config_history::GetResourceConfigHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_config_history::GetResourceConfigHistoryError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl GetResourceConfigHistoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_config_history::GetResourceConfigHistoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_config_history::GetResourceConfigHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_config_history::GetResourceConfigHistoryError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +108,14 @@ impl GetResourceConfigHistoryFluentBuilder {
             crate::operation::get_resource_config_history::GetResourceConfigHistory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_config_history::GetResourceConfigHistoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_config_history::GetResourceConfigHistoryError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_resource_config_history::paginator::GetResourceConfigHistoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_resource_config_history::paginator::GetResourceConfigHistoryPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::get_resource_config_history::paginator::GetResourceConfigHistoryPaginator {
         crate::operation::get_resource_config_history::paginator::GetResourceConfigHistoryPaginator::new(self.handle, self.inner)
     }
     /// <p>The resource type.</p>
@@ -138,10 +124,7 @@ impl GetResourceConfigHistoryFluentBuilder {
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -169,10 +152,7 @@ impl GetResourceConfigHistoryFluentBuilder {
         self
     }
     /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
-    pub fn set_later_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_later_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_later_time(input);
         self
     }
@@ -186,10 +166,7 @@ impl GetResourceConfigHistoryFluentBuilder {
         self
     }
     /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
-    pub fn set_earlier_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_earlier_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_earlier_time(input);
         self
     }
@@ -203,17 +180,12 @@ impl GetResourceConfigHistoryFluentBuilder {
         self
     }
     /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
-    pub fn set_chronological_order(
-        mut self,
-        input: ::std::option::Option<crate::types::ChronologicalOrder>,
-    ) -> Self {
+    pub fn set_chronological_order(mut self, input: ::std::option::Option<crate::types::ChronologicalOrder>) -> Self {
         self.inner = self.inner.set_chronological_order(input);
         self
     }
     /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
-    pub fn get_chronological_order(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChronologicalOrder> {
+    pub fn get_chronological_order(&self) -> &::std::option::Option<crate::types::ChronologicalOrder> {
         self.inner.get_chronological_order()
     }
     /// <p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>

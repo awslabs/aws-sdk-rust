@@ -79,9 +79,7 @@ impl EndpointSetting {
 
 /// A builder for [`EndpointSetting`](crate::types::EndpointSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointSettingBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::EndpointSettingTypeValue>,
@@ -114,10 +112,7 @@ impl EndpointSettingBuilder {
         self
     }
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointSettingTypeValue>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::EndpointSettingTypeValue>) -> Self {
         self.r#type = input;
         self
     }
@@ -137,17 +132,12 @@ impl EndpointSettingBuilder {
         self
     }
     /// <p>Enumerated values to use for this endpoint.</p>
-    pub fn set_enum_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_enum_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.enum_values = input;
         self
     }
     /// <p>Enumerated values to use for this endpoint.</p>
-    pub fn get_enum_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enum_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enum_values
     }
     /// <p>A value that marks this endpoint setting as sensitive.</p>
@@ -179,18 +169,12 @@ impl EndpointSettingBuilder {
         &self.units
     }
     /// <p>The relevance or validity of an endpoint setting for an engine name and its endpoint type.</p>
-    pub fn applicability(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn applicability(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.applicability = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The relevance or validity of an endpoint setting for an engine name and its endpoint type.</p>
-    pub fn set_applicability(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_applicability(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.applicability = input;
         self
     }
@@ -227,18 +211,12 @@ impl EndpointSettingBuilder {
         &self.int_value_max
     }
     /// <p>The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }

@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`auto_scaling_group_recommendations(Option<Vec<AutoScalingGroupRecommendation>>)`](crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsOutput::auto_scaling_group_recommendations): <p>An array of objects that describe Auto Scaling group recommendations.</p>
     ///   - [`errors(Option<Vec<GetRecommendationError>>)`](crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsOutput::errors): <p>An array of objects that describe errors of the request.</p>  <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group.</p>
     /// - On failure, responds with [`SdkError<GetAutoScalingGroupRecommendationsError>`](crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError)
-    pub fn get_auto_scaling_group_recommendations(&self) -> crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsFluentBuilder{
+    pub fn get_auto_scaling_group_recommendations(
+        &self,
+    ) -> crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsFluentBuilder {
         crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

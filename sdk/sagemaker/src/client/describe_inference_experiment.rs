@@ -22,7 +22,9 @@ impl super::Client {
     ///   - [`shadow_mode_config(Option<ShadowModeConfig>)`](crate::operation::describe_inference_experiment::DescribeInferenceExperimentOutput::shadow_mode_config): <p> The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates. </p>
     ///   - [`kms_key(Option<String>)`](crate::operation::describe_inference_experiment::DescribeInferenceExperimentOutput::kms_key): <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>. </p>
     /// - On failure, responds with [`SdkError<DescribeInferenceExperimentError>`](crate::operation::describe_inference_experiment::DescribeInferenceExperimentError)
-    pub fn describe_inference_experiment(&self) -> crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentFluentBuilder{
+    pub fn describe_inference_experiment(
+        &self,
+    ) -> crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentFluentBuilder {
         crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentFluentBuilder::new(self.handle.clone())
     }
 }

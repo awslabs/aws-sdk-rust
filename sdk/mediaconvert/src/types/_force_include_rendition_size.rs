@@ -30,9 +30,7 @@ impl ForceIncludeRenditionSize {
 
 /// A builder for [`ForceIncludeRenditionSize`](crate::types::ForceIncludeRenditionSize).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ForceIncludeRenditionSizeBuilder {
     pub(crate) height: ::std::option::Option<i32>,
     pub(crate) width: ::std::option::Option<i32>,

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`workload_summaries(Option<Vec<WorkloadSummary>>)`](crate::operation::list_workloads::ListWorkloadsOutput::workload_summaries): <p>A list of workload summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workloads::ListWorkloadsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListWorkloadsError>`](crate::operation::list_workloads::ListWorkloadsError)
-    pub fn list_workloads(
-        &self,
-    ) -> crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder {
-        crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_workloads(&self) -> crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder {
+        crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::new(self.handle.clone())
     }
 }

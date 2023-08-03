@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`disabled_reason(impl ::std::convert::Into<String>)`](crate::operation::update_standards_control::builders::UpdateStandardsControlFluentBuilder::disabled_reason) / [`set_disabled_reason(Option<String>)`](crate::operation::update_standards_control::builders::UpdateStandardsControlFluentBuilder::set_disabled_reason): <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
     /// - On success, responds with [`UpdateStandardsControlOutput`](crate::operation::update_standards_control::UpdateStandardsControlOutput)
     /// - On failure, responds with [`SdkError<UpdateStandardsControlError>`](crate::operation::update_standards_control::UpdateStandardsControlError)
-    pub fn update_standards_control(
-        &self,
-    ) -> crate::operation::update_standards_control::builders::UpdateStandardsControlFluentBuilder
-    {
+    pub fn update_standards_control(&self) -> crate::operation::update_standards_control::builders::UpdateStandardsControlFluentBuilder {
         crate::operation::update_standards_control::builders::UpdateStandardsControlFluentBuilder::new(self.handle.clone())
     }
 }

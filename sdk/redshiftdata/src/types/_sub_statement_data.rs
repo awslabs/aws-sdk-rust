@@ -93,9 +93,7 @@ impl SubStatementData {
 
 /// A builder for [`SubStatementData`](crate::types::SubStatementData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubStatementDataBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) duration: ::std::option::Option<i64>,
@@ -158,10 +156,7 @@ impl SubStatementDataBuilder {
         self
     }
     /// <p>The status of the SQL statement. An example is the that the SQL statement finished. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StatementStatusString>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatementStatusString>) -> Self {
         self.status = input;
         self
     }
@@ -175,10 +170,7 @@ impl SubStatementDataBuilder {
         self
     }
     /// <p>The date and time (UTC) the statement was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -192,10 +184,7 @@ impl SubStatementDataBuilder {
         self
     }
     /// <p>The date and time (UTC) that the statement metadata was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

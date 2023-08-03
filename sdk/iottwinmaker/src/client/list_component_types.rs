@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_component_types::ListComponentTypesOutput::next_token): <p>The string that specifies the next page of results.</p>
     ///   - [`max_results(Option<i32>)`](crate::operation::list_component_types::ListComponentTypesOutput::max_results): <p>Specifies the maximum number of results to display.</p>
     /// - On failure, responds with [`SdkError<ListComponentTypesError>`](crate::operation::list_component_types::ListComponentTypesError)
-    pub fn list_component_types(
-        &self,
-    ) -> crate::operation::list_component_types::builders::ListComponentTypesFluentBuilder {
-        crate::operation::list_component_types::builders::ListComponentTypesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_component_types(&self) -> crate::operation::list_component_types::builders::ListComponentTypesFluentBuilder {
+        crate::operation::list_component_types::builders::ListComponentTypesFluentBuilder::new(self.handle.clone())
     }
 }

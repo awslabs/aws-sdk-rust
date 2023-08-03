@@ -54,17 +54,14 @@ impl AssociateMacSecKeyInput {
 }
 impl AssociateMacSecKeyInput {
     /// Creates a new builder-style object to manufacture [`AssociateMacSecKeyInput`](crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput).
-    pub fn builder(
-    ) -> crate::operation::associate_mac_sec_key::builders::AssociateMacSecKeyInputBuilder {
+    pub fn builder() -> crate::operation::associate_mac_sec_key::builders::AssociateMacSecKeyInputBuilder {
         crate::operation::associate_mac_sec_key::builders::AssociateMacSecKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateMacSecKeyInput`](crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateMacSecKeyInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
@@ -74,19 +71,13 @@ pub struct AssociateMacSecKeyInputBuilder {
 impl AssociateMacSecKeyInputBuilder {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -164,17 +155,13 @@ impl AssociateMacSecKeyInputBuilder {
     /// Consumes the builder and constructs a [`AssociateMacSecKeyInput`](crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput {
-                connection_id: self.connection_id,
-                secret_arn: self.secret_arn,
-                ckn: self.ckn,
-                cak: self.cak,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput {
+            connection_id: self.connection_id,
+            secret_arn: self.secret_arn,
+            ckn: self.ckn,
+            cak: self.cak,
+        })
     }
 }

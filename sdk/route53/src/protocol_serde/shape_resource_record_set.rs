@@ -238,10 +238,7 @@ pub fn ser_resource_record_set(
         for list_item_25 in var_24 {
             {
                 let inner_writer = inner_writer.start_el("ResourceRecord");
-                crate::protocol_serde::shape_resource_record::ser_resource_record(
-                    list_item_25,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_resource_record::ser_resource_record(list_item_25, inner_writer)?
             }
         }
     }
@@ -259,10 +256,7 @@ pub fn ser_resource_record_set(
     }
     if let Some(var_29) = &input.cidr_routing_config {
         let inner_writer = scope.start_el("CidrRoutingConfig");
-        crate::protocol_serde::shape_cidr_routing_config::ser_cidr_routing_config(
-            var_29,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_cidr_routing_config::ser_cidr_routing_config(var_29, inner_writer)?
     }
     scope.finish();
     Ok(())

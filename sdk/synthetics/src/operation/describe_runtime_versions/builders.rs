@@ -26,8 +26,7 @@ impl DescribeRuntimeVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRuntimeVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsInputBuilder,
+    inner: crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsInputBuilder,
 }
 impl DescribeRuntimeVersionsFluentBuilder {
     /// Creates a new `DescribeRuntimeVersions`.
@@ -38,10 +37,7 @@ impl DescribeRuntimeVersionsFluentBuilder {
         }
     }
     /// Access the DescribeRuntimeVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeRuntimeVersionsFluentBuilder {
             crate::operation::describe_runtime_versions::DescribeRuntimeVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_runtime_versions::DescribeRuntimeVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_runtime_versions::DescribeRuntimeVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeRuntimeVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeRuntimeVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_runtime_versions::DescribeRuntimeVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_runtime_versions::DescribeRuntimeVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_runtime_versions::DescribeRuntimeVersionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeRuntimeVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_runtime_versions::DescribeRuntimeVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_runtime_versions::DescribeRuntimeVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_runtime_versions::DescribeRuntimeVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl DescribeRuntimeVersionsFluentBuilder {
             crate::operation::describe_runtime_versions::DescribeRuntimeVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_runtime_versions::DescribeRuntimeVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_runtime_versions::DescribeRuntimeVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_runtime_versions::paginator::DescribeRuntimeVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_runtime_versions::paginator::DescribeRuntimeVersionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_runtime_versions::paginator::DescribeRuntimeVersionsPaginator {
         crate::operation::describe_runtime_versions::paginator::DescribeRuntimeVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>

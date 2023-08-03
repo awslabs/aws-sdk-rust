@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for TestEventPatternOutput {
 }
 impl TestEventPatternOutput {
     /// Creates a new builder-style object to manufacture [`TestEventPatternOutput`](crate::operation::test_event_pattern::TestEventPatternOutput).
-    pub fn builder() -> crate::operation::test_event_pattern::builders::TestEventPatternOutputBuilder
-    {
+    pub fn builder() -> crate::operation::test_event_pattern::builders::TestEventPatternOutputBuilder {
         crate::operation::test_event_pattern::builders::TestEventPatternOutputBuilder::default()
     }
 }
 
 /// A builder for [`TestEventPatternOutput`](crate::operation::test_event_pattern::TestEventPatternOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestEventPatternOutputBuilder {
     pub(crate) result: ::std::option::Option<bool>,
     _request_id: Option<String>,

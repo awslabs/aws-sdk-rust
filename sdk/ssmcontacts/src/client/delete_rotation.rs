@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`rotation_id(impl ::std::convert::Into<String>)`](crate::operation::delete_rotation::builders::DeleteRotationFluentBuilder::rotation_id) / [`set_rotation_id(Option<String>)`](crate::operation::delete_rotation::builders::DeleteRotationFluentBuilder::set_rotation_id): <p>The Amazon Resource Name (ARN) of the on-call rotation to delete.</p>
     /// - On success, responds with [`DeleteRotationOutput`](crate::operation::delete_rotation::DeleteRotationOutput)
     /// - On failure, responds with [`SdkError<DeleteRotationError>`](crate::operation::delete_rotation::DeleteRotationError)
-    pub fn delete_rotation(
-        &self,
-    ) -> crate::operation::delete_rotation::builders::DeleteRotationFluentBuilder {
-        crate::operation::delete_rotation::builders::DeleteRotationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_rotation(&self) -> crate::operation::delete_rotation::builders::DeleteRotationFluentBuilder {
+        crate::operation::delete_rotation::builders::DeleteRotationFluentBuilder::new(self.handle.clone())
     }
 }

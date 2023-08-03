@@ -13,7 +13,9 @@ impl super::Client {
     /// - On success, responds with [`StartEntitiesDetectionV2JobOutput`](crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribeEntitiesDetectionV2Job</code> operation.</p>
     /// - On failure, responds with [`SdkError<StartEntitiesDetectionV2JobError>`](crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError)
-    pub fn start_entities_detection_v2_job(&self) -> crate::operation::start_entities_detection_v2_job::builders::StartEntitiesDetectionV2JobFluentBuilder{
+    pub fn start_entities_detection_v2_job(
+        &self,
+    ) -> crate::operation::start_entities_detection_v2_job::builders::StartEntitiesDetectionV2JobFluentBuilder {
         crate::operation::start_entities_detection_v2_job::builders::StartEntitiesDetectionV2JobFluentBuilder::new(self.handle.clone())
     }
 }

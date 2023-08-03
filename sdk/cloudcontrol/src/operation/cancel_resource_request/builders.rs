@@ -38,10 +38,7 @@ impl CancelResourceRequestFluentBuilder {
         }
     }
     /// Access the CancelResourceRequest as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_resource_request::builders::CancelResourceRequestInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::cancel_resource_request::builders::CancelResourceRequestInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl CancelResourceRequestFluentBuilder {
             crate::operation::cancel_resource_request::CancelResourceRequest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_resource_request::CancelResourceRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_resource_request::CancelResourceRequestError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl CancelResourceRequestFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl CancelResourceRequestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_resource_request::CancelResourceRequestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_resource_request::CancelResourceRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_resource_request::CancelResourceRequestError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl CancelResourceRequestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_resource_request::CancelResourceRequestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_resource_request::CancelResourceRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_resource_request::CancelResourceRequestError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl CancelResourceRequestFluentBuilder {
             crate::operation::cancel_resource_request::CancelResourceRequest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_resource_request::CancelResourceRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_resource_request::CancelResourceRequestError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
-    pub fn request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_token(input.into());
         self
     }
     /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
-    pub fn set_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_token(input);
         self
     }

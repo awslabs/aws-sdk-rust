@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`UnclaimDeviceOutput`](crate::operation::unclaim_device::UnclaimDeviceOutput) with field(s):
     ///   - [`state(Option<String>)`](crate::operation::unclaim_device::UnclaimDeviceOutput::state): <p>The device's final claim state.</p>
     /// - On failure, responds with [`SdkError<UnclaimDeviceError>`](crate::operation::unclaim_device::UnclaimDeviceError)
-    pub fn unclaim_device(
-        &self,
-    ) -> crate::operation::unclaim_device::builders::UnclaimDeviceFluentBuilder {
-        crate::operation::unclaim_device::builders::UnclaimDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn unclaim_device(&self) -> crate::operation::unclaim_device::builders::UnclaimDeviceFluentBuilder {
+        crate::operation::unclaim_device::builders::UnclaimDeviceFluentBuilder::new(self.handle.clone())
     }
 }

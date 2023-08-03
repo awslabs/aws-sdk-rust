@@ -60,17 +60,14 @@ impl ::aws_http::request_id::RequestId for UpdateCustomMetricOutput {
 }
 impl UpdateCustomMetricOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomMetricOutput`](crate::operation::update_custom_metric::UpdateCustomMetricOutput).
-    pub fn builder(
-    ) -> crate::operation::update_custom_metric::builders::UpdateCustomMetricOutputBuilder {
+    pub fn builder() -> crate::operation::update_custom_metric::builders::UpdateCustomMetricOutputBuilder {
         crate::operation::update_custom_metric::builders::UpdateCustomMetricOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCustomMetricOutput`](crate::operation::update_custom_metric::UpdateCustomMetricOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCustomMetricOutputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_arn: ::std::option::Option<::std::string::String>,
@@ -119,10 +116,7 @@ impl UpdateCustomMetricOutputBuilder {
     /// <p> The type of the custom metric. </p> <important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
     /// </important>
-    pub fn set_metric_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomMetricType>,
-    ) -> Self {
+    pub fn set_metric_type(mut self, input: ::std::option::Option<crate::types::CustomMetricType>) -> Self {
         self.metric_type = input;
         self
     }
@@ -152,10 +146,7 @@ impl UpdateCustomMetricOutputBuilder {
         self
     }
     /// <p> The creation date of the custom metric in milliseconds since epoch. </p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -169,10 +160,7 @@ impl UpdateCustomMetricOutputBuilder {
         self
     }
     /// <p> The time the custom metric was last modified in milliseconds since epoch. </p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }

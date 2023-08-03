@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`jobs(Option<Vec<Job>>)`](crate::operation::batch_get_jobs::BatchGetJobsOutput::jobs): <p>A list of job definitions.</p>
     ///   - [`jobs_not_found(Option<Vec<String>>)`](crate::operation::batch_get_jobs::BatchGetJobsOutput::jobs_not_found): <p>A list of names of jobs not found.</p>
     /// - On failure, responds with [`SdkError<BatchGetJobsError>`](crate::operation::batch_get_jobs::BatchGetJobsError)
-    pub fn batch_get_jobs(
-        &self,
-    ) -> crate::operation::batch_get_jobs::builders::BatchGetJobsFluentBuilder {
-        crate::operation::batch_get_jobs::builders::BatchGetJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_jobs(&self) -> crate::operation::batch_get_jobs::builders::BatchGetJobsFluentBuilder {
+        crate::operation::batch_get_jobs::builders::BatchGetJobsFluentBuilder::new(self.handle.clone())
     }
 }

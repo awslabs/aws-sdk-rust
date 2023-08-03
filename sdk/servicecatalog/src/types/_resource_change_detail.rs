@@ -37,9 +37,7 @@ impl ResourceChangeDetail {
 
 /// A builder for [`ResourceChangeDetail`](crate::types::ResourceChangeDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceChangeDetailBuilder {
     pub(crate) target: ::std::option::Option<crate::types::ResourceTargetDefinition>,
     pub(crate) evaluation: ::std::option::Option<crate::types::EvaluationType>,
@@ -52,10 +50,7 @@ impl ResourceChangeDetailBuilder {
         self
     }
     /// <p>Information about the resource attribute to be modified.</p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceTargetDefinition>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::ResourceTargetDefinition>) -> Self {
         self.target = input;
         self
     }
@@ -69,10 +64,7 @@ impl ResourceChangeDetailBuilder {
         self
     }
     /// <p>For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
-    pub fn set_evaluation(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationType>,
-    ) -> Self {
+    pub fn set_evaluation(mut self, input: ::std::option::Option<crate::types::EvaluationType>) -> Self {
         self.evaluation = input;
         self
     }
@@ -81,18 +73,12 @@ impl ResourceChangeDetailBuilder {
         &self.evaluation
     }
     /// <p>The ID of the entity that caused the change.</p>
-    pub fn causing_entity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn causing_entity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.causing_entity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the entity that caused the change.</p>
-    pub fn set_causing_entity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_causing_entity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.causing_entity = input;
         self
     }

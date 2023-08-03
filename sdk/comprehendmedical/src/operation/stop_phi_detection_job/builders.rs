@@ -37,9 +37,7 @@ impl StopPHIDetectionJobFluentBuilder {
         }
     }
     /// Access the StopPHIDetectionJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_phi_detection_job::builders::StopPhiDetectionJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_phi_detection_job::builders::StopPhiDetectionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl StopPHIDetectionJobFluentBuilder {
             crate::operation::stop_phi_detection_job::StopPHIDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_phi_detection_job::StopPHIDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_phi_detection_job::StopPHIDetectionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl StopPHIDetectionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl StopPHIDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_phi_detection_job::StopPhiDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_phi_detection_job::StopPHIDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_phi_detection_job::StopPHIDetectionJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl StopPHIDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_phi_detection_job::StopPhiDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_phi_detection_job::StopPHIDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_phi_detection_job::StopPHIDetectionJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl StopPHIDetectionJobFluentBuilder {
             crate::operation::stop_phi_detection_job::StopPHIDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_phi_detection_job::StopPHIDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_phi_detection_job::StopPHIDetectionJobError>,
     > {
         self.customize_middleware().await
     }

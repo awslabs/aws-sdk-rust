@@ -22,9 +22,7 @@ impl DeleteBotInput {
 
 /// A builder for [`DeleteBotInput`](crate::operation::delete_bot::DeleteBotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBotInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl DeleteBotInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteBotInput`](crate::operation::delete_bot::DeleteBotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_bot::DeleteBotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_bot::DeleteBotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_bot::DeleteBotInput { name: self.name })
     }
 }

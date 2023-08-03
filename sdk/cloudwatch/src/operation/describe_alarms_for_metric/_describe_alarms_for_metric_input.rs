@@ -57,18 +57,14 @@ impl DescribeAlarmsForMetricInput {
 }
 impl DescribeAlarmsForMetricInput {
     /// Creates a new builder-style object to manufacture [`DescribeAlarmsForMetricInput`](crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricInput).
-    pub fn builder(
-    ) -> crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricInputBuilder {
         crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAlarmsForMetricInput`](crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAlarmsForMetricInputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
@@ -122,18 +118,12 @@ impl DescribeAlarmsForMetricInputBuilder {
         &self.statistic
     }
     /// <p>The percentile statistic for the metric. Specify a value between p0.0 and p100.</p>
-    pub fn extended_statistic(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extended_statistic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extended_statistic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The percentile statistic for the metric. Specify a value between p0.0 and p100.</p>
-    pub fn set_extended_statistic(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extended_statistic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extended_statistic = input;
         self
     }
@@ -153,17 +143,12 @@ impl DescribeAlarmsForMetricInputBuilder {
         self
     }
     /// <p>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
         &self.dimensions
     }
     /// <p>The period, in seconds, over which the statistic is applied.</p>
@@ -201,16 +186,14 @@ impl DescribeAlarmsForMetricInputBuilder {
         crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricInput {
-                metric_name: self.metric_name,
-                namespace: self.namespace,
-                statistic: self.statistic,
-                extended_statistic: self.extended_statistic,
-                dimensions: self.dimensions,
-                period: self.period,
-                unit: self.unit,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricInput {
+            metric_name: self.metric_name,
+            namespace: self.namespace,
+            statistic: self.statistic,
+            extended_statistic: self.extended_statistic,
+            dimensions: self.dimensions,
+            period: self.period,
+            unit: self.unit,
+        })
     }
 }

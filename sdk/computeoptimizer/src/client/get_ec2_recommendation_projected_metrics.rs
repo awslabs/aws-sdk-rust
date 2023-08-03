@@ -12,7 +12,11 @@ impl super::Client {
     /// - On success, responds with [`GetEc2RecommendationProjectedMetricsOutput`](crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput) with field(s):
     ///   - [`recommended_option_projected_metrics(Option<Vec<RecommendedOptionProjectedMetric>>)`](crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput::recommended_option_projected_metrics): <p>An array of objects that describes projected metrics.</p>
     /// - On failure, responds with [`SdkError<GetEC2RecommendationProjectedMetricsError>`](crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError)
-    pub fn get_ec2_recommendation_projected_metrics(&self) -> crate::operation::get_ec2_recommendation_projected_metrics::builders::GetEC2RecommendationProjectedMetricsFluentBuilder{
-        crate::operation::get_ec2_recommendation_projected_metrics::builders::GetEC2RecommendationProjectedMetricsFluentBuilder::new(self.handle.clone())
+    pub fn get_ec2_recommendation_projected_metrics(
+        &self,
+    ) -> crate::operation::get_ec2_recommendation_projected_metrics::builders::GetEC2RecommendationProjectedMetricsFluentBuilder {
+        crate::operation::get_ec2_recommendation_projected_metrics::builders::GetEC2RecommendationProjectedMetricsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

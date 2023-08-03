@@ -79,18 +79,14 @@ impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
 }
 impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails`](crate::types::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder {
         crate::types::builders::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails`](crate::types::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder {
     pub(crate) automated_update_date: ::std::option::Option<::std::string::String>,
     pub(crate) cancellable: ::std::option::Option<bool>,
@@ -103,18 +99,12 @@ pub struct AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder {
 }
 impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder {
     /// <p>The epoch time when the deployment window closes for required updates. After this time, OpenSearch Service schedules the software upgrade automatically.</p>
-    pub fn automated_update_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn automated_update_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.automated_update_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The epoch time when the deployment window closes for required updates. After this time, OpenSearch Service schedules the software upgrade automatically.</p>
-    pub fn set_automated_update_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_automated_update_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.automated_update_date = input;
         self
     }
@@ -137,18 +127,12 @@ impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder {
         &self.cancellable
     }
     /// <p>The version of the service software that is currently installed on the domain.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the service software that is currently installed on the domain.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_version = input;
         self
     }
@@ -206,10 +190,7 @@ impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder {
     /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
     /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
     /// </ul>
-    pub fn update_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn update_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_status = ::std::option::Option::Some(input.into());
         self
     }
@@ -221,10 +202,7 @@ impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder {
     /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
     /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
     /// </ul>
-    pub fn set_update_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_update_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.update_status = input;
         self
     }

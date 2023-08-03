@@ -22,17 +22,14 @@ impl DescribeVocabularyInput {
 }
 impl DescribeVocabularyInput {
     /// Creates a new builder-style object to manufacture [`DescribeVocabularyInput`](crate::operation::describe_vocabulary::DescribeVocabularyInput).
-    pub fn builder(
-    ) -> crate::operation::describe_vocabulary::builders::DescribeVocabularyInputBuilder {
+    pub fn builder() -> crate::operation::describe_vocabulary::builders::DescribeVocabularyInputBuilder {
         crate::operation::describe_vocabulary::builders::DescribeVocabularyInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVocabularyInput`](crate::operation::describe_vocabulary::DescribeVocabularyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVocabularyInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) vocabulary_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl DescribeVocabularyInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the custom vocabulary.</p>
-    pub fn vocabulary_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the custom vocabulary.</p>
-    pub fn set_vocabulary_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl DescribeVocabularyInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVocabularyInput`](crate::operation::describe_vocabulary::DescribeVocabularyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_vocabulary::DescribeVocabularyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_vocabulary::DescribeVocabularyInput {
-                instance_id: self.instance_id,
-                vocabulary_id: self.vocabulary_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_vocabulary::DescribeVocabularyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_vocabulary::DescribeVocabularyInput {
+            instance_id: self.instance_id,
+            vocabulary_id: self.vocabulary_id,
+        })
     }
 }

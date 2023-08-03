@@ -29,16 +29,14 @@ impl DeprovisionPublicIpv4PoolCidrInput {
 }
 impl DeprovisionPublicIpv4PoolCidrInput {
     /// Creates a new builder-style object to manufacture [`DeprovisionPublicIpv4PoolCidrInput`](crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrInput).
-    pub fn builder() -> crate::operation::deprovision_public_ipv4_pool_cidr::builders::DeprovisionPublicIpv4PoolCidrInputBuilder{
+    pub fn builder() -> crate::operation::deprovision_public_ipv4_pool_cidr::builders::DeprovisionPublicIpv4PoolCidrInputBuilder {
         crate::operation::deprovision_public_ipv4_pool_cidr::builders::DeprovisionPublicIpv4PoolCidrInputBuilder::default()
     }
 }
 
 /// A builder for [`DeprovisionPublicIpv4PoolCidrInput`](crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeprovisionPublicIpv4PoolCidrInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
@@ -94,15 +92,10 @@ impl DeprovisionPublicIpv4PoolCidrInputBuilder {
         crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrInput {
-                dry_run: self.dry_run
-                ,
-                pool_id: self.pool_id
-                ,
-                cidr: self.cidr
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrInput {
+            dry_run: self.dry_run,
+            pool_id: self.pool_id,
+            cidr: self.cidr,
+        })
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`instance_fleet_id(Option<String>)`](crate::operation::add_instance_fleet::AddInstanceFleetOutput::instance_fleet_id): <p>The unique identifier of the instance fleet.</p>
     ///   - [`cluster_arn(Option<String>)`](crate::operation::add_instance_fleet::AddInstanceFleetOutput::cluster_arn): <p>The Amazon Resource Name of the cluster.</p>
     /// - On failure, responds with [`SdkError<AddInstanceFleetError>`](crate::operation::add_instance_fleet::AddInstanceFleetError)
-    pub fn add_instance_fleet(
-        &self,
-    ) -> crate::operation::add_instance_fleet::builders::AddInstanceFleetFluentBuilder {
-        crate::operation::add_instance_fleet::builders::AddInstanceFleetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_instance_fleet(&self) -> crate::operation::add_instance_fleet::builders::AddInstanceFleetFluentBuilder {
+        crate::operation::add_instance_fleet::builders::AddInstanceFleetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -42,10 +42,7 @@ pub fn ser_create_auto_predictor_input(
     if let Some(var_12) = &input.encryption_config {
         #[allow(unused_mut)]
         let mut object_13 = object.key("EncryptionConfig").start_object();
-        crate::protocol_serde::shape_encryption_config::ser_encryption_config(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_encryption_config::ser_encryption_config(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.reference_predictor_arn {
@@ -78,10 +75,7 @@ pub fn ser_create_auto_predictor_input(
     if let Some(var_23) = &input.time_alignment_boundary {
         #[allow(unused_mut)]
         let mut object_24 = object.key("TimeAlignmentBoundary").start_object();
-        crate::protocol_serde::shape_time_alignment_boundary::ser_time_alignment_boundary(
-            &mut object_24,
-            var_23,
-        )?;
+        crate::protocol_serde::shape_time_alignment_boundary::ser_time_alignment_boundary(&mut object_24, var_23)?;
         object_24.finish();
     }
     Ok(())

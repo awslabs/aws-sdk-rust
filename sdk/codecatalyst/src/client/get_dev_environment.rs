@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`inactivity_timeout_minutes(i32)`](crate::operation::get_dev_environment::GetDevEnvironmentOutput::inactivity_timeout_minutes): <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes.</p>
     ///   - [`persistent_storage(Option<PersistentStorage>)`](crate::operation::get_dev_environment::GetDevEnvironmentOutput::persistent_storage): <p>Information about the amount of storage allocated to the Dev Environment. By default, a Dev Environment is configured to have 16GB of persistent storage.</p>
     /// - On failure, responds with [`SdkError<GetDevEnvironmentError>`](crate::operation::get_dev_environment::GetDevEnvironmentError)
-    pub fn get_dev_environment(
-        &self,
-    ) -> crate::operation::get_dev_environment::builders::GetDevEnvironmentFluentBuilder {
-        crate::operation::get_dev_environment::builders::GetDevEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_dev_environment(&self) -> crate::operation::get_dev_environment::builders::GetDevEnvironmentFluentBuilder {
+        crate::operation::get_dev_environment::builders::GetDevEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

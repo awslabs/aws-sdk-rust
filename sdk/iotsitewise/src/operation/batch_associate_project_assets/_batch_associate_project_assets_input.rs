@@ -29,16 +29,14 @@ impl BatchAssociateProjectAssetsInput {
 }
 impl BatchAssociateProjectAssetsInput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateProjectAssetsInput`](crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsInput).
-    pub fn builder() -> crate::operation::batch_associate_project_assets::builders::BatchAssociateProjectAssetsInputBuilder{
+    pub fn builder() -> crate::operation::batch_associate_project_assets::builders::BatchAssociateProjectAssetsInputBuilder {
         crate::operation::batch_associate_project_assets::builders::BatchAssociateProjectAssetsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchAssociateProjectAssetsInput`](crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAssociateProjectAssetsInputBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -71,10 +69,7 @@ impl BatchAssociateProjectAssetsInputBuilder {
         self
     }
     /// <p>The IDs of the assets to be associated to the project.</p>
-    pub fn set_asset_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_asset_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.asset_ids = input;
         self
     }
@@ -103,12 +98,10 @@ impl BatchAssociateProjectAssetsInputBuilder {
         crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsInput {
-                project_id: self.project_id,
-                asset_ids: self.asset_ids,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsInput {
+            project_id: self.project_id,
+            asset_ids: self.asset_ids,
+            client_token: self.client_token,
+        })
     }
 }

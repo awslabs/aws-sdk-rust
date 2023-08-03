@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateStreamingUrlOutput {
 }
 impl CreateStreamingUrlOutput {
     /// Creates a new builder-style object to manufacture [`CreateStreamingUrlOutput`](crate::operation::create_streaming_url::CreateStreamingUrlOutput).
-    pub fn builder(
-    ) -> crate::operation::create_streaming_url::builders::CreateStreamingUrlOutputBuilder {
+    pub fn builder() -> crate::operation::create_streaming_url::builders::CreateStreamingUrlOutputBuilder {
         crate::operation::create_streaming_url::builders::CreateStreamingUrlOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStreamingUrlOutput`](crate::operation::create_streaming_url::CreateStreamingUrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStreamingUrlOutputBuilder {
     pub(crate) streaming_url: ::std::option::Option<::std::string::String>,
     pub(crate) expires: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -46,18 +43,12 @@ pub struct CreateStreamingUrlOutputBuilder {
 }
 impl CreateStreamingUrlOutputBuilder {
     /// <p>The URL to start the AppStream 2.0 streaming session.</p>
-    pub fn streaming_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn streaming_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streaming_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to start the AppStream 2.0 streaming session.</p>
-    pub fn set_streaming_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_streaming_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.streaming_url = input;
         self
     }
@@ -71,10 +62,7 @@ impl CreateStreamingUrlOutputBuilder {
         self
     }
     /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
-    pub fn set_expires(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expires(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expires = input;
         self
     }

@@ -51,9 +51,7 @@ impl ChangeLog {
 
 /// A builder for [`ChangeLog`](crate::types::ChangeLog).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeLogBuilder {
     pub(crate) object_type: ::std::option::Option<crate::types::ObjectTypeEnum>,
     pub(crate) object_name: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl ChangeLogBuilder {
         self
     }
     /// <p> The object that was changed, such as an assessment, control, or control set. </p>
-    pub fn set_object_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectTypeEnum>,
-    ) -> Self {
+    pub fn set_object_type(mut self, input: ::std::option::Option<crate::types::ObjectTypeEnum>) -> Self {
         self.object_type = input;
         self
     }
@@ -113,10 +108,7 @@ impl ChangeLogBuilder {
         self
     }
     /// <p> The time when the action was performed and the changelog record was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }

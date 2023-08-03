@@ -19,9 +19,7 @@ pub fn ser_delete_volume_ontap_configuration(
         array_3.finish();
     }
     if let Some(var_6) = &input.bypass_snaplock_enterprise_retention {
-        object
-            .key("BypassSnaplockEnterpriseRetention")
-            .boolean(*var_6);
+        object.key("BypassSnaplockEnterpriseRetention").boolean(*var_6);
     }
     Ok(())
 }

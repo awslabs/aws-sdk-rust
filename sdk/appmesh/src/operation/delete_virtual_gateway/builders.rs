@@ -37,9 +37,7 @@ impl DeleteVirtualGatewayFluentBuilder {
         }
     }
     /// Access the DeleteVirtualGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_virtual_gateway::builders::DeleteVirtualGatewayInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_virtual_gateway::builders::DeleteVirtualGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteVirtualGatewayFluentBuilder {
             crate::operation::delete_virtual_gateway::DeleteVirtualGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteVirtualGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteVirtualGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_virtual_gateway::DeleteVirtualGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteVirtualGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_virtual_gateway::DeleteVirtualGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteVirtualGatewayFluentBuilder {
             crate::operation::delete_virtual_gateway::DeleteVirtualGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the virtual gateway to delete.</p>
-    pub fn virtual_gateway_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_gateway_name(input.into());
         self
     }
     /// <p>The name of the virtual gateway to delete.</p>
-    pub fn set_virtual_gateway_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_gateway_name(input);
         self
     }

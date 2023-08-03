@@ -72,9 +72,7 @@ impl Operator {
 
 /// A builder for [`Operator`](crate::types::Operator).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OperatorBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::OperatorType>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -169,10 +167,7 @@ impl OperatorBuilder {
         self
     }
     /// <p>The value that the actual field value will be compared with.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

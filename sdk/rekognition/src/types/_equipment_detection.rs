@@ -44,9 +44,7 @@ impl EquipmentDetection {
 
 /// A builder for [`EquipmentDetection`](crate::types::EquipmentDetection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EquipmentDetectionBuilder {
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     pub(crate) confidence: ::std::option::Option<f32>,
@@ -60,10 +58,7 @@ impl EquipmentDetectionBuilder {
         self
     }
     /// <p>A bounding box surrounding the item of detected PPE.</p>
-    pub fn set_bounding_box(
-        mut self,
-        input: ::std::option::Option<crate::types::BoundingBox>,
-    ) -> Self {
+    pub fn set_bounding_box(mut self, input: ::std::option::Option<crate::types::BoundingBox>) -> Self {
         self.bounding_box = input;
         self
     }
@@ -91,10 +86,7 @@ impl EquipmentDetectionBuilder {
         self
     }
     /// <p>The type of detected PPE.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectiveEquipmentType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProtectiveEquipmentType>) -> Self {
         self.r#type = input;
         self
     }
@@ -108,10 +100,7 @@ impl EquipmentDetectionBuilder {
         self
     }
     /// <p>Information about the body part covered by the detected PPE.</p>
-    pub fn set_covers_body_part(
-        mut self,
-        input: ::std::option::Option<crate::types::CoversBodyPart>,
-    ) -> Self {
+    pub fn set_covers_body_part(mut self, input: ::std::option::Option<crate::types::CoversBodyPart>) -> Self {
         self.covers_body_part = input;
         self
     }

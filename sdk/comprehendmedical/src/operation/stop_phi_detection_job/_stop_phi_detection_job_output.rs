@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StopPhiDetectionJobOutput {
 }
 impl StopPhiDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StopPhiDetectionJobOutput`](crate::operation::stop_phi_detection_job::StopPhiDetectionJobOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_phi_detection_job::builders::StopPhiDetectionJobOutputBuilder {
+    pub fn builder() -> crate::operation::stop_phi_detection_job::builders::StopPhiDetectionJobOutputBuilder {
         crate::operation::stop_phi_detection_job::builders::StopPhiDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopPhiDetectionJobOutput`](crate::operation::stop_phi_detection_job::StopPhiDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopPhiDetectionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

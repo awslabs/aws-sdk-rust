@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteServiceTemplateOutput {
 }
 impl DeleteServiceTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceTemplateOutput`](crate::operation::delete_service_template::DeleteServiceTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_service_template::builders::DeleteServiceTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_service_template::builders::DeleteServiceTemplateOutputBuilder {
         crate::operation::delete_service_template::builders::DeleteServiceTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteServiceTemplateOutput`](crate::operation::delete_service_template::DeleteServiceTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceTemplateOutputBuilder {
     pub(crate) service_template: ::std::option::Option<crate::types::ServiceTemplate>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteServiceTemplateOutputBuilder {
         self
     }
     /// <p>The detailed data of the service template being deleted.</p>
-    pub fn set_service_template(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceTemplate>,
-    ) -> Self {
+    pub fn set_service_template(mut self, input: ::std::option::Option<crate::types::ServiceTemplate>) -> Self {
         self.service_template = input;
         self
     }

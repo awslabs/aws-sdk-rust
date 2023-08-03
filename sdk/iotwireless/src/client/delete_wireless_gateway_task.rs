@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_wireless_gateway_task::builders::DeleteWirelessGatewayTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_wireless_gateway_task::builders::DeleteWirelessGatewayTaskFluentBuilder::set_id): <p>The ID of the resource to delete.</p>
     /// - On success, responds with [`DeleteWirelessGatewayTaskOutput`](crate::operation::delete_wireless_gateway_task::DeleteWirelessGatewayTaskOutput)
     /// - On failure, responds with [`SdkError<DeleteWirelessGatewayTaskError>`](crate::operation::delete_wireless_gateway_task::DeleteWirelessGatewayTaskError)
-    pub fn delete_wireless_gateway_task(&self) -> crate::operation::delete_wireless_gateway_task::builders::DeleteWirelessGatewayTaskFluentBuilder{
+    pub fn delete_wireless_gateway_task(&self) -> crate::operation::delete_wireless_gateway_task::builders::DeleteWirelessGatewayTaskFluentBuilder {
         crate::operation::delete_wireless_gateway_task::builders::DeleteWirelessGatewayTaskFluentBuilder::new(self.handle.clone())
     }
 }

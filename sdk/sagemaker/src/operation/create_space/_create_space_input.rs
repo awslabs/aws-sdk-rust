@@ -43,9 +43,7 @@ impl CreateSpaceInput {
 
 /// A builder for [`CreateSpaceInput`](crate::operation::create_space::CreateSpaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSpaceInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
@@ -93,10 +91,7 @@ impl CreateSpaceInputBuilder {
         self
     }
     /// <p>Tags to associated with the space. Each tag consists of a key and an optional value. Tag keys must be unique for each resource. Tags are searchable using the <code>Search</code> API.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -110,10 +105,7 @@ impl CreateSpaceInputBuilder {
         self
     }
     /// <p>A collection of space settings.</p>
-    pub fn set_space_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::SpaceSettings>,
-    ) -> Self {
+    pub fn set_space_settings(mut self, input: ::std::option::Option<crate::types::SpaceSettings>) -> Self {
         self.space_settings = input;
         self
     }
@@ -122,12 +114,7 @@ impl CreateSpaceInputBuilder {
         &self.space_settings
     }
     /// Consumes the builder and constructs a [`CreateSpaceInput`](crate::operation::create_space::CreateSpaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_space::CreateSpaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_space::CreateSpaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_space::CreateSpaceInput {
             domain_id: self.domain_id,
             space_name: self.space_name,

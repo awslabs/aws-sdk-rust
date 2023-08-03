@@ -38,13 +38,7 @@
 /// Input Loss Action For Hls Out
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InputLossActionForHlsOut {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for InputLossActionForHlsOut {
         match s {
             "EMIT_OUTPUT" => InputLossActionForHlsOut::EmitOutput,
             "PAUSE_OUTPUT" => InputLossActionForHlsOut::PauseOutput,
-            other => InputLossActionForHlsOut::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InputLossActionForHlsOut::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

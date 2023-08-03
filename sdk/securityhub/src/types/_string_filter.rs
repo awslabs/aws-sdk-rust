@@ -78,9 +78,7 @@ impl StringFilter {
 
 /// A builder for [`StringFilter`](crate::types::StringFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StringFilterBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) comparison: ::std::option::Option<crate::types::StringFilterComparison>,
@@ -154,10 +152,7 @@ impl StringFilterBuilder {
     /// <li> <p> <code>ResourceType NOT_EQUALS AwsEc2NetworkInterface</code> </p> </li>
     /// </ul>
     /// <p> <code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
-    pub fn set_comparison(
-        mut self,
-        input: ::std::option::Option<crate::types::StringFilterComparison>,
-    ) -> Self {
+    pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::StringFilterComparison>) -> Self {
         self.comparison = input;
         self
     }

@@ -40,26 +40,20 @@ impl ListStreamConsumersInput {
     }
     /// <p>Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the consumers for. </p>
     /// <p>You can't specify this parameter if you specify the NextToken parameter. </p>
-    pub fn stream_creation_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn stream_creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stream_creation_timestamp.as_ref()
     }
 }
 impl ListStreamConsumersInput {
     /// Creates a new builder-style object to manufacture [`ListStreamConsumersInput`](crate::operation::list_stream_consumers::ListStreamConsumersInput).
-    pub fn builder(
-    ) -> crate::operation::list_stream_consumers::builders::ListStreamConsumersInputBuilder {
-        crate::operation::list_stream_consumers::builders::ListStreamConsumersInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_stream_consumers::builders::ListStreamConsumersInputBuilder {
+        crate::operation::list_stream_consumers::builders::ListStreamConsumersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStreamConsumersInput`](crate::operation::list_stream_consumers::ListStreamConsumersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamConsumersInputBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -129,34 +123,25 @@ impl ListStreamConsumersInputBuilder {
     }
     /// <p>Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the consumers for. </p>
     /// <p>You can't specify this parameter if you specify the NextToken parameter. </p>
-    pub fn set_stream_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stream_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stream_creation_timestamp = input;
         self
     }
     /// <p>Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the consumers for. </p>
     /// <p>You can't specify this parameter if you specify the NextToken parameter. </p>
-    pub fn get_stream_creation_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_stream_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.stream_creation_timestamp
     }
     /// Consumes the builder and constructs a [`ListStreamConsumersInput`](crate::operation::list_stream_consumers::ListStreamConsumersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_stream_consumers::ListStreamConsumersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_stream_consumers::ListStreamConsumersInput {
-                stream_arn: self.stream_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                stream_creation_timestamp: self.stream_creation_timestamp,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_stream_consumers::ListStreamConsumersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_stream_consumers::ListStreamConsumersInput {
+            stream_arn: self.stream_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            stream_creation_timestamp: self.stream_creation_timestamp,
+        })
     }
 }

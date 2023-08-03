@@ -10,10 +10,7 @@ impl DescribeSnapshotsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshots::DescribeSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshots::DescribeSnapshotsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_snapshots();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl DescribeSnapshotsFluentBuilder {
         }
     }
     /// Access the DescribeSnapshots as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl DescribeSnapshotsFluentBuilder {
             crate::operation::describe_snapshots::DescribeSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshots::DescribeSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl DescribeSnapshotsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl DescribeSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshots::DescribeSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshots::DescribeSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl DescribeSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshots::DescribeSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshots::DescribeSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError>,
     > {
         self.send_middleware().await
     }
@@ -123,22 +109,15 @@ impl DescribeSnapshotsFluentBuilder {
             crate::operation::describe_snapshots::DescribeSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshots::DescribeSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator {
-        crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator {
+        crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `SnapshotIds`.
     ///
@@ -150,17 +129,12 @@ impl DescribeSnapshotsFluentBuilder {
         self
     }
     /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
-    pub fn set_snapshot_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_snapshot_ids(input);
         self
     }
     /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
-    pub fn get_snapshot_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_snapshot_ids()
     }
     /// Appends an item to `Filters`.
@@ -173,17 +147,12 @@ impl DescribeSnapshotsFluentBuilder {
         self
     }
     /// <p>The filters structure. The supported names are <code>file-system-id</code> or <code>volume-id</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>The filters structure. The supported names are <code>file-system-id</code> or <code>volume-id</code>.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>

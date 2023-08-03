@@ -36,18 +36,14 @@ impl UpdateMonitoringAlertInput {
 }
 impl UpdateMonitoringAlertInput {
     /// Creates a new builder-style object to manufacture [`UpdateMonitoringAlertInput`](crate::operation::update_monitoring_alert::UpdateMonitoringAlertInput).
-    pub fn builder(
-    ) -> crate::operation::update_monitoring_alert::builders::UpdateMonitoringAlertInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_monitoring_alert::builders::UpdateMonitoringAlertInputBuilder {
         crate::operation::update_monitoring_alert::builders::UpdateMonitoringAlertInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMonitoringAlertInput`](crate::operation::update_monitoring_alert::UpdateMonitoringAlertInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMonitoringAlertInputBuilder {
     pub(crate) monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     pub(crate) monitoring_alert_name: ::std::option::Option<::std::string::String>,
@@ -56,18 +52,12 @@ pub struct UpdateMonitoringAlertInputBuilder {
 }
 impl UpdateMonitoringAlertInputBuilder {
     /// <p>The name of a monitoring schedule.</p>
-    pub fn monitoring_schedule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a monitoring schedule.</p>
-    pub fn set_monitoring_schedule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_schedule_name = input;
         self
     }
@@ -76,18 +66,12 @@ impl UpdateMonitoringAlertInputBuilder {
         &self.monitoring_schedule_name
     }
     /// <p>The name of a monitoring alert.</p>
-    pub fn monitoring_alert_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_alert_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_alert_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a monitoring alert.</p>
-    pub fn set_monitoring_alert_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_alert_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_alert_name = input;
         self
     }
@@ -126,17 +110,13 @@ impl UpdateMonitoringAlertInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMonitoringAlertInput`](crate::operation::update_monitoring_alert::UpdateMonitoringAlertInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_monitoring_alert::UpdateMonitoringAlertInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_monitoring_alert::UpdateMonitoringAlertInput {
-                monitoring_schedule_name: self.monitoring_schedule_name,
-                monitoring_alert_name: self.monitoring_alert_name,
-                datapoints_to_alert: self.datapoints_to_alert,
-                evaluation_period: self.evaluation_period,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_monitoring_alert::UpdateMonitoringAlertInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_monitoring_alert::UpdateMonitoringAlertInput {
+            monitoring_schedule_name: self.monitoring_schedule_name,
+            monitoring_alert_name: self.monitoring_alert_name,
+            datapoints_to_alert: self.datapoints_to_alert,
+            evaluation_period: self.evaluation_period,
+        })
     }
 }

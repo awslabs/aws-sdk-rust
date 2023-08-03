@@ -30,9 +30,7 @@ impl RangedSocketAddress {
 
 /// A builder for [`RangedSocketAddress`](crate::types::RangedSocketAddress).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RangedSocketAddressBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) port_range: ::std::option::Option<crate::types::IntegerRange>,
@@ -58,10 +56,7 @@ impl RangedSocketAddressBuilder {
         self
     }
     /// <p>Port range of a socket address.</p>
-    pub fn set_port_range(
-        mut self,
-        input: ::std::option::Option<crate::types::IntegerRange>,
-    ) -> Self {
+    pub fn set_port_range(mut self, input: ::std::option::Option<crate::types::IntegerRange>) -> Self {
         self.port_range = input;
         self
     }

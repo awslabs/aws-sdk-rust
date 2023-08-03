@@ -32,18 +32,14 @@ impl ::aws_http::request_id::RequestId for CreatePlatformVersionOutput {
 }
 impl CreatePlatformVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreatePlatformVersionOutput`](crate::operation::create_platform_version::CreatePlatformVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_platform_version::builders::CreatePlatformVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_platform_version::builders::CreatePlatformVersionOutputBuilder {
         crate::operation::create_platform_version::builders::CreatePlatformVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePlatformVersionOutput`](crate::operation::create_platform_version::CreatePlatformVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePlatformVersionOutputBuilder {
     pub(crate) platform_summary: ::std::option::Option<crate::types::PlatformSummary>,
     pub(crate) builder_value: ::std::option::Option<crate::types::Builder>,
@@ -56,10 +52,7 @@ impl CreatePlatformVersionOutputBuilder {
         self
     }
     /// <p>Detailed information about the new version of the custom platform.</p>
-    pub fn set_platform_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::PlatformSummary>,
-    ) -> Self {
+    pub fn set_platform_summary(mut self, input: ::std::option::Option<crate::types::PlatformSummary>) -> Self {
         self.platform_summary = input;
         self
     }

@@ -10,9 +10,7 @@ pub struct AssociateInstanceEventWindowOutput {
 }
 impl AssociateInstanceEventWindowOutput {
     /// <p>Information about the event window.</p>
-    pub fn instance_event_window(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceEventWindow> {
+    pub fn instance_event_window(&self) -> ::std::option::Option<&crate::types::InstanceEventWindow> {
         self.instance_event_window.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for AssociateInstanceEventWindowOutput {
 }
 impl AssociateInstanceEventWindowOutput {
     /// Creates a new builder-style object to manufacture [`AssociateInstanceEventWindowOutput`](crate::operation::associate_instance_event_window::AssociateInstanceEventWindowOutput).
-    pub fn builder() -> crate::operation::associate_instance_event_window::builders::AssociateInstanceEventWindowOutputBuilder{
+    pub fn builder() -> crate::operation::associate_instance_event_window::builders::AssociateInstanceEventWindowOutputBuilder {
         crate::operation::associate_instance_event_window::builders::AssociateInstanceEventWindowOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateInstanceEventWindowOutput`](crate::operation::associate_instance_event_window::AssociateInstanceEventWindowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateInstanceEventWindowOutputBuilder {
     pub(crate) instance_event_window: ::std::option::Option<crate::types::InstanceEventWindow>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl AssociateInstanceEventWindowOutputBuilder {
         self
     }
     /// <p>Information about the event window.</p>
-    pub fn set_instance_event_window(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceEventWindow>,
-    ) -> Self {
+    pub fn set_instance_event_window(mut self, input: ::std::option::Option<crate::types::InstanceEventWindow>) -> Self {
         self.instance_event_window = input;
         self
     }
     /// <p>Information about the event window.</p>
-    pub fn get_instance_event_window(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceEventWindow> {
+    pub fn get_instance_event_window(&self) -> &::std::option::Option<crate::types::InstanceEventWindow> {
         &self.instance_event_window
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl AssociateInstanceEventWindowOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateInstanceEventWindowOutput`](crate::operation::associate_instance_event_window::AssociateInstanceEventWindowOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_instance_event_window::AssociateInstanceEventWindowOutput {
+    pub fn build(self) -> crate::operation::associate_instance_event_window::AssociateInstanceEventWindowOutput {
         crate::operation::associate_instance_event_window::AssociateInstanceEventWindowOutput {
             instance_event_window: self.instance_event_window,
             _request_id: self._request_id,

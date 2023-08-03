@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`file_caches(Option<Vec<FileCache>>)`](crate::operation::describe_file_caches::DescribeFileCachesOutput::file_caches): <p>The response object for the <code>DescribeFileCaches</code> operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_file_caches::DescribeFileCachesOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     /// - On failure, responds with [`SdkError<DescribeFileCachesError>`](crate::operation::describe_file_caches::DescribeFileCachesError)
-    pub fn describe_file_caches(
-        &self,
-    ) -> crate::operation::describe_file_caches::builders::DescribeFileCachesFluentBuilder {
-        crate::operation::describe_file_caches::builders::DescribeFileCachesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_file_caches(&self) -> crate::operation::describe_file_caches::builders::DescribeFileCachesFluentBuilder {
+        crate::operation::describe_file_caches::builders::DescribeFileCachesFluentBuilder::new(self.handle.clone())
     }
 }

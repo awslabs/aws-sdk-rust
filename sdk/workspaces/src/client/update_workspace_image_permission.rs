@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`shared_account_id(impl ::std::convert::Into<String>)`](crate::operation::update_workspace_image_permission::builders::UpdateWorkspaceImagePermissionFluentBuilder::shared_account_id) / [`set_shared_account_id(Option<String>)`](crate::operation::update_workspace_image_permission::builders::UpdateWorkspaceImagePermissionFluentBuilder::set_shared_account_id): <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>   <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>  </important>
     /// - On success, responds with [`UpdateWorkspaceImagePermissionOutput`](crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput)
     /// - On failure, responds with [`SdkError<UpdateWorkspaceImagePermissionError>`](crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError)
-    pub fn update_workspace_image_permission(&self) -> crate::operation::update_workspace_image_permission::builders::UpdateWorkspaceImagePermissionFluentBuilder{
+    pub fn update_workspace_image_permission(
+        &self,
+    ) -> crate::operation::update_workspace_image_permission::builders::UpdateWorkspaceImagePermissionFluentBuilder {
         crate::operation::update_workspace_image_permission::builders::UpdateWorkspaceImagePermissionFluentBuilder::new(self.handle.clone())
     }
 }

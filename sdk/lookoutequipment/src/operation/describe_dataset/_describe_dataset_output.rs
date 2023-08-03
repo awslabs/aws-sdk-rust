@@ -26,8 +26,7 @@ pub struct DescribeDatasetOutput {
     pub server_side_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
     #[doc(hidden)]
-    pub ingestion_input_configuration:
-        ::std::option::Option<crate::types::IngestionInputConfiguration>,
+    pub ingestion_input_configuration: ::std::option::Option<crate::types::IngestionInputConfiguration>,
     /// <p> Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
     #[doc(hidden)]
     pub data_quality_summary: ::std::option::Option<crate::types::DataQualitySummary>,
@@ -75,9 +74,7 @@ impl DescribeDatasetOutput {
         self.server_side_kms_key_id.as_deref()
     }
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-    pub fn ingestion_input_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IngestionInputConfiguration> {
+    pub fn ingestion_input_configuration(&self) -> ::std::option::Option<&crate::types::IngestionInputConfiguration> {
         self.ingestion_input_configuration.as_ref()
     }
     /// <p> Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
@@ -85,9 +82,7 @@ impl DescribeDatasetOutput {
         self.data_quality_summary.as_ref()
     }
     /// <p> IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id. </p>
-    pub fn ingested_files_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IngestedFilesSummary> {
+    pub fn ingested_files_summary(&self) -> ::std::option::Option<&crate::types::IngestedFilesSummary> {
         self.ingested_files_summary.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job. </p>
@@ -117,9 +112,7 @@ impl DescribeDatasetOutput {
 
 /// A builder for [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatasetOutputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
@@ -128,8 +121,7 @@ pub struct DescribeDatasetOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DatasetStatus>,
     pub(crate) schema: ::std::option::Option<::std::string::String>,
     pub(crate) server_side_kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) ingestion_input_configuration:
-        ::std::option::Option<crate::types::IngestionInputConfiguration>,
+    pub(crate) ingestion_input_configuration: ::std::option::Option<crate::types::IngestionInputConfiguration>,
     pub(crate) data_quality_summary: ::std::option::Option<crate::types::DataQualitySummary>,
     pub(crate) ingested_files_summary: ::std::option::Option<crate::types::IngestedFilesSummary>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -172,10 +164,7 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -189,10 +178,7 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// <p>Specifies the time the dataset was last updated, if it was. </p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -229,18 +215,12 @@ impl DescribeDatasetOutputBuilder {
         &self.schema
     }
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
-    pub fn server_side_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_side_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_side_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
-    pub fn set_server_side_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_side_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_side_kms_key_id = input;
         self
     }
@@ -249,25 +229,17 @@ impl DescribeDatasetOutputBuilder {
         &self.server_side_kms_key_id
     }
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-    pub fn ingestion_input_configuration(
-        mut self,
-        input: crate::types::IngestionInputConfiguration,
-    ) -> Self {
+    pub fn ingestion_input_configuration(mut self, input: crate::types::IngestionInputConfiguration) -> Self {
         self.ingestion_input_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-    pub fn set_ingestion_input_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionInputConfiguration>,
-    ) -> Self {
+    pub fn set_ingestion_input_configuration(mut self, input: ::std::option::Option<crate::types::IngestionInputConfiguration>) -> Self {
         self.ingestion_input_configuration = input;
         self
     }
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-    pub fn get_ingestion_input_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::IngestionInputConfiguration> {
+    pub fn get_ingestion_input_configuration(&self) -> &::std::option::Option<crate::types::IngestionInputConfiguration> {
         &self.ingestion_input_configuration
     }
     /// <p> Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
@@ -276,17 +248,12 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// <p> Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
-    pub fn set_data_quality_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::DataQualitySummary>,
-    ) -> Self {
+    pub fn set_data_quality_summary(mut self, input: ::std::option::Option<crate::types::DataQualitySummary>) -> Self {
         self.data_quality_summary = input;
         self
     }
     /// <p> Gives statistics associated with the given dataset for the latest successful associated ingestion job id. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
-    pub fn get_data_quality_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataQualitySummary> {
+    pub fn get_data_quality_summary(&self) -> &::std::option::Option<crate::types::DataQualitySummary> {
         &self.data_quality_summary
     }
     /// <p> IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id. </p>
@@ -295,17 +262,12 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// <p> IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id. </p>
-    pub fn set_ingested_files_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestedFilesSummary>,
-    ) -> Self {
+    pub fn set_ingested_files_summary(mut self, input: ::std::option::Option<crate::types::IngestedFilesSummary>) -> Self {
         self.ingested_files_summary = input;
         self
     }
     /// <p> IngestedFilesSummary associated with the given dataset for the latest successful associated ingestion job id. </p>
-    pub fn get_ingested_files_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::IngestedFilesSummary> {
+    pub fn get_ingested_files_summary(&self) -> &::std::option::Option<crate::types::IngestedFilesSummary> {
         &self.ingested_files_summary
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job. </p>
@@ -328,10 +290,7 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
-    pub fn set_data_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.data_start_time = input;
         self
     }
@@ -345,10 +304,7 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
-    pub fn set_data_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.data_end_time = input;
         self
     }

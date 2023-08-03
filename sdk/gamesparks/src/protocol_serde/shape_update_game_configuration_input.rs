@@ -9,10 +9,7 @@ pub fn ser_update_game_configuration_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_section_modification::ser_section_modification(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_section_modification::ser_section_modification(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

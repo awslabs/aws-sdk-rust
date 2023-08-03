@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`attribute_value(impl ::std::convert::Into<String>)`](crate::operation::set_subscription_attributes::builders::SetSubscriptionAttributesFluentBuilder::attribute_value) / [`set_attribute_value(Option<String>)`](crate::operation::set_subscription_attributes::builders::SetSubscriptionAttributesFluentBuilder::set_attribute_value): <p>The new value for the attribute in JSON format.</p>
     /// - On success, responds with [`SetSubscriptionAttributesOutput`](crate::operation::set_subscription_attributes::SetSubscriptionAttributesOutput)
     /// - On failure, responds with [`SdkError<SetSubscriptionAttributesError>`](crate::operation::set_subscription_attributes::SetSubscriptionAttributesError)
-    pub fn set_subscription_attributes(&self) -> crate::operation::set_subscription_attributes::builders::SetSubscriptionAttributesFluentBuilder{
+    pub fn set_subscription_attributes(&self) -> crate::operation::set_subscription_attributes::builders::SetSubscriptionAttributesFluentBuilder {
         crate::operation::set_subscription_attributes::builders::SetSubscriptionAttributesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAssessmentFrameworkOutput`](crate::operation::update_assessment_framework::UpdateAssessmentFrameworkOutput) with field(s):
     ///   - [`framework(Option<Framework>)`](crate::operation::update_assessment_framework::UpdateAssessmentFrameworkOutput::framework): <p> The name of the framework. </p>
     /// - On failure, responds with [`SdkError<UpdateAssessmentFrameworkError>`](crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError)
-    pub fn update_assessment_framework(&self) -> crate::operation::update_assessment_framework::builders::UpdateAssessmentFrameworkFluentBuilder{
+    pub fn update_assessment_framework(&self) -> crate::operation::update_assessment_framework::builders::UpdateAssessmentFrameworkFluentBuilder {
         crate::operation::update_assessment_framework::builders::UpdateAssessmentFrameworkFluentBuilder::new(self.handle.clone())
     }
 }

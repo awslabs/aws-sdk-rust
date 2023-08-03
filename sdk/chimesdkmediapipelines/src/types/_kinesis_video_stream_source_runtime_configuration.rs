@@ -34,17 +34,14 @@ impl KinesisVideoStreamSourceRuntimeConfiguration {
 }
 impl KinesisVideoStreamSourceRuntimeConfiguration {
     /// Creates a new builder-style object to manufacture [`KinesisVideoStreamSourceRuntimeConfiguration`](crate::types::KinesisVideoStreamSourceRuntimeConfiguration).
-    pub fn builder() -> crate::types::builders::KinesisVideoStreamSourceRuntimeConfigurationBuilder
-    {
+    pub fn builder() -> crate::types::builders::KinesisVideoStreamSourceRuntimeConfigurationBuilder {
         crate::types::builders::KinesisVideoStreamSourceRuntimeConfigurationBuilder::default()
     }
 }
 
 /// A builder for [`KinesisVideoStreamSourceRuntimeConfiguration`](crate::types::KinesisVideoStreamSourceRuntimeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KinesisVideoStreamSourceRuntimeConfigurationBuilder {
     pub(crate) streams: ::std::option::Option<::std::vec::Vec<crate::types::StreamConfiguration>>,
     pub(crate) media_encoding: ::std::option::Option<crate::types::MediaEncoding>,
@@ -63,17 +60,12 @@ impl KinesisVideoStreamSourceRuntimeConfigurationBuilder {
         self
     }
     /// <p>The streams in the source runtime configuration of a Kinesis video stream.</p>
-    pub fn set_streams(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamConfiguration>>,
-    ) -> Self {
+    pub fn set_streams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamConfiguration>>) -> Self {
         self.streams = input;
         self
     }
     /// <p>The streams in the source runtime configuration of a Kinesis video stream.</p>
-    pub fn get_streams(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamConfiguration>> {
+    pub fn get_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamConfiguration>> {
         &self.streams
     }
     /// <p>Specifies the encoding of your input audio. Supported format: PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p>
@@ -84,10 +76,7 @@ impl KinesisVideoStreamSourceRuntimeConfigurationBuilder {
     }
     /// <p>Specifies the encoding of your input audio. Supported format: PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub fn set_media_encoding(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaEncoding>,
-    ) -> Self {
+    pub fn set_media_encoding(mut self, input: ::std::option::Option<crate::types::MediaEncoding>) -> Self {
         self.media_encoding = input;
         self
     }

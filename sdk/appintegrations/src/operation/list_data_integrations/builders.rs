@@ -39,9 +39,7 @@ impl ListDataIntegrationsFluentBuilder {
         }
     }
     /// Access the ListDataIntegrations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_data_integrations::builders::ListDataIntegrationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_data_integrations::builders::ListDataIntegrationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl ListDataIntegrationsFluentBuilder {
             crate::operation::list_data_integrations::ListDataIntegrations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_integrations::ListDataIntegrationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_integrations::ListDataIntegrationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl ListDataIntegrationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl ListDataIntegrationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_data_integrations::ListDataIntegrationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_integrations::ListDataIntegrationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_integrations::ListDataIntegrationsError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl ListDataIntegrationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_data_integrations::ListDataIntegrationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_integrations::ListDataIntegrationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_integrations::ListDataIntegrationsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl ListDataIntegrationsFluentBuilder {
             crate::operation::list_data_integrations::ListDataIntegrations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_integrations::ListDataIntegrationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_integrations::ListDataIntegrationsError>,
     > {
         self.customize_middleware().await
     }

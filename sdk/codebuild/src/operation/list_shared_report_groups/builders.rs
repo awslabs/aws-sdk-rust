@@ -26,8 +26,7 @@ impl ListSharedReportGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSharedReportGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_shared_report_groups::builders::ListSharedReportGroupsInputBuilder,
+    inner: crate::operation::list_shared_report_groups::builders::ListSharedReportGroupsInputBuilder,
 }
 impl ListSharedReportGroupsFluentBuilder {
     /// Creates a new `ListSharedReportGroups`.
@@ -38,10 +37,7 @@ impl ListSharedReportGroupsFluentBuilder {
         }
     }
     /// Access the ListSharedReportGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_shared_report_groups::builders::ListSharedReportGroupsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_shared_report_groups::builders::ListSharedReportGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListSharedReportGroupsFluentBuilder {
             crate::operation::list_shared_report_groups::ListSharedReportGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_shared_report_groups::ListSharedReportGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_shared_report_groups::ListSharedReportGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListSharedReportGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListSharedReportGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_shared_report_groups::ListSharedReportGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_shared_report_groups::ListSharedReportGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_shared_report_groups::ListSharedReportGroupsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListSharedReportGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_shared_report_groups::ListSharedReportGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_shared_report_groups::ListSharedReportGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_shared_report_groups::ListSharedReportGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -118,23 +105,15 @@ impl ListSharedReportGroupsFluentBuilder {
             crate::operation::list_shared_report_groups::ListSharedReportGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_shared_report_groups::ListSharedReportGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_shared_report_groups::ListSharedReportGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_shared_report_groups::paginator::ListSharedReportGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_shared_report_groups::paginator::ListSharedReportGroupsPaginator
-    {
-        crate::operation::list_shared_report_groups::paginator::ListSharedReportGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_shared_report_groups::paginator::ListSharedReportGroupsPaginator {
+        crate::operation::list_shared_report_groups::paginator::ListSharedReportGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The order in which to list shared report groups. Valid values include:</p>
     /// <ul>
@@ -150,10 +129,7 @@ impl ListSharedReportGroupsFluentBuilder {
     /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
     /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
@@ -179,10 +155,7 @@ impl ListSharedReportGroupsFluentBuilder {
     /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
     /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed. </p> </li>
     /// </ul>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SharedResourceSortByType>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SharedResourceSortByType>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

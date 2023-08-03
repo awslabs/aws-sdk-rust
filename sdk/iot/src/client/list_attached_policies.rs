@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`policies(Option<Vec<Policy>>)`](crate::operation::list_attached_policies::ListAttachedPoliciesOutput::policies): <p>The policies.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_attached_policies::ListAttachedPoliciesOutput::next_marker): <p>The token to retrieve the next set of results, or ``null`` if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListAttachedPoliciesError>`](crate::operation::list_attached_policies::ListAttachedPoliciesError)
-    pub fn list_attached_policies(
-        &self,
-    ) -> crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder {
-        crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_attached_policies(&self) -> crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder {
+        crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

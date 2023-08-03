@@ -37,10 +37,7 @@ impl ListStreamingSessionsFluentBuilder {
         }
     }
     /// Access the ListStreamingSessions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_streaming_sessions::builders::ListStreamingSessionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_streaming_sessions::builders::ListStreamingSessionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListStreamingSessionsFluentBuilder {
             crate::operation::list_streaming_sessions::ListStreamingSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_streaming_sessions::ListStreamingSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_streaming_sessions::ListStreamingSessionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListStreamingSessionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListStreamingSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_streaming_sessions::ListStreamingSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_streaming_sessions::ListStreamingSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_streaming_sessions::ListStreamingSessionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListStreamingSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_streaming_sessions::ListStreamingSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_streaming_sessions::ListStreamingSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_streaming_sessions::ListStreamingSessionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListStreamingSessionsFluentBuilder {
             crate::operation::list_streaming_sessions::ListStreamingSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_streaming_sessions::ListStreamingSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_streaming_sessions::ListStreamingSessionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_streaming_sessions::paginator::ListStreamingSessionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_streaming_sessions::paginator::ListStreamingSessionsPaginator {
-        crate::operation::list_streaming_sessions::paginator::ListStreamingSessionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_streaming_sessions::paginator::ListStreamingSessionsPaginator {
+        crate::operation::list_streaming_sessions::paginator::ListStreamingSessionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Filters the request to streaming sessions created by the given user.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

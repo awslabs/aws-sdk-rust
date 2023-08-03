@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`ListResponseHeadersPoliciesOutput`](crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesOutput) with field(s):
     ///   - [`response_headers_policy_list(Option<ResponseHeadersPolicyList>)`](crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesOutput::response_headers_policy_list): <p>A list of response headers policies.</p>
     /// - On failure, responds with [`SdkError<ListResponseHeadersPoliciesError>`](crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError)
-    pub fn list_response_headers_policies(&self) -> crate::operation::list_response_headers_policies::builders::ListResponseHeadersPoliciesFluentBuilder{
+    pub fn list_response_headers_policies(
+        &self,
+    ) -> crate::operation::list_response_headers_policies::builders::ListResponseHeadersPoliciesFluentBuilder {
         crate::operation::list_response_headers_policies::builders::ListResponseHeadersPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

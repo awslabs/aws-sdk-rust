@@ -44,9 +44,7 @@ impl Search {
 
 /// A builder for [`Search`](crate::types::Search).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchBuilder {
     pub(crate) facetable: ::std::option::Option<bool>,
     pub(crate) searchable: ::std::option::Option<bool>,

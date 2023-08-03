@@ -26,7 +26,7 @@ impl UpdateDetectorVersionMetadataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDetectorVersionMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_detector_version_metadata::builders::UpdateDetectorVersionMetadataInputBuilder,
+    inner: crate::operation::update_detector_version_metadata::builders::UpdateDetectorVersionMetadataInputBuilder,
 }
 impl UpdateDetectorVersionMetadataFluentBuilder {
     /// Creates a new `UpdateDetectorVersionMetadata`.
@@ -37,7 +37,7 @@ impl UpdateDetectorVersionMetadataFluentBuilder {
         }
     }
     /// Access the UpdateDetectorVersionMetadata as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_detector_version_metadata::builders::UpdateDetectorVersionMetadataInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_detector_version_metadata::builders::UpdateDetectorVersionMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateDetectorVersionMetadataFluentBuilder {
             crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateDetectorVersionMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateDetectorVersionMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateDetectorVersionMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateDetectorVersionMetadataFluentBuilder {
             crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl UpdateDetectorVersionMetadataFluentBuilder {
         self.inner.get_detector_id()
     }
     /// <p>The detector version ID. </p>
-    pub fn detector_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_version_id(input.into());
         self
     }
     /// <p>The detector version ID. </p>
-    pub fn set_detector_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_version_id(input);
         self
     }

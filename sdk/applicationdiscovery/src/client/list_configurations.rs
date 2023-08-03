@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`configurations(Option<Vec<HashMap<String, String>>>)`](crate::operation::list_configurations::ListConfigurationsOutput::configurations): <p>Returns configuration details, including the configuration ID, attribute names, and attribute values.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_configurations::ListConfigurationsOutput::next_token): <p>Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     /// - On failure, responds with [`SdkError<ListConfigurationsError>`](crate::operation::list_configurations::ListConfigurationsError)
-    pub fn list_configurations(
-        &self,
-    ) -> crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder {
-        crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_configurations(&self) -> crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder {
+        crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateCampaignOutboundCallConfigOutpu
 }
 impl UpdateCampaignOutboundCallConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCampaignOutboundCallConfigOutput`](crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigOutput).
-    pub fn builder() -> crate::operation::update_campaign_outbound_call_config::builders::UpdateCampaignOutboundCallConfigOutputBuilder{
+    pub fn builder() -> crate::operation::update_campaign_outbound_call_config::builders::UpdateCampaignOutboundCallConfigOutputBuilder {
         crate::operation::update_campaign_outbound_call_config::builders::UpdateCampaignOutboundCallConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCampaignOutboundCallConfigOutput`](crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCampaignOutboundCallConfigOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl UpdateCampaignOutboundCallConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateCampaignOutboundCallConfigOutput`](crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigOutput).
-    pub fn build(self) -> crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigOutput{
+    pub fn build(self) -> crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigOutput {
         crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigOutput {
             _request_id: self._request_id,
         }

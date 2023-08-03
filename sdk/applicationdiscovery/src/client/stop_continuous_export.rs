@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`start_time(Option<DateTime>)`](crate::operation::stop_continuous_export::StopContinuousExportOutput::start_time): <p>Timestamp that represents when this continuous export started collecting data.</p>
     ///   - [`stop_time(Option<DateTime>)`](crate::operation::stop_continuous_export::StopContinuousExportOutput::stop_time): <p>Timestamp that represents when this continuous export was stopped.</p>
     /// - On failure, responds with [`SdkError<StopContinuousExportError>`](crate::operation::stop_continuous_export::StopContinuousExportError)
-    pub fn stop_continuous_export(
-        &self,
-    ) -> crate::operation::stop_continuous_export::builders::StopContinuousExportFluentBuilder {
-        crate::operation::stop_continuous_export::builders::StopContinuousExportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_continuous_export(&self) -> crate::operation::stop_continuous_export::builders::StopContinuousExportFluentBuilder {
+        crate::operation::stop_continuous_export::builders::StopContinuousExportFluentBuilder::new(self.handle.clone())
     }
 }

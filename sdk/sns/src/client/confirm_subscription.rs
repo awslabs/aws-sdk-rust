@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ConfirmSubscriptionOutput`](crate::operation::confirm_subscription::ConfirmSubscriptionOutput) with field(s):
     ///   - [`subscription_arn(Option<String>)`](crate::operation::confirm_subscription::ConfirmSubscriptionOutput::subscription_arn): <p>The ARN of the created subscription.</p>
     /// - On failure, responds with [`SdkError<ConfirmSubscriptionError>`](crate::operation::confirm_subscription::ConfirmSubscriptionError)
-    pub fn confirm_subscription(
-        &self,
-    ) -> crate::operation::confirm_subscription::builders::ConfirmSubscriptionFluentBuilder {
-        crate::operation::confirm_subscription::builders::ConfirmSubscriptionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn confirm_subscription(&self) -> crate::operation::confirm_subscription::builders::ConfirmSubscriptionFluentBuilder {
+        crate::operation::confirm_subscription::builders::ConfirmSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

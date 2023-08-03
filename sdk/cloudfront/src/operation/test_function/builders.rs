@@ -10,10 +10,7 @@ impl TestFunctionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::test_function::TestFunctionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_function::TestFunctionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_function::TestFunctionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.test_function();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl TestFunctionFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::test_function::TestFunction,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::test_function::TestFunction, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::test_function::TestFunctionError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl TestFunctionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl TestFunctionFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::test_function::TestFunction,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::test_function::TestFunction, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::test_function::TestFunctionError>,
     > {
         self.customize_middleware().await
@@ -162,10 +150,7 @@ impl TestFunctionFluentBuilder {
         self
     }
     /// <p>The event object to test the function with. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_event_object(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_event_object(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_event_object(input);
         self
     }

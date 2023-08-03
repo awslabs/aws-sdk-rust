@@ -77,16 +77,14 @@ impl ::aws_http::request_id::RequestId for GetCapacityReservationUsageOutput {
 }
 impl GetCapacityReservationUsageOutput {
     /// Creates a new builder-style object to manufacture [`GetCapacityReservationUsageOutput`](crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageOutput).
-    pub fn builder() -> crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageOutputBuilder{
+    pub fn builder() -> crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageOutputBuilder {
         crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCapacityReservationUsageOutput`](crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCapacityReservationUsageOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_reservation_id: ::std::option::Option<::std::string::String>,
@@ -113,18 +111,12 @@ impl GetCapacityReservationUsageOutputBuilder {
         &self.next_token
     }
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn capacity_reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn set_capacity_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_id = input;
         self
     }
@@ -133,18 +125,12 @@ impl GetCapacityReservationUsageOutputBuilder {
         &self.capacity_reservation_id
     }
     /// <p>The type of instance for which the Capacity Reservation reserves capacity.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of instance for which the Capacity Reservation reserves capacity.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -200,10 +186,7 @@ impl GetCapacityReservationUsageOutputBuilder {
     /// <li> <p> <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p> </li>
     /// <li> <p> <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p> </li>
     /// </ul>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::CapacityReservationState>) -> Self {
         self.state = input;
         self
     }
@@ -230,17 +213,12 @@ impl GetCapacityReservationUsageOutputBuilder {
         self
     }
     /// <p>Information about the Capacity Reservation usage.</p>
-    pub fn set_instance_usages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceUsage>>,
-    ) -> Self {
+    pub fn set_instance_usages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceUsage>>) -> Self {
         self.instance_usages = input;
         self
     }
     /// <p>Information about the Capacity Reservation usage.</p>
-    pub fn get_instance_usages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceUsage>> {
+    pub fn get_instance_usages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceUsage>> {
         &self.instance_usages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -253,9 +231,7 @@ impl GetCapacityReservationUsageOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCapacityReservationUsageOutput`](crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageOutput {
+    pub fn build(self) -> crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageOutput {
         crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageOutput {
             next_token: self.next_token,
             capacity_reservation_id: self.capacity_reservation_id,

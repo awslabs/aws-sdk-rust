@@ -6,10 +6,7 @@ pub fn ser_create_related_item_input(
     if let Some(var_1) = &input.content {
         #[allow(unused_mut)]
         let mut object_2 = object.key("content").start_object();
-        crate::protocol_serde::shape_related_item_input_content::ser_related_item_input_content(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_related_item_input_content::ser_related_item_input_content(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.r#type {

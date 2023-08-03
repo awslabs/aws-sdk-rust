@@ -53,9 +53,7 @@ pub fn ser_instance_network_interface_specification(
         for item_18 in var_17 {
             #[allow(unused_mut)]
             let mut entry_20 = list_19.entry();
-            crate::protocol_serde::shape_instance_ipv6_address::ser_instance_ipv6_address(
-                entry_20, item_18,
-            )?;
+            crate::protocol_serde::shape_instance_ipv6_address::ser_instance_ipv6_address(entry_20, item_18)?;
         }
         list_19.finish();
     }
@@ -154,10 +152,7 @@ pub fn ser_instance_network_interface_specification(
 
 pub fn de_instance_network_interface_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::InstanceNetworkInterfaceSpecification,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::InstanceNetworkInterfaceSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceNetworkInterfaceSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {

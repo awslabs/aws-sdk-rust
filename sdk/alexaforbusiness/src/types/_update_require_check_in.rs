@@ -30,9 +30,7 @@ impl UpdateRequireCheckIn {
 
 /// A builder for [`UpdateRequireCheckIn`](crate::types::UpdateRequireCheckIn).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRequireCheckInBuilder {
     pub(crate) release_after_minutes: ::std::option::Option<i32>,
     pub(crate) enabled: ::std::option::Option<bool>,

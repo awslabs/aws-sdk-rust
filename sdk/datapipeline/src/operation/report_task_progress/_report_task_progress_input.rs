@@ -23,17 +23,14 @@ impl ReportTaskProgressInput {
 }
 impl ReportTaskProgressInput {
     /// Creates a new builder-style object to manufacture [`ReportTaskProgressInput`](crate::operation::report_task_progress::ReportTaskProgressInput).
-    pub fn builder(
-    ) -> crate::operation::report_task_progress::builders::ReportTaskProgressInputBuilder {
+    pub fn builder() -> crate::operation::report_task_progress::builders::ReportTaskProgressInputBuilder {
         crate::operation::report_task_progress::builders::ReportTaskProgressInputBuilder::default()
     }
 }
 
 /// A builder for [`ReportTaskProgressInput`](crate::operation::report_task_progress::ReportTaskProgressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportTaskProgressInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
@@ -65,10 +62,7 @@ impl ReportTaskProgressInputBuilder {
         self
     }
     /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>) -> Self {
         self.fields = input;
         self
     }
@@ -79,15 +73,10 @@ impl ReportTaskProgressInputBuilder {
     /// Consumes the builder and constructs a [`ReportTaskProgressInput`](crate::operation::report_task_progress::ReportTaskProgressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::report_task_progress::ReportTaskProgressInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::report_task_progress::ReportTaskProgressInput {
-                task_id: self.task_id,
-                fields: self.fields,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::report_task_progress::ReportTaskProgressInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::report_task_progress::ReportTaskProgressInput {
+            task_id: self.task_id,
+            fields: self.fields,
+        })
     }
 }

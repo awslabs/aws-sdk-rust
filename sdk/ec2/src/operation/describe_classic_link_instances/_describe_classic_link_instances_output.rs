@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeClassicLinkInstancesOutput {
 }
 impl DescribeClassicLinkInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClassicLinkInstancesOutput`](crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesOutput).
-    pub fn builder() -> crate::operation::describe_classic_link_instances::builders::DescribeClassicLinkInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_classic_link_instances::builders::DescribeClassicLinkInstancesOutputBuilder {
         crate::operation::describe_classic_link_instances::builders::DescribeClassicLinkInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClassicLinkInstancesOutput`](crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClassicLinkInstancesOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::ClassicLinkInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeClassicLinkInstancesOutputBuilder {
         self
     }
     /// <p>Information about one or more linked EC2-Classic instances.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClassicLinkInstance>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClassicLinkInstance>>) -> Self {
         self.instances = input;
         self
     }
     /// <p>Information about one or more linked EC2-Classic instances.</p>
-    pub fn get_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClassicLinkInstance>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClassicLinkInstance>> {
         &self.instances
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -93,9 +86,7 @@ impl DescribeClassicLinkInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeClassicLinkInstancesOutput`](crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesOutput {
+    pub fn build(self) -> crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesOutput {
         crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesOutput {
             instances: self.instances,
             next_token: self.next_token,

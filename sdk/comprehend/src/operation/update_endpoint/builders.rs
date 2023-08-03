@@ -10,10 +10,7 @@ impl UpdateEndpointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_endpoint::UpdateEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoint::UpdateEndpointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint::UpdateEndpointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_endpoint();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateEndpointFluentBuilder {
         }
     }
     /// Access the UpdateEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_endpoint::builders::UpdateEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_endpoint::builders::UpdateEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl UpdateEndpointFluentBuilder {
         self.inner.get_endpoint_arn()
     }
     /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
-    pub fn desired_model_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn desired_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.desired_model_arn(input.into());
         self
     }
     /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
-    pub fn set_desired_model_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_desired_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_desired_model_arn(input);
         self
     }
@@ -163,25 +149,17 @@ impl UpdateEndpointFluentBuilder {
         self.inner.get_desired_inference_units()
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
-    pub fn desired_data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn desired_data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.desired_data_access_role_arn(input.into());
         self
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
-    pub fn set_desired_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_desired_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_desired_data_access_role_arn(input);
         self
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
-    pub fn get_desired_data_access_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_desired_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_desired_data_access_role_arn()
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>

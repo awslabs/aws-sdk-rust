@@ -39,7 +39,9 @@ impl super::Client {
     /// - On success, responds with [`RestoreFromClusterSnapshotOutput`](crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotOutput::cluster): <p>Describes a cluster.</p>
     /// - On failure, responds with [`SdkError<RestoreFromClusterSnapshotError>`](crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError)
-    pub fn restore_from_cluster_snapshot(&self) -> crate::operation::restore_from_cluster_snapshot::builders::RestoreFromClusterSnapshotFluentBuilder{
+    pub fn restore_from_cluster_snapshot(
+        &self,
+    ) -> crate::operation::restore_from_cluster_snapshot::builders::RestoreFromClusterSnapshotFluentBuilder {
         crate::operation::restore_from_cluster_snapshot::builders::RestoreFromClusterSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

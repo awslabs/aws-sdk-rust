@@ -29,27 +29,19 @@ impl DeleteTableInput {
 
 /// A builder for [`DeleteTableInput`](crate::operation::delete_table::DeleteTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTableInputBuilder {
     pub(crate) keyspace_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTableInputBuilder {
     /// <p>The name of the keyspace of the to be deleted table.</p>
-    pub fn keyspace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the keyspace of the to be deleted table.</p>
-    pub fn set_keyspace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.keyspace_name = input;
         self
     }
@@ -72,12 +64,7 @@ impl DeleteTableInputBuilder {
         &self.table_name
     }
     /// Consumes the builder and constructs a [`DeleteTableInput`](crate::operation::delete_table::DeleteTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_table::DeleteTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_table::DeleteTableInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_table::DeleteTableInput {
             keyspace_name: self.keyspace_name,
             table_name: self.table_name,

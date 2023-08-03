@@ -27,7 +27,7 @@ impl RejectQualificationRequestInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RejectQualificationRequestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::reject_qualification_request::builders::RejectQualificationRequestInputBuilder,
+    inner: crate::operation::reject_qualification_request::builders::RejectQualificationRequestInputBuilder,
 }
 impl RejectQualificationRequestFluentBuilder {
     /// Creates a new `RejectQualificationRequest`.
@@ -38,7 +38,7 @@ impl RejectQualificationRequestFluentBuilder {
         }
     }
     /// Access the RejectQualificationRequest as a reference.
-    pub fn as_input(&self) -> &crate::operation::reject_qualification_request::builders::RejectQualificationRequestInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::reject_qualification_request::builders::RejectQualificationRequestInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl RejectQualificationRequestFluentBuilder {
             crate::operation::reject_qualification_request::RejectQualificationRequest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_qualification_request::RejectQualificationRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_qualification_request::RejectQualificationRequestError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl RejectQualificationRequestFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl RejectQualificationRequestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_qualification_request::RejectQualificationRequestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_qualification_request::RejectQualificationRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_qualification_request::RejectQualificationRequestError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl RejectQualificationRequestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_qualification_request::RejectQualificationRequestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_qualification_request::RejectQualificationRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_qualification_request::RejectQualificationRequestError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl RejectQualificationRequestFluentBuilder {
             crate::operation::reject_qualification_request::RejectQualificationRequest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_qualification_request::RejectQualificationRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_qualification_request::RejectQualificationRequestError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
-    pub fn qualification_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.qualification_request_id(input.into());
         self
     }
     /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
-    pub fn set_qualification_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_qualification_request_id(input);
         self
     }

@@ -28,10 +28,7 @@ pub fn ser_endpoint_request(
     if let Some(var_9) = &input.demographic {
         #[allow(unused_mut)]
         let mut object_10 = object.key("Demographic").start_object();
-        crate::protocol_serde::shape_endpoint_demographic::ser_endpoint_demographic(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_endpoint_demographic::ser_endpoint_demographic(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.effective_date {
@@ -43,10 +40,7 @@ pub fn ser_endpoint_request(
     if let Some(var_13) = &input.location {
         #[allow(unused_mut)]
         let mut object_14 = object.key("Location").start_object();
-        crate::protocol_serde::shape_endpoint_location::ser_endpoint_location(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_endpoint_location::ser_endpoint_location(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.metrics {

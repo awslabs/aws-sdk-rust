@@ -38,9 +38,7 @@ impl GetEffectivePoliciesFluentBuilder {
         }
     }
     /// Access the GetEffectivePolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_effective_policies::builders::GetEffectivePoliciesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_effective_policies::builders::GetEffectivePoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl GetEffectivePoliciesFluentBuilder {
             crate::operation::get_effective_policies::GetEffectivePolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_effective_policies::GetEffectivePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_effective_policies::GetEffectivePoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl GetEffectivePoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl GetEffectivePoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_effective_policies::GetEffectivePoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_effective_policies::GetEffectivePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_effective_policies::GetEffectivePoliciesError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl GetEffectivePoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_effective_policies::GetEffectivePoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_effective_policies::GetEffectivePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_effective_policies::GetEffectivePoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl GetEffectivePoliciesFluentBuilder {
             crate::operation::get_effective_policies::GetEffectivePolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_effective_policies::GetEffectivePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_effective_policies::GetEffectivePoliciesError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +125,12 @@ impl GetEffectivePoliciesFluentBuilder {
         self.inner.get_principal()
     }
     /// <p>The Cognito identity pool ID.</p>
-    pub fn cognito_identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cognito_identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cognito_identity_pool_id(input.into());
         self
     }
     /// <p>The Cognito identity pool ID.</p>
-    pub fn set_cognito_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cognito_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cognito_identity_pool_id(input);
         self
     }

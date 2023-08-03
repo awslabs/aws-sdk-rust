@@ -29,9 +29,7 @@ impl DeleteTypeInput {
 
 /// A builder for [`DeleteTypeInput`](crate::operation::delete_type::DeleteTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTypeInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl DeleteTypeInputBuilder {
         &self.type_name
     }
     /// Consumes the builder and constructs a [`DeleteTypeInput`](crate::operation::delete_type::DeleteTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_type::DeleteTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_type::DeleteTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_type::DeleteTypeInput {
             api_id: self.api_id,
             type_name: self.type_name,

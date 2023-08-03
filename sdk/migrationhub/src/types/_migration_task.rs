@@ -18,8 +18,7 @@ pub struct MigrationTask {
     pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p>
     #[doc(hidden)]
-    pub resource_attribute_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>,
+    pub resource_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>,
 }
 impl MigrationTask {
     /// <p>A name that identifies the vendor of the migration tool being used.</p>
@@ -39,9 +38,7 @@ impl MigrationTask {
         self.update_date_time.as_ref()
     }
     /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p>
-    pub fn resource_attribute_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceAttribute]> {
+    pub fn resource_attribute_list(&self) -> ::std::option::Option<&[crate::types::ResourceAttribute]> {
         self.resource_attribute_list.as_deref()
     }
 }
@@ -54,31 +51,22 @@ impl MigrationTask {
 
 /// A builder for [`MigrationTask`](crate::types::MigrationTask).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MigrationTaskBuilder {
     pub(crate) progress_update_stream: ::std::option::Option<::std::string::String>,
     pub(crate) migration_task_name: ::std::option::Option<::std::string::String>,
     pub(crate) task: ::std::option::Option<crate::types::Task>,
     pub(crate) update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) resource_attribute_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>,
+    pub(crate) resource_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>,
 }
 impl MigrationTaskBuilder {
     /// <p>A name that identifies the vendor of the migration tool being used.</p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name that identifies the vendor of the migration tool being used.</p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress_update_stream = input;
         self
     }
@@ -87,18 +75,12 @@ impl MigrationTaskBuilder {
         &self.progress_update_stream
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.migration_task_name = input;
         self
     }
@@ -126,10 +108,7 @@ impl MigrationTaskBuilder {
         self
     }
     /// <p>The timestamp when the task was gathered.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date_time = input;
         self
     }
@@ -149,17 +128,12 @@ impl MigrationTaskBuilder {
         self
     }
     /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p>
-    pub fn set_resource_attribute_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>,
-    ) -> Self {
+    pub fn set_resource_attribute_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>) -> Self {
         self.resource_attribute_list = input;
         self
     }
     /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p>
-    pub fn get_resource_attribute_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>> {
+    pub fn get_resource_attribute_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>> {
         &self.resource_attribute_list
     }
     /// Consumes the builder and constructs a [`MigrationTask`](crate::types::MigrationTask).

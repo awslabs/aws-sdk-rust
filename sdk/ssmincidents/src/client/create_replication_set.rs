@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateReplicationSetOutput`](crate::operation::create_replication_set::CreateReplicationSetOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_replication_set::CreateReplicationSetOutput::arn): <p>The Amazon Resource Name (ARN) of the replication set. </p>
     /// - On failure, responds with [`SdkError<CreateReplicationSetError>`](crate::operation::create_replication_set::CreateReplicationSetError)
-    pub fn create_replication_set(
-        &self,
-    ) -> crate::operation::create_replication_set::builders::CreateReplicationSetFluentBuilder {
-        crate::operation::create_replication_set::builders::CreateReplicationSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_replication_set(&self) -> crate::operation::create_replication_set::builders::CreateReplicationSetFluentBuilder {
+        crate::operation::create_replication_set::builders::CreateReplicationSetFluentBuilder::new(self.handle.clone())
     }
 }

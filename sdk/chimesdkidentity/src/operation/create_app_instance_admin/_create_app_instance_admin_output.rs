@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateAppInstanceAdminOutput {
 }
 impl CreateAppInstanceAdminOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppInstanceAdminOutput`](crate::operation::create_app_instance_admin::CreateAppInstanceAdminOutput).
-    pub fn builder(
-    ) -> crate::operation::create_app_instance_admin::builders::CreateAppInstanceAdminOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_app_instance_admin::builders::CreateAppInstanceAdminOutputBuilder {
         crate::operation::create_app_instance_admin::builders::CreateAppInstanceAdminOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAppInstanceAdminOutput`](crate::operation::create_app_instance_admin::CreateAppInstanceAdminOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppInstanceAdminOutputBuilder {
     pub(crate) app_instance_admin: ::std::option::Option<crate::types::Identity>,
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
@@ -52,10 +48,7 @@ impl CreateAppInstanceAdminOutputBuilder {
         self
     }
     /// <p>The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
-    pub fn set_app_instance_admin(
-        mut self,
-        input: ::std::option::Option<crate::types::Identity>,
-    ) -> Self {
+    pub fn set_app_instance_admin(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
         self.app_instance_admin = input;
         self
     }
@@ -64,18 +57,12 @@ impl CreateAppInstanceAdminOutputBuilder {
         &self.app_instance_admin
     }
     /// <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_arn = input;
         self
     }
@@ -93,9 +80,7 @@ impl CreateAppInstanceAdminOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAppInstanceAdminOutput`](crate::operation::create_app_instance_admin::CreateAppInstanceAdminOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_app_instance_admin::CreateAppInstanceAdminOutput {
+    pub fn build(self) -> crate::operation::create_app_instance_admin::CreateAppInstanceAdminOutput {
         crate::operation::create_app_instance_admin::CreateAppInstanceAdminOutput {
             app_instance_admin: self.app_instance_admin,
             app_instance_arn: self.app_instance_arn,

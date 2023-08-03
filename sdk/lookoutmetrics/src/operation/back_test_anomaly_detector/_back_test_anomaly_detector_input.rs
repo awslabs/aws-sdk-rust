@@ -15,35 +15,25 @@ impl BackTestAnomalyDetectorInput {
 }
 impl BackTestAnomalyDetectorInput {
     /// Creates a new builder-style object to manufacture [`BackTestAnomalyDetectorInput`](crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorInput).
-    pub fn builder(
-    ) -> crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorInputBuilder
-    {
+    pub fn builder() -> crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorInputBuilder {
         crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorInputBuilder::default()
     }
 }
 
 /// A builder for [`BackTestAnomalyDetectorInput`](crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackTestAnomalyDetectorInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
 }
 impl BackTestAnomalyDetectorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_detector_arn = input;
         self
     }
@@ -58,10 +48,8 @@ impl BackTestAnomalyDetectorInputBuilder {
         crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorInput {
-                anomaly_detector_arn: self.anomaly_detector_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorInput {
+            anomaly_detector_arn: self.anomaly_detector_arn,
+        })
     }
 }

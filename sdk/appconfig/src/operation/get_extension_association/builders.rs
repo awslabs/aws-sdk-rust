@@ -26,8 +26,7 @@ impl GetExtensionAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetExtensionAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_extension_association::builders::GetExtensionAssociationInputBuilder,
+    inner: crate::operation::get_extension_association::builders::GetExtensionAssociationInputBuilder,
 }
 impl GetExtensionAssociationFluentBuilder {
     /// Creates a new `GetExtensionAssociation`.
@@ -38,10 +37,7 @@ impl GetExtensionAssociationFluentBuilder {
         }
     }
     /// Access the GetExtensionAssociation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_extension_association::builders::GetExtensionAssociationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_extension_association::builders::GetExtensionAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetExtensionAssociationFluentBuilder {
             crate::operation::get_extension_association::GetExtensionAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_extension_association::GetExtensionAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_extension_association::GetExtensionAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetExtensionAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetExtensionAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_extension_association::GetExtensionAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_extension_association::GetExtensionAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_extension_association::GetExtensionAssociationError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetExtensionAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_extension_association::GetExtensionAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_extension_association::GetExtensionAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_extension_association::GetExtensionAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl GetExtensionAssociationFluentBuilder {
             crate::operation::get_extension_association::GetExtensionAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_extension_association::GetExtensionAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_extension_association::GetExtensionAssociationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The extension association ID to get.</p>
-    pub fn extension_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extension_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.extension_association_id(input.into());
         self
     }
     /// <p>The extension association ID to get.</p>
-    pub fn set_extension_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extension_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_extension_association_id(input);
         self
     }

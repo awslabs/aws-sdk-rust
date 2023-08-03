@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`parameters(Option<Vec<Parameter>>)`](crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersOutput::parameters): <p>Provides a list of parameters for the DB cluster parameter group.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersOutput::marker): <p> An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     /// - On failure, responds with [`SdkError<DescribeDBClusterParametersError>`](crate::operation::describe_db_cluster_parameters::DescribeDBClusterParametersError)
-    pub fn describe_db_cluster_parameters(&self) -> crate::operation::describe_db_cluster_parameters::builders::DescribeDBClusterParametersFluentBuilder{
+    pub fn describe_db_cluster_parameters(
+        &self,
+    ) -> crate::operation::describe_db_cluster_parameters::builders::DescribeDBClusterParametersFluentBuilder {
         crate::operation::describe_db_cluster_parameters::builders::DescribeDBClusterParametersFluentBuilder::new(self.handle.clone())
     }
 }

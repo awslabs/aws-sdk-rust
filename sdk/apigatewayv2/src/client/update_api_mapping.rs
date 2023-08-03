@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`api_mapping_key(Option<String>)`](crate::operation::update_api_mapping::UpdateApiMappingOutput::api_mapping_key): <p>The API mapping key.</p>
     ///   - [`stage(Option<String>)`](crate::operation::update_api_mapping::UpdateApiMappingOutput::stage): <p>The API stage.</p>
     /// - On failure, responds with [`SdkError<UpdateApiMappingError>`](crate::operation::update_api_mapping::UpdateApiMappingError)
-    pub fn update_api_mapping(
-        &self,
-    ) -> crate::operation::update_api_mapping::builders::UpdateApiMappingFluentBuilder {
-        crate::operation::update_api_mapping::builders::UpdateApiMappingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_api_mapping(&self) -> crate::operation::update_api_mapping::builders::UpdateApiMappingFluentBuilder {
+        crate::operation::update_api_mapping::builders::UpdateApiMappingFluentBuilder::new(self.handle.clone())
     }
 }

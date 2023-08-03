@@ -23,9 +23,7 @@ impl DetectedDataDetails {
 
 /// A builder for [`DetectedDataDetails`](crate::types::DetectedDataDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectedDataDetailsBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }

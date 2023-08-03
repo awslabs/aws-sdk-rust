@@ -31,9 +31,7 @@ impl QuickConnectConfig {
         self.queue_config.as_ref()
     }
     /// <p>The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.</p>
-    pub fn phone_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PhoneNumberQuickConnectConfig> {
+    pub fn phone_config(&self) -> ::std::option::Option<&crate::types::PhoneNumberQuickConnectConfig> {
         self.phone_config.as_ref()
     }
 }
@@ -46,9 +44,7 @@ impl QuickConnectConfig {
 
 /// A builder for [`QuickConnectConfig`](crate::types::QuickConnectConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QuickConnectConfigBuilder {
     pub(crate) quick_connect_type: ::std::option::Option<crate::types::QuickConnectType>,
     pub(crate) user_config: ::std::option::Option<crate::types::UserQuickConnectConfig>,
@@ -62,10 +58,7 @@ impl QuickConnectConfigBuilder {
         self
     }
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
-    pub fn set_quick_connect_type(
-        mut self,
-        input: ::std::option::Option<crate::types::QuickConnectType>,
-    ) -> Self {
+    pub fn set_quick_connect_type(mut self, input: ::std::option::Option<crate::types::QuickConnectType>) -> Self {
         self.quick_connect_type = input;
         self
     }
@@ -79,10 +72,7 @@ impl QuickConnectConfigBuilder {
         self
     }
     /// <p>The user configuration. This is required only if QuickConnectType is USER.</p>
-    pub fn set_user_config(
-        mut self,
-        input: ::std::option::Option<crate::types::UserQuickConnectConfig>,
-    ) -> Self {
+    pub fn set_user_config(mut self, input: ::std::option::Option<crate::types::UserQuickConnectConfig>) -> Self {
         self.user_config = input;
         self
     }
@@ -96,17 +86,12 @@ impl QuickConnectConfigBuilder {
         self
     }
     /// <p>The queue configuration. This is required only if QuickConnectType is QUEUE.</p>
-    pub fn set_queue_config(
-        mut self,
-        input: ::std::option::Option<crate::types::QueueQuickConnectConfig>,
-    ) -> Self {
+    pub fn set_queue_config(mut self, input: ::std::option::Option<crate::types::QueueQuickConnectConfig>) -> Self {
         self.queue_config = input;
         self
     }
     /// <p>The queue configuration. This is required only if QuickConnectType is QUEUE.</p>
-    pub fn get_queue_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::QueueQuickConnectConfig> {
+    pub fn get_queue_config(&self) -> &::std::option::Option<crate::types::QueueQuickConnectConfig> {
         &self.queue_config
     }
     /// <p>The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.</p>
@@ -115,17 +100,12 @@ impl QuickConnectConfigBuilder {
         self
     }
     /// <p>The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.</p>
-    pub fn set_phone_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberQuickConnectConfig>,
-    ) -> Self {
+    pub fn set_phone_config(mut self, input: ::std::option::Option<crate::types::PhoneNumberQuickConnectConfig>) -> Self {
         self.phone_config = input;
         self
     }
     /// <p>The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.</p>
-    pub fn get_phone_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::PhoneNumberQuickConnectConfig> {
+    pub fn get_phone_config(&self) -> &::std::option::Option<crate::types::PhoneNumberQuickConnectConfig> {
         &self.phone_config
     }
     /// Consumes the builder and constructs a [`QuickConnectConfig`](crate::types::QuickConnectConfig).

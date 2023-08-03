@@ -37,9 +37,7 @@ impl StopStreamingSessionFluentBuilder {
         }
     }
     /// Access the StopStreamingSession as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_streaming_session::builders::StopStreamingSessionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_streaming_session::builders::StopStreamingSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl StopStreamingSessionFluentBuilder {
             crate::operation::stop_streaming_session::StopStreamingSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_streaming_session::StopStreamingSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_streaming_session::StopStreamingSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl StopStreamingSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl StopStreamingSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_streaming_session::StopStreamingSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_streaming_session::StopStreamingSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_streaming_session::StopStreamingSessionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl StopStreamingSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_streaming_session::StopStreamingSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_streaming_session::StopStreamingSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_streaming_session::StopStreamingSessionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl StopStreamingSessionFluentBuilder {
             crate::operation::stop_streaming_session::StopStreamingSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_streaming_session::StopStreamingSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_streaming_session::StopStreamingSessionError>,
     > {
         self.customize_middleware().await
     }
@@ -170,17 +157,12 @@ impl StopStreamingSessionFluentBuilder {
         self
     }
     /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
-    pub fn set_volume_retention_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeRetentionMode>,
-    ) -> Self {
+    pub fn set_volume_retention_mode(mut self, input: ::std::option::Option<crate::types::VolumeRetentionMode>) -> Self {
         self.inner = self.inner.set_volume_retention_mode(input);
         self
     }
     /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
-    pub fn get_volume_retention_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::VolumeRetentionMode> {
+    pub fn get_volume_retention_mode(&self) -> &::std::option::Option<crate::types::VolumeRetentionMode> {
         self.inner.get_volume_retention_mode()
     }
 }

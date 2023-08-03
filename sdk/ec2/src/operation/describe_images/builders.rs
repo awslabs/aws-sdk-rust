@@ -10,10 +10,7 @@ impl DescribeImagesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_images::DescribeImagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_images::DescribeImagesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_images::DescribeImagesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_images();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DescribeImagesFluentBuilder {
         }
     }
     /// Access the DescribeImages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_images::builders::DescribeImagesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_images::builders::DescribeImagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl DescribeImagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -119,13 +111,8 @@ impl DescribeImagesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_images::paginator::DescribeImagesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_images::paginator::DescribeImagesPaginator {
-        crate::operation::describe_images::paginator::DescribeImagesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_images::paginator::DescribeImagesPaginator {
+        crate::operation::describe_images::paginator::DescribeImagesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `ExecutableUsers`.
     ///
@@ -137,10 +124,7 @@ impl DescribeImagesFluentBuilder {
     /// <li> <p>If you specify <code>self</code> or your own Amazon Web Services account ID, AMIs shared with your account are returned. In addition, AMIs that are shared with the organization or OU of which you are member are also returned. </p> </li>
     /// <li> <p>If you specify <code>all</code>, all public AMIs are returned.</p> </li>
     /// </ul>
-    pub fn executable_users(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn executable_users(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.executable_users(input.into());
         self
     }
@@ -150,10 +134,7 @@ impl DescribeImagesFluentBuilder {
     /// <li> <p>If you specify <code>self</code> or your own Amazon Web Services account ID, AMIs shared with your account are returned. In addition, AMIs that are shared with the organization or OU of which you are member are also returned. </p> </li>
     /// <li> <p>If you specify <code>all</code>, all public AMIs are returned.</p> </li>
     /// </ul>
-    pub fn set_executable_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_executable_users(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_executable_users(input);
         self
     }
@@ -163,9 +144,7 @@ impl DescribeImagesFluentBuilder {
     /// <li> <p>If you specify <code>self</code> or your own Amazon Web Services account ID, AMIs shared with your account are returned. In addition, AMIs that are shared with the organization or OU of which you are member are also returned. </p> </li>
     /// <li> <p>If you specify <code>all</code>, all public AMIs are returned.</p> </li>
     /// </ul>
-    pub fn get_executable_users(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_executable_users(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_executable_users()
     }
     /// Appends an item to `Filters`.
@@ -258,10 +237,7 @@ impl DescribeImagesFluentBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -321,10 +297,7 @@ impl DescribeImagesFluentBuilder {
     }
     /// <p>The image IDs.</p>
     /// <p>Default: Describes all images available to you.</p>
-    pub fn set_image_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_image_ids(input);
         self
     }
@@ -343,10 +316,7 @@ impl DescribeImagesFluentBuilder {
         self
     }
     /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
-    pub fn set_owners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_owners(input);
         self
     }

@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`attachment_id(Option<String>)`](crate::operation::start_attachment_upload::StartAttachmentUploadOutput::attachment_id): <p>A unique identifier for the attachment.</p>
     ///   - [`upload_metadata(Option<UploadMetadata>)`](crate::operation::start_attachment_upload::StartAttachmentUploadOutput::upload_metadata): <p>Fields to be used while uploading the attachment.</p>
     /// - On failure, responds with [`SdkError<StartAttachmentUploadError>`](crate::operation::start_attachment_upload::StartAttachmentUploadError)
-    pub fn start_attachment_upload(
-        &self,
-    ) -> crate::operation::start_attachment_upload::builders::StartAttachmentUploadFluentBuilder
-    {
-        crate::operation::start_attachment_upload::builders::StartAttachmentUploadFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_attachment_upload(&self) -> crate::operation::start_attachment_upload::builders::StartAttachmentUploadFluentBuilder {
+        crate::operation::start_attachment_upload::builders::StartAttachmentUploadFluentBuilder::new(self.handle.clone())
     }
 }

@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InventoryQueryOperatorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for InventoryQueryOperatorType {
             "GreaterThan" => InventoryQueryOperatorType::GreaterThan,
             "LessThan" => InventoryQueryOperatorType::LessThan,
             "NotEqual" => InventoryQueryOperatorType::NotEqual,
-            other => InventoryQueryOperatorType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InventoryQueryOperatorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl InventoryQueryOperatorType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BeginWith",
-            "Equal",
-            "Exists",
-            "GreaterThan",
-            "LessThan",
-            "NotEqual",
-        ]
+        &["BeginWith", "Equal", "Exists", "GreaterThan", "LessThan", "NotEqual"]
     }
 }
 impl ::std::convert::AsRef<str> for InventoryQueryOperatorType {

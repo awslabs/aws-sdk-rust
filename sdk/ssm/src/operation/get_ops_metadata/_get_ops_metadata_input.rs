@@ -36,9 +36,7 @@ impl GetOpsMetadataInput {
 
 /// A builder for [`GetOpsMetadataInput`](crate::operation::get_ops_metadata::GetOpsMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOpsMetadataInputBuilder {
     pub(crate) ops_metadata_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +44,12 @@ pub struct GetOpsMetadataInputBuilder {
 }
 impl GetOpsMetadataInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to view.</p>
-    pub fn ops_metadata_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ops_metadata_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_metadata_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to view.</p>
-    pub fn set_ops_metadata_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ops_metadata_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ops_metadata_arn = input;
         self
     }
@@ -96,10 +88,7 @@ impl GetOpsMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetOpsMetadataInput`](crate::operation::get_ops_metadata::GetOpsMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ops_metadata::GetOpsMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_ops_metadata::GetOpsMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ops_metadata::GetOpsMetadataInput {
             ops_metadata_arn: self.ops_metadata_arn,
             max_results: self.max_results,

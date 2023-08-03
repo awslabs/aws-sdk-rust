@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`attributes_data(impl ::std::convert::Into<String>)`](crate::operation::create_contact::builders::CreateContactFluentBuilder::attributes_data) / [`set_attributes_data(Option<String>)`](crate::operation::create_contact::builders::CreateContactFluentBuilder::set_attributes_data): <p>The attribute data attached to a contact.</p>
     /// - On success, responds with [`CreateContactOutput`](crate::operation::create_contact::CreateContactOutput)
     /// - On failure, responds with [`SdkError<CreateContactError>`](crate::operation::create_contact::CreateContactError)
-    pub fn create_contact(
-        &self,
-    ) -> crate::operation::create_contact::builders::CreateContactFluentBuilder {
-        crate::operation::create_contact::builders::CreateContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_contact(&self) -> crate::operation::create_contact::builders::CreateContactFluentBuilder {
+        crate::operation::create_contact::builders::CreateContactFluentBuilder::new(self.handle.clone())
     }
 }

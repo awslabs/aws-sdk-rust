@@ -39,9 +39,7 @@ impl CustomEntityType {
 
 /// A builder for [`CustomEntityType`](crate::types::CustomEntityType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomEntityTypeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) regex_string: ::std::option::Option<::std::string::String>,
@@ -82,10 +80,7 @@ impl CustomEntityTypeBuilder {
     ///
     /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
     /// <p>If no context words are passed only a regular expression is checked.</p>
-    pub fn context_words(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn context_words(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.context_words.unwrap_or_default();
         v.push(input.into());
         self.context_words = ::std::option::Option::Some(v);
@@ -93,18 +88,13 @@ impl CustomEntityTypeBuilder {
     }
     /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
     /// <p>If no context words are passed only a regular expression is checked.</p>
-    pub fn set_context_words(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_context_words(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.context_words = input;
         self
     }
     /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
     /// <p>If no context words are passed only a regular expression is checked.</p>
-    pub fn get_context_words(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_context_words(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.context_words
     }
     /// Consumes the builder and constructs a [`CustomEntityType`](crate::types::CustomEntityType).

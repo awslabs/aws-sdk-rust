@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fleets::DescribeFleetsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     ///   - [`fleets(Option<Vec<FleetData>>)`](crate::operation::describe_fleets::DescribeFleetsOutput::fleets): <p>Information about the EC2 Fleets.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetsError>`](crate::operation::describe_fleets::DescribeFleetsError)
-    pub fn describe_fleets(
-        &self,
-    ) -> crate::operation::describe_fleets::builders::DescribeFleetsFluentBuilder {
-        crate::operation::describe_fleets::builders::DescribeFleetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_fleets(&self) -> crate::operation::describe_fleets::builders::DescribeFleetsFluentBuilder {
+        crate::operation::describe_fleets::builders::DescribeFleetsFluentBuilder::new(self.handle.clone())
     }
 }

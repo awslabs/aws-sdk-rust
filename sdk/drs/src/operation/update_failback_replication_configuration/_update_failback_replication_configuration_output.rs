@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateFailbackReplicationConfiguratio
 }
 impl UpdateFailbackReplicationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFailbackReplicationConfigurationOutput`](crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationOutput).
-    pub fn builder() -> crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationOutputBuilder {
         crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFailbackReplicationConfigurationOutput`](crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFailbackReplicationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl UpdateFailbackReplicationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateFailbackReplicationConfigurationOutput`](crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationOutput).
-    pub fn build(self) -> crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationOutput{
+    pub fn build(self) -> crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationOutput {
         crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationOutput {
             _request_id: self._request_id,
         }

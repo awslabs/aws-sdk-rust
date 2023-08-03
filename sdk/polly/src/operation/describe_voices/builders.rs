@@ -10,10 +10,7 @@ impl DescribeVoicesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_voices::DescribeVoicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_voices::DescribeVoicesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_voices::DescribeVoicesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_voices();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl DescribeVoicesFluentBuilder {
         }
     }
     /// Access the DescribeVoices as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_voices::builders::DescribeVoicesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_voices::builders::DescribeVoicesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,10 +60,7 @@ impl DescribeVoicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -138,10 +130,7 @@ impl DescribeVoicesFluentBuilder {
         self
     }
     /// <p> The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. </p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
@@ -155,10 +144,7 @@ impl DescribeVoicesFluentBuilder {
         self
     }
     /// <p>Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but not if you specify <code>no</code>.</p>
-    pub fn set_include_additional_language_codes(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_include_additional_language_codes(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_additional_language_codes(input);
         self
     }

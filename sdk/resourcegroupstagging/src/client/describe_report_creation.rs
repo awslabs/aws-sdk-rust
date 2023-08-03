@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`start_date(Option<String>)`](crate::operation::describe_report_creation::DescribeReportCreationOutput::start_date): <p>The date and time that the report was started. </p>
     ///   - [`error_message(Option<String>)`](crate::operation::describe_report_creation::DescribeReportCreationOutput::error_message): <p>Details of the common errors that all operations return.</p>
     /// - On failure, responds with [`SdkError<DescribeReportCreationError>`](crate::operation::describe_report_creation::DescribeReportCreationError)
-    pub fn describe_report_creation(
-        &self,
-    ) -> crate::operation::describe_report_creation::builders::DescribeReportCreationFluentBuilder
-    {
+    pub fn describe_report_creation(&self) -> crate::operation::describe_report_creation::builders::DescribeReportCreationFluentBuilder {
         crate::operation::describe_report_creation::builders::DescribeReportCreationFluentBuilder::new(self.handle.clone())
     }
 }

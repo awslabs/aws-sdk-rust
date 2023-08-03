@@ -127,9 +127,7 @@ impl CreateDocumentInput {
 
 /// A builder for [`CreateDocumentInput`](crate::operation::create_document::CreateDocumentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDocumentInputBuilder {
     pub(crate) content: ::std::option::Option<::std::string::String>,
     pub(crate) requires: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>,
@@ -187,17 +185,12 @@ impl CreateDocumentInputBuilder {
         self
     }
     /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn set_requires(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>,
-    ) -> Self {
+    pub fn set_requires(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>) -> Self {
         self.requires = input;
         self
     }
     /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn get_requires(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>> {
+    pub fn get_requires(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>> {
         &self.requires
     }
     /// Appends an item to `attachments`.
@@ -212,17 +205,12 @@ impl CreateDocumentInputBuilder {
         self
     }
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-    pub fn set_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>>,
-    ) -> Self {
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>>) -> Self {
         self.attachments = input;
         self
     }
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-    pub fn get_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>> {
         &self.attachments
     }
     /// <p>A name for the SSM document.</p> <important>
@@ -298,10 +286,7 @@ impl CreateDocumentInputBuilder {
     /// <p>The type of document to create.</p> <note>
     /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
     /// </note>
-    pub fn set_document_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentType>,
-    ) -> Self {
+    pub fn set_document_type(mut self, input: ::std::option::Option<crate::types::DocumentType>) -> Self {
         self.document_type = input;
         self
     }
@@ -317,10 +302,7 @@ impl CreateDocumentInputBuilder {
         self
     }
     /// <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
-    pub fn set_document_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentFormat>,
-    ) -> Self {
+    pub fn set_document_format(mut self, input: ::std::option::Option<crate::types::DocumentFormat>) -> Self {
         self.document_format = input;
         self
     }
@@ -366,10 +348,7 @@ impl CreateDocumentInputBuilder {
     /// </ul> <note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -386,10 +365,7 @@ impl CreateDocumentInputBuilder {
     /// Consumes the builder and constructs a [`CreateDocumentInput`](crate::operation::create_document::CreateDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_document::CreateDocumentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_document::CreateDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_document::CreateDocumentInput {
             content: self.content,
             requires: self.requires,

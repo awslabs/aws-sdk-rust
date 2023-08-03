@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`resource_identifiers(Option<Vec<AggregateResourceIdentifier>>)`](crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesOutput::resource_identifiers): <p>Returns a list of <code>ResourceIdentifiers</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<ListAggregateDiscoveredResourcesError>`](crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError)
-    pub fn list_aggregate_discovered_resources(&self) -> crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesFluentBuilder{
+    pub fn list_aggregate_discovered_resources(
+        &self,
+    ) -> crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesFluentBuilder {
         crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesFluentBuilder::new(self.handle.clone())
     }
 }

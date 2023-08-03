@@ -21,19 +21,18 @@ impl ::aws_http::request_id::RequestId for DisassociatePhoneNumbersFromVoiceConn
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorOutput {
     /// Creates a new builder-style object to manufacture [`DisassociatePhoneNumbersFromVoiceConnectorOutput`](crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorOutput).
-    pub fn builder() -> crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorOutputBuilder{
-        crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorOutputBuilder {
+        crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`DisassociatePhoneNumbersFromVoiceConnectorOutput`](crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorOutputBuilder {
-    pub(crate) phone_number_errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberError>>,
+    pub(crate) phone_number_errors: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberError>>,
     _request_id: Option<String>,
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorOutputBuilder {
@@ -49,17 +48,12 @@ impl DisassociatePhoneNumbersFromVoiceConnectorOutputBuilder {
         self
     }
     /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
-    pub fn set_phone_number_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberError>>,
-    ) -> Self {
+    pub fn set_phone_number_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberError>>) -> Self {
         self.phone_number_errors = input;
         self
     }
     /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
-    pub fn get_phone_number_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberError>> {
+    pub fn get_phone_number_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberError>> {
         &self.phone_number_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +66,9 @@ impl DisassociatePhoneNumbersFromVoiceConnectorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociatePhoneNumbersFromVoiceConnectorOutput`](crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorOutput).
-    pub fn build(self) -> crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorOutput{
+    pub fn build(self) -> crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorOutput {
         crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorOutput {
-            phone_number_errors: self.phone_number_errors
-            ,
+            phone_number_errors: self.phone_number_errors,
             _request_id: self._request_id,
         }
     }

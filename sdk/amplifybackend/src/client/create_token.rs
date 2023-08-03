@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`session_id(Option<String>)`](crate::operation::create_token::CreateTokenOutput::session_id): <p>A unique ID provided when creating a new challenge token.</p>
     ///   - [`ttl(Option<String>)`](crate::operation::create_token::CreateTokenOutput::ttl): <p>The expiry time for the one-time generated token code.</p>
     /// - On failure, responds with [`SdkError<CreateTokenError>`](crate::operation::create_token::CreateTokenError)
-    pub fn create_token(
-        &self,
-    ) -> crate::operation::create_token::builders::CreateTokenFluentBuilder {
+    pub fn create_token(&self) -> crate::operation::create_token::builders::CreateTokenFluentBuilder {
         crate::operation::create_token::builders::CreateTokenFluentBuilder::new(self.handle.clone())
     }
 }

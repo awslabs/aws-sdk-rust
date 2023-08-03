@@ -15,34 +15,25 @@ impl DescribeExperimentInput {
 }
 impl DescribeExperimentInput {
     /// Creates a new builder-style object to manufacture [`DescribeExperimentInput`](crate::operation::describe_experiment::DescribeExperimentInput).
-    pub fn builder(
-    ) -> crate::operation::describe_experiment::builders::DescribeExperimentInputBuilder {
+    pub fn builder() -> crate::operation::describe_experiment::builders::DescribeExperimentInputBuilder {
         crate::operation::describe_experiment::builders::DescribeExperimentInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExperimentInput`](crate::operation::describe_experiment::DescribeExperimentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExperimentInputBuilder {
     pub(crate) experiment_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeExperimentInputBuilder {
     /// <p>The name of the experiment to describe.</p>
-    pub fn experiment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the experiment to describe.</p>
-    pub fn set_experiment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DescribeExperimentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeExperimentInput`](crate::operation::describe_experiment::DescribeExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_experiment::DescribeExperimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_experiment::DescribeExperimentInput {
-                experiment_name: self.experiment_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_experiment::DescribeExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_experiment::DescribeExperimentInput {
+            experiment_name: self.experiment_name,
+        })
     }
 }

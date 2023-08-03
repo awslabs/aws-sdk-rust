@@ -9,9 +9,7 @@ pub struct EventsBatch {
     pub endpoint: ::std::option::Option<crate::types::PublicEndpoint>,
     /// <p>A set of properties that are associated with the event.</p>
     #[doc(hidden)]
-    pub events: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Event>,
-    >,
+    pub events: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Event>>,
 }
 impl EventsBatch {
     /// <p>A set of properties and attributes that are associated with the endpoint.</p>
@@ -19,11 +17,7 @@ impl EventsBatch {
         self.endpoint.as_ref()
     }
     /// <p>A set of properties that are associated with the event.</p>
-    pub fn events(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Event>,
-    > {
+    pub fn events(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Event>> {
         self.events.as_ref()
     }
 }
@@ -36,14 +30,10 @@ impl EventsBatch {
 
 /// A builder for [`EventsBatch`](crate::types::EventsBatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventsBatchBuilder {
     pub(crate) endpoint: ::std::option::Option<crate::types::PublicEndpoint>,
-    pub(crate) events: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Event>,
-    >,
+    pub(crate) events: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Event>>,
 }
 impl EventsBatchBuilder {
     /// <p>A set of properties and attributes that are associated with the endpoint.</p>
@@ -52,10 +42,7 @@ impl EventsBatchBuilder {
         self
     }
     /// <p>A set of properties and attributes that are associated with the endpoint.</p>
-    pub fn set_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicEndpoint>,
-    ) -> Self {
+    pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::PublicEndpoint>) -> Self {
         self.endpoint = input;
         self
     }
@@ -68,32 +55,19 @@ impl EventsBatchBuilder {
     /// To override the contents of this collection use [`set_events`](Self::set_events).
     ///
     /// <p>A set of properties that are associated with the event.</p>
-    pub fn events(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Event,
-    ) -> Self {
+    pub fn events(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Event) -> Self {
         let mut hash_map = self.events.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.events = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A set of properties that are associated with the event.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Event>,
-        >,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Event>>) -> Self {
         self.events = input;
         self
     }
     /// <p>A set of properties that are associated with the event.</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Event>,
-    > {
+    pub fn get_events(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Event>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`EventsBatch`](crate::types::EventsBatch).

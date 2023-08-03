@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_certificates::DescribeCertificatesOutput::marker): <p>The pagination token.</p>
     ///   - [`certificates(Option<Vec<Certificate>>)`](crate::operation::describe_certificates::DescribeCertificatesOutput::certificates): <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
     /// - On failure, responds with [`SdkError<DescribeCertificatesError>`](crate::operation::describe_certificates::DescribeCertificatesError)
-    pub fn describe_certificates(
-        &self,
-    ) -> crate::operation::describe_certificates::builders::DescribeCertificatesFluentBuilder {
-        crate::operation::describe_certificates::builders::DescribeCertificatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_certificates(&self) -> crate::operation::describe_certificates::builders::DescribeCertificatesFluentBuilder {
+        crate::operation::describe_certificates::builders::DescribeCertificatesFluentBuilder::new(self.handle.clone())
     }
 }

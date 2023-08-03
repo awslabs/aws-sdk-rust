@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::start_dev_environment::StartDevEnvironmentOutput::id): <p>The system-generated unique ID of the Dev Environment. </p>
     ///   - [`status(Option<DevEnvironmentStatus>)`](crate::operation::start_dev_environment::StartDevEnvironmentOutput::status): <p>The status of the Dev Environment. </p>
     /// - On failure, responds with [`SdkError<StartDevEnvironmentError>`](crate::operation::start_dev_environment::StartDevEnvironmentError)
-    pub fn start_dev_environment(
-        &self,
-    ) -> crate::operation::start_dev_environment::builders::StartDevEnvironmentFluentBuilder {
-        crate::operation::start_dev_environment::builders::StartDevEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_dev_environment(&self) -> crate::operation::start_dev_environment::builders::StartDevEnvironmentFluentBuilder {
+        crate::operation::start_dev_environment::builders::StartDevEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

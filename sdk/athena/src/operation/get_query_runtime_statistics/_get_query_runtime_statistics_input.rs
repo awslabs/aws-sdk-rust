@@ -15,33 +15,25 @@ impl GetQueryRuntimeStatisticsInput {
 }
 impl GetQueryRuntimeStatisticsInput {
     /// Creates a new builder-style object to manufacture [`GetQueryRuntimeStatisticsInput`](crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsInput).
-    pub fn builder() -> crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsInputBuilder{
+    pub fn builder() -> crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsInputBuilder {
         crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetQueryRuntimeStatisticsInput`](crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQueryRuntimeStatisticsInputBuilder {
     pub(crate) query_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetQueryRuntimeStatisticsInputBuilder {
     /// <p>The unique ID of the query execution.</p>
-    pub fn query_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the query execution.</p>
-    pub fn set_query_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_execution_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl GetQueryRuntimeStatisticsInputBuilder {
         crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsInput {
-                query_execution_id: self.query_execution_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsInput {
+            query_execution_id: self.query_execution_id,
+        })
     }
 }

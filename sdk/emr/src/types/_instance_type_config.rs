@@ -67,9 +67,7 @@ impl InstanceTypeConfig {
 
 /// A builder for [`InstanceTypeConfig`](crate::types::InstanceTypeConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceTypeConfigBuilder {
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) weighted_capacity: ::std::option::Option<i32>,
@@ -81,18 +79,12 @@ pub struct InstanceTypeConfigBuilder {
 }
 impl InstanceTypeConfigBuilder {
     /// <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>. </p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>. </p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -134,10 +126,7 @@ impl InstanceTypeConfigBuilder {
         self
     }
     /// <p>The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%). If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
-    pub fn set_bid_price_as_percentage_of_on_demand_price(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_bid_price_as_percentage_of_on_demand_price(mut self, input: ::std::option::Option<f64>) -> Self {
         self.bid_price_as_percentage_of_on_demand_price = input;
         self
     }
@@ -151,10 +140,7 @@ impl InstanceTypeConfigBuilder {
         self
     }
     /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>. </p>
-    pub fn set_ebs_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EbsConfiguration>,
-    ) -> Self {
+    pub fn set_ebs_configuration(mut self, input: ::std::option::Option<crate::types::EbsConfiguration>) -> Self {
         self.ebs_configuration = input;
         self
     }
@@ -174,32 +160,21 @@ impl InstanceTypeConfigBuilder {
         self
     }
     /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software that run on the cluster.</p>
-    pub fn set_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
-    ) -> Self {
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
         self.configurations = input;
         self
     }
     /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software that run on the cluster.</p>
-    pub fn get_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
         &self.configurations
     }
     /// <p>The custom AMI ID to use for the instance type.</p>
-    pub fn custom_ami_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_ami_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom AMI ID to use for the instance type.</p>
-    pub fn set_custom_ami_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_ami_id = input;
         self
     }
@@ -213,8 +188,7 @@ impl InstanceTypeConfigBuilder {
             instance_type: self.instance_type,
             weighted_capacity: self.weighted_capacity,
             bid_price: self.bid_price,
-            bid_price_as_percentage_of_on_demand_price: self
-                .bid_price_as_percentage_of_on_demand_price,
+            bid_price_as_percentage_of_on_demand_price: self.bid_price_as_percentage_of_on_demand_price,
             ebs_configuration: self.ebs_configuration,
             configurations: self.configurations,
             custom_ami_id: self.custom_ami_id,

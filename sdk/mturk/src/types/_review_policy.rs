@@ -30,9 +30,7 @@ impl ReviewPolicy {
 
 /// A builder for [`ReviewPolicy`](crate::types::ReviewPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReviewPolicyBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::PolicyParameter>>,
@@ -64,17 +62,12 @@ impl ReviewPolicyBuilder {
         self
     }
     /// <p>Name of the parameter from the Review policy.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyParameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyParameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>Name of the parameter from the Review policy.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyParameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ReviewPolicy`](crate::types::ReviewPolicy).

@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`CreateIpamResourceDiscoveryOutput`](crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryOutput) with field(s):
     ///   - [`ipam_resource_discovery(Option<IpamResourceDiscovery>)`](crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryOutput::ipam_resource_discovery): <p>An IPAM resource discovery.</p>
     /// - On failure, responds with [`SdkError<CreateIpamResourceDiscoveryError>`](crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryError)
-    pub fn create_ipam_resource_discovery(&self) -> crate::operation::create_ipam_resource_discovery::builders::CreateIpamResourceDiscoveryFluentBuilder{
+    pub fn create_ipam_resource_discovery(
+        &self,
+    ) -> crate::operation::create_ipam_resource_discovery::builders::CreateIpamResourceDiscoveryFluentBuilder {
         crate::operation::create_ipam_resource_discovery::builders::CreateIpamResourceDiscoveryFluentBuilder::new(self.handle.clone())
     }
 }

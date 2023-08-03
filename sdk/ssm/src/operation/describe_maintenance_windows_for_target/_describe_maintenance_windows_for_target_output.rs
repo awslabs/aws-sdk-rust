@@ -5,8 +5,7 @@
 pub struct DescribeMaintenanceWindowsForTargetOutput {
     /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
     #[doc(hidden)]
-    pub window_identities:
-        ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentityForTarget>>,
+    pub window_identities: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentityForTarget>>,
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeMaintenanceWindowsForTargetOutput {
 }
 impl DescribeMaintenanceWindowsForTargetOutput {
     /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
-    pub fn window_identities(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MaintenanceWindowIdentityForTarget]> {
+    pub fn window_identities(&self) -> ::std::option::Option<&[crate::types::MaintenanceWindowIdentityForTarget]> {
         self.window_identities.as_deref()
     }
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeMaintenanceWindowsForTargetOu
 }
 impl DescribeMaintenanceWindowsForTargetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowsForTargetOutput`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput).
-    pub fn builder() -> crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetOutputBuilder{
+    pub fn builder() -> crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetOutputBuilder {
         crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMaintenanceWindowsForTargetOutput`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowsForTargetOutputBuilder {
-    pub(crate) window_identities:
-        ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentityForTarget>>,
+    pub(crate) window_identities: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentityForTarget>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,30 +47,19 @@ impl DescribeMaintenanceWindowsForTargetOutputBuilder {
     /// To override the contents of this collection use [`set_window_identities`](Self::set_window_identities).
     ///
     /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
-    pub fn window_identities(
-        mut self,
-        input: crate::types::MaintenanceWindowIdentityForTarget,
-    ) -> Self {
+    pub fn window_identities(mut self, input: crate::types::MaintenanceWindowIdentityForTarget) -> Self {
         let mut v = self.window_identities.unwrap_or_default();
         v.push(input);
         self.window_identities = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
-    pub fn set_window_identities(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::MaintenanceWindowIdentityForTarget>,
-        >,
-    ) -> Self {
+    pub fn set_window_identities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentityForTarget>>) -> Self {
         self.window_identities = input;
         self
     }
     /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
-    pub fn get_window_identities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentityForTarget>>
-    {
+    pub fn get_window_identities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentityForTarget>> {
         &self.window_identities
     }
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
@@ -103,12 +86,10 @@ impl DescribeMaintenanceWindowsForTargetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowsForTargetOutput`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput).
-    pub fn build(self) -> crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput{
+    pub fn build(self) -> crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput {
         crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput {
-            window_identities: self.window_identities
-            ,
-            next_token: self.next_token
-            ,
+            window_identities: self.window_identities,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

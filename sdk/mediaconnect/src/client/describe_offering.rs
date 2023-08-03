@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeOfferingOutput`](crate::operation::describe_offering::DescribeOfferingOutput) with field(s):
     ///   - [`offering(Option<Offering>)`](crate::operation::describe_offering::DescribeOfferingOutput::offering): A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
     /// - On failure, responds with [`SdkError<DescribeOfferingError>`](crate::operation::describe_offering::DescribeOfferingError)
-    pub fn describe_offering(
-        &self,
-    ) -> crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder {
-        crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_offering(&self) -> crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder {
+        crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder::new(self.handle.clone())
     }
 }

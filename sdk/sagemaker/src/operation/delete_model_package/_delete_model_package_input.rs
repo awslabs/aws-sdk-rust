@@ -17,36 +17,27 @@ impl DeleteModelPackageInput {
 }
 impl DeleteModelPackageInput {
     /// Creates a new builder-style object to manufacture [`DeleteModelPackageInput`](crate::operation::delete_model_package::DeleteModelPackageInput).
-    pub fn builder(
-    ) -> crate::operation::delete_model_package::builders::DeleteModelPackageInputBuilder {
+    pub fn builder() -> crate::operation::delete_model_package::builders::DeleteModelPackageInputBuilder {
         crate::operation::delete_model_package::builders::DeleteModelPackageInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteModelPackageInput`](crate::operation::delete_model_package::DeleteModelPackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteModelPackageInputBuilder {
     pub(crate) model_package_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteModelPackageInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the model package to delete.</p>
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-    pub fn model_package_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the model package to delete.</p>
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-    pub fn set_model_package_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_name = input;
         self
     }
@@ -58,14 +49,9 @@ impl DeleteModelPackageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteModelPackageInput`](crate::operation::delete_model_package::DeleteModelPackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_model_package::DeleteModelPackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_model_package::DeleteModelPackageInput {
-                model_package_name: self.model_package_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_model_package::DeleteModelPackageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_model_package::DeleteModelPackageInput {
+            model_package_name: self.model_package_name,
+        })
     }
 }

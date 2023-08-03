@@ -26,7 +26,7 @@ impl DeleteDocumentationVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDocumentationVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_documentation_version::builders::DeleteDocumentationVersionInputBuilder,
+    inner: crate::operation::delete_documentation_version::builders::DeleteDocumentationVersionInputBuilder,
 }
 impl DeleteDocumentationVersionFluentBuilder {
     /// Creates a new `DeleteDocumentationVersion`.
@@ -37,7 +37,7 @@ impl DeleteDocumentationVersionFluentBuilder {
         }
     }
     /// Access the DeleteDocumentationVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_documentation_version::builders::DeleteDocumentationVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_documentation_version::builders::DeleteDocumentationVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteDocumentationVersionFluentBuilder {
             crate::operation::delete_documentation_version::DeleteDocumentationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_documentation_version::DeleteDocumentationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_documentation_version::DeleteDocumentationVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteDocumentationVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteDocumentationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_documentation_version::DeleteDocumentationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_documentation_version::DeleteDocumentationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_documentation_version::DeleteDocumentationVersionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteDocumentationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_documentation_version::DeleteDocumentationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_documentation_version::DeleteDocumentationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_documentation_version::DeleteDocumentationVersionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteDocumentationVersionFluentBuilder {
             crate::operation::delete_documentation_version::DeleteDocumentationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_documentation_version::DeleteDocumentationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_documentation_version::DeleteDocumentationVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DeleteDocumentationVersionFluentBuilder {
         self.inner.get_rest_api_id()
     }
     /// <p>The version identifier of a to-be-deleted documentation snapshot.</p>
-    pub fn documentation_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn documentation_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.documentation_version(input.into());
         self
     }
     /// <p>The version identifier of a to-be-deleted documentation snapshot.</p>
-    pub fn set_documentation_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_documentation_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_documentation_version(input);
         self
     }

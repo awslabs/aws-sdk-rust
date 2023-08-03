@@ -15,34 +15,25 @@ impl GetSolutionMetricsInput {
 }
 impl GetSolutionMetricsInput {
     /// Creates a new builder-style object to manufacture [`GetSolutionMetricsInput`](crate::operation::get_solution_metrics::GetSolutionMetricsInput).
-    pub fn builder(
-    ) -> crate::operation::get_solution_metrics::builders::GetSolutionMetricsInputBuilder {
+    pub fn builder() -> crate::operation::get_solution_metrics::builders::GetSolutionMetricsInputBuilder {
         crate::operation::get_solution_metrics::builders::GetSolutionMetricsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSolutionMetricsInput`](crate::operation::get_solution_metrics::GetSolutionMetricsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolutionMetricsInputBuilder {
     pub(crate) solution_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetSolutionMetricsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the solution version for which to get metrics.</p>
-    pub fn solution_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version for which to get metrics.</p>
-    pub fn set_solution_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solution_version_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl GetSolutionMetricsInputBuilder {
     /// Consumes the builder and constructs a [`GetSolutionMetricsInput`](crate::operation::get_solution_metrics::GetSolutionMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_solution_metrics::GetSolutionMetricsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_solution_metrics::GetSolutionMetricsInput {
-                solution_version_arn: self.solution_version_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_solution_metrics::GetSolutionMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_solution_metrics::GetSolutionMetricsInput {
+            solution_version_arn: self.solution_version_arn,
+        })
     }
 }

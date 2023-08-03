@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateRoutingProfileQueuesOutpu
 }
 impl DisassociateRoutingProfileQueuesOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateRoutingProfileQueuesOutput`](crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesOutput).
-    pub fn builder() -> crate::operation::disassociate_routing_profile_queues::builders::DisassociateRoutingProfileQueuesOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_routing_profile_queues::builders::DisassociateRoutingProfileQueuesOutputBuilder {
         crate::operation::disassociate_routing_profile_queues::builders::DisassociateRoutingProfileQueuesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateRoutingProfileQueuesOutput`](crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateRoutingProfileQueuesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DisassociateRoutingProfileQueuesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateRoutingProfileQueuesOutput`](crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesOutput
-    {
+    pub fn build(self) -> crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesOutput {
         crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesOutput {
             _request_id: self._request_id,
         }

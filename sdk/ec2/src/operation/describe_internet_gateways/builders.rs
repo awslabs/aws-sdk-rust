@@ -26,7 +26,7 @@ impl DescribeInternetGatewaysInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInternetGatewaysFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_internet_gateways::builders::DescribeInternetGatewaysInputBuilder,
+    inner: crate::operation::describe_internet_gateways::builders::DescribeInternetGatewaysInputBuilder,
 }
 impl DescribeInternetGatewaysFluentBuilder {
     /// Creates a new `DescribeInternetGateways`.
@@ -37,10 +37,7 @@ impl DescribeInternetGatewaysFluentBuilder {
         }
     }
     /// Access the DescribeInternetGateways as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_internet_gateways::builders::DescribeInternetGatewaysInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_internet_gateways::builders::DescribeInternetGatewaysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeInternetGatewaysFluentBuilder {
             crate::operation::describe_internet_gateways::DescribeInternetGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_internet_gateways::DescribeInternetGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_internet_gateways::DescribeInternetGatewaysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeInternetGatewaysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeInternetGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_internet_gateways::DescribeInternetGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_internet_gateways::DescribeInternetGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_internet_gateways::DescribeInternetGatewaysError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeInternetGatewaysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_internet_gateways::DescribeInternetGatewaysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_internet_gateways::DescribeInternetGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_internet_gateways::DescribeInternetGatewaysError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl DescribeInternetGatewaysFluentBuilder {
             crate::operation::describe_internet_gateways::DescribeInternetGateways,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_internet_gateways::DescribeInternetGatewaysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_internet_gateways::DescribeInternetGatewaysError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_internet_gateways::paginator::DescribeInternetGatewaysPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_internet_gateways::paginator::DescribeInternetGatewaysPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_internet_gateways::paginator::DescribeInternetGatewaysPaginator {
         crate::operation::describe_internet_gateways::paginator::DescribeInternetGatewaysPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
@@ -170,10 +153,7 @@ impl DescribeInternetGatewaysFluentBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -215,27 +195,19 @@ impl DescribeInternetGatewaysFluentBuilder {
     ///
     /// <p>The IDs of the internet gateways.</p>
     /// <p>Default: Describes all your internet gateways.</p>
-    pub fn internet_gateway_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn internet_gateway_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.internet_gateway_ids(input.into());
         self
     }
     /// <p>The IDs of the internet gateways.</p>
     /// <p>Default: Describes all your internet gateways.</p>
-    pub fn set_internet_gateway_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_internet_gateway_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_internet_gateway_ids(input);
         self
     }
     /// <p>The IDs of the internet gateways.</p>
     /// <p>Default: Describes all your internet gateways.</p>
-    pub fn get_internet_gateway_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_internet_gateway_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_internet_gateway_ids()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>

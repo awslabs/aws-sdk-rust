@@ -5,8 +5,7 @@
 pub struct ListFlowDefinitionsOutput {
     /// <p>An array of objects describing the flow definitions.</p>
     #[doc(hidden)]
-    pub flow_definition_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::FlowDefinitionSummary>>,
+    pub flow_definition_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FlowDefinitionSummary>>,
     /// <p>A token to resume pagination.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListFlowDefinitionsOutput {
 }
 impl ListFlowDefinitionsOutput {
     /// <p>An array of objects describing the flow definitions.</p>
-    pub fn flow_definition_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FlowDefinitionSummary]> {
+    pub fn flow_definition_summaries(&self) -> ::std::option::Option<&[crate::types::FlowDefinitionSummary]> {
         self.flow_definition_summaries.as_deref()
     }
     /// <p>A token to resume pagination.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListFlowDefinitionsOutput {
 }
 impl ListFlowDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListFlowDefinitionsOutput`](crate::operation::list_flow_definitions::ListFlowDefinitionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_flow_definitions::builders::ListFlowDefinitionsOutputBuilder {
-        crate::operation::list_flow_definitions::builders::ListFlowDefinitionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_flow_definitions::builders::ListFlowDefinitionsOutputBuilder {
+        crate::operation::list_flow_definitions::builders::ListFlowDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFlowDefinitionsOutput`](crate::operation::list_flow_definitions::ListFlowDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFlowDefinitionsOutputBuilder {
-    pub(crate) flow_definition_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::FlowDefinitionSummary>>,
+    pub(crate) flow_definition_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FlowDefinitionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListFlowDefinitionsOutputBuilder {
         self
     }
     /// <p>An array of objects describing the flow definitions.</p>
-    pub fn set_flow_definition_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FlowDefinitionSummary>>,
-    ) -> Self {
+    pub fn set_flow_definition_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlowDefinitionSummary>>) -> Self {
         self.flow_definition_summaries = input;
         self
     }
     /// <p>An array of objects describing the flow definitions.</p>
-    pub fn get_flow_definition_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowDefinitionSummary>> {
+    pub fn get_flow_definition_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowDefinitionSummary>> {
         &self.flow_definition_summaries
     }
     /// <p>A token to resume pagination.</p>

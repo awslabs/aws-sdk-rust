@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for RegisterStreamConsumerOutput {
 }
 impl RegisterStreamConsumerOutput {
     /// Creates a new builder-style object to manufacture [`RegisterStreamConsumerOutput`](crate::operation::register_stream_consumer::RegisterStreamConsumerOutput).
-    pub fn builder(
-    ) -> crate::operation::register_stream_consumer::builders::RegisterStreamConsumerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::register_stream_consumer::builders::RegisterStreamConsumerOutputBuilder {
         crate::operation::register_stream_consumer::builders::RegisterStreamConsumerOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterStreamConsumerOutput`](crate::operation::register_stream_consumer::RegisterStreamConsumerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterStreamConsumerOutputBuilder {
     pub(crate) consumer: ::std::option::Option<crate::types::Consumer>,
     _request_id: Option<String>,

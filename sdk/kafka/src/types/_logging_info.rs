@@ -22,9 +22,7 @@ impl LoggingInfo {
 
 /// A builder for [`LoggingInfo`](crate::types::LoggingInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggingInfoBuilder {
     pub(crate) broker_logs: ::std::option::Option<crate::types::BrokerLogs>,
 }
@@ -35,10 +33,7 @@ impl LoggingInfoBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_broker_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::BrokerLogs>,
-    ) -> Self {
+    pub fn set_broker_logs(mut self, input: ::std::option::Option<crate::types::BrokerLogs>) -> Self {
         self.broker_logs = input;
         self
     }

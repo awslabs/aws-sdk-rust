@@ -30,9 +30,7 @@ impl VpcCidrBlockState {
 
 /// A builder for [`VpcCidrBlockState`](crate::types::VpcCidrBlockState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcCidrBlockStateBuilder {
     pub(crate) state: ::std::option::Option<crate::types::VpcCidrBlockStateCode>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl VpcCidrBlockStateBuilder {
         self
     }
     /// <p>The state of the CIDR block.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcCidrBlockStateCode>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::VpcCidrBlockStateCode>) -> Self {
         self.state = input;
         self
     }
@@ -56,18 +51,12 @@ impl VpcCidrBlockStateBuilder {
         &self.state
     }
     /// <p>A message about the status of the CIDR block, if applicable.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message about the status of the CIDR block, if applicable.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

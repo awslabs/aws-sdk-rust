@@ -30,9 +30,7 @@ impl DatasetEntry {
 
 /// A builder for [`DatasetEntry`](crate::types::DatasetEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetEntryBuilder {
     pub(crate) entry_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_uri: ::std::option::Option<::std::string::String>,

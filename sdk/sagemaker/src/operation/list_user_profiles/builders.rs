@@ -10,10 +10,7 @@ impl ListUserProfilesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_user_profiles::ListUserProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_profiles::ListUserProfilesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_profiles::ListUserProfilesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_user_profiles();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListUserProfilesFluentBuilder {
         }
     }
     /// Access the ListUserProfiles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_user_profiles::builders::ListUserProfilesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_user_profiles::builders::ListUserProfilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListUserProfilesFluentBuilder {
             crate::operation::list_user_profiles::ListUserProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_profiles::ListUserProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_profiles::ListUserProfilesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListUserProfilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListUserProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_user_profiles::ListUserProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_profiles::ListUserProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_profiles::ListUserProfilesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListUserProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_user_profiles::ListUserProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_profiles::ListUserProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_profiles::ListUserProfilesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListUserProfilesFluentBuilder {
             crate::operation::list_user_profiles::ListUserProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_profiles::ListUserProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_profiles::ListUserProfilesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_user_profiles::paginator::ListUserProfilesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_user_profiles::paginator::ListUserProfilesPaginator {
-        crate::operation::list_user_profiles::paginator::ListUserProfilesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_user_profiles::paginator::ListUserProfilesPaginator {
+        crate::operation::list_user_profiles::paginator::ListUserProfilesPaginator::new(self.handle, self.inner)
     }
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,10 +160,7 @@ impl ListUserProfilesFluentBuilder {
         self
     }
     /// <p>The parameter by which to sort the results. The default is CreationTime.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserProfileSortKey>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::UserProfileSortKey>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -193,18 +169,12 @@ impl ListUserProfilesFluentBuilder {
         self.inner.get_sort_by()
     }
     /// <p>A parameter by which to filter the results.</p>
-    pub fn domain_id_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_id_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id_equals(input.into());
         self
     }
     /// <p>A parameter by which to filter the results.</p>
-    pub fn set_domain_id_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_id_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id_equals(input);
         self
     }
@@ -213,18 +183,12 @@ impl ListUserProfilesFluentBuilder {
         self.inner.get_domain_id_equals()
     }
     /// <p>A parameter by which to filter the results.</p>
-    pub fn user_profile_name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_profile_name_contains(input.into());
         self
     }
     /// <p>A parameter by which to filter the results.</p>
-    pub fn set_user_profile_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_profile_name_contains(input);
         self
     }

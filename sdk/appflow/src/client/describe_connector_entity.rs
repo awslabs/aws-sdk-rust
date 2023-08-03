@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeConnectorEntityOutput`](crate::operation::describe_connector_entity::DescribeConnectorEntityOutput) with field(s):
     ///   - [`connector_entity_fields(Option<Vec<ConnectorEntityField>>)`](crate::operation::describe_connector_entity::DescribeConnectorEntityOutput::connector_entity_fields): <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
     /// - On failure, responds with [`SdkError<DescribeConnectorEntityError>`](crate::operation::describe_connector_entity::DescribeConnectorEntityError)
-    pub fn describe_connector_entity(
-        &self,
-    ) -> crate::operation::describe_connector_entity::builders::DescribeConnectorEntityFluentBuilder
-    {
+    pub fn describe_connector_entity(&self) -> crate::operation::describe_connector_entity::builders::DescribeConnectorEntityFluentBuilder {
         crate::operation::describe_connector_entity::builders::DescribeConnectorEntityFluentBuilder::new(self.handle.clone())
     }
 }

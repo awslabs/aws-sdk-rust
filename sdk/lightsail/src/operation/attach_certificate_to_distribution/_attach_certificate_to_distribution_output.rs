@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for AttachCertificateToDistributionOutput
 }
 impl AttachCertificateToDistributionOutput {
     /// Creates a new builder-style object to manufacture [`AttachCertificateToDistributionOutput`](crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput).
-    pub fn builder() -> crate::operation::attach_certificate_to_distribution::builders::AttachCertificateToDistributionOutputBuilder{
+    pub fn builder() -> crate::operation::attach_certificate_to_distribution::builders::AttachCertificateToDistributionOutputBuilder {
         crate::operation::attach_certificate_to_distribution::builders::AttachCertificateToDistributionOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachCertificateToDistributionOutput`](crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachCertificateToDistributionOutputBuilder {
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,
@@ -60,13 +58,9 @@ impl AttachCertificateToDistributionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AttachCertificateToDistributionOutput`](crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput
-    {
+    pub fn build(self) -> crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput {
         crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput {
-            operation: self.operation
-            ,
+            operation: self.operation,
             _request_id: self._request_id,
         }
     }

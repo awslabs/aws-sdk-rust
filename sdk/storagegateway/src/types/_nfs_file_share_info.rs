@@ -113,9 +113,7 @@ pub struct NfsFileShareInfo {
 }
 impl NfsFileShareInfo {
     /// <p>Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for S3 File Gateways.</p>
-    pub fn nfs_file_share_defaults(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NfsFileShareDefaults> {
+    pub fn nfs_file_share_defaults(&self) -> ::std::option::Option<&crate::types::NfsFileShareDefaults> {
         self.nfs_file_share_defaults.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
@@ -254,9 +252,7 @@ impl NfsFileShareInfo {
 
 /// A builder for [`NfsFileShareInfo`](crate::types::NfsFileShareInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NfsFileShareInfoBuilder {
     pub(crate) nfs_file_share_defaults: ::std::option::Option<crate::types::NfsFileShareDefaults>,
     pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
@@ -290,32 +286,21 @@ impl NfsFileShareInfoBuilder {
         self
     }
     /// <p>Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for S3 File Gateways.</p>
-    pub fn set_nfs_file_share_defaults(
-        mut self,
-        input: ::std::option::Option<crate::types::NfsFileShareDefaults>,
-    ) -> Self {
+    pub fn set_nfs_file_share_defaults(mut self, input: ::std::option::Option<crate::types::NfsFileShareDefaults>) -> Self {
         self.nfs_file_share_defaults = input;
         self
     }
     /// <p>Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for S3 File Gateways.</p>
-    pub fn get_nfs_file_share_defaults(
-        &self,
-    ) -> &::std::option::Option<crate::types::NfsFileShareDefaults> {
+    pub fn get_nfs_file_share_defaults(&self) -> &::std::option::Option<crate::types::NfsFileShareDefaults> {
         &self.nfs_file_share_defaults
     }
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
-    pub fn file_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
-    pub fn set_file_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_arn = input;
         self
     }
@@ -324,18 +309,12 @@ impl NfsFileShareInfoBuilder {
         &self.file_share_arn
     }
     /// <p>The ID of the file share.</p>
-    pub fn file_share_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the file share.</p>
-    pub fn set_file_share_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_id = input;
         self
     }
@@ -345,19 +324,13 @@ impl NfsFileShareInfoBuilder {
     }
     /// <p>The status of the file share.</p>
     /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-    pub fn file_share_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the file share.</p>
     /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-    pub fn set_file_share_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_status = input;
         self
     }
@@ -482,19 +455,13 @@ impl NfsFileShareInfoBuilder {
     }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
-    pub fn default_storage_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_storage_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_storage_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
-    pub fn set_default_storage_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_storage_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_storage_class = input;
         self
     }
@@ -529,17 +496,12 @@ impl NfsFileShareInfoBuilder {
         self
     }
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
-    pub fn set_client_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_client_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.client_list = input;
         self
     }
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
-    pub fn get_client_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_client_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.client_list
     }
     /// <p>The user mapped to anonymous user. Valid options are the following:</p>
@@ -640,10 +602,7 @@ impl NfsFileShareInfoBuilder {
         self
     }
     /// <p>A list of up to 50 tags assigned to the NFS file share, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -654,20 +613,14 @@ impl NfsFileShareInfoBuilder {
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
-    pub fn file_share_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
-    pub fn set_file_share_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_name = input;
         self
     }
@@ -683,10 +636,7 @@ impl NfsFileShareInfoBuilder {
         self
     }
     /// <p>Refresh cache information for the file share.</p>
-    pub fn set_cache_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheAttributes>,
-    ) -> Self {
+    pub fn set_cache_attributes(mut self, input: ::std::option::Option<crate::types::CacheAttributes>) -> Self {
         self.cache_attributes = input;
         self
     }
@@ -701,10 +651,7 @@ impl NfsFileShareInfoBuilder {
     /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p> <code>{}</code> </p>
-    pub fn notification_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_policy = ::std::option::Option::Some(input.into());
         self
     }
@@ -715,10 +662,7 @@ impl NfsFileShareInfoBuilder {
     /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p> <code>{}</code> </p>
-    pub fn set_notification_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_policy = input;
         self
     }
@@ -735,20 +679,14 @@ impl NfsFileShareInfoBuilder {
     /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p> <note>
     /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
-    pub fn vpc_endpoint_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_endpoint_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p> <note>
     /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
-    pub fn set_vpc_endpoint_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_endpoint_dns_name = input;
         self
     }
@@ -761,20 +699,14 @@ impl NfsFileShareInfoBuilder {
     /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note>
     /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
-    pub fn bucket_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note>
     /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
-    pub fn set_bucket_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bucket_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_region = input;
         self
     }
@@ -785,18 +717,12 @@ impl NfsFileShareInfoBuilder {
         &self.bucket_region
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-    pub fn audit_destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audit_destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audit_destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-    pub fn set_audit_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audit_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audit_destination_arn = input;
         self
     }

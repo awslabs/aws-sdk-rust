@@ -10,10 +10,7 @@ impl ListGrantsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_grants::ListGrantsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_grants::ListGrantsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_grants::ListGrantsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_grants();
         fluent_builder.inner = self;
@@ -58,10 +55,7 @@ impl ListGrantsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_grants::ListGrants,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_grants::ListGrants, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_grants::ListGrantsError>,
     > {
         let handle = self.handle.clone();
@@ -72,10 +66,7 @@ impl ListGrantsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,10 +108,7 @@ impl ListGrantsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_grants::ListGrants,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_grants::ListGrants, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_grants::ListGrantsError>,
     > {
         self.customize_middleware().await
@@ -212,18 +200,12 @@ impl ListGrantsFluentBuilder {
         self.inner.get_grant_id()
     }
     /// <p>Returns only grants where the specified principal is the grantee principal for the grant.</p>
-    pub fn grantee_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grantee_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grantee_principal(input.into());
         self
     }
     /// <p>Returns only grants where the specified principal is the grantee principal for the grant.</p>
-    pub fn set_grantee_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grantee_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grantee_principal(input);
         self
     }

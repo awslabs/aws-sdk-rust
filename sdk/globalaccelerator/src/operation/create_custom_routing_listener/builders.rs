@@ -26,7 +26,7 @@ impl CreateCustomRoutingListenerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCustomRoutingListenerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_custom_routing_listener::builders::CreateCustomRoutingListenerInputBuilder,
+    inner: crate::operation::create_custom_routing_listener::builders::CreateCustomRoutingListenerInputBuilder,
 }
 impl CreateCustomRoutingListenerFluentBuilder {
     /// Creates a new `CreateCustomRoutingListener`.
@@ -37,7 +37,7 @@ impl CreateCustomRoutingListenerFluentBuilder {
         }
     }
     /// Access the CreateCustomRoutingListener as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_custom_routing_listener::builders::CreateCustomRoutingListenerInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_custom_routing_listener::builders::CreateCustomRoutingListenerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateCustomRoutingListenerFluentBuilder {
             crate::operation::create_custom_routing_listener::CreateCustomRoutingListener,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateCustomRoutingListenerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateCustomRoutingListenerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateCustomRoutingListenerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateCustomRoutingListenerFluentBuilder {
             crate::operation::create_custom_routing_listener::CreateCustomRoutingListener,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.</p>
-    pub fn accelerator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accelerator_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.</p>
-    pub fn set_accelerator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accelerator_arn(input);
         self
     }
@@ -152,33 +135,22 @@ impl CreateCustomRoutingListenerFluentBuilder {
     }
     /// <p>The port range to support for connections from clients to your accelerator.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
-    pub fn set_port_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
-    ) -> Self {
+    pub fn set_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
         self.inner = self.inner.set_port_ranges(input);
         self
     }
     /// <p>The port range to support for connections from clients to your accelerator.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
-    pub fn get_port_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+    pub fn get_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
         self.inner.get_port_ranges()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }

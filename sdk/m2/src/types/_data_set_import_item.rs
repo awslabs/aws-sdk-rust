@@ -30,9 +30,7 @@ impl DataSetImportItem {
 
 /// A builder for [`DataSetImportItem`](crate::types::DataSetImportItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSetImportItemBuilder {
     pub(crate) data_set: ::std::option::Option<crate::types::DataSet>,
     pub(crate) external_location: ::std::option::Option<crate::types::ExternalLocation>,
@@ -58,10 +56,7 @@ impl DataSetImportItemBuilder {
         self
     }
     /// <p>The location of the data set.</p>
-    pub fn set_external_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ExternalLocation>,
-    ) -> Self {
+    pub fn set_external_location(mut self, input: ::std::option::Option<crate::types::ExternalLocation>) -> Self {
         self.external_location = input;
         self
     }

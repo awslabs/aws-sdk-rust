@@ -31,9 +31,7 @@ impl ::std::fmt::Debug for SetLocalConsolePasswordInput {
 }
 impl SetLocalConsolePasswordInput {
     /// Creates a new builder-style object to manufacture [`SetLocalConsolePasswordInput`](crate::operation::set_local_console_password::SetLocalConsolePasswordInput).
-    pub fn builder(
-    ) -> crate::operation::set_local_console_password::builders::SetLocalConsolePasswordInputBuilder
-    {
+    pub fn builder() -> crate::operation::set_local_console_password::builders::SetLocalConsolePasswordInputBuilder {
         crate::operation::set_local_console_password::builders::SetLocalConsolePasswordInputBuilder::default()
     }
 }
@@ -61,18 +59,12 @@ impl SetLocalConsolePasswordInputBuilder {
         &self.gateway_arn
     }
     /// <p>The password you want to set for your VM local console.</p>
-    pub fn local_console_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_console_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_console_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password you want to set for your VM local console.</p>
-    pub fn set_local_console_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_console_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_console_password = input;
         self
     }
@@ -87,12 +79,10 @@ impl SetLocalConsolePasswordInputBuilder {
         crate::operation::set_local_console_password::SetLocalConsolePasswordInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::set_local_console_password::SetLocalConsolePasswordInput {
-                gateway_arn: self.gateway_arn,
-                local_console_password: self.local_console_password,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::set_local_console_password::SetLocalConsolePasswordInput {
+            gateway_arn: self.gateway_arn,
+            local_console_password: self.local_console_password,
+        })
     }
 }
 impl ::std::fmt::Debug for SetLocalConsolePasswordInputBuilder {

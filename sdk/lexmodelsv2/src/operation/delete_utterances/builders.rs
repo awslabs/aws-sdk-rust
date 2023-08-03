@@ -10,10 +10,7 @@ impl DeleteUtterancesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_utterances::DeleteUtterancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_utterances::DeleteUtterancesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_utterances::DeleteUtterancesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_utterances();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeleteUtterancesFluentBuilder {
         }
     }
     /// Access the DeleteUtterances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_utterances::builders::DeleteUtterancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_utterances::builders::DeleteUtterancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DeleteUtterancesFluentBuilder {
             crate::operation::delete_utterances::DeleteUtterances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_utterances::DeleteUtterancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_utterances::DeleteUtterancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DeleteUtterancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DeleteUtterancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_utterances::DeleteUtterancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_utterances::DeleteUtterancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_utterances::DeleteUtterancesError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DeleteUtterancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_utterances::DeleteUtterancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_utterances::DeleteUtterancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_utterances::DeleteUtterancesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl DeleteUtterancesFluentBuilder {
             crate::operation::delete_utterances::DeleteUtterances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_utterances::DeleteUtterancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_utterances::DeleteUtterancesError>,
     > {
         self.customize_middleware().await
     }

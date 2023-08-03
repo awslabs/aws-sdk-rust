@@ -103,9 +103,7 @@ impl SelectObjectContentInput {
         self.input_serialization.as_ref()
     }
     /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
-    pub fn output_serialization(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OutputSerialization> {
+    pub fn output_serialization(&self) -> ::std::option::Option<&crate::types::OutputSerialization> {
         self.output_serialization.as_ref()
     }
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
@@ -161,10 +159,8 @@ impl ::std::fmt::Debug for SelectObjectContentInput {
 }
 impl SelectObjectContentInput {
     /// Creates a new builder-style object to manufacture [`SelectObjectContentInput`](crate::operation::select_object_content::SelectObjectContentInput).
-    pub fn builder(
-    ) -> crate::operation::select_object_content::builders::SelectObjectContentInputBuilder {
-        crate::operation::select_object_content::builders::SelectObjectContentInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::select_object_content::builders::SelectObjectContentInputBuilder {
+        crate::operation::select_object_content::builders::SelectObjectContentInputBuilder::default()
     }
 }
 
@@ -215,18 +211,12 @@ impl SelectObjectContentInputBuilder {
         &self.key
     }
     /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn sse_customer_algorithm(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sse_customer_algorithm(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sse_customer_algorithm = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_sse_customer_algorithm(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sse_customer_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sse_customer_algorithm = input;
         self
     }
@@ -235,18 +225,12 @@ impl SelectObjectContentInputBuilder {
         &self.sse_customer_algorithm
     }
     /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn sse_customer_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sse_customer_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sse_customer_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_sse_customer_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sse_customer_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sse_customer_key = input;
         self
     }
@@ -255,18 +239,12 @@ impl SelectObjectContentInputBuilder {
         &self.sse_customer_key
     }
     /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn sse_customer_key_md5(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sse_customer_key_md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sse_customer_key_md5 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_sse_customer_key_md5(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sse_customer_key_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sse_customer_key_md5 = input;
         self
     }
@@ -294,10 +272,7 @@ impl SelectObjectContentInputBuilder {
         self
     }
     /// <p>The type of the provided expression (for example, SQL).</p>
-    pub fn set_expression_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpressionType>,
-    ) -> Self {
+    pub fn set_expression_type(mut self, input: ::std::option::Option<crate::types::ExpressionType>) -> Self {
         self.expression_type = input;
         self
     }
@@ -311,10 +286,7 @@ impl SelectObjectContentInputBuilder {
         self
     }
     /// <p>Specifies if periodic request progress information should be enabled.</p>
-    pub fn set_request_progress(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestProgress>,
-    ) -> Self {
+    pub fn set_request_progress(mut self, input: ::std::option::Option<crate::types::RequestProgress>) -> Self {
         self.request_progress = input;
         self
     }
@@ -328,17 +300,12 @@ impl SelectObjectContentInputBuilder {
         self
     }
     /// <p>Describes the format of the data in the object that is being queried.</p>
-    pub fn set_input_serialization(
-        mut self,
-        input: ::std::option::Option<crate::types::InputSerialization>,
-    ) -> Self {
+    pub fn set_input_serialization(mut self, input: ::std::option::Option<crate::types::InputSerialization>) -> Self {
         self.input_serialization = input;
         self
     }
     /// <p>Describes the format of the data in the object that is being queried.</p>
-    pub fn get_input_serialization(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputSerialization> {
+    pub fn get_input_serialization(&self) -> &::std::option::Option<crate::types::InputSerialization> {
         &self.input_serialization
     }
     /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
@@ -347,17 +314,12 @@ impl SelectObjectContentInputBuilder {
         self
     }
     /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
-    pub fn set_output_serialization(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputSerialization>,
-    ) -> Self {
+    pub fn set_output_serialization(mut self, input: ::std::option::Option<crate::types::OutputSerialization>) -> Self {
         self.output_serialization = input;
         self
     }
     /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
-    pub fn get_output_serialization(
-        &self,
-    ) -> &::std::option::Option<crate::types::OutputSerialization> {
+    pub fn get_output_serialization(&self) -> &::std::option::Option<crate::types::OutputSerialization> {
         &self.output_serialization
     }
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
@@ -447,18 +409,12 @@ impl SelectObjectContentInputBuilder {
         &self.scan_range
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
@@ -469,26 +425,22 @@ impl SelectObjectContentInputBuilder {
     /// Consumes the builder and constructs a [`SelectObjectContentInput`](crate::operation::select_object_content::SelectObjectContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::select_object_content::SelectObjectContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::select_object_content::SelectObjectContentInput {
-                bucket: self.bucket,
-                key: self.key,
-                sse_customer_algorithm: self.sse_customer_algorithm,
-                sse_customer_key: self.sse_customer_key,
-                sse_customer_key_md5: self.sse_customer_key_md5,
-                expression: self.expression,
-                expression_type: self.expression_type,
-                request_progress: self.request_progress,
-                input_serialization: self.input_serialization,
-                output_serialization: self.output_serialization,
-                scan_range: self.scan_range,
-                expected_bucket_owner: self.expected_bucket_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::select_object_content::SelectObjectContentInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::select_object_content::SelectObjectContentInput {
+            bucket: self.bucket,
+            key: self.key,
+            sse_customer_algorithm: self.sse_customer_algorithm,
+            sse_customer_key: self.sse_customer_key,
+            sse_customer_key_md5: self.sse_customer_key_md5,
+            expression: self.expression,
+            expression_type: self.expression_type,
+            request_progress: self.request_progress,
+            input_serialization: self.input_serialization,
+            output_serialization: self.output_serialization,
+            scan_range: self.scan_range,
+            expected_bucket_owner: self.expected_bucket_owner,
+        })
     }
 }
 impl ::std::fmt::Debug for SelectObjectContentInputBuilder {

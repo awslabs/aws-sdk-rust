@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DisassociateDeviceFromRoomOutput`](crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomOutput)
     /// - On failure, responds with [`SdkError<DisassociateDeviceFromRoomError>`](crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn disassociate_device_from_room(&self) -> crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomFluentBuilder{
+    pub fn disassociate_device_from_room(
+        &self,
+    ) -> crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomFluentBuilder {
         crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomFluentBuilder::new(self.handle.clone())
     }
 }

@@ -38,9 +38,7 @@ impl DescribeNetworkAclsFluentBuilder {
         }
     }
     /// Access the DescribeNetworkAcls as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_network_acls::builders::DescribeNetworkAclsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_network_acls::builders::DescribeNetworkAclsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DescribeNetworkAclsFluentBuilder {
             crate::operation::describe_network_acls::DescribeNetworkAcls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_network_acls::DescribeNetworkAclsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_acls::DescribeNetworkAclsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DescribeNetworkAclsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DescribeNetworkAclsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_network_acls::DescribeNetworkAclsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_network_acls::DescribeNetworkAclsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_acls::DescribeNetworkAclsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DescribeNetworkAclsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_network_acls::DescribeNetworkAclsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_network_acls::DescribeNetworkAclsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_acls::DescribeNetworkAclsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl DescribeNetworkAclsFluentBuilder {
             crate::operation::describe_network_acls::DescribeNetworkAcls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_network_acls::DescribeNetworkAclsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_acls::DescribeNetworkAclsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_network_acls::paginator::DescribeNetworkAclsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_network_acls::paginator::DescribeNetworkAclsPaginator {
-        crate::operation::describe_network_acls::paginator::DescribeNetworkAclsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_network_acls::paginator::DescribeNetworkAclsPaginator {
+        crate::operation::describe_network_acls::paginator::DescribeNetworkAclsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -198,10 +180,7 @@ impl DescribeNetworkAclsFluentBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC for the network ACL.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -256,27 +235,19 @@ impl DescribeNetworkAclsFluentBuilder {
     ///
     /// <p>The IDs of the network ACLs.</p>
     /// <p>Default: Describes all your network ACLs.</p>
-    pub fn network_acl_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_acl_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_acl_ids(input.into());
         self
     }
     /// <p>The IDs of the network ACLs.</p>
     /// <p>Default: Describes all your network ACLs.</p>
-    pub fn set_network_acl_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_network_acl_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_network_acl_ids(input);
         self
     }
     /// <p>The IDs of the network ACLs.</p>
     /// <p>Default: Describes all your network ACLs.</p>
-    pub fn get_network_acl_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_acl_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_network_acl_ids()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>

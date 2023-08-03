@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for GetResourceProfileOutput {
 }
 impl GetResourceProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceProfileOutput`](crate::operation::get_resource_profile::GetResourceProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_profile::builders::GetResourceProfileOutputBuilder {
+    pub fn builder() -> crate::operation::get_resource_profile::builders::GetResourceProfileOutputBuilder {
         crate::operation::get_resource_profile::builders::GetResourceProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceProfileOutput`](crate::operation::get_resource_profile::GetResourceProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceProfileOutputBuilder {
     pub(crate) profile_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) sensitivity_score: ::std::option::Option<i32>,
@@ -67,10 +64,7 @@ impl GetResourceProfileOutputBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently recalculated sensitive data discovery statistics and details for the bucket. If the bucket's sensitivity score is calculated automatically, this includes the score.</p>
-    pub fn set_profile_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_profile_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.profile_updated_at = input;
         self
     }
@@ -112,10 +106,7 @@ impl GetResourceProfileOutputBuilder {
         self
     }
     /// <p>The sensitive data discovery statistics for the bucket. The statistics capture the results of automated sensitive data discovery activities that Amazon Macie has performed for the bucket.</p>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatistics>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<crate::types::ResourceStatistics>) -> Self {
         self.statistics = input;
         self
     }

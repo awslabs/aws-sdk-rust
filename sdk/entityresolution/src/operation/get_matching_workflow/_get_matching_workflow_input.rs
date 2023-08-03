@@ -15,35 +15,25 @@ impl GetMatchingWorkflowInput {
 }
 impl GetMatchingWorkflowInput {
     /// Creates a new builder-style object to manufacture [`GetMatchingWorkflowInput`](crate::operation::get_matching_workflow::GetMatchingWorkflowInput).
-    pub fn builder(
-    ) -> crate::operation::get_matching_workflow::builders::GetMatchingWorkflowInputBuilder {
-        crate::operation::get_matching_workflow::builders::GetMatchingWorkflowInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_matching_workflow::builders::GetMatchingWorkflowInputBuilder {
+        crate::operation::get_matching_workflow::builders::GetMatchingWorkflowInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMatchingWorkflowInput`](crate::operation::get_matching_workflow::GetMatchingWorkflowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMatchingWorkflowInputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
 }
 impl GetMatchingWorkflowInputBuilder {
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workflow.</p>
-    pub fn set_workflow_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetMatchingWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`GetMatchingWorkflowInput`](crate::operation::get_matching_workflow::GetMatchingWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_matching_workflow::GetMatchingWorkflowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_matching_workflow::GetMatchingWorkflowInput {
-                workflow_name: self.workflow_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_matching_workflow::GetMatchingWorkflowInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_matching_workflow::GetMatchingWorkflowInput {
+            workflow_name: self.workflow_name,
+        })
     }
 }

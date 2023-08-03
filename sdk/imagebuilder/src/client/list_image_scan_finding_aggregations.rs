@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`responses(Option<Vec<ImageScanFindingAggregation>>)`](crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput::responses): <p>An array of image scan finding aggregations that match the filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput::next_token): <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     /// - On failure, responds with [`SdkError<ListImageScanFindingAggregationsError>`](crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError)
-    pub fn list_image_scan_finding_aggregations(&self) -> crate::operation::list_image_scan_finding_aggregations::builders::ListImageScanFindingAggregationsFluentBuilder{
+    pub fn list_image_scan_finding_aggregations(
+        &self,
+    ) -> crate::operation::list_image_scan_finding_aggregations::builders::ListImageScanFindingAggregationsFluentBuilder {
         crate::operation::list_image_scan_finding_aggregations::builders::ListImageScanFindingAggregationsFluentBuilder::new(self.handle.clone())
     }
 }

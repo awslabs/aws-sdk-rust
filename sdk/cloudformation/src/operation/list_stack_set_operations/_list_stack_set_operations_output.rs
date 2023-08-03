@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListStackSetOperationsOutput {
 }
 impl ListStackSetOperationsOutput {
     /// Creates a new builder-style object to manufacture [`ListStackSetOperationsOutput`](crate::operation::list_stack_set_operations::ListStackSetOperationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_stack_set_operations::builders::ListStackSetOperationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_stack_set_operations::builders::ListStackSetOperationsOutputBuilder {
         crate::operation::list_stack_set_operations::builders::ListStackSetOperationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStackSetOperationsOutput`](crate::operation::list_stack_set_operations::ListStackSetOperationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStackSetOperationsOutputBuilder {
-    pub(crate) summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::StackSetOperationSummary>>,
+    pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::StackSetOperationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListStackSetOperationsOutputBuilder {
         self
     }
     /// <p>A list of <code>StackSetOperationSummary</code> structures that contain summary information about operations for the specified stack set.</p>
-    pub fn set_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StackSetOperationSummary>>,
-    ) -> Self {
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackSetOperationSummary>>) -> Self {
         self.summaries = input;
         self
     }
     /// <p>A list of <code>StackSetOperationSummary</code> structures that contain summary information about operations for the specified stack set.</p>
-    pub fn get_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackSetOperationSummary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackSetOperationSummary>> {
         &self.summaries
     }
     /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListOperationResults</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
@@ -96,9 +86,7 @@ impl ListStackSetOperationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListStackSetOperationsOutput`](crate::operation::list_stack_set_operations::ListStackSetOperationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_stack_set_operations::ListStackSetOperationsOutput {
+    pub fn build(self) -> crate::operation::list_stack_set_operations::ListStackSetOperationsOutput {
         crate::operation::list_stack_set_operations::ListStackSetOperationsOutput {
             summaries: self.summaries,
             next_token: self.next_token,

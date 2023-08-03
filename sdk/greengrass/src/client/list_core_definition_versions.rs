@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsOutput::versions): Information about a version.
     /// - On failure, responds with [`SdkError<ListCoreDefinitionVersionsError>`](crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsError)
-    pub fn list_core_definition_versions(&self) -> crate::operation::list_core_definition_versions::builders::ListCoreDefinitionVersionsFluentBuilder{
+    pub fn list_core_definition_versions(
+        &self,
+    ) -> crate::operation::list_core_definition_versions::builders::ListCoreDefinitionVersionsFluentBuilder {
         crate::operation::list_core_definition_versions::builders::ListCoreDefinitionVersionsFluentBuilder::new(self.handle.clone())
     }
 }

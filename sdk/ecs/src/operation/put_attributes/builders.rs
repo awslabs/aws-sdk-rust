@@ -10,10 +10,7 @@ impl PutAttributesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_attributes::PutAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_attributes::PutAttributesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_attributes::PutAttributesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_attributes();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutAttributesFluentBuilder {
         }
     }
     /// Access the PutAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_attributes::builders::PutAttributesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_attributes::builders::PutAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl PutAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -138,17 +130,12 @@ impl PutAttributesFluentBuilder {
         self
     }
     /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes for each resource. You can specify up to 10 attributes in a single call.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes for each resource. You can specify up to 10 attributes in a single call.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         self.inner.get_attributes()
     }
 }

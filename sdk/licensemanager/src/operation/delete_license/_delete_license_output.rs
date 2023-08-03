@@ -35,9 +35,7 @@ impl DeleteLicenseOutput {
 
 /// A builder for [`DeleteLicenseOutput`](crate::operation::delete_license::DeleteLicenseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLicenseOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::LicenseDeletionStatus>,
     pub(crate) deletion_date: ::std::option::Option<::std::string::String>,
@@ -50,10 +48,7 @@ impl DeleteLicenseOutputBuilder {
         self
     }
     /// <p>License status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LicenseDeletionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::LicenseDeletionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -62,18 +57,12 @@ impl DeleteLicenseOutputBuilder {
         &self.status
     }
     /// <p>Date when the license is deleted.</p>
-    pub fn deletion_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deletion_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deletion_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Date when the license is deleted.</p>
-    pub fn set_deletion_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deletion_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deletion_date = input;
         self
     }

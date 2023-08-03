@@ -23,9 +23,7 @@ impl Ssekms {
 
 /// A builder for [`Ssekms`](crate::types::Ssekms).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SsekmsBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl SsekmsBuilder {
     }
     /// Consumes the builder and constructs a [`Ssekms`](crate::types::Ssekms).
     pub fn build(self) -> crate::types::Ssekms {
-        crate::types::Ssekms {
-            key_id: self.key_id,
-        }
+        crate::types::Ssekms { key_id: self.key_id }
     }
 }

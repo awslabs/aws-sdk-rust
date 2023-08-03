@@ -33,17 +33,14 @@ impl GetSshPublicKeyInput {
 }
 impl GetSshPublicKeyInput {
     /// Creates a new builder-style object to manufacture [`GetSshPublicKeyInput`](crate::operation::get_ssh_public_key::GetSshPublicKeyInput).
-    pub fn builder() -> crate::operation::get_ssh_public_key::builders::GetSshPublicKeyInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_ssh_public_key::builders::GetSshPublicKeyInputBuilder {
         crate::operation::get_ssh_public_key::builders::GetSshPublicKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSshPublicKeyInput`](crate::operation::get_ssh_public_key::GetSshPublicKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSshPublicKeyInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) ssh_public_key_id: ::std::option::Option<::std::string::String>,
@@ -69,19 +66,13 @@ impl GetSshPublicKeyInputBuilder {
     }
     /// <p>The unique identifier for the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn ssh_public_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn set_ssh_public_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_public_key_id = input;
         self
     }
@@ -96,10 +87,7 @@ impl GetSshPublicKeyInputBuilder {
         self
     }
     /// <p>Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM format, use <code>PEM</code>.</p>
-    pub fn set_encoding(
-        mut self,
-        input: ::std::option::Option<crate::types::EncodingType>,
-    ) -> Self {
+    pub fn set_encoding(mut self, input: ::std::option::Option<crate::types::EncodingType>) -> Self {
         self.encoding = input;
         self
     }
@@ -110,10 +98,7 @@ impl GetSshPublicKeyInputBuilder {
     /// Consumes the builder and constructs a [`GetSshPublicKeyInput`](crate::operation::get_ssh_public_key::GetSshPublicKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ssh_public_key::GetSshPublicKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_ssh_public_key::GetSshPublicKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ssh_public_key::GetSshPublicKeyInput {
             user_name: self.user_name,
             ssh_public_key_id: self.ssh_public_key_id,

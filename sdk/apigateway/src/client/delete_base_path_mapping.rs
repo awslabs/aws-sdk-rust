@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`base_path(impl ::std::convert::Into<String>)`](crate::operation::delete_base_path_mapping::builders::DeleteBasePathMappingFluentBuilder::base_path) / [`set_base_path(Option<String>)`](crate::operation::delete_base_path_mapping::builders::DeleteBasePathMappingFluentBuilder::set_base_path): <p>The base path name of the BasePathMapping resource to delete.</p>  <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
     /// - On success, responds with [`DeleteBasePathMappingOutput`](crate::operation::delete_base_path_mapping::DeleteBasePathMappingOutput)
     /// - On failure, responds with [`SdkError<DeleteBasePathMappingError>`](crate::operation::delete_base_path_mapping::DeleteBasePathMappingError)
-    pub fn delete_base_path_mapping(
-        &self,
-    ) -> crate::operation::delete_base_path_mapping::builders::DeleteBasePathMappingFluentBuilder
-    {
+    pub fn delete_base_path_mapping(&self) -> crate::operation::delete_base_path_mapping::builders::DeleteBasePathMappingFluentBuilder {
         crate::operation::delete_base_path_mapping::builders::DeleteBasePathMappingFluentBuilder::new(self.handle.clone())
     }
 }

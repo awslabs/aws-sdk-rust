@@ -35,9 +35,7 @@ impl ListMapRunsOutput {
 
 /// A builder for [`ListMapRunsOutput`](crate::operation::list_map_runs::ListMapRunsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMapRunsOutputBuilder {
     pub(crate) map_runs: ::std::option::Option<::std::vec::Vec<crate::types::MapRunListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListMapRunsOutputBuilder {
         self
     }
     /// <p>An array that lists information related to a Map Run, such as the Amazon Resource Name (ARN) of the Map Run and the ARN of the state machine that started the Map Run.</p>
-    pub fn set_map_runs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MapRunListItem>>,
-    ) -> Self {
+    pub fn set_map_runs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MapRunListItem>>) -> Self {
         self.map_runs = input;
         self
     }
     /// <p>An array that lists information related to a Map Run, such as the Amazon Resource Name (ARN) of the Map Run and the ARN of the state machine that started the Map Run.</p>
-    pub fn get_map_runs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MapRunListItem>> {
+    pub fn get_map_runs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MapRunListItem>> {
         &self.map_runs
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>

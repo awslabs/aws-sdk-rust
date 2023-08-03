@@ -51,9 +51,7 @@ impl GaugeChartConfiguration {
 
 /// A builder for [`GaugeChartConfiguration`](crate::types::GaugeChartConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GaugeChartConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::GaugeChartFieldWells>,
     pub(crate) gauge_chart_options: ::std::option::Option<crate::types::GaugeChartOptions>,
@@ -68,10 +66,7 @@ impl GaugeChartConfigurationBuilder {
         self
     }
     /// <p>The field well configuration of a <code>GaugeChartVisual</code>.</p>
-    pub fn set_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::GaugeChartFieldWells>,
-    ) -> Self {
+    pub fn set_field_wells(mut self, input: ::std::option::Option<crate::types::GaugeChartFieldWells>) -> Self {
         self.field_wells = input;
         self
     }
@@ -85,17 +80,12 @@ impl GaugeChartConfigurationBuilder {
         self
     }
     /// <p>The options that determine the presentation of the <code>GaugeChartVisual</code>.</p>
-    pub fn set_gauge_chart_options(
-        mut self,
-        input: ::std::option::Option<crate::types::GaugeChartOptions>,
-    ) -> Self {
+    pub fn set_gauge_chart_options(mut self, input: ::std::option::Option<crate::types::GaugeChartOptions>) -> Self {
         self.gauge_chart_options = input;
         self
     }
     /// <p>The options that determine the presentation of the <code>GaugeChartVisual</code>.</p>
-    pub fn get_gauge_chart_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::GaugeChartOptions> {
+    pub fn get_gauge_chart_options(&self) -> &::std::option::Option<crate::types::GaugeChartOptions> {
         &self.gauge_chart_options
     }
     /// <p>The data label configuration of a <code>GaugeChartVisual</code>.</p>
@@ -104,10 +94,7 @@ impl GaugeChartConfigurationBuilder {
         self
     }
     /// <p>The data label configuration of a <code>GaugeChartVisual</code>.</p>
-    pub fn set_data_labels(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLabelOptions>,
-    ) -> Self {
+    pub fn set_data_labels(mut self, input: ::std::option::Option<crate::types::DataLabelOptions>) -> Self {
         self.data_labels = input;
         self
     }
@@ -121,10 +108,7 @@ impl GaugeChartConfigurationBuilder {
         self
     }
     /// <p>The tooltip configuration of a <code>GaugeChartVisual</code>.</p>
-    pub fn set_tooltip_options(
-        mut self,
-        input: ::std::option::Option<crate::types::TooltipOptions>,
-    ) -> Self {
+    pub fn set_tooltip_options(mut self, input: ::std::option::Option<crate::types::TooltipOptions>) -> Self {
         self.tooltip_options = input;
         self
     }
@@ -138,10 +122,7 @@ impl GaugeChartConfigurationBuilder {
         self
     }
     /// <p>The visual palette configuration of a <code>GaugeChartVisual</code>.</p>
-    pub fn set_visual_palette(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualPalette>,
-    ) -> Self {
+    pub fn set_visual_palette(mut self, input: ::std::option::Option<crate::types::VisualPalette>) -> Self {
         self.visual_palette = input;
         self
     }

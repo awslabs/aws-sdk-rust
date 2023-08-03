@@ -86,9 +86,7 @@ impl Dataset {
         self.last_updated_date_time.as_ref()
     }
     /// <p>Describes the latest update to the dataset.</p>
-    pub fn latest_dataset_update(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DatasetUpdateSummary> {
+    pub fn latest_dataset_update(&self) -> ::std::option::Option<&crate::types::DatasetUpdateSummary> {
         self.latest_dataset_update.as_ref()
     }
 }
@@ -101,9 +99,7 @@ impl Dataset {
 
 /// A builder for [`Dataset`](crate::types::Dataset).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
@@ -145,18 +141,12 @@ impl DatasetBuilder {
         &self.dataset_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_group_arn = input;
         self
     }
@@ -242,10 +232,7 @@ impl DatasetBuilder {
         self
     }
     /// <p>The creation date and time (in Unix time) of the dataset.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -259,17 +246,12 @@ impl DatasetBuilder {
         self
     }
     /// <p>A time stamp that shows when the dataset was updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>A time stamp that shows when the dataset was updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// <p>Describes the latest update to the dataset.</p>
@@ -278,17 +260,12 @@ impl DatasetBuilder {
         self
     }
     /// <p>Describes the latest update to the dataset.</p>
-    pub fn set_latest_dataset_update(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetUpdateSummary>,
-    ) -> Self {
+    pub fn set_latest_dataset_update(mut self, input: ::std::option::Option<crate::types::DatasetUpdateSummary>) -> Self {
         self.latest_dataset_update = input;
         self
     }
     /// <p>Describes the latest update to the dataset.</p>
-    pub fn get_latest_dataset_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatasetUpdateSummary> {
+    pub fn get_latest_dataset_update(&self) -> &::std::option::Option<crate::types::DatasetUpdateSummary> {
         &self.latest_dataset_update
     }
     /// Consumes the builder and constructs a [`Dataset`](crate::types::Dataset).

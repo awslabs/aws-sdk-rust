@@ -6,28 +6,34 @@ pub fn ser_update_connection_auth_request_parameters(
     if let Some(var_1) = &input.basic_auth_parameters {
         #[allow(unused_mut)]
         let mut object_2 = object.key("BasicAuthParameters").start_object();
-        crate::protocol_serde::shape_update_connection_basic_auth_request_parameters::ser_update_connection_basic_auth_request_parameters(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_update_connection_basic_auth_request_parameters::ser_update_connection_basic_auth_request_parameters(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     if let Some(var_3) = &input.o_auth_parameters {
         #[allow(unused_mut)]
         let mut object_4 = object.key("OAuthParameters").start_object();
-        crate::protocol_serde::shape_update_connection_o_auth_request_parameters::ser_update_connection_o_auth_request_parameters(&mut object_4, var_3)?;
+        crate::protocol_serde::shape_update_connection_o_auth_request_parameters::ser_update_connection_o_auth_request_parameters(
+            &mut object_4,
+            var_3,
+        )?;
         object_4.finish();
     }
     if let Some(var_5) = &input.api_key_auth_parameters {
         #[allow(unused_mut)]
         let mut object_6 = object.key("ApiKeyAuthParameters").start_object();
-        crate::protocol_serde::shape_update_connection_api_key_auth_request_parameters::ser_update_connection_api_key_auth_request_parameters(&mut object_6, var_5)?;
+        crate::protocol_serde::shape_update_connection_api_key_auth_request_parameters::ser_update_connection_api_key_auth_request_parameters(
+            &mut object_6,
+            var_5,
+        )?;
         object_6.finish();
     }
     if let Some(var_7) = &input.invocation_http_parameters {
         #[allow(unused_mut)]
         let mut object_8 = object.key("InvocationHttpParameters").start_object();
-        crate::protocol_serde::shape_connection_http_parameters::ser_connection_http_parameters(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_connection_http_parameters::ser_connection_http_parameters(&mut object_8, var_7)?;
         object_8.finish();
     }
     Ok(())

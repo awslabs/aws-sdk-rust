@@ -10,10 +10,7 @@ impl CreateVpcEndpointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_endpoint::CreateVpcEndpointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_endpoint::CreateVpcEndpointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_vpc_endpoint();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateVpcEndpointFluentBuilder {
         }
     }
     /// Access the CreateVpcEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateVpcEndpointFluentBuilder {
             crate::operation::create_vpc_endpoint::CreateVpcEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_endpoint::CreateVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_endpoint::CreateVpcEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateVpcEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateVpcEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_endpoint::CreateVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_endpoint::CreateVpcEndpointError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateVpcEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_endpoint::CreateVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_endpoint::CreateVpcEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateVpcEndpointFluentBuilder {
             crate::operation::create_vpc_endpoint::CreateVpcEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_endpoint::CreateVpcEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_endpoint::CreateVpcEndpointError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +128,7 @@ impl CreateVpcEndpointFluentBuilder {
     }
     /// <p>The type of endpoint.</p>
     /// <p>Default: Gateway</p>
-    pub fn set_vpc_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcEndpointType>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_type(mut self, input: ::std::option::Option<crate::types::VpcEndpointType>) -> Self {
         self.inner = self.inner.set_vpc_endpoint_type(input);
         self
     }
@@ -185,18 +166,12 @@ impl CreateVpcEndpointFluentBuilder {
         self.inner.get_service_name()
     }
     /// <p>(Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format. If this parameter is not specified, we attach a default policy that allows full access to the service.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_document(input.into());
         self
     }
     /// <p>(Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format. If this parameter is not specified, we attach a default policy that allows full access to the service.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
     }
@@ -209,25 +184,17 @@ impl CreateVpcEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).
     ///
     /// <p>(Gateway endpoint) The route table IDs.</p>
-    pub fn route_table_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_table_ids(input.into());
         self
     }
     /// <p>(Gateway endpoint) The route table IDs.</p>
-    pub fn set_route_table_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_route_table_ids(input);
         self
     }
     /// <p>(Gateway endpoint) The route table IDs.</p>
-    pub fn get_route_table_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_route_table_ids()
     }
     /// Appends an item to `SubnetIds`.
@@ -240,10 +207,7 @@ impl CreateVpcEndpointFluentBuilder {
         self
     }
     /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint network interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -256,25 +220,17 @@ impl CreateVpcEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this parameter is not specified, we use the default security group for the VPC.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
     /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this parameter is not specified, we use the default security group for the VPC.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this parameter is not specified, we use the default security group for the VPC.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
     /// <p>The IP address type for the endpoint.</p>
@@ -283,10 +239,7 @@ impl CreateVpcEndpointFluentBuilder {
         self
     }
     /// <p>The IP address type for the endpoint.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }
@@ -300,10 +253,7 @@ impl CreateVpcEndpointFluentBuilder {
         self
     }
     /// <p>The DNS options for the endpoint.</p>
-    pub fn set_dns_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DnsOptionsSpecification>,
-    ) -> Self {
+    pub fn set_dns_options(mut self, input: ::std::option::Option<crate::types::DnsOptionsSpecification>) -> Self {
         self.inner = self.inner.set_dns_options(input);
         self
     }
@@ -355,17 +305,12 @@ impl CreateVpcEndpointFluentBuilder {
         self
     }
     /// <p>The tags to associate with the endpoint.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to associate with the endpoint.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
 }

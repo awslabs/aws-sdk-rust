@@ -33,17 +33,14 @@ impl DeleteAssociationInput {
 }
 impl DeleteAssociationInput {
     /// Creates a new builder-style object to manufacture [`DeleteAssociationInput`](crate::operation::delete_association::DeleteAssociationInput).
-    pub fn builder() -> crate::operation::delete_association::builders::DeleteAssociationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_association::builders::DeleteAssociationInputBuilder {
         crate::operation::delete_association::builders::DeleteAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAssociationInput`](crate::operation::delete_association::DeleteAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAssociationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -85,18 +82,12 @@ impl DeleteAssociationInputBuilder {
         &self.instance_id
     }
     /// <p>The association ID that you want to delete.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association ID that you want to delete.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -107,16 +98,11 @@ impl DeleteAssociationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAssociationInput`](crate::operation::delete_association::DeleteAssociationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_association::DeleteAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_association::DeleteAssociationInput {
-                name: self.name,
-                instance_id: self.instance_id,
-                association_id: self.association_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_association::DeleteAssociationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_association::DeleteAssociationInput {
+            name: self.name,
+            instance_id: self.instance_id,
+            association_id: self.association_id,
+        })
     }
 }

@@ -2,21 +2,11 @@
 pub(crate) fn de_actions_map<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<
-    Option<
-        ::std::collections::HashMap<
-            crate::types::ActionPoint,
-            ::std::vec::Vec<crate::types::Action>,
-        >,
-    >,
+    Option<::std::collections::HashMap<crate::types::ActionPoint, ::std::vec::Vec<crate::types::Action>>>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -26,30 +16,24 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        let key = key
-                            .to_unescaped()
-                            .map(|u| crate::types::ActionPoint::from(u.as_ref()))?;
-                        let value =
-                            crate::protocol_serde::shape_action_list::de_action_list(tokens)?;
+                        let key = key.to_unescaped().map(|u| crate::types::ActionPoint::from(u.as_ref()))?;
+                        let value = crate::protocol_serde::shape_action_list::de_action_list(tokens)?;
                         if let Some(value) = value {
                             map.insert(key, value);
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(map))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

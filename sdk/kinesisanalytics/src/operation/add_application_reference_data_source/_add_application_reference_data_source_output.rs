@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for AddApplicationReferenceDataSourceOutp
 }
 impl AddApplicationReferenceDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationReferenceDataSourceOutput`](crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput).
-    pub fn builder() -> crate::operation::add_application_reference_data_source::builders::AddApplicationReferenceDataSourceOutputBuilder{
+    pub fn builder() -> crate::operation::add_application_reference_data_source::builders::AddApplicationReferenceDataSourceOutputBuilder {
         crate::operation::add_application_reference_data_source::builders::AddApplicationReferenceDataSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddApplicationReferenceDataSourceOutput`](crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddApplicationReferenceDataSourceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,7 +35,7 @@ impl AddApplicationReferenceDataSourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddApplicationReferenceDataSourceOutput`](crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput).
-    pub fn build(self) -> crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput{
+    pub fn build(self) -> crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput {
         crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput {
             _request_id: self._request_id,
         }

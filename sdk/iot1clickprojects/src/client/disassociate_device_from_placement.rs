@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`device_template_name(impl ::std::convert::Into<String>)`](crate::operation::disassociate_device_from_placement::builders::DisassociateDeviceFromPlacementFluentBuilder::device_template_name) / [`set_device_template_name(Option<String>)`](crate::operation::disassociate_device_from_placement::builders::DisassociateDeviceFromPlacementFluentBuilder::set_device_template_name): <p>The device ID that should be removed from the placement.</p>
     /// - On success, responds with [`DisassociateDeviceFromPlacementOutput`](crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementOutput)
     /// - On failure, responds with [`SdkError<DisassociateDeviceFromPlacementError>`](crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementError)
-    pub fn disassociate_device_from_placement(&self) -> crate::operation::disassociate_device_from_placement::builders::DisassociateDeviceFromPlacementFluentBuilder{
+    pub fn disassociate_device_from_placement(
+        &self,
+    ) -> crate::operation::disassociate_device_from_placement::builders::DisassociateDeviceFromPlacementFluentBuilder {
         crate::operation::disassociate_device_from_placement::builders::DisassociateDeviceFromPlacementFluentBuilder::new(self.handle.clone())
     }
 }

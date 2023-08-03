@@ -10,10 +10,7 @@ impl ListTransactionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_transactions::ListTransactionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transactions::ListTransactionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_transactions::ListTransactionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_transactions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListTransactionsFluentBuilder {
         }
     }
     /// Access the ListTransactions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_transactions::builders::ListTransactionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_transactions::builders::ListTransactionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListTransactionsFluentBuilder {
             crate::operation::list_transactions::ListTransactions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transactions::ListTransactionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_transactions::ListTransactionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListTransactionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListTransactionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_transactions::ListTransactionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transactions::ListTransactionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_transactions::ListTransactionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListTransactionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_transactions::ListTransactionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transactions::ListTransactionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_transactions::ListTransactionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListTransactionsFluentBuilder {
             crate::operation::list_transactions::ListTransactions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_transactions::ListTransactionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_transactions::ListTransactionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_transactions::paginator::ListTransactionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_transactions::paginator::ListTransactionsPaginator {
-        crate::operation::list_transactions::paginator::ListTransactionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_transactions::paginator::ListTransactionsPaginator {
+        crate::operation::list_transactions::paginator::ListTransactionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The address (either a contract or wallet), whose transactions are being requested.</p>
     pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,17 +146,12 @@ impl ListTransactionsFluentBuilder {
         self
     }
     /// <p>The container for time.</p>
-    pub fn set_from_blockchain_instant(
-        mut self,
-        input: ::std::option::Option<crate::types::BlockchainInstant>,
-    ) -> Self {
+    pub fn set_from_blockchain_instant(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
         self.inner = self.inner.set_from_blockchain_instant(input);
         self
     }
     /// <p>The container for time.</p>
-    pub fn get_from_blockchain_instant(
-        &self,
-    ) -> &::std::option::Option<crate::types::BlockchainInstant> {
+    pub fn get_from_blockchain_instant(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
         self.inner.get_from_blockchain_instant()
     }
     /// <p>The container for time.</p>
@@ -186,17 +160,12 @@ impl ListTransactionsFluentBuilder {
         self
     }
     /// <p>The container for time.</p>
-    pub fn set_to_blockchain_instant(
-        mut self,
-        input: ::std::option::Option<crate::types::BlockchainInstant>,
-    ) -> Self {
+    pub fn set_to_blockchain_instant(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
         self.inner = self.inner.set_to_blockchain_instant(input);
         self
     }
     /// <p>The container for time.</p>
-    pub fn get_to_blockchain_instant(
-        &self,
-    ) -> &::std::option::Option<crate::types::BlockchainInstant> {
+    pub fn get_to_blockchain_instant(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
         self.inner.get_to_blockchain_instant()
     }
     /// <p>Sorts items in an ascending order if the first page starts at <code>fromTime</code>. Sorts items in a descending order if the first page starts at <code>toTime</code>.</p>
@@ -205,10 +174,7 @@ impl ListTransactionsFluentBuilder {
         self
     }
     /// <p>Sorts items in an ascending order if the first page starts at <code>fromTime</code>. Sorts items in a descending order if the first page starts at <code>toTime</code>.</p>
-    pub fn set_sort(
-        mut self,
-        input: ::std::option::Option<crate::types::ListTransactionsSort>,
-    ) -> Self {
+    pub fn set_sort(mut self, input: ::std::option::Option<crate::types::ListTransactionsSort>) -> Self {
         self.inner = self.inner.set_sort(input);
         self
     }

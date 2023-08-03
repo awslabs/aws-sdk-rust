@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLocationS3Output`](crate::operation::create_location_s3::CreateLocationS3Output) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::create_location_s3::CreateLocationS3Output::location_arn): <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that is created.</p>
     /// - On failure, responds with [`SdkError<CreateLocationS3Error>`](crate::operation::create_location_s3::CreateLocationS3Error)
-    pub fn create_location_s3(
-        &self,
-    ) -> crate::operation::create_location_s3::builders::CreateLocationS3FluentBuilder {
-        crate::operation::create_location_s3::builders::CreateLocationS3FluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_location_s3(&self) -> crate::operation::create_location_s3::builders::CreateLocationS3FluentBuilder {
+        crate::operation::create_location_s3::builders::CreateLocationS3FluentBuilder::new(self.handle.clone())
     }
 }

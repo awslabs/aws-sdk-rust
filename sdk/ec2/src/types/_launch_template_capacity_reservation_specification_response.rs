@@ -10,12 +10,10 @@ pub struct LaunchTemplateCapacityReservationSpecificationResponse {
     /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs in On-Demand capacity.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub capacity_reservation_preference:
-        ::std::option::Option<crate::types::CapacityReservationPreference>,
+    pub capacity_reservation_preference: ::std::option::Option<crate::types::CapacityReservationPreference>,
     /// <p>Information about the target Capacity Reservation or Capacity Reservation group.</p>
     #[doc(hidden)]
-    pub capacity_reservation_target:
-        ::std::option::Option<crate::types::CapacityReservationTargetResponse>,
+    pub capacity_reservation_target: ::std::option::Option<crate::types::CapacityReservationTargetResponse>,
 }
 impl LaunchTemplateCapacityReservationSpecificationResponse {
     /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
@@ -23,36 +21,27 @@ impl LaunchTemplateCapacityReservationSpecificationResponse {
     /// <li> <p> <code>open</code> - The instance can run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li>
     /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs in On-Demand capacity.</p> </li>
     /// </ul>
-    pub fn capacity_reservation_preference(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacityReservationPreference> {
+    pub fn capacity_reservation_preference(&self) -> ::std::option::Option<&crate::types::CapacityReservationPreference> {
         self.capacity_reservation_preference.as_ref()
     }
     /// <p>Information about the target Capacity Reservation or Capacity Reservation group.</p>
-    pub fn capacity_reservation_target(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CapacityReservationTargetResponse> {
+    pub fn capacity_reservation_target(&self) -> ::std::option::Option<&crate::types::CapacityReservationTargetResponse> {
         self.capacity_reservation_target.as_ref()
     }
 }
 impl LaunchTemplateCapacityReservationSpecificationResponse {
     /// Creates a new builder-style object to manufacture [`LaunchTemplateCapacityReservationSpecificationResponse`](crate::types::LaunchTemplateCapacityReservationSpecificationResponse).
-    pub fn builder(
-    ) -> crate::types::builders::LaunchTemplateCapacityReservationSpecificationResponseBuilder {
+    pub fn builder() -> crate::types::builders::LaunchTemplateCapacityReservationSpecificationResponseBuilder {
         crate::types::builders::LaunchTemplateCapacityReservationSpecificationResponseBuilder::default()
     }
 }
 
 /// A builder for [`LaunchTemplateCapacityReservationSpecificationResponse`](crate::types::LaunchTemplateCapacityReservationSpecificationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateCapacityReservationSpecificationResponseBuilder {
-    pub(crate) capacity_reservation_preference:
-        ::std::option::Option<crate::types::CapacityReservationPreference>,
-    pub(crate) capacity_reservation_target:
-        ::std::option::Option<crate::types::CapacityReservationTargetResponse>,
+    pub(crate) capacity_reservation_preference: ::std::option::Option<crate::types::CapacityReservationPreference>,
+    pub(crate) capacity_reservation_target: ::std::option::Option<crate::types::CapacityReservationTargetResponse>,
 }
 impl LaunchTemplateCapacityReservationSpecificationResponseBuilder {
     /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
@@ -60,10 +49,7 @@ impl LaunchTemplateCapacityReservationSpecificationResponseBuilder {
     /// <li> <p> <code>open</code> - The instance can run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li>
     /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs in On-Demand capacity.</p> </li>
     /// </ul>
-    pub fn capacity_reservation_preference(
-        mut self,
-        input: crate::types::CapacityReservationPreference,
-    ) -> Self {
+    pub fn capacity_reservation_preference(mut self, input: crate::types::CapacityReservationPreference) -> Self {
         self.capacity_reservation_preference = ::std::option::Option::Some(input);
         self
     }
@@ -72,10 +58,7 @@ impl LaunchTemplateCapacityReservationSpecificationResponseBuilder {
     /// <li> <p> <code>open</code> - The instance can run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li>
     /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs in On-Demand capacity.</p> </li>
     /// </ul>
-    pub fn set_capacity_reservation_preference(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservationPreference>,
-    ) -> Self {
+    pub fn set_capacity_reservation_preference(mut self, input: ::std::option::Option<crate::types::CapacityReservationPreference>) -> Self {
         self.capacity_reservation_preference = input;
         self
     }
@@ -84,31 +67,21 @@ impl LaunchTemplateCapacityReservationSpecificationResponseBuilder {
     /// <li> <p> <code>open</code> - The instance can run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li>
     /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs in On-Demand capacity.</p> </li>
     /// </ul>
-    pub fn get_capacity_reservation_preference(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityReservationPreference> {
+    pub fn get_capacity_reservation_preference(&self) -> &::std::option::Option<crate::types::CapacityReservationPreference> {
         &self.capacity_reservation_preference
     }
     /// <p>Information about the target Capacity Reservation or Capacity Reservation group.</p>
-    pub fn capacity_reservation_target(
-        mut self,
-        input: crate::types::CapacityReservationTargetResponse,
-    ) -> Self {
+    pub fn capacity_reservation_target(mut self, input: crate::types::CapacityReservationTargetResponse) -> Self {
         self.capacity_reservation_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the target Capacity Reservation or Capacity Reservation group.</p>
-    pub fn set_capacity_reservation_target(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservationTargetResponse>,
-    ) -> Self {
+    pub fn set_capacity_reservation_target(mut self, input: ::std::option::Option<crate::types::CapacityReservationTargetResponse>) -> Self {
         self.capacity_reservation_target = input;
         self
     }
     /// <p>Information about the target Capacity Reservation or Capacity Reservation group.</p>
-    pub fn get_capacity_reservation_target(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityReservationTargetResponse> {
+    pub fn get_capacity_reservation_target(&self) -> &::std::option::Option<crate::types::CapacityReservationTargetResponse> {
         &self.capacity_reservation_target
     }
     /// Consumes the builder and constructs a [`LaunchTemplateCapacityReservationSpecificationResponse`](crate::types::LaunchTemplateCapacityReservationSpecificationResponse).

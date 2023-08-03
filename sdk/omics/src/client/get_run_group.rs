@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_run_group::GetRunGroupOutput::tags): <p>The group's tags.</p>
     ///   - [`max_gpus(Option<i32>)`](crate::operation::get_run_group::GetRunGroupOutput::max_gpus): <p> The maximum GPUs that can be used by a run group. </p>
     /// - On failure, responds with [`SdkError<GetRunGroupError>`](crate::operation::get_run_group::GetRunGroupError)
-    pub fn get_run_group(
-        &self,
-    ) -> crate::operation::get_run_group::builders::GetRunGroupFluentBuilder {
-        crate::operation::get_run_group::builders::GetRunGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_run_group(&self) -> crate::operation::get_run_group::builders::GetRunGroupFluentBuilder {
+        crate::operation::get_run_group::builders::GetRunGroupFluentBuilder::new(self.handle.clone())
     }
 }

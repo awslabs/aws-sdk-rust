@@ -21,16 +21,16 @@ impl ::aws_http::request_id::RequestId for DisableAwsNetworkPerformanceMetricSub
 }
 impl DisableAwsNetworkPerformanceMetricSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DisableAwsNetworkPerformanceMetricSubscriptionOutput`](crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionOutput).
-    pub fn builder() -> crate::operation::disable_aws_network_performance_metric_subscription::builders::DisableAwsNetworkPerformanceMetricSubscriptionOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::disable_aws_network_performance_metric_subscription::builders::DisableAwsNetworkPerformanceMetricSubscriptionOutputBuilder
+    {
         crate::operation::disable_aws_network_performance_metric_subscription::builders::DisableAwsNetworkPerformanceMetricSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableAwsNetworkPerformanceMetricSubscriptionOutput`](crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableAwsNetworkPerformanceMetricSubscriptionOutputBuilder {
     pub(crate) output: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,10 +60,11 @@ impl DisableAwsNetworkPerformanceMetricSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableAwsNetworkPerformanceMetricSubscriptionOutput`](crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionOutput).
-    pub fn build(self) -> crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionOutput {
         crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionOutput {
-            output: self.output
-            ,
+            output: self.output,
             _request_id: self._request_id,
         }
     }

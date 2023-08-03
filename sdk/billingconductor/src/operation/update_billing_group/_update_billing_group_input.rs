@@ -36,9 +36,7 @@ impl UpdateBillingGroupInput {
         self.status.as_ref()
     }
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
-    pub fn computation_preference(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ComputationPreference> {
+    pub fn computation_preference(&self) -> ::std::option::Option<&crate::types::ComputationPreference> {
         self.computation_preference.as_ref()
     }
     /// <p>A description of the billing group. </p>
@@ -46,9 +44,7 @@ impl UpdateBillingGroupInput {
         self.description.as_deref()
     }
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
-    pub fn account_grouping(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateBillingGroupAccountGrouping> {
+    pub fn account_grouping(&self) -> ::std::option::Option<&crate::types::UpdateBillingGroupAccountGrouping> {
         self.account_grouping.as_ref()
     }
 }
@@ -66,8 +62,7 @@ impl ::std::fmt::Debug for UpdateBillingGroupInput {
 }
 impl UpdateBillingGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateBillingGroupInput`](crate::operation::update_billing_group::UpdateBillingGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_billing_group::builders::UpdateBillingGroupInputBuilder {
+    pub fn builder() -> crate::operation::update_billing_group::builders::UpdateBillingGroupInputBuilder {
         crate::operation::update_billing_group::builders::UpdateBillingGroupInputBuilder::default()
     }
 }
@@ -81,8 +76,7 @@ pub struct UpdateBillingGroupInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::BillingGroupStatus>,
     pub(crate) computation_preference: ::std::option::Option<crate::types::ComputationPreference>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) account_grouping:
-        ::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping>,
+    pub(crate) account_grouping: ::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping>,
 }
 impl UpdateBillingGroupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
@@ -119,10 +113,7 @@ impl UpdateBillingGroupInputBuilder {
         self
     }
     /// <p>The status of the billing group. Only one of the valid values can be used. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BillingGroupStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::BillingGroupStatus>) -> Self {
         self.status = input;
         self
     }
@@ -136,17 +127,12 @@ impl UpdateBillingGroupInputBuilder {
         self
     }
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
-    pub fn set_computation_preference(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputationPreference>,
-    ) -> Self {
+    pub fn set_computation_preference(mut self, input: ::std::option::Option<crate::types::ComputationPreference>) -> Self {
         self.computation_preference = input;
         self
     }
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
-    pub fn get_computation_preference(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComputationPreference> {
+    pub fn get_computation_preference(&self) -> &::std::option::Option<crate::types::ComputationPreference> {
         &self.computation_preference
     }
     /// <p>A description of the billing group. </p>
@@ -164,44 +150,31 @@ impl UpdateBillingGroupInputBuilder {
         &self.description
     }
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
-    pub fn account_grouping(
-        mut self,
-        input: crate::types::UpdateBillingGroupAccountGrouping,
-    ) -> Self {
+    pub fn account_grouping(mut self, input: crate::types::UpdateBillingGroupAccountGrouping) -> Self {
         self.account_grouping = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
-    pub fn set_account_grouping(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping>,
-    ) -> Self {
+    pub fn set_account_grouping(mut self, input: ::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping>) -> Self {
         self.account_grouping = input;
         self
     }
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
-    pub fn get_account_grouping(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping> {
+    pub fn get_account_grouping(&self) -> &::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping> {
         &self.account_grouping
     }
     /// Consumes the builder and constructs a [`UpdateBillingGroupInput`](crate::operation::update_billing_group::UpdateBillingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_billing_group::UpdateBillingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_billing_group::UpdateBillingGroupInput {
-                arn: self.arn,
-                name: self.name,
-                status: self.status,
-                computation_preference: self.computation_preference,
-                description: self.description,
-                account_grouping: self.account_grouping,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_billing_group::UpdateBillingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_billing_group::UpdateBillingGroupInput {
+            arn: self.arn,
+            name: self.name,
+            status: self.status,
+            computation_preference: self.computation_preference,
+            description: self.description,
+            account_grouping: self.account_grouping,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateBillingGroupInputBuilder {

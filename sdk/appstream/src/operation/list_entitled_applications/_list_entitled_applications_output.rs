@@ -5,8 +5,7 @@
 pub struct ListEntitledApplicationsOutput {
     /// <p>The entitled applications.</p>
     #[doc(hidden)]
-    pub entitled_applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntitledApplication>>,
+    pub entitled_applications: ::std::option::Option<::std::vec::Vec<crate::types::EntitledApplication>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEntitledApplicationsOutput {
 }
 impl ListEntitledApplicationsOutput {
     /// <p>The entitled applications.</p>
-    pub fn entitled_applications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EntitledApplication]> {
+    pub fn entitled_applications(&self) -> ::std::option::Option<&[crate::types::EntitledApplication]> {
         self.entitled_applications.as_deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEntitledApplicationsOutput {
 }
 impl ListEntitledApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListEntitledApplicationsOutput`](crate::operation::list_entitled_applications::ListEntitledApplicationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_entitled_applications::builders::ListEntitledApplicationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_entitled_applications::builders::ListEntitledApplicationsOutputBuilder {
         crate::operation::list_entitled_applications::builders::ListEntitledApplicationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEntitledApplicationsOutput`](crate::operation::list_entitled_applications::ListEntitledApplicationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEntitledApplicationsOutputBuilder {
-    pub(crate) entitled_applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntitledApplication>>,
+    pub(crate) entitled_applications: ::std::option::Option<::std::vec::Vec<crate::types::EntitledApplication>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListEntitledApplicationsOutputBuilder {
         self
     }
     /// <p>The entitled applications.</p>
-    pub fn set_entitled_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntitledApplication>>,
-    ) -> Self {
+    pub fn set_entitled_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntitledApplication>>) -> Self {
         self.entitled_applications = input;
         self
     }
     /// <p>The entitled applications.</p>
-    pub fn get_entitled_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitledApplication>> {
+    pub fn get_entitled_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitledApplication>> {
         &self.entitled_applications
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -99,9 +86,7 @@ impl ListEntitledApplicationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEntitledApplicationsOutput`](crate::operation::list_entitled_applications::ListEntitledApplicationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_entitled_applications::ListEntitledApplicationsOutput {
+    pub fn build(self) -> crate::operation::list_entitled_applications::ListEntitledApplicationsOutput {
         crate::operation::list_entitled_applications::ListEntitledApplicationsOutput {
             entitled_applications: self.entitled_applications,
             next_token: self.next_token,

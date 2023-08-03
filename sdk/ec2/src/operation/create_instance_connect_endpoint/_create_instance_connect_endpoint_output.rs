@@ -13,9 +13,7 @@ pub struct CreateInstanceConnectEndpointOutput {
 }
 impl CreateInstanceConnectEndpointOutput {
     /// <p>Information about the EC2 Instance Connect Endpoint.</p>
-    pub fn instance_connect_endpoint(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Ec2InstanceConnectEndpoint> {
+    pub fn instance_connect_endpoint(&self) -> ::std::option::Option<&crate::types::Ec2InstanceConnectEndpoint> {
         self.instance_connect_endpoint.as_ref()
     }
     /// <p>Unique, case-sensitive idempotency token provided by the client in the the request.</p>
@@ -30,43 +28,32 @@ impl ::aws_http::request_id::RequestId for CreateInstanceConnectEndpointOutput {
 }
 impl CreateInstanceConnectEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateInstanceConnectEndpointOutput`](crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointOutput).
-    pub fn builder() -> crate::operation::create_instance_connect_endpoint::builders::CreateInstanceConnectEndpointOutputBuilder{
+    pub fn builder() -> crate::operation::create_instance_connect_endpoint::builders::CreateInstanceConnectEndpointOutputBuilder {
         crate::operation::create_instance_connect_endpoint::builders::CreateInstanceConnectEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInstanceConnectEndpointOutput`](crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInstanceConnectEndpointOutputBuilder {
-    pub(crate) instance_connect_endpoint:
-        ::std::option::Option<crate::types::Ec2InstanceConnectEndpoint>,
+    pub(crate) instance_connect_endpoint: ::std::option::Option<crate::types::Ec2InstanceConnectEndpoint>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateInstanceConnectEndpointOutputBuilder {
     /// <p>Information about the EC2 Instance Connect Endpoint.</p>
-    pub fn instance_connect_endpoint(
-        mut self,
-        input: crate::types::Ec2InstanceConnectEndpoint,
-    ) -> Self {
+    pub fn instance_connect_endpoint(mut self, input: crate::types::Ec2InstanceConnectEndpoint) -> Self {
         self.instance_connect_endpoint = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the EC2 Instance Connect Endpoint.</p>
-    pub fn set_instance_connect_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2InstanceConnectEndpoint>,
-    ) -> Self {
+    pub fn set_instance_connect_endpoint(mut self, input: ::std::option::Option<crate::types::Ec2InstanceConnectEndpoint>) -> Self {
         self.instance_connect_endpoint = input;
         self
     }
     /// <p>Information about the EC2 Instance Connect Endpoint.</p>
-    pub fn get_instance_connect_endpoint(
-        &self,
-    ) -> &::std::option::Option<crate::types::Ec2InstanceConnectEndpoint> {
+    pub fn get_instance_connect_endpoint(&self) -> &::std::option::Option<crate::types::Ec2InstanceConnectEndpoint> {
         &self.instance_connect_endpoint
     }
     /// <p>Unique, case-sensitive idempotency token provided by the client in the the request.</p>
@@ -93,10 +80,7 @@ impl CreateInstanceConnectEndpointOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateInstanceConnectEndpointOutput`](crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointOutput
-    {
+    pub fn build(self) -> crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointOutput {
         crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointOutput {
             instance_connect_endpoint: self.instance_connect_endpoint,
             client_token: self.client_token,

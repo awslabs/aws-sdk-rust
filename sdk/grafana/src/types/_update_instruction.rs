@@ -37,9 +37,7 @@ impl UpdateInstruction {
 
 /// A builder for [`UpdateInstruction`](crate::types::UpdateInstruction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInstructionBuilder {
     pub(crate) action: ::std::option::Option<crate::types::UpdateAction>,
     pub(crate) role: ::std::option::Option<crate::types::Role>,
@@ -86,10 +84,7 @@ impl UpdateInstructionBuilder {
         self
     }
     /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
-    pub fn set_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
-    ) -> Self {
+    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::User>>) -> Self {
         self.users = input;
         self
     }

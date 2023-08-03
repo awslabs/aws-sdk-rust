@@ -5,8 +5,7 @@
 pub struct ListCustomRoutingPortMappingsByDestinationOutput {
     /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
     #[doc(hidden)]
-    pub destination_port_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::DestinationPortMapping>>,
+    pub destination_port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DestinationPortMapping>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListCustomRoutingPortMappingsByDestinationOutput {
 }
 impl ListCustomRoutingPortMappingsByDestinationOutput {
     /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
-    pub fn destination_port_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DestinationPortMapping]> {
+    pub fn destination_port_mappings(&self) -> ::std::option::Option<&[crate::types::DestinationPortMapping]> {
         self.destination_port_mappings.as_deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -31,19 +28,18 @@ impl ::aws_http::request_id::RequestId for ListCustomRoutingPortMappingsByDestin
 }
 impl ListCustomRoutingPortMappingsByDestinationOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput).
-    pub fn builder() -> crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationOutputBuilder{
-        crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationOutputBuilder {
+        crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomRoutingPortMappingsByDestinationOutputBuilder {
-    pub(crate) destination_port_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::DestinationPortMapping>>,
+    pub(crate) destination_port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DestinationPortMapping>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +49,19 @@ impl ListCustomRoutingPortMappingsByDestinationOutputBuilder {
     /// To override the contents of this collection use [`set_destination_port_mappings`](Self::set_destination_port_mappings).
     ///
     /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
-    pub fn destination_port_mappings(
-        mut self,
-        input: crate::types::DestinationPortMapping,
-    ) -> Self {
+    pub fn destination_port_mappings(mut self, input: crate::types::DestinationPortMapping) -> Self {
         let mut v = self.destination_port_mappings.unwrap_or_default();
         v.push(input);
         self.destination_port_mappings = ::std::option::Option::Some(v);
         self
     }
     /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
-    pub fn set_destination_port_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationPortMapping>>,
-    ) -> Self {
+    pub fn set_destination_port_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationPortMapping>>) -> Self {
         self.destination_port_mappings = input;
         self
     }
     /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
-    pub fn get_destination_port_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationPortMapping>> {
+    pub fn get_destination_port_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationPortMapping>> {
         &self.destination_port_mappings
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -100,12 +88,10 @@ impl ListCustomRoutingPortMappingsByDestinationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput).
-    pub fn build(self) -> crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput{
+    pub fn build(self) -> crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput {
         crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput {
-            destination_port_mappings: self.destination_port_mappings
-            ,
-            next_token: self.next_token
-            ,
+            destination_port_mappings: self.destination_port_mappings,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

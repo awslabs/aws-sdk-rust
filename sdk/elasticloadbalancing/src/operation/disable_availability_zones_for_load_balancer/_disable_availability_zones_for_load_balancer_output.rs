@@ -22,16 +22,15 @@ impl ::aws_http::request_id::RequestId for DisableAvailabilityZonesForLoadBalanc
 }
 impl DisableAvailabilityZonesForLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`DisableAvailabilityZonesForLoadBalancerOutput`](crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerOutput).
-    pub fn builder() -> crate::operation::disable_availability_zones_for_load_balancer::builders::DisableAvailabilityZonesForLoadBalancerOutputBuilder{
+    pub fn builder() -> crate::operation::disable_availability_zones_for_load_balancer::builders::DisableAvailabilityZonesForLoadBalancerOutputBuilder
+    {
         crate::operation::disable_availability_zones_for_load_balancer::builders::DisableAvailabilityZonesForLoadBalancerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableAvailabilityZonesForLoadBalancerOutput`](crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableAvailabilityZonesForLoadBalancerOutputBuilder {
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -42,27 +41,19 @@ impl DisableAvailabilityZonesForLoadBalancerOutputBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The remaining Availability Zones for the load balancer.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
         self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>The remaining Availability Zones for the load balancer.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>The remaining Availability Zones for the load balancer.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -75,10 +66,9 @@ impl DisableAvailabilityZonesForLoadBalancerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableAvailabilityZonesForLoadBalancerOutput`](crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerOutput).
-    pub fn build(self) -> crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerOutput{
+    pub fn build(self) -> crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerOutput {
         crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerOutput {
-            availability_zones: self.availability_zones
-            ,
+            availability_zones: self.availability_zones,
             _request_id: self._request_id,
         }
     }

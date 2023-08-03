@@ -37,26 +37,20 @@ impl SearchQuickConnectsInput {
         self.search_filter.as_ref()
     }
     /// <p>The search criteria to be used to return quick connects.</p>
-    pub fn search_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::QuickConnectSearchCriteria> {
+    pub fn search_criteria(&self) -> ::std::option::Option<&crate::types::QuickConnectSearchCriteria> {
         self.search_criteria.as_ref()
     }
 }
 impl SearchQuickConnectsInput {
     /// Creates a new builder-style object to manufacture [`SearchQuickConnectsInput`](crate::operation::search_quick_connects::SearchQuickConnectsInput).
-    pub fn builder(
-    ) -> crate::operation::search_quick_connects::builders::SearchQuickConnectsInputBuilder {
-        crate::operation::search_quick_connects::builders::SearchQuickConnectsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::search_quick_connects::builders::SearchQuickConnectsInputBuilder {
+        crate::operation::search_quick_connects::builders::SearchQuickConnectsInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchQuickConnectsInput`](crate::operation::search_quick_connects::SearchQuickConnectsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchQuickConnectsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -113,17 +107,12 @@ impl SearchQuickConnectsInputBuilder {
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn set_search_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::QuickConnectSearchFilter>,
-    ) -> Self {
+    pub fn set_search_filter(mut self, input: ::std::option::Option<crate::types::QuickConnectSearchFilter>) -> Self {
         self.search_filter = input;
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn get_search_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::QuickConnectSearchFilter> {
+    pub fn get_search_filter(&self) -> &::std::option::Option<crate::types::QuickConnectSearchFilter> {
         &self.search_filter
     }
     /// <p>The search criteria to be used to return quick connects.</p>
@@ -132,34 +121,25 @@ impl SearchQuickConnectsInputBuilder {
         self
     }
     /// <p>The search criteria to be used to return quick connects.</p>
-    pub fn set_search_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::QuickConnectSearchCriteria>,
-    ) -> Self {
+    pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::QuickConnectSearchCriteria>) -> Self {
         self.search_criteria = input;
         self
     }
     /// <p>The search criteria to be used to return quick connects.</p>
-    pub fn get_search_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::QuickConnectSearchCriteria> {
+    pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::QuickConnectSearchCriteria> {
         &self.search_criteria
     }
     /// Consumes the builder and constructs a [`SearchQuickConnectsInput`](crate::operation::search_quick_connects::SearchQuickConnectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_quick_connects::SearchQuickConnectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_quick_connects::SearchQuickConnectsInput {
-                instance_id: self.instance_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                search_filter: self.search_filter,
-                search_criteria: self.search_criteria,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_quick_connects::SearchQuickConnectsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::search_quick_connects::SearchQuickConnectsInput {
+            instance_id: self.instance_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            search_filter: self.search_filter,
+            search_criteria: self.search_criteria,
+        })
     }
 }

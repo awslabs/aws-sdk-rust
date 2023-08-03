@@ -29,16 +29,14 @@ impl DisassociateMemberFromGroupInput {
 }
 impl DisassociateMemberFromGroupInput {
     /// Creates a new builder-style object to manufacture [`DisassociateMemberFromGroupInput`](crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupInput).
-    pub fn builder() -> crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupInputBuilder {
         crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateMemberFromGroupInput`](crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateMemberFromGroupInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DisassociateMemberFromGroupInputBuilder {
 }
 impl DisassociateMemberFromGroupInputBuilder {
     /// <p>The identifier for the organization under which the group exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the organization under which the group exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl DisassociateMemberFromGroupInputBuilder {
         crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupInput {
-                organization_id: self.organization_id,
-                group_id: self.group_id,
-                member_id: self.member_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupInput {
+            organization_id: self.organization_id,
+            group_id: self.group_id,
+            member_id: self.member_id,
+        })
     }
 }

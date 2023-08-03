@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetDomainPermissionsPolicyOutput`](crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyOutput) with field(s):
     ///   - [`policy(Option<ResourcePolicy>)`](crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyOutput::policy): <p> The returned resource policy. </p>
     /// - On failure, responds with [`SdkError<GetDomainPermissionsPolicyError>`](crate::operation::get_domain_permissions_policy::GetDomainPermissionsPolicyError)
-    pub fn get_domain_permissions_policy(&self) -> crate::operation::get_domain_permissions_policy::builders::GetDomainPermissionsPolicyFluentBuilder{
+    pub fn get_domain_permissions_policy(
+        &self,
+    ) -> crate::operation::get_domain_permissions_policy::builders::GetDomainPermissionsPolicyFluentBuilder {
         crate::operation::get_domain_permissions_policy::builders::GetDomainPermissionsPolicyFluentBuilder::new(self.handle.clone())
     }
 }

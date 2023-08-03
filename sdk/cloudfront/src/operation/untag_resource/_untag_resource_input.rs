@@ -30,9 +30,7 @@ impl UntagResourceInput {
 
 /// A builder for [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagResourceInputBuilder {
     pub(crate) resource: ::std::option::Option<::std::string::String>,
     pub(crate) tag_keys: ::std::option::Option<crate::types::TagKeys>,
@@ -69,10 +67,7 @@ impl UntagResourceInputBuilder {
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::untag_resource::UntagResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::untag_resource::UntagResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_resource::UntagResourceInput {
             resource: self.resource,
             tag_keys: self.tag_keys,

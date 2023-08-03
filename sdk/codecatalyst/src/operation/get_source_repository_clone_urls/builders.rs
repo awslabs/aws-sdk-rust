@@ -26,7 +26,7 @@ impl GetSourceRepositoryCloneUrlsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSourceRepositoryCloneUrlsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsInputBuilder,
+    inner: crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsInputBuilder,
 }
 impl GetSourceRepositoryCloneUrlsFluentBuilder {
     /// Creates a new `GetSourceRepositoryCloneUrls`.
@@ -37,7 +37,7 @@ impl GetSourceRepositoryCloneUrlsFluentBuilder {
         }
     }
     /// Access the GetSourceRepositoryCloneUrls as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetSourceRepositoryCloneUrlsFluentBuilder {
             crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetSourceRepositoryCloneUrlsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetSourceRepositoryCloneUrlsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetSourceRepositoryCloneUrlsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetSourceRepositoryCloneUrlsFluentBuilder {
             crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrls,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsError>,
     > {
         self.customize_middleware().await
     }
@@ -149,18 +138,12 @@ impl GetSourceRepositoryCloneUrlsFluentBuilder {
         self.inner.get_project_name()
     }
     /// <p>The name of the source repository.</p>
-    pub fn source_repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_repository_name(input.into());
         self
     }
     /// <p>The name of the source repository.</p>
-    pub fn set_source_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_repository_name(input);
         self
     }

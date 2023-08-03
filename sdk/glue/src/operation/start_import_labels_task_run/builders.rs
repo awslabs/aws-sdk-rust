@@ -29,7 +29,7 @@ impl StartImportLabelsTaskRunInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartImportLabelsTaskRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_import_labels_task_run::builders::StartImportLabelsTaskRunInputBuilder,
+    inner: crate::operation::start_import_labels_task_run::builders::StartImportLabelsTaskRunInputBuilder,
 }
 impl StartImportLabelsTaskRunFluentBuilder {
     /// Creates a new `StartImportLabelsTaskRun`.
@@ -40,7 +40,7 @@ impl StartImportLabelsTaskRunFluentBuilder {
         }
     }
     /// Access the StartImportLabelsTaskRun as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_import_labels_task_run::builders::StartImportLabelsTaskRunInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_import_labels_task_run::builders::StartImportLabelsTaskRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl StartImportLabelsTaskRunFluentBuilder {
             crate::operation::start_import_labels_task_run::StartImportLabelsTaskRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl StartImportLabelsTaskRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl StartImportLabelsTaskRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl StartImportLabelsTaskRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl StartImportLabelsTaskRunFluentBuilder {
             crate::operation::start_import_labels_task_run::StartImportLabelsTaskRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +127,12 @@ impl StartImportLabelsTaskRunFluentBuilder {
         self.inner.get_transform_id()
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
-    pub fn input_s3_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_s3_path(input.into());
         self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
-    pub fn set_input_s3_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_s3_path(input);
         self
     }

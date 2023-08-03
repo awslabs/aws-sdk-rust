@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartPolicyGenerationOutput`](crate::operation::start_policy_generation::StartPolicyGenerationOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_policy_generation::StartPolicyGenerationOutput::job_id): <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     /// - On failure, responds with [`SdkError<StartPolicyGenerationError>`](crate::operation::start_policy_generation::StartPolicyGenerationError)
-    pub fn start_policy_generation(
-        &self,
-    ) -> crate::operation::start_policy_generation::builders::StartPolicyGenerationFluentBuilder
-    {
-        crate::operation::start_policy_generation::builders::StartPolicyGenerationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_policy_generation(&self) -> crate::operation::start_policy_generation::builders::StartPolicyGenerationFluentBuilder {
+        crate::operation::start_policy_generation::builders::StartPolicyGenerationFluentBuilder::new(self.handle.clone())
     }
 }

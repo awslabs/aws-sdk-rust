@@ -10,10 +10,7 @@ impl GetOpsSummaryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_ops_summary::GetOpsSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ops_summary::GetOpsSummaryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ops_summary::GetOpsSummaryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_ops_summary();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetOpsSummaryFluentBuilder {
         }
     }
     /// Access the GetOpsSummary as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_ops_summary::builders::GetOpsSummaryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_ops_summary::builders::GetOpsSummaryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetOpsSummaryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl GetOpsSummaryFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_ops_summary::paginator::GetOpsSummaryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_ops_summary::paginator::GetOpsSummaryPaginator {
-        crate::operation::get_ops_summary::paginator::GetOpsSummaryPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_ops_summary::paginator::GetOpsSummaryPaginator {
+        crate::operation::get_ops_summary::paginator::GetOpsSummaryPaginator::new(self.handle, self.inner)
     }
     /// <p>Specify the name of a resource data sync to get.</p>
     pub fn sync_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,10 +136,7 @@ impl GetOpsSummaryFluentBuilder {
         self
     }
     /// <p>Optional filters used to scope down the returned OpsData. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -170,17 +154,12 @@ impl GetOpsSummaryFluentBuilder {
         self
     }
     /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
-    pub fn set_aggregators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>>,
-    ) -> Self {
+    pub fn set_aggregators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>>) -> Self {
         self.inner = self.inner.set_aggregators(input);
         self
     }
     /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
-    pub fn get_aggregators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>> {
+    pub fn get_aggregators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>> {
         self.inner.get_aggregators()
     }
     /// Appends an item to `ResultAttributes`.
@@ -193,17 +172,12 @@ impl GetOpsSummaryFluentBuilder {
         self
     }
     /// <p>The OpsData data type to return.</p>
-    pub fn set_result_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>>,
-    ) -> Self {
+    pub fn set_result_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>>) -> Self {
         self.inner = self.inner.set_result_attributes(input);
         self
     }
     /// <p>The OpsData data type to return.</p>
-    pub fn get_result_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>> {
+    pub fn get_result_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>> {
         self.inner.get_result_attributes()
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>

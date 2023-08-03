@@ -4,127 +4,114 @@ pub fn de_replace_topic_rule_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::replace_topic_rule::ReplaceTopicRuleOutput,
-    crate::operation::replace_topic_rule::ReplaceTopicRuleError,
-> {
+) -> std::result::Result<crate::operation::replace_topic_rule::ReplaceTopicRuleOutput, crate::operation::replace_topic_rule::ReplaceTopicRuleError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::replace_topic_rule::ReplaceTopicRuleError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::replace_topic_rule::ReplaceTopicRuleError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::replace_topic_rule::ReplaceTopicRuleError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::replace_topic_rule::ReplaceTopicRuleError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictingResourceUpdateException" => crate::operation::replace_topic_rule::ReplaceTopicRuleError::ConflictingResourceUpdateException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ConflictingResourceUpdateExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_conflicting_resource_update_exception::de_conflicting_resource_update_exception_json_err(_response_body, output).map_err(crate::operation::replace_topic_rule::ReplaceTopicRuleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictingResourceUpdateExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflicting_resource_update_exception::de_conflicting_resource_update_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::replace_topic_rule::ReplaceTopicRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalException" => crate::operation::replace_topic_rule::ReplaceTopicRuleError::InternalException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output).map_err(crate::operation::replace_topic_rule::ReplaceTopicRuleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::replace_topic_rule::ReplaceTopicRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::replace_topic_rule::ReplaceTopicRuleError::InvalidRequestException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output).map_err(crate::operation::replace_topic_rule::ReplaceTopicRuleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::replace_topic_rule::ReplaceTopicRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::replace_topic_rule::ReplaceTopicRuleError::ServiceUnavailableException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::replace_topic_rule::ReplaceTopicRuleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::replace_topic_rule::ReplaceTopicRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "SqlParseException" => crate::operation::replace_topic_rule::ReplaceTopicRuleError::SqlParseException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::SqlParseExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_sql_parse_exception::de_sql_parse_exception_json_err(_response_body, output).map_err(crate::operation::replace_topic_rule::ReplaceTopicRuleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SqlParseExceptionBuilder::default();
+                output = crate::protocol_serde::shape_sql_parse_exception::de_sql_parse_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::replace_topic_rule::ReplaceTopicRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnauthorizedException" => crate::operation::replace_topic_rule::ReplaceTopicRuleError::UnauthorizedException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output).map_err(crate::operation::replace_topic_rule::ReplaceTopicRuleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::replace_topic_rule::ReplaceTopicRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::replace_topic_rule::ReplaceTopicRuleError::generic(generic)
+        _ => crate::operation::replace_topic_rule::ReplaceTopicRuleError::generic(generic),
     })
 }
 
@@ -133,18 +120,11 @@ pub fn de_replace_topic_rule_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::replace_topic_rule::ReplaceTopicRuleOutput,
-    crate::operation::replace_topic_rule::ReplaceTopicRuleError,
-> {
+) -> std::result::Result<crate::operation::replace_topic_rule::ReplaceTopicRuleOutput, crate::operation::replace_topic_rule::ReplaceTopicRuleError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::replace_topic_rule::builders::ReplaceTopicRuleOutputBuilder::default(
-            );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::replace_topic_rule::builders::ReplaceTopicRuleOutputBuilder::default();
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

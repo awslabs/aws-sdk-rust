@@ -10,10 +10,7 @@ impl DeleteAccountAliasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_account_alias::DeleteAccountAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_alias::DeleteAccountAliasError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_alias::DeleteAccountAliasError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_account_alias();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteAccountAliasFluentBuilder {
         }
     }
     /// Access the DeleteAccountAlias as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_account_alias::builders::DeleteAccountAliasInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_account_alias::builders::DeleteAccountAliasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteAccountAliasFluentBuilder {
             crate::operation::delete_account_alias::DeleteAccountAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_alias::DeleteAccountAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_alias::DeleteAccountAliasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteAccountAliasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteAccountAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_account_alias::DeleteAccountAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_alias::DeleteAccountAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_alias::DeleteAccountAliasError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteAccountAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_account_alias::DeleteAccountAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_alias::DeleteAccountAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_alias::DeleteAccountAliasError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +102,19 @@ impl DeleteAccountAliasFluentBuilder {
             crate::operation::delete_account_alias::DeleteAccountAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_alias::DeleteAccountAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_alias::DeleteAccountAliasError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the account alias to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two dashes in a row.</p>
-    pub fn account_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn account_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_alias(input.into());
         self
     }
     /// <p>The name of the account alias to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two dashes in a row.</p>
-    pub fn set_account_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_account_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_alias(input);
         self
     }

@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetKxConnectionStringOutput`](crate::operation::get_kx_connection_string::GetKxConnectionStringOutput) with field(s):
     ///   - [`signed_connection_string(Option<String>)`](crate::operation::get_kx_connection_string::GetKxConnectionStringOutput::signed_connection_string): <p>The signed connection string that you can use to connect to clusters.</p>
     /// - On failure, responds with [`SdkError<GetKxConnectionStringError>`](crate::operation::get_kx_connection_string::GetKxConnectionStringError)
-    pub fn get_kx_connection_string(
-        &self,
-    ) -> crate::operation::get_kx_connection_string::builders::GetKxConnectionStringFluentBuilder
-    {
+    pub fn get_kx_connection_string(&self) -> crate::operation::get_kx_connection_string::builders::GetKxConnectionStringFluentBuilder {
         crate::operation::get_kx_connection_string::builders::GetKxConnectionStringFluentBuilder::new(self.handle.clone())
     }
 }

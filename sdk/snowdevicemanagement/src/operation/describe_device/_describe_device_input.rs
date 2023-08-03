@@ -22,26 +22,18 @@ impl DescribeDeviceInput {
 
 /// A builder for [`DescribeDeviceInput`](crate::operation::describe_device::DescribeDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeviceInputBuilder {
     pub(crate) managed_device_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDeviceInputBuilder {
     /// <p>The ID of the device that you are checking the information of.</p>
-    pub fn managed_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn managed_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the device that you are checking the information of.</p>
-    pub fn set_managed_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_managed_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.managed_device_id = input;
         self
     }
@@ -52,10 +44,7 @@ impl DescribeDeviceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDeviceInput`](crate::operation::describe_device::DescribeDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_device::DescribeDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_device::DescribeDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_device::DescribeDeviceInput {
             managed_device_id: self.managed_device_id,
         })

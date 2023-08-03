@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateStorageSystemOutput {
 }
 impl UpdateStorageSystemOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStorageSystemOutput`](crate::operation::update_storage_system::UpdateStorageSystemOutput).
-    pub fn builder(
-    ) -> crate::operation::update_storage_system::builders::UpdateStorageSystemOutputBuilder {
-        crate::operation::update_storage_system::builders::UpdateStorageSystemOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_storage_system::builders::UpdateStorageSystemOutputBuilder {
+        crate::operation::update_storage_system::builders::UpdateStorageSystemOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateStorageSystemOutput`](crate::operation::update_storage_system::UpdateStorageSystemOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStorageSystemOutputBuilder {
     _request_id: Option<String>,
 }

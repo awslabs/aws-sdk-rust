@@ -7,10 +7,7 @@ pub fn ser_s3_set_object_acl_operation(
     let mut scope = writer.finish();
     if let Some(var_1) = &input.access_control_policy {
         let inner_writer = scope.start_el("AccessControlPolicy");
-        crate::protocol_serde::shape_s3_access_control_policy::ser_s3_access_control_policy(
-            var_1,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_s3_access_control_policy::ser_s3_access_control_policy(var_1, inner_writer)?
     }
     scope.finish();
     Ok(())

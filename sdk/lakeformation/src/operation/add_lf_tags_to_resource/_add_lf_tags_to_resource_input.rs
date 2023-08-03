@@ -29,17 +29,14 @@ impl AddLfTagsToResourceInput {
 }
 impl AddLfTagsToResourceInput {
     /// Creates a new builder-style object to manufacture [`AddLfTagsToResourceInput`](crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput).
-    pub fn builder(
-    ) -> crate::operation::add_lf_tags_to_resource::builders::AddLfTagsToResourceInputBuilder {
+    pub fn builder() -> crate::operation::add_lf_tags_to_resource::builders::AddLfTagsToResourceInputBuilder {
         crate::operation::add_lf_tags_to_resource::builders::AddLfTagsToResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`AddLfTagsToResourceInput`](crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddLfTagsToResourceInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
@@ -86,10 +83,7 @@ impl AddLfTagsToResourceInputBuilder {
         self
     }
     /// <p>The LF-tags to attach to the resource.</p>
-    pub fn set_lf_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
-    ) -> Self {
+    pub fn set_lf_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>) -> Self {
         self.lf_tags = input;
         self
     }
@@ -100,16 +94,12 @@ impl AddLfTagsToResourceInputBuilder {
     /// Consumes the builder and constructs a [`AddLfTagsToResourceInput`](crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput {
-                catalog_id: self.catalog_id,
-                resource: self.resource,
-                lf_tags: self.lf_tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput {
+            catalog_id: self.catalog_id,
+            resource: self.resource,
+            lf_tags: self.lf_tags,
+        })
     }
 }

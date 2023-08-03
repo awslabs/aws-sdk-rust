@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`override_status(OverrideStatus)`](crate::operation::override_pull_request_approval_rules::builders::OverridePullRequestApprovalRulesFluentBuilder::override_status) / [`set_override_status(Option<OverrideStatus>)`](crate::operation::override_pull_request_approval_rules::builders::OverridePullRequestApprovalRulesFluentBuilder::set_override_status): <p>Whether you want to set aside approval rule requirements for the pull request (OVERRIDE) or revoke a previous override and apply approval rule requirements (REVOKE). REVOKE status is not stored.</p>
     /// - On success, responds with [`OverridePullRequestApprovalRulesOutput`](crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesOutput)
     /// - On failure, responds with [`SdkError<OverridePullRequestApprovalRulesError>`](crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError)
-    pub fn override_pull_request_approval_rules(&self) -> crate::operation::override_pull_request_approval_rules::builders::OverridePullRequestApprovalRulesFluentBuilder{
+    pub fn override_pull_request_approval_rules(
+        &self,
+    ) -> crate::operation::override_pull_request_approval_rules::builders::OverridePullRequestApprovalRulesFluentBuilder {
         crate::operation::override_pull_request_approval_rules::builders::OverridePullRequestApprovalRulesFluentBuilder::new(self.handle.clone())
     }
 }

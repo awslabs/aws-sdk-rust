@@ -44,16 +44,12 @@ impl Evaluation {
 
 /// A builder for [`Evaluation`](crate::types::Evaluation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationBuilder {
     pub(crate) approved: ::std::option::Option<bool>,
     pub(crate) overridden: ::std::option::Option<bool>,
-    pub(crate) approval_rules_satisfied:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) approval_rules_not_satisfied:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) approval_rules_satisfied: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) approval_rules_not_satisfied: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EvaluationBuilder {
     /// <p>Whether the state of the pull request is approved.</p>
@@ -89,27 +85,19 @@ impl EvaluationBuilder {
     /// To override the contents of this collection use [`set_approval_rules_satisfied`](Self::set_approval_rules_satisfied).
     ///
     /// <p>The names of the approval rules that have had their conditions met.</p>
-    pub fn approval_rules_satisfied(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rules_satisfied(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.approval_rules_satisfied.unwrap_or_default();
         v.push(input.into());
         self.approval_rules_satisfied = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the approval rules that have had their conditions met.</p>
-    pub fn set_approval_rules_satisfied(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_approval_rules_satisfied(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.approval_rules_satisfied = input;
         self
     }
     /// <p>The names of the approval rules that have had their conditions met.</p>
-    pub fn get_approval_rules_satisfied(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_approval_rules_satisfied(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.approval_rules_satisfied
     }
     /// Appends an item to `approval_rules_not_satisfied`.
@@ -117,27 +105,19 @@ impl EvaluationBuilder {
     /// To override the contents of this collection use [`set_approval_rules_not_satisfied`](Self::set_approval_rules_not_satisfied).
     ///
     /// <p>The names of the approval rules that have not had their conditions met.</p>
-    pub fn approval_rules_not_satisfied(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rules_not_satisfied(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.approval_rules_not_satisfied.unwrap_or_default();
         v.push(input.into());
         self.approval_rules_not_satisfied = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the approval rules that have not had their conditions met.</p>
-    pub fn set_approval_rules_not_satisfied(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_approval_rules_not_satisfied(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.approval_rules_not_satisfied = input;
         self
     }
     /// <p>The names of the approval rules that have not had their conditions met.</p>
-    pub fn get_approval_rules_not_satisfied(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_approval_rules_not_satisfied(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.approval_rules_not_satisfied
     }
     /// Consumes the builder and constructs a [`Evaluation`](crate::types::Evaluation).

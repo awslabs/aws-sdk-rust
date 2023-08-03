@@ -37,9 +37,7 @@ impl PutReportDefinitionFluentBuilder {
         }
     }
     /// Access the PutReportDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_report_definition::builders::PutReportDefinitionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_report_definition::builders::PutReportDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl PutReportDefinitionFluentBuilder {
             crate::operation::put_report_definition::PutReportDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_report_definition::PutReportDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_report_definition::PutReportDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl PutReportDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl PutReportDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_report_definition::PutReportDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_report_definition::PutReportDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_report_definition::PutReportDefinitionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl PutReportDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_report_definition::PutReportDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_report_definition::PutReportDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_report_definition::PutReportDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl PutReportDefinitionFluentBuilder {
             crate::operation::put_report_definition::PutReportDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_report_definition::PutReportDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_report_definition::PutReportDefinitionError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl PutReportDefinitionFluentBuilder {
         self
     }
     /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
-    pub fn set_report_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportDefinition>,
-    ) -> Self {
+    pub fn set_report_definition(mut self, input: ::std::option::Option<crate::types::ReportDefinition>) -> Self {
         self.inner = self.inner.set_report_definition(input);
         self
     }

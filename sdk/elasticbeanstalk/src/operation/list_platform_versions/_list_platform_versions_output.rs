@@ -5,8 +5,7 @@
 pub struct ListPlatformVersionsOutput {
     /// <p>Summary information about the platform versions.</p>
     #[doc(hidden)]
-    pub platform_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlatformSummary>>,
+    pub platform_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::PlatformSummary>>,
     /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListPlatformVersionsOutput {
 }
 impl ListPlatformVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListPlatformVersionsOutput`](crate::operation::list_platform_versions::ListPlatformVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_platform_versions::builders::ListPlatformVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_platform_versions::builders::ListPlatformVersionsOutputBuilder {
         crate::operation::list_platform_versions::builders::ListPlatformVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPlatformVersionsOutput`](crate::operation::list_platform_versions::ListPlatformVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPlatformVersionsOutputBuilder {
-    pub(crate) platform_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlatformSummary>>,
+    pub(crate) platform_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::PlatformSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListPlatformVersionsOutputBuilder {
         self
     }
     /// <p>Summary information about the platform versions.</p>
-    pub fn set_platform_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformSummary>>,
-    ) -> Self {
+    pub fn set_platform_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformSummary>>) -> Self {
         self.platform_summary_list = input;
         self
     }
     /// <p>Summary information about the platform versions.</p>
-    pub fn get_platform_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformSummary>> {
+    pub fn get_platform_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformSummary>> {
         &self.platform_summary_list
     }
     /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>

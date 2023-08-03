@@ -17,11 +17,9 @@ pub fn ser_re_encryption_attributes(
             object_2.finish();
         }
         crate::types::ReEncryptionAttributes::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "ReEncryptionAttributes",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "ReEncryptionAttributes",
+            ))
         }
     }
     Ok(())

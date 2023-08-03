@@ -48,9 +48,7 @@ pub struct CreateCanaryInput {
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
     #[doc(hidden)]
     pub artifact_config: ::std::option::Option<crate::types::ArtifactConfigInput>,
@@ -110,11 +108,7 @@ impl CreateCanaryInput {
     }
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
@@ -131,9 +125,7 @@ impl CreateCanaryInput {
 
 /// A builder for [`CreateCanaryInput`](crate::operation::create_canary::CreateCanaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCanaryInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<crate::types::CanaryCodeInput>,
@@ -145,9 +137,7 @@ pub struct CreateCanaryInputBuilder {
     pub(crate) failure_retention_period_in_days: ::std::option::Option<i32>,
     pub(crate) runtime_version: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfigInput>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) artifact_config: ::std::option::Option<crate::types::ArtifactConfigInput>,
 }
 impl CreateCanaryInputBuilder {
@@ -183,18 +173,12 @@ impl CreateCanaryInputBuilder {
         &self.code
     }
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
-    pub fn artifact_s3_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_s3_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
-    pub fn set_artifact_s3_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_s3_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_s3_location = input;
         self
     }
@@ -212,10 +196,7 @@ impl CreateCanaryInputBuilder {
     /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
     /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
     /// </ul>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -229,10 +210,7 @@ impl CreateCanaryInputBuilder {
     /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
     /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
     /// </ul>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -255,10 +233,7 @@ impl CreateCanaryInputBuilder {
         self
     }
     /// <p>A structure that contains information about how often the canary is to run and when these test runs are to stop.</p>
-    pub fn set_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::CanaryScheduleInput>,
-    ) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::CanaryScheduleInput>) -> Self {
         self.schedule = input;
         self
     }
@@ -276,10 +251,7 @@ impl CreateCanaryInputBuilder {
     /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important>
     /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
     /// </important>
-    pub fn set_run_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CanaryRunConfigInput>,
-    ) -> Self {
+    pub fn set_run_config(mut self, input: ::std::option::Option<crate::types::CanaryRunConfigInput>) -> Self {
         self.run_config = input;
         self
     }
@@ -295,10 +267,7 @@ impl CreateCanaryInputBuilder {
         self
     }
     /// <p>The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
-    pub fn set_success_retention_period_in_days(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_success_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.success_retention_period_in_days = input;
         self
     }
@@ -312,10 +281,7 @@ impl CreateCanaryInputBuilder {
         self
     }
     /// <p>The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
-    pub fn set_failure_retention_period_in_days(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_failure_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failure_retention_period_in_days = input;
         self
     }
@@ -324,18 +290,12 @@ impl CreateCanaryInputBuilder {
         &self.failure_retention_period_in_days
     }
     /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-    pub fn runtime_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn runtime_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-    pub fn set_runtime_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_runtime_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime_version = input;
         self
     }
@@ -349,10 +309,7 @@ impl CreateCanaryInputBuilder {
         self
     }
     /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
-    pub fn set_vpc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfigInput>,
-    ) -> Self {
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfigInput>) -> Self {
         self.vpc_config = input;
         self
     }
@@ -366,11 +323,7 @@ impl CreateCanaryInputBuilder {
     ///
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
@@ -378,22 +331,13 @@ impl CreateCanaryInputBuilder {
     }
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
@@ -402,10 +346,7 @@ impl CreateCanaryInputBuilder {
         self
     }
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
-    pub fn set_artifact_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactConfigInput>,
-    ) -> Self {
+    pub fn set_artifact_config(mut self, input: ::std::option::Option<crate::types::ArtifactConfigInput>) -> Self {
         self.artifact_config = input;
         self
     }
@@ -414,12 +355,7 @@ impl CreateCanaryInputBuilder {
         &self.artifact_config
     }
     /// Consumes the builder and constructs a [`CreateCanaryInput`](crate::operation::create_canary::CreateCanaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_canary::CreateCanaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_canary::CreateCanaryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_canary::CreateCanaryInput {
             name: self.name,
             code: self.code,

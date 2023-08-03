@@ -35,9 +35,7 @@ impl DescribeTasksOutput {
 
 /// A builder for [`DescribeTasksOutput`](crate::operation::describe_tasks::DescribeTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTasksOutputBuilder {
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
@@ -56,10 +54,7 @@ impl DescribeTasksOutputBuilder {
         self
     }
     /// <p>The list of tasks.</p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>) -> Self {
         self.tasks = input;
         self
     }
@@ -79,10 +74,7 @@ impl DescribeTasksOutputBuilder {
         self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>) -> Self {
         self.failures = input;
         self
     }

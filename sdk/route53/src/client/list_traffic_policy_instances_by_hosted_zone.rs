@@ -14,7 +14,11 @@ impl super::Client {
     ///   - [`is_truncated(bool)`](crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneOutput::is_truncated): <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get the next group of traffic policy instances by submitting another <code>ListTrafficPolicyInstancesByHostedZone</code> request and specifying the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request parameters.</p>
     ///   - [`max_items(Option<i32>)`](crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneOutput::max_items): <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicyInstancesByHostedZone</code> request that produced the current response.</p>
     /// - On failure, responds with [`SdkError<ListTrafficPolicyInstancesByHostedZoneError>`](crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneError)
-    pub fn list_traffic_policy_instances_by_hosted_zone(&self) -> crate::operation::list_traffic_policy_instances_by_hosted_zone::builders::ListTrafficPolicyInstancesByHostedZoneFluentBuilder{
-        crate::operation::list_traffic_policy_instances_by_hosted_zone::builders::ListTrafficPolicyInstancesByHostedZoneFluentBuilder::new(self.handle.clone())
+    pub fn list_traffic_policy_instances_by_hosted_zone(
+        &self,
+    ) -> crate::operation::list_traffic_policy_instances_by_hosted_zone::builders::ListTrafficPolicyInstancesByHostedZoneFluentBuilder {
+        crate::operation::list_traffic_policy_instances_by_hosted_zone::builders::ListTrafficPolicyInstancesByHostedZoneFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

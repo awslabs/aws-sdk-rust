@@ -30,18 +30,14 @@ impl GetGatewayResponsesInput {
 }
 impl GetGatewayResponsesInput {
     /// Creates a new builder-style object to manufacture [`GetGatewayResponsesInput`](crate::operation::get_gateway_responses::GetGatewayResponsesInput).
-    pub fn builder(
-    ) -> crate::operation::get_gateway_responses::builders::GetGatewayResponsesInputBuilder {
-        crate::operation::get_gateway_responses::builders::GetGatewayResponsesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_gateway_responses::builders::GetGatewayResponsesInputBuilder {
+        crate::operation::get_gateway_responses::builders::GetGatewayResponsesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetGatewayResponsesInput`](crate::operation::get_gateway_responses::GetGatewayResponsesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGatewayResponsesInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
@@ -93,16 +89,12 @@ impl GetGatewayResponsesInputBuilder {
     /// Consumes the builder and constructs a [`GetGatewayResponsesInput`](crate::operation::get_gateway_responses::GetGatewayResponsesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_gateway_responses::GetGatewayResponsesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_gateway_responses::GetGatewayResponsesInput {
-                rest_api_id: self.rest_api_id,
-                position: self.position,
-                limit: self.limit,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_gateway_responses::GetGatewayResponsesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_gateway_responses::GetGatewayResponsesInput {
+            rest_api_id: self.rest_api_id,
+            position: self.position,
+            limit: self.limit,
+        })
     }
 }

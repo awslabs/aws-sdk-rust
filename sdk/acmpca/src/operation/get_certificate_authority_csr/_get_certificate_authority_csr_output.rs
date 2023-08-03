@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetCertificateAuthorityCsrOutput {
 }
 impl GetCertificateAuthorityCsrOutput {
     /// Creates a new builder-style object to manufacture [`GetCertificateAuthorityCsrOutput`](crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrOutput).
-    pub fn builder() -> crate::operation::get_certificate_authority_csr::builders::GetCertificateAuthorityCsrOutputBuilder{
+    pub fn builder() -> crate::operation::get_certificate_authority_csr::builders::GetCertificateAuthorityCsrOutputBuilder {
         crate::operation::get_certificate_authority_csr::builders::GetCertificateAuthorityCsrOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCertificateAuthorityCsrOutput`](crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCertificateAuthorityCsrOutputBuilder {
     pub(crate) csr: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl GetCertificateAuthorityCsrOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCertificateAuthorityCsrOutput`](crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrOutput {
+    pub fn build(self) -> crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrOutput {
         crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrOutput {
             csr: self.csr,
             _request_id: self._request_id,

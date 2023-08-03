@@ -33,16 +33,13 @@ pub struct LambdaExecutionParameters {
     /// <p>The encoding type that the Lambda function supports.</p>
     /// <p>Default: <code>json</code> </p>
     #[doc(hidden)]
-    pub input_payload_encoding_type:
-        ::std::option::Option<crate::types::LambdaInputPayloadEncodingType>,
+    pub input_payload_encoding_type: ::std::option::Option<crate::types::LambdaInputPayloadEncodingType>,
     /// <p>The list of arguments to pass to the Lambda function when it runs.</p>
     #[doc(hidden)]
     pub exec_args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The map of environment variables that are available to the Lambda function when it runs.</p>
     #[doc(hidden)]
-    pub environment_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The parameters for the Linux process that contains the Lambda function.</p>
     #[doc(hidden)]
     pub linux_process_params: ::std::option::Option<crate::types::LambdaLinuxProcessParams>,
@@ -83,9 +80,7 @@ impl LambdaExecutionParameters {
     }
     /// <p>The encoding type that the Lambda function supports.</p>
     /// <p>Default: <code>json</code> </p>
-    pub fn input_payload_encoding_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LambdaInputPayloadEncodingType> {
+    pub fn input_payload_encoding_type(&self) -> ::std::option::Option<&crate::types::LambdaInputPayloadEncodingType> {
         self.input_payload_encoding_type.as_ref()
     }
     /// <p>The list of arguments to pass to the Lambda function when it runs.</p>
@@ -93,17 +88,11 @@ impl LambdaExecutionParameters {
         self.exec_args.as_deref()
     }
     /// <p>The map of environment variables that are available to the Lambda function when it runs.</p>
-    pub fn environment_variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
     /// <p>The parameters for the Linux process that contains the Lambda function.</p>
-    pub fn linux_process_params(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LambdaLinuxProcessParams> {
+    pub fn linux_process_params(&self) -> ::std::option::Option<&crate::types::LambdaLinuxProcessParams> {
         self.linux_process_params.as_ref()
     }
 }
@@ -116,24 +105,18 @@ impl LambdaExecutionParameters {
 
 /// A builder for [`LambdaExecutionParameters`](crate::types::LambdaExecutionParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaExecutionParametersBuilder {
-    pub(crate) event_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::LambdaEventSource>>,
+    pub(crate) event_sources: ::std::option::Option<::std::vec::Vec<crate::types::LambdaEventSource>>,
     pub(crate) max_queue_size: ::std::option::Option<i32>,
     pub(crate) max_instances_count: ::std::option::Option<i32>,
     pub(crate) max_idle_time_in_seconds: ::std::option::Option<i32>,
     pub(crate) timeout_in_seconds: ::std::option::Option<i32>,
     pub(crate) status_timeout_in_seconds: ::std::option::Option<i32>,
     pub(crate) pinned: ::std::option::Option<bool>,
-    pub(crate) input_payload_encoding_type:
-        ::std::option::Option<crate::types::LambdaInputPayloadEncodingType>,
+    pub(crate) input_payload_encoding_type: ::std::option::Option<crate::types::LambdaInputPayloadEncodingType>,
     pub(crate) exec_args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) environment_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) linux_process_params: ::std::option::Option<crate::types::LambdaLinuxProcessParams>,
 }
 impl LambdaExecutionParametersBuilder {
@@ -149,17 +132,12 @@ impl LambdaExecutionParametersBuilder {
         self
     }
     /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda function runs when it receives a message from an event source. You can subscribe this function to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
-    pub fn set_event_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LambdaEventSource>>,
-    ) -> Self {
+    pub fn set_event_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LambdaEventSource>>) -> Self {
         self.event_sources = input;
         self
     }
     /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda function runs when it receives a message from an event source. You can subscribe this function to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
-    pub fn get_event_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaEventSource>> {
+    pub fn get_event_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaEventSource>> {
         &self.event_sources
     }
     /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to consume each message.</p>
@@ -263,27 +241,19 @@ impl LambdaExecutionParametersBuilder {
     }
     /// <p>The encoding type that the Lambda function supports.</p>
     /// <p>Default: <code>json</code> </p>
-    pub fn input_payload_encoding_type(
-        mut self,
-        input: crate::types::LambdaInputPayloadEncodingType,
-    ) -> Self {
+    pub fn input_payload_encoding_type(mut self, input: crate::types::LambdaInputPayloadEncodingType) -> Self {
         self.input_payload_encoding_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encoding type that the Lambda function supports.</p>
     /// <p>Default: <code>json</code> </p>
-    pub fn set_input_payload_encoding_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaInputPayloadEncodingType>,
-    ) -> Self {
+    pub fn set_input_payload_encoding_type(mut self, input: ::std::option::Option<crate::types::LambdaInputPayloadEncodingType>) -> Self {
         self.input_payload_encoding_type = input;
         self
     }
     /// <p>The encoding type that the Lambda function supports.</p>
     /// <p>Default: <code>json</code> </p>
-    pub fn get_input_payload_encoding_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::LambdaInputPayloadEncodingType> {
+    pub fn get_input_payload_encoding_type(&self) -> &::std::option::Option<crate::types::LambdaInputPayloadEncodingType> {
         &self.input_payload_encoding_type
     }
     /// Appends an item to `exec_args`.
@@ -298,10 +268,7 @@ impl LambdaExecutionParametersBuilder {
         self
     }
     /// <p>The list of arguments to pass to the Lambda function when it runs.</p>
-    pub fn set_exec_args(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_exec_args(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.exec_args = input;
         self
     }
@@ -327,19 +294,13 @@ impl LambdaExecutionParametersBuilder {
     /// <p>The map of environment variables that are available to the Lambda function when it runs.</p>
     pub fn set_environment_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.environment_variables = input;
         self
     }
     /// <p>The map of environment variables that are available to the Lambda function when it runs.</p>
-    pub fn get_environment_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
     /// <p>The parameters for the Linux process that contains the Lambda function.</p>
@@ -348,17 +309,12 @@ impl LambdaExecutionParametersBuilder {
         self
     }
     /// <p>The parameters for the Linux process that contains the Lambda function.</p>
-    pub fn set_linux_process_params(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaLinuxProcessParams>,
-    ) -> Self {
+    pub fn set_linux_process_params(mut self, input: ::std::option::Option<crate::types::LambdaLinuxProcessParams>) -> Self {
         self.linux_process_params = input;
         self
     }
     /// <p>The parameters for the Linux process that contains the Lambda function.</p>
-    pub fn get_linux_process_params(
-        &self,
-    ) -> &::std::option::Option<crate::types::LambdaLinuxProcessParams> {
+    pub fn get_linux_process_params(&self) -> &::std::option::Option<crate::types::LambdaLinuxProcessParams> {
         &self.linux_process_params
     }
     /// Consumes the builder and constructs a [`LambdaExecutionParameters`](crate::types::LambdaExecutionParameters).

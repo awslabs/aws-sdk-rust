@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSkillsStoreSkillsByCategoryOutput
 }
 impl ListSkillsStoreSkillsByCategoryOutput {
     /// Creates a new builder-style object to manufacture [`ListSkillsStoreSkillsByCategoryOutput`](crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryOutput).
-    pub fn builder() -> crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryOutputBuilder{
+    pub fn builder() -> crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryOutputBuilder {
         crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSkillsStoreSkillsByCategoryOutput`](crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSkillsStoreSkillsByCategoryOutputBuilder {
-    pub(crate) skills_store_skills:
-        ::std::option::Option<::std::vec::Vec<crate::types::SkillsStoreSkill>>,
+    pub(crate) skills_store_skills: ::std::option::Option<::std::vec::Vec<crate::types::SkillsStoreSkill>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListSkillsStoreSkillsByCategoryOutputBuilder {
         self
     }
     /// <p>The skill store skills.</p>
-    pub fn set_skills_store_skills(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SkillsStoreSkill>>,
-    ) -> Self {
+    pub fn set_skills_store_skills(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SkillsStoreSkill>>) -> Self {
         self.skills_store_skills = input;
         self
     }
     /// <p>The skill store skills.</p>
-    pub fn get_skills_store_skills(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SkillsStoreSkill>> {
+    pub fn get_skills_store_skills(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SkillsStoreSkill>> {
         &self.skills_store_skills
     }
     /// <p>The tokens used for pagination.</p>
@@ -94,15 +86,10 @@ impl ListSkillsStoreSkillsByCategoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSkillsStoreSkillsByCategoryOutput`](crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryOutput
-    {
+    pub fn build(self) -> crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryOutput {
         crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryOutput {
-            skills_store_skills: self.skills_store_skills
-            ,
-            next_token: self.next_token
-            ,
+            skills_store_skills: self.skills_store_skills,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

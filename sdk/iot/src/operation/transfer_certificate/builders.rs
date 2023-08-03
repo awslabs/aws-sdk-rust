@@ -10,10 +10,7 @@ impl TransferCertificateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::transfer_certificate::TransferCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transfer_certificate::TransferCertificateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transfer_certificate::TransferCertificateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.transfer_certificate();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl TransferCertificateFluentBuilder {
         }
     }
     /// Access the TransferCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::transfer_certificate::builders::TransferCertificateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::transfer_certificate::builders::TransferCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl TransferCertificateFluentBuilder {
             crate::operation::transfer_certificate::TransferCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transfer_certificate::TransferCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transfer_certificate::TransferCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl TransferCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl TransferCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::transfer_certificate::TransferCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transfer_certificate::TransferCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transfer_certificate::TransferCertificateError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl TransferCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::transfer_certificate::TransferCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transfer_certificate::TransferCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transfer_certificate::TransferCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +107,17 @@ impl TransferCertificateFluentBuilder {
             crate::operation::transfer_certificate::TransferCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transfer_certificate::TransferCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transfer_certificate::TransferCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_id(input.into());
         self
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_id(input);
         self
     }
@@ -148,18 +126,12 @@ impl TransferCertificateFluentBuilder {
         self.inner.get_certificate_id()
     }
     /// <p>The Amazon Web Services account.</p>
-    pub fn target_aws_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_aws_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_aws_account(input.into());
         self
     }
     /// <p>The Amazon Web Services account.</p>
-    pub fn set_target_aws_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_aws_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_aws_account(input);
         self
     }
@@ -168,18 +140,12 @@ impl TransferCertificateFluentBuilder {
         self.inner.get_target_aws_account()
     }
     /// <p>The transfer message.</p>
-    pub fn transfer_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transfer_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transfer_message(input.into());
         self
     }
     /// <p>The transfer message.</p>
-    pub fn set_transfer_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transfer_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transfer_message(input);
         self
     }

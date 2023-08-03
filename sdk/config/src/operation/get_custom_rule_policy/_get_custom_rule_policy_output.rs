@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetCustomRulePolicyOutput {
 }
 impl GetCustomRulePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetCustomRulePolicyOutput`](crate::operation::get_custom_rule_policy::GetCustomRulePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_custom_rule_policy::builders::GetCustomRulePolicyOutputBuilder {
+    pub fn builder() -> crate::operation::get_custom_rule_policy::builders::GetCustomRulePolicyOutputBuilder {
         crate::operation::get_custom_rule_policy::builders::GetCustomRulePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCustomRulePolicyOutput`](crate::operation::get_custom_rule_policy::GetCustomRulePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCustomRulePolicyOutputBuilder {
     pub(crate) policy_text: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

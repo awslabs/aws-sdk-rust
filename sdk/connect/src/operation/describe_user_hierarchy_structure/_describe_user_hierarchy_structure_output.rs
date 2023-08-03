@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeUserHierarchyStructureOutput 
 }
 impl DescribeUserHierarchyStructureOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserHierarchyStructureOutput`](crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureOutput).
-    pub fn builder() -> crate::operation::describe_user_hierarchy_structure::builders::DescribeUserHierarchyStructureOutputBuilder{
+    pub fn builder() -> crate::operation::describe_user_hierarchy_structure::builders::DescribeUserHierarchyStructureOutputBuilder {
         crate::operation::describe_user_hierarchy_structure::builders::DescribeUserHierarchyStructureOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUserHierarchyStructureOutput`](crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUserHierarchyStructureOutputBuilder {
     pub(crate) hierarchy_structure: ::std::option::Option<crate::types::HierarchyStructure>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl DescribeUserHierarchyStructureOutputBuilder {
         self
     }
     /// <p>Information about the hierarchy structure.</p>
-    pub fn set_hierarchy_structure(
-        mut self,
-        input: ::std::option::Option<crate::types::HierarchyStructure>,
-    ) -> Self {
+    pub fn set_hierarchy_structure(mut self, input: ::std::option::Option<crate::types::HierarchyStructure>) -> Self {
         self.hierarchy_structure = input;
         self
     }
     /// <p>Information about the hierarchy structure.</p>
-    pub fn get_hierarchy_structure(
-        &self,
-    ) -> &::std::option::Option<crate::types::HierarchyStructure> {
+    pub fn get_hierarchy_structure(&self) -> &::std::option::Option<crate::types::HierarchyStructure> {
         &self.hierarchy_structure
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,10 +58,7 @@ impl DescribeUserHierarchyStructureOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeUserHierarchyStructureOutput`](crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureOutput
-    {
+    pub fn build(self) -> crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureOutput {
         crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureOutput {
             hierarchy_structure: self.hierarchy_structure,
             _request_id: self._request_id,

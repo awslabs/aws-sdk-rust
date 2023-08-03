@@ -28,9 +28,7 @@ impl DescribeAlertOutput {
 
 /// A builder for [`DescribeAlertOutput`](crate::operation::describe_alert::DescribeAlertOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAlertOutputBuilder {
     pub(crate) alert: ::std::option::Option<crate::types::Alert>,
     _request_id: Option<String>,

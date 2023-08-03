@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`principal(impl ::std::convert::Into<String>)`](crate::operation::detach_thing_principal::builders::DetachThingPrincipalFluentBuilder::principal) / [`set_principal(Option<String>)`](crate::operation::detach_thing_principal::builders::DetachThingPrincipalFluentBuilder::set_principal): <p>If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</p>
     /// - On success, responds with [`DetachThingPrincipalOutput`](crate::operation::detach_thing_principal::DetachThingPrincipalOutput)
     /// - On failure, responds with [`SdkError<DetachThingPrincipalError>`](crate::operation::detach_thing_principal::DetachThingPrincipalError)
-    pub fn detach_thing_principal(
-        &self,
-    ) -> crate::operation::detach_thing_principal::builders::DetachThingPrincipalFluentBuilder {
-        crate::operation::detach_thing_principal::builders::DetachThingPrincipalFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detach_thing_principal(&self) -> crate::operation::detach_thing_principal::builders::DetachThingPrincipalFluentBuilder {
+        crate::operation::detach_thing_principal::builders::DetachThingPrincipalFluentBuilder::new(self.handle.clone())
     }
 }

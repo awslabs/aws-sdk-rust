@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeclineInvitationsOutput`](crate::operation::decline_invitations::DeclineInvitationsOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::operation::decline_invitations::DeclineInvitationsOutput::unprocessed_accounts): <p>An array of objects, one for each account whose invitation hasn't been declined. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
     /// - On failure, responds with [`SdkError<DeclineInvitationsError>`](crate::operation::decline_invitations::DeclineInvitationsError)
-    pub fn decline_invitations(
-        &self,
-    ) -> crate::operation::decline_invitations::builders::DeclineInvitationsFluentBuilder {
-        crate::operation::decline_invitations::builders::DeclineInvitationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn decline_invitations(&self) -> crate::operation::decline_invitations::builders::DeclineInvitationsFluentBuilder {
+        crate::operation::decline_invitations::builders::DeclineInvitationsFluentBuilder::new(self.handle.clone())
     }
 }

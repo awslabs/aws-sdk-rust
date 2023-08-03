@@ -11,9 +11,7 @@ pub struct UpdateProfilingGroupOutput {
 }
 impl UpdateProfilingGroupOutput {
     /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group. </p>
-    pub fn profiling_group(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProfilingGroupDescription> {
+    pub fn profiling_group(&self) -> ::std::option::Option<&crate::types::ProfilingGroupDescription> {
         self.profiling_group.as_ref()
     }
 }
@@ -24,17 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateProfilingGroupOutput {
 }
 impl UpdateProfilingGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProfilingGroupOutput`](crate::operation::update_profiling_group::UpdateProfilingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_profiling_group::builders::UpdateProfilingGroupOutputBuilder {
+    pub fn builder() -> crate::operation::update_profiling_group::builders::UpdateProfilingGroupOutputBuilder {
         crate::operation::update_profiling_group::builders::UpdateProfilingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateProfilingGroupOutput`](crate::operation::update_profiling_group::UpdateProfilingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProfilingGroupOutputBuilder {
     pub(crate) profiling_group: ::std::option::Option<crate::types::ProfilingGroupDescription>,
     _request_id: Option<String>,
@@ -46,17 +41,12 @@ impl UpdateProfilingGroupOutputBuilder {
         self
     }
     /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group. </p>
-    pub fn set_profiling_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ProfilingGroupDescription>,
-    ) -> Self {
+    pub fn set_profiling_group(mut self, input: ::std::option::Option<crate::types::ProfilingGroupDescription>) -> Self {
         self.profiling_group = input;
         self
     }
     /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group. </p>
-    pub fn get_profiling_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProfilingGroupDescription> {
+    pub fn get_profiling_group(&self) -> &::std::option::Option<crate::types::ProfilingGroupDescription> {
         &self.profiling_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

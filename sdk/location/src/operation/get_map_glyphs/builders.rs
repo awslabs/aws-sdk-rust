@@ -10,10 +10,7 @@ impl GetMapGlyphsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_map_glyphs::GetMapGlyphsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_map_glyphs::GetMapGlyphsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_map_glyphs::GetMapGlyphsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_map_glyphs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetMapGlyphsFluentBuilder {
         }
     }
     /// Access the GetMapGlyphs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_map_glyphs::builders::GetMapGlyphsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_map_glyphs::builders::GetMapGlyphsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetMapGlyphsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -212,18 +204,12 @@ impl GetMapGlyphsFluentBuilder {
         self.inner.get_font_stack()
     }
     /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</p>
-    pub fn font_unicode_range(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn font_unicode_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.font_unicode_range(input.into());
         self
     }
     /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</p>
-    pub fn set_font_unicode_range(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_font_unicode_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_font_unicode_range(input);
         self
     }

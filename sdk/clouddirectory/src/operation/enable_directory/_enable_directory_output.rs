@@ -28,27 +28,19 @@ impl EnableDirectoryOutput {
 
 /// A builder for [`EnableDirectoryOutput`](crate::operation::enable_directory::EnableDirectoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableDirectoryOutputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl EnableDirectoryOutputBuilder {
     /// <p>The ARN of the enabled directory.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the enabled directory.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_arn = input;
         self
     }

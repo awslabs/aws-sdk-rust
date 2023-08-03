@@ -24,11 +24,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::describe_labeling_job::DescribeLabelingJobOutput::tags): <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     ///   - [`labeling_job_output(Option<LabelingJobOutput>)`](crate::operation::describe_labeling_job::DescribeLabelingJobOutput::labeling_job_output): <p>The location of the output produced by the labeling job.</p>
     /// - On failure, responds with [`SdkError<DescribeLabelingJobError>`](crate::operation::describe_labeling_job::DescribeLabelingJobError)
-    pub fn describe_labeling_job(
-        &self,
-    ) -> crate::operation::describe_labeling_job::builders::DescribeLabelingJobFluentBuilder {
-        crate::operation::describe_labeling_job::builders::DescribeLabelingJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_labeling_job(&self) -> crate::operation::describe_labeling_job::builders::DescribeLabelingJobFluentBuilder {
+        crate::operation::describe_labeling_job::builders::DescribeLabelingJobFluentBuilder::new(self.handle.clone())
     }
 }

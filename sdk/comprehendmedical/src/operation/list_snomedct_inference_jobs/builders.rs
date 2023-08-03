@@ -26,7 +26,7 @@ impl ListSnomedctInferenceJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSNOMEDCTInferenceJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_snomedct_inference_jobs::builders::ListSnomedctInferenceJobsInputBuilder,
+    inner: crate::operation::list_snomedct_inference_jobs::builders::ListSnomedctInferenceJobsInputBuilder,
 }
 impl ListSNOMEDCTInferenceJobsFluentBuilder {
     /// Creates a new `ListSNOMEDCTInferenceJobs`.
@@ -37,7 +37,7 @@ impl ListSNOMEDCTInferenceJobsFluentBuilder {
         }
     }
     /// Access the ListSNOMEDCTInferenceJobs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_snomedct_inference_jobs::builders::ListSnomedctInferenceJobsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_snomedct_inference_jobs::builders::ListSnomedctInferenceJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListSNOMEDCTInferenceJobsFluentBuilder {
             crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListSNOMEDCTInferenceJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListSNOMEDCTInferenceJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_snomedct_inference_jobs::ListSnomedctInferenceJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListSNOMEDCTInferenceJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_snomedct_inference_jobs::ListSnomedctInferenceJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ListSNOMEDCTInferenceJobsFluentBuilder {
             crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError>,
     > {
         self.customize_middleware().await
     }
@@ -126,17 +115,12 @@ impl ListSNOMEDCTInferenceJobsFluentBuilder {
         self
     }
     /// <p>Provides information for filtering a list of detection jobs.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
     /// <p>Provides information for filtering a list of detection jobs.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter> {
         self.inner.get_filter()
     }
     /// <p> Identifies the next page of InferSNOMEDCT results to return. </p>

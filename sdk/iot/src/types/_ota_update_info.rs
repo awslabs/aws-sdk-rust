@@ -27,8 +27,7 @@ pub struct OtaUpdateInfo {
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
     /// <p>Configuration for the rollout of OTA updates.</p>
     #[doc(hidden)]
-    pub aws_job_executions_rollout_config:
-        ::std::option::Option<crate::types::AwsJobExecutionsRolloutConfig>,
+    pub aws_job_executions_rollout_config: ::std::option::Option<crate::types::AwsJobExecutionsRolloutConfig>,
     /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.</p>
     #[doc(hidden)]
     pub aws_job_presigned_url_config: ::std::option::Option<crate::types::AwsJobPresignedUrlConfig>,
@@ -52,9 +51,7 @@ pub struct OtaUpdateInfo {
     pub error_info: ::std::option::Option<crate::types::ErrorInfo>,
     /// <p>A collection of name/value pairs</p>
     #[doc(hidden)]
-    pub additional_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub additional_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OtaUpdateInfo {
     /// <p>The OTA update ID.</p>
@@ -86,15 +83,11 @@ impl OtaUpdateInfo {
         self.protocols.as_deref()
     }
     /// <p>Configuration for the rollout of OTA updates.</p>
-    pub fn aws_job_executions_rollout_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsJobExecutionsRolloutConfig> {
+    pub fn aws_job_executions_rollout_config(&self) -> ::std::option::Option<&crate::types::AwsJobExecutionsRolloutConfig> {
         self.aws_job_executions_rollout_config.as_ref()
     }
     /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.</p>
-    pub fn aws_job_presigned_url_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsJobPresignedUrlConfig> {
+    pub fn aws_job_presigned_url_config(&self) -> ::std::option::Option<&crate::types::AwsJobPresignedUrlConfig> {
         self.aws_job_presigned_url_config.as_ref()
     }
     /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group. </p>
@@ -122,11 +115,7 @@ impl OtaUpdateInfo {
         self.error_info.as_ref()
     }
     /// <p>A collection of name/value pairs</p>
-    pub fn additional_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn additional_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_parameters.as_ref()
     }
 }
@@ -139,9 +128,7 @@ impl OtaUpdateInfo {
 
 /// A builder for [`OtaUpdateInfo`](crate::types::OtaUpdateInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OtaUpdateInfoBuilder {
     pub(crate) ota_update_id: ::std::option::Option<::std::string::String>,
     pub(crate) ota_update_arn: ::std::option::Option<::std::string::String>,
@@ -150,35 +137,24 @@ pub struct OtaUpdateInfoBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
-    pub(crate) aws_job_executions_rollout_config:
-        ::std::option::Option<crate::types::AwsJobExecutionsRolloutConfig>,
-    pub(crate) aws_job_presigned_url_config:
-        ::std::option::Option<crate::types::AwsJobPresignedUrlConfig>,
+    pub(crate) aws_job_executions_rollout_config: ::std::option::Option<crate::types::AwsJobExecutionsRolloutConfig>,
+    pub(crate) aws_job_presigned_url_config: ::std::option::Option<crate::types::AwsJobPresignedUrlConfig>,
     pub(crate) target_selection: ::std::option::Option<crate::types::TargetSelection>,
-    pub(crate) ota_update_files:
-        ::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateFile>>,
+    pub(crate) ota_update_files: ::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateFile>>,
     pub(crate) ota_update_status: ::std::option::Option<crate::types::OtaUpdateStatus>,
     pub(crate) aws_iot_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_iot_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) error_info: ::std::option::Option<crate::types::ErrorInfo>,
-    pub(crate) additional_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) additional_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OtaUpdateInfoBuilder {
     /// <p>The OTA update ID.</p>
-    pub fn ota_update_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ota_update_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ota_update_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OTA update ID.</p>
-    pub fn set_ota_update_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ota_update_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ota_update_id = input;
         self
     }
@@ -187,18 +163,12 @@ impl OtaUpdateInfoBuilder {
         &self.ota_update_id
     }
     /// <p>The OTA update ARN.</p>
-    pub fn ota_update_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ota_update_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ota_update_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OTA update ARN.</p>
-    pub fn set_ota_update_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ota_update_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ota_update_arn = input;
         self
     }
@@ -212,10 +182,7 @@ impl OtaUpdateInfoBuilder {
         self
     }
     /// <p>The date when the OTA update was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -229,10 +196,7 @@ impl OtaUpdateInfoBuilder {
         self
     }
     /// <p>The date when the OTA update was last updated.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -266,10 +230,7 @@ impl OtaUpdateInfoBuilder {
         self
     }
     /// <p>The targets of the OTA update.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.targets = input;
         self
     }
@@ -289,10 +250,7 @@ impl OtaUpdateInfoBuilder {
         self
     }
     /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
-    pub fn set_protocols(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
-    ) -> Self {
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>) -> Self {
         self.protocols = input;
         self
     }
@@ -301,47 +259,31 @@ impl OtaUpdateInfoBuilder {
         &self.protocols
     }
     /// <p>Configuration for the rollout of OTA updates.</p>
-    pub fn aws_job_executions_rollout_config(
-        mut self,
-        input: crate::types::AwsJobExecutionsRolloutConfig,
-    ) -> Self {
+    pub fn aws_job_executions_rollout_config(mut self, input: crate::types::AwsJobExecutionsRolloutConfig) -> Self {
         self.aws_job_executions_rollout_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration for the rollout of OTA updates.</p>
-    pub fn set_aws_job_executions_rollout_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsJobExecutionsRolloutConfig>,
-    ) -> Self {
+    pub fn set_aws_job_executions_rollout_config(mut self, input: ::std::option::Option<crate::types::AwsJobExecutionsRolloutConfig>) -> Self {
         self.aws_job_executions_rollout_config = input;
         self
     }
     /// <p>Configuration for the rollout of OTA updates.</p>
-    pub fn get_aws_job_executions_rollout_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsJobExecutionsRolloutConfig> {
+    pub fn get_aws_job_executions_rollout_config(&self) -> &::std::option::Option<crate::types::AwsJobExecutionsRolloutConfig> {
         &self.aws_job_executions_rollout_config
     }
     /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.</p>
-    pub fn aws_job_presigned_url_config(
-        mut self,
-        input: crate::types::AwsJobPresignedUrlConfig,
-    ) -> Self {
+    pub fn aws_job_presigned_url_config(mut self, input: crate::types::AwsJobPresignedUrlConfig) -> Self {
         self.aws_job_presigned_url_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.</p>
-    pub fn set_aws_job_presigned_url_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsJobPresignedUrlConfig>,
-    ) -> Self {
+    pub fn set_aws_job_presigned_url_config(mut self, input: ::std::option::Option<crate::types::AwsJobPresignedUrlConfig>) -> Self {
         self.aws_job_presigned_url_config = input;
         self
     }
     /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.</p>
-    pub fn get_aws_job_presigned_url_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsJobPresignedUrlConfig> {
+    pub fn get_aws_job_presigned_url_config(&self) -> &::std::option::Option<crate::types::AwsJobPresignedUrlConfig> {
         &self.aws_job_presigned_url_config
     }
     /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group. </p>
@@ -350,10 +292,7 @@ impl OtaUpdateInfoBuilder {
         self
     }
     /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group. </p>
-    pub fn set_target_selection(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetSelection>,
-    ) -> Self {
+    pub fn set_target_selection(mut self, input: ::std::option::Option<crate::types::TargetSelection>) -> Self {
         self.target_selection = input;
         self
     }
@@ -373,17 +312,12 @@ impl OtaUpdateInfoBuilder {
         self
     }
     /// <p>A list of files associated with the OTA update.</p>
-    pub fn set_ota_update_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateFile>>,
-    ) -> Self {
+    pub fn set_ota_update_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateFile>>) -> Self {
         self.ota_update_files = input;
         self
     }
     /// <p>A list of files associated with the OTA update.</p>
-    pub fn get_ota_update_files(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateFile>> {
+    pub fn get_ota_update_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateFile>> {
         &self.ota_update_files
     }
     /// <p>The status of the OTA update.</p>
@@ -392,10 +326,7 @@ impl OtaUpdateInfoBuilder {
         self
     }
     /// <p>The status of the OTA update.</p>
-    pub fn set_ota_update_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OtaUpdateStatus>,
-    ) -> Self {
+    pub fn set_ota_update_status(mut self, input: ::std::option::Option<crate::types::OtaUpdateStatus>) -> Self {
         self.ota_update_status = input;
         self
     }
@@ -404,18 +335,12 @@ impl OtaUpdateInfoBuilder {
         &self.ota_update_status
     }
     /// <p>The IoT job ID associated with the OTA update.</p>
-    pub fn aws_iot_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_iot_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_iot_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IoT job ID associated with the OTA update.</p>
-    pub fn set_aws_iot_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_iot_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_iot_job_id = input;
         self
     }
@@ -424,18 +349,12 @@ impl OtaUpdateInfoBuilder {
         &self.aws_iot_job_id
     }
     /// <p>The IoT job ARN associated with the OTA update.</p>
-    pub fn aws_iot_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_iot_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_iot_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IoT job ARN associated with the OTA update.</p>
-    pub fn set_aws_iot_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_iot_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_iot_job_arn = input;
         self
     }
@@ -475,19 +394,13 @@ impl OtaUpdateInfoBuilder {
     /// <p>A collection of name/value pairs</p>
     pub fn set_additional_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.additional_parameters = input;
         self
     }
     /// <p>A collection of name/value pairs</p>
-    pub fn get_additional_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_additional_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.additional_parameters
     }
     /// Consumes the builder and constructs a [`OtaUpdateInfo`](crate::types::OtaUpdateInfo).

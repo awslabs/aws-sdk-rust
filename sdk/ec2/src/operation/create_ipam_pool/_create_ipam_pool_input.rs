@@ -40,8 +40,7 @@ pub struct CreateIpamPoolInput {
     pub allocation_default_netmask_length: ::std::option::Option<i32>,
     /// <p>Tags that are required for resources that use CIDRs from this IPAM pool. Resources that do not have these tags will not be allowed to allocate space from the pool. If the resources have their tags changed after they have allocated space or if the allocation tagging requirements are changed on the pool, the resource may be marked as noncompliant.</p>
     #[doc(hidden)]
-    pub allocation_resource_tags:
-        ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
+    pub allocation_resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
     #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
@@ -103,9 +102,7 @@ impl CreateIpamPoolInput {
         self.allocation_default_netmask_length
     }
     /// <p>Tags that are required for resources that use CIDRs from this IPAM pool. Resources that do not have these tags will not be allowed to allocate space from the pool. If the resources have their tags changed after they have allocated space or if the allocation tagging requirements are changed on the pool, the resource may be marked as noncompliant.</p>
-    pub fn allocation_resource_tags(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RequestIpamResourceTag]> {
+    pub fn allocation_resource_tags(&self) -> ::std::option::Option<&[crate::types::RequestIpamResourceTag]> {
         self.allocation_resource_tags.as_deref()
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
@@ -134,9 +131,7 @@ impl CreateIpamPoolInput {
 
 /// A builder for [`CreateIpamPoolInput`](crate::operation::create_ipam_pool::CreateIpamPoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateIpamPoolInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_scope_id: ::std::option::Option<::std::string::String>,
@@ -149,10 +144,8 @@ pub struct CreateIpamPoolInputBuilder {
     pub(crate) allocation_min_netmask_length: ::std::option::Option<i32>,
     pub(crate) allocation_max_netmask_length: ::std::option::Option<i32>,
     pub(crate) allocation_default_netmask_length: ::std::option::Option<i32>,
-    pub(crate) allocation_resource_tags:
-        ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) allocation_resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) aws_service: ::std::option::Option<crate::types::IpamPoolAwsService>,
     pub(crate) public_ip_source: ::std::option::Option<crate::types::IpamPoolPublicIpSource>,
@@ -173,18 +166,12 @@ impl CreateIpamPoolInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the scope in which you would like to create the IPAM pool.</p>
-    pub fn ipam_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_scope_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the scope in which you would like to create the IPAM pool.</p>
-    pub fn set_ipam_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_scope_id = input;
         self
     }
@@ -210,18 +197,12 @@ impl CreateIpamPoolInputBuilder {
         &self.locale
     }
     /// <p>The ID of the source IPAM pool. Use this option to create a pool within an existing pool. Note that the CIDR you provision for the pool within the source pool must be available in the source pool's CIDR range.</p>
-    pub fn source_ipam_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_ipam_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the source IPAM pool. Use this option to create a pool within an existing pool. Note that the CIDR you provision for the pool within the source pool must be available in the source pool's CIDR range.</p>
-    pub fn set_source_ipam_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_ipam_pool_id = input;
         self
     }
@@ -249,10 +230,7 @@ impl CreateIpamPoolInputBuilder {
         self
     }
     /// <p>The IP protocol assigned to this IPAM pool. You must choose either IPv4 or IPv6 protocol for a pool.</p>
-    pub fn set_address_family(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressFamily>,
-    ) -> Self {
+    pub fn set_address_family(mut self, input: ::std::option::Option<crate::types::AddressFamily>) -> Self {
         self.address_family = input;
         self
     }
@@ -325,10 +303,7 @@ impl CreateIpamPoolInputBuilder {
         self
     }
     /// <p>The default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new allocations will default to 10.0.0.0/16.</p>
-    pub fn set_allocation_default_netmask_length(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_allocation_default_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocation_default_netmask_length = input;
         self
     }
@@ -348,17 +323,12 @@ impl CreateIpamPoolInputBuilder {
         self
     }
     /// <p>Tags that are required for resources that use CIDRs from this IPAM pool. Resources that do not have these tags will not be allowed to allocate space from the pool. If the resources have their tags changed after they have allocated space or if the allocation tagging requirements are changed on the pool, the resource may be marked as noncompliant.</p>
-    pub fn set_allocation_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>,
-    ) -> Self {
+    pub fn set_allocation_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>>) -> Self {
         self.allocation_resource_tags = input;
         self
     }
     /// <p>Tags that are required for resources that use CIDRs from this IPAM pool. Resources that do not have these tags will not be allowed to allocate space from the pool. If the resources have their tags changed after they have allocated space or if the allocation tagging requirements are changed on the pool, the resource may be marked as noncompliant.</p>
-    pub fn get_allocation_resource_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
+    pub fn get_allocation_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
         &self.allocation_resource_tags
     }
     /// Appends an item to `tag_specifications`.
@@ -373,17 +343,12 @@ impl CreateIpamPoolInputBuilder {
         self
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
@@ -406,10 +371,7 @@ impl CreateIpamPoolInputBuilder {
         self
     }
     /// <p>Limits which service in Amazon Web Services that the pool can be used in. "ec2", for example, allows users to use space for Elastic IP addresses and VPCs.</p>
-    pub fn set_aws_service(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamPoolAwsService>,
-    ) -> Self {
+    pub fn set_aws_service(mut self, input: ::std::option::Option<crate::types::IpamPoolAwsService>) -> Self {
         self.aws_service = input;
         self
     }
@@ -423,26 +385,18 @@ impl CreateIpamPoolInputBuilder {
         self
     }
     /// <p>The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the public scope. Default is <code>byoip</code>. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool if PublicIpSource is <code>amazon</code>. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn set_public_ip_source(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamPoolPublicIpSource>,
-    ) -> Self {
+    pub fn set_public_ip_source(mut self, input: ::std::option::Option<crate::types::IpamPoolPublicIpSource>) -> Self {
         self.public_ip_source = input;
         self
     }
     /// <p>The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the public scope. Default is <code>byoip</code>. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool if PublicIpSource is <code>amazon</code>. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn get_public_ip_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::IpamPoolPublicIpSource> {
+    pub fn get_public_ip_source(&self) -> &::std::option::Option<crate::types::IpamPoolPublicIpSource> {
         &self.public_ip_source
     }
     /// Consumes the builder and constructs a [`CreateIpamPoolInput`](crate::operation::create_ipam_pool::CreateIpamPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_ipam_pool::CreateIpamPoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_ipam_pool::CreateIpamPoolInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ipam_pool::CreateIpamPoolInput {
             dry_run: self.dry_run,
             ipam_scope_id: self.ipam_scope_id,

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::list_data_sets::ListDataSetsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::list_data_sets::ListDataSetsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<ListDataSetsError>`](crate::operation::list_data_sets::ListDataSetsError)
-    pub fn list_data_sets(
-        &self,
-    ) -> crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder {
-        crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_data_sets(&self) -> crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder {
+        crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -41,8 +41,7 @@ pub struct DescribeHubContentOutput {
     pub hub_content_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The location of any dependencies that the hub content has, such as scripts, model artifacts, datasets, or notebooks.</p>
     #[doc(hidden)]
-    pub hub_content_dependencies:
-        ::std::option::Option<::std::vec::Vec<crate::types::HubContentDependency>>,
+    pub hub_content_dependencies: ::std::option::Option<::std::vec::Vec<crate::types::HubContentDependency>>,
     /// <p>The status of the hub content.</p>
     #[doc(hidden)]
     pub hub_content_status: ::std::option::Option<crate::types::HubContentStatus>,
@@ -104,9 +103,7 @@ impl DescribeHubContentOutput {
         self.hub_content_search_keywords.as_deref()
     }
     /// <p>The location of any dependencies that the hub content has, such as scripts, model artifacts, datasets, or notebooks.</p>
-    pub fn hub_content_dependencies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HubContentDependency]> {
+    pub fn hub_content_dependencies(&self) -> ::std::option::Option<&[crate::types::HubContentDependency]> {
         self.hub_content_dependencies.as_deref()
     }
     /// <p>The status of the hub content.</p>
@@ -129,17 +126,14 @@ impl ::aws_http::request_id::RequestId for DescribeHubContentOutput {
 }
 impl DescribeHubContentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHubContentOutput`](crate::operation::describe_hub_content::DescribeHubContentOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_hub_content::builders::DescribeHubContentOutputBuilder {
+    pub fn builder() -> crate::operation::describe_hub_content::builders::DescribeHubContentOutputBuilder {
         crate::operation::describe_hub_content::builders::DescribeHubContentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHubContentOutput`](crate::operation::describe_hub_content::DescribeHubContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHubContentOutputBuilder {
     pub(crate) hub_content_name: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_arn: ::std::option::Option<::std::string::String>,
@@ -152,10 +146,8 @@ pub struct DescribeHubContentOutputBuilder {
     pub(crate) hub_content_description: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_markdown: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_document: ::std::option::Option<::std::string::String>,
-    pub(crate) hub_content_search_keywords:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) hub_content_dependencies:
-        ::std::option::Option<::std::vec::Vec<crate::types::HubContentDependency>>,
+    pub(crate) hub_content_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) hub_content_dependencies: ::std::option::Option<::std::vec::Vec<crate::types::HubContentDependency>>,
     pub(crate) hub_content_status: ::std::option::Option<crate::types::HubContentStatus>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -163,18 +155,12 @@ pub struct DescribeHubContentOutputBuilder {
 }
 impl DescribeHubContentOutputBuilder {
     /// <p>The name of the hub content.</p>
-    pub fn hub_content_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the hub content.</p>
-    pub fn set_hub_content_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_content_name = input;
         self
     }
@@ -183,18 +169,12 @@ impl DescribeHubContentOutputBuilder {
         &self.hub_content_name
     }
     /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
-    pub fn hub_content_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
-    pub fn set_hub_content_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_content_arn = input;
         self
     }
@@ -203,18 +183,12 @@ impl DescribeHubContentOutputBuilder {
         &self.hub_content_arn
     }
     /// <p>The version of the hub content.</p>
-    pub fn hub_content_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the hub content.</p>
-    pub fn set_hub_content_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_content_version = input;
         self
     }
@@ -228,10 +202,7 @@ impl DescribeHubContentOutputBuilder {
         self
     }
     /// <p>The type of hub content.</p>
-    pub fn set_hub_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HubContentType>,
-    ) -> Self {
+    pub fn set_hub_content_type(mut self, input: ::std::option::Option<crate::types::HubContentType>) -> Self {
         self.hub_content_type = input;
         self
     }
@@ -240,18 +211,12 @@ impl DescribeHubContentOutputBuilder {
         &self.hub_content_type
     }
     /// <p>The document schema version for the hub content.</p>
-    pub fn document_schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_schema_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The document schema version for the hub content.</p>
-    pub fn set_document_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_schema_version = input;
         self
     }
@@ -288,18 +253,12 @@ impl DescribeHubContentOutputBuilder {
         &self.hub_arn
     }
     /// <p>The display name of the hub content.</p>
-    pub fn hub_content_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the hub content.</p>
-    pub fn set_hub_content_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_content_display_name = input;
         self
     }
@@ -308,18 +267,12 @@ impl DescribeHubContentOutputBuilder {
         &self.hub_content_display_name
     }
     /// <p>A description of the hub content.</p>
-    pub fn hub_content_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the hub content.</p>
-    pub fn set_hub_content_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_content_description = input;
         self
     }
@@ -328,18 +281,12 @@ impl DescribeHubContentOutputBuilder {
         &self.hub_content_description
     }
     /// <p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>
-    pub fn hub_content_markdown(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_markdown(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_markdown = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>
-    pub fn set_hub_content_markdown(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_markdown(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_content_markdown = input;
         self
     }
@@ -348,18 +295,12 @@ impl DescribeHubContentOutputBuilder {
         &self.hub_content_markdown
     }
     /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
-    pub fn hub_content_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
-    pub fn set_hub_content_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_content_document = input;
         self
     }
@@ -372,27 +313,19 @@ impl DescribeHubContentOutputBuilder {
     /// To override the contents of this collection use [`set_hub_content_search_keywords`](Self::set_hub_content_search_keywords).
     ///
     /// <p>The searchable keywords for the hub content.</p>
-    pub fn hub_content_search_keywords(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_search_keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hub_content_search_keywords.unwrap_or_default();
         v.push(input.into());
         self.hub_content_search_keywords = ::std::option::Option::Some(v);
         self
     }
     /// <p>The searchable keywords for the hub content.</p>
-    pub fn set_hub_content_search_keywords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_hub_content_search_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.hub_content_search_keywords = input;
         self
     }
     /// <p>The searchable keywords for the hub content.</p>
-    pub fn get_hub_content_search_keywords(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_hub_content_search_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.hub_content_search_keywords
     }
     /// Appends an item to `hub_content_dependencies`.
@@ -407,17 +340,12 @@ impl DescribeHubContentOutputBuilder {
         self
     }
     /// <p>The location of any dependencies that the hub content has, such as scripts, model artifacts, datasets, or notebooks.</p>
-    pub fn set_hub_content_dependencies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HubContentDependency>>,
-    ) -> Self {
+    pub fn set_hub_content_dependencies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HubContentDependency>>) -> Self {
         self.hub_content_dependencies = input;
         self
     }
     /// <p>The location of any dependencies that the hub content has, such as scripts, model artifacts, datasets, or notebooks.</p>
-    pub fn get_hub_content_dependencies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HubContentDependency>> {
+    pub fn get_hub_content_dependencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HubContentDependency>> {
         &self.hub_content_dependencies
     }
     /// <p>The status of the hub content.</p>
@@ -426,10 +354,7 @@ impl DescribeHubContentOutputBuilder {
         self
     }
     /// <p>The status of the hub content.</p>
-    pub fn set_hub_content_status(
-        mut self,
-        input: ::std::option::Option<crate::types::HubContentStatus>,
-    ) -> Self {
+    pub fn set_hub_content_status(mut self, input: ::std::option::Option<crate::types::HubContentStatus>) -> Self {
         self.hub_content_status = input;
         self
     }
@@ -438,18 +363,12 @@ impl DescribeHubContentOutputBuilder {
         &self.hub_content_status
     }
     /// <p>The failure reason if importing hub content failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The failure reason if importing hub content failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -463,10 +382,7 @@ impl DescribeHubContentOutputBuilder {
         self
     }
     /// <p>The date and time that hub content was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

@@ -7,9 +7,7 @@ pub fn ser_email_message(
         object.key("Body").string(var_1.as_str());
     }
     if let Some(var_2) = &input.feedback_forwarding_address {
-        object
-            .key("FeedbackForwardingAddress")
-            .string(var_2.as_str());
+        object.key("FeedbackForwardingAddress").string(var_2.as_str());
     }
     if let Some(var_3) = &input.from_address {
         object.key("FromAddress").string(var_3.as_str());

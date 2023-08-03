@@ -22,16 +22,14 @@ impl DisassociateTagOptionFromResourceInput {
 }
 impl DisassociateTagOptionFromResourceInput {
     /// Creates a new builder-style object to manufacture [`DisassociateTagOptionFromResourceInput`](crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceInput).
-    pub fn builder() -> crate::operation::disassociate_tag_option_from_resource::builders::DisassociateTagOptionFromResourceInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_tag_option_from_resource::builders::DisassociateTagOptionFromResourceInputBuilder {
         crate::operation::disassociate_tag_option_from_resource::builders::DisassociateTagOptionFromResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateTagOptionFromResourceInput`](crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateTagOptionFromResourceInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_option_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DisassociateTagOptionFromResourceInputBuilder {
         &self.resource_id
     }
     /// <p>The TagOption identifier.</p>
-    pub fn tag_option_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tag_option_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_option_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The TagOption identifier.</p>
-    pub fn set_tag_option_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tag_option_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_option_id = input;
         self
     }
@@ -72,14 +64,17 @@ impl DisassociateTagOptionFromResourceInputBuilder {
         &self.tag_option_id
     }
     /// Consumes the builder and constructs a [`DisassociateTagOptionFromResourceInput`](crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceInput {
-                resource_id: self.resource_id
-                ,
-                tag_option_id: self.tag_option_id
-                ,
-            }
+                resource_id: self.resource_id,
+                tag_option_id: self.tag_option_id,
+            },
         )
     }
 }

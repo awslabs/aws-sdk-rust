@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`metric_name(Option<ContainerServiceMetricName>)`](crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataOutput::metric_name): <p>The name of the metric returned. </p>
     ///   - [`metric_data(Option<Vec<MetricDatapoint>>)`](crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataOutput::metric_data): <p>An array of objects that describe the metric data returned.</p>
     /// - On failure, responds with [`SdkError<GetContainerServiceMetricDataError>`](crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError)
-    pub fn get_container_service_metric_data(&self) -> crate::operation::get_container_service_metric_data::builders::GetContainerServiceMetricDataFluentBuilder{
+    pub fn get_container_service_metric_data(
+        &self,
+    ) -> crate::operation::get_container_service_metric_data::builders::GetContainerServiceMetricDataFluentBuilder {
         crate::operation::get_container_service_metric_data::builders::GetContainerServiceMetricDataFluentBuilder::new(self.handle.clone())
     }
 }

@@ -79,9 +79,7 @@ impl MessageConfiguration {
 
 /// A builder for [`MessageConfiguration`](crate::types::MessageConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageConfigurationBuilder {
     pub(crate) adm_message: ::std::option::Option<crate::types::Message>,
     pub(crate) apns_message: ::std::option::Option<crate::types::Message>,
@@ -128,10 +126,7 @@ impl MessageConfigurationBuilder {
         self
     }
     /// <p>The message that the campaign sends through the Baidu (Baidu Cloud Push) channel. If specified, this message overrides the default message.</p>
-    pub fn set_baidu_message(
-        mut self,
-        input: ::std::option::Option<crate::types::Message>,
-    ) -> Self {
+    pub fn set_baidu_message(mut self, input: ::std::option::Option<crate::types::Message>) -> Self {
         self.baidu_message = input;
         self
     }
@@ -145,17 +140,12 @@ impl MessageConfigurationBuilder {
         self
     }
     /// <p>The message that the campaign sends through a custom channel, as specified by the delivery configuration (CustomDeliveryConfiguration) settings for the campaign. If specified, this message overrides the default message.</p>
-    pub fn set_custom_message(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignCustomMessage>,
-    ) -> Self {
+    pub fn set_custom_message(mut self, input: ::std::option::Option<crate::types::CampaignCustomMessage>) -> Self {
         self.custom_message = input;
         self
     }
     /// <p>The message that the campaign sends through a custom channel, as specified by the delivery configuration (CustomDeliveryConfiguration) settings for the campaign. If specified, this message overrides the default message.</p>
-    pub fn get_custom_message(
-        &self,
-    ) -> &::std::option::Option<crate::types::CampaignCustomMessage> {
+    pub fn get_custom_message(&self) -> &::std::option::Option<crate::types::CampaignCustomMessage> {
         &self.custom_message
     }
     /// <p>The default message that the campaign sends through all the channels that are configured for the campaign.</p>
@@ -164,10 +154,7 @@ impl MessageConfigurationBuilder {
         self
     }
     /// <p>The default message that the campaign sends through all the channels that are configured for the campaign.</p>
-    pub fn set_default_message(
-        mut self,
-        input: ::std::option::Option<crate::types::Message>,
-    ) -> Self {
+    pub fn set_default_message(mut self, input: ::std::option::Option<crate::types::Message>) -> Self {
         self.default_message = input;
         self
     }
@@ -181,10 +168,7 @@ impl MessageConfigurationBuilder {
         self
     }
     /// <p>The message that the campaign sends through the email channel. If specified, this message overrides the default message.</p>
-    pub fn set_email_message(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignEmailMessage>,
-    ) -> Self {
+    pub fn set_email_message(mut self, input: ::std::option::Option<crate::types::CampaignEmailMessage>) -> Self {
         self.email_message = input;
         self
     }
@@ -212,10 +196,7 @@ impl MessageConfigurationBuilder {
         self
     }
     /// <p>The message that the campaign sends through the SMS channel. If specified, this message overrides the default message.</p>
-    pub fn set_sms_message(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignSmsMessage>,
-    ) -> Self {
+    pub fn set_sms_message(mut self, input: ::std::option::Option<crate::types::CampaignSmsMessage>) -> Self {
         self.sms_message = input;
         self
     }
@@ -229,10 +210,7 @@ impl MessageConfigurationBuilder {
         self
     }
     /// <p>The in-app message configuration.</p>
-    pub fn set_in_app_message(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignInAppMessage>,
-    ) -> Self {
+    pub fn set_in_app_message(mut self, input: ::std::option::Option<crate::types::CampaignInAppMessage>) -> Self {
         self.in_app_message = input;
         self
     }

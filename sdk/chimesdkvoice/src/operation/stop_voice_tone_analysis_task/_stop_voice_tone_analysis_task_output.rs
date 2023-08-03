@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for StopVoiceToneAnalysisTaskOutput {
 }
 impl StopVoiceToneAnalysisTaskOutput {
     /// Creates a new builder-style object to manufacture [`StopVoiceToneAnalysisTaskOutput`](crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskOutput).
-    pub fn builder() -> crate::operation::stop_voice_tone_analysis_task::builders::StopVoiceToneAnalysisTaskOutputBuilder{
+    pub fn builder() -> crate::operation::stop_voice_tone_analysis_task::builders::StopVoiceToneAnalysisTaskOutputBuilder {
         crate::operation::stop_voice_tone_analysis_task::builders::StopVoiceToneAnalysisTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopVoiceToneAnalysisTaskOutput`](crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopVoiceToneAnalysisTaskOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl StopVoiceToneAnalysisTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopVoiceToneAnalysisTaskOutput`](crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskOutput {
+    pub fn build(self) -> crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskOutput {
         crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskOutput {
             _request_id: self._request_id,
         }

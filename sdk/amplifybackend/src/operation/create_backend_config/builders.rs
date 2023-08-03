@@ -37,9 +37,7 @@ impl CreateBackendConfigFluentBuilder {
         }
     }
     /// Access the CreateBackendConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_backend_config::builders::CreateBackendConfigInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_backend_config::builders::CreateBackendConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateBackendConfigFluentBuilder {
             crate::operation::create_backend_config::CreateBackendConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_backend_config::CreateBackendConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_backend_config::CreateBackendConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateBackendConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateBackendConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_backend_config::CreateBackendConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_backend_config::CreateBackendConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_backend_config::CreateBackendConfigError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateBackendConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_backend_config::CreateBackendConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_backend_config::CreateBackendConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_backend_config::CreateBackendConfigError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateBackendConfigFluentBuilder {
             crate::operation::create_backend_config::CreateBackendConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_backend_config::CreateBackendConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_backend_config::CreateBackendConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl CreateBackendConfigFluentBuilder {
         self.inner.get_app_id()
     }
     /// <p>The app ID for the backend manager.</p>
-    pub fn backend_manager_app_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_manager_app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backend_manager_app_id(input.into());
         self
     }
     /// <p>The app ID for the backend manager.</p>
-    pub fn set_backend_manager_app_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_manager_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backend_manager_app_id(input);
         self
     }

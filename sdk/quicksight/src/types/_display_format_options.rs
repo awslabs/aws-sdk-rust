@@ -55,9 +55,7 @@ impl DisplayFormatOptions {
         self.date_format.as_deref()
     }
     /// <p>Determines the decimal separator.</p>
-    pub fn decimal_separator(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TopicNumericSeparatorSymbol> {
+    pub fn decimal_separator(&self) -> ::std::option::Option<&crate::types::TopicNumericSeparatorSymbol> {
         self.decimal_separator.as_ref()
     }
     /// <p>Determines the grouping separator.</p>
@@ -102,9 +100,7 @@ impl DisplayFormatOptions {
 
 /// A builder for [`DisplayFormatOptions`](crate::types::DisplayFormatOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisplayFormatOptionsBuilder {
     pub(crate) use_blank_cell_format: ::std::option::Option<bool>,
     pub(crate) blank_cell_format: ::std::option::Option<::std::string::String>,
@@ -135,18 +131,12 @@ impl DisplayFormatOptionsBuilder {
         &self.use_blank_cell_format
     }
     /// <p>Determines the blank cell format.</p>
-    pub fn blank_cell_format(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blank_cell_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blank_cell_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Determines the blank cell format.</p>
-    pub fn set_blank_cell_format(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blank_cell_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blank_cell_format = input;
         self
     }
@@ -174,32 +164,21 @@ impl DisplayFormatOptionsBuilder {
         self
     }
     /// <p>Determines the decimal separator.</p>
-    pub fn set_decimal_separator(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicNumericSeparatorSymbol>,
-    ) -> Self {
+    pub fn set_decimal_separator(mut self, input: ::std::option::Option<crate::types::TopicNumericSeparatorSymbol>) -> Self {
         self.decimal_separator = input;
         self
     }
     /// <p>Determines the decimal separator.</p>
-    pub fn get_decimal_separator(
-        &self,
-    ) -> &::std::option::Option<crate::types::TopicNumericSeparatorSymbol> {
+    pub fn get_decimal_separator(&self) -> &::std::option::Option<crate::types::TopicNumericSeparatorSymbol> {
         &self.decimal_separator
     }
     /// <p>Determines the grouping separator.</p>
-    pub fn grouping_separator(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grouping_separator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grouping_separator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Determines the grouping separator.</p>
-    pub fn set_grouping_separator(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grouping_separator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grouping_separator = input;
         self
     }
@@ -269,10 +248,7 @@ impl DisplayFormatOptionsBuilder {
         self
     }
     /// <p>The unit scaler. Valid values for this structure are: <code>NONE</code>, <code>AUTO</code>, <code>THOUSANDS</code>, <code>MILLIONS</code>, <code>BILLIONS</code>, and <code>TRILLIONS</code>.</p>
-    pub fn set_unit_scaler(
-        mut self,
-        input: ::std::option::Option<crate::types::NumberScale>,
-    ) -> Self {
+    pub fn set_unit_scaler(mut self, input: ::std::option::Option<crate::types::NumberScale>) -> Self {
         self.unit_scaler = input;
         self
     }
@@ -286,10 +262,7 @@ impl DisplayFormatOptionsBuilder {
         self
     }
     /// <p>The negative format.</p>
-    pub fn set_negative_format(
-        mut self,
-        input: ::std::option::Option<crate::types::NegativeFormat>,
-    ) -> Self {
+    pub fn set_negative_format(mut self, input: ::std::option::Option<crate::types::NegativeFormat>) -> Self {
         self.negative_format = input;
         self
     }
@@ -298,18 +271,12 @@ impl DisplayFormatOptionsBuilder {
         &self.negative_format
     }
     /// <p>The currency symbol, such as <code>USD</code>.</p>
-    pub fn currency_symbol(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn currency_symbol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_symbol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The currency symbol, such as <code>USD</code>.</p>
-    pub fn set_currency_symbol(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_currency_symbol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_symbol = input;
         self
     }

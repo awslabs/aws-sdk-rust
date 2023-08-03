@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::describe_event_source::DescribeEventSourceOutput::name): <p>The name of the partner event source.</p>
     ///   - [`state(Option<EventSourceState>)`](crate::operation::describe_event_source::DescribeEventSourceOutput::state): <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
     /// - On failure, responds with [`SdkError<DescribeEventSourceError>`](crate::operation::describe_event_source::DescribeEventSourceError)
-    pub fn describe_event_source(
-        &self,
-    ) -> crate::operation::describe_event_source::builders::DescribeEventSourceFluentBuilder {
-        crate::operation::describe_event_source::builders::DescribeEventSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_event_source(&self) -> crate::operation::describe_event_source::builders::DescribeEventSourceFluentBuilder {
+        crate::operation::describe_event_source::builders::DescribeEventSourceFluentBuilder::new(self.handle.clone())
     }
 }

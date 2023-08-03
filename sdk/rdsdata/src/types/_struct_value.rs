@@ -25,9 +25,7 @@ impl StructValue {
 
 /// A builder for [`StructValue`](crate::types::StructValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StructValueBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Value>>,
 }
@@ -44,10 +42,7 @@ impl StructValueBuilder {
         self
     }
     /// <p>The attributes returned in the record.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Value>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Value>>) -> Self {
         self.attributes = input;
         self
     }
@@ -57,8 +52,6 @@ impl StructValueBuilder {
     }
     /// Consumes the builder and constructs a [`StructValue`](crate::types::StructValue).
     pub fn build(self) -> crate::types::StructValue {
-        crate::types::StructValue {
-            attributes: self.attributes,
-        }
+        crate::types::StructValue { attributes: self.attributes }
     }
 }

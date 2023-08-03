@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`snapshots(Option<Vec<ClusterSnapshotInList>>)`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsOutput::snapshots): <p>A list of Elastic DocumentDB snapshots for a specified cluster.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsOutput::next_token): <p>The response will provide a nextToken if there is more data beyond the maxResults.</p>  <p>If there is no more data in the responce, the nextToken will not be returned.</p>
     /// - On failure, responds with [`SdkError<ListClusterSnapshotsError>`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsError)
-    pub fn list_cluster_snapshots(
-        &self,
-    ) -> crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsFluentBuilder {
-        crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_cluster_snapshots(&self) -> crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsFluentBuilder {
+        crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

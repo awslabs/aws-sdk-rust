@@ -37,9 +37,7 @@ impl Dimensions {
 
 /// A builder for [`Dimensions`](crate::types::Dimensions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionsBuilder {
     pub(crate) queue: ::std::option::Option<crate::types::QueueReference>,
     pub(crate) channel: ::std::option::Option<crate::types::Channel>,
@@ -80,17 +78,12 @@ impl DimensionsBuilder {
         self
     }
     /// <p>Information about the routing profile assigned to the user.</p>
-    pub fn set_routing_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingProfileReference>,
-    ) -> Self {
+    pub fn set_routing_profile(mut self, input: ::std::option::Option<crate::types::RoutingProfileReference>) -> Self {
         self.routing_profile = input;
         self
     }
     /// <p>Information about the routing profile assigned to the user.</p>
-    pub fn get_routing_profile(
-        &self,
-    ) -> &::std::option::Option<crate::types::RoutingProfileReference> {
+    pub fn get_routing_profile(&self) -> &::std::option::Option<crate::types::RoutingProfileReference> {
         &self.routing_profile
     }
     /// Consumes the builder and constructs a [`Dimensions`](crate::types::Dimensions).

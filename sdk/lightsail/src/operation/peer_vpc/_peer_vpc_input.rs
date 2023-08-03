@@ -12,18 +12,11 @@ impl PeerVpcInput {
 
 /// A builder for [`PeerVpcInput`](crate::operation::peer_vpc::PeerVpcInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PeerVpcInputBuilder {}
 impl PeerVpcInputBuilder {
     /// Consumes the builder and constructs a [`PeerVpcInput`](crate::operation::peer_vpc::PeerVpcInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::peer_vpc::PeerVpcInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::peer_vpc::PeerVpcInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::peer_vpc::PeerVpcInput {})
     }
 }

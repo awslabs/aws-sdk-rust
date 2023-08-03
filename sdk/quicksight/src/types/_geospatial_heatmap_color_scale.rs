@@ -23,12 +23,9 @@ impl GeospatialHeatmapColorScale {
 
 /// A builder for [`GeospatialHeatmapColorScale`](crate::types::GeospatialHeatmapColorScale).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeospatialHeatmapColorScaleBuilder {
-    pub(crate) colors:
-        ::std::option::Option<::std::vec::Vec<crate::types::GeospatialHeatmapDataColor>>,
+    pub(crate) colors: ::std::option::Option<::std::vec::Vec<crate::types::GeospatialHeatmapDataColor>>,
 }
 impl GeospatialHeatmapColorScaleBuilder {
     /// Appends an item to `colors`.
@@ -43,23 +40,16 @@ impl GeospatialHeatmapColorScaleBuilder {
         self
     }
     /// <p>The list of colors to be used in heatmap point style.</p>
-    pub fn set_colors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GeospatialHeatmapDataColor>>,
-    ) -> Self {
+    pub fn set_colors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GeospatialHeatmapDataColor>>) -> Self {
         self.colors = input;
         self
     }
     /// <p>The list of colors to be used in heatmap point style.</p>
-    pub fn get_colors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GeospatialHeatmapDataColor>> {
+    pub fn get_colors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GeospatialHeatmapDataColor>> {
         &self.colors
     }
     /// Consumes the builder and constructs a [`GeospatialHeatmapColorScale`](crate::types::GeospatialHeatmapColorScale).
     pub fn build(self) -> crate::types::GeospatialHeatmapColorScale {
-        crate::types::GeospatialHeatmapColorScale {
-            colors: self.colors,
-        }
+        crate::types::GeospatialHeatmapColorScale { colors: self.colors }
     }
 }

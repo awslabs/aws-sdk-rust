@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterManagedInstanceOutput {
 }
 impl DeregisterManagedInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterManagedInstanceOutput`](crate::operation::deregister_managed_instance::DeregisterManagedInstanceOutput).
-    pub fn builder() -> crate::operation::deregister_managed_instance::builders::DeregisterManagedInstanceOutputBuilder{
+    pub fn builder() -> crate::operation::deregister_managed_instance::builders::DeregisterManagedInstanceOutputBuilder {
         crate::operation::deregister_managed_instance::builders::DeregisterManagedInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterManagedInstanceOutput`](crate::operation::deregister_managed_instance::DeregisterManagedInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterManagedInstanceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeregisterManagedInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterManagedInstanceOutput`](crate::operation::deregister_managed_instance::DeregisterManagedInstanceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deregister_managed_instance::DeregisterManagedInstanceOutput {
+    pub fn build(self) -> crate::operation::deregister_managed_instance::DeregisterManagedInstanceOutput {
         crate::operation::deregister_managed_instance::DeregisterManagedInstanceOutput {
             _request_id: self._request_id,
         }

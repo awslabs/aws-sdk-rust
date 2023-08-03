@@ -61,8 +61,7 @@ impl ::aws_http::request_id::RequestId for ListSnapshotBlocksOutput {
 }
 impl ListSnapshotBlocksOutput {
     /// Creates a new builder-style object to manufacture [`ListSnapshotBlocksOutput`](crate::operation::list_snapshot_blocks::ListSnapshotBlocksOutput).
-    pub fn builder(
-    ) -> crate::operation::list_snapshot_blocks::builders::ListSnapshotBlocksOutputBuilder {
+    pub fn builder() -> crate::operation::list_snapshot_blocks::builders::ListSnapshotBlocksOutputBuilder {
         crate::operation::list_snapshot_blocks::builders::ListSnapshotBlocksOutputBuilder::default()
     }
 }
@@ -91,10 +90,7 @@ impl ListSnapshotBlocksOutputBuilder {
         self
     }
     /// <p>An array of objects containing information about the blocks.</p>
-    pub fn set_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
-    ) -> Self {
+    pub fn set_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Block>>) -> Self {
         self.blocks = input;
         self
     }
@@ -108,10 +104,7 @@ impl ListSnapshotBlocksOutputBuilder {
         self
     }
     /// <p>The time when the <code>BlockToken</code> expires.</p>
-    pub fn set_expiry_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiry_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiry_time = input;
         self
     }

@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ListResourcesForWebAclOutput`](crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput) with field(s):
     ///   - [`resource_arns(Option<Vec<String>>)`](crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput::resource_arns): <p>The array of Amazon Resource Names (ARNs) of the associated resources.</p>
     /// - On failure, responds with [`SdkError<ListResourcesForWebACLError>`](crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError)
-    pub fn list_resources_for_web_acl(
-        &self,
-    ) -> crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebACLFluentBuilder
-    {
+    pub fn list_resources_for_web_acl(&self) -> crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebACLFluentBuilder {
         crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebACLFluentBuilder::new(self.handle.clone())
     }
 }

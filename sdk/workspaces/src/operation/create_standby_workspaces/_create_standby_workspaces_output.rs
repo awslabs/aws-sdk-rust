@@ -5,25 +5,19 @@
 pub struct CreateStandbyWorkspacesOutput {
     /// <p>Information about the standby WorkSpace that could not be created. </p>
     #[doc(hidden)]
-    pub failed_standby_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateStandbyWorkspacesRequest>>,
+    pub failed_standby_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateStandbyWorkspacesRequest>>,
     /// <p>Information about the standby WorkSpace that was created.</p>
     #[doc(hidden)]
-    pub pending_standby_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::PendingCreateStandbyWorkspacesRequest>>,
+    pub pending_standby_requests: ::std::option::Option<::std::vec::Vec<crate::types::PendingCreateStandbyWorkspacesRequest>>,
     _request_id: Option<String>,
 }
 impl CreateStandbyWorkspacesOutput {
     /// <p>Information about the standby WorkSpace that could not be created. </p>
-    pub fn failed_standby_requests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FailedCreateStandbyWorkspacesRequest]> {
+    pub fn failed_standby_requests(&self) -> ::std::option::Option<&[crate::types::FailedCreateStandbyWorkspacesRequest]> {
         self.failed_standby_requests.as_deref()
     }
     /// <p>Information about the standby WorkSpace that was created.</p>
-    pub fn pending_standby_requests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PendingCreateStandbyWorkspacesRequest]> {
+    pub fn pending_standby_requests(&self) -> ::std::option::Option<&[crate::types::PendingCreateStandbyWorkspacesRequest]> {
         self.pending_standby_requests.as_deref()
     }
 }
@@ -34,23 +28,17 @@ impl ::aws_http::request_id::RequestId for CreateStandbyWorkspacesOutput {
 }
 impl CreateStandbyWorkspacesOutput {
     /// Creates a new builder-style object to manufacture [`CreateStandbyWorkspacesOutput`](crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput).
-    pub fn builder(
-    ) -> crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesOutputBuilder {
         crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStandbyWorkspacesOutput`](crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStandbyWorkspacesOutputBuilder {
-    pub(crate) failed_standby_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateStandbyWorkspacesRequest>>,
-    pub(crate) pending_standby_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::PendingCreateStandbyWorkspacesRequest>>,
+    pub(crate) failed_standby_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateStandbyWorkspacesRequest>>,
+    pub(crate) pending_standby_requests: ::std::option::Option<::std::vec::Vec<crate::types::PendingCreateStandbyWorkspacesRequest>>,
     _request_id: Option<String>,
 }
 impl CreateStandbyWorkspacesOutputBuilder {
@@ -59,10 +47,7 @@ impl CreateStandbyWorkspacesOutputBuilder {
     /// To override the contents of this collection use [`set_failed_standby_requests`](Self::set_failed_standby_requests).
     ///
     /// <p>Information about the standby WorkSpace that could not be created. </p>
-    pub fn failed_standby_requests(
-        mut self,
-        input: crate::types::FailedCreateStandbyWorkspacesRequest,
-    ) -> Self {
+    pub fn failed_standby_requests(mut self, input: crate::types::FailedCreateStandbyWorkspacesRequest) -> Self {
         let mut v = self.failed_standby_requests.unwrap_or_default();
         v.push(input);
         self.failed_standby_requests = ::std::option::Option::Some(v);
@@ -71,18 +56,13 @@ impl CreateStandbyWorkspacesOutputBuilder {
     /// <p>Information about the standby WorkSpace that could not be created. </p>
     pub fn set_failed_standby_requests(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::FailedCreateStandbyWorkspacesRequest>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateStandbyWorkspacesRequest>>,
     ) -> Self {
         self.failed_standby_requests = input;
         self
     }
     /// <p>Information about the standby WorkSpace that could not be created. </p>
-    pub fn get_failed_standby_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCreateStandbyWorkspacesRequest>>
-    {
+    pub fn get_failed_standby_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCreateStandbyWorkspacesRequest>> {
         &self.failed_standby_requests
     }
     /// Appends an item to `pending_standby_requests`.
@@ -90,10 +70,7 @@ impl CreateStandbyWorkspacesOutputBuilder {
     /// To override the contents of this collection use [`set_pending_standby_requests`](Self::set_pending_standby_requests).
     ///
     /// <p>Information about the standby WorkSpace that was created.</p>
-    pub fn pending_standby_requests(
-        mut self,
-        input: crate::types::PendingCreateStandbyWorkspacesRequest,
-    ) -> Self {
+    pub fn pending_standby_requests(mut self, input: crate::types::PendingCreateStandbyWorkspacesRequest) -> Self {
         let mut v = self.pending_standby_requests.unwrap_or_default();
         v.push(input);
         self.pending_standby_requests = ::std::option::Option::Some(v);
@@ -102,18 +79,13 @@ impl CreateStandbyWorkspacesOutputBuilder {
     /// <p>Information about the standby WorkSpace that was created.</p>
     pub fn set_pending_standby_requests(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::PendingCreateStandbyWorkspacesRequest>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PendingCreateStandbyWorkspacesRequest>>,
     ) -> Self {
         self.pending_standby_requests = input;
         self
     }
     /// <p>Information about the standby WorkSpace that was created.</p>
-    pub fn get_pending_standby_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingCreateStandbyWorkspacesRequest>>
-    {
+    pub fn get_pending_standby_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingCreateStandbyWorkspacesRequest>> {
         &self.pending_standby_requests
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -126,9 +98,7 @@ impl CreateStandbyWorkspacesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateStandbyWorkspacesOutput`](crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput {
+    pub fn build(self) -> crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput {
         crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput {
             failed_standby_requests: self.failed_standby_requests,
             pending_standby_requests: self.pending_standby_requests,

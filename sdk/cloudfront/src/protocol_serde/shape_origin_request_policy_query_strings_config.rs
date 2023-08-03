@@ -11,10 +11,7 @@ pub fn ser_origin_request_policy_query_strings_config(
     }
     if let Some(var_2) = &input.query_strings {
         let inner_writer = scope.start_el("QueryStrings");
-        crate::protocol_serde::shape_query_string_names::ser_query_string_names(
-            var_2,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_query_string_names::ser_query_string_names(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -22,10 +19,7 @@ pub fn ser_origin_request_policy_query_strings_config(
 
 pub fn de_origin_request_policy_query_strings_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::OriginRequestPolicyQueryStringsConfig,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::OriginRequestPolicyQueryStringsConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::OriginRequestPolicyQueryStringsConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

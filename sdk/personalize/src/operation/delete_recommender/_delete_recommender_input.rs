@@ -15,34 +15,25 @@ impl DeleteRecommenderInput {
 }
 impl DeleteRecommenderInput {
     /// Creates a new builder-style object to manufacture [`DeleteRecommenderInput`](crate::operation::delete_recommender::DeleteRecommenderInput).
-    pub fn builder() -> crate::operation::delete_recommender::builders::DeleteRecommenderInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_recommender::builders::DeleteRecommenderInputBuilder {
         crate::operation::delete_recommender::builders::DeleteRecommenderInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRecommenderInput`](crate::operation::delete_recommender::DeleteRecommenderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRecommenderInputBuilder {
     pub(crate) recommender_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRecommenderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
-    pub fn recommender_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommender_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommender_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
-    pub fn set_recommender_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommender_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommender_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteRecommenderInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRecommenderInput`](crate::operation::delete_recommender::DeleteRecommenderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_recommender::DeleteRecommenderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_recommender::DeleteRecommenderInput {
-                recommender_arn: self.recommender_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_recommender::DeleteRecommenderInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_recommender::DeleteRecommenderInput {
+            recommender_arn: self.recommender_arn,
+        })
     }
 }

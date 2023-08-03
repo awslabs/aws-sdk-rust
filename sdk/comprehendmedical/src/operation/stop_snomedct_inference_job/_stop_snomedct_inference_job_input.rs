@@ -15,18 +15,14 @@ impl StopSnomedctInferenceJobInput {
 }
 impl StopSnomedctInferenceJobInput {
     /// Creates a new builder-style object to manufacture [`StopSnomedctInferenceJobInput`](crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobInput).
-    pub fn builder(
-    ) -> crate::operation::stop_snomedct_inference_job::builders::StopSnomedctInferenceJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_snomedct_inference_job::builders::StopSnomedctInferenceJobInputBuilder {
         crate::operation::stop_snomedct_inference_job::builders::StopSnomedctInferenceJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopSnomedctInferenceJobInput`](crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopSnomedctInferenceJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl StopSnomedctInferenceJobInputBuilder {
         crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobInput {
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobInput { job_id: self.job_id })
     }
 }

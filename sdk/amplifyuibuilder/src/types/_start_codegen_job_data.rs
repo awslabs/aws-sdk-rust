@@ -18,9 +18,7 @@ pub struct StartCodegenJobData {
     pub features: ::std::option::Option<crate::types::CodegenFeatureFlags>,
     /// <p>One or more key-value pairs to use when tagging the code generation job data.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartCodegenJobData {
     /// <p>The code generation configuration for the codegen job.</p>
@@ -28,9 +26,7 @@ impl StartCodegenJobData {
         self.render_config.as_ref()
     }
     /// <p>The data schema to use for a code generation job.</p>
-    pub fn generic_data_schema(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CodegenJobGenericDataSchema> {
+    pub fn generic_data_schema(&self) -> ::std::option::Option<&crate::types::CodegenJobGenericDataSchema> {
         self.generic_data_schema.as_ref()
     }
     /// <p>Specifies whether to autogenerate forms in the code generation job.</p>
@@ -42,11 +38,7 @@ impl StartCodegenJobData {
         self.features.as_ref()
     }
     /// <p>One or more key-value pairs to use when tagging the code generation job data.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -59,18 +51,13 @@ impl StartCodegenJobData {
 
 /// A builder for [`StartCodegenJobData`](crate::types::StartCodegenJobData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartCodegenJobDataBuilder {
     pub(crate) render_config: ::std::option::Option<crate::types::CodegenJobRenderConfig>,
-    pub(crate) generic_data_schema:
-        ::std::option::Option<crate::types::CodegenJobGenericDataSchema>,
+    pub(crate) generic_data_schema: ::std::option::Option<crate::types::CodegenJobGenericDataSchema>,
     pub(crate) auto_generate_forms: ::std::option::Option<bool>,
     pub(crate) features: ::std::option::Option<crate::types::CodegenFeatureFlags>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartCodegenJobDataBuilder {
     /// <p>The code generation configuration for the codegen job.</p>
@@ -79,17 +66,12 @@ impl StartCodegenJobDataBuilder {
         self
     }
     /// <p>The code generation configuration for the codegen job.</p>
-    pub fn set_render_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CodegenJobRenderConfig>,
-    ) -> Self {
+    pub fn set_render_config(mut self, input: ::std::option::Option<crate::types::CodegenJobRenderConfig>) -> Self {
         self.render_config = input;
         self
     }
     /// <p>The code generation configuration for the codegen job.</p>
-    pub fn get_render_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodegenJobRenderConfig> {
+    pub fn get_render_config(&self) -> &::std::option::Option<crate::types::CodegenJobRenderConfig> {
         &self.render_config
     }
     /// <p>The data schema to use for a code generation job.</p>
@@ -98,17 +80,12 @@ impl StartCodegenJobDataBuilder {
         self
     }
     /// <p>The data schema to use for a code generation job.</p>
-    pub fn set_generic_data_schema(
-        mut self,
-        input: ::std::option::Option<crate::types::CodegenJobGenericDataSchema>,
-    ) -> Self {
+    pub fn set_generic_data_schema(mut self, input: ::std::option::Option<crate::types::CodegenJobGenericDataSchema>) -> Self {
         self.generic_data_schema = input;
         self
     }
     /// <p>The data schema to use for a code generation job.</p>
-    pub fn get_generic_data_schema(
-        &self,
-    ) -> &::std::option::Option<crate::types::CodegenJobGenericDataSchema> {
+    pub fn get_generic_data_schema(&self) -> &::std::option::Option<crate::types::CodegenJobGenericDataSchema> {
         &self.generic_data_schema
     }
     /// <p>Specifies whether to autogenerate forms in the code generation job.</p>
@@ -131,10 +108,7 @@ impl StartCodegenJobDataBuilder {
         self
     }
     /// <p>The feature flags for a code generation job.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<crate::types::CodegenFeatureFlags>,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<crate::types::CodegenFeatureFlags>) -> Self {
         self.features = input;
         self
     }
@@ -147,32 +121,19 @@ impl StartCodegenJobDataBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>One or more key-value pairs to use when tagging the code generation job data.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>One or more key-value pairs to use when tagging the code generation job data.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>One or more key-value pairs to use when tagging the code generation job data.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`StartCodegenJobData`](crate::types::StartCodegenJobData).

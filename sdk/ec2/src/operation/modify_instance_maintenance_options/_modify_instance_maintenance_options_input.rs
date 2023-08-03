@@ -29,16 +29,14 @@ impl ModifyInstanceMaintenanceOptionsInput {
 }
 impl ModifyInstanceMaintenanceOptionsInput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceMaintenanceOptionsInput`](crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsInput).
-    pub fn builder() -> crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsInputBuilder{
+    pub fn builder() -> crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsInputBuilder {
         crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyInstanceMaintenanceOptionsInput`](crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyInstanceMaintenanceOptionsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) auto_recovery: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
@@ -65,17 +63,12 @@ impl ModifyInstanceMaintenanceOptionsInputBuilder {
         self
     }
     /// <p>Disables the automatic recovery behavior of your instance or sets it to default.</p>
-    pub fn set_auto_recovery(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
-    ) -> Self {
+    pub fn set_auto_recovery(mut self, input: ::std::option::Option<crate::types::InstanceAutoRecoveryState>) -> Self {
         self.auto_recovery = input;
         self
     }
     /// <p>Disables the automatic recovery behavior of your instance or sets it to default.</p>
-    pub fn get_auto_recovery(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceAutoRecoveryState> {
+    pub fn get_auto_recovery(&self) -> &::std::option::Option<crate::types::InstanceAutoRecoveryState> {
         &self.auto_recovery
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -93,16 +86,18 @@ impl ModifyInstanceMaintenanceOptionsInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifyInstanceMaintenanceOptionsInput`](crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsInput {
-                instance_id: self.instance_id
-                ,
-                auto_recovery: self.auto_recovery
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                instance_id: self.instance_id,
+                auto_recovery: self.auto_recovery,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

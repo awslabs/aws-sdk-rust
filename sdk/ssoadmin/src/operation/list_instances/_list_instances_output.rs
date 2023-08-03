@@ -35,9 +35,7 @@ impl ListInstancesOutput {
 
 /// A builder for [`ListInstancesOutput`](crate::operation::list_instances::ListInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstancesOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListInstancesOutputBuilder {
         self
     }
     /// <p>Lists the IAM Identity Center instances that the caller has access to.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMetadata>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMetadata>>) -> Self {
         self.instances = input;
         self
     }
     /// <p>Lists the IAM Identity Center instances that the caller has access to.</p>
-    pub fn get_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceMetadata>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceMetadata>> {
         &self.instances
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>

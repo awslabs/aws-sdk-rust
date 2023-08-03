@@ -24,9 +24,7 @@ impl ResponseHeadersPolicyContentTypeOptions {
 
 /// A builder for [`ResponseHeadersPolicyContentTypeOptions`](crate::types::ResponseHeadersPolicyContentTypeOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyContentTypeOptionsBuilder {
     pub(crate) r#override: ::std::option::Option<bool>,
 }
@@ -47,8 +45,6 @@ impl ResponseHeadersPolicyContentTypeOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyContentTypeOptions`](crate::types::ResponseHeadersPolicyContentTypeOptions).
     pub fn build(self) -> crate::types::ResponseHeadersPolicyContentTypeOptions {
-        crate::types::ResponseHeadersPolicyContentTypeOptions {
-            r#override: self.r#override,
-        }
+        crate::types::ResponseHeadersPolicyContentTypeOptions { r#override: self.r#override }
     }
 }

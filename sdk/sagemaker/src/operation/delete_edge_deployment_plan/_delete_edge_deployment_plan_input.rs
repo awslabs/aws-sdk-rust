@@ -15,35 +15,25 @@ impl DeleteEdgeDeploymentPlanInput {
 }
 impl DeleteEdgeDeploymentPlanInput {
     /// Creates a new builder-style object to manufacture [`DeleteEdgeDeploymentPlanInput`](crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanInput).
-    pub fn builder(
-    ) -> crate::operation::delete_edge_deployment_plan::builders::DeleteEdgeDeploymentPlanInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_edge_deployment_plan::builders::DeleteEdgeDeploymentPlanInputBuilder {
         crate::operation::delete_edge_deployment_plan::builders::DeleteEdgeDeploymentPlanInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEdgeDeploymentPlanInput`](crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEdgeDeploymentPlanInputBuilder {
     pub(crate) edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEdgeDeploymentPlanInputBuilder {
     /// <p>The name of the edge deployment plan to delete.</p>
-    pub fn edge_deployment_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the edge deployment plan to delete.</p>
-    pub fn set_edge_deployment_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_deployment_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = input;
         self
     }
@@ -58,10 +48,8 @@ impl DeleteEdgeDeploymentPlanInputBuilder {
         crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanInput {
-                edge_deployment_plan_name: self.edge_deployment_plan_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanInput {
+            edge_deployment_plan_name: self.edge_deployment_plan_name,
+        })
     }
 }

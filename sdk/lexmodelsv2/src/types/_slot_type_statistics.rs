@@ -23,9 +23,7 @@ impl SlotTypeStatistics {
 
 /// A builder for [`SlotTypeStatistics`](crate::types::SlotTypeStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotTypeStatisticsBuilder {
     pub(crate) discovered_slot_type_count: ::std::option::Option<i32>,
 }

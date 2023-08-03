@@ -39,8 +39,7 @@ pub struct WorkspaceDirectory {
     pub state: ::std::option::Option<crate::types::WorkspaceDirectoryState>,
     /// <p>The default creation properties for all WorkSpaces in the directory.</p>
     #[doc(hidden)]
-    pub workspace_creation_properties:
-        ::std::option::Option<crate::types::DefaultWorkspaceCreationProperties>,
+    pub workspace_creation_properties: ::std::option::Option<crate::types::DefaultWorkspaceCreationProperties>,
     /// <p>The identifiers of the IP access control groups associated with the directory.</p>
     #[doc(hidden)]
     pub ip_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -58,8 +57,7 @@ pub struct WorkspaceDirectory {
     pub saml_properties: ::std::option::Option<crate::types::SamlProperties>,
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory for WorkSpaces login.</p>
     #[doc(hidden)]
-    pub certificate_based_auth_properties:
-        ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
+    pub certificate_based_auth_properties: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
 }
 impl WorkspaceDirectory {
     /// <p>The directory identifier.</p>
@@ -107,9 +105,7 @@ impl WorkspaceDirectory {
         self.state.as_ref()
     }
     /// <p>The default creation properties for all WorkSpaces in the directory.</p>
-    pub fn workspace_creation_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DefaultWorkspaceCreationProperties> {
+    pub fn workspace_creation_properties(&self) -> ::std::option::Option<&crate::types::DefaultWorkspaceCreationProperties> {
         self.workspace_creation_properties.as_ref()
     }
     /// <p>The identifiers of the IP access control groups associated with the directory.</p>
@@ -117,9 +113,7 @@ impl WorkspaceDirectory {
         self.ip_group_ids.as_deref()
     }
     /// <p>The devices and operating systems that users can use to access WorkSpaces.</p>
-    pub fn workspace_access_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkspaceAccessProperties> {
+    pub fn workspace_access_properties(&self) -> ::std::option::Option<&crate::types::WorkspaceAccessProperties> {
         self.workspace_access_properties.as_ref()
     }
     /// <p>Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
@@ -127,9 +121,7 @@ impl WorkspaceDirectory {
         self.tenancy.as_ref()
     }
     /// <p>The default self-service permissions for WorkSpaces in the directory.</p>
-    pub fn selfservice_permissions(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SelfservicePermissions> {
+    pub fn selfservice_permissions(&self) -> ::std::option::Option<&crate::types::SelfservicePermissions> {
         self.selfservice_permissions.as_ref()
     }
     /// <p>Describes the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
@@ -137,9 +129,7 @@ impl WorkspaceDirectory {
         self.saml_properties.as_ref()
     }
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory for WorkSpaces login.</p>
-    pub fn certificate_based_auth_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CertificateBasedAuthProperties> {
+    pub fn certificate_based_auth_properties(&self) -> ::std::option::Option<&crate::types::CertificateBasedAuthProperties> {
         self.certificate_based_auth_properties.as_ref()
     }
 }
@@ -152,9 +142,7 @@ impl WorkspaceDirectory {
 
 /// A builder for [`WorkspaceDirectory`](crate::types::WorkspaceDirectory).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkspaceDirectoryBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
@@ -167,16 +155,13 @@ pub struct WorkspaceDirectoryBuilder {
     pub(crate) directory_type: ::std::option::Option<crate::types::WorkspaceDirectoryType>,
     pub(crate) workspace_security_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::WorkspaceDirectoryState>,
-    pub(crate) workspace_creation_properties:
-        ::std::option::Option<crate::types::DefaultWorkspaceCreationProperties>,
+    pub(crate) workspace_creation_properties: ::std::option::Option<crate::types::DefaultWorkspaceCreationProperties>,
     pub(crate) ip_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) workspace_access_properties:
-        ::std::option::Option<crate::types::WorkspaceAccessProperties>,
+    pub(crate) workspace_access_properties: ::std::option::Option<crate::types::WorkspaceAccessProperties>,
     pub(crate) tenancy: ::std::option::Option<crate::types::Tenancy>,
     pub(crate) selfservice_permissions: ::std::option::Option<crate::types::SelfservicePermissions>,
     pub(crate) saml_properties: ::std::option::Option<crate::types::SamlProperties>,
-    pub(crate) certificate_based_auth_properties:
-        ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
+    pub(crate) certificate_based_auth_properties: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
 }
 impl WorkspaceDirectoryBuilder {
     /// <p>The directory identifier.</p>
@@ -208,18 +193,12 @@ impl WorkspaceDirectoryBuilder {
         &self.alias
     }
     /// <p>The name of the directory.</p>
-    pub fn directory_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the directory.</p>
-    pub fn set_directory_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_name = input;
         self
     }
@@ -228,18 +207,12 @@ impl WorkspaceDirectoryBuilder {
         &self.directory_name
     }
     /// <p>The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.</p>
-    pub fn registration_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registration_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registration_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.</p>
-    pub fn set_registration_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registration_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registration_code = input;
         self
     }
@@ -259,10 +232,7 @@ impl WorkspaceDirectoryBuilder {
         self
     }
     /// <p>The identifiers of the subnets used with the directory.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -275,42 +245,28 @@ impl WorkspaceDirectoryBuilder {
     /// To override the contents of this collection use [`set_dns_ip_addresses`](Self::set_dns_ip_addresses).
     ///
     /// <p>The IP addresses of the DNS servers for the directory.</p>
-    pub fn dns_ip_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dns_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_ip_addresses.unwrap_or_default();
         v.push(input.into());
         self.dns_ip_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IP addresses of the DNS servers for the directory.</p>
-    pub fn set_dns_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_ip_addresses = input;
         self
     }
     /// <p>The IP addresses of the DNS servers for the directory.</p>
-    pub fn get_dns_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ip_addresses
     }
     /// <p>The user name for the service account.</p>
-    pub fn customer_user_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name for the service account.</p>
-    pub fn set_customer_user_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_user_name = input;
         self
     }
@@ -338,32 +294,21 @@ impl WorkspaceDirectoryBuilder {
         self
     }
     /// <p>The directory type.</p>
-    pub fn set_directory_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceDirectoryType>,
-    ) -> Self {
+    pub fn set_directory_type(mut self, input: ::std::option::Option<crate::types::WorkspaceDirectoryType>) -> Self {
         self.directory_type = input;
         self
     }
     /// <p>The directory type.</p>
-    pub fn get_directory_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkspaceDirectoryType> {
+    pub fn get_directory_type(&self) -> &::std::option::Option<crate::types::WorkspaceDirectoryType> {
         &self.directory_type
     }
     /// <p>The identifier of the security group that is assigned to new WorkSpaces.</p>
-    pub fn workspace_security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workspace_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the security group that is assigned to new WorkSpaces.</p>
-    pub fn set_workspace_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workspace_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_security_group_id = input;
         self
     }
@@ -377,10 +322,7 @@ impl WorkspaceDirectoryBuilder {
         self
     }
     /// <p>The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so this state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html"> DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been successfully deregistered.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceDirectoryState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkspaceDirectoryState>) -> Self {
         self.state = input;
         self
     }
@@ -389,25 +331,17 @@ impl WorkspaceDirectoryBuilder {
         &self.state
     }
     /// <p>The default creation properties for all WorkSpaces in the directory.</p>
-    pub fn workspace_creation_properties(
-        mut self,
-        input: crate::types::DefaultWorkspaceCreationProperties,
-    ) -> Self {
+    pub fn workspace_creation_properties(mut self, input: crate::types::DefaultWorkspaceCreationProperties) -> Self {
         self.workspace_creation_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default creation properties for all WorkSpaces in the directory.</p>
-    pub fn set_workspace_creation_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultWorkspaceCreationProperties>,
-    ) -> Self {
+    pub fn set_workspace_creation_properties(mut self, input: ::std::option::Option<crate::types::DefaultWorkspaceCreationProperties>) -> Self {
         self.workspace_creation_properties = input;
         self
     }
     /// <p>The default creation properties for all WorkSpaces in the directory.</p>
-    pub fn get_workspace_creation_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultWorkspaceCreationProperties> {
+    pub fn get_workspace_creation_properties(&self) -> &::std::option::Option<crate::types::DefaultWorkspaceCreationProperties> {
         &self.workspace_creation_properties
     }
     /// Appends an item to `ip_group_ids`.
@@ -422,39 +356,26 @@ impl WorkspaceDirectoryBuilder {
         self
     }
     /// <p>The identifiers of the IP access control groups associated with the directory.</p>
-    pub fn set_ip_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ip_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ip_group_ids = input;
         self
     }
     /// <p>The identifiers of the IP access control groups associated with the directory.</p>
-    pub fn get_ip_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ip_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ip_group_ids
     }
     /// <p>The devices and operating systems that users can use to access WorkSpaces.</p>
-    pub fn workspace_access_properties(
-        mut self,
-        input: crate::types::WorkspaceAccessProperties,
-    ) -> Self {
+    pub fn workspace_access_properties(mut self, input: crate::types::WorkspaceAccessProperties) -> Self {
         self.workspace_access_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The devices and operating systems that users can use to access WorkSpaces.</p>
-    pub fn set_workspace_access_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceAccessProperties>,
-    ) -> Self {
+    pub fn set_workspace_access_properties(mut self, input: ::std::option::Option<crate::types::WorkspaceAccessProperties>) -> Self {
         self.workspace_access_properties = input;
         self
     }
     /// <p>The devices and operating systems that users can use to access WorkSpaces.</p>
-    pub fn get_workspace_access_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkspaceAccessProperties> {
+    pub fn get_workspace_access_properties(&self) -> &::std::option::Option<crate::types::WorkspaceAccessProperties> {
         &self.workspace_access_properties
     }
     /// <p>Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
@@ -477,17 +398,12 @@ impl WorkspaceDirectoryBuilder {
         self
     }
     /// <p>The default self-service permissions for WorkSpaces in the directory.</p>
-    pub fn set_selfservice_permissions(
-        mut self,
-        input: ::std::option::Option<crate::types::SelfservicePermissions>,
-    ) -> Self {
+    pub fn set_selfservice_permissions(mut self, input: ::std::option::Option<crate::types::SelfservicePermissions>) -> Self {
         self.selfservice_permissions = input;
         self
     }
     /// <p>The default self-service permissions for WorkSpaces in the directory.</p>
-    pub fn get_selfservice_permissions(
-        &self,
-    ) -> &::std::option::Option<crate::types::SelfservicePermissions> {
+    pub fn get_selfservice_permissions(&self) -> &::std::option::Option<crate::types::SelfservicePermissions> {
         &self.selfservice_permissions
     }
     /// <p>Describes the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
@@ -496,10 +412,7 @@ impl WorkspaceDirectoryBuilder {
         self
     }
     /// <p>Describes the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
-    pub fn set_saml_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::SamlProperties>,
-    ) -> Self {
+    pub fn set_saml_properties(mut self, input: ::std::option::Option<crate::types::SamlProperties>) -> Self {
         self.saml_properties = input;
         self
     }
@@ -508,25 +421,17 @@ impl WorkspaceDirectoryBuilder {
         &self.saml_properties
     }
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory for WorkSpaces login.</p>
-    pub fn certificate_based_auth_properties(
-        mut self,
-        input: crate::types::CertificateBasedAuthProperties,
-    ) -> Self {
+    pub fn certificate_based_auth_properties(mut self, input: crate::types::CertificateBasedAuthProperties) -> Self {
         self.certificate_based_auth_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory for WorkSpaces login.</p>
-    pub fn set_certificate_based_auth_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
-    ) -> Self {
+    pub fn set_certificate_based_auth_properties(mut self, input: ::std::option::Option<crate::types::CertificateBasedAuthProperties>) -> Self {
         self.certificate_based_auth_properties = input;
         self
     }
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory for WorkSpaces login.</p>
-    pub fn get_certificate_based_auth_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::CertificateBasedAuthProperties> {
+    pub fn get_certificate_based_auth_properties(&self) -> &::std::option::Option<crate::types::CertificateBasedAuthProperties> {
         &self.certificate_based_auth_properties
     }
     /// Consumes the builder and constructs a [`WorkspaceDirectory`](crate::types::WorkspaceDirectory).

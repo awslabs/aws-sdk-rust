@@ -37,10 +37,7 @@ impl DescribeTestExecutionFluentBuilder {
         }
     }
     /// Access the DescribeTestExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_test_execution::builders::DescribeTestExecutionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_test_execution::builders::DescribeTestExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeTestExecutionFluentBuilder {
             crate::operation::describe_test_execution::DescribeTestExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_execution::DescribeTestExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_execution::DescribeTestExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeTestExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeTestExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_test_execution::DescribeTestExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_execution::DescribeTestExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_execution::DescribeTestExecutionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeTestExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_test_execution::DescribeTestExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_execution::DescribeTestExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_execution::DescribeTestExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeTestExecutionFluentBuilder {
             crate::operation::describe_test_execution::DescribeTestExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_test_execution::DescribeTestExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_test_execution::DescribeTestExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The execution Id of the test set execution.</p>
-    pub fn test_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.test_execution_id(input.into());
         self
     }
     /// <p>The execution Id of the test set execution.</p>
-    pub fn set_test_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_test_execution_id(input);
         self
     }

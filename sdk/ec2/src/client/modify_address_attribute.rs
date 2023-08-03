@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyAddressAttributeOutput`](crate::operation::modify_address_attribute::ModifyAddressAttributeOutput) with field(s):
     ///   - [`address(Option<AddressAttribute>)`](crate::operation::modify_address_attribute::ModifyAddressAttributeOutput::address): <p>Information about the Elastic IP address.</p>
     /// - On failure, responds with [`SdkError<ModifyAddressAttributeError>`](crate::operation::modify_address_attribute::ModifyAddressAttributeError)
-    pub fn modify_address_attribute(
-        &self,
-    ) -> crate::operation::modify_address_attribute::builders::ModifyAddressAttributeFluentBuilder
-    {
+    pub fn modify_address_attribute(&self) -> crate::operation::modify_address_attribute::builders::ModifyAddressAttributeFluentBuilder {
         crate::operation::modify_address_attribute::builders::ModifyAddressAttributeFluentBuilder::new(self.handle.clone())
     }
 }

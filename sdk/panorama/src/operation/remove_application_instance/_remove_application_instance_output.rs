@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveApplicationInstanceOutput {
 }
 impl RemoveApplicationInstanceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveApplicationInstanceOutput`](crate::operation::remove_application_instance::RemoveApplicationInstanceOutput).
-    pub fn builder() -> crate::operation::remove_application_instance::builders::RemoveApplicationInstanceOutputBuilder{
+    pub fn builder() -> crate::operation::remove_application_instance::builders::RemoveApplicationInstanceOutputBuilder {
         crate::operation::remove_application_instance::builders::RemoveApplicationInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveApplicationInstanceOutput`](crate::operation::remove_application_instance::RemoveApplicationInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveApplicationInstanceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl RemoveApplicationInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveApplicationInstanceOutput`](crate::operation::remove_application_instance::RemoveApplicationInstanceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_application_instance::RemoveApplicationInstanceOutput {
+    pub fn build(self) -> crate::operation::remove_application_instance::RemoveApplicationInstanceOutput {
         crate::operation::remove_application_instance::RemoveApplicationInstanceOutput {
             _request_id: self._request_id,
         }

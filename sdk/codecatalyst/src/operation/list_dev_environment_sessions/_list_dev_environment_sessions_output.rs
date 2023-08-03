@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDevEnvironmentSessionsOutput {
 }
 impl ListDevEnvironmentSessionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDevEnvironmentSessionsOutput`](crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput).
-    pub fn builder() -> crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsOutputBuilder {
         crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDevEnvironmentSessionsOutput`](crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDevEnvironmentSessionsOutputBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentSessionSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentSessionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListDevEnvironmentSessionsOutputBuilder {
         self
     }
     /// <p>Information about each session retrieved in the list.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentSessionSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentSessionSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Information about each session retrieved in the list.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentSessionSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentSessionSummary>> {
         &self.items
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
@@ -94,9 +86,7 @@ impl ListDevEnvironmentSessionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDevEnvironmentSessionsOutput`](crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput {
+    pub fn build(self) -> crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput {
         crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput {
             items: self.items,
             next_token: self.next_token,

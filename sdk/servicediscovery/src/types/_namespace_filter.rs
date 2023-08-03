@@ -65,9 +65,7 @@ impl NamespaceFilter {
 
 /// A builder for [`NamespaceFilter`](crate::types::NamespaceFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NamespaceFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::NamespaceFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -90,10 +88,7 @@ impl NamespaceFilterBuilder {
     /// <li> <p> <code>NAME</code>: Gets the namespaces with the specified name.</p> </li>
     /// <li> <p> <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p> </li>
     /// </ul>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::NamespaceFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::NamespaceFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -128,10 +123,7 @@ impl NamespaceFilterBuilder {
     /// <li> <p> <code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p> </li>
     /// <li> <p> <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p> </li>
     /// </ul>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -158,10 +150,7 @@ impl NamespaceFilterBuilder {
     /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
     /// <li> <p> <code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p> </li>
     /// </ul>
-    pub fn set_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterCondition>,
-    ) -> Self {
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::FilterCondition>) -> Self {
         self.condition = input;
         self
     }

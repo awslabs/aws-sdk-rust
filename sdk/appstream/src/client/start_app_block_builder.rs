@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StartAppBlockBuilderOutput`](crate::operation::start_app_block_builder::StartAppBlockBuilderOutput) with field(s):
     ///   - [`app_block_builder(Option<AppBlockBuilder>)`](crate::operation::start_app_block_builder::StartAppBlockBuilderOutput::app_block_builder): <p>Describes an app block builder.</p>
     /// - On failure, responds with [`SdkError<StartAppBlockBuilderError>`](crate::operation::start_app_block_builder::StartAppBlockBuilderError)
-    pub fn start_app_block_builder(
-        &self,
-    ) -> crate::operation::start_app_block_builder::builders::StartAppBlockBuilderFluentBuilder
-    {
-        crate::operation::start_app_block_builder::builders::StartAppBlockBuilderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_app_block_builder(&self) -> crate::operation::start_app_block_builder::builders::StartAppBlockBuilderFluentBuilder {
+        crate::operation::start_app_block_builder::builders::StartAppBlockBuilderFluentBuilder::new(self.handle.clone())
     }
 }

@@ -77,16 +77,14 @@ impl CreateDataSourceFromRedshiftInput {
 }
 impl CreateDataSourceFromRedshiftInput {
     /// Creates a new builder-style object to manufacture [`CreateDataSourceFromRedshiftInput`](crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftInput).
-    pub fn builder() -> crate::operation::create_data_source_from_redshift::builders::CreateDataSourceFromRedshiftInputBuilder{
+    pub fn builder() -> crate::operation::create_data_source_from_redshift::builders::CreateDataSourceFromRedshiftInputBuilder {
         crate::operation::create_data_source_from_redshift::builders::CreateDataSourceFromRedshiftInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataSourceFromRedshiftInput`](crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataSourceFromRedshiftInputBuilder {
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_name: ::std::option::Option<::std::string::String>,
@@ -96,18 +94,12 @@ pub struct CreateDataSourceFromRedshiftInputBuilder {
 }
 impl CreateDataSourceFromRedshiftInputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
@@ -116,18 +108,12 @@ impl CreateDataSourceFromRedshiftInputBuilder {
         &self.data_source_id
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-    pub fn data_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-    pub fn set_data_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_name = input;
         self
     }
@@ -167,10 +153,7 @@ impl CreateDataSourceFromRedshiftInputBuilder {
     /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
     /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
     /// </ul>
-    pub fn set_data_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::RedshiftDataSpec>,
-    ) -> Self {
+    pub fn set_data_spec(mut self, input: ::std::option::Option<crate::types::RedshiftDataSpec>) -> Self {
         self.data_spec = input;
         self
     }
@@ -238,14 +221,12 @@ impl CreateDataSourceFromRedshiftInputBuilder {
         crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftInput {
-                data_source_id: self.data_source_id,
-                data_source_name: self.data_source_name,
-                data_spec: self.data_spec,
-                role_arn: self.role_arn,
-                compute_statistics: self.compute_statistics.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftInput {
+            data_source_id: self.data_source_id,
+            data_source_name: self.data_source_name,
+            data_spec: self.data_spec,
+            role_arn: self.role_arn,
+            compute_statistics: self.compute_statistics.unwrap_or_default(),
+        })
     }
 }

@@ -27,7 +27,7 @@ impl ListThingRegistrationTasksInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListThingRegistrationTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksInputBuilder,
+    inner: crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksInputBuilder,
 }
 impl ListThingRegistrationTasksFluentBuilder {
     /// Creates a new `ListThingRegistrationTasks`.
@@ -38,7 +38,7 @@ impl ListThingRegistrationTasksFluentBuilder {
         }
     }
     /// Access the ListThingRegistrationTasks as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListThingRegistrationTasksFluentBuilder {
             crate::operation::list_thing_registration_tasks::ListThingRegistrationTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListThingRegistrationTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListThingRegistrationTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListThingRegistrationTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksError>,
     > {
         self.send_middleware().await
     }
@@ -115,16 +106,14 @@ impl ListThingRegistrationTasksFluentBuilder {
             crate::operation::list_thing_registration_tasks::ListThingRegistrationTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_thing_registration_tasks::paginator::ListThingRegistrationTasksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_thing_registration_tasks::paginator::ListThingRegistrationTasksPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_thing_registration_tasks::paginator::ListThingRegistrationTasksPaginator {
         crate::operation::list_thing_registration_tasks::paginator::ListThingRegistrationTasksPaginator::new(self.handle, self.inner)
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>

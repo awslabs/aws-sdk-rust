@@ -23,9 +23,7 @@ impl DeviceDefinitionVersion {
 
 /// A builder for [`DeviceDefinitionVersion`](crate::types::DeviceDefinitionVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceDefinitionVersionBuilder {
     pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
 }
@@ -42,10 +40,7 @@ impl DeviceDefinitionVersionBuilder {
         self
     }
     /// A list of devices in the definition version.
-    pub fn set_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
-    ) -> Self {
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>) -> Self {
         self.devices = input;
         self
     }
@@ -55,8 +50,6 @@ impl DeviceDefinitionVersionBuilder {
     }
     /// Consumes the builder and constructs a [`DeviceDefinitionVersion`](crate::types::DeviceDefinitionVersion).
     pub fn build(self) -> crate::types::DeviceDefinitionVersion {
-        crate::types::DeviceDefinitionVersion {
-            devices: self.devices,
-        }
+        crate::types::DeviceDefinitionVersion { devices: self.devices }
     }
 }

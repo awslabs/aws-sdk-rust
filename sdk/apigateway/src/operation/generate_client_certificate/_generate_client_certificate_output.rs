@@ -21,9 +21,7 @@ pub struct GenerateClientCertificateOutput {
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GenerateClientCertificateOutput {
@@ -48,11 +46,7 @@ impl GenerateClientCertificateOutput {
         self.expiration_date.as_ref()
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -63,41 +57,31 @@ impl ::aws_http::request_id::RequestId for GenerateClientCertificateOutput {
 }
 impl GenerateClientCertificateOutput {
     /// Creates a new builder-style object to manufacture [`GenerateClientCertificateOutput`](crate::operation::generate_client_certificate::GenerateClientCertificateOutput).
-    pub fn builder() -> crate::operation::generate_client_certificate::builders::GenerateClientCertificateOutputBuilder{
+    pub fn builder() -> crate::operation::generate_client_certificate::builders::GenerateClientCertificateOutputBuilder {
         crate::operation::generate_client_certificate::builders::GenerateClientCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GenerateClientCertificateOutput`](crate::operation::generate_client_certificate::GenerateClientCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateClientCertificateOutputBuilder {
     pub(crate) client_certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) pem_encoded_certificate: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GenerateClientCertificateOutputBuilder {
     /// <p>The identifier of the client certificate.</p>
-    pub fn client_certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the client certificate.</p>
-    pub fn set_client_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_certificate_id = input;
         self
     }
@@ -120,18 +104,12 @@ impl GenerateClientCertificateOutputBuilder {
         &self.description
     }
     /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
-    pub fn pem_encoded_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pem_encoded_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pem_encoded_certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
-    pub fn set_pem_encoded_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pem_encoded_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pem_encoded_certificate = input;
         self
     }
@@ -145,10 +123,7 @@ impl GenerateClientCertificateOutputBuilder {
         self
     }
     /// <p>The timestamp when the client certificate was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -162,10 +137,7 @@ impl GenerateClientCertificateOutputBuilder {
         self
     }
     /// <p>The timestamp when the client certificate will expire.</p>
-    pub fn set_expiration_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_date = input;
         self
     }
@@ -178,32 +150,19 @@ impl GenerateClientCertificateOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -216,9 +175,7 @@ impl GenerateClientCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GenerateClientCertificateOutput`](crate::operation::generate_client_certificate::GenerateClientCertificateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::generate_client_certificate::GenerateClientCertificateOutput {
+    pub fn build(self) -> crate::operation::generate_client_certificate::GenerateClientCertificateOutput {
         crate::operation::generate_client_certificate::GenerateClientCertificateOutput {
             client_certificate_id: self.client_certificate_id,
             description: self.description,

@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for ListTableColumnsOutput {
 }
 impl ListTableColumnsOutput {
     /// Creates a new builder-style object to manufacture [`ListTableColumnsOutput`](crate::operation::list_table_columns::ListTableColumnsOutput).
-    pub fn builder() -> crate::operation::list_table_columns::builders::ListTableColumnsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_table_columns::builders::ListTableColumnsOutputBuilder {
         crate::operation::list_table_columns::builders::ListTableColumnsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTableColumnsOutput`](crate::operation::list_table_columns::ListTableColumnsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTableColumnsOutputBuilder {
     pub(crate) table_columns: ::std::option::Option<::std::vec::Vec<crate::types::TableColumn>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -65,17 +62,12 @@ impl ListTableColumnsOutputBuilder {
         self
     }
     /// <p> The list of columns in the table. </p>
-    pub fn set_table_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableColumn>>,
-    ) -> Self {
+    pub fn set_table_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableColumn>>) -> Self {
         self.table_columns = input;
         self
     }
     /// <p> The list of columns in the table. </p>
-    pub fn get_table_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableColumn>> {
+    pub fn get_table_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableColumn>> {
         &self.table_columns
     }
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>

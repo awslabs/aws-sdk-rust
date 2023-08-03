@@ -30,9 +30,7 @@ impl Scope {
 
 /// A builder for [`Scope`](crate::types::Scope).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScopeBuilder {
     pub(crate) aws_accounts: ::std::option::Option<::std::vec::Vec<crate::types::AwsAccount>>,
     pub(crate) aws_services: ::std::option::Option<::std::vec::Vec<crate::types::AwsService>>,
@@ -50,17 +48,12 @@ impl ScopeBuilder {
         self
     }
     /// <p> The Amazon Web Services accounts that are included in the scope of the assessment. </p>
-    pub fn set_aws_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsAccount>>,
-    ) -> Self {
+    pub fn set_aws_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsAccount>>) -> Self {
         self.aws_accounts = input;
         self
     }
     /// <p> The Amazon Web Services accounts that are included in the scope of the assessment. </p>
-    pub fn get_aws_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsAccount>> {
+    pub fn get_aws_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsAccount>> {
         &self.aws_accounts
     }
     /// Appends an item to `aws_services`.
@@ -75,17 +68,12 @@ impl ScopeBuilder {
         self
     }
     /// <p> The Amazon Web Services services that are included in the scope of the assessment. </p>
-    pub fn set_aws_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsService>>,
-    ) -> Self {
+    pub fn set_aws_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsService>>) -> Self {
         self.aws_services = input;
         self
     }
     /// <p> The Amazon Web Services services that are included in the scope of the assessment. </p>
-    pub fn get_aws_services(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsService>> {
+    pub fn get_aws_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsService>> {
         &self.aws_services
     }
     /// Consumes the builder and constructs a [`Scope`](crate::types::Scope).

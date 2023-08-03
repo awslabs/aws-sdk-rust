@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`EnterStandbyOutput`](crate::operation::enter_standby::EnterStandbyOutput) with field(s):
     ///   - [`activities(Option<Vec<Activity>>)`](crate::operation::enter_standby::EnterStandbyOutput::activities): <p>The activities related to moving instances into <code>Standby</code> mode.</p>
     /// - On failure, responds with [`SdkError<EnterStandbyError>`](crate::operation::enter_standby::EnterStandbyError)
-    pub fn enter_standby(
-        &self,
-    ) -> crate::operation::enter_standby::builders::EnterStandbyFluentBuilder {
-        crate::operation::enter_standby::builders::EnterStandbyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn enter_standby(&self) -> crate::operation::enter_standby::builders::EnterStandbyFluentBuilder {
+        crate::operation::enter_standby::builders::EnterStandbyFluentBuilder::new(self.handle.clone())
     }
 }

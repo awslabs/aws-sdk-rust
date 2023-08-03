@@ -28,7 +28,7 @@ impl DisassociateVehicleFleetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateVehicleFleetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetInputBuilder,
+    inner: crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetInputBuilder,
 }
 impl DisassociateVehicleFleetFluentBuilder {
     /// Creates a new `DisassociateVehicleFleet`.
@@ -39,10 +39,7 @@ impl DisassociateVehicleFleetFluentBuilder {
         }
     }
     /// Access the DisassociateVehicleFleet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DisassociateVehicleFleetFluentBuilder {
             crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DisassociateVehicleFleetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DisassociateVehicleFleetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DisassociateVehicleFleetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl DisassociateVehicleFleetFluentBuilder {
             crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError>,
     > {
         self.customize_middleware().await
     }

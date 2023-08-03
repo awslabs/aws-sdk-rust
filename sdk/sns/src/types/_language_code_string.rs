@@ -49,13 +49,7 @@
 /// Supported language code for sending OTP message
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LanguageCodeString {
     #[allow(missing_docs)] // documentation missing in model
@@ -103,9 +97,7 @@ impl ::std::convert::From<&str> for LanguageCodeString {
             "pt-BR" => LanguageCodeString::PtBr,
             "zh-CN" => LanguageCodeString::ZhCn,
             "zh-TW" => LanguageCodeString::ZhTw,
-            other => LanguageCodeString::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LanguageCodeString::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -139,8 +131,7 @@ impl LanguageCodeString {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "de-DE", "en-GB", "en-US", "es-419", "es-ES", "fr-CA", "fr-FR", "it-IT", "ja-JP",
-            "kr-KR", "pt-BR", "zh-CN", "zh-TW",
+            "de-DE", "en-GB", "en-US", "es-419", "es-ES", "fr-CA", "fr-FR", "it-IT", "ja-JP", "kr-KR", "pt-BR", "zh-CN", "zh-TW",
         ]
     }
 }

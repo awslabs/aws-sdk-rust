@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeIdentityUsageOutput`](crate::operation::describe_identity_usage::DescribeIdentityUsageOutput) with field(s):
     ///   - [`identity_usage(Option<IdentityUsage>)`](crate::operation::describe_identity_usage::DescribeIdentityUsageOutput::identity_usage): Usage information for the identity.
     /// - On failure, responds with [`SdkError<DescribeIdentityUsageError>`](crate::operation::describe_identity_usage::DescribeIdentityUsageError)
-    pub fn describe_identity_usage(
-        &self,
-    ) -> crate::operation::describe_identity_usage::builders::DescribeIdentityUsageFluentBuilder
-    {
-        crate::operation::describe_identity_usage::builders::DescribeIdentityUsageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_identity_usage(&self) -> crate::operation::describe_identity_usage::builders::DescribeIdentityUsageFluentBuilder {
+        crate::operation::describe_identity_usage::builders::DescribeIdentityUsageFluentBuilder::new(self.handle.clone())
     }
 }

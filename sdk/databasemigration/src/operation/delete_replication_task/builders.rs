@@ -37,10 +37,7 @@ impl DeleteReplicationTaskFluentBuilder {
         }
     }
     /// Access the DeleteReplicationTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_replication_task::builders::DeleteReplicationTaskInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_replication_task::builders::DeleteReplicationTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteReplicationTaskFluentBuilder {
             crate::operation::delete_replication_task::DeleteReplicationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_task::DeleteReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_task::DeleteReplicationTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteReplicationTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteReplicationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_replication_task::DeleteReplicationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_task::DeleteReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_task::DeleteReplicationTaskError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteReplicationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_replication_task::DeleteReplicationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_task::DeleteReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_task::DeleteReplicationTaskError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteReplicationTaskFluentBuilder {
             crate::operation::delete_replication_task::DeleteReplicationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_replication_task::DeleteReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_replication_task::DeleteReplicationTaskError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
-    pub fn replication_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_task_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
-    pub fn set_replication_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_task_arn(input);
         self
     }

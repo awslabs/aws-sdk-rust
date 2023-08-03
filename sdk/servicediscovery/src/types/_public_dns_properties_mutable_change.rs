@@ -23,9 +23,7 @@ impl PublicDnsPropertiesMutableChange {
 
 /// A builder for [`PublicDnsPropertiesMutableChange`](crate::types::PublicDnsPropertiesMutableChange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublicDnsPropertiesMutableChangeBuilder {
     pub(crate) soa: ::std::option::Option<crate::types::SoaChange>,
 }

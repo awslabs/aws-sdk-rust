@@ -19,9 +19,7 @@ impl DeleteCellOutput {
 
 /// A builder for [`DeleteCellOutput`](crate::operation::delete_cell::DeleteCellOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCellOutputBuilder {
     _request_id: Option<String>,
 }

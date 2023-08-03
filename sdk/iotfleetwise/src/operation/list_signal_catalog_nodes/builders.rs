@@ -28,8 +28,7 @@ impl ListSignalCatalogNodesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSignalCatalogNodesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_signal_catalog_nodes::builders::ListSignalCatalogNodesInputBuilder,
+    inner: crate::operation::list_signal_catalog_nodes::builders::ListSignalCatalogNodesInputBuilder,
 }
 impl ListSignalCatalogNodesFluentBuilder {
     /// Creates a new `ListSignalCatalogNodes`.
@@ -40,10 +39,7 @@ impl ListSignalCatalogNodesFluentBuilder {
         }
     }
     /// Access the ListSignalCatalogNodes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_signal_catalog_nodes::builders::ListSignalCatalogNodesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_signal_catalog_nodes::builders::ListSignalCatalogNodesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl ListSignalCatalogNodesFluentBuilder {
             crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl ListSignalCatalogNodesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl ListSignalCatalogNodesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl ListSignalCatalogNodesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesError>,
     > {
         self.send_middleware().await
     }
@@ -120,23 +107,15 @@ impl ListSignalCatalogNodesFluentBuilder {
             crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_signal_catalog_nodes::paginator::ListSignalCatalogNodesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_signal_catalog_nodes::paginator::ListSignalCatalogNodesPaginator
-    {
-        crate::operation::list_signal_catalog_nodes::paginator::ListSignalCatalogNodesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_signal_catalog_nodes::paginator::ListSignalCatalogNodesPaginator {
+        crate::operation::list_signal_catalog_nodes::paginator::ListSignalCatalogNodesPaginator::new(self.handle, self.inner)
     }
     /// <p> The name of the signal catalog to list information about. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

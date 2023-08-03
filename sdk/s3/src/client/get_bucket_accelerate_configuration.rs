@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`status(Option<BucketAccelerateStatus>)`](crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationOutput::status): <p>The accelerate configuration of the bucket.</p>
     ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p>
     /// - On failure, responds with [`SdkError<GetBucketAccelerateConfigurationError>`](crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationError)
-    pub fn get_bucket_accelerate_configuration(&self) -> crate::operation::get_bucket_accelerate_configuration::builders::GetBucketAccelerateConfigurationFluentBuilder{
+    pub fn get_bucket_accelerate_configuration(
+        &self,
+    ) -> crate::operation::get_bucket_accelerate_configuration::builders::GetBucketAccelerateConfigurationFluentBuilder {
         crate::operation::get_bucket_accelerate_configuration::builders::GetBucketAccelerateConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

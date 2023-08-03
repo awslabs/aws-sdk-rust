@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`portal_arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_browser_settings::builders::DisassociateBrowserSettingsFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::disassociate_browser_settings::builders::DisassociateBrowserSettingsFluentBuilder::set_portal_arn): <p>The ARN of the web portal.</p>
     /// - On success, responds with [`DisassociateBrowserSettingsOutput`](crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsOutput)
     /// - On failure, responds with [`SdkError<DisassociateBrowserSettingsError>`](crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsError)
-    pub fn disassociate_browser_settings(&self) -> crate::operation::disassociate_browser_settings::builders::DisassociateBrowserSettingsFluentBuilder{
+    pub fn disassociate_browser_settings(
+        &self,
+    ) -> crate::operation::disassociate_browser_settings::builders::DisassociateBrowserSettingsFluentBuilder {
         crate::operation::disassociate_browser_settings::builders::DisassociateBrowserSettingsFluentBuilder::new(self.handle.clone())
     }
 }

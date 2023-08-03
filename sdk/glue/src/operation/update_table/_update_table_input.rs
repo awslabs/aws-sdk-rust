@@ -57,9 +57,7 @@ impl UpdateTableInput {
 
 /// A builder for [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTableInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -84,18 +82,12 @@ impl UpdateTableInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -109,10 +101,7 @@ impl UpdateTableInputBuilder {
         self
     }
     /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
-    pub fn set_table_input(
-        mut self,
-        input: ::std::option::Option<crate::types::TableInput>,
-    ) -> Self {
+    pub fn set_table_input(mut self, input: ::std::option::Option<crate::types::TableInput>) -> Self {
         self.table_input = input;
         self
     }
@@ -135,18 +124,12 @@ impl UpdateTableInputBuilder {
         &self.skip_archive
     }
     /// <p>The transaction ID at which to update the table contents. </p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transaction ID at which to update the table contents. </p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }
@@ -169,12 +152,7 @@ impl UpdateTableInputBuilder {
         &self.version_id
     }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_table::UpdateTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_table::UpdateTableInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

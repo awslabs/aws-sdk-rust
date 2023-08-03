@@ -37,9 +37,7 @@ impl GetBucketStatisticsFluentBuilder {
         }
     }
     /// Access the GetBucketStatistics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_bucket_statistics::builders::GetBucketStatisticsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_bucket_statistics::builders::GetBucketStatisticsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetBucketStatisticsFluentBuilder {
             crate::operation::get_bucket_statistics::GetBucketStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_statistics::GetBucketStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_statistics::GetBucketStatisticsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetBucketStatisticsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetBucketStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bucket_statistics::GetBucketStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_statistics::GetBucketStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_statistics::GetBucketStatisticsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetBucketStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bucket_statistics::GetBucketStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_statistics::GetBucketStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_statistics::GetBucketStatisticsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetBucketStatisticsFluentBuilder {
             crate::operation::get_bucket_statistics::GetBucketStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bucket_statistics::GetBucketStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_statistics::GetBucketStatisticsError>,
     > {
         self.customize_middleware().await
     }

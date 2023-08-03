@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for RestorePhoneNumberOutput {
 }
 impl RestorePhoneNumberOutput {
     /// Creates a new builder-style object to manufacture [`RestorePhoneNumberOutput`](crate::operation::restore_phone_number::RestorePhoneNumberOutput).
-    pub fn builder(
-    ) -> crate::operation::restore_phone_number::builders::RestorePhoneNumberOutputBuilder {
+    pub fn builder() -> crate::operation::restore_phone_number::builders::RestorePhoneNumberOutputBuilder {
         crate::operation::restore_phone_number::builders::RestorePhoneNumberOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestorePhoneNumberOutput`](crate::operation::restore_phone_number::RestorePhoneNumberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestorePhoneNumberOutputBuilder {
     pub(crate) phone_number: ::std::option::Option<crate::types::PhoneNumber>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl RestorePhoneNumberOutputBuilder {
         self
     }
     /// <p>The phone number details.</p>
-    pub fn set_phone_number(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumber>,
-    ) -> Self {
+    pub fn set_phone_number(mut self, input: ::std::option::Option<crate::types::PhoneNumber>) -> Self {
         self.phone_number = input;
         self
     }

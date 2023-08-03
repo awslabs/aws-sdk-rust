@@ -23,9 +23,7 @@ impl FixedModeScheduleActionStartSettings {
 
 /// A builder for [`FixedModeScheduleActionStartSettings`](crate::types::FixedModeScheduleActionStartSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FixedModeScheduleActionStartSettingsBuilder {
     pub(crate) time: ::std::option::Option<::std::string::String>,
 }

@@ -23,9 +23,7 @@ impl WorkflowExecutionFilter {
 
 /// A builder for [`WorkflowExecutionFilter`](crate::types::WorkflowExecutionFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowExecutionFilterBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
 }

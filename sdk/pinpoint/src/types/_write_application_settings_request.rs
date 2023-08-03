@@ -77,9 +77,7 @@ impl WriteApplicationSettingsRequest {
 
 /// A builder for [`WriteApplicationSettingsRequest`](crate::types::WriteApplicationSettingsRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WriteApplicationSettingsRequestBuilder {
     pub(crate) campaign_hook: ::std::option::Option<crate::types::CampaignHook>,
     pub(crate) cloud_watch_metrics_enabled: ::std::option::Option<bool>,
@@ -98,10 +96,7 @@ impl WriteApplicationSettingsRequestBuilder {
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
     /// <p>To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the
     /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource.</p>
-    pub fn set_campaign_hook(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignHook>,
-    ) -> Self {
+    pub fn set_campaign_hook(mut self, input: ::std::option::Option<crate::types::CampaignHook>) -> Self {
         self.campaign_hook = input;
         self
     }
@@ -149,10 +144,7 @@ impl WriteApplicationSettingsRequestBuilder {
     /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the
     /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the
     /// <link linkend="apps-application-id-journeys-journey-id">Journey resource, respectively.</p>
-    pub fn set_limits(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignLimits>,
-    ) -> Self {
+    pub fn set_limits(mut self, input: ::std::option::Option<crate::types::CampaignLimits>) -> Self {
         self.limits = input;
         self
     }

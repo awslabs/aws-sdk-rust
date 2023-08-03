@@ -113,10 +113,7 @@ impl InvokeInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -128,10 +125,7 @@ impl InvokeInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -162,10 +156,7 @@ impl InvokeInputBuilder {
     /// <li> <p> <code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p> </li>
     /// <li> <p> <code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
-    pub fn set_invocation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InvocationType>,
-    ) -> Self {
+    pub fn set_invocation_type(mut self, input: ::std::option::Option<crate::types::InvocationType>) -> Self {
         self.invocation_type = input;
         self
     }
@@ -193,18 +184,12 @@ impl InvokeInputBuilder {
         &self.log_type
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
-    pub fn client_context(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_context = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
-    pub fn set_client_context(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_context = input;
         self
     }
@@ -244,12 +229,7 @@ impl InvokeInputBuilder {
         &self.qualifier
     }
     /// Consumes the builder and constructs a [`InvokeInput`](crate::operation::invoke::InvokeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::invoke::InvokeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::invoke::InvokeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::invoke::InvokeInput {
             function_name: self.function_name,
             invocation_type: self.invocation_type,

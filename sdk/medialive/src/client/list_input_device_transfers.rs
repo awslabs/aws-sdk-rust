@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`input_device_transfers(Option<Vec<TransferringInputDeviceSummary>>)`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput::input_device_transfers): The list of devices that you are transferring or are being transferred to you.
     ///   - [`next_token(Option<String>)`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput::next_token): A token to get additional list results.
     /// - On failure, responds with [`SdkError<ListInputDeviceTransfersError>`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersError)
-    pub fn list_input_device_transfers(&self) -> crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder{
+    pub fn list_input_device_transfers(&self) -> crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder {
         crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersFluentBuilder::new(self.handle.clone())
     }
 }

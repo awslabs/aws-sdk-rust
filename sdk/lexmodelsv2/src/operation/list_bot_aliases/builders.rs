@@ -10,10 +10,7 @@ impl ListBotAliasesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_bot_aliases::ListBotAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bot_aliases::ListBotAliasesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bot_aliases::ListBotAliasesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_bot_aliases();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListBotAliasesFluentBuilder {
         }
     }
     /// Access the ListBotAliases as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_bot_aliases::builders::ListBotAliasesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_bot_aliases::builders::ListBotAliasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListBotAliasesFluentBuilder {
             crate::operation::list_bot_aliases::ListBotAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bot_aliases::ListBotAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bot_aliases::ListBotAliasesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListBotAliasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListBotAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_bot_aliases::ListBotAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bot_aliases::ListBotAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bot_aliases::ListBotAliasesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListBotAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_bot_aliases::ListBotAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bot_aliases::ListBotAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bot_aliases::ListBotAliasesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListBotAliasesFluentBuilder {
             crate::operation::list_bot_aliases::ListBotAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_bot_aliases::ListBotAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bot_aliases::ListBotAliasesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_bot_aliases::paginator::ListBotAliasesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_bot_aliases::paginator::ListBotAliasesPaginator {
-        crate::operation::list_bot_aliases::paginator::ListBotAliasesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_bot_aliases::paginator::ListBotAliasesPaginator {
+        crate::operation::list_bot_aliases::paginator::ListBotAliasesPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the bot to list aliases for.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_workgroups::ListWorkgroupsOutput::next_token): <p> If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token.</p>
     ///   - [`workgroups(Option<Vec<Workgroup>>)`](crate::operation::list_workgroups::ListWorkgroupsOutput::workgroups): <p>The returned array of workgroups.</p>
     /// - On failure, responds with [`SdkError<ListWorkgroupsError>`](crate::operation::list_workgroups::ListWorkgroupsError)
-    pub fn list_workgroups(
-        &self,
-    ) -> crate::operation::list_workgroups::builders::ListWorkgroupsFluentBuilder {
-        crate::operation::list_workgroups::builders::ListWorkgroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_workgroups(&self) -> crate::operation::list_workgroups::builders::ListWorkgroupsFluentBuilder {
+        crate::operation::list_workgroups::builders::ListWorkgroupsFluentBuilder::new(self.handle.clone())
     }
 }

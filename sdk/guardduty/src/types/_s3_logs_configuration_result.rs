@@ -23,9 +23,7 @@ impl S3LogsConfigurationResult {
 
 /// A builder for [`S3LogsConfigurationResult`](crate::types::S3LogsConfigurationResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3LogsConfigurationResultBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
@@ -36,10 +34,7 @@ impl S3LogsConfigurationResultBuilder {
         self
     }
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of the organization.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -49,8 +44,6 @@ impl S3LogsConfigurationResultBuilder {
     }
     /// Consumes the builder and constructs a [`S3LogsConfigurationResult`](crate::types::S3LogsConfigurationResult).
     pub fn build(self) -> crate::types::S3LogsConfigurationResult {
-        crate::types::S3LogsConfigurationResult {
-            status: self.status,
-        }
+        crate::types::S3LogsConfigurationResult { status: self.status }
     }
 }

@@ -18,8 +18,7 @@ pub struct Ec2InstanceAttributes {
     pub ec2_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones in which to launch Amazon EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon EMR chooses the Availability Zone with the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster instances within that Availability Zone. If you do not specify this value, Amazon EMR chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
     #[doc(hidden)]
-    pub requested_ec2_availability_zones:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub requested_ec2_availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IAM role that was specified when the cluster was launched. The Amazon EC2 instances of the cluster assume this role.</p>
     #[doc(hidden)]
     pub iam_instance_profile: ::std::option::Option<::std::string::String>,
@@ -34,12 +33,10 @@ pub struct Ec2InstanceAttributes {
     pub service_access_security_group: ::std::option::Option<::std::string::String>,
     /// <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
     #[doc(hidden)]
-    pub additional_master_security_groups:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub additional_master_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
     #[doc(hidden)]
-    pub additional_slave_security_groups:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub additional_slave_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Ec2InstanceAttributes {
     /// <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".</p>
@@ -59,9 +56,7 @@ impl Ec2InstanceAttributes {
         self.ec2_availability_zone.as_deref()
     }
     /// <p>Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones in which to launch Amazon EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon EMR chooses the Availability Zone with the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster instances within that Availability Zone. If you do not specify this value, Amazon EMR chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
-    pub fn requested_ec2_availability_zones(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn requested_ec2_availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.requested_ec2_availability_zones.as_deref()
     }
     /// <p>The IAM role that was specified when the cluster was launched. The Amazon EC2 instances of the cluster assume this role.</p>
@@ -81,15 +76,11 @@ impl Ec2InstanceAttributes {
         self.service_access_security_group.as_deref()
     }
     /// <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
-    pub fn additional_master_security_groups(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn additional_master_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.additional_master_security_groups.as_deref()
     }
     /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
-    pub fn additional_slave_security_groups(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn additional_slave_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.additional_slave_security_groups.as_deref()
     }
 }
@@ -102,25 +93,19 @@ impl Ec2InstanceAttributes {
 
 /// A builder for [`Ec2InstanceAttributes`](crate::types::Ec2InstanceAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2InstanceAttributesBuilder {
     pub(crate) ec2_key_name: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_subnet_id: ::std::option::Option<::std::string::String>,
-    pub(crate) requested_ec2_subnet_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) requested_ec2_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ec2_availability_zone: ::std::option::Option<::std::string::String>,
-    pub(crate) requested_ec2_availability_zones:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) requested_ec2_availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) iam_instance_profile: ::std::option::Option<::std::string::String>,
     pub(crate) emr_managed_master_security_group: ::std::option::Option<::std::string::String>,
     pub(crate) emr_managed_slave_security_group: ::std::option::Option<::std::string::String>,
     pub(crate) service_access_security_group: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_master_security_groups:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) additional_slave_security_groups:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) additional_master_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) additional_slave_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Ec2InstanceAttributesBuilder {
     /// <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".</p>
@@ -138,18 +123,12 @@ impl Ec2InstanceAttributesBuilder {
         &self.ec2_key_name
     }
     /// <p>Set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value, and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
-    pub fn ec2_subnet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value, and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
-    pub fn set_ec2_subnet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_subnet_id = input;
         self
     }
@@ -162,42 +141,28 @@ impl Ec2InstanceAttributesBuilder {
     /// To override the contents of this collection use [`set_requested_ec2_subnet_ids`](Self::set_requested_ec2_subnet_ids).
     ///
     /// <p>Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more Amazon EC2 subnets in which to launch Amazon EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses the Amazon EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this value is not specified, and the account and Region support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
-    pub fn requested_ec2_subnet_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requested_ec2_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.requested_ec2_subnet_ids.unwrap_or_default();
         v.push(input.into());
         self.requested_ec2_subnet_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more Amazon EC2 subnets in which to launch Amazon EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses the Amazon EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this value is not specified, and the account and Region support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
-    pub fn set_requested_ec2_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_requested_ec2_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.requested_ec2_subnet_ids = input;
         self
     }
     /// <p>Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more Amazon EC2 subnets in which to launch Amazon EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses the Amazon EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this value is not specified, and the account and Region support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
-    pub fn get_requested_ec2_subnet_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_requested_ec2_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.requested_ec2_subnet_ids
     }
     /// <p>The Availability Zone in which the cluster will run. </p>
-    pub fn ec2_availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone in which the cluster will run. </p>
-    pub fn set_ec2_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_availability_zone = input;
         self
     }
@@ -210,42 +175,28 @@ impl Ec2InstanceAttributesBuilder {
     /// To override the contents of this collection use [`set_requested_ec2_availability_zones`](Self::set_requested_ec2_availability_zones).
     ///
     /// <p>Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones in which to launch Amazon EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon EMR chooses the Availability Zone with the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster instances within that Availability Zone. If you do not specify this value, Amazon EMR chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
-    pub fn requested_ec2_availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn requested_ec2_availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.requested_ec2_availability_zones.unwrap_or_default();
         v.push(input.into());
         self.requested_ec2_availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones in which to launch Amazon EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon EMR chooses the Availability Zone with the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster instances within that Availability Zone. If you do not specify this value, Amazon EMR chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
-    pub fn set_requested_ec2_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_requested_ec2_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.requested_ec2_availability_zones = input;
         self
     }
     /// <p>Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones in which to launch Amazon EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon EMR chooses the Availability Zone with the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster instances within that Availability Zone. If you do not specify this value, Amazon EMR chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
-    pub fn get_requested_ec2_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_requested_ec2_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.requested_ec2_availability_zones
     }
     /// <p>The IAM role that was specified when the cluster was launched. The Amazon EC2 instances of the cluster assume this role.</p>
-    pub fn iam_instance_profile(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iam_instance_profile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_instance_profile = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role that was specified when the cluster was launched. The Amazon EC2 instances of the cluster assume this role.</p>
-    pub fn set_iam_instance_profile(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iam_instance_profile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_instance_profile = input;
         self
     }
@@ -254,69 +205,45 @@ impl Ec2InstanceAttributesBuilder {
         &self.iam_instance_profile
     }
     /// <p>The identifier of the Amazon EC2 security group for the master node.</p>
-    pub fn emr_managed_master_security_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn emr_managed_master_security_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.emr_managed_master_security_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Amazon EC2 security group for the master node.</p>
-    pub fn set_emr_managed_master_security_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_emr_managed_master_security_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.emr_managed_master_security_group = input;
         self
     }
     /// <p>The identifier of the Amazon EC2 security group for the master node.</p>
-    pub fn get_emr_managed_master_security_group(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_emr_managed_master_security_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.emr_managed_master_security_group
     }
     /// <p>The identifier of the Amazon EC2 security group for the core and task nodes.</p>
-    pub fn emr_managed_slave_security_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn emr_managed_slave_security_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.emr_managed_slave_security_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Amazon EC2 security group for the core and task nodes.</p>
-    pub fn set_emr_managed_slave_security_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_emr_managed_slave_security_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.emr_managed_slave_security_group = input;
         self
     }
     /// <p>The identifier of the Amazon EC2 security group for the core and task nodes.</p>
-    pub fn get_emr_managed_slave_security_group(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_emr_managed_slave_security_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.emr_managed_slave_security_group
     }
     /// <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private subnets.</p>
-    pub fn service_access_security_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_access_security_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_access_security_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private subnets.</p>
-    pub fn set_service_access_security_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_access_security_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_access_security_group = input;
         self
     }
     /// <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private subnets.</p>
-    pub fn get_service_access_security_group(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_service_access_security_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_access_security_group
     }
     /// Appends an item to `additional_master_security_groups`.
@@ -324,27 +251,19 @@ impl Ec2InstanceAttributesBuilder {
     /// To override the contents of this collection use [`set_additional_master_security_groups`](Self::set_additional_master_security_groups).
     ///
     /// <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
-    pub fn additional_master_security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_master_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.additional_master_security_groups.unwrap_or_default();
         v.push(input.into());
         self.additional_master_security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
-    pub fn set_additional_master_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_additional_master_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.additional_master_security_groups = input;
         self
     }
     /// <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
-    pub fn get_additional_master_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_master_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.additional_master_security_groups
     }
     /// Appends an item to `additional_slave_security_groups`.
@@ -352,27 +271,19 @@ impl Ec2InstanceAttributesBuilder {
     /// To override the contents of this collection use [`set_additional_slave_security_groups`](Self::set_additional_slave_security_groups).
     ///
     /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
-    pub fn additional_slave_security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_slave_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.additional_slave_security_groups.unwrap_or_default();
         v.push(input.into());
         self.additional_slave_security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
-    pub fn set_additional_slave_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_additional_slave_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.additional_slave_security_groups = input;
         self
     }
     /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
-    pub fn get_additional_slave_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_slave_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.additional_slave_security_groups
     }
     /// Consumes the builder and constructs a [`Ec2InstanceAttributes`](crate::types::Ec2InstanceAttributes).

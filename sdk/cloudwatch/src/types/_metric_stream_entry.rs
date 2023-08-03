@@ -65,9 +65,7 @@ impl MetricStreamEntry {
 
 /// A builder for [`MetricStreamEntry`](crate::types::MetricStreamEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricStreamEntryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -98,10 +96,7 @@ impl MetricStreamEntryBuilder {
         self
     }
     /// <p>The date that the metric stream was originally created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -115,10 +110,7 @@ impl MetricStreamEntryBuilder {
         self
     }
     /// <p>The date that the configuration of this metric stream was most recently updated.</p>
-    pub fn set_last_update_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_date = input;
         self
     }
@@ -174,17 +166,12 @@ impl MetricStreamEntryBuilder {
         self
     }
     /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
-    pub fn set_output_format(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricStreamOutputFormat>,
-    ) -> Self {
+    pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::MetricStreamOutputFormat>) -> Self {
         self.output_format = input;
         self
     }
     /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
-    pub fn get_output_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::MetricStreamOutputFormat> {
+    pub fn get_output_format(&self) -> &::std::option::Option<crate::types::MetricStreamOutputFormat> {
         &self.output_format
     }
     /// Consumes the builder and constructs a [`MetricStreamEntry`](crate::types::MetricStreamEntry).

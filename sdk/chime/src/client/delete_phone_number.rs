@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`phone_number_id(impl ::std::convert::Into<String>)`](crate::operation::delete_phone_number::builders::DeletePhoneNumberFluentBuilder::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::operation::delete_phone_number::builders::DeletePhoneNumberFluentBuilder::set_phone_number_id): <p>The phone number ID.</p>
     /// - On success, responds with [`DeletePhoneNumberOutput`](crate::operation::delete_phone_number::DeletePhoneNumberOutput)
     /// - On failure, responds with [`SdkError<DeletePhoneNumberError>`](crate::operation::delete_phone_number::DeletePhoneNumberError)
-    pub fn delete_phone_number(
-        &self,
-    ) -> crate::operation::delete_phone_number::builders::DeletePhoneNumberFluentBuilder {
-        crate::operation::delete_phone_number::builders::DeletePhoneNumberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_phone_number(&self) -> crate::operation::delete_phone_number::builders::DeletePhoneNumberFluentBuilder {
+        crate::operation::delete_phone_number::builders::DeletePhoneNumberFluentBuilder::new(self.handle.clone())
     }
 }

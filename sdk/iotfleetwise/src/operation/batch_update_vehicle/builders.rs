@@ -10,10 +10,7 @@ impl BatchUpdateVehicleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_vehicle::BatchUpdateVehicleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_vehicle::BatchUpdateVehicleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_update_vehicle();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl BatchUpdateVehicleFluentBuilder {
         }
     }
     /// Access the BatchUpdateVehicle as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_update_vehicle::builders::BatchUpdateVehicleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_update_vehicle::builders::BatchUpdateVehicleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl BatchUpdateVehicleFluentBuilder {
             crate::operation::batch_update_vehicle::BatchUpdateVehicle,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_vehicle::BatchUpdateVehicleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_vehicle::BatchUpdateVehicleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl BatchUpdateVehicleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl BatchUpdateVehicleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_vehicle::BatchUpdateVehicleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_vehicle::BatchUpdateVehicleError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl BatchUpdateVehicleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_vehicle::BatchUpdateVehicleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_vehicle::BatchUpdateVehicleError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl BatchUpdateVehicleFluentBuilder {
             crate::operation::batch_update_vehicle::BatchUpdateVehicle,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_vehicle::BatchUpdateVehicleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_vehicle::BatchUpdateVehicleError>,
     > {
         self.customize_middleware().await
     }
@@ -135,17 +119,12 @@ impl BatchUpdateVehicleFluentBuilder {
         self
     }
     /// <p> A list of information about the vehicles to update. For more information, see the API data type.</p>
-    pub fn set_vehicles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>>,
-    ) -> Self {
+    pub fn set_vehicles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>>) -> Self {
         self.inner = self.inner.set_vehicles(input);
         self
     }
     /// <p> A list of information about the vehicles to update. For more information, see the API data type.</p>
-    pub fn get_vehicles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>> {
+    pub fn get_vehicles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>> {
         self.inner.get_vehicles()
     }
 }

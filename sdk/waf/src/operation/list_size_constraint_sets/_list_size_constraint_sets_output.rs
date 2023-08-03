@@ -8,8 +8,7 @@ pub struct ListSizeConstraintSetsOutput {
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>SizeConstraintSetSummary</code> objects.</p>
     #[doc(hidden)]
-    pub size_constraint_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetSummary>>,
+    pub size_constraint_sets: ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListSizeConstraintSetsOutput {
@@ -18,9 +17,7 @@ impl ListSizeConstraintSetsOutput {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>SizeConstraintSetSummary</code> objects.</p>
-    pub fn size_constraint_sets(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SizeConstraintSetSummary]> {
+    pub fn size_constraint_sets(&self) -> ::std::option::Option<&[crate::types::SizeConstraintSetSummary]> {
         self.size_constraint_sets.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListSizeConstraintSetsOutput {
 }
 impl ListSizeConstraintSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListSizeConstraintSetsOutput`](crate::operation::list_size_constraint_sets::ListSizeConstraintSetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_size_constraint_sets::builders::ListSizeConstraintSetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_size_constraint_sets::builders::ListSizeConstraintSetsOutputBuilder {
         crate::operation::list_size_constraint_sets::builders::ListSizeConstraintSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSizeConstraintSetsOutput`](crate::operation::list_size_constraint_sets::ListSizeConstraintSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSizeConstraintSetsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) size_constraint_sets:
-        ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetSummary>>,
+    pub(crate) size_constraint_sets: ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListSizeConstraintSetsOutputBuilder {
@@ -76,17 +68,12 @@ impl ListSizeConstraintSetsOutputBuilder {
         self
     }
     /// <p>An array of <code>SizeConstraintSetSummary</code> objects.</p>
-    pub fn set_size_constraint_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetSummary>>,
-    ) -> Self {
+    pub fn set_size_constraint_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetSummary>>) -> Self {
         self.size_constraint_sets = input;
         self
     }
     /// <p>An array of <code>SizeConstraintSetSummary</code> objects.</p>
-    pub fn get_size_constraint_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetSummary>> {
+    pub fn get_size_constraint_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetSummary>> {
         &self.size_constraint_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -99,9 +86,7 @@ impl ListSizeConstraintSetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSizeConstraintSetsOutput`](crate::operation::list_size_constraint_sets::ListSizeConstraintSetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_size_constraint_sets::ListSizeConstraintSetsOutput {
+    pub fn build(self) -> crate::operation::list_size_constraint_sets::ListSizeConstraintSetsOutput {
         crate::operation::list_size_constraint_sets::ListSizeConstraintSetsOutput {
             next_marker: self.next_marker,
             size_constraint_sets: self.size_constraint_sets,

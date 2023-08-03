@@ -10,10 +10,7 @@ impl DeleteReservationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_reservation::DeleteReservationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_reservation::DeleteReservationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_reservation::DeleteReservationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_reservation();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteReservationFluentBuilder {
         }
     }
     /// Access the DeleteReservation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_reservation::builders::DeleteReservationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_reservation::builders::DeleteReservationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteReservationFluentBuilder {
             crate::operation::delete_reservation::DeleteReservation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_reservation::DeleteReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_reservation::DeleteReservationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteReservationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteReservationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_reservation::DeleteReservationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_reservation::DeleteReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_reservation::DeleteReservationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteReservationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_reservation::DeleteReservationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_reservation::DeleteReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_reservation::DeleteReservationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteReservationFluentBuilder {
             crate::operation::delete_reservation::DeleteReservation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_reservation::DeleteReservationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_reservation::DeleteReservationError>,
     > {
         self.customize_middleware().await
     }
     /// Unique reservation ID, e.g. '1234567'
-    pub fn reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reservation_id(input.into());
         self
     }
     /// Unique reservation ID, e.g. '1234567'
-    pub fn set_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reservation_id(input);
         self
     }

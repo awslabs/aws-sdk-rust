@@ -15,17 +15,14 @@ impl GetDeviceMethodsInput {
 }
 impl GetDeviceMethodsInput {
     /// Creates a new builder-style object to manufacture [`GetDeviceMethodsInput`](crate::operation::get_device_methods::GetDeviceMethodsInput).
-    pub fn builder() -> crate::operation::get_device_methods::builders::GetDeviceMethodsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_device_methods::builders::GetDeviceMethodsInputBuilder {
         crate::operation::get_device_methods::builders::GetDeviceMethodsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeviceMethodsInput`](crate::operation::get_device_methods::GetDeviceMethodsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeviceMethodsInputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl GetDeviceMethodsInputBuilder {
     /// Consumes the builder and constructs a [`GetDeviceMethodsInput`](crate::operation::get_device_methods::GetDeviceMethodsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_device_methods::GetDeviceMethodsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_device_methods::GetDeviceMethodsInput {
-                device_id: self.device_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_device_methods::GetDeviceMethodsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_device_methods::GetDeviceMethodsInput { device_id: self.device_id })
     }
 }

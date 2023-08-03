@@ -23,9 +23,7 @@ impl RuleGroupVariablesPortSetsDetails {
 
 /// A builder for [`RuleGroupVariablesPortSetsDetails`](crate::types::RuleGroupVariablesPortSetsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupVariablesPortSetsDetailsBuilder {
     pub(crate) definition: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl RuleGroupVariablesPortSetsDetailsBuilder {
         self
     }
     /// <p>The list of port ranges.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.definition = input;
         self
     }
@@ -55,8 +50,6 @@ impl RuleGroupVariablesPortSetsDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`RuleGroupVariablesPortSetsDetails`](crate::types::RuleGroupVariablesPortSetsDetails).
     pub fn build(self) -> crate::types::RuleGroupVariablesPortSetsDetails {
-        crate::types::RuleGroupVariablesPortSetsDetails {
-            definition: self.definition,
-        }
+        crate::types::RuleGroupVariablesPortSetsDetails { definition: self.definition }
     }
 }

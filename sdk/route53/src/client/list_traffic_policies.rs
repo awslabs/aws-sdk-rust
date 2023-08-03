@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`traffic_policy_id_marker(Option<String>)`](crate::operation::list_traffic_policies::ListTrafficPoliciesOutput::traffic_policy_id_marker): <p>If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic policies.</p>
     ///   - [`max_items(Option<i32>)`](crate::operation::list_traffic_policies::ListTrafficPoliciesOutput::max_items): <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code> request that produced the current response.</p>
     /// - On failure, responds with [`SdkError<ListTrafficPoliciesError>`](crate::operation::list_traffic_policies::ListTrafficPoliciesError)
-    pub fn list_traffic_policies(
-        &self,
-    ) -> crate::operation::list_traffic_policies::builders::ListTrafficPoliciesFluentBuilder {
-        crate::operation::list_traffic_policies::builders::ListTrafficPoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_traffic_policies(&self) -> crate::operation::list_traffic_policies::builders::ListTrafficPoliciesFluentBuilder {
+        crate::operation::list_traffic_policies::builders::ListTrafficPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

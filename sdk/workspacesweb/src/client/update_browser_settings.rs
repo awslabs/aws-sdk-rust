@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateBrowserSettingsOutput`](crate::operation::update_browser_settings::UpdateBrowserSettingsOutput) with field(s):
     ///   - [`browser_settings(Option<BrowserSettings>)`](crate::operation::update_browser_settings::UpdateBrowserSettingsOutput::browser_settings): <p>The browser settings.</p>
     /// - On failure, responds with [`SdkError<UpdateBrowserSettingsError>`](crate::operation::update_browser_settings::UpdateBrowserSettingsError)
-    pub fn update_browser_settings(
-        &self,
-    ) -> crate::operation::update_browser_settings::builders::UpdateBrowserSettingsFluentBuilder
-    {
-        crate::operation::update_browser_settings::builders::UpdateBrowserSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_browser_settings(&self) -> crate::operation::update_browser_settings::builders::UpdateBrowserSettingsFluentBuilder {
+        crate::operation::update_browser_settings::builders::UpdateBrowserSettingsFluentBuilder::new(self.handle.clone())
     }
 }

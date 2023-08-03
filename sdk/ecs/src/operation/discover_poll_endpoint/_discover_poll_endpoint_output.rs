@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DiscoverPollEndpointOutput {
 }
 impl DiscoverPollEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DiscoverPollEndpointOutput`](crate::operation::discover_poll_endpoint::DiscoverPollEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointOutputBuilder {
         crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DiscoverPollEndpointOutput`](crate::operation::discover_poll_endpoint::DiscoverPollEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiscoverPollEndpointOutputBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) telemetry_endpoint: ::std::option::Option<::std::string::String>,
@@ -68,18 +65,12 @@ impl DiscoverPollEndpointOutputBuilder {
         &self.endpoint
     }
     /// <p>The telemetry endpoint for the Amazon ECS agent.</p>
-    pub fn telemetry_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn telemetry_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.telemetry_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The telemetry endpoint for the Amazon ECS agent.</p>
-    pub fn set_telemetry_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_telemetry_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.telemetry_endpoint = input;
         self
     }
@@ -88,18 +79,12 @@ impl DiscoverPollEndpointOutputBuilder {
         &self.telemetry_endpoint
     }
     /// <p>The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn service_connect_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_connect_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_connect_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_service_connect_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_connect_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_connect_endpoint = input;
         self
     }

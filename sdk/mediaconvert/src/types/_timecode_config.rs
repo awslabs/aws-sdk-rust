@@ -44,9 +44,7 @@ impl TimecodeConfig {
 
 /// A builder for [`TimecodeConfig`](crate::types::TimecodeConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimecodeConfigBuilder {
     pub(crate) anchor: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::TimecodeSource>,
@@ -74,10 +72,7 @@ impl TimecodeConfigBuilder {
         self
     }
     /// Use Source to set how timecodes are handled within this job. To make sure that your video, audio, captions, and markers are synchronized and that time-based features, such as image inserter, work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number (HH:MM:SS:FF). * Embedded - Use the timecode that is in the input video. If no embedded timecode is in the source, the service will use Start at 0 instead. * Start at 0 - Set the timecode of the initial frame to 00:00:00:00. * Specified Start - Set the timecode of the initial frame to a value other than zero. You use Start timecode to provide this value.
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::TimecodeSource>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::TimecodeSource>) -> Self {
         self.source = input;
         self
     }
@@ -100,18 +95,12 @@ impl TimecodeConfigBuilder {
         &self.start
     }
     /// Only applies to outputs that support program-date-time stamp. Use Timestamp offset to overwrite the timecode date without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd". To use Timestamp offset, you must also enable Insert program-date-time in the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset to 2003-1-25.
-    pub fn timestamp_offset(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timestamp_offset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestamp_offset = ::std::option::Option::Some(input.into());
         self
     }
     /// Only applies to outputs that support program-date-time stamp. Use Timestamp offset to overwrite the timecode date without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd". To use Timestamp offset, you must also enable Insert program-date-time in the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset to 2003-1-25.
-    pub fn set_timestamp_offset(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_timestamp_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp_offset = input;
         self
     }

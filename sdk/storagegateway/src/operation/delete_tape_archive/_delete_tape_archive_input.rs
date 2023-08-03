@@ -23,17 +23,14 @@ impl DeleteTapeArchiveInput {
 }
 impl DeleteTapeArchiveInput {
     /// Creates a new builder-style object to manufacture [`DeleteTapeArchiveInput`](crate::operation::delete_tape_archive::DeleteTapeArchiveInput).
-    pub fn builder(
-    ) -> crate::operation::delete_tape_archive::builders::DeleteTapeArchiveInputBuilder {
+    pub fn builder() -> crate::operation::delete_tape_archive::builders::DeleteTapeArchiveInputBuilder {
         crate::operation::delete_tape_archive::builders::DeleteTapeArchiveInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTapeArchiveInput`](crate::operation::delete_tape_archive::DeleteTapeArchiveInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTapeArchiveInputBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bypass_governance_retention: ::std::option::Option<bool>,
@@ -70,15 +67,10 @@ impl DeleteTapeArchiveInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTapeArchiveInput`](crate::operation::delete_tape_archive::DeleteTapeArchiveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_tape_archive::DeleteTapeArchiveInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_tape_archive::DeleteTapeArchiveInput {
-                tape_arn: self.tape_arn,
-                bypass_governance_retention: self.bypass_governance_retention.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_tape_archive::DeleteTapeArchiveInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_tape_archive::DeleteTapeArchiveInput {
+            tape_arn: self.tape_arn,
+            bypass_governance_retention: self.bypass_governance_retention.unwrap_or_default(),
+        })
     }
 }

@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SnsActionEncoding {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for SnsActionEncoding {
         match s {
             "Base64" => SnsActionEncoding::Base64,
             "UTF-8" => SnsActionEncoding::Utf8,
-            other => {
-                SnsActionEncoding::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SnsActionEncoding::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

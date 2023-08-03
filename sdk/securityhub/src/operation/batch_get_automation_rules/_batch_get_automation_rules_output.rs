@@ -8,8 +8,7 @@ pub struct BatchGetAutomationRulesOutput {
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesConfig>>,
     /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why. </p>
     #[doc(hidden)]
-    pub unprocessed_automation_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
+    pub unprocessed_automation_rules: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
     _request_id: Option<String>,
 }
 impl BatchGetAutomationRulesOutput {
@@ -18,9 +17,7 @@ impl BatchGetAutomationRulesOutput {
         self.rules.as_deref()
     }
     /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why. </p>
-    pub fn unprocessed_automation_rules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnprocessedAutomationRule]> {
+    pub fn unprocessed_automation_rules(&self) -> ::std::option::Option<&[crate::types::UnprocessedAutomationRule]> {
         self.unprocessed_automation_rules.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchGetAutomationRulesOutput {
 }
 impl BatchGetAutomationRulesOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetAutomationRulesOutput`](crate::operation::batch_get_automation_rules::BatchGetAutomationRulesOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_automation_rules::builders::BatchGetAutomationRulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_automation_rules::builders::BatchGetAutomationRulesOutputBuilder {
         crate::operation::batch_get_automation_rules::builders::BatchGetAutomationRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetAutomationRulesOutput`](crate::operation::batch_get_automation_rules::BatchGetAutomationRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetAutomationRulesOutputBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesConfig>>,
-    pub(crate) unprocessed_automation_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
+    pub(crate) unprocessed_automation_rules: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
     _request_id: Option<String>,
 }
 impl BatchGetAutomationRulesOutputBuilder {
@@ -62,17 +54,12 @@ impl BatchGetAutomationRulesOutputBuilder {
         self
     }
     /// <p> A list of rule details for the provided rule ARNs. </p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesConfig>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesConfig>>) -> Self {
         self.rules = input;
         self
     }
     /// <p> A list of rule details for the provided rule ARNs. </p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesConfig>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesConfig>> {
         &self.rules
     }
     /// Appends an item to `unprocessed_automation_rules`.
@@ -80,10 +67,7 @@ impl BatchGetAutomationRulesOutputBuilder {
     /// To override the contents of this collection use [`set_unprocessed_automation_rules`](Self::set_unprocessed_automation_rules).
     ///
     /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why. </p>
-    pub fn unprocessed_automation_rules(
-        mut self,
-        input: crate::types::UnprocessedAutomationRule,
-    ) -> Self {
+    pub fn unprocessed_automation_rules(mut self, input: crate::types::UnprocessedAutomationRule) -> Self {
         let mut v = self.unprocessed_automation_rules.unwrap_or_default();
         v.push(input);
         self.unprocessed_automation_rules = ::std::option::Option::Some(v);
@@ -98,9 +82,7 @@ impl BatchGetAutomationRulesOutputBuilder {
         self
     }
     /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why. </p>
-    pub fn get_unprocessed_automation_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>> {
+    pub fn get_unprocessed_automation_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>> {
         &self.unprocessed_automation_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -113,9 +95,7 @@ impl BatchGetAutomationRulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetAutomationRulesOutput`](crate::operation::batch_get_automation_rules::BatchGetAutomationRulesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_get_automation_rules::BatchGetAutomationRulesOutput {
+    pub fn build(self) -> crate::operation::batch_get_automation_rules::BatchGetAutomationRulesOutput {
         crate::operation::batch_get_automation_rules::BatchGetAutomationRulesOutput {
             rules: self.rules,
             unprocessed_automation_rules: self.unprocessed_automation_rules,

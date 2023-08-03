@@ -27,9 +27,7 @@ pub struct CreateApiKeyInput {
     pub customer_id: ::std::option::Option<::std::string::String>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateApiKeyInput {
     /// <p>The name of the ApiKey.</p>
@@ -61,11 +59,7 @@ impl CreateApiKeyInput {
         self.customer_id.as_deref()
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -78,9 +72,7 @@ impl CreateApiKeyInput {
 
 /// A builder for [`CreateApiKeyInput`](crate::operation::create_api_key::CreateApiKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateApiKeyInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -89,9 +81,7 @@ pub struct CreateApiKeyInputBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) stage_keys: ::std::option::Option<::std::vec::Vec<crate::types::StageKey>>,
     pub(crate) customer_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateApiKeyInputBuilder {
     /// <p>The name of the ApiKey.</p>
@@ -176,17 +166,12 @@ impl CreateApiKeyInputBuilder {
         self
     }
     /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
-    pub fn set_stage_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StageKey>>,
-    ) -> Self {
+    pub fn set_stage_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StageKey>>) -> Self {
         self.stage_keys = input;
         self
     }
     /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
-    pub fn get_stage_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StageKey>> {
+    pub fn get_stage_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StageKey>> {
         &self.stage_keys
     }
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
@@ -208,41 +193,25 @@ impl CreateApiKeyInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateApiKeyInput`](crate::operation::create_api_key::CreateApiKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_api_key::CreateApiKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_api_key::CreateApiKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_api_key::CreateApiKeyInput {
             name: self.name,
             description: self.description,

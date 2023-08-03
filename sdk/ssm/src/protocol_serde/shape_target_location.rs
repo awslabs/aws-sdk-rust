@@ -22,9 +22,7 @@ pub fn ser_target_location(
         array_5.finish();
     }
     if let Some(var_7) = &input.target_location_max_concurrency {
-        object
-            .key("TargetLocationMaxConcurrency")
-            .string(var_7.as_str());
+        object.key("TargetLocationMaxConcurrency").string(var_7.as_str());
     }
     if let Some(var_8) = &input.target_location_max_errors {
         object.key("TargetLocationMaxErrors").string(var_8.as_str());
@@ -34,13 +32,8 @@ pub fn ser_target_location(
     }
     if let Some(var_10) = &input.target_location_alarm_configuration {
         #[allow(unused_mut)]
-        let mut object_11 = object
-            .key("TargetLocationAlarmConfiguration")
-            .start_object();
-        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(
-            &mut object_11,
-            var_10,
-        )?;
+        let mut object_11 = object.key("TargetLocationAlarmConfiguration").start_object();
+        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_11, var_10)?;
         object_11.finish();
     }
     Ok(())
@@ -48,17 +41,9 @@ pub fn ser_target_location(
 
 pub(crate) fn de_target_location<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::TargetLocation>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::TargetLocation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -68,68 +53,53 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Accounts" => {
-                                builder = builder.set_accounts(
-                                    crate::protocol_serde::shape_accounts::de_accounts(tokens)?,
-                                );
-                            }
-                            "Regions" => {
-                                builder = builder.set_regions(
-                                    crate::protocol_serde::shape_regions::de_regions(tokens)?,
-                                );
-                            }
-                            "TargetLocationMaxConcurrency" => {
-                                builder = builder.set_target_location_max_concurrency(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "TargetLocationMaxErrors" => {
-                                builder = builder.set_target_location_max_errors(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "ExecutionRoleName" => {
-                                builder = builder.set_execution_role_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "TargetLocationAlarmConfiguration" => {
-                                builder = builder.set_target_location_alarm_configuration(
-                                    crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Accounts" => {
+                            builder = builder.set_accounts(crate::protocol_serde::shape_accounts::de_accounts(tokens)?);
                         }
-                    }
+                        "Regions" => {
+                            builder = builder.set_regions(crate::protocol_serde::shape_regions::de_regions(tokens)?);
+                        }
+                        "TargetLocationMaxConcurrency" => {
+                            builder = builder.set_target_location_max_concurrency(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TargetLocationMaxErrors" => {
+                            builder = builder.set_target_location_max_errors(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ExecutionRoleName" => {
+                            builder = builder.set_execution_role_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TargetLocationAlarmConfiguration" => {
+                            builder = builder.set_target_location_alarm_configuration(
+                                crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

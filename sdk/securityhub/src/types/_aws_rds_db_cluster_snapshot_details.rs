@@ -62,9 +62,7 @@ pub struct AwsRdsDbClusterSnapshotDetails {
     pub iam_database_authentication_enabled: bool,
     /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
     #[doc(hidden)]
-    pub db_cluster_snapshot_attributes: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>,
-    >,
+    pub db_cluster_snapshot_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>>,
 }
 impl AwsRdsDbClusterSnapshotDetails {
     /// <p>A list of Availability Zones where instances in the DB cluster can be created.</p>
@@ -142,10 +140,7 @@ impl AwsRdsDbClusterSnapshotDetails {
         self.iam_database_authentication_enabled
     }
     /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
-    pub fn db_cluster_snapshot_attributes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute]>
-    {
+    pub fn db_cluster_snapshot_attributes(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute]> {
         self.db_cluster_snapshot_attributes.as_deref()
     }
 }
@@ -158,9 +153,7 @@ impl AwsRdsDbClusterSnapshotDetails {
 
 /// A builder for [`AwsRdsDbClusterSnapshotDetails`](crate::types::AwsRdsDbClusterSnapshotDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRdsDbClusterSnapshotDetailsBuilder {
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) snapshot_create_time: ::std::option::Option<::std::string::String>,
@@ -180,9 +173,8 @@ pub struct AwsRdsDbClusterSnapshotDetailsBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) iam_database_authentication_enabled: ::std::option::Option<bool>,
-    pub(crate) db_cluster_snapshot_attributes: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>,
-    >,
+    pub(crate) db_cluster_snapshot_attributes:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>>,
 }
 impl AwsRdsDbClusterSnapshotDetailsBuilder {
     /// Appends an item to `availability_zones`.
@@ -190,44 +182,30 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>A list of Availability Zones where instances in the DB cluster can be created.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
         self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Availability Zones where instances in the DB cluster can be created.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>A list of Availability Zones where instances in the DB cluster can be created.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
     /// <p>Indicates when the snapshot was taken.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn snapshot_create_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_create_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_create_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the snapshot was taken.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_snapshot_create_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_create_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_create_time = input;
         self
     }
@@ -308,19 +286,13 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     }
     /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn cluster_create_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_create_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_create_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_cluster_create_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_create_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_create_time = input;
         self
     }
@@ -330,18 +302,12 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
         &self.cluster_create_time
     }
     /// <p>The name of the master user for the DB cluster.</p>
-    pub fn master_username(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the master user for the DB cluster.</p>
-    pub fn set_master_username(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_username = input;
         self
     }
@@ -350,18 +316,12 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
         &self.master_username
     }
     /// <p>The version of the database engine to use.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the database engine to use.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -370,18 +330,12 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
         &self.engine_version
     }
     /// <p>The license model information for this DB cluster snapshot.</p>
-    pub fn license_model(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The license model information for this DB cluster snapshot.</p>
-    pub fn set_license_model(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_model = input;
         self
     }
@@ -390,18 +344,12 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
         &self.license_model
     }
     /// <p>The type of DB cluster snapshot.</p>
-    pub fn snapshot_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of DB cluster snapshot.</p>
-    pub fn set_snapshot_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_type = input;
         self
     }
@@ -452,18 +400,12 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
         &self.kms_key_id
     }
     /// <p>The DB cluster identifier.</p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DB cluster identifier.</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -472,25 +414,17 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
         &self.db_cluster_identifier
     }
     /// <p>The identifier of the DB cluster snapshot.</p>
-    pub fn db_cluster_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the DB cluster snapshot.</p>
-    pub fn set_db_cluster_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = input;
         self
     }
     /// <p>The identifier of the DB cluster snapshot.</p>
-    pub fn get_db_cluster_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_snapshot_identifier
     }
     /// <p>Whether mapping of IAM accounts to database accounts is enabled.</p>
@@ -499,10 +433,7 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
         self
     }
     /// <p>Whether mapping of IAM accounts to database accounts is enabled.</p>
-    pub fn set_iam_database_authentication_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_iam_database_authentication_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.iam_database_authentication_enabled = input;
         self
     }
@@ -515,10 +446,7 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     /// To override the contents of this collection use [`set_db_cluster_snapshot_attributes`](Self::set_db_cluster_snapshot_attributes).
     ///
     /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
-    pub fn db_cluster_snapshot_attributes(
-        mut self,
-        input: crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute,
-    ) -> Self {
+    pub fn db_cluster_snapshot_attributes(mut self, input: crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute) -> Self {
         let mut v = self.db_cluster_snapshot_attributes.unwrap_or_default();
         v.push(input);
         self.db_cluster_snapshot_attributes = ::std::option::Option::Some(v);
@@ -527,9 +455,7 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
     pub fn set_db_cluster_snapshot_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>>,
     ) -> Self {
         self.db_cluster_snapshot_attributes = input;
         self
@@ -537,9 +463,7 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
     pub fn get_db_cluster_snapshot_attributes(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>> {
         &self.db_cluster_snapshot_attributes
     }
     /// Consumes the builder and constructs a [`AwsRdsDbClusterSnapshotDetails`](crate::types::AwsRdsDbClusterSnapshotDetails).
@@ -562,9 +486,7 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
             kms_key_id: self.kms_key_id,
             db_cluster_identifier: self.db_cluster_identifier,
             db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
-            iam_database_authentication_enabled: self
-                .iam_database_authentication_enabled
-                .unwrap_or_default(),
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled.unwrap_or_default(),
             db_cluster_snapshot_attributes: self.db_cluster_snapshot_attributes,
         }
     }

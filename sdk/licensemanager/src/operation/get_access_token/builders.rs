@@ -10,10 +10,7 @@ impl GetAccessTokenInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_access_token::GetAccessTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_access_token::GetAccessTokenError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_access_token::GetAccessTokenError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_access_token();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetAccessTokenFluentBuilder {
         }
     }
     /// Access the GetAccessToken as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_access_token::builders::GetAccessTokenInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_access_token::builders::GetAccessTokenInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetAccessTokenFluentBuilder {
             crate::operation::get_access_token::GetAccessToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_access_token::GetAccessTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_access_token::GetAccessTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetAccessTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetAccessTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_access_token::GetAccessTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_access_token::GetAccessTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_access_token::GetAccessTokenError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetAccessTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_access_token::GetAccessTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_access_token::GetAccessTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_access_token::GetAccessTokenError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetAccessTokenFluentBuilder {
             crate::operation::get_access_token::GetAccessToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_access_token::GetAccessTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_access_token::GetAccessTokenError>,
     > {
         self.customize_middleware().await
     }
@@ -141,25 +125,17 @@ impl GetAccessTokenFluentBuilder {
     /// To override the contents of this collection use [`set_token_properties`](Self::set_token_properties).
     ///
     /// <p>Token properties to validate against those present in the JWT token.</p>
-    pub fn token_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn token_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token_properties(input.into());
         self
     }
     /// <p>Token properties to validate against those present in the JWT token.</p>
-    pub fn set_token_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_token_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_token_properties(input);
         self
     }
     /// <p>Token properties to validate against those present in the JWT token.</p>
-    pub fn get_token_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_token_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_token_properties()
     }
 }

@@ -28,9 +28,7 @@ impl UpdateWorkspaceOutput {
 
 /// A builder for [`UpdateWorkspaceOutput`](crate::operation::update_workspace::UpdateWorkspaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceOutputBuilder {
     pub(crate) update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl UpdateWorkspaceOutputBuilder {
         self
     }
     /// <p>The date and time of the current update.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date_time = input;
         self
     }

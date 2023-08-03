@@ -8,14 +8,11 @@
 pub struct TlsInspectionConfiguration {
     /// <p>Lists the server certificate configurations that are associated with the TLS configuration.</p>
     #[doc(hidden)]
-    pub server_certificate_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateConfiguration>>,
+    pub server_certificate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateConfiguration>>,
 }
 impl TlsInspectionConfiguration {
     /// <p>Lists the server certificate configurations that are associated with the TLS configuration.</p>
-    pub fn server_certificate_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServerCertificateConfiguration]> {
+    pub fn server_certificate_configurations(&self) -> ::std::option::Option<&[crate::types::ServerCertificateConfiguration]> {
         self.server_certificate_configurations.as_deref()
     }
 }
@@ -28,12 +25,9 @@ impl TlsInspectionConfiguration {
 
 /// A builder for [`TlsInspectionConfiguration`](crate::types::TlsInspectionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TlsInspectionConfigurationBuilder {
-    pub(crate) server_certificate_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateConfiguration>>,
+    pub(crate) server_certificate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateConfiguration>>,
 }
 impl TlsInspectionConfigurationBuilder {
     /// Appends an item to `server_certificate_configurations`.
@@ -41,10 +35,7 @@ impl TlsInspectionConfigurationBuilder {
     /// To override the contents of this collection use [`set_server_certificate_configurations`](Self::set_server_certificate_configurations).
     ///
     /// <p>Lists the server certificate configurations that are associated with the TLS configuration.</p>
-    pub fn server_certificate_configurations(
-        mut self,
-        input: crate::types::ServerCertificateConfiguration,
-    ) -> Self {
+    pub fn server_certificate_configurations(mut self, input: crate::types::ServerCertificateConfiguration) -> Self {
         let mut v = self.server_certificate_configurations.unwrap_or_default();
         v.push(input);
         self.server_certificate_configurations = ::std::option::Option::Some(v);
@@ -59,9 +50,7 @@ impl TlsInspectionConfigurationBuilder {
         self
     }
     /// <p>Lists the server certificate configurations that are associated with the TLS configuration.</p>
-    pub fn get_server_certificate_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateConfiguration>> {
+    pub fn get_server_certificate_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateConfiguration>> {
         &self.server_certificate_configurations
     }
     /// Consumes the builder and constructs a [`TlsInspectionConfiguration`](crate::types::TlsInspectionConfiguration).

@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateFilterOutput`](crate::operation::update_filter::UpdateFilterOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::update_filter::UpdateFilterOutput::arn): <p>The Amazon Resource Number (ARN) of the successfully updated filter.</p>
     /// - On failure, responds with [`SdkError<UpdateFilterError>`](crate::operation::update_filter::UpdateFilterError)
-    pub fn update_filter(
-        &self,
-    ) -> crate::operation::update_filter::builders::UpdateFilterFluentBuilder {
-        crate::operation::update_filter::builders::UpdateFilterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_filter(&self) -> crate::operation::update_filter::builders::UpdateFilterFluentBuilder {
+        crate::operation::update_filter::builders::UpdateFilterFluentBuilder::new(self.handle.clone())
     }
 }

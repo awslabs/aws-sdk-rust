@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`repository_names(Option<Vec<String>>)`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateOutput::repository_names): <p>A list of repository names that are associated with the specified approval rule template.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateOutput::next_token): <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     /// - On failure, responds with [`SdkError<ListRepositoriesForApprovalRuleTemplateError>`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError)
-    pub fn list_repositories_for_approval_rule_template(&self) -> crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateFluentBuilder{
-        crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateFluentBuilder::new(self.handle.clone())
+    pub fn list_repositories_for_approval_rule_template(
+        &self,
+    ) -> crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateFluentBuilder {
+        crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

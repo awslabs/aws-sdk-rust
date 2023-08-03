@@ -15,40 +15,30 @@ impl GetFirewallRuleGroupAssociationInput {
 }
 impl GetFirewallRuleGroupAssociationInput {
     /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupAssociationInput`](crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationInput).
-    pub fn builder() -> crate::operation::get_firewall_rule_group_association::builders::GetFirewallRuleGroupAssociationInputBuilder{
+    pub fn builder() -> crate::operation::get_firewall_rule_group_association::builders::GetFirewallRuleGroupAssociationInputBuilder {
         crate::operation::get_firewall_rule_group_association::builders::GetFirewallRuleGroupAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFirewallRuleGroupAssociationInput`](crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFirewallRuleGroupAssociationInputBuilder {
     pub(crate) firewall_rule_group_association_id: ::std::option::Option<::std::string::String>,
 }
 impl GetFirewallRuleGroupAssociationInputBuilder {
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
-    pub fn firewall_rule_group_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_rule_group_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
-    pub fn set_firewall_rule_group_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_rule_group_association_id = input;
         self
     }
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
-    pub fn get_firewall_rule_group_association_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_firewall_rule_group_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_rule_group_association_id
     }
     /// Consumes the builder and constructs a [`GetFirewallRuleGroupAssociationInput`](crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationInput).
@@ -60,9 +50,8 @@ impl GetFirewallRuleGroupAssociationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationInput {
-                firewall_rule_group_association_id: self.firewall_rule_group_association_id
-                ,
-            }
+                firewall_rule_group_association_id: self.firewall_rule_group_association_id,
+            },
         )
     }
 }

@@ -12,8 +12,7 @@ pub struct PolicyTypeDescription {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
     #[doc(hidden)]
-    pub policy_attribute_type_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeTypeDescription>>,
+    pub policy_attribute_type_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeTypeDescription>>,
 }
 impl PolicyTypeDescription {
     /// <p>The name of the policy type.</p>
@@ -25,9 +24,7 @@ impl PolicyTypeDescription {
         self.description.as_deref()
     }
     /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
-    pub fn policy_attribute_type_descriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PolicyAttributeTypeDescription]> {
+    pub fn policy_attribute_type_descriptions(&self) -> ::std::option::Option<&[crate::types::PolicyAttributeTypeDescription]> {
         self.policy_attribute_type_descriptions.as_deref()
     }
 }
@@ -40,29 +37,20 @@ impl PolicyTypeDescription {
 
 /// A builder for [`PolicyTypeDescription`](crate::types::PolicyTypeDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyTypeDescriptionBuilder {
     pub(crate) policy_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) policy_attribute_type_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeTypeDescription>>,
+    pub(crate) policy_attribute_type_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeTypeDescription>>,
 }
 impl PolicyTypeDescriptionBuilder {
     /// <p>The name of the policy type.</p>
-    pub fn policy_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the policy type.</p>
-    pub fn set_policy_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_type_name = input;
         self
     }
@@ -89,10 +77,7 @@ impl PolicyTypeDescriptionBuilder {
     /// To override the contents of this collection use [`set_policy_attribute_type_descriptions`](Self::set_policy_attribute_type_descriptions).
     ///
     /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
-    pub fn policy_attribute_type_descriptions(
-        mut self,
-        input: crate::types::PolicyAttributeTypeDescription,
-    ) -> Self {
+    pub fn policy_attribute_type_descriptions(mut self, input: crate::types::PolicyAttributeTypeDescription) -> Self {
         let mut v = self.policy_attribute_type_descriptions.unwrap_or_default();
         v.push(input);
         self.policy_attribute_type_descriptions = ::std::option::Option::Some(v);
@@ -107,9 +92,7 @@ impl PolicyTypeDescriptionBuilder {
         self
     }
     /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
-    pub fn get_policy_attribute_type_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeTypeDescription>> {
+    pub fn get_policy_attribute_type_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeTypeDescription>> {
         &self.policy_attribute_type_descriptions
     }
     /// Consumes the builder and constructs a [`PolicyTypeDescription`](crate::types::PolicyTypeDescription).

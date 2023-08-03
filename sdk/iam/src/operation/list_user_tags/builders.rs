@@ -10,10 +10,7 @@ impl ListUserTagsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_user_tags::ListUserTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_tags::ListUserTagsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_tags::ListUserTagsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_user_tags();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListUserTagsFluentBuilder {
         }
     }
     /// Access the ListUserTags as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_user_tags::builders::ListUserTagsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_user_tags::builders::ListUserTagsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListUserTagsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListUserTagsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_user_tags::paginator::ListUserTagsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_user_tags::paginator::ListUserTagsPaginator {
-        crate::operation::list_user_tags::paginator::ListUserTagsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_user_tags::paginator::ListUserTagsPaginator {
+        crate::operation::list_user_tags::paginator::ListUserTagsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the IAM user whose tags you want to see.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>

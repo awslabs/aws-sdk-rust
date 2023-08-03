@@ -16,17 +16,14 @@ impl VerifyDomainDkimInput {
 }
 impl VerifyDomainDkimInput {
     /// Creates a new builder-style object to manufacture [`VerifyDomainDkimInput`](crate::operation::verify_domain_dkim::VerifyDomainDkimInput).
-    pub fn builder() -> crate::operation::verify_domain_dkim::builders::VerifyDomainDkimInputBuilder
-    {
+    pub fn builder() -> crate::operation::verify_domain_dkim::builders::VerifyDomainDkimInputBuilder {
         crate::operation::verify_domain_dkim::builders::VerifyDomainDkimInputBuilder::default()
     }
 }
 
 /// A builder for [`VerifyDomainDkimInput`](crate::operation::verify_domain_dkim::VerifyDomainDkimInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifyDomainDkimInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +45,7 @@ impl VerifyDomainDkimInputBuilder {
     /// Consumes the builder and constructs a [`VerifyDomainDkimInput`](crate::operation::verify_domain_dkim::VerifyDomainDkimInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::verify_domain_dkim::VerifyDomainDkimInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::verify_domain_dkim::VerifyDomainDkimInput {
-                domain: self.domain,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::verify_domain_dkim::VerifyDomainDkimInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::verify_domain_dkim::VerifyDomainDkimInput { domain: self.domain })
     }
 }

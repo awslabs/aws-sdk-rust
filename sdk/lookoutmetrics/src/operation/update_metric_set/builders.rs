@@ -10,10 +10,7 @@ impl UpdateMetricSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_metric_set::UpdateMetricSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_metric_set::UpdateMetricSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_metric_set::UpdateMetricSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_metric_set();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateMetricSetFluentBuilder {
         }
     }
     /// Access the UpdateMetricSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_metric_set::builders::UpdateMetricSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_metric_set::builders::UpdateMetricSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateMetricSetFluentBuilder {
             crate::operation::update_metric_set::UpdateMetricSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_metric_set::UpdateMetricSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_metric_set::UpdateMetricSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateMetricSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateMetricSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_metric_set::UpdateMetricSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_metric_set::UpdateMetricSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_metric_set::UpdateMetricSetError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateMetricSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_metric_set::UpdateMetricSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_metric_set::UpdateMetricSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_metric_set::UpdateMetricSetError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateMetricSetFluentBuilder {
             crate::operation::update_metric_set::UpdateMetricSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_metric_set::UpdateMetricSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_metric_set::UpdateMetricSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the dataset to update.</p>
-    pub fn metric_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_set_arn(input.into());
         self
     }
     /// <p>The ARN of the dataset to update.</p>
-    pub fn set_metric_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_set_arn(input);
         self
     }
@@ -143,18 +121,12 @@ impl UpdateMetricSetFluentBuilder {
         self.inner.get_metric_set_arn()
     }
     /// <p>The dataset's description.</p>
-    pub fn metric_set_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_set_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_set_description(input.into());
         self
     }
     /// <p>The dataset's description.</p>
-    pub fn set_metric_set_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_set_description(input);
         self
     }
@@ -172,10 +144,7 @@ impl UpdateMetricSetFluentBuilder {
         self
     }
     /// <p>The metric list.</p>
-    pub fn set_metric_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
-    ) -> Self {
+    pub fn set_metric_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>) -> Self {
         self.inner = self.inner.set_metric_list(input);
         self
     }
@@ -203,10 +172,7 @@ impl UpdateMetricSetFluentBuilder {
         self
     }
     /// <p>The timestamp column.</p>
-    pub fn set_timestamp_column(
-        mut self,
-        input: ::std::option::Option<crate::types::TimestampColumn>,
-    ) -> Self {
+    pub fn set_timestamp_column(mut self, input: ::std::option::Option<crate::types::TimestampColumn>) -> Self {
         self.inner = self.inner.set_timestamp_column(input);
         self
     }
@@ -219,25 +185,17 @@ impl UpdateMetricSetFluentBuilder {
     /// To override the contents of this collection use [`set_dimension_list`](Self::set_dimension_list).
     ///
     /// <p>The dimension list.</p>
-    pub fn dimension_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dimension_list(input.into());
         self
     }
     /// <p>The dimension list.</p>
-    pub fn set_dimension_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dimension_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_dimension_list(input);
         self
     }
     /// <p>The dimension list.</p>
-    pub fn get_dimension_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dimension_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_dimension_list()
     }
     /// <p>The dataset's interval.</p>
@@ -246,10 +204,7 @@ impl UpdateMetricSetFluentBuilder {
         self
     }
     /// <p>The dataset's interval.</p>
-    pub fn set_metric_set_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::Frequency>,
-    ) -> Self {
+    pub fn set_metric_set_frequency(mut self, input: ::std::option::Option<crate::types::Frequency>) -> Self {
         self.inner = self.inner.set_metric_set_frequency(input);
         self
     }
@@ -263,10 +218,7 @@ impl UpdateMetricSetFluentBuilder {
         self
     }
     /// <p>Contains information about source data used to generate metrics.</p>
-    pub fn set_metric_source(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricSource>,
-    ) -> Self {
+    pub fn set_metric_source(mut self, input: ::std::option::Option<crate::types::MetricSource>) -> Self {
         self.inner = self.inner.set_metric_source(input);
         self
     }
@@ -284,17 +236,12 @@ impl UpdateMetricSetFluentBuilder {
         self
     }
     /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
-    pub fn set_dimension_filter_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
-    ) -> Self {
+    pub fn set_dimension_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>) -> Self {
         self.inner = self.inner.set_dimension_filter_list(input);
         self
     }
     /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
-    pub fn get_dimension_filter_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>> {
+    pub fn get_dimension_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>> {
         self.inner.get_dimension_filter_list()
     }
 }

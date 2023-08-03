@@ -44,10 +44,7 @@ impl PutAccessPointPolicyFluentBuilder {
         }
     }
     /// Access the PutAccessPointPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_access_point_policy::builders::PutAccessPointPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_access_point_policy::builders::PutAccessPointPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +56,7 @@ impl PutAccessPointPolicyFluentBuilder {
             crate::operation::put_access_point_policy::PutAccessPointPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_access_point_policy::PutAccessPointPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_access_point_policy::PutAccessPointPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +66,7 @@ impl PutAccessPointPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +75,7 @@ impl PutAccessPointPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_access_point_policy::PutAccessPointPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_access_point_policy::PutAccessPointPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_access_point_policy::PutAccessPointPolicyError>,
     > {
         let op = self
             .inner
@@ -108,9 +98,7 @@ impl PutAccessPointPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_access_point_policy::PutAccessPointPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_access_point_policy::PutAccessPointPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_access_point_policy::PutAccessPointPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +112,7 @@ impl PutAccessPointPolicyFluentBuilder {
             crate::operation::put_access_point_policy::PutAccessPointPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_access_point_policy::PutAccessPointPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_access_point_policy::PutAccessPointPolicyError>,
     > {
         self.customize_middleware().await
     }

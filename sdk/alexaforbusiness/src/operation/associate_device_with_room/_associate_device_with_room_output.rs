@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateDeviceWithRoomOutput {
 }
 impl AssociateDeviceWithRoomOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDeviceWithRoomOutput`](crate::operation::associate_device_with_room::AssociateDeviceWithRoomOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomOutputBuilder {
         crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDeviceWithRoomOutput`](crate::operation::associate_device_with_room::AssociateDeviceWithRoomOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDeviceWithRoomOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl AssociateDeviceWithRoomOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateDeviceWithRoomOutput`](crate::operation::associate_device_with_room::AssociateDeviceWithRoomOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_device_with_room::AssociateDeviceWithRoomOutput {
+    pub fn build(self) -> crate::operation::associate_device_with_room::AssociateDeviceWithRoomOutput {
         crate::operation::associate_device_with_room::AssociateDeviceWithRoomOutput {
             _request_id: self._request_id,
         }

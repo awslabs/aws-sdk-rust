@@ -15,10 +15,7 @@ pub fn ser_create_compute_environment_input(
     if let Some(var_4) = &input.eks_configuration {
         #[allow(unused_mut)]
         let mut object_5 = object.key("eksConfiguration").start_object();
-        crate::protocol_serde::shape_eks_configuration::ser_eks_configuration(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_eks_configuration::ser_eks_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.service_role {

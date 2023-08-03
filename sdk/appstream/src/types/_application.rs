@@ -24,9 +24,7 @@ pub struct Application {
     pub enabled: bool,
     /// <p>Additional attributes that describe the application.</p>
     #[doc(hidden)]
-    pub metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The working directory for the application.</p>
     #[doc(hidden)]
     pub working_directory: ::std::option::Option<::std::string::String>,
@@ -78,11 +76,7 @@ impl Application {
         self.enabled
     }
     /// <p>Additional attributes that describe the application.</p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
     /// <p>The working directory for the application.</p>
@@ -127,9 +121,7 @@ impl Application {
 
 /// A builder for [`Application`](crate::types::Application).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -137,9 +129,7 @@ pub struct ApplicationBuilder {
     pub(crate) launch_path: ::std::option::Option<::std::string::String>,
     pub(crate) launch_parameters: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
-    pub(crate) metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) working_directory: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -207,18 +197,12 @@ impl ApplicationBuilder {
         &self.launch_path
     }
     /// <p>The arguments that are passed to the application at launch.</p>
-    pub fn launch_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_parameters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The arguments that are passed to the application at launch.</p>
-    pub fn set_launch_parameters(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_parameters = input;
         self
     }
@@ -245,47 +229,28 @@ impl ApplicationBuilder {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>Additional attributes that describe the application.</p>
-    pub fn metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.metadata = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Additional attributes that describe the application.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>Additional attributes that describe the application.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
     /// <p>The working directory for the application.</p>
-    pub fn working_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn working_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.working_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The working directory for the application.</p>
-    pub fn set_working_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_working_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.working_directory = input;
         self
     }
@@ -322,18 +287,12 @@ impl ApplicationBuilder {
         &self.arn
     }
     /// <p>The app block ARN of the application.</p>
-    pub fn app_block_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_block_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_block_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The app block ARN of the application.</p>
-    pub fn set_app_block_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_block_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_block_arn = input;
         self
     }
@@ -347,10 +306,7 @@ impl ApplicationBuilder {
         self
     }
     /// <p>The S3 location of the application icon.</p>
-    pub fn set_icon_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_icon_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.icon_s3_location = input;
         self
     }
@@ -370,17 +326,12 @@ impl ApplicationBuilder {
         self
     }
     /// <p>The platforms on which the application can run.</p>
-    pub fn set_platforms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>,
-    ) -> Self {
+    pub fn set_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>) -> Self {
         self.platforms = input;
         self
     }
     /// <p>The platforms on which the application can run.</p>
-    pub fn get_platforms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformType>> {
+    pub fn get_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformType>> {
         &self.platforms
     }
     /// Appends an item to `instance_families`.
@@ -388,27 +339,19 @@ impl ApplicationBuilder {
     /// To override the contents of this collection use [`set_instance_families`](Self::set_instance_families).
     ///
     /// <p>The instance families for the application.</p>
-    pub fn instance_families(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_families(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_families.unwrap_or_default();
         v.push(input.into());
         self.instance_families = ::std::option::Option::Some(v);
         self
     }
     /// <p>The instance families for the application.</p>
-    pub fn set_instance_families(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_families(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_families = input;
         self
     }
     /// <p>The instance families for the application.</p>
-    pub fn get_instance_families(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_families(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_families
     }
     /// <p>The time at which the application was created within the app block.</p>
@@ -417,10 +360,7 @@ impl ApplicationBuilder {
         self
     }
     /// <p>The time at which the application was created within the app block.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }

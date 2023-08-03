@@ -5,21 +5,16 @@
 pub struct BatchAssociateServiceActionWithProvisioningArtifactOutput {
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
     #[doc(hidden)]
-    pub failed_service_action_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedServiceActionAssociation>>,
+    pub failed_service_action_associations: ::std::option::Option<::std::vec::Vec<crate::types::FailedServiceActionAssociation>>,
     _request_id: Option<String>,
 }
 impl BatchAssociateServiceActionWithProvisioningArtifactOutput {
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
-    pub fn failed_service_action_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FailedServiceActionAssociation]> {
+    pub fn failed_service_action_associations(&self) -> ::std::option::Option<&[crate::types::FailedServiceActionAssociation]> {
         self.failed_service_action_associations.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId
-    for BatchAssociateServiceActionWithProvisioningArtifactOutput
-{
+impl ::aws_http::request_id::RequestId for BatchAssociateServiceActionWithProvisioningArtifactOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -33,12 +28,9 @@ impl BatchAssociateServiceActionWithProvisioningArtifactOutput {
 
 /// A builder for [`BatchAssociateServiceActionWithProvisioningArtifactOutput`](crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAssociateServiceActionWithProvisioningArtifactOutputBuilder {
-    pub(crate) failed_service_action_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedServiceActionAssociation>>,
+    pub(crate) failed_service_action_associations: ::std::option::Option<::std::vec::Vec<crate::types::FailedServiceActionAssociation>>,
     _request_id: Option<String>,
 }
 impl BatchAssociateServiceActionWithProvisioningArtifactOutputBuilder {
@@ -47,10 +39,7 @@ impl BatchAssociateServiceActionWithProvisioningArtifactOutputBuilder {
     /// To override the contents of this collection use [`set_failed_service_action_associations`](Self::set_failed_service_action_associations).
     ///
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
-    pub fn failed_service_action_associations(
-        mut self,
-        input: crate::types::FailedServiceActionAssociation,
-    ) -> Self {
+    pub fn failed_service_action_associations(mut self, input: crate::types::FailedServiceActionAssociation) -> Self {
         let mut v = self.failed_service_action_associations.unwrap_or_default();
         v.push(input);
         self.failed_service_action_associations = ::std::option::Option::Some(v);
@@ -65,9 +54,7 @@ impl BatchAssociateServiceActionWithProvisioningArtifactOutputBuilder {
         self
     }
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
-    pub fn get_failed_service_action_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedServiceActionAssociation>> {
+    pub fn get_failed_service_action_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedServiceActionAssociation>> {
         &self.failed_service_action_associations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -80,10 +67,11 @@ impl BatchAssociateServiceActionWithProvisioningArtifactOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchAssociateServiceActionWithProvisioningArtifactOutput`](crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactOutput).
-    pub fn build(self) -> crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactOutput {
         crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactOutput {
-            failed_service_action_associations: self.failed_service_action_associations
-            ,
+            failed_service_action_associations: self.failed_service_action_associations,
             _request_id: self._request_id,
         }
     }

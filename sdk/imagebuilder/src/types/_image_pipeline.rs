@@ -54,13 +54,10 @@ pub struct ImagePipeline {
     pub date_next_run: ::std::option::Option<::std::string::String>,
     /// <p>The tags of this image pipeline.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Contains settings for vulnerability scans.</p>
     #[doc(hidden)]
-    pub image_scanning_configuration:
-        ::std::option::Option<crate::types::ImageScanningConfiguration>,
+    pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
 }
 impl ImagePipeline {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline.</p>
@@ -100,9 +97,7 @@ impl ImagePipeline {
         self.distribution_configuration_arn.as_deref()
     }
     /// <p>The image tests configuration of the image pipeline.</p>
-    pub fn image_tests_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImageTestsConfiguration> {
+    pub fn image_tests_configuration(&self) -> ::std::option::Option<&crate::types::ImageTestsConfiguration> {
         self.image_tests_configuration.as_ref()
     }
     /// <p>The schedule of the image pipeline.</p>
@@ -130,17 +125,11 @@ impl ImagePipeline {
         self.date_next_run.as_deref()
     }
     /// <p>The tags of this image pipeline.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Contains settings for vulnerability scans.</p>
-    pub fn image_scanning_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
+    pub fn image_scanning_configuration(&self) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
 }
@@ -153,9 +142,7 @@ impl ImagePipeline {
 
 /// A builder for [`ImagePipeline`](crate::types::ImagePipeline).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImagePipelineBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -166,19 +153,15 @@ pub struct ImagePipelineBuilder {
     pub(crate) container_recipe_arn: ::std::option::Option<::std::string::String>,
     pub(crate) infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) distribution_configuration_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) image_tests_configuration:
-        ::std::option::Option<crate::types::ImageTestsConfiguration>,
+    pub(crate) image_tests_configuration: ::std::option::Option<crate::types::ImageTestsConfiguration>,
     pub(crate) schedule: ::std::option::Option<crate::types::Schedule>,
     pub(crate) status: ::std::option::Option<crate::types::PipelineStatus>,
     pub(crate) date_created: ::std::option::Option<::std::string::String>,
     pub(crate) date_updated: ::std::option::Option<::std::string::String>,
     pub(crate) date_last_run: ::std::option::Option<::std::string::String>,
     pub(crate) date_next_run: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) image_scanning_configuration:
-        ::std::option::Option<crate::types::ImageScanningConfiguration>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
 }
 impl ImagePipelineBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline.</p>
@@ -243,10 +226,7 @@ impl ImagePipelineBuilder {
         self
     }
     /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
-    pub fn set_enhanced_image_metadata_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enhanced_image_metadata_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enhanced_image_metadata_enabled = input;
         self
     }
@@ -255,18 +235,12 @@ impl ImagePipelineBuilder {
         &self.enhanced_image_metadata_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe associated with this image pipeline.</p>
-    pub fn image_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe associated with this image pipeline.</p>
-    pub fn set_image_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_recipe_arn = input;
         self
     }
@@ -275,18 +249,12 @@ impl ImagePipelineBuilder {
         &self.image_recipe_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe that is used for this pipeline.</p>
-    pub fn container_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe that is used for this pipeline.</p>
-    pub fn set_container_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_recipe_arn = input;
         self
     }
@@ -295,69 +263,45 @@ impl ImagePipelineBuilder {
         &self.container_recipe_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration associated with this image pipeline.</p>
-    pub fn infrastructure_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn infrastructure_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.infrastructure_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration associated with this image pipeline.</p>
-    pub fn set_infrastructure_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_infrastructure_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.infrastructure_configuration_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration associated with this image pipeline.</p>
-    pub fn get_infrastructure_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_infrastructure_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.infrastructure_configuration_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration associated with this image pipeline.</p>
-    pub fn distribution_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration associated with this image pipeline.</p>
-    pub fn set_distribution_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_configuration_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration associated with this image pipeline.</p>
-    pub fn get_distribution_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_distribution_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.distribution_configuration_arn
     }
     /// <p>The image tests configuration of the image pipeline.</p>
-    pub fn image_tests_configuration(
-        mut self,
-        input: crate::types::ImageTestsConfiguration,
-    ) -> Self {
+    pub fn image_tests_configuration(mut self, input: crate::types::ImageTestsConfiguration) -> Self {
         self.image_tests_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The image tests configuration of the image pipeline.</p>
-    pub fn set_image_tests_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageTestsConfiguration>,
-    ) -> Self {
+    pub fn set_image_tests_configuration(mut self, input: ::std::option::Option<crate::types::ImageTestsConfiguration>) -> Self {
         self.image_tests_configuration = input;
         self
     }
     /// <p>The image tests configuration of the image pipeline.</p>
-    pub fn get_image_tests_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageTestsConfiguration> {
+    pub fn get_image_tests_configuration(&self) -> &::std::option::Option<crate::types::ImageTestsConfiguration> {
         &self.image_tests_configuration
     }
     /// <p>The schedule of the image pipeline.</p>
@@ -380,10 +324,7 @@ impl ImagePipelineBuilder {
         self
     }
     /// <p>The status of the image pipeline.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PipelineStatus>) -> Self {
         self.status = input;
         self
     }
@@ -420,18 +361,12 @@ impl ImagePipelineBuilder {
         &self.date_updated
     }
     /// <p>This is no longer supported, and does not return a value.</p>
-    pub fn date_last_run(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn date_last_run(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date_last_run = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is no longer supported, and does not return a value.</p>
-    pub fn set_date_last_run(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_date_last_run(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.date_last_run = input;
         self
     }
@@ -440,18 +375,12 @@ impl ImagePipelineBuilder {
         &self.date_last_run
     }
     /// <p>The next date when the pipeline is scheduled to run.</p>
-    pub fn date_next_run(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn date_next_run(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date_next_run = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The next date when the pipeline is scheduled to run.</p>
-    pub fn set_date_next_run(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_date_next_run(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.date_next_run = input;
         self
     }
@@ -464,54 +393,33 @@ impl ImagePipelineBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of this image pipeline.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags of this image pipeline.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags of this image pipeline.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Contains settings for vulnerability scans.</p>
-    pub fn image_scanning_configuration(
-        mut self,
-        input: crate::types::ImageScanningConfiguration,
-    ) -> Self {
+    pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.image_scanning_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains settings for vulnerability scans.</p>
-    pub fn set_image_scanning_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageScanningConfiguration>,
-    ) -> Self {
+    pub fn set_image_scanning_configuration(mut self, input: ::std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
         self.image_scanning_configuration = input;
         self
     }
     /// <p>Contains settings for vulnerability scans.</p>
-    pub fn get_image_scanning_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
+    pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         &self.image_scanning_configuration
     }
     /// Consumes the builder and constructs a [`ImagePipeline`](crate::types::ImagePipeline).

@@ -17,37 +17,27 @@ impl GetResourceRequestStatusInput {
 }
 impl GetResourceRequestStatusInput {
     /// Creates a new builder-style object to manufacture [`GetResourceRequestStatusInput`](crate::operation::get_resource_request_status::GetResourceRequestStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_request_status::builders::GetResourceRequestStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_resource_request_status::builders::GetResourceRequestStatusInputBuilder {
         crate::operation::get_resource_request_status::builders::GetResourceRequestStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceRequestStatusInput`](crate::operation::get_resource_request_status::GetResourceRequestStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceRequestStatusInputBuilder {
     pub(crate) request_token: ::std::option::Option<::std::string::String>,
 }
 impl GetResourceRequestStatusInputBuilder {
     /// <p>A unique token used to track the progress of the resource operation request.</p>
     /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
-    pub fn request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique token used to track the progress of the resource operation request.</p>
     /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
-    pub fn set_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_token = input;
         self
     }
@@ -63,10 +53,8 @@ impl GetResourceRequestStatusInputBuilder {
         crate::operation::get_resource_request_status::GetResourceRequestStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resource_request_status::GetResourceRequestStatusInput {
-                request_token: self.request_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_resource_request_status::GetResourceRequestStatusInput {
+            request_token: self.request_token,
+        })
     }
 }

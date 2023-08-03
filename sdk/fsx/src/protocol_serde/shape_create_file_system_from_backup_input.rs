@@ -63,7 +63,10 @@ pub fn ser_create_file_system_from_backup_input(
     if let Some(var_20) = &input.open_zfs_configuration {
         #[allow(unused_mut)]
         let mut object_21 = object.key("OpenZFSConfiguration").start_object();
-        crate::protocol_serde::shape_create_file_system_open_zfs_configuration::ser_create_file_system_open_zfs_configuration(&mut object_21, var_20)?;
+        crate::protocol_serde::shape_create_file_system_open_zfs_configuration::ser_create_file_system_open_zfs_configuration(
+            &mut object_21,
+            var_20,
+        )?;
         object_21.finish();
     }
     if let Some(var_22) = &input.storage_capacity {

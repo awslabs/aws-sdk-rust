@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetSerialConsoleAccessStatusOutput {
 }
 impl GetSerialConsoleAccessStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetSerialConsoleAccessStatusOutput`](crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput).
-    pub fn builder() -> crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusOutputBuilder{
+    pub fn builder() -> crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusOutputBuilder {
         crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSerialConsoleAccessStatusOutput`](crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSerialConsoleAccessStatusOutputBuilder {
     pub(crate) serial_console_access_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,10 +58,7 @@ impl GetSerialConsoleAccessStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSerialConsoleAccessStatusOutput`](crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput
-    {
+    pub fn build(self) -> crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput {
         crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput {
             serial_console_access_enabled: self.serial_console_access_enabled,
             _request_id: self._request_id,

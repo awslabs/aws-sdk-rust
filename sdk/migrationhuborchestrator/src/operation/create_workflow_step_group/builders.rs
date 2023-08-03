@@ -26,8 +26,7 @@ impl CreateWorkflowStepGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorkflowStepGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_workflow_step_group::builders::CreateWorkflowStepGroupInputBuilder,
+    inner: crate::operation::create_workflow_step_group::builders::CreateWorkflowStepGroupInputBuilder,
 }
 impl CreateWorkflowStepGroupFluentBuilder {
     /// Creates a new `CreateWorkflowStepGroup`.
@@ -38,10 +37,7 @@ impl CreateWorkflowStepGroupFluentBuilder {
         }
     }
     /// Access the CreateWorkflowStepGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_workflow_step_group::builders::CreateWorkflowStepGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_workflow_step_group::builders::CreateWorkflowStepGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateWorkflowStepGroupFluentBuilder {
             crate::operation::create_workflow_step_group::CreateWorkflowStepGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workflow_step_group::CreateWorkflowStepGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workflow_step_group::CreateWorkflowStepGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateWorkflowStepGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateWorkflowStepGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workflow_step_group::CreateWorkflowStepGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workflow_step_group::CreateWorkflowStepGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workflow_step_group::CreateWorkflowStepGroupError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateWorkflowStepGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workflow_step_group::CreateWorkflowStepGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workflow_step_group::CreateWorkflowStepGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workflow_step_group::CreateWorkflowStepGroupError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl CreateWorkflowStepGroupFluentBuilder {
             crate::operation::create_workflow_step_group::CreateWorkflowStepGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workflow_step_group::CreateWorkflowStepGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workflow_step_group::CreateWorkflowStepGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -176,10 +161,7 @@ impl CreateWorkflowStepGroupFluentBuilder {
         self
     }
     /// <p>The next step group.</p>
-    pub fn set_next(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_next(input);
         self
     }
@@ -197,10 +179,7 @@ impl CreateWorkflowStepGroupFluentBuilder {
         self
     }
     /// <p>The previous step group.</p>
-    pub fn set_previous(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_previous(input);
         self
     }

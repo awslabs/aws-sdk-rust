@@ -32,13 +32,10 @@ impl LambdaFunctionAssociations {
 
 /// A builder for [`LambdaFunctionAssociations`](crate::types::LambdaFunctionAssociations).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaFunctionAssociationsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>>,
 }
 impl LambdaFunctionAssociationsBuilder {
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
@@ -67,17 +64,12 @@ impl LambdaFunctionAssociationsBuilder {
         self
     }
     /// <p> <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>>) -> Self {
         self.items = input;
         self
     }
     /// <p> <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`LambdaFunctionAssociations`](crate::types::LambdaFunctionAssociations).

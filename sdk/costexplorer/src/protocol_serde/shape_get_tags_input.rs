@@ -27,10 +27,7 @@ pub fn ser_get_tags_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_sort_definition::ser_sort_definition(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_sort_definition::ser_sort_definition(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }

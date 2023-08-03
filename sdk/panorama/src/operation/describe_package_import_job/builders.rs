@@ -26,7 +26,7 @@ impl DescribePackageImportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePackageImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_package_import_job::builders::DescribePackageImportJobInputBuilder,
+    inner: crate::operation::describe_package_import_job::builders::DescribePackageImportJobInputBuilder,
 }
 impl DescribePackageImportJobFluentBuilder {
     /// Creates a new `DescribePackageImportJob`.
@@ -37,7 +37,7 @@ impl DescribePackageImportJobFluentBuilder {
         }
     }
     /// Access the DescribePackageImportJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_package_import_job::builders::DescribePackageImportJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_package_import_job::builders::DescribePackageImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribePackageImportJobFluentBuilder {
             crate::operation::describe_package_import_job::DescribePackageImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_package_import_job::DescribePackageImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_package_import_job::DescribePackageImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribePackageImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribePackageImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_package_import_job::DescribePackageImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_package_import_job::DescribePackageImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_package_import_job::DescribePackageImportJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribePackageImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_package_import_job::DescribePackageImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_package_import_job::DescribePackageImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_package_import_job::DescribePackageImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribePackageImportJobFluentBuilder {
             crate::operation::describe_package_import_job::DescribePackageImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_package_import_job::DescribePackageImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_package_import_job::DescribePackageImportJobError>,
     > {
         self.customize_middleware().await
     }

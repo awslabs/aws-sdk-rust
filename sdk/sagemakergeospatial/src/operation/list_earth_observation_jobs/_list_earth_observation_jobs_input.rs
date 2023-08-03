@@ -54,9 +54,7 @@ impl ::std::fmt::Debug for ListEarthObservationJobsInput {
 }
 impl ListEarthObservationJobsInput {
     /// Creates a new builder-style object to manufacture [`ListEarthObservationJobsInput`](crate::operation::list_earth_observation_jobs::ListEarthObservationJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsInputBuilder {
         crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsInputBuilder::default()
     }
 }
@@ -78,17 +76,12 @@ impl ListEarthObservationJobsInputBuilder {
         self
     }
     /// <p>A filter that retrieves only jobs with a specific status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::EarthObservationJobStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::EarthObservationJobStatus>) -> Self {
         self.status_equals = input;
         self
     }
     /// <p>A filter that retrieves only jobs with a specific status.</p>
-    pub fn get_status_equals(
-        &self,
-    ) -> &::std::option::Option<crate::types::EarthObservationJobStatus> {
+    pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::EarthObservationJobStatus> {
         &self.status_equals
     }
     /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
@@ -154,15 +147,13 @@ impl ListEarthObservationJobsInputBuilder {
         crate::operation::list_earth_observation_jobs::ListEarthObservationJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_earth_observation_jobs::ListEarthObservationJobsInput {
-                status_equals: self.status_equals,
-                sort_order: self.sort_order,
-                sort_by: self.sort_by,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_earth_observation_jobs::ListEarthObservationJobsInput {
+            status_equals: self.status_equals,
+            sort_order: self.sort_order,
+            sort_by: self.sort_by,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
 impl ::std::fmt::Debug for ListEarthObservationJobsInputBuilder {

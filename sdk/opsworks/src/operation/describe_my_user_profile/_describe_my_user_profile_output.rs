@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeMyUserProfileOutput {
 }
 impl DescribeMyUserProfileOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMyUserProfileOutput`](crate::operation::describe_my_user_profile::DescribeMyUserProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_my_user_profile::builders::DescribeMyUserProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_my_user_profile::builders::DescribeMyUserProfileOutputBuilder {
         crate::operation::describe_my_user_profile::builders::DescribeMyUserProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMyUserProfileOutput`](crate::operation::describe_my_user_profile::DescribeMyUserProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMyUserProfileOutputBuilder {
     pub(crate) user_profile: ::std::option::Option<crate::types::SelfUserProfile>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl DescribeMyUserProfileOutputBuilder {
         self
     }
     /// <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
-    pub fn set_user_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::SelfUserProfile>,
-    ) -> Self {
+    pub fn set_user_profile(mut self, input: ::std::option::Option<crate::types::SelfUserProfile>) -> Self {
         self.user_profile = input;
         self
     }

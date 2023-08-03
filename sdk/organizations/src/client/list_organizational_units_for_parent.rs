@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`organizational_units(Option<Vec<OrganizationalUnit>>)`](crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentOutput::organizational_units): <p>A list of the OUs in the specified root or parent OU.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListOrganizationalUnitsForParentError>`](crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentError)
-    pub fn list_organizational_units_for_parent(&self) -> crate::operation::list_organizational_units_for_parent::builders::ListOrganizationalUnitsForParentFluentBuilder{
+    pub fn list_organizational_units_for_parent(
+        &self,
+    ) -> crate::operation::list_organizational_units_for_parent::builders::ListOrganizationalUnitsForParentFluentBuilder {
         crate::operation::list_organizational_units_for_parent::builders::ListOrganizationalUnitsForParentFluentBuilder::new(self.handle.clone())
     }
 }

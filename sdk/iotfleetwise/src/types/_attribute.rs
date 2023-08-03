@@ -95,9 +95,7 @@ impl Attribute {
 
 /// A builder for [`Attribute`](crate::types::Attribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttributeBuilder {
     pub(crate) fully_qualified_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_type: ::std::option::Option<crate::types::NodeDataType>,
@@ -113,18 +111,12 @@ pub struct AttributeBuilder {
 }
 impl AttributeBuilder {
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
-    pub fn fully_qualified_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fully_qualified_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fully_qualified_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
-    pub fn set_fully_qualified_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fully_qualified_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fully_qualified_name = input;
         self
     }
@@ -138,10 +130,7 @@ impl AttributeBuilder {
         self
     }
     /// <p>The specified data type of the attribute. </p>
-    pub fn set_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NodeDataType>,
-    ) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::NodeDataType>) -> Self {
         self.data_type = input;
         self
     }
@@ -182,27 +171,19 @@ impl AttributeBuilder {
     /// To override the contents of this collection use [`set_allowed_values`](Self::set_allowed_values).
     ///
     /// <p>A list of possible values an attribute can be assigned.</p>
-    pub fn allowed_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_values.unwrap_or_default();
         v.push(input.into());
         self.allowed_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of possible values an attribute can be assigned.</p>
-    pub fn set_allowed_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_values = input;
         self
     }
     /// <p>A list of possible values an attribute can be assigned.</p>
-    pub fn get_allowed_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_values
     }
     /// <p>The specified possible minimum value of the attribute.</p>
@@ -235,19 +216,13 @@ impl AttributeBuilder {
     }
     /// <p>A specified value for the attribute.</p>
     #[deprecated(note = "assignedValue is no longer in use")]
-    pub fn assigned_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assigned_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assigned_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A specified value for the attribute.</p>
     #[deprecated(note = "assignedValue is no longer in use")]
-    pub fn set_assigned_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assigned_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assigned_value = input;
         self
     }
@@ -257,18 +232,12 @@ impl AttributeBuilder {
         &self.assigned_value
     }
     /// <p>The default value of the attribute.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value of the attribute.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }
@@ -277,18 +246,12 @@ impl AttributeBuilder {
         &self.default_value
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
-    pub fn deprecation_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deprecation_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deprecation_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
-    pub fn set_deprecation_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deprecation_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deprecation_message = input;
         self
     }

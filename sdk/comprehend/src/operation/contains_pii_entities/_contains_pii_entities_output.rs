@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ContainsPiiEntitiesOutput {
 }
 impl ContainsPiiEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`ContainsPiiEntitiesOutput`](crate::operation::contains_pii_entities::ContainsPiiEntitiesOutput).
-    pub fn builder(
-    ) -> crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesOutputBuilder {
-        crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesOutputBuilder {
+        crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ContainsPiiEntitiesOutput`](crate::operation::contains_pii_entities::ContainsPiiEntitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainsPiiEntitiesOutputBuilder {
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<crate::types::EntityLabel>>,
     _request_id: Option<String>,
@@ -50,10 +46,7 @@ impl ContainsPiiEntitiesOutputBuilder {
         self
     }
     /// <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityLabel>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityLabel>>) -> Self {
         self.labels = input;
         self
     }

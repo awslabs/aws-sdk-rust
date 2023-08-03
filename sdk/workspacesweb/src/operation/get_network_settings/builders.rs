@@ -10,10 +10,7 @@ impl GetNetworkSettingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_network_settings::GetNetworkSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_settings::GetNetworkSettingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_settings::GetNetworkSettingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_network_settings();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetNetworkSettingsFluentBuilder {
         }
     }
     /// Access the GetNetworkSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_network_settings::builders::GetNetworkSettingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_network_settings::builders::GetNetworkSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetNetworkSettingsFluentBuilder {
             crate::operation::get_network_settings::GetNetworkSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_settings::GetNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_settings::GetNetworkSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetNetworkSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetNetworkSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_network_settings::GetNetworkSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_settings::GetNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_settings::GetNetworkSettingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetNetworkSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_network_settings::GetNetworkSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_settings::GetNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_settings::GetNetworkSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetNetworkSettingsFluentBuilder {
             crate::operation::get_network_settings::GetNetworkSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_settings::GetNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_settings::GetNetworkSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_settings_arn(input.into());
         self
     }
     /// <p>The ARN of the network settings.</p>
-    pub fn set_network_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_settings_arn(input);
         self
     }

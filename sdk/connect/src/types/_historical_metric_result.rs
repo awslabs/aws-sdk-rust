@@ -30,13 +30,10 @@ impl HistoricalMetricResult {
 
 /// A builder for [`HistoricalMetricResult`](crate::types::HistoricalMetricResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HistoricalMetricResultBuilder {
     pub(crate) dimensions: ::std::option::Option<crate::types::Dimensions>,
-    pub(crate) collections:
-        ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricData>>,
+    pub(crate) collections: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricData>>,
 }
 impl HistoricalMetricResultBuilder {
     /// <p>The dimension for the metrics.</p>
@@ -45,10 +42,7 @@ impl HistoricalMetricResultBuilder {
         self
     }
     /// <p>The dimension for the metrics.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<crate::types::Dimensions>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<crate::types::Dimensions>) -> Self {
         self.dimensions = input;
         self
     }
@@ -68,17 +62,12 @@ impl HistoricalMetricResultBuilder {
         self
     }
     /// <p>The set of metrics.</p>
-    pub fn set_collections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricData>>,
-    ) -> Self {
+    pub fn set_collections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricData>>) -> Self {
         self.collections = input;
         self
     }
     /// <p>The set of metrics.</p>
-    pub fn get_collections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricData>> {
+    pub fn get_collections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricData>> {
         &self.collections
     }
     /// Consumes the builder and constructs a [`HistoricalMetricResult`](crate::types::HistoricalMetricResult).

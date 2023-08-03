@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateManagedInstanceRoleOutput {
 }
 impl UpdateManagedInstanceRoleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateManagedInstanceRoleOutput`](crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleOutput).
-    pub fn builder() -> crate::operation::update_managed_instance_role::builders::UpdateManagedInstanceRoleOutputBuilder{
+    pub fn builder() -> crate::operation::update_managed_instance_role::builders::UpdateManagedInstanceRoleOutputBuilder {
         crate::operation::update_managed_instance_role::builders::UpdateManagedInstanceRoleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateManagedInstanceRoleOutput`](crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateManagedInstanceRoleOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateManagedInstanceRoleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateManagedInstanceRoleOutput`](crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleOutput {
+    pub fn build(self) -> crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleOutput {
         crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleOutput {
             _request_id: self._request_id,
         }

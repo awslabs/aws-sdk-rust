@@ -79,7 +79,9 @@ pub fn ser_modify_vpn_tunnel_options_specification(
         for item_23 in var_22 {
             #[allow(unused_mut)]
             let mut entry_25 = list_24.entry();
-            crate::protocol_serde::shape_phase1_encryption_algorithms_request_list_value::ser_phase1_encryption_algorithms_request_list_value(entry_25, item_23)?;
+            crate::protocol_serde::shape_phase1_encryption_algorithms_request_list_value::ser_phase1_encryption_algorithms_request_list_value(
+                entry_25, item_23,
+            )?;
         }
         list_24.finish();
     }
@@ -90,7 +92,9 @@ pub fn ser_modify_vpn_tunnel_options_specification(
         for item_28 in var_27 {
             #[allow(unused_mut)]
             let mut entry_30 = list_29.entry();
-            crate::protocol_serde::shape_phase2_encryption_algorithms_request_list_value::ser_phase2_encryption_algorithms_request_list_value(entry_30, item_28)?;
+            crate::protocol_serde::shape_phase2_encryption_algorithms_request_list_value::ser_phase2_encryption_algorithms_request_list_value(
+                entry_30, item_28,
+            )?;
         }
         list_29.finish();
     }
@@ -101,7 +105,9 @@ pub fn ser_modify_vpn_tunnel_options_specification(
         for item_33 in var_32 {
             #[allow(unused_mut)]
             let mut entry_35 = list_34.entry();
-            crate::protocol_serde::shape_phase1_integrity_algorithms_request_list_value::ser_phase1_integrity_algorithms_request_list_value(entry_35, item_33)?;
+            crate::protocol_serde::shape_phase1_integrity_algorithms_request_list_value::ser_phase1_integrity_algorithms_request_list_value(
+                entry_35, item_33,
+            )?;
         }
         list_34.finish();
     }
@@ -112,7 +118,9 @@ pub fn ser_modify_vpn_tunnel_options_specification(
         for item_38 in var_37 {
             #[allow(unused_mut)]
             let mut entry_40 = list_39.entry();
-            crate::protocol_serde::shape_phase2_integrity_algorithms_request_list_value::ser_phase2_integrity_algorithms_request_list_value(entry_40, item_38)?;
+            crate::protocol_serde::shape_phase2_integrity_algorithms_request_list_value::ser_phase2_integrity_algorithms_request_list_value(
+                entry_40, item_38,
+            )?;
         }
         list_39.finish();
     }
@@ -123,7 +131,9 @@ pub fn ser_modify_vpn_tunnel_options_specification(
         for item_43 in var_42 {
             #[allow(unused_mut)]
             let mut entry_45 = list_44.entry();
-            crate::protocol_serde::shape_phase1_dh_group_numbers_request_list_value::ser_phase1_dh_group_numbers_request_list_value(entry_45, item_43)?;
+            crate::protocol_serde::shape_phase1_dh_group_numbers_request_list_value::ser_phase1_dh_group_numbers_request_list_value(
+                entry_45, item_43,
+            )?;
         }
         list_44.finish();
     }
@@ -134,7 +144,9 @@ pub fn ser_modify_vpn_tunnel_options_specification(
         for item_48 in var_47 {
             #[allow(unused_mut)]
             let mut entry_50 = list_49.entry();
-            crate::protocol_serde::shape_phase2_dh_group_numbers_request_list_value::ser_phase2_dh_group_numbers_request_list_value(entry_50, item_48)?;
+            crate::protocol_serde::shape_phase2_dh_group_numbers_request_list_value::ser_phase2_dh_group_numbers_request_list_value(
+                entry_50, item_48,
+            )?;
         }
         list_49.finish();
     }

@@ -26,7 +26,7 @@ impl DescribeSnomedctInferenceJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSNOMEDCTInferenceJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_snomedct_inference_job::builders::DescribeSnomedctInferenceJobInputBuilder,
+    inner: crate::operation::describe_snomedct_inference_job::builders::DescribeSnomedctInferenceJobInputBuilder,
 }
 impl DescribeSNOMEDCTInferenceJobFluentBuilder {
     /// Creates a new `DescribeSNOMEDCTInferenceJob`.
@@ -37,7 +37,7 @@ impl DescribeSNOMEDCTInferenceJobFluentBuilder {
         }
     }
     /// Access the DescribeSNOMEDCTInferenceJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_snomedct_inference_job::builders::DescribeSnomedctInferenceJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_snomedct_inference_job::builders::DescribeSnomedctInferenceJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeSNOMEDCTInferenceJobFluentBuilder {
             crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeSNOMEDCTInferenceJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeSNOMEDCTInferenceJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeSNOMEDCTInferenceJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeSNOMEDCTInferenceJobFluentBuilder {
             crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError>,
     > {
         self.customize_middleware().await
     }

@@ -27,7 +27,7 @@ impl CreateLicenseConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLicenseConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_license_configuration::builders::CreateLicenseConfigurationInputBuilder,
+    inner: crate::operation::create_license_configuration::builders::CreateLicenseConfigurationInputBuilder,
 }
 impl CreateLicenseConfigurationFluentBuilder {
     /// Creates a new `CreateLicenseConfiguration`.
@@ -38,7 +38,7 @@ impl CreateLicenseConfigurationFluentBuilder {
         }
     }
     /// Access the CreateLicenseConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_license_configuration::builders::CreateLicenseConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_license_configuration::builders::CreateLicenseConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateLicenseConfigurationFluentBuilder {
             crate::operation::create_license_configuration::CreateLicenseConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_license_configuration::CreateLicenseConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_license_configuration::CreateLicenseConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateLicenseConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateLicenseConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_license_configuration::CreateLicenseConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_license_configuration::CreateLicenseConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_license_configuration::CreateLicenseConfigurationError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateLicenseConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_license_configuration::CreateLicenseConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_license_configuration::CreateLicenseConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_license_configuration::CreateLicenseConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl CreateLicenseConfigurationFluentBuilder {
             crate::operation::create_license_configuration::CreateLicenseConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_license_configuration::CreateLicenseConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_license_configuration::CreateLicenseConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -155,17 +144,12 @@ impl CreateLicenseConfigurationFluentBuilder {
         self
     }
     /// <p>Dimension used to track the license inventory.</p>
-    pub fn set_license_counting_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LicenseCountingType>,
-    ) -> Self {
+    pub fn set_license_counting_type(mut self, input: ::std::option::Option<crate::types::LicenseCountingType>) -> Self {
         self.inner = self.inner.set_license_counting_type(input);
         self
     }
     /// <p>Dimension used to track the license inventory.</p>
-    pub fn get_license_counting_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::LicenseCountingType> {
+    pub fn get_license_counting_type(&self) -> &::std::option::Option<crate::types::LicenseCountingType> {
         self.inner.get_license_counting_type()
     }
     /// <p>Number of licenses managed by the license configuration.</p>
@@ -208,10 +192,7 @@ impl CreateLicenseConfigurationFluentBuilder {
     /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
     /// </ul>
     /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
-    pub fn license_rules(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_rules(input.into());
         self
     }
@@ -223,10 +204,7 @@ impl CreateLicenseConfigurationFluentBuilder {
     /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
     /// </ul>
     /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
-    pub fn set_license_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_license_rules(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_license_rules(input);
         self
     }
@@ -238,9 +216,7 @@ impl CreateLicenseConfigurationFluentBuilder {
     /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
     /// </ul>
     /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
-    pub fn get_license_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_license_rules(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_license_rules()
     }
     /// Appends an item to `Tags`.
@@ -253,10 +229,7 @@ impl CreateLicenseConfigurationFluentBuilder {
         self
     }
     /// <p>Tags to add to the license configuration.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -288,17 +261,12 @@ impl CreateLicenseConfigurationFluentBuilder {
         self
     }
     /// <p>Product information.</p>
-    pub fn set_product_information_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>,
-    ) -> Self {
+    pub fn set_product_information_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>) -> Self {
         self.inner = self.inner.set_product_information_list(input);
         self
     }
     /// <p>Product information.</p>
-    pub fn get_product_information_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>> {
+    pub fn get_product_information_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>> {
         self.inner.get_product_information_list()
     }
 }

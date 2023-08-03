@@ -22,36 +22,26 @@ impl GetDataSetImportTaskInput {
 }
 impl GetDataSetImportTaskInput {
     /// Creates a new builder-style object to manufacture [`GetDataSetImportTaskInput`](crate::operation::get_data_set_import_task::GetDataSetImportTaskInput).
-    pub fn builder(
-    ) -> crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskInputBuilder {
         crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataSetImportTaskInput`](crate::operation::get_data_set_import_task::GetDataSetImportTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataSetImportTaskInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDataSetImportTaskInputBuilder {
     /// <p>The application identifier.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application identifier.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -76,15 +66,11 @@ impl GetDataSetImportTaskInputBuilder {
     /// Consumes the builder and constructs a [`GetDataSetImportTaskInput`](crate::operation::get_data_set_import_task::GetDataSetImportTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_data_set_import_task::GetDataSetImportTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_data_set_import_task::GetDataSetImportTaskInput {
-                application_id: self.application_id,
-                task_id: self.task_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_data_set_import_task::GetDataSetImportTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_data_set_import_task::GetDataSetImportTaskInput {
+            application_id: self.application_id,
+            task_id: self.task_id,
+        })
     }
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutResourceLogLevelOutput {
 }
 impl PutResourceLogLevelOutput {
     /// Creates a new builder-style object to manufacture [`PutResourceLogLevelOutput`](crate::operation::put_resource_log_level::PutResourceLogLevelOutput).
-    pub fn builder(
-    ) -> crate::operation::put_resource_log_level::builders::PutResourceLogLevelOutputBuilder {
+    pub fn builder() -> crate::operation::put_resource_log_level::builders::PutResourceLogLevelOutputBuilder {
         crate::operation::put_resource_log_level::builders::PutResourceLogLevelOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutResourceLogLevelOutput`](crate::operation::put_resource_log_level::PutResourceLogLevelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutResourceLogLevelOutputBuilder {
     _request_id: Option<String>,
 }

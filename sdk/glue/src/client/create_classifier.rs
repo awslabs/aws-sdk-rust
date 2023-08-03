@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`csv_classifier(CreateCsvClassifierRequest)`](crate::operation::create_classifier::builders::CreateClassifierFluentBuilder::csv_classifier) / [`set_csv_classifier(Option<CreateCsvClassifierRequest>)`](crate::operation::create_classifier::builders::CreateClassifierFluentBuilder::set_csv_classifier): <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
     /// - On success, responds with [`CreateClassifierOutput`](crate::operation::create_classifier::CreateClassifierOutput)
     /// - On failure, responds with [`SdkError<CreateClassifierError>`](crate::operation::create_classifier::CreateClassifierError)
-    pub fn create_classifier(
-        &self,
-    ) -> crate::operation::create_classifier::builders::CreateClassifierFluentBuilder {
-        crate::operation::create_classifier::builders::CreateClassifierFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_classifier(&self) -> crate::operation::create_classifier::builders::CreateClassifierFluentBuilder {
+        crate::operation::create_classifier::builders::CreateClassifierFluentBuilder::new(self.handle.clone())
     }
 }

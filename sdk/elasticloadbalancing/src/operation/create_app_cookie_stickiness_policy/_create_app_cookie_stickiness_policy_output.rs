@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for CreateAppCookieStickinessPolicyOutput
 }
 impl CreateAppCookieStickinessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppCookieStickinessPolicyOutput`](crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyOutput).
-    pub fn builder() -> crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyOutputBuilder {
         crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAppCookieStickinessPolicyOutput`](crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppCookieStickinessPolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,10 +35,7 @@ impl CreateAppCookieStickinessPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAppCookieStickinessPolicyOutput`](crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyOutput
-    {
+    pub fn build(self) -> crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyOutput {
         crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyOutput {
             _request_id: self._request_id,
         }

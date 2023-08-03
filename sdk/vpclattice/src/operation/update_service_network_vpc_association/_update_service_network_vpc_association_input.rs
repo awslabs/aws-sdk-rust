@@ -22,42 +22,31 @@ impl UpdateServiceNetworkVpcAssociationInput {
 }
 impl UpdateServiceNetworkVpcAssociationInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceNetworkVpcAssociationInput`](crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput).
-    pub fn builder() -> crate::operation::update_service_network_vpc_association::builders::UpdateServiceNetworkVpcAssociationInputBuilder{
+    pub fn builder() -> crate::operation::update_service_network_vpc_association::builders::UpdateServiceNetworkVpcAssociationInputBuilder {
         crate::operation::update_service_network_vpc_association::builders::UpdateServiceNetworkVpcAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServiceNetworkVpcAssociationInput`](crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServiceNetworkVpcAssociationInputBuilder {
-    pub(crate) service_network_vpc_association_identifier:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) service_network_vpc_association_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateServiceNetworkVpcAssociationInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn service_network_vpc_association_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_network_vpc_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_vpc_association_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn set_service_network_vpc_association_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_network_vpc_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_vpc_association_identifier = input;
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn get_service_network_vpc_association_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_service_network_vpc_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_network_vpc_association_identifier
     }
     /// Appends an item to `security_group_ids`.
@@ -65,38 +54,33 @@ impl UpdateServiceNetworkVpcAssociationInputBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The IDs of the security groups. </p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the security groups. </p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>The IDs of the security groups. </p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`UpdateServiceNetworkVpcAssociationInput`](crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput {
-                service_network_vpc_association_identifier: self.service_network_vpc_association_identifier
-                ,
-                security_group_ids: self.security_group_ids
-                ,
-            }
+                service_network_vpc_association_identifier: self.service_network_vpc_association_identifier,
+                security_group_ids: self.security_group_ids,
+            },
         )
     }
 }

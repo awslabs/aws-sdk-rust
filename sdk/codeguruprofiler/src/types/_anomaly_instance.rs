@@ -44,9 +44,7 @@ impl AnomalyInstance {
 
 /// A builder for [`AnomalyInstance`](crate::types::AnomalyInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyInstanceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -74,10 +72,7 @@ impl AnomalyInstanceBuilder {
         self
     }
     /// <p> The start time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -91,10 +86,7 @@ impl AnomalyInstanceBuilder {
         self
     }
     /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -108,10 +100,7 @@ impl AnomalyInstanceBuilder {
         self
     }
     /// <p>Feedback type on a specific instance of anomaly submitted by the user.</p>
-    pub fn set_user_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::UserFeedback>,
-    ) -> Self {
+    pub fn set_user_feedback(mut self, input: ::std::option::Option<crate::types::UserFeedback>) -> Self {
         self.user_feedback = input;
         self
     }

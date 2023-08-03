@@ -72,9 +72,7 @@ impl NamespaceSummary {
 
 /// A builder for [`NamespaceSummary`](crate::types::NamespaceSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NamespaceSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -176,10 +174,7 @@ impl NamespaceSummaryBuilder {
         self
     }
     /// <p>The properties of the namespace.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::NamespaceProperties>,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<crate::types::NamespaceProperties>) -> Self {
         self.properties = input;
         self
     }
@@ -193,10 +188,7 @@ impl NamespaceSummaryBuilder {
         self
     }
     /// <p>The date and time that the namespace was created.</p>
-    pub fn set_create_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_date = input;
         self
     }

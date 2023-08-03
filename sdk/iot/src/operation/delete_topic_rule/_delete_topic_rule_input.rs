@@ -23,9 +23,7 @@ impl DeleteTopicRuleInput {
 
 /// A builder for [`DeleteTopicRuleInput`](crate::operation::delete_topic_rule::DeleteTopicRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTopicRuleInputBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +45,7 @@ impl DeleteTopicRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTopicRuleInput`](crate::operation::delete_topic_rule::DeleteTopicRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_topic_rule::DeleteTopicRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_topic_rule::DeleteTopicRuleInput {
-            rule_name: self.rule_name,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_topic_rule::DeleteTopicRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_topic_rule::DeleteTopicRuleInput { rule_name: self.rule_name })
     }
 }

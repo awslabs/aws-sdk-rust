@@ -37,10 +37,7 @@ impl UpdateIdentityProviderFluentBuilder {
         }
     }
     /// Access the UpdateIdentityProvider as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_identity_provider::builders::UpdateIdentityProviderInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_identity_provider::builders::UpdateIdentityProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateIdentityProviderFluentBuilder {
             crate::operation::update_identity_provider::UpdateIdentityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_identity_provider::UpdateIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider::UpdateIdentityProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateIdentityProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateIdentityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_identity_provider::UpdateIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_identity_provider::UpdateIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider::UpdateIdentityProviderError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateIdentityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_identity_provider::UpdateIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_identity_provider::UpdateIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider::UpdateIdentityProviderError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateIdentityProviderFluentBuilder {
             crate::operation::update_identity_provider::UpdateIdentityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_identity_provider::UpdateIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider::UpdateIdentityProviderError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl UpdateIdentityProviderFluentBuilder {
         self.inner.get_user_pool_id()
     }
     /// <p>The IdP name.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider_name(input.into());
         self
     }
     /// <p>The IdP name.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider_name(input);
         self
     }
@@ -173,19 +153,13 @@ impl UpdateIdentityProviderFluentBuilder {
     /// <p>The IdP details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>
     pub fn set_provider_details(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_provider_details(input);
         self
     }
     /// <p>The IdP details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>
-    pub fn get_provider_details(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_provider_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_provider_details()
     }
     /// Adds a key-value pair to `AttributeMapping`.
@@ -204,19 +178,13 @@ impl UpdateIdentityProviderFluentBuilder {
     /// <p>The IdP attribute mapping to be changed.</p>
     pub fn set_attribute_mapping(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_attribute_mapping(input);
         self
     }
     /// <p>The IdP attribute mapping to be changed.</p>
-    pub fn get_attribute_mapping(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attribute_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attribute_mapping()
     }
     /// Appends an item to `IdpIdentifiers`.
@@ -224,25 +192,17 @@ impl UpdateIdentityProviderFluentBuilder {
     /// To override the contents of this collection use [`set_idp_identifiers`](Self::set_idp_identifiers).
     ///
     /// <p>A list of IdP identifiers.</p>
-    pub fn idp_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idp_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idp_identifiers(input.into());
         self
     }
     /// <p>A list of IdP identifiers.</p>
-    pub fn set_idp_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_idp_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_idp_identifiers(input);
         self
     }
     /// <p>A list of IdP identifiers.</p>
-    pub fn get_idp_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_idp_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_idp_identifiers()
     }
 }

@@ -125,18 +125,9 @@ impl ::std::fmt::Debug for RegisterDomainInput {
         formatter.field("admin_contact", &"*** Sensitive Data Redacted ***");
         formatter.field("registrant_contact", &"*** Sensitive Data Redacted ***");
         formatter.field("tech_contact", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "privacy_protect_admin_contact",
-            &self.privacy_protect_admin_contact,
-        );
-        formatter.field(
-            "privacy_protect_registrant_contact",
-            &self.privacy_protect_registrant_contact,
-        );
-        formatter.field(
-            "privacy_protect_tech_contact",
-            &self.privacy_protect_tech_contact,
-        );
+        formatter.field("privacy_protect_admin_contact", &self.privacy_protect_admin_contact);
+        formatter.field("privacy_protect_registrant_contact", &self.privacy_protect_registrant_contact);
+        formatter.field("privacy_protect_tech_contact", &self.privacy_protect_tech_contact);
         formatter.finish()
     }
 }
@@ -202,18 +193,12 @@ impl RegisterDomainInputBuilder {
         &self.domain_name
     }
     /// <p>Reserved for future use.</p>
-    pub fn idn_lang_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idn_lang_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idn_lang_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_idn_lang_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idn_lang_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idn_lang_code = input;
         self
     }
@@ -261,10 +246,7 @@ impl RegisterDomainInputBuilder {
         self
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
-    pub fn set_admin_contact(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactDetail>,
-    ) -> Self {
+    pub fn set_admin_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
         self.admin_contact = input;
         self
     }
@@ -278,10 +260,7 @@ impl RegisterDomainInputBuilder {
         self
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
-    pub fn set_registrant_contact(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactDetail>,
-    ) -> Self {
+    pub fn set_registrant_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
         self.registrant_contact = input;
         self
     }
@@ -295,10 +274,7 @@ impl RegisterDomainInputBuilder {
         self
     }
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
-    pub fn set_tech_contact(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactDetail>,
-    ) -> Self {
+    pub fn set_tech_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
         self.tech_contact = input;
         self
     }
@@ -341,10 +317,7 @@ impl RegisterDomainInputBuilder {
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
-    pub fn set_privacy_protect_registrant_contact(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_privacy_protect_registrant_contact(mut self, input: ::std::option::Option<bool>) -> Self {
         self.privacy_protect_registrant_contact = input;
         self
     }
@@ -381,10 +354,7 @@ impl RegisterDomainInputBuilder {
     /// Consumes the builder and constructs a [`RegisterDomainInput`](crate::operation::register_domain::RegisterDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_domain::RegisterDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::register_domain::RegisterDomainInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_domain::RegisterDomainInput {
             domain_name: self.domain_name,
             idn_lang_code: self.idn_lang_code,
@@ -409,18 +379,9 @@ impl ::std::fmt::Debug for RegisterDomainInputBuilder {
         formatter.field("admin_contact", &"*** Sensitive Data Redacted ***");
         formatter.field("registrant_contact", &"*** Sensitive Data Redacted ***");
         formatter.field("tech_contact", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "privacy_protect_admin_contact",
-            &self.privacy_protect_admin_contact,
-        );
-        formatter.field(
-            "privacy_protect_registrant_contact",
-            &self.privacy_protect_registrant_contact,
-        );
-        formatter.field(
-            "privacy_protect_tech_contact",
-            &self.privacy_protect_tech_contact,
-        );
+        formatter.field("privacy_protect_admin_contact", &self.privacy_protect_admin_contact);
+        formatter.field("privacy_protect_registrant_contact", &self.privacy_protect_registrant_contact);
+        formatter.field("privacy_protect_tech_contact", &self.privacy_protect_tech_contact);
         formatter.finish()
     }
 }

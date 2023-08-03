@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`service(Option<Service>)`](crate::operation::delete_service::DeleteServiceOutput::service): <p>A description of the App Runner service that this request just deleted.</p>
     ///   - [`operation_id(Option<String>)`](crate::operation::delete_service::DeleteServiceOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     /// - On failure, responds with [`SdkError<DeleteServiceError>`](crate::operation::delete_service::DeleteServiceError)
-    pub fn delete_service(
-        &self,
-    ) -> crate::operation::delete_service::builders::DeleteServiceFluentBuilder {
-        crate::operation::delete_service::builders::DeleteServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_service(&self) -> crate::operation::delete_service::builders::DeleteServiceFluentBuilder {
+        crate::operation::delete_service::builders::DeleteServiceFluentBuilder::new(self.handle.clone())
     }
 }

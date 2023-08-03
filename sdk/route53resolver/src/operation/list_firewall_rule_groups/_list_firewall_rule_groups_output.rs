@@ -9,8 +9,7 @@ pub struct ListFirewallRuleGroupsOutput {
     /// <p>A list of your firewall rule groups.</p>
     /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
     #[doc(hidden)]
-    pub firewall_rule_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupMetadata>>,
+    pub firewall_rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupMetadata>>,
     _request_id: Option<String>,
 }
 impl ListFirewallRuleGroupsOutput {
@@ -20,9 +19,7 @@ impl ListFirewallRuleGroupsOutput {
     }
     /// <p>A list of your firewall rule groups.</p>
     /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
-    pub fn firewall_rule_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FirewallRuleGroupMetadata]> {
+    pub fn firewall_rule_groups(&self) -> ::std::option::Option<&[crate::types::FirewallRuleGroupMetadata]> {
         self.firewall_rule_groups.as_deref()
     }
 }
@@ -33,22 +30,17 @@ impl ::aws_http::request_id::RequestId for ListFirewallRuleGroupsOutput {
 }
 impl ListFirewallRuleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListFirewallRuleGroupsOutput`](crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_firewall_rule_groups::builders::ListFirewallRuleGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_firewall_rule_groups::builders::ListFirewallRuleGroupsOutputBuilder {
         crate::operation::list_firewall_rule_groups::builders::ListFirewallRuleGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFirewallRuleGroupsOutput`](crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFirewallRuleGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) firewall_rule_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupMetadata>>,
+    pub(crate) firewall_rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupMetadata>>,
     _request_id: Option<String>,
 }
 impl ListFirewallRuleGroupsOutputBuilder {
@@ -80,18 +72,13 @@ impl ListFirewallRuleGroupsOutputBuilder {
     }
     /// <p>A list of your firewall rule groups.</p>
     /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
-    pub fn set_firewall_rule_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupMetadata>>,
-    ) -> Self {
+    pub fn set_firewall_rule_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupMetadata>>) -> Self {
         self.firewall_rule_groups = input;
         self
     }
     /// <p>A list of your firewall rule groups.</p>
     /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
-    pub fn get_firewall_rule_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupMetadata>> {
+    pub fn get_firewall_rule_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupMetadata>> {
         &self.firewall_rule_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -104,9 +91,7 @@ impl ListFirewallRuleGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFirewallRuleGroupsOutput`](crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsOutput {
+    pub fn build(self) -> crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsOutput {
         crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsOutput {
             next_token: self.next_token,
             firewall_rule_groups: self.firewall_rule_groups,

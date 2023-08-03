@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateExclusionsPreviewOutput {
 }
 impl CreateExclusionsPreviewOutput {
     /// Creates a new builder-style object to manufacture [`CreateExclusionsPreviewOutput`](crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput).
-    pub fn builder(
-    ) -> crate::operation::create_exclusions_preview::builders::CreateExclusionsPreviewOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_exclusions_preview::builders::CreateExclusionsPreviewOutputBuilder {
         crate::operation::create_exclusions_preview::builders::CreateExclusionsPreviewOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateExclusionsPreviewOutput`](crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateExclusionsPreviewOutputBuilder {
     pub(crate) preview_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateExclusionsPreviewOutputBuilder {
     /// <p>Specifies the unique identifier of the requested exclusions preview. You can use the unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview API.</p>
-    pub fn preview_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preview_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preview_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the unique identifier of the requested exclusions preview. You can use the unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview API.</p>
-    pub fn set_preview_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preview_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preview_token = input;
         self
     }
@@ -68,9 +58,7 @@ impl CreateExclusionsPreviewOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateExclusionsPreviewOutput`](crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput {
+    pub fn build(self) -> crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput {
         crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput {
             preview_token: self.preview_token,
             _request_id: self._request_id,

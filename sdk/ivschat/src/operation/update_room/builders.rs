@@ -10,10 +10,7 @@ impl UpdateRoomInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_room::UpdateRoomOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_room::UpdateRoomError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_room::UpdateRoomError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_room();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateRoomFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_room::UpdateRoom,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_room::UpdateRoom, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_room::UpdateRoomError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateRoomFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateRoomFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_room::UpdateRoom,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_room::UpdateRoom, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_room::UpdateRoomError>,
     > {
         self.customize_middleware().await
@@ -146,10 +134,7 @@ impl UpdateRoomFluentBuilder {
         self
     }
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
-    pub fn set_maximum_message_rate_per_second(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_maximum_message_rate_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_maximum_message_rate_per_second(input);
         self
     }
@@ -177,17 +162,12 @@ impl UpdateRoomFluentBuilder {
         self
     }
     /// <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
-    pub fn set_message_review_handler(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageReviewHandler>,
-    ) -> Self {
+    pub fn set_message_review_handler(mut self, input: ::std::option::Option<crate::types::MessageReviewHandler>) -> Self {
         self.inner = self.inner.set_message_review_handler(input);
         self
     }
     /// <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
-    pub fn get_message_review_handler(
-        &self,
-    ) -> &::std::option::Option<crate::types::MessageReviewHandler> {
+    pub fn get_message_review_handler(&self) -> &::std::option::Option<crate::types::MessageReviewHandler> {
         self.inner.get_message_review_handler()
     }
     /// Appends an item to `loggingConfigurationIdentifiers`.
@@ -195,25 +175,17 @@ impl UpdateRoomFluentBuilder {
     /// To override the contents of this collection use [`set_logging_configuration_identifiers`](Self::set_logging_configuration_identifiers).
     ///
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn logging_configuration_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logging_configuration_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logging_configuration_identifiers(input.into());
         self
     }
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn set_logging_configuration_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_logging_configuration_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_logging_configuration_identifiers(input);
         self
     }
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn get_logging_configuration_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_logging_configuration_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_logging_configuration_identifiers()
     }
 }

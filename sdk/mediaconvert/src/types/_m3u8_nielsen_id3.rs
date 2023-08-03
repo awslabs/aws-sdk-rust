@@ -38,13 +38,7 @@
 /// If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum M3u8NielsenId3 {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for M3u8NielsenId3 {
         match s {
             "INSERT" => M3u8NielsenId3::Insert,
             "NONE" => M3u8NielsenId3::None,
-            other => {
-                M3u8NielsenId3::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => M3u8NielsenId3::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

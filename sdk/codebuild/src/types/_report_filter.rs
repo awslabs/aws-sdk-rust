@@ -23,9 +23,7 @@ impl ReportFilter {
 
 /// A builder for [`ReportFilter`](crate::types::ReportFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportFilterBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ReportStatusType>,
 }
@@ -36,10 +34,7 @@ impl ReportFilterBuilder {
         self
     }
     /// <p> The status used to filter reports. You can filter using one status only. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReportStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -49,8 +44,6 @@ impl ReportFilterBuilder {
     }
     /// Consumes the builder and constructs a [`ReportFilter`](crate::types::ReportFilter).
     pub fn build(self) -> crate::types::ReportFilter {
-        crate::types::ReportFilter {
-            status: self.status,
-        }
+        crate::types::ReportFilter { status: self.status }
     }
 }

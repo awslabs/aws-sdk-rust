@@ -8,21 +8,16 @@ pub struct DescribeProvisionedProductOutput {
     pub provisioned_product_detail: ::std::option::Option<crate::types::ProvisionedProductDetail>,
     /// <p>Any CloudWatch dashboards that were created when provisioning the product.</p>
     #[doc(hidden)]
-    pub cloud_watch_dashboards:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDashboard>>,
+    pub cloud_watch_dashboards: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDashboard>>,
     _request_id: Option<String>,
 }
 impl DescribeProvisionedProductOutput {
     /// <p>Information about the provisioned product.</p>
-    pub fn provisioned_product_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProvisionedProductDetail> {
+    pub fn provisioned_product_detail(&self) -> ::std::option::Option<&crate::types::ProvisionedProductDetail> {
         self.provisioned_product_detail.as_ref()
     }
     /// <p>Any CloudWatch dashboards that were created when provisioning the product.</p>
-    pub fn cloud_watch_dashboards(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CloudWatchDashboard]> {
+    pub fn cloud_watch_dashboards(&self) -> ::std::option::Option<&[crate::types::CloudWatchDashboard]> {
         self.cloud_watch_dashboards.as_deref()
     }
 }
@@ -33,44 +28,32 @@ impl ::aws_http::request_id::RequestId for DescribeProvisionedProductOutput {
 }
 impl DescribeProvisionedProductOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProvisionedProductOutput`](crate::operation::describe_provisioned_product::DescribeProvisionedProductOutput).
-    pub fn builder() -> crate::operation::describe_provisioned_product::builders::DescribeProvisionedProductOutputBuilder{
+    pub fn builder() -> crate::operation::describe_provisioned_product::builders::DescribeProvisionedProductOutputBuilder {
         crate::operation::describe_provisioned_product::builders::DescribeProvisionedProductOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProvisionedProductOutput`](crate::operation::describe_provisioned_product::DescribeProvisionedProductOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProvisionedProductOutputBuilder {
-    pub(crate) provisioned_product_detail:
-        ::std::option::Option<crate::types::ProvisionedProductDetail>,
-    pub(crate) cloud_watch_dashboards:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDashboard>>,
+    pub(crate) provisioned_product_detail: ::std::option::Option<crate::types::ProvisionedProductDetail>,
+    pub(crate) cloud_watch_dashboards: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDashboard>>,
     _request_id: Option<String>,
 }
 impl DescribeProvisionedProductOutputBuilder {
     /// <p>Information about the provisioned product.</p>
-    pub fn provisioned_product_detail(
-        mut self,
-        input: crate::types::ProvisionedProductDetail,
-    ) -> Self {
+    pub fn provisioned_product_detail(mut self, input: crate::types::ProvisionedProductDetail) -> Self {
         self.provisioned_product_detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the provisioned product.</p>
-    pub fn set_provisioned_product_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionedProductDetail>,
-    ) -> Self {
+    pub fn set_provisioned_product_detail(mut self, input: ::std::option::Option<crate::types::ProvisionedProductDetail>) -> Self {
         self.provisioned_product_detail = input;
         self
     }
     /// <p>Information about the provisioned product.</p>
-    pub fn get_provisioned_product_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisionedProductDetail> {
+    pub fn get_provisioned_product_detail(&self) -> &::std::option::Option<crate::types::ProvisionedProductDetail> {
         &self.provisioned_product_detail
     }
     /// Appends an item to `cloud_watch_dashboards`.
@@ -85,17 +68,12 @@ impl DescribeProvisionedProductOutputBuilder {
         self
     }
     /// <p>Any CloudWatch dashboards that were created when provisioning the product.</p>
-    pub fn set_cloud_watch_dashboards(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDashboard>>,
-    ) -> Self {
+    pub fn set_cloud_watch_dashboards(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDashboard>>) -> Self {
         self.cloud_watch_dashboards = input;
         self
     }
     /// <p>Any CloudWatch dashboards that were created when provisioning the product.</p>
-    pub fn get_cloud_watch_dashboards(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDashboard>> {
+    pub fn get_cloud_watch_dashboards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDashboard>> {
         &self.cloud_watch_dashboards
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -108,9 +86,7 @@ impl DescribeProvisionedProductOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeProvisionedProductOutput`](crate::operation::describe_provisioned_product::DescribeProvisionedProductOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_provisioned_product::DescribeProvisionedProductOutput {
+    pub fn build(self) -> crate::operation::describe_provisioned_product::DescribeProvisionedProductOutput {
         crate::operation::describe_provisioned_product::DescribeProvisionedProductOutput {
             provisioned_product_detail: self.provisioned_product_detail,
             cloud_watch_dashboards: self.cloud_watch_dashboards,

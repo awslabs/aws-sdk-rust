@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAccountAssignmentOutput`](crate::operation::create_account_assignment::CreateAccountAssignmentOutput) with field(s):
     ///   - [`account_assignment_creation_status(Option<AccountAssignmentOperationStatus>)`](crate::operation::create_account_assignment::CreateAccountAssignmentOutput::account_assignment_creation_status): <p>The status object for the account assignment creation operation.</p>
     /// - On failure, responds with [`SdkError<CreateAccountAssignmentError>`](crate::operation::create_account_assignment::CreateAccountAssignmentError)
-    pub fn create_account_assignment(
-        &self,
-    ) -> crate::operation::create_account_assignment::builders::CreateAccountAssignmentFluentBuilder
-    {
+    pub fn create_account_assignment(&self) -> crate::operation::create_account_assignment::builders::CreateAccountAssignmentFluentBuilder {
         crate::operation::create_account_assignment::builders::CreateAccountAssignmentFluentBuilder::new(self.handle.clone())
     }
 }

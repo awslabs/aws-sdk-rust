@@ -37,9 +37,7 @@ impl GetInvitationsCountFluentBuilder {
         }
     }
     /// Access the GetInvitationsCount as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_invitations_count::builders::GetInvitationsCountInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_invitations_count::builders::GetInvitationsCountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetInvitationsCountFluentBuilder {
             crate::operation::get_invitations_count::GetInvitationsCount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_invitations_count::GetInvitationsCountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_invitations_count::GetInvitationsCountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetInvitationsCountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetInvitationsCountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_invitations_count::GetInvitationsCountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_invitations_count::GetInvitationsCountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_invitations_count::GetInvitationsCountError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetInvitationsCountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_invitations_count::GetInvitationsCountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_invitations_count::GetInvitationsCountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_invitations_count::GetInvitationsCountError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetInvitationsCountFluentBuilder {
             crate::operation::get_invitations_count::GetInvitationsCount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_invitations_count::GetInvitationsCountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_invitations_count::GetInvitationsCountError>,
     > {
         self.customize_middleware().await
     }

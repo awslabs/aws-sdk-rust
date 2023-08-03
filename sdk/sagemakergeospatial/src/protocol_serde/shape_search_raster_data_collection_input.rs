@@ -12,7 +12,10 @@ pub fn ser_search_raster_data_collection_input(
     if let Some(var_3) = &input.raster_data_collection_query {
         #[allow(unused_mut)]
         let mut object_4 = object.key("RasterDataCollectionQuery").start_object();
-        crate::protocol_serde::shape_raster_data_collection_query_with_band_filter_input::ser_raster_data_collection_query_with_band_filter_input(&mut object_4, var_3)?;
+        crate::protocol_serde::shape_raster_data_collection_query_with_band_filter_input::ser_raster_data_collection_query_with_band_filter_input(
+            &mut object_4,
+            var_3,
+        )?;
         object_4.finish();
     }
     Ok(())

@@ -5,8 +5,7 @@
 pub struct GetReservationUtilizationOutput {
     /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
     #[doc(hidden)]
-    pub utilizations_by_time:
-        ::std::option::Option<::std::vec::Vec<crate::types::UtilizationByTime>>,
+    pub utilizations_by_time: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationByTime>>,
     /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
     #[doc(hidden)]
     pub total: ::std::option::Option<crate::types::ReservationAggregates>,
@@ -17,9 +16,7 @@ pub struct GetReservationUtilizationOutput {
 }
 impl GetReservationUtilizationOutput {
     /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
-    pub fn utilizations_by_time(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UtilizationByTime]> {
+    pub fn utilizations_by_time(&self) -> ::std::option::Option<&[crate::types::UtilizationByTime]> {
         self.utilizations_by_time.as_deref()
     }
     /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
@@ -38,19 +35,16 @@ impl ::aws_http::request_id::RequestId for GetReservationUtilizationOutput {
 }
 impl GetReservationUtilizationOutput {
     /// Creates a new builder-style object to manufacture [`GetReservationUtilizationOutput`](crate::operation::get_reservation_utilization::GetReservationUtilizationOutput).
-    pub fn builder() -> crate::operation::get_reservation_utilization::builders::GetReservationUtilizationOutputBuilder{
+    pub fn builder() -> crate::operation::get_reservation_utilization::builders::GetReservationUtilizationOutputBuilder {
         crate::operation::get_reservation_utilization::builders::GetReservationUtilizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetReservationUtilizationOutput`](crate::operation::get_reservation_utilization::GetReservationUtilizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReservationUtilizationOutputBuilder {
-    pub(crate) utilizations_by_time:
-        ::std::option::Option<::std::vec::Vec<crate::types::UtilizationByTime>>,
+    pub(crate) utilizations_by_time: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationByTime>>,
     pub(crate) total: ::std::option::Option<crate::types::ReservationAggregates>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -68,17 +62,12 @@ impl GetReservationUtilizationOutputBuilder {
         self
     }
     /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
-    pub fn set_utilizations_by_time(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationByTime>>,
-    ) -> Self {
+    pub fn set_utilizations_by_time(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationByTime>>) -> Self {
         self.utilizations_by_time = input;
         self
     }
     /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
-    pub fn get_utilizations_by_time(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationByTime>> {
+    pub fn get_utilizations_by_time(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationByTime>> {
         &self.utilizations_by_time
     }
     /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
@@ -87,10 +76,7 @@ impl GetReservationUtilizationOutputBuilder {
         self
     }
     /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
-    pub fn set_total(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationAggregates>,
-    ) -> Self {
+    pub fn set_total(mut self, input: ::std::option::Option<crate::types::ReservationAggregates>) -> Self {
         self.total = input;
         self
     }
@@ -99,18 +85,12 @@ impl GetReservationUtilizationOutputBuilder {
         &self.total
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -128,9 +108,7 @@ impl GetReservationUtilizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetReservationUtilizationOutput`](crate::operation::get_reservation_utilization::GetReservationUtilizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_reservation_utilization::GetReservationUtilizationOutput {
+    pub fn build(self) -> crate::operation::get_reservation_utilization::GetReservationUtilizationOutput {
         crate::operation::get_reservation_utilization::GetReservationUtilizationOutput {
             utilizations_by_time: self.utilizations_by_time,
             total: self.total,

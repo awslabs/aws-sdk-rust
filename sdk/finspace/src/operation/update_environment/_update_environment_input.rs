@@ -45,25 +45,20 @@ impl UpdateEnvironmentInput {
         self.federation_mode.as_ref()
     }
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
-    pub fn federation_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FederationParameters> {
+    pub fn federation_parameters(&self) -> ::std::option::Option<&crate::types::FederationParameters> {
         self.federation_parameters.as_ref()
     }
 }
 impl UpdateEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
-    pub fn builder() -> crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder {
         crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -73,18 +68,12 @@ pub struct UpdateEnvironmentInputBuilder {
 }
 impl UpdateEnvironmentInputBuilder {
     /// <p>The identifier of the FinSpace environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the FinSpace environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -134,10 +123,7 @@ impl UpdateEnvironmentInputBuilder {
     /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
     /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
     /// </ul>
-    pub fn set_federation_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::FederationMode>,
-    ) -> Self {
+    pub fn set_federation_mode(mut self, input: ::std::option::Option<crate::types::FederationMode>) -> Self {
         self.federation_mode = input;
         self
     }
@@ -155,34 +141,24 @@ impl UpdateEnvironmentInputBuilder {
         self
     }
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
-    pub fn set_federation_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::FederationParameters>,
-    ) -> Self {
+    pub fn set_federation_parameters(mut self, input: ::std::option::Option<crate::types::FederationParameters>) -> Self {
         self.federation_parameters = input;
         self
     }
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
-    pub fn get_federation_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::FederationParameters> {
+    pub fn get_federation_parameters(&self) -> &::std::option::Option<crate::types::FederationParameters> {
         &self.federation_parameters
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_environment::UpdateEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_environment::UpdateEnvironmentInput {
-                environment_id: self.environment_id,
-                name: self.name,
-                description: self.description,
-                federation_mode: self.federation_mode,
-                federation_parameters: self.federation_parameters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_environment::UpdateEnvironmentInput {
+            environment_id: self.environment_id,
+            name: self.name,
+            description: self.description,
+            federation_mode: self.federation_mode,
+            federation_parameters: self.federation_parameters,
+        })
     }
 }

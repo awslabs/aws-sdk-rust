@@ -69,9 +69,7 @@ impl ListPoliciesInput {
 
 /// A builder for [`ListPoliciesInput`](crate::operation::list_policies::ListPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPoliciesInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::PolicyScopeType>,
     pub(crate) only_attached: ::std::option::Option<bool>,
@@ -91,10 +89,7 @@ impl ListPoliciesInputBuilder {
     /// <p>The scope to use for filtering the results.</p>
     /// <p>To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer managed policies in your Amazon Web Services account, set <code>Scope</code> to <code>Local</code>.</p>
     /// <p>This parameter is optional. If it is not included, or if it is set to <code>All</code>, all policies are returned.</p>
-    pub fn set_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyScopeType>,
-    ) -> Self {
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::PolicyScopeType>) -> Self {
         self.scope = input;
         self
     }
@@ -145,10 +140,7 @@ impl ListPoliciesInputBuilder {
     /// <p>The policy usage method to use for filtering the results.</p>
     /// <p>To list only permissions policies, set&nbsp;<code>PolicyUsageFilter</code>&nbsp;to&nbsp;<code>PermissionsPolicy</code>. To list only the policies used to set permissions boundaries, set&nbsp;the value to&nbsp;<code>PermissionsBoundary</code>.</p>
     /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
-    pub fn set_policy_usage_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyUsageType>,
-    ) -> Self {
+    pub fn set_policy_usage_filter(mut self, input: ::std::option::Option<crate::types::PolicyUsageType>) -> Self {
         self.policy_usage_filter = input;
         self
     }
@@ -190,12 +182,7 @@ impl ListPoliciesInputBuilder {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListPoliciesInput`](crate::operation::list_policies::ListPoliciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_policies::ListPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_policies::ListPoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_policies::ListPoliciesInput {
             scope: self.scope,
             only_attached: self.only_attached,

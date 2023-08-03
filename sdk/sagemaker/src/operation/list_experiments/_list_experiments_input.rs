@@ -57,9 +57,7 @@ impl ListExperimentsInput {
 
 /// A builder for [`ListExperimentsInput`](crate::operation::list_experiments::ListExperimentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExperimentsInputBuilder {
     pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -75,10 +73,7 @@ impl ListExperimentsInputBuilder {
         self
     }
     /// <p>A filter that returns only experiments created after the specified time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
@@ -92,10 +87,7 @@ impl ListExperimentsInputBuilder {
         self
     }
     /// <p>A filter that returns only experiments created before the specified time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -109,10 +101,7 @@ impl ListExperimentsInputBuilder {
         self
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortExperimentsBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortExperimentsBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -165,10 +154,7 @@ impl ListExperimentsInputBuilder {
     /// Consumes the builder and constructs a [`ListExperimentsInput`](crate::operation::list_experiments::ListExperimentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_experiments::ListExperimentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_experiments::ListExperimentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_experiments::ListExperimentsInput {
             created_after: self.created_after,
             created_before: self.created_before,

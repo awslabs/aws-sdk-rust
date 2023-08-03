@@ -9,7 +9,11 @@ impl super::Client {
     /// - On success, responds with [`CreateNotebookInstanceLifecycleConfigOutput`](crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigOutput) with field(s):
     ///   - [`notebook_instance_lifecycle_config_arn(Option<String>)`](crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigOutput::notebook_instance_lifecycle_config_arn): <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
     /// - On failure, responds with [`SdkError<CreateNotebookInstanceLifecycleConfigError>`](crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigError)
-    pub fn create_notebook_instance_lifecycle_config(&self) -> crate::operation::create_notebook_instance_lifecycle_config::builders::CreateNotebookInstanceLifecycleConfigFluentBuilder{
-        crate::operation::create_notebook_instance_lifecycle_config::builders::CreateNotebookInstanceLifecycleConfigFluentBuilder::new(self.handle.clone())
+    pub fn create_notebook_instance_lifecycle_config(
+        &self,
+    ) -> crate::operation::create_notebook_instance_lifecycle_config::builders::CreateNotebookInstanceLifecycleConfigFluentBuilder {
+        crate::operation::create_notebook_instance_lifecycle_config::builders::CreateNotebookInstanceLifecycleConfigFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

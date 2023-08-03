@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`image_id(Option<ImageIdentifier>)`](crate::operation::describe_image_replication_status::DescribeImageReplicationStatusOutput::image_id): <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     ///   - [`replication_statuses(Option<Vec<ImageReplicationStatus>>)`](crate::operation::describe_image_replication_status::DescribeImageReplicationStatusOutput::replication_statuses): <p>The replication status details for the images in the specified repository.</p>
     /// - On failure, responds with [`SdkError<DescribeImageReplicationStatusError>`](crate::operation::describe_image_replication_status::DescribeImageReplicationStatusError)
-    pub fn describe_image_replication_status(&self) -> crate::operation::describe_image_replication_status::builders::DescribeImageReplicationStatusFluentBuilder{
+    pub fn describe_image_replication_status(
+        &self,
+    ) -> crate::operation::describe_image_replication_status::builders::DescribeImageReplicationStatusFluentBuilder {
         crate::operation::describe_image_replication_status::builders::DescribeImageReplicationStatusFluentBuilder::new(self.handle.clone())
     }
 }

@@ -38,10 +38,7 @@ impl ListSAMLProviderTagsFluentBuilder {
         }
     }
     /// Access the ListSAMLProviderTags as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_saml_provider_tags::builders::ListSamlProviderTagsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_saml_provider_tags::builders::ListSamlProviderTagsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ListSAMLProviderTagsFluentBuilder {
             crate::operation::list_saml_provider_tags::ListSAMLProviderTags,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ListSAMLProviderTagsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ListSAMLProviderTagsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_saml_provider_tags::ListSamlProviderTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ListSAMLProviderTagsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_saml_provider_tags::ListSamlProviderTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError>,
     > {
         self.send_middleware().await
     }
@@ -118,38 +106,25 @@ impl ListSAMLProviderTagsFluentBuilder {
             crate::operation::list_saml_provider_tags::ListSAMLProviderTags,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_saml_provider_tags::paginator::ListSamlProviderTagsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_saml_provider_tags::paginator::ListSamlProviderTagsPaginator {
-        crate::operation::list_saml_provider_tags::paginator::ListSamlProviderTagsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_saml_provider_tags::paginator::ListSamlProviderTagsPaginator {
+        crate::operation::list_saml_provider_tags::paginator::ListSamlProviderTagsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the Security Assertion Markup Language (SAML) identity provider whose tags you want to see.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn saml_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn saml_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.saml_provider_arn(input.into());
         self
     }
     /// <p>The ARN of the Security Assertion Markup Language (SAML) identity provider whose tags you want to see.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_saml_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_saml_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_saml_provider_arn(input);
         self
     }

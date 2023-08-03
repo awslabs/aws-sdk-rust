@@ -13,7 +13,9 @@ impl super::Client {
     /// - On success, responds with [`CreateReplaceRootVolumeTaskOutput`](crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskOutput) with field(s):
     ///   - [`replace_root_volume_task(Option<ReplaceRootVolumeTask>)`](crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskOutput::replace_root_volume_task): <p>Information about the root volume replacement task.</p>
     /// - On failure, responds with [`SdkError<CreateReplaceRootVolumeTaskError>`](crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskError)
-    pub fn create_replace_root_volume_task(&self) -> crate::operation::create_replace_root_volume_task::builders::CreateReplaceRootVolumeTaskFluentBuilder{
+    pub fn create_replace_root_volume_task(
+        &self,
+    ) -> crate::operation::create_replace_root_volume_task::builders::CreateReplaceRootVolumeTaskFluentBuilder {
         crate::operation::create_replace_root_volume_task::builders::CreateReplaceRootVolumeTaskFluentBuilder::new(self.handle.clone())
     }
 }

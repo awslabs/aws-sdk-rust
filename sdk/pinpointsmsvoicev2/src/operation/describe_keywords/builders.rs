@@ -10,10 +10,7 @@ impl DescribeKeywordsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_keywords::DescribeKeywordsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_keywords::DescribeKeywordsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_keywords::DescribeKeywordsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_keywords();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DescribeKeywordsFluentBuilder {
         }
     }
     /// Access the DescribeKeywords as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_keywords::builders::DescribeKeywordsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_keywords::builders::DescribeKeywordsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DescribeKeywordsFluentBuilder {
             crate::operation::describe_keywords::DescribeKeywords,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_keywords::DescribeKeywordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_keywords::DescribeKeywordsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DescribeKeywordsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DescribeKeywordsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_keywords::DescribeKeywordsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_keywords::DescribeKeywordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_keywords::DescribeKeywordsError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DescribeKeywordsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_keywords::DescribeKeywordsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_keywords::DescribeKeywordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_keywords::DescribeKeywordsError>,
     > {
         self.send_middleware().await
     }
@@ -118,36 +104,23 @@ impl DescribeKeywordsFluentBuilder {
             crate::operation::describe_keywords::DescribeKeywords,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_keywords::DescribeKeywordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_keywords::DescribeKeywordsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_keywords::paginator::DescribeKeywordsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_keywords::paginator::DescribeKeywordsPaginator {
-        crate::operation::describe_keywords::paginator::DescribeKeywordsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_keywords::paginator::DescribeKeywordsPaginator {
+        crate::operation::describe_keywords::paginator::DescribeKeywordsPaginator::new(self.handle, self.inner)
     }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origination_identity(input.into());
         self
     }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn set_origination_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origination_identity(input);
         self
     }
@@ -165,10 +138,7 @@ impl DescribeKeywordsFluentBuilder {
         self
     }
     /// <p>An array of keywords to search for.</p>
-    pub fn set_keywords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_keywords(input);
         self
     }
@@ -186,17 +156,12 @@ impl DescribeKeywordsFluentBuilder {
         self
     }
     /// <p>An array of keyword filters to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeywordFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeywordFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>An array of keyword filters to filter the results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeywordFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeywordFilter>> {
         self.inner.get_filters()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>

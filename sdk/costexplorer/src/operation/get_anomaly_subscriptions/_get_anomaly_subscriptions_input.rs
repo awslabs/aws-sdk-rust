@@ -36,18 +36,14 @@ impl GetAnomalySubscriptionsInput {
 }
 impl GetAnomalySubscriptionsInput {
     /// Creates a new builder-style object to manufacture [`GetAnomalySubscriptionsInput`](crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsInput).
-    pub fn builder(
-    ) -> crate::operation::get_anomaly_subscriptions::builders::GetAnomalySubscriptionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_anomaly_subscriptions::builders::GetAnomalySubscriptionsInputBuilder {
         crate::operation::get_anomaly_subscriptions::builders::GetAnomalySubscriptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAnomalySubscriptionsInput`](crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAnomalySubscriptionsInputBuilder {
     pub(crate) subscription_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
@@ -60,27 +56,19 @@ impl GetAnomalySubscriptionsInputBuilder {
     /// To override the contents of this collection use [`set_subscription_arn_list`](Self::set_subscription_arn_list).
     ///
     /// <p>A list of cost anomaly subscription ARNs. </p>
-    pub fn subscription_arn_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subscription_arn_list.unwrap_or_default();
         v.push(input.into());
         self.subscription_arn_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of cost anomaly subscription ARNs. </p>
-    pub fn set_subscription_arn_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subscription_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subscription_arn_list = input;
         self
     }
     /// <p>A list of cost anomaly subscription ARNs. </p>
-    pub fn get_subscription_arn_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subscription_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subscription_arn_list
     }
     /// <p>Cost anomaly monitor ARNs. </p>
@@ -98,18 +86,12 @@ impl GetAnomalySubscriptionsInputBuilder {
         &self.monitor_arn
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -138,13 +120,11 @@ impl GetAnomalySubscriptionsInputBuilder {
         crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsInput {
-                subscription_arn_list: self.subscription_arn_list,
-                monitor_arn: self.monitor_arn,
-                next_page_token: self.next_page_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsInput {
+            subscription_arn_list: self.subscription_arn_list,
+            monitor_arn: self.monitor_arn,
+            next_page_token: self.next_page_token,
+            max_results: self.max_results,
+        })
     }
 }

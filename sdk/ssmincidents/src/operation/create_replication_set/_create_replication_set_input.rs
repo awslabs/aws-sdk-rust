@@ -5,25 +5,17 @@
 pub struct CreateReplicationSetInput {
     /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
     #[doc(hidden)]
-    pub regions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>,
-    >,
+    pub regions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>>,
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to add to the replication set.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateReplicationSetInput {
     /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
-    pub fn regions(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>,
-    > {
+    pub fn regions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>> {
         self.regions.as_ref()
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
@@ -31,35 +23,24 @@ impl CreateReplicationSetInput {
         self.client_token.as_deref()
     }
     /// <p>A list of tags to add to the replication set.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateReplicationSetInput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationSetInput`](crate::operation::create_replication_set::CreateReplicationSetInput).
-    pub fn builder(
-    ) -> crate::operation::create_replication_set::builders::CreateReplicationSetInputBuilder {
+    pub fn builder() -> crate::operation::create_replication_set::builders::CreateReplicationSetInputBuilder {
         crate::operation::create_replication_set::builders::CreateReplicationSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReplicationSetInput`](crate::operation::create_replication_set::CreateReplicationSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReplicationSetInputBuilder {
-    pub(crate) regions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>,
-    >,
+    pub(crate) regions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateReplicationSetInputBuilder {
     /// Adds a key-value pair to `regions`.
@@ -67,11 +48,7 @@ impl CreateReplicationSetInputBuilder {
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
     ///
     /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
-    pub fn regions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::RegionMapInputValue,
-    ) -> Self {
+    pub fn regions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::RegionMapInputValue) -> Self {
         let mut hash_map = self.regions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.regions = ::std::option::Option::Some(hash_map);
@@ -80,19 +57,13 @@ impl CreateReplicationSetInputBuilder {
     /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
     pub fn set_regions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>>,
     ) -> Self {
         self.regions = input;
         self
     }
     /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
-    pub fn get_regions(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>,
-    > {
+    pub fn get_regions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>> {
         &self.regions
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
@@ -114,47 +85,30 @@ impl CreateReplicationSetInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags to add to the replication set.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of tags to add to the replication set.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A list of tags to add to the replication set.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateReplicationSetInput`](crate::operation::create_replication_set::CreateReplicationSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_replication_set::CreateReplicationSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_replication_set::CreateReplicationSetInput {
-                regions: self.regions,
-                client_token: self.client_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_replication_set::CreateReplicationSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_replication_set::CreateReplicationSetInput {
+            regions: self.regions,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }

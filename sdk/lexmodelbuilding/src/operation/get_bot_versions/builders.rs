@@ -10,10 +10,7 @@ impl GetBotVersionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_bot_versions::GetBotVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bot_versions::GetBotVersionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bot_versions::GetBotVersionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_bot_versions();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl GetBotVersionsFluentBuilder {
         }
     }
     /// Access the GetBotVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_bot_versions::builders::GetBotVersionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_bot_versions::builders::GetBotVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl GetBotVersionsFluentBuilder {
             crate::operation::get_bot_versions::GetBotVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bot_versions::GetBotVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bot_versions::GetBotVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl GetBotVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl GetBotVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bot_versions::GetBotVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bot_versions::GetBotVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bot_versions::GetBotVersionsError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl GetBotVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bot_versions::GetBotVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bot_versions::GetBotVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bot_versions::GetBotVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -119,22 +105,15 @@ impl GetBotVersionsFluentBuilder {
             crate::operation::get_bot_versions::GetBotVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bot_versions::GetBotVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bot_versions::GetBotVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_bot_versions::paginator::GetBotVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_bot_versions::paginator::GetBotVersionsPaginator {
-        crate::operation::get_bot_versions::paginator::GetBotVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_bot_versions::paginator::GetBotVersionsPaginator {
+        crate::operation::get_bot_versions::paginator::GetBotVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the bot for which versions should be returned.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

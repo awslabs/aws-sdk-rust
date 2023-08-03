@@ -45,14 +45,8 @@ impl ::std::fmt::Debug for PutVoiceConnectorProxyInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PutVoiceConnectorProxyInput");
         formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field(
-            "default_session_expiry_minutes",
-            &self.default_session_expiry_minutes,
-        );
-        formatter.field(
-            "phone_number_pool_countries",
-            &self.phone_number_pool_countries,
-        );
+        formatter.field("default_session_expiry_minutes", &self.default_session_expiry_minutes);
+        formatter.field("phone_number_pool_countries", &self.phone_number_pool_countries);
         formatter.field("fall_back_phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("disabled", &self.disabled);
         formatter.finish()
@@ -60,9 +54,7 @@ impl ::std::fmt::Debug for PutVoiceConnectorProxyInput {
 }
 impl PutVoiceConnectorProxyInput {
     /// Creates a new builder-style object to manufacture [`PutVoiceConnectorProxyInput`](crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyInput).
-    pub fn builder(
-    ) -> crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyInputBuilder {
         crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyInputBuilder::default()
     }
 }
@@ -73,25 +65,18 @@ impl PutVoiceConnectorProxyInput {
 pub struct PutVoiceConnectorProxyInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) default_session_expiry_minutes: ::std::option::Option<i32>,
-    pub(crate) phone_number_pool_countries:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) phone_number_pool_countries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) fall_back_phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) disabled: ::std::option::Option<bool>,
 }
 impl PutVoiceConnectorProxyInputBuilder {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_id = input;
         self
     }
@@ -118,42 +103,28 @@ impl PutVoiceConnectorProxyInputBuilder {
     /// To override the contents of this collection use [`set_phone_number_pool_countries`](Self::set_phone_number_pool_countries).
     ///
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    pub fn phone_number_pool_countries(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_pool_countries(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.phone_number_pool_countries.unwrap_or_default();
         v.push(input.into());
         self.phone_number_pool_countries = ::std::option::Option::Some(v);
         self
     }
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    pub fn set_phone_number_pool_countries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_phone_number_pool_countries(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.phone_number_pool_countries = input;
         self
     }
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    pub fn get_phone_number_pool_countries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_phone_number_pool_countries(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.phone_number_pool_countries
     }
     /// <p>The phone number to route calls to after a proxy session expires.</p>
-    pub fn fall_back_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fall_back_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fall_back_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number to route calls to after a proxy session expires.</p>
-    pub fn set_fall_back_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fall_back_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fall_back_phone_number = input;
         self
     }
@@ -182,29 +153,21 @@ impl PutVoiceConnectorProxyInputBuilder {
         crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyInput {
-                voice_connector_id: self.voice_connector_id,
-                default_session_expiry_minutes: self.default_session_expiry_minutes,
-                phone_number_pool_countries: self.phone_number_pool_countries,
-                fall_back_phone_number: self.fall_back_phone_number,
-                disabled: self.disabled,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyInput {
+            voice_connector_id: self.voice_connector_id,
+            default_session_expiry_minutes: self.default_session_expiry_minutes,
+            phone_number_pool_countries: self.phone_number_pool_countries,
+            fall_back_phone_number: self.fall_back_phone_number,
+            disabled: self.disabled,
+        })
     }
 }
 impl ::std::fmt::Debug for PutVoiceConnectorProxyInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PutVoiceConnectorProxyInputBuilder");
         formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field(
-            "default_session_expiry_minutes",
-            &self.default_session_expiry_minutes,
-        );
-        formatter.field(
-            "phone_number_pool_countries",
-            &self.phone_number_pool_countries,
-        );
+        formatter.field("default_session_expiry_minutes", &self.default_session_expiry_minutes);
+        formatter.field("phone_number_pool_countries", &self.phone_number_pool_countries);
         formatter.field("fall_back_phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("disabled", &self.disabled);
         formatter.finish()

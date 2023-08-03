@@ -5,15 +5,12 @@
 pub struct DescribeEventsDetectionJobOutput {
     /// <p>An object that contains the properties associated with an event detection job.</p>
     #[doc(hidden)]
-    pub events_detection_job_properties:
-        ::std::option::Option<crate::types::EventsDetectionJobProperties>,
+    pub events_detection_job_properties: ::std::option::Option<crate::types::EventsDetectionJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeEventsDetectionJobOutput {
     /// <p>An object that contains the properties associated with an event detection job.</p>
-    pub fn events_detection_job_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EventsDetectionJobProperties> {
+    pub fn events_detection_job_properties(&self) -> ::std::option::Option<&crate::types::EventsDetectionJobProperties> {
         self.events_detection_job_properties.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeEventsDetectionJobOutput {
 }
 impl DescribeEventsDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventsDetectionJobOutput`](crate::operation::describe_events_detection_job::DescribeEventsDetectionJobOutput).
-    pub fn builder() -> crate::operation::describe_events_detection_job::builders::DescribeEventsDetectionJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_events_detection_job::builders::DescribeEventsDetectionJobOutputBuilder {
         crate::operation::describe_events_detection_job::builders::DescribeEventsDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventsDetectionJobOutput`](crate::operation::describe_events_detection_job::DescribeEventsDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventsDetectionJobOutputBuilder {
-    pub(crate) events_detection_job_properties:
-        ::std::option::Option<crate::types::EventsDetectionJobProperties>,
+    pub(crate) events_detection_job_properties: ::std::option::Option<crate::types::EventsDetectionJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeEventsDetectionJobOutputBuilder {
     /// <p>An object that contains the properties associated with an event detection job.</p>
-    pub fn events_detection_job_properties(
-        mut self,
-        input: crate::types::EventsDetectionJobProperties,
-    ) -> Self {
+    pub fn events_detection_job_properties(mut self, input: crate::types::EventsDetectionJobProperties) -> Self {
         self.events_detection_job_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the properties associated with an event detection job.</p>
-    pub fn set_events_detection_job_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::EventsDetectionJobProperties>,
-    ) -> Self {
+    pub fn set_events_detection_job_properties(mut self, input: ::std::option::Option<crate::types::EventsDetectionJobProperties>) -> Self {
         self.events_detection_job_properties = input;
         self
     }
     /// <p>An object that contains the properties associated with an event detection job.</p>
-    pub fn get_events_detection_job_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventsDetectionJobProperties> {
+    pub fn get_events_detection_job_properties(&self) -> &::std::option::Option<crate::types::EventsDetectionJobProperties> {
         &self.events_detection_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +58,7 @@ impl DescribeEventsDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEventsDetectionJobOutput`](crate::operation::describe_events_detection_job::DescribeEventsDetectionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_events_detection_job::DescribeEventsDetectionJobOutput {
+    pub fn build(self) -> crate::operation::describe_events_detection_job::DescribeEventsDetectionJobOutput {
         crate::operation::describe_events_detection_job::DescribeEventsDetectionJobOutput {
             events_detection_job_properties: self.events_detection_job_properties,
             _request_id: self._request_id,

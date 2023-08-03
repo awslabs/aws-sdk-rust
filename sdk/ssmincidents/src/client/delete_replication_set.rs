@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_replication_set::builders::DeleteReplicationSetFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_replication_set::builders::DeleteReplicationSetFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the replication set you're deleting.</p>
     /// - On success, responds with [`DeleteReplicationSetOutput`](crate::operation::delete_replication_set::DeleteReplicationSetOutput)
     /// - On failure, responds with [`SdkError<DeleteReplicationSetError>`](crate::operation::delete_replication_set::DeleteReplicationSetError)
-    pub fn delete_replication_set(
-        &self,
-    ) -> crate::operation::delete_replication_set::builders::DeleteReplicationSetFluentBuilder {
-        crate::operation::delete_replication_set::builders::DeleteReplicationSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_replication_set(&self) -> crate::operation::delete_replication_set::builders::DeleteReplicationSetFluentBuilder {
+        crate::operation::delete_replication_set::builders::DeleteReplicationSetFluentBuilder::new(self.handle.clone())
     }
 }

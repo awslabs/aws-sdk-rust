@@ -10,10 +10,7 @@ impl GetBuiltinIntentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_builtin_intents::GetBuiltinIntentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_builtin_intents::GetBuiltinIntentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_builtin_intents::GetBuiltinIntentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_builtin_intents();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetBuiltinIntentsFluentBuilder {
         }
     }
     /// Access the GetBuiltinIntents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_builtin_intents::builders::GetBuiltinIntentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_builtin_intents::builders::GetBuiltinIntentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl GetBuiltinIntentsFluentBuilder {
             crate::operation::get_builtin_intents::GetBuiltinIntents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_builtin_intents::GetBuiltinIntentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_builtin_intents::GetBuiltinIntentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl GetBuiltinIntentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl GetBuiltinIntentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_builtin_intents::GetBuiltinIntentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_builtin_intents::GetBuiltinIntentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_builtin_intents::GetBuiltinIntentsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl GetBuiltinIntentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_builtin_intents::GetBuiltinIntentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_builtin_intents::GetBuiltinIntentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_builtin_intents::GetBuiltinIntentsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl GetBuiltinIntentsFluentBuilder {
             crate::operation::get_builtin_intents::GetBuiltinIntents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_builtin_intents::GetBuiltinIntentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_builtin_intents::GetBuiltinIntentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_builtin_intents::paginator::GetBuiltinIntentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_builtin_intents::paginator::GetBuiltinIntentsPaginator {
-        crate::operation::get_builtin_intents::paginator::GetBuiltinIntentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_builtin_intents::paginator::GetBuiltinIntentsPaginator {
+        crate::operation::get_builtin_intents::paginator::GetBuiltinIntentsPaginator::new(self.handle, self.inner)
     }
     /// <p>A list of locales that the intent supports.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
@@ -149,18 +128,12 @@ impl GetBuiltinIntentsFluentBuilder {
         self.inner.get_locale()
     }
     /// <p>Substring to match in built-in intent signatures. An intent will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
-    pub fn signature_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signature_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.signature_contains(input.into());
         self
     }
     /// <p>Substring to match in built-in intent signatures. An intent will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
-    pub fn set_signature_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signature_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_signature_contains(input);
         self
     }

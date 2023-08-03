@@ -5,15 +5,12 @@
 pub struct StartDbInstanceAutomatedBackupsReplicationOutput {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
     #[doc(hidden)]
-    pub db_instance_automated_backup:
-        ::std::option::Option<crate::types::DbInstanceAutomatedBackup>,
+    pub db_instance_automated_backup: ::std::option::Option<crate::types::DbInstanceAutomatedBackup>,
     _request_id: Option<String>,
 }
 impl StartDbInstanceAutomatedBackupsReplicationOutput {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-    pub fn db_instance_automated_backup(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DbInstanceAutomatedBackup> {
+    pub fn db_instance_automated_backup(&self) -> ::std::option::Option<&crate::types::DbInstanceAutomatedBackup> {
         self.db_instance_automated_backup.as_ref()
     }
 }
@@ -24,42 +21,33 @@ impl ::aws_http::request_id::RequestId for StartDbInstanceAutomatedBackupsReplic
 }
 impl StartDbInstanceAutomatedBackupsReplicationOutput {
     /// Creates a new builder-style object to manufacture [`StartDbInstanceAutomatedBackupsReplicationOutput`](crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput).
-    pub fn builder() -> crate::operation::start_db_instance_automated_backups_replication::builders::StartDbInstanceAutomatedBackupsReplicationOutputBuilder{
-        crate::operation::start_db_instance_automated_backups_replication::builders::StartDbInstanceAutomatedBackupsReplicationOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::start_db_instance_automated_backups_replication::builders::StartDbInstanceAutomatedBackupsReplicationOutputBuilder {
+        crate::operation::start_db_instance_automated_backups_replication::builders::StartDbInstanceAutomatedBackupsReplicationOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`StartDbInstanceAutomatedBackupsReplicationOutput`](crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDbInstanceAutomatedBackupsReplicationOutputBuilder {
-    pub(crate) db_instance_automated_backup:
-        ::std::option::Option<crate::types::DbInstanceAutomatedBackup>,
+    pub(crate) db_instance_automated_backup: ::std::option::Option<crate::types::DbInstanceAutomatedBackup>,
     _request_id: Option<String>,
 }
 impl StartDbInstanceAutomatedBackupsReplicationOutputBuilder {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-    pub fn db_instance_automated_backup(
-        mut self,
-        input: crate::types::DbInstanceAutomatedBackup,
-    ) -> Self {
+    pub fn db_instance_automated_backup(mut self, input: crate::types::DbInstanceAutomatedBackup) -> Self {
         self.db_instance_automated_backup = ::std::option::Option::Some(input);
         self
     }
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-    pub fn set_db_instance_automated_backup(
-        mut self,
-        input: ::std::option::Option<crate::types::DbInstanceAutomatedBackup>,
-    ) -> Self {
+    pub fn set_db_instance_automated_backup(mut self, input: ::std::option::Option<crate::types::DbInstanceAutomatedBackup>) -> Self {
         self.db_instance_automated_backup = input;
         self
     }
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-    pub fn get_db_instance_automated_backup(
-        &self,
-    ) -> &::std::option::Option<crate::types::DbInstanceAutomatedBackup> {
+    pub fn get_db_instance_automated_backup(&self) -> &::std::option::Option<crate::types::DbInstanceAutomatedBackup> {
         &self.db_instance_automated_backup
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +60,9 @@ impl StartDbInstanceAutomatedBackupsReplicationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartDbInstanceAutomatedBackupsReplicationOutput`](crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput).
-    pub fn build(self) -> crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput{
+    pub fn build(self) -> crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput {
         crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput {
-            db_instance_automated_backup: self.db_instance_automated_backup
-            ,
+            db_instance_automated_backup: self.db_instance_automated_backup,
             _request_id: self._request_id,
         }
     }

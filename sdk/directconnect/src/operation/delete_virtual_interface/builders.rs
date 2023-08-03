@@ -37,10 +37,7 @@ impl DeleteVirtualInterfaceFluentBuilder {
         }
     }
     /// Access the DeleteVirtualInterface as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_virtual_interface::builders::DeleteVirtualInterfaceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_virtual_interface::builders::DeleteVirtualInterfaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteVirtualInterfaceFluentBuilder {
             crate::operation::delete_virtual_interface::DeleteVirtualInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_interface::DeleteVirtualInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_interface::DeleteVirtualInterfaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteVirtualInterfaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteVirtualInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_virtual_interface::DeleteVirtualInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_interface::DeleteVirtualInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_interface::DeleteVirtualInterfaceError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteVirtualInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_virtual_interface::DeleteVirtualInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_interface::DeleteVirtualInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_interface::DeleteVirtualInterfaceError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteVirtualInterfaceFluentBuilder {
             crate::operation::delete_virtual_interface::DeleteVirtualInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_interface::DeleteVirtualInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_interface::DeleteVirtualInterfaceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_interface_id(input.into());
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
     }

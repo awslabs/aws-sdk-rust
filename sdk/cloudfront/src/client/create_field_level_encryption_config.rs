@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigOutput::location): <p>The fully qualified URI of the new configuration resource just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigOutput::e_tag): <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On failure, responds with [`SdkError<CreateFieldLevelEncryptionConfigError>`](crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError)
-    pub fn create_field_level_encryption_config(&self) -> crate::operation::create_field_level_encryption_config::builders::CreateFieldLevelEncryptionConfigFluentBuilder{
+    pub fn create_field_level_encryption_config(
+        &self,
+    ) -> crate::operation::create_field_level_encryption_config::builders::CreateFieldLevelEncryptionConfigFluentBuilder {
         crate::operation::create_field_level_encryption_config::builders::CreateFieldLevelEncryptionConfigFluentBuilder::new(self.handle.clone())
     }
 }

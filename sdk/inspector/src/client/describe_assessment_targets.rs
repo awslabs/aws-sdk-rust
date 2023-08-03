@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`assessment_targets(Option<Vec<AssessmentTarget>>)`](crate::operation::describe_assessment_targets::DescribeAssessmentTargetsOutput::assessment_targets): <p>Information about the assessment targets.</p>
     ///   - [`failed_items(Option<HashMap<String, FailedItemDetails>>)`](crate::operation::describe_assessment_targets::DescribeAssessmentTargetsOutput::failed_items): <p>Assessment target details that cannot be described. An error code is provided for each failed item.</p>
     /// - On failure, responds with [`SdkError<DescribeAssessmentTargetsError>`](crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError)
-    pub fn describe_assessment_targets(&self) -> crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsFluentBuilder{
+    pub fn describe_assessment_targets(&self) -> crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsFluentBuilder {
         crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsFluentBuilder::new(self.handle.clone())
     }
 }

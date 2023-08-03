@@ -37,9 +37,7 @@ impl CreateReplicationJobFluentBuilder {
         }
     }
     /// Access the CreateReplicationJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_replication_job::builders::CreateReplicationJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_replication_job::builders::CreateReplicationJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateReplicationJobFluentBuilder {
             crate::operation::create_replication_job::CreateReplicationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_job::CreateReplicationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_job::CreateReplicationJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateReplicationJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateReplicationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replication_job::CreateReplicationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_job::CreateReplicationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_job::CreateReplicationJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateReplicationJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replication_job::CreateReplicationJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_job::CreateReplicationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_job::CreateReplicationJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateReplicationJobFluentBuilder {
             crate::operation::create_replication_job::CreateReplicationJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_job::CreateReplicationJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_job::CreateReplicationJobError>,
     > {
         self.customize_middleware().await
     }
@@ -142,17 +129,12 @@ impl CreateReplicationJobFluentBuilder {
         self
     }
     /// <p>The seed replication time.</p>
-    pub fn set_seed_replication_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_seed_replication_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_seed_replication_time(input);
         self
     }
     /// <p>The seed replication time.</p>
-    pub fn get_seed_replication_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_seed_replication_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_seed_replication_time()
     }
     /// <p>The time between consecutive replication runs, in hours.</p>
@@ -189,10 +171,7 @@ impl CreateReplicationJobFluentBuilder {
         self
     }
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
-    pub fn set_license_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LicenseType>,
-    ) -> Self {
+    pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::LicenseType>) -> Self {
         self.inner = self.inner.set_license_type(input);
         self
     }

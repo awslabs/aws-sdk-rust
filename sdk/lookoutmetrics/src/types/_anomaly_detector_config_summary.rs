@@ -23,9 +23,7 @@ impl AnomalyDetectorConfigSummary {
 
 /// A builder for [`AnomalyDetectorConfigSummary`](crate::types::AnomalyDetectorConfigSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyDetectorConfigSummaryBuilder {
     pub(crate) anomaly_detector_frequency: ::std::option::Option<crate::types::Frequency>,
 }
@@ -36,17 +34,12 @@ impl AnomalyDetectorConfigSummaryBuilder {
         self
     }
     /// <p>The interval at which the detector analyzes its source data.</p>
-    pub fn set_anomaly_detector_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::Frequency>,
-    ) -> Self {
+    pub fn set_anomaly_detector_frequency(mut self, input: ::std::option::Option<crate::types::Frequency>) -> Self {
         self.anomaly_detector_frequency = input;
         self
     }
     /// <p>The interval at which the detector analyzes its source data.</p>
-    pub fn get_anomaly_detector_frequency(
-        &self,
-    ) -> &::std::option::Option<crate::types::Frequency> {
+    pub fn get_anomaly_detector_frequency(&self) -> &::std::option::Option<crate::types::Frequency> {
         &self.anomaly_detector_frequency
     }
     /// Consumes the builder and constructs a [`AnomalyDetectorConfigSummary`](crate::types::AnomalyDetectorConfigSummary).

@@ -39,12 +39,10 @@ pub struct TopicColumn {
     pub time_granularity: ::std::option::Option<crate::types::TopicTimeGranularity>,
     /// <p>The list of aggregation types that are allowed for the column. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
     #[doc(hidden)]
-    pub allowed_aggregations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
+    pub allowed_aggregations: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
     /// <p>The list of aggregation types that are not allowed for the column. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
     #[doc(hidden)]
-    pub not_allowed_aggregations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
+    pub not_allowed_aggregations: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
     /// <p>The default formatting used for values in the column.</p>
     #[doc(hidden)]
     pub default_formatting: ::std::option::Option<crate::types::DefaultFormatting>,
@@ -101,15 +99,11 @@ impl TopicColumn {
         self.time_granularity.as_ref()
     }
     /// <p>The list of aggregation types that are allowed for the column. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn allowed_aggregations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AuthorSpecifiedAggregation]> {
+    pub fn allowed_aggregations(&self) -> ::std::option::Option<&[crate::types::AuthorSpecifiedAggregation]> {
         self.allowed_aggregations.as_deref()
     }
     /// <p>The list of aggregation types that are not allowed for the column. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn not_allowed_aggregations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AuthorSpecifiedAggregation]> {
+    pub fn not_allowed_aggregations(&self) -> ::std::option::Option<&[crate::types::AuthorSpecifiedAggregation]> {
         self.not_allowed_aggregations.as_deref()
     }
     /// <p>The default formatting used for values in the column.</p>
@@ -134,9 +128,7 @@ impl TopicColumn {
 
 /// A builder for [`TopicColumn`](crate::types::TopicColumn).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TopicColumnBuilder {
     pub(crate) column_name: ::std::option::Option<::std::string::String>,
     pub(crate) column_friendly_name: ::std::option::Option<::std::string::String>,
@@ -149,14 +141,11 @@ pub struct TopicColumnBuilder {
     pub(crate) comparative_order: ::std::option::Option<crate::types::ComparativeOrder>,
     pub(crate) semantic_type: ::std::option::Option<crate::types::SemanticType>,
     pub(crate) time_granularity: ::std::option::Option<crate::types::TopicTimeGranularity>,
-    pub(crate) allowed_aggregations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
-    pub(crate) not_allowed_aggregations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
+    pub(crate) allowed_aggregations: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
+    pub(crate) not_allowed_aggregations: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
     pub(crate) default_formatting: ::std::option::Option<crate::types::DefaultFormatting>,
     pub(crate) never_aggregate_in_filter: ::std::option::Option<bool>,
-    pub(crate) cell_value_synonyms:
-        ::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>>,
+    pub(crate) cell_value_synonyms: ::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>>,
 }
 impl TopicColumnBuilder {
     /// <p>The name of the column.</p>
@@ -174,18 +163,12 @@ impl TopicColumnBuilder {
         &self.column_name
     }
     /// <p>A user-friendly name for the column.</p>
-    pub fn column_friendly_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn column_friendly_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_friendly_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-friendly name for the column.</p>
-    pub fn set_column_friendly_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_column_friendly_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_friendly_name = input;
         self
     }
@@ -194,18 +177,12 @@ impl TopicColumnBuilder {
         &self.column_friendly_name
     }
     /// <p>A description of the column and its contents.</p>
-    pub fn column_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn column_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the column and its contents.</p>
-    pub fn set_column_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_column_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_description = input;
         self
     }
@@ -218,27 +195,19 @@ impl TopicColumnBuilder {
     /// To override the contents of this collection use [`set_column_synonyms`](Self::set_column_synonyms).
     ///
     /// <p>The other names or aliases for the column.</p>
-    pub fn column_synonyms(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn column_synonyms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.column_synonyms.unwrap_or_default();
         v.push(input.into());
         self.column_synonyms = ::std::option::Option::Some(v);
         self
     }
     /// <p>The other names or aliases for the column.</p>
-    pub fn set_column_synonyms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_column_synonyms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.column_synonyms = input;
         self
     }
     /// <p>The other names or aliases for the column.</p>
-    pub fn get_column_synonyms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_column_synonyms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.column_synonyms
     }
     /// <p>The role of the column in the data. Valid values are <code>DIMENSION</code> and <code>MEASURE</code>.</p>
@@ -247,10 +216,7 @@ impl TopicColumnBuilder {
         self
     }
     /// <p>The role of the column in the data. Valid values are <code>DIMENSION</code> and <code>MEASURE</code>.</p>
-    pub fn set_column_data_role(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnDataRole>,
-    ) -> Self {
+    pub fn set_column_data_role(mut self, input: ::std::option::Option<crate::types::ColumnDataRole>) -> Self {
         self.column_data_role = input;
         self
     }
@@ -264,10 +230,7 @@ impl TopicColumnBuilder {
         self
     }
     /// <p>The type of aggregation that is performed on the column data when it's queried. Valid values for this structure are <code>SUM</code>, <code>MAX</code>, <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and <code>AVERAGE</code>.</p>
-    pub fn set_aggregation(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultAggregation>,
-    ) -> Self {
+    pub fn set_aggregation(mut self, input: ::std::option::Option<crate::types::DefaultAggregation>) -> Self {
         self.aggregation = input;
         self
     }
@@ -309,10 +272,7 @@ impl TopicColumnBuilder {
         self
     }
     /// <p>The order in which data is displayed for the column when it's used in a comparative context.</p>
-    pub fn set_comparative_order(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparativeOrder>,
-    ) -> Self {
+    pub fn set_comparative_order(mut self, input: ::std::option::Option<crate::types::ComparativeOrder>) -> Self {
         self.comparative_order = input;
         self
     }
@@ -326,10 +286,7 @@ impl TopicColumnBuilder {
         self
     }
     /// <p>The semantic type of data contained in the column.</p>
-    pub fn set_semantic_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SemanticType>,
-    ) -> Self {
+    pub fn set_semantic_type(mut self, input: ::std::option::Option<crate::types::SemanticType>) -> Self {
         self.semantic_type = input;
         self
     }
@@ -343,17 +300,12 @@ impl TopicColumnBuilder {
         self
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    pub fn set_time_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicTimeGranularity>,
-    ) -> Self {
+    pub fn set_time_granularity(mut self, input: ::std::option::Option<crate::types::TopicTimeGranularity>) -> Self {
         self.time_granularity = input;
         self
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    pub fn get_time_granularity(
-        &self,
-    ) -> &::std::option::Option<crate::types::TopicTimeGranularity> {
+    pub fn get_time_granularity(&self) -> &::std::option::Option<crate::types::TopicTimeGranularity> {
         &self.time_granularity
     }
     /// Appends an item to `allowed_aggregations`.
@@ -368,17 +320,12 @@ impl TopicColumnBuilder {
         self
     }
     /// <p>The list of aggregation types that are allowed for the column. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn set_allowed_aggregations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
-    ) -> Self {
+    pub fn set_allowed_aggregations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>) -> Self {
         self.allowed_aggregations = input;
         self
     }
     /// <p>The list of aggregation types that are allowed for the column. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn get_allowed_aggregations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>> {
+    pub fn get_allowed_aggregations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>> {
         &self.allowed_aggregations
     }
     /// Appends an item to `not_allowed_aggregations`.
@@ -386,27 +333,19 @@ impl TopicColumnBuilder {
     /// To override the contents of this collection use [`set_not_allowed_aggregations`](Self::set_not_allowed_aggregations).
     ///
     /// <p>The list of aggregation types that are not allowed for the column. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn not_allowed_aggregations(
-        mut self,
-        input: crate::types::AuthorSpecifiedAggregation,
-    ) -> Self {
+    pub fn not_allowed_aggregations(mut self, input: crate::types::AuthorSpecifiedAggregation) -> Self {
         let mut v = self.not_allowed_aggregations.unwrap_or_default();
         v.push(input);
         self.not_allowed_aggregations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of aggregation types that are not allowed for the column. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn set_not_allowed_aggregations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
-    ) -> Self {
+    pub fn set_not_allowed_aggregations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>) -> Self {
         self.not_allowed_aggregations = input;
         self
     }
     /// <p>The list of aggregation types that are not allowed for the column. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn get_not_allowed_aggregations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>> {
+    pub fn get_not_allowed_aggregations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>> {
         &self.not_allowed_aggregations
     }
     /// <p>The default formatting used for values in the column.</p>
@@ -415,17 +354,12 @@ impl TopicColumnBuilder {
         self
     }
     /// <p>The default formatting used for values in the column.</p>
-    pub fn set_default_formatting(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultFormatting>,
-    ) -> Self {
+    pub fn set_default_formatting(mut self, input: ::std::option::Option<crate::types::DefaultFormatting>) -> Self {
         self.default_formatting = input;
         self
     }
     /// <p>The default formatting used for values in the column.</p>
-    pub fn get_default_formatting(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultFormatting> {
+    pub fn get_default_formatting(&self) -> &::std::option::Option<crate::types::DefaultFormatting> {
         &self.default_formatting
     }
     /// <p>A Boolean value that indicates whether to aggregate the column data when it's used in a filter context.</p>
@@ -454,17 +388,12 @@ impl TopicColumnBuilder {
         self
     }
     /// <p>The other names or aliases for the column cell value.</p>
-    pub fn set_cell_value_synonyms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>>,
-    ) -> Self {
+    pub fn set_cell_value_synonyms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>>) -> Self {
         self.cell_value_synonyms = input;
         self
     }
     /// <p>The other names or aliases for the column cell value.</p>
-    pub fn get_cell_value_synonyms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>> {
+    pub fn get_cell_value_synonyms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>> {
         &self.cell_value_synonyms
     }
     /// Consumes the builder and constructs a [`TopicColumn`](crate::types::TopicColumn).

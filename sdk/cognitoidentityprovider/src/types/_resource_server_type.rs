@@ -44,15 +44,12 @@ impl ResourceServerType {
 
 /// A builder for [`ResourceServerType`](crate::types::ResourceServerType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceServerTypeBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) scopes:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>,
+    pub(crate) scopes: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>,
 }
 impl ResourceServerTypeBuilder {
     /// <p>The user pool ID for the user pool that hosts the resource server.</p>
@@ -109,17 +106,12 @@ impl ResourceServerTypeBuilder {
         self
     }
     /// <p>A list of scopes that are defined for the resource server.</p>
-    pub fn set_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>,
-    ) -> Self {
+    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>) -> Self {
         self.scopes = input;
         self
     }
     /// <p>A list of scopes that are defined for the resource server.</p>
-    pub fn get_scopes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>> {
+    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>> {
         &self.scopes
     }
     /// Consumes the builder and constructs a [`ResourceServerType`](crate::types::ResourceServerType).

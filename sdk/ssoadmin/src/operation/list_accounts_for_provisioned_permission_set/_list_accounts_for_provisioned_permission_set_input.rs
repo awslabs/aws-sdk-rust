@@ -43,16 +43,15 @@ impl ListAccountsForProvisionedPermissionSetInput {
 }
 impl ListAccountsForProvisionedPermissionSetInput {
     /// Creates a new builder-style object to manufacture [`ListAccountsForProvisionedPermissionSetInput`](crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetInput).
-    pub fn builder() -> crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetInputBuilder{
+    pub fn builder() -> crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetInputBuilder
+    {
         crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountsForProvisionedPermissionSetInput`](crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountsForProvisionedPermissionSetInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_set_arn: ::std::option::Option<::std::string::String>,
@@ -76,18 +75,12 @@ impl ListAccountsForProvisionedPermissionSetInputBuilder {
         &self.instance_arn
     }
     /// <p>The ARN of the <code>PermissionSet</code> from which the associated AWS accounts will be listed.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>PermissionSet</code> from which the associated AWS accounts will be listed.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_set_arn = input;
         self
     }
@@ -101,17 +94,12 @@ impl ListAccountsForProvisionedPermissionSetInputBuilder {
         self
     }
     /// <p>The permission set provisioning status for an AWS account.</p>
-    pub fn set_provisioning_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisioningStatus>,
-    ) -> Self {
+    pub fn set_provisioning_status(mut self, input: ::std::option::Option<crate::types::ProvisioningStatus>) -> Self {
         self.provisioning_status = input;
         self
     }
     /// <p>The permission set provisioning status for an AWS account.</p>
-    pub fn get_provisioning_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisioningStatus> {
+    pub fn get_provisioning_status(&self) -> &::std::option::Option<crate::types::ProvisioningStatus> {
         &self.provisioning_status
     }
     /// <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
@@ -143,20 +131,20 @@ impl ListAccountsForProvisionedPermissionSetInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAccountsForProvisionedPermissionSetInput`](crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetInput {
-                instance_arn: self.instance_arn
-                ,
-                permission_set_arn: self.permission_set_arn
-                ,
-                provisioning_status: self.provisioning_status
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                instance_arn: self.instance_arn,
+                permission_set_arn: self.permission_set_arn,
+                provisioning_status: self.provisioning_status,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

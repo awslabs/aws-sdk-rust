@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`summary(Option<SystemInstanceSummary>)`](crate::operation::undeploy_system_instance::UndeploySystemInstanceOutput::summary): <p>An object that contains summary information about the system instance that was removed from its target.</p>
     /// - On failure, responds with [`SdkError<UndeploySystemInstanceError>`](crate::operation::undeploy_system_instance::UndeploySystemInstanceError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn undeploy_system_instance(
-        &self,
-    ) -> crate::operation::undeploy_system_instance::builders::UndeploySystemInstanceFluentBuilder
-    {
+    pub fn undeploy_system_instance(&self) -> crate::operation::undeploy_system_instance::builders::UndeploySystemInstanceFluentBuilder {
         crate::operation::undeploy_system_instance::builders::UndeploySystemInstanceFluentBuilder::new(self.handle.clone())
     }
 }

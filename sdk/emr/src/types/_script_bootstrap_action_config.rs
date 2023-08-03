@@ -30,9 +30,7 @@ impl ScriptBootstrapActionConfig {
 
 /// A builder for [`ScriptBootstrapActionConfig`](crate::types::ScriptBootstrapActionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScriptBootstrapActionConfigBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,10 +62,7 @@ impl ScriptBootstrapActionConfigBuilder {
         self
     }
     /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
-    pub fn set_args(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_args(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.args = input;
         self
     }

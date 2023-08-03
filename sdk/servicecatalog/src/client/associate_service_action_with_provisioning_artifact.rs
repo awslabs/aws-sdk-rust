@@ -9,7 +9,10 @@ impl super::Client {
     ///   - [`accept_language(impl ::std::convert::Into<String>)`](crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactFluentBuilder::accept_language) / [`set_accept_language(Option<String>)`](crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactFluentBuilder::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
     /// - On success, responds with [`AssociateServiceActionWithProvisioningArtifactOutput`](crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactOutput)
     /// - On failure, responds with [`SdkError<AssociateServiceActionWithProvisioningArtifactError>`](crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactError)
-    pub fn associate_service_action_with_provisioning_artifact(&self) -> crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactFluentBuilder{
+    pub fn associate_service_action_with_provisioning_artifact(
+        &self,
+    ) -> crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactFluentBuilder
+    {
         crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactFluentBuilder::new(self.handle.clone())
     }
 }

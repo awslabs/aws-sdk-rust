@@ -47,9 +47,7 @@ impl DimensionValues {
 
 /// A builder for [`DimensionValues`](crate::types::DimensionValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionValuesBuilder {
     pub(crate) key: ::std::option::Option<crate::types::Dimension>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -91,10 +89,7 @@ impl DimensionValuesBuilder {
         self
     }
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -118,19 +113,14 @@ impl DimensionValuesBuilder {
     /// <p>The match options that you can use to filter your results.</p>
     /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    pub fn set_match_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MatchOption>>,
-    ) -> Self {
+    pub fn set_match_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchOption>>) -> Self {
         self.match_options = input;
         self
     }
     /// <p>The match options that you can use to filter your results.</p>
     /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    pub fn get_match_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchOption>> {
+    pub fn get_match_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchOption>> {
         &self.match_options
     }
     /// Consumes the builder and constructs a [`DimensionValues`](crate::types::DimensionValues).

@@ -44,9 +44,7 @@ impl DashPlaylistSettings {
 
 /// A builder for [`DashPlaylistSettings`](crate::types::DashPlaylistSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DashPlaylistSettingsBuilder {
     pub(crate) manifest_window_seconds: ::std::option::Option<i32>,
     pub(crate) min_buffer_time_seconds: ::std::option::Option<i32>,
@@ -102,10 +100,7 @@ impl DashPlaylistSettingsBuilder {
         self
     }
     /// <p>Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
-    pub fn set_suggested_presentation_delay_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_suggested_presentation_delay_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.suggested_presentation_delay_seconds = input;
         self
     }
@@ -119,9 +114,7 @@ impl DashPlaylistSettingsBuilder {
             manifest_window_seconds: self.manifest_window_seconds.unwrap_or_default(),
             min_buffer_time_seconds: self.min_buffer_time_seconds.unwrap_or_default(),
             min_update_period_seconds: self.min_update_period_seconds.unwrap_or_default(),
-            suggested_presentation_delay_seconds: self
-                .suggested_presentation_delay_seconds
-                .unwrap_or_default(),
+            suggested_presentation_delay_seconds: self.suggested_presentation_delay_seconds.unwrap_or_default(),
         }
     }
 }

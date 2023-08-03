@@ -44,9 +44,7 @@ impl DomainValidationOption {
 
 /// A builder for [`DomainValidationOption`](crate::types::DomainValidationOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainValidationOptionBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) validation_domain: ::std::option::Option<::std::string::String>,
@@ -74,10 +72,7 @@ impl DomainValidationOptionBuilder {
     /// <li> <p>postmaster@example.com</p> </li>
     /// <li> <p>webmaster@example.com</p> </li>
     /// </ul>
-    pub fn validation_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_domain = ::std::option::Option::Some(input.into());
         self
     }
@@ -89,10 +84,7 @@ impl DomainValidationOptionBuilder {
     /// <li> <p>postmaster@example.com</p> </li>
     /// <li> <p>webmaster@example.com</p> </li>
     /// </ul>
-    pub fn set_validation_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_validation_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_domain = input;
         self
     }

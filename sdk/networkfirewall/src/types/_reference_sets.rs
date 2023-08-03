@@ -6,17 +6,11 @@
 pub struct ReferenceSets {
     /// <p>The list of IP set references.</p>
     #[doc(hidden)]
-    pub ip_set_references: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IpSetReference>,
-    >,
+    pub ip_set_references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSetReference>>,
 }
 impl ReferenceSets {
     /// <p>The list of IP set references.</p>
-    pub fn ip_set_references(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::IpSetReference>,
-    > {
+    pub fn ip_set_references(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::IpSetReference>> {
         self.ip_set_references.as_ref()
     }
 }
@@ -29,13 +23,9 @@ impl ReferenceSets {
 
 /// A builder for [`ReferenceSets`](crate::types::ReferenceSets).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReferenceSetsBuilder {
-    pub(crate) ip_set_references: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IpSetReference>,
-    >,
+    pub(crate) ip_set_references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSetReference>>,
 }
 impl ReferenceSetsBuilder {
     /// Adds a key-value pair to `ip_set_references`.
@@ -43,11 +33,7 @@ impl ReferenceSetsBuilder {
     /// To override the contents of this collection use [`set_ip_set_references`](Self::set_ip_set_references).
     ///
     /// <p>The list of IP set references.</p>
-    pub fn ip_set_references(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::IpSetReference,
-    ) -> Self {
+    pub fn ip_set_references(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::IpSetReference) -> Self {
         let mut hash_map = self.ip_set_references.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.ip_set_references = ::std::option::Option::Some(hash_map);
@@ -56,19 +42,13 @@ impl ReferenceSetsBuilder {
     /// <p>The list of IP set references.</p>
     pub fn set_ip_set_references(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::IpSetReference>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSetReference>>,
     ) -> Self {
         self.ip_set_references = input;
         self
     }
     /// <p>The list of IP set references.</p>
-    pub fn get_ip_set_references(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::IpSetReference>,
-    > {
+    pub fn get_ip_set_references(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSetReference>> {
         &self.ip_set_references
     }
     /// Consumes the builder and constructs a [`ReferenceSets`](crate::types::ReferenceSets).

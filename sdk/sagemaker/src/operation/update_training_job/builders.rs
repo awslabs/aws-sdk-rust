@@ -10,10 +10,7 @@ impl UpdateTrainingJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_training_job::UpdateTrainingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_training_job::UpdateTrainingJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_training_job::UpdateTrainingJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_training_job();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateTrainingJobFluentBuilder {
         }
     }
     /// Access the UpdateTrainingJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_training_job::builders::UpdateTrainingJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_training_job::builders::UpdateTrainingJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateTrainingJobFluentBuilder {
             crate::operation::update_training_job::UpdateTrainingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_training_job::UpdateTrainingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_training_job::UpdateTrainingJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateTrainingJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateTrainingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_training_job::UpdateTrainingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_training_job::UpdateTrainingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_training_job::UpdateTrainingJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateTrainingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_training_job::UpdateTrainingJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_training_job::UpdateTrainingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_training_job::UpdateTrainingJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateTrainingJobFluentBuilder {
             crate::operation::update_training_job::UpdateTrainingJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_training_job::UpdateTrainingJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_training_job::UpdateTrainingJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of a training job to update the Debugger profiling configuration.</p>
-    pub fn training_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn training_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.training_job_name(input.into());
         self
     }
     /// <p>The name of a training job to update the Debugger profiling configuration.</p>
-    pub fn set_training_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_training_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_training_job_name(input);
         self
     }
@@ -148,17 +126,12 @@ impl UpdateTrainingJobFluentBuilder {
         self
     }
     /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
-    pub fn set_profiler_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ProfilerConfigForUpdate>,
-    ) -> Self {
+    pub fn set_profiler_config(mut self, input: ::std::option::Option<crate::types::ProfilerConfigForUpdate>) -> Self {
         self.inner = self.inner.set_profiler_config(input);
         self
     }
     /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
-    pub fn get_profiler_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProfilerConfigForUpdate> {
+    pub fn get_profiler_config(&self) -> &::std::option::Option<crate::types::ProfilerConfigForUpdate> {
         self.inner.get_profiler_config()
     }
     /// Appends an item to `ProfilerRuleConfigurations`.
@@ -166,10 +139,7 @@ impl UpdateTrainingJobFluentBuilder {
     /// To override the contents of this collection use [`set_profiler_rule_configurations`](Self::set_profiler_rule_configurations).
     ///
     /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
-    pub fn profiler_rule_configurations(
-        mut self,
-        input: crate::types::ProfilerRuleConfiguration,
-    ) -> Self {
+    pub fn profiler_rule_configurations(mut self, input: crate::types::ProfilerRuleConfiguration) -> Self {
         self.inner = self.inner.profiler_rule_configurations(input);
         self
     }
@@ -182,9 +152,7 @@ impl UpdateTrainingJobFluentBuilder {
         self
     }
     /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
-    pub fn get_profiler_rule_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfilerRuleConfiguration>> {
+    pub fn get_profiler_rule_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfilerRuleConfiguration>> {
         self.inner.get_profiler_rule_configurations()
     }
     /// <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
@@ -193,17 +161,12 @@ impl UpdateTrainingJobFluentBuilder {
         self
     }
     /// <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
-    pub fn set_resource_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceConfigForUpdate>,
-    ) -> Self {
+    pub fn set_resource_config(mut self, input: ::std::option::Option<crate::types::ResourceConfigForUpdate>) -> Self {
         self.inner = self.inner.set_resource_config(input);
         self
     }
     /// <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
-    pub fn get_resource_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceConfigForUpdate> {
+    pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::ResourceConfigForUpdate> {
         self.inner.get_resource_config()
     }
 }

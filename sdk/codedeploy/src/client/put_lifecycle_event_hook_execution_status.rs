@@ -9,7 +9,11 @@ impl super::Client {
     /// - On success, responds with [`PutLifecycleEventHookExecutionStatusOutput`](crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput) with field(s):
     ///   - [`lifecycle_event_hook_execution_id(Option<String>)`](crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput::lifecycle_event_hook_execution_id): <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
     /// - On failure, responds with [`SdkError<PutLifecycleEventHookExecutionStatusError>`](crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError)
-    pub fn put_lifecycle_event_hook_execution_status(&self) -> crate::operation::put_lifecycle_event_hook_execution_status::builders::PutLifecycleEventHookExecutionStatusFluentBuilder{
-        crate::operation::put_lifecycle_event_hook_execution_status::builders::PutLifecycleEventHookExecutionStatusFluentBuilder::new(self.handle.clone())
+    pub fn put_lifecycle_event_hook_execution_status(
+        &self,
+    ) -> crate::operation::put_lifecycle_event_hook_execution_status::builders::PutLifecycleEventHookExecutionStatusFluentBuilder {
+        crate::operation::put_lifecycle_event_hook_execution_status::builders::PutLifecycleEventHookExecutionStatusFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

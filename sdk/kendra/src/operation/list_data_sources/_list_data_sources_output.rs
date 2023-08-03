@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDataSourcesOutput {
 }
 impl ListDataSourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListDataSourcesOutput`](crate::operation::list_data_sources::ListDataSourcesOutput).
-    pub fn builder() -> crate::operation::list_data_sources::builders::ListDataSourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_data_sources::builders::ListDataSourcesOutputBuilder {
         crate::operation::list_data_sources::builders::ListDataSourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataSourcesOutput`](crate::operation::list_data_sources::ListDataSourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataSourcesOutputBuilder {
-    pub(crate) summary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>>,
+    pub(crate) summary_items: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListDataSourcesOutputBuilder {
         self
     }
     /// <p>An array of summary information for one or more data source connector.</p>
-    pub fn set_summary_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>>,
-    ) -> Self {
+    pub fn set_summary_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>>) -> Self {
         self.summary_items = input;
         self
     }
     /// <p>An array of summary information for one or more data source connector.</p>
-    pub fn get_summary_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>> {
+    pub fn get_summary_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>> {
         &self.summary_items
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of data source connectors.</p>

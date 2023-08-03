@@ -13,9 +13,7 @@ pub fn ser_describe_player_sessions_input(
         object.key("PlayerSessionId").string(var_3.as_str());
     }
     if let Some(var_4) = &input.player_session_status_filter {
-        object
-            .key("PlayerSessionStatusFilter")
-            .string(var_4.as_str());
+        object.key("PlayerSessionStatusFilter").string(var_4.as_str());
     }
     if let Some(var_5) = &input.limit {
         object.key("Limit").number(

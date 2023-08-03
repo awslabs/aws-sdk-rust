@@ -87,10 +87,7 @@ impl DataPathLabelTypeBuilder {
         self
     }
     /// <p>The visibility of the data label.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.visibility = input;
         self
     }

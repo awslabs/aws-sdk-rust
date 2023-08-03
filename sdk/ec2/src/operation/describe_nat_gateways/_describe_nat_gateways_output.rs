@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeNatGatewaysOutput {
 }
 impl DescribeNatGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNatGatewaysOutput`](crate::operation::describe_nat_gateways::DescribeNatGatewaysOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysOutputBuilder {
-        crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysOutputBuilder {
+        crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNatGatewaysOutput`](crate::operation::describe_nat_gateways::DescribeNatGatewaysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNatGatewaysOutputBuilder {
     pub(crate) nat_gateways: ::std::option::Option<::std::vec::Vec<crate::types::NatGateway>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeNatGatewaysOutputBuilder {
         self
     }
     /// <p>Information about the NAT gateways.</p>
-    pub fn set_nat_gateways(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NatGateway>>,
-    ) -> Self {
+    pub fn set_nat_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NatGateway>>) -> Self {
         self.nat_gateways = input;
         self
     }
     /// <p>Information about the NAT gateways.</p>
-    pub fn get_nat_gateways(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NatGateway>> {
+    pub fn get_nat_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NatGateway>> {
         &self.nat_gateways
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>

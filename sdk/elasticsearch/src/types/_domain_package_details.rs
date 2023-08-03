@@ -54,9 +54,7 @@ impl DomainPackageDetails {
         self.domain_name.as_deref()
     }
     /// <p>State of the association. Values are ASSOCIATING/ASSOCIATION_FAILED/ACTIVE/DISSOCIATING/DISSOCIATION_FAILED.</p>
-    pub fn domain_package_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DomainPackageStatus> {
+    pub fn domain_package_status(&self) -> ::std::option::Option<&crate::types::DomainPackageStatus> {
         self.domain_package_status.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -81,9 +79,7 @@ impl DomainPackageDetails {
 
 /// A builder for [`DomainPackageDetails`](crate::types::DomainPackageDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainPackageDetailsBuilder {
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
@@ -130,10 +126,7 @@ impl DomainPackageDetailsBuilder {
         self
     }
     /// <p>Currently supports only TXT-DICTIONARY.</p>
-    pub fn set_package_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageType>,
-    ) -> Self {
+    pub fn set_package_type(mut self, input: ::std::option::Option<crate::types::PackageType>) -> Self {
         self.package_type = input;
         self
     }
@@ -147,10 +140,7 @@ impl DomainPackageDetailsBuilder {
         self
     }
     /// <p>Timestamp of the most-recent update to the association status.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }
@@ -178,32 +168,21 @@ impl DomainPackageDetailsBuilder {
         self
     }
     /// <p>State of the association. Values are ASSOCIATING/ASSOCIATION_FAILED/ACTIVE/DISSOCIATING/DISSOCIATION_FAILED.</p>
-    pub fn set_domain_package_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainPackageStatus>,
-    ) -> Self {
+    pub fn set_domain_package_status(mut self, input: ::std::option::Option<crate::types::DomainPackageStatus>) -> Self {
         self.domain_package_status = input;
         self
     }
     /// <p>State of the association. Values are ASSOCIATING/ASSOCIATION_FAILED/ACTIVE/DISSOCIATING/DISSOCIATION_FAILED.</p>
-    pub fn get_domain_package_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::DomainPackageStatus> {
+    pub fn get_domain_package_status(&self) -> &::std::option::Option<crate::types::DomainPackageStatus> {
         &self.domain_package_status
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_version = input;
         self
     }
@@ -212,18 +191,12 @@ impl DomainPackageDetailsBuilder {
         &self.package_version
     }
     /// <p>The relative path on Amazon ES nodes, which can be used as synonym_path when the package is synonym file.</p>
-    pub fn reference_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The relative path on Amazon ES nodes, which can be used as synonym_path when the package is synonym file.</p>
-    pub fn set_reference_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_path = input;
         self
     }
@@ -237,10 +210,7 @@ impl DomainPackageDetailsBuilder {
         self
     }
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
-    pub fn set_error_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorDetails>,
-    ) -> Self {
+    pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
         self.error_details = input;
         self
     }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutInboundDmarcSettingsOutput {
 }
 impl PutInboundDmarcSettingsOutput {
     /// Creates a new builder-style object to manufacture [`PutInboundDmarcSettingsOutput`](crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsOutputBuilder {
         crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutInboundDmarcSettingsOutput`](crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutInboundDmarcSettingsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl PutInboundDmarcSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutInboundDmarcSettingsOutput`](crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsOutput {
+    pub fn build(self) -> crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsOutput {
         crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsOutput {
             _request_id: self._request_id,
         }

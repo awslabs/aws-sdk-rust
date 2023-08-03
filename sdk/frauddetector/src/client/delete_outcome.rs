@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_outcome::builders::DeleteOutcomeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_outcome::builders::DeleteOutcomeFluentBuilder::set_name): <p>The name of the outcome to delete.</p>
     /// - On success, responds with [`DeleteOutcomeOutput`](crate::operation::delete_outcome::DeleteOutcomeOutput)
     /// - On failure, responds with [`SdkError<DeleteOutcomeError>`](crate::operation::delete_outcome::DeleteOutcomeError)
-    pub fn delete_outcome(
-        &self,
-    ) -> crate::operation::delete_outcome::builders::DeleteOutcomeFluentBuilder {
-        crate::operation::delete_outcome::builders::DeleteOutcomeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_outcome(&self) -> crate::operation::delete_outcome::builders::DeleteOutcomeFluentBuilder {
+        crate::operation::delete_outcome::builders::DeleteOutcomeFluentBuilder::new(self.handle.clone())
     }
 }

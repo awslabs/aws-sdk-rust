@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for DescribeDevicePolicyConfigurationOutp
 }
 impl DescribeDevicePolicyConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDevicePolicyConfigurationOutput`](crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_device_policy_configuration::builders::DescribeDevicePolicyConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_device_policy_configuration::builders::DescribeDevicePolicyConfigurationOutputBuilder {
         crate::operation::describe_device_policy_configuration::builders::DescribeDevicePolicyConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDevicePolicyConfigurationOutput`](crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDevicePolicyConfigurationOutputBuilder {
     pub(crate) device_ca_certificate: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeDevicePolicyConfigurationOutputBuilder {
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
-    pub fn device_ca_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_ca_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_ca_certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
-    pub fn set_device_ca_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_ca_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_ca_certificate = input;
         self
     }
@@ -66,10 +58,9 @@ impl DescribeDevicePolicyConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDevicePolicyConfigurationOutput`](crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationOutput{
+    pub fn build(self) -> crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationOutput {
         crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationOutput {
-            device_ca_certificate: self.device_ca_certificate
-            ,
+            device_ca_certificate: self.device_ca_certificate,
             _request_id: self._request_id,
         }
     }

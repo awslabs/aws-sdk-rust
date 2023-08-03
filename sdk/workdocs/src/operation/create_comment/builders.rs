@@ -10,10 +10,7 @@ impl CreateCommentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_comment::CreateCommentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_comment::CreateCommentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_comment::CreateCommentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_comment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateCommentFluentBuilder {
         }
     }
     /// Access the CreateComment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_comment::builders::CreateCommentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_comment::builders::CreateCommentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateCommentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl CreateCommentFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
@@ -210,10 +196,7 @@ impl CreateCommentFluentBuilder {
         self
     }
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::CommentVisibilityType>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::CommentVisibilityType>) -> Self {
         self.inner = self.inner.set_visibility(input);
         self
     }

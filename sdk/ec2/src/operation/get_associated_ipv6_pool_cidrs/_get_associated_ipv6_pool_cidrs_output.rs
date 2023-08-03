@@ -5,8 +5,7 @@
 pub struct GetAssociatedIpv6PoolCidrsOutput {
     /// <p>Information about the IPv6 CIDR block associations.</p>
     #[doc(hidden)]
-    pub ipv6_cidr_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrAssociation>>,
+    pub ipv6_cidr_associations: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetAssociatedIpv6PoolCidrsOutput {
 }
 impl GetAssociatedIpv6PoolCidrsOutput {
     /// <p>Information about the IPv6 CIDR block associations.</p>
-    pub fn ipv6_cidr_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::Ipv6CidrAssociation]> {
+    pub fn ipv6_cidr_associations(&self) -> ::std::option::Option<&[crate::types::Ipv6CidrAssociation]> {
         self.ipv6_cidr_associations.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetAssociatedIpv6PoolCidrsOutput {
 }
 impl GetAssociatedIpv6PoolCidrsOutput {
     /// Creates a new builder-style object to manufacture [`GetAssociatedIpv6PoolCidrsOutput`](crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput).
-    pub fn builder() -> crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsOutputBuilder{
+    pub fn builder() -> crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsOutputBuilder {
         crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAssociatedIpv6PoolCidrsOutput`](crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssociatedIpv6PoolCidrsOutputBuilder {
-    pub(crate) ipv6_cidr_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrAssociation>>,
+    pub(crate) ipv6_cidr_associations: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl GetAssociatedIpv6PoolCidrsOutputBuilder {
         self
     }
     /// <p>Information about the IPv6 CIDR block associations.</p>
-    pub fn set_ipv6_cidr_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrAssociation>>,
-    ) -> Self {
+    pub fn set_ipv6_cidr_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrAssociation>>) -> Self {
         self.ipv6_cidr_associations = input;
         self
     }
     /// <p>Information about the IPv6 CIDR block associations.</p>
-    pub fn get_ipv6_cidr_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrAssociation>> {
+    pub fn get_ipv6_cidr_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrAssociation>> {
         &self.ipv6_cidr_associations
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -97,9 +86,7 @@ impl GetAssociatedIpv6PoolCidrsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAssociatedIpv6PoolCidrsOutput`](crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput {
+    pub fn build(self) -> crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput {
         crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput {
             ipv6_cidr_associations: self.ipv6_cidr_associations,
             next_token: self.next_token,

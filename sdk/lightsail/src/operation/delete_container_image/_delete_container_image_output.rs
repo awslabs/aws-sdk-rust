@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteContainerImageOutput {
 }
 impl DeleteContainerImageOutput {
     /// Creates a new builder-style object to manufacture [`DeleteContainerImageOutput`](crate::operation::delete_container_image::DeleteContainerImageOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_container_image::builders::DeleteContainerImageOutputBuilder {
+    pub fn builder() -> crate::operation::delete_container_image::builders::DeleteContainerImageOutputBuilder {
         crate::operation::delete_container_image::builders::DeleteContainerImageOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteContainerImageOutput`](crate::operation::delete_container_image::DeleteContainerImageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteContainerImageOutputBuilder {
     _request_id: Option<String>,
 }

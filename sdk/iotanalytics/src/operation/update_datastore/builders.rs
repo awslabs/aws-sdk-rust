@@ -10,10 +10,7 @@ impl UpdateDatastoreInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_datastore::UpdateDatastoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_datastore::UpdateDatastoreError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_datastore::UpdateDatastoreError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_datastore();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateDatastoreFluentBuilder {
         }
     }
     /// Access the UpdateDatastore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_datastore::builders::UpdateDatastoreInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_datastore::builders::UpdateDatastoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateDatastoreFluentBuilder {
             crate::operation::update_datastore::UpdateDatastore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_datastore::UpdateDatastoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_datastore::UpdateDatastoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateDatastoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateDatastoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_datastore::UpdateDatastoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_datastore::UpdateDatastoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_datastore::UpdateDatastoreError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateDatastoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_datastore::UpdateDatastoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_datastore::UpdateDatastoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_datastore::UpdateDatastoreError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateDatastoreFluentBuilder {
             crate::operation::update_datastore::UpdateDatastore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_datastore::UpdateDatastoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_datastore::UpdateDatastoreError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the data store to be updated.</p>
-    pub fn datastore_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn datastore_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.datastore_name(input.into());
         self
     }
     /// <p>The name of the data store to be updated.</p>
-    pub fn set_datastore_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_datastore_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_datastore_name(input);
         self
     }
@@ -148,10 +126,7 @@ impl UpdateDatastoreFluentBuilder {
         self
     }
     /// <p>How long, in days, message data is kept for the data store. The retention period can't be updated if the data store's Amazon S3 storage is customer-managed.</p>
-    pub fn set_retention_period(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPeriod>,
-    ) -> Self {
+    pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
         self.inner = self.inner.set_retention_period(input);
         self
     }
@@ -165,10 +140,7 @@ impl UpdateDatastoreFluentBuilder {
         self
     }
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
-    pub fn set_datastore_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::DatastoreStorage>,
-    ) -> Self {
+    pub fn set_datastore_storage(mut self, input: ::std::option::Option<crate::types::DatastoreStorage>) -> Self {
         self.inner = self.inner.set_datastore_storage(input);
         self
     }
@@ -179,29 +151,21 @@ impl UpdateDatastoreFluentBuilder {
     /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
-    pub fn file_format_configuration(
-        mut self,
-        input: crate::types::FileFormatConfiguration,
-    ) -> Self {
+    pub fn file_format_configuration(mut self, input: crate::types::FileFormatConfiguration) -> Self {
         self.inner = self.inner.file_format_configuration(input);
         self
     }
     /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
-    pub fn set_file_format_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FileFormatConfiguration>,
-    ) -> Self {
+    pub fn set_file_format_configuration(mut self, input: ::std::option::Option<crate::types::FileFormatConfiguration>) -> Self {
         self.inner = self.inner.set_file_format_configuration(input);
         self
     }
     /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
-    pub fn get_file_format_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FileFormatConfiguration> {
+    pub fn get_file_format_configuration(&self) -> &::std::option::Option<crate::types::FileFormatConfiguration> {
         self.inner.get_file_format_configuration()
     }
 }

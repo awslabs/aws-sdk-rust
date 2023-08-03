@@ -9,9 +9,7 @@ pub struct PropertyGroup {
     pub property_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the value of an application execution property key-value pair.</p>
     #[doc(hidden)]
-    pub property_map: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub property_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PropertyGroup {
     /// <p>Describes the key of an application execution property key-value pair.</p>
@@ -19,11 +17,7 @@ impl PropertyGroup {
         self.property_group_id.as_deref()
     }
     /// <p>Describes the value of an application execution property key-value pair.</p>
-    pub fn property_map(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn property_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.property_map.as_ref()
     }
 }
@@ -36,29 +30,19 @@ impl PropertyGroup {
 
 /// A builder for [`PropertyGroup`](crate::types::PropertyGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyGroupBuilder {
     pub(crate) property_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) property_map: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) property_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PropertyGroupBuilder {
     /// <p>Describes the key of an application execution property key-value pair.</p>
-    pub fn property_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes the key of an application execution property key-value pair.</p>
-    pub fn set_property_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_group_id = input;
         self
     }
@@ -71,11 +55,7 @@ impl PropertyGroupBuilder {
     /// To override the contents of this collection use [`set_property_map`](Self::set_property_map).
     ///
     /// <p>Describes the value of an application execution property key-value pair.</p>
-    pub fn property_map(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.property_map.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.property_map = ::std::option::Option::Some(hash_map);
@@ -84,19 +64,13 @@ impl PropertyGroupBuilder {
     /// <p>Describes the value of an application execution property key-value pair.</p>
     pub fn set_property_map(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.property_map = input;
         self
     }
     /// <p>Describes the value of an application execution property key-value pair.</p>
-    pub fn get_property_map(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_property_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.property_map
     }
     /// Consumes the builder and constructs a [`PropertyGroup`](crate::types::PropertyGroup).

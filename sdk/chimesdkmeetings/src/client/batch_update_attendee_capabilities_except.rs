@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`capabilities(AttendeeCapabilities)`](crate::operation::batch_update_attendee_capabilities_except::builders::BatchUpdateAttendeeCapabilitiesExceptFluentBuilder::capabilities) / [`set_capabilities(Option<AttendeeCapabilities>)`](crate::operation::batch_update_attendee_capabilities_except::builders::BatchUpdateAttendeeCapabilitiesExceptFluentBuilder::set_capabilities): <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
     /// - On success, responds with [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptOutput)
     /// - On failure, responds with [`SdkError<BatchUpdateAttendeeCapabilitiesExceptError>`](crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError)
-    pub fn batch_update_attendee_capabilities_except(&self) -> crate::operation::batch_update_attendee_capabilities_except::builders::BatchUpdateAttendeeCapabilitiesExceptFluentBuilder{
-        crate::operation::batch_update_attendee_capabilities_except::builders::BatchUpdateAttendeeCapabilitiesExceptFluentBuilder::new(self.handle.clone())
+    pub fn batch_update_attendee_capabilities_except(
+        &self,
+    ) -> crate::operation::batch_update_attendee_capabilities_except::builders::BatchUpdateAttendeeCapabilitiesExceptFluentBuilder {
+        crate::operation::batch_update_attendee_capabilities_except::builders::BatchUpdateAttendeeCapabilitiesExceptFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

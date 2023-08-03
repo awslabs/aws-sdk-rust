@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`ml_model_id(Option<String>)`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointOutput::ml_model_id): <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
     ///   - [`realtime_endpoint_info(Option<RealtimeEndpointInfo>)`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointOutput::realtime_endpoint_info): <p>The endpoint information of the <code>MLModel</code> </p>
     /// - On failure, responds with [`SdkError<CreateRealtimeEndpointError>`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointError)
-    pub fn create_realtime_endpoint(
-        &self,
-    ) -> crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointFluentBuilder
-    {
+    pub fn create_realtime_endpoint(&self) -> crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointFluentBuilder {
         crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointFluentBuilder::new(self.handle.clone())
     }
 }

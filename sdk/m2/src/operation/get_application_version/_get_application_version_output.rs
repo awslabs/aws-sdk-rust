@@ -63,18 +63,14 @@ impl ::aws_http::request_id::RequestId for GetApplicationVersionOutput {
 }
 impl GetApplicationVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationVersionOutput`](crate::operation::get_application_version::GetApplicationVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_application_version::builders::GetApplicationVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_application_version::builders::GetApplicationVersionOutputBuilder {
         crate::operation::get_application_version::builders::GetApplicationVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetApplicationVersionOutput`](crate::operation::get_application_version::GetApplicationVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApplicationVersionOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) application_version: ::std::option::Option<i32>,
@@ -129,18 +125,12 @@ impl GetApplicationVersionOutputBuilder {
         &self.description
     }
     /// <p>The content of the application definition. This is a JSON object that contains the resource configuration and definitions that identify an application.</p>
-    pub fn definition_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn definition_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.definition_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content of the application definition. This is a JSON object that contains the resource configuration and definitions that identify an application.</p>
-    pub fn set_definition_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_definition_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.definition_content = input;
         self
     }
@@ -154,10 +144,7 @@ impl GetApplicationVersionOutputBuilder {
         self
     }
     /// <p>The status of the application version.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationVersionLifecycle>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationVersionLifecycle>) -> Self {
         self.status = input;
         self
     }
@@ -171,10 +158,7 @@ impl GetApplicationVersionOutputBuilder {
         self
     }
     /// <p>The timestamp when the application version was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -183,18 +167,12 @@ impl GetApplicationVersionOutputBuilder {
         &self.creation_time
     }
     /// <p>The reason for the reported status.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the reported status.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }

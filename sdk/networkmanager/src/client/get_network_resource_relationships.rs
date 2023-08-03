@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`relationships(Option<Vec<Relationship>>)`](crate::operation::get_network_resource_relationships::GetNetworkResourceRelationshipsOutput::relationships): <p>The resource relationships.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_network_resource_relationships::GetNetworkResourceRelationshipsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetNetworkResourceRelationshipsError>`](crate::operation::get_network_resource_relationships::GetNetworkResourceRelationshipsError)
-    pub fn get_network_resource_relationships(&self) -> crate::operation::get_network_resource_relationships::builders::GetNetworkResourceRelationshipsFluentBuilder{
+    pub fn get_network_resource_relationships(
+        &self,
+    ) -> crate::operation::get_network_resource_relationships::builders::GetNetworkResourceRelationshipsFluentBuilder {
         crate::operation::get_network_resource_relationships::builders::GetNetworkResourceRelationshipsFluentBuilder::new(self.handle.clone())
     }
 }

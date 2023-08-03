@@ -10,10 +10,7 @@ impl GetMfaDeviceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_mfa_device::GetMfaDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_mfa_device::GetMFADeviceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_mfa_device::GetMFADeviceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_mfa_device();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetMFADeviceFluentBuilder {
         }
     }
     /// Access the GetMFADevice as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_mfa_device::builders::GetMfaDeviceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_mfa_device::builders::GetMfaDeviceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetMFADeviceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl GetMFADeviceFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
-    pub fn serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.serial_number(input.into());
         self
     }
     /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
-    pub fn set_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_serial_number(input);
         self
     }

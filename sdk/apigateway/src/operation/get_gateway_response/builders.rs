@@ -10,10 +10,7 @@ impl GetGatewayResponseInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_gateway_response::GetGatewayResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_gateway_response::GetGatewayResponseError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_gateway_response::GetGatewayResponseError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_gateway_response();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetGatewayResponseFluentBuilder {
         }
     }
     /// Access the GetGatewayResponse as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_gateway_response::builders::GetGatewayResponseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_gateway_response::builders::GetGatewayResponseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetGatewayResponseFluentBuilder {
             crate::operation::get_gateway_response::GetGatewayResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_gateway_response::GetGatewayResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_gateway_response::GetGatewayResponseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetGatewayResponseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetGatewayResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_gateway_response::GetGatewayResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_gateway_response::GetGatewayResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_gateway_response::GetGatewayResponseError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetGatewayResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_gateway_response::GetGatewayResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_gateway_response::GetGatewayResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_gateway_response::GetGatewayResponseError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetGatewayResponseFluentBuilder {
             crate::operation::get_gateway_response::GetGatewayResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_gateway_response::GetGatewayResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_gateway_response::GetGatewayResponseError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl GetGatewayResponseFluentBuilder {
         self
     }
     /// <p>The response type of the associated GatewayResponse.</p>
-    pub fn set_response_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayResponseType>,
-    ) -> Self {
+    pub fn set_response_type(mut self, input: ::std::option::Option<crate::types::GatewayResponseType>) -> Self {
         self.inner = self.inner.set_response_type(input);
         self
     }

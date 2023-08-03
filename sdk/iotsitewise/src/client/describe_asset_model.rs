@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`asset_model_last_update_date(Option<DateTime>)`](crate::operation::describe_asset_model::DescribeAssetModelOutput::asset_model_last_update_date): <p>The date the asset model was last updated, in Unix epoch time.</p>
     ///   - [`asset_model_status(Option<AssetModelStatus>)`](crate::operation::describe_asset_model::DescribeAssetModelOutput::asset_model_status): <p>The current status of the asset model, which contains a state and any error message.</p>
     /// - On failure, responds with [`SdkError<DescribeAssetModelError>`](crate::operation::describe_asset_model::DescribeAssetModelError)
-    pub fn describe_asset_model(
-        &self,
-    ) -> crate::operation::describe_asset_model::builders::DescribeAssetModelFluentBuilder {
-        crate::operation::describe_asset_model::builders::DescribeAssetModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_asset_model(&self) -> crate::operation::describe_asset_model::builders::DescribeAssetModelFluentBuilder {
+        crate::operation::describe_asset_model::builders::DescribeAssetModelFluentBuilder::new(self.handle.clone())
     }
 }

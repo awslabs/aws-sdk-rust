@@ -30,9 +30,7 @@ impl R53ResourceRecord {
 
 /// A builder for [`R53ResourceRecord`](crate::types::R53ResourceRecord).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct R53ResourceRecordBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) record_set_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl R53ResourceRecordBuilder {
         &self.domain_name
     }
     /// <p>The Route 53 Resource Record Set ID.</p>
-    pub fn record_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Route 53 Resource Record Set ID.</p>
-    pub fn set_record_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_record_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_set_id = input;
         self
     }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteFindingsFilterOutput {
 }
 impl DeleteFindingsFilterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFindingsFilterOutput`](crate::operation::delete_findings_filter::DeleteFindingsFilterOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_findings_filter::builders::DeleteFindingsFilterOutputBuilder {
+    pub fn builder() -> crate::operation::delete_findings_filter::builders::DeleteFindingsFilterOutputBuilder {
         crate::operation::delete_findings_filter::builders::DeleteFindingsFilterOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFindingsFilterOutput`](crate::operation::delete_findings_filter::DeleteFindingsFilterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFindingsFilterOutputBuilder {
     _request_id: Option<String>,
 }

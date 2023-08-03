@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`PutConfigurationAggregatorOutput`](crate::operation::put_configuration_aggregator::PutConfigurationAggregatorOutput) with field(s):
     ///   - [`configuration_aggregator(Option<ConfigurationAggregator>)`](crate::operation::put_configuration_aggregator::PutConfigurationAggregatorOutput::configuration_aggregator): <p>Returns a ConfigurationAggregator object.</p>
     /// - On failure, responds with [`SdkError<PutConfigurationAggregatorError>`](crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError)
-    pub fn put_configuration_aggregator(&self) -> crate::operation::put_configuration_aggregator::builders::PutConfigurationAggregatorFluentBuilder{
+    pub fn put_configuration_aggregator(&self) -> crate::operation::put_configuration_aggregator::builders::PutConfigurationAggregatorFluentBuilder {
         crate::operation::put_configuration_aggregator::builders::PutConfigurationAggregatorFluentBuilder::new(self.handle.clone())
     }
 }

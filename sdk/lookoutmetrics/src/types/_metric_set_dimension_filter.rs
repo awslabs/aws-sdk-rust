@@ -30,9 +30,7 @@ impl MetricSetDimensionFilter {
 
 /// A builder for [`MetricSetDimensionFilter`](crate::types::MetricSetDimensionFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricSetDimensionFilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) filter_list: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -64,10 +62,7 @@ impl MetricSetDimensionFilterBuilder {
         self
     }
     /// <p>The list of filters that you are applying.</p>
-    pub fn set_filter_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filter_list = input;
         self
     }

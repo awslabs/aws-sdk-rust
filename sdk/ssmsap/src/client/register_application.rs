@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`application(Option<Application>)`](crate::operation::register_application::RegisterApplicationOutput::application): <p>The application registered with AWS Systems Manager for SAP.</p>
     ///   - [`operation_id(Option<String>)`](crate::operation::register_application::RegisterApplicationOutput::operation_id): <p>The ID of the operation.</p>
     /// - On failure, responds with [`SdkError<RegisterApplicationError>`](crate::operation::register_application::RegisterApplicationError)
-    pub fn register_application(
-        &self,
-    ) -> crate::operation::register_application::builders::RegisterApplicationFluentBuilder {
-        crate::operation::register_application::builders::RegisterApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_application(&self) -> crate::operation::register_application::builders::RegisterApplicationFluentBuilder {
+        crate::operation::register_application::builders::RegisterApplicationFluentBuilder::new(self.handle.clone())
     }
 }

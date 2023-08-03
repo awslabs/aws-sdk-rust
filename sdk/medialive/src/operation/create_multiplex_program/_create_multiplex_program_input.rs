@@ -23,9 +23,7 @@ impl CreateMultiplexProgramInput {
         self.multiplex_id.as_deref()
     }
     /// The settings for this multiplex program.
-    pub fn multiplex_program_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MultiplexProgramSettings> {
+    pub fn multiplex_program_settings(&self) -> ::std::option::Option<&crate::types::MultiplexProgramSettings> {
         self.multiplex_program_settings.as_ref()
     }
     /// Name of multiplex program.
@@ -39,22 +37,17 @@ impl CreateMultiplexProgramInput {
 }
 impl CreateMultiplexProgramInput {
     /// Creates a new builder-style object to manufacture [`CreateMultiplexProgramInput`](crate::operation::create_multiplex_program::CreateMultiplexProgramInput).
-    pub fn builder(
-    ) -> crate::operation::create_multiplex_program::builders::CreateMultiplexProgramInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_multiplex_program::builders::CreateMultiplexProgramInputBuilder {
         crate::operation::create_multiplex_program::builders::CreateMultiplexProgramInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMultiplexProgramInput`](crate::operation::create_multiplex_program::CreateMultiplexProgramInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMultiplexProgramInputBuilder {
     pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
-    pub(crate) multiplex_program_settings:
-        ::std::option::Option<crate::types::MultiplexProgramSettings>,
+    pub(crate) multiplex_program_settings: ::std::option::Option<crate::types::MultiplexProgramSettings>,
     pub(crate) program_name: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
 }
@@ -74,25 +67,17 @@ impl CreateMultiplexProgramInputBuilder {
         &self.multiplex_id
     }
     /// The settings for this multiplex program.
-    pub fn multiplex_program_settings(
-        mut self,
-        input: crate::types::MultiplexProgramSettings,
-    ) -> Self {
+    pub fn multiplex_program_settings(mut self, input: crate::types::MultiplexProgramSettings) -> Self {
         self.multiplex_program_settings = ::std::option::Option::Some(input);
         self
     }
     /// The settings for this multiplex program.
-    pub fn set_multiplex_program_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiplexProgramSettings>,
-    ) -> Self {
+    pub fn set_multiplex_program_settings(mut self, input: ::std::option::Option<crate::types::MultiplexProgramSettings>) -> Self {
         self.multiplex_program_settings = input;
         self
     }
     /// The settings for this multiplex program.
-    pub fn get_multiplex_program_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiplexProgramSettings> {
+    pub fn get_multiplex_program_settings(&self) -> &::std::option::Option<crate::types::MultiplexProgramSettings> {
         &self.multiplex_program_settings
     }
     /// Name of multiplex program.
@@ -126,17 +111,13 @@ impl CreateMultiplexProgramInputBuilder {
     /// Consumes the builder and constructs a [`CreateMultiplexProgramInput`](crate::operation::create_multiplex_program::CreateMultiplexProgramInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_multiplex_program::CreateMultiplexProgramInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_multiplex_program::CreateMultiplexProgramInput {
-                multiplex_id: self.multiplex_id,
-                multiplex_program_settings: self.multiplex_program_settings,
-                program_name: self.program_name,
-                request_id: self.request_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_multiplex_program::CreateMultiplexProgramInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_multiplex_program::CreateMultiplexProgramInput {
+            multiplex_id: self.multiplex_id,
+            multiplex_program_settings: self.multiplex_program_settings,
+            program_name: self.program_name,
+            request_id: self.request_id,
+        })
     }
 }

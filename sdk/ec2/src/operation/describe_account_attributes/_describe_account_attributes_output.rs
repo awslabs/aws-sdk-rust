@@ -21,19 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeAccountAttributesOutput {
 }
 impl DescribeAccountAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
-    pub fn builder() -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesOutputBuilder {
         crate::operation::describe_account_attributes::builders::DescribeAccountAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesOutputBuilder {
-    pub(crate) account_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountAttribute>>,
+    pub(crate) account_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttribute>>,
     _request_id: Option<String>,
 }
 impl DescribeAccountAttributesOutputBuilder {
@@ -49,17 +46,12 @@ impl DescribeAccountAttributesOutputBuilder {
         self
     }
     /// <p>Information about the account attributes.</p>
-    pub fn set_account_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttribute>>,
-    ) -> Self {
+    pub fn set_account_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttribute>>) -> Self {
         self.account_attributes = input;
         self
     }
     /// <p>Information about the account attributes.</p>
-    pub fn get_account_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAttribute>> {
+    pub fn get_account_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAttribute>> {
         &self.account_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +64,7 @@ impl DescribeAccountAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
+    pub fn build(self) -> crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
         crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
             account_attributes: self.account_attributes,
             _request_id: self._request_id,

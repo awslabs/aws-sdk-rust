@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateIngestionDestinationOutput`](crate::operation::update_ingestion_destination::UpdateIngestionDestinationOutput) with field(s):
     ///   - [`ingestion_destination(Option<IngestionDestination>)`](crate::operation::update_ingestion_destination::UpdateIngestionDestinationOutput::ingestion_destination): <p>Contains information about an ingestion destination.</p>
     /// - On failure, responds with [`SdkError<UpdateIngestionDestinationError>`](crate::operation::update_ingestion_destination::UpdateIngestionDestinationError)
-    pub fn update_ingestion_destination(&self) -> crate::operation::update_ingestion_destination::builders::UpdateIngestionDestinationFluentBuilder{
+    pub fn update_ingestion_destination(&self) -> crate::operation::update_ingestion_destination::builders::UpdateIngestionDestinationFluentBuilder {
         crate::operation::update_ingestion_destination::builders::UpdateIngestionDestinationFluentBuilder::new(self.handle.clone())
     }
 }

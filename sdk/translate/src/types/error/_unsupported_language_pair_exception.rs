@@ -49,9 +49,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::UnsupportedLangu
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for UnsupportedLanguagePairException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedLanguagePairException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -65,9 +63,7 @@ impl UnsupportedLanguagePairException {
 
 /// A builder for [`UnsupportedLanguagePairException`](crate::types::error::UnsupportedLanguagePairException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnsupportedLanguagePairExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) source_language_code: ::std::option::Option<::std::string::String>,
@@ -90,18 +86,12 @@ impl UnsupportedLanguagePairExceptionBuilder {
         &self.message
     }
     /// <p>The language code for the language of the input text. </p>
-    pub fn source_language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The language code for the language of the input text. </p>
-    pub fn set_source_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_language_code = input;
         self
     }
@@ -110,18 +100,12 @@ impl UnsupportedLanguagePairExceptionBuilder {
         &self.source_language_code
     }
     /// <p>The language code for the language of the translated text. </p>
-    pub fn target_language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The language code for the language of the translated text. </p>
-    pub fn set_target_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_language_code = input;
         self
     }
@@ -136,10 +120,7 @@ impl UnsupportedLanguagePairExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

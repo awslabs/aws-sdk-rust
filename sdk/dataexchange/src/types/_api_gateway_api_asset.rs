@@ -24,8 +24,7 @@ pub struct ApiGatewayApiAsset {
     pub api_specification_download_url: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
     #[doc(hidden)]
-    pub api_specification_download_url_expires_at:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub api_specification_download_url_expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The protocol type of the API asset.</p>
     #[doc(hidden)]
     pub protocol_type: ::std::option::Option<crate::types::ProtocolType>,
@@ -59,9 +58,7 @@ impl ApiGatewayApiAsset {
         self.api_specification_download_url.as_deref()
     }
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
-    pub fn api_specification_download_url_expires_at(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn api_specification_download_url_expires_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.api_specification_download_url_expires_at.as_ref()
     }
     /// <p>The protocol type of the API asset.</p>
@@ -82,9 +79,7 @@ impl ApiGatewayApiAsset {
 
 /// A builder for [`ApiGatewayApiAsset`](crate::types::ApiGatewayApiAsset).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApiGatewayApiAssetBuilder {
     pub(crate) api_description: ::std::option::Option<::std::string::String>,
     pub(crate) api_endpoint: ::std::option::Option<::std::string::String>,
@@ -92,25 +87,18 @@ pub struct ApiGatewayApiAssetBuilder {
     pub(crate) api_key: ::std::option::Option<::std::string::String>,
     pub(crate) api_name: ::std::option::Option<::std::string::String>,
     pub(crate) api_specification_download_url: ::std::option::Option<::std::string::String>,
-    pub(crate) api_specification_download_url_expires_at:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) api_specification_download_url_expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) protocol_type: ::std::option::Option<crate::types::ProtocolType>,
     pub(crate) stage: ::std::option::Option<::std::string::String>,
 }
 impl ApiGatewayApiAssetBuilder {
     /// <p>The API description of the API asset.</p>
-    pub fn api_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API description of the API asset.</p>
-    pub fn set_api_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_description = input;
         self
     }
@@ -175,47 +163,31 @@ impl ApiGatewayApiAssetBuilder {
         &self.api_name
     }
     /// <p>The download URL of the API specification of the API asset.</p>
-    pub fn api_specification_download_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_specification_download_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_specification_download_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The download URL of the API specification of the API asset.</p>
-    pub fn set_api_specification_download_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_specification_download_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_specification_download_url = input;
         self
     }
     /// <p>The download URL of the API specification of the API asset.</p>
-    pub fn get_api_specification_download_url(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_api_specification_download_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_specification_download_url
     }
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
-    pub fn api_specification_download_url_expires_at(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn api_specification_download_url_expires_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.api_specification_download_url_expires_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
-    pub fn set_api_specification_download_url_expires_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_api_specification_download_url_expires_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.api_specification_download_url_expires_at = input;
         self
     }
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
-    pub fn get_api_specification_download_url_expires_at(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_api_specification_download_url_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.api_specification_download_url_expires_at
     }
     /// <p>The protocol type of the API asset.</p>
@@ -224,10 +196,7 @@ impl ApiGatewayApiAssetBuilder {
         self
     }
     /// <p>The protocol type of the API asset.</p>
-    pub fn set_protocol_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolType>,
-    ) -> Self {
+    pub fn set_protocol_type(mut self, input: ::std::option::Option<crate::types::ProtocolType>) -> Self {
         self.protocol_type = input;
         self
     }
@@ -258,8 +227,7 @@ impl ApiGatewayApiAssetBuilder {
             api_key: self.api_key,
             api_name: self.api_name,
             api_specification_download_url: self.api_specification_download_url,
-            api_specification_download_url_expires_at: self
-                .api_specification_download_url_expires_at,
+            api_specification_download_url_expires_at: self.api_specification_download_url_expires_at,
             protocol_type: self.protocol_type,
             stage: self.stage,
         }

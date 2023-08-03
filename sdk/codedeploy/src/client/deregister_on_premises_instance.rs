@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`instance_name(impl ::std::convert::Into<String>)`](crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceFluentBuilder::instance_name) / [`set_instance_name(Option<String>)`](crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceFluentBuilder::set_instance_name): <p>The name of the on-premises instance to deregister.</p>
     /// - On success, responds with [`DeregisterOnPremisesInstanceOutput`](crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceOutput)
     /// - On failure, responds with [`SdkError<DeregisterOnPremisesInstanceError>`](crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceError)
-    pub fn deregister_on_premises_instance(&self) -> crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceFluentBuilder{
+    pub fn deregister_on_premises_instance(
+        &self,
+    ) -> crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceFluentBuilder {
         crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceFluentBuilder::new(self.handle.clone())
     }
 }

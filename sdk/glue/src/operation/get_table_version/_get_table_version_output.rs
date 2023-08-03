@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetTableVersionOutput {
 }
 impl GetTableVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetTableVersionOutput`](crate::operation::get_table_version::GetTableVersionOutput).
-    pub fn builder() -> crate::operation::get_table_version::builders::GetTableVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_table_version::builders::GetTableVersionOutputBuilder {
         crate::operation::get_table_version::builders::GetTableVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTableVersionOutput`](crate::operation::get_table_version::GetTableVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTableVersionOutputBuilder {
     pub(crate) table_version: ::std::option::Option<crate::types::TableVersion>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetTableVersionOutputBuilder {
         self
     }
     /// <p>The requested table version.</p>
-    pub fn set_table_version(
-        mut self,
-        input: ::std::option::Option<crate::types::TableVersion>,
-    ) -> Self {
+    pub fn set_table_version(mut self, input: ::std::option::Option<crate::types::TableVersion>) -> Self {
         self.table_version = input;
         self
     }

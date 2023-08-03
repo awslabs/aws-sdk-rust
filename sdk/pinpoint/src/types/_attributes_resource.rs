@@ -47,9 +47,7 @@ impl AttributesResource {
 
 /// A builder for [`AttributesResource`](crate::types::AttributesResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttributesResourceBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_type: ::std::option::Option<::std::string::String>,
@@ -57,18 +55,12 @@ pub struct AttributesResourceBuilder {
 }
 impl AttributesResourceBuilder {
     /// <p>The unique identifier for the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -82,10 +74,7 @@ impl AttributesResourceBuilder {
     /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
     /// <li><p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
     /// </ul>
-    pub fn attribute_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -95,10 +84,7 @@ impl AttributesResourceBuilder {
     /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
     /// <li><p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
     /// </ul>
-    pub fn set_attribute_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_type = input;
         self
     }
@@ -123,10 +109,7 @@ impl AttributesResourceBuilder {
         self
     }
     /// <p>An array that specifies the names of the attributes that were removed from the endpoints.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }

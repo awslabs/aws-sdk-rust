@@ -64,9 +64,7 @@ impl ::std::fmt::Debug for CreateServiceTemplateInput {
 }
 impl CreateServiceTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceTemplateInput`](crate::operation::create_service_template::CreateServiceTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::create_service_template::builders::CreateServiceTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_service_template::builders::CreateServiceTemplateInputBuilder {
         crate::operation::create_service_template::builders::CreateServiceTemplateInputBuilder::default()
     }
 }
@@ -126,18 +124,12 @@ impl CreateServiceTemplateInputBuilder {
         &self.description
     }
     /// <p>A customer provided encryption key that's used to encrypt data.</p>
-    pub fn encryption_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A customer provided encryption key that's used to encrypt data.</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key = input;
         self
     }
@@ -151,10 +143,7 @@ impl CreateServiceTemplateInputBuilder {
         self
     }
     /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template bundles</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_pipeline_provisioning(
-        mut self,
-        input: ::std::option::Option<crate::types::Provisioning>,
-    ) -> Self {
+    pub fn set_pipeline_provisioning(mut self, input: ::std::option::Option<crate::types::Provisioning>) -> Self {
         self.pipeline_provisioning = input;
         self
     }
@@ -176,10 +165,7 @@ impl CreateServiceTemplateInputBuilder {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -191,20 +177,16 @@ impl CreateServiceTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateServiceTemplateInput`](crate::operation::create_service_template::CreateServiceTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_service_template::CreateServiceTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_service_template::CreateServiceTemplateInput {
-                name: self.name,
-                display_name: self.display_name,
-                description: self.description,
-                encryption_key: self.encryption_key,
-                pipeline_provisioning: self.pipeline_provisioning,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_service_template::CreateServiceTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_service_template::CreateServiceTemplateInput {
+            name: self.name,
+            display_name: self.display_name,
+            description: self.description,
+            encryption_key: self.encryption_key,
+            pipeline_provisioning: self.pipeline_provisioning,
+            tags: self.tags,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateServiceTemplateInputBuilder {

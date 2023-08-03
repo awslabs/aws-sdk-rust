@@ -6,7 +6,9 @@ impl super::Client {
     /// - On success, responds with [`DisassociateServiceRoleFromAccountOutput`](crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountOutput) with field(s):
     ///   - [`disassociated_at(Option<String>)`](crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountOutput::disassociated_at): The time when the service role was disassociated from the account.
     /// - On failure, responds with [`SdkError<DisassociateServiceRoleFromAccountError>`](crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountError)
-    pub fn disassociate_service_role_from_account(&self) -> crate::operation::disassociate_service_role_from_account::builders::DisassociateServiceRoleFromAccountFluentBuilder{
+    pub fn disassociate_service_role_from_account(
+        &self,
+    ) -> crate::operation::disassociate_service_role_from_account::builders::DisassociateServiceRoleFromAccountFluentBuilder {
         crate::operation::disassociate_service_role_from_account::builders::DisassociateServiceRoleFromAccountFluentBuilder::new(self.handle.clone())
     }
 }

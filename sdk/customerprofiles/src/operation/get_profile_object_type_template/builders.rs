@@ -27,7 +27,7 @@ impl GetProfileObjectTypeTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetProfileObjectTypeTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateInputBuilder,
+    inner: crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateInputBuilder,
 }
 impl GetProfileObjectTypeTemplateFluentBuilder {
     /// Creates a new `GetProfileObjectTypeTemplate`.
@@ -38,7 +38,7 @@ impl GetProfileObjectTypeTemplateFluentBuilder {
         }
     }
     /// Access the GetProfileObjectTypeTemplate as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetProfileObjectTypeTemplateFluentBuilder {
             crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetProfileObjectTypeTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetProfileObjectTypeTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetProfileObjectTypeTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetProfileObjectTypeTemplateFluentBuilder {
             crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError>,
     > {
         self.customize_middleware().await
     }

@@ -8,8 +8,7 @@ pub struct ListBackupPlansOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of backup plan list items containing metadata about your saved backup plans.</p>
     #[doc(hidden)]
-    pub backup_plans_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>>,
+    pub backup_plans_list: ::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>>,
     _request_id: Option<String>,
 }
 impl ListBackupPlansOutput {
@@ -18,9 +17,7 @@ impl ListBackupPlansOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of backup plan list items containing metadata about your saved backup plans.</p>
-    pub fn backup_plans_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BackupPlansListMember]> {
+    pub fn backup_plans_list(&self) -> ::std::option::Option<&[crate::types::BackupPlansListMember]> {
         self.backup_plans_list.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListBackupPlansOutput {
 }
 impl ListBackupPlansOutput {
     /// Creates a new builder-style object to manufacture [`ListBackupPlansOutput`](crate::operation::list_backup_plans::ListBackupPlansOutput).
-    pub fn builder() -> crate::operation::list_backup_plans::builders::ListBackupPlansOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_backup_plans::builders::ListBackupPlansOutputBuilder {
         crate::operation::list_backup_plans::builders::ListBackupPlansOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBackupPlansOutput`](crate::operation::list_backup_plans::ListBackupPlansOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBackupPlansOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) backup_plans_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>>,
+    pub(crate) backup_plans_list: ::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>>,
     _request_id: Option<String>,
 }
 impl ListBackupPlansOutputBuilder {
@@ -75,17 +68,12 @@ impl ListBackupPlansOutputBuilder {
         self
     }
     /// <p>An array of backup plan list items containing metadata about your saved backup plans.</p>
-    pub fn set_backup_plans_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>>,
-    ) -> Self {
+    pub fn set_backup_plans_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>>) -> Self {
         self.backup_plans_list = input;
         self
     }
     /// <p>An array of backup plan list items containing metadata about your saved backup plans.</p>
-    pub fn get_backup_plans_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>> {
+    pub fn get_backup_plans_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupPlansListMember>> {
         &self.backup_plans_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

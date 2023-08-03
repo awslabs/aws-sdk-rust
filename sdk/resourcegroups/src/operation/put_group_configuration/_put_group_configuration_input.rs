@@ -28,22 +28,17 @@ impl PutGroupConfigurationInput {
 }
 impl PutGroupConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutGroupConfigurationInput`](crate::operation::put_group_configuration::PutGroupConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::put_group_configuration::builders::PutGroupConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_group_configuration::builders::PutGroupConfigurationInputBuilder {
         crate::operation::put_group_configuration::builders::PutGroupConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutGroupConfigurationInput`](crate::operation::put_group_configuration::PutGroupConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutGroupConfigurationInputBuilder {
     pub(crate) group: ::std::option::Option<::std::string::String>,
-    pub(crate) configuration:
-        ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
+    pub(crate) configuration: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
 }
 impl PutGroupConfigurationInputBuilder {
     /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
@@ -78,10 +73,7 @@ impl PutGroupConfigurationInputBuilder {
     /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>) -> Self {
         self.configuration = input;
         self
     }
@@ -89,23 +81,17 @@ impl PutGroupConfigurationInputBuilder {
     /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>> {
+    pub fn get_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`PutGroupConfigurationInput`](crate::operation::put_group_configuration::PutGroupConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_group_configuration::PutGroupConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_group_configuration::PutGroupConfigurationInput {
-                group: self.group,
-                configuration: self.configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_group_configuration::PutGroupConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_group_configuration::PutGroupConfigurationInput {
+            group: self.group,
+            configuration: self.configuration,
+        })
     }
 }

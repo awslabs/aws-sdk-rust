@@ -65,9 +65,7 @@ impl ModelCardExportJobSummary {
 
 /// A builder for [`ModelCardExportJobSummary`](crate::types::ModelCardExportJobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelCardExportJobSummaryBuilder {
     pub(crate) model_card_export_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_card_export_job_arn: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct ModelCardExportJobSummaryBuilder {
 }
 impl ModelCardExportJobSummaryBuilder {
     /// <p>The name of the model card export job.</p>
-    pub fn model_card_export_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_export_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_export_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model card export job.</p>
-    pub fn set_model_card_export_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_export_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_export_job_name = input;
         self
     }
@@ -99,18 +91,12 @@ impl ModelCardExportJobSummaryBuilder {
         &self.model_card_export_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the model card export job.</p>
-    pub fn model_card_export_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_export_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model card export job.</p>
-    pub fn set_model_card_export_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_export_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_export_job_arn = input;
         self
     }
@@ -124,10 +110,7 @@ impl ModelCardExportJobSummaryBuilder {
         self
     }
     /// <p>The completion status of the model card export job.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardExportJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelCardExportJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -136,18 +119,12 @@ impl ModelCardExportJobSummaryBuilder {
         &self.status
     }
     /// <p>The name of the model card that the export job exports.</p>
-    pub fn model_card_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model card that the export job exports.</p>
-    pub fn set_model_card_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_name = input;
         self
     }
@@ -175,10 +152,7 @@ impl ModelCardExportJobSummaryBuilder {
         self
     }
     /// <p>The date and time that the model card export job was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -192,10 +166,7 @@ impl ModelCardExportJobSummaryBuilder {
         self
     }
     /// <p>The date and time that the model card export job was last modified..</p>
-    pub fn set_last_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_at = input;
         self
     }

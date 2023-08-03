@@ -10,8 +10,7 @@ pub struct ApplicationResourceLifecycleConfig {
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>Defines lifecycle settings for application versions.</p>
     #[doc(hidden)]
-    pub version_lifecycle_config:
-        ::std::option::Option<crate::types::ApplicationVersionLifecycleConfig>,
+    pub version_lifecycle_config: ::std::option::Option<crate::types::ApplicationVersionLifecycleConfig>,
 }
 impl ApplicationResourceLifecycleConfig {
     /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p>
@@ -20,9 +19,7 @@ impl ApplicationResourceLifecycleConfig {
         self.service_role.as_deref()
     }
     /// <p>Defines lifecycle settings for application versions.</p>
-    pub fn version_lifecycle_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationVersionLifecycleConfig> {
+    pub fn version_lifecycle_config(&self) -> ::std::option::Option<&crate::types::ApplicationVersionLifecycleConfig> {
         self.version_lifecycle_config.as_ref()
     }
 }
@@ -35,13 +32,10 @@ impl ApplicationResourceLifecycleConfig {
 
 /// A builder for [`ApplicationResourceLifecycleConfig`](crate::types::ApplicationResourceLifecycleConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationResourceLifecycleConfigBuilder {
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
-    pub(crate) version_lifecycle_config:
-        ::std::option::Option<crate::types::ApplicationVersionLifecycleConfig>,
+    pub(crate) version_lifecycle_config: ::std::option::Option<crate::types::ApplicationVersionLifecycleConfig>,
 }
 impl ApplicationResourceLifecycleConfigBuilder {
     /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p>
@@ -62,25 +56,17 @@ impl ApplicationResourceLifecycleConfigBuilder {
         &self.service_role
     }
     /// <p>Defines lifecycle settings for application versions.</p>
-    pub fn version_lifecycle_config(
-        mut self,
-        input: crate::types::ApplicationVersionLifecycleConfig,
-    ) -> Self {
+    pub fn version_lifecycle_config(mut self, input: crate::types::ApplicationVersionLifecycleConfig) -> Self {
         self.version_lifecycle_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines lifecycle settings for application versions.</p>
-    pub fn set_version_lifecycle_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationVersionLifecycleConfig>,
-    ) -> Self {
+    pub fn set_version_lifecycle_config(mut self, input: ::std::option::Option<crate::types::ApplicationVersionLifecycleConfig>) -> Self {
         self.version_lifecycle_config = input;
         self
     }
     /// <p>Defines lifecycle settings for application versions.</p>
-    pub fn get_version_lifecycle_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationVersionLifecycleConfig> {
+    pub fn get_version_lifecycle_config(&self) -> &::std::option::Option<crate::types::ApplicationVersionLifecycleConfig> {
         &self.version_lifecycle_config
     }
     /// Consumes the builder and constructs a [`ApplicationResourceLifecycleConfig`](crate::types::ApplicationResourceLifecycleConfig).

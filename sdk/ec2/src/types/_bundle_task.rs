@@ -72,9 +72,7 @@ impl BundleTask {
 
 /// A builder for [`BundleTask`](crate::types::BundleTask).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BundleTaskBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) bundle_task_error: ::std::option::Option<crate::types::BundleTaskError>,
@@ -106,10 +104,7 @@ impl BundleTaskBuilder {
         self
     }
     /// <p>If the task fails, a description of the error.</p>
-    pub fn set_bundle_task_error(
-        mut self,
-        input: ::std::option::Option<crate::types::BundleTaskError>,
-    ) -> Self {
+    pub fn set_bundle_task_error(mut self, input: ::std::option::Option<crate::types::BundleTaskError>) -> Self {
         self.bundle_task_error = input;
         self
     }
@@ -151,10 +146,7 @@ impl BundleTaskBuilder {
         self
     }
     /// <p>The time this task started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -168,10 +160,7 @@ impl BundleTaskBuilder {
         self
     }
     /// <p>The state of the task.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::BundleTaskState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::BundleTaskState>) -> Self {
         self.state = input;
         self
     }
@@ -199,10 +188,7 @@ impl BundleTaskBuilder {
         self
     }
     /// <p>The time of the most recent update for the task.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }

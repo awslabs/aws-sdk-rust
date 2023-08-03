@@ -31,13 +31,10 @@ impl TargetedSentimentEntity {
 
 /// A builder for [`TargetedSentimentEntity`](crate::types::TargetedSentimentEntity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetedSentimentEntityBuilder {
     pub(crate) descriptive_mention_index: ::std::option::Option<::std::vec::Vec<i32>>,
-    pub(crate) mentions:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentMention>>,
+    pub(crate) mentions: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentMention>>,
 }
 impl TargetedSentimentEntityBuilder {
     /// Appends an item to `descriptive_mention_index`.
@@ -52,10 +49,7 @@ impl TargetedSentimentEntityBuilder {
         self
     }
     /// <p>One or more index into the Mentions array that provides the best name for the entity group.</p>
-    pub fn set_descriptive_mention_index(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_descriptive_mention_index(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.descriptive_mention_index = input;
         self
     }
@@ -75,17 +69,12 @@ impl TargetedSentimentEntityBuilder {
         self
     }
     /// <p>An array of mentions of the entity in the document. The array represents a co-reference group. See <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-values"> Co-reference group</a> for an example. </p>
-    pub fn set_mentions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentMention>>,
-    ) -> Self {
+    pub fn set_mentions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentMention>>) -> Self {
         self.mentions = input;
         self
     }
     /// <p>An array of mentions of the entity in the document. The array represents a co-reference group. See <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-values"> Co-reference group</a> for an example. </p>
-    pub fn get_mentions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentMention>> {
+    pub fn get_mentions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentMention>> {
         &self.mentions
     }
     /// Consumes the builder and constructs a [`TargetedSentimentEntity`](crate::types::TargetedSentimentEntity).

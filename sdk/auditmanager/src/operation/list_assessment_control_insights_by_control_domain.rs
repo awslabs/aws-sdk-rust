@@ -5,7 +5,16 @@ impl ListAssessmentControlInsightsByControlDomainInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(&self, _config: &crate::config::Config) -> ::std::result::Result<::aws_smithy_http::operation::Operation<crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomain, ::aws_http::retry::AwsResponseRetryClassifier>, ::aws_smithy_http::operation::error::BuildError>{
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> ::std::result::Result<
+        ::aws_smithy_http::operation::Operation<
+            crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomain,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         assert_ne!(
             _config.retry_config().map(|rc| rc.mode()),
             ::std::option::Option::Some(::aws_smithy_types::retry::RetryMode::Adaptive),
@@ -18,76 +27,47 @@ impl ListAssessmentControlInsightsByControlDomainInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
-                ::std::write!(output, "/insights/controls-by-assessment")
-                    .expect("formatting should succeed");
+                ::std::write!(output, "/insights/controls-by-assessment").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             fn uri_query(
                 _input: &crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_1 = &_input.control_domain_id;
-                let inner_1 = inner_1.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let inner_1 = inner_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("control_domain_id", "cannot be empty or unset"))?;
+                if inner_1.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "control_domain_id",
                         "cannot be empty or unset",
-                    )
-                })?;
-                if inner_1.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "control_domain_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
-                query.push_kv(
-                    "controlDomainId",
-                    &::aws_smithy_http::query::fmt_string(&inner_1),
-                );
+                query.push_kv("controlDomainId", &::aws_smithy_http::query::fmt_string(&inner_1));
                 let inner_2 = &_input.assessment_id;
-                let inner_2 = inner_2.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let inner_2 = inner_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("assessment_id", "cannot be empty or unset"))?;
+                if inner_2.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "assessment_id",
                         "cannot be empty or unset",
-                    )
-                })?;
-                if inner_2.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "assessment_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
-                query.push_kv(
-                    "assessmentId",
-                    &::aws_smithy_http::query::fmt_string(&inner_2),
-                );
+                query.push_kv("assessmentId", &::aws_smithy_http::query::fmt_string(&inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.next_token {
                     {
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_3));
@@ -95,10 +75,7 @@ impl ListAssessmentControlInsightsByControlDomainInput {
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.max_results {
                     if *inner_4 != 0 {
-                        query.push_kv(
-                            "maxResults",
-                            ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
-                        );
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -107,10 +84,7 @@ impl ListAssessmentControlInsightsByControlDomainInput {
             fn update_http_builder(
                 input: &crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -132,10 +106,8 @@ impl ListAssessmentControlInsightsByControlDomainInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -144,23 +116,22 @@ impl ListAssessmentControlInsightsByControlDomainInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomain::new())
-                            .with_metadata(::aws_smithy_http::operation::Metadata::new("ListAssessmentControlInsightsByControlDomain", "auditmanager"));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomain::new(),
+        )
+        .with_metadata(::aws_smithy_http::operation::Metadata::new(
+            "ListAssessmentControlInsightsByControlDomain",
+            "auditmanager",
+        ));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -176,10 +147,11 @@ impl ListAssessmentControlInsightsByControlDomain {
         Self
     }
 }
-impl ::aws_smithy_http::response::ParseStrictResponse
-    for ListAssessmentControlInsightsByControlDomain
-{
-    type Output = ::std::result::Result<crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainOutput, crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainError>;
+impl ::aws_smithy_http::response::ParseStrictResponse for ListAssessmentControlInsightsByControlDomain {
+    type Output = ::std::result::Result<
+        crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainOutput,
+        crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainError,
+    >;
     fn parse(&self, response: &::http::Response<::bytes::Bytes>) -> Self::Output {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -199,8 +171,7 @@ impl ::aws_smithy_http::response::ParseStrictResponse
 #[deprecated(
     note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
 )]
-pub type ListAssessmentControlInsightsByControlDomainErrorKind =
-    ListAssessmentControlInsightsByControlDomainError;
+pub type ListAssessmentControlInsightsByControlDomainErrorKind = ListAssessmentControlInsightsByControlDomainError;
 /// Error type for the `ListAssessmentControlInsightsByControlDomainError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
@@ -216,13 +187,9 @@ pub enum ListAssessmentControlInsightsByControlDomainError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl ::aws_smithy_http::result::CreateUnhandledError
-    for ListAssessmentControlInsightsByControlDomainError
-{
+impl ::aws_smithy_http::result::CreateUnhandledError for ListAssessmentControlInsightsByControlDomainError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -243,37 +210,25 @@ impl ::std::fmt::Display for ListAssessmentControlInsightsByControlDomainError {
         }
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ListAssessmentControlInsightsByControlDomainError
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListAssessmentControlInsightsByControlDomainError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::AccessDeniedException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InternalServerException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ResourceNotFoundException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ValidationException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId for crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainError {
-                            fn request_id(&self) -> Option<&str> {
-                                self.meta().request_id()
-                            }
-                        }
-impl ::aws_smithy_types::retry::ProvideErrorKind
-    for ListAssessmentControlInsightsByControlDomainError
+impl ::aws_http::request_id::RequestId
+    for crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainError
 {
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
+impl ::aws_smithy_types::retry::ProvideErrorKind for ListAssessmentControlInsightsByControlDomainError {
     fn code(&self) -> ::std::option::Option<&str> {
         ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
@@ -284,27 +239,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind
 impl ListAssessmentControlInsightsByControlDomainError {
     /// Creates the `ListAssessmentControlInsightsByControlDomainError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `ListAssessmentControlInsightsByControlDomainError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,

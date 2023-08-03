@@ -30,9 +30,7 @@ impl FolderMember {
 
 /// A builder for [`FolderMember`](crate::types::FolderMember).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FolderMemberBuilder {
     pub(crate) member_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_type: ::std::option::Option<crate::types::MemberType>,
@@ -58,10 +56,7 @@ impl FolderMemberBuilder {
         self
     }
     /// <p>The type of asset that it is.</p>
-    pub fn set_member_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MemberType>,
-    ) -> Self {
+    pub fn set_member_type(mut self, input: ::std::option::Option<crate::types::MemberType>) -> Self {
         self.member_type = input;
         self
     }

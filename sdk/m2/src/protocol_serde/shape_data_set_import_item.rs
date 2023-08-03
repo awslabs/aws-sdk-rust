@@ -12,10 +12,7 @@ pub fn ser_data_set_import_item(
     if let Some(var_3) = &input.external_location {
         #[allow(unused_mut)]
         let mut object_4 = object.key("externalLocation").start_object();
-        crate::protocol_serde::shape_external_location::ser_external_location(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_external_location::ser_external_location(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

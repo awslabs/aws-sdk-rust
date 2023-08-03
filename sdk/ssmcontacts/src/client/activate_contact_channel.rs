@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`activation_code(impl ::std::convert::Into<String>)`](crate::operation::activate_contact_channel::builders::ActivateContactChannelFluentBuilder::activation_code) / [`set_activation_code(Option<String>)`](crate::operation::activate_contact_channel::builders::ActivateContactChannelFluentBuilder::set_activation_code): <p>The code sent to the contact channel when it was created in the contact.</p>
     /// - On success, responds with [`ActivateContactChannelOutput`](crate::operation::activate_contact_channel::ActivateContactChannelOutput)
     /// - On failure, responds with [`SdkError<ActivateContactChannelError>`](crate::operation::activate_contact_channel::ActivateContactChannelError)
-    pub fn activate_contact_channel(
-        &self,
-    ) -> crate::operation::activate_contact_channel::builders::ActivateContactChannelFluentBuilder
-    {
+    pub fn activate_contact_channel(&self) -> crate::operation::activate_contact_channel::builders::ActivateContactChannelFluentBuilder {
         crate::operation::activate_contact_channel::builders::ActivateContactChannelFluentBuilder::new(self.handle.clone())
     }
 }

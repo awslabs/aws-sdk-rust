@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`instance_names(Vec<String>)`](crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesFluentBuilder::instance_names) / [`set_instance_names(Option<Vec<String>>)`](crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesFluentBuilder::set_instance_names): <p>The names of the on-premises instances from which to remove tags.</p>
     /// - On success, responds with [`RemoveTagsFromOnPremisesInstancesOutput`](crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput)
     /// - On failure, responds with [`SdkError<RemoveTagsFromOnPremisesInstancesError>`](crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesError)
-    pub fn remove_tags_from_on_premises_instances(&self) -> crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesFluentBuilder{
+    pub fn remove_tags_from_on_premises_instances(
+        &self,
+    ) -> crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesFluentBuilder {
         crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesFluentBuilder::new(self.handle.clone())
     }
 }

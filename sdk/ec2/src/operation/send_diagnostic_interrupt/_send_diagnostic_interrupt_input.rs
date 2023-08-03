@@ -22,18 +22,14 @@ impl SendDiagnosticInterruptInput {
 }
 impl SendDiagnosticInterruptInput {
     /// Creates a new builder-style object to manufacture [`SendDiagnosticInterruptInput`](crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptInput).
-    pub fn builder(
-    ) -> crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptInputBuilder
-    {
+    pub fn builder() -> crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptInputBuilder {
         crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptInputBuilder::default()
     }
 }
 
 /// A builder for [`SendDiagnosticInterruptInput`](crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendDiagnosticInterruptInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -74,11 +70,9 @@ impl SendDiagnosticInterruptInputBuilder {
         crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptInput {
-                instance_id: self.instance_id,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptInput {
+            instance_id: self.instance_id,
+            dry_run: self.dry_run,
+        })
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteMedicalTranscriptionJobOutput {
 }
 impl DeleteMedicalTranscriptionJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMedicalTranscriptionJobOutput`](crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobOutput).
-    pub fn builder() -> crate::operation::delete_medical_transcription_job::builders::DeleteMedicalTranscriptionJobOutputBuilder{
+    pub fn builder() -> crate::operation::delete_medical_transcription_job::builders::DeleteMedicalTranscriptionJobOutputBuilder {
         crate::operation::delete_medical_transcription_job::builders::DeleteMedicalTranscriptionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMedicalTranscriptionJobOutput`](crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMedicalTranscriptionJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteMedicalTranscriptionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteMedicalTranscriptionJobOutput`](crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobOutput
-    {
+    pub fn build(self) -> crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobOutput {
         crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobOutput {
             _request_id: self._request_id,
         }

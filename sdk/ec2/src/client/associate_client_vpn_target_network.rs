@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`association_id(Option<String>)`](crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkOutput::association_id): <p>The unique ID of the target network association.</p>
     ///   - [`status(Option<AssociationStatus>)`](crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkOutput::status): <p>The current state of the target network association.</p>
     /// - On failure, responds with [`SdkError<AssociateClientVpnTargetNetworkError>`](crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkError)
-    pub fn associate_client_vpn_target_network(&self) -> crate::operation::associate_client_vpn_target_network::builders::AssociateClientVpnTargetNetworkFluentBuilder{
+    pub fn associate_client_vpn_target_network(
+        &self,
+    ) -> crate::operation::associate_client_vpn_target_network::builders::AssociateClientVpnTargetNetworkFluentBuilder {
         crate::operation::associate_client_vpn_target_network::builders::AssociateClientVpnTargetNetworkFluentBuilder::new(self.handle.clone())
     }
 }

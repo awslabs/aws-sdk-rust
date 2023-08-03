@@ -9,8 +9,7 @@ pub struct BatchCreateObject {
     pub schema_facet: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
     /// <p>An attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>
     #[doc(hidden)]
-    pub object_attribute_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub object_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     /// <p>If specified, the parent reference to which this object will be attached.</p>
     #[doc(hidden)]
     pub parent_reference: ::std::option::Option<crate::types::ObjectReference>,
@@ -27,9 +26,7 @@ impl BatchCreateObject {
         self.schema_facet.as_deref()
     }
     /// <p>An attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>
-    pub fn object_attribute_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AttributeKeyAndValue]> {
+    pub fn object_attribute_list(&self) -> ::std::option::Option<&[crate::types::AttributeKeyAndValue]> {
         self.object_attribute_list.as_deref()
     }
     /// <p>If specified, the parent reference to which this object will be attached.</p>
@@ -54,13 +51,10 @@ impl BatchCreateObject {
 
 /// A builder for [`BatchCreateObject`](crate::types::BatchCreateObject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateObjectBuilder {
     pub(crate) schema_facet: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
-    pub(crate) object_attribute_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub(crate) object_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     pub(crate) parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) link_name: ::std::option::Option<::std::string::String>,
     pub(crate) batch_reference_name: ::std::option::Option<::std::string::String>,
@@ -78,17 +72,12 @@ impl BatchCreateObjectBuilder {
         self
     }
     /// <p>A list of <code>FacetArns</code> that will be associated with the object. For more information, see <code>arns</code>.</p>
-    pub fn set_schema_facet(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
-    ) -> Self {
+    pub fn set_schema_facet(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>) -> Self {
         self.schema_facet = input;
         self
     }
     /// <p>A list of <code>FacetArns</code> that will be associated with the object. For more information, see <code>arns</code>.</p>
-    pub fn get_schema_facet(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>> {
+    pub fn get_schema_facet(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>> {
         &self.schema_facet
     }
     /// Appends an item to `object_attribute_list`.
@@ -103,17 +92,12 @@ impl BatchCreateObjectBuilder {
         self
     }
     /// <p>An attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>
-    pub fn set_object_attribute_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
-    ) -> Self {
+    pub fn set_object_attribute_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>) -> Self {
         self.object_attribute_list = input;
         self
     }
     /// <p>An attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>
-    pub fn get_object_attribute_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+    pub fn get_object_attribute_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
         &self.object_attribute_list
     }
     /// <p>If specified, the parent reference to which this object will be attached.</p>
@@ -122,10 +106,7 @@ impl BatchCreateObjectBuilder {
         self
     }
     /// <p>If specified, the parent reference to which this object will be attached.</p>
-    pub fn set_parent_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_parent_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.parent_reference = input;
         self
     }
@@ -148,18 +129,12 @@ impl BatchCreateObjectBuilder {
         &self.link_name
     }
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-    pub fn batch_reference_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_reference_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_reference_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-    pub fn set_batch_reference_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_reference_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.batch_reference_name = input;
         self
     }

@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`StartContentModerationOutput`](crate::operation::start_content_moderation::StartContentModerationOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_content_moderation::StartContentModerationOutput::job_id): <p>The identifier for the content analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
     /// - On failure, responds with [`SdkError<StartContentModerationError>`](crate::operation::start_content_moderation::StartContentModerationError)
-    pub fn start_content_moderation(
-        &self,
-    ) -> crate::operation::start_content_moderation::builders::StartContentModerationFluentBuilder
-    {
+    pub fn start_content_moderation(&self) -> crate::operation::start_content_moderation::builders::StartContentModerationFluentBuilder {
         crate::operation::start_content_moderation::builders::StartContentModerationFluentBuilder::new(self.handle.clone())
     }
 }

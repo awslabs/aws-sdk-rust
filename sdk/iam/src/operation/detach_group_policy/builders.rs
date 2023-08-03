@@ -10,10 +10,7 @@ impl DetachGroupPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::detach_group_policy::DetachGroupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_group_policy::DetachGroupPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_group_policy::DetachGroupPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.detach_group_policy();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DetachGroupPolicyFluentBuilder {
         }
     }
     /// Access the DetachGroupPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detach_group_policy::builders::DetachGroupPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::detach_group_policy::builders::DetachGroupPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DetachGroupPolicyFluentBuilder {
             crate::operation::detach_group_policy::DetachGroupPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_group_policy::DetachGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_group_policy::DetachGroupPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DetachGroupPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DetachGroupPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_group_policy::DetachGroupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_group_policy::DetachGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_group_policy::DetachGroupPolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DetachGroupPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_group_policy::DetachGroupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_group_policy::DetachGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_group_policy::DetachGroupPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl DetachGroupPolicyFluentBuilder {
             crate::operation::detach_group_policy::DetachGroupPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detach_group_policy::DetachGroupPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detach_group_policy::DetachGroupPolicyError>,
     > {
         self.customize_middleware().await
     }

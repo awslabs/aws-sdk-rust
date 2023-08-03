@@ -8,9 +8,7 @@ pub struct DescribeClustersInput {
     /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
     /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
     #[doc(hidden)]
-    pub filters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -23,11 +21,7 @@ impl DescribeClustersInput {
     /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
     /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
     /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn filters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.filters.as_ref()
     }
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
@@ -41,21 +35,16 @@ impl DescribeClustersInput {
 }
 impl DescribeClustersInput {
     /// Creates a new builder-style object to manufacture [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
-    pub fn builder() -> crate::operation::describe_clusters::builders::DescribeClustersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_clusters::builders::DescribeClustersInputBuilder {
         crate::operation::describe_clusters::builders::DescribeClustersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClustersInputBuilder {
-    pub(crate) filters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -68,11 +57,7 @@ impl DescribeClustersInputBuilder {
     /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
     /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
     /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
-    pub fn filters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.filters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.filters = ::std::option::Option::Some(hash_map);
@@ -84,12 +69,7 @@ impl DescribeClustersInputBuilder {
     /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
     pub fn set_filters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.filters = input;
         self
@@ -98,11 +78,7 @@ impl DescribeClustersInputBuilder {
     /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
     /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
     /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.filters
     }
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
@@ -136,10 +112,7 @@ impl DescribeClustersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_clusters::DescribeClustersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_clusters::DescribeClustersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_clusters::DescribeClustersInput {
             filters: self.filters,
             next_token: self.next_token,

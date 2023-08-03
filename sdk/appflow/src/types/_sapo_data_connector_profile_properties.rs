@@ -74,9 +74,7 @@ impl SapoDataConnectorProfileProperties {
 
 /// A builder for [`SapoDataConnectorProfileProperties`](crate::types::SapoDataConnectorProfileProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SapoDataConnectorProfilePropertiesBuilder {
     pub(crate) application_host_url: ::std::option::Option<::std::string::String>,
     pub(crate) application_service_path: ::std::option::Option<::std::string::String>,
@@ -89,18 +87,12 @@ pub struct SapoDataConnectorProfilePropertiesBuilder {
 }
 impl SapoDataConnectorProfilePropertiesBuilder {
     /// <p> The location of the SAPOData resource. </p>
-    pub fn application_host_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_host_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_host_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The location of the SAPOData resource. </p>
-    pub fn set_application_host_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_host_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_host_url = input;
         self
     }
@@ -109,18 +101,12 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         &self.application_host_url
     }
     /// <p> The application path to catalog service. </p>
-    pub fn application_service_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_service_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_service_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The application path to catalog service. </p>
-    pub fn set_application_service_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_service_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_service_path = input;
         self
     }
@@ -143,18 +129,12 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         &self.port_number
     }
     /// <p> The client number for the client creating the connection. </p>
-    pub fn client_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The client number for the client creating the connection. </p>
-    pub fn set_client_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_number = input;
         self
     }
@@ -163,18 +143,12 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         &self.client_number
     }
     /// <p> The logon language of SAPOData instance. </p>
-    pub fn logon_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logon_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logon_language = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The logon language of SAPOData instance. </p>
-    pub fn set_logon_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logon_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logon_language = input;
         self
     }
@@ -183,18 +157,12 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         &self.logon_language
     }
     /// <p> The SAPOData Private Link service name to be used for private data transfers. </p>
-    pub fn private_link_service_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_link_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_link_service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The SAPOData Private Link service name to be used for private data transfers. </p>
-    pub fn set_private_link_service_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_link_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_link_service_name = input;
         self
     }
@@ -208,10 +176,7 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         self
     }
     /// <p> The SAPOData OAuth properties required for OAuth type authentication. </p>
-    pub fn set_o_auth_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::OAuthProperties>,
-    ) -> Self {
+    pub fn set_o_auth_properties(mut self, input: ::std::option::Option<crate::types::OAuthProperties>) -> Self {
         self.o_auth_properties = input;
         self
     }

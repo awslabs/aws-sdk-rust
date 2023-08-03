@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`resource_evaluations(Option<Vec<ResourceEvaluation>>)`](crate::operation::list_resource_evaluations::ListResourceEvaluationsOutput::resource_evaluations): <p>Returns a <code>ResourceEvaluations</code> object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_evaluations::ListResourceEvaluationsOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<ListResourceEvaluationsError>`](crate::operation::list_resource_evaluations::ListResourceEvaluationsError)
-    pub fn list_resource_evaluations(
-        &self,
-    ) -> crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsFluentBuilder
-    {
+    pub fn list_resource_evaluations(&self) -> crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsFluentBuilder {
         crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsFluentBuilder::new(self.handle.clone())
     }
 }

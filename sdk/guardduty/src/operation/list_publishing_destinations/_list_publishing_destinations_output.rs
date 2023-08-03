@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPublishingDestinationsOutput {
 }
 impl ListPublishingDestinationsOutput {
     /// Creates a new builder-style object to manufacture [`ListPublishingDestinationsOutput`](crate::operation::list_publishing_destinations::ListPublishingDestinationsOutput).
-    pub fn builder() -> crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsOutputBuilder {
         crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPublishingDestinationsOutput`](crate::operation::list_publishing_destinations::ListPublishingDestinationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPublishingDestinationsOutputBuilder {
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListPublishingDestinationsOutputBuilder {
         self
     }
     /// <p>A <code>Destinations</code> object that includes information about each publishing destination returned.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>) -> Self {
         self.destinations = input;
         self
     }
     /// <p>A <code>Destinations</code> object that includes information about each publishing destination returned.</p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
         &self.destinations
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
@@ -93,9 +86,7 @@ impl ListPublishingDestinationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPublishingDestinationsOutput`](crate::operation::list_publishing_destinations::ListPublishingDestinationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_publishing_destinations::ListPublishingDestinationsOutput {
+    pub fn build(self) -> crate::operation::list_publishing_destinations::ListPublishingDestinationsOutput {
         crate::operation::list_publishing_destinations::ListPublishingDestinationsOutput {
             destinations: self.destinations,
             next_token: self.next_token,

@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`roles(Option<HashMap<String, String>>)`](crate::operation::get_identity_pool_roles::GetIdentityPoolRolesOutput::roles): <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
     ///   - [`role_mappings(Option<HashMap<String, RoleMapping>>)`](crate::operation::get_identity_pool_roles::GetIdentityPoolRolesOutput::role_mappings): <p>How users for a specific identity provider are to mapped to roles. This is a String-to-<code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
     /// - On failure, responds with [`SdkError<GetIdentityPoolRolesError>`](crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError)
-    pub fn get_identity_pool_roles(
-        &self,
-    ) -> crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesFluentBuilder
-    {
-        crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_identity_pool_roles(&self) -> crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesFluentBuilder {
+        crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesFluentBuilder::new(self.handle.clone())
     }
 }

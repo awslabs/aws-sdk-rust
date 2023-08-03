@@ -37,10 +37,7 @@ impl DeleteStudioComponentFluentBuilder {
         }
     }
     /// Access the DeleteStudioComponent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_studio_component::builders::DeleteStudioComponentInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_studio_component::builders::DeleteStudioComponentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteStudioComponentFluentBuilder {
             crate::operation::delete_studio_component::DeleteStudioComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_studio_component::DeleteStudioComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_studio_component::DeleteStudioComponentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteStudioComponentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteStudioComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_studio_component::DeleteStudioComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_studio_component::DeleteStudioComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_studio_component::DeleteStudioComponentError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteStudioComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_studio_component::DeleteStudioComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_studio_component::DeleteStudioComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_studio_component::DeleteStudioComponentError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteStudioComponentFluentBuilder {
             crate::operation::delete_studio_component::DeleteStudioComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_studio_component::DeleteStudioComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_studio_component::DeleteStudioComponentError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DeleteStudioComponentFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The studio component ID.</p>
-    pub fn studio_component_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn studio_component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_component_id(input.into());
         self
     }
     /// <p>The studio component ID.</p>
-    pub fn set_studio_component_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_studio_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_component_id(input);
         self
     }

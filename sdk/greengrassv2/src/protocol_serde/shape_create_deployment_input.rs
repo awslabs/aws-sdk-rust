@@ -25,10 +25,7 @@ pub fn ser_create_deployment_input(
     if let Some(var_8) = &input.deployment_policies {
         #[allow(unused_mut)]
         let mut object_9 = object.key("deploymentPolicies").start_object();
-        crate::protocol_serde::shape_deployment_policies::ser_deployment_policies(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_deployment_policies::ser_deployment_policies(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.iot_job_configuration {

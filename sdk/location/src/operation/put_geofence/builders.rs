@@ -10,10 +10,7 @@ impl PutGeofenceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_geofence::PutGeofenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_geofence::PutGeofenceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_geofence::PutGeofenceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_geofence();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl PutGeofenceFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_geofence::PutGeofence,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_geofence::PutGeofence, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_geofence::PutGeofenceError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl PutGeofenceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl PutGeofenceFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_geofence::PutGeofence,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_geofence::PutGeofence, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_geofence::PutGeofenceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The geofence collection to store the geofence in.</p>
-    pub fn collection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_name(input.into());
         self
     }
     /// <p>The geofence collection to store the geofence in.</p>
-    pub fn set_collection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_name(input);
         self
     }
@@ -156,10 +138,7 @@ impl PutGeofenceFluentBuilder {
     /// <p>Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
-    pub fn set_geometry(
-        mut self,
-        input: ::std::option::Option<crate::types::GeofenceGeometry>,
-    ) -> Self {
+    pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::GeofenceGeometry>) -> Self {
         self.inner = self.inner.set_geometry(input);
         self
     }
@@ -187,20 +166,14 @@ impl PutGeofenceFluentBuilder {
     /// <p>Format: <code>"key" : "value"</code> </p>
     pub fn set_geofence_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_geofence_properties(input);
         self
     }
     /// <p>Associates one of more properties with the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
-    pub fn get_geofence_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_geofence_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_geofence_properties()
     }
 }

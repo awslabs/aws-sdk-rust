@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`configuration_set_name(impl ::std::convert::Into<String>)`](crate::operation::delete_configuration_set::builders::DeleteConfigurationSetFluentBuilder::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::operation::delete_configuration_set::builders::DeleteConfigurationSetFluentBuilder::set_configuration_set_name): <p>The name of the configuration set that you want to delete.</p>
     /// - On success, responds with [`DeleteConfigurationSetOutput`](crate::operation::delete_configuration_set::DeleteConfigurationSetOutput)
     /// - On failure, responds with [`SdkError<DeleteConfigurationSetError>`](crate::operation::delete_configuration_set::DeleteConfigurationSetError)
-    pub fn delete_configuration_set(
-        &self,
-    ) -> crate::operation::delete_configuration_set::builders::DeleteConfigurationSetFluentBuilder
-    {
+    pub fn delete_configuration_set(&self) -> crate::operation::delete_configuration_set::builders::DeleteConfigurationSetFluentBuilder {
         crate::operation::delete_configuration_set::builders::DeleteConfigurationSetFluentBuilder::new(self.handle.clone())
     }
 }

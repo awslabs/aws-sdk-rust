@@ -37,18 +37,14 @@ impl ListBackendEnvironmentsInput {
 }
 impl ListBackendEnvironmentsInput {
     /// Creates a new builder-style object to manufacture [`ListBackendEnvironmentsInput`](crate::operation::list_backend_environments::ListBackendEnvironmentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_backend_environments::builders::ListBackendEnvironmentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_backend_environments::builders::ListBackendEnvironmentsInputBuilder {
         crate::operation::list_backend_environments::builders::ListBackendEnvironmentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBackendEnvironmentsInput`](crate::operation::list_backend_environments::ListBackendEnvironmentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBackendEnvironmentsInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -71,18 +67,12 @@ impl ListBackendEnvironmentsInputBuilder {
         &self.app_id
     }
     /// <p> The name of the backend environment </p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the backend environment </p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -125,13 +115,11 @@ impl ListBackendEnvironmentsInputBuilder {
         crate::operation::list_backend_environments::ListBackendEnvironmentsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_backend_environments::ListBackendEnvironmentsInput {
-                app_id: self.app_id,
-                environment_name: self.environment_name,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_backend_environments::ListBackendEnvironmentsInput {
+            app_id: self.app_id,
+            environment_name: self.environment_name,
+            next_token: self.next_token,
+            max_results: self.max_results.unwrap_or_default(),
+        })
     }
 }

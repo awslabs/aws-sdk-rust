@@ -30,22 +30,18 @@ impl UpdateChannelClassInput {
 }
 impl UpdateChannelClassInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelClassInput`](crate::operation::update_channel_class::UpdateChannelClassInput).
-    pub fn builder(
-    ) -> crate::operation::update_channel_class::builders::UpdateChannelClassInputBuilder {
+    pub fn builder() -> crate::operation::update_channel_class::builders::UpdateChannelClassInputBuilder {
         crate::operation::update_channel_class::builders::UpdateChannelClassInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateChannelClassInput`](crate::operation::update_channel_class::UpdateChannelClassInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateChannelClassInputBuilder {
     pub(crate) channel_class: ::std::option::Option<crate::types::ChannelClass>,
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
-    pub(crate) destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
 }
 impl UpdateChannelClassInputBuilder {
     /// The channel class that you wish to update this channel to use.
@@ -54,10 +50,7 @@ impl UpdateChannelClassInputBuilder {
         self
     }
     /// The channel class that you wish to update this channel to use.
-    pub fn set_channel_class(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelClass>,
-    ) -> Self {
+    pub fn set_channel_class(mut self, input: ::std::option::Option<crate::types::ChannelClass>) -> Self {
         self.channel_class = input;
         self
     }
@@ -91,32 +84,22 @@ impl UpdateChannelClassInputBuilder {
         self
     }
     /// A list of output destinations for this channel.
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>) -> Self {
         self.destinations = input;
         self
     }
     /// A list of output destinations for this channel.
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>> {
         &self.destinations
     }
     /// Consumes the builder and constructs a [`UpdateChannelClassInput`](crate::operation::update_channel_class::UpdateChannelClassInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_channel_class::UpdateChannelClassInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_channel_class::UpdateChannelClassInput {
-                channel_class: self.channel_class,
-                channel_id: self.channel_id,
-                destinations: self.destinations,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_channel_class::UpdateChannelClassInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_channel_class::UpdateChannelClassInput {
+            channel_class: self.channel_class,
+            channel_id: self.channel_id,
+            destinations: self.destinations,
+        })
     }
 }

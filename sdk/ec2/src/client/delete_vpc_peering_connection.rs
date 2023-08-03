@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteVpcPeeringConnectionOutput`](crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<DeleteVpcPeeringConnectionError>`](crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError)
-    pub fn delete_vpc_peering_connection(&self) -> crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionFluentBuilder{
+    pub fn delete_vpc_peering_connection(
+        &self,
+    ) -> crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionFluentBuilder {
         crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionFluentBuilder::new(self.handle.clone())
     }
 }

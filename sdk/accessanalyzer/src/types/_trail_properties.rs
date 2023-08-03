@@ -37,9 +37,7 @@ impl TrailProperties {
 
 /// A builder for [`TrailProperties`](crate::types::TrailProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrailPropertiesBuilder {
     pub(crate) cloud_trail_arn: ::std::option::Option<::std::string::String>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -47,18 +45,12 @@ pub struct TrailPropertiesBuilder {
 }
 impl TrailPropertiesBuilder {
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
-    pub fn cloud_trail_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_trail_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_trail_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
-    pub fn set_cloud_trail_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_trail_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_trail_arn = input;
         self
     }
@@ -78,10 +70,7 @@ impl TrailPropertiesBuilder {
         self
     }
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }

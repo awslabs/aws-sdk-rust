@@ -31,9 +31,7 @@ impl ActionHistory {
         self.event_type.as_ref()
     }
     /// <p>The description of the details for the event. </p>
-    pub fn action_history_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ActionHistoryDetails> {
+    pub fn action_history_details(&self) -> ::std::option::Option<&crate::types::ActionHistoryDetails> {
         self.action_history_details.as_ref()
     }
 }
@@ -46,9 +44,7 @@ impl ActionHistory {
 
 /// A builder for [`ActionHistory`](crate::types::ActionHistory).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionHistoryBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ActionStatus>,
@@ -62,10 +58,7 @@ impl ActionHistoryBuilder {
         self
     }
     /// <p> A generic time stamp. In Java, it's transformed to a <code>Date</code> object.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
@@ -107,17 +100,12 @@ impl ActionHistoryBuilder {
         self
     }
     /// <p>The description of the details for the event. </p>
-    pub fn set_action_history_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionHistoryDetails>,
-    ) -> Self {
+    pub fn set_action_history_details(mut self, input: ::std::option::Option<crate::types::ActionHistoryDetails>) -> Self {
         self.action_history_details = input;
         self
     }
     /// <p>The description of the details for the event. </p>
-    pub fn get_action_history_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ActionHistoryDetails> {
+    pub fn get_action_history_details(&self) -> &::std::option::Option<crate::types::ActionHistoryDetails> {
         &self.action_history_details
     }
     /// Consumes the builder and constructs a [`ActionHistory`](crate::types::ActionHistory).

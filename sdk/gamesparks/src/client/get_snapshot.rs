@@ -9,9 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetSnapshotOutput`](crate::operation::get_snapshot::GetSnapshotOutput) with field(s):
     ///   - [`snapshot(Option<SnapshotDetails>)`](crate::operation::get_snapshot::GetSnapshotOutput::snapshot): <p>Properties that provide details of the snapshot.</p>
     /// - On failure, responds with [`SdkError<GetSnapshotError>`](crate::operation::get_snapshot::GetSnapshotError)
-    pub fn get_snapshot(
-        &self,
-    ) -> crate::operation::get_snapshot::builders::GetSnapshotFluentBuilder {
+    pub fn get_snapshot(&self) -> crate::operation::get_snapshot::builders::GetSnapshotFluentBuilder {
         crate::operation::get_snapshot::builders::GetSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

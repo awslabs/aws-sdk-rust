@@ -18,7 +18,9 @@ impl super::Client {
     /// - On success, responds with [`CreateFileSystemFromBackupOutput`](crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupOutput) with field(s):
     ///   - [`file_system(Option<FileSystem>)`](crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupOutput::file_system): <p>A description of the file system.</p>
     /// - On failure, responds with [`SdkError<CreateFileSystemFromBackupError>`](crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupError)
-    pub fn create_file_system_from_backup(&self) -> crate::operation::create_file_system_from_backup::builders::CreateFileSystemFromBackupFluentBuilder{
+    pub fn create_file_system_from_backup(
+        &self,
+    ) -> crate::operation::create_file_system_from_backup::builders::CreateFileSystemFromBackupFluentBuilder {
         crate::operation::create_file_system_from_backup::builders::CreateFileSystemFromBackupFluentBuilder::new(self.handle.clone())
     }
 }

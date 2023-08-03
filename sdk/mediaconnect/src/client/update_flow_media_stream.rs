@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`flow_arn(Option<String>)`](crate::operation::update_flow_media_stream::UpdateFlowMediaStreamOutput::flow_arn): The ARN of the flow that is associated with the media stream that you updated.
     ///   - [`media_stream(Option<MediaStream>)`](crate::operation::update_flow_media_stream::UpdateFlowMediaStreamOutput::media_stream): The media stream that you updated.
     /// - On failure, responds with [`SdkError<UpdateFlowMediaStreamError>`](crate::operation::update_flow_media_stream::UpdateFlowMediaStreamError)
-    pub fn update_flow_media_stream(
-        &self,
-    ) -> crate::operation::update_flow_media_stream::builders::UpdateFlowMediaStreamFluentBuilder
-    {
+    pub fn update_flow_media_stream(&self) -> crate::operation::update_flow_media_stream::builders::UpdateFlowMediaStreamFluentBuilder {
         crate::operation::update_flow_media_stream::builders::UpdateFlowMediaStreamFluentBuilder::new(self.handle.clone())
     }
 }

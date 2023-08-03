@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DisableImageDeprecationOutput`](crate::operation::disable_image_deprecation::DisableImageDeprecationOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::disable_image_deprecation::DisableImageDeprecationOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<DisableImageDeprecationError>`](crate::operation::disable_image_deprecation::DisableImageDeprecationError)
-    pub fn disable_image_deprecation(
-        &self,
-    ) -> crate::operation::disable_image_deprecation::builders::DisableImageDeprecationFluentBuilder
-    {
+    pub fn disable_image_deprecation(&self) -> crate::operation::disable_image_deprecation::builders::DisableImageDeprecationFluentBuilder {
         crate::operation::disable_image_deprecation::builders::DisableImageDeprecationFluentBuilder::new(self.handle.clone())
     }
 }

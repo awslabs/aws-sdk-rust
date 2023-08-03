@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetTestGridSessionOutput {
 }
 impl GetTestGridSessionOutput {
     /// Creates a new builder-style object to manufacture [`GetTestGridSessionOutput`](crate::operation::get_test_grid_session::GetTestGridSessionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_test_grid_session::builders::GetTestGridSessionOutputBuilder {
-        crate::operation::get_test_grid_session::builders::GetTestGridSessionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_test_grid_session::builders::GetTestGridSessionOutputBuilder {
+        crate::operation::get_test_grid_session::builders::GetTestGridSessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTestGridSessionOutput`](crate::operation::get_test_grid_session::GetTestGridSessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTestGridSessionOutputBuilder {
     pub(crate) test_grid_session: ::std::option::Option<crate::types::TestGridSession>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetTestGridSessionOutputBuilder {
         self
     }
     /// <p>The <code>TestGridSession</code> that was requested.</p>
-    pub fn set_test_grid_session(
-        mut self,
-        input: ::std::option::Option<crate::types::TestGridSession>,
-    ) -> Self {
+    pub fn set_test_grid_session(mut self, input: ::std::option::Option<crate::types::TestGridSession>) -> Self {
         self.test_grid_session = input;
         self
     }

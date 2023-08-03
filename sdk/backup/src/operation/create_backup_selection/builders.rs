@@ -37,10 +37,7 @@ impl CreateBackupSelectionFluentBuilder {
         }
     }
     /// Access the CreateBackupSelection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_backup_selection::builders::CreateBackupSelectionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_backup_selection::builders::CreateBackupSelectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateBackupSelectionFluentBuilder {
             crate::operation::create_backup_selection::CreateBackupSelection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_backup_selection::CreateBackupSelectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_backup_selection::CreateBackupSelectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateBackupSelectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateBackupSelectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_backup_selection::CreateBackupSelectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_backup_selection::CreateBackupSelectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_backup_selection::CreateBackupSelectionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateBackupSelectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_backup_selection::CreateBackupSelectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_backup_selection::CreateBackupSelectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_backup_selection::CreateBackupSelectionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl CreateBackupSelectionFluentBuilder {
             crate::operation::create_backup_selection::CreateBackupSelection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_backup_selection::CreateBackupSelectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_backup_selection::CreateBackupSelectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
-    pub fn backup_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_plan_id(input.into());
         self
     }
     /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
-    pub fn set_backup_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_plan_id(input);
         self
     }
@@ -149,10 +129,7 @@ impl CreateBackupSelectionFluentBuilder {
         self
     }
     /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
-    pub fn set_backup_selection(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupSelection>,
-    ) -> Self {
+    pub fn set_backup_selection(mut self, input: ::std::option::Option<crate::types::BackupSelection>) -> Self {
         self.inner = self.inner.set_backup_selection(input);
         self
     }
@@ -162,19 +139,13 @@ impl CreateBackupSelectionFluentBuilder {
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_request_id(input.into());
         self
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }

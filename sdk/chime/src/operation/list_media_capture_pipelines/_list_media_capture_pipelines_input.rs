@@ -22,16 +22,14 @@ impl ListMediaCapturePipelinesInput {
 }
 impl ListMediaCapturePipelinesInput {
     /// Creates a new builder-style object to manufacture [`ListMediaCapturePipelinesInput`](crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesInput).
-    pub fn builder() -> crate::operation::list_media_capture_pipelines::builders::ListMediaCapturePipelinesInputBuilder{
+    pub fn builder() -> crate::operation::list_media_capture_pipelines::builders::ListMediaCapturePipelinesInputBuilder {
         crate::operation::list_media_capture_pipelines::builders::ListMediaCapturePipelinesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMediaCapturePipelinesInput`](crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMediaCapturePipelinesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -72,11 +70,9 @@ impl ListMediaCapturePipelinesInputBuilder {
         crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

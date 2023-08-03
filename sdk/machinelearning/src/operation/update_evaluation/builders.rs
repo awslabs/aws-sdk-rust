@@ -10,10 +10,7 @@ impl UpdateEvaluationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_evaluation::UpdateEvaluationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_evaluation::UpdateEvaluationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_evaluation::UpdateEvaluationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_evaluation();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateEvaluationFluentBuilder {
         }
     }
     /// Access the UpdateEvaluation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_evaluation::builders::UpdateEvaluationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_evaluation::builders::UpdateEvaluationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdateEvaluationFluentBuilder {
             crate::operation::update_evaluation::UpdateEvaluation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_evaluation::UpdateEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_evaluation::UpdateEvaluationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdateEvaluationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdateEvaluationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_evaluation::UpdateEvaluationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_evaluation::UpdateEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_evaluation::UpdateEvaluationError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdateEvaluationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_evaluation::UpdateEvaluationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_evaluation::UpdateEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_evaluation::UpdateEvaluationError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl UpdateEvaluationFluentBuilder {
             crate::operation::update_evaluation::UpdateEvaluation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_evaluation::UpdateEvaluationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_evaluation::UpdateEvaluationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
-    pub fn evaluation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evaluation_id(input.into());
         self
     }
     /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
-    pub fn set_evaluation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evaluation_id(input);
         self
     }
@@ -144,18 +122,12 @@ impl UpdateEvaluationFluentBuilder {
         self.inner.get_evaluation_id()
     }
     /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
-    pub fn evaluation_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evaluation_name(input.into());
         self
     }
     /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
-    pub fn set_evaluation_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evaluation_name(input);
         self
     }

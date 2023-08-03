@@ -49,13 +49,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ServiceQuotaExceededExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -90,42 +84,20 @@ pub enum ServiceQuotaExceededExceptionReason {
 impl ::std::convert::From<&str> for ServiceQuotaExceededExceptionReason {
     fn from(s: &str) -> Self {
         match s {
-            "CONFIGURATION_SETS_PER_ACCOUNT" => {
-                ServiceQuotaExceededExceptionReason::ConfigurationSetsPerAccount
-            }
-            "DAILY_DESTINATION_CALL_LIMIT" => {
-                ServiceQuotaExceededExceptionReason::DailyDestinationCallLimit
-            }
-            "EVENT_DESTINATIONS_PER_CONFIGURATION_SET" => {
-                ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet
-            }
-            "KEYWORDS_PER_PHONE_NUMBER" => {
-                ServiceQuotaExceededExceptionReason::KeywordsPerPhoneNumber
-            }
+            "CONFIGURATION_SETS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::ConfigurationSetsPerAccount,
+            "DAILY_DESTINATION_CALL_LIMIT" => ServiceQuotaExceededExceptionReason::DailyDestinationCallLimit,
+            "EVENT_DESTINATIONS_PER_CONFIGURATION_SET" => ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet,
+            "KEYWORDS_PER_PHONE_NUMBER" => ServiceQuotaExceededExceptionReason::KeywordsPerPhoneNumber,
             "KEYWORDS_PER_POOL" => ServiceQuotaExceededExceptionReason::KeywordsPerPool,
-            "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT" => {
-                ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText
-            }
-            "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE" => {
-                ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice
-            }
-            "OPT_OUT_LISTS_PER_ACCOUNT" => {
-                ServiceQuotaExceededExceptionReason::OptOutListsPerAccount
-            }
-            "ORIGINATION_IDENTITIES_PER_POOL" => {
-                ServiceQuotaExceededExceptionReason::OriginationIdentitiesPerPool
-            }
-            "PHONE_NUMBERS_PER_ACCOUNT" => {
-                ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount
-            }
-            "PHONE_NUMBERS_PER_REGISTRATION" => {
-                ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration
-            }
+            "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT" => ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText,
+            "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE" => ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice,
+            "OPT_OUT_LISTS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::OptOutListsPerAccount,
+            "ORIGINATION_IDENTITIES_PER_POOL" => ServiceQuotaExceededExceptionReason::OriginationIdentitiesPerPool,
+            "PHONE_NUMBERS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount,
+            "PHONE_NUMBERS_PER_REGISTRATION" => ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration,
             "POOLS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::PoolsPerAccount,
             "TAGS_PER_RESOURCE" => ServiceQuotaExceededExceptionReason::TagsPerResource,
-            other => ServiceQuotaExceededExceptionReason::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ServiceQuotaExceededExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -140,37 +112,17 @@ impl ServiceQuotaExceededExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ServiceQuotaExceededExceptionReason::ConfigurationSetsPerAccount => {
-                "CONFIGURATION_SETS_PER_ACCOUNT"
-            }
-            ServiceQuotaExceededExceptionReason::DailyDestinationCallLimit => {
-                "DAILY_DESTINATION_CALL_LIMIT"
-            }
-            ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet => {
-                "EVENT_DESTINATIONS_PER_CONFIGURATION_SET"
-            }
-            ServiceQuotaExceededExceptionReason::KeywordsPerPhoneNumber => {
-                "KEYWORDS_PER_PHONE_NUMBER"
-            }
+            ServiceQuotaExceededExceptionReason::ConfigurationSetsPerAccount => "CONFIGURATION_SETS_PER_ACCOUNT",
+            ServiceQuotaExceededExceptionReason::DailyDestinationCallLimit => "DAILY_DESTINATION_CALL_LIMIT",
+            ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet => "EVENT_DESTINATIONS_PER_CONFIGURATION_SET",
+            ServiceQuotaExceededExceptionReason::KeywordsPerPhoneNumber => "KEYWORDS_PER_PHONE_NUMBER",
             ServiceQuotaExceededExceptionReason::KeywordsPerPool => "KEYWORDS_PER_POOL",
-            ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText => {
-                "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT"
-            }
-            ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice => {
-                "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE"
-            }
-            ServiceQuotaExceededExceptionReason::OptOutListsPerAccount => {
-                "OPT_OUT_LISTS_PER_ACCOUNT"
-            }
-            ServiceQuotaExceededExceptionReason::OriginationIdentitiesPerPool => {
-                "ORIGINATION_IDENTITIES_PER_POOL"
-            }
-            ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount => {
-                "PHONE_NUMBERS_PER_ACCOUNT"
-            }
-            ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration => {
-                "PHONE_NUMBERS_PER_REGISTRATION"
-            }
+            ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText => "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT",
+            ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice => "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE",
+            ServiceQuotaExceededExceptionReason::OptOutListsPerAccount => "OPT_OUT_LISTS_PER_ACCOUNT",
+            ServiceQuotaExceededExceptionReason::OriginationIdentitiesPerPool => "ORIGINATION_IDENTITIES_PER_POOL",
+            ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount => "PHONE_NUMBERS_PER_ACCOUNT",
+            ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration => "PHONE_NUMBERS_PER_REGISTRATION",
             ServiceQuotaExceededExceptionReason::PoolsPerAccount => "POOLS_PER_ACCOUNT",
             ServiceQuotaExceededExceptionReason::TagsPerResource => "TAGS_PER_RESOURCE",
             ServiceQuotaExceededExceptionReason::Unknown(value) => value.as_str(),

@@ -29,18 +29,14 @@ impl ListCreateAccountStatusInput {
 }
 impl ListCreateAccountStatusInput {
     /// Creates a new builder-style object to manufacture [`ListCreateAccountStatusInput`](crate::operation::list_create_account_status::ListCreateAccountStatusInput).
-    pub fn builder(
-    ) -> crate::operation::list_create_account_status::builders::ListCreateAccountStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_create_account_status::builders::ListCreateAccountStatusInputBuilder {
         crate::operation::list_create_account_status::builders::ListCreateAccountStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCreateAccountStatusInput`](crate::operation::list_create_account_status::ListCreateAccountStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCreateAccountStatusInputBuilder {
     pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::CreateAccountState>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,17 +55,12 @@ impl ListCreateAccountStatusInputBuilder {
         self
     }
     /// <p>A list of one or more states that you want included in the response. If this parameter isn't present, all requests are included in the response.</p>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAccountState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAccountState>>) -> Self {
         self.states = input;
         self
     }
     /// <p>A list of one or more states that you want included in the response. If this parameter isn't present, all requests are included in the response.</p>
-    pub fn get_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAccountState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAccountState>> {
         &self.states
     }
     /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
@@ -107,12 +98,10 @@ impl ListCreateAccountStatusInputBuilder {
         crate::operation::list_create_account_status::ListCreateAccountStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_create_account_status::ListCreateAccountStatusInput {
-                states: self.states,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_create_account_status::ListCreateAccountStatusInput {
+            states: self.states,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

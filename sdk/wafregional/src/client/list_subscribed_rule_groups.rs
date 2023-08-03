@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsOutput::next_marker): <p>If you have more objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more objects, submit another <code>ListSubscribedRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     ///   - [`rule_groups(Option<Vec<SubscribedRuleGroupSummary>>)`](crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsOutput::rule_groups): <p>An array of <code>RuleGroup</code> objects.</p>
     /// - On failure, responds with [`SdkError<ListSubscribedRuleGroupsError>`](crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsError)
-    pub fn list_subscribed_rule_groups(&self) -> crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsFluentBuilder{
+    pub fn list_subscribed_rule_groups(&self) -> crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsFluentBuilder {
         crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsFluentBuilder::new(self.handle.clone())
     }
 }

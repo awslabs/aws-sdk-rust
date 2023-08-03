@@ -9,65 +9,80 @@ pub fn de_copy_db_cluster_parameter_group_http_error(
     crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupAlreadyExists" => crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::DbParameterGroupAlreadyExistsFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DBParameterGroupAlreadyExists" => {
+            crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::DbParameterGroupAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbParameterGroupAlreadyExistsFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_parameter_group_already_exists_fault::de_db_parameter_group_already_exists_fault_xml_err(_response_body, output).map_err(crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_db_parameter_group_already_exists_fault::de_db_parameter_group_already_exists_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "DBParameterGroupNotFound" => crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::DbParameterGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBParameterGroupNotFound" => {
+            crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::DbParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbParameterGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_parameter_group_not_found_fault::de_db_parameter_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_parameter_group_not_found_fault::de_db_parameter_group_not_found_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "DBParameterGroupQuotaExceeded" => crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::DbParameterGroupQuotaExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBParameterGroupQuotaExceeded" => {
+            crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::DbParameterGroupQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbParameterGroupQuotaExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_parameter_group_quota_exceeded_fault::de_db_parameter_group_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_db_parameter_group_quota_exceeded_fault::de_db_parameter_group_quota_exceeded_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::generic(generic),
     })
 }
 
@@ -83,16 +98,21 @@ pub fn de_copy_db_cluster_parameter_group_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::copy_db_cluster_parameter_group::builders::CopyDbClusterParameterGroupOutputBuilder::default();
-        output = crate::protocol_serde::shape_copy_db_cluster_parameter_group::de_copy_db_cluster_parameter_group(_response_body, output).map_err(crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_copy_db_cluster_parameter_group::de_copy_db_cluster_parameter_group(_response_body, output)
+            .map_err(crate::operation::copy_db_cluster_parameter_group::CopyDBClusterParameterGroupError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_copy_db_cluster_parameter_group(inp: &[u8], mut builder: crate::operation::copy_db_cluster_parameter_group::builders::CopyDbClusterParameterGroupOutputBuilder) -> Result<crate::operation::copy_db_cluster_parameter_group::builders::CopyDbClusterParameterGroupOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_copy_db_cluster_parameter_group(
+    inp: &[u8],
+    mut builder: crate::operation::copy_db_cluster_parameter_group::builders::CopyDbClusterParameterGroupOutputBuilder,
+) -> Result<
+    crate::operation::copy_db_cluster_parameter_group::builders::CopyDbClusterParameterGroupOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`status(Option<ReadSetExportJobStatus>)`](crate::operation::start_read_set_export_job::StartReadSetExportJobOutput::status): <p>The job's status.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::start_read_set_export_job::StartReadSetExportJobOutput::creation_time): <p>When the job was created.</p>
     /// - On failure, responds with [`SdkError<StartReadSetExportJobError>`](crate::operation::start_read_set_export_job::StartReadSetExportJobError)
-    pub fn start_read_set_export_job(
-        &self,
-    ) -> crate::operation::start_read_set_export_job::builders::StartReadSetExportJobFluentBuilder
-    {
+    pub fn start_read_set_export_job(&self) -> crate::operation::start_read_set_export_job::builders::StartReadSetExportJobFluentBuilder {
         crate::operation::start_read_set_export_job::builders::StartReadSetExportJobFluentBuilder::new(self.handle.clone())
     }
 }

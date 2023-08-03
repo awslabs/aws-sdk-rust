@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateTypedLinkFacetOutput {
 }
 impl UpdateTypedLinkFacetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTypedLinkFacetOutput`](crate::operation::update_typed_link_facet::UpdateTypedLinkFacetOutput).
-    pub fn builder(
-    ) -> crate::operation::update_typed_link_facet::builders::UpdateTypedLinkFacetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_typed_link_facet::builders::UpdateTypedLinkFacetOutputBuilder {
         crate::operation::update_typed_link_facet::builders::UpdateTypedLinkFacetOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTypedLinkFacetOutput`](crate::operation::update_typed_link_facet::UpdateTypedLinkFacetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTypedLinkFacetOutputBuilder {
     _request_id: Option<String>,
 }

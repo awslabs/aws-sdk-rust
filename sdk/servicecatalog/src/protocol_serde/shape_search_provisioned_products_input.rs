@@ -9,10 +9,7 @@ pub fn ser_search_provisioned_products_input(
     if let Some(var_2) = &input.access_level_filter {
         #[allow(unused_mut)]
         let mut object_3 = object.key("AccessLevelFilter").start_object();
-        crate::protocol_serde::shape_access_level_filter::ser_access_level_filter(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_access_level_filter::ser_access_level_filter(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.filters {

@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`address_transfers(Option<Vec<AddressTransfer>>)`](crate::operation::describe_address_transfers::DescribeAddressTransfersOutput::address_transfers): <p>The Elastic IP address transfer.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_address_transfers::DescribeAddressTransfersOutput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<DescribeAddressTransfersError>`](crate::operation::describe_address_transfers::DescribeAddressTransfersError)
-    pub fn describe_address_transfers(
-        &self,
-    ) -> crate::operation::describe_address_transfers::builders::DescribeAddressTransfersFluentBuilder
-    {
+    pub fn describe_address_transfers(&self) -> crate::operation::describe_address_transfers::builders::DescribeAddressTransfersFluentBuilder {
         crate::operation::describe_address_transfers::builders::DescribeAddressTransfersFluentBuilder::new(self.handle.clone())
     }
 }

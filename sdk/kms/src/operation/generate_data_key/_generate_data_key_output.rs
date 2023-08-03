@@ -57,8 +57,7 @@ impl ::aws_http::request_id::RequestId for GenerateDataKeyOutput {
 }
 impl GenerateDataKeyOutput {
     /// Creates a new builder-style object to manufacture [`GenerateDataKeyOutput`](crate::operation::generate_data_key::GenerateDataKeyOutput).
-    pub fn builder() -> crate::operation::generate_data_key::builders::GenerateDataKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::generate_data_key::builders::GenerateDataKeyOutputBuilder {
         crate::operation::generate_data_key::builders::GenerateDataKeyOutputBuilder::default()
     }
 }
@@ -80,10 +79,7 @@ impl GenerateDataKeyOutputBuilder {
         self
     }
     /// <p>The encrypted copy of the data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn set_ciphertext_blob(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_ciphertext_blob(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.ciphertext_blob = input;
         self
     }
@@ -130,10 +126,7 @@ impl GenerateDataKeyOutputBuilder {
     }
     /// <p>The plaintext data key encrypted with the public key from the Nitro enclave. This ciphertext can be decrypted only by using a private key in the Nitro enclave. </p>
     /// <p>This field is included in the response only when the <code>Recipient</code> parameter in the request includes a valid attestation document from an Amazon Web Services Nitro enclave. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn set_ciphertext_for_recipient(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_ciphertext_for_recipient(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.ciphertext_for_recipient = input;
         self
     }

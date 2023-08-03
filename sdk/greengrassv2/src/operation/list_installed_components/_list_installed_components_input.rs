@@ -40,47 +40,34 @@ impl ListInstalledComponentsInput {
     /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
     /// </ul>
     /// <p>Default: <code>ROOT</code> </p>
-    pub fn topology_filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstalledComponentTopologyFilter> {
+    pub fn topology_filter(&self) -> ::std::option::Option<&crate::types::InstalledComponentTopologyFilter> {
         self.topology_filter.as_ref()
     }
 }
 impl ListInstalledComponentsInput {
     /// Creates a new builder-style object to manufacture [`ListInstalledComponentsInput`](crate::operation::list_installed_components::ListInstalledComponentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_installed_components::builders::ListInstalledComponentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_installed_components::builders::ListInstalledComponentsInputBuilder {
         crate::operation::list_installed_components::builders::ListInstalledComponentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInstalledComponentsInput`](crate::operation::list_installed_components::ListInstalledComponentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstalledComponentsInputBuilder {
     pub(crate) core_device_thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) topology_filter:
-        ::std::option::Option<crate::types::InstalledComponentTopologyFilter>,
+    pub(crate) topology_filter: ::std::option::Option<crate::types::InstalledComponentTopologyFilter>,
 }
 impl ListInstalledComponentsInputBuilder {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn core_device_thing_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_device_thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_device_thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn set_core_device_thing_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_device_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_device_thing_name = input;
         self
     }
@@ -122,10 +109,7 @@ impl ListInstalledComponentsInputBuilder {
     /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
     /// </ul>
     /// <p>Default: <code>ROOT</code> </p>
-    pub fn topology_filter(
-        mut self,
-        input: crate::types::InstalledComponentTopologyFilter,
-    ) -> Self {
+    pub fn topology_filter(mut self, input: crate::types::InstalledComponentTopologyFilter) -> Self {
         self.topology_filter = ::std::option::Option::Some(input);
         self
     }
@@ -135,10 +119,7 @@ impl ListInstalledComponentsInputBuilder {
     /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
     /// </ul>
     /// <p>Default: <code>ROOT</code> </p>
-    pub fn set_topology_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::InstalledComponentTopologyFilter>,
-    ) -> Self {
+    pub fn set_topology_filter(mut self, input: ::std::option::Option<crate::types::InstalledComponentTopologyFilter>) -> Self {
         self.topology_filter = input;
         self
     }
@@ -148,9 +129,7 @@ impl ListInstalledComponentsInputBuilder {
     /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
     /// </ul>
     /// <p>Default: <code>ROOT</code> </p>
-    pub fn get_topology_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstalledComponentTopologyFilter> {
+    pub fn get_topology_filter(&self) -> &::std::option::Option<crate::types::InstalledComponentTopologyFilter> {
         &self.topology_filter
     }
     /// Consumes the builder and constructs a [`ListInstalledComponentsInput`](crate::operation::list_installed_components::ListInstalledComponentsInput).
@@ -160,13 +139,11 @@ impl ListInstalledComponentsInputBuilder {
         crate::operation::list_installed_components::ListInstalledComponentsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_installed_components::ListInstalledComponentsInput {
-                core_device_thing_name: self.core_device_thing_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                topology_filter: self.topology_filter,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_installed_components::ListInstalledComponentsInput {
+            core_device_thing_name: self.core_device_thing_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            topology_filter: self.topology_filter,
+        })
     }
 }

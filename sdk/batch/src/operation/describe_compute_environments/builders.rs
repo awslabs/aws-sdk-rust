@@ -27,7 +27,7 @@ impl DescribeComputeEnvironmentsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeComputeEnvironmentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_compute_environments::builders::DescribeComputeEnvironmentsInputBuilder,
+    inner: crate::operation::describe_compute_environments::builders::DescribeComputeEnvironmentsInputBuilder,
 }
 impl DescribeComputeEnvironmentsFluentBuilder {
     /// Creates a new `DescribeComputeEnvironments`.
@@ -38,7 +38,7 @@ impl DescribeComputeEnvironmentsFluentBuilder {
         }
     }
     /// Access the DescribeComputeEnvironments as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_compute_environments::builders::DescribeComputeEnvironmentsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_compute_environments::builders::DescribeComputeEnvironmentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeComputeEnvironmentsFluentBuilder {
             crate::operation::describe_compute_environments::DescribeComputeEnvironments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeComputeEnvironmentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeComputeEnvironmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeComputeEnvironmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError>,
     > {
         self.send_middleware().await
     }
@@ -115,16 +106,14 @@ impl DescribeComputeEnvironmentsFluentBuilder {
             crate::operation::describe_compute_environments::DescribeComputeEnvironments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_compute_environments::paginator::DescribeComputeEnvironmentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_compute_environments::paginator::DescribeComputeEnvironmentsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_compute_environments::paginator::DescribeComputeEnvironmentsPaginator {
         crate::operation::describe_compute_environments::paginator::DescribeComputeEnvironmentsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `computeEnvironments`.
@@ -132,25 +121,17 @@ impl DescribeComputeEnvironmentsFluentBuilder {
     /// To override the contents of this collection use [`set_compute_environments`](Self::set_compute_environments).
     ///
     /// <p>A list of up to 100 compute environment names or full Amazon Resource Name (ARN) entries.</p>
-    pub fn compute_environments(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn compute_environments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compute_environments(input.into());
         self
     }
     /// <p>A list of up to 100 compute environment names or full Amazon Resource Name (ARN) entries.</p>
-    pub fn set_compute_environments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_compute_environments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_compute_environments(input);
         self
     }
     /// <p>A list of up to 100 compute environment names or full Amazon Resource Name (ARN) entries.</p>
-    pub fn get_compute_environments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_compute_environments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_compute_environments()
     }
     /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output. When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>

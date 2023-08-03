@@ -39,10 +39,7 @@ pub fn ser_update_workload_input(
     if let Some(var_12) = &input.discovery_config {
         #[allow(unused_mut)]
         let mut object_13 = object.key("DiscoveryConfig").start_object();
-        crate::protocol_serde::shape_workload_discovery_config::ser_workload_discovery_config(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_workload_discovery_config::ser_workload_discovery_config(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.environment {
@@ -58,9 +55,7 @@ pub fn ser_update_workload_input(
         object.key("IndustryType").string(var_17.as_str());
     }
     if let Some(var_18) = &input.is_review_owner_update_acknowledged {
-        object
-            .key("IsReviewOwnerUpdateAcknowledged")
-            .boolean(*var_18);
+        object.key("IsReviewOwnerUpdateAcknowledged").boolean(*var_18);
     }
     if let Some(var_19) = &input.non_aws_regions {
         let mut array_20 = object.key("NonAwsRegions").start_array();

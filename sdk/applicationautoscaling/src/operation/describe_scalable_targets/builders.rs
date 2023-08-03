@@ -27,8 +27,7 @@ impl DescribeScalableTargetsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeScalableTargetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_scalable_targets::builders::DescribeScalableTargetsInputBuilder,
+    inner: crate::operation::describe_scalable_targets::builders::DescribeScalableTargetsInputBuilder,
 }
 impl DescribeScalableTargetsFluentBuilder {
     /// Creates a new `DescribeScalableTargets`.
@@ -39,10 +38,7 @@ impl DescribeScalableTargetsFluentBuilder {
         }
     }
     /// Access the DescribeScalableTargets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_scalable_targets::builders::DescribeScalableTargetsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_scalable_targets::builders::DescribeScalableTargetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DescribeScalableTargetsFluentBuilder {
             crate::operation::describe_scalable_targets::DescribeScalableTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scalable_targets::DescribeScalableTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scalable_targets::DescribeScalableTargetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DescribeScalableTargetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DescribeScalableTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scalable_targets::DescribeScalableTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scalable_targets::DescribeScalableTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scalable_targets::DescribeScalableTargetsError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DescribeScalableTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scalable_targets::DescribeScalableTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scalable_targets::DescribeScalableTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scalable_targets::DescribeScalableTargetsError>,
     > {
         self.send_middleware().await
     }
@@ -119,19 +106,14 @@ impl DescribeScalableTargetsFluentBuilder {
             crate::operation::describe_scalable_targets::DescribeScalableTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scalable_targets::DescribeScalableTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scalable_targets::DescribeScalableTargetsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_scalable_targets::paginator::DescribeScalableTargetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_scalable_targets::paginator::DescribeScalableTargetsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_scalable_targets::paginator::DescribeScalableTargetsPaginator {
         crate::operation::describe_scalable_targets::paginator::DescribeScalableTargetsPaginator::new(self.handle, self.inner)
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
@@ -140,10 +122,7 @@ impl DescribeScalableTargetsFluentBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.inner = self.inner.set_service_namespace(input);
         self
     }
@@ -199,10 +178,7 @@ impl DescribeScalableTargetsFluentBuilder {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub fn set_resource_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_ids(input);
         self
     }
@@ -226,9 +202,7 @@ impl DescribeScalableTargetsFluentBuilder {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub fn get_resource_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_ids()
     }
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property. If you specify a scalable dimension, you must also specify a resource ID.</p>
@@ -283,10 +257,7 @@ impl DescribeScalableTargetsFluentBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.inner = self.inner.set_scalable_dimension(input);
         self
     }
@@ -314,9 +285,7 @@ impl DescribeScalableTargetsFluentBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         self.inner.get_scalable_dimension()
     }
     /// <p>The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>

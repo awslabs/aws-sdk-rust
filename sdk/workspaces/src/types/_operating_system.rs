@@ -23,9 +23,7 @@ impl OperatingSystem {
 
 /// A builder for [`OperatingSystem`](crate::types::OperatingSystem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OperatingSystemBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::OperatingSystemType>,
 }
@@ -36,10 +34,7 @@ impl OperatingSystemBuilder {
         self
     }
     /// <p>The operating system.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystemType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::OperatingSystemType>) -> Self {
         self.r#type = input;
         self
     }
@@ -49,8 +44,6 @@ impl OperatingSystemBuilder {
     }
     /// Consumes the builder and constructs a [`OperatingSystem`](crate::types::OperatingSystem).
     pub fn build(self) -> crate::types::OperatingSystem {
-        crate::types::OperatingSystem {
-            r#type: self.r#type,
-        }
+        crate::types::OperatingSystem { r#type: self.r#type }
     }
 }

@@ -22,18 +22,14 @@ impl GetResourcePermissionInput {
 }
 impl GetResourcePermissionInput {
     /// Creates a new builder-style object to manufacture [`GetResourcePermissionInput`](crate::operation::get_resource_permission::GetResourcePermissionInput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_permission::builders::GetResourcePermissionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_resource_permission::builders::GetResourcePermissionInputBuilder {
         crate::operation::get_resource_permission::builders::GetResourcePermissionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourcePermissionInput`](crate::operation::get_resource_permission::GetResourcePermissionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourcePermissionInputBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::PermissionActionType>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -45,10 +41,7 @@ impl GetResourcePermissionInputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::PermissionActionType>) -> Self {
         self.action_type = input;
         self
     }
@@ -73,15 +66,11 @@ impl GetResourcePermissionInputBuilder {
     /// Consumes the builder and constructs a [`GetResourcePermissionInput`](crate::operation::get_resource_permission::GetResourcePermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resource_permission::GetResourcePermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resource_permission::GetResourcePermissionInput {
-                action_type: self.action_type,
-                resource_arn: self.resource_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_resource_permission::GetResourcePermissionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_resource_permission::GetResourcePermissionInput {
+            action_type: self.action_type,
+            resource_arn: self.resource_arn,
+        })
     }
 }

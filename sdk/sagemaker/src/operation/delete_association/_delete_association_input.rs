@@ -22,17 +22,14 @@ impl DeleteAssociationInput {
 }
 impl DeleteAssociationInput {
     /// Creates a new builder-style object to manufacture [`DeleteAssociationInput`](crate::operation::delete_association::DeleteAssociationInput).
-    pub fn builder() -> crate::operation::delete_association::builders::DeleteAssociationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_association::builders::DeleteAssociationInputBuilder {
         crate::operation::delete_association::builders::DeleteAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAssociationInput`](crate::operation::delete_association::DeleteAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAssociationInputBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl DeleteAssociationInputBuilder {
         &self.source_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -75,15 +66,10 @@ impl DeleteAssociationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAssociationInput`](crate::operation::delete_association::DeleteAssociationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_association::DeleteAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_association::DeleteAssociationInput {
-                source_arn: self.source_arn,
-                destination_arn: self.destination_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_association::DeleteAssociationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_association::DeleteAssociationInput {
+            source_arn: self.source_arn,
+            destination_arn: self.destination_arn,
+        })
     }
 }

@@ -26,8 +26,7 @@ impl PutManagedInsightRulesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutManagedInsightRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesInputBuilder,
+    inner: crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesInputBuilder,
 }
 impl PutManagedInsightRulesFluentBuilder {
     /// Creates a new `PutManagedInsightRules`.
@@ -38,10 +37,7 @@ impl PutManagedInsightRulesFluentBuilder {
         }
     }
     /// Access the PutManagedInsightRules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl PutManagedInsightRulesFluentBuilder {
             crate::operation::put_managed_insight_rules::PutManagedInsightRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_managed_insight_rules::PutManagedInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_managed_insight_rules::PutManagedInsightRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl PutManagedInsightRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl PutManagedInsightRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_managed_insight_rules::PutManagedInsightRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_managed_insight_rules::PutManagedInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_managed_insight_rules::PutManagedInsightRulesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl PutManagedInsightRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_managed_insight_rules::PutManagedInsightRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_managed_insight_rules::PutManagedInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_managed_insight_rules::PutManagedInsightRulesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl PutManagedInsightRulesFluentBuilder {
             crate::operation::put_managed_insight_rules::PutManagedInsightRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_managed_insight_rules::PutManagedInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_managed_insight_rules::PutManagedInsightRulesError>,
     > {
         self.customize_middleware().await
     }
@@ -134,17 +119,12 @@ impl PutManagedInsightRulesFluentBuilder {
         self
     }
     /// <p> A list of <code>ManagedRules</code> to enable. </p>
-    pub fn set_managed_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>>,
-    ) -> Self {
+    pub fn set_managed_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>>) -> Self {
         self.inner = self.inner.set_managed_rules(input);
         self
     }
     /// <p> A list of <code>ManagedRules</code> to enable. </p>
-    pub fn get_managed_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>> {
+    pub fn get_managed_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>> {
         self.inner.get_managed_rules()
     }
 }

@@ -37,10 +37,7 @@ impl CreateNetworkSettingsFluentBuilder {
         }
     }
     /// Access the CreateNetworkSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_network_settings::builders::CreateNetworkSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_network_settings::builders::CreateNetworkSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateNetworkSettingsFluentBuilder {
             crate::operation::create_network_settings::CreateNetworkSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_settings::CreateNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_settings::CreateNetworkSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateNetworkSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateNetworkSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_network_settings::CreateNetworkSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_settings::CreateNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_settings::CreateNetworkSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateNetworkSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_network_settings::CreateNetworkSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_settings::CreateNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_settings::CreateNetworkSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateNetworkSettingsFluentBuilder {
             crate::operation::create_network_settings::CreateNetworkSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_settings::CreateNetworkSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_settings::CreateNetworkSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -147,10 +133,7 @@ impl CreateNetworkSettingsFluentBuilder {
         self
     }
     /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -163,25 +146,17 @@ impl CreateNetworkSettingsFluentBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
     /// Appends an item to `tags`.
@@ -194,10 +169,7 @@ impl CreateNetworkSettingsFluentBuilder {
         self
     }
     /// <p>The tags to add to the network settings resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

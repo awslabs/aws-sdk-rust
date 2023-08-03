@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteMeetingOutput`](crate::operation::delete_meeting::DeleteMeetingOutput)
     /// - On failure, responds with [`SdkError<DeleteMeetingError>`](crate::operation::delete_meeting::DeleteMeetingError)
     #[deprecated(note = "Replaced by DeleteMeeting in the Amazon Chime SDK Meetings Namespace")]
-    pub fn delete_meeting(
-        &self,
-    ) -> crate::operation::delete_meeting::builders::DeleteMeetingFluentBuilder {
-        crate::operation::delete_meeting::builders::DeleteMeetingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_meeting(&self) -> crate::operation::delete_meeting::builders::DeleteMeetingFluentBuilder {
+        crate::operation::delete_meeting::builders::DeleteMeetingFluentBuilder::new(self.handle.clone())
     }
 }

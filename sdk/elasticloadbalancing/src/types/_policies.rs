@@ -6,27 +6,21 @@
 pub struct Policies {
     /// <p>The stickiness policies created using <code>CreateAppCookieStickinessPolicy</code>.</p>
     #[doc(hidden)]
-    pub app_cookie_stickiness_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppCookieStickinessPolicy>>,
+    pub app_cookie_stickiness_policies: ::std::option::Option<::std::vec::Vec<crate::types::AppCookieStickinessPolicy>>,
     /// <p>The stickiness policies created using <code>CreateLBCookieStickinessPolicy</code>.</p>
     #[doc(hidden)]
-    pub lb_cookie_stickiness_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::LbCookieStickinessPolicy>>,
+    pub lb_cookie_stickiness_policies: ::std::option::Option<::std::vec::Vec<crate::types::LbCookieStickinessPolicy>>,
     /// <p>The policies other than the stickiness policies.</p>
     #[doc(hidden)]
     pub other_policies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Policies {
     /// <p>The stickiness policies created using <code>CreateAppCookieStickinessPolicy</code>.</p>
-    pub fn app_cookie_stickiness_policies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AppCookieStickinessPolicy]> {
+    pub fn app_cookie_stickiness_policies(&self) -> ::std::option::Option<&[crate::types::AppCookieStickinessPolicy]> {
         self.app_cookie_stickiness_policies.as_deref()
     }
     /// <p>The stickiness policies created using <code>CreateLBCookieStickinessPolicy</code>.</p>
-    pub fn lb_cookie_stickiness_policies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LbCookieStickinessPolicy]> {
+    pub fn lb_cookie_stickiness_policies(&self) -> ::std::option::Option<&[crate::types::LbCookieStickinessPolicy]> {
         self.lb_cookie_stickiness_policies.as_deref()
     }
     /// <p>The policies other than the stickiness policies.</p>
@@ -43,14 +37,10 @@ impl Policies {
 
 /// A builder for [`Policies`](crate::types::Policies).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PoliciesBuilder {
-    pub(crate) app_cookie_stickiness_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppCookieStickinessPolicy>>,
-    pub(crate) lb_cookie_stickiness_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::LbCookieStickinessPolicy>>,
+    pub(crate) app_cookie_stickiness_policies: ::std::option::Option<::std::vec::Vec<crate::types::AppCookieStickinessPolicy>>,
+    pub(crate) lb_cookie_stickiness_policies: ::std::option::Option<::std::vec::Vec<crate::types::LbCookieStickinessPolicy>>,
     pub(crate) other_policies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PoliciesBuilder {
@@ -59,10 +49,7 @@ impl PoliciesBuilder {
     /// To override the contents of this collection use [`set_app_cookie_stickiness_policies`](Self::set_app_cookie_stickiness_policies).
     ///
     /// <p>The stickiness policies created using <code>CreateAppCookieStickinessPolicy</code>.</p>
-    pub fn app_cookie_stickiness_policies(
-        mut self,
-        input: crate::types::AppCookieStickinessPolicy,
-    ) -> Self {
+    pub fn app_cookie_stickiness_policies(mut self, input: crate::types::AppCookieStickinessPolicy) -> Self {
         let mut v = self.app_cookie_stickiness_policies.unwrap_or_default();
         v.push(input);
         self.app_cookie_stickiness_policies = ::std::option::Option::Some(v);
@@ -77,9 +64,7 @@ impl PoliciesBuilder {
         self
     }
     /// <p>The stickiness policies created using <code>CreateAppCookieStickinessPolicy</code>.</p>
-    pub fn get_app_cookie_stickiness_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppCookieStickinessPolicy>> {
+    pub fn get_app_cookie_stickiness_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppCookieStickinessPolicy>> {
         &self.app_cookie_stickiness_policies
     }
     /// Appends an item to `lb_cookie_stickiness_policies`.
@@ -87,10 +72,7 @@ impl PoliciesBuilder {
     /// To override the contents of this collection use [`set_lb_cookie_stickiness_policies`](Self::set_lb_cookie_stickiness_policies).
     ///
     /// <p>The stickiness policies created using <code>CreateLBCookieStickinessPolicy</code>.</p>
-    pub fn lb_cookie_stickiness_policies(
-        mut self,
-        input: crate::types::LbCookieStickinessPolicy,
-    ) -> Self {
+    pub fn lb_cookie_stickiness_policies(mut self, input: crate::types::LbCookieStickinessPolicy) -> Self {
         let mut v = self.lb_cookie_stickiness_policies.unwrap_or_default();
         v.push(input);
         self.lb_cookie_stickiness_policies = ::std::option::Option::Some(v);
@@ -105,9 +87,7 @@ impl PoliciesBuilder {
         self
     }
     /// <p>The stickiness policies created using <code>CreateLBCookieStickinessPolicy</code>.</p>
-    pub fn get_lb_cookie_stickiness_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LbCookieStickinessPolicy>> {
+    pub fn get_lb_cookie_stickiness_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LbCookieStickinessPolicy>> {
         &self.lb_cookie_stickiness_policies
     }
     /// Appends an item to `other_policies`.
@@ -115,27 +95,19 @@ impl PoliciesBuilder {
     /// To override the contents of this collection use [`set_other_policies`](Self::set_other_policies).
     ///
     /// <p>The policies other than the stickiness policies.</p>
-    pub fn other_policies(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn other_policies(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.other_policies.unwrap_or_default();
         v.push(input.into());
         self.other_policies = ::std::option::Option::Some(v);
         self
     }
     /// <p>The policies other than the stickiness policies.</p>
-    pub fn set_other_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_other_policies(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.other_policies = input;
         self
     }
     /// <p>The policies other than the stickiness policies.</p>
-    pub fn get_other_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_other_policies(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.other_policies
     }
     /// Consumes the builder and constructs a [`Policies`](crate::types::Policies).

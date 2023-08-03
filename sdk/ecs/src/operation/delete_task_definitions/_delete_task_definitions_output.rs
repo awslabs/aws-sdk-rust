@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DeleteTaskDefinitionsOutput {
 }
 impl DeleteTaskDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTaskDefinitionsOutput`](crate::operation::delete_task_definitions::DeleteTaskDefinitionsOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_task_definitions::builders::DeleteTaskDefinitionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_task_definitions::builders::DeleteTaskDefinitionsOutputBuilder {
         crate::operation::delete_task_definitions::builders::DeleteTaskDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTaskDefinitionsOutput`](crate::operation::delete_task_definitions::DeleteTaskDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTaskDefinitionsOutputBuilder {
-    pub(crate) task_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinition>>,
+    pub(crate) task_definitions: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinition>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DeleteTaskDefinitionsOutputBuilder {
         self
     }
     /// <p>The list of deleted task definitions.</p>
-    pub fn set_task_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinition>>,
-    ) -> Self {
+    pub fn set_task_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinition>>) -> Self {
         self.task_definitions = input;
         self
     }
     /// <p>The list of deleted task definitions.</p>
-    pub fn get_task_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskDefinition>> {
+    pub fn get_task_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskDefinition>> {
         &self.task_definitions
     }
     /// Appends an item to `failures`.
@@ -84,10 +74,7 @@ impl DeleteTaskDefinitionsOutputBuilder {
         self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>) -> Self {
         self.failures = input;
         self
     }

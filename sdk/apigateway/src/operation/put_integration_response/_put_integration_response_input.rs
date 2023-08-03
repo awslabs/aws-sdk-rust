@@ -21,14 +21,10 @@ pub struct PutIntegrationResponseInput {
     pub selection_pattern: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> must be a valid and unique response header name and <code>JSON-expression</code> a valid JSON expression without the <code>$</code> prefix.</p>
     #[doc(hidden)]
-    pub response_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies a put integration response's templates.</p>
     #[doc(hidden)]
-    pub response_templates: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub response_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
     #[doc(hidden)]
@@ -56,55 +52,37 @@ impl PutIntegrationResponseInput {
         self.selection_pattern.as_deref()
     }
     /// <p>A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> must be a valid and unique response header name and <code>JSON-expression</code> a valid JSON expression without the <code>$</code> prefix.</p>
-    pub fn response_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn response_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.response_parameters.as_ref()
     }
     /// <p>Specifies a put integration response's templates.</p>
-    pub fn response_templates(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn response_templates(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.response_templates.as_ref()
     }
     /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
-    pub fn content_handling(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContentHandlingStrategy> {
+    pub fn content_handling(&self) -> ::std::option::Option<&crate::types::ContentHandlingStrategy> {
         self.content_handling.as_ref()
     }
 }
 impl PutIntegrationResponseInput {
     /// Creates a new builder-style object to manufacture [`PutIntegrationResponseInput`](crate::operation::put_integration_response::PutIntegrationResponseInput).
-    pub fn builder(
-    ) -> crate::operation::put_integration_response::builders::PutIntegrationResponseInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_integration_response::builders::PutIntegrationResponseInputBuilder {
         crate::operation::put_integration_response::builders::PutIntegrationResponseInputBuilder::default()
     }
 }
 
 /// A builder for [`PutIntegrationResponseInput`](crate::operation::put_integration_response::PutIntegrationResponseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutIntegrationResponseInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) http_method: ::std::option::Option<::std::string::String>,
     pub(crate) status_code: ::std::option::Option<::std::string::String>,
     pub(crate) selection_pattern: ::std::option::Option<::std::string::String>,
-    pub(crate) response_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) response_templates: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) response_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) content_handling: ::std::option::Option<crate::types::ContentHandlingStrategy>,
 }
 impl PutIntegrationResponseInputBuilder {
@@ -165,18 +143,12 @@ impl PutIntegrationResponseInputBuilder {
         &self.status_code
     }
     /// <p>Specifies the selection pattern of a put integration response.</p>
-    pub fn selection_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selection_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the selection pattern of a put integration response.</p>
-    pub fn set_selection_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_selection_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.selection_pattern = input;
         self
     }
@@ -202,19 +174,13 @@ impl PutIntegrationResponseInputBuilder {
     /// <p>A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> must be a valid and unique response header name and <code>JSON-expression</code> a valid JSON expression without the <code>$</code> prefix.</p>
     pub fn set_response_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.response_parameters = input;
         self
     }
     /// <p>A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> must be a valid and unique response header name and <code>JSON-expression</code> a valid JSON expression without the <code>$</code> prefix.</p>
-    pub fn get_response_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_response_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.response_parameters
     }
     /// Adds a key-value pair to `response_templates`.
@@ -235,19 +201,13 @@ impl PutIntegrationResponseInputBuilder {
     /// <p>Specifies a put integration response's templates.</p>
     pub fn set_response_templates(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.response_templates = input;
         self
     }
     /// <p>Specifies a put integration response's templates.</p>
-    pub fn get_response_templates(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_response_templates(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.response_templates
     }
     /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
@@ -258,38 +218,29 @@ impl PutIntegrationResponseInputBuilder {
     }
     /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
-    pub fn set_content_handling(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentHandlingStrategy>,
-    ) -> Self {
+    pub fn set_content_handling(mut self, input: ::std::option::Option<crate::types::ContentHandlingStrategy>) -> Self {
         self.content_handling = input;
         self
     }
     /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
-    pub fn get_content_handling(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContentHandlingStrategy> {
+    pub fn get_content_handling(&self) -> &::std::option::Option<crate::types::ContentHandlingStrategy> {
         &self.content_handling
     }
     /// Consumes the builder and constructs a [`PutIntegrationResponseInput`](crate::operation::put_integration_response::PutIntegrationResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_integration_response::PutIntegrationResponseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_integration_response::PutIntegrationResponseInput {
-                rest_api_id: self.rest_api_id,
-                resource_id: self.resource_id,
-                http_method: self.http_method,
-                status_code: self.status_code,
-                selection_pattern: self.selection_pattern,
-                response_parameters: self.response_parameters,
-                response_templates: self.response_templates,
-                content_handling: self.content_handling,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_integration_response::PutIntegrationResponseInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_integration_response::PutIntegrationResponseInput {
+            rest_api_id: self.rest_api_id,
+            resource_id: self.resource_id,
+            http_method: self.http_method,
+            status_code: self.status_code,
+            selection_pattern: self.selection_pattern,
+            response_parameters: self.response_parameters,
+            response_templates: self.response_templates,
+            content_handling: self.content_handling,
+        })
     }
 }

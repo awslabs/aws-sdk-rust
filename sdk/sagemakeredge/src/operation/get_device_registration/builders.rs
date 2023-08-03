@@ -37,10 +37,7 @@ impl GetDeviceRegistrationFluentBuilder {
         }
     }
     /// Access the GetDeviceRegistration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_device_registration::builders::GetDeviceRegistrationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_device_registration::builders::GetDeviceRegistrationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetDeviceRegistrationFluentBuilder {
             crate::operation::get_device_registration::GetDeviceRegistration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_registration::GetDeviceRegistrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_registration::GetDeviceRegistrationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetDeviceRegistrationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetDeviceRegistrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_device_registration::GetDeviceRegistrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_registration::GetDeviceRegistrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_registration::GetDeviceRegistrationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetDeviceRegistrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_device_registration::GetDeviceRegistrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_registration::GetDeviceRegistrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_registration::GetDeviceRegistrationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetDeviceRegistrationFluentBuilder {
             crate::operation::get_device_registration::GetDeviceRegistration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_device_registration::GetDeviceRegistrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_device_registration::GetDeviceRegistrationError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl GetDeviceRegistrationFluentBuilder {
         self.inner.get_device_name()
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_fleet_name(input.into());
         self
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_fleet_name(input);
         self
     }

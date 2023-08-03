@@ -22,18 +22,14 @@ impl DeprecateWorkflowTypeInput {
 }
 impl DeprecateWorkflowTypeInput {
     /// Creates a new builder-style object to manufacture [`DeprecateWorkflowTypeInput`](crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeInput).
-    pub fn builder(
-    ) -> crate::operation::deprecate_workflow_type::builders::DeprecateWorkflowTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::deprecate_workflow_type::builders::DeprecateWorkflowTypeInputBuilder {
         crate::operation::deprecate_workflow_type::builders::DeprecateWorkflowTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`DeprecateWorkflowTypeInput`](crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeprecateWorkflowTypeInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
@@ -59,10 +55,7 @@ impl DeprecateWorkflowTypeInputBuilder {
         self
     }
     /// <p>The workflow type to deprecate.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.workflow_type = input;
         self
     }
@@ -73,15 +66,11 @@ impl DeprecateWorkflowTypeInputBuilder {
     /// Consumes the builder and constructs a [`DeprecateWorkflowTypeInput`](crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeInput {
-                domain: self.domain,
-                workflow_type: self.workflow_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeInput {
+            domain: self.domain,
+            workflow_type: self.workflow_type,
+        })
     }
 }

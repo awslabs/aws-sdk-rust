@@ -23,9 +23,7 @@ impl ScheduledSplitsLaunchDefinition {
 
 /// A builder for [`ScheduledSplitsLaunchDefinition`](crate::types::ScheduledSplitsLaunchDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledSplitsLaunchDefinitionBuilder {
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledSplit>>,
 }
@@ -42,17 +40,12 @@ impl ScheduledSplitsLaunchDefinitionBuilder {
         self
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
-    pub fn set_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledSplit>>,
-    ) -> Self {
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledSplit>>) -> Self {
         self.steps = input;
         self
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
-    pub fn get_steps(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledSplit>> {
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledSplit>> {
         &self.steps
     }
     /// Consumes the builder and constructs a [`ScheduledSplitsLaunchDefinition`](crate::types::ScheduledSplitsLaunchDefinition).

@@ -37,10 +37,7 @@ impl DescribeSourceServersFluentBuilder {
         }
     }
     /// Access the DescribeSourceServers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_source_servers::builders::DescribeSourceServersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_source_servers::builders::DescribeSourceServersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeSourceServersFluentBuilder {
             crate::operation::describe_source_servers::DescribeSourceServers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_source_servers::DescribeSourceServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_source_servers::DescribeSourceServersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeSourceServersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeSourceServersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_source_servers::DescribeSourceServersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_source_servers::DescribeSourceServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_source_servers::DescribeSourceServersError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeSourceServersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_source_servers::DescribeSourceServersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_source_servers::DescribeSourceServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_source_servers::DescribeSourceServersError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl DescribeSourceServersFluentBuilder {
             crate::operation::describe_source_servers::DescribeSourceServers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_source_servers::DescribeSourceServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_source_servers::DescribeSourceServersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_source_servers::paginator::DescribeSourceServersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_source_servers::paginator::DescribeSourceServersPaginator {
-        crate::operation::describe_source_servers::paginator::DescribeSourceServersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_source_servers::paginator::DescribeSourceServersPaginator {
+        crate::operation::describe_source_servers::paginator::DescribeSourceServersPaginator::new(self.handle, self.inner)
     }
     /// <p>A set of filters by which to return Source Servers.</p>
     pub fn filters(mut self, input: crate::types::DescribeSourceServersRequestFilters) -> Self {
@@ -140,17 +121,12 @@ impl DescribeSourceServersFluentBuilder {
         self
     }
     /// <p>A set of filters by which to return Source Servers.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribeSourceServersRequestFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::DescribeSourceServersRequestFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A set of filters by which to return Source Servers.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::DescribeSourceServersRequestFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::DescribeSourceServersRequestFilters> {
         self.inner.get_filters()
     }
     /// <p>Maximum number of Source Servers to retrieve.</p>

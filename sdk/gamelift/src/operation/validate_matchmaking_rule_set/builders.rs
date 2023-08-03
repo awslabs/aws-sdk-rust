@@ -30,7 +30,7 @@ impl ValidateMatchmakingRuleSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ValidateMatchmakingRuleSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetInputBuilder,
+    inner: crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetInputBuilder,
 }
 impl ValidateMatchmakingRuleSetFluentBuilder {
     /// Creates a new `ValidateMatchmakingRuleSet`.
@@ -41,7 +41,7 @@ impl ValidateMatchmakingRuleSetFluentBuilder {
         }
     }
     /// Access the ValidateMatchmakingRuleSet as a reference.
-    pub fn as_input(&self) -> &crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl ValidateMatchmakingRuleSetFluentBuilder {
             crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl ValidateMatchmakingRuleSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl ValidateMatchmakingRuleSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl ValidateMatchmakingRuleSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +109,17 @@ impl ValidateMatchmakingRuleSetFluentBuilder {
             crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
-    pub fn rule_set_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_set_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_set_body(input.into());
         self
     }
     /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
-    pub fn set_rule_set_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_set_body(input);
         self
     }

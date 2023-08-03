@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`group_name(impl ::std::convert::Into<String>)`](crate::operation::admin_remove_user_from_group::builders::AdminRemoveUserFromGroupFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::admin_remove_user_from_group::builders::AdminRemoveUserFromGroupFluentBuilder::set_group_name): <p>The group name.</p>
     /// - On success, responds with [`AdminRemoveUserFromGroupOutput`](crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupOutput)
     /// - On failure, responds with [`SdkError<AdminRemoveUserFromGroupError>`](crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError)
-    pub fn admin_remove_user_from_group(&self) -> crate::operation::admin_remove_user_from_group::builders::AdminRemoveUserFromGroupFluentBuilder{
+    pub fn admin_remove_user_from_group(&self) -> crate::operation::admin_remove_user_from_group::builders::AdminRemoveUserFromGroupFluentBuilder {
         crate::operation::admin_remove_user_from_group::builders::AdminRemoveUserFromGroupFluentBuilder::new(self.handle.clone())
     }
 }

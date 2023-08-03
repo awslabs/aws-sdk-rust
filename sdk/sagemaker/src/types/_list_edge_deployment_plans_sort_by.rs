@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ListEdgeDeploymentPlansSortBy {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ListEdgeDeploymentPlansSortBy {
             "DEVICE_FLEET_NAME" => ListEdgeDeploymentPlansSortBy::DeviceFleetName,
             "LAST_MODIFIED_TIME" => ListEdgeDeploymentPlansSortBy::LastModifiedTime,
             "NAME" => ListEdgeDeploymentPlansSortBy::Name,
-            other => ListEdgeDeploymentPlansSortBy::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ListEdgeDeploymentPlansSortBy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl ListEdgeDeploymentPlansSortBy {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATION_TIME",
-            "DEVICE_FLEET_NAME",
-            "LAST_MODIFIED_TIME",
-            "NAME",
-        ]
+        &["CREATION_TIME", "DEVICE_FLEET_NAME", "LAST_MODIFIED_TIME", "NAME"]
     }
 }
 impl ::std::convert::AsRef<str> for ListEdgeDeploymentPlansSortBy {

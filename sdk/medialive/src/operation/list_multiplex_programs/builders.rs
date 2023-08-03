@@ -37,10 +37,7 @@ impl ListMultiplexProgramsFluentBuilder {
         }
     }
     /// Access the ListMultiplexPrograms as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListMultiplexProgramsFluentBuilder {
             crate::operation::list_multiplex_programs::ListMultiplexPrograms,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_multiplex_programs::ListMultiplexProgramsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_multiplex_programs::ListMultiplexProgramsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListMultiplexProgramsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListMultiplexProgramsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_multiplex_programs::ListMultiplexProgramsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_multiplex_programs::ListMultiplexProgramsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_multiplex_programs::ListMultiplexProgramsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListMultiplexProgramsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_multiplex_programs::ListMultiplexProgramsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_multiplex_programs::ListMultiplexProgramsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_multiplex_programs::ListMultiplexProgramsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListMultiplexProgramsFluentBuilder {
             crate::operation::list_multiplex_programs::ListMultiplexPrograms,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_multiplex_programs::ListMultiplexProgramsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_multiplex_programs::ListMultiplexProgramsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_multiplex_programs::paginator::ListMultiplexProgramsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_multiplex_programs::paginator::ListMultiplexProgramsPaginator {
-        crate::operation::list_multiplex_programs::paginator::ListMultiplexProgramsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_multiplex_programs::paginator::ListMultiplexProgramsPaginator {
+        crate::operation::list_multiplex_programs::paginator::ListMultiplexProgramsPaginator::new(self.handle, self.inner)
     }
     /// The maximum number of items to return.
     pub fn max_results(mut self, input: i32) -> Self {

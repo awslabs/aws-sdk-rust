@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateWirelessGatewayOutput {
 }
 impl UpdateWirelessGatewayOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWirelessGatewayOutput`](crate::operation::update_wireless_gateway::UpdateWirelessGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::update_wireless_gateway::builders::UpdateWirelessGatewayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_wireless_gateway::builders::UpdateWirelessGatewayOutputBuilder {
         crate::operation::update_wireless_gateway::builders::UpdateWirelessGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWirelessGatewayOutput`](crate::operation::update_wireless_gateway::UpdateWirelessGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWirelessGatewayOutputBuilder {
     _request_id: Option<String>,
 }

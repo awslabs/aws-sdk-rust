@@ -36,10 +36,7 @@ pub fn ser_update_app_block_builder_input(
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_access_endpoint::ser_access_endpoint(
-                    &mut object_13,
-                    item_12,
-                )?;
+                crate::protocol_serde::shape_access_endpoint::ser_access_endpoint(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }

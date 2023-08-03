@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_origin_endpoints::ListOriginEndpointsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     ///   - [`origin_endpoints(Option<Vec<OriginEndpoint>>)`](crate::operation::list_origin_endpoints::ListOriginEndpointsOutput::origin_endpoints): A list of OriginEndpoint records.
     /// - On failure, responds with [`SdkError<ListOriginEndpointsError>`](crate::operation::list_origin_endpoints::ListOriginEndpointsError)
-    pub fn list_origin_endpoints(
-        &self,
-    ) -> crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder {
-        crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_origin_endpoints(&self) -> crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder {
+        crate::operation::list_origin_endpoints::builders::ListOriginEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

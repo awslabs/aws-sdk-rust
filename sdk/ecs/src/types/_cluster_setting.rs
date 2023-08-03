@@ -32,9 +32,7 @@ impl ClusterSetting {
 
 /// A builder for [`ClusterSetting`](crate::types::ClusterSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterSettingBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ClusterSettingName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -46,10 +44,7 @@ impl ClusterSettingBuilder {
         self
     }
     /// <p>The name of the cluster setting. The value is <code>containerInsights</code> .</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterSettingName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::ClusterSettingName>) -> Self {
         self.name = input;
         self
     }

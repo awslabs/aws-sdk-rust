@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for ListProfilePermissionsOutput {
 }
 impl ListProfilePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ListProfilePermissionsOutput`](crate::operation::list_profile_permissions::ListProfilePermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_profile_permissions::builders::ListProfilePermissionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_profile_permissions::builders::ListProfilePermissionsOutputBuilder {
         crate::operation::list_profile_permissions::builders::ListProfilePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProfilePermissionsOutput`](crate::operation::list_profile_permissions::ListProfilePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfilePermissionsOutputBuilder {
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_size_bytes: ::std::option::Option<i32>,
@@ -102,17 +98,12 @@ impl ListProfilePermissionsOutputBuilder {
         self
     }
     /// <p>List of permissions associated with the Signing Profile.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>List of permissions associated with the Signing Profile.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         &self.permissions
     }
     /// <p>String for specifying the next set of paginated results.</p>

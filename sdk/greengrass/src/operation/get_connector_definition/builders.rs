@@ -37,10 +37,7 @@ impl GetConnectorDefinitionFluentBuilder {
         }
     }
     /// Access the GetConnectorDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_connector_definition::builders::GetConnectorDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_connector_definition::builders::GetConnectorDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetConnectorDefinitionFluentBuilder {
             crate::operation::get_connector_definition::GetConnectorDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connector_definition::GetConnectorDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connector_definition::GetConnectorDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetConnectorDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetConnectorDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_connector_definition::GetConnectorDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connector_definition::GetConnectorDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connector_definition::GetConnectorDefinitionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetConnectorDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_connector_definition::GetConnectorDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connector_definition::GetConnectorDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connector_definition::GetConnectorDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetConnectorDefinitionFluentBuilder {
             crate::operation::get_connector_definition::GetConnectorDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connector_definition::GetConnectorDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connector_definition::GetConnectorDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// The ID of the connector definition.
-    pub fn connector_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_definition_id(input.into());
         self
     }
     /// The ID of the connector definition.
-    pub fn set_connector_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_definition_id(input);
         self
     }

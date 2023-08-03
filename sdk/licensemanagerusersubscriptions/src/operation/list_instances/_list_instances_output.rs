@@ -35,12 +35,9 @@ impl ListInstancesOutput {
 
 /// A builder for [`ListInstancesOutput`](crate::operation::list_instances::ListInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstancesOutputBuilder {
-    pub(crate) instance_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
+    pub(crate) instance_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListInstancesOutputBuilder {
         self
     }
     /// <p>Metadata that describes the list instances operation.</p>
-    pub fn set_instance_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
-    ) -> Self {
+    pub fn set_instance_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>) -> Self {
         self.instance_summaries = input;
         self
     }
     /// <p>Metadata that describes the list instances operation.</p>
-    pub fn get_instance_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>> {
+    pub fn get_instance_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>> {
         &self.instance_summaries
     }
     /// <p>Token for the next set of results.</p>

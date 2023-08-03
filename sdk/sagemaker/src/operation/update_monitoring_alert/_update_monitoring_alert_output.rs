@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateMonitoringAlertOutput {
 }
 impl UpdateMonitoringAlertOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMonitoringAlertOutput`](crate::operation::update_monitoring_alert::UpdateMonitoringAlertOutput).
-    pub fn builder(
-    ) -> crate::operation::update_monitoring_alert::builders::UpdateMonitoringAlertOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_monitoring_alert::builders::UpdateMonitoringAlertOutputBuilder {
         crate::operation::update_monitoring_alert::builders::UpdateMonitoringAlertOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMonitoringAlertOutput`](crate::operation::update_monitoring_alert::UpdateMonitoringAlertOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMonitoringAlertOutputBuilder {
     pub(crate) monitoring_schedule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) monitoring_alert_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +43,12 @@ pub struct UpdateMonitoringAlertOutputBuilder {
 }
 impl UpdateMonitoringAlertOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
-    pub fn monitoring_schedule_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_schedule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
-    pub fn set_monitoring_schedule_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_schedule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_schedule_arn = input;
         self
     }
@@ -67,18 +57,12 @@ impl UpdateMonitoringAlertOutputBuilder {
         &self.monitoring_schedule_arn
     }
     /// <p>The name of a monitoring alert.</p>
-    pub fn monitoring_alert_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_alert_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_alert_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a monitoring alert.</p>
-    pub fn set_monitoring_alert_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_alert_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_alert_name = input;
         self
     }

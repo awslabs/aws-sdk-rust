@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeFhirExportJobOutput`](crate::operation::describe_fhir_export_job::DescribeFhirExportJobOutput) with field(s):
     ///   - [`export_job_properties(Option<ExportJobProperties>)`](crate::operation::describe_fhir_export_job::DescribeFhirExportJobOutput::export_job_properties): <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
     /// - On failure, responds with [`SdkError<DescribeFHIRExportJobError>`](crate::operation::describe_fhir_export_job::DescribeFHIRExportJobError)
-    pub fn describe_fhir_export_job(
-        &self,
-    ) -> crate::operation::describe_fhir_export_job::builders::DescribeFHIRExportJobFluentBuilder
-    {
+    pub fn describe_fhir_export_job(&self) -> crate::operation::describe_fhir_export_job::builders::DescribeFHIRExportJobFluentBuilder {
         crate::operation::describe_fhir_export_job::builders::DescribeFHIRExportJobFluentBuilder::new(self.handle.clone())
     }
 }

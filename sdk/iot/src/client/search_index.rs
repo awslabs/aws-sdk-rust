@@ -13,9 +13,7 @@ impl super::Client {
     ///   - [`things(Option<Vec<ThingDocument>>)`](crate::operation::search_index::SearchIndexOutput::things): <p>The things that match the search query.</p>
     ///   - [`thing_groups(Option<Vec<ThingGroupDocument>>)`](crate::operation::search_index::SearchIndexOutput::thing_groups): <p>The thing groups that match the search query.</p>
     /// - On failure, responds with [`SdkError<SearchIndexError>`](crate::operation::search_index::SearchIndexError)
-    pub fn search_index(
-        &self,
-    ) -> crate::operation::search_index::builders::SearchIndexFluentBuilder {
+    pub fn search_index(&self) -> crate::operation::search_index::builders::SearchIndexFluentBuilder {
         crate::operation::search_index::builders::SearchIndexFluentBuilder::new(self.handle.clone())
     }
 }

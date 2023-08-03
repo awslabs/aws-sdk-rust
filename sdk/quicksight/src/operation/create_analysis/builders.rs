@@ -10,10 +10,7 @@ impl CreateAnalysisInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_analysis::CreateAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_analysis::CreateAnalysisError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_analysis::CreateAnalysisError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_analysis();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateAnalysisFluentBuilder {
         }
     }
     /// Access the CreateAnalysis as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_analysis::builders::CreateAnalysisInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_analysis::builders::CreateAnalysisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateAnalysisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl CreateAnalysisFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -168,10 +154,7 @@ impl CreateAnalysisFluentBuilder {
         self
     }
     /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::Parameters>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::Parameters>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
@@ -191,18 +174,13 @@ impl CreateAnalysisFluentBuilder {
     }
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis. You can use the <code>Permissions</code> structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN). </p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_permissions()
     }
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
@@ -213,10 +191,7 @@ impl CreateAnalysisFluentBuilder {
     }
     /// <p>A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
-    pub fn set_source_entity(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisSourceEntity>,
-    ) -> Self {
+    pub fn set_source_entity(mut self, input: ::std::option::Option<crate::types::AnalysisSourceEntity>) -> Self {
         self.inner = self.inner.set_source_entity(input);
         self
     }
@@ -249,10 +224,7 @@ impl CreateAnalysisFluentBuilder {
         self
     }
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -270,10 +242,7 @@ impl CreateAnalysisFluentBuilder {
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisDefinition>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::AnalysisDefinition>) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }

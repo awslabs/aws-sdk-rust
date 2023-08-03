@@ -37,10 +37,7 @@ impl UpdateSchedulingPolicyFluentBuilder {
         }
     }
     /// Access the UpdateSchedulingPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_scheduling_policy::builders::UpdateSchedulingPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_scheduling_policy::builders::UpdateSchedulingPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateSchedulingPolicyFluentBuilder {
             crate::operation::update_scheduling_policy::UpdateSchedulingPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduling_policy::UpdateSchedulingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scheduling_policy::UpdateSchedulingPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateSchedulingPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateSchedulingPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_scheduling_policy::UpdateSchedulingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduling_policy::UpdateSchedulingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scheduling_policy::UpdateSchedulingPolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateSchedulingPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_scheduling_policy::UpdateSchedulingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduling_policy::UpdateSchedulingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scheduling_policy::UpdateSchedulingPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateSchedulingPolicyFluentBuilder {
             crate::operation::update_scheduling_policy::UpdateSchedulingPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_scheduling_policy::UpdateSchedulingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_scheduling_policy::UpdateSchedulingPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +129,7 @@ impl UpdateSchedulingPolicyFluentBuilder {
         self
     }
     /// <p>The fair share policy.</p>
-    pub fn set_fairshare_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::FairsharePolicy>,
-    ) -> Self {
+    pub fn set_fairshare_policy(mut self, input: ::std::option::Option<crate::types::FairsharePolicy>) -> Self {
         self.inner = self.inner.set_fairshare_policy(input);
         self
     }

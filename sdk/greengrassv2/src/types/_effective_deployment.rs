@@ -34,8 +34,7 @@ pub struct EffectiveDeployment {
     /// <li> <p> <code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub core_device_execution_status:
-        ::std::option::Option<crate::types::EffectiveDeploymentExecutionStatus>,
+    pub core_device_execution_status: ::std::option::Option<crate::types::EffectiveDeploymentExecutionStatus>,
     /// <p>The reason code for the update, if the job was updated.</p>
     #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
@@ -85,9 +84,7 @@ impl EffectiveDeployment {
     /// <li> <p> <code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p> </li>
     /// </ul>
-    pub fn core_device_execution_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EffectiveDeploymentExecutionStatus> {
+    pub fn core_device_execution_status(&self) -> ::std::option::Option<&crate::types::EffectiveDeploymentExecutionStatus> {
         self.core_device_execution_status.as_ref()
     }
     /// <p>The reason code for the update, if the job was updated.</p>
@@ -103,9 +100,7 @@ impl EffectiveDeployment {
         self.modified_timestamp.as_ref()
     }
     /// <p>The status details that explain why a deployment has an error. This response will be null if the deployment is in a success state.</p>
-    pub fn status_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EffectiveDeploymentStatusDetails> {
+    pub fn status_details(&self) -> ::std::option::Option<&crate::types::EffectiveDeploymentStatusDetails> {
         self.status_details.as_ref()
     }
 }
@@ -118,9 +113,7 @@ impl EffectiveDeployment {
 
 /// A builder for [`EffectiveDeployment`](crate::types::EffectiveDeployment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EffectiveDeploymentBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_name: ::std::option::Option<::std::string::String>,
@@ -128,28 +121,20 @@ pub struct EffectiveDeploymentBuilder {
     pub(crate) iot_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) core_device_execution_status:
-        ::std::option::Option<crate::types::EffectiveDeploymentExecutionStatus>,
+    pub(crate) core_device_execution_status: ::std::option::Option<crate::types::EffectiveDeploymentExecutionStatus>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) status_details:
-        ::std::option::Option<crate::types::EffectiveDeploymentStatusDetails>,
+    pub(crate) status_details: ::std::option::Option<crate::types::EffectiveDeploymentStatusDetails>,
 }
 impl EffectiveDeploymentBuilder {
     /// <p>The ID of the deployment.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the deployment.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -158,18 +143,12 @@ impl EffectiveDeploymentBuilder {
         &self.deployment_id
     }
     /// <p>The name of the deployment.</p>
-    pub fn deployment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the deployment.</p>
-    pub fn set_deployment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_name = input;
         self
     }
@@ -244,10 +223,7 @@ impl EffectiveDeploymentBuilder {
     /// <li> <p> <code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p> </li>
     /// </ul>
-    pub fn core_device_execution_status(
-        mut self,
-        input: crate::types::EffectiveDeploymentExecutionStatus,
-    ) -> Self {
+    pub fn core_device_execution_status(mut self, input: crate::types::EffectiveDeploymentExecutionStatus) -> Self {
         self.core_device_execution_status = ::std::option::Option::Some(input);
         self
     }
@@ -262,10 +238,7 @@ impl EffectiveDeploymentBuilder {
     /// <li> <p> <code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p> </li>
     /// </ul>
-    pub fn set_core_device_execution_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EffectiveDeploymentExecutionStatus>,
-    ) -> Self {
+    pub fn set_core_device_execution_status(mut self, input: ::std::option::Option<crate::types::EffectiveDeploymentExecutionStatus>) -> Self {
         self.core_device_execution_status = input;
         self
     }
@@ -280,9 +253,7 @@ impl EffectiveDeploymentBuilder {
     /// <li> <p> <code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p> </li>
     /// </ul>
-    pub fn get_core_device_execution_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::EffectiveDeploymentExecutionStatus> {
+    pub fn get_core_device_execution_status(&self) -> &::std::option::Option<crate::types::EffectiveDeploymentExecutionStatus> {
         &self.core_device_execution_status
     }
     /// <p>The reason code for the update, if the job was updated.</p>
@@ -305,10 +276,7 @@ impl EffectiveDeploymentBuilder {
         self
     }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -322,10 +290,7 @@ impl EffectiveDeploymentBuilder {
         self
     }
     /// <p>The time at which the deployment job was last modified, expressed in ISO 8601 format.</p>
-    pub fn set_modified_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_timestamp = input;
         self
     }
@@ -339,17 +304,12 @@ impl EffectiveDeploymentBuilder {
         self
     }
     /// <p>The status details that explain why a deployment has an error. This response will be null if the deployment is in a success state.</p>
-    pub fn set_status_details(
-        mut self,
-        input: ::std::option::Option<crate::types::EffectiveDeploymentStatusDetails>,
-    ) -> Self {
+    pub fn set_status_details(mut self, input: ::std::option::Option<crate::types::EffectiveDeploymentStatusDetails>) -> Self {
         self.status_details = input;
         self
     }
     /// <p>The status details that explain why a deployment has an error. This response will be null if the deployment is in a success state.</p>
-    pub fn get_status_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::EffectiveDeploymentStatusDetails> {
+    pub fn get_status_details(&self) -> &::std::option::Option<crate::types::EffectiveDeploymentStatusDetails> {
         &self.status_details
     }
     /// Consumes the builder and constructs a [`EffectiveDeployment`](crate::types::EffectiveDeployment).

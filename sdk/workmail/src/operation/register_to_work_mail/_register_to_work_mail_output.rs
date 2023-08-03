@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for RegisterToWorkMailOutput {
 }
 impl RegisterToWorkMailOutput {
     /// Creates a new builder-style object to manufacture [`RegisterToWorkMailOutput`](crate::operation::register_to_work_mail::RegisterToWorkMailOutput).
-    pub fn builder(
-    ) -> crate::operation::register_to_work_mail::builders::RegisterToWorkMailOutputBuilder {
-        crate::operation::register_to_work_mail::builders::RegisterToWorkMailOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::register_to_work_mail::builders::RegisterToWorkMailOutputBuilder {
+        crate::operation::register_to_work_mail::builders::RegisterToWorkMailOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterToWorkMailOutput`](crate::operation::register_to_work_mail::RegisterToWorkMailOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterToWorkMailOutputBuilder {
     _request_id: Option<String>,
 }

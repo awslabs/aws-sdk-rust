@@ -35,9 +35,7 @@ impl ListQueuesOutput {
 
 /// A builder for [`ListQueuesOutput`](crate::operation::list_queues::ListQueuesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueuesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) queues: ::std::option::Option<::std::vec::Vec<crate::types::Queue>>,
@@ -70,10 +68,7 @@ impl ListQueuesOutputBuilder {
         self
     }
     /// List of queues.
-    pub fn set_queues(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Queue>>,
-    ) -> Self {
+    pub fn set_queues(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Queue>>) -> Self {
         self.queues = input;
         self
     }

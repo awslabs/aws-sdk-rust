@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`server_certificate_name(impl ::std::convert::Into<String>)`](crate::operation::delete_server_certificate::builders::DeleteServerCertificateFluentBuilder::server_certificate_name) / [`set_server_certificate_name(Option<String>)`](crate::operation::delete_server_certificate::builders::DeleteServerCertificateFluentBuilder::set_server_certificate_name): <p>The name of the server certificate you want to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     /// - On success, responds with [`DeleteServerCertificateOutput`](crate::operation::delete_server_certificate::DeleteServerCertificateOutput)
     /// - On failure, responds with [`SdkError<DeleteServerCertificateError>`](crate::operation::delete_server_certificate::DeleteServerCertificateError)
-    pub fn delete_server_certificate(
-        &self,
-    ) -> crate::operation::delete_server_certificate::builders::DeleteServerCertificateFluentBuilder
-    {
+    pub fn delete_server_certificate(&self) -> crate::operation::delete_server_certificate::builders::DeleteServerCertificateFluentBuilder {
         crate::operation::delete_server_certificate::builders::DeleteServerCertificateFluentBuilder::new(self.handle.clone())
     }
 }

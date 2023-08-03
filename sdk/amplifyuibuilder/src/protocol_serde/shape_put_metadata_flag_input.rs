@@ -11,14 +11,10 @@ pub fn ser_body_http_payload(
 
 pub fn ser_body_payload(
     input: &crate::types::PutMetadataFlagBody,
-) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_put_metadata_flag_body::ser_put_metadata_flag_body(
-        &mut object,
-        input,
-    )?;
+    crate::protocol_serde::shape_put_metadata_flag_body::ser_put_metadata_flag_body(&mut object, input)?;
     object.finish();
     Ok(out.into_bytes())
 }

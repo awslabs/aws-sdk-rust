@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateServiceSyncConfigOutput {
 }
 impl CreateServiceSyncConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceSyncConfigOutput`](crate::operation::create_service_sync_config::CreateServiceSyncConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::create_service_sync_config::builders::CreateServiceSyncConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_service_sync_config::builders::CreateServiceSyncConfigOutputBuilder {
         crate::operation::create_service_sync_config::builders::CreateServiceSyncConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateServiceSyncConfigOutput`](crate::operation::create_service_sync_config::CreateServiceSyncConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateServiceSyncConfigOutputBuilder {
     pub(crate) service_sync_config: ::std::option::Option<crate::types::ServiceSyncConfig>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateServiceSyncConfigOutputBuilder {
         self
     }
     /// <p>The detailed data of the Proton Ops file.</p>
-    pub fn set_service_sync_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceSyncConfig>,
-    ) -> Self {
+    pub fn set_service_sync_config(mut self, input: ::std::option::Option<crate::types::ServiceSyncConfig>) -> Self {
         self.service_sync_config = input;
         self
     }
     /// <p>The detailed data of the Proton Ops file.</p>
-    pub fn get_service_sync_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceSyncConfig> {
+    pub fn get_service_sync_config(&self) -> &::std::option::Option<crate::types::ServiceSyncConfig> {
         &self.service_sync_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl CreateServiceSyncConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateServiceSyncConfigOutput`](crate::operation::create_service_sync_config::CreateServiceSyncConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_service_sync_config::CreateServiceSyncConfigOutput {
+    pub fn build(self) -> crate::operation::create_service_sync_config::CreateServiceSyncConfigOutput {
         crate::operation::create_service_sync_config::CreateServiceSyncConfigOutput {
             service_sync_config: self.service_sync_config,
             _request_id: self._request_id,

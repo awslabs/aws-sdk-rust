@@ -15,35 +15,25 @@ impl DescribeScheduledAuditInput {
 }
 impl DescribeScheduledAuditInput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduledAuditInput`](crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput).
-    pub fn builder(
-    ) -> crate::operation::describe_scheduled_audit::builders::DescribeScheduledAuditInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_scheduled_audit::builders::DescribeScheduledAuditInputBuilder {
         crate::operation::describe_scheduled_audit::builders::DescribeScheduledAuditInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScheduledAuditInput`](crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScheduledAuditInputBuilder {
     pub(crate) scheduled_audit_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeScheduledAuditInputBuilder {
     /// <p>The name of the scheduled audit whose information you want to get.</p>
-    pub fn scheduled_audit_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_audit_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_audit_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scheduled audit whose information you want to get.</p>
-    pub fn set_scheduled_audit_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_audit_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_audit_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl DescribeScheduledAuditInputBuilder {
     /// Consumes the builder and constructs a [`DescribeScheduledAuditInput`](crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput {
-                scheduled_audit_name: self.scheduled_audit_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput {
+            scheduled_audit_name: self.scheduled_audit_name,
+        })
     }
 }

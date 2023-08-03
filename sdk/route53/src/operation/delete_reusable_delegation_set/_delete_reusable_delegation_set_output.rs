@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteReusableDelegationSetOutput {
 }
 impl DeleteReusableDelegationSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReusableDelegationSetOutput`](crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetOutput).
-    pub fn builder() -> crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetOutputBuilder{
+    pub fn builder() -> crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetOutputBuilder {
         crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReusableDelegationSetOutput`](crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReusableDelegationSetOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,9 +35,7 @@ impl DeleteReusableDelegationSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteReusableDelegationSetOutput`](crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetOutput {
+    pub fn build(self) -> crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetOutput {
         crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetOutput {
             _request_id: self._request_id,
         }

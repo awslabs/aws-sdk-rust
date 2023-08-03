@@ -38,10 +38,7 @@ impl ListMobileSdkReleasesFluentBuilder {
         }
     }
     /// Access the ListMobileSdkReleases as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_mobile_sdk_releases::builders::ListMobileSdkReleasesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_mobile_sdk_releases::builders::ListMobileSdkReleasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ListMobileSdkReleasesFluentBuilder {
             crate::operation::list_mobile_sdk_releases::ListMobileSdkReleases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ListMobileSdkReleasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ListMobileSdkReleasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ListMobileSdkReleasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl ListMobileSdkReleasesFluentBuilder {
             crate::operation::list_mobile_sdk_releases::ListMobileSdkReleases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesError>,
     > {
         self.customize_middleware().await
     }

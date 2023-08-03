@@ -5,16 +5,16 @@ pub use crate::operation::cancel_capacity_reservation_fleets::_cancel_capacity_r
 
 impl CancelCapacityReservationFleetsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.cancel_capacity_reservation_fleets();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -31,7 +31,7 @@ impl CancelCapacityReservationFleetsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelCapacityReservationFleetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::cancel_capacity_reservation_fleets::builders::CancelCapacityReservationFleetsInputBuilder,
+    inner: crate::operation::cancel_capacity_reservation_fleets::builders::CancelCapacityReservationFleetsInputBuilder,
 }
 impl CancelCapacityReservationFleetsFluentBuilder {
     /// Creates a new `CancelCapacityReservationFleets`.
@@ -42,15 +42,20 @@ impl CancelCapacityReservationFleetsFluentBuilder {
         }
     }
     /// Access the CancelCapacityReservationFleets as a reference.
-    pub fn as_input(&self) -> &crate::operation::cancel_capacity_reservation_fleets::builders::CancelCapacityReservationFleetsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::cancel_capacity_reservation_fleets::builders::CancelCapacityReservationFleetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleets, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleets,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -59,16 +64,17 @@ impl CancelCapacityReservationFleetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -86,17 +92,26 @@ impl CancelCapacityReservationFleetsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleets, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleets,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -118,25 +133,17 @@ impl CancelCapacityReservationFleetsFluentBuilder {
     /// To override the contents of this collection use [`set_capacity_reservation_fleet_ids`](Self::set_capacity_reservation_fleet_ids).
     ///
     /// <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-    pub fn capacity_reservation_fleet_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_fleet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.capacity_reservation_fleet_ids(input.into());
         self
     }
     /// <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-    pub fn set_capacity_reservation_fleet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_capacity_reservation_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_capacity_reservation_fleet_ids(input);
         self
     }
     /// <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-    pub fn get_capacity_reservation_fleet_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capacity_reservation_fleet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_capacity_reservation_fleet_ids()
     }
 }

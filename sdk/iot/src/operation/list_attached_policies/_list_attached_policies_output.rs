@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAttachedPoliciesOutput {
 }
 impl ListAttachedPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListAttachedPoliciesOutput`](crate::operation::list_attached_policies::ListAttachedPoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_attached_policies::builders::ListAttachedPoliciesOutputBuilder {
+    pub fn builder() -> crate::operation::list_attached_policies::builders::ListAttachedPoliciesOutputBuilder {
         crate::operation::list_attached_policies::builders::ListAttachedPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAttachedPoliciesOutput`](crate::operation::list_attached_policies::ListAttachedPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttachedPoliciesOutputBuilder {
     pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ListAttachedPoliciesOutputBuilder {
         self
     }
     /// <p>The policies.</p>
-    pub fn set_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
-    ) -> Self {
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>) -> Self {
         self.policies = input;
         self
     }

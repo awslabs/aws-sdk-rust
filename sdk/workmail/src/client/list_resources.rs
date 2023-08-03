@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`resources(Option<Vec<Resource>>)`](crate::operation::list_resources::ListResourcesOutput::resources): <p>One page of the organization's resource representation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resources::ListResourcesOutput::next_token): <p> The token used to paginate through all the organization's resources. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>
     /// - On failure, responds with [`SdkError<ListResourcesError>`](crate::operation::list_resources::ListResourcesError)
-    pub fn list_resources(
-        &self,
-    ) -> crate::operation::list_resources::builders::ListResourcesFluentBuilder {
-        crate::operation::list_resources::builders::ListResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_resources(&self) -> crate::operation::list_resources::builders::ListResourcesFluentBuilder {
+        crate::operation::list_resources::builders::ListResourcesFluentBuilder::new(self.handle.clone())
     }
 }

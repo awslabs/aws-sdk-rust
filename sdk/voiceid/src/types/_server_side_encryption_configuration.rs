@@ -23,9 +23,7 @@ impl ServerSideEncryptionConfiguration {
 
 /// A builder for [`ServerSideEncryptionConfiguration`](crate::types::ServerSideEncryptionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerSideEncryptionConfigurationBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ServerSideEncryptionConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`ServerSideEncryptionConfiguration`](crate::types::ServerSideEncryptionConfiguration).
     pub fn build(self) -> crate::types::ServerSideEncryptionConfiguration {
-        crate::types::ServerSideEncryptionConfiguration {
-            kms_key_id: self.kms_key_id,
-        }
+        crate::types::ServerSideEncryptionConfiguration { kms_key_id: self.kms_key_id }
     }
 }

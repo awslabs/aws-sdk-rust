@@ -37,9 +37,7 @@ impl ListProfilingGroupsFluentBuilder {
         }
     }
     /// Access the ListProfilingGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_profiling_groups::builders::ListProfilingGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_profiling_groups::builders::ListProfilingGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListProfilingGroupsFluentBuilder {
             crate::operation::list_profiling_groups::ListProfilingGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profiling_groups::ListProfilingGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profiling_groups::ListProfilingGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListProfilingGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListProfilingGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_profiling_groups::ListProfilingGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profiling_groups::ListProfilingGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profiling_groups::ListProfilingGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListProfilingGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_profiling_groups::ListProfilingGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profiling_groups::ListProfilingGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profiling_groups::ListProfilingGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListProfilingGroupsFluentBuilder {
             crate::operation::list_profiling_groups::ListProfilingGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profiling_groups::ListProfilingGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profiling_groups::ListProfilingGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_profiling_groups::paginator::ListProfilingGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_profiling_groups::paginator::ListProfilingGroupsPaginator {
-        crate::operation::list_profiling_groups::paginator::ListProfilingGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_profiling_groups::paginator::ListProfilingGroupsPaginator {
+        crate::operation::list_profiling_groups::paginator::ListProfilingGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>

@@ -31,11 +31,7 @@ impl super::Client {
     ///   - [`child_jobs_in_state(Option<HashMap<BackupJobState, i64>>)`](crate::operation::describe_backup_job::DescribeBackupJobOutput::child_jobs_in_state): <p>This returns the statistics of the included child (nested) backup jobs.</p>
     ///   - [`resource_name(Option<String>)`](crate::operation::describe_backup_job::DescribeBackupJobOutput::resource_name): <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
     /// - On failure, responds with [`SdkError<DescribeBackupJobError>`](crate::operation::describe_backup_job::DescribeBackupJobError)
-    pub fn describe_backup_job(
-        &self,
-    ) -> crate::operation::describe_backup_job::builders::DescribeBackupJobFluentBuilder {
-        crate::operation::describe_backup_job::builders::DescribeBackupJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_backup_job(&self) -> crate::operation::describe_backup_job::builders::DescribeBackupJobFluentBuilder {
+        crate::operation::describe_backup_job::builders::DescribeBackupJobFluentBuilder::new(self.handle.clone())
     }
 }

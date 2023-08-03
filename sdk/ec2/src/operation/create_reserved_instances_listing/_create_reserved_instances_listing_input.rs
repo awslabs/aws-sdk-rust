@@ -12,8 +12,7 @@ pub struct CreateReservedInstancesListingInput {
     pub instance_count: ::std::option::Option<i32>,
     /// <p>A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved Instance term.</p>
     #[doc(hidden)]
-    pub price_schedules:
-        ::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>>,
+    pub price_schedules: ::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>>,
     /// <p>The ID of the active Standard Reserved Instance.</p>
     #[doc(hidden)]
     pub reserved_instances_id: ::std::option::Option<::std::string::String>,
@@ -28,9 +27,7 @@ impl CreateReservedInstancesListingInput {
         self.instance_count
     }
     /// <p>A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved Instance term.</p>
-    pub fn price_schedules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PriceScheduleSpecification]> {
+    pub fn price_schedules(&self) -> ::std::option::Option<&[crate::types::PriceScheduleSpecification]> {
         self.price_schedules.as_deref()
     }
     /// <p>The ID of the active Standard Reserved Instance.</p>
@@ -40,21 +37,18 @@ impl CreateReservedInstancesListingInput {
 }
 impl CreateReservedInstancesListingInput {
     /// Creates a new builder-style object to manufacture [`CreateReservedInstancesListingInput`](crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingInput).
-    pub fn builder() -> crate::operation::create_reserved_instances_listing::builders::CreateReservedInstancesListingInputBuilder{
+    pub fn builder() -> crate::operation::create_reserved_instances_listing::builders::CreateReservedInstancesListingInputBuilder {
         crate::operation::create_reserved_instances_listing::builders::CreateReservedInstancesListingInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReservedInstancesListingInput`](crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReservedInstancesListingInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) instance_count: ::std::option::Option<i32>,
-    pub(crate) price_schedules:
-        ::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>>,
+    pub(crate) price_schedules: ::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>>,
     pub(crate) reserved_instances_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateReservedInstancesListingInputBuilder {
@@ -98,32 +92,21 @@ impl CreateReservedInstancesListingInputBuilder {
         self
     }
     /// <p>A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved Instance term.</p>
-    pub fn set_price_schedules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>>,
-    ) -> Self {
+    pub fn set_price_schedules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>>) -> Self {
         self.price_schedules = input;
         self
     }
     /// <p>A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved Instance term.</p>
-    pub fn get_price_schedules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>> {
+    pub fn get_price_schedules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>> {
         &self.price_schedules
     }
     /// <p>The ID of the active Standard Reserved Instance.</p>
-    pub fn reserved_instances_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instances_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_instances_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the active Standard Reserved Instance.</p>
-    pub fn set_reserved_instances_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_instances_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_instances_id = input;
         self
     }
@@ -138,17 +121,11 @@ impl CreateReservedInstancesListingInputBuilder {
         crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingInput {
-                client_token: self.client_token
-                ,
-                instance_count: self.instance_count
-                ,
-                price_schedules: self.price_schedules
-                ,
-                reserved_instances_id: self.reserved_instances_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingInput {
+            client_token: self.client_token,
+            instance_count: self.instance_count,
+            price_schedules: self.price_schedules,
+            reserved_instances_id: self.reserved_instances_id,
+        })
     }
 }

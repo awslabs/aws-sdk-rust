@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::associate_created_artifact::builders::AssociateCreatedArtifactFluentBuilder::dry_run) / [`set_dry_run(bool)`](crate::operation::associate_created_artifact::builders::AssociateCreatedArtifactFluentBuilder::set_dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     /// - On success, responds with [`AssociateCreatedArtifactOutput`](crate::operation::associate_created_artifact::AssociateCreatedArtifactOutput)
     /// - On failure, responds with [`SdkError<AssociateCreatedArtifactError>`](crate::operation::associate_created_artifact::AssociateCreatedArtifactError)
-    pub fn associate_created_artifact(
-        &self,
-    ) -> crate::operation::associate_created_artifact::builders::AssociateCreatedArtifactFluentBuilder
-    {
+    pub fn associate_created_artifact(&self) -> crate::operation::associate_created_artifact::builders::AssociateCreatedArtifactFluentBuilder {
         crate::operation::associate_created_artifact::builders::AssociateCreatedArtifactFluentBuilder::new(self.handle.clone())
     }
 }

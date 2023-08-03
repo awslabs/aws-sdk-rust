@@ -22,18 +22,14 @@ impl DescribeAccountOverviewInput {
 }
 impl DescribeAccountOverviewInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountOverviewInput`](crate::operation::describe_account_overview::DescribeAccountOverviewInput).
-    pub fn builder(
-    ) -> crate::operation::describe_account_overview::builders::DescribeAccountOverviewInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_account_overview::builders::DescribeAccountOverviewInputBuilder {
         crate::operation::describe_account_overview::builders::DescribeAccountOverviewInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountOverviewInput`](crate::operation::describe_account_overview::DescribeAccountOverviewInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountOverviewInputBuilder {
     pub(crate) from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -45,10 +41,7 @@ impl DescribeAccountOverviewInputBuilder {
         self
     }
     /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
-    pub fn set_from_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_from_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.from_time = input;
         self
     }
@@ -62,10 +55,7 @@ impl DescribeAccountOverviewInputBuilder {
         self
     }
     /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
-    pub fn set_to_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_to_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.to_time = input;
         self
     }
@@ -80,11 +70,9 @@ impl DescribeAccountOverviewInputBuilder {
         crate::operation::describe_account_overview::DescribeAccountOverviewInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_account_overview::DescribeAccountOverviewInput {
-                from_time: self.from_time,
-                to_time: self.to_time,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_account_overview::DescribeAccountOverviewInput {
+            from_time: self.from_time,
+            to_time: self.to_time,
+        })
     }
 }

@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`game_server_instances(Option<Vec<GameServerInstance>>)`](crate::operation::describe_game_server_instances::DescribeGameServerInstancesOutput::game_server_instances): <p>The collection of requested game server instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_game_server_instances::DescribeGameServerInstancesOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     /// - On failure, responds with [`SdkError<DescribeGameServerInstancesError>`](crate::operation::describe_game_server_instances::DescribeGameServerInstancesError)
-    pub fn describe_game_server_instances(&self) -> crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesFluentBuilder{
+    pub fn describe_game_server_instances(
+        &self,
+    ) -> crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesFluentBuilder {
         crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesFluentBuilder::new(self.handle.clone())
     }
 }

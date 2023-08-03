@@ -26,8 +26,7 @@ impl GetIntegrationResponsesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIntegrationResponsesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_integration_responses::builders::GetIntegrationResponsesInputBuilder,
+    inner: crate::operation::get_integration_responses::builders::GetIntegrationResponsesInputBuilder,
 }
 impl GetIntegrationResponsesFluentBuilder {
     /// Creates a new `GetIntegrationResponses`.
@@ -38,10 +37,7 @@ impl GetIntegrationResponsesFluentBuilder {
         }
     }
     /// Access the GetIntegrationResponses as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_integration_responses::builders::GetIntegrationResponsesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_integration_responses::builders::GetIntegrationResponsesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetIntegrationResponsesFluentBuilder {
             crate::operation::get_integration_responses::GetIntegrationResponses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_integration_responses::GetIntegrationResponsesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_integration_responses::GetIntegrationResponsesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetIntegrationResponsesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetIntegrationResponsesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_integration_responses::GetIntegrationResponsesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_integration_responses::GetIntegrationResponsesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_integration_responses::GetIntegrationResponsesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetIntegrationResponsesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_integration_responses::GetIntegrationResponsesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_integration_responses::GetIntegrationResponsesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_integration_responses::GetIntegrationResponsesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl GetIntegrationResponsesFluentBuilder {
             crate::operation::get_integration_responses::GetIntegrationResponses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_integration_responses::GetIntegrationResponsesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_integration_responses::GetIntegrationResponsesError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl GetIntegrationResponsesFluentBuilder {
         self.inner.get_api_id()
     }
     /// <p>The integration ID.</p>
-    pub fn integration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_id(input.into());
         self
     }
     /// <p>The integration ID.</p>
-    pub fn set_integration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_id(input);
         self
     }

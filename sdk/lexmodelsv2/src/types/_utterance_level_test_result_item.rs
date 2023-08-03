@@ -37,9 +37,7 @@ impl UtteranceLevelTestResultItem {
 
 /// A builder for [`UtteranceLevelTestResultItem`](crate::types::UtteranceLevelTestResultItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UtteranceLevelTestResultItemBuilder {
     pub(crate) record_number: ::std::option::Option<i64>,
     pub(crate) conversation_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl UtteranceLevelTestResultItemBuilder {
         &self.record_number
     }
     /// <p>The unique identifier for the conversation associated with the result.</p>
-    pub fn conversation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conversation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conversation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the conversation associated with the result.</p>
-    pub fn set_conversation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.conversation_id = input;
         self
     }
@@ -86,10 +78,7 @@ impl UtteranceLevelTestResultItemBuilder {
         self
     }
     /// <p>Contains information about the turn associated with the result.</p>
-    pub fn set_turn_result(
-        mut self,
-        input: ::std::option::Option<crate::types::TestSetTurnResult>,
-    ) -> Self {
+    pub fn set_turn_result(mut self, input: ::std::option::Option<crate::types::TestSetTurnResult>) -> Self {
         self.turn_result = input;
         self
     }

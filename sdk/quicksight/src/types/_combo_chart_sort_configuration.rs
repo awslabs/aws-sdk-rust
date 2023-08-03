@@ -23,9 +23,7 @@ impl ComboChartSortConfiguration {
         self.category_sort.as_deref()
     }
     /// <p>The item limit configuration for the category field well of a combo chart.</p>
-    pub fn category_items_limit(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
+    pub fn category_items_limit(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.category_items_limit.as_ref()
     }
     /// <p>The sort configuration of the color field well in a combo chart.</p>
@@ -33,9 +31,7 @@ impl ComboChartSortConfiguration {
         self.color_sort.as_deref()
     }
     /// <p>The item limit configuration of the color field well in a combo chart.</p>
-    pub fn color_items_limit(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
+    pub fn color_items_limit(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.color_items_limit.as_ref()
     }
 }
@@ -48,12 +44,9 @@ impl ComboChartSortConfiguration {
 
 /// A builder for [`ComboChartSortConfiguration`](crate::types::ComboChartSortConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComboChartSortConfigurationBuilder {
-    pub(crate) category_sort:
-        ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub(crate) category_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     pub(crate) category_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     pub(crate) color_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     pub(crate) color_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
@@ -71,17 +64,12 @@ impl ComboChartSortConfigurationBuilder {
         self
     }
     /// <p>The sort configuration of the category field well in a combo chart.</p>
-    pub fn set_category_sort(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
-    ) -> Self {
+    pub fn set_category_sort(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>) -> Self {
         self.category_sort = input;
         self
     }
     /// <p>The sort configuration of the category field well in a combo chart.</p>
-    pub fn get_category_sort(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+    pub fn get_category_sort(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
         &self.category_sort
     }
     /// <p>The item limit configuration for the category field well of a combo chart.</p>
@@ -90,17 +78,12 @@ impl ComboChartSortConfigurationBuilder {
         self
     }
     /// <p>The item limit configuration for the category field well of a combo chart.</p>
-    pub fn set_category_items_limit(
-        mut self,
-        input: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
-    ) -> Self {
+    pub fn set_category_items_limit(mut self, input: ::std::option::Option<crate::types::ItemsLimitConfiguration>) -> Self {
         self.category_items_limit = input;
         self
     }
     /// <p>The item limit configuration for the category field well of a combo chart.</p>
-    pub fn get_category_items_limit(
-        &self,
-    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+    pub fn get_category_items_limit(&self) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
         &self.category_items_limit
     }
     /// Appends an item to `color_sort`.
@@ -115,17 +98,12 @@ impl ComboChartSortConfigurationBuilder {
         self
     }
     /// <p>The sort configuration of the color field well in a combo chart.</p>
-    pub fn set_color_sort(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
-    ) -> Self {
+    pub fn set_color_sort(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>) -> Self {
         self.color_sort = input;
         self
     }
     /// <p>The sort configuration of the color field well in a combo chart.</p>
-    pub fn get_color_sort(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+    pub fn get_color_sort(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
         &self.color_sort
     }
     /// <p>The item limit configuration of the color field well in a combo chart.</p>
@@ -134,17 +112,12 @@ impl ComboChartSortConfigurationBuilder {
         self
     }
     /// <p>The item limit configuration of the color field well in a combo chart.</p>
-    pub fn set_color_items_limit(
-        mut self,
-        input: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
-    ) -> Self {
+    pub fn set_color_items_limit(mut self, input: ::std::option::Option<crate::types::ItemsLimitConfiguration>) -> Self {
         self.color_items_limit = input;
         self
     }
     /// <p>The item limit configuration of the color field well in a combo chart.</p>
-    pub fn get_color_items_limit(
-        &self,
-    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+    pub fn get_color_items_limit(&self) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
         &self.color_items_limit
     }
     /// Consumes the builder and constructs a [`ComboChartSortConfiguration`](crate::types::ComboChartSortConfiguration).

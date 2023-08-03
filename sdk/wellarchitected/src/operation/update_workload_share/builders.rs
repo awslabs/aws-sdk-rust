@@ -37,9 +37,7 @@ impl UpdateWorkloadShareFluentBuilder {
         }
     }
     /// Access the UpdateWorkloadShare as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_workload_share::builders::UpdateWorkloadShareInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_workload_share::builders::UpdateWorkloadShareInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateWorkloadShareFluentBuilder {
             crate::operation::update_workload_share::UpdateWorkloadShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workload_share::UpdateWorkloadShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workload_share::UpdateWorkloadShareError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateWorkloadShareFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateWorkloadShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_workload_share::UpdateWorkloadShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workload_share::UpdateWorkloadShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workload_share::UpdateWorkloadShareError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateWorkloadShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_workload_share::UpdateWorkloadShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workload_share::UpdateWorkloadShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workload_share::UpdateWorkloadShareError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateWorkloadShareFluentBuilder {
             crate::operation::update_workload_share::UpdateWorkloadShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workload_share::UpdateWorkloadShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workload_share::UpdateWorkloadShareError>,
     > {
         self.customize_middleware().await
     }
@@ -156,10 +143,7 @@ impl UpdateWorkloadShareFluentBuilder {
         self
     }
     /// <p>Permission granted on a share request.</p>
-    pub fn set_permission_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionType>,
-    ) -> Self {
+    pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::PermissionType>) -> Self {
         self.inner = self.inner.set_permission_type(input);
         self
     }

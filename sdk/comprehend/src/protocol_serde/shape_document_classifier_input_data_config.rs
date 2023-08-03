@@ -39,10 +39,7 @@ pub fn ser_document_classifier_input_data_config(
     if let Some(var_12) = &input.document_reader_config {
         #[allow(unused_mut)]
         let mut object_13 = object.key("DocumentReaderConfig").start_object();
-        crate::protocol_serde::shape_document_reader_config::ser_document_reader_config(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_document_reader_config::ser_document_reader_config(&mut object_13, var_12)?;
         object_13.finish();
     }
     Ok(())
@@ -50,113 +47,84 @@ pub fn ser_document_classifier_input_data_config(
 
 pub(crate) fn de_document_classifier_input_data_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::DocumentClassifierInputDataConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::DocumentClassifierInputDataConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::DocumentClassifierInputDataConfigBuilder::default();
+            let mut builder = crate::types::builders::DocumentClassifierInputDataConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "DataFormat" => {
-                                builder = builder.set_data_format(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::DocumentClassifierDataFormat::from(
-                                                u.as_ref(),
-                                            )
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "DataFormat" => {
+                            builder = builder.set_data_format(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DocumentClassifierDataFormat::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "S3Uri" => {
-                                builder = builder.set_s3_uri(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "S3Uri" => {
+                            builder = builder.set_s3_uri(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "TestS3Uri" => {
-                                builder = builder.set_test_s3_uri(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "TestS3Uri" => {
+                            builder = builder.set_test_s3_uri(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "LabelDelimiter" => {
-                                builder = builder.set_label_delimiter(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "LabelDelimiter" => {
+                            builder = builder.set_label_delimiter(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "AugmentedManifests" => {
-                                builder = builder.set_augmented_manifests(
+                            );
+                        }
+                        "AugmentedManifests" => {
+                            builder = builder.set_augmented_manifests(
                                     crate::protocol_serde::shape_document_classifier_augmented_manifests_list::de_document_classifier_augmented_manifests_list(tokens)?
                                 );
-                            }
-                            "DocumentType" => {
-                                builder = builder.set_document_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
-                                        s.to_unescaped().map(|u|
-                                            crate::types::DocumentClassifierDocumentTypeFormat::from(u.as_ref())
-                                        )
-                                    ).transpose()?
-                                );
-                            }
-                            "Documents" => {
-                                builder = builder.set_documents(
-                                    crate::protocol_serde::shape_document_classifier_documents::de_document_classifier_documents(tokens)?
-                                );
-                            }
-                            "DocumentReaderConfig" => {
-                                builder = builder.set_document_reader_config(
-                                    crate::protocol_serde::shape_document_reader_config::de_document_reader_config(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        "DocumentType" => {
+                            builder = builder.set_document_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::DocumentClassifierDocumentTypeFormat::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
+                        "Documents" => {
+                            builder = builder
+                                .set_documents(crate::protocol_serde::shape_document_classifier_documents::de_document_classifier_documents(tokens)?);
+                        }
+                        "DocumentReaderConfig" => {
+                            builder = builder
+                                .set_document_reader_config(crate::protocol_serde::shape_document_reader_config::de_document_reader_config(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

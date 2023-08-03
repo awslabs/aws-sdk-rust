@@ -26,8 +26,7 @@ impl GetVoiceConnectorGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetVoiceConnectorGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_voice_connector_group::builders::GetVoiceConnectorGroupInputBuilder,
+    inner: crate::operation::get_voice_connector_group::builders::GetVoiceConnectorGroupInputBuilder,
 }
 impl GetVoiceConnectorGroupFluentBuilder {
     /// Creates a new `GetVoiceConnectorGroup`.
@@ -38,10 +37,7 @@ impl GetVoiceConnectorGroupFluentBuilder {
         }
     }
     /// Access the GetVoiceConnectorGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_voice_connector_group::builders::GetVoiceConnectorGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_voice_connector_group::builders::GetVoiceConnectorGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetVoiceConnectorGroupFluentBuilder {
             crate::operation::get_voice_connector_group::GetVoiceConnectorGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_voice_connector_group::GetVoiceConnectorGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_group::GetVoiceConnectorGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetVoiceConnectorGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetVoiceConnectorGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_voice_connector_group::GetVoiceConnectorGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_voice_connector_group::GetVoiceConnectorGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_group::GetVoiceConnectorGroupError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetVoiceConnectorGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_voice_connector_group::GetVoiceConnectorGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_voice_connector_group::GetVoiceConnectorGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_group::GetVoiceConnectorGroupError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl GetVoiceConnectorGroupFluentBuilder {
             crate::operation::get_voice_connector_group::GetVoiceConnectorGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_voice_connector_group::GetVoiceConnectorGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_group::GetVoiceConnectorGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Voice Connector group ID.</p>
-    pub fn voice_connector_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_group_id(input.into());
         self
     }
     /// <p>The Voice Connector group ID.</p>
-    pub fn set_voice_connector_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_connector_group_id(input);
         self
     }

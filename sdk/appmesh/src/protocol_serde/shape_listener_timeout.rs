@@ -29,11 +29,9 @@ pub fn ser_listener_timeout(
             object_4.finish();
         }
         crate::types::ListenerTimeout::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "ListenerTimeout",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "ListenerTimeout",
+            ))
         }
     }
     Ok(())
@@ -41,80 +39,57 @@ pub fn ser_listener_timeout(
 
 pub(crate) fn de_listener_timeout<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ListenerTimeout>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ListenerTimeout>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
-        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            loop {
-                match tokens.next().transpose()? {
-                    Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        if variant.is_some() {
-                            return Err(
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                    "encountered mixed variants in union",
-                                ),
-                            );
+        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => loop {
+            match tokens.next().transpose()? {
+                Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    if variant.is_some() {
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
+                    }
+                    variant = match key.to_unescaped()?.as_ref() {
+                        "tcp" => Some(crate::types::ListenerTimeout::Tcp(
+                            crate::protocol_serde::shape_tcp_timeout::de_tcp_timeout(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'tcp' cannot be null"))?,
+                        )),
+                        "http" => Some(crate::types::ListenerTimeout::Http(
+                            crate::protocol_serde::shape_http_timeout::de_http_timeout(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http' cannot be null"))?,
+                        )),
+                        "http2" => Some(crate::types::ListenerTimeout::Http2(
+                            crate::protocol_serde::shape_http_timeout::de_http_timeout(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http2' cannot be null"))?,
+                        )),
+                        "grpc" => Some(crate::types::ListenerTimeout::Grpc(
+                            crate::protocol_serde::shape_grpc_timeout::de_grpc_timeout(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'grpc' cannot be null"))?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::ListenerTimeout::Unknown)
                         }
-                        variant = match key.to_unescaped()?.as_ref() {
-                            "tcp" => {
-                                Some(crate::types::ListenerTimeout::Tcp(
-                                    crate::protocol_serde::shape_tcp_timeout::de_tcp_timeout(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'tcp' cannot be null"))?
-                                ))
-                            }
-                            "http" => {
-                                Some(crate::types::ListenerTimeout::Http(
-                                    crate::protocol_serde::shape_http_timeout::de_http_timeout(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http' cannot be null"))?
-                                ))
-                            }
-                            "http2" => {
-                                Some(crate::types::ListenerTimeout::Http2(
-                                    crate::protocol_serde::shape_http_timeout::de_http_timeout(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http2' cannot be null"))?
-                                ))
-                            }
-                            "grpc" => {
-                                Some(crate::types::ListenerTimeout::Grpc(
-                                    crate::protocol_serde::shape_grpc_timeout::de_grpc_timeout(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'grpc' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::ListenerTimeout::Unknown)
-                                                                    }
-                        };
-                    }
-                    other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
-                    }
+                    };
+                }
+                other => {
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
-        }
+        },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

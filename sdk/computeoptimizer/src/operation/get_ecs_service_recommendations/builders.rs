@@ -27,7 +27,7 @@ impl GetEcsServiceRecommendationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetECSServiceRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_ecs_service_recommendations::builders::GetEcsServiceRecommendationsInputBuilder,
+    inner: crate::operation::get_ecs_service_recommendations::builders::GetEcsServiceRecommendationsInputBuilder,
 }
 impl GetECSServiceRecommendationsFluentBuilder {
     /// Creates a new `GetECSServiceRecommendations`.
@@ -38,7 +38,7 @@ impl GetECSServiceRecommendationsFluentBuilder {
         }
     }
     /// Access the GetECSServiceRecommendations as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_ecs_service_recommendations::builders::GetEcsServiceRecommendationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_ecs_service_recommendations::builders::GetEcsServiceRecommendationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetECSServiceRecommendationsFluentBuilder {
             crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetECSServiceRecommendationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetECSServiceRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ecs_service_recommendations::GetEcsServiceRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetECSServiceRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ecs_service_recommendations::GetEcsServiceRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetECSServiceRecommendationsFluentBuilder {
             crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError>,
     > {
         self.customize_middleware().await
     }
@@ -135,19 +124,14 @@ impl GetECSServiceRecommendationsFluentBuilder {
     /// <p> The ARN that identifies the Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
-    pub fn set_service_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_service_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_service_arns(input);
         self
     }
     /// <p> The ARN that identifies the Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
-    pub fn get_service_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_service_arns()
     }
     /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
@@ -191,17 +175,12 @@ impl GetECSServiceRecommendationsFluentBuilder {
         self
     }
     /// <p> An array of objects to specify a filter that returns a more specific list of Amazon ECS service recommendations. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p> An array of objects to specify a filter that returns a more specific list of Amazon ECS service recommendations. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFilter>> {
         self.inner.get_filters()
     }
     /// Appends an item to `accountIds`.
@@ -218,19 +197,14 @@ impl GetECSServiceRecommendationsFluentBuilder {
     /// <p> Return the Amazon ECS service recommendations to the specified Amazon Web Services account IDs. </p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon ECS service recommendations to specific member accounts.</p>
     /// <p>You can only specify one account ID per request.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p> Return the Amazon ECS service recommendations to the specified Amazon Web Services account IDs. </p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon ECS service recommendations to specific member accounts.</p>
     /// <p>You can only specify one account ID per request.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
 }

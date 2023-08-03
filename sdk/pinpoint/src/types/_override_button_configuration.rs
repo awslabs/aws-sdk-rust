@@ -30,9 +30,7 @@ impl OverrideButtonConfiguration {
 
 /// A builder for [`OverrideButtonConfiguration`](crate::types::OverrideButtonConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OverrideButtonConfigurationBuilder {
     pub(crate) button_action: ::std::option::Option<crate::types::ButtonAction>,
     pub(crate) link: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl OverrideButtonConfigurationBuilder {
         self
     }
     /// <p>Action triggered by the button.</p>
-    pub fn set_button_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ButtonAction>,
-    ) -> Self {
+    pub fn set_button_action(mut self, input: ::std::option::Option<crate::types::ButtonAction>) -> Self {
         self.button_action = input;
         self
     }

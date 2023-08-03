@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TransformationToolName {
     #[allow(missing_docs)] // documentation missing in model
@@ -89,13 +83,9 @@ impl ::std::convert::From<&str> for TransformationToolName {
             "Native SQL Server Backup/Restore" => TransformationToolName::NativeSql,
             "Porting Assistant For .NET" => TransformationToolName::PortingAssistant,
             "Schema Conversion Tool" => TransformationToolName::Sct,
-            "Strategy Recommendation Support" => {
-                TransformationToolName::StrategyRecommendationSupport
-            }
+            "Strategy Recommendation Support" => TransformationToolName::StrategyRecommendationSupport,
             "Windows Web Application Migration Assistant" => TransformationToolName::Wwama,
-            other => TransformationToolName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => TransformationToolName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -118,9 +108,7 @@ impl TransformationToolName {
             TransformationToolName::NativeSql => "Native SQL Server Backup/Restore",
             TransformationToolName::PortingAssistant => "Porting Assistant For .NET",
             TransformationToolName::Sct => "Schema Conversion Tool",
-            TransformationToolName::StrategyRecommendationSupport => {
-                "Strategy Recommendation Support"
-            }
+            TransformationToolName::StrategyRecommendationSupport => "Strategy Recommendation Support",
             TransformationToolName::Wwama => "Windows Web Application Migration Assistant",
             TransformationToolName::Unknown(value) => value.as_str(),
         }

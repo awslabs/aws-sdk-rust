@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteExperimentOutput {
 }
 impl DeleteExperimentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteExperimentOutput`](crate::operation::delete_experiment::DeleteExperimentOutput).
-    pub fn builder() -> crate::operation::delete_experiment::builders::DeleteExperimentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_experiment::builders::DeleteExperimentOutputBuilder {
         crate::operation::delete_experiment::builders::DeleteExperimentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteExperimentOutput`](crate::operation::delete_experiment::DeleteExperimentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteExperimentOutputBuilder {
     _request_id: Option<String>,
 }

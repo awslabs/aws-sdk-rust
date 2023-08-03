@@ -65,9 +65,7 @@ impl PivotTotalOptions {
 
 /// A builder for [`PivotTotalOptions`](crate::types::PivotTotalOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PivotTotalOptionsBuilder {
     pub(crate) totals_visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) placement: ::std::option::Option<crate::types::TableTotalsPlacement>,
@@ -84,10 +82,7 @@ impl PivotTotalOptionsBuilder {
         self
     }
     /// <p>The visibility configuration for the total cells.</p>
-    pub fn set_totals_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_totals_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.totals_visibility = input;
         self
     }
@@ -101,10 +96,7 @@ impl PivotTotalOptionsBuilder {
         self
     }
     /// <p>The placement (start, end) for the total cells.</p>
-    pub fn set_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::TableTotalsPlacement>,
-    ) -> Self {
+    pub fn set_placement(mut self, input: ::std::option::Option<crate::types::TableTotalsPlacement>) -> Self {
         self.placement = input;
         self
     }
@@ -118,17 +110,12 @@ impl PivotTotalOptionsBuilder {
         self
     }
     /// <p>The scroll status (pinned, scrolled) for the total cells.</p>
-    pub fn set_scroll_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TableTotalsScrollStatus>,
-    ) -> Self {
+    pub fn set_scroll_status(mut self, input: ::std::option::Option<crate::types::TableTotalsScrollStatus>) -> Self {
         self.scroll_status = input;
         self
     }
     /// <p>The scroll status (pinned, scrolled) for the total cells.</p>
-    pub fn get_scroll_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::TableTotalsScrollStatus> {
+    pub fn get_scroll_status(&self) -> &::std::option::Option<crate::types::TableTotalsScrollStatus> {
         &self.scroll_status
     }
     /// <p>The custom label string for the total cells.</p>
@@ -151,10 +138,7 @@ impl PivotTotalOptionsBuilder {
         self
     }
     /// <p>The cell styling options for the total cells.</p>
-    pub fn set_total_cell_style(
-        mut self,
-        input: ::std::option::Option<crate::types::TableCellStyle>,
-    ) -> Self {
+    pub fn set_total_cell_style(mut self, input: ::std::option::Option<crate::types::TableCellStyle>) -> Self {
         self.total_cell_style = input;
         self
     }
@@ -168,10 +152,7 @@ impl PivotTotalOptionsBuilder {
         self
     }
     /// <p>The cell styling options for the totals of value cells.</p>
-    pub fn set_value_cell_style(
-        mut self,
-        input: ::std::option::Option<crate::types::TableCellStyle>,
-    ) -> Self {
+    pub fn set_value_cell_style(mut self, input: ::std::option::Option<crate::types::TableCellStyle>) -> Self {
         self.value_cell_style = input;
         self
     }
@@ -185,17 +166,12 @@ impl PivotTotalOptionsBuilder {
         self
     }
     /// <p>The cell styling options for the total of header cells.</p>
-    pub fn set_metric_header_cell_style(
-        mut self,
-        input: ::std::option::Option<crate::types::TableCellStyle>,
-    ) -> Self {
+    pub fn set_metric_header_cell_style(mut self, input: ::std::option::Option<crate::types::TableCellStyle>) -> Self {
         self.metric_header_cell_style = input;
         self
     }
     /// <p>The cell styling options for the total of header cells.</p>
-    pub fn get_metric_header_cell_style(
-        &self,
-    ) -> &::std::option::Option<crate::types::TableCellStyle> {
+    pub fn get_metric_header_cell_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
         &self.metric_header_cell_style
     }
     /// Consumes the builder and constructs a [`PivotTotalOptions`](crate::types::PivotTotalOptions).

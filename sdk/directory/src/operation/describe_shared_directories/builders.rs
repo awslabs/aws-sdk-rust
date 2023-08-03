@@ -26,7 +26,7 @@ impl DescribeSharedDirectoriesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSharedDirectoriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesInputBuilder,
+    inner: crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesInputBuilder,
 }
 impl DescribeSharedDirectoriesFluentBuilder {
     /// Creates a new `DescribeSharedDirectories`.
@@ -37,7 +37,7 @@ impl DescribeSharedDirectoriesFluentBuilder {
         }
     }
     /// Access the DescribeSharedDirectories as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeSharedDirectoriesFluentBuilder {
             crate::operation::describe_shared_directories::DescribeSharedDirectories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_shared_directories::DescribeSharedDirectoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_shared_directories::DescribeSharedDirectoriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeSharedDirectoriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeSharedDirectoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_shared_directories::DescribeSharedDirectoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_shared_directories::DescribeSharedDirectoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_shared_directories::DescribeSharedDirectoriesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeSharedDirectoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_shared_directories::DescribeSharedDirectoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_shared_directories::DescribeSharedDirectoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_shared_directories::DescribeSharedDirectoriesError>,
     > {
         self.send_middleware().await
     }
@@ -114,34 +105,23 @@ impl DescribeSharedDirectoriesFluentBuilder {
             crate::operation::describe_shared_directories::DescribeSharedDirectories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_shared_directories::DescribeSharedDirectoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_shared_directories::DescribeSharedDirectoriesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_shared_directories::paginator::DescribeSharedDirectoriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_shared_directories::paginator::DescribeSharedDirectoriesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_shared_directories::paginator::DescribeSharedDirectoriesPaginator {
         crate::operation::describe_shared_directories::paginator::DescribeSharedDirectoriesPaginator::new(self.handle, self.inner)
     }
     /// <p>Returns the identifier of the directory in the directory owner account. </p>
-    pub fn owner_directory_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner_directory_id(input.into());
         self
     }
     /// <p>Returns the identifier of the directory in the directory owner account. </p>
-    pub fn set_owner_directory_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owner_directory_id(input);
         self
     }
@@ -154,25 +134,17 @@ impl DescribeSharedDirectoriesFluentBuilder {
     /// To override the contents of this collection use [`set_shared_directory_ids`](Self::set_shared_directory_ids).
     ///
     /// <p>A list of identifiers of all shared directories in your account. </p>
-    pub fn shared_directory_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_directory_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shared_directory_ids(input.into());
         self
     }
     /// <p>A list of identifiers of all shared directories in your account. </p>
-    pub fn set_shared_directory_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_shared_directory_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_shared_directory_ids(input);
         self
     }
     /// <p>A list of identifiers of all shared directories in your account. </p>
-    pub fn get_shared_directory_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_shared_directory_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_shared_directory_ids()
     }
     /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeSharedDirectories</code>. Pass null if this is the first call. </p>

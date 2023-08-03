@@ -30,27 +30,19 @@ impl ShadowModelVariantConfig {
 
 /// A builder for [`ShadowModelVariantConfig`](crate::types::ShadowModelVariantConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ShadowModelVariantConfigBuilder {
     pub(crate) shadow_model_variant_name: ::std::option::Option<::std::string::String>,
     pub(crate) sampling_percentage: ::std::option::Option<i32>,
 }
 impl ShadowModelVariantConfigBuilder {
     /// <p>The name of the shadow variant.</p>
-    pub fn shadow_model_variant_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shadow_model_variant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shadow_model_variant_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the shadow variant.</p>
-    pub fn set_shadow_model_variant_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shadow_model_variant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shadow_model_variant_name = input;
         self
     }

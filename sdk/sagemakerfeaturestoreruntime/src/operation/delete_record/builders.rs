@@ -10,10 +10,7 @@ impl DeleteRecordInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_record::DeleteRecordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_record::DeleteRecordError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_record::DeleteRecordError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_record();
         fluent_builder.inner = self;
@@ -50,10 +47,7 @@ impl DeleteRecordFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_record::DeleteRecord,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::delete_record::DeleteRecord, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_record::DeleteRecordError>,
     > {
         let handle = self.handle.clone();
@@ -64,10 +58,7 @@ impl DeleteRecordFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -109,27 +100,18 @@ impl DeleteRecordFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_record::DeleteRecord,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::delete_record::DeleteRecord, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_record::DeleteRecordError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from. </p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature_group_name(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from. </p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feature_group_name(input);
         self
     }
@@ -138,25 +120,17 @@ impl DeleteRecordFluentBuilder {
         self.inner.get_feature_group_name()
     }
     /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
-    pub fn record_identifier_value_as_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record_identifier_value_as_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.record_identifier_value_as_string(input.into());
         self
     }
     /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
-    pub fn set_record_identifier_value_as_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_record_identifier_value_as_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_record_identifier_value_as_string(input);
         self
     }
     /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
-    pub fn get_record_identifier_value_as_string(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_record_identifier_value_as_string(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_record_identifier_value_as_string()
     }
     /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
@@ -183,17 +157,12 @@ impl DeleteRecordFluentBuilder {
         self
     }
     /// <p>A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the <code>FeatureGroup</code>.</p>
-    pub fn set_target_stores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetStore>>,
-    ) -> Self {
+    pub fn set_target_stores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetStore>>) -> Self {
         self.inner = self.inner.set_target_stores(input);
         self
     }
     /// <p>A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the <code>FeatureGroup</code>.</p>
-    pub fn get_target_stores(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetStore>> {
+    pub fn get_target_stores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetStore>> {
         self.inner.get_target_stores()
     }
     /// <p>The name of the deletion mode for deleting the record. By default, the deletion mode is set to <code>SoftDelete</code>.</p>
@@ -202,10 +171,7 @@ impl DeleteRecordFluentBuilder {
         self
     }
     /// <p>The name of the deletion mode for deleting the record. By default, the deletion mode is set to <code>SoftDelete</code>.</p>
-    pub fn set_deletion_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DeletionMode>,
-    ) -> Self {
+    pub fn set_deletion_mode(mut self, input: ::std::option::Option<crate::types::DeletionMode>) -> Self {
         self.inner = self.inner.set_deletion_mode(input);
         self
     }

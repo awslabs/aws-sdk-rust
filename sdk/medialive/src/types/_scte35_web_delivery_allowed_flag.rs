@@ -38,13 +38,7 @@
 /// Corresponds to the web_delivery_allowed_flag parameter. A value of WEB_DELIVERY_NOT_ALLOWED corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Scte35WebDeliveryAllowedFlag {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Scte35WebDeliveryAllowedFlag {
         match s {
             "WEB_DELIVERY_ALLOWED" => Scte35WebDeliveryAllowedFlag::WebDeliveryAllowed,
             "WEB_DELIVERY_NOT_ALLOWED" => Scte35WebDeliveryAllowedFlag::WebDeliveryNotAllowed,
-            other => Scte35WebDeliveryAllowedFlag::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Scte35WebDeliveryAllowedFlag::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

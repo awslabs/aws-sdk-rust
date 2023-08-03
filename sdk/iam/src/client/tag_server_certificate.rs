@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::tag_server_certificate::builders::TagServerCertificateFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_server_certificate::builders::TagServerCertificateFluentBuilder::set_tags): <p>The list of tags that you want to attach to the IAM server certificate. Each tag consists of a key name and an associated value.</p>
     /// - On success, responds with [`TagServerCertificateOutput`](crate::operation::tag_server_certificate::TagServerCertificateOutput)
     /// - On failure, responds with [`SdkError<TagServerCertificateError>`](crate::operation::tag_server_certificate::TagServerCertificateError)
-    pub fn tag_server_certificate(
-        &self,
-    ) -> crate::operation::tag_server_certificate::builders::TagServerCertificateFluentBuilder {
-        crate::operation::tag_server_certificate::builders::TagServerCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn tag_server_certificate(&self) -> crate::operation::tag_server_certificate::builders::TagServerCertificateFluentBuilder {
+        crate::operation::tag_server_certificate::builders::TagServerCertificateFluentBuilder::new(self.handle.clone())
     }
 }

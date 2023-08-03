@@ -40,9 +40,7 @@ impl SchemaExtensionInfo {
         self.description.as_deref()
     }
     /// <p>The current status of the schema extension.</p>
-    pub fn schema_extension_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SchemaExtensionStatus> {
+    pub fn schema_extension_status(&self) -> ::std::option::Option<&crate::types::SchemaExtensionStatus> {
         self.schema_extension_status.as_ref()
     }
     /// <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
@@ -67,9 +65,7 @@ impl SchemaExtensionInfo {
 
 /// A builder for [`SchemaExtensionInfo`](crate::types::SchemaExtensionInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaExtensionInfoBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) schema_extension_id: ::std::option::Option<::std::string::String>,
@@ -95,18 +91,12 @@ impl SchemaExtensionInfoBuilder {
         &self.directory_id
     }
     /// <p>The identifier of the schema extension.</p>
-    pub fn schema_extension_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_extension_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_extension_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the schema extension.</p>
-    pub fn set_schema_extension_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_extension_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_extension_id = input;
         self
     }
@@ -134,39 +124,26 @@ impl SchemaExtensionInfoBuilder {
         self
     }
     /// <p>The current status of the schema extension.</p>
-    pub fn set_schema_extension_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaExtensionStatus>,
-    ) -> Self {
+    pub fn set_schema_extension_status(mut self, input: ::std::option::Option<crate::types::SchemaExtensionStatus>) -> Self {
         self.schema_extension_status = input;
         self
     }
     /// <p>The current status of the schema extension.</p>
-    pub fn get_schema_extension_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchemaExtensionStatus> {
+    pub fn get_schema_extension_status(&self) -> &::std::option::Option<crate::types::SchemaExtensionStatus> {
         &self.schema_extension_status
     }
     /// <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
-    pub fn schema_extension_status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_extension_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_extension_status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
-    pub fn set_schema_extension_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_extension_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_extension_status_reason = input;
         self
     }
     /// <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
-    pub fn get_schema_extension_status_reason(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_schema_extension_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema_extension_status_reason
     }
     /// <p>The date and time that the schema extension started being applied to the directory.</p>
@@ -175,10 +152,7 @@ impl SchemaExtensionInfoBuilder {
         self
     }
     /// <p>The date and time that the schema extension started being applied to the directory.</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date_time = input;
         self
     }
@@ -192,10 +166,7 @@ impl SchemaExtensionInfoBuilder {
         self
     }
     /// <p>The date and time that the schema extension was completed.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date_time = input;
         self
     }

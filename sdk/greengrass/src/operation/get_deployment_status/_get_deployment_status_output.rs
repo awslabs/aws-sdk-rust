@@ -49,18 +49,14 @@ impl ::aws_http::request_id::RequestId for GetDeploymentStatusOutput {
 }
 impl GetDeploymentStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentStatusOutput`](crate::operation::get_deployment_status::GetDeploymentStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_deployment_status::builders::GetDeploymentStatusOutputBuilder {
-        crate::operation::get_deployment_status::builders::GetDeploymentStatusOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_deployment_status::builders::GetDeploymentStatusOutputBuilder {
+        crate::operation::get_deployment_status::builders::GetDeploymentStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDeploymentStatusOutput`](crate::operation::get_deployment_status::GetDeploymentStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeploymentStatusOutputBuilder {
     pub(crate) deployment_status: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_type: ::std::option::Option<crate::types::DeploymentType>,
@@ -71,18 +67,12 @@ pub struct GetDeploymentStatusOutputBuilder {
 }
 impl GetDeploymentStatusOutputBuilder {
     /// The status of the deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
-    pub fn deployment_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_status = ::std::option::Option::Some(input.into());
         self
     }
     /// The status of the deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
-    pub fn set_deployment_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_status = input;
         self
     }
@@ -96,10 +86,7 @@ impl GetDeploymentStatusOutputBuilder {
         self
     }
     /// The type of the deployment.
-    pub fn set_deployment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentType>,
-    ) -> Self {
+    pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::DeploymentType>) -> Self {
         self.deployment_type = input;
         self
     }
@@ -119,32 +106,21 @@ impl GetDeploymentStatusOutputBuilder {
         self
     }
     /// Error details
-    pub fn set_error_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
-    ) -> Self {
+    pub fn set_error_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>) -> Self {
         self.error_details = input;
         self
     }
     /// Error details
-    pub fn get_error_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+    pub fn get_error_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
         &self.error_details
     }
     /// Error message
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// Error message
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

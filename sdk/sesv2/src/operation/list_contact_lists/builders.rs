@@ -10,10 +10,7 @@ impl ListContactListsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_contact_lists::ListContactListsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_lists::ListContactListsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contact_lists::ListContactListsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_contact_lists();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListContactListsFluentBuilder {
         }
     }
     /// Access the ListContactLists as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_contact_lists::builders::ListContactListsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_contact_lists::builders::ListContactListsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListContactListsFluentBuilder {
             crate::operation::list_contact_lists::ListContactLists,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_lists::ListContactListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contact_lists::ListContactListsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListContactListsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListContactListsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_contact_lists::ListContactListsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_lists::ListContactListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contact_lists::ListContactListsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListContactListsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_contact_lists::ListContactListsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_lists::ListContactListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contact_lists::ListContactListsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListContactListsFluentBuilder {
             crate::operation::list_contact_lists::ListContactLists,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_lists::ListContactListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contact_lists::ListContactListsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_contact_lists::paginator::ListContactListsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_contact_lists::paginator::ListContactListsPaginator {
-        crate::operation::list_contact_lists::paginator::ListContactListsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_contact_lists::paginator::ListContactListsPaginator {
+        crate::operation::list_contact_lists::paginator::ListContactListsPaginator::new(self.handle, self.inner)
     }
     /// <p>Maximum number of contact lists to return at once. Use this parameter to paginate results. If additional contact lists exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional lists.</p>
     pub fn page_size(mut self, input: i32) -> Self {

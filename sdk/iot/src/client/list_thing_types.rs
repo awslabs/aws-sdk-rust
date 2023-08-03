@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`thing_types(Option<Vec<ThingTypeDefinition>>)`](crate::operation::list_thing_types::ListThingTypesOutput::thing_types): <p>The thing types.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_thing_types::ListThingTypesOutput::next_token): <p>The token for the next set of results. Will not be returned if operation has returned all results.</p>
     /// - On failure, responds with [`SdkError<ListThingTypesError>`](crate::operation::list_thing_types::ListThingTypesError)
-    pub fn list_thing_types(
-        &self,
-    ) -> crate::operation::list_thing_types::builders::ListThingTypesFluentBuilder {
-        crate::operation::list_thing_types::builders::ListThingTypesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_thing_types(&self) -> crate::operation::list_thing_types::builders::ListThingTypesFluentBuilder {
+        crate::operation::list_thing_types::builders::ListThingTypesFluentBuilder::new(self.handle.clone())
     }
 }

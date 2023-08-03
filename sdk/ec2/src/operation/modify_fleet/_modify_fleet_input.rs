@@ -9,19 +9,16 @@ pub struct ModifyFleetInput {
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     #[doc(hidden)]
-    pub excess_capacity_termination_policy:
-        ::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,
+    pub excess_capacity_termination_policy: ::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,
     /// <p>The launch template and overrides.</p>
     #[doc(hidden)]
-    pub launch_template_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>,
+    pub launch_template_configs: ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>,
     /// <p>The ID of the EC2 Fleet.</p>
     #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The size of the EC2 Fleet.</p>
     #[doc(hidden)]
-    pub target_capacity_specification:
-        ::std::option::Option<crate::types::TargetCapacitySpecificationRequest>,
+    pub target_capacity_specification: ::std::option::Option<crate::types::TargetCapacitySpecificationRequest>,
     /// <p>Reserved.</p>
     #[doc(hidden)]
     pub context: ::std::option::Option<::std::string::String>,
@@ -33,15 +30,11 @@ impl ModifyFleetInput {
     }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    pub fn excess_capacity_termination_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FleetExcessCapacityTerminationPolicy> {
+    pub fn excess_capacity_termination_policy(&self) -> ::std::option::Option<&crate::types::FleetExcessCapacityTerminationPolicy> {
         self.excess_capacity_termination_policy.as_ref()
     }
     /// <p>The launch template and overrides.</p>
-    pub fn launch_template_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FleetLaunchTemplateConfigRequest]> {
+    pub fn launch_template_configs(&self) -> ::std::option::Option<&[crate::types::FleetLaunchTemplateConfigRequest]> {
         self.launch_template_configs.as_deref()
     }
     /// <p>The ID of the EC2 Fleet.</p>
@@ -49,9 +42,7 @@ impl ModifyFleetInput {
         self.fleet_id.as_deref()
     }
     /// <p>The size of the EC2 Fleet.</p>
-    pub fn target_capacity_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetCapacitySpecificationRequest> {
+    pub fn target_capacity_specification(&self) -> ::std::option::Option<&crate::types::TargetCapacitySpecificationRequest> {
         self.target_capacity_specification.as_ref()
     }
     /// <p>Reserved.</p>
@@ -68,18 +59,13 @@ impl ModifyFleetInput {
 
 /// A builder for [`ModifyFleetInput`](crate::operation::modify_fleet::ModifyFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyFleetInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) excess_capacity_termination_policy:
-        ::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,
-    pub(crate) launch_template_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>,
+    pub(crate) excess_capacity_termination_policy: ::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,
+    pub(crate) launch_template_configs: ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
-    pub(crate) target_capacity_specification:
-        ::std::option::Option<crate::types::TargetCapacitySpecificationRequest>,
+    pub(crate) target_capacity_specification: ::std::option::Option<crate::types::TargetCapacitySpecificationRequest>,
     pub(crate) context: ::std::option::Option<::std::string::String>,
 }
 impl ModifyFleetInputBuilder {
@@ -99,10 +85,7 @@ impl ModifyFleetInputBuilder {
     }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    pub fn excess_capacity_termination_policy(
-        mut self,
-        input: crate::types::FleetExcessCapacityTerminationPolicy,
-    ) -> Self {
+    pub fn excess_capacity_termination_policy(mut self, input: crate::types::FleetExcessCapacityTerminationPolicy) -> Self {
         self.excess_capacity_termination_policy = ::std::option::Option::Some(input);
         self
     }
@@ -117,9 +100,7 @@ impl ModifyFleetInputBuilder {
     }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    pub fn get_excess_capacity_termination_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy> {
+    pub fn get_excess_capacity_termination_policy(&self) -> &::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy> {
         &self.excess_capacity_termination_policy
     }
     /// Appends an item to `launch_template_configs`.
@@ -127,10 +108,7 @@ impl ModifyFleetInputBuilder {
     /// To override the contents of this collection use [`set_launch_template_configs`](Self::set_launch_template_configs).
     ///
     /// <p>The launch template and overrides.</p>
-    pub fn launch_template_configs(
-        mut self,
-        input: crate::types::FleetLaunchTemplateConfigRequest,
-    ) -> Self {
+    pub fn launch_template_configs(mut self, input: crate::types::FleetLaunchTemplateConfigRequest) -> Self {
         let mut v = self.launch_template_configs.unwrap_or_default();
         v.push(input);
         self.launch_template_configs = ::std::option::Option::Some(v);
@@ -139,18 +117,13 @@ impl ModifyFleetInputBuilder {
     /// <p>The launch template and overrides.</p>
     pub fn set_launch_template_configs(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>,
     ) -> Self {
         self.launch_template_configs = input;
         self
     }
     /// <p>The launch template and overrides.</p>
-    pub fn get_launch_template_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>
-    {
+    pub fn get_launch_template_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>> {
         &self.launch_template_configs
     }
     /// <p>The ID of the EC2 Fleet.</p>
@@ -168,25 +141,17 @@ impl ModifyFleetInputBuilder {
         &self.fleet_id
     }
     /// <p>The size of the EC2 Fleet.</p>
-    pub fn target_capacity_specification(
-        mut self,
-        input: crate::types::TargetCapacitySpecificationRequest,
-    ) -> Self {
+    pub fn target_capacity_specification(mut self, input: crate::types::TargetCapacitySpecificationRequest) -> Self {
         self.target_capacity_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the EC2 Fleet.</p>
-    pub fn set_target_capacity_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetCapacitySpecificationRequest>,
-    ) -> Self {
+    pub fn set_target_capacity_specification(mut self, input: ::std::option::Option<crate::types::TargetCapacitySpecificationRequest>) -> Self {
         self.target_capacity_specification = input;
         self
     }
     /// <p>The size of the EC2 Fleet.</p>
-    pub fn get_target_capacity_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetCapacitySpecificationRequest> {
+    pub fn get_target_capacity_specification(&self) -> &::std::option::Option<crate::types::TargetCapacitySpecificationRequest> {
         &self.target_capacity_specification
     }
     /// <p>Reserved.</p>
@@ -204,12 +169,7 @@ impl ModifyFleetInputBuilder {
         &self.context
     }
     /// Consumes the builder and constructs a [`ModifyFleetInput`](crate::operation::modify_fleet::ModifyFleetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_fleet::ModifyFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_fleet::ModifyFleetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_fleet::ModifyFleetInput {
             dry_run: self.dry_run,
             excess_capacity_termination_policy: self.excess_capacity_termination_policy,

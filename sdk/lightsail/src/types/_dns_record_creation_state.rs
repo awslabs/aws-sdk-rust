@@ -43,9 +43,7 @@ impl DnsRecordCreationState {
 
 /// A builder for [`DnsRecordCreationState`](crate::types::DnsRecordCreationState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DnsRecordCreationStateBuilder {
     pub(crate) code: ::std::option::Option<crate::types::DnsRecordCreationStateCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -69,10 +67,7 @@ impl DnsRecordCreationStateBuilder {
     /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
     /// <li> <p> <code>FAILED</code> - The validation records failed to be added to the domain.</p> </li>
     /// </ul>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::DnsRecordCreationStateCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::DnsRecordCreationStateCode>) -> Self {
         self.code = input;
         self
     }

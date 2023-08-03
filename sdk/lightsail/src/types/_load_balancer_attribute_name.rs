@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LoadBalancerAttributeName {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,13 +63,9 @@ impl ::std::convert::From<&str> for LoadBalancerAttributeName {
             "HealthCheckPath" => LoadBalancerAttributeName::HealthCheckPath,
             "HttpsRedirectionEnabled" => LoadBalancerAttributeName::HttpsRedirectionEnabled,
             "SessionStickinessEnabled" => LoadBalancerAttributeName::SessionStickinessEnabled,
-            "SessionStickiness_LB_CookieDurationSeconds" => {
-                LoadBalancerAttributeName::SessionStickinessLbCookieDurationSeconds
-            }
+            "SessionStickiness_LB_CookieDurationSeconds" => LoadBalancerAttributeName::SessionStickinessLbCookieDurationSeconds,
             "TlsPolicyName" => LoadBalancerAttributeName::TlsPolicyName,
-            other => LoadBalancerAttributeName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LoadBalancerAttributeName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,9 +83,7 @@ impl LoadBalancerAttributeName {
             LoadBalancerAttributeName::HealthCheckPath => "HealthCheckPath",
             LoadBalancerAttributeName::HttpsRedirectionEnabled => "HttpsRedirectionEnabled",
             LoadBalancerAttributeName::SessionStickinessEnabled => "SessionStickinessEnabled",
-            LoadBalancerAttributeName::SessionStickinessLbCookieDurationSeconds => {
-                "SessionStickiness_LB_CookieDurationSeconds"
-            }
+            LoadBalancerAttributeName::SessionStickinessLbCookieDurationSeconds => "SessionStickiness_LB_CookieDurationSeconds",
             LoadBalancerAttributeName::TlsPolicyName => "TlsPolicyName",
             LoadBalancerAttributeName::Unknown(value) => value.as_str(),
         }

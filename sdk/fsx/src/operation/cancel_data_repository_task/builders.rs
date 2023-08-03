@@ -31,7 +31,7 @@ impl CancelDataRepositoryTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelDataRepositoryTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskInputBuilder,
+    inner: crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskInputBuilder,
 }
 impl CancelDataRepositoryTaskFluentBuilder {
     /// Creates a new `CancelDataRepositoryTask`.
@@ -42,7 +42,7 @@ impl CancelDataRepositoryTaskFluentBuilder {
         }
     }
     /// Access the CancelDataRepositoryTask as a reference.
-    pub fn as_input(&self) -> &crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl CancelDataRepositoryTaskFluentBuilder {
             crate::operation::cancel_data_repository_task::CancelDataRepositoryTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl CancelDataRepositoryTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl CancelDataRepositoryTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl CancelDataRepositoryTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +110,7 @@ impl CancelDataRepositoryTaskFluentBuilder {
             crate::operation::cancel_data_repository_task::CancelDataRepositoryTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskError>,
     > {
         self.customize_middleware().await
     }

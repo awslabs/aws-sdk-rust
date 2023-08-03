@@ -41,10 +41,7 @@ impl BatchExecuteStatementFluentBuilder {
         }
     }
     /// Access the BatchExecuteStatement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl BatchExecuteStatementFluentBuilder {
             crate::operation::batch_execute_statement::BatchExecuteStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_execute_statement::BatchExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_execute_statement::BatchExecuteStatementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl BatchExecuteStatementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl BatchExecuteStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_execute_statement::BatchExecuteStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_execute_statement::BatchExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_execute_statement::BatchExecuteStatementError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl BatchExecuteStatementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_execute_statement::BatchExecuteStatementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_execute_statement::BatchExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_execute_statement::BatchExecuteStatementError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +109,7 @@ impl BatchExecuteStatementFluentBuilder {
             crate::operation::batch_execute_statement::BatchExecuteStatement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_execute_statement::BatchExecuteStatementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_execute_statement::BatchExecuteStatementError>,
     > {
         self.customize_middleware().await
     }
@@ -137,17 +123,12 @@ impl BatchExecuteStatementFluentBuilder {
         self
     }
     /// <p>The list of PartiQL statements representing the batch to run.</p>
-    pub fn set_statements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchStatementRequest>>,
-    ) -> Self {
+    pub fn set_statements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchStatementRequest>>) -> Self {
         self.inner = self.inner.set_statements(input);
         self
     }
     /// <p>The list of PartiQL statements representing the batch to run.</p>
-    pub fn get_statements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchStatementRequest>> {
+    pub fn get_statements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchStatementRequest>> {
         self.inner.get_statements()
     }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
@@ -166,10 +147,7 @@ impl BatchExecuteStatementFluentBuilder {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
-    pub fn set_return_consumed_capacity(
-        mut self,
-        input: ::std::option::Option<crate::types::ReturnConsumedCapacity>,
-    ) -> Self {
+    pub fn set_return_consumed_capacity(mut self, input: ::std::option::Option<crate::types::ReturnConsumedCapacity>) -> Self {
         self.inner = self.inner.set_return_consumed_capacity(input);
         self
     }
@@ -179,9 +157,7 @@ impl BatchExecuteStatementFluentBuilder {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
-    pub fn get_return_consumed_capacity(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReturnConsumedCapacity> {
+    pub fn get_return_consumed_capacity(&self) -> &::std::option::Option<crate::types::ReturnConsumedCapacity> {
         self.inner.get_return_consumed_capacity()
     }
 }

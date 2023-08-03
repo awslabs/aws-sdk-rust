@@ -44,9 +44,7 @@ impl DecimalColumnStatisticsData {
 
 /// A builder for [`DecimalColumnStatisticsData`](crate::types::DecimalColumnStatisticsData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DecimalColumnStatisticsDataBuilder {
     pub(crate) minimum_value: ::std::option::Option<crate::types::DecimalNumber>,
     pub(crate) maximum_value: ::std::option::Option<crate::types::DecimalNumber>,
@@ -60,10 +58,7 @@ impl DecimalColumnStatisticsDataBuilder {
         self
     }
     /// <p>The lowest value in the column.</p>
-    pub fn set_minimum_value(
-        mut self,
-        input: ::std::option::Option<crate::types::DecimalNumber>,
-    ) -> Self {
+    pub fn set_minimum_value(mut self, input: ::std::option::Option<crate::types::DecimalNumber>) -> Self {
         self.minimum_value = input;
         self
     }
@@ -77,10 +72,7 @@ impl DecimalColumnStatisticsDataBuilder {
         self
     }
     /// <p>The highest value in the column.</p>
-    pub fn set_maximum_value(
-        mut self,
-        input: ::std::option::Option<crate::types::DecimalNumber>,
-    ) -> Self {
+    pub fn set_maximum_value(mut self, input: ::std::option::Option<crate::types::DecimalNumber>) -> Self {
         self.maximum_value = input;
         self
     }

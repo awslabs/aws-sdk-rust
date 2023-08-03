@@ -58,9 +58,7 @@ impl WorkflowStepGroupSummary {
 
 /// A builder for [`WorkflowStepGroupSummary`](crate::types::WorkflowStepGroupSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowStepGroupSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -118,10 +116,7 @@ impl WorkflowStepGroupSummaryBuilder {
         self
     }
     /// <p>The status of the step group.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StepGroupStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StepGroupStatus>) -> Self {
         self.status = input;
         self
     }
@@ -141,10 +136,7 @@ impl WorkflowStepGroupSummaryBuilder {
         self
     }
     /// <p>The previous step group.</p>
-    pub fn set_previous(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.previous = input;
         self
     }
@@ -164,10 +156,7 @@ impl WorkflowStepGroupSummaryBuilder {
         self
     }
     /// <p>The next step group.</p>
-    pub fn set_next(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.next = input;
         self
     }

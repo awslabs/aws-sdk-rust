@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetSolFunctionPackageContentOutput {
 }
 impl GetSolFunctionPackageContentOutput {
     /// Creates a new builder-style object to manufacture [`GetSolFunctionPackageContentOutput`](crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentOutput).
-    pub fn builder() -> crate::operation::get_sol_function_package_content::builders::GetSolFunctionPackageContentOutputBuilder{
+    pub fn builder() -> crate::operation::get_sol_function_package_content::builders::GetSolFunctionPackageContentOutputBuilder {
         crate::operation::get_sol_function_package_content::builders::GetSolFunctionPackageContentOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSolFunctionPackageContentOutput`](crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolFunctionPackageContentOutputBuilder {
     pub(crate) content_type: ::std::option::Option<crate::types::PackageContentType>,
     pub(crate) package_content: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -50,10 +48,7 @@ impl GetSolFunctionPackageContentOutputBuilder {
         self
     }
     /// <p>Indicates the media type of the resource.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::PackageContentType>) -> Self {
         self.content_type = input;
         self
     }
@@ -67,10 +62,7 @@ impl GetSolFunctionPackageContentOutputBuilder {
         self
     }
     /// <p>Contents of the function package.</p>
-    pub fn set_package_content(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_package_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.package_content = input;
         self
     }
@@ -88,10 +80,7 @@ impl GetSolFunctionPackageContentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSolFunctionPackageContentOutput`](crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentOutput
-    {
+    pub fn build(self) -> crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentOutput {
         crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentOutput {
             content_type: self.content_type,
             package_content: self.package_content,

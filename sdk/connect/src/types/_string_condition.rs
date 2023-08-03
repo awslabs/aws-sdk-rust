@@ -37,9 +37,7 @@ impl StringCondition {
 
 /// A builder for [`StringCondition`](crate::types::StringCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StringConditionBuilder {
     pub(crate) field_name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -80,17 +78,12 @@ impl StringConditionBuilder {
         self
     }
     /// <p>The type of comparison to be made when evaluating the string condition.</p>
-    pub fn set_comparison_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StringComparisonType>,
-    ) -> Self {
+    pub fn set_comparison_type(mut self, input: ::std::option::Option<crate::types::StringComparisonType>) -> Self {
         self.comparison_type = input;
         self
     }
     /// <p>The type of comparison to be made when evaluating the string condition.</p>
-    pub fn get_comparison_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::StringComparisonType> {
+    pub fn get_comparison_type(&self) -> &::std::option::Option<crate::types::StringComparisonType> {
         &self.comparison_type
     }
     /// Consumes the builder and constructs a [`StringCondition`](crate::types::StringCondition).

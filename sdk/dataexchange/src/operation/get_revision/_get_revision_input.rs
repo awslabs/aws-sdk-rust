@@ -29,9 +29,7 @@ impl GetRevisionInput {
 
 /// A builder for [`GetRevisionInput`](crate::operation::get_revision::GetRevisionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRevisionInputBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetRevisionInputBuilder {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`GetRevisionInput`](crate::operation::get_revision::GetRevisionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_revision::GetRevisionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_revision::GetRevisionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_revision::GetRevisionInput {
             data_set_id: self.data_set_id,
             revision_id: self.revision_id,

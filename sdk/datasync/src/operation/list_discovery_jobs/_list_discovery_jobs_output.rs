@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDiscoveryJobsOutput {
 }
 impl ListDiscoveryJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListDiscoveryJobsOutput`](crate::operation::list_discovery_jobs::ListDiscoveryJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_discovery_jobs::builders::ListDiscoveryJobsOutputBuilder {
+    pub fn builder() -> crate::operation::list_discovery_jobs::builders::ListDiscoveryJobsOutputBuilder {
         crate::operation::list_discovery_jobs::builders::ListDiscoveryJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDiscoveryJobsOutput`](crate::operation::list_discovery_jobs::ListDiscoveryJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDiscoveryJobsOutputBuilder {
-    pub(crate) discovery_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DiscoveryJobListEntry>>,
+    pub(crate) discovery_jobs: ::std::option::Option<::std::vec::Vec<crate::types::DiscoveryJobListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListDiscoveryJobsOutputBuilder {
         self
     }
     /// <p>The discovery jobs that you've run.</p>
-    pub fn set_discovery_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DiscoveryJobListEntry>>,
-    ) -> Self {
+    pub fn set_discovery_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DiscoveryJobListEntry>>) -> Self {
         self.discovery_jobs = input;
         self
     }
     /// <p>The discovery jobs that you've run.</p>
-    pub fn get_discovery_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DiscoveryJobListEntry>> {
+    pub fn get_discovery_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DiscoveryJobListEntry>> {
         &self.discovery_jobs
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>

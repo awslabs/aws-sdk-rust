@@ -15,7 +15,10 @@ pub fn ser_aws_s3_bucket_notification_configuration_detail(
     if let Some(var_4) = &input.filter {
         #[allow(unused_mut)]
         let mut object_5 = object.key("Filter").start_object();
-        crate::protocol_serde::shape_aws_s3_bucket_notification_configuration_filter::ser_aws_s3_bucket_notification_configuration_filter(&mut object_5, var_4)?;
+        crate::protocol_serde::shape_aws_s3_bucket_notification_configuration_filter::ser_aws_s3_bucket_notification_configuration_filter(
+            &mut object_5,
+            var_4,
+        )?;
         object_5.finish();
     }
     if let Some(var_6) = &input.destination {
@@ -29,76 +32,57 @@ pub fn ser_aws_s3_bucket_notification_configuration_detail(
 
 pub(crate) fn de_aws_s3_bucket_notification_configuration_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsS3BucketNotificationConfigurationDetail>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsS3BucketNotificationConfigurationDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::AwsS3BucketNotificationConfigurationDetailBuilder::default(
-                );
+            let mut builder = crate::types::builders::AwsS3BucketNotificationConfigurationDetailBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Events" => {
-                                builder = builder.set_events(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Events" => {
+                            builder = builder.set_events(
                                     crate::protocol_serde::shape_aws_s3_bucket_notification_configuration_events::de_aws_s3_bucket_notification_configuration_events(tokens)?
                                 );
-                            }
-                            "Filter" => {
-                                builder = builder.set_filter(
+                        }
+                        "Filter" => {
+                            builder = builder.set_filter(
                                     crate::protocol_serde::shape_aws_s3_bucket_notification_configuration_filter::de_aws_s3_bucket_notification_configuration_filter(tokens)?
                                 );
-                            }
-                            "Destination" => {
-                                builder = builder.set_destination(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "Type" => {
-                                builder = builder.set_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        "Destination" => {
+                            builder = builder.set_destination(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

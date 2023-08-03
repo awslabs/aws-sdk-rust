@@ -8,8 +8,7 @@ pub struct ListDiscoveredResourcesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returned list of discovered resources associated with the given MigrationTask.</p>
     #[doc(hidden)]
-    pub discovered_resource_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DiscoveredResource>>,
+    pub discovered_resource_list: ::std::option::Option<::std::vec::Vec<crate::types::DiscoveredResource>>,
     _request_id: Option<String>,
 }
 impl ListDiscoveredResourcesOutput {
@@ -18,9 +17,7 @@ impl ListDiscoveredResourcesOutput {
         self.next_token.as_deref()
     }
     /// <p>Returned list of discovered resources associated with the given MigrationTask.</p>
-    pub fn discovered_resource_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DiscoveredResource]> {
+    pub fn discovered_resource_list(&self) -> ::std::option::Option<&[crate::types::DiscoveredResource]> {
         self.discovered_resource_list.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListDiscoveredResourcesOutput {
 }
 impl ListDiscoveredResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesOutput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesOutputBuilder {
         crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDiscoveredResourcesOutput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDiscoveredResourcesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) discovered_resource_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DiscoveredResource>>,
+    pub(crate) discovered_resource_list: ::std::option::Option<::std::vec::Vec<crate::types::DiscoveredResource>>,
     _request_id: Option<String>,
 }
 impl ListDiscoveredResourcesOutputBuilder {
@@ -76,17 +68,12 @@ impl ListDiscoveredResourcesOutputBuilder {
         self
     }
     /// <p>Returned list of discovered resources associated with the given MigrationTask.</p>
-    pub fn set_discovered_resource_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DiscoveredResource>>,
-    ) -> Self {
+    pub fn set_discovered_resource_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DiscoveredResource>>) -> Self {
         self.discovered_resource_list = input;
         self
     }
     /// <p>Returned list of discovered resources associated with the given MigrationTask.</p>
-    pub fn get_discovered_resource_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DiscoveredResource>> {
+    pub fn get_discovered_resource_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DiscoveredResource>> {
         &self.discovered_resource_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -99,9 +86,7 @@ impl ListDiscoveredResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDiscoveredResourcesOutput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput {
+    pub fn build(self) -> crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput {
         crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput {
             next_token: self.next_token,
             discovered_resource_list: self.discovered_resource_list,

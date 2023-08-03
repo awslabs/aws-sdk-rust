@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsOutput::job_id): <p>The identification number of the export job.</p>  <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
     ///   - [`s3_destination(Option<S3Destination>)`](crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsOutput::s3_destination): <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
     /// - On failure, responds with [`SdkError<ExportLambdaFunctionRecommendationsError>`](crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError)
-    pub fn export_lambda_function_recommendations(&self) -> crate::operation::export_lambda_function_recommendations::builders::ExportLambdaFunctionRecommendationsFluentBuilder{
+    pub fn export_lambda_function_recommendations(
+        &self,
+    ) -> crate::operation::export_lambda_function_recommendations::builders::ExportLambdaFunctionRecommendationsFluentBuilder {
         crate::operation::export_lambda_function_recommendations::builders::ExportLambdaFunctionRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

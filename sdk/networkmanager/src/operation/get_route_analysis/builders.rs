@@ -10,10 +10,7 @@ impl GetRouteAnalysisInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_route_analysis::GetRouteAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_route_analysis::GetRouteAnalysisError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_route_analysis::GetRouteAnalysisError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_route_analysis();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetRouteAnalysisFluentBuilder {
         }
     }
     /// Access the GetRouteAnalysis as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_route_analysis::builders::GetRouteAnalysisInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_route_analysis::builders::GetRouteAnalysisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetRouteAnalysisFluentBuilder {
             crate::operation::get_route_analysis::GetRouteAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_route_analysis::GetRouteAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_route_analysis::GetRouteAnalysisError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetRouteAnalysisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetRouteAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_route_analysis::GetRouteAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_route_analysis::GetRouteAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_route_analysis::GetRouteAnalysisError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetRouteAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_route_analysis::GetRouteAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_route_analysis::GetRouteAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_route_analysis::GetRouteAnalysisError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetRouteAnalysisFluentBuilder {
             crate::operation::get_route_analysis::GetRouteAnalysis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_route_analysis::GetRouteAnalysisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_route_analysis::GetRouteAnalysisError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -143,18 +121,12 @@ impl GetRouteAnalysisFluentBuilder {
         self.inner.get_global_network_id()
     }
     /// <p>The ID of the route analysis.</p>
-    pub fn route_analysis_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_analysis_id(input.into());
         self
     }
     /// <p>The ID of the route analysis.</p>
-    pub fn set_route_analysis_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_analysis_id(input);
         self
     }

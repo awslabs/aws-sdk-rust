@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`fleet_id(impl ::std::convert::Into<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::set_fleet_id): <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
     /// - On success, responds with [`DeleteFleetOutput`](crate::operation::delete_fleet::DeleteFleetOutput)
     /// - On failure, responds with [`SdkError<DeleteFleetError>`](crate::operation::delete_fleet::DeleteFleetError)
-    pub fn delete_fleet(
-        &self,
-    ) -> crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder {
+    pub fn delete_fleet(&self) -> crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder {
         crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::new(self.handle.clone())
     }
 }

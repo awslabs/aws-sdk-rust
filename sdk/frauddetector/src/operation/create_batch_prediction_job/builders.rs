@@ -26,7 +26,7 @@ impl CreateBatchPredictionJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBatchPredictionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobInputBuilder,
+    inner: crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobInputBuilder,
 }
 impl CreateBatchPredictionJobFluentBuilder {
     /// Creates a new `CreateBatchPredictionJob`.
@@ -37,7 +37,7 @@ impl CreateBatchPredictionJobFluentBuilder {
         }
     }
     /// Access the CreateBatchPredictionJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateBatchPredictionJobFluentBuilder {
             crate::operation::create_batch_prediction_job::CreateBatchPredictionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_prediction_job::CreateBatchPredictionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_prediction_job::CreateBatchPredictionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateBatchPredictionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateBatchPredictionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_batch_prediction_job::CreateBatchPredictionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_prediction_job::CreateBatchPredictionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_prediction_job::CreateBatchPredictionJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateBatchPredictionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_batch_prediction_job::CreateBatchPredictionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_prediction_job::CreateBatchPredictionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_prediction_job::CreateBatchPredictionJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateBatchPredictionJobFluentBuilder {
             crate::operation::create_batch_prediction_job::CreateBatchPredictionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_prediction_job::CreateBatchPredictionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_prediction_job::CreateBatchPredictionJobError>,
     > {
         self.customize_middleware().await
     }
@@ -163,18 +152,12 @@ impl CreateBatchPredictionJobFluentBuilder {
         self.inner.get_output_path()
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_type_name(input.into());
         self
     }
     /// <p>The name of the event type.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_type_name(input);
         self
     }
@@ -183,18 +166,12 @@ impl CreateBatchPredictionJobFluentBuilder {
         self.inner.get_event_type_name()
     }
     /// <p>The name of the detector.</p>
-    pub fn detector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_name(input.into());
         self
     }
     /// <p>The name of the detector.</p>
-    pub fn set_detector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_name(input);
         self
     }
@@ -203,18 +180,12 @@ impl CreateBatchPredictionJobFluentBuilder {
         self.inner.get_detector_name()
     }
     /// <p>The detector version.</p>
-    pub fn detector_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_version(input.into());
         self
     }
     /// <p>The detector version.</p>
-    pub fn set_detector_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_version(input);
         self
     }
@@ -249,10 +220,7 @@ impl CreateBatchPredictionJobFluentBuilder {
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

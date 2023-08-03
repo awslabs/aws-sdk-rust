@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`blocks(Option<Vec<Block>>)`](crate::operation::detect_entities::DetectEntitiesOutput::blocks): <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>  <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>  <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
     ///   - [`errors(Option<Vec<ErrorsListItem>>)`](crate::operation::detect_entities::DetectEntitiesOutput::errors): <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
     /// - On failure, responds with [`SdkError<DetectEntitiesError>`](crate::operation::detect_entities::DetectEntitiesError)
-    pub fn detect_entities(
-        &self,
-    ) -> crate::operation::detect_entities::builders::DetectEntitiesFluentBuilder {
-        crate::operation::detect_entities::builders::DetectEntitiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detect_entities(&self) -> crate::operation::detect_entities::builders::DetectEntitiesFluentBuilder {
+        crate::operation::detect_entities::builders::DetectEntitiesFluentBuilder::new(self.handle.clone())
     }
 }

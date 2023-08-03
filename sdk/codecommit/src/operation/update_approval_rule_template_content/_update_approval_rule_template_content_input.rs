@@ -29,16 +29,14 @@ impl UpdateApprovalRuleTemplateContentInput {
 }
 impl UpdateApprovalRuleTemplateContentInput {
     /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateContentInput`](crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentInput).
-    pub fn builder() -> crate::operation::update_approval_rule_template_content::builders::UpdateApprovalRuleTemplateContentInputBuilder{
+    pub fn builder() -> crate::operation::update_approval_rule_template_content::builders::UpdateApprovalRuleTemplateContentInputBuilder {
         crate::operation::update_approval_rule_template_content::builders::UpdateApprovalRuleTemplateContentInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApprovalRuleTemplateContentInput`](crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApprovalRuleTemplateContentInputBuilder {
     pub(crate) approval_rule_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_rule_content: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct UpdateApprovalRuleTemplateContentInputBuilder {
 }
 impl UpdateApprovalRuleTemplateContentInputBuilder {
     /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
-    pub fn approval_rule_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
-    pub fn set_approval_rule_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_template_name = input;
         self
     }
@@ -66,18 +58,12 @@ impl UpdateApprovalRuleTemplateContentInputBuilder {
         &self.approval_rule_template_name
     }
     /// <p>The content that replaces the existing content of the rule. Content statements must be complete. You cannot provide only the changes.</p>
-    pub fn new_rule_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_rule_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_rule_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content that replaces the existing content of the rule. Content statements must be complete. You cannot provide only the changes.</p>
-    pub fn set_new_rule_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_rule_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_rule_content = input;
         self
     }
@@ -86,38 +72,32 @@ impl UpdateApprovalRuleTemplateContentInputBuilder {
         &self.new_rule_content
     }
     /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
-    pub fn existing_rule_content_sha256(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn existing_rule_content_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.existing_rule_content_sha256 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
-    pub fn set_existing_rule_content_sha256(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_existing_rule_content_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.existing_rule_content_sha256 = input;
         self
     }
     /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
-    pub fn get_existing_rule_content_sha256(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_existing_rule_content_sha256(&self) -> &::std::option::Option<::std::string::String> {
         &self.existing_rule_content_sha256
     }
     /// Consumes the builder and constructs a [`UpdateApprovalRuleTemplateContentInput`](crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentInput {
-                approval_rule_template_name: self.approval_rule_template_name
-                ,
-                new_rule_content: self.new_rule_content
-                ,
-                existing_rule_content_sha256: self.existing_rule_content_sha256
-                ,
-            }
+                approval_rule_template_name: self.approval_rule_template_name,
+                new_rule_content: self.new_rule_content,
+                existing_rule_content_sha256: self.existing_rule_content_sha256,
+            },
         )
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`successes(Option<Vec<BatchPutGeofenceSuccess>>)`](crate::operation::batch_put_geofence::BatchPutGeofenceOutput::successes): <p>Contains each geofence that was successfully stored in a geofence collection.</p>
     ///   - [`errors(Option<Vec<BatchPutGeofenceError>>)`](crate::operation::batch_put_geofence::BatchPutGeofenceOutput::errors): <p>Contains additional error details for each geofence that failed to be stored in a geofence collection.</p>
     /// - On failure, responds with [`SdkError<BatchPutGeofenceError>`](crate::operation::batch_put_geofence::BatchPutGeofenceError)
-    pub fn batch_put_geofence(
-        &self,
-    ) -> crate::operation::batch_put_geofence::builders::BatchPutGeofenceFluentBuilder {
-        crate::operation::batch_put_geofence::builders::BatchPutGeofenceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_put_geofence(&self) -> crate::operation::batch_put_geofence::builders::BatchPutGeofenceFluentBuilder {
+        crate::operation::batch_put_geofence::builders::BatchPutGeofenceFluentBuilder::new(self.handle.clone())
     }
 }

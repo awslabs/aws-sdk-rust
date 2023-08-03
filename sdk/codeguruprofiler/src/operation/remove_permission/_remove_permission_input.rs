@@ -30,17 +30,14 @@ impl RemovePermissionInput {
 }
 impl RemovePermissionInput {
     /// Creates a new builder-style object to manufacture [`RemovePermissionInput`](crate::operation::remove_permission::RemovePermissionInput).
-    pub fn builder() -> crate::operation::remove_permission::builders::RemovePermissionInputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_permission::builders::RemovePermissionInputBuilder {
         crate::operation::remove_permission::builders::RemovePermissionInputBuilder::default()
     }
 }
 
 /// A builder for [`RemovePermissionInput`](crate::operation::remove_permission::RemovePermissionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemovePermissionInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) action_group: ::std::option::Option<crate::types::ActionGroup>,
@@ -48,18 +45,12 @@ pub struct RemovePermissionInputBuilder {
 }
 impl RemovePermissionInputBuilder {
     /// <p>The name of the profiling group.</p>
-    pub fn profiling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the profiling group.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profiling_group_name = input;
         self
     }
@@ -73,10 +64,7 @@ impl RemovePermissionInputBuilder {
         self
     }
     /// <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
-    pub fn set_action_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionGroup>,
-    ) -> Self {
+    pub fn set_action_group(mut self, input: ::std::option::Option<crate::types::ActionGroup>) -> Self {
         self.action_group = input;
         self
     }
@@ -101,10 +89,7 @@ impl RemovePermissionInputBuilder {
     /// Consumes the builder and constructs a [`RemovePermissionInput`](crate::operation::remove_permission::RemovePermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_permission::RemovePermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::remove_permission::RemovePermissionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_permission::RemovePermissionInput {
             profiling_group_name: self.profiling_group_name,
             action_group: self.action_group,

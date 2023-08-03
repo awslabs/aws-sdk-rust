@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DefineAnalysisSchemeOutput`](crate::operation::define_analysis_scheme::DefineAnalysisSchemeOutput) with field(s):
     ///   - [`analysis_scheme(Option<AnalysisSchemeStatus>)`](crate::operation::define_analysis_scheme::DefineAnalysisSchemeOutput::analysis_scheme): <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
     /// - On failure, responds with [`SdkError<DefineAnalysisSchemeError>`](crate::operation::define_analysis_scheme::DefineAnalysisSchemeError)
-    pub fn define_analysis_scheme(
-        &self,
-    ) -> crate::operation::define_analysis_scheme::builders::DefineAnalysisSchemeFluentBuilder {
-        crate::operation::define_analysis_scheme::builders::DefineAnalysisSchemeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn define_analysis_scheme(&self) -> crate::operation::define_analysis_scheme::builders::DefineAnalysisSchemeFluentBuilder {
+        crate::operation::define_analysis_scheme::builders::DefineAnalysisSchemeFluentBuilder::new(self.handle.clone())
     }
 }

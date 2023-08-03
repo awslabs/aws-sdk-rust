@@ -29,9 +29,7 @@ impl UntagResourceInput {
 
 /// A builder for [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -56,36 +54,25 @@ impl UntagResourceInputBuilder {
     /// To override the contents of this collection use [`set_tags_to_remove`](Self::set_tags_to_remove).
     ///
     /// <p>Tags to remove from this resource.</p>
-    pub fn tags_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tags_to_remove.unwrap_or_default();
         v.push(input.into());
         self.tags_to_remove = ::std::option::Option::Some(v);
         self
     }
     /// <p>Tags to remove from this resource.</p>
-    pub fn set_tags_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tags_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tags_to_remove = input;
         self
     }
     /// <p>Tags to remove from this resource.</p>
-    pub fn get_tags_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tags_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tags_to_remove
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::untag_resource::UntagResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::untag_resource::UntagResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_resource::UntagResourceInput {
             resource_arn: self.resource_arn,
             tags_to_remove: self.tags_to_remove,

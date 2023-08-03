@@ -26,7 +26,7 @@ impl ListDelegatedAdminAccountsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDelegatedAdminAccountsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsInputBuilder,
+    inner: crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsInputBuilder,
 }
 impl ListDelegatedAdminAccountsFluentBuilder {
     /// Creates a new `ListDelegatedAdminAccounts`.
@@ -37,7 +37,7 @@ impl ListDelegatedAdminAccountsFluentBuilder {
         }
     }
     /// Access the ListDelegatedAdminAccounts as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_delegated_admin_accounts::builders::ListDelegatedAdminAccountsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListDelegatedAdminAccountsFluentBuilder {
             crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccounts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListDelegatedAdminAccountsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListDelegatedAdminAccountsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListDelegatedAdminAccountsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListDelegatedAdminAccountsFluentBuilder {
             crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccounts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_delegated_admin_accounts::paginator::ListDelegatedAdminAccountsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_delegated_admin_accounts::paginator::ListDelegatedAdminAccountsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_delegated_admin_accounts::paginator::ListDelegatedAdminAccountsPaginator {
         crate::operation::list_delegated_admin_accounts::paginator::ListDelegatedAdminAccountsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to return in the response.</p>

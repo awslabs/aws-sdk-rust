@@ -61,16 +61,14 @@ impl GetTransitGatewayPrefixListReferencesInput {
 }
 impl GetTransitGatewayPrefixListReferencesInput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayPrefixListReferencesInput`](crate::operation::get_transit_gateway_prefix_list_references::GetTransitGatewayPrefixListReferencesInput).
-    pub fn builder() -> crate::operation::get_transit_gateway_prefix_list_references::builders::GetTransitGatewayPrefixListReferencesInputBuilder{
+    pub fn builder() -> crate::operation::get_transit_gateway_prefix_list_references::builders::GetTransitGatewayPrefixListReferencesInputBuilder {
         crate::operation::get_transit_gateway_prefix_list_references::builders::GetTransitGatewayPrefixListReferencesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTransitGatewayPrefixListReferencesInput`](crate::operation::get_transit_gateway_prefix_list_references::GetTransitGatewayPrefixListReferencesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransitGatewayPrefixListReferencesInputBuilder {
     pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -80,25 +78,17 @@ pub struct GetTransitGatewayPrefixListReferencesInputBuilder {
 }
 impl GetTransitGatewayPrefixListReferencesInputBuilder {
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn set_transit_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = input;
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn get_transit_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_route_table_id
     }
     /// Appends an item to `filters`.
@@ -131,10 +121,7 @@ impl GetTransitGatewayPrefixListReferencesInputBuilder {
     /// <li> <p> <code>prefix-list-owner-id</code> - The ID of the owner of the prefix list.</p> </li>
     /// <li> <p> <code>state</code> - The state of the prefix list reference (<code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -194,20 +181,20 @@ impl GetTransitGatewayPrefixListReferencesInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`GetTransitGatewayPrefixListReferencesInput`](crate::operation::get_transit_gateway_prefix_list_references::GetTransitGatewayPrefixListReferencesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_transit_gateway_prefix_list_references::GetTransitGatewayPrefixListReferencesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_transit_gateway_prefix_list_references::GetTransitGatewayPrefixListReferencesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_transit_gateway_prefix_list_references::GetTransitGatewayPrefixListReferencesInput {
-                transit_gateway_route_table_id: self.transit_gateway_route_table_id
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                transit_gateway_route_table_id: self.transit_gateway_route_table_id,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

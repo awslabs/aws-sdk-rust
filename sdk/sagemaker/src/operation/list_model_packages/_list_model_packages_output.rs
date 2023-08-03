@@ -5,8 +5,7 @@
 pub struct ListModelPackagesOutput {
     /// <p>An array of <code>ModelPackageSummary</code> objects, each of which lists a model package.</p>
     #[doc(hidden)]
-    pub model_package_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageSummary>>,
+    pub model_package_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageSummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model packages, use it in the subsequent request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListModelPackagesOutput {
 }
 impl ListModelPackagesOutput {
     /// <p>An array of <code>ModelPackageSummary</code> objects, each of which lists a model package.</p>
-    pub fn model_package_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ModelPackageSummary]> {
+    pub fn model_package_summary_list(&self) -> ::std::option::Option<&[crate::types::ModelPackageSummary]> {
         self.model_package_summary_list.as_deref()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model packages, use it in the subsequent request.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListModelPackagesOutput {
 }
 impl ListModelPackagesOutput {
     /// Creates a new builder-style object to manufacture [`ListModelPackagesOutput`](crate::operation::list_model_packages::ListModelPackagesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_model_packages::builders::ListModelPackagesOutputBuilder {
+    pub fn builder() -> crate::operation::list_model_packages::builders::ListModelPackagesOutputBuilder {
         crate::operation::list_model_packages::builders::ListModelPackagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListModelPackagesOutput`](crate::operation::list_model_packages::ListModelPackagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelPackagesOutputBuilder {
-    pub(crate) model_package_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageSummary>>,
+    pub(crate) model_package_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListModelPackagesOutputBuilder {
         self
     }
     /// <p>An array of <code>ModelPackageSummary</code> objects, each of which lists a model package.</p>
-    pub fn set_model_package_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageSummary>>,
-    ) -> Self {
+    pub fn set_model_package_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageSummary>>) -> Self {
         self.model_package_summary_list = input;
         self
     }
     /// <p>An array of <code>ModelPackageSummary</code> objects, each of which lists a model package.</p>
-    pub fn get_model_package_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelPackageSummary>> {
+    pub fn get_model_package_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelPackageSummary>> {
         &self.model_package_summary_list
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model packages, use it in the subsequent request.</p>

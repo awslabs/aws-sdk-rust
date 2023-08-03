@@ -20,9 +20,7 @@ impl DestinationConfiguration {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`AuditLog`](crate::types::DestinationConfiguration::AuditLog), extracting the inner [`AuditLogDestinationConfiguration`](crate::types::AuditLogDestinationConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_audit_log(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AuditLogDestinationConfiguration, &Self> {
+    pub fn as_audit_log(&self) -> ::std::result::Result<&crate::types::AuditLogDestinationConfiguration, &Self> {
         if let DestinationConfiguration::AuditLog(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

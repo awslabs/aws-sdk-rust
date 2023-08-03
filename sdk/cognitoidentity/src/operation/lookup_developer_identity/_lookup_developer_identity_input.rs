@@ -44,18 +44,14 @@ impl LookupDeveloperIdentityInput {
 }
 impl LookupDeveloperIdentityInput {
     /// Creates a new builder-style object to manufacture [`LookupDeveloperIdentityInput`](crate::operation::lookup_developer_identity::LookupDeveloperIdentityInput).
-    pub fn builder(
-    ) -> crate::operation::lookup_developer_identity::builders::LookupDeveloperIdentityInputBuilder
-    {
+    pub fn builder() -> crate::operation::lookup_developer_identity::builders::LookupDeveloperIdentityInputBuilder {
         crate::operation::lookup_developer_identity::builders::LookupDeveloperIdentityInputBuilder::default()
     }
 }
 
 /// A builder for [`LookupDeveloperIdentityInput`](crate::operation::lookup_developer_identity::LookupDeveloperIdentityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LookupDeveloperIdentityInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
@@ -65,18 +61,12 @@ pub struct LookupDeveloperIdentityInputBuilder {
 }
 impl LookupDeveloperIdentityInputBuilder {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -99,18 +89,12 @@ impl LookupDeveloperIdentityInputBuilder {
         &self.identity_id
     }
     /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
-    pub fn developer_user_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn developer_user_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.developer_user_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
-    pub fn set_developer_user_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_developer_user_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.developer_user_identifier = input;
         self
     }
@@ -153,14 +137,12 @@ impl LookupDeveloperIdentityInputBuilder {
         crate::operation::lookup_developer_identity::LookupDeveloperIdentityInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::lookup_developer_identity::LookupDeveloperIdentityInput {
-                identity_pool_id: self.identity_pool_id,
-                identity_id: self.identity_id,
-                developer_user_identifier: self.developer_user_identifier,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::lookup_developer_identity::LookupDeveloperIdentityInput {
+            identity_pool_id: self.identity_pool_id,
+            identity_id: self.identity_id,
+            developer_user_identifier: self.developer_user_identifier,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }

@@ -56,15 +56,12 @@ impl CacheSecurityGroup {
 
 /// A builder for [`CacheSecurityGroup`](crate::types::CacheSecurityGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CacheSecurityGroupBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) cache_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) ec2_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>>,
+    pub(crate) ec2_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl CacheSecurityGroupBuilder {
@@ -83,18 +80,12 @@ impl CacheSecurityGroupBuilder {
         &self.owner_id
     }
     /// <p>The name of the cache security group.</p>
-    pub fn cache_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cache security group.</p>
-    pub fn set_cache_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_security_group_name = input;
         self
     }
@@ -128,17 +119,12 @@ impl CacheSecurityGroupBuilder {
         self
     }
     /// <p>A list of Amazon EC2 security groups that are associated with this cache security group.</p>
-    pub fn set_ec2_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>>,
-    ) -> Self {
+    pub fn set_ec2_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>>) -> Self {
         self.ec2_security_groups = input;
         self
     }
     /// <p>A list of Amazon EC2 security groups that are associated with this cache security group.</p>
-    pub fn get_ec2_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>> {
+    pub fn get_ec2_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>> {
         &self.ec2_security_groups
     }
     /// <p>The ARN of the cache security group,</p>

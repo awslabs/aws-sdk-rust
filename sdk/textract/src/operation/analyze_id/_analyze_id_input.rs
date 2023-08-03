@@ -22,9 +22,7 @@ impl AnalyzeIdInput {
 
 /// A builder for [`AnalyzeIdInput`](crate::operation::analyze_id::AnalyzeIdInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyzeIdInputBuilder {
     pub(crate) document_pages: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
 }
@@ -41,26 +39,16 @@ impl AnalyzeIdInputBuilder {
         self
     }
     /// <p>The document being passed to AnalyzeID.</p>
-    pub fn set_document_pages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
-    ) -> Self {
+    pub fn set_document_pages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>) -> Self {
         self.document_pages = input;
         self
     }
     /// <p>The document being passed to AnalyzeID.</p>
-    pub fn get_document_pages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Document>> {
+    pub fn get_document_pages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Document>> {
         &self.document_pages
     }
     /// Consumes the builder and constructs a [`AnalyzeIdInput`](crate::operation::analyze_id::AnalyzeIdInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::analyze_id::AnalyzeIdInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::analyze_id::AnalyzeIdInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::analyze_id::AnalyzeIdInput {
             document_pages: self.document_pages,
         })

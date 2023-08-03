@@ -15,35 +15,25 @@ impl DescribeSecurityProfileInput {
 }
 impl DescribeSecurityProfileInput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityProfileInput`](crate::operation::describe_security_profile::DescribeSecurityProfileInput).
-    pub fn builder(
-    ) -> crate::operation::describe_security_profile::builders::DescribeSecurityProfileInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_security_profile::builders::DescribeSecurityProfileInputBuilder {
         crate::operation::describe_security_profile::builders::DescribeSecurityProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSecurityProfileInput`](crate::operation::describe_security_profile::DescribeSecurityProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSecurityProfileInputBuilder {
     pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSecurityProfileInputBuilder {
     /// <p>The name of the security profile whose information you want to get.</p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the security profile whose information you want to get.</p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_profile_name = input;
         self
     }
@@ -58,10 +48,8 @@ impl DescribeSecurityProfileInputBuilder {
         crate::operation::describe_security_profile::DescribeSecurityProfileInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_security_profile::DescribeSecurityProfileInput {
-                security_profile_name: self.security_profile_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_security_profile::DescribeSecurityProfileInput {
+            security_profile_name: self.security_profile_name,
+        })
     }
 }

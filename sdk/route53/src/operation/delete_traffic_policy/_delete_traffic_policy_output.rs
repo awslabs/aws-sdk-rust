@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteTrafficPolicyOutput {
 }
 impl DeleteTrafficPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTrafficPolicyOutput`](crate::operation::delete_traffic_policy::DeleteTrafficPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyOutputBuilder {
-        crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyOutputBuilder {
+        crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTrafficPolicyOutput`](crate::operation::delete_traffic_policy::DeleteTrafficPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrafficPolicyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -36,39 +36,28 @@ impl PutMailboxPermissionsInput {
 }
 impl PutMailboxPermissionsInput {
     /// Creates a new builder-style object to manufacture [`PutMailboxPermissionsInput`](crate::operation::put_mailbox_permissions::PutMailboxPermissionsInput).
-    pub fn builder(
-    ) -> crate::operation::put_mailbox_permissions::builders::PutMailboxPermissionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_mailbox_permissions::builders::PutMailboxPermissionsInputBuilder {
         crate::operation::put_mailbox_permissions::builders::PutMailboxPermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutMailboxPermissionsInput`](crate::operation::put_mailbox_permissions::PutMailboxPermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMailboxPermissionsInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) grantee_id: ::std::option::Option<::std::string::String>,
-    pub(crate) permission_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    pub(crate) permission_values: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
 }
 impl PutMailboxPermissionsInputBuilder {
     /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -116,33 +105,24 @@ impl PutMailboxPermissionsInputBuilder {
         self
     }
     /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
-    pub fn set_permission_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
-    ) -> Self {
+    pub fn set_permission_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>) -> Self {
         self.permission_values = input;
         self
     }
     /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
-    pub fn get_permission_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
+    pub fn get_permission_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         &self.permission_values
     }
     /// Consumes the builder and constructs a [`PutMailboxPermissionsInput`](crate::operation::put_mailbox_permissions::PutMailboxPermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_mailbox_permissions::PutMailboxPermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_mailbox_permissions::PutMailboxPermissionsInput {
-                organization_id: self.organization_id,
-                entity_id: self.entity_id,
-                grantee_id: self.grantee_id,
-                permission_values: self.permission_values,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_mailbox_permissions::PutMailboxPermissionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_mailbox_permissions::PutMailboxPermissionsInput {
+            organization_id: self.organization_id,
+            entity_id: self.entity_id,
+            grantee_id: self.grantee_id,
+            permission_values: self.permission_values,
+        })
     }
 }

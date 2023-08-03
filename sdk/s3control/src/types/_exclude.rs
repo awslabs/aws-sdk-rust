@@ -30,9 +30,7 @@ impl Exclude {
 
 /// A builder for [`Exclude`](crate::types::Exclude).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExcludeBuilder {
     pub(crate) buckets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -50,10 +48,7 @@ impl ExcludeBuilder {
         self
     }
     /// <p>A container for the S3 Storage Lens bucket excludes.</p>
-    pub fn set_buckets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_buckets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.buckets = input;
         self
     }
@@ -73,10 +68,7 @@ impl ExcludeBuilder {
         self
     }
     /// <p>A container for the S3 Storage Lens Region excludes.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }

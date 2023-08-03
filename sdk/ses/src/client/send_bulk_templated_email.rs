@@ -17,10 +17,7 @@ impl super::Client {
     /// - On success, responds with [`SendBulkTemplatedEmailOutput`](crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailOutput) with field(s):
     ///   - [`status(Option<Vec<BulkEmailDestinationStatus>>)`](crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailOutput::status): <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.</p>
     /// - On failure, responds with [`SdkError<SendBulkTemplatedEmailError>`](crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError)
-    pub fn send_bulk_templated_email(
-        &self,
-    ) -> crate::operation::send_bulk_templated_email::builders::SendBulkTemplatedEmailFluentBuilder
-    {
+    pub fn send_bulk_templated_email(&self) -> crate::operation::send_bulk_templated_email::builders::SendBulkTemplatedEmailFluentBuilder {
         crate::operation::send_bulk_templated_email::builders::SendBulkTemplatedEmailFluentBuilder::new(self.handle.clone())
     }
 }

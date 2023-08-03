@@ -30,9 +30,7 @@ impl CoverageSortCriteria {
 
 /// A builder for [`CoverageSortCriteria`](crate::types::CoverageSortCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoverageSortCriteriaBuilder {
     pub(crate) attribute_name: ::std::option::Option<crate::types::CoverageSortKey>,
     pub(crate) order_by: ::std::option::Option<crate::types::OrderBy>,
@@ -44,10 +42,7 @@ impl CoverageSortCriteriaBuilder {
         self
     }
     /// <p>Represents the field name used to sort the coverage details.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageSortKey>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<crate::types::CoverageSortKey>) -> Self {
         self.attribute_name = input;
         self
     }

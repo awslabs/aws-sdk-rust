@@ -38,9 +38,7 @@ pub struct DescribeApplicationOutput {
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeApplicationOutput {
@@ -89,11 +87,7 @@ impl DescribeApplicationOutput {
         self.error_message.as_deref()
     }
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -104,18 +98,14 @@ impl ::aws_http::request_id::RequestId for DescribeApplicationOutput {
 }
 impl DescribeApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_application::builders::DescribeApplicationOutputBuilder {
-        crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_application::builders::DescribeApplicationOutputBuilder {
+        crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationOutputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
@@ -128,25 +118,17 @@ pub struct DescribeApplicationOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sso_client_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeApplicationOutputBuilder {
     /// <p>The unique Id of the web application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique Id of the web application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -155,18 +137,12 @@ impl DescribeApplicationOutputBuilder {
         &self.application_id
     }
     /// <p>The ARN of the web application.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the web application.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -175,18 +151,12 @@ impl DescribeApplicationOutputBuilder {
         &self.application_arn
     }
     /// <p>The name of the web application.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the web application.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -195,18 +165,12 @@ impl DescribeApplicationOutputBuilder {
         &self.application_name
     }
     /// <p>An optional description of the web application.</p>
-    pub fn application_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional description of the web application.</p>
-    pub fn set_application_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_description = input;
         self
     }
@@ -215,18 +179,12 @@ impl DescribeApplicationOutputBuilder {
         &self.application_description
     }
     /// <p>The URL of the web application.</p>
-    pub fn application_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the web application.</p>
-    pub fn set_application_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_url = input;
         self
     }
@@ -240,10 +198,7 @@ impl DescribeApplicationOutputBuilder {
         self
     }
     /// <p>The current state of the web application.</p>
-    pub fn set_application_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationState>,
-    ) -> Self {
+    pub fn set_application_state(mut self, input: ::std::option::Option<crate::types::ApplicationState>) -> Self {
         self.application_state = input;
         self
     }
@@ -294,18 +249,12 @@ impl DescribeApplicationOutputBuilder {
         &self.role_arn
     }
     /// <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
-    pub fn sso_client_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sso_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sso_client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
-    pub fn set_sso_client_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sso_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sso_client_id = input;
         self
     }
@@ -314,18 +263,12 @@ impl DescribeApplicationOutputBuilder {
         &self.sso_client_id
     }
     /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -338,32 +281,19 @@ impl DescribeApplicationOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

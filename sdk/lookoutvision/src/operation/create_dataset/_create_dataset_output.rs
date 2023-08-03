@@ -28,9 +28,7 @@ impl CreateDatasetOutput {
 
 /// A builder for [`CreateDatasetOutput`](crate::operation::create_dataset::CreateDatasetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDatasetOutputBuilder {
     pub(crate) dataset_metadata: ::std::option::Option<crate::types::DatasetMetadata>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreateDatasetOutputBuilder {
         self
     }
     /// <p>Information about the dataset.</p>
-    pub fn set_dataset_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetMetadata>,
-    ) -> Self {
+    pub fn set_dataset_metadata(mut self, input: ::std::option::Option<crate::types::DatasetMetadata>) -> Self {
         self.dataset_metadata = input;
         self
     }

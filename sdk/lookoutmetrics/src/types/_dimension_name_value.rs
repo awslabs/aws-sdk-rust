@@ -30,27 +30,19 @@ impl DimensionNameValue {
 
 /// A builder for [`DimensionNameValue`](crate::types::DimensionNameValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionNameValueBuilder {
     pub(crate) dimension_name: ::std::option::Option<::std::string::String>,
     pub(crate) dimension_value: ::std::option::Option<::std::string::String>,
 }
 impl DimensionNameValueBuilder {
     /// <p>The name of the dimension.</p>
-    pub fn dimension_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dimension.</p>
-    pub fn set_dimension_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dimension_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dimension_name = input;
         self
     }
@@ -59,18 +51,12 @@ impl DimensionNameValueBuilder {
         &self.dimension_name
     }
     /// <p>The value of the dimension.</p>
-    pub fn dimension_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the dimension.</p>
-    pub fn set_dimension_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dimension_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dimension_value = input;
         self
     }

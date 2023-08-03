@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ListIdentityPoliciesOutput`](crate::operation::list_identity_policies::ListIdentityPoliciesOutput) with field(s):
     ///   - [`policy_names(Option<Vec<String>>)`](crate::operation::list_identity_policies::ListIdentityPoliciesOutput::policy_names): <p>A list of names of policies that apply to the specified identity.</p>
     /// - On failure, responds with [`SdkError<ListIdentityPoliciesError>`](crate::operation::list_identity_policies::ListIdentityPoliciesError)
-    pub fn list_identity_policies(
-        &self,
-    ) -> crate::operation::list_identity_policies::builders::ListIdentityPoliciesFluentBuilder {
-        crate::operation::list_identity_policies::builders::ListIdentityPoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_identity_policies(&self) -> crate::operation::list_identity_policies::builders::ListIdentityPoliciesFluentBuilder {
+        crate::operation::list_identity_policies::builders::ListIdentityPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

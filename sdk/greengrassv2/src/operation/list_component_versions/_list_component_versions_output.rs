@@ -5,8 +5,7 @@
 pub struct ListComponentVersionsOutput {
     /// <p>A list of versions that exist for the component.</p>
     #[doc(hidden)]
-    pub component_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersionListItem>>,
+    pub component_versions: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersionListItem>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListComponentVersionsOutput {
 }
 impl ListComponentVersionsOutput {
     /// <p>A list of versions that exist for the component.</p>
-    pub fn component_versions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ComponentVersionListItem]> {
+    pub fn component_versions(&self) -> ::std::option::Option<&[crate::types::ComponentVersionListItem]> {
         self.component_versions.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListComponentVersionsOutput {
 }
 impl ListComponentVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListComponentVersionsOutput`](crate::operation::list_component_versions::ListComponentVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_component_versions::builders::ListComponentVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_component_versions::builders::ListComponentVersionsOutputBuilder {
         crate::operation::list_component_versions::builders::ListComponentVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListComponentVersionsOutput`](crate::operation::list_component_versions::ListComponentVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentVersionsOutputBuilder {
-    pub(crate) component_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersionListItem>>,
+    pub(crate) component_versions: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersionListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListComponentVersionsOutputBuilder {
         self
     }
     /// <p>A list of versions that exist for the component.</p>
-    pub fn set_component_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersionListItem>>,
-    ) -> Self {
+    pub fn set_component_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersionListItem>>) -> Self {
         self.component_versions = input;
         self
     }
     /// <p>A list of versions that exist for the component.</p>
-    pub fn get_component_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentVersionListItem>> {
+    pub fn get_component_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentVersionListItem>> {
         &self.component_versions
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>

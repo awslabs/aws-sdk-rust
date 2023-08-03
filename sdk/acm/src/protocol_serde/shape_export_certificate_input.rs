@@ -7,9 +7,7 @@ pub fn ser_export_certificate_input(
         object.key("CertificateArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.passphrase {
-        object
-            .key("Passphrase")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_2));
+        object.key("Passphrase").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
     }
     Ok(())
 }

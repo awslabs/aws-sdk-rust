@@ -30,27 +30,19 @@ impl AwsKinesisStreamStreamEncryptionDetails {
 
 /// A builder for [`AwsKinesisStreamStreamEncryptionDetails`](crate::types::AwsKinesisStreamStreamEncryptionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsKinesisStreamStreamEncryptionDetailsBuilder {
     pub(crate) encryption_type: ::std::option::Option<::std::string::String>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsKinesisStreamStreamEncryptionDetailsBuilder {
     /// <p>The encryption type to use. </p>
-    pub fn encryption_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The encryption type to use. </p>
-    pub fn set_encryption_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_type = input;
         self
     }

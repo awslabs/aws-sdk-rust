@@ -5,8 +5,7 @@
 pub struct DescribeTrafficMirrorSessionsOutput {
     /// <p>Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions are described. Alternatively, you can filter the results.</p>
     #[doc(hidden)]
-    pub traffic_mirror_sessions:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSession>>,
+    pub traffic_mirror_sessions: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSession>>,
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeTrafficMirrorSessionsOutput {
 }
 impl DescribeTrafficMirrorSessionsOutput {
     /// <p>Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions are described. Alternatively, you can filter the results.</p>
-    pub fn traffic_mirror_sessions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrafficMirrorSession]> {
+    pub fn traffic_mirror_sessions(&self) -> ::std::option::Option<&[crate::types::TrafficMirrorSession]> {
         self.traffic_mirror_sessions.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeTrafficMirrorSessionsOutput {
 }
 impl DescribeTrafficMirrorSessionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrafficMirrorSessionsOutput`](crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsOutput).
-    pub fn builder() -> crate::operation::describe_traffic_mirror_sessions::builders::DescribeTrafficMirrorSessionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_traffic_mirror_sessions::builders::DescribeTrafficMirrorSessionsOutputBuilder {
         crate::operation::describe_traffic_mirror_sessions::builders::DescribeTrafficMirrorSessionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTrafficMirrorSessionsOutput`](crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrafficMirrorSessionsOutputBuilder {
-    pub(crate) traffic_mirror_sessions:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSession>>,
+    pub(crate) traffic_mirror_sessions: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSession>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeTrafficMirrorSessionsOutputBuilder {
         self
     }
     /// <p>Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions are described. Alternatively, you can filter the results.</p>
-    pub fn set_traffic_mirror_sessions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSession>>,
-    ) -> Self {
+    pub fn set_traffic_mirror_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSession>>) -> Self {
         self.traffic_mirror_sessions = input;
         self
     }
     /// <p>Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions are described. Alternatively, you can filter the results.</p>
-    pub fn get_traffic_mirror_sessions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSession>> {
+    pub fn get_traffic_mirror_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSession>> {
         &self.traffic_mirror_sessions
     }
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
@@ -97,10 +86,7 @@ impl DescribeTrafficMirrorSessionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTrafficMirrorSessionsOutput`](crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsOutput {
         crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsOutput {
             traffic_mirror_sessions: self.traffic_mirror_sessions,
             next_token: self.next_token,

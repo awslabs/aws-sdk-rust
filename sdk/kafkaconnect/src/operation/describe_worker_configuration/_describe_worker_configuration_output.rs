@@ -11,8 +11,7 @@ pub struct DescribeWorkerConfigurationOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The latest revision of the custom configuration.</p>
     #[doc(hidden)]
-    pub latest_revision:
-        ::std::option::Option<crate::types::WorkerConfigurationRevisionDescription>,
+    pub latest_revision: ::std::option::Option<crate::types::WorkerConfigurationRevisionDescription>,
     /// <p>The name of the worker configuration.</p>
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -31,9 +30,7 @@ impl DescribeWorkerConfigurationOutput {
         self.description.as_deref()
     }
     /// <p>The latest revision of the custom configuration.</p>
-    pub fn latest_revision(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkerConfigurationRevisionDescription> {
+    pub fn latest_revision(&self) -> ::std::option::Option<&crate::types::WorkerConfigurationRevisionDescription> {
         self.latest_revision.as_ref()
     }
     /// <p>The name of the worker configuration.</p>
@@ -52,21 +49,18 @@ impl ::aws_http::request_id::RequestId for DescribeWorkerConfigurationOutput {
 }
 impl DescribeWorkerConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkerConfigurationOutput`](crate::operation::describe_worker_configuration::DescribeWorkerConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_worker_configuration::builders::DescribeWorkerConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_worker_configuration::builders::DescribeWorkerConfigurationOutputBuilder {
         crate::operation::describe_worker_configuration::builders::DescribeWorkerConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkerConfigurationOutput`](crate::operation::describe_worker_configuration::DescribeWorkerConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkerConfigurationOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) latest_revision:
-        ::std::option::Option<crate::types::WorkerConfigurationRevisionDescription>,
+    pub(crate) latest_revision: ::std::option::Option<crate::types::WorkerConfigurationRevisionDescription>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) worker_configuration_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -78,10 +72,7 @@ impl DescribeWorkerConfigurationOutputBuilder {
         self
     }
     /// <p>The time that the worker configuration was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -104,25 +95,17 @@ impl DescribeWorkerConfigurationOutputBuilder {
         &self.description
     }
     /// <p>The latest revision of the custom configuration.</p>
-    pub fn latest_revision(
-        mut self,
-        input: crate::types::WorkerConfigurationRevisionDescription,
-    ) -> Self {
+    pub fn latest_revision(mut self, input: crate::types::WorkerConfigurationRevisionDescription) -> Self {
         self.latest_revision = ::std::option::Option::Some(input);
         self
     }
     /// <p>The latest revision of the custom configuration.</p>
-    pub fn set_latest_revision(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkerConfigurationRevisionDescription>,
-    ) -> Self {
+    pub fn set_latest_revision(mut self, input: ::std::option::Option<crate::types::WorkerConfigurationRevisionDescription>) -> Self {
         self.latest_revision = input;
         self
     }
     /// <p>The latest revision of the custom configuration.</p>
-    pub fn get_latest_revision(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkerConfigurationRevisionDescription> {
+    pub fn get_latest_revision(&self) -> &::std::option::Option<crate::types::WorkerConfigurationRevisionDescription> {
         &self.latest_revision
     }
     /// <p>The name of the worker configuration.</p>
@@ -140,18 +123,12 @@ impl DescribeWorkerConfigurationOutputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the custom configuration.</p>
-    pub fn worker_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn worker_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom configuration.</p>
-    pub fn set_worker_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_worker_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.worker_configuration_arn = input;
         self
     }
@@ -169,9 +146,7 @@ impl DescribeWorkerConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeWorkerConfigurationOutput`](crate::operation::describe_worker_configuration::DescribeWorkerConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_worker_configuration::DescribeWorkerConfigurationOutput {
+    pub fn build(self) -> crate::operation::describe_worker_configuration::DescribeWorkerConfigurationOutput {
         crate::operation::describe_worker_configuration::DescribeWorkerConfigurationOutput {
             creation_time: self.creation_time,
             description: self.description,

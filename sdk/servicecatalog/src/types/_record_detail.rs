@@ -138,9 +138,7 @@ impl RecordDetail {
 
 /// A builder for [`RecordDetail`](crate::types::RecordDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordDetailBuilder {
     pub(crate) record_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_product_name: ::std::option::Option<::std::string::String>,
@@ -173,18 +171,12 @@ impl RecordDetailBuilder {
         &self.record_id
     }
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn provisioned_product_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn set_provisioned_product_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_product_name = input;
         self
     }
@@ -233,10 +225,7 @@ impl RecordDetailBuilder {
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -250,10 +239,7 @@ impl RecordDetailBuilder {
         self
     }
     /// <p>The time when the record was last updated.</p>
-    pub fn set_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_time = input;
         self
     }
@@ -262,18 +248,12 @@ impl RecordDetailBuilder {
         &self.updated_time
     }
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
-    pub fn provisioned_product_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
-    pub fn set_provisioned_product_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_product_type = input;
         self
     }
@@ -311,18 +291,12 @@ impl RecordDetailBuilder {
         &self.record_type
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn provisioned_product_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn set_provisioned_product_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_product_id = input;
         self
     }
@@ -345,18 +319,12 @@ impl RecordDetailBuilder {
         &self.product_id
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn set_provisioning_artifact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioning_artifact_id = input;
         self
     }
@@ -390,17 +358,12 @@ impl RecordDetailBuilder {
         self
     }
     /// <p>The errors that occurred.</p>
-    pub fn set_record_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecordError>>,
-    ) -> Self {
+    pub fn set_record_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecordError>>) -> Self {
         self.record_errors = input;
         self
     }
     /// <p>The errors that occurred.</p>
-    pub fn get_record_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordError>> {
+    pub fn get_record_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordError>> {
         &self.record_errors
     }
     /// Appends an item to `record_tags`.
@@ -415,32 +378,21 @@ impl RecordDetailBuilder {
         self
     }
     /// <p>One or more tags.</p>
-    pub fn set_record_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecordTag>>,
-    ) -> Self {
+    pub fn set_record_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecordTag>>) -> Self {
         self.record_tags = input;
         self
     }
     /// <p>One or more tags.</p>
-    pub fn get_record_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordTag>> {
+    pub fn get_record_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordTag>> {
         &self.record_tags
     }
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
-    pub fn launch_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
-    pub fn set_launch_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_role_arn = input;
         self
     }

@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`ingress_access_logs(Option<IngressAccessLogs>)`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsOutput::ingress_access_logs): Configure ingress access logging.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsOutput::tags): A collection of tags associated with a resource
     /// - On failure, responds with [`SdkError<RotateIngestEndpointCredentialsError>`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsError)
-    pub fn rotate_ingest_endpoint_credentials(&self) -> crate::operation::rotate_ingest_endpoint_credentials::builders::RotateIngestEndpointCredentialsFluentBuilder{
+    pub fn rotate_ingest_endpoint_credentials(
+        &self,
+    ) -> crate::operation::rotate_ingest_endpoint_credentials::builders::RotateIngestEndpointCredentialsFluentBuilder {
         crate::operation::rotate_ingest_endpoint_credentials::builders::RotateIngestEndpointCredentialsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl GetAppLaunchConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAppLaunchConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationInputBuilder,
+    inner: crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationInputBuilder,
 }
 impl GetAppLaunchConfigurationFluentBuilder {
     /// Creates a new `GetAppLaunchConfiguration`.
@@ -37,7 +37,7 @@ impl GetAppLaunchConfigurationFluentBuilder {
         }
     }
     /// Access the GetAppLaunchConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetAppLaunchConfigurationFluentBuilder {
             crate::operation::get_app_launch_configuration::GetAppLaunchConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetAppLaunchConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetAppLaunchConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetAppLaunchConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetAppLaunchConfigurationFluentBuilder {
             crate::operation::get_app_launch_configuration::GetAppLaunchConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationError>,
     > {
         self.customize_middleware().await
     }

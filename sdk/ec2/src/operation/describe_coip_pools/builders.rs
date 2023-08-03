@@ -10,10 +10,7 @@ impl DescribeCoipPoolsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_coip_pools::DescribeCoipPoolsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_coip_pools::DescribeCoipPoolsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_coip_pools::DescribeCoipPoolsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_coip_pools();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeCoipPoolsFluentBuilder {
         }
     }
     /// Access the DescribeCoipPools as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_coip_pools::builders::DescribeCoipPoolsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_coip_pools::builders::DescribeCoipPoolsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeCoipPoolsFluentBuilder {
             crate::operation::describe_coip_pools::DescribeCoipPools,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_coip_pools::DescribeCoipPoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_coip_pools::DescribeCoipPoolsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeCoipPoolsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeCoipPoolsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_coip_pools::DescribeCoipPoolsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_coip_pools::DescribeCoipPoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_coip_pools::DescribeCoipPoolsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeCoipPoolsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_coip_pools::DescribeCoipPoolsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_coip_pools::DescribeCoipPoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_coip_pools::DescribeCoipPoolsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl DescribeCoipPoolsFluentBuilder {
             crate::operation::describe_coip_pools::DescribeCoipPools,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_coip_pools::DescribeCoipPoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_coip_pools::DescribeCoipPoolsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_coip_pools::paginator::DescribeCoipPoolsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_coip_pools::paginator::DescribeCoipPoolsPaginator {
-        crate::operation::describe_coip_pools::paginator::DescribeCoipPoolsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_coip_pools::paginator::DescribeCoipPoolsPaginator {
+        crate::operation::describe_coip_pools::paginator::DescribeCoipPoolsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `PoolIds`.
     ///
@@ -143,10 +122,7 @@ impl DescribeCoipPoolsFluentBuilder {
         self
     }
     /// <p>The IDs of the address pools.</p>
-    pub fn set_pool_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_pool_ids(input);
         self
     }
@@ -172,10 +148,7 @@ impl DescribeCoipPoolsFluentBuilder {
     /// <li> <p> <code>coip-pool.local-gateway-route-table-id</code> - The ID of the local gateway route table.</p> </li>
     /// <li> <p> <code>coip-pool.pool-id</code> - The ID of the address pool.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

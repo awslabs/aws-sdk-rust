@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`graph_arn(impl ::std::convert::Into<String>)`](crate::operation::reject_invitation::builders::RejectInvitationFluentBuilder::graph_arn) / [`set_graph_arn(Option<String>)`](crate::operation::reject_invitation::builders::RejectInvitationFluentBuilder::set_graph_arn): <p>The ARN of the behavior graph to reject the invitation to.</p>  <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
     /// - On success, responds with [`RejectInvitationOutput`](crate::operation::reject_invitation::RejectInvitationOutput)
     /// - On failure, responds with [`SdkError<RejectInvitationError>`](crate::operation::reject_invitation::RejectInvitationError)
-    pub fn reject_invitation(
-        &self,
-    ) -> crate::operation::reject_invitation::builders::RejectInvitationFluentBuilder {
-        crate::operation::reject_invitation::builders::RejectInvitationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reject_invitation(&self) -> crate::operation::reject_invitation::builders::RejectInvitationFluentBuilder {
+        crate::operation::reject_invitation::builders::RejectInvitationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl GdgAttributes {
 
 /// A builder for [`GdgAttributes`](crate::types::GdgAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GdgAttributesBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) roll_disposition: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl GdgAttributesBuilder {
         &self.limit
     }
     /// <p>The disposition of the data set in the catalog.</p>
-    pub fn roll_disposition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn roll_disposition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.roll_disposition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The disposition of the data set in the catalog.</p>
-    pub fn set_roll_disposition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_roll_disposition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.roll_disposition = input;
         self
     }

@@ -5,8 +5,7 @@
 pub struct GetExportSnapshotRecordsOutput {
     /// <p>A list of objects describing the export snapshot records.</p>
     #[doc(hidden)]
-    pub export_snapshot_records:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExportSnapshotRecord>>,
+    pub export_snapshot_records: ::std::option::Option<::std::vec::Vec<crate::types::ExportSnapshotRecord>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
@@ -16,9 +15,7 @@ pub struct GetExportSnapshotRecordsOutput {
 }
 impl GetExportSnapshotRecordsOutput {
     /// <p>A list of objects describing the export snapshot records.</p>
-    pub fn export_snapshot_records(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ExportSnapshotRecord]> {
+    pub fn export_snapshot_records(&self) -> ::std::option::Option<&[crate::types::ExportSnapshotRecord]> {
         self.export_snapshot_records.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -35,19 +32,16 @@ impl ::aws_http::request_id::RequestId for GetExportSnapshotRecordsOutput {
 }
 impl GetExportSnapshotRecordsOutput {
     /// Creates a new builder-style object to manufacture [`GetExportSnapshotRecordsOutput`](crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsOutput).
-    pub fn builder() -> crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsOutputBuilder{
+    pub fn builder() -> crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsOutputBuilder {
         crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetExportSnapshotRecordsOutput`](crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExportSnapshotRecordsOutputBuilder {
-    pub(crate) export_snapshot_records:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExportSnapshotRecord>>,
+    pub(crate) export_snapshot_records: ::std::option::Option<::std::vec::Vec<crate::types::ExportSnapshotRecord>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -64,36 +58,25 @@ impl GetExportSnapshotRecordsOutputBuilder {
         self
     }
     /// <p>A list of objects describing the export snapshot records.</p>
-    pub fn set_export_snapshot_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportSnapshotRecord>>,
-    ) -> Self {
+    pub fn set_export_snapshot_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportSnapshotRecord>>) -> Self {
         self.export_snapshot_records = input;
         self
     }
     /// <p>A list of objects describing the export snapshot records.</p>
-    pub fn get_export_snapshot_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportSnapshotRecord>> {
+    pub fn get_export_snapshot_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportSnapshotRecord>> {
         &self.export_snapshot_records
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -113,9 +96,7 @@ impl GetExportSnapshotRecordsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetExportSnapshotRecordsOutput`](crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsOutput {
+    pub fn build(self) -> crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsOutput {
         crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsOutput {
             export_snapshot_records: self.export_snapshot_records,
             next_page_token: self.next_page_token,

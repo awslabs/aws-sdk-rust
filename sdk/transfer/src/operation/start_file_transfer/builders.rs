@@ -10,10 +10,7 @@ impl StartFileTransferInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_file_transfer::StartFileTransferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_file_transfer::StartFileTransferError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_file_transfer::StartFileTransferError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_file_transfer();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl StartFileTransferFluentBuilder {
         }
     }
     /// Access the StartFileTransfer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_file_transfer::builders::StartFileTransferInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_file_transfer::builders::StartFileTransferInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl StartFileTransferFluentBuilder {
             crate::operation::start_file_transfer::StartFileTransfer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_file_transfer::StartFileTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_file_transfer::StartFileTransferError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl StartFileTransferFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl StartFileTransferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_file_transfer::StartFileTransferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_file_transfer::StartFileTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_file_transfer::StartFileTransferError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl StartFileTransferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_file_transfer::StartFileTransferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_file_transfer::StartFileTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_file_transfer::StartFileTransferError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +110,7 @@ impl StartFileTransferFluentBuilder {
             crate::operation::start_file_transfer::StartFileTransfer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_file_transfer::StartFileTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_file_transfer::StartFileTransferError>,
     > {
         self.customize_middleware().await
     }
@@ -149,25 +133,17 @@ impl StartFileTransferFluentBuilder {
     /// To override the contents of this collection use [`set_send_file_paths`](Self::set_send_file_paths).
     ///
     /// <p>One or more source paths for the Transfer Family server. Each string represents a source file path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
-    pub fn send_file_paths(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn send_file_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.send_file_paths(input.into());
         self
     }
     /// <p>One or more source paths for the Transfer Family server. Each string represents a source file path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
-    pub fn set_send_file_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_send_file_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_send_file_paths(input);
         self
     }
     /// <p>One or more source paths for the Transfer Family server. Each string represents a source file path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
-    pub fn get_send_file_paths(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_send_file_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_send_file_paths()
     }
     /// Appends an item to `RetrieveFilePaths`.
@@ -175,40 +151,26 @@ impl StartFileTransferFluentBuilder {
     /// To override the contents of this collection use [`set_retrieve_file_paths`](Self::set_retrieve_file_paths).
     ///
     /// <p>One or more source paths for the partner's SFTP server. Each string represents a source file path for one inbound file transfer.</p>
-    pub fn retrieve_file_paths(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn retrieve_file_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.retrieve_file_paths(input.into());
         self
     }
     /// <p>One or more source paths for the partner's SFTP server. Each string represents a source file path for one inbound file transfer.</p>
-    pub fn set_retrieve_file_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_retrieve_file_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_retrieve_file_paths(input);
         self
     }
     /// <p>One or more source paths for the partner's SFTP server. Each string represents a source file path for one inbound file transfer.</p>
-    pub fn get_retrieve_file_paths(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_retrieve_file_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_retrieve_file_paths()
     }
     /// <p>For an inbound transfer, the <code>LocaDirectoryPath</code> specifies the destination for one or more files that are transferred from the partner's SFTP server.</p>
-    pub fn local_directory_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_directory_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.local_directory_path(input.into());
         self
     }
     /// <p>For an inbound transfer, the <code>LocaDirectoryPath</code> specifies the destination for one or more files that are transferred from the partner's SFTP server.</p>
-    pub fn set_local_directory_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_directory_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_local_directory_path(input);
         self
     }
@@ -217,18 +179,12 @@ impl StartFileTransferFluentBuilder {
         self.inner.get_local_directory_path()
     }
     /// <p>For an outbound transfer, the <code>RemoteDirectoryPath</code> specifies the destination for one or more files that are transferred to the partner's SFTP server. If you don't specify a <code>RemoteDirectoryPath</code>, the destination for transferred files is the SFTP user's home directory.</p>
-    pub fn remote_directory_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_directory_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remote_directory_path(input.into());
         self
     }
     /// <p>For an outbound transfer, the <code>RemoteDirectoryPath</code> specifies the destination for one or more files that are transferred to the partner's SFTP server. If you don't specify a <code>RemoteDirectoryPath</code>, the destination for transferred files is the SFTP user's home directory.</p>
-    pub fn set_remote_directory_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_directory_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_remote_directory_path(input);
         self
     }

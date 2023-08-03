@@ -39,9 +39,7 @@ impl TokenIdentifier {
 
 /// A builder for [`TokenIdentifier`](crate::types::TokenIdentifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TokenIdentifierBuilder {
     pub(crate) network: ::std::option::Option<crate::types::QueryNetwork>,
     pub(crate) contract_address: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ impl TokenIdentifierBuilder {
         &self.network
     }
     /// <p>This is the token's contract address.</p>
-    pub fn contract_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contract_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contract_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is the token's contract address.</p>
-    pub fn set_contract_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contract_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contract_address = input;
         self
     }

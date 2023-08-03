@@ -28,8 +28,7 @@ impl SetDefaultPolicyVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetDefaultPolicyVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionInputBuilder,
+    inner: crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionInputBuilder,
 }
 impl SetDefaultPolicyVersionFluentBuilder {
     /// Creates a new `SetDefaultPolicyVersion`.
@@ -40,10 +39,7 @@ impl SetDefaultPolicyVersionFluentBuilder {
         }
     }
     /// Access the SetDefaultPolicyVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl SetDefaultPolicyVersionFluentBuilder {
             crate::operation::set_default_policy_version::SetDefaultPolicyVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_policy_version::SetDefaultPolicyVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_policy_version::SetDefaultPolicyVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl SetDefaultPolicyVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl SetDefaultPolicyVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_default_policy_version::SetDefaultPolicyVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_policy_version::SetDefaultPolicyVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_policy_version::SetDefaultPolicyVersionError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl SetDefaultPolicyVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_default_policy_version::SetDefaultPolicyVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_policy_version::SetDefaultPolicyVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_policy_version::SetDefaultPolicyVersionError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl SetDefaultPolicyVersionFluentBuilder {
             crate::operation::set_default_policy_version::SetDefaultPolicyVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_policy_version::SetDefaultPolicyVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_policy_version::SetDefaultPolicyVersionError>,
     > {
         self.customize_middleware().await
     }

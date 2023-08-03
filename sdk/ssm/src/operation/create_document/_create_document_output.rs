@@ -10,9 +10,7 @@ pub struct CreateDocumentOutput {
 }
 impl CreateDocumentOutput {
     /// <p>Information about the SSM document.</p>
-    pub fn document_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DocumentDescription> {
+    pub fn document_description(&self) -> ::std::option::Option<&crate::types::DocumentDescription> {
         self.document_description.as_ref()
     }
 }
@@ -30,9 +28,7 @@ impl CreateDocumentOutput {
 
 /// A builder for [`CreateDocumentOutput`](crate::operation::create_document::CreateDocumentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDocumentOutputBuilder {
     pub(crate) document_description: ::std::option::Option<crate::types::DocumentDescription>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateDocumentOutputBuilder {
         self
     }
     /// <p>Information about the SSM document.</p>
-    pub fn set_document_description(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentDescription>,
-    ) -> Self {
+    pub fn set_document_description(mut self, input: ::std::option::Option<crate::types::DocumentDescription>) -> Self {
         self.document_description = input;
         self
     }
     /// <p>Information about the SSM document.</p>
-    pub fn get_document_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentDescription> {
+    pub fn get_document_description(&self) -> &::std::option::Option<crate::types::DocumentDescription> {
         &self.document_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

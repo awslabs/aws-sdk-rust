@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for StartBulkDeploymentOutput {
 }
 impl StartBulkDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`StartBulkDeploymentOutput`](crate::operation::start_bulk_deployment::StartBulkDeploymentOutput).
-    pub fn builder(
-    ) -> crate::operation::start_bulk_deployment::builders::StartBulkDeploymentOutputBuilder {
-        crate::operation::start_bulk_deployment::builders::StartBulkDeploymentOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_bulk_deployment::builders::StartBulkDeploymentOutputBuilder {
+        crate::operation::start_bulk_deployment::builders::StartBulkDeploymentOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartBulkDeploymentOutput`](crate::operation::start_bulk_deployment::StartBulkDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartBulkDeploymentOutputBuilder {
     pub(crate) bulk_deployment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bulk_deployment_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +43,12 @@ pub struct StartBulkDeploymentOutputBuilder {
 }
 impl StartBulkDeploymentOutputBuilder {
     /// The ARN of the bulk deployment.
-    pub fn bulk_deployment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bulk_deployment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bulk_deployment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the bulk deployment.
-    pub fn set_bulk_deployment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bulk_deployment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bulk_deployment_arn = input;
         self
     }
@@ -67,18 +57,12 @@ impl StartBulkDeploymentOutputBuilder {
         &self.bulk_deployment_arn
     }
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bulk_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bulk_deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the bulk deployment.
-    pub fn set_bulk_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bulk_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bulk_deployment_id = input;
         self
     }

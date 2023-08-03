@@ -65,33 +65,24 @@ impl InstanceTarget {
 
 /// A builder for [`InstanceTarget`](crate::types::InstanceTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceTargetBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TargetStatus>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) lifecycle_events:
-        ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>,
+    pub(crate) lifecycle_events: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>,
     pub(crate) instance_label: ::std::option::Option<crate::types::TargetLabel>,
 }
 impl InstanceTargetBuilder {
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -147,10 +138,7 @@ impl InstanceTargetBuilder {
         self
     }
     /// <p> The date and time when the target instance was updated by a deployment. </p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -170,17 +158,12 @@ impl InstanceTargetBuilder {
         self
     }
     /// <p> The lifecycle events of the deployment to this target instance. </p>
-    pub fn set_lifecycle_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>,
-    ) -> Self {
+    pub fn set_lifecycle_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>) -> Self {
         self.lifecycle_events = input;
         self
     }
     /// <p> The lifecycle events of the deployment to this target instance. </p>
-    pub fn get_lifecycle_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>> {
+    pub fn get_lifecycle_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>> {
         &self.lifecycle_events
     }
     /// <p> A label that identifies whether the instance is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
@@ -189,10 +172,7 @@ impl InstanceTargetBuilder {
         self
     }
     /// <p> A label that identifies whether the instance is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
-    pub fn set_instance_label(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetLabel>,
-    ) -> Self {
+    pub fn set_instance_label(mut self, input: ::std::option::Option<crate::types::TargetLabel>) -> Self {
         self.instance_label = input;
         self
     }

@@ -5,15 +5,12 @@
 pub struct CreateDirectConnectGatewayAssociationProposalOutput {
     /// <p>Information about the Direct Connect gateway proposal.</p>
     #[doc(hidden)]
-    pub direct_connect_gateway_association_proposal:
-        ::std::option::Option<crate::types::DirectConnectGatewayAssociationProposal>,
+    pub direct_connect_gateway_association_proposal: ::std::option::Option<crate::types::DirectConnectGatewayAssociationProposal>,
     _request_id: Option<String>,
 }
 impl CreateDirectConnectGatewayAssociationProposalOutput {
     /// <p>Information about the Direct Connect gateway proposal.</p>
-    pub fn direct_connect_gateway_association_proposal(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DirectConnectGatewayAssociationProposal> {
+    pub fn direct_connect_gateway_association_proposal(&self) -> ::std::option::Option<&crate::types::DirectConnectGatewayAssociationProposal> {
         self.direct_connect_gateway_association_proposal.as_ref()
     }
 }
@@ -24,27 +21,23 @@ impl ::aws_http::request_id::RequestId for CreateDirectConnectGatewayAssociation
 }
 impl CreateDirectConnectGatewayAssociationProposalOutput {
     /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput).
-    pub fn builder() -> crate::operation::create_direct_connect_gateway_association_proposal::builders::CreateDirectConnectGatewayAssociationProposalOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::create_direct_connect_gateway_association_proposal::builders::CreateDirectConnectGatewayAssociationProposalOutputBuilder
+    {
         crate::operation::create_direct_connect_gateway_association_proposal::builders::CreateDirectConnectGatewayAssociationProposalOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayAssociationProposalOutputBuilder {
-    pub(crate) direct_connect_gateway_association_proposal:
-        ::std::option::Option<crate::types::DirectConnectGatewayAssociationProposal>,
+    pub(crate) direct_connect_gateway_association_proposal: ::std::option::Option<crate::types::DirectConnectGatewayAssociationProposal>,
     _request_id: Option<String>,
 }
 impl CreateDirectConnectGatewayAssociationProposalOutputBuilder {
     /// <p>Information about the Direct Connect gateway proposal.</p>
-    pub fn direct_connect_gateway_association_proposal(
-        mut self,
-        input: crate::types::DirectConnectGatewayAssociationProposal,
-    ) -> Self {
+    pub fn direct_connect_gateway_association_proposal(mut self, input: crate::types::DirectConnectGatewayAssociationProposal) -> Self {
         self.direct_connect_gateway_association_proposal = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +50,7 @@ impl CreateDirectConnectGatewayAssociationProposalOutputBuilder {
         self
     }
     /// <p>Information about the Direct Connect gateway proposal.</p>
-    pub fn get_direct_connect_gateway_association_proposal(
-        &self,
-    ) -> &::std::option::Option<crate::types::DirectConnectGatewayAssociationProposal> {
+    pub fn get_direct_connect_gateway_association_proposal(&self) -> &::std::option::Option<crate::types::DirectConnectGatewayAssociationProposal> {
         &self.direct_connect_gateway_association_proposal
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +63,9 @@ impl CreateDirectConnectGatewayAssociationProposalOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput).
-    pub fn build(self) -> crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput{
+    pub fn build(self) -> crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput {
         crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput {
-            direct_connect_gateway_association_proposal: self.direct_connect_gateway_association_proposal
-            ,
+            direct_connect_gateway_association_proposal: self.direct_connect_gateway_association_proposal,
             _request_id: self._request_id,
         }
     }

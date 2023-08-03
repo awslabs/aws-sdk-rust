@@ -22,36 +22,26 @@ impl AttachSecurityProfileInput {
 }
 impl AttachSecurityProfileInput {
     /// Creates a new builder-style object to manufacture [`AttachSecurityProfileInput`](crate::operation::attach_security_profile::AttachSecurityProfileInput).
-    pub fn builder(
-    ) -> crate::operation::attach_security_profile::builders::AttachSecurityProfileInputBuilder
-    {
+    pub fn builder() -> crate::operation::attach_security_profile::builders::AttachSecurityProfileInputBuilder {
         crate::operation::attach_security_profile::builders::AttachSecurityProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`AttachSecurityProfileInput`](crate::operation::attach_security_profile::AttachSecurityProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachSecurityProfileInputBuilder {
     pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) security_profile_target_arn: ::std::option::Option<::std::string::String>,
 }
 impl AttachSecurityProfileInputBuilder {
     /// <p>The security profile that is attached.</p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The security profile that is attached.</p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_profile_name = input;
         self
     }
@@ -60,18 +50,12 @@ impl AttachSecurityProfileInputBuilder {
         &self.security_profile_name
     }
     /// <p>The ARN of the target (thing group) to which the security profile is attached.</p>
-    pub fn security_profile_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the target (thing group) to which the security profile is attached.</p>
-    pub fn set_security_profile_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_profile_target_arn = input;
         self
     }
@@ -82,15 +66,11 @@ impl AttachSecurityProfileInputBuilder {
     /// Consumes the builder and constructs a [`AttachSecurityProfileInput`](crate::operation::attach_security_profile::AttachSecurityProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::attach_security_profile::AttachSecurityProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::attach_security_profile::AttachSecurityProfileInput {
-                security_profile_name: self.security_profile_name,
-                security_profile_target_arn: self.security_profile_target_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::attach_security_profile::AttachSecurityProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::attach_security_profile::AttachSecurityProfileInput {
+            security_profile_name: self.security_profile_name,
+            security_profile_target_arn: self.security_profile_target_arn,
+        })
     }
 }

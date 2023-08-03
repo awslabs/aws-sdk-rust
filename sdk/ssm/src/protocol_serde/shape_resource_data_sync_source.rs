@@ -9,7 +9,10 @@ pub fn ser_resource_data_sync_source(
     if let Some(var_2) = &input.aws_organizations_source {
         #[allow(unused_mut)]
         let mut object_3 = object.key("AwsOrganizationsSource").start_object();
-        crate::protocol_serde::shape_resource_data_sync_aws_organizations_source::ser_resource_data_sync_aws_organizations_source(&mut object_3, var_2)?;
+        crate::protocol_serde::shape_resource_data_sync_aws_organizations_source::ser_resource_data_sync_aws_organizations_source(
+            &mut object_3,
+            var_2,
+        )?;
         object_3.finish();
     }
     if let Some(var_4) = &input.source_regions {
@@ -22,14 +25,10 @@ pub fn ser_resource_data_sync_source(
         array_5.finish();
     }
     if input.include_future_regions {
-        object
-            .key("IncludeFutureRegions")
-            .boolean(input.include_future_regions);
+        object.key("IncludeFutureRegions").boolean(input.include_future_regions);
     }
     if input.enable_all_ops_data_sources {
-        object
-            .key("EnableAllOpsDataSources")
-            .boolean(input.enable_all_ops_data_sources);
+        object.key("EnableAllOpsDataSources").boolean(input.enable_all_ops_data_sources);
     }
     Ok(())
 }

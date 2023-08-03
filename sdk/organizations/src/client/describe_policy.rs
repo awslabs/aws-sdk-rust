@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribePolicyOutput`](crate::operation::describe_policy::DescribePolicyOutput) with field(s):
     ///   - [`policy(Option<Policy>)`](crate::operation::describe_policy::DescribePolicyOutput::policy): <p>A structure that contains details about the specified policy.</p>
     /// - On failure, responds with [`SdkError<DescribePolicyError>`](crate::operation::describe_policy::DescribePolicyError)
-    pub fn describe_policy(
-        &self,
-    ) -> crate::operation::describe_policy::builders::DescribePolicyFluentBuilder {
-        crate::operation::describe_policy::builders::DescribePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_policy(&self) -> crate::operation::describe_policy::builders::DescribePolicyFluentBuilder {
+        crate::operation::describe_policy::builders::DescribePolicyFluentBuilder::new(self.handle.clone())
     }
 }

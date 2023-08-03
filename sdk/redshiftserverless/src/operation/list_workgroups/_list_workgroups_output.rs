@@ -35,9 +35,7 @@ impl ListWorkgroupsOutput {
 
 /// A builder for [`ListWorkgroupsOutput`](crate::operation::list_workgroups::ListWorkgroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkgroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) workgroups: ::std::option::Option<::std::vec::Vec<crate::types::Workgroup>>,
@@ -70,17 +68,12 @@ impl ListWorkgroupsOutputBuilder {
         self
     }
     /// <p>The returned array of workgroups.</p>
-    pub fn set_workgroups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Workgroup>>,
-    ) -> Self {
+    pub fn set_workgroups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Workgroup>>) -> Self {
         self.workgroups = input;
         self
     }
     /// <p>The returned array of workgroups.</p>
-    pub fn get_workgroups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Workgroup>> {
+    pub fn get_workgroups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Workgroup>> {
         &self.workgroups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

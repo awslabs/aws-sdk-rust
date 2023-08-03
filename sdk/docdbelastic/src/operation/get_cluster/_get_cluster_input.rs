@@ -22,9 +22,7 @@ impl GetClusterInput {
 
 /// A builder for [`GetClusterInput`](crate::operation::get_cluster::GetClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClusterInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetClusterInputBuilder {
         &self.cluster_arn
     }
     /// Consumes the builder and constructs a [`GetClusterInput`](crate::operation::get_cluster::GetClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_cluster::GetClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_cluster::GetClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_cluster::GetClusterInput {
             cluster_arn: self.cluster_arn,
         })

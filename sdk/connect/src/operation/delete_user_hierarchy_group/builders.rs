@@ -26,7 +26,7 @@ impl DeleteUserHierarchyGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteUserHierarchyGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_user_hierarchy_group::builders::DeleteUserHierarchyGroupInputBuilder,
+    inner: crate::operation::delete_user_hierarchy_group::builders::DeleteUserHierarchyGroupInputBuilder,
 }
 impl DeleteUserHierarchyGroupFluentBuilder {
     /// Creates a new `DeleteUserHierarchyGroup`.
@@ -37,7 +37,7 @@ impl DeleteUserHierarchyGroupFluentBuilder {
         }
     }
     /// Access the DeleteUserHierarchyGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_user_hierarchy_group::builders::DeleteUserHierarchyGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_user_hierarchy_group::builders::DeleteUserHierarchyGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteUserHierarchyGroupFluentBuilder {
             crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteUserHierarchyGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteUserHierarchyGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteUserHierarchyGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteUserHierarchyGroupFluentBuilder {
             crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn hierarchy_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hierarchy_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hierarchy_group_id(input.into());
         self
     }
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn set_hierarchy_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hierarchy_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hierarchy_group_id(input);
         self
     }

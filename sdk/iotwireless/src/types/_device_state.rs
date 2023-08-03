@@ -40,13 +40,7 @@
 /// <p>Device state defines the device status of sidewalk device.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeviceState {
     #[allow(missing_docs)] // documentation missing in model
@@ -91,12 +85,7 @@ impl DeviceState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Provisioned",
-            "RegisteredNotSeen",
-            "RegisteredReachable",
-            "RegisteredUnreachable",
-        ]
+        &["Provisioned", "RegisteredNotSeen", "RegisteredReachable", "RegisteredUnreachable"]
     }
 }
 impl ::std::convert::AsRef<str> for DeviceState {

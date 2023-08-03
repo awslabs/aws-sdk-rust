@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteThingGroupOutput {
 }
 impl DeleteThingGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteThingGroupOutput`](crate::operation::delete_thing_group::DeleteThingGroupOutput).
-    pub fn builder() -> crate::operation::delete_thing_group::builders::DeleteThingGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_thing_group::builders::DeleteThingGroupOutputBuilder {
         crate::operation::delete_thing_group::builders::DeleteThingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteThingGroupOutput`](crate::operation::delete_thing_group::DeleteThingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteThingGroupOutputBuilder {
     _request_id: Option<String>,
 }

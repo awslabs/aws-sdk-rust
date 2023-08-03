@@ -53,17 +53,14 @@ impl PutAccessPointPolicyInput {
 }
 impl PutAccessPointPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyInput`](crate::operation::put_access_point_policy::PutAccessPointPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_access_point_policy::builders::PutAccessPointPolicyInputBuilder {
+    pub fn builder() -> crate::operation::put_access_point_policy::builders::PutAccessPointPolicyInputBuilder {
         crate::operation::put_access_point_policy::builders::PutAccessPointPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutAccessPointPolicyInput`](crate::operation::put_access_point_policy::PutAccessPointPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccessPointPolicyInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -151,16 +148,12 @@ impl PutAccessPointPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutAccessPointPolicyInput`](crate::operation::put_access_point_policy::PutAccessPointPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_access_point_policy::PutAccessPointPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_access_point_policy::PutAccessPointPolicyInput {
-                account_id: self.account_id,
-                name: self.name,
-                policy: self.policy,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_access_point_policy::PutAccessPointPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_access_point_policy::PutAccessPointPolicyInput {
+            account_id: self.account_id,
+            name: self.name,
+            policy: self.policy,
+        })
     }
 }

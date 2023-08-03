@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`signature_key_id(Option<String>)`](crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityOutput::signature_key_id): <p> The unique identifier for the validation signature key. </p>
     ///   - [`validation_errors(Option<Vec<String>>)`](crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityOutput::validation_errors): <p> Represents any errors that occurred when validating the assessment report. </p>
     /// - On failure, responds with [`SdkError<ValidateAssessmentReportIntegrityError>`](crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityError)
-    pub fn validate_assessment_report_integrity(&self) -> crate::operation::validate_assessment_report_integrity::builders::ValidateAssessmentReportIntegrityFluentBuilder{
+    pub fn validate_assessment_report_integrity(
+        &self,
+    ) -> crate::operation::validate_assessment_report_integrity::builders::ValidateAssessmentReportIntegrityFluentBuilder {
         crate::operation::validate_assessment_report_integrity::builders::ValidateAssessmentReportIntegrityFluentBuilder::new(self.handle.clone())
     }
 }

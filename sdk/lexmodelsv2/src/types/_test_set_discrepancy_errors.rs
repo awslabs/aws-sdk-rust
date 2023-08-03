@@ -6,24 +6,18 @@
 pub struct TestSetDiscrepancyErrors {
     /// <p>Contains information about discrepancies found for intents between the test set and the bot.</p>
     #[doc(hidden)]
-    pub intent_discrepancies:
-        ::std::option::Option<::std::vec::Vec<crate::types::TestSetIntentDiscrepancyItem>>,
+    pub intent_discrepancies: ::std::option::Option<::std::vec::Vec<crate::types::TestSetIntentDiscrepancyItem>>,
     /// <p>Contains information about discrepancies found for slots between the test set and the bot.</p>
     #[doc(hidden)]
-    pub slot_discrepancies:
-        ::std::option::Option<::std::vec::Vec<crate::types::TestSetSlotDiscrepancyItem>>,
+    pub slot_discrepancies: ::std::option::Option<::std::vec::Vec<crate::types::TestSetSlotDiscrepancyItem>>,
 }
 impl TestSetDiscrepancyErrors {
     /// <p>Contains information about discrepancies found for intents between the test set and the bot.</p>
-    pub fn intent_discrepancies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TestSetIntentDiscrepancyItem]> {
+    pub fn intent_discrepancies(&self) -> ::std::option::Option<&[crate::types::TestSetIntentDiscrepancyItem]> {
         self.intent_discrepancies.as_deref()
     }
     /// <p>Contains information about discrepancies found for slots between the test set and the bot.</p>
-    pub fn slot_discrepancies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TestSetSlotDiscrepancyItem]> {
+    pub fn slot_discrepancies(&self) -> ::std::option::Option<&[crate::types::TestSetSlotDiscrepancyItem]> {
         self.slot_discrepancies.as_deref()
     }
 }
@@ -36,14 +30,10 @@ impl TestSetDiscrepancyErrors {
 
 /// A builder for [`TestSetDiscrepancyErrors`](crate::types::TestSetDiscrepancyErrors).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestSetDiscrepancyErrorsBuilder {
-    pub(crate) intent_discrepancies:
-        ::std::option::Option<::std::vec::Vec<crate::types::TestSetIntentDiscrepancyItem>>,
-    pub(crate) slot_discrepancies:
-        ::std::option::Option<::std::vec::Vec<crate::types::TestSetSlotDiscrepancyItem>>,
+    pub(crate) intent_discrepancies: ::std::option::Option<::std::vec::Vec<crate::types::TestSetIntentDiscrepancyItem>>,
+    pub(crate) slot_discrepancies: ::std::option::Option<::std::vec::Vec<crate::types::TestSetSlotDiscrepancyItem>>,
 }
 impl TestSetDiscrepancyErrorsBuilder {
     /// Appends an item to `intent_discrepancies`.
@@ -51,27 +41,19 @@ impl TestSetDiscrepancyErrorsBuilder {
     /// To override the contents of this collection use [`set_intent_discrepancies`](Self::set_intent_discrepancies).
     ///
     /// <p>Contains information about discrepancies found for intents between the test set and the bot.</p>
-    pub fn intent_discrepancies(
-        mut self,
-        input: crate::types::TestSetIntentDiscrepancyItem,
-    ) -> Self {
+    pub fn intent_discrepancies(mut self, input: crate::types::TestSetIntentDiscrepancyItem) -> Self {
         let mut v = self.intent_discrepancies.unwrap_or_default();
         v.push(input);
         self.intent_discrepancies = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains information about discrepancies found for intents between the test set and the bot.</p>
-    pub fn set_intent_discrepancies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TestSetIntentDiscrepancyItem>>,
-    ) -> Self {
+    pub fn set_intent_discrepancies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestSetIntentDiscrepancyItem>>) -> Self {
         self.intent_discrepancies = input;
         self
     }
     /// <p>Contains information about discrepancies found for intents between the test set and the bot.</p>
-    pub fn get_intent_discrepancies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestSetIntentDiscrepancyItem>> {
+    pub fn get_intent_discrepancies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestSetIntentDiscrepancyItem>> {
         &self.intent_discrepancies
     }
     /// Appends an item to `slot_discrepancies`.
@@ -86,17 +68,12 @@ impl TestSetDiscrepancyErrorsBuilder {
         self
     }
     /// <p>Contains information about discrepancies found for slots between the test set and the bot.</p>
-    pub fn set_slot_discrepancies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TestSetSlotDiscrepancyItem>>,
-    ) -> Self {
+    pub fn set_slot_discrepancies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestSetSlotDiscrepancyItem>>) -> Self {
         self.slot_discrepancies = input;
         self
     }
     /// <p>Contains information about discrepancies found for slots between the test set and the bot.</p>
-    pub fn get_slot_discrepancies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestSetSlotDiscrepancyItem>> {
+    pub fn get_slot_discrepancies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestSetSlotDiscrepancyItem>> {
         &self.slot_discrepancies
     }
     /// Consumes the builder and constructs a [`TestSetDiscrepancyErrors`](crate::types::TestSetDiscrepancyErrors).

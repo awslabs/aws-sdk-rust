@@ -22,9 +22,7 @@ impl DescribeStacksInput {
 
 /// A builder for [`DescribeStacksInput`](crate::operation::describe_stacks::DescribeStacksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStacksInputBuilder {
     pub(crate) stack_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,10 +39,7 @@ impl DescribeStacksInputBuilder {
         self
     }
     /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
-    pub fn set_stack_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_stack_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.stack_ids = input;
         self
     }
@@ -55,12 +50,7 @@ impl DescribeStacksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStacksInput`](crate::operation::describe_stacks::DescribeStacksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_stacks::DescribeStacksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_stacks::DescribeStacksInput {
-            stack_ids: self.stack_ids,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_stacks::DescribeStacksInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_stacks::DescribeStacksInput { stack_ids: self.stack_ids })
     }
 }

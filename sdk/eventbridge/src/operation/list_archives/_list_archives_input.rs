@@ -50,9 +50,7 @@ impl ListArchivesInput {
 
 /// A builder for [`ListArchivesInput`](crate::operation::list_archives::ListArchivesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListArchivesInputBuilder {
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) event_source_arn: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl ListArchivesInputBuilder {
         &self.name_prefix
     }
     /// <p>The ARN of the event source associated with the archive.</p>
-    pub fn event_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the event source associated with the archive.</p>
-    pub fn set_event_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_source_arn = input;
         self
     }
@@ -138,12 +130,7 @@ impl ListArchivesInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListArchivesInput`](crate::operation::list_archives::ListArchivesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_archives::ListArchivesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_archives::ListArchivesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_archives::ListArchivesInput {
             name_prefix: self.name_prefix,
             event_source_arn: self.event_source_arn,

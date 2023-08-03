@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`client_token(Option<String>)`](crate::operation::cancel_image_creation::CancelImageCreationOutput::client_token): <p>The idempotency token that was used for this request.</p>
     ///   - [`image_build_version_arn(Option<String>)`](crate::operation::cancel_image_creation::CancelImageCreationOutput::image_build_version_arn): <p>The ARN of the image whose creation this request canceled.</p>
     /// - On failure, responds with [`SdkError<CancelImageCreationError>`](crate::operation::cancel_image_creation::CancelImageCreationError)
-    pub fn cancel_image_creation(
-        &self,
-    ) -> crate::operation::cancel_image_creation::builders::CancelImageCreationFluentBuilder {
-        crate::operation::cancel_image_creation::builders::CancelImageCreationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_image_creation(&self) -> crate::operation::cancel_image_creation::builders::CancelImageCreationFluentBuilder {
+        crate::operation::cancel_image_creation::builders::CancelImageCreationFluentBuilder::new(self.handle.clone())
     }
 }

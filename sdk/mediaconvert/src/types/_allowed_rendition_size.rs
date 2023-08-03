@@ -37,9 +37,7 @@ impl AllowedRenditionSize {
 
 /// A builder for [`AllowedRenditionSize`](crate::types::AllowedRenditionSize).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllowedRenditionSizeBuilder {
     pub(crate) height: ::std::option::Option<i32>,
     pub(crate) required: ::std::option::Option<crate::types::RequiredFlag>,
@@ -66,10 +64,7 @@ impl AllowedRenditionSizeBuilder {
         self
     }
     /// Set to ENABLED to force a rendition to be included.
-    pub fn set_required(
-        mut self,
-        input: ::std::option::Option<crate::types::RequiredFlag>,
-    ) -> Self {
+    pub fn set_required(mut self, input: ::std::option::Option<crate::types::RequiredFlag>) -> Self {
         self.required = input;
         self
     }

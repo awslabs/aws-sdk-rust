@@ -10,10 +10,7 @@ impl DeleteKeywordInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_keyword::DeleteKeywordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_keyword::DeleteKeywordError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_keyword::DeleteKeywordError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_keyword();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeleteKeywordFluentBuilder {
         }
     }
     /// Access the DeleteKeyword as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_keyword::builders::DeleteKeywordInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_keyword::builders::DeleteKeywordInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl DeleteKeywordFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,18 +109,12 @@ impl DeleteKeywordFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, PoolId or PoolArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn and <code>DescribePools</code> to find the values of PoolId and PoolArn.</p>
-    pub fn origination_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origination_identity(input.into());
         self
     }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, PoolId or PoolArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn and <code>DescribePools</code> to find the values of PoolId and PoolArn.</p>
-    pub fn set_origination_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origination_identity(input);
         self
     }

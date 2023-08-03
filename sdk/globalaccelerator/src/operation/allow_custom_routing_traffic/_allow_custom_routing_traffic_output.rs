@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AllowCustomRoutingTrafficOutput {
 }
 impl AllowCustomRoutingTrafficOutput {
     /// Creates a new builder-style object to manufacture [`AllowCustomRoutingTrafficOutput`](crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput).
-    pub fn builder() -> crate::operation::allow_custom_routing_traffic::builders::AllowCustomRoutingTrafficOutputBuilder{
+    pub fn builder() -> crate::operation::allow_custom_routing_traffic::builders::AllowCustomRoutingTrafficOutputBuilder {
         crate::operation::allow_custom_routing_traffic::builders::AllowCustomRoutingTrafficOutputBuilder::default()
     }
 }
 
 /// A builder for [`AllowCustomRoutingTrafficOutput`](crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllowCustomRoutingTrafficOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl AllowCustomRoutingTrafficOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AllowCustomRoutingTrafficOutput`](crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput {
+    pub fn build(self) -> crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput {
         crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput {
             _request_id: self._request_id,
         }

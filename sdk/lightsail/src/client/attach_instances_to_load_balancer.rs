@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`AttachInstancesToLoadBalancerOutput`](crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<AttachInstancesToLoadBalancerError>`](crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerError)
-    pub fn attach_instances_to_load_balancer(&self) -> crate::operation::attach_instances_to_load_balancer::builders::AttachInstancesToLoadBalancerFluentBuilder{
+    pub fn attach_instances_to_load_balancer(
+        &self,
+    ) -> crate::operation::attach_instances_to_load_balancer::builders::AttachInstancesToLoadBalancerFluentBuilder {
         crate::operation::attach_instances_to_load_balancer::builders::AttachInstancesToLoadBalancerFluentBuilder::new(self.handle.clone())
     }
 }

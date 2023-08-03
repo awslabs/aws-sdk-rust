@@ -52,9 +52,7 @@ impl AccountGateResult {
 
 /// A builder for [`AccountGateResult`](crate::types::AccountGateResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountGateResultBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AccountGateStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl AccountGateResultBuilder {
     /// <li> <p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountGateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AccountGateStatus>) -> Self {
         self.status = input;
         self
     }
@@ -108,18 +103,12 @@ impl AccountGateResultBuilder {
         &self.status
     }
     /// <p>The reason for the account gate status assigned to this account and Region for the stack set operation.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the account gate status assigned to this account and Region for the stack set operation.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }

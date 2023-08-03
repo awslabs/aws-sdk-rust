@@ -10,10 +10,7 @@ impl ListQueriesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_queries::ListQueriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_queries::ListQueriesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_queries::ListQueriesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_queries();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListQueriesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_queries::ListQueries,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_queries::ListQueries, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_queries::ListQueriesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListQueriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListQueriesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_queries::ListQueries,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_queries::ListQueries, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_queries::ListQueriesError>,
     > {
         self.customize_middleware().await
@@ -116,24 +104,15 @@ impl ListQueriesFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_queries::paginator::ListQueriesPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_queries::paginator::ListQueriesPaginator {
-        crate::operation::list_queries::paginator::ListQueriesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_queries::paginator::ListQueriesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
-    pub fn event_data_store(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_data_store(input.into());
         self
     }
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
-    pub fn set_event_data_store(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_data_store(input);
         self
     }
@@ -175,10 +154,7 @@ impl ListQueriesFluentBuilder {
         self
     }
     /// <p>Use with <code>EndTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -192,10 +168,7 @@ impl ListQueriesFluentBuilder {
         self
     }
     /// <p>Use with <code>StartTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -209,10 +182,7 @@ impl ListQueriesFluentBuilder {
         self
     }
     /// <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
-    pub fn set_query_status(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryStatus>,
-    ) -> Self {
+    pub fn set_query_status(mut self, input: ::std::option::Option<crate::types::QueryStatus>) -> Self {
         self.inner = self.inner.set_query_status(input);
         self
     }

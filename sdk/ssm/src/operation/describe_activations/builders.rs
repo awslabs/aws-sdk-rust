@@ -10,10 +10,7 @@ impl DescribeActivationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_activations::DescribeActivationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_activations::DescribeActivationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_activations::DescribeActivationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_activations();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeActivationsFluentBuilder {
         }
     }
     /// Access the DescribeActivations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_activations::builders::DescribeActivationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_activations::builders::DescribeActivationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeActivationsFluentBuilder {
             crate::operation::describe_activations::DescribeActivations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_activations::DescribeActivationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_activations::DescribeActivationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeActivationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeActivationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_activations::DescribeActivationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_activations::DescribeActivationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_activations::DescribeActivationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeActivationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_activations::DescribeActivationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_activations::DescribeActivationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_activations::DescribeActivationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl DescribeActivationsFluentBuilder {
             crate::operation::describe_activations::DescribeActivations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_activations::DescribeActivationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_activations::DescribeActivationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_activations::paginator::DescribeActivationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_activations::paginator::DescribeActivationsPaginator {
-        crate::operation::describe_activations::paginator::DescribeActivationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_activations::paginator::DescribeActivationsPaginator {
+        crate::operation::describe_activations::paginator::DescribeActivationsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -143,17 +122,12 @@ impl DescribeActivationsFluentBuilder {
         self
     }
     /// <p>A filter to view information about your activations.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DescribeActivationsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DescribeActivationsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A filter to view information about your activations.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeActivationsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeActivationsFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>

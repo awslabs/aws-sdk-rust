@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateStandardsControlOutput {
 }
 impl UpdateStandardsControlOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStandardsControlOutput`](crate::operation::update_standards_control::UpdateStandardsControlOutput).
-    pub fn builder(
-    ) -> crate::operation::update_standards_control::builders::UpdateStandardsControlOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_standards_control::builders::UpdateStandardsControlOutputBuilder {
         crate::operation::update_standards_control::builders::UpdateStandardsControlOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateStandardsControlOutput`](crate::operation::update_standards_control::UpdateStandardsControlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStandardsControlOutputBuilder {
     _request_id: Option<String>,
 }

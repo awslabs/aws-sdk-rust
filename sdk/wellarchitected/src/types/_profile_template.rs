@@ -9,8 +9,7 @@ pub struct ProfileTemplate {
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>Profile template questions.</p>
     #[doc(hidden)]
-    pub template_questions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateQuestion>>,
+    pub template_questions: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateQuestion>>,
     /// <p>The date and time recorded.</p>
     #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -24,9 +23,7 @@ impl ProfileTemplate {
         self.template_name.as_deref()
     }
     /// <p>Profile template questions.</p>
-    pub fn template_questions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProfileTemplateQuestion]> {
+    pub fn template_questions(&self) -> ::std::option::Option<&[crate::types::ProfileTemplateQuestion]> {
         self.template_questions.as_deref()
     }
     /// <p>The date and time recorded.</p>
@@ -47,30 +44,21 @@ impl ProfileTemplate {
 
 /// A builder for [`ProfileTemplate`](crate::types::ProfileTemplate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProfileTemplateBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
-    pub(crate) template_questions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateQuestion>>,
+    pub(crate) template_questions: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateQuestion>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ProfileTemplateBuilder {
     /// <p>The name of the profile template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the profile template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -90,17 +78,12 @@ impl ProfileTemplateBuilder {
         self
     }
     /// <p>Profile template questions.</p>
-    pub fn set_template_questions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateQuestion>>,
-    ) -> Self {
+    pub fn set_template_questions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateQuestion>>) -> Self {
         self.template_questions = input;
         self
     }
     /// <p>Profile template questions.</p>
-    pub fn get_template_questions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateQuestion>> {
+    pub fn get_template_questions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateQuestion>> {
         &self.template_questions
     }
     /// <p>The date and time recorded.</p>
@@ -109,10 +92,7 @@ impl ProfileTemplateBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -126,10 +106,7 @@ impl ProfileTemplateBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

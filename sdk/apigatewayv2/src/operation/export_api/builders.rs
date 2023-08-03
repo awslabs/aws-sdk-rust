@@ -10,10 +10,7 @@ impl ExportApiInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::export_api::ExportApiOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_api::ExportApiError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_api::ExportApiError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.export_api();
         fluent_builder.inner = self;
@@ -44,10 +41,7 @@ impl ExportApiFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::export_api::ExportApi,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::export_api::ExportApi, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::export_api::ExportApiError>,
     > {
         let handle = self.handle.clone();
@@ -58,10 +52,7 @@ impl ExportApiFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -103,10 +94,7 @@ impl ExportApiFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::export_api::ExportApi,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::export_api::ExportApi, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::export_api::ExportApiError>,
     > {
         self.customize_middleware().await
@@ -126,18 +114,12 @@ impl ExportApiFluentBuilder {
         self.inner.get_api_id()
     }
     /// <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
-    pub fn export_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn export_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.export_version(input.into());
         self
     }
     /// <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
-    pub fn set_export_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_export_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_export_version(input);
         self
     }
@@ -174,18 +156,12 @@ impl ExportApiFluentBuilder {
         self.inner.get_output_type()
     }
     /// <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
-    pub fn specification(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn specification(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.specification(input.into());
         self
     }
     /// <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
-    pub fn set_specification(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_specification(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_specification(input);
         self
     }

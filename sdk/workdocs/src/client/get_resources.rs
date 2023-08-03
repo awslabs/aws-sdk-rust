@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`documents(Option<Vec<DocumentMetadata>>)`](crate::operation::get_resources::GetResourcesOutput::documents): <p>The documents in the specified collection.</p>
     ///   - [`marker(Option<String>)`](crate::operation::get_resources::GetResourcesOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     /// - On failure, responds with [`SdkError<GetResourcesError>`](crate::operation::get_resources::GetResourcesError)
-    pub fn get_resources(
-        &self,
-    ) -> crate::operation::get_resources::builders::GetResourcesFluentBuilder {
-        crate::operation::get_resources::builders::GetResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_resources(&self) -> crate::operation::get_resources::builders::GetResourcesFluentBuilder {
+        crate::operation::get_resources::builders::GetResourcesFluentBuilder::new(self.handle.clone())
     }
 }

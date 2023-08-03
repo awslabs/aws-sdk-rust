@@ -39,10 +39,7 @@ impl DeleteDeploymentConfigFluentBuilder {
         }
     }
     /// Access the DeleteDeploymentConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DeleteDeploymentConfigFluentBuilder {
             crate::operation::delete_deployment_config::DeleteDeploymentConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_deployment_config::DeleteDeploymentConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_deployment_config::DeleteDeploymentConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DeleteDeploymentConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DeleteDeploymentConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_deployment_config::DeleteDeploymentConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_deployment_config::DeleteDeploymentConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_deployment_config::DeleteDeploymentConfigError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DeleteDeploymentConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_deployment_config::DeleteDeploymentConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_deployment_config::DeleteDeploymentConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_deployment_config::DeleteDeploymentConfigError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl DeleteDeploymentConfigFluentBuilder {
             crate::operation::delete_deployment_config::DeleteDeploymentConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_deployment_config::DeleteDeploymentConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_deployment_config::DeleteDeploymentConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
-    pub fn deployment_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_config_name(input.into());
         self
     }
     /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
-    pub fn set_deployment_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_config_name(input);
         self
     }

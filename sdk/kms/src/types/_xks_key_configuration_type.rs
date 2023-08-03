@@ -25,9 +25,7 @@ impl XksKeyConfigurationType {
 
 /// A builder for [`XksKeyConfigurationType`](crate::types::XksKeyConfigurationType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct XksKeyConfigurationTypeBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

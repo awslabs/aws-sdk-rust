@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`deleted_faces(Option<Vec<String>>)`](crate::operation::delete_faces::DeleteFacesOutput::deleted_faces): <p>An array of strings (face IDs) of the faces that were deleted.</p>
     ///   - [`unsuccessful_face_deletions(Option<Vec<UnsuccessfulFaceDeletion>>)`](crate::operation::delete_faces::DeleteFacesOutput::unsuccessful_face_deletions): <p>An array of any faces that weren't deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteFacesError>`](crate::operation::delete_faces::DeleteFacesError)
-    pub fn delete_faces(
-        &self,
-    ) -> crate::operation::delete_faces::builders::DeleteFacesFluentBuilder {
+    pub fn delete_faces(&self) -> crate::operation::delete_faces::builders::DeleteFacesFluentBuilder {
         crate::operation::delete_faces::builders::DeleteFacesFluentBuilder::new(self.handle.clone())
     }
 }

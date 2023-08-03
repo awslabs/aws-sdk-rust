@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DeregisterContainerInstanceOutput {
 }
 impl DeregisterContainerInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterContainerInstanceOutput`](crate::operation::deregister_container_instance::DeregisterContainerInstanceOutput).
-    pub fn builder() -> crate::operation::deregister_container_instance::builders::DeregisterContainerInstanceOutputBuilder{
+    pub fn builder() -> crate::operation::deregister_container_instance::builders::DeregisterContainerInstanceOutputBuilder {
         crate::operation::deregister_container_instance::builders::DeregisterContainerInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterContainerInstanceOutput`](crate::operation::deregister_container_instance::DeregisterContainerInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterContainerInstanceOutputBuilder {
     pub(crate) container_instance: ::std::option::Option<crate::types::ContainerInstance>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl DeregisterContainerInstanceOutputBuilder {
         self
     }
     /// <p>The container instance that was deregistered.</p>
-    pub fn set_container_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerInstance>,
-    ) -> Self {
+    pub fn set_container_instance(mut self, input: ::std::option::Option<crate::types::ContainerInstance>) -> Self {
         self.container_instance = input;
         self
     }
     /// <p>The container instance that was deregistered.</p>
-    pub fn get_container_instance(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerInstance> {
+    pub fn get_container_instance(&self) -> &::std::option::Option<crate::types::ContainerInstance> {
         &self.container_instance
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl DeregisterContainerInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterContainerInstanceOutput`](crate::operation::deregister_container_instance::DeregisterContainerInstanceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deregister_container_instance::DeregisterContainerInstanceOutput {
+    pub fn build(self) -> crate::operation::deregister_container_instance::DeregisterContainerInstanceOutput {
         crate::operation::deregister_container_instance::DeregisterContainerInstanceOutput {
             container_instance: self.container_instance,
             _request_id: self._request_id,

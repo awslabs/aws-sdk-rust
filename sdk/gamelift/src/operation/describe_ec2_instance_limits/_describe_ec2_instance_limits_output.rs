@@ -21,19 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeEc2InstanceLimitsOutput {
 }
 impl DescribeEc2InstanceLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEc2InstanceLimitsOutput`](crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput).
-    pub fn builder() -> crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsOutputBuilder {
         crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEc2InstanceLimitsOutput`](crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEc2InstanceLimitsOutputBuilder {
-    pub(crate) ec2_instance_limits:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceLimit>>,
+    pub(crate) ec2_instance_limits: ::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceLimit>>,
     _request_id: Option<String>,
 }
 impl DescribeEc2InstanceLimitsOutputBuilder {
@@ -49,17 +46,12 @@ impl DescribeEc2InstanceLimitsOutputBuilder {
         self
     }
     /// <p>The maximum number of instances for the specified instance type.</p>
-    pub fn set_ec2_instance_limits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceLimit>>,
-    ) -> Self {
+    pub fn set_ec2_instance_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceLimit>>) -> Self {
         self.ec2_instance_limits = input;
         self
     }
     /// <p>The maximum number of instances for the specified instance type.</p>
-    pub fn get_ec2_instance_limits(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceLimit>> {
+    pub fn get_ec2_instance_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceLimit>> {
         &self.ec2_instance_limits
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +64,7 @@ impl DescribeEc2InstanceLimitsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEc2InstanceLimitsOutput`](crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput {
+    pub fn build(self) -> crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput {
         crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput {
             ec2_instance_limits: self.ec2_instance_limits,
             _request_id: self._request_id,

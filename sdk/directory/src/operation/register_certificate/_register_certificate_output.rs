@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for RegisterCertificateOutput {
 }
 impl RegisterCertificateOutput {
     /// Creates a new builder-style object to manufacture [`RegisterCertificateOutput`](crate::operation::register_certificate::RegisterCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::register_certificate::builders::RegisterCertificateOutputBuilder {
-        crate::operation::register_certificate::builders::RegisterCertificateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::register_certificate::builders::RegisterCertificateOutputBuilder {
+        crate::operation::register_certificate::builders::RegisterCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterCertificateOutput`](crate::operation::register_certificate::RegisterCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterCertificateOutputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RegisterCertificateOutputBuilder {
     /// <p>The identifier of the certificate.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the certificate.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }

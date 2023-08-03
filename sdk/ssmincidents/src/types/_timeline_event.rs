@@ -65,9 +65,7 @@ impl TimelineEvent {
 
 /// A builder for [`TimelineEvent`](crate::types::TimelineEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimelineEventBuilder {
     pub(crate) incident_record_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
@@ -75,23 +73,16 @@ pub struct TimelineEventBuilder {
     pub(crate) event_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) event_type: ::std::option::Option<::std::string::String>,
     pub(crate) event_data: ::std::option::Option<::std::string::String>,
-    pub(crate) event_references:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>,
+    pub(crate) event_references: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>,
 }
 impl TimelineEventBuilder {
     /// <p>The Amazon Resource Name (ARN) of the incident that the event occurred during.</p>
-    pub fn incident_record_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_record_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that the event occurred during.</p>
-    pub fn set_incident_record_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.incident_record_arn = input;
         self
     }
@@ -119,10 +110,7 @@ impl TimelineEventBuilder {
         self
     }
     /// <p>The time that the event occurred.</p>
-    pub fn set_event_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_time = input;
         self
     }
@@ -136,10 +124,7 @@ impl TimelineEventBuilder {
         self
     }
     /// <p>The time that the timeline event was last updated.</p>
-    pub fn set_event_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_updated_time = input;
         self
     }
@@ -187,17 +172,12 @@ impl TimelineEventBuilder {
         self
     }
     /// <p>A list of references in a <code>TimelineEvent</code>.</p>
-    pub fn set_event_references(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>,
-    ) -> Self {
+    pub fn set_event_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>) -> Self {
         self.event_references = input;
         self
     }
     /// <p>A list of references in a <code>TimelineEvent</code>.</p>
-    pub fn get_event_references(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventReference>> {
+    pub fn get_event_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventReference>> {
         &self.event_references
     }
     /// Consumes the builder and constructs a [`TimelineEvent`](crate::types::TimelineEvent).

@@ -7,14 +7,10 @@ pub fn ser_self_managed_active_directory_configuration(
         object.key("DomainName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.organizational_unit_distinguished_name {
-        object
-            .key("OrganizationalUnitDistinguishedName")
-            .string(var_2.as_str());
+        object.key("OrganizationalUnitDistinguishedName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.file_system_administrators_group {
-        object
-            .key("FileSystemAdministratorsGroup")
-            .string(var_3.as_str());
+        object.key("FileSystemAdministratorsGroup").string(var_3.as_str());
     }
     if let Some(var_4) = &input.user_name {
         object.key("UserName").string(var_4.as_str());

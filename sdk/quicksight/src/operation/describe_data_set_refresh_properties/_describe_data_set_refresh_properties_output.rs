@@ -24,9 +24,7 @@ impl DescribeDataSetRefreshPropertiesOutput {
         self.status
     }
     /// <p>The dataset refresh properties.</p>
-    pub fn data_set_refresh_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataSetRefreshProperties> {
+    pub fn data_set_refresh_properties(&self) -> ::std::option::Option<&crate::types::DataSetRefreshProperties> {
         self.data_set_refresh_properties.as_ref()
     }
 }
@@ -37,21 +35,18 @@ impl ::aws_http::request_id::RequestId for DescribeDataSetRefreshPropertiesOutpu
 }
 impl DescribeDataSetRefreshPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSetRefreshPropertiesOutput`](crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesOutput).
-    pub fn builder() -> crate::operation::describe_data_set_refresh_properties::builders::DescribeDataSetRefreshPropertiesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_data_set_refresh_properties::builders::DescribeDataSetRefreshPropertiesOutputBuilder {
         crate::operation::describe_data_set_refresh_properties::builders::DescribeDataSetRefreshPropertiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataSetRefreshPropertiesOutput`](crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataSetRefreshPropertiesOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
-    pub(crate) data_set_refresh_properties:
-        ::std::option::Option<crate::types::DataSetRefreshProperties>,
+    pub(crate) data_set_refresh_properties: ::std::option::Option<crate::types::DataSetRefreshProperties>,
     _request_id: Option<String>,
 }
 impl DescribeDataSetRefreshPropertiesOutputBuilder {
@@ -84,25 +79,17 @@ impl DescribeDataSetRefreshPropertiesOutputBuilder {
         &self.status
     }
     /// <p>The dataset refresh properties.</p>
-    pub fn data_set_refresh_properties(
-        mut self,
-        input: crate::types::DataSetRefreshProperties,
-    ) -> Self {
+    pub fn data_set_refresh_properties(mut self, input: crate::types::DataSetRefreshProperties) -> Self {
         self.data_set_refresh_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The dataset refresh properties.</p>
-    pub fn set_data_set_refresh_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSetRefreshProperties>,
-    ) -> Self {
+    pub fn set_data_set_refresh_properties(mut self, input: ::std::option::Option<crate::types::DataSetRefreshProperties>) -> Self {
         self.data_set_refresh_properties = input;
         self
     }
     /// <p>The dataset refresh properties.</p>
-    pub fn get_data_set_refresh_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSetRefreshProperties> {
+    pub fn get_data_set_refresh_properties(&self) -> &::std::option::Option<crate::types::DataSetRefreshProperties> {
         &self.data_set_refresh_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -115,15 +102,11 @@ impl DescribeDataSetRefreshPropertiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDataSetRefreshPropertiesOutput`](crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesOutput).
-    pub fn build(self) -> crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesOutput{
+    pub fn build(self) -> crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesOutput {
         crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesOutput {
-            request_id: self.request_id
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
-            data_set_refresh_properties: self.data_set_refresh_properties
-            ,
+            request_id: self.request_id,
+            status: self.status.unwrap_or_default(),
+            data_set_refresh_properties: self.data_set_refresh_properties,
             _request_id: self._request_id,
         }
     }

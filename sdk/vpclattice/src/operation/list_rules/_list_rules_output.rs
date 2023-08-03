@@ -35,9 +35,7 @@ impl ListRulesOutput {
 
 /// A builder for [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRulesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListRulesOutputBuilder {
         self
     }
     /// <p>Information about the rules.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>>) -> Self {
         self.items = input;
         self
     }

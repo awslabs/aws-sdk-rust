@@ -10,10 +10,7 @@ impl ListUserImportJobsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_user_import_jobs::ListUserImportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_import_jobs::ListUserImportJobsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_import_jobs::ListUserImportJobsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_user_import_jobs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListUserImportJobsFluentBuilder {
         }
     }
     /// Access the ListUserImportJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_user_import_jobs::builders::ListUserImportJobsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_user_import_jobs::builders::ListUserImportJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListUserImportJobsFluentBuilder {
             crate::operation::list_user_import_jobs::ListUserImportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_import_jobs::ListUserImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_import_jobs::ListUserImportJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListUserImportJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListUserImportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_user_import_jobs::ListUserImportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_import_jobs::ListUserImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_import_jobs::ListUserImportJobsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListUserImportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_user_import_jobs::ListUserImportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_import_jobs::ListUserImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_import_jobs::ListUserImportJobsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ListUserImportJobsFluentBuilder {
             crate::operation::list_user_import_jobs::ListUserImportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_import_jobs::ListUserImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_import_jobs::ListUserImportJobsError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl ListUserImportJobsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
-    pub fn pagination_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pagination_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pagination_token(input.into());
         self
     }
     /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
-    pub fn set_pagination_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pagination_token(input);
         self
     }

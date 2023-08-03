@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PublishingStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,12 +60,8 @@ impl ::std::convert::From<&str> for PublishingStatus {
             "PENDING_VERIFICATION" => PublishingStatus::PendingVerification,
             "PUBLISHING" => PublishingStatus::Publishing,
             "STOPPED" => PublishingStatus::Stopped,
-            "UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY" => {
-                PublishingStatus::UnableToPublishFixDestinationProperty
-            }
-            other => {
-                PublishingStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY" => PublishingStatus::UnableToPublishFixDestinationProperty,
+            other => PublishingStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -89,9 +79,7 @@ impl PublishingStatus {
             PublishingStatus::PendingVerification => "PENDING_VERIFICATION",
             PublishingStatus::Publishing => "PUBLISHING",
             PublishingStatus::Stopped => "STOPPED",
-            PublishingStatus::UnableToPublishFixDestinationProperty => {
-                "UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY"
-            }
+            PublishingStatus::UnableToPublishFixDestinationProperty => "UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY",
             PublishingStatus::Unknown(value) => value.as_str(),
         }
     }

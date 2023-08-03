@@ -15,16 +15,14 @@ impl AcceptEnvironmentAccountConnectionInput {
 }
 impl AcceptEnvironmentAccountConnectionInput {
     /// Creates a new builder-style object to manufacture [`AcceptEnvironmentAccountConnectionInput`](crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionInput).
-    pub fn builder() -> crate::operation::accept_environment_account_connection::builders::AcceptEnvironmentAccountConnectionInputBuilder{
+    pub fn builder() -> crate::operation::accept_environment_account_connection::builders::AcceptEnvironmentAccountConnectionInputBuilder {
         crate::operation::accept_environment_account_connection::builders::AcceptEnvironmentAccountConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptEnvironmentAccountConnectionInput`](crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptEnvironmentAccountConnectionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,12 @@ impl AcceptEnvironmentAccountConnectionInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`AcceptEnvironmentAccountConnectionInput`](crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionInput, ::aws_smithy_http::operation::error::BuildError>{
-        ::std::result::Result::Ok(
-            crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionInput { id: self.id })
     }
 }

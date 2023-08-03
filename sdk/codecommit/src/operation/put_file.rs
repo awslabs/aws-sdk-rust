@@ -9,10 +9,7 @@ impl PutFileInput {
         &self,
         _config: &crate::config::Config,
     ) -> ::std::result::Result<
-        ::aws_smithy_http::operation::Operation<
-            crate::operation::put_file::PutFile,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        ::aws_smithy_http::operation::Operation<crate::operation::put_file::PutFile, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::operation::error::BuildError,
     > {
         assert_ne!(
@@ -27,27 +24,16 @@ impl PutFileInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::put_file::PutFileInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -56,20 +42,13 @@ impl PutFileInput {
             fn update_http_builder(
                 input: &crate::operation::put_file::PutFileInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
-            builder = ::aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                ::http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
+            builder = ::aws_smithy_http::header::set_request_header_if_absent(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = ::aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 ::http::header::HeaderName::from_static("x-amz-target"),
@@ -79,15 +58,9 @@ impl PutFileInput {
         };
         let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = ::aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_put_file::ser_put_file_input(&self)?,
-        );
+        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_put_file::ser_put_file_input(&self)?);
         if let ::std::option::Option::Some(content_length) = body.content_length() {
-            request = ::aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                ::http::header::CONTENT_LENGTH,
-                content_length,
-            );
+            request = ::aws_smithy_http::header::set_request_header_if_absent(request, ::http::header::CONTENT_LENGTH, content_length);
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -99,10 +72,8 @@ impl PutFileInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -111,29 +82,16 @@ impl PutFileInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::put_file::PutFile::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "PutFile",
-            "codecommit",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::put_file::PutFile::new())
+            .with_metadata(::aws_smithy_http::operation::Metadata::new("PutFile", "codecommit"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -150,10 +108,7 @@ impl PutFile {
     }
 }
 impl ::aws_smithy_http::response::ParseStrictResponse for PutFile {
-    type Output = ::std::result::Result<
-        crate::operation::put_file::PutFileOutput,
-        crate::operation::put_file::PutFileError,
-    >;
+    type Output = ::std::result::Result<crate::operation::put_file::PutFileOutput, crate::operation::put_file::PutFileError>;
     fn parse(&self, response: &::http::Response<::bytes::Bytes>) -> Self::Output {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -162,9 +117,7 @@ impl ::aws_smithy_http::response::ParseStrictResponse for PutFile {
         if !success && status != 200 {
             crate::protocol_serde::shape_put_file::de_put_file_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_put_file::de_put_file_http_response_with_props(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_put_file::de_put_file_http_response_with_props(status, headers, body)
         }
     }
 }
@@ -189,13 +142,9 @@ pub enum PutFileError {
     /// <p>The commit message is too long. Provide a shorter string. </p>
     CommitMessageLengthExceededException(crate::types::error::CommitMessageLengthExceededException),
     /// <p>A file cannot be added to the repository because the specified path name has the same name as a file that already exists in this repository. Either provide a different name for the file, or specify a different path for the file.</p>
-    DirectoryNameConflictsWithFileNameException(
-        crate::types::error::DirectoryNameConflictsWithFileNameException,
-    ),
+    DirectoryNameConflictsWithFileNameException(crate::types::error::DirectoryNameConflictsWithFileNameException),
     /// <p>An encryption integrity check failed.</p>
-    EncryptionIntegrityChecksFailedException(
-        crate::types::error::EncryptionIntegrityChecksFailedException,
-    ),
+    EncryptionIntegrityChecksFailedException(crate::types::error::EncryptionIntegrityChecksFailedException),
     /// <p>An encryption key could not be accessed.</p>
     EncryptionKeyAccessDeniedException(crate::types::error::EncryptionKeyAccessDeniedException),
     /// <p>The encryption key is disabled.</p>
@@ -207,21 +156,13 @@ pub enum PutFileError {
     /// <p>The file cannot be added because it is empty. Empty files cannot be added to the repository with this API.</p>
     FileContentRequiredException(crate::types::error::FileContentRequiredException),
     /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git client.</p>
-    FileContentSizeLimitExceededException(
-        crate::types::error::FileContentSizeLimitExceededException,
-    ),
+    FileContentSizeLimitExceededException(crate::types::error::FileContentSizeLimitExceededException),
     /// <p>A file cannot be added to the repository because the specified file name has the same name as a directory in this repository. Either provide another name for the file, or add the file in a directory that does not match the file name.</p>
-    FileNameConflictsWithDirectoryNameException(
-        crate::types::error::FileNameConflictsWithDirectoryNameException,
-    ),
+    FileNameConflictsWithDirectoryNameException(crate::types::error::FileNameConflictsWithDirectoryNameException),
     /// <p>The commit cannot be created because a specified file path points to a submodule. Verify that the destination files have valid file paths that do not point to a submodule.</p>
-    FilePathConflictsWithSubmodulePathException(
-        crate::types::error::FilePathConflictsWithSubmodulePathException,
-    ),
+    FilePathConflictsWithSubmodulePathException(crate::types::error::FilePathConflictsWithSubmodulePathException),
     /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple folders.</p>
-    FolderContentSizeLimitExceededException(
-        crate::types::error::FolderContentSizeLimitExceededException,
-    ),
+    FolderContentSizeLimitExceededException(crate::types::error::FolderContentSizeLimitExceededException),
     /// <p>The specified reference name is not valid.</p>
     InvalidBranchNameException(crate::types::error::InvalidBranchNameException),
     /// <p>The specified deletion parameter is not valid.</p>
@@ -259,9 +200,7 @@ pub enum PutFileError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for PutFileError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -311,99 +250,37 @@ impl ::std::fmt::Display for PutFileError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutFileError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::BranchDoesNotExistException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::BranchNameIsTagNameException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::BranchNameRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::CommitMessageLengthExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::DirectoryNameConflictsWithFileNameException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionIntegrityChecksFailedException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionKeyAccessDeniedException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionKeyDisabledException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionKeyNotFoundException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionKeyUnavailableException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::FileContentRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::FileContentSizeLimitExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::FileNameConflictsWithDirectoryNameException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::FilePathConflictsWithSubmodulePathException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::FolderContentSizeLimitExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidBranchNameException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidDeletionParameterException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidEmailException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidFileModeException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidParentCommitIdException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidPathException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidRepositoryNameException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::NameLengthExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ParentCommitDoesNotExistException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ParentCommitIdOutdatedException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ParentCommitIdRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::PathRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::RepositoryDoesNotExistException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::RepositoryNameRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::SameFileContentException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::BranchDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::BranchNameIsTagNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::BranchNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CommitMessageLengthExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DirectoryNameConflictsWithFileNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionIntegrityChecksFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyDisabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::FileContentRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::FileContentSizeLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::FileNameConflictsWithDirectoryNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::FilePathConflictsWithSubmodulePathException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::FolderContentSizeLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidBranchNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDeletionParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidEmailException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidFileModeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidParentCommitIdException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidPathException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidRepositoryNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NameLengthExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ParentCommitDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ParentCommitIdOutdatedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ParentCommitIdRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::PathRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RepositoryDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RepositoryNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SameFileContentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
@@ -423,27 +300,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for PutFileError {
 impl PutFileError {
     /// Creates the `PutFileError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `PutFileError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,
@@ -612,32 +476,18 @@ impl ::std::error::Error for PutFileError {
             Self::BranchDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
             Self::BranchNameIsTagNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::BranchNameRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::CommitMessageLengthExceededException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::DirectoryNameConflictsWithFileNameException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::EncryptionIntegrityChecksFailedException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::CommitMessageLengthExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DirectoryNameConflictsWithFileNameException(_inner) => ::std::option::Option::Some(_inner),
+            Self::EncryptionIntegrityChecksFailedException(_inner) => ::std::option::Option::Some(_inner),
             Self::EncryptionKeyAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::EncryptionKeyDisabledException(_inner) => ::std::option::Option::Some(_inner),
             Self::EncryptionKeyNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::EncryptionKeyUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::FileContentRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::FileContentSizeLimitExceededException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::FileNameConflictsWithDirectoryNameException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::FilePathConflictsWithSubmodulePathException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::FolderContentSizeLimitExceededException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::FileContentSizeLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::FileNameConflictsWithDirectoryNameException(_inner) => ::std::option::Option::Some(_inner),
+            Self::FilePathConflictsWithSubmodulePathException(_inner) => ::std::option::Option::Some(_inner),
+            Self::FolderContentSizeLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidBranchNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDeletionParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidEmailException(_inner) => ::std::option::Option::Some(_inner),

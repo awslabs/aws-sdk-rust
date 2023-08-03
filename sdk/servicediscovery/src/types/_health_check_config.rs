@@ -107,9 +107,7 @@ impl HealthCheckConfig {
 
 /// A builder for [`HealthCheckConfig`](crate::types::HealthCheckConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HealthCheckConfigBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::HealthCheckType>,
     pub(crate) resource_path: ::std::option::Option<::std::string::String>,
@@ -165,19 +163,13 @@ impl HealthCheckConfigBuilder {
     }
     /// <p>The path that you want Route&nbsp;53 to request when performing health checks. The path can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>. Route&nbsp;53 automatically adds the DNS name for the service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
     /// <p>If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for <code>ResourcePath</code>.</p>
-    pub fn resource_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path that you want Route&nbsp;53 to request when performing health checks. The path can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>. Route&nbsp;53 automatically adds the DNS name for the service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
     /// <p>If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for <code>ResourcePath</code>.</p>
-    pub fn set_resource_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_path = input;
         self
     }

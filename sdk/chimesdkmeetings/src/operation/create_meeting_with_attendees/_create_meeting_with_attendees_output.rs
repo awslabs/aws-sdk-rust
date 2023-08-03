@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateMeetingWithAttendeesOutput {
 }
 impl CreateMeetingWithAttendeesOutput {
     /// Creates a new builder-style object to manufacture [`CreateMeetingWithAttendeesOutput`](crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesOutput).
-    pub fn builder() -> crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesOutputBuilder{
+    pub fn builder() -> crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesOutputBuilder {
         crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMeetingWithAttendeesOutput`](crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMeetingWithAttendeesOutputBuilder {
     pub(crate) meeting: ::std::option::Option<crate::types::Meeting>,
     pub(crate) attendees: ::std::option::Option<::std::vec::Vec<crate::types::Attendee>>,
@@ -78,10 +76,7 @@ impl CreateMeetingWithAttendeesOutputBuilder {
         self
     }
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-    pub fn set_attendees(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attendee>>,
-    ) -> Self {
+    pub fn set_attendees(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attendee>>) -> Self {
         self.attendees = input;
         self
     }
@@ -101,17 +96,12 @@ impl CreateMeetingWithAttendeesOutputBuilder {
         self
     }
     /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -124,9 +114,7 @@ impl CreateMeetingWithAttendeesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateMeetingWithAttendeesOutput`](crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesOutput {
+    pub fn build(self) -> crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesOutput {
         crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesOutput {
             meeting: self.meeting,
             attendees: self.attendees,

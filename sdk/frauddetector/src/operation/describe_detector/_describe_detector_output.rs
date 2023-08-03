@@ -8,8 +8,7 @@ pub struct DescribeDetectorOutput {
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The status and description for each detector version.</p>
     #[doc(hidden)]
-    pub detector_version_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DetectorVersionSummary>>,
+    pub detector_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DetectorVersionSummary>>,
     /// <p>The next token to be used for subsequent requests.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -24,9 +23,7 @@ impl DescribeDetectorOutput {
         self.detector_id.as_deref()
     }
     /// <p>The status and description for each detector version.</p>
-    pub fn detector_version_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DetectorVersionSummary]> {
+    pub fn detector_version_summaries(&self) -> ::std::option::Option<&[crate::types::DetectorVersionSummary]> {
         self.detector_version_summaries.as_deref()
     }
     /// <p>The next token to be used for subsequent requests.</p>
@@ -45,21 +42,17 @@ impl ::aws_http::request_id::RequestId for DescribeDetectorOutput {
 }
 impl DescribeDetectorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDetectorOutput`](crate::operation::describe_detector::DescribeDetectorOutput).
-    pub fn builder() -> crate::operation::describe_detector::builders::DescribeDetectorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_detector::builders::DescribeDetectorOutputBuilder {
         crate::operation::describe_detector::builders::DescribeDetectorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDetectorOutput`](crate::operation::describe_detector::DescribeDetectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDetectorOutputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
-    pub(crate) detector_version_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::DetectorVersionSummary>>,
+    pub(crate) detector_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DetectorVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -84,27 +77,19 @@ impl DescribeDetectorOutputBuilder {
     /// To override the contents of this collection use [`set_detector_version_summaries`](Self::set_detector_version_summaries).
     ///
     /// <p>The status and description for each detector version.</p>
-    pub fn detector_version_summaries(
-        mut self,
-        input: crate::types::DetectorVersionSummary,
-    ) -> Self {
+    pub fn detector_version_summaries(mut self, input: crate::types::DetectorVersionSummary) -> Self {
         let mut v = self.detector_version_summaries.unwrap_or_default();
         v.push(input);
         self.detector_version_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>The status and description for each detector version.</p>
-    pub fn set_detector_version_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DetectorVersionSummary>>,
-    ) -> Self {
+    pub fn set_detector_version_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetectorVersionSummary>>) -> Self {
         self.detector_version_summaries = input;
         self
     }
     /// <p>The status and description for each detector version.</p>
-    pub fn get_detector_version_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorVersionSummary>> {
+    pub fn get_detector_version_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorVersionSummary>> {
         &self.detector_version_summaries
     }
     /// <p>The next token to be used for subsequent requests.</p>

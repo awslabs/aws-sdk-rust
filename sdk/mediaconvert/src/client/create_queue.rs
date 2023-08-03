@@ -12,9 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateQueueOutput`](crate::operation::create_queue::CreateQueueOutput) with field(s):
     ///   - [`queue(Option<Queue>)`](crate::operation::create_queue::CreateQueueOutput::queue): You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
     /// - On failure, responds with [`SdkError<CreateQueueError>`](crate::operation::create_queue::CreateQueueError)
-    pub fn create_queue(
-        &self,
-    ) -> crate::operation::create_queue::builders::CreateQueueFluentBuilder {
+    pub fn create_queue(&self) -> crate::operation::create_queue::builders::CreateQueueFluentBuilder {
         crate::operation::create_queue::builders::CreateQueueFluentBuilder::new(self.handle.clone())
     }
 }

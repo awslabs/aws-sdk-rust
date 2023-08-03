@@ -22,36 +22,26 @@ impl DescribeFeatureMetadataInput {
 }
 impl DescribeFeatureMetadataInput {
     /// Creates a new builder-style object to manufacture [`DescribeFeatureMetadataInput`](crate::operation::describe_feature_metadata::DescribeFeatureMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataInputBuilder {
         crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFeatureMetadataInput`](crate::operation::describe_feature_metadata::DescribeFeatureMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFeatureMetadataInputBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) feature_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFeatureMetadataInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature.</p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature.</p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_name = input;
         self
     }
@@ -80,11 +70,9 @@ impl DescribeFeatureMetadataInputBuilder {
         crate::operation::describe_feature_metadata::DescribeFeatureMetadataInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_feature_metadata::DescribeFeatureMetadataInput {
-                feature_group_name: self.feature_group_name,
-                feature_name: self.feature_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_feature_metadata::DescribeFeatureMetadataInput {
+            feature_group_name: self.feature_group_name,
+            feature_name: self.feature_name,
+        })
     }
 }

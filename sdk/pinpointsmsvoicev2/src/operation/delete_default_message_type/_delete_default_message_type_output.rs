@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DeleteDefaultMessageTypeOutput {
 }
 impl DeleteDefaultMessageTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDefaultMessageTypeOutput`](crate::operation::delete_default_message_type::DeleteDefaultMessageTypeOutput).
-    pub fn builder() -> crate::operation::delete_default_message_type::builders::DeleteDefaultMessageTypeOutputBuilder{
+    pub fn builder() -> crate::operation::delete_default_message_type::builders::DeleteDefaultMessageTypeOutputBuilder {
         crate::operation::delete_default_message_type::builders::DeleteDefaultMessageTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDefaultMessageTypeOutput`](crate::operation::delete_default_message_type::DeleteDefaultMessageTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDefaultMessageTypeOutputBuilder {
     pub(crate) configuration_set_arn: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ pub struct DeleteDefaultMessageTypeOutputBuilder {
 }
 impl DeleteDefaultMessageTypeOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-    pub fn configuration_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-    pub fn set_configuration_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_arn = input;
         self
     }
@@ -73,18 +65,12 @@ impl DeleteDefaultMessageTypeOutputBuilder {
         &self.configuration_set_arn
     }
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -98,10 +84,7 @@ impl DeleteDefaultMessageTypeOutputBuilder {
         self
     }
     /// <p>The current message type for the configuration set.</p>
-    pub fn set_message_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageType>,
-    ) -> Self {
+    pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
         self.message_type = input;
         self
     }
@@ -119,9 +102,7 @@ impl DeleteDefaultMessageTypeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDefaultMessageTypeOutput`](crate::operation::delete_default_message_type::DeleteDefaultMessageTypeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_default_message_type::DeleteDefaultMessageTypeOutput {
+    pub fn build(self) -> crate::operation::delete_default_message_type::DeleteDefaultMessageTypeOutput {
         crate::operation::delete_default_message_type::DeleteDefaultMessageTypeOutput {
             configuration_set_arn: self.configuration_set_arn,
             configuration_set_name: self.configuration_set_name,

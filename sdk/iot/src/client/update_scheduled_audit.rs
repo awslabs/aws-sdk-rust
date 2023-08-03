@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateScheduledAuditOutput`](crate::operation::update_scheduled_audit::UpdateScheduledAuditOutput) with field(s):
     ///   - [`scheduled_audit_arn(Option<String>)`](crate::operation::update_scheduled_audit::UpdateScheduledAuditOutput::scheduled_audit_arn): <p>The ARN of the scheduled audit.</p>
     /// - On failure, responds with [`SdkError<UpdateScheduledAuditError>`](crate::operation::update_scheduled_audit::UpdateScheduledAuditError)
-    pub fn update_scheduled_audit(
-        &self,
-    ) -> crate::operation::update_scheduled_audit::builders::UpdateScheduledAuditFluentBuilder {
-        crate::operation::update_scheduled_audit::builders::UpdateScheduledAuditFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_scheduled_audit(&self) -> crate::operation::update_scheduled_audit::builders::UpdateScheduledAuditFluentBuilder {
+        crate::operation::update_scheduled_audit::builders::UpdateScheduledAuditFluentBuilder::new(self.handle.clone())
     }
 }

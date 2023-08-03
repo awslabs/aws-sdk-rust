@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`client_request_token(impl ::std::convert::Into<String>)`](crate::operation::delete_workload_share::builders::DeleteWorkloadShareFluentBuilder::client_request_token) / [`set_client_request_token(Option<String>)`](crate::operation::delete_workload_share::builders::DeleteWorkloadShareFluentBuilder::set_client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
     /// - On success, responds with [`DeleteWorkloadShareOutput`](crate::operation::delete_workload_share::DeleteWorkloadShareOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkloadShareError>`](crate::operation::delete_workload_share::DeleteWorkloadShareError)
-    pub fn delete_workload_share(
-        &self,
-    ) -> crate::operation::delete_workload_share::builders::DeleteWorkloadShareFluentBuilder {
-        crate::operation::delete_workload_share::builders::DeleteWorkloadShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_workload_share(&self) -> crate::operation::delete_workload_share::builders::DeleteWorkloadShareFluentBuilder {
+        crate::operation::delete_workload_share::builders::DeleteWorkloadShareFluentBuilder::new(self.handle.clone())
     }
 }

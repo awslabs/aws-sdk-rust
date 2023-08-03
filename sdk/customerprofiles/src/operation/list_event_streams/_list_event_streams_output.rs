@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListEventStreamsOutput {
 }
 impl ListEventStreamsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventStreamsOutput`](crate::operation::list_event_streams::ListEventStreamsOutput).
-    pub fn builder() -> crate::operation::list_event_streams::builders::ListEventStreamsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_event_streams::builders::ListEventStreamsOutputBuilder {
         crate::operation::list_event_streams::builders::ListEventStreamsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventStreamsOutput`](crate::operation::list_event_streams::ListEventStreamsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventStreamsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::EventStreamSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListEventStreamsOutputBuilder {
         self
     }
     /// <p>Contains summary information about an EventStream.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventStreamSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventStreamSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Contains summary information about an EventStream.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventStreamSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventStreamSummary>> {
         &self.items
     }
     /// <p>Identifies the next page of results to return.</p>

@@ -119,9 +119,7 @@ impl ProjectCache {
 
 /// A builder for [`ProjectCache`](crate::types::ProjectCache).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectCacheBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CacheType>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -259,10 +257,7 @@ impl ProjectCacheBuilder {
     /// </ul>
     /// </dd>
     /// </dl>
-    pub fn set_modes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CacheMode>>,
-    ) -> Self {
+    pub fn set_modes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CacheMode>>) -> Self {
         self.modes = input;
         self
     }

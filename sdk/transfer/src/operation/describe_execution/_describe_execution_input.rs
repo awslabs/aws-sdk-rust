@@ -22,17 +22,14 @@ impl DescribeExecutionInput {
 }
 impl DescribeExecutionInput {
     /// Creates a new builder-style object to manufacture [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
-    pub fn builder() -> crate::operation::describe_execution::builders::DescribeExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_execution::builders::DescribeExecutionInputBuilder {
         crate::operation::describe_execution::builders::DescribeExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExecutionInputBuilder {
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl DescribeExecutionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_execution::DescribeExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_execution::DescribeExecutionInput {
-                execution_id: self.execution_id,
-                workflow_id: self.workflow_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_execution::DescribeExecutionInput {
+            execution_id: self.execution_id,
+            workflow_id: self.workflow_id,
+        })
     }
 }

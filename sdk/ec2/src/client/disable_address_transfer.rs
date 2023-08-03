@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DisableAddressTransferOutput`](crate::operation::disable_address_transfer::DisableAddressTransferOutput) with field(s):
     ///   - [`address_transfer(Option<AddressTransfer>)`](crate::operation::disable_address_transfer::DisableAddressTransferOutput::address_transfer): <p>An Elastic IP address transfer.</p>
     /// - On failure, responds with [`SdkError<DisableAddressTransferError>`](crate::operation::disable_address_transfer::DisableAddressTransferError)
-    pub fn disable_address_transfer(
-        &self,
-    ) -> crate::operation::disable_address_transfer::builders::DisableAddressTransferFluentBuilder
-    {
+    pub fn disable_address_transfer(&self) -> crate::operation::disable_address_transfer::builders::DisableAddressTransferFluentBuilder {
         crate::operation::disable_address_transfer::builders::DisableAddressTransferFluentBuilder::new(self.handle.clone())
     }
 }

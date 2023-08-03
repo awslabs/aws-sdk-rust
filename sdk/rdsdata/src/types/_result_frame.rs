@@ -32,9 +32,7 @@ impl ResultFrame {
 
 /// A builder for [`ResultFrame`](crate::types::ResultFrame).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultFrameBuilder {
     pub(crate) result_set_metadata: ::std::option::Option<crate::types::ResultSetMetadata>,
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
@@ -46,17 +44,12 @@ impl ResultFrameBuilder {
         self
     }
     /// <p>The result-set metadata in the result set.</p>
-    pub fn set_result_set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ResultSetMetadata>,
-    ) -> Self {
+    pub fn set_result_set_metadata(mut self, input: ::std::option::Option<crate::types::ResultSetMetadata>) -> Self {
         self.result_set_metadata = input;
         self
     }
     /// <p>The result-set metadata in the result set.</p>
-    pub fn get_result_set_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResultSetMetadata> {
+    pub fn get_result_set_metadata(&self) -> &::std::option::Option<crate::types::ResultSetMetadata> {
         &self.result_set_metadata
     }
     /// Appends an item to `records`.
@@ -71,10 +64,7 @@ impl ResultFrameBuilder {
         self
     }
     /// <p>The records in the result set.</p>
-    pub fn set_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
-    ) -> Self {
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>) -> Self {
         self.records = input;
         self
     }

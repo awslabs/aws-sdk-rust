@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EdgePackagingJobStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for EdgePackagingJobStatus {
             "STARTING" => EdgePackagingJobStatus::Starting,
             "STOPPED" => EdgePackagingJobStatus::Stopped,
             "STOPPING" => EdgePackagingJobStatus::Stopping,
-            other => EdgePackagingJobStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => EdgePackagingJobStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl EdgePackagingJobStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETED",
-            "FAILED",
-            "INPROGRESS",
-            "STARTING",
-            "STOPPED",
-            "STOPPING",
-        ]
+        &["COMPLETED", "FAILED", "INPROGRESS", "STARTING", "STOPPED", "STOPPING"]
     }
 }
 impl ::std::convert::AsRef<str> for EdgePackagingJobStatus {

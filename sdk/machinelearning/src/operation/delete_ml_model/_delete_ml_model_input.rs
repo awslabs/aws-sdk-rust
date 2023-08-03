@@ -22,9 +22,7 @@ impl DeleteMlModelInput {
 
 /// A builder for [`DeleteMlModelInput`](crate::operation::delete_ml_model::DeleteMlModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMlModelInputBuilder {
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DeleteMlModelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMlModelInput`](crate::operation::delete_ml_model::DeleteMlModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_ml_model::DeleteMlModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_ml_model::DeleteMlModelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ml_model::DeleteMlModelInput {
             ml_model_id: self.ml_model_id,
         })

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::start_fhir_import_job::StartFhirImportJobOutput::job_status): <p>The status of an import job.</p>
     ///   - [`datastore_id(Option<String>)`](crate::operation::start_fhir_import_job::StartFhirImportJobOutput::datastore_id): <p>The AWS-generated data store ID.</p>
     /// - On failure, responds with [`SdkError<StartFHIRImportJobError>`](crate::operation::start_fhir_import_job::StartFHIRImportJobError)
-    pub fn start_fhir_import_job(
-        &self,
-    ) -> crate::operation::start_fhir_import_job::builders::StartFHIRImportJobFluentBuilder {
-        crate::operation::start_fhir_import_job::builders::StartFHIRImportJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_fhir_import_job(&self) -> crate::operation::start_fhir_import_job::builders::StartFHIRImportJobFluentBuilder {
+        crate::operation::start_fhir_import_job::builders::StartFHIRImportJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl ListProfileObjectTypeTemplateItem {
 
 /// A builder for [`ListProfileObjectTypeTemplateItem`](crate::types::ListProfileObjectTypeTemplateItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfileObjectTypeTemplateItemBuilder {
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_name: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl ListProfileObjectTypeTemplateItemBuilder {
         &self.source_name
     }
     /// <p>The source of the object template.</p>
-    pub fn source_object(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_object = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source of the object template.</p>
-    pub fn set_source_object(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_object = input;
         self
     }

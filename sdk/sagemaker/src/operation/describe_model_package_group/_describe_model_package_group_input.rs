@@ -15,33 +15,25 @@ impl DescribeModelPackageGroupInput {
 }
 impl DescribeModelPackageGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeModelPackageGroupInput`](crate::operation::describe_model_package_group::DescribeModelPackageGroupInput).
-    pub fn builder() -> crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupInputBuilder{
+    pub fn builder() -> crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupInputBuilder {
         crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeModelPackageGroupInput`](crate::operation::describe_model_package_group::DescribeModelPackageGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeModelPackageGroupInputBuilder {
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeModelPackageGroupInputBuilder {
     /// <p>The name of gthe model group to describe.</p>
-    pub fn model_package_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of gthe model group to describe.</p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_name = input;
         self
     }
@@ -56,10 +48,8 @@ impl DescribeModelPackageGroupInputBuilder {
         crate::operation::describe_model_package_group::DescribeModelPackageGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_model_package_group::DescribeModelPackageGroupInput {
-                model_package_group_name: self.model_package_group_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_model_package_group::DescribeModelPackageGroupInput {
+            model_package_group_name: self.model_package_group_name,
+        })
     }
 }

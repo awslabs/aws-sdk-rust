@@ -8,8 +8,7 @@ pub struct ListAppInstanceUsersOutput {
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The information for each requested <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
-    pub app_instance_users:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserSummary>>,
+    pub app_instance_users: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserSummary>>,
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl ListAppInstanceUsersOutput {
         self.app_instance_arn.as_deref()
     }
     /// <p>The information for each requested <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_users(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AppInstanceUserSummary]> {
+    pub fn app_instance_users(&self) -> ::std::option::Option<&[crate::types::AppInstanceUserSummary]> {
         self.app_instance_users.as_deref()
     }
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
@@ -48,9 +45,7 @@ impl ::aws_http::request_id::RequestId for ListAppInstanceUsersOutput {
 }
 impl ListAppInstanceUsersOutput {
     /// Creates a new builder-style object to manufacture [`ListAppInstanceUsersOutput`](crate::operation::list_app_instance_users::ListAppInstanceUsersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_app_instance_users::builders::ListAppInstanceUsersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_app_instance_users::builders::ListAppInstanceUsersOutputBuilder {
         crate::operation::list_app_instance_users::builders::ListAppInstanceUsersOutputBuilder::default()
     }
 }
@@ -60,25 +55,18 @@ impl ListAppInstanceUsersOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListAppInstanceUsersOutputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) app_instance_users:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserSummary>>,
+    pub(crate) app_instance_users: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAppInstanceUsersOutputBuilder {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn set_app_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_arn = input;
         self
     }
@@ -98,17 +86,12 @@ impl ListAppInstanceUsersOutputBuilder {
         self
     }
     /// <p>The information for each requested <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserSummary>>,
-    ) -> Self {
+    pub fn set_app_instance_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserSummary>>) -> Self {
         self.app_instance_users = input;
         self
     }
     /// <p>The information for each requested <code>AppInstanceUser</code>.</p>
-    pub fn get_app_instance_users(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserSummary>> {
+    pub fn get_app_instance_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserSummary>> {
         &self.app_instance_users
     }
     /// <p>The token passed by previous API calls until all requested users are returned.</p>

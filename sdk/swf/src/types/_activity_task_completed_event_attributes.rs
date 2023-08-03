@@ -37,9 +37,7 @@ impl ActivityTaskCompletedEventAttributes {
 
 /// A builder for [`ActivityTaskCompletedEventAttributes`](crate::types::ActivityTaskCompletedEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivityTaskCompletedEventAttributesBuilder {
     pub(crate) result: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_event_id: ::std::option::Option<i64>,

@@ -43,9 +43,7 @@ impl DescribeThemeInput {
 
 /// A builder for [`DescribeThemeInput`](crate::operation::describe_theme::DescribeThemeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeThemeInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) theme_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct DescribeThemeInputBuilder {
 }
 impl DescribeThemeInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -118,10 +110,7 @@ impl DescribeThemeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeThemeInput`](crate::operation::describe_theme::DescribeThemeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_theme::DescribeThemeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_theme::DescribeThemeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_theme::DescribeThemeInput {
             aws_account_id: self.aws_account_id,
             theme_id: self.theme_id,

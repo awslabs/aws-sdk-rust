@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`event_configurations(HashMap<EventType, Configuration>)`](crate::operation::update_event_configurations::builders::UpdateEventConfigurationsFluentBuilder::event_configurations) / [`set_event_configurations(Option<HashMap<EventType, Configuration>>)`](crate::operation::update_event_configurations::builders::UpdateEventConfigurationsFluentBuilder::set_event_configurations): <p>The new event configuration values.</p>
     /// - On success, responds with [`UpdateEventConfigurationsOutput`](crate::operation::update_event_configurations::UpdateEventConfigurationsOutput)
     /// - On failure, responds with [`SdkError<UpdateEventConfigurationsError>`](crate::operation::update_event_configurations::UpdateEventConfigurationsError)
-    pub fn update_event_configurations(&self) -> crate::operation::update_event_configurations::builders::UpdateEventConfigurationsFluentBuilder{
+    pub fn update_event_configurations(&self) -> crate::operation::update_event_configurations::builders::UpdateEventConfigurationsFluentBuilder {
         crate::operation::update_event_configurations::builders::UpdateEventConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

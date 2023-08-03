@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`document_id(impl ::std::convert::Into<String>)`](crate::operation::delete_document::builders::DeleteDocumentFluentBuilder::document_id) / [`set_document_id(Option<String>)`](crate::operation::delete_document::builders::DeleteDocumentFluentBuilder::set_document_id): <p>The ID of the document.</p>
     /// - On success, responds with [`DeleteDocumentOutput`](crate::operation::delete_document::DeleteDocumentOutput)
     /// - On failure, responds with [`SdkError<DeleteDocumentError>`](crate::operation::delete_document::DeleteDocumentError)
-    pub fn delete_document(
-        &self,
-    ) -> crate::operation::delete_document::builders::DeleteDocumentFluentBuilder {
-        crate::operation::delete_document::builders::DeleteDocumentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_document(&self) -> crate::operation::delete_document::builders::DeleteDocumentFluentBuilder {
+        crate::operation::delete_document::builders::DeleteDocumentFluentBuilder::new(self.handle.clone())
     }
 }

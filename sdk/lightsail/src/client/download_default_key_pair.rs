@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`private_key_base64(Option<String>)`](crate::operation::download_default_key_pair::DownloadDefaultKeyPairOutput::private_key_base64): <p>A base64-encoded RSA private key.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::download_default_key_pair::DownloadDefaultKeyPairOutput::created_at): <p>The timestamp when the default key pair was created.</p>
     /// - On failure, responds with [`SdkError<DownloadDefaultKeyPairError>`](crate::operation::download_default_key_pair::DownloadDefaultKeyPairError)
-    pub fn download_default_key_pair(
-        &self,
-    ) -> crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairFluentBuilder
-    {
+    pub fn download_default_key_pair(&self) -> crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairFluentBuilder {
         crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairFluentBuilder::new(self.handle.clone())
     }
 }

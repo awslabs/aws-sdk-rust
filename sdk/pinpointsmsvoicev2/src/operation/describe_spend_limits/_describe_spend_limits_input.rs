@@ -22,18 +22,14 @@ impl DescribeSpendLimitsInput {
 }
 impl DescribeSpendLimitsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSpendLimitsInput`](crate::operation::describe_spend_limits::DescribeSpendLimitsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_spend_limits::builders::DescribeSpendLimitsInputBuilder {
-        crate::operation::describe_spend_limits::builders::DescribeSpendLimitsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_spend_limits::builders::DescribeSpendLimitsInputBuilder {
+        crate::operation::describe_spend_limits::builders::DescribeSpendLimitsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSpendLimitsInput`](crate::operation::describe_spend_limits::DescribeSpendLimitsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpendLimitsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -70,15 +66,11 @@ impl DescribeSpendLimitsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSpendLimitsInput`](crate::operation::describe_spend_limits::DescribeSpendLimitsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_spend_limits::DescribeSpendLimitsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_spend_limits::DescribeSpendLimitsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_spend_limits::DescribeSpendLimitsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_spend_limits::DescribeSpendLimitsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

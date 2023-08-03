@@ -38,9 +38,7 @@ impl AssociateSecurityKeyFluentBuilder {
         }
     }
     /// Access the AssociateSecurityKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_security_key::builders::AssociateSecurityKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_security_key::builders::AssociateSecurityKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl AssociateSecurityKeyFluentBuilder {
             crate::operation::associate_security_key::AssociateSecurityKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_security_key::AssociateSecurityKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_security_key::AssociateSecurityKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl AssociateSecurityKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl AssociateSecurityKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_security_key::AssociateSecurityKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_security_key::AssociateSecurityKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_security_key::AssociateSecurityKeyError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl AssociateSecurityKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_security_key::AssociateSecurityKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_security_key::AssociateSecurityKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_security_key::AssociateSecurityKeyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl AssociateSecurityKeyFluentBuilder {
             crate::operation::associate_security_key::AssociateSecurityKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_security_key::AssociateSecurityKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_security_key::AssociateSecurityKeyError>,
     > {
         self.customize_middleware().await
     }

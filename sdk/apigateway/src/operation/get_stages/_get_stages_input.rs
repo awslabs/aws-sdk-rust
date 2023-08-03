@@ -30,9 +30,7 @@ impl GetStagesInput {
 
 /// A builder for [`GetStagesInput`](crate::operation::get_stages::GetStagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStagesInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl GetStagesInputBuilder {
         &self.rest_api_id
     }
     /// <p>The stages' deployment identifiers.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The stages' deployment identifiers.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -73,12 +65,7 @@ impl GetStagesInputBuilder {
         &self.deployment_id
     }
     /// Consumes the builder and constructs a [`GetStagesInput`](crate::operation::get_stages::GetStagesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_stages::GetStagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_stages::GetStagesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_stages::GetStagesInput {
             rest_api_id: self.rest_api_id,
             deployment_id: self.deployment_id,

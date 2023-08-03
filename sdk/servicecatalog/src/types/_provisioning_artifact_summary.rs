@@ -18,9 +18,7 @@ pub struct ProvisioningArtifactSummary {
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.</p>
     #[doc(hidden)]
-    pub provisioning_artifact_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub provisioning_artifact_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ProvisioningArtifactSummary {
     /// <p>The identifier of the provisioning artifact.</p>
@@ -42,9 +40,7 @@ impl ProvisioningArtifactSummary {
     /// <p>The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.</p>
     pub fn provisioning_artifact_metadata(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.provisioning_artifact_metadata.as_ref()
     }
 }
@@ -57,17 +53,13 @@ impl ProvisioningArtifactSummary {
 
 /// A builder for [`ProvisioningArtifactSummary`](crate::types::ProvisioningArtifactSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisioningArtifactSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) provisioning_artifact_metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) provisioning_artifact_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ProvisioningArtifactSummaryBuilder {
     /// <p>The identifier of the provisioning artifact.</p>
@@ -118,10 +110,7 @@ impl ProvisioningArtifactSummaryBuilder {
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -147,9 +136,7 @@ impl ProvisioningArtifactSummaryBuilder {
     /// <p>The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.</p>
     pub fn set_provisioning_artifact_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.provisioning_artifact_metadata = input;
         self
@@ -157,9 +144,7 @@ impl ProvisioningArtifactSummaryBuilder {
     /// <p>The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.</p>
     pub fn get_provisioning_artifact_metadata(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.provisioning_artifact_metadata
     }
     /// Consumes the builder and constructs a [`ProvisioningArtifactSummary`](crate::types::ProvisioningArtifactSummary).

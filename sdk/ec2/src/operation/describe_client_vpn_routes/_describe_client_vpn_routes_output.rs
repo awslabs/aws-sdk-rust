@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeClientVpnRoutesOutput {
 }
 impl DescribeClientVpnRoutesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClientVpnRoutesOutput`](crate::operation::describe_client_vpn_routes::DescribeClientVpnRoutesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_client_vpn_routes::builders::DescribeClientVpnRoutesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_client_vpn_routes::builders::DescribeClientVpnRoutesOutputBuilder {
         crate::operation::describe_client_vpn_routes::builders::DescribeClientVpnRoutesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClientVpnRoutesOutput`](crate::operation::describe_client_vpn_routes::DescribeClientVpnRoutesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClientVpnRoutesOutputBuilder {
     pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpnRoute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeClientVpnRoutesOutputBuilder {
         self
     }
     /// <p>Information about the Client VPN endpoint routes.</p>
-    pub fn set_routes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpnRoute>>,
-    ) -> Self {
+    pub fn set_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpnRoute>>) -> Self {
         self.routes = input;
         self
     }
     /// <p>Information about the Client VPN endpoint routes.</p>
-    pub fn get_routes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientVpnRoute>> {
+    pub fn get_routes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientVpnRoute>> {
         &self.routes
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -95,9 +86,7 @@ impl DescribeClientVpnRoutesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeClientVpnRoutesOutput`](crate::operation::describe_client_vpn_routes::DescribeClientVpnRoutesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_client_vpn_routes::DescribeClientVpnRoutesOutput {
+    pub fn build(self) -> crate::operation::describe_client_vpn_routes::DescribeClientVpnRoutesOutput {
         crate::operation::describe_client_vpn_routes::DescribeClientVpnRoutesOutput {
             routes: self.routes,
             next_token: self.next_token,

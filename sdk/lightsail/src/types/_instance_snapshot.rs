@@ -132,9 +132,7 @@ impl InstanceSnapshot {
 
 /// A builder for [`InstanceSnapshot`](crate::types::InstanceSnapshot).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceSnapshotBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -202,10 +200,7 @@ impl InstanceSnapshotBuilder {
         self
     }
     /// <p>The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -219,10 +214,7 @@ impl InstanceSnapshotBuilder {
         self
     }
     /// <p>The region name and Availability Zone where you created the snapshot.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
         self.location = input;
         self
     }
@@ -236,10 +228,7 @@ impl InstanceSnapshotBuilder {
         self
     }
     /// <p>The type of resource (usually <code>InstanceSnapshot</code>).</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -259,10 +248,7 @@ impl InstanceSnapshotBuilder {
         self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -276,10 +262,7 @@ impl InstanceSnapshotBuilder {
         self
     }
     /// <p>The state the snapshot is in.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceSnapshotState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceSnapshotState>) -> Self {
         self.state = input;
         self
     }
@@ -319,32 +302,21 @@ impl InstanceSnapshotBuilder {
         self
     }
     /// <p>An array of disk objects containing information about all block storage disks.</p>
-    pub fn set_from_attached_disks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
-    ) -> Self {
+    pub fn set_from_attached_disks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>) -> Self {
         self.from_attached_disks = input;
         self
     }
     /// <p>An array of disk objects containing information about all block storage disks.</p>
-    pub fn get_from_attached_disks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Disk>> {
+    pub fn get_from_attached_disks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Disk>> {
         &self.from_attached_disks
     }
     /// <p>The instance from which the snapshot was created.</p>
-    pub fn from_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance from which the snapshot was created.</p>
-    pub fn set_from_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_instance_name = input;
         self
     }
@@ -353,18 +325,12 @@ impl InstanceSnapshotBuilder {
         &self.from_instance_name
     }
     /// <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
-    pub fn from_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
-    pub fn set_from_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_instance_arn = input;
         self
     }
@@ -373,18 +339,12 @@ impl InstanceSnapshotBuilder {
         &self.from_instance_arn
     }
     /// <p>The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
-    pub fn from_blueprint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_blueprint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_blueprint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
-    pub fn set_from_blueprint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_blueprint_id = input;
         self
     }
@@ -393,18 +353,12 @@ impl InstanceSnapshotBuilder {
         &self.from_blueprint_id
     }
     /// <p>The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).</p>
-    pub fn from_bundle_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_bundle_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).</p>
-    pub fn set_from_bundle_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_bundle_id = input;
         self
     }

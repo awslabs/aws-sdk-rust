@@ -16,17 +16,14 @@ impl AwsEcrRepositoryImageScanningConfigurationDetails {
 }
 impl AwsEcrRepositoryImageScanningConfigurationDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::types::AwsEcrRepositoryImageScanningConfigurationDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcrRepositoryImageScanningConfigurationDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEcrRepositoryImageScanningConfigurationDetailsBuilder {
         crate::types::builders::AwsEcrRepositoryImageScanningConfigurationDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::types::AwsEcrRepositoryImageScanningConfigurationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcrRepositoryImageScanningConfigurationDetailsBuilder {
     pub(crate) scan_on_push: ::std::option::Option<bool>,
 }

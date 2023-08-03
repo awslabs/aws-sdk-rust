@@ -23,12 +23,9 @@ impl HlsIngest {
 
 /// A builder for [`HlsIngest`](crate::types::HlsIngest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsIngestBuilder {
-    pub(crate) ingest_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::IngestEndpoint>>,
+    pub(crate) ingest_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::IngestEndpoint>>,
 }
 impl HlsIngestBuilder {
     /// Appends an item to `ingest_endpoints`.
@@ -43,17 +40,12 @@ impl HlsIngestBuilder {
         self
     }
     /// A list of endpoints to which the source stream should be sent.
-    pub fn set_ingest_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IngestEndpoint>>,
-    ) -> Self {
+    pub fn set_ingest_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IngestEndpoint>>) -> Self {
         self.ingest_endpoints = input;
         self
     }
     /// A list of endpoints to which the source stream should be sent.
-    pub fn get_ingest_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IngestEndpoint>> {
+    pub fn get_ingest_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IngestEndpoint>> {
         &self.ingest_endpoints
     }
     /// Consumes the builder and constructs a [`HlsIngest`](crate::types::HlsIngest).

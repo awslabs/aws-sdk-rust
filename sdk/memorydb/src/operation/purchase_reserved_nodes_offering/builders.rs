@@ -26,7 +26,7 @@ impl PurchaseReservedNodesOfferingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PurchaseReservedNodesOfferingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::purchase_reserved_nodes_offering::builders::PurchaseReservedNodesOfferingInputBuilder,
+    inner: crate::operation::purchase_reserved_nodes_offering::builders::PurchaseReservedNodesOfferingInputBuilder,
 }
 impl PurchaseReservedNodesOfferingFluentBuilder {
     /// Creates a new `PurchaseReservedNodesOffering`.
@@ -37,7 +37,7 @@ impl PurchaseReservedNodesOfferingFluentBuilder {
         }
     }
     /// Access the PurchaseReservedNodesOffering as a reference.
-    pub fn as_input(&self) -> &crate::operation::purchase_reserved_nodes_offering::builders::PurchaseReservedNodesOfferingInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::purchase_reserved_nodes_offering::builders::PurchaseReservedNodesOfferingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PurchaseReservedNodesOfferingFluentBuilder {
             crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOffering,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PurchaseReservedNodesOfferingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PurchaseReservedNodesOfferingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PurchaseReservedNodesOfferingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl PurchaseReservedNodesOfferingFluentBuilder {
             crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOffering,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the reserved node offering to purchase.</p>
-    pub fn reserved_nodes_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_nodes_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_nodes_offering_id(input.into());
         self
     }
     /// <p>The ID of the reserved node offering to purchase.</p>
-    pub fn set_reserved_nodes_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_nodes_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reserved_nodes_offering_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl PurchaseReservedNodesOfferingFluentBuilder {
         self.inner.get_reserved_nodes_offering_id()
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
-    pub fn reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reservation_id(input.into());
         self
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
-    pub fn set_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reservation_id(input);
         self
     }
@@ -184,10 +161,7 @@ impl PurchaseReservedNodesOfferingFluentBuilder {
         self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

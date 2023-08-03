@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`integration_id(impl ::std::convert::Into<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::integration_id) / [`set_integration_id(Option<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::set_integration_id): <p>The integration ID.</p>
     /// - On success, responds with [`DeleteIntegrationOutput`](crate::operation::delete_integration::DeleteIntegrationOutput)
     /// - On failure, responds with [`SdkError<DeleteIntegrationError>`](crate::operation::delete_integration::DeleteIntegrationError)
-    pub fn delete_integration(
-        &self,
-    ) -> crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder {
-        crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_integration(&self) -> crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder {
+        crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::new(self.handle.clone())
     }
 }

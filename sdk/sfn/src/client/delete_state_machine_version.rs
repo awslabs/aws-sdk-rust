@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`state_machine_version_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_state_machine_version::builders::DeleteStateMachineVersionFluentBuilder::state_machine_version_arn) / [`set_state_machine_version_arn(Option<String>)`](crate::operation::delete_state_machine_version::builders::DeleteStateMachineVersionFluentBuilder::set_state_machine_version_arn): <p>The Amazon Resource Name (ARN) of the state machine version to delete.</p>
     /// - On success, responds with [`DeleteStateMachineVersionOutput`](crate::operation::delete_state_machine_version::DeleteStateMachineVersionOutput)
     /// - On failure, responds with [`SdkError<DeleteStateMachineVersionError>`](crate::operation::delete_state_machine_version::DeleteStateMachineVersionError)
-    pub fn delete_state_machine_version(&self) -> crate::operation::delete_state_machine_version::builders::DeleteStateMachineVersionFluentBuilder{
+    pub fn delete_state_machine_version(&self) -> crate::operation::delete_state_machine_version::builders::DeleteStateMachineVersionFluentBuilder {
         crate::operation::delete_state_machine_version::builders::DeleteStateMachineVersionFluentBuilder::new(self.handle.clone())
     }
 }

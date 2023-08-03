@@ -30,8 +30,7 @@ impl UploadEntityDefinitionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UploadEntityDefinitionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsInputBuilder,
+    inner: crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsInputBuilder,
 }
 impl UploadEntityDefinitionsFluentBuilder {
     /// Creates a new `UploadEntityDefinitions`.
@@ -42,10 +41,7 @@ impl UploadEntityDefinitionsFluentBuilder {
         }
     }
     /// Access the UploadEntityDefinitions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl UploadEntityDefinitionsFluentBuilder {
             crate::operation::upload_entity_definitions::UploadEntityDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_entity_definitions::UploadEntityDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_entity_definitions::UploadEntityDefinitionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl UploadEntityDefinitionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl UploadEntityDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_entity_definitions::UploadEntityDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_entity_definitions::UploadEntityDefinitionsError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl UploadEntityDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_entity_definitions::UploadEntityDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_entity_definitions::UploadEntityDefinitionsError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +109,7 @@ impl UploadEntityDefinitionsFluentBuilder {
             crate::operation::upload_entity_definitions::UploadEntityDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_entity_definitions::UploadEntityDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_entity_definitions::UploadEntityDefinitionsError>,
     > {
         self.customize_middleware().await
     }
@@ -134,10 +119,7 @@ impl UploadEntityDefinitionsFluentBuilder {
         self
     }
     /// <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
-    pub fn set_document(
-        mut self,
-        input: ::std::option::Option<crate::types::DefinitionDocument>,
-    ) -> Self {
+    pub fn set_document(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
         self.inner = self.inner.set_document(input);
         self
     }

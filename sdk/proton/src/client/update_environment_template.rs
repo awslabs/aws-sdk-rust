@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateEnvironmentTemplateOutput`](crate::operation::update_environment_template::UpdateEnvironmentTemplateOutput) with field(s):
     ///   - [`environment_template(Option<EnvironmentTemplate>)`](crate::operation::update_environment_template::UpdateEnvironmentTemplateOutput::environment_template): <p>The environment template detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<UpdateEnvironmentTemplateError>`](crate::operation::update_environment_template::UpdateEnvironmentTemplateError)
-    pub fn update_environment_template(&self) -> crate::operation::update_environment_template::builders::UpdateEnvironmentTemplateFluentBuilder{
+    pub fn update_environment_template(&self) -> crate::operation::update_environment_template::builders::UpdateEnvironmentTemplateFluentBuilder {
         crate::operation::update_environment_template::builders::UpdateEnvironmentTemplateFluentBuilder::new(self.handle.clone())
     }
 }

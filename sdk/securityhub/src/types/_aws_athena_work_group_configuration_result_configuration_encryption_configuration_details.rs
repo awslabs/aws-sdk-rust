@@ -23,34 +23,26 @@ impl AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDe
 }
 impl AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails {
     /// Creates a new builder-style object to manufacture [`AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails`](crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails).
-    pub fn builder() -> crate::types::builders::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetailsBuilder {
         crate::types::builders::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails`](crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetailsBuilder {
     pub(crate) encryption_option: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
 }
 impl AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetailsBuilder {
     /// <p> Indicates whether Amazon Simple Storage Service (Amazon S3) server-side encryption with Amazon S3 managed keys (SSE_S3), server-side encryption with KMS keys (SSE_KMS), or client-side encryption with KMS customer managed keys (CSE_KMS) is used. </p>
-    pub fn encryption_option(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_option(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_option = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Indicates whether Amazon Simple Storage Service (Amazon S3) server-side encryption with Amazon S3 managed keys (SSE_S3), server-side encryption with KMS keys (SSE_KMS), or client-side encryption with KMS customer managed keys (CSE_KMS) is used. </p>
-    pub fn set_encryption_option(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_option(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_option = input;
         self
     }
@@ -73,12 +65,10 @@ impl AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDe
         &self.kms_key
     }
     /// Consumes the builder and constructs a [`AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails`](crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails).
-    pub fn build(self) -> crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails{
+    pub fn build(self) -> crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails {
         crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails {
-            encryption_option: self.encryption_option
-            ,
-            kms_key: self.kms_key
-            ,
+            encryption_option: self.encryption_option,
+            kms_key: self.kms_key,
         }
     }
 }

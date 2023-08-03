@@ -7,17 +7,12 @@ pub fn ser_job_manifest_generator(
     match input {
         crate::types::JobManifestGenerator::S3JobManifestGenerator(inner) => {
             let inner_writer = scope_writer.start_el("S3JobManifestGenerator");
-            crate::protocol_serde::shape_s3_job_manifest_generator::ser_s3_job_manifest_generator(
-                inner,
-                inner_writer,
-            )?
+            crate::protocol_serde::shape_s3_job_manifest_generator::ser_s3_job_manifest_generator(inner, inner_writer)?
         }
         crate::types::JobManifestGenerator::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "JobManifestGenerator",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "JobManifestGenerator",
+            ))
         }
     }
     Ok(())
@@ -40,7 +35,5 @@ pub fn de_job_manifest_generator(
             _unknown => base = Some(crate::types::JobManifestGenerator::Unknown),
         }
     }
-    base.ok_or_else(|| {
-        ::aws_smithy_xml::decode::XmlDecodeError::custom("expected union, got nothing")
-    })
+    base.ok_or_else(|| ::aws_smithy_xml::decode::XmlDecodeError::custom("expected union, got nothing"))
 }

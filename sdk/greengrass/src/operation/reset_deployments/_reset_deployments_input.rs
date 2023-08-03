@@ -30,17 +30,14 @@ impl ResetDeploymentsInput {
 }
 impl ResetDeploymentsInput {
     /// Creates a new builder-style object to manufacture [`ResetDeploymentsInput`](crate::operation::reset_deployments::ResetDeploymentsInput).
-    pub fn builder() -> crate::operation::reset_deployments::builders::ResetDeploymentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_deployments::builders::ResetDeploymentsInputBuilder {
         crate::operation::reset_deployments::builders::ResetDeploymentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ResetDeploymentsInput`](crate::operation::reset_deployments::ResetDeploymentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetDeploymentsInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,
@@ -48,18 +45,12 @@ pub struct ResetDeploymentsInputBuilder {
 }
 impl ResetDeploymentsInputBuilder {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amzn_client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amzn_client_token = input;
         self
     }
@@ -98,10 +89,7 @@ impl ResetDeploymentsInputBuilder {
     /// Consumes the builder and constructs a [`ResetDeploymentsInput`](crate::operation::reset_deployments::ResetDeploymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_deployments::ResetDeploymentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::reset_deployments::ResetDeploymentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::reset_deployments::ResetDeploymentsInput {
             amzn_client_token: self.amzn_client_token,
             force: self.force,

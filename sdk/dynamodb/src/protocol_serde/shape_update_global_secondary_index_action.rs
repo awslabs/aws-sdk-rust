@@ -9,10 +9,7 @@ pub fn ser_update_global_secondary_index_action(
     if let Some(var_2) = &input.provisioned_throughput {
         #[allow(unused_mut)]
         let mut object_3 = object.key("ProvisionedThroughput").start_object();
-        crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

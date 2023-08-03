@@ -33,8 +33,7 @@ pub struct DatastoreProperties {
     pub preload_data_config: ::std::option::Option<crate::types::PreloadDataConfig>,
     /// <p>The identity provider that you selected when you created the data store.</p>
     #[doc(hidden)]
-    pub identity_provider_configuration:
-        ::std::option::Option<crate::types::IdentityProviderConfiguration>,
+    pub identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
 }
 impl DatastoreProperties {
     /// <p>The AWS-generated ID number for the data store.</p>
@@ -74,9 +73,7 @@ impl DatastoreProperties {
         self.preload_data_config.as_ref()
     }
     /// <p>The identity provider that you selected when you created the data store.</p>
-    pub fn identity_provider_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IdentityProviderConfiguration> {
+    pub fn identity_provider_configuration(&self) -> ::std::option::Option<&crate::types::IdentityProviderConfiguration> {
         self.identity_provider_configuration.as_ref()
     }
 }
@@ -89,9 +86,7 @@ impl DatastoreProperties {
 
 /// A builder for [`DatastoreProperties`](crate::types::DatastoreProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatastorePropertiesBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) datastore_arn: ::std::option::Option<::std::string::String>,
@@ -102,8 +97,7 @@ pub struct DatastorePropertiesBuilder {
     pub(crate) datastore_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) sse_configuration: ::std::option::Option<crate::types::SseConfiguration>,
     pub(crate) preload_data_config: ::std::option::Option<crate::types::PreloadDataConfig>,
-    pub(crate) identity_provider_configuration:
-        ::std::option::Option<crate::types::IdentityProviderConfiguration>,
+    pub(crate) identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
 }
 impl DatastorePropertiesBuilder {
     /// <p>The AWS-generated ID number for the data store.</p>
@@ -121,18 +115,12 @@ impl DatastorePropertiesBuilder {
         &self.datastore_id
     }
     /// <p>The Amazon Resource Name used in the creation of the data store.</p>
-    pub fn datastore_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn datastore_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name used in the creation of the data store.</p>
-    pub fn set_datastore_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_datastore_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_arn = input;
         self
     }
@@ -141,18 +129,12 @@ impl DatastorePropertiesBuilder {
         &self.datastore_arn
     }
     /// <p>The user-generated name for the data store.</p>
-    pub fn datastore_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn datastore_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-generated name for the data store.</p>
-    pub fn set_datastore_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_datastore_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_name = input;
         self
     }
@@ -166,10 +148,7 @@ impl DatastorePropertiesBuilder {
         self
     }
     /// <p>The status of the data store.</p>
-    pub fn set_datastore_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DatastoreStatus>,
-    ) -> Self {
+    pub fn set_datastore_status(mut self, input: ::std::option::Option<crate::types::DatastoreStatus>) -> Self {
         self.datastore_status = input;
         self
     }
@@ -183,10 +162,7 @@ impl DatastorePropertiesBuilder {
         self
     }
     /// <p>The time that a data store was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -200,10 +176,7 @@ impl DatastorePropertiesBuilder {
         self
     }
     /// <p>The FHIR version. Only R4 version data is supported.</p>
-    pub fn set_datastore_type_version(
-        mut self,
-        input: ::std::option::Option<crate::types::FhirVersion>,
-    ) -> Self {
+    pub fn set_datastore_type_version(mut self, input: ::std::option::Option<crate::types::FhirVersion>) -> Self {
         self.datastore_type_version = input;
         self
     }
@@ -212,18 +185,12 @@ impl DatastorePropertiesBuilder {
         &self.datastore_type_version
     }
     /// <p>The AWS endpoint for the data store. Each data store will have it's own endpoint with data store ID in the endpoint URL.</p>
-    pub fn datastore_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn datastore_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS endpoint for the data store. Each data store will have it's own endpoint with data store ID in the endpoint URL.</p>
-    pub fn set_datastore_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_datastore_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_endpoint = input;
         self
     }
@@ -237,10 +204,7 @@ impl DatastorePropertiesBuilder {
         self
     }
     /// <p> The server-side encryption key configuration for a customer provided encryption key (CMK). </p>
-    pub fn set_sse_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SseConfiguration>,
-    ) -> Self {
+    pub fn set_sse_configuration(mut self, input: ::std::option::Option<crate::types::SseConfiguration>) -> Self {
         self.sse_configuration = input;
         self
     }
@@ -254,39 +218,26 @@ impl DatastorePropertiesBuilder {
         self
     }
     /// <p>The preloaded data configuration for the data store. Only data preloaded from Synthea is supported.</p>
-    pub fn set_preload_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PreloadDataConfig>,
-    ) -> Self {
+    pub fn set_preload_data_config(mut self, input: ::std::option::Option<crate::types::PreloadDataConfig>) -> Self {
         self.preload_data_config = input;
         self
     }
     /// <p>The preloaded data configuration for the data store. Only data preloaded from Synthea is supported.</p>
-    pub fn get_preload_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::PreloadDataConfig> {
+    pub fn get_preload_data_config(&self) -> &::std::option::Option<crate::types::PreloadDataConfig> {
         &self.preload_data_config
     }
     /// <p>The identity provider that you selected when you created the data store.</p>
-    pub fn identity_provider_configuration(
-        mut self,
-        input: crate::types::IdentityProviderConfiguration,
-    ) -> Self {
+    pub fn identity_provider_configuration(mut self, input: crate::types::IdentityProviderConfiguration) -> Self {
         self.identity_provider_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The identity provider that you selected when you created the data store.</p>
-    pub fn set_identity_provider_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
-    ) -> Self {
+    pub fn set_identity_provider_configuration(mut self, input: ::std::option::Option<crate::types::IdentityProviderConfiguration>) -> Self {
         self.identity_provider_configuration = input;
         self
     }
     /// <p>The identity provider that you selected when you created the data store.</p>
-    pub fn get_identity_provider_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
+    pub fn get_identity_provider_configuration(&self) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
         &self.identity_provider_configuration
     }
     /// Consumes the builder and constructs a [`DatastoreProperties`](crate::types::DatastoreProperties).

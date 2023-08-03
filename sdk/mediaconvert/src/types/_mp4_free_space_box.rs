@@ -38,13 +38,7 @@
 /// Inserts a free-space box immediately after the moov box.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Mp4FreeSpaceBox {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Mp4FreeSpaceBox {
         match s {
             "EXCLUDE" => Mp4FreeSpaceBox::Exclude,
             "INCLUDE" => Mp4FreeSpaceBox::Include,
-            other => {
-                Mp4FreeSpaceBox::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Mp4FreeSpaceBox::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

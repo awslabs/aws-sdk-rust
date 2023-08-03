@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`monitoring_alert_history(Option<Vec<MonitoringAlertHistorySummary>>)`](crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryOutput::monitoring_alert_history): <p>An alert history for a model monitoring schedule.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListMonitoringAlertHistoryError>`](crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryError)
-    pub fn list_monitoring_alert_history(&self) -> crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder{
+    pub fn list_monitoring_alert_history(
+        &self,
+    ) -> crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder {
         crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryFluentBuilder::new(self.handle.clone())
     }
 }

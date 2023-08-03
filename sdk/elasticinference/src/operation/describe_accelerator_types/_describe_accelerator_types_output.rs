@@ -21,21 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeAcceleratorTypesOutput {
 }
 impl DescribeAcceleratorTypesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAcceleratorTypesOutput`](crate::operation::describe_accelerator_types::DescribeAcceleratorTypesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_accelerator_types::builders::DescribeAcceleratorTypesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_accelerator_types::builders::DescribeAcceleratorTypesOutputBuilder {
         crate::operation::describe_accelerator_types::builders::DescribeAcceleratorTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAcceleratorTypesOutput`](crate::operation::describe_accelerator_types::DescribeAcceleratorTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorTypesOutputBuilder {
-    pub(crate) accelerator_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>>,
+    pub(crate) accelerator_types: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>>,
     _request_id: Option<String>,
 }
 impl DescribeAcceleratorTypesOutputBuilder {
@@ -51,17 +46,12 @@ impl DescribeAcceleratorTypesOutputBuilder {
         self
     }
     /// <p> The available accelerator types. </p>
-    pub fn set_accelerator_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>>,
-    ) -> Self {
+    pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>>) -> Self {
         self.accelerator_types = input;
         self
     }
     /// <p> The available accelerator types. </p>
-    pub fn get_accelerator_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>> {
+    pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>> {
         &self.accelerator_types
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -74,9 +64,7 @@ impl DescribeAcceleratorTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAcceleratorTypesOutput`](crate::operation::describe_accelerator_types::DescribeAcceleratorTypesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_accelerator_types::DescribeAcceleratorTypesOutput {
+    pub fn build(self) -> crate::operation::describe_accelerator_types::DescribeAcceleratorTypesOutput {
         crate::operation::describe_accelerator_types::DescribeAcceleratorTypesOutput {
             accelerator_types: self.accelerator_types,
             _request_id: self._request_id,

@@ -10,10 +10,7 @@ impl GetMethodResponseInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_method_response::GetMethodResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_method_response::GetMethodResponseError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_method_response::GetMethodResponseError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_method_response();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetMethodResponseFluentBuilder {
         }
     }
     /// Access the GetMethodResponse as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_method_response::builders::GetMethodResponseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_method_response::builders::GetMethodResponseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetMethodResponseFluentBuilder {
             crate::operation::get_method_response::GetMethodResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_method_response::GetMethodResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_method_response::GetMethodResponseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetMethodResponseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetMethodResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_method_response::GetMethodResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_method_response::GetMethodResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_method_response::GetMethodResponseError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetMethodResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_method_response::GetMethodResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_method_response::GetMethodResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_method_response::GetMethodResponseError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetMethodResponseFluentBuilder {
             crate::operation::get_method_response::GetMethodResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_method_response::GetMethodResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_method_response::GetMethodResponseError>,
     > {
         self.customize_middleware().await
     }

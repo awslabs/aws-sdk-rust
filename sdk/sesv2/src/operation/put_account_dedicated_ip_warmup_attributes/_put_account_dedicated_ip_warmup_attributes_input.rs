@@ -16,16 +16,14 @@ impl PutAccountDedicatedIpWarmupAttributesInput {
 }
 impl PutAccountDedicatedIpWarmupAttributesInput {
     /// Creates a new builder-style object to manufacture [`PutAccountDedicatedIpWarmupAttributesInput`](crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesInput).
-    pub fn builder() -> crate::operation::put_account_dedicated_ip_warmup_attributes::builders::PutAccountDedicatedIpWarmupAttributesInputBuilder{
+    pub fn builder() -> crate::operation::put_account_dedicated_ip_warmup_attributes::builders::PutAccountDedicatedIpWarmupAttributesInputBuilder {
         crate::operation::put_account_dedicated_ip_warmup_attributes::builders::PutAccountDedicatedIpWarmupAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`PutAccountDedicatedIpWarmupAttributesInput`](crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccountDedicatedIpWarmupAttributesInputBuilder {
     pub(crate) auto_warmup_enabled: ::std::option::Option<bool>,
 }
@@ -45,12 +43,16 @@ impl PutAccountDedicatedIpWarmupAttributesInputBuilder {
         &self.auto_warmup_enabled
     }
     /// Consumes the builder and constructs a [`PutAccountDedicatedIpWarmupAttributesInput`](crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesInput {
-                auto_warmup_enabled: self.auto_warmup_enabled
-                ,
-            }
+                auto_warmup_enabled: self.auto_warmup_enabled,
+            },
         )
     }
 }

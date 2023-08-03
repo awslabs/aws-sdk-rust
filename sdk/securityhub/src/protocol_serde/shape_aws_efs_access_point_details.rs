@@ -24,7 +24,10 @@ pub fn ser_aws_efs_access_point_details(
     if let Some(var_7) = &input.root_directory {
         #[allow(unused_mut)]
         let mut object_8 = object.key("RootDirectory").start_object();
-        crate::protocol_serde::shape_aws_efs_access_point_root_directory_details::ser_aws_efs_access_point_root_directory_details(&mut object_8, var_7)?;
+        crate::protocol_serde::shape_aws_efs_access_point_root_directory_details::ser_aws_efs_access_point_root_directory_details(
+            &mut object_8,
+            var_7,
+        )?;
         object_8.finish();
     }
     Ok(())
@@ -32,17 +35,9 @@ pub fn ser_aws_efs_access_point_details(
 
 pub(crate) fn de_aws_efs_access_point_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsEfsAccessPointDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsEfsAccessPointDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -52,72 +47,61 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "AccessPointId" => {
-                                builder = builder.set_access_point_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "AccessPointId" => {
+                            builder = builder.set_access_point_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "Arn" => {
-                                builder = builder.set_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "Arn" => {
+                            builder = builder.set_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "ClientToken" => {
-                                builder = builder.set_client_token(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "ClientToken" => {
+                            builder = builder.set_client_token(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "FileSystemId" => {
-                                builder = builder.set_file_system_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "FileSystemId" => {
+                            builder = builder.set_file_system_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "PosixUser" => {
-                                builder = builder.set_posix_user(
-                                    crate::protocol_serde::shape_aws_efs_access_point_posix_user_details::de_aws_efs_access_point_posix_user_details(tokens)?
-                                );
-                            }
-                            "RootDirectory" => {
-                                builder = builder.set_root_directory(
+                            );
+                        }
+                        "PosixUser" => {
+                            builder = builder.set_posix_user(
+                                crate::protocol_serde::shape_aws_efs_access_point_posix_user_details::de_aws_efs_access_point_posix_user_details(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        "RootDirectory" => {
+                            builder = builder.set_root_directory(
                                     crate::protocol_serde::shape_aws_efs_access_point_root_directory_details::de_aws_efs_access_point_root_directory_details(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

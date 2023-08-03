@@ -49,10 +49,7 @@ pub fn ser_get_network_routes_input(
     if let Some(var_16) = &input.route_table_identifier {
         #[allow(unused_mut)]
         let mut object_17 = object.key("RouteTableIdentifier").start_object();
-        crate::protocol_serde::shape_route_table_identifier::ser_route_table_identifier(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_route_table_identifier::ser_route_table_identifier(&mut object_17, var_16)?;
         object_17.finish();
     }
     if let Some(var_18) = &input.states {

@@ -26,7 +26,7 @@ impl DeleteCustomRoutingListenerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCustomRoutingListenerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_custom_routing_listener::builders::DeleteCustomRoutingListenerInputBuilder,
+    inner: crate::operation::delete_custom_routing_listener::builders::DeleteCustomRoutingListenerInputBuilder,
 }
 impl DeleteCustomRoutingListenerFluentBuilder {
     /// Creates a new `DeleteCustomRoutingListener`.
@@ -37,7 +37,7 @@ impl DeleteCustomRoutingListenerFluentBuilder {
         }
     }
     /// Access the DeleteCustomRoutingListener as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_custom_routing_listener::builders::DeleteCustomRoutingListenerInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_custom_routing_listener::builders::DeleteCustomRoutingListenerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteCustomRoutingListenerFluentBuilder {
             crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListener,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteCustomRoutingListenerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteCustomRoutingListenerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteCustomRoutingListenerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteCustomRoutingListenerFluentBuilder {
             crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListener,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerError>,
     > {
         self.customize_middleware().await
     }

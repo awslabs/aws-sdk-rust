@@ -27,16 +27,14 @@ impl DescribeOrderableReplicationInstancesInput {
 }
 impl DescribeOrderableReplicationInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrderableReplicationInstancesInput`](crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesInput).
-    pub fn builder() -> crate::operation::describe_orderable_replication_instances::builders::DescribeOrderableReplicationInstancesInputBuilder{
+    pub fn builder() -> crate::operation::describe_orderable_replication_instances::builders::DescribeOrderableReplicationInstancesInputBuilder {
         crate::operation::describe_orderable_replication_instances::builders::DescribeOrderableReplicationInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrderableReplicationInstancesInput`](crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrderableReplicationInstancesInputBuilder {
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -77,14 +75,17 @@ impl DescribeOrderableReplicationInstancesInputBuilder {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeOrderableReplicationInstancesInput`](crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesInput {
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }

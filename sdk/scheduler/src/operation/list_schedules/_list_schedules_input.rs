@@ -50,9 +50,7 @@ impl ListSchedulesInput {
 
 /// A builder for [`ListSchedulesInput`](crate::operation::list_schedules::ListSchedulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchedulesInputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,
@@ -134,10 +132,7 @@ impl ListSchedulesInputBuilder {
     /// Consumes the builder and constructs a [`ListSchedulesInput`](crate::operation::list_schedules::ListSchedulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_schedules::ListSchedulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_schedules::ListSchedulesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_schedules::ListSchedulesInput {
             group_name: self.group_name,
             name_prefix: self.name_prefix,

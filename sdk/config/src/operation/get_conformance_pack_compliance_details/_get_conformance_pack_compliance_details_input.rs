@@ -22,9 +22,7 @@ impl GetConformancePackComplianceDetailsInput {
         self.conformance_pack_name.as_deref()
     }
     /// <p>A <code>ConformancePackEvaluationFilters</code> object.</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConformancePackEvaluationFilters> {
+    pub fn filters(&self) -> ::std::option::Option<&crate::types::ConformancePackEvaluationFilters> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of evaluation results returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
@@ -38,16 +36,14 @@ impl GetConformancePackComplianceDetailsInput {
 }
 impl GetConformancePackComplianceDetailsInput {
     /// Creates a new builder-style object to manufacture [`GetConformancePackComplianceDetailsInput`](crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsInput).
-    pub fn builder() -> crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsInputBuilder{
+    pub fn builder() -> crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsInputBuilder {
         crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetConformancePackComplianceDetailsInput`](crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConformancePackComplianceDetailsInputBuilder {
     pub(crate) conformance_pack_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::ConformancePackEvaluationFilters>,
@@ -56,18 +52,12 @@ pub struct GetConformancePackComplianceDetailsInputBuilder {
 }
 impl GetConformancePackComplianceDetailsInputBuilder {
     /// <p>Name of the conformance pack.</p>
-    pub fn conformance_pack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conformance_pack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the conformance pack.</p>
-    pub fn set_conformance_pack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conformance_pack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.conformance_pack_name = input;
         self
     }
@@ -81,17 +71,12 @@ impl GetConformancePackComplianceDetailsInputBuilder {
         self
     }
     /// <p>A <code>ConformancePackEvaluationFilters</code> object.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ConformancePackEvaluationFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ConformancePackEvaluationFilters>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A <code>ConformancePackEvaluationFilters</code> object.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConformancePackEvaluationFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ConformancePackEvaluationFilters> {
         &self.filters
     }
     /// <p>The maximum number of evaluation results returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
@@ -123,18 +108,19 @@ impl GetConformancePackComplianceDetailsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetConformancePackComplianceDetailsInput`](crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsInput {
-                conformance_pack_name: self.conformance_pack_name
-                ,
-                filters: self.filters
-                ,
-                limit: self.limit
-                ,
-                next_token: self.next_token
-                ,
-            }
+                conformance_pack_name: self.conformance_pack_name,
+                filters: self.filters,
+                limit: self.limit,
+                next_token: self.next_token,
+            },
         )
     }
 }

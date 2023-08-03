@@ -65,18 +65,14 @@ impl CreateForecastExportJobInput {
 }
 impl CreateForecastExportJobInput {
     /// Creates a new builder-style object to manufacture [`CreateForecastExportJobInput`](crate::operation::create_forecast_export_job::CreateForecastExportJobInput).
-    pub fn builder(
-    ) -> crate::operation::create_forecast_export_job::builders::CreateForecastExportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_forecast_export_job::builders::CreateForecastExportJobInputBuilder {
         crate::operation::create_forecast_export_job::builders::CreateForecastExportJobInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateForecastExportJobInput`](crate::operation::create_forecast_export_job::CreateForecastExportJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateForecastExportJobInputBuilder {
     pub(crate) forecast_export_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) forecast_arn: ::std::option::Option<::std::string::String>,
@@ -86,18 +82,12 @@ pub struct CreateForecastExportJobInputBuilder {
 }
 impl CreateForecastExportJobInputBuilder {
     /// <p>The name for the forecast export job.</p>
-    pub fn forecast_export_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_export_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_export_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the forecast export job.</p>
-    pub fn set_forecast_export_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_forecast_export_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.forecast_export_job_name = input;
         self
     }
@@ -127,10 +117,7 @@ impl CreateForecastExportJobInputBuilder {
     }
     /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::DataDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::DataDestination>) -> Self {
         self.destination = input;
         self
     }
@@ -171,10 +158,7 @@ impl CreateForecastExportJobInputBuilder {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -213,14 +197,12 @@ impl CreateForecastExportJobInputBuilder {
         crate::operation::create_forecast_export_job::CreateForecastExportJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_forecast_export_job::CreateForecastExportJobInput {
-                forecast_export_job_name: self.forecast_export_job_name,
-                forecast_arn: self.forecast_arn,
-                destination: self.destination,
-                tags: self.tags,
-                format: self.format,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_forecast_export_job::CreateForecastExportJobInput {
+            forecast_export_job_name: self.forecast_export_job_name,
+            forecast_arn: self.forecast_arn,
+            destination: self.destination,
+            tags: self.tags,
+            format: self.format,
+        })
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`tag_keys(Vec<String>)`](crate::operation::untag_instance_profile::builders::UntagInstanceProfileFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_instance_profile::builders::UntagInstanceProfileFluentBuilder::set_tag_keys): <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified instance profile.</p>
     /// - On success, responds with [`UntagInstanceProfileOutput`](crate::operation::untag_instance_profile::UntagInstanceProfileOutput)
     /// - On failure, responds with [`SdkError<UntagInstanceProfileError>`](crate::operation::untag_instance_profile::UntagInstanceProfileError)
-    pub fn untag_instance_profile(
-        &self,
-    ) -> crate::operation::untag_instance_profile::builders::UntagInstanceProfileFluentBuilder {
-        crate::operation::untag_instance_profile::builders::UntagInstanceProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn untag_instance_profile(&self) -> crate::operation::untag_instance_profile::builders::UntagInstanceProfileFluentBuilder {
+        crate::operation::untag_instance_profile::builders::UntagInstanceProfileFluentBuilder::new(self.handle.clone())
     }
 }

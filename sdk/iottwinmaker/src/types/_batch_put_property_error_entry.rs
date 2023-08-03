@@ -23,9 +23,7 @@ impl BatchPutPropertyErrorEntry {
 
 /// A builder for [`BatchPutPropertyErrorEntry`](crate::types::BatchPutPropertyErrorEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutPropertyErrorEntryBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyError>>,
 }
@@ -42,23 +40,16 @@ impl BatchPutPropertyErrorEntryBuilder {
         self
     }
     /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyError>> {
         &self.errors
     }
     /// Consumes the builder and constructs a [`BatchPutPropertyErrorEntry`](crate::types::BatchPutPropertyErrorEntry).
     pub fn build(self) -> crate::types::BatchPutPropertyErrorEntry {
-        crate::types::BatchPutPropertyErrorEntry {
-            errors: self.errors,
-        }
+        crate::types::BatchPutPropertyErrorEntry { errors: self.errors }
     }
 }

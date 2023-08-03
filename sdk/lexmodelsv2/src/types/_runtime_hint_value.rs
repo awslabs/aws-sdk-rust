@@ -23,9 +23,7 @@ impl RuntimeHintValue {
 
 /// A builder for [`RuntimeHintValue`](crate::types::RuntimeHintValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuntimeHintValueBuilder {
     pub(crate) phrase: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl RuntimeHintValueBuilder {
     }
     /// Consumes the builder and constructs a [`RuntimeHintValue`](crate::types::RuntimeHintValue).
     pub fn build(self) -> crate::types::RuntimeHintValue {
-        crate::types::RuntimeHintValue {
-            phrase: self.phrase,
-        }
+        crate::types::RuntimeHintValue { phrase: self.phrase }
     }
 }

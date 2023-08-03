@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`reference_image(Option<AuditImage>)`](crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput::reference_image): <p>A high-quality image from the Face Liveness video that can be used for face comparison or search. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. In case the reference image is not returned, it's recommended to retry the Liveness check.</p>
     ///   - [`audit_images(Option<Vec<AuditImage>>)`](crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput::audit_images): <p>A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration.</p>
     /// - On failure, responds with [`SdkError<GetFaceLivenessSessionResultsError>`](crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError)
-    pub fn get_face_liveness_session_results(&self) -> crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsFluentBuilder{
+    pub fn get_face_liveness_session_results(
+        &self,
+    ) -> crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsFluentBuilder {
         crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsFluentBuilder::new(self.handle.clone())
     }
 }

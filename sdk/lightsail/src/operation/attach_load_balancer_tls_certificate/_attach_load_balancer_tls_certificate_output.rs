@@ -23,16 +23,14 @@ impl ::aws_http::request_id::RequestId for AttachLoadBalancerTlsCertificateOutpu
 }
 impl AttachLoadBalancerTlsCertificateOutput {
     /// Creates a new builder-style object to manufacture [`AttachLoadBalancerTlsCertificateOutput`](crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateOutput).
-    pub fn builder() -> crate::operation::attach_load_balancer_tls_certificate::builders::AttachLoadBalancerTlsCertificateOutputBuilder{
+    pub fn builder() -> crate::operation::attach_load_balancer_tls_certificate::builders::AttachLoadBalancerTlsCertificateOutputBuilder {
         crate::operation::attach_load_balancer_tls_certificate::builders::AttachLoadBalancerTlsCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachLoadBalancerTlsCertificateOutput`](crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachLoadBalancerTlsCertificateOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,
@@ -52,18 +50,13 @@ impl AttachLoadBalancerTlsCertificateOutputBuilder {
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
-    pub fn set_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
-    ) -> Self {
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>) -> Self {
         self.operations = input;
         self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
-    pub fn get_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
         &self.operations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -76,10 +69,9 @@ impl AttachLoadBalancerTlsCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AttachLoadBalancerTlsCertificateOutput`](crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateOutput).
-    pub fn build(self) -> crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateOutput{
+    pub fn build(self) -> crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateOutput {
         crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateOutput {
-            operations: self.operations
-            ,
+            operations: self.operations,
             _request_id: self._request_id,
         }
     }

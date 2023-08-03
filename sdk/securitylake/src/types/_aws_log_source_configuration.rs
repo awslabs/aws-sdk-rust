@@ -44,9 +44,7 @@ impl AwsLogSourceConfiguration {
 
 /// A builder for [`AwsLogSourceConfiguration`](crate::types::AwsLogSourceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsLogSourceConfigurationBuilder {
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -66,10 +64,7 @@ impl AwsLogSourceConfigurationBuilder {
         self
     }
     /// <p>Specify the Amazon Web Services account information where you want to enable Security Lake.</p>
-    pub fn set_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.accounts = input;
         self
     }
@@ -89,10 +84,7 @@ impl AwsLogSourceConfigurationBuilder {
         self
     }
     /// <p>Specify the Regions where you want to enable Security Lake.</p>
-    pub fn set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
@@ -106,10 +98,7 @@ impl AwsLogSourceConfigurationBuilder {
         self
     }
     /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    pub fn set_source_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsLogSourceName>,
-    ) -> Self {
+    pub fn set_source_name(mut self, input: ::std::option::Option<crate::types::AwsLogSourceName>) -> Self {
         self.source_name = input;
         self
     }
@@ -118,18 +107,12 @@ impl AwsLogSourceConfigurationBuilder {
         &self.source_name
     }
     /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    pub fn source_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    pub fn set_source_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_version = input;
         self
     }

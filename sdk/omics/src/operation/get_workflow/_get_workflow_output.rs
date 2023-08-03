@@ -35,9 +35,7 @@ pub struct GetWorkflowOutput {
     pub digest: ::std::option::Option<::std::string::String>,
     /// <p>The workflow's parameter template.</p>
     #[doc(hidden)]
-    pub parameter_template: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>,
-    >,
+    pub parameter_template: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>>,
     /// <p>The workflow's storage capacity in gigabytes.</p>
     #[doc(hidden)]
     pub storage_capacity: ::std::option::Option<i32>,
@@ -49,14 +47,10 @@ pub struct GetWorkflowOutput {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The workflow's tags.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> Gets metadata for workflow. </p>
     #[doc(hidden)]
-    pub metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The computational accelerator specified to run the workflow. </p>
     #[doc(hidden)]
     pub accelerators: ::std::option::Option<crate::types::Accelerators>,
@@ -104,11 +98,7 @@ impl GetWorkflowOutput {
         self.digest.as_deref()
     }
     /// <p>The workflow's parameter template.</p>
-    pub fn parameter_template(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>,
-    > {
+    pub fn parameter_template(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>> {
         self.parameter_template.as_ref()
     }
     /// <p>The workflow's storage capacity in gigabytes.</p>
@@ -124,19 +114,11 @@ impl GetWorkflowOutput {
         self.status_message.as_deref()
     }
     /// <p>The workflow's tags.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> Gets metadata for workflow. </p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
     /// <p> The computational accelerator specified to run the workflow. </p>
@@ -158,9 +140,7 @@ impl GetWorkflowOutput {
 
 /// A builder for [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -172,18 +152,12 @@ pub struct GetWorkflowOutputBuilder {
     pub(crate) definition: ::std::option::Option<::std::string::String>,
     pub(crate) main: ::std::option::Option<::std::string::String>,
     pub(crate) digest: ::std::option::Option<::std::string::String>,
-    pub(crate) parameter_template: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>,
-    >,
+    pub(crate) parameter_template: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>>,
     pub(crate) storage_capacity: ::std::option::Option<i32>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) accelerators: ::std::option::Option<crate::types::Accelerators>,
     _request_id: Option<String>,
 }
@@ -222,10 +196,7 @@ impl GetWorkflowOutputBuilder {
         self
     }
     /// <p>The workflow's status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowStatus>) -> Self {
         self.status = input;
         self
     }
@@ -281,10 +252,7 @@ impl GetWorkflowOutputBuilder {
         self
     }
     /// <p>The workflow's engine.</p>
-    pub fn set_engine(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowEngine>,
-    ) -> Self {
+    pub fn set_engine(mut self, input: ::std::option::Option<crate::types::WorkflowEngine>) -> Self {
         self.engine = input;
         self
     }
@@ -339,11 +307,7 @@ impl GetWorkflowOutputBuilder {
     /// To override the contents of this collection use [`set_parameter_template`](Self::set_parameter_template).
     ///
     /// <p>The workflow's parameter template.</p>
-    pub fn parameter_template(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::WorkflowParameter,
-    ) -> Self {
+    pub fn parameter_template(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::WorkflowParameter) -> Self {
         let mut hash_map = self.parameter_template.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.parameter_template = ::std::option::Option::Some(hash_map);
@@ -352,9 +316,7 @@ impl GetWorkflowOutputBuilder {
     /// <p>The workflow's parameter template.</p>
     pub fn set_parameter_template(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>>,
     ) -> Self {
         self.parameter_template = input;
         self
@@ -362,9 +324,7 @@ impl GetWorkflowOutputBuilder {
     /// <p>The workflow's parameter template.</p>
     pub fn get_parameter_template(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>> {
         &self.parameter_template
     }
     /// <p>The workflow's storage capacity in gigabytes.</p>
@@ -387,10 +347,7 @@ impl GetWorkflowOutputBuilder {
         self
     }
     /// <p>When the workflow was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -399,18 +356,12 @@ impl GetWorkflowOutputBuilder {
         &self.creation_time
     }
     /// <p>The workflow's status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The workflow's status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -423,32 +374,19 @@ impl GetWorkflowOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The workflow's tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The workflow's tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The workflow's tags.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Adds a key-value pair to `metadata`.
@@ -456,32 +394,19 @@ impl GetWorkflowOutputBuilder {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p> Gets metadata for workflow. </p>
-    pub fn metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.metadata = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> Gets metadata for workflow. </p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.metadata = input;
         self
     }
     /// <p> Gets metadata for workflow. </p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
     /// <p> The computational accelerator specified to run the workflow. </p>
@@ -490,10 +415,7 @@ impl GetWorkflowOutputBuilder {
         self
     }
     /// <p> The computational accelerator specified to run the workflow. </p>
-    pub fn set_accelerators(
-        mut self,
-        input: ::std::option::Option<crate::types::Accelerators>,
-    ) -> Self {
+    pub fn set_accelerators(mut self, input: ::std::option::Option<crate::types::Accelerators>) -> Self {
         self.accelerators = input;
         self
     }

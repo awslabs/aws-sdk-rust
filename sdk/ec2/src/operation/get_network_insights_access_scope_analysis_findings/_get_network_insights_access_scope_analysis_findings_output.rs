@@ -11,8 +11,7 @@ pub struct GetNetworkInsightsAccessScopeAnalysisFindingsOutput {
     pub analysis_status: ::std::option::Option<crate::types::AnalysisStatus>,
     /// <p>The findings associated with Network Access Scope Analysis.</p>
     #[doc(hidden)]
-    pub analysis_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessScopeAnalysisFinding>>,
+    pub analysis_findings: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopeAnalysisFinding>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -28,9 +27,7 @@ impl GetNetworkInsightsAccessScopeAnalysisFindingsOutput {
         self.analysis_status.as_ref()
     }
     /// <p>The findings associated with Network Access Scope Analysis.</p>
-    pub fn analysis_findings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AccessScopeAnalysisFinding]> {
+    pub fn analysis_findings(&self) -> ::std::option::Option<&[crate::types::AccessScopeAnalysisFinding]> {
         self.analysis_findings.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -45,46 +42,36 @@ impl ::aws_http::request_id::RequestId for GetNetworkInsightsAccessScopeAnalysis
 }
 impl GetNetworkInsightsAccessScopeAnalysisFindingsOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkInsightsAccessScopeAnalysisFindingsOutput`](crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsOutput).
-    pub fn builder() -> crate::operation::get_network_insights_access_scope_analysis_findings::builders::GetNetworkInsightsAccessScopeAnalysisFindingsOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::get_network_insights_access_scope_analysis_findings::builders::GetNetworkInsightsAccessScopeAnalysisFindingsOutputBuilder
+    {
         crate::operation::get_network_insights_access_scope_analysis_findings::builders::GetNetworkInsightsAccessScopeAnalysisFindingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetNetworkInsightsAccessScopeAnalysisFindingsOutput`](crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNetworkInsightsAccessScopeAnalysisFindingsOutputBuilder {
-    pub(crate) network_insights_access_scope_analysis_id:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) network_insights_access_scope_analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_status: ::std::option::Option<crate::types::AnalysisStatus>,
-    pub(crate) analysis_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessScopeAnalysisFinding>>,
+    pub(crate) analysis_findings: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopeAnalysisFinding>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetNetworkInsightsAccessScopeAnalysisFindingsOutputBuilder {
     /// <p>The ID of the Network Access Scope analysis.</p>
-    pub fn network_insights_access_scope_analysis_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_access_scope_analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_access_scope_analysis_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Network Access Scope analysis.</p>
-    pub fn set_network_insights_access_scope_analysis_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_access_scope_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_insights_access_scope_analysis_id = input;
         self
     }
     /// <p>The ID of the Network Access Scope analysis.</p>
-    pub fn get_network_insights_access_scope_analysis_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_network_insights_access_scope_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_insights_access_scope_analysis_id
     }
     /// <p>The status of Network Access Scope Analysis.</p>
@@ -93,10 +80,7 @@ impl GetNetworkInsightsAccessScopeAnalysisFindingsOutputBuilder {
         self
     }
     /// <p>The status of Network Access Scope Analysis.</p>
-    pub fn set_analysis_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisStatus>,
-    ) -> Self {
+    pub fn set_analysis_status(mut self, input: ::std::option::Option<crate::types::AnalysisStatus>) -> Self {
         self.analysis_status = input;
         self
     }
@@ -116,17 +100,12 @@ impl GetNetworkInsightsAccessScopeAnalysisFindingsOutputBuilder {
         self
     }
     /// <p>The findings associated with Network Access Scope Analysis.</p>
-    pub fn set_analysis_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopeAnalysisFinding>>,
-    ) -> Self {
+    pub fn set_analysis_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopeAnalysisFinding>>) -> Self {
         self.analysis_findings = input;
         self
     }
     /// <p>The findings associated with Network Access Scope Analysis.</p>
-    pub fn get_analysis_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessScopeAnalysisFinding>> {
+    pub fn get_analysis_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessScopeAnalysisFinding>> {
         &self.analysis_findings
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -153,16 +132,12 @@ impl GetNetworkInsightsAccessScopeAnalysisFindingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetNetworkInsightsAccessScopeAnalysisFindingsOutput`](crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsOutput).
-    pub fn build(self) -> crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsOutput{
+    pub fn build(self) -> crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsOutput {
         crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsOutput {
-            network_insights_access_scope_analysis_id: self.network_insights_access_scope_analysis_id
-            ,
-            analysis_status: self.analysis_status
-            ,
-            analysis_findings: self.analysis_findings
-            ,
-            next_token: self.next_token
-            ,
+            network_insights_access_scope_analysis_id: self.network_insights_access_scope_analysis_id,
+            analysis_status: self.analysis_status,
+            analysis_findings: self.analysis_findings,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

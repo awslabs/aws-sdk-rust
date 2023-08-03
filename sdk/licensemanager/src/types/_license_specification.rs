@@ -30,27 +30,19 @@ impl LicenseSpecification {
 
 /// A builder for [`LicenseSpecification`](crate::types::LicenseSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LicenseSpecificationBuilder {
     pub(crate) license_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ami_association_scope: ::std::option::Option<::std::string::String>,
 }
 impl LicenseSpecificationBuilder {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn set_license_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_configuration_arn = input;
         self
     }
@@ -59,18 +51,12 @@ impl LicenseSpecificationBuilder {
         &self.license_configuration_arn
     }
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
-    pub fn ami_association_scope(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ami_association_scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ami_association_scope = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
-    pub fn set_ami_association_scope(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ami_association_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ami_association_scope = input;
         self
     }

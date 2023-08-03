@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetIdentityProviderByIdentifierOutput
 }
 impl GetIdentityProviderByIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`GetIdentityProviderByIdentifierOutput`](crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput).
-    pub fn builder() -> crate::operation::get_identity_provider_by_identifier::builders::GetIdentityProviderByIdentifierOutputBuilder{
+    pub fn builder() -> crate::operation::get_identity_provider_by_identifier::builders::GetIdentityProviderByIdentifierOutputBuilder {
         crate::operation::get_identity_provider_by_identifier::builders::GetIdentityProviderByIdentifierOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIdentityProviderByIdentifierOutput`](crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityProviderByIdentifierOutputBuilder {
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProviderType>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl GetIdentityProviderByIdentifierOutputBuilder {
         self
     }
     /// <p>The identity provider details.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderType>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProviderType>) -> Self {
         self.identity_provider = input;
         self
     }
     /// <p>The identity provider details.</p>
-    pub fn get_identity_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::IdentityProviderType> {
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProviderType> {
         &self.identity_provider
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,13 +58,9 @@ impl GetIdentityProviderByIdentifierOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetIdentityProviderByIdentifierOutput`](crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput
-    {
+    pub fn build(self) -> crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput {
         crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput {
-            identity_provider: self.identity_provider
-            ,
+            identity_provider: self.identity_provider,
             _request_id: self._request_id,
         }
     }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`workspace_id(impl ::std::convert::Into<String>)`](crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder::set_workspace_id): <p>The ID of the workspace to delete.</p>
     /// - On success, responds with [`DeleteWorkspaceOutput`](crate::operation::delete_workspace::DeleteWorkspaceOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkspaceError>`](crate::operation::delete_workspace::DeleteWorkspaceError)
-    pub fn delete_workspace(
-        &self,
-    ) -> crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder {
-        crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_workspace(&self) -> crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder {
+        crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder::new(self.handle.clone())
     }
 }

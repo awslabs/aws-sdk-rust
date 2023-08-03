@@ -10,10 +10,7 @@ impl DeleteAutoSnapshotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_auto_snapshot::DeleteAutoSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_auto_snapshot();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteAutoSnapshotFluentBuilder {
         }
     }
     /// Access the DeleteAutoSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_auto_snapshot::builders::DeleteAutoSnapshotInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_auto_snapshot::builders::DeleteAutoSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteAutoSnapshotFluentBuilder {
             crate::operation::delete_auto_snapshot::DeleteAutoSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteAutoSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteAutoSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_auto_snapshot::DeleteAutoSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteAutoSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_auto_snapshot::DeleteAutoSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteAutoSnapshotFluentBuilder {
             crate::operation::delete_auto_snapshot::DeleteAutoSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the source instance or disk from which to delete the automatic snapshot.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_name(input.into());
         self
     }
     /// <p>The name of the source instance or disk from which to delete the automatic snapshot.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
     }

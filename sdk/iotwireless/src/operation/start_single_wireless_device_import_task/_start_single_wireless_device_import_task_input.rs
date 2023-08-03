@@ -43,16 +43,14 @@ impl StartSingleWirelessDeviceImportTaskInput {
 }
 impl StartSingleWirelessDeviceImportTaskInput {
     /// Creates a new builder-style object to manufacture [`StartSingleWirelessDeviceImportTaskInput`](crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskInput).
-    pub fn builder() -> crate::operation::start_single_wireless_device_import_task::builders::StartSingleWirelessDeviceImportTaskInputBuilder{
+    pub fn builder() -> crate::operation::start_single_wireless_device_import_task::builders::StartSingleWirelessDeviceImportTaskInputBuilder {
         crate::operation::start_single_wireless_device_import_task::builders::StartSingleWirelessDeviceImportTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`StartSingleWirelessDeviceImportTaskInput`](crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSingleWirelessDeviceImportTaskInputBuilder {
     pub(crate) destination_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct StartSingleWirelessDeviceImportTaskInputBuilder {
 }
 impl StartSingleWirelessDeviceImportTaskInputBuilder {
     /// <p>The name of the Sidewalk destination that describes the IoT rule to route messages from the device in the import task that will be onboarded to AWS IoT Wireless.</p>
-    pub fn destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Sidewalk destination that describes the IoT rule to route messages from the device in the import task that will be onboarded to AWS IoT Wireless.</p>
-    pub fn set_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_name = input;
         self
     }
@@ -82,18 +74,12 @@ impl StartSingleWirelessDeviceImportTaskInputBuilder {
         &self.destination_name
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -127,10 +113,7 @@ impl StartSingleWirelessDeviceImportTaskInputBuilder {
         self
     }
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -144,34 +127,29 @@ impl StartSingleWirelessDeviceImportTaskInputBuilder {
         self
     }
     /// <p>The Sidewalk-related parameters for importing a single wireless device.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<crate::types::SidewalkSingleStartImportInfo>,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkSingleStartImportInfo>) -> Self {
         self.sidewalk = input;
         self
     }
     /// <p>The Sidewalk-related parameters for importing a single wireless device.</p>
-    pub fn get_sidewalk(
-        &self,
-    ) -> &::std::option::Option<crate::types::SidewalkSingleStartImportInfo> {
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkSingleStartImportInfo> {
         &self.sidewalk
     }
     /// Consumes the builder and constructs a [`StartSingleWirelessDeviceImportTaskInput`](crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskInput {
-                destination_name: self.destination_name
-                ,
-                client_request_token: self.client_request_token
-                ,
-                device_name: self.device_name
-                ,
-                tags: self.tags
-                ,
-                sidewalk: self.sidewalk
-                ,
-            }
+                destination_name: self.destination_name,
+                client_request_token: self.client_request_token,
+                device_name: self.device_name,
+                tags: self.tags,
+                sidewalk: self.sidewalk,
+            },
         )
     }
 }

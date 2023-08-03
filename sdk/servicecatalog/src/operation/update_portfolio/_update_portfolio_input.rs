@@ -72,9 +72,7 @@ impl UpdatePortfolioInput {
 
 /// A builder for [`UpdatePortfolioInput`](crate::operation::update_portfolio::UpdatePortfolioInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePortfolioInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl UpdatePortfolioInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -102,10 +97,7 @@ impl UpdatePortfolioInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -160,18 +152,12 @@ impl UpdatePortfolioInputBuilder {
         &self.description
     }
     /// <p>The updated name of the portfolio provider.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The updated name of the portfolio provider.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_name = input;
         self
     }
@@ -191,10 +177,7 @@ impl UpdatePortfolioInputBuilder {
         self
     }
     /// <p>The tags to add.</p>
-    pub fn set_add_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_add_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.add_tags = input;
         self
     }
@@ -214,26 +197,18 @@ impl UpdatePortfolioInputBuilder {
         self
     }
     /// <p>The tags to remove.</p>
-    pub fn set_remove_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_remove_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.remove_tags = input;
         self
     }
     /// <p>The tags to remove.</p>
-    pub fn get_remove_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.remove_tags
     }
     /// Consumes the builder and constructs a [`UpdatePortfolioInput`](crate::operation::update_portfolio::UpdatePortfolioInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_portfolio::UpdatePortfolioInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_portfolio::UpdatePortfolioInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_portfolio::UpdatePortfolioInput {
             accept_language: self.accept_language,
             id: self.id,

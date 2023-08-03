@@ -9,10 +9,7 @@ pub fn ser_get_application_revision_input(
     if let Some(var_2) = &input.revision {
         #[allow(unused_mut)]
         let mut object_3 = object.key("revision").start_object();
-        crate::protocol_serde::shape_revision_location::ser_revision_location(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_revision_location::ser_revision_location(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

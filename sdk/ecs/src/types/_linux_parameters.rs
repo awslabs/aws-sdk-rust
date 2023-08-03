@@ -95,9 +95,7 @@ impl LinuxParameters {
 
 /// A builder for [`LinuxParameters`](crate::types::LinuxParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LinuxParametersBuilder {
     pub(crate) capabilities: ::std::option::Option<crate::types::KernelCapabilities>,
     pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
@@ -118,10 +116,7 @@ impl LinuxParametersBuilder {
     /// <p>The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker.</p> <note>
     /// <p>For tasks that use the Fargate launch type, <code>capabilities</code> is supported for all platform versions but the <code>add</code> parameter is only supported if using platform version 1.4.0 or later.</p>
     /// </note>
-    pub fn set_capabilities(
-        mut self,
-        input: ::std::option::Option<crate::types::KernelCapabilities>,
-    ) -> Self {
+    pub fn set_capabilities(mut self, input: ::std::option::Option<crate::types::KernelCapabilities>) -> Self {
         self.capabilities = input;
         self
     }
@@ -147,10 +142,7 @@ impl LinuxParametersBuilder {
     /// <p>Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter isn't supported.</p>
     /// </note>
-    pub fn set_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
-    ) -> Self {
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>) -> Self {
         self.devices = input;
         self
     }
@@ -210,10 +202,7 @@ impl LinuxParametersBuilder {
     /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
     /// <p>If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.</p>
     /// </note>
-    pub fn set_tmpfs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tmpfs>>,
-    ) -> Self {
+    pub fn set_tmpfs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tmpfs>>) -> Self {
         self.tmpfs = input;
         self
     }

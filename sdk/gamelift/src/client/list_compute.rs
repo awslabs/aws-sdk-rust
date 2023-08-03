@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`compute_list(Option<Vec<Compute>>)`](crate::operation::list_compute::ListComputeOutput::compute_list): <p>A list of compute resources registered to the fleet you specified.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_compute::ListComputeOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     /// - On failure, responds with [`SdkError<ListComputeError>`](crate::operation::list_compute::ListComputeError)
-    pub fn list_compute(
-        &self,
-    ) -> crate::operation::list_compute::builders::ListComputeFluentBuilder {
+    pub fn list_compute(&self) -> crate::operation::list_compute::builders::ListComputeFluentBuilder {
         crate::operation::list_compute::builders::ListComputeFluentBuilder::new(self.handle.clone())
     }
 }

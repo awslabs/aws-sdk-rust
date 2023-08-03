@@ -29,16 +29,14 @@ impl ListTargetsForSecurityProfileInput {
 }
 impl ListTargetsForSecurityProfileInput {
     /// Creates a new builder-style object to manufacture [`ListTargetsForSecurityProfileInput`](crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileInput).
-    pub fn builder() -> crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileInputBuilder{
+    pub fn builder() -> crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileInputBuilder {
         crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTargetsForSecurityProfileInput`](crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetsForSecurityProfileInputBuilder {
     pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListTargetsForSecurityProfileInputBuilder {
 }
 impl ListTargetsForSecurityProfileInputBuilder {
     /// <p>The security profile.</p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The security profile.</p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_profile_name = input;
         self
     }
@@ -100,15 +92,10 @@ impl ListTargetsForSecurityProfileInputBuilder {
         crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileInput {
-                security_profile_name: self.security_profile_name
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileInput {
+            security_profile_name: self.security_profile_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

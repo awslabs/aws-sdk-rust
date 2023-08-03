@@ -44,9 +44,7 @@ impl LongColumnStatisticsData {
 
 /// A builder for [`LongColumnStatisticsData`](crate::types::LongColumnStatisticsData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LongColumnStatisticsDataBuilder {
     pub(crate) minimum_value: ::std::option::Option<i64>,
     pub(crate) maximum_value: ::std::option::Option<i64>,

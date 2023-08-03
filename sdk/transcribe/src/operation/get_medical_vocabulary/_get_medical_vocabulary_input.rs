@@ -15,34 +15,25 @@ impl GetMedicalVocabularyInput {
 }
 impl GetMedicalVocabularyInput {
     /// Creates a new builder-style object to manufacture [`GetMedicalVocabularyInput`](crate::operation::get_medical_vocabulary::GetMedicalVocabularyInput).
-    pub fn builder(
-    ) -> crate::operation::get_medical_vocabulary::builders::GetMedicalVocabularyInputBuilder {
+    pub fn builder() -> crate::operation::get_medical_vocabulary::builders::GetMedicalVocabularyInputBuilder {
         crate::operation::get_medical_vocabulary::builders::GetMedicalVocabularyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMedicalVocabularyInput`](crate::operation::get_medical_vocabulary::GetMedicalVocabularyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMedicalVocabularyInputBuilder {
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
 }
 impl GetMedicalVocabularyInputBuilder {
     /// <p>The name of the custom medical vocabulary you want information about. Custom medical vocabulary names are case sensitive.</p>
-    pub fn vocabulary_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the custom medical vocabulary you want information about. Custom medical vocabulary names are case sensitive.</p>
-    pub fn set_vocabulary_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_name = input;
         self
     }
@@ -53,14 +44,10 @@ impl GetMedicalVocabularyInputBuilder {
     /// Consumes the builder and constructs a [`GetMedicalVocabularyInput`](crate::operation::get_medical_vocabulary::GetMedicalVocabularyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_medical_vocabulary::GetMedicalVocabularyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_medical_vocabulary::GetMedicalVocabularyInput {
-                vocabulary_name: self.vocabulary_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_medical_vocabulary::GetMedicalVocabularyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_medical_vocabulary::GetMedicalVocabularyInput {
+            vocabulary_name: self.vocabulary_name,
+        })
     }
 }

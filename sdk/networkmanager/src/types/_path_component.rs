@@ -37,9 +37,7 @@ impl PathComponent {
 
 /// A builder for [`PathComponent`](crate::types::PathComponent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PathComponentBuilder {
     pub(crate) sequence: ::std::option::Option<i32>,
     pub(crate) resource: ::std::option::Option<crate::types::NetworkResourceSummary>,
@@ -66,10 +64,7 @@ impl PathComponentBuilder {
         self
     }
     /// <p>The resource.</p>
-    pub fn set_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkResourceSummary>,
-    ) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<crate::types::NetworkResourceSummary>) -> Self {
         self.resource = input;
         self
     }
@@ -78,18 +73,12 @@ impl PathComponentBuilder {
         &self.resource
     }
     /// <p>The destination CIDR block in the route table.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination CIDR block in the route table.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_cidr_block = input;
         self
     }

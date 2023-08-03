@@ -12,9 +12,7 @@ pub struct ModelBiasAppSpecification {
     pub config_uri: ::std::option::Option<::std::string::String>,
     /// <p>Sets the environment variables in the Docker container.</p>
     #[doc(hidden)]
-    pub environment: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ModelBiasAppSpecification {
     /// <p>The container image to be run by the model bias job.</p>
@@ -26,11 +24,7 @@ impl ModelBiasAppSpecification {
         self.config_uri.as_deref()
     }
     /// <p>Sets the environment variables in the Docker container.</p>
-    pub fn environment(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
 }
@@ -43,15 +37,11 @@ impl ModelBiasAppSpecification {
 
 /// A builder for [`ModelBiasAppSpecification`](crate::types::ModelBiasAppSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelBiasAppSpecificationBuilder {
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
     pub(crate) config_uri: ::std::option::Option<::std::string::String>,
-    pub(crate) environment: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ModelBiasAppSpecificationBuilder {
     /// <p>The container image to be run by the model bias job.</p>
@@ -87,11 +77,7 @@ impl ModelBiasAppSpecificationBuilder {
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
     /// <p>Sets the environment variables in the Docker container.</p>
-    pub fn environment(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.environment = ::std::option::Option::Some(hash_map);
@@ -100,19 +86,13 @@ impl ModelBiasAppSpecificationBuilder {
     /// <p>Sets the environment variables in the Docker container.</p>
     pub fn set_environment(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.environment = input;
         self
     }
     /// <p>Sets the environment variables in the Docker container.</p>
-    pub fn get_environment(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment
     }
     /// Consumes the builder and constructs a [`ModelBiasAppSpecification`](crate::types::ModelBiasAppSpecification).

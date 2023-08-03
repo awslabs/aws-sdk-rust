@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateThingShadowOutput {
 }
 impl UpdateThingShadowOutput {
     /// Creates a new builder-style object to manufacture [`UpdateThingShadowOutput`](crate::operation::update_thing_shadow::UpdateThingShadowOutput).
-    pub fn builder(
-    ) -> crate::operation::update_thing_shadow::builders::UpdateThingShadowOutputBuilder {
+    pub fn builder() -> crate::operation::update_thing_shadow::builders::UpdateThingShadowOutputBuilder {
         crate::operation::update_thing_shadow::builders::UpdateThingShadowOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateThingShadowOutput`](crate::operation::update_thing_shadow::UpdateThingShadowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateThingShadowOutputBuilder {
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,

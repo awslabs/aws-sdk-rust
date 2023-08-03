@@ -64,16 +64,14 @@ impl ListModelExplainabilityJobDefinitionsInput {
 }
 impl ListModelExplainabilityJobDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListModelExplainabilityJobDefinitionsInput`](crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsInput).
-    pub fn builder() -> crate::operation::list_model_explainability_job_definitions::builders::ListModelExplainabilityJobDefinitionsInputBuilder{
+    pub fn builder() -> crate::operation::list_model_explainability_job_definitions::builders::ListModelExplainabilityJobDefinitionsInputBuilder {
         crate::operation::list_model_explainability_job_definitions::builders::ListModelExplainabilityJobDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListModelExplainabilityJobDefinitionsInput`](crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelExplainabilityJobDefinitionsInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::MonitoringJobDefinitionSortKey>,
@@ -86,18 +84,12 @@ pub struct ListModelExplainabilityJobDefinitionsInputBuilder {
 }
 impl ListModelExplainabilityJobDefinitionsInputBuilder {
     /// <p>Name of the endpoint to monitor for model explainability.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the endpoint to monitor for model explainability.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_name = input;
         self
     }
@@ -111,17 +103,12 @@ impl ListModelExplainabilityJobDefinitionsInputBuilder {
         self
     }
     /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringJobDefinitionSortKey>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::MonitoringJobDefinitionSortKey>) -> Self {
         self.sort_by = input;
         self
     }
     /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringJobDefinitionSortKey> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::MonitoringJobDefinitionSortKey> {
         &self.sort_by
     }
     /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
@@ -167,18 +154,12 @@ impl ListModelExplainabilityJobDefinitionsInputBuilder {
         &self.max_results
     }
     /// <p>Filter for model explainability jobs whose name contains a specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filter for model explainability jobs whose name contains a specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -192,10 +173,7 @@ impl ListModelExplainabilityJobDefinitionsInputBuilder {
         self
     }
     /// <p>A filter that returns only model explainability jobs created before a specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -209,10 +187,7 @@ impl ListModelExplainabilityJobDefinitionsInputBuilder {
         self
     }
     /// <p>A filter that returns only model explainability jobs created after a specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -221,26 +196,23 @@ impl ListModelExplainabilityJobDefinitionsInputBuilder {
         &self.creation_time_after
     }
     /// Consumes the builder and constructs a [`ListModelExplainabilityJobDefinitionsInput`](crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsInput {
-                endpoint_name: self.endpoint_name
-                ,
-                sort_by: self.sort_by
-                ,
-                sort_order: self.sort_order
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                name_contains: self.name_contains
-                ,
-                creation_time_before: self.creation_time_before
-                ,
-                creation_time_after: self.creation_time_after
-                ,
-            }
+                endpoint_name: self.endpoint_name,
+                sort_by: self.sort_by,
+                sort_order: self.sort_order,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                name_contains: self.name_contains,
+                creation_time_before: self.creation_time_before,
+                creation_time_after: self.creation_time_after,
+            },
         )
     }
 }

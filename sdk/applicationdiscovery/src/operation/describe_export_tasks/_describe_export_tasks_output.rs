@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeExportTasksOutput {
 }
 impl DescribeExportTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExportTasksOutput`](crate::operation::describe_export_tasks::DescribeExportTasksOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_export_tasks::builders::DescribeExportTasksOutputBuilder {
-        crate::operation::describe_export_tasks::builders::DescribeExportTasksOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_export_tasks::builders::DescribeExportTasksOutputBuilder {
+        crate::operation::describe_export_tasks::builders::DescribeExportTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExportTasksOutput`](crate::operation::describe_export_tasks::DescribeExportTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExportTasksOutputBuilder {
     pub(crate) exports_info: ::std::option::Option<::std::vec::Vec<crate::types::ExportInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeExportTasksOutputBuilder {
         self
     }
     /// <p>Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>
-    pub fn set_exports_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportInfo>>,
-    ) -> Self {
+    pub fn set_exports_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportInfo>>) -> Self {
         self.exports_info = input;
         self
     }
     /// <p>Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>
-    pub fn get_exports_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportInfo>> {
+    pub fn get_exports_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportInfo>> {
         &self.exports_info
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code> request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>

@@ -30,16 +30,14 @@ impl ListPositionConfigurationsInput {
 }
 impl ListPositionConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListPositionConfigurationsInput`](crate::operation::list_position_configurations::ListPositionConfigurationsInput).
-    pub fn builder() -> crate::operation::list_position_configurations::builders::ListPositionConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_position_configurations::builders::ListPositionConfigurationsInputBuilder {
         crate::operation::list_position_configurations::builders::ListPositionConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPositionConfigurationsInput`](crate::operation::list_position_configurations::ListPositionConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPositionConfigurationsInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::PositionResourceType>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -52,10 +50,7 @@ impl ListPositionConfigurationsInputBuilder {
         self
     }
     /// <p>Resource type for which position configurations are listed.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::PositionResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -98,12 +93,10 @@ impl ListPositionConfigurationsInputBuilder {
         crate::operation::list_position_configurations::ListPositionConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_position_configurations::ListPositionConfigurationsInput {
-                resource_type: self.resource_type,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_position_configurations::ListPositionConfigurationsInput {
+            resource_type: self.resource_type,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -21,9 +21,7 @@ impl super::Client {
     ///   - [`dataset_deleted_after_requested_sync_count(bool)`](crate::operation::list_records::ListRecordsOutput::dataset_deleted_after_requested_sync_count): A boolean value specifying whether to delete the dataset locally.
     ///   - [`sync_session_token(Option<String>)`](crate::operation::list_records::ListRecordsOutput::sync_session_token): A token containing a session ID, identity ID, and expiration.
     /// - On failure, responds with [`SdkError<ListRecordsError>`](crate::operation::list_records::ListRecordsError)
-    pub fn list_records(
-        &self,
-    ) -> crate::operation::list_records::builders::ListRecordsFluentBuilder {
+    pub fn list_records(&self) -> crate::operation::list_records::builders::ListRecordsFluentBuilder {
         crate::operation::list_records::builders::ListRecordsFluentBuilder::new(self.handle.clone())
     }
 }

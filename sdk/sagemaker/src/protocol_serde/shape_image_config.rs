@@ -9,10 +9,7 @@ pub fn ser_image_config(
     if let Some(var_2) = &input.repository_auth_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("RepositoryAuthConfig").start_object();
-        crate::protocol_serde::shape_repository_auth_config::ser_repository_auth_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_repository_auth_config::ser_repository_auth_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())
@@ -20,17 +17,9 @@ pub fn ser_image_config(
 
 pub(crate) fn de_image_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ImageConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ImageConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -40,44 +29,32 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "RepositoryAccessMode" => {
-                                builder = builder.set_repository_access_mode(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::RepositoryAccessMode::from(u.as_ref())
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "RepositoryAccessMode" => {
+                            builder = builder.set_repository_access_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::RepositoryAccessMode::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "RepositoryAuthConfig" => {
-                                builder = builder.set_repository_auth_config(
-                                    crate::protocol_serde::shape_repository_auth_config::de_repository_auth_config(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "RepositoryAuthConfig" => {
+                            builder = builder
+                                .set_repository_auth_config(crate::protocol_serde::shape_repository_auth_config::de_repository_auth_config(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

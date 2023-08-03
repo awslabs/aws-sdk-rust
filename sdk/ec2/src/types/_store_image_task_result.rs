@@ -65,9 +65,7 @@ impl StoreImageTaskResult {
 
 /// A builder for [`StoreImageTaskResult`](crate::types::StoreImageTaskResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StoreImageTaskResultBuilder {
     pub(crate) ami_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -98,10 +96,7 @@ impl StoreImageTaskResultBuilder {
         self
     }
     /// <p>The time the task started.</p>
-    pub fn set_task_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_task_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.task_start_time = input;
         self
     }
@@ -152,18 +147,12 @@ impl StoreImageTaskResultBuilder {
         &self.progress_percentage
     }
     /// <p>The state of the store task (<code>InProgress</code>, <code>Completed</code>, or <code>Failed</code>).</p>
-    pub fn store_task_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn store_task_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.store_task_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of the store task (<code>InProgress</code>, <code>Completed</code>, or <code>Failed</code>).</p>
-    pub fn set_store_task_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_store_task_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.store_task_state = input;
         self
     }
@@ -172,18 +161,12 @@ impl StoreImageTaskResultBuilder {
         &self.store_task_state
     }
     /// <p>If the tasks fails, the reason for the failure is returned. If the task succeeds, <code>null</code> is returned.</p>
-    pub fn store_task_failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn store_task_failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.store_task_failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the tasks fails, the reason for the failure is returned. If the task succeeds, <code>null</code> is returned.</p>
-    pub fn set_store_task_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_store_task_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.store_task_failure_reason = input;
         self
     }

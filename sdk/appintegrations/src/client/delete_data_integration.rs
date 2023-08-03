@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`data_integration_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_data_integration::builders::DeleteDataIntegrationFluentBuilder::data_integration_identifier) / [`set_data_integration_identifier(Option<String>)`](crate::operation::delete_data_integration::builders::DeleteDataIntegrationFluentBuilder::set_data_integration_identifier): <p>A unique identifier for the DataIntegration.</p>
     /// - On success, responds with [`DeleteDataIntegrationOutput`](crate::operation::delete_data_integration::DeleteDataIntegrationOutput)
     /// - On failure, responds with [`SdkError<DeleteDataIntegrationError>`](crate::operation::delete_data_integration::DeleteDataIntegrationError)
-    pub fn delete_data_integration(
-        &self,
-    ) -> crate::operation::delete_data_integration::builders::DeleteDataIntegrationFluentBuilder
-    {
-        crate::operation::delete_data_integration::builders::DeleteDataIntegrationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_data_integration(&self) -> crate::operation::delete_data_integration::builders::DeleteDataIntegrationFluentBuilder {
+        crate::operation::delete_data_integration::builders::DeleteDataIntegrationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeVpcEndpointsOutput {
 }
 impl DescribeVpcEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointsOutput`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsOutputBuilder {
         crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcEndpointsOutput`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointsOutputBuilder {
     pub(crate) vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl DescribeVpcEndpointsOutputBuilder {
         self
     }
     /// <p>Information about the endpoints.</p>
-    pub fn set_vpc_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
-    ) -> Self {
+    pub fn set_vpc_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>) -> Self {
         self.vpc_endpoints = input;
         self
     }
     /// <p>Information about the endpoints.</p>
-    pub fn get_vpc_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>> {
+    pub fn get_vpc_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>> {
         &self.vpc_endpoints
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>

@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for CreateJobTemplateOutput {
 }
 impl CreateJobTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateJobTemplateOutput`](crate::operation::create_job_template::CreateJobTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::create_job_template::builders::CreateJobTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::create_job_template::builders::CreateJobTemplateOutputBuilder {
         crate::operation::create_job_template::builders::CreateJobTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateJobTemplateOutput`](crate::operation::create_job_template::CreateJobTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateJobTemplateOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -109,10 +106,7 @@ impl CreateJobTemplateOutputBuilder {
         self
     }
     /// <p>This output displays the date and time when the job template was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }

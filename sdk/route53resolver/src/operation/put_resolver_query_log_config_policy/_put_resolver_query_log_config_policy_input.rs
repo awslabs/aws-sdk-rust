@@ -34,16 +34,14 @@ impl PutResolverQueryLogConfigPolicyInput {
 }
 impl PutResolverQueryLogConfigPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutResolverQueryLogConfigPolicyInput`](crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyInput).
-    pub fn builder() -> crate::operation::put_resolver_query_log_config_policy::builders::PutResolverQueryLogConfigPolicyInputBuilder{
+    pub fn builder() -> crate::operation::put_resolver_query_log_config_policy::builders::PutResolverQueryLogConfigPolicyInputBuilder {
         crate::operation::put_resolver_query_log_config_policy::builders::PutResolverQueryLogConfigPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutResolverQueryLogConfigPolicyInput`](crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutResolverQueryLogConfigPolicyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) resolver_query_log_config_policy: ::std::option::Option<::std::string::String>,
@@ -70,10 +68,7 @@ impl PutResolverQueryLogConfigPolicyInputBuilder {
     /// <li> <p> <code>route53resolver:ListResolverQueryLogConfigs</code> </p> </li>
     /// </ul>
     /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share with the account that you specified in <code>Arn</code>. </p>
-    pub fn resolver_query_log_config_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_query_log_config_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_query_log_config_policy = ::std::option::Option::Some(input.into());
         self
     }
@@ -84,10 +79,7 @@ impl PutResolverQueryLogConfigPolicyInputBuilder {
     /// <li> <p> <code>route53resolver:ListResolverQueryLogConfigs</code> </p> </li>
     /// </ul>
     /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share with the account that you specified in <code>Arn</code>. </p>
-    pub fn set_resolver_query_log_config_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_query_log_config_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolver_query_log_config_policy = input;
         self
     }
@@ -98,20 +90,21 @@ impl PutResolverQueryLogConfigPolicyInputBuilder {
     /// <li> <p> <code>route53resolver:ListResolverQueryLogConfigs</code> </p> </li>
     /// </ul>
     /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share with the account that you specified in <code>Arn</code>. </p>
-    pub fn get_resolver_query_log_config_policy(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_resolver_query_log_config_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.resolver_query_log_config_policy
     }
     /// Consumes the builder and constructs a [`PutResolverQueryLogConfigPolicyInput`](crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyInput {
-                arn: self.arn
-                ,
-                resolver_query_log_config_policy: self.resolver_query_log_config_policy
-                ,
-            }
+                arn: self.arn,
+                resolver_query_log_config_policy: self.resolver_query_log_config_policy,
+            },
         )
     }
 }

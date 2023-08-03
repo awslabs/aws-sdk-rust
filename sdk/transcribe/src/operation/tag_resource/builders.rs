@@ -10,10 +10,7 @@ impl TagResourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::tag_resource::TagResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_resource::TagResourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.tag_resource();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl TagResourceFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::tag_resource::TagResource,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::tag_resource::TagResource, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl TagResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl TagResourceFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::tag_resource::TagResource,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::tag_resource::TagResource, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError>,
     > {
         self.customize_middleware().await
@@ -145,10 +133,7 @@ impl TagResourceFluentBuilder {
     }
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to the specified resource.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

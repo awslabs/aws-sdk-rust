@@ -10,9 +10,7 @@ pub struct PutReplicationConfigurationOutput {
 }
 impl PutReplicationConfigurationOutput {
     /// <p>The contents of the replication configuration for the registry.</p>
-    pub fn replication_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReplicationConfiguration> {
+    pub fn replication_configuration(&self) -> ::std::option::Option<&crate::types::ReplicationConfiguration> {
         self.replication_configuration.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for PutReplicationConfigurationOutput {
 }
 impl PutReplicationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutReplicationConfigurationOutput`](crate::operation::put_replication_configuration::PutReplicationConfigurationOutput).
-    pub fn builder() -> crate::operation::put_replication_configuration::builders::PutReplicationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::put_replication_configuration::builders::PutReplicationConfigurationOutputBuilder {
         crate::operation::put_replication_configuration::builders::PutReplicationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutReplicationConfigurationOutput`](crate::operation::put_replication_configuration::PutReplicationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutReplicationConfigurationOutputBuilder {
-    pub(crate) replication_configuration:
-        ::std::option::Option<crate::types::ReplicationConfiguration>,
+    pub(crate) replication_configuration: ::std::option::Option<crate::types::ReplicationConfiguration>,
     _request_id: Option<String>,
 }
 impl PutReplicationConfigurationOutputBuilder {
     /// <p>The contents of the replication configuration for the registry.</p>
-    pub fn replication_configuration(
-        mut self,
-        input: crate::types::ReplicationConfiguration,
-    ) -> Self {
+    pub fn replication_configuration(mut self, input: crate::types::ReplicationConfiguration) -> Self {
         self.replication_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The contents of the replication configuration for the registry.</p>
-    pub fn set_replication_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfiguration>,
-    ) -> Self {
+    pub fn set_replication_configuration(mut self, input: ::std::option::Option<crate::types::ReplicationConfiguration>) -> Self {
         self.replication_configuration = input;
         self
     }
     /// <p>The contents of the replication configuration for the registry.</p>
-    pub fn get_replication_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfiguration> {
+    pub fn get_replication_configuration(&self) -> &::std::option::Option<crate::types::ReplicationConfiguration> {
         &self.replication_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,9 +58,7 @@ impl PutReplicationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutReplicationConfigurationOutput`](crate::operation::put_replication_configuration::PutReplicationConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_replication_configuration::PutReplicationConfigurationOutput {
+    pub fn build(self) -> crate::operation::put_replication_configuration::PutReplicationConfigurationOutput {
         crate::operation::put_replication_configuration::PutReplicationConfigurationOutput {
             replication_configuration: self.replication_configuration,
             _request_id: self._request_id,

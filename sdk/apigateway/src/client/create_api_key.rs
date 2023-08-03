@@ -23,11 +23,7 @@ impl super::Client {
     ///   - [`stage_keys(Option<Vec<String>>)`](crate::operation::create_api_key::CreateApiKeyOutput::stage_keys): <p>A list of Stage resources that are associated with the ApiKey resource.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_api_key::CreateApiKeyOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     /// - On failure, responds with [`SdkError<CreateApiKeyError>`](crate::operation::create_api_key::CreateApiKeyError)
-    pub fn create_api_key(
-        &self,
-    ) -> crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder {
-        crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_api_key(&self) -> crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder {
+        crate::operation::create_api_key::builders::CreateApiKeyFluentBuilder::new(self.handle.clone())
     }
 }

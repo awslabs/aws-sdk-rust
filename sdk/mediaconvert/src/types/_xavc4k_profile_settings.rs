@@ -12,8 +12,7 @@ pub struct Xavc4kProfileSettings {
     pub codec_profile: ::std::option::Option<crate::types::Xavc4kProfileCodecProfile>,
     /// The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set Adaptive quantization to a value other than Off or Auto. Use Adaptive quantization to adjust the degree of smoothing that Flicker adaptive quantization provides.
     #[doc(hidden)]
-    pub flicker_adaptive_quantization:
-        ::std::option::Option<crate::types::XavcFlickerAdaptiveQuantization>,
+    pub flicker_adaptive_quantization: ::std::option::Option<crate::types::XavcFlickerAdaptiveQuantization>,
     /// Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow to allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder from using B-frames as reference frames.
     #[doc(hidden)]
     pub gop_b_reference: ::std::option::Option<crate::types::XavcGopBReference>,
@@ -40,9 +39,7 @@ impl Xavc4kProfileSettings {
         self.codec_profile.as_ref()
     }
     /// The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set Adaptive quantization to a value other than Off or Auto. Use Adaptive quantization to adjust the degree of smoothing that Flicker adaptive quantization provides.
-    pub fn flicker_adaptive_quantization(
-        &self,
-    ) -> ::std::option::Option<&crate::types::XavcFlickerAdaptiveQuantization> {
+    pub fn flicker_adaptive_quantization(&self) -> ::std::option::Option<&crate::types::XavcFlickerAdaptiveQuantization> {
         self.flicker_adaptive_quantization.as_ref()
     }
     /// Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow to allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder from using B-frames as reference frames.
@@ -58,9 +55,7 @@ impl Xavc4kProfileSettings {
         self.hrd_buffer_size
     }
     /// Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
-    pub fn quality_tuning_level(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Xavc4kProfileQualityTuningLevel> {
+    pub fn quality_tuning_level(&self) -> ::std::option::Option<&crate::types::Xavc4kProfileQualityTuningLevel> {
         self.quality_tuning_level.as_ref()
     }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
@@ -77,19 +72,15 @@ impl Xavc4kProfileSettings {
 
 /// A builder for [`Xavc4kProfileSettings`](crate::types::Xavc4kProfileSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Xavc4kProfileSettingsBuilder {
     pub(crate) bitrate_class: ::std::option::Option<crate::types::Xavc4kProfileBitrateClass>,
     pub(crate) codec_profile: ::std::option::Option<crate::types::Xavc4kProfileCodecProfile>,
-    pub(crate) flicker_adaptive_quantization:
-        ::std::option::Option<crate::types::XavcFlickerAdaptiveQuantization>,
+    pub(crate) flicker_adaptive_quantization: ::std::option::Option<crate::types::XavcFlickerAdaptiveQuantization>,
     pub(crate) gop_b_reference: ::std::option::Option<crate::types::XavcGopBReference>,
     pub(crate) gop_closed_cadence: ::std::option::Option<i32>,
     pub(crate) hrd_buffer_size: ::std::option::Option<i32>,
-    pub(crate) quality_tuning_level:
-        ::std::option::Option<crate::types::Xavc4kProfileQualityTuningLevel>,
+    pub(crate) quality_tuning_level: ::std::option::Option<crate::types::Xavc4kProfileQualityTuningLevel>,
     pub(crate) slices: ::std::option::Option<i32>,
 }
 impl Xavc4kProfileSettingsBuilder {
@@ -99,17 +90,12 @@ impl Xavc4kProfileSettingsBuilder {
         self
     }
     /// Specify the XAVC 4k (Long GOP) Bitrate Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
-    pub fn set_bitrate_class(
-        mut self,
-        input: ::std::option::Option<crate::types::Xavc4kProfileBitrateClass>,
-    ) -> Self {
+    pub fn set_bitrate_class(mut self, input: ::std::option::Option<crate::types::Xavc4kProfileBitrateClass>) -> Self {
         self.bitrate_class = input;
         self
     }
     /// Specify the XAVC 4k (Long GOP) Bitrate Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
-    pub fn get_bitrate_class(
-        &self,
-    ) -> &::std::option::Option<crate::types::Xavc4kProfileBitrateClass> {
+    pub fn get_bitrate_class(&self) -> &::std::option::Option<crate::types::Xavc4kProfileBitrateClass> {
         &self.bitrate_class
     }
     /// Specify the codec profile for this output. Choose High, 8-bit, 4:2:0 (HIGH) or High, 10-bit, 4:2:2 (HIGH_422). These profiles are specified in ITU-T H.264.
@@ -118,39 +104,26 @@ impl Xavc4kProfileSettingsBuilder {
         self
     }
     /// Specify the codec profile for this output. Choose High, 8-bit, 4:2:0 (HIGH) or High, 10-bit, 4:2:2 (HIGH_422). These profiles are specified in ITU-T H.264.
-    pub fn set_codec_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::Xavc4kProfileCodecProfile>,
-    ) -> Self {
+    pub fn set_codec_profile(mut self, input: ::std::option::Option<crate::types::Xavc4kProfileCodecProfile>) -> Self {
         self.codec_profile = input;
         self
     }
     /// Specify the codec profile for this output. Choose High, 8-bit, 4:2:0 (HIGH) or High, 10-bit, 4:2:2 (HIGH_422). These profiles are specified in ITU-T H.264.
-    pub fn get_codec_profile(
-        &self,
-    ) -> &::std::option::Option<crate::types::Xavc4kProfileCodecProfile> {
+    pub fn get_codec_profile(&self) -> &::std::option::Option<crate::types::Xavc4kProfileCodecProfile> {
         &self.codec_profile
     }
     /// The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set Adaptive quantization to a value other than Off or Auto. Use Adaptive quantization to adjust the degree of smoothing that Flicker adaptive quantization provides.
-    pub fn flicker_adaptive_quantization(
-        mut self,
-        input: crate::types::XavcFlickerAdaptiveQuantization,
-    ) -> Self {
+    pub fn flicker_adaptive_quantization(mut self, input: crate::types::XavcFlickerAdaptiveQuantization) -> Self {
         self.flicker_adaptive_quantization = ::std::option::Option::Some(input);
         self
     }
     /// The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set Adaptive quantization to a value other than Off or Auto. Use Adaptive quantization to adjust the degree of smoothing that Flicker adaptive quantization provides.
-    pub fn set_flicker_adaptive_quantization(
-        mut self,
-        input: ::std::option::Option<crate::types::XavcFlickerAdaptiveQuantization>,
-    ) -> Self {
+    pub fn set_flicker_adaptive_quantization(mut self, input: ::std::option::Option<crate::types::XavcFlickerAdaptiveQuantization>) -> Self {
         self.flicker_adaptive_quantization = input;
         self
     }
     /// The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set Adaptive quantization to a value other than Off or Auto. Use Adaptive quantization to adjust the degree of smoothing that Flicker adaptive quantization provides.
-    pub fn get_flicker_adaptive_quantization(
-        &self,
-    ) -> &::std::option::Option<crate::types::XavcFlickerAdaptiveQuantization> {
+    pub fn get_flicker_adaptive_quantization(&self) -> &::std::option::Option<crate::types::XavcFlickerAdaptiveQuantization> {
         &self.flicker_adaptive_quantization
     }
     /// Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow to allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder from using B-frames as reference frames.
@@ -159,10 +132,7 @@ impl Xavc4kProfileSettingsBuilder {
         self
     }
     /// Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow to allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder from using B-frames as reference frames.
-    pub fn set_gop_b_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::XavcGopBReference>,
-    ) -> Self {
+    pub fn set_gop_b_reference(mut self, input: ::std::option::Option<crate::types::XavcGopBReference>) -> Self {
         self.gop_b_reference = input;
         self
     }
@@ -199,25 +169,17 @@ impl Xavc4kProfileSettingsBuilder {
         &self.hrd_buffer_size
     }
     /// Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
-    pub fn quality_tuning_level(
-        mut self,
-        input: crate::types::Xavc4kProfileQualityTuningLevel,
-    ) -> Self {
+    pub fn quality_tuning_level(mut self, input: crate::types::Xavc4kProfileQualityTuningLevel) -> Self {
         self.quality_tuning_level = ::std::option::Option::Some(input);
         self
     }
     /// Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
-    pub fn set_quality_tuning_level(
-        mut self,
-        input: ::std::option::Option<crate::types::Xavc4kProfileQualityTuningLevel>,
-    ) -> Self {
+    pub fn set_quality_tuning_level(mut self, input: ::std::option::Option<crate::types::Xavc4kProfileQualityTuningLevel>) -> Self {
         self.quality_tuning_level = input;
         self
     }
     /// Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
-    pub fn get_quality_tuning_level(
-        &self,
-    ) -> &::std::option::Option<crate::types::Xavc4kProfileQualityTuningLevel> {
+    pub fn get_quality_tuning_level(&self) -> &::std::option::Option<crate::types::Xavc4kProfileQualityTuningLevel> {
         &self.quality_tuning_level
     }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.

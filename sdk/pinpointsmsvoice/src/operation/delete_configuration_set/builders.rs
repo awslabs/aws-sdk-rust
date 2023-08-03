@@ -37,10 +37,7 @@ impl DeleteConfigurationSetFluentBuilder {
         }
     }
     /// Access the DeleteConfigurationSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_configuration_set::builders::DeleteConfigurationSetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_configuration_set::builders::DeleteConfigurationSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteConfigurationSetFluentBuilder {
             crate::operation::delete_configuration_set::DeleteConfigurationSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_configuration_set::DeleteConfigurationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_set::DeleteConfigurationSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteConfigurationSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteConfigurationSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_configuration_set::DeleteConfigurationSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_configuration_set::DeleteConfigurationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_set::DeleteConfigurationSetError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteConfigurationSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_configuration_set::DeleteConfigurationSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_configuration_set::DeleteConfigurationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_set::DeleteConfigurationSetError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteConfigurationSetFluentBuilder {
             crate::operation::delete_configuration_set::DeleteConfigurationSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_configuration_set::DeleteConfigurationSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_set::DeleteConfigurationSetError>,
     > {
         self.customize_middleware().await
     }
     /// ConfigurationSetName
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// ConfigurationSetName
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }

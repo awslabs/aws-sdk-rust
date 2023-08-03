@@ -79,9 +79,7 @@ impl SystemInstanceSummary {
 
 /// A builder for [`SystemInstanceSummary`](crate::types::SystemInstanceSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SystemInstanceSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -128,17 +126,12 @@ impl SystemInstanceSummaryBuilder {
         self
     }
     /// <p>The status of the system instance.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SystemInstanceDeploymentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SystemInstanceDeploymentStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the system instance.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::SystemInstanceDeploymentStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SystemInstanceDeploymentStatus> {
         &self.status
     }
     /// <p>The target of the system instance.</p>
@@ -147,10 +140,7 @@ impl SystemInstanceSummaryBuilder {
         self
     }
     /// <p>The target of the system instance.</p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentTarget>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::DeploymentTarget>) -> Self {
         self.target = input;
         self
     }
@@ -159,18 +149,12 @@ impl SystemInstanceSummaryBuilder {
         &self.target
     }
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
-    pub fn greengrass_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn greengrass_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.greengrass_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
-    pub fn set_greengrass_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_greengrass_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.greengrass_group_name = input;
         self
     }
@@ -184,10 +168,7 @@ impl SystemInstanceSummaryBuilder {
         self
     }
     /// <p>The date when the system instance was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -201,10 +182,7 @@ impl SystemInstanceSummaryBuilder {
         self
     }
     /// <p> The date and time when the system instance was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -213,18 +191,12 @@ impl SystemInstanceSummaryBuilder {
         &self.updated_at
     }
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
-    pub fn greengrass_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn greengrass_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.greengrass_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
-    pub fn set_greengrass_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_greengrass_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.greengrass_group_id = input;
         self
     }
@@ -233,18 +205,12 @@ impl SystemInstanceSummaryBuilder {
         &self.greengrass_group_id
     }
     /// <p>The version of the Greengrass group where the system instance is deployed.</p>
-    pub fn greengrass_group_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn greengrass_group_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.greengrass_group_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the Greengrass group where the system instance is deployed.</p>
-    pub fn set_greengrass_group_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_greengrass_group_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.greengrass_group_version_id = input;
         self
     }

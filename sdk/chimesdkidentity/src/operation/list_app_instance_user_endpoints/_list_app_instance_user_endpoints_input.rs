@@ -38,7 +38,7 @@ impl ::std::fmt::Debug for ListAppInstanceUserEndpointsInput {
 }
 impl ListAppInstanceUserEndpointsInput {
     /// Creates a new builder-style object to manufacture [`ListAppInstanceUserEndpointsInput`](crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsInput).
-    pub fn builder() -> crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsInputBuilder{
+    pub fn builder() -> crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsInputBuilder {
         crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsInputBuilder::default()
     }
 }
@@ -53,18 +53,12 @@ pub struct ListAppInstanceUserEndpointsInputBuilder {
 }
 impl ListAppInstanceUserEndpointsInputBuilder {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_user_arn = input;
         self
     }
@@ -107,13 +101,11 @@ impl ListAppInstanceUserEndpointsInputBuilder {
         crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsInput {
-                app_instance_user_arn: self.app_instance_user_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsInput {
+            app_instance_user_arn: self.app_instance_user_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
 impl ::std::fmt::Debug for ListAppInstanceUserEndpointsInputBuilder {

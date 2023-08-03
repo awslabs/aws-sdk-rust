@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetSessionStatusOutput {
 }
 impl GetSessionStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetSessionStatusOutput`](crate::operation::get_session_status::GetSessionStatusOutput).
-    pub fn builder() -> crate::operation::get_session_status::builders::GetSessionStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_session_status::builders::GetSessionStatusOutputBuilder {
         crate::operation::get_session_status::builders::GetSessionStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSessionStatusOutput`](crate::operation::get_session_status::GetSessionStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSessionStatusOutputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::SessionStatus>,

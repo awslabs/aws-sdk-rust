@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`dataset_arns(Vec<String>)`](crate::operation::update_dataset_group::builders::UpdateDatasetGroupFluentBuilder::dataset_arns) / [`set_dataset_arns(Option<Vec<String>>)`](crate::operation::update_dataset_group::builders::UpdateDatasetGroupFluentBuilder::set_dataset_arns): <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
     /// - On success, responds with [`UpdateDatasetGroupOutput`](crate::operation::update_dataset_group::UpdateDatasetGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateDatasetGroupError>`](crate::operation::update_dataset_group::UpdateDatasetGroupError)
-    pub fn update_dataset_group(
-        &self,
-    ) -> crate::operation::update_dataset_group::builders::UpdateDatasetGroupFluentBuilder {
-        crate::operation::update_dataset_group::builders::UpdateDatasetGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_dataset_group(&self) -> crate::operation::update_dataset_group::builders::UpdateDatasetGroupFluentBuilder {
+        crate::operation::update_dataset_group::builders::UpdateDatasetGroupFluentBuilder::new(self.handle.clone())
     }
 }

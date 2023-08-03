@@ -22,9 +22,7 @@ impl DescribeMaintenanceWindowsForTargetInput {
         self.targets.as_deref()
     }
     /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
-    pub fn resource_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MaintenanceWindowResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -38,16 +36,14 @@ impl DescribeMaintenanceWindowsForTargetInput {
 }
 impl DescribeMaintenanceWindowsForTargetInput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowsForTargetInput`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetInput).
-    pub fn builder() -> crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetInputBuilder{
+    pub fn builder() -> crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetInputBuilder {
         crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMaintenanceWindowsForTargetInput`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowsForTargetInputBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     pub(crate) resource_type: ::std::option::Option<crate::types::MaintenanceWindowResourceType>,
@@ -67,10 +63,7 @@ impl DescribeMaintenanceWindowsForTargetInputBuilder {
         self
     }
     /// <p>The managed node ID or key-value pair to retrieve information about.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
@@ -84,17 +77,12 @@ impl DescribeMaintenanceWindowsForTargetInputBuilder {
         self
     }
     /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowResourceType>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceWindowResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::MaintenanceWindowResourceType> {
         &self.resource_type
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -126,18 +114,19 @@ impl DescribeMaintenanceWindowsForTargetInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowsForTargetInput`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetInput {
-                targets: self.targets
-                ,
-                resource_type: self.resource_type
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                targets: self.targets,
+                resource_type: self.resource_type,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

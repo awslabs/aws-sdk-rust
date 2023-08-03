@@ -5,9 +5,7 @@
 pub struct StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId
-    for StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput
-{
+impl ::aws_http::request_id::RequestId for StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,9 +19,7 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {
 
 /// A builder for [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartBulkDisassociateWirelessDeviceFromMulticastGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,7 +34,10 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput).
-    pub fn build(self) -> crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput
+    {
         crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {
             _request_id: self._request_id,
         }

@@ -38,10 +38,7 @@ impl UpdateSignalingChannelFluentBuilder {
         }
     }
     /// Access the UpdateSignalingChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_signaling_channel::builders::UpdateSignalingChannelInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_signaling_channel::builders::UpdateSignalingChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl UpdateSignalingChannelFluentBuilder {
             crate::operation::update_signaling_channel::UpdateSignalingChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_signaling_channel::UpdateSignalingChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_signaling_channel::UpdateSignalingChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl UpdateSignalingChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl UpdateSignalingChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_signaling_channel::UpdateSignalingChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_signaling_channel::UpdateSignalingChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_signaling_channel::UpdateSignalingChannelError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl UpdateSignalingChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_signaling_channel::UpdateSignalingChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_signaling_channel::UpdateSignalingChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_signaling_channel::UpdateSignalingChannelError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl UpdateSignalingChannelFluentBuilder {
             crate::operation::update_signaling_channel::UpdateSignalingChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_signaling_channel::UpdateSignalingChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_signaling_channel::UpdateSignalingChannelError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +125,12 @@ impl UpdateSignalingChannelFluentBuilder {
         self.inner.get_channel_arn()
     }
     /// <p>The current version of the signaling channel that you want to update.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_version(input.into());
         self
     }
     /// <p>The current version of the signaling channel that you want to update.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
     }
@@ -159,25 +139,17 @@ impl UpdateSignalingChannelFluentBuilder {
         self.inner.get_current_version()
     }
     /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
-    pub fn single_master_configuration(
-        mut self,
-        input: crate::types::SingleMasterConfiguration,
-    ) -> Self {
+    pub fn single_master_configuration(mut self, input: crate::types::SingleMasterConfiguration) -> Self {
         self.inner = self.inner.single_master_configuration(input);
         self
     }
     /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
-    pub fn set_single_master_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SingleMasterConfiguration>,
-    ) -> Self {
+    pub fn set_single_master_configuration(mut self, input: ::std::option::Option<crate::types::SingleMasterConfiguration>) -> Self {
         self.inner = self.inner.set_single_master_configuration(input);
         self
     }
     /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
-    pub fn get_single_master_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
+    pub fn get_single_master_configuration(&self) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
         self.inner.get_single_master_configuration()
     }
 }

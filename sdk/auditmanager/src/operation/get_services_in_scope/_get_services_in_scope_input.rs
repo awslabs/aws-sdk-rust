@@ -5,28 +5,21 @@
 pub struct GetServicesInScopeInput {}
 impl GetServicesInScopeInput {
     /// Creates a new builder-style object to manufacture [`GetServicesInScopeInput`](crate::operation::get_services_in_scope::GetServicesInScopeInput).
-    pub fn builder(
-    ) -> crate::operation::get_services_in_scope::builders::GetServicesInScopeInputBuilder {
+    pub fn builder() -> crate::operation::get_services_in_scope::builders::GetServicesInScopeInputBuilder {
         crate::operation::get_services_in_scope::builders::GetServicesInScopeInputBuilder::default()
     }
 }
 
 /// A builder for [`GetServicesInScopeInput`](crate::operation::get_services_in_scope::GetServicesInScopeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServicesInScopeInputBuilder {}
 impl GetServicesInScopeInputBuilder {
     /// Consumes the builder and constructs a [`GetServicesInScopeInput`](crate::operation::get_services_in_scope::GetServicesInScopeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_services_in_scope::GetServicesInScopeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_services_in_scope::GetServicesInScopeInput {},
-        )
+    ) -> ::std::result::Result<crate::operation::get_services_in_scope::GetServicesInScopeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_services_in_scope::GetServicesInScopeInput {})
     }
 }

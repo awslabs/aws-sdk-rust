@@ -74,18 +74,14 @@ impl DescribeLaunchTemplatesInput {
 }
 impl DescribeLaunchTemplatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeLaunchTemplatesInput`](crate::operation::describe_launch_templates::DescribeLaunchTemplatesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_launch_templates::builders::DescribeLaunchTemplatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_launch_templates::builders::DescribeLaunchTemplatesInputBuilder {
         crate::operation::describe_launch_templates::builders::DescribeLaunchTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLaunchTemplatesInput`](crate::operation::describe_launch_templates::DescribeLaunchTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLaunchTemplatesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) launch_template_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -114,27 +110,19 @@ impl DescribeLaunchTemplatesInputBuilder {
     /// To override the contents of this collection use [`set_launch_template_ids`](Self::set_launch_template_ids).
     ///
     /// <p>One or more launch template IDs.</p>
-    pub fn launch_template_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.launch_template_ids.unwrap_or_default();
         v.push(input.into());
         self.launch_template_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more launch template IDs.</p>
-    pub fn set_launch_template_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_launch_template_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.launch_template_ids = input;
         self
     }
     /// <p>One or more launch template IDs.</p>
-    pub fn get_launch_template_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_launch_template_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.launch_template_ids
     }
     /// Appends an item to `launch_template_names`.
@@ -142,27 +130,19 @@ impl DescribeLaunchTemplatesInputBuilder {
     /// To override the contents of this collection use [`set_launch_template_names`](Self::set_launch_template_names).
     ///
     /// <p>One or more launch template names.</p>
-    pub fn launch_template_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.launch_template_names.unwrap_or_default();
         v.push(input.into());
         self.launch_template_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more launch template names.</p>
-    pub fn set_launch_template_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_launch_template_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.launch_template_names = input;
         self
     }
     /// <p>One or more launch template names.</p>
-    pub fn get_launch_template_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_launch_template_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.launch_template_names
     }
     /// Appends an item to `filters`.
@@ -201,10 +181,7 @@ impl DescribeLaunchTemplatesInputBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -259,15 +236,13 @@ impl DescribeLaunchTemplatesInputBuilder {
         crate::operation::describe_launch_templates::DescribeLaunchTemplatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_launch_templates::DescribeLaunchTemplatesInput {
-                dry_run: self.dry_run,
-                launch_template_ids: self.launch_template_ids,
-                launch_template_names: self.launch_template_names,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_launch_templates::DescribeLaunchTemplatesInput {
+            dry_run: self.dry_run,
+            launch_template_ids: self.launch_template_ids,
+            launch_template_names: self.launch_template_names,
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

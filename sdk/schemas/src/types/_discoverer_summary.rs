@@ -20,9 +20,7 @@ pub struct DiscovererSummary {
     pub cross_account: ::std::option::Option<bool>,
     /// <p>Tags associated with the resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DiscovererSummary {
     /// <p>The ARN of the discoverer.</p>
@@ -46,11 +44,7 @@ impl DiscovererSummary {
         self.cross_account
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -63,33 +57,23 @@ impl DiscovererSummary {
 
 /// A builder for [`DiscovererSummary`](crate::types::DiscovererSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiscovererSummaryBuilder {
     pub(crate) discoverer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) discoverer_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::DiscovererState>,
     pub(crate) cross_account: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DiscovererSummaryBuilder {
     /// <p>The ARN of the discoverer.</p>
-    pub fn discoverer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discoverer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discoverer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the discoverer.</p>
-    pub fn set_discoverer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discoverer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.discoverer_arn = input;
         self
     }
@@ -98,18 +82,12 @@ impl DiscovererSummaryBuilder {
         &self.discoverer_arn
     }
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discoverer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discoverer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the discoverer.</p>
-    pub fn set_discoverer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discoverer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.discoverer_id = input;
         self
     }
@@ -137,10 +115,7 @@ impl DiscovererSummaryBuilder {
         self
     }
     /// <p>The state of the discoverer.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscovererState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::DiscovererState>) -> Self {
         self.state = input;
         self
     }
@@ -167,32 +142,19 @@ impl DiscovererSummaryBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags associated with the resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DiscovererSummary`](crate::types::DiscovererSummary).

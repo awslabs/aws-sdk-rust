@@ -27,8 +27,7 @@ impl DescribeProjectVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeProjectVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_project_versions::builders::DescribeProjectVersionsInputBuilder,
+    inner: crate::operation::describe_project_versions::builders::DescribeProjectVersionsInputBuilder,
 }
 impl DescribeProjectVersionsFluentBuilder {
     /// Creates a new `DescribeProjectVersions`.
@@ -39,10 +38,7 @@ impl DescribeProjectVersionsFluentBuilder {
         }
     }
     /// Access the DescribeProjectVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_project_versions::builders::DescribeProjectVersionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_project_versions::builders::DescribeProjectVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DescribeProjectVersionsFluentBuilder {
             crate::operation::describe_project_versions::DescribeProjectVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_project_versions::DescribeProjectVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_project_versions::DescribeProjectVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DescribeProjectVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DescribeProjectVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_project_versions::DescribeProjectVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_project_versions::DescribeProjectVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_project_versions::DescribeProjectVersionsError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DescribeProjectVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_project_versions::DescribeProjectVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_project_versions::DescribeProjectVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_project_versions::DescribeProjectVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -119,19 +106,14 @@ impl DescribeProjectVersionsFluentBuilder {
             crate::operation::describe_project_versions::DescribeProjectVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_project_versions::DescribeProjectVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_project_versions::DescribeProjectVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_project_versions::paginator::DescribeProjectVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_project_versions::paginator::DescribeProjectVersionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_project_versions::paginator::DescribeProjectVersionsPaginator {
         crate::operation::describe_project_versions::paginator::DescribeProjectVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the project that contains the models you want to describe.</p>
@@ -153,25 +135,17 @@ impl DescribeProjectVersionsFluentBuilder {
     /// To override the contents of this collection use [`set_version_names`](Self::set_version_names).
     ///
     /// <p>A list of model version names that you want to describe. You can add up to 10 model version names to the list. If you don't specify a value, all model descriptions are returned. A version name is part of a model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN. <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
-    pub fn version_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_names(input.into());
         self
     }
     /// <p>A list of model version names that you want to describe. You can add up to 10 model version names to the list. If you don't specify a value, all model descriptions are returned. A version name is part of a model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN. <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
-    pub fn set_version_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_version_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_version_names(input);
         self
     }
     /// <p>A list of model version names that you want to describe. You can add up to 10 model version names to the list. If you don't specify a value, all model descriptions are returned. A version name is part of a model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN. <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
-    pub fn get_version_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_version_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_version_names()
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>

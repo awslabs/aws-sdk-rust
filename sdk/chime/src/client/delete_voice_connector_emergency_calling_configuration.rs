@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`voice_connector_id(impl ::std::convert::Into<String>)`](crate::operation::delete_voice_connector_emergency_calling_configuration::builders::DeleteVoiceConnectorEmergencyCallingConfigurationFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::delete_voice_connector_emergency_calling_configuration::builders::DeleteVoiceConnectorEmergencyCallingConfigurationFluentBuilder::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
     /// - On success, responds with [`DeleteVoiceConnectorEmergencyCallingConfigurationOutput`](crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteVoiceConnectorEmergencyCallingConfigurationError>`](crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationError)
-    #[deprecated(
-        note = "Replaced by DeleteVoiceConnectorEmergencyCallingConfiguration in the Amazon Chime SDK Voice Namespace"
-    )]
+    #[deprecated(note = "Replaced by DeleteVoiceConnectorEmergencyCallingConfiguration in the Amazon Chime SDK Voice Namespace")]
     pub fn delete_voice_connector_emergency_calling_configuration(&self) -> crate::operation::delete_voice_connector_emergency_calling_configuration::builders::DeleteVoiceConnectorEmergencyCallingConfigurationFluentBuilder{
         crate::operation::delete_voice_connector_emergency_calling_configuration::builders::DeleteVoiceConnectorEmergencyCallingConfigurationFluentBuilder::new(self.handle.clone())
     }

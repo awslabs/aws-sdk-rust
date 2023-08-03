@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::start_signing_job::StartSigningJobOutput::job_id): <p>The ID of your signing job.</p>
     ///   - [`job_owner(Option<String>)`](crate::operation::start_signing_job::StartSigningJobOutput::job_owner): <p>The AWS account ID of the signing job owner.</p>
     /// - On failure, responds with [`SdkError<StartSigningJobError>`](crate::operation::start_signing_job::StartSigningJobError)
-    pub fn start_signing_job(
-        &self,
-    ) -> crate::operation::start_signing_job::builders::StartSigningJobFluentBuilder {
-        crate::operation::start_signing_job::builders::StartSigningJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_signing_job(&self) -> crate::operation::start_signing_job::builders::StartSigningJobFluentBuilder {
+        crate::operation::start_signing_job::builders::StartSigningJobFluentBuilder::new(self.handle.clone())
     }
 }

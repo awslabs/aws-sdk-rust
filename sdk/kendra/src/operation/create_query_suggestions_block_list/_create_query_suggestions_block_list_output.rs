@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateQuerySuggestionsBlockListOutput
 }
 impl CreateQuerySuggestionsBlockListOutput {
     /// Creates a new builder-style object to manufacture [`CreateQuerySuggestionsBlockListOutput`](crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListOutput).
-    pub fn builder() -> crate::operation::create_query_suggestions_block_list::builders::CreateQuerySuggestionsBlockListOutputBuilder{
+    pub fn builder() -> crate::operation::create_query_suggestions_block_list::builders::CreateQuerySuggestionsBlockListOutputBuilder {
         crate::operation::create_query_suggestions_block_list::builders::CreateQuerySuggestionsBlockListOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateQuerySuggestionsBlockListOutput`](crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateQuerySuggestionsBlockListOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,13 +58,9 @@ impl CreateQuerySuggestionsBlockListOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateQuerySuggestionsBlockListOutput`](crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListOutput
-    {
+    pub fn build(self) -> crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListOutput {
         crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListOutput {
-            id: self.id
-            ,
+            id: self.id,
             _request_id: self._request_id,
         }
     }

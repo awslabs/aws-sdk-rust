@@ -40,16 +40,14 @@ impl DescribeEngineDefaultParametersInput {
 }
 impl DescribeEngineDefaultParametersInput {
     /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultParametersInput`](crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersInput).
-    pub fn builder() -> crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersInputBuilder{
+    pub fn builder() -> crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersInputBuilder {
         crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEngineDefaultParametersInput`](crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEngineDefaultParametersInputBuilder {
     pub(crate) db_parameter_group_family: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -58,18 +56,12 @@ pub struct DescribeEngineDefaultParametersInputBuilder {
 }
 impl DescribeEngineDefaultParametersInputBuilder {
     /// <p>The name of the DB parameter group family.</p>
-    pub fn db_parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB parameter group family.</p>
-    pub fn set_db_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_family = input;
         self
     }
@@ -89,10 +81,7 @@ impl DescribeEngineDefaultParametersInputBuilder {
         self
     }
     /// <p>Not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -143,15 +132,11 @@ impl DescribeEngineDefaultParametersInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersInput {
-                db_parameter_group_family: self.db_parameter_group_family
-                ,
-                filters: self.filters
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                db_parameter_group_family: self.db_parameter_group_family,
+                filters: self.filters,
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }

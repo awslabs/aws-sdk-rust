@@ -22,34 +22,26 @@ impl RestoreCoreNetworkPolicyVersionInput {
 }
 impl RestoreCoreNetworkPolicyVersionInput {
     /// Creates a new builder-style object to manufacture [`RestoreCoreNetworkPolicyVersionInput`](crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersionInput).
-    pub fn builder() -> crate::operation::restore_core_network_policy_version::builders::RestoreCoreNetworkPolicyVersionInputBuilder{
+    pub fn builder() -> crate::operation::restore_core_network_policy_version::builders::RestoreCoreNetworkPolicyVersionInputBuilder {
         crate::operation::restore_core_network_policy_version::builders::RestoreCoreNetworkPolicyVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreCoreNetworkPolicyVersionInput`](crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreCoreNetworkPolicyVersionInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_version_id: ::std::option::Option<i32>,
 }
 impl RestoreCoreNetworkPolicyVersionInputBuilder {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
@@ -80,11 +72,9 @@ impl RestoreCoreNetworkPolicyVersionInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersionInput {
-                core_network_id: self.core_network_id
-                ,
-                policy_version_id: self.policy_version_id
-                ,
-            }
+                core_network_id: self.core_network_id,
+                policy_version_id: self.policy_version_id,
+            },
         )
     }
 }

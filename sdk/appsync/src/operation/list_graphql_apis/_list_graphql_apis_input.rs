@@ -43,9 +43,7 @@ impl ListGraphqlApisInput {
 
 /// A builder for [`ListGraphqlApisInput`](crate::operation::list_graphql_apis::ListGraphqlApisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGraphqlApisInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -87,10 +85,7 @@ impl ListGraphqlApisInputBuilder {
         self
     }
     /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
-    pub fn set_api_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GraphQlApiType>,
-    ) -> Self {
+    pub fn set_api_type(mut self, input: ::std::option::Option<crate::types::GraphQlApiType>) -> Self {
         self.api_type = input;
         self
     }
@@ -115,10 +110,7 @@ impl ListGraphqlApisInputBuilder {
     /// Consumes the builder and constructs a [`ListGraphqlApisInput`](crate::operation::list_graphql_apis::ListGraphqlApisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_graphql_apis::ListGraphqlApisInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_graphql_apis::ListGraphqlApisInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_graphql_apis::ListGraphqlApisInput {
             next_token: self.next_token,
             max_results: self.max_results,

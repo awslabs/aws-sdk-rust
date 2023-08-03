@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDbSecurityGroupOutput {
 }
 impl DeleteDbSecurityGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbSecurityGroupOutput`](crate::operation::delete_db_security_group::DeleteDbSecurityGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_db_security_group::builders::DeleteDbSecurityGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_db_security_group::builders::DeleteDbSecurityGroupOutputBuilder {
         crate::operation::delete_db_security_group::builders::DeleteDbSecurityGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDbSecurityGroupOutput`](crate::operation::delete_db_security_group::DeleteDbSecurityGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbSecurityGroupOutputBuilder {
     _request_id: Option<String>,
 }

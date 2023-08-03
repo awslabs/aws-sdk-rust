@@ -26,7 +26,7 @@ impl DescribeBudgetActionHistoriesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBudgetActionHistoriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesInputBuilder,
+    inner: crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesInputBuilder,
 }
 impl DescribeBudgetActionHistoriesFluentBuilder {
     /// Creates a new `DescribeBudgetActionHistories`.
@@ -37,7 +37,7 @@ impl DescribeBudgetActionHistoriesFluentBuilder {
         }
     }
     /// Access the DescribeBudgetActionHistories as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeBudgetActionHistoriesFluentBuilder {
             crate::operation::describe_budget_action_histories::DescribeBudgetActionHistories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeBudgetActionHistoriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeBudgetActionHistoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeBudgetActionHistoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeBudgetActionHistoriesFluentBuilder {
             crate::operation::describe_budget_action_histories::DescribeBudgetActionHistories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_budget_action_histories::paginator::DescribeBudgetActionHistoriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_budget_action_histories::paginator::DescribeBudgetActionHistoriesPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_budget_action_histories::paginator::DescribeBudgetActionHistoriesPaginator {
         crate::operation::describe_budget_action_histories::paginator::DescribeBudgetActionHistoriesPaginator::new(self.handle, self.inner)
     }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
@@ -174,10 +163,7 @@ impl DescribeBudgetActionHistoriesFluentBuilder {
         self
     }
     /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::TimePeriod>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::TimePeriod>) -> Self {
         self.inner = self.inner.set_time_period(input);
         self
     }

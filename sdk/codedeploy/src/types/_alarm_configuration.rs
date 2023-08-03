@@ -45,9 +45,7 @@ impl AlarmConfiguration {
 
 /// A builder for [`AlarmConfiguration`](crate::types::AlarmConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlarmConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) ignore_poll_alarm_failure: ::std::option::Option<bool>,
@@ -106,10 +104,7 @@ impl AlarmConfigurationBuilder {
         self
     }
     /// <p>A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.</p>
-    pub fn set_alarms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
-    ) -> Self {
+    pub fn set_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>) -> Self {
         self.alarms = input;
         self
     }

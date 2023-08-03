@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeDbClusterParametersOutput {
 }
 impl DescribeDbClusterParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterParametersOutput`](crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersOutput).
-    pub fn builder() -> crate::operation::describe_db_cluster_parameters::builders::DescribeDbClusterParametersOutputBuilder{
+    pub fn builder() -> crate::operation::describe_db_cluster_parameters::builders::DescribeDbClusterParametersOutputBuilder {
         crate::operation::describe_db_cluster_parameters::builders::DescribeDbClusterParametersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbClusterParametersOutput`](crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbClusterParametersOutputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeDbClusterParametersOutputBuilder {
         self
     }
     /// <p>Provides a list of parameters for the DB cluster parameter group.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>Provides a list of parameters for the DB cluster parameter group.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.parameters
     }
     /// <p> An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
@@ -93,9 +86,7 @@ impl DescribeDbClusterParametersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDbClusterParametersOutput`](crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersOutput {
+    pub fn build(self) -> crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersOutput {
         crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersOutput {
             parameters: self.parameters,
             marker: self.marker,

@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`sync_type(impl ::std::convert::Into<String>)`](crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncFluentBuilder::sync_type) / [`set_sync_type(Option<String>)`](crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncFluentBuilder::set_sync_type): <p>Specify the type of resource data sync to delete.</p>
     /// - On success, responds with [`DeleteResourceDataSyncOutput`](crate::operation::delete_resource_data_sync::DeleteResourceDataSyncOutput)
     /// - On failure, responds with [`SdkError<DeleteResourceDataSyncError>`](crate::operation::delete_resource_data_sync::DeleteResourceDataSyncError)
-    pub fn delete_resource_data_sync(
-        &self,
-    ) -> crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncFluentBuilder
-    {
+    pub fn delete_resource_data_sync(&self) -> crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncFluentBuilder {
         crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncFluentBuilder::new(self.handle.clone())
     }
 }

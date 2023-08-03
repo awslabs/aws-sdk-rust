@@ -126,10 +126,7 @@ impl ::std::fmt::Debug for GetMaintenanceWindowOutput {
         formatter.field("next_execution_time", &self.next_execution_time);
         formatter.field("duration", &self.duration);
         formatter.field("cutoff", &self.cutoff);
-        formatter.field(
-            "allow_unassociated_targets",
-            &self.allow_unassociated_targets,
-        );
+        formatter.field("allow_unassociated_targets", &self.allow_unassociated_targets);
         formatter.field("enabled", &self.enabled);
         formatter.field("created_date", &self.created_date);
         formatter.field("modified_date", &self.modified_date);
@@ -144,8 +141,7 @@ impl ::aws_http::request_id::RequestId for GetMaintenanceWindowOutput {
 }
 impl GetMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowOutput`](crate::operation::get_maintenance_window::GetMaintenanceWindowOutput).
-    pub fn builder(
-    ) -> crate::operation::get_maintenance_window::builders::GetMaintenanceWindowOutputBuilder {
+    pub fn builder() -> crate::operation::get_maintenance_window::builders::GetMaintenanceWindowOutputBuilder {
         crate::operation::get_maintenance_window::builders::GetMaintenanceWindowOutputBuilder::default()
     }
 }
@@ -257,18 +253,12 @@ impl GetMaintenanceWindowOutputBuilder {
         &self.schedule
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn schedule_timezone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn set_schedule_timezone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_timezone = input;
         self
     }
@@ -291,18 +281,12 @@ impl GetMaintenanceWindowOutputBuilder {
         &self.schedule_offset
     }
     /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
-    pub fn next_execution_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_execution_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_execution_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
-    pub fn set_next_execution_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_execution_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_execution_time = input;
         self
     }
@@ -372,10 +356,7 @@ impl GetMaintenanceWindowOutputBuilder {
         self
     }
     /// <p>The date the maintenance window was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -389,10 +370,7 @@ impl GetMaintenanceWindowOutputBuilder {
         self
     }
     /// <p>The date the maintenance window was last modified.</p>
-    pub fn set_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_date = input;
         self
     }
@@ -445,10 +423,7 @@ impl ::std::fmt::Debug for GetMaintenanceWindowOutputBuilder {
         formatter.field("next_execution_time", &self.next_execution_time);
         formatter.field("duration", &self.duration);
         formatter.field("cutoff", &self.cutoff);
-        formatter.field(
-            "allow_unassociated_targets",
-            &self.allow_unassociated_targets,
-        );
+        formatter.field("allow_unassociated_targets", &self.allow_unassociated_targets);
         formatter.field("enabled", &self.enabled);
         formatter.field("created_date", &self.created_date);
         formatter.field("modified_date", &self.modified_date);

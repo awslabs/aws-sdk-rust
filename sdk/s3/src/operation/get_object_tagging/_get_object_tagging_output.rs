@@ -34,17 +34,14 @@ impl ::aws_http::request_id::RequestId for GetObjectTaggingOutput {
 }
 impl GetObjectTaggingOutput {
     /// Creates a new builder-style object to manufacture [`GetObjectTaggingOutput`](crate::operation::get_object_tagging::GetObjectTaggingOutput).
-    pub fn builder() -> crate::operation::get_object_tagging::builders::GetObjectTaggingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_object_tagging::builders::GetObjectTaggingOutputBuilder {
         crate::operation::get_object_tagging::builders::GetObjectTaggingOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetObjectTaggingOutput`](crate::operation::get_object_tagging::GetObjectTaggingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetObjectTaggingOutputBuilder {
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_set: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -78,10 +75,7 @@ impl GetObjectTaggingOutputBuilder {
         self
     }
     /// <p>Contains the tag set.</p>
-    pub fn set_tag_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tag_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tag_set = input;
         self
     }
@@ -94,10 +88,7 @@ impl GetObjectTaggingOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }

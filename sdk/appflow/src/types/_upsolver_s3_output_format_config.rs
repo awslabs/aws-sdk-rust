@@ -37,9 +37,7 @@ impl UpsolverS3OutputFormatConfig {
 
 /// A builder for [`UpsolverS3OutputFormatConfig`](crate::types::UpsolverS3OutputFormatConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpsolverS3OutputFormatConfigBuilder {
     pub(crate) file_type: ::std::option::Option<crate::types::FileType>,
     pub(crate) prefix_config: ::std::option::Option<crate::types::PrefixConfig>,
@@ -66,10 +64,7 @@ impl UpsolverS3OutputFormatConfigBuilder {
         self
     }
     /// <p>Specifies elements that Amazon AppFlow includes in the file and folder names in the flow destination.</p>
-    pub fn set_prefix_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PrefixConfig>,
-    ) -> Self {
+    pub fn set_prefix_config(mut self, input: ::std::option::Option<crate::types::PrefixConfig>) -> Self {
         self.prefix_config = input;
         self
     }
@@ -83,17 +78,12 @@ impl UpsolverS3OutputFormatConfigBuilder {
         self
     }
     /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
-    pub fn set_aggregation_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationConfig>,
-    ) -> Self {
+    pub fn set_aggregation_config(mut self, input: ::std::option::Option<crate::types::AggregationConfig>) -> Self {
         self.aggregation_config = input;
         self
     }
     /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
-    pub fn get_aggregation_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AggregationConfig> {
+    pub fn get_aggregation_config(&self) -> &::std::option::Option<crate::types::AggregationConfig> {
         &self.aggregation_config
     }
     /// Consumes the builder and constructs a [`UpsolverS3OutputFormatConfig`](crate::types::UpsolverS3OutputFormatConfig).

@@ -47,9 +47,7 @@ impl ClassicLinkInstance {
 
 /// A builder for [`ClassicLinkInstance`](crate::types::ClassicLinkInstance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClassicLinkInstanceBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -69,17 +67,12 @@ impl ClassicLinkInstanceBuilder {
         self
     }
     /// <p>The security groups.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
         self.groups = input;
         self
     }
     /// <p>The security groups.</p>
-    pub fn get_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
         &self.groups
     }
     /// <p>The ID of the instance.</p>
@@ -108,10 +101,7 @@ impl ClassicLinkInstanceBuilder {
         self
     }
     /// <p>Any tags assigned to the instance.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

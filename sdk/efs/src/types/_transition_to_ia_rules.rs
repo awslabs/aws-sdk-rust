@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TransitionToIaRules {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for TransitionToIaRules {
             "AFTER_60_DAYS" => TransitionToIaRules::After60Days,
             "AFTER_7_DAYS" => TransitionToIaRules::After7Days,
             "AFTER_90_DAYS" => TransitionToIaRules::After90Days,
-            other => TransitionToIaRules::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => TransitionToIaRules::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_queued_messages::ListQueuedMessagesOutput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     ///   - [`downlink_queue_messages_list(Option<Vec<DownlinkQueueMessage>>)`](crate::operation::list_queued_messages::ListQueuedMessagesOutput::downlink_queue_messages_list): <p>The messages in the downlink queue.</p>
     /// - On failure, responds with [`SdkError<ListQueuedMessagesError>`](crate::operation::list_queued_messages::ListQueuedMessagesError)
-    pub fn list_queued_messages(
-        &self,
-    ) -> crate::operation::list_queued_messages::builders::ListQueuedMessagesFluentBuilder {
-        crate::operation::list_queued_messages::builders::ListQueuedMessagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_queued_messages(&self) -> crate::operation::list_queued_messages::builders::ListQueuedMessagesFluentBuilder {
+        crate::operation::list_queued_messages::builders::ListQueuedMessagesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`CreateUpdatedWorkspaceImageOutput`](crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageOutput) with field(s):
     ///   - [`image_id(Option<String>)`](crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageOutput::image_id): <p>The identifier of the new updated WorkSpace image.</p>
     /// - On failure, responds with [`SdkError<CreateUpdatedWorkspaceImageError>`](crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageError)
-    pub fn create_updated_workspace_image(&self) -> crate::operation::create_updated_workspace_image::builders::CreateUpdatedWorkspaceImageFluentBuilder{
+    pub fn create_updated_workspace_image(
+        &self,
+    ) -> crate::operation::create_updated_workspace_image::builders::CreateUpdatedWorkspaceImageFluentBuilder {
         crate::operation::create_updated_workspace_image::builders::CreateUpdatedWorkspaceImageFluentBuilder::new(self.handle.clone())
     }
 }

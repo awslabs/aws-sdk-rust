@@ -70,17 +70,14 @@ impl CreateContactChannelInput {
 }
 impl CreateContactChannelInput {
     /// Creates a new builder-style object to manufacture [`CreateContactChannelInput`](crate::operation::create_contact_channel::CreateContactChannelInput).
-    pub fn builder(
-    ) -> crate::operation::create_contact_channel::builders::CreateContactChannelInputBuilder {
+    pub fn builder() -> crate::operation::create_contact_channel::builders::CreateContactChannelInputBuilder {
         crate::operation::create_contact_channel::builders::CreateContactChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateContactChannelInput`](crate::operation::create_contact_channel::CreateContactChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateContactChannelInputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -163,10 +160,7 @@ impl CreateContactChannelInputBuilder {
     /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
     /// <li> <p>EMAIL - any standard email format</p> </li>
     /// </ul>
-    pub fn set_delivery_address(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactChannelAddress>,
-    ) -> Self {
+    pub fn set_delivery_address(mut self, input: ::std::option::Option<crate::types::ContactChannelAddress>) -> Self {
         self.delivery_address = input;
         self
     }
@@ -176,9 +170,7 @@ impl CreateContactChannelInputBuilder {
     /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
     /// <li> <p>EMAIL - any standard email format</p> </li>
     /// </ul>
-    pub fn get_delivery_address(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContactChannelAddress> {
+    pub fn get_delivery_address(&self) -> &::std::option::Option<crate::types::ContactChannelAddress> {
         &self.delivery_address
     }
     /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
@@ -196,18 +188,12 @@ impl CreateContactChannelInputBuilder {
         &self.defer_activation
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }
@@ -218,19 +204,15 @@ impl CreateContactChannelInputBuilder {
     /// Consumes the builder and constructs a [`CreateContactChannelInput`](crate::operation::create_contact_channel::CreateContactChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_contact_channel::CreateContactChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_contact_channel::CreateContactChannelInput {
-                contact_id: self.contact_id,
-                name: self.name,
-                r#type: self.r#type,
-                delivery_address: self.delivery_address,
-                defer_activation: self.defer_activation,
-                idempotency_token: self.idempotency_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_contact_channel::CreateContactChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_contact_channel::CreateContactChannelInput {
+            contact_id: self.contact_id,
+            name: self.name,
+            r#type: self.r#type,
+            delivery_address: self.delivery_address,
+            defer_activation: self.defer_activation,
+            idempotency_token: self.idempotency_token,
+        })
     }
 }

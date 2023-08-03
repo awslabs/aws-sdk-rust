@@ -5,8 +5,7 @@
 pub struct ListPermissionsOutput {
     /// <p>A list of principals and their permissions on the resource for the specified principal and resource types.</p>
     #[doc(hidden)]
-    pub principal_resource_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PrincipalResourcePermissions>>,
+    pub principal_resource_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalResourcePermissions>>,
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListPermissionsOutput {
 }
 impl ListPermissionsOutput {
     /// <p>A list of principals and their permissions on the resource for the specified principal and resource types.</p>
-    pub fn principal_resource_permissions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PrincipalResourcePermissions]> {
+    pub fn principal_resource_permissions(&self) -> ::std::option::Option<&[crate::types::PrincipalResourcePermissions]> {
         self.principal_resource_permissions.as_deref()
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
@@ -38,12 +35,9 @@ impl ListPermissionsOutput {
 
 /// A builder for [`ListPermissionsOutput`](crate::operation::list_permissions::ListPermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionsOutputBuilder {
-    pub(crate) principal_resource_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::PrincipalResourcePermissions>>,
+    pub(crate) principal_resource_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalResourcePermissions>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListPermissionsOutputBuilder {
     /// To override the contents of this collection use [`set_principal_resource_permissions`](Self::set_principal_resource_permissions).
     ///
     /// <p>A list of principals and their permissions on the resource for the specified principal and resource types.</p>
-    pub fn principal_resource_permissions(
-        mut self,
-        input: crate::types::PrincipalResourcePermissions,
-    ) -> Self {
+    pub fn principal_resource_permissions(mut self, input: crate::types::PrincipalResourcePermissions) -> Self {
         let mut v = self.principal_resource_permissions.unwrap_or_default();
         v.push(input);
         self.principal_resource_permissions = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListPermissionsOutputBuilder {
         self
     }
     /// <p>A list of principals and their permissions on the resource for the specified principal and resource types.</p>
-    pub fn get_principal_resource_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrincipalResourcePermissions>> {
+    pub fn get_principal_resource_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrincipalResourcePermissions>> {
         &self.principal_resource_permissions
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>

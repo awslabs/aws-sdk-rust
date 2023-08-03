@@ -28,18 +28,14 @@ impl DeleteBandwidthRateLimitInput {
 }
 impl DeleteBandwidthRateLimitInput {
     /// Creates a new builder-style object to manufacture [`DeleteBandwidthRateLimitInput`](crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitInput).
-    pub fn builder(
-    ) -> crate::operation::delete_bandwidth_rate_limit::builders::DeleteBandwidthRateLimitInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_bandwidth_rate_limit::builders::DeleteBandwidthRateLimitInputBuilder {
         crate::operation::delete_bandwidth_rate_limit::builders::DeleteBandwidthRateLimitInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBandwidthRateLimitInput`](crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBandwidthRateLimitInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bandwidth_type: ::std::option::Option<::std::string::String>,
@@ -61,19 +57,13 @@ impl DeleteBandwidthRateLimitInputBuilder {
     }
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
     /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
-    pub fn bandwidth_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bandwidth_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bandwidth_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
     /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
-    pub fn set_bandwidth_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bandwidth_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bandwidth_type = input;
         self
     }
@@ -89,11 +79,9 @@ impl DeleteBandwidthRateLimitInputBuilder {
         crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitInput {
-                gateway_arn: self.gateway_arn,
-                bandwidth_type: self.bandwidth_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitInput {
+            gateway_arn: self.gateway_arn,
+            bandwidth_type: self.bandwidth_type,
+        })
     }
 }

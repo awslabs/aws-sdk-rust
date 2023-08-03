@@ -37,10 +37,7 @@ impl UpgradeProfileVersionFluentBuilder {
         }
     }
     /// Access the UpgradeProfileVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::upgrade_profile_version::builders::UpgradeProfileVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::upgrade_profile_version::builders::UpgradeProfileVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpgradeProfileVersionFluentBuilder {
             crate::operation::upgrade_profile_version::UpgradeProfileVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upgrade_profile_version::UpgradeProfileVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upgrade_profile_version::UpgradeProfileVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpgradeProfileVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpgradeProfileVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upgrade_profile_version::UpgradeProfileVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upgrade_profile_version::UpgradeProfileVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upgrade_profile_version::UpgradeProfileVersionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpgradeProfileVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upgrade_profile_version::UpgradeProfileVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upgrade_profile_version::UpgradeProfileVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upgrade_profile_version::UpgradeProfileVersionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpgradeProfileVersionFluentBuilder {
             crate::operation::upgrade_profile_version::UpgradeProfileVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upgrade_profile_version::UpgradeProfileVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upgrade_profile_version::UpgradeProfileVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -153,19 +139,13 @@ impl UpgradeProfileVersionFluentBuilder {
     }
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
-    pub fn milestone_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn milestone_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.milestone_name(input.into());
         self
     }
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
-    pub fn set_milestone_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_milestone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_milestone_name(input);
         self
     }
@@ -178,10 +158,7 @@ impl UpgradeProfileVersionFluentBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
@@ -189,10 +166,7 @@ impl UpgradeProfileVersionFluentBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

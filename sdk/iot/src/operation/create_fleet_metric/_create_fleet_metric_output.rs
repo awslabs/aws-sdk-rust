@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateFleetMetricOutput {
 }
 impl CreateFleetMetricOutput {
     /// Creates a new builder-style object to manufacture [`CreateFleetMetricOutput`](crate::operation::create_fleet_metric::CreateFleetMetricOutput).
-    pub fn builder(
-    ) -> crate::operation::create_fleet_metric::builders::CreateFleetMetricOutputBuilder {
+    pub fn builder() -> crate::operation::create_fleet_metric::builders::CreateFleetMetricOutputBuilder {
         crate::operation::create_fleet_metric::builders::CreateFleetMetricOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFleetMetricOutput`](crate::operation::create_fleet_metric::CreateFleetMetricOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFleetMetricOutputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_arn: ::std::option::Option<::std::string::String>,

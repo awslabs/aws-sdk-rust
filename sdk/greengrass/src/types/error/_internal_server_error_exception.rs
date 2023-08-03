@@ -56,9 +56,7 @@ impl InternalServerErrorException {
 
 /// A builder for [`InternalServerErrorException`](crate::types::error::InternalServerErrorException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InternalServerErrorExceptionBuilder {
     pub(crate) error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -77,17 +75,12 @@ impl InternalServerErrorExceptionBuilder {
         self
     }
     /// Details about the error.
-    pub fn set_error_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
-    ) -> Self {
+    pub fn set_error_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>) -> Self {
         self.error_details = input;
         self
     }
     /// Details about the error.
-    pub fn get_error_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+    pub fn get_error_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
         &self.error_details
     }
     /// A message containing information about the error.
@@ -111,10 +104,7 @@ impl InternalServerErrorExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -15,9 +15,7 @@ pub struct CreateSbomExportInput {
 }
 impl CreateSbomExportInput {
     /// <p>The resource filter criteria for the software bill of materials (SBOM) report.</p>
-    pub fn resource_filter_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceFilterCriteria> {
+    pub fn resource_filter_criteria(&self) -> ::std::option::Option<&crate::types::ResourceFilterCriteria> {
         self.resource_filter_criteria.as_ref()
     }
     /// <p>The output format for the software bill of materials (SBOM) report.</p>
@@ -31,20 +29,16 @@ impl CreateSbomExportInput {
 }
 impl CreateSbomExportInput {
     /// Creates a new builder-style object to manufacture [`CreateSbomExportInput`](crate::operation::create_sbom_export::CreateSbomExportInput).
-    pub fn builder() -> crate::operation::create_sbom_export::builders::CreateSbomExportInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_sbom_export::builders::CreateSbomExportInputBuilder {
         crate::operation::create_sbom_export::builders::CreateSbomExportInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSbomExportInput`](crate::operation::create_sbom_export::CreateSbomExportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSbomExportInputBuilder {
-    pub(crate) resource_filter_criteria:
-        ::std::option::Option<crate::types::ResourceFilterCriteria>,
+    pub(crate) resource_filter_criteria: ::std::option::Option<crate::types::ResourceFilterCriteria>,
     pub(crate) report_format: ::std::option::Option<crate::types::SbomReportFormat>,
     pub(crate) s3_destination: ::std::option::Option<crate::types::Destination>,
 }
@@ -55,17 +49,12 @@ impl CreateSbomExportInputBuilder {
         self
     }
     /// <p>The resource filter criteria for the software bill of materials (SBOM) report.</p>
-    pub fn set_resource_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceFilterCriteria>,
-    ) -> Self {
+    pub fn set_resource_filter_criteria(mut self, input: ::std::option::Option<crate::types::ResourceFilterCriteria>) -> Self {
         self.resource_filter_criteria = input;
         self
     }
     /// <p>The resource filter criteria for the software bill of materials (SBOM) report.</p>
-    pub fn get_resource_filter_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceFilterCriteria> {
+    pub fn get_resource_filter_criteria(&self) -> &::std::option::Option<crate::types::ResourceFilterCriteria> {
         &self.resource_filter_criteria
     }
     /// <p>The output format for the software bill of materials (SBOM) report.</p>
@@ -74,10 +63,7 @@ impl CreateSbomExportInputBuilder {
         self
     }
     /// <p>The output format for the software bill of materials (SBOM) report.</p>
-    pub fn set_report_format(
-        mut self,
-        input: ::std::option::Option<crate::types::SbomReportFormat>,
-    ) -> Self {
+    pub fn set_report_format(mut self, input: ::std::option::Option<crate::types::SbomReportFormat>) -> Self {
         self.report_format = input;
         self
     }
@@ -91,10 +77,7 @@ impl CreateSbomExportInputBuilder {
         self
     }
     /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::Destination>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.s3_destination = input;
         self
     }
@@ -105,16 +88,11 @@ impl CreateSbomExportInputBuilder {
     /// Consumes the builder and constructs a [`CreateSbomExportInput`](crate::operation::create_sbom_export::CreateSbomExportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_sbom_export::CreateSbomExportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_sbom_export::CreateSbomExportInput {
-                resource_filter_criteria: self.resource_filter_criteria,
-                report_format: self.report_format,
-                s3_destination: self.s3_destination,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_sbom_export::CreateSbomExportInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_sbom_export::CreateSbomExportInput {
+            resource_filter_criteria: self.resource_filter_criteria,
+            report_format: self.report_format,
+            s3_destination: self.s3_destination,
+        })
     }
 }

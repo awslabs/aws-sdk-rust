@@ -37,9 +37,7 @@ impl InstanceGroup {
 
 /// A builder for [`InstanceGroup`](crate::types::InstanceGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceGroupBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
     pub(crate) instance_count: ::std::option::Option<i32>,
@@ -52,10 +50,7 @@ impl InstanceGroupBuilder {
         self
     }
     /// <p>Specifies the instance type of the instance group.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingInstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::TrainingInstanceType>) -> Self {
         self.instance_type = input;
         self
     }
@@ -78,18 +73,12 @@ impl InstanceGroupBuilder {
         &self.instance_count
     }
     /// <p>Specifies the name of the instance group.</p>
-    pub fn instance_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the instance group.</p>
-    pub fn set_instance_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_group_name = input;
         self
     }

@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobFluentBuilder::set_tags): <p>A collection of key and value pairs.</p>
     /// - On success, responds with [`CreateBatchPredictionJobOutput`](crate::operation::create_batch_prediction_job::CreateBatchPredictionJobOutput)
     /// - On failure, responds with [`SdkError<CreateBatchPredictionJobError>`](crate::operation::create_batch_prediction_job::CreateBatchPredictionJobError)
-    pub fn create_batch_prediction_job(&self) -> crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobFluentBuilder{
+    pub fn create_batch_prediction_job(&self) -> crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobFluentBuilder {
         crate::operation::create_batch_prediction_job::builders::CreateBatchPredictionJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`certificate_arn(Option<String>)`](crate::operation::register_certificate::RegisterCertificateOutput::certificate_arn): <p>The certificate ARN.</p>
     ///   - [`certificate_id(Option<String>)`](crate::operation::register_certificate::RegisterCertificateOutput::certificate_id): <p>The certificate identifier.</p>
     /// - On failure, responds with [`SdkError<RegisterCertificateError>`](crate::operation::register_certificate::RegisterCertificateError)
-    pub fn register_certificate(
-        &self,
-    ) -> crate::operation::register_certificate::builders::RegisterCertificateFluentBuilder {
-        crate::operation::register_certificate::builders::RegisterCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_certificate(&self) -> crate::operation::register_certificate::builders::RegisterCertificateFluentBuilder {
+        crate::operation::register_certificate::builders::RegisterCertificateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,8 +26,7 @@ impl PutManagedScalingPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutManagedScalingPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::put_managed_scaling_policy::builders::PutManagedScalingPolicyInputBuilder,
+    inner: crate::operation::put_managed_scaling_policy::builders::PutManagedScalingPolicyInputBuilder,
 }
 impl PutManagedScalingPolicyFluentBuilder {
     /// Creates a new `PutManagedScalingPolicy`.
@@ -38,10 +37,7 @@ impl PutManagedScalingPolicyFluentBuilder {
         }
     }
     /// Access the PutManagedScalingPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_managed_scaling_policy::builders::PutManagedScalingPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_managed_scaling_policy::builders::PutManagedScalingPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl PutManagedScalingPolicyFluentBuilder {
             crate::operation::put_managed_scaling_policy::PutManagedScalingPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl PutManagedScalingPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl PutManagedScalingPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl PutManagedScalingPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl PutManagedScalingPolicyFluentBuilder {
             crate::operation::put_managed_scaling_policy::PutManagedScalingPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -144,17 +129,12 @@ impl PutManagedScalingPolicyFluentBuilder {
         self
     }
     /// <p>Specifies the constraints for the managed scaling policy. </p>
-    pub fn set_managed_scaling_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ManagedScalingPolicy>,
-    ) -> Self {
+    pub fn set_managed_scaling_policy(mut self, input: ::std::option::Option<crate::types::ManagedScalingPolicy>) -> Self {
         self.inner = self.inner.set_managed_scaling_policy(input);
         self
     }
     /// <p>Specifies the constraints for the managed scaling policy. </p>
-    pub fn get_managed_scaling_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ManagedScalingPolicy> {
+    pub fn get_managed_scaling_policy(&self) -> &::std::option::Option<crate::types::ManagedScalingPolicy> {
         self.inner.get_managed_scaling_policy()
     }
 }

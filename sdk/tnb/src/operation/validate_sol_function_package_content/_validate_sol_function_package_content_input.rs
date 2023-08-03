@@ -29,16 +29,14 @@ impl ValidateSolFunctionPackageContentInput {
 }
 impl ValidateSolFunctionPackageContentInput {
     /// Creates a new builder-style object to manufacture [`ValidateSolFunctionPackageContentInput`](crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentInput).
-    pub fn builder() -> crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentInputBuilder{
+    pub fn builder() -> crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentInputBuilder {
         crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentInputBuilder::default()
     }
 }
 
 /// A builder for [`ValidateSolFunctionPackageContentInput`](crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateSolFunctionPackageContentInputBuilder {
     pub(crate) vnf_pkg_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<crate::types::PackageContentType>,
@@ -65,10 +63,7 @@ impl ValidateSolFunctionPackageContentInputBuilder {
         self
     }
     /// <p>Function package content type.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::PackageContentType>) -> Self {
         self.content_type = input;
         self
     }
@@ -91,16 +86,18 @@ impl ValidateSolFunctionPackageContentInputBuilder {
         &self.file
     }
     /// Consumes the builder and constructs a [`ValidateSolFunctionPackageContentInput`](crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentInput {
-                vnf_pkg_id: self.vnf_pkg_id
-                ,
-                content_type: self.content_type
-                ,
-                file: self.file
-                ,
-            }
+                vnf_pkg_id: self.vnf_pkg_id,
+                content_type: self.content_type,
+                file: self.file,
+            },
         )
     }
 }

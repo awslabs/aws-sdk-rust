@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`pull_request_events(Option<Vec<PullRequestEvent>>)`](crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput::pull_request_events): <p>Information about the pull request events.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     /// - On failure, responds with [`SdkError<DescribePullRequestEventsError>`](crate::operation::describe_pull_request_events::DescribePullRequestEventsError)
-    pub fn describe_pull_request_events(&self) -> crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder{
+    pub fn describe_pull_request_events(&self) -> crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder {
         crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder::new(self.handle.clone())
     }
 }

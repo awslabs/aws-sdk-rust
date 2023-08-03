@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`ota_updates(Option<Vec<OtaUpdateSummary>>)`](crate::operation::list_ota_updates::ListOtaUpdatesOutput::ota_updates): <p>A list of OTA update jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_ota_updates::ListOtaUpdatesOutput::next_token): <p>A token to use to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListOTAUpdatesError>`](crate::operation::list_ota_updates::ListOTAUpdatesError)
-    pub fn list_ota_updates(
-        &self,
-    ) -> crate::operation::list_ota_updates::builders::ListOTAUpdatesFluentBuilder {
-        crate::operation::list_ota_updates::builders::ListOTAUpdatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_ota_updates(&self) -> crate::operation::list_ota_updates::builders::ListOTAUpdatesFluentBuilder {
+        crate::operation::list_ota_updates::builders::ListOTAUpdatesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,9 +7,7 @@ pub fn ser_modify_replication_config_input(
         object.key("ReplicationConfigArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.replication_config_identifier {
-        object
-            .key("ReplicationConfigIdentifier")
-            .string(var_2.as_str());
+        object.key("ReplicationConfigIdentifier").string(var_2.as_str());
     }
     if let Some(var_3) = &input.replication_type {
         object.key("ReplicationType").string(var_3.as_str());

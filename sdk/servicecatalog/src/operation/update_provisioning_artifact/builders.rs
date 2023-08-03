@@ -27,7 +27,7 @@ impl UpdateProvisioningArtifactInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProvisioningArtifactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_provisioning_artifact::builders::UpdateProvisioningArtifactInputBuilder,
+    inner: crate::operation::update_provisioning_artifact::builders::UpdateProvisioningArtifactInputBuilder,
 }
 impl UpdateProvisioningArtifactFluentBuilder {
     /// Creates a new `UpdateProvisioningArtifact`.
@@ -38,7 +38,7 @@ impl UpdateProvisioningArtifactFluentBuilder {
         }
     }
     /// Access the UpdateProvisioningArtifact as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_provisioning_artifact::builders::UpdateProvisioningArtifactInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_provisioning_artifact::builders::UpdateProvisioningArtifactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl UpdateProvisioningArtifactFluentBuilder {
             crate::operation::update_provisioning_artifact::UpdateProvisioningArtifact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl UpdateProvisioningArtifactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl UpdateProvisioningArtifactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl UpdateProvisioningArtifactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl UpdateProvisioningArtifactFluentBuilder {
             crate::operation::update_provisioning_artifact::UpdateProvisioningArtifact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactError>,
     > {
         self.customize_middleware().await
     }
@@ -126,10 +115,7 @@ impl UpdateProvisioningArtifactFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -138,10 +124,7 @@ impl UpdateProvisioningArtifactFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -168,18 +151,12 @@ impl UpdateProvisioningArtifactFluentBuilder {
         self.inner.get_product_id()
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provisioning_artifact_id(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn set_provisioning_artifact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provisioning_artifact_id(input);
         self
     }
@@ -242,19 +219,14 @@ impl UpdateProvisioningArtifactFluentBuilder {
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
     /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
-    pub fn set_guidance(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>,
-    ) -> Self {
+    pub fn set_guidance(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>) -> Self {
         self.inner = self.inner.set_guidance(input);
         self
     }
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
     /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
-    pub fn get_guidance(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisioningArtifactGuidance> {
+    pub fn get_guidance(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactGuidance> {
         self.inner.get_guidance()
     }
 }

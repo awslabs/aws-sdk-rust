@@ -10,10 +10,7 @@ impl ListOperationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_operations::ListOperationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_operations::ListOperationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_operations::ListOperationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_operations();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListOperationsFluentBuilder {
         }
     }
     /// Access the ListOperations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_operations::builders::ListOperationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_operations::builders::ListOperationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListOperationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,27 +109,16 @@ impl ListOperationsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_operations::paginator::ListOperationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_operations::paginator::ListOperationsPaginator {
-        crate::operation::list_operations::paginator::ListOperationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_operations::paginator::ListOperationsPaginator {
+        crate::operation::list_operations::paginator::ListOperationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The ID of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -183,10 +164,7 @@ impl ListOperationsFluentBuilder {
         self
     }
     /// <p>The filters of an operation.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

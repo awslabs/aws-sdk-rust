@@ -10,10 +10,7 @@ impl ModifyIpamInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_ipam::ModifyIpamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_ipam::ModifyIpamError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam::ModifyIpamError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_ipam();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ModifyIpamFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_ipam::ModifyIpam,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::modify_ipam::ModifyIpam, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam::ModifyIpamError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ModifyIpamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ModifyIpamFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_ipam::ModifyIpam,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::modify_ipam::ModifyIpam, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::modify_ipam::ModifyIpamError>,
     > {
         self.customize_middleware().await
@@ -166,18 +154,13 @@ impl ModifyIpamFluentBuilder {
     }
     /// <p>Choose the operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
     /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn set_add_operating_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
-    ) -> Self {
+    pub fn set_add_operating_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>) -> Self {
         self.inner = self.inner.set_add_operating_regions(input);
         self
     }
     /// <p>Choose the operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
     /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn get_add_operating_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>> {
+    pub fn get_add_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>> {
         self.inner.get_add_operating_regions()
     }
     /// Appends an item to `RemoveOperatingRegions`.
@@ -185,25 +168,17 @@ impl ModifyIpamFluentBuilder {
     /// To override the contents of this collection use [`set_remove_operating_regions`](Self::set_remove_operating_regions).
     ///
     /// <p>The operating Regions to remove.</p>
-    pub fn remove_operating_regions(
-        mut self,
-        input: crate::types::RemoveIpamOperatingRegion,
-    ) -> Self {
+    pub fn remove_operating_regions(mut self, input: crate::types::RemoveIpamOperatingRegion) -> Self {
         self.inner = self.inner.remove_operating_regions(input);
         self
     }
     /// <p>The operating Regions to remove.</p>
-    pub fn set_remove_operating_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
-    ) -> Self {
+    pub fn set_remove_operating_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>) -> Self {
         self.inner = self.inner.set_remove_operating_regions(input);
         self
     }
     /// <p>The operating Regions to remove.</p>
-    pub fn get_remove_operating_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>> {
+    pub fn get_remove_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>> {
         self.inner.get_remove_operating_regions()
     }
 }

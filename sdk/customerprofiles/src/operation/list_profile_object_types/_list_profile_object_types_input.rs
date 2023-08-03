@@ -29,18 +29,14 @@ impl ListProfileObjectTypesInput {
 }
 impl ListProfileObjectTypesInput {
     /// Creates a new builder-style object to manufacture [`ListProfileObjectTypesInput`](crate::operation::list_profile_object_types::ListProfileObjectTypesInput).
-    pub fn builder(
-    ) -> crate::operation::list_profile_object_types::builders::ListProfileObjectTypesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_profile_object_types::builders::ListProfileObjectTypesInputBuilder {
         crate::operation::list_profile_object_types::builders::ListProfileObjectTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProfileObjectTypesInput`](crate::operation::list_profile_object_types::ListProfileObjectTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfileObjectTypesInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,12 +92,10 @@ impl ListProfileObjectTypesInputBuilder {
         crate::operation::list_profile_object_types::ListProfileObjectTypesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_profile_object_types::ListProfileObjectTypesInput {
-                domain_name: self.domain_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_profile_object_types::ListProfileObjectTypesInput {
+            domain_name: self.domain_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

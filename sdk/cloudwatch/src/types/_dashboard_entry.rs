@@ -44,9 +44,7 @@ impl DashboardEntry {
 
 /// A builder for [`DashboardEntry`](crate::types::DashboardEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DashboardEntryBuilder {
     pub(crate) dashboard_name: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_arn: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct DashboardEntryBuilder {
 }
 impl DashboardEntryBuilder {
     /// <p>The name of the dashboard.</p>
-    pub fn dashboard_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dashboard_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dashboard.</p>
-    pub fn set_dashboard_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dashboard_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_name = input;
         self
     }
@@ -75,18 +67,12 @@ impl DashboardEntryBuilder {
         &self.dashboard_name
     }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-    pub fn dashboard_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dashboard_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-    pub fn set_dashboard_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dashboard_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_arn = input;
         self
     }
@@ -100,10 +86,7 @@ impl DashboardEntryBuilder {
         self
     }
     /// <p>The time stamp of when the dashboard was last modified, either by an API call or through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }

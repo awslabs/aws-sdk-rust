@@ -22,20 +22,16 @@ impl ::aws_http::request_id::RequestId for DescribeApplicationsOutput {
 }
 impl DescribeApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationsOutput`](crate::operation::describe_applications::DescribeApplicationsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_applications::builders::DescribeApplicationsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_applications::builders::DescribeApplicationsOutputBuilder {
         crate::operation::describe_applications::builders::DescribeApplicationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicationsOutput`](crate::operation::describe_applications::DescribeApplicationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationsOutputBuilder {
-    pub(crate) applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDescription>>,
+    pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeApplicationsOutputBuilder {
@@ -51,17 +47,12 @@ impl DescribeApplicationsOutputBuilder {
         self
     }
     /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
-    pub fn set_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDescription>>,
-    ) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDescription>>) -> Self {
         self.applications = input;
         self
     }
     /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
-    pub fn get_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationDescription>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationDescription>> {
         &self.applications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

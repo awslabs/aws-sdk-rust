@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`comprehend_medical_async_job_properties_list(Option<Vec<ComprehendMedicalAsyncJobProperties>>)`](crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsOutput::comprehend_medical_async_job_properties_list): <p>A list containing the properties of each job returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListPHIDetectionJobsError>`](crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError)
-    pub fn list_phi_detection_jobs(
-        &self,
-    ) -> crate::operation::list_phi_detection_jobs::builders::ListPHIDetectionJobsFluentBuilder
-    {
-        crate::operation::list_phi_detection_jobs::builders::ListPHIDetectionJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_phi_detection_jobs(&self) -> crate::operation::list_phi_detection_jobs::builders::ListPHIDetectionJobsFluentBuilder {
+        crate::operation::list_phi_detection_jobs::builders::ListPHIDetectionJobsFluentBuilder::new(self.handle.clone())
     }
 }

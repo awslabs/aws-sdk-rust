@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`test_set_id(impl ::std::convert::Into<String>)`](crate::operation::delete_test_set::builders::DeleteTestSetFluentBuilder::test_set_id) / [`set_test_set_id(Option<String>)`](crate::operation::delete_test_set::builders::DeleteTestSetFluentBuilder::set_test_set_id): <p>The test set Id of the test set to be deleted.</p>
     /// - On success, responds with [`DeleteTestSetOutput`](crate::operation::delete_test_set::DeleteTestSetOutput)
     /// - On failure, responds with [`SdkError<DeleteTestSetError>`](crate::operation::delete_test_set::DeleteTestSetError)
-    pub fn delete_test_set(
-        &self,
-    ) -> crate::operation::delete_test_set::builders::DeleteTestSetFluentBuilder {
-        crate::operation::delete_test_set::builders::DeleteTestSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_test_set(&self) -> crate::operation::delete_test_set::builders::DeleteTestSetFluentBuilder {
+        crate::operation::delete_test_set::builders::DeleteTestSetFluentBuilder::new(self.handle.clone())
     }
 }

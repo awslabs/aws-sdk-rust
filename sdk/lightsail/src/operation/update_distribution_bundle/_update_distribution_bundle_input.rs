@@ -26,18 +26,14 @@ impl UpdateDistributionBundleInput {
 }
 impl UpdateDistributionBundleInput {
     /// Creates a new builder-style object to manufacture [`UpdateDistributionBundleInput`](crate::operation::update_distribution_bundle::UpdateDistributionBundleInput).
-    pub fn builder(
-    ) -> crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleInputBuilder {
         crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDistributionBundleInput`](crate::operation::update_distribution_bundle::UpdateDistributionBundleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDistributionBundleInputBuilder {
     pub(crate) distribution_name: ::std::option::Option<::std::string::String>,
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
@@ -45,19 +41,13 @@ pub struct UpdateDistributionBundleInputBuilder {
 impl UpdateDistributionBundleInputBuilder {
     /// <p>The name of the distribution for which to update the bundle.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn distribution_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the distribution for which to update the bundle.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn set_distribution_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_name = input;
         self
     }
@@ -90,11 +80,9 @@ impl UpdateDistributionBundleInputBuilder {
         crate::operation::update_distribution_bundle::UpdateDistributionBundleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_distribution_bundle::UpdateDistributionBundleInput {
-                distribution_name: self.distribution_name,
-                bundle_id: self.bundle_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_distribution_bundle::UpdateDistributionBundleInput {
+            distribution_name: self.distribution_name,
+            bundle_id: self.bundle_id,
+        })
     }
 }

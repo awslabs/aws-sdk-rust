@@ -15,34 +15,25 @@ impl DeleteNetworkProfileInput {
 }
 impl DeleteNetworkProfileInput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkProfileInput`](crate::operation::delete_network_profile::DeleteNetworkProfileInput).
-    pub fn builder(
-    ) -> crate::operation::delete_network_profile::builders::DeleteNetworkProfileInputBuilder {
+    pub fn builder() -> crate::operation::delete_network_profile::builders::DeleteNetworkProfileInputBuilder {
         crate::operation::delete_network_profile::builders::DeleteNetworkProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNetworkProfileInput`](crate::operation::delete_network_profile::DeleteNetworkProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNetworkProfileInputBuilder {
     pub(crate) network_profile_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNetworkProfileInputBuilder {
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn set_network_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_profile_arn = input;
         self
     }
@@ -53,14 +44,10 @@ impl DeleteNetworkProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNetworkProfileInput`](crate::operation::delete_network_profile::DeleteNetworkProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_network_profile::DeleteNetworkProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_network_profile::DeleteNetworkProfileInput {
-                network_profile_arn: self.network_profile_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_network_profile::DeleteNetworkProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_network_profile::DeleteNetworkProfileInput {
+            network_profile_arn: self.network_profile_arn,
+        })
     }
 }

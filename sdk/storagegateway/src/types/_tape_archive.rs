@@ -117,9 +117,7 @@ impl TapeArchive {
 
 /// A builder for [`TapeArchive`](crate::types::TapeArchive).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TapeArchiveBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tape_barcode: ::std::option::Option<::std::string::String>,
@@ -170,10 +168,7 @@ impl TapeArchiveBuilder {
         self
     }
     /// <p>The date the virtual tape was created.</p>
-    pub fn set_tape_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_tape_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.tape_created_date = input;
         self
     }
@@ -203,10 +198,7 @@ impl TapeArchiveBuilder {
     }
     /// <p>The time that the archiving of the virtual tape was completed.</p>
     /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-    pub fn set_completion_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completion_time = input;
         self
     }
@@ -314,10 +306,7 @@ impl TapeArchiveBuilder {
         self
     }
     /// <p>If the archived tape is subject to tape retention lock, the date that the archived tape started being retained.</p>
-    pub fn set_retention_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_retention_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.retention_start_date = input;
         self
     }
@@ -333,10 +322,7 @@ impl TapeArchiveBuilder {
     }
     /// <p>The time that the tape entered the custom tape pool.</p>
     /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-    pub fn set_pool_entry_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_pool_entry_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.pool_entry_date = input;
         self
     }

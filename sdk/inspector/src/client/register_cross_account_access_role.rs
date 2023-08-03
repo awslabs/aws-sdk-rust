@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`role_arn(impl ::std::convert::Into<String>)`](crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleFluentBuilder::role_arn) / [`set_role_arn(Option<String>)`](crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleFluentBuilder::set_role_arn): <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
     /// - On success, responds with [`RegisterCrossAccountAccessRoleOutput`](crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleOutput)
     /// - On failure, responds with [`SdkError<RegisterCrossAccountAccessRoleError>`](crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError)
-    pub fn register_cross_account_access_role(&self) -> crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleFluentBuilder{
+    pub fn register_cross_account_access_role(
+        &self,
+    ) -> crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleFluentBuilder {
         crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,27 +30,19 @@ impl OutputSource {
 
 /// A builder for [`OutputSource`](crate::types::OutputSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputSourceBuilder {
     pub(crate) output_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) output_source_type: ::std::option::Option<::std::string::String>,
 }
 impl OutputSourceBuilder {
     /// <p>The ID of the output source, for example the URL of an S3 bucket.</p>
-    pub fn output_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the output source, for example the URL of an S3 bucket.</p>
-    pub fn set_output_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_source_id = input;
         self
     }
@@ -59,18 +51,12 @@ impl OutputSourceBuilder {
         &self.output_source_id
     }
     /// <p>The type of source where the association execution details are stored, for example, Amazon S3.</p>
-    pub fn output_source_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_source_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of source where the association execution details are stored, for example, Amazon S3.</p>
-    pub fn set_output_source_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_source_type = input;
         self
     }

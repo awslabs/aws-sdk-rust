@@ -29,9 +29,7 @@ impl DescribeSpaceInput {
 
 /// A builder for [`DescribeSpaceInput`](crate::operation::describe_space::DescribeSpaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpaceInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DescribeSpaceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSpaceInput`](crate::operation::describe_space::DescribeSpaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_space::DescribeSpaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_space::DescribeSpaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_space::DescribeSpaceInput {
             domain_id: self.domain_id,
             space_name: self.space_name,

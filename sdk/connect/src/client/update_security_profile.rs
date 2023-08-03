@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`tag_restricted_resources(Vec<String>)`](crate::operation::update_security_profile::builders::UpdateSecurityProfileFluentBuilder::tag_restricted_resources) / [`set_tag_restricted_resources(Option<Vec<String>>)`](crate::operation::update_security_profile::builders::UpdateSecurityProfileFluentBuilder::set_tag_restricted_resources): <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
     /// - On success, responds with [`UpdateSecurityProfileOutput`](crate::operation::update_security_profile::UpdateSecurityProfileOutput)
     /// - On failure, responds with [`SdkError<UpdateSecurityProfileError>`](crate::operation::update_security_profile::UpdateSecurityProfileError)
-    pub fn update_security_profile(
-        &self,
-    ) -> crate::operation::update_security_profile::builders::UpdateSecurityProfileFluentBuilder
-    {
-        crate::operation::update_security_profile::builders::UpdateSecurityProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_security_profile(&self) -> crate::operation::update_security_profile::builders::UpdateSecurityProfileFluentBuilder {
+        crate::operation::update_security_profile::builders::UpdateSecurityProfileFluentBuilder::new(self.handle.clone())
     }
 }

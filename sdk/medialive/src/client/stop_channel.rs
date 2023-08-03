@@ -24,9 +24,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::stop_channel::StopChannelOutput::tags): A collection of key-value pairs.
     ///   - [`vpc(Option<VpcOutputSettingsDescription>)`](crate::operation::stop_channel::StopChannelOutput::vpc): Settings for VPC output
     /// - On failure, responds with [`SdkError<StopChannelError>`](crate::operation::stop_channel::StopChannelError)
-    pub fn stop_channel(
-        &self,
-    ) -> crate::operation::stop_channel::builders::StopChannelFluentBuilder {
+    pub fn stop_channel(&self) -> crate::operation::stop_channel::builders::StopChannelFluentBuilder {
         crate::operation::stop_channel::builders::StopChannelFluentBuilder::new(self.handle.clone())
     }
 }

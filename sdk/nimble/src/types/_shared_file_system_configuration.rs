@@ -86,18 +86,12 @@ impl SharedFileSystemConfigurationBuilder {
         &self.endpoint
     }
     /// <p>The unique identifier for a file system.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for a file system.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -106,18 +100,12 @@ impl SharedFileSystemConfigurationBuilder {
         &self.file_system_id
     }
     /// <p>The mount location for a shared file system on a Linux virtual workstation.</p>
-    pub fn linux_mount_point(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn linux_mount_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.linux_mount_point = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The mount location for a shared file system on a Linux virtual workstation.</p>
-    pub fn set_linux_mount_point(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_linux_mount_point(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.linux_mount_point = input;
         self
     }
@@ -140,18 +128,12 @@ impl SharedFileSystemConfigurationBuilder {
         &self.share_name
     }
     /// <p>The mount location for a shared file system on a Windows virtual workstation.</p>
-    pub fn windows_mount_drive(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn windows_mount_drive(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.windows_mount_drive = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The mount location for a shared file system on a Windows virtual workstation.</p>
-    pub fn set_windows_mount_drive(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_windows_mount_drive(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.windows_mount_drive = input;
         self
     }

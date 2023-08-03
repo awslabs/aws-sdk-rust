@@ -37,9 +37,7 @@ impl KendraConfiguration {
 
 /// A builder for [`KendraConfiguration`](crate::types::KendraConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KendraConfigurationBuilder {
     pub(crate) kendra_index: ::std::option::Option<::std::string::String>,
     pub(crate) query_filter_string_enabled: ::std::option::Option<bool>,
@@ -75,18 +73,12 @@ impl KendraConfigurationBuilder {
         &self.query_filter_string_enabled
     }
     /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
-    pub fn query_filter_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_filter_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_filter_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
-    pub fn set_query_filter_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_filter_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_filter_string = input;
         self
     }

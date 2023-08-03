@@ -41,9 +41,7 @@ impl SearchField {
 
 /// A builder for [`SearchField`](crate::types::SearchField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchFieldBuilder {
     pub(crate) key: ::std::option::Option<crate::types::SearchFieldKey>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -80,10 +78,7 @@ impl SearchFieldBuilder {
     /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p> <note>
     /// <p>This operation isn't supported for <code>AppInstanceUsers</code> with large number of memberships.</p>
     /// </note>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -99,10 +94,7 @@ impl SearchFieldBuilder {
         self
     }
     /// <p>The operator used to compare field values, currently <code>EQUALS</code> or <code>INCLUDES</code>. Use the <code>EQUALS</code> operator to find channels whose memberships equal the specified values. Use the <code>INCLUDES</code> operator to find channels whose memberships include the specified values.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchFieldOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::SearchFieldOperator>) -> Self {
         self.operator = input;
         self
     }

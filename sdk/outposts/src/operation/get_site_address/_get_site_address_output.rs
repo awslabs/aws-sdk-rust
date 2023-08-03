@@ -42,9 +42,7 @@ impl GetSiteAddressOutput {
 
 /// A builder for [`GetSiteAddressOutput`](crate::operation::get_site_address::GetSiteAddressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSiteAddressOutputBuilder {
     pub(crate) site_id: ::std::option::Option<::std::string::String>,
     pub(crate) address_type: ::std::option::Option<crate::types::AddressType>,
@@ -72,10 +70,7 @@ impl GetSiteAddressOutputBuilder {
         self
     }
     /// <p>The type of the address you receive. </p>
-    pub fn set_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressType>,
-    ) -> Self {
+    pub fn set_address_type(mut self, input: ::std::option::Option<crate::types::AddressType>) -> Self {
         self.address_type = input;
         self
     }

@@ -30,9 +30,7 @@ impl TimeToLiveDescription {
 
 /// A builder for [`TimeToLiveDescription`](crate::types::TimeToLiveDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeToLiveDescriptionBuilder {
     pub(crate) time_to_live_status: ::std::option::Option<crate::types::TimeToLiveStatus>,
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
@@ -44,32 +42,21 @@ impl TimeToLiveDescriptionBuilder {
         self
     }
     /// <p> The TTL status for the table.</p>
-    pub fn set_time_to_live_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeToLiveStatus>,
-    ) -> Self {
+    pub fn set_time_to_live_status(mut self, input: ::std::option::Option<crate::types::TimeToLiveStatus>) -> Self {
         self.time_to_live_status = input;
         self
     }
     /// <p> The TTL status for the table.</p>
-    pub fn get_time_to_live_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimeToLiveStatus> {
+    pub fn get_time_to_live_status(&self) -> &::std::option::Option<crate::types::TimeToLiveStatus> {
         &self.time_to_live_status
     }
     /// <p> The name of the TTL attribute for items in the table.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the TTL attribute for items in the table.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_name = input;
         self
     }

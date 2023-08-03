@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`trust_stores(Option<Vec<TrustStoreSummary>>)`](crate::operation::list_trust_stores::ListTrustStoresOutput::trust_stores): <p>The trust stores.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_trust_stores::ListTrustStoresOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     /// - On failure, responds with [`SdkError<ListTrustStoresError>`](crate::operation::list_trust_stores::ListTrustStoresError)
-    pub fn list_trust_stores(
-        &self,
-    ) -> crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder {
-        crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_trust_stores(&self) -> crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder {
+        crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder::new(self.handle.clone())
     }
 }

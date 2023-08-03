@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`serial_number(impl ::std::convert::Into<String>)`](crate::operation::deactivate_mfa_device::builders::DeactivateMFADeviceFluentBuilder::serial_number) / [`set_serial_number(Option<String>)`](crate::operation::deactivate_mfa_device::builders::DeactivateMFADeviceFluentBuilder::set_serial_number): <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
     /// - On success, responds with [`DeactivateMfaDeviceOutput`](crate::operation::deactivate_mfa_device::DeactivateMfaDeviceOutput)
     /// - On failure, responds with [`SdkError<DeactivateMFADeviceError>`](crate::operation::deactivate_mfa_device::DeactivateMFADeviceError)
-    pub fn deactivate_mfa_device(
-        &self,
-    ) -> crate::operation::deactivate_mfa_device::builders::DeactivateMFADeviceFluentBuilder {
-        crate::operation::deactivate_mfa_device::builders::DeactivateMFADeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deactivate_mfa_device(&self) -> crate::operation::deactivate_mfa_device::builders::DeactivateMFADeviceFluentBuilder {
+        crate::operation::deactivate_mfa_device::builders::DeactivateMFADeviceFluentBuilder::new(self.handle.clone())
     }
 }

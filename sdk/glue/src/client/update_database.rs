@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`database_input(DatabaseInput)`](crate::operation::update_database::builders::UpdateDatabaseFluentBuilder::database_input) / [`set_database_input(Option<DatabaseInput>)`](crate::operation::update_database::builders::UpdateDatabaseFluentBuilder::set_database_input): <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
     /// - On success, responds with [`UpdateDatabaseOutput`](crate::operation::update_database::UpdateDatabaseOutput)
     /// - On failure, responds with [`SdkError<UpdateDatabaseError>`](crate::operation::update_database::UpdateDatabaseError)
-    pub fn update_database(
-        &self,
-    ) -> crate::operation::update_database::builders::UpdateDatabaseFluentBuilder {
-        crate::operation::update_database::builders::UpdateDatabaseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_database(&self) -> crate::operation::update_database::builders::UpdateDatabaseFluentBuilder {
+        crate::operation::update_database::builders::UpdateDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

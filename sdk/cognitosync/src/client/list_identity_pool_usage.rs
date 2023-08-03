@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`count(i32)`](crate::operation::list_identity_pool_usage::ListIdentityPoolUsageOutput::count): Total number of identities for the identity pool.
     ///   - [`next_token(Option<String>)`](crate::operation::list_identity_pool_usage::ListIdentityPoolUsageOutput::next_token): A pagination token for obtaining the next page of results.
     /// - On failure, responds with [`SdkError<ListIdentityPoolUsageError>`](crate::operation::list_identity_pool_usage::ListIdentityPoolUsageError)
-    pub fn list_identity_pool_usage(
-        &self,
-    ) -> crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageFluentBuilder
-    {
+    pub fn list_identity_pool_usage(&self) -> crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageFluentBuilder {
         crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageFluentBuilder::new(self.handle.clone())
     }
 }

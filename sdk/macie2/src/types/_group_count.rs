@@ -30,9 +30,7 @@ impl GroupCount {
 
 /// A builder for [`GroupCount`](crate::types::GroupCount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupCountBuilder {
     pub(crate) count: ::std::option::Option<i64>,
     pub(crate) group_key: ::std::option::Option<::std::string::String>,

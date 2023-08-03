@@ -30,9 +30,7 @@ impl DiskImageVolumeDescription {
 
 /// A builder for [`DiskImageVolumeDescription`](crate::types::DiskImageVolumeDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiskImageVolumeDescriptionBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) size: ::std::option::Option<i64>,

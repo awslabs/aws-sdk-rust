@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`dev_endpoints(Option<Vec<DevEndpoint>>)`](crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsOutput::dev_endpoints): <p>A list of <code>DevEndpoint</code> definitions.</p>
     ///   - [`dev_endpoints_not_found(Option<Vec<String>>)`](crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsOutput::dev_endpoints_not_found): <p>A list of <code>DevEndpoints</code> not found.</p>
     /// - On failure, responds with [`SdkError<BatchGetDevEndpointsError>`](crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsError)
-    pub fn batch_get_dev_endpoints(
-        &self,
-    ) -> crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsFluentBuilder
-    {
-        crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_dev_endpoints(&self) -> crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsFluentBuilder {
+        crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

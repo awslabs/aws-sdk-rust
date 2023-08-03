@@ -8,8 +8,7 @@ pub struct SetUserPoolMfaConfigOutput {
     pub sms_mfa_configuration: ::std::option::Option<crate::types::SmsMfaConfigType>,
     /// <p>The software token MFA configuration.</p>
     #[doc(hidden)]
-    pub software_token_mfa_configuration:
-        ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
+    pub software_token_mfa_configuration: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
     /// <p>The MFA configuration. Valid values include:</p>
     /// <ul>
     /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
@@ -26,9 +25,7 @@ impl SetUserPoolMfaConfigOutput {
         self.sms_mfa_configuration.as_ref()
     }
     /// <p>The software token MFA configuration.</p>
-    pub fn software_token_mfa_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SoftwareTokenMfaConfigType> {
+    pub fn software_token_mfa_configuration(&self) -> ::std::option::Option<&crate::types::SoftwareTokenMfaConfigType> {
         self.software_token_mfa_configuration.as_ref()
     }
     /// <p>The MFA configuration. Valid values include:</p>
@@ -48,22 +45,17 @@ impl ::aws_http::request_id::RequestId for SetUserPoolMfaConfigOutput {
 }
 impl SetUserPoolMfaConfigOutput {
     /// Creates a new builder-style object to manufacture [`SetUserPoolMfaConfigOutput`](crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigOutputBuilder {
         crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetUserPoolMfaConfigOutput`](crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetUserPoolMfaConfigOutputBuilder {
     pub(crate) sms_mfa_configuration: ::std::option::Option<crate::types::SmsMfaConfigType>,
-    pub(crate) software_token_mfa_configuration:
-        ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
+    pub(crate) software_token_mfa_configuration: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
     pub(crate) mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
     _request_id: Option<String>,
 }
@@ -74,39 +66,26 @@ impl SetUserPoolMfaConfigOutputBuilder {
         self
     }
     /// <p>The SMS text message MFA configuration.</p>
-    pub fn set_sms_mfa_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SmsMfaConfigType>,
-    ) -> Self {
+    pub fn set_sms_mfa_configuration(mut self, input: ::std::option::Option<crate::types::SmsMfaConfigType>) -> Self {
         self.sms_mfa_configuration = input;
         self
     }
     /// <p>The SMS text message MFA configuration.</p>
-    pub fn get_sms_mfa_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmsMfaConfigType> {
+    pub fn get_sms_mfa_configuration(&self) -> &::std::option::Option<crate::types::SmsMfaConfigType> {
         &self.sms_mfa_configuration
     }
     /// <p>The software token MFA configuration.</p>
-    pub fn software_token_mfa_configuration(
-        mut self,
-        input: crate::types::SoftwareTokenMfaConfigType,
-    ) -> Self {
+    pub fn software_token_mfa_configuration(mut self, input: crate::types::SoftwareTokenMfaConfigType) -> Self {
         self.software_token_mfa_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The software token MFA configuration.</p>
-    pub fn set_software_token_mfa_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
-    ) -> Self {
+    pub fn set_software_token_mfa_configuration(mut self, input: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>) -> Self {
         self.software_token_mfa_configuration = input;
         self
     }
     /// <p>The software token MFA configuration.</p>
-    pub fn get_software_token_mfa_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SoftwareTokenMfaConfigType> {
+    pub fn get_software_token_mfa_configuration(&self) -> &::std::option::Option<crate::types::SoftwareTokenMfaConfigType> {
         &self.software_token_mfa_configuration
     }
     /// <p>The MFA configuration. Valid values include:</p>
@@ -125,10 +104,7 @@ impl SetUserPoolMfaConfigOutputBuilder {
     /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
     /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>
     /// </ul>
-    pub fn set_mfa_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UserPoolMfaType>,
-    ) -> Self {
+    pub fn set_mfa_configuration(mut self, input: ::std::option::Option<crate::types::UserPoolMfaType>) -> Self {
         self.mfa_configuration = input;
         self
     }

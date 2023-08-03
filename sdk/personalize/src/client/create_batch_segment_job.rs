@@ -14,10 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateBatchSegmentJobOutput`](crate::operation::create_batch_segment_job::CreateBatchSegmentJobOutput) with field(s):
     ///   - [`batch_segment_job_arn(Option<String>)`](crate::operation::create_batch_segment_job::CreateBatchSegmentJobOutput::batch_segment_job_arn): <p>The ARN of the batch segment job.</p>
     /// - On failure, responds with [`SdkError<CreateBatchSegmentJobError>`](crate::operation::create_batch_segment_job::CreateBatchSegmentJobError)
-    pub fn create_batch_segment_job(
-        &self,
-    ) -> crate::operation::create_batch_segment_job::builders::CreateBatchSegmentJobFluentBuilder
-    {
+    pub fn create_batch_segment_job(&self) -> crate::operation::create_batch_segment_job::builders::CreateBatchSegmentJobFluentBuilder {
         crate::operation::create_batch_segment_job::builders::CreateBatchSegmentJobFluentBuilder::new(self.handle.clone())
     }
 }

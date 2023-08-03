@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::retire_grant::builders::RetireGrantFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::retire_grant::builders::RetireGrantFluentBuilder::set_dry_run): <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>  <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// - On success, responds with [`RetireGrantOutput`](crate::operation::retire_grant::RetireGrantOutput)
     /// - On failure, responds with [`SdkError<RetireGrantError>`](crate::operation::retire_grant::RetireGrantError)
-    pub fn retire_grant(
-        &self,
-    ) -> crate::operation::retire_grant::builders::RetireGrantFluentBuilder {
+    pub fn retire_grant(&self) -> crate::operation::retire_grant::builders::RetireGrantFluentBuilder {
         crate::operation::retire_grant::builders::RetireGrantFluentBuilder::new(self.handle.clone())
     }
 }

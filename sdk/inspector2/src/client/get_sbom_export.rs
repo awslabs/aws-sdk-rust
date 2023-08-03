@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`s3_destination(Option<Destination>)`](crate::operation::get_sbom_export::GetSbomExportOutput::s3_destination): <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
     ///   - [`filter_criteria(Option<ResourceFilterCriteria>)`](crate::operation::get_sbom_export::GetSbomExportOutput::filter_criteria): <p>Contains details about the resource filter criteria used for the software bill of materials (SBOM) report.</p>
     /// - On failure, responds with [`SdkError<GetSbomExportError>`](crate::operation::get_sbom_export::GetSbomExportError)
-    pub fn get_sbom_export(
-        &self,
-    ) -> crate::operation::get_sbom_export::builders::GetSbomExportFluentBuilder {
-        crate::operation::get_sbom_export::builders::GetSbomExportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_sbom_export(&self) -> crate::operation::get_sbom_export::builders::GetSbomExportFluentBuilder {
+        crate::operation::get_sbom_export::builders::GetSbomExportFluentBuilder::new(self.handle.clone())
     }
 }

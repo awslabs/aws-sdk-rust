@@ -73,9 +73,7 @@ impl GetLabelDetectionOutput {
         self.job_tag.as_deref()
     }
     /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
-    pub fn get_request_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GetLabelDetectionRequestMetadata> {
+    pub fn get_request_metadata(&self) -> ::std::option::Option<&crate::types::GetLabelDetectionRequestMetadata> {
         self.get_request_metadata.as_ref()
     }
 }
@@ -86,17 +84,14 @@ impl ::aws_http::request_id::RequestId for GetLabelDetectionOutput {
 }
 impl GetLabelDetectionOutput {
     /// Creates a new builder-style object to manufacture [`GetLabelDetectionOutput`](crate::operation::get_label_detection::GetLabelDetectionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_label_detection::builders::GetLabelDetectionOutputBuilder {
+    pub fn builder() -> crate::operation::get_label_detection::builders::GetLabelDetectionOutputBuilder {
         crate::operation::get_label_detection::builders::GetLabelDetectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLabelDetectionOutput`](crate::operation::get_label_detection::GetLabelDetectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLabelDetectionOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
@@ -107,8 +102,7 @@ pub struct GetLabelDetectionOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) video: ::std::option::Option<crate::types::Video>,
     pub(crate) job_tag: ::std::option::Option<::std::string::String>,
-    pub(crate) get_request_metadata:
-        ::std::option::Option<crate::types::GetLabelDetectionRequestMetadata>,
+    pub(crate) get_request_metadata: ::std::option::Option<crate::types::GetLabelDetectionRequestMetadata>,
     _request_id: Option<String>,
 }
 impl GetLabelDetectionOutputBuilder {
@@ -118,10 +112,7 @@ impl GetLabelDetectionOutputBuilder {
         self
     }
     /// <p>The current status of the label detection job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::VideoJobStatus>) -> Self {
         self.job_status = input;
         self
     }
@@ -130,18 +121,12 @@ impl GetLabelDetectionOutputBuilder {
         &self.job_status
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -155,10 +140,7 @@ impl GetLabelDetectionOutputBuilder {
         self
     }
     /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
-    pub fn set_video_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoMetadata>,
-    ) -> Self {
+    pub fn set_video_metadata(mut self, input: ::std::option::Option<crate::types::VideoMetadata>) -> Self {
         self.video_metadata = input;
         self
     }
@@ -192,32 +174,21 @@ impl GetLabelDetectionOutputBuilder {
         self
     }
     /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected. </p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LabelDetection>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LabelDetection>>) -> Self {
         self.labels = input;
         self
     }
     /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected. </p>
-    pub fn get_labels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelDetection>> {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelDetection>> {
         &self.labels
     }
     /// <p>Version number of the label detection model that was used to detect labels.</p>
-    pub fn label_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Version number of the label detection model that was used to detect labels.</p>
-    pub fn set_label_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_model_version = input;
         self
     }
@@ -268,25 +239,17 @@ impl GetLabelDetectionOutputBuilder {
         &self.job_tag
     }
     /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
-    pub fn get_request_metadata(
-        mut self,
-        input: crate::types::GetLabelDetectionRequestMetadata,
-    ) -> Self {
+    pub fn get_request_metadata(mut self, input: crate::types::GetLabelDetectionRequestMetadata) -> Self {
         self.get_request_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
-    pub fn set_get_request_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::GetLabelDetectionRequestMetadata>,
-    ) -> Self {
+    pub fn set_get_request_metadata(mut self, input: ::std::option::Option<crate::types::GetLabelDetectionRequestMetadata>) -> Self {
         self.get_request_metadata = input;
         self
     }
     /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
-    pub fn get_get_request_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::GetLabelDetectionRequestMetadata> {
+    pub fn get_get_request_metadata(&self) -> &::std::option::Option<crate::types::GetLabelDetectionRequestMetadata> {
         &self.get_request_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -30,9 +30,7 @@ impl ScheduledActionFilter {
 
 /// A builder for [`ScheduledActionFilter`](crate::types::ScheduledActionFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledActionFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ScheduledActionFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl ScheduledActionFilterBuilder {
         self
     }
     /// <p>The type of element to filter. </p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledActionFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::ScheduledActionFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -67,10 +62,7 @@ impl ScheduledActionFilterBuilder {
         self
     }
     /// <p>List of values. Compare if the value (of type defined by <code>Name</code>) equals an item in the list of scheduled actions. </p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

@@ -7,15 +7,16 @@ pub fn ser_evaluation_form_single_select_question_automation_option(
         crate::types::EvaluationFormSingleSelectQuestionAutomationOption::RuleCategory(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_4.key("RuleCategory").start_object();
-            crate::protocol_serde::shape_single_select_question_rule_category_automation::ser_single_select_question_rule_category_automation(&mut object_1, inner)?;
+            crate::protocol_serde::shape_single_select_question_rule_category_automation::ser_single_select_question_rule_category_automation(
+                &mut object_1,
+                inner,
+            )?;
             object_1.finish();
         }
         crate::types::EvaluationFormSingleSelectQuestionAutomationOption::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "EvaluationFormSingleSelectQuestionAutomationOption",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "EvaluationFormSingleSelectQuestionAutomationOption",
+            ))
         }
     }
     Ok(())
@@ -23,17 +24,9 @@ pub fn ser_evaluation_form_single_select_question_automation_option(
 
 pub(crate) fn de_evaluation_form_single_select_question_automation_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::EvaluationFormSingleSelectQuestionAutomationOption>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::EvaluationFormSingleSelectQuestionAutomationOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -43,11 +36,9 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                             "RuleCategory" => {
@@ -63,21 +54,17 @@ where
                         };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

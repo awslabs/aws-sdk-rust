@@ -80,9 +80,7 @@ impl WorldFailure {
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
     /// </dl>
-    pub fn failure_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorldGenerationJobErrorCode> {
+    pub fn failure_code(&self) -> ::std::option::Option<&crate::types::WorldGenerationJobErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
@@ -103,9 +101,7 @@ impl WorldFailure {
 
 /// A builder for [`WorldFailure`](crate::types::WorldFailure).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorldFailureBuilder {
     pub(crate) failure_code: ::std::option::Option<crate::types::WorldGenerationJobErrorCode>,
     pub(crate) sample_failure_reason: ::std::option::Option<::std::string::String>,
@@ -182,10 +178,7 @@ impl WorldFailureBuilder {
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
     /// </dl>
-    pub fn set_failure_code(
-        mut self,
-        input: ::std::option::Option<crate::types::WorldGenerationJobErrorCode>,
-    ) -> Self {
+    pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::WorldGenerationJobErrorCode>) -> Self {
         self.failure_code = input;
         self
     }
@@ -222,24 +215,16 @@ impl WorldFailureBuilder {
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
     /// </dl>
-    pub fn get_failure_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorldGenerationJobErrorCode> {
+    pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::WorldGenerationJobErrorCode> {
         &self.failure_code
     }
     /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
-    pub fn sample_failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sample_failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
-    pub fn set_sample_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sample_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_failure_reason = input;
         self
     }

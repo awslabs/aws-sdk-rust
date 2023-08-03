@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListMulticastGroupsOutput {
 }
 impl ListMulticastGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListMulticastGroupsOutput`](crate::operation::list_multicast_groups::ListMulticastGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_multicast_groups::builders::ListMulticastGroupsOutputBuilder {
-        crate::operation::list_multicast_groups::builders::ListMulticastGroupsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_multicast_groups::builders::ListMulticastGroupsOutputBuilder {
+        crate::operation::list_multicast_groups::builders::ListMulticastGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMulticastGroupsOutput`](crate::operation::list_multicast_groups::ListMulticastGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMulticastGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) multicast_group_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MulticastGroup>>,
+    pub(crate) multicast_group_list: ::std::option::Option<::std::vec::Vec<crate::types::MulticastGroup>>,
     _request_id: Option<String>,
 }
 impl ListMulticastGroupsOutputBuilder {
@@ -73,17 +68,12 @@ impl ListMulticastGroupsOutputBuilder {
         self
     }
     /// <p>List of multicast groups.</p>
-    pub fn set_multicast_group_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MulticastGroup>>,
-    ) -> Self {
+    pub fn set_multicast_group_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MulticastGroup>>) -> Self {
         self.multicast_group_list = input;
         self
     }
     /// <p>List of multicast groups.</p>
-    pub fn get_multicast_group_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MulticastGroup>> {
+    pub fn get_multicast_group_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MulticastGroup>> {
         &self.multicast_group_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

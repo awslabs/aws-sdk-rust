@@ -4,14 +4,10 @@ pub fn ser_modify_replication_subnet_group_input(
     input: &crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.replication_subnet_group_identifier {
-        object
-            .key("ReplicationSubnetGroupIdentifier")
-            .string(var_1.as_str());
+        object.key("ReplicationSubnetGroupIdentifier").string(var_1.as_str());
     }
     if let Some(var_2) = &input.replication_subnet_group_description {
-        object
-            .key("ReplicationSubnetGroupDescription")
-            .string(var_2.as_str());
+        object.key("ReplicationSubnetGroupDescription").string(var_2.as_str());
     }
     if let Some(var_3) = &input.subnet_ids {
         let mut array_4 = object.key("SubnetIds").start_array();

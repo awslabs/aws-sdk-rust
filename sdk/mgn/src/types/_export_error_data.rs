@@ -23,9 +23,7 @@ impl ExportErrorData {
 
 /// A builder for [`ExportErrorData`](crate::types::ExportErrorData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportErrorDataBuilder {
     pub(crate) raw_error: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ExportErrorDataBuilder {
     }
     /// Consumes the builder and constructs a [`ExportErrorData`](crate::types::ExportErrorData).
     pub fn build(self) -> crate::types::ExportErrorData {
-        crate::types::ExportErrorData {
-            raw_error: self.raw_error,
-        }
+        crate::types::ExportErrorData { raw_error: self.raw_error }
     }
 }

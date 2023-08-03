@@ -44,9 +44,7 @@ impl JobProgressSummary {
 
 /// A builder for [`JobProgressSummary`](crate::types::JobProgressSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobProgressSummaryBuilder {
     pub(crate) total_number_of_tasks: ::std::option::Option<i64>,
     pub(crate) number_of_tasks_succeeded: ::std::option::Option<i64>,

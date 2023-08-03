@@ -29,9 +29,7 @@ pub struct Wave {
     pub last_modified_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Wave tags.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Wave {
     /// <p>Wave ID.</p>
@@ -55,9 +53,7 @@ impl Wave {
         self.is_archived
     }
     /// <p>Wave aggregated status.</p>
-    pub fn wave_aggregated_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WaveAggregatedStatus> {
+    pub fn wave_aggregated_status(&self) -> ::std::option::Option<&crate::types::WaveAggregatedStatus> {
         self.wave_aggregated_status.as_ref()
     }
     /// <p>Wave creation dateTime.</p>
@@ -69,11 +65,7 @@ impl Wave {
         self.last_modified_date_time.as_deref()
     }
     /// <p>Wave tags.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -111,9 +103,7 @@ pub struct WaveBuilder {
     pub(crate) wave_aggregated_status: ::std::option::Option<crate::types::WaveAggregatedStatus>,
     pub(crate) creation_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_date_time: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl WaveBuilder {
     /// <p>Wave ID.</p>
@@ -192,32 +182,21 @@ impl WaveBuilder {
         self
     }
     /// <p>Wave aggregated status.</p>
-    pub fn set_wave_aggregated_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WaveAggregatedStatus>,
-    ) -> Self {
+    pub fn set_wave_aggregated_status(mut self, input: ::std::option::Option<crate::types::WaveAggregatedStatus>) -> Self {
         self.wave_aggregated_status = input;
         self
     }
     /// <p>Wave aggregated status.</p>
-    pub fn get_wave_aggregated_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::WaveAggregatedStatus> {
+    pub fn get_wave_aggregated_status(&self) -> &::std::option::Option<crate::types::WaveAggregatedStatus> {
         &self.wave_aggregated_status
     }
     /// <p>Wave creation dateTime.</p>
-    pub fn creation_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Wave creation dateTime.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -226,18 +205,12 @@ impl WaveBuilder {
         &self.creation_date_time
     }
     /// <p>Wave last modified dateTime.</p>
-    pub fn last_modified_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Wave last modified dateTime.</p>
-    pub fn set_last_modified_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_date_time = input;
         self
     }
@@ -250,32 +223,19 @@ impl WaveBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Wave tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Wave tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Wave tags.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Wave`](crate::types::Wave).

@@ -51,9 +51,7 @@ impl DeleteMarkerEntry {
 
 /// A builder for [`DeleteMarkerEntry`](crate::types::DeleteMarkerEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMarkerEntryBuilder {
     pub(crate) owner: ::std::option::Option<crate::types::Owner>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -124,10 +122,7 @@ impl DeleteMarkerEntryBuilder {
         self
     }
     /// <p>Date and time the object was last modified.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }

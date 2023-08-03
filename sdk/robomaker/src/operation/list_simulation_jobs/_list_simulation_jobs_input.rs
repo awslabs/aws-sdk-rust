@@ -31,17 +31,14 @@ impl ListSimulationJobsInput {
 }
 impl ListSimulationJobsInput {
     /// Creates a new builder-style object to manufacture [`ListSimulationJobsInput`](crate::operation::list_simulation_jobs::ListSimulationJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_simulation_jobs::builders::ListSimulationJobsInputBuilder {
+    pub fn builder() -> crate::operation::list_simulation_jobs::builders::ListSimulationJobsInputBuilder {
         crate::operation::list_simulation_jobs::builders::ListSimulationJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSimulationJobsInput`](crate::operation::list_simulation_jobs::ListSimulationJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSimulationJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -90,10 +87,7 @@ impl ListSimulationJobsInputBuilder {
     }
     /// <p>Optional filters to limit results.</p>
     /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -105,16 +99,11 @@ impl ListSimulationJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListSimulationJobsInput`](crate::operation::list_simulation_jobs::ListSimulationJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_simulation_jobs::ListSimulationJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_simulation_jobs::ListSimulationJobsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_simulation_jobs::ListSimulationJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_simulation_jobs::ListSimulationJobsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+        })
     }
 }

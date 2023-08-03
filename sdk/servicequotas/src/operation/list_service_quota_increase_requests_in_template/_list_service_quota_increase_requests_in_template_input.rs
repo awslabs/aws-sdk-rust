@@ -36,16 +36,16 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInput {
 }
 impl ListServiceQuotaIncreaseRequestsInTemplateInput {
     /// Creates a new builder-style object to manufacture [`ListServiceQuotaIncreaseRequestsInTemplateInput`](crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateInput).
-    pub fn builder() -> crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateInputBuilder{
-        crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateInputBuilder {
+        crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateInputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`ListServiceQuotaIncreaseRequestsInTemplateInput`](crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceQuotaIncreaseRequestsInTemplateInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,
@@ -110,18 +110,19 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListServiceQuotaIncreaseRequestsInTemplateInput`](crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateInput {
-                service_code: self.service_code
-                ,
-                aws_region: self.aws_region
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                service_code: self.service_code,
+                aws_region: self.aws_region,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

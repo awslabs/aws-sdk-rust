@@ -28,9 +28,7 @@ impl PutEventsOutput {
 
 /// A builder for [`PutEventsOutput`](crate::operation::put_events::PutEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutEventsOutputBuilder {
     pub(crate) events_response: ::std::option::Option<crate::types::EventsResponse>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl PutEventsOutputBuilder {
         self
     }
     /// <p>Provides information about endpoints and the events that they're associated with.</p>
-    pub fn set_events_response(
-        mut self,
-        input: ::std::option::Option<crate::types::EventsResponse>,
-    ) -> Self {
+    pub fn set_events_response(mut self, input: ::std::option::Option<crate::types::EventsResponse>) -> Self {
         self.events_response = input;
         self
     }

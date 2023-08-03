@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateSystemTemplateOutput {
 }
 impl UpdateSystemTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSystemTemplateOutput`](crate::operation::update_system_template::UpdateSystemTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::update_system_template::builders::UpdateSystemTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::update_system_template::builders::UpdateSystemTemplateOutputBuilder {
         crate::operation::update_system_template::builders::UpdateSystemTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSystemTemplateOutput`](crate::operation::update_system_template::UpdateSystemTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSystemTemplateOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::SystemTemplateSummary>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateSystemTemplateOutputBuilder {
         self
     }
     /// <p>An object containing summary information about the updated system.</p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::SystemTemplateSummary>,
-    ) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::SystemTemplateSummary>) -> Self {
         self.summary = input;
         self
     }

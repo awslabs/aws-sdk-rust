@@ -50,9 +50,7 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::FilterNameStringType>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -82,10 +80,7 @@ impl FilterBuilder {
     /// <li> <p> <b>owning-service</b>: Prefix match, case-sensitive.</p> </li>
     /// <li> <p> <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p> </li>
     /// </ul>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterNameStringType>,
-    ) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::FilterNameStringType>) -> Self {
         self.key = input;
         self
     }
@@ -116,10 +111,7 @@ impl FilterBuilder {
     }
     /// <p>The keyword to filter for.</p>
     /// <p>You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters. </p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

@@ -44,9 +44,7 @@ impl Criterion {
 
 /// A builder for [`Criterion`](crate::types::Criterion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CriterionBuilder {
     pub(crate) eq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) neq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -66,10 +64,7 @@ impl CriterionBuilder {
         self
     }
     /// <p>An "equals" operator to match for the filter used to create the rule.</p>
-    pub fn set_eq(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_eq(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.eq = input;
         self
     }
@@ -89,10 +84,7 @@ impl CriterionBuilder {
         self
     }
     /// <p>A "not equals" operator to match for the filter used to create the rule.</p>
-    pub fn set_neq(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_neq(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.neq = input;
         self
     }
@@ -112,10 +104,7 @@ impl CriterionBuilder {
         self
     }
     /// <p>A "contains" operator to match for the filter used to create the rule.</p>
-    pub fn set_contains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_contains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.contains = input;
         self
     }

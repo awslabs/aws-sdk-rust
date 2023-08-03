@@ -16,9 +16,7 @@ pub fn ser_launch_template(
         for item_5 in var_4 {
             #[allow(unused_mut)]
             let mut entry_7 = list_6.entry();
-            crate::protocol_serde::shape_launch_template_overrides::ser_launch_template_overrides(
-                entry_7, item_5,
-            )?;
+            crate::protocol_serde::shape_launch_template_overrides::ser_launch_template_overrides(entry_7, item_5)?;
         }
         list_6.finish();
     }

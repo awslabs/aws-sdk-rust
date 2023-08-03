@@ -46,10 +46,7 @@ impl PutSubscriptionFilterFluentBuilder {
         }
     }
     /// Access the PutSubscriptionFilter as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_subscription_filter::builders::PutSubscriptionFilterInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_subscription_filter::builders::PutSubscriptionFilterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +58,7 @@ impl PutSubscriptionFilterFluentBuilder {
             crate::operation::put_subscription_filter::PutSubscriptionFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_subscription_filter::PutSubscriptionFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_subscription_filter::PutSubscriptionFilterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +68,7 @@ impl PutSubscriptionFilterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +77,7 @@ impl PutSubscriptionFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_subscription_filter::PutSubscriptionFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_subscription_filter::PutSubscriptionFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_subscription_filter::PutSubscriptionFilterError>,
     > {
         let op = self
             .inner
@@ -110,9 +100,7 @@ impl PutSubscriptionFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_subscription_filter::PutSubscriptionFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_subscription_filter::PutSubscriptionFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_subscription_filter::PutSubscriptionFilterError>,
     > {
         self.send_middleware().await
     }
@@ -126,25 +114,17 @@ impl PutSubscriptionFilterFluentBuilder {
             crate::operation::put_subscription_filter::PutSubscriptionFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_subscription_filter::PutSubscriptionFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_subscription_filter::PutSubscriptionFilterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
@@ -167,18 +147,12 @@ impl PutSubscriptionFilterFluentBuilder {
         self.inner.get_filter_name()
     }
     /// <p>A filter pattern for subscribing to a filtered stream of log events.</p>
-    pub fn filter_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_pattern(input.into());
         self
     }
     /// <p>A filter pattern for subscribing to a filtered stream of log events.</p>
-    pub fn set_filter_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_pattern(input);
         self
     }
@@ -193,10 +167,7 @@ impl PutSubscriptionFilterFluentBuilder {
     /// <li> <p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// </ul>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_arn(input.into());
         self
     }
@@ -207,10 +178,7 @@ impl PutSubscriptionFilterFluentBuilder {
     /// <li> <p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// </ul>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_arn(input);
         self
     }
@@ -244,10 +212,7 @@ impl PutSubscriptionFilterFluentBuilder {
         self
     }
     /// <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis data stream. </p>
-    pub fn set_distribution(
-        mut self,
-        input: ::std::option::Option<crate::types::Distribution>,
-    ) -> Self {
+    pub fn set_distribution(mut self, input: ::std::option::Option<crate::types::Distribution>) -> Self {
         self.inner = self.inner.set_distribution(input);
         self
     }

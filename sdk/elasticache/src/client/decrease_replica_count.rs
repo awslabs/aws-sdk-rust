@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`DecreaseReplicaCountOutput`](crate::operation::decrease_replica_count::DecreaseReplicaCountOutput) with field(s):
     ///   - [`replication_group(Option<ReplicationGroup>)`](crate::operation::decrease_replica_count::DecreaseReplicaCountOutput::replication_group): <p>Contains all of the attributes of a specific Redis replication group.</p>
     /// - On failure, responds with [`SdkError<DecreaseReplicaCountError>`](crate::operation::decrease_replica_count::DecreaseReplicaCountError)
-    pub fn decrease_replica_count(
-        &self,
-    ) -> crate::operation::decrease_replica_count::builders::DecreaseReplicaCountFluentBuilder {
-        crate::operation::decrease_replica_count::builders::DecreaseReplicaCountFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn decrease_replica_count(&self) -> crate::operation::decrease_replica_count::builders::DecreaseReplicaCountFluentBuilder {
+        crate::operation::decrease_replica_count::builders::DecreaseReplicaCountFluentBuilder::new(self.handle.clone())
     }
 }

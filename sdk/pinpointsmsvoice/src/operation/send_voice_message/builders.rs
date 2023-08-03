@@ -10,10 +10,7 @@ impl SendVoiceMessageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_voice_message::SendVoiceMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_voice_message::SendVoiceMessageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_voice_message::SendVoiceMessageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_voice_message();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SendVoiceMessageFluentBuilder {
         }
     }
     /// Access the SendVoiceMessage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::send_voice_message::builders::SendVoiceMessageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::send_voice_message::builders::SendVoiceMessageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SendVoiceMessageFluentBuilder {
             crate::operation::send_voice_message::SendVoiceMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_voice_message::SendVoiceMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_voice_message::SendVoiceMessageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SendVoiceMessageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SendVoiceMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_voice_message::SendVoiceMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_voice_message::SendVoiceMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_voice_message::SendVoiceMessageError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SendVoiceMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_voice_message::SendVoiceMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_voice_message::SendVoiceMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_voice_message::SendVoiceMessageError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl SendVoiceMessageFluentBuilder {
             crate::operation::send_voice_message::SendVoiceMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_voice_message::SendVoiceMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_voice_message::SendVoiceMessageError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl SendVoiceMessageFluentBuilder {
         self.inner.get_caller_id()
     }
     /// The name of the configuration set that you want to use to send the message.
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// The name of the configuration set that you want to use to send the message.
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
@@ -162,10 +140,7 @@ impl SendVoiceMessageFluentBuilder {
         self
     }
     /// An object that contains a voice message and information about the recipient that you want to send it to.
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceMessageContent>,
-    ) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::VoiceMessageContent>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
@@ -174,18 +149,12 @@ impl SendVoiceMessageFluentBuilder {
         self.inner.get_content()
     }
     /// The phone number that you want to send the voice message to.
-    pub fn destination_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_phone_number(input.into());
         self
     }
     /// The phone number that you want to send the voice message to.
-    pub fn set_destination_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_phone_number(input);
         self
     }
@@ -194,18 +163,12 @@ impl SendVoiceMessageFluentBuilder {
         self.inner.get_destination_phone_number()
     }
     /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
-    pub fn origination_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origination_phone_number(input.into());
         self
     }
     /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
-    pub fn set_origination_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origination_phone_number(input);
         self
     }

@@ -36,18 +36,14 @@ impl ListVirtualServicesInput {
 }
 impl ListVirtualServicesInput {
     /// Creates a new builder-style object to manufacture [`ListVirtualServicesInput`](crate::operation::list_virtual_services::ListVirtualServicesInput).
-    pub fn builder(
-    ) -> crate::operation::list_virtual_services::builders::ListVirtualServicesInputBuilder {
-        crate::operation::list_virtual_services::builders::ListVirtualServicesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_virtual_services::builders::ListVirtualServicesInputBuilder {
+        crate::operation::list_virtual_services::builders::ListVirtualServicesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVirtualServicesInput`](crate::operation::list_virtual_services::ListVirtualServicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVirtualServicesInputBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -114,17 +110,13 @@ impl ListVirtualServicesInputBuilder {
     /// Consumes the builder and constructs a [`ListVirtualServicesInput`](crate::operation::list_virtual_services::ListVirtualServicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_virtual_services::ListVirtualServicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_virtual_services::ListVirtualServicesInput {
-                mesh_name: self.mesh_name,
-                next_token: self.next_token,
-                limit: self.limit,
-                mesh_owner: self.mesh_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_virtual_services::ListVirtualServicesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_virtual_services::ListVirtualServicesInput {
+            mesh_name: self.mesh_name,
+            next_token: self.next_token,
+            limit: self.limit,
+            mesh_owner: self.mesh_owner,
+        })
     }
 }

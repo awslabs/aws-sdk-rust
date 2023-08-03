@@ -23,17 +23,14 @@ impl RegisterEventTopicInput {
 }
 impl RegisterEventTopicInput {
     /// Creates a new builder-style object to manufacture [`RegisterEventTopicInput`](crate::operation::register_event_topic::RegisterEventTopicInput).
-    pub fn builder(
-    ) -> crate::operation::register_event_topic::builders::RegisterEventTopicInputBuilder {
+    pub fn builder() -> crate::operation::register_event_topic::builders::RegisterEventTopicInputBuilder {
         crate::operation::register_event_topic::builders::RegisterEventTopicInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterEventTopicInput`](crate::operation::register_event_topic::RegisterEventTopicInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterEventTopicInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_name: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,10 @@ impl RegisterEventTopicInputBuilder {
     /// Consumes the builder and constructs a [`RegisterEventTopicInput`](crate::operation::register_event_topic::RegisterEventTopicInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_event_topic::RegisterEventTopicInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::register_event_topic::RegisterEventTopicInput {
-                directory_id: self.directory_id,
-                topic_name: self.topic_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::register_event_topic::RegisterEventTopicInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::register_event_topic::RegisterEventTopicInput {
+            directory_id: self.directory_id,
+            topic_name: self.topic_name,
+        })
     }
 }

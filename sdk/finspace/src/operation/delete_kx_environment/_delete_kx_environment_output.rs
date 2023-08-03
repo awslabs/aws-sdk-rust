@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteKxEnvironmentOutput {
 }
 impl DeleteKxEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteKxEnvironmentOutput`](crate::operation::delete_kx_environment::DeleteKxEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_kx_environment::builders::DeleteKxEnvironmentOutputBuilder {
-        crate::operation::delete_kx_environment::builders::DeleteKxEnvironmentOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_kx_environment::builders::DeleteKxEnvironmentOutputBuilder {
+        crate::operation::delete_kx_environment::builders::DeleteKxEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteKxEnvironmentOutput`](crate::operation::delete_kx_environment::DeleteKxEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteKxEnvironmentOutputBuilder {
     _request_id: Option<String>,
 }

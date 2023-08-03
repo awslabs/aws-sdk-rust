@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateClusterSettingsOutput`](crate::operation::update_cluster_settings::UpdateClusterSettingsOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::update_cluster_settings::UpdateClusterSettingsOutput::cluster): <p>Details about the cluster</p>
     /// - On failure, responds with [`SdkError<UpdateClusterSettingsError>`](crate::operation::update_cluster_settings::UpdateClusterSettingsError)
-    pub fn update_cluster_settings(
-        &self,
-    ) -> crate::operation::update_cluster_settings::builders::UpdateClusterSettingsFluentBuilder
-    {
-        crate::operation::update_cluster_settings::builders::UpdateClusterSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_cluster_settings(&self) -> crate::operation::update_cluster_settings::builders::UpdateClusterSettingsFluentBuilder {
+        crate::operation::update_cluster_settings::builders::UpdateClusterSettingsFluentBuilder::new(self.handle.clone())
     }
 }

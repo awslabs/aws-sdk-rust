@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteApplicationReferenceDataSourceO
 }
 impl DeleteApplicationReferenceDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationReferenceDataSourceOutput`](crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceOutput).
-    pub fn builder() -> crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceOutputBuilder{
+    pub fn builder() -> crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceOutputBuilder {
         crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationReferenceDataSourceOutput`](crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationReferenceDataSourceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteApplicationReferenceDataSourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteApplicationReferenceDataSourceOutput`](crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceOutput).
-    pub fn build(self) -> crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceOutput{
+    pub fn build(self) -> crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceOutput {
         crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceOutput {
             _request_id: self._request_id,
         }

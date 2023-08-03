@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`ConfigureAccessPointOutput`](crate::operation::configure_access_point::ConfigureAccessPointOutput) with field(s):
     ///   - [`access_point(Option<NetworkResource>)`](crate::operation::configure_access_point::ConfigureAccessPointOutput::access_point): <p>Information about the network resource.</p>
     /// - On failure, responds with [`SdkError<ConfigureAccessPointError>`](crate::operation::configure_access_point::ConfigureAccessPointError)
-    pub fn configure_access_point(
-        &self,
-    ) -> crate::operation::configure_access_point::builders::ConfigureAccessPointFluentBuilder {
-        crate::operation::configure_access_point::builders::ConfigureAccessPointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn configure_access_point(&self) -> crate::operation::configure_access_point::builders::ConfigureAccessPointFluentBuilder {
+        crate::operation::configure_access_point::builders::ConfigureAccessPointFluentBuilder::new(self.handle.clone())
     }
 }

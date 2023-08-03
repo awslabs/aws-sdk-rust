@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`CreateResponsePlanOutput`](crate::operation::create_response_plan::CreateResponsePlanOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_response_plan::CreateResponsePlanOutput::arn): <p>The Amazon Resource Name (ARN) of the response plan.</p>
     /// - On failure, responds with [`SdkError<CreateResponsePlanError>`](crate::operation::create_response_plan::CreateResponsePlanError)
-    pub fn create_response_plan(
-        &self,
-    ) -> crate::operation::create_response_plan::builders::CreateResponsePlanFluentBuilder {
-        crate::operation::create_response_plan::builders::CreateResponsePlanFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_response_plan(&self) -> crate::operation::create_response_plan::builders::CreateResponsePlanFluentBuilder {
+        crate::operation::create_response_plan::builders::CreateResponsePlanFluentBuilder::new(self.handle.clone())
     }
 }

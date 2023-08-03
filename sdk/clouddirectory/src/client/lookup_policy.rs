@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`policy_to_path_list(Option<Vec<PolicyToPath>>)`](crate::operation::lookup_policy::LookupPolicyOutput::policy_to_path_list): <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::lookup_policy::LookupPolicyOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<LookupPolicyError>`](crate::operation::lookup_policy::LookupPolicyError)
-    pub fn lookup_policy(
-        &self,
-    ) -> crate::operation::lookup_policy::builders::LookupPolicyFluentBuilder {
-        crate::operation::lookup_policy::builders::LookupPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn lookup_policy(&self) -> crate::operation::lookup_policy::builders::LookupPolicyFluentBuilder {
+        crate::operation::lookup_policy::builders::LookupPolicyFluentBuilder::new(self.handle.clone())
     }
 }

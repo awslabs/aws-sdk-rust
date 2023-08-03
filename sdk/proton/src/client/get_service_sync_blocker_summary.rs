@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetServiceSyncBlockerSummaryOutput`](crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryOutput) with field(s):
     ///   - [`service_sync_blocker_summary(Option<ServiceSyncBlockerSummary>)`](crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryOutput::service_sync_blocker_summary): <p>The detailed data of the requested service sync blocker summary.</p>
     /// - On failure, responds with [`SdkError<GetServiceSyncBlockerSummaryError>`](crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryError)
-    pub fn get_service_sync_blocker_summary(&self) -> crate::operation::get_service_sync_blocker_summary::builders::GetServiceSyncBlockerSummaryFluentBuilder{
+    pub fn get_service_sync_blocker_summary(
+        &self,
+    ) -> crate::operation::get_service_sync_blocker_summary::builders::GetServiceSyncBlockerSummaryFluentBuilder {
         crate::operation::get_service_sync_blocker_summary::builders::GetServiceSyncBlockerSummaryFluentBuilder::new(self.handle.clone())
     }
 }

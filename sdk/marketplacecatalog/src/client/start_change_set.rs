@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`change_set_id(Option<String>)`](crate::operation::start_change_set::StartChangeSetOutput::change_set_id): <p>Unique identifier generated for the request.</p>
     ///   - [`change_set_arn(Option<String>)`](crate::operation::start_change_set::StartChangeSetOutput::change_set_arn): <p>The ARN associated to the unique identifier generated for the request.</p>
     /// - On failure, responds with [`SdkError<StartChangeSetError>`](crate::operation::start_change_set::StartChangeSetError)
-    pub fn start_change_set(
-        &self,
-    ) -> crate::operation::start_change_set::builders::StartChangeSetFluentBuilder {
-        crate::operation::start_change_set::builders::StartChangeSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_change_set(&self) -> crate::operation::start_change_set::builders::StartChangeSetFluentBuilder {
+        crate::operation::start_change_set::builders::StartChangeSetFluentBuilder::new(self.handle.clone())
     }
 }

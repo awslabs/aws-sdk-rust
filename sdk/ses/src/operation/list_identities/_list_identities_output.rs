@@ -36,9 +36,7 @@ impl ListIdentitiesOutput {
 
 /// A builder for [`ListIdentitiesOutput`](crate::operation::list_identities::ListIdentitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentitiesOutputBuilder {
     pub(crate) identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl ListIdentitiesOutputBuilder {
         self
     }
     /// <p>A list of identities.</p>
-    pub fn set_identities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_identities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.identities = input;
         self
     }

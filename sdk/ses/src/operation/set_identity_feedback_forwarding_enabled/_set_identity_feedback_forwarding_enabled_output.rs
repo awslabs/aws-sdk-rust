@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for SetIdentityFeedbackForwardingEnabledO
 }
 impl SetIdentityFeedbackForwardingEnabledOutput {
     /// Creates a new builder-style object to manufacture [`SetIdentityFeedbackForwardingEnabledOutput`](crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledOutput).
-    pub fn builder() -> crate::operation::set_identity_feedback_forwarding_enabled::builders::SetIdentityFeedbackForwardingEnabledOutputBuilder{
+    pub fn builder() -> crate::operation::set_identity_feedback_forwarding_enabled::builders::SetIdentityFeedbackForwardingEnabledOutputBuilder {
         crate::operation::set_identity_feedback_forwarding_enabled::builders::SetIdentityFeedbackForwardingEnabledOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetIdentityFeedbackForwardingEnabledOutput`](crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetIdentityFeedbackForwardingEnabledOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,7 +35,7 @@ impl SetIdentityFeedbackForwardingEnabledOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SetIdentityFeedbackForwardingEnabledOutput`](crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledOutput).
-    pub fn build(self) -> crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledOutput{
+    pub fn build(self) -> crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledOutput {
         crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledOutput {
             _request_id: self._request_id,
         }

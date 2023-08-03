@@ -21,10 +21,7 @@ pub fn ser_tabular_conditions(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_property_filter::ser_property_filter(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_property_filter::ser_property_filter(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }

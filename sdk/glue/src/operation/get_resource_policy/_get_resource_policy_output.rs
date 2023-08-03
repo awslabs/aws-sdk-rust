@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for GetResourcePolicyOutput {
 }
 impl GetResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcePolicyOutput`](crate::operation::get_resource_policy::GetResourcePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder {
+    pub fn builder() -> crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder {
         crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourcePolicyOutput`](crate::operation::get_resource_policy::GetResourcePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourcePolicyOutputBuilder {
     pub(crate) policy_in_json: ::std::option::Option<::std::string::String>,
     pub(crate) policy_hash: ::std::option::Option<::std::string::String>,
@@ -62,18 +59,12 @@ pub struct GetResourcePolicyOutputBuilder {
 }
 impl GetResourcePolicyOutputBuilder {
     /// <p>Contains the requested policy document, in JSON format.</p>
-    pub fn policy_in_json(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_in_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_in_json = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains the requested policy document, in JSON format.</p>
-    pub fn set_policy_in_json(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_in_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_in_json = input;
         self
     }
@@ -101,10 +92,7 @@ impl GetResourcePolicyOutputBuilder {
         self
     }
     /// <p>The date and time at which the policy was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -118,10 +106,7 @@ impl GetResourcePolicyOutputBuilder {
         self
     }
     /// <p>The date and time at which the policy was last updated.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }

@@ -8,8 +8,7 @@ pub struct UpdateEndpointWeightsAndCapacitiesInput {
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that provides new capacity and weight values for a variant.</p>
     #[doc(hidden)]
-    pub desired_weights_and_capacities:
-        ::std::option::Option<::std::vec::Vec<crate::types::DesiredWeightAndCapacity>>,
+    pub desired_weights_and_capacities: ::std::option::Option<::std::vec::Vec<crate::types::DesiredWeightAndCapacity>>,
 }
 impl UpdateEndpointWeightsAndCapacitiesInput {
     /// <p>The name of an existing SageMaker endpoint.</p>
@@ -17,43 +16,32 @@ impl UpdateEndpointWeightsAndCapacitiesInput {
         self.endpoint_name.as_deref()
     }
     /// <p>An object that provides new capacity and weight values for a variant.</p>
-    pub fn desired_weights_and_capacities(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DesiredWeightAndCapacity]> {
+    pub fn desired_weights_and_capacities(&self) -> ::std::option::Option<&[crate::types::DesiredWeightAndCapacity]> {
         self.desired_weights_and_capacities.as_deref()
     }
 }
 impl UpdateEndpointWeightsAndCapacitiesInput {
     /// Creates a new builder-style object to manufacture [`UpdateEndpointWeightsAndCapacitiesInput`](crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesInput).
-    pub fn builder() -> crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesInputBuilder{
+    pub fn builder() -> crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesInputBuilder {
         crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEndpointWeightsAndCapacitiesInput`](crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEndpointWeightsAndCapacitiesInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
-    pub(crate) desired_weights_and_capacities:
-        ::std::option::Option<::std::vec::Vec<crate::types::DesiredWeightAndCapacity>>,
+    pub(crate) desired_weights_and_capacities: ::std::option::Option<::std::vec::Vec<crate::types::DesiredWeightAndCapacity>>,
 }
 impl UpdateEndpointWeightsAndCapacitiesInputBuilder {
     /// <p>The name of an existing SageMaker endpoint.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an existing SageMaker endpoint.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_name = input;
         self
     }
@@ -66,10 +54,7 @@ impl UpdateEndpointWeightsAndCapacitiesInputBuilder {
     /// To override the contents of this collection use [`set_desired_weights_and_capacities`](Self::set_desired_weights_and_capacities).
     ///
     /// <p>An object that provides new capacity and weight values for a variant.</p>
-    pub fn desired_weights_and_capacities(
-        mut self,
-        input: crate::types::DesiredWeightAndCapacity,
-    ) -> Self {
+    pub fn desired_weights_and_capacities(mut self, input: crate::types::DesiredWeightAndCapacity) -> Self {
         let mut v = self.desired_weights_and_capacities.unwrap_or_default();
         v.push(input);
         self.desired_weights_and_capacities = ::std::option::Option::Some(v);
@@ -84,20 +69,21 @@ impl UpdateEndpointWeightsAndCapacitiesInputBuilder {
         self
     }
     /// <p>An object that provides new capacity and weight values for a variant.</p>
-    pub fn get_desired_weights_and_capacities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DesiredWeightAndCapacity>> {
+    pub fn get_desired_weights_and_capacities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DesiredWeightAndCapacity>> {
         &self.desired_weights_and_capacities
     }
     /// Consumes the builder and constructs a [`UpdateEndpointWeightsAndCapacitiesInput`](crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesInput {
-                endpoint_name: self.endpoint_name
-                ,
-                desired_weights_and_capacities: self.desired_weights_and_capacities
-                ,
-            }
+                endpoint_name: self.endpoint_name,
+                desired_weights_and_capacities: self.desired_weights_and_capacities,
+            },
         )
     }
 }

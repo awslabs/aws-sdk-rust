@@ -13,9 +13,7 @@ pub struct PropertyLatestValue {
 }
 impl PropertyLatestValue {
     /// <p>An object that specifies information about a property.</p>
-    pub fn property_reference(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EntityPropertyReference> {
+    pub fn property_reference(&self) -> ::std::option::Option<&crate::types::EntityPropertyReference> {
         self.property_reference.as_ref()
     }
     /// <p>The value of the property.</p>
@@ -32,9 +30,7 @@ impl PropertyLatestValue {
 
 /// A builder for [`PropertyLatestValue`](crate::types::PropertyLatestValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyLatestValueBuilder {
     pub(crate) property_reference: ::std::option::Option<crate::types::EntityPropertyReference>,
     pub(crate) property_value: ::std::option::Option<crate::types::DataValue>,
@@ -46,17 +42,12 @@ impl PropertyLatestValueBuilder {
         self
     }
     /// <p>An object that specifies information about a property.</p>
-    pub fn set_property_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityPropertyReference>,
-    ) -> Self {
+    pub fn set_property_reference(mut self, input: ::std::option::Option<crate::types::EntityPropertyReference>) -> Self {
         self.property_reference = input;
         self
     }
     /// <p>An object that specifies information about a property.</p>
-    pub fn get_property_reference(
-        &self,
-    ) -> &::std::option::Option<crate::types::EntityPropertyReference> {
+    pub fn get_property_reference(&self) -> &::std::option::Option<crate::types::EntityPropertyReference> {
         &self.property_reference
     }
     /// <p>The value of the property.</p>
@@ -65,10 +56,7 @@ impl PropertyLatestValueBuilder {
         self
     }
     /// <p>The value of the property.</p>
-    pub fn set_property_value(
-        mut self,
-        input: ::std::option::Option<crate::types::DataValue>,
-    ) -> Self {
+    pub fn set_property_value(mut self, input: ::std::option::Option<crate::types::DataValue>) -> Self {
         self.property_value = input;
         self
     }

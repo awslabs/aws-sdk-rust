@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`GetJourneyExecutionActivityMetricsOutput`](crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsOutput) with field(s):
     ///   - [`journey_execution_activity_metrics_response(Option<JourneyExecutionActivityMetricsResponse>)`](crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsOutput::journey_execution_activity_metrics_response): <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.</p>
     /// - On failure, responds with [`SdkError<GetJourneyExecutionActivityMetricsError>`](crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsError)
-    pub fn get_journey_execution_activity_metrics(&self) -> crate::operation::get_journey_execution_activity_metrics::builders::GetJourneyExecutionActivityMetricsFluentBuilder{
+    pub fn get_journey_execution_activity_metrics(
+        &self,
+    ) -> crate::operation::get_journey_execution_activity_metrics::builders::GetJourneyExecutionActivityMetricsFluentBuilder {
         crate::operation::get_journey_execution_activity_metrics::builders::GetJourneyExecutionActivityMetricsFluentBuilder::new(self.handle.clone())
     }
 }

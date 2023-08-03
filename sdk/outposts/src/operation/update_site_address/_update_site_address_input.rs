@@ -29,17 +29,14 @@ impl UpdateSiteAddressInput {
 }
 impl UpdateSiteAddressInput {
     /// Creates a new builder-style object to manufacture [`UpdateSiteAddressInput`](crate::operation::update_site_address::UpdateSiteAddressInput).
-    pub fn builder(
-    ) -> crate::operation::update_site_address::builders::UpdateSiteAddressInputBuilder {
+    pub fn builder() -> crate::operation::update_site_address::builders::UpdateSiteAddressInputBuilder {
         crate::operation::update_site_address::builders::UpdateSiteAddressInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSiteAddressInput`](crate::operation::update_site_address::UpdateSiteAddressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSiteAddressInputBuilder {
     pub(crate) site_id: ::std::option::Option<::std::string::String>,
     pub(crate) address_type: ::std::option::Option<crate::types::AddressType>,
@@ -66,10 +63,7 @@ impl UpdateSiteAddressInputBuilder {
         self
     }
     /// <p> The type of the address. </p>
-    pub fn set_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressType>,
-    ) -> Self {
+    pub fn set_address_type(mut self, input: ::std::option::Option<crate::types::AddressType>) -> Self {
         self.address_type = input;
         self
     }
@@ -94,16 +88,11 @@ impl UpdateSiteAddressInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSiteAddressInput`](crate::operation::update_site_address::UpdateSiteAddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_site_address::UpdateSiteAddressInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_site_address::UpdateSiteAddressInput {
-                site_id: self.site_id,
-                address_type: self.address_type,
-                address: self.address,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_site_address::UpdateSiteAddressInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_site_address::UpdateSiteAddressInput {
+            site_id: self.site_id,
+            address_type: self.address_type,
+            address: self.address,
+        })
     }
 }

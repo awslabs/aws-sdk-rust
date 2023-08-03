@@ -15,10 +15,7 @@ pub fn ser_create_host_input(
     if let Some(var_4) = &input.vpc_configuration {
         #[allow(unused_mut)]
         let mut object_5 = object.key("VpcConfiguration").start_object();
-        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.tags {

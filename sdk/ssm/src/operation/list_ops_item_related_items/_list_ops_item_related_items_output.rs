@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListOpsItemRelatedItemsOutput {
 }
 impl ListOpsItemRelatedItemsOutput {
     /// Creates a new builder-style object to manufacture [`ListOpsItemRelatedItemsOutput`](crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_ops_item_related_items::builders::ListOpsItemRelatedItemsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_ops_item_related_items::builders::ListOpsItemRelatedItemsOutputBuilder {
         crate::operation::list_ops_item_related_items::builders::ListOpsItemRelatedItemsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOpsItemRelatedItemsOutput`](crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOpsItemRelatedItemsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemSummary>>,
+    pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemSummary>>,
     _request_id: Option<String>,
 }
 impl ListOpsItemRelatedItemsOutputBuilder {
@@ -73,17 +68,12 @@ impl ListOpsItemRelatedItemsOutputBuilder {
         self
     }
     /// <p>A list of related-item resources for the specified OpsItem.</p>
-    pub fn set_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemSummary>>,
-    ) -> Self {
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemSummary>>) -> Self {
         self.summaries = input;
         self
     }
     /// <p>A list of related-item resources for the specified OpsItem.</p>
-    pub fn get_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemSummary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemSummary>> {
         &self.summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -96,9 +86,7 @@ impl ListOpsItemRelatedItemsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListOpsItemRelatedItemsOutput`](crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsOutput {
+    pub fn build(self) -> crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsOutput {
         crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsOutput {
             next_token: self.next_token,
             summaries: self.summaries,

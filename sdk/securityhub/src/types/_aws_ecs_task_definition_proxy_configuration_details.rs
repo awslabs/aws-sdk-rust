@@ -9,11 +9,8 @@ pub struct AwsEcsTaskDefinitionProxyConfigurationDetails {
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The set of network configuration parameters to provide to the Container Network Interface (CNI) plugin, specified as key-value pairs.</p>
     #[doc(hidden)]
-    pub proxy_configuration_properties: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails,
-        >,
-    >,
+    pub proxy_configuration_properties:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails>>,
     /// <p>The proxy type.</p>
     #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
@@ -24,7 +21,9 @@ impl AwsEcsTaskDefinitionProxyConfigurationDetails {
         self.container_name.as_deref()
     }
     /// <p>The set of network configuration parameters to provide to the Container Network Interface (CNI) plugin, specified as key-value pairs.</p>
-    pub fn proxy_configuration_properties(&self) -> ::std::option::Option<& [crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails]>{
+    pub fn proxy_configuration_properties(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails]> {
         self.proxy_configuration_properties.as_deref()
     }
     /// <p>The proxy type.</p>
@@ -34,40 +33,28 @@ impl AwsEcsTaskDefinitionProxyConfigurationDetails {
 }
 impl AwsEcsTaskDefinitionProxyConfigurationDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionProxyConfigurationDetails`](crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionProxyConfigurationDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionProxyConfigurationDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionProxyConfigurationDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionProxyConfigurationDetails`](crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionProxyConfigurationDetailsBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
-    pub(crate) proxy_configuration_properties: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails,
-        >,
-    >,
+    pub(crate) proxy_configuration_properties:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails>>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionProxyConfigurationDetailsBuilder {
     /// <p>The name of the container that will serve as the App Mesh proxy.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container that will serve as the App Mesh proxy.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }
@@ -100,11 +87,7 @@ impl AwsEcsTaskDefinitionProxyConfigurationDetailsBuilder {
     /// <p>The set of network configuration parameters to provide to the Container Network Interface (CNI) plugin, specified as key-value pairs.</p>
     pub fn get_proxy_configuration_properties(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails>> {
         &self.proxy_configuration_properties
     }
     /// <p>The proxy type.</p>

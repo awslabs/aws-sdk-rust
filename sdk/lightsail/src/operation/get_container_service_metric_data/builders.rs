@@ -27,7 +27,7 @@ impl GetContainerServiceMetricDataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetContainerServiceMetricDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_container_service_metric_data::builders::GetContainerServiceMetricDataInputBuilder,
+    inner: crate::operation::get_container_service_metric_data::builders::GetContainerServiceMetricDataInputBuilder,
 }
 impl GetContainerServiceMetricDataFluentBuilder {
     /// Creates a new `GetContainerServiceMetricData`.
@@ -38,7 +38,7 @@ impl GetContainerServiceMetricDataFluentBuilder {
         }
     }
     /// Access the GetContainerServiceMetricData as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_container_service_metric_data::builders::GetContainerServiceMetricDataInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_container_service_metric_data::builders::GetContainerServiceMetricDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetContainerServiceMetricDataFluentBuilder {
             crate::operation::get_container_service_metric_data::GetContainerServiceMetricData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetContainerServiceMetricDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetContainerServiceMetricDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetContainerServiceMetricDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetContainerServiceMetricDataFluentBuilder {
             crate::operation::get_container_service_metric_data::GetContainerServiceMetricData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError>,
     > {
         self.customize_middleware().await
     }
@@ -151,10 +140,7 @@ impl GetContainerServiceMetricDataFluentBuilder {
     /// <li> <p> <code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p> </li>
     /// <li> <p> <code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p> </li>
     /// </ul>
-    pub fn set_metric_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerServiceMetricName>,
-    ) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::ContainerServiceMetricName>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
     }
@@ -164,9 +150,7 @@ impl GetContainerServiceMetricDataFluentBuilder {
     /// <li> <p> <code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p> </li>
     /// <li> <p> <code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p> </li>
     /// </ul>
-    pub fn get_metric_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerServiceMetricName> {
+    pub fn get_metric_name(&self) -> &::std::option::Option<crate::types::ContainerServiceMetricName> {
         self.inner.get_metric_name()
     }
     /// <p>The start time of the time period.</p>
@@ -175,10 +159,7 @@ impl GetContainerServiceMetricDataFluentBuilder {
         self
     }
     /// <p>The start time of the time period.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -192,10 +173,7 @@ impl GetContainerServiceMetricDataFluentBuilder {
         self
     }
     /// <p>The end time of the time period.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -246,10 +224,7 @@ impl GetContainerServiceMetricDataFluentBuilder {
     /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>) -> Self {
         self.inner = self.inner.set_statistics(input);
         self
     }
@@ -262,9 +237,7 @@ impl GetContainerServiceMetricDataFluentBuilder {
     /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn get_statistics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
+    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
         self.inner.get_statistics()
     }
 }

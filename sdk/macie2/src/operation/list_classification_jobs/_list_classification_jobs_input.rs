@@ -36,18 +36,14 @@ impl ListClassificationJobsInput {
 }
 impl ListClassificationJobsInput {
     /// Creates a new builder-style object to manufacture [`ListClassificationJobsInput`](crate::operation::list_classification_jobs::ListClassificationJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_classification_jobs::builders::ListClassificationJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_classification_jobs::builders::ListClassificationJobsInputBuilder {
         crate::operation::list_classification_jobs::builders::ListClassificationJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListClassificationJobsInput`](crate::operation::list_classification_jobs::ListClassificationJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClassificationJobsInputBuilder {
     pub(crate) filter_criteria: ::std::option::Option<crate::types::ListJobsFilterCriteria>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -61,17 +57,12 @@ impl ListClassificationJobsInputBuilder {
         self
     }
     /// <p>The criteria to use to filter the results.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::ListJobsFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::ListJobsFilterCriteria>) -> Self {
         self.filter_criteria = input;
         self
     }
     /// <p>The criteria to use to filter the results.</p>
-    pub fn get_filter_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListJobsFilterCriteria> {
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::ListJobsFilterCriteria> {
         &self.filter_criteria
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
@@ -108,10 +99,7 @@ impl ListClassificationJobsInputBuilder {
         self
     }
     /// <p>The criteria to use to sort the results.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::ListJobsSortCriteria>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<crate::types::ListJobsSortCriteria>) -> Self {
         self.sort_criteria = input;
         self
     }
@@ -122,17 +110,13 @@ impl ListClassificationJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListClassificationJobsInput`](crate::operation::list_classification_jobs::ListClassificationJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_classification_jobs::ListClassificationJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_classification_jobs::ListClassificationJobsInput {
-                filter_criteria: self.filter_criteria,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                sort_criteria: self.sort_criteria,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_classification_jobs::ListClassificationJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_classification_jobs::ListClassificationJobsInput {
+            filter_criteria: self.filter_criteria,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            sort_criteria: self.sort_criteria,
+        })
     }
 }

@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`resource_share_invitation(Option<ResourceShareInvitation>)`](crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationOutput::resource_share_invitation): <p>An object that contains information about the specified invitation.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     /// - On failure, responds with [`SdkError<AcceptResourceShareInvitationError>`](crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError)
-    pub fn accept_resource_share_invitation(&self) -> crate::operation::accept_resource_share_invitation::builders::AcceptResourceShareInvitationFluentBuilder{
+    pub fn accept_resource_share_invitation(
+        &self,
+    ) -> crate::operation::accept_resource_share_invitation::builders::AcceptResourceShareInvitationFluentBuilder {
         crate::operation::accept_resource_share_invitation::builders::AcceptResourceShareInvitationFluentBuilder::new(self.handle.clone())
     }
 }

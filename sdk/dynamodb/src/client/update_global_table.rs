@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateGlobalTableOutput`](crate::operation::update_global_table::UpdateGlobalTableOutput) with field(s):
     ///   - [`global_table_description(Option<GlobalTableDescription>)`](crate::operation::update_global_table::UpdateGlobalTableOutput::global_table_description): <p>Contains the details of the global table.</p>
     /// - On failure, responds with [`SdkError<UpdateGlobalTableError>`](crate::operation::update_global_table::UpdateGlobalTableError)
-    pub fn update_global_table(
-        &self,
-    ) -> crate::operation::update_global_table::builders::UpdateGlobalTableFluentBuilder {
-        crate::operation::update_global_table::builders::UpdateGlobalTableFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_global_table(&self) -> crate::operation::update_global_table::builders::UpdateGlobalTableFluentBuilder {
+        crate::operation::update_global_table::builders::UpdateGlobalTableFluentBuilder::new(self.handle.clone())
     }
 }

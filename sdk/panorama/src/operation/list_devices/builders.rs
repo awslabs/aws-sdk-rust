@@ -10,10 +10,7 @@ impl ListDevicesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_devices::ListDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_devices::ListDevicesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_devices();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListDevicesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_devices::ListDevices,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_devices::ListDevices, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListDevicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListDevicesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_devices::ListDevices,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_devices::ListDevices, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl ListDevicesFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_devices::paginator::ListDevicesPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_devices::paginator::ListDevicesPaginator {
-        crate::operation::list_devices::paginator::ListDevicesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_devices::paginator::ListDevicesPaginator::new(self.handle, self.inner)
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,10 +140,7 @@ impl ListDevicesFluentBuilder {
         self
     }
     /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListDevicesSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListDevicesSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -195,25 +177,17 @@ impl ListDevicesFluentBuilder {
         self.inner.get_name_filter()
     }
     /// <p>Filter based on a device's status.</p>
-    pub fn device_aggregated_status_filter(
-        mut self,
-        input: crate::types::DeviceAggregatedStatus,
-    ) -> Self {
+    pub fn device_aggregated_status_filter(mut self, input: crate::types::DeviceAggregatedStatus) -> Self {
         self.inner = self.inner.device_aggregated_status_filter(input);
         self
     }
     /// <p>Filter based on a device's status.</p>
-    pub fn set_device_aggregated_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceAggregatedStatus>,
-    ) -> Self {
+    pub fn set_device_aggregated_status_filter(mut self, input: ::std::option::Option<crate::types::DeviceAggregatedStatus>) -> Self {
         self.inner = self.inner.set_device_aggregated_status_filter(input);
         self
     }
     /// <p>Filter based on a device's status.</p>
-    pub fn get_device_aggregated_status_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeviceAggregatedStatus> {
+    pub fn get_device_aggregated_status_filter(&self) -> &::std::option::Option<crate::types::DeviceAggregatedStatus> {
         self.inner.get_device_aggregated_status_filter()
     }
 }

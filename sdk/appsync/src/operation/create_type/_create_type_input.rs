@@ -38,9 +38,7 @@ impl CreateTypeInput {
 
 /// A builder for [`CreateTypeInput`](crate::operation::create_type::CreateTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTypeInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<::std::string::String>,
@@ -84,10 +82,7 @@ impl CreateTypeInputBuilder {
         self
     }
     /// <p>The type format: SDL or JSON.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::TypeDefinitionFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::TypeDefinitionFormat>) -> Self {
         self.format = input;
         self
     }
@@ -96,12 +91,7 @@ impl CreateTypeInputBuilder {
         &self.format
     }
     /// Consumes the builder and constructs a [`CreateTypeInput`](crate::operation::create_type::CreateTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_type::CreateTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_type::CreateTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_type::CreateTypeInput {
             api_id: self.api_id,
             definition: self.definition,

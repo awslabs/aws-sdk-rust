@@ -10,10 +10,7 @@ impl AddUploadBufferInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_upload_buffer::AddUploadBufferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_upload_buffer::AddUploadBufferError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_upload_buffer::AddUploadBufferError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_upload_buffer();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl AddUploadBufferFluentBuilder {
         }
     }
     /// Access the AddUploadBuffer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_upload_buffer::builders::AddUploadBufferInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_upload_buffer::builders::AddUploadBufferInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl AddUploadBufferFluentBuilder {
             crate::operation::add_upload_buffer::AddUploadBuffer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_upload_buffer::AddUploadBufferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_upload_buffer::AddUploadBufferError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl AddUploadBufferFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl AddUploadBufferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_upload_buffer::AddUploadBufferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_upload_buffer::AddUploadBufferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_upload_buffer::AddUploadBufferError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl AddUploadBufferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_upload_buffer::AddUploadBufferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_upload_buffer::AddUploadBufferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_upload_buffer::AddUploadBufferError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl AddUploadBufferFluentBuilder {
             crate::operation::add_upload_buffer::AddUploadBuffer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_upload_buffer::AddUploadBufferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_upload_buffer::AddUploadBufferError>,
     > {
         self.customize_middleware().await
     }
@@ -147,10 +131,7 @@ impl AddUploadBufferFluentBuilder {
         self
     }
     /// <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
-    pub fn set_disk_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_disk_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_disk_ids(input);
         self
     }

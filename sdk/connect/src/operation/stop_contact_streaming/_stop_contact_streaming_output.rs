@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for StopContactStreamingOutput {
 }
 impl StopContactStreamingOutput {
     /// Creates a new builder-style object to manufacture [`StopContactStreamingOutput`](crate::operation::stop_contact_streaming::StopContactStreamingOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_contact_streaming::builders::StopContactStreamingOutputBuilder {
+    pub fn builder() -> crate::operation::stop_contact_streaming::builders::StopContactStreamingOutputBuilder {
         crate::operation::stop_contact_streaming::builders::StopContactStreamingOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopContactStreamingOutput`](crate::operation::stop_contact_streaming::StopContactStreamingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopContactStreamingOutputBuilder {
     _request_id: Option<String>,
 }

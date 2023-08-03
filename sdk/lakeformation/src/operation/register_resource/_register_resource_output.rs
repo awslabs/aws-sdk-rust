@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for RegisterResourceOutput {
 }
 impl RegisterResourceOutput {
     /// Creates a new builder-style object to manufacture [`RegisterResourceOutput`](crate::operation::register_resource::RegisterResourceOutput).
-    pub fn builder() -> crate::operation::register_resource::builders::RegisterResourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::register_resource::builders::RegisterResourceOutputBuilder {
         crate::operation::register_resource::builders::RegisterResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterResourceOutput`](crate::operation::register_resource::RegisterResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterResourceOutputBuilder {
     _request_id: Option<String>,
 }

@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateStoreImageTaskOutput`](crate::operation::create_store_image_task::CreateStoreImageTaskOutput) with field(s):
     ///   - [`object_key(Option<String>)`](crate::operation::create_store_image_task::CreateStoreImageTaskOutput::object_key): <p>The name of the stored AMI object in the S3 bucket.</p>
     /// - On failure, responds with [`SdkError<CreateStoreImageTaskError>`](crate::operation::create_store_image_task::CreateStoreImageTaskError)
-    pub fn create_store_image_task(
-        &self,
-    ) -> crate::operation::create_store_image_task::builders::CreateStoreImageTaskFluentBuilder
-    {
-        crate::operation::create_store_image_task::builders::CreateStoreImageTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_store_image_task(&self) -> crate::operation::create_store_image_task::builders::CreateStoreImageTaskFluentBuilder {
+        crate::operation::create_store_image_task::builders::CreateStoreImageTaskFluentBuilder::new(self.handle.clone())
     }
 }

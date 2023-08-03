@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutPublicAccessBlockOutput {
 }
 impl PutPublicAccessBlockOutput {
     /// Creates a new builder-style object to manufacture [`PutPublicAccessBlockOutput`](crate::operation::put_public_access_block::PutPublicAccessBlockOutput).
-    pub fn builder(
-    ) -> crate::operation::put_public_access_block::builders::PutPublicAccessBlockOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_public_access_block::builders::PutPublicAccessBlockOutputBuilder {
         crate::operation::put_public_access_block::builders::PutPublicAccessBlockOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutPublicAccessBlockOutput`](crate::operation::put_public_access_block::PutPublicAccessBlockOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPublicAccessBlockOutputBuilder {
     _request_id: Option<String>,
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`protection_groups(Option<Vec<ProtectionGroup>>)`](crate::operation::list_protection_groups::ListProtectionGroupsOutput::protection_groups): <p></p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_protection_groups::ListProtectionGroupsOutput::next_token): <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>  <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>  <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     /// - On failure, responds with [`SdkError<ListProtectionGroupsError>`](crate::operation::list_protection_groups::ListProtectionGroupsError)
-    pub fn list_protection_groups(
-        &self,
-    ) -> crate::operation::list_protection_groups::builders::ListProtectionGroupsFluentBuilder {
-        crate::operation::list_protection_groups::builders::ListProtectionGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_protection_groups(&self) -> crate::operation::list_protection_groups::builders::ListProtectionGroupsFluentBuilder {
+        crate::operation::list_protection_groups::builders::ListProtectionGroupsFluentBuilder::new(self.handle.clone())
     }
 }

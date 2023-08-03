@@ -69,9 +69,7 @@ impl ModelPackageSummary {
     /// <li> <p> <code>REJECTED</code> - The model is rejected.</p> </li>
     /// <li> <p> <code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p> </li>
     /// </ul>
-    pub fn model_approval_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelApprovalStatus> {
+    pub fn model_approval_status(&self) -> ::std::option::Option<&crate::types::ModelApprovalStatus> {
         self.model_approval_status.as_ref()
     }
 }
@@ -84,9 +82,7 @@ impl ModelPackageSummary {
 
 /// A builder for [`ModelPackageSummary`](crate::types::ModelPackageSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelPackageSummaryBuilder {
     pub(crate) model_package_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
@@ -99,18 +95,12 @@ pub struct ModelPackageSummaryBuilder {
 }
 impl ModelPackageSummaryBuilder {
     /// <p>The name of the model package.</p>
-    pub fn model_package_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model package.</p>
-    pub fn set_model_package_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_name = input;
         self
     }
@@ -119,18 +109,12 @@ impl ModelPackageSummaryBuilder {
         &self.model_package_name
     }
     /// <p>If the model package is a versioned model, the model group that the versioned model belongs to.</p>
-    pub fn model_package_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the model package is a versioned model, the model group that the versioned model belongs to.</p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_name = input;
         self
     }
@@ -153,18 +137,12 @@ impl ModelPackageSummaryBuilder {
         &self.model_package_version
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-    pub fn model_package_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-    pub fn set_model_package_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_arn = input;
         self
     }
@@ -173,18 +151,12 @@ impl ModelPackageSummaryBuilder {
         &self.model_package_arn
     }
     /// <p>A brief description of the model package.</p>
-    pub fn model_package_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A brief description of the model package.</p>
-    pub fn set_model_package_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_description = input;
         self
     }
@@ -198,10 +170,7 @@ impl ModelPackageSummaryBuilder {
         self
     }
     /// <p>A timestamp that shows when the model package was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -215,17 +184,12 @@ impl ModelPackageSummaryBuilder {
         self
     }
     /// <p>The overall status of the model package.</p>
-    pub fn set_model_package_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackageStatus>,
-    ) -> Self {
+    pub fn set_model_package_status(mut self, input: ::std::option::Option<crate::types::ModelPackageStatus>) -> Self {
         self.model_package_status = input;
         self
     }
     /// <p>The overall status of the model package.</p>
-    pub fn get_model_package_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelPackageStatus> {
+    pub fn get_model_package_status(&self) -> &::std::option::Option<crate::types::ModelPackageStatus> {
         &self.model_package_status
     }
     /// <p>The approval status of the model. This can be one of the following values.</p>
@@ -244,10 +208,7 @@ impl ModelPackageSummaryBuilder {
     /// <li> <p> <code>REJECTED</code> - The model is rejected.</p> </li>
     /// <li> <p> <code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p> </li>
     /// </ul>
-    pub fn set_model_approval_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelApprovalStatus>,
-    ) -> Self {
+    pub fn set_model_approval_status(mut self, input: ::std::option::Option<crate::types::ModelApprovalStatus>) -> Self {
         self.model_approval_status = input;
         self
     }
@@ -257,9 +218,7 @@ impl ModelPackageSummaryBuilder {
     /// <li> <p> <code>REJECTED</code> - The model is rejected.</p> </li>
     /// <li> <p> <code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p> </li>
     /// </ul>
-    pub fn get_model_approval_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
+    pub fn get_model_approval_status(&self) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
         &self.model_approval_status
     }
     /// Consumes the builder and constructs a [`ModelPackageSummary`](crate::types::ModelPackageSummary).

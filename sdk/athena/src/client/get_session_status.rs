@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`session_id(Option<String>)`](crate::operation::get_session_status::GetSessionStatusOutput::session_id): <p>The session ID.</p>
     ///   - [`status(Option<SessionStatus>)`](crate::operation::get_session_status::GetSessionStatusOutput::status): <p>Contains information about the status of the session.</p>
     /// - On failure, responds with [`SdkError<GetSessionStatusError>`](crate::operation::get_session_status::GetSessionStatusError)
-    pub fn get_session_status(
-        &self,
-    ) -> crate::operation::get_session_status::builders::GetSessionStatusFluentBuilder {
-        crate::operation::get_session_status::builders::GetSessionStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_session_status(&self) -> crate::operation::get_session_status::builders::GetSessionStatusFluentBuilder {
+        crate::operation::get_session_status::builders::GetSessionStatusFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl ListSchemaMappingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_schema_mappings::ListSchemaMappingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_schema_mappings::ListSchemaMappingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_schema_mappings::ListSchemaMappingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_schema_mappings();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListSchemaMappingsFluentBuilder {
         }
     }
     /// Access the ListSchemaMappings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_schema_mappings::builders::ListSchemaMappingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_schema_mappings::builders::ListSchemaMappingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListSchemaMappingsFluentBuilder {
             crate::operation::list_schema_mappings::ListSchemaMappings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_schema_mappings::ListSchemaMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_schema_mappings::ListSchemaMappingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListSchemaMappingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListSchemaMappingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_schema_mappings::ListSchemaMappingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_schema_mappings::ListSchemaMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_schema_mappings::ListSchemaMappingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListSchemaMappingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_schema_mappings::ListSchemaMappingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_schema_mappings::ListSchemaMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_schema_mappings::ListSchemaMappingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListSchemaMappingsFluentBuilder {
             crate::operation::list_schema_mappings::ListSchemaMappings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_schema_mappings::ListSchemaMappingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_schema_mappings::ListSchemaMappingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_schema_mappings::paginator::ListSchemaMappingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_schema_mappings::paginator::ListSchemaMappingsPaginator {
-        crate::operation::list_schema_mappings::paginator::ListSchemaMappingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_schema_mappings::paginator::ListSchemaMappingsPaginator {
+        crate::operation::list_schema_mappings::paginator::ListSchemaMappingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

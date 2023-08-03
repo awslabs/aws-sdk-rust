@@ -5,8 +5,7 @@
 pub struct ListAssistantAssociationsOutput {
     /// <p>Summary information about assistant associations.</p>
     #[doc(hidden)]
-    pub assistant_association_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssistantAssociationSummary>>,
+    pub assistant_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssistantAssociationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAssistantAssociationsOutput {
 }
 impl ListAssistantAssociationsOutput {
     /// <p>Summary information about assistant associations.</p>
-    pub fn assistant_association_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssistantAssociationSummary]> {
+    pub fn assistant_association_summaries(&self) -> ::std::option::Option<&[crate::types::AssistantAssociationSummary]> {
         self.assistant_association_summaries.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAssistantAssociationsOutput {
 }
 impl ListAssistantAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssistantAssociationsOutput`](crate::operation::list_assistant_associations::ListAssistantAssociationsOutput).
-    pub fn builder() -> crate::operation::list_assistant_associations::builders::ListAssistantAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_assistant_associations::builders::ListAssistantAssociationsOutputBuilder {
         crate::operation::list_assistant_associations::builders::ListAssistantAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssistantAssociationsOutput`](crate::operation::list_assistant_associations::ListAssistantAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssistantAssociationsOutputBuilder {
-    pub(crate) assistant_association_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssistantAssociationSummary>>,
+    pub(crate) assistant_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssistantAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListAssistantAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_assistant_association_summaries`](Self::set_assistant_association_summaries).
     ///
     /// <p>Summary information about assistant associations.</p>
-    pub fn assistant_association_summaries(
-        mut self,
-        input: crate::types::AssistantAssociationSummary,
-    ) -> Self {
+    pub fn assistant_association_summaries(mut self, input: crate::types::AssistantAssociationSummary) -> Self {
         let mut v = self.assistant_association_summaries.unwrap_or_default();
         v.push(input);
         self.assistant_association_summaries = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListAssistantAssociationsOutputBuilder {
         self
     }
     /// <p>Summary information about assistant associations.</p>
-    pub fn get_assistant_association_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssistantAssociationSummary>> {
+    pub fn get_assistant_association_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssistantAssociationSummary>> {
         &self.assistant_association_summaries
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -100,9 +89,7 @@ impl ListAssistantAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssistantAssociationsOutput`](crate::operation::list_assistant_associations::ListAssistantAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_assistant_associations::ListAssistantAssociationsOutput {
+    pub fn build(self) -> crate::operation::list_assistant_associations::ListAssistantAssociationsOutput {
         crate::operation::list_assistant_associations::ListAssistantAssociationsOutput {
             assistant_association_summaries: self.assistant_association_summaries,
             next_token: self.next_token,

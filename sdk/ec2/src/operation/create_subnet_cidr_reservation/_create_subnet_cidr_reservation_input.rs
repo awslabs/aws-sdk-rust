@@ -42,9 +42,7 @@ impl CreateSubnetCidrReservationInput {
     /// <li> <p> <code>prefix</code>: The Amazon EC2 Prefix Delegation feature assigns the IP addresses to network interfaces that are associated with an instance. For information about Prefix Delegation, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation.html">Prefix Delegation for Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
     /// <li> <p> <code>explicit</code>: You manually assign the IP addresses to resources that reside in your subnet. </p> </li>
     /// </ul>
-    pub fn reservation_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SubnetCidrReservationType> {
+    pub fn reservation_type(&self) -> ::std::option::Option<&crate::types::SubnetCidrReservationType> {
         self.reservation_type.as_ref()
     }
     /// <p>The description to assign to the subnet CIDR reservation.</p>
@@ -62,24 +60,21 @@ impl CreateSubnetCidrReservationInput {
 }
 impl CreateSubnetCidrReservationInput {
     /// Creates a new builder-style object to manufacture [`CreateSubnetCidrReservationInput`](crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationInput).
-    pub fn builder() -> crate::operation::create_subnet_cidr_reservation::builders::CreateSubnetCidrReservationInputBuilder{
+    pub fn builder() -> crate::operation::create_subnet_cidr_reservation::builders::CreateSubnetCidrReservationInputBuilder {
         crate::operation::create_subnet_cidr_reservation::builders::CreateSubnetCidrReservationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSubnetCidrReservationInput`](crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSubnetCidrReservationInputBuilder {
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) reservation_type: ::std::option::Option<crate::types::SubnetCidrReservationType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateSubnetCidrReservationInputBuilder {
     /// <p>The ID of the subnet.</p>
@@ -126,10 +121,7 @@ impl CreateSubnetCidrReservationInputBuilder {
     /// <li> <p> <code>prefix</code>: The Amazon EC2 Prefix Delegation feature assigns the IP addresses to network interfaces that are associated with an instance. For information about Prefix Delegation, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation.html">Prefix Delegation for Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
     /// <li> <p> <code>explicit</code>: You manually assign the IP addresses to resources that reside in your subnet. </p> </li>
     /// </ul>
-    pub fn set_reservation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SubnetCidrReservationType>,
-    ) -> Self {
+    pub fn set_reservation_type(mut self, input: ::std::option::Option<crate::types::SubnetCidrReservationType>) -> Self {
         self.reservation_type = input;
         self
     }
@@ -139,9 +131,7 @@ impl CreateSubnetCidrReservationInputBuilder {
     /// <li> <p> <code>prefix</code>: The Amazon EC2 Prefix Delegation feature assigns the IP addresses to network interfaces that are associated with an instance. For information about Prefix Delegation, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation.html">Prefix Delegation for Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
     /// <li> <p> <code>explicit</code>: You manually assign the IP addresses to resources that reside in your subnet. </p> </li>
     /// </ul>
-    pub fn get_reservation_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::SubnetCidrReservationType> {
+    pub fn get_reservation_type(&self) -> &::std::option::Option<crate::types::SubnetCidrReservationType> {
         &self.reservation_type
     }
     /// <p>The description to assign to the subnet CIDR reservation.</p>
@@ -184,17 +174,12 @@ impl CreateSubnetCidrReservationInputBuilder {
         self
     }
     /// <p>The tags to assign to the subnet CIDR reservation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to assign to the subnet CIDR reservation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateSubnetCidrReservationInput`](crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationInput).
@@ -204,15 +189,13 @@ impl CreateSubnetCidrReservationInputBuilder {
         crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationInput {
-                subnet_id: self.subnet_id,
-                cidr: self.cidr,
-                reservation_type: self.reservation_type,
-                description: self.description,
-                dry_run: self.dry_run,
-                tag_specifications: self.tag_specifications,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationInput {
+            subnet_id: self.subnet_id,
+            cidr: self.cidr,
+            reservation_type: self.reservation_type,
+            description: self.description,
+            dry_run: self.dry_run,
+            tag_specifications: self.tag_specifications,
+        })
     }
 }

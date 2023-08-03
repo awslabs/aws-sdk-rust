@@ -10,10 +10,7 @@ impl GetObjectTaggingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_object_tagging::GetObjectTaggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_object_tagging::GetObjectTaggingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_object_tagging::GetObjectTaggingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_object_tagging();
         fluent_builder.inner = self;
@@ -46,9 +43,7 @@ impl GetObjectTaggingFluentBuilder {
         }
     }
     /// Access the GetObjectTagging as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_object_tagging::builders::GetObjectTaggingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_object_tagging::builders::GetObjectTaggingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +55,7 @@ impl GetObjectTaggingFluentBuilder {
             crate::operation::get_object_tagging::GetObjectTagging,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_object_tagging::GetObjectTaggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_object_tagging::GetObjectTaggingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +65,7 @@ impl GetObjectTaggingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +74,7 @@ impl GetObjectTaggingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_object_tagging::GetObjectTaggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_object_tagging::GetObjectTaggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_object_tagging::GetObjectTaggingError>,
     > {
         let op = self
             .inner
@@ -109,9 +97,7 @@ impl GetObjectTaggingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_object_tagging::GetObjectTaggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_object_tagging::GetObjectTaggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_object_tagging::GetObjectTaggingError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +111,7 @@ impl GetObjectTaggingFluentBuilder {
             crate::operation::get_object_tagging::GetObjectTagging,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_object_tagging::GetObjectTaggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_object_tagging::GetObjectTaggingError>,
     > {
         self.customize_middleware().await
     }
@@ -180,18 +164,12 @@ impl GetObjectTaggingFluentBuilder {
         self.inner.get_version_id()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_bucket_owner(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }
@@ -205,10 +183,7 @@ impl GetObjectTaggingFluentBuilder {
         self
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_request_payer(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestPayer>,
-    ) -> Self {
+    pub fn set_request_payer(mut self, input: ::std::option::Option<crate::types::RequestPayer>) -> Self {
         self.inner = self.inner.set_request_payer(input);
         self
     }

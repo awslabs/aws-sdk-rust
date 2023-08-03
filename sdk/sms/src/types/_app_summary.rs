@@ -24,8 +24,7 @@ pub struct AppSummary {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Status of the replication configuration.</p>
     #[doc(hidden)]
-    pub replication_configuration_status:
-        ::std::option::Option<crate::types::AppReplicationConfigurationStatus>,
+    pub replication_configuration_status: ::std::option::Option<crate::types::AppReplicationConfigurationStatus>,
     /// <p>The replication status of the application.</p>
     #[doc(hidden)]
     pub replication_status: ::std::option::Option<crate::types::AppReplicationStatus>,
@@ -37,8 +36,7 @@ pub struct AppSummary {
     pub latest_replication_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Status of the launch configuration.</p>
     #[doc(hidden)]
-    pub launch_configuration_status:
-        ::std::option::Option<crate::types::AppLaunchConfigurationStatus>,
+    pub launch_configuration_status: ::std::option::Option<crate::types::AppLaunchConfigurationStatus>,
     /// <p>The launch status of the application.</p>
     #[doc(hidden)]
     pub launch_status: ::std::option::Option<crate::types::AppLaunchStatus>,
@@ -90,9 +88,7 @@ impl AppSummary {
         self.status_message.as_deref()
     }
     /// <p>Status of the replication configuration.</p>
-    pub fn replication_configuration_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppReplicationConfigurationStatus> {
+    pub fn replication_configuration_status(&self) -> ::std::option::Option<&crate::types::AppReplicationConfigurationStatus> {
         self.replication_configuration_status.as_ref()
     }
     /// <p>The replication status of the application.</p>
@@ -108,9 +104,7 @@ impl AppSummary {
         self.latest_replication_time.as_ref()
     }
     /// <p>Status of the launch configuration.</p>
-    pub fn launch_configuration_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppLaunchConfigurationStatus> {
+    pub fn launch_configuration_status(&self) -> ::std::option::Option<&crate::types::AppLaunchConfigurationStatus> {
         self.launch_configuration_status.as_ref()
     }
     /// <p>The launch status of the application.</p>
@@ -155,9 +149,7 @@ impl AppSummary {
 
 /// A builder for [`AppSummary`](crate::types::AppSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppSummaryBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) imported_app_id: ::std::option::Option<::std::string::String>,
@@ -165,13 +157,11 @@ pub struct AppSummaryBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AppStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_configuration_status:
-        ::std::option::Option<crate::types::AppReplicationConfigurationStatus>,
+    pub(crate) replication_configuration_status: ::std::option::Option<crate::types::AppReplicationConfigurationStatus>,
     pub(crate) replication_status: ::std::option::Option<crate::types::AppReplicationStatus>,
     pub(crate) replication_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) latest_replication_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) launch_configuration_status:
-        ::std::option::Option<crate::types::AppLaunchConfigurationStatus>,
+    pub(crate) launch_configuration_status: ::std::option::Option<crate::types::AppLaunchConfigurationStatus>,
     pub(crate) launch_status: ::std::option::Option<crate::types::AppLaunchStatus>,
     pub(crate) launch_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) launch_details: ::std::option::Option<crate::types::LaunchDetails>,
@@ -197,18 +187,12 @@ impl AppSummaryBuilder {
         &self.app_id
     }
     /// <p>The ID of the application.</p>
-    pub fn imported_app_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn imported_app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.imported_app_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application.</p>
-    pub fn set_imported_app_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_imported_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.imported_app_id = input;
         self
     }
@@ -259,18 +243,12 @@ impl AppSummaryBuilder {
         &self.status
     }
     /// <p>A message related to the status of the application</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message related to the status of the application</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -279,25 +257,17 @@ impl AppSummaryBuilder {
         &self.status_message
     }
     /// <p>Status of the replication configuration.</p>
-    pub fn replication_configuration_status(
-        mut self,
-        input: crate::types::AppReplicationConfigurationStatus,
-    ) -> Self {
+    pub fn replication_configuration_status(mut self, input: crate::types::AppReplicationConfigurationStatus) -> Self {
         self.replication_configuration_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Status of the replication configuration.</p>
-    pub fn set_replication_configuration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AppReplicationConfigurationStatus>,
-    ) -> Self {
+    pub fn set_replication_configuration_status(mut self, input: ::std::option::Option<crate::types::AppReplicationConfigurationStatus>) -> Self {
         self.replication_configuration_status = input;
         self
     }
     /// <p>Status of the replication configuration.</p>
-    pub fn get_replication_configuration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppReplicationConfigurationStatus> {
+    pub fn get_replication_configuration_status(&self) -> &::std::option::Option<crate::types::AppReplicationConfigurationStatus> {
         &self.replication_configuration_status
     }
     /// <p>The replication status of the application.</p>
@@ -306,32 +276,21 @@ impl AppSummaryBuilder {
         self
     }
     /// <p>The replication status of the application.</p>
-    pub fn set_replication_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AppReplicationStatus>,
-    ) -> Self {
+    pub fn set_replication_status(mut self, input: ::std::option::Option<crate::types::AppReplicationStatus>) -> Self {
         self.replication_status = input;
         self
     }
     /// <p>The replication status of the application.</p>
-    pub fn get_replication_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppReplicationStatus> {
+    pub fn get_replication_status(&self) -> &::std::option::Option<crate::types::AppReplicationStatus> {
         &self.replication_status
     }
     /// <p>A message related to the replication status of the application.</p>
-    pub fn replication_status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message related to the replication status of the application.</p>
-    pub fn set_replication_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_status_message = input;
         self
     }
@@ -345,39 +304,26 @@ impl AppSummaryBuilder {
         self
     }
     /// <p>The timestamp of the application's most recent successful replication.</p>
-    pub fn set_latest_replication_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_replication_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_replication_time = input;
         self
     }
     /// <p>The timestamp of the application's most recent successful replication.</p>
-    pub fn get_latest_replication_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_latest_replication_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.latest_replication_time
     }
     /// <p>Status of the launch configuration.</p>
-    pub fn launch_configuration_status(
-        mut self,
-        input: crate::types::AppLaunchConfigurationStatus,
-    ) -> Self {
+    pub fn launch_configuration_status(mut self, input: crate::types::AppLaunchConfigurationStatus) -> Self {
         self.launch_configuration_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Status of the launch configuration.</p>
-    pub fn set_launch_configuration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AppLaunchConfigurationStatus>,
-    ) -> Self {
+    pub fn set_launch_configuration_status(mut self, input: ::std::option::Option<crate::types::AppLaunchConfigurationStatus>) -> Self {
         self.launch_configuration_status = input;
         self
     }
     /// <p>Status of the launch configuration.</p>
-    pub fn get_launch_configuration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppLaunchConfigurationStatus> {
+    pub fn get_launch_configuration_status(&self) -> &::std::option::Option<crate::types::AppLaunchConfigurationStatus> {
         &self.launch_configuration_status
     }
     /// <p>The launch status of the application.</p>
@@ -386,10 +332,7 @@ impl AppSummaryBuilder {
         self
     }
     /// <p>The launch status of the application.</p>
-    pub fn set_launch_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AppLaunchStatus>,
-    ) -> Self {
+    pub fn set_launch_status(mut self, input: ::std::option::Option<crate::types::AppLaunchStatus>) -> Self {
         self.launch_status = input;
         self
     }
@@ -398,18 +341,12 @@ impl AppSummaryBuilder {
         &self.launch_status
     }
     /// <p>A message related to the launch status of the application.</p>
-    pub fn launch_status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message related to the launch status of the application.</p>
-    pub fn set_launch_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_status_message = input;
         self
     }
@@ -423,10 +360,7 @@ impl AppSummaryBuilder {
         self
     }
     /// <p>Details about the latest launch of the application.</p>
-    pub fn set_launch_details(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchDetails>,
-    ) -> Self {
+    pub fn set_launch_details(mut self, input: ::std::option::Option<crate::types::LaunchDetails>) -> Self {
         self.launch_details = input;
         self
     }
@@ -440,10 +374,7 @@ impl AppSummaryBuilder {
         self
     }
     /// <p>The creation time of the application.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -457,10 +388,7 @@ impl AppSummaryBuilder {
         self
     }
     /// <p>The last modified time of the application.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }

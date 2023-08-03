@@ -30,27 +30,19 @@ impl AppBlockBuilderAppBlockAssociation {
 
 /// A builder for [`AppBlockBuilderAppBlockAssociation`](crate::types::AppBlockBuilderAppBlockAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppBlockBuilderAppBlockAssociationBuilder {
     pub(crate) app_block_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_block_builder_name: ::std::option::Option<::std::string::String>,
 }
 impl AppBlockBuilderAppBlockAssociationBuilder {
     /// <p>The ARN of the app block.</p>
-    pub fn app_block_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_block_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_block_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the app block.</p>
-    pub fn set_app_block_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_block_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_block_arn = input;
         self
     }
@@ -59,18 +51,12 @@ impl AppBlockBuilderAppBlockAssociationBuilder {
         &self.app_block_arn
     }
     /// <p>The name of the app block builder.</p>
-    pub fn app_block_builder_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_block_builder_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_block_builder_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the app block builder.</p>
-    pub fn set_app_block_builder_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_block_builder_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_block_builder_name = input;
         self
     }

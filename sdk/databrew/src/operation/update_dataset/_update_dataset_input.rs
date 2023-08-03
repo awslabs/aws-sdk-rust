@@ -50,9 +50,7 @@ impl UpdateDatasetInput {
 
 /// A builder for [`UpdateDatasetInput`](crate::operation::update_dataset::UpdateDatasetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDatasetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::InputFormat>,
@@ -95,10 +93,7 @@ impl UpdateDatasetInputBuilder {
         self
     }
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
-    pub fn set_format_options(
-        mut self,
-        input: ::std::option::Option<crate::types::FormatOptions>,
-    ) -> Self {
+    pub fn set_format_options(mut self, input: ::std::option::Option<crate::types::FormatOptions>) -> Self {
         self.format_options = input;
         self
     }
@@ -126,10 +121,7 @@ impl UpdateDatasetInputBuilder {
         self
     }
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
-    pub fn set_path_options(
-        mut self,
-        input: ::std::option::Option<crate::types::PathOptions>,
-    ) -> Self {
+    pub fn set_path_options(mut self, input: ::std::option::Option<crate::types::PathOptions>) -> Self {
         self.path_options = input;
         self
     }
@@ -140,10 +132,7 @@ impl UpdateDatasetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDatasetInput`](crate::operation::update_dataset::UpdateDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_dataset::UpdateDatasetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_dataset::UpdateDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_dataset::UpdateDatasetInput {
             name: self.name,
             format: self.format,

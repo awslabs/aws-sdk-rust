@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for AddProfilePermissionOutput {
 }
 impl AddProfilePermissionOutput {
     /// Creates a new builder-style object to manufacture [`AddProfilePermissionOutput`](crate::operation::add_profile_permission::AddProfilePermissionOutput).
-    pub fn builder(
-    ) -> crate::operation::add_profile_permission::builders::AddProfilePermissionOutputBuilder {
+    pub fn builder() -> crate::operation::add_profile_permission::builders::AddProfilePermissionOutputBuilder {
         crate::operation::add_profile_permission::builders::AddProfilePermissionOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddProfilePermissionOutput`](crate::operation::add_profile_permission::AddProfilePermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddProfilePermissionOutputBuilder {
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

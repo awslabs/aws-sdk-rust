@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`document_id(impl ::std::convert::Into<String>)`](crate::operation::restore_document_versions::builders::RestoreDocumentVersionsFluentBuilder::document_id) / [`set_document_id(Option<String>)`](crate::operation::restore_document_versions::builders::RestoreDocumentVersionsFluentBuilder::set_document_id): <p>The ID of the document.</p>
     /// - On success, responds with [`RestoreDocumentVersionsOutput`](crate::operation::restore_document_versions::RestoreDocumentVersionsOutput)
     /// - On failure, responds with [`SdkError<RestoreDocumentVersionsError>`](crate::operation::restore_document_versions::RestoreDocumentVersionsError)
-    pub fn restore_document_versions(
-        &self,
-    ) -> crate::operation::restore_document_versions::builders::RestoreDocumentVersionsFluentBuilder
-    {
+    pub fn restore_document_versions(&self) -> crate::operation::restore_document_versions::builders::RestoreDocumentVersionsFluentBuilder {
         crate::operation::restore_document_versions::builders::RestoreDocumentVersionsFluentBuilder::new(self.handle.clone())
     }
 }

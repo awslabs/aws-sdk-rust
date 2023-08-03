@@ -44,9 +44,7 @@ impl ChannelModerator {
 
 /// A builder for [`ChannelModerator`](crate::types::ChannelModerator).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelModeratorBuilder {
     pub(crate) moderator: ::std::option::Option<crate::types::Identity>,
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl ChannelModeratorBuilder {
         self
     }
     /// <p>The time at which the moderator was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }

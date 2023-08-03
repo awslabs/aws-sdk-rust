@@ -51,9 +51,7 @@ impl LambdaLayerAggregationResponse {
 
 /// A builder for [`LambdaLayerAggregationResponse`](crate::types::LambdaLayerAggregationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaLayerAggregationResponseBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct LambdaLayerAggregationResponseBuilder {
 }
 impl LambdaLayerAggregationResponseBuilder {
     /// <p>The names of the AWS Lambda functions associated with the layers.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The names of the AWS Lambda functions associated with the layers.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -130,10 +122,7 @@ impl LambdaLayerAggregationResponseBuilder {
         self
     }
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
-    pub fn set_severity_counts(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityCounts>,
-    ) -> Self {
+    pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
         self.severity_counts = input;
         self
     }

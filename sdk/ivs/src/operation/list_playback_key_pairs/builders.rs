@@ -37,10 +37,7 @@ impl ListPlaybackKeyPairsFluentBuilder {
         }
     }
     /// Access the ListPlaybackKeyPairs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListPlaybackKeyPairsFluentBuilder {
             crate::operation::list_playback_key_pairs::ListPlaybackKeyPairs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListPlaybackKeyPairsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListPlaybackKeyPairsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListPlaybackKeyPairsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListPlaybackKeyPairsFluentBuilder {
             crate::operation::list_playback_key_pairs::ListPlaybackKeyPairs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_playback_key_pairs::paginator::ListPlaybackKeyPairsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_playback_key_pairs::paginator::ListPlaybackKeyPairsPaginator {
-        crate::operation::list_playback_key_pairs::paginator::ListPlaybackKeyPairsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_playback_key_pairs::paginator::ListPlaybackKeyPairsPaginator {
+        crate::operation::list_playback_key_pairs::paginator::ListPlaybackKeyPairsPaginator::new(self.handle, self.inner)
     }
     /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

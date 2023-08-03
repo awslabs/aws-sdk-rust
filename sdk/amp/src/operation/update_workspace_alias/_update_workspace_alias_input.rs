@@ -30,17 +30,14 @@ impl UpdateWorkspaceAliasInput {
 }
 impl UpdateWorkspaceAliasInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceAliasInput`](crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput).
-    pub fn builder(
-    ) -> crate::operation::update_workspace_alias::builders::UpdateWorkspaceAliasInputBuilder {
+    pub fn builder() -> crate::operation::update_workspace_alias::builders::UpdateWorkspaceAliasInputBuilder {
         crate::operation::update_workspace_alias::builders::UpdateWorkspaceAliasInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorkspaceAliasInput`](crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceAliasInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
@@ -92,16 +89,12 @@ impl UpdateWorkspaceAliasInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkspaceAliasInput`](crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput {
-                workspace_id: self.workspace_id,
-                alias: self.alias,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput {
+            workspace_id: self.workspace_id,
+            alias: self.alias,
+            client_token: self.client_token,
+        })
     }
 }

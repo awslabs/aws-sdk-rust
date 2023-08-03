@@ -13,12 +13,7 @@ impl super::Client {
     /// - On success, responds with [`StartPhiDetectionJobOutput`](crate::operation::start_phi_detection_job::StartPhiDetectionJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_phi_detection_job::StartPhiDetectionJobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this identifier with the <code>DescribePHIDetectionJob</code> operation.</p>
     /// - On failure, responds with [`SdkError<StartPHIDetectionJobError>`](crate::operation::start_phi_detection_job::StartPHIDetectionJobError)
-    pub fn start_phi_detection_job(
-        &self,
-    ) -> crate::operation::start_phi_detection_job::builders::StartPHIDetectionJobFluentBuilder
-    {
-        crate::operation::start_phi_detection_job::builders::StartPHIDetectionJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_phi_detection_job(&self) -> crate::operation::start_phi_detection_job::builders::StartPHIDetectionJobFluentBuilder {
+        crate::operation::start_phi_detection_job::builders::StartPHIDetectionJobFluentBuilder::new(self.handle.clone())
     }
 }

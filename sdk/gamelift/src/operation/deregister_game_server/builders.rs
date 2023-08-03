@@ -41,9 +41,7 @@ impl DeregisterGameServerFluentBuilder {
         }
     }
     /// Access the DeregisterGameServer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deregister_game_server::builders::DeregisterGameServerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::deregister_game_server::builders::DeregisterGameServerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl DeregisterGameServerFluentBuilder {
             crate::operation::deregister_game_server::DeregisterGameServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_game_server::DeregisterGameServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_game_server::DeregisterGameServerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl DeregisterGameServerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl DeregisterGameServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_game_server::DeregisterGameServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_game_server::DeregisterGameServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_game_server::DeregisterGameServerError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl DeregisterGameServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_game_server::DeregisterGameServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_game_server::DeregisterGameServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_game_server::DeregisterGameServerError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +109,17 @@ impl DeregisterGameServerFluentBuilder {
             crate::operation::deregister_game_server::DeregisterGameServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_game_server::DeregisterGameServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_game_server::DeregisterGameServerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_group_name(input.into());
         self
     }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
@@ -147,18 +128,12 @@ impl DeregisterGameServerFluentBuilder {
         self.inner.get_game_server_group_name()
     }
     /// <p>A custom string that uniquely identifies the game server to deregister.</p>
-    pub fn game_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_id(input.into());
         self
     }
     /// <p>A custom string that uniquely identifies the game server to deregister.</p>
-    pub fn set_game_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_id(input);
         self
     }

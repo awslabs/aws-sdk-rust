@@ -15,16 +15,14 @@ impl ListManagedDataIdentifiersInput {
 }
 impl ListManagedDataIdentifiersInput {
     /// Creates a new builder-style object to manufacture [`ListManagedDataIdentifiersInput`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersInput).
-    pub fn builder() -> crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersInputBuilder{
+    pub fn builder() -> crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersInputBuilder {
         crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListManagedDataIdentifiersInput`](crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListManagedDataIdentifiersInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl ListManagedDataIdentifiersInputBuilder {
         crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersInput {
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersInput { next_token: self.next_token })
     }
 }

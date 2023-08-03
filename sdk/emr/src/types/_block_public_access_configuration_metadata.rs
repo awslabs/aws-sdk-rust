@@ -30,9 +30,7 @@ impl BlockPublicAccessConfigurationMetadata {
 
 /// A builder for [`BlockPublicAccessConfigurationMetadata`](crate::types::BlockPublicAccessConfigurationMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BlockPublicAccessConfigurationMetadataBuilder {
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by_arn: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl BlockPublicAccessConfigurationMetadataBuilder {
         self
     }
     /// <p>The date and time that the configuration was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -56,18 +51,12 @@ impl BlockPublicAccessConfigurationMetadataBuilder {
         &self.creation_date_time
     }
     /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
-    pub fn created_by_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn created_by_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
-    pub fn set_created_by_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_created_by_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by_arn = input;
         self
     }

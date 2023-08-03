@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UsageReportExecutionErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for UsageReportExecutionErrorCode {
             "ACCESS_DENIED" => UsageReportExecutionErrorCode::AccessDenied,
             "INTERNAL_SERVICE_ERROR" => UsageReportExecutionErrorCode::InternalServiceError,
             "RESOURCE_NOT_FOUND" => UsageReportExecutionErrorCode::ResourceNotFound,
-            other => UsageReportExecutionErrorCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => UsageReportExecutionErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl UsageReportExecutionErrorCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED",
-            "INTERNAL_SERVICE_ERROR",
-            "RESOURCE_NOT_FOUND",
-        ]
+        &["ACCESS_DENIED", "INTERNAL_SERVICE_ERROR", "RESOURCE_NOT_FOUND"]
     }
 }
 impl ::std::convert::AsRef<str> for UsageReportExecutionErrorCode {

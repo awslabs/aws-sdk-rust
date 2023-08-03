@@ -35,9 +35,7 @@ impl ListIpSetsOutput {
 
 /// A builder for [`ListIpSetsOutput`](crate::operation::list_ip_sets::ListIpSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIpSetsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) ip_sets: ::std::option::Option<::std::vec::Vec<crate::types::IpSetSummary>>,
@@ -70,17 +68,12 @@ impl ListIpSetsOutputBuilder {
         self
     }
     /// <p>An array of <code>IPSetSummary</code> objects.</p>
-    pub fn set_ip_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpSetSummary>>,
-    ) -> Self {
+    pub fn set_ip_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpSetSummary>>) -> Self {
         self.ip_sets = input;
         self
     }
     /// <p>An array of <code>IPSetSummary</code> objects.</p>
-    pub fn get_ip_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpSetSummary>> {
+    pub fn get_ip_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpSetSummary>> {
         &self.ip_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

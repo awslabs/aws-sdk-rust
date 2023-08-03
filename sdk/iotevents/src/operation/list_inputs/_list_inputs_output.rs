@@ -35,9 +35,7 @@ impl ListInputsOutput {
 
 /// A builder for [`ListInputsOutput`](crate::operation::list_inputs::ListInputsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInputsOutputBuilder {
     pub(crate) input_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InputSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListInputsOutputBuilder {
         self
     }
     /// <p>Summary information about the inputs.</p>
-    pub fn set_input_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputSummary>>,
-    ) -> Self {
+    pub fn set_input_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputSummary>>) -> Self {
         self.input_summaries = input;
         self
     }
     /// <p>Summary information about the inputs.</p>
-    pub fn get_input_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSummary>> {
+    pub fn get_input_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSummary>> {
         &self.input_summaries
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>

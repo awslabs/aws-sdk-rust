@@ -15,18 +15,14 @@ impl GetGroupConfigurationInput {
 }
 impl GetGroupConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetGroupConfigurationInput`](crate::operation::get_group_configuration::GetGroupConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::get_group_configuration::builders::GetGroupConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_group_configuration::builders::GetGroupConfigurationInputBuilder {
         crate::operation::get_group_configuration::builders::GetGroupConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetGroupConfigurationInput`](crate::operation::get_group_configuration::GetGroupConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGroupConfigurationInputBuilder {
     pub(crate) group: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl GetGroupConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetGroupConfigurationInput`](crate::operation::get_group_configuration::GetGroupConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_group_configuration::GetGroupConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_group_configuration::GetGroupConfigurationInput {
-                group: self.group,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_group_configuration::GetGroupConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_group_configuration::GetGroupConfigurationInput { group: self.group })
     }
 }

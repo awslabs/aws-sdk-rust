@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`framework_name(Option<String>)`](crate::operation::create_framework::CreateFrameworkOutput::framework_name): <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     ///   - [`framework_arn(Option<String>)`](crate::operation::create_framework::CreateFrameworkOutput::framework_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     /// - On failure, responds with [`SdkError<CreateFrameworkError>`](crate::operation::create_framework::CreateFrameworkError)
-    pub fn create_framework(
-        &self,
-    ) -> crate::operation::create_framework::builders::CreateFrameworkFluentBuilder {
-        crate::operation::create_framework::builders::CreateFrameworkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_framework(&self) -> crate::operation::create_framework::builders::CreateFrameworkFluentBuilder {
+        crate::operation::create_framework::builders::CreateFrameworkFluentBuilder::new(self.handle.clone())
     }
 }

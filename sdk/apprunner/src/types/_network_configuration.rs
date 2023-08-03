@@ -13,15 +13,11 @@ pub struct NetworkConfiguration {
 }
 impl NetworkConfiguration {
     /// <p>Network configuration settings for outbound message traffic.</p>
-    pub fn egress_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EgressConfiguration> {
+    pub fn egress_configuration(&self) -> ::std::option::Option<&crate::types::EgressConfiguration> {
         self.egress_configuration.as_ref()
     }
     /// <p>Network configuration settings for inbound message traffic.</p>
-    pub fn ingress_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IngressConfiguration> {
+    pub fn ingress_configuration(&self) -> ::std::option::Option<&crate::types::IngressConfiguration> {
         self.ingress_configuration.as_ref()
     }
 }
@@ -34,9 +30,7 @@ impl NetworkConfiguration {
 
 /// A builder for [`NetworkConfiguration`](crate::types::NetworkConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkConfigurationBuilder {
     pub(crate) egress_configuration: ::std::option::Option<crate::types::EgressConfiguration>,
     pub(crate) ingress_configuration: ::std::option::Option<crate::types::IngressConfiguration>,
@@ -48,17 +42,12 @@ impl NetworkConfigurationBuilder {
         self
     }
     /// <p>Network configuration settings for outbound message traffic.</p>
-    pub fn set_egress_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EgressConfiguration>,
-    ) -> Self {
+    pub fn set_egress_configuration(mut self, input: ::std::option::Option<crate::types::EgressConfiguration>) -> Self {
         self.egress_configuration = input;
         self
     }
     /// <p>Network configuration settings for outbound message traffic.</p>
-    pub fn get_egress_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EgressConfiguration> {
+    pub fn get_egress_configuration(&self) -> &::std::option::Option<crate::types::EgressConfiguration> {
         &self.egress_configuration
     }
     /// <p>Network configuration settings for inbound message traffic.</p>
@@ -67,17 +56,12 @@ impl NetworkConfigurationBuilder {
         self
     }
     /// <p>Network configuration settings for inbound message traffic.</p>
-    pub fn set_ingress_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::IngressConfiguration>,
-    ) -> Self {
+    pub fn set_ingress_configuration(mut self, input: ::std::option::Option<crate::types::IngressConfiguration>) -> Self {
         self.ingress_configuration = input;
         self
     }
     /// <p>Network configuration settings for inbound message traffic.</p>
-    pub fn get_ingress_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::IngressConfiguration> {
+    pub fn get_ingress_configuration(&self) -> &::std::option::Option<crate::types::IngressConfiguration> {
         &self.ingress_configuration
     }
     /// Consumes the builder and constructs a [`NetworkConfiguration`](crate::types::NetworkConfiguration).

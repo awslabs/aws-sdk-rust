@@ -37,10 +37,7 @@ impl BatchPutFieldOptionsFluentBuilder {
         }
     }
     /// Access the BatchPutFieldOptions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl BatchPutFieldOptionsFluentBuilder {
             crate::operation::batch_put_field_options::BatchPutFieldOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_field_options::BatchPutFieldOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_field_options::BatchPutFieldOptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl BatchPutFieldOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl BatchPutFieldOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_put_field_options::BatchPutFieldOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_field_options::BatchPutFieldOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_field_options::BatchPutFieldOptionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl BatchPutFieldOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_put_field_options::BatchPutFieldOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_field_options::BatchPutFieldOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_field_options::BatchPutFieldOptionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl BatchPutFieldOptionsFluentBuilder {
             crate::operation::batch_put_field_options::BatchPutFieldOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_field_options::BatchPutFieldOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_field_options::BatchPutFieldOptionsError>,
     > {
         self.customize_middleware().await
     }
@@ -161,17 +147,12 @@ impl BatchPutFieldOptionsFluentBuilder {
         self
     }
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldOption>>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldOption>>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldOption>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldOption>> {
         self.inner.get_options()
     }
 }

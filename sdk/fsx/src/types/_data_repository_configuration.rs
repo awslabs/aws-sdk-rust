@@ -74,9 +74,7 @@ impl DataRepositoryConfiguration {
         self.auto_import_policy.as_ref()
     }
     /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
-    pub fn failure_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataRepositoryFailureDetails> {
+    pub fn failure_details(&self) -> ::std::option::Option<&crate::types::DataRepositoryFailureDetails> {
         self.failure_details.as_ref()
     }
 }
@@ -89,9 +87,7 @@ impl DataRepositoryConfiguration {
 
 /// A builder for [`DataRepositoryConfiguration`](crate::types::DataRepositoryConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataRepositoryConfigurationBuilder {
     pub(crate) lifecycle: ::std::option::Option<crate::types::DataRepositoryLifecycle>,
     pub(crate) import_path: ::std::option::Option<::std::string::String>,
@@ -121,10 +117,7 @@ impl DataRepositoryConfigurationBuilder {
     /// <li> <p> <code>UPDATING</code> - The data repository is undergoing a customer initiated update and availability may be impacted.</p> </li>
     /// <li> <p> <code>FAILED</code> - The data repository is in a terminal state that cannot be recovered.</p> </li>
     /// </ul>
-    pub fn set_lifecycle(
-        mut self,
-        input: ::std::option::Option<crate::types::DataRepositoryLifecycle>,
-    ) -> Self {
+    pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::DataRepositoryLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }
@@ -202,10 +195,7 @@ impl DataRepositoryConfigurationBuilder {
     /// <li> <p> <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket and any existing objects that are changed in the S3 bucket after you choose this option.</p> </li>
     /// <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p> </li>
     /// </ul>
-    pub fn set_auto_import_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoImportPolicyType>,
-    ) -> Self {
+    pub fn set_auto_import_policy(mut self, input: ::std::option::Option<crate::types::AutoImportPolicyType>) -> Self {
         self.auto_import_policy = input;
         self
     }
@@ -216,9 +206,7 @@ impl DataRepositoryConfigurationBuilder {
     /// <li> <p> <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket and any existing objects that are changed in the S3 bucket after you choose this option.</p> </li>
     /// <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p> </li>
     /// </ul>
-    pub fn get_auto_import_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoImportPolicyType> {
+    pub fn get_auto_import_policy(&self) -> &::std::option::Option<crate::types::AutoImportPolicyType> {
         &self.auto_import_policy
     }
     /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
@@ -227,17 +215,12 @@ impl DataRepositoryConfigurationBuilder {
         self
     }
     /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
-    pub fn set_failure_details(
-        mut self,
-        input: ::std::option::Option<crate::types::DataRepositoryFailureDetails>,
-    ) -> Self {
+    pub fn set_failure_details(mut self, input: ::std::option::Option<crate::types::DataRepositoryFailureDetails>) -> Self {
         self.failure_details = input;
         self
     }
     /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
-    pub fn get_failure_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataRepositoryFailureDetails> {
+    pub fn get_failure_details(&self) -> &::std::option::Option<crate::types::DataRepositoryFailureDetails> {
         &self.failure_details
     }
     /// Consumes the builder and constructs a [`DataRepositoryConfiguration`](crate::types::DataRepositoryConfiguration).

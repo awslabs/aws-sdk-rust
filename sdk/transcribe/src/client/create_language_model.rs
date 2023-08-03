@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`input_data_config(Option<InputDataConfig>)`](crate::operation::create_language_model::CreateLanguageModelOutput::input_data_config): <p>Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations you provided for your training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.</p>
     ///   - [`model_status(Option<ModelStatus>)`](crate::operation::create_language_model::CreateLanguageModelOutput::model_status): <p>The status of your custom language model. When the status displays as <code>COMPLETED</code>, your model is ready to use.</p>
     /// - On failure, responds with [`SdkError<CreateLanguageModelError>`](crate::operation::create_language_model::CreateLanguageModelError)
-    pub fn create_language_model(
-        &self,
-    ) -> crate::operation::create_language_model::builders::CreateLanguageModelFluentBuilder {
-        crate::operation::create_language_model::builders::CreateLanguageModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_language_model(&self) -> crate::operation::create_language_model::builders::CreateLanguageModelFluentBuilder {
+        crate::operation::create_language_model::builders::CreateLanguageModelFluentBuilder::new(self.handle.clone())
     }
 }

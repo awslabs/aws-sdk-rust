@@ -26,7 +26,7 @@ impl DeleteRecommendationTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRecommendationTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateInputBuilder,
+    inner: crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateInputBuilder,
 }
 impl DeleteRecommendationTemplateFluentBuilder {
     /// Creates a new `DeleteRecommendationTemplate`.
@@ -37,7 +37,7 @@ impl DeleteRecommendationTemplateFluentBuilder {
         }
     }
     /// Access the DeleteRecommendationTemplate as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteRecommendationTemplateFluentBuilder {
             crate::operation::delete_recommendation_template::DeleteRecommendationTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_recommendation_template::DeleteRecommendationTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_recommendation_template::DeleteRecommendationTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteRecommendationTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteRecommendationTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_recommendation_template::DeleteRecommendationTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_recommendation_template::DeleteRecommendationTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_recommendation_template::DeleteRecommendationTemplateError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteRecommendationTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_recommendation_template::DeleteRecommendationTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_recommendation_template::DeleteRecommendationTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_recommendation_template::DeleteRecommendationTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteRecommendationTemplateFluentBuilder {
             crate::operation::delete_recommendation_template::DeleteRecommendationTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_recommendation_template::DeleteRecommendationTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_recommendation_template::DeleteRecommendationTemplateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-    pub fn recommendation_template_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recommendation_template_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-    pub fn set_recommendation_template_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recommendation_template_arn(input);
         self
     }

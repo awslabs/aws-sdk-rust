@@ -10,10 +10,7 @@ impl ListKeyPoliciesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_key_policies::ListKeyPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_key_policies::ListKeyPoliciesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_key_policies::ListKeyPoliciesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_key_policies();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl ListKeyPoliciesFluentBuilder {
         }
     }
     /// Access the ListKeyPolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_key_policies::builders::ListKeyPoliciesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_key_policies::builders::ListKeyPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl ListKeyPoliciesFluentBuilder {
             crate::operation::list_key_policies::ListKeyPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_key_policies::ListKeyPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_key_policies::ListKeyPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl ListKeyPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl ListKeyPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_key_policies::ListKeyPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_key_policies::ListKeyPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_key_policies::ListKeyPoliciesError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl ListKeyPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_key_policies::ListKeyPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_key_policies::ListKeyPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_key_policies::ListKeyPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -123,22 +109,15 @@ impl ListKeyPoliciesFluentBuilder {
             crate::operation::list_key_policies::ListKeyPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_key_policies::ListKeyPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_key_policies::ListKeyPoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_key_policies::paginator::ListKeyPoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_key_policies::paginator::ListKeyPoliciesPaginator {
-        crate::operation::list_key_policies::paginator::ListKeyPoliciesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_key_policies::paginator::ListKeyPoliciesPaginator {
+        crate::operation::list_key_policies::paginator::ListKeyPoliciesPaginator::new(self.handle, self.inner)
     }
     /// <p>Gets the names of key policies for the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>

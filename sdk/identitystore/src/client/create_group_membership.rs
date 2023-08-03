@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`membership_id(Option<String>)`](crate::operation::create_group_membership::CreateGroupMembershipOutput::membership_id): <p>The identifier for a newly created <code>GroupMembership</code> in an identity store.</p>
     ///   - [`identity_store_id(Option<String>)`](crate::operation::create_group_membership::CreateGroupMembershipOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
     /// - On failure, responds with [`SdkError<CreateGroupMembershipError>`](crate::operation::create_group_membership::CreateGroupMembershipError)
-    pub fn create_group_membership(
-        &self,
-    ) -> crate::operation::create_group_membership::builders::CreateGroupMembershipFluentBuilder
-    {
-        crate::operation::create_group_membership::builders::CreateGroupMembershipFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_group_membership(&self) -> crate::operation::create_group_membership::builders::CreateGroupMembershipFluentBuilder {
+        crate::operation::create_group_membership::builders::CreateGroupMembershipFluentBuilder::new(self.handle.clone())
     }
 }

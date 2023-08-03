@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteTagOptionOutput {
 }
 impl DeleteTagOptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTagOptionOutput`](crate::operation::delete_tag_option::DeleteTagOptionOutput).
-    pub fn builder() -> crate::operation::delete_tag_option::builders::DeleteTagOptionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_tag_option::builders::DeleteTagOptionOutputBuilder {
         crate::operation::delete_tag_option::builders::DeleteTagOptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTagOptionOutput`](crate::operation::delete_tag_option::DeleteTagOptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTagOptionOutputBuilder {
     _request_id: Option<String>,
 }

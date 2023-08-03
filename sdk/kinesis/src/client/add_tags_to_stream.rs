@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`stream_arn(impl ::std::convert::Into<String>)`](crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder::stream_arn) / [`set_stream_arn(Option<String>)`](crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`AddTagsToStreamOutput`](crate::operation::add_tags_to_stream::AddTagsToStreamOutput)
     /// - On failure, responds with [`SdkError<AddTagsToStreamError>`](crate::operation::add_tags_to_stream::AddTagsToStreamError)
-    pub fn add_tags_to_stream(
-        &self,
-    ) -> crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder {
-        crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_tags_to_stream(&self) -> crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder {
+        crate::operation::add_tags_to_stream::builders::AddTagsToStreamFluentBuilder::new(self.handle.clone())
     }
 }

@@ -50,9 +50,7 @@ impl PutRumEventsInput {
 
 /// A builder for [`PutRumEventsInput`](crate::operation::put_rum_events::PutRumEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRumEventsInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) batch_id: ::std::option::Option<::std::string::String>,
@@ -95,17 +93,12 @@ impl PutRumEventsInputBuilder {
         self
     }
     /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
-    pub fn set_app_monitor_details(
-        mut self,
-        input: ::std::option::Option<crate::types::AppMonitorDetails>,
-    ) -> Self {
+    pub fn set_app_monitor_details(mut self, input: ::std::option::Option<crate::types::AppMonitorDetails>) -> Self {
         self.app_monitor_details = input;
         self
     }
     /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
-    pub fn get_app_monitor_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppMonitorDetails> {
+    pub fn get_app_monitor_details(&self) -> &::std::option::Option<crate::types::AppMonitorDetails> {
         &self.app_monitor_details
     }
     /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
@@ -114,10 +107,7 @@ impl PutRumEventsInputBuilder {
         self
     }
     /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
-    pub fn set_user_details(
-        mut self,
-        input: ::std::option::Option<crate::types::UserDetails>,
-    ) -> Self {
+    pub fn set_user_details(mut self, input: ::std::option::Option<crate::types::UserDetails>) -> Self {
         self.user_details = input;
         self
     }
@@ -137,26 +127,18 @@ impl PutRumEventsInputBuilder {
         self
     }
     /// <p>An array of structures that contain the telemetry event data.</p>
-    pub fn set_rum_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RumEvent>>,
-    ) -> Self {
+    pub fn set_rum_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RumEvent>>) -> Self {
         self.rum_events = input;
         self
     }
     /// <p>An array of structures that contain the telemetry event data.</p>
-    pub fn get_rum_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RumEvent>> {
+    pub fn get_rum_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RumEvent>> {
         &self.rum_events
     }
     /// Consumes the builder and constructs a [`PutRumEventsInput`](crate::operation::put_rum_events::PutRumEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_rum_events::PutRumEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_rum_events::PutRumEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_rum_events::PutRumEventsInput {
             id: self.id,
             batch_id: self.batch_id,

@@ -37,9 +37,7 @@ impl S3Grantee {
 
 /// A builder for [`S3Grantee`](crate::types::S3Grantee).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3GranteeBuilder {
     pub(crate) type_identifier: ::std::option::Option<crate::types::S3GranteeTypeIdentifier>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
@@ -52,17 +50,12 @@ impl S3GranteeBuilder {
         self
     }
     /// <p></p>
-    pub fn set_type_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::S3GranteeTypeIdentifier>,
-    ) -> Self {
+    pub fn set_type_identifier(mut self, input: ::std::option::Option<crate::types::S3GranteeTypeIdentifier>) -> Self {
         self.type_identifier = input;
         self
     }
     /// <p></p>
-    pub fn get_type_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3GranteeTypeIdentifier> {
+    pub fn get_type_identifier(&self) -> &::std::option::Option<crate::types::S3GranteeTypeIdentifier> {
         &self.type_identifier
     }
     /// <p></p>

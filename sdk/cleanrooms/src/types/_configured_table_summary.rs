@@ -21,8 +21,7 @@ pub struct ConfiguredTableSummary {
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The types of analysis rules associated with this configured table.</p>
     #[doc(hidden)]
-    pub analysis_rule_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
+    pub analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
     #[doc(hidden)]
     pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
@@ -49,9 +48,7 @@ impl ConfiguredTableSummary {
         self.update_time.as_ref()
     }
     /// <p>The types of analysis rules associated with this configured table.</p>
-    pub fn analysis_rule_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConfiguredTableAnalysisRuleType]> {
+    pub fn analysis_rule_types(&self) -> ::std::option::Option<&[crate::types::ConfiguredTableAnalysisRuleType]> {
         self.analysis_rule_types.as_deref()
     }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
@@ -68,17 +65,14 @@ impl ConfiguredTableSummary {
 
 /// A builder for [`ConfiguredTableSummary`](crate::types::ConfiguredTableSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfiguredTableSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) analysis_rule_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
+    pub(crate) analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
     pub(crate) analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
 }
 impl ConfiguredTableSummaryBuilder {
@@ -130,10 +124,7 @@ impl ConfiguredTableSummaryBuilder {
         self
     }
     /// <p>The time the configured table was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -147,10 +138,7 @@ impl ConfiguredTableSummaryBuilder {
         self
     }
     /// <p>The time the configured table was last updated.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -163,30 +151,19 @@ impl ConfiguredTableSummaryBuilder {
     /// To override the contents of this collection use [`set_analysis_rule_types`](Self::set_analysis_rule_types).
     ///
     /// <p>The types of analysis rules associated with this configured table.</p>
-    pub fn analysis_rule_types(
-        mut self,
-        input: crate::types::ConfiguredTableAnalysisRuleType,
-    ) -> Self {
+    pub fn analysis_rule_types(mut self, input: crate::types::ConfiguredTableAnalysisRuleType) -> Self {
         let mut v = self.analysis_rule_types.unwrap_or_default();
         v.push(input);
         self.analysis_rule_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The types of analysis rules associated with this configured table.</p>
-    pub fn set_analysis_rule_types(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>,
-        >,
-    ) -> Self {
+    pub fn set_analysis_rule_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>) -> Self {
         self.analysis_rule_types = input;
         self
     }
     /// <p>The types of analysis rules associated with this configured table.</p>
-    pub fn get_analysis_rule_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>
-    {
+    pub fn get_analysis_rule_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>> {
         &self.analysis_rule_types
     }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
@@ -195,10 +172,7 @@ impl ConfiguredTableSummaryBuilder {
         self
     }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
-    pub fn set_analysis_method(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisMethod>,
-    ) -> Self {
+    pub fn set_analysis_method(mut self, input: ::std::option::Option<crate::types::AnalysisMethod>) -> Self {
         self.analysis_method = input;
         self
     }

@@ -28,9 +28,7 @@ impl UpdateCrlOutput {
 
 /// A builder for [`UpdateCrlOutput`](crate::operation::update_crl::UpdateCrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCrlOutputBuilder {
     pub(crate) crl: ::std::option::Option<crate::types::CrlDetail>,
     _request_id: Option<String>,

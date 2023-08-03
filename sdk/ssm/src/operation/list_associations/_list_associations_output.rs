@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAssociationsOutput {
 }
 impl ListAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociationsOutput`](crate::operation::list_associations::ListAssociationsOutput).
-    pub fn builder() -> crate::operation::list_associations::builders::ListAssociationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_associations::builders::ListAssociationsOutputBuilder {
         crate::operation::list_associations::builders::ListAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociationsOutput`](crate::operation::list_associations::ListAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociationsOutputBuilder {
     pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListAssociationsOutputBuilder {
         self
     }
     /// <p>The associations.</p>
-    pub fn set_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
-    ) -> Self {
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Association>>) -> Self {
         self.associations = input;
         self
     }
     /// <p>The associations.</p>
-    pub fn get_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Association>> {
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Association>> {
         &self.associations
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>

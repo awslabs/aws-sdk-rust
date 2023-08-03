@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateWorkflowOutput`](crate::operation::create_workflow::CreateWorkflowOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::create_workflow::CreateWorkflowOutput::name): <p>The name of the workflow which was provided as part of the request.</p>
     /// - On failure, responds with [`SdkError<CreateWorkflowError>`](crate::operation::create_workflow::CreateWorkflowError)
-    pub fn create_workflow(
-        &self,
-    ) -> crate::operation::create_workflow::builders::CreateWorkflowFluentBuilder {
-        crate::operation::create_workflow::builders::CreateWorkflowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_workflow(&self) -> crate::operation::create_workflow::builders::CreateWorkflowFluentBuilder {
+        crate::operation::create_workflow::builders::CreateWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

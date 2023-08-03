@@ -54,9 +54,7 @@ impl CreateTapePoolInput {
 
 /// A builder for [`CreateTapePoolInput`](crate::operation::create_tape_pool::CreateTapePoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTapePoolInputBuilder {
     pub(crate) pool_name: ::std::option::Option<::std::string::String>,
     pub(crate) storage_class: ::std::option::Option<crate::types::TapeStorageClass>,
@@ -85,10 +83,7 @@ impl CreateTapePoolInputBuilder {
         self
     }
     /// <p>The storage class that is associated with the new custom pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    pub fn set_storage_class(
-        mut self,
-        input: ::std::option::Option<crate::types::TapeStorageClass>,
-    ) -> Self {
+    pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::TapeStorageClass>) -> Self {
         self.storage_class = input;
         self
     }
@@ -102,17 +97,12 @@ impl CreateTapePoolInputBuilder {
         self
     }
     /// <p>Tape retention lock can be configured in two modes. When configured in governance mode, Amazon Web Services accounts with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user, including the root Amazon Web Services account.</p>
-    pub fn set_retention_lock_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionLockType>,
-    ) -> Self {
+    pub fn set_retention_lock_type(mut self, input: ::std::option::Option<crate::types::RetentionLockType>) -> Self {
         self.retention_lock_type = input;
         self
     }
     /// <p>Tape retention lock can be configured in two modes. When configured in governance mode, Amazon Web Services accounts with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user, including the root Amazon Web Services account.</p>
-    pub fn get_retention_lock_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::RetentionLockType> {
+    pub fn get_retention_lock_type(&self) -> &::std::option::Option<crate::types::RetentionLockType> {
         &self.retention_lock_type
     }
     /// <p>Tape retention lock time is set in days. Tape retention lock can be enabled for up to 100 years (36,500 days).</p>
@@ -145,10 +135,7 @@ impl CreateTapePoolInputBuilder {
     /// <p>A list of up to 50 tags that can be assigned to tape pool. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -161,10 +148,7 @@ impl CreateTapePoolInputBuilder {
     /// Consumes the builder and constructs a [`CreateTapePoolInput`](crate::operation::create_tape_pool::CreateTapePoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_tape_pool::CreateTapePoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_tape_pool::CreateTapePoolInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_tape_pool::CreateTapePoolInput {
             pool_name: self.pool_name,
             storage_class: self.storage_class,
